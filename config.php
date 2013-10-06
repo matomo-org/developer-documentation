@@ -1,4 +1,11 @@
 <?php
+/**
+ * Piwik - Open source web analytics
+ *
+ * @link http://piwik.org
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
+ */
+
 $dir = dirname(__FILE__) == '/' ? '' : dirname(__FILE__);
 
 define('PIWIK_DOCUMENT_ROOT', $dir . '/piwik');
@@ -34,12 +41,11 @@ $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
 ;
 
 return new Sami($iterator, array(
-    'theme'                => 'github',
+    'theme'                => 'symfony',
     'versions'             => $versions,
     'title'                => 'Piwik API',
     'build_dir'            => __DIR__.'/docs/%version%',
     'cache_dir'            => __DIR__.'/cache/%version%',
-    'template_dirs'        => array(__DIR__.'/vendor/phine/sami-github'),
     'default_opened_level' => 5,
     'filter'               => new ApiFilter()
 ));
