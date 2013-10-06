@@ -36,7 +36,15 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
             return false;
         }
 
-        return $this->hasApiTag($method);
+        if ($this->hasApiTag($method)) {
+            return true;
+        }
+
+        if ($this->hasApiTag($method->getClass())) {
+            return true;
+        }
+
+        return false;
     }
 
     public function acceptProperty(PropertyReflection $property)
@@ -45,7 +53,15 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
             return false;
         }
 
-        return $this->hasApiTag($property);
+        if ($this->hasApiTag($property)) {
+            return true;
+        }
+
+        if ($this->hasApiTag($property->getClass())) {
+            return true;
+        }
+
+        return false;
     }
 
     private function hasApiTag(\Sami\Reflection\Reflection $reflection)

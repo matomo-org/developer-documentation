@@ -17,10 +17,11 @@ $iterator = Finder::create()
     ->files()
     ->name('*.php')
     ->exclude('tests')
-    ->in(array(PIWIK_DOCUMENT_ROOT . '/core', PIWIK_DOCUMENT_ROOT . '/plugins'))
+    ->in(array(PIWIK_DOCUMENT_ROOT . '/core'))
 ;
 
 $latestStable = file_get_contents('http://builds.piwik.org/LATEST_BETA');
+$latestStable = trim($latestStable);
 
 if (empty($latestStable)) {
     echo 'Unable to fetch latest version';
@@ -28,8 +29,8 @@ if (empty($latestStable)) {
 }
 
 $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
-    ->addFromTags($latestStable)
-    ->add('master', 'master branch');
+    ->add('master', 'master branch')
+    ->add($latestStable, 'latest stable');
 
 return new Sami($iterator, array(
     'theme'                => 'github',
