@@ -22,17 +22,17 @@ $iterator = Finder::create()
 ;
 
 $latestStable = file_get_contents('http://builds.piwik.org/LATEST_BETA');
-/*
+
 $versions = GitVersionCollection::create($dir)
     ->addFromTags($latestStable)
     ->add('master', 'master branch');
-*/
+
 return new Sami($iterator, array(
     'theme'                => 'github',
-   // 'versions'             => $versions,
+    'versions'             => $versions,
     'title'                => 'Piwik API',
-    'build_dir'            => __DIR__.'/docs',
-    'cache_dir'            => __DIR__.'/cache',
+    'build_dir'            => __DIR__.'/docs/%version%',
+    'cache_dir'            => __DIR__.'/cache/%version%',
     'template_dirs'        => array(__DIR__.'/vendor/phine/sami-github'),
     'default_opened_level' => 5,
     'filter'               => new ApiFilter()
