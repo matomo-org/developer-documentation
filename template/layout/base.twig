@@ -1,0 +1,13 @@
+{% block title %}
+{% set parts = title|split("\\") %}
+{% set path = parts|slice(0, -1)|join("\\") %}
+{% set name = parts|slice(-1, 1)|join("\\") %}
+{% if path|length > 0 %}
+<small>{{ path }}</small>
+
+{% endif %}
+{{ name }}
+{% for i in range(0, name|length - 1) %}={% endfor %}
+{% endblock %}
+{% block content %}
+{% endblock %}

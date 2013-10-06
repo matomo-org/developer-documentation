@@ -1,0 +1,128 @@
+{% extends "layout/base.twig" %}
+
+{% from "macros.twig" import class_item, class_name, class_type, member_signature %}
+
+{% block title %}
+{% set title = class %}
+{{ parent() }}
+{% endblock %}
+
+{% block content %}
+{% if class.shortdesc %}
+
+{{ class.shortdesc }}
+{% endif %}
+{% if class.longdesc %}
+
+Description
+-----------
+
+{{ class.longdesc }}
+{% endif %}
+
+Signature
+---------
+
+- It is a(n) **{{ class_type(class) }}**.
+{% if class.final %}
+- The {{ class_type(class) }} has been marked as **final**.
+{% endif %}
+{% if class.interfaces|length > 1 %}
+- It implements the following interfaces:
+{% for interface in class.interfaces %}
+{{ class_item(interface, false, "    ") }}
+{% endfor %}
+{% elseif class.interfaces|length > 0 %}
+- It implements the {{ class_name(class.interfaces[0], true) }} interface.
+{% endif %}
+{% if class.parent %}
+- It is a subclass of {{ class_name(class.parent, true) }}.
+{% endif %}
+{% if class.constants %}
+
+Constants
+---------
+
+This {{ class_type(class) }} defines the following constants:
+
+{% for constant in class.constants %}
+- [`{{ constant.name }}`](#{{ constant.name }}){% if constant.shortdesc %} &mdash; {{ constant.shortdesc }}{% endif %}
+
+{% endfor %}
+{% for constant in class.constants if constant.longdesc %}
+
+### `{{ constant.name }}` <a name="{{ constant.name }}"></a>
+
+{{ constant.longdesc }}
+{% endfor %}
+{% endif %}
+{% if class.properties %}
+
+Properties
+----------
+
+This {{ class_type(class) }} defines the following properties:
+
+{% for property in class.properties %}
+- [`${{ property.name }}`](#${{ property.name }}){% if property.shortdesc %} &mdash; {{ property.shortdesc }}{% endif %}
+
+{% endfor %}
+{% for property in class.properties %}
+
+### `${{ property.name }}` <a name="{{ property.name }}"></a>
+{% if property.shortdesc %}
+
+{{ property.shortdesc }}
+{% endif %}
+{% if property.longdesc %}
+
+#### Description
+
+{{ property.longdesc }}
+{% endif %}
+
+#### Signature
+
+{{ member_signature("property", property) }}
+{% endfor %}
+{% endif %}
+{% if class.methods %}
+
+Methods
+-------
+
+The {{ class_type(class) }} defines the following methods:
+
+{% for method in class.methods %}
+- [`{{ method.name }}()`](#{{ method.name }}){% if method.shortdesc %} &mdash; {{ method.shortdesc }}{% endif %}
+
+{% endfor %}
+
+{% for method in class.methods %}
+### `{{ method.name }}()` <a name="{{ method.name }}"></a>
+{% if method.shortdesc %}
+
+{{ method.shortdesc }}
+{% endif %}
+{% if method.longdesc %}
+
+#### Description
+
+{{ method.longdesc }}
+{% endif %}
+{% if method.tags("see") %}
+
+#### See Also
+
+{% for tag in method.tags("see") %}
+- `{{ tag[0] }}`{% if tag[1] is defined %} &mdash; {{ tag[1:]|join(" ") }}{% endif %}
+
+{% endfor %}
+{% endif %}
+
+#### Signature
+
+{{ member_signature("method", method) }}
+{% endfor %}
+{% endif %}
+{% endblock %}

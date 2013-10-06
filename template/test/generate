@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+BASE=$(readlink -f $(dirname "$0"))
+
+"$BASE/../bin/sami.php" update "$BASE/sami.php" --force

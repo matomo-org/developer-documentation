@@ -1,0 +1,19 @@
+{% extends "layout/base.twig" %}
+
+{% from "macros.twig" import markdown_path %}
+
+{% block title %}
+{% set title = "Namespaces" %}
+{{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+This is a complete list of available namespaces:
+
+{% for namespace in namespaces %}
+- [`{{ namespace }}`]({{ namespace_path(namespace)|replace({".html": ""}) }})
+{% else %}
+- There are no namespaces available.
+{% endfor %}
+{% endblock %}

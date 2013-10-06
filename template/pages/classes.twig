@@ -1,0 +1,19 @@
+{% extends "layout/base.twig" %}
+
+{% from "macros.twig" import class_item %}
+
+{% block title %}
+{% set title = "Classes" %}
+{{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+This is a complete list of available classes:
+
+{% for class in classes if not class.interface %}
+{{ class_item(class) }}
+{% else %}
+- There are no classes available.
+{% endfor %}
+{% endblock %}

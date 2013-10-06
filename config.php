@@ -41,11 +41,12 @@ $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
 ;
 
 return new Sami($iterator, array(
-    'theme'                => 'symfony',
+    'theme'                => 'markdown',
     'versions'             => $versions,
-    'title'                => 'Piwik API',
+    'title'                => 'Piwik Plugin API',
     'build_dir'            => __DIR__.'/docs/%version%',
     'cache_dir'            => __DIR__.'/cache/%version%',
+    'template_dirs'        => array(__DIR__.'/template'),
     'default_opened_level' => 5,
     'filter'               => new ApiFilter()
 ));
