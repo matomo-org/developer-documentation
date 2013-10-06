@@ -1,0 +1,26 @@
+{
+    "name": "piwik/pluginapi-doc-generator",
+    "description": "Generates plugin API documentation",
+    "keywords": ["piwik","web","analytics"],
+    "homepage": "http://piwik.org",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "The Piwik Team",
+            "email": "hello@piwik.org",
+            "homepage": "http://piwik.org/the-piwik-team/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/tsteur/Sami"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "piwik/piwik": "dev-master",
+        "tsteur/sami": "dev-master",
+        "phine/sami-github": "1.0.4"
+    }
+}
