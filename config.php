@@ -1,7 +1,7 @@
 <?php
 $dir = dirname(__FILE__) == '/' ? '' : dirname(__FILE__);
 
-define('PIWIK_DOCUMENT_ROOT', $dir . '/vendor/piwik/piwik');
+define('PIWIK_DOCUMENT_ROOT', $dir . '/piwik');
 define('PIWIK_USER_PATH', PIWIK_DOCUMENT_ROOT);
 define('PIWIK_INCLUDE_PATH', PIWIK_DOCUMENT_ROOT);
 
@@ -16,14 +16,18 @@ use Symfony\Component\Finder\Finder;
 $iterator = Finder::create()
     ->files()
     ->name('*.php')
-    ->exclude('Resources')
     ->exclude('tests')
     ->in(array(PIWIK_DOCUMENT_ROOT . '/core', PIWIK_DOCUMENT_ROOT . '/plugins'))
 ;
 
 $latestStable = file_get_contents('http://builds.piwik.org/LATEST_BETA');
 
-$versions = GitVersionCollection::create($dir)
+if (empty($latestStable)) {
+    echo 'Unable to fetch latest version';
+    exit(1);
+}
+
+$versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
     ->addFromTags($latestStable)
     ->add('master', 'master branch');
 
