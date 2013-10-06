@@ -10,10 +10,6 @@ Description
 
 and save it
 
-Signature
----------
-
-- It is a(n) **class**.
 
 Constants
 ---------

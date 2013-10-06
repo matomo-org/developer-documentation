@@ -19,10 +19,6 @@ Currently, Piwik supports the following logging backends:
 The logging utility can be configured by manipulating the INI config options in the
 [log] section.
 
-Signature
----------
-
-- It is a(n) **class**.
 
 Constants
 ---------

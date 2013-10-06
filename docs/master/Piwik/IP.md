@@ -20,10 +20,6 @@ We&#039;re not using the network address format (in_addr) for socket functions,
 so we don&#039;t have to worry about incompatibility with Windows UNICODE
 and inetPtonW().
 
-Signature
----------
-
-- It is a(n) **class**.
 
 Constants
 ---------

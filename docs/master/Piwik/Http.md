@@ -10,10 +10,6 @@ Description
 
 Used to check for the latest Piwik version and download updates.
 
-Signature
----------
-
-- It is a(n) **class**.
 
 Methods
 -------
