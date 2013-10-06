@@ -19,7 +19,6 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "piwik/piwik": "dev-master",
         "tsteur/sami": "dev-master",
         "phine/sami-github": "1.0.4"
     }
