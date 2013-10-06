@@ -1,3 +1,4 @@
+git checkout docs
 rm -rf cache
 mkdir cache
 rm -rf docs
