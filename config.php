@@ -30,7 +30,8 @@ if (empty($latestStable)) {
 
 $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
     ->add('master', 'master branch')
-    ->add($latestStable, 'latest stable');
+    //->add($latestStable, 'latest stable')
+;
 
 return new Sami($iterator, array(
     'theme'                => 'github',
