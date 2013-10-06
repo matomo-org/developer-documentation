@@ -20,10 +20,10 @@ Description
 {{ class.longdesc }}
 {% endif %}
 
+{% if class.final or class.interfaces|length > 0 or class.parent %}
 Signature
 ---------
 
-- It is a(n) **{{ class_type(class) }}**.
 {% if class.final %}
 - The {{ class_type(class) }} has been marked as **final**.
 {% endif %}
@@ -37,6 +37,7 @@ Signature
 {% endif %}
 {% if class.parent %}
 - It is a subclass of {{ class_name(class.parent, true) }}.
+{% endif %}
 {% endif %}
 {% if class.constants %}
 
