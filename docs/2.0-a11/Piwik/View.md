@@ -5,10 +5,6 @@ View
 
 View class to render the user interface
 
-Signature
----------
-
-- It implements the `Piwik\View\ViewInterface` interface.
 
 Methods
 -------

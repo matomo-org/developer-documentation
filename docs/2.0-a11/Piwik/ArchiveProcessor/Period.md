@@ -13,10 +13,6 @@ For example to process a week&#039;s data, we sum each day&#039;s data.
 
 Public methods can be called by the plugins that hook on the event &#039;ArchiveProcessor.Period.compute&#039;
 
-Signature
----------
-
-- It is a subclass of `Piwik\ArchiveProcessor`.
 
 Methods
 -------

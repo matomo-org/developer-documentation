@@ -5,10 +5,6 @@ Version
 
 Piwik version information.
 
-Signature
----------
-
-- The class has been marked as **final**.
 
 Constants
 ---------

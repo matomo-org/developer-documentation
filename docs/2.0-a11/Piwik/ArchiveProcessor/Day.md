@@ -5,10 +5,6 @@ Day
 
 This class
 
-Signature
----------
-
-- It is a subclass of `Piwik\ArchiveProcessor`.
 
 Methods
 -------

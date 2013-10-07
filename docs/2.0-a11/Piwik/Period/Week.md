@@ -3,10 +3,6 @@
 Week
 ====
 
-Signature
----------
-
-- It is a subclass of `Piwik\Period`.
 
 Methods
 -------

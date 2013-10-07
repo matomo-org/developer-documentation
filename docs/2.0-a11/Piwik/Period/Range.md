@@ -5,10 +5,6 @@ Range
 
 from a starting date to an ending date
 
-Signature
----------
-
-- It is a subclass of `Piwik\Period`.
 
 Methods
 -------
