@@ -19,6 +19,10 @@ class Hooks {
     {
         $code  = file_get_contents($phpFile);
 
+        if (false === strpos($code, 'PostEvent')) {
+            return array();
+        }
+
         $stmts = $this->parser->parse($code);
 
         $traverser = new PHPParser_NodeTraverser();
