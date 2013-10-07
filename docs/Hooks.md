@@ -1,17 +1,44 @@
 Hooks
 ==========
 
-This is a complete list of available hooks:
+This is a complete list of available hooks.
 
-# $eventName
+# Categories
+## [$eventName](#$eventname)
+## [API](#api)
+## [ArchiveProcessor](#archiveprocessor)
+## [AssetManager](#assetmanager)
+## [Config](#config)
+## [Goals](#goals)
+## [Installation](#installation)
+## [Live::GET_EXTRA_VISITOR_DETAILS_EVENT](#live::get_extra_visitor_details_event)
+## [Log](#log)
+## [LogDataPurger](#logdatapurger)
+## [Login](#login)
+## [Menu](#menu)
+## [PDFReports](#pdfreports)
+## [Provider](#provider)
+## [Reporting](#reporting)
+## [Request](#request)
+## [Schema](#schema)
+## [SegmentEditor](#segmenteditor)
+## [Segments](#segments)
+## [Site](#site)
+## [SitesManager](#sitesmanager)
+## [TaskScheduler](#taskscheduler)
+## [Tracker](#tracker)
+## [Translate](#translate)
+## [Updater](#updater)
+## [User](#user)
+## [UsersManager](#usersmanager)
+## [Visualization](#visualization)
+## [WidgetsList](#widgetslist)
+## [sprintf(API](#sprintf(api)
+## [sprintf(Controller](#sprintf(controller)
 
-### $eventName
-_Defined in [/](https://github.com/piwik/piwik/blob/master/core/functions.php) in line [53](https://github.com/piwik/piwik/blob/master/core/functions.php#L53)_
+# Hooks
 
-
-Arguments:
-<pre><code>$params, $pending, $plugins</code></pre>
-
+## $eventName
 
 ### $eventName
 _Defined in [Piwik/Twig](https://github.com/piwik/piwik/blob/master/core/Twig.php) in line [108](https://github.com/piwik/piwik/blob/master/core/Twig.php#L108)_
@@ -20,7 +47,15 @@ _Defined in [Piwik/Twig](https://github.com/piwik/piwik/blob/master/core/Twig.ph
 Arguments:
 <pre><code>array(&amp;$str)</code></pre>
 
-# API
+
+### $eventName
+_Defined in [/](https://github.com/piwik/piwik/blob/master/core/functions.php) in line [53](https://github.com/piwik/piwik/blob/master/core/functions.php#L53)_
+
+
+Arguments:
+<pre><code>$params, $pending, $plugins</code></pre>
+
+## API
 
 ### API.Request.authenticate
 _Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [182](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L182)_
@@ -53,7 +88,7 @@ _Defined in [Piwik/Plugins/API/API](https://github.com/piwik/piwik/blob/master/p
 Arguments:
 <pre><code>array(&amp;$segments, $idSites)</code></pre>
 
-# ArchiveProcessor
+## ArchiveProcessor
 
 ### ArchiveProcessor.Day.compute
 _Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php) in line [105](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php#L105)_
@@ -70,7 +105,7 @@ _Defined in [Piwik/ArchiveProcessor/Period](https://github.com/piwik/piwik/blob/
 Arguments:
 <pre><code>array(&amp;$this)</code></pre>
 
-# AssetManager
+## AssetManager
 
 ### AssetManager.filterMergedJavaScripts
 _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [357](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L357)_
@@ -103,7 +138,7 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 Arguments:
 <pre><code>array(&amp;$stylesheets)</code></pre>
 
-# Config
+## Config
 
 ### Config.NoConfigurationFile
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [207](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L207)_
@@ -120,15 +155,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 Arguments:
 <pre><code>array($e), $pending = true</code></pre>
 
-# Goals
-
-### Goals.getReportsWithGoalMetrics
-_Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php) in line [39](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L39)_
-
-
-Arguments:
-<pre><code>array(&amp;$dimensions)</code></pre>
-
+## Goals
 
 ### Goals.getReportsWithGoalMetrics
 _Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php) in line [343](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L343)_
@@ -137,7 +164,15 @@ _Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/mast
 Arguments:
 <pre><code>array(&amp;$reportsWithGoals)</code></pre>
 
-# Installation
+
+### Goals.getReportsWithGoalMetrics
+_Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php) in line [39](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L39)_
+
+
+Arguments:
+<pre><code>array(&amp;$dimensions)</code></pre>
+
+## Installation
 
 ### Installation.startInstallation
 _Defined in [Piwik/Plugins/Installation/Installation](https://github.com/piwik/piwik/blob/master/plugins/Installation/Installation.php) in line [62](https://github.com/piwik/piwik/blob/master/plugins/Installation/Installation.php#L62)_
@@ -146,7 +181,16 @@ _Defined in [Piwik/Plugins/Installation/Installation](https://github.com/piwik/p
 Arguments:
 <pre><code>array($this)</code></pre>
 
-# Log
+## Live::GET_EXTRA_VISITOR_DETAILS_EVENT
+
+### Live::GET_EXTRA_VISITOR_DETAILS_EVENT
+_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [360](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L360)_
+
+
+Arguments:
+<pre><code>array(&amp;$result)</code></pre>
+
+## Log
 
 ### Log.formatDatabaseMessage
 _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [361](https://github.com/piwik/piwik/blob/master/core/Log.php#L361)_
@@ -171,7 +215,7 @@ _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php)
 Arguments:
 <pre><code>array(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
 
-# LogDataPurger
+## LogDataPurger
 
 ### LogDataPurger.ActionsToKeepInserted.newerThan
 _Defined in [Piwik/Plugins/PrivacyManager/LogDataPurger](https://github.com/piwik/piwik/blob/master/plugins/PrivacyManager/LogDataPurger.php) in line [231](https://github.com/piwik/piwik/blob/master/plugins/PrivacyManager/LogDataPurger.php#L231)_
@@ -184,15 +228,7 @@ _Defined in [Piwik/Plugins/PrivacyManager/LogDataPurger](https://github.com/piwi
 
 
 
-# Login
-
-### Login.initSession
-_Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php) in line [172](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php#L172)_
-
-
-Arguments:
-<pre><code>array(&amp;$info)</code></pre>
-
+## Login
 
 ### Login.initSession
 _Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [325](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L325)_
@@ -201,7 +237,15 @@ _Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piw
 Arguments:
 <pre><code>array($info)</code></pre>
 
-# Menu
+
+### Login.initSession
+_Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php) in line [172](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php#L172)_
+
+
+Arguments:
+<pre><code>array(&amp;$info)</code></pre>
+
+## Menu
 
 ### Menu.Admin.addItems
 _Defined in [Piwik/Menu/Admin](https://github.com/piwik/piwik/blob/master/core/Menu/Admin.php) in line [42](https://github.com/piwik/piwik/blob/master/core/Menu/Admin.php#L42)_
@@ -220,7 +264,7 @@ _Defined in [Piwik/Menu/Top](https://github.com/piwik/piwik/blob/master/core/Men
 
 
 
-# PDFReports
+## PDFReports
 
 ### PDFReports.allowMultipleReports
 _Defined in [Piwik/Plugins/PDFReports/API](https://github.com/piwik/piwik/blob/master/plugins/PDFReports/API.php) in line [728](https://github.com/piwik/piwik/blob/master/plugins/PDFReports/API.php#L728)_
@@ -301,7 +345,7 @@ _Defined in [Piwik/Plugins/PDFReports/API](https://github.com/piwik/piwik/blob/m
 Arguments:
 <pre><code>array(&amp;$parameters, $notificationInfo)</code></pre>
 
-# Provider
+## Provider
 
 ### Provider.getCleanHostname
 _Defined in [Piwik/Plugins/Provider/Provider](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php) in line [165](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L165)_
@@ -310,7 +354,7 @@ _Defined in [Piwik/Plugins/Provider/Provider](https://github.com/piwik/piwik/blo
 Arguments:
 <pre><code>array(&amp;$cleanHostname, $hostname)</code></pre>
 
-# Reporting
+## Reporting
 
 ### Reporting.createDatabase
 _Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [62](https://github.com/piwik/piwik/blob/master/core/Db.php#L62)_
@@ -327,7 +371,7 @@ _Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) i
 Arguments:
 <pre><code>array(&amp;$dbInfos)</code></pre>
 
-# Request
+## Request
 
 ### Request.dispatch
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [122](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L122)_
@@ -352,19 +396,19 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 ### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [290](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L290)_
-
-
-
-
-### Request.initAuthenticationObject
 _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php) in line [120](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php#L120)_
 
 
 Arguments:
 <pre><code>array($allowCookieAuthentication = true)</code></pre>
 
-# Schema
+
+### Request.initAuthenticationObject
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [290](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L290)_
+
+
+
+## Schema
 
 ### Schema.loadSchema
 _Defined in [Piwik/Db/Schema](https://github.com/piwik/piwik/blob/master/core/Db/Schema.php) in line [134](https://github.com/piwik/piwik/blob/master/core/Db/Schema.php#L134)_
@@ -373,7 +417,7 @@ _Defined in [Piwik/Db/Schema](https://github.com/piwik/piwik/blob/master/core/Db
 Arguments:
 <pre><code>array(&amp;$schema)</code></pre>
 
-# SegmentEditor
+## SegmentEditor
 
 ### SegmentEditor.deactivate
 _Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php) in line [313](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php#L313)_
@@ -382,7 +426,7 @@ _Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/piwik/piwik/blo
 Arguments:
 <pre><code>array(&amp;$idSegment)</code></pre>
 
-# Segments
+## Segments
 
 ### Segments.getKnownSegmentsToArchiveAllSites
 _Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [59](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L59)_
@@ -399,7 +443,7 @@ _Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/cor
 Arguments:
 <pre><code>array(&amp;$segments, $idSite)</code></pre>
 
-# Site
+## Site
 
 ### Site.getSiteAttributes
 _Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [64](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L64)_
@@ -408,7 +452,7 @@ _Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/cor
 Arguments:
 <pre><code>array(&amp;$content, $idSite)</code></pre>
 
-# SitesManager
+## SitesManager
 
 ### SitesManager.deleteSite.end
 _Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [596](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L596)_
@@ -417,7 +461,7 @@ _Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob
 Arguments:
 <pre><code>array($idSite)</code></pre>
 
-# TaskScheduler
+## TaskScheduler
 
 ### TaskScheduler.getScheduledTasks
 _Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [50](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L50)_
@@ -426,7 +470,7 @@ _Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/cor
 Arguments:
 <pre><code>array(&amp;$tasks)</code></pre>
 
-# Tracker
+## Tracker
 
 ### Tracker.createDatabase
 _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [573](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L573)_
@@ -547,7 +591,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 Arguments:
 <pre><code>array(&amp;$this-&gt;visitorInfo)</code></pre>
 
-# Translate
+## Translate
 
 ### Translate.getClientSideTranslationKeys
 _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [187](https://github.com/piwik/piwik/blob/master/core/Translate.php#L187)_
@@ -556,14 +600,14 @@ _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Tr
 Arguments:
 <pre><code>array(&amp;$result)</code></pre>
 
-# Updater
+## Updater
 
 ### Updater.checkForUpdates
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [311](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L311)_
 
 
 
-# User
+## User
 
 ### User.getLanguage
 _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [133](https://github.com/piwik/piwik/blob/master/core/Translate.php#L133)_
@@ -580,7 +624,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 Arguments:
 <pre><code>array($e), $pending = true</code></pre>
 
-# UsersManager
+## UsersManager
 
 ### UsersManager.addUser
 _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [402](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L402)_
@@ -605,7 +649,7 @@ _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob
 Arguments:
 <pre><code>array($userLogin)</code></pre>
 
-# Visualization
+## Visualization
 
 ### Visualization.addVisualizations
 _Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php) in line [157](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php#L157)_
@@ -638,7 +682,7 @@ _Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/cor
 Arguments:
 <pre><code>array($this)</code></pre>
 
-# WidgetsList
+## WidgetsList
 
 ### WidgetsList.addWidgets
 _Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [62](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L62)_
@@ -651,16 +695,7 @@ _Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/
 
 the documentation for tihs widetlist
 
-# Live::GET_EXTRA_VISITOR_DETAILS_EVENT
-
-### Live::GET_EXTRA_VISITOR_DETAILS_EVENT
-_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [360](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L360)_
-
-
-Arguments:
-<pre><code>array(&amp;$result)</code></pre>
-
-# sprintf(API
+## sprintf(API
 
 ### sprintf(API.%s.%s, $pluginName, $methodName)
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [188](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L188)_
@@ -693,7 +728,7 @@ _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/AP
 Arguments:
 <pre><code>$endHookParams</code></pre>
 
-# sprintf(Controller
+## sprintf(Controller
 
 ### sprintf(Controller.%s.%s, $module, $action)
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [123](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L123)_

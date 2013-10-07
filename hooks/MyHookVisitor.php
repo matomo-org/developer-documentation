@@ -71,10 +71,11 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
             }
 
             $event = array(
-                'name'  => '',
-                'file'  => $this->piwikFile,
-                'line'  => $node->getLine(),
-                'class' => $this->getCurrentClass(),
+                'name'      => '',
+                'category'  => '',
+                'file'      => $this->piwikFile,
+                'line'      => $node->getLine(),
+                'class'     => $this->getCurrentClass(),
                 'namespace' => $this->getCurrentNamespace(),
             );
 
@@ -94,9 +95,12 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
 
             $args = $node->args;
             if (!empty($args)) {
-                $eventArg  = array_shift($args);
+                $eventArg = array_shift($args);
 
-                $event['name'] = $this->getArg($eventArg);
+                $event['name'] = str_replace("'", '', $this->getArg($eventArg));
+
+                $categories        = explode('.', $event['name']);
+                $event['category'] = array_shift($categories);
 
                 $event['arguments'] = array();
                 foreach ($args as $arg)  {

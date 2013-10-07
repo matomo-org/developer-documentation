@@ -1,16 +1,25 @@
 Hooks
 ==========
 
-This is a complete list of available hooks:
+This is a complete list of available hooks.
+
+# Categories
+{% set currentCategory = '' %}
+{% for hook in hooks %}
+{% if (hook.category) != (currentCategory) %}{% set currentCategory = hook.category %}
+## [{{ hook.category }}](#{{ hook.category|lower }})
+{% endif %}
+{% endfor %}
+
+# Hooks
 
 {% set currentCategory = '' %}
 {% for hook in hooks %}
-{% set hookCategory = hook.name|replace({"'": ''})|split('.')|first %}
-{% if (hookCategory) != (currentCategory) %}{% set currentCategory = hookCategory %}
-# {{ hookCategory }}
+{% if (hook.category) != (currentCategory) %}{% set currentCategory = hook.category %}
+## {{ hook.category }}
 {% endif %}
 
-### {{ hook.name|replace({"'": ''}) }}
+### {{ hook.name }}
 _Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piwik/blob/master/{{ hook.file }}) in line [{{ hook.line }}](https://github.com/piwik/piwik/blob/master/{{ hook.file }}#L{{ hook.line }})_
 
 {% if hook.comment %}
