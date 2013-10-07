@@ -14,10 +14,10 @@ require 'hooks/hooks.php';
 ini_set('xdebug.max_nesting_level', 2000);
 
 $target   = __DIR__ . '/docs/Hooks.md';
-$piwikDir = __DIR__ . '/piwik/core';
+$piwikDir = __DIR__ . '/piwik/';
 
 $files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($piwikDir));
-$phpFiles = new RegexIterator($files, '/\.php$/');
+$phpFiles = new RegexIterator($files, '/piwik\/(core|plugins)(.*)\.php$/');
 
 try {
 
@@ -25,8 +25,8 @@ try {
     $view  = array('hooks' => array());
 
     foreach ($phpFiles as $phpFile) {
-
-        $foundHooks = $hooks->searchForHooksInFile($piwikDir, $phpFile);
+        $relativeFileName = str_replace($piwikDir, '', $phpFile);
+        $foundHooks = $hooks->searchForHooksInFile($relativeFileName, $phpFile);
 
         if (!empty($foundHooks)) {
             foreach ($foundHooks as $hook) {

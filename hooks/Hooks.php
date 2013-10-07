@@ -15,16 +15,15 @@ class Hooks {
         $this->parser = new PHPParser_Parser(new PHPParser_Lexer);
     }
 
-    public function searchForHooksInFile($piwikDir, $phpFile)
+    public function searchForHooksInFile($filename, $phpFile)
     {
-        $relativeFileName = str_replace($piwikDir, '', $phpFile);
-
         $code  = file_get_contents($phpFile);
+
         $stmts = $this->parser->parse($code);
 
         $traverser = new PHPParser_NodeTraverser();
         $traverser->addVisitor(new MyConstantVisitor());
-        $traverser->addVisitor(new MyHookVisitor($relativeFileName));
+        $traverser->addVisitor(new MyHookVisitor($filename));
         $hooks = $traverser->traverse($stmts);
 
         return $hooks;
