@@ -15,7 +15,7 @@ class Hooks {
         $this->parser = new PHPParser_Parser(new PHPParser_Lexer);
     }
 
-    function searchForHooksInFile($piwikDir, $phpFile)
+    public function searchForHooksInFile($piwikDir, $phpFile)
     {
         $relativeFileName = str_replace($piwikDir, '', $phpFile);
 
@@ -26,6 +26,15 @@ class Hooks {
         $traverser->addVisitor(new MyConstantVisitor());
         $traverser->addVisitor(new MyHookVisitor($relativeFileName));
         $hooks = $traverser->traverse($stmts);
+
+        return $hooks;
+    }
+
+    public function sortHooksByName($hooks)
+    {
+        usort($hooks, function ($hook1, $hook2) {
+            return $hook1['name'] > $hook2['name'] ? 1 : -1;
+        });
 
         return $hooks;
     }

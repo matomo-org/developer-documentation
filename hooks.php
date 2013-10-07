@@ -35,6 +35,8 @@ try {
         }
     }
 
+    $view['hooks'] = $hooks->sortHooksByName($view['hooks']);
+
     $hooks->generateDocumentation($view, $target);
 
 } catch (Exception $e) {
