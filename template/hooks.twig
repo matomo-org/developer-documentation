@@ -1,0 +1,19 @@
+Hooks
+==========
+
+This is a complete list of available hooks:
+
+{% for hook in hooks %}
+### {{ hook.name|replace({"'": ''}) }}
+_Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piwik/blob/master/core{{ hook.file }}) in line [{{ hook.line }}](https://github.com/piwik/piwik/blob/master/core{{ hook.file }}#L{{ hook.line }})_
+
+{% if hook.comment %}
+{{ hook.comment.shortDesc }}{% if hook.comment.longDesc %} _{{ hook.comment.longDesc }}_{% endif %}
+{% endif %}
+
+{% if hook.arguments %}
+Arguments:
+<pre><code>{{ hook.arguments|join(', ') }}</code></pre>
+{% endif %}
+
+{% endfor %}
