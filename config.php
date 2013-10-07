@@ -35,8 +35,10 @@ if (empty($latestStable)) {
     exit(1);
 }
 
+$latestStable = '';
 $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
     ->add('master', 'master branch')
+    ->add('2.0-a11', 'latest stable')
     //->add($latestStable, 'latest stable')
 ;
 
