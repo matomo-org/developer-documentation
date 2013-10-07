@@ -18,12 +18,16 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
 
     public function acceptClass(ClassReflection $class)
     {
-        if ($this->hasApiTag($class)) {
-            return true;
-        }
-
         if (!class_exists($class->getName())) {
             return false;
+        }
+
+        if ($this->inheritsFromBlacklistedClass($class)) {
+            return false;
+        }
+
+        if ($this->hasApiTag($class)) {
+            return true;
         }
 
         if ($this->isAnyMethodAnApi($class)) {
@@ -70,6 +74,14 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
 
         return false;
     }
+
+    private function inheritsFromBlacklistedClass(ClassReflection $class)
+    {
+        $rc = new ReflectionClass($class->getName());
+
+        return $rc->isSubclassOf('Symfony\Component\Console\Command\Command');
+    }
+
 
     private function hasApiTag(\Sami\Reflection\Reflection $reflection)
     {
