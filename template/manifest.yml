@@ -4,6 +4,7 @@ global:
     "pages/namespaces.twig": "1. Namespaces.md"
     "pages/interfaces.twig": "3. Interfaces.md"
     "pages/classes.twig": "2. Classes.md"
+    "pages/index.twig": "4. Index.md"
 
 class:
     "pages/class.twig": "%s.md"

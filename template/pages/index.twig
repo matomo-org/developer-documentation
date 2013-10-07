@@ -1,0 +1,39 @@
+{% extends "layout/base.twig" %}
+
+{% from "macros.twig" import class_item, class_item, class_name, class_type, member_signature %}
+
+{% block title %}
+{% set title = "Index" %}
+{{ parent() }}
+{% endblock %}
+
+{% block content %}
+Letters
+---------
+{% for letter in 'A'..'Z' %}
+{% if items[letter] is defined and items[letter]|length > 1 %}
+ * {{ letter }}
+{% else %}
+ * {{ letter }}
+{% endif %}
+{% endfor %}
+
+
+{% for letter, elements in items -%}
+
+
+### {{ letter }}
+
+{%- for element in elements %}
+{%- set type = element[0] %}
+{%- set value = element[1] %}
+{%- if 'class' == type -%}
+ * {{ class_name(value, true) }}{% if has_namespaces %} &mdash; _Class in namespace {{ (value.namespace) }}_{% endif %} {{ value.shortdesc|desc(value) }}
+{%- elseif 'method' == type -%}
+ * {{ (value) }}() &mdash; _Method in class {{ (value.class) }}_ {{ value.shortdesc|desc(value.class) }}
+{%- elseif 'property' == type -%}
+ * ${{ (value) }} &mdash; _Property in class {{ (value.class) }}_ {{ value.shortdesc|desc(value.class) }}
+{%- endif %}
+{%- endfor %}
+{%- endfor %}
+{% endblock %}
