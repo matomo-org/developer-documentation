@@ -3,6 +3,8 @@
 Command
 =======
 
+BaseClass for console commands.
+
 Signature
 ---------
 
