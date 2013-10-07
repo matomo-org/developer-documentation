@@ -3,7 +3,13 @@ Hooks
 
 This is a complete list of available hooks:
 
+{% set currentCategory = '' %}
 {% for hook in hooks %}
+{% set hookCategory = hook.name|replace({"'": ''})|split('.')|first %}
+{% if (hookCategory) != (currentCategory) %}{% set currentCategory = hookCategory %}
+# {{ hookCategory }}
+{% endif %}
+
 ### {{ hook.name|replace({"'": ''}) }}
 _Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piwik/blob/master/{{ hook.file }}) in line [{{ hook.line }}](https://github.com/piwik/piwik/blob/master/{{ hook.file }}#L{{ hook.line }})_
 
