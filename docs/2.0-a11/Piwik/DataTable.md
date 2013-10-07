@@ -363,7 +363,7 @@ Returns the Row that has a column &#039;label&#039; with the value $label
 - It accepts the following parameter(s):
     - `$label`
 - _Returns:_ The row if found, false otherwise
-    - `Piwik\DataTable\Row`
+    - [`Row`](../Piwik/DataTable/Row.md)
     - `bool`
 
 ### `getRowIdFromLabel()` <a name="getRowIdFromLabel"></a>
@@ -377,7 +377,7 @@ Returns the row id for the givel label
     - `$label`
 - It can return one of the following values:
     - `int`
-    - `Piwik\DataTable\Row`
+    - [`Row`](../Piwik/DataTable/Row.md)
 
 ### `getEmptyClone()` <a name="getEmptyClone"></a>
 
@@ -400,7 +400,7 @@ Returns the ith row in the array
 - It accepts the following parameter(s):
     - `$id`
 - _Returns:_ or false if not found
-    - `Piwik\DataTable\Row`
+    - [`Row`](../Piwik/DataTable/Row.md)
 
 ### `getRowFromIdSubDataTable()` <a name="getRowFromIdSubDataTable"></a>
 
@@ -412,7 +412,7 @@ Returns a row that has the subtable ID matching the parameter
 - It accepts the following parameter(s):
     - `$idSubTable`
 - _Returns:_ false if not found
-    - `Piwik\DataTable\Row`
+    - [`Row`](../Piwik/DataTable/Row.md)
     - `bool`
 
 ### `addRow()` <a name="addRow"></a>
@@ -423,8 +423,8 @@ Add a row to the table and rebuild the index if necessary
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$row` (`Piwik\DataTable\Row`)
-- It returns a(n) `Piwik\DataTable\Row` value.
+    - `$row` ([`Row`](../Piwik/DataTable/Row.md))
+- It returns a(n) [`Row`](../Piwik/DataTable/Row.md) value.
 
 ### `addSummaryRow()` <a name="addSummaryRow"></a>
 
@@ -434,9 +434,9 @@ Sets the summary row (a dataTable can have only one summary row)
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$row` (`Piwik\DataTable\Row`)
+    - `$row` ([`Row`](../Piwik/DataTable/Row.md))
 - _Returns:_ Returns $row.
-    - `Piwik\DataTable\Row`
+    - [`Row`](../Piwik/DataTable/Row.md)
 
 ### `getId()` <a name="getId"></a>
 
@@ -476,7 +476,7 @@ Returns the array of Row
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `Piwik\DataTable\Row` value.
+- It returns a(n) [`Row[]`](../Piwik/DataTable/Row.md) value.
 
 ### `getColumn()` <a name="getColumn"></a>
 
@@ -541,7 +541,7 @@ Returns the first row of the DataTable
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `Piwik\DataTable\Row` value.
+- It returns a(n) [`Row`](../Piwik/DataTable/Row.md) value.
 
 ### `getLastRow()` <a name="getLastRow"></a>
 
@@ -550,7 +550,7 @@ Returns the last row of the DataTable
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `Piwik\DataTable\Row` value.
+- It returns a(n) [`Row`](../Piwik/DataTable/Row.md) value.
 
 ### `getRowsCountRecursive()` <a name="getRowsCountRecursive"></a>
 

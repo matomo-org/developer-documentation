@@ -135,7 +135,7 @@ Note: Every DataTable instance returned will have at most one row in it.
     - `$names`
 - _Returns:_ False if no value with the given names. Based on the number of sites/periods, the result can be a DataTable\Map, which contains DataTable instances.
     - [`DataTable`](../Piwik/DataTable.md)
-    - `Piwik\DataTable\Map`
+    - [`Map`](../Piwik/DataTable/Map.md)
     - `bool`
 
 ### `getDataTable()` <a name="getDataTable"></a>
@@ -157,7 +157,7 @@ will be returned.
     - `$idSubtable`
 - It can return one of the following values:
     - [`DataTable`](../Piwik/DataTable.md)
-    - `Piwik\DataTable\Map`
+    - [`Map`](../Piwik/DataTable/Map.md)
     - `bool`
 
 ### `getDataTableExpanded()` <a name="getDataTableExpanded"></a>
@@ -213,7 +213,7 @@ or optionally fetches a given subtable with $idSubtable
     - `$depth`
 - It can return one of the following values:
     - [`DataTable`](../Piwik/DataTable.md)
-    - `Piwik\DataTable\Map`
+    - [`Map`](../Piwik/DataTable/Map.md)
 
 ### `getParams()` <a name="getParams"></a>
 
