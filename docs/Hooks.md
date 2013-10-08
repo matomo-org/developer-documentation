@@ -5,7 +5,6 @@ This is a complete list of available hooks.
 
 ## Categories
 
-- [$eventName](#$eventname)
 - [API](#api)
 - [ArchiveProcessor](#archiveprocessor)
 - [AssetManager](#assetmanager)
@@ -35,23 +34,6 @@ This is a complete list of available hooks.
 - [UsersManager](#usersmanager)
 - [Visualization](#visualization)
 - [WidgetsList](#widgetslist)
-
-## $eventName
-
-#### $eventName
-_Defined in [/](https://github.com/piwik/piwik/blob/master/core/functions.php) in line [53](https://github.com/piwik/piwik/blob/master/core/functions.php#L53)_
-
-
-Arguments:
-<pre><code>$params, $pending, $plugins</code></pre>
-
-
-#### $eventName
-_Defined in [Piwik/Twig](https://github.com/piwik/piwik/blob/master/core/Twig.php) in line [108](https://github.com/piwik/piwik/blob/master/core/Twig.php#L108)_
-
-
-Arguments:
-<pre><code>array(&amp;$str)</code></pre>
 
 ## API
 

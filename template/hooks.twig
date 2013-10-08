@@ -6,14 +6,14 @@ This is a complete list of available hooks.
 ## Categories
 
 {% set currentCategory = '' %}
-{% for hook in hooks %}
+{% for hook in hooks if hook.name != '$eventName' %}
 {% if (hook.category) != (currentCategory) %}{% set currentCategory = hook.category %}
 - [{{ hook.category }}](#{{ hook.category|lower }})
 {% endif %}
 {% endfor %}
 
 {% set currentCategory = '' %}
-{% for hook in hooks %}
+{% for hook in hooks if hook.name != '$eventName' %}
 {% if (hook.category) != (currentCategory) %}{% set currentCategory = hook.category %}
 ## {{ hook.category }}
 {% endif %}
