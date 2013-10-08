@@ -1,3 +1,5 @@
+#!/bin/bash
+
 git checkout docs
 rm -rf cache
 mkdir cache
