@@ -234,7 +234,7 @@ Callback Signature:
 ## Live
 
 #### Live.getExtraVisitorDetails
-_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [374](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L374)_
+_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [372](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L372)_
 
 This event is called in the Live.getVisitorProfile API method. Plugins can use this event
 to discover and add extra data to visitor profiles.
@@ -247,44 +247,78 @@ The following visitor profile elements can be set to augment the visitor profile
 - visitorAvatar: A URL to an image to display in the top left corner of the popup.
 - visitorDescription: Text to be used as the tooltip of the avatar image.
 
-Callback Signature: function (array &amp;$result);
-
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
 
 ## Log
 
 #### Log.formatDatabaseMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [392](https://github.com/piwik/piwik/blob/master/core/Log.php#L392)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [391](https://github.com/piwik/piwik/blob/master/core/Log.php#L391)_
 
+This event is called when trying to log an object to a database table. Plugins can use
+this event to convert objects to strings before they are logged.
 
+The $message parameter is the object that is being logged. Event handlers should
+check if the object is of a certain type and if it is, set $message to the
+string that should be logged.
 
 Callback Signature:
-<pre><code>function(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
+<pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
 
 
 #### Log.formatFileMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [347](https://github.com/piwik/piwik/blob/master/core/Log.php#L347)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [323](https://github.com/piwik/piwik/blob/master/core/Log.php#L323)_
 
+This event is called when trying to log an object to a file. Plugins can use
+this event to convert objects to strings before they are logged.
 
+The $message parameter is the object that is being logged. Event handlers should
+check if the object is of a certain type and if it is, set $message to the
+string that should be logged.
 
 Callback Signature:
-<pre><code>function(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
+<pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
 
 
 #### Log.formatScreenMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [377](https://github.com/piwik/piwik/blob/master/core/Log.php#L377)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [366](https://github.com/piwik/piwik/blob/master/core/Log.php#L366)_
 
+This event is called when trying to log an object to the screen. Plugins can use
+this event to convert objects to strings before they are logged.
 
+The $message parameter is the object that is being logged. Event handlers should
+check if the object is of a certain type and if it is, set $message to the
+string that should be logged.
+
+The result of this callback can be HTML so no sanitization is done on the result.
+This means YOU MUST SANITIZE THE MESSAGE YOURSELF if you use this event.
 
 Callback Signature:
-<pre><code>function(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
+<pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
 
 
 #### Log.getAvailableWriters
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [334](https://github.com/piwik/piwik/blob/master/core/Log.php#L334)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [300](https://github.com/piwik/piwik/blob/master/core/Log.php#L300)_
 
+This event is called when the Log instance is created. Plugins can use this event to
+make new logging writers available.
 
+A logging writer is a callback that takes the following arguments:
+  int $level, string $tag, string $datetime, string $message
+
+$level is the log level to use, $tag is the log tag used, $datetime is the date time
+of the logging call and $message is the formatted log message.
+
+Logging writers must be associated by name in the array passed to event handlers.
+
+Example handler:
+    function (&amp;$writers) {
+        $writers[&#039;myloggername&#039;] = function ($level, $tag, $datetime, $message) {
+            ...
+        }
+    }
+
+    // &#039;myloggername&#039; can now be used in the log_writers config option.
 
 Callback Signature:
 <pre><code>function(&amp;$writers)</code></pre>
