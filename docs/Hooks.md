@@ -10,6 +10,7 @@ This is a complete list of available hooks.
 - [ArchiveProcessor](#archiveprocessor)
 - [AssetManager](#assetmanager)
 - [Config](#config)
+- [Controller](#controller)
 - [Goals](#goals)
 - [Installation](#installation)
 - [Live::GET_EXTRA_VISITOR_DETAILS_EVENT](#live::get_extra_visitor_details_event)
@@ -34,18 +35,8 @@ This is a complete list of available hooks.
 - [UsersManager](#usersmanager)
 - [Visualization](#visualization)
 - [WidgetsList](#widgetslist)
-- [sprintf(API](#sprintf(api)
-- [sprintf(Controller](#sprintf(controller)
 
 ## $eventName
-
-#### $eventName
-_Defined in [Piwik/Twig](https://github.com/piwik/piwik/blob/master/core/Twig.php) in line [108](https://github.com/piwik/piwik/blob/master/core/Twig.php#L108)_
-
-
-Arguments:
-<pre><code>array(&amp;$str)</code></pre>
-
 
 #### $eventName
 _Defined in [/](https://github.com/piwik/piwik/blob/master/core/functions.php) in line [53](https://github.com/piwik/piwik/blob/master/core/functions.php#L53)_
@@ -54,14 +45,30 @@ _Defined in [/](https://github.com/piwik/piwik/blob/master/core/functions.php) i
 Arguments:
 <pre><code>$params, $pending, $plugins</code></pre>
 
-## API
 
-#### API.Request.authenticate
-_Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [182](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L182)_
+#### $eventName
+_Defined in [Piwik/Twig](https://github.com/piwik/piwik/blob/master/core/Twig.php) in line [108](https://github.com/piwik/piwik/blob/master/core/Twig.php#L108)_
 
 
 Arguments:
-<pre><code>array($token_auth)</code></pre>
+<pre><code>array(&amp;$str)</code></pre>
+
+## API
+
+#### API.$pluginName.$methodName
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [188](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L188)_
+
+
+Arguments:
+<pre><code>array(&amp;$finalParameters)</code></pre>
+
+
+#### API.$pluginName.$methodName.end
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [200](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L200)_
+
+
+Arguments:
+<pre><code>$endHookParams</code></pre>
 
 
 #### API.getReportMetadata
@@ -86,6 +93,30 @@ _Defined in [Piwik/Plugins/API/API](https://github.com/piwik/piwik/blob/master/p
 
 Arguments:
 <pre><code>array(&amp;$segments, $idSites)</code></pre>
+
+
+#### API.Request.authenticate
+_Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [182](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L182)_
+
+
+Arguments:
+<pre><code>array($token_auth)</code></pre>
+
+
+#### API.Request.dispatch
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [187](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L187)_
+
+
+Arguments:
+<pre><code>array(&amp;$finalParameters)</code></pre>
+
+
+#### API.Request.dispatch.end
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [201](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L201)_
+
+
+Arguments:
+<pre><code>$endHookParams</code></pre>
 
 ## ArchiveProcessor
 
@@ -139,14 +170,6 @@ Arguments:
 
 ## Config
 
-#### Config.NoConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [207](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L207)_
-
-
-Arguments:
-<pre><code>array($e), $pending = true</code></pre>
-
-
 #### Config.badConfigurationFile
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [274](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L274)_
 
@@ -154,15 +177,32 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 Arguments:
 <pre><code>array($e), $pending = true</code></pre>
 
-## Goals
 
-#### Goals.getReportsWithGoalMetrics
-_Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php) in line [343](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L343)_
+#### Config.NoConfigurationFile
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [207](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L207)_
 
 
 Arguments:
-<pre><code>array(&amp;$reportsWithGoals)</code></pre>
+<pre><code>array($e), $pending = true</code></pre>
 
+## Controller
+
+#### Controller.$module.$action
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [123](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L123)_
+
+
+Arguments:
+<pre><code>array($parameters)</code></pre>
+
+
+#### Controller.$module.$action.end
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [127](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L127)_
+
+
+Arguments:
+<pre><code>array(&amp;$result, $parameters)</code></pre>
+
+## Goals
 
 #### Goals.getReportsWithGoalMetrics
 _Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php) in line [39](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L39)_
@@ -170,6 +210,14 @@ _Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/mast
 
 Arguments:
 <pre><code>array(&amp;$dimensions)</code></pre>
+
+
+#### Goals.getReportsWithGoalMetrics
+_Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php) in line [343](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L343)_
+
+
+Arguments:
+<pre><code>array(&amp;$reportsWithGoals)</code></pre>
 
 ## Installation
 
@@ -693,54 +741,4 @@ _Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/
 _Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [44](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L44)_
 
 the documentation for tihs widetlist
-
-## sprintf(API
-
-#### sprintf(API.%s.%s, $pluginName, $methodName)
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [188](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L188)_
-
-
-Arguments:
-<pre><code>array(&amp;$finalParameters)</code></pre>
-
-
-#### sprintf(API.%s.%s.end, $pluginName, $methodName)
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [200](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L200)_
-
-
-Arguments:
-<pre><code>$endHookParams</code></pre>
-
-
-#### sprintf(API.Request.dispatch, $pluginName, $methodName)
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [187](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L187)_
-
-
-Arguments:
-<pre><code>array(&amp;$finalParameters)</code></pre>
-
-
-#### sprintf(API.Request.dispatch.end, $pluginName, $methodName)
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [201](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L201)_
-
-
-Arguments:
-<pre><code>$endHookParams</code></pre>
-
-## sprintf(Controller
-
-#### sprintf(Controller.%s.%s, $module, $action)
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [123](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L123)_
-
-
-Arguments:
-<pre><code>array($parameters)</code></pre>
-
-
-#### sprintf(Controller.%s.%s.end, $module, $action)
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [127](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L127)_
-
-
-Arguments:
-<pre><code>array(&amp;$result, $parameters)</code></pre>
 

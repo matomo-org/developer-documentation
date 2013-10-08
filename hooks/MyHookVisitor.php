@@ -99,6 +99,16 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
 
                 $event['name'] = str_replace("'", '', $this->getArg($eventArg));
 
+                if (false !== strpos($event['name'], 'sprintf')) {
+                    $event['name'] = str_replace("sprintf(", '', $event['name']);
+                    $event['name'] = str_replace(")", '', $event['name']);
+
+                    $partsOfName = explode(', ', $event['name']);
+                    if (2 <= count($partsOfName)) {
+                        $event['name'] = vsprintf(array_shift($partsOfName), $partsOfName);
+                    }
+                }
+
                 $categories        = explode('.', $event['name']);
                 $event['category'] = array_shift($categories);
 
