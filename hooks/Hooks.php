@@ -42,6 +42,55 @@ class Hooks {
         return $hooks;
     }
 
+    public function addUsages($hooks)
+    {
+        foreach ($hooks as &$hook) {
+
+            $hook['usages'] = array();
+
+            $pluginNames = $this->getPluginNames();
+
+            foreach ($pluginNames as $pluginName) {
+                $plugin = \Piwik\PluginsManager::getInstance()->loadPlugin($pluginName);
+                $registeredHooks = $plugin->getListHooksRegistered();
+
+                if (array_key_exists($hook['name'], $registeredHooks)) {
+                    $registeredMethod = $registeredHooks[$hook['name']];
+
+                    if (!is_string($registeredMethod)) {
+                        continue;
+                    }
+
+                    $className       = get_class($plugin);
+                    $reflectionClass = new ReflectionClass($className);
+                    $method = $reflectionClass->getMethod($registeredMethod);
+                    $hook['usages'][] = array(
+                        'methodName' => $method->getName(),
+                        'startLine'  => $method->getStartLine(),
+                        'className'  => $reflectionClass->getShortName(),
+                        'namespace'  => $reflectionClass->getNamespaceName(),
+                        'file'       => str_replace(PIWIK_INCLUDE_PATH, '', $reflectionClass->getFileName())
+                    );
+                }
+
+            }
+        }
+
+        return $hooks;
+    }
+
+    protected function getPluginNames()
+    {
+        $pluginDirs = glob(PIWIK_INCLUDE_PATH . '/plugins/*', GLOB_ONLYDIR);
+
+        $pluginNames = array();
+        foreach ($pluginDirs as $pluginDir) {
+            $pluginNames[] = basename($pluginDir);
+        }
+
+        return $pluginNames;
+    }
+
     public function generateDocumentation($viewVariables, $target)
     {
         $loader = new Twig_Loader_Filesystem(__DIR__ . '/../template');

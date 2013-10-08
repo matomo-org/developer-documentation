@@ -8,15 +8,20 @@
  * @package Piwik
  */
 
+define('PIWIK_DOCUMENT_ROOT', __DIR__ . '/piwik');
+define('PIWIK_USER_PATH', PIWIK_DOCUMENT_ROOT);
+define('PIWIK_INCLUDE_PATH', PIWIK_DOCUMENT_ROOT);
+
 require 'vendor/autoload.php';
+require_once PIWIK_INCLUDE_PATH . '/core/Loader.php';
+require_once PIWIK_INCLUDE_PATH . '/core/functions.php';
 require 'vendor/nikic/php-parser/lib/bootstrap.php';
 require 'hooks/Hooks.php';
 ini_set('xdebug.max_nesting_level', 2000);
 
 $target   = __DIR__ . '/docs/Hooks.md';
-$piwikDir = __DIR__ . '/piwik/';
 
-$files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($piwikDir));
+$files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(PIWIK_DOCUMENT_ROOT));
 $phpFiles = new RegexIterator($files, '/piwik\/(core|plugins)(.*)\.php$/');
 
 try {
@@ -25,7 +30,7 @@ try {
     $view  = array('hooks' => array());
 
     foreach ($phpFiles as $phpFile) {
-        $relativeFileName = str_replace($piwikDir, '', $phpFile);
+        $relativeFileName = str_replace(PIWIK_DOCUMENT_ROOT, '', $phpFile);
         $foundHooks = $hooks->searchForHooksInFile($relativeFileName, $phpFile);
 
         if (!empty($foundHooks)) {
@@ -36,6 +41,7 @@ try {
     }
 
     $view['hooks'] = $hooks->sortHooksByName($view['hooks']);
+    $view['hooks'] = $hooks->addUsages($view['hooks']);
 
     $hooks->generateDocumentation($view, $target);
 
