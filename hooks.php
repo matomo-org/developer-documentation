@@ -10,7 +10,7 @@
 
 require 'vendor/autoload.php';
 require 'vendor/nikic/php-parser/lib/bootstrap.php';
-require 'hooks/hooks.php';
+require 'hooks/Hooks.php';
 ini_set('xdebug.max_nesting_level', 2000);
 
 $target   = __DIR__ . '/docs/Hooks.md';
