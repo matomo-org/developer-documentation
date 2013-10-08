@@ -329,21 +329,21 @@ _Defined in [Piwik/Plugins/PrivacyManager/LogDataPurger](https://github.com/piwi
 ## Login
 
 #### Login.initSession
-_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [325](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L325)_
-
-
-
-Callback Signature:
-<pre><code>function($info)</code></pre>
-
-
-#### Login.initSession
 _Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php) in line [172](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php#L172)_
 
 
 
 Callback Signature:
 <pre><code>function(&amp;$info)</code></pre>
+
+
+#### Login.initSession
+_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [325](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L325)_
+
+
+
+Callback Signature:
+<pre><code>function($info)</code></pre>
 
 ## Menu
 
@@ -511,18 +511,18 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 #### Request.initAuthenticationObject
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [290](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L290)_
+
+
+
+
+#### Request.initAuthenticationObject
 _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php) in line [120](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php#L120)_
 
 
 
 Callback Signature:
 <pre><code>function($allowCookieAuthentication = true)</code></pre>
-
-
-#### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [290](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L290)_
-
-
 
 ## Schema
 
