@@ -28,7 +28,7 @@ _Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piw
 {% if hook.arguments %}
 
 Callback Signature:
-<pre><code>{{ hook.arguments|join(', ') }}</code></pre>
+<pre><code>{{ hook.arguments|replace({'array(': 'function('}) }}</code></pre>
 {% endif %}
 
 {% endfor %}

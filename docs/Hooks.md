@@ -43,7 +43,7 @@ _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/AP
 
 
 Callback Signature:
-<pre><code>array(&amp;$finalParameters)</code></pre>
+<pre><code>function(&amp;$finalParameters)</code></pre>
 
 
 #### API.$pluginName.$methodName.end
@@ -61,7 +61,7 @@ _Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/b
 
 
 Callback Signature:
-<pre><code>array(&amp;$availableReports, $parameters)</code></pre>
+<pre><code>function(&amp;$availableReports, $parameters)</code></pre>
 
 
 #### API.getReportMetadata.end
@@ -70,7 +70,7 @@ _Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/b
 
 
 Callback Signature:
-<pre><code>array(&amp;$availableReports, $parameters)</code></pre>
+<pre><code>function(&amp;$availableReports, $parameters)</code></pre>
 
 
 #### API.getSegmentsMetadata
@@ -79,7 +79,7 @@ _Defined in [Piwik/Plugins/API/API](https://github.com/piwik/piwik/blob/master/p
 
 
 Callback Signature:
-<pre><code>array(&amp;$segments, $idSites)</code></pre>
+<pre><code>function(&amp;$segments, $idSites)</code></pre>
 
 
 #### API.Request.authenticate
@@ -88,7 +88,7 @@ _Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/
 
 
 Callback Signature:
-<pre><code>array($token_auth)</code></pre>
+<pre><code>function($token_auth)</code></pre>
 
 
 #### API.Request.dispatch
@@ -97,7 +97,7 @@ _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/AP
 
 
 Callback Signature:
-<pre><code>array(&amp;$finalParameters)</code></pre>
+<pre><code>function(&amp;$finalParameters)</code></pre>
 
 
 #### API.Request.dispatch.end
@@ -116,7 +116,7 @@ _Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/mas
 
 
 Callback Signature:
-<pre><code>array(&amp;$this)</code></pre>
+<pre><code>function(&amp;$this)</code></pre>
 
 
 #### ArchiveProcessor.Period.compute
@@ -125,7 +125,7 @@ _Defined in [Piwik/ArchiveProcessor/Period](https://github.com/piwik/piwik/blob/
 
 
 Callback Signature:
-<pre><code>array(&amp;$this)</code></pre>
+<pre><code>function(&amp;$this)</code></pre>
 
 ## AssetManager
 
@@ -135,7 +135,7 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 
 
 Callback Signature:
-<pre><code>array(&amp;$mergedContent)</code></pre>
+<pre><code>function(&amp;$mergedContent)</code></pre>
 
 
 #### AssetManager.filterMergedStylesheets
@@ -144,7 +144,7 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 
 
 Callback Signature:
-<pre><code>array(&amp;$mergedContent)</code></pre>
+<pre><code>function(&amp;$mergedContent)</code></pre>
 
 
 #### AssetManager.getJavaScriptFiles
@@ -153,7 +153,7 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 
 
 Callback Signature:
-<pre><code>array(&amp;$jsFiles)</code></pre>
+<pre><code>function(&amp;$jsFiles)</code></pre>
 
 
 #### AssetManager.getStylesheetFiles
@@ -162,7 +162,7 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 
 
 Callback Signature:
-<pre><code>array(&amp;$stylesheets)</code></pre>
+<pre><code>function(&amp;$stylesheets)</code></pre>
 
 ## Config
 
@@ -172,7 +172,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 Callback Signature:
-<pre><code>array($e), $pending = true</code></pre>
+<pre><code>function($e)</code></pre>
 
 
 #### Config.NoConfigurationFile
@@ -181,7 +181,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 Callback Signature:
-<pre><code>array($e), $pending = true</code></pre>
+<pre><code>function($e)</code></pre>
 
 ## Controller
 
@@ -191,7 +191,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 Callback Signature:
-<pre><code>array($parameters)</code></pre>
+<pre><code>function($parameters)</code></pre>
 
 
 #### Controller.$module.$action.end
@@ -200,7 +200,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 Callback Signature:
-<pre><code>array(&amp;$result, $parameters)</code></pre>
+<pre><code>function(&amp;$result, $parameters)</code></pre>
 
 ## Goals
 
@@ -210,7 +210,7 @@ _Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/mast
 
 
 Callback Signature:
-<pre><code>array(&amp;$dimensions)</code></pre>
+<pre><code>function(&amp;$dimensions)</code></pre>
 
 
 #### Goals.getReportsWithGoalMetrics
@@ -219,7 +219,7 @@ _Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/mast
 
 
 Callback Signature:
-<pre><code>array(&amp;$reportsWithGoals)</code></pre>
+<pre><code>function(&amp;$reportsWithGoals)</code></pre>
 
 ## Installation
 
@@ -229,7 +229,7 @@ _Defined in [Piwik/Plugins/Installation/Installation](https://github.com/piwik/p
 
 
 Callback Signature:
-<pre><code>array($this)</code></pre>
+<pre><code>function($this)</code></pre>
 
 ## Live
 
@@ -247,8 +247,10 @@ The following visitor profile elements can be set to augment the visitor profile
 - visitorAvatar: A URL to an image to display in the top left corner of the popup.
 - visitorDescription: Text to be used as the tooltip of the avatar image.
 
+Callback Signature: function (array &amp;$result);
+
 Callback Signature:
-<pre><code>array(&amp;$result)</code></pre>
+<pre><code>function(&amp;$result)</code></pre>
 
 ## Log
 
@@ -258,7 +260,7 @@ _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php)
 
 
 Callback Signature:
-<pre><code>array(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
+<pre><code>function(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
 
 
 #### Log.formatFileMessage
@@ -267,7 +269,7 @@ _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php)
 
 
 Callback Signature:
-<pre><code>array(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
+<pre><code>function(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
 
 
 #### Log.formatScreenMessage
@@ -276,7 +278,7 @@ _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php)
 
 
 Callback Signature:
-<pre><code>array(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
+<pre><code>function(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
 
 
 #### Log.getAvailableWriters
@@ -285,7 +287,7 @@ _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php)
 
 
 Callback Signature:
-<pre><code>array(&amp;$writers)</code></pre>
+<pre><code>function(&amp;$writers)</code></pre>
 
 ## LogDataPurger
 
@@ -308,7 +310,7 @@ _Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob
 
 
 Callback Signature:
-<pre><code>array(&amp;$info)</code></pre>
+<pre><code>function(&amp;$info)</code></pre>
 
 
 #### Login.initSession
@@ -317,7 +319,7 @@ _Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piw
 
 
 Callback Signature:
-<pre><code>array($info)</code></pre>
+<pre><code>function($info)</code></pre>
 
 ## Menu
 
@@ -346,7 +348,7 @@ _Defined in [Piwik/Plugins/Provider/Provider](https://github.com/piwik/piwik/blo
 
 
 Callback Signature:
-<pre><code>array(&amp;$cleanHostname, $hostname)</code></pre>
+<pre><code>function(&amp;$cleanHostname, $hostname)</code></pre>
 
 ## Reporting
 
@@ -356,7 +358,7 @@ _Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) i
 
 
 Callback Signature:
-<pre><code>array(&amp;$db)</code></pre>
+<pre><code>function(&amp;$db)</code></pre>
 
 
 #### Reporting.getDatabaseConfig
@@ -365,7 +367,7 @@ _Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) i
 
 
 Callback Signature:
-<pre><code>array(&amp;$dbInfos)</code></pre>
+<pre><code>function(&amp;$dbInfos)</code></pre>
 
 ## Request
 
@@ -384,7 +386,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 Callback Signature:
-<pre><code>array(&amp;$result, $parameters)</code></pre>
+<pre><code>function(&amp;$result, $parameters)</code></pre>
 
 
 #### Request.dispatchCoreAndPluginUpdatesScreen
@@ -405,7 +407,7 @@ _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/mast
 
 
 Callback Signature:
-<pre><code>array($allowCookieAuthentication = true)</code></pre>
+<pre><code>function($allowCookieAuthentication = true)</code></pre>
 
 ## ScheduledReports
 
@@ -415,7 +417,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array(&amp;$allowMultipleReports, $notificationInfo = array(self::REPORT_TYPE_INFO_KEY =&gt; $reportType))</code></pre>
+<pre><code>function(&amp;$allowMultipleReports, $notificationInfo = function(self::REPORT_TYPE_INFO_KEY =&gt; $reportType))</code></pre>
 
 
 #### ScheduledReports.getRendererInstance
@@ -424,7 +426,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array(&amp;$reportRenderer, $notificationInfo)</code></pre>
+<pre><code>function(&amp;$reportRenderer, $notificationInfo)</code></pre>
 
 
 #### ScheduledReports.getReportFormats
@@ -433,7 +435,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array(&amp;$reportFormats, $notificationInfo = array(self::REPORT_TYPE_INFO_KEY =&gt; $reportType))</code></pre>
+<pre><code>function(&amp;$reportFormats, $notificationInfo = function(self::REPORT_TYPE_INFO_KEY =&gt; $reportType))</code></pre>
 
 
 #### ScheduledReports.getReportMetadata
@@ -442,7 +444,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array(&amp;$availableReportMetadata, $notificationInfo)</code></pre>
+<pre><code>function(&amp;$availableReportMetadata, $notificationInfo)</code></pre>
 
 
 #### ScheduledReports.getReportParameters
@@ -451,7 +453,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array(&amp;$availableParameters, $notificationInfo)</code></pre>
+<pre><code>function(&amp;$availableParameters, $notificationInfo)</code></pre>
 
 
 #### ScheduledReports.getReportRecipients
@@ -460,7 +462,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array(&amp;$recipients, $notificationInfo)</code></pre>
+<pre><code>function(&amp;$recipients, $notificationInfo)</code></pre>
 
 
 #### ScheduledReports.getReportTypes
@@ -469,7 +471,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array(&amp;$reportTypes)</code></pre>
+<pre><code>function(&amp;$reportTypes)</code></pre>
 
 
 #### ScheduledReports.processReports
@@ -478,7 +480,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array(&amp;$processedReports, $notificationInfo)</code></pre>
+<pre><code>function(&amp;$processedReports, $notificationInfo)</code></pre>
 
 
 #### ScheduledReports.sendReport
@@ -487,7 +489,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array($notificationInfo = array(self::REPORT_TYPE_INFO_KEY =&gt; $report[&#039;type&#039;], self::REPORT_KEY =&gt; $report, self::REPORT_CONTENT_KEY =&gt; $contents, self::FILENAME_KEY =&gt; $filename, self::PRETTY_DATE_KEY =&gt; $prettyDate, self::REPORT_SUBJECT_KEY =&gt; $reportSubject, self::REPORT_TITLE_KEY =&gt; $reportTitle, self::ADDITIONAL_FILES_KEY =&gt; $additionalFiles))</code></pre>
+<pre><code>function($notificationInfo = function(self::REPORT_TYPE_INFO_KEY =&gt; $report[&#039;type&#039;], self::REPORT_KEY =&gt; $report, self::REPORT_CONTENT_KEY =&gt; $contents, self::FILENAME_KEY =&gt; $filename, self::PRETTY_DATE_KEY =&gt; $prettyDate, self::REPORT_SUBJECT_KEY =&gt; $reportSubject, self::REPORT_TITLE_KEY =&gt; $reportTitle, self::ADDITIONAL_FILES_KEY =&gt; $additionalFiles))</code></pre>
 
 
 #### ScheduledReports.validateReportParameters
@@ -496,7 +498,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 Callback Signature:
-<pre><code>array(&amp;$parameters, $notificationInfo)</code></pre>
+<pre><code>function(&amp;$parameters, $notificationInfo)</code></pre>
 
 ## Schema
 
@@ -506,7 +508,7 @@ _Defined in [Piwik/Db/Schema](https://github.com/piwik/piwik/blob/master/core/Db
 
 
 Callback Signature:
-<pre><code>array(&amp;$schema)</code></pre>
+<pre><code>function(&amp;$schema)</code></pre>
 
 ## SegmentEditor
 
@@ -516,7 +518,7 @@ _Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/piwik/piwik/blo
 
 
 Callback Signature:
-<pre><code>array(&amp;$idSegment)</code></pre>
+<pre><code>function(&amp;$idSegment)</code></pre>
 
 ## Segments
 
@@ -526,7 +528,7 @@ _Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$cachedResult)</code></pre>
+<pre><code>function(&amp;$cachedResult)</code></pre>
 
 
 #### Segments.getKnownSegmentsToArchiveForSite
@@ -535,7 +537,7 @@ _Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$segments, $idSite)</code></pre>
+<pre><code>function(&amp;$segments, $idSite)</code></pre>
 
 ## Site
 
@@ -545,7 +547,7 @@ _Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$content, $idSite)</code></pre>
+<pre><code>function(&amp;$content, $idSite)</code></pre>
 
 ## SitesManager
 
@@ -555,7 +557,7 @@ _Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob
 
 
 Callback Signature:
-<pre><code>array($idSite)</code></pre>
+<pre><code>function($idSite)</code></pre>
 
 ## TaskScheduler
 
@@ -565,7 +567,7 @@ _Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$tasks)</code></pre>
+<pre><code>function(&amp;$tasks)</code></pre>
 
 ## Tracker
 
@@ -575,7 +577,7 @@ _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Trac
 
 
 Callback Signature:
-<pre><code>array(&amp;$db)</code></pre>
+<pre><code>function(&amp;$db)</code></pre>
 
 
 #### Tracker.detectReferrerSearchEngine
@@ -584,7 +586,7 @@ _Defined in [Piwik/Tracker/Referrer](https://github.com/piwik/piwik/blob/master/
 
 
 Callback Signature:
-<pre><code>array(&amp;$searchEngineInformation, $this-&gt;referrerUrl)</code></pre>
+<pre><code>function(&amp;$searchEngineInformation, $this-&gt;referrerUrl)</code></pre>
 
 
 #### Tracker.getDatabaseConfig
@@ -593,7 +595,7 @@ _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Trac
 
 
 Callback Signature:
-<pre><code>array(&amp;$configDb)</code></pre>
+<pre><code>function(&amp;$configDb)</code></pre>
 
 
 #### Tracker.getNewVisitObject
@@ -602,7 +604,7 @@ _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Trac
 
 
 Callback Signature:
-<pre><code>array(&amp;$visit)</code></pre>
+<pre><code>function(&amp;$visit)</code></pre>
 
 
 #### Tracker.isExcludedVisit
@@ -611,7 +613,7 @@ _Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/ma
 
 
 Callback Signature:
-<pre><code>array(&amp;$excluded)</code></pre>
+<pre><code>function(&amp;$excluded)</code></pre>
 
 
 #### Tracker.knownVisitorInformation
@@ -620,7 +622,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$this-&gt;visitorInfo)</code></pre>
+<pre><code>function(&amp;$this-&gt;visitorInfo)</code></pre>
 
 
 #### Tracker.knownVisitorUpdate
@@ -629,7 +631,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$valuesToUpdate)</code></pre>
+<pre><code>function(&amp;$valuesToUpdate)</code></pre>
 
 
 #### Tracker.newVisitorInformation
@@ -638,7 +640,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$this-&gt;visitorInfo, $extraInfo)</code></pre>
+<pre><code>function(&amp;$this-&gt;visitorInfo, $extraInfo)</code></pre>
 
 
 #### Tracker.recordAction
@@ -647,7 +649,7 @@ _Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/co
 
 
 Callback Signature:
-<pre><code>array($this, $info)</code></pre>
+<pre><code>function($this, $info)</code></pre>
 
 
 #### Tracker.recordEcommerceGoal
@@ -656,7 +658,7 @@ _Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/mast
 
 
 Callback Signature:
-<pre><code>array($goal)</code></pre>
+<pre><code>function($goal)</code></pre>
 
 
 #### Tracker.recordStandardGoals
@@ -665,7 +667,7 @@ _Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/mast
 
 
 Callback Signature:
-<pre><code>array($newGoal)</code></pre>
+<pre><code>function($newGoal)</code></pre>
 
 
 #### Tracker.setSiteId
@@ -674,7 +676,7 @@ _Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/c
 
 
 Callback Signature:
-<pre><code>array(&amp;$idSite, $this-&gt;params)</code></pre>
+<pre><code>function(&amp;$idSite, $this-&gt;params)</code></pre>
 
 
 #### Tracker.setTrackerCacheGeneral
@@ -683,7 +685,7 @@ _Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$cacheContent)</code></pre>
+<pre><code>function(&amp;$cacheContent)</code></pre>
 
 
 #### Tracker.setVisitorIp
@@ -692,7 +694,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$this-&gt;visitorInfo[&#039;location_ip&#039;])</code></pre>
+<pre><code>function(&amp;$this-&gt;visitorInfo[&#039;location_ip&#039;])</code></pre>
 
 
 #### Tracker.visitorInformation
@@ -701,7 +703,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$this-&gt;visitorInfo)</code></pre>
+<pre><code>function(&amp;$this-&gt;visitorInfo)</code></pre>
 
 ## Translate
 
@@ -711,7 +713,7 @@ _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Tr
 
 
 Callback Signature:
-<pre><code>array(&amp;$result)</code></pre>
+<pre><code>function(&amp;$result)</code></pre>
 
 ## Updater
 
@@ -728,7 +730,7 @@ _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Tr
 
 
 Callback Signature:
-<pre><code>array(&amp;$lang)</code></pre>
+<pre><code>function(&amp;$lang)</code></pre>
 
 
 #### User.isNotAuthorized
@@ -737,7 +739,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 Callback Signature:
-<pre><code>array($e), $pending = true</code></pre>
+<pre><code>function($e)</code></pre>
 
 ## UsersManager
 
@@ -747,7 +749,7 @@ _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob
 
 
 Callback Signature:
-<pre><code>array($userLogin)</code></pre>
+<pre><code>function($userLogin)</code></pre>
 
 
 #### UsersManager.deleteUser
@@ -756,7 +758,7 @@ _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob
 
 
 Callback Signature:
-<pre><code>array($userLogin)</code></pre>
+<pre><code>function($userLogin)</code></pre>
 
 
 #### UsersManager.updateUser
@@ -765,7 +767,7 @@ _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob
 
 
 Callback Signature:
-<pre><code>array($userLogin)</code></pre>
+<pre><code>function($userLogin)</code></pre>
 
 ## Visualization
 
@@ -775,7 +777,7 @@ _Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/b
 
 
 Callback Signature:
-<pre><code>array(&amp;$visualizations)</code></pre>
+<pre><code>function(&amp;$visualizations)</code></pre>
 
 
 #### Visualization.configureFooterIcons
@@ -784,7 +786,7 @@ _Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;$result, $this)</code></pre>
+<pre><code>function(&amp;$result, $this)</code></pre>
 
 
 #### Visualization.getReportDisplayProperties
@@ -793,7 +795,7 @@ _Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array(&amp;self::$reportPropertiesCache)</code></pre>
+<pre><code>function(&amp;self::$reportPropertiesCache)</code></pre>
 
 
 #### Visualization.initView
@@ -802,7 +804,7 @@ _Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/cor
 
 
 Callback Signature:
-<pre><code>array($this)</code></pre>
+<pre><code>function($this)</code></pre>
 
 ## WidgetsList
 

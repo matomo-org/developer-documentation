@@ -113,8 +113,8 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
                 $event['category'] = array_shift($categories);
 
                 $event['arguments'] = array();
-                foreach ($args as $arg)  {
-                    $event['arguments'][] = $this->getArg($arg);
+                if (!empty($args)) {
+                    $event['arguments'] = $this->getArg(array_shift($args));
                 }
             }
 
