@@ -39,7 +39,7 @@ we want to get the list of keywords associated, with their statistics.
                        &#039;visits&#039; =&gt; 1550,
                        &#039;visits_length&#039; =&gt; 514214,
                        &#039;returning_visits&#039; =&gt; 77)
-- metadata = array(    &#039;logo&#039; =&gt; &#039;/plugins/Referers/images/searchEngines/google.com.png&#039;,
+- metadata = array(    &#039;logo&#039; =&gt; &#039;/plugins/Referrers/images/searchEngines/google.com.png&#039;,
                        &#039;url&#039; =&gt; &#039;http://google.com&#039;)
 - DataTable = DataTable containing several DataTable\Row containing the keywords information for this search engine
            Example of one DataTable\Row

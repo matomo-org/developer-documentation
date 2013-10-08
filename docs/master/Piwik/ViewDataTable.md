@@ -39,44 +39,8 @@ Constants
 
 This class defines the following constants:
 
-- [`CONFIGURE_VIEW_EVENT`](#CONFIGURE_VIEW_EVENT) &mdash; This event is called before a visualization is created.
-- [`CONFIGURE_FOOTER_ICONS_EVENT`](#CONFIGURE_FOOTER_ICONS_EVENT) &mdash; This event is called when determining the default set of footer icons to display below a report.
-
-### `CONFIGURE_VIEW_EVENT` <a name="CONFIGURE_VIEW_EVENT"></a>
-
-Plugins can use this event to
-override view properties for individual reports or visualizations.
-
-Themes can use this event to make sure reports look nice with their themes. Plugins
-that provide new visualizations can use this event to make sure certain reports
-are configured differently when viewed with the new visualization.
-
-Callback Signature: function (ViewDataTable $view) {}
-
-### `CONFIGURE_FOOTER_ICONS_EVENT` <a name="CONFIGURE_FOOTER_ICONS_EVENT"></a>
-
-Plugins can use this event to modify the default set of footer icons. You can
-add new icons or remove existing ones.
-
-Callback Signature: function (array &amp;$result, ViewDataTable $view) {}
-
-$result must have the following format:
-
-array(
-    array( // footer icon group 1
-        &#039;class&#039; =&gt; &#039;footerIconGroup1CssClass&#039;,
-        &#039;buttons&#039; =&gt; array(
-            &#039;id&#039; =&gt; &#039;myid&#039;,
-            &#039;title&#039; =&gt; &#039;My Tooltip&#039;,
-            &#039;icon&#039; =&gt; &#039;path/to/my/icon.png&#039;
-        )
-    ),
-    array( // footer icon group 2
-        &#039;class&#039; =&gt; &#039;footerIconGroup2CssClass&#039;,
-        &#039;buttons&#039; =&gt; array(...)
-    ),
-    ...
-)
+- [`CONFIGURE_VIEW_EVENT`](#CONFIGURE_VIEW_EVENT)
+- [`CONFIGURE_FOOTER_ICONS_EVENT`](#CONFIGURE_FOOTER_ICONS_EVENT)
 
 Properties
 ----------
@@ -866,7 +830,7 @@ It won&#039;t be loaded again from the API in this case
 #### Signature
 
 - It is a **public** method.
-- _Returns:_ URL to call the API, eg. &quot;method=Referers.getKeywords&amp;period=day&amp;date=yesterday&quot;...
+- _Returns:_ URL to call the API, eg. &quot;method=Referrers.getKeywords&amp;period=day&amp;date=yesterday&quot;...
     - `string`
 
 ### `hasReportBeenPurged()` <a name="hasReportBeenPurged"></a>

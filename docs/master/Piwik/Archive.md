@@ -144,7 +144,7 @@ This method will build a dataTable from the blob value $name in the current arch
 
 #### Description
 
-For example $name = &#039;Referers_searchEngineByKeyword&#039; will return a
+For example $name = &#039;Referrers_searchEngineByKeyword&#039; will return a
 DataTable containing all the keywords. If a $idSubtable is given, the method
 will return the subTable of $name. If &#039;all&#039; is supplied for $idSubtable every subtable
 will be returned.

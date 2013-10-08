@@ -93,6 +93,8 @@ If you want to fetch data from the DB you should use the function Db::fetchAll()
 - It can return one of the following values:
     - `integer`
     - `Zend_Db_Statement`
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 ### `query()` <a name="query"></a>
 
@@ -109,6 +111,8 @@ See also http://framework.zend.com/manual/en/zend.db.statement.html
     - `$sql`
     - `$parameters`
 - It returns a(n) `Zend_Db_Statement` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 ### `fetchAll()` <a name="fetchAll"></a>
 
@@ -122,6 +126,8 @@ Executes the SQL Query and fetches all the rows from the database query
     - `$parameters`
 - _Returns:_ (one row in the array per row fetched in the DB)
     - `array`
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 ### `fetchRow()` <a name="fetchRow"></a>
 
@@ -134,6 +140,8 @@ Fetches first row of result from the database query
     - `$sql`
     - `$parameters`
 - It returns a(n) `array` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 ### `fetchOne()` <a name="fetchOne"></a>
 
@@ -146,6 +154,8 @@ Fetches first column of first row of result from the database query
     - `$sql`
     - `$parameters`
 - It returns a(n) `string` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 ### `fetchAssoc()` <a name="fetchAssoc"></a>
 
@@ -158,6 +168,8 @@ Fetches result from the database query as an array of associative arrays.
     - `$sql`
     - `$parameters`
 - It returns a(n) `array` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 ### `deleteAllRows()` <a name="deleteAllRows"></a>
 

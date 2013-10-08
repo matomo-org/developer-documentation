@@ -24,9 +24,9 @@ The class defines the following methods:
 - [`getCurrentHost()`](#getCurrentHost) &mdash; If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;example.org&quot;
 - [`getCurrentQueryString()`](#getCurrentQueryString) &mdash; If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;?param1=value1&amp;param2=value2&quot;
 - [`getQueryStringFromParameters()`](#getQueryStringFromParameters) &mdash; Given an array of parameters name-&gt;value, returns the query string.
-- [`redirectToReferer()`](#redirectToReferer) &mdash; Redirects the user to the referrer if found.
+- [`redirectToReferrer()`](#redirectToReferrer) &mdash; Redirects the user to the referrer if found.
 - [`redirectToUrl()`](#redirectToUrl) &mdash; Redirects the user to the specified URL
-- [`getReferer()`](#getReferer) &mdash; Returns the HTTP_REFERER header, false if not found.
+- [`getReferrer()`](#getReferrer) &mdash; Returns the HTTP_REFERER header, false if not found.
 - [`isLocalUrl()`](#isLocalUrl) &mdash; Is the URL on the same host?
 
 ### `getCurrentUrl()` <a name="getCurrentUrl"></a>
@@ -176,7 +176,7 @@ Also works with array values using the php array syntax for GET parameters.
 - _Returns:_ eg. &quot;param1=10&amp;param2[]=1&amp;param2[]=2&quot;
     - `string`
 
-### `redirectToReferer()` <a name="redirectToReferer"></a>
+### `redirectToReferrer()` <a name="redirectToReferrer"></a>
 
 Redirects the user to the referrer if found.
 
@@ -200,7 +200,7 @@ Redirects the user to the specified URL
     - `$url`
 - It does not return anything.
 
-### `getReferer()` <a name="getReferer"></a>
+### `getReferrer()` <a name="getReferrer"></a>
 
 Returns the HTTP_REFERER header, false if not found.
 
