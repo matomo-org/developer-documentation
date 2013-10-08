@@ -44,39 +44,47 @@ class Hooks {
 
     public function addUsages($hooks)
     {
-        foreach ($hooks as &$hook) {
+        $pluginNames = $this->getPluginNames();
 
-            $hook['usages'] = array();
-
-            $pluginNames = $this->getPluginNames();
-
-            foreach ($pluginNames as $pluginName) {
-                $plugin = \Piwik\PluginsManager::getInstance()->loadPlugin($pluginName);
-                $registeredHooks = $plugin->getListHooksRegistered();
-
-                if (array_key_exists($hook['name'], $registeredHooks)) {
-                    $registeredMethod = $registeredHooks[$hook['name']];
-
-                    if (!is_string($registeredMethod)) {
-                        continue;
-                    }
-
-                    $className       = get_class($plugin);
-                    $reflectionClass = new ReflectionClass($className);
-                    $method = $reflectionClass->getMethod($registeredMethod);
-                    $hook['usages'][] = array(
-                        'methodName' => $method->getName(),
-                        'startLine'  => $method->getStartLine(),
-                        'className'  => $reflectionClass->getShortName(),
-                        'namespace'  => $reflectionClass->getNamespaceName(),
-                        'file'       => str_replace(PIWIK_INCLUDE_PATH, '', $reflectionClass->getFileName())
-                    );
-                }
-
-            }
+        foreach ($hooks as $index => $hook) {
+            $hooks[$index]['usages'] = $this->findUsages($hook['name'], $pluginNames);
         }
 
         return $hooks;
+    }
+
+    private function findUsages($hookName, $pluginNames)
+    {
+        $usages = array();
+
+        foreach ($pluginNames as $pluginName) {
+            $plugin = \Piwik\PluginsManager::getInstance()->loadPlugin($pluginName);
+            $registeredHooks = $plugin->getListHooksRegistered();
+
+            if (!array_key_exists($hookName, $registeredHooks)) {
+                continue;
+            }
+
+            $methodName = $registeredHooks[$hookName];
+
+            if (!is_string($methodName)) {
+                continue;
+            }
+
+            $className        = get_class($plugin);
+            $reflectionClass  = new ReflectionClass($className);
+            $reflectionMethod = $reflectionClass->getMethod($methodName);
+
+            $usages[] = array(
+                'methodName' => $reflectionMethod->getName(),
+                'startLine'  => $reflectionMethod->getStartLine(),
+                'className'  => $reflectionClass->getShortName(),
+                'namespace'  => $reflectionClass->getNamespaceName(),
+                'file'       => str_replace(PIWIK_INCLUDE_PATH, '', $reflectionClass->getFileName())
+            );
+        }
+
+        return $usages;
     }
 
     protected function getPluginNames()
