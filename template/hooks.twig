@@ -1,7 +1,7 @@
 Hooks
 ==========
 
-This is a complete list of available hooks.
+On this page you will learn how to use as well as how to trigger your hooks. All already existing hooks are listed below.
 
 ## Usage
 
@@ -13,7 +13,7 @@ For example if you want to execute your function `AddCityInformation()` when a n
 ```
 function getListHooksRegistered()
 {
-return array( 'Tracker.newVisitorInformation' => 'AddCityInformation' );
+    return array( 'Tracker.newVisitorInformation' => 'AddCityInformation' );
 }
 ```
 
@@ -22,8 +22,8 @@ The hook `Tracker.newVisitorInformation` has an argument: an array containing th
 ```
 function AddCityInformation( &$visitorInfo )
 {
-// we modify the variable, adding the new city field
-$visitorInfo['city'] = 'Paris, France';
+    // we modify the variable, adding the new city field
+    $visitorInfo['city'] = 'Paris, France';
 }
 ```
 
@@ -41,11 +41,13 @@ Piwik_PostEvent( $eventName,  [ $object , [ $info ]])
 or in Twig templates:
 
 ```
-{{ postEvent($eventName) }}
+{{ '{{ postEvent($eventName) }}' }}
 ```
 By convention, the event name should be prefixed by the Plugin name.
 
 ## Categories of existing Hooks
+
+This is a complete list of available hooks.
 
 {% set currentCategory = '' %}
 {% for hook in hooks if hook.name != '$eventName' %}

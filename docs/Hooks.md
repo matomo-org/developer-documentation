@@ -1,7 +1,7 @@
 Hooks
 ==========
 
-This is a complete list of available hooks.
+On this page you will learn how to use as well as how to trigger your hooks. All already existing hooks are listed below.
 
 ## Usage
 
@@ -22,8 +22,8 @@ The hook `Tracker.newVisitorInformation` has an argument: an array containing th
 ```
 function AddCityInformation( &$visitorInfo )
 {
-     // we modify the variable, adding the new city field
-     $visitorInfo['city'] = 'Paris, France';
+    // we modify the variable, adding the new city field
+    $visitorInfo['city'] = 'Paris, France';
 }
 ```
 
@@ -46,6 +46,8 @@ or in Twig templates:
 By convention, the event name should be prefixed by the Plugin name.
 
 ## Categories of existing Hooks
+
+This is a complete list of available hooks.
 
 - [API](#api)
 - [ArchiveProcessor](#archiveprocessor)
