@@ -42,7 +42,7 @@ _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/AP
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$finalParameters)</code></pre>
 
 
@@ -51,7 +51,7 @@ _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/AP
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
 
@@ -60,7 +60,7 @@ _Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/b
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$availableReports, $parameters)</code></pre>
 
 
@@ -69,7 +69,7 @@ _Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/b
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$availableReports, $parameters)</code></pre>
 
 
@@ -78,7 +78,7 @@ _Defined in [Piwik/Plugins/API/API](https://github.com/piwik/piwik/blob/master/p
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$segments, $idSites)</code></pre>
 
 
@@ -87,7 +87,7 @@ _Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($token_auth)</code></pre>
 
 
@@ -96,7 +96,7 @@ _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/AP
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$finalParameters)</code></pre>
 
 
@@ -105,7 +105,7 @@ _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/AP
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
 ## ArchiveProcessor
@@ -115,7 +115,7 @@ _Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/mas
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$this)</code></pre>
 
 
@@ -124,7 +124,7 @@ _Defined in [Piwik/ArchiveProcessor/Period](https://github.com/piwik/piwik/blob/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$this)</code></pre>
 
 ## AssetManager
@@ -134,7 +134,7 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$mergedContent)</code></pre>
 
 
@@ -143,7 +143,7 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$mergedContent)</code></pre>
 
 
@@ -152,7 +152,7 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$jsFiles)</code></pre>
 
 
@@ -161,7 +161,7 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$stylesheets)</code></pre>
 
 ## Config
@@ -171,7 +171,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($e), $pending = true</code></pre>
 
 
@@ -180,7 +180,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($e), $pending = true</code></pre>
 
 ## Controller
@@ -190,7 +190,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($parameters)</code></pre>
 
 
@@ -199,7 +199,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$result, $parameters)</code></pre>
 
 ## Goals
@@ -209,7 +209,7 @@ _Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/mast
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$dimensions)</code></pre>
 
 
@@ -218,7 +218,7 @@ _Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/mast
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$reportsWithGoals)</code></pre>
 
 ## Installation
@@ -228,7 +228,7 @@ _Defined in [Piwik/Plugins/Installation/Installation](https://github.com/piwik/p
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($this)</code></pre>
 
 ## Live
@@ -247,9 +247,7 @@ The following visitor profile elements can be set to augment the visitor profile
 - visitorAvatar: A URL to an image to display in the top left corner of the popup.
 - visitorDescription: Text to be used as the tooltip of the avatar image.
 
-Callback Signature: function (array &amp;$result);
-
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$result)</code></pre>
 
 ## Log
@@ -259,7 +257,7 @@ _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php)
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
 
 
@@ -268,7 +266,7 @@ _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php)
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
 
 
@@ -277,7 +275,7 @@ _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php)
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$message, $level, $tag, $datetime, $this)</code></pre>
 
 
@@ -286,7 +284,7 @@ _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php)
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$writers)</code></pre>
 
 ## LogDataPurger
@@ -309,7 +307,7 @@ _Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$info)</code></pre>
 
 
@@ -318,7 +316,7 @@ _Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piw
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($info)</code></pre>
 
 ## Menu
@@ -347,7 +345,7 @@ _Defined in [Piwik/Plugins/Provider/Provider](https://github.com/piwik/piwik/blo
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$cleanHostname, $hostname)</code></pre>
 
 ## Reporting
@@ -357,7 +355,7 @@ _Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) i
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$db)</code></pre>
 
 
@@ -366,7 +364,7 @@ _Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) i
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$dbInfos)</code></pre>
 
 ## Request
@@ -376,7 +374,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>$params</code></pre>
 
 
@@ -385,7 +383,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$result, $parameters)</code></pre>
 
 
@@ -406,7 +404,7 @@ _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/mast
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($allowCookieAuthentication = true)</code></pre>
 
 ## ScheduledReports
@@ -416,7 +414,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$allowMultipleReports, $notificationInfo = array(self::REPORT_TYPE_INFO_KEY =&gt; $reportType))</code></pre>
 
 
@@ -425,7 +423,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$reportRenderer, $notificationInfo)</code></pre>
 
 
@@ -434,7 +432,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$reportFormats, $notificationInfo = array(self::REPORT_TYPE_INFO_KEY =&gt; $reportType))</code></pre>
 
 
@@ -443,7 +441,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$availableReportMetadata, $notificationInfo)</code></pre>
 
 
@@ -452,7 +450,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$availableParameters, $notificationInfo)</code></pre>
 
 
@@ -461,7 +459,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$recipients, $notificationInfo)</code></pre>
 
 
@@ -470,7 +468,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$reportTypes)</code></pre>
 
 
@@ -479,7 +477,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$processedReports, $notificationInfo)</code></pre>
 
 
@@ -488,7 +486,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($notificationInfo = array(self::REPORT_TYPE_INFO_KEY =&gt; $report[&#039;type&#039;], self::REPORT_KEY =&gt; $report, self::REPORT_CONTENT_KEY =&gt; $contents, self::FILENAME_KEY =&gt; $filename, self::PRETTY_DATE_KEY =&gt; $prettyDate, self::REPORT_SUBJECT_KEY =&gt; $reportSubject, self::REPORT_TITLE_KEY =&gt; $reportTitle, self::ADDITIONAL_FILES_KEY =&gt; $additionalFiles))</code></pre>
 
 
@@ -497,7 +495,7 @@ _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$parameters, $notificationInfo)</code></pre>
 
 ## Schema
@@ -507,7 +505,7 @@ _Defined in [Piwik/Db/Schema](https://github.com/piwik/piwik/blob/master/core/Db
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$schema)</code></pre>
 
 ## SegmentEditor
@@ -517,7 +515,7 @@ _Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/piwik/piwik/blo
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$idSegment)</code></pre>
 
 ## Segments
@@ -527,7 +525,7 @@ _Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$cachedResult)</code></pre>
 
 
@@ -536,7 +534,7 @@ _Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$segments, $idSite)</code></pre>
 
 ## Site
@@ -546,7 +544,7 @@ _Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$content, $idSite)</code></pre>
 
 ## SitesManager
@@ -556,7 +554,7 @@ _Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($idSite)</code></pre>
 
 ## TaskScheduler
@@ -566,7 +564,7 @@ _Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$tasks)</code></pre>
 
 ## Tracker
@@ -576,7 +574,7 @@ _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Trac
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$db)</code></pre>
 
 
@@ -585,7 +583,7 @@ _Defined in [Piwik/Tracker/Referrer](https://github.com/piwik/piwik/blob/master/
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$searchEngineInformation, $this-&gt;referrerUrl)</code></pre>
 
 
@@ -594,7 +592,7 @@ _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Trac
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$configDb)</code></pre>
 
 
@@ -603,7 +601,7 @@ _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Trac
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$visit)</code></pre>
 
 
@@ -612,7 +610,7 @@ _Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/ma
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$excluded)</code></pre>
 
 
@@ -621,7 +619,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$this-&gt;visitorInfo)</code></pre>
 
 
@@ -630,7 +628,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$valuesToUpdate)</code></pre>
 
 
@@ -639,7 +637,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$this-&gt;visitorInfo, $extraInfo)</code></pre>
 
 
@@ -648,7 +646,7 @@ _Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/co
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($this, $info)</code></pre>
 
 
@@ -657,7 +655,7 @@ _Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/mast
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($goal)</code></pre>
 
 
@@ -666,7 +664,7 @@ _Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/mast
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($newGoal)</code></pre>
 
 
@@ -675,7 +673,7 @@ _Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/c
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$idSite, $this-&gt;params)</code></pre>
 
 
@@ -684,7 +682,7 @@ _Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$cacheContent)</code></pre>
 
 
@@ -693,7 +691,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$this-&gt;visitorInfo[&#039;location_ip&#039;])</code></pre>
 
 
@@ -702,7 +700,7 @@ _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$this-&gt;visitorInfo)</code></pre>
 
 ## Translate
@@ -712,7 +710,7 @@ _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Tr
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$result)</code></pre>
 
 ## Updater
@@ -729,7 +727,7 @@ _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Tr
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$lang)</code></pre>
 
 
@@ -738,7 +736,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($e), $pending = true</code></pre>
 
 ## UsersManager
@@ -748,7 +746,7 @@ _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($userLogin)</code></pre>
 
 
@@ -757,7 +755,7 @@ _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($userLogin)</code></pre>
 
 
@@ -766,7 +764,7 @@ _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($userLogin)</code></pre>
 
 ## Visualization
@@ -776,7 +774,7 @@ _Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/b
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$visualizations)</code></pre>
 
 
@@ -785,7 +783,7 @@ _Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;$result, $this)</code></pre>
 
 
@@ -794,7 +792,7 @@ _Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array(&amp;self::$reportPropertiesCache)</code></pre>
 
 
@@ -803,7 +801,7 @@ _Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/cor
 
 
 
-Arguments:
+Callback Signature:
 <pre><code>array($this)</code></pre>
 
 ## WidgetsList
