@@ -1,7 +1,7 @@
 Hooks
 ==========
 
-On this page you will learn how to use as well as how to trigger your hooks. All already existing hooks are listed below.
+On this page you will learn how to use as well as how to trigger hooks. All already existing hooks are listed below.
 
 ## Usage
 
