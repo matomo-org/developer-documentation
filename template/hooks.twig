@@ -22,7 +22,7 @@ This is a complete list of available hooks.
 _Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piwik/blob/master/{{ hook.file }}) in line [{{ hook.line }}](https://github.com/piwik/piwik/blob/master/{{ hook.file }}#L{{ hook.line }})_
 
 {% if hook.comment %}
-{{ hook.comment.shortDesc }}{% if hook.comment.longDesc %} {{ hook.comment.longDesc }}{% endif %}
+{{ hook.comment.shortDesc|raw }}{% if hook.comment.longDesc %} {{ hook.comment.longDesc|raw }}{% endif %}
 {% endif %}
 
 {% if hook.arguments %}

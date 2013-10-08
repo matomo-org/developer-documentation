@@ -253,7 +253,7 @@ Callback Signature:
 ## Log
 
 #### Log.formatDatabaseMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [391](https://github.com/piwik/piwik/blob/master/core/Log.php#L391)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [393](https://github.com/piwik/piwik/blob/master/core/Log.php#L393)_
 
 This event is called when trying to log an object to a database table. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -267,7 +267,7 @@ Callback Signature:
 
 
 #### Log.formatFileMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [323](https://github.com/piwik/piwik/blob/master/core/Log.php#L323)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [325](https://github.com/piwik/piwik/blob/master/core/Log.php#L325)_
 
 This event is called when trying to log an object to a file. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -281,7 +281,7 @@ Callback Signature:
 
 
 #### Log.formatScreenMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [366](https://github.com/piwik/piwik/blob/master/core/Log.php#L366)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [368](https://github.com/piwik/piwik/blob/master/core/Log.php#L368)_
 
 This event is called when trying to log an object to the screen. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -298,7 +298,7 @@ Callback Signature:
 
 
 #### Log.getAvailableWriters
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [300](https://github.com/piwik/piwik/blob/master/core/Log.php#L300)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [302](https://github.com/piwik/piwik/blob/master/core/Log.php#L302)_
 
 This event is called when the Log instance is created. Plugins can use this event to
 make new logging writers available.
@@ -312,13 +312,15 @@ of the logging call and $message is the formatted log message.
 Logging writers must be associated by name in the array passed to event handlers.
 
 Example handler:
-    function (&amp;$writers) {
-        $writers[&#039;myloggername&#039;] = function ($level, $tag, $datetime, $message) {
-            ...
-        }
+```
+function (&$writers) {
+    $writers['myloggername'] = function ($level, $tag, $datetime, $message) {
+        ...
     }
+}
 
-    // &#039;myloggername&#039; can now be used in the log_writers config option.
+// 'myloggername' can now be used in the log_writers config option.
+```
 
 Callback Signature:
 <pre><code>function(&amp;$writers)</code></pre>
@@ -742,9 +744,20 @@ Callback Signature:
 ## Translate
 
 #### Translate.getClientSideTranslationKeys
-_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [187](https://github.com/piwik/piwik/blob/master/core/Translate.php#L187)_
+_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [185](https://github.com/piwik/piwik/blob/master/core/Translate.php#L185)_
 
+This event is called before generating the JavaScript code that allows other JavaScript to access Piwik i18n strings. Plugins should handle this event to specify which translations
+should be available to JavaScript code.
 
+Event handlers should add whole translation keys, ie, keys that include the plugin name.
+For example:
+
+```
+public function getClientSideTranslationKeys(&$result)
+{
+    $result[] = "MyPlugin_MyTranslation";
+}
+```
 
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
@@ -759,7 +772,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 ## User
 
 #### User.getLanguage
-_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [133](https://github.com/piwik/piwik/blob/master/core/Translate.php#L133)_
+_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [116](https://github.com/piwik/piwik/blob/master/core/Translate.php#L116)_
 
 
 
@@ -808,23 +821,45 @@ Callback Signature:
 #### Visualization.addVisualizations
 _Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php) in line [157](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php#L157)_
 
-
+This event is used to gather all available DataTable visualizations. Callbacks
+should add visualization class names to the incoming array.
 
 Callback Signature:
 <pre><code>function(&amp;$visualizations)</code></pre>
 
 
 #### Visualization.configureFooterIcons
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1287](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1287)_
+_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1285](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1285)_
 
+This event is called when determining the default set of footer icons to display below a report. Plugins can use this event to modify the default set of footer icons. You can
+add new icons or remove existing ones.
 
+$result must have the following format:
+
+```
+array(
+    array( // footer icon group 1
+        'class' => 'footerIconGroup1CssClass',
+        'buttons' => array(
+            'id' => 'myid',
+            'title' => 'My Tooltip',
+            'icon' => 'path/to/my/icon.png'
+        )
+    ),
+    array( // footer icon group 2
+        'class' => 'footerIconGroup2CssClass',
+        'buttons' => array(...)
+    ),
+    ...
+)
+```
 
 Callback Signature:
-<pre><code>function(&amp;$result, $this)</code></pre>
+<pre><code>function(&amp;$result, $viewDataTable = $this)</code></pre>
 
 
 #### Visualization.getReportDisplayProperties
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [466](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L466)_
+_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [428](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L428)_
 
 
 
@@ -833,12 +868,17 @@ Callback Signature:
 
 
 #### Visualization.initView
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1121](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1121)_
+_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1092](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1092)_
 
+This event is called before a visualization is created. Plugins can use this event to
+override view properties for individual reports or visualizations.
 
+Themes can use this event to make sure reports look nice with their themes. Plugins
+that provide new visualizations can use this event to make sure certain reports
+are configured differently when viewed with the new visualization.
 
 Callback Signature:
-<pre><code>function($this)</code></pre>
+<pre><code>function($viewDataTable = $this)</code></pre>
 
 ## WidgetsList
 
