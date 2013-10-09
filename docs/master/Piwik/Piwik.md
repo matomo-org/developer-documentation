@@ -49,6 +49,10 @@ The class defines the following methods:
 - [`getAction()`](#getAction) &mdash; Returns the current action read from the URL
 - [`redirectToModule()`](#redirectToModule) &mdash; Redirect to module (and action)
 - [`isValidEmailString()`](#isValidEmailString) &mdash; Returns true if the email is a valid email
+- [`postEvent()`](#postEvent) &mdash; Post an event to the dispatcher which will notice the observers.
+- [`addAction()`](#addAction) &mdash; Register an action to execute for a given event
+- [`translate()`](#translate) &mdash; Returns translated string or given message if translation is not found.
+- [`translateException()`](#translateException) &mdash; Returns translated string or given message if translation is not found.
 
 ### `exitWithErrorMessage()` <a name="exitWithErrorMessage"></a>
 
@@ -326,4 +330,58 @@ Returns true if the email is a valid email
 - It accepts the following parameter(s):
     - `$email`
 - It returns a(n) `bool` value.
+
+### `postEvent()` <a name="postEvent"></a>
+
+Post an event to the dispatcher which will notice the observers.
+
+#### Signature
+
+- It is a **public static** method.
+- It accepts the following parameter(s):
+    - `$eventName`
+    - `$params`
+    - `$pending`
+    - `$plugins`
+- It returns a(n) `void` value.
+
+### `addAction()` <a name="addAction"></a>
+
+Register an action to execute for a given event
+
+#### Signature
+
+- It is a **public static** method.
+- It accepts the following parameter(s):
+    - `$eventName`
+    - `$function`
+- It does not return anything.
+
+### `translate()` <a name="translate"></a>
+
+Returns translated string or given message if translation is not found.
+
+#### Signature
+
+- It is a **public static** method.
+- It accepts the following parameter(s):
+    - `$string`
+    - `$args`
+- It returns a(n) `string` value.
+
+### `translateException()` <a name="translateException"></a>
+
+Returns translated string or given message if translation is not found.
+
+#### Description
+
+This function does not throw any exception. Use it to translate exceptions.
+
+#### Signature
+
+- It is a **public static** method.
+- It accepts the following parameter(s):
+    - `$message`
+    - `$args`
+- It returns a(n) `string` value.
 
