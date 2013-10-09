@@ -85,6 +85,11 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
                 $docParser = new Sami\Parser\DocBlockParser();
                 $parsedDoc = $docParser->parse($docComment->getText());
 
+                $ignore = $parsedDoc->getTag('ignore');
+                if (!empty($ignore)) {
+                    return;
+                }
+
                 $event['comment'] = array(
                     'raw'       => $docComment->getText(),
                     'formatted' => $docComment->getReformattedText(),
