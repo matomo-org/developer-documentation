@@ -59,14 +59,12 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
 
     public function leaveNode(PHPParser_Node $node) {
 
-        if ($node instanceof PHPParser_Node_Expr_FuncCall) {
-            $name = $node->name;
-
-            if (is_null($name->parts)) {
+        if ($node instanceof PHPParser_Node_Expr_StaticCall) {
+            if (!$node->name || 'postEvent' !== $node->name) {
                 return;
             }
 
-            if (!in_array('Piwik_PostEvent', $name->parts)) {
+            if (empty($node->class->parts) || !in_array('Piwik', $node->class->parts)) {
                 return;
             }
 

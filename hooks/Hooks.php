@@ -19,7 +19,7 @@ class Hooks {
     {
         $code  = file_get_contents($phpFile);
 
-        if (false === strpos($code, 'PostEvent')) {
+        if (false === strpos($code, 'postEvent')) {
             return array();
         }
 
