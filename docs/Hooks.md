@@ -79,13 +79,13 @@ This is a complete list of available hooks.
 ## API
 
 - [API.$pluginName.$methodName](#apipluginnamemethodname)
-- [API.$pluginName.$methodName](#apipluginnamemethodname)
-- [API.$pluginName.$methodName](#apipluginnamemethodname)
-- [API.$pluginName.$methodName](#apipluginnamemethodname)
-- [API.$pluginName.$methodName](#apipluginnamemethodname)
-- [API.$pluginName.$methodName](#apipluginnamemethodname)
-- [API.$pluginName.$methodName](#apipluginnamemethodname)
-- [API.$pluginName.$methodName](#apipluginnamemethodname)
+- [API.$pluginName.$methodName.end](#apipluginnamemethodnameend)
+- [API.getReportMetadata](#apigetreportmetadata)
+- [API.getReportMetadata.end](#apigetreportmetadataend)
+- [API.getSegmentsMetadata](#apigetsegmentsmetadata)
+- [API.Request.authenticate](#apirequestauthenticate)
+- [API.Request.dispatch](#apirequestdispatch)
+- [API.Request.dispatch.end](#apirequestdispatchend)
 
 #### API.$pluginName.$methodName
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [198](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L198)_
@@ -211,7 +211,7 @@ Callback Signature:
 ## ArchiveProcessor
 
 - [ArchiveProcessor.Day.compute](#archiveprocessordaycompute)
-- [ArchiveProcessor.Day.compute](#archiveprocessordaycompute)
+- [ArchiveProcessor.Period.compute](#archiveprocessorperiodcompute)
 
 #### ArchiveProcessor.Day.compute
 _Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php) in line [124](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php#L124)_
@@ -265,9 +265,9 @@ Usages:
 ## AssetManager
 
 - [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
-- [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
-- [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
-- [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
+- [AssetManager.filterMergedStylesheets](#assetmanagerfiltermergedstylesheets)
+- [AssetManager.getJavaScriptFiles](#assetmanagergetjavascriptfiles)
+- [AssetManager.getStylesheetFiles](#assetmanagergetstylesheetfiles)
 
 #### AssetManager.filterMergedJavaScripts
 _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [385](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L385)_
@@ -341,7 +341,7 @@ Usages:
 ## Config
 
 - [Config.badConfigurationFile](#configbadconfigurationfile)
-- [Config.badConfigurationFile](#configbadconfigurationfile)
+- [Config.NoConfigurationFile](#confignoconfigurationfile)
 
 #### Config.badConfigurationFile
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [321](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L321)_
@@ -374,7 +374,7 @@ Usages:
 ## Controller
 
 - [Controller.$module.$action](#controllermoduleaction)
-- [Controller.$module.$action](#controllermoduleaction)
+- [Controller.$module.$action.end](#controllermoduleactionend)
 
 #### Controller.$module.$action
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [140](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L140)_
@@ -437,9 +437,9 @@ Callback Signature:
 ## Log
 
 - [Log.formatDatabaseMessage](#logformatdatabasemessage)
-- [Log.formatDatabaseMessage](#logformatdatabasemessage)
-- [Log.formatDatabaseMessage](#logformatdatabasemessage)
-- [Log.formatDatabaseMessage](#logformatdatabasemessage)
+- [Log.formatFileMessage](#logformatfilemessage)
+- [Log.formatScreenMessage](#logformatscreenmessage)
+- [Log.getAvailableWriters](#loggetavailablewriters)
 
 #### Log.formatDatabaseMessage
 _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [394](https://github.com/piwik/piwik/blob/master/core/Log.php#L394)_
@@ -569,8 +569,8 @@ Usages:
 ## Menu
 
 - [Menu.Admin.addItems](#menuadminadditems)
-- [Menu.Admin.addItems](#menuadminadditems)
-- [Menu.Admin.addItems](#menuadminadditems)
+- [Menu.Reporting.addItems](#menureportingadditems)
+- [Menu.Top.addItems](#menutopadditems)
 
 #### Menu.Admin.addItems
 _Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php) in line [76](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php#L76)_
@@ -692,10 +692,10 @@ Callback Signature:
 ## Request
 
 - [Request.dispatch](#requestdispatch)
-- [Request.dispatch](#requestdispatch)
-- [Request.dispatch](#requestdispatch)
-- [Request.dispatch](#requestdispatch)
-- [Request.dispatch](#requestdispatch)
+- [Request.dispatch.end](#requestdispatchend)
+- [Request.dispatchCoreAndPluginUpdatesScreen](#requestdispatchcoreandpluginupdatesscreen)
+- [Request.initAuthenticationObject](#requestinitauthenticationobject)
+- [Request.initAuthenticationObject](#requestinitauthenticationobject)
 
 #### Request.dispatch
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [133](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L133)_
@@ -758,15 +758,15 @@ Usages:
 ## ScheduledReports
 
 - [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
-- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
-- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
-- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
-- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
-- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
-- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
-- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
-- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
-- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.getRendererInstance](#scheduledreportsgetrendererinstance)
+- [ScheduledReports.getReportFormats](#scheduledreportsgetreportformats)
+- [ScheduledReports.getReportMetadata](#scheduledreportsgetreportmetadata)
+- [ScheduledReports.getReportParameters](#scheduledreportsgetreportparameters)
+- [ScheduledReports.getReportRecipients](#scheduledreportsgetreportrecipients)
+- [ScheduledReports.getReportTypes](#scheduledreportsgetreporttypes)
+- [ScheduledReports.processReports](#scheduledreportsprocessreports)
+- [ScheduledReports.sendReport](#scheduledreportssendreport)
+- [ScheduledReports.validateReportParameters](#scheduledreportsvalidatereportparameters)
 
 #### ScheduledReports.allowMultipleReports
 _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [736](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L736)_
@@ -917,7 +917,7 @@ Usages:
 ## Segments
 
 - [Segments.getKnownSegmentsToArchiveAllSites](#segmentsgetknownsegmentstoarchiveallsites)
-- [Segments.getKnownSegmentsToArchiveAllSites](#segmentsgetknownsegmentstoarchiveallsites)
+- [Segments.getKnownSegmentsToArchiveForSite](#segmentsgetknownsegmentstoarchiveforsite)
 
 #### Segments.getKnownSegmentsToArchiveAllSites
 _Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [70](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L70)_
@@ -1016,18 +1016,18 @@ Usages:
 ## Tracker
 
 - [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
-- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
+- [Tracker.isExcludedVisit](#trackerisexcludedvisit)
+- [Tracker.knownVisitorInformation](#trackerknownvisitorinformation)
+- [Tracker.knownVisitorUpdate](#trackerknownvisitorupdate)
+- [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
+- [Tracker.newVisitorInformation](#trackernewvisitorinformation)
+- [Tracker.recordAction](#trackerrecordaction)
+- [Tracker.recordEcommerceGoal](#trackerrecordecommercegoal)
+- [Tracker.recordStandardGoals](#trackerrecordstandardgoals)
+- [Tracker.setSiteId](#trackersetsiteid)
+- [Tracker.setTrackerCacheGeneral](#trackersettrackercachegeneral)
+- [Tracker.setVisitorIp](#trackersetvisitorip)
 
 #### Tracker.detectReferrerSearchEngine
 _Defined in [Piwik/Tracker/Referrer](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php) in line [136](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php#L136)_
@@ -1222,7 +1222,7 @@ Usages:
 ## User
 
 - [User.getLanguage](#usergetlanguage)
-- [User.getLanguage](#usergetlanguage)
+- [User.isNotAuthorized](#userisnotauthorized)
 
 #### User.getLanguage
 _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [122](https://github.com/piwik/piwik/blob/master/core/Translate.php#L122)_
@@ -1255,8 +1255,8 @@ Usages:
 ## UsersManager
 
 - [UsersManager.addUser.end](#usersmanageradduserend)
-- [UsersManager.addUser.end](#usersmanageradduserend)
-- [UsersManager.addUser.end](#usersmanageradduserend)
+- [UsersManager.deleteUser](#usersmanagerdeleteuser)
+- [UsersManager.updateUser.end](#usersmanagerupdateuserend)
 
 #### UsersManager.addUser.end
 _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [406](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L406)_
@@ -1295,9 +1295,9 @@ Callback Signature:
 ## Visualization
 
 - [Visualization.addVisualizations](#visualizationaddvisualizations)
-- [Visualization.addVisualizations](#visualizationaddvisualizations)
-- [Visualization.addVisualizations](#visualizationaddvisualizations)
-- [Visualization.addVisualizations](#visualizationaddvisualizations)
+- [Visualization.configureFooterIcons](#visualizationconfigurefootericons)
+- [Visualization.getReportDisplayProperties](#visualizationgetreportdisplayproperties)
+- [Visualization.initView](#visualizationinitview)
 
 #### Visualization.addVisualizations
 _Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php) in line [158](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php#L158)_

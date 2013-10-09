@@ -62,7 +62,7 @@ This is a complete list of available hooks.
 ## {{ hook.category }}
 
 {% for categoryHook in hooks if categoryHook.category == currentCategory %}
-- [{{ hook.name }}](#{{ hook.name|onlyalnum|lower }})
+- [{{ categoryHook.name }}](#{{ categoryHook.name|onlyalnum|lower }})
 {% endfor %}
 {% endif %}
 
