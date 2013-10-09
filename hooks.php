@@ -14,7 +14,6 @@ define('PIWIK_INCLUDE_PATH', PIWIK_DOCUMENT_ROOT);
 
 require 'vendor/autoload.php';
 require_once PIWIK_INCLUDE_PATH . '/core/Loader.php';
-require_once PIWIK_INCLUDE_PATH . '/core/functions.php';
 require 'vendor/nikic/php-parser/lib/bootstrap.php';
 require 'hooks/Hooks.php';
 ini_set('xdebug.max_nesting_level', 2000);
