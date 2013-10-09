@@ -78,6 +78,15 @@ This is a complete list of available hooks.
 
 ## API
 
+- [API.$pluginName.$methodName](#apipluginnamemethodname)
+- [API.$pluginName.$methodName](#apipluginnamemethodname)
+- [API.$pluginName.$methodName](#apipluginnamemethodname)
+- [API.$pluginName.$methodName](#apipluginnamemethodname)
+- [API.$pluginName.$methodName](#apipluginnamemethodname)
+- [API.$pluginName.$methodName](#apipluginnamemethodname)
+- [API.$pluginName.$methodName](#apipluginnamemethodname)
+- [API.$pluginName.$methodName](#apipluginnamemethodname)
+
 #### API.$pluginName.$methodName
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [198](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L198)_
 
@@ -201,6 +210,9 @@ Callback Signature:
 
 ## ArchiveProcessor
 
+- [ArchiveProcessor.Day.compute](#archiveprocessordaycompute)
+- [ArchiveProcessor.Day.compute](#archiveprocessordaycompute)
+
 #### ArchiveProcessor.Day.compute
 _Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php) in line [124](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php#L124)_
 
@@ -251,6 +263,11 @@ Usages:
 [Actions::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L605), [CustomVariables::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L147), [DevicesDetection::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L284), [Goals::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L513), [Provider::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L230), [Referrers::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L290), [UserCountry::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L331), [UserSettings::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L451), [VisitTime::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L183), [VisitorInterest::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L124)
 
 ## AssetManager
+
+- [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
+- [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
+- [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
+- [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
 
 #### AssetManager.filterMergedJavaScripts
 _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [385](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L385)_
@@ -323,6 +340,9 @@ Usages:
 
 ## Config
 
+- [Config.badConfigurationFile](#configbadconfigurationfile)
+- [Config.badConfigurationFile](#configbadconfigurationfile)
+
 #### Config.badConfigurationFile
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [321](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L321)_
 
@@ -353,6 +373,9 @@ Usages:
 
 ## Controller
 
+- [Controller.$module.$action](#controllermoduleaction)
+- [Controller.$module.$action](#controllermoduleaction)
+
 #### Controller.$module.$action
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [140](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L140)_
 
@@ -376,6 +399,8 @@ Callback Signature:
 
 ## Goals
 
+- [Goals.getReportsWithGoalMetrics](#goalsgetreportswithgoalmetrics)
+
 #### Goals.getReportsWithGoalMetrics
 _Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php) in line [363](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L363)_
 
@@ -389,6 +414,8 @@ Usages:
 [CustomVariables::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L127), [Goals::getActualReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L386), [Referrers::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L244), [UserCountry::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L307), [VisitTime::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L95)
 
 ## Live
+
+- [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 
 #### Live.getExtraVisitorDetails
 _Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [373](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L373)_
@@ -408,6 +435,11 @@ Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
 
 ## Log
+
+- [Log.formatDatabaseMessage](#logformatdatabasemessage)
+- [Log.formatDatabaseMessage](#logformatdatabasemessage)
+- [Log.formatDatabaseMessage](#logformatdatabasemessage)
+- [Log.formatDatabaseMessage](#logformatdatabasemessage)
 
 #### Log.formatDatabaseMessage
 _Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [394](https://github.com/piwik/piwik/blob/master/core/Log.php#L394)_
@@ -484,29 +516,8 @@ Callback Signature:
 
 ## Login
 
-#### Login.initSession
-_Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php) in line [187](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php#L187)_
-
-This event is triggered to initialize a user session. You can use this event to authenticate user against
-third party systems.
-
-Example:
-```
-public function initSession($info)
-{
-    $login = $info['login'];
-    $md5Password = $info['md5Password'];
-    $rememberMe = $info['rememberMe'];
-}
-```
-
-Callback Signature:
-<pre><code>function(&amp;$info)</code></pre>
-
-Usages:
-
-[Login::initSession](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L102)
-
+- [Login.initSession](#logininitsession)
+- [Login.initSession](#logininitsession)
 
 #### Login.initSession
 _Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [341](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L341)_
@@ -531,7 +542,35 @@ Usages:
 
 [Login::initSession](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L102)
 
+
+#### Login.initSession
+_Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php) in line [187](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php#L187)_
+
+This event is triggered to initialize a user session. You can use this event to authenticate user against
+third party systems.
+
+Example:
+```
+public function initSession($info)
+{
+    $login = $info['login'];
+    $md5Password = $info['md5Password'];
+    $rememberMe = $info['rememberMe'];
+}
+```
+
+Callback Signature:
+<pre><code>function(&amp;$info)</code></pre>
+
+Usages:
+
+[Login::initSession](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L102)
+
 ## Menu
+
+- [Menu.Admin.addItems](#menuadminadditems)
+- [Menu.Admin.addItems](#menuadminadditems)
+- [Menu.Admin.addItems](#menuadminadditems)
 
 #### Menu.Admin.addItems
 _Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php) in line [76](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php#L76)_
@@ -614,6 +653,8 @@ Usages:
 
 ## Provider
 
+- [Provider.getCleanHostname](#providergetcleanhostname)
+
 #### Provider.getCleanHostname
 _Defined in [Piwik/Plugins/Provider/Provider](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php) in line [183](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L183)_
 
@@ -636,6 +677,8 @@ Callback Signature:
 
 ## Reporting
 
+- [Reporting.getDatabaseConfig](#reportinggetdatabaseconfig)
+
 #### Reporting.getDatabaseConfig
 _Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [62](https://github.com/piwik/piwik/blob/master/core/Db.php#L62)_
 
@@ -647,6 +690,12 @@ Callback Signature:
 <pre><code>function(&amp;$dbInfos)</code></pre>
 
 ## Request
+
+- [Request.dispatch](#requestdispatch)
+- [Request.dispatch](#requestdispatch)
+- [Request.dispatch](#requestdispatch)
+- [Request.dispatch](#requestdispatch)
+- [Request.dispatch](#requestdispatch)
 
 #### Request.dispatch
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [133](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L133)_
@@ -707,6 +756,17 @@ Usages:
 [Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
 
 ## ScheduledReports
+
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
+- [ScheduledReports.allowMultipleReports](#scheduledreportsallowmultiplereports)
 
 #### ScheduledReports.allowMultipleReports
 _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [736](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L736)_
@@ -839,6 +899,8 @@ Usages:
 
 ## SegmentEditor
 
+- [SegmentEditor.deactivate](#segmenteditordeactivate)
+
 #### SegmentEditor.deactivate
 _Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php) in line [317](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php#L317)_
 
@@ -853,6 +915,9 @@ Usages:
 [ScheduledReports::segmentDeactivation](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L454)
 
 ## Segments
+
+- [Segments.getKnownSegmentsToArchiveAllSites](#segmentsgetknownsegmentstoarchiveallsites)
+- [Segments.getKnownSegmentsToArchiveAllSites](#segmentsgetknownsegmentstoarchiveallsites)
 
 #### Segments.getKnownSegmentsToArchiveAllSites
 _Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [70](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L70)_
@@ -883,6 +948,8 @@ Usages:
 
 ## Site
 
+- [Site.getSiteAttributes](#sitegetsiteattributes)
+
 #### Site.getSiteAttributes
 _Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [69](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L69)_
 
@@ -897,6 +964,8 @@ Usages:
 [Goals::fetchGoalsFromDb](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L425), [SitesManager::recordWebsiteDataInCache](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L73), [UsersManager::recordAdminUsersInCache](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L53)
 
 ## SitesManager
+
+- [SitesManager.deleteSite.end](#sitesmanagerdeletesiteend)
 
 #### SitesManager.deleteSite.end
 _Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [603](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L603)_
@@ -913,6 +982,8 @@ Usages:
 [Goals::deleteSiteGoals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L111), [ScheduledReports::deleteSiteReport](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L105), [UsersManager::deleteSite](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L68)
 
 ## TaskScheduler
+
+- [TaskScheduler.getScheduledTasks](#taskschedulergetscheduledtasks)
 
 #### TaskScheduler.getScheduledTasks
 _Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [68](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L68)_
@@ -943,6 +1014,20 @@ Usages:
 [CoreAdminHome::getScheduledTasks](https://github.com/piwik/piwik/blob/master/plugins/CoreAdminHome/CoreAdminHome.php#L41), [CorePluginsAdmin::getScheduledTasks](https://github.com/piwik/piwik/blob/master/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L41), [DBStats::getScheduledTasks](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L54), [PrivacyManager::getScheduledTasks](https://github.com/piwik/piwik/blob/master/plugins/PrivacyManager/PrivacyManager.php#L78), [ScheduledReports::getScheduledTasks](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L427), [UserCountry::getScheduledTasks](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L67)
 
 ## Tracker
+
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
 
 #### Tracker.detectReferrerSearchEngine
 _Defined in [Piwik/Tracker/Referrer](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php) in line [136](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php#L136)_
@@ -1094,6 +1179,8 @@ Usages:
 
 ## Translate
 
+- [Translate.getClientSideTranslationKeys](#translategetclientsidetranslationkeys)
+
 #### Translate.getClientSideTranslationKeys
 _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [191](https://github.com/piwik/piwik/blob/master/core/Translate.php#L191)_
 
@@ -1119,6 +1206,8 @@ Usages:
 
 ## Updater
 
+- [Updater.checkForUpdates](#updatercheckforupdates)
+
 #### Updater.checkForUpdates
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [371](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L371)_
 
@@ -1131,6 +1220,9 @@ Usages:
 [CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L83)
 
 ## User
+
+- [User.getLanguage](#usergetlanguage)
+- [User.getLanguage](#usergetlanguage)
 
 #### User.getLanguage
 _Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [122](https://github.com/piwik/piwik/blob/master/core/Translate.php#L122)_
@@ -1161,6 +1253,10 @@ Usages:
 [Login::noAccess](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L47)
 
 ## UsersManager
+
+- [UsersManager.addUser.end](#usersmanageradduserend)
+- [UsersManager.addUser.end](#usersmanageradduserend)
+- [UsersManager.addUser.end](#usersmanageradduserend)
 
 #### UsersManager.addUser.end
 _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [406](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L406)_
@@ -1197,6 +1293,11 @@ Callback Signature:
 <pre><code>function($userLogin)</code></pre>
 
 ## Visualization
+
+- [Visualization.addVisualizations](#visualizationaddvisualizations)
+- [Visualization.addVisualizations](#visualizationaddvisualizations)
+- [Visualization.addVisualizations](#visualizationaddvisualizations)
+- [Visualization.addVisualizations](#visualizationaddvisualizations)
 
 #### Visualization.addVisualizations
 _Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php) in line [158](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php#L158)_
@@ -1282,6 +1383,8 @@ Callback Signature:
 <pre><code>function($viewDataTable = $this)</code></pre>
 
 ## WidgetsList
+
+- [WidgetsList.addWidgets](#widgetslistaddwidgets)
 
 #### WidgetsList.addWidgets
 _Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [72](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L72)_

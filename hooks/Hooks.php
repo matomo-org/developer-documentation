@@ -103,6 +103,10 @@ class Hooks {
     {
         $loader = new Twig_Loader_Filesystem(__DIR__ . '/../template');
         $twig   = new Twig_Environment($loader, array());
+        $filter = new Twig_SimpleFilter('onlyalnum', function ($string) {
+            return preg_replace("/[^a-zA-Z0-9]+/", "", $string);
+        });
+        $twig->addFilter($filter);
 
         $documentation = $twig->render('hooks.twig', $viewVariables);
 

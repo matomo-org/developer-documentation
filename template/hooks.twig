@@ -60,6 +60,10 @@ This is a complete list of available hooks.
 {% for hook in hooks if hook.name != '$eventName' %}
 {% if (hook.category) != (currentCategory) %}{% set currentCategory = hook.category %}
 ## {{ hook.category }}
+
+{% for categoryHook in hooks if categoryHook.category == currentCategory %}
+- [{{ hook.name }}](#{{ hook.name|onlyalnum|lower }})
+{% endfor %}
 {% endif %}
 
 #### {{ hook.name }}
