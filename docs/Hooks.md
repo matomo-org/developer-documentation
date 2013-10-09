@@ -520,30 +520,6 @@ Callback Signature:
 - [Login.initSession](#logininitsession)
 
 #### Login.initSession
-_Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php) in line [187](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php#L187)_
-
-This event is triggered to initialize a user session. You can use this event to authenticate user against
-third party systems.
-
-Example:
-```
-public function initSession($info)
-{
-    $login = $info['login'];
-    $md5Password = $info['md5Password'];
-    $rememberMe = $info['rememberMe'];
-}
-```
-
-Callback Signature:
-<pre><code>function(&amp;$info)</code></pre>
-
-Usages:
-
-[Login::initSession](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L102)
-
-
-#### Login.initSession
 _Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [341](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L341)_
 
 This event is triggered to initialize a user session. You can use this event to authenticate user against
@@ -561,6 +537,30 @@ public function initSession($info)
 
 Callback Signature:
 <pre><code>function($info)</code></pre>
+
+Usages:
+
+[Login::initSession](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L102)
+
+
+#### Login.initSession
+_Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php) in line [187](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php#L187)_
+
+This event is triggered to initialize a user session. You can use this event to authenticate user against
+third party systems.
+
+Example:
+```
+public function initSession($info)
+{
+    $login = $info['login'];
+    $md5Password = $info['md5Password'];
+    $rememberMe = $info['rememberMe'];
+}
+```
+
+Callback Signature:
+<pre><code>function(&amp;$info)</code></pre>
 
 Usages:
 
