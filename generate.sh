@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
 git checkout docs
 rm -rf cache
 mkdir cache
