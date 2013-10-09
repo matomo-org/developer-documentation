@@ -71,58 +71,35 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
             $event = array(
                 'name'      => '',
                 'category'  => '',
+                'arguments' => array(),
+                'comment'   => null,
                 'file'      => $this->piwikFile,
                 'line'      => $node->getLine(),
                 'class'     => $this->getCurrentClass(),
                 'namespace' => $this->getCurrentNamespace(),
             );
 
-            $docComment = $node->getDocComment();
-            if (!empty($docComment)) {
-
-                $docParser = new Sami\Parser\DocBlockParser();
-                $parsedDoc = $docParser->parse($docComment->getText());
-
-                $ignore = $parsedDoc->getTag('ignore');
-                if (!empty($ignore)) {
-                    return;
-                }
-
-                $event['comment'] = array(
-                    'raw'       => $docComment->getText(),
-                    'formatted' => $docComment->getReformattedText(),
-                    'shortDesc' => trim($parsedDoc->getShortDesc()),
-                    'longDesc'  => trim($parsedDoc->getLongDesc())
-                );
-            }
-
             $args = $node->args;
             if (!empty($args)) {
                 $eventArg = array_shift($args);
 
-                $event['name'] = str_replace("'", '', $this->getArg($eventArg));
-
-                if (false !== strpos($event['name'], 'sprintf')) {
-                    $event['name'] = str_replace("sprintf(", '', $event['name']);
-                    $event['name'] = str_replace(")", '', $event['name']);
-
-                    $partsOfName = explode(', ', $event['name']);
-                    if (2 <= count($partsOfName)) {
-                        $event['name'] = vsprintf(array_shift($partsOfName), $partsOfName);
-                    }
-                }
-
-                $categories        = explode('.', $event['name']);
-                $event['category'] = array_shift($categories);
-
-                $event['arguments'] = array();
-                if (!empty($args)) {
-                    $event['arguments'] = $this->getArg(array_shift($args));
-                }
+                $event['name']     = $this->getEventName($eventArg, $event);
+                $event['category'] = $this->getCategoryFromEventName($event['name']);
             }
 
-            if (empty($docComment)) {
+            if (!empty($args)) {
+                $event['arguments'] = $this->getArg(array_shift($args));
+            }
+
+            $docComment = $this->getDocComment($node);
+            if (!empty($docComment)) {
+                $event['comment'] = $docComment;
+            } else {
                 echo sprintf("Hook %s has no documentation\n", $event['name']);
+            }
+
+            if (!empty($event['comment']['ignore'])) {
+                return;
             }
 
             $this->events[] = $event;
@@ -149,5 +126,50 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
         $prettyPrinter = new PHPParser_PrettyPrinter_Default();
 
         return $prettyPrinter->prettyPrintExpr($arg->value);
+    }
+
+    private function getDocComment(PHPParser_Node $node)
+    {
+        $docComment = $node->getDocComment();
+        if (empty($docComment)) {
+            return;
+        }
+
+        $docParser = new Sami\Parser\DocBlockParser();
+        $parsedDoc = $docParser->parse($docComment->getText());
+
+        $ignore = $parsedDoc->getTag('ignore');
+
+        return array(
+            'raw'       => $docComment->getText(),
+            'formatted' => $docComment->getReformattedText(),
+            'shortDesc' => trim($parsedDoc->getShortDesc()),
+            'longDesc'  => trim($parsedDoc->getLongDesc()),
+            'ignore'    => !empty($ignore)
+        );
+    }
+
+    private function getEventName($eventArg)
+    {
+        $eventName = str_replace("'", '', $this->getArg($eventArg));
+
+        if (false !== strpos($eventName, 'sprintf')) {
+            $eventName = str_replace("sprintf(", '', $eventName);
+            $eventName = str_replace(")", '', $eventName);
+
+            $partsOfName = explode(', ', $eventName);
+            if (2 <= count($partsOfName)) {
+                $eventName = vsprintf(array_shift($partsOfName), $partsOfName);
+            }
+        }
+
+        return $eventName;
+    }
+
+    private function getCategoryFromEventName($eventName)
+    {
+        $categories = explode('.', $eventName);
+
+        return array_shift($categories);
     }
 }
