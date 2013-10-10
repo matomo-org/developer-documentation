@@ -520,30 +520,6 @@ Callback Signature:
 - [Login.initSession](#logininitsession)
 
 #### Login.initSession
-_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [341](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L341)_
-
-This event is triggered to initialize a user session. You can use this event to authenticate user against
-third party systems.
-
-Example:
-```
-public function initSession($info)
-{
-    $login = $info['login'];
-    $md5Password = $info['md5Password'];
-    $rememberMe = $info['rememberMe'];
-}
-```
-
-Callback Signature:
-<pre><code>function($info)</code></pre>
-
-Usages:
-
-[Login::initSession](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L102)
-
-
-#### Login.initSession
 _Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php) in line [187](https://github.com/piwik/piwik/blob/master/plugins/Login/Controller.php#L187)_
 
 This event is triggered to initialize a user session. You can use this event to authenticate user against
@@ -561,6 +537,30 @@ public function initSession($info)
 
 Callback Signature:
 <pre><code>function(&amp;$info)</code></pre>
+
+Usages:
+
+[Login::initSession](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L102)
+
+
+#### Login.initSession
+_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [341](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L341)_
+
+This event is triggered to initialize a user session. You can use this event to authenticate user against
+third party systems.
+
+Example:
+```
+public function initSession($info)
+{
+    $login = $info['login'];
+    $md5Password = $info['md5Password'];
+    $rememberMe = $info['rememberMe'];
+}
+```
+
+Callback Signature:
+<pre><code>function($info)</code></pre>
 
 Usages:
 
@@ -731,6 +731,17 @@ Usages:
 
 
 #### Request.initAuthenticationObject
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [345](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L345)_
+
+This event is triggered before the user is authenticated. You can use it to create your own
+authentication object which implements the `Piwik\Auth` interface, and override the default authentication logic.
+
+Usages:
+
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
+
+
+#### Request.initAuthenticationObject
 _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php) in line [124](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php#L124)_
 
 This event is triggered shortly before the user is authenticated. Use it to create your own
@@ -739,17 +750,6 @@ interface in case you want to define your own authentication.
 
 Callback Signature:
 <pre><code>function($allowCookieAuthentication = true)</code></pre>
-
-Usages:
-
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
-
-
-#### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [345](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L345)_
-
-This event is triggered before the user is authenticated. You can use it to create your own
-authentication object which implements the `Piwik\Auth` interface, and override the default authentication logic.
 
 Usages:
 
@@ -1300,7 +1300,7 @@ Callback Signature:
 - [Visualization.initView](#visualizationinitview)
 
 #### Visualization.addVisualizations
-_Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php) in line [158](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php#L158)_
+_Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php) in line [172](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php#L172)_
 
 This event is used to gather all available DataTable visualizations. Callbacks should add visualization
 class names to the incoming array.
