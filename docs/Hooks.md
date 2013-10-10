@@ -1300,7 +1300,7 @@ Callback Signature:
 - [Visualization.initView](#visualizationinitview)
 
 #### Visualization.addVisualizations
-_Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php) in line [172](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php#L172)_
+_Defined in [Piwik/ViewDataTable/Visualization](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php) in line [193](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Visualization.php#L193)_
 
 This event is used to gather all available DataTable visualizations. Callbacks should add visualization
 class names to the incoming array.
@@ -1314,7 +1314,7 @@ Usages:
 
 
 #### Visualization.configureFooterIcons
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1302](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1302)_
+_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1309](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1309)_
 
 This event is called when determining the default set of footer icons to display below a report. Plugins can use this event to modify the default set of footer icons. You can
 add new icons or remove existing ones.
