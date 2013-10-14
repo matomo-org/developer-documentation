@@ -192,6 +192,7 @@ Deletes the given columns
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$columns`
+    - `$deleteRecursiveInSubtables`
 - It does not return anything.
 
 ### `deleteRow()` <a name="deleteRow"></a>
@@ -215,7 +216,7 @@ Deletes the given column
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$column`
+    - `$name`
 - It does not return anything.
 
 ### `getColumn()` <a name="getColumn"></a>

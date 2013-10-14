@@ -3,13 +3,12 @@
 CacheFile
 =========
 
-Code originally inspired from OpenX - openx/plugins_repo/openXDeliveryCacheStore/extensions/deliveryCacheStore/oxCacheFile/oxCacheFile.class.php - openx/plugins_repo/openXDeliveryCacheStore/extensions/deliveryCacheStore/oxCacheFile/oxCacheFile.delivery.php
+This class is used to cache data on the filesystem.
 
 Description
 -----------
 
-We may want to add support for cache expire, storing last modification time in the file. See code in:
-- openx/lib/max/Delivery/cache.php
+It is for example used by the Tracker process to cache various settings and websites attributes in tmp/cache/tracker/*
 
 
 Constants
