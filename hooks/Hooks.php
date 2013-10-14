@@ -58,7 +58,7 @@ class Hooks {
         $usages = array();
 
         foreach ($pluginNames as $pluginName) {
-            $plugin = \Piwik\PluginsManager::getInstance()->loadPlugin($pluginName);
+            $plugin = \Piwik\Plugin\Manager::getInstance()->loadPlugin($pluginName);
             $registeredHooks = $plugin->getListHooksRegistered();
 
             if (!array_key_exists($hookName, $registeredHooks)) {
