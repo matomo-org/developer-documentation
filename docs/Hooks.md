@@ -731,6 +731,17 @@ Usages:
 
 
 #### Request.initAuthenticationObject
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [331](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L331)_
+
+This event is triggered before the user is authenticated. You can use it to create your own
+authentication object which implements the `Piwik\Auth` interface, and override the default authentication logic.
+
+Usages:
+
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
+
+
+#### Request.initAuthenticationObject
 _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php) in line [109](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php#L109)_
 
 This event is triggered shortly before the user is authenticated. Use it to create your own
@@ -739,17 +750,6 @@ interface in case you want to define your own authentication.
 
 Callback Signature:
 <pre><code>function($allowCookieAuthentication = true)</code></pre>
-
-Usages:
-
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
-
-
-#### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [331](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L331)_
-
-This event is triggered before the user is authenticated. You can use it to create your own
-authentication object which implements the `Piwik\Auth` interface, and override the default authentication logic.
 
 Usages:
 
