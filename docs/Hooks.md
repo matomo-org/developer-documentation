@@ -731,17 +731,6 @@ Usages:
 
 
 #### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [331](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L331)_
-
-This event is triggered before the user is authenticated. You can use it to create your own
-authentication object which implements the `Piwik\Auth` interface, and override the default authentication logic.
-
-Usages:
-
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
-
-
-#### Request.initAuthenticationObject
 _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php) in line [109](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php#L109)_
 
 This event is triggered shortly before the user is authenticated. Use it to create your own
@@ -750,6 +739,17 @@ interface in case you want to define your own authentication.
 
 Callback Signature:
 <pre><code>function($allowCookieAuthentication = true)</code></pre>
+
+Usages:
+
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
+
+
+#### Request.initAuthenticationObject
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [331](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L331)_
+
+This event is triggered before the user is authenticated. You can use it to create your own
+authentication object which implements the `Piwik\Auth` interface, and override the default authentication logic.
 
 Usages:
 
@@ -1314,7 +1314,7 @@ Usages:
 
 
 #### Visualization.configureFooterIcons
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1272](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1272)_
+_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1273](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1273)_
 
 This event is called when determining the default set of footer icons to display below a report. Plugins can use this event to modify the default set of footer icons. You can
 add new icons or remove existing ones.
@@ -1370,9 +1370,9 @@ Usages:
 
 
 #### Visualization.initView
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1080](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1080)_
+_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1084](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1084)_
 
-This event is called before a visualization is created. Plugins can use this event to
+This event is called after a visualization has been configured. Plugins can use this event to
 override view properties for individual reports or visualizations.
 
 Themes can use this event to make sure reports look nice with their themes. Plugins
