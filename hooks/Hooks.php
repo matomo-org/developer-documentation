@@ -36,7 +36,14 @@ class Hooks {
     public function sortHooksByName($hooks)
     {
         usort($hooks, function ($hook1, $hook2) {
-            return strtolower($hook1['name']) > strtolower($hook2['name']) ? 1 : -1;
+            $hookName1 = strtolower($hook1['name']);
+            $hookName2 = strtolower($hook2['name']);
+
+            if ($hookName1 == $hookName2) {
+                return $hook1['line'] > $hook2['line'] ? 1 : -1;
+            }
+
+            return $hookName1 > $hookName2 ? 1 : -1;
         });
 
         return $hooks;
