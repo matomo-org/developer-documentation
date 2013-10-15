@@ -41,6 +41,7 @@ The class defines the following methods:
 - [`__get()`](#__get) &mdash; Magic get methods catching calls to $config-&gt;var_name Returns the value if found in the configuration
 - [`__set()`](#__set) &mdash; Set value
 - [`forceSave()`](#forceSave) &mdash; Force save
+- [`getInstance()`](#getInstance)
 
 ### `__get()` <a name="__get"></a>
 
@@ -77,4 +78,11 @@ Force save
 
 - It is a **public** method.
 - It does not return anything.
+
+### `getInstance()` <a name="getInstance"></a>
+
+#### Signature
+
+- It is a **public** method.
+- It returns a(n) [`Config`](../Piwik/Config.md) value.
 
