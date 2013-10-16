@@ -36,6 +36,7 @@ The class defines the following methods:
 
 - [`getRequestArrayFromString()`](#getRequestArrayFromString) &mdash; Returns the request array as string
 - [`__construct()`](#__construct) &mdash; Constructs the request to the API, given the request url
+- [`renameModule()`](#renameModule) &mdash; For backward compatibility: Piwik API still works if module=Referers, we rewrite to correct renamed plugin: Referrers
 - [`process()`](#process) &mdash; Handles the request to the API.
 - [`getClassNameAPI()`](#getClassNameAPI)
 - [`reloadAuthUsingTokenAuth()`](#reloadAuthUsingTokenAuth) &mdash; If the token_auth is found in the $request parameter, the current session will be authenticated using this token_auth.
@@ -67,6 +68,17 @@ Constructs the request to the API, given the request url
 - It accepts the following parameter(s):
     - `$request`
 - It does not return anything.
+
+### `renameModule()` <a name="renameModule"></a>
+
+For backward compatibility: Piwik API still works if module=Referers, we rewrite to correct renamed plugin: Referrers
+
+#### Signature
+
+- It is a **public static** method.
+- It accepts the following parameter(s):
+    - `$module`
+- It returns a(n) `string` value.
 
 ### `process()` <a name="process"></a>
 

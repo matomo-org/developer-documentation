@@ -164,7 +164,7 @@ Usages:
 
 
 #### API.Request.authenticate
-_Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [190](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L190)_
+_Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [211](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L211)_
 
 This event is triggered when authenticating the API call, only if the token_auth is found in the request. In this case the current session should authenticate using this token_auth.
 
@@ -344,7 +344,7 @@ Usages:
 - [Config.NoConfigurationFile](#confignoconfigurationfile)
 
 #### Config.badConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [307](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L307)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [254](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L254)_
 
 This event is triggered in case a config file is not in the correct format or in case required values are missing. The event can be used to start the installation process or to display a custom error
 message.
@@ -358,7 +358,7 @@ Usages:
 
 
 #### Config.NoConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [234](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L234)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [181](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L181)_
 
 This event is triggered in case no configuration file is available. This usually means Piwik is not
 installed yet. The event can be used to start the installation process or to display a custom error
@@ -377,7 +377,7 @@ Usages:
 - [Controller.$module.$action.end](#controllermoduleactionend)
 
 #### Controller.$module.$action
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [127](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L127)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [74](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L74)_
 
 This event is similar to the `Request.dispatch` hook. It distinguishes the possibility to subscribe only to a
 specific controller method instead of all controller methods. You can use it for example to modify any input
@@ -388,7 +388,7 @@ Callback Signature:
 
 
 #### Controller.$module.$action.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [137](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L137)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [84](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L84)_
 
 This event is similar to the `Request.dispatch.end` hook. It distinguishes the possibility to subscribe
 only to the end of a specific controller method instead of all controller methods. You can use it for
@@ -698,7 +698,7 @@ Callback Signature:
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 
 #### Request.dispatch
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [120](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L120)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [67](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L67)_
 
 Generic hook that plugins can use to modify any input to the function, or even change the plugin being called. You could also use this to build an enhanced permission system. The event is triggered before every
 call to a controller method.
@@ -710,7 +710,7 @@ Callback Signature:
 
 
 #### Request.dispatch.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [144](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L144)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [91](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L91)_
 
 Generic hook that plugins can use to modify any output of any controller method. The event is triggered
 after a controller method is executed but before the result is send to the user. The parameters
@@ -721,7 +721,7 @@ Callback Signature:
 
 
 #### Request.dispatchCoreAndPluginUpdatesScreen
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [318](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L318)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [265](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L265)_
 
 This event is the first event triggered just after the platform is initialized and plugins are loaded. You can use this event to do early initialization. Note: the user is not authenticated yet.
 
@@ -746,7 +746,7 @@ Usages:
 
 
 #### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [331](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L331)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [278](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L278)_
 
 This event is triggered before the user is authenticated. You can use it to create your own
 authentication object which implements the `Piwik\Auth` interface, and override the default authentication logic.
@@ -1209,7 +1209,7 @@ Usages:
 - [Updater.checkForUpdates](#updatercheckforupdates)
 
 #### Updater.checkForUpdates
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [357](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L357)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [304](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L304)_
 
 This event is triggered to check for updates. It is triggered after the platform is initialized and after
 the user is authenticated but before the platform is going to dispatch the actual request. You can use
@@ -1240,7 +1240,7 @@ Usages:
 
 
 #### User.isNotAuthorized
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [155](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L155)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [102](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L102)_
 
 This event is triggered in case the user wants to access anything in the Piwik UI but has not the required permissions to do this. You can subscribe to this event to display a custom error message or
 to display a custom login form in such a case.
@@ -1314,7 +1314,7 @@ Usages:
 
 
 #### Visualization.configureFooterIcons
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1272](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1272)_
+_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1277](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1277)_
 
 This event is called when determining the default set of footer icons to display below a report. Plugins can use this event to modify the default set of footer icons. You can
 add new icons or remove existing ones.
@@ -1370,7 +1370,7 @@ Usages:
 
 
 #### Visualization.initView
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1083](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1083)_
+_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [1088](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L1088)_
 
 This event is called after a visualization has been configured. Plugins can use this event to
 override view properties for individual reports or visualizations.
