@@ -3,121 +3,85 @@
 DataTable
 =========
 
----- DataTable A DataTable is a data structure used to store complex tables of data.
+The primary data structure used to store analytics data in Piwik.
 
 Description
 -----------
 
-A DataTable is composed of multiple DataTable\Row.
-A DataTable can be applied one or several DataTable_Filter.
-A DataTable can be given to a DataTable_Renderer that would export the data under a given format (XML, HTML, etc.).
+### The Basics
 
-A DataTable has the following features:
-- serializable to be stored in the DB
-- loadable from the serialized version
-- efficient way of loading data from an external source (from a PHP array structure)
-- very simple interface to get data from the table
+DataTables consist of rows and each row consists of columns. A column value can be
+be a numeric, string or array.
 
----- DataTable\Row
-A DataTableRow in the table is defined by
-- multiple columns (a label, multiple values, ...)
-- optional metadata
-- optional - a sub DataTable associated to this row
+DataTables are hierarchical data structures. Each row can also contain an additional
+nested sub-DataTable.
 
-Simple row example:
-- columns = array(   &#039;label&#039; =&gt; &#039;Firefox&#039;,
-                       &#039;visitors&#039; =&gt; 155,
-                       &#039;pages&#039; =&gt; 214,
-                       &#039;bounce_rate&#039; =&gt; 67)
-- metadata = array(&#039;logo&#039; =&gt; &#039;/plugins/UserSettings/images/browsers/FF.gif&#039;)
-- no sub DataTable
+Both DataTables and DataTable rows can hold **metadata**. _DataTable metadata_ is information
+regarding all the data, such as the site or period that the data is for. _Row metadata_
+is information regarding that row, such as a browser logo or website URL.
 
-A more complex example would be a DataTable\Row that is associated to a sub DataTable.
-For example, for the row of the search engine Google,
-we want to get the list of keywords associated, with their statistics.
-- columns = array(   &#039;label&#039; =&gt; &#039;Google&#039;,
-                       &#039;visits&#039; =&gt; 1550,
-                       &#039;visits_length&#039; =&gt; 514214,
-                       &#039;returning_visits&#039; =&gt; 77)
-- metadata = array(    &#039;logo&#039; =&gt; &#039;/plugins/Referrers/images/searchEngines/google.com.png&#039;,
-                       &#039;url&#039; =&gt; &#039;http://google.com&#039;)
-- DataTable = DataTable containing several DataTable\Row containing the keywords information for this search engine
-           Example of one DataTable\Row
-           - the keyword columns specific to this search engine =
-                   array(  &#039;label&#039; =&gt; &#039;Piwik&#039;, // the keyword
-                           &#039;visitors&#039; =&gt; 155,  // Piwik has been searched on Google by 155 visitors
-                           &#039;pages&#039; =&gt; 214 // Visitors coming from Google with the kwd Piwik have seen 214 pages
-                   )
-           - the keyword metadata = array() // nothing here, but we could imagining storing the URL of the search in Google for example
-           - no subTable
+Finally, DataTables all contain a special _summary_ row.
 
+### Populating DataTables
 
----- DataTable_Filter
-A DataTable_Filter is a applied to a DataTable and so
-can filter information in the multiple DataTable\Row.
+Data can be added to DataTables in a couple different ways. You can either:
 
-For example a DataTable_Filter can:
-- remove rows from the table,
-       for example the rows&#039; labels that do not match a given searched pattern
-       for example the rows&#039; values that are less than a given percentage (low population)
-- return a subset of the DataTable
-       for example a function that apply a limit: $offset, $limit
-- add / remove columns
-       for example adding a column that gives the percentage of a given value
-- add some metadata
-       for example the &#039;logo&#039; path if the filter detects the logo
-- edit the value, the label
-- change the rows order
-       for example if we want to sort by Label alphabetical order, or by any column value
+1. create rows one by one and add them through [addRow](#addRow) then truncate if desired,
+2. create an array of DataTable\Row instances or an array of arrays and add them using
+   [addRowsFromArray](#addRowsFromArray) or [addRowsFromSimpleArray](#addRowsFromSimpleArray)
+   then truncate if desired,
+3. or set the maximum number of allowed rows (with [setMaximumAllowedRows](#setMaximumAllowedRows))
+   and add rows one by one.
 
-When several DataTable_Filter are to be applied to a DataTable they are applied sequentially.
-A DataTable_Filter is assigned a priority.
-For example, filters that
-   - sort rows should be applied with the highest priority
-   - remove rows should be applied with a high priority as they prune the data and improve performance.
+If you want to eventually truncate your data (standard practice for all Piwik plugins),
+the third method is the most memory efficient. It is, unfortunately, not always possible
+to use since it requires that the data be sorted before adding.
 
----- Code example
+### Manipulating DataTables
 
-$table = new DataTable();
-$table-&gt;addRowsFromArray( array(...) );
+There are two main ways to manipulate a DataTable. You can either:
 
-# sort the table by visits asc
-$filter = new DataTable_Filter_Sort( $table, &#039;visits&#039;, &#039;asc&#039;);
-$tableFiltered = $filter-&gt;getTableFiltered();
+1. manually iterate through each row and manipulate the data,
+2. or you can use predefined Filters.
 
-# add a filter to select only the website with a label matching &#039;*.com&#039; (regular expression)
-$filter = new DataTable_Filter_Pattern( $table, &#039;label&#039;, &#039;*(.com)&#039;);
-$tableFiltered = $filter-&gt;getTableFiltered();
+A Filter is a class that has a &#039;filter&#039; method which will manipulate a DataTable in
+some way. There are several predefined Filters that allow you to do common things,
+such as,
 
-# keep the 20 elements from offset 15
-$filter = new DataTable_Filter_Limit( $tableFiltered, 15, 20);
-$tableFiltered = $filter-&gt;getTableFiltered();
+- add a new column to each row,
+- add new metadata to each row,
+- modify an existing column value for each row,
+- sort an entire DataTable,
+- and more.
 
-# add a column computing the percentage of visits
-# params = table, column containing the value, new column name to add, number of total visits to use to compute the %
-$filter = new DataTable_Filter_AddColumnPercentage( $tableFiltered, &#039;visits&#039;, &#039;visits_percentage&#039;, 2042);
-$tableFiltered = $filter-&gt;getTableFiltered();
+Using these Filters instead of writing your own code will increase code clarity and
+reduce code redundancy. Additionally, Filters have the advantage that they can be
+applied to DataTable\Map instances. So you can visit every DataTable in a DataTable\Map
+without having to write a recursive visiting function.
 
-# we get the table as XML
-$xmlOutput = new DataTable_Exporter_Xml( $table );
-$xmlOutput-&gt;setHeader( ... );
-$xmlOutput-&gt;setColumnsToExport( array(&#039;visits&#039;, &#039;visits_percent&#039;, &#039;label&#039;) );
-$XMLstring = $xmlOutput-&gt;getOutput();
+Note: Anonymous functions can be used as DataTable Filters.
 
+### Applying Filters
 
----- Other (ideas)
-We can also imagine building a DataTable_Compare which would take N DataTable that have the same
-structure and would compare them, by computing the percentages of differences, etc.
+Filters can be applied now (via [filter](#filter)), or they can be applied later (via
+[queueFilter](#queueFilter)).
 
-For example
-DataTable1 = [ keyword1, 1550 visits]
-               [ keyword2, 154 visits ]
-DataTable2 = [ keyword1, 1004 visits ]
-               [ keyword3, 659 visits ]
-DataTable_Compare = result of comparison of table1 with table2
-                       [ keyword1, +154% ]
-                       [ keyword2, +1000% ]
-                       [ keyword3, -430% ]
+Filters that sort rows or manipulate the number of rows should be applied right away.
+Non-essential, presentation filters should be queued.
+
+See also:
+
+- ArchiveProcessor &amp;mdash; to learn how DataTables are persisted.
+- DataTable\Renderer &amp;mdash; to learn how DataTable data is exported to XML, JSON, etc.
+- DataTable\Filter &amp;mdash; to see all core Filters.
+- DataTable\Manager &amp;mdash; to learn how DataTables are loaded.
+
+### Examples
+
+**Populating a DataTable**
+**Serializing &amp; unserializing**
+**Filtering for an API method**
+??? TODO
 
 
 Constants

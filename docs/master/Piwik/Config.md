@@ -3,34 +3,32 @@
 Config
 ======
 
-For general performance (and specifically, the Tracker), we use deferred (lazy) initialization and cache sections.
+Singleton that provides read &amp; write access to Piwik&#039;s INI configuration.
 
 Description
 -----------
 
-We also avoid any dependency on Zend Framework&#039;s Zend_Config.
+This class reads and writes to the `config/config.ini.php` file. If config
+options are missing from that file, this class will look for their default
+values in `config/global.ini.php`.
 
-We use a parse_ini_file() wrapper to parse the configuration files, in case php&#039;s built-in
-function is disabled.
+### Examples
 
-Example reading a value from the configuration:
+**Getting a value:**
 
-    $minValue = Piwik_Config::getInstance()-&gt;General[&#039;minimum_memory_limit&#039;];
+    // read the minimum_memory_limit option under the [General] section
+    $minValue = Config::getInstance()-&gt;General[&#039;minimum_memory_limit&#039;];
 
-will read the value minimum_memory_limit under the [General] section of the config file.
+**Setting a value:**
 
-Example setting a section in the configuration:
+    // set the minimum_memory_limit option
+    Config::getInstance()-&gt;General[&#039;minimum_memory_limit&#039;] = 256;
+    Config::getInstance()-&gt;forceSave();
 
-   $brandingConfig = array(
-       &#039;use_custom_logo&#039; =&gt; 1,
-   );
-   Piwik_Config::getInstance()-&gt;branding = $brandingConfig;
+**Setting an entire section:**
 
-Example setting an option within a section in the configuration:
-
-   $brandingConfig = Piwik_Config::getInstance()-&gt;branding;
-   $brandingConfig[&#039;use_custom_logo&#039;] = 1;
-   Piwik_Config::getInstance()-&gt;branding = $brandingConfig;
+    Config::getInstance()-&gt;MySection = array(&#039;myoption&#039; =&gt; 1);
+    Config::getInstance()-&gt;forceSave();
 
 
 Methods
@@ -38,28 +36,28 @@ Methods
 
 The class defines the following methods:
 
-- [`__get()`](#__get) &mdash; Magic get methods catching calls to $config-&gt;var_name Returns the value if found in the configuration
-- [`__set()`](#__set) &mdash; Set value
-- [`forceSave()`](#forceSave) &mdash; Force save
+- [`__get()`](#__get) &mdash; Returns a configuration value or section by name.
+- [`__set()`](#__set) &mdash; Sets a configuration value or section.
+- [`forceSave()`](#forceSave) &mdash; Writes the current configuration to `config.ini.php`.
 
 ### `__get()` <a name="__get"></a>
 
-Magic get methods catching calls to $config-&gt;var_name Returns the value if found in the configuration
+Returns a configuration value or section by name.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
-- _Returns:_ The value requested, returned by reference
+- _Returns:_ The requested value requested. Returned by reference.
     - `string`
     - `array`
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the value requested not found in both files
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the value requested not found in either `config.ini.php` or `global.ini.php`.
 
 ### `__set()` <a name="__set"></a>
 
-Set value
+Sets a configuration value or section.
 
 #### Signature
 
@@ -71,7 +69,7 @@ Set value
 
 ### `forceSave()` <a name="forceSave"></a>
 
-Force save
+Writes the current configuration to `config.ini.php`.
 
 #### Signature
 
