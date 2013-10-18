@@ -42,6 +42,7 @@ The class defines the following methods:
 - [`reloadAuthUsingTokenAuth()`](#reloadAuthUsingTokenAuth) &mdash; If the token_auth is found in the $request parameter, the current session will be authenticated using this token_auth.
 - [`processRequest()`](#processRequest) &mdash; Helper method to process an API request using the variables in $_GET and $_POST.
 - [`getRequestParametersGET()`](#getRequestParametersGET)
+- [`getBaseReportUrl()`](#getBaseReportUrl) &mdash; Returns URL for this report w/o any filter parameters.
 - [`getCurrentUrlWithoutGenericFilters()`](#getCurrentUrlWithoutGenericFilters) &mdash; Returns the current URL without generic filter query parameters.
 - [`getRawSegmentFromRequest()`](#getRawSegmentFromRequest)
 
@@ -142,6 +143,19 @@ Helper method to process an API request using the variables in $_GET and $_POST.
 
 - It is a **public static** method.
 - It returns a(n) `array` value.
+
+### `getBaseReportUrl()` <a name="getBaseReportUrl"></a>
+
+Returns URL for this report w/o any filter parameters.
+
+#### Signature
+
+- It is a **public static** method.
+- It accepts the following parameter(s):
+    - `$module`
+    - `$action`
+    - `$queryParams`
+- It returns a(n) `string` value.
 
 ### `getCurrentUrlWithoutGenericFilters()` <a name="getCurrentUrlWithoutGenericFilters"></a>
 
