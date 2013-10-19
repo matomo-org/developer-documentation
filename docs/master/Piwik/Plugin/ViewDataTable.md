@@ -72,6 +72,7 @@ The abstract class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Default constructor.
 - [`getDefaultConfig()`](#getDefaultConfig)
 - [`getDefaultRequestConfig()`](#getDefaultRequestConfig)
+- [`getViewDataTableId()`](#getViewDataTableId) &mdash; Returns the viewDataTable ID for this DataTable visualization.
 - [`isViewDataTableId()`](#isViewDataTableId)
 - [`getDataTable()`](#getDataTable) &mdash; Returns the DataTable loaded from the API
 - [`setDataTable()`](#setDataTable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly.
@@ -103,6 +104,22 @@ Default constructor.
 
 - It is a **public static** method.
 - It does not return anything.
+
+### `getViewDataTableId()` <a name="getViewDataTableId"></a>
+
+Returns the viewDataTable ID for this DataTable visualization.
+
+#### Description
+
+Derived classes
+should declare a const ID field with the viewDataTable ID.
+
+#### Signature
+
+- It is a **public static** method.
+- It returns a(n) `string` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 ### `isViewDataTableId()` <a name="isViewDataTableId"></a>
 
