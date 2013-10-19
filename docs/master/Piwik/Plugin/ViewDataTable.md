@@ -72,15 +72,10 @@ The abstract class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Default constructor.
 - [`getDefaultConfig()`](#getDefaultConfig)
 - [`getDefaultRequestConfig()`](#getDefaultRequestConfig)
-- [`getViewDataTableId()`](#getViewDataTableId) &mdash; Returns the viewDataTable ID for this DataTable visualization.
 - [`isViewDataTableId()`](#isViewDataTableId)
 - [`getDataTable()`](#getDataTable) &mdash; Returns the DataTable loaded from the API
 - [`setDataTable()`](#setDataTable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly.
-- [`getIdsWithInheritance()`](#getIdsWithInheritance) &mdash; Returns the viewDataTable IDs of a visualization&#039;s class lineage.
 - [`render()`](#render) &mdash; Convenience function.
-- [`getDefaultDataTableCssClass()`](#getDefaultDataTableCssClass)
-- [`getVisualizationInfoFor()`](#getVisualizationInfoFor) &mdash; Returns an array mapping visualization IDs with information necessary for adding the visualizations to the footer of DataTable views.
-- [`getOverridableProperties()`](#getOverridableProperties) &mdash; Returns the list of view properties that can be overriden by query parameters.
 - [`isRequestingSingleDataTable()`](#isRequestingSingleDataTable)
 
 ### `__construct()` <a name="__construct"></a>
@@ -108,22 +103,6 @@ Default constructor.
 
 - It is a **public static** method.
 - It does not return anything.
-
-### `getViewDataTableId()` <a name="getViewDataTableId"></a>
-
-Returns the viewDataTable ID for this DataTable visualization.
-
-#### Description
-
-Derived classes
-should declare a const ID field with the viewDataTable ID.
-
-#### Signature
-
-- It is a **public static** method.
-- It returns a(n) `string` value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
 
 ### `isViewDataTableId()` <a name="isViewDataTableId"></a>
 
@@ -161,21 +140,6 @@ It won&#039;t be loaded again from the API in this case
 - _Returns:_ $dataTable DataTable
     - `void`
 
-### `getIdsWithInheritance()` <a name="getIdsWithInheritance"></a>
-
-Returns the viewDataTable IDs of a visualization&#039;s class lineage.
-
-#### See Also
-
-- `self::getVisualizationClassLineage`
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$klass`
-- It returns a(n) `array` value.
-
 ### `render()` <a name="render"></a>
 
 Convenience function.
@@ -189,33 +153,6 @@ Calls main() &amp; renders the view that gets built.
 - It is a **public** method.
 - _Returns:_ The result of rendering.
     - `string`
-
-### `getDefaultDataTableCssClass()` <a name="getDefaultDataTableCssClass"></a>
-
-#### Signature
-
-- It is a **public** method.
-- It does not return anything.
-
-### `getVisualizationInfoFor()` <a name="getVisualizationInfoFor"></a>
-
-Returns an array mapping visualization IDs with information necessary for adding the visualizations to the footer of DataTable views.
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$visualizations`
-- It returns a(n) `array` value.
-
-### `getOverridableProperties()` <a name="getOverridableProperties"></a>
-
-Returns the list of view properties that can be overriden by query parameters.
-
-#### Signature
-
-- It is a **public** method.
-- It returns a(n) `array` value.
 
 ### `isRequestingSingleDataTable()` <a name="isRequestingSingleDataTable"></a>
 
