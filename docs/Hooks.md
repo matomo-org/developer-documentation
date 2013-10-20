@@ -1300,7 +1300,7 @@ Callback Signature:
 - [ViewDataTable.getDefaultType](#viewdatatablegetdefaulttype)
 
 #### ViewDataTable.addViewDataTable
-_Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [42](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L42)_
+_Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [85](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L85)_
 
 This event is used to gather all available DataTable visualizations. Callbacks should add visualization
 class names to the incoming array.
@@ -1368,7 +1368,7 @@ Usages:
 - [Visualization.configureFooterIcons](#visualizationconfigurefootericons)
 
 #### Visualization.configureFooterIcons
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [401](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L401)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [377](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L377)_
 
 This event is called when determining the default set of footer icons to display below a report. Plugins can use this event to modify the default set of footer icons. You can
 add new icons or remove existing ones.
