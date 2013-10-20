@@ -1295,10 +1295,26 @@ Callback Signature:
 
 ## ViewDataTable
 
+- [ViewDataTable.addViewDataTable](#viewdatatableaddviewdatatable)
 - [ViewDataTable.configure](#viewdatatableconfigure)
+- [ViewDataTable.getDefaultType](#viewdatatablegetdefaulttype)
+
+#### ViewDataTable.addViewDataTable
+_Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [42](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L42)_
+
+This event is used to gather all available DataTable visualizations. Callbacks should add visualization
+class names to the incoming array.
+
+Callback Signature:
+<pre><code>function(&amp;$visualizations)</code></pre>
+
+Usages:
+
+[CoreVisualizations::getAvailableDataTableVisualizations](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/CoreVisualizations.php#L38), [ExampleVisualization::getAvailableVisualizations](https://github.com/piwik/piwik/blob/master/plugins/ExampleVisualization/ExampleVisualization.php#L30), [Goals::getAvailableDataTableVisualizations](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L110)
+
 
 #### ViewDataTable.configure
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [124](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L124)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [125](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L125)_
 
 This event is triggered to gather the report display properties for each available report. If you define
 your own report, you want to subscribe to this event to define how your report shall be displayed in the
@@ -1321,28 +1337,38 @@ Usages:
 
 [Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L648), [CustomVariables::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L156), [DBStats::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L109), [DevicesDetection::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L297), [Goals::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L528), [Live::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L79), [Provider::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L239), [Referrers::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L309), [UserCountry::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L367), [UserSettings::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L189), [VisitTime::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L136), [VisitorInterest::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L164)
 
-## Visualization
 
-- [Visualization.addVisualizations](#visualizationaddvisualizations)
-- [Visualization.configureFooterIcons](#visualizationconfigurefootericons)
-- [Visualization.getDefaultTypeViewDataTable](#visualizationgetdefaulttypeviewdatatable)
+#### ViewDataTable.getDefaultType
+_Defined in [Piwik/ViewDataTable/Factory](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php) in line [157](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php#L157)_
 
-#### Visualization.addVisualizations
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [121](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L121)_
+This event is triggered to gather the default view types for each available report. By default a table
+is used. If you define your own report, you may want to subscribe to this event to define another
+Visualization that should be used by default to display your report. For instance a Pie, a Bar or a
+Cloud.
 
-This event is used to gather all available DataTable visualizations. Callbacks should add visualization
-class names to the incoming array.
+Example:
+```
+public function getDefaultTypeViewDataTable(&$defaultViewTypes)
+{
+    $defaultViewTypes['Referrers.getSocials']       = HtmlTable::ID;
+    $defaultViewTypes['Referrers.getUrlsForSocial'] = Pie::ID;
+    )
+}
+```
 
 Callback Signature:
-<pre><code>function(&amp;$visualizations)</code></pre>
+<pre><code>function(&amp;self::$defaultViewTypes)</code></pre>
 
 Usages:
 
-[CoreVisualizations::getAvailableDataTableVisualizations](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/CoreVisualizations.php#L38), [ExampleVisualization::getAvailableVisualizations](https://github.com/piwik/piwik/blob/master/plugins/ExampleVisualization/ExampleVisualization.php#L30), [Goals::getAvailableDataTableVisualizations](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L110)
+[DBStats::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L96), [Live::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L88), [Referrers::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L303), [UserSettings::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L184), [VisitTime::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L129), [VisitorInterest::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L158)
 
+## Visualization
+
+- [Visualization.configureFooterIcons](#visualizationconfigurefootericons)
 
 #### Visualization.configureFooterIcons
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [400](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L400)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [401](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L401)_
 
 This event is called when determining the default set of footer icons to display below a report. Plugins can use this event to modify the default set of footer icons. You can
 add new icons or remove existing ones.
@@ -1369,32 +1395,6 @@ array(
 
 Callback Signature:
 <pre><code>function(&amp;$result, $viewDataTable = $this)</code></pre>
-
-
-#### Visualization.getDefaultTypeViewDataTable
-_Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [228](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L228)_
-
-This event is triggered to gather the default view types for each available report. By default a table
-is used. If you define your own report, you may want to subscribe to this event to define another
-Visualization that should be used by default to display your report. For instance a Pie, a Bar or a
-Cloud.
-
-Example:
-```
-public function getDefaultTypeViewDataTable(&$defaultViewTypes)
-{
-    $defaultViewTypes['Referrers.getSocials']       = HtmlTable::ID;
-    $defaultViewTypes['Referrers.getUrlsForSocial'] = Pie::ID;
-    )
-}
-```
-
-Callback Signature:
-<pre><code>function(&amp;self::$defaultViewTypes)</code></pre>
-
-Usages:
-
-[DBStats::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L96), [Live::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L88), [Referrers::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L303), [UserSettings::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L184), [VisitTime::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L129), [VisitorInterest::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L158)
 
 ## WidgetsList
 
