@@ -1300,7 +1300,7 @@ Callback Signature:
 - [ViewDataTable.getDefaultType](#viewdatatablegetdefaulttype)
 
 #### ViewDataTable.addViewDataTable
-_Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [85](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L85)_
+_Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [87](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L87)_
 
 This event is used to gather all available DataTable visualizations. Callbacks should add visualization
 class names to the incoming array.
