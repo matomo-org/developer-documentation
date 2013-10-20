@@ -41,7 +41,7 @@ The class defines the following methods:
 
 - [`factory()`](#factory) &mdash; Returns a Piwik_ViewDataTable_* object.
 - [`getAvailableVisualizations()`](#getAvailableVisualizations) &mdash; Returns all registered visualization classes.
-- [`getNonCoreVisualizations()`](#getNonCoreVisualizations) &mdash; Returns all available visualizations that are not part of the CoreVisualizations plugin.
+- [`getNonCoreViewDataTables()`](#getNonCoreViewDataTables) &mdash; Returns all available visualizations that are not part of the CoreVisualizations plugin.
 - [`renderReport()`](#renderReport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method.
 
 ### `factory()` <a name="factory"></a>
@@ -87,7 +87,7 @@ event to retrieve visualizations.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If a visualization class does not exist or if a duplicate visualization ID is found.
 
-### `getNonCoreVisualizations()` <a name="getNonCoreVisualizations"></a>
+### `getNonCoreViewDataTables()` <a name="getNonCoreViewDataTables"></a>
 
 Returns all available visualizations that are not part of the CoreVisualizations plugin.
 
