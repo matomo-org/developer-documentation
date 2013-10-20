@@ -1325,7 +1325,7 @@ Usages:
 
 - [Visualization.addVisualizations](#visualizationaddvisualizations)
 - [Visualization.configureFooterIcons](#visualizationconfigurefootericons)
-- [Visualization.getDefaultViewTypeForReports](#visualizationgetdefaultviewtypeforreports)
+- [Visualization.getDefaultTypeViewDataTable](#visualizationgetdefaulttypeviewdatatable)
 
 #### Visualization.addVisualizations
 _Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [121](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L121)_
@@ -1371,7 +1371,7 @@ Callback Signature:
 <pre><code>function(&amp;$result, $viewDataTable = $this)</code></pre>
 
 
-#### Visualization.getDefaultViewTypeForReports
+#### Visualization.getDefaultTypeViewDataTable
 _Defined in [Piwik/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php) in line [228](https://github.com/piwik/piwik/blob/master/core/ViewDataTable.php#L228)_
 
 This event is triggered to gather the default view types for each available report. By default a table
@@ -1381,7 +1381,7 @@ Cloud.
 
 Example:
 ```
-public function getDefaultViewTypeForReports(&$defaultViewTypes)
+public function getDefaultTypeViewDataTable(&$defaultViewTypes)
 {
     $defaultViewTypes['Referrers.getSocials']       = HtmlTable::ID;
     $defaultViewTypes['Referrers.getUrlsForSocial'] = Pie::ID;
@@ -1394,7 +1394,7 @@ Callback Signature:
 
 Usages:
 
-[DBStats::getDefaultViewTypeForReports](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L96), [Live::getDefaultViewTypeForReports](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L88), [Referrers::getDefaultViewTypeForReports](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L303), [UserSettings::getDefaultViewTypeForReports](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L184), [VisitTime::getDefaultViewTypeForReports](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L129), [VisitorInterest::getDefaultViewTypeForReports](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L158)
+[DBStats::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L96), [Live::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L88), [Referrers::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L303), [UserSettings::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L184), [VisitTime::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L129), [VisitorInterest::getDefaultTypeViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L158)
 
 ## WidgetsList
 
