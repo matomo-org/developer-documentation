@@ -1300,7 +1300,7 @@ Callback Signature:
 - [ViewDataTable.getDefaultType](#viewdatatablegetdefaulttype)
 
 #### ViewDataTable.addViewDataTable
-_Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [87](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L87)_
+_Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [88](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L88)_
 
 This event is used to gather all available DataTable visualizations. Callbacks should add visualization
 class names to the incoming array.
@@ -1314,7 +1314,7 @@ Usages:
 
 
 #### ViewDataTable.configure
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [124](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L124)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [123](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L123)_
 
 This event is triggered to gather the report display properties for each available report. If you define
 your own report, you want to subscribe to this event to define how your report shall be displayed in the
@@ -1339,7 +1339,7 @@ Usages:
 
 
 #### ViewDataTable.configureFooterIcons
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [376](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L376)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [272](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L272)_
 
 This event is called when determining the default set of footer icons to display below a report. Plugins can use this event to modify the default set of footer icons. You can
 add new icons or remove existing ones.
