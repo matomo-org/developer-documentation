@@ -1367,7 +1367,7 @@ Usages:
 - [WidgetsList.addWidgets](#widgetslistaddwidgets)
 
 #### WidgetsList.addWidgets
-_Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [72](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L72)_
+_Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [89](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L89)_
 
 This event is triggered to collect all available widgets. Subscribe to this event if you want to create
 one or more custom widgets. Just define the name of your widgets as well as a controller and an action
