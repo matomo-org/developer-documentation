@@ -1313,7 +1313,7 @@ Usages:
 
 
 #### ViewDataTable.configure
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [123](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L123)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [119](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L119)_
 
 This event is triggered to gather the report display properties for each available report. If you define
 your own report, you want to subscribe to this event to define how your report shall be displayed in the
