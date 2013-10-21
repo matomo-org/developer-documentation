@@ -3,7 +3,25 @@
 Db
 ==
 
-SQL wrapper
+Helper class that contains SQL related helper functions.
+
+Description
+-----------
+
+Plugins should use this class to execute SQL against the database.
+
+### Examples
+
+**Basic Usage**
+
+    $rows = Db::fetchAll(&quot;SELECT col1, col2 FROM mytable WHERE thing = ?&quot;, array(&#039;thingvalue&#039;));
+    foreach ($rows as $row) {
+        doSomething($row[&#039;col1&#039;], $row[&#039;col2&#039;]);
+    }
+
+    $value = Db::fetchOne(&quot;SELECT MAX(col1) FROM mytable&quot;);
+
+    Db::query(&quot;DELETE FROM mytable WHERE id &lt; ?&quot;, array(23));
 
 
 Properties
@@ -31,20 +49,20 @@ Methods
 
 The class defines the following methods:
 
-- [`get()`](#get) &mdash; Returns the database adapter to use
-- [`createDatabaseObject()`](#createDatabaseObject) &mdash; Create database object and connect to database
-- [`exec()`](#exec) &mdash; Executes an unprepared SQL query on the DB.
-- [`query()`](#query) &mdash; Executes a SQL query on the DB and returns the Zend_Db_Statement object If you want to fetch data from the DB you should use the function Db::fetchAll()
-- [`fetchAll()`](#fetchAll) &mdash; Executes the SQL Query and fetches all the rows from the database query
-- [`fetchRow()`](#fetchRow) &mdash; Fetches first row of result from the database query
-- [`fetchOne()`](#fetchOne) &mdash; Fetches first column of first row of result from the database query
-- [`fetchAssoc()`](#fetchAssoc) &mdash; Fetches result from the database query as an array of associative arrays.
+- [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn&#039;t been already.
+- [`createDatabaseObject()`](#createDatabaseObject) &mdash; Create the database object and connects to the database.
+- [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
+- [`query()`](#query) &mdash; Executes an SQL query and returns the Zend_Db_Statement object.
+- [`fetchAll()`](#fetchAll) &mdash; Executes the SQL query and fetches all the rows from the result set.
+- [`fetchRow()`](#fetchRow) &mdash; Executes an SQL query and fetches the first row of the result.
+- [`fetchOne()`](#fetchOne) &mdash; Executes an SQL query and fetches the first column of the first row of result set.
+- [`fetchAssoc()`](#fetchAssoc) &mdash; Executes an SQL query and returns the entire result set indexed by the first selected field.
 - [`deleteAllRows()`](#deleteAllRows) &mdash; Deletes all desired rows in a table, while using a limit.
 - [`optimizeTables()`](#optimizeTables) &mdash; Runs an OPTIMIZE TABLE query on the supplied table or tables.
 - [`dropTables()`](#dropTables) &mdash; Drops the supplied table or tables.
 - [`lockTables()`](#lockTables) &mdash; Locks the supplied table or tables.
 - [`unlockAllTables()`](#unlockAllTables) &mdash; Releases all table locks.
-- [`segmentedFetchFirst()`](#segmentedFetchFirst) &mdash; Performs a SELECT on a table one chunk at a time and returns the first fetched value.
+- [`segmentedFetchFirst()`](#segmentedFetchFirst) &mdash; Performs a SELECT on a table one chunk at a time and returns the first successfully fetched value.
 - [`segmentedFetchOne()`](#segmentedFetchOne) &mdash; Performs a SELECT on a table one chunk at a time and returns an array of every fetched value.
 - [`segmentedFetchAll()`](#segmentedFetchAll) &mdash; Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
 - [`segmentedQuery()`](#segmentedQuery) &mdash; Performs a non-SELECT query on a table one chunk at a time.
@@ -54,7 +72,7 @@ The class defines the following methods:
 
 ### `get()` <a name="get"></a>
 
-Returns the database adapter to use
+Returns the database connection and creates it if it hasn&#039;t been already.
 
 #### Signature
 
@@ -66,7 +84,11 @@ Returns the database adapter to use
 
 ### `createDatabaseObject()` <a name="createDatabaseObject"></a>
 
-Create database object and connect to database
+Create the database object and connects to the database.
+
+#### Description
+
+Shouldn&#039;t be called directly, use [get](#get).
 
 #### Signature
 
@@ -77,13 +99,13 @@ Create database object and connect to database
 
 ### `exec()` <a name="exec"></a>
 
-Executes an unprepared SQL query on the DB.
+Executes an unprepared SQL query.
 
 #### Description
 
-Recommended for DDL statements, e.g., CREATE/DROP/ALTER.
-The return result is DBMS-specific. For MySQLI, it returns the number of rows affected.  For PDO, it returns the Zend_Db_Statement object
-If you want to fetch data from the DB you should use the function Db::fetchAll()
+Recommended for DDL statements like CREATE,
+DROP and ALTER. The return value is DBMS-specific. For MySQLI, it returns the
+number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
 
 #### Signature
 
@@ -94,15 +116,17 @@ If you want to fetch data from the DB you should use the function Db::fetchAll()
     - `integer`
     - `Zend_Db_Statement`
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; If there is an error in the SQL.
 
 ### `query()` <a name="query"></a>
 
-Executes a SQL query on the DB and returns the Zend_Db_Statement object If you want to fetch data from the DB you should use the function Db::fetchAll()
+Executes an SQL query and returns the Zend_Db_Statement object.
 
 #### Description
 
-See also http://framework.zend.com/manual/en/zend.db.statement.html
+If you want to fetch data from the DB you should use one of the fetch... functions.
+
+See also [http://framework.zend.com/manual/en/zend.db.statement.html](http://framework.zend.com/manual/en/zend.db.statement.html).
 
 #### Signature
 
@@ -112,11 +136,11 @@ See also http://framework.zend.com/manual/en/zend.db.statement.html
     - `$parameters`
 - It returns a(n) `Zend_Db_Statement` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
 ### `fetchAll()` <a name="fetchAll"></a>
 
-Executes the SQL Query and fetches all the rows from the database query
+Executes the SQL query and fetches all the rows from the result set.
 
 #### Signature
 
@@ -127,11 +151,11 @@ Executes the SQL Query and fetches all the rows from the database query
 - _Returns:_ (one row in the array per row fetched in the DB)
     - `array`
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
 ### `fetchRow()` <a name="fetchRow"></a>
 
-Fetches first row of result from the database query
+Executes an SQL query and fetches the first row of the result.
 
 #### Signature
 
@@ -141,11 +165,11 @@ Fetches first row of result from the database query
     - `$parameters`
 - It returns a(n) `array` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
 ### `fetchOne()` <a name="fetchOne"></a>
 
-Fetches first column of first row of result from the database query
+Executes an SQL query and fetches the first column of the first row of result set.
 
 #### Signature
 
@@ -155,11 +179,11 @@ Fetches first column of first row of result from the database query
     - `$parameters`
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
 ### `fetchAssoc()` <a name="fetchAssoc"></a>
 
-Fetches result from the database query as an array of associative arrays.
+Executes an SQL query and returns the entire result set indexed by the first selected field.
 
 #### Signature
 
@@ -167,9 +191,10 @@ Fetches result from the database query as an array of associative arrays.
 - It accepts the following parameter(s):
     - `$sql`
     - `$parameters`
-- It returns a(n) `array` value.
+- _Returns:_ eg, ``` array(&#039;col1value1&#039; =&gt; array(&#039;col2&#039; =&gt; &#039;...&#039;, &#039;col3&#039; =&gt; ...), &#039;col1value2&#039; =&gt; array(&#039;col2&#039; =&gt; &#039;...&#039;, &#039;col3&#039; =&gt; ...)) ```
+    - `array`
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
 ### `deleteAllRows()` <a name="deleteAllRows"></a>
 
@@ -177,8 +202,16 @@ Deletes all desired rows in a table, while using a limit.
 
 #### Description
 
-This function will execute a
-DELETE query until there are no more rows to delete.
+This function will execute many
+DELETE queries until there are no more rows to delete.
+
+Use this function when you need to delete many thousands of rows from a table without
+locking the table for too long.
+
+**Example**
+
+    $idVisit = // ...
+    Db::deleteAllRows(Common::prefixTable(&#039;log_visit&#039;), &quot;WHERE idvisit &lt;= ?&quot;, &quot;idvisit ASC&quot;, 100000, array($idVisit));
 
 #### Signature
 
@@ -198,7 +231,11 @@ Runs an OPTIMIZE TABLE query on the supplied table or tables.
 
 #### Description
 
-The table names must be prefixed.
+The table names must be prefixed
+(see [Common::prefixTable](#)).
+
+Tables will only be optimized if the `[General] enable_sql_optimize_queries` config option is
+set to **1**.
 
 #### Signature
 
@@ -213,7 +250,7 @@ Drops the supplied table or tables.
 
 #### Description
 
-The table names must be prefixed.
+The table names must be prefixed (see [Common::prefixTable](#)).
 
 #### Signature
 
@@ -228,7 +265,10 @@ Locks the supplied table or tables.
 
 #### Description
 
-The table names must be prefixed.
+The table names must be prefixed (see [Common::prefixTable](#)).
+
+**NOTE:** Piwik does not require the LOCK TABLES privilege to be available. Piwik
+should still work in case it is not granted.
 
 #### Signature
 
@@ -242,6 +282,11 @@ The table names must be prefixed.
 
 Releases all table locks.
 
+#### Description
+
+**NOTE:** Piwik does not require the LOCK TABLES privilege to be available. Piwik
+should still work in case it is not granted.
+
 #### Signature
 
 - It is a **public static** method.
@@ -249,14 +294,33 @@ Releases all table locks.
 
 ### `segmentedFetchFirst()` <a name="segmentedFetchFirst"></a>
 
-Performs a SELECT on a table one chunk at a time and returns the first fetched value.
+Performs a SELECT on a table one chunk at a time and returns the first successfully fetched value.
 
 #### Description
+
+In other words, if running a SELECT on one chunk of the table doesn&#039;t
+return a value, we move on to the next chunk and we keep moving until
+the SELECT returns a value.
 
 This function will break up a SELECT into several smaller SELECTs and
 should be used when performing a SELECT that can take a long time to finish.
 Using several smaller SELECTs will ensure that the table will not be locked
 for too long.
+
+**Example**
+
+    // find the most recent visit that is older than a certain date 
+    $dateStart = // ...
+    $sql = &quot;SELECT idvisit
+          FROM $logVisit
+         WHERE &#039;$dateStart&#039; &gt; visit_last_action_time
+           AND idvisit &lt;= ?
+           AND idvisit &gt; ?
+      ORDER BY idvisit DESC
+         LIMIT 1&quot;;
+
+    // since visits
+    return Db::segmentedFetchFirst($sql, $maxIdVisit, 0, -self::$selectSegmentSize);
 
 #### Signature
 
@@ -276,9 +340,9 @@ Performs a SELECT on a table one chunk at a time and returns an array of every f
 #### Description
 
 This function will break up a SELECT into several smaller SELECTs and
-should be used when performing a SELECT that can take a long time to finish.
-Using several smaller SELECTs will ensure that the table will not be locked
-for too long.
+accumulate the result. It should be used when performing a SELECT that can
+take a long time to finish. Using several smaller SELECTs will ensure that
+the table will not be locked for too long.
 
 #### Signature
 
@@ -289,12 +353,20 @@ for too long.
     - `$last`
     - `$step`
     - `$params`
-- It returns a(n) `array` value.
+- _Returns:_ An array of primitive values.
+    - `array`
 
 ### `segmentedFetchAll()` <a name="segmentedFetchAll"></a>
 
 Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
 
+#### Description
+
+This function will break up a SELECT into several smaller SELECTs and
+accumulate the result. It should be used when performing a SELECT that can
+take a long time to finish. Using several smaller SELECTs will ensure that
+the table will not be locked for too long.
+
 #### Signature
 
 - It is a **public static** method.
@@ -304,7 +376,8 @@ Performs a SELECT on a table one chunk at a time and returns an array of every f
     - `$last`
     - `$step`
     - `$params`
-- It returns a(n) `array` value.
+- _Returns:_ An array of rows that includes the result set of every executed query.
+    - `array`
 
 ### `segmentedQuery()` <a name="segmentedQuery"></a>
 
@@ -319,7 +392,7 @@ Performs a non-SELECT query on a table one chunk at a time.
     - `$last`
     - `$step`
     - `$params`
-- It returns a(n) `array` value.
+- It does not return anything.
 
 ### `getDbLock()` <a name="getDbLock"></a>
 
@@ -336,7 +409,7 @@ retry a set number of time.
 - It accepts the following parameter(s):
     - `$lockName`
     - `$maxRetries`
-- _Returns:_ true if the lock was obtained, false if otherwise.
+- _Returns:_ `true` if the lock was obtained, `false` if otherwise.
     - `bool`
 
 ### `releaseDbLock()` <a name="releaseDbLock"></a>
@@ -348,7 +421,7 @@ Releases a named lock.
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$lockName`
-- _Returns:_ true if the lock was released, false if otherwise.
+- _Returns:_ `true` if the lock was released, `false` if otherwise.
     - `bool`
 
 ### `isLockPrivilegeGranted()` <a name="isLockPrivilegeGranted"></a>

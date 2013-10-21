@@ -3,7 +3,37 @@
 Url
 ===
 
-Class to retrieve absolute URL or URI components of the current URL, and handle URL redirection.
+Provides URL related helper methods.
+
+Description
+-----------
+
+This class provides simple methods that can be used to parse and modify
+the current URL. It is most useful when plugins need to redirect the current
+request to a URL and when they need to link to other parts of Piwik in
+HTML.
+
+### Examples
+
+**Redirect to a different controller action**
+
+    $url = Url::getCurrentQueryStringWithParametersModified(array(
+        &#039;module&#039; =&gt; &#039;UserSettings&#039;,
+        &#039;action&#039; =&gt; &#039;index&#039;
+    ));
+    Url::redirectToUrl($url);
+
+**Link to a different controller action in a template**
+
+    $url = Url::getCurrentQueryStringWithParametersModified(array(
+        &#039;module&#039; =&gt; &#039;UserCountryMap&#039;,
+        &#039;action&#039; =&gt; &#039;realtimeMap&#039;,
+        &#039;changeVisitAlpha&#039; =&gt; 0,
+        &#039;removeOldVisits&#039; =&gt; 0
+    ));
+    $view = new View(&quot;@MyPlugin/myPopup&quot;);
+    $view-&gt;realtimeMapUrl = $url;
+    echo $view-&gt;render();
 
 
 Methods
@@ -11,137 +41,94 @@ Methods
 
 The class defines the following methods:
 
-- [`getCurrentUrl()`](#getCurrentUrl) &mdash; If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;
-- [`getCurrentUrlWithoutQueryString()`](#getCurrentUrlWithoutQueryString) &mdash; If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;http://example.org/dir1/dir2/index.php&quot;
-- [`getCurrentUrlWithoutFileName()`](#getCurrentUrlWithoutFileName) &mdash; If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;http://example.org/dir1/dir2/&quot;
-- [`getCurrentScriptPath()`](#getCurrentScriptPath) &mdash; If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;/dir1/dir2/&quot;
-- [`getCurrentScriptName()`](#getCurrentScriptName) &mdash; If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;/dir1/dir2/index.php&quot;
-- [`getCurrentScheme()`](#getCurrentScheme) &mdash; If the current URL is &#039;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &#039;http&#039;
-- [`isValidHost()`](#isValidHost) &mdash; Validate &quot;Host&quot; (untrusted user input)
-- [`saveTrustedHostnameInConfig()`](#saveTrustedHostnameInConfig) &mdash; Records one host, or an array of hosts in the config file, if user is super user
-- [`getHost()`](#getHost) &mdash; Get host
-- [`setHost()`](#setHost) &mdash; Sets the host.
-- [`getCurrentHost()`](#getCurrentHost) &mdash; If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;example.org&quot;
-- [`getCurrentQueryString()`](#getCurrentQueryString) &mdash; If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;?param1=value1&amp;param2=value2&quot;
-- [`getQueryStringFromParameters()`](#getQueryStringFromParameters) &mdash; Given an array of parameters name-&gt;value, returns the query string.
-- [`redirectToReferrer()`](#redirectToReferrer) &mdash; Redirects the user to the referrer if found.
-- [`redirectToUrl()`](#redirectToUrl) &mdash; Redirects the user to the specified URL
-- [`getReferrer()`](#getReferrer) &mdash; Returns the HTTP_REFERER header, false if not found.
-- [`isLocalUrl()`](#isLocalUrl) &mdash; Is the URL on the same host?
+- [`getCurrentUrl()`](#getCurrentUrl) &mdash; Returns the current URL.
+- [`getCurrentUrlWithoutQueryString()`](#getCurrentUrlWithoutQueryString) &mdash; Returns the current URL without the query string.
+- [`getCurrentUrlWithoutFileName()`](#getCurrentUrlWithoutFileName) &mdash; Returns the current URL without the query string and without the name of the file being executed.
+- [`getCurrentScriptPath()`](#getCurrentScriptPath) &mdash; Returns the path to the script being executed.
+- [`getCurrentScriptName()`](#getCurrentScriptName) &mdash; Returns the path to the script being executed.
+- [`getCurrentScheme()`](#getCurrentScheme) &mdash; Returns the current URL&#039;s protocol.
+- [`getCurrentHost()`](#getCurrentHost) &mdash; Returns the current host.
+- [`getCurrentQueryString()`](#getCurrentQueryString) &mdash; Returns the query string of the current URL.
+- [`getArrayFromCurrentQueryString()`](#getArrayFromCurrentQueryString) &mdash; Returns an array mapping query paramater names with query parameter values for the current URL.
+- [`getQueryStringFromParameters()`](#getQueryStringFromParameters) &mdash; Converts an an array of parameters name =&gt; value mappings to a query string.
+- [`redirectToReferrer()`](#redirectToReferrer) &mdash; Redirects the user to the referrer.
+- [`redirectToUrl()`](#redirectToUrl) &mdash; Redirects the user to the specified URL.
+- [`getReferrer()`](#getReferrer) &mdash; Returns the HTTP_REFERER header, or false if not found.
+- [`isLocalUrl()`](#isLocalUrl) &mdash; Returns true if the URL points to something on the same host, false if otherwise.
 
 ### `getCurrentUrl()` <a name="getCurrentUrl"></a>
 
-If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;
+Returns the current URL.
 
 #### Signature
 
 - It is a **public static** method.
-- It returns a(n) `string` value.
+- _Returns:_ eg, `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
+    - `string`
 
 ### `getCurrentUrlWithoutQueryString()` <a name="getCurrentUrlWithoutQueryString"></a>
 
-If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;http://example.org/dir1/dir2/index.php&quot;
+Returns the current URL without the query string.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$checkTrustedHost`
-- It returns a(n) `string` value.
+- _Returns:_ eg, `&quot;http://example.org/dir1/dir2/index.php&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`.
+    - `string`
 
 ### `getCurrentUrlWithoutFileName()` <a name="getCurrentUrlWithoutFileName"></a>
 
-If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;http://example.org/dir1/dir2/&quot;
+Returns the current URL without the query string and without the name of the file being executed.
 
 #### Signature
 
 - It is a **public static** method.
-- _Returns:_ with trailing slash
+- _Returns:_ eg, `&quot;http://example.org/dir1/dir2/&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`.
     - `string`
 
 ### `getCurrentScriptPath()` <a name="getCurrentScriptPath"></a>
 
-If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;/dir1/dir2/&quot;
+Returns the path to the script being executed.
+
+#### Description
+
+The script file name is not included.
 
 #### Signature
 
 - It is a **public static** method.
-- _Returns:_ with trailing slash
+- _Returns:_ eg, `&quot;/dir1/dir2/&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
     - `string`
 
 ### `getCurrentScriptName()` <a name="getCurrentScriptName"></a>
 
-If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;/dir1/dir2/index.php&quot;
-
-#### Signature
-
-- It is a **public static** method.
-- It returns a(n) `string` value.
-
-### `getCurrentScheme()` <a name="getCurrentScheme"></a>
-
-If the current URL is &#039;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &#039;http&#039;
-
-#### Signature
-
-- It is a **public static** method.
-- _Returns:_ &#039;https&#039; or &#039;http&#039;
-    - `string`
-
-### `isValidHost()` <a name="isValidHost"></a>
-
-Validate &quot;Host&quot; (untrusted user input)
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$host`
-- _Returns:_ True if valid; false otherwise
-    - `bool`
-
-### `saveTrustedHostnameInConfig()` <a name="saveTrustedHostnameInConfig"></a>
-
-Records one host, or an array of hosts in the config file, if user is super user
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$host`
-- It returns a(n) `bool` value.
-
-### `getHost()` <a name="getHost"></a>
-
-Get host
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$checkIfTrusted`
-- _Returns:_ false if no host found
-    - `string`
-    - `bool`
-
-### `setHost()` <a name="setHost"></a>
-
-Sets the host.
+Returns the path to the script being executed.
 
 #### Description
 
-Useful for CLI scripts, eg. archive.php
+Includes the script file name.
 
 #### Signature
 
 - It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$host`
-- It does not return anything.
+- _Returns:_ eg, `&quot;/dir1/dir2/index.php&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
+    - `string`
+
+### `getCurrentScheme()` <a name="getCurrentScheme"></a>
+
+Returns the current URL&#039;s protocol.
+
+#### Signature
+
+- It is a **public static** method.
+- _Returns:_ `&#039;https&#039;` or `&#039;http&#039;`
+    - `string`
 
 ### `getCurrentHost()` <a name="getCurrentHost"></a>
 
-If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;example.org&quot;
+Returns the current host.
 
 #### Signature
 
@@ -149,40 +136,49 @@ If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp
 - It accepts the following parameter(s):
     - `$default`
     - `$checkTrustedHost`
-- It returns a(n) `string` value.
+- _Returns:_ eg, `&quot;example.org&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
+    - `string`
 
 ### `getCurrentQueryString()` <a name="getCurrentQueryString"></a>
 
-If current URL is &quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot; will return &quot;?param1=value1&amp;param2=value2&quot;
+Returns the query string of the current URL.
 
 #### Signature
 
 - It is a **public static** method.
-- It returns a(n) `string` value.
+- _Returns:_ eg, `&quot;?param1=value1&amp;param2=value2&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
+    - `string`
+
+### `getArrayFromCurrentQueryString()` <a name="getArrayFromCurrentQueryString"></a>
+
+Returns an array mapping query paramater names with query parameter values for the current URL.
+
+#### Signature
+
+- It is a **public static** method.
+- _Returns:_ If current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;` this will return: ``` array( &#039;param1&#039; =&gt; string &#039;value1&#039;, &#039;param2&#039; =&gt; string &#039;value2&#039; ) ```
+    - `array`
 
 ### `getQueryStringFromParameters()` <a name="getQueryStringFromParameters"></a>
 
-Given an array of parameters name-&gt;value, returns the query string.
-
-#### Description
-
-Also works with array values using the php array syntax for GET parameters.
+Converts an an array of parameters name =&gt; value mappings to a query string.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$parameters`
-- _Returns:_ eg. &quot;param1=10&amp;param2[]=1&amp;param2[]=2&quot;
+- _Returns:_ eg. `&quot;param1=10&amp;param2[]=1&amp;param2[]=2&quot;`
     - `string`
 
 ### `redirectToReferrer()` <a name="redirectToReferrer"></a>
 
-Redirects the user to the referrer if found.
+Redirects the user to the referrer.
 
 #### Description
 
-If the user doesn&#039;t have a referrer set, it redirects to the current URL without query string.
+If no referrer exists, the user is redirected
+to the current URL without query string.
 
 #### Signature
 
@@ -191,7 +187,7 @@ If the user doesn&#039;t have a referrer set, it redirects to the current URL wi
 
 ### `redirectToUrl()` <a name="redirectToUrl"></a>
 
-Redirects the user to the specified URL
+Redirects the user to the specified URL.
 
 #### Signature
 
@@ -202,18 +198,18 @@ Redirects the user to the specified URL
 
 ### `getReferrer()` <a name="getReferrer"></a>
 
-Returns the HTTP_REFERER header, false if not found.
+Returns the HTTP_REFERER header, or false if not found.
 
 #### Signature
 
 - It is a **public static** method.
 - It can return one of the following values:
     - `string`
-    - `bool`
+    - `Piwik\false`
 
 ### `isLocalUrl()` <a name="isLocalUrl"></a>
 
-Is the URL on the same host?
+Returns true if the URL points to something on the same host, false if otherwise.
 
 #### Signature
 

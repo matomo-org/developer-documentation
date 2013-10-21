@@ -3,7 +3,7 @@
 MetricsFormatter
 ================
 
-Class MetricsFormatter
+Contains helper function that format numerical values in different ways.
 
 
 Methods
@@ -11,17 +11,17 @@ Methods
 
 The class defines the following methods:
 
-- [`getPrettyNumber()`](#getPrettyNumber) &mdash; Gets a prettified string representation of a number.
-- [`getPrettyTimeFromSeconds()`](#getPrettyTimeFromSeconds) &mdash; Pretty format a time
-- [`getPrettySizeFromBytes()`](#getPrettySizeFromBytes) &mdash; Pretty format a memory size value
-- [`getPrettyMoney()`](#getPrettyMoney) &mdash; Pretty format monetary value for a site
-- [`getPrettyValue()`](#getPrettyValue) &mdash; For the given value, based on the column name, will apply: pretty time, pretty money
-- [`getCurrencySymbol()`](#getCurrencySymbol) &mdash; Get currency symbol for a site
-- [`getCurrencyList()`](#getCurrencyList) &mdash; Returns a list of currency symbols
+- [`getPrettyNumber()`](#getPrettyNumber) &mdash; Returns a prettified string representation of a number.
+- [`getPrettyTimeFromSeconds()`](#getPrettyTimeFromSeconds) &mdash; Returns a prettified time value (in seconds).
+- [`getPrettySizeFromBytes()`](#getPrettySizeFromBytes) &mdash; Returns a prettified memory size value.
+- [`getPrettyMoney()`](#getPrettyMoney) &mdash; Returns a pretty formated monetary value using the currency associated with a site.
+- [`getPrettyValue()`](#getPrettyValue) &mdash; Prettifies a metric value based on the column name.
+- [`getCurrencySymbol()`](#getCurrencySymbol) &mdash; Returns the currency symbol for a site.
+- [`getCurrencyList()`](#getCurrencyList) &mdash; Returns the list of all known currency symbols.
 
 ### `getPrettyNumber()` <a name="getPrettyNumber"></a>
 
-Gets a prettified string representation of a number.
+Returns a prettified string representation of a number.
 
 #### Description
 
@@ -37,7 +37,7 @@ thousands separators and a decimal point specific to the current locale.
 
 ### `getPrettyTimeFromSeconds()` <a name="getPrettyTimeFromSeconds"></a>
 
-Pretty format a time
+Returns a prettified time value (in seconds).
 
 #### Signature
 
@@ -51,7 +51,7 @@ Pretty format a time
 
 ### `getPrettySizeFromBytes()` <a name="getPrettySizeFromBytes"></a>
 
-Pretty format a memory size value
+Returns a prettified memory size value.
 
 #### Signature
 
@@ -60,11 +60,12 @@ Pretty format a memory size value
     - `$size`
     - `$unit`
     - `$precision`
-- It returns a(n) `string` value.
+- _Returns:_ eg, `&#039;128 M&#039;` or `&#039;256 K&#039;`.
+    - `string`
 
 ### `getPrettyMoney()` <a name="getPrettyMoney"></a>
 
-Pretty format monetary value for a site
+Returns a pretty formated monetary value using the currency associated with a site.
 
 #### Signature
 
@@ -72,12 +73,12 @@ Pretty format monetary value for a site
 - It accepts the following parameter(s):
     - `$value`
     - `$idSite`
-    - `$htmlAllowed`
+    - `$isHtml`
 - It returns a(n) `string` value.
 
 ### `getPrettyValue()` <a name="getPrettyValue"></a>
 
-For the given value, based on the column name, will apply: pretty time, pretty money
+Prettifies a metric value based on the column name.
 
 #### Signature
 
@@ -86,27 +87,28 @@ For the given value, based on the column name, will apply: pretty time, pretty m
     - `$idSite`
     - `$columnName`
     - `$value`
-    - `$htmlAllowed`
+    - `$isHtml`
 - It returns a(n) `string` value.
 
 ### `getCurrencySymbol()` <a name="getCurrencySymbol"></a>
 
-Get currency symbol for a site
+Returns the currency symbol for a site.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idSite`
-- It returns a(n) `string` value.
+- _Returns:_ eg, `&#039;$&#039;`.
+    - `string`
 
 ### `getCurrencyList()` <a name="getCurrencyList"></a>
 
-Returns a list of currency symbols
+Returns the list of all known currency symbols.
 
 #### Signature
 
 - It is a **public static** method.
-- _Returns:_ array( currencyCode =&gt; symbol, ... )
+- _Returns:_ An array mapping currency codes to their respective currency symbols and a description, eg, `array(&#039;USD&#039; =&gt; array(&#039;$&#039;, &#039;US dollar&#039;))`.
     - `array`
 

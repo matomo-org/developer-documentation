@@ -344,7 +344,7 @@ Usages:
 - [Config.NoConfigurationFile](#confignoconfigurationfile)
 
 #### Config.badConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [254](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L254)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [288](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L288)_
 
 This event is triggered in case a config file is not in the correct format or in case required values are missing. The event can be used to start the installation process or to display a custom error
 message.
@@ -358,7 +358,7 @@ Usages:
 
 
 #### Config.NoConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [181](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L181)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [215](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L215)_
 
 This event is triggered in case no configuration file is available. This usually means Piwik is not
 installed yet. The event can be used to start the installation process or to display a custom error
@@ -377,7 +377,7 @@ Usages:
 - [Controller.$module.$action.end](#controllermoduleactionend)
 
 #### Controller.$module.$action
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [74](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L74)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [105](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L105)_
 
 This event is similar to the `Request.dispatch` hook. It distinguishes the possibility to subscribe only to a
 specific controller method instead of all controller methods. You can use it for example to modify any input
@@ -388,7 +388,7 @@ Callback Signature:
 
 
 #### Controller.$module.$action.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [84](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L84)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [115](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L115)_
 
 This event is similar to the `Request.dispatch.end` hook. It distinguishes the possibility to subscribe
 only to the end of a specific controller method instead of all controller methods. You can use it for
@@ -442,7 +442,7 @@ Callback Signature:
 - [Log.getAvailableWriters](#loggetavailablewriters)
 
 #### Log.formatDatabaseMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [367](https://github.com/piwik/piwik/blob/master/core/Log.php#L367)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [416](https://github.com/piwik/piwik/blob/master/core/Log.php#L416)_
 
 This event is called when trying to log an object to a database table. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -456,7 +456,7 @@ Callback Signature:
 
 
 #### Log.formatFileMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [298](https://github.com/piwik/piwik/blob/master/core/Log.php#L298)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [347](https://github.com/piwik/piwik/blob/master/core/Log.php#L347)_
 
 This event is called when trying to log an object to a file. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -470,7 +470,7 @@ Callback Signature:
 
 
 #### Log.formatScreenMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [342](https://github.com/piwik/piwik/blob/master/core/Log.php#L342)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [391](https://github.com/piwik/piwik/blob/master/core/Log.php#L391)_
 
 This event is called when trying to log an object to the screen. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -487,7 +487,7 @@ Callback Signature:
 
 
 #### Log.getAvailableWriters
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [275](https://github.com/piwik/piwik/blob/master/core/Log.php#L275)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [324](https://github.com/piwik/piwik/blob/master/core/Log.php#L324)_
 
 This event is called when the Log instance is created. Plugins can use this event to
 make new logging writers available.
@@ -680,7 +680,7 @@ Callback Signature:
 - [Reporting.getDatabaseConfig](#reportinggetdatabaseconfig)
 
 #### Reporting.getDatabaseConfig
-_Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [62](https://github.com/piwik/piwik/blob/master/core/Db.php#L62)_
+_Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [81](https://github.com/piwik/piwik/blob/master/core/Db.php#L81)_
 
 This event is triggered before a connection to the database is established. Use it to dynamically change the
 datatabase settings defined in the config. The reporting database config is used in case someone accesses
@@ -698,7 +698,7 @@ Callback Signature:
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 
 #### Request.dispatch
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [67](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L67)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [98](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L98)_
 
 Generic hook that plugins can use to modify any input to the function, or even change the plugin being called. You could also use this to build an enhanced permission system. The event is triggered before every
 call to a controller method.
@@ -710,7 +710,7 @@ Callback Signature:
 
 
 #### Request.dispatch.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [91](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L91)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [122](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L122)_
 
 Generic hook that plugins can use to modify any output of any controller method. The event is triggered
 after a controller method is executed but before the result is send to the user. The parameters
@@ -721,7 +721,7 @@ Callback Signature:
 
 
 #### Request.dispatchCoreAndPluginUpdatesScreen
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [265](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L265)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [299](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L299)_
 
 This event is the first event triggered just after the platform is initialized and plugins are loaded. You can use this event to do early initialization. Note: the user is not authenticated yet.
 
@@ -746,7 +746,7 @@ Usages:
 
 
 #### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [278](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L278)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [312](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L312)_
 
 This event is triggered before the user is authenticated. You can use it to create your own
 authentication object which implements the `Piwik\Auth` interface, and override the default authentication logic.
@@ -934,7 +934,7 @@ Usages:
 
 
 #### Segments.getKnownSegmentsToArchiveForSite
-_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [88](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L88)_
+_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [94](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L94)_
 
 This event is triggered when the automatic archiving runs. You can use it to add Segments to the list of segments to pre-process during archiving,
 for this particular website ID $idSite.
@@ -986,7 +986,7 @@ Usages:
 - [TaskScheduler.getScheduledTasks](#taskschedulergetscheduledtasks)
 
 #### TaskScheduler.getScheduledTasks
-_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [68](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L68)_
+_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [76](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L76)_
 
 This event can be used to register any tasks that you may want to schedule on a regular basis. For instance
 hourly, daily, weekly or monthly. It is comparable to a cronjob. The registered method will be executed
@@ -1209,7 +1209,7 @@ Usages:
 - [Updater.checkForUpdates](#updatercheckforupdates)
 
 #### Updater.checkForUpdates
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [304](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L304)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [338](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L338)_
 
 This event is triggered to check for updates. It is triggered after the platform is initialized and after
 the user is authenticated but before the platform is going to dispatch the actual request. You can use
@@ -1240,7 +1240,7 @@ Usages:
 
 
 #### User.isNotAuthorized
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [102](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L102)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [133](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L133)_
 
 This event is triggered in case the user wants to access anything in the Piwik UI but has not the required permissions to do this. You can subscribe to this event to display a custom error message or
 to display a custom login form in such a case.

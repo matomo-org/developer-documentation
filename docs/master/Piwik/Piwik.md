@@ -8,7 +8,8 @@ Main piwik helper class.
 Description
 -----------
 
-Contains static functions you can call from the plugins.
+Contains helper methods for a variety of common tasks. Plugin developers are
+encouraged to reuse these methods.
 
 
 Constants
@@ -16,62 +17,43 @@ Constants
 
 This class defines the following constants:
 
-- [`LABEL_ID_GOAL_IS_ECOMMERCE_CART`](#LABEL_ID_GOAL_IS_ECOMMERCE_CART)
-- [`LABEL_ID_GOAL_IS_ECOMMERCE_ORDER`](#LABEL_ID_GOAL_IS_ECOMMERCE_ORDER)
+- [`LABEL_ID_GOAL_IS_ECOMMERCE_CART`](#LABEL_ID_GOAL_IS_ECOMMERCE_CART) &mdash; The idGoal query parameter value for the special &#039;abandoned carts&#039; goal.
+- [`LABEL_ID_GOAL_IS_ECOMMERCE_ORDER`](#LABEL_ID_GOAL_IS_ECOMMERCE_ORDER) &mdash; The idGoal query parameter value for the special &#039;ecommerce&#039; goal.
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`exitWithErrorMessage()`](#exitWithErrorMessage) &mdash; Display the message in a nice red font with a nice icon ...
-- [`getCurrentUserEmail()`](#getCurrentUserEmail) &mdash; Get current user email address
-- [`getSuperUserLogin()`](#getSuperUserLogin) &mdash; Returns Super User login
-- [`getSuperUserEmail()`](#getSuperUserEmail) &mdash; Returns Super User email
-- [`getCurrentUserLogin()`](#getCurrentUserLogin) &mdash; Get current user login
-- [`getCurrentUserTokenAuth()`](#getCurrentUserTokenAuth) &mdash; Get current user&#039;s token auth
-- [`isUserIsSuperUserOrTheUser()`](#isUserIsSuperUserOrTheUser) &mdash; Returns true if the current user is either the super user, or the user $theUser Used when modifying user preference: this usually requires super user or being the user itself.
-- [`checkUserIsSuperUserOrTheUser()`](#checkUserIsSuperUserOrTheUser) &mdash; Check that current user is either the specified user or the superuser
-- [`isUserIsSuperUser()`](#isUserIsSuperUser) &mdash; Returns true if the current user is the Super User
-- [`isUserIsAnonymous()`](#isUserIsAnonymous) &mdash; Is user the anonymous user?
-- [`checkUserIsNotAnonymous()`](#checkUserIsNotAnonymous) &mdash; Checks if user is not the anonymous user.
-- [`setUserIsSuperUser()`](#setUserIsSuperUser) &mdash; Helper method user to set the current as Super User.
-- [`checkUserIsSuperUser()`](#checkUserIsSuperUser) &mdash; Check that user is the superuser
-- [`isUserHasAdminAccess()`](#isUserHasAdminAccess) &mdash; Returns true if the user has admin access to the sites
-- [`checkUserHasAdminAccess()`](#checkUserHasAdminAccess) &mdash; Check user has admin access to the sites
-- [`isUserHasSomeAdminAccess()`](#isUserHasSomeAdminAccess) &mdash; Returns true if the user has admin access to any sites
-- [`checkUserHasSomeAdminAccess()`](#checkUserHasSomeAdminAccess) &mdash; Check user has admin access to any sites
-- [`isUserHasViewAccess()`](#isUserHasViewAccess) &mdash; Returns true if the user has view access to the sites
-- [`checkUserHasViewAccess()`](#checkUserHasViewAccess) &mdash; Check user has view access to the sites
-- [`isUserHasSomeViewAccess()`](#isUserHasSomeViewAccess) &mdash; Returns true if the user has view access to any sites
-- [`checkUserHasSomeViewAccess()`](#checkUserHasSomeViewAccess) &mdash; Check user has view access to any sites
-- [`getModule()`](#getModule) &mdash; Returns the current module read from the URL (eg.
-- [`getAction()`](#getAction) &mdash; Returns the current action read from the URL
-- [`redirectToModule()`](#redirectToModule) &mdash; Redirect to module (and action)
-- [`isValidEmailString()`](#isValidEmailString) &mdash; Returns true if the email is a valid email
-- [`postEvent()`](#postEvent) &mdash; Post an event to the dispatcher which will notice the observers.
-- [`addAction()`](#addAction) &mdash; Register an action to execute for a given event
-- [`translate()`](#translate) &mdash; Returns translated string or given message if translation is not found.
+- [`getCurrentUserEmail()`](#getCurrentUserEmail) &mdash; Returns the current user&#039;s email address.
+- [`getSuperUserLogin()`](#getSuperUserLogin) &mdash; Returns the super user&#039;s username.
+- [`getSuperUserEmail()`](#getSuperUserEmail) &mdash; Returns the super user&#039;s email address.
+- [`getCurrentUserLogin()`](#getCurrentUserLogin) &mdash; Returns the current user&#039;s username.
+- [`getCurrentUserTokenAuth()`](#getCurrentUserTokenAuth) &mdash; Returns the current user&#039;s token auth.
+- [`isUserIsSuperUserOrTheUser()`](#isUserIsSuperUserOrTheUser) &mdash; Returns true if the current user is either the super user or the user specified by `$theUser`.
+- [`checkUserIsSuperUserOrTheUser()`](#checkUserIsSuperUserOrTheUser) &mdash; Check that the current user is either the specified user or the superuser.
+- [`isUserIsSuperUser()`](#isUserIsSuperUser) &mdash; Returns true if the current user is the Super User.
+- [`isUserIsAnonymous()`](#isUserIsAnonymous) &mdash; Returns true if the current user is the special anonymous user or not.
+- [`checkUserIsNotAnonymous()`](#checkUserIsNotAnonymous) &mdash; Checks that the user is not the anonymous user.
+- [`checkUserIsSuperUser()`](#checkUserIsSuperUser) &mdash; Check that the current user is the superuser.
+- [`isUserHasAdminAccess()`](#isUserHasAdminAccess) &mdash; Returns true if the user has admin access to the requested sites, false if otherwise.
+- [`checkUserHasAdminAccess()`](#checkUserHasAdminAccess) &mdash; Checks that the current user has admin access to the requested list of sites.
+- [`isUserHasSomeAdminAccess()`](#isUserHasSomeAdminAccess) &mdash; Returns true if the current user has admin access to at least one site.
+- [`checkUserHasSomeAdminAccess()`](#checkUserHasSomeAdminAccess) &mdash; Checks that the current user has admin access to at least one site.
+- [`isUserHasViewAccess()`](#isUserHasViewAccess) &mdash; Returns true if the user has view access to the requested list of sites.
+- [`checkUserHasViewAccess()`](#checkUserHasViewAccess) &mdash; Checks that the current user has view access to the requested list of sites
+- [`isUserHasSomeViewAccess()`](#isUserHasSomeViewAccess) &mdash; Returns true if the current user has view access to at least one site.
+- [`checkUserHasSomeViewAccess()`](#checkUserHasSomeViewAccess) &mdash; Checks that the current user has view access to at least one site.
+- [`redirectToModule()`](#redirectToModule) &mdash; Redirects the current request to a new module and action.
+- [`isValidEmailString()`](#isValidEmailString) &mdash; Returns true if the email address is a valid.
+- [`postEvent()`](#postEvent) &mdash; Post an event to Piwik&#039;s event dispatcher which will execute the event&#039;s observers.
+- [`addAction()`](#addAction) &mdash; Register an observer to an event.
+- [`translate()`](#translate) &mdash; Returns an internationalized string using a translation ID.
 - [`translateException()`](#translateException) &mdash; Returns translated string or given message if translation is not found.
-
-### `exitWithErrorMessage()` <a name="exitWithErrorMessage"></a>
-
-Display the message in a nice red font with a nice icon ...
-
-#### Description
-
-and dies
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$message`
-- It does not return anything.
 
 ### `getCurrentUserEmail()` <a name="getCurrentUserEmail"></a>
 
-Get current user email address
+Returns the current user&#039;s email address.
 
 #### Signature
 
@@ -80,7 +62,7 @@ Get current user email address
 
 ### `getSuperUserLogin()` <a name="getSuperUserLogin"></a>
 
-Returns Super User login
+Returns the super user&#039;s username.
 
 #### Signature
 
@@ -89,7 +71,7 @@ Returns Super User login
 
 ### `getSuperUserEmail()` <a name="getSuperUserEmail"></a>
 
-Returns Super User email
+Returns the super user&#039;s email address.
 
 #### Signature
 
@@ -98,27 +80,25 @@ Returns Super User email
 
 ### `getCurrentUserLogin()` <a name="getCurrentUserLogin"></a>
 
-Get current user login
+Returns the current user&#039;s username.
 
 #### Signature
 
 - It is a **public static** method.
-- _Returns:_ login ID
-    - `string`
+- It returns a(n) `string` value.
 
 ### `getCurrentUserTokenAuth()` <a name="getCurrentUserTokenAuth"></a>
 
-Get current user&#039;s token auth
+Returns the current user&#039;s token auth.
 
 #### Signature
 
 - It is a **public static** method.
-- _Returns:_ Token auth
-    - `string`
+- It returns a(n) `string` value.
 
 ### `isUserIsSuperUserOrTheUser()` <a name="isUserIsSuperUserOrTheUser"></a>
 
-Returns true if the current user is either the super user, or the user $theUser Used when modifying user preference: this usually requires super user or being the user itself.
+Returns true if the current user is either the super user or the user specified by `$theUser`.
 
 #### Signature
 
@@ -129,7 +109,7 @@ Returns true if the current user is either the super user, or the user $theUser 
 
 ### `checkUserIsSuperUserOrTheUser()` <a name="checkUserIsSuperUserOrTheUser"></a>
 
-Check that current user is either the specified user or the superuser
+Check that the current user is either the specified user or the superuser.
 
 #### Signature
 
@@ -138,11 +118,11 @@ Check that current user is either the specified user or the superuser
     - `$theUser`
 - It does not return anything.
 - It throws one of the following exceptions:
-    - `NoAccessException` &mdash; if the user is neither the super user nor the user $theUser
+    - `NoAccessException` &mdash; If the user is neither the super user nor the user `$theUser`.
 
 ### `isUserIsSuperUser()` <a name="isUserIsSuperUser"></a>
 
-Returns true if the current user is the Super User
+Returns true if the current user is the Super User.
 
 #### Signature
 
@@ -151,54 +131,38 @@ Returns true if the current user is the Super User
 
 ### `isUserIsAnonymous()` <a name="isUserIsAnonymous"></a>
 
-Is user the anonymous user?
+Returns true if the current user is the special anonymous user or not.
 
 #### Signature
 
 - It is a **public static** method.
-- _Returns:_ True if anonymouse; false otherwise
-    - `bool`
+- It returns a(n) `bool` value.
 
 ### `checkUserIsNotAnonymous()` <a name="checkUserIsNotAnonymous"></a>
 
-Checks if user is not the anonymous user.
+Checks that the user is not the anonymous user.
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - `NoAccessException` &mdash; if user is anonymous.
-
-### `setUserIsSuperUser()` <a name="setUserIsSuperUser"></a>
-
-Helper method user to set the current as Super User.
-
-#### Description
-
-This should be used with great care as this gives the user all permissions.
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$bool`
-- It does not return anything.
+    - `NoAccessException` &mdash; if the current user is the anonymous user.
 
 ### `checkUserIsSuperUser()` <a name="checkUserIsSuperUser"></a>
 
-Check that user is the superuser
+Check that the current user is the superuser.
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if not the superuser
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the current user is not the superuser.
 
 ### `isUserHasAdminAccess()` <a name="isUserHasAdminAccess"></a>
 
-Returns true if the user has admin access to the sites
+Returns true if the user has admin access to the requested sites, false if otherwise.
 
 #### Signature
 
@@ -209,7 +173,7 @@ Returns true if the user has admin access to the sites
 
 ### `checkUserHasAdminAccess()` <a name="checkUserHasAdminAccess"></a>
 
-Check user has admin access to the sites
+Checks that the current user has admin access to the requested list of sites.
 
 #### Signature
 
@@ -218,11 +182,11 @@ Check user has admin access to the sites
     - `$idSites`
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have admin access to the sites
+    - [`Exception`](http://php.net/class.Exception) &mdash; If user doesn&#039;t have admin access.
 
 ### `isUserHasSomeAdminAccess()` <a name="isUserHasSomeAdminAccess"></a>
 
-Returns true if the user has admin access to any sites
+Returns true if the current user has admin access to at least one site.
 
 #### Signature
 
@@ -231,18 +195,18 @@ Returns true if the user has admin access to any sites
 
 ### `checkUserHasSomeAdminAccess()` <a name="checkUserHasSomeAdminAccess"></a>
 
-Check user has admin access to any sites
+Checks that the current user has admin access to at least one site.
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have admin access to any sites
+    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have admin access to any site.
 
 ### `isUserHasViewAccess()` <a name="isUserHasViewAccess"></a>
 
-Returns true if the user has view access to the sites
+Returns true if the user has view access to the requested list of sites.
 
 #### Signature
 
@@ -253,7 +217,7 @@ Returns true if the user has view access to the sites
 
 ### `checkUserHasViewAccess()` <a name="checkUserHasViewAccess"></a>
 
-Check user has view access to the sites
+Checks that the current user has view access to the requested list of sites
 
 #### Signature
 
@@ -262,11 +226,11 @@ Check user has view access to the sites
     - `$idSites`
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have view access to sites
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have view access to every site in the list.
 
 ### `isUserHasSomeViewAccess()` <a name="isUserHasSomeViewAccess"></a>
 
-Returns true if the user has view access to any sites
+Returns true if the current user has view access to at least one site.
 
 #### Signature
 
@@ -275,40 +239,18 @@ Returns true if the user has view access to any sites
 
 ### `checkUserHasSomeViewAccess()` <a name="checkUserHasSomeViewAccess"></a>
 
-Check user has view access to any sites
+Checks that the current user has view access to at least one site.
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have view access to any sites
-
-### `getModule()` <a name="getModule"></a>
-
-Returns the current module read from the URL (eg.
-
-#### Description
-
-&#039;API&#039;, &#039;UserSettings&#039;, etc.)
-
-#### Signature
-
-- It is a **public static** method.
-- It returns a(n) `string` value.
-
-### `getAction()` <a name="getAction"></a>
-
-Returns the current action read from the URL
-
-#### Signature
-
-- It is a **public static** method.
-- It returns a(n) `string` value.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have view access to any site.
 
 ### `redirectToModule()` <a name="redirectToModule"></a>
 
-Redirect to module (and action)
+Redirects the current request to a new module and action.
 
 #### Signature
 
@@ -317,23 +259,22 @@ Redirect to module (and action)
     - `$newModule`
     - `$newAction`
     - `$parameters`
-- _Returns:_ false if the URL to redirect to is already this URL
-    - `bool`
+- It does not return anything.
 
 ### `isValidEmailString()` <a name="isValidEmailString"></a>
 
-Returns true if the email is a valid email
+Returns true if the email address is a valid.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
-    - `$email`
+    - `$emailAddress`
 - It returns a(n) `bool` value.
 
 ### `postEvent()` <a name="postEvent"></a>
 
-Post an event to the dispatcher which will notice the observers.
+Post an event to Piwik&#039;s event dispatcher which will execute the event&#039;s observers.
 
 #### Signature
 
@@ -347,7 +288,12 @@ Post an event to the dispatcher which will notice the observers.
 
 ### `addAction()` <a name="addAction"></a>
 
-Register an action to execute for a given event
+Register an observer to an event.
+
+#### Description
+
+Observers should normally be defined in plugin objects. It is unlikely that you will
+need to use this function.
 
 #### Signature
 
@@ -359,13 +305,18 @@ Register an action to execute for a given event
 
 ### `translate()` <a name="translate"></a>
 
-Returns translated string or given message if translation is not found.
+Returns an internationalized string using a translation ID.
+
+#### Description
+
+If a translation
+cannot be found for the ID, the ID is returned.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
-    - `$string`
+    - `$translationId`
     - `$args`
 - It returns a(n) `string` value.
 

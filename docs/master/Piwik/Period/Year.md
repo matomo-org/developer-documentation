@@ -50,5 +50,6 @@ Returns the current period as a string
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$format`
-- It returns a(n) `array` value.
+- _Returns:_ An array of string dates that this period consists of.
+    - `array`
 

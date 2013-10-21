@@ -3,7 +3,7 @@
 IP
 ==
 
-Handling IP addresses (both IPv4 and IPv6).
+Contains IP address helper functions (for both IPv4 and IPv6).
 
 Description
 -----------
@@ -33,26 +33,26 @@ Methods
 
 The class defines the following methods:
 
-- [`sanitizeIp()`](#sanitizeIp) &mdash; Sanitize human-readable IP address.
+- [`sanitizeIp()`](#sanitizeIp) &mdash; Removes the port and the last portion of a CIDR IP address.
 - [`sanitizeIpRange()`](#sanitizeIpRange) &mdash; Sanitize human-readable (user-supplied) IP address range.
-- [`P2N()`](#P2N) &mdash; Convert presentation format IP address to network address format
-- [`N2P()`](#N2P) &mdash; Convert network address format to presentation format
-- [`prettyPrint()`](#prettyPrint) &mdash; Alias for N2P()
-- [`isIPv4()`](#isIPv4) &mdash; Is this an IPv4, IPv4-compat, or IPv4-mapped address?
+- [`P2N()`](#P2N) &mdash; Convert presentation format IP address to network address format.
+- [`N2P()`](#N2P) &mdash; Convert network address format to presentation format.
+- [`prettyPrint()`](#prettyPrint) &mdash; Alias for [N2P()](#N2P).
+- [`isIPv4()`](#isIPv4) &mdash; Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if otherwise.
 - [`long2ip()`](#long2ip) &mdash; Convert IP address (in network address format) to presentation format.
 - [`isIPv6()`](#isIPv6) &mdash; Returns true if $ip is an IPv6 address, false if otherwise.
 - [`isMappedIPv4()`](#isMappedIPv4) &mdash; Returns true if $ip is a IPv4 mapped address, false if otherwise.
-- [`getIPv4FromMappedIPv6()`](#getIPv4FromMappedIPv6) &mdash; Returns
+- [`getIPv4FromMappedIPv6()`](#getIPv4FromMappedIPv6) &mdash; Returns an IPv4 address from a &#039;mapped&#039; IPv6 address.
 - [`getIpsForRange()`](#getIpsForRange) &mdash; Get low and high IP addresses for a specified range.
 - [`isIpInRange()`](#isIpInRange) &mdash; Determines if an IP address is in a specified IP address range.
-- [`getIpFromHeader()`](#getIpFromHeader) &mdash; Returns the best possible IP of the current user, in the format A.B.C.D For example, this could be the proxy client&#039;s IP address.
-- [`getNonProxyIpFromHeader()`](#getNonProxyIpFromHeader) &mdash; Returns a non-proxy IP address from header
+- [`getIpFromHeader()`](#getIpFromHeader) &mdash; Returns the most accurate IP address availble for the current user, in IPv4 format.
+- [`getNonProxyIpFromHeader()`](#getNonProxyIpFromHeader) &mdash; Returns a non-proxy IP address from header.
 - [`getLastIpFromList()`](#getLastIpFromList) &mdash; Returns the last IP address in a comma separated list, subject to an optional exclusion list.
-- [`getHostByAddr()`](#getHostByAddr) &mdash; Get hostname for a given IP address
+- [`getHostByAddr()`](#getHostByAddr) &mdash; Get hostname for a given IP address.
 
 ### `sanitizeIp()` <a name="sanitizeIp"></a>
 
-Sanitize human-readable IP address.
+Removes the port and the last portion of a CIDR IP address.
 
 #### Signature
 
@@ -85,54 +85,54 @@ Accepts the following formats for $ipRange:
 
 ### `P2N()` <a name="P2N"></a>
 
-Convert presentation format IP address to network address format
+Convert presentation format IP address to network address format.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ipString`
-- _Returns:_ Binary-safe string, e.g., &quot;\x7F\x00\x00\x01&quot;
+- _Returns:_ Binary-safe string, e.g., `&quot;\x7F\x00\x00\x01&quot;`.
     - `string`
 
 ### `N2P()` <a name="N2P"></a>
 
-Convert network address format to presentation format
+Convert network address format to presentation format.
 
-#### See Also
+#### Description
 
-- `prettyPrint()`
+See also [prettyPreint](#prettyPrint).
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
-- _Returns:_ IP address in presentation format
+- _Returns:_ IP address in presentation format.
     - `string`
 
 ### `prettyPrint()` <a name="prettyPrint"></a>
 
-Alias for N2P()
+Alias for [N2P()](#N2P).
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
-- _Returns:_ IP address in presentation format
+- _Returns:_ IP address in presentation format.
     - `string`
 
 ### `isIPv4()` <a name="isIPv4"></a>
 
-Is this an IPv4, IPv4-compat, or IPv4-mapped address?
+Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if otherwise.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
-- _Returns:_ True if IPv4, else false
+- _Returns:_ True if IPv4, else false.
     - `bool`
 
 ### `long2ip()` <a name="long2ip"></a>
@@ -152,7 +152,7 @@ returned by the built-in ip2long() function, from Piwik 1.3 and earlier.
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
-- _Returns:_ IP address in presentation format
+- _Returns:_ IP address in presentation format.
     - `string`
 
 ### `isIPv6()` <a name="isIPv6"></a>
@@ -184,14 +184,15 @@ Returns true if $ip is a IPv4 mapped address, false if otherwise.
 
 ### `getIPv4FromMappedIPv6()` <a name="getIPv4FromMappedIPv6"></a>
 
-Returns
+Returns an IPv4 address from a &#039;mapped&#039; IPv6 address.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
-- It does not return anything.
+- _Returns:_ eg, `&#039;192.0.2.128&#039;`
+    - `string`
 
 ### `getIpsForRange()` <a name="getIpsForRange"></a>
 
@@ -202,7 +203,7 @@ Get low and high IP addresses for a specified range.
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ipRange`
-- _Returns:_ Array ($lowIp, $highIp) in network address format, or false if failure
+- _Returns:_ Array `array($lowIp, $highIp)` in network address format, or false on failure.
     - `array`
     - `bool`
 
@@ -225,17 +226,21 @@ An IPv4-mapped address should be range checked with an IPv4-mapped address range
 
 ### `getIpFromHeader()` <a name="getIpFromHeader"></a>
 
-Returns the best possible IP of the current user, in the format A.B.C.D For example, this could be the proxy client&#039;s IP address.
+Returns the most accurate IP address availble for the current user, in IPv4 format.
+
+#### Description
+
+This could be the proxy client&#039;s IP address.
 
 #### Signature
 
 - It is a **public static** method.
-- _Returns:_ IP address in presentation format
+- _Returns:_ IP address in presentation format.
     - `string`
 
 ### `getNonProxyIpFromHeader()` <a name="getNonProxyIpFromHeader"></a>
 
-Returns a non-proxy IP address from header
+Returns a non-proxy IP address from header.
 
 #### Signature
 
@@ -255,18 +260,18 @@ Returns the last IP address in a comma separated list, subject to an optional ex
 - It accepts the following parameter(s):
     - `$csv`
     - `$excludedIps`
-- _Returns:_ Last (non-excluded) IP address in the list
+- _Returns:_ Last (non-excluded) IP address in the list.
     - `string`
 
 ### `getHostByAddr()` <a name="getHostByAddr"></a>
 
-Get hostname for a given IP address
+Get hostname for a given IP address.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ipStr`
-- _Returns:_ Hostname or unmodified $ipStr if failure
+- _Returns:_ The hostname or unmodified $ipStr on failure.
     - `string`
 

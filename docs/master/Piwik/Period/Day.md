@@ -75,7 +75,8 @@ Returns the day of the period in the given format
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$format`
-- It returns a(n) `string` value.
+- _Returns:_ An array of string dates that this period consists of.
+    - `string`
 
 ### `__toString()` <a name="__toString"></a>
 

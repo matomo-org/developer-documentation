@@ -8,10 +8,13 @@ The primary data structure used to store analytics data in Piwik.
 Description
 -----------
 
+&lt;a name=&quot;class-desc-the-basics&quot;&gt;&lt;/a&gt;
 ### The Basics
 
 DataTables consist of rows and each row consists of columns. A column value can be
 be a numeric, string or array.
+
+Every row has an ID. The ID is either the index of the row or [ID_SUMMARY_ROW](#ID_SUMMARY_ROW).
 
 DataTables are hierarchical data structures. Each row can also contain an additional
 nested sub-DataTable.
@@ -20,7 +23,8 @@ Both DataTables and DataTable rows can hold **metadata**. _DataTable metadata_ i
 regarding all the data, such as the site or period that the data is for. _Row metadata_
 is information regarding that row, such as a browser logo or website URL.
 
-Finally, DataTables all contain a special _summary_ row.
+Finally, DataTables all contain a special _summary_ row. This row, if it exists, is
+always at the end of the DataTable.
 
 ### Populating DataTables
 
@@ -79,9 +83,64 @@ See also:
 ### Examples
 
 **Populating a DataTable**
+
+    // adding one row at a time
+    $dataTable = new DataTable();
+    $dataTable-&gt;addRow(new Row(array(
+        Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; &#039;thing1&#039;, &#039;nb_visits&#039; =&gt; 1, &#039;nb_actions&#039; =&gt; 1),
+        Row::METADATA =&gt; array(&#039;url&#039; =&gt; &#039;http://thing1.com&#039;)
+    )));
+    $dataTable-&gt;addRow(new Row(array(
+        Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; &#039;thing2&#039;, &#039;nb_visits&#039; =&gt; 2, &#039;nb_actions&#039; =&gt; 2),
+        Row::METADATA =&gt; array(&#039;url&#039; =&gt; &#039;http://thing2.com&#039;)
+    )));
+    
+    // using an array of rows
+    $dataTable = new DataTable();
+    $dataTable-&gt;addRowsFromArray(array(
+        array(
+            Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; &#039;thing1&#039;, &#039;nb_visits&#039; =&gt; 1, &#039;nb_actions&#039; =&gt; 1),
+            Row::METADATA =&gt; array(&#039;url&#039; =&gt; &#039;http://thing1.com&#039;)
+        ),
+        array(
+            Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; &#039;thing2&#039;, &#039;nb_visits&#039; =&gt; 2, &#039;nb_actions&#039; =&gt; 2),
+            Row::METADATA =&gt; array(&#039;url&#039; =&gt; &#039;http://thing2.com&#039;)
+        )
+    ));
+
+    // using a &quot;simple&quot; array
+    $dataTable-&gt;addRowsFromSimpleArray(array(
+        array(&#039;label&#039; =&gt; &#039;thing1&#039;, &#039;nb_visits&#039; =&gt; 1, &#039;nb_actions&#039; =&gt; 1),
+        array(&#039;label&#039; =&gt; &#039;thing2&#039;, &#039;nb_visits&#039; =&gt; 2, &#039;nb_actions&#039; =&gt; 2)
+    ));
+
+**Getting &amp; setting metadata**
+
+    $dataTable = \Piwik\Plugins\Referrers\API::getInstance()-&gt;getSearchEngines($idSite = 1, $period = &#039;day&#039;, $date = &#039;2007-07-24&#039;);
+    $oldPeriod = $dataTable-&gt;metadata[&#039;period&#039;];
+    $dataTable-&gt;metadata[&#039;period&#039;] = Period::factory(&#039;week&#039;, Date::factory(&#039;2013-10-18&#039;));
+
 **Serializing &amp; unserializing**
+
+    $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
+    
+    $dataTable = // ... build by aggregating visits ...
+    $serializedData = $dataTable-&gt;getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
+                                                $columnToSortBy = Metrics::INDEX_NB_VISITS);
+    
+    $serializedDataTable = $serializedData[0];
+    $serailizedSubTable = $serializedData[$idSubtable];
+
 **Filtering for an API method**
-??? TODO
+
+    public function getMyReport($idSite, $period, $date, $segment = false, $expanded = false)
+    {
+        $dataTable = Archive::getDataTableFromArchive(&#039;MyPlugin_MyReport&#039;, $idSite, $period, $date, $segment, $expanded);
+        $dataTable-&gt;filter(&#039;Sort&#039;, array(Metrics::INDEX_NB_VISITS, &#039;desc&#039;, $naturalSort = false, $expanded));
+        $dataTable-&gt;queueFilter(&#039;ReplaceColumnNames&#039;);
+        $dataTable-&gt;queueFilter(&#039;ColumnCallbackAddMetadata&#039;, array(&#039;label&#039;, &#039;url&#039;, __NAMESPACE__ . &#039;\getUrlFromLabelForMyReport&#039;));
+        return $dataTable;
+    }
 
 
 Constants
@@ -89,11 +148,24 @@ Constants
 
 This class defines the following constants:
 
-- [`ARCHIVED_DATE_METADATA_NAME`](#ARCHIVED_DATE_METADATA_NAME) &mdash; Name for metadata that describes when a report was archived.
 - [`MAX_DEPTH_DEFAULT`](#MAX_DEPTH_DEFAULT)
+- [`ARCHIVED_DATE_METADATA_NAME`](#ARCHIVED_DATE_METADATA_NAME) &mdash; Name for metadata that describes when a report was archived.
 - [`EMPTY_COLUMNS_METADATA_NAME`](#EMPTY_COLUMNS_METADATA_NAME) &mdash; Name for metadata that describes which columns are empty and should not be shown.
-- [`ID_SUMMARY_ROW`](#ID_SUMMARY_ROW)
-- [`LABEL_SUMMARY_ROW`](#LABEL_SUMMARY_ROW)
+- [`TOTAL_ROWS_BEFORE_LIMIT_METADATA_NAME`](#TOTAL_ROWS_BEFORE_LIMIT_METADATA_NAME) &mdash; Name for metadata that describes the number of rows that existed before the Limit filter was applied.
+- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#COLUMN_AGGREGATION_OPS_METADATA_NAME) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable](#addDataTable) or [DataTable\Row::sumRow](#) is called.
+- [`ID_SUMMARY_ROW`](#ID_SUMMARY_ROW) &mdash; The ID of the Summary Row.
+- [`LABEL_SUMMARY_ROW`](#LABEL_SUMMARY_ROW) &mdash; The original label of the Summary Row.
+
+### `COLUMN_AGGREGATION_OPS_METADATA_NAME` <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
+
+This metadata value must be an array that maps column names with valid operations. Valid aggregation operations are:
+
+- `&#039;skip&#039;`: do nothing
+- `&#039;max&#039;`: does `max($column1, $column2)`
+- `&#039;min&#039;`: does `min($column1, $column2)`
+- `&#039;sum&#039;`: does `$column1 + $column2`
+
+See [addDataTable](#addDataTable) and [DataTable\Row::sumRow](#) for more information.
 
 Properties
 ----------
@@ -106,6 +178,12 @@ This class defines the following properties:
 
 Table metadata.
 
+#### Description
+
+Read [this](#class-desc-the-basics) to learn more.
+
+Any data that describes the data held in the table&#039;s rows should go here.
+
 #### Signature
 
 - It is a **public** property.
@@ -116,67 +194,66 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Builds the DataTable, registers itself to the manager
-- [`__destruct()`](#__destruct) &mdash; At destruction we free all memory
-- [`sort()`](#sort) &mdash; Sort the dataTable rows using the php callback function
-- [`getSortedByColumnName()`](#getSortedByColumnName) &mdash; Returns the name of the column the tables is sorted by
-- [`enableRecursiveSort()`](#enableRecursiveSort) &mdash; Enables the recursive sort.
-- [`enableRecursiveFilters()`](#enableRecursiveFilters) &mdash; Enables the recursive filter.
-- [`getRowsCountBeforeLimitFilter()`](#getRowsCountBeforeLimitFilter) &mdash; Returns the number of rows before we applied the limit filter
-- [`setRowsCountBeforeLimitFilter()`](#setRowsCountBeforeLimitFilter) &mdash; Saves the current number of rows
-- [`filter()`](#filter) &mdash; Apply a filter to this datatable
-- [`queueFilter()`](#queueFilter) &mdash; Queue a DataTable_Filter that will be applied when applyQueuedFilters() is called.
-- [`applyQueuedFilters()`](#applyQueuedFilters) &mdash; Apply all filters that were previously queued to this table
-- [`addDataTable()`](#addDataTable) &mdash; Adds a new DataTable to this DataTable Go through all the rows of the new DataTable and applies the algorithm: - if a row in $table doesnt exist in $this we add the new row to $this - if a row exists in both $table and $this we sum the columns values into $this - if a row in $this doesnt exist in $table we add in $this the row of $table without modification
-- [`getRowFromLabel()`](#getRowFromLabel) &mdash; Returns the Row that has a column &#039;label&#039; with the value $label
-- [`getRowIdFromLabel()`](#getRowIdFromLabel) &mdash; Returns the row id for the givel label
-- [`getEmptyClone()`](#getEmptyClone) &mdash; Get an empty table with the same properties as this one
-- [`getRowFromId()`](#getRowFromId) &mdash; Returns the ith row in the array
-- [`getRowFromIdSubDataTable()`](#getRowFromIdSubDataTable) &mdash; Returns a row that has the subtable ID matching the parameter
-- [`addRow()`](#addRow) &mdash; Add a row to the table and rebuild the index if necessary
-- [`addSummaryRow()`](#addSummaryRow) &mdash; Sets the summary row (a dataTable can have only one summary row)
-- [`getId()`](#getId) &mdash; Returns the dataTable ID
-- [`addRowFromArray()`](#addRowFromArray) &mdash; Adds a new row from a PHP array data structure
-- [`addRowFromSimpleArray()`](#addRowFromSimpleArray) &mdash; Adds a new row a PHP array data structure
-- [`getRows()`](#getRows) &mdash; Returns the array of Row
-- [`getColumn()`](#getColumn) &mdash; Returns the array containing all rows values for the requested column
-- [`getColumnsStartingWith()`](#getColumnsStartingWith) &mdash; Returns  the array containing all rows values of all columns which name starts with $name
+- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__destruct()`](#__destruct) &mdash; Destructor.
+- [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function.
+- [`getSortedByColumnName()`](#getSortedByColumnName) &mdash; Returns the name of the column this table was sorted by (if any).
+- [`enableRecursiveSort()`](#enableRecursiveSort) &mdash; Enables recursive sorting.
+- [`enableRecursiveFilters()`](#enableRecursiveFilters) &mdash; Enables recursive filtering.
+- [`filter()`](#filter) &mdash; Applies filter to this datatable.
+- [`queueFilter()`](#queueFilter) &mdash; Adds a filter and a list of parameters to the list of queued filters.
+- [`applyQueuedFilters()`](#applyQueuedFilters) &mdash; Applies all filters that were previously queued to the table.
+- [`addDataTable()`](#addDataTable) &mdash; Sums a DataTable to this one.
+- [`getRowFromLabel()`](#getRowFromLabel) &mdash; Returns the Row whose `&#039;label&#039;` column is equal to `$label`.
+- [`getRowIdFromLabel()`](#getRowIdFromLabel) &mdash; Returns the row id for the row whose `&#039;label&#039;` column is equal to `$label`.
+- [`getEmptyClone()`](#getEmptyClone) &mdash; Returns an empty DataTable with the same metadata and queued filters as `$this` one.
+- [`getRowFromId()`](#getRowFromId) &mdash; Returns a row by ID.
+- [`getRowFromIdSubDataTable()`](#getRowFromIdSubDataTable) &mdash; Returns the row that has a subtable with ID matching `$idSubtable`.
+- [`addRow()`](#addRow) &mdash; Adds a row to this table.
+- [`addSummaryRow()`](#addSummaryRow) &mdash; Sets the summary row.
+- [`getId()`](#getId) &mdash; Returns the DataTable ID.
+- [`addRowFromArray()`](#addRowFromArray) &mdash; Adds a new row from an array.
+- [`addRowFromSimpleArray()`](#addRowFromSimpleArray) &mdash; Adds a new row a from an array of column values.
+- [`getRows()`](#getRows) &mdash; Returns the array of Rows.
+- [`getColumn()`](#getColumn) &mdash; Returns an array containing all column values for the requested column.
+- [`getColumnsStartingWith()`](#getColumnsStartingWith) &mdash; Returns an array containing all column values of columns whose name starts with `$name`.
 - [`getColumns()`](#getColumns) &mdash; Returns the list of columns the rows in this datatable contain.
-- [`getRowsMetadata()`](#getRowsMetadata) &mdash; Returns an array containing the rows Metadata values
-- [`getRowsCount()`](#getRowsCount) &mdash; Returns the number of rows in the table
-- [`getFirstRow()`](#getFirstRow) &mdash; Returns the first row of the DataTable
-- [`getLastRow()`](#getLastRow) &mdash; Returns the last row of the DataTable
-- [`getRowsCountRecursive()`](#getRowsCountRecursive) &mdash; Returns the sum of the number of rows of all the subtables        + the number of rows in the parent table
-- [`deleteColumn()`](#deleteColumn) &mdash; Delete a given column $name in all the rows
+- [`getRowsMetadata()`](#getRowsMetadata) &mdash; Returns an array containing the requested metadata value of each row.
+- [`getRowsCount()`](#getRowsCount) &mdash; Returns the number of rows in the table including the summary row.
+- [`getFirstRow()`](#getFirstRow) &mdash; Returns the first row of the DataTable.
+- [`getLastRow()`](#getLastRow) &mdash; Returns the last row of the DataTable.
+- [`getRowsCountRecursive()`](#getRowsCountRecursive) &mdash; Returns the number of rows in this DataTable summed with the row count of each subtable in the DataTable hierarchy.
+- [`deleteColumn()`](#deleteColumn) &mdash; Delete a column by name in every row.
 - [`__sleep()`](#__sleep)
-- [`renameColumn()`](#renameColumn) &mdash; Rename a column in all rows
-- [`deleteColumns()`](#deleteColumns) &mdash; Delete columns by name in all rows
-- [`deleteRow()`](#deleteRow) &mdash; Deletes the ith row
-- [`deleteRowsOffset()`](#deleteRowsOffset) &mdash; Deletes all row from offset, offset + limit.
-- [`deleteRows()`](#deleteRows) &mdash; Deletes the rows from the list of rows ID
-- [`__toString()`](#__toString) &mdash; Returns a simple output of the DataTable for easy visualization Example: echo $datatable;
-- [`isEqual()`](#isEqual) &mdash; Returns true if both DataTable are exactly the same.
-- [`getSerialized()`](#getSerialized) &mdash; The serialization returns a one dimension array containing all the serialized DataTable contained in this DataTable.
-- [`addRowsFromSerializedArray()`](#addRowsFromSerializedArray) &mdash; Load a serialized string of a datatable.
-- [`addRowsFromArray()`](#addRowsFromArray) &mdash; Loads the DataTable from a PHP array data structure
-- [`addRowsFromSimpleArray()`](#addRowsFromSimpleArray) &mdash; Loads the data from a simple php array.
+- [`renameColumn()`](#renameColumn) &mdash; Rename a column in every row.
+- [`deleteColumns()`](#deleteColumns) &mdash; Deletes several columns by name in every row.
+- [`deleteRow()`](#deleteRow) &mdash; Deletes a row by ID.
+- [`deleteRowsOffset()`](#deleteRowsOffset) &mdash; Deletes rows from `$offset` to `$offset + $limit`.
+- [`deleteRows()`](#deleteRows) &mdash; Deletes a set of rows by ID.
+- [`__toString()`](#__toString) &mdash; Returns a string representation of this DataTable for convenient viewing.
+- [`isEqual()`](#isEqual) &mdash; Returns true if both DataTable instances are exactly the same.
+- [`getSerialized()`](#getSerialized) &mdash; Serializes an entire DataTable hierarchy and returns the array of serialized DataTables.
+- [`addRowsFromSerializedArray()`](#addRowsFromSerializedArray) &mdash; Adds a set of rows from a serialized DataTable string.
+- [`addRowsFromArray()`](#addRowsFromArray) &mdash; Adds many rows from an array.
+- [`addRowsFromSimpleArray()`](#addRowsFromSimpleArray) &mdash; Adds many rows from an array containing arrays of column values.
 - [`makeFromIndexedArray()`](#makeFromIndexedArray) &mdash; Rewrites the input $array array (     LABEL =&gt; array(col1 =&gt; X, col2 =&gt; Y),     LABEL2 =&gt; array(col1 =&gt; X, col2 =&gt; Y), ) to a DataTable, ie.
-- [`setMaximumDepthLevelAllowedAtLeast()`](#setMaximumDepthLevelAllowedAtLeast) &mdash; Sets the maximum nesting level to at least a certain value.
-- [`getAllTableMetadata()`](#getAllTableMetadata) &mdash; Returns all table metadata.
+- [`setMaximumDepthLevelAllowedAtLeast()`](#setMaximumDepthLevelAllowedAtLeast) &mdash; Sets the maximum depth level to at least a certain value.
 - [`getMetadata()`](#getMetadata) &mdash; Returns metadata by name.
 - [`setMetadata()`](#setMetadata) &mdash; Sets a metadata value by name.
+- [`getAllTableMetadata()`](#getAllTableMetadata) &mdash; Returns all table metadata.
 - [`setMaximumAllowedRows()`](#setMaximumAllowedRows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row).
 - [`walkPath()`](#walkPath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one, and the number of segments of the path successfully walked.
-- [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable that contains the rows of each of this table&#039;s subtables.
+- [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with its subtable&#039;s rows.
 - [`makeFromSimpleArray()`](#makeFromSimpleArray) &mdash; Returns a new DataTable created with data from a &#039;simple&#039; array.
-- [`setColumnAggregationOperation()`](#setColumnAggregationOperation) &mdash; Set the aggregation operation for a column, e.g.
-- [`setColumnAggregationOperations()`](#setColumnAggregationOperations) &mdash; Set multiple aggregation operations at once.
-- [`getColumnAggregationOperations()`](#getColumnAggregationOperations) &mdash; Get the configured column aggregation operations
-- [`fromSerializedArray()`](#fromSerializedArray) &mdash; Creates a new DataTable instance from a serialize()&#039;d array of rows.
+- [`fromSerializedArray()`](#fromSerializedArray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
 
 ### `__construct()` <a name="__construct"></a>
 
-Builds the DataTable, registers itself to the manager
+Constructor.
+
+#### Description
+
+Creates an empty DataTable.
 
 #### Signature
 
@@ -185,7 +262,11 @@ Builds the DataTable, registers itself to the manager
 
 ### `__destruct()` <a name="__destruct"></a>
 
-At destruction we free all memory
+Destructor.
+
+#### Description
+
+Makes sure DataTable memory will be cleaned up.
 
 #### Signature
 
@@ -194,7 +275,7 @@ At destruction we free all memory
 
 ### `sort()` <a name="sort"></a>
 
-Sort the dataTable rows using the php callback function
+Sorts the DataTable rows using the supplied callback function.
 
 #### Signature
 
@@ -206,23 +287,27 @@ Sort the dataTable rows using the php callback function
 
 ### `getSortedByColumnName()` <a name="getSortedByColumnName"></a>
 
-Returns the name of the column the tables is sorted by
+Returns the name of the column this table was sorted by (if any).
+
+#### Description
+
+See [sort](#sort).
 
 #### Signature
 
 - It is a **public** method.
-- It can return one of the following values:
-    - `bool`
+- _Returns:_ The sorted column name or false if none.
+    - `Piwik\false`
     - `string`
 
 ### `enableRecursiveSort()` <a name="enableRecursiveSort"></a>
 
-Enables the recursive sort.
+Enables recursive sorting.
 
 #### Description
 
-Means that when using $table-&gt;sort()
-it will also sort all subtables using the same callback
+If this method is called [sort](#sort) will also sort all
+subtables.
 
 #### Signature
 
@@ -231,30 +316,12 @@ it will also sort all subtables using the same callback
 
 ### `enableRecursiveFilters()` <a name="enableRecursiveFilters"></a>
 
-Enables the recursive filter.
+Enables recursive filtering.
 
 #### Description
 
-Means that when using $table-&gt;filter()
-it will also filter all subtables using the same callback
-
-#### Signature
-
-- It is a **public** method.
-- It does not return anything.
-
-### `getRowsCountBeforeLimitFilter()` <a name="getRowsCountBeforeLimitFilter"></a>
-
-Returns the number of rows before we applied the limit filter
-
-#### Signature
-
-- It is a **public** method.
-- It returns a(n) `int` value.
-
-### `setRowsCountBeforeLimitFilter()` <a name="setRowsCountBeforeLimitFilter"></a>
-
-Saves the current number of rows
+If this method is called then the [filter](#filter) method
+will apply filters to every subtable in addition to this instance.
 
 #### Signature
 
@@ -263,7 +330,12 @@ Saves the current number of rows
 
 ### `filter()` <a name="filter"></a>
 
-Apply a filter to this datatable
+Applies filter to this datatable.
+
+#### Description
+
+If [enableRecursiveFilters](#enableRecursiveFilters) was called, the filter will be applied
+to all subtables as well.
 
 #### Signature
 
@@ -275,11 +347,15 @@ Apply a filter to this datatable
 
 ### `queueFilter()` <a name="queueFilter"></a>
 
-Queue a DataTable_Filter that will be applied when applyQueuedFilters() is called.
+Adds a filter and a list of parameters to the list of queued filters.
 
 #### Description
 
-(just before sending the datatable back to the browser (or API, etc.)
+These filters will be
+executed when [applyQueuedFilters](#applyQueuedFilters) is called.
+
+Filters that prettify the output or don&#039;t need the full set of rows should be queued. This
+way they will be run after the table is truncated which will result in better performance.
 
 #### Signature
 
@@ -291,11 +367,12 @@ Queue a DataTable_Filter that will be applied when applyQueuedFilters() is calle
 
 ### `applyQueuedFilters()` <a name="applyQueuedFilters"></a>
 
-Apply all filters that were previously queued to this table
+Applies all filters that were previously queued to the table.
 
-#### See Also
+#### Description
 
-- `queueFilter()`
+See [queueFilter](#queueFilter)
+for more information.
 
 #### Signature
 
@@ -304,11 +381,19 @@ Apply all filters that were previously queued to this table
 
 ### `addDataTable()` <a name="addDataTable"></a>
 
-Adds a new DataTable to this DataTable Go through all the rows of the new DataTable and applies the algorithm: - if a row in $table doesnt exist in $this we add the new row to $this - if a row exists in both $table and $this we sum the columns values into $this - if a row in $this doesnt exist in $table we add in $this the row of $table without modification
+Sums a DataTable to this one.
 
 #### Description
 
-A common row to 2 DataTable is defined by the same label
+This method will sum rows that have the same label. If a row is found in `$tableToSum` whose
+label is not found in `$this`, the row will be added to `$this` DataTable.
+
+If the subtables for this table are loaded, they will be summed as well.
+
+Rows are summed together by summing individual columns. By default columns are summed by
+adding one column value to another. Some columns cannot be aggregated this way. In these
+cases, the [COLUMN_AGGREGATION_OPS_METADATA_NAME](#COLUMN_AGGREGATION_OPS_METADATA_NAME)
+metadata can be used to specify a different type of operation.
 
 #### Signature
 
@@ -319,33 +404,42 @@ A common row to 2 DataTable is defined by the same label
 
 ### `getRowFromLabel()` <a name="getRowFromLabel"></a>
 
-Returns the Row that has a column &#039;label&#039; with the value $label
+Returns the Row whose `&#039;label&#039;` column is equal to `$label`.
+
+#### Description
+
+This method executes in constant time except for the first call which caches row
+label =&gt; row ID mappings.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$label`
-- _Returns:_ The row if found, false otherwise
+- _Returns:_ The row if found, false if otherwise.
     - [`Row`](../Piwik/DataTable/Row.md)
-    - `bool`
+    - `Piwik\false`
 
 ### `getRowIdFromLabel()` <a name="getRowIdFromLabel"></a>
 
-Returns the row id for the givel label
+Returns the row id for the row whose `&#039;label&#039;` column is equal to `$label`.
+
+#### Description
+
+This method executes in constant time except for the first call which caches row
+label =&gt; row ID mappings.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$label`
-- It can return one of the following values:
+- _Returns:_ The row ID.
     - `int`
-    - [`Row`](../Piwik/DataTable/Row.md)
 
 ### `getEmptyClone()` <a name="getEmptyClone"></a>
 
-Get an empty table with the same properties as this one
+Returns an empty DataTable with the same metadata and queued filters as `$this` one.
 
 #### Signature
 
@@ -356,55 +450,71 @@ Get an empty table with the same properties as this one
 
 ### `getRowFromId()` <a name="getRowFromId"></a>
 
-Returns the ith row in the array
+Returns a row by ID.
+
+#### Description
+
+The ID is either the index of the row or [ID_SUMMARY_ROW](#ID_SUMMARY_ROW).
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id`
-- _Returns:_ or false if not found
+- _Returns:_ The Row or false if not found.
     - [`Row`](../Piwik/DataTable/Row.md)
+    - `Piwik\false`
 
 ### `getRowFromIdSubDataTable()` <a name="getRowFromIdSubDataTable"></a>
 
-Returns a row that has the subtable ID matching the parameter
+Returns the row that has a subtable with ID matching `$idSubtable`.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$idSubTable`
-- _Returns:_ false if not found
+- _Returns:_ The row or false if not found
     - [`Row`](../Piwik/DataTable/Row.md)
-    - `bool`
+    - `Piwik\false`
 
 ### `addRow()` <a name="addRow"></a>
 
-Add a row to the table and rebuild the index if necessary
+Adds a row to this table.
+
+#### Description
+
+If [setMaximumAllowedRows](#setMaximumAllowedRows) was called and the current row count is 
+at the maximum, the new row will be summed to the summary row. If there is no summary row,
+this row is set as the summary row.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$row` ([`Row`](../Piwik/DataTable/Row.md))
-- It returns a(n) [`Row`](../Piwik/DataTable/Row.md) value.
+- _Returns:_ `$row` or the summary row if we&#039;re at the maximum number of rows.
+    - [`Row`](../Piwik/DataTable/Row.md)
 
 ### `addSummaryRow()` <a name="addSummaryRow"></a>
 
-Sets the summary row (a dataTable can have only one summary row)
+Sets the summary row.
+
+#### Description
+
+Note: A dataTable can have only one summary row.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$row` ([`Row`](../Piwik/DataTable/Row.md))
-- _Returns:_ Returns $row.
+- _Returns:_ Returns `$row`.
     - [`Row`](../Piwik/DataTable/Row.md)
 
 ### `getId()` <a name="getId"></a>
 
-Returns the dataTable ID
+Returns the DataTable ID.
 
 #### Signature
 
@@ -413,7 +523,11 @@ Returns the dataTable ID
 
 ### `addRowFromArray()` <a name="addRowFromArray"></a>
 
-Adds a new row from a PHP array data structure
+Adds a new row from an array.
+
+#### Description
+
+You can add Row metadata with this method.
 
 #### Signature
 
@@ -424,7 +538,11 @@ Adds a new row from a PHP array data structure
 
 ### `addRowFromSimpleArray()` <a name="addRowFromSimpleArray"></a>
 
-Adds a new row a PHP array data structure
+Adds a new row a from an array of column values.
+
+#### Description
+
+Row metadata cannot be added with this method.
 
 #### Signature
 
@@ -435,34 +553,36 @@ Adds a new row a PHP array data structure
 
 ### `getRows()` <a name="getRows"></a>
 
-Returns the array of Row
+Returns the array of Rows.
 
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) [`Row[]`](../Piwik/DataTable/Row.md) value.
+- It returns a(n) `array` value.
 
 ### `getColumn()` <a name="getColumn"></a>
 
-Returns the array containing all rows values for the requested column
+Returns an array containing all column values for the requested column.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
-- It returns a(n) `array` value.
+- _Returns:_ The array of column values.
+    - `array`
 
 ### `getColumnsStartingWith()` <a name="getColumnsStartingWith"></a>
 
-Returns  the array containing all rows values of all columns which name starts with $name
+Returns an array containing all column values of columns whose name starts with `$name`.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$name`
-- It returns a(n) `array` value.
+    - `$namePrefix`
+- _Returns:_ The array of column values.
+    - `array`
 
 ### `getColumns()` <a name="getColumns"></a>
 
@@ -473,14 +593,18 @@ Returns the list of columns the rows in this datatable contain.
 This will return the
 columns of the first row with data and assume they occur in every other row as well.
 
+Note: If column names still use their in-database INDEX values (@see Metrics), they
+      will be converted to their string name in the array result.
+
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `array` value.
+- _Returns:_ Array of string column names.
+    - `array`
 
 ### `getRowsMetadata()` <a name="getRowsMetadata"></a>
 
-Returns an array containing the rows Metadata values
+Returns an array containing the requested metadata value of each row.
 
 #### Signature
 
@@ -491,7 +615,7 @@ Returns an array containing the rows Metadata values
 
 ### `getRowsCount()` <a name="getRowsCount"></a>
 
-Returns the number of rows in the table
+Returns the number of rows in the table including the summary row.
 
 #### Signature
 
@@ -500,25 +624,38 @@ Returns the number of rows in the table
 
 ### `getFirstRow()` <a name="getFirstRow"></a>
 
-Returns the first row of the DataTable
+Returns the first row of the DataTable.
 
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) [`Row`](../Piwik/DataTable/Row.md) value.
+- _Returns:_ The first row or `false` if it cannot be found.
+    - [`Row`](../Piwik/DataTable/Row.md)
+    - `Piwik\false`
 
 ### `getLastRow()` <a name="getLastRow"></a>
 
-Returns the last row of the DataTable
+Returns the last row of the DataTable.
+
+#### Description
+
+If there is a summary row, it
+will always be considered the last row.
 
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) [`Row`](../Piwik/DataTable/Row.md) value.
+- _Returns:_ The last row or `false` if it cannot be found.
+    - [`Row`](../Piwik/DataTable/Row.md)
+    - `Piwik\false`
 
 ### `getRowsCountRecursive()` <a name="getRowsCountRecursive"></a>
 
-Returns the sum of the number of rows of all the subtables        + the number of rows in the parent table
+Returns the number of rows in this DataTable summed with the row count of each subtable in the DataTable hierarchy.
+
+#### Description
+
+This includes the subtables of subtables and further descendants.
 
 #### Signature
 
@@ -527,7 +664,12 @@ Returns the sum of the number of rows of all the subtables        + the number o
 
 ### `deleteColumn()` <a name="deleteColumn"></a>
 
-Delete a given column $name in all the rows
+Delete a column by name in every row.
+
+#### Description
+
+This change is NOT applied recursively to all
+subtables.
 
 #### Signature
 
@@ -545,7 +687,11 @@ Delete a given column $name in all the rows
 
 ### `renameColumn()` <a name="renameColumn"></a>
 
-Rename a column in all rows
+Rename a column in every row.
+
+#### Description
+
+This change is applied recursively to all subtables.
 
 #### Signature
 
@@ -557,7 +703,7 @@ Rename a column in all rows
 
 ### `deleteColumns()` <a name="deleteColumns"></a>
 
-Delete columns by name in all rows
+Deletes several columns by name in every row.
 
 #### Signature
 
@@ -569,24 +715,20 @@ Delete columns by name in all rows
 
 ### `deleteRow()` <a name="deleteRow"></a>
 
-Deletes the ith row
+Deletes a row by ID.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id`
-- It returns a(n) `void` value.
+- It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the row $id cannot be found
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the row `$id` cannot be found.
 
 ### `deleteRowsOffset()` <a name="deleteRowsOffset"></a>
 
-Deletes all row from offset, offset + limit.
-
-#### Description
-
-If limit is null then limit = $table-&gt;getRowsCount()
+Deletes rows from `$offset` to `$offset + $limit`.
 
 #### Signature
 
@@ -594,24 +736,29 @@ If limit is null then limit = $table-&gt;getRowsCount()
 - It accepts the following parameter(s):
     - `$offset`
     - `$limit`
-- It returns a(n) `int` value.
+- _Returns:_ The number of rows deleted.
+    - `int`
 
 ### `deleteRows()` <a name="deleteRows"></a>
 
-Deletes the rows from the list of rows ID
+Deletes a set of rows by ID.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$aKeys` (`array`)
+    - `$rowIds` (`array`)
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if any of the row to delete couldn&#039;t be found
+    - [`Exception`](http://php.net/class.Exception) &mdash; If a row ID cannot be found.
 
 ### `__toString()` <a name="__toString"></a>
 
-Returns a simple output of the DataTable for easy visualization Example: echo $datatable;
+Returns a string representation of this DataTable for convenient viewing.
+
+#### Description
+
+Note: This uses the Html DataTable renderer.
 
 #### Signature
 
@@ -620,11 +767,14 @@ Returns a simple output of the DataTable for easy visualization Example: echo $d
 
 ### `isEqual()` <a name="isEqual"></a>
 
-Returns true if both DataTable are exactly the same.
+Returns true if both DataTable instances are exactly the same.
 
 #### Description
 
-Used in unit tests.
+DataTables are equal if they have the same number of rows, if
+each row has a label that exists in the other table, and if each row
+is equal to the row in the other table with the same label. The order
+of rows is not important.
 
 #### Signature
 
@@ -636,21 +786,18 @@ Used in unit tests.
 
 ### `getSerialized()` <a name="getSerialized"></a>
 
-The serialization returns a one dimension array containing all the serialized DataTable contained in this DataTable.
+Serializes an entire DataTable hierarchy and returns the array of serialized DataTables.
 
 #### Description
 
-We save DataTable in serialized format in the Database.
-Each row of this returned PHP array will be a row in the DB table.
-At the end of the method execution, the dataTable may be truncated (if $maximum* parameters are set).
+The first element in the returned array will be the serialized representation of this DataTable.
+Every subsequent element will be a serialized subtable.
 
-The keys of the array are very important as they are used to define the DataTable
+This DataTable and subtables can optionally be truncated before being serialized. In most
+cases where DataTables can become quite large, they should be truncated before being persisted
+in an archive.
 
-IMPORTANT: The main table (level 0, parent of all tables) will always be indexed by 0
-   even it was created after some other tables.
-   It also means that all the parent tables (level 0) will be indexed with 0 in their respective
- serialized arrays. You should never lookup a parent table using the getTable( $id = 0) as it
- won&#039;t work.
+The result of this method is intended for use with the [ArchiveProcessor::insertBlobRecord](#) method.
 
 #### Signature
 
@@ -659,21 +806,18 @@ IMPORTANT: The main table (level 0, parent of all tables) will always be indexed
     - `$maximumRowsInDataTable`
     - `$maximumRowsInSubDataTable`
     - `$columnToSortByBeforeTruncation`
-- _Returns:_ Serialized arrays array(    // Datatable level0 0 =&gt; &#039;eghuighahgaueytae78yaet7yaetae&#039;, // first Datatable level1 1 =&gt; &#039;gaegae gh gwrh guiwh uigwhuige&#039;, //second Datatable level1 2 =&gt; &#039;gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE&#039;, //first Datatable level3 (child of second Datatable level1 for example) 3 =&gt; &#039;eghuighahgaueytae78yaet7yaetaeGRQWUBGUIQGH&amp;QE&#039;, );
+- _Returns:_ The array of serialized DataTables: array( // this DataTable (the root) 0 =&gt; &#039;eghuighahgaueytae78yaet7yaetae&#039;, // a subtable 1 =&gt; &#039;gaegae gh gwrh guiwh uigwhuige&#039;, // another subtable 2 =&gt; &#039;gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE&#039;, // etc. );
     - `array`
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if an infinite recursion is found (a table row&#039;s has a subtable that is one of its parent table)
+    - [`Exception`](http://php.net/class.Exception) &mdash; If infinite recursion detected. This will occur if a table&#039;s subtable is one of its parent tables.
 
 ### `addRowsFromSerializedArray()` <a name="addRowsFromSerializedArray"></a>
 
-Load a serialized string of a datatable.
+Adds a set of rows from a serialized DataTable string.
 
 #### Description
 
-Does not load recursively all the sub DataTable.
-They will be loaded only when requesting them specifically.
-
-The function creates all the necessary DataTable\Row
+See [serialize](#serialize).
 
 #### Signature
 
@@ -682,11 +826,15 @@ The function creates all the necessary DataTable\Row
     - `$stringSerialized`
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; if `$stringSerialized` is invalid.
 
 ### `addRowsFromArray()` <a name="addRowsFromArray"></a>
 
-Loads the DataTable from a PHP array data structure
+Adds many rows from an array.
+
+#### Description
+
+You can add Row metadata with this method.
 
 #### Signature
 
@@ -697,19 +845,18 @@ Loads the DataTable from a PHP array data structure
 
 ### `addRowsFromSimpleArray()` <a name="addRowsFromSimpleArray"></a>
 
-Loads the data from a simple php array.
+Adds many rows from an array containing arrays of column values.
 
 #### Description
 
-Basically maps a simple multidimensional php array to a DataTable.
-Not recursive (if a row contains a php array itself, it won&#039;t be loaded)
+Row metadata cannot be added with this method.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$array`
-- It returns a(n) `void` value.
+- It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -746,12 +893,16 @@ array (
 
 ### `setMaximumDepthLevelAllowedAtLeast()` <a name="setMaximumDepthLevelAllowedAtLeast"></a>
 
-Sets the maximum nesting level to at least a certain value.
+Sets the maximum depth level to at least a certain value.
 
 #### Description
 
 If the current value is
 greater than the supplied level, the maximum nesting level is not changed.
+
+The maximum depth level determines the maximum number of subtable levels in the
+DataTable tree. For example, if it is set to `2`, this DataTable is allowed to
+have subtables, but the subtables are not.
 
 #### Signature
 
@@ -759,15 +910,6 @@ greater than the supplied level, the maximum nesting level is not changed.
 - It accepts the following parameter(s):
     - `$atLeastLevel`
 - It does not return anything.
-
-### `getAllTableMetadata()` <a name="getAllTableMetadata"></a>
-
-Returns all table metadata.
-
-#### Signature
-
-- It is a **public** method.
-- It returns a(n) `array` value.
 
 ### `getMetadata()` <a name="getMetadata"></a>
 
@@ -778,7 +920,9 @@ Returns metadata by name.
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
-- It returns a(n) `mixed` value.
+- _Returns:_ The metadata value or false if it cannot be found.
+    - `mixed`
+    - `Piwik\false`
 
 ### `setMetadata()` <a name="setMetadata"></a>
 
@@ -792,6 +936,15 @@ Sets a metadata value by name.
     - `$value`
 - It does not return anything.
 
+### `getAllTableMetadata()` <a name="getAllTableMetadata"></a>
+
+Returns all table metadata.
+
+#### Signature
+
+- It is a **public** method.
+- It returns a(n) `array` value.
+
 ### `setMaximumAllowedRows()` <a name="setMaximumAllowedRows"></a>
 
 Sets the maximum number of rows allowed in this datatable (including the summary row).
@@ -799,7 +952,7 @@ Sets the maximum number of rows allowed in this datatable (including the summary
 #### Description
 
 If adding more then the allowed number of rows is attempted, the extra
-rows are added to the summary row.
+rows are summed to the summary row.
 
 #### Signature
 
@@ -818,6 +971,9 @@ If $missingRowColumns is supplied, the specified path is created. When
 a subtable is encountered w/o the queried label, a new row is created
 with the label, and a subtable is added to the row.
 
+Read [http://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods](http://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods)
+for more information about tree walking.
+
 #### Signature
 
 - It is a **public** method.
@@ -830,7 +986,7 @@ with the label, and a subtable is added to the row.
 
 ### `mergeSubtables()` <a name="mergeSubtables"></a>
 
-Returns a new DataTable that contains the rows of each of this table&#039;s subtables.
+Returns a new DataTable in which the rows of this table are replaced with its subtable&#039;s rows.
 
 #### Signature
 
@@ -844,6 +1000,10 @@ Returns a new DataTable that contains the rows of each of this table&#039;s subt
 
 Returns a new DataTable created with data from a &#039;simple&#039; array.
 
+#### Description
+
+See [addRowsFromSimpleArray](#addRowsFromSimpleArray).
+
 #### Signature
 
 - It is a **public static** method.
@@ -851,49 +1011,14 @@ Returns a new DataTable created with data from a &#039;simple&#039; array.
     - `$array`
 - It returns a(n) [`DataTable`](../Piwik/DataTable.md) value.
 
-### `setColumnAggregationOperation()` <a name="setColumnAggregationOperation"></a>
+### `fromSerializedArray()` <a name="fromSerializedArray"></a>
 
-Set the aggregation operation for a column, e.g.
+Creates a new DataTable instance from a serialized DataTable string.
 
 #### Description
 
-&quot;min&quot;.
-
-#### See Also
-
-- `self::addDataTable()` &mdash; and DataTable\Row::sumRow()
-
-#### Signature
-
-- It is a **public** method.
-- It accepts the following parameter(s):
-    - `$columnName`
-    - `$operation`
-- It does not return anything.
-
-### `setColumnAggregationOperations()` <a name="setColumnAggregationOperations"></a>
-
-Set multiple aggregation operations at once.
-
-#### Signature
-
-- It is a **public** method.
-- It accepts the following parameter(s):
-    - `$operations`
-- It does not return anything.
-
-### `getColumnAggregationOperations()` <a name="getColumnAggregationOperations"></a>
-
-Get the configured column aggregation operations
-
-#### Signature
-
-- It is a **public** method.
-- It does not return anything.
-
-### `fromSerializedArray()` <a name="fromSerializedArray"></a>
-
-Creates a new DataTable instance from a serialize()&#039;d array of rows.
+See [getSerialized](#getSerialized) and [addRowsFromSerializedArray](#addRowsFromSerializedArray)
+for more information on DataTable serialization.
 
 #### Signature
 

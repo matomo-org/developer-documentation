@@ -3,7 +3,14 @@
 Metrics
 =======
 
-This class holds the various mappings we use to internally store and manipulate metrics.
+This class contains metadata regarding core metrics and contains several related helper functions.
+
+Description
+-----------
+
+Of note are the `INDEX_...` constants. In the database, metric column names
+are stored in DataTable rows are stored as integers to save space. The integer
+values used are determined by these constants.
 
 
 Constants
@@ -11,7 +18,7 @@ Constants
 
 This class defines the following constants:
 
-- [`INDEX_NB_UNIQ_VISITORS`](#INDEX_NB_UNIQ_VISITORS) &mdash; When saving DataTables in the DB, we replace all columns name with these IDs.
+- [`INDEX_NB_UNIQ_VISITORS`](#INDEX_NB_UNIQ_VISITORS)
 - [`INDEX_NB_VISITS`](#INDEX_NB_VISITS)
 - [`INDEX_NB_ACTIONS`](#INDEX_NB_ACTIONS)
 - [`INDEX_MAX_ACTIONS`](#INDEX_MAX_ACTIONS)
@@ -52,11 +59,6 @@ This class defines the following constants:
 - [`INDEX_GOAL_ECOMMERCE_REVENUE_SHIPPING`](#INDEX_GOAL_ECOMMERCE_REVENUE_SHIPPING)
 - [`INDEX_GOAL_ECOMMERCE_REVENUE_DISCOUNT`](#INDEX_GOAL_ECOMMERCE_REVENUE_DISCOUNT)
 - [`INDEX_GOAL_ECOMMERCE_ITEMS`](#INDEX_GOAL_ECOMMERCE_ITEMS)
-
-### `INDEX_NB_UNIQ_VISITORS` <a name="INDEX_NB_UNIQ_VISITORS"></a>
-
-This saves many bytes,
-eg. INDEX_NB_UNIQ_VISITORS is an integer: 4 bytes, but &#039;nb_uniq_visitors&#039; is 16 bytes at least
 
 Properties
 ----------

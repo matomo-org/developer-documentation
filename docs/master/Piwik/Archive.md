@@ -157,7 +157,7 @@ use [Archive::build](#build).
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
-    - `$segment` (`Piwik\Segment`)
+    - `$segment` ([`Segment`](../Piwik/Segment.md))
     - `$periods` (`array`)
     - `$idSites` (`array`)
     - `$idSiteIsAll`

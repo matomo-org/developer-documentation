@@ -3,7 +3,7 @@
 Filesystem
 ==========
 
-Class Filesystem
+Contains helper functions that involve the filesystem.
 
 
 Methods
@@ -11,84 +11,21 @@ Methods
 
 The class defines the following methods:
 
-- [`deleteAllCacheOnUpdate()`](#deleteAllCacheOnUpdate) &mdash; Called on Core install, update, plugin enable/disable Will clear all cache that could be affected by the change in configuration being made
-- [`getPathToPiwikRoot()`](#getPathToPiwikRoot) &mdash; ending WITHOUT slash
-- [`createHtAccess()`](#createHtAccess) &mdash; Create .htaccess file in specified directory
-- [`isValidFilename()`](#isValidFilename) &mdash; Returns true if the string is a valid filename File names that start with a-Z or 0-9 and contain a-Z, 0-9, underscore(_), dash(-), and dot(.) will be accepted.
-- [`realpath()`](#realpath) &mdash; Get canonicalized absolute path See http://php.net/realpath
-- [`mkdir()`](#mkdir) &mdash; Create directory if permitted
-- [`checkIfFileSystemIsNFS()`](#checkIfFileSystemIsNFS) &mdash; Checks if the filesystem Piwik stores sessions in is NFS or not.
-- [`globr()`](#globr) &mdash; Recursively find pathnames that match a pattern
-- [`unlinkRecursive()`](#unlinkRecursive) &mdash; Recursively delete a directory
-- [`copy()`](#copy) &mdash; Copy individual file from $source to $target.
-- [`copyRecursive()`](#copyRecursive) &mdash; Copy recursively from $source to $target.
-
-### `deleteAllCacheOnUpdate()` <a name="deleteAllCacheOnUpdate"></a>
-
-Called on Core install, update, plugin enable/disable Will clear all cache that could be affected by the change in configuration being made
-
-#### Signature
-
-- It is a **public static** method.
-- It does not return anything.
-
-### `getPathToPiwikRoot()` <a name="getPathToPiwikRoot"></a>
-
-ending WITHOUT slash
-
-#### Signature
-
-- It is a **public static** method.
-- It returns a(n) `string` value.
-
-### `createHtAccess()` <a name="createHtAccess"></a>
-
-Create .htaccess file in specified directory
-
-#### Description
-
-Apache-specific; for IIS @see web.config
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$path`
-    - `$overwrite`
-    - `$content`
-- It does not return anything.
-
-### `isValidFilename()` <a name="isValidFilename"></a>
-
-Returns true if the string is a valid filename File names that start with a-Z or 0-9 and contain a-Z, 0-9, underscore(_), dash(-), and dot(.) will be accepted.
-
-#### Description
-
-File names beginning with anything but a-Z or 0-9 will be rejected (including .htaccess for example).
-File names containing anything other than above mentioned will also be rejected (file names with spaces won&#039;t be accepted).
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$filename`
-- It returns a(n) `bool` value.
-
-### `realpath()` <a name="realpath"></a>
-
-Get canonicalized absolute path See http://php.net/realpath
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$path`
-- _Returns:_ canonicalized absolute path
-    - `string`
+- [`mkdir()`](#mkdir) &mdash; Attempts to create a new directory.
+- [`globr()`](#globr) &mdash; Recursively find pathnames that match a pattern.
+- [`unlinkRecursive()`](#unlinkRecursive) &mdash; Recursively deletes a directory.
+- [`copy()`](#copy) &mdash; Copies a file from `$source` to `$dest`.
+- [`copyRecursive()`](#copyRecursive) &mdash; Copies the contents of a directory recursively from `$source` to `$target`.
 
 ### `mkdir()` <a name="mkdir"></a>
 
-Create directory if permitted
+Attempts to create a new directory.
+
+#### Description
+
+All errors are silenced.
+
+Note: This function does not create directories recursively.
 
 #### Signature
 
@@ -98,34 +35,13 @@ Create directory if permitted
     - `$denyAccess`
 - It does not return anything.
 
-### `checkIfFileSystemIsNFS()` <a name="checkIfFileSystemIsNFS"></a>
+### `globr()` <a name="globr"></a>
 
-Checks if the filesystem Piwik stores sessions in is NFS or not.
+Recursively find pathnames that match a pattern.
 
 #### Description
 
-This
-check is done in order to avoid using file based sessions on NFS system,
-since on such a filesystem file locking can make file based sessions
-incredibly slow.
-
-Note: In order to figure this out, we try to run the &#039;df&#039; program. If
-the &#039;exec&#039; or &#039;shell_exec&#039; functions are not available, we can&#039;t do
-the check.
-
-#### Signature
-
-- It is a **public static** method.
-- _Returns:_ True if on an NFS filesystem, false if otherwise or if we can&#039;t use shell_exec or exec.
-    - `bool`
-
-### `globr()` <a name="globr"></a>
-
-Recursively find pathnames that match a pattern
-
-#### See Also
-
-- `glob()`
+See [glob](#http://php.net/manual/en/function.glob.php) for more info.
 
 #### Signature
 
@@ -134,11 +50,12 @@ Recursively find pathnames that match a pattern
     - `$sDir`
     - `$sPattern`
     - `$nFlags`
-- It returns a(n) `array` value.
+- _Returns:_ The list of paths that match the pattern.
+    - `array`
 
 ### `unlinkRecursive()` <a name="unlinkRecursive"></a>
 
-Recursively delete a directory
+Recursively deletes a directory.
 
 #### Signature
 
@@ -151,7 +68,7 @@ Recursively delete a directory
 
 ### `copy()` <a name="copy"></a>
 
-Copy individual file from $source to $target.
+Copies a file from `$source` to `$dest`.
 
 #### Signature
 
@@ -162,11 +79,11 @@ Copy individual file from $source to $target.
     - `$excludePhp`
 - It returns a(n) `bool` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the file cannot be copied.
 
 ### `copyRecursive()` <a name="copyRecursive"></a>
 
-Copy recursively from $source to $target.
+Copies the contents of a directory recursively from `$source` to `$target`.
 
 #### Signature
 
@@ -176,4 +93,6 @@ Copy recursively from $source to $target.
     - `$target`
     - `$excludePhp`
 - It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; If a file cannot be copied.
 

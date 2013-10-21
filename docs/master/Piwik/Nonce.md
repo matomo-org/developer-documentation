@@ -8,13 +8,13 @@ Nonce class.
 Description
 -----------
 
-A cryptographic nonce -- &quot;number used only once&quot; -- is often recommended as part of a robust defense against cross-site request forgery (CSRF/XSRF).
-Desrable characteristics: limited lifetime, uniqueness, unpredictability (pseudo-randomness).
+A cryptographic nonce -- &quot;number used only once&quot; -- is often recommended as
+part of a robust defense against cross-site request forgery (CSRF/XSRF). This
+class provides static methods that create and manage nonce values.
 
-We use a session-dependent nonce with a configurable expiration that combines and hashes:
-- a private salt because it&#039;s non-public
-- time() because it&#039;s unique
-- a mix of PRNGs (pseudo-random number generators) to increase entropy and make it less predictable
+Nonces in Piwik are stored as a session variable and have a configurable expiration:
+
+Learn more about nonces [here](http://en.wikipedia.org/wiki/Cryptographic_nonce).
 
 
 Methods
@@ -22,15 +22,19 @@ Methods
 
 The class defines the following methods:
 
-- [`getNonce()`](#getNonce) &mdash; Generate nonce
-- [`verifyNonce()`](#verifyNonce) &mdash; Verify nonce and check referrer (if present, i.e., it may be suppressed by the browser or a proxy/network).
-- [`discardNonce()`](#discardNonce) &mdash; Discard nonce (&quot;now&quot; as opposed to waiting for garbage collection)
-- [`getOrigin()`](#getOrigin) &mdash; Get ORIGIN header, false if not found
-- [`getAcceptableOrigins()`](#getAcceptableOrigins) &mdash; Returns acceptable origins (not simply scheme://host) that should handle a variety of proxy and web server (mis)configurations,.
+- [`getNonce()`](#getNonce) &mdash; Returns the existing nonce.
+- [`verifyNonce()`](#verifyNonce) &mdash; Returns if a nonce is valid and comes from a valid request.
+- [`discardNonce()`](#discardNonce) &mdash; Force expiration of the current nonce.
+- [`getOrigin()`](#getOrigin) &mdash; Returns Origin HTTP header or false if not found.
+- [`getAcceptableOrigins()`](#getAcceptableOrigins) &mdash; Returns a list acceptable values for the HTTP Origin header.
 
 ### `getNonce()` <a name="getNonce"></a>
 
-Generate nonce
+Returns the existing nonce.
+
+#### Description
+
+If none exists, a new nonce will be generated.
 
 #### Signature
 
@@ -38,12 +42,19 @@ Generate nonce
 - It accepts the following parameter(s):
     - `$id`
     - `$ttl`
-- _Returns:_ Nonce
-    - `string`
+- It returns a(n) `string` value.
 
 ### `verifyNonce()` <a name="verifyNonce"></a>
 
-Verify nonce and check referrer (if present, i.e., it may be suppressed by the browser or a proxy/network).
+Returns if a nonce is valid and comes from a valid request.
+
+#### Description
+
+A nonce is valid if it matches the current nonce and if the current nonce
+has not expired.
+
+The request is valid if the referrer is a local URL (see [Url::isLocalUrl](#))
+and if the HTTP origin is valid (see [getAcceptableOrigins](#getAcceptableOrigins)).
 
 #### Signature
 
@@ -56,7 +67,7 @@ Verify nonce and check referrer (if present, i.e., it may be suppressed by the b
 
 ### `discardNonce()` <a name="discardNonce"></a>
 
-Discard nonce (&quot;now&quot; as opposed to waiting for garbage collection)
+Force expiration of the current nonce.
 
 #### Signature
 
@@ -67,7 +78,7 @@ Discard nonce (&quot;now&quot; as opposed to waiting for garbage collection)
 
 ### `getOrigin()` <a name="getOrigin"></a>
 
-Get ORIGIN header, false if not found
+Returns Origin HTTP header or false if not found.
 
 #### Signature
 
@@ -78,7 +89,7 @@ Get ORIGIN header, false if not found
 
 ### `getAcceptableOrigins()` <a name="getAcceptableOrigins"></a>
 
-Returns acceptable origins (not simply scheme://host) that should handle a variety of proxy and web server (mis)configurations,.
+Returns a list acceptable values for the HTTP Origin header.
 
 #### Signature
 

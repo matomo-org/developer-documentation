@@ -3,7 +3,28 @@
 Date
 ====
 
-Date object widely used in Piwik.
+Utility class that wraps date/time related PHP functions.
+
+Description
+-----------
+
+Using this class can
+be easier than using `date`, `time`, `date_default_timezone_set`, etc.
+
+### Performance concerns
+
+The helper methods in this class are instance methods and thus `Date` instances
+need to be constructed before they can be used. The memory allocation can result
+in noticeable performance degradation if you construct thousands of Date instances,
+say, in a loop.
+
+### Examples
+
+**Basic usage**
+
+    $date = Date::factory(&#039;2007-07-24 14:04:24&#039;, &#039;EST&#039;);
+    $date-&gt;addHour(5);
+    echo $date-&gt;getLocalized(&quot;%longDay% the %day% of %longMonth% at %time%&quot;);
 
 
 Constants
@@ -11,52 +32,57 @@ Constants
 
 This class defines the following constants:
 
-- [`NUM_SECONDS_IN_DAY`](#NUM_SECONDS_IN_DAY)
-- [`DATE_TIME_FORMAT`](#DATE_TIME_FORMAT)
+- [`NUM_SECONDS_IN_DAY`](#NUM_SECONDS_IN_DAY) &mdash; Number of seconds in a day.
+- [`DATE_TIME_FORMAT`](#DATE_TIME_FORMAT) &mdash; The default date time string format.
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`factory()`](#factory) &mdash; Returns a Date objects.
-- [`getDatetime()`](#getDatetime) &mdash; Returns the datetime of the current timestamp
-- [`getDateStartUTC()`](#getDateStartUTC) &mdash; Returns the datetime start in UTC
-- [`getDateEndUTC()`](#getDateEndUTC) &mdash; Returns the datetime end in UTC
-- [`setTimezone()`](#setTimezone) &mdash; Returns a new date object, copy of $this, with the timezone set This timezone is used to offset the UTC timestamp returned by @see getTimestamp() Doesn&#039;t modify $this
-- [`adjustForTimezone()`](#adjustForTimezone) &mdash; Adjusts a UNIX timestamp in UTC to a specific timezone.
-- [`getTimestampUTC()`](#getTimestampUTC) &mdash; Returns the Unix timestamp of the date in UTC
-- [`getTimestamp()`](#getTimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the date timezone
-- [`isLater()`](#isLater) &mdash; Returns true if the current date is older than the given $date
-- [`isEarlier()`](#isEarlier) &mdash; Returns true if the current date is earlier than the given $date
-- [`toString()`](#toString) &mdash; Returns the Y-m-d representation of the string.
-- [`__toString()`](#__toString)
-- [`compareWeek()`](#compareWeek) &mdash; Compares the week of the current date against the given $date Returns 0 if equal, -1 if current week is earlier or 1 if current week is later Example: 09.Jan.2007 13:07:25 -&gt; compareWeek(2); -&gt; 0
-- [`compareMonth()`](#compareMonth) &mdash; Compares the month of the current date against the given $date month Returns 0 if equal, -1 if current month is earlier or 1 if current month is later For example: 10.03.2000 -&gt; 15.03.1950 -&gt; 0
-- [`isToday()`](#isToday) &mdash; Returns true if current date is today
-- [`now()`](#now) &mdash; Returns a date object set to now (same as today, except that the time is also set)
-- [`today()`](#today) &mdash; Returns a date object set to today midnight
-- [`yesterday()`](#yesterday) &mdash; Returns a date object set to yesterday midnight
-- [`yesterdaySameTime()`](#yesterdaySameTime) &mdash; Returns a date object set to yesterday same time of day
-- [`setTime()`](#setTime) &mdash; Sets the time part of the date Doesn&#039;t modify $this
-- [`setDay()`](#setDay) &mdash; Sets a new day Returned is the new date object Doesn&#039;t modify $this
-- [`setYear()`](#setYear) &mdash; Sets a new year Returned is the new date object Doesn&#039;t modify $this
-- [`subDay()`](#subDay) &mdash; Subtracts days from the existing date object and returns a new Date object Returned is the new date object Doesn&#039;t modify $this
-- [`subWeek()`](#subWeek) &mdash; Subtracts weeks from the existing date object and returns a new Date object Returned is the new date object Doesn&#039;t modify $this
-- [`subMonth()`](#subMonth) &mdash; Subtracts a month from the existing date object.
-- [`subYear()`](#subYear) &mdash; Subtracts a year from the existing date object.
-- [`getLocalized()`](#getLocalized) &mdash; Returns a localized date string, given a template.
-- [`addDay()`](#addDay) &mdash; Adds days to the existing date object.
-- [`addHour()`](#addHour) &mdash; Adds hours to the existing date object.
+- [`factory()`](#factory) &mdash; Creates a new Date instance using a string datetime value.
+- [`getDatetime()`](#getDatetime) &mdash; Returns the current timestamp as a string with the following format: `&#039;YYYY-MM-DD HH:MM:SS&#039;`.
+- [`getDateStartUTC()`](#getDateStartUTC) &mdash; Returns the start of the day of the current timestamp in UTC.
+- [`getDateEndUTC()`](#getDateEndUTC) &mdash; Returns the end of the day of the current timestamp in UTC.
+- [`setTimezone()`](#setTimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
+- [`adjustForTimezone()`](#adjustForTimezone) &mdash; Converts a timestamp in a timezone to UTC.
+- [`getTimestampUTC()`](#getTimestampUTC) &mdash; Returns the Unix timestamp of the date in UTC.
+- [`getTimestamp()`](#getTimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
+- [`isLater()`](#isLater) &mdash; Returns true if the current date is older than the given `$date`.
+- [`isEarlier()`](#isEarlier) &mdash; Returns true if the current date is earlier than the given `$date`.
+- [`toString()`](#toString) &mdash; Converts this date to the requested string format.
+- [`__toString()`](#__toString) &mdash; See [toString](#toString).
+- [`compareWeek()`](#compareWeek) &mdash; Performs three-way comparison of the week of the current date against the given `$date`&#039;s week.
+- [`compareMonth()`](#compareMonth) &mdash; Performs three-way comparison of the month of the current date against the given `$date`&#039;s month.
+- [`isToday()`](#isToday) &mdash; Returns true if current date is today.
+- [`now()`](#now) &mdash; Returns a date object set to now in UTC (same as [today](#today), except that the time is also set).
+- [`today()`](#today) &mdash; Returns a date object set to today at midnight in UTC.
+- [`yesterday()`](#yesterday) &mdash; Returns a date object set to yesterday at midnight in UTC.
+- [`yesterdaySameTime()`](#yesterdaySameTime) &mdash; Returns a date object set to yesterday with the current time of day in UTC.
+- [`setTime()`](#setTime) &mdash; Returns a new Date instance with `$this` date&#039;s day and the specified new time of day.
+- [`setDay()`](#setDay) &mdash; Returns a new Date instance with `$this` date&#039;s time of day and the day specified by `$day`.
+- [`setYear()`](#setYear) &mdash; Returns a new Date instance with `$this` date&#039;s time of day, month and day, but with a new year (specified by `$year`).
+- [`subDay()`](#subDay) &mdash; Subtracts `$n` number of days from `$this` date and returns a new Date object.
+- [`subWeek()`](#subWeek) &mdash; Subtracts `$n` weeks from `$this` date and returns a new Date object.
+- [`subMonth()`](#subMonth) &mdash; Subtracts `$n` months from `$this` date and returns the result as a new Date object.
+- [`subYear()`](#subYear) &mdash; Subtracts `$n` years from `$this` date and returns the result as a new Date object.
+- [`getLocalized()`](#getLocalized) &mdash; Returns a localized date string using the given template.
+- [`addDay()`](#addDay) &mdash; Adds `$n` days to `$this` date and returns the result in a new Date.
+- [`addHour()`](#addHour) &mdash; Adds `$n` hours to `$this` date and returns the result in a new Date.
 - [`addHourTo()`](#addHourTo) &mdash; Adds N number of hours to a UNIX timestamp and returns the result.
-- [`subHour()`](#subHour) &mdash; Substract hour to the existing date object.
-- [`addPeriod()`](#addPeriod) &mdash; Adds period to the existing date object.
-- [`subPeriod()`](#subPeriod) &mdash; Subtracts period from the existing date object.
+- [`subHour()`](#subHour) &mdash; Subtracts `$n` hours from `$this` date and returns the result in a new Date.
+- [`addPeriod()`](#addPeriod) &mdash; Adds a period to `$this` date and returns the result in a new Date instance.
+- [`subPeriod()`](#subPeriod) &mdash; Subtracts a period from `$this` date and returns the result in a new Date instance.
 - [`secondsToDays()`](#secondsToDays) &mdash; Returns the number of days represented by a number of seconds.
 
 ### `factory()` <a name="factory"></a>
 
-Returns a Date objects.
+Creates a new Date instance using a string datetime value.
+
+#### Description
+
+The timezone of the Date
+result will be in UTC.
 
 #### Signature
 
@@ -66,11 +92,11 @@ Returns a Date objects.
     - `$timezone`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before Tue, 06 Aug 1991.
 
 ### `getDatetime()` <a name="getDatetime"></a>
 
-Returns the datetime of the current timestamp
+Returns the current timestamp as a string with the following format: `&#039;YYYY-MM-DD HH:MM:SS&#039;`.
 
 #### Signature
 
@@ -79,7 +105,13 @@ Returns the datetime of the current timestamp
 
 ### `getDateStartUTC()` <a name="getDateStartUTC"></a>
 
-Returns the datetime start in UTC
+Returns the start of the day of the current timestamp in UTC.
+
+#### Description
+
+For example,
+if the current timestamp is `&#039;2007-07-24 14:04:24&#039;` in UTC, the result will
+be `&#039;2007-07-24&#039;`.
 
 #### Signature
 
@@ -88,7 +120,13 @@ Returns the datetime start in UTC
 
 ### `getDateEndUTC()` <a name="getDateEndUTC"></a>
 
-Returns the datetime end in UTC
+Returns the end of the day of the current timestamp in UTC.
+
+#### Description
+
+For example,
+if the current timestamp is `&#039;2007-07-24 14:03:24&#039;` in UTC, the result will
+be `&#039;2007-07-24 23:59:59&#039;`.
 
 #### Signature
 
@@ -97,7 +135,11 @@ Returns the datetime end in UTC
 
 ### `setTimezone()` <a name="setTimezone"></a>
 
-Returns a new date object, copy of $this, with the timezone set This timezone is used to offset the UTC timestamp returned by @see getTimestamp() Doesn&#039;t modify $this
+Returns a new date object with the same timestamp as `$this` but with a new timezone.
+
+#### Description
+
+See [getTimestamp](#getTimestamp) to see how the timezone is used.
 
 #### Signature
 
@@ -108,7 +150,7 @@ Returns a new date object, copy of $this, with the timezone set This timezone is
 
 ### `adjustForTimezone()` <a name="adjustForTimezone"></a>
 
-Adjusts a UNIX timestamp in UTC to a specific timezone.
+Converts a timestamp in a timezone to UTC.
 
 #### Signature
 
@@ -121,7 +163,7 @@ Adjusts a UNIX timestamp in UTC to a specific timezone.
 
 ### `getTimestampUTC()` <a name="getTimestampUTC"></a>
 
-Returns the Unix timestamp of the date in UTC
+Returns the Unix timestamp of the date in UTC.
 
 #### Signature
 
@@ -130,7 +172,7 @@ Returns the Unix timestamp of the date in UTC
 
 ### `getTimestamp()` <a name="getTimestamp"></a>
 
-Returns the unix timestamp of the date in UTC, converted from the date timezone
+Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
 
 #### Signature
 
@@ -139,7 +181,7 @@ Returns the unix timestamp of the date in UTC, converted from the date timezone
 
 ### `isLater()` <a name="isLater"></a>
 
-Returns true if the current date is older than the given $date
+Returns true if the current date is older than the given `$date`.
 
 #### Signature
 
@@ -150,7 +192,7 @@ Returns true if the current date is older than the given $date
 
 ### `isEarlier()` <a name="isEarlier"></a>
 
-Returns true if the current date is earlier than the given $date
+Returns true if the current date is earlier than the given `$date`.
 
 #### Signature
 
@@ -161,57 +203,57 @@ Returns true if the current date is earlier than the given $date
 
 ### `toString()` <a name="toString"></a>
 
-Returns the Y-m-d representation of the string.
+Converts this date to the requested string format.
 
 #### Description
 
-You can specify the output, see the list on php.net/date
+See [http://php.net/date](http://php.net/date)
+for the list of format strings.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$part`
+    - `$format`
 - It returns a(n) `string` value.
 
 ### `__toString()` <a name="__toString"></a>
 
-#### See Also
-
-- `toString()`
+See [toString](#toString).
 
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `string` value.
+- _Returns:_ The current date in `&#039;YYYY-MM-DD&#039;` format.
+    - `string`
 
 ### `compareWeek()` <a name="compareWeek"></a>
 
-Compares the week of the current date against the given $date Returns 0 if equal, -1 if current week is earlier or 1 if current week is later Example: 09.Jan.2007 13:07:25 -&gt; compareWeek(2); -&gt; 0
+Performs three-way comparison of the week of the current date against the given `$date`&#039;s week.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../Piwik/Date.md))
-- _Returns:_ 0 = equal, 1 = later, -1 = earlier
+- _Returns:_ Returns `0` if the current week is equal to `$date`&#039;s, `-1` if the current week is earlier or `1` if the current week is later.
     - `int`
 
 ### `compareMonth()` <a name="compareMonth"></a>
 
-Compares the month of the current date against the given $date month Returns 0 if equal, -1 if current month is earlier or 1 if current month is later For example: 10.03.2000 -&gt; 15.03.1950 -&gt; 0
+Performs three-way comparison of the month of the current date against the given `$date`&#039;s month.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../Piwik/Date.md))
-- _Returns:_ 0 = equal, 1 = later, -1 = earlier
+- _Returns:_ Returns `0` if the current month is equal to `$date`&#039;s, `-1` if the current month is earlier or `1` if the current month is later.
     - `int`
 
 ### `isToday()` <a name="isToday"></a>
 
-Returns true if current date is today
+Returns true if current date is today.
 
 #### Signature
 
@@ -220,7 +262,7 @@ Returns true if current date is today
 
 ### `now()` <a name="now"></a>
 
-Returns a date object set to now (same as today, except that the time is also set)
+Returns a date object set to now in UTC (same as [today](#today), except that the time is also set).
 
 #### Signature
 
@@ -229,7 +271,7 @@ Returns a date object set to now (same as today, except that the time is also se
 
 ### `today()` <a name="today"></a>
 
-Returns a date object set to today midnight
+Returns a date object set to today at midnight in UTC.
 
 #### Signature
 
@@ -238,7 +280,7 @@ Returns a date object set to today midnight
 
 ### `yesterday()` <a name="yesterday"></a>
 
-Returns a date object set to yesterday midnight
+Returns a date object set to yesterday at midnight in UTC.
 
 #### Signature
 
@@ -247,7 +289,7 @@ Returns a date object set to yesterday midnight
 
 ### `yesterdaySameTime()` <a name="yesterdaySameTime"></a>
 
-Returns a date object set to yesterday same time of day
+Returns a date object set to yesterday with the current time of day in UTC.
 
 #### Signature
 
@@ -256,72 +298,63 @@ Returns a date object set to yesterday same time of day
 
 ### `setTime()` <a name="setTime"></a>
 
-Sets the time part of the date Doesn&#039;t modify $this
+Returns a new Date instance with `$this` date&#039;s day and the specified new time of day.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$time`
-- _Returns:_ The new date with the time part set
+- _Returns:_ The new date with the time of day changed.
     - [`Date`](../Piwik/Date.md)
 
 ### `setDay()` <a name="setDay"></a>
 
-Sets a new day Returned is the new date object Doesn&#039;t modify $this
+Returns a new Date instance with `$this` date&#039;s time of day and the day specified by `$day`.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$day`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `setYear()` <a name="setYear"></a>
 
-Sets a new year Returned is the new date object Doesn&#039;t modify $this
+Returns a new Date instance with `$this` date&#039;s time of day, month and day, but with a new year (specified by `$year`).
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$year`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `subDay()` <a name="subDay"></a>
 
-Subtracts days from the existing date object and returns a new Date object Returned is the new date object Doesn&#039;t modify $this
+Subtracts `$n` number of days from `$this` date and returns a new Date object.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `subWeek()` <a name="subWeek"></a>
 
-Subtracts weeks from the existing date object and returns a new Date object Returned is the new date object Doesn&#039;t modify $this
+Subtracts `$n` weeks from `$this` date and returns a new Date object.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `subMonth()` <a name="subMonth"></a>
 
-Subtracts a month from the existing date object.
-
-#### Description
-
-Returned is the new date object
-Doesn&#039;t modify $this
+Subtracts `$n` months from `$this` date and returns the result as a new Date object.
 
 #### Signature
 
@@ -333,74 +366,77 @@ Doesn&#039;t modify $this
 
 ### `subYear()` <a name="subYear"></a>
 
-Subtracts a year from the existing date object.
-
-#### Description
-
-Returned is the new date object
-Doesn&#039;t modify $this
+Subtracts `$n` years from `$this` date and returns the result as a new Date object.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `getLocalized()` <a name="getLocalized"></a>
 
-Returns a localized date string, given a template.
+Returns a localized date string using the given template.
 
 #### Description
 
-Allowed tags are: %day%, %shortDay%, %longDay%, etc.
+The template should contain tags that will be replaced with localized date strings.
+
+Allowed tags include:
+
+- **%day%**: replaced with the day of the month without leading zeros, eg, **1** or **20**.
+- **%shortMonth%**: the short month in the current language, eg, **Jan**, **Feb**.
+- **%longMonth%**: the whole month name in the current language, eg, **January**, **February**.
+- **%shortDay%**: the short day name in the current language, eg, **Mon**, **Tue**.
+- **%longDay%**: the long day name in the current language, eg, **Monday**, **Tuesday**.
+- **%longYear%**: the four digit year, eg, **2007**, **2013**.
+- **%shortYear%**: the two digit year, eg, **07**, **13**.
+- **%time%**: the time of day, eg, **07:35:00**, or **15:45:00**.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$template`
-- _Returns:_ eg. &quot;Aug 2009&quot;
+- _Returns:_ eg. `&quot;Aug 2009&quot;`
     - `string`
 
 ### `addDay()` <a name="addDay"></a>
 
-Adds days to the existing date object.
+Adds `$n` days to `$this` date and returns the result in a new Date.
 
 #### Description
 
-Returned is the new date object
-Doesn&#039;t modify $this
+instance.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `addHour()` <a name="addHour"></a>
 
-Adds hours to the existing date object.
-
-#### Description
-
-Returned is the new date object
-Doesn&#039;t modify $this
+Adds `$n` hours to `$this` date and returns the result in a new Date.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `addHourTo()` <a name="addHourTo"></a>
 
 Adds N number of hours to a UNIX timestamp and returns the result.
+
+#### Description
+
+Using
+this static function instead of [addHour](#addHour) will be faster since a
+Date instance does not have to be created.
 
 #### Signature
 
@@ -413,29 +449,18 @@ Adds N number of hours to a UNIX timestamp and returns the result.
 
 ### `subHour()` <a name="subHour"></a>
 
-Substract hour to the existing date object.
-
-#### Description
-
-Returned is the new date object
-Doesn&#039;t modify $this
+Subtracts `$n` hours from `$this` date and returns the result in a new Date.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `addPeriod()` <a name="addPeriod"></a>
 
-Adds period to the existing date object.
-
-#### Description
-
-Returned is the new date object
-Doesn&#039;t modify $this
+Adds a period to `$this` date and returns the result in a new Date instance.
 
 #### Signature
 
@@ -443,17 +468,11 @@ Doesn&#039;t modify $this
 - It accepts the following parameter(s):
     - `$n`
     - `$period`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `subPeriod()` <a name="subPeriod"></a>
 
-Subtracts period from the existing date object.
-
-#### Description
-
-Returned is the new date object
-Doesn&#039;t modify $this
+Subtracts a period from `$this` date and returns the result in a new Date instance.
 
 #### Signature
 
@@ -461,8 +480,7 @@ Doesn&#039;t modify $this
 - It accepts the following parameter(s):
     - `$n`
     - `$period`
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 ### `secondsToDays()` <a name="secondsToDays"></a>
 
