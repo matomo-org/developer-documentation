@@ -3,12 +3,15 @@
 Map
 ===
 
-The DataTable Map is a way to store an array of dataTable.
+Stores an array of DataTables indexed by one type of DataTable metadata (such as site ID or period).
 
 Description
 -----------
 
-The Map implements some of the features of the DataTable such as queueFilter, getRowsCount.
+DataTable Maps are returned on all queries that involve multiple sites and/or multiple
+periods. The Maps will contain a DataTable for each site and period combination.
+
+The Map implements some of the features of the DataTable such as queueFilter and getRowsCount.
 
 
 Methods
@@ -16,42 +19,51 @@ Methods
 
 The class defines the following methods:
 
-- [`getKeyName()`](#getKeyName) &mdash; Returns the keyName string @see self::$keyName
-- [`setKeyName()`](#setKeyName) &mdash; Set the keyName @see self::$keyName
-- [`getRowsCount()`](#getRowsCount) &mdash; Returns the number of DataTable in this DataTable\Map
-- [`queueFilter()`](#queueFilter) &mdash; Queue a filter to the DataTable\Map will queue this filter to every DataTable of the DataTable\Map.
-- [`applyQueuedFilters()`](#applyQueuedFilters) &mdash; Apply the filters previously queued to each of the DataTable of this DataTable\Map.
-- [`filter()`](#filter) &mdash; Apply a filter to all tables in the array
-- [`getDataTables()`](#getDataTables) &mdash; Returns the array of DataTable
-- [`getTable()`](#getTable) &mdash; Returns the table with the specified label.
-- [`getFirstRow()`](#getFirstRow) &mdash; Returns the first row This method can be used to treat DataTable and DataTable\Map in the same way
-- [`addTable()`](#addTable) &mdash; Adds a new DataTable to the DataTable\Map
+- [`getKeyName()`](#getKeyName) &mdash; Returns a string description of the data used to index the DataTables.
+- [`setKeyName()`](#setKeyName) &mdash; Set the keyName.
+- [`getRowsCount()`](#getRowsCount) &mdash; Returns the number of DataTables in this DataTable\Map.
+- [`queueFilter()`](#queueFilter) &mdash; Queue a filter to DataTable child of contained by this instance.
+- [`applyQueuedFilters()`](#applyQueuedFilters) &mdash; Apply the filters previously queued to each DataTable contained by this DataTable\Map.
+- [`filter()`](#filter) &mdash; Apply a filter to all tables contained by this instance.
+- [`getDataTables()`](#getDataTables) &mdash; Returns the array of DataTables contained by this class.
+- [`getTable()`](#getTable) &mdash; Returns the table with the specific label.
+- [`getFirstRow()`](#getFirstRow) &mdash; Returns the first DataTable in the DataTable array.
+- [`addTable()`](#addTable) &mdash; Adds a new DataTable to the DataTable\Map.
 - [`__toString()`](#__toString) &mdash; Returns a string output of this DataTable\Map (applying the default renderer to every DataTable of this DataTable\Map).
 - [`enableRecursiveSort()`](#enableRecursiveSort)
-- [`renameColumn()`](#renameColumn) &mdash; Renames the given column
-- [`deleteColumns()`](#deleteColumns) &mdash; Deletes the given columns
+- [`renameColumn()`](#renameColumn) &mdash; Renames the given column in each contained DataTable.
+- [`deleteColumns()`](#deleteColumns) &mdash; Deletes the specified columns in each contained DataTable.
 - [`deleteRow()`](#deleteRow)
-- [`deleteColumn()`](#deleteColumn) &mdash; Deletes the given column
-- [`getColumn()`](#getColumn) &mdash; Returns the array containing all rows values in all data tables for the requested column
+- [`deleteColumn()`](#deleteColumn) &mdash; Deletes the given column in every contained DataTable.
+- [`getColumn()`](#getColumn) &mdash; Returns the array containing all row values in all data tables for the requested column.
 - [`mergeChildren()`](#mergeChildren) &mdash; Merges the rows of every child DataTable into a new DataTable and returns it.
-- [`addDataTable()`](#addDataTable) &mdash; Adds a DataTable to all the tables in this array NOTE: Will only add $tableToSum if the childTable has some rows
+- [`addDataTable()`](#addDataTable) &mdash; Adds a DataTable to all the tables in this array.
 - [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable\Map w/ child tables that have had their subtables merged.
 - [`getEmptyClone()`](#getEmptyClone) &mdash; Returns a new DataTable\Map w/o any child DataTables, but with the same key name as this instance.
-- [`getMetadataIntersectArray()`](#getMetadataIntersectArray) &mdash; Returns the intersection of children&#039;s meta data arrays
+- [`getMetadataIntersectArray()`](#getMetadataIntersectArray) &mdash; Returns the intersection of children&#039;s metadata arrays (what they all have in common).
 - [`getColumns()`](#getColumns)
 
 ### `getKeyName()` <a name="getKeyName"></a>
 
-Returns the keyName string @see self::$keyName
+Returns a string description of the data used to index the DataTables.
+
+#### Description
+
+This label is used by DataTable Renderers (it becomes a column name or the XML description tag).
 
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `string` value.
+- _Returns:_ eg, `&#039;idSite&#039;`, `&#039;period&#039;`
+    - `string`
 
 ### `setKeyName()` <a name="setKeyName"></a>
 
-Set the keyName @see self::$keyName
+Set the keyName.
+
+#### Description
+
+See [getKeyName](#getKeyName).
 
 #### Signature
 
@@ -62,7 +74,7 @@ Set the keyName @see self::$keyName
 
 ### `getRowsCount()` <a name="getRowsCount"></a>
 
-Returns the number of DataTable in this DataTable\Map
+Returns the number of DataTables in this DataTable\Map.
 
 #### Signature
 
@@ -71,7 +83,11 @@ Returns the number of DataTable in this DataTable\Map
 
 ### `queueFilter()` <a name="queueFilter"></a>
 
-Queue a filter to the DataTable\Map will queue this filter to every DataTable of the DataTable\Map.
+Queue a filter to DataTable child of contained by this instance.
+
+#### Description
+
+See [DataTable::queueFilter](#) for more information..
 
 #### Signature
 
@@ -83,7 +99,7 @@ Queue a filter to the DataTable\Map will queue this filter to every DataTable of
 
 ### `applyQueuedFilters()` <a name="applyQueuedFilters"></a>
 
-Apply the filters previously queued to each of the DataTable of this DataTable\Map.
+Apply the filters previously queued to each DataTable contained by this DataTable\Map.
 
 #### Signature
 
@@ -92,7 +108,7 @@ Apply the filters previously queued to each of the DataTable of this DataTable\M
 
 ### `filter()` <a name="filter"></a>
 
-Apply a filter to all tables in the array
+Apply a filter to all tables contained by this instance.
 
 #### Signature
 
@@ -104,36 +120,40 @@ Apply a filter to all tables in the array
 
 ### `getDataTables()` <a name="getDataTables"></a>
 
-Returns the array of DataTable
+Returns the array of DataTables contained by this class.
 
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) [`DataTable[]`](../../Piwik/DataTable.md) value.
+- It returns a(n) `array` value.
 
 ### `getTable()` <a name="getTable"></a>
 
-Returns the table with the specified label.
+Returns the table with the specific label.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$label`
-- It returns a(n) [`DataTable`](../../Piwik/DataTable.md) value.
+- It can return one of the following values:
+    - [`DataTable`](../../Piwik/DataTable.md)
+    - [`Map`](../../Piwik/DataTable/Map.md)
 
 ### `getFirstRow()` <a name="getFirstRow"></a>
 
-Returns the first row This method can be used to treat DataTable and DataTable\Map in the same way
+Returns the first DataTable in the DataTable array.
 
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) [`Row`](../../Piwik/DataTable/Row.md) value.
+- It can return one of the following values:
+    - [`DataTable`](../../Piwik/DataTable.md)
+    - [`Map`](../../Piwik/DataTable/Map.md)
 
 ### `addTable()` <a name="addTable"></a>
 
-Adds a new DataTable to the DataTable\Map
+Adds a new DataTable to the DataTable\Map.
 
 #### Signature
 
@@ -165,7 +185,7 @@ Returns a string output of this DataTable\Map (applying the default renderer to 
 
 ### `renameColumn()` <a name="renameColumn"></a>
 
-Renames the given column
+Renames the given column in each contained DataTable.
 
 #### See Also
 
@@ -181,7 +201,7 @@ Renames the given column
 
 ### `deleteColumns()` <a name="deleteColumns"></a>
 
-Deletes the given columns
+Deletes the specified columns in each contained DataTable.
 
 #### See Also
 
@@ -206,7 +226,7 @@ Deletes the given columns
 
 ### `deleteColumn()` <a name="deleteColumn"></a>
 
-Deletes the given column
+Deletes the given column in every contained DataTable.
 
 #### See Also
 
@@ -221,7 +241,7 @@ Deletes the given column
 
 ### `getColumn()` <a name="getColumn"></a>
 
-Returns the array containing all rows values in all data tables for the requested column
+Returns the array containing all row values in all data tables for the requested column.
 
 #### Signature
 
@@ -242,38 +262,36 @@ to the label of the DataTable they were originally from.
 The result of this function is determined by the type of DataTable
 this instance holds. If this DataTable\Map instance holds an array
 of DataTables, this function will transform it from:
-&lt;code&gt;
-Label 0:
-  DataTable(row1)
-Label 1:
-  DataTable(row2)
-&lt;/code&gt;
+
+    Label 0:
+      DataTable(row1)
+    Label 1:
+      DataTable(row2)
+
 to:
-&lt;code&gt;
-DataTable(row1[label = &#039;Label 0&#039;], row2[label = &#039;Label 1&#039;])
-&lt;/code&gt;
+
+    DataTable(row1[label = &#039;Label 0&#039;], row2[label = &#039;Label 1&#039;])
 
 If this instance holds an array of DataTable\Maps, this function will
 transform it from:
-&lt;code&gt;
-Outer Label 0:            // the outer DataTable\Map
-  Inner Label 0:            // one of the inner DataTable\Maps
-    DataTable(row1)
-  Inner Label 1:
-    DataTable(row2)
-Outer Label 1:
-  Inner Label 0:
-    DataTable(row3)
-  Inner Label 1:
-    DataTable(row4)
-&lt;/code&gt;
+
+    Outer Label 0:            // the outer DataTable\Map
+      Inner Label 0:            // one of the inner DataTable\Maps
+        DataTable(row1)
+      Inner Label 1:
+        DataTable(row2)
+    Outer Label 1:
+      Inner Label 0:
+        DataTable(row3)
+      Inner Label 1:
+        DataTable(row4)
+
 to:
-&lt;code&gt;
-Inner Label 0:
-  DataTable(row1[label = &#039;Outer Label 0&#039;], row3[label = &#039;Outer Label 1&#039;])
-Inner Label 1:
-  DataTable(row2[label = &#039;Outer Label 0&#039;], row4[label = &#039;Outer Label 1&#039;])
-&lt;/code&gt;
+
+    Inner Label 0:
+      DataTable(row1[label = &#039;Outer Label 0&#039;], row3[label = &#039;Outer Label 1&#039;])
+    Inner Label 1:
+      DataTable(row2[label = &#039;Outer Label 0&#039;], row4[label = &#039;Outer Label 1&#039;])
 
 In addition, if this instance holds an array of DataTable\Maps, the
 metadata of the first child is used as the metadata of the result.
@@ -290,7 +308,13 @@ query results into one DataTable w/ different rows differentiated by site ID.
 
 ### `addDataTable()` <a name="addDataTable"></a>
 
-Adds a DataTable to all the tables in this array NOTE: Will only add $tableToSum if the childTable has some rows
+Adds a DataTable to all the tables in this array.
+
+#### Description
+
+NOTE: Will only add `$tableToSum` if the childTable has some rows
+
+See [DataTable::addDataTable()](#).
 
 #### Signature
 
@@ -323,7 +347,7 @@ Returns a new DataTable\Map w/o any child DataTables, but with the same key name
 
 ### `getMetadataIntersectArray()` <a name="getMetadataIntersectArray"></a>
 
-Returns the intersection of children&#039;s meta data arrays
+Returns the intersection of children&#039;s metadata arrays (what they all have in common).
 
 #### Signature
 

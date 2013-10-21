@@ -164,7 +164,7 @@ Usages:
 
 
 #### API.Request.authenticate
-_Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [211](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L211)_
+_Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [245](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L245)_
 
 This event is triggered when authenticating the API call, only if the token_auth is found in the request. In this case the current session should authenticate using this token_auth.
 

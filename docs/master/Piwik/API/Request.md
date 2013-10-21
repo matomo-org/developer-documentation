@@ -3,30 +3,42 @@
 Request
 =======
 
-An API request is the object used to make a call to the API and get the result.
+Dispatches API requests to the appropriate API method.
 
 Description
 -----------
 
-The request has the format of a normal GET request, ie. parameter_1=X&amp;parameter_2=Y
+The Request class is used throughout Piwik to call API methods. The difference
+between using Request and calling API methods directly is that Request
+will do more after calling the API including: apply generic filters, apply queued filters,
+and handle the **flat** and **label** query parameters.
 
-You can use this object from anywhere in piwik (inside plugins for example).
-You can even call it outside of piwik  using the REST API over http
-or in a php script on the same server as piwik, by including piwik/index.php
-(see examples in the documentation http://piwik.org/docs/analytics-api)
+Additionally, the Request class will **forward current query parameters** to the request
+which is more convenient than calling [Common::getRequestVar](#) many times over.
 
-Example:
-$request = new Request(&#039;
-               method=UserSettings.getWideScreen
-               &amp;idSite=1
-           &amp;date=yesterday
-               &amp;period=week
-               &amp;format=xml
-               &amp;filter_limit=5
-               &amp;filter_offset=0
-   &#039;);
-   $result = $request-&gt;process();
- echo $result;
+In most cases, using a Request object to query the API is the right way to go.
+
+### Examples
+
+**Basic Usage**
+
+    $request = new Request(&#039;method=UserSettings.getWideScreen&amp;idSite=1&amp;date=yesterday&amp;period=week&#039;
+                         . &#039;&amp;format=xml&amp;filter_limit=5&amp;filter_offset=0&#039;)
+    $result = $request-&gt;process();
+    echo $result;
+
+**Getting a unrendered DataTable**
+
+    // use convenience the convenience method &#039;processRequest&#039;
+    $dataTable = Request::processRequest(&#039;UserSettings.getWideScreen&#039;, array(
+        &#039;idSite&#039; =&gt; 1,
+        &#039;date&#039; =&gt; &#039;yesterday&#039;,
+        &#039;period&#039; =&gt; &#039;week&#039;,
+        &#039;format&#039; =&gt; &#039;original&#039;, // this is the important bit
+        &#039;filter_limit&#039; =&gt; 5,
+        &#039;filter_offset&#039; =&gt; 0
+    ));
+    echo &quot;This DataTable has &quot; . $dataTable-&gt;getRowsCount() . &quot; rows.&quot;;
 
 
 Methods
@@ -34,35 +46,38 @@ Methods
 
 The class defines the following methods:
 
-- [`getRequestArrayFromString()`](#getRequestArrayFromString) &mdash; Returns the request array as string
-- [`__construct()`](#__construct) &mdash; Constructs the request to the API, given the request url
+- [`getRequestArrayFromString()`](#getRequestArrayFromString) &mdash; Converts the supplied request string into an array of query paramater name/value mappings.
+- [`__construct()`](#__construct) &mdash; Constructor.
 - [`renameModule()`](#renameModule) &mdash; For backward compatibility: Piwik API still works if module=Referers, we rewrite to correct renamed plugin: Referrers
-- [`process()`](#process) &mdash; Handles the request to the API.
-- [`getClassNameAPI()`](#getClassNameAPI)
+- [`process()`](#process) &mdash; Dispatches the API request to the appropriate API method and returns the result after post-processing.
+- [`getClassNameAPI()`](#getClassNameAPI) &mdash; Returns the class name of a plugin&#039;s API given the plugin name.
 - [`reloadAuthUsingTokenAuth()`](#reloadAuthUsingTokenAuth) &mdash; If the token_auth is found in the $request parameter, the current session will be authenticated using this token_auth.
-- [`processRequest()`](#processRequest) &mdash; Helper method to process an API request using the variables in $_GET and $_POST.
-- [`getRequestParametersGET()`](#getRequestParametersGET)
-- [`getBaseReportUrl()`](#getBaseReportUrl) &mdash; Returns URL for this report w/o any filter parameters.
+- [`processRequest()`](#processRequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
+- [`getRequestParametersGET()`](#getRequestParametersGET) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
+- [`getBaseReportUrl()`](#getBaseReportUrl) &mdash; Returns URL for the current requested report w/o any filter parameters.
 - [`getCurrentUrlWithoutGenericFilters()`](#getCurrentUrlWithoutGenericFilters) &mdash; Returns the current URL without generic filter query parameters.
 - [`shouldLoadExpanded()`](#shouldLoadExpanded) &mdash; Returns whether the DataTable result will have to be expanded for the current request before rendering.
-- [`getRawSegmentFromRequest()`](#getRawSegmentFromRequest)
+- [`getRawSegmentFromRequest()`](#getRawSegmentFromRequest) &mdash; Returns the unmodified segment from the original request.
 
 ### `getRequestArrayFromString()` <a name="getRequestArrayFromString"></a>
 
-Returns the request array as string
+Converts the supplied request string into an array of query paramater name/value mappings.
+
+#### Description
+
+The current query parameters (everything in `$_GET` and `$_POST`) are
+forwarded to request array before it is returned.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$request`
-- It can return one of the following values:
-    - `array`
-    - `null`
+- It returns a(n) `array` value.
 
 ### `__construct()` <a name="__construct"></a>
 
-Constructs the request to the API, given the request url
+Constructor.
 
 #### Signature
 
@@ -84,31 +99,40 @@ For backward compatibility: Piwik API still works if module=Referers, we rewrite
 
 ### `process()` <a name="process"></a>
 
-Handles the request to the API.
+Dispatches the API request to the appropriate API method and returns the result after post-processing.
 
 #### Description
 
-It first checks that the method called (parameter &#039;method&#039;) is available in the module (it means that the method exists and is public)
-It then reads the parameters from the request string and throws an exception if there are missing parameters.
-It then calls the API Proxy which will call the requested method.
+Post-processing includes:
+
+- flattening if **flat** is 0
+- running generic filters unless **disable_generic_filters** is set to 1
+- URL decoding label column values
+- running queued filters unless **disable_queued_filters** is set to 1
+- removes columns based on the values of the **hideColumns** and **showColumns** query parameters
+- filters rows if the **label** query parameter is set
 
 #### Signature
 
 - It is a **public** method.
-- _Returns:_ The data resulting from the API call
+- _Returns:_ The data resulting from the API call.
     - [`DataTable`](../../Piwik/DataTable.md)
-    - `mixed`
+    - `Piwik\API\Map`
+    - `string`
 - It throws one of the following exceptions:
-    - `PluginDeactivatedException`
+    - `PluginDeactivatedException` &mdash; if the module plugin is not activated.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the requested API method cannot be called, if required parameters for the API method are missing or if the API method throws an exception and the **format** query parameter is **original**.
 
 ### `getClassNameAPI()` <a name="getClassNameAPI"></a>
+
+Returns the class name of a plugin&#039;s API given the plugin name.
 
 #### Signature
 
 - It is a **public static** method.
 - It accepts the following parameter(s):
-    - `$module`
-- It does not return anything.
+    - `$plugin`
+- It returns a(n) `string` value.
 
 ### `reloadAuthUsingTokenAuth()` <a name="reloadAuthUsingTokenAuth"></a>
 
@@ -127,7 +151,7 @@ It will overwrite the previous Auth object.
 
 ### `processRequest()` <a name="processRequest"></a>
 
-Helper method to process an API request using the variables in $_GET and $_POST.
+Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 
 #### Signature
 
@@ -140,6 +164,13 @@ Helper method to process an API request using the variables in $_GET and $_POST.
 
 ### `getRequestParametersGET()` <a name="getRequestParametersGET"></a>
 
+Returns the original request parameters in the current query string as an array mapping query parameter names with values.
+
+#### Description
+
+This result of this function will not be affected
+by any modifications to `$_GET` and will not include parameters in `$_POST`.
+
 #### Signature
 
 - It is a **public static** method.
@@ -147,7 +178,7 @@ Helper method to process an API request using the variables in $_GET and $_POST.
 
 ### `getBaseReportUrl()` <a name="getBaseReportUrl"></a>
 
-Returns URL for this report w/o any filter parameters.
+Returns URL for the current requested report w/o any filter parameters.
 
 #### Signature
 
@@ -179,6 +210,8 @@ Returns whether the DataTable result will have to be expanded for the current re
 - It returns a(n) `bool` value.
 
 ### `getRawSegmentFromRequest()` <a name="getRawSegmentFromRequest"></a>
+
+Returns the unmodified segment from the original request.
 
 #### Signature
 

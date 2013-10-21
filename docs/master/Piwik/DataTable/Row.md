@@ -3,23 +3,13 @@
 Row
 ===
 
-A DataTable is composed of rows.
+This is what a [DataTable](#) is composed of.
 
 Description
 -----------
 
-A row is composed of:
-- columns often at least a &#039;label&#039; column containing the description
-       of the row, and some numeric values (&#039;nb_visits&#039;, etc.)
-- metadata: other information never to be shown as &#039;columns&#039;
-- idSubtable: a row can be linked to a SubTable
-
-IMPORTANT: Make sure that the column named &#039;label&#039; contains at least one non-numeric character.
-           Otherwise the method addDataTable() or sumRow() would fail because they would consider
-           the &#039;label&#039; as being a numeric column to sum.
-
-PERFORMANCE: Do *not* add new fields except if necessary in this object. New fields will be
-             serialized and recorded in the DB millions of times. This object size is critical and must be under control.
+DataTable rows contain columns, metadata and a subtable ID. Columns and metadata
+are stored as an array of name =&gt; value mappings.
 
 
 Constants
@@ -65,39 +55,39 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Efficient load of the Row structure from a well structured php array
+- [`__construct()`](#__construct) &mdash; Constructor.
 - [`__sleep()`](#__sleep) &mdash; Because $this-&gt;c[self::DATATABLE_ASSOCIATED] is negative when the table is in memory, we must prior to serialize() call, make sure the ID is saved as positive integer
-- [`cleanPostSerialize()`](#cleanPostSerialize) &mdash; Must be called after the row was serialized and __sleep was called
+- [`cleanPostSerialize()`](#cleanPostSerialize) &mdash; Must be called after the row was serialized and __sleep was called.
 - [`__destruct()`](#__destruct) &mdash; When destroyed, a row destroys its associated subTable if there is one
-- [`__toString()`](#__toString) &mdash; Applies a basic rendering to the Row and returns the output
-- [`deleteColumn()`](#deleteColumn) &mdash; Deletes the given column
-- [`renameColumn()`](#renameColumn) &mdash; Renames the given column
-- [`getColumn()`](#getColumn) &mdash; Returns the given column
-- [`getMetadata()`](#getMetadata) &mdash; Returns the array of all metadata, or the specified metadata
-- [`getColumns()`](#getColumns) &mdash; Returns the array containing all the columns
+- [`__toString()`](#__toString) &mdash; Applies a basic rendering to the Row and returns the output.
+- [`deleteColumn()`](#deleteColumn) &mdash; Deletes the given column.
+- [`renameColumn()`](#renameColumn) &mdash; Renames a column.
+- [`getColumn()`](#getColumn) &mdash; Returns a column by name.
+- [`getMetadata()`](#getMetadata) &mdash; Returns the array of all metadata, or one requested metadata value.
+- [`getColumns()`](#getColumns) &mdash; Returns the array containing all the columns.
 - [`getIdSubDataTable()`](#getIdSubDataTable) &mdash; Returns the ID of the subDataTable.
 - [`getSubtable()`](#getSubtable) &mdash; Returns the associated subtable, if one exists.
-- [`sumSubtable()`](#sumSubtable) &mdash; Sums a DataTable to this row subDataTable.
-- [`addSubtable()`](#addSubtable) &mdash; Set a DataTable to be associated to this row.
-- [`setSubtable()`](#setSubtable) &mdash; Set a DataTable to this row.
-- [`isSubtableLoaded()`](#isSubtableLoaded) &mdash; Returns true if the subtable is currently loaded in memory via DataTable_Manager
-- [`removeSubtable()`](#removeSubtable) &mdash; Remove the sub table reference
+- [`sumSubtable()`](#sumSubtable) &mdash; Sums a DataTable to this row&#039;s subtable.
+- [`addSubtable()`](#addSubtable) &mdash; Attaches a subtable to this row.
+- [`setSubtable()`](#setSubtable) &mdash; Attaches a subtable to this row, overwriting the existing subtable, if any.
+- [`isSubtableLoaded()`](#isSubtableLoaded) &mdash; Returns true if the subtable is currently loaded in memory via [DataTable\Manager](#).
+- [`removeSubtable()`](#removeSubtable) &mdash; Removes the subtable reference.
 - [`setColumns()`](#setColumns) &mdash; Set all the columns at once.
-- [`setColumn()`](#setColumn) &mdash; Set the value $value to the column called $name.
-- [`setMetadata()`](#setMetadata) &mdash; Set the value $value to the metadata called $name.
-- [`deleteMetadata()`](#deleteMetadata) &mdash; Deletes the given metadata
+- [`setColumn()`](#setColumn) &mdash; Set the value `$value` to the column called `$name`.
+- [`setMetadata()`](#setMetadata) &mdash; Set the value `$value` to the metadata called `$name`.
+- [`deleteMetadata()`](#deleteMetadata) &mdash; Deletes one metadata value or all metadata values.
 - [`addColumn()`](#addColumn) &mdash; Add a new column to the row.
-- [`addColumns()`](#addColumns) &mdash; Add columns to the row
+- [`addColumns()`](#addColumns) &mdash; Add many columns to this row.
 - [`addMetadata()`](#addMetadata) &mdash; Add a new metadata to the row.
-- [`sumRow()`](#sumRow) &mdash; Sums the given $row columns values to the existing row&#039; columns values.
-- [`sumRowMetadata()`](#sumRowMetadata)
-- [`isSummaryRow()`](#isSummaryRow)
+- [`sumRow()`](#sumRow) &mdash; Sums the given `$rowToSum` columns values to the existing row column values.
+- [`sumRowMetadata()`](#sumRowMetadata) &mdash; Sums the metadata in `$rowToSum` with the metadata in `$this` row.
+- [`isSummaryRow()`](#isSummaryRow) &mdash; Returns true if this row is the summary row, false if otherwise.
 - [`compareElements()`](#compareElements) &mdash; Helper function to compare array elements
-- [`isEqual()`](#isEqual) &mdash; Helper function to test if two rows are equal.
+- [`isEqual()`](#isEqual) &mdash; Helper function that tests if two rows are equal.
 
 ### `__construct()` <a name="__construct"></a>
 
-Efficient load of the Row structure from a well structured php array
+Constructor.
 
 #### Signature
 
@@ -121,7 +111,7 @@ Only serialize the &quot;c&quot; member
 
 ### `cleanPostSerialize()` <a name="cleanPostSerialize"></a>
 
-Must be called after the row was serialized and __sleep was called
+Must be called after the row was serialized and __sleep was called.
 
 #### Signature
 
@@ -139,29 +129,29 @@ When destroyed, a row destroys its associated subTable if there is one
 
 ### `__toString()` <a name="__toString"></a>
 
-Applies a basic rendering to the Row and returns the output
+Applies a basic rendering to the Row and returns the output.
 
 #### Signature
 
 - It is a **public** method.
-- _Returns:_ characterizing the row. Example: - 1 [&#039;label&#039; =&gt; &#039;piwik&#039;, &#039;nb_uniq_visitors&#039; =&gt; 1685, &#039;nb_visits&#039; =&gt; 1861, &#039;nb_actions&#039; =&gt; 2271, &#039;max_actions&#039; =&gt; 13, &#039;sum_visit_length&#039; =&gt; 920131, &#039;bounce_count&#039; =&gt; 1599] [] [idsubtable = 1375]
+- _Returns:_ describing the row. Example: &quot;- 1 [&#039;label&#039; =&gt; &#039;piwik&#039;, &#039;nb_uniq_visitors&#039; =&gt; 1685, &#039;nb_visits&#039; =&gt; 1861] [] [idsubtable = 1375]&quot;
     - `string`
 
 ### `deleteColumn()` <a name="deleteColumn"></a>
 
-Deletes the given column
+Deletes the given column.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
-- _Returns:_ True on success, false if the column didn&#039;t exist
+- _Returns:_ True on success, false if the column does not exist.
     - `bool`
 
 ### `renameColumn()` <a name="renameColumn"></a>
 
-Renames the given column
+Renames a column.
 
 #### Signature
 
@@ -173,20 +163,20 @@ Renames the given column
 
 ### `getColumn()` <a name="getColumn"></a>
 
-Returns the given column
+Returns a column by name.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
-- _Returns:_ The column value or false if it doesn&#039;t exist
+- _Returns:_ The column value or false if it doesn&#039;t exist.
     - `mixed`
-    - `bool`
+    - `Piwik\DataTable\false`
 
 ### `getMetadata()` <a name="getMetadata"></a>
 
-Returns the array of all metadata, or the specified metadata
+Returns the array of all metadata, or one requested metadata value.
 
 #### Signature
 
@@ -197,12 +187,12 @@ Returns the array of all metadata, or the specified metadata
 
 ### `getColumns()` <a name="getColumns"></a>
 
-Returns the array containing all the columns
+Returns the array containing all the columns.
 
 #### Signature
 
 - It is a **public** method.
-- _Returns:_ Example: array( &#039;column1&#039;   =&gt; VALUE, &#039;label&#039;     =&gt; &#039;www.php.net&#039; &#039;nb_visits&#039; =&gt; 15894, )
+- _Returns:_ Example: ``` array( &#039;column1&#039;   =&gt; VALUE, &#039;label&#039;     =&gt; &#039;www.php.net&#039; &#039;nb_visits&#039; =&gt; 15894, ) ```
     - `array`
 
 ### `getIdSubDataTable()` <a name="getIdSubDataTable"></a>
@@ -224,25 +214,27 @@ If there is no such a table, returns null.
 
 Returns the associated subtable, if one exists.
 
+#### Description
+
+Returns `false` if none exists.
+
 #### Signature
 
 - It is a **public** method.
-- _Returns:_ false if no subtable loaded
+- It can return one of the following values:
     - [`DataTable`](../../Piwik/DataTable.md)
     - `bool`
 
 ### `sumSubtable()` <a name="sumSubtable"></a>
 
-Sums a DataTable to this row subDataTable.
+Sums a DataTable to this row&#039;s subtable.
 
 #### Description
 
-If this row doesn&#039;t have a SubDataTable yet, we create a new one.
-Then we add the values of the given DataTable to this row&#039;s DataTable.
+If this row has no subtable a new
+one is created.
 
-#### See Also
-
-- `DataTable::addDataTable()` &mdash; for the algorithm used for the sum
+See [DataTable::addDataTable()](#) to learn how DataTables are summed.
 
 #### Signature
 
@@ -253,42 +245,33 @@ Then we add the values of the given DataTable to this row&#039;s DataTable.
 
 ### `addSubtable()` <a name="addSubtable"></a>
 
-Set a DataTable to be associated to this row.
-
-#### Description
-
-If the row already has a DataTable associated to it, throws an Exception.
+Attaches a subtable to this row.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$subTable` ([`DataTable`](../../Piwik/DataTable.md))
-- _Returns:_ Returns $subTable.
+- _Returns:_ Returns `$subTable`.
     - [`DataTable`](../../Piwik/DataTable.md)
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; if a subtable already exists for this row.
 
 ### `setSubtable()` <a name="setSubtable"></a>
 
-Set a DataTable to this row.
-
-#### Description
-
-If there is already
-a DataTable associated, it is simply overwritten.
+Attaches a subtable to this row, overwriting the existing subtable, if any.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$subTable` ([`DataTable`](../../Piwik/DataTable.md))
-- _Returns:_ Returns $subTable.
+- _Returns:_ Returns `$subTable`.
     - [`DataTable`](../../Piwik/DataTable.md)
 
 ### `isSubtableLoaded()` <a name="isSubtableLoaded"></a>
 
-Returns true if the subtable is currently loaded in memory via DataTable_Manager
+Returns true if the subtable is currently loaded in memory via [DataTable\Manager](#).
 
 #### Signature
 
@@ -297,7 +280,7 @@ Returns true if the subtable is currently loaded in memory via DataTable_Manager
 
 ### `removeSubtable()` <a name="removeSubtable"></a>
 
-Remove the sub table reference
+Removes the subtable reference.
 
 #### Signature
 
@@ -321,7 +304,7 @@ Overwrites previously set columns.
 
 ### `setColumn()` <a name="setColumn"></a>
 
-Set the value $value to the column called $name.
+Set the value `$value` to the column called `$name`.
 
 #### Signature
 
@@ -333,7 +316,7 @@ Set the value $value to the column called $name.
 
 ### `setMetadata()` <a name="setMetadata"></a>
 
-Set the value $value to the metadata called $name.
+Set the value `$value` to the metadata called `$name`.
 
 #### Signature
 
@@ -345,50 +328,19 @@ Set the value $value to the metadata called $name.
 
 ### `deleteMetadata()` <a name="deleteMetadata"></a>
 
-Deletes the given metadata
+Deletes one metadata value or all metadata values.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
-- _Returns:_ True on success, false if the column didn&#039;t exist
+- _Returns:_ true on success, false if the column didn&#039;t exist
     - `bool`
 
 ### `addColumn()` <a name="addColumn"></a>
 
 Add a new column to the row.
-
-#### Description
-
-If the column already exists, throws an exception
-
-#### Signature
-
-- It is a **public** method.
-- It accepts the following parameter(s):
-    - `$name`
-    - `$value`
-- It does not return anything.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
-
-### `addColumns()` <a name="addColumns"></a>
-
-Add columns to the row
-
-#### Signature
-
-- It is a **public** method.
-- It accepts the following parameter(s):
-    - `$columns`
-- It returns a(n) `void` value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
-
-### `addMetadata()` <a name="addMetadata"></a>
-
-Add a new metadata to the row.
 
 #### Description
 
@@ -402,19 +354,49 @@ If the column already exists, throws an exception.
     - `$value`
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the column already exists.
 
-### `sumRow()` <a name="sumRow"></a>
+### `addColumns()` <a name="addColumns"></a>
 
-Sums the given $row columns values to the existing row&#039; columns values.
+Add many columns to this row.
+
+#### Signature
+
+- It is a **public** method.
+- It accepts the following parameter(s):
+    - `$columns`
+- It returns a(n) `void` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if any column name does not exist.
+
+### `addMetadata()` <a name="addMetadata"></a>
+
+Add a new metadata to the row.
 
 #### Description
 
-It will sum only the int or float values of $row.
-It will not sum the column &#039;label&#039; even if it has a numeric value.
-If a given column doesn&#039;t exist in $this then it is added with the value of $row.
-If the column already exists in $this then we have
-        this.columns[idThisCol] += $row.columns[idThisCol]
+If the metadata already exists, throws an exception.
+
+#### Signature
+
+- It is a **public** method.
+- It accepts the following parameter(s):
+    - `$name`
+    - `$value`
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the metadata already exists.
+
+### `sumRow()` <a name="sumRow"></a>
+
+Sums the given `$rowToSum` columns values to the existing row column values.
+
+#### Description
+
+Only the int or float values will be summed. Label columns will be ignored
+even if they have a numeric value.
+
+Columns in `$rowToSum` that don&#039;t exist in `$this` are added to `$this`.
 
 #### Signature
 
@@ -427,6 +409,8 @@ If the column already exists in $this then we have
 
 ### `sumRowMetadata()` <a name="sumRowMetadata"></a>
 
+Sums the metadata in `$rowToSum` with the metadata in `$this` row.
+
 #### Signature
 
 - It is a **public** method.
@@ -436,10 +420,17 @@ If the column already exists in $this then we have
 
 ### `isSummaryRow()` <a name="isSummaryRow"></a>
 
+Returns true if this row is the summary row, false if otherwise.
+
+#### Description
+
+This function
+depends on the label of the row, and so, is not 100% accurate.
+
 #### Signature
 
 - It is a **public** method.
-- It does not return anything.
+- It returns a(n) `bool` value.
 
 ### `compareElements()` <a name="compareElements"></a>
 
@@ -455,13 +446,14 @@ Helper function to compare array elements
 
 ### `isEqual()` <a name="isEqual"></a>
 
-Helper function to test if two rows are equal.
+Helper function that tests if two rows are equal.
 
 #### Description
 
-Two rows are equal
-- if they have exactly the same columns / metadata
-- if they have a subDataTable associated, then we check that both of them are the same.
+Two rows are equal if:
+
+- they have exactly the same columns / metadata
+- they have a subDataTable associated, then we check that both of them are the same.
 
 #### Signature
 
