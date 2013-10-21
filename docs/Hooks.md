@@ -1296,7 +1296,6 @@ Callback Signature:
 
 - [ViewDataTable.addViewDataTable](#viewdatatableaddviewdatatable)
 - [ViewDataTable.configure](#viewdatatableconfigure)
-- [ViewDataTable.configureFooterIcons](#viewdatatableconfigurefootericons)
 - [ViewDataTable.getDefaultType](#viewdatatablegetdefaulttype)
 
 #### ViewDataTable.addViewDataTable
@@ -1336,36 +1335,6 @@ Callback Signature:
 Usages:
 
 [Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L648), [CustomVariables::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L156), [DBStats::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L109), [DevicesDetection::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L297), [Goals::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L528), [Live::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L79), [Provider::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L239), [Referrers::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L309), [UserCountry::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L367), [UserSettings::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L189), [VisitTime::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L136), [VisitorInterest::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L164)
-
-
-#### ViewDataTable.configureFooterIcons
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [272](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L272)_
-
-This event is called when determining the default set of footer icons to display below a report. Plugins can use this event to modify the default set of footer icons. You can
-add new icons or remove existing ones.
-
-$result must have the following format:
-
-```
-array(
-    array( // footer icon group 1
-        'class' => 'footerIconGroup1CssClass',
-        'buttons' => array(
-            'id' => 'myid',
-            'title' => 'My Tooltip',
-            'icon' => 'path/to/my/icon.png'
-        )
-    ),
-    array( // footer icon group 2
-        'class' => 'footerIconGroup2CssClass',
-        'buttons' => array(...)
-    ),
-    ...
-)
-```
-
-Callback Signature:
-<pre><code>function(&amp;$result, $viewDataTable = $this)</code></pre>
 
 
 #### ViewDataTable.getDefaultType
