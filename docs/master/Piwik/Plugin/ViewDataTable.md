@@ -8,16 +8,10 @@ This class is used to load (from the API) and customize the output of a given Da
 Description
 -----------
 
-The main() method will create an object implementing ViewInterface
-You can customize the dataTable using the disable* methods.
+You can build your own ViewDataTable by extending this class and implementing the buildView() method which defines
+which data should be loaded and which view should be rendered.
 
-You can also customize the dataTable rendering using row metadata:
-- &#039;html_label_prefix&#039;: If this metadata is present on a row, it&#039;s contents will be prepended
-                       the label in the HTML output.
-- &#039;html_label_suffix&#039;: If this metadata is present on a row, it&#039;s contents will be appended
-                       after the label in the HTML output.
-
-Example:
+Example usage:
 In the Controller of the plugin VisitorInterest
 &lt;pre&gt;
    function getNumberOfVisitsPerVisitDuration( $fetch = false)
@@ -40,7 +34,6 @@ Constants
 This abstract class defines the following constants:
 
 - [`ID`](#ID)
-- [`CONFIGURE_FOOTER_ICONS_EVENT`](#CONFIGURE_FOOTER_ICONS_EVENT)
 
 Properties
 ----------
@@ -69,19 +62,25 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Default constructor.
-- [`getDefaultConfig()`](#getDefaultConfig)
-- [`getDefaultRequestConfig()`](#getDefaultRequestConfig)
+- [`__construct()`](#__construct) &mdash; Constructor.
+- [`getDefaultConfig()`](#getDefaultConfig) &mdash; Returns the default config.
+- [`getDefaultRequestConfig()`](#getDefaultRequestConfig) &mdash; Returns the default request config.
 - [`getViewDataTableId()`](#getViewDataTableId) &mdash; Returns the viewDataTable ID for this DataTable visualization.
-- [`isViewDataTableId()`](#isViewDataTableId)
+- [`isViewDataTableId()`](#isViewDataTableId) &mdash; Detects whether the viewDataTable or one of its ancestors has the given id.
 - [`getDataTable()`](#getDataTable) &mdash; Returns the DataTable loaded from the API
 - [`setDataTable()`](#setDataTable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly.
-- [`render()`](#render) &mdash; Convenience function.
-- [`isRequestingSingleDataTable()`](#isRequestingSingleDataTable)
+- [`render()`](#render) &mdash; Requests all needed data and renders the view.
+- [`isRequestingSingleDataTable()`](#isRequestingSingleDataTable) &mdash; Determine if the view data table requests a single data table or not.
+- [`canDisplayViewDataTable()`](#canDisplayViewDataTable) &mdash; Here you can define whether your visualization can display a specific data table or not.
 
 ### `__construct()` <a name="__construct"></a>
 
-Default constructor.
+Constructor.
+
+#### Description
+
+Initializes the default config, requestConfig and the request itself. After configuring some
+mandatory properties reports can modify the view by listening to the hook &#039;ViewDataTable.configure&#039;.
 
 #### Signature
 
@@ -93,17 +92,31 @@ Default constructor.
 
 ### `getDefaultConfig()` <a name="getDefaultConfig"></a>
 
+Returns the default config.
+
+#### Description
+
+Custom viewDataTables can change the default config to their needs by either
+modifying this config or creating an own Config class that extends the default Config.
+
 #### Signature
 
 - It is a **public static** method.
-- It does not return anything.
+- It returns a(n) `Piwik\ViewDataTable\Config` value.
 
 ### `getDefaultRequestConfig()` <a name="getDefaultRequestConfig"></a>
 
+Returns the default request config.
+
+#### Description
+
+Custom viewDataTables can change the default config to their needs by either
+modifying this config or creating an own RequestConfig class that extends the default RequestConfig.
+
 #### Signature
 
 - It is a **public static** method.
-- It does not return anything.
+- It returns a(n) `Piwik\ViewDataTable\RequestConfig` value.
 
 ### `getViewDataTableId()` <a name="getViewDataTableId"></a>
 
@@ -111,8 +124,8 @@ Returns the viewDataTable ID for this DataTable visualization.
 
 #### Description
 
-Derived classes
-should declare a const ID field with the viewDataTable ID.
+Derived classes  should declare a const ID field
+with the viewDataTable ID.
 
 #### Signature
 
@@ -123,12 +136,14 @@ should declare a const ID field with the viewDataTable ID.
 
 ### `isViewDataTableId()` <a name="isViewDataTableId"></a>
 
+Detects whether the viewDataTable or one of its ancestors has the given id.
+
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$viewDataTableId`
-- It does not return anything.
+- It returns a(n) `bool` value.
 
 ### `getDataTable()` <a name="getDataTable"></a>
 
@@ -159,11 +174,7 @@ It won&#039;t be loaded again from the API in this case
 
 ### `render()` <a name="render"></a>
 
-Convenience function.
-
-#### Description
-
-Calls main() &amp; renders the view that gets built.
+Requests all needed data and renders the view.
 
 #### Signature
 
@@ -173,8 +184,27 @@ Calls main() &amp; renders the view that gets built.
 
 ### `isRequestingSingleDataTable()` <a name="isRequestingSingleDataTable"></a>
 
+Determine if the view data table requests a single data table or not.
+
 #### Signature
 
 - It is a **public** method.
-- It does not return anything.
+- It returns a(n) `bool` value.
+
+### `canDisplayViewDataTable()` <a name="canDisplayViewDataTable"></a>
+
+Here you can define whether your visualization can display a specific data table or not.
+
+#### Description
+
+For instance you may
+only display your visualization in case a single data table is requested. If the method returns true, the footer
+icon will be displayed.
+
+#### Signature
+
+- It is a **public static** method.
+- It accepts the following parameter(s):
+    - `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md))
+- It returns a(n) `bool` value.
 

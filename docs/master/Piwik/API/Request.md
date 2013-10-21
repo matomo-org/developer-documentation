@@ -44,6 +44,7 @@ The class defines the following methods:
 - [`getRequestParametersGET()`](#getRequestParametersGET)
 - [`getBaseReportUrl()`](#getBaseReportUrl) &mdash; Returns URL for this report w/o any filter parameters.
 - [`getCurrentUrlWithoutGenericFilters()`](#getCurrentUrlWithoutGenericFilters) &mdash; Returns the current URL without generic filter query parameters.
+- [`shouldLoadExpanded()`](#shouldLoadExpanded) &mdash; Returns whether the DataTable result will have to be expanded for the current request before rendering.
 - [`getRawSegmentFromRequest()`](#getRawSegmentFromRequest)
 
 ### `getRequestArrayFromString()` <a name="getRequestArrayFromString"></a>
@@ -167,6 +168,15 @@ Returns the current URL without generic filter query parameters.
 - It accepts the following parameter(s):
     - `$params`
 - It returns a(n) `string` value.
+
+### `shouldLoadExpanded()` <a name="shouldLoadExpanded"></a>
+
+Returns whether the DataTable result will have to be expanded for the current request before rendering.
+
+#### Signature
+
+- It is a **public static** method.
+- It returns a(n) `bool` value.
 
 ### `getRawSegmentFromRequest()` <a name="getRawSegmentFromRequest"></a>
 
