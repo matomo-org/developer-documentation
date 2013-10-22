@@ -73,12 +73,12 @@ Filters can be applied now (via [filter](#filter)), or they can be applied later
 Filters that sort rows or manipulate the number of rows should be applied right away.
 Non-essential, presentation filters should be queued.
 
-See also:
+### Learn more
 
-- ArchiveProcessor &amp;mdash; to learn how DataTables are persisted.
-- DataTable\Renderer &amp;mdash; to learn how DataTable data is exported to XML, JSON, etc.
-- DataTable\Filter &amp;mdash; to see all core Filters.
-- DataTable\Manager &amp;mdash; to learn how DataTables are loaded.
+- **ArchiveProcessor** &amp;mdash; to learn how DataTables are persisted.
+- **DataTable\Renderer** &amp;mdash; to learn how DataTable data is exported to XML, JSON, etc.
+- **DataTable\Filter** &amp;mdash; to see all core Filters.
+- **DataTable\Manager** &amp;mdash; to learn how DataTables are loaded.
 
 ### Examples
 

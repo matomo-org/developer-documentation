@@ -24,6 +24,8 @@ reports using the [getBlob](#getBlob), [getDataTable](#getDataTable) and
 If you&#039;re creating an API that returns report data, you may want to use the
 [getDataTableFromArchive](#getDataTableFromArchive) helper function.
 
+### Learn more
+
 Learn more about _archiving_ [here](#).
 
 ### Limitations
