@@ -17,6 +17,10 @@ an API request will trigger the execution of this Filter.
 
 Note: This filter must be called before [ReplaceColumnNames](#) is called.
 
+**Basic usage example**
+
+    $dataTable-&gt;filter(&#039;AddColumnsProcessedMetrics&#039;);
+
 
 Methods
 -------

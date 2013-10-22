@@ -17,7 +17,7 @@ be a numeric, string or array.
 Every row has an ID. The ID is either the index of the row or [ID_SUMMARY_ROW](#ID_SUMMARY_ROW).
 
 DataTables are hierarchical data structures. Each row can also contain an additional
-nested sub-DataTable.
+nested sub-DataTable (commonly referred to as a &#039;subtable&#039;).
 
 Both DataTables and DataTable rows can hold **metadata**. _DataTable metadata_ is information
 regarding all the data, such as the site or period that the data is for. _Row metadata_
@@ -167,28 +167,6 @@ This metadata value must be an array that maps column names with valid operation
 
 See [addDataTable](#addDataTable) and [DataTable\Row::sumRow](#) for more information.
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$metadata`](#$metadata) &mdash; Table metadata.
-
-### `$metadata` <a name="metadata"></a>
-
-Table metadata.
-
-#### Description
-
-Read [this](#class-desc-the-basics) to learn more.
-
-Any data that describes the data held in the table&#039;s rows should go here.
-
-#### Signature
-
-- It is a **public** property.
-- It is a(n) `array` value.
-
 Methods
 -------
 
@@ -241,6 +219,8 @@ The class defines the following methods:
 - [`getMetadata()`](#getMetadata) &mdash; Returns metadata by name.
 - [`setMetadata()`](#setMetadata) &mdash; Sets a metadata value by name.
 - [`getAllTableMetadata()`](#getAllTableMetadata) &mdash; Returns all table metadata.
+- [`setMetadataValues()`](#setMetadataValues) &mdash; Sets several metadata values by name.
+- [`setAllTableMetadata()`](#setAllTableMetadata) &mdash; Sets metadata erasing existing values.
 - [`setMaximumAllowedRows()`](#setMaximumAllowedRows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row).
 - [`walkPath()`](#walkPath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one, and the number of segments of the path successfully walked.
 - [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with its subtable&#039;s rows.
@@ -944,6 +924,28 @@ Returns all table metadata.
 
 - It is a **public** method.
 - It returns a(n) `array` value.
+
+### `setMetadataValues()` <a name="setMetadataValues"></a>
+
+Sets several metadata values by name.
+
+#### Signature
+
+- It is a **public** method.
+- It accepts the following parameter(s):
+    - `$values`
+- It does not return anything.
+
+### `setAllTableMetadata()` <a name="setAllTableMetadata"></a>
+
+Sets metadata erasing existing values.
+
+#### Signature
+
+- It is a **public** method.
+- It accepts the following parameter(s):
+    - `$metadata`
+- It does not return anything.
 
 ### `setMaximumAllowedRows()` <a name="setMaximumAllowedRows"></a>
 

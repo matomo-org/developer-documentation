@@ -31,6 +31,11 @@ an API request will trigger the execution of this Filter.
 
 Note: This filter must be called before [ReplaceColumnNames](#) is called.
 
+**Basic usage example**
+
+    $dataTable-&gt;filter(&#039;AddColumnsProcessedMetricsGoal&#039;,
+        array($enable = true, $idGoal = Piwik::LABEL_ID_GOAL_IS_ECOMMERCE_ORDER));
+
 
 Constants
 ---------
