@@ -662,7 +662,7 @@ _Defined in [Piwik/Settings/Manager](https://github.com/piwik/piwik/blob/master/
 
 
 Callback Signature:
-<pre><code>$pluginSettings</code></pre>
+<pre><code>function(&amp;$pluginSettings)</code></pre>
 
 ## Provider
 
