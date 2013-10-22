@@ -719,7 +719,7 @@ call to a controller method.
 The `$params` array contains the following properties: `array($module, $action, $parameters, $controller)`
 
 Callback Signature:
-<pre><code>$module</code></pre>
+<pre><code>function($module, $action, $parameters)</code></pre>
 
 
 #### Request.dispatch.end
