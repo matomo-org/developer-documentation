@@ -59,7 +59,6 @@ This is a complete list of available hooks.
 - [Log](#log)
 - [Login](#login)
 - [Menu](#menu)
-- [Plugin](#plugin)
 - [Provider](#provider)
 - [Reporting](#reporting)
 - [Request](#request)
@@ -651,18 +650,6 @@ public function addMenuItems()
 Usages:
 
 [Plugin::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/API/API.php#L652), [Dashboard::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L219), [Feedback::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/Feedback/Feedback.php#L36), [LanguagesManager::showLanguagesSelector](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L56), [MultiSites::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/MultiSites/MultiSites.php#L78), [ScheduledReports::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L472), [Widgetize::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/Widgetize.php#L36)
-
-## Plugin
-
-- [Plugin.addSettings](#pluginaddsettings)
-
-#### Plugin.addSettings
-_Defined in [Piwik/Settings/Manager](https://github.com/piwik/piwik/blob/master/core/Settings/Manager.php) in line [36](https://github.com/piwik/piwik/blob/master/core/Settings/Manager.php#L36)_
-
-
-
-Callback Signature:
-<pre><code>function(&amp;$pluginSettings)</code></pre>
 
 ## Provider
 
