@@ -3,15 +3,44 @@
 Period
 ======
 
-This class provides generic methods to archive data for a period (week / month / year).
+Initiates the archiving process for all non-day periods via the [ArchiveProcessor.Period.compute](#) event.
 
 Description
 -----------
 
-The archiving for a period is done by aggregating &quot;sub periods&quot; contained within this period.
-For example to process a week&#039;s data, we sum each day&#039;s data.
+Period archiving differs from archiving day periods in that log tables are not aggregated.
+Instead the data from periods within the non-day period are aggregated. For example, if the data
+for a month is being archived, this ArchiveProcessor will select the aggregated data for each
+day in the month and add them together. This is much faster than running aggregation queries over
+the entire set of visits.
 
-Public methods can be called by the plugins that hook on the event &#039;ArchiveProcessor.Period.compute&#039;
+If data has not been archived for the subperiods, archiving will be launched for those subperiods.
+
+### Examples
+
+**Archiving metric data**
+
+    // function in an Archiver descendent
+    public function archivePeriod(ArchiveProcessor\Period $archiveProcessor)
+    {
+        $archiveProcessor-&gt;aggregateNumericMetrics(&#039;myFancyMetric&#039;, &#039;sum&#039;);
+        $archiveProcessor-&gt;aggregateNumericMetrics(&#039;myOtherFancyMetric&#039;, &#039;max&#039;);
+    }
+
+**Archiving report data**
+
+    // function in an Archiver descendent
+    public function archivePeriod(ArchiveProcessor\Period $archiveProcessor)
+    {
+        $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
+
+        $archiveProcessor-&gt;aggregateDataTableReports(
+            &#039;MyPlugin_myFancyReport&#039;,
+            $maxRowsInTable,
+            $maxRowsInSubtable = $maxRowsInTable,
+            $columnToSortByBeforeTruncation = Metrics::INDEX_NB_VISITS,
+        );
+    }
 
 
 Methods
@@ -19,27 +48,16 @@ Methods
 
 The class defines the following methods:
 
-- [`aggregateDataTableReports()`](#aggregateDataTableReports) &mdash; This method will compute the sum of DataTables over the period for the given fields $recordNames.
-- [`aggregateNumericMetrics()`](#aggregateNumericMetrics) &mdash; Given a list of records names, the method will fetch all their values over the period, and aggregate them.
+- [`aggregateDataTableReports()`](#aggregateDataTableReports) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
+- [`aggregateNumericMetrics()`](#aggregateNumericMetrics) &mdash; Aggregates metrics for every subperiod of the current period and inserts the result as the metric for this period.
 
 ### `aggregateDataTableReports()` <a name="aggregateDataTableReports"></a>
 
-This method will compute the sum of DataTables over the period for the given fields $recordNames.
+Sums records for every subperiod of the current period and inserts the result as the record for this period.
 
 #### Description
 
-The resulting DataTable will be then added to queue of data to be recorded in the database.
-It will usually be called in a plugin that listens to the hook &#039;ArchiveProcessor.Period.compute&#039;
-
-For example if $recordNames = &#039;UserCountry_country&#039; the method will select all UserCountry_country DataTable for the period
-(eg. the 31 dataTable of the last month), sum them, then record it in the DB
-
-
-This method works on recursive dataTable. For example for the &#039;Actions&#039; it will select all subtables of all dataTable of all the sub periods
- and get the sum.
-
-It returns an array that gives information about the &quot;final&quot; DataTable. The array gives for every field name, the number of rows in the
- final DataTable (ie. the number of distinct LABEL over the period) (eg. the number of distinct keywords over the last month)
+DataTables are summed recursively so subtables will be summed as well.
 
 #### Signature
 
@@ -51,19 +69,12 @@ It returns an array that gives information about the &quot;final&quot; DataTable
     - `$columnToSortByBeforeTruncation`
     - `$columnAggregationOperations`
     - `$invalidSummedColumnNameToRenamedName`
-- _Returns:_ array ( nameTable1 =&gt; number of rows, nameTable2 =&gt; number of rows, )
+- _Returns:_ Returns the row counts of each aggregated report before truncation, eg, ``` array( &#039;report1&#039; =&gt; array(&#039;level0&#039; =&gt; $report1-&gt;getRowsCount, &#039;recursive&#039; =&gt; $report1-&gt;getRowsCountRecursive()), &#039;report2&#039; =&gt; array(&#039;level0&#039; =&gt; $report2-&gt;getRowsCount, &#039;recursive&#039; =&gt; $report2-&gt;getRowsCountRecursive()), ... ) ```
     - `array`
 
 ### `aggregateNumericMetrics()` <a name="aggregateNumericMetrics"></a>
 
-Given a list of records names, the method will fetch all their values over the period, and aggregate them.
-
-#### Description
-
-For example $columns = array(&#039;nb_visits&#039;, &#039;sum_time_visit&#039;)
- it will sum all values of nb_visits for the period (eg. get number of visits for the month by summing the visits of every day)
-
-The aggregate metrics are then stored in the Archive and the values are returned.
+Aggregates metrics for every subperiod of the current period and inserts the result as the metric for this period.
 
 #### Signature
 
@@ -71,5 +82,7 @@ The aggregate metrics are then stored in the Archive and the values are returned
 - It accepts the following parameter(s):
     - `$columns`
     - `$operationToApply`
-- It returns a(n) `array` value.
+- _Returns:_ Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array(&#039;nb_visits&#039;, &#039;nb_hits&#039;)` is supplied for `$columns`, ``` array( &#039;nb_visits&#039; =&gt; 3040, &#039;nb_hits&#039; =&gt; 405 ) ``` is returned.
+    - `array`
+    - `int`
 

@@ -214,7 +214,7 @@ Callback Signature:
 - [ArchiveProcessor.Period.compute](#archiveprocessorperiodcompute)
 
 #### ArchiveProcessor.Day.compute
-_Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php) in line [124](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php#L124)_
+_Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php) in line [127](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php#L127)_
 
 This event is triggered when the archiver wants to compute a new archive. Use this event to archive your
 custom report data if needed.
@@ -239,7 +239,7 @@ Usages:
 
 
 #### ArchiveProcessor.Period.compute
-_Defined in [Piwik/ArchiveProcessor/Period](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Period.php) in line [205](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Period.php#L205)_
+_Defined in [Piwik/ArchiveProcessor/Period](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Period.php) in line [238](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Period.php#L238)_
 
 This event is triggered when the archiver wants to compute a new archive. Use this event to archive your
 custom report data if needed.

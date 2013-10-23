@@ -3,7 +3,7 @@
 Day
 ===
 
-This class
+Initiates the archiving process for **day** periods via the [ArchiveProcessor.Day.compute](#) event.
 
 
 Methods
@@ -11,12 +11,12 @@ Methods
 
 The class defines the following methods:
 
-- [`getDataTableFromDataArray()`](#getDataTableFromDataArray) &mdash; Converts the given array to a datatable
+- [`getDataTableFromDataArray()`](#getDataTableFromDataArray) &mdash; Converts array to a datatable
 - [`getMetricsForDimension()`](#getMetricsForDimension) &mdash; Helper function that returns an array with common statistics for a given database field distinct values.
 
 ### `getDataTableFromDataArray()` <a name="getDataTableFromDataArray"></a>
 
-Converts the given array to a datatable
+Converts array to a datatable
 
 #### Signature
 
