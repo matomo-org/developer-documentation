@@ -270,7 +270,7 @@ Usages:
 - [AssetManager.getStylesheetFiles](#assetmanagergetstylesheetfiles)
 
 #### AssetManager.filterMergedJavaScripts
-_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [385](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L385)_
+_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [377](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L377)_
 
 This event is triggered after the JavaScript files are minified and merged to a single file but before the generated JS file is written to disk. It can be used to change the generated JavaScript to your needs,
 like adding further scripts or storing the generated file somewhere else.
@@ -280,7 +280,7 @@ Callback Signature:
 
 
 #### AssetManager.filterMergedStylesheets
-_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [168](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L168)_
+_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [165](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L165)_
 
 This event is triggered after the less stylesheets are compiled to CSS and after the CSS is minified and merged into one file but before the generated CSS is written to disk. It can be used to change the modify the
 stylesheets to your needs, like replacing image paths or adding further custom stylesheets.
@@ -290,7 +290,7 @@ Callback Signature:
 
 
 #### AssetManager.getJavaScriptFiles
-_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [431](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L431)_
+_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [423](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L423)_
 
 This event is triggered to gather a list of all JavaScript files. Use this event to add your own JavaScript
 files. Note: In case you are in development you may enable the config setting `disable_merged_assets`.
@@ -315,7 +315,7 @@ Usages:
 
 
 #### AssetManager.getStylesheetFiles
-_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [303](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L303)_
+_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [300](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L300)_
 
 This event is triggered to gather a list of all stylesheets (CSS and LESS). Use this event to add your own
 stylesheets. Note: In case you are in development you may enable the config setting `disable_merged_assets`.
