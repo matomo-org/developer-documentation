@@ -33,7 +33,7 @@ The class defines the following methods:
 - [`enableRecursiveSort()`](#enableRecursiveSort)
 - [`renameColumn()`](#renameColumn) &mdash; Renames the given column in each contained DataTable.
 - [`deleteColumns()`](#deleteColumns) &mdash; Deletes the specified columns in each contained DataTable.
-- [`deleteRow()`](#deleteRow)
+- [`deleteRow()`](#deleteRow) &mdash; Deletes a table from the array of DataTables.
 - [`deleteColumn()`](#deleteColumn) &mdash; Deletes the given column in every contained DataTable.
 - [`getColumn()`](#getColumn) &mdash; Returns the array containing all row values in all data tables for the requested column.
 - [`mergeChildren()`](#mergeChildren) &mdash; Merges the rows of every child DataTable into a new DataTable and returns it.
@@ -125,7 +125,9 @@ Returns the array of DataTables contained by this class.
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `array` value.
+- It can return one of the following values:
+    - [`DataTable[]`](../../Piwik/DataTable.md)
+    - [`Map[]`](../../Piwik/DataTable/Map.md)
 
 ### `getTable()` <a name="getTable"></a>
 
@@ -216,6 +218,8 @@ Deletes the specified columns in each contained DataTable.
 - It does not return anything.
 
 ### `deleteRow()` <a name="deleteRow"></a>
+
+Deletes a table from the array of DataTables.
 
 #### Signature
 

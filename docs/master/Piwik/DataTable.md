@@ -538,7 +538,7 @@ Returns the array of Rows.
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `array` value.
+- It returns a(n) [`Row[]`](../Piwik/DataTable/Row.md) value.
 
 ### `getColumn()` <a name="getColumn"></a>
 
