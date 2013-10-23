@@ -99,7 +99,6 @@ The class defines the following methods:
 - [`info()`](#info) &mdash; Logs a message using the INFO log level.
 - [`debug()`](#debug) &mdash; Logs a message using the DEBUG log level.
 - [`verbose()`](#verbose) &mdash; Logs a message using the VERBOSE log level.
-- [`getInstance()`](#getInstance)
 
 ### `error()` <a name="error"></a>
 
@@ -160,11 +159,4 @@ Logs a message using the VERBOSE log level.
 - It accepts the following parameter(s):
     - `$message`
 - It does not return anything.
-
-### `getInstance()` <a name="getInstance"></a>
-
-#### Signature
-
-- It is a **public** method.
-- It returns a(n) [`Log`](../Piwik/Log.md) value.
 
