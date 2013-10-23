@@ -3,7 +3,18 @@
 Range
 =====
 
-from a starting date to an ending date
+Arbitrary date range representation.
+
+Description
+-----------
+
+This class represents a period that contains a list of consecutive days as subperiods
+It is created when the **period** query parameter is set to **range** and is used
+to calculate the subperiods of multiple period requests (eg, when period=day and
+date=2007-07-24,2013-11-15).
+
+The range period differs from other periods mainly in that since it is arbitrary,
+range periods are not archived by the archive.php cron script.
 
 
 Methods
@@ -11,18 +22,19 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct)
-- [`getLocalizedShortString()`](#getLocalizedShortString) &mdash; Returns the current period as a localized short string
-- [`getLocalizedLongString()`](#getLocalizedLongString) &mdash; Returns the current period as a localized long string
+- [`__construct()`](#__construct) &mdash; Constructor.
+- [`getLocalizedShortString()`](#getLocalizedShortString) &mdash; Returns the current period as a localized short string.
+- [`getLocalizedLongString()`](#getLocalizedLongString) &mdash; Returns the current period as a localized long string.
 - [`getDateStart()`](#getDateStart) &mdash; Returns the start date of the period
 - [`getPrettyString()`](#getPrettyString) &mdash; Returns the current period as a string
-- [`removePeriod()`](#removePeriod)
 - [`setDefaultEndDate()`](#setDefaultEndDate) &mdash; Sets the default end date of the period
 - [`parseDateRange()`](#parseDateRange) &mdash; Given a date string, returns false if not a date range, or returns the array containing date start, date end
 - [`getDateEnd()`](#getDateEnd) &mdash; Returns the end date of the period
 - [`getLastDate()`](#getLastDate) &mdash; Returns the date that is one period before the supplied date.
 
 ### `__construct()` <a name="__construct"></a>
+
+Constructor.
 
 #### Signature
 
@@ -36,7 +48,7 @@ The class defines the following methods:
 
 ### `getLocalizedShortString()` <a name="getLocalizedShortString"></a>
 
-Returns the current period as a localized short string
+Returns the current period as a localized short string.
 
 #### Signature
 
@@ -45,7 +57,7 @@ Returns the current period as a localized short string
 
 ### `getLocalizedLongString()` <a name="getLocalizedLongString"></a>
 
-Returns the current period as a localized long string
+Returns the current period as a localized long string.
 
 #### Signature
 
@@ -71,19 +83,6 @@ Returns the current period as a string
 
 - It is a **public** method.
 - It returns a(n) `string` value.
-
-### `removePeriod()` <a name="removePeriod"></a>
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$period`
-    - `$date` ([`Date`](../../Piwik/Date.md))
-    - `$n`
-- It returns a(n) [`Date`](../../Piwik/Date.md) value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
 
 ### `setDefaultEndDate()` <a name="setDefaultEndDate"></a>
 

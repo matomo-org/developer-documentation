@@ -573,7 +573,7 @@ Usages:
 - [Menu.Top.addItems](#menutopadditems)
 
 #### Menu.Admin.addItems
-_Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php) in line [63](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php#L63)_
+_Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php) in line [82](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php#L82)_
 
 This event is triggered to collect all available admin menu items. Subscribe to this event if you want
 to add one or more items to the Piwik admin menu. Just define the name of your menu item as well as a
@@ -600,7 +600,7 @@ Usages:
 
 
 #### Menu.Reporting.addItems
-_Defined in [Piwik/Menu/MenuMain](https://github.com/piwik/piwik/blob/master/core/Menu/MenuMain.php) in line [70](https://github.com/piwik/piwik/blob/master/core/Menu/MenuMain.php#L70)_
+_Defined in [Piwik/Menu/MenuMain](https://github.com/piwik/piwik/blob/master/core/Menu/MenuMain.php) in line [88](https://github.com/piwik/piwik/blob/master/core/Menu/MenuMain.php#L88)_
 
 This event is triggered to collect all available reporting menu items. Subscribe to this event if you
 want to add one or more items to the Piwik reporting menu. Just define the name of your menu item as
@@ -627,7 +627,7 @@ Usages:
 
 
 #### Menu.Top.addItems
-_Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [91](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L91)_
+_Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [112](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L112)_
 
 This event is triggered to collect all available menu items that should be displayed on the very top next to login/logout, API and other menu items. Subscribe to this event if you want to add one or more items.
 It's fairly easy. Just define the name of your menu item as well as a controller and an action that
