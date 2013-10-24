@@ -18,6 +18,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
+- [`getOrder()`](#getOrder)
 
 ### `__construct()` <a name="__construct"></a>
 
@@ -27,5 +28,12 @@ The class defines the following methods:
 - It accepts the following parameter(s):
     - `$name`
     - `$title`
+- It does not return anything.
+
+### `getOrder()` <a name="getOrder"></a>
+
+#### Signature
+
+- It is a **public** method.
 - It does not return anything.
 

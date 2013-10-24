@@ -18,6 +18,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
+- [`getOrder()`](#getOrder)
 - [`setUserLogin()`](#setUserLogin) &mdash; Sets (overwrites) the userLogin.
 - [`removeAllUserSettingsForUser()`](#removeAllUserSettingsForUser) &mdash; Remove all stored settings of the given userLogin.
 
@@ -30,6 +31,13 @@ The class defines the following methods:
     - `$name`
     - `$title`
     - `$userLogin`
+- It does not return anything.
+
+### `getOrder()` <a name="getOrder"></a>
+
+#### Signature
+
+- It is a **public** method.
 - It does not return anything.
 
 ### `setUserLogin()` <a name="setUserLogin"></a>
