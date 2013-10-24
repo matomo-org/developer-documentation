@@ -3,7 +3,34 @@
 Controller
 ==========
 
-Parent class of all plugins Controllers (located in /plugins/PluginName/Controller.php It defines some helper functions controllers can use.
+Base class of all plugin Controllers.
+
+Description
+-----------
+
+Plugins that wish to add display HTML should create a Controller that either
+extends from this class or from [ControllerAdmin](#). Every public method in
+the controller will be exposed as a controller action.
+
+Learn more about Piwik&#039;s MVC system [here](#).
+
+### Examples
+
+**Defining a controller**
+
+    class Controller extends \Piwik\Plugin\Controller
+    {
+        public function index()
+        {
+            $view = new View(&quot;@MyPlugin/index.twig&quot;);
+            // ... setup view ...
+            echo $view-&gt;render();
+        }
+    }
+
+**Linking to a controller action**
+
+    &lt;a href=&quot;?module=MyPlugin&amp;action=index&amp;idSite=1&amp;period=day&amp;date=2013-10-10&quot;&gt;Link&lt;/a&gt;
 
 
 Methods
@@ -11,8 +38,8 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Builds the controller object, reads the date from the request, extracts plugin name from
-- [`getDefaultAction()`](#getDefaultAction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter
+- [`__construct()`](#__construct) &mdash; Constructor.
+- [`getDefaultAction()`](#getDefaultAction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
 - [`getDateRangeRelativeToEndDate()`](#getDateRangeRelativeToEndDate) &mdash; Given for example, $period = month, $lastN = &#039;last6&#039;, $endDate = &#039;2011-07-01&#039;, It will return the $date = &#039;2011-01-01,2011-07-01&#039; which is useful to draw graphs for the last N periods
 - [`setHostValidationVariablesView()`](#setHostValidationVariablesView) &mdash; Checks if the current host is valid and sets variables on the given view, including:
 - [`setPeriodVariablesView()`](#setPeriodVariablesView) &mdash; Sets general period variables (available periods, current period, period labels) used by templates
@@ -22,7 +49,7 @@ The abstract class defines the following methods:
 
 ### `__construct()` <a name="__construct"></a>
 
-Builds the controller object, reads the date from the request, extracts plugin name from
+Constructor.
 
 #### Signature
 
@@ -31,7 +58,7 @@ Builds the controller object, reads the date from the request, extracts plugin n
 
 ### `getDefaultAction()` <a name="getDefaultAction"></a>
 
-Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter
+Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
 
 #### Signature
 

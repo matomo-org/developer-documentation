@@ -96,7 +96,7 @@ Returns a [LogAggregator](#) instance for the site, period and segment this Arch
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `Piwik\DataAccess\LogAggregator` value.
+- It returns a(n) [`LogAggregator`](../Piwik/DataAccess/LogAggregator.md) value.
 
 ### `getPeriod()` <a name="getPeriod"></a>
 
