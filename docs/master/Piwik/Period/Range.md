@@ -31,6 +31,7 @@ The class defines the following methods:
 - [`parseDateRange()`](#parseDateRange) &mdash; Given a date string, returns false if not a date range, or returns the array containing date start, date end
 - [`getDateEnd()`](#getDateEnd) &mdash; Returns the end date of the period
 - [`getLastDate()`](#getLastDate) &mdash; Returns the date that is one period before the supplied date.
+- [`getRelativeToEndDate()`](#getRelativeToEndDate) &mdash; Returns a date ragne string given a period type, end date and number of periods the range spans over.
 
 ### `__construct()` <a name="__construct"></a>
 
@@ -130,4 +131,19 @@ Returns the date that is one period before the supplied date.
     - `$period`
 - _Returns:_ An array with two elements, a string for the date before $date and a Period instance for the period before $date.
     - `array`
+
+### `getRelativeToEndDate()` <a name="getRelativeToEndDate"></a>
+
+Returns a date ragne string given a period type, end date and number of periods the range spans over.
+
+#### Signature
+
+- It is a **public static** method.
+- It accepts the following parameter(s):
+    - `$period`
+    - `$lastN`
+    - `$endDate`
+    - `$site`
+- _Returns:_ The date range string, eg, `&#039;2012-01-02,2013-01-02&#039;`.
+    - `string`
 

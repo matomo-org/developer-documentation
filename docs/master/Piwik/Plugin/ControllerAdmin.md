@@ -3,7 +3,12 @@
 ControllerAdmin
 ===============
 
-Parent class of all plugins Controllers with admin functions
+Base class of plugin controllers that provide administrative functionality.
+
+Description
+-----------
+
+See [Controller](#) to learn more about Piwik controllers.
 
 
 Methods
@@ -12,7 +17,7 @@ Methods
 The abstract class defines the following methods:
 
 - [`displayWarningIfConfigFileNotWritable()`](#displayWarningIfConfigFileNotWritable)
-- [`setBasicVariablesAdminView()`](#setBasicVariablesAdminView)
+- [`setBasicVariablesAdminView()`](#setBasicVariablesAdminView) &mdash; Assigns a set of variables to a view that would be useful to an Admin controller.
 
 ### `displayWarningIfConfigFileNotWritable()` <a name="displayWarningIfConfigFileNotWritable"></a>
 
@@ -24,6 +29,27 @@ The abstract class defines the following methods:
 - It does not return anything.
 
 ### `setBasicVariablesAdminView()` <a name="setBasicVariablesAdminView"></a>
+
+Assigns a set of variables to a view that would be useful to an Admin controller.
+
+#### Description
+
+Assigns the following variables:
+
+- **statisticsNotRecorded** - Set to true if the `[Tracker] record_statistics` INI
+                              config is `0`. If not `0`, this variable will not be defined.
+- **topMenu** - The result of `MenuTop::getInstance()-&gt;getMenu()`.
+- **currentAdminMenuName** - The currently selected admin menu name.
+- **enableFrames** - The value of the `[General] enable_framed_pages` INI config option. If
+                   true, [View::setXFrameOptions](#) is called on the view.
+- **isSuperUser** - Whether the current user is a superuser or not.
+- **usingOldGeoIPPlugin** - Whether this Piwik install is currently using the old GeoIP
+                            plugin or not.
+- **invalidPluginsWarning** - Set if some of the plugins to load (determined by INI configuration)
+                              are invalid or missing.
+- **phpVersion** - The current PHP version.
+- **phpIsNewEnough** - Whether the current PHP version is new enough to run Piwik.
+- **adminMenu** - The result of `MenuAdmin::getInstance()-&gt;getMenu()`.
 
 #### Signature
 
