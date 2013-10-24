@@ -42,6 +42,8 @@ Sets (overwrites) the userLogin.
 - It accepts the following parameter(s):
     - `$userLogin`
 - It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; In case you set a userLogin that is not your userLogin and you are not the superUser.
 
 ### `removeAllUserSettingsForUser()` <a name="removeAllUserSettingsForUser"></a>
 
