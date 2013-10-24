@@ -12,7 +12,7 @@ A scheduled task is a callback that should be executed every so often (such as d
 weekly, monthly, etc.). They are registered with **TaskScheduler** through the
 [TaskScheduler.getScheduledTasks](#) event.
 
-Tasks executed when the cron archive.php script is executed,
+Tasks are executed when the cron archive.php script is executed.
 
 
 Constants

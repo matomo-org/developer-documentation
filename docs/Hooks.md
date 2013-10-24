@@ -1065,7 +1065,7 @@ Usages:
 
 
 #### Tracker.knownVisitorInformation
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [358](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L358)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [357](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L357)_
 
 After a known visitor is saved and updated by Piwik, this event is called. Useful for plugins that want to
 register information about a returning visitor, or filter the existing information.
@@ -1075,7 +1075,7 @@ Callback Signature:
 
 
 #### Tracker.knownVisitorUpdate
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [313](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L313)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [312](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L312)_
 
 This event is triggered before saving a known visitor. Use it to change any visitor information before
 the visitor is saved.
@@ -1096,7 +1096,7 @@ Callback Signature:
 
 
 #### Tracker.newVisitorInformation
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [480](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L480)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [479](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L479)_
 
 Before a new visitor is saved by Piwik, this event is called. Useful for plugins that want to register
 new information about a visitor, or filter the existing information. `$extraInfo` contains the UserAgent.
@@ -1166,7 +1166,7 @@ Usages:
 
 
 #### Tracker.setVisitorIp
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [99](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L99)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [98](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L98)_
 
 This event can be used for instance to anonymize the IP (after testing for IP exclusion).
 
