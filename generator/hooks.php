@@ -8,17 +8,19 @@
  * @package Piwik
  */
 
-define('PIWIK_DOCUMENT_ROOT', __DIR__ . '/piwik');
+$rootDir = str_replace('/generator', '', __DIR__);
+
+define('PIWIK_DOCUMENT_ROOT', $rootDir . '/piwik');
 define('PIWIK_USER_PATH', PIWIK_DOCUMENT_ROOT);
 define('PIWIK_INCLUDE_PATH', PIWIK_DOCUMENT_ROOT);
 
-require 'vendor/autoload.php';
+require $rootDir . '/vendor/autoload.php';
 require_once PIWIK_INCLUDE_PATH . '/core/Loader.php';
-require 'vendor/nikic/php-parser/lib/bootstrap.php';
-require 'hooks/Hooks.php';
+require $rootDir . '/vendor/nikic/php-parser/lib/bootstrap.php';
+require __DIR__ . '/hooks/Hooks.php';
 ini_set('xdebug.max_nesting_level', 2000);
 
-$target   = __DIR__ . '/docs/Hooks.md';
+$target   = $rootDir . '/docs/Hooks.md';
 
 $files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(PIWIK_DOCUMENT_ROOT));
 $phpFiles = new RegexIterator($files, '/piwik\/(core|plugins)(.*)\.php$/');

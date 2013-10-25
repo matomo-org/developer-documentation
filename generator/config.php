@@ -6,13 +6,13 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-$dir = dirname(__FILE__) == '/' ? '' : dirname(__FILE__);
+$rootDir = str_replace('/generator', '', __DIR__);
 
-define('PIWIK_DOCUMENT_ROOT', $dir . '/piwik');
+define('PIWIK_DOCUMENT_ROOT', $rootDir . '/piwik');
 define('PIWIK_USER_PATH', PIWIK_DOCUMENT_ROOT);
 define('PIWIK_INCLUDE_PATH', PIWIK_DOCUMENT_ROOT);
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once $rootDir . '/vendor/autoload.php';
 require_once PIWIK_INCLUDE_PATH . '/core/Loader.php';
 require_once __DIR__ . '/ApiFilter.php';
 
@@ -35,20 +35,18 @@ if (empty($latestStable)) {
     exit(1);
 }
 
-$latestStable = '';
 $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
     ->add('master', 'master branch')
-    ->add('2.0-a11', 'latest stable')
-    //->add($latestStable, 'latest stable')
+    ->add($latestStable, 'latest stable')
 ;
 
 return new Sami($iterator, array(
     'theme'                => 'markdown',
     'versions'             => $versions,
     'title'                => 'Piwik Plugin API',
-    'build_dir'            => __DIR__.'/docs/%version%',
-    'cache_dir'            => __DIR__.'/cache/%version%',
-    'template_dirs'        => array(__DIR__.'/template'),
+    'build_dir'            => $rootDir.'/docs/%version%',
+    'cache_dir'            => $rootDir.'/cache/%version%',
+    'template_dirs'        => array($rootDir.'/generator/template'),
     'default_opened_level' => 5,
     'filter'               => new ApiFilter()
 ));
