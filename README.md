@@ -3,6 +3,13 @@ Piwik Plugins API documentation generator
 
 http://piwik.org
 
+## Documentations
+
+ * [Index] (docs/master/4. Index.md)
+ * [Classes](docs/master/2. Classes.md)
+ * [Namespaces](docs/master/1. Namespaces.md)
+ * [Hooks](docs/Hooks.md)
+
 ## License
 
 GPLv3 or later
