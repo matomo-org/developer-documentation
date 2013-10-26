@@ -29,7 +29,6 @@ This class defines the following properties:
 
 - [`$title`](#$title)
 - [`$message`](#$message)
-- [`$icon`](#$icon)
 - [`$flags`](#$flags)
 - [`$type`](#$type)
 - [`$context`](#$context)
@@ -44,14 +43,6 @@ This class defines the following properties:
 
 
 ### `$message` <a name="message"></a>
-
-#### Signature
-
-- It is a **public** property.
-- Its type is not specified.
-
-
-### `$icon` <a name="icon"></a>
 
 #### Signature
 
