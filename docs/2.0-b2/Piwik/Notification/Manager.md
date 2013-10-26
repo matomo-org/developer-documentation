@@ -10,7 +10,7 @@ Methods
 The class defines the following methods:
 
 - [`notify()`](#notify) &mdash; Post a notification to be shown in the status bar.
-- [`getAll()`](#getAll)
+- [`getAllNotificationsToDisplay()`](#getAllNotificationsToDisplay)
 - [`cancel()`](#cancel) &mdash; Cancel a previously registered notification.
 
 ### `notify()` <a name="notify"></a>
@@ -29,7 +29,7 @@ If a notification with the same id has already been posted by your application a
     - `$notification` ([`Notification`](../../Piwik/Notification.md))
 - It does not return anything.
 
-### `getAll()` <a name="getAll"></a>
+### `getAllNotificationsToDisplay()` <a name="getAllNotificationsToDisplay"></a>
 
 #### Signature
 
