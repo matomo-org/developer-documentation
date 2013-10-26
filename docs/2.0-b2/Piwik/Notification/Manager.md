@@ -11,7 +11,7 @@ The class defines the following methods:
 
 - [`notify()`](#notify) &mdash; Post a notification to be shown in the status bar.
 - [`getAllNotificationsToDisplay()`](#getAllNotificationsToDisplay)
-- [`cancel()`](#cancel) &mdash; Cancel a previously registered notification.
+- [`cancel()`](#cancel) &mdash; Cancel a previously registered (or persistent) notification.
 
 ### `notify()` <a name="notify"></a>
 
@@ -19,7 +19,8 @@ Post a notification to be shown in the status bar.
 
 #### Description
 
-If a notification with the same id has already been posted by your application and has not yet been canceled, it will be replaced by the updated information.
+If a notification with the same id has already been posted
+by your application and has not yet been canceled, it will be replaced by the updated information.
 
 #### Signature
 
@@ -38,7 +39,7 @@ If a notification with the same id has already been posted by your application a
 
 ### `cancel()` <a name="cancel"></a>
 
-Cancel a previously registered notification.
+Cancel a previously registered (or persistent) notification.
 
 #### Signature
 
