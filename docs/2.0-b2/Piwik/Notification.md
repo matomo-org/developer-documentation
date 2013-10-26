@@ -27,20 +27,12 @@ Properties
 
 This class defines the following properties:
 
-- [`$context`](#$context)
 - [`$title`](#$title)
 - [`$message`](#$message)
 - [`$icon`](#$icon)
+- [`$context`](#$context)
 - [`$flags`](#$flags)
 - [`$priority`](#$priority)
-
-### `$context` <a name="context"></a>
-
-#### Signature
-
-- It is a **public** property.
-- Its type is not specified.
-
 
 ### `$title` <a name="title"></a>
 
@@ -59,6 +51,14 @@ This class defines the following properties:
 
 
 ### `$icon` <a name="icon"></a>
+
+#### Signature
+
+- It is a **public** property.
+- Its type is not specified.
+
+
+### `$context` <a name="context"></a>
 
 #### Signature
 
