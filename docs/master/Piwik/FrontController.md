@@ -37,7 +37,7 @@ use it to call controller actions of other plugins.
         echo $realtimeMap-&gt;render();
     }
 
-For a detailed explanation, see the documentation on http://piwik.org/docs/plugins/framework-overview
+For a detailed explanation, see the documentation [here](http://piwik.org/docs/plugins/framework-overview).
 
 
 Methods

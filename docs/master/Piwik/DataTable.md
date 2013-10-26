@@ -78,7 +78,6 @@ Non-essential, presentation filters should be queued.
 - **ArchiveProcessor** &amp;mdash; to learn how DataTables are persisted.
 - **DataTable\Renderer** &amp;mdash; to learn how DataTable data is exported to XML, JSON, etc.
 - **DataTable\Filter** &amp;mdash; to see all core Filters.
-- **DataTable\Manager** &amp;mdash; to learn how DataTables are loaded.
 
 ### Examples
 
@@ -222,7 +221,7 @@ The class defines the following methods:
 - [`setMetadataValues()`](#setMetadataValues) &mdash; Sets several metadata values by name.
 - [`setAllTableMetadata()`](#setAllTableMetadata) &mdash; Sets metadata erasing existing values.
 - [`setMaximumAllowedRows()`](#setMaximumAllowedRows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row).
-- [`walkPath()`](#walkPath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one, and the number of segments of the path successfully walked.
+- [`walkPath()`](#walkPath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one.
 - [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with its subtable&#039;s rows.
 - [`makeFromSimpleArray()`](#makeFromSimpleArray) &mdash; Returns a new DataTable created with data from a &#039;simple&#039; array.
 - [`fromSerializedArray()`](#fromSerializedArray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
@@ -965,9 +964,12 @@ rows are summed to the summary row.
 
 ### `walkPath()` <a name="walkPath"></a>
 
-Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one, and the number of segments of the path successfully walked.
+Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one.
 
 #### Description
+
+The number of path segments that
+were successfully walked is also returned.
 
 If $missingRowColumns is supplied, the specified path is created. When
 a subtable is encountered w/o the queried label, a new row is created
