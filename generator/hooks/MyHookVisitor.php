@@ -145,7 +145,8 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
             'formatted' => $docComment->getReformattedText(),
             'shortDesc' => trim($parsedDoc->getShortDesc()),
             'longDesc'  => trim($parsedDoc->getLongDesc()),
-            'ignore'    => !empty($ignore)
+            'ignore'    => !empty($ignore),
+            'params'    => $parsedDoc->getTag('param')
         );
     }
 

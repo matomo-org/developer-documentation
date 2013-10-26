@@ -73,6 +73,14 @@ _Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piw
 {{ hook.comment.shortDesc|raw }}{% if hook.comment.longDesc %} {{ hook.comment.longDesc|raw }}{% endif %}
 {% endif %}
 
+
+{% if hook.comment and hook.comment.params %}
+Parameters:
+{% for param in hook.comment.params %}
+- {% if param[0] and param[0][0] and param[0][0][0] %}{{ param[0][0][0] }}{% endif %}{% if param[1] %} ${{ param[1] }}{% endif %}{% if param[1] %} {{ param[2] }}{% endif %}
+{% endfor %}
+{% endif %}
+
 {% if hook.arguments %}
 
 Callback Signature:
