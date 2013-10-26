@@ -1426,7 +1426,7 @@ Usages:
 
 
 #### ViewDataTable.getDefaultType
-_Defined in [Piwik/ViewDataTable/Factory](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php) in line [156](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php#L156)_
+_Defined in [Piwik/ViewDataTable/Factory](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php) in line [165](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php#L165)_
 
 Triggered when gathering the default view types for all available reports. By default the HtmlTable
 visualization is used. If you define your own report, you may want to subscribe to this event to
