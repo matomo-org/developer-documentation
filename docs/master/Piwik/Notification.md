@@ -121,7 +121,7 @@ The priority of the notification, the higher the priority, the higher the order.
 #### Description
 
 Notifications having the
-highest priority will be displayed first and all other notifications below.
+highest priority will be displayed first and all other notifications below. See self::PRIORITY_*
 
 #### Signature
 
@@ -135,6 +135,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct)
 - [`hasNoClear()`](#hasNoClear)
+- [`getPriority()`](#getPriority)
 
 ### `__construct()` <a name="__construct"></a>
 
@@ -148,6 +149,13 @@ The class defines the following methods:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the message is empty.
 
 ### `hasNoClear()` <a name="hasNoClear"></a>
+
+#### Signature
+
+- It is a **public** method.
+- It does not return anything.
+
+### `getPriority()` <a name="getPriority"></a>
 
 #### Signature
 
