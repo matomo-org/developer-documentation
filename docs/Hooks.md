@@ -467,7 +467,7 @@ Usages:
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 
 #### Live.getExtraVisitorDetails
-_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [367](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L367)_
+_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [371](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L371)_
 
 Triggered in the Live.getVisitorProfile API method. Plugins can use this event
 to discover and add extra data to visitor profiles.
