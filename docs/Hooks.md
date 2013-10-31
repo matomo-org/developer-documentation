@@ -1128,7 +1128,7 @@ Usages:
 - [Tracker.setVisitorIp](#trackersetvisitorip)
 
 #### Tracker.detectReferrerSearchEngine
-_Defined in [Piwik/Tracker/Referrer](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php) in line [148](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php#L148)_
+_Defined in [Piwik/Tracker/Referrer](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php) in line [143](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php#L143)_
 
 Triggered when detecting the search engine of a referrer URL. Plugins can use this event to provide custom search engine detection
 logic.
