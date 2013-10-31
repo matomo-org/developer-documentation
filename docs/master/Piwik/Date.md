@@ -54,6 +54,7 @@ The class defines the following methods:
 - [`__toString()`](#__toString) &mdash; See [toString](#toString).
 - [`compareWeek()`](#compareWeek) &mdash; Performs three-way comparison of the week of the current date against the given `$date`&#039;s week.
 - [`compareMonth()`](#compareMonth) &mdash; Performs three-way comparison of the month of the current date against the given `$date`&#039;s month.
+- [`compareYear()`](#compareYear) &mdash; Performs three-way comparison of the month of the current date against the given `$date`&#039;s year.
 - [`isToday()`](#isToday) &mdash; Returns true if current date is today.
 - [`now()`](#now) &mdash; Returns a date object set to now in UTC (same as [today](#today), except that the time is also set).
 - [`today()`](#today) &mdash; Returns a date object set to today at midnight in UTC.
@@ -249,6 +250,18 @@ Performs three-way comparison of the month of the current date against the given
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../Piwik/Date.md))
 - _Returns:_ Returns `0` if the current month is equal to `$date`&#039;s, `-1` if the current month is earlier or `1` if the current month is later.
+    - `int`
+
+### `compareYear()` <a name="compareYear"></a>
+
+Performs three-way comparison of the month of the current date against the given `$date`&#039;s year.
+
+#### Signature
+
+- It is a **public** method.
+- It accepts the following parameter(s):
+    - `$date` ([`Date`](../Piwik/Date.md))
+- _Returns:_ Returns `0` if the current year is equal to `$date`&#039;s, `-1` if the current year is earlier or `1` if the current year is later.
     - `int`
 
 ### `isToday()` <a name="isToday"></a>
