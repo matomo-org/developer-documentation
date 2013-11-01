@@ -1203,7 +1203,7 @@ Usages:
 
 
 #### Tracker.recordAction
-_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [350](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L350)_
+_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [333](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L333)_
 
 Triggered after successfully logging an action for a visit.
 
