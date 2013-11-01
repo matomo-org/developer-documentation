@@ -49,7 +49,7 @@ Constructor.
     - `$objectInstance`
     - `$methodName`
     - `$methodParameter`
-    - `$scheduledTime` (`Piwik\ScheduledTime`)
+    - `$scheduledTime`
     - `$priority`
 - It does not return anything.
 
