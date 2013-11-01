@@ -3,7 +3,12 @@
 ScheduledTask
 =============
 
-ScheduledTask is used by the task scheduler and by plugins to configure runnable tasks.
+Contains metadata describing and referencing a chunk of PHP code that should be executed regularly.
+
+Description
+-----------
+
+See the [TaskScheduler](#) docs to learn more about scheduled tasks.
 
 
 Constants
@@ -17,117 +22,54 @@ This class defines the following constants:
 - [`HIGH_PRIORITY`](#HIGH_PRIORITY)
 - [`HIGHEST_PRIORITY`](#HIGHEST_PRIORITY)
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$objectInstance`](#$objectInstance) &mdash; Object instance on which the method will be executed by the task scheduler
-- [`$className`](#$className) &mdash; Class name where the specified method is located
-- [`$methodName`](#$methodName) &mdash; Class method to run when task is scheduled
-- [`$methodParameter`](#$methodParameter) &mdash; Parameter to pass to the executed method
-- [`$scheduledTime`](#$scheduledTime) &mdash; The scheduled time policy
-- [`$priority`](#$priority) &mdash; The priority of a task.
-
-### `$objectInstance` <a name="objectInstance"></a>
-
-Object instance on which the method will be executed by the task scheduler
-
-#### Signature
-
-- It is a **public** property.
-- It is a(n) `string` value.
-
-### `$className` <a name="className"></a>
-
-Class name where the specified method is located
-
-#### Signature
-
-- It is a **public** property.
-- It is a(n) `string` value.
-
-### `$methodName` <a name="methodName"></a>
-
-Class method to run when task is scheduled
-
-#### Signature
-
-- It is a **public** property.
-- It is a(n) `string` value.
-
-### `$methodParameter` <a name="methodParameter"></a>
-
-Parameter to pass to the executed method
-
-#### Signature
-
-- It is a **public** property.
-- It is a(n) `string` value.
-
-### `$scheduledTime` <a name="scheduledTime"></a>
-
-The scheduled time policy
-
-#### Signature
-
-- It is a **public** property.
-- It is a(n) `Piwik\ScheduledTime` value.
-
-### `$priority` <a name="priority"></a>
-
-The priority of a task.
-
-#### Description
-
-Affects the order in which this task will be run.
-
-#### Signature
-
-- It is a **public** property.
-- It is a(n) `int` value.
-
 Methods
 -------
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct)
-- [`getObjectInstance()`](#getObjectInstance) &mdash; Return the object instance on which the method should be executed
-- [`getClassName()`](#getClassName) &mdash; Return class name
-- [`getMethodName()`](#getMethodName) &mdash; Return method name
-- [`getMethodParameter()`](#getMethodParameter) &mdash; Return method parameter
-- [`getScheduledTime()`](#getScheduledTime) &mdash; Return scheduled time
-- [`getRescheduledTime()`](#getRescheduledTime) &mdash; Return the rescheduled time in milliseconds
-- [`getPriority()`](#getPriority) &mdash; Return the task priority.
-- [`getName()`](#getName)
+- [`__construct()`](#__construct) &mdash; Constructor.
+- [`getObjectInstance()`](#getObjectInstance) &mdash; Return the object instance on which the method should be executed.
+- [`getClassName()`](#getClassName) &mdash; Returns the class name that contains the method to execute regularly.
+- [`getMethodName()`](#getMethodName) &mdash; Returns the method name that will be regularly executed.
+- [`getMethodParameter()`](#getMethodParameter) &mdash; Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
+- [`getScheduledTime()`](#getScheduledTime) &mdash; Returns a [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
+- [`getRescheduledTime()`](#getRescheduledTime) &mdash; Returns the time in milliseconds when this task will be executed next.
+- [`getPriority()`](#getPriority) &mdash; Returns the task priority.
+- [`getName()`](#getName) &mdash; Returns a unique name for this scheduled task.
 - [`getTaskName()`](#getTaskName)
 
 ### `__construct()` <a name="__construct"></a>
+
+Constructor.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$_objectInstance`
-    - `$_methodName`
-    - `$_methodParameter`
-    - `$_scheduledTime`
-    - `$_priority`
+    - `$objectInstance`
+    - `$methodName`
+    - `$methodParameter`
+    - `$scheduledTime` (`Piwik\ScheduledTime`)
+    - `$priority`
 - It does not return anything.
 
 ### `getObjectInstance()` <a name="getObjectInstance"></a>
 
-Return the object instance on which the method should be executed
+Return the object instance on which the method should be executed.
+
+#### Description
+
+Returns a class
+name if the method is static.
 
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `string` value.
+- It returns a(n) `mixed` value.
 
 ### `getClassName()` <a name="getClassName"></a>
 
-Return class name
+Returns the class name that contains the method to execute regularly.
 
 #### Signature
 
@@ -136,7 +78,7 @@ Return class name
 
 ### `getMethodName()` <a name="getMethodName"></a>
 
-Return method name
+Returns the method name that will be regularly executed.
 
 #### Signature
 
@@ -145,16 +87,18 @@ Return method name
 
 ### `getMethodParameter()` <a name="getMethodParameter"></a>
 
-Return method parameter
+Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
 
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `string` value.
+- It can return one of the following values:
+    - `string`
+    - `null`
 
 ### `getScheduledTime()` <a name="getScheduledTime"></a>
 
-Return scheduled time
+Returns a [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
 
 #### Signature
 
@@ -163,7 +107,7 @@ Return scheduled time
 
 ### `getRescheduledTime()` <a name="getRescheduledTime"></a>
 
-Return the rescheduled time in milliseconds
+Returns the time in milliseconds when this task will be executed next.
 
 #### Signature
 
@@ -172,12 +116,12 @@ Return the rescheduled time in milliseconds
 
 ### `getPriority()` <a name="getPriority"></a>
 
-Return the task priority.
+Returns the task priority.
 
 #### Description
 
 The priority will be an integer whose value is
-between ScheduledTask::HIGH_PRIORITY and ScheduledTask::LOW_PRIORITY.
+between [ScheduledTask::HIGH_PRIORITY](#) and [ScheduledTask::LOW_PRIORITY](#).
 
 #### Signature
 
@@ -186,10 +130,21 @@ between ScheduledTask::HIGH_PRIORITY and ScheduledTask::LOW_PRIORITY.
 
 ### `getName()` <a name="getName"></a>
 
+Returns a unique name for this scheduled task.
+
+#### Description
+
+The name is stored in the DB and is used
+to store when tasks were last executed. The name is created using:
+
+- the class name that contains the method to execute,
+- the name of the method to regularly execute,
+- and the value that is passed to the executed task.
+
 #### Signature
 
 - It is a **public** method.
-- It does not return anything.
+- It returns a(n) `string` value.
 
 ### `getTaskName()` <a name="getTaskName"></a>
 

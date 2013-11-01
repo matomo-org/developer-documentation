@@ -1081,7 +1081,7 @@ Usages:
 - [TaskScheduler.getScheduledTasks](#taskschedulergetscheduledtasks)
 
 #### TaskScheduler.getScheduledTasks
-_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [81](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L81)_
+_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [95](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L95)_
 
 Triggered when the TaskScheduler runs scheduled tasks. Collects all the tasks that
 will be run.

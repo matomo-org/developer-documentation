@@ -14,6 +14,20 @@ weekly, monthly, etc.). They are registered with **TaskScheduler** through the
 
 Tasks are executed when the cron archive.php script is executed.
 
+### Scheduling Tasks
+
+**TODO**
+
+### Examples
+
+**Scheduling a task**
+
+    // TODO
+
+**Executing all pending tasks**
+
+    // TODO
+
 
 Constants
 ---------
