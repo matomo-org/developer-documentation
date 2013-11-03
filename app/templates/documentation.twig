@@ -3,17 +3,12 @@
 {% block content %}
     <div class="col-md-3">
         <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#introduction"><i class="icon-chevron-right"></i> Introduction</a></li>
-            <li><a href="#plugins"><i class="icon-chevron-right"></i> Plugins</a></li>
-            <li class=""><a href="#themes"><i class="icon-chevron-right"></i> Themes</a></li>
-            <li class=""><a href="#marketplace"><i class="icon-chevron-right"></i> Marketplace</a></li>
-            <li><a href="#tracking-api"><i class="icon-chevron-right"></i> Tracking API</a></li>
-            <li><a href="#reporting-api"><i class="icon-chevron-right"></i> Reporting API</a></li>
-            <li><a href="#faq"><i class="icon-chevron-right"></i> FAQ</a></li>
-            <li><a href="#use-cases"><i class="icon-chevron-right"></i> Use cases</a></li>
+            {% for url,item in menu %}
+                <li><a href="/{{ url }}"><i class="icon-chevron-right"></i> {{ item.title }}</a></li>
+            {% endfor %}
         </ul>
     </div>
     <div class="col-md-9">
-        {{ documentation|raw }}
+        {{ doc|raw }}
     </div>
 {% endblock %}

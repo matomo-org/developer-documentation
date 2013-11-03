@@ -12,8 +12,15 @@
     <script src="/js/html5shiv.3.7.0.js"></script>
     <script src="/js/respond.min.1.3.0.js"></script>
     <![endif]-->
+
+    <style type="text/css">
+        .jumbotron {
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+    </style>
 </head>
-<body style="padding-top: 80px;">
+<body>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -26,11 +33,11 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="http://dev.piwik.org">Tickets</a></li>
-                <li><a href="http://dev.piwik.org">GitHub</a></li>
-                <li><a href="#about">About</a></li>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/documentation">Documentation</a></li>
+                <li><a href="/api-reference">API Reference</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="https://github.com/piwik/piwik">GitHub</a></li>
                 <li><a href="http://piwik.org">Piwik</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -44,10 +51,22 @@
             <p>This is the official Piwik developer website where you find resources to extend Piwik.</p>
         </div>
     </div>
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+        }
+    </style>
+{% else %}
+    <style type="text/css">
+        body {
+            padding-top: 80px;
+        }
+    </style>
 {% endif %}
 
 <div class="container">
     {% block content %}
+        {{ content|raw }}
     {% endblock %}
 
     <hr>
