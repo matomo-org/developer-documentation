@@ -2,11 +2,11 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
-git checkout docs
-rm -rf cache
-mkdir cache
-rm -rf docs
-mkdir docs
+git checkout docs/generated
+rm -rf docs/cache
+mkdir docs/cache
+rm -rf docs/generated
+mkdir docs/generated
 php generator/vendor/tsteur/sami/sami.php update generator/config.php
 cd piwik
 git checkout master

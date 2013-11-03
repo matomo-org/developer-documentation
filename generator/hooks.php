@@ -20,7 +20,7 @@ require $rootDir . '/generator/vendor/nikic/php-parser/lib/bootstrap.php';
 require __DIR__ . '/hooks/Hooks.php';
 ini_set('xdebug.max_nesting_level', 2000);
 
-$target   = $rootDir . '/docs/Hooks.md';
+$target   = $rootDir . '/docs/generated/Hooks.md';
 
 $files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(PIWIK_DOCUMENT_ROOT));
 $phpFiles = new RegexIterator($files, '/piwik\/(core|plugins)(.*)\.php$/');

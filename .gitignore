@@ -1,7 +1,9 @@
+.DS_Store
 vendor
 generator/vendor
 generator/composer.phar
 cache
+docs/cache
 app/vendor
 app/composer.phar
 templates/cache/*

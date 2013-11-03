@@ -44,8 +44,8 @@ return new Sami($iterator, array(
     'theme'                => 'markdown',
     'versions'             => $versions,
     'title'                => 'Piwik Plugin API',
-    'build_dir'            => $rootDir.'/docs/%version%',
-    'cache_dir'            => $rootDir.'/cache/%version%',
+    'build_dir'            => $rootDir.'/docs/generated/%version%',
+    'cache_dir'            => $rootDir.'/docs/cache/%version%',
     'template_dirs'        => array($rootDir.'/generator/template'),
     'default_opened_level' => 5,
     'filter'               => new ApiFilter()
