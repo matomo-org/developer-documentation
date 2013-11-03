@@ -36,7 +36,6 @@ The abstract class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`factory()`](#factory) &mdash; Creates a new Period instance with a period ID and Date instance.
 - [`isMultiplePeriod()`](#isMultiplePeriod) &mdash; Returns true $dateString and $period correspond to multiple periods.
-- [`advancedFactory()`](#advancedFactory) &mdash; The advanced factory method is easier to use from the API than the factory method above.
 - [`makePeriodFromQueryParams()`](#makePeriodFromQueryParams) &mdash; Creates a period instance using a Site instance and two strings describing the period &amp; date.
 - [`getDateStart()`](#getDateStart) &mdash; Returns the first day of the period.
 - [`getDateEnd()`](#getDateEnd) &mdash; Returns the last day of the period.
@@ -46,7 +45,6 @@ The abstract class defines the following methods:
 - [`getSubperiods()`](#getSubperiods) &mdash; Returns the set of Period instances that together make up this period.
 - [`toString()`](#toString) &mdash; Returns a list of strings representing the current period.
 - [`__toString()`](#__toString) &mdash; See [toString](#toString).
-- [`get()`](#get)
 - [`getPrettyString()`](#getPrettyString) &mdash; Returns a pretty string describing this period.
 - [`getLocalizedShortString()`](#getLocalizedShortString) &mdash; Returns a short string description of this period that is localized with the currently used language.
 - [`getLocalizedLongString()`](#getLocalizedLongString) &mdash; Returns a long string description of this period that is localized with the currently used language.
@@ -76,7 +74,7 @@ Note: This method cannot create Range periods.
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$strPeriod`
-    - `$date` ([`Date`](../Piwik/Date.md))
+    - `$date`
 - It returns a(n) [`Period`](../Piwik/Period.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$strPeriod` is invalid.
@@ -92,25 +90,6 @@ Returns true $dateString and $period correspond to multiple periods.
     - `$dateString`
     - `$period`
 - It returns a(n) `boolean` value.
-
-### `advancedFactory()` <a name="advancedFactory"></a>
-
-The advanced factory method is easier to use from the API than the factory method above.
-
-#### Description
-
-It doesn&#039;t require an instance of Date and works for
-period=range. Generally speaking, anything that can be passed as period
-and range to the API methods can directly be forwarded to this factory
-method in order to get a suitable instance of Period.
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$strPeriod`
-    - `$strDate`
-- It returns a(n) [`Period`](../Piwik/Period.md) value.
 
 ### `makePeriodFromQueryParams()` <a name="makePeriodFromQueryParams"></a>
 
@@ -206,15 +185,6 @@ See [toString](#toString).
 
 - It is a **public** method.
 - It returns a(n) `string` value.
-
-### `get()` <a name="get"></a>
-
-#### Signature
-
-- It is a **public** method.
-- It accepts the following parameter(s):
-    - `$part`
-- It does not return anything.
 
 ### `getPrettyString()` <a name="getPrettyString"></a>
 

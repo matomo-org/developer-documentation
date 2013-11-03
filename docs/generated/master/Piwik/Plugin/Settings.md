@@ -16,6 +16,7 @@ This abstract class defines the following constants:
 - [`TYPE_STRING`](#TYPE_STRING)
 - [`TYPE_BOOL`](#TYPE_BOOL)
 - [`TYPE_ARRAY`](#TYPE_ARRAY)
+- [`FIELD_RADIO`](#FIELD_RADIO)
 - [`FIELD_TEXT`](#FIELD_TEXT)
 - [`FIELD_TEXTAREA`](#FIELD_TEXTAREA)
 - [`FIELD_CHECKBOX`](#FIELD_CHECKBOX)

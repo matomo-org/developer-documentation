@@ -54,7 +54,7 @@ This is a complete list of available classes:
 - [`Piwik\Metrics`](Piwik/Metrics.md) &mdash; This class contains metadata regarding core metrics and contains several related helper functions.
 - [`Piwik\MetricsFormatter`](Piwik/MetricsFormatter.md) &mdash; Contains helper function that format numerical values in different ways.
 - [`Piwik\Nonce`](Piwik/Nonce.md) &mdash; Nonce class.
-- [`Piwik\Notification`](Piwik/Notification.md)
+- [`Piwik\Notification`](Piwik/Notification.md) &mdash; Notification class.
 - [`Piwik\Notification\Manager`](Piwik/Notification/Manager.md)
 - [`Piwik\Option`](Piwik/Option.md) &mdash; Convenient key-value storage for user specified options and temporary data that needs to be persisted beyond one request.
 - [`Piwik\Period`](Piwik/Period.md) &mdash; Date range representation.
@@ -80,7 +80,6 @@ This is a complete list of available classes:
 - [`Piwik\Plugins\DBStats\Controller`](Piwik/Plugins/DBStats/Controller.md)
 - [`Piwik\Plugins\Dashboard\Controller`](Piwik/Plugins/Dashboard/Controller.md) &mdash; Dashboard Controller
 - [`Piwik\Plugins\DevicesDetection\Controller`](Piwik/Plugins/DevicesDetection/Controller.md)
-- [`Piwik\Plugins\ExamplePluginTemplate\Controller`](Piwik/Plugins/ExamplePluginTemplate/Controller.md)
 - [`Piwik\Plugins\ExamplePlugin\Controller`](Piwik/Plugins/ExamplePlugin/Controller.md)
 - [`Piwik\Plugins\ExampleRssWidget\Controller`](Piwik/Plugins/ExampleRssWidget/Controller.md)
 - [`Piwik\Plugins\ExampleUI\Controller`](Piwik/Plugins/ExampleUI/Controller.md)
@@ -113,7 +112,7 @@ This is a complete list of available classes:
 - [`Piwik\Plugins\VisitsSummary\Controller`](Piwik/Plugins/VisitsSummary/Controller.md)
 - [`Piwik\Plugins\Widgetize\Controller`](Piwik/Plugins/Widgetize/Controller.md)
 - [`Piwik\RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to &quot;Others&quot; and allows for some more fancy things that can be configured via method calls of this class.
-- [`Piwik\ScheduledTask`](Piwik/ScheduledTask.md) &mdash; ScheduledTask is used by the task scheduler and by plugins to configure runnable tasks.
+- [`Piwik\ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata describing and referencing a chunk of PHP code that should be executed regularly.
 - [`Piwik\ScheduledTime\Daily`](Piwik/ScheduledTime/Daily.md) &mdash; Daily class is used to schedule tasks every day.
 - [`Piwik\ScheduledTime\Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.
 - [`Piwik\ScheduledTime\Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; Monthly class is used to schedule tasks every month.
