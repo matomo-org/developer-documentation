@@ -6,6 +6,8 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
+use helpers\Markdown;
+
 function send404NotFound(\Slim\Slim $app)
 {
 
@@ -16,7 +18,10 @@ $app->get('/', function () use ($app) {
 });
 
 $app->get('/hooks', function () use ($app) {
-    $app->render('layout.twig', array());
+    $md = new Markdown(file_get_contents('../../docs/Hooks.md'));
+    $md->transform();
+
+    $app->render('documentation.twig', array('documentation' => $md->transform()));
 });
 
 $app->get('/api', function () use ($app) {
