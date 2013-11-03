@@ -1,2 +1,5 @@
 vendor
 cache
+app/vendor
+app/composer.phar
+templates/cache/*

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Piwik - Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.3.7.0.js"></script>
+    <script src="/js/respond.min.1.3.0.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="http://dev.piwik.org">Tickets</a></li>
+                <li><a href="http://dev.piwik.org">GitHub</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="http://piwik.org">Piwik</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+{% if isHome is defined %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Piwik Developer</h1>
+            <p>This is the official Piwik developer website where you find resources to extend Piwik.</p>
+        </div>
+    </div>
+{% endif %}
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+
+    <hr>
+
+    <footer>
+        <p>&copy; Piwik.org</p>
+    </footer>
+</div>
+
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

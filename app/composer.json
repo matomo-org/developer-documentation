@@ -1,0 +1,14 @@
+{
+    "require": {
+        "twig/twig": "1.12.*",
+        "slim/slim": "2.*",
+        "slim/extras": "2.*",
+        "slim/views": "0.1.*",
+        "dflydev/markdown": "v1.0.2"
+    },
+    "autoload":{
+        "psr-0":{
+            "": ""
+        }
+    }
+}
