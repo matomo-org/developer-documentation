@@ -26,7 +26,6 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\Dashboard`](Piwik/Plugins/Dashboard)
 - [`Piwik\Plugins\DevicesDetection`](Piwik/Plugins/DevicesDetection)
 - [`Piwik\Plugins\ExamplePlugin`](Piwik/Plugins/ExamplePlugin)
-- [`Piwik\Plugins\ExamplePluginTemplate`](Piwik/Plugins/ExamplePluginTemplate)
 - [`Piwik\Plugins\ExampleRssWidget`](Piwik/Plugins/ExampleRssWidget)
 - [`Piwik\Plugins\ExampleUI`](Piwik/Plugins/ExampleUI)
 - [`Piwik\Plugins\Feedback`](Piwik/Plugins/Feedback)

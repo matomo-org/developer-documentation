@@ -49,7 +49,6 @@ The class defines the following methods:
 - [`postEvent()`](#postEvent) &mdash; Post an event to Piwik&#039;s event dispatcher which will execute the event&#039;s observers.
 - [`addAction()`](#addAction) &mdash; Register an observer to an event.
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation ID.
-- [`translateException()`](#translateException) &mdash; Returns translated string or given message if translation is not found.
 
 ### `getCurrentUserEmail()` <a name="getCurrentUserEmail"></a>
 
@@ -317,22 +316,6 @@ cannot be found for the ID, the ID is returned.
 - It is a **public static** method.
 - It accepts the following parameter(s):
     - `$translationId`
-    - `$args`
-- It returns a(n) `string` value.
-
-### `translateException()` <a name="translateException"></a>
-
-Returns translated string or given message if translation is not found.
-
-#### Description
-
-This function does not throw any exception. Use it to translate exceptions.
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$message`
     - `$args`
 - It returns a(n) `string` value.
 
