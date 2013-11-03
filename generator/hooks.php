@@ -14,9 +14,9 @@ define('PIWIK_DOCUMENT_ROOT', $rootDir . '/piwik');
 define('PIWIK_USER_PATH', PIWIK_DOCUMENT_ROOT);
 define('PIWIK_INCLUDE_PATH', PIWIK_DOCUMENT_ROOT);
 
-require $rootDir . '/vendor/autoload.php';
+require $rootDir . '/generator/vendor/autoload.php';
 require_once PIWIK_INCLUDE_PATH . '/core/Loader.php';
-require $rootDir . '/vendor/nikic/php-parser/lib/bootstrap.php';
+require $rootDir . '/generator/vendor/nikic/php-parser/lib/bootstrap.php';
 require __DIR__ . '/hooks/Hooks.php';
 ini_set('xdebug.max_nesting_level', 2000);
 

@@ -12,7 +12,7 @@ define('PIWIK_DOCUMENT_ROOT', $rootDir . '/piwik');
 define('PIWIK_USER_PATH', PIWIK_DOCUMENT_ROOT);
 define('PIWIK_INCLUDE_PATH', PIWIK_DOCUMENT_ROOT);
 
-require_once $rootDir . '/vendor/autoload.php';
+require_once $rootDir . '/generator/vendor/autoload.php';
 require_once PIWIK_INCLUDE_PATH . '/core/Loader.php';
 require_once __DIR__ . '/ApiFilter.php';
 

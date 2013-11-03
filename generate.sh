@@ -7,7 +7,7 @@ rm -rf cache
 mkdir cache
 rm -rf docs
 mkdir docs
-php vendor/tsteur/sami/sami.php update generator/config.php
+php generator/vendor/tsteur/sami/sami.php update generator/config.php
 cd piwik
 git checkout master
 git pull

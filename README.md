@@ -19,9 +19,10 @@ GPLv3 or later
  * Clone repository
  * git submodule init
  * git submodule update
- * php composer.phar install
+ * cd generator && php composer.phar install
+ * cd app && php composer.phar install
 
-## Usage
+## Generate documentation
 
  * Execute `./generate.sh`
  * Commit

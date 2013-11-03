@@ -1,4 +1,6 @@
 vendor
+generator/vendor
+generator/composer.phar
 cache
 app/vendor
 app/composer.phar
