@@ -51,13 +51,15 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
 
 $app->get('/api-reference/:names+', function ($names) use ($app) {
 
-    $file = implode('/', $names);
+    $className = implode('/', $names);
+    $className = str_replace('.md', '', $className);
 
+    $file = $className;
     if ('Piwik/' != substr($file, 0, 6)) {
         $file = 'Piwik/' . $file;
     }
 
-    $file = 'generated/master/' . str_replace('.md', '', $file);
+    $file = 'generated/master/' . $file;
 
     $doc  = new Guide($file);
 
@@ -65,7 +67,7 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
         'activeMenu'   => 'api-reference',
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
-        'sectionTitle' => $doc->getTitle()
+        'sectionTitle' => $className
     ));
 
 });
