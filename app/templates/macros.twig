@@ -1,0 +1,9 @@
+{% macro teaser_list(teasers) %}
+    {% for url,item in teasers %}
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.description }}</p>
+            <p><a class="btn btn-primary" href="{{ item.url }}" role="button">View details &raquo;</a></p>
+        </div>
+    {% endfor %}
+{% endmacro %}

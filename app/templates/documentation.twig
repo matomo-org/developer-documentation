@@ -1,4 +1,5 @@
 {% extends 'layout/base.twig' %}
+{% from "macros.twig" import teaser_list %}
 
 {% block headline %}
     {% set title = 'Guides' %}
@@ -6,12 +7,5 @@
 {% endblock %}
 
 {% block content %}
-
-    {% for url,item in guides %}
-        <div class="col-md-4">
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.description }}</p>
-            <p><a class="btn btn-default" href="{{ item.url }}" role="button">View details &raquo;</a></p>
-        </div>
-    {% endfor %}
+    {{ teaser_list(guides) }}
 {% endblock %}
