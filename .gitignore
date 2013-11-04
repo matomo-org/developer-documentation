@@ -7,3 +7,5 @@ docs/cache
 app/vendor
 app/composer.phar
 templates/cache/*
+*.log
+app/tmp/logs/*
