@@ -47,9 +47,11 @@ class Markdown {
 
         $parser = new MarkdownParser();
 
-        $html     = $parser->transform($this->markdown);
-        $config   = \HTMLPurifier_Config::createDefault();
-        $config->set('HTML.Allowed', 'p,h1,h2,h3,h4,h5,strong,em,b,a[href],i,span,ul,ol,li,cite,img[src]');
+        $html   = $parser->transform($this->markdown);
+
+        $config = \HTMLPurifier_Config::createDefault();
+        $config->set('HTML.Allowed', 'p,h1,h2,h3,h4,h5,code,pre,strong,em,b,a[href|name|id],i,span,ul,ol,li,cite,img[src]');
+        $config->set('Attr.EnableID', true);
         $purifier = new \HTMLPurifier($config);
 
         $this->transformedHtml = $purifier->purify($html);
