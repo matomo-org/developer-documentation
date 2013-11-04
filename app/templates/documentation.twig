@@ -1,6 +1,12 @@
 {% extends 'layout/base.twig' %}
 
+{% block headline %}
+    {% set title = 'Guides' %}
+    {{ parent() }}
+{% endblock %}
+
 {% block content %}
+
     {% for url,item in menu %}
         <div class="col-md-4">
             <h2>{{ item.title }}</h2>

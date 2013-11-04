@@ -1,5 +1,10 @@
 {% extends 'layout/base.twig' %}
 
+{% block headline %}
+    {% set title = 'API Reference' %}
+    {{ parent() }}
+{% endblock %}
+
 {% block content %}
     {% for url,item in references %}
         <div class="col-md-4">
