@@ -13,6 +13,10 @@ body {
     border-bottom: 1px solid #eeeeee;
 }
 
+.documentation code {
+    white-space: pre;
+}
+
 #sidebar .panel-body {
     padding:0px;
 }
