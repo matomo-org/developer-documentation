@@ -23,8 +23,8 @@
 
                         <ul class="nav">
 
-                        {% for section in sections %}
-                            <li><a href="#{{ section }}">{{ section }}</a></li>
+                        {% for sectionId,section in sections %}
+                            <li><a href="#{{ sectionId }}">{{ section }}</a></li>
                         {% endfor %}
 
                         </ul>

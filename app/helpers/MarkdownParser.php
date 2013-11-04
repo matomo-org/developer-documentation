@@ -33,6 +33,7 @@ class MarkdownParser extends DefaultMarkdownParser {
     {
         $headlineText = preg_replace('/\s/', '-', $headlineText);
         $headlineText = preg_replace('/[^a-zA-Z0-9\-]/', '', $headlineText);
+        $headlineText = preg_replace('/(\-)+/', '-', $headlineText);
         $headlineText = strtolower($headlineText);
 
         return $headlineText;

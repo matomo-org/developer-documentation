@@ -42,12 +42,13 @@ class Markdown {
         $this->transformIfNeeded();
 
         $matches = array();
-        preg_match_all('/<h2>(.*)<\/h2>/', $this->transformedHtml, $matches);
+        preg_match_all('/<h2(.*?)>(.*)<\/h2>/', $this->transformedHtml, $matches);
 
-        if (!empty($matches[1])) {
-            $parsed = $matches[1];
-        } else {
-            $parsed = array();
+        $parsed = array();
+        if (!empty($matches[2])) {
+            foreach ($matches[2] as $headline) {
+                $parsed[MarkdownParser::headlineTextToId($headline)] = $headline;
+            }
         }
 
         return $parsed;
