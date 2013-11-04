@@ -8,7 +8,7 @@
 
 namespace helpers;
 
-class Guides {
+class Guide {
 
     private $name;
     private $markdown;

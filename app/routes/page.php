@@ -7,7 +7,7 @@
  */
 
 use helpers\Menu;
-use helpers\Guides;
+use helpers\Guide;
 use helpers\ApiReference;
 
 $app->view->setData('menu', Menu::getMainMenu());
@@ -18,14 +18,14 @@ $app->get('/', function () use ($app) {
 });
 
 $app->get('/guides', function () use ($app) {
-    $guides = Guides::getMainMenu();
+    $guides = Guide::getMainMenu();
 
     $app->render('documentation.twig', array('guides' => $guides, 'activeMenu' => 'guides'));
 });
 
 $app->get('/support', function () use ($app) {
 
-    $doc         = new Guides('support');
+    $doc         = new Guide('support');
     $renderedDoc = $doc->getRenderedContent();
 
     $app->render('layout/base.twig', array(
@@ -38,7 +38,7 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
     $references = ApiReference::getReferences();
     $file       = $references[$reference]['file'];
 
-    $doc = new Guides($file);
+    $doc = new Guide($file);
 
     $app->render('layout/documentation.twig', array(
         'activeMenu'   => 'api-reference',
@@ -59,7 +59,7 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
 
     $file = 'generated/master/' . str_replace('.md', '', $file);
 
-    $doc  = new Guides($file);
+    $doc  = new Guide($file);
 
     $app->render('layout/documentation.twig', array(
         'activeMenu'   => 'api-reference',
@@ -81,7 +81,7 @@ $app->get('/api-reference', function () use ($app) {
 
 $app->get('/guides/:category', function ($category) use ($app) {
 
-    $doc = new Guides($category);
+    $doc = new Guide($category);
 
     $app->render('layout/documentation.twig', array(
         'activeMenu'   => 'guides',
@@ -90,4 +90,4 @@ $app->get('/guides/:category', function ($category) use ($app) {
         'sectionTitle' => $doc->getTitle()
     ));
 
-})->conditions(array('category' => '(' . implode('|', array_keys(Guides::getMainMenu())) . ')'));
+})->conditions(array('category' => '(' . implode('|', array_keys(Guide::getMainMenu())) . ')'));
