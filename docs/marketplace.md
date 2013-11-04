@@ -1,13 +1,13 @@
 # Marketplace
 
-### Maximum exposure to your plugins and themes
+## Maximum exposure to your plugins and themes
 The Piwik Marketplace lets you share your Plugins or Themes with all Piwik users. You'll be able to:
  * Keep track of how many people downloaded your plugin
  * Give your plugin and your name lots of exposure in the official Piwik Marketplace!
  * (coming soon) Let people leave comments about your plugin
  * (coming soon) Get your plugin rated against the other Piwik plugins
 
-### Getting started
+## Getting started
 #### Naming your plugin
 Before you can list your plugin on the Marketplace, you'll need to choose a name for your plugin.
 The name is a unique identifier that distinguishes your plugin from all other plugins. We encourage you to choose a name that is short, but also reasonably descriptive.
@@ -88,7 +88,7 @@ Follow the steps to setup the WebHook for your repository:
 
 Now, when you commit a code change or a tag in your repository, the Piwik Marketplace will be notified. We are almost done publishing your plugin!
 
-### Publish your plugin
+## Publish your plugin
 
 At this stage you have committed your plugin code to your Github repository which contains at least a plugin.json and a Readme.md file. The post-receive hook will notify the Marketplace that a new tag is available.
 Publishing your plugin is now as simple as tagging the version in git and pushing the tag to GitHub:
@@ -103,11 +103,11 @@ You may use any tag name. If the manifest file is valid, the new Plugin version 
 If there was an error during the validation, you will receive an email with helpful tips.
 
 
-### Publish an updated version of your plugin
+## Publish an updated version of your plugin
 
 To publish an update of your plugin on the Marketplace, simply update the version number tag in the plugin.json, commit, and create a new tag to trigger the release.
 
-### Troubleshooting
+## Troubleshooting
 
 When you create the tag, the Piwik Marketplace will attempt to publish your new plugin's version. If any error is detected during the process, you will receive an email with helpful information on the problem and how to fix the problem.
 

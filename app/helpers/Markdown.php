@@ -41,14 +41,53 @@ class Markdown {
     {
         $this->transformIfNeeded();
 
-        $matches = array();
-        preg_match_all('/<h2(.*?)>(.*)<\/h2>/', $this->transformedHtml, $matches);
+        $sections = $this->getAvailableSectionsFromContent('h2', $this->transformedHtml);
+
+        if (empty($sections)) {
+            return array();
+        }
 
         $parsed = array();
-        if (!empty($matches[2])) {
-            foreach ($matches[2] as $headline) {
-                $parsed[MarkdownParser::headlineTextToId($headline)] = $headline;
+
+        foreach ($sections as $section) {
+
+            $content     = $this->getSectionContent($section);
+            $subSections = $this->getAvailableSectionsFromContent('h3', $content);
+
+            $sub = array();
+            foreach ($subSections as $subSection) {
+                $sub[] = array(
+                    'title'    => $subSection,
+                    'id'       => MarkdownParser::headlineTextToId($subSection),
+                    'children' => array()
+                );
             }
+
+            $parsed[] = array(
+                'title'    => $section,
+                'id'       => MarkdownParser::headlineTextToId($section),
+                'children' => $sub
+            );
+
+        }
+
+        return $parsed;
+    }
+
+    private function getSectionContent($sectionName)
+    {
+        $this->transformIfNeeded();
+
+        $sectionName = str_replace('/', '\/', $sectionName);
+        $matches = array();
+        $pattern = sprintf('/>%s<\/h2>(.*?)(<h2|$)/is', $sectionName);
+
+        preg_match($pattern, $this->transformedHtml, $matches);
+
+        if (!empty($matches[1])) {
+            $parsed = $matches[1];
+        } else {
+            $parsed = '';
         }
 
         return $parsed;
@@ -70,5 +109,22 @@ class Markdown {
         $purifier = new \HTMLPurifier($config);
 
         $this->transformedHtml = $purifier->purify($html);
+    }
+
+    private function getAvailableSectionsFromContent($headline, $content)
+    {
+        if (empty($content)) {
+            return array();
+        }
+
+        $regex = sprintf('/<%s(.*?)>(.*)<\/%s>/', $headline, $headline);
+
+        preg_match_all($regex, $content, $matches);
+
+        if (!empty($matches[2])) {
+            return $matches[2];
+        }
+
+        return array();
     }
 }

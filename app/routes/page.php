@@ -38,16 +38,12 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
     $references = ApiReference::getReferences();
     $file       = $references[$reference]['file'];
 
-    $doc         = new Guides($file);
-    $renderedDoc = $doc->getRenderedContent();
-
-    $menu = ApiReference::getReferences();
+    $doc = new Guides($file);
 
     $app->render('layout/documentation.twig', array(
-        'doc'         => $renderedDoc,
-        'activeGuide' => $reference,
         'activeMenu'  => 'api-reference',
-        'guides'      => $menu
+        'doc'         => $doc->getRenderedContent(),
+        'sections'    => $doc->getSections()
     ));
 
 })->conditions(array('reference' => '(' . implode('|', array_keys(ApiReference::getReferences())) . ')'));
@@ -59,17 +55,15 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
     if ('Piwik/' != substr($file, 0, 6)) {
         $file = 'Piwik/' . $file;
     }
+
     $file = 'generated/master/' . str_replace('.md', '', $file);
 
-    $doc         = new Guides($file);
-    $renderedDoc = $doc->getRenderedContent();
-
-    $menu = ApiReference::getReferences();
+    $doc  = new Guides($file);
 
     $app->render('layout/documentation.twig', array(
-        'doc'        => $renderedDoc,
         'activeMenu' => 'api-reference',
-        'guides'     => $menu
+        'doc'        => $doc->getRenderedContent(),
+        'sections'   => $doc->getSections()
     ));
 
 });
@@ -87,16 +81,12 @@ $app->get('/guides/:category', function ($category) use ($app) {
 
     $doc         = new Guides($category);
     $renderedDoc = $doc->getRenderedContent();
-
-    $mainMenu = Guides::getMainMenu();
-    $subMenu  = $doc->getSections();
+    $subMenu     = $doc->getSections();
 
     $app->render('layout/documentation.twig', array(
-        'doc'         => $renderedDoc,
-        'guides'      => $mainMenu,
-        'activeGuide' => $category,
-        'activeMenu' => 'guides',
-        'sections'    => $subMenu
+        'doc'           => $renderedDoc,
+        'activeMenu'    => 'guides',
+        'sections'      => $subMenu
     ));
 
 })->conditions(array('category' => '(' . implode('|', array_keys(Guides::getMainMenu())) . ')'));
