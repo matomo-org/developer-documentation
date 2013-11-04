@@ -47,6 +47,15 @@ class Guides {
         return $rendered;
     }
 
+    public function getSections()
+    {
+        $content = $this->getRawContent();
+
+        $md = new Markdown($content);
+
+        return $md->getAvailableSections();
+    }
+
     private static function getUrl($key)
     {
         return '/guides/' . $key;

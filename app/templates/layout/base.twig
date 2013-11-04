@@ -32,10 +32,12 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/guides">Guides</a></li>
-                <li><a href="/api-reference">API Reference</a></li>
-                <li><a href="/support">Support</a></li>
+                <li {% if isHome is defined and isHome %} class="active"{% endif %}><a href="/">Home</a></li>
+                {% for itemName, item in menu %}
+                    <li {% if itemName == activeMenu %} class="active"{% endif %}>
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% endfor %}
                 <li><a href="https://github.com/piwik/piwik" target="_blank">GitHub</a></li>
                 <li><a href="http://piwik.org" target="_blank">Piwik</a></li>
             </ul>
@@ -44,11 +46,13 @@
 </div>
 
 {% block headline %}
-    <div class="container">
-        <div class="col-md-12">
-            <h1>{{ title }}</h1>
+    {% if title is defined and title %}
+        <div class="container">
+            <div class="col-md-12">
+                <h1>{{ title }}</h1>
+            </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock %}
 
 <div class="container">

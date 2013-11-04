@@ -1,4 +1,4 @@
-## Use cases
+# Use cases
 ### Track additional user data
 ### Collect and archive custom data
 ### Display custom data using the User Interface Framework (table, graphs, clouds

@@ -1,4 +1,4 @@
-## Designing a custom theme
+# Designing a custom theme
 ### Images
 ### Stylesheets (less)
 #### Multiple stylesheet files

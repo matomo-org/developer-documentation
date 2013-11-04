@@ -1,4 +1,4 @@
-## Support
+# Support
 
 ### Forums
 ### Request new hooks or API

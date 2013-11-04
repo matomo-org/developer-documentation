@@ -1,12 +1,39 @@
 {% extends 'layout/base.twig' %}
 
 {% block content %}
+    <style type="text/css">
+        .bs-sidebar .nav .nav > li > a {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 30px;
+            font-size: 90%;
+        }
+        .bs-sidebar .nav > li > a {
+            display: block;
+            color: #716b7a;
+            padding: 5px 20px;
+        }
+    </style>
     <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked">
-            {% for item in menu %}
-                <li><a href="{{ item.url }}"><i class="icon-chevron-right"></i> {{ item.title }}</a></li>
+        <ul class="nav nav-pills nav-stacked bs-sidebar">
+            {% for name, item in guides %}
+                <li {% if activeGuide == name %} class="active"{% endif %}>
+                    <a href="{{ item.url }}"><i class="icon-chevron-right"></i> {{ item.title }}</a>
+                    {% if activeGuide == name %}
+
+                        <ul class="nav">
+
+                        {% for section in sections %}
+                            <li><a href="#{{ section }}">{{ section }}</a></li>
+                        {% endfor %}
+
+                        </ul>
+
+                    {% endif %}
+                </li>
             {% endfor %}
         </ul>
+
     </div>
     <div class="col-md-9">
         {{ doc|raw }}

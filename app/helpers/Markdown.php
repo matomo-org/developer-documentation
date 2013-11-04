@@ -39,6 +39,22 @@ class Markdown {
         return $this->transformedHtml;
     }
 
+    public function getAvailableSections()
+    {
+        $this->transformIfNeeded();
+
+        $matches = array();
+        preg_match_all('/<h2>(.*)<\/h2>/', $this->transformedHtml, $matches);
+
+        if (!empty($matches[1])) {
+            $parsed = $matches[1];
+        } else {
+            $parsed = array();
+        }
+
+        return $parsed;
+    }
+
     private function transformIfNeeded()
     {
         if (!empty($this->transformedHtml)) {
@@ -50,7 +66,7 @@ class Markdown {
         $html   = $parser->transform($this->markdown);
 
         $config = \HTMLPurifier_Config::createDefault();
-        $config->set('HTML.Allowed', 'p,h1,h2,h3,h4,h5,code,pre,strong,em,b,a[href|name|id],i,span,ul,ol,li,cite,img[src]');
+        $config->set('HTML.Allowed', 'p,h1[id],h2[id],h3[id],h4[id],h5,code,pre,strong,em,b,a[href|name|id],i,span,ul,ol,li,cite,img[src]');
         $config->set('Attr.EnableID', true);
         $purifier = new \HTMLPurifier($config);
 

@@ -1,4 +1,4 @@
-## Marketplace
+# Marketplace
 
 ### Maximum exposure to your plugins and themes
 The Piwik Marketplace lets you share your Plugins or Themes with all Piwik users. You'll be able to:

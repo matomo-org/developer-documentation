@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 ### Why you should build a plugin
 ### What can be done with the platform
 

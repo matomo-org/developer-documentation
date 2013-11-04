@@ -1,4 +1,4 @@
-## Implementing a plugin
+# Implementing a plugin
 ### Command line tool
 Piwik comes with a powerful command line tool to help you generating a plugin easily. The command line tool is called "console" and is located in the Piwik root directory.
 To get familiar with the command line tool enter either `./console` or `php console`. As you haven't specified any command yet, it will list you all available commands along with their descriptions. 
