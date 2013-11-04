@@ -14,7 +14,7 @@ Description
 
     class MyArchiver extends Archiver
     {
-        public function archiveDay()
+        public function aggregateDayReport()
         {
             $logAggregator = $this-&gt;getLogAggregator();
             
@@ -27,7 +27,7 @@ Description
             $archiveProcessor-&gt;insertBlobRecords(&#039;MyPlugin_myReport&#039;, $dataTable-&gt;getSerialized(500));
         }
         
-        public function archivePeriod()
+        public function aggregateMultipleReports()
         {
             $archiveProcessor = $this-&gt;getProcessor();
             $archiveProcessor-&gt;aggregateDataTableReports(&#039;MyPlugin_myReport&#039;, 500);
@@ -37,20 +37,20 @@ Description
 **Using Archiver in archiving events**
 
     // event observer for ArchiveProcessor.Day.compute
-    public function archiveDay(ArchiveProcessor\Day $archiveProcessor)
+    public function aggregateDayReport(ArchiveProcessor\Day $archiveProcessor)
     {
         $archiving = new Archiver($archiveProcessor);
         if ($archiving-&gt;shouldArchive()) {
-            $archiving-&gt;archiveDay();
+            $archiving-&gt;aggregateDayReport();
         }
     }
 
-    // event observer for ArchiveProcessor.Period.compute
-    public function archivePeriod(ArchiveProcessor\Period $archiveProcessor)
+    // event observer for ArchiveProcessor.aggregateMultipleReports
+    public function aggregateMultipleReports(ArchiveProcessor\Period $archiveProcessor)
     {
         $archiving = new Archiver($archiveProcessor);
         if ($archiving-&gt;shouldArchive()) {
-            $archiving-&gt;archivePeriod();
+            $archiving-&gt;aggregateMultipleReports();
         }
     }
 
@@ -61,8 +61,8 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`archiveDay()`](#archiveDay) &mdash; Archive data for a day period.
-- [`archivePeriod()`](#archivePeriod) &mdash; Archive data for a non-day period.
+- [`aggregateDayReport()`](#aggregateDayReport) &mdash; Archive data for a day period.
+- [`aggregateMultipleReports()`](#aggregateMultipleReports) &mdash; Archive data for a non-day period.
 - [`shouldArchive()`](#shouldArchive) &mdash; Returns true if the current plugin should be archived or not.
 
 ### `__construct()` <a name="__construct"></a>
@@ -76,7 +76,7 @@ Constructor.
     - `$processing` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md))
 - It does not return anything.
 
-### `archiveDay()` <a name="archiveDay"></a>
+### `aggregateDayReport()` <a name="aggregateDayReport"></a>
 
 Archive data for a day period.
 
@@ -85,7 +85,7 @@ Archive data for a day period.
 - It is a **public abstract** method.
 - It does not return anything.
 
-### `archivePeriod()` <a name="archivePeriod"></a>
+### `aggregateMultipleReports()` <a name="aggregateMultipleReports"></a>
 
 Archive data for a non-day period.
 

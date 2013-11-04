@@ -7,7 +7,7 @@ This is a complete list of available classes:
 - [`Piwik\Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed &quot;archive data&quot;).
 - [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used to insert numeric and blob archive data.
 - [`Piwik\ArchiveProcessor\Day`](Piwik/ArchiveProcessor/Day.md) &mdash; Initiates the archiving process for **day** periods via the [ArchiveProcessor.Day.compute](#) event.
-- [`Piwik\ArchiveProcessor\Period`](Piwik/ArchiveProcessor/Period.md) &mdash; Initiates the archiving process for all non-day periods via the [ArchiveProcessor.Period.compute](#) event.
+- [`Piwik\ArchiveProcessor\Period`](Piwik/ArchiveProcessor/Period.md) &mdash; Initiates the archiving process for all non-day periods via the [ArchiveProcessor.aggregateMultipleReports](#) event.
 - [`Piwik\Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Piwik\Config`](Piwik/Config.md) &mdash; Singleton that provides read &amp; write access to Piwik&#039;s INI configuration.
 - [`Piwik\DataAccess\LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; Contains methods that aggregates log data (visits, actions, conversions, ecommerce).

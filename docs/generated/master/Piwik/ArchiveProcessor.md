@@ -15,7 +15,7 @@ When the [Archive](#) class is used to query for archive data and that archive
 data is found to be absent, the archiving process is launched. An ArchiveProcessor
 instance is created based on the period type and the archiving logic of every
 active plugin is executed through the [ArchiveProcessor.Day.compute](#) and
-[ArchiveProcessor.Period.compute](#) events.
+[ArchiveProcessor.aggregateMultipleReports](#) events.
 
 Plugins receive ArchiveProcessor instances in those events and use them to
 aggregate data for the requested site, period and segment. The aggregate
@@ -39,7 +39,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 **Inserting numeric data**
 
     // function in an Archiver descendent
-    public function archiveDay(ArchiveProcessor\Day $archiveProcessor)
+    public function aggregateDayReport(ArchiveProcessor\Day $archiveProcessor)
     {
         $myFancyMetric = // ... calculate the metric value ...
         $archiveProcessor-&gt;insertNumericRecord(&#039;MyPlugin_myFancyMetric&#039;, $myFancyMetric);
@@ -48,7 +48,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 **Inserting serialized DataTables**
 
     // function in an Archiver descendent
-    public function archiveDay(ArchiveProcessor\Day $archiveProcessor)
+    public function aggregateDayReport(ArchiveProcessor\Day $archiveProcessor)
     {
         $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
 

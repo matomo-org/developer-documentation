@@ -3,7 +3,7 @@
 Period
 ======
 
-Initiates the archiving process for all non-day periods via the [ArchiveProcessor.Period.compute](#) event.
+Initiates the archiving process for all non-day periods via the [ArchiveProcessor.aggregateMultipleReports](#) event.
 
 Description
 -----------
@@ -21,7 +21,7 @@ If data has not been archived for the subperiods, archiving will be launched for
 **Archiving metric data**
 
     // function in an Archiver descendent
-    public function archivePeriod(ArchiveProcessor\Period $archiveProcessor)
+    public function aggregateMultipleReports(ArchiveProcessor\Period $archiveProcessor)
     {
         $archiveProcessor-&gt;aggregateNumericMetrics(&#039;myFancyMetric&#039;, &#039;sum&#039;);
         $archiveProcessor-&gt;aggregateNumericMetrics(&#039;myOtherFancyMetric&#039;, &#039;max&#039;);
@@ -30,7 +30,7 @@ If data has not been archived for the subperiods, archiving will be launched for
 **Archiving report data**
 
     // function in an Archiver descendent
-    public function archivePeriod(ArchiveProcessor\Period $archiveProcessor)
+    public function aggregateMultipleReports(ArchiveProcessor\Period $archiveProcessor)
     {
         $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
 
