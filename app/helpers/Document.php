@@ -45,7 +45,6 @@ class Document {
         $html = $this->markdown->transform();
 
         $html = preg_replace('/href="(.*?)(.md)(.*?)"/', 'href="${1}${3}"', $html);
-      //  $html = str_replace('.md', '', $html);
 
         return $html;
     }
