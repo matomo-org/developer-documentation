@@ -114,14 +114,7 @@ class Markdown {
 
         $parser = new MarkdownParser();
 
-        $html   = $parser->transform($this->markdown);
-
-        $config = \HTMLPurifier_Config::createDefault();
-        $config->set('HTML.Allowed', 'p,h1[id],h2[id],h3[id],h4[id],h5,code,pre,strong,em,b,a[href|name|id],i,span,ul,ol,li,cite,img[src]');
-        $config->set('Attr.EnableID', true);
-        $purifier = new \HTMLPurifier($config);
-
-        $this->transformedHtml = $purifier->purify($html);
+        $this->transformedHtml = $parser->transform($this->markdown);
     }
 
     private function getAvailableSectionsFromContent($headline, $content)
