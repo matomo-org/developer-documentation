@@ -17,7 +17,7 @@ $app->get('/', function () use ($app) {
 });
 
 $app->get('/documentation', function () use ($app) {
-    $menu = Menu::getMainMenu();
+    $menu = Documentation::getMainMenu();
 
     $app->render('documentation.twig', array('menu' => $menu));
 });
@@ -62,8 +62,8 @@ $app->get('/:category', function ($category) use ($app) {
     $doc         = new Documentation($category);
     $renderedDoc = $doc->getRenderedContent();
 
-    $mainMenu = Menu::getMainMenu();
+    $mainMenu = Documentation::getMainMenu();
 
     $app->render('layout/documentation.twig', array('doc' => $renderedDoc, 'menu' => $mainMenu));
 
-})->conditions(array('category' => '(' . implode('|', array_keys(Menu::getMainMenu())) . ')'));
+})->conditions(array('category' => '(' . implode('|', array_keys(Documentation::getMainMenu())) . ')'));
