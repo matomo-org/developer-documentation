@@ -7,6 +7,12 @@ body {
     padding-bottom: 48px;
 }
 
+.documentation h1 {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
 #sidebar .panel-body {
     padding:0px;
 }
