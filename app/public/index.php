@@ -23,7 +23,7 @@ $app = new Slim(array(
     'templates.auto_reload' => true,
     'templates.autoescape' => true,
     'log.writer'  => new \Slim\Extras\Log\DateTimeFileWriter(
-        array('path' => __DIR__ . '/../logs', 'name_format' => 'Y-m-d')
+        array('path' => realpath('../tmp/logs'), 'name_format' => 'Y-m-d')
     )
 ));
 
