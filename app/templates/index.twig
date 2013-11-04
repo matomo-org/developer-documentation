@@ -1,13 +1,33 @@
 {% extends 'layout/base.twig' %}
 
+{% block intro %}
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+        }
+        .jumbotron {
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+    </style>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Piwik Developer</h1>
+            <p>This is the official Piwik developer website where you find resources to extend Piwik.</p>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
     <div class="row">
         {% for url,item in menu %}
             <div class="col-md-4">
                 <h2>{{ item.title }}</h2>
                 <p>{{ item.description }}</p>
-                <p><a class="btn btn-default" href="/{{ url }}" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="{{ item.url }}" role="button">View details &raquo;</a></p>
             </div>
         {% endfor %}
     </div>
+
 {% endblock %}

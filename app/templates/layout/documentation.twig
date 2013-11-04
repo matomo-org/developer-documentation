@@ -1,0 +1,14 @@
+{% extends 'layout/base.twig' %}
+
+{% block content %}
+    <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            {% for item in menu %}
+                <li><a href="{{ item.url }}"><i class="icon-chevron-right"></i> {{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-9">
+        {{ doc|raw }}
+    </div>
+{% endblock %}

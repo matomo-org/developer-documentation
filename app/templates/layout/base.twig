@@ -14,9 +14,8 @@
     <![endif]-->
 
     <style type="text/css">
-        .jumbotron {
-            padding-top: 48px;
-            padding-bottom: 48px;
+        body {
+            padding-top: 80px;
         }
     </style>
 </head>
@@ -44,25 +43,8 @@
     </div>
 </div>
 
-{% if isHome is defined %}
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Piwik Developer</h1>
-            <p>This is the official Piwik developer website where you find resources to extend Piwik.</p>
-        </div>
-    </div>
-    <style type="text/css">
-        body {
-            padding-top: 40px;
-        }
-    </style>
-{% else %}
-    <style type="text/css">
-        body {
-            padding-top: 80px;
-        }
-    </style>
-{% endif %}
+{% block intro %}
+{% endblock %}
 
 <div class="container">
     {% block content %}
