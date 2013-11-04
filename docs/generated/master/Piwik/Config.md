@@ -17,18 +17,18 @@ values in `config/global.ini.php`.
 **Getting a value:**
 
     // read the minimum_memory_limit option under the [General] section
-    $minValue = Config::getInstance()-&gt;General[&#039;minimum_memory_limit&#039;];
+    $minValue = Config::getInstance()->General['minimum_memory_limit'];
 
 **Setting a value:**
 
     // set the minimum_memory_limit option
-    Config::getInstance()-&gt;General[&#039;minimum_memory_limit&#039;] = 256;
-    Config::getInstance()-&gt;forceSave();
+    Config::getInstance()->General['minimum_memory_limit'] = 256;
+    Config::getInstance()->forceSave();
 
 **Setting an entire section:**
 
-    Config::getInstance()-&gt;MySection = array(&#039;myoption&#039; =&gt; 1);
-    Config::getInstance()-&gt;forceSave();
+    Config::getInstance()->MySection = array('myoption' => 1);
+    Config::getInstance()->forceSave();
 
 
 Methods

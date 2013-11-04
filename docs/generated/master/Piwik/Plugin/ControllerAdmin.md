@@ -38,7 +38,7 @@ Assigns the following variables:
 
 - **statisticsNotRecorded** - Set to true if the `[Tracker] record_statistics` INI
                               config is `0`. If not `0`, this variable will not be defined.
-- **topMenu** - The result of `MenuTop::getInstance()-&gt;getMenu()`.
+- **topMenu** - The result of `MenuTop::getInstance()->getMenu()`.
 - **currentAdminMenuName** - The currently selected admin menu name.
 - **enableFrames** - The value of the `[General] enable_framed_pages` INI config option. If
                    true, [View::setXFrameOptions](#) is called on the view.
@@ -49,7 +49,7 @@ Assigns the following variables:
                               are invalid or missing.
 - **phpVersion** - The current PHP version.
 - **phpIsNewEnough** - Whether the current PHP version is new enough to run Piwik.
-- **adminMenu** - The result of `MenuAdmin::getInstance()-&gt;getMenu()`.
+- **adminMenu** - The result of `MenuAdmin::getInstance()->getMenu()`.
 
 #### Signature
 

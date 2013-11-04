@@ -12,36 +12,36 @@ View lets you set properties that will be passed on to a Twig template.
 View will also set several properties that will be available in all Twig
 templates, including:
 
-- **currentModule**: The value of the &#039;module&#039; query parameter.
-- **currentAction**: The value of the &#039;action&#039; query parameter.
+- **currentModule**: The value of the 'module' query parameter.
+- **currentAction**: The value of the 'action' query parameter.
 - **userLogin**: The current user login name.
 - **sites**: List of site data for every site the current user has at least
              view access for.
 - **url**: The current URL (sanitized).
-- **token_auth**: The current user&#039;s token auth.
+- **token_auth**: The current user's token auth.
 - **userHasSomeAdminAccess**: True if the user has admin access to at least
                               one site, false if otherwise.
 - **userIsSuperUser**: True if the user is the superuser, false if otherwise.
 - **latest_version_available**: The latest version of Piwik available.
-- **isWidget**: The value of the &#039;widget&#039; query parameter.
+- **isWidget**: The value of the 'widget' query parameter.
 - **show_autocompleter**: Whether the site selector should be shown or not.
 - **loginModule**: The name of the currently used authentication module.
 - **userAlias**: The alias of the current user.
 
 ### Twig
 
-Twig templates must exist in the **templates** folder in a plugin&#039;s root
+Twig templates must exist in the **templates** folder in a plugin's root
 folder.
 
 The following filters are available to twig templates:
 
 - **translate**: Outputs internationalized text using a translation token, eg,
-                 `{{ &#039;General_Date&#039;|translate }}`. sprintf parameters can be passed
+                 `{{ 'General_Date'|translate }}`. sprintf parameters can be passed
                  to the filter.
 - **urlRewriteWithParameters**: Modifies the current query string with the given
                                 set of parameters, eg,
                                 ```
-                                {{ {&#039;module&#039;:&#039;MyPlugin&#039;, &#039;action&#039;:&#039;index&#039;} | urlRewriteWithParameters }}
+                                {{ {'module':'MyPlugin', 'action':'index'} | urlRewriteWithParameters }}
                                 ```
 - **sumTime**: Pretty formats an number of seconds.
 - **money**: Formats a numerical value as a monetary value using the currency
@@ -55,22 +55,22 @@ The following filters are available to twig templates:
 The following functions are available to twig templates:
 
 - **linkTo**: Modifies the current query string with the given set of parameters,
-              eg `{{ linkTo({&#039;module&#039;:&#039;MyPlugin&#039;, &#039;action&#039;:&#039;index&#039;}) }}`.
+              eg `{{ linkTo({'module':'MyPlugin', 'action':'index'}) }}`.
 - **sparkline**: Outputs a sparkline image HTML element using the sparkline image
                  src link. eg, `{{ sparkline(sparklineUrl) }}`.
 - **postEvent**: Posts an event that allows event observers to add text to a string
-                 which is outputted in the template, eg, `{{ postEvent(&#039;MyPlugin.event&#039;) }}`
+                 which is outputted in the template, eg, `{{ postEvent('MyPlugin.event') }}`
 - **isPluginLoaded**: Returns true if the supplied plugin is loaded, false if otherwise.
-                      `{% if isPluginLoaded(&#039;Goals&#039;) %}...{% endif %}`
+                      `{% if isPluginLoaded('Goals') %}...{% endif %}`
 
 ### Examples
 
 **Basic usage**
 
-    $view = new View(&quot;@MyPlugin/myView&quot;);
-    $view-&gt;property1 = &quot;a view property&quot;;
-    $view-&gt;property2 = &quot;another view property&quot;;
-    echo $view-&gt;render();
+    $view = new View("@MyPlugin/myView");
+    $view->property1 = "a view property";
+    $view->property2 = "another view property";
+    echo $view->render();
 
 
 Methods
@@ -126,7 +126,7 @@ Directly assigns a variable to the view script.
 
 #### Description
 
-Variable names may not be prefixed with &#039;_&#039;.
+Variable names may not be prefixed with '_'.
 
 #### Signature
 
@@ -142,7 +142,7 @@ Retrieves an assigned variable.
 
 #### Description
 
-Variable names may not be prefixed with &#039;_&#039;.
+Variable names may not be prefixed with '_'.
 
 #### Signature
 
@@ -158,7 +158,7 @@ Renders the current view.
 
 #### Description
 
-Also sends the stored &#039;Content-Type&#039; HTML header.
+Also sends the stored 'Content-Type' HTML header.
 See [setContentType](#setContentType).
 
 #### Signature

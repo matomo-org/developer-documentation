@@ -37,7 +37,7 @@ The class defines the following methods:
 - [`getRequestVar()`](#getRequestVar) &mdash; Gets a sanitized request parameter by name from the `$_GET` and `$_POST` superglobals.
 - [`getLanguagesList()`](#getLanguagesList) &mdash; Returns the list of valid language codes.
 - [`getLanguageToCountryList()`](#getLanguageToCountryList) &mdash; Returns list of language to country mappings.
-- [`getSqlStringFieldsArray()`](#getSqlStringFieldsArray) &mdash; Returns a string with a comma separated list of placeholders for use in an SQL query based on the list of fields we&#039;re referencing.
+- [`getSqlStringFieldsArray()`](#getSqlStringFieldsArray) &mdash; Returns a string with a comma separated list of placeholders for use in an SQL query based on the list of fields we're referencing.
 - [`destroy()`](#destroy) &mdash; Mark orphaned object for garbage collection.
 
 ### `prefixTable()` <a name="prefixTable"></a>
@@ -80,7 +80,7 @@ Multi-byte substr() - works with UTF-8.
 
 #### Description
 
-Calls `mb_substr` if available and falls back to `substr` if it&#039;s not.
+Calls `mb_substr` if available and falls back to `substr` if it's not.
 
 #### Signature
 
@@ -125,7 +125,7 @@ Sanitizes a string to help avoid XSS vulnerabilities.
 This function is automatically called when [getRequestVar](#getRequestVar) is called,
 so you should not normally have to use it.
 
-You should used it when outputting data that isn&#039;t escaped and was
+You should used it when outputting data that isn't escaped and was
 obtained from the user (for example when using the `|raw` twig filter on goal names).
 
 NOTE: Sanitized input should not be used directly in an SQL query; SQL placeholders
@@ -134,8 +134,8 @@ NOTE: Sanitized input should not be used directly in an SQL query; SQL placehold
 **Implementation Details**
 
 - `htmlspecialchars` is used to escape text.
-- Single quotes are not escaped so &quot;Piwik&#039;s amazing community&quot; will still be
-  &quot;Piwik&#039;s amazing community&quot;.
+- Single quotes are not escaped so "Piwik's amazing community" will still be
+  "Piwik's amazing community".
 - Use of the `magic_quotes` setting will not break this method.
 - Boolean, numeric and null values are simply returned.
 
@@ -179,7 +179,7 @@ Gets a sanitized request parameter by name from the `$_GET` and `$_POST` supergl
 
 Use this function to get request parameter values. **_NEVER use `$_GET` and `$_POST` directly._**
 
-If the variable doesn&#039;t have neither a value nor a default value provided, an exception is raised.
+If the variable doesn't have neither a value nor a default value provided, an exception is raised.
 
 #### See Also
 
@@ -228,7 +228,7 @@ Returns list of language to country mappings.
 
 ### `getSqlStringFieldsArray()` <a name="getSqlStringFieldsArray"></a>
 
-Returns a string with a comma separated list of placeholders for use in an SQL query based on the list of fields we&#039;re referencing.
+Returns a string with a comma separated list of placeholders for use in an SQL query based on the list of fields we're referencing.
 
 #### Description
 

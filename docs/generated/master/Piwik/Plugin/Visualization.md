@@ -30,8 +30,8 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`assignTemplateVar()`](#assignTemplateVar) &mdash; Assigns a template variable.
 - [`beforeLoadDataTable()`](#beforeLoadDataTable) &mdash; Hook that is intended to change the request config that is sent to the API.
-- [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](#beforeGenericFiltersAreAppliedToLoadedDataTable) &mdash; Hook that is executed before generic filters like &quot;filter_limit&quot; and &quot;filter_offset&quot; are applied
-- [`afterGenericFiltersAreAppliedToLoadedDataTable()`](#afterGenericFiltersAreAppliedToLoadedDataTable) &mdash; This hook is executed after generic filters like &quot;filter_limit&quot; and &quot;filter_offset&quot; are applied
+- [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](#beforeGenericFiltersAreAppliedToLoadedDataTable) &mdash; Hook that is executed before generic filters like "filter_limit" and "filter_offset" are applied
+- [`afterGenericFiltersAreAppliedToLoadedDataTable()`](#afterGenericFiltersAreAppliedToLoadedDataTable) &mdash; This hook is executed after generic filters like "filter_limit" and "filter_offset" are applied
 - [`afterAllFilteresAreApplied()`](#afterAllFilteresAreApplied) &mdash; This hook is executed after the data table is loaded and after all filteres are applied.
 - [`beforeRender()`](#beforeRender) &mdash; Hook to make sure config properties have a specific value because the default config can be changed by a report or by request ($_GET and $_POST) params.
 
@@ -42,7 +42,7 @@ Constructor.
 #### Description
 
 Initializes the default config, requestConfig and the request itself. After configuring some
-mandatory properties reports can modify the view by listening to the hook &#039;ViewDataTable.configure&#039;.
+mandatory properties reports can modify the view by listening to the hook 'ViewDataTable.configure'.
 
 #### Signature
 
@@ -81,7 +81,7 @@ Hook that is intended to change the request config that is sent to the API.
 
 ### `beforeGenericFiltersAreAppliedToLoadedDataTable()` <a name="beforeGenericFiltersAreAppliedToLoadedDataTable"></a>
 
-Hook that is executed before generic filters like &quot;filter_limit&quot; and &quot;filter_offset&quot; are applied
+Hook that is executed before generic filters like "filter_limit" and "filter_offset" are applied
 
 #### Signature
 
@@ -90,7 +90,7 @@ Hook that is executed before generic filters like &quot;filter_limit&quot; and &
 
 ### `afterGenericFiltersAreAppliedToLoadedDataTable()` <a name="afterGenericFiltersAreAppliedToLoadedDataTable"></a>
 
-This hook is executed after generic filters like &quot;filter_limit&quot; and &quot;filter_offset&quot; are applied
+This hook is executed after generic filters like "filter_limit" and "filter_offset" are applied
 
 #### Signature
 

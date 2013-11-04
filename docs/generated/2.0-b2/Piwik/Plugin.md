@@ -8,10 +8,10 @@ Base class of all Plugin Descriptor classes.
 Description
 -----------
 
-Any plugin that wants to add event observers to one of Piwik&#039;s [hooks](#), 
+Any plugin that wants to add event observers to one of Piwik's [hooks](#), 
 or has special installation/uninstallation logic must implement this class.
 Plugins that can specify everything they need to in the _plugin.json_ files,
-such as themes, don&#039;t need to implement this class.
+such as themes, don't need to implement this class.
 
 The name of the implementation of this class should be the same name as the
 plugin they are a part of (eg, `class UserCountry extends Plugin`).
@@ -27,9 +27,9 @@ contain the following information:
 
 - **description**: An internationalized string description of what the plugin
                    does.
-- **homepage**: The URL to the plugin&#039;s website.
+- **homepage**: The URL to the plugin's website.
 - **author**: Author name.
-- **author_homepage**: The URL to the author&#039;s website.
+- **author_homepage**: The URL to the author's website.
 - **license**: The license the code uses (eg, GPL, MIT, etc.).
 - **license_homepage**: URL to website describing the license used.
 - **version**: The plugin version (eg, 1.0.1).
@@ -48,22 +48,22 @@ contain the following information:
         public function getListHooksRegistered()
         {
             return array(
-                &#039;API.getReportMetadata&#039; =&gt; &#039;myPluginFunction&#039;,
-                &#039;Another.event&#039;         =&gt; array(
-                                               &#039;function&#039; =&gt; &#039;myOtherPluginFunction&#039;,
-                                               &#039;after&#039;    =&gt; true // execute after callbacks w/o ordering
+                'API.getReportMetadata' => 'myPluginFunction',
+                'Another.event'         => array(
+                                               'function' => 'myOtherPluginFunction',
+                                               'after'    => true // execute after callbacks w/o ordering
                                            )
             );
         }
 
         public function install()
         {
-            Db::exec(&quot;CREATE TABLE &quot; . Common::prefixTable(&#039;mytable&#039;) . &quot;...&quot;);
+            Db::exec("CREATE TABLE " . Common::prefixTable('mytable') . "...");
         }
 
         public function uninstall()
         {
-            Db::exec(&quot;DROP TABLE IF EXISTS &quot; . Common::prefixTable(&#039;mytable&#039;));
+            Db::exec("DROP TABLE IF EXISTS " . Common::prefixTable('mytable'));
         }
     }
 
@@ -74,7 +74,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getInformation()`](#getInformation) &mdash; Returns the plugin details - &#039;description&#039; =&gt; string        // 1-2 sentence description of the plugin - &#039;author&#039; =&gt; string             // plugin author - &#039;author_homepage&#039; =&gt; string    // author homepage URL (or email &quot;mailto:youremail@example.org&quot;) - &#039;homepage&#039; =&gt; string           // plugin homepage URL - &#039;license&#039; =&gt; string            // plugin license - &#039;license_homepage&#039; =&gt; string   // license homepage URL - &#039;version&#039; =&gt; string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - &#039;theme&#039; =&gt; bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
+- [`getInformation()`](#getInformation) &mdash; Returns the plugin details - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
 - [`getListHooksRegistered()`](#getListHooksRegistered) &mdash; Returns a list of hooks with associated event observers.
 - [`postLoad()`](#postLoad) &mdash; This method is executed after a plugin is loaded and translations are registered.
 - [`install()`](#install) &mdash; Installs the plugin.
@@ -83,7 +83,7 @@ The class defines the following methods:
 - [`deactivate()`](#deactivate) &mdash; Executed every time the plugin is disabled.
 - [`getVersion()`](#getVersion) &mdash; Returns the plugin version number.
 - [`isTheme()`](#isTheme) &mdash; Returns true if this plugin is a theme, false if otherwise.
-- [`getPluginName()`](#getPluginName) &mdash; Returns the plugin&#039;s base class name without the namespace, e.g., &quot;UserCountry&quot; when the plugin class is &quot;Piwik\Plugins\UserCountry\UserCountry&quot;.
+- [`getPluginName()`](#getPluginName) &mdash; Returns the plugin's base class name without the namespace, e.g., "UserCountry" when the plugin class is "Piwik\Plugins\UserCountry\UserCountry".
 - [`getPluginNameFromBacktrace()`](#getPluginNameFromBacktrace) &mdash; Extracts the plugin name from a backtrace array.
 
 ### `__construct()` <a name="__construct"></a>
@@ -101,7 +101,7 @@ Constructor.
 
 ### `getInformation()` <a name="getInformation"></a>
 
-Returns the plugin details - &#039;description&#039; =&gt; string        // 1-2 sentence description of the plugin - &#039;author&#039; =&gt; string             // plugin author - &#039;author_homepage&#039; =&gt; string    // author homepage URL (or email &quot;mailto:youremail@example.org&quot;) - &#039;homepage&#039; =&gt; string           // plugin homepage URL - &#039;license&#039; =&gt; string            // plugin license - &#039;license_homepage&#039; =&gt; string   // license homepage URL - &#039;version&#039; =&gt; string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - &#039;theme&#039; =&gt; bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
+Returns the plugin details - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
 
 #### Signature
 
@@ -209,7 +209,7 @@ Returns true if this plugin is a theme, false if otherwise.
 
 ### `getPluginName()` <a name="getPluginName"></a>
 
-Returns the plugin&#039;s base class name without the namespace, e.g., &quot;UserCountry&quot; when the plugin class is &quot;Piwik\Plugins\UserCountry\UserCountry&quot;.
+Returns the plugin's base class name without the namespace, e.g., "UserCountry" when the plugin class is "Piwik\Plugins\UserCountry\UserCountry".
 
 #### Signature
 
@@ -223,7 +223,7 @@ Extracts the plugin name from a backtrace array.
 
 #### Description
 
-Returns false if we can&#039;t find one.
+Returns false if we can't find one.
 
 #### Signature
 

@@ -22,23 +22,23 @@ In most cases, using a Request object to query the API is the right way to go.
 
 **Basic Usage**
 
-    $request = new Request(&#039;method=UserSettings.getWideScreen&amp;idSite=1&amp;date=yesterday&amp;period=week&#039;
-                         . &#039;&amp;format=xml&amp;filter_limit=5&amp;filter_offset=0&#039;)
-    $result = $request-&gt;process();
+    $request = new Request('method=UserSettings.getWideScreen&idSite=1&date=yesterday&period=week'
+                         . '&format=xml&filter_limit=5&filter_offset=0')
+    $result = $request->process();
     echo $result;
 
 **Getting a unrendered DataTable**
 
-    // use convenience the convenience method &#039;processRequest&#039;
-    $dataTable = Request::processRequest(&#039;UserSettings.getWideScreen&#039;, array(
-        &#039;idSite&#039; =&gt; 1,
-        &#039;date&#039; =&gt; &#039;yesterday&#039;,
-        &#039;period&#039; =&gt; &#039;week&#039;,
-        &#039;format&#039; =&gt; &#039;original&#039;, // this is the important bit
-        &#039;filter_limit&#039; =&gt; 5,
-        &#039;filter_offset&#039; =&gt; 0
+    // use convenience the convenience method 'processRequest'
+    $dataTable = Request::processRequest('UserSettings.getWideScreen', array(
+        'idSite' => 1,
+        'date' => 'yesterday',
+        'period' => 'week',
+        'format' => 'original', // this is the important bit
+        'filter_limit' => 5,
+        'filter_offset' => 0
     ));
-    echo &quot;This DataTable has &quot; . $dataTable-&gt;getRowsCount() . &quot; rows.&quot;;
+    echo "This DataTable has " . $dataTable->getRowsCount() . " rows.";
 
 
 Methods
@@ -50,7 +50,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`renameModule()`](#renameModule) &mdash; For backward compatibility: Piwik API still works if module=Referers, we rewrite to correct renamed plugin: Referrers
 - [`process()`](#process) &mdash; Dispatches the API request to the appropriate API method and returns the result after post-processing.
-- [`getClassNameAPI()`](#getClassNameAPI) &mdash; Returns the class name of a plugin&#039;s API given the plugin name.
+- [`getClassNameAPI()`](#getClassNameAPI) &mdash; Returns the class name of a plugin's API given the plugin name.
 - [`reloadAuthUsingTokenAuth()`](#reloadAuthUsingTokenAuth) &mdash; If the token_auth is found in the $request parameter, the current session will be authenticated using this token_auth.
 - [`processRequest()`](#processRequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 - [`getRequestParametersGET()`](#getRequestParametersGET) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
@@ -125,7 +125,7 @@ Post-processing includes:
 
 ### `getClassNameAPI()` <a name="getClassNameAPI"></a>
 
-Returns the class name of a plugin&#039;s API given the plugin name.
+Returns the class name of a plugin's API given the plugin name.
 
 #### Signature
 

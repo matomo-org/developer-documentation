@@ -13,7 +13,7 @@ in the log tables without creating their own SQL queries.
 
 ### Aggregation Principles
 
-** TODO (explain &#039;dimension&#039;) **
+** TODO (explain 'dimension') **
 
 ### Examples
 
@@ -55,7 +55,7 @@ Aggregates visit logs, optionally grouping by some dimension, and returns the ag
 
 #### Description
 
-&lt;a name=&quot;queryVisitsByDimension-result-set&quot;/&gt;
+<a name="queryVisitsByDimension-result-set"/>
 **Result Set**
 
 The following columns are in each row of the result set:
@@ -96,7 +96,7 @@ Aggregates ecommerce item data (everything stored in the **log_conversion_item**
 
 #### Description
 
-&lt;a name=&quot;queryEcommerceItems-result-set&quot;/&gt;
+<a name="queryEcommerceItems-result-set"/>
 **Result Set**
 
 The following columns are in each row of the result set:
@@ -108,7 +108,7 @@ The following columns are in each row of the result set:
 - **[Metrics::INDEX_ECOMMERCE_ITEM_PRICE](#)**: The total price for the group of items this
                                                 row aggregated.
 - **[Metrics::INDEX_ECOMMERCE_ORDERS](#)**: The total number of orders this group of items
-                                            belongs to. This will be &lt;= to the total number
+                                            belongs to. This will be <= to the total number
                                             of items in this group.
 - **[Metrics::INDEX_NB_VISITS](#)**: The total number of visits during which each item in
                                      this group of items was logged.
@@ -134,7 +134,7 @@ Aggregates action data (everything in the log_action table) and returns a DB sta
 
 #### Description
 
-&lt;a name=&quot;queryActionsByDimension-result-set&quot;/&gt;
+<a name="queryActionsByDimension-result-set"/>
 **Result Set**
 
 Each row of the result set represents an aggregated group of actions. The following columns

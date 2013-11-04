@@ -17,19 +17,19 @@ Constants
 
 This class defines the following constants:
 
-- [`LABEL_ID_GOAL_IS_ECOMMERCE_CART`](#LABEL_ID_GOAL_IS_ECOMMERCE_CART) &mdash; The idGoal query parameter value for the special &#039;abandoned carts&#039; goal.
-- [`LABEL_ID_GOAL_IS_ECOMMERCE_ORDER`](#LABEL_ID_GOAL_IS_ECOMMERCE_ORDER) &mdash; The idGoal query parameter value for the special &#039;ecommerce&#039; goal.
+- [`LABEL_ID_GOAL_IS_ECOMMERCE_CART`](#LABEL_ID_GOAL_IS_ECOMMERCE_CART) &mdash; The idGoal query parameter value for the special 'abandoned carts' goal.
+- [`LABEL_ID_GOAL_IS_ECOMMERCE_ORDER`](#LABEL_ID_GOAL_IS_ECOMMERCE_ORDER) &mdash; The idGoal query parameter value for the special 'ecommerce' goal.
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`getCurrentUserEmail()`](#getCurrentUserEmail) &mdash; Returns the current user&#039;s email address.
-- [`getSuperUserLogin()`](#getSuperUserLogin) &mdash; Returns the super user&#039;s username.
-- [`getSuperUserEmail()`](#getSuperUserEmail) &mdash; Returns the super user&#039;s email address.
-- [`getCurrentUserLogin()`](#getCurrentUserLogin) &mdash; Returns the current user&#039;s username.
-- [`getCurrentUserTokenAuth()`](#getCurrentUserTokenAuth) &mdash; Returns the current user&#039;s token auth.
+- [`getCurrentUserEmail()`](#getCurrentUserEmail) &mdash; Returns the current user's email address.
+- [`getSuperUserLogin()`](#getSuperUserLogin) &mdash; Returns the super user's username.
+- [`getSuperUserEmail()`](#getSuperUserEmail) &mdash; Returns the super user's email address.
+- [`getCurrentUserLogin()`](#getCurrentUserLogin) &mdash; Returns the current user's username.
+- [`getCurrentUserTokenAuth()`](#getCurrentUserTokenAuth) &mdash; Returns the current user's token auth.
 - [`isUserIsSuperUserOrTheUser()`](#isUserIsSuperUserOrTheUser) &mdash; Returns true if the current user is either the super user or the user specified by `$theUser`.
 - [`checkUserIsSuperUserOrTheUser()`](#checkUserIsSuperUserOrTheUser) &mdash; Check that the current user is either the specified user or the superuser.
 - [`isUserIsSuperUser()`](#isUserIsSuperUser) &mdash; Returns true if the current user is the Super User.
@@ -46,13 +46,13 @@ The class defines the following methods:
 - [`checkUserHasSomeViewAccess()`](#checkUserHasSomeViewAccess) &mdash; Checks that the current user has view access to at least one site.
 - [`redirectToModule()`](#redirectToModule) &mdash; Redirects the current request to a new module and action.
 - [`isValidEmailString()`](#isValidEmailString) &mdash; Returns true if the email address is a valid.
-- [`postEvent()`](#postEvent) &mdash; Post an event to Piwik&#039;s event dispatcher which will execute the event&#039;s observers.
+- [`postEvent()`](#postEvent) &mdash; Post an event to Piwik's event dispatcher which will execute the event's observers.
 - [`addAction()`](#addAction) &mdash; Register an observer to an event.
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation ID.
 
 ### `getCurrentUserEmail()` <a name="getCurrentUserEmail"></a>
 
-Returns the current user&#039;s email address.
+Returns the current user's email address.
 
 #### Signature
 
@@ -61,7 +61,7 @@ Returns the current user&#039;s email address.
 
 ### `getSuperUserLogin()` <a name="getSuperUserLogin"></a>
 
-Returns the super user&#039;s username.
+Returns the super user's username.
 
 #### Signature
 
@@ -70,7 +70,7 @@ Returns the super user&#039;s username.
 
 ### `getSuperUserEmail()` <a name="getSuperUserEmail"></a>
 
-Returns the super user&#039;s email address.
+Returns the super user's email address.
 
 #### Signature
 
@@ -79,7 +79,7 @@ Returns the super user&#039;s email address.
 
 ### `getCurrentUserLogin()` <a name="getCurrentUserLogin"></a>
 
-Returns the current user&#039;s username.
+Returns the current user's username.
 
 #### Signature
 
@@ -88,7 +88,7 @@ Returns the current user&#039;s username.
 
 ### `getCurrentUserTokenAuth()` <a name="getCurrentUserTokenAuth"></a>
 
-Returns the current user&#039;s token auth.
+Returns the current user's token auth.
 
 #### Signature
 
@@ -273,7 +273,7 @@ Returns true if the email address is a valid.
 
 ### `postEvent()` <a name="postEvent"></a>
 
-Post an event to Piwik&#039;s event dispatcher which will execute the event&#039;s observers.
+Post an event to Piwik's event dispatcher which will execute the event's observers.
 
 #### Signature
 

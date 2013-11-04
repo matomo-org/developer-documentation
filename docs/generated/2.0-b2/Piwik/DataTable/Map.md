@@ -40,7 +40,7 @@ The class defines the following methods:
 - [`addDataTable()`](#addDataTable) &mdash; Adds a DataTable to all the tables in this array.
 - [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable\Map w/ child tables that have had their subtables merged.
 - [`getEmptyClone()`](#getEmptyClone) &mdash; Returns a new DataTable\Map w/o any child DataTables, but with the same key name as this instance.
-- [`getMetadataIntersectArray()`](#getMetadataIntersectArray) &mdash; Returns the intersection of children&#039;s metadata arrays (what they all have in common).
+- [`getMetadataIntersectArray()`](#getMetadataIntersectArray) &mdash; Returns the intersection of children's metadata arrays (what they all have in common).
 - [`getColumns()`](#getColumns)
 
 ### `getKeyName()` <a name="getKeyName"></a>
@@ -274,7 +274,7 @@ of DataTables, this function will transform it from:
 
 to:
 
-    DataTable(row1[label = &#039;Label 0&#039;], row2[label = &#039;Label 1&#039;])
+    DataTable(row1[label = 'Label 0'], row2[label = 'Label 1'])
 
 If this instance holds an array of DataTable\Maps, this function will
 transform it from:
@@ -293,9 +293,9 @@ transform it from:
 to:
 
     Inner Label 0:
-      DataTable(row1[label = &#039;Outer Label 0&#039;], row3[label = &#039;Outer Label 1&#039;])
+      DataTable(row1[label = 'Outer Label 0'], row3[label = 'Outer Label 1'])
     Inner Label 1:
-      DataTable(row2[label = &#039;Outer Label 0&#039;], row4[label = &#039;Outer Label 1&#039;])
+      DataTable(row2[label = 'Outer Label 0'], row4[label = 'Outer Label 1'])
 
 In addition, if this instance holds an array of DataTable\Maps, the
 metadata of the first child is used as the metadata of the result.
@@ -351,7 +351,7 @@ Returns a new DataTable\Map w/o any child DataTables, but with the same key name
 
 ### `getMetadataIntersectArray()` <a name="getMetadataIntersectArray"></a>
 
-Returns the intersection of children&#039;s metadata arrays (what they all have in common).
+Returns the intersection of children's metadata arrays (what they all have in common).
 
 #### Signature
 

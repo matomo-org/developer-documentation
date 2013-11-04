@@ -14,7 +14,7 @@ Description
         return round($timeSpent / $visits, 2);
     };
     
-    $dataTable-&gt;filter(&#039;ColumnCallbackAddColumn&#039;, array(array(&#039;nb_visits&#039;, &#039;sum_time_spent&#039;), &#039;avg_time_on_site&#039;, $callback));
+    $dataTable->filter('ColumnCallbackAddColumn', array(array('nb_visits', 'sum_time_spent'), 'avg_time_on_site', $callback));
 
 
 Methods

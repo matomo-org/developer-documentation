@@ -10,8 +10,8 @@ Description
 
 **Example**
 
-    // filter out all rows whose labels doesn&#039;t start with piwik
-    $dataTable-&gt;filter(&#039;Pattern&#039;, array(&#039;label&#039;, &#039;^piwik&#039;));
+    // filter out all rows whose labels doesn't start with piwik
+    $dataTable->filter('Pattern', array('label', '^piwik'));
 
 
 Methods

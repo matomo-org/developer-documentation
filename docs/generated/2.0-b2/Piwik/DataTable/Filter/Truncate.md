@@ -14,11 +14,11 @@ The [ReplaceSummaryRow](#) filter will be queued after the table is truncated.
 
 **Basic usage**
 
-    $dataTable-&gt;filter(&#039;Truncate&#039;, array($truncateAfter = 500));
+    $dataTable->filter('Truncate', array($truncateAfter = 500));
 
 **Using a custom summary row label**
 
-    $dataTable-&gt;filter(&#039;Truncate&#039;, array($truncateAfter = 500, $summaryRowLabel = Piwik::translate(&#039;General_Total&#039;)));
+    $dataTable->filter('Truncate', array($truncateAfter = 500, $summaryRowLabel = Piwik::translate('General_Total')));
 
 
 Methods

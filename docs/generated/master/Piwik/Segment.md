@@ -24,25 +24,25 @@ using this class when generating aggregation SQL queries.
 **Basic usage**
 
     $idSites = array(1,2,3);
-    $segmentStr = &quot;browserCode==ff;countryCode==CA&quot;;
+    $segmentStr = "browserCode==ff;countryCode==CA";
     $segment = new Segment($segmentStr, $idSites);
 
-    $query = $segment-&gt;getSelectQuery(
-        $select = &quot;table.col1, table2.col2&quot;,
-        $from = array(&quot;table&quot;, &quot;table2&quot;),
-        $where = &quot;table.col3 = ?&quot;,
+    $query = $segment->getSelectQuery(
+        $select = "table.col1, table2.col2",
+        $from = array("table", "table2"),
+        $where = "table.col3 = ?",
         $bind = array(5),
-        $orderBy = &quot;table.col1 DESC&quot;,
-        $groupBy = &quot;table2.col2&quot;
+        $orderBy = "table.col1 DESC",
+        $groupBy = "table2.col2"
     );
     
-    Db::fetchAll($query[&#039;sql&#039;], $query[&#039;bind&#039;]);
+    Db::fetchAll($query['sql'], $query['bind']);
 
-**Creating a &#039;null&#039; segment**
+**Creating a 'null' segment**
 
     $idSites = array(1,2,3);
-    $segment = new Segment(&#039;&#039;, $idSites);
-    // $segment-&gt;getSelectQuery will return a query that selects all visits
+    $segment = new Segment('', $idSites);
+    // $segment->getSelectQuery will return a query that selects all visits
 
 
 Constants
@@ -61,7 +61,7 @@ The class defines the following methods:
 - [`isEmpty()`](#isEmpty) &mdash; Returns true if the segment is empty, false if otherwise.
 - [`getString()`](#getString) &mdash; Returns the segment condition.
 - [`getHash()`](#getHash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
-- [`getSelectQuery()`](#getSelectQuery) &mdash; Extend an SQL query that aggregates data over one of the &#039;log_&#039; tables with segment expressions.
+- [`getSelectQuery()`](#getSelectQuery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
 
 ### `__construct()` <a name="__construct"></a>
 
@@ -104,7 +104,7 @@ Returns a hash of the segment condition, or the empty string if the segment cond
 
 ### `getSelectQuery()` <a name="getSelectQuery"></a>
 
-Extend an SQL query that aggregates data over one of the &#039;log_&#039; tables with segment expressions.
+Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
 
 #### Signature
 

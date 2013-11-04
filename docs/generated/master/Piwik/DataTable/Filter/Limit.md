@@ -10,8 +10,8 @@ Description
 
 **Basic example usage**
 
-    // delete all rows from 5 -&gt; 15
-    $dataTable-&gt;filter(&#039;Limit&#039;, array(5, 10));
+    // delete all rows from 5 -> 15
+    $dataTable->filter('Limit', array(5, 10));
 
 
 Methods

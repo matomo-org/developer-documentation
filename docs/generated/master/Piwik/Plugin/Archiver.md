@@ -16,21 +16,21 @@ Description
     {
         public function aggregateDayReport()
         {
-            $logAggregator = $this-&gt;getLogAggregator();
+            $logAggregator = $this->getLogAggregator();
             
-            $data = $logAggregator-&gt;queryVisitsByDimension(...);
+            $data = $logAggregator->queryVisitsByDimension(...);
             
             $dataTable = new DataTable();
-            $dataTable-&gt;addRowsFromSimpleArray($data);
+            $dataTable->addRowsFromSimpleArray($data);
 
-            $archiveProcessor = $this-&gt;getProcessor();
-            $archiveProcessor-&gt;insertBlobRecords(&#039;MyPlugin_myReport&#039;, $dataTable-&gt;getSerialized(500));
+            $archiveProcessor = $this->getProcessor();
+            $archiveProcessor->insertBlobRecords('MyPlugin_myReport', $dataTable->getSerialized(500));
         }
         
         public function aggregateMultipleReports()
         {
-            $archiveProcessor = $this-&gt;getProcessor();
-            $archiveProcessor-&gt;aggregateDataTableRecords(&#039;MyPlugin_myReport&#039;, 500);
+            $archiveProcessor = $this->getProcessor();
+            $archiveProcessor->aggregateDataTableRecords('MyPlugin_myReport', 500);
         }
     }
 

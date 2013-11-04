@@ -10,7 +10,7 @@ Description
 
 **Basic usage example**
 
-    $dataTable-&gt;filter(&#039;ColumnCallbackAddMetadata&#039;, array(&#039;label&#039;, &#039;logo&#039;, &#039;Piwik\Plugins\MyPlugin\getLogoFromLabel&#039;));
+    $dataTable->filter('ColumnCallbackAddMetadata', array('label', 'logo', 'Piwik\Plugins\MyPlugin\getLogoFromLabel'));
 
 
 Methods

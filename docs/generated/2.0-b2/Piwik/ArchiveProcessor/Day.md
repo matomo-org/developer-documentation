@@ -36,14 +36,14 @@ The statistics returned are:
  - number of visits
  - number of actions
  - maximum number of action for a visit
- - sum of the visits&#039; length in sec
+ - sum of the visits' length in sec
  - count of bouncing visits (visits with one page view)
 
-For example if $dimension = &#039;config_os&#039; it will return the statistics for every distinct Operating systems
+For example if $dimension = 'config_os' it will return the statistics for every distinct Operating systems
 The returned array will have a row per distinct operating systems,
 and a column per stat (nb of visits, max  actions, etc)
 
-&#039;label&#039;    Metrics::INDEX_NB_UNIQ_VISITORS    Metrics::INDEX_NB_VISITS    etc.
+'label'    Metrics::INDEX_NB_UNIQ_VISITORS    Metrics::INDEX_NB_VISITS    etc.
 Linux    27    66    ...
 Windows XP    12    ...
 Mac OS    15    36    ...

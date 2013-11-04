@@ -16,8 +16,8 @@ comparison of addresses (of the same length), even on Intel x86.
 As a matter of naming convention, we use $ip for the network address format
 and $ipString for the presentation format (i.e., human-readable form).
 
-We&#039;re not using the network address format (in_addr) for socket functions,
-so we don&#039;t have to worry about incompatibility with Windows UNICODE
+We're not using the network address format (in_addr) for socket functions,
+so we don't have to worry about incompatibility with Windows UNICODE
 and inetPtonW().
 
 
@@ -42,7 +42,7 @@ The class defines the following methods:
 - [`long2ip()`](#long2ip) &mdash; Convert IP address (in network address format) to presentation format.
 - [`isIPv6()`](#isIPv6) &mdash; Returns true if $ip is an IPv6 address, false if otherwise.
 - [`isMappedIPv4()`](#isMappedIPv4) &mdash; Returns true if $ip is a IPv4 mapped address, false if otherwise.
-- [`getIPv4FromMappedIPv6()`](#getIPv4FromMappedIPv6) &mdash; Returns an IPv4 address from a &#039;mapped&#039; IPv6 address.
+- [`getIPv4FromMappedIPv6()`](#getIPv4FromMappedIPv6) &mdash; Returns an IPv4 address from a 'mapped' IPv6 address.
 - [`getIpsForRange()`](#getIpsForRange) &mdash; Get low and high IP addresses for a specified range.
 - [`isIpInRange()`](#isIpInRange) &mdash; Determines if an IP address is in a specified IP address range.
 - [`getIpFromHeader()`](#getIpFromHeader) &mdash; Returns the most accurate IP address availble for the current user, in IPv4 format.
@@ -142,7 +142,7 @@ Convert IP address (in network address format) to presentation format.
 #### Description
 
 This is a backward compatibility function for code that only expects
-IPv4 addresses (i.e., doesn&#039;t support IPv6).
+IPv4 addresses (i.e., doesn't support IPv6).
 
 This function does not support the long (or its string representation)
 returned by the built-in ip2long() function, from Piwik 1.3 and earlier.
@@ -184,7 +184,7 @@ Returns true if $ip is a IPv4 mapped address, false if otherwise.
 
 ### `getIPv4FromMappedIPv6()` <a name="getIPv4FromMappedIPv6"></a>
 
-Returns an IPv4 address from a &#039;mapped&#039; IPv6 address.
+Returns an IPv4 address from a 'mapped' IPv6 address.
 
 #### Signature
 
@@ -230,7 +230,7 @@ Returns the most accurate IP address availble for the current user, in IPv4 form
 
 #### Description
 
-This could be the proxy client&#039;s IP address.
+This could be the proxy client's IP address.
 
 #### Signature
 

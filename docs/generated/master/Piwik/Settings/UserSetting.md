@@ -60,7 +60,7 @@ Remove all stored settings of the given userLogin.
 #### Description
 
 This is important to cleanup all settings for a user once he
-is deleted. Otherwise a user could register with the same name afterwards and see the previous user&#039;s settings.
+is deleted. Otherwise a user could register with the same name afterwards and see the previous user's settings.
 
 #### Signature
 

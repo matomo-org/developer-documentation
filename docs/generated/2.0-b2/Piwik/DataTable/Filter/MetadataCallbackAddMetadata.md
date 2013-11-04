@@ -13,7 +13,7 @@ Only metadata values are passed to the callback.
 **Basic usage example**
 
     // add a logo metadata based on the url metadata
-    $dataTable-&gt;filter(&#039;MetadataCallbackAddMetadata&#039;, array(&#039;url&#039;, &#039;logo&#039;, &#039;Piwik\Plugins\MyPlugin\getLogoFromUrl&#039;));
+    $dataTable->filter('MetadataCallbackAddMetadata', array('url', 'logo', 'Piwik\Plugins\MyPlugin\getLogoFromUrl'));
 
 
 Methods

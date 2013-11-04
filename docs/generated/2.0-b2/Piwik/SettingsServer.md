@@ -15,7 +15,7 @@ The class defines the following methods:
 - [`isIIS()`](#isIIS) &mdash; Returns true if running on Microsoft IIS 7 (or above), false if otherwise.
 - [`isApache()`](#isApache) &mdash; Returns true if running on an Apache web server, false if otherwise.
 - [`isWindows()`](#isWindows) &mdash; Returns true if running on a Windows operating system, false if otherwise.
-- [`isTimezoneSupportEnabled()`](#isTimezoneSupportEnabled) &mdash; Returns true if this php version/build supports timezone manipulation (e.g., php &gt;= 5.2, or compiled with EXPERIMENTAL_DATE_SUPPORT=1 for php &lt; 5.2).
+- [`isTimezoneSupportEnabled()`](#isTimezoneSupportEnabled) &mdash; Returns true if this php version/build supports timezone manipulation (e.g., php >= 5.2, or compiled with EXPERIMENTAL_DATE_SUPPORT=1 for php < 5.2).
 - [`isGdExtensionEnabled()`](#isGdExtensionEnabled) &mdash; Returns true if the GD PHP extension is available, false if otherwise.
 
 ### `isArchivePhpTriggered()` <a name="isArchivePhpTriggered"></a>
@@ -60,7 +60,7 @@ Returns true if running on a Windows operating system, false if otherwise.
 
 ### `isTimezoneSupportEnabled()` <a name="isTimezoneSupportEnabled"></a>
 
-Returns true if this php version/build supports timezone manipulation (e.g., php &gt;= 5.2, or compiled with EXPERIMENTAL_DATE_SUPPORT=1 for php &lt; 5.2).
+Returns true if this php version/build supports timezone manipulation (e.g., php >= 5.2, or compiled with EXPERIMENTAL_DATE_SUPPORT=1 for php < 5.2).
 
 #### Signature
 

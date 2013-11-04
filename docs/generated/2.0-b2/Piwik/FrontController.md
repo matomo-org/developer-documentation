@@ -17,24 +17,24 @@ use it to call controller actions of other plugins.
 
     public function myConfiguredRealtimeMap()
     {
-        $_GET[&#039;changeVisitAlpha&#039;] = false;
-        $_GET[&#039;removeOldVisits&#039;] = false;
-        $_GET[&#039;showFooterMessage&#039;] = false;
-        FrontController::getInstance()-&gt;dispatch(&#039;UserCountryMap&#039;, &#039;realtimeMap&#039;);
+        $_GET['changeVisitAlpha'] = false;
+        $_GET['removeOldVisits'] = false;
+        $_GET['showFooterMessage'] = false;
+        FrontController::getInstance()->dispatch('UserCountryMap', 'realtimeMap');
     }
 
 **Using other plugin controller actions**
 
     public function myPopupWithRealtimeMap()
     {
-        $_GET[&#039;changeVisitAlpha&#039;] = false;
-        $_GET[&#039;removeOldVisits&#039;] = false;
-        $_GET[&#039;showFooterMessage&#039;] = false;
-        $realtimeMap = FrontController::getInstance()-&gt;fetchDispatch(&#039;UserCountryMap&#039;, &#039;realtimeMap&#039;);
+        $_GET['changeVisitAlpha'] = false;
+        $_GET['removeOldVisits'] = false;
+        $_GET['showFooterMessage'] = false;
+        $realtimeMap = FrontController::getInstance()->fetchDispatch('UserCountryMap', 'realtimeMap');
         
-        $view = new View(&#039;@MyPlugin/myPopupWithRealtimeMap.twig&#039;);
-        $view-&gt;realtimeMap = $realtimeMap;
-        echo $realtimeMap-&gt;render();
+        $view = new View('@MyPlugin/myPopupWithRealtimeMap.twig');
+        $view->realtimeMap = $realtimeMap;
+        echo $realtimeMap->render();
     }
 
 For a detailed explanation, see the documentation on http://piwik.org/docs/plugins/framework-overview

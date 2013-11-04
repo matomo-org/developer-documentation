@@ -10,13 +10,13 @@ Description
 
 When reports that summarize data over a set of ranges (such as the
 reports in the VisitorInterest plugin) are archived, they are
-archived with labels that read as: &#039;$min-$max&#039; or &#039;$min+&#039;. These labels
-have no units and can look like &#039;1-1&#039;.
+archived with labels that read as: '$min-$max' or '$min+'. These labels
+have no units and can look like '1-1'.
 
 This filter can be used to clean up and add units those range labels. To
 do this, you supply a string to use when the range specifies only
-one unit (ie &#039;1-1&#039;) and another format string when the range specifies
-more than one unit (ie &#039;2-2&#039;, &#039;3-5&#039; or &#039;6+&#039;).
+one unit (ie '1-1') and another format string when the range specifies
+more than one unit (ie '2-2', '3-5' or '6+').
 
 This filter can be extended to vary exactly how ranges are prettified based
 on the range values found in the DataTable. To see an example of this,
@@ -24,7 +24,7 @@ take a look at the [BeautifyTimeRangeLabels](#) filter.
 
 **Basic usage example**
 
-    $dataTable-&gt;queueFilter(&#039;BeautifyRangeLabels&#039;, array(&quot;1 visit&quot;, &quot;%s visits&quot;));
+    $dataTable->queueFilter('BeautifyRangeLabels', array("1 visit", "%s visits"));
 
 
 Methods

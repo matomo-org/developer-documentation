@@ -14,7 +14,7 @@ other ranges are displayed in minutes.
 
 **Basic usage**
 
-    $dataTable-&gt;filter(&#039;BeautifyTimeRangeLabels&#039;, array(&quot;%1$s-%2$s min&quot;, &quot;1 min&quot;, &quot;%s min&quot;));
+    $dataTable->filter('BeautifyTimeRangeLabels', array("%1$s-%2$s min", "1 min", "%s min"));
 
 
 Methods

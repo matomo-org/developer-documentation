@@ -10,9 +10,9 @@ Description
 
 Example:
 ```
-$notification = new \Piwik\Notification(&#039;My Error Message&#039;);
-$notification-&gt;context = Notification::CONTEXT_ERROR;
-\Piwik\Notification\Manager::notify(&#039;pluginname_id&#039;, $notification);
+$notification = new \Piwik\Notification('My Error Message');
+$notification->context = Notification::CONTEXT_ERROR;
+\Piwik\Notification\Manager::notify('pluginname_id', $notification);
 ```
 
 

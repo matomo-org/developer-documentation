@@ -12,7 +12,7 @@ Existing filters do things like,
 
 - remove rows
 - change column values (change string to lowercase, truncate, etc.)
-- add/remove columns or metadata (compute percentage values, add an &#039;icon&#039; metadata based on the label, etc.)
+- add/remove columns or metadata (compute percentage values, add an 'icon' metadata based on the label, etc.)
 - add/remove/edit subtable associated with rows
 - etc.
 
@@ -31,7 +31,7 @@ The abstract class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; Filters the supplied DataTable.
 - [`enableRecursive()`](#enableRecursive) &mdash; Enables/Disables recursive filtering.
-- [`filterSubTable()`](#filterSubTable) &mdash; Filters a row&#039;s subtable, if one exists and is loaded in memory.
+- [`filterSubTable()`](#filterSubTable) &mdash; Filters a row's subtable, if one exists and is loaded in memory.
 
 ### `__construct()` <a name="__construct"></a>
 
@@ -73,7 +73,7 @@ is up to the derived Filter class.
 
 ### `filterSubTable()` <a name="filterSubTable"></a>
 
-Filters a row&#039;s subtable, if one exists and is loaded in memory.
+Filters a row's subtable, if one exists and is loaded in memory.
 
 #### Signature
 

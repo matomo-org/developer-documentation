@@ -8,7 +8,7 @@ The primary data structure used to store analytics data in Piwik.
 Description
 -----------
 
-&lt;a name=&quot;class-desc-the-basics&quot;&gt;&lt;/a&gt;
+<a name="class-desc-the-basics"></a>
 ### The Basics
 
 DataTables consist of rows and each row consists of columns. A column value can be
@@ -17,7 +17,7 @@ be a numeric, string or array.
 Every row has an ID. The ID is either the index of the row or [ID_SUMMARY_ROW](#ID_SUMMARY_ROW).
 
 DataTables are hierarchical data structures. Each row can also contain an additional
-nested sub-DataTable (commonly referred to as a &#039;subtable&#039;).
+nested sub-DataTable (commonly referred to as a 'subtable').
 
 Both DataTables and DataTable rows can hold **metadata**. _DataTable metadata_ is information
 regarding all the data, such as the site or period that the data is for. _Row metadata_
@@ -48,7 +48,7 @@ There are two main ways to manipulate a DataTable. You can either:
 1. manually iterate through each row and manipulate the data,
 2. or you can use predefined Filters.
 
-A Filter is a class that has a &#039;filter&#039; method which will manipulate a DataTable in
+A Filter is a class that has a 'filter' method which will manipulate a DataTable in
 some way. There are several predefined Filters that allow you to do common things,
 such as,
 
@@ -75,10 +75,10 @@ Non-essential, presentation filters should be queued.
 
 ### Learn more
 
-- **ArchiveProcessor** &amp;mdash; to learn how DataTables are persisted.
-- **DataTable\Renderer** &amp;mdash; to learn how DataTable data is exported to XML, JSON, etc.
-- **DataTable\Filter** &amp;mdash; to see all core Filters.
-- **DataTable\Manager** &amp;mdash; to learn how DataTables are loaded.
+- **ArchiveProcessor** &mdash; to learn how DataTables are persisted.
+- **DataTable\Renderer** &mdash; to learn how DataTable data is exported to XML, JSON, etc.
+- **DataTable\Filter** &mdash; to see all core Filters.
+- **DataTable\Manager** &mdash; to learn how DataTables are loaded.
 
 ### Examples
 
@@ -86,46 +86,46 @@ Non-essential, presentation filters should be queued.
 
     // adding one row at a time
     $dataTable = new DataTable();
-    $dataTable-&gt;addRow(new Row(array(
-        Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; &#039;thing1&#039;, &#039;nb_visits&#039; =&gt; 1, &#039;nb_actions&#039; =&gt; 1),
-        Row::METADATA =&gt; array(&#039;url&#039; =&gt; &#039;http://thing1.com&#039;)
+    $dataTable->addRow(new Row(array(
+        Row::COLUMNS => array('label' => 'thing1', 'nb_visits' => 1, 'nb_actions' => 1),
+        Row::METADATA => array('url' => 'http://thing1.com')
     )));
-    $dataTable-&gt;addRow(new Row(array(
-        Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; &#039;thing2&#039;, &#039;nb_visits&#039; =&gt; 2, &#039;nb_actions&#039; =&gt; 2),
-        Row::METADATA =&gt; array(&#039;url&#039; =&gt; &#039;http://thing2.com&#039;)
+    $dataTable->addRow(new Row(array(
+        Row::COLUMNS => array('label' => 'thing2', 'nb_visits' => 2, 'nb_actions' => 2),
+        Row::METADATA => array('url' => 'http://thing2.com')
     )));
     
     // using an array of rows
     $dataTable = new DataTable();
-    $dataTable-&gt;addRowsFromArray(array(
+    $dataTable->addRowsFromArray(array(
         array(
-            Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; &#039;thing1&#039;, &#039;nb_visits&#039; =&gt; 1, &#039;nb_actions&#039; =&gt; 1),
-            Row::METADATA =&gt; array(&#039;url&#039; =&gt; &#039;http://thing1.com&#039;)
+            Row::COLUMNS => array('label' => 'thing1', 'nb_visits' => 1, 'nb_actions' => 1),
+            Row::METADATA => array('url' => 'http://thing1.com')
         ),
         array(
-            Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; &#039;thing2&#039;, &#039;nb_visits&#039; =&gt; 2, &#039;nb_actions&#039; =&gt; 2),
-            Row::METADATA =&gt; array(&#039;url&#039; =&gt; &#039;http://thing2.com&#039;)
+            Row::COLUMNS => array('label' => 'thing2', 'nb_visits' => 2, 'nb_actions' => 2),
+            Row::METADATA => array('url' => 'http://thing2.com')
         )
     ));
 
-    // using a &quot;simple&quot; array
-    $dataTable-&gt;addRowsFromSimpleArray(array(
-        array(&#039;label&#039; =&gt; &#039;thing1&#039;, &#039;nb_visits&#039; =&gt; 1, &#039;nb_actions&#039; =&gt; 1),
-        array(&#039;label&#039; =&gt; &#039;thing2&#039;, &#039;nb_visits&#039; =&gt; 2, &#039;nb_actions&#039; =&gt; 2)
+    // using a "simple" array
+    $dataTable->addRowsFromSimpleArray(array(
+        array('label' => 'thing1', 'nb_visits' => 1, 'nb_actions' => 1),
+        array('label' => 'thing2', 'nb_visits' => 2, 'nb_actions' => 2)
     ));
 
-**Getting &amp; setting metadata**
+**Getting & setting metadata**
 
-    $dataTable = \Piwik\Plugins\Referrers\API::getInstance()-&gt;getSearchEngines($idSite = 1, $period = &#039;day&#039;, $date = &#039;2007-07-24&#039;);
-    $oldPeriod = $dataTable-&gt;metadata[&#039;period&#039;];
-    $dataTable-&gt;metadata[&#039;period&#039;] = Period::factory(&#039;week&#039;, Date::factory(&#039;2013-10-18&#039;));
+    $dataTable = \Piwik\Plugins\Referrers\API::getInstance()->getSearchEngines($idSite = 1, $period = 'day', $date = '2007-07-24');
+    $oldPeriod = $dataTable->metadata['period'];
+    $dataTable->metadata['period'] = Period::factory('week', Date::factory('2013-10-18'));
 
-**Serializing &amp; unserializing**
+**Serializing & unserializing**
 
-    $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
+    $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
     
     $dataTable = // ... build by aggregating visits ...
-    $serializedData = $dataTable-&gt;getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
+    $serializedData = $dataTable->getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
                                                 $columnToSortBy = Metrics::INDEX_NB_VISITS);
     
     $serializedDataTable = $serializedData[0];
@@ -135,10 +135,10 @@ Non-essential, presentation filters should be queued.
 
     public function getMyReport($idSite, $period, $date, $segment = false, $expanded = false)
     {
-        $dataTable = Archive::getDataTableFromArchive(&#039;MyPlugin_MyReport&#039;, $idSite, $period, $date, $segment, $expanded);
-        $dataTable-&gt;filter(&#039;Sort&#039;, array(Metrics::INDEX_NB_VISITS, &#039;desc&#039;, $naturalSort = false, $expanded));
-        $dataTable-&gt;queueFilter(&#039;ReplaceColumnNames&#039;);
-        $dataTable-&gt;queueFilter(&#039;ColumnCallbackAddMetadata&#039;, array(&#039;label&#039;, &#039;url&#039;, __NAMESPACE__ . &#039;\getUrlFromLabelForMyReport&#039;));
+        $dataTable = Archive::getDataTableFromArchive('MyPlugin_MyReport', $idSite, $period, $date, $segment, $expanded);
+        $dataTable->filter('Sort', array(Metrics::INDEX_NB_VISITS, 'desc', $naturalSort = false, $expanded));
+        $dataTable->queueFilter('ReplaceColumnNames');
+        $dataTable->queueFilter('ColumnCallbackAddMetadata', array('label', 'url', __NAMESPACE__ . '\getUrlFromLabelForMyReport'));
         return $dataTable;
     }
 
@@ -160,10 +160,10 @@ This class defines the following constants:
 
 This metadata value must be an array that maps column names with valid operations. Valid aggregation operations are:
 
-- `&#039;skip&#039;`: do nothing
-- `&#039;max&#039;`: does `max($column1, $column2)`
-- `&#039;min&#039;`: does `min($column1, $column2)`
-- `&#039;sum&#039;`: does `$column1 + $column2`
+- `'skip'`: do nothing
+- `'max'`: does `max($column1, $column2)`
+- `'min'`: does `min($column1, $column2)`
+- `'sum'`: does `$column1 + $column2`
 
 See [addDataTable](#addDataTable) and [DataTable\Row::sumRow](#) for more information.
 
@@ -182,8 +182,8 @@ The class defines the following methods:
 - [`queueFilter()`](#queueFilter) &mdash; Adds a filter and a list of parameters to the list of queued filters.
 - [`applyQueuedFilters()`](#applyQueuedFilters) &mdash; Applies all filters that were previously queued to the table.
 - [`addDataTable()`](#addDataTable) &mdash; Sums a DataTable to this one.
-- [`getRowFromLabel()`](#getRowFromLabel) &mdash; Returns the Row whose `&#039;label&#039;` column is equal to `$label`.
-- [`getRowIdFromLabel()`](#getRowIdFromLabel) &mdash; Returns the row id for the row whose `&#039;label&#039;` column is equal to `$label`.
+- [`getRowFromLabel()`](#getRowFromLabel) &mdash; Returns the Row whose `'label'` column is equal to `$label`.
+- [`getRowIdFromLabel()`](#getRowIdFromLabel) &mdash; Returns the row id for the row whose `'label'` column is equal to `$label`.
 - [`getEmptyClone()`](#getEmptyClone) &mdash; Returns an empty DataTable with the same metadata and queued filters as `$this` one.
 - [`getRowFromId()`](#getRowFromId) &mdash; Returns a row by ID.
 - [`getRowFromIdSubDataTable()`](#getRowFromIdSubDataTable) &mdash; Returns the row that has a subtable with ID matching `$idSubtable`.
@@ -214,7 +214,7 @@ The class defines the following methods:
 - [`addRowsFromSerializedArray()`](#addRowsFromSerializedArray) &mdash; Adds a set of rows from a serialized DataTable string.
 - [`addRowsFromArray()`](#addRowsFromArray) &mdash; Adds many rows from an array.
 - [`addRowsFromSimpleArray()`](#addRowsFromSimpleArray) &mdash; Adds many rows from an array containing arrays of column values.
-- [`makeFromIndexedArray()`](#makeFromIndexedArray) &mdash; Rewrites the input $array array (     LABEL =&gt; array(col1 =&gt; X, col2 =&gt; Y),     LABEL2 =&gt; array(col1 =&gt; X, col2 =&gt; Y), ) to a DataTable, ie.
+- [`makeFromIndexedArray()`](#makeFromIndexedArray) &mdash; Rewrites the input $array array (     LABEL => array(col1 => X, col2 => Y),     LABEL2 => array(col1 => X, col2 => Y), ) to a DataTable, ie.
 - [`setMaximumDepthLevelAllowedAtLeast()`](#setMaximumDepthLevelAllowedAtLeast) &mdash; Sets the maximum depth level to at least a certain value.
 - [`getMetadata()`](#getMetadata) &mdash; Returns metadata by name.
 - [`setMetadata()`](#setMetadata) &mdash; Sets a metadata value by name.
@@ -223,8 +223,8 @@ The class defines the following methods:
 - [`setAllTableMetadata()`](#setAllTableMetadata) &mdash; Sets metadata erasing existing values.
 - [`setMaximumAllowedRows()`](#setMaximumAllowedRows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row).
 - [`walkPath()`](#walkPath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one, and the number of segments of the path successfully walked.
-- [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with its subtable&#039;s rows.
-- [`makeFromSimpleArray()`](#makeFromSimpleArray) &mdash; Returns a new DataTable created with data from a &#039;simple&#039; array.
+- [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with its subtable's rows.
+- [`makeFromSimpleArray()`](#makeFromSimpleArray) &mdash; Returns a new DataTable created with data from a 'simple' array.
 - [`fromSerializedArray()`](#fromSerializedArray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
 
 ### `__construct()` <a name="__construct"></a>
@@ -334,7 +334,7 @@ Adds a filter and a list of parameters to the list of queued filters.
 These filters will be
 executed when [applyQueuedFilters](#applyQueuedFilters) is called.
 
-Filters that prettify the output or don&#039;t need the full set of rows should be queued. This
+Filters that prettify the output or don't need the full set of rows should be queued. This
 way they will be run after the table is truncated which will result in better performance.
 
 #### Signature
@@ -384,12 +384,12 @@ metadata can be used to specify a different type of operation.
 
 ### `getRowFromLabel()` <a name="getRowFromLabel"></a>
 
-Returns the Row whose `&#039;label&#039;` column is equal to `$label`.
+Returns the Row whose `'label'` column is equal to `$label`.
 
 #### Description
 
 This method executes in constant time except for the first call which caches row
-label =&gt; row ID mappings.
+label => row ID mappings.
 
 #### Signature
 
@@ -402,12 +402,12 @@ label =&gt; row ID mappings.
 
 ### `getRowIdFromLabel()` <a name="getRowIdFromLabel"></a>
 
-Returns the row id for the row whose `&#039;label&#039;` column is equal to `$label`.
+Returns the row id for the row whose `'label'` column is equal to `$label`.
 
 #### Description
 
 This method executes in constant time except for the first call which caches row
-label =&gt; row ID mappings.
+label => row ID mappings.
 
 #### Signature
 
@@ -842,25 +842,25 @@ Row metadata cannot be added with this method.
 
 ### `makeFromIndexedArray()` <a name="makeFromIndexedArray"></a>
 
-Rewrites the input $array array (     LABEL =&gt; array(col1 =&gt; X, col2 =&gt; Y),     LABEL2 =&gt; array(col1 =&gt; X, col2 =&gt; Y), ) to a DataTable, ie.
+Rewrites the input $array array (     LABEL => array(col1 => X, col2 => Y),     LABEL2 => array(col1 => X, col2 => Y), ) to a DataTable, ie.
 
 #### Description
 
 with the internal structure
 array (
-    array( Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; LABEL, col1 =&gt; X, col2 =&gt; Y)),
-    array( Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; LABEL2, col1 =&gt; X, col2 =&gt; Y)),
+    array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),
+    array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),
 )
 
 It also works with array having only one value per row, eg.
 array (
-    LABEL =&gt; X,
-    LABEL2 =&gt; Y,
+    LABEL => X,
+    LABEL2 => Y,
 )
 would be converted to:
 array (
-    array( Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; LABEL, &#039;value&#039; =&gt; X)),
-    array( Row::COLUMNS =&gt; array(&#039;label&#039; =&gt; LABEL2, &#039;value&#039; =&gt; Y)),
+    array( Row::COLUMNS => array('label' => LABEL, 'value' => X)),
+    array( Row::COLUMNS => array('label' => LABEL2, 'value' => Y)),
 )
 
 #### Signature
@@ -988,7 +988,7 @@ for more information about tree walking.
 
 ### `mergeSubtables()` <a name="mergeSubtables"></a>
 
-Returns a new DataTable in which the rows of this table are replaced with its subtable&#039;s rows.
+Returns a new DataTable in which the rows of this table are replaced with its subtable's rows.
 
 #### Signature
 
@@ -1000,7 +1000,7 @@ Returns a new DataTable in which the rows of this table are replaced with its su
 
 ### `makeFromSimpleArray()` <a name="makeFromSimpleArray"></a>
 
-Returns a new DataTable created with data from a &#039;simple&#039; array.
+Returns a new DataTable created with data from a 'simple' array.
 
 #### Description
 

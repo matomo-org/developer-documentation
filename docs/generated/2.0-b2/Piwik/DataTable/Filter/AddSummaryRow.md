@@ -10,10 +10,10 @@ Description
 
 **Basic usage example**
 
-    $dataTable-&gt;filter(&#039;AddSummaryRow&#039;);
+    $dataTable->filter('AddSummaryRow');
 
-    // use a human readable label for the summary row (instead of &#039;-1&#039;)
-    $dataTable-&gt;filter(&#039;AddSummaryRow&#039;, array($labelSummaryRow = Piwik_Translate(&#039;General_Total&#039;)));
+    // use a human readable label for the summary row (instead of '-1')
+    $dataTable->filter('AddSummaryRow', array($labelSummaryRow = Piwik_Translate('General_Total')));
 
 
 Methods

@@ -9,7 +9,7 @@ Description
 -----------
 
 DataTable rows contain columns, metadata and a subtable ID. Columns and metadata
-are stored as an array of name =&gt; value mappings.
+are stored as an array of name => value mappings.
 
 
 Constants
@@ -56,7 +56,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`__sleep()`](#__sleep) &mdash; Because $this-&gt;c[self::DATATABLE_ASSOCIATED] is negative when the table is in memory, we must prior to serialize() call, make sure the ID is saved as positive integer
+- [`__sleep()`](#__sleep) &mdash; Because $this->c[self::DATATABLE_ASSOCIATED] is negative when the table is in memory, we must prior to serialize() call, make sure the ID is saved as positive integer
 - [`cleanPostSerialize()`](#cleanPostSerialize) &mdash; Must be called after the row was serialized and __sleep was called.
 - [`__destruct()`](#__destruct) &mdash; When destroyed, a row destroys its associated subTable if there is one
 - [`__toString()`](#__toString) &mdash; Applies a basic rendering to the Row and returns the output.
@@ -67,7 +67,7 @@ The class defines the following methods:
 - [`getColumns()`](#getColumns) &mdash; Returns the array containing all the columns.
 - [`getIdSubDataTable()`](#getIdSubDataTable) &mdash; Returns the ID of the subDataTable.
 - [`getSubtable()`](#getSubtable) &mdash; Returns the associated subtable, if one exists.
-- [`sumSubtable()`](#sumSubtable) &mdash; Sums a DataTable to this row&#039;s subtable.
+- [`sumSubtable()`](#sumSubtable) &mdash; Sums a DataTable to this row's subtable.
 - [`addSubtable()`](#addSubtable) &mdash; Attaches a subtable to this row.
 - [`setSubtable()`](#setSubtable) &mdash; Attaches a subtable to this row, overwriting the existing subtable, if any.
 - [`isSubtableLoaded()`](#isSubtableLoaded) &mdash; Returns true if the subtable is currently loaded in memory via [DataTable\Manager](#).
@@ -98,11 +98,11 @@ Constructor.
 
 ### `__sleep()` <a name="__sleep"></a>
 
-Because $this-&gt;c[self::DATATABLE_ASSOCIATED] is negative when the table is in memory, we must prior to serialize() call, make sure the ID is saved as positive integer
+Because $this->c[self::DATATABLE_ASSOCIATED] is negative when the table is in memory, we must prior to serialize() call, make sure the ID is saved as positive integer
 
 #### Description
 
-Only serialize the &quot;c&quot; member
+Only serialize the "c" member
 
 #### Signature
 
@@ -227,7 +227,7 @@ Returns `false` if none exists.
 
 ### `sumSubtable()` <a name="sumSubtable"></a>
 
-Sums a DataTable to this row&#039;s subtable.
+Sums a DataTable to this row's subtable.
 
 #### Description
 
@@ -396,7 +396,7 @@ Sums the given `$rowToSum` columns values to the existing row column values.
 Only the int or float values will be summed. Label columns will be ignored
 even if they have a numeric value.
 
-Columns in `$rowToSum` that don&#039;t exist in `$this` are added to `$this`.
+Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
 
 #### Signature
 

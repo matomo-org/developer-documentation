@@ -10,8 +10,8 @@ Description
 
 **Basic usage example**
 
-    $dataTable-&gt;filter(&#039;MetadataCallbackReplace&#039;, array(&#039;url&#039;, function ($url) {
-        return $url . &#039;#index&#039;;
+    $dataTable->filter('MetadataCallbackReplace', array('url', function ($url) {
+        return $url . '#index';
     }));
 
 

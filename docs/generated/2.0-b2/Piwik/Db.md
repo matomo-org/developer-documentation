@@ -14,14 +14,14 @@ Plugins should use this class to execute SQL against the database.
 
 **Basic Usage**
 
-    $rows = Db::fetchAll(&quot;SELECT col1, col2 FROM mytable WHERE thing = ?&quot;, array(&#039;thingvalue&#039;));
+    $rows = Db::fetchAll("SELECT col1, col2 FROM mytable WHERE thing = ?", array('thingvalue'));
     foreach ($rows as $row) {
-        doSomething($row[&#039;col1&#039;], $row[&#039;col2&#039;]);
+        doSomething($row['col1'], $row['col2']);
     }
 
-    $value = Db::fetchOne(&quot;SELECT MAX(col1) FROM mytable&quot;);
+    $value = Db::fetchOne("SELECT MAX(col1) FROM mytable");
 
-    Db::query(&quot;DELETE FROM mytable WHERE id &lt; ?&quot;, array(23));
+    Db::query("DELETE FROM mytable WHERE id < ?", array(23));
 
 
 Properties
@@ -37,7 +37,7 @@ Cached result of isLockprivilegeGranted function.
 
 #### Description
 
-Public so tests can simulate the situation where the lock tables privilege isn&#039;t granted.
+Public so tests can simulate the situation where the lock tables privilege isn't granted.
 
 #### Signature
 
@@ -49,7 +49,7 @@ Methods
 
 The class defines the following methods:
 
-- [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn&#039;t been already.
+- [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
 - [`createDatabaseObject()`](#createDatabaseObject) &mdash; Create the database object and connects to the database.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
 - [`query()`](#query) &mdash; Executes an SQL query and returns the Zend_Db_Statement object.
@@ -72,7 +72,7 @@ The class defines the following methods:
 
 ### `get()` <a name="get"></a>
 
-Returns the database connection and creates it if it hasn&#039;t been already.
+Returns the database connection and creates it if it hasn't been already.
 
 #### Signature
 
@@ -88,7 +88,7 @@ Create the database object and connects to the database.
 
 #### Description
 
-Shouldn&#039;t be called directly, use [get](#get).
+Shouldn't be called directly, use [get](#get).
 
 #### Signature
 
@@ -211,7 +211,7 @@ locking the table for too long.
 **Example**
 
     $idVisit = // ...
-    Db::deleteAllRows(Common::prefixTable(&#039;log_visit&#039;), &quot;WHERE idvisit &lt;= ?&quot;, &quot;idvisit ASC&quot;, 100000, array($idVisit));
+    Db::deleteAllRows(Common::prefixTable('log_visit'), "WHERE idvisit <= ?", "idvisit ASC", 100000, array($idVisit));
 
 #### Signature
 
@@ -298,7 +298,7 @@ Performs a SELECT on a table one chunk at a time and returns the first successfu
 
 #### Description
 
-In other words, if running a SELECT on one chunk of the table doesn&#039;t
+In other words, if running a SELECT on one chunk of the table doesn't
 return a value, we move on to the next chunk and we keep moving until
 the SELECT returns a value.
 
@@ -311,13 +311,13 @@ for too long.
 
     // find the most recent visit that is older than a certain date 
     $dateStart = // ...
-    $sql = &quot;SELECT idvisit
+    $sql = "SELECT idvisit
           FROM $logVisit
-         WHERE &#039;$dateStart&#039; &gt; visit_last_action_time
-           AND idvisit &lt;= ?
-           AND idvisit &gt; ?
+         WHERE '$dateStart' > visit_last_action_time
+           AND idvisit <= ?
+           AND idvisit > ?
       ORDER BY idvisit DESC
-         LIMIT 1&quot;;
+         LIMIT 1";
 
     // since visits
     return Db::segmentedFetchFirst($sql, $maxIdVisit, 0, -self::$selectSegmentSize);

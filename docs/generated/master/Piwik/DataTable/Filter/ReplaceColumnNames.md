@@ -16,11 +16,11 @@ class. (See [Metrics](#) for more information about integer metric names.)
 
 **Basic example**
 
-    // filter use in a plugin&#039;s API method
+    // filter use in a plugin's API method
     public function getMyReport($idSite, $period, $date, $segment = false, $expanded = false)
     {
-        $dataTable = Archive::getDataTableFromArchive(&#039;MyPlugin_MyReport&#039;, $idSite, $period, $date, $segment, $expanded);
-        $dataTable-&gt;queueFilter(&#039;ReplaceColumnNames&#039;);
+        $dataTable = Archive::getDataTableFromArchive('MyPlugin_MyReport', $idSite, $period, $date, $segment, $expanded);
+        $dataTable->queueFilter('ReplaceColumnNames');
         return $dataTable;
     }
 

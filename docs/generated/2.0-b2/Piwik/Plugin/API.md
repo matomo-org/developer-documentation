@@ -10,7 +10,7 @@ Description
 
 Plugins that want to expose functionality through an API should create a class
 that derives from this one. Every public method in that class will be callable
-through Piwik&#039;s API.
+through Piwik's API.
 
 ### Examples
 
@@ -27,5 +27,5 @@ through Piwik&#039;s API.
 
 **Linking to an API method**
 
-    &lt;a href=&quot;?module=API&amp;method=MyPlugin.myMethod&amp;idSite=1&amp;period=day&amp;date=2013-10-23&quot;&gt;Link&lt;/a&gt;
+    <a href="?module=API&method=MyPlugin.myMethod&idSite=1&period=day&date=2013-10-23">Link</a>
 

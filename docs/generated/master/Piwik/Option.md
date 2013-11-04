@@ -12,20 +12,20 @@ Description
 
 **Setting and getting options**
 
-    $optionValue = Option::get(&#039;MyPlugin.MyOptionName&#039;);
+    $optionValue = Option::get('MyPlugin.MyOptionName');
     if ($optionValue === false) {
         // if not set, set it
-        Option::set(&#039;MyPlugin.MyOptionName&#039;, &#039;my option value&#039;);
+        Option::set('MyPlugin.MyOptionName', 'my option value');
     }
 
 **Storing user specific options**
 
     $userName = // ...
-    Option::set(&#039;MyPlugin.MyOptionName.&#039; . $userName, &#039;my option value&#039;);
+    Option::set('MyPlugin.MyOptionName.' . $userName, 'my option value');
 
 **Clearing user specific options**
 
-    Option::deleteLike(&#039;MyPlugin.MyOptionName.%&#039;);
+    Option::deleteLike('MyPlugin.MyOptionName.%');
 
 
 Methods

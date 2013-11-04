@@ -16,10 +16,10 @@ the main menu.
     // add a new page in an observer to Menu.Admin.addItems
     public function addMainMenuItem()
     {
-        MenuMain::getInstance()-&gt;add(
-            &#039;MyPlugin_MyTranslatedMenuCategory&#039;,
-            &#039;MyPlugin_MyTranslatedMenuName&#039;,
-            array(&#039;module&#039; =&gt; &#039;MyPlugin&#039;, &#039;action&#039; =&gt; &#039;index&#039;),
+        MenuMain::getInstance()->add(
+            'MyPlugin_MyTranslatedMenuCategory',
+            'MyPlugin_MyTranslatedMenuName',
+            array('module' => 'MyPlugin', 'action' => 'index'),
             Piwik::isUserHasSomeAdminAccess(),
             $order = 2
         );

@@ -12,15 +12,15 @@ Description
 
     // remove all countries from UserCountry.getCountry that have less than 3 visits
     $dataTable = // ... get a DataTable whose queued filters have been run ...
-    $dataTable-&gt;filter(&#039;ExcludeLowPopulation&#039;, array(&#039;nb_visits&#039;, 3));
+    $dataTable->filter('ExcludeLowPopulation', array('nb_visits', 3));
 
     // remove all countries from UserCountry.getCountry whose percent of total visits is less than 5%
     $dataTable = // ... get a DataTable whose queued filters have been run ...
-    $dataTable-&gt;filter(&#039;ExcludeLowPopulation&#039;, array(&#039;nb_visits&#039;, false, 0.05));
+    $dataTable->filter('ExcludeLowPopulation', array('nb_visits', false, 0.05));
 
     // remove all countries from UserCountry.getCountry whose bounce rate is less than 10%
     $dataTable = // ... get a DataTable that has a numerical bounce_rate column ...
-    $dataTable-&gt;filter(&#039;ExcludeLowPopulation&#039;, array(&#039;bounce_rate&#039;, 0.10));
+    $dataTable->filter('ExcludeLowPopulation', array('bounce_rate', 0.10));
 
 
 Constants

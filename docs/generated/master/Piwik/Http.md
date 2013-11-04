@@ -16,14 +16,14 @@ Methods
 
 The class defines the following methods:
 
-- [`getTransportMethod()`](#getTransportMethod) &mdash; Returns the &quot;best&quot; available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
+- [`getTransportMethod()`](#getTransportMethod) &mdash; Returns the "best" available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
 - [`sendHttpRequest()`](#sendHttpRequest) &mdash; Sends an HTTP request using best available transport method.
 - [`downloadChunk()`](#downloadChunk) &mdash; Downloads the next chunk of a specific file.
 - [`fetchRemoteFile()`](#fetchRemoteFile) &mdash; Fetches a file located at `$url` and saves it to `$destinationPath`.
 
 ### `getTransportMethod()` <a name="getTransportMethod"></a>
 
-Returns the &quot;best&quot; available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
+Returns the "best" available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
 
 #### Signature
 
@@ -60,8 +60,8 @@ Downloads the next chunk of a specific file.
 
 #### Description
 
-The next chunk&#039;s byte range
-is determined by the existing file&#039;s size and the expected file size, which
+The next chunk's byte range
+is determined by the existing file's size and the expected file size, which
 is stored in the piwik_option table before starting a download. The expected
 file size is obtained through a `HEAD` HTTP request.
 
@@ -71,7 +71,7 @@ parts.
 The proper use of this function is to call it once per request. The browser
 should continue to send requests to Piwik which will in turn call this method
 until the file has completely downloaded. In this way, the user can be informed
-of a download&#039;s progress.
+of a download's progress.
 
 **Example Usage**
 
@@ -80,10 +80,10 @@ of a download&#039;s progress.
     var downloadFile = function (isStart) {
         var ajax = new ajaxHelper();
         ajax.addParams({
-            module: &#039;MyPlugin&#039;,
-            action: &#039;myAction&#039;,
+            module: 'MyPlugin',
+            action: 'myAction',
             isStart: isStart ? 1 : 0
-        }, &#039;post&#039;);
+        }, 'post');
         ajax.setCallback(function (response) {
             var progress = response.progress
             // ...update progress...
@@ -100,9 +100,9 @@ of a download&#039;s progress.
     // PHP controller action
     public function myAction()
     {
-        $outputPath = PIWIK_INCLUDE_PATH . &#039;/tmp/averybigfile.zip&#039;;
-        $isStart = Common::getRequestVar(&#039;isStart&#039;, 1, &#039;int&#039;);
-        Http::downloadChunk(&quot;http://bigfiles.com/averybigfile.zip&quot;, $outputPath, $isStart == 1);
+        $outputPath = PIWIK_INCLUDE_PATH . '/tmp/averybigfile.zip';
+        $isStart = Common::getRequestVar('isStart', 1, 'int');
+        Http::downloadChunk("http://bigfiles.com/averybigfile.zip", $outputPath, $isStart == 1);
     }
     ```
 

@@ -12,11 +12,11 @@ This filter is only used to prettify the summary row label and so it should
 always be queued on a DataTable.
 
 This filter always recurses. In other words, this filter will apply itself to
-all subtables in the given DataTable&#039;s hierarchy.
+all subtables in the given DataTable's hierarchy.
 
 **Basic example**
 
-    $dataTable-&gt;queueFilter(&#039;ReplaceSummaryRowLabel&#039;, array(Piwik::translate(&#039;General_Others&#039;)));
+    $dataTable->queueFilter('ReplaceSummaryRowLabel', array(Piwik::translate('General_Others')));
 
 
 Methods

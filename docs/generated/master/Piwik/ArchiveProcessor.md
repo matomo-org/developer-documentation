@@ -32,7 +32,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 - **[Archiver](#)** - to learn how plugins should implement their own analytics
                       aggregation logic.
 - **[LogAggregator](#)** - to learn how plugins can perform data aggregation
-                           across Piwik&#039;s log tables.
+                           across Piwik's log tables.
 
 ### Examples
 
@@ -42,7 +42,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
     public function aggregateDayReport(ArchiveProcessor $archiveProcessor)
     {
         $myFancyMetric = // ... calculate the metric value ...
-        $archiveProcessor-&gt;insertNumericRecord(&#039;MyPlugin_myFancyMetric&#039;, $myFancyMetric);
+        $archiveProcessor->insertNumericRecord('MyPlugin_myFancyMetric', $myFancyMetric);
     }
 
 **Inserting serialized DataTables**
@@ -50,15 +50,15 @@ requests that initiate archiving, so statistics can be calculated in parallel.
     // function in an Archiver descendent
     public function aggregateDayReport(ArchiveProcessor $archiveProcessor)
     {
-        $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
+        $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
 
         $myDataTable = // ... use LogAggregator to generate a report about some log data ...
     
         $dataTable = // ... build by aggregating visits ...
-        $serializedData = $dataTable-&gt;getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
+        $serializedData = $dataTable->getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
                                                     $columnToSortBy = Metrics::INDEX_NB_VISITS);
         
-        $archiveProcessor-&gt;insertBlobRecords(&#039;MyPlugin_myFancyReport&#039;, $serializedData);
+        $archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
     }
 
 
@@ -85,9 +85,9 @@ The class defines the following methods:
 - [`getPeriod()`](#getPeriod) &mdash; Returns the period we computing statistics for.
 - [`getSite()`](#getSite) &mdash; Returns the site we are computing statistics for.
 - [`getSegment()`](#getSegment) &mdash; The Segment used to limit the set of visits that are being aggregated.
-- [`insertNumericRecords()`](#insertNumericRecords) &mdash; Caches multiple numeric records in the archive for this processor&#039;s site, period and segment.
-- [`insertNumericRecord()`](#insertNumericRecord) &mdash; Caches a single numeric record in the archive for this processor&#039;s site, period and segment.
-- [`insertBlobRecord()`](#insertBlobRecord) &mdash; Caches one or more blob records in the archive for this processor&#039;s site, period and segment.
+- [`insertNumericRecords()`](#insertNumericRecords) &mdash; Caches multiple numeric records in the archive for this processor's site, period and segment.
+- [`insertNumericRecord()`](#insertNumericRecord) &mdash; Caches a single numeric record in the archive for this processor's site, period and segment.
+- [`insertBlobRecord()`](#insertBlobRecord) &mdash; Caches one or more blob records in the archive for this processor's site, period and segment.
 
 ### `getLogAggregator()` <a name="getLogAggregator"></a>
 
@@ -127,7 +127,7 @@ The Segment used to limit the set of visits that are being aggregated.
 
 ### `insertNumericRecords()` <a name="insertNumericRecords"></a>
 
-Caches multiple numeric records in the archive for this processor&#039;s site, period and segment.
+Caches multiple numeric records in the archive for this processor's site, period and segment.
 
 #### Signature
 
@@ -138,7 +138,7 @@ Caches multiple numeric records in the archive for this processor&#039;s site, p
 
 ### `insertNumericRecord()` <a name="insertNumericRecord"></a>
 
-Caches a single numeric record in the archive for this processor&#039;s site, period and segment.
+Caches a single numeric record in the archive for this processor's site, period and segment.
 
 #### Description
 
@@ -154,7 +154,7 @@ Numeric values are not inserted if they equal 0.
 
 ### `insertBlobRecord()` <a name="insertBlobRecord"></a>
 
-Caches one or more blob records in the archive for this processor&#039;s site, period and segment.
+Caches one or more blob records in the archive for this processor's site, period and segment.
 
 #### Signature
 

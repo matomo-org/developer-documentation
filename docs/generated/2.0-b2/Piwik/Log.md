@@ -9,11 +9,11 @@ Description
 -----------
 
 Log entries are made with a message and log level. The logging utility will tag each
-log entry with the name of the plugin that&#039;s doing the logging. If no plugin is found,
+log entry with the name of the plugin that's doing the logging. If no plugin is found,
 the name of the current class is used.
 
-You can log messages using one of the public static functions (eg, &#039;error&#039;, &#039;warning&#039;,
-&#039;info&#039;, etc.). Messages logged with the **error** level will **always** be logged to
+You can log messages using one of the public static functions (eg, 'error', 'warning',
+'info', etc.). Messages logged with the **error** level will **always** be logged to
 the screen, regardless of whether the [log] log_writer config option includes the
 screen writer.
 
@@ -44,18 +44,18 @@ The following configuration options can be set:
 - `logger_file_path`: For the file log writer, specifies the path to the log file
                       to log to or a path to a directory to store logs in. If a
                       directory, the file name is piwik.log. Can be relative to
-                      Piwik&#039;s root dir or an absolute path. Defaults to **tmp/logs**.
+                      Piwik's root dir or an absolute path. Defaults to **tmp/logs**.
 
 ### Custom message formatting
 
-If you&#039;d like to format log messages differently for different backends, you can use
-one of the `&#039;Log.format...Message&#039;` events. These events are fired when an object is
+If you'd like to format log messages differently for different backends, you can use
+one of the `'Log.format...Message'` events. These events are fired when an object is
 logged. You can create your own custom class containing the information to log and
 listen to this event.
 
 ### Custom log writers
 
-New logging backends can be added via the `&#039;Log.getAvailableWriters&#039;` event. A log
+New logging backends can be added via the `'Log.getAvailableWriters'` event. A log
 writer is just a callback that accepts log entry information (such as the message,
 level, etc.), so any backend could conceivably be used (including existing PSR3
 backends).
@@ -64,9 +64,9 @@ backends).
 
 **Basic logging**
 
-    Log::error(&quot;This log message will end up on the screen and in a file.&quot;)
-    Log::verbose(&quot;This log message uses %s params, but %s will only be called if the&quot;
-               . &quot; configured log level includes %s.&quot;, &quot;sprintf&quot;, &quot;sprintf&quot;, &quot;verbose&quot;);
+    Log::error("This log message will end up on the screen and in a file.")
+    Log::verbose("This log message uses %s params, but %s will only be called if the"
+               . " configured log level includes %s.", "sprintf", "sprintf", "verbose");
 
 
 Constants

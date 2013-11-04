@@ -16,21 +16,21 @@ Description
     {
         public function archiveDay()
         {
-            $logAggregator = $this-&gt;getLogAggregator();
+            $logAggregator = $this->getLogAggregator();
             
-            $data = $logAggregator-&gt;queryVisitsByDimension(...);
+            $data = $logAggregator->queryVisitsByDimension(...);
             
             $dataTable = new DataTable();
-            $dataTable-&gt;addRowsFromSimpleArray($data);
+            $dataTable->addRowsFromSimpleArray($data);
 
-            $archiveProcessor = $this-&gt;getProcessor();
-            $archiveProcessor-&gt;insertBlobRecords(&#039;MyPlugin_myReport&#039;, $dataTable-&gt;getSerialized(500));
+            $archiveProcessor = $this->getProcessor();
+            $archiveProcessor->insertBlobRecords('MyPlugin_myReport', $dataTable->getSerialized(500));
         }
         
         public function archivePeriod()
         {
-            $archiveProcessor = $this-&gt;getProcessor();
-            $archiveProcessor-&gt;aggregateDataTableReports(&#039;MyPlugin_myReport&#039;, 500);
+            $archiveProcessor = $this->getProcessor();
+            $archiveProcessor->aggregateDataTableReports('MyPlugin_myReport', 500);
         }
     }
 
@@ -40,8 +40,8 @@ Description
     public function archiveDay(ArchiveProcessor\Day $archiveProcessor)
     {
         $archiving = new Archiver($archiveProcessor);
-        if ($archiving-&gt;shouldArchive()) {
-            $archiving-&gt;archiveDay();
+        if ($archiving->shouldArchive()) {
+            $archiving->archiveDay();
         }
     }
 
@@ -49,8 +49,8 @@ Description
     public function archivePeriod(ArchiveProcessor\Period $archiveProcessor)
     {
         $archiving = new Archiver($archiveProcessor);
-        if ($archiving-&gt;shouldArchive()) {
-            $archiving-&gt;archivePeriod();
+        if ($archiving->shouldArchive()) {
+            $archiving->archivePeriod();
         }
     }
 

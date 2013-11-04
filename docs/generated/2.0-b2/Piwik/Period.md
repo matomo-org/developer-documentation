@@ -21,10 +21,10 @@ periodically, while every other date range is archived on-demand.
 
 ### Examples
 
-**Building a period from &#039;date&#039; and &#039;period&#039; query parameters**
+**Building a period from 'date' and 'period' query parameters**
 
-    $date = Common::getRequestVar(&#039;date&#039;, null, &#039;string&#039;);
-    $period = Common::getRequestVar(&#039;period&#039;, null, &#039;string&#039;);
+    $date = Common::getRequestVar('date', null, 'string');
+    $period = Common::getRequestVar('period', null, 'string');
     $periodObject = Period::advancedFactory($period, $date);
 
 
@@ -37,7 +37,7 @@ The abstract class defines the following methods:
 - [`factory()`](#factory) &mdash; Creates a new Period instance with a period ID and Date instance.
 - [`isMultiplePeriod()`](#isMultiplePeriod) &mdash; Returns true $dateString and $period correspond to multiple periods.
 - [`advancedFactory()`](#advancedFactory) &mdash; The advanced factory method is easier to use from the API than the factory method above.
-- [`makePeriodFromQueryParams()`](#makePeriodFromQueryParams) &mdash; Creates a period instance using a Site instance and two strings describing the period &amp; date.
+- [`makePeriodFromQueryParams()`](#makePeriodFromQueryParams) &mdash; Creates a period instance using a Site instance and two strings describing the period & date.
 - [`getDateStart()`](#getDateStart) &mdash; Returns the first day of the period.
 - [`getDateEnd()`](#getDateEnd) &mdash; Returns the last day of the period.
 - [`getId()`](#getId) &mdash; Returns the period ID.
@@ -99,7 +99,7 @@ The advanced factory method is easier to use from the API than the factory metho
 
 #### Description
 
-It doesn&#039;t require an instance of Date and works for
+It doesn't require an instance of Date and works for
 period=range. Generally speaking, anything that can be passed as period
 and range to the API methods can directly be forwarded to this factory
 method in order to get a suitable instance of Period.
@@ -114,7 +114,7 @@ method in order to get a suitable instance of Period.
 
 ### `makePeriodFromQueryParams()` <a name="makePeriodFromQueryParams"></a>
 
-Creates a period instance using a Site instance and two strings describing the period &amp; date.
+Creates a period instance using a Site instance and two strings describing the period & date.
 
 #### Signature
 

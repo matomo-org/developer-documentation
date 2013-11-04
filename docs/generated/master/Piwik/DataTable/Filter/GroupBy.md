@@ -15,7 +15,7 @@ NOTE: This filter should never be queued, it must be applied directly on a DataT
 **Basic usage example**
 
     // group URLs by host
-    $dataTable-&gt;filter(&#039;GroupBy&#039;, array(&#039;label&#039;, function ($labelUrl) {
+    $dataTable->filter('GroupBy', array('label', function ($labelUrl) {
         return parse_url($labelUrl, PHP_URL_HOST);
     }));
 

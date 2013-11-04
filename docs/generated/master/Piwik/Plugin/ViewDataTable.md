@@ -13,19 +13,19 @@ which data should be loaded and which view should be rendered.
 
 Example usage:
 In the Controller of the plugin VisitorInterest
-&lt;pre&gt;
+<pre>
    function getNumberOfVisitsPerVisitDuration( $fetch = false)
  {
-       $view = ViewDataTable::factory( &#039;cloud&#039; );
-       $view-&gt;init( $this-&gt;pluginName,  __FUNCTION__, &#039;VisitorInterest.getNumberOfVisitsPerVisitDuration&#039; );
-       $view-&gt;setColumnsToDisplay( array(&#039;label&#039;,&#039;nb_visits&#039;) );
-       $view-&gt;disableSort();
-       $view-&gt;disableExcludeLowPopulation();
-       $view-&gt;disableOffsetInformation();
+       $view = ViewDataTable::factory( 'cloud' );
+       $view->init( $this->pluginName,  __FUNCTION__, 'VisitorInterest.getNumberOfVisitsPerVisitDuration' );
+       $view->setColumnsToDisplay( array('label','nb_visits') );
+       $view->disableSort();
+       $view->disableExcludeLowPopulation();
+       $view->disableOffsetInformation();
 
-       return $this-&gt;renderView($view, $fetch);
+       return $this->renderView($view, $fetch);
    }
-&lt;/pre&gt;
+</pre>
 
 
 Constants
@@ -80,7 +80,7 @@ Constructor.
 #### Description
 
 Initializes the default config, requestConfig and the request itself. After configuring some
-mandatory properties reports can modify the view by listening to the hook &#039;ViewDataTable.configure&#039;.
+mandatory properties reports can modify the view by listening to the hook 'ViewDataTable.configure'.
 
 #### Signature
 
@@ -162,7 +162,7 @@ To prevent calling an API multiple times, the DataTable can be set directly.
 
 #### Description
 
-It won&#039;t be loaded again from the API in this case
+It won't be loaded again from the API in this case
 
 #### Signature
 

@@ -33,7 +33,7 @@ Note: This filter must be called before [ReplaceColumnNames](#) is called.
 
 **Basic usage example**
 
-    $dataTable-&gt;filter(&#039;AddColumnsProcessedMetricsGoal&#039;,
+    $dataTable->filter('AddColumnsProcessedMetricsGoal',
         array($enable = true, $idGoal = Piwik::LABEL_ID_GOAL_IS_ECOMMERCE_ORDER));
 
 

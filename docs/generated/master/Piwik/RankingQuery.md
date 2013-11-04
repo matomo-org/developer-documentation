@@ -13,21 +13,21 @@ advanced use cases are explained in the doc comments of the methods.
 
 The general use case looks like this:
 
-    // limit to 500 rows + &quot;Others&quot;
+    // limit to 500 rows + "Others"
     $rankingQuery = new RankingQuery();
-    $rankingQuery-&gt;setLimit(500);
+    $rankingQuery->setLimit(500);
 
-    // idaction_url will be &quot;Others&quot; in the row that contains the aggregated rest
-    $rankingQuery-&gt;addLabelColumn(&#039;idaction_url&#039;);
+    // idaction_url will be "Others" in the row that contains the aggregated rest
+    $rankingQuery->addLabelColumn('idaction_url');
 
-    // the actual query. it&#039;s important to sort it before the limit is applied
-    $sql = &#039;SELECT idaction_url, COUNT(*) AS nb_hits
+    // the actual query. it's important to sort it before the limit is applied
+    $sql = 'SELECT idaction_url, COUNT(*) AS nb_hits
             FROM log_link_visit_action
             GROUP BY idaction_url
-            ORDER BY nb_hits DESC&#039;;
+            ORDER BY nb_hits DESC';
 
     // execute the query
-    $rankingQuery-&gt;execute($sql);
+    $rankingQuery->execute($sql);
 
 For more examples, see RankingQueryTest.php
 
@@ -38,8 +38,8 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`setLimit()`](#setLimit) &mdash; Set the limit after which everything is grouped to &quot;Others&quot;.
-- [`setOthersLabel()`](#setOthersLabel) &mdash; Set the value to use for the label in the &#039;Others&#039; row.
+- [`setLimit()`](#setLimit) &mdash; Set the limit after which everything is grouped to "Others".
+- [`setOthersLabel()`](#setOthersLabel) &mdash; Set the value to use for the label in the 'Others' row.
 - [`addLabelColumn()`](#addLabelColumn) &mdash; Add a label column.
 - [`addColumn()`](#addColumn) &mdash; Add a column that has be added to the outer queries.
 - [`setColumnToMarkExcludedRows()`](#setColumnToMarkExcludedRows) &mdash; Sets a column that will be used to filter the result into two categories.
@@ -60,7 +60,7 @@ Constructor.
 
 ### `setLimit()` <a name="setLimit"></a>
 
-Set the limit after which everything is grouped to &quot;Others&quot;.
+Set the limit after which everything is grouped to "Others".
 
 #### Signature
 
@@ -71,7 +71,7 @@ Set the limit after which everything is grouped to &quot;Others&quot;.
 
 ### `setOthersLabel()` <a name="setOthersLabel"></a>
 
-Set the value to use for the label in the &#039;Others&#039; row.
+Set the value to use for the label in the 'Others' row.
 
 #### Signature
 
@@ -86,7 +86,7 @@ Add a label column.
 
 #### Description
 
-Labels are the columns that are replaced with &quot;Others&quot; after the limit.
+Labels are the columns that are replaced with "Others" after the limit.
 
 #### Signature
 
@@ -113,7 +113,7 @@ Sets a column that will be used to filter the result into two categories.
 
 #### Description
 
-Rows where this column has a value &gt; 0 will be removed from the result and put
+Rows where this column has a value > 0 will be removed from the result and put
 into another array. Both the result and the array of excluded rows are returned
 by [execute](#execute).
 

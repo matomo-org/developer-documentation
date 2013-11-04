@@ -8,7 +8,7 @@ Nonce class.
 Description
 -----------
 
-A cryptographic nonce -- &quot;number used only once&quot; -- is often recommended as
+A cryptographic nonce -- "number used only once" -- is often recommended as
 part of a robust defense against cross-site request forgery (CSRF/XSRF). This
 class provides static methods that create and manage nonce values.
 

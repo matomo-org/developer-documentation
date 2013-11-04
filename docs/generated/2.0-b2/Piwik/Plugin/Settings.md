@@ -61,7 +61,7 @@ Returns only settings that can be displayed for current user.
 
 #### Description
 
-For instance a regular user won&#039;t see get
+For instance a regular user won't see get
 any settings that require super user permissions.
 
 #### Signature

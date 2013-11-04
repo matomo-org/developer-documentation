@@ -11,7 +11,7 @@ Description
 **Example**
 
     // only display index pageviews in Actions.getPageUrls
-    $dataTable-&gt;filter(&#039;PatternRecursive&#039;, array(&#039;label&#039;, &#039;index&#039;));
+    $dataTable->filter('PatternRecursive', array('label', 'index'));
 
 
 Methods

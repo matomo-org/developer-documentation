@@ -23,8 +23,8 @@ If data has not been archived for the subperiods, archiving will be launched for
     // function in an Archiver descendent
     public function archivePeriod(ArchiveProcessor\Period $archiveProcessor)
     {
-        $archiveProcessor-&gt;aggregateNumericMetrics(&#039;myFancyMetric&#039;, &#039;sum&#039;);
-        $archiveProcessor-&gt;aggregateNumericMetrics(&#039;myOtherFancyMetric&#039;, &#039;max&#039;);
+        $archiveProcessor->aggregateNumericMetrics('myFancyMetric', 'sum');
+        $archiveProcessor->aggregateNumericMetrics('myOtherFancyMetric', 'max');
     }
 
 **Archiving report data**
@@ -32,10 +32,10 @@ If data has not been archived for the subperiods, archiving will be launched for
     // function in an Archiver descendent
     public function archivePeriod(ArchiveProcessor\Period $archiveProcessor)
     {
-        $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
+        $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
 
-        $archiveProcessor-&gt;aggregateDataTableReports(
-            &#039;MyPlugin_myFancyReport&#039;,
+        $archiveProcessor->aggregateDataTableReports(
+            'MyPlugin_myFancyReport',
             $maxRowsInTable,
             $maxRowsInSubtable = $maxRowsInTable,
             $columnToSortByBeforeTruncation = Metrics::INDEX_NB_VISITS,

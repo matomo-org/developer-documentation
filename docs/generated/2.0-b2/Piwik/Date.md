@@ -22,9 +22,9 @@ say, in a loop.
 
 **Basic usage**
 
-    $date = Date::factory(&#039;2007-07-24 14:04:24&#039;, &#039;EST&#039;);
-    $date-&gt;addHour(5);
-    echo $date-&gt;getLocalized(&quot;%longDay% the %day% of %longMonth% at %time%&quot;);
+    $date = Date::factory('2007-07-24 14:04:24', 'EST');
+    $date->addHour(5);
+    echo $date->getLocalized("%longDay% the %day% of %longMonth% at %time%");
 
 
 Constants
@@ -41,7 +41,7 @@ Methods
 The class defines the following methods:
 
 - [`factory()`](#factory) &mdash; Creates a new Date instance using a string datetime value.
-- [`getDatetime()`](#getDatetime) &mdash; Returns the current timestamp as a string with the following format: `&#039;YYYY-MM-DD HH:MM:SS&#039;`.
+- [`getDatetime()`](#getDatetime) &mdash; Returns the current timestamp as a string with the following format: `'YYYY-MM-DD HH:MM:SS'`.
 - [`getDateStartUTC()`](#getDateStartUTC) &mdash; Returns the start of the day of the current timestamp in UTC.
 - [`getDateEndUTC()`](#getDateEndUTC) &mdash; Returns the end of the day of the current timestamp in UTC.
 - [`setTimezone()`](#setTimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
@@ -52,16 +52,16 @@ The class defines the following methods:
 - [`isEarlier()`](#isEarlier) &mdash; Returns true if the current date is earlier than the given `$date`.
 - [`toString()`](#toString) &mdash; Converts this date to the requested string format.
 - [`__toString()`](#__toString) &mdash; See [toString](#toString).
-- [`compareWeek()`](#compareWeek) &mdash; Performs three-way comparison of the week of the current date against the given `$date`&#039;s week.
-- [`compareMonth()`](#compareMonth) &mdash; Performs three-way comparison of the month of the current date against the given `$date`&#039;s month.
+- [`compareWeek()`](#compareWeek) &mdash; Performs three-way comparison of the week of the current date against the given `$date`'s week.
+- [`compareMonth()`](#compareMonth) &mdash; Performs three-way comparison of the month of the current date against the given `$date`'s month.
 - [`isToday()`](#isToday) &mdash; Returns true if current date is today.
 - [`now()`](#now) &mdash; Returns a date object set to now in UTC (same as [today](#today), except that the time is also set).
 - [`today()`](#today) &mdash; Returns a date object set to today at midnight in UTC.
 - [`yesterday()`](#yesterday) &mdash; Returns a date object set to yesterday at midnight in UTC.
 - [`yesterdaySameTime()`](#yesterdaySameTime) &mdash; Returns a date object set to yesterday with the current time of day in UTC.
-- [`setTime()`](#setTime) &mdash; Returns a new Date instance with `$this` date&#039;s day and the specified new time of day.
-- [`setDay()`](#setDay) &mdash; Returns a new Date instance with `$this` date&#039;s time of day and the day specified by `$day`.
-- [`setYear()`](#setYear) &mdash; Returns a new Date instance with `$this` date&#039;s time of day, month and day, but with a new year (specified by `$year`).
+- [`setTime()`](#setTime) &mdash; Returns a new Date instance with `$this` date's day and the specified new time of day.
+- [`setDay()`](#setDay) &mdash; Returns a new Date instance with `$this` date's time of day and the day specified by `$day`.
+- [`setYear()`](#setYear) &mdash; Returns a new Date instance with `$this` date's time of day, month and day, but with a new year (specified by `$year`).
 - [`subDay()`](#subDay) &mdash; Subtracts `$n` number of days from `$this` date and returns a new Date object.
 - [`subWeek()`](#subWeek) &mdash; Subtracts `$n` weeks from `$this` date and returns a new Date object.
 - [`subMonth()`](#subMonth) &mdash; Subtracts `$n` months from `$this` date and returns the result as a new Date object.
@@ -96,7 +96,7 @@ result will be in UTC.
 
 ### `getDatetime()` <a name="getDatetime"></a>
 
-Returns the current timestamp as a string with the following format: `&#039;YYYY-MM-DD HH:MM:SS&#039;`.
+Returns the current timestamp as a string with the following format: `'YYYY-MM-DD HH:MM:SS'`.
 
 #### Signature
 
@@ -110,8 +110,8 @@ Returns the start of the day of the current timestamp in UTC.
 #### Description
 
 For example,
-if the current timestamp is `&#039;2007-07-24 14:04:24&#039;` in UTC, the result will
-be `&#039;2007-07-24&#039;`.
+if the current timestamp is `'2007-07-24 14:04:24'` in UTC, the result will
+be `'2007-07-24'`.
 
 #### Signature
 
@@ -125,8 +125,8 @@ Returns the end of the day of the current timestamp in UTC.
 #### Description
 
 For example,
-if the current timestamp is `&#039;2007-07-24 14:03:24&#039;` in UTC, the result will
-be `&#039;2007-07-24 23:59:59&#039;`.
+if the current timestamp is `'2007-07-24 14:03:24'` in UTC, the result will
+be `'2007-07-24 23:59:59'`.
 
 #### Signature
 
@@ -229,7 +229,7 @@ See [toString](#toString).
 
 ### `compareWeek()` <a name="compareWeek"></a>
 
-Performs three-way comparison of the week of the current date against the given `$date`&#039;s week.
+Performs three-way comparison of the week of the current date against the given `$date`'s week.
 
 #### Signature
 
@@ -241,7 +241,7 @@ Performs three-way comparison of the week of the current date against the given 
 
 ### `compareMonth()` <a name="compareMonth"></a>
 
-Performs three-way comparison of the month of the current date against the given `$date`&#039;s month.
+Performs three-way comparison of the month of the current date against the given `$date`'s month.
 
 #### Signature
 
@@ -298,7 +298,7 @@ Returns a date object set to yesterday with the current time of day in UTC.
 
 ### `setTime()` <a name="setTime"></a>
 
-Returns a new Date instance with `$this` date&#039;s day and the specified new time of day.
+Returns a new Date instance with `$this` date's day and the specified new time of day.
 
 #### Signature
 
@@ -310,7 +310,7 @@ Returns a new Date instance with `$this` date&#039;s day and the specified new t
 
 ### `setDay()` <a name="setDay"></a>
 
-Returns a new Date instance with `$this` date&#039;s time of day and the day specified by `$day`.
+Returns a new Date instance with `$this` date's time of day and the day specified by `$day`.
 
 #### Signature
 
@@ -321,7 +321,7 @@ Returns a new Date instance with `$this` date&#039;s time of day and the day spe
 
 ### `setYear()` <a name="setYear"></a>
 
-Returns a new Date instance with `$this` date&#039;s time of day, month and day, but with a new year (specified by `$year`).
+Returns a new Date instance with `$this` date's time of day, month and day, but with a new year (specified by `$year`).
 
 #### Signature
 

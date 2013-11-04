@@ -13,7 +13,7 @@ Description
 **Basic usage**
 
     $site = new Site($idSite);
-    $name = $site-&gt;getName();
+    $name = $site->getName();
 
 **Without allocation**
 

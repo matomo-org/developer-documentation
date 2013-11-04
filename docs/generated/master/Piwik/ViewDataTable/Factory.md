@@ -13,14 +13,14 @@ You can customize the dataTable using the disable* methods.
 
 Example:
 In the Controller of the plugin VisitorInterest
-&lt;pre&gt;
+<pre>
  function getNumberOfVisitsPerVisitDuration( $fetch = false)
  {
-     $view = ViewDataTable/Factory::build( &#039;cloud&#039;, &#039;VisitorInterest.getNumberOfVisitsPerVisitDuration&#039; );
-     $view-&gt;config-&gt;show_search = true;
-     $view-&gt;render();
+     $view = ViewDataTable/Factory::build( 'cloud', 'VisitorInterest.getNumberOfVisitsPerVisitDuration' );
+     $view->config->show_search = true;
+     $view->render();
  }
-&lt;/pre&gt;
+</pre>
 
 
 Methods
@@ -38,8 +38,8 @@ Returns a Piwik_ViewDataTable_* object.
 #### Description
 
 By default it will return a ViewDataTable_Html
-If there is a viewDataTable parameter in the URL, a ViewDataTable of this &#039;viewDataTable&#039; type will be returned.
-If defaultType is specified and if there is no &#039;viewDataTable&#039; in the URL, a ViewDataTable of this $defaultType will be returned.
+If there is a viewDataTable parameter in the URL, a ViewDataTable of this 'viewDataTable' type will be returned.
+If defaultType is specified and if there is no 'viewDataTable' in the URL, a ViewDataTable of this $defaultType will be returned.
 If force is set to true, a ViewDataTable of the $defaultType will be returned in all cases.
 
 #### Signature

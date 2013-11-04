@@ -12,7 +12,7 @@ Plugins that wish to add display HTML should create a Controller that either
 extends from this class or from [ControllerAdmin](#). Every public method in
 the controller will be exposed as a controller action.
 
-Learn more about Piwik&#039;s MVC system [here](#).
+Learn more about Piwik's MVC system [here](#).
 
 ### Examples
 
@@ -22,15 +22,15 @@ Learn more about Piwik&#039;s MVC system [here](#).
     {
         public function index()
         {
-            $view = new View(&quot;@MyPlugin/index.twig&quot;);
+            $view = new View("@MyPlugin/index.twig");
             // ... setup view ...
-            echo $view-&gt;render();
+            echo $view->render();
         }
     }
 
 **Linking to a controller action**
 
-    &lt;a href=&quot;?module=MyPlugin&amp;action=index&amp;idSite=1&amp;period=day&amp;date=2013-10-10&quot;&gt;Link&lt;/a&gt;
+    <a href="?module=MyPlugin&action=index&idSite=1&period=day&date=2013-10-10">Link</a>
 
 
 Methods
@@ -89,7 +89,7 @@ Sets general period variables on a view, including:  - **displayUniqueVisitors**
 #### Description
 
 - **period** - The value of the **period** query parameter.
-- **otherPeriods** - `array(&#039;day&#039;, &#039;week&#039;, &#039;month&#039;, &#039;year&#039;, &#039;range&#039;)`
+- **otherPeriods** - `array('day', 'week', 'month', 'year', 'range')`
 - **periodsNames** - List of available periods mapped to their singular and plural translations.
 
 #### Signature

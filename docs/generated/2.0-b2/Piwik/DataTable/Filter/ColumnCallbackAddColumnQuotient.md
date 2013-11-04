@@ -8,8 +8,8 @@ Calculates the quotient of two columns and adds the result as a new column for e
 Description
 -----------
 
-This filter is used to calculate rate values (eg, `&#039;bounce_rate&#039;`), averages
-(eg, `&#039;avg_time_on_page&#039;`) and other types of values.
+This filter is used to calculate rate values (eg, `'bounce_rate'`), averages
+(eg, `'avg_time_on_page'`) and other types of values.
 
 
 Methods

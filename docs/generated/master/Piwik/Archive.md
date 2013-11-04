@@ -21,7 +21,7 @@ You can search for metrics (such as `nb_visits`) using the [getNumeric](#getNume
 reports using the [getBlob](#getBlob), [getDataTable](#getDataTable) and
 [getDataTableExpanded](#getDataTableExpanded) methods.
 
-If you&#039;re creating an API that returns report data, you may want to use the
+If you're creating an API that returns report data, you may want to use the
 [getDataTableFromArchive](#getDataTableFromArchive) helper function.
 
 ### Learn more
@@ -38,36 +38,36 @@ Learn more about _archiving_ [here](#).
 **_Querying metrics for an API method_**
 
     // one site and one period
-    $archive = Archive::build($idSite = 1, $period = &#039;week&#039;, $date = &#039;2013-03-08&#039;);
-    return $archive-&gt;getDataTableFromNumeric(array(&#039;nb_visits&#039;, &#039;nb_actions&#039;));
+    $archive = Archive::build($idSite = 1, $period = 'week', $date = '2013-03-08');
+    return $archive->getDataTableFromNumeric(array('nb_visits', 'nb_actions'));
     
     // all sites and multiple dates
-    $archive = Archive::build($idSite = &#039;all&#039;, $period = &#039;month&#039;, $date = &#039;2013-01-02,2013-03-08&#039;);
-    return $archive-&gt;getDataTableFromNumeric(array(&#039;nb_visits&#039;, &#039;nb_actions&#039;));
+    $archive = Archive::build($idSite = 'all', $period = 'month', $date = '2013-01-02,2013-03-08');
+    return $archive->getDataTableFromNumeric(array('nb_visits', 'nb_actions'));
 
 **_Querying and using metrics immediately_**
 
     // one site and one period
-    $archive = Archive::build($idSite = 1, $period = &#039;week&#039;, $date = &#039;2013-03-08&#039;);
-    $data = $archive-&gt;getNumeric(array(&#039;nb_visits&#039;, &#039;nb_actions&#039;));
+    $archive = Archive::build($idSite = 1, $period = 'week', $date = '2013-03-08');
+    $data = $archive->getNumeric(array('nb_visits', 'nb_actions'));
     
-    $visits = $data[&#039;nb_visits&#039;];
-    $actions = $data[&#039;nb_actions&#039;];
+    $visits = $data['nb_visits'];
+    $actions = $data['nb_actions'];
 
     // ... do something w/ metric data ...
 
     // multiple sites and multiple dates
-    $archive = Archive::build($idSite = &#039;1,2,3&#039;, $period = &#039;month&#039;, $date = &#039;2013-01-02,2013-03-08&#039;);
-    $data = $archive-&gt;getNumeric(&#039;nb_visits&#039;);
+    $archive = Archive::build($idSite = '1,2,3', $period = 'month', $date = '2013-01-02,2013-03-08');
+    $data = $archive->getNumeric('nb_visits');
     
-    $janSite1Visits = $data[&#039;1&#039;][&#039;2013-01-01,2013-01-31&#039;][&#039;nb_visits&#039;];
-    $febSite1Visits = $data[&#039;1&#039;][&#039;2013-02-01,2013-02-28&#039;][&#039;nb_visits&#039;];
+    $janSite1Visits = $data['1']['2013-01-01,2013-01-31']['nb_visits'];
+    $febSite1Visits = $data['1']['2013-02-01,2013-02-28']['nb_visits'];
     // ... etc.
     
 **_Querying for reports_**
 
-    $archive = Archive::build($idSite = 1, $period = &#039;week&#039;, $date = &#039;2013-03-08&#039;);
-    $dataTable = $archive-&gt;getDataTable(&#039;MyPlugin_MyReport&#039;);
+    $archive = Archive::build($idSite = 1, $period = 'week', $date = '2013-03-08');
+    $dataTable = $archive->getDataTable('MyPlugin_MyReport');
     // ... manipulate $dataTable ...
     return $dataTable;
 
@@ -75,22 +75,22 @@ Learn more about _archiving_ [here](#).
 
     public function getMyReport($idSite, $period, $date, $segment = false, $expanded = false)
     {
-        $dataTable = Archive::getDataTableFromArchive(&#039;MyPlugin_MyReport&#039;, $idSite, $period, $date, $segment, $expanded);
-        $dataTable-&gt;queueFilter(&#039;ReplaceColumnNames&#039;);
+        $dataTable = Archive::getDataTableFromArchive('MyPlugin_MyReport', $idSite, $period, $date, $segment, $expanded);
+        $dataTable->queueFilter('ReplaceColumnNames');
         return $dataTable;
     }
 
 **_Querying data for multiple range periods_**
 
     // get data for first range
-    $archive = Archive::build($idSite = 1, $period = &#039;range&#039;, $date = &#039;2013-03-08,2013-03-12&#039;);
-    $dataTable = $archive-&gt;getDataTableFromNumeric(array(&#039;nb_visits&#039;, &#039;nb_actions&#039;));
+    $archive = Archive::build($idSite = 1, $period = 'range', $date = '2013-03-08,2013-03-12');
+    $dataTable = $archive->getDataTableFromNumeric(array('nb_visits', 'nb_actions'));
     
     // get data for second range
-    $archive = Archive::build($idSite = 1, $period = &#039;range&#039;, $date = &#039;2013-03-15,2013-03-20&#039;);
-    $dataTable = $archive-&gt;getDataTableFromNumeric(array(&#039;nb_visits&#039;, &#039;nb_actions&#039;));
+    $archive = Archive::build($idSite = 1, $period = 'range', $date = '2013-03-15,2013-03-20');
+    $dataTable = $archive->getDataTableFromNumeric(array('nb_visits', 'nb_actions'));
 
-&lt;a name=&quot;footnote-1&quot;&gt;&lt;/a&gt;
+<a name="footnote-1"></a>
 [1]: The archiving process will not be launched if browser archiving is disabled
      and the current request came from a browser (and not the archive.php cron
      script).
@@ -180,7 +180,7 @@ be indexed by site ID.
 If multiple periods were requested in [build](#build) or [factory](#factory) the result will
 be indexed by period.
 
-The site ID index is always first, so if multiple sites &amp; periods were requested, the result
+The site ID index is always first, so if multiple sites & periods were requested, the result
 will be indexed by site ID first, then period.
 
 #### Signature
@@ -207,7 +207,7 @@ be indexed by site ID.
 If multiple periods were requested in [build](#build) or [factory](#factory) the result will
 be indexed by period.
 
-The site ID index is always first, so if multiple sites &amp; periods were requested, the result
+The site ID index is always first, so if multiple sites & periods were requested, the result
 will be indexed by site ID first, then period.
 
 #### Signature
@@ -231,7 +231,7 @@ be a DataTable\Map that is indexed by site ID.
 If multiple periods were requested in [build](#build) or [factory](#factory) the result will
 be a DataTable\Map that is indexed by period.
 
-The site ID index is always first, so if multiple sites &amp; periods were requested, the result
+The site ID index is always first, so if multiple sites & periods were requested, the result
 will be a DataTable\Map indexed by site ID which contains DataTable\Map instances that are
 indexed by period.
 
@@ -253,7 +253,7 @@ Queries and returns a single report as a DataTable instance.
 
 #### Description
 
-This method will query blob data that is a serialized array of of DataTable\Row&#039;s and
+This method will query blob data that is a serialized array of of DataTable\Row's and
 unserialize it.
 
 If multiple sites were requested in [build](#build) or [factory](#factory) the result will
@@ -262,7 +262,7 @@ be a DataTable\Map that is indexed by site ID.
 If multiple periods were requested in [build](#build) or [factory](#factory) the result will
 be a DataTable\Map that is indexed by period.
 
-The site ID index is always first, so if multiple sites &amp; periods were requested, the result
+The site ID index is always first, so if multiple sites & periods were requested, the result
 will be a DataTable\Map indexed by site ID which contains DataTable\Map instances that are
 indexed by period.
 
@@ -288,7 +288,7 @@ be a DataTable\Map that is indexed by site ID.
 If multiple periods were requested in [build](#build) or [factory](#factory) the result will
 be a DataTable\Map that is indexed by period.
 
-The site ID index is always first, so if multiple sites &amp; periods were requested, the result
+The site ID index is always first, so if multiple sites & periods were requested, the result
 will be a DataTable\Map indexed by site ID which contains DataTable\Map instances that are
 indexed by period.
 

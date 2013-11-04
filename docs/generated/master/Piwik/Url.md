@@ -18,22 +18,22 @@ HTML.
 **Redirect to a different controller action**
 
     $url = Url::getCurrentQueryStringWithParametersModified(array(
-        &#039;module&#039; =&gt; &#039;UserSettings&#039;,
-        &#039;action&#039; =&gt; &#039;index&#039;
+        'module' => 'UserSettings',
+        'action' => 'index'
     ));
     Url::redirectToUrl($url);
 
 **Link to a different controller action in a template**
 
     $url = Url::getCurrentQueryStringWithParametersModified(array(
-        &#039;module&#039; =&gt; &#039;UserCountryMap&#039;,
-        &#039;action&#039; =&gt; &#039;realtimeMap&#039;,
-        &#039;changeVisitAlpha&#039; =&gt; 0,
-        &#039;removeOldVisits&#039; =&gt; 0
+        'module' => 'UserCountryMap',
+        'action' => 'realtimeMap',
+        'changeVisitAlpha' => 0,
+        'removeOldVisits' => 0
     ));
-    $view = new View(&quot;@MyPlugin/myPopup&quot;);
-    $view-&gt;realtimeMapUrl = $url;
-    echo $view-&gt;render();
+    $view = new View("@MyPlugin/myPopup");
+    $view->realtimeMapUrl = $url;
+    echo $view->render();
 
 
 Methods
@@ -46,11 +46,11 @@ The class defines the following methods:
 - [`getCurrentUrlWithoutFileName()`](#getCurrentUrlWithoutFileName) &mdash; Returns the current URL without the query string and without the name of the file being executed.
 - [`getCurrentScriptPath()`](#getCurrentScriptPath) &mdash; Returns the path to the script being executed.
 - [`getCurrentScriptName()`](#getCurrentScriptName) &mdash; Returns the path to the script being executed.
-- [`getCurrentScheme()`](#getCurrentScheme) &mdash; Returns the current URL&#039;s protocol.
+- [`getCurrentScheme()`](#getCurrentScheme) &mdash; Returns the current URL's protocol.
 - [`getCurrentHost()`](#getCurrentHost) &mdash; Returns the current host.
 - [`getCurrentQueryString()`](#getCurrentQueryString) &mdash; Returns the query string of the current URL.
 - [`getArrayFromCurrentQueryString()`](#getArrayFromCurrentQueryString) &mdash; Returns an array mapping query paramater names with query parameter values for the current URL.
-- [`getQueryStringFromParameters()`](#getQueryStringFromParameters) &mdash; Converts an an array of parameters name =&gt; value mappings to a query string.
+- [`getQueryStringFromParameters()`](#getQueryStringFromParameters) &mdash; Converts an an array of parameters name => value mappings to a query string.
 - [`redirectToReferrer()`](#redirectToReferrer) &mdash; Redirects the user to the referrer.
 - [`redirectToUrl()`](#redirectToUrl) &mdash; Redirects the user to the specified URL.
 - [`getReferrer()`](#getReferrer) &mdash; Returns the HTTP_REFERER header, or false if not found.
@@ -118,7 +118,7 @@ Includes the script file name.
 
 ### `getCurrentScheme()` <a name="getCurrentScheme"></a>
 
-Returns the current URL&#039;s protocol.
+Returns the current URL's protocol.
 
 #### Signature
 
@@ -161,7 +161,7 @@ Returns an array mapping query paramater names with query parameter values for t
 
 ### `getQueryStringFromParameters()` <a name="getQueryStringFromParameters"></a>
 
-Converts an an array of parameters name =&gt; value mappings to a query string.
+Converts an an array of parameters name => value mappings to a query string.
 
 #### Signature
 

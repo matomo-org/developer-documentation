@@ -12,8 +12,8 @@ Description
 
 **Basic usage example**
 
-    $labelsToRemove = array(&#039;label1&#039;, &#039;label2&#039;, &#039;label2&#039;);
-    $dataTable-&gt;filter(&#039;ColumnCallbackDeleteRow&#039;, array(&#039;label&#039;, function ($label) use ($labelsToRemove) {
+    $labelsToRemove = array('label1', 'label2', 'label2');
+    $dataTable->filter('ColumnCallbackDeleteRow', array('label', function ($label) use ($labelsToRemove) {
         return in_array($label, $labelsToRemove);
     }));
 
