@@ -7,14 +7,6 @@
 {{ parent() }}
 {% endblock %}
 
-{% block content %}
-## Letters
-{% for letter in 'A'..'Z' %}
-{% if items[letter] is defined and items[letter]|length > 1 %}
- * [{{ letter }}](#{{ letter|lower }})
-{% endif %}
-{% endfor %}
-
 
 {% for letter, elements in items %}
 
