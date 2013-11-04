@@ -8,6 +8,7 @@
 
 use helpers\Menu;
 use helpers\Guide;
+use helpers\Document;
 use helpers\ApiReference;
 use helpers\Support;
 
@@ -38,7 +39,7 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
     $references = ApiReference::getReferences();
     $file       = $references[$reference]['file'];
 
-    $doc = new Guide($file);
+    $doc = new Document($file);
 
     $app->render('layout/documentation.twig', array(
         'activeMenu'   => 'api-reference',
@@ -61,7 +62,7 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
 
     $file = 'generated/master/' . $file;
 
-    $doc  = new Guide($file);
+    $doc  = new Document($file);
 
     $app->render('layout/documentation.twig', array(
         'activeMenu'   => 'api-reference',
@@ -83,7 +84,7 @@ $app->get('/api-reference', function () use ($app) {
 
 $app->get('/guides/:category', function ($category) use ($app) {
 
-    $doc = new Guide($category);
+    $doc = new Document($category);
 
     $app->render('layout/documentation.twig', array(
         'activeMenu'   => 'guides',
