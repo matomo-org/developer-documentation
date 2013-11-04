@@ -37,6 +37,19 @@ class Markdown {
         return $this->transformedHtml;
     }
 
+    public function getTitle()
+    {
+        $this->transformIfNeeded();
+
+        $sections = $this->getAvailableSectionsFromContent('h1', $this->transformedHtml);
+
+        if (empty($sections)) {
+            return '';
+        }
+
+        return array_shift($sections);
+    }
+
     public function getAvailableSections()
     {
         $this->transformIfNeeded();

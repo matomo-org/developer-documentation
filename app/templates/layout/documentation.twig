@@ -1,9 +1,15 @@
 {% extends 'layout/base.twig' %}
 
 {% block content %}
+
     <div class="col-md-3">
-        <div id="sidebar" class="bs-sidebar">
-            <ul class="nav nav-pills nav-stacked bs-sidenav">
+    <div id="sidebar" class="bs-sidebar panel panel-default">
+        {% if sectionTitle %}
+            <div class="panel-heading">{{ sectionTitle }}</div>
+        {% endif %}
+        <div class="panel-body" style="padding:0px;">
+
+            <ul class="nav nav-pills nav-stacked bs-sidenav" style="margin:0px">
                 {% for section in sections %}
                     <li>
                         <a href="#{{ section.id }}"><i class="icon-chevron-right"></i> {{ section.title }}</a>
@@ -20,8 +26,7 @@
                     </li>
                 {% endfor %}
             </ul>
-        </div>
-
+    </div>    </div>
     </div>
     <div class="col-md-9">
         {{ doc|raw }}

@@ -41,9 +41,10 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
     $doc = new Guides($file);
 
     $app->render('layout/documentation.twig', array(
-        'activeMenu'  => 'api-reference',
-        'doc'         => $doc->getRenderedContent(),
-        'sections'    => $doc->getSections()
+        'activeMenu'   => 'api-reference',
+        'doc'          => $doc->getRenderedContent(),
+        'sections'     => $doc->getSections(),
+        'sectionTitle' => $doc->getTitle()
     ));
 
 })->conditions(array('reference' => '(' . implode('|', array_keys(ApiReference::getReferences())) . ')'));
@@ -61,9 +62,10 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
     $doc  = new Guides($file);
 
     $app->render('layout/documentation.twig', array(
-        'activeMenu' => 'api-reference',
-        'doc'        => $doc->getRenderedContent(),
-        'sections'   => $doc->getSections()
+        'activeMenu'   => 'api-reference',
+        'doc'          => $doc->getRenderedContent(),
+        'sections'     => $doc->getSections(),
+        'sectionTitle' => $doc->getTitle()
     ));
 
 });
@@ -79,14 +81,13 @@ $app->get('/api-reference', function () use ($app) {
 
 $app->get('/guides/:category', function ($category) use ($app) {
 
-    $doc         = new Guides($category);
-    $renderedDoc = $doc->getRenderedContent();
-    $subMenu     = $doc->getSections();
+    $doc = new Guides($category);
 
     $app->render('layout/documentation.twig', array(
-        'doc'           => $renderedDoc,
-        'activeMenu'    => 'guides',
-        'sections'      => $subMenu
+        'activeMenu'   => 'guides',
+        'doc'          => $doc->getRenderedContent(),
+        'sections'     => $doc->getSections(),
+        'sectionTitle' => $doc->getTitle()
     ));
 
 })->conditions(array('category' => '(' . implode('|', array_keys(Guides::getMainMenu())) . ')'));

@@ -7,6 +7,15 @@ body {
     padding-bottom: 48px;
 }
 
+#sidebar .panel-heading {
+    background-color: #f7f5fa;
+    display: none;
+}
+
+#sidebar.affix .panel-heading {
+    display: block;
+}
+
 /*
  * Side navigation
  *

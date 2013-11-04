@@ -11,6 +11,7 @@ namespace helpers;
 class Guides {
 
     private $name;
+    private $markdown;
 
     public function __construct($name)
     {
@@ -18,7 +19,9 @@ class Guides {
             throw new \Exception('Requested documentation is not valid');
         }
 
-        $this->name = $name;
+        $this->name     = $name;
+        $content        = $this->getRawContent();
+        $this->markdown = new Markdown($content);
     }
 
     private function isValid($name)
@@ -39,21 +42,17 @@ class Guides {
 
     public function getRenderedContent()
     {
-        $content = $this->getRawContent();
+        return $this->markdown->transform();
+    }
 
-        $md = new Markdown($content);
-        $rendered = $md->transform();
-
-        return $rendered;
+    public function getTitle()
+    {
+        return $this->markdown->getTitle();
     }
 
     public function getSections()
     {
-        $content = $this->getRawContent();
-
-        $md = new Markdown($content);
-
-        return $md->getAvailableSections();
+        return $this->markdown->getAvailableSections();
     }
 
     private static function getUrl($key)
