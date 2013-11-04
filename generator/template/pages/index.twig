@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-### Letters
+## Letters
 {% for letter in 'A'..'Z' %}
 {% if items[letter] is defined and items[letter]|length > 1 %}
  * [{{ letter }}](#{{ letter|lower }})
@@ -18,7 +18,7 @@
 
 {% for letter, elements in items %}
 
-### {{ letter }}
+## {{ letter }}
 
 {% for element in elements %}
 {%- set type = element[0] %}
