@@ -39,7 +39,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 **Inserting numeric data**
 
     // function in an Archiver descendent
-    public function aggregateDayReport(ArchiveProcessor\Day $archiveProcessor)
+    public function aggregateDayReport(ArchiveProcessor $archiveProcessor)
     {
         $myFancyMetric = // ... calculate the metric value ...
         $archiveProcessor-&gt;insertNumericRecord(&#039;MyPlugin_myFancyMetric&#039;, $myFancyMetric);
@@ -48,7 +48,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 **Inserting serialized DataTables**
 
     // function in an Archiver descendent
-    public function aggregateDayReport(ArchiveProcessor\Day $archiveProcessor)
+    public function aggregateDayReport(ArchiveProcessor $archiveProcessor)
     {
         $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
 
@@ -65,7 +65,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 Constants
 ---------
 
-This abstract class defines the following constants:
+This class defines the following constants:
 
 - [`DONE_OK`](#DONE_OK) &mdash; Flag stored at the end of the archiving
 - [`DONE_ERROR`](#DONE_ERROR) &mdash; Flag stored at the start of the archiving When requesting an Archive, we make sure that non-finished archive are not considered valid
@@ -79,7 +79,7 @@ Archives flagged will be regularly purged from the DB.
 Methods
 -------
 
-The abstract class defines the following methods:
+The class defines the following methods:
 
 - [`getLogAggregator()`](#getLogAggregator) &mdash; Returns a [LogAggregator](#) instance for the site, period and segment this ArchiveProcessor will insert archive data for.
 - [`getPeriod()`](#getPeriod) &mdash; Returns the period we computing statistics for.

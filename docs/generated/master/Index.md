@@ -5,8 +5,6 @@ Index
 
 - [`Archive`](Piwik/Archive.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
-- [`aggregateDataTableRecords()`](Piwik/ArchiveProcessor/Period.md#aggregateDataTableRecords) &mdash; _Method in class_ [`Period`](Piwik/ArchiveProcessor/Period.md)
-- [`aggregateNumericMetrics()`](Piwik/ArchiveProcessor/Period.md#aggregateNumericMetrics) &mdash; _Method in class_ [`Period`](Piwik/ArchiveProcessor/Period.md)
 - [`applyQueuedFilters()`](Piwik/DataTable.md#applyQueuedFilters) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`addDataTable()`](Piwik/DataTable.md#addDataTable) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`addRow()`](Piwik/DataTable.md#addRow) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -145,7 +143,6 @@ Index
 
 ## D
 
-- [`Day`](Piwik/ArchiveProcessor/Day.md) &mdash; _Class in namespace_ [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor)
 - [`destroy()`](Piwik/Common.md#destroy) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`DataTable`](Piwik/DataTable.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`deleteColumn()`](Piwik/DataTable.md#deleteColumn) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -568,7 +565,6 @@ Index
 
 - [`process()`](Piwik/API/Request.md#process) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
 - [`processRequest()`](Piwik/API/Request.md#processRequest) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
-- [`Period`](Piwik/ArchiveProcessor/Period.md) &mdash; _Class in namespace_ [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor)
 - [`prefixTable()`](Piwik/Common.md#prefixTable) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`prependPlusSignToNumber()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#prependPlusSignToNumber) &mdash; _Method in class_ [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
 - [`Pattern`](Piwik/DataTable/Filter/Pattern.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter)
