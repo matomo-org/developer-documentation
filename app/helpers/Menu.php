@@ -19,9 +19,9 @@ class Menu {
     {
         $menu = array();
 
-        $menu['documentation'] = array(
-            'title'       => 'Documentation',
-            'url'         => static::getUrl('documentation'),
+        $menu['guides'] = array(
+            'title'       => 'Guides',
+            'url'         => static::getUrl('guides'),
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 

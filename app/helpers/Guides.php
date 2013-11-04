@@ -8,7 +8,7 @@
 
 namespace helpers;
 
-class Documentation {
+class Guides {
 
     private $name;
 
@@ -49,7 +49,7 @@ class Documentation {
 
     private static function getUrl($key)
     {
-        return '/' . $key;
+        return '/guides/' . $key;
     }
 
     public static function getMainMenu()

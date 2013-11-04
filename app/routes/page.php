@@ -7,7 +7,7 @@
  */
 
 use helpers\Menu;
-use helpers\Documentation;
+use helpers\Guides;
 use helpers\ApiReference;
 
 $app->get('/', function () use ($app) {
@@ -16,15 +16,15 @@ $app->get('/', function () use ($app) {
     $app->render('index.twig', array('menu' => $menu));
 });
 
-$app->get('/documentation', function () use ($app) {
-    $menu = Documentation::getMainMenu();
+$app->get('/guides', function () use ($app) {
+    $menu = Guides::getMainMenu();
 
     $app->render('documentation.twig', array('menu' => $menu));
 });
 
 $app->get('/hooks', function () use ($app) {
 
-    $doc         = new Documentation('generated/Hooks');
+    $doc         = new Guides('generated/Hooks');
     $renderedDoc = $doc->getRenderedContent();
 
     $app->render('layout/base.twig', array('content' => $renderedDoc));
@@ -32,7 +32,7 @@ $app->get('/hooks', function () use ($app) {
 
 $app->get('/support', function () use ($app) {
 
-    $doc         = new Documentation('support');
+    $doc         = new Guides('support');
     $renderedDoc = $doc->getRenderedContent();
 
     $app->render('layout/base.twig', array('content' => $renderedDoc));
@@ -42,7 +42,7 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
     $references = ApiReference::getReferences();
     $file       = $references[$reference]['file'];
 
-    $doc         = new Documentation($file);
+    $doc         = new Guides($file);
     $renderedDoc = $doc->getRenderedContent();
 
     $menu = ApiReference::getReferences();
@@ -57,13 +57,13 @@ $app->get('/api-reference', function () use ($app) {
     $app->render('apireference.twig', array('references' => $references));
 });
 
-$app->get('/:category', function ($category) use ($app) {
+$app->get('/guides/:category', function ($category) use ($app) {
 
-    $doc         = new Documentation($category);
+    $doc         = new Guides($category);
     $renderedDoc = $doc->getRenderedContent();
 
-    $mainMenu = Documentation::getMainMenu();
+    $mainMenu = Guides::getMainMenu();
 
     $app->render('layout/documentation.twig', array('doc' => $renderedDoc, 'menu' => $mainMenu));
 
-})->conditions(array('category' => '(' . implode('|', array_keys(Documentation::getMainMenu())) . ')'));
+})->conditions(array('category' => '(' . implode('|', array_keys(Guides::getMainMenu())) . ')'));
