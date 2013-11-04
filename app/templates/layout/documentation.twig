@@ -2,6 +2,21 @@
 
 {% block content %}
     <style type="text/css">
+        #sidebar.affix {
+            position: fixed;
+            top: 80;
+            width: 225px;
+        }
+        #sidebar.affix-top {
+            position: static;
+            margin-top:25px;
+            width:225px;
+        }
+        #sidebar.affix-bottom {
+            position: absolute;
+            width: 225px;
+        }
+
         .bs-sidebar .nav .nav > li > a {
             padding-top: 3px;
             padding-bottom: 3px;
@@ -13,26 +28,32 @@
             color: #716b7a;
             padding: 5px 20px;
         }
+        #subNavbar .nav > li.active > a {
+            font-weight: bold;
+        }
     </style>
     <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked bs-sidebar">
-            {% for name, item in guides %}
-                <li {% if activeGuide == name %} class="active"{% endif %}>
-                    <a href="{{ item.url }}"><i class="icon-chevron-right"></i> {{ item.title }}</a>
-                    {% if activeGuide == name %}
+        <div id="sidebar">
+            <ul class="nav nav-pills nav-stacked bs-sidebar">
+                {% for name, item in guides %}
+                    <li {% if activeGuide == name %} class="active"{% endif %}>
+                        <a href="{{ item.url }}"><i class="icon-chevron-right"></i> {{ item.title }}</a>
+                        {% if activeGuide == name %}
 
-                        <ul class="nav">
+                            <div id="subNavbar">
+                            <ul class="nav">
 
-                        {% for sectionId,section in sections %}
-                            <li><a href="#{{ sectionId }}">{{ section }}</a></li>
-                        {% endfor %}
+                            {% for sectionId,section in sections %}
+                                <li><a href="#{{ sectionId }}">{{ section }}</a></li>
+                            {% endfor %}
 
-                        </ul>
+                            </ul></div>
 
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
 
     </div>
     <div class="col-md-9">
