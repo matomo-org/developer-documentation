@@ -30,7 +30,7 @@ Description
         public function aggregateMultipleReports()
         {
             $archiveProcessor = $this-&gt;getProcessor();
-            $archiveProcessor-&gt;aggregateDataTableReports(&#039;MyPlugin_myReport&#039;, 500);
+            $archiveProcessor-&gt;aggregateDataTableRecords(&#039;MyPlugin_myReport&#039;, 500);
         }
     }
 

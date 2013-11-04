@@ -34,7 +34,7 @@ If data has not been archived for the subperiods, archiving will be launched for
     {
         $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
 
-        $archiveProcessor-&gt;aggregateDataTableReports(
+        $archiveProcessor-&gt;aggregateDataTableRecords(
             &#039;MyPlugin_myFancyReport&#039;,
             $maxRowsInTable,
             $maxRowsInSubtable = $maxRowsInTable,
@@ -48,10 +48,10 @@ Methods
 
 The class defines the following methods:
 
-- [`aggregateDataTableReports()`](#aggregateDataTableReports) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
+- [`aggregateDataTableRecords()`](#aggregateDataTableRecords) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
 - [`aggregateNumericMetrics()`](#aggregateNumericMetrics) &mdash; Aggregates metrics for every subperiod of the current period and inserts the result as the metric for this period.
 
-### `aggregateDataTableReports()` <a name="aggregateDataTableReports"></a>
+### `aggregateDataTableRecords()` <a name="aggregateDataTableRecords"></a>
 
 Sums records for every subperiod of the current period and inserts the result as the record for this period.
 

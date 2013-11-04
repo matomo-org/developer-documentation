@@ -1,36 +1,11 @@
 Index
 =====
-## Letters
- * [A](#a)
- * [B](#b)
- * [C](#c)
- * [D](#d)
- * [E](#e)
- * [F](#f)
- * [G](#g)
- * [H](#h)
- * [I](#i)
- * [L](#l)
- * [M](#m)
- * [N](#n)
- * [O](#o)
- * [P](#p)
- * [Q](#q)
- * [R](#r)
- * [S](#s)
- * [T](#t)
- * [U](#u)
- * [V](#v)
- * [W](#w)
- * [Y](#y)
-
-
 
 ## A
 
 - [`Archive`](Piwik/Archive.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
-- [`aggregateDataTableReports()`](Piwik/ArchiveProcessor/Period.md#aggregateDataTableReports) &mdash; _Method in class_ [`Period`](Piwik/ArchiveProcessor/Period.md)
+- [`aggregateDataTableRecords()`](Piwik/ArchiveProcessor/Period.md#aggregateDataTableRecords) &mdash; _Method in class_ [`Period`](Piwik/ArchiveProcessor/Period.md)
 - [`aggregateNumericMetrics()`](Piwik/ArchiveProcessor/Period.md#aggregateNumericMetrics) &mdash; _Method in class_ [`Period`](Piwik/ArchiveProcessor/Period.md)
 - [`applyQueuedFilters()`](Piwik/DataTable.md#applyQueuedFilters) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`addDataTable()`](Piwik/DataTable.md#addDataTable) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -270,7 +245,6 @@ Index
 - [`getPeriod()`](Piwik/ArchiveProcessor.md#getPeriod) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getSite()`](Piwik/ArchiveProcessor.md#getSite) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getSegment()`](Piwik/ArchiveProcessor.md#getSegment) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
-- [`getMetricsForDimension()`](Piwik/ArchiveProcessor/Day.md#getMetricsForDimension) &mdash; _Method in class_ [`Day`](Piwik/ArchiveProcessor/Day.md)
 - [`getRequestVar()`](Piwik/Common.md#getRequestVar) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguagesList()`](Piwik/Common.md#getLanguagesList) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguageToCountryList()`](Piwik/Common.md#getLanguageToCountryList) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
