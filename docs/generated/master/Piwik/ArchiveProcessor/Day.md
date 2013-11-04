@@ -11,19 +11,7 @@ Methods
 
 The class defines the following methods:
 
-- [`getDataTableFromDataArray()`](#getDataTableFromDataArray) &mdash; Converts array to a datatable
 - [`getMetricsForDimension()`](#getMetricsForDimension) &mdash; Helper function that returns an array with common statistics for a given database field distinct values.
-
-### `getDataTableFromDataArray()` <a name="getDataTableFromDataArray"></a>
-
-Converts array to a datatable
-
-#### Signature
-
-- It is a **public static** method.
-- It accepts the following parameter(s):
-    - `$array` (`Piwik\DataArray`)
-- It returns a(n) [`DataTable`](../../Piwik/DataTable.md) value.
 
 ### `getMetricsForDimension()` <a name="getMetricsForDimension"></a>
 

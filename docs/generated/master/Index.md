@@ -270,7 +270,6 @@ Index
 - [`getPeriod()`](Piwik/ArchiveProcessor.md#getPeriod) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getSite()`](Piwik/ArchiveProcessor.md#getSite) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getSegment()`](Piwik/ArchiveProcessor.md#getSegment) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
-- [`getDataTableFromDataArray()`](Piwik/ArchiveProcessor/Day.md#getDataTableFromDataArray) &mdash; _Method in class_ [`Day`](Piwik/ArchiveProcessor/Day.md)
 - [`getMetricsForDimension()`](Piwik/ArchiveProcessor/Day.md#getMetricsForDimension) &mdash; _Method in class_ [`Day`](Piwik/ArchiveProcessor/Day.md)
 - [`getRequestVar()`](Piwik/Common.md#getRequestVar) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguagesList()`](Piwik/Common.md#getLanguagesList) &mdash; _Method in class_ [`Common`](Piwik/Common.md)

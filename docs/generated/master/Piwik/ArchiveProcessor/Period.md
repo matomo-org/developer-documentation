@@ -3,7 +3,7 @@
 Period
 ======
 
-Initiates the archiving process for all non-day periods via the [ArchiveProcessor.Period.compute](#) event.
+Initiates the archiving process for all non-day periods via the [ArchiveProcessor.aggregateMultipleReports](#) event.
 
 Description
 -----------

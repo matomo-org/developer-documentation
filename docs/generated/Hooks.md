@@ -230,10 +230,10 @@ Callback Signature:
 ## ArchiveProcessor
 
 - [ArchiveProcessor.aggregateDayReport](#archiveprocessoraggregatedayreport)
-- [ArchiveProcessor.Period.compute](#archiveprocessorperiodcompute)
+- [ArchiveProcessor.aggregateMultipleReports](#archiveprocessoraggregatemultiplereports)
 
 #### ArchiveProcessor.aggregateDayReport
-_Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php) in line [135](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php#L135)_
+_Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php) in line [114](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php#L114)_
 
 Triggered when the archiving process is initiated for a day period. Plugins that compute analytics data should subscribe to this event. The
 actual archiving logic, however, should not be in the event handler, but
@@ -261,7 +261,7 @@ Usages:
 [Actions::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L515), [CustomVariables::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L140), [DevicesDetection::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L275), [Goals::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L515), [Provider::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L226), [Referrers::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L283), [UserCountry::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L340), [UserSettings::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L476), [VisitTime::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L207), [VisitorInterest::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L136)
 
 
-#### ArchiveProcessor.Period.compute
+#### ArchiveProcessor.aggregateMultipleReports
 _Defined in [Piwik/ArchiveProcessor/Period](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Period.php) in line [246](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Period.php#L246)_
 
 Triggered when the archiving process is initiated for a non-day period. Plugins that compute analytics data should subscribe to this event. The
