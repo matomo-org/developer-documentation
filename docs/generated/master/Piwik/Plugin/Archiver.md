@@ -34,26 +34,6 @@ Description
         }
     }
 
-**Using Archiver in archiving events**
-
-    // event observer for ArchiveProcessor.Day.compute
-    public function aggregateDayReport(ArchiveProcessor\Day $archiveProcessor)
-    {
-        $archiving = new Archiver($archiveProcessor);
-        if ($archiving-&gt;shouldArchive()) {
-            $archiving-&gt;aggregateDayReport();
-        }
-    }
-
-    // event observer for ArchiveProcessor.aggregateMultipleReports
-    public function aggregateMultipleReports(ArchiveProcessor\Period $archiveProcessor)
-    {
-        $archiving = new Archiver($archiveProcessor);
-        if ($archiving-&gt;shouldArchive()) {
-            $archiving-&gt;aggregateMultipleReports();
-        }
-    }
-
 
 Methods
 -------
@@ -61,7 +41,7 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`aggregateDayReport()`](#aggregateDayReport) &mdash; Archive data for a day period.
+- [`aggregateDayReport()`](#aggregateDayReport) &mdash; Triggered when the archiving process is initiated for a day period.
 - [`aggregateMultipleReports()`](#aggregateMultipleReports) &mdash; Archive data for a non-day period.
 - [`shouldArchive()`](#shouldArchive) &mdash; Returns true if the current plugin should be archived or not.
 
@@ -78,7 +58,11 @@ Constructor.
 
 ### `aggregateDayReport()` <a name="aggregateDayReport"></a>
 
-Archive data for a day period.
+Triggered when the archiving process is initiated for a day period.
+
+#### Description
+
+Plugins that compute analytics data should create an Archiver class that descends from [Plugin\Archiver](#).
 
 #### Signature
 
