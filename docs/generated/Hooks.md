@@ -49,32 +49,6 @@ By convention, the event name should be prefixed by the Plugin name.
 
 This is a complete list of available hooks.
 
-- [API](#api)
-- [ArchiveProcessor](#archiveprocessor)
-- [AssetManager](#assetmanager)
-- [Config](#config)
-- [Controller](#controller)
-- [Goals](#goals)
-- [Live](#live)
-- [Log](#log)
-- [Menu](#menu)
-- [Provider](#provider)
-- [Reporting](#reporting)
-- [Request](#request)
-- [ScheduledReports](#scheduledreports)
-- [SegmentEditor](#segmenteditor)
-- [Segments](#segments)
-- [Site](#site)
-- [SitesManager](#sitesmanager)
-- [TaskScheduler](#taskscheduler)
-- [Tracker](#tracker)
-- [Translate](#translate)
-- [Updater](#updater)
-- [User](#user)
-- [UsersManager](#usersmanager)
-- [ViewDataTable](#viewdatatable)
-- [WidgetsList](#widgetslist)
-
 ## API
 
 - [API.$pluginName.$methodName](#apipluginnamemethodname)
