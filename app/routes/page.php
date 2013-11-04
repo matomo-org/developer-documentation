@@ -51,6 +51,20 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
 
 })->conditions(array('reference' => '(' . implode('|', array_keys(ApiReference::getReferences())) . ')'));
 
+$app->get('/api-reference/:names+', function ($names) use ($app) {
+
+    $file = implode('/', $names);
+    $file = 'generated/master/' . str_replace('.md', '', $file);
+
+    $doc         = new Guides($file);
+    $renderedDoc = $doc->getRenderedContent();
+
+    $menu = ApiReference::getReferences();
+
+    $app->render('layout/documentation.twig', array('doc' => $renderedDoc, 'menu' => $menu));
+
+});
+
 $app->get('/api-reference', function () use ($app) {
     $references = ApiReference::getReferences();
 
