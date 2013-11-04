@@ -54,6 +54,10 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
 $app->get('/api-reference/:names+', function ($names) use ($app) {
 
     $file = implode('/', $names);
+
+    if ('Piwik/' != substr($file, 0, 6)) {
+        $file = 'Piwik/' . $file;
+    }
     $file = 'generated/master/' . str_replace('.md', '', $file);
 
     $doc         = new Guides($file);
