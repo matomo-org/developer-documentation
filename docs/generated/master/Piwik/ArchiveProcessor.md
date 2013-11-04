@@ -39,7 +39,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 **Inserting numeric data**
 
     // function in an Archiver descendent
-    public function archiveDay(ArchiveProcessor\Day $archiveProcessor)
+    public function aggregateDayReport(ArchiveProcessor\Day $archiveProcessor)
     {
         $myFancyMetric = // ... calculate the metric value ...
         $archiveProcessor-&gt;insertNumericRecord(&#039;MyPlugin_myFancyMetric&#039;, $myFancyMetric);
@@ -48,7 +48,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 **Inserting serialized DataTables**
 
     // function in an Archiver descendent
-    public function archiveDay(ArchiveProcessor\Day $archiveProcessor)
+    public function aggregateDayReport(ArchiveProcessor\Day $archiveProcessor)
     {
         $maxRowsInTable = Config::getInstance()-&gt;General[&#039;datatable_archiving_maximum_rows_standard&#039;];j
 

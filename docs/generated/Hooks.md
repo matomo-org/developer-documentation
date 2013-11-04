@@ -229,10 +229,10 @@ Callback Signature:
 
 ## ArchiveProcessor
 
-- [ArchiveProcessor.Day.compute](#archiveprocessordaycompute)
+- [ArchiveProcessor.aggregateDayReport](#archiveprocessoraggregatedayreport)
 - [ArchiveProcessor.Period.compute](#archiveprocessorperiodcompute)
 
-#### ArchiveProcessor.Day.compute
+#### ArchiveProcessor.aggregateDayReport
 _Defined in [Piwik/ArchiveProcessor/Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php) in line [135](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Day.php#L135)_
 
 Triggered when the archiving process is initiated for a day period. Plugins that compute analytics data should subscribe to this event. The
@@ -244,21 +244,21 @@ class.
 
 **Example**
 
-    public function archivePeriod(ArchiveProcessor\Day $archiveProcessor)
+    public function aggregateDayReport(ArchiveProcessor\Day $archiveProcessor)
     {
         $archiving = new MyArchiver($archiveProcessor);
         if ($archiving->shouldArchive()) {
-            $archiving->archiveDay();
+            $archiving->aggregateDayReport();
         }
     }
 
 Callback Signature:
 <pre><code>function(&amp;$this)</code></pre>
-- `Piwik\ArchiveProcessor\Day` `$archiveProcessor` The ArchiveProcessor that triggered the event.
+- `\Piwik\ArchiveProcessor\Day` `$archiveProcessor` The ArchiveProcessor that triggered the event.
 
 Usages:
 
-[Actions::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L515), [CustomVariables::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L140), [DevicesDetection::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L275), [Goals::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L515), [Provider::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L226), [Referrers::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L283), [UserCountry::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L340), [UserSettings::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L476), [VisitTime::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L207), [VisitorInterest::archiveDay](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L136)
+[Actions::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L515), [CustomVariables::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L140), [DevicesDetection::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L275), [Goals::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L515), [Provider::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L226), [Referrers::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L283), [UserCountry::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L340), [UserSettings::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L476), [VisitTime::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L207), [VisitorInterest::aggregateDayReport](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L136)
 
 
 #### ArchiveProcessor.Period.compute
@@ -273,21 +273,21 @@ class.
 
 **Example**
 
-    public function archivePeriod(ArchiveProcessor\Period $archiveProcessor)
+    public function aggregateMultipleReports(ArchiveProcessor\Period $archiveProcessor)
     {
         $archiving = new MyArchiver($archiveProcessor);
         if ($archiving->shouldArchive()) {
-            $archiving->archivePeriod();
+            $archiving->aggregateMultipleReports();
         }
     }
 
 Callback Signature:
 <pre><code>function(&amp;$this)</code></pre>
-- `Piwik\ArchiveProcessor\Period` `$archiveProcessor` The ArchiveProcessor that triggered the event.
+- `\Piwik\ArchiveProcessor\Period` `$archiveProcessor` The ArchiveProcessor that triggered the event.
 
 Usages:
 
-[Actions::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L523), [CustomVariables::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L148), [DevicesDetection::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L283), [Goals::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L527), [Provider::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L234), [Referrers::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L295), [UserCountry::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L332), [UserSettings::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L487), [VisitTime::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L199), [VisitorInterest::archivePeriod](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L128)
+[Actions::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L523), [CustomVariables::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L148), [DevicesDetection::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L283), [Goals::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L527), [Provider::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L234), [Referrers::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L295), [UserCountry::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L332), [UserSettings::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L487), [VisitTime::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L199), [VisitorInterest::aggregateMultipleReports](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L128)
 
 ## AssetManager
 
@@ -1183,7 +1183,7 @@ event can force the use of a custom visit object that extends from
 
 Callback Signature:
 <pre><code>function(&amp;$visit)</code></pre>
-- `Piwik\Tracker\VisitInterface` `$visit` Initialized to null, but can be set to a created Visit object. If it isn&#039;t modified Piwik uses the default class.
+- `\Piwik\Tracker\VisitInterface` `$visit` Initialized to null, but can be set to a created Visit object. If it isn&#039;t modified Piwik uses the default class.
 
 
 #### Tracker.newVisitorInformation
