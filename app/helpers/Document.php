@@ -42,7 +42,12 @@ class Document {
 
     public function getRenderedContent()
     {
-        return $this->markdown->transform();
+        $html = $this->markdown->transform();
+
+        $html = preg_replace('/href="(.*?)(.md)(.*?)"/', 'href="${1}${3}"', $html);
+      //  $html = str_replace('.md', '', $html);
+
+        return $html;
     }
 
     public function getTitle()

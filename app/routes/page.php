@@ -53,7 +53,6 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
 $app->get('/api-reference/:names+', function ($names) use ($app) {
 
     $className = implode('/', $names);
-    $className = str_replace('.md', '', $className);
 
     $file = $className;
     if ('Piwik/' != substr($file, 0, 6)) {
