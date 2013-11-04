@@ -33,13 +33,6 @@ class ApiReference {
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
-        $menu['namespaces'] = array(
-            'title'       => 'Namespaces',
-            'file'        => 'generated/master/Namespaces',
-            'url'         => static::getUrl('namespaces'),
-            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
-        );
-
         $menu['hooks'] = array(
             'title'       => 'Hooks',
             'file'        => 'generated/Hooks',
