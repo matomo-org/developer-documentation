@@ -5,7 +5,7 @@ On this page you will learn how to use as well as how to trigger hooks. All alre
 
 ## Usage
 
-#### Register an action for a given hook
+### Register an action for a given hook
 If you want to listen to a specific event, and trigger your own function when this event is posted, you have to define a method `getListHooksRegistered()` in your plugin class, that will return an array containing pair of (hook name, method to call).
 
 For example if you want to execute your function `AddCityInformation()` when a new visitor is recorded by Piwik (hook `Tracker.newVisitorInformation`), in your class `MyPlugin` you would define a method:
@@ -31,7 +31,7 @@ You can have a look at the [provider plugin](https://github.com/piwik/piwik/blob
 
 Piwik also provides a means of dynamic hook registration using `Piwik_AddAction($eventName, $callback)`.
 
-#### Add a new hook
+### Add a new hook
 Plugins can themselves post new events, the same way Piwik posts events. A common example is custom page headers and footers (on a per plugin basis).
 
 ```
@@ -66,7 +66,7 @@ This is a complete list of available hooks.
 {% endfor %}
 {% endif %}
 
-#### {{ hook.name }}
+### {{ hook.name }}
 _Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piwik/blob/master{{ hook.file }}) in line [{{ hook.line }}](https://github.com/piwik/piwik/blob/master{{ hook.file }}#L{{ hook.line }})_
 
 {% if hook.comment %}
