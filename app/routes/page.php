@@ -9,6 +9,7 @@
 use helpers\Menu;
 use helpers\Guide;
 use helpers\ApiReference;
+use helpers\Support;
 
 $app->view->setData('menu', Menu::getMainMenu());
 
@@ -18,19 +19,18 @@ $app->get('/', function () use ($app) {
 });
 
 $app->get('/guides', function () use ($app) {
-    $guides = Guide::getMainMenu();
 
-    $app->render('documentation.twig', array('guides' => $guides, 'activeMenu' => 'guides'));
+    $app->render('documentation.twig', array(
+        'activeMenu' => 'guides',
+        'guides'     => Guide::getMainMenu()
+    ));
 });
 
 $app->get('/support', function () use ($app) {
 
-    $doc         = new Guide('support');
-    $renderedDoc = $doc->getRenderedContent();
-
-    $app->render('layout/base.twig', array(
-        'content' => $renderedDoc,
-        'activeMenu'  => 'support'
+    $app->render('support.twig', array(
+        'activeMenu' => 'support',
+        'supports'   => Support::getMainMenu()
     ));
 });
 
