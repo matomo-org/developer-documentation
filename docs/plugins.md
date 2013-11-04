@@ -1,5 +1,5 @@
 # Implementing a plugin
-### Command line tool
+## CLI tool
 Piwik comes with a powerful command line tool to help you generating a plugin easily. The command line tool is called "console" and is located in the Piwik root directory.
 To get familiar with the command line tool enter either `./console` or `php console`. As you haven't specified any command yet, it will list you all available commands along with their descriptions. 
 The most interesting commands for developers are:
@@ -25,9 +25,10 @@ Some of the arguments and options are required, whereas other are optional. If y
 ### Creating a plugin
 Execute the command `./console generate:plugin` in order to create a new plugin. The CLI tool will ask you to enter a name, a description and a version number. This creates a very basic plugin for you including all the necessary files. If you already know that you need a Controller and an API, the console tool can create those for you as well. 
 
+## Building the plugin
 ### Namespaces
 ### Defining new widgets
-### Defining new menues
+### Defining new menus
 ### Using the database
 #### Create a new table
 #### Update schemaf
@@ -60,15 +61,15 @@ parent:: methods, checkUser* auth helpers, ...
 #### Controller.php: calling API for admin action
 ### Defining a new segment
 ### Make your custom reports visible in Email reports & Piwik Mobile
-### Persisting data
+## Persisting data
 #### Hint: Do not create any files in your plugins folder, it will be deleted on update --> use for instance tmp instead
-### Templating
+## Templating
 ### Styling
 ### Testing
 ### Scheduled Tasks
 ### Translating your plugins
-### Security
+## Security
 #### Handle user/untrusted input
 #### Handling output
 ### Release in Marketplace
-### Limitations
+## Limitations

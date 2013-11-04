@@ -89,7 +89,7 @@ $app->get('/guides/:category', function ($category) use ($app) {
     $renderedDoc = $doc->getRenderedContent();
 
     $mainMenu = Guides::getMainMenu();
-    $subMenu = $doc->getSections();
+    $subMenu  = $doc->getSections();
 
     $app->render('layout/documentation.twig', array(
         'doc'         => $renderedDoc,

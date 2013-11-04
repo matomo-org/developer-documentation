@@ -8,8 +8,6 @@
 
 namespace helpers;
 
-use \dflydev\markdown\MarkdownParser;
-
 class Markdown {
 
     /**
