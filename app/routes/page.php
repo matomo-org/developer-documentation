@@ -45,7 +45,8 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
         'activeMenu'   => 'api-reference',
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
-        'sectionTitle' => $doc->getTitle()
+        'sectionTitle' => $doc->getTitle(),
+        'categories'   => $references
     ));
 
 })->conditions(array('reference' => '(' . implode('|', array_keys(ApiReference::getReferences())) . ')'));
@@ -67,7 +68,8 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
         'activeMenu'   => 'api-reference',
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
-        'sectionTitle' => $className
+        'sectionTitle' => $className,
+        'categories'   => ApiReference::getReferences()
     ));
 
 });
@@ -89,7 +91,8 @@ $app->get('/guides/:category', function ($category) use ($app) {
         'activeMenu'   => 'guides',
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
-        'sectionTitle' => $doc->getTitle()
+        'sectionTitle' => $doc->getTitle(),
+        'categories'   => Guide::getMainMenu()
     ));
 
 })->conditions(array('category' => '(' . implode('|', array_keys(Guide::getMainMenu())) . ')'));

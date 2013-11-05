@@ -17,23 +17,18 @@ body {
     white-space: pre;
 }
 
-#sidebar.panel-default {
+.bs-side .panel-collapse {
     border-color: #7cabd4;
 }
 
-#sidebar .panel-body {
+.bs-side .panel-body {
     padding:0px;
 }
 
-#sidebar .panel-heading {
+.bs-side .panel-heading {
     border-color: #7cabd4;
     background-color: #84b4dd;
-    display: none;
     color: #ffffff;
-}
-
-#sidebar.affix .panel-heading {
-    display: block;
 }
 
 .teaser-item {
@@ -53,7 +48,7 @@ body {
  */
 
 /* By default it's not affixed in mobile views, so undo that */
-.bs-sidebar.affix {
+#sidebar.affix {
     position: static;
 }
 
@@ -109,27 +104,29 @@ body {
         display: block;
     }
     /* Widen the fixed sidebar */
-    .bs-sidebar.affix,
-    .bs-sidebar.affix-bottom {
+    #sidebar,
+    #sidebar.affix-top,
+    #sidebar.affix-bottom {
         width: 213px;
     }
-    .bs-sidebar.affix {
+    #sidebar.affix {
         position: fixed; /* Undo the static from mobile first approach */
         top: 80px;
     }
-    .bs-sidebar.affix-bottom {
+    #sidebar.affix-bottom {
         position: absolute; /* Undo the static from mobile first approach */
     }
-    .bs-sidebar.affix-bottom .bs-sidenav,
-    .bs-sidebar.affix .bs-sidenav {
+    #sidebar.affix-bottom .bs-sidenav,
+    #sidebar.affix .bs-sidenav {
         margin-top: 0;
         margin-bottom: 0;
     }
 }
 @media (min-width: 1200px) {
     /* Widen the fixed sidebar again */
-    .bs-sidebar.affix-bottom,
-    .bs-sidebar.affix {
+    #sidebar.affix-bottom,
+    #sidebar.affix-top,
+    #sidebar.affix {
         width: 263px;
     }
 }
