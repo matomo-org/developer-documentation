@@ -45,7 +45,8 @@ The abstract class defines the following methods:
 - [`redirectToIndex()`](#redirectToIndex) &mdash; Helper method used to redirect the current http request to another module/action.
 - [`getCalendarPrettyDate()`](#getCalendarPrettyDate) &mdash; Returns a prettified date string for use in period selector widget.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -54,7 +55,8 @@ Constructor.
 - It is a **public** method.
 - It does not return anything.
 
-### `getDefaultAction()` <a name="getDefaultAction"></a>
+<a name="getdefaultaction" id="getdefaultaction"></a>
+### `getDefaultAction()`
 
 Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
 
@@ -63,7 +65,8 @@ Returns the name of the default method that will be called when visiting: index.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `setHostValidationVariablesView()` <a name="setHostValidationVariablesView"></a>
+<a name="sethostvalidationvariablesview" id="sethostvalidationvariablesview"></a>
+### `setHostValidationVariablesView()`
 
 Checks if the current host is valid and sets variables on the given view, including:
 
@@ -82,7 +85,8 @@ Checks if the current host is valid and sets variables on the given view, includ
     - `$view`
 - It does not return anything.
 
-### `setPeriodVariablesView()` <a name="setPeriodVariablesView"></a>
+<a name="setperiodvariablesview" id="setperiodvariablesview"></a>
+### `setPeriodVariablesView()`
 
 Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
 
@@ -101,7 +105,8 @@ Sets general period variables on a view, including:  - **displayUniqueVisitors**
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current period is invalid.
 
-### `redirectToIndex()` <a name="redirectToIndex"></a>
+<a name="redirecttoindex" id="redirecttoindex"></a>
+### `redirectToIndex()`
 
 Helper method used to redirect the current http request to another module/action.
 
@@ -123,7 +128,8 @@ This function will exit immediately after executing.
     - `$parameters`
 - It does not return anything.
 
-### `getCalendarPrettyDate()` <a name="getCalendarPrettyDate"></a>
+<a name="getcalendarprettydate" id="getcalendarprettydate"></a>
+### `getCalendarPrettyDate()`
 
 Returns a prettified date string for use in period selector widget.
 

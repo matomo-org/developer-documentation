@@ -24,7 +24,8 @@ The class defines the following methods:
 - [`match()`](#match) &mdash; Performs case insensitive match
 - [`filter()`](#filter) &mdash; See [Pattern](#).
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -38,7 +39,8 @@ Constructor.
     - `$invertedMatch`
 - It does not return anything.
 
-### `getPatternQuoted()` <a name="getPatternQuoted"></a>
+<a name="getpatternquoted" id="getpatternquoted"></a>
+### `getPatternQuoted()`
 
 Helper method to return the given pattern quoted
 
@@ -49,7 +51,8 @@ Helper method to return the given pattern quoted
     - `$pattern`
 - It returns a(n) `string` value.
 
-### `match()` <a name="match"></a>
+<a name="match" id="match"></a>
+### `match()`
 
 Performs case insensitive match
 
@@ -63,7 +66,8 @@ Performs case insensitive match
     - `$invertedMatch`
 - It returns a(n) `int` value.
 
-### `filter()` <a name="filter"></a>
+<a name="filter" id="filter"></a>
+### `filter()`
 
 See [Pattern](#).
 

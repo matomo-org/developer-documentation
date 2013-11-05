@@ -23,7 +23,8 @@ The class defines the following methods:
 - [`sortString()`](#sortString) &mdash; Sorting method used for sorting values
 - [`filter()`](#filter) &mdash; Sorts the given data table by defined column and sorting method
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -38,7 +39,8 @@ Constructor.
     - `$recursiveSort`
 - It does not return anything.
 
-### `setOrder()` <a name="setOrder"></a>
+<a name="setorder" id="setorder"></a>
+### `setOrder()`
 
 Updates the order
 
@@ -49,7 +51,8 @@ Updates the order
     - `$order`
 - It does not return anything.
 
-### `sort()` <a name="sort"></a>
+<a name="sort" id="sort"></a>
+### `sort()`
 
 Sorting method used for sorting numbers
 
@@ -61,7 +64,8 @@ Sorting method used for sorting numbers
     - `$b`
 - It returns a(n) `int` value.
 
-### `naturalSort()` <a name="naturalSort"></a>
+<a name="naturalsort" id="naturalsort"></a>
+### `naturalSort()`
 
 Sorting method used for sorting values natural
 
@@ -73,7 +77,8 @@ Sorting method used for sorting values natural
     - `$b`
 - It returns a(n) `int` value.
 
-### `sortString()` <a name="sortString"></a>
+<a name="sortstring" id="sortstring"></a>
+### `sortString()`
 
 Sorting method used for sorting values
 
@@ -85,7 +90,8 @@ Sorting method used for sorting values
     - `$b`
 - It returns a(n) `int` value.
 
-### `filter()` <a name="filter"></a>
+<a name="filter" id="filter"></a>
+### `filter()`
 
 Sorts the given data table by defined column and sorting method
 

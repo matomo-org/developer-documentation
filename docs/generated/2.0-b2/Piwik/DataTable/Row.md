@@ -29,7 +29,8 @@ This class defines the following properties:
 - [`$c`](#$c) &mdash; This array contains the row information: - array indexed by self::COLUMNS contains the columns, pairs of (column names, value) - (optional) array indexed by self::METADATA contains the metadata,  pairs of (metadata name, value) - (optional) integer indexed by self::DATATABLE_ASSOCIATED contains the ID of the DataTable associated to this row.
 - [`$maxVisitsSummed`](#$maxVisitsSummed)
 
-### `$c` <a name="c"></a>
+<a name="c" id="c"></a>
+### `$c`
 
 This array contains the row information: - array indexed by self::COLUMNS contains the columns, pairs of (column names, value) - (optional) array indexed by self::METADATA contains the metadata,  pairs of (metadata name, value) - (optional) integer indexed by self::DATATABLE_ASSOCIATED contains the ID of the DataTable associated to this row.
 
@@ -42,7 +43,8 @@ This ID can be used to read the DataTable from the DataTable_Manager.
 - It is a **public** property.
 - It is a(n) `array` value.
 
-### `$maxVisitsSummed` <a name="maxVisitsSummed"></a>
+<a name="maxvisitssummed" id="maxvisitssummed"></a>
+### `$maxVisitsSummed`
 
 #### Signature
 
@@ -85,7 +87,8 @@ The class defines the following methods:
 - [`compareElements()`](#compareElements) &mdash; Helper function to compare array elements
 - [`isEqual()`](#isEqual) &mdash; Helper function that tests if two rows are equal.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -96,7 +99,8 @@ Constructor.
     - `$row`
 - It does not return anything.
 
-### `__sleep()` <a name="__sleep"></a>
+<a name="__sleep" id="__sleep"></a>
+### `__sleep()`
 
 Because $this->c[self::DATATABLE_ASSOCIATED] is negative when the table is in memory, we must prior to serialize() call, make sure the ID is saved as positive integer
 
@@ -109,7 +113,8 @@ Only serialize the "c" member
 - It is a **public** method.
 - It does not return anything.
 
-### `cleanPostSerialize()` <a name="cleanPostSerialize"></a>
+<a name="cleanpostserialize" id="cleanpostserialize"></a>
+### `cleanPostSerialize()`
 
 Must be called after the row was serialized and __sleep was called.
 
@@ -118,7 +123,8 @@ Must be called after the row was serialized and __sleep was called.
 - It is a **public** method.
 - It does not return anything.
 
-### `__destruct()` <a name="__destruct"></a>
+<a name="__destruct" id="__destruct"></a>
+### `__destruct()`
 
 When destroyed, a row destroys its associated subTable if there is one
 
@@ -127,7 +133,8 @@ When destroyed, a row destroys its associated subTable if there is one
 - It is a **public** method.
 - It does not return anything.
 
-### `__toString()` <a name="__toString"></a>
+<a name="__tostring" id="__tostring"></a>
+### `__toString()`
 
 Applies a basic rendering to the Row and returns the output.
 
@@ -137,7 +144,8 @@ Applies a basic rendering to the Row and returns the output.
 - _Returns:_ describing the row. Example: &quot;- 1 [&#039;label&#039; =&gt; &#039;piwik&#039;, &#039;nb_uniq_visitors&#039; =&gt; 1685, &#039;nb_visits&#039; =&gt; 1861] [] [idsubtable = 1375]&quot;
     - `string`
 
-### `deleteColumn()` <a name="deleteColumn"></a>
+<a name="deletecolumn" id="deletecolumn"></a>
+### `deleteColumn()`
 
 Deletes the given column.
 
@@ -149,7 +157,8 @@ Deletes the given column.
 - _Returns:_ True on success, false if the column does not exist.
     - `bool`
 
-### `renameColumn()` <a name="renameColumn"></a>
+<a name="renamecolumn" id="renamecolumn"></a>
+### `renameColumn()`
 
 Renames a column.
 
@@ -161,7 +170,8 @@ Renames a column.
     - `$newName`
 - It does not return anything.
 
-### `getColumn()` <a name="getColumn"></a>
+<a name="getcolumn" id="getcolumn"></a>
+### `getColumn()`
 
 Returns a column by name.
 
@@ -174,7 +184,8 @@ Returns a column by name.
     - `mixed`
     - `Piwik\DataTable\false`
 
-### `getMetadata()` <a name="getMetadata"></a>
+<a name="getmetadata" id="getmetadata"></a>
+### `getMetadata()`
 
 Returns the array of all metadata, or one requested metadata value.
 
@@ -185,7 +196,8 @@ Returns the array of all metadata, or one requested metadata value.
     - `$name`
 - It returns a(n) `mixed` value.
 
-### `getColumns()` <a name="getColumns"></a>
+<a name="getcolumns" id="getcolumns"></a>
+### `getColumns()`
 
 Returns the array containing all the columns.
 
@@ -195,7 +207,8 @@ Returns the array containing all the columns.
 - _Returns:_ Example: ``` array( &#039;column1&#039;   =&gt; VALUE, &#039;label&#039;     =&gt; &#039;www.php.net&#039; &#039;nb_visits&#039; =&gt; 15894, ) ```
     - `array`
 
-### `getIdSubDataTable()` <a name="getIdSubDataTable"></a>
+<a name="getidsubdatatable" id="getidsubdatatable"></a>
+### `getIdSubDataTable()`
 
 Returns the ID of the subDataTable.
 
@@ -210,7 +223,8 @@ If there is no such a table, returns null.
     - `int`
     - `null`
 
-### `getSubtable()` <a name="getSubtable"></a>
+<a name="getsubtable" id="getsubtable"></a>
+### `getSubtable()`
 
 Returns the associated subtable, if one exists.
 
@@ -225,7 +239,8 @@ Returns `false` if none exists.
     - [`DataTable`](../../Piwik/DataTable.md)
     - `bool`
 
-### `sumSubtable()` <a name="sumSubtable"></a>
+<a name="sumsubtable" id="sumsubtable"></a>
+### `sumSubtable()`
 
 Sums a DataTable to this row's subtable.
 
@@ -243,7 +258,8 @@ See [DataTable::addDataTable()](#) to learn how DataTables are summed.
     - `$subTable` ([`DataTable`](../../Piwik/DataTable.md))
 - It does not return anything.
 
-### `addSubtable()` <a name="addSubtable"></a>
+<a name="addsubtable" id="addsubtable"></a>
+### `addSubtable()`
 
 Attaches a subtable to this row.
 
@@ -257,7 +273,8 @@ Attaches a subtable to this row.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if a subtable already exists for this row.
 
-### `setSubtable()` <a name="setSubtable"></a>
+<a name="setsubtable" id="setsubtable"></a>
+### `setSubtable()`
 
 Attaches a subtable to this row, overwriting the existing subtable, if any.
 
@@ -269,7 +286,8 @@ Attaches a subtable to this row, overwriting the existing subtable, if any.
 - _Returns:_ Returns `$subTable`.
     - [`DataTable`](../../Piwik/DataTable.md)
 
-### `isSubtableLoaded()` <a name="isSubtableLoaded"></a>
+<a name="issubtableloaded" id="issubtableloaded"></a>
+### `isSubtableLoaded()`
 
 Returns true if the subtable is currently loaded in memory via [DataTable\Manager](#).
 
@@ -278,7 +296,8 @@ Returns true if the subtable is currently loaded in memory via [DataTable\Manage
 - It is a **public** method.
 - It returns a(n) `bool` value.
 
-### `removeSubtable()` <a name="removeSubtable"></a>
+<a name="removesubtable" id="removesubtable"></a>
+### `removeSubtable()`
 
 Removes the subtable reference.
 
@@ -287,7 +306,8 @@ Removes the subtable reference.
 - It is a **public** method.
 - It does not return anything.
 
-### `setColumns()` <a name="setColumns"></a>
+<a name="setcolumns" id="setcolumns"></a>
+### `setColumns()`
 
 Set all the columns at once.
 
@@ -302,7 +322,8 @@ Overwrites previously set columns.
     - `$columns`
 - It does not return anything.
 
-### `setColumn()` <a name="setColumn"></a>
+<a name="setcolumn" id="setcolumn"></a>
+### `setColumn()`
 
 Set the value `$value` to the column called `$name`.
 
@@ -314,7 +335,8 @@ Set the value `$value` to the column called `$name`.
     - `$value`
 - It does not return anything.
 
-### `setMetadata()` <a name="setMetadata"></a>
+<a name="setmetadata" id="setmetadata"></a>
+### `setMetadata()`
 
 Set the value `$value` to the metadata called `$name`.
 
@@ -326,7 +348,8 @@ Set the value `$value` to the metadata called `$name`.
     - `$value`
 - It does not return anything.
 
-### `deleteMetadata()` <a name="deleteMetadata"></a>
+<a name="deletemetadata" id="deletemetadata"></a>
+### `deleteMetadata()`
 
 Deletes one metadata value or all metadata values.
 
@@ -338,7 +361,8 @@ Deletes one metadata value or all metadata values.
 - _Returns:_ true on success, false if the column didn&#039;t exist
     - `bool`
 
-### `addColumn()` <a name="addColumn"></a>
+<a name="addcolumn" id="addcolumn"></a>
+### `addColumn()`
 
 Add a new column to the row.
 
@@ -356,7 +380,8 @@ If the column already exists, throws an exception.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the column already exists.
 
-### `addColumns()` <a name="addColumns"></a>
+<a name="addcolumns" id="addcolumns"></a>
+### `addColumns()`
 
 Add many columns to this row.
 
@@ -369,7 +394,8 @@ Add many columns to this row.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if any column name does not exist.
 
-### `addMetadata()` <a name="addMetadata"></a>
+<a name="addmetadata" id="addmetadata"></a>
+### `addMetadata()`
 
 Add a new metadata to the row.
 
@@ -387,7 +413,8 @@ If the metadata already exists, throws an exception.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the metadata already exists.
 
-### `sumRow()` <a name="sumRow"></a>
+<a name="sumrow" id="sumrow"></a>
+### `sumRow()`
 
 Sums the given `$rowToSum` columns values to the existing row column values.
 
@@ -407,7 +434,8 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
     - `$aggregationOperations`
 - It does not return anything.
 
-### `sumRowMetadata()` <a name="sumRowMetadata"></a>
+<a name="sumrowmetadata" id="sumrowmetadata"></a>
+### `sumRowMetadata()`
 
 Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 
@@ -418,7 +446,8 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
     - `$rowToSum`
 - It does not return anything.
 
-### `isSummaryRow()` <a name="isSummaryRow"></a>
+<a name="issummaryrow" id="issummaryrow"></a>
+### `isSummaryRow()`
 
 Returns true if this row is the summary row, false if otherwise.
 
@@ -432,7 +461,8 @@ depends on the label of the row, and so, is not 100% accurate.
 - It is a **public** method.
 - It returns a(n) `bool` value.
 
-### `compareElements()` <a name="compareElements"></a>
+<a name="compareelements" id="compareelements"></a>
+### `compareElements()`
 
 Helper function to compare array elements
 
@@ -444,7 +474,8 @@ Helper function to compare array elements
     - `$elem2`
 - It returns a(n) `bool` value.
 
-### `isEqual()` <a name="isEqual"></a>
+<a name="isequal" id="isequal"></a>
+### `isEqual()`
 
 Helper function that tests if two rows are equal.
 

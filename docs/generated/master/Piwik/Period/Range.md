@@ -33,7 +33,8 @@ The class defines the following methods:
 - [`getLastDate()`](#getLastDate) &mdash; Returns the date that is one period before the supplied date.
 - [`getRelativeToEndDate()`](#getRelativeToEndDate) &mdash; Returns a date ragne string given a period type, end date and number of periods the range spans over.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -47,7 +48,8 @@ Constructor.
     - `$today`
 - It does not return anything.
 
-### `getLocalizedShortString()` <a name="getLocalizedShortString"></a>
+<a name="getlocalizedshortstring" id="getlocalizedshortstring"></a>
+### `getLocalizedShortString()`
 
 Returns the current period as a localized short string.
 
@@ -56,7 +58,8 @@ Returns the current period as a localized short string.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getLocalizedLongString()` <a name="getLocalizedLongString"></a>
+<a name="getlocalizedlongstring" id="getlocalizedlongstring"></a>
+### `getLocalizedLongString()`
 
 Returns the current period as a localized long string.
 
@@ -65,7 +68,8 @@ Returns the current period as a localized long string.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getDateStart()` <a name="getDateStart"></a>
+<a name="getdatestart" id="getdatestart"></a>
+### `getDateStart()`
 
 Returns the start date of the period
 
@@ -76,7 +80,8 @@ Returns the start date of the period
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
-### `getPrettyString()` <a name="getPrettyString"></a>
+<a name="getprettystring" id="getprettystring"></a>
+### `getPrettyString()`
 
 Returns the current period as a string
 
@@ -85,7 +90,8 @@ Returns the current period as a string
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `setDefaultEndDate()` <a name="setDefaultEndDate"></a>
+<a name="setdefaultenddate" id="setdefaultenddate"></a>
+### `setDefaultEndDate()`
 
 Sets the default end date of the period
 
@@ -96,7 +102,8 @@ Sets the default end date of the period
     - `$oDate` ([`Date`](../../Piwik/Date.md))
 - It does not return anything.
 
-### `parseDateRange()` <a name="parseDateRange"></a>
+<a name="parsedaterange" id="parsedaterange"></a>
+### `parseDateRange()`
 
 Given a date string, returns false if not a date range, or returns the array containing date start, date end
 
@@ -108,7 +115,8 @@ Given a date string, returns false if not a date range, or returns the array con
 - _Returns:_ array(1 =&gt; dateStartString, 2 =&gt; dateEndString ) or false if the input was not a date range
     - `mixed`
 
-### `getDateEnd()` <a name="getDateEnd"></a>
+<a name="getdateend" id="getdateend"></a>
+### `getDateEnd()`
 
 Returns the end date of the period
 
@@ -119,7 +127,8 @@ Returns the end date of the period
     - `null`
     - [`Date`](../../Piwik/Date.md)
 
-### `getLastDate()` <a name="getLastDate"></a>
+<a name="getlastdate" id="getlastdate"></a>
+### `getLastDate()`
 
 Returns the date that is one period before the supplied date.
 
@@ -132,7 +141,8 @@ Returns the date that is one period before the supplied date.
 - _Returns:_ An array with two elements, a string for the date before $date and a Period instance for the period before $date.
     - `array`
 
-### `getRelativeToEndDate()` <a name="getRelativeToEndDate"></a>
+<a name="getrelativetoenddate" id="getrelativetoenddate"></a>
+### `getRelativeToEndDate()`
 
 Returns a date ragne string given a period type, end date and number of periods the range spans over.
 

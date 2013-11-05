@@ -11,7 +11,8 @@ The class defines the following methods:
 
 - [`notify()`](#notify) &mdash; Post a notification to be shown in the status bar.
 
-### `notify()` <a name="notify"></a>
+<a name="notify" id="notify"></a>
+### `notify()`
 
 Post a notification to be shown in the status bar.
 

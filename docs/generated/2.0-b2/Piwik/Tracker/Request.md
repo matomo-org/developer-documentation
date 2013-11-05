@@ -47,7 +47,8 @@ The class defines the following methods:
 - [`getParamsCount()`](#getParamsCount)
 - [`getPageGenerationTime()`](#getPageGenerationTime)
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 #### Signature
 
@@ -57,14 +58,16 @@ The class defines the following methods:
     - `$tokenAuth`
 - It does not return anything.
 
-### `isAuthenticated()` <a name="isAuthenticated"></a>
+<a name="isauthenticated" id="isauthenticated"></a>
+### `isAuthenticated()`
 
 #### Signature
 
 - It is a **public** method.
 - It returns a(n) `bool` value.
 
-### `authenticateSuperUserOrAdmin()` <a name="authenticateSuperUserOrAdmin"></a>
+<a name="authenticatesuperuseroradmin" id="authenticatesuperuseroradmin"></a>
+### `authenticateSuperUserOrAdmin()`
 
 #### Signature
 
@@ -74,7 +77,8 @@ The class defines the following methods:
     - `$idSite`
 - It does not return anything.
 
-### `getDaysSinceFirstVisit()` <a name="getDaysSinceFirstVisit"></a>
+<a name="getdayssincefirstvisit" id="getdayssincefirstvisit"></a>
+### `getDaysSinceFirstVisit()`
 
 #### Signature
 
@@ -83,7 +87,8 @@ The class defines the following methods:
     - `float`
     - `int`
 
-### `getDaysSinceLastOrder()` <a name="getDaysSinceLastOrder"></a>
+<a name="getdayssincelastorder" id="getdayssincelastorder"></a>
+### `getDaysSinceLastOrder()`
 
 #### Signature
 
@@ -93,7 +98,8 @@ The class defines the following methods:
     - `float`
     - `int`
 
-### `getDaysSinceLastVisit()` <a name="getDaysSinceLastVisit"></a>
+<a name="getdayssincelastvisit" id="getdayssincelastvisit"></a>
+### `getDaysSinceLastVisit()`
 
 #### Signature
 
@@ -102,7 +108,8 @@ The class defines the following methods:
     - `float`
     - `int`
 
-### `getVisitCount()` <a name="getVisitCount"></a>
+<a name="getvisitcount" id="getvisitcount"></a>
+### `getVisitCount()`
 
 #### Signature
 
@@ -111,7 +118,8 @@ The class defines the following methods:
     - `int`
     - `mixed`
 
-### `getBrowserLanguage()` <a name="getBrowserLanguage"></a>
+<a name="getbrowserlanguage" id="getbrowserlanguage"></a>
+### `getBrowserLanguage()`
 
 Returns the language the visitor is viewing.
 
@@ -121,14 +129,16 @@ Returns the language the visitor is viewing.
 - _Returns:_ browser language code, eg. &quot;en-gb,en;q=0.5&quot;
     - `string`
 
-### `getLocalTime()` <a name="getLocalTime"></a>
+<a name="getlocaltime" id="getlocaltime"></a>
+### `getLocalTime()`
 
 #### Signature
 
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getGoalRevenue()` <a name="getGoalRevenue"></a>
+<a name="getgoalrevenue" id="getgoalrevenue"></a>
+### `getGoalRevenue()`
 
 #### Signature
 
@@ -137,7 +147,8 @@ Returns the language the visitor is viewing.
     - `$defaultGoalRevenue`
 - It does not return anything.
 
-### `getParam()` <a name="getParam"></a>
+<a name="getparam" id="getparam"></a>
+### `getParam()`
 
 #### Signature
 
@@ -146,28 +157,32 @@ Returns the language the visitor is viewing.
     - `$name`
 - It does not return anything.
 
-### `getCurrentTimestamp()` <a name="getCurrentTimestamp"></a>
+<a name="getcurrenttimestamp" id="getcurrenttimestamp"></a>
+### `getCurrentTimestamp()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `getIdSite()` <a name="getIdSite"></a>
+<a name="getidsite" id="getidsite"></a>
+### `getIdSite()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `getUserAgent()` <a name="getUserAgent"></a>
+<a name="getuseragent" id="getuseragent"></a>
+### `getUserAgent()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `getCustomVariables()` <a name="getCustomVariables"></a>
+<a name="getcustomvariables" id="getcustomvariables"></a>
+### `getCustomVariables()`
 
 #### Signature
 
@@ -176,7 +191,8 @@ Returns the language the visitor is viewing.
     - `$scope`
 - It does not return anything.
 
-### `truncateCustomVariable()` <a name="truncateCustomVariable"></a>
+<a name="truncatecustomvariable" id="truncatecustomvariable"></a>
+### `truncateCustomVariable()`
 
 #### Signature
 
@@ -185,7 +201,8 @@ Returns the language the visitor is viewing.
     - `$input`
 - It does not return anything.
 
-### `setThirdPartyCookie()` <a name="setThirdPartyCookie"></a>
+<a name="setthirdpartycookie" id="setthirdpartycookie"></a>
+### `setThirdPartyCookie()`
 
 Update the cookie information.
 
@@ -196,7 +213,8 @@ Update the cookie information.
     - `$idVisitor`
 - It does not return anything.
 
-### `getVisitorId()` <a name="getVisitorId"></a>
+<a name="getvisitorid" id="getvisitorid"></a>
+### `getVisitorId()`
 
 Is the request for a known VisitorId, based on 1st party, 3rd party (optional) cookies or Tracking API forced Visitor ID
 
@@ -207,14 +225,16 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
-### `getIp()` <a name="getIp"></a>
+<a name="getip" id="getip"></a>
+### `getIp()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `setForceIp()` <a name="setForceIp"></a>
+<a name="setforceip" id="setforceip"></a>
+### `setForceIp()`
 
 #### Signature
 
@@ -223,7 +243,8 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
     - `$ip`
 - It does not return anything.
 
-### `setForceDateTime()` <a name="setForceDateTime"></a>
+<a name="setforcedatetime" id="setforcedatetime"></a>
+### `setForceDateTime()`
 
 #### Signature
 
@@ -232,7 +253,8 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
     - `$dateTime`
 - It does not return anything.
 
-### `setForcedVisitorId()` <a name="setForcedVisitorId"></a>
+<a name="setforcedvisitorid" id="setforcedvisitorid"></a>
+### `setForcedVisitorId()`
 
 #### Signature
 
@@ -241,14 +263,16 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
     - `$visitorId`
 - It does not return anything.
 
-### `getForcedVisitorId()` <a name="getForcedVisitorId"></a>
+<a name="getforcedvisitorid" id="getforcedvisitorid"></a>
+### `getForcedVisitorId()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `overrideLocation()` <a name="overrideLocation"></a>
+<a name="overridelocation" id="overridelocation"></a>
+### `overrideLocation()`
 
 #### Signature
 
@@ -257,21 +281,24 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
     - `$visitorInfo`
 - It does not return anything.
 
-### `getPlugins()` <a name="getPlugins"></a>
+<a name="getplugins" id="getplugins"></a>
+### `getPlugins()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `getParamsCount()` <a name="getParamsCount"></a>
+<a name="getparamscount" id="getparamscount"></a>
+### `getParamsCount()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `getPageGenerationTime()` <a name="getPageGenerationTime"></a>
+<a name="getpagegenerationtime" id="getpagegenerationtime"></a>
+### `getPageGenerationTime()`
 
 #### Signature
 

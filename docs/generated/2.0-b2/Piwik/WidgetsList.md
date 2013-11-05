@@ -23,7 +23,8 @@ The class defines the following methods:
 - [`isDefined()`](#isDefined) &mdash; Returns true if the widget with the given parameters exists in the widget list, false if otherwise.
 - [`_reset()`](#_reset) &mdash; Method to reset the widget list For testing only
 
-### `get()` <a name="get"></a>
+<a name="get" id="get"></a>
+### `get()`
 
 Returns all available widgets.
 
@@ -33,7 +34,8 @@ Returns all available widgets.
 - _Returns:_ Maps widget categories with an array of widget information, eg, ``` array( &#039;Visitors&#039; =&gt; array( array(...), array(...) ), &#039;Visits&#039; =&gt; array( array(...), array(...) ), ) ```
     - `array`
 
-### `add()` <a name="add"></a>
+<a name="add" id="add"></a>
+### `add()`
 
 Adds a report to the list of dashboard widgets.
 
@@ -48,7 +50,8 @@ Adds a report to the list of dashboard widgets.
     - `$customParameters`
 - It does not return anything.
 
-### `remove()` <a name="remove"></a>
+<a name="remove" id="remove"></a>
+### `remove()`
 
 Removes one more widgets from the widget list.
 
@@ -60,7 +63,8 @@ Removes one more widgets from the widget list.
     - `$widgetName`
 - It does not return anything.
 
-### `isDefined()` <a name="isDefined"></a>
+<a name="isdefined" id="isdefined"></a>
+### `isDefined()`
 
 Returns true if the widget with the given parameters exists in the widget list, false if otherwise.
 
@@ -72,7 +76,8 @@ Returns true if the widget with the given parameters exists in the widget list, 
     - `$controllerAction`
 - It returns a(n) `bool` value.
 
-### `_reset()` <a name="_reset"></a>
+<a name="_reset" id="_reset"></a>
+### `_reset()`
 
 Method to reset the widget list For testing only
 

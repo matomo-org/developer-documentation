@@ -16,7 +16,8 @@ The class defines the following methods:
 - [`setDay()`](#setDay)
 - [`setDayOfWeek()`](#setDayOfWeek) &mdash; Makes this scheduled time execute on a particular day of the week on each month.
 
-### `setDayOfWeekFromString()` <a name="setDayOfWeekFromString"></a>
+<a name="setdayofweekfromstring" id="setdayofweekfromstring"></a>
+### `setDayOfWeekFromString()`
 
 #### Signature
 
@@ -25,14 +26,16 @@ The class defines the following methods:
     - `$day`
 - It does not return anything.
 
-### `getRescheduledTime()` <a name="getRescheduledTime"></a>
+<a name="getrescheduledtime" id="getrescheduledtime"></a>
+### `getRescheduledTime()`
 
 #### Signature
 
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `setDay()` <a name="setDay"></a>
+<a name="setday" id="setday"></a>
+### `setDay()`
 
 #### Signature
 
@@ -43,7 +46,8 @@ The class defines the following methods:
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if parameter _day is invalid
 
-### `setDayOfWeek()` <a name="setDayOfWeek"></a>
+<a name="setdayofweek" id="setdayofweek"></a>
+### `setDayOfWeek()`
 
 Makes this scheduled time execute on a particular day of the week on each month.
 

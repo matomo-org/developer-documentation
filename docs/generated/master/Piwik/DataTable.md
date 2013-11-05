@@ -155,7 +155,8 @@ This class defines the following constants:
 - [`ID_SUMMARY_ROW`](#ID_SUMMARY_ROW) &mdash; The ID of the Summary Row.
 - [`LABEL_SUMMARY_ROW`](#LABEL_SUMMARY_ROW) &mdash; The original label of the Summary Row.
 
-### `COLUMN_AGGREGATION_OPS_METADATA_NAME` <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
+<a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
+### `COLUMN_AGGREGATION_OPS_METADATA_NAME`
 
 This metadata value must be an array that maps column names with valid operations. Valid aggregation operations are:
 
@@ -226,7 +227,8 @@ The class defines the following methods:
 - [`makeFromSimpleArray()`](#makeFromSimpleArray) &mdash; Returns a new DataTable created with data from a 'simple' array.
 - [`fromSerializedArray()`](#fromSerializedArray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -239,7 +241,8 @@ Creates an empty DataTable.
 - It is a **public** method.
 - It does not return anything.
 
-### `__destruct()` <a name="__destruct"></a>
+<a name="__destruct" id="__destruct"></a>
+### `__destruct()`
 
 Destructor.
 
@@ -252,7 +255,8 @@ Makes sure DataTable memory will be cleaned up.
 - It is a **public** method.
 - It does not return anything.
 
-### `sort()` <a name="sort"></a>
+<a name="sort" id="sort"></a>
+### `sort()`
 
 Sorts the DataTable rows using the supplied callback function.
 
@@ -264,7 +268,8 @@ Sorts the DataTable rows using the supplied callback function.
     - `$columnSortedBy`
 - It does not return anything.
 
-### `getSortedByColumnName()` <a name="getSortedByColumnName"></a>
+<a name="getsortedbycolumnname" id="getsortedbycolumnname"></a>
+### `getSortedByColumnName()`
 
 Returns the name of the column this table was sorted by (if any).
 
@@ -279,7 +284,8 @@ See [sort](#sort).
     - `Piwik\false`
     - `string`
 
-### `enableRecursiveSort()` <a name="enableRecursiveSort"></a>
+<a name="enablerecursivesort" id="enablerecursivesort"></a>
+### `enableRecursiveSort()`
 
 Enables recursive sorting.
 
@@ -293,7 +299,8 @@ subtables.
 - It is a **public** method.
 - It does not return anything.
 
-### `enableRecursiveFilters()` <a name="enableRecursiveFilters"></a>
+<a name="enablerecursivefilters" id="enablerecursivefilters"></a>
+### `enableRecursiveFilters()`
 
 Enables recursive filtering.
 
@@ -307,7 +314,8 @@ will apply filters to every subtable in addition to this instance.
 - It is a **public** method.
 - It does not return anything.
 
-### `filter()` <a name="filter"></a>
+<a name="filter" id="filter"></a>
+### `filter()`
 
 Applies filter to this datatable.
 
@@ -324,7 +332,8 @@ to all subtables as well.
     - `$parameters`
 - It does not return anything.
 
-### `queueFilter()` <a name="queueFilter"></a>
+<a name="queuefilter" id="queuefilter"></a>
+### `queueFilter()`
 
 Adds a filter and a list of parameters to the list of queued filters.
 
@@ -344,7 +353,8 @@ way they will be run after the table is truncated which will result in better pe
     - `$parameters`
 - It does not return anything.
 
-### `applyQueuedFilters()` <a name="applyQueuedFilters"></a>
+<a name="applyqueuedfilters" id="applyqueuedfilters"></a>
+### `applyQueuedFilters()`
 
 Applies all filters that were previously queued to the table.
 
@@ -358,7 +368,8 @@ for more information.
 - It is a **public** method.
 - It does not return anything.
 
-### `addDataTable()` <a name="addDataTable"></a>
+<a name="adddatatable" id="adddatatable"></a>
+### `addDataTable()`
 
 Sums a DataTable to this one.
 
@@ -381,7 +392,8 @@ metadata can be used to specify a different type of operation.
     - `$tableToSum` ([`DataTable`](../Piwik/DataTable.md))
 - It does not return anything.
 
-### `getRowFromLabel()` <a name="getRowFromLabel"></a>
+<a name="getrowfromlabel" id="getrowfromlabel"></a>
+### `getRowFromLabel()`
 
 Returns the Row whose `'label'` column is equal to `$label`.
 
@@ -399,7 +411,8 @@ label => row ID mappings.
     - [`Row`](../Piwik/DataTable/Row.md)
     - `Piwik\false`
 
-### `getRowIdFromLabel()` <a name="getRowIdFromLabel"></a>
+<a name="getrowidfromlabel" id="getrowidfromlabel"></a>
+### `getRowIdFromLabel()`
 
 Returns the row id for the row whose `'label'` column is equal to `$label`.
 
@@ -416,7 +429,8 @@ label => row ID mappings.
 - _Returns:_ The row ID.
     - `int`
 
-### `getEmptyClone()` <a name="getEmptyClone"></a>
+<a name="getemptyclone" id="getemptyclone"></a>
+### `getEmptyClone()`
 
 Returns an empty DataTable with the same metadata and queued filters as `$this` one.
 
@@ -427,7 +441,8 @@ Returns an empty DataTable with the same metadata and queued filters as `$this` 
     - `$keepFilters`
 - It returns a(n) [`DataTable`](../Piwik/DataTable.md) value.
 
-### `getRowFromId()` <a name="getRowFromId"></a>
+<a name="getrowfromid" id="getrowfromid"></a>
+### `getRowFromId()`
 
 Returns a row by ID.
 
@@ -444,7 +459,8 @@ The ID is either the index of the row or [ID_SUMMARY_ROW](#ID_SUMMARY_ROW).
     - [`Row`](../Piwik/DataTable/Row.md)
     - `Piwik\false`
 
-### `getRowFromIdSubDataTable()` <a name="getRowFromIdSubDataTable"></a>
+<a name="getrowfromidsubdatatable" id="getrowfromidsubdatatable"></a>
+### `getRowFromIdSubDataTable()`
 
 Returns the row that has a subtable with ID matching `$idSubtable`.
 
@@ -457,7 +473,8 @@ Returns the row that has a subtable with ID matching `$idSubtable`.
     - [`Row`](../Piwik/DataTable/Row.md)
     - `Piwik\false`
 
-### `addRow()` <a name="addRow"></a>
+<a name="addrow" id="addrow"></a>
+### `addRow()`
 
 Adds a row to this table.
 
@@ -475,7 +492,8 @@ this row is set as the summary row.
 - _Returns:_ `$row` or the summary row if we&#039;re at the maximum number of rows.
     - [`Row`](../Piwik/DataTable/Row.md)
 
-### `addSummaryRow()` <a name="addSummaryRow"></a>
+<a name="addsummaryrow" id="addsummaryrow"></a>
+### `addSummaryRow()`
 
 Sets the summary row.
 
@@ -491,7 +509,8 @@ Note: A dataTable can have only one summary row.
 - _Returns:_ Returns `$row`.
     - [`Row`](../Piwik/DataTable/Row.md)
 
-### `getId()` <a name="getId"></a>
+<a name="getid" id="getid"></a>
+### `getId()`
 
 Returns the DataTable ID.
 
@@ -500,7 +519,8 @@ Returns the DataTable ID.
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `addRowFromArray()` <a name="addRowFromArray"></a>
+<a name="addrowfromarray" id="addrowfromarray"></a>
+### `addRowFromArray()`
 
 Adds a new row from an array.
 
@@ -515,7 +535,8 @@ You can add Row metadata with this method.
     - `$row`
 - It does not return anything.
 
-### `addRowFromSimpleArray()` <a name="addRowFromSimpleArray"></a>
+<a name="addrowfromsimplearray" id="addrowfromsimplearray"></a>
+### `addRowFromSimpleArray()`
 
 Adds a new row a from an array of column values.
 
@@ -530,7 +551,8 @@ Row metadata cannot be added with this method.
     - `$row`
 - It does not return anything.
 
-### `getRows()` <a name="getRows"></a>
+<a name="getrows" id="getrows"></a>
+### `getRows()`
 
 Returns the array of Rows.
 
@@ -539,7 +561,8 @@ Returns the array of Rows.
 - It is a **public** method.
 - It returns a(n) [`Row[]`](../Piwik/DataTable/Row.md) value.
 
-### `getColumn()` <a name="getColumn"></a>
+<a name="getcolumn" id="getcolumn"></a>
+### `getColumn()`
 
 Returns an array containing all column values for the requested column.
 
@@ -551,7 +574,8 @@ Returns an array containing all column values for the requested column.
 - _Returns:_ The array of column values.
     - `array`
 
-### `getColumnsStartingWith()` <a name="getColumnsStartingWith"></a>
+<a name="getcolumnsstartingwith" id="getcolumnsstartingwith"></a>
+### `getColumnsStartingWith()`
 
 Returns an array containing all column values of columns whose name starts with `$name`.
 
@@ -563,7 +587,8 @@ Returns an array containing all column values of columns whose name starts with 
 - _Returns:_ The array of column values.
     - `array`
 
-### `getColumns()` <a name="getColumns"></a>
+<a name="getcolumns" id="getcolumns"></a>
+### `getColumns()`
 
 Returns the list of columns the rows in this datatable contain.
 
@@ -581,7 +606,8 @@ Note: If column names still use their in-database INDEX values (@see Metrics), t
 - _Returns:_ Array of string column names.
     - `array`
 
-### `getRowsMetadata()` <a name="getRowsMetadata"></a>
+<a name="getrowsmetadata" id="getrowsmetadata"></a>
+### `getRowsMetadata()`
 
 Returns an array containing the requested metadata value of each row.
 
@@ -592,7 +618,8 @@ Returns an array containing the requested metadata value of each row.
     - `$name`
 - It returns a(n) `array` value.
 
-### `getRowsCount()` <a name="getRowsCount"></a>
+<a name="getrowscount" id="getrowscount"></a>
+### `getRowsCount()`
 
 Returns the number of rows in the table including the summary row.
 
@@ -601,7 +628,8 @@ Returns the number of rows in the table including the summary row.
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `getFirstRow()` <a name="getFirstRow"></a>
+<a name="getfirstrow" id="getfirstrow"></a>
+### `getFirstRow()`
 
 Returns the first row of the DataTable.
 
@@ -612,7 +640,8 @@ Returns the first row of the DataTable.
     - [`Row`](../Piwik/DataTable/Row.md)
     - `Piwik\false`
 
-### `getLastRow()` <a name="getLastRow"></a>
+<a name="getlastrow" id="getlastrow"></a>
+### `getLastRow()`
 
 Returns the last row of the DataTable.
 
@@ -628,7 +657,8 @@ will always be considered the last row.
     - [`Row`](../Piwik/DataTable/Row.md)
     - `Piwik\false`
 
-### `getRowsCountRecursive()` <a name="getRowsCountRecursive"></a>
+<a name="getrowscountrecursive" id="getrowscountrecursive"></a>
+### `getRowsCountRecursive()`
 
 Returns the number of rows in this DataTable summed with the row count of each subtable in the DataTable hierarchy.
 
@@ -641,7 +671,8 @@ This includes the subtables of subtables and further descendants.
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `deleteColumn()` <a name="deleteColumn"></a>
+<a name="deletecolumn" id="deletecolumn"></a>
+### `deleteColumn()`
 
 Delete a column by name in every row.
 
@@ -657,14 +688,16 @@ subtables.
     - `$name`
 - It does not return anything.
 
-### `__sleep()` <a name="__sleep"></a>
+<a name="__sleep" id="__sleep"></a>
+### `__sleep()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `renameColumn()` <a name="renameColumn"></a>
+<a name="renamecolumn" id="renamecolumn"></a>
+### `renameColumn()`
 
 Rename a column in every row.
 
@@ -680,7 +713,8 @@ This change is applied recursively to all subtables.
     - `$newName`
 - It does not return anything.
 
-### `deleteColumns()` <a name="deleteColumns"></a>
+<a name="deletecolumns" id="deletecolumns"></a>
+### `deleteColumns()`
 
 Deletes several columns by name in every row.
 
@@ -692,7 +726,8 @@ Deletes several columns by name in every row.
     - `$deleteRecursiveInSubtables`
 - It does not return anything.
 
-### `deleteRow()` <a name="deleteRow"></a>
+<a name="deleterow" id="deleterow"></a>
+### `deleteRow()`
 
 Deletes a row by ID.
 
@@ -705,7 +740,8 @@ Deletes a row by ID.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the row `$id` cannot be found.
 
-### `deleteRowsOffset()` <a name="deleteRowsOffset"></a>
+<a name="deleterowsoffset" id="deleterowsoffset"></a>
+### `deleteRowsOffset()`
 
 Deletes rows from `$offset` to `$offset + $limit`.
 
@@ -718,7 +754,8 @@ Deletes rows from `$offset` to `$offset + $limit`.
 - _Returns:_ The number of rows deleted.
     - `int`
 
-### `deleteRows()` <a name="deleteRows"></a>
+<a name="deleterows" id="deleterows"></a>
+### `deleteRows()`
 
 Deletes a set of rows by ID.
 
@@ -731,7 +768,8 @@ Deletes a set of rows by ID.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If a row ID cannot be found.
 
-### `__toString()` <a name="__toString"></a>
+<a name="__tostring" id="__tostring"></a>
+### `__toString()`
 
 Returns a string representation of this DataTable for convenient viewing.
 
@@ -744,7 +782,8 @@ Note: This uses the Html DataTable renderer.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `isEqual()` <a name="isEqual"></a>
+<a name="isequal" id="isequal"></a>
+### `isEqual()`
 
 Returns true if both DataTable instances are exactly the same.
 
@@ -763,7 +802,8 @@ of rows is not important.
     - `$table2` ([`DataTable`](../Piwik/DataTable.md))
 - It returns a(n) `bool` value.
 
-### `getSerialized()` <a name="getSerialized"></a>
+<a name="getserialized" id="getserialized"></a>
+### `getSerialized()`
 
 Serializes an entire DataTable hierarchy and returns the array of serialized DataTables.
 
@@ -790,7 +830,8 @@ The result of this method is intended for use with the [ArchiveProcessor::insert
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If infinite recursion detected. This will occur if a table&#039;s subtable is one of its parent tables.
 
-### `addRowsFromSerializedArray()` <a name="addRowsFromSerializedArray"></a>
+<a name="addrowsfromserializedarray" id="addrowsfromserializedarray"></a>
+### `addRowsFromSerializedArray()`
 
 Adds a set of rows from a serialized DataTable string.
 
@@ -807,7 +848,8 @@ See [serialize](#serialize).
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if `$stringSerialized` is invalid.
 
-### `addRowsFromArray()` <a name="addRowsFromArray"></a>
+<a name="addrowsfromarray" id="addrowsfromarray"></a>
+### `addRowsFromArray()`
 
 Adds many rows from an array.
 
@@ -822,7 +864,8 @@ You can add Row metadata with this method.
     - `$array`
 - It does not return anything.
 
-### `addRowsFromSimpleArray()` <a name="addRowsFromSimpleArray"></a>
+<a name="addrowsfromsimplearray" id="addrowsfromsimplearray"></a>
+### `addRowsFromSimpleArray()`
 
 Adds many rows from an array containing arrays of column values.
 
@@ -839,7 +882,8 @@ Row metadata cannot be added with this method.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
-### `makeFromIndexedArray()` <a name="makeFromIndexedArray"></a>
+<a name="makefromindexedarray" id="makefromindexedarray"></a>
+### `makeFromIndexedArray()`
 
 Rewrites the input $array array (     LABEL => array(col1 => X, col2 => Y),     LABEL2 => array(col1 => X, col2 => Y), ) to a DataTable, ie.
 
@@ -870,7 +914,8 @@ array (
     - `$subtablePerLabel`
 - It returns a(n) [`DataTable`](../Piwik/DataTable.md) value.
 
-### `setMaximumDepthLevelAllowedAtLeast()` <a name="setMaximumDepthLevelAllowedAtLeast"></a>
+<a name="setmaximumdepthlevelallowedatleast" id="setmaximumdepthlevelallowedatleast"></a>
+### `setMaximumDepthLevelAllowedAtLeast()`
 
 Sets the maximum depth level to at least a certain value.
 
@@ -890,7 +935,8 @@ have subtables, but the subtables are not.
     - `$atLeastLevel`
 - It does not return anything.
 
-### `getMetadata()` <a name="getMetadata"></a>
+<a name="getmetadata" id="getmetadata"></a>
+### `getMetadata()`
 
 Returns metadata by name.
 
@@ -903,7 +949,8 @@ Returns metadata by name.
     - `mixed`
     - `Piwik\false`
 
-### `setMetadata()` <a name="setMetadata"></a>
+<a name="setmetadata" id="setmetadata"></a>
+### `setMetadata()`
 
 Sets a metadata value by name.
 
@@ -915,7 +962,8 @@ Sets a metadata value by name.
     - `$value`
 - It does not return anything.
 
-### `getAllTableMetadata()` <a name="getAllTableMetadata"></a>
+<a name="getalltablemetadata" id="getalltablemetadata"></a>
+### `getAllTableMetadata()`
 
 Returns all table metadata.
 
@@ -924,7 +972,8 @@ Returns all table metadata.
 - It is a **public** method.
 - It returns a(n) `array` value.
 
-### `setMetadataValues()` <a name="setMetadataValues"></a>
+<a name="setmetadatavalues" id="setmetadatavalues"></a>
+### `setMetadataValues()`
 
 Sets several metadata values by name.
 
@@ -935,7 +984,8 @@ Sets several metadata values by name.
     - `$values`
 - It does not return anything.
 
-### `setAllTableMetadata()` <a name="setAllTableMetadata"></a>
+<a name="setalltablemetadata" id="setalltablemetadata"></a>
+### `setAllTableMetadata()`
 
 Sets metadata erasing existing values.
 
@@ -946,7 +996,8 @@ Sets metadata erasing existing values.
     - `$metadata`
 - It does not return anything.
 
-### `setMaximumAllowedRows()` <a name="setMaximumAllowedRows"></a>
+<a name="setmaximumallowedrows" id="setmaximumallowedrows"></a>
+### `setMaximumAllowedRows()`
 
 Sets the maximum number of rows allowed in this datatable (including the summary row).
 
@@ -962,7 +1013,8 @@ rows are summed to the summary row.
     - `$maximumAllowedRows`
 - It does not return anything.
 
-### `walkPath()` <a name="walkPath"></a>
+<a name="walkpath" id="walkpath"></a>
+### `walkPath()`
 
 Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one.
 
@@ -988,7 +1040,8 @@ for more information about tree walking.
 - _Returns:_ First element is the found row or false. Second element is the number of path segments walked. If a row is found, this will be == to count($path). Otherwise, it will be the index of the path segment that we could not find.
     - `array`
 
-### `mergeSubtables()` <a name="mergeSubtables"></a>
+<a name="mergesubtables" id="mergesubtables"></a>
+### `mergeSubtables()`
 
 Returns a new DataTable in which the rows of this table are replaced with its subtable's rows.
 
@@ -1000,7 +1053,8 @@ Returns a new DataTable in which the rows of this table are replaced with its su
     - `$useMetadataColumn`
 - It returns a(n) [`DataTable`](../Piwik/DataTable.md) value.
 
-### `makeFromSimpleArray()` <a name="makeFromSimpleArray"></a>
+<a name="makefromsimplearray" id="makefromsimplearray"></a>
+### `makeFromSimpleArray()`
 
 Returns a new DataTable created with data from a 'simple' array.
 
@@ -1015,7 +1069,8 @@ See [addRowsFromSimpleArray](#addRowsFromSimpleArray).
     - `$array`
 - It returns a(n) [`DataTable`](../Piwik/DataTable.md) value.
 
-### `fromSerializedArray()` <a name="fromSerializedArray"></a>
+<a name="fromserializedarray" id="fromserializedarray"></a>
+### `fromSerializedArray()`
 
 Creates a new DataTable instance from a serialized DataTable string.
 

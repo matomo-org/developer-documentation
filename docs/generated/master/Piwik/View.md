@@ -91,7 +91,8 @@ The class defines the following methods:
 - [`clearCompiledTemplates()`](#clearCompiledTemplates) &mdash; Clear compiled Smarty templates
 - [`singleReport()`](#singleReport) &mdash; Creates a View for and then renders the single report template.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -102,7 +103,8 @@ Constructor.
     - `$templateFile`
 - It does not return anything.
 
-### `getTemplateFile()` <a name="getTemplateFile"></a>
+<a name="gettemplatefile" id="gettemplatefile"></a>
+### `getTemplateFile()`
 
 Returns the template filename.
 
@@ -111,7 +113,8 @@ Returns the template filename.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getTemplateVars()` <a name="getTemplateVars"></a>
+<a name="gettemplatevars" id="gettemplatevars"></a>
+### `getTemplateVars()`
 
 Returns the variables to bind to the template when rendering.
 
@@ -120,7 +123,8 @@ Returns the variables to bind to the template when rendering.
 - It is a **public** method.
 - It returns a(n) `array` value.
 
-### `__set()` <a name="__set"></a>
+<a name="__set" id="__set"></a>
+### `__set()`
 
 Directly assigns a variable to the view script.
 
@@ -136,7 +140,8 @@ Variable names may not be prefixed with '_'.
     - `$val`
 - It does not return anything.
 
-### `__get()` <a name="__get"></a>
+<a name="__get" id="__get"></a>
+### `__get()`
 
 Retrieves an assigned variable.
 
@@ -152,7 +157,8 @@ Variable names may not be prefixed with '_'.
 - _Returns:_ The variable value.
     - `mixed`
 
-### `render()` <a name="render"></a>
+<a name="render" id="render"></a>
+### `render()`
 
 Renders the current view.
 
@@ -167,7 +173,8 @@ See [setContentType](#setContentType).
 - _Returns:_ Generated template.
     - `string`
 
-### `setContentType()` <a name="setContentType"></a>
+<a name="setcontenttype" id="setcontenttype"></a>
+### `setContentType()`
 
 Set stored value used in the Content-Type HTTP header field.
 
@@ -183,7 +190,8 @@ set just before rendering.
     - `$contentType`
 - It does not return anything.
 
-### `setXFrameOptions()` <a name="setXFrameOptions"></a>
+<a name="setxframeoptions" id="setxframeoptions"></a>
+### `setXFrameOptions()`
 
 Set X-Frame-Options field in the HTTP response.
 
@@ -202,7 +210,8 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
     - `$option`
 - It does not return anything.
 
-### `addForm()` <a name="addForm"></a>
+<a name="addform" id="addform"></a>
+### `addForm()`
 
 Add form to view
 
@@ -213,7 +222,8 @@ Add form to view
     - `$form` (`Piwik\QuickForm2`)
 - It does not return anything.
 
-### `assign()` <a name="assign"></a>
+<a name="assign" id="assign"></a>
+### `assign()`
 
 Assign value to a variable for use in a template ToDo: This is ugly.
 
@@ -225,7 +235,8 @@ Assign value to a variable for use in a template ToDo: This is ugly.
     - `$value`
 - It does not return anything.
 
-### `clearCompiledTemplates()` <a name="clearCompiledTemplates"></a>
+<a name="clearcompiledtemplates" id="clearcompiledtemplates"></a>
+### `clearCompiledTemplates()`
 
 Clear compiled Smarty templates
 
@@ -234,7 +245,8 @@ Clear compiled Smarty templates
 - It is a **public static** method.
 - It does not return anything.
 
-### `singleReport()` <a name="singleReport"></a>
+<a name="singlereport" id="singlereport"></a>
+### `singleReport()`
 
 Creates a View for and then renders the single report template.
 

@@ -20,7 +20,8 @@ The class defines the following methods:
 - [`__construct()`](#__construct)
 - [`getOrder()`](#getOrder)
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 #### Signature
 
@@ -30,7 +31,8 @@ The class defines the following methods:
     - `$title`
 - It does not return anything.
 
-### `getOrder()` <a name="getOrder"></a>
+<a name="getorder" id="getorder"></a>
+### `getOrder()`
 
 #### Signature
 

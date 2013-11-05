@@ -16,7 +16,8 @@ The class defines the following methods:
 - [`isSegmentationEnabled()`](#isSegmentationEnabled) &mdash; Returns true if segmentation is allowed for this user, false if otherwise.
 - [`isUniqueVisitorsEnabled()`](#isUniqueVisitorsEnabled) &mdash; Returns true if unique visitors should be processed for the given period type.
 
-### `getKnownSegmentsToArchive()` <a name="getKnownSegmentsToArchive"></a>
+<a name="getknownsegmentstoarchive" id="getknownsegmentstoarchive"></a>
+### `getKnownSegmentsToArchive()`
 
 Returns the list of stored segments to pre-process for all sites when executing cron archiving.
 
@@ -26,7 +27,8 @@ Returns the list of stored segments to pre-process for all sites when executing 
 - _Returns:_ The list of stored segments that apply to all sites.
     - `array`
 
-### `getPiwikUrl()` <a name="getPiwikUrl"></a>
+<a name="getpiwikurl" id="getpiwikurl"></a>
+### `getPiwikUrl()`
 
 Returns the URL to this Piwik instance, eg.
 
@@ -39,7 +41,8 @@ http://demo.piwik.org/ or http://example.org/piwik/.
 - It is a **public static** method.
 - It returns a(n) `string` value.
 
-### `isSegmentationEnabled()` <a name="isSegmentationEnabled"></a>
+<a name="issegmentationenabled" id="issegmentationenabled"></a>
+### `isSegmentationEnabled()`
 
 Returns true if segmentation is allowed for this user, false if otherwise.
 
@@ -48,7 +51,8 @@ Returns true if segmentation is allowed for this user, false if otherwise.
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `isUniqueVisitorsEnabled()` <a name="isUniqueVisitorsEnabled"></a>
+<a name="isuniquevisitorsenabled" id="isuniquevisitorsenabled"></a>
+### `isUniqueVisitorsEnabled()`
 
 Returns true if unique visitors should be processed for the given period type.
 

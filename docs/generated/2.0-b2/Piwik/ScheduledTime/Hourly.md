@@ -15,7 +15,8 @@ The class defines the following methods:
 - [`setHour()`](#setHour)
 - [`setDay()`](#setDay)
 
-### `getRescheduledTime()` <a name="getRescheduledTime"></a>
+<a name="getrescheduledtime" id="getrescheduledtime"></a>
+### `getRescheduledTime()`
 
 #### See Also
 
@@ -26,7 +27,8 @@ The class defines the following methods:
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `setHour()` <a name="setHour"></a>
+<a name="sethour" id="sethour"></a>
+### `setHour()`
 
 #### See Also
 
@@ -41,7 +43,8 @@ The class defines the following methods:
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
-### `setDay()` <a name="setDay"></a>
+<a name="setday" id="setday"></a>
+### `setDay()`
 
 #### See Also
 

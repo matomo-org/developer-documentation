@@ -21,7 +21,8 @@ The class defines the following methods:
 - [`downloadChunk()`](#downloadChunk) &mdash; Downloads the next chunk of a specific file.
 - [`fetchRemoteFile()`](#fetchRemoteFile) &mdash; Fetches a file located at `$url` and saves it to `$destinationPath`.
 
-### `getTransportMethod()` <a name="getTransportMethod"></a>
+<a name="gettransportmethod" id="gettransportmethod"></a>
+### `getTransportMethod()`
 
 Returns the "best" available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
 
@@ -31,7 +32,8 @@ Returns the "best" available transport method for [sendHttpRequest()](#sendHttpR
 - _Returns:_ Either `&#039;curl&#039;`, `&#039;fopen&#039;` or `&#039;socket&#039;`.
     - `string`
 
-### `sendHttpRequest()` <a name="sendHttpRequest"></a>
+<a name="sendhttprequest" id="sendhttprequest"></a>
+### `sendHttpRequest()`
 
 Sends an HTTP request using best available transport method.
 
@@ -54,7 +56,8 @@ Sends an HTTP request using best available transport method.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent, if there are more than 5 redirects or if the request times out.
 
-### `downloadChunk()` <a name="downloadChunk"></a>
+<a name="downloadchunk" id="downloadchunk"></a>
+### `downloadChunk()`
 
 Downloads the next chunk of a specific file.
 
@@ -117,7 +120,8 @@ of a download's progress.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the file already exists and we&#039;re starting a new download, if we&#039;re trying to continue a download that never started
 
-### `fetchRemoteFile()` <a name="fetchRemoteFile"></a>
+<a name="fetchremotefile" id="fetchremotefile"></a>
+### `fetchRemoteFile()`
 
 Fetches a file located at `$url` and saves it to `$destinationPath`.
 

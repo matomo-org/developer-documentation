@@ -63,7 +63,8 @@ The class defines the following methods:
 - [`getHash()`](#getHash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
 - [`getSelectQuery()`](#getSelectQuery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -75,7 +76,8 @@ Constructor.
     - `$idSites`
 - It does not return anything.
 
-### `isEmpty()` <a name="isEmpty"></a>
+<a name="isempty" id="isempty"></a>
+### `isEmpty()`
 
 Returns true if the segment is empty, false if otherwise.
 
@@ -84,7 +86,8 @@ Returns true if the segment is empty, false if otherwise.
 - It is a **public** method.
 - It does not return anything.
 
-### `getString()` <a name="getString"></a>
+<a name="getstring" id="getstring"></a>
+### `getString()`
 
 Returns the segment condition.
 
@@ -93,7 +96,8 @@ Returns the segment condition.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getHash()` <a name="getHash"></a>
+<a name="gethash" id="gethash"></a>
+### `getHash()`
 
 Returns a hash of the segment condition, or the empty string if the segment condition is empty.
 
@@ -102,7 +106,8 @@ Returns a hash of the segment condition, or the empty string if the segment cond
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getSelectQuery()` <a name="getSelectQuery"></a>
+<a name="getselectquery" id="getselectquery"></a>
+### `getSelectQuery()`
 
 Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
 

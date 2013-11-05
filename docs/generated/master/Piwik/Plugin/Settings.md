@@ -39,7 +39,8 @@ The abstract class defines the following methods:
 - [`setSettingValue()`](#setSettingValue) &mdash; Sets (overwrites) the value for the given setting.
 - [`removeSettingValue()`](#removeSettingValue) &mdash; Removes the value for the given setting.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 #### Signature
 
@@ -48,14 +49,16 @@ The abstract class defines the following methods:
     - `$pluginName`
 - It does not return anything.
 
-### `getIntroduction()` <a name="getIntroduction"></a>
+<a name="getintroduction" id="getintroduction"></a>
+### `getIntroduction()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `getSettingsForCurrentUser()` <a name="getSettingsForCurrentUser"></a>
+<a name="getsettingsforcurrentuser" id="getsettingsforcurrentuser"></a>
+### `getSettingsForCurrentUser()`
 
 Returns only settings that can be displayed for current user.
 
@@ -69,7 +72,8 @@ any settings that require super user permissions.
 - It is a **public** method.
 - It returns a(n) `Piwik\Settings\Setting` value.
 
-### `getSettings()` <a name="getSettings"></a>
+<a name="getsettings" id="getsettings"></a>
+### `getSettings()`
 
 Get all available settings without checking any permissions.
 
@@ -78,7 +82,8 @@ Get all available settings without checking any permissions.
 - It is a **public** method.
 - It returns a(n) `Piwik\Settings\Setting` value.
 
-### `save()` <a name="save"></a>
+<a name="save" id="save"></a>
+### `save()`
 
 Saves (persists) the current setting values in the database.
 
@@ -87,7 +92,8 @@ Saves (persists) the current setting values in the database.
 - It is a **public** method.
 - It does not return anything.
 
-### `removeAllPluginSettings()` <a name="removeAllPluginSettings"></a>
+<a name="removeallpluginsettings" id="removeallpluginsettings"></a>
+### `removeAllPluginSettings()`
 
 Removes all settings for this plugin.
 
@@ -100,7 +106,8 @@ Useful for instance while uninstalling the plugin.
 - It is a **public** method.
 - It does not return anything.
 
-### `getSettingValue()` <a name="getSettingValue"></a>
+<a name="getsettingvalue" id="getsettingvalue"></a>
+### `getSettingValue()`
 
 Gets the current value for this setting.
 
@@ -117,7 +124,8 @@ If no value is specified, the default value will be returned.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the setting does not exist or if the current user is not allowed to change the value of this setting.
 
-### `setSettingValue()` <a name="setSettingValue"></a>
+<a name="setsettingvalue" id="setsettingvalue"></a>
+### `setSettingValue()`
 
 Sets (overwrites) the value for the given setting.
 
@@ -137,7 +145,8 @@ called. Alternatively the value will be casted to the specfied setting type.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the setting does not exist or if the current user is not allowed to change the value of this setting.
 
-### `removeSettingValue()` <a name="removeSettingValue"></a>
+<a name="removesettingvalue" id="removesettingvalue"></a>
+### `removeSettingValue()`
 
 Removes the value for the given setting.
 

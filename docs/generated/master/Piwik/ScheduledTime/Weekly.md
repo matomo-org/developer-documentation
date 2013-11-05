@@ -15,7 +15,8 @@ The class defines the following methods:
 - [`setDay()`](#setDay)
 - [`getDayIntFromString()`](#getDayIntFromString)
 
-### `getRescheduledTime()` <a name="getRescheduledTime"></a>
+<a name="getrescheduledtime" id="getrescheduledtime"></a>
+### `getRescheduledTime()`
 
 #### See Also
 
@@ -26,7 +27,8 @@ The class defines the following methods:
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `setDay()` <a name="setDay"></a>
+<a name="setday" id="setday"></a>
+### `setDay()`
 
 #### Signature
 
@@ -37,7 +39,8 @@ The class defines the following methods:
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if parameter _day is invalid
 
-### `getDayIntFromString()` <a name="getDayIntFromString"></a>
+<a name="getdayintfromstring" id="getdayintfromstring"></a>
+### `getDayIntFromString()`
 
 #### Signature
 

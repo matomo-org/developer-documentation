@@ -34,12 +34,14 @@ This class defines the following constants:
 - [`TYPE_PERSISTENT`](#TYPE_PERSISTENT) &mdash; Notification will be displayed until the new user explicitly closes the notification
 - [`TYPE_TRANSIENT`](#TYPE_TRANSIENT) &mdash; Notification will be displayed only once.
 
-### `FLAG_NO_CLEAR` <a name="FLAG_NO_CLEAR"></a>
+<a name="flag_no_clear" id="flag_no_clear"></a>
+### `FLAG_NO_CLEAR`
 
 Please note that persistent notifications always have a close
 icon
 
-### `TYPE_TOAST` <a name="TYPE_TOAST"></a>
+<a name="type_toast" id="type_toast"></a>
+### `TYPE_TOAST`
 
 Notification will be displayed for a few seconds and then faded out
 
@@ -55,7 +57,8 @@ This class defines the following properties:
 - [`$context`](#$context) &mdash; Context of the notification.
 - [`$priority`](#$priority) &mdash; The priority of the notification, the higher the priority, the higher the order.
 
-### `$title` <a name="title"></a>
+<a name="title" id="title"></a>
+### `$title`
 
 The title of the notification.
 
@@ -68,7 +71,8 @@ For instance the plugin name. The title is optional.
 - It is a **public** property.
 - It is a(n) `string` value.
 
-### `$message` <a name="message"></a>
+<a name="message" id="message"></a>
+### `$message`
 
 The actual message that will be displayed.
 
@@ -81,14 +85,16 @@ Must be set.
 - It is a **public** property.
 - It is a(n) `string` value.
 
-### `$flags` <a name="flags"></a>
+<a name="flags" id="flags"></a>
+### `$flags`
 
 #### Signature
 
 - It is a **public** property.
 - It is a(n) `int` value.
 
-### `$type` <a name="type"></a>
+<a name="type" id="type"></a>
+### `$type`
 
 The type of the notification.
 
@@ -101,7 +107,8 @@ See self::TYPE_*
 - It is a **public** property.
 - It is a(n) `string` value.
 
-### `$context` <a name="context"></a>
+<a name="context" id="context"></a>
+### `$context`
 
 Context of the notification.
 
@@ -114,7 +121,8 @@ For instance info, warning, success or error.
 - It is a **public** property.
 - It is a(n) `string` value.
 
-### `$priority` <a name="priority"></a>
+<a name="priority" id="priority"></a>
+### `$priority`
 
 The priority of the notification, the higher the priority, the higher the order.
 
@@ -137,7 +145,8 @@ The class defines the following methods:
 - [`hasNoClear()`](#hasNoClear)
 - [`getPriority()`](#getPriority)
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 #### Signature
 
@@ -148,14 +157,16 @@ The class defines the following methods:
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the message is empty.
 
-### `hasNoClear()` <a name="hasNoClear"></a>
+<a name="hasnoclear" id="hasnoclear"></a>
+### `hasNoClear()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `getPriority()` <a name="getPriority"></a>
+<a name="getpriority" id="getpriority"></a>
+### `getPriority()`
 
 #### Signature
 

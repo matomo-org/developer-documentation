@@ -29,7 +29,8 @@ This class defines the following properties:
 - [`$scheduledTime`](#$scheduledTime) &mdash; The scheduled time policy
 - [`$priority`](#$priority) &mdash; The priority of a task.
 
-### `$objectInstance` <a name="objectInstance"></a>
+<a name="objectinstance" id="objectinstance"></a>
+### `$objectInstance`
 
 Object instance on which the method will be executed by the task scheduler
 
@@ -38,7 +39,8 @@ Object instance on which the method will be executed by the task scheduler
 - It is a **public** property.
 - It is a(n) `string` value.
 
-### `$className` <a name="className"></a>
+<a name="classname" id="classname"></a>
+### `$className`
 
 Class name where the specified method is located
 
@@ -47,7 +49,8 @@ Class name where the specified method is located
 - It is a **public** property.
 - It is a(n) `string` value.
 
-### `$methodName` <a name="methodName"></a>
+<a name="methodname" id="methodname"></a>
+### `$methodName`
 
 Class method to run when task is scheduled
 
@@ -56,7 +59,8 @@ Class method to run when task is scheduled
 - It is a **public** property.
 - It is a(n) `string` value.
 
-### `$methodParameter` <a name="methodParameter"></a>
+<a name="methodparameter" id="methodparameter"></a>
+### `$methodParameter`
 
 Parameter to pass to the executed method
 
@@ -65,7 +69,8 @@ Parameter to pass to the executed method
 - It is a **public** property.
 - It is a(n) `string` value.
 
-### `$scheduledTime` <a name="scheduledTime"></a>
+<a name="scheduledtime" id="scheduledtime"></a>
+### `$scheduledTime`
 
 The scheduled time policy
 
@@ -74,7 +79,8 @@ The scheduled time policy
 - It is a **public** property.
 - It is a(n) `Piwik\ScheduledTime` value.
 
-### `$priority` <a name="priority"></a>
+<a name="priority" id="priority"></a>
+### `$priority`
 
 The priority of a task.
 
@@ -103,7 +109,8 @@ The class defines the following methods:
 - [`getName()`](#getName)
 - [`getTaskName()`](#getTaskName)
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 #### Signature
 
@@ -116,7 +123,8 @@ The class defines the following methods:
     - `$_priority`
 - It does not return anything.
 
-### `getObjectInstance()` <a name="getObjectInstance"></a>
+<a name="getobjectinstance" id="getobjectinstance"></a>
+### `getObjectInstance()`
 
 Return the object instance on which the method should be executed
 
@@ -125,7 +133,8 @@ Return the object instance on which the method should be executed
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getClassName()` <a name="getClassName"></a>
+<a name="getclassname" id="getclassname"></a>
+### `getClassName()`
 
 Return class name
 
@@ -134,7 +143,8 @@ Return class name
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getMethodName()` <a name="getMethodName"></a>
+<a name="getmethodname" id="getmethodname"></a>
+### `getMethodName()`
 
 Return method name
 
@@ -143,7 +153,8 @@ Return method name
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getMethodParameter()` <a name="getMethodParameter"></a>
+<a name="getmethodparameter" id="getmethodparameter"></a>
+### `getMethodParameter()`
 
 Return method parameter
 
@@ -152,7 +163,8 @@ Return method parameter
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getScheduledTime()` <a name="getScheduledTime"></a>
+<a name="getscheduledtime" id="getscheduledtime"></a>
+### `getScheduledTime()`
 
 Return scheduled time
 
@@ -161,7 +173,8 @@ Return scheduled time
 - It is a **public** method.
 - It returns a(n) `Piwik\ScheduledTime` value.
 
-### `getRescheduledTime()` <a name="getRescheduledTime"></a>
+<a name="getrescheduledtime" id="getrescheduledtime"></a>
+### `getRescheduledTime()`
 
 Return the rescheduled time in milliseconds
 
@@ -170,7 +183,8 @@ Return the rescheduled time in milliseconds
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `getPriority()` <a name="getPriority"></a>
+<a name="getpriority" id="getpriority"></a>
+### `getPriority()`
 
 Return the task priority.
 
@@ -184,14 +198,16 @@ between ScheduledTask::HIGH_PRIORITY and ScheduledTask::LOW_PRIORITY.
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `getName()` <a name="getName"></a>
+<a name="getname" id="getname"></a>
+### `getName()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `getTaskName()` <a name="getTaskName"></a>
+<a name="gettaskname" id="gettaskname"></a>
+### `getTaskName()`
 
 #### Signature
 

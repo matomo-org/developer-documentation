@@ -22,7 +22,8 @@ The class defines the following methods:
 - [`setUserLogin()`](#setUserLogin) &mdash; Sets (overwrites) the userLogin.
 - [`removeAllUserSettingsForUser()`](#removeAllUserSettingsForUser) &mdash; Remove all stored settings of the given userLogin.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 #### Signature
 
@@ -33,14 +34,16 @@ The class defines the following methods:
     - `$userLogin`
 - It does not return anything.
 
-### `getOrder()` <a name="getOrder"></a>
+<a name="getorder" id="getorder"></a>
+### `getOrder()`
 
 #### Signature
 
 - It is a **public** method.
 - It does not return anything.
 
-### `setUserLogin()` <a name="setUserLogin"></a>
+<a name="setuserlogin" id="setuserlogin"></a>
+### `setUserLogin()`
 
 Sets (overwrites) the userLogin.
 
@@ -53,7 +56,8 @@ Sets (overwrites) the userLogin.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case you set a userLogin that is not your userLogin and you are not the superUser.
 
-### `removeAllUserSettingsForUser()` <a name="removeAllUserSettingsForUser"></a>
+<a name="removeallusersettingsforuser" id="removeallusersettingsforuser"></a>
+### `removeAllUserSettingsForUser()`
 
 Remove all stored settings of the given userLogin.
 

@@ -45,7 +45,8 @@ The abstract class defines the following methods:
 - [`aggregateMultipleReports()`](#aggregateMultipleReports) &mdash; Archive data for a non-day period.
 - [`shouldArchive()`](#shouldArchive) &mdash; Returns true if the current plugin should be archived or not.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -56,7 +57,8 @@ Constructor.
     - `$processing` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md))
 - It does not return anything.
 
-### `aggregateDayReport()` <a name="aggregateDayReport"></a>
+<a name="aggregatedayreport" id="aggregatedayreport"></a>
+### `aggregateDayReport()`
 
 Triggered when the archiving process is initiated for a day period.
 
@@ -69,7 +71,8 @@ Plugins that compute analytics data should create an Archiver class that descend
 - It is a **public abstract** method.
 - It does not return anything.
 
-### `aggregateMultipleReports()` <a name="aggregateMultipleReports"></a>
+<a name="aggregatemultiplereports" id="aggregatemultiplereports"></a>
+### `aggregateMultipleReports()`
 
 Archive data for a non-day period.
 
@@ -78,7 +81,8 @@ Archive data for a non-day period.
 - It is a **public abstract** method.
 - It does not return anything.
 
-### `shouldArchive()` <a name="shouldArchive"></a>
+<a name="shouldarchive" id="shouldarchive"></a>
+### `shouldArchive()`
 
 Returns true if the current plugin should be archived or not.
 

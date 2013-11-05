@@ -31,7 +31,8 @@ The class defines the following methods:
 - [`build()`](#build) &mdash; Returns a Piwik_ViewDataTable_* object.
 - [`renderReport()`](#renderReport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method.
 
-### `build()` <a name="build"></a>
+<a name="build" id="build"></a>
+### `build()`
 
 Returns a Piwik_ViewDataTable_* object.
 
@@ -57,7 +58,8 @@ If force is set to true, a ViewDataTable of the $defaultType will be returned in
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
-### `renderReport()` <a name="renderReport"></a>
+<a name="renderreport" id="renderreport"></a>
+### `renderReport()`
 
 Convenience method that creates and renders a ViewDataTable for a API method.
 

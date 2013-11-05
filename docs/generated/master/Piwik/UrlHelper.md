@@ -17,7 +17,8 @@ The class defines the following methods:
 - [`getParameterFromQueryString()`](#getParameterFromQueryString) &mdash; Returns the value of a single query parameter from the supplied query string.
 - [`getPathAndQueryFromUrl()`](#getPathAndQueryFromUrl) &mdash; Returns the path and query string of a URL.
 
-### `getQueryStringWithExcludedParameters()` <a name="getQueryStringWithExcludedParameters"></a>
+<a name="getquerystringwithexcludedparameters" id="getquerystringwithexcludedparameters"></a>
+### `getQueryStringWithExcludedParameters()`
 
 Converts an array of query parameter name/value mappings into a query string.
 
@@ -35,7 +36,8 @@ query string.
 - _Returns:_ A query string, eg, `&quot;?site=0&quot;`.
     - `string`
 
-### `getParseUrlReverse()` <a name="getParseUrlReverse"></a>
+<a name="getparseurlreverse" id="getparseurlreverse"></a>
+### `getParseUrlReverse()`
 
 Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php) function.
 
@@ -52,7 +54,8 @@ Copied from the PHP comments at http://php.net/parse_url
     - `Piwik\false`
     - `string`
 
-### `getArrayFromQueryString()` <a name="getArrayFromQueryString"></a>
+<a name="getarrayfromquerystring" id="getarrayfromquerystring"></a>
+### `getArrayFromQueryString()`
 
 Returns a URL query string as an array.
 
@@ -64,7 +67,8 @@ Returns a URL query string as an array.
 - _Returns:_ eg, `array(&#039;param1&#039; =&gt; &#039;value1&#039;, &#039;param2&#039; =&gt; &#039;value2&#039;)`
     - `array`
 
-### `getParameterFromQueryString()` <a name="getParameterFromQueryString"></a>
+<a name="getparameterfromquerystring" id="getparameterfromquerystring"></a>
+### `getParameterFromQueryString()`
 
 Returns the value of a single query parameter from the supplied query string.
 
@@ -78,7 +82,8 @@ Returns the value of a single query parameter from the supplied query string.
     - `string`
     - `null`
 
-### `getPathAndQueryFromUrl()` <a name="getPathAndQueryFromUrl"></a>
+<a name="getpathandqueryfromurl" id="getpathandqueryfromurl"></a>
+### `getPathAndQueryFromUrl()`
 
 Returns the path and query string of a URL.
 

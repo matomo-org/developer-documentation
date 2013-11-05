@@ -76,7 +76,8 @@ The class defines the following methods:
 - [`subPeriod()`](#subPeriod) &mdash; Subtracts a period from `$this` date and returns the result in a new Date instance.
 - [`secondsToDays()`](#secondsToDays) &mdash; Returns the number of days represented by a number of seconds.
 
-### `factory()` <a name="factory"></a>
+<a name="factory" id="factory"></a>
+### `factory()`
 
 Creates a new Date instance using a string datetime value.
 
@@ -95,7 +96,8 @@ result will be in UTC.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before Tue, 06 Aug 1991.
 
-### `getDatetime()` <a name="getDatetime"></a>
+<a name="getdatetime" id="getdatetime"></a>
+### `getDatetime()`
 
 Returns the current timestamp as a string with the following format: `'YYYY-MM-DD HH:MM:SS'`.
 
@@ -104,7 +106,8 @@ Returns the current timestamp as a string with the following format: `'YYYY-MM-D
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getDateStartUTC()` <a name="getDateStartUTC"></a>
+<a name="getdatestartutc" id="getdatestartutc"></a>
+### `getDateStartUTC()`
 
 Returns the start of the day of the current timestamp in UTC.
 
@@ -119,7 +122,8 @@ be `'2007-07-24'`.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getDateEndUTC()` <a name="getDateEndUTC"></a>
+<a name="getdateendutc" id="getdateendutc"></a>
+### `getDateEndUTC()`
 
 Returns the end of the day of the current timestamp in UTC.
 
@@ -134,7 +138,8 @@ be `'2007-07-24 23:59:59'`.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `setTimezone()` <a name="setTimezone"></a>
+<a name="settimezone" id="settimezone"></a>
+### `setTimezone()`
 
 Returns a new date object with the same timestamp as `$this` but with a new timezone.
 
@@ -149,7 +154,8 @@ See [getTimestamp](#getTimestamp) to see how the timezone is used.
     - `$timezone`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `adjustForTimezone()` <a name="adjustForTimezone"></a>
+<a name="adjustfortimezone" id="adjustfortimezone"></a>
+### `adjustForTimezone()`
 
 Converts a timestamp in a timezone to UTC.
 
@@ -162,7 +168,8 @@ Converts a timestamp in a timezone to UTC.
 - _Returns:_ The adjusted time as seconds from EPOCH.
     - `int`
 
-### `getTimestampUTC()` <a name="getTimestampUTC"></a>
+<a name="gettimestamputc" id="gettimestamputc"></a>
+### `getTimestampUTC()`
 
 Returns the Unix timestamp of the date in UTC.
 
@@ -171,7 +178,8 @@ Returns the Unix timestamp of the date in UTC.
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `getTimestamp()` <a name="getTimestamp"></a>
+<a name="gettimestamp" id="gettimestamp"></a>
+### `getTimestamp()`
 
 Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
 
@@ -180,7 +188,8 @@ Returns the unix timestamp of the date in UTC, converted from the current timest
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `isLater()` <a name="isLater"></a>
+<a name="islater" id="islater"></a>
+### `isLater()`
 
 Returns true if the current date is older than the given `$date`.
 
@@ -191,7 +200,8 @@ Returns true if the current date is older than the given `$date`.
     - `$date` ([`Date`](../Piwik/Date.md))
 - It returns a(n) `bool` value.
 
-### `isEarlier()` <a name="isEarlier"></a>
+<a name="isearlier" id="isearlier"></a>
+### `isEarlier()`
 
 Returns true if the current date is earlier than the given `$date`.
 
@@ -202,7 +212,8 @@ Returns true if the current date is earlier than the given `$date`.
     - `$date` ([`Date`](../Piwik/Date.md))
 - It returns a(n) `bool` value.
 
-### `toString()` <a name="toString"></a>
+<a name="tostring" id="tostring"></a>
+### `toString()`
 
 Converts this date to the requested string format.
 
@@ -218,7 +229,8 @@ for the list of format strings.
     - `$format`
 - It returns a(n) `string` value.
 
-### `__toString()` <a name="__toString"></a>
+<a name="__tostring" id="__tostring"></a>
+### `__toString()`
 
 See [toString](#toString).
 
@@ -228,7 +240,8 @@ See [toString](#toString).
 - _Returns:_ The current date in `&#039;YYYY-MM-DD&#039;` format.
     - `string`
 
-### `compareWeek()` <a name="compareWeek"></a>
+<a name="compareweek" id="compareweek"></a>
+### `compareWeek()`
 
 Performs three-way comparison of the week of the current date against the given `$date`'s week.
 
@@ -240,7 +253,8 @@ Performs three-way comparison of the week of the current date against the given 
 - _Returns:_ Returns `0` if the current week is equal to `$date`&#039;s, `-1` if the current week is earlier or `1` if the current week is later.
     - `int`
 
-### `compareMonth()` <a name="compareMonth"></a>
+<a name="comparemonth" id="comparemonth"></a>
+### `compareMonth()`
 
 Performs three-way comparison of the month of the current date against the given `$date`'s month.
 
@@ -252,7 +266,8 @@ Performs three-way comparison of the month of the current date against the given
 - _Returns:_ Returns `0` if the current month is equal to `$date`&#039;s, `-1` if the current month is earlier or `1` if the current month is later.
     - `int`
 
-### `compareYear()` <a name="compareYear"></a>
+<a name="compareyear" id="compareyear"></a>
+### `compareYear()`
 
 Performs three-way comparison of the month of the current date against the given `$date`'s year.
 
@@ -264,7 +279,8 @@ Performs three-way comparison of the month of the current date against the given
 - _Returns:_ Returns `0` if the current year is equal to `$date`&#039;s, `-1` if the current year is earlier or `1` if the current year is later.
     - `int`
 
-### `isToday()` <a name="isToday"></a>
+<a name="istoday" id="istoday"></a>
+### `isToday()`
 
 Returns true if current date is today.
 
@@ -273,7 +289,8 @@ Returns true if current date is today.
 - It is a **public** method.
 - It returns a(n) `bool` value.
 
-### `now()` <a name="now"></a>
+<a name="now" id="now"></a>
+### `now()`
 
 Returns a date object set to now in UTC (same as [today](#today), except that the time is also set).
 
@@ -282,7 +299,8 @@ Returns a date object set to now in UTC (same as [today](#today), except that th
 - It is a **public static** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `today()` <a name="today"></a>
+<a name="today" id="today"></a>
+### `today()`
 
 Returns a date object set to today at midnight in UTC.
 
@@ -291,7 +309,8 @@ Returns a date object set to today at midnight in UTC.
 - It is a **public static** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `yesterday()` <a name="yesterday"></a>
+<a name="yesterday" id="yesterday"></a>
+### `yesterday()`
 
 Returns a date object set to yesterday at midnight in UTC.
 
@@ -300,7 +319,8 @@ Returns a date object set to yesterday at midnight in UTC.
 - It is a **public static** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `yesterdaySameTime()` <a name="yesterdaySameTime"></a>
+<a name="yesterdaysametime" id="yesterdaysametime"></a>
+### `yesterdaySameTime()`
 
 Returns a date object set to yesterday with the current time of day in UTC.
 
@@ -309,7 +329,8 @@ Returns a date object set to yesterday with the current time of day in UTC.
 - It is a **public static** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `setTime()` <a name="setTime"></a>
+<a name="settime" id="settime"></a>
+### `setTime()`
 
 Returns a new Date instance with `$this` date's day and the specified new time of day.
 
@@ -321,7 +342,8 @@ Returns a new Date instance with `$this` date's day and the specified new time o
 - _Returns:_ The new date with the time of day changed.
     - [`Date`](../Piwik/Date.md)
 
-### `setDay()` <a name="setDay"></a>
+<a name="setday" id="setday"></a>
+### `setDay()`
 
 Returns a new Date instance with `$this` date's time of day and the day specified by `$day`.
 
@@ -332,7 +354,8 @@ Returns a new Date instance with `$this` date's time of day and the day specifie
     - `$day`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `setYear()` <a name="setYear"></a>
+<a name="setyear" id="setyear"></a>
+### `setYear()`
 
 Returns a new Date instance with `$this` date's time of day, month and day, but with a new year (specified by `$year`).
 
@@ -343,7 +366,8 @@ Returns a new Date instance with `$this` date's time of day, month and day, but 
     - `$year`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `subDay()` <a name="subDay"></a>
+<a name="subday" id="subday"></a>
+### `subDay()`
 
 Subtracts `$n` number of days from `$this` date and returns a new Date object.
 
@@ -354,7 +378,8 @@ Subtracts `$n` number of days from `$this` date and returns a new Date object.
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `subWeek()` <a name="subWeek"></a>
+<a name="subweek" id="subweek"></a>
+### `subWeek()`
 
 Subtracts `$n` weeks from `$this` date and returns a new Date object.
 
@@ -365,7 +390,8 @@ Subtracts `$n` weeks from `$this` date and returns a new Date object.
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `subMonth()` <a name="subMonth"></a>
+<a name="submonth" id="submonth"></a>
+### `subMonth()`
 
 Subtracts `$n` months from `$this` date and returns the result as a new Date object.
 
@@ -377,7 +403,8 @@ Subtracts `$n` months from `$this` date and returns the result as a new Date obj
 - _Returns:_ new date
     - [`Date`](../Piwik/Date.md)
 
-### `subYear()` <a name="subYear"></a>
+<a name="subyear" id="subyear"></a>
+### `subYear()`
 
 Subtracts `$n` years from `$this` date and returns the result as a new Date object.
 
@@ -388,7 +415,8 @@ Subtracts `$n` years from `$this` date and returns the result as a new Date obje
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `getLocalized()` <a name="getLocalized"></a>
+<a name="getlocalized" id="getlocalized"></a>
+### `getLocalized()`
 
 Returns a localized date string using the given template.
 
@@ -415,7 +443,8 @@ Allowed tags include:
 - _Returns:_ eg. `&quot;Aug 2009&quot;`
     - `string`
 
-### `addDay()` <a name="addDay"></a>
+<a name="addday" id="addday"></a>
+### `addDay()`
 
 Adds `$n` days to `$this` date and returns the result in a new Date.
 
@@ -430,7 +459,8 @@ instance.
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `addHour()` <a name="addHour"></a>
+<a name="addhour" id="addhour"></a>
+### `addHour()`
 
 Adds `$n` hours to `$this` date and returns the result in a new Date.
 
@@ -441,7 +471,8 @@ Adds `$n` hours to `$this` date and returns the result in a new Date.
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `addHourTo()` <a name="addHourTo"></a>
+<a name="addhourto" id="addhourto"></a>
+### `addHourTo()`
 
 Adds N number of hours to a UNIX timestamp and returns the result.
 
@@ -460,7 +491,8 @@ Date instance does not have to be created.
 - _Returns:_ The result as a UNIX timestamp.
     - `int`
 
-### `subHour()` <a name="subHour"></a>
+<a name="subhour" id="subhour"></a>
+### `subHour()`
 
 Subtracts `$n` hours from `$this` date and returns the result in a new Date.
 
@@ -471,7 +503,8 @@ Subtracts `$n` hours from `$this` date and returns the result in a new Date.
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `addPeriod()` <a name="addPeriod"></a>
+<a name="addperiod" id="addperiod"></a>
+### `addPeriod()`
 
 Adds a period to `$this` date and returns the result in a new Date instance.
 
@@ -483,7 +516,8 @@ Adds a period to `$this` date and returns the result in a new Date instance.
     - `$period`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `subPeriod()` <a name="subPeriod"></a>
+<a name="subperiod" id="subperiod"></a>
+### `subPeriod()`
 
 Subtracts a period from `$this` date and returns the result in a new Date instance.
 
@@ -495,7 +529,8 @@ Subtracts a period from `$this` date and returns the result in a new Date instan
     - `$period`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `secondsToDays()` <a name="secondsToDays"></a>
+<a name="secondstodays" id="secondstodays"></a>
+### `secondsToDays()`
 
 Returns the number of days represented by a number of seconds.
 

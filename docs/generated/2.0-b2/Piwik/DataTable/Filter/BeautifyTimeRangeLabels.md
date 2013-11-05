@@ -27,7 +27,8 @@ The class defines the following methods:
 - [`getRangeLabel()`](#getRangeLabel) &mdash; Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
 - [`getUnboundedLabel()`](#getUnboundedLabel) &mdash; Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -41,7 +42,8 @@ Constructor.
     - `$labelMinutesPlural`
 - It does not return anything.
 
-### `getSingleUnitLabel()` <a name="getSingleUnitLabel"></a>
+<a name="getsingleunitlabel" id="getsingleunitlabel"></a>
+### `getSingleUnitLabel()`
 
 Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
 
@@ -59,7 +61,8 @@ will be in seconds. Otherwise, it will be in minutes.
 - _Returns:_ The pretty range label.
     - `string`
 
-### `getRangeLabel()` <a name="getRangeLabel"></a>
+<a name="getrangelabel" id="getrangelabel"></a>
+### `getRangeLabel()`
 
 Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
 
@@ -78,7 +81,8 @@ will be in seconds. Otherwise, it will be in minutes.
 - _Returns:_ The pretty range label.
     - `string`
 
-### `getUnboundedLabel()` <a name="getUnboundedLabel"></a>
+<a name="getunboundedlabel" id="getunboundedlabel"></a>
+### `getUnboundedLabel()`
 
 Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
 

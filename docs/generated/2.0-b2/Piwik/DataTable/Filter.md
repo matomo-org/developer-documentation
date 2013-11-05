@@ -33,7 +33,8 @@ The abstract class defines the following methods:
 - [`enableRecursive()`](#enableRecursive) &mdash; Enables/Disables recursive filtering.
 - [`filterSubTable()`](#filterSubTable) &mdash; Filters a row's subtable, if one exists and is loaded in memory.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -44,7 +45,8 @@ Constructor.
     - `$table` ([`DataTable`](../../Piwik/DataTable.md))
 - It does not return anything.
 
-### `filter()` <a name="filter"></a>
+<a name="filter" id="filter"></a>
+### `filter()`
 
 Filters the supplied DataTable.
 
@@ -55,7 +57,8 @@ Filters the supplied DataTable.
     - `$table`
 - It does not return anything.
 
-### `enableRecursive()` <a name="enableRecursive"></a>
+<a name="enablerecursive" id="enablerecursive"></a>
+### `enableRecursive()`
 
 Enables/Disables recursive filtering.
 
@@ -71,7 +74,8 @@ is up to the derived Filter class.
     - `$enable`
 - It does not return anything.
 
-### `filterSubTable()` <a name="filterSubTable"></a>
+<a name="filtersubtable" id="filtersubtable"></a>
+### `filterSubTable()`
 
 Filters a row's subtable, if one exists and is loaded in memory.
 

@@ -17,7 +17,8 @@ The class defines the following methods:
 - [`copy()`](#copy) &mdash; Copies a file from `$source` to `$dest`.
 - [`copyRecursive()`](#copyRecursive) &mdash; Copies the contents of a directory recursively from `$source` to `$target`.
 
-### `mkdir()` <a name="mkdir"></a>
+<a name="mkdir" id="mkdir"></a>
+### `mkdir()`
 
 Attempts to create a new directory.
 
@@ -35,7 +36,8 @@ Note: This function does not create directories recursively.
     - `$denyAccess`
 - It does not return anything.
 
-### `globr()` <a name="globr"></a>
+<a name="globr" id="globr"></a>
+### `globr()`
 
 Recursively find pathnames that match a pattern.
 
@@ -53,7 +55,8 @@ See [glob](#http://php.net/manual/en/function.glob.php) for more info.
 - _Returns:_ The list of paths that match the pattern.
     - `array`
 
-### `unlinkRecursive()` <a name="unlinkRecursive"></a>
+<a name="unlinkrecursive" id="unlinkrecursive"></a>
+### `unlinkRecursive()`
 
 Recursively deletes a directory.
 
@@ -66,7 +69,8 @@ Recursively deletes a directory.
     - `$beforeUnlink` (`Piwik\Closure`)
 - It does not return anything.
 
-### `copy()` <a name="copy"></a>
+<a name="copy" id="copy"></a>
+### `copy()`
 
 Copies a file from `$source` to `$dest`.
 
@@ -81,7 +85,8 @@ Copies a file from `$source` to `$dest`.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the file cannot be copied.
 
-### `copyRecursive()` <a name="copyRecursive"></a>
+<a name="copyrecursive" id="copyrecursive"></a>
+### `copyRecursive()`
 
 Copies the contents of a directory recursively from `$source` to `$target`.
 

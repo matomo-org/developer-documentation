@@ -51,7 +51,8 @@ The class defines the following methods:
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation ID.
 - [`translateException()`](#translateException) &mdash; Returns translated string or given message if translation is not found.
 
-### `getCurrentUserEmail()` <a name="getCurrentUserEmail"></a>
+<a name="getcurrentuseremail" id="getcurrentuseremail"></a>
+### `getCurrentUserEmail()`
 
 Returns the current user's email address.
 
@@ -60,7 +61,8 @@ Returns the current user's email address.
 - It is a **public static** method.
 - It returns a(n) `string` value.
 
-### `getSuperUserLogin()` <a name="getSuperUserLogin"></a>
+<a name="getsuperuserlogin" id="getsuperuserlogin"></a>
+### `getSuperUserLogin()`
 
 Returns the super user's username.
 
@@ -69,7 +71,8 @@ Returns the super user's username.
 - It is a **public static** method.
 - It returns a(n) `string` value.
 
-### `getSuperUserEmail()` <a name="getSuperUserEmail"></a>
+<a name="getsuperuseremail" id="getsuperuseremail"></a>
+### `getSuperUserEmail()`
 
 Returns the super user's email address.
 
@@ -78,7 +81,8 @@ Returns the super user's email address.
 - It is a **public static** method.
 - It returns a(n) `string` value.
 
-### `getCurrentUserLogin()` <a name="getCurrentUserLogin"></a>
+<a name="getcurrentuserlogin" id="getcurrentuserlogin"></a>
+### `getCurrentUserLogin()`
 
 Returns the current user's username.
 
@@ -87,7 +91,8 @@ Returns the current user's username.
 - It is a **public static** method.
 - It returns a(n) `string` value.
 
-### `getCurrentUserTokenAuth()` <a name="getCurrentUserTokenAuth"></a>
+<a name="getcurrentusertokenauth" id="getcurrentusertokenauth"></a>
+### `getCurrentUserTokenAuth()`
 
 Returns the current user's token auth.
 
@@ -96,7 +101,8 @@ Returns the current user's token auth.
 - It is a **public static** method.
 - It returns a(n) `string` value.
 
-### `isUserIsSuperUserOrTheUser()` <a name="isUserIsSuperUserOrTheUser"></a>
+<a name="isuserissuperuserortheuser" id="isuserissuperuserortheuser"></a>
+### `isUserIsSuperUserOrTheUser()`
 
 Returns true if the current user is either the super user or the user specified by `$theUser`.
 
@@ -107,7 +113,8 @@ Returns true if the current user is either the super user or the user specified 
     - `$theUser`
 - It returns a(n) `bool` value.
 
-### `checkUserIsSuperUserOrTheUser()` <a name="checkUserIsSuperUserOrTheUser"></a>
+<a name="checkuserissuperuserortheuser" id="checkuserissuperuserortheuser"></a>
+### `checkUserIsSuperUserOrTheUser()`
 
 Check that the current user is either the specified user or the superuser.
 
@@ -120,7 +127,8 @@ Check that the current user is either the specified user or the superuser.
 - It throws one of the following exceptions:
     - `NoAccessException` &mdash; If the user is neither the super user nor the user `$theUser`.
 
-### `isUserIsSuperUser()` <a name="isUserIsSuperUser"></a>
+<a name="isuserissuperuser" id="isuserissuperuser"></a>
+### `isUserIsSuperUser()`
 
 Returns true if the current user is the Super User.
 
@@ -129,7 +137,8 @@ Returns true if the current user is the Super User.
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `isUserIsAnonymous()` <a name="isUserIsAnonymous"></a>
+<a name="isuserisanonymous" id="isuserisanonymous"></a>
+### `isUserIsAnonymous()`
 
 Returns true if the current user is the special anonymous user or not.
 
@@ -138,7 +147,8 @@ Returns true if the current user is the special anonymous user or not.
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `checkUserIsNotAnonymous()` <a name="checkUserIsNotAnonymous"></a>
+<a name="checkuserisnotanonymous" id="checkuserisnotanonymous"></a>
+### `checkUserIsNotAnonymous()`
 
 Checks that the user is not the anonymous user.
 
@@ -149,7 +159,8 @@ Checks that the user is not the anonymous user.
 - It throws one of the following exceptions:
     - `NoAccessException` &mdash; if the current user is the anonymous user.
 
-### `checkUserIsSuperUser()` <a name="checkUserIsSuperUser"></a>
+<a name="checkuserissuperuser" id="checkuserissuperuser"></a>
+### `checkUserIsSuperUser()`
 
 Check that the current user is the superuser.
 
@@ -160,7 +171,8 @@ Check that the current user is the superuser.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user is not the superuser.
 
-### `isUserHasAdminAccess()` <a name="isUserHasAdminAccess"></a>
+<a name="isuserhasadminaccess" id="isuserhasadminaccess"></a>
+### `isUserHasAdminAccess()`
 
 Returns true if the user has admin access to the requested sites, false if otherwise.
 
@@ -171,7 +183,8 @@ Returns true if the user has admin access to the requested sites, false if other
     - `$idSites`
 - It returns a(n) `bool` value.
 
-### `checkUserHasAdminAccess()` <a name="checkUserHasAdminAccess"></a>
+<a name="checkuserhasadminaccess" id="checkuserhasadminaccess"></a>
+### `checkUserHasAdminAccess()`
 
 Checks that the current user has admin access to the requested list of sites.
 
@@ -184,7 +197,8 @@ Checks that the current user has admin access to the requested list of sites.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If user doesn&#039;t have admin access.
 
-### `isUserHasSomeAdminAccess()` <a name="isUserHasSomeAdminAccess"></a>
+<a name="isuserhassomeadminaccess" id="isuserhassomeadminaccess"></a>
+### `isUserHasSomeAdminAccess()`
 
 Returns true if the current user has admin access to at least one site.
 
@@ -193,7 +207,8 @@ Returns true if the current user has admin access to at least one site.
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `checkUserHasSomeAdminAccess()` <a name="checkUserHasSomeAdminAccess"></a>
+<a name="checkuserhassomeadminaccess" id="checkuserhassomeadminaccess"></a>
+### `checkUserHasSomeAdminAccess()`
 
 Checks that the current user has admin access to at least one site.
 
@@ -204,7 +219,8 @@ Checks that the current user has admin access to at least one site.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have admin access to any site.
 
-### `isUserHasViewAccess()` <a name="isUserHasViewAccess"></a>
+<a name="isuserhasviewaccess" id="isuserhasviewaccess"></a>
+### `isUserHasViewAccess()`
 
 Returns true if the user has view access to the requested list of sites.
 
@@ -215,7 +231,8 @@ Returns true if the user has view access to the requested list of sites.
     - `$idSites`
 - It returns a(n) `bool` value.
 
-### `checkUserHasViewAccess()` <a name="checkUserHasViewAccess"></a>
+<a name="checkuserhasviewaccess" id="checkuserhasviewaccess"></a>
+### `checkUserHasViewAccess()`
 
 Checks that the current user has view access to the requested list of sites
 
@@ -228,7 +245,8 @@ Checks that the current user has view access to the requested list of sites
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have view access to every site in the list.
 
-### `isUserHasSomeViewAccess()` <a name="isUserHasSomeViewAccess"></a>
+<a name="isuserhassomeviewaccess" id="isuserhassomeviewaccess"></a>
+### `isUserHasSomeViewAccess()`
 
 Returns true if the current user has view access to at least one site.
 
@@ -237,7 +255,8 @@ Returns true if the current user has view access to at least one site.
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `checkUserHasSomeViewAccess()` <a name="checkUserHasSomeViewAccess"></a>
+<a name="checkuserhassomeviewaccess" id="checkuserhassomeviewaccess"></a>
+### `checkUserHasSomeViewAccess()`
 
 Checks that the current user has view access to at least one site.
 
@@ -248,7 +267,8 @@ Checks that the current user has view access to at least one site.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have view access to any site.
 
-### `redirectToModule()` <a name="redirectToModule"></a>
+<a name="redirecttomodule" id="redirecttomodule"></a>
+### `redirectToModule()`
 
 Redirects the current request to a new module and action.
 
@@ -261,7 +281,8 @@ Redirects the current request to a new module and action.
     - `$parameters`
 - It does not return anything.
 
-### `isValidEmailString()` <a name="isValidEmailString"></a>
+<a name="isvalidemailstring" id="isvalidemailstring"></a>
+### `isValidEmailString()`
 
 Returns true if the email address is a valid.
 
@@ -272,7 +293,8 @@ Returns true if the email address is a valid.
     - `$emailAddress`
 - It returns a(n) `bool` value.
 
-### `postEvent()` <a name="postEvent"></a>
+<a name="postevent" id="postevent"></a>
+### `postEvent()`
 
 Post an event to Piwik's event dispatcher which will execute the event's observers.
 
@@ -286,7 +308,8 @@ Post an event to Piwik's event dispatcher which will execute the event's observe
     - `$plugins`
 - It returns a(n) `void` value.
 
-### `addAction()` <a name="addAction"></a>
+<a name="addaction" id="addaction"></a>
+### `addAction()`
 
 Register an observer to an event.
 
@@ -303,7 +326,8 @@ need to use this function.
     - `$function`
 - It does not return anything.
 
-### `translate()` <a name="translate"></a>
+<a name="translate" id="translate"></a>
+### `translate()`
 
 Returns an internationalized string using a translation ID.
 
@@ -320,7 +344,8 @@ cannot be found for the ID, the ID is returned.
     - `$args`
 - It returns a(n) `string` value.
 
-### `translateException()` <a name="translateException"></a>
+<a name="translateexception" id="translateexception"></a>
+### `translateException()`
 
 Returns translated string or given message if translation is not found.
 

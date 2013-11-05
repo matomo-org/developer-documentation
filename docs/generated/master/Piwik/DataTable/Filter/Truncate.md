@@ -30,7 +30,8 @@ The class defines the following methods:
 - [`filter()`](#filter) &mdash; Executes the filter, see [Truncate](#).
 - [`addSummaryRow()`](#addSummaryRow)
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -45,7 +46,8 @@ Constructor.
     - `$filterRecursive`
 - It does not return anything.
 
-### `filter()` <a name="filter"></a>
+<a name="filter" id="filter"></a>
+### `filter()`
 
 Executes the filter, see [Truncate](#).
 
@@ -56,7 +58,8 @@ Executes the filter, see [Truncate](#).
     - `$table`
 - It does not return anything.
 
-### `addSummaryRow()` <a name="addSummaryRow"></a>
+<a name="addsummaryrow" id="addsummaryrow"></a>
+### `addSummaryRow()`
 
 #### Signature
 

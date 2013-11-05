@@ -39,7 +39,8 @@ The class defines the following methods:
 - [`deleteLike()`](#deleteLike) &mdash; Deletes all options that match the supplied pattern.
 - [`clearCache()`](#clearCache) &mdash; Clears the option value cache and forces a reload from the Database.
 
-### `get()` <a name="get"></a>
+<a name="get" id="get"></a>
+### `get()`
 
 Returns the option value for the requested option `$name`.
 
@@ -52,7 +53,8 @@ Returns the option value for the requested option `$name`.
     - `string`
     - `bool`
 
-### `set()` <a name="set"></a>
+<a name="set" id="set"></a>
+### `set()`
 
 Sets an option value by name.
 
@@ -65,7 +67,8 @@ Sets an option value by name.
     - `$autoload`
 - It does not return anything.
 
-### `delete()` <a name="delete"></a>
+<a name="delete" id="delete"></a>
+### `delete()`
 
 Deletes an option.
 
@@ -77,7 +80,8 @@ Deletes an option.
     - `$value`
 - It does not return anything.
 
-### `deleteLike()` <a name="deleteLike"></a>
+<a name="deletelike" id="deletelike"></a>
+### `deleteLike()`
 
 Deletes all options that match the supplied pattern.
 
@@ -89,7 +93,8 @@ Deletes all options that match the supplied pattern.
     - `$value`
 - It does not return anything.
 
-### `clearCache()` <a name="clearCache"></a>
+<a name="clearcache" id="clearcache"></a>
+### `clearCache()`
 
 Clears the option value cache and forces a reload from the Database.
 

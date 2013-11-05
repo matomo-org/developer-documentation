@@ -122,7 +122,8 @@ The class defines the following methods:
 - [`getParams()`](#getParams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 - [`getPluginForReport()`](#getPluginForReport) &mdash; Returns the name of the plugin that archives a given report.
 
-### `build()` <a name="build"></a>
+<a name="build" id="build"></a>
+### `build()`
 
 Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional Segment.
 
@@ -145,7 +146,8 @@ If you want to create an Archive instance with an array of Period instances, use
     - `$_restrictSitesToLogin`
 - It returns a(n) [`Archive`](../Piwik/Archive.md) value.
 
-### `factory()` <a name="factory"></a>
+<a name="factory" id="factory"></a>
+### `factory()`
 
 Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
 
@@ -168,7 +170,8 @@ use [Archive::build](#build).
     - `$isMultipleDate`
 - It returns a(n) [`Archive`](../Piwik/Archive.md) value.
 
-### `getNumeric()` <a name="getNumeric"></a>
+<a name="getnumeric" id="getnumeric"></a>
+### `getNumeric()`
 
 Queries and returns metric data in an array.
 
@@ -191,7 +194,8 @@ will be indexed by site ID first, then period.
 - _Returns:_ False if there is no data to return, a numeric if only we&#039;re not querying for multiple sites/dates, or an array if multiple sites, dates or names are queried for.
     - `mixed`
 
-### `getBlob()` <a name="getBlob"></a>
+<a name="getblob" id="getblob"></a>
+### `getBlob()`
 
 Queries and returns blob data in an array.
 
@@ -219,7 +223,8 @@ will be indexed by site ID first, then period.
 - _Returns:_ An array of appropriately indexed blob data.
     - `array`
 
-### `getDataTableFromNumeric()` <a name="getDataTableFromNumeric"></a>
+<a name="getdatatablefromnumeric" id="getdatatablefromnumeric"></a>
+### `getDataTableFromNumeric()`
 
 Queries and returns metric data in a DataTable instance.
 
@@ -247,7 +252,8 @@ Note: Every DataTable instance returned will have at most one row in it. The con
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)
 
-### `getDataTable()` <a name="getDataTable"></a>
+<a name="getdatatable" id="getdatatable"></a>
+### `getDataTable()`
 
 Queries and returns a single report as a DataTable instance.
 
@@ -276,7 +282,8 @@ indexed by period.
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)
 
-### `getDataTableExpanded()` <a name="getDataTableExpanded"></a>
+<a name="getdatatableexpanded" id="getdatatableexpanded"></a>
+### `getDataTableExpanded()`
 
 Queries and returns one report with all of its subtables loaded.
 
@@ -302,7 +309,8 @@ indexed by period.
     - `$addMetadataSubtableId`
 - It returns a(n) [`DataTable`](../Piwik/DataTable.md) value.
 
-### `getRequestedPlugins()` <a name="getRequestedPlugins"></a>
+<a name="getrequestedplugins" id="getrequestedplugins"></a>
+### `getRequestedPlugins()`
 
 Returns the list of plugins that archive the given reports.
 
@@ -313,7 +321,8 @@ Returns the list of plugins that archive the given reports.
     - `$archiveNames`
 - It returns a(n) `array` value.
 
-### `getDataTableFromArchive()` <a name="getDataTableFromArchive"></a>
+<a name="getdatatablefromarchive" id="getdatatablefromarchive"></a>
+### `getDataTableFromArchive()`
 
 Helper function that creates an Archive instance and queries for report data using query parameter data.
 
@@ -337,7 +346,8 @@ API methods can use this method to reduce code redundancy.
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)
 
-### `getParams()` <a name="getParams"></a>
+<a name="getparams" id="getparams"></a>
+### `getParams()`
 
 Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 
@@ -346,7 +356,8 @@ Returns an object describing the set of sites, the set of periods and the segmen
 - It is a **public** method.
 - It returns a(n) `Piwik\Archive\Parameters` value.
 
-### `getPluginForReport()` <a name="getPluginForReport"></a>
+<a name="getpluginforreport" id="getpluginforreport"></a>
+### `getPluginForReport()`
 
 Returns the name of the plugin that archives a given report.
 

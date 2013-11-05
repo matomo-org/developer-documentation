@@ -40,7 +40,8 @@ The class defines the following methods:
 - [`getSqlStringFieldsArray()`](#getSqlStringFieldsArray) &mdash; Returns a string with a comma separated list of placeholders for use in an SQL query based on the list of fields we're referencing.
 - [`destroy()`](#destroy) &mdash; Mark orphaned object for garbage collection.
 
-### `prefixTable()` <a name="prefixTable"></a>
+<a name="prefixtable" id="prefixtable"></a>
+### `prefixTable()`
 
 Returns a prefixed table name.
 
@@ -57,7 +58,8 @@ option.
 - _Returns:_ The prefixed name, ie &quot;piwik-production_log_visit&quot;.
     - `string`
 
-### `unprefixTable()` <a name="unprefixTable"></a>
+<a name="unprefixtable" id="unprefixtable"></a>
+### `unprefixTable()`
 
 Removes the prefix from a table name and returns the result.
 
@@ -74,7 +76,8 @@ option.
 - _Returns:_ The unprefixed table name, eg &quot;log_visit&quot;.
     - `string`
 
-### `mb_substr()` <a name="mb_substr"></a>
+<a name="mb_substr" id="mb_substr"></a>
+### `mb_substr()`
 
 Multi-byte substr() - works with UTF-8.
 
@@ -90,7 +93,8 @@ Calls `mb_substr` if available and falls back to `substr` if it's not.
     - `$start`
 - It returns a(n) `string` value.
 
-### `mb_strlen()` <a name="mb_strlen"></a>
+<a name="mb_strlen" id="mb_strlen"></a>
+### `mb_strlen()`
 
 Multi-byte strlen() - works with UTF-8  Calls `mb_substr` if available and falls back to `substr` if not.
 
@@ -101,7 +105,8 @@ Multi-byte strlen() - works with UTF-8  Calls `mb_substr` if available and falls
     - `$string`
 - It returns a(n) `int` value.
 
-### `mb_strtolower()` <a name="mb_strtolower"></a>
+<a name="mb_strtolower" id="mb_strtolower"></a>
+### `mb_strtolower()`
 
 Multi-byte strtolower() - works with UTF-8.
 
@@ -116,7 +121,8 @@ Calls `mb_strtolower` if available and falls back to `strtolower` if not.
     - `$string`
 - It returns a(n) `string` value.
 
-### `sanitizeInputValues()` <a name="sanitizeInputValues"></a>
+<a name="sanitizeinputvalues" id="sanitizeinputvalues"></a>
+### `sanitizeInputValues()`
 
 Sanitizes a string to help avoid XSS vulnerabilities.
 
@@ -150,7 +156,8 @@ NOTE: Sanitized input should not be used directly in an SQL query; SQL placehold
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$value` is of an incorrect type.
 
-### `unsanitizeInputValues()` <a name="unsanitizeInputValues"></a>
+<a name="unsanitizeinputvalues" id="unsanitizeinputvalues"></a>
+### `unsanitizeInputValues()`
 
 Unsanitizes one or more values and returns the result.
 
@@ -171,7 +178,8 @@ have to use this method to unsanitize it after it is retrieved.
     - `string`
     - `array`
 
-### `getRequestVar()` <a name="getRequestVar"></a>
+<a name="getrequestvar" id="getrequestvar"></a>
+### `getRequestVar()`
 
 Gets a sanitized request parameter by name from the `$_GET` and `$_POST` superglobals.
 
@@ -198,7 +206,8 @@ If the variable doesn't have neither a value nor a default value provided, an ex
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the request parameter doesn&#039;t exist and there is no default value or if the request parameter exists but has an incorrect type.
 
-### `getLanguagesList()` <a name="getLanguagesList"></a>
+<a name="getlanguageslist" id="getlanguageslist"></a>
+### `getLanguagesList()`
 
 Returns the list of valid language codes.
 
@@ -212,7 +221,8 @@ Returns the list of valid language codes.
 - _Returns:_ Array of two letter ISO codes mapped with language name (in English). E.g. `array(&#039;en&#039; =&gt; &#039;English&#039;)`.
     - `array`
 
-### `getLanguageToCountryList()` <a name="getLanguageToCountryList"></a>
+<a name="getlanguagetocountrylist" id="getlanguagetocountrylist"></a>
+### `getLanguageToCountryList()`
 
 Returns list of language to country mappings.
 
@@ -226,7 +236,8 @@ Returns list of language to country mappings.
 - _Returns:_ Array of two letter ISO language codes mapped with two letter ISO country codes: `array(&#039;fr&#039; =&gt; &#039;fr&#039;), // French =&gt; France`
     - `array`
 
-### `getSqlStringFieldsArray()` <a name="getSqlStringFieldsArray"></a>
+<a name="getsqlstringfieldsarray" id="getsqlstringfieldsarray"></a>
+### `getSqlStringFieldsArray()`
 
 Returns a string with a comma separated list of placeholders for use in an SQL query based on the list of fields we're referencing.
 
@@ -242,7 +253,8 @@ Used mainly to fill the `IN (...)` part of a query.
 - _Returns:_ The placeholder string, e.g. `&quot;?, ?, ?&quot;`.
     - `string`
 
-### `destroy()` <a name="destroy"></a>
+<a name="destroy" id="destroy"></a>
+### `destroy()`
 
 Mark orphaned object for garbage collection.
 

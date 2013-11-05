@@ -56,7 +56,8 @@ The class defines the following methods:
 - [`getReferrer()`](#getReferrer) &mdash; Returns the HTTP_REFERER header, or false if not found.
 - [`isLocalUrl()`](#isLocalUrl) &mdash; Returns true if the URL points to something on the same host, false if otherwise.
 
-### `getCurrentUrl()` <a name="getCurrentUrl"></a>
+<a name="getcurrenturl" id="getcurrenturl"></a>
+### `getCurrentUrl()`
 
 Returns the current URL.
 
@@ -66,7 +67,8 @@ Returns the current URL.
 - _Returns:_ eg, `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
     - `string`
 
-### `getCurrentUrlWithoutQueryString()` <a name="getCurrentUrlWithoutQueryString"></a>
+<a name="getcurrenturlwithoutquerystring" id="getcurrenturlwithoutquerystring"></a>
+### `getCurrentUrlWithoutQueryString()`
 
 Returns the current URL without the query string.
 
@@ -78,7 +80,8 @@ Returns the current URL without the query string.
 - _Returns:_ eg, `&quot;http://example.org/dir1/dir2/index.php&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`.
     - `string`
 
-### `getCurrentUrlWithoutFileName()` <a name="getCurrentUrlWithoutFileName"></a>
+<a name="getcurrenturlwithoutfilename" id="getcurrenturlwithoutfilename"></a>
+### `getCurrentUrlWithoutFileName()`
 
 Returns the current URL without the query string and without the name of the file being executed.
 
@@ -88,7 +91,8 @@ Returns the current URL without the query string and without the name of the fil
 - _Returns:_ eg, `&quot;http://example.org/dir1/dir2/&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`.
     - `string`
 
-### `getCurrentScriptPath()` <a name="getCurrentScriptPath"></a>
+<a name="getcurrentscriptpath" id="getcurrentscriptpath"></a>
+### `getCurrentScriptPath()`
 
 Returns the path to the script being executed.
 
@@ -102,7 +106,8 @@ The script file name is not included.
 - _Returns:_ eg, `&quot;/dir1/dir2/&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
     - `string`
 
-### `getCurrentScriptName()` <a name="getCurrentScriptName"></a>
+<a name="getcurrentscriptname" id="getcurrentscriptname"></a>
+### `getCurrentScriptName()`
 
 Returns the path to the script being executed.
 
@@ -116,7 +121,8 @@ Includes the script file name.
 - _Returns:_ eg, `&quot;/dir1/dir2/index.php&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
     - `string`
 
-### `getCurrentScheme()` <a name="getCurrentScheme"></a>
+<a name="getcurrentscheme" id="getcurrentscheme"></a>
+### `getCurrentScheme()`
 
 Returns the current URL's protocol.
 
@@ -126,7 +132,8 @@ Returns the current URL's protocol.
 - _Returns:_ `&#039;https&#039;` or `&#039;http&#039;`
     - `string`
 
-### `getCurrentHost()` <a name="getCurrentHost"></a>
+<a name="getcurrenthost" id="getcurrenthost"></a>
+### `getCurrentHost()`
 
 Returns the current host.
 
@@ -139,7 +146,8 @@ Returns the current host.
 - _Returns:_ eg, `&quot;example.org&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
     - `string`
 
-### `getCurrentQueryString()` <a name="getCurrentQueryString"></a>
+<a name="getcurrentquerystring" id="getcurrentquerystring"></a>
+### `getCurrentQueryString()`
 
 Returns the query string of the current URL.
 
@@ -149,7 +157,8 @@ Returns the query string of the current URL.
 - _Returns:_ eg, `&quot;?param1=value1&amp;param2=value2&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
     - `string`
 
-### `getArrayFromCurrentQueryString()` <a name="getArrayFromCurrentQueryString"></a>
+<a name="getarrayfromcurrentquerystring" id="getarrayfromcurrentquerystring"></a>
+### `getArrayFromCurrentQueryString()`
 
 Returns an array mapping query paramater names with query parameter values for the current URL.
 
@@ -159,7 +168,8 @@ Returns an array mapping query paramater names with query parameter values for t
 - _Returns:_ If current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;` this will return: ``` array( &#039;param1&#039; =&gt; string &#039;value1&#039;, &#039;param2&#039; =&gt; string &#039;value2&#039; ) ```
     - `array`
 
-### `getQueryStringFromParameters()` <a name="getQueryStringFromParameters"></a>
+<a name="getquerystringfromparameters" id="getquerystringfromparameters"></a>
+### `getQueryStringFromParameters()`
 
 Converts an an array of parameters name => value mappings to a query string.
 
@@ -171,7 +181,8 @@ Converts an an array of parameters name => value mappings to a query string.
 - _Returns:_ eg. `&quot;param1=10&amp;param2[]=1&amp;param2[]=2&quot;`
     - `string`
 
-### `redirectToReferrer()` <a name="redirectToReferrer"></a>
+<a name="redirecttoreferrer" id="redirecttoreferrer"></a>
+### `redirectToReferrer()`
 
 Redirects the user to the referrer.
 
@@ -185,7 +196,8 @@ to the current URL without query string.
 - It is a **public static** method.
 - It does not return anything.
 
-### `redirectToUrl()` <a name="redirectToUrl"></a>
+<a name="redirecttourl" id="redirecttourl"></a>
+### `redirectToUrl()`
 
 Redirects the user to the specified URL.
 
@@ -196,7 +208,8 @@ Redirects the user to the specified URL.
     - `$url`
 - It does not return anything.
 
-### `getReferrer()` <a name="getReferrer"></a>
+<a name="getreferrer" id="getreferrer"></a>
+### `getReferrer()`
 
 Returns the HTTP_REFERER header, or false if not found.
 
@@ -207,7 +220,8 @@ Returns the HTTP_REFERER header, or false if not found.
     - `string`
     - `Piwik\false`
 
-### `isLocalUrl()` <a name="isLocalUrl"></a>
+<a name="islocalurl" id="islocalurl"></a>
+### `isLocalUrl()`
 
 Returns true if the URL points to something on the same host, false if otherwise.
 

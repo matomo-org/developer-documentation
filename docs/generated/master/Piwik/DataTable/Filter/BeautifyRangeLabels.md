@@ -38,7 +38,8 @@ The class defines the following methods:
 - [`getRangeLabel()`](#getRangeLabel) &mdash; Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
 - [`getUnboundedLabel()`](#getUnboundedLabel) &mdash; Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -51,7 +52,8 @@ Constructor.
     - `$labelPlural`
 - It does not return anything.
 
-### `beautify()` <a name="beautify"></a>
+<a name="beautify" id="beautify"></a>
+### `beautify()`
 
 Beautifies a range label and returns the pretty result.
 
@@ -67,7 +69,8 @@ See [BeautifyRangeLabels](#).
 - _Returns:_ The pretty range label.
     - `string`
 
-### `getSingleUnitLabel()` <a name="getSingleUnitLabel"></a>
+<a name="getsingleunitlabel" id="getsingleunitlabel"></a>
+### `getSingleUnitLabel()`
 
 Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
 
@@ -85,7 +88,8 @@ behavior based on the range values.
 - _Returns:_ The pretty range label.
     - `string`
 
-### `getRangeLabel()` <a name="getRangeLabel"></a>
+<a name="getrangelabel" id="getrangelabel"></a>
+### `getRangeLabel()`
 
 Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
 
@@ -104,7 +108,8 @@ behavior based on the range values.
 - _Returns:_ The pretty range label.
     - `string`
 
-### `getUnboundedLabel()` <a name="getUnboundedLabel"></a>
+<a name="getunboundedlabel" id="getunboundedlabel"></a>
+### `getUnboundedLabel()`
 
 Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
 

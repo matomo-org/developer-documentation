@@ -40,7 +40,8 @@ The class defines the following methods:
 - [`__set()`](#__set) &mdash; Sets a configuration value or section.
 - [`forceSave()`](#forceSave) &mdash; Writes the current configuration to `config.ini.php`.
 
-### `__get()` <a name="__get"></a>
+<a name="__get" id="__get"></a>
+### `__get()`
 
 Returns a configuration value or section by name.
 
@@ -55,7 +56,8 @@ Returns a configuration value or section by name.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the value requested not found in either `config.ini.php` or `global.ini.php`.
 
-### `__set()` <a name="__set"></a>
+<a name="__set" id="__set"></a>
+### `__set()`
 
 Sets a configuration value or section.
 
@@ -67,7 +69,8 @@ Sets a configuration value or section.
     - `$value`
 - It does not return anything.
 
-### `forceSave()` <a name="forceSave"></a>
+<a name="forcesave" id="forcesave"></a>
+### `forceSave()`
 
 Writes the current configuration to `config.ini.php`.
 

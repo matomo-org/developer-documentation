@@ -69,7 +69,8 @@ This class defines the following properties:
 - [`$mappingFromIdToNameGoal`](#$mappingFromIdToNameGoal)
 - [`$mappingFromNameToId`](#$mappingFromNameToId)
 
-### `$mappingFromIdToName` <a name="mappingFromIdToName"></a>
+<a name="mappingfromidtoname" id="mappingfromidtoname"></a>
+### `$mappingFromIdToName`
 
 #### Signature
 
@@ -77,7 +78,8 @@ This class defines the following properties:
 - Its type is not specified.
 
 
-### `$mappingFromIdToNameGoal` <a name="mappingFromIdToNameGoal"></a>
+<a name="mappingfromidtonamegoal" id="mappingfromidtonamegoal"></a>
+### `$mappingFromIdToNameGoal`
 
 #### Signature
 
@@ -85,7 +87,8 @@ This class defines the following properties:
 - Its type is not specified.
 
 
-### `$mappingFromNameToId` <a name="mappingFromNameToId"></a>
+<a name="mappingfromnametoid" id="mappingfromnametoid"></a>
+### `$mappingFromNameToId`
 
 #### Signature
 
@@ -108,21 +111,24 @@ The class defines the following methods:
 - [`getDefaultMetricsDocumentation()`](#getDefaultMetricsDocumentation)
 - [`getPercentVisitColumn()`](#getPercentVisitColumn)
 
-### `getVisitsMetricNames()` <a name="getVisitsMetricNames"></a>
+<a name="getvisitsmetricnames" id="getvisitsmetricnames"></a>
+### `getVisitsMetricNames()`
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 
-### `getMappingFromIdToName()` <a name="getMappingFromIdToName"></a>
+<a name="getmappingfromidtoname" id="getmappingfromidtoname"></a>
+### `getMappingFromIdToName()`
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 
-### `isLowerValueBetter()` <a name="isLowerValueBetter"></a>
+<a name="islowervaluebetter" id="islowervaluebetter"></a>
+### `isLowerValueBetter()`
 
 Is a lower value for a given column better?
 
@@ -133,7 +139,8 @@ Is a lower value for a given column better?
     - `$column`
 - It returns a(n) `bool` value.
 
-### `getUnit()` <a name="getUnit"></a>
+<a name="getunit" id="getunit"></a>
+### `getUnit()`
 
 Derive the unit name from a column name
 
@@ -145,35 +152,40 @@ Derive the unit name from a column name
     - `$idSite`
 - It returns a(n) `string` value.
 
-### `getDefaultMetricTranslations()` <a name="getDefaultMetricTranslations"></a>
+<a name="getdefaultmetrictranslations" id="getdefaultmetrictranslations"></a>
+### `getDefaultMetricTranslations()`
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 
-### `getDefaultMetrics()` <a name="getDefaultMetrics"></a>
+<a name="getdefaultmetrics" id="getdefaultmetrics"></a>
+### `getDefaultMetrics()`
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 
-### `getDefaultProcessedMetrics()` <a name="getDefaultProcessedMetrics"></a>
+<a name="getdefaultprocessedmetrics" id="getdefaultprocessedmetrics"></a>
+### `getDefaultProcessedMetrics()`
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 
-### `getDefaultMetricsDocumentation()` <a name="getDefaultMetricsDocumentation"></a>
+<a name="getdefaultmetricsdocumentation" id="getdefaultmetricsdocumentation"></a>
+### `getDefaultMetricsDocumentation()`
 
 #### Signature
 
 - It is a **public static** method.
 - It does not return anything.
 
-### `getPercentVisitColumn()` <a name="getPercentVisitColumn"></a>
+<a name="getpercentvisitcolumn" id="getpercentvisitcolumn"></a>
+### `getPercentVisitColumn()`
 
 #### Signature
 

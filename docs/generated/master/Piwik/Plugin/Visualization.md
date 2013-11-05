@@ -35,7 +35,8 @@ The class defines the following methods:
 - [`afterAllFilteresAreApplied()`](#afterAllFilteresAreApplied) &mdash; This hook is executed after the data table is loaded and after all filteres are applied.
 - [`beforeRender()`](#beforeRender) &mdash; Hook to make sure config properties have a specific value because the default config can be changed by a report or by request ($_GET and $_POST) params.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -53,7 +54,8 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
     - `$apiMethodToRequestDataTable`
 - It does not return anything.
 
-### `assignTemplateVar()` <a name="assignTemplateVar"></a>
+<a name="assigntemplatevar" id="assigntemplatevar"></a>
+### `assignTemplateVar()`
 
 Assigns a template variable.
 
@@ -70,7 +72,8 @@ assign either one variable by setting $vars and $value or an array of key/value 
     - `$value`
 - It does not return anything.
 
-### `beforeLoadDataTable()` <a name="beforeLoadDataTable"></a>
+<a name="beforeloaddatatable" id="beforeloaddatatable"></a>
+### `beforeLoadDataTable()`
 
 Hook that is intended to change the request config that is sent to the API.
 
@@ -79,7 +82,8 @@ Hook that is intended to change the request config that is sent to the API.
 - It is a **public** method.
 - It does not return anything.
 
-### `beforeGenericFiltersAreAppliedToLoadedDataTable()` <a name="beforeGenericFiltersAreAppliedToLoadedDataTable"></a>
+<a name="beforegenericfiltersareappliedtoloadeddatatable" id="beforegenericfiltersareappliedtoloadeddatatable"></a>
+### `beforeGenericFiltersAreAppliedToLoadedDataTable()`
 
 Hook that is executed before generic filters like "filter_limit" and "filter_offset" are applied
 
@@ -88,7 +92,8 @@ Hook that is executed before generic filters like "filter_limit" and "filter_off
 - It is a **public** method.
 - It does not return anything.
 
-### `afterGenericFiltersAreAppliedToLoadedDataTable()` <a name="afterGenericFiltersAreAppliedToLoadedDataTable"></a>
+<a name="aftergenericfiltersareappliedtoloadeddatatable" id="aftergenericfiltersareappliedtoloadeddatatable"></a>
+### `afterGenericFiltersAreAppliedToLoadedDataTable()`
 
 This hook is executed after generic filters like "filter_limit" and "filter_offset" are applied
 
@@ -97,7 +102,8 @@ This hook is executed after generic filters like "filter_limit" and "filter_offs
 - It is a **public** method.
 - It does not return anything.
 
-### `afterAllFilteresAreApplied()` <a name="afterAllFilteresAreApplied"></a>
+<a name="afterallfilteresareapplied" id="afterallfilteresareapplied"></a>
+### `afterAllFilteresAreApplied()`
 
 This hook is executed after the data table is loaded and after all filteres are applied.
 
@@ -110,7 +116,8 @@ Format the data that you want to pass to the view here.
 - It is a **public** method.
 - It does not return anything.
 
-### `beforeRender()` <a name="beforeRender"></a>
+<a name="beforerender" id="beforerender"></a>
+### `beforeRender()`
 
 Hook to make sure config properties have a specific value because the default config can be changed by a report or by request ($_GET and $_POST) params.
 

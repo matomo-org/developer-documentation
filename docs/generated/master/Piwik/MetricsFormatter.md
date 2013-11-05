@@ -19,7 +19,8 @@ The class defines the following methods:
 - [`getCurrencySymbol()`](#getCurrencySymbol) &mdash; Returns the currency symbol for a site.
 - [`getCurrencyList()`](#getCurrencyList) &mdash; Returns the list of all known currency symbols.
 
-### `getPrettyNumber()` <a name="getPrettyNumber"></a>
+<a name="getprettynumber" id="getprettynumber"></a>
+### `getPrettyNumber()`
 
 Returns a prettified string representation of a number.
 
@@ -35,7 +36,8 @@ thousands separators and a decimal point specific to the current locale.
     - `$value`
 - It returns a(n) `string` value.
 
-### `getPrettyTimeFromSeconds()` <a name="getPrettyTimeFromSeconds"></a>
+<a name="getprettytimefromseconds" id="getprettytimefromseconds"></a>
+### `getPrettyTimeFromSeconds()`
 
 Returns a prettified time value (in seconds).
 
@@ -49,7 +51,8 @@ Returns a prettified time value (in seconds).
     - `$round`
 - It returns a(n) `string` value.
 
-### `getPrettySizeFromBytes()` <a name="getPrettySizeFromBytes"></a>
+<a name="getprettysizefrombytes" id="getprettysizefrombytes"></a>
+### `getPrettySizeFromBytes()`
 
 Returns a prettified memory size value.
 
@@ -63,7 +66,8 @@ Returns a prettified memory size value.
 - _Returns:_ eg, `&#039;128 M&#039;` or `&#039;256 K&#039;`.
     - `string`
 
-### `getPrettyMoney()` <a name="getPrettyMoney"></a>
+<a name="getprettymoney" id="getprettymoney"></a>
+### `getPrettyMoney()`
 
 Returns a pretty formated monetary value using the currency associated with a site.
 
@@ -76,7 +80,8 @@ Returns a pretty formated monetary value using the currency associated with a si
     - `$isHtml`
 - It returns a(n) `string` value.
 
-### `getPrettyValue()` <a name="getPrettyValue"></a>
+<a name="getprettyvalue" id="getprettyvalue"></a>
+### `getPrettyValue()`
 
 Prettifies a metric value based on the column name.
 
@@ -90,7 +95,8 @@ Prettifies a metric value based on the column name.
     - `$isHtml`
 - It returns a(n) `string` value.
 
-### `getCurrencySymbol()` <a name="getCurrencySymbol"></a>
+<a name="getcurrencysymbol" id="getcurrencysymbol"></a>
+### `getCurrencySymbol()`
 
 Returns the currency symbol for a site.
 
@@ -102,7 +108,8 @@ Returns the currency symbol for a site.
 - _Returns:_ eg, `&#039;$&#039;`.
     - `string`
 
-### `getCurrencyList()` <a name="getCurrencyList"></a>
+<a name="getcurrencylist" id="getcurrencylist"></a>
+### `getCurrencyList()`
 
 Returns the list of all known currency symbols.
 

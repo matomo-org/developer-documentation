@@ -31,7 +31,8 @@ This class defines the following properties:
 
 - [`$lockPrivilegeGranted`](#$lockPrivilegeGranted) &mdash; Cached result of isLockprivilegeGranted function.
 
-### `$lockPrivilegeGranted` <a name="lockPrivilegeGranted"></a>
+<a name="lockprivilegegranted" id="lockprivilegegranted"></a>
+### `$lockPrivilegeGranted`
 
 Cached result of isLockprivilegeGranted function.
 
@@ -70,7 +71,8 @@ The class defines the following methods:
 - [`releaseDbLock()`](#releaseDbLock) &mdash; Releases a named lock.
 - [`isLockPrivilegeGranted()`](#isLockPrivilegeGranted) &mdash; Checks whether the database user is allowed to lock tables.
 
-### `get()` <a name="get"></a>
+<a name="get" id="get"></a>
+### `get()`
 
 Returns the database connection and creates it if it hasn't been already.
 
@@ -82,7 +84,8 @@ Returns the database connection and creates it if it hasn't been already.
     - `Piwik\Db\AdapterInterface`
     - [`Db`](../Piwik/Db.md)
 
-### `createDatabaseObject()` <a name="createDatabaseObject"></a>
+<a name="createdatabaseobject" id="createdatabaseobject"></a>
+### `createDatabaseObject()`
 
 Create the database object and connects to the database.
 
@@ -97,7 +100,8 @@ Shouldn't be called directly, use [get](#get).
     - `$dbInfos`
 - It does not return anything.
 
-### `exec()` <a name="exec"></a>
+<a name="exec" id="exec"></a>
+### `exec()`
 
 Executes an unprepared SQL query.
 
@@ -118,7 +122,8 @@ number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is an error in the SQL.
 
-### `query()` <a name="query"></a>
+<a name="query" id="query"></a>
+### `query()`
 
 Executes an SQL query and returns the Zend_Db_Statement object.
 
@@ -138,7 +143,8 @@ See also [http://framework.zend.com/manual/en/zend.db.statement.html](http://fra
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
-### `fetchAll()` <a name="fetchAll"></a>
+<a name="fetchall" id="fetchall"></a>
+### `fetchAll()`
 
 Executes the SQL query and fetches all the rows from the result set.
 
@@ -153,7 +159,8 @@ Executes the SQL query and fetches all the rows from the result set.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
-### `fetchRow()` <a name="fetchRow"></a>
+<a name="fetchrow" id="fetchrow"></a>
+### `fetchRow()`
 
 Executes an SQL query and fetches the first row of the result.
 
@@ -167,7 +174,8 @@ Executes an SQL query and fetches the first row of the result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
-### `fetchOne()` <a name="fetchOne"></a>
+<a name="fetchone" id="fetchone"></a>
+### `fetchOne()`
 
 Executes an SQL query and fetches the first column of the first row of result set.
 
@@ -181,7 +189,8 @@ Executes an SQL query and fetches the first column of the first row of result se
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
-### `fetchAssoc()` <a name="fetchAssoc"></a>
+<a name="fetchassoc" id="fetchassoc"></a>
+### `fetchAssoc()`
 
 Executes an SQL query and returns the entire result set indexed by the first selected field.
 
@@ -196,7 +205,8 @@ Executes an SQL query and returns the entire result set indexed by the first sel
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
-### `deleteAllRows()` <a name="deleteAllRows"></a>
+<a name="deleteallrows" id="deleteallrows"></a>
+### `deleteAllRows()`
 
 Deletes all desired rows in a table, while using a limit.
 
@@ -225,7 +235,8 @@ locking the table for too long.
 - _Returns:_ The total number of rows deleted.
     - `int`
 
-### `optimizeTables()` <a name="optimizeTables"></a>
+<a name="optimizetables" id="optimizetables"></a>
+### `optimizeTables()`
 
 Runs an OPTIMIZE TABLE query on the supplied table or tables.
 
@@ -244,7 +255,8 @@ set to **1**.
     - `$tables`
 - It returns a(n) `Zend_Db_Statement` value.
 
-### `dropTables()` <a name="dropTables"></a>
+<a name="droptables" id="droptables"></a>
+### `dropTables()`
 
 Drops the supplied table or tables.
 
@@ -259,7 +271,8 @@ The table names must be prefixed (see [Common::prefixTable](#)).
     - `$tables`
 - It returns a(n) `Zend_Db_Statement` value.
 
-### `lockTables()` <a name="lockTables"></a>
+<a name="locktables" id="locktables"></a>
+### `lockTables()`
 
 Locks the supplied table or tables.
 
@@ -278,7 +291,8 @@ should still work in case it is not granted.
     - `$tablesToWrite`
 - It returns a(n) `Zend_Db_Statement` value.
 
-### `unlockAllTables()` <a name="unlockAllTables"></a>
+<a name="unlockalltables" id="unlockalltables"></a>
+### `unlockAllTables()`
 
 Releases all table locks.
 
@@ -292,7 +306,8 @@ should still work in case it is not granted.
 - It is a **public static** method.
 - It returns a(n) `Zend_Db_Statement` value.
 
-### `segmentedFetchFirst()` <a name="segmentedFetchFirst"></a>
+<a name="segmentedfetchfirst" id="segmentedfetchfirst"></a>
+### `segmentedFetchFirst()`
 
 Performs a SELECT on a table one chunk at a time and returns the first successfully fetched value.
 
@@ -333,7 +348,8 @@ for too long.
     - `$params`
 - It returns a(n) `string` value.
 
-### `segmentedFetchOne()` <a name="segmentedFetchOne"></a>
+<a name="segmentedfetchone" id="segmentedfetchone"></a>
+### `segmentedFetchOne()`
 
 Performs a SELECT on a table one chunk at a time and returns an array of every fetched value.
 
@@ -356,7 +372,8 @@ the table will not be locked for too long.
 - _Returns:_ An array of primitive values.
     - `array`
 
-### `segmentedFetchAll()` <a name="segmentedFetchAll"></a>
+<a name="segmentedfetchall" id="segmentedfetchall"></a>
+### `segmentedFetchAll()`
 
 Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
 
@@ -379,7 +396,8 @@ the table will not be locked for too long.
 - _Returns:_ An array of rows that includes the result set of every executed query.
     - `array`
 
-### `segmentedQuery()` <a name="segmentedQuery"></a>
+<a name="segmentedquery" id="segmentedquery"></a>
+### `segmentedQuery()`
 
 Performs a non-SELECT query on a table one chunk at a time.
 
@@ -394,7 +412,8 @@ Performs a non-SELECT query on a table one chunk at a time.
     - `$params`
 - It does not return anything.
 
-### `getDbLock()` <a name="getDbLock"></a>
+<a name="getdblock" id="getdblock"></a>
+### `getDbLock()`
 
 Attempts to get a named lock.
 
@@ -412,7 +431,8 @@ retry a set number of time.
 - _Returns:_ `true` if the lock was obtained, `false` if otherwise.
     - `bool`
 
-### `releaseDbLock()` <a name="releaseDbLock"></a>
+<a name="releasedblock" id="releasedblock"></a>
+### `releaseDbLock()`
 
 Releases a named lock.
 
@@ -424,7 +444,8 @@ Releases a named lock.
 - _Returns:_ `true` if the lock was released, `false` if otherwise.
     - `bool`
 
-### `isLockPrivilegeGranted()` <a name="isLockPrivilegeGranted"></a>
+<a name="islockprivilegegranted" id="islockprivilegegranted"></a>
+### `isLockPrivilegeGranted()`
 
 Checks whether the database user is allowed to lock tables.
 

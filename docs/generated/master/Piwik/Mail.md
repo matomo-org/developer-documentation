@@ -14,7 +14,8 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setFrom()`](#setFrom) &mdash; Sets the sender.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -25,7 +26,8 @@ Constructor.
     - `$charset`
 - It does not return anything.
 
-### `setFrom()` <a name="setFrom"></a>
+<a name="setfrom" id="setfrom"></a>
+### `setFrom()`
 
 Sets the sender.
 

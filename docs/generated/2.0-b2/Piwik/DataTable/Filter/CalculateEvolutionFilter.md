@@ -28,7 +28,8 @@ The class defines the following methods:
 - [`appendPercentSign()`](#appendPercentSign)
 - [`prependPlusSignToNumber()`](#prependPlusSignToNumber)
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -43,7 +44,8 @@ Constructor.
     - `$quotientPrecision`
 - It does not return anything.
 
-### `calculate()` <a name="calculate"></a>
+<a name="calculate" id="calculate"></a>
+### `calculate()`
 
 Calculates the evolution percentage for two arbitrary values.
 
@@ -58,7 +60,8 @@ Calculates the evolution percentage for two arbitrary values.
 - _Returns:_ The evolution percent, eg `&#039;15%&#039;`.
     - `string`
 
-### `appendPercentSign()` <a name="appendPercentSign"></a>
+<a name="appendpercentsign" id="appendpercentsign"></a>
+### `appendPercentSign()`
 
 #### Signature
 
@@ -67,7 +70,8 @@ Calculates the evolution percentage for two arbitrary values.
     - `$number`
 - It does not return anything.
 
-### `prependPlusSignToNumber()` <a name="prependPlusSignToNumber"></a>
+<a name="prependplussigntonumber" id="prependplussigntonumber"></a>
+### `prependPlusSignToNumber()`
 
 #### Signature
 

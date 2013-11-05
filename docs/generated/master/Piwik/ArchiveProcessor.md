@@ -71,7 +71,8 @@ This class defines the following constants:
 - [`DONE_ERROR`](#DONE_ERROR) &mdash; Flag stored at the start of the archiving When requesting an Archive, we make sure that non-finished archive are not considered valid
 - [`DONE_OK_TEMPORARY`](#DONE_OK_TEMPORARY) &mdash; Flag indicates the archive is over a period that is not finished, eg.
 
-### `DONE_OK_TEMPORARY` <a name="DONE_OK_TEMPORARY"></a>
+<a name="done_ok_temporary" id="done_ok_temporary"></a>
+### `DONE_OK_TEMPORARY`
 
 the current day, current week, etc.
 Archives flagged will be regularly purged from the DB.
@@ -89,7 +90,8 @@ The class defines the following methods:
 - [`insertNumericRecord()`](#insertNumericRecord) &mdash; Caches a single numeric record in the archive for this processor's site, period and segment.
 - [`insertBlobRecord()`](#insertBlobRecord) &mdash; Caches one or more blob records in the archive for this processor's site, period and segment.
 
-### `getLogAggregator()` <a name="getLogAggregator"></a>
+<a name="getlogaggregator" id="getlogaggregator"></a>
+### `getLogAggregator()`
 
 Returns a [LogAggregator](#) instance for the site, period and segment this ArchiveProcessor will insert archive data for.
 
@@ -98,7 +100,8 @@ Returns a [LogAggregator](#) instance for the site, period and segment this Arch
 - It is a **public** method.
 - It returns a(n) [`LogAggregator`](../Piwik/DataAccess/LogAggregator.md) value.
 
-### `getPeriod()` <a name="getPeriod"></a>
+<a name="getperiod" id="getperiod"></a>
+### `getPeriod()`
 
 Returns the period we computing statistics for.
 
@@ -107,7 +110,8 @@ Returns the period we computing statistics for.
 - It is a **public** method.
 - It returns a(n) [`Period`](../Piwik/Period.md) value.
 
-### `getSite()` <a name="getSite"></a>
+<a name="getsite" id="getsite"></a>
+### `getSite()`
 
 Returns the site we are computing statistics for.
 
@@ -116,7 +120,8 @@ Returns the site we are computing statistics for.
 - It is a **public** method.
 - It returns a(n) [`Site`](../Piwik/Site.md) value.
 
-### `getSegment()` <a name="getSegment"></a>
+<a name="getsegment" id="getsegment"></a>
+### `getSegment()`
 
 The Segment used to limit the set of visits that are being aggregated.
 
@@ -125,7 +130,8 @@ The Segment used to limit the set of visits that are being aggregated.
 - It is a **public** method.
 - It returns a(n) [`Segment`](../Piwik/Segment.md) value.
 
-### `insertNumericRecords()` <a name="insertNumericRecords"></a>
+<a name="insertnumericrecords" id="insertnumericrecords"></a>
+### `insertNumericRecords()`
 
 Caches multiple numeric records in the archive for this processor's site, period and segment.
 
@@ -136,7 +142,8 @@ Caches multiple numeric records in the archive for this processor's site, period
     - `$numericRecords`
 - It does not return anything.
 
-### `insertNumericRecord()` <a name="insertNumericRecord"></a>
+<a name="insertnumericrecord" id="insertnumericrecord"></a>
+### `insertNumericRecord()`
 
 Caches a single numeric record in the archive for this processor's site, period and segment.
 
@@ -152,7 +159,8 @@ Numeric values are not inserted if they equal 0.
     - `$value`
 - It does not return anything.
 
-### `insertBlobRecord()` <a name="insertBlobRecord"></a>
+<a name="insertblobrecord" id="insertblobrecord"></a>
+### `insertBlobRecord()`
 
 Caches one or more blob records in the archive for this processor's site, period and segment.
 

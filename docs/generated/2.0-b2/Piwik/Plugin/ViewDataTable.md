@@ -43,14 +43,16 @@ This abstract class defines the following properties:
 - [`$config`](#$config)
 - [`$requestConfig`](#$requestConfig)
 
-### `$config` <a name="config"></a>
+<a name="config" id="config"></a>
+### `$config`
 
 #### Signature
 
 - It is a **public** property.
 - It is a(n) `Piwik\ViewDataTable\Config` value.
 
-### `$requestConfig` <a name="requestConfig"></a>
+<a name="requestconfig" id="requestconfig"></a>
+### `$requestConfig`
 
 #### Signature
 
@@ -73,7 +75,8 @@ The abstract class defines the following methods:
 - [`isRequestingSingleDataTable()`](#isRequestingSingleDataTable) &mdash; Determine if the view data table requests a single data table or not.
 - [`canDisplayViewDataTable()`](#canDisplayViewDataTable) &mdash; Here you can define whether your visualization can display a specific data table or not.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -90,7 +93,8 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
     - `$apiMethodToRequestDataTable`
 - It does not return anything.
 
-### `getDefaultConfig()` <a name="getDefaultConfig"></a>
+<a name="getdefaultconfig" id="getdefaultconfig"></a>
+### `getDefaultConfig()`
 
 Returns the default config.
 
@@ -104,7 +108,8 @@ modifying this config or creating an own Config class that extends the default C
 - It is a **public static** method.
 - It returns a(n) `Piwik\ViewDataTable\Config` value.
 
-### `getDefaultRequestConfig()` <a name="getDefaultRequestConfig"></a>
+<a name="getdefaultrequestconfig" id="getdefaultrequestconfig"></a>
+### `getDefaultRequestConfig()`
 
 Returns the default request config.
 
@@ -118,7 +123,8 @@ modifying this config or creating an own RequestConfig class that extends the de
 - It is a **public static** method.
 - It returns a(n) `Piwik\ViewDataTable\RequestConfig` value.
 
-### `getViewDataTableId()` <a name="getViewDataTableId"></a>
+<a name="getviewdatatableid" id="getviewdatatableid"></a>
+### `getViewDataTableId()`
 
 Returns the viewDataTable ID for this DataTable visualization.
 
@@ -134,7 +140,8 @@ with the viewDataTable ID.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
-### `isViewDataTableId()` <a name="isViewDataTableId"></a>
+<a name="isviewdatatableid" id="isviewdatatableid"></a>
+### `isViewDataTableId()`
 
 Detects whether the viewDataTable or one of its ancestors has the given id.
 
@@ -145,7 +152,8 @@ Detects whether the viewDataTable or one of its ancestors has the given id.
     - `$viewDataTableId`
 - It returns a(n) `bool` value.
 
-### `getDataTable()` <a name="getDataTable"></a>
+<a name="getdatatable" id="getdatatable"></a>
+### `getDataTable()`
 
 Returns the DataTable loaded from the API
 
@@ -156,7 +164,8 @@ Returns the DataTable loaded from the API
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if not yet defined
 
-### `setDataTable()` <a name="setDataTable"></a>
+<a name="setdatatable" id="setdatatable"></a>
+### `setDataTable()`
 
 To prevent calling an API multiple times, the DataTable can be set directly.
 
@@ -172,7 +181,8 @@ It won't be loaded again from the API in this case
 - _Returns:_ $dataTable DataTable
     - `void`
 
-### `render()` <a name="render"></a>
+<a name="render" id="render"></a>
+### `render()`
 
 Requests all needed data and renders the view.
 
@@ -182,7 +192,8 @@ Requests all needed data and renders the view.
 - _Returns:_ The result of rendering.
     - `string`
 
-### `isRequestingSingleDataTable()` <a name="isRequestingSingleDataTable"></a>
+<a name="isrequestingsingledatatable" id="isrequestingsingledatatable"></a>
+### `isRequestingSingleDataTable()`
 
 Determine if the view data table requests a single data table or not.
 
@@ -191,7 +202,8 @@ Determine if the view data table requests a single data table or not.
 - It is a **public** method.
 - It returns a(n) `bool` value.
 
-### `canDisplayViewDataTable()` <a name="canDisplayViewDataTable"></a>
+<a name="candisplayviewdatatable" id="candisplayviewdatatable"></a>
+### `canDisplayViewDataTable()`
 
 Here you can define whether your visualization can display a specific data table or not.
 

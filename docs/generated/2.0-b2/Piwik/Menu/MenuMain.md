@@ -34,7 +34,8 @@ The class defines the following methods:
 - [`isUrlFound()`](#isUrlFound) &mdash; Returns if the URL was found in the menu.
 - [`getMenu()`](#getMenu) &mdash; Triggers the Menu.Reporting.addItems hook and returns the menu.
 
-### `isUrlFound()` <a name="isUrlFound"></a>
+<a name="isurlfound" id="isurlfound"></a>
+### `isUrlFound()`
 
 Returns if the URL was found in the menu.
 
@@ -45,7 +46,8 @@ Returns if the URL was found in the menu.
     - `$url`
 - It returns a(n) `boolean` value.
 
-### `getMenu()` <a name="getMenu"></a>
+<a name="getmenu" id="getmenu"></a>
+### `getMenu()`
 
 Triggers the Menu.Reporting.addItems hook and returns the menu.
 

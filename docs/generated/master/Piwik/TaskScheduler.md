@@ -46,7 +46,8 @@ The class defines the following methods:
 - [`isTaskBeingExecuted()`](#isTaskBeingExecuted) &mdash; Returns true if the TaskScheduler is currently running a scheduled task.
 - [`getScheduledTimeForMethod()`](#getScheduledTimeForMethod) &mdash; Return the next scheduled time given the class and method names of a scheduled task.
 
-### `runTasks()` <a name="runTasks"></a>
+<a name="runtasks" id="runtasks"></a>
+### `runTasks()`
 
 Executes tasks that are scheduled to run, then reschedules them.
 
@@ -56,7 +57,8 @@ Executes tasks that are scheduled to run, then reschedules them.
 - _Returns:_ An array describing the results of scheduled task execution. Each element in the array will have the following format: ``` array( &#039;task&#039; =&gt; &#039;task name&#039;, &#039;output&#039; =&gt; &#039;... task output ...&#039; ) ```
     - `array`
 
-### `isTaskBeingExecuted()` <a name="isTaskBeingExecuted"></a>
+<a name="istaskbeingexecuted" id="istaskbeingexecuted"></a>
+### `isTaskBeingExecuted()`
 
 Returns true if the TaskScheduler is currently running a scheduled task.
 
@@ -65,7 +67,8 @@ Returns true if the TaskScheduler is currently running a scheduled task.
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `getScheduledTimeForMethod()` <a name="getScheduledTimeForMethod"></a>
+<a name="getscheduledtimeformethod" id="getscheduledtimeformethod"></a>
+### `getScheduledTimeForMethod()`
 
 Return the next scheduled time given the class and method names of a scheduled task.
 

@@ -50,7 +50,8 @@ The abstract class defines the following methods:
 - [`getLocalizedLongString()`](#getLocalizedLongString) &mdash; Returns a long string description of this period that is localized with the currently used language.
 - [`getRangeString()`](#getRangeString) &mdash; Returns a succinct string describing this period.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -61,7 +62,8 @@ Constructor.
     - `$date` ([`Date`](../Piwik/Date.md))
 - It does not return anything.
 
-### `factory()` <a name="factory"></a>
+<a name="factory" id="factory"></a>
+### `factory()`
 
 Creates a new Period instance with a period ID and Date instance.
 
@@ -79,7 +81,8 @@ Note: This method cannot create Range periods.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$strPeriod` is invalid.
 
-### `isMultiplePeriod()` <a name="isMultiplePeriod"></a>
+<a name="ismultipleperiod" id="ismultipleperiod"></a>
+### `isMultiplePeriod()`
 
 Returns true $dateString and $period correspond to multiple periods.
 
@@ -91,7 +94,8 @@ Returns true $dateString and $period correspond to multiple periods.
     - `$period`
 - It returns a(n) `boolean` value.
 
-### `makePeriodFromQueryParams()` <a name="makePeriodFromQueryParams"></a>
+<a name="makeperiodfromqueryparams" id="makeperiodfromqueryparams"></a>
+### `makePeriodFromQueryParams()`
 
 Creates a period instance using a Site instance and two strings describing the period & date.
 
@@ -104,7 +108,8 @@ Creates a period instance using a Site instance and two strings describing the p
     - `$date`
 - It returns a(n) [`Period`](../Piwik/Period.md) value.
 
-### `getDateStart()` <a name="getDateStart"></a>
+<a name="getdatestart" id="getdatestart"></a>
+### `getDateStart()`
 
 Returns the first day of the period.
 
@@ -113,7 +118,8 @@ Returns the first day of the period.
 - It is a **public** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `getDateEnd()` <a name="getDateEnd"></a>
+<a name="getdateend" id="getdateend"></a>
+### `getDateEnd()`
 
 Returns the last day of the period.
 
@@ -122,7 +128,8 @@ Returns the last day of the period.
 - It is a **public** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
-### `getId()` <a name="getId"></a>
+<a name="getid" id="getid"></a>
+### `getId()`
 
 Returns the period ID.
 
@@ -132,7 +139,8 @@ Returns the period ID.
 - _Returns:_ A integer unique to this type of period.
     - `int`
 
-### `getLabel()` <a name="getLabel"></a>
+<a name="getlabel" id="getlabel"></a>
+### `getLabel()`
 
 Returns the label for the current period.
 
@@ -142,7 +150,8 @@ Returns the label for the current period.
 - _Returns:_ `&quot;day&quot;`, `&quot;week&quot;`, `&quot;month&quot;`, `&quot;year&quot;`, `&quot;range&quot;`
     - `string`
 
-### `getNumberOfSubperiods()` <a name="getNumberOfSubperiods"></a>
+<a name="getnumberofsubperiods" id="getnumberofsubperiods"></a>
+### `getNumberOfSubperiods()`
 
 Returns the number of available subperiods.
 
@@ -151,7 +160,8 @@ Returns the number of available subperiods.
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `getSubperiods()` <a name="getSubperiods"></a>
+<a name="getsubperiods" id="getsubperiods"></a>
+### `getSubperiods()`
 
 Returns the set of Period instances that together make up this period.
 
@@ -165,7 +175,8 @@ this would be 12 months. For a month this would be 28-31 days. Etc.
 - It is a **public** method.
 - It returns a(n) [`Period[]`](../Piwik/Period.md) value.
 
-### `toString()` <a name="toString"></a>
+<a name="tostring" id="tostring"></a>
+### `toString()`
 
 Returns a list of strings representing the current period.
 
@@ -177,7 +188,8 @@ Returns a list of strings representing the current period.
 - _Returns:_ An array of string dates that this period consists of.
     - `array`
 
-### `__toString()` <a name="__toString"></a>
+<a name="__tostring" id="__tostring"></a>
+### `__toString()`
 
 See [toString](#toString).
 
@@ -186,7 +198,8 @@ See [toString](#toString).
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getPrettyString()` <a name="getPrettyString"></a>
+<a name="getprettystring" id="getprettystring"></a>
+### `getPrettyString()`
 
 Returns a pretty string describing this period.
 
@@ -195,7 +208,8 @@ Returns a pretty string describing this period.
 - It is a **public abstract** method.
 - It returns a(n) `string` value.
 
-### `getLocalizedShortString()` <a name="getLocalizedShortString"></a>
+<a name="getlocalizedshortstring" id="getlocalizedshortstring"></a>
+### `getLocalizedShortString()`
 
 Returns a short string description of this period that is localized with the currently used language.
 
@@ -204,7 +218,8 @@ Returns a short string description of this period that is localized with the cur
 - It is a **public abstract** method.
 - It returns a(n) `string` value.
 
-### `getLocalizedLongString()` <a name="getLocalizedLongString"></a>
+<a name="getlocalizedlongstring" id="getlocalizedlongstring"></a>
+### `getLocalizedLongString()`
 
 Returns a long string description of this period that is localized with the currently used language.
 
@@ -213,7 +228,8 @@ Returns a long string description of this period that is localized with the curr
 - It is a **public abstract** method.
 - It returns a(n) `string` value.
 
-### `getRangeString()` <a name="getRangeString"></a>
+<a name="getrangestring" id="getrangestring"></a>
+### `getRangeString()`
 
 Returns a succinct string describing this period.
 

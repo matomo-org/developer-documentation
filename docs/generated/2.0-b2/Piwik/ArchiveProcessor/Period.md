@@ -51,7 +51,8 @@ The class defines the following methods:
 - [`aggregateDataTableReports()`](#aggregateDataTableReports) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
 - [`aggregateNumericMetrics()`](#aggregateNumericMetrics) &mdash; Aggregates metrics for every subperiod of the current period and inserts the result as the metric for this period.
 
-### `aggregateDataTableReports()` <a name="aggregateDataTableReports"></a>
+<a name="aggregatedatatablereports" id="aggregatedatatablereports"></a>
+### `aggregateDataTableReports()`
 
 Sums records for every subperiod of the current period and inserts the result as the record for this period.
 
@@ -72,7 +73,8 @@ DataTables are summed recursively so subtables will be summed as well.
 - _Returns:_ Returns the row counts of each aggregated report before truncation, eg, ``` array( &#039;report1&#039; =&gt; array(&#039;level0&#039; =&gt; $report1-&gt;getRowsCount, &#039;recursive&#039; =&gt; $report1-&gt;getRowsCountRecursive()), &#039;report2&#039; =&gt; array(&#039;level0&#039; =&gt; $report2-&gt;getRowsCount, &#039;recursive&#039; =&gt; $report2-&gt;getRowsCountRecursive()), ... ) ```
     - `array`
 
-### `aggregateNumericMetrics()` <a name="aggregateNumericMetrics"></a>
+<a name="aggregatenumericmetrics" id="aggregatenumericmetrics"></a>
+### `aggregateNumericMetrics()`
 
 Aggregates metrics for every subperiod of the current period and inserts the result as the metric for this period.
 

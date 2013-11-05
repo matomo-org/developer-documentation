@@ -14,7 +14,8 @@ The class defines the following methods:
 - [`getRescheduledTime()`](#getRescheduledTime)
 - [`setDay()`](#setDay)
 
-### `getRescheduledTime()` <a name="getRescheduledTime"></a>
+<a name="getrescheduledtime" id="getrescheduledtime"></a>
+### `getRescheduledTime()`
 
 #### See Also
 
@@ -25,7 +26,8 @@ The class defines the following methods:
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `setDay()` <a name="setDay"></a>
+<a name="setday" id="setday"></a>
+### `setDay()`
 
 #### See Also
 

@@ -14,7 +14,8 @@ The class defines the following methods:
 - [`getDataTableFromDataArray()`](#getDataTableFromDataArray) &mdash; Converts array to a datatable
 - [`getMetricsForDimension()`](#getMetricsForDimension) &mdash; Helper function that returns an array with common statistics for a given database field distinct values.
 
-### `getDataTableFromDataArray()` <a name="getDataTableFromDataArray"></a>
+<a name="getdatatablefromdataarray" id="getdatatablefromdataarray"></a>
+### `getDataTableFromDataArray()`
 
 Converts array to a datatable
 
@@ -25,7 +26,8 @@ Converts array to a datatable
     - `$array` (`Piwik\DataArray`)
 - It returns a(n) [`DataTable`](../../Piwik/DataTable.md) value.
 
-### `getMetricsForDimension()` <a name="getMetricsForDimension"></a>
+<a name="getmetricsfordimension" id="getmetricsfordimension"></a>
+### `getMetricsForDimension()`
 
 Helper function that returns an array with common statistics for a given database field distinct values.
 

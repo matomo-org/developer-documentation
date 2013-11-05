@@ -38,7 +38,8 @@ The class defines the following methods:
 - [`getName()`](#getName) &mdash; Returns a unique name for this scheduled task.
 - [`getTaskName()`](#getTaskName)
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -53,7 +54,8 @@ Constructor.
     - `$priority`
 - It does not return anything.
 
-### `getObjectInstance()` <a name="getObjectInstance"></a>
+<a name="getobjectinstance" id="getobjectinstance"></a>
+### `getObjectInstance()`
 
 Return the object instance on which the method should be executed.
 
@@ -67,7 +69,8 @@ name if the method is static.
 - It is a **public** method.
 - It returns a(n) `mixed` value.
 
-### `getClassName()` <a name="getClassName"></a>
+<a name="getclassname" id="getclassname"></a>
+### `getClassName()`
 
 Returns the class name that contains the method to execute regularly.
 
@@ -76,7 +79,8 @@ Returns the class name that contains the method to execute regularly.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getMethodName()` <a name="getMethodName"></a>
+<a name="getmethodname" id="getmethodname"></a>
+### `getMethodName()`
 
 Returns the method name that will be regularly executed.
 
@@ -85,7 +89,8 @@ Returns the method name that will be regularly executed.
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getMethodParameter()` <a name="getMethodParameter"></a>
+<a name="getmethodparameter" id="getmethodparameter"></a>
+### `getMethodParameter()`
 
 Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
 
@@ -96,7 +101,8 @@ Returns the a value that will be passed to the method when executed, or `null` i
     - `string`
     - `null`
 
-### `getScheduledTime()` <a name="getScheduledTime"></a>
+<a name="getscheduledtime" id="getscheduledtime"></a>
+### `getScheduledTime()`
 
 Returns a [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
 
@@ -105,7 +111,8 @@ Returns a [ScheduledTime](#) instance that describes when the method should be e
 - It is a **public** method.
 - It returns a(n) `Piwik\ScheduledTime` value.
 
-### `getRescheduledTime()` <a name="getRescheduledTime"></a>
+<a name="getrescheduledtime" id="getrescheduledtime"></a>
+### `getRescheduledTime()`
 
 Returns the time in milliseconds when this task will be executed next.
 
@@ -114,7 +121,8 @@ Returns the time in milliseconds when this task will be executed next.
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `getPriority()` <a name="getPriority"></a>
+<a name="getpriority" id="getpriority"></a>
+### `getPriority()`
 
 Returns the task priority.
 
@@ -128,7 +136,8 @@ between [ScheduledTask::HIGH_PRIORITY](#) and [ScheduledTask::LOW_PRIORITY](#).
 - It is a **public** method.
 - It returns a(n) `int` value.
 
-### `getName()` <a name="getName"></a>
+<a name="getname" id="getname"></a>
+### `getName()`
 
 Returns a unique name for this scheduled task.
 
@@ -146,7 +155,8 @@ to store when tasks were last executed. The name is created using:
 - It is a **public** method.
 - It returns a(n) `string` value.
 
-### `getTaskName()` <a name="getTaskName"></a>
+<a name="gettaskname" id="gettaskname"></a>
+### `getTaskName()`
 
 #### Signature
 

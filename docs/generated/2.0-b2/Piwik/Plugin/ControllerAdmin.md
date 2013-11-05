@@ -19,7 +19,8 @@ The abstract class defines the following methods:
 - [`displayWarningIfConfigFileNotWritable()`](#displayWarningIfConfigFileNotWritable)
 - [`setBasicVariablesAdminView()`](#setBasicVariablesAdminView) &mdash; Assigns a set of variables to a view that would be useful to an Admin controller.
 
-### `displayWarningIfConfigFileNotWritable()` <a name="displayWarningIfConfigFileNotWritable"></a>
+<a name="displaywarningifconfigfilenotwritable" id="displaywarningifconfigfilenotwritable"></a>
+### `displayWarningIfConfigFileNotWritable()`
 
 #### Signature
 
@@ -28,7 +29,8 @@ The abstract class defines the following methods:
     - `$view` ([`View`](../../Piwik/View.md))
 - It does not return anything.
 
-### `setBasicVariablesAdminView()` <a name="setBasicVariablesAdminView"></a>
+<a name="setbasicvariablesadminview" id="setbasicvariablesadminview"></a>
+### `setBasicVariablesAdminView()`
 
 Assigns a set of variables to a view that would be useful to an Admin controller.
 

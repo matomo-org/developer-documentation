@@ -20,7 +20,8 @@ The class defines the following methods:
 - [`unsetInstance()`](#unsetInstance) &mdash; Used in tests only
 - [`setSingletonInstance()`](#setSingletonInstance) &mdash; Sets the singleton instance.
 
-### `getInstance()` <a name="getInstance"></a>
+<a name="getinstance" id="getinstance"></a>
+### `getInstance()`
 
 Returns the singleton instance for the derived class.
 
@@ -34,7 +35,8 @@ has not been created, this method will create it.
 - It is a **public static** method.
 - It returns a(n) [`Singleton`](../Piwik/Singleton.md) value.
 
-### `unsetInstance()` <a name="unsetInstance"></a>
+<a name="unsetinstance" id="unsetinstance"></a>
+### `unsetInstance()`
 
 Used in tests only
 
@@ -43,7 +45,8 @@ Used in tests only
 - It is a **public static** method.
 - It does not return anything.
 
-### `setSingletonInstance()` <a name="setSingletonInstance"></a>
+<a name="setsingletoninstance" id="setsingletoninstance"></a>
+### `setSingletonInstance()`
 
 Sets the singleton instance.
 

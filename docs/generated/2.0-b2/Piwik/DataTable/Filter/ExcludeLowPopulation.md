@@ -38,7 +38,8 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; See [ExcludeLowPopulation](#).
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -52,7 +53,8 @@ Constructor.
     - `$minimumPercentageThreshold`
 - It does not return anything.
 
-### `filter()` <a name="filter"></a>
+<a name="filter" id="filter"></a>
+### `filter()`
 
 See [ExcludeLowPopulation](#).
 

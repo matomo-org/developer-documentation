@@ -18,7 +18,8 @@ The class defines the following methods:
 - [`isTimezoneSupportEnabled()`](#isTimezoneSupportEnabled) &mdash; Returns true if this php version/build supports timezone manipulation (e.g., php >= 5.2, or compiled with EXPERIMENTAL_DATE_SUPPORT=1 for php < 5.2).
 - [`isGdExtensionEnabled()`](#isGdExtensionEnabled) &mdash; Returns true if the GD PHP extension is available, false if otherwise.
 
-### `isArchivePhpTriggered()` <a name="isArchivePhpTriggered"></a>
+<a name="isarchivephptriggered" id="isarchivephptriggered"></a>
+### `isArchivePhpTriggered()`
 
 Returns true if the current script execution was triggered misc/cron/archive.php.
 
@@ -31,7 +32,8 @@ Helpful for error handling: directly throw error without HTML (eg. when DB is do
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `isIIS()` <a name="isIIS"></a>
+<a name="isiis" id="isiis"></a>
+### `isIIS()`
 
 Returns true if running on Microsoft IIS 7 (or above), false if otherwise.
 
@@ -40,7 +42,8 @@ Returns true if running on Microsoft IIS 7 (or above), false if otherwise.
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `isApache()` <a name="isApache"></a>
+<a name="isapache" id="isapache"></a>
+### `isApache()`
 
 Returns true if running on an Apache web server, false if otherwise.
 
@@ -49,7 +52,8 @@ Returns true if running on an Apache web server, false if otherwise.
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `isWindows()` <a name="isWindows"></a>
+<a name="iswindows" id="iswindows"></a>
+### `isWindows()`
 
 Returns true if running on a Windows operating system, false if otherwise.
 
@@ -58,7 +62,8 @@ Returns true if running on a Windows operating system, false if otherwise.
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `isTimezoneSupportEnabled()` <a name="isTimezoneSupportEnabled"></a>
+<a name="istimezonesupportenabled" id="istimezonesupportenabled"></a>
+### `isTimezoneSupportEnabled()`
 
 Returns true if this php version/build supports timezone manipulation (e.g., php >= 5.2, or compiled with EXPERIMENTAL_DATE_SUPPORT=1 for php < 5.2).
 
@@ -67,7 +72,8 @@ Returns true if this php version/build supports timezone manipulation (e.g., php
 - It is a **public static** method.
 - It returns a(n) `bool` value.
 
-### `isGdExtensionEnabled()` <a name="isGdExtensionEnabled"></a>
+<a name="isgdextensionenabled" id="isgdextensionenabled"></a>
+### `isGdExtensionEnabled()`
 
 Returns true if the GD PHP extension is available, false if otherwise.
 

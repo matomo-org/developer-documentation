@@ -49,7 +49,8 @@ The class defines the following methods:
 - [`queryEcommerceItems()`](#queryEcommerceItems) &mdash; Aggregates ecommerce item data (everything stored in the **log_conversion_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
 - [`queryActionsByDimension()`](#queryActionsByDimension) &mdash; Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.
 
-### `queryVisitsByDimension()` <a name="queryVisitsByDimension"></a>
+<a name="queryvisitsbydimension" id="queryvisitsbydimension"></a>
+### `queryVisitsByDimension()`
 
 Aggregates visit logs, optionally grouping by some dimension, and returns the aggregated data.
 
@@ -90,7 +91,8 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 - _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn&#039;t supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.
     - `mixed`
 
-### `queryEcommerceItems()` <a name="queryEcommerceItems"></a>
+<a name="queryecommerceitems" id="queryecommerceitems"></a>
+### `queryEcommerceItems()`
 
 Aggregates ecommerce item data (everything stored in the **log_conversion_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
 
@@ -128,7 +130,8 @@ Segmentation is not yet supported in this aggregation method.
 - _Returns:_ A statement object that can be used to iterate through the query&#039;s result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.
     - `Piwik\DataAccess\Zend_Db_Statement`
 
-### `queryActionsByDimension()` <a name="queryActionsByDimension"></a>
+<a name="queryactionsbydimension" id="queryactionsbydimension"></a>
+### `queryActionsByDimension()`
 
 Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.
 

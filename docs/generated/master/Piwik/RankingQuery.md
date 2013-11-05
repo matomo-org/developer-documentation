@@ -47,7 +47,8 @@ The class defines the following methods:
 - [`execute()`](#execute) &mdash; Executes the query.
 - [`generateQuery()`](#generateQuery) &mdash; Generate the SQL code that does the magic.
 
-### `__construct()` <a name="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
 
 Constructor.
 
@@ -58,7 +59,8 @@ Constructor.
     - `$limit`
 - It does not return anything.
 
-### `setLimit()` <a name="setLimit"></a>
+<a name="setlimit" id="setlimit"></a>
+### `setLimit()`
 
 Set the limit after which everything is grouped to "Others".
 
@@ -69,7 +71,8 @@ Set the limit after which everything is grouped to "Others".
     - `$limit`
 - It does not return anything.
 
-### `setOthersLabel()` <a name="setOthersLabel"></a>
+<a name="setotherslabel" id="setotherslabel"></a>
+### `setOthersLabel()`
 
 Set the value to use for the label in the 'Others' row.
 
@@ -80,7 +83,8 @@ Set the value to use for the label in the 'Others' row.
     - `$value`
 - It does not return anything.
 
-### `addLabelColumn()` <a name="addLabelColumn"></a>
+<a name="addlabelcolumn" id="addlabelcolumn"></a>
+### `addLabelColumn()`
 
 Add a label column.
 
@@ -95,7 +99,8 @@ Labels are the columns that are replaced with "Others" after the limit.
     - `$labelColumn`
 - It does not return anything.
 
-### `addColumn()` <a name="addColumn"></a>
+<a name="addcolumn" id="addcolumn"></a>
+### `addColumn()`
 
 Add a column that has be added to the outer queries.
 
@@ -107,7 +112,8 @@ Add a column that has be added to the outer queries.
     - `$aggregationFunction`
 - It does not return anything.
 
-### `setColumnToMarkExcludedRows()` <a name="setColumnToMarkExcludedRows"></a>
+<a name="setcolumntomarkexcludedrows" id="setcolumntomarkexcludedrows"></a>
+### `setColumnToMarkExcludedRows()`
 
 Sets a column that will be used to filter the result into two categories.
 
@@ -126,7 +132,8 @@ by [execute](#execute).
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 
-### `partitionResultIntoMultipleGroups()` <a name="partitionResultIntoMultipleGroups"></a>
+<a name="partitionresultintomultiplegroups" id="partitionresultintomultiplegroups"></a>
+### `partitionResultIntoMultipleGroups()`
 
 This method can be used to parition the result based on the possible values of one table column.
 
@@ -153,7 +160,8 @@ for rows where `log_action.type = TYPE_ACTION_URL` and for rows `log_action.type
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 
-### `execute()` <a name="execute"></a>
+<a name="execute" id="execute"></a>
+### `execute()`
 
 Executes the query.
 
@@ -170,7 +178,8 @@ The object has to be configured first using the other methods.
 - _Returns:_ The format depends on which methods have been used to configure the ranking query.
     - `array`
 
-### `generateQuery()` <a name="generateQuery"></a>
+<a name="generatequery" id="generatequery"></a>
+### `generateQuery()`
 
 Generate the SQL code that does the magic.
 

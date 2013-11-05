@@ -19,7 +19,8 @@ The class defines the following methods:
 
 - [`addRowsFromArray()`](#addRowsFromArray) &mdash; Adds rows based on an array mapping label column values to value column values.
 
-### `addRowsFromArray()` <a name="addRowsFromArray"></a>
+<a name="addrowsfromarray" id="addrowsfromarray"></a>
+### `addRowsFromArray()`
 
 Adds rows based on an array mapping label column values to value column values.
 

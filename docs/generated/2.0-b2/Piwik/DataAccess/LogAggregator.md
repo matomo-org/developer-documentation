@@ -43,7 +43,8 @@ The class defines the following methods:
 
 - [`queryVisitsByDimension()`](#queryVisitsByDimension) &mdash; Queries visit logs by dimension and returns the aggregate data.
 
-### `queryVisitsByDimension()` <a name="queryVisitsByDimension"></a>
+<a name="queryvisitsbydimension" id="queryvisitsbydimension"></a>
+### `queryVisitsByDimension()`
 
 Queries visit logs by dimension and returns the aggregate data.
 
