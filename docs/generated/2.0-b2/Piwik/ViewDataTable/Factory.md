@@ -45,7 +45,6 @@ If force is set to true, a ViewDataTable of the $defaultType will be returned in
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$defaultType`
     - `$apiAction`
@@ -65,7 +64,6 @@ Convenience method that creates and renders a ViewDataTable for a API method.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$pluginName`
     - `$apiAction`

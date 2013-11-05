@@ -57,7 +57,6 @@ Removes the port and the last portion of a CIDR IP address.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ipString`
 - It returns a(n) `string` value.
@@ -78,7 +77,6 @@ Accepts the following formats for $ipRange:
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ipRangeString`
 - _Returns:_ IP address range in CIDR notation OR false
@@ -92,10 +90,9 @@ Convert presentation format IP address to network address format.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ipString`
-- _Returns:_ Binary-safe string, e.g., `&quot;\x7F\x00\x00\x01&quot;`.
+- _Returns:_ Binary-safe string, e.g., `"\x7F\x00\x00\x01"`.
     - `string`
 
 <a name="n2p" id="n2p"></a>
@@ -109,7 +106,6 @@ See also [prettyPreint](#prettyPrint).
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
 - _Returns:_ IP address in presentation format.
@@ -122,7 +118,6 @@ Alias for [N2P()](#N2P).
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
 - _Returns:_ IP address in presentation format.
@@ -135,7 +130,6 @@ Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if 
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
 - _Returns:_ True if IPv4, else false.
@@ -156,7 +150,6 @@ returned by the built-in ip2long() function, from Piwik 1.3 and earlier.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
 - _Returns:_ IP address in presentation format.
@@ -174,7 +167,6 @@ a naive check. It assumes that whatever format $ip is in, it is well-formed.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
 - It returns a(n) `bool` value.
@@ -186,7 +178,6 @@ Returns true if $ip is a IPv4 mapped address, false if otherwise.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
 - It returns a(n) `bool` value.
@@ -198,10 +189,9 @@ Returns an IPv4 address from a 'mapped' IPv6 address.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
-- _Returns:_ eg, `&#039;192.0.2.128&#039;`
+- _Returns:_ eg, `'192.0.2.128'`
     - `string`
 
 <a name="getipsforrange" id="getipsforrange"></a>
@@ -211,7 +201,6 @@ Get low and high IP addresses for a specified range.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ipRange`
 - _Returns:_ Array `array($lowIp, $highIp)` in network address format, or false on failure.
@@ -229,7 +218,6 @@ An IPv4-mapped address should be range checked with an IPv4-mapped address range
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ip`
     - `$ipRanges`
@@ -247,7 +235,6 @@ This could be the proxy client's IP address.
 
 #### Signature
 
-- It is a **public static** method.
 - _Returns:_ IP address in presentation format.
     - `string`
 
@@ -258,7 +245,6 @@ Returns a non-proxy IP address from header.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$default`
     - `$proxyHeaders`
@@ -271,7 +257,6 @@ Returns the last IP address in a comma separated list, subject to an optional ex
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$csv`
     - `$excludedIps`
@@ -285,7 +270,6 @@ Get hostname for a given IP address.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ipStr`
 - _Returns:_ The hostname or unmodified $ipStr on failure.

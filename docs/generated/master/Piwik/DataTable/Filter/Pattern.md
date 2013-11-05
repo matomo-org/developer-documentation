@@ -31,7 +31,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
     - `$columnToFilter`
@@ -46,7 +45,6 @@ Helper method to return the given pattern quoted
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$pattern`
 - It returns a(n) `string` value.
@@ -58,7 +56,6 @@ Performs case insensitive match
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$pattern`
     - `$patternQuoted`
@@ -73,7 +70,6 @@ See [Pattern](#).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
 - It does not return anything.

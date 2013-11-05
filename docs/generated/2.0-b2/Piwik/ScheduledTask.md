@@ -36,7 +36,6 @@ Object instance on which the method will be executed by the task scheduler
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `string` value.
 
 <a name="classname" id="classname"></a>
@@ -46,7 +45,6 @@ Class name where the specified method is located
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `string` value.
 
 <a name="methodname" id="methodname"></a>
@@ -56,7 +54,6 @@ Class method to run when task is scheduled
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `string` value.
 
 <a name="methodparameter" id="methodparameter"></a>
@@ -66,7 +63,6 @@ Parameter to pass to the executed method
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `string` value.
 
 <a name="scheduledtime" id="scheduledtime"></a>
@@ -76,7 +72,6 @@ The scheduled time policy
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `Piwik\ScheduledTime` value.
 
 <a name="priority" id="priority"></a>
@@ -90,7 +85,6 @@ Affects the order in which this task will be run.
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `int` value.
 
 Methods
@@ -114,7 +108,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$_objectInstance`
     - `$_methodName`
@@ -130,7 +123,6 @@ Return the object instance on which the method should be executed
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getclassname" id="getclassname"></a>
@@ -140,7 +132,6 @@ Return class name
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getmethodname" id="getmethodname"></a>
@@ -150,7 +141,6 @@ Return method name
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getmethodparameter" id="getmethodparameter"></a>
@@ -160,7 +150,6 @@ Return method parameter
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getscheduledtime" id="getscheduledtime"></a>
@@ -170,7 +159,6 @@ Return scheduled time
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `Piwik\ScheduledTime` value.
 
 <a name="getrescheduledtime" id="getrescheduledtime"></a>
@@ -180,7 +168,6 @@ Return the rescheduled time in milliseconds
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="getpriority" id="getpriority"></a>
@@ -195,7 +182,6 @@ between ScheduledTask::HIGH_PRIORITY and ScheduledTask::LOW_PRIORITY.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="getname" id="getname"></a>
@@ -203,7 +189,6 @@ between ScheduledTask::HIGH_PRIORITY and ScheduledTask::LOW_PRIORITY.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="gettaskname" id="gettaskname"></a>
@@ -211,7 +196,6 @@ between ScheduledTask::HIGH_PRIORITY and ScheduledTask::LOW_PRIORITY.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$className`
     - `$methodName`

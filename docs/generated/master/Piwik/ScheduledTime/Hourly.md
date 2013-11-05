@@ -24,7 +24,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="sethour" id="sethour"></a>
@@ -36,7 +35,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$_hour`
 - It returns a(n) `int` value.
@@ -52,7 +50,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$_day`
 - It returns a(n) `int` value.

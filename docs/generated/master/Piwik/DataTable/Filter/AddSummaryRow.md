@@ -31,7 +31,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
     - `$labelSummaryRow`
@@ -48,7 +47,6 @@ See [AddSummaryRow](#).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
 - It does not return anything.

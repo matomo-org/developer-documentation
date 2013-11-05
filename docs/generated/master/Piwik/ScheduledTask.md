@@ -45,7 +45,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$objectInstance`
     - `$methodName`
@@ -66,7 +65,6 @@ name if the method is static.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `mixed` value.
 
 <a name="getclassname" id="getclassname"></a>
@@ -76,7 +74,6 @@ Returns the class name that contains the method to execute regularly.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getmethodname" id="getmethodname"></a>
@@ -86,7 +83,6 @@ Returns the method name that will be regularly executed.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getmethodparameter" id="getmethodparameter"></a>
@@ -96,7 +92,6 @@ Returns the a value that will be passed to the method when executed, or `null` i
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - `string`
     - `null`
@@ -108,7 +103,6 @@ Returns a [ScheduledTime](#) instance that describes when the method should be e
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `Piwik\ScheduledTime` value.
 
 <a name="getrescheduledtime" id="getrescheduledtime"></a>
@@ -118,7 +112,6 @@ Returns the time in milliseconds when this task will be executed next.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="getpriority" id="getpriority"></a>
@@ -133,7 +126,6 @@ between [ScheduledTask::HIGH_PRIORITY](#) and [ScheduledTask::LOW_PRIORITY](#).
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="getname" id="getname"></a>
@@ -152,7 +144,6 @@ to store when tasks were last executed. The name is created using:
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="gettaskname" id="gettaskname"></a>
@@ -160,7 +151,6 @@ to store when tasks were last executed. The name is created using:
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$className`
     - `$methodName`

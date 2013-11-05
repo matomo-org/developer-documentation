@@ -20,7 +20,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="setday" id="setday"></a>
@@ -28,7 +27,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$_day`
 - It does not return anything.
@@ -42,7 +40,6 @@ Makes this scheduled time execute on a particular day of the week on each month.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$_day`
     - `$_week`

@@ -37,7 +37,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
     - `$deleteRowsWithNoVisit`
@@ -55,7 +54,6 @@ more information.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
 - It does not return anything.

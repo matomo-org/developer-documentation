@@ -52,10 +52,9 @@ option.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$table`
-- _Returns:_ The prefixed name, ie &quot;piwik-production_log_visit&quot;.
+- _Returns:_ The prefixed name, ie "piwik-production_log_visit".
     - `string`
 
 <a name="unprefixtable" id="unprefixtable"></a>
@@ -70,10 +69,9 @@ option.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$table`
-- _Returns:_ The unprefixed table name, eg &quot;log_visit&quot;.
+- _Returns:_ The unprefixed table name, eg "log_visit".
     - `string`
 
 <a name="mb_substr" id="mb_substr"></a>
@@ -87,7 +85,6 @@ Calls `mb_substr` if available and falls back to `substr` if it's not.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$string`
     - `$start`
@@ -100,7 +97,6 @@ Multi-byte strlen() - works with UTF-8  Calls `mb_substr` if available and falls
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$string`
 - It returns a(n) `int` value.
@@ -116,7 +112,6 @@ Calls `mb_strtolower` if available and falls back to `strtolower` if not.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$string`
 - It returns a(n) `string` value.
@@ -147,7 +142,6 @@ NOTE: Sanitized input should not be used directly in an SQL query; SQL placehold
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$value`
     - `$alreadyStripslashed`
@@ -171,7 +165,6 @@ have to use this method to unsanitize it after it is retrieved.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$value`
 - _Returns:_ The unsanitized data.
@@ -195,7 +188,6 @@ If the variable doesn't have neither a value nor a default value provided, an ex
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$varName`
     - `$varDefault`
@@ -217,8 +209,7 @@ Returns the list of valid language codes.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ Array of two letter ISO codes mapped with language name (in English). E.g. `array(&#039;en&#039; =&gt; &#039;English&#039;)`.
+- _Returns:_ Array of two letter ISO codes mapped with language name (in English). E.g. `array('en' => 'English')`.
     - `array`
 
 <a name="getlanguagetocountrylist" id="getlanguagetocountrylist"></a>
@@ -232,8 +223,7 @@ Returns list of language to country mappings.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ Array of two letter ISO language codes mapped with two letter ISO country codes: `array(&#039;fr&#039; =&gt; &#039;fr&#039;), // French =&gt; France`
+- _Returns:_ Array of two letter ISO language codes mapped with two letter ISO country codes: `array('fr' => 'fr'), // French => France`
     - `array`
 
 <a name="getsqlstringfieldsarray" id="getsqlstringfieldsarray"></a>
@@ -247,10 +237,9 @@ Used mainly to fill the `IN (...)` part of a query.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$fields`
-- _Returns:_ The placeholder string, e.g. `&quot;?, ?, ?&quot;`.
+- _Returns:_ The placeholder string, e.g. `"?, ?, ?"`.
     - `string`
 
 <a name="destroy" id="destroy"></a>
@@ -264,7 +253,6 @@ For more information: @link http://dev.piwik.org/trac/ticket/374
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$var`
 - It does not return anything.

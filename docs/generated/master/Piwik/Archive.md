@@ -137,7 +137,6 @@ If you want to create an Archive instance with an array of Period instances, use
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idSites`
     - `$period`
@@ -161,7 +160,6 @@ use [Archive::build](#build).
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$segment` ([`Segment`](../Piwik/Segment.md))
     - `$periods` (`array`)
@@ -188,10 +186,9 @@ will be indexed by site ID first, then period.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$names`
-- _Returns:_ False if there is no data to return, a numeric if only we&#039;re not querying for multiple sites/dates, or an array if multiple sites, dates or names are queried for.
+- _Returns:_ False if there is no data to return, a numeric if only we're not querying for multiple sites/dates, or an array if multiple sites, dates or names are queried for.
     - `mixed`
 
 <a name="getblob" id="getblob"></a>
@@ -216,7 +213,6 @@ will be indexed by site ID first, then period.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$names`
     - `$idSubtable`
@@ -245,7 +241,6 @@ Note: Every DataTable instance returned will have at most one row in it. The con
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$names`
 - _Returns:_ A DataTable if multiple sites and periods were not requested. An appropriately indexed DataTable\Map if otherwise.
@@ -274,7 +269,6 @@ indexed by period.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$idSubtable`
@@ -301,7 +295,6 @@ indexed by period.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$idSubtable`
@@ -316,7 +309,6 @@ Returns the list of plugins that archive the given reports.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$archiveNames`
 - It returns a(n) `array` value.
@@ -332,7 +324,6 @@ API methods can use this method to reduce code redundancy.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$idSite`
@@ -353,7 +344,6 @@ Returns an object describing the set of sites, the set of periods and the segmen
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `Piwik\Archive\Parameters` value.
 
 <a name="getpluginforreport" id="getpluginforreport"></a>
@@ -363,7 +353,6 @@ Returns the name of the plugin that archives a given report.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$report`
 - _Returns:_ Plugin name.

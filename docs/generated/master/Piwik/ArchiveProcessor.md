@@ -97,7 +97,6 @@ Returns a [LogAggregator](#) instance for the site, period and segment this Arch
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`LogAggregator`](../Piwik/DataAccess/LogAggregator.md) value.
 
 <a name="getperiod" id="getperiod"></a>
@@ -107,7 +106,6 @@ Returns the period we computing statistics for.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Period`](../Piwik/Period.md) value.
 
 <a name="getsite" id="getsite"></a>
@@ -117,7 +115,6 @@ Returns the site we are computing statistics for.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Site`](../Piwik/Site.md) value.
 
 <a name="getsegment" id="getsegment"></a>
@@ -127,7 +124,6 @@ The Segment used to limit the set of visits that are being aggregated.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Segment`](../Piwik/Segment.md) value.
 
 <a name="insertnumericrecords" id="insertnumericrecords"></a>
@@ -137,7 +133,6 @@ Caches multiple numeric records in the archive for this processor's site, period
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$numericRecords`
 - It does not return anything.
@@ -153,7 +148,6 @@ Numeric values are not inserted if they equal 0.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$value`
@@ -166,7 +160,6 @@ Caches one or more blob records in the archive for this processor's site, period
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$values`

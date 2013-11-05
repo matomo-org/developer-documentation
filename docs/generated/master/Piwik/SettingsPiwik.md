@@ -23,7 +23,6 @@ Returns the list of stored segments to pre-process for all sites when executing 
 
 #### Signature
 
-- It is a **public static** method.
 - _Returns:_ The list of stored segments that apply to all sites.
     - `array`
 
@@ -38,7 +37,6 @@ http://demo.piwik.org/ or http://example.org/piwik/.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `string` value.
 
 <a name="issegmentationenabled" id="issegmentationenabled"></a>
@@ -48,7 +46,6 @@ Returns true if segmentation is allowed for this user, false if otherwise.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="isuniquevisitorsenabled" id="isuniquevisitorsenabled"></a>
@@ -64,7 +61,6 @@ year/range are not.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$periodLabel`
 - It returns a(n) `bool` value.

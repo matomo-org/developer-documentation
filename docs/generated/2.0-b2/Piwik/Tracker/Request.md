@@ -52,7 +52,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$params`
     - `$tokenAuth`
@@ -63,7 +62,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `bool` value.
 
 <a name="authenticatesuperuseroradmin" id="authenticatesuperuseroradmin"></a>
@@ -71,7 +69,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$tokenAuth`
     - `$idSite`
@@ -82,7 +79,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - `float`
     - `int`
@@ -92,7 +88,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - `bool`
     - `float`
@@ -103,7 +98,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - `float`
     - `int`
@@ -113,7 +107,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - `int`
     - `mixed`
@@ -125,8 +118,7 @@ Returns the language the visitor is viewing.
 
 #### Signature
 
-- It is a **public** method.
-- _Returns:_ browser language code, eg. &quot;en-gb,en;q=0.5&quot;
+- _Returns:_ browser language code, eg. "en-gb,en;q=0.5"
     - `string`
 
 <a name="getlocaltime" id="getlocaltime"></a>
@@ -134,7 +126,6 @@ Returns the language the visitor is viewing.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getgoalrevenue" id="getgoalrevenue"></a>
@@ -142,7 +133,6 @@ Returns the language the visitor is viewing.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$defaultGoalRevenue`
 - It does not return anything.
@@ -152,7 +142,6 @@ Returns the language the visitor is viewing.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - It does not return anything.
@@ -162,7 +151,6 @@ Returns the language the visitor is viewing.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getidsite" id="getidsite"></a>
@@ -170,7 +158,6 @@ Returns the language the visitor is viewing.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getuseragent" id="getuseragent"></a>
@@ -178,7 +165,6 @@ Returns the language the visitor is viewing.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getcustomvariables" id="getcustomvariables"></a>
@@ -186,7 +172,6 @@ Returns the language the visitor is viewing.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$scope`
 - It does not return anything.
@@ -196,7 +181,6 @@ Returns the language the visitor is viewing.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$input`
 - It does not return anything.
@@ -208,7 +192,6 @@ Update the cookie information.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$idVisitor`
 - It does not return anything.
@@ -220,7 +203,6 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -230,7 +212,6 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="setforceip" id="setforceip"></a>
@@ -238,7 +219,6 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$ip`
 - It does not return anything.
@@ -248,7 +228,6 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$dateTime`
 - It does not return anything.
@@ -258,7 +237,6 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$visitorId`
 - It does not return anything.
@@ -268,7 +246,6 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="overridelocation" id="overridelocation"></a>
@@ -276,7 +253,6 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$visitorInfo`
 - It does not return anything.
@@ -286,7 +262,6 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getparamscount" id="getparamscount"></a>
@@ -294,7 +269,6 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getpagegenerationtime" id="getpagegenerationtime"></a>
@@ -302,6 +276,5 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 

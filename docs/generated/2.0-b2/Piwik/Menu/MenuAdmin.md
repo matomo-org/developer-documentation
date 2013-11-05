@@ -40,7 +40,6 @@ Adds a new AdminMenu entry under the 'Settings' category.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$adminMenuName`
     - `$url`

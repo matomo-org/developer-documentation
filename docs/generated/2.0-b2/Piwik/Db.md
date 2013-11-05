@@ -42,7 +42,6 @@ Public so tests can simulate the situation where the lock tables privilege isn't
 
 #### Signature
 
-- It is a **public static** property.
 - It is a(n) `bool` value.
 
 Methods
@@ -78,7 +77,6 @@ Returns the database connection and creates it if it hasn't been already.
 
 #### Signature
 
-- It is a **public static** method.
 - It can return one of the following values:
     - `Piwik\Tracker\Db`
     - `Piwik\Db\AdapterInterface`
@@ -95,7 +93,6 @@ Shouldn't be called directly, use [get](#get).
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$dbInfos`
 - It does not return anything.
@@ -113,7 +110,6 @@ number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
 - It can return one of the following values:
@@ -135,7 +131,6 @@ See also [http://framework.zend.com/manual/en/zend.db.statement.html](http://fra
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
     - `$parameters`
@@ -150,7 +145,6 @@ Executes the SQL query and fetches all the rows from the result set.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
     - `$parameters`
@@ -166,7 +160,6 @@ Executes an SQL query and fetches the first row of the result.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
     - `$parameters`
@@ -181,7 +174,6 @@ Executes an SQL query and fetches the first column of the first row of result se
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
     - `$parameters`
@@ -196,11 +188,10 @@ Executes an SQL query and returns the entire result set indexed by the first sel
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
     - `$parameters`
-- _Returns:_ eg, ``` array(&#039;col1value1&#039; =&gt; array(&#039;col2&#039; =&gt; &#039;...&#039;, &#039;col3&#039; =&gt; ...), &#039;col1value2&#039; =&gt; array(&#039;col2&#039; =&gt; &#039;...&#039;, &#039;col3&#039; =&gt; ...)) ```
+- _Returns:_ eg, ``` array('col1value1' => array('col2' => '...', 'col3' => ...), 'col1value2' => array('col2' => '...', 'col3' => ...)) ```
     - `array`
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
@@ -225,7 +216,6 @@ locking the table for too long.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$table`
     - `$where`
@@ -250,7 +240,6 @@ set to **1**.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$tables`
 - It returns a(n) `Zend_Db_Statement` value.
@@ -266,7 +255,6 @@ The table names must be prefixed (see [Common::prefixTable](#)).
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$tables`
 - It returns a(n) `Zend_Db_Statement` value.
@@ -285,7 +273,6 @@ should still work in case it is not granted.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$tablesToRead`
     - `$tablesToWrite`
@@ -303,7 +290,6 @@ should still work in case it is not granted.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `Zend_Db_Statement` value.
 
 <a name="segmentedfetchfirst" id="segmentedfetchfirst"></a>
@@ -339,7 +325,6 @@ for too long.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
     - `$first`
@@ -362,7 +347,6 @@ the table will not be locked for too long.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
     - `$first`
@@ -386,7 +370,6 @@ the table will not be locked for too long.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
     - `$first`
@@ -403,7 +386,6 @@ Performs a non-SELECT query on a table one chunk at a time.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sql`
     - `$first`
@@ -424,7 +406,6 @@ retry a set number of time.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$lockName`
     - `$maxRetries`
@@ -438,7 +419,6 @@ Releases a named lock.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$lockName`
 - _Returns:_ `true` if the lock was released, `false` if otherwise.
@@ -451,6 +431,5 @@ Checks whether the database user is allowed to lock tables.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 

@@ -239,7 +239,6 @@ Creates an empty DataTable.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="__destruct" id="__destruct"></a>
@@ -253,7 +252,6 @@ Makes sure DataTable memory will be cleaned up.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="sort" id="sort"></a>
@@ -263,7 +261,6 @@ Sorts the DataTable rows using the supplied callback function.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$functionCallback`
     - `$columnSortedBy`
@@ -280,7 +277,6 @@ See [sort](#sort).
 
 #### Signature
 
-- It is a **public** method.
 - _Returns:_ The sorted column name or false if none.
     - `Piwik\false`
     - `string`
@@ -297,7 +293,6 @@ subtables.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="enablerecursivefilters" id="enablerecursivefilters"></a>
@@ -312,7 +307,6 @@ will apply filters to every subtable in addition to this instance.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="filter" id="filter"></a>
@@ -327,7 +321,6 @@ to all subtables as well.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$className`
     - `$parameters`
@@ -348,7 +341,6 @@ way they will be run after the table is truncated which will result in better pe
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$className`
     - `$parameters`
@@ -366,7 +358,6 @@ for more information.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="adddatatable" id="adddatatable"></a>
@@ -388,7 +379,6 @@ metadata can be used to specify a different type of operation.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$tableToSum` ([`DataTable`](../Piwik/DataTable.md))
 - It does not return anything.
@@ -405,7 +395,6 @@ label => row ID mappings.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$label`
 - _Returns:_ The row if found, false if otherwise.
@@ -424,7 +413,6 @@ label => row ID mappings.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$label`
 - _Returns:_ The row ID.
@@ -437,7 +425,6 @@ Returns an empty DataTable with the same metadata and queued filters as `$this` 
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$keepFilters`
 - It returns a(n) [`DataTable`](../Piwik/DataTable.md) value.
@@ -453,7 +440,6 @@ The ID is either the index of the row or [ID_SUMMARY_ROW](#ID_SUMMARY_ROW).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$id`
 - _Returns:_ The Row or false if not found.
@@ -467,7 +453,6 @@ Returns the row that has a subtable with ID matching `$idSubtable`.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$idSubTable`
 - _Returns:_ The row or false if not found
@@ -487,10 +472,9 @@ this row is set as the summary row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$row` ([`Row`](../Piwik/DataTable/Row.md))
-- _Returns:_ `$row` or the summary row if we&#039;re at the maximum number of rows.
+- _Returns:_ `$row` or the summary row if we're at the maximum number of rows.
     - [`Row`](../Piwik/DataTable/Row.md)
 
 <a name="addsummaryrow" id="addsummaryrow"></a>
@@ -504,7 +488,6 @@ Note: A dataTable can have only one summary row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$row` ([`Row`](../Piwik/DataTable/Row.md))
 - _Returns:_ Returns `$row`.
@@ -517,7 +500,6 @@ Returns the DataTable ID.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="addrowfromarray" id="addrowfromarray"></a>
@@ -531,7 +513,6 @@ You can add Row metadata with this method.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$row`
 - It does not return anything.
@@ -547,7 +528,6 @@ Row metadata cannot be added with this method.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$row`
 - It does not return anything.
@@ -559,7 +539,6 @@ Returns the array of Rows.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Row[]`](../Piwik/DataTable/Row.md) value.
 
 <a name="getcolumn" id="getcolumn"></a>
@@ -569,7 +548,6 @@ Returns an array containing all column values for the requested column.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - _Returns:_ The array of column values.
@@ -582,7 +560,6 @@ Returns an array containing all column values of columns whose name starts with 
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$namePrefix`
 - _Returns:_ The array of column values.
@@ -603,7 +580,6 @@ Note: If column names still use their in-database INDEX values (@see Metrics), t
 
 #### Signature
 
-- It is a **public** method.
 - _Returns:_ Array of string column names.
     - `array`
 
@@ -614,7 +590,6 @@ Returns an array containing the requested metadata value of each row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - It returns a(n) `array` value.
@@ -626,7 +601,6 @@ Returns the number of rows in the table including the summary row.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="getfirstrow" id="getfirstrow"></a>
@@ -636,7 +610,6 @@ Returns the first row of the DataTable.
 
 #### Signature
 
-- It is a **public** method.
 - _Returns:_ The first row or `false` if it cannot be found.
     - [`Row`](../Piwik/DataTable/Row.md)
     - `Piwik\false`
@@ -653,7 +626,6 @@ will always be considered the last row.
 
 #### Signature
 
-- It is a **public** method.
 - _Returns:_ The last row or `false` if it cannot be found.
     - [`Row`](../Piwik/DataTable/Row.md)
     - `Piwik\false`
@@ -669,7 +641,6 @@ This includes the subtables of subtables and further descendants.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="deletecolumn" id="deletecolumn"></a>
@@ -684,7 +655,6 @@ subtables.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - It does not return anything.
@@ -694,7 +664,6 @@ subtables.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="renamecolumn" id="renamecolumn"></a>
@@ -708,7 +677,6 @@ This change is applied recursively to all subtables.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oldName`
     - `$newName`
@@ -721,7 +689,6 @@ Deletes several columns by name in every row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$names`
     - `$deleteRecursiveInSubtables`
@@ -734,7 +701,6 @@ Deletes a row by ID.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$id`
 - It does not return anything.
@@ -748,7 +714,6 @@ Deletes rows from `$offset` to `$offset + $limit`.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$offset`
     - `$limit`
@@ -762,7 +727,6 @@ Deletes a set of rows by ID.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$rowIds` (`array`)
 - It does not return anything.
@@ -780,7 +744,6 @@ Note: This uses the Html DataTable renderer.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="isequal" id="isequal"></a>
@@ -797,7 +760,6 @@ of rows is not important.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$table1` ([`DataTable`](../Piwik/DataTable.md))
     - `$table2` ([`DataTable`](../Piwik/DataTable.md))
@@ -821,12 +783,11 @@ The result of this method is intended for use with the [ArchiveProcessor::insert
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$maximumRowsInDataTable`
     - `$maximumRowsInSubDataTable`
     - `$columnToSortByBeforeTruncation`
-- _Returns:_ The array of serialized DataTables: array( // this DataTable (the root) 0 =&gt; &#039;eghuighahgaueytae78yaet7yaetae&#039;, // a subtable 1 =&gt; &#039;gaegae gh gwrh guiwh uigwhuige&#039;, // another subtable 2 =&gt; &#039;gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE&#039;, // etc. );
+- _Returns:_ The array of serialized DataTables: array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae', // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige', // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE', // etc. );
     - `array`
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If infinite recursion detected. This will occur if a table&#039;s subtable is one of its parent tables.
@@ -842,7 +803,6 @@ See [serialize](#serialize).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$stringSerialized`
 - It does not return anything.
@@ -860,7 +820,6 @@ You can add Row metadata with this method.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$array`
 - It does not return anything.
@@ -876,7 +835,6 @@ Row metadata cannot be added with this method.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$array`
 - It does not return anything.
@@ -909,7 +867,6 @@ array (
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$array`
     - `$subtablePerLabel`
@@ -931,7 +888,6 @@ have subtables, but the subtables are not.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$atLeastLevel`
 - It does not return anything.
@@ -943,7 +899,6 @@ Returns metadata by name.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - _Returns:_ The metadata value or false if it cannot be found.
@@ -957,7 +912,6 @@ Sets a metadata value by name.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$value`
@@ -970,7 +924,6 @@ Returns all table metadata.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `array` value.
 
 <a name="setmetadatavalues" id="setmetadatavalues"></a>
@@ -980,7 +933,6 @@ Sets several metadata values by name.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$values`
 - It does not return anything.
@@ -992,7 +944,6 @@ Sets metadata erasing existing values.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$metadata`
 - It does not return anything.
@@ -1009,7 +960,6 @@ rows are summed to the summary row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$maximumAllowedRows`
 - It does not return anything.
@@ -1030,7 +980,6 @@ for more information about tree walking.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$path`
     - `$missingRowColumns`
@@ -1045,7 +994,6 @@ Returns a new DataTable in which the rows of this table are replaced with its su
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$labelColumn`
     - `$useMetadataColumn`
@@ -1062,7 +1010,6 @@ See [addRowsFromSimpleArray](#addRowsFromSimpleArray).
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$array`
 - It returns a(n) [`DataTable`](../Piwik/DataTable.md) value.
@@ -1079,7 +1026,6 @@ for more information on DataTable serialization.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$data`
 - It returns a(n) [`DataTable`](../Piwik/DataTable.md) value.

@@ -63,8 +63,7 @@ Returns the current URL.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ eg, `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
+- _Returns:_ eg, `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
     - `string`
 
 <a name="getcurrenturlwithoutquerystring" id="getcurrenturlwithoutquerystring"></a>
@@ -74,10 +73,9 @@ Returns the current URL without the query string.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$checkTrustedHost`
-- _Returns:_ eg, `&quot;http://example.org/dir1/dir2/index.php&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`.
+- _Returns:_ eg, `"http://example.org/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
     - `string`
 
 <a name="getcurrenturlwithoutfilename" id="getcurrenturlwithoutfilename"></a>
@@ -87,8 +85,7 @@ Returns the current URL without the query string and without the name of the fil
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ eg, `&quot;http://example.org/dir1/dir2/&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`.
+- _Returns:_ eg, `"http://example.org/dir1/dir2/"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
     - `string`
 
 <a name="getcurrentscriptpath" id="getcurrentscriptpath"></a>
@@ -102,8 +99,7 @@ The script file name is not included.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ eg, `&quot;/dir1/dir2/&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
+- _Returns:_ eg, `"/dir1/dir2/"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
     - `string`
 
 <a name="getcurrentscriptname" id="getcurrentscriptname"></a>
@@ -117,8 +113,7 @@ Includes the script file name.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ eg, `&quot;/dir1/dir2/index.php&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
+- _Returns:_ eg, `"/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
     - `string`
 
 <a name="getcurrentscheme" id="getcurrentscheme"></a>
@@ -128,8 +123,7 @@ Returns the current URL's protocol.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ `&#039;https&#039;` or `&#039;http&#039;`
+- _Returns:_ `'https'` or `'http'`
     - `string`
 
 <a name="getcurrenthost" id="getcurrenthost"></a>
@@ -139,11 +133,10 @@ Returns the current host.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$default`
     - `$checkTrustedHost`
-- _Returns:_ eg, `&quot;example.org&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
+- _Returns:_ eg, `"example.org"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
     - `string`
 
 <a name="getcurrentquerystring" id="getcurrentquerystring"></a>
@@ -153,8 +146,7 @@ Returns the query string of the current URL.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ eg, `&quot;?param1=value1&amp;param2=value2&quot;` if the current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;`
+- _Returns:_ eg, `"?param1=value1&param2=value2"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
     - `string`
 
 <a name="getarrayfromcurrentquerystring" id="getarrayfromcurrentquerystring"></a>
@@ -164,8 +156,7 @@ Returns an array mapping query paramater names with query parameter values for t
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ If current URL is `&quot;http://example.org/dir1/dir2/index.php?param1=value1&amp;param2=value2&quot;` this will return: ``` array( &#039;param1&#039; =&gt; string &#039;value1&#039;, &#039;param2&#039; =&gt; string &#039;value2&#039; ) ```
+- _Returns:_ If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"` this will return: ``` array( 'param1' => string 'value1', 'param2' => string 'value2' ) ```
     - `array`
 
 <a name="getquerystringfromparameters" id="getquerystringfromparameters"></a>
@@ -175,10 +166,9 @@ Converts an an array of parameters name => value mappings to a query string.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$parameters`
-- _Returns:_ eg. `&quot;param1=10&amp;param2[]=1&amp;param2[]=2&quot;`
+- _Returns:_ eg. `"param1=10&param2[]=1&param2[]=2"`
     - `string`
 
 <a name="redirecttoreferrer" id="redirecttoreferrer"></a>
@@ -193,7 +183,6 @@ to the current URL without query string.
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="redirecttourl" id="redirecttourl"></a>
@@ -203,7 +192,6 @@ Redirects the user to the specified URL.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$url`
 - It does not return anything.
@@ -215,7 +203,6 @@ Returns the HTTP_REFERER header, or false if not found.
 
 #### Signature
 
-- It is a **public static** method.
 - It can return one of the following values:
     - `string`
     - `Piwik\false`
@@ -227,7 +214,6 @@ Returns true if the URL points to something on the same host, false if otherwise
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$url`
 - _Returns:_ True if local; false otherwise.

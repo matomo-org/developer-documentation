@@ -68,7 +68,6 @@ For instance the plugin name. The title is optional.
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `string` value.
 
 <a name="message" id="message"></a>
@@ -82,7 +81,6 @@ Must be set.
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `string` value.
 
 <a name="flags" id="flags"></a>
@@ -90,7 +88,6 @@ Must be set.
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `int` value.
 
 <a name="type" id="type"></a>
@@ -104,7 +101,6 @@ See self::TYPE_*
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `string` value.
 
 <a name="context" id="context"></a>
@@ -118,7 +114,6 @@ For instance info, warning, success or error.
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `string` value.
 
 <a name="priority" id="priority"></a>
@@ -133,7 +128,6 @@ highest priority will be displayed first and all other notifications below. See 
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `int` value.
 
 Methods
@@ -150,7 +144,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$message`
 - It does not return anything.
@@ -162,7 +155,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getpriority" id="getpriority"></a>
@@ -170,6 +162,5 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 

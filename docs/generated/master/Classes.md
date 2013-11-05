@@ -4,10 +4,10 @@ Classes
 This is a complete list of available classes:
 
 - [`Piwik\API\Request`](Piwik/API/Request.md) &mdash; Dispatches API requests to the appropriate API method.
-- [`Piwik\Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed &quot;archive data&quot;).
+- [`Piwik\Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
 - [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used to insert numeric and blob archive data.
 - [`Piwik\Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
-- [`Piwik\Config`](Piwik/Config.md) &mdash; Singleton that provides read &amp; write access to Piwik&#039;s INI configuration.
+- [`Piwik\Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
 - [`Piwik\DataAccess\LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; Contains methods that aggregates log data (visits, actions, conversions, ecommerce).
 - [`Piwik\DataTable`](Piwik/DataTable.md) &mdash; The primary data structure used to store analytics data in Piwik.
 - [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter.md) &mdash; A filter is set of logic that manipulates a DataTable.
@@ -25,7 +25,7 @@ This is a complete list of available classes:
 - [`Piwik\DataTable\Filter\ColumnDelete`](Piwik/DataTable/Filter/ColumnDelete.md) &mdash; Filter that will remove columns from a DataTable using either a blacklist, whitelist or both.
 - [`Piwik\DataTable\Filter\ExcludeLowPopulation`](Piwik/DataTable/Filter/ExcludeLowPopulation.md) &mdash; Deletes all rows for which a specific column has a value that is lower than specific minimum threshold value.
 - [`Piwik\DataTable\Filter\GroupBy`](Piwik/DataTable/Filter/GroupBy.md) &mdash; DataTable filter that will group DataTable rows together based on the results of a reduce function.
-- [`Piwik\DataTable\Filter\Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; Delete all rows from the table that are not in the given offset -&gt; offset+limit range.
+- [`Piwik\DataTable\Filter\Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; Delete all rows from the table that are not in the given offset -> offset+limit range.
 - [`Piwik\DataTable\Filter\MetadataCallbackAddMetadata`](Piwik/DataTable/Filter/MetadataCallbackAddMetadata.md) &mdash; Executes a callback for each row of a DataTable and adds the result to the row as a metadata value.
 - [`Piwik\DataTable\Filter\MetadataCallbackReplace`](Piwik/DataTable/Filter/MetadataCallbackReplace.md) &mdash; Execute a callback for each row of a DataTable using certain column values and metadata and replaces row metadata with the result.
 - [`Piwik\DataTable\Filter\Pattern`](Piwik/DataTable/Filter/Pattern.md) &mdash; Deletes every row for which a specific column does not match a supplied regex pattern.
@@ -45,7 +45,7 @@ This is a complete list of available classes:
 - [`Piwik\IP`](Piwik/IP.md) &mdash; Contains IP address helper functions (for both IPv4 and IPv6).
 - [`Piwik\Log`](Piwik/Log.md) &mdash; Logging utility class.
 - [`Piwik\Mail`](Piwik/Mail.md) &mdash; Class for sending mails, for more information see: [http://framework.zend.com/manual/en/zend.mail.html](#http://framework.zend.com/manual/en/zend.mail.html)
-- [`Piwik\Menu\MenuAbstract`](Piwik/Menu/MenuAbstract.md) &mdash; Base class for classes that manage one of Piwik&#039;s menus.
+- [`Piwik\Menu\MenuAbstract`](Piwik/Menu/MenuAbstract.md) &mdash; Base class for classes that manage one of Piwik's menus.
 - [`Piwik\Menu\MenuAdmin`](Piwik/Menu/MenuAdmin.md) &mdash; Contains menu entries for the Admin menu.
 - [`Piwik\Menu\MenuMain`](Piwik/Menu/MenuMain.md) &mdash; Contains menu entries for the Main menu (the menu displayed under the Piwik logo).
 - [`Piwik\Menu\MenuTop`](Piwik/Menu/MenuTop.md) &mdash; Contains menu entries for the Top menu (the menu at the very top of the page).
@@ -109,7 +109,7 @@ This is a complete list of available classes:
 - [`Piwik\Plugins\VisitorInterest\Controller`](Piwik/Plugins/VisitorInterest/Controller.md)
 - [`Piwik\Plugins\VisitsSummary\Controller`](Piwik/Plugins/VisitsSummary/Controller.md)
 - [`Piwik\Plugins\Widgetize\Controller`](Piwik/Plugins/Widgetize/Controller.md)
-- [`Piwik\RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to &quot;Others&quot; and allows for some more fancy things that can be configured via method calls of this class.
+- [`Piwik\RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
 - [`Piwik\ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata describing and referencing a chunk of PHP code that should be executed regularly.
 - [`Piwik\ScheduledTime\Daily`](Piwik/ScheduledTime/Daily.md) &mdash; Daily class is used to schedule tasks every day.
 - [`Piwik\ScheduledTime\Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.

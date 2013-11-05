@@ -34,7 +34,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
     - `$labelSecondsPlural`
@@ -54,7 +53,6 @@ will be in seconds. Otherwise, it will be in minutes.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oldLabel`
     - `$lowerBound`
@@ -73,7 +71,6 @@ will be in seconds. Otherwise, it will be in minutes.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oldLabel`
     - `$lowerBound`
@@ -93,7 +90,6 @@ will be in seconds. Otherwise, it will be in minutes.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oldLabel`
     - `$lowerBound`

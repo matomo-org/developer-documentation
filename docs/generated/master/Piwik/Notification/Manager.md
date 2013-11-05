@@ -23,7 +23,6 @@ by your application and has not yet been canceled, it will be replaced by the up
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$id`
     - `$notification` ([`Notification`](../../Piwik/Notification.md))

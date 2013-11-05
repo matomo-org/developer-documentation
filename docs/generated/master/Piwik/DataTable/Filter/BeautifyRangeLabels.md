@@ -45,7 +45,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
     - `$labelSingular`
@@ -63,7 +62,6 @@ See [BeautifyRangeLabels](#).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$value`
 - _Returns:_ The pretty range label.
@@ -81,7 +79,6 @@ behavior based on the range values.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oldLabel`
     - `$lowerBound`
@@ -100,7 +97,6 @@ behavior based on the range values.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oldLabel`
     - `$lowerBound`
@@ -120,7 +116,6 @@ behavior based on the range values.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oldLabel`
     - `$lowerBound`

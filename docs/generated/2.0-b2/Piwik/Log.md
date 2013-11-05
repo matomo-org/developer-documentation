@@ -112,7 +112,6 @@ to configured writers.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$message`
 - It does not return anything.
@@ -124,7 +123,6 @@ Logs a message using the WARNING log level.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$message`
 - It does not return anything.
@@ -136,7 +134,6 @@ Logs a message using the INFO log level.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$message`
 - It does not return anything.
@@ -148,7 +145,6 @@ Logs a message using the DEBUG log level.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$message`
 - It does not return anything.
@@ -160,7 +156,6 @@ Logs a message using the VERBOSE log level.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$message`
 - It does not return anything.

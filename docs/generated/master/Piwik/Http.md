@@ -28,8 +28,7 @@ Returns the "best" available transport method for [sendHttpRequest()](#sendHttpR
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ Either `&#039;curl&#039;`, `&#039;fopen&#039;` or `&#039;socket&#039;`.
+- _Returns:_ Either `'curl'`, `'fopen'` or `'socket'`.
     - `string`
 
 <a name="sendhttprequest" id="sendhttprequest"></a>
@@ -39,7 +38,6 @@ Sends an HTTP request using best available transport method.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$aUrl`
     - `$timeout`
@@ -50,7 +48,7 @@ Sends an HTTP request using best available transport method.
     - `$byteRange`
     - `$getExtendedInfo`
     - `$httpMethod`
-- _Returns:_ If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success: - status =&gt; the HTTP status code - headers =&gt; the HTTP headers - data =&gt; the HTTP response data `false` is still returned on failure.
+- _Returns:_ If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success: - status => the HTTP status code - headers => the HTTP headers - data => the HTTP response data `false` is still returned on failure.
     - `bool`
     - `string`
 - It throws one of the following exceptions:
@@ -111,7 +109,6 @@ of a download's progress.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$url`
     - `$outputPath`
@@ -127,7 +124,6 @@ Fetches a file located at `$url` and saves it to `$destinationPath`.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$url`
     - `$destinationPath`

@@ -35,7 +35,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
     - `$pastDataTable`
@@ -51,13 +50,12 @@ Calculates the evolution percentage for two arbitrary values.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$currentValue`
     - `$pastValue`
     - `$quotientPrecision`
     - `$appendPercentSign`
-- _Returns:_ The evolution percent, eg `&#039;15%&#039;`.
+- _Returns:_ The evolution percent, eg `'15%'`.
     - `string`
 
 <a name="appendpercentsign" id="appendpercentsign"></a>
@@ -65,7 +63,6 @@ Calculates the evolution percentage for two arbitrary values.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$number`
 - It does not return anything.
@@ -75,7 +72,6 @@ Calculates the evolution percentage for two arbitrary values.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$number`
 - It does not return anything.

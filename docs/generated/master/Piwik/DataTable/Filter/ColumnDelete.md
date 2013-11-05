@@ -46,7 +46,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
     - `$columnsToRemove`
@@ -66,7 +65,6 @@ each DataTable row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
 - It does not return anything.

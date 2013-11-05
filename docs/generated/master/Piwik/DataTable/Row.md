@@ -40,7 +40,6 @@ This ID can be used to read the DataTable from the DataTable_Manager.
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `array` value.
 
 <a name="maxvisitssummed" id="maxvisitssummed"></a>
@@ -48,7 +47,6 @@ This ID can be used to read the DataTable from the DataTable_Manager.
 
 #### Signature
 
-- It is a **public** property.
 - Its type is not specified.
 
 
@@ -94,7 +92,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$row`
 - It does not return anything.
@@ -110,7 +107,6 @@ Only serialize the "c" member
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="cleanpostserialize" id="cleanpostserialize"></a>
@@ -120,7 +116,6 @@ Must be called after the row was serialized and __sleep was called.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="__destruct" id="__destruct"></a>
@@ -130,7 +125,6 @@ When destroyed, a row destroys its associated subTable if there is one
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="__tostring" id="__tostring"></a>
@@ -140,8 +134,7 @@ Applies a basic rendering to the Row and returns the output.
 
 #### Signature
 
-- It is a **public** method.
-- _Returns:_ describing the row. Example: &quot;- 1 [&#039;label&#039; =&gt; &#039;piwik&#039;, &#039;nb_uniq_visitors&#039; =&gt; 1685, &#039;nb_visits&#039; =&gt; 1861] [] [idsubtable = 1375]&quot;
+- _Returns:_ describing the row. Example: "- 1 ['label' => 'piwik', 'nb_uniq_visitors' => 1685, 'nb_visits' => 1861] [] [idsubtable = 1375]"
     - `string`
 
 <a name="deletecolumn" id="deletecolumn"></a>
@@ -151,7 +144,6 @@ Deletes the given column.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - _Returns:_ True on success, false if the column does not exist.
@@ -164,7 +156,6 @@ Renames a column.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oldName`
     - `$newName`
@@ -177,10 +168,9 @@ Returns a column by name.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
-- _Returns:_ The column value or false if it doesn&#039;t exist.
+- _Returns:_ The column value or false if it doesn't exist.
     - `mixed`
     - `Piwik\DataTable\false`
 
@@ -191,7 +181,6 @@ Returns the array of all metadata, or one requested metadata value.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - It returns a(n) `mixed` value.
@@ -203,8 +192,7 @@ Returns the array containing all the columns.
 
 #### Signature
 
-- It is a **public** method.
-- _Returns:_ Example: ``` array( &#039;column1&#039;   =&gt; VALUE, &#039;label&#039;     =&gt; &#039;www.php.net&#039; &#039;nb_visits&#039; =&gt; 15894, ) ```
+- _Returns:_ Example: ``` array( 'column1'   => VALUE, 'label'     => 'www.php.net' 'nb_visits' => 15894, ) ```
     - `array`
 
 <a name="getidsubdatatable" id="getidsubdatatable"></a>
@@ -218,7 +206,6 @@ If there is no such a table, returns null.
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - `int`
     - `null`
@@ -234,7 +221,6 @@ Returns `false` if none exists.
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - [`DataTable`](../../Piwik/DataTable.md)
     - `bool`
@@ -253,7 +239,6 @@ See [DataTable::addDataTable()](#) to learn how DataTables are summed.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$subTable` ([`DataTable`](../../Piwik/DataTable.md))
 - It does not return anything.
@@ -265,7 +250,6 @@ Attaches a subtable to this row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$subTable` ([`DataTable`](../../Piwik/DataTable.md))
 - _Returns:_ Returns `$subTable`.
@@ -280,7 +264,6 @@ Attaches a subtable to this row, overwriting the existing subtable, if any.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$subTable` ([`DataTable`](../../Piwik/DataTable.md))
 - _Returns:_ Returns `$subTable`.
@@ -293,7 +276,6 @@ Returns true if the subtable is currently loaded in memory via [DataTable\Manage
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `bool` value.
 
 <a name="removesubtable" id="removesubtable"></a>
@@ -303,7 +285,6 @@ Removes the subtable reference.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="setcolumns" id="setcolumns"></a>
@@ -317,7 +298,6 @@ Overwrites previously set columns.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$columns`
 - It does not return anything.
@@ -329,7 +309,6 @@ Set the value `$value` to the column called `$name`.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$value`
@@ -342,7 +321,6 @@ Set the value `$value` to the metadata called `$name`.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$value`
@@ -355,10 +333,9 @@ Deletes one metadata value or all metadata values.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
-- _Returns:_ true on success, false if the column didn&#039;t exist
+- _Returns:_ true on success, false if the column didn't exist
     - `bool`
 
 <a name="addcolumn" id="addcolumn"></a>
@@ -372,7 +349,6 @@ If the column already exists, throws an exception.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$value`
@@ -387,7 +363,6 @@ Add many columns to this row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$columns`
 - It returns a(n) `void` value.
@@ -405,7 +380,6 @@ If the metadata already exists, throws an exception.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$value`
@@ -427,7 +401,6 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md))
     - `$enableCopyMetadata`
@@ -441,7 +414,6 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$rowToSum`
 - It does not return anything.
@@ -458,7 +430,6 @@ depends on the label of the row, and so, is not 100% accurate.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `bool` value.
 
 <a name="compareelements" id="compareelements"></a>
@@ -468,7 +439,6 @@ Helper function to compare array elements
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$elem1`
     - `$elem2`
@@ -488,7 +458,6 @@ Two rows are equal if:
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$row1` ([`Row`](../../Piwik/DataTable/Row.md))
     - `$row2` ([`Row`](../../Piwik/DataTable/Row.md))

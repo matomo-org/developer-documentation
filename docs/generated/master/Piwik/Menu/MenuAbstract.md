@@ -27,7 +27,6 @@ Adds a new entry to the menu.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$menuName`
     - `$subMenuName`

@@ -24,7 +24,6 @@ The abstract class defines the following methods:
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$view` ([`View`](../../Piwik/View.md))
 - It does not return anything.
@@ -55,7 +54,6 @@ Assigns the following variables:
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$view` ([`View`](../../Piwik/View.md))
 - It does not return anything.

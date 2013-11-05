@@ -47,7 +47,6 @@ Returns a configuration value or section by name.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - _Returns:_ The requested value requested. Returned by reference.
@@ -63,7 +62,6 @@ Sets a configuration value or section.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$value`
@@ -76,6 +74,5 @@ Writes the current configuration to `config.ini.php`.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 

@@ -29,7 +29,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
     - `$columnToFilter`
@@ -43,7 +42,6 @@ See [PatternRecursive](#).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
 - _Returns:_ The number of deleted rows.

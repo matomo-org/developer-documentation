@@ -48,7 +48,6 @@ This abstract class defines the following properties:
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `Piwik\ViewDataTable\Config` value.
 
 <a name="requestconfig" id="requestconfig"></a>
@@ -56,7 +55,6 @@ This abstract class defines the following properties:
 
 #### Signature
 
-- It is a **public** property.
 - It is a(n) `Piwik\ViewDataTable\RequestConfig` value.
 
 Methods
@@ -87,7 +85,6 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$controllerAction`
     - `$apiMethodToRequestDataTable`
@@ -105,7 +102,6 @@ modifying this config or creating an own Config class that extends the default C
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `Piwik\ViewDataTable\Config` value.
 
 <a name="getdefaultrequestconfig" id="getdefaultrequestconfig"></a>
@@ -120,7 +116,6 @@ modifying this config or creating an own RequestConfig class that extends the de
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `Piwik\ViewDataTable\RequestConfig` value.
 
 <a name="getviewdatatableid" id="getviewdatatableid"></a>
@@ -135,7 +130,6 @@ with the viewDataTable ID.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -147,7 +141,6 @@ Detects whether the viewDataTable or one of its ancestors has the given id.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$viewDataTableId`
 - It returns a(n) `bool` value.
@@ -159,7 +152,6 @@ Returns the DataTable loaded from the API
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`DataTable`](../../Piwik/DataTable.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if not yet defined
@@ -175,7 +167,6 @@ It won't be loaded again from the API in this case
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$dataTable`
 - _Returns:_ $dataTable DataTable
@@ -188,7 +179,6 @@ Requests all needed data and renders the view.
 
 #### Signature
 
-- It is a **public** method.
 - _Returns:_ The result of rendering.
     - `string`
 
@@ -199,7 +189,6 @@ Determine if the view data table requests a single data table or not.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `bool` value.
 
 <a name="candisplayviewdatatable" id="candisplayviewdatatable"></a>
@@ -215,7 +204,6 @@ icon will be displayed.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md))
 - It returns a(n) `bool` value.

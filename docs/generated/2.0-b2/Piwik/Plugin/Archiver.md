@@ -72,7 +72,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$processing` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md))
 - It does not return anything.
@@ -84,7 +83,6 @@ Archive data for a day period.
 
 #### Signature
 
-- It is a **public abstract** method.
 - It does not return anything.
 
 <a name="archiveperiod" id="archiveperiod"></a>
@@ -94,7 +92,6 @@ Archive data for a non-day period.
 
 #### Signature
 
-- It is a **public abstract** method.
 - It does not return anything.
 
 <a name="shouldarchive" id="shouldarchive"></a>
@@ -104,6 +101,5 @@ Returns true if the current plugin should be archived or not.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `bool` value.
 

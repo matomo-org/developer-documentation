@@ -47,7 +47,6 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 
 #### Signature
 
-- It is a **public** method.
 - It is a **finalized** method.
 - It accepts the following parameter(s):
     - `$controllerAction`
@@ -66,7 +65,6 @@ assign either one variable by setting $vars and $value or an array of key/value 
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$vars`
     - `$value`
@@ -79,7 +77,6 @@ Hook that is intended to change the request config that is sent to the API.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="beforegenericfiltersareappliedtoloadeddatatable" id="beforegenericfiltersareappliedtoloadeddatatable"></a>
@@ -89,7 +86,6 @@ Hook that is executed before generic filters like "filter_limit" and "filter_off
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="aftergenericfiltersareappliedtoloadeddatatable" id="aftergenericfiltersareappliedtoloadeddatatable"></a>
@@ -99,7 +95,6 @@ This hook is executed after generic filters like "filter_limit" and "filter_offs
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="afterallfilteresareapplied" id="afterallfilteresareapplied"></a>
@@ -113,7 +108,6 @@ Format the data that you want to pass to the view here.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="beforerender" id="beforerender"></a>
@@ -123,6 +117,5 @@ Hook to make sure config properties have a specific value because the default co
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 

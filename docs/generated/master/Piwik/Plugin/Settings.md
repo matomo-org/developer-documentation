@@ -44,7 +44,6 @@ The abstract class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$pluginName`
 - It does not return anything.
@@ -54,7 +53,6 @@ The abstract class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getsettingsforcurrentuser" id="getsettingsforcurrentuser"></a>
@@ -69,7 +67,6 @@ any settings that require super user permissions.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `Piwik\Settings\Setting` value.
 
 <a name="getsettings" id="getsettings"></a>
@@ -79,7 +76,6 @@ Get all available settings without checking any permissions.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `Piwik\Settings\Setting` value.
 
 <a name="save" id="save"></a>
@@ -89,7 +85,6 @@ Saves (persists) the current setting values in the database.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="removeallpluginsettings" id="removeallpluginsettings"></a>
@@ -103,7 +98,6 @@ Useful for instance while uninstalling the plugin.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getsettingvalue" id="getsettingvalue"></a>
@@ -117,7 +111,6 @@ If no value is specified, the default value will be returned.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$setting` (`Piwik\Settings\Setting`)
 - It returns a(n) `mixed` value.
@@ -137,7 +130,6 @@ called. Alternatively the value will be casted to the specfied setting type.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$setting` (`Piwik\Settings\Setting`)
     - `$value`
@@ -157,7 +149,6 @@ effect.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$setting` (`Piwik\Settings\Setting`)
 - It does not return anything.

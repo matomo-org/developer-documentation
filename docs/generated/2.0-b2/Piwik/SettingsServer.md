@@ -29,7 +29,6 @@ Helpful for error handling: directly throw error without HTML (eg. when DB is do
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="isiis" id="isiis"></a>
@@ -39,7 +38,6 @@ Returns true if running on Microsoft IIS 7 (or above), false if otherwise.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="isapache" id="isapache"></a>
@@ -49,7 +47,6 @@ Returns true if running on an Apache web server, false if otherwise.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="iswindows" id="iswindows"></a>
@@ -59,7 +56,6 @@ Returns true if running on a Windows operating system, false if otherwise.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="istimezonesupportenabled" id="istimezonesupportenabled"></a>
@@ -69,7 +65,6 @@ Returns true if this php version/build supports timezone manipulation (e.g., php
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="isgdextensionenabled" id="isgdextensionenabled"></a>
@@ -83,6 +78,5 @@ ImageGraph and sparklines depend on the GD extension.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 

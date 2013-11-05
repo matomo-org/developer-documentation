@@ -30,7 +30,6 @@ Note: This function does not create directories recursively.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$path`
     - `$denyAccess`
@@ -47,7 +46,6 @@ See [glob](#http://php.net/manual/en/function.glob.php) for more info.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sDir`
     - `$sPattern`
@@ -62,7 +60,6 @@ Recursively deletes a directory.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$dir`
     - `$deleteRootToo`
@@ -76,7 +73,6 @@ Copies a file from `$source` to `$dest`.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$source`
     - `$dest`
@@ -92,7 +88,6 @@ Copies the contents of a directory recursively from `$source` to `$target`.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$source`
     - `$target`

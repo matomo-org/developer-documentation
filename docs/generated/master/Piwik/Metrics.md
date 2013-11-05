@@ -74,7 +74,6 @@ This class defines the following properties:
 
 #### Signature
 
-- It is a **public static** property.
 - Its type is not specified.
 
 
@@ -83,7 +82,6 @@ This class defines the following properties:
 
 #### Signature
 
-- It is a **public static** property.
 - Its type is not specified.
 
 
@@ -92,7 +90,6 @@ This class defines the following properties:
 
 #### Signature
 
-- It is a **public static** property.
 - Its type is not specified.
 
 
@@ -116,7 +113,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="getmappingfromidtoname" id="getmappingfromidtoname"></a>
@@ -124,7 +120,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="islowervaluebetter" id="islowervaluebetter"></a>
@@ -134,7 +129,6 @@ Is a lower value for a given column better?
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$column`
 - It returns a(n) `bool` value.
@@ -146,7 +140,6 @@ Derive the unit name from a column name
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$column`
     - `$idSite`
@@ -157,7 +150,6 @@ Derive the unit name from a column name
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="getdefaultmetrics" id="getdefaultmetrics"></a>
@@ -165,7 +157,6 @@ Derive the unit name from a column name
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="getdefaultprocessedmetrics" id="getdefaultprocessedmetrics"></a>
@@ -173,7 +164,6 @@ Derive the unit name from a column name
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="getdefaultmetricsdocumentation" id="getdefaultmetricsdocumentation"></a>
@@ -181,7 +171,6 @@ Derive the unit name from a column name
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="getpercentvisitcolumn" id="getpercentvisitcolumn"></a>
@@ -189,6 +178,5 @@ Derive the unit name from a column name
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 

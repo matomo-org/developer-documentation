@@ -98,7 +98,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$templateFile`
 - It does not return anything.
@@ -110,7 +109,6 @@ Returns the template filename.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="gettemplatevars" id="gettemplatevars"></a>
@@ -120,7 +118,6 @@ Returns the variables to bind to the template when rendering.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `array` value.
 
 <a name="__set" id="__set"></a>
@@ -134,7 +131,6 @@ Variable names may not be prefixed with '_'.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$key`
     - `$val`
@@ -151,7 +147,6 @@ Variable names may not be prefixed with '_'.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$key`
 - _Returns:_ The variable value.
@@ -169,7 +164,6 @@ See [setContentType](#setContentType).
 
 #### Signature
 
-- It is a **public** method.
 - _Returns:_ Generated template.
     - `string`
 
@@ -185,7 +179,6 @@ set just before rendering.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$contentType`
 - It does not return anything.
@@ -205,7 +198,6 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$option`
 - It does not return anything.
@@ -217,7 +209,6 @@ Add form to view
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$form` (`Piwik\QuickForm2`)
 - It does not return anything.
@@ -229,7 +220,6 @@ Assign value to a variable for use in a template ToDo: This is ugly.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$var`
     - `$value`
@@ -242,7 +232,6 @@ Clear compiled Smarty templates
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="singlereport" id="singlereport"></a>
@@ -252,7 +241,6 @@ Creates a View for and then renders the single report template.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$title`
     - `$reportHtml`

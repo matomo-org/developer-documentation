@@ -31,7 +31,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
     - `$metadataToRead`
@@ -47,7 +46,6 @@ See [MetadataCallbackAddMetadata](#).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
 - It does not return anything.

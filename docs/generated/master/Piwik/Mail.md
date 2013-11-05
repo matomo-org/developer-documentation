@@ -21,7 +21,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$charset`
 - It does not return anything.
@@ -33,7 +32,6 @@ Sets the sender.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$email`
     - `$name`

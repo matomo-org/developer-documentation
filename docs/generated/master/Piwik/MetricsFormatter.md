@@ -31,7 +31,6 @@ thousands separators and a decimal point specific to the current locale.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$value`
 - It returns a(n) `string` value.
@@ -43,7 +42,6 @@ Returns a prettified time value (in seconds).
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$numberOfSeconds`
     - `$displayTimeAsSentence`
@@ -58,12 +56,11 @@ Returns a prettified memory size value.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$size`
     - `$unit`
     - `$precision`
-- _Returns:_ eg, `&#039;128 M&#039;` or `&#039;256 K&#039;`.
+- _Returns:_ eg, `'128 M'` or `'256 K'`.
     - `string`
 
 <a name="getprettymoney" id="getprettymoney"></a>
@@ -73,7 +70,6 @@ Returns a pretty formated monetary value using the currency associated with a si
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$value`
     - `$idSite`
@@ -87,7 +83,6 @@ Prettifies a metric value based on the column name.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idSite`
     - `$columnName`
@@ -102,10 +97,9 @@ Returns the currency symbol for a site.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idSite`
-- _Returns:_ eg, `&#039;$&#039;`.
+- _Returns:_ eg, `'$'`.
     - `string`
 
 <a name="getcurrencylist" id="getcurrencylist"></a>
@@ -115,7 +109,6 @@ Returns the list of all known currency symbols.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ An array mapping currency codes to their respective currency symbols and a description, eg, `array(&#039;USD&#039; =&gt; array(&#039;$&#039;, &#039;US dollar&#039;))`.
+- _Returns:_ An array mapping currency codes to their respective currency symbols and a description, eg, `array('USD' => array('$', 'US dollar'))`.
     - `array`
 

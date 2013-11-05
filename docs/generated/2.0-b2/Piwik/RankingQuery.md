@@ -54,7 +54,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$limit`
 - It does not return anything.
@@ -66,7 +65,6 @@ Set the limit after which everything is grouped to "Others".
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$limit`
 - It does not return anything.
@@ -78,7 +76,6 @@ Set the value to use for the label in the 'Others' row.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$value`
 - It does not return anything.
@@ -94,7 +91,6 @@ Labels are the columns that are replaced with "Others" after the limit.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$labelColumn`
 - It does not return anything.
@@ -106,7 +102,6 @@ Add a column that has be added to the outer queries.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$column`
     - `$aggregationFunction`
@@ -125,7 +120,6 @@ by [execute](#execute).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$column`
 - It does not return anything.
@@ -152,7 +146,6 @@ for rows where `log_action.type = TYPE_ACTION_URL` and for rows `log_action.type
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$partitionColumn`
     - `$possibleValues`
@@ -171,7 +164,6 @@ The object has to be configured first using the other methods.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$innerQuery`
     - `$bind`
@@ -190,7 +182,6 @@ yourself, use this method.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$innerQuery`
 - _Returns:_ The entire ranking query SQL.

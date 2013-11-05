@@ -39,8 +39,7 @@ Executes tasks that are scheduled to run, then reschedules them.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ An array describing the results of scheduled task execution. Each element in the array will have the following format: ``` array( &#039;task&#039; =&gt; &#039;task name&#039;, &#039;output&#039; =&gt; &#039;... task output ...&#039; ) ```
+- _Returns:_ An array describing the results of scheduled task execution. Each element in the array will have the following format: ``` array( 'task' => 'task name', 'output' => '... task output ...' ) ```
     - `array`
 
 <a name="istaskbeingexecuted" id="istaskbeingexecuted"></a>
@@ -50,7 +49,6 @@ Returns true if the TaskScheduler is currently running a scheduled task.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="getscheduledtimeformethod" id="getscheduledtimeformethod"></a>
@@ -60,7 +58,6 @@ Return the next scheduled time given the class and method names of a scheduled t
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$className`
     - `$methodName`

@@ -26,7 +26,6 @@ Adds rows based on an array mapping label column values to value column values.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$array`
 - It does not return anything.

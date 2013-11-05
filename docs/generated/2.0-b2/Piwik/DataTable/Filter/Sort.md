@@ -30,7 +30,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
     - `$columnToSort`
@@ -46,7 +45,6 @@ Updates the order
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$order`
 - It does not return anything.
@@ -58,7 +56,6 @@ Sorting method used for sorting numbers
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$a`
     - `$b`
@@ -71,7 +68,6 @@ Sorting method used for sorting values natural
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$a`
     - `$b`
@@ -84,7 +80,6 @@ Sorting method used for sorting values
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$a`
     - `$b`
@@ -97,7 +92,6 @@ Sorts the given data table by defined column and sorting method
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
 - It returns a(n) `mixed` value.

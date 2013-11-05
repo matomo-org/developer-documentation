@@ -25,7 +25,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$title`
@@ -36,6 +35,5 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 

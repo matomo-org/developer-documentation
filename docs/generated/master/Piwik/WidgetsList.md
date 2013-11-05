@@ -30,8 +30,7 @@ Returns all available widgets.
 
 #### Signature
 
-- It is a **public static** method.
-- _Returns:_ Maps widget categories with an array of widget information, eg, ``` array( &#039;Visitors&#039; =&gt; array( array(...), array(...) ), &#039;Visits&#039; =&gt; array( array(...), array(...) ), ) ```
+- _Returns:_ Maps widget categories with an array of widget information, eg, ``` array( 'Visitors' => array( array(...), array(...) ), 'Visits' => array( array(...), array(...) ), ) ```
     - `array`
 
 <a name="add" id="add"></a>
@@ -41,7 +40,6 @@ Adds a report to the list of dashboard widgets.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$widgetCategory`
     - `$widgetName`
@@ -57,7 +55,6 @@ Removes one more widgets from the widget list.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$widgetCategory`
     - `$widgetName`
@@ -70,7 +67,6 @@ Returns true if the widget with the given parameters exists in the widget list, 
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$controllerName`
     - `$controllerAction`
@@ -83,6 +79,5 @@ Method to reset the widget list For testing only
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 

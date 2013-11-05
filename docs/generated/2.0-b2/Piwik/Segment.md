@@ -70,7 +70,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$segmentCondition`
     - `$idSites`
@@ -83,7 +82,6 @@ Returns true if the segment is empty, false if otherwise.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getstring" id="getstring"></a>
@@ -93,7 +91,6 @@ Returns the segment condition.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="gethash" id="gethash"></a>
@@ -103,7 +100,6 @@ Returns a hash of the segment condition, or the empty string if the segment cond
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getselectquery" id="getselectquery"></a>
@@ -113,7 +109,6 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$select`
     - `$from`

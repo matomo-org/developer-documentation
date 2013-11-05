@@ -29,7 +29,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
     - `$metadataToFilter`

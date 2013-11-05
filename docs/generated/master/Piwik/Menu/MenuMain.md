@@ -41,7 +41,6 @@ Returns if the URL was found in the menu.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$url`
 - It returns a(n) `boolean` value.
@@ -53,6 +52,5 @@ Triggers the Menu.Reporting.addItems hook and returns the menu.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `Array` value.
 

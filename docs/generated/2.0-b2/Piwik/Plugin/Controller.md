@@ -52,7 +52,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getdefaultaction" id="getdefaultaction"></a>
@@ -62,7 +61,6 @@ Returns the name of the default method that will be called when visiting: index.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="sethostvalidationvariablesview" id="sethostvalidationvariablesview"></a>
@@ -80,7 +78,6 @@ Checks if the current host is valid and sets variables on the given view, includ
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$view`
 - It does not return anything.
@@ -98,7 +95,6 @@ Sets general period variables on a view, including:  - **displayUniqueVisitors**
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$view`
 - It does not return anything.
@@ -118,7 +114,6 @@ This function will exit immediately after executing.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$moduleToRedirect`
     - `$actionToRedirect`
@@ -135,7 +130,6 @@ Returns a prettified date string for use in period selector widget.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$period`
 - It returns a(n) `string` value.

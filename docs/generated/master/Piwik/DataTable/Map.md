@@ -54,8 +54,7 @@ This label is used by DataTable Renderers (it becomes a column name or the XML d
 
 #### Signature
 
-- It is a **public** method.
-- _Returns:_ eg, `&#039;idSite&#039;`, `&#039;period&#039;`
+- _Returns:_ eg, `'idSite'`, `'period'`
     - `string`
 
 <a name="setkeyname" id="setkeyname"></a>
@@ -69,7 +68,6 @@ See [getKeyName](#getKeyName).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - It does not return anything.
@@ -81,7 +79,6 @@ Returns the number of DataTables in this DataTable\Map.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="queuefilter" id="queuefilter"></a>
@@ -95,7 +92,6 @@ See [DataTable::queueFilter](#) for more information..
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$className`
     - `$parameters`
@@ -108,7 +104,6 @@ Apply the filters previously queued to each DataTable contained by this DataTabl
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="filter" id="filter"></a>
@@ -118,7 +113,6 @@ Apply a filter to all tables contained by this instance.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$className`
     - `$parameters`
@@ -131,7 +125,6 @@ Returns the array of DataTables contained by this class.
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - [`DataTable[]`](../../Piwik/DataTable.md)
     - [`Map[]`](../../Piwik/DataTable/Map.md)
@@ -143,7 +136,6 @@ Returns the table with the specific label.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$label`
 - It can return one of the following values:
@@ -157,7 +149,6 @@ Returns the first DataTable in the DataTable array.
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - [`DataTable`](../../Piwik/DataTable.md)
     - [`Map`](../../Piwik/DataTable/Map.md)
@@ -169,7 +160,6 @@ Adds a new DataTable to the DataTable\Map.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table`
     - `$label`
@@ -182,7 +172,6 @@ Returns a string output of this DataTable\Map (applying the default renderer to 
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="enablerecursivesort" id="enablerecursivesort"></a>
@@ -194,7 +183,6 @@ Returns a string output of this DataTable\Map (applying the default renderer to 
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="renamecolumn" id="renamecolumn"></a>
@@ -208,7 +196,6 @@ Renames the given column in each contained DataTable.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oldName`
     - `$newName`
@@ -225,7 +212,6 @@ Deletes the specified columns in each contained DataTable.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$columns`
     - `$deleteRecursiveInSubtables`
@@ -238,7 +224,6 @@ Deletes a table from the array of DataTables.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$id`
 - It does not return anything.
@@ -254,7 +239,6 @@ Deletes the given column in every contained DataTable.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - It does not return anything.
@@ -266,7 +250,6 @@ Returns the array containing all row values in all data tables for the requested
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - It returns a(n) `array` value.
@@ -323,7 +306,6 @@ query results into one DataTable w/ different rows differentiated by site ID.
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - [`DataTable`](../../Piwik/DataTable.md)
     - [`Map`](../../Piwik/DataTable/Map.md)
@@ -341,7 +323,6 @@ See [DataTable::addDataTable()](#).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$tableToSum` ([`DataTable`](../../Piwik/DataTable.md))
 - It does not return anything.
@@ -357,7 +338,6 @@ Returns a new DataTable\Map w/ child tables that have had their subtables merged
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Map`](../../Piwik/DataTable/Map.md) value.
 
 <a name="getemptyclone" id="getemptyclone"></a>
@@ -367,7 +347,6 @@ Returns a new DataTable\Map w/o any child DataTables, but with the same key name
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Map`](../../Piwik/DataTable/Map.md) value.
 
 <a name="getmetadataintersectarray" id="getmetadataintersectarray"></a>
@@ -377,7 +356,6 @@ Returns the intersection of children's metadata arrays (what they all have in co
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
 - It returns a(n) `mixed` value.
@@ -391,6 +369,5 @@ Returns the intersection of children's metadata arrays (what they all have in co
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `array` value.
 

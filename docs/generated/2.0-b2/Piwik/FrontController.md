@@ -59,7 +59,6 @@ See also [fetchDispatch](#fetchDispatch).
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$module`
     - `$action`
@@ -82,11 +81,10 @@ of whatever is in the output buffer.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$module`
     - `$actionName`
     - `$parameters`
-- _Returns:_ The `echo`&#039;d data or the return value of the controller action.
+- _Returns:_ The `echo`'d data or the return value of the controller action.
     - `string`
 

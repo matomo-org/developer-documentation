@@ -32,7 +32,6 @@ This class defines the following properties:
 
 #### Signature
 
-- It is a **public static** property.
 - It is a(n) `array` value.
 
 Methods
@@ -75,7 +74,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It does not return anything.
@@ -87,7 +85,6 @@ Sets the cached site data with an array that associates site IDs with individual
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sites`
 - It does not return anything.
@@ -99,7 +96,6 @@ Sets the cached Site data with a non-associated array of site data.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$sites`
 - It does not return anything.
@@ -115,7 +111,6 @@ Useful for debugging.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getname" id="getname"></a>
@@ -125,7 +120,6 @@ Returns the name of the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -137,7 +131,6 @@ Returns the main url of the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -149,7 +142,6 @@ Returns the id of the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -161,7 +153,6 @@ Returns the creation date of the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -173,7 +164,6 @@ Returns the timezone of the size.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -185,7 +175,6 @@ Returns the currency of the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -197,7 +186,6 @@ Returns the excluded ips of the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -209,7 +197,6 @@ Returns the excluded query parameters of the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -221,7 +208,6 @@ Returns whether ecommerce is enabled for the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `bool` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -233,7 +219,6 @@ Returns the site search keyword query parameters for the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -245,7 +230,6 @@ Returns the site search category query parameters for the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -257,7 +241,6 @@ Returns whether Site Search Tracking is enabled for the site.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `bool` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
@@ -269,7 +252,6 @@ Checks the given string for valid site ids and returns them as an array.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$ids`
     - `$_restrictSitesToLogin`
@@ -287,7 +269,6 @@ See also [setSites](#setSites) and [setSitesFromArray](#setSitesFromArray).
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="getnamefor" id="getnamefor"></a>
@@ -297,7 +278,6 @@ Returns the name of the site with the specified ID.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It returns a(n) `string` value.
@@ -309,7 +289,6 @@ Returns the timezone of the site with the specified ID.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It returns a(n) `string` value.
@@ -321,7 +300,6 @@ Returns the creation date of the site with the specified ID.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It returns a(n) `string` value.
@@ -333,7 +311,6 @@ Returns the url for the site with the specified ID.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It returns a(n) `string` value.
@@ -345,7 +322,6 @@ Returns whether the site with the specified ID is ecommerce enabled
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It returns a(n) `string` value.
@@ -357,7 +333,6 @@ Returns whether the site with the specified ID is Site Search enabled
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It returns a(n) `string` value.
@@ -369,7 +344,6 @@ Returns the currency of the site with the specified ID.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It returns a(n) `string` value.
@@ -381,7 +355,6 @@ Returns the excluded IP addresses of the site with the specified ID.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It returns a(n) `string` value.
@@ -393,7 +366,6 @@ Returns the excluded query parameters for the site with the specified ID.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idsite`
 - It returns a(n) `string` value.

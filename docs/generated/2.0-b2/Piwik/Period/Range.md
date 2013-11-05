@@ -40,7 +40,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$strPeriod`
     - `$strDate`
@@ -55,7 +54,6 @@ Returns the current period as a localized short string.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getlocalizedlongstring" id="getlocalizedlongstring"></a>
@@ -65,7 +63,6 @@ Returns the current period as a localized long string.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getdatestart" id="getdatestart"></a>
@@ -75,7 +72,6 @@ Returns the start date of the period
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Date`](../../Piwik/Date.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -87,7 +83,6 @@ Returns the current period as a string
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="setdefaultenddate" id="setdefaultenddate"></a>
@@ -97,7 +92,6 @@ Sets the default end date of the period
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$oDate` ([`Date`](../../Piwik/Date.md))
 - It does not return anything.
@@ -109,10 +103,9 @@ Given a date string, returns false if not a date range, or returns the array con
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$dateString`
-- _Returns:_ array(1 =&gt; dateStartString, 2 =&gt; dateEndString ) or false if the input was not a date range
+- _Returns:_ array(1 => dateStartString, 2 => dateEndString ) or false if the input was not a date range
     - `mixed`
 
 <a name="getdateend" id="getdateend"></a>
@@ -122,7 +115,6 @@ Returns the end date of the period
 
 #### Signature
 
-- It is a **public** method.
 - It can return one of the following values:
     - `null`
     - [`Date`](../../Piwik/Date.md)
@@ -134,7 +126,6 @@ Returns the date that is one period before the supplied date.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$date`
     - `$period`
@@ -148,12 +139,11 @@ Returns a date ragne string given a period type, end date and number of periods 
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$period`
     - `$lastN`
     - `$endDate`
     - `$site`
-- _Returns:_ The date range string, eg, `&#039;2012-01-02,2013-01-02&#039;`.
+- _Returns:_ The date range string, eg, `'2012-01-02,2013-01-02'`.
     - `string`
 

@@ -81,14 +81,13 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$dimensions` (`array`)
     - `$where`
     - `$additionalSelects` (`array`)
     - `$metrics`
     - `$rankingQuery`
-- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn&#039;t supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.
+- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.
     - `mixed`
 
 <a name="queryecommerceitems" id="queryecommerceitems"></a>
@@ -124,10 +123,9 @@ Segmentation is not yet supported in this aggregation method.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$dimension`
-- _Returns:_ A statement object that can be used to iterate through the query&#039;s result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.
+- _Returns:_ A statement object that can be used to iterate through the query's result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.
     - `Piwik\DataAccess\Zend_Db_Statement`
 
 <a name="queryactionsbydimension" id="queryactionsbydimension"></a>
@@ -154,7 +152,6 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$dimensions`
     - `$where`
@@ -162,6 +159,6 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
     - `$metrics`
     - `$rankingQuery`
     - `$joinLogActionOnColumn`
-- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn&#039;t supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
+- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
     - `mixed`
 

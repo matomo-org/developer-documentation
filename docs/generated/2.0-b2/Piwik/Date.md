@@ -87,7 +87,6 @@ result will be in UTC.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$dateString`
     - `$timezone`
@@ -102,7 +101,6 @@ Returns the current timestamp as a string with the following format: `'YYYY-MM-D
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getdatestartutc" id="getdatestartutc"></a>
@@ -118,7 +116,6 @@ be `'2007-07-24'`.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getdateendutc" id="getdateendutc"></a>
@@ -134,7 +131,6 @@ be `'2007-07-24 23:59:59'`.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="settimezone" id="settimezone"></a>
@@ -148,7 +144,6 @@ See [getTimestamp](#getTimestamp) to see how the timezone is used.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$timezone`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
@@ -160,7 +155,6 @@ Converts a timestamp in a timezone to UTC.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$timestamp`
     - `$timezone`
@@ -174,7 +168,6 @@ Returns the Unix timestamp of the date in UTC.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="gettimestamp" id="gettimestamp"></a>
@@ -184,7 +177,6 @@ Returns the unix timestamp of the date in UTC, converted from the current timest
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="islater" id="islater"></a>
@@ -194,7 +186,6 @@ Returns true if the current date is older than the given `$date`.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../Piwik/Date.md))
 - It returns a(n) `bool` value.
@@ -206,7 +197,6 @@ Returns true if the current date is earlier than the given `$date`.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../Piwik/Date.md))
 - It returns a(n) `bool` value.
@@ -223,7 +213,6 @@ for the list of format strings.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$format`
 - It returns a(n) `string` value.
@@ -235,8 +224,7 @@ See [toString](#toString).
 
 #### Signature
 
-- It is a **public** method.
-- _Returns:_ The current date in `&#039;YYYY-MM-DD&#039;` format.
+- _Returns:_ The current date in `'YYYY-MM-DD'` format.
     - `string`
 
 <a name="compareweek" id="compareweek"></a>
@@ -246,10 +234,9 @@ Performs three-way comparison of the week of the current date against the given 
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../Piwik/Date.md))
-- _Returns:_ Returns `0` if the current week is equal to `$date`&#039;s, `-1` if the current week is earlier or `1` if the current week is later.
+- _Returns:_ Returns `0` if the current week is equal to `$date`'s, `-1` if the current week is earlier or `1` if the current week is later.
     - `int`
 
 <a name="comparemonth" id="comparemonth"></a>
@@ -259,10 +246,9 @@ Performs three-way comparison of the month of the current date against the given
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../Piwik/Date.md))
-- _Returns:_ Returns `0` if the current month is equal to `$date`&#039;s, `-1` if the current month is earlier or `1` if the current month is later.
+- _Returns:_ Returns `0` if the current month is equal to `$date`'s, `-1` if the current month is earlier or `1` if the current month is later.
     - `int`
 
 <a name="istoday" id="istoday"></a>
@@ -272,7 +258,6 @@ Returns true if current date is today.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `bool` value.
 
 <a name="now" id="now"></a>
@@ -282,7 +267,6 @@ Returns a date object set to now in UTC (same as [today](#today), except that th
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 <a name="today" id="today"></a>
@@ -292,7 +276,6 @@ Returns a date object set to today at midnight in UTC.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 <a name="yesterday" id="yesterday"></a>
@@ -302,7 +285,6 @@ Returns a date object set to yesterday at midnight in UTC.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 <a name="yesterdaysametime" id="yesterdaysametime"></a>
@@ -312,7 +294,6 @@ Returns a date object set to yesterday with the current time of day in UTC.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 <a name="settime" id="settime"></a>
@@ -322,7 +303,6 @@ Returns a new Date instance with `$this` date's day and the specified new time o
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$time`
 - _Returns:_ The new date with the time of day changed.
@@ -335,7 +315,6 @@ Returns a new Date instance with `$this` date's time of day and the day specifie
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$day`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
@@ -347,7 +326,6 @@ Returns a new Date instance with `$this` date's time of day, month and day, but 
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$year`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
@@ -359,7 +337,6 @@ Subtracts `$n` number of days from `$this` date and returns a new Date object.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
@@ -371,7 +348,6 @@ Subtracts `$n` weeks from `$this` date and returns a new Date object.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
@@ -383,7 +359,6 @@ Subtracts `$n` months from `$this` date and returns the result as a new Date obj
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
 - _Returns:_ new date
@@ -396,7 +371,6 @@ Subtracts `$n` years from `$this` date and returns the result as a new Date obje
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
@@ -423,10 +397,9 @@ Allowed tags include:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$template`
-- _Returns:_ eg. `&quot;Aug 2009&quot;`
+- _Returns:_ eg. `"Aug 2009"`
     - `string`
 
 <a name="addday" id="addday"></a>
@@ -440,7 +413,6 @@ instance.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
@@ -452,7 +424,6 @@ Adds `$n` hours to `$this` date and returns the result in a new Date.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
@@ -470,7 +441,6 @@ Date instance does not have to be created.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$timestamp`
     - `$n`
@@ -484,7 +454,6 @@ Subtracts `$n` hours from `$this` date and returns the result in a new Date.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
@@ -496,7 +465,6 @@ Adds a period to `$this` date and returns the result in a new Date instance.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
     - `$period`
@@ -509,7 +477,6 @@ Subtracts a period from `$this` date and returns the result in a new Date instan
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$n`
     - `$period`
@@ -522,7 +489,6 @@ Returns the number of days represented by a number of seconds.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$secs`
 - It returns a(n) `float` value.

@@ -62,7 +62,6 @@ DataTables are summed recursively so subtables will be summed as well.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$recordNames`
     - `$maximumRowsInDataTableLevelZero`
@@ -70,7 +69,7 @@ DataTables are summed recursively so subtables will be summed as well.
     - `$columnToSortByBeforeTruncation`
     - `$columnAggregationOperations`
     - `$invalidSummedColumnNameToRenamedName`
-- _Returns:_ Returns the row counts of each aggregated report before truncation, eg, ``` array( &#039;report1&#039; =&gt; array(&#039;level0&#039; =&gt; $report1-&gt;getRowsCount, &#039;recursive&#039; =&gt; $report1-&gt;getRowsCountRecursive()), &#039;report2&#039; =&gt; array(&#039;level0&#039; =&gt; $report2-&gt;getRowsCount, &#039;recursive&#039; =&gt; $report2-&gt;getRowsCountRecursive()), ... ) ```
+- _Returns:_ Returns the row counts of each aggregated report before truncation, eg, ``` array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... ) ```
     - `array`
 
 <a name="aggregatenumericmetrics" id="aggregatenumericmetrics"></a>
@@ -80,11 +79,10 @@ Aggregates metrics for every subperiod of the current period and inserts the res
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$columns`
     - `$operationToApply`
-- _Returns:_ Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array(&#039;nb_visits&#039;, &#039;nb_hits&#039;)` is supplied for `$columns`, ``` array( &#039;nb_visits&#039; =&gt; 3040, &#039;nb_hits&#039; =&gt; 405 ) ``` is returned.
+- _Returns:_ Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, ``` array( 'nb_visits' => 3040, 'nb_hits' => 405 ) ``` is returned.
     - `array`
     - `int`
 

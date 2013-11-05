@@ -71,7 +71,6 @@ forwarded to request array before it is returned.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$request`
 - It returns a(n) `array` value.
@@ -83,7 +82,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$request`
 - It does not return anything.
@@ -95,7 +93,6 @@ For backward compatibility: Piwik API still works if module=Referers, we rewrite
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$module`
 - It returns a(n) `string` value.
@@ -118,7 +115,6 @@ Post-processing includes:
 
 #### Signature
 
-- It is a **public** method.
 - _Returns:_ The data resulting from the API call.
     - [`DataTable`](../../Piwik/DataTable.md)
     - `Piwik\API\Map`
@@ -134,7 +130,6 @@ Returns the class name of a plugin's API given the plugin name.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$plugin`
 - It returns a(n) `string` value.
@@ -150,7 +145,6 @@ It will overwrite the previous Auth object.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$request`
 - It returns a(n) `void` value.
@@ -162,7 +156,6 @@ Helper method that processes an API request in one line using the variables in `
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$method`
     - `$paramOverride`
@@ -181,7 +174,6 @@ by any modifications to `$_GET` and will not include parameters in `$_POST`.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `array` value.
 
 <a name="getbasereporturl" id="getbasereporturl"></a>
@@ -191,7 +183,6 @@ Returns URL for the current requested report w/o any filter parameters.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$module`
     - `$action`
@@ -205,7 +196,6 @@ Returns the current URL without generic filter query parameters.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$params`
 - It returns a(n) `string` value.
@@ -217,7 +207,6 @@ Returns whether the DataTable result will have to be expanded for the current re
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="getrawsegmentfromrequest" id="getrawsegmentfromrequest"></a>
@@ -227,7 +216,6 @@ Returns the unmodified segment from the original request.
 
 #### Signature
 
-- It is a **public static** method.
 - It can return one of the following values:
     - `array`
     - `bool`

@@ -40,7 +40,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../Piwik/DataTable.md))
 - It does not return anything.
@@ -52,7 +51,6 @@ Filters the supplied DataTable.
 
 #### Signature
 
-- It is a **public abstract** method.
 - It accepts the following parameter(s):
     - `$table`
 - It does not return anything.
@@ -69,7 +67,6 @@ is up to the derived Filter class.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$enable`
 - It does not return anything.
@@ -81,7 +78,6 @@ Filters a row's subtable, if one exists and is loaded in memory.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$row` ([`Row`](../../Piwik/DataTable/Row.md))
 - It does not return anything.

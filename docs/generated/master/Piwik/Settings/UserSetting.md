@@ -27,7 +27,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$title`
@@ -39,7 +38,6 @@ The class defines the following methods:
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="setuserlogin" id="setuserlogin"></a>
@@ -49,7 +47,6 @@ Sets (overwrites) the userLogin.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$userLogin`
 - It does not return anything.
@@ -68,7 +65,6 @@ is deleted. Otherwise a user could register with the same name afterwards and se
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$userLogin`
 - It does not return anything.

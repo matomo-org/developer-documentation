@@ -93,7 +93,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$pluginName`
 - It does not return anything.
@@ -107,7 +106,6 @@ Returns the plugin details - 'description' => string        // 1-2 sentence desc
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `array` value.
 
 <a name="getlisthooksregistered" id="getlisthooksregistered"></a>
@@ -117,8 +115,7 @@ Returns a list of hooks with associated event observers.
 
 #### Signature
 
-- It is a **public** method.
-- _Returns:_ eg, array( &#039;API.getReportMetadata&#039; =&gt; &#039;myPluginFunction&#039;, &#039;Another.event&#039;         =&gt; array( &#039;function&#039; =&gt; &#039;myOtherPluginFunction&#039;, &#039;after&#039;    =&gt; true // execute after callbacks w/o ordering ) &#039;Yet.Another.event&#039;     =&gt; array( &#039;function&#039; =&gt; &#039;myOtherPluginFunction&#039;, &#039;before&#039;   =&gt; true // execute before callbacks w/o ordering ) )
+- _Returns:_ eg, array( 'API.getReportMetadata' => 'myPluginFunction', 'Another.event'         => array( 'function' => 'myOtherPluginFunction', 'after'    => true // execute after callbacks w/o ordering ) 'Yet.Another.event'     => array( 'function' => 'myOtherPluginFunction', 'before'   => true // execute before callbacks w/o ordering ) )
     - `array`
 
 <a name="postload" id="postload"></a>
@@ -132,7 +129,6 @@ Useful for initialization code that uses translated strings from the plugin.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="install" id="install"></a>
@@ -150,7 +146,6 @@ needs to:
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if installation of fails for some reason.
@@ -170,7 +165,6 @@ an [uninstall](#uninstall) method.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if uninstallation of fails for some reason.
@@ -182,7 +176,6 @@ Executed every time the plugin is enabled.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="deactivate" id="deactivate"></a>
@@ -192,7 +185,6 @@ Executed every time the plugin is disabled.
 
 #### Signature
 
-- It is a **public** method.
 - It does not return anything.
 
 <a name="getversion" id="getversion"></a>
@@ -202,7 +194,6 @@ Returns the plugin version number.
 
 #### Signature
 
-- It is a **public** method.
 - It is a **finalized** method.
 - It returns a(n) `string` value.
 
@@ -213,7 +204,6 @@ Returns true if this plugin is a theme, false if otherwise.
 
 #### Signature
 
-- It is a **public** method.
 - It is a **finalized** method.
 - It returns a(n) `bool` value.
 
@@ -224,7 +214,6 @@ Returns the plugin's base class name without the namespace, e.g., "UserCountry" 
 
 #### Signature
 
-- It is a **public** method.
 - It is a **finalized** method.
 - It returns a(n) `string` value.
 
@@ -239,7 +228,6 @@ Returns false if we can't find one.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$backtrace`
 - It can return one of the following values:

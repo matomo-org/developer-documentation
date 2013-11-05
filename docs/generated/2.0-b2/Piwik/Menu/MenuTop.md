@@ -40,7 +40,6 @@ Adds a new entry to the TopMenu.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$topMenuName`
     - `$url`

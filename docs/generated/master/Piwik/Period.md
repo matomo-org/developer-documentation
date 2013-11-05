@@ -57,7 +57,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../Piwik/Date.md))
 - It does not return anything.
@@ -73,7 +72,6 @@ Note: This method cannot create Range periods.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$strPeriod`
     - `$date`
@@ -88,7 +86,6 @@ Returns true $dateString and $period correspond to multiple periods.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$dateString`
     - `$period`
@@ -101,7 +98,6 @@ Creates a period instance using a Site instance and two strings describing the p
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$timezone`
     - `$period`
@@ -115,7 +111,6 @@ Returns the first day of the period.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 <a name="getdateend" id="getdateend"></a>
@@ -125,7 +120,6 @@ Returns the last day of the period.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
 
 <a name="getid" id="getid"></a>
@@ -135,7 +129,6 @@ Returns the period ID.
 
 #### Signature
 
-- It is a **public** method.
 - _Returns:_ A integer unique to this type of period.
     - `int`
 
@@ -146,8 +139,7 @@ Returns the label for the current period.
 
 #### Signature
 
-- It is a **public** method.
-- _Returns:_ `&quot;day&quot;`, `&quot;week&quot;`, `&quot;month&quot;`, `&quot;year&quot;`, `&quot;range&quot;`
+- _Returns:_ `"day"`, `"week"`, `"month"`, `"year"`, `"range"`
     - `string`
 
 <a name="getnumberofsubperiods" id="getnumberofsubperiods"></a>
@@ -157,7 +149,6 @@ Returns the number of available subperiods.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `int` value.
 
 <a name="getsubperiods" id="getsubperiods"></a>
@@ -172,7 +163,6 @@ this would be 12 months. For a month this would be 28-31 days. Etc.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) [`Period[]`](../Piwik/Period.md) value.
 
 <a name="tostring" id="tostring"></a>
@@ -182,7 +172,6 @@ Returns a list of strings representing the current period.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$format`
 - _Returns:_ An array of string dates that this period consists of.
@@ -195,7 +184,6 @@ See [toString](#toString).
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `string` value.
 
 <a name="getprettystring" id="getprettystring"></a>
@@ -205,7 +193,6 @@ Returns a pretty string describing this period.
 
 #### Signature
 
-- It is a **public abstract** method.
 - It returns a(n) `string` value.
 
 <a name="getlocalizedshortstring" id="getlocalizedshortstring"></a>
@@ -215,7 +202,6 @@ Returns a short string description of this period that is localized with the cur
 
 #### Signature
 
-- It is a **public abstract** method.
 - It returns a(n) `string` value.
 
 <a name="getlocalizedlongstring" id="getlocalizedlongstring"></a>
@@ -225,7 +211,6 @@ Returns a long string description of this period that is localized with the curr
 
 #### Signature
 
-- It is a **public abstract** method.
 - It returns a(n) `string` value.
 
 <a name="getrangestring" id="getrangestring"></a>
@@ -235,7 +220,6 @@ Returns a succinct string describing this period.
 
 #### Signature
 
-- It is a **public** method.
-- _Returns:_ eg, `&#039;2012-01-01,2012-01-31&#039;`.
+- _Returns:_ eg, `'2012-01-01,2012-01-31'`.
     - `string`
 

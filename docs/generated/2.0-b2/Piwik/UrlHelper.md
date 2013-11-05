@@ -29,11 +29,10 @@ query string.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$queryParameters`
     - `$parametersToExclude`
-- _Returns:_ A query string, eg, `&quot;?site=0&quot;`.
+- _Returns:_ A query string, eg, `"?site=0"`.
     - `string`
 
 <a name="getparseurlreverse" id="getparseurlreverse"></a>
@@ -47,10 +46,9 @@ Copied from the PHP comments at http://php.net/parse_url
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$parsed`
-- _Returns:_ The URL or `false` if `$parsed` isn&#039;t an array.
+- _Returns:_ The URL or `false` if `$parsed` isn't an array.
     - `Piwik\false`
     - `string`
 
@@ -61,10 +59,9 @@ Returns a URL query string as an array.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$urlQuery`
-- _Returns:_ eg, `array(&#039;param1&#039; =&gt; &#039;value1&#039;, &#039;param2&#039; =&gt; &#039;value2&#039;)`
+- _Returns:_ eg, `array('param1' => 'value1', 'param2' => 'value2')`
     - `array`
 
 <a name="getparameterfromquerystring" id="getparameterfromquerystring"></a>
@@ -74,7 +71,6 @@ Returns the value of a single query parameter from the supplied query string.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$urlQuery`
     - `$parameter`
@@ -89,7 +85,6 @@ Returns the path and query string of a URL.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$url`
 - _Returns:_ eg, `/test/index.php?module=CoreHome` if `$url` is `http://piwik.org/test/index.php?module=CoreHome`.

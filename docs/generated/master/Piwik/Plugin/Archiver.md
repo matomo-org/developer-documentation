@@ -52,7 +52,6 @@ Constructor.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$processing` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md))
 - It does not return anything.
@@ -68,7 +67,6 @@ Plugins that compute analytics data should create an Archiver class that descend
 
 #### Signature
 
-- It is a **public abstract** method.
 - It does not return anything.
 
 <a name="aggregatemultiplereports" id="aggregatemultiplereports"></a>
@@ -78,7 +76,6 @@ Archive data for a non-day period.
 
 #### Signature
 
-- It is a **public abstract** method.
 - It does not return anything.
 
 <a name="shouldarchive" id="shouldarchive"></a>
@@ -88,6 +85,5 @@ Returns true if the current plugin should be archived or not.
 
 #### Signature
 
-- It is a **public** method.
 - It returns a(n) `bool` value.
 

@@ -58,7 +58,6 @@ Returns the current user's email address.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `string` value.
 
 <a name="getsuperuserlogin" id="getsuperuserlogin"></a>
@@ -68,7 +67,6 @@ Returns the super user's username.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `string` value.
 
 <a name="getsuperuseremail" id="getsuperuseremail"></a>
@@ -78,7 +76,6 @@ Returns the super user's email address.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `string` value.
 
 <a name="getcurrentuserlogin" id="getcurrentuserlogin"></a>
@@ -88,7 +85,6 @@ Returns the current user's username.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `string` value.
 
 <a name="getcurrentusertokenauth" id="getcurrentusertokenauth"></a>
@@ -98,7 +94,6 @@ Returns the current user's token auth.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `string` value.
 
 <a name="isuserissuperuserortheuser" id="isuserissuperuserortheuser"></a>
@@ -108,7 +103,6 @@ Returns true if the current user is either the super user or the user specified 
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$theUser`
 - It returns a(n) `bool` value.
@@ -120,7 +114,6 @@ Check that the current user is either the specified user or the superuser.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$theUser`
 - It does not return anything.
@@ -134,7 +127,6 @@ Returns true if the current user is the Super User.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="isuserisanonymous" id="isuserisanonymous"></a>
@@ -144,7 +136,6 @@ Returns true if the current user is the special anonymous user or not.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="checkuserisnotanonymous" id="checkuserisnotanonymous"></a>
@@ -154,7 +145,6 @@ Checks that the user is not the anonymous user.
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 - It throws one of the following exceptions:
     - `NoAccessException` &mdash; if the current user is the anonymous user.
@@ -166,7 +156,6 @@ Check that the current user is the superuser.
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user is not the superuser.
@@ -178,7 +167,6 @@ Returns true if the user has admin access to the requested sites, false if other
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idSites`
 - It returns a(n) `bool` value.
@@ -190,7 +178,6 @@ Checks that the current user has admin access to the requested list of sites.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idSites`
 - It does not return anything.
@@ -204,7 +191,6 @@ Returns true if the current user has admin access to at least one site.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="checkuserhassomeadminaccess" id="checkuserhassomeadminaccess"></a>
@@ -214,7 +200,6 @@ Checks that the current user has admin access to at least one site.
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have admin access to any site.
@@ -226,7 +211,6 @@ Returns true if the user has view access to the requested list of sites.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idSites`
 - It returns a(n) `bool` value.
@@ -238,7 +222,6 @@ Checks that the current user has view access to the requested list of sites
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$idSites`
 - It does not return anything.
@@ -252,7 +235,6 @@ Returns true if the current user has view access to at least one site.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `bool` value.
 
 <a name="checkuserhassomeviewaccess" id="checkuserhassomeviewaccess"></a>
@@ -262,7 +244,6 @@ Checks that the current user has view access to at least one site.
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have view access to any site.
@@ -274,7 +255,6 @@ Redirects the current request to a new module and action.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$newModule`
     - `$newAction`
@@ -288,7 +268,6 @@ Returns true if the email address is a valid.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$emailAddress`
 - It returns a(n) `bool` value.
@@ -300,7 +279,6 @@ Post an event to Piwik's event dispatcher which will execute the event's observe
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$eventName`
     - `$params`
@@ -320,7 +298,6 @@ need to use this function.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$eventName`
     - `$function`
@@ -338,7 +315,6 @@ cannot be found for the ID, the ID is returned.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$translationId`
     - `$args`
@@ -355,7 +331,6 @@ This function does not throw any exception. Use it to translate exceptions.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$message`
     - `$args`

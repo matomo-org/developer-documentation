@@ -32,7 +32,6 @@ has not been created, this method will create it.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) [`Singleton`](../Piwik/Singleton.md) value.
 
 <a name="unsetinstance" id="unsetinstance"></a>
@@ -42,7 +41,6 @@ Used in tests only
 
 #### Signature
 
-- It is a **public static** method.
 - It does not return anything.
 
 <a name="setsingletoninstance" id="setsingletoninstance"></a>
@@ -56,7 +54,6 @@ For testing purposes.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$instance`
 - It does not return anything.

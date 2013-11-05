@@ -21,7 +21,6 @@ Converts array to a datatable
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$array` (`Piwik\DataArray`)
 - It returns a(n) [`DataTable`](../../Piwik/DataTable.md) value.
@@ -52,7 +51,6 @@ Mac OS    15    36    ...
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$dimension`
 - It returns a(n) `Piwik\DataArray` value.

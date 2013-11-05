@@ -50,13 +50,12 @@ Queries visit logs by dimension and returns the aggregate data.
 
 #### Signature
 
-- It is a **public** method.
 - It accepts the following parameter(s):
     - `$dimensions` (`array`)
     - `$where`
     - `$additionalSelects` (`array`)
     - `$metrics`
     - `$rankingQuery`
-- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn&#039;t supplied, otherwise the result of [RankingQuery::execute()](#).
+- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#).
     - `mixed`
 

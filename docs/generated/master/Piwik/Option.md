@@ -46,7 +46,6 @@ Returns the option value for the requested option `$name`.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$name`
 - _Returns:_ The value or false, if not found.
@@ -60,7 +59,6 @@ Sets an option value by name.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$value`
@@ -74,7 +72,6 @@ Deletes an option.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$name`
     - `$value`
@@ -87,7 +84,6 @@ Deletes all options that match the supplied pattern.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$namePattern`
     - `$value`
@@ -104,6 +100,5 @@ Used in unit tests to reset the state of the object between tests.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `void` value.
 

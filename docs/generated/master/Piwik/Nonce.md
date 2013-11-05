@@ -39,7 +39,6 @@ If none exists, a new nonce will be generated.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$id`
     - `$ttl`
@@ -60,7 +59,6 @@ and if the HTTP origin is valid (see [getAcceptableOrigins](#getAcceptableOrigin
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$id`
     - `$cnonce`
@@ -74,7 +72,6 @@ Force expiration of the current nonce.
 
 #### Signature
 
-- It is a **public static** method.
 - It accepts the following parameter(s):
     - `$id`
 - It does not return anything.
@@ -86,7 +83,6 @@ Returns Origin HTTP header or false if not found.
 
 #### Signature
 
-- It is a **public static** method.
 - It can return one of the following values:
     - `string`
     - `bool`
@@ -98,6 +94,5 @@ Returns a list acceptable values for the HTTP Origin header.
 
 #### Signature
 
-- It is a **public static** method.
 - It returns a(n) `array` value.
 
