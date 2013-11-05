@@ -16,7 +16,7 @@ class Support {
 
         $menu['forums'] = array(
             'title'       => 'Forums',
-            'url'         => 'http://forum.piwik.org',
+            'url'         => 'http://forum.piwik.org/list.php?9',
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
