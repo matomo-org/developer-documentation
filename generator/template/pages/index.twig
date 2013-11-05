@@ -19,9 +19,9 @@
 - {{ class_name(value, true) }}{% if has_namespaces %} &mdash; _Class in namespace_ [`{{ value.namespace }}`]({{ namespace_path(value.namespace)|replace({".html": ""}) }})
 {% endif %}
 {% elseif 'method' == type %}
-- [`{{ value.name }}()`]({{ markdown_path(class_path(value.class)) }}#{{ value.name }}) &mdash; _Method in class_ {{ class_name(value.class, true) }}
+- [`{{ value.name }}()`]({{ markdown_path(class_path(value.class)) }}#{{ value.name|lower }}) &mdash; _Method in class_ {{ class_name(value.class, true) }}
 {% elseif 'property' == type %}
-- [`${{ value.name }}()`]({{ markdown_path(class_path(value.class)) }}#${{ value.name }}) &mdash; _Property in class_ {{ class_name(value.class, true) }}
+- [`${{ value.name }}()`]({{ markdown_path(class_path(value.class)) }}#${{ value.name|lower }}) &mdash; _Property in class_ {{ class_name(value.class, true) }}
 {% endif %}
 {% endfor %}
 {% endfor %}
