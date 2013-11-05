@@ -1,5 +1,5 @@
 {% macro class_item(class, short = false, indent = "") -%}
-{{ indent }}- {{ _self.class_name(class, short) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc }}{% endif %}
+{{ indent }}- {{ _self.class_name(class, short) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc|raw }}{% endif %}
 {%- endmacro -%}
 
 {% macro class_name(class, short = false, suffix = "") -%}
@@ -62,13 +62,13 @@ class
 {% if member.parameters %}
 - It accepts the following parameter(s):
 {% for parameter in member.parameters %}
-    - `${{ parameter.name }}`{% if parameter.hint %} ({% for hint in parameter.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}){% endif %}{% if parameter.shortdesc %} &mdash; {{ parameter.shortdesc }}{% endif %}
+    - `${{ parameter.name }}`{% if parameter.hint %} ({% for hint in parameter.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}){% endif %}{% if parameter.shortdesc %} &mdash; {{ parameter.shortdesc|raw }}{% endif %}
 
 {% endfor %}
 {% endif %}
 {% if (member.hint|length > 1) or member.hintDesc %}
 {% if member.hintDesc %}
-- _Returns:_ {{ member.hintDesc }}
+- _Returns:_ {{ member.hintDesc|raw }}
 {% else %}
 - It can return one of the following values:
 {% endif %}
