@@ -16,11 +16,11 @@ Constants
 
 This class defines the following constants:
 
-- LOWEST_PRIORITY
-- LOW_PRIORITY
-- NORMAL_PRIORITY
-- HIGH_PRIORITY
-- HIGHEST_PRIORITY
+- `LOWEST_PRIORITY`
+- `LOW_PRIORITY`
+- `NORMAL_PRIORITY`
+- `HIGH_PRIORITY`
+- `HIGHEST_PRIORITY`
 
 Methods
 -------

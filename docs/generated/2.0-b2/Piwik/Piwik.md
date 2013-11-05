@@ -17,8 +17,8 @@ Constants
 
 This class defines the following constants:
 
-- LABEL_ID_GOAL_IS_ECOMMERCE_CART &mdash; The idGoal query parameter value for the special 'abandoned carts' goal.
-- LABEL_ID_GOAL_IS_ECOMMERCE_ORDER &mdash; The idGoal query parameter value for the special 'ecommerce' goal.
+- `LABEL_ID_GOAL_IS_ECOMMERCE_CART` &mdash; The idGoal query parameter value for the special 'abandoned carts' goal.
+- `LABEL_ID_GOAL_IS_ECOMMERCE_ORDER` &mdash; The idGoal query parameter value for the special 'ecommerce' goal.
 
 Methods
 -------

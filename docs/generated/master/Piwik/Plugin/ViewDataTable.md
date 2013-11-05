@@ -33,7 +33,7 @@ Constants
 
 This abstract class defines the following constants:
 
-- ID
+- `ID`
 
 Properties
 ----------

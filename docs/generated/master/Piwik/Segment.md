@@ -50,7 +50,7 @@ Constants
 
 This class defines the following constants:
 
-- SEGMENT_TRUNCATE_LIMIT &mdash; Truncate the Segments to 8k
+- `SEGMENT_TRUNCATE_LIMIT` &mdash; Truncate the Segments to 8k
 
 Methods
 -------

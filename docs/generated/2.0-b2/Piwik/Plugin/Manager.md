@@ -11,8 +11,8 @@ Constants
 
 This class defines the following constants:
 
-- DEFAULT_THEME &mdash; Default theme used in Piwik.
-- TRACKER_EVENT_PREFIX
+- `DEFAULT_THEME` &mdash; Default theme used in Piwik.
+- `TRACKER_EVENT_PREFIX`
 
 Methods
 -------

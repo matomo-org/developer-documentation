@@ -67,8 +67,8 @@ Constants
 
 This class defines the following constants:
 
-- DONE_OK &mdash; Flag stored at the end of the archiving
-- DONE_ERROR &mdash; Flag stored at the start of the archiving When requesting an Archive, we make sure that non-finished archive are not considered valid
+- `DONE_OK` &mdash; Flag stored at the end of the archiving
+- `DONE_ERROR` &mdash; Flag stored at the start of the archiving When requesting an Archive, we make sure that non-finished archive are not considered valid
 - [`DONE_OK_TEMPORARY`](#done_ok_temporary) &mdash; Flag indicates the archive is over a period that is not finished, eg.
 
 <a name="done_ok_temporary" id="done_ok_temporary"></a>

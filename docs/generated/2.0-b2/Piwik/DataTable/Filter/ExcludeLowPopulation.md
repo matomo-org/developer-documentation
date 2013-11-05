@@ -28,7 +28,7 @@ Constants
 
 This class defines the following constants:
 
-- MINIMUM_SIGNIFICANT_PERCENTAGE_THRESHOLD
+- `MINIMUM_SIGNIFICANT_PERCENTAGE_THRESHOLD`
 
 Methods
 -------

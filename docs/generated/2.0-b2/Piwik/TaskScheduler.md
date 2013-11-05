@@ -20,8 +20,8 @@ Constants
 
 This class defines the following constants:
 
-- GET_TASKS_EVENT
-- TIMETABLE_OPTION_STRING
+- `GET_TASKS_EVENT`
+- `TIMETABLE_OPTION_STRING`
 
 Methods
 -------

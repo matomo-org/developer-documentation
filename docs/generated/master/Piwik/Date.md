@@ -32,8 +32,8 @@ Constants
 
 This class defines the following constants:
 
-- NUM_SECONDS_IN_DAY &mdash; Number of seconds in a day.
-- DATE_TIME_FORMAT &mdash; The default date time string format.
+- `NUM_SECONDS_IN_DAY` &mdash; Number of seconds in a day.
+- `DATE_TIME_FORMAT` &mdash; The default date time string format.
 
 Methods
 -------
