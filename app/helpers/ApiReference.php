@@ -20,24 +20,27 @@ class ApiReference {
         $menu = array();
 
         $menu['index'] = array(
-            'title'       => 'Overview',
-            'file'        => 'generated/master/Index',
-            'url'         => static::getUrl('index'),
-            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
+            'title'        => 'Overview',
+            'file'         => 'generated/master/Index',
+            'url'          => static::getUrl('index'),
+            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'callToAction' => 'Browse'
         );
 
         $menu['classes'] = array(
-            'title'       => 'Classes',
-            'file'        => 'generated/master/Classes',
-            'url'         => static::getUrl('classes'),
-            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
+            'title'        => 'Classes',
+            'file'         => 'generated/master/Classes',
+            'url'          => static::getUrl('classes'),
+            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'callToAction' => 'Browse'
         );
 
         $menu['hooks'] = array(
-            'title'       => 'Hooks',
-            'file'        => 'generated/Hooks',
-            'url'         => static::getUrl('hooks'),
-            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
+            'title'        => 'Hooks',
+            'file'         => 'generated/Hooks',
+            'url'          => static::getUrl('hooks'),
+            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'callToAction' => 'Browse'
         );
 
         return $menu;
