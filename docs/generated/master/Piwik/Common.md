@@ -16,11 +16,11 @@ Constants
 
 This class defines the following constants:
 
-- [`REFERRER_TYPE_DIRECT_ENTRY`](#referrer_type_direct_entry)
-- [`REFERRER_TYPE_SEARCH_ENGINE`](#referrer_type_search_engine)
-- [`REFERRER_TYPE_WEBSITE`](#referrer_type_website)
-- [`REFERRER_TYPE_CAMPAIGN`](#referrer_type_campaign)
-- [`HTML_ENCODING_QUOTE_STYLE`](#html_encoding_quote_style)
+- REFERRER_TYPE_DIRECT_ENTRY
+- REFERRER_TYPE_SEARCH_ENGINE
+- REFERRER_TYPE_WEBSITE
+- REFERRER_TYPE_CAMPAIGN
+- HTML_ENCODING_QUOTE_STYLE
 
 Methods
 -------

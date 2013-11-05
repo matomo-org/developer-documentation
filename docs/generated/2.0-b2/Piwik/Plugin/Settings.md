@@ -11,18 +11,18 @@ Constants
 
 This abstract class defines the following constants:
 
-- [`TYPE_INT`](#type_int)
-- [`TYPE_FLOAT`](#type_float)
-- [`TYPE_STRING`](#type_string)
-- [`TYPE_BOOL`](#type_bool)
-- [`TYPE_ARRAY`](#type_array)
-- [`FIELD_RADIO`](#field_radio)
-- [`FIELD_TEXT`](#field_text)
-- [`FIELD_TEXTAREA`](#field_textarea)
-- [`FIELD_CHECKBOX`](#field_checkbox)
-- [`FIELD_PASSWORD`](#field_password)
-- [`FIELD_MULTI_SELECT`](#field_multi_select)
-- [`FIELD_SINGLE_SELECT`](#field_single_select)
+- TYPE_INT
+- TYPE_FLOAT
+- TYPE_STRING
+- TYPE_BOOL
+- TYPE_ARRAY
+- FIELD_RADIO
+- FIELD_TEXT
+- FIELD_TEXTAREA
+- FIELD_CHECKBOX
+- FIELD_PASSWORD
+- FIELD_MULTI_SELECT
+- FIELD_SINGLE_SELECT
 
 Methods
 -------

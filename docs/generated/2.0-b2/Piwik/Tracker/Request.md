@@ -11,8 +11,8 @@ Constants
 
 This class defines the following constants:
 
-- [`UNKNOWN_RESOLUTION`](#unknown_resolution)
-- [`GENERATION_TIME_MS_MAXIMUM`](#generation_time_ms_maximum)
+- UNKNOWN_RESOLUTION
+- GENERATION_TIME_MS_MAXIMUM
 
 Methods
 -------

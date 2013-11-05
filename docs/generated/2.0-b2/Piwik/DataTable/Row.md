@@ -17,9 +17,9 @@ Constants
 
 This class defines the following constants:
 
-- [`COLUMNS`](#columns)
-- [`METADATA`](#metadata)
-- [`DATATABLE_ASSOCIATED`](#datatable_associated)
+- COLUMNS
+- METADATA
+- DATATABLE_ASSOCIATED
 
 Properties
 ----------

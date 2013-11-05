@@ -26,7 +26,7 @@ Constants
 
 This class defines the following constants:
 
-- [`MAPPED_IPv4_START`](#mapped_ipv4_start)
+- MAPPED_IPv4_START
 
 Methods
 -------

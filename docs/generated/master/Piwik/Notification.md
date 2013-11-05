@@ -21,18 +21,18 @@ Constants
 
 This class defines the following constants:
 
-- [`CONTEXT_SUCCESS`](#context_success)
-- [`CONTEXT_ERROR`](#context_error)
-- [`CONTEXT_INFO`](#context_info)
-- [`CONTEXT_WARNING`](#context_warning)
-- [`PRIORITY_MIN`](#priority_min) &mdash; Lowest priority
-- [`PRIORITY_LOW`](#priority_low) &mdash; Lower priority
-- [`PRIORITY_HIGH`](#priority_high) &mdash; Higher priority
-- [`PRIORITY_MAX`](#priority_max) &mdash; Highest priority
+- CONTEXT_SUCCESS
+- CONTEXT_ERROR
+- CONTEXT_INFO
+- CONTEXT_WARNING
+- PRIORITY_MIN &mdash; Lowest priority
+- PRIORITY_LOW &mdash; Lower priority
+- PRIORITY_HIGH &mdash; Higher priority
+- PRIORITY_MAX &mdash; Highest priority
 - [`FLAG_NO_CLEAR`](#flag_no_clear) &mdash; If flag applied, no close icon will be displayed.
 - [`TYPE_TOAST`](#type_toast) &mdash; Implies transient.
-- [`TYPE_PERSISTENT`](#type_persistent) &mdash; Notification will be displayed until the new user explicitly closes the notification
-- [`TYPE_TRANSIENT`](#type_transient) &mdash; Notification will be displayed only once.
+- TYPE_PERSISTENT &mdash; Notification will be displayed until the new user explicitly closes the notification
+- TYPE_TRANSIENT &mdash; Notification will be displayed only once.
 
 <a name="flag_no_clear" id="flag_no_clear"></a>
 ### `FLAG_NO_CLEAR`

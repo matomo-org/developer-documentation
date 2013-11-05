@@ -34,8 +34,8 @@ Constants
 
 This class defines the following constants:
 
-- [`GET_TASKS_EVENT`](#get_tasks_event)
-- [`TIMETABLE_OPTION_STRING`](#timetable_option_string)
+- GET_TASKS_EVENT
+- TIMETABLE_OPTION_STRING
 
 Methods
 -------

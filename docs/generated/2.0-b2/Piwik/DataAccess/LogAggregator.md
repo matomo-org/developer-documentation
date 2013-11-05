@@ -21,20 +21,20 @@ Constants
 
 This class defines the following constants:
 
-- [`LOG_VISIT_TABLE`](#log_visit_table)
-- [`LOG_ACTIONS_TABLE`](#log_actions_table)
-- [`LOG_CONVERSION_TABLE`](#log_conversion_table)
-- [`REVENUE_SUBTOTAL_FIELD`](#revenue_subtotal_field)
-- [`REVENUE_TAX_FIELD`](#revenue_tax_field)
-- [`REVENUE_SHIPPING_FIELD`](#revenue_shipping_field)
-- [`REVENUE_DISCOUNT_FIELD`](#revenue_discount_field)
-- [`TOTAL_REVENUE_FIELD`](#total_revenue_field)
-- [`ITEMS_COUNT_FIELD`](#items_count_field)
-- [`CONVERSION_DATETIME_FIELD`](#conversion_datetime_field)
-- [`ACTION_DATETIME_FIELD`](#action_datetime_field)
-- [`VISIT_DATETIME_FIELD`](#visit_datetime_field)
-- [`IDGOAL_FIELD`](#idgoal_field)
-- [`FIELDS_SEPARATOR`](#fields_separator)
+- LOG_VISIT_TABLE
+- LOG_ACTIONS_TABLE
+- LOG_CONVERSION_TABLE
+- REVENUE_SUBTOTAL_FIELD
+- REVENUE_TAX_FIELD
+- REVENUE_SHIPPING_FIELD
+- REVENUE_DISCOUNT_FIELD
+- TOTAL_REVENUE_FIELD
+- ITEMS_COUNT_FIELD
+- CONVERSION_DATETIME_FIELD
+- ACTION_DATETIME_FIELD
+- VISIT_DATETIME_FIELD
+- IDGOAL_FIELD
+- FIELDS_SEPARATOR
 
 Methods
 -------

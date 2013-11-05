@@ -147,13 +147,13 @@ Constants
 
 This class defines the following constants:
 
-- [`MAX_DEPTH_DEFAULT`](#max_depth_default)
-- [`ARCHIVED_DATE_METADATA_NAME`](#archived_date_metadata_name) &mdash; Name for metadata that describes when a report was archived.
-- [`EMPTY_COLUMNS_METADATA_NAME`](#empty_columns_metadata_name) &mdash; Name for metadata that describes which columns are empty and should not be shown.
-- [`TOTAL_ROWS_BEFORE_LIMIT_METADATA_NAME`](#total_rows_before_limit_metadata_name) &mdash; Name for metadata that describes the number of rows that existed before the Limit filter was applied.
+- MAX_DEPTH_DEFAULT
+- ARCHIVED_DATE_METADATA_NAME &mdash; Name for metadata that describes when a report was archived.
+- EMPTY_COLUMNS_METADATA_NAME &mdash; Name for metadata that describes which columns are empty and should not be shown.
+- TOTAL_ROWS_BEFORE_LIMIT_METADATA_NAME &mdash; Name for metadata that describes the number of rows that existed before the Limit filter was applied.
 - [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable](#addDataTable) or [DataTable\Row::sumRow](#) is called.
-- [`ID_SUMMARY_ROW`](#id_summary_row) &mdash; The ID of the Summary Row.
-- [`LABEL_SUMMARY_ROW`](#label_summary_row) &mdash; The original label of the Summary Row.
+- ID_SUMMARY_ROW &mdash; The ID of the Summary Row.
+- LABEL_SUMMARY_ROW &mdash; The original label of the Summary Row.
 
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 ### `COLUMN_AGGREGATION_OPS_METADATA_NAME`

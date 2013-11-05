@@ -11,4 +11,4 @@ Constants
 
 This class defines the following constants:
 
-- [`VERSION`](#version) &mdash; The current Piwik version.
+- VERSION &mdash; The current Piwik version.

@@ -101,9 +101,9 @@ Constants
 
 This class defines the following constants:
 
-- [`REQUEST_ALL_WEBSITES_FLAG`](#request_all_websites_flag)
-- [`ARCHIVE_ALL_PLUGINS_FLAG`](#archive_all_plugins_flag)
-- [`ID_SUBTABLE_LOAD_ALL_SUBTABLES`](#id_subtable_load_all_subtables)
+- REQUEST_ALL_WEBSITES_FLAG
+- ARCHIVE_ALL_PLUGINS_FLAG
+- ID_SUBTABLE_LOAD_ALL_SUBTABLES
 
 Methods
 -------

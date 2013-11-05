@@ -20,7 +20,7 @@ Constants
 
 This class defines the following constants:
 
-- [`TEMPLATE_FILE`](#template_file)
+- TEMPLATE_FILE
 
 Methods
 -------

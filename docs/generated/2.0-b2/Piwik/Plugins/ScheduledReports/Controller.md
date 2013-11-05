@@ -9,4 +9,4 @@ Constants
 
 This class defines the following constants:
 
-- [`DEFAULT_REPORT_TYPE`](#default_report_type)
+- DEFAULT_REPORT_TYPE
