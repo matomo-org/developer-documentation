@@ -42,7 +42,6 @@ class
 {%- endmacro -%}
 
 {% macro member_signature(type, member) -%}
-- It is a **{{ _self.member_visibility(member) }}{% if member.abstract is defined and member.abstract %} abstract{% endif %}** {{ type }}.
 {% if member.final %}
 - It is a **finalized** {{ type }}.
 {% endif %}
