@@ -55,15 +55,17 @@
     {% block content %}
         {{ content|raw }}
     {% endblock %}
-
 </div>
-<div class="container">
-    <hr>
 
-    <footer>
-        <p>&copy; Piwik.org</p>
-    </footer>
-</div>
+{% block footer %}
+    <div class="container">
+        <hr/>
+
+        <footer>
+            <p>&copy; Piwik.org</p>
+        </footer>
+    </div>
+{% endblock %}
 
 <script src="/js/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
