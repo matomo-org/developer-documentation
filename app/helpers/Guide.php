@@ -55,6 +55,12 @@ class Guide {
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
+        $menu['javascript-api'] = array(
+            'title'       => 'JavaScript API',
+            'url'         => static::getUrl('javascript-api'),
+            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
+        );
+
         $menu['faq'] = array(
             'title'       => 'FAQ',
             'url'         => static::getUrl('faq'),
