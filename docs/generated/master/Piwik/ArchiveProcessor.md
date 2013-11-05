@@ -62,33 +62,25 @@ requests that initiate archiving, so statistics can be calculated in parallel.
     }
 
 
-Constants
----------
-
-This class defines the following constants:
-
-- `DONE_OK` &mdash; Flag stored at the end of the archiving
-- `DONE_ERROR` &mdash; Flag stored at the start of the archiving When requesting an Archive, we make sure that non-finished archive are not considered valid
-- [`DONE_OK_TEMPORARY`](#done_ok_temporary) &mdash; Flag indicates the archive is over a period that is not finished, eg.
-
-<a name="done_ok_temporary" id="done_ok_temporary"></a>
-### `DONE_OK_TEMPORARY`
-
-the current day, current week, etc.
-Archives flagged will be regularly purged from the DB.
-
 Methods
 -------
 
 The class defines the following methods:
 
+- [`getParams()`](#getparams) &mdash; Returns the Parameters object containing Period, Site, Segment used for this archive.
 - [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a [LogAggregator](#) instance for the site, period and segment this ArchiveProcessor will insert archive data for.
-- [`getPeriod()`](#getperiod) &mdash; Returns the period we computing statistics for.
-- [`getSite()`](#getsite) &mdash; Returns the site we are computing statistics for.
-- [`getSegment()`](#getsegment) &mdash; The Segment used to limit the set of visits that are being aggregated.
 - [`insertNumericRecords()`](#insertnumericrecords) &mdash; Caches multiple numeric records in the archive for this processor's site, period and segment.
 - [`insertNumericRecord()`](#insertnumericrecord) &mdash; Caches a single numeric record in the archive for this processor's site, period and segment.
 - [`insertBlobRecord()`](#insertblobrecord) &mdash; Caches one or more blob records in the archive for this processor's site, period and segment.
+
+<a name="getparams" id="getparams"></a>
+### `getParams()`
+
+Returns the Parameters object containing Period, Site, Segment used for this archive.
+
+#### Signature
+
+- It returns a(n) [`Parameters`](../Piwik/ArchiveProcessor/Parameters.md) value.
 
 <a name="getlogaggregator" id="getlogaggregator"></a>
 ### `getLogAggregator()`
@@ -98,33 +90,6 @@ Returns a [LogAggregator](#) instance for the site, period and segment this Arch
 #### Signature
 
 - It returns a(n) [`LogAggregator`](../Piwik/DataAccess/LogAggregator.md) value.
-
-<a name="getperiod" id="getperiod"></a>
-### `getPeriod()`
-
-Returns the period we computing statistics for.
-
-#### Signature
-
-- It returns a(n) [`Period`](../Piwik/Period.md) value.
-
-<a name="getsite" id="getsite"></a>
-### `getSite()`
-
-Returns the site we are computing statistics for.
-
-#### Signature
-
-- It returns a(n) [`Site`](../Piwik/Site.md) value.
-
-<a name="getsegment" id="getsegment"></a>
-### `getSegment()`
-
-The Segment used to limit the set of visits that are being aggregated.
-
-#### Signature
-
-- It returns a(n) [`Segment`](../Piwik/Segment.md) value.
 
 <a name="insertnumericrecords" id="insertnumericrecords"></a>
 ### `insertNumericRecords()`

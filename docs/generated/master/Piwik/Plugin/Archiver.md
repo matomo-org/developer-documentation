@@ -43,7 +43,6 @@ The abstract class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`aggregateDayReport()`](#aggregatedayreport) &mdash; Triggered when the archiving process is initiated for a day period.
 - [`aggregateMultipleReports()`](#aggregatemultiplereports) &mdash; Archive data for a non-day period.
-- [`shouldArchive()`](#shouldarchive) &mdash; Returns true if the current plugin should be archived or not.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
@@ -77,13 +76,4 @@ Archive data for a non-day period.
 #### Signature
 
 - It does not return anything.
-
-<a name="shouldarchive" id="shouldarchive"></a>
-### `shouldArchive()`
-
-Returns true if the current plugin should be archived or not.
-
-#### Signature
-
-- It returns a(n) `bool` value.
 
