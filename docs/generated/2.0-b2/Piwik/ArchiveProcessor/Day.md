@@ -11,8 +11,8 @@ Methods
 
 The class defines the following methods:
 
-- [`getDataTableFromDataArray()`](#getDataTableFromDataArray) &mdash; Converts array to a datatable
-- [`getMetricsForDimension()`](#getMetricsForDimension) &mdash; Helper function that returns an array with common statistics for a given database field distinct values.
+- [`getDataTableFromDataArray()`](#getdatatablefromdataarray) &mdash; Converts array to a datatable
+- [`getMetricsForDimension()`](#getmetricsfordimension) &mdash; Helper function that returns an array with common statistics for a given database field distinct values.
 
 <a name="getdatatablefromdataarray" id="getdatatablefromdataarray"></a>
 ### `getDataTableFromDataArray()`

@@ -30,8 +30,8 @@ The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; Filters the supplied DataTable.
-- [`enableRecursive()`](#enableRecursive) &mdash; Enables/Disables recursive filtering.
-- [`filterSubTable()`](#filterSubTable) &mdash; Filters a row's subtable, if one exists and is loaded in memory.
+- [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering.
+- [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

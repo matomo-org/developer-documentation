@@ -46,18 +46,18 @@ Methods
 
 The class defines the following methods:
 
-- [`getRequestArrayFromString()`](#getRequestArrayFromString) &mdash; Converts the supplied request string into an array of query paramater name/value mappings.
+- [`getRequestArrayFromString()`](#getrequestarrayfromstring) &mdash; Converts the supplied request string into an array of query paramater name/value mappings.
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`renameModule()`](#renameModule) &mdash; For backward compatibility: Piwik API still works if module=Referers, we rewrite to correct renamed plugin: Referrers
+- [`renameModule()`](#renamemodule) &mdash; For backward compatibility: Piwik API still works if module=Referers, we rewrite to correct renamed plugin: Referrers
 - [`process()`](#process) &mdash; Dispatches the API request to the appropriate API method and returns the result after post-processing.
-- [`getClassNameAPI()`](#getClassNameAPI) &mdash; Returns the class name of a plugin's API given the plugin name.
-- [`reloadAuthUsingTokenAuth()`](#reloadAuthUsingTokenAuth) &mdash; If the token_auth is found in the $request parameter, the current session will be authenticated using this token_auth.
-- [`processRequest()`](#processRequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
-- [`getRequestParametersGET()`](#getRequestParametersGET) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
-- [`getBaseReportUrl()`](#getBaseReportUrl) &mdash; Returns URL for the current requested report w/o any filter parameters.
-- [`getCurrentUrlWithoutGenericFilters()`](#getCurrentUrlWithoutGenericFilters) &mdash; Returns the current URL without generic filter query parameters.
-- [`shouldLoadExpanded()`](#shouldLoadExpanded) &mdash; Returns whether the DataTable result will have to be expanded for the current request before rendering.
-- [`getRawSegmentFromRequest()`](#getRawSegmentFromRequest) &mdash; Returns the unmodified segment from the original request.
+- [`getClassNameAPI()`](#getclassnameapi) &mdash; Returns the class name of a plugin's API given the plugin name.
+- [`reloadAuthUsingTokenAuth()`](#reloadauthusingtokenauth) &mdash; If the token_auth is found in the $request parameter, the current session will be authenticated using this token_auth.
+- [`processRequest()`](#processrequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
+- [`getRequestParametersGET()`](#getrequestparametersget) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
+- [`getBaseReportUrl()`](#getbasereporturl) &mdash; Returns URL for the current requested report w/o any filter parameters.
+- [`getCurrentUrlWithoutGenericFilters()`](#getcurrenturlwithoutgenericfilters) &mdash; Returns the current URL without generic filter query parameters.
+- [`shouldLoadExpanded()`](#shouldloadexpanded) &mdash; Returns whether the DataTable result will have to be expanded for the current request before rendering.
+- [`getRawSegmentFromRequest()`](#getrawsegmentfromrequest) &mdash; Returns the unmodified segment from the original request.
 
 <a name="getrequestarrayfromstring" id="getrequestarrayfromstring"></a>
 ### `getRequestArrayFromString()`

@@ -32,8 +32,8 @@ Constants
 
 This class defines the following constants:
 
-- [`NUM_SECONDS_IN_DAY`](#NUM_SECONDS_IN_DAY) &mdash; Number of seconds in a day.
-- [`DATE_TIME_FORMAT`](#DATE_TIME_FORMAT) &mdash; The default date time string format.
+- [`NUM_SECONDS_IN_DAY`](#num_seconds_in_day) &mdash; Number of seconds in a day.
+- [`DATE_TIME_FORMAT`](#date_time_format) &mdash; The default date time string format.
 
 Methods
 -------
@@ -41,39 +41,39 @@ Methods
 The class defines the following methods:
 
 - [`factory()`](#factory) &mdash; Creates a new Date instance using a string datetime value.
-- [`getDatetime()`](#getDatetime) &mdash; Returns the current timestamp as a string with the following format: `'YYYY-MM-DD HH:MM:SS'`.
-- [`getDateStartUTC()`](#getDateStartUTC) &mdash; Returns the start of the day of the current timestamp in UTC.
-- [`getDateEndUTC()`](#getDateEndUTC) &mdash; Returns the end of the day of the current timestamp in UTC.
-- [`setTimezone()`](#setTimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
-- [`adjustForTimezone()`](#adjustForTimezone) &mdash; Converts a timestamp in a timezone to UTC.
-- [`getTimestampUTC()`](#getTimestampUTC) &mdash; Returns the Unix timestamp of the date in UTC.
-- [`getTimestamp()`](#getTimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
-- [`isLater()`](#isLater) &mdash; Returns true if the current date is older than the given `$date`.
-- [`isEarlier()`](#isEarlier) &mdash; Returns true if the current date is earlier than the given `$date`.
-- [`toString()`](#toString) &mdash; Converts this date to the requested string format.
-- [`__toString()`](#__toString) &mdash; See [toString](#toString).
-- [`compareWeek()`](#compareWeek) &mdash; Performs three-way comparison of the week of the current date against the given `$date`'s week.
-- [`compareMonth()`](#compareMonth) &mdash; Performs three-way comparison of the month of the current date against the given `$date`'s month.
-- [`isToday()`](#isToday) &mdash; Returns true if current date is today.
+- [`getDatetime()`](#getdatetime) &mdash; Returns the current timestamp as a string with the following format: `'YYYY-MM-DD HH:MM:SS'`.
+- [`getDateStartUTC()`](#getdatestartutc) &mdash; Returns the start of the day of the current timestamp in UTC.
+- [`getDateEndUTC()`](#getdateendutc) &mdash; Returns the end of the day of the current timestamp in UTC.
+- [`setTimezone()`](#settimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
+- [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp in a timezone to UTC.
+- [`getTimestampUTC()`](#gettimestamputc) &mdash; Returns the Unix timestamp of the date in UTC.
+- [`getTimestamp()`](#gettimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
+- [`isLater()`](#islater) &mdash; Returns true if the current date is older than the given `$date`.
+- [`isEarlier()`](#isearlier) &mdash; Returns true if the current date is earlier than the given `$date`.
+- [`toString()`](#tostring) &mdash; Converts this date to the requested string format.
+- [`__toString()`](#__tostring) &mdash; See [toString](#toString).
+- [`compareWeek()`](#compareweek) &mdash; Performs three-way comparison of the week of the current date against the given `$date`'s week.
+- [`compareMonth()`](#comparemonth) &mdash; Performs three-way comparison of the month of the current date against the given `$date`'s month.
+- [`isToday()`](#istoday) &mdash; Returns true if current date is today.
 - [`now()`](#now) &mdash; Returns a date object set to now in UTC (same as [today](#today), except that the time is also set).
 - [`today()`](#today) &mdash; Returns a date object set to today at midnight in UTC.
 - [`yesterday()`](#yesterday) &mdash; Returns a date object set to yesterday at midnight in UTC.
-- [`yesterdaySameTime()`](#yesterdaySameTime) &mdash; Returns a date object set to yesterday with the current time of day in UTC.
-- [`setTime()`](#setTime) &mdash; Returns a new Date instance with `$this` date's day and the specified new time of day.
-- [`setDay()`](#setDay) &mdash; Returns a new Date instance with `$this` date's time of day and the day specified by `$day`.
-- [`setYear()`](#setYear) &mdash; Returns a new Date instance with `$this` date's time of day, month and day, but with a new year (specified by `$year`).
-- [`subDay()`](#subDay) &mdash; Subtracts `$n` number of days from `$this` date and returns a new Date object.
-- [`subWeek()`](#subWeek) &mdash; Subtracts `$n` weeks from `$this` date and returns a new Date object.
-- [`subMonth()`](#subMonth) &mdash; Subtracts `$n` months from `$this` date and returns the result as a new Date object.
-- [`subYear()`](#subYear) &mdash; Subtracts `$n` years from `$this` date and returns the result as a new Date object.
-- [`getLocalized()`](#getLocalized) &mdash; Returns a localized date string using the given template.
-- [`addDay()`](#addDay) &mdash; Adds `$n` days to `$this` date and returns the result in a new Date.
-- [`addHour()`](#addHour) &mdash; Adds `$n` hours to `$this` date and returns the result in a new Date.
-- [`addHourTo()`](#addHourTo) &mdash; Adds N number of hours to a UNIX timestamp and returns the result.
-- [`subHour()`](#subHour) &mdash; Subtracts `$n` hours from `$this` date and returns the result in a new Date.
-- [`addPeriod()`](#addPeriod) &mdash; Adds a period to `$this` date and returns the result in a new Date instance.
-- [`subPeriod()`](#subPeriod) &mdash; Subtracts a period from `$this` date and returns the result in a new Date instance.
-- [`secondsToDays()`](#secondsToDays) &mdash; Returns the number of days represented by a number of seconds.
+- [`yesterdaySameTime()`](#yesterdaysametime) &mdash; Returns a date object set to yesterday with the current time of day in UTC.
+- [`setTime()`](#settime) &mdash; Returns a new Date instance with `$this` date's day and the specified new time of day.
+- [`setDay()`](#setday) &mdash; Returns a new Date instance with `$this` date's time of day and the day specified by `$day`.
+- [`setYear()`](#setyear) &mdash; Returns a new Date instance with `$this` date's time of day, month and day, but with a new year (specified by `$year`).
+- [`subDay()`](#subday) &mdash; Subtracts `$n` number of days from `$this` date and returns a new Date object.
+- [`subWeek()`](#subweek) &mdash; Subtracts `$n` weeks from `$this` date and returns a new Date object.
+- [`subMonth()`](#submonth) &mdash; Subtracts `$n` months from `$this` date and returns the result as a new Date object.
+- [`subYear()`](#subyear) &mdash; Subtracts `$n` years from `$this` date and returns the result as a new Date object.
+- [`getLocalized()`](#getlocalized) &mdash; Returns a localized date string using the given template.
+- [`addDay()`](#addday) &mdash; Adds `$n` days to `$this` date and returns the result in a new Date.
+- [`addHour()`](#addhour) &mdash; Adds `$n` hours to `$this` date and returns the result in a new Date.
+- [`addHourTo()`](#addhourto) &mdash; Adds N number of hours to a UNIX timestamp and returns the result.
+- [`subHour()`](#subhour) &mdash; Subtracts `$n` hours from `$this` date and returns the result in a new Date.
+- [`addPeriod()`](#addperiod) &mdash; Adds a period to `$this` date and returns the result in a new Date instance.
+- [`subPeriod()`](#subperiod) &mdash; Subtracts a period from `$this` date and returns the result in a new Date instance.
+- [`secondsToDays()`](#secondstodays) &mdash; Returns the number of days represented by a number of seconds.
 
 <a name="factory" id="factory"></a>
 ### `factory()`

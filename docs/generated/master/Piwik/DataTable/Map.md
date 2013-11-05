@@ -19,29 +19,29 @@ Methods
 
 The class defines the following methods:
 
-- [`getKeyName()`](#getKeyName) &mdash; Returns a string description of the data used to index the DataTables.
-- [`setKeyName()`](#setKeyName) &mdash; Set the keyName.
-- [`getRowsCount()`](#getRowsCount) &mdash; Returns the number of DataTables in this DataTable\Map.
-- [`queueFilter()`](#queueFilter) &mdash; Queue a filter to DataTable child of contained by this instance.
-- [`applyQueuedFilters()`](#applyQueuedFilters) &mdash; Apply the filters previously queued to each DataTable contained by this DataTable\Map.
+- [`getKeyName()`](#getkeyname) &mdash; Returns a string description of the data used to index the DataTables.
+- [`setKeyName()`](#setkeyname) &mdash; Set the keyName.
+- [`getRowsCount()`](#getrowscount) &mdash; Returns the number of DataTables in this DataTable\Map.
+- [`queueFilter()`](#queuefilter) &mdash; Queue a filter to DataTable child of contained by this instance.
+- [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Apply the filters previously queued to each DataTable contained by this DataTable\Map.
 - [`filter()`](#filter) &mdash; Apply a filter to all tables contained by this instance.
-- [`getDataTables()`](#getDataTables) &mdash; Returns the array of DataTables contained by this class.
-- [`getTable()`](#getTable) &mdash; Returns the table with the specific label.
-- [`getFirstRow()`](#getFirstRow) &mdash; Returns the first DataTable in the DataTable array.
-- [`addTable()`](#addTable) &mdash; Adds a new DataTable to the DataTable\Map.
-- [`__toString()`](#__toString) &mdash; Returns a string output of this DataTable\Map (applying the default renderer to every DataTable of this DataTable\Map).
-- [`enableRecursiveSort()`](#enableRecursiveSort)
-- [`renameColumn()`](#renameColumn) &mdash; Renames the given column in each contained DataTable.
-- [`deleteColumns()`](#deleteColumns) &mdash; Deletes the specified columns in each contained DataTable.
-- [`deleteRow()`](#deleteRow) &mdash; Deletes a table from the array of DataTables.
-- [`deleteColumn()`](#deleteColumn) &mdash; Deletes the given column in every contained DataTable.
-- [`getColumn()`](#getColumn) &mdash; Returns the array containing all row values in all data tables for the requested column.
-- [`mergeChildren()`](#mergeChildren) &mdash; Merges the rows of every child DataTable into a new DataTable and returns it.
-- [`addDataTable()`](#addDataTable) &mdash; Adds a DataTable to all the tables in this array.
-- [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable\Map w/ child tables that have had their subtables merged.
-- [`getEmptyClone()`](#getEmptyClone) &mdash; Returns a new DataTable\Map w/o any child DataTables, but with the same key name as this instance.
-- [`getMetadataIntersectArray()`](#getMetadataIntersectArray) &mdash; Returns the intersection of children's metadata arrays (what they all have in common).
-- [`getColumns()`](#getColumns)
+- [`getDataTables()`](#getdatatables) &mdash; Returns the array of DataTables contained by this class.
+- [`getTable()`](#gettable) &mdash; Returns the table with the specific label.
+- [`getFirstRow()`](#getfirstrow) &mdash; Returns the first DataTable in the DataTable array.
+- [`addTable()`](#addtable) &mdash; Adds a new DataTable to the DataTable\Map.
+- [`__toString()`](#__tostring) &mdash; Returns a string output of this DataTable\Map (applying the default renderer to every DataTable of this DataTable\Map).
+- [`enableRecursiveSort()`](#enablerecursivesort)
+- [`renameColumn()`](#renamecolumn) &mdash; Renames the given column in each contained DataTable.
+- [`deleteColumns()`](#deletecolumns) &mdash; Deletes the specified columns in each contained DataTable.
+- [`deleteRow()`](#deleterow) &mdash; Deletes a table from the array of DataTables.
+- [`deleteColumn()`](#deletecolumn) &mdash; Deletes the given column in every contained DataTable.
+- [`getColumn()`](#getcolumn) &mdash; Returns the array containing all row values in all data tables for the requested column.
+- [`mergeChildren()`](#mergechildren) &mdash; Merges the rows of every child DataTable into a new DataTable and returns it.
+- [`addDataTable()`](#adddatatable) &mdash; Adds a DataTable to all the tables in this array.
+- [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable\Map w/ child tables that have had their subtables merged.
+- [`getEmptyClone()`](#getemptyclone) &mdash; Returns a new DataTable\Map w/o any child DataTables, but with the same key name as this instance.
+- [`getMetadataIntersectArray()`](#getmetadataintersectarray) &mdash; Returns the intersection of children's metadata arrays (what they all have in common).
+- [`getColumns()`](#getcolumns)
 
 <a name="getkeyname" id="getkeyname"></a>
 ### `getKeyName()`

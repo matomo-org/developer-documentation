@@ -11,9 +11,9 @@ Methods
 
 The class defines the following methods:
 
-- [`getRescheduledTime()`](#getRescheduledTime)
-- [`setDay()`](#setDay)
-- [`setDayOfWeek()`](#setDayOfWeek) &mdash; Makes this scheduled time execute on a particular day of the week on each month.
+- [`getRescheduledTime()`](#getrescheduledtime)
+- [`setDay()`](#setday)
+- [`setDayOfWeek()`](#setdayofweek) &mdash; Makes this scheduled time execute on a particular day of the week on each month.
 
 <a name="getrescheduledtime" id="getrescheduledtime"></a>
 ### `getRescheduledTime()`

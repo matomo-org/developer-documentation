@@ -26,29 +26,29 @@ Constants
 
 This class defines the following constants:
 
-- [`MAPPED_IPv4_START`](#MAPPED_IPv4_START)
+- [`MAPPED_IPv4_START`](#mapped_ipv4_start)
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`sanitizeIp()`](#sanitizeIp) &mdash; Removes the port and the last portion of a CIDR IP address.
-- [`sanitizeIpRange()`](#sanitizeIpRange) &mdash; Sanitize human-readable (user-supplied) IP address range.
-- [`P2N()`](#P2N) &mdash; Convert presentation format IP address to network address format.
-- [`N2P()`](#N2P) &mdash; Convert network address format to presentation format.
-- [`prettyPrint()`](#prettyPrint) &mdash; Alias for [N2P()](#N2P).
-- [`isIPv4()`](#isIPv4) &mdash; Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if otherwise.
+- [`sanitizeIp()`](#sanitizeip) &mdash; Removes the port and the last portion of a CIDR IP address.
+- [`sanitizeIpRange()`](#sanitizeiprange) &mdash; Sanitize human-readable (user-supplied) IP address range.
+- [`P2N()`](#p2n) &mdash; Convert presentation format IP address to network address format.
+- [`N2P()`](#n2p) &mdash; Convert network address format to presentation format.
+- [`prettyPrint()`](#prettyprint) &mdash; Alias for [N2P()](#N2P).
+- [`isIPv4()`](#isipv4) &mdash; Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if otherwise.
 - [`long2ip()`](#long2ip) &mdash; Convert IP address (in network address format) to presentation format.
-- [`isIPv6()`](#isIPv6) &mdash; Returns true if $ip is an IPv6 address, false if otherwise.
-- [`isMappedIPv4()`](#isMappedIPv4) &mdash; Returns true if $ip is a IPv4 mapped address, false if otherwise.
-- [`getIPv4FromMappedIPv6()`](#getIPv4FromMappedIPv6) &mdash; Returns an IPv4 address from a 'mapped' IPv6 address.
-- [`getIpsForRange()`](#getIpsForRange) &mdash; Get low and high IP addresses for a specified range.
-- [`isIpInRange()`](#isIpInRange) &mdash; Determines if an IP address is in a specified IP address range.
-- [`getIpFromHeader()`](#getIpFromHeader) &mdash; Returns the most accurate IP address availble for the current user, in IPv4 format.
-- [`getNonProxyIpFromHeader()`](#getNonProxyIpFromHeader) &mdash; Returns a non-proxy IP address from header.
-- [`getLastIpFromList()`](#getLastIpFromList) &mdash; Returns the last IP address in a comma separated list, subject to an optional exclusion list.
-- [`getHostByAddr()`](#getHostByAddr) &mdash; Get hostname for a given IP address.
+- [`isIPv6()`](#isipv6) &mdash; Returns true if $ip is an IPv6 address, false if otherwise.
+- [`isMappedIPv4()`](#ismappedipv4) &mdash; Returns true if $ip is a IPv4 mapped address, false if otherwise.
+- [`getIPv4FromMappedIPv6()`](#getipv4frommappedipv6) &mdash; Returns an IPv4 address from a 'mapped' IPv6 address.
+- [`getIpsForRange()`](#getipsforrange) &mdash; Get low and high IP addresses for a specified range.
+- [`isIpInRange()`](#isipinrange) &mdash; Determines if an IP address is in a specified IP address range.
+- [`getIpFromHeader()`](#getipfromheader) &mdash; Returns the most accurate IP address availble for the current user, in IPv4 format.
+- [`getNonProxyIpFromHeader()`](#getnonproxyipfromheader) &mdash; Returns a non-proxy IP address from header.
+- [`getLastIpFromList()`](#getlastipfromlist) &mdash; Returns the last IP address in a comma separated list, subject to an optional exclusion list.
+- [`getHostByAddr()`](#gethostbyaddr) &mdash; Get hostname for a given IP address.
 
 <a name="sanitizeip" id="sanitizeip"></a>
 ### `sanitizeIp()`

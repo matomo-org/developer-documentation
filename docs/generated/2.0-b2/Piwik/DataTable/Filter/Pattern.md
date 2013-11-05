@@ -20,7 +20,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getPatternQuoted()`](#getPatternQuoted) &mdash; Helper method to return the given pattern quoted
+- [`getPatternQuoted()`](#getpatternquoted) &mdash; Helper method to return the given pattern quoted
 - [`match()`](#match) &mdash; Performs case insensitive match
 - [`filter()`](#filter) &mdash; See [Pattern](#).
 

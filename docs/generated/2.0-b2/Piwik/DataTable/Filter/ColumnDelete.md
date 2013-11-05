@@ -24,7 +24,7 @@ Constants
 
 This class defines the following constants:
 
-- [`APPEND_TO_COLUMN_NAME_TO_KEEP`](#APPEND_TO_COLUMN_NAME_TO_KEEP) &mdash; Hack: when specifying "showColumns", sometimes we'd like to also keep columns that "look" like a given column, without manually specifying all these columns (which may not be possible if column names are generated dynamically)
+- [`APPEND_TO_COLUMN_NAME_TO_KEEP`](#append_to_column_name_to_keep) &mdash; Hack: when specifying "showColumns", sometimes we'd like to also keep columns that "look" like a given column, without manually specifying all these columns (which may not be possible if column names are generated dynamically)
 
 <a name="append_to_column_name_to_keep" id="append_to_column_name_to_keep"></a>
 ### `APPEND_TO_COLUMN_NAME_TO_KEEP`

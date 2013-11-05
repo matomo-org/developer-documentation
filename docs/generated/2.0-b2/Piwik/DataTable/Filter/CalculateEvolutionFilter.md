@@ -25,8 +25,8 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`calculate()`](#calculate) &mdash; Calculates the evolution percentage for two arbitrary values.
-- [`appendPercentSign()`](#appendPercentSign)
-- [`prependPlusSignToNumber()`](#prependPlusSignToNumber)
+- [`appendPercentSign()`](#appendpercentsign)
+- [`prependPlusSignToNumber()`](#prependplussigntonumber)
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

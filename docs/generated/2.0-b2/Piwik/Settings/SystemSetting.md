@@ -18,7 +18,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`getOrder()`](#getOrder)
+- [`getOrder()`](#getorder)
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

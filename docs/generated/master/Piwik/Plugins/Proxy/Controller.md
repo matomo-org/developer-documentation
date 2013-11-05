@@ -11,5 +11,5 @@ Constants
 
 This class defines the following constants:
 
-- [`TRANSPARENT_PNG_PIXEL`](#TRANSPARENT_PNG_PIXEL)
-- [`JS_MIME_TYPE`](#JS_MIME_TYPE)
+- [`TRANSPARENT_PNG_PIXEL`](#transparent_png_pixel)
+- [`JS_MIME_TYPE`](#js_mime_type)

@@ -20,17 +20,17 @@ Constants
 
 This class defines the following constants:
 
-- [`GET_TASKS_EVENT`](#GET_TASKS_EVENT)
-- [`TIMETABLE_OPTION_STRING`](#TIMETABLE_OPTION_STRING)
+- [`GET_TASKS_EVENT`](#get_tasks_event)
+- [`TIMETABLE_OPTION_STRING`](#timetable_option_string)
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`runTasks()`](#runTasks) &mdash; Executes tasks that are scheduled to run, then reschedules them.
-- [`isTaskBeingExecuted()`](#isTaskBeingExecuted) &mdash; Returns true if the TaskScheduler is currently running a scheduled task.
-- [`getScheduledTimeForMethod()`](#getScheduledTimeForMethod) &mdash; Return the next scheduled time given the class and method names of a scheduled task.
+- [`runTasks()`](#runtasks) &mdash; Executes tasks that are scheduled to run, then reschedules them.
+- [`isTaskBeingExecuted()`](#istaskbeingexecuted) &mdash; Returns true if the TaskScheduler is currently running a scheduled task.
+- [`getScheduledTimeForMethod()`](#getscheduledtimeformethod) &mdash; Return the next scheduled time given the class and method names of a scheduled task.
 
 <a name="runtasks" id="runtasks"></a>
 ### `runTasks()`

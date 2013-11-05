@@ -79,17 +79,17 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getTemplateFile()`](#getTemplateFile) &mdash; Returns the template filename.
-- [`getTemplateVars()`](#getTemplateVars) &mdash; Returns the variables to bind to the template when rendering.
+- [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename.
+- [`getTemplateVars()`](#gettemplatevars) &mdash; Returns the variables to bind to the template when rendering.
 - [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
 - [`__get()`](#__get) &mdash; Retrieves an assigned variable.
 - [`render()`](#render) &mdash; Renders the current view.
-- [`setContentType()`](#setContentType) &mdash; Set stored value used in the Content-Type HTTP header field.
-- [`setXFrameOptions()`](#setXFrameOptions) &mdash; Set X-Frame-Options field in the HTTP response.
-- [`addForm()`](#addForm) &mdash; Add form to view
+- [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field.
+- [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response.
+- [`addForm()`](#addform) &mdash; Add form to view
 - [`assign()`](#assign) &mdash; Assign value to a variable for use in a template ToDo: This is ugly.
-- [`clearCompiledTemplates()`](#clearCompiledTemplates) &mdash; Clear compiled Smarty templates
-- [`singleReport()`](#singleReport) &mdash; Creates a View for and then renders the single report template.
+- [`clearCompiledTemplates()`](#clearcompiledtemplates) &mdash; Clear compiled Smarty templates
+- [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

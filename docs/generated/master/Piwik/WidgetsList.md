@@ -20,7 +20,7 @@ The class defines the following methods:
 - [`get()`](#get) &mdash; Returns all available widgets.
 - [`add()`](#add) &mdash; Adds a report to the list of dashboard widgets.
 - [`remove()`](#remove) &mdash; Removes one more widgets from the widget list.
-- [`isDefined()`](#isDefined) &mdash; Returns true if the widget with the given parameters exists in the widget list, false if otherwise.
+- [`isDefined()`](#isdefined) &mdash; Returns true if the widget with the given parameters exists in the widget list, false if otherwise.
 - [`_reset()`](#_reset) &mdash; Method to reset the widget list For testing only
 
 <a name="get" id="get"></a>

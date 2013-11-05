@@ -11,10 +11,10 @@ Methods
 
 The class defines the following methods:
 
-- [`getKnownSegmentsToArchive()`](#getKnownSegmentsToArchive) &mdash; Returns the list of stored segments to pre-process for all sites when executing cron archiving.
-- [`getPiwikUrl()`](#getPiwikUrl) &mdash; Returns the URL to this Piwik instance, eg.
-- [`isSegmentationEnabled()`](#isSegmentationEnabled) &mdash; Returns true if segmentation is allowed for this user, false if otherwise.
-- [`isUniqueVisitorsEnabled()`](#isUniqueVisitorsEnabled) &mdash; Returns true if unique visitors should be processed for the given period type.
+- [`getKnownSegmentsToArchive()`](#getknownsegmentstoarchive) &mdash; Returns the list of stored segments to pre-process for all sites when executing cron archiving.
+- [`getPiwikUrl()`](#getpiwikurl) &mdash; Returns the URL to this Piwik instance, eg.
+- [`isSegmentationEnabled()`](#issegmentationenabled) &mdash; Returns true if segmentation is allowed for this user, false if otherwise.
+- [`isUniqueVisitorsEnabled()`](#isuniquevisitorsenabled) &mdash; Returns true if unique visitors should be processed for the given period type.
 
 <a name="getknownsegmentstoarchive" id="getknownsegmentstoarchive"></a>
 ### `getKnownSegmentsToArchive()`

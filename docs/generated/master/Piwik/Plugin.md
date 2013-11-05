@@ -74,17 +74,17 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getInformation()`](#getInformation) &mdash; Returns the plugin details - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
-- [`getListHooksRegistered()`](#getListHooksRegistered) &mdash; Returns a list of hooks with associated event observers.
-- [`postLoad()`](#postLoad) &mdash; This method is executed after a plugin is loaded and translations are registered.
+- [`getInformation()`](#getinformation) &mdash; Returns the plugin details - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
+- [`getListHooksRegistered()`](#getlisthooksregistered) &mdash; Returns a list of hooks with associated event observers.
+- [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered.
 - [`install()`](#install) &mdash; Installs the plugin.
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the plugins.
 - [`activate()`](#activate) &mdash; Executed every time the plugin is enabled.
 - [`deactivate()`](#deactivate) &mdash; Executed every time the plugin is disabled.
-- [`getVersion()`](#getVersion) &mdash; Returns the plugin version number.
-- [`isTheme()`](#isTheme) &mdash; Returns true if this plugin is a theme, false if otherwise.
-- [`getPluginName()`](#getPluginName) &mdash; Returns the plugin's base class name without the namespace, e.g., "UserCountry" when the plugin class is "Piwik\Plugins\UserCountry\UserCountry".
-- [`getPluginNameFromBacktrace()`](#getPluginNameFromBacktrace) &mdash; Extracts the plugin name from a backtrace array.
+- [`getVersion()`](#getversion) &mdash; Returns the plugin version number.
+- [`isTheme()`](#istheme) &mdash; Returns true if this plugin is a theme, false if otherwise.
+- [`getPluginName()`](#getpluginname) &mdash; Returns the plugin's base class name without the namespace, e.g., "UserCountry" when the plugin class is "Piwik\Plugins\UserCountry\UserCountry".
+- [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

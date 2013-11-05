@@ -17,10 +17,10 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`setOrder()`](#setOrder) &mdash; Updates the order
+- [`setOrder()`](#setorder) &mdash; Updates the order
 - [`sort()`](#sort) &mdash; Sorting method used for sorting numbers
-- [`naturalSort()`](#naturalSort) &mdash; Sorting method used for sorting values natural
-- [`sortString()`](#sortString) &mdash; Sorting method used for sorting values
+- [`naturalSort()`](#naturalsort) &mdash; Sorting method used for sorting values natural
+- [`sortString()`](#sortstring) &mdash; Sorting method used for sorting values
 - [`filter()`](#filter) &mdash; Sorts the given data table by defined column and sorting method
 
 <a name="__construct" id="__construct"></a>

@@ -25,7 +25,7 @@ Properties
 
 This class defines the following properties:
 
-- [`$infoSites`](#$infoSites)
+- [`$infoSites`](#$infosites)
 
 <a name="infosites" id="infosites"></a>
 ### `$infoSites`
@@ -40,32 +40,32 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`setSites()`](#setSites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data.
-- [`setSitesFromArray()`](#setSitesFromArray) &mdash; Sets the cached Site data with a non-associated array of site data.
-- [`__toString()`](#__toString) &mdash; Returns a string representation of the site this instance references.
-- [`getName()`](#getName) &mdash; Returns the name of the site.
-- [`getMainUrl()`](#getMainUrl) &mdash; Returns the main url of the site.
-- [`getId()`](#getId) &mdash; Returns the id of the site.
-- [`getCreationDate()`](#getCreationDate) &mdash; Returns the creation date of the site.
-- [`getTimezone()`](#getTimezone) &mdash; Returns the timezone of the size.
-- [`getCurrency()`](#getCurrency) &mdash; Returns the currency of the site.
-- [`getExcludedIps()`](#getExcludedIps) &mdash; Returns the excluded ips of the site.
-- [`getExcludedQueryParameters()`](#getExcludedQueryParameters) &mdash; Returns the excluded query parameters of the site.
-- [`isEcommerceEnabled()`](#isEcommerceEnabled) &mdash; Returns whether ecommerce is enabled for the site.
-- [`getSearchKeywordParameters()`](#getSearchKeywordParameters) &mdash; Returns the site search keyword query parameters for the site.
-- [`getSearchCategoryParameters()`](#getSearchCategoryParameters) &mdash; Returns the site search category query parameters for the site.
-- [`isSiteSearchEnabled()`](#isSiteSearchEnabled) &mdash; Returns whether Site Search Tracking is enabled for the site.
-- [`getIdSitesFromIdSitesString()`](#getIdSitesFromIdSitesString) &mdash; Checks the given string for valid site ids and returns them as an array.
-- [`clearCache()`](#clearCache) &mdash; Clears the site data cache.
-- [`getNameFor()`](#getNameFor) &mdash; Returns the name of the site with the specified ID.
-- [`getTimezoneFor()`](#getTimezoneFor) &mdash; Returns the timezone of the site with the specified ID.
-- [`getCreationDateFor()`](#getCreationDateFor) &mdash; Returns the creation date of the site with the specified ID.
-- [`getMainUrlFor()`](#getMainUrlFor) &mdash; Returns the url for the site with the specified ID.
-- [`isEcommerceEnabledFor()`](#isEcommerceEnabledFor) &mdash; Returns whether the site with the specified ID is ecommerce enabled
-- [`isSiteSearchEnabledFor()`](#isSiteSearchEnabledFor) &mdash; Returns whether the site with the specified ID is Site Search enabled
-- [`getCurrencyFor()`](#getCurrencyFor) &mdash; Returns the currency of the site with the specified ID.
-- [`getExcludedIpsFor()`](#getExcludedIpsFor) &mdash; Returns the excluded IP addresses of the site with the specified ID.
-- [`getExcludedQueryParametersFor()`](#getExcludedQueryParametersFor) &mdash; Returns the excluded query parameters for the site with the specified ID.
+- [`setSites()`](#setsites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data.
+- [`setSitesFromArray()`](#setsitesfromarray) &mdash; Sets the cached Site data with a non-associated array of site data.
+- [`__toString()`](#__tostring) &mdash; Returns a string representation of the site this instance references.
+- [`getName()`](#getname) &mdash; Returns the name of the site.
+- [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site.
+- [`getId()`](#getid) &mdash; Returns the id of the site.
+- [`getCreationDate()`](#getcreationdate) &mdash; Returns the creation date of the site.
+- [`getTimezone()`](#gettimezone) &mdash; Returns the timezone of the size.
+- [`getCurrency()`](#getcurrency) &mdash; Returns the currency of the site.
+- [`getExcludedIps()`](#getexcludedips) &mdash; Returns the excluded ips of the site.
+- [`getExcludedQueryParameters()`](#getexcludedqueryparameters) &mdash; Returns the excluded query parameters of the site.
+- [`isEcommerceEnabled()`](#isecommerceenabled) &mdash; Returns whether ecommerce is enabled for the site.
+- [`getSearchKeywordParameters()`](#getsearchkeywordparameters) &mdash; Returns the site search keyword query parameters for the site.
+- [`getSearchCategoryParameters()`](#getsearchcategoryparameters) &mdash; Returns the site search category query parameters for the site.
+- [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site.
+- [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site ids and returns them as an array.
+- [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
+- [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
+- [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
+- [`getCreationDateFor()`](#getcreationdatefor) &mdash; Returns the creation date of the site with the specified ID.
+- [`getMainUrlFor()`](#getmainurlfor) &mdash; Returns the url for the site with the specified ID.
+- [`isEcommerceEnabledFor()`](#isecommerceenabledfor) &mdash; Returns whether the site with the specified ID is ecommerce enabled
+- [`isSiteSearchEnabledFor()`](#issitesearchenabledfor) &mdash; Returns whether the site with the specified ID is Site Search enabled
+- [`getCurrencyFor()`](#getcurrencyfor) &mdash; Returns the currency of the site with the specified ID.
+- [`getExcludedIpsFor()`](#getexcludedipsfor) &mdash; Returns the excluded IP addresses of the site with the specified ID.
+- [`getExcludedQueryParametersFor()`](#getexcludedqueryparametersfor) &mdash; Returns the excluded query parameters for the site with the specified ID.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

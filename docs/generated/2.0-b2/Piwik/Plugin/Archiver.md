@@ -61,9 +61,9 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`archiveDay()`](#archiveDay) &mdash; Archive data for a day period.
-- [`archivePeriod()`](#archivePeriod) &mdash; Archive data for a non-day period.
-- [`shouldArchive()`](#shouldArchive) &mdash; Returns true if the current plugin should be archived or not.
+- [`archiveDay()`](#archiveday) &mdash; Archive data for a day period.
+- [`archivePeriod()`](#archiveperiod) &mdash; Archive data for a non-day period.
+- [`shouldArchive()`](#shouldarchive) &mdash; Returns true if the current plugin should be archived or not.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

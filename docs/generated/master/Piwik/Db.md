@@ -29,7 +29,7 @@ Properties
 
 This class defines the following properties:
 
-- [`$lockPrivilegeGranted`](#$lockPrivilegeGranted) &mdash; Cached result of isLockprivilegeGranted function.
+- [`$lockPrivilegeGranted`](#$lockprivilegegranted) &mdash; Cached result of isLockprivilegeGranted function.
 
 <a name="lockprivilegegranted" id="lockprivilegegranted"></a>
 ### `$lockPrivilegeGranted`
@@ -50,25 +50,25 @@ Methods
 The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
-- [`createDatabaseObject()`](#createDatabaseObject) &mdash; Create the database object and connects to the database.
+- [`createDatabaseObject()`](#createdatabaseobject) &mdash; Create the database object and connects to the database.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
 - [`query()`](#query) &mdash; Executes an SQL query and returns the Zend_Db_Statement object.
-- [`fetchAll()`](#fetchAll) &mdash; Executes the SQL query and fetches all the rows from the result set.
-- [`fetchRow()`](#fetchRow) &mdash; Executes an SQL query and fetches the first row of the result.
-- [`fetchOne()`](#fetchOne) &mdash; Executes an SQL query and fetches the first column of the first row of result set.
-- [`fetchAssoc()`](#fetchAssoc) &mdash; Executes an SQL query and returns the entire result set indexed by the first selected field.
-- [`deleteAllRows()`](#deleteAllRows) &mdash; Deletes all desired rows in a table, while using a limit.
-- [`optimizeTables()`](#optimizeTables) &mdash; Runs an OPTIMIZE TABLE query on the supplied table or tables.
-- [`dropTables()`](#dropTables) &mdash; Drops the supplied table or tables.
-- [`lockTables()`](#lockTables) &mdash; Locks the supplied table or tables.
-- [`unlockAllTables()`](#unlockAllTables) &mdash; Releases all table locks.
-- [`segmentedFetchFirst()`](#segmentedFetchFirst) &mdash; Performs a SELECT on a table one chunk at a time and returns the first successfully fetched value.
-- [`segmentedFetchOne()`](#segmentedFetchOne) &mdash; Performs a SELECT on a table one chunk at a time and returns an array of every fetched value.
-- [`segmentedFetchAll()`](#segmentedFetchAll) &mdash; Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
-- [`segmentedQuery()`](#segmentedQuery) &mdash; Performs a non-SELECT query on a table one chunk at a time.
-- [`getDbLock()`](#getDbLock) &mdash; Attempts to get a named lock.
-- [`releaseDbLock()`](#releaseDbLock) &mdash; Releases a named lock.
-- [`isLockPrivilegeGranted()`](#isLockPrivilegeGranted) &mdash; Checks whether the database user is allowed to lock tables.
+- [`fetchAll()`](#fetchall) &mdash; Executes the SQL query and fetches all the rows from the result set.
+- [`fetchRow()`](#fetchrow) &mdash; Executes an SQL query and fetches the first row of the result.
+- [`fetchOne()`](#fetchone) &mdash; Executes an SQL query and fetches the first column of the first row of result set.
+- [`fetchAssoc()`](#fetchassoc) &mdash; Executes an SQL query and returns the entire result set indexed by the first selected field.
+- [`deleteAllRows()`](#deleteallrows) &mdash; Deletes all desired rows in a table, while using a limit.
+- [`optimizeTables()`](#optimizetables) &mdash; Runs an OPTIMIZE TABLE query on the supplied table or tables.
+- [`dropTables()`](#droptables) &mdash; Drops the supplied table or tables.
+- [`lockTables()`](#locktables) &mdash; Locks the supplied table or tables.
+- [`unlockAllTables()`](#unlockalltables) &mdash; Releases all table locks.
+- [`segmentedFetchFirst()`](#segmentedfetchfirst) &mdash; Performs a SELECT on a table one chunk at a time and returns the first successfully fetched value.
+- [`segmentedFetchOne()`](#segmentedfetchone) &mdash; Performs a SELECT on a table one chunk at a time and returns an array of every fetched value.
+- [`segmentedFetchAll()`](#segmentedfetchall) &mdash; Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
+- [`segmentedQuery()`](#segmentedquery) &mdash; Performs a non-SELECT query on a table one chunk at a time.
+- [`getDbLock()`](#getdblock) &mdash; Attempts to get a named lock.
+- [`releaseDbLock()`](#releasedblock) &mdash; Releases a named lock.
+- [`isLockPrivilegeGranted()`](#islockprivilegegranted) &mdash; Checks whether the database user is allowed to lock tables.
 
 <a name="get" id="get"></a>
 ### `get()`

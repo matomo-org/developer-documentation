@@ -9,5 +9,5 @@ Constants
 
 This class defines the following constants:
 
-- [`ANONYMIZE_IP_PLUGIN_NAME`](#ANONYMIZE_IP_PLUGIN_NAME)
-- [`OPTION_LAST_DELETE_PIWIK_LOGS`](#OPTION_LAST_DELETE_PIWIK_LOGS)
+- [`ANONYMIZE_IP_PLUGIN_NAME`](#anonymize_ip_plugin_name)
+- [`OPTION_LAST_DELETE_PIWIK_LOGS`](#option_last_delete_piwik_logs)

@@ -11,8 +11,8 @@ Constants
 
 This class defines the following constants:
 
-- [`UNKNOWN_RESOLUTION`](#UNKNOWN_RESOLUTION)
-- [`GENERATION_TIME_MS_MAXIMUM`](#GENERATION_TIME_MS_MAXIMUM)
+- [`UNKNOWN_RESOLUTION`](#unknown_resolution)
+- [`GENERATION_TIME_MS_MAXIMUM`](#generation_time_ms_maximum)
 
 Methods
 -------
@@ -20,32 +20,32 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`isAuthenticated()`](#isAuthenticated)
-- [`authenticateSuperUserOrAdmin()`](#authenticateSuperUserOrAdmin)
-- [`getDaysSinceFirstVisit()`](#getDaysSinceFirstVisit)
-- [`getDaysSinceLastOrder()`](#getDaysSinceLastOrder)
-- [`getDaysSinceLastVisit()`](#getDaysSinceLastVisit)
-- [`getVisitCount()`](#getVisitCount)
-- [`getBrowserLanguage()`](#getBrowserLanguage) &mdash; Returns the language the visitor is viewing.
-- [`getLocalTime()`](#getLocalTime)
-- [`getGoalRevenue()`](#getGoalRevenue)
-- [`getParam()`](#getParam)
-- [`getCurrentTimestamp()`](#getCurrentTimestamp)
-- [`getIdSite()`](#getIdSite)
-- [`getUserAgent()`](#getUserAgent)
-- [`getCustomVariables()`](#getCustomVariables)
-- [`truncateCustomVariable()`](#truncateCustomVariable)
-- [`setThirdPartyCookie()`](#setThirdPartyCookie) &mdash; Update the cookie information.
-- [`getVisitorId()`](#getVisitorId) &mdash; Is the request for a known VisitorId, based on 1st party, 3rd party (optional) cookies or Tracking API forced Visitor ID
-- [`getIp()`](#getIp)
-- [`setForceIp()`](#setForceIp)
-- [`setForceDateTime()`](#setForceDateTime)
-- [`setForcedVisitorId()`](#setForcedVisitorId)
-- [`getForcedVisitorId()`](#getForcedVisitorId)
-- [`overrideLocation()`](#overrideLocation)
-- [`getPlugins()`](#getPlugins)
-- [`getParamsCount()`](#getParamsCount)
-- [`getPageGenerationTime()`](#getPageGenerationTime)
+- [`isAuthenticated()`](#isauthenticated)
+- [`authenticateSuperUserOrAdmin()`](#authenticatesuperuseroradmin)
+- [`getDaysSinceFirstVisit()`](#getdayssincefirstvisit)
+- [`getDaysSinceLastOrder()`](#getdayssincelastorder)
+- [`getDaysSinceLastVisit()`](#getdayssincelastvisit)
+- [`getVisitCount()`](#getvisitcount)
+- [`getBrowserLanguage()`](#getbrowserlanguage) &mdash; Returns the language the visitor is viewing.
+- [`getLocalTime()`](#getlocaltime)
+- [`getGoalRevenue()`](#getgoalrevenue)
+- [`getParam()`](#getparam)
+- [`getCurrentTimestamp()`](#getcurrenttimestamp)
+- [`getIdSite()`](#getidsite)
+- [`getUserAgent()`](#getuseragent)
+- [`getCustomVariables()`](#getcustomvariables)
+- [`truncateCustomVariable()`](#truncatecustomvariable)
+- [`setThirdPartyCookie()`](#setthirdpartycookie) &mdash; Update the cookie information.
+- [`getVisitorId()`](#getvisitorid) &mdash; Is the request for a known VisitorId, based on 1st party, 3rd party (optional) cookies or Tracking API forced Visitor ID
+- [`getIp()`](#getip)
+- [`setForceIp()`](#setforceip)
+- [`setForceDateTime()`](#setforcedatetime)
+- [`setForcedVisitorId()`](#setforcedvisitorid)
+- [`getForcedVisitorId()`](#getforcedvisitorid)
+- [`overrideLocation()`](#overridelocation)
+- [`getPlugins()`](#getplugins)
+- [`getParamsCount()`](#getparamscount)
+- [`getPageGenerationTime()`](#getpagegenerationtime)
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

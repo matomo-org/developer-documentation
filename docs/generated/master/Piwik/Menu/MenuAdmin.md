@@ -31,7 +31,7 @@ Methods
 
 The class defines the following methods:
 
-- [`addEntry()`](#addEntry) &mdash; Adds a new AdminMenu entry under the 'Settings' category.
+- [`addEntry()`](#addentry) &mdash; Adds a new AdminMenu entry under the 'Settings' category.
 
 <a name="addentry" id="addentry"></a>
 ### `addEntry()`

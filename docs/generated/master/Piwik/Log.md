@@ -74,20 +74,20 @@ Constants
 
 This class defines the following constants:
 
-- [`NONE`](#NONE)
-- [`ERROR`](#ERROR)
-- [`WARN`](#WARN)
-- [`INFO`](#INFO)
-- [`DEBUG`](#DEBUG)
-- [`VERBOSE`](#VERBOSE)
-- [`LOG_LEVEL_CONFIG_OPTION`](#LOG_LEVEL_CONFIG_OPTION)
-- [`LOG_WRITERS_CONFIG_OPTION`](#LOG_WRITERS_CONFIG_OPTION)
-- [`LOGGER_FILE_PATH_CONFIG_OPTION`](#LOGGER_FILE_PATH_CONFIG_OPTION)
-- [`STRING_MESSAGE_FORMAT_OPTION`](#STRING_MESSAGE_FORMAT_OPTION)
-- [`FORMAT_FILE_MESSAGE_EVENT`](#FORMAT_FILE_MESSAGE_EVENT)
-- [`FORMAT_SCREEN_MESSAGE_EVENT`](#FORMAT_SCREEN_MESSAGE_EVENT)
-- [`FORMAT_DATABASE_MESSAGE_EVENT`](#FORMAT_DATABASE_MESSAGE_EVENT)
-- [`GET_AVAILABLE_WRITERS_EVENT`](#GET_AVAILABLE_WRITERS_EVENT)
+- [`NONE`](#none)
+- [`ERROR`](#error)
+- [`WARN`](#warn)
+- [`INFO`](#info)
+- [`DEBUG`](#debug)
+- [`VERBOSE`](#verbose)
+- [`LOG_LEVEL_CONFIG_OPTION`](#log_level_config_option)
+- [`LOG_WRITERS_CONFIG_OPTION`](#log_writers_config_option)
+- [`LOGGER_FILE_PATH_CONFIG_OPTION`](#logger_file_path_config_option)
+- [`STRING_MESSAGE_FORMAT_OPTION`](#string_message_format_option)
+- [`FORMAT_FILE_MESSAGE_EVENT`](#format_file_message_event)
+- [`FORMAT_SCREEN_MESSAGE_EVENT`](#format_screen_message_event)
+- [`FORMAT_DATABASE_MESSAGE_EVENT`](#format_database_message_event)
+- [`GET_AVAILABLE_WRITERS_EVENT`](#get_available_writers_event)
 
 Methods
 -------

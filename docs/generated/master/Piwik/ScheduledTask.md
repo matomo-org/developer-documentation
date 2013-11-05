@@ -16,11 +16,11 @@ Constants
 
 This class defines the following constants:
 
-- [`LOWEST_PRIORITY`](#LOWEST_PRIORITY)
-- [`LOW_PRIORITY`](#LOW_PRIORITY)
-- [`NORMAL_PRIORITY`](#NORMAL_PRIORITY)
-- [`HIGH_PRIORITY`](#HIGH_PRIORITY)
-- [`HIGHEST_PRIORITY`](#HIGHEST_PRIORITY)
+- [`LOWEST_PRIORITY`](#lowest_priority)
+- [`LOW_PRIORITY`](#low_priority)
+- [`NORMAL_PRIORITY`](#normal_priority)
+- [`HIGH_PRIORITY`](#high_priority)
+- [`HIGHEST_PRIORITY`](#highest_priority)
 
 Methods
 -------
@@ -28,15 +28,15 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getObjectInstance()`](#getObjectInstance) &mdash; Return the object instance on which the method should be executed.
-- [`getClassName()`](#getClassName) &mdash; Returns the class name that contains the method to execute regularly.
-- [`getMethodName()`](#getMethodName) &mdash; Returns the method name that will be regularly executed.
-- [`getMethodParameter()`](#getMethodParameter) &mdash; Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
-- [`getScheduledTime()`](#getScheduledTime) &mdash; Returns a [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
-- [`getRescheduledTime()`](#getRescheduledTime) &mdash; Returns the time in milliseconds when this task will be executed next.
-- [`getPriority()`](#getPriority) &mdash; Returns the task priority.
-- [`getName()`](#getName) &mdash; Returns a unique name for this scheduled task.
-- [`getTaskName()`](#getTaskName)
+- [`getObjectInstance()`](#getobjectinstance) &mdash; Return the object instance on which the method should be executed.
+- [`getClassName()`](#getclassname) &mdash; Returns the class name that contains the method to execute regularly.
+- [`getMethodName()`](#getmethodname) &mdash; Returns the method name that will be regularly executed.
+- [`getMethodParameter()`](#getmethodparameter) &mdash; Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
+- [`getScheduledTime()`](#getscheduledtime) &mdash; Returns a [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
+- [`getRescheduledTime()`](#getrescheduledtime) &mdash; Returns the time in milliseconds when this task will be executed next.
+- [`getPriority()`](#getpriority) &mdash; Returns the task priority.
+- [`getName()`](#getname) &mdash; Returns a unique name for this scheduled task.
+- [`getTaskName()`](#gettaskname)
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

@@ -12,7 +12,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`setFrom()`](#setFrom) &mdash; Sets the sender.
+- [`setFrom()`](#setfrom) &mdash; Sets the sender.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

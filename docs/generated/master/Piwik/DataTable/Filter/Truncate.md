@@ -28,7 +28,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; Executes the filter, see [Truncate](#).
-- [`addSummaryRow()`](#addSummaryRow)
+- [`addSummaryRow()`](#addsummaryrow)
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

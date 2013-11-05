@@ -67,9 +67,9 @@ Constants
 
 This class defines the following constants:
 
-- [`DONE_OK`](#DONE_OK) &mdash; Flag stored at the end of the archiving
-- [`DONE_ERROR`](#DONE_ERROR) &mdash; Flag stored at the start of the archiving When requesting an Archive, we make sure that non-finished archive are not considered valid
-- [`DONE_OK_TEMPORARY`](#DONE_OK_TEMPORARY) &mdash; Flag indicates the archive is over a period that is not finished, eg.
+- [`DONE_OK`](#done_ok) &mdash; Flag stored at the end of the archiving
+- [`DONE_ERROR`](#done_error) &mdash; Flag stored at the start of the archiving When requesting an Archive, we make sure that non-finished archive are not considered valid
+- [`DONE_OK_TEMPORARY`](#done_ok_temporary) &mdash; Flag indicates the archive is over a period that is not finished, eg.
 
 <a name="done_ok_temporary" id="done_ok_temporary"></a>
 ### `DONE_OK_TEMPORARY`
@@ -82,13 +82,13 @@ Methods
 
 The class defines the following methods:
 
-- [`getLogAggregator()`](#getLogAggregator) &mdash; Returns a [LogAggregator](#) instance for the site, period and segment this ArchiveProcessor will insert archive data for.
-- [`getPeriod()`](#getPeriod) &mdash; Returns the period we computing statistics for.
-- [`getSite()`](#getSite) &mdash; Returns the site we are computing statistics for.
-- [`getSegment()`](#getSegment) &mdash; The Segment used to limit the set of visits that are being aggregated.
-- [`insertNumericRecords()`](#insertNumericRecords) &mdash; Caches multiple numeric records in the archive for this processor's site, period and segment.
-- [`insertNumericRecord()`](#insertNumericRecord) &mdash; Caches a single numeric record in the archive for this processor's site, period and segment.
-- [`insertBlobRecord()`](#insertBlobRecord) &mdash; Caches one or more blob records in the archive for this processor's site, period and segment.
+- [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a [LogAggregator](#) instance for the site, period and segment this ArchiveProcessor will insert archive data for.
+- [`getPeriod()`](#getperiod) &mdash; Returns the period we computing statistics for.
+- [`getSite()`](#getsite) &mdash; Returns the site we are computing statistics for.
+- [`getSegment()`](#getsegment) &mdash; The Segment used to limit the set of visits that are being aggregated.
+- [`insertNumericRecords()`](#insertnumericrecords) &mdash; Caches multiple numeric records in the archive for this processor's site, period and segment.
+- [`insertNumericRecord()`](#insertnumericrecord) &mdash; Caches a single numeric record in the archive for this processor's site, period and segment.
+- [`insertBlobRecord()`](#insertblobrecord) &mdash; Caches one or more blob records in the archive for this processor's site, period and segment.
 
 <a name="getlogaggregator" id="getlogaggregator"></a>
 ### `getLogAggregator()`

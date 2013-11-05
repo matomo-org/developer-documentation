@@ -21,18 +21,18 @@ Constants
 
 This class defines the following constants:
 
-- [`CONTEXT_SUCCESS`](#CONTEXT_SUCCESS)
-- [`CONTEXT_ERROR`](#CONTEXT_ERROR)
-- [`CONTEXT_INFO`](#CONTEXT_INFO)
-- [`CONTEXT_WARNING`](#CONTEXT_WARNING)
-- [`PRIORITY_MIN`](#PRIORITY_MIN) &mdash; Lowest priority
-- [`PRIORITY_LOW`](#PRIORITY_LOW) &mdash; Lower priority
-- [`PRIORITY_HIGH`](#PRIORITY_HIGH) &mdash; Higher priority
-- [`PRIORITY_MAX`](#PRIORITY_MAX) &mdash; Highest priority
-- [`FLAG_NO_CLEAR`](#FLAG_NO_CLEAR) &mdash; If flag applied, no close icon will be displayed.
-- [`TYPE_TOAST`](#TYPE_TOAST) &mdash; Implies transient.
-- [`TYPE_PERSISTENT`](#TYPE_PERSISTENT) &mdash; Notification will be displayed until the new user explicitly closes the notification
-- [`TYPE_TRANSIENT`](#TYPE_TRANSIENT) &mdash; Notification will be displayed only once.
+- [`CONTEXT_SUCCESS`](#context_success)
+- [`CONTEXT_ERROR`](#context_error)
+- [`CONTEXT_INFO`](#context_info)
+- [`CONTEXT_WARNING`](#context_warning)
+- [`PRIORITY_MIN`](#priority_min) &mdash; Lowest priority
+- [`PRIORITY_LOW`](#priority_low) &mdash; Lower priority
+- [`PRIORITY_HIGH`](#priority_high) &mdash; Higher priority
+- [`PRIORITY_MAX`](#priority_max) &mdash; Highest priority
+- [`FLAG_NO_CLEAR`](#flag_no_clear) &mdash; If flag applied, no close icon will be displayed.
+- [`TYPE_TOAST`](#type_toast) &mdash; Implies transient.
+- [`TYPE_PERSISTENT`](#type_persistent) &mdash; Notification will be displayed until the new user explicitly closes the notification
+- [`TYPE_TRANSIENT`](#type_transient) &mdash; Notification will be displayed only once.
 
 <a name="flag_no_clear" id="flag_no_clear"></a>
 ### `FLAG_NO_CLEAR`
@@ -136,8 +136,8 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`hasNoClear()`](#hasNoClear)
-- [`getPriority()`](#getPriority)
+- [`hasNoClear()`](#hasnoclear)
+- [`getPriority()`](#getpriority)
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

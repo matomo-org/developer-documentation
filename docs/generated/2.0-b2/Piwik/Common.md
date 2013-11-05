@@ -16,28 +16,28 @@ Constants
 
 This class defines the following constants:
 
-- [`REFERRER_TYPE_DIRECT_ENTRY`](#REFERRER_TYPE_DIRECT_ENTRY)
-- [`REFERRER_TYPE_SEARCH_ENGINE`](#REFERRER_TYPE_SEARCH_ENGINE)
-- [`REFERRER_TYPE_WEBSITE`](#REFERRER_TYPE_WEBSITE)
-- [`REFERRER_TYPE_CAMPAIGN`](#REFERRER_TYPE_CAMPAIGN)
-- [`HTML_ENCODING_QUOTE_STYLE`](#HTML_ENCODING_QUOTE_STYLE)
+- [`REFERRER_TYPE_DIRECT_ENTRY`](#referrer_type_direct_entry)
+- [`REFERRER_TYPE_SEARCH_ENGINE`](#referrer_type_search_engine)
+- [`REFERRER_TYPE_WEBSITE`](#referrer_type_website)
+- [`REFERRER_TYPE_CAMPAIGN`](#referrer_type_campaign)
+- [`HTML_ENCODING_QUOTE_STYLE`](#html_encoding_quote_style)
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`prefixTable()`](#prefixTable) &mdash; Returns a prefixed table name.
-- [`unprefixTable()`](#unprefixTable) &mdash; Removes the prefix from a table name and returns the result.
+- [`prefixTable()`](#prefixtable) &mdash; Returns a prefixed table name.
+- [`unprefixTable()`](#unprefixtable) &mdash; Removes the prefix from a table name and returns the result.
 - [`mb_substr()`](#mb_substr) &mdash; Multi-byte substr() - works with UTF-8.
 - [`mb_strlen()`](#mb_strlen) &mdash; Multi-byte strlen() - works with UTF-8  Calls `mb_substr` if available and falls back to `substr` if not.
 - [`mb_strtolower()`](#mb_strtolower) &mdash; Multi-byte strtolower() - works with UTF-8.
-- [`sanitizeInputValues()`](#sanitizeInputValues) &mdash; Sanitizes a string to help avoid XSS vulnerabilities.
-- [`unsanitizeInputValues()`](#unsanitizeInputValues) &mdash; Unsanitizes one or more values and returns the result.
-- [`getRequestVar()`](#getRequestVar) &mdash; Gets a sanitized request parameter by name from the `$_GET` and `$_POST` superglobals.
-- [`getLanguagesList()`](#getLanguagesList) &mdash; Returns the list of valid language codes.
-- [`getLanguageToCountryList()`](#getLanguageToCountryList) &mdash; Returns list of language to country mappings.
-- [`getSqlStringFieldsArray()`](#getSqlStringFieldsArray) &mdash; Returns a string with a comma separated list of placeholders for use in an SQL query based on the list of fields we're referencing.
+- [`sanitizeInputValues()`](#sanitizeinputvalues) &mdash; Sanitizes a string to help avoid XSS vulnerabilities.
+- [`unsanitizeInputValues()`](#unsanitizeinputvalues) &mdash; Unsanitizes one or more values and returns the result.
+- [`getRequestVar()`](#getrequestvar) &mdash; Gets a sanitized request parameter by name from the `$_GET` and `$_POST` superglobals.
+- [`getLanguagesList()`](#getlanguageslist) &mdash; Returns the list of valid language codes.
+- [`getLanguageToCountryList()`](#getlanguagetocountrylist) &mdash; Returns list of language to country mappings.
+- [`getSqlStringFieldsArray()`](#getsqlstringfieldsarray) &mdash; Returns a string with a comma separated list of placeholders for use in an SQL query based on the list of fields we're referencing.
 - [`destroy()`](#destroy) &mdash; Mark orphaned object for garbage collection.
 
 <a name="prefixtable" id="prefixtable"></a>

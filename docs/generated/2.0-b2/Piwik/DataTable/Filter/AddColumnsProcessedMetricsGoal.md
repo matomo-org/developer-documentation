@@ -42,9 +42,9 @@ Constants
 
 This class defines the following constants:
 
-- [`GOALS_MINIMAL_REPORT`](#GOALS_MINIMAL_REPORT) &mdash; Process main goal metrics: conversion rate, revenue per visit
-- [`GOALS_OVERVIEW`](#GOALS_OVERVIEW) &mdash; Process main goal metrics, and conversion rate per goal
-- [`GOALS_FULL_TABLE`](#GOALS_FULL_TABLE) &mdash; Process all goal and per-goal metrics
+- [`GOALS_MINIMAL_REPORT`](#goals_minimal_report) &mdash; Process main goal metrics: conversion rate, revenue per visit
+- [`GOALS_OVERVIEW`](#goals_overview) &mdash; Process main goal metrics, and conversion rate per goal
+- [`GOALS_FULL_TABLE`](#goals_full_table) &mdash; Process all goal and per-goal metrics
 
 Methods
 -------

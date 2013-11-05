@@ -11,22 +11,22 @@ Constants
 
 This class defines the following constants:
 
-- [`LOWEST_PRIORITY`](#LOWEST_PRIORITY)
-- [`LOW_PRIORITY`](#LOW_PRIORITY)
-- [`NORMAL_PRIORITY`](#NORMAL_PRIORITY)
-- [`HIGH_PRIORITY`](#HIGH_PRIORITY)
-- [`HIGHEST_PRIORITY`](#HIGHEST_PRIORITY)
+- [`LOWEST_PRIORITY`](#lowest_priority)
+- [`LOW_PRIORITY`](#low_priority)
+- [`NORMAL_PRIORITY`](#normal_priority)
+- [`HIGH_PRIORITY`](#high_priority)
+- [`HIGHEST_PRIORITY`](#highest_priority)
 
 Properties
 ----------
 
 This class defines the following properties:
 
-- [`$objectInstance`](#$objectInstance) &mdash; Object instance on which the method will be executed by the task scheduler
-- [`$className`](#$className) &mdash; Class name where the specified method is located
-- [`$methodName`](#$methodName) &mdash; Class method to run when task is scheduled
-- [`$methodParameter`](#$methodParameter) &mdash; Parameter to pass to the executed method
-- [`$scheduledTime`](#$scheduledTime) &mdash; The scheduled time policy
+- [`$objectInstance`](#$objectinstance) &mdash; Object instance on which the method will be executed by the task scheduler
+- [`$className`](#$classname) &mdash; Class name where the specified method is located
+- [`$methodName`](#$methodname) &mdash; Class method to run when task is scheduled
+- [`$methodParameter`](#$methodparameter) &mdash; Parameter to pass to the executed method
+- [`$scheduledTime`](#$scheduledtime) &mdash; The scheduled time policy
 - [`$priority`](#$priority) &mdash; The priority of a task.
 
 <a name="objectinstance" id="objectinstance"></a>
@@ -93,15 +93,15 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`getObjectInstance()`](#getObjectInstance) &mdash; Return the object instance on which the method should be executed
-- [`getClassName()`](#getClassName) &mdash; Return class name
-- [`getMethodName()`](#getMethodName) &mdash; Return method name
-- [`getMethodParameter()`](#getMethodParameter) &mdash; Return method parameter
-- [`getScheduledTime()`](#getScheduledTime) &mdash; Return scheduled time
-- [`getRescheduledTime()`](#getRescheduledTime) &mdash; Return the rescheduled time in milliseconds
-- [`getPriority()`](#getPriority) &mdash; Return the task priority.
-- [`getName()`](#getName)
-- [`getTaskName()`](#getTaskName)
+- [`getObjectInstance()`](#getobjectinstance) &mdash; Return the object instance on which the method should be executed
+- [`getClassName()`](#getclassname) &mdash; Return class name
+- [`getMethodName()`](#getmethodname) &mdash; Return method name
+- [`getMethodParameter()`](#getmethodparameter) &mdash; Return method parameter
+- [`getScheduledTime()`](#getscheduledtime) &mdash; Return scheduled time
+- [`getRescheduledTime()`](#getrescheduledtime) &mdash; Return the rescheduled time in milliseconds
+- [`getPriority()`](#getpriority) &mdash; Return the task priority.
+- [`getName()`](#getname)
+- [`getTaskName()`](#gettaskname)
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

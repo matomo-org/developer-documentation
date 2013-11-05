@@ -11,20 +11,20 @@ Constants
 
 This class defines the following constants:
 
-- [`DEFAULT_THEME`](#DEFAULT_THEME) &mdash; Default theme used in Piwik.
-- [`TRACKER_EVENT_PREFIX`](#TRACKER_EVENT_PREFIX)
+- [`DEFAULT_THEME`](#default_theme) &mdash; Default theme used in Piwik.
+- [`TRACKER_EVENT_PREFIX`](#tracker_event_prefix)
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`isPluginActivated()`](#isPluginActivated) &mdash; Returns true if a plugin has been activated.
-- [`isPluginLoaded()`](#isPluginLoaded) &mdash; Returns true if plugin is loaded (in memory).
-- [`getThemeEnabled()`](#getThemeEnabled) &mdash; Returns the non default theme currently enabled.
-- [`returnLoadedPluginsInfo()`](#returnLoadedPluginsInfo) &mdash; Returns info regarding all plugins.
-- [`getInstalledPluginsName()`](#getInstalledPluginsName) &mdash; Return list of names of installed plugins.
-- [`getMissingPlugins()`](#getMissingPlugins) &mdash; Returns names of plugins that should be loaded, but cannot be since their files cannot be found.
+- [`isPluginActivated()`](#ispluginactivated) &mdash; Returns true if a plugin has been activated.
+- [`isPluginLoaded()`](#ispluginloaded) &mdash; Returns true if plugin is loaded (in memory).
+- [`getThemeEnabled()`](#getthemeenabled) &mdash; Returns the non default theme currently enabled.
+- [`returnLoadedPluginsInfo()`](#returnloadedpluginsinfo) &mdash; Returns info regarding all plugins.
+- [`getInstalledPluginsName()`](#getinstalledpluginsname) &mdash; Return list of names of installed plugins.
+- [`getMissingPlugins()`](#getmissingplugins) &mdash; Returns names of plugins that should be loaded, but cannot be since their files cannot be found.
 
 <a name="ispluginactivated" id="ispluginactivated"></a>
 ### `isPluginActivated()`

@@ -11,10 +11,10 @@ Methods
 
 The class defines the following methods:
 
-- [`setDayOfWeekFromString()`](#setDayOfWeekFromString)
-- [`getRescheduledTime()`](#getRescheduledTime)
-- [`setDay()`](#setDay)
-- [`setDayOfWeek()`](#setDayOfWeek) &mdash; Makes this scheduled time execute on a particular day of the week on each month.
+- [`setDayOfWeekFromString()`](#setdayofweekfromstring)
+- [`getRescheduledTime()`](#getrescheduledtime)
+- [`setDay()`](#setday)
+- [`setDayOfWeek()`](#setdayofweek) &mdash; Makes this scheduled time execute on a particular day of the week on each month.
 
 <a name="setdayofweekfromstring" id="setdayofweekfromstring"></a>
 ### `setDayOfWeekFromString()`

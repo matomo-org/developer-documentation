@@ -11,18 +11,18 @@ Constants
 
 This abstract class defines the following constants:
 
-- [`TYPE_INT`](#TYPE_INT)
-- [`TYPE_FLOAT`](#TYPE_FLOAT)
-- [`TYPE_STRING`](#TYPE_STRING)
-- [`TYPE_BOOL`](#TYPE_BOOL)
-- [`TYPE_ARRAY`](#TYPE_ARRAY)
-- [`FIELD_RADIO`](#FIELD_RADIO)
-- [`FIELD_TEXT`](#FIELD_TEXT)
-- [`FIELD_TEXTAREA`](#FIELD_TEXTAREA)
-- [`FIELD_CHECKBOX`](#FIELD_CHECKBOX)
-- [`FIELD_PASSWORD`](#FIELD_PASSWORD)
-- [`FIELD_MULTI_SELECT`](#FIELD_MULTI_SELECT)
-- [`FIELD_SINGLE_SELECT`](#FIELD_SINGLE_SELECT)
+- [`TYPE_INT`](#type_int)
+- [`TYPE_FLOAT`](#type_float)
+- [`TYPE_STRING`](#type_string)
+- [`TYPE_BOOL`](#type_bool)
+- [`TYPE_ARRAY`](#type_array)
+- [`FIELD_RADIO`](#field_radio)
+- [`FIELD_TEXT`](#field_text)
+- [`FIELD_TEXTAREA`](#field_textarea)
+- [`FIELD_CHECKBOX`](#field_checkbox)
+- [`FIELD_PASSWORD`](#field_password)
+- [`FIELD_MULTI_SELECT`](#field_multi_select)
+- [`FIELD_SINGLE_SELECT`](#field_single_select)
 
 Methods
 -------
@@ -30,14 +30,14 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`getIntroduction()`](#getIntroduction)
-- [`getSettingsForCurrentUser()`](#getSettingsForCurrentUser) &mdash; Returns only settings that can be displayed for current user.
-- [`getSettings()`](#getSettings) &mdash; Get all available settings without checking any permissions.
+- [`getIntroduction()`](#getintroduction)
+- [`getSettingsForCurrentUser()`](#getsettingsforcurrentuser) &mdash; Returns only settings that can be displayed for current user.
+- [`getSettings()`](#getsettings) &mdash; Get all available settings without checking any permissions.
 - [`save()`](#save) &mdash; Saves (persists) the current setting values in the database.
-- [`removeAllPluginSettings()`](#removeAllPluginSettings) &mdash; Removes all settings for this plugin.
-- [`getSettingValue()`](#getSettingValue) &mdash; Gets the current value for this setting.
-- [`setSettingValue()`](#setSettingValue) &mdash; Sets (overwrites) the value for the given setting.
-- [`removeSettingValue()`](#removeSettingValue) &mdash; Removes the value for the given setting.
+- [`removeAllPluginSettings()`](#removeallpluginsettings) &mdash; Removes all settings for this plugin.
+- [`getSettingValue()`](#getsettingvalue) &mdash; Gets the current value for this setting.
+- [`setSettingValue()`](#setsettingvalue) &mdash; Sets (overwrites) the value for the given setting.
+- [`removeSettingValue()`](#removesettingvalue) &mdash; Removes the value for the given setting.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

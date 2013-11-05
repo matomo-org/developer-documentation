@@ -31,8 +31,8 @@ Methods
 
 The class defines the following methods:
 
-- [`isUrlFound()`](#isUrlFound) &mdash; Returns if the URL was found in the menu.
-- [`getMenu()`](#getMenu) &mdash; Triggers the Menu.Reporting.addItems hook and returns the menu.
+- [`isUrlFound()`](#isurlfound) &mdash; Returns if the URL was found in the menu.
+- [`getMenu()`](#getmenu) &mdash; Triggers the Menu.Reporting.addItems hook and returns the menu.
 
 <a name="isurlfound" id="isurlfound"></a>
 ### `isUrlFound()`

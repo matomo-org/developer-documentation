@@ -11,8 +11,8 @@ Methods
 
 The class defines the following methods:
 
-- [`getRescheduledTime()`](#getRescheduledTime)
-- [`setDay()`](#setDay)
+- [`getRescheduledTime()`](#getrescheduledtime)
+- [`setDay()`](#setday)
 
 <a name="getrescheduledtime" id="getrescheduledtime"></a>
 ### `getRescheduledTime()`

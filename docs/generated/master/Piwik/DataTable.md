@@ -147,13 +147,13 @@ Constants
 
 This class defines the following constants:
 
-- [`MAX_DEPTH_DEFAULT`](#MAX_DEPTH_DEFAULT)
-- [`ARCHIVED_DATE_METADATA_NAME`](#ARCHIVED_DATE_METADATA_NAME) &mdash; Name for metadata that describes when a report was archived.
-- [`EMPTY_COLUMNS_METADATA_NAME`](#EMPTY_COLUMNS_METADATA_NAME) &mdash; Name for metadata that describes which columns are empty and should not be shown.
-- [`TOTAL_ROWS_BEFORE_LIMIT_METADATA_NAME`](#TOTAL_ROWS_BEFORE_LIMIT_METADATA_NAME) &mdash; Name for metadata that describes the number of rows that existed before the Limit filter was applied.
-- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#COLUMN_AGGREGATION_OPS_METADATA_NAME) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable](#addDataTable) or [DataTable\Row::sumRow](#) is called.
-- [`ID_SUMMARY_ROW`](#ID_SUMMARY_ROW) &mdash; The ID of the Summary Row.
-- [`LABEL_SUMMARY_ROW`](#LABEL_SUMMARY_ROW) &mdash; The original label of the Summary Row.
+- [`MAX_DEPTH_DEFAULT`](#max_depth_default)
+- [`ARCHIVED_DATE_METADATA_NAME`](#archived_date_metadata_name) &mdash; Name for metadata that describes when a report was archived.
+- [`EMPTY_COLUMNS_METADATA_NAME`](#empty_columns_metadata_name) &mdash; Name for metadata that describes which columns are empty and should not be shown.
+- [`TOTAL_ROWS_BEFORE_LIMIT_METADATA_NAME`](#total_rows_before_limit_metadata_name) &mdash; Name for metadata that describes the number of rows that existed before the Limit filter was applied.
+- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable](#addDataTable) or [DataTable\Row::sumRow](#) is called.
+- [`ID_SUMMARY_ROW`](#id_summary_row) &mdash; The ID of the Summary Row.
+- [`LABEL_SUMMARY_ROW`](#label_summary_row) &mdash; The original label of the Summary Row.
 
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 ### `COLUMN_AGGREGATION_OPS_METADATA_NAME`
@@ -175,57 +175,57 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`__destruct()`](#__destruct) &mdash; Destructor.
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function.
-- [`getSortedByColumnName()`](#getSortedByColumnName) &mdash; Returns the name of the column this table was sorted by (if any).
-- [`enableRecursiveSort()`](#enableRecursiveSort) &mdash; Enables recursive sorting.
-- [`enableRecursiveFilters()`](#enableRecursiveFilters) &mdash; Enables recursive filtering.
+- [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any).
+- [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting.
+- [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering.
 - [`filter()`](#filter) &mdash; Applies filter to this datatable.
-- [`queueFilter()`](#queueFilter) &mdash; Adds a filter and a list of parameters to the list of queued filters.
-- [`applyQueuedFilters()`](#applyQueuedFilters) &mdash; Applies all filters that were previously queued to the table.
-- [`addDataTable()`](#addDataTable) &mdash; Sums a DataTable to this one.
-- [`getRowFromLabel()`](#getRowFromLabel) &mdash; Returns the Row whose `'label'` column is equal to `$label`.
-- [`getRowIdFromLabel()`](#getRowIdFromLabel) &mdash; Returns the row id for the row whose `'label'` column is equal to `$label`.
-- [`getEmptyClone()`](#getEmptyClone) &mdash; Returns an empty DataTable with the same metadata and queued filters as `$this` one.
-- [`getRowFromId()`](#getRowFromId) &mdash; Returns a row by ID.
-- [`getRowFromIdSubDataTable()`](#getRowFromIdSubDataTable) &mdash; Returns the row that has a subtable with ID matching `$idSubtable`.
-- [`addRow()`](#addRow) &mdash; Adds a row to this table.
-- [`addSummaryRow()`](#addSummaryRow) &mdash; Sets the summary row.
-- [`getId()`](#getId) &mdash; Returns the DataTable ID.
-- [`addRowFromArray()`](#addRowFromArray) &mdash; Adds a new row from an array.
-- [`addRowFromSimpleArray()`](#addRowFromSimpleArray) &mdash; Adds a new row a from an array of column values.
-- [`getRows()`](#getRows) &mdash; Returns the array of Rows.
-- [`getColumn()`](#getColumn) &mdash; Returns an array containing all column values for the requested column.
-- [`getColumnsStartingWith()`](#getColumnsStartingWith) &mdash; Returns an array containing all column values of columns whose name starts with `$name`.
-- [`getColumns()`](#getColumns) &mdash; Returns the list of columns the rows in this datatable contain.
-- [`getRowsMetadata()`](#getRowsMetadata) &mdash; Returns an array containing the requested metadata value of each row.
-- [`getRowsCount()`](#getRowsCount) &mdash; Returns the number of rows in the table including the summary row.
-- [`getFirstRow()`](#getFirstRow) &mdash; Returns the first row of the DataTable.
-- [`getLastRow()`](#getLastRow) &mdash; Returns the last row of the DataTable.
-- [`getRowsCountRecursive()`](#getRowsCountRecursive) &mdash; Returns the number of rows in this DataTable summed with the row count of each subtable in the DataTable hierarchy.
-- [`deleteColumn()`](#deleteColumn) &mdash; Delete a column by name in every row.
+- [`queueFilter()`](#queuefilter) &mdash; Adds a filter and a list of parameters to the list of queued filters.
+- [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Applies all filters that were previously queued to the table.
+- [`addDataTable()`](#adddatatable) &mdash; Sums a DataTable to this one.
+- [`getRowFromLabel()`](#getrowfromlabel) &mdash; Returns the Row whose `'label'` column is equal to `$label`.
+- [`getRowIdFromLabel()`](#getrowidfromlabel) &mdash; Returns the row id for the row whose `'label'` column is equal to `$label`.
+- [`getEmptyClone()`](#getemptyclone) &mdash; Returns an empty DataTable with the same metadata and queued filters as `$this` one.
+- [`getRowFromId()`](#getrowfromid) &mdash; Returns a row by ID.
+- [`getRowFromIdSubDataTable()`](#getrowfromidsubdatatable) &mdash; Returns the row that has a subtable with ID matching `$idSubtable`.
+- [`addRow()`](#addrow) &mdash; Adds a row to this table.
+- [`addSummaryRow()`](#addsummaryrow) &mdash; Sets the summary row.
+- [`getId()`](#getid) &mdash; Returns the DataTable ID.
+- [`addRowFromArray()`](#addrowfromarray) &mdash; Adds a new row from an array.
+- [`addRowFromSimpleArray()`](#addrowfromsimplearray) &mdash; Adds a new row a from an array of column values.
+- [`getRows()`](#getrows) &mdash; Returns the array of Rows.
+- [`getColumn()`](#getcolumn) &mdash; Returns an array containing all column values for the requested column.
+- [`getColumnsStartingWith()`](#getcolumnsstartingwith) &mdash; Returns an array containing all column values of columns whose name starts with `$name`.
+- [`getColumns()`](#getcolumns) &mdash; Returns the list of columns the rows in this datatable contain.
+- [`getRowsMetadata()`](#getrowsmetadata) &mdash; Returns an array containing the requested metadata value of each row.
+- [`getRowsCount()`](#getrowscount) &mdash; Returns the number of rows in the table including the summary row.
+- [`getFirstRow()`](#getfirstrow) &mdash; Returns the first row of the DataTable.
+- [`getLastRow()`](#getlastrow) &mdash; Returns the last row of the DataTable.
+- [`getRowsCountRecursive()`](#getrowscountrecursive) &mdash; Returns the number of rows in this DataTable summed with the row count of each subtable in the DataTable hierarchy.
+- [`deleteColumn()`](#deletecolumn) &mdash; Delete a column by name in every row.
 - [`__sleep()`](#__sleep)
-- [`renameColumn()`](#renameColumn) &mdash; Rename a column in every row.
-- [`deleteColumns()`](#deleteColumns) &mdash; Deletes several columns by name in every row.
-- [`deleteRow()`](#deleteRow) &mdash; Deletes a row by ID.
-- [`deleteRowsOffset()`](#deleteRowsOffset) &mdash; Deletes rows from `$offset` to `$offset + $limit`.
-- [`deleteRows()`](#deleteRows) &mdash; Deletes a set of rows by ID.
-- [`__toString()`](#__toString) &mdash; Returns a string representation of this DataTable for convenient viewing.
-- [`isEqual()`](#isEqual) &mdash; Returns true if both DataTable instances are exactly the same.
-- [`getSerialized()`](#getSerialized) &mdash; Serializes an entire DataTable hierarchy and returns the array of serialized DataTables.
-- [`addRowsFromSerializedArray()`](#addRowsFromSerializedArray) &mdash; Adds a set of rows from a serialized DataTable string.
-- [`addRowsFromArray()`](#addRowsFromArray) &mdash; Adds many rows from an array.
-- [`addRowsFromSimpleArray()`](#addRowsFromSimpleArray) &mdash; Adds many rows from an array containing arrays of column values.
-- [`makeFromIndexedArray()`](#makeFromIndexedArray) &mdash; Rewrites the input $array array (     LABEL => array(col1 => X, col2 => Y),     LABEL2 => array(col1 => X, col2 => Y), ) to a DataTable, ie.
-- [`setMaximumDepthLevelAllowedAtLeast()`](#setMaximumDepthLevelAllowedAtLeast) &mdash; Sets the maximum depth level to at least a certain value.
-- [`getMetadata()`](#getMetadata) &mdash; Returns metadata by name.
-- [`setMetadata()`](#setMetadata) &mdash; Sets a metadata value by name.
-- [`getAllTableMetadata()`](#getAllTableMetadata) &mdash; Returns all table metadata.
-- [`setMetadataValues()`](#setMetadataValues) &mdash; Sets several metadata values by name.
-- [`setAllTableMetadata()`](#setAllTableMetadata) &mdash; Sets metadata erasing existing values.
-- [`setMaximumAllowedRows()`](#setMaximumAllowedRows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row).
-- [`walkPath()`](#walkPath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one.
-- [`mergeSubtables()`](#mergeSubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with its subtable's rows.
-- [`makeFromSimpleArray()`](#makeFromSimpleArray) &mdash; Returns a new DataTable created with data from a 'simple' array.
-- [`fromSerializedArray()`](#fromSerializedArray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
+- [`renameColumn()`](#renamecolumn) &mdash; Rename a column in every row.
+- [`deleteColumns()`](#deletecolumns) &mdash; Deletes several columns by name in every row.
+- [`deleteRow()`](#deleterow) &mdash; Deletes a row by ID.
+- [`deleteRowsOffset()`](#deleterowsoffset) &mdash; Deletes rows from `$offset` to `$offset + $limit`.
+- [`deleteRows()`](#deleterows) &mdash; Deletes a set of rows by ID.
+- [`__toString()`](#__tostring) &mdash; Returns a string representation of this DataTable for convenient viewing.
+- [`isEqual()`](#isequal) &mdash; Returns true if both DataTable instances are exactly the same.
+- [`getSerialized()`](#getserialized) &mdash; Serializes an entire DataTable hierarchy and returns the array of serialized DataTables.
+- [`addRowsFromSerializedArray()`](#addrowsfromserializedarray) &mdash; Adds a set of rows from a serialized DataTable string.
+- [`addRowsFromArray()`](#addrowsfromarray) &mdash; Adds many rows from an array.
+- [`addRowsFromSimpleArray()`](#addrowsfromsimplearray) &mdash; Adds many rows from an array containing arrays of column values.
+- [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input $array array (     LABEL => array(col1 => X, col2 => Y),     LABEL2 => array(col1 => X, col2 => Y), ) to a DataTable, ie.
+- [`setMaximumDepthLevelAllowedAtLeast()`](#setmaximumdepthlevelallowedatleast) &mdash; Sets the maximum depth level to at least a certain value.
+- [`getMetadata()`](#getmetadata) &mdash; Returns metadata by name.
+- [`setMetadata()`](#setmetadata) &mdash; Sets a metadata value by name.
+- [`getAllTableMetadata()`](#getalltablemetadata) &mdash; Returns all table metadata.
+- [`setMetadataValues()`](#setmetadatavalues) &mdash; Sets several metadata values by name.
+- [`setAllTableMetadata()`](#setalltablemetadata) &mdash; Sets metadata erasing existing values.
+- [`setMaximumAllowedRows()`](#setmaximumallowedrows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row).
+- [`walkPath()`](#walkpath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one.
+- [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with its subtable's rows.
+- [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array.
+- [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

@@ -18,9 +18,9 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`getOrder()`](#getOrder)
-- [`setUserLogin()`](#setUserLogin) &mdash; Sets (overwrites) the userLogin.
-- [`removeAllUserSettingsForUser()`](#removeAllUserSettingsForUser) &mdash; Remove all stored settings of the given userLogin.
+- [`getOrder()`](#getorder)
+- [`setUserLogin()`](#setuserlogin) &mdash; Sets (overwrites) the userLogin.
+- [`removeAllUserSettingsForUser()`](#removeallusersettingsforuser) &mdash; Remove all stored settings of the given userLogin.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

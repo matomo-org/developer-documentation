@@ -20,7 +20,7 @@ Constants
 
 This class defines the following constants:
 
-- [`TEMPLATE_FILE`](#TEMPLATE_FILE)
+- [`TEMPLATE_FILE`](#template_file)
 
 Methods
 -------
@@ -28,12 +28,12 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`assignTemplateVar()`](#assignTemplateVar) &mdash; Assigns a template variable.
-- [`beforeLoadDataTable()`](#beforeLoadDataTable) &mdash; Hook that is intended to change the request config that is sent to the API.
-- [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](#beforeGenericFiltersAreAppliedToLoadedDataTable) &mdash; Hook that is executed before generic filters like "filter_limit" and "filter_offset" are applied
-- [`afterGenericFiltersAreAppliedToLoadedDataTable()`](#afterGenericFiltersAreAppliedToLoadedDataTable) &mdash; This hook is executed after generic filters like "filter_limit" and "filter_offset" are applied
-- [`afterAllFilteresAreApplied()`](#afterAllFilteresAreApplied) &mdash; This hook is executed after the data table is loaded and after all filteres are applied.
-- [`beforeRender()`](#beforeRender) &mdash; Hook to make sure config properties have a specific value because the default config can be changed by a report or by request ($_GET and $_POST) params.
+- [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable.
+- [`beforeLoadDataTable()`](#beforeloaddatatable) &mdash; Hook that is intended to change the request config that is sent to the API.
+- [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](#beforegenericfiltersareappliedtoloadeddatatable) &mdash; Hook that is executed before generic filters like "filter_limit" and "filter_offset" are applied
+- [`afterGenericFiltersAreAppliedToLoadedDataTable()`](#aftergenericfiltersareappliedtoloadeddatatable) &mdash; This hook is executed after generic filters like "filter_limit" and "filter_offset" are applied
+- [`afterAllFilteresAreApplied()`](#afterallfilteresareapplied) &mdash; This hook is executed after the data table is loaded and after all filteres are applied.
+- [`beforeRender()`](#beforerender) &mdash; Hook to make sure config properties have a specific value because the default config can be changed by a report or by request ($_GET and $_POST) params.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

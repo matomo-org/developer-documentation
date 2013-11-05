@@ -50,7 +50,7 @@ Constants
 
 This class defines the following constants:
 
-- [`SEGMENT_TRUNCATE_LIMIT`](#SEGMENT_TRUNCATE_LIMIT) &mdash; Truncate the Segments to 8k
+- [`SEGMENT_TRUNCATE_LIMIT`](#segment_truncate_limit) &mdash; Truncate the Segments to 8k
 
 Methods
 -------
@@ -58,10 +58,10 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`isEmpty()`](#isEmpty) &mdash; Returns true if the segment is empty, false if otherwise.
-- [`getString()`](#getString) &mdash; Returns the segment condition.
-- [`getHash()`](#getHash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
-- [`getSelectQuery()`](#getSelectQuery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
+- [`isEmpty()`](#isempty) &mdash; Returns true if the segment is empty, false if otherwise.
+- [`getString()`](#getstring) &mdash; Returns the segment condition.
+- [`getHash()`](#gethash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
+- [`getSelectQuery()`](#getselectquery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

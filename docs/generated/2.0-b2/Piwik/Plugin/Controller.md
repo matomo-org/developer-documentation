@@ -39,11 +39,11 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getDefaultAction()`](#getDefaultAction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
-- [`setHostValidationVariablesView()`](#setHostValidationVariablesView) &mdash; Checks if the current host is valid and sets variables on the given view, including:
-- [`setPeriodVariablesView()`](#setPeriodVariablesView) &mdash; Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
-- [`redirectToIndex()`](#redirectToIndex) &mdash; Helper method used to redirect the current http request to another module/action.
-- [`getCalendarPrettyDate()`](#getCalendarPrettyDate) &mdash; Returns a prettified date string for use in period selector widget.
+- [`getDefaultAction()`](#getdefaultaction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
+- [`setHostValidationVariablesView()`](#sethostvalidationvariablesview) &mdash; Checks if the current host is valid and sets variables on the given view, including:
+- [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
+- [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current http request to another module/action.
+- [`getCalendarPrettyDate()`](#getcalendarprettydate) &mdash; Returns a prettified date string for use in period selector widget.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

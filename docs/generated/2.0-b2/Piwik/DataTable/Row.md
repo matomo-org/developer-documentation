@@ -17,9 +17,9 @@ Constants
 
 This class defines the following constants:
 
-- [`COLUMNS`](#COLUMNS)
-- [`METADATA`](#METADATA)
-- [`DATATABLE_ASSOCIATED`](#DATATABLE_ASSOCIATED)
+- [`COLUMNS`](#columns)
+- [`METADATA`](#metadata)
+- [`DATATABLE_ASSOCIATED`](#datatable_associated)
 
 Properties
 ----------
@@ -27,7 +27,7 @@ Properties
 This class defines the following properties:
 
 - [`$c`](#$c) &mdash; This array contains the row information: - array indexed by self::COLUMNS contains the columns, pairs of (column names, value) - (optional) array indexed by self::METADATA contains the metadata,  pairs of (metadata name, value) - (optional) integer indexed by self::DATATABLE_ASSOCIATED contains the ID of the DataTable associated to this row.
-- [`$maxVisitsSummed`](#$maxVisitsSummed)
+- [`$maxVisitsSummed`](#$maxvisitssummed)
 
 <a name="c" id="c"></a>
 ### `$c`
@@ -57,33 +57,33 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`__sleep()`](#__sleep) &mdash; Because $this->c[self::DATATABLE_ASSOCIATED] is negative when the table is in memory, we must prior to serialize() call, make sure the ID is saved as positive integer
-- [`cleanPostSerialize()`](#cleanPostSerialize) &mdash; Must be called after the row was serialized and __sleep was called.
+- [`cleanPostSerialize()`](#cleanpostserialize) &mdash; Must be called after the row was serialized and __sleep was called.
 - [`__destruct()`](#__destruct) &mdash; When destroyed, a row destroys its associated subTable if there is one
-- [`__toString()`](#__toString) &mdash; Applies a basic rendering to the Row and returns the output.
-- [`deleteColumn()`](#deleteColumn) &mdash; Deletes the given column.
-- [`renameColumn()`](#renameColumn) &mdash; Renames a column.
-- [`getColumn()`](#getColumn) &mdash; Returns a column by name.
-- [`getMetadata()`](#getMetadata) &mdash; Returns the array of all metadata, or one requested metadata value.
-- [`getColumns()`](#getColumns) &mdash; Returns the array containing all the columns.
-- [`getIdSubDataTable()`](#getIdSubDataTable) &mdash; Returns the ID of the subDataTable.
-- [`getSubtable()`](#getSubtable) &mdash; Returns the associated subtable, if one exists.
-- [`sumSubtable()`](#sumSubtable) &mdash; Sums a DataTable to this row's subtable.
-- [`addSubtable()`](#addSubtable) &mdash; Attaches a subtable to this row.
-- [`setSubtable()`](#setSubtable) &mdash; Attaches a subtable to this row, overwriting the existing subtable, if any.
-- [`isSubtableLoaded()`](#isSubtableLoaded) &mdash; Returns true if the subtable is currently loaded in memory via [DataTable\Manager](#).
-- [`removeSubtable()`](#removeSubtable) &mdash; Removes the subtable reference.
-- [`setColumns()`](#setColumns) &mdash; Set all the columns at once.
-- [`setColumn()`](#setColumn) &mdash; Set the value `$value` to the column called `$name`.
-- [`setMetadata()`](#setMetadata) &mdash; Set the value `$value` to the metadata called `$name`.
-- [`deleteMetadata()`](#deleteMetadata) &mdash; Deletes one metadata value or all metadata values.
-- [`addColumn()`](#addColumn) &mdash; Add a new column to the row.
-- [`addColumns()`](#addColumns) &mdash; Add many columns to this row.
-- [`addMetadata()`](#addMetadata) &mdash; Add a new metadata to the row.
-- [`sumRow()`](#sumRow) &mdash; Sums the given `$rowToSum` columns values to the existing row column values.
-- [`sumRowMetadata()`](#sumRowMetadata) &mdash; Sums the metadata in `$rowToSum` with the metadata in `$this` row.
-- [`isSummaryRow()`](#isSummaryRow) &mdash; Returns true if this row is the summary row, false if otherwise.
-- [`compareElements()`](#compareElements) &mdash; Helper function to compare array elements
-- [`isEqual()`](#isEqual) &mdash; Helper function that tests if two rows are equal.
+- [`__toString()`](#__tostring) &mdash; Applies a basic rendering to the Row and returns the output.
+- [`deleteColumn()`](#deletecolumn) &mdash; Deletes the given column.
+- [`renameColumn()`](#renamecolumn) &mdash; Renames a column.
+- [`getColumn()`](#getcolumn) &mdash; Returns a column by name.
+- [`getMetadata()`](#getmetadata) &mdash; Returns the array of all metadata, or one requested metadata value.
+- [`getColumns()`](#getcolumns) &mdash; Returns the array containing all the columns.
+- [`getIdSubDataTable()`](#getidsubdatatable) &mdash; Returns the ID of the subDataTable.
+- [`getSubtable()`](#getsubtable) &mdash; Returns the associated subtable, if one exists.
+- [`sumSubtable()`](#sumsubtable) &mdash; Sums a DataTable to this row's subtable.
+- [`addSubtable()`](#addsubtable) &mdash; Attaches a subtable to this row.
+- [`setSubtable()`](#setsubtable) &mdash; Attaches a subtable to this row, overwriting the existing subtable, if any.
+- [`isSubtableLoaded()`](#issubtableloaded) &mdash; Returns true if the subtable is currently loaded in memory via [DataTable\Manager](#).
+- [`removeSubtable()`](#removesubtable) &mdash; Removes the subtable reference.
+- [`setColumns()`](#setcolumns) &mdash; Set all the columns at once.
+- [`setColumn()`](#setcolumn) &mdash; Set the value `$value` to the column called `$name`.
+- [`setMetadata()`](#setmetadata) &mdash; Set the value `$value` to the metadata called `$name`.
+- [`deleteMetadata()`](#deletemetadata) &mdash; Deletes one metadata value or all metadata values.
+- [`addColumn()`](#addcolumn) &mdash; Add a new column to the row.
+- [`addColumns()`](#addcolumns) &mdash; Add many columns to this row.
+- [`addMetadata()`](#addmetadata) &mdash; Add a new metadata to the row.
+- [`sumRow()`](#sumrow) &mdash; Sums the given `$rowToSum` columns values to the existing row column values.
+- [`sumRowMetadata()`](#sumrowmetadata) &mdash; Sums the metadata in `$rowToSum` with the metadata in `$this` row.
+- [`isSummaryRow()`](#issummaryrow) &mdash; Returns true if this row is the summary row, false if otherwise.
+- [`compareElements()`](#compareelements) &mdash; Helper function to compare array elements
+- [`isEqual()`](#isequal) &mdash; Helper function that tests if two rows are equal.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

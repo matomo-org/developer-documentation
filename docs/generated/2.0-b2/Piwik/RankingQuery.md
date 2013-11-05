@@ -38,14 +38,14 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`setLimit()`](#setLimit) &mdash; Set the limit after which everything is grouped to "Others".
-- [`setOthersLabel()`](#setOthersLabel) &mdash; Set the value to use for the label in the 'Others' row.
-- [`addLabelColumn()`](#addLabelColumn) &mdash; Add a label column.
-- [`addColumn()`](#addColumn) &mdash; Add a column that has be added to the outer queries.
-- [`setColumnToMarkExcludedRows()`](#setColumnToMarkExcludedRows) &mdash; Sets a column that will be used to filter the result into two categories.
-- [`partitionResultIntoMultipleGroups()`](#partitionResultIntoMultipleGroups) &mdash; This method can be used to parition the result based on the possible values of one table column.
+- [`setLimit()`](#setlimit) &mdash; Set the limit after which everything is grouped to "Others".
+- [`setOthersLabel()`](#setotherslabel) &mdash; Set the value to use for the label in the 'Others' row.
+- [`addLabelColumn()`](#addlabelcolumn) &mdash; Add a label column.
+- [`addColumn()`](#addcolumn) &mdash; Add a column that has be added to the outer queries.
+- [`setColumnToMarkExcludedRows()`](#setcolumntomarkexcludedrows) &mdash; Sets a column that will be used to filter the result into two categories.
+- [`partitionResultIntoMultipleGroups()`](#partitionresultintomultiplegroups) &mdash; This method can be used to parition the result based on the possible values of one table column.
 - [`execute()`](#execute) &mdash; Executes the query.
-- [`generateQuery()`](#generateQuery) &mdash; Generate the SQL code that does the magic.
+- [`generateQuery()`](#generatequery) &mdash; Generate the SQL code that does the magic.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

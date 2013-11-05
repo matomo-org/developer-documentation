@@ -11,13 +11,13 @@ Methods
 
 The class defines the following methods:
 
-- [`getPrettyNumber()`](#getPrettyNumber) &mdash; Returns a prettified string representation of a number.
-- [`getPrettyTimeFromSeconds()`](#getPrettyTimeFromSeconds) &mdash; Returns a prettified time value (in seconds).
-- [`getPrettySizeFromBytes()`](#getPrettySizeFromBytes) &mdash; Returns a prettified memory size value.
-- [`getPrettyMoney()`](#getPrettyMoney) &mdash; Returns a pretty formated monetary value using the currency associated with a site.
-- [`getPrettyValue()`](#getPrettyValue) &mdash; Prettifies a metric value based on the column name.
-- [`getCurrencySymbol()`](#getCurrencySymbol) &mdash; Returns the currency symbol for a site.
-- [`getCurrencyList()`](#getCurrencyList) &mdash; Returns the list of all known currency symbols.
+- [`getPrettyNumber()`](#getprettynumber) &mdash; Returns a prettified string representation of a number.
+- [`getPrettyTimeFromSeconds()`](#getprettytimefromseconds) &mdash; Returns a prettified time value (in seconds).
+- [`getPrettySizeFromBytes()`](#getprettysizefrombytes) &mdash; Returns a prettified memory size value.
+- [`getPrettyMoney()`](#getprettymoney) &mdash; Returns a pretty formated monetary value using the currency associated with a site.
+- [`getPrettyValue()`](#getprettyvalue) &mdash; Prettifies a metric value based on the column name.
+- [`getCurrencySymbol()`](#getcurrencysymbol) &mdash; Returns the currency symbol for a site.
+- [`getCurrencyList()`](#getcurrencylist) &mdash; Returns the list of all known currency symbols.
 
 <a name="getprettynumber" id="getprettynumber"></a>
 ### `getPrettyNumber()`

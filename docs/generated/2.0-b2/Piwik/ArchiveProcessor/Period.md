@@ -48,8 +48,8 @@ Methods
 
 The class defines the following methods:
 
-- [`aggregateDataTableReports()`](#aggregateDataTableReports) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
-- [`aggregateNumericMetrics()`](#aggregateNumericMetrics) &mdash; Aggregates metrics for every subperiod of the current period and inserts the result as the metric for this period.
+- [`aggregateDataTableReports()`](#aggregatedatatablereports) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
+- [`aggregateNumericMetrics()`](#aggregatenumericmetrics) &mdash; Aggregates metrics for every subperiod of the current period and inserts the result as the metric for this period.
 
 <a name="aggregatedatatablereports" id="aggregatedatatablereports"></a>
 ### `aggregateDataTableReports()`

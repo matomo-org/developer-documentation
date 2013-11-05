@@ -22,11 +22,11 @@ Methods
 
 The class defines the following methods:
 
-- [`getNonce()`](#getNonce) &mdash; Returns the existing nonce.
-- [`verifyNonce()`](#verifyNonce) &mdash; Returns if a nonce is valid and comes from a valid request.
-- [`discardNonce()`](#discardNonce) &mdash; Force expiration of the current nonce.
-- [`getOrigin()`](#getOrigin) &mdash; Returns Origin HTTP header or false if not found.
-- [`getAcceptableOrigins()`](#getAcceptableOrigins) &mdash; Returns a list acceptable values for the HTTP Origin header.
+- [`getNonce()`](#getnonce) &mdash; Returns the existing nonce.
+- [`verifyNonce()`](#verifynonce) &mdash; Returns if a nonce is valid and comes from a valid request.
+- [`discardNonce()`](#discardnonce) &mdash; Force expiration of the current nonce.
+- [`getOrigin()`](#getorigin) &mdash; Returns Origin HTTP header or false if not found.
+- [`getAcceptableOrigins()`](#getacceptableorigins) &mdash; Returns a list acceptable values for the HTTP Origin header.
 
 <a name="getnonce" id="getnonce"></a>
 ### `getNonce()`

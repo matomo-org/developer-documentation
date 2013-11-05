@@ -13,9 +13,9 @@ The class defines the following methods:
 
 - [`mkdir()`](#mkdir) &mdash; Attempts to create a new directory.
 - [`globr()`](#globr) &mdash; Recursively find pathnames that match a pattern.
-- [`unlinkRecursive()`](#unlinkRecursive) &mdash; Recursively deletes a directory.
+- [`unlinkRecursive()`](#unlinkrecursive) &mdash; Recursively deletes a directory.
 - [`copy()`](#copy) &mdash; Copies a file from `$source` to `$dest`.
-- [`copyRecursive()`](#copyRecursive) &mdash; Copies the contents of a directory recursively from `$source` to `$target`.
+- [`copyRecursive()`](#copyrecursive) &mdash; Copies the contents of a directory recursively from `$source` to `$target`.
 
 <a name="mkdir" id="mkdir"></a>
 ### `mkdir()`

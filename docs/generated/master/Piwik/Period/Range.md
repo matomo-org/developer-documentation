@@ -23,15 +23,15 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getLocalizedShortString()`](#getLocalizedShortString) &mdash; Returns the current period as a localized short string.
-- [`getLocalizedLongString()`](#getLocalizedLongString) &mdash; Returns the current period as a localized long string.
-- [`getDateStart()`](#getDateStart) &mdash; Returns the start date of the period
-- [`getPrettyString()`](#getPrettyString) &mdash; Returns the current period as a string
-- [`setDefaultEndDate()`](#setDefaultEndDate) &mdash; Sets the default end date of the period
-- [`parseDateRange()`](#parseDateRange) &mdash; Given a date string, returns false if not a date range, or returns the array containing date start, date end
-- [`getDateEnd()`](#getDateEnd) &mdash; Returns the end date of the period
-- [`getLastDate()`](#getLastDate) &mdash; Returns the date that is one period before the supplied date.
-- [`getRelativeToEndDate()`](#getRelativeToEndDate) &mdash; Returns a date ragne string given a period type, end date and number of periods the range spans over.
+- [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns the current period as a localized short string.
+- [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns the current period as a localized long string.
+- [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period
+- [`getPrettyString()`](#getprettystring) &mdash; Returns the current period as a string
+- [`setDefaultEndDate()`](#setdefaultenddate) &mdash; Sets the default end date of the period
+- [`parseDateRange()`](#parsedaterange) &mdash; Given a date string, returns false if not a date range, or returns the array containing date start, date end
+- [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period
+- [`getLastDate()`](#getlastdate) &mdash; Returns the date that is one period before the supplied date.
+- [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date ragne string given a period type, end date and number of periods the range spans over.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

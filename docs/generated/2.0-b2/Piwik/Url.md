@@ -41,20 +41,20 @@ Methods
 
 The class defines the following methods:
 
-- [`getCurrentUrl()`](#getCurrentUrl) &mdash; Returns the current URL.
-- [`getCurrentUrlWithoutQueryString()`](#getCurrentUrlWithoutQueryString) &mdash; Returns the current URL without the query string.
-- [`getCurrentUrlWithoutFileName()`](#getCurrentUrlWithoutFileName) &mdash; Returns the current URL without the query string and without the name of the file being executed.
-- [`getCurrentScriptPath()`](#getCurrentScriptPath) &mdash; Returns the path to the script being executed.
-- [`getCurrentScriptName()`](#getCurrentScriptName) &mdash; Returns the path to the script being executed.
-- [`getCurrentScheme()`](#getCurrentScheme) &mdash; Returns the current URL's protocol.
-- [`getCurrentHost()`](#getCurrentHost) &mdash; Returns the current host.
-- [`getCurrentQueryString()`](#getCurrentQueryString) &mdash; Returns the query string of the current URL.
-- [`getArrayFromCurrentQueryString()`](#getArrayFromCurrentQueryString) &mdash; Returns an array mapping query paramater names with query parameter values for the current URL.
-- [`getQueryStringFromParameters()`](#getQueryStringFromParameters) &mdash; Converts an an array of parameters name => value mappings to a query string.
-- [`redirectToReferrer()`](#redirectToReferrer) &mdash; Redirects the user to the referrer.
-- [`redirectToUrl()`](#redirectToUrl) &mdash; Redirects the user to the specified URL.
-- [`getReferrer()`](#getReferrer) &mdash; Returns the HTTP_REFERER header, or false if not found.
-- [`isLocalUrl()`](#isLocalUrl) &mdash; Returns true if the URL points to something on the same host, false if otherwise.
+- [`getCurrentUrl()`](#getcurrenturl) &mdash; Returns the current URL.
+- [`getCurrentUrlWithoutQueryString()`](#getcurrenturlwithoutquerystring) &mdash; Returns the current URL without the query string.
+- [`getCurrentUrlWithoutFileName()`](#getcurrenturlwithoutfilename) &mdash; Returns the current URL without the query string and without the name of the file being executed.
+- [`getCurrentScriptPath()`](#getcurrentscriptpath) &mdash; Returns the path to the script being executed.
+- [`getCurrentScriptName()`](#getcurrentscriptname) &mdash; Returns the path to the script being executed.
+- [`getCurrentScheme()`](#getcurrentscheme) &mdash; Returns the current URL's protocol.
+- [`getCurrentHost()`](#getcurrenthost) &mdash; Returns the current host.
+- [`getCurrentQueryString()`](#getcurrentquerystring) &mdash; Returns the query string of the current URL.
+- [`getArrayFromCurrentQueryString()`](#getarrayfromcurrentquerystring) &mdash; Returns an array mapping query paramater names with query parameter values for the current URL.
+- [`getQueryStringFromParameters()`](#getquerystringfromparameters) &mdash; Converts an an array of parameters name => value mappings to a query string.
+- [`redirectToReferrer()`](#redirecttoreferrer) &mdash; Redirects the user to the referrer.
+- [`redirectToUrl()`](#redirecttourl) &mdash; Redirects the user to the specified URL.
+- [`getReferrer()`](#getreferrer) &mdash; Returns the HTTP_REFERER header, or false if not found.
+- [`isLocalUrl()`](#islocalurl) &mdash; Returns true if the URL points to something on the same host, false if otherwise.
 
 <a name="getcurrenturl" id="getcurrenturl"></a>
 ### `getCurrentUrl()`

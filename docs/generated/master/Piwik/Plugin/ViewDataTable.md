@@ -33,7 +33,7 @@ Constants
 
 This abstract class defines the following constants:
 
-- [`ID`](#ID)
+- [`ID`](#id)
 
 Properties
 ----------
@@ -41,7 +41,7 @@ Properties
 This abstract class defines the following properties:
 
 - [`$config`](#$config)
-- [`$requestConfig`](#$requestConfig)
+- [`$requestConfig`](#$requestconfig)
 
 <a name="config" id="config"></a>
 ### `$config`
@@ -63,15 +63,15 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getDefaultConfig()`](#getDefaultConfig) &mdash; Returns the default config.
-- [`getDefaultRequestConfig()`](#getDefaultRequestConfig) &mdash; Returns the default request config.
-- [`getViewDataTableId()`](#getViewDataTableId) &mdash; Returns the viewDataTable ID for this DataTable visualization.
-- [`isViewDataTableId()`](#isViewDataTableId) &mdash; Detects whether the viewDataTable or one of its ancestors has the given id.
-- [`getDataTable()`](#getDataTable) &mdash; Returns the DataTable loaded from the API
-- [`setDataTable()`](#setDataTable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly.
+- [`getDefaultConfig()`](#getdefaultconfig) &mdash; Returns the default config.
+- [`getDefaultRequestConfig()`](#getdefaultrequestconfig) &mdash; Returns the default request config.
+- [`getViewDataTableId()`](#getviewdatatableid) &mdash; Returns the viewDataTable ID for this DataTable visualization.
+- [`isViewDataTableId()`](#isviewdatatableid) &mdash; Detects whether the viewDataTable or one of its ancestors has the given id.
+- [`getDataTable()`](#getdatatable) &mdash; Returns the DataTable loaded from the API
+- [`setDataTable()`](#setdatatable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly.
 - [`render()`](#render) &mdash; Requests all needed data and renders the view.
-- [`isRequestingSingleDataTable()`](#isRequestingSingleDataTable) &mdash; Determine if the view data table requests a single data table or not.
-- [`canDisplayViewDataTable()`](#canDisplayViewDataTable) &mdash; Here you can define whether your visualization can display a specific data table or not.
+- [`isRequestingSingleDataTable()`](#isrequestingsingledatatable) &mdash; Determine if the view data table requests a single data table or not.
+- [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Here you can define whether your visualization can display a specific data table or not.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

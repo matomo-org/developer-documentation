@@ -101,9 +101,9 @@ Constants
 
 This class defines the following constants:
 
-- [`REQUEST_ALL_WEBSITES_FLAG`](#REQUEST_ALL_WEBSITES_FLAG)
-- [`ARCHIVE_ALL_PLUGINS_FLAG`](#ARCHIVE_ALL_PLUGINS_FLAG)
-- [`ID_SUBTABLE_LOAD_ALL_SUBTABLES`](#ID_SUBTABLE_LOAD_ALL_SUBTABLES)
+- [`REQUEST_ALL_WEBSITES_FLAG`](#request_all_websites_flag)
+- [`ARCHIVE_ALL_PLUGINS_FLAG`](#archive_all_plugins_flag)
+- [`ID_SUBTABLE_LOAD_ALL_SUBTABLES`](#id_subtable_load_all_subtables)
 
 Methods
 -------
@@ -112,15 +112,15 @@ The class defines the following methods:
 
 - [`build()`](#build) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional Segment.
 - [`factory()`](#factory) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
-- [`getNumeric()`](#getNumeric) &mdash; Queries and returns metric data in an array.
-- [`getBlob()`](#getBlob) &mdash; Queries and returns blob data in an array.
-- [`getDataTableFromNumeric()`](#getDataTableFromNumeric) &mdash; Queries and returns metric data in a DataTable instance.
-- [`getDataTable()`](#getDataTable) &mdash; Queries and returns a single report as a DataTable instance.
-- [`getDataTableExpanded()`](#getDataTableExpanded) &mdash; Queries and returns one report with all of its subtables loaded.
-- [`getRequestedPlugins()`](#getRequestedPlugins) &mdash; Returns the list of plugins that archive the given reports.
-- [`getDataTableFromArchive()`](#getDataTableFromArchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
-- [`getParams()`](#getParams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
-- [`getPluginForReport()`](#getPluginForReport) &mdash; Returns the name of the plugin that archives a given report.
+- [`getNumeric()`](#getnumeric) &mdash; Queries and returns metric data in an array.
+- [`getBlob()`](#getblob) &mdash; Queries and returns blob data in an array.
+- [`getDataTableFromNumeric()`](#getdatatablefromnumeric) &mdash; Queries and returns metric data in a DataTable instance.
+- [`getDataTable()`](#getdatatable) &mdash; Queries and returns a single report as a DataTable instance.
+- [`getDataTableExpanded()`](#getdatatableexpanded) &mdash; Queries and returns one report with all of its subtables loaded.
+- [`getRequestedPlugins()`](#getrequestedplugins) &mdash; Returns the list of plugins that archive the given reports.
+- [`getDataTableFromArchive()`](#getdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
+- [`getParams()`](#getparams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
+- [`getPluginForReport()`](#getpluginforreport) &mdash; Returns the name of the plugin that archives a given report.
 
 <a name="build" id="build"></a>
 ### `build()`

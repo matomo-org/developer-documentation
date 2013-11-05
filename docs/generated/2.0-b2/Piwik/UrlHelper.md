@@ -11,11 +11,11 @@ Methods
 
 The class defines the following methods:
 
-- [`getQueryStringWithExcludedParameters()`](#getQueryStringWithExcludedParameters) &mdash; Converts an array of query parameter name/value mappings into a query string.
-- [`getParseUrlReverse()`](#getParseUrlReverse) &mdash; Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php) function.
-- [`getArrayFromQueryString()`](#getArrayFromQueryString) &mdash; Returns a URL query string as an array.
-- [`getParameterFromQueryString()`](#getParameterFromQueryString) &mdash; Returns the value of a single query parameter from the supplied query string.
-- [`getPathAndQueryFromUrl()`](#getPathAndQueryFromUrl) &mdash; Returns the path and query string of a URL.
+- [`getQueryStringWithExcludedParameters()`](#getquerystringwithexcludedparameters) &mdash; Converts an array of query parameter name/value mappings into a query string.
+- [`getParseUrlReverse()`](#getparseurlreverse) &mdash; Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php) function.
+- [`getArrayFromQueryString()`](#getarrayfromquerystring) &mdash; Returns a URL query string as an array.
+- [`getParameterFromQueryString()`](#getparameterfromquerystring) &mdash; Returns the value of a single query parameter from the supplied query string.
+- [`getPathAndQueryFromUrl()`](#getpathandqueryfromurl) &mdash; Returns the path and query string of a URL.
 
 <a name="getquerystringwithexcludedparameters" id="getquerystringwithexcludedparameters"></a>
 ### `getQueryStringWithExcludedParameters()`

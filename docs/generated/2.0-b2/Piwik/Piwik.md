@@ -17,39 +17,39 @@ Constants
 
 This class defines the following constants:
 
-- [`LABEL_ID_GOAL_IS_ECOMMERCE_CART`](#LABEL_ID_GOAL_IS_ECOMMERCE_CART) &mdash; The idGoal query parameter value for the special 'abandoned carts' goal.
-- [`LABEL_ID_GOAL_IS_ECOMMERCE_ORDER`](#LABEL_ID_GOAL_IS_ECOMMERCE_ORDER) &mdash; The idGoal query parameter value for the special 'ecommerce' goal.
+- [`LABEL_ID_GOAL_IS_ECOMMERCE_CART`](#label_id_goal_is_ecommerce_cart) &mdash; The idGoal query parameter value for the special 'abandoned carts' goal.
+- [`LABEL_ID_GOAL_IS_ECOMMERCE_ORDER`](#label_id_goal_is_ecommerce_order) &mdash; The idGoal query parameter value for the special 'ecommerce' goal.
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`getCurrentUserEmail()`](#getCurrentUserEmail) &mdash; Returns the current user's email address.
-- [`getSuperUserLogin()`](#getSuperUserLogin) &mdash; Returns the super user's username.
-- [`getSuperUserEmail()`](#getSuperUserEmail) &mdash; Returns the super user's email address.
-- [`getCurrentUserLogin()`](#getCurrentUserLogin) &mdash; Returns the current user's username.
-- [`getCurrentUserTokenAuth()`](#getCurrentUserTokenAuth) &mdash; Returns the current user's token auth.
-- [`isUserIsSuperUserOrTheUser()`](#isUserIsSuperUserOrTheUser) &mdash; Returns true if the current user is either the super user or the user specified by `$theUser`.
-- [`checkUserIsSuperUserOrTheUser()`](#checkUserIsSuperUserOrTheUser) &mdash; Check that the current user is either the specified user or the superuser.
-- [`isUserIsSuperUser()`](#isUserIsSuperUser) &mdash; Returns true if the current user is the Super User.
-- [`isUserIsAnonymous()`](#isUserIsAnonymous) &mdash; Returns true if the current user is the special anonymous user or not.
-- [`checkUserIsNotAnonymous()`](#checkUserIsNotAnonymous) &mdash; Checks that the user is not the anonymous user.
-- [`checkUserIsSuperUser()`](#checkUserIsSuperUser) &mdash; Check that the current user is the superuser.
-- [`isUserHasAdminAccess()`](#isUserHasAdminAccess) &mdash; Returns true if the user has admin access to the requested sites, false if otherwise.
-- [`checkUserHasAdminAccess()`](#checkUserHasAdminAccess) &mdash; Checks that the current user has admin access to the requested list of sites.
-- [`isUserHasSomeAdminAccess()`](#isUserHasSomeAdminAccess) &mdash; Returns true if the current user has admin access to at least one site.
-- [`checkUserHasSomeAdminAccess()`](#checkUserHasSomeAdminAccess) &mdash; Checks that the current user has admin access to at least one site.
-- [`isUserHasViewAccess()`](#isUserHasViewAccess) &mdash; Returns true if the user has view access to the requested list of sites.
-- [`checkUserHasViewAccess()`](#checkUserHasViewAccess) &mdash; Checks that the current user has view access to the requested list of sites
-- [`isUserHasSomeViewAccess()`](#isUserHasSomeViewAccess) &mdash; Returns true if the current user has view access to at least one site.
-- [`checkUserHasSomeViewAccess()`](#checkUserHasSomeViewAccess) &mdash; Checks that the current user has view access to at least one site.
-- [`redirectToModule()`](#redirectToModule) &mdash; Redirects the current request to a new module and action.
-- [`isValidEmailString()`](#isValidEmailString) &mdash; Returns true if the email address is a valid.
-- [`postEvent()`](#postEvent) &mdash; Post an event to Piwik's event dispatcher which will execute the event's observers.
-- [`addAction()`](#addAction) &mdash; Register an observer to an event.
+- [`getCurrentUserEmail()`](#getcurrentuseremail) &mdash; Returns the current user's email address.
+- [`getSuperUserLogin()`](#getsuperuserlogin) &mdash; Returns the super user's username.
+- [`getSuperUserEmail()`](#getsuperuseremail) &mdash; Returns the super user's email address.
+- [`getCurrentUserLogin()`](#getcurrentuserlogin) &mdash; Returns the current user's username.
+- [`getCurrentUserTokenAuth()`](#getcurrentusertokenauth) &mdash; Returns the current user's token auth.
+- [`isUserIsSuperUserOrTheUser()`](#isuserissuperuserortheuser) &mdash; Returns true if the current user is either the super user or the user specified by `$theUser`.
+- [`checkUserIsSuperUserOrTheUser()`](#checkuserissuperuserortheuser) &mdash; Check that the current user is either the specified user or the superuser.
+- [`isUserIsSuperUser()`](#isuserissuperuser) &mdash; Returns true if the current user is the Super User.
+- [`isUserIsAnonymous()`](#isuserisanonymous) &mdash; Returns true if the current user is the special anonymous user or not.
+- [`checkUserIsNotAnonymous()`](#checkuserisnotanonymous) &mdash; Checks that the user is not the anonymous user.
+- [`checkUserIsSuperUser()`](#checkuserissuperuser) &mdash; Check that the current user is the superuser.
+- [`isUserHasAdminAccess()`](#isuserhasadminaccess) &mdash; Returns true if the user has admin access to the requested sites, false if otherwise.
+- [`checkUserHasAdminAccess()`](#checkuserhasadminaccess) &mdash; Checks that the current user has admin access to the requested list of sites.
+- [`isUserHasSomeAdminAccess()`](#isuserhassomeadminaccess) &mdash; Returns true if the current user has admin access to at least one site.
+- [`checkUserHasSomeAdminAccess()`](#checkuserhassomeadminaccess) &mdash; Checks that the current user has admin access to at least one site.
+- [`isUserHasViewAccess()`](#isuserhasviewaccess) &mdash; Returns true if the user has view access to the requested list of sites.
+- [`checkUserHasViewAccess()`](#checkuserhasviewaccess) &mdash; Checks that the current user has view access to the requested list of sites
+- [`isUserHasSomeViewAccess()`](#isuserhassomeviewaccess) &mdash; Returns true if the current user has view access to at least one site.
+- [`checkUserHasSomeViewAccess()`](#checkuserhassomeviewaccess) &mdash; Checks that the current user has view access to at least one site.
+- [`redirectToModule()`](#redirecttomodule) &mdash; Redirects the current request to a new module and action.
+- [`isValidEmailString()`](#isvalidemailstring) &mdash; Returns true if the email address is a valid.
+- [`postEvent()`](#postevent) &mdash; Post an event to Piwik's event dispatcher which will execute the event's observers.
+- [`addAction()`](#addaction) &mdash; Register an observer to an event.
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation ID.
-- [`translateException()`](#translateException) &mdash; Returns translated string or given message if translation is not found.
+- [`translateException()`](#translateexception) &mdash; Returns translated string or given message if translation is not found.
 
 <a name="getcurrentuseremail" id="getcurrentuseremail"></a>
 ### `getCurrentUserEmail()`

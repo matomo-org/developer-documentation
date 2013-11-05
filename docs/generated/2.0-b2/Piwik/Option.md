@@ -36,8 +36,8 @@ The class defines the following methods:
 - [`get()`](#get) &mdash; Returns the option value for the requested option `$name`.
 - [`set()`](#set) &mdash; Sets an option value by name.
 - [`delete()`](#delete) &mdash; Deletes an option.
-- [`deleteLike()`](#deleteLike) &mdash; Deletes all options that match the supplied pattern.
-- [`clearCache()`](#clearCache) &mdash; Clears the option value cache and forces a reload from the Database.
+- [`deleteLike()`](#deletelike) &mdash; Deletes all options that match the supplied pattern.
+- [`clearCache()`](#clearcache) &mdash; Clears the option value cache and forces a reload from the Database.
 
 <a name="get" id="get"></a>
 ### `get()`

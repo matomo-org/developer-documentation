@@ -16,9 +16,9 @@ Methods
 
 The class defines the following methods:
 
-- [`getInstance()`](#getInstance) &mdash; Returns the singleton instance for the derived class.
-- [`unsetInstance()`](#unsetInstance) &mdash; Used in tests only
-- [`setSingletonInstance()`](#setSingletonInstance) &mdash; Sets the singleton instance.
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class.
+- [`unsetInstance()`](#unsetinstance) &mdash; Used in tests only
+- [`setSingletonInstance()`](#setsingletoninstance) &mdash; Sets the singleton instance.
 
 <a name="getinstance" id="getinstance"></a>
 ### `getInstance()`

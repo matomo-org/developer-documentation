@@ -35,20 +35,20 @@ The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`factory()`](#factory) &mdash; Creates a new Period instance with a period ID and Date instance.
-- [`isMultiplePeriod()`](#isMultiplePeriod) &mdash; Returns true $dateString and $period correspond to multiple periods.
-- [`makePeriodFromQueryParams()`](#makePeriodFromQueryParams) &mdash; Creates a period instance using a Site instance and two strings describing the period & date.
-- [`getDateStart()`](#getDateStart) &mdash; Returns the first day of the period.
-- [`getDateEnd()`](#getDateEnd) &mdash; Returns the last day of the period.
-- [`getId()`](#getId) &mdash; Returns the period ID.
-- [`getLabel()`](#getLabel) &mdash; Returns the label for the current period.
-- [`getNumberOfSubperiods()`](#getNumberOfSubperiods) &mdash; Returns the number of available subperiods.
-- [`getSubperiods()`](#getSubperiods) &mdash; Returns the set of Period instances that together make up this period.
-- [`toString()`](#toString) &mdash; Returns a list of strings representing the current period.
-- [`__toString()`](#__toString) &mdash; See [toString](#toString).
-- [`getPrettyString()`](#getPrettyString) &mdash; Returns a pretty string describing this period.
-- [`getLocalizedShortString()`](#getLocalizedShortString) &mdash; Returns a short string description of this period that is localized with the currently used language.
-- [`getLocalizedLongString()`](#getLocalizedLongString) &mdash; Returns a long string description of this period that is localized with the currently used language.
-- [`getRangeString()`](#getRangeString) &mdash; Returns a succinct string describing this period.
+- [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true $dateString and $period correspond to multiple periods.
+- [`makePeriodFromQueryParams()`](#makeperiodfromqueryparams) &mdash; Creates a period instance using a Site instance and two strings describing the period & date.
+- [`getDateStart()`](#getdatestart) &mdash; Returns the first day of the period.
+- [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period.
+- [`getId()`](#getid) &mdash; Returns the period ID.
+- [`getLabel()`](#getlabel) &mdash; Returns the label for the current period.
+- [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods.
+- [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period.
+- [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period.
+- [`__toString()`](#__tostring) &mdash; See [toString](#toString).
+- [`getPrettyString()`](#getprettystring) &mdash; Returns a pretty string describing this period.
+- [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns a short string description of this period that is localized with the currently used language.
+- [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns a long string description of this period that is localized with the currently used language.
+- [`getRangeString()`](#getrangestring) &mdash; Returns a succinct string describing this period.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`

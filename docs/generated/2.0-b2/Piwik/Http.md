@@ -16,10 +16,10 @@ Methods
 
 The class defines the following methods:
 
-- [`getTransportMethod()`](#getTransportMethod) &mdash; Returns the "best" available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
-- [`sendHttpRequest()`](#sendHttpRequest) &mdash; Sends an HTTP request using best available transport method.
-- [`downloadChunk()`](#downloadChunk) &mdash; Downloads the next chunk of a specific file.
-- [`fetchRemoteFile()`](#fetchRemoteFile) &mdash; Fetches a file located at `$url` and saves it to `$destinationPath`.
+- [`getTransportMethod()`](#gettransportmethod) &mdash; Returns the "best" available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
+- [`sendHttpRequest()`](#sendhttprequest) &mdash; Sends an HTTP request using best available transport method.
+- [`downloadChunk()`](#downloadchunk) &mdash; Downloads the next chunk of a specific file.
+- [`fetchRemoteFile()`](#fetchremotefile) &mdash; Fetches a file located at `$url` and saves it to `$destinationPath`.
 
 <a name="gettransportmethod" id="gettransportmethod"></a>
 ### `getTransportMethod()`

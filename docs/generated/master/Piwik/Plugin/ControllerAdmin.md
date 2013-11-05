@@ -16,8 +16,8 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`displayWarningIfConfigFileNotWritable()`](#displayWarningIfConfigFileNotWritable)
-- [`setBasicVariablesAdminView()`](#setBasicVariablesAdminView) &mdash; Assigns a set of variables to a view that would be useful to an Admin controller.
+- [`displayWarningIfConfigFileNotWritable()`](#displaywarningifconfigfilenotwritable)
+- [`setBasicVariablesAdminView()`](#setbasicvariablesadminview) &mdash; Assigns a set of variables to a view that would be useful to an Admin controller.
 
 <a name="displaywarningifconfigfilenotwritable" id="displaywarningifconfigfilenotwritable"></a>
 ### `displayWarningIfConfigFileNotWritable()`

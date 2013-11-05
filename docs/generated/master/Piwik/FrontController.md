@@ -46,7 +46,7 @@ Methods
 The class defines the following methods:
 
 - [`dispatch()`](#dispatch) &mdash; Executes the requested plugin controller action.
-- [`fetchDispatch()`](#fetchDispatch) &mdash; Executes the requested plugin controller action and returns the data the action echos.
+- [`fetchDispatch()`](#fetchdispatch) &mdash; Executes the requested plugin controller action and returns the data the action echos.
 
 <a name="dispatch" id="dispatch"></a>
 ### `dispatch()`

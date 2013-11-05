@@ -38,7 +38,7 @@ The class defines the following methods:
 
 - [`__get()`](#__get) &mdash; Returns a configuration value or section by name.
 - [`__set()`](#__set) &mdash; Sets a configuration value or section.
-- [`forceSave()`](#forceSave) &mdash; Writes the current configuration to `config.ini.php`.
+- [`forceSave()`](#forcesave) &mdash; Writes the current configuration to `config.ini.php`.
 
 <a name="__get" id="__get"></a>
 ### `__get()`

@@ -29,7 +29,7 @@ Methods
 The class defines the following methods:
 
 - [`build()`](#build) &mdash; Returns a Piwik_ViewDataTable_* object.
-- [`renderReport()`](#renderReport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method.
+- [`renderReport()`](#renderreport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method.
 
 <a name="build" id="build"></a>
 ### `build()`
