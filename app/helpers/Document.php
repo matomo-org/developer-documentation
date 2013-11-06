@@ -15,26 +15,44 @@ class Document {
 
     public function __construct($name)
     {
+        $this->name = $name;
+
         if (!$this->isValid($name)) {
-            throw new \Exception('Requested documentation is not valid');
+            throw new DocumentNotExistException('Requested documentation is not valid');
         }
 
-        $this->name     = $name;
         $content        = $this->getRawContent();
         $this->markdown = new Markdown($content);
     }
 
     private function isValid($name)
     {
-        return preg_match('/^([\w\/-])*$/', $name) && '/' != substr($name, 0, 1);
+        if (!preg_match('/^([\w\/-])*$/', $name)) {
+            return false;
+        }
+
+        if ('/' == substr($name, 0, 1)) {
+            return false;
+        }
+
+        if (!file_exists($this->getPathToFile())) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private function getPathToFile()
+    {
+        return '../../docs/' . $this->name . '.md';
     }
 
     private function getRawContent()
     {
-        $path = '../../docs/' . $this->name . '.md';
+        $path = $this->getPathToFile();
 
         if (!file_exists($path)) {
-            throw new \Exception('Requested documentation does not exist');
+            throw new DocumentNotExistException('Requested documentation does not exist');
         }
 
         return file_get_contents($path);

@@ -11,6 +11,11 @@ use helpers\Guide;
 use helpers\Document;
 use helpers\ApiReference;
 use helpers\Support;
+use helpers\DocumentNotExistException;
+
+function send404NotFound($app) {
+    $app->pass();
+}
 
 $app->view->setData('menu', Menu::getMainMenu());
 
@@ -19,40 +24,38 @@ $app->get('/', function () use ($app) {
     $app->render('index.twig', array('isHome' => true));
 });
 
-$app->get('/guides', function () use ($app) {
-
-    $app->render('documentation.twig', array(
-        'activeMenu' => 'guides',
-        'guides'     => Guide::getMainMenu()
-    ));
-});
-
-$app->get('/support', function () use ($app) {
-
-    $app->render('support.twig', array(
-        'activeMenu' => 'support',
-        'supports'   => Support::getMainMenu()
-    ));
-});
-
 $app->get('/api-reference/:reference', function ($reference) use ($app) {
-    $references = ApiReference::getReferencesMenu();
-    $file       = $references[$reference]['file'];
+    $reference = ApiReference::getMenuItemByUrl('/api-reference/' . $reference);
 
-    $doc = new Document($file);
+    if (empty($reference)) {
+        send404NotFound($app);
+        return;
+    }
+
+    try {
+        $doc = new Document($reference['file']);
+    } catch (DocumentNotExistException $e) {
+        send404NotFound($app);
+        return;
+    }
 
     $app->render('layout/documentation.twig', array(
         'activeMenu'   => 'api-reference',
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
         'sectionTitle' => $doc->getTitle(),
-        'categories'   => $references
+        'categories'   => ApiReference::getReferencesMenu()
     ));
 
-})->conditions(array('reference' => '(' . implode('|', array_keys(ApiReference::getReferencesMenu())) . ')'));
+});
 
 $app->get('/api-reference/:names+', function ($names) use ($app) {
+    if (!ctype_alnum(implode('', $names))) {
+        send404NotFound($app);
+        return;
+    }
 
+    $names     = array_filter($names);
     $className = implode('/', $names);
 
     $file = $className;
@@ -62,7 +65,12 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
 
     $file = 'generated/master/' . $file;
 
-    $doc  = new Document($file);
+    try {
+        $doc = new Document($file);
+    } catch (DocumentNotExistException $e) {
+        send404NotFound($app);
+        return;
+    }
 
     $app->render('layout/documentation.twig', array(
         'activeMenu'     => 'api-reference',
@@ -72,7 +80,39 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
         'sectionTitle'   => $className,
         'categories'     => ApiReference::getClassesMenu()
     ));
+});
 
+$app->get('/guides/:category', function ($category) use ($app) {
+
+    $guide = Guide::getMenuItemByUrl('/guides/' . $category);
+
+    if (empty($guide)) {
+        send404NotFound($app);
+        return;
+    }
+
+    try {
+        $doc = new Document($guide['file']);
+    } catch (DocumentNotExistException $e) {
+        send404NotFound($app);
+        return;
+    }
+
+    $app->render('layout/documentation.twig', array(
+        'activeMenu'   => 'guides',
+        'doc'          => $doc->getRenderedContent(),
+        'sections'     => $doc->getSections(),
+        'sectionTitle' => $doc->getTitle(),
+        'categories'   => Guide::getMainMenu()
+    ));
+});
+
+$app->get('/guides', function () use ($app) {
+
+    $app->render('documentation.twig', array(
+        'activeMenu' => 'guides',
+        'guides'     => Guide::getMainMenu()
+    ));
 });
 
 $app->get('/api-reference', function () use ($app) {
@@ -84,20 +124,13 @@ $app->get('/api-reference', function () use ($app) {
     ));
 });
 
-$app->get('/guides/:category', function ($category) use ($app) {
+$app->get('/support', function () use ($app) {
 
-    $doc = new Document($category);
-
-    $app->render('layout/documentation.twig', array(
-        'activeMenu'   => 'guides',
-        'doc'          => $doc->getRenderedContent(),
-        'sections'     => $doc->getSections(),
-        'sectionTitle' => $doc->getTitle(),
-        'categories'   => Guide::getMainMenu()
+    $app->render('support.twig', array(
+        'activeMenu' => 'support',
+        'supports'   => Support::getMainMenu()
     ));
-
-})->conditions(array('category' => '(' . implode('|', array_keys(Guide::getMainMenu())) . ')'));
-
+});
 
 $app->post('/receive-commit-hook', function () use ($app) {
 

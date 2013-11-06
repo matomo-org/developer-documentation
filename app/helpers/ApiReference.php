@@ -34,6 +34,15 @@ class ApiReference {
         return $menu;
     }
 
+    public static function getMenuItemByUrl($url)
+    {
+        foreach (static::getReferencesMenu() as $menu) {
+            if ($url == $menu['url']) {
+                return $menu;
+            }
+        }
+    }
+
     public static function getReferencesMenu()
     {
         $menu = array();
