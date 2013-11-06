@@ -9,6 +9,7 @@ function affixSidebar()
                 top: 100, bottom: 100
             }
         });
+
     }
 }
 
@@ -18,6 +19,10 @@ $('#sidebar').on('hidden.bs.collapse', function () {
     var $sidebar = $('#sidebar');
 
     if ($sidebar && $sidebar.length) {
-        $sidebar.addClass('affix-top').removeClass('affix affix-bottom');
+        var $affix = $sidebar.data('bs.affix');
+
+        if ($affix) {
+            $affix.checkPosition();
+        }
     }
 });
