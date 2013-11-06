@@ -38,12 +38,8 @@ The class defines the following methods:
 - [`delete()`](#delete) &mdash; Deletes an option.
 - [`deleteLike()`](#deletelike) &mdash; Deletes all options that match the supplied pattern.
 - [`clearCache()`](#clearcache) &mdash; Clears the option value cache and forces a reload from the Database.
-- [`getValue()`](#getvalue)
-- [`setValue()`](#setvalue)
-- [`deleteValue()`](#deletevalue)
-- [`deleteNameLike()`](#deletenamelike)
-- [`autoload()`](#autoload) &mdash; Initialize cache with autoload settings.
 
+<a name="get" id="get"></a>
 <a name="get" id="get"></a>
 ### `get()`
 
@@ -58,6 +54,7 @@ Returns the option value for the requested option `$name`.
     - `bool`
 
 <a name="set" id="set"></a>
+<a name="set" id="set"></a>
 ### `set()`
 
 Sets an option value by name.
@@ -71,6 +68,7 @@ Sets an option value by name.
 - It does not return anything.
 
 <a name="delete" id="delete"></a>
+<a name="delete" id="delete"></a>
 ### `delete()`
 
 Deletes an option.
@@ -83,6 +81,7 @@ Deletes an option.
 - It does not return anything.
 
 <a name="deletelike" id="deletelike"></a>
+<a name="deleteLike" id="deleteLike"></a>
 ### `deleteLike()`
 
 Deletes all options that match the supplied pattern.
@@ -95,6 +94,7 @@ Deletes all options that match the supplied pattern.
 - It does not return anything.
 
 <a name="clearcache" id="clearcache"></a>
+<a name="clearCache" id="clearCache"></a>
 ### `clearCache()`
 
 Clears the option value cache and forces a reload from the Database.
@@ -105,54 +105,5 @@ Used in unit tests to reset the state of the object between tests.
 
 #### Signature
 
-- It returns a(n) `void` value.
-
-<a name="getvalue" id="getvalue"></a>
-### `getValue()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$name`
-- It does not return anything.
-
-<a name="setvalue" id="setvalue"></a>
-### `setValue()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$name`
-    - `$value`
-    - `$autoLoad`
-- It does not return anything.
-
-<a name="deletevalue" id="deletevalue"></a>
-### `deleteValue()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$name`
-    - `$value`
-- It does not return anything.
-
-<a name="deletenamelike" id="deletenamelike"></a>
-### `deleteNameLike()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$name`
-    - `$value`
-- It does not return anything.
-
-<a name="autoload" id="autoload"></a>
-### `autoload()`
-
-Initialize cache with autoload settings.
-
-#### Signature
-
-- It returns a(n) `void` value.
+- It returns a `void` value.
 

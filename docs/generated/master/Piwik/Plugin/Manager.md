@@ -27,6 +27,7 @@ The class defines the following methods:
 - [`getMissingPlugins()`](#getmissingplugins) &mdash; Returns names of plugins that should be loaded, but cannot be since their files cannot be found.
 
 <a name="ispluginactivated" id="ispluginactivated"></a>
+<a name="isPluginActivated" id="isPluginActivated"></a>
 ### `isPluginActivated()`
 
 Returns true if a plugin has been activated.
@@ -35,9 +36,10 @@ Returns true if a plugin has been activated.
 
 - It accepts the following parameter(s):
     - `$name`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="ispluginloaded" id="ispluginloaded"></a>
+<a name="isPluginLoaded" id="isPluginLoaded"></a>
 ### `isPluginLoaded()`
 
 Returns true if plugin is loaded (in memory).
@@ -46,9 +48,10 @@ Returns true if plugin is loaded (in memory).
 
 - It accepts the following parameter(s):
     - `$name`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="getthemeenabled" id="getthemeenabled"></a>
+<a name="getThemeEnabled" id="getThemeEnabled"></a>
 ### `getThemeEnabled()`
 
 Returns the non default theme currently enabled.
@@ -59,9 +62,10 @@ If Zeitgeist is enabled, returns false (Zeitgeist cannot be disabled).
 
 #### Signature
 
-- It returns a(n) [`Plugin`](../../Piwik/Plugin.md) value.
+- It returns a [`Plugin`](../../Piwik/Plugin.md) value.
 
 <a name="returnloadedpluginsinfo" id="returnloadedpluginsinfo"></a>
+<a name="returnLoadedPluginsInfo" id="returnLoadedPluginsInfo"></a>
 ### `returnLoadedPluginsInfo()`
 
 Returns info regarding all plugins.
@@ -76,20 +80,22 @@ Loads plugins that can be loaded.
     - `array`
 
 <a name="getinstalledpluginsname" id="getinstalledpluginsname"></a>
+<a name="getInstalledPluginsName" id="getInstalledPluginsName"></a>
 ### `getInstalledPluginsName()`
 
 Return list of names of installed plugins.
 
 #### Signature
 
-- It returns a(n) `array` value.
+- It returns a `array` value.
 
 <a name="getmissingplugins" id="getmissingplugins"></a>
+<a name="getMissingPlugins" id="getMissingPlugins"></a>
 ### `getMissingPlugins()`
 
 Returns names of plugins that should be loaded, but cannot be since their files cannot be found.
 
 #### Signature
 
-- It returns a(n) `array` value.
+- It returns a `array` value.
 

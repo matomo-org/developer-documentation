@@ -15,6 +15,7 @@ The class defines the following methods:
 - [`setFrom()`](#setfrom) &mdash; Sets the sender.
 
 <a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
 ### `__construct()`
 
 Constructor.
@@ -26,6 +27,7 @@ Constructor.
 - It does not return anything.
 
 <a name="setfrom" id="setfrom"></a>
+<a name="setFrom" id="setFrom"></a>
 ### `setFrom()`
 
 Sets the sender.
@@ -35,5 +37,5 @@ Sets the sender.
 - It accepts the following parameter(s):
     - `$email`
     - `$name`
-- It returns a(n) `Zend_Mail` value.
+- It returns a `Zend_Mail` value.
 

@@ -14,38 +14,6 @@ This class defines the following constants:
 - `UNKNOWN_RESOLUTION`
 - `GENERATION_TIME_MS_MAXIMUM`
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$params`](#$params)
-- [`$forcedVisitorId`](#$forcedvisitorid)
-- [`$isAuthenticated`](#$isauthenticated)
-
-<a name="params" id="params"></a>
-### `$params`
-
-#### Signature
-
-- It is a(n) `array` value.
-
-<a name="forcedvisitorid" id="forcedvisitorid"></a>
-### `$forcedVisitorId`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="isauthenticated" id="isauthenticated"></a>
-### `$isAuthenticated`
-
-#### Signature
-
-- Its type is not specified.
-
-
 Methods
 -------
 
@@ -53,7 +21,6 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct)
 - [`isAuthenticated()`](#isauthenticated)
-- [`authenticateTrackingApi()`](#authenticatetrackingapi) &mdash; This method allows to set custom IP + server time + visitor ID, when using Tracking API.
 - [`authenticateSuperUserOrAdmin()`](#authenticatesuperuseroradmin)
 - [`getDaysSinceFirstVisit()`](#getdayssincefirstvisit)
 - [`getDaysSinceLastOrder()`](#getdayssincelastorder)
@@ -61,21 +28,14 @@ The class defines the following methods:
 - [`getVisitCount()`](#getvisitcount)
 - [`getBrowserLanguage()`](#getbrowserlanguage) &mdash; Returns the language the visitor is viewing.
 - [`getLocalTime()`](#getlocaltime)
-- [`getCurrentDate()`](#getcurrentdate) &mdash; Returns the current date in the "Y-m-d" PHP format
 - [`getGoalRevenue()`](#getgoalrevenue)
 - [`getParam()`](#getparam)
 - [`getCurrentTimestamp()`](#getcurrenttimestamp)
-- [`isTimestampValid()`](#istimestampvalid)
 - [`getIdSite()`](#getidsite)
 - [`getUserAgent()`](#getuseragent)
 - [`getCustomVariables()`](#getcustomvariables)
 - [`truncateCustomVariable()`](#truncatecustomvariable)
-- [`shouldUseThirdPartyCookie()`](#shouldusethirdpartycookie)
 - [`setThirdPartyCookie()`](#setthirdpartycookie) &mdash; Update the cookie information.
-- [`makeThirdPartyCookie()`](#makethirdpartycookie)
-- [`getCookieName()`](#getcookiename)
-- [`getCookieExpire()`](#getcookieexpire)
-- [`getCookiePath()`](#getcookiepath)
 - [`getVisitorId()`](#getvisitorid) &mdash; Is the request for a known VisitorId, based on 1st party, 3rd party (optional) cookies or Tracking API forced Visitor ID
 - [`getIp()`](#getip)
 - [`setForceIp()`](#setforceip)
@@ -88,6 +48,7 @@ The class defines the following methods:
 - [`getPageGenerationTime()`](#getpagegenerationtime)
 
 <a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
 ### `__construct()`
 
 #### Signature
@@ -98,28 +59,15 @@ The class defines the following methods:
 - It does not return anything.
 
 <a name="isauthenticated" id="isauthenticated"></a>
+<a name="isAuthenticated" id="isAuthenticated"></a>
 ### `isAuthenticated()`
 
 #### Signature
 
-- It returns a(n) `bool` value.
-
-<a name="authenticatetrackingapi" id="authenticatetrackingapi"></a>
-### `authenticateTrackingApi()`
-
-This method allows to set custom IP + server time + visitor ID, when using Tracking API.
-
-#### Description
-
-These two attributes can be only set by the Super User (passing token_auth).
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$tokenAuthFromBulkRequest`
-- It does not return anything.
+- It returns a `bool` value.
 
 <a name="authenticatesuperuseroradmin" id="authenticatesuperuseroradmin"></a>
+<a name="authenticateSuperUserOrAdmin" id="authenticateSuperUserOrAdmin"></a>
 ### `authenticateSuperUserOrAdmin()`
 
 #### Signature
@@ -130,6 +78,7 @@ These two attributes can be only set by the Super User (passing token_auth).
 - It does not return anything.
 
 <a name="getdayssincefirstvisit" id="getdayssincefirstvisit"></a>
+<a name="getDaysSinceFirstVisit" id="getDaysSinceFirstVisit"></a>
 ### `getDaysSinceFirstVisit()`
 
 #### Signature
@@ -139,6 +88,7 @@ These two attributes can be only set by the Super User (passing token_auth).
     - `int`
 
 <a name="getdayssincelastorder" id="getdayssincelastorder"></a>
+<a name="getDaysSinceLastOrder" id="getDaysSinceLastOrder"></a>
 ### `getDaysSinceLastOrder()`
 
 #### Signature
@@ -149,6 +99,7 @@ These two attributes can be only set by the Super User (passing token_auth).
     - `int`
 
 <a name="getdayssincelastvisit" id="getdayssincelastvisit"></a>
+<a name="getDaysSinceLastVisit" id="getDaysSinceLastVisit"></a>
 ### `getDaysSinceLastVisit()`
 
 #### Signature
@@ -158,6 +109,7 @@ These two attributes can be only set by the Super User (passing token_auth).
     - `int`
 
 <a name="getvisitcount" id="getvisitcount"></a>
+<a name="getVisitCount" id="getVisitCount"></a>
 ### `getVisitCount()`
 
 #### Signature
@@ -167,6 +119,7 @@ These two attributes can be only set by the Super User (passing token_auth).
     - `mixed`
 
 <a name="getbrowserlanguage" id="getbrowserlanguage"></a>
+<a name="getBrowserLanguage" id="getBrowserLanguage"></a>
 ### `getBrowserLanguage()`
 
 Returns the language the visitor is viewing.
@@ -177,24 +130,15 @@ Returns the language the visitor is viewing.
     - `string`
 
 <a name="getlocaltime" id="getlocaltime"></a>
+<a name="getLocalTime" id="getLocalTime"></a>
 ### `getLocalTime()`
 
 #### Signature
 
-- It returns a(n) `string` value.
-
-<a name="getcurrentdate" id="getcurrentdate"></a>
-### `getCurrentDate()`
-
-Returns the current date in the "Y-m-d" PHP format
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$format`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getgoalrevenue" id="getgoalrevenue"></a>
+<a name="getGoalRevenue" id="getGoalRevenue"></a>
 ### `getGoalRevenue()`
 
 #### Signature
@@ -204,6 +148,7 @@ Returns the current date in the "Y-m-d" PHP format
 - It does not return anything.
 
 <a name="getparam" id="getparam"></a>
+<a name="getParam" id="getParam"></a>
 ### `getParam()`
 
 #### Signature
@@ -213,22 +158,15 @@ Returns the current date in the "Y-m-d" PHP format
 - It does not return anything.
 
 <a name="getcurrenttimestamp" id="getcurrenttimestamp"></a>
+<a name="getCurrentTimestamp" id="getCurrentTimestamp"></a>
 ### `getCurrentTimestamp()`
 
 #### Signature
 
 - It does not return anything.
 
-<a name="istimestampvalid" id="istimestampvalid"></a>
-### `isTimestampValid()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$time`
-- It does not return anything.
-
 <a name="getidsite" id="getidsite"></a>
+<a name="getIdSite" id="getIdSite"></a>
 ### `getIdSite()`
 
 #### Signature
@@ -236,6 +174,7 @@ Returns the current date in the "Y-m-d" PHP format
 - It does not return anything.
 
 <a name="getuseragent" id="getuseragent"></a>
+<a name="getUserAgent" id="getUserAgent"></a>
 ### `getUserAgent()`
 
 #### Signature
@@ -243,6 +182,7 @@ Returns the current date in the "Y-m-d" PHP format
 - It does not return anything.
 
 <a name="getcustomvariables" id="getcustomvariables"></a>
+<a name="getCustomVariables" id="getCustomVariables"></a>
 ### `getCustomVariables()`
 
 #### Signature
@@ -252,6 +192,7 @@ Returns the current date in the "Y-m-d" PHP format
 - It does not return anything.
 
 <a name="truncatecustomvariable" id="truncatecustomvariable"></a>
+<a name="truncateCustomVariable" id="truncateCustomVariable"></a>
 ### `truncateCustomVariable()`
 
 #### Signature
@@ -260,14 +201,8 @@ Returns the current date in the "Y-m-d" PHP format
     - `$input`
 - It does not return anything.
 
-<a name="shouldusethirdpartycookie" id="shouldusethirdpartycookie"></a>
-### `shouldUseThirdPartyCookie()`
-
-#### Signature
-
-- It does not return anything.
-
 <a name="setthirdpartycookie" id="setthirdpartycookie"></a>
+<a name="setThirdPartyCookie" id="setThirdPartyCookie"></a>
 ### `setThirdPartyCookie()`
 
 Update the cookie information.
@@ -278,35 +213,8 @@ Update the cookie information.
     - `$idVisitor`
 - It does not return anything.
 
-<a name="makethirdpartycookie" id="makethirdpartycookie"></a>
-### `makeThirdPartyCookie()`
-
-#### Signature
-
-- It does not return anything.
-
-<a name="getcookiename" id="getcookiename"></a>
-### `getCookieName()`
-
-#### Signature
-
-- It does not return anything.
-
-<a name="getcookieexpire" id="getcookieexpire"></a>
-### `getCookieExpire()`
-
-#### Signature
-
-- It does not return anything.
-
-<a name="getcookiepath" id="getcookiepath"></a>
-### `getCookiePath()`
-
-#### Signature
-
-- It does not return anything.
-
 <a name="getvisitorid" id="getvisitorid"></a>
+<a name="getVisitorId" id="getVisitorId"></a>
 ### `getVisitorId()`
 
 Is the request for a known VisitorId, based on 1st party, 3rd party (optional) cookies or Tracking API forced Visitor ID
@@ -318,6 +226,7 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
     - [`Exception`](http://php.net/class.Exception)
 
 <a name="getip" id="getip"></a>
+<a name="getIp" id="getIp"></a>
 ### `getIp()`
 
 #### Signature
@@ -325,6 +234,7 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 - It does not return anything.
 
 <a name="setforceip" id="setforceip"></a>
+<a name="setForceIp" id="setForceIp"></a>
 ### `setForceIp()`
 
 #### Signature
@@ -334,6 +244,7 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 - It does not return anything.
 
 <a name="setforcedatetime" id="setforcedatetime"></a>
+<a name="setForceDateTime" id="setForceDateTime"></a>
 ### `setForceDateTime()`
 
 #### Signature
@@ -343,6 +254,7 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 - It does not return anything.
 
 <a name="setforcedvisitorid" id="setforcedvisitorid"></a>
+<a name="setForcedVisitorId" id="setForcedVisitorId"></a>
 ### `setForcedVisitorId()`
 
 #### Signature
@@ -352,6 +264,7 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 - It does not return anything.
 
 <a name="getforcedvisitorid" id="getforcedvisitorid"></a>
+<a name="getForcedVisitorId" id="getForcedVisitorId"></a>
 ### `getForcedVisitorId()`
 
 #### Signature
@@ -359,6 +272,7 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 - It does not return anything.
 
 <a name="overridelocation" id="overridelocation"></a>
+<a name="overrideLocation" id="overrideLocation"></a>
 ### `overrideLocation()`
 
 #### Signature
@@ -368,6 +282,7 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 - It does not return anything.
 
 <a name="getplugins" id="getplugins"></a>
+<a name="getPlugins" id="getPlugins"></a>
 ### `getPlugins()`
 
 #### Signature
@@ -375,6 +290,7 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 - It does not return anything.
 
 <a name="getparamscount" id="getparamscount"></a>
+<a name="getParamsCount" id="getParamsCount"></a>
 ### `getParamsCount()`
 
 #### Signature
@@ -382,6 +298,7 @@ Is the request for a known VisitorId, based on 1st party, 3rd party (optional) c
 - It does not return anything.
 
 <a name="getpagegenerationtime" id="getpagegenerationtime"></a>
+<a name="getPageGenerationTime" id="getPageGenerationTime"></a>
 ### `getPageGenerationTime()`
 
 #### Signature

@@ -68,9 +68,9 @@ This class defines the following properties:
 - [`$mappingFromIdToName`](#$mappingfromidtoname)
 - [`$mappingFromIdToNameGoal`](#$mappingfromidtonamegoal)
 - [`$mappingFromNameToId`](#$mappingfromnametoid)
-- [`$metricsAggregatedFromLogs`](#$metricsaggregatedfromlogs)
 
 <a name="mappingfromidtoname" id="mappingfromidtoname"></a>
+<a name="mappingFromIdToName" id="mappingFromIdToName"></a>
 ### `$mappingFromIdToName`
 
 #### Signature
@@ -79,6 +79,7 @@ This class defines the following properties:
 
 
 <a name="mappingfromidtonamegoal" id="mappingfromidtonamegoal"></a>
+<a name="mappingFromIdToNameGoal" id="mappingFromIdToNameGoal"></a>
 ### `$mappingFromIdToNameGoal`
 
 #### Signature
@@ -87,15 +88,8 @@ This class defines the following properties:
 
 
 <a name="mappingfromnametoid" id="mappingfromnametoid"></a>
+<a name="mappingFromNameToId" id="mappingFromNameToId"></a>
 ### `$mappingFromNameToId`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="metricsaggregatedfromlogs" id="metricsaggregatedfromlogs"></a>
-### `$metricsAggregatedFromLogs`
 
 #### Signature
 
@@ -118,6 +112,7 @@ The class defines the following methods:
 - [`getPercentVisitColumn()`](#getpercentvisitcolumn)
 
 <a name="getvisitsmetricnames" id="getvisitsmetricnames"></a>
+<a name="getVisitsMetricNames" id="getVisitsMetricNames"></a>
 ### `getVisitsMetricNames()`
 
 #### Signature
@@ -125,6 +120,7 @@ The class defines the following methods:
 - It does not return anything.
 
 <a name="getmappingfromidtoname" id="getmappingfromidtoname"></a>
+<a name="getMappingFromIdToName" id="getMappingFromIdToName"></a>
 ### `getMappingFromIdToName()`
 
 #### Signature
@@ -132,6 +128,7 @@ The class defines the following methods:
 - It does not return anything.
 
 <a name="islowervaluebetter" id="islowervaluebetter"></a>
+<a name="isLowerValueBetter" id="isLowerValueBetter"></a>
 ### `isLowerValueBetter()`
 
 Is a lower value for a given column better?
@@ -140,9 +137,10 @@ Is a lower value for a given column better?
 
 - It accepts the following parameter(s):
     - `$column`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="getunit" id="getunit"></a>
+<a name="getUnit" id="getUnit"></a>
 ### `getUnit()`
 
 Derive the unit name from a column name
@@ -152,9 +150,10 @@ Derive the unit name from a column name
 - It accepts the following parameter(s):
     - `$column`
     - `$idSite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getdefaultmetrictranslations" id="getdefaultmetrictranslations"></a>
+<a name="getDefaultMetricTranslations" id="getDefaultMetricTranslations"></a>
 ### `getDefaultMetricTranslations()`
 
 #### Signature
@@ -162,6 +161,7 @@ Derive the unit name from a column name
 - It does not return anything.
 
 <a name="getdefaultmetrics" id="getdefaultmetrics"></a>
+<a name="getDefaultMetrics" id="getDefaultMetrics"></a>
 ### `getDefaultMetrics()`
 
 #### Signature
@@ -169,6 +169,7 @@ Derive the unit name from a column name
 - It does not return anything.
 
 <a name="getdefaultprocessedmetrics" id="getdefaultprocessedmetrics"></a>
+<a name="getDefaultProcessedMetrics" id="getDefaultProcessedMetrics"></a>
 ### `getDefaultProcessedMetrics()`
 
 #### Signature
@@ -176,6 +177,7 @@ Derive the unit name from a column name
 - It does not return anything.
 
 <a name="getdefaultmetricsdocumentation" id="getdefaultmetricsdocumentation"></a>
+<a name="getDefaultMetricsDocumentation" id="getDefaultMetricsDocumentation"></a>
 ### `getDefaultMetricsDocumentation()`
 
 #### Signature
@@ -183,6 +185,7 @@ Derive the unit name from a column name
 - It does not return anything.
 
 <a name="getpercentvisitcolumn" id="getpercentvisitcolumn"></a>
+<a name="getPercentVisitColumn" id="getPercentVisitColumn"></a>
 ### `getPercentVisitColumn()`
 
 #### Signature

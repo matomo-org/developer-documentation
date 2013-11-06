@@ -48,6 +48,7 @@ The class defines the following methods:
 - [`generateQuery()`](#generatequery) &mdash; Generate the SQL code that does the magic.
 
 <a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
 ### `__construct()`
 
 Constructor.
@@ -59,6 +60,7 @@ Constructor.
 - It does not return anything.
 
 <a name="setlimit" id="setlimit"></a>
+<a name="setLimit" id="setLimit"></a>
 ### `setLimit()`
 
 Set the limit after which everything is grouped to "Others".
@@ -70,6 +72,7 @@ Set the limit after which everything is grouped to "Others".
 - It does not return anything.
 
 <a name="setotherslabel" id="setotherslabel"></a>
+<a name="setOthersLabel" id="setOthersLabel"></a>
 ### `setOthersLabel()`
 
 Set the value to use for the label in the 'Others' row.
@@ -81,6 +84,7 @@ Set the value to use for the label in the 'Others' row.
 - It does not return anything.
 
 <a name="addlabelcolumn" id="addlabelcolumn"></a>
+<a name="addLabelColumn" id="addLabelColumn"></a>
 ### `addLabelColumn()`
 
 Add a label column.
@@ -96,6 +100,7 @@ Labels are the columns that are replaced with "Others" after the limit.
 - It does not return anything.
 
 <a name="addcolumn" id="addcolumn"></a>
+<a name="addColumn" id="addColumn"></a>
 ### `addColumn()`
 
 Add a column that has be added to the outer queries.
@@ -108,6 +113,7 @@ Add a column that has be added to the outer queries.
 - It does not return anything.
 
 <a name="setcolumntomarkexcludedrows" id="setcolumntomarkexcludedrows"></a>
+<a name="setColumnToMarkExcludedRows" id="setColumnToMarkExcludedRows"></a>
 ### `setColumnToMarkExcludedRows()`
 
 Sets a column that will be used to filter the result into two categories.
@@ -127,6 +133,7 @@ by [execute](#execute).
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 
 <a name="partitionresultintomultiplegroups" id="partitionresultintomultiplegroups"></a>
+<a name="partitionResultIntoMultipleGroups" id="partitionResultIntoMultipleGroups"></a>
 ### `partitionResultIntoMultipleGroups()`
 
 This method can be used to parition the result based on the possible values of one table column.
@@ -154,6 +161,7 @@ for rows where `log_action.type = TYPE_ACTION_URL` and for rows `log_action.type
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 
 <a name="execute" id="execute"></a>
+<a name="execute" id="execute"></a>
 ### `execute()`
 
 Executes the query.
@@ -171,6 +179,7 @@ The object has to be configured first using the other methods.
     - `array`
 
 <a name="generatequery" id="generatequery"></a>
+<a name="generateQuery" id="generateQuery"></a>
 ### `generateQuery()`
 
 Generate the SQL code that does the magic.

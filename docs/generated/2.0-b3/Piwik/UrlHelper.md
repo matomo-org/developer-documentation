@@ -18,6 +18,7 @@ The class defines the following methods:
 - [`getPathAndQueryFromUrl()`](#getpathandqueryfromurl) &mdash; Returns the path and query string of a URL.
 
 <a name="getquerystringwithexcludedparameters" id="getquerystringwithexcludedparameters"></a>
+<a name="getQueryStringWithExcludedParameters" id="getQueryStringWithExcludedParameters"></a>
 ### `getQueryStringWithExcludedParameters()`
 
 Converts an array of query parameter name/value mappings into a query string.
@@ -36,6 +37,7 @@ query string.
     - `string`
 
 <a name="getparseurlreverse" id="getparseurlreverse"></a>
+<a name="getParseUrlReverse" id="getParseUrlReverse"></a>
 ### `getParseUrlReverse()`
 
 Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php) function.
@@ -53,6 +55,7 @@ Copied from the PHP comments at http://php.net/parse_url
     - `string`
 
 <a name="getarrayfromquerystring" id="getarrayfromquerystring"></a>
+<a name="getArrayFromQueryString" id="getArrayFromQueryString"></a>
 ### `getArrayFromQueryString()`
 
 Returns a URL query string as an array.
@@ -65,6 +68,7 @@ Returns a URL query string as an array.
     - `array`
 
 <a name="getparameterfromquerystring" id="getparameterfromquerystring"></a>
+<a name="getParameterFromQueryString" id="getParameterFromQueryString"></a>
 ### `getParameterFromQueryString()`
 
 Returns the value of a single query parameter from the supplied query string.
@@ -79,6 +83,7 @@ Returns the value of a single query parameter from the supplied query string.
     - `null`
 
 <a name="getpathandqueryfromurl" id="getpathandqueryfromurl"></a>
+<a name="getPathAndQueryFromUrl" id="getPathAndQueryFromUrl"></a>
 ### `getPathAndQueryFromUrl()`
 
 Returns the path and query string of a URL.

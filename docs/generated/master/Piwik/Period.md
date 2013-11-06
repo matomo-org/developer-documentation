@@ -28,47 +28,6 @@ periodically, while every other date range is archived on-demand.
     $periodObject = Period::advancedFactory($period, $date);
 
 
-Properties
-----------
-
-This abstract class defines the following properties:
-
-- [`$subperiods`](#$subperiods) &mdash; Array of subperiods
-- [`$subperiodsProcessed`](#$subperiodsprocessed)
-- [`$label`](#$label)
-- [`$date`](#$date)
-
-<a name="subperiods" id="subperiods"></a>
-### `$subperiods`
-
-Array of subperiods
-
-#### Signature
-
-- It is a(n) [`Period[]`](../Piwik/Period.md) value.
-
-<a name="subperiodsprocessed" id="subperiodsprocessed"></a>
-### `$subperiodsProcessed`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="label" id="label"></a>
-### `$label`
-
-#### Signature
-
-- It is a(n) `string` value.
-
-<a name="date" id="date"></a>
-### `$date`
-
-#### Signature
-
-- It is a(n) [`Date`](../Piwik/Date.md) value.
-
 Methods
 -------
 
@@ -82,11 +41,8 @@ The abstract class defines the following methods:
 - [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period.
 - [`getId()`](#getid) &mdash; Returns the period ID.
 - [`getLabel()`](#getlabel) &mdash; Returns the label for the current period.
-- [`getDate()`](#getdate)
-- [`generate()`](#generate)
 - [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods.
 - [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period.
-- [`addSubperiod()`](#addsubperiod) &mdash; Add a date to the period.
 - [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period.
 - [`__toString()`](#__tostring) &mdash; See [toString](#toString).
 - [`getPrettyString()`](#getprettystring) &mdash; Returns a pretty string describing this period.
@@ -94,6 +50,7 @@ The abstract class defines the following methods:
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns a long string description of this period that is localized with the currently used language.
 - [`getRangeString()`](#getrangestring) &mdash; Returns a succinct string describing this period.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -105,6 +62,7 @@ Constructor.
     - `$date` ([`Date`](../Piwik/Date.md))
 - It does not return anything.
 
+<a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
 ### `factory()`
 
@@ -119,11 +77,12 @@ Note: This method cannot create Range periods.
 - It accepts the following parameter(s):
     - `$strPeriod`
     - `$date`
-- It returns a(n) [`Period`](../Piwik/Period.md) value.
+- It returns a [`Period`](../Piwik/Period.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$strPeriod` is invalid.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
+<a name="isMultiplePeriod" id="isMultiplePeriod"></a>
 ### `isMultiplePeriod()`
 
 Returns true $dateString and $period correspond to multiple periods.
@@ -133,9 +92,10 @@ Returns true $dateString and $period correspond to multiple periods.
 - It accepts the following parameter(s):
     - `$dateString`
     - `$period`
-- It returns a(n) `boolean` value.
+- It returns a `boolean` value.
 
 <a name="makeperiodfromqueryparams" id="makeperiodfromqueryparams"></a>
+<a name="makePeriodFromQueryParams" id="makePeriodFromQueryParams"></a>
 ### `makePeriodFromQueryParams()`
 
 Creates a period instance using a Site instance and two strings describing the period & date.
@@ -146,27 +106,30 @@ Creates a period instance using a Site instance and two strings describing the p
     - `$timezone`
     - `$period`
     - `$date`
-- It returns a(n) [`Period`](../Piwik/Period.md) value.
+- It returns a [`Period`](../Piwik/Period.md) value.
 
 <a name="getdatestart" id="getdatestart"></a>
+<a name="getDateStart" id="getDateStart"></a>
 ### `getDateStart()`
 
 Returns the first day of the period.
 
 #### Signature
 
-- It returns a(n) [`Date`](../Piwik/Date.md) value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getdateend" id="getdateend"></a>
+<a name="getDateEnd" id="getDateEnd"></a>
 ### `getDateEnd()`
 
 Returns the last day of the period.
 
 #### Signature
 
-- It returns a(n) [`Date`](../Piwik/Date.md) value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getid" id="getid"></a>
+<a name="getId" id="getId"></a>
 ### `getId()`
 
 Returns the period ID.
@@ -177,6 +140,7 @@ Returns the period ID.
     - `int`
 
 <a name="getlabel" id="getlabel"></a>
+<a name="getLabel" id="getLabel"></a>
 ### `getLabel()`
 
 Returns the label for the current period.
@@ -186,30 +150,18 @@ Returns the label for the current period.
 - _Returns:_ `"day"`, `"week"`, `"month"`, `"year"`, `"range"`
     - `string`
 
-<a name="getdate" id="getdate"></a>
-### `getDate()`
-
-#### Signature
-
-- It returns a(n) [`Date`](../Piwik/Date.md) value.
-
-<a name="generate" id="generate"></a>
-### `generate()`
-
-#### Signature
-
-- It does not return anything.
-
 <a name="getnumberofsubperiods" id="getnumberofsubperiods"></a>
+<a name="getNumberOfSubperiods" id="getNumberOfSubperiods"></a>
 ### `getNumberOfSubperiods()`
 
 Returns the number of available subperiods.
 
 #### Signature
 
-- It returns a(n) `int` value.
+- It returns a `int` value.
 
 <a name="getsubperiods" id="getsubperiods"></a>
+<a name="getSubperiods" id="getSubperiods"></a>
 ### `getSubperiods()`
 
 Returns the set of Period instances that together make up this period.
@@ -221,24 +173,10 @@ this would be 12 months. For a month this would be 28-31 days. Etc.
 
 #### Signature
 
-- It returns a(n) [`Period[]`](../Piwik/Period.md) value.
-
-<a name="addsubperiod" id="addsubperiod"></a>
-### `addSubperiod()`
-
-Add a date to the period.
-
-#### Description
-
-Protected because it not yet supported to add periods after the initialization
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$period`
-- It does not return anything.
+- It returns a [`Period[]`](../Piwik/Period.md) value.
 
 <a name="tostring" id="tostring"></a>
+<a name="toString" id="toString"></a>
 ### `toString()`
 
 Returns a list of strings representing the current period.
@@ -251,42 +189,47 @@ Returns a list of strings representing the current period.
     - `array`
 
 <a name="__tostring" id="__tostring"></a>
+<a name="__toString" id="__toString"></a>
 ### `__toString()`
 
 See [toString](#toString).
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getprettystring" id="getprettystring"></a>
+<a name="getPrettyString" id="getPrettyString"></a>
 ### `getPrettyString()`
 
 Returns a pretty string describing this period.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getlocalizedshortstring" id="getlocalizedshortstring"></a>
+<a name="getLocalizedShortString" id="getLocalizedShortString"></a>
 ### `getLocalizedShortString()`
 
 Returns a short string description of this period that is localized with the currently used language.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getlocalizedlongstring" id="getlocalizedlongstring"></a>
+<a name="getLocalizedLongString" id="getLocalizedLongString"></a>
 ### `getLocalizedLongString()`
 
 Returns a long string description of this period that is localized with the currently used language.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getrangestring" id="getrangestring"></a>
+<a name="getRangeString" id="getRangeString"></a>
 ### `getRangeString()`
 
 Returns a succinct string describing this period.

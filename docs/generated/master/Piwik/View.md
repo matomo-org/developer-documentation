@@ -84,8 +84,6 @@ The class defines the following methods:
 - [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
 - [`__get()`](#__get) &mdash; Retrieves an assigned variable.
 - [`render()`](#render) &mdash; Renders the current view.
-- [`renderTwigTemplate()`](#rendertwigtemplate)
-- [`applyFilter_cacheBuster()`](#applyfilter_cachebuster)
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field.
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response.
 - [`addForm()`](#addform) &mdash; Add form to view
@@ -93,6 +91,7 @@ The class defines the following methods:
 - [`clearCompiledTemplates()`](#clearcompiledtemplates) &mdash; Clear compiled Smarty templates
 - [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -105,23 +104,26 @@ Constructor.
 - It does not return anything.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
+<a name="getTemplateFile" id="getTemplateFile"></a>
 ### `getTemplateFile()`
 
 Returns the template filename.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="gettemplatevars" id="gettemplatevars"></a>
+<a name="getTemplateVars" id="getTemplateVars"></a>
 ### `getTemplateVars()`
 
 Returns the variables to bind to the template when rendering.
 
 #### Signature
 
-- It returns a(n) `array` value.
+- It returns a `array` value.
 
+<a name="__set" id="__set"></a>
 <a name="__set" id="__set"></a>
 ### `__set()`
 
@@ -139,6 +141,7 @@ Variable names may not be prefixed with '_'.
 - It does not return anything.
 
 <a name="__get" id="__get"></a>
+<a name="__get" id="__get"></a>
 ### `__get()`
 
 Retrieves an assigned variable.
@@ -155,6 +158,7 @@ Variable names may not be prefixed with '_'.
     - `mixed`
 
 <a name="render" id="render"></a>
+<a name="render" id="render"></a>
 ### `render()`
 
 Renders the current view.
@@ -169,23 +173,8 @@ See [setContentType](#setContentType).
 - _Returns:_ Generated template.
     - `string`
 
-<a name="rendertwigtemplate" id="rendertwigtemplate"></a>
-### `renderTwigTemplate()`
-
-#### Signature
-
-- It does not return anything.
-
-<a name="applyfilter_cachebuster" id="applyfilter_cachebuster"></a>
-### `applyFilter_cacheBuster()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$output`
-- It does not return anything.
-
 <a name="setcontenttype" id="setcontenttype"></a>
+<a name="setContentType" id="setContentType"></a>
 ### `setContentType()`
 
 Set stored value used in the Content-Type HTTP header field.
@@ -202,6 +191,7 @@ set just before rendering.
 - It does not return anything.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
+<a name="setXFrameOptions" id="setXFrameOptions"></a>
 ### `setXFrameOptions()`
 
 Set X-Frame-Options field in the HTTP response.
@@ -221,6 +211,7 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 - It does not return anything.
 
 <a name="addform" id="addform"></a>
+<a name="addForm" id="addForm"></a>
 ### `addForm()`
 
 Add form to view
@@ -231,6 +222,7 @@ Add form to view
     - `$form` (`Piwik\QuickForm2`)
 - It does not return anything.
 
+<a name="assign" id="assign"></a>
 <a name="assign" id="assign"></a>
 ### `assign()`
 
@@ -244,6 +236,7 @@ Assign value to a variable for use in a template ToDo: This is ugly.
 - It does not return anything.
 
 <a name="clearcompiledtemplates" id="clearcompiledtemplates"></a>
+<a name="clearCompiledTemplates" id="clearCompiledTemplates"></a>
 ### `clearCompiledTemplates()`
 
 Clear compiled Smarty templates
@@ -253,6 +246,7 @@ Clear compiled Smarty templates
 - It does not return anything.
 
 <a name="singlereport" id="singlereport"></a>
+<a name="singleReport" id="singleReport"></a>
 ### `singleReport()`
 
 Creates a View for and then renders the single report template.

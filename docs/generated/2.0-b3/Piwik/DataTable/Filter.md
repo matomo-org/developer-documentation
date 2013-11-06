@@ -23,20 +23,6 @@ To see examples of Filters look at the existing ones in the Piwik\DataTable\Filt
 namespace.
 
 
-Properties
-----------
-
-This abstract class defines the following properties:
-
-- [`$enableRecursive`](#$enablerecursive)
-
-<a name="enablerecursive" id="enablerecursive"></a>
-### `$enableRecursive`
-
-#### Signature
-
-- It is a(n) `bool` value.
-
 Methods
 -------
 
@@ -47,6 +33,7 @@ The abstract class defines the following methods:
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering.
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -59,6 +46,7 @@ Constructor.
 - It does not return anything.
 
 <a name="filter" id="filter"></a>
+<a name="filter" id="filter"></a>
 ### `filter()`
 
 Filters the supplied DataTable.
@@ -70,6 +58,7 @@ Filters the supplied DataTable.
 - It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
+<a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
 Enables/Disables recursive filtering.
@@ -86,6 +75,7 @@ is up to the derived Filter class.
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
+<a name="filterSubTable" id="filterSubTable"></a>
 ### `filterSubTable()`
 
 Filters a row's subtable, if one exists and is loaded in memory.

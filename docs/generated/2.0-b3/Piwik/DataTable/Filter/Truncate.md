@@ -31,6 +31,7 @@ The class defines the following methods:
 - [`addSummaryRow()`](#addsummaryrow)
 
 <a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
 ### `__construct()`
 
 Constructor.
@@ -46,6 +47,7 @@ Constructor.
 - It does not return anything.
 
 <a name="filter" id="filter"></a>
+<a name="filter" id="filter"></a>
 ### `filter()`
 
 Executes the filter, see [Truncate](#).
@@ -57,6 +59,7 @@ Executes the filter, see [Truncate](#).
 - It does not return anything.
 
 <a name="addsummaryrow" id="addsummaryrow"></a>
+<a name="addSummaryRow" id="addSummaryRow"></a>
 ### `addSummaryRow()`
 
 #### Signature

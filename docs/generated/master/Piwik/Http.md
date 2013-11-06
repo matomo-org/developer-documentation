@@ -22,6 +22,7 @@ The class defines the following methods:
 - [`fetchRemoteFile()`](#fetchremotefile) &mdash; Fetches a file located at `$url` and saves it to `$destinationPath`.
 
 <a name="gettransportmethod" id="gettransportmethod"></a>
+<a name="getTransportMethod" id="getTransportMethod"></a>
 ### `getTransportMethod()`
 
 Returns the "best" available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
@@ -32,6 +33,7 @@ Returns the "best" available transport method for [sendHttpRequest()](#sendHttpR
     - `string`
 
 <a name="sendhttprequest" id="sendhttprequest"></a>
+<a name="sendHttpRequest" id="sendHttpRequest"></a>
 ### `sendHttpRequest()`
 
 Sends an HTTP request using best available transport method.
@@ -55,6 +57,7 @@ Sends an HTTP request using best available transport method.
     - [`Exception`](http://php.net/class.Exception) &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent, if there are more than 5 redirects or if the request times out.
 
 <a name="downloadchunk" id="downloadchunk"></a>
+<a name="downloadChunk" id="downloadChunk"></a>
 ### `downloadChunk()`
 
 Downloads the next chunk of a specific file.
@@ -113,11 +116,12 @@ of a download's progress.
     - `$url`
     - `$outputPath`
     - `$isContinuation`
-- It returns a(n) `array` value.
+- It returns a `array` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the file already exists and we&#039;re starting a new download, if we&#039;re trying to continue a download that never started
 
 <a name="fetchremotefile" id="fetchremotefile"></a>
+<a name="fetchRemoteFile" id="fetchRemoteFile"></a>
 ### `fetchRemoteFile()`
 
 Fetches a file located at `$url` and saves it to `$destinationPath`.

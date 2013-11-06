@@ -58,6 +58,7 @@ The class defines the following methods:
 - [`isLocalUrl()`](#islocalurl) &mdash; Returns true if the URL points to something on the same host, false if otherwise.
 
 <a name="getcurrenturl" id="getcurrenturl"></a>
+<a name="getCurrentUrl" id="getCurrentUrl"></a>
 ### `getCurrentUrl()`
 
 Returns the current URL.
@@ -68,6 +69,7 @@ Returns the current URL.
     - `string`
 
 <a name="getcurrenturlwithoutquerystring" id="getcurrenturlwithoutquerystring"></a>
+<a name="getCurrentUrlWithoutQueryString" id="getCurrentUrlWithoutQueryString"></a>
 ### `getCurrentUrlWithoutQueryString()`
 
 Returns the current URL without the query string.
@@ -80,6 +82,7 @@ Returns the current URL without the query string.
     - `string`
 
 <a name="getcurrenturlwithoutfilename" id="getcurrenturlwithoutfilename"></a>
+<a name="getCurrentUrlWithoutFileName" id="getCurrentUrlWithoutFileName"></a>
 ### `getCurrentUrlWithoutFileName()`
 
 Returns the current URL without the query string and without the name of the file being executed.
@@ -90,6 +93,7 @@ Returns the current URL without the query string and without the name of the fil
     - `string`
 
 <a name="getcurrentscriptpath" id="getcurrentscriptpath"></a>
+<a name="getCurrentScriptPath" id="getCurrentScriptPath"></a>
 ### `getCurrentScriptPath()`
 
 Returns the path to the script being executed.
@@ -104,6 +108,7 @@ The script file name is not included.
     - `string`
 
 <a name="getcurrentscriptname" id="getcurrentscriptname"></a>
+<a name="getCurrentScriptName" id="getCurrentScriptName"></a>
 ### `getCurrentScriptName()`
 
 Returns the path to the script being executed.
@@ -118,6 +123,7 @@ Includes the script file name.
     - `string`
 
 <a name="getcurrentscheme" id="getcurrentscheme"></a>
+<a name="getCurrentScheme" id="getCurrentScheme"></a>
 ### `getCurrentScheme()`
 
 Returns the current URL's protocol.
@@ -128,6 +134,7 @@ Returns the current URL's protocol.
     - `string`
 
 <a name="getcurrenthost" id="getcurrenthost"></a>
+<a name="getCurrentHost" id="getCurrentHost"></a>
 ### `getCurrentHost()`
 
 Returns the current host.
@@ -141,6 +148,7 @@ Returns the current host.
     - `string`
 
 <a name="getcurrentquerystring" id="getcurrentquerystring"></a>
+<a name="getCurrentQueryString" id="getCurrentQueryString"></a>
 ### `getCurrentQueryString()`
 
 Returns the query string of the current URL.
@@ -151,6 +159,7 @@ Returns the query string of the current URL.
     - `string`
 
 <a name="getarrayfromcurrentquerystring" id="getarrayfromcurrentquerystring"></a>
+<a name="getArrayFromCurrentQueryString" id="getArrayFromCurrentQueryString"></a>
 ### `getArrayFromCurrentQueryString()`
 
 Returns an array mapping query paramater names with query parameter values for the current URL.
@@ -161,6 +170,7 @@ Returns an array mapping query paramater names with query parameter values for t
     - `array`
 
 <a name="getcurrentquerystringwithparametersmodified" id="getcurrentquerystringwithparametersmodified"></a>
+<a name="getCurrentQueryStringWithParametersModified" id="getCurrentQueryStringWithParametersModified"></a>
 ### `getCurrentQueryStringWithParametersModified()`
 
 Modifies the current query string with the supplied parameters and returns the result.
@@ -179,6 +189,7 @@ will be added to the result.
     - `string`
 
 <a name="getquerystringfromparameters" id="getquerystringfromparameters"></a>
+<a name="getQueryStringFromParameters" id="getQueryStringFromParameters"></a>
 ### `getQueryStringFromParameters()`
 
 Converts an an array of parameters name => value mappings to a query string.
@@ -191,6 +202,7 @@ Converts an an array of parameters name => value mappings to a query string.
     - `string`
 
 <a name="redirecttoreferrer" id="redirecttoreferrer"></a>
+<a name="redirectToReferrer" id="redirectToReferrer"></a>
 ### `redirectToReferrer()`
 
 Redirects the user to the referrer.
@@ -205,6 +217,7 @@ to the current URL without query string.
 - It does not return anything.
 
 <a name="redirecttourl" id="redirecttourl"></a>
+<a name="redirectToUrl" id="redirectToUrl"></a>
 ### `redirectToUrl()`
 
 Redirects the user to the specified URL.
@@ -216,6 +229,7 @@ Redirects the user to the specified URL.
 - It does not return anything.
 
 <a name="getreferrer" id="getreferrer"></a>
+<a name="getReferrer" id="getReferrer"></a>
 ### `getReferrer()`
 
 Returns the HTTP_REFERER header, or false if not found.
@@ -227,6 +241,7 @@ Returns the HTTP_REFERER header, or false if not found.
     - `Piwik\false`
 
 <a name="islocalurl" id="islocalurl"></a>
+<a name="isLocalUrl" id="isLocalUrl"></a>
 ### `isLocalUrl()`
 
 Returns true if the URL points to something on the same host, false if otherwise.

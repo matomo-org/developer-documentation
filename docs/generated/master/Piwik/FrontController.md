@@ -49,6 +49,7 @@ The class defines the following methods:
 - [`fetchDispatch()`](#fetchdispatch) &mdash; Executes the requested plugin controller action and returns the data the action echos.
 
 <a name="dispatch" id="dispatch"></a>
+<a name="dispatch" id="dispatch"></a>
 ### `dispatch()`
 
 Executes the requested plugin controller action.
@@ -70,6 +71,7 @@ See also [fetchDispatch](#fetchDispatch).
     - `Exception|\Piwik\PluginDeactivatedException` &mdash; in case the plugin doesn&#039;t exist, the action doesn&#039;t exist, there is not enough permission, etc.
 
 <a name="fetchdispatch" id="fetchdispatch"></a>
+<a name="fetchDispatch" id="fetchDispatch"></a>
 ### `fetchDispatch()`
 
 Executes the requested plugin controller action and returns the data the action echos.

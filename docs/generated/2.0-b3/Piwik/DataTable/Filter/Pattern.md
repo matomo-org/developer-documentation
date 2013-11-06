@@ -25,6 +25,7 @@ The class defines the following methods:
 - [`filter()`](#filter) &mdash; See [Pattern](#).
 
 <a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
 ### `__construct()`
 
 Constructor.
@@ -39,6 +40,7 @@ Constructor.
 - It does not return anything.
 
 <a name="getpatternquoted" id="getpatternquoted"></a>
+<a name="getPatternQuoted" id="getPatternQuoted"></a>
 ### `getPatternQuoted()`
 
 Helper method to return the given pattern quoted
@@ -47,8 +49,9 @@ Helper method to return the given pattern quoted
 
 - It accepts the following parameter(s):
     - `$pattern`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
+<a name="match" id="match"></a>
 <a name="match" id="match"></a>
 ### `match()`
 
@@ -61,8 +64,9 @@ Performs case insensitive match
     - `$patternQuoted`
     - `$string`
     - `$invertedMatch`
-- It returns a(n) `int` value.
+- It returns a `int` value.
 
+<a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
 ### `filter()`
 

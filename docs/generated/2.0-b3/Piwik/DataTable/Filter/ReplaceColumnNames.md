@@ -25,21 +25,6 @@ class. (See [Metrics](#) for more information about integer metric names.)
     }
 
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$mappingToApply`](#$mappingtoapply)
-
-<a name="mappingtoapply" id="mappingtoapply"></a>
-### `$mappingToApply`
-
-#### Signature
-
-- Its type is not specified.
-
-
 Methods
 -------
 
@@ -47,12 +32,8 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; See [ReplaceColumnNames](#).
-- [`filterTable()`](#filtertable)
-- [`filterSimple()`](#filtersimple)
-- [`getRenamedColumn()`](#getrenamedcolumn)
-- [`getRenamedColumns()`](#getrenamedcolumns) &mdash; Checks the given columns and renames them if required
-- [`flattenGoalColumns()`](#flattengoalcolumns)
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -66,6 +47,7 @@ Constructor.
 - It does not return anything.
 
 <a name="filter" id="filter"></a>
+<a name="filter" id="filter"></a>
 ### `filter()`
 
 See [ReplaceColumnNames](#).
@@ -75,51 +57,4 @@ See [ReplaceColumnNames](#).
 - It accepts the following parameter(s):
     - `$table`
 - It does not return anything.
-
-<a name="filtertable" id="filtertable"></a>
-### `filterTable()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$table`
-- It does not return anything.
-
-<a name="filtersimple" id="filtersimple"></a>
-### `filterSimple()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$table` ([`Simple`](../../../Piwik/DataTable/Simple.md))
-- It does not return anything.
-
-<a name="getrenamedcolumn" id="getrenamedcolumn"></a>
-### `getRenamedColumn()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$column`
-- It does not return anything.
-
-<a name="getrenamedcolumns" id="getrenamedcolumns"></a>
-### `getRenamedColumns()`
-
-Checks the given columns and renames them if required
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$columns`
-- It returns a(n) `array` value.
-
-<a name="flattengoalcolumns" id="flattengoalcolumns"></a>
-### `flattenGoalColumns()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$columnValue`
-- It returns a(n) `array` value.
 

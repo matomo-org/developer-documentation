@@ -68,22 +68,6 @@ contain the following information:
     }
 
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$pluginName`](#$pluginname) &mdash; Name of this plugin.
-
-<a name="pluginname" id="pluginname"></a>
-### `$pluginName`
-
-Name of this plugin.
-
-#### Signature
-
-- It is a(n) `string` value.
-
 Methods
 -------
 
@@ -103,6 +87,7 @@ The class defines the following methods:
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
 
 <a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
 ### `__construct()`
 
 Constructor.
@@ -116,15 +101,17 @@ Constructor.
     - [`Exception`](http://php.net/class.Exception) &mdash; If plugin metadata is defined in both the getInformation() method and the plugin.json file.
 
 <a name="getinformation" id="getinformation"></a>
+<a name="getInformation" id="getInformation"></a>
 ### `getInformation()`
 
 Returns the plugin details - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
 
 #### Signature
 
-- It returns a(n) `array` value.
+- It returns a `array` value.
 
 <a name="getlisthooksregistered" id="getlisthooksregistered"></a>
+<a name="getListHooksRegistered" id="getListHooksRegistered"></a>
 ### `getListHooksRegistered()`
 
 Returns a list of hooks with associated event observers.
@@ -135,6 +122,7 @@ Returns a list of hooks with associated event observers.
     - `array`
 
 <a name="postload" id="postload"></a>
+<a name="postLoad" id="postLoad"></a>
 ### `postLoad()`
 
 This method is executed after a plugin is loaded and translations are registered.
@@ -147,6 +135,7 @@ Useful for initialization code that uses translated strings from the plugin.
 
 - It does not return anything.
 
+<a name="install" id="install"></a>
 <a name="install" id="install"></a>
 ### `install()`
 
@@ -167,6 +156,7 @@ needs to:
     - [`Exception`](http://php.net/class.Exception) &mdash; if installation of fails for some reason.
 
 <a name="uninstall" id="uninstall"></a>
+<a name="uninstall" id="uninstall"></a>
 ### `uninstall()`
 
 Uninstalls the plugins.
@@ -186,6 +176,7 @@ an [uninstall](#uninstall) method.
     - [`Exception`](http://php.net/class.Exception) &mdash; if uninstallation of fails for some reason.
 
 <a name="activate" id="activate"></a>
+<a name="activate" id="activate"></a>
 ### `activate()`
 
 Executed every time the plugin is enabled.
@@ -194,6 +185,7 @@ Executed every time the plugin is enabled.
 
 - It does not return anything.
 
+<a name="deactivate" id="deactivate"></a>
 <a name="deactivate" id="deactivate"></a>
 ### `deactivate()`
 
@@ -204,6 +196,7 @@ Executed every time the plugin is disabled.
 - It does not return anything.
 
 <a name="getversion" id="getversion"></a>
+<a name="getVersion" id="getVersion"></a>
 ### `getVersion()`
 
 Returns the plugin version number.
@@ -211,9 +204,10 @@ Returns the plugin version number.
 #### Signature
 
 - It is a **finalized** method.
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="istheme" id="istheme"></a>
+<a name="isTheme" id="isTheme"></a>
 ### `isTheme()`
 
 Returns true if this plugin is a theme, false if otherwise.
@@ -221,9 +215,10 @@ Returns true if this plugin is a theme, false if otherwise.
 #### Signature
 
 - It is a **finalized** method.
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="getpluginname" id="getpluginname"></a>
+<a name="getPluginName" id="getPluginName"></a>
 ### `getPluginName()`
 
 Returns the plugin's base class name without the namespace, e.g., "UserCountry" when the plugin class is "Piwik\Plugins\UserCountry\UserCountry".
@@ -231,9 +226,10 @@ Returns the plugin's base class name without the namespace, e.g., "UserCountry" 
 #### Signature
 
 - It is a **finalized** method.
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getpluginnamefrombacktrace" id="getpluginnamefrombacktrace"></a>
+<a name="getPluginNameFromBacktrace" id="getPluginNameFromBacktrace"></a>
 ### `getPluginNameFromBacktrace()`
 
 Extracts the plugin name from a backtrace array.

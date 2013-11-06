@@ -30,8 +30,6 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`init()`](#init) &mdash; Define your settings and introduction here.
-- [`setIntroduction()`](#setintroduction) &mdash; Sets (overwrites) the plugin settings introduction.
 - [`getIntroduction()`](#getintroduction)
 - [`getSettingsForCurrentUser()`](#getsettingsforcurrentuser) &mdash; Returns only settings that can be displayed for current user.
 - [`getSettings()`](#getsettings) &mdash; Get all available settings without checking any permissions.
@@ -40,8 +38,8 @@ The abstract class defines the following methods:
 - [`getSettingValue()`](#getsettingvalue) &mdash; Gets the current value for this setting.
 - [`setSettingValue()`](#setsettingvalue) &mdash; Sets (overwrites) the value for the given setting.
 - [`removeSettingValue()`](#removesettingvalue) &mdash; Removes the value for the given setting.
-- [`addSetting()`](#addsetting) &mdash; Adds a new setting.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -51,27 +49,8 @@ The abstract class defines the following methods:
     - `$pluginName`
 - It does not return anything.
 
-<a name="init" id="init"></a>
-### `init()`
-
-Define your settings and introduction here.
-
-#### Signature
-
-- It does not return anything.
-
-<a name="setintroduction" id="setintroduction"></a>
-### `setIntroduction()`
-
-Sets (overwrites) the plugin settings introduction.
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$introduction`
-- It does not return anything.
-
 <a name="getintroduction" id="getintroduction"></a>
+<a name="getIntroduction" id="getIntroduction"></a>
 ### `getIntroduction()`
 
 #### Signature
@@ -79,6 +58,7 @@ Sets (overwrites) the plugin settings introduction.
 - It does not return anything.
 
 <a name="getsettingsforcurrentuser" id="getsettingsforcurrentuser"></a>
+<a name="getSettingsForCurrentUser" id="getSettingsForCurrentUser"></a>
 ### `getSettingsForCurrentUser()`
 
 Returns only settings that can be displayed for current user.
@@ -90,17 +70,19 @@ any settings that require super user permissions.
 
 #### Signature
 
-- It returns a(n) `Piwik\Settings\Setting` value.
+- It returns a `Piwik\Settings\Setting` value.
 
 <a name="getsettings" id="getsettings"></a>
+<a name="getSettings" id="getSettings"></a>
 ### `getSettings()`
 
 Get all available settings without checking any permissions.
 
 #### Signature
 
-- It returns a(n) `Piwik\Settings\Setting` value.
+- It returns a `Piwik\Settings\Setting` value.
 
+<a name="save" id="save"></a>
 <a name="save" id="save"></a>
 ### `save()`
 
@@ -111,6 +93,7 @@ Saves (persists) the current setting values in the database.
 - It does not return anything.
 
 <a name="removeallpluginsettings" id="removeallpluginsettings"></a>
+<a name="removeAllPluginSettings" id="removeAllPluginSettings"></a>
 ### `removeAllPluginSettings()`
 
 Removes all settings for this plugin.
@@ -124,6 +107,7 @@ Useful for instance while uninstalling the plugin.
 - It does not return anything.
 
 <a name="getsettingvalue" id="getsettingvalue"></a>
+<a name="getSettingValue" id="getSettingValue"></a>
 ### `getSettingValue()`
 
 Gets the current value for this setting.
@@ -136,11 +120,12 @@ If no value is specified, the default value will be returned.
 
 - It accepts the following parameter(s):
     - `$setting` (`Piwik\Settings\Setting`)
-- It returns a(n) `mixed` value.
+- It returns a `mixed` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the setting does not exist or if the current user is not allowed to change the value of this setting.
 
 <a name="setsettingvalue" id="setsettingvalue"></a>
+<a name="setSettingValue" id="setSettingValue"></a>
 ### `setSettingValue()`
 
 Sets (overwrites) the value for the given setting.
@@ -161,6 +146,7 @@ called. Alternatively the value will be casted to the specfied setting type.
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the setting does not exist or if the current user is not allowed to change the value of this setting.
 
 <a name="removesettingvalue" id="removesettingvalue"></a>
+<a name="removeSettingValue" id="removeSettingValue"></a>
 ### `removeSettingValue()`
 
 Removes the value for the given setting.
@@ -175,17 +161,4 @@ effect.
 - It accepts the following parameter(s):
     - `$setting` (`Piwik\Settings\Setting`)
 - It does not return anything.
-
-<a name="addsetting" id="addsetting"></a>
-### `addSetting()`
-
-Adds a new setting.
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$setting` (`Piwik\Settings\Setting`)
-- It does not return anything.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; In case a setting having the same name already exists. In case the name contains non-alnum characters.
 

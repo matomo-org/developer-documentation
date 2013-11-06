@@ -51,6 +51,7 @@ The class defines the following methods:
 - [`getHostByAddr()`](#gethostbyaddr) &mdash; Get hostname for a given IP address.
 
 <a name="sanitizeip" id="sanitizeip"></a>
+<a name="sanitizeIp" id="sanitizeIp"></a>
 ### `sanitizeIp()`
 
 Removes the port and the last portion of a CIDR IP address.
@@ -59,9 +60,10 @@ Removes the port and the last portion of a CIDR IP address.
 
 - It accepts the following parameter(s):
     - `$ipString`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="sanitizeiprange" id="sanitizeiprange"></a>
+<a name="sanitizeIpRange" id="sanitizeIpRange"></a>
 ### `sanitizeIpRange()`
 
 Sanitize human-readable (user-supplied) IP address range.
@@ -84,6 +86,7 @@ Accepts the following formats for $ipRange:
     - `bool`
 
 <a name="p2n" id="p2n"></a>
+<a name="P2N" id="P2N"></a>
 ### `P2N()`
 
 Convert presentation format IP address to network address format.
@@ -96,6 +99,7 @@ Convert presentation format IP address to network address format.
     - `string`
 
 <a name="n2p" id="n2p"></a>
+<a name="N2P" id="N2P"></a>
 ### `N2P()`
 
 Convert network address format to presentation format.
@@ -112,6 +116,7 @@ See also [prettyPreint](#prettyPrint).
     - `string`
 
 <a name="prettyprint" id="prettyprint"></a>
+<a name="prettyPrint" id="prettyPrint"></a>
 ### `prettyPrint()`
 
 Alias for [N2P()](#N2P).
@@ -124,6 +129,7 @@ Alias for [N2P()](#N2P).
     - `string`
 
 <a name="isipv4" id="isipv4"></a>
+<a name="isIPv4" id="isIPv4"></a>
 ### `isIPv4()`
 
 Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if otherwise.
@@ -135,6 +141,7 @@ Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if 
 - _Returns:_ True if IPv4, else false.
     - `bool`
 
+<a name="long2ip" id="long2ip"></a>
 <a name="long2ip" id="long2ip"></a>
 ### `long2ip()`
 
@@ -156,6 +163,7 @@ returned by the built-in ip2long() function, from Piwik 1.3 and earlier.
     - `string`
 
 <a name="isipv6" id="isipv6"></a>
+<a name="isIPv6" id="isIPv6"></a>
 ### `isIPv6()`
 
 Returns true if $ip is an IPv6 address, false if otherwise.
@@ -169,9 +177,10 @@ a naive check. It assumes that whatever format $ip is in, it is well-formed.
 
 - It accepts the following parameter(s):
     - `$ip`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="ismappedipv4" id="ismappedipv4"></a>
+<a name="isMappedIPv4" id="isMappedIPv4"></a>
 ### `isMappedIPv4()`
 
 Returns true if $ip is a IPv4 mapped address, false if otherwise.
@@ -180,9 +189,10 @@ Returns true if $ip is a IPv4 mapped address, false if otherwise.
 
 - It accepts the following parameter(s):
     - `$ip`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="getipv4frommappedipv6" id="getipv4frommappedipv6"></a>
+<a name="getIPv4FromMappedIPv6" id="getIPv4FromMappedIPv6"></a>
 ### `getIPv4FromMappedIPv6()`
 
 Returns an IPv4 address from a 'mapped' IPv6 address.
@@ -195,6 +205,7 @@ Returns an IPv4 address from a 'mapped' IPv6 address.
     - `string`
 
 <a name="getipsforrange" id="getipsforrange"></a>
+<a name="getIpsForRange" id="getIpsForRange"></a>
 ### `getIpsForRange()`
 
 Get low and high IP addresses for a specified range.
@@ -208,6 +219,7 @@ Get low and high IP addresses for a specified range.
     - `bool`
 
 <a name="isipinrange" id="isipinrange"></a>
+<a name="isIpInRange" id="isIpInRange"></a>
 ### `isIpInRange()`
 
 Determines if an IP address is in a specified IP address range.
@@ -225,6 +237,7 @@ An IPv4-mapped address should be range checked with an IPv4-mapped address range
     - `bool`
 
 <a name="getipfromheader" id="getipfromheader"></a>
+<a name="getIpFromHeader" id="getIpFromHeader"></a>
 ### `getIpFromHeader()`
 
 Returns the most accurate IP address availble for the current user, in IPv4 format.
@@ -239,6 +252,7 @@ This could be the proxy client's IP address.
     - `string`
 
 <a name="getnonproxyipfromheader" id="getnonproxyipfromheader"></a>
+<a name="getNonProxyIpFromHeader" id="getNonProxyIpFromHeader"></a>
 ### `getNonProxyIpFromHeader()`
 
 Returns a non-proxy IP address from header.
@@ -248,9 +262,10 @@ Returns a non-proxy IP address from header.
 - It accepts the following parameter(s):
     - `$default`
     - `$proxyHeaders`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getlastipfromlist" id="getlastipfromlist"></a>
+<a name="getLastIpFromList" id="getLastIpFromList"></a>
 ### `getLastIpFromList()`
 
 Returns the last IP address in a comma separated list, subject to an optional exclusion list.
@@ -264,6 +279,7 @@ Returns the last IP address in a comma separated list, subject to an optional ex
     - `string`
 
 <a name="gethostbyaddr" id="gethostbyaddr"></a>
+<a name="getHostByAddr" id="getHostByAddr"></a>
 ### `getHostByAddr()`
 
 Get hostname for a given IP address.

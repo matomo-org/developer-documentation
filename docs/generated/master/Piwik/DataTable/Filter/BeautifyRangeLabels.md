@@ -27,32 +27,6 @@ take a look at the [BeautifyTimeRangeLabels](#) filter.
     $dataTable->queueFilter('BeautifyRangeLabels', array("1 visit", "%s visits"));
 
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$labelSingular`](#$labelsingular) &mdash; The string to use when the range being beautified is between 1-1 units.
-- [`$labelPlural`](#$labelplural) &mdash; The format string to use when the range being beautified references more than one unit.
-
-<a name="labelsingular" id="labelsingular"></a>
-### `$labelSingular`
-
-The string to use when the range being beautified is between 1-1 units.
-
-#### Signature
-
-- It is a(n) `string` value.
-
-<a name="labelplural" id="labelplural"></a>
-### `$labelPlural`
-
-The format string to use when the range being beautified references more than one unit.
-
-#### Signature
-
-- It is a(n) `string` value.
-
 Methods
 -------
 
@@ -64,6 +38,7 @@ The class defines the following methods:
 - [`getRangeLabel()`](#getrangelabel) &mdash; Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
 - [`getUnboundedLabel()`](#getunboundedlabel) &mdash; Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -77,6 +52,7 @@ Constructor.
     - `$labelPlural`
 - It does not return anything.
 
+<a name="beautify" id="beautify"></a>
 <a name="beautify" id="beautify"></a>
 ### `beautify()`
 
@@ -94,6 +70,7 @@ See [BeautifyRangeLabels](#).
     - `string`
 
 <a name="getsingleunitlabel" id="getsingleunitlabel"></a>
+<a name="getSingleUnitLabel" id="getSingleUnitLabel"></a>
 ### `getSingleUnitLabel()`
 
 Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
@@ -112,6 +89,7 @@ behavior based on the range values.
     - `string`
 
 <a name="getrangelabel" id="getrangelabel"></a>
+<a name="getRangeLabel" id="getRangeLabel"></a>
 ### `getRangeLabel()`
 
 Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
@@ -131,6 +109,7 @@ behavior based on the range values.
     - `string`
 
 <a name="getunboundedlabel" id="getunboundedlabel"></a>
+<a name="getUnboundedLabel" id="getUnboundedLabel"></a>
 ### `getUnboundedLabel()`
 
 Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.

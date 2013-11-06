@@ -27,6 +27,7 @@ This class defines the following constants:
 - [`APPEND_TO_COLUMN_NAME_TO_KEEP`](#append_to_column_name_to_keep) &mdash; Hack: when specifying "showColumns", sometimes we'd like to also keep columns that "look" like a given column, without manually specifying all these columns (which may not be possible if column names are generated dynamically)
 
 <a name="append_to_column_name_to_keep" id="append_to_column_name_to_keep"></a>
+<a name="APPEND_TO_COLUMN_NAME_TO_KEEP" id="APPEND_TO_COLUMN_NAME_TO_KEEP"></a>
 ### `APPEND_TO_COLUMN_NAME_TO_KEEP`
 
 Column will be kept, if they match any name in the $columnsToKeep, or if they look like anyColumnToKeep__anythingHere
@@ -39,6 +40,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; Filters the given DataTable.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -53,6 +55,7 @@ Constructor.
     - `$deleteIfZeroOnly`
 - It does not return anything.
 
+<a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
 ### `filter()`
 

@@ -101,6 +101,7 @@ The class defines the following methods:
 - [`verbose()`](#verbose) &mdash; Logs a message using the VERBOSE log level.
 
 <a name="error" id="error"></a>
+<a name="error" id="error"></a>
 ### `error()`
 
 Logs a message using the ERROR log level.
@@ -117,6 +118,7 @@ to configured writers.
 - It does not return anything.
 
 <a name="warning" id="warning"></a>
+<a name="warning" id="warning"></a>
 ### `warning()`
 
 Logs a message using the WARNING log level.
@@ -127,6 +129,7 @@ Logs a message using the WARNING log level.
     - `$message`
 - It does not return anything.
 
+<a name="info" id="info"></a>
 <a name="info" id="info"></a>
 ### `info()`
 
@@ -139,6 +142,7 @@ Logs a message using the INFO log level.
 - It does not return anything.
 
 <a name="debug" id="debug"></a>
+<a name="debug" id="debug"></a>
 ### `debug()`
 
 Logs a message using the DEBUG log level.
@@ -149,6 +153,7 @@ Logs a message using the DEBUG log level.
     - `$message`
 - It does not return anything.
 
+<a name="verbose" id="verbose"></a>
 <a name="verbose" id="verbose"></a>
 ### `verbose()`
 

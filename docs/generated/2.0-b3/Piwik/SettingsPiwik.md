@@ -17,6 +17,7 @@ The class defines the following methods:
 - [`isUniqueVisitorsEnabled()`](#isuniquevisitorsenabled) &mdash; Returns true if unique visitors should be processed for the given period type.
 
 <a name="getknownsegmentstoarchive" id="getknownsegmentstoarchive"></a>
+<a name="getKnownSegmentsToArchive" id="getKnownSegmentsToArchive"></a>
 ### `getKnownSegmentsToArchive()`
 
 Returns the list of stored segments to pre-process for all sites when executing cron archiving.
@@ -27,6 +28,7 @@ Returns the list of stored segments to pre-process for all sites when executing 
     - `array`
 
 <a name="getpiwikurl" id="getpiwikurl"></a>
+<a name="getPiwikUrl" id="getPiwikUrl"></a>
 ### `getPiwikUrl()`
 
 Returns the URL to this Piwik instance, eg.
@@ -37,18 +39,20 @@ http://demo.piwik.org/ or http://example.org/piwik/.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="issegmentationenabled" id="issegmentationenabled"></a>
+<a name="isSegmentationEnabled" id="isSegmentationEnabled"></a>
 ### `isSegmentationEnabled()`
 
 Returns true if segmentation is allowed for this user, false if otherwise.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="isuniquevisitorsenabled" id="isuniquevisitorsenabled"></a>
+<a name="isUniqueVisitorsEnabled" id="isUniqueVisitorsEnabled"></a>
 ### `isUniqueVisitorsEnabled()`
 
 Returns true if unique visitors should be processed for the given period type.
@@ -63,5 +67,5 @@ year/range are not.
 
 - It accepts the following parameter(s):
     - `$periodLabel`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 

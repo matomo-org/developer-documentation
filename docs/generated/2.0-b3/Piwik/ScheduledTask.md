@@ -28,7 +28,6 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getClassNameFromInstance()`](#getclassnamefrominstance)
 - [`getObjectInstance()`](#getobjectinstance) &mdash; Return the object instance on which the method should be executed.
 - [`getClassName()`](#getclassname) &mdash; Returns the class name that contains the method to execute regularly.
 - [`getMethodName()`](#getmethodname) &mdash; Returns the method name that will be regularly executed.
@@ -39,6 +38,7 @@ The class defines the following methods:
 - [`getName()`](#getname) &mdash; Returns a unique name for this scheduled task.
 - [`getTaskName()`](#gettaskname)
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -54,16 +54,8 @@ Constructor.
     - `$priority`
 - It does not return anything.
 
-<a name="getclassnamefrominstance" id="getclassnamefrominstance"></a>
-### `getClassNameFromInstance()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$_objectInstance`
-- It does not return anything.
-
 <a name="getobjectinstance" id="getobjectinstance"></a>
+<a name="getObjectInstance" id="getObjectInstance"></a>
 ### `getObjectInstance()`
 
 Return the object instance on which the method should be executed.
@@ -75,27 +67,30 @@ name if the method is static.
 
 #### Signature
 
-- It returns a(n) `mixed` value.
+- It returns a `mixed` value.
 
 <a name="getclassname" id="getclassname"></a>
+<a name="getClassName" id="getClassName"></a>
 ### `getClassName()`
 
 Returns the class name that contains the method to execute regularly.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getmethodname" id="getmethodname"></a>
+<a name="getMethodName" id="getMethodName"></a>
 ### `getMethodName()`
 
 Returns the method name that will be regularly executed.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getmethodparameter" id="getmethodparameter"></a>
+<a name="getMethodParameter" id="getMethodParameter"></a>
 ### `getMethodParameter()`
 
 Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
@@ -107,24 +102,27 @@ Returns the a value that will be passed to the method when executed, or `null` i
     - `null`
 
 <a name="getscheduledtime" id="getscheduledtime"></a>
+<a name="getScheduledTime" id="getScheduledTime"></a>
 ### `getScheduledTime()`
 
 Returns a [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
 
 #### Signature
 
-- It returns a(n) `Piwik\ScheduledTime` value.
+- It returns a `Piwik\ScheduledTime` value.
 
 <a name="getrescheduledtime" id="getrescheduledtime"></a>
+<a name="getRescheduledTime" id="getRescheduledTime"></a>
 ### `getRescheduledTime()`
 
 Returns the time in milliseconds when this task will be executed next.
 
 #### Signature
 
-- It returns a(n) `int` value.
+- It returns a `int` value.
 
 <a name="getpriority" id="getpriority"></a>
+<a name="getPriority" id="getPriority"></a>
 ### `getPriority()`
 
 Returns the task priority.
@@ -136,9 +134,10 @@ between [ScheduledTask::HIGH_PRIORITY](#) and [ScheduledTask::LOW_PRIORITY](#).
 
 #### Signature
 
-- It returns a(n) `int` value.
+- It returns a `int` value.
 
 <a name="getname" id="getname"></a>
+<a name="getName" id="getName"></a>
 ### `getName()`
 
 Returns a unique name for this scheduled task.
@@ -154,9 +153,10 @@ to store when tasks were last executed. The name is created using:
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="gettaskname" id="gettaskname"></a>
+<a name="getTaskName" id="getTaskName"></a>
 ### `getTaskName()`
 
 #### Signature

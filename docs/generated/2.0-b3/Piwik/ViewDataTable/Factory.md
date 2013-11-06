@@ -32,6 +32,7 @@ The class defines the following methods:
 - [`renderReport()`](#renderreport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method.
 
 <a name="build" id="build"></a>
+<a name="build" id="build"></a>
 ### `build()`
 
 Returns a Piwik_ViewDataTable_* object.
@@ -58,6 +59,7 @@ If force is set to true, a ViewDataTable of the $defaultType will be returned in
     - [`Exception`](http://php.net/class.Exception)
 
 <a name="renderreport" id="renderreport"></a>
+<a name="renderReport" id="renderReport"></a>
 ### `renderReport()`
 
 Convenience method that creates and renders a ViewDataTable for a API method.

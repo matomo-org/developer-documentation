@@ -14,30 +14,6 @@ periods. The Maps will contain a DataTable for each site and period combination.
 The Map implements some of the features of the DataTable such as queueFilter and getRowsCount.
 
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$array`](#$array) &mdash; Array containing the DataTable withing this Set
-- [`$keyName`](#$keyname)
-
-<a name="array" id="array"></a>
-### `$array`
-
-Array containing the DataTable withing this Set
-
-#### Signature
-
-- It is a(n) [`DataTable[]`](../../Piwik/DataTable.md) value.
-
-<a name="keyname" id="keyname"></a>
-### `$keyName`
-
-#### Signature
-
-- It is a(n) `string` value.
-
 Methods
 -------
 
@@ -68,6 +44,7 @@ The class defines the following methods:
 - [`getColumns()`](#getcolumns)
 
 <a name="getkeyname" id="getkeyname"></a>
+<a name="getKeyName" id="getKeyName"></a>
 ### `getKeyName()`
 
 Returns a string description of the data used to index the DataTables.
@@ -82,6 +59,7 @@ This label is used by DataTable Renderers (it becomes a column name or the XML d
     - `string`
 
 <a name="setkeyname" id="setkeyname"></a>
+<a name="setKeyName" id="setKeyName"></a>
 ### `setKeyName()`
 
 Set the keyName.
@@ -97,15 +75,17 @@ See [getKeyName](#getKeyName).
 - It does not return anything.
 
 <a name="getrowscount" id="getrowscount"></a>
+<a name="getRowsCount" id="getRowsCount"></a>
 ### `getRowsCount()`
 
 Returns the number of DataTables in this DataTable\Map.
 
 #### Signature
 
-- It returns a(n) `int` value.
+- It returns a `int` value.
 
 <a name="queuefilter" id="queuefilter"></a>
+<a name="queueFilter" id="queueFilter"></a>
 ### `queueFilter()`
 
 Queue a filter to DataTable child of contained by this instance.
@@ -122,6 +102,7 @@ See [DataTable::queueFilter](#) for more information..
 - It does not return anything.
 
 <a name="applyqueuedfilters" id="applyqueuedfilters"></a>
+<a name="applyQueuedFilters" id="applyQueuedFilters"></a>
 ### `applyQueuedFilters()`
 
 Apply the filters previously queued to each DataTable contained by this DataTable\Map.
@@ -130,6 +111,7 @@ Apply the filters previously queued to each DataTable contained by this DataTabl
 
 - It does not return anything.
 
+<a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
 ### `filter()`
 
@@ -143,6 +125,7 @@ Apply a filter to all tables contained by this instance.
 - It does not return anything.
 
 <a name="getdatatables" id="getdatatables"></a>
+<a name="getDataTables" id="getDataTables"></a>
 ### `getDataTables()`
 
 Returns the array of DataTables contained by this class.
@@ -154,6 +137,7 @@ Returns the array of DataTables contained by this class.
     - [`Map[]`](../../Piwik/DataTable/Map.md)
 
 <a name="gettable" id="gettable"></a>
+<a name="getTable" id="getTable"></a>
 ### `getTable()`
 
 Returns the table with the specific label.
@@ -167,6 +151,7 @@ Returns the table with the specific label.
     - [`Map`](../../Piwik/DataTable/Map.md)
 
 <a name="getfirstrow" id="getfirstrow"></a>
+<a name="getFirstRow" id="getFirstRow"></a>
 ### `getFirstRow()`
 
 Returns the first DataTable in the DataTable array.
@@ -178,6 +163,7 @@ Returns the first DataTable in the DataTable array.
     - [`Map`](../../Piwik/DataTable/Map.md)
 
 <a name="addtable" id="addtable"></a>
+<a name="addTable" id="addTable"></a>
 ### `addTable()`
 
 Adds a new DataTable to the DataTable\Map.
@@ -190,15 +176,17 @@ Adds a new DataTable to the DataTable\Map.
 - It does not return anything.
 
 <a name="__tostring" id="__tostring"></a>
+<a name="__toString" id="__toString"></a>
 ### `__toString()`
 
 Returns a string output of this DataTable\Map (applying the default renderer to every DataTable of this DataTable\Map).
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="enablerecursivesort" id="enablerecursivesort"></a>
+<a name="enableRecursiveSort" id="enableRecursiveSort"></a>
 ### `enableRecursiveSort()`
 
 #### See Also
@@ -210,6 +198,7 @@ Returns a string output of this DataTable\Map (applying the default renderer to 
 - It does not return anything.
 
 <a name="renamecolumn" id="renamecolumn"></a>
+<a name="renameColumn" id="renameColumn"></a>
 ### `renameColumn()`
 
 Renames the given column in each contained DataTable.
@@ -226,6 +215,7 @@ Renames the given column in each contained DataTable.
 - It does not return anything.
 
 <a name="deletecolumns" id="deletecolumns"></a>
+<a name="deleteColumns" id="deleteColumns"></a>
 ### `deleteColumns()`
 
 Deletes the specified columns in each contained DataTable.
@@ -242,6 +232,7 @@ Deletes the specified columns in each contained DataTable.
 - It does not return anything.
 
 <a name="deleterow" id="deleterow"></a>
+<a name="deleteRow" id="deleteRow"></a>
 ### `deleteRow()`
 
 Deletes a table from the array of DataTables.
@@ -253,6 +244,7 @@ Deletes a table from the array of DataTables.
 - It does not return anything.
 
 <a name="deletecolumn" id="deletecolumn"></a>
+<a name="deleteColumn" id="deleteColumn"></a>
 ### `deleteColumn()`
 
 Deletes the given column in every contained DataTable.
@@ -268,6 +260,7 @@ Deletes the given column in every contained DataTable.
 - It does not return anything.
 
 <a name="getcolumn" id="getcolumn"></a>
+<a name="getColumn" id="getColumn"></a>
 ### `getColumn()`
 
 Returns the array containing all row values in all data tables for the requested column.
@@ -276,9 +269,10 @@ Returns the array containing all row values in all data tables for the requested
 
 - It accepts the following parameter(s):
     - `$name`
-- It returns a(n) `array` value.
+- It returns a `array` value.
 
 <a name="mergechildren" id="mergechildren"></a>
+<a name="mergeChildren" id="mergeChildren"></a>
 ### `mergeChildren()`
 
 Merges the rows of every child DataTable into a new DataTable and returns it.
@@ -335,6 +329,7 @@ query results into one DataTable w/ different rows differentiated by site ID.
     - [`Map`](../../Piwik/DataTable/Map.md)
 
 <a name="adddatatable" id="adddatatable"></a>
+<a name="addDataTable" id="addDataTable"></a>
 ### `addDataTable()`
 
 Adds a DataTable to all the tables in this array.
@@ -352,6 +347,7 @@ See [DataTable::addDataTable()](#).
 - It does not return anything.
 
 <a name="mergesubtables" id="mergesubtables"></a>
+<a name="mergeSubtables" id="mergeSubtables"></a>
 ### `mergeSubtables()`
 
 Returns a new DataTable\Map w/ child tables that have had their subtables merged.
@@ -362,18 +358,20 @@ Returns a new DataTable\Map w/ child tables that have had their subtables merged
 
 #### Signature
 
-- It returns a(n) [`Map`](../../Piwik/DataTable/Map.md) value.
+- It returns a [`Map`](../../Piwik/DataTable/Map.md) value.
 
 <a name="getemptyclone" id="getemptyclone"></a>
+<a name="getEmptyClone" id="getEmptyClone"></a>
 ### `getEmptyClone()`
 
 Returns a new DataTable\Map w/o any child DataTables, but with the same key name as this instance.
 
 #### Signature
 
-- It returns a(n) [`Map`](../../Piwik/DataTable/Map.md) value.
+- It returns a [`Map`](../../Piwik/DataTable/Map.md) value.
 
 <a name="getmetadataintersectarray" id="getmetadataintersectarray"></a>
+<a name="getMetadataIntersectArray" id="getMetadataIntersectArray"></a>
 ### `getMetadataIntersectArray()`
 
 Returns the intersection of children's metadata arrays (what they all have in common).
@@ -382,9 +380,10 @@ Returns the intersection of children's metadata arrays (what they all have in co
 
 - It accepts the following parameter(s):
     - `$name`
-- It returns a(n) `mixed` value.
+- It returns a `mixed` value.
 
 <a name="getcolumns" id="getcolumns"></a>
+<a name="getColumns" id="getColumns"></a>
 ### `getColumns()`
 
 #### See Also
@@ -393,5 +392,5 @@ Returns the intersection of children's metadata arrays (what they all have in co
 
 #### Signature
 
-- It returns a(n) `array` value.
+- It returns a `array` value.
 

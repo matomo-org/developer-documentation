@@ -50,6 +50,7 @@ The class defines the following methods:
 - [`queryActionsByDimension()`](#queryactionsbydimension) &mdash; Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.
 
 <a name="queryvisitsbydimension" id="queryvisitsbydimension"></a>
+<a name="queryVisitsByDimension" id="queryVisitsByDimension"></a>
 ### `queryVisitsByDimension()`
 
 Aggregates visit logs, optionally grouping by some dimension, and returns the aggregated data.
@@ -91,6 +92,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
     - `mixed`
 
 <a name="queryecommerceitems" id="queryecommerceitems"></a>
+<a name="queryEcommerceItems" id="queryEcommerceItems"></a>
 ### `queryEcommerceItems()`
 
 Aggregates ecommerce item data (everything stored in the **log_conversion_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
@@ -129,6 +131,7 @@ Segmentation is not yet supported in this aggregation method.
     - `Piwik\DataAccess\Zend_Db_Statement`
 
 <a name="queryactionsbydimension" id="queryactionsbydimension"></a>
+<a name="queryActionsByDimension" id="queryActionsByDimension"></a>
 ### `queryActionsByDimension()`
 
 Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.

@@ -17,39 +17,6 @@ The range period differs from other periods mainly in that since it is arbitrary
 range periods are not archived by the archive.php cron script.
 
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$label`](#$label)
-- [`$today`](#$today)
-- [`$endDate`](#$enddate)
-
-<a name="label" id="label"></a>
-### `$label`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="today" id="today"></a>
-### `$today`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="enddate" id="enddate"></a>
-### `$endDate`
-
-#### Signature
-
-- Its type is not specified.
-
-
 Methods
 -------
 
@@ -60,16 +27,13 @@ The class defines the following methods:
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns the current period as a localized long string.
 - [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period
 - [`getPrettyString()`](#getprettystring) &mdash; Returns the current period as a string
-- [`getMaxN()`](#getmaxn)
 - [`setDefaultEndDate()`](#setdefaultenddate) &mdash; Sets the default end date of the period
-- [`generate()`](#generate) &mdash; Generates the subperiods
 - [`parseDateRange()`](#parsedaterange) &mdash; Given a date string, returns false if not a date range, or returns the array containing date start, date end
 - [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period
-- [`processOptimalSubperiods()`](#processoptimalsubperiods) &mdash; Determine which kind of period is best to use See Range.test.php
-- [`fillArraySubPeriods()`](#fillarraysubperiods) &mdash; Adds new subperiods
 - [`getLastDate()`](#getlastdate) &mdash; Returns the date that is one period before the supplied date.
 - [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date ragne string given a period type, end date and number of periods the range spans over.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -85,53 +49,49 @@ Constructor.
 - It does not return anything.
 
 <a name="getlocalizedshortstring" id="getlocalizedshortstring"></a>
+<a name="getLocalizedShortString" id="getLocalizedShortString"></a>
 ### `getLocalizedShortString()`
 
 Returns the current period as a localized short string.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getlocalizedlongstring" id="getlocalizedlongstring"></a>
+<a name="getLocalizedLongString" id="getLocalizedLongString"></a>
 ### `getLocalizedLongString()`
 
 Returns the current period as a localized long string.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getdatestart" id="getdatestart"></a>
+<a name="getDateStart" id="getDateStart"></a>
 ### `getDateStart()`
 
 Returns the start date of the period
 
 #### Signature
 
-- It returns a(n) [`Date`](../../Piwik/Date.md) value.
+- It returns a [`Date`](../../Piwik/Date.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
 <a name="getprettystring" id="getprettystring"></a>
+<a name="getPrettyString" id="getPrettyString"></a>
 ### `getPrettyString()`
 
 Returns the current period as a string
 
 #### Signature
 
-- It returns a(n) `string` value.
-
-<a name="getmaxn" id="getmaxn"></a>
-### `getMaxN()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$lastN`
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="setdefaultenddate" id="setdefaultenddate"></a>
+<a name="setDefaultEndDate" id="setDefaultEndDate"></a>
 ### `setDefaultEndDate()`
 
 Sets the default end date of the period
@@ -142,18 +102,8 @@ Sets the default end date of the period
     - `$oDate` ([`Date`](../../Piwik/Date.md))
 - It does not return anything.
 
-<a name="generate" id="generate"></a>
-### `generate()`
-
-Generates the subperiods
-
-#### Signature
-
-- It does not return anything.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
-
 <a name="parsedaterange" id="parsedaterange"></a>
+<a name="parseDateRange" id="parseDateRange"></a>
 ### `parseDateRange()`
 
 Given a date string, returns false if not a date range, or returns the array containing date start, date end
@@ -166,6 +116,7 @@ Given a date string, returns false if not a date range, or returns the array con
     - `mixed`
 
 <a name="getdateend" id="getdateend"></a>
+<a name="getDateEnd" id="getDateEnd"></a>
 ### `getDateEnd()`
 
 Returns the end date of the period
@@ -176,32 +127,8 @@ Returns the end date of the period
     - `null`
     - [`Date`](../../Piwik/Date.md)
 
-<a name="processoptimalsubperiods" id="processoptimalsubperiods"></a>
-### `processOptimalSubperiods()`
-
-Determine which kind of period is best to use See Range.test.php
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$startDate`
-    - `$endDate`
-- It does not return anything.
-
-<a name="fillarraysubperiods" id="fillarraysubperiods"></a>
-### `fillArraySubPeriods()`
-
-Adds new subperiods
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$startDate`
-    - `$endDate`
-    - `$period`
-- It does not return anything.
-
 <a name="getlastdate" id="getlastdate"></a>
+<a name="getLastDate" id="getLastDate"></a>
 ### `getLastDate()`
 
 Returns the date that is one period before the supplied date.
@@ -215,6 +142,7 @@ Returns the date that is one period before the supplied date.
     - `array`
 
 <a name="getrelativetoenddate" id="getrelativetoenddate"></a>
+<a name="getRelativeToEndDate" id="getRelativeToEndDate"></a>
 ### `getRelativeToEndDate()`
 
 Returns a date ragne string given a period type, end date and number of periods the range spans over.

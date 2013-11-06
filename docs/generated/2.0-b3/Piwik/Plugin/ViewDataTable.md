@@ -40,40 +40,24 @@ Properties
 
 This abstract class defines the following properties:
 
-- [`$dataTable`](#$datatable) &mdash; DataTable loaded from the API for this ViewDataTable.
 - [`$config`](#$config)
 - [`$requestConfig`](#$requestconfig)
-- [`$request`](#$request)
 
-<a name="datatable" id="datatable"></a>
-### `$dataTable`
-
-DataTable loaded from the API for this ViewDataTable.
-
-#### Signature
-
-- It is a(n) [`DataTable`](../../Piwik/DataTable.md) value.
-
+<a name="config" id="config"></a>
 <a name="config" id="config"></a>
 ### `$config`
 
 #### Signature
 
-- It is a(n) `Piwik\ViewDataTable\Config` value.
+- It is a `Piwik\ViewDataTable\Config` value.
 
 <a name="requestconfig" id="requestconfig"></a>
+<a name="requestConfig" id="requestConfig"></a>
 ### `$requestConfig`
 
 #### Signature
 
-- It is a(n) `Piwik\ViewDataTable\RequestConfig` value.
-
-<a name="request" id="request"></a>
-### `$request`
-
-#### Signature
-
-- It is a(n) `Piwik\ViewDataTable\Request` value.
+- It is a `Piwik\ViewDataTable\RequestConfig` value.
 
 Methods
 -------
@@ -83,20 +67,15 @@ The abstract class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getDefaultConfig()`](#getdefaultconfig) &mdash; Returns the default config.
 - [`getDefaultRequestConfig()`](#getdefaultrequestconfig) &mdash; Returns the default request config.
-- [`loadDataTableFromAPI()`](#loaddatatablefromapi)
 - [`getViewDataTableId()`](#getviewdatatableid) &mdash; Returns the viewDataTable ID for this DataTable visualization.
 - [`isViewDataTableId()`](#isviewdatatableid) &mdash; Detects whether the viewDataTable or one of its ancestors has the given id.
 - [`getDataTable()`](#getdatatable) &mdash; Returns the DataTable loaded from the API
 - [`setDataTable()`](#setdatatable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly.
-- [`checkStandardDataTable()`](#checkstandarddatatable) &mdash; Checks that the API returned a normal DataTable (as opposed to DataTable\Map)
 - [`render()`](#render) &mdash; Requests all needed data and renders the view.
-- [`buildView()`](#buildview)
-- [`getDefaultDataTableCssClass()`](#getdefaultdatatablecssclass)
-- [`getOverridableProperties()`](#getoverridableproperties) &mdash; Returns the list of view properties that can be overriden by query parameters.
-- [`getPropertyFromQueryParam()`](#getpropertyfromqueryparam)
 - [`isRequestingSingleDataTable()`](#isrequestingsingledatatable) &mdash; Determine if the view data table requests a single data table or not.
 - [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Here you can define whether your visualization can display a specific data table or not.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -115,6 +94,7 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 - It does not return anything.
 
 <a name="getdefaultconfig" id="getdefaultconfig"></a>
+<a name="getDefaultConfig" id="getDefaultConfig"></a>
 ### `getDefaultConfig()`
 
 Returns the default config.
@@ -126,9 +106,10 @@ modifying this config or creating an own Config class that extends the default C
 
 #### Signature
 
-- It returns a(n) `Piwik\ViewDataTable\Config` value.
+- It returns a `Piwik\ViewDataTable\Config` value.
 
 <a name="getdefaultrequestconfig" id="getdefaultrequestconfig"></a>
+<a name="getDefaultRequestConfig" id="getDefaultRequestConfig"></a>
 ### `getDefaultRequestConfig()`
 
 Returns the default request config.
@@ -140,18 +121,10 @@ modifying this config or creating an own RequestConfig class that extends the de
 
 #### Signature
 
-- It returns a(n) `Piwik\ViewDataTable\RequestConfig` value.
-
-<a name="loaddatatablefromapi" id="loaddatatablefromapi"></a>
-### `loadDataTableFromAPI()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$fixedRequestParams`
-- It does not return anything.
+- It returns a `Piwik\ViewDataTable\RequestConfig` value.
 
 <a name="getviewdatatableid" id="getviewdatatableid"></a>
+<a name="getViewDataTableId" id="getViewDataTableId"></a>
 ### `getViewDataTableId()`
 
 Returns the viewDataTable ID for this DataTable visualization.
@@ -163,11 +136,12 @@ with the viewDataTable ID.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
 <a name="isviewdatatableid" id="isviewdatatableid"></a>
+<a name="isViewDataTableId" id="isViewDataTableId"></a>
 ### `isViewDataTableId()`
 
 Detects whether the viewDataTable or one of its ancestors has the given id.
@@ -176,20 +150,22 @@ Detects whether the viewDataTable or one of its ancestors has the given id.
 
 - It accepts the following parameter(s):
     - `$viewDataTableId`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="getdatatable" id="getdatatable"></a>
+<a name="getDataTable" id="getDataTable"></a>
 ### `getDataTable()`
 
 Returns the DataTable loaded from the API
 
 #### Signature
 
-- It returns a(n) [`DataTable`](../../Piwik/DataTable.md) value.
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if not yet defined
 
 <a name="setdatatable" id="setdatatable"></a>
+<a name="setDataTable" id="setDataTable"></a>
 ### `setDataTable()`
 
 To prevent calling an API multiple times, the DataTable can be set directly.
@@ -205,17 +181,7 @@ It won't be loaded again from the API in this case
 - _Returns:_ $dataTable DataTable
     - `void`
 
-<a name="checkstandarddatatable" id="checkstandarddatatable"></a>
-### `checkStandardDataTable()`
-
-Checks that the API returned a normal DataTable (as opposed to DataTable\Map)
-
-#### Signature
-
-- It returns a(n) `void` value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
-
+<a name="render" id="render"></a>
 <a name="render" id="render"></a>
 ### `render()`
 
@@ -226,49 +192,18 @@ Requests all needed data and renders the view.
 - _Returns:_ The result of rendering.
     - `string`
 
-<a name="buildview" id="buildview"></a>
-### `buildView()`
-
-#### Signature
-
-- It does not return anything.
-
-<a name="getdefaultdatatablecssclass" id="getdefaultdatatablecssclass"></a>
-### `getDefaultDataTableCssClass()`
-
-#### Signature
-
-- It does not return anything.
-
-<a name="getoverridableproperties" id="getoverridableproperties"></a>
-### `getOverridableProperties()`
-
-Returns the list of view properties that can be overriden by query parameters.
-
-#### Signature
-
-- It returns a(n) `array` value.
-
-<a name="getpropertyfromqueryparam" id="getpropertyfromqueryparam"></a>
-### `getPropertyFromQueryParam()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$name`
-    - `$defaultValue`
-- It does not return anything.
-
 <a name="isrequestingsingledatatable" id="isrequestingsingledatatable"></a>
+<a name="isRequestingSingleDataTable" id="isRequestingSingleDataTable"></a>
 ### `isRequestingSingleDataTable()`
 
 Determine if the view data table requests a single data table or not.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="candisplayviewdatatable" id="candisplayviewdatatable"></a>
+<a name="canDisplayViewDataTable" id="canDisplayViewDataTable"></a>
 ### `canDisplayViewDataTable()`
 
 Here you can define whether your visualization can display a specific data table or not.
@@ -283,5 +218,5 @@ icon will be displayed.
 
 - It accepts the following parameter(s):
     - `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md))
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 

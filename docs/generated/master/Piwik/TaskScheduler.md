@@ -47,6 +47,7 @@ The class defines the following methods:
 - [`getScheduledTimeForMethod()`](#getscheduledtimeformethod) &mdash; Return the next scheduled time given the class and method names of a scheduled task.
 
 <a name="runtasks" id="runtasks"></a>
+<a name="runTasks" id="runTasks"></a>
 ### `runTasks()`
 
 Executes tasks that are scheduled to run, then reschedules them.
@@ -57,15 +58,17 @@ Executes tasks that are scheduled to run, then reschedules them.
     - `array`
 
 <a name="istaskbeingexecuted" id="istaskbeingexecuted"></a>
+<a name="isTaskBeingExecuted" id="isTaskBeingExecuted"></a>
 ### `isTaskBeingExecuted()`
 
 Returns true if the TaskScheduler is currently running a scheduled task.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="getscheduledtimeformethod" id="getscheduledtimeformethod"></a>
+<a name="getScheduledTimeForMethod" id="getScheduledTimeForMethod"></a>
 ### `getScheduledTimeForMethod()`
 
 Return the next scheduled time given the class and method names of a scheduled task.

@@ -20,6 +20,7 @@ The class defines the following methods:
 - [`getCurrencyList()`](#getcurrencylist) &mdash; Returns the list of all known currency symbols.
 
 <a name="getprettynumber" id="getprettynumber"></a>
+<a name="getPrettyNumber" id="getPrettyNumber"></a>
 ### `getPrettyNumber()`
 
 Returns a prettified string representation of a number.
@@ -33,9 +34,10 @@ thousands separators and a decimal point specific to the current locale.
 
 - It accepts the following parameter(s):
     - `$value`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getprettytimefromseconds" id="getprettytimefromseconds"></a>
+<a name="getPrettyTimeFromSeconds" id="getPrettyTimeFromSeconds"></a>
 ### `getPrettyTimeFromSeconds()`
 
 Returns a prettified time value (in seconds).
@@ -47,9 +49,10 @@ Returns a prettified time value (in seconds).
     - `$displayTimeAsSentence`
     - `$isHtml`
     - `$round`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getprettysizefrombytes" id="getprettysizefrombytes"></a>
+<a name="getPrettySizeFromBytes" id="getPrettySizeFromBytes"></a>
 ### `getPrettySizeFromBytes()`
 
 Returns a prettified memory size value.
@@ -64,6 +67,7 @@ Returns a prettified memory size value.
     - `string`
 
 <a name="getprettymoney" id="getprettymoney"></a>
+<a name="getPrettyMoney" id="getPrettyMoney"></a>
 ### `getPrettyMoney()`
 
 Returns a pretty formated monetary value using the currency associated with a site.
@@ -74,9 +78,10 @@ Returns a pretty formated monetary value using the currency associated with a si
     - `$value`
     - `$idSite`
     - `$isHtml`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getprettyvalue" id="getprettyvalue"></a>
+<a name="getPrettyValue" id="getPrettyValue"></a>
 ### `getPrettyValue()`
 
 Prettifies a metric value based on the column name.
@@ -88,9 +93,10 @@ Prettifies a metric value based on the column name.
     - `$columnName`
     - `$value`
     - `$isHtml`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getcurrencysymbol" id="getcurrencysymbol"></a>
+<a name="getCurrencySymbol" id="getCurrencySymbol"></a>
 ### `getCurrencySymbol()`
 
 Returns the currency symbol for a site.
@@ -103,6 +109,7 @@ Returns the currency symbol for a site.
     - `string`
 
 <a name="getcurrencylist" id="getcurrencylist"></a>
+<a name="getCurrencyList" id="getCurrencyList"></a>
 ### `getCurrencyList()`
 
 Returns the list of all known currency symbols.

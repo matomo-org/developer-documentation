@@ -23,6 +23,7 @@ The class defines the following methods:
 - [`filter()`](#filter) &mdash; See [PatternRecursive](#).
 
 <a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
 ### `__construct()`
 
 Constructor.
@@ -35,6 +36,7 @@ Constructor.
     - `$patternToSearch`
 - It does not return anything.
 
+<a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
 ### `filter()`
 

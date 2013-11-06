@@ -14,29 +14,32 @@ The class defines the following methods:
 - [`getSegment()`](#getsegment) &mdash; The Segment used to limit the set of visits that are being aggregated.
 
 <a name="getperiod" id="getperiod"></a>
+<a name="getPeriod" id="getPeriod"></a>
 ### `getPeriod()`
 
 Returns the period we computing statistics for.
 
 #### Signature
 
-- It returns a(n) [`Period`](../../Piwik/Period.md) value.
+- It returns a [`Period`](../../Piwik/Period.md) value.
 
 <a name="getsite" id="getsite"></a>
+<a name="getSite" id="getSite"></a>
 ### `getSite()`
 
 Returns the site we are computing statistics for.
 
 #### Signature
 
-- It returns a(n) [`Site`](../../Piwik/Site.md) value.
+- It returns a [`Site`](../../Piwik/Site.md) value.
 
 <a name="getsegment" id="getsegment"></a>
+<a name="getSegment" id="getSegment"></a>
 ### `getSegment()`
 
 The Segment used to limit the set of visits that are being aggregated.
 
 #### Signature
 
-- It returns a(n) [`Segment`](../../Piwik/Segment.md) value.
+- It returns a [`Segment`](../../Piwik/Segment.md) value.
 

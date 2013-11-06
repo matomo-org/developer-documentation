@@ -18,6 +18,7 @@ The class defines the following methods:
 - [`copyRecursive()`](#copyrecursive) &mdash; Copies the contents of a directory recursively from `$source` to `$target`.
 
 <a name="mkdir" id="mkdir"></a>
+<a name="mkdir" id="mkdir"></a>
 ### `mkdir()`
 
 Attempts to create a new directory.
@@ -35,6 +36,7 @@ Note: This function does not create directories recursively.
     - `$denyAccess`
 - It does not return anything.
 
+<a name="globr" id="globr"></a>
 <a name="globr" id="globr"></a>
 ### `globr()`
 
@@ -54,6 +56,7 @@ See [glob](#http://php.net/manual/en/function.glob.php) for more info.
     - `array`
 
 <a name="unlinkrecursive" id="unlinkrecursive"></a>
+<a name="unlinkRecursive" id="unlinkRecursive"></a>
 ### `unlinkRecursive()`
 
 Recursively deletes a directory.
@@ -67,6 +70,7 @@ Recursively deletes a directory.
 - It does not return anything.
 
 <a name="copy" id="copy"></a>
+<a name="copy" id="copy"></a>
 ### `copy()`
 
 Copies a file from `$source` to `$dest`.
@@ -77,11 +81,12 @@ Copies a file from `$source` to `$dest`.
     - `$source`
     - `$dest`
     - `$excludePhp`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the file cannot be copied.
 
 <a name="copyrecursive" id="copyrecursive"></a>
+<a name="copyRecursive" id="copyRecursive"></a>
 ### `copyRecursive()`
 
 Copies the contents of a directory recursively from `$source` to `$target`.

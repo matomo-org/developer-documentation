@@ -22,39 +22,6 @@ Note: This filter must be called before [ReplaceColumnNames](#) is called.
     $dataTable->filter('AddColumnsProcessedMetrics');
 
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$invalidDivision`](#$invaliddivision)
-- [`$roundPrecision`](#$roundprecision)
-- [`$deleteRowsWithNoVisit`](#$deleterowswithnovisit)
-
-<a name="invaliddivision" id="invaliddivision"></a>
-### `$invalidDivision`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="roundprecision" id="roundprecision"></a>
-### `$roundPrecision`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="deleterowswithnovisit" id="deleterowswithnovisit"></a>
-### `$deleteRowsWithNoVisit`
-
-#### Signature
-
-- Its type is not specified.
-
-
 Methods
 -------
 
@@ -62,8 +29,8 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; Adds the processed metrics.
-- [`getColumn()`](#getcolumn) &mdash; Returns column from a given row.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -76,6 +43,7 @@ Constructor.
     - `$deleteRowsWithNoVisit`
 - It does not return anything.
 
+<a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
 ### `filter()`
 
@@ -91,24 +59,4 @@ more information.
 - It accepts the following parameter(s):
     - `$table`
 - It does not return anything.
-
-<a name="getcolumn" id="getcolumn"></a>
-### `getColumn()`
-
-Returns column from a given row.
-
-#### Description
-
-Will work with 2 types of datatable
-- raw datatables coming from the archive DB, which columns are int indexed
-- datatables processed resulting of API calls, which columns have human readable english names
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$row`
-    - `$columnIdRaw`
-    - `$mappingIdToName`
-- _Returns:_ Value of column, false if not found
-    - `mixed`
 

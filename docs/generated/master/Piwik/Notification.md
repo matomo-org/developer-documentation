@@ -35,12 +35,14 @@ This class defines the following constants:
 - `TYPE_TRANSIENT` &mdash; Notification will be displayed only once.
 
 <a name="flag_no_clear" id="flag_no_clear"></a>
+<a name="FLAG_NO_CLEAR" id="FLAG_NO_CLEAR"></a>
 ### `FLAG_NO_CLEAR`
 
 Please note that persistent notifications always have a close
 icon
 
 <a name="type_toast" id="type_toast"></a>
+<a name="TYPE_TOAST" id="TYPE_TOAST"></a>
 ### `TYPE_TOAST`
 
 Notification will be displayed for a few seconds and then faded out
@@ -58,6 +60,7 @@ This class defines the following properties:
 - [`$priority`](#$priority) &mdash; The priority of the notification, the higher the priority, the higher the order.
 
 <a name="title" id="title"></a>
+<a name="title" id="title"></a>
 ### `$title`
 
 The title of the notification.
@@ -68,8 +71,9 @@ For instance the plugin name. The title is optional.
 
 #### Signature
 
-- It is a(n) `string` value.
+- It is a `string` value.
 
+<a name="message" id="message"></a>
 <a name="message" id="message"></a>
 ### `$message`
 
@@ -81,15 +85,17 @@ Must be set.
 
 #### Signature
 
-- It is a(n) `string` value.
+- It is a `string` value.
 
+<a name="flags" id="flags"></a>
 <a name="flags" id="flags"></a>
 ### `$flags`
 
 #### Signature
 
-- It is a(n) `int` value.
+- It is a `int` value.
 
+<a name="type" id="type"></a>
 <a name="type" id="type"></a>
 ### `$type`
 
@@ -101,8 +107,9 @@ See self::TYPE_*
 
 #### Signature
 
-- It is a(n) `string` value.
+- It is a `string` value.
 
+<a name="context" id="context"></a>
 <a name="context" id="context"></a>
 ### `$context`
 
@@ -114,8 +121,9 @@ For instance info, warning, success or error.
 
 #### Signature
 
-- It is a(n) `string` value.
+- It is a `string` value.
 
+<a name="priority" id="priority"></a>
 <a name="priority" id="priority"></a>
 ### `$priority`
 
@@ -128,7 +136,7 @@ highest priority will be displayed first and all other notifications below. See 
 
 #### Signature
 
-- It is a(n) `int` value.
+- It is a `int` value.
 
 Methods
 -------
@@ -139,6 +147,7 @@ The class defines the following methods:
 - [`hasNoClear()`](#hasnoclear)
 - [`getPriority()`](#getpriority)
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -151,6 +160,7 @@ The class defines the following methods:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the message is empty.
 
 <a name="hasnoclear" id="hasnoclear"></a>
+<a name="hasNoClear" id="hasNoClear"></a>
 ### `hasNoClear()`
 
 #### Signature
@@ -158,6 +168,7 @@ The class defines the following methods:
 - It does not return anything.
 
 <a name="getpriority" id="getpriority"></a>
+<a name="getPriority" id="getPriority"></a>
 ### `getPriority()`
 
 #### Signature

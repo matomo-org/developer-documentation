@@ -29,6 +29,7 @@ The class defines the following methods:
 - [`getAcceptableOrigins()`](#getacceptableorigins) &mdash; Returns a list acceptable values for the HTTP Origin header.
 
 <a name="getnonce" id="getnonce"></a>
+<a name="getNonce" id="getNonce"></a>
 ### `getNonce()`
 
 Returns the existing nonce.
@@ -42,9 +43,10 @@ If none exists, a new nonce will be generated.
 - It accepts the following parameter(s):
     - `$id`
     - `$ttl`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="verifynonce" id="verifynonce"></a>
+<a name="verifyNonce" id="verifyNonce"></a>
 ### `verifyNonce()`
 
 Returns if a nonce is valid and comes from a valid request.
@@ -66,6 +68,7 @@ and if the HTTP origin is valid (see [getAcceptableOrigins](#getAcceptableOrigin
     - `bool`
 
 <a name="discardnonce" id="discardnonce"></a>
+<a name="discardNonce" id="discardNonce"></a>
 ### `discardNonce()`
 
 Force expiration of the current nonce.
@@ -77,6 +80,7 @@ Force expiration of the current nonce.
 - It does not return anything.
 
 <a name="getorigin" id="getorigin"></a>
+<a name="getOrigin" id="getOrigin"></a>
 ### `getOrigin()`
 
 Returns Origin HTTP header or false if not found.
@@ -88,11 +92,12 @@ Returns Origin HTTP header or false if not found.
     - `bool`
 
 <a name="getacceptableorigins" id="getacceptableorigins"></a>
+<a name="getAcceptableOrigins" id="getAcceptableOrigins"></a>
 ### `getAcceptableOrigins()`
 
 Returns a list acceptable values for the HTTP Origin header.
 
 #### Signature
 
-- It returns a(n) `array` value.
+- It returns a `array` value.
 

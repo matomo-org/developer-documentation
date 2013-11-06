@@ -74,24 +74,27 @@ The class defines the following methods:
 - [`insertBlobRecord()`](#insertblobrecord) &mdash; Caches one or more blob records in the archive for this processor's site, period and segment.
 
 <a name="getparams" id="getparams"></a>
+<a name="getParams" id="getParams"></a>
 ### `getParams()`
 
 Returns the Parameters object containing Period, Site, Segment used for this archive.
 
 #### Signature
 
-- It returns a(n) [`Parameters`](../Piwik/ArchiveProcessor/Parameters.md) value.
+- It returns a [`Parameters`](../Piwik/ArchiveProcessor/Parameters.md) value.
 
 <a name="getlogaggregator" id="getlogaggregator"></a>
+<a name="getLogAggregator" id="getLogAggregator"></a>
 ### `getLogAggregator()`
 
 Returns a [LogAggregator](#) instance for the site, period and segment this ArchiveProcessor will insert archive data for.
 
 #### Signature
 
-- It returns a(n) [`LogAggregator`](../Piwik/DataAccess/LogAggregator.md) value.
+- It returns a [`LogAggregator`](../Piwik/DataAccess/LogAggregator.md) value.
 
 <a name="insertnumericrecords" id="insertnumericrecords"></a>
+<a name="insertNumericRecords" id="insertNumericRecords"></a>
 ### `insertNumericRecords()`
 
 Caches multiple numeric records in the archive for this processor's site, period and segment.
@@ -103,6 +106,7 @@ Caches multiple numeric records in the archive for this processor's site, period
 - It does not return anything.
 
 <a name="insertnumericrecord" id="insertnumericrecord"></a>
+<a name="insertNumericRecord" id="insertNumericRecord"></a>
 ### `insertNumericRecord()`
 
 Caches a single numeric record in the archive for this processor's site, period and segment.
@@ -119,6 +123,7 @@ Numeric values are not inserted if they equal 0.
 - It does not return anything.
 
 <a name="insertblobrecord" id="insertblobrecord"></a>
+<a name="insertBlobRecord" id="insertBlobRecord"></a>
 ### `insertBlobRecord()`
 
 Caches one or more blob records in the archive for this processor's site, period and segment.

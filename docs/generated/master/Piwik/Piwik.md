@@ -51,51 +51,57 @@ The class defines the following methods:
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation ID.
 
 <a name="getcurrentuseremail" id="getcurrentuseremail"></a>
+<a name="getCurrentUserEmail" id="getCurrentUserEmail"></a>
 ### `getCurrentUserEmail()`
 
 Returns the current user's email address.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getsuperuserlogin" id="getsuperuserlogin"></a>
+<a name="getSuperUserLogin" id="getSuperUserLogin"></a>
 ### `getSuperUserLogin()`
 
 Returns the super user's username.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getsuperuseremail" id="getsuperuseremail"></a>
+<a name="getSuperUserEmail" id="getSuperUserEmail"></a>
 ### `getSuperUserEmail()`
 
 Returns the super user's email address.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getcurrentuserlogin" id="getcurrentuserlogin"></a>
+<a name="getCurrentUserLogin" id="getCurrentUserLogin"></a>
 ### `getCurrentUserLogin()`
 
 Returns the current user's username.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getcurrentusertokenauth" id="getcurrentusertokenauth"></a>
+<a name="getCurrentUserTokenAuth" id="getCurrentUserTokenAuth"></a>
 ### `getCurrentUserTokenAuth()`
 
 Returns the current user's token auth.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="isuserissuperuserortheuser" id="isuserissuperuserortheuser"></a>
+<a name="isUserIsSuperUserOrTheUser" id="isUserIsSuperUserOrTheUser"></a>
 ### `isUserIsSuperUserOrTheUser()`
 
 Returns true if the current user is either the super user or the user specified by `$theUser`.
@@ -104,9 +110,10 @@ Returns true if the current user is either the super user or the user specified 
 
 - It accepts the following parameter(s):
     - `$theUser`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="checkuserissuperuserortheuser" id="checkuserissuperuserortheuser"></a>
+<a name="checkUserIsSuperUserOrTheUser" id="checkUserIsSuperUserOrTheUser"></a>
 ### `checkUserIsSuperUserOrTheUser()`
 
 Check that the current user is either the specified user or the superuser.
@@ -120,24 +127,27 @@ Check that the current user is either the specified user or the superuser.
     - `NoAccessException` &mdash; If the user is neither the super user nor the user `$theUser`.
 
 <a name="isuserissuperuser" id="isuserissuperuser"></a>
+<a name="isUserIsSuperUser" id="isUserIsSuperUser"></a>
 ### `isUserIsSuperUser()`
 
 Returns true if the current user is the Super User.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="isuserisanonymous" id="isuserisanonymous"></a>
+<a name="isUserIsAnonymous" id="isUserIsAnonymous"></a>
 ### `isUserIsAnonymous()`
 
 Returns true if the current user is the special anonymous user or not.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="checkuserisnotanonymous" id="checkuserisnotanonymous"></a>
+<a name="checkUserIsNotAnonymous" id="checkUserIsNotAnonymous"></a>
 ### `checkUserIsNotAnonymous()`
 
 Checks that the user is not the anonymous user.
@@ -149,6 +159,7 @@ Checks that the user is not the anonymous user.
     - `NoAccessException` &mdash; if the current user is the anonymous user.
 
 <a name="checkuserissuperuser" id="checkuserissuperuser"></a>
+<a name="checkUserIsSuperUser" id="checkUserIsSuperUser"></a>
 ### `checkUserIsSuperUser()`
 
 Check that the current user is the superuser.
@@ -160,6 +171,7 @@ Check that the current user is the superuser.
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user is not the superuser.
 
 <a name="isuserhasadminaccess" id="isuserhasadminaccess"></a>
+<a name="isUserHasAdminAccess" id="isUserHasAdminAccess"></a>
 ### `isUserHasAdminAccess()`
 
 Returns true if the user has admin access to the requested sites, false if otherwise.
@@ -168,9 +180,10 @@ Returns true if the user has admin access to the requested sites, false if other
 
 - It accepts the following parameter(s):
     - `$idSites`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="checkuserhasadminaccess" id="checkuserhasadminaccess"></a>
+<a name="checkUserHasAdminAccess" id="checkUserHasAdminAccess"></a>
 ### `checkUserHasAdminAccess()`
 
 Checks that the current user has admin access to the requested list of sites.
@@ -184,15 +197,17 @@ Checks that the current user has admin access to the requested list of sites.
     - [`Exception`](http://php.net/class.Exception) &mdash; If user doesn&#039;t have admin access.
 
 <a name="isuserhassomeadminaccess" id="isuserhassomeadminaccess"></a>
+<a name="isUserHasSomeAdminAccess" id="isUserHasSomeAdminAccess"></a>
 ### `isUserHasSomeAdminAccess()`
 
 Returns true if the current user has admin access to at least one site.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="checkuserhassomeadminaccess" id="checkuserhassomeadminaccess"></a>
+<a name="checkUserHasSomeAdminAccess" id="checkUserHasSomeAdminAccess"></a>
 ### `checkUserHasSomeAdminAccess()`
 
 Checks that the current user has admin access to at least one site.
@@ -204,6 +219,7 @@ Checks that the current user has admin access to at least one site.
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have admin access to any site.
 
 <a name="isuserhasviewaccess" id="isuserhasviewaccess"></a>
+<a name="isUserHasViewAccess" id="isUserHasViewAccess"></a>
 ### `isUserHasViewAccess()`
 
 Returns true if the user has view access to the requested list of sites.
@@ -212,9 +228,10 @@ Returns true if the user has view access to the requested list of sites.
 
 - It accepts the following parameter(s):
     - `$idSites`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="checkuserhasviewaccess" id="checkuserhasviewaccess"></a>
+<a name="checkUserHasViewAccess" id="checkUserHasViewAccess"></a>
 ### `checkUserHasViewAccess()`
 
 Checks that the current user has view access to the requested list of sites
@@ -228,15 +245,17 @@ Checks that the current user has view access to the requested list of sites
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have view access to every site in the list.
 
 <a name="isuserhassomeviewaccess" id="isuserhassomeviewaccess"></a>
+<a name="isUserHasSomeViewAccess" id="isUserHasSomeViewAccess"></a>
 ### `isUserHasSomeViewAccess()`
 
 Returns true if the current user has view access to at least one site.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="checkuserhassomeviewaccess" id="checkuserhassomeviewaccess"></a>
+<a name="checkUserHasSomeViewAccess" id="checkUserHasSomeViewAccess"></a>
 ### `checkUserHasSomeViewAccess()`
 
 Checks that the current user has view access to at least one site.
@@ -248,6 +267,7 @@ Checks that the current user has view access to at least one site.
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have view access to any site.
 
 <a name="redirecttomodule" id="redirecttomodule"></a>
+<a name="redirectToModule" id="redirectToModule"></a>
 ### `redirectToModule()`
 
 Redirects the current request to a new module and action.
@@ -261,6 +281,7 @@ Redirects the current request to a new module and action.
 - It does not return anything.
 
 <a name="isvalidemailstring" id="isvalidemailstring"></a>
+<a name="isValidEmailString" id="isValidEmailString"></a>
 ### `isValidEmailString()`
 
 Returns true if the email address is a valid.
@@ -269,9 +290,10 @@ Returns true if the email address is a valid.
 
 - It accepts the following parameter(s):
     - `$emailAddress`
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="postevent" id="postevent"></a>
+<a name="postEvent" id="postEvent"></a>
 ### `postEvent()`
 
 Post an event to Piwik's event dispatcher which will execute the event's observers.
@@ -283,9 +305,10 @@ Post an event to Piwik's event dispatcher which will execute the event's observe
     - `$params`
     - `$pending`
     - `$plugins`
-- It returns a(n) `void` value.
+- It returns a `void` value.
 
 <a name="addaction" id="addaction"></a>
+<a name="addAction" id="addAction"></a>
 ### `addAction()`
 
 Register an observer to an event.
@@ -303,6 +326,7 @@ need to use this function.
 - It does not return anything.
 
 <a name="translate" id="translate"></a>
+<a name="translate" id="translate"></a>
 ### `translate()`
 
 Returns an internationalized string using a translation ID.
@@ -317,5 +341,5 @@ cannot be found for the ID, the ID is returned.
 - It accepts the following parameter(s):
     - `$translationId`
     - `$args`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 

@@ -41,21 +41,6 @@ In most cases, using a Request object to query the API is the right way to go.
     echo "This DataTable has " . $dataTable->getRowsCount() . " rows.";
 
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$request`](#$request)
-
-<a name="request" id="request"></a>
-### `$request`
-
-#### Signature
-
-- Its type is not specified.
-
-
 Methods
 -------
 
@@ -75,6 +60,7 @@ The class defines the following methods:
 - [`getRawSegmentFromRequest()`](#getrawsegmentfromrequest) &mdash; Returns the unmodified segment from the original request.
 
 <a name="getrequestarrayfromstring" id="getrequestarrayfromstring"></a>
+<a name="getRequestArrayFromString" id="getRequestArrayFromString"></a>
 ### `getRequestArrayFromString()`
 
 Converts the supplied request string into an array of query paramater name/value mappings.
@@ -88,8 +74,9 @@ forwarded to request array before it is returned.
 
 - It accepts the following parameter(s):
     - `$request`
-- It returns a(n) `array` value.
+- It returns a `array` value.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -102,6 +89,7 @@ Constructor.
 - It does not return anything.
 
 <a name="renamemodule" id="renamemodule"></a>
+<a name="renameModule" id="renameModule"></a>
 ### `renameModule()`
 
 For backward compatibility: Piwik API still works if module=Referers, we rewrite to correct renamed plugin: Referrers
@@ -110,8 +98,9 @@ For backward compatibility: Piwik API still works if module=Referers, we rewrite
 
 - It accepts the following parameter(s):
     - `$module`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
+<a name="process" id="process"></a>
 <a name="process" id="process"></a>
 ### `process()`
 
@@ -139,6 +128,7 @@ Post-processing includes:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the requested API method cannot be called, if required parameters for the API method are missing or if the API method throws an exception and the **format** query parameter is **original**.
 
 <a name="getclassnameapi" id="getclassnameapi"></a>
+<a name="getClassNameAPI" id="getClassNameAPI"></a>
 ### `getClassNameAPI()`
 
 Returns the class name of a plugin's API given the plugin name.
@@ -147,9 +137,10 @@ Returns the class name of a plugin's API given the plugin name.
 
 - It accepts the following parameter(s):
     - `$plugin`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="reloadauthusingtokenauth" id="reloadauthusingtokenauth"></a>
+<a name="reloadAuthUsingTokenAuth" id="reloadAuthUsingTokenAuth"></a>
 ### `reloadAuthUsingTokenAuth()`
 
 If the token_auth is found in the $request parameter, the current session will be authenticated using this token_auth.
@@ -162,9 +153,10 @@ It will overwrite the previous Auth object.
 
 - It accepts the following parameter(s):
     - `$request`
-- It returns a(n) `void` value.
+- It returns a `void` value.
 
 <a name="processrequest" id="processrequest"></a>
+<a name="processRequest" id="processRequest"></a>
 ### `processRequest()`
 
 Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
@@ -178,6 +170,7 @@ Helper method that processes an API request in one line using the variables in `
     - `mixed`
 
 <a name="getrequestparametersget" id="getrequestparametersget"></a>
+<a name="getRequestParametersGET" id="getRequestParametersGET"></a>
 ### `getRequestParametersGET()`
 
 Returns the original request parameters in the current query string as an array mapping query parameter names with values.
@@ -189,9 +182,10 @@ by any modifications to `$_GET` and will not include parameters in `$_POST`.
 
 #### Signature
 
-- It returns a(n) `array` value.
+- It returns a `array` value.
 
 <a name="getbasereporturl" id="getbasereporturl"></a>
+<a name="getBaseReportUrl" id="getBaseReportUrl"></a>
 ### `getBaseReportUrl()`
 
 Returns URL for the current requested report w/o any filter parameters.
@@ -202,9 +196,10 @@ Returns URL for the current requested report w/o any filter parameters.
     - `$module`
     - `$action`
     - `$queryParams`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getcurrenturlwithoutgenericfilters" id="getcurrenturlwithoutgenericfilters"></a>
+<a name="getCurrentUrlWithoutGenericFilters" id="getCurrentUrlWithoutGenericFilters"></a>
 ### `getCurrentUrlWithoutGenericFilters()`
 
 Returns the current URL without generic filter query parameters.
@@ -213,18 +208,20 @@ Returns the current URL without generic filter query parameters.
 
 - It accepts the following parameter(s):
     - `$params`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="shouldloadexpanded" id="shouldloadexpanded"></a>
+<a name="shouldLoadExpanded" id="shouldLoadExpanded"></a>
 ### `shouldLoadExpanded()`
 
 Returns whether the DataTable result will have to be expanded for the current request before rendering.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 
 <a name="getrawsegmentfromrequest" id="getrawsegmentfromrequest"></a>
+<a name="getRawSegmentFromRequest" id="getRawSegmentFromRequest"></a>
 ### `getRawSegmentFromRequest()`
 
 Returns the unmodified segment from the original request.

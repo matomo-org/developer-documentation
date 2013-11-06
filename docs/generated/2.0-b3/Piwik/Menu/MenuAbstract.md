@@ -21,6 +21,7 @@ The abstract class defines the following methods:
 - [`add()`](#add) &mdash; Adds a new entry to the menu.
 
 <a name="add" id="add"></a>
+<a name="add" id="add"></a>
 ### `add()`
 
 Adds a new entry to the menu.

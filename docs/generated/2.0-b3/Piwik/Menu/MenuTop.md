@@ -34,6 +34,7 @@ The class defines the following methods:
 - [`addEntry()`](#addentry) &mdash; Adds a new entry to the TopMenu.
 
 <a name="addentry" id="addentry"></a>
+<a name="addEntry" id="addEntry"></a>
 ### `addEntry()`
 
 Adds a new entry to the TopMenu.

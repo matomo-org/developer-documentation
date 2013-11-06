@@ -45,6 +45,7 @@ This abstract class defines the following properties:
 - [`$site`](#$site) &mdash; The Site object created with ($idSite)[#idSite].
 
 <a name="pluginname" id="pluginname"></a>
+<a name="pluginName" id="pluginName"></a>
 ### `$pluginName`
 
 The plugin name, eg.
@@ -55,17 +56,19 @@ The plugin name, eg.
 
 #### Signature
 
-- It is a(n) `string` value.
+- It is a `string` value.
 
 <a name="strdate" id="strdate"></a>
+<a name="strDate" id="strDate"></a>
 ### `$strDate`
 
 The value of the `'date'` query parameter.
 
 #### Signature
 
-- It is a(n) `string` value.
+- It is a `string` value.
 
+<a name="date" id="date"></a>
 <a name="date" id="date"></a>
 ### `$date`
 
@@ -78,14 +81,16 @@ The Date object created with ($strDate)[#strDate] or null if the requested date 
     - `null`
 
 <a name="idsite" id="idsite"></a>
+<a name="idSite" id="idSite"></a>
 ### `$idSite`
 
 The value of the `'idSite'` query parameter.
 
 #### Signature
 
-- It is a(n) `int` value.
+- It is a `int` value.
 
+<a name="site" id="site"></a>
 <a name="site" id="site"></a>
 ### `$site`
 
@@ -93,7 +98,7 @@ The Site object created with ($idSite)[#idSite].
 
 #### Signature
 
-- It is a(n) [`Site`](../../Piwik/Site.md) value.
+- It is a [`Site`](../../Piwik/Site.md) value.
 
 Methods
 -------
@@ -123,6 +128,7 @@ The abstract class defines the following methods:
 - [`getEvolutionHtml()`](#getevolutionhtml) &mdash; Calculates the evolution from one value to another and returns HTML displaying the evolution percent.
 
 <a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
 ### `__construct()`
 
 Constructor.
@@ -132,6 +138,7 @@ Constructor.
 - It does not return anything.
 
 <a name="getdateparameterintimezone" id="getdateparameterintimezone"></a>
+<a name="getDateParameterInTimezone" id="getDateParameterInTimezone"></a>
 ### `getDateParameterInTimezone()`
 
 Helper method that converts "today" or "yesterday" to the specified timezone.
@@ -145,9 +152,10 @@ If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezon
 - It accepts the following parameter(s):
     - `$date`
     - `$timezone`
-- It returns a(n) [`Date`](../../Piwik/Date.md) value.
+- It returns a [`Date`](../../Piwik/Date.md) value.
 
 <a name="setdate" id="setdate"></a>
+<a name="setDate" id="setDate"></a>
 ### `setDate()`
 
 Sets the date to be used by all other methods in the controller.
@@ -161,18 +169,20 @@ construction.
 
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../../Piwik/Date.md))
-- It returns a(n) `void` value.
+- It returns a `void` value.
 
 <a name="getdefaultaction" id="getdefaultaction"></a>
+<a name="getDefaultAction" id="getDefaultAction"></a>
 ### `getDefaultAction()`
 
 Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="renderview" id="renderview"></a>
+<a name="renderView" id="renderView"></a>
 ### `renderView()`
 
 A helper method that renders a view either to the screen or to a string.
@@ -187,6 +197,7 @@ A helper method that renders a view either to the screen or to a string.
     - `void`
 
 <a name="getlastunitgraph" id="getlastunitgraph"></a>
+<a name="getLastUnitGraph" id="getLastUnitGraph"></a>
 ### `getLastUnitGraph()`
 
 Returns a ViewDataTable object that will render a jqPlot evolution graph for the last30 days/weeks/etc.
@@ -201,9 +212,10 @@ of the current period, relative to the current date.
     - `$currentModuleName`
     - `$currentControllerAction`
     - `$apiMethod`
-- It returns a(n) [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
+- It returns a [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
 
 <a name="getlastunitgraphacrossplugins" id="getlastunitgraphacrossplugins"></a>
+<a name="getLastUnitGraphAcrossPlugins" id="getLastUnitGraphAcrossPlugins"></a>
 ### `getLastUnitGraphAcrossPlugins()`
 
 Same as [getLastUnitGraph](#getLastUnitGraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
@@ -217,9 +229,10 @@ Same as [getLastUnitGraph](#getLastUnitGraph), but will set some properties of t
     - `$selectableColumns`
     - `$reportDocumentation`
     - `$apiMethod`
-- It returns a(n) [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
+- It returns a [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
 
 <a name="geturlsparkline" id="geturlsparkline"></a>
+<a name="getUrlSparkline" id="getUrlSparkline"></a>
 ### `getUrlSparkline()`
 
 Returns a URL to a sparkline image for a report served by the current plugin.
@@ -241,6 +254,7 @@ See [Sparkline](#) for more information about the Sparkline visualization.
     - `string`
 
 <a name="setmindateview" id="setmindateview"></a>
+<a name="setMinDateView" id="setMinDateView"></a>
 ### `setMinDateView()`
 
 Sets the first date available in the calendar.
@@ -253,6 +267,7 @@ Sets the first date available in the calendar.
 - It does not return anything.
 
 <a name="setmaxdateview" id="setmaxdateview"></a>
+<a name="setMaxDateView" id="setMaxDateView"></a>
 ### `setMaxDateView()`
 
 Sets the last date available in the calendar.
@@ -270,6 +285,7 @@ for a site (which can depend on the timezone of a site).
 - It does not return anything.
 
 <a name="setgeneralvariablesview" id="setgeneralvariablesview"></a>
+<a name="setGeneralVariablesView" id="setGeneralVariablesView"></a>
 ### `setGeneralVariablesView()`
 
 Assigns variables to [View](#) instances that display an entire page.
@@ -299,9 +315,10 @@ Will exit on error.
 
 - It accepts the following parameter(s):
     - `$view`
-- It returns a(n) `void` value.
+- It returns a `void` value.
 
 <a name="setbasicvariablesview" id="setbasicvariablesview"></a>
+<a name="setBasicVariablesView" id="setBasicVariablesView"></a>
 ### `setBasicVariablesView()`
 
 Assigns a set of generally useful variables to a [View](#) instance.
@@ -332,6 +349,7 @@ Also calls [setHostValidationVariablesView](#setHostValidationVariablesView).
 - It does not return anything.
 
 <a name="sethostvalidationvariablesview" id="sethostvalidationvariablesview"></a>
+<a name="setHostValidationVariablesView" id="setHostValidationVariablesView"></a>
 ### `setHostValidationVariablesView()`
 
 Checks if the current host is valid and sets variables on the given view, including:
@@ -351,6 +369,7 @@ Checks if the current host is valid and sets variables on the given view, includ
 - It does not return anything.
 
 <a name="setperiodvariablesview" id="setperiodvariablesview"></a>
+<a name="setPeriodVariablesView" id="setPeriodVariablesView"></a>
 ### `setPeriodVariablesView()`
 
 Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
@@ -370,6 +389,7 @@ Sets general period variables on a view, including:  - **displayUniqueVisitors**
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current period is invalid.
 
 <a name="redirecttoindex" id="redirecttoindex"></a>
+<a name="redirectToIndex" id="redirectToIndex"></a>
 ### `redirectToIndex()`
 
 Helper method used to redirect the current http request to another module/action.
@@ -392,6 +412,7 @@ This function will exit immediately after executing.
 - It does not return anything.
 
 <a name="getdefaultwebsiteid" id="getdefaultwebsiteid"></a>
+<a name="getDefaultWebsiteId" id="getDefaultWebsiteId"></a>
 ### `getDefaultWebsiteId()`
 
 Returns default site ID that Piwik should load.
@@ -403,6 +424,7 @@ Returns default site ID that Piwik should load.
     - `int`
 
 <a name="getdefaultdate" id="getdefaultdate"></a>
+<a name="getDefaultDate" id="getDefaultDate"></a>
 ### `getDefaultDate()`
 
 Returns default date for Piwik reports.
@@ -413,6 +435,7 @@ Returns default date for Piwik reports.
     - `string`
 
 <a name="getdefaultperiod" id="getdefaultperiod"></a>
+<a name="getDefaultPeriod" id="getDefaultPeriod"></a>
 ### `getDefaultPeriod()`
 
 Returns default period type for Piwik reports.
@@ -423,6 +446,7 @@ Returns default period type for Piwik reports.
     - `string`
 
 <a name="checktokeninurl" id="checktokeninurl"></a>
+<a name="checkTokenInUrl" id="checkTokenInUrl"></a>
 ### `checkTokenInUrl()`
 
 Checks that the token_auth in the URl matches the current logged in user's token_auth.
@@ -443,6 +467,7 @@ Piwik or user settings.
     - `Piwik\NoAccessException` &mdash; If the token doesn&#039;t match.
 
 <a name="getcalendarprettydate" id="getcalendarprettydate"></a>
+<a name="getCalendarPrettyDate" id="getCalendarPrettyDate"></a>
 ### `getCalendarPrettyDate()`
 
 Returns a prettified date string for use in period selector widget.
@@ -451,9 +476,10 @@ Returns a prettified date string for use in period selector widget.
 
 - It accepts the following parameter(s):
     - `$period`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getevolutionhtml" id="getevolutionhtml"></a>
+<a name="getEvolutionHtml" id="getEvolutionHtml"></a>
 ### `getEvolutionHtml()`
 
 Calculates the evolution from one value to another and returns HTML displaying the evolution percent.

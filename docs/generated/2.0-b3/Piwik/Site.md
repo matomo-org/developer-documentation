@@ -25,24 +25,15 @@ Properties
 
 This class defines the following properties:
 
-- [`$id`](#$id)
 - [`$infoSites`](#$infosites)
 
-<a name="id" id="id"></a>
-### `$id`
-
-#### Signature
-
-- It can be one of the following types:
-    - `int`
-    - `null`
-
 <a name="infosites" id="infosites"></a>
+<a name="infoSites" id="infoSites"></a>
 ### `$infoSites`
 
 #### Signature
 
-- It is a(n) `array` value.
+- It is a `array` value.
 
 Methods
 -------
@@ -56,7 +47,6 @@ The class defines the following methods:
 - [`getName()`](#getname) &mdash; Returns the name of the site.
 - [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site.
 - [`getId()`](#getid) &mdash; Returns the id of the site.
-- [`get()`](#get) &mdash; Returns a site property by name.
 - [`getCreationDate()`](#getcreationdate) &mdash; Returns the creation date of the site.
 - [`getTimezone()`](#gettimezone) &mdash; Returns the timezone of the size.
 - [`getCurrency()`](#getcurrency) &mdash; Returns the currency of the site.
@@ -68,7 +58,6 @@ The class defines the following methods:
 - [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site.
 - [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site ids and returns them as an array.
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
-- [`getFor()`](#getfor) &mdash; Utility function.
 - [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
 - [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
 - [`getCreationDateFor()`](#getcreationdatefor) &mdash; Returns the creation date of the site with the specified ID.
@@ -79,6 +68,7 @@ The class defines the following methods:
 - [`getExcludedIpsFor()`](#getexcludedipsfor) &mdash; Returns the excluded IP addresses of the site with the specified ID.
 - [`getExcludedQueryParametersFor()`](#getexcludedqueryparametersfor) &mdash; Returns the excluded query parameters for the site with the specified ID.
 
+<a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
@@ -91,6 +81,7 @@ Constructor.
 - It does not return anything.
 
 <a name="setsites" id="setsites"></a>
+<a name="setSites" id="setSites"></a>
 ### `setSites()`
 
 Sets the cached site data with an array that associates site IDs with individual site data.
@@ -102,6 +93,7 @@ Sets the cached site data with an array that associates site IDs with individual
 - It does not return anything.
 
 <a name="setsitesfromarray" id="setsitesfromarray"></a>
+<a name="setSitesFromArray" id="setSitesFromArray"></a>
 ### `setSitesFromArray()`
 
 Sets the cached Site data with a non-associated array of site data.
@@ -113,6 +105,7 @@ Sets the cached Site data with a non-associated array of site data.
 - It does not return anything.
 
 <a name="__tostring" id="__tostring"></a>
+<a name="__toString" id="__toString"></a>
 ### `__toString()`
 
 Returns a string representation of the site this instance references.
@@ -123,154 +116,154 @@ Useful for debugging.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getname" id="getname"></a>
+<a name="getName" id="getName"></a>
 ### `getName()`
 
 Returns the name of the site.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="getmainurl" id="getmainurl"></a>
+<a name="getMainUrl" id="getMainUrl"></a>
 ### `getMainUrl()`
 
 Returns the main url of the site.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="getid" id="getid"></a>
+<a name="getId" id="getId"></a>
 ### `getId()`
 
 Returns the id of the site.
 
 #### Signature
 
-- It returns a(n) `int` value.
+- It returns a `int` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
-<a name="get" id="get"></a>
-### `get()`
-
-Returns a site property by name.
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$name`
-- It returns a(n) `mixed` value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
-
 <a name="getcreationdate" id="getcreationdate"></a>
+<a name="getCreationDate" id="getCreationDate"></a>
 ### `getCreationDate()`
 
 Returns the creation date of the site.
 
 #### Signature
 
-- It returns a(n) [`Date`](../Piwik/Date.md) value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="gettimezone" id="gettimezone"></a>
+<a name="getTimezone" id="getTimezone"></a>
 ### `getTimezone()`
 
 Returns the timezone of the size.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="getcurrency" id="getcurrency"></a>
+<a name="getCurrency" id="getCurrency"></a>
 ### `getCurrency()`
 
 Returns the currency of the site.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="getexcludedips" id="getexcludedips"></a>
+<a name="getExcludedIps" id="getExcludedIps"></a>
 ### `getExcludedIps()`
 
 Returns the excluded ips of the site.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="getexcludedqueryparameters" id="getexcludedqueryparameters"></a>
+<a name="getExcludedQueryParameters" id="getExcludedQueryParameters"></a>
 ### `getExcludedQueryParameters()`
 
 Returns the excluded query parameters of the site.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="isecommerceenabled" id="isecommerceenabled"></a>
+<a name="isEcommerceEnabled" id="isEcommerceEnabled"></a>
 ### `isEcommerceEnabled()`
 
 Returns whether ecommerce is enabled for the site.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="getsearchkeywordparameters" id="getsearchkeywordparameters"></a>
+<a name="getSearchKeywordParameters" id="getSearchKeywordParameters"></a>
 ### `getSearchKeywordParameters()`
 
 Returns the site search keyword query parameters for the site.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="getsearchcategoryparameters" id="getsearchcategoryparameters"></a>
+<a name="getSearchCategoryParameters" id="getSearchCategoryParameters"></a>
 ### `getSearchCategoryParameters()`
 
 Returns the site search category query parameters for the site.
 
 #### Signature
 
-- It returns a(n) `string` value.
+- It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="issitesearchenabled" id="issitesearchenabled"></a>
+<a name="isSiteSearchEnabled" id="isSiteSearchEnabled"></a>
 ### `isSiteSearchEnabled()`
 
 Returns whether Site Search Tracking is enabled for the site.
 
 #### Signature
 
-- It returns a(n) `bool` value.
+- It returns a `bool` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
 <a name="getidsitesfromidsitesstring" id="getidsitesfromidsitesstring"></a>
+<a name="getIdSitesFromIdSitesString" id="getIdSitesFromIdSitesString"></a>
 ### `getIdSitesFromIdSitesString()`
 
 Checks the given string for valid site ids and returns them as an array.
@@ -284,6 +277,7 @@ Checks the given string for valid site ids and returns them as an array.
     - `array`
 
 <a name="clearcache" id="clearcache"></a>
+<a name="clearCache" id="clearCache"></a>
 ### `clearCache()`
 
 Clears the site data cache.
@@ -296,24 +290,8 @@ See also [setSites](#setSites) and [setSitesFromArray](#setSitesFromArray).
 
 - It does not return anything.
 
-<a name="getfor" id="getfor"></a>
-### `getFor()`
-
-Utility function.
-
-#### Description
-
-Returns the value of the specified field for the
-site with the specified ID.
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$idsite`
-    - `$field`
-- It returns a(n) `mixed` value.
-
 <a name="getnamefor" id="getnamefor"></a>
+<a name="getNameFor" id="getNameFor"></a>
 ### `getNameFor()`
 
 Returns the name of the site with the specified ID.
@@ -322,9 +300,10 @@ Returns the name of the site with the specified ID.
 
 - It accepts the following parameter(s):
     - `$idsite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="gettimezonefor" id="gettimezonefor"></a>
+<a name="getTimezoneFor" id="getTimezoneFor"></a>
 ### `getTimezoneFor()`
 
 Returns the timezone of the site with the specified ID.
@@ -333,9 +312,10 @@ Returns the timezone of the site with the specified ID.
 
 - It accepts the following parameter(s):
     - `$idsite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getcreationdatefor" id="getcreationdatefor"></a>
+<a name="getCreationDateFor" id="getCreationDateFor"></a>
 ### `getCreationDateFor()`
 
 Returns the creation date of the site with the specified ID.
@@ -344,9 +324,10 @@ Returns the creation date of the site with the specified ID.
 
 - It accepts the following parameter(s):
     - `$idsite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getmainurlfor" id="getmainurlfor"></a>
+<a name="getMainUrlFor" id="getMainUrlFor"></a>
 ### `getMainUrlFor()`
 
 Returns the url for the site with the specified ID.
@@ -355,9 +336,10 @@ Returns the url for the site with the specified ID.
 
 - It accepts the following parameter(s):
     - `$idsite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="isecommerceenabledfor" id="isecommerceenabledfor"></a>
+<a name="isEcommerceEnabledFor" id="isEcommerceEnabledFor"></a>
 ### `isEcommerceEnabledFor()`
 
 Returns whether the site with the specified ID is ecommerce enabled
@@ -366,9 +348,10 @@ Returns whether the site with the specified ID is ecommerce enabled
 
 - It accepts the following parameter(s):
     - `$idsite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="issitesearchenabledfor" id="issitesearchenabledfor"></a>
+<a name="isSiteSearchEnabledFor" id="isSiteSearchEnabledFor"></a>
 ### `isSiteSearchEnabledFor()`
 
 Returns whether the site with the specified ID is Site Search enabled
@@ -377,9 +360,10 @@ Returns whether the site with the specified ID is Site Search enabled
 
 - It accepts the following parameter(s):
     - `$idsite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getcurrencyfor" id="getcurrencyfor"></a>
+<a name="getCurrencyFor" id="getCurrencyFor"></a>
 ### `getCurrencyFor()`
 
 Returns the currency of the site with the specified ID.
@@ -388,9 +372,10 @@ Returns the currency of the site with the specified ID.
 
 - It accepts the following parameter(s):
     - `$idsite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getexcludedipsfor" id="getexcludedipsfor"></a>
+<a name="getExcludedIpsFor" id="getExcludedIpsFor"></a>
 ### `getExcludedIpsFor()`
 
 Returns the excluded IP addresses of the site with the specified ID.
@@ -399,9 +384,10 @@ Returns the excluded IP addresses of the site with the specified ID.
 
 - It accepts the following parameter(s):
     - `$idsite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 
 <a name="getexcludedqueryparametersfor" id="getexcludedqueryparametersfor"></a>
+<a name="getExcludedQueryParametersFor" id="getExcludedQueryParametersFor"></a>
 ### `getExcludedQueryParametersFor()`
 
 Returns the excluded query parameters for the site with the specified ID.
@@ -410,5 +396,5 @@ Returns the excluded query parameters for the site with the specified ID.
 
 - It accepts the following parameter(s):
     - `$idsite`
-- It returns a(n) `string` value.
+- It returns a `string` value.
 

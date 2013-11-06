@@ -16,6 +16,7 @@ The class defines the following methods:
 - [`setDay()`](#setday)
 
 <a name="getrescheduledtime" id="getrescheduledtime"></a>
+<a name="getRescheduledTime" id="getRescheduledTime"></a>
 ### `getRescheduledTime()`
 
 #### See Also
@@ -24,9 +25,10 @@ The class defines the following methods:
 
 #### Signature
 
-- It returns a(n) `int` value.
+- It returns a `int` value.
 
 <a name="sethour" id="sethour"></a>
+<a name="setHour" id="setHour"></a>
 ### `setHour()`
 
 #### See Also
@@ -37,11 +39,12 @@ The class defines the following methods:
 
 - It accepts the following parameter(s):
     - `$_hour`
-- It returns a(n) `int` value.
+- It returns a `int` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
 <a name="setday" id="setday"></a>
+<a name="setDay" id="setDay"></a>
 ### `setDay()`
 
 #### See Also
@@ -52,7 +55,7 @@ The class defines the following methods:
 
 - It accepts the following parameter(s):
     - `$_day`
-- It returns a(n) `int` value.
+- It returns a `int` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 

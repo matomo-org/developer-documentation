@@ -16,6 +16,7 @@ The class defines the following methods:
 - [`getDayIntFromString()`](#getdayintfromstring)
 
 <a name="getrescheduledtime" id="getrescheduledtime"></a>
+<a name="getRescheduledTime" id="getRescheduledTime"></a>
 ### `getRescheduledTime()`
 
 #### See Also
@@ -24,9 +25,10 @@ The class defines the following methods:
 
 #### Signature
 
-- It returns a(n) `int` value.
+- It returns a `int` value.
 
 <a name="setday" id="setday"></a>
+<a name="setDay" id="setDay"></a>
 ### `setDay()`
 
 #### Signature
@@ -38,6 +40,7 @@ The class defines the following methods:
     - [`Exception`](http://php.net/class.Exception) &mdash; if parameter _day is invalid
 
 <a name="getdayintfromstring" id="getdayintfromstring"></a>
+<a name="getDayIntFromString" id="getDayIntFromString"></a>
 ### `getDayIntFromString()`
 
 #### Signature
