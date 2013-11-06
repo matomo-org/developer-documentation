@@ -77,6 +77,7 @@ body {
     text-shadow: 0 1px 0 #7cabd4;
     background-color: #84b4dd;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* All levels of nav */
@@ -84,6 +85,8 @@ body {
     display: block;
     color: #fff;
     padding: 5px 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .bs-sidebar .nav > li > a:hover,
 .bs-sidebar .nav > li > a:focus {
