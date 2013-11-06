@@ -52,7 +52,7 @@ class Cache
 
         $file = static::getPathToCacheFile($key);
 
-        file_put_contents($file, $file);
+        file_put_contents($file, $content);
     }
 
     private static function isEnabled()
