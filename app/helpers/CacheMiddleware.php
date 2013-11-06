@@ -37,7 +37,7 @@ class CacheMiddleware extends \Slim\Middleware
 
         $this->next->call();
 
-        if ($this->shouldCache($req)) {
+        if ($this->shouldCache($req) && 200 == $res->getStatus()) {
             Cache::set($this->getCacheKey($req), $res->getBody());
         }
     }
