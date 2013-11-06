@@ -36,7 +36,7 @@ $app->get('/support', function () use ($app) {
 });
 
 $app->get('/api-reference/:reference', function ($reference) use ($app) {
-    $references = ApiReference::getReferences();
+    $references = ApiReference::getReferencesMenu();
     $file       = $references[$reference]['file'];
 
     $doc = new Document($file);
@@ -49,7 +49,7 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
         'categories'   => $references
     ));
 
-})->conditions(array('reference' => '(' . implode('|', array_keys(ApiReference::getReferences())) . ')'));
+})->conditions(array('reference' => '(' . implode('|', array_keys(ApiReference::getReferencesMenu())) . ')'));
 
 $app->get('/api-reference/:names+', function ($names) use ($app) {
 
@@ -70,13 +70,13 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
         'doc'            => $doc->getRenderedContent(),
         'sections'       => $doc->getSections(),
         'sectionTitle'   => $className,
-        'categories'     => ApiReference::getClassNames()
+        'categories'     => ApiReference::getClassesMenu()
     ));
 
 });
 
 $app->get('/api-reference', function () use ($app) {
-    $references = ApiReference::getReferences();
+    $references = ApiReference::getReferencesMenu();
 
     $app->render('apireference.twig', array(
         'references' => $references,

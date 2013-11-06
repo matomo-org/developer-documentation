@@ -15,7 +15,7 @@ class ApiReference {
         return '/api-reference/' . $key;
     }
 
-    public static function getClassNames()
+    public static function getClassesMenu()
     {
         $doc = new Document('generated/master/Classnames');
 
@@ -34,7 +34,7 @@ class ApiReference {
         return $menu;
     }
 
-    public static function getReferences()
+    public static function getReferencesMenu()
     {
         $menu = array();
 
