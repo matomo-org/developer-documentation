@@ -56,6 +56,7 @@ class CacheMiddleware extends \Slim\Middleware
 
         $path = strip_tags($path);
         $path = trim($path);
+        $path = preg_replace('/\//', '-', $path);
         $path = preg_replace('/\s/', '-', $path);
         $path = preg_replace('/[^a-zA-Z0-9\-]/', '', $path);
         $path = strtolower($path);
