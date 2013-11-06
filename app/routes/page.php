@@ -97,3 +97,12 @@ $app->get('/guides/:category', function ($category) use ($app) {
     ));
 
 })->conditions(array('category' => '(' . implode('|', array_keys(Guide::getMainMenu())) . ')'));
+
+
+$app->post('/receive-commit-hook', function () use ($app) {
+
+    \helpers\Cache::invalidate();
+
+    echo 'Here is a cookie!';
+    exit;
+});

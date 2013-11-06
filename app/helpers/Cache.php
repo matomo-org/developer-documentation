@@ -10,6 +10,8 @@ namespace helpers;
 
 class Cache
 {
+    private static $folder = '../tmp/cache';
+
     public static function get($key)
     {
         $key = static::getKey($key);
@@ -32,7 +34,7 @@ class Cache
 
     private static function getKey($key)
     {
-        return '../tmp/cache/' . $key;
+        return static::$folder . '/' . $key;
     }
 
     public static function set($key, $content)
@@ -49,4 +51,35 @@ class Cache
 
         file_put_contents($key, $content);
     }
+
+    public static function invalidate()
+    {
+        static::unlinkRecursive(static::$folder);
+    }
+
+    private static function unlinkRecursive($dir)
+    {
+        if (!$dh = @opendir($dir)) {
+            return;
+        }
+
+        while (false !== ($obj = readdir($dh))) {
+            if ($obj && $obj[0] == '.') {
+                continue;
+            }
+
+            $fileOrDir = $dir . '/' . $obj;
+
+            if (!@unlink($fileOrDir)) {
+                static::unlinkRecursive($fileOrDir);
+            }
+
+            if (is_dir($fileOrDir)) {
+                rmdir($fileOrDir);
+            }
+        }
+
+        closedir($dh);
+    }
+
 }
