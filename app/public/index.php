@@ -11,6 +11,7 @@ require '../vendor/autoload.php';
 use Slim\Slim;
 use Slim\Views\Twig as Twig;
 use helpers\Log;
+use helpers\CacheMiddleware;
 
 // New Slim App
 $app = new Slim(array(
@@ -26,6 +27,8 @@ $app = new Slim(array(
         array('path' => realpath('../tmp/logs'), 'name_format' => 'Y-m-d')
     )
 ));
+
+$app->add(new CacheMiddleware());
 
 $app->error(function (\Exception $e) use ($app) {
     Log::error('An unhandled exception occurred: ' . $e->getMessage() . $e->getTraceAsString());
