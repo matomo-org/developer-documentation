@@ -13,3 +13,11 @@ function affixSidebar()
 }
 
 affixSidebar();
+
+$('#sidebar').on('hidden.bs.collapse', function () {
+    var $sidebar = $('#sidebar');
+
+    if ($sidebar && $sidebar.length) {
+        $sidebar.addClass('affix-top').removeClass('affix affix-bottom');
+    }
+});
