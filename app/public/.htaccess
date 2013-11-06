@@ -11,3 +11,19 @@
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
+
+## EXPIRES CACHING - SITE SPEED##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 month"
+ExpiresByType image/jpeg "access 1 month"
+ExpiresByType image/gif "access 1 month"
+ExpiresByType image/png "access 1 month"
+ExpiresByType text/css "access 3 days"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 3 days"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 8 days"
+</IfModule>
+## EXPIRES CACHING ##
