@@ -5,67 +5,71 @@
     <div class="col-md-3 bs-side">
 
         <div class="panel-group" id="sidebar">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#sidebar" href="#collapseOne">
-                            {% if menu and menu[activeMenu] %}
-                            {{ menu[activeMenu].title }}
-                            {% else %}
-                                {{ activeMenu }}
-                            {% endif %}
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse">
-                    <div class="panel-body">
-
-                        <div class="bs-sidebar">
-                            <ul class="nav nav-pills nav-stacked bs-sidenav">
-                                <li>
-                                    {% for cat in categories %}
-                                    <a href="{{ cat.url }}"> {{ cat.title }}</a>
-                                    {% endfor %}
-                                </li>
-                            </ul>
-                        </div>
+            {% if categories|length %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#sidebar" href="#collapseOne">
+                                {% if menu and menu[activeMenu] %}
+                                {{ menu[activeMenu].title }}
+                                {% else %}
+                                    {{ activeMenu }}
+                                {% endif %}
+                            </a>
+                        </h4>
                     </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#sidebar" href="#collapseTwo">
-                            {{ sectionTitle|e|replace({'/': '/&#8203;'})|raw }}
-                        </a>
-                    </h4>
-                </div>
+                    <div id="collapseOne" class="panel-collapse collapse {% if 0 == sections|length %}in{% endif %}">
+                        <div class="panel-body">
 
-                <div id="collapseTwo" class="panel-collapse collapse in">
-                    <div class="panel-body">
-
-                        <div class="bs-sidebar">
-                            <ul class="nav nav-pills nav-stacked bs-sidenav">
-                                {% for section in sections %}
-                                    <li {% if sections|length == 1 %} class="active"{% endif %}>
-                                        <a href="#{{ section.id }}"><i class="icon-chevron-right"></i> {{ section.title|striptags }}</a>
-
-                                        {% if section.children|length %}
-                                            <ul class="nav">
-
-                                            {% for subsection in section.children %}
-                                                <li><a href="#{{ subsection.id }}">{{ subsection.title|striptags }}</a></li>
-                                            {% endfor %}
-
-                                            </ul>
-                                        {% endif %}
+                            <div class="bs-sidebar">
+                                <ul class="nav nav-pills nav-stacked bs-sidenav">
+                                    <li>
+                                        {% for cat in categories %}
+                                        <a href="{{ cat.url }}"> {{ cat.title }}</a>
+                                        {% endfor %}
                                     </li>
-                                {% endfor %}
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
+            {% if sections|length %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#sidebar" href="#collapseTwo">
+                                {{ sectionTitle|e|replace({'/': '/&#8203;'})|raw }}
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="collapseTwo" class="panel-collapse collapse in">
+                        <div class="panel-body">
+
+                            <div class="bs-sidebar">
+                                <ul class="nav nav-pills nav-stacked bs-sidenav">
+                                    {% for section in sections %}
+                                        <li {% if sections|length == 1 %} class="active"{% endif %}>
+                                            <a href="#{{ section.id }}"><i class="icon-chevron-right"></i> {{ section.title|striptags }}</a>
+
+                                            {% if section.children|length %}
+                                                <ul class="nav">
+
+                                                {% for subsection in section.children %}
+                                                    <li><a href="#{{ subsection.id }}">{{ subsection.title|striptags }}</a></li>
+                                                {% endfor %}
+
+                                                </ul>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
     <div class="col-md-9 documentation">
