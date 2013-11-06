@@ -7,6 +7,7 @@
  */
 
 require '../vendor/autoload.php';
+require '../config/app.php';
 
 use Slim\Slim;
 use Slim\Views\Twig as Twig;

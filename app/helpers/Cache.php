@@ -14,6 +14,10 @@ class Cache
 
     public static function get($key)
     {
+        if (!static::isEnabled()) {
+            return;
+        }
+
         $key = static::getKey($key);
 
         if (empty($key)) {
@@ -32,13 +36,12 @@ class Cache
         }
     }
 
-    private static function getKey($key)
-    {
-        return static::$folder . '/' . $key;
-    }
-
     public static function set($key, $content)
     {
+        if (!static::isEnabled()) {
+            return;
+        }
+
         if (empty($content)) {
             return;
         }
@@ -50,6 +53,16 @@ class Cache
         $key = static::getKey($key);
 
         file_put_contents($key, $content);
+    }
+
+    private static function isEnabled()
+    {
+        return (defined('CACHING_ENABLED') && CACHING_ENABLED);
+    }
+
+    private static function getKey($key)
+    {
+        return static::$folder . '/' . $key;
     }
 
     public static function invalidate()
