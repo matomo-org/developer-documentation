@@ -8,6 +8,14 @@
 
 namespace helpers;
 
+/**
+ * Class CacheMiddleware.
+ *
+ * Only GET requests are cached so far and only by path. So if you request a URL like "/foo" and URL like "/foo?bar=1"
+ * the same cache key is used.
+ *
+ * @package helpers
+ */
 class CacheMiddleware extends \Slim\Middleware
 {
     public function call()
@@ -58,7 +66,6 @@ class CacheMiddleware extends \Slim\Middleware
         $path = trim($path);
         $path = preg_replace('/\s/', '-', $path);
         $path = preg_replace('/[^a-zA-Z0-9\-]/', '', $path);
-        $path = preg_replace('/(\-)+/', '-', $path);
         $path = strtolower($path);
 
         return $path;
