@@ -19,7 +19,19 @@ class ApiReference {
     {
         $doc = new Document('generated/master/Classnames');
 
-        return $doc->getSections();
+        $classes = $doc->getSections();
+
+        $menu = array();
+        foreach ($classes as $class) {
+            $className = $class['title'];
+
+            $menu[$className] = array(
+                'title' => $className,
+                'url'   => static::getUrl('Piwik\\' . $className)
+            );
+        }
+
+        return $menu;
     }
 
     public static function getReferences()

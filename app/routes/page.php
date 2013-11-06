@@ -65,11 +65,12 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
     $doc  = new Document($file);
 
     $app->render('layout/documentation.twig', array(
-        'activeMenu'   => 'api-reference',
-        'doc'          => $doc->getRenderedContent(),
-        'sections'     => $doc->getSections(),
-        'sectionTitle' => $className,
-        'categories'   => ApiReference::getClassNames()
+        'activeMenu'     => 'api-reference',
+        'activeCategory' => 'Classes',
+        'doc'            => $doc->getRenderedContent(),
+        'sections'       => $doc->getSections(),
+        'sectionTitle'   => $className,
+        'categories'     => ApiReference::getClassNames()
     ));
 
 });

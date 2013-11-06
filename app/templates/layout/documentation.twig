@@ -10,8 +10,10 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#sidebar" href="#collapseOne">
-                                {% if menu and menu[activeMenu] %}
-                                {{ menu[activeMenu].title }}
+                                {% if activeCategory is defined and activeCategory %}
+                                    {{ activeCategory }}
+                                {% elseif menu and menu[activeMenu] %}
+                                    {{ menu[activeMenu].title }}
                                 {% else %}
                                     {{ activeMenu }}
                                 {% endif %}
