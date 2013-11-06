@@ -53,7 +53,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$processing` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md))
+    - `$aggregator` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md))
 - It does not return anything.
 
 <a name="aggregatedayreport" id="aggregatedayreport"></a>

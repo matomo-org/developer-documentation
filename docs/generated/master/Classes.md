@@ -6,7 +6,7 @@ This is a complete list of available classes:
 - [`API\Request`](Piwik/API/Request.md) &mdash; Dispatches API requests to the appropriate API method.
 - [`Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used to insert numeric and blob archive data.
-- [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; An ArchiveProcessor processes data for an Archive determined by these Parameters: website, period and segment.
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
 - [`DataAccess\LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; Contains methods that aggregates log data (visits, actions, conversions, ecommerce).

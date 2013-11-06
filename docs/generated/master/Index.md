@@ -198,9 +198,12 @@ Index
 - [`getPluginForReport()`](Piwik/Archive.md#getpluginforreport) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
 - [`getParams()`](Piwik/ArchiveProcessor.md#getparams) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getLogAggregator()`](Piwik/ArchiveProcessor.md#getlogaggregator) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
+- [`getRequestedPlugin()`](Piwik/ArchiveProcessor/Parameters.md#getrequestedplugin) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSite()`](Piwik/ArchiveProcessor/Parameters.md#getsite) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSegment()`](Piwik/ArchiveProcessor/Parameters.md#getsegment) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`getDateEnd()`](Piwik/ArchiveProcessor/Parameters.md#getdateend) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`getDateStart()`](Piwik/ArchiveProcessor/Parameters.md#getdatestart) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getRequestVar()`](Piwik/Common.md#getrequestvar) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguagesList()`](Piwik/Common.md#getlanguageslist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguageToCountryList()`](Piwik/Common.md#getlanguagetocountrylist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
@@ -423,6 +426,7 @@ Index
 - [`insertNumericRecords()`](Piwik/ArchiveProcessor.md#insertnumericrecords) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertNumericRecord()`](Piwik/ArchiveProcessor.md#insertnumericrecord) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertBlobRecord()`](Piwik/ArchiveProcessor.md#insertblobrecord) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
+- [`isDayArchive()`](Piwik/ArchiveProcessor/Parameters.md#isdayarchive) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`isEqual()`](Piwik/DataTable.md#isequal) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`isSubtableLoaded()`](Piwik/DataTable/Row.md#issubtableloaded) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`isSummaryRow()`](Piwik/DataTable/Row.md#issummaryrow) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
@@ -476,6 +480,7 @@ Index
 
 ## L
 
+- [`logStatusDebug()`](Piwik/ArchiveProcessor/Parameters.md#logstatusdebug) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; _Class in namespace_ [`Piwik\DataAccess`](Piwik/DataAccess)
 - [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter)
 - [`$lockPrivilegeGranted()`](Piwik/Db.md#$lockprivilegegranted) &mdash; _Property in class_ [`Db`](Piwik/Db.md)
@@ -595,6 +600,7 @@ Index
 ## S
 
 - [`shouldLoadExpanded()`](Piwik/API/Request.md#shouldloadexpanded) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
+- [`setRequestedPlugin()`](Piwik/ArchiveProcessor/Parameters.md#setrequestedplugin) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`sort()`](Piwik/DataTable.md#sort) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](Piwik/DataTable.md#setmaximumdepthlevelallowedatleast) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -726,6 +732,7 @@ Index
 ## _
 
 - [`__construct()`](Piwik/API/Request.md#__construct) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
+- [`__construct()`](Piwik/ArchiveProcessor/Parameters.md#__construct) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`__get()`](Piwik/Config.md#__get) &mdash; _Method in class_ [`Config`](Piwik/Config.md)
 - [`__set()`](Piwik/Config.md#__set) &mdash; _Method in class_ [`Config`](Piwik/Config.md)
 - [`__construct()`](Piwik/DataTable.md#__construct) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
