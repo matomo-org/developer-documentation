@@ -5,6 +5,7 @@ global:
     "pages/interfaces.twig": "Interfaces.md"
     "pages/classes.twig": "Classes.md"
     "pages/index.twig": "Index.md"
+    "pages/classnames.twig": "Classnames.md"
 
 class:
     "pages/class.twig": "%s.md"
