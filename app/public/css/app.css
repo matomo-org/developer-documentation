@@ -145,6 +145,7 @@ body {
 }
 @media (min-width: 1200px) {
     /* Widen the fixed sidebar again */
+    #sidebar,
     #sidebar.affix-bottom,
     #sidebar.affix-top,
     #sidebar.affix {

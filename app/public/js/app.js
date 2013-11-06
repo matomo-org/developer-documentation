@@ -3,7 +3,7 @@ function affixSidebar()
 {
     var $sidebar = $('#sidebar');
 
-    if ($sidebar && $sidebar.length) {
+    if ($sidebar && $sidebar.length && $sidebar.height() <= $(window).height()) {
         $sidebar.affix({
             offset: {
                 top: 100, bottom: 100
