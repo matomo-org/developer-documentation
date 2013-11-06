@@ -18,13 +18,6 @@ class Log {
         static::$log = $log;
     }
 
-    public static function initForCli()
-    {
-        static::setLogger(new \Slim\Log(new \Slim\Extras\Log\DateTimeFileWriter(
-            array('path' => __DIR__ . '/../../logs', 'name_format' => 'Y-m-d')
-        )));
-    }
-
     public static function debug($message)
     {
         static::log('debug', $message);

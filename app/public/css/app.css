@@ -58,6 +58,10 @@ body {
     margin-top: 40px;
 }
 
+#sidebar .panel-title a {
+    word-wrap: break-word;
+}
+
 /* By default it's not affixed in mobile views, so undo that */
 #sidebar.affix {
     position: static;

@@ -56,9 +56,9 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
     }
 
     $names     = array_filter($names);
-    $className = implode('/', $names);
+    $className = implode('\\', $names);
 
-    $file = $className;
+    $file = implode('/', $names);
     if ('Piwik/' != substr($file, 0, 6)) {
         $file = 'Piwik/' . $file;
     }

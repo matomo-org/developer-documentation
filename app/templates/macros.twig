@@ -3,7 +3,11 @@
         <div class="col-xs-12 col-sm-6 col-md-4 teaser-item">
             <h2>{{ item.title }}</h2>
             <p>{{ item.description }}</p>
-            <p><a class="btn btn-primary" href="{{ item.url }}" role="button">{{ item.callToAction|default('Learn more') }} &raquo;</a></p>
+            <p><a class="btn btn-primary" href="{{ item.url }}"
+                {% if 'http' == item.url[:4] %}
+                    target="_blank"
+                {% endif %}
+                role="button">{{ item.callToAction|default('Learn more') }} &raquo;</a></p>
         </div>
     {% endfor %}
 {% endmacro %}

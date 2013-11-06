@@ -20,21 +20,13 @@ class CacheMiddleware extends \Slim\Middleware
 {
     public function call()
     {
-        $app = $this->app;
+        /** @var $req \Slim\Http\Request */
+        $req = $this->app->request;
+        /** @var $res \Slim\Http\Response */
+        $res = $this->app->response;
 
-        /**
-         * @var $req \Slim\Http\Request
-         */
-        $req = $app->request;
-
-        /**
-         * @var $res \Slim\Http\Response
-         */
-        $res  = $app->response;
-        $cacheKey = $this->pathToCacheKey($req->getPath());
-
-        if ($req->isGet()) {
-            $content = Cache::get($cacheKey);
+        if ($this->shouldCache($req)) {
+            $content = Cache::get($this->getCacheKey($req));
 
             if (!empty($content)) {
                 $res->setBody($content);
@@ -45,8 +37,8 @@ class CacheMiddleware extends \Slim\Middleware
 
         $this->next->call();
 
-        if ($req->isGet()) {
-            Cache::set($cacheKey, $res->getBody());
+        if ($this->shouldCache($req)) {
+            Cache::set($this->getCacheKey($req), $res->getBody());
         }
     }
 
@@ -69,5 +61,15 @@ class CacheMiddleware extends \Slim\Middleware
         $path = strtolower($path);
 
         return $path;
+    }
+
+    private function shouldCache($req)
+    {
+        return $req->isGet();
+    }
+
+    private function getCacheKey($req)
+    {
+        return $this->pathToCacheKey($req->getPath());
     }
 }

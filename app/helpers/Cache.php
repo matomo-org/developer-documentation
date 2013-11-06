@@ -18,17 +18,17 @@ class Cache
             return;
         }
 
-        $key = static::getKey($key);
-
         if (empty($key)) {
             return;
         }
 
-        if (!file_exists($key)) {
+        $file = static::getPathToCacheFile($key);
+
+        if (!file_exists($file)) {
             return;
         }
 
-        $content = file_get_contents($key);
+        $content = file_get_contents($file);
 
         if (!empty($content)) {
 
@@ -50,9 +50,9 @@ class Cache
             return;
         }
 
-        $key = static::getKey($key);
+        $file = static::getPathToCacheFile($key);
 
-        file_put_contents($key, $content);
+        file_put_contents($file, $file);
     }
 
     private static function isEnabled()
@@ -60,7 +60,7 @@ class Cache
         return (defined('CACHING_ENABLED') && CACHING_ENABLED);
     }
 
-    private static function getKey($key)
+    private static function getPathToCacheFile($key)
     {
         return static::$folder . '/' . $key;
     }

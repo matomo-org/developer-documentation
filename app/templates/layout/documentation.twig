@@ -26,7 +26,7 @@
                             <div class="bs-sidebar">
                                 <ul class="nav nav-pills nav-stacked bs-sidenav">
                                     {% for cat in categories %}
-                                        <li>
+                                        <li title="{{ cat.title|raw }}">
                                             <a href="{{ cat.url }}"> {{ cat.title }}</a>
                                         </li>
                                     {% endfor %}
@@ -41,7 +41,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#sidebar" href="#collapseTwo">
-                                {{ sectionTitle|e|replace({'/': '/&#8203;'})|raw }}
+                                {{ sectionTitle }}
                             </a>
                         </h4>
                     </div>
@@ -59,7 +59,7 @@
                                                 <ul class="nav">
 
                                                 {% for subsection in section.children %}
-                                                    <li><a href="#{{ subsection.id }}">{{ subsection.title|striptags }}</a></li>
+                                                    <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags }}</a></li>
                                                 {% endfor %}
 
                                                 </ul>
