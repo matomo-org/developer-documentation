@@ -34,6 +34,7 @@ This {{ class_type(class) }} defines the following constants:
 {% for constant in class.constants if constant.longdesc %}
 
 <a name="{{ constant.name|lower }}" id="{{ constant.name|lower }}"></a>
+<a name="{{ constant.name }}" id="{{ constant.name }}"></a>
 ### `{{ constant.name }}`
 
 {{ constant.longdesc|raw }}
@@ -53,6 +54,7 @@ This {{ class_type(class) }} defines the following properties:
 {% for property in class.properties %}
 
 <a name="{{ property.name|lower }}" id="{{ property.name|lower }}"></a>
+<a name="{{ property.name }}" id="{{ property.name }}"></a>
 ### `${{ property.name }}`
 {% if property.shortdesc %}
 
@@ -84,6 +86,7 @@ The {{ class_type(class) }} defines the following methods:
 
 {% for method in class.methods %}
 <a name="{{ method.name|lower }}" id="{{ method.name|lower }}"></a>
+<a name="{{ method.name }}" id="{{ method.name }}"></a>
 ### `{{ method.name }}()`
 {% if method.shortdesc %}
 

@@ -53,7 +53,7 @@ class
     - {{ _self.hint(hint) }}
 {%- endfor -%}
 {%- elseif member.hint|length > 0 %}
-- It is a(n) {{ _self.hint(member.hint[0]) }} value.
+- It is a {{ _self.hint(member.hint[0]) }} value.
 {%- else %}
 - Its type is not specified.
 {% endif %}
@@ -75,7 +75,7 @@ class
     - {{ _self.hint(hint) }}
 {% endfor -%}
 {% elseif member.hint|length > 0 %}
-- It returns a(n) {{ _self.hint(member.hint[0]) }} value.
+- It returns a {{ _self.hint(member.hint[0]) }} value.
 {% else %}
 - It does not return anything.
 {% endif %}
