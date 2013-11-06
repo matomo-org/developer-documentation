@@ -82,6 +82,7 @@ The class defines the following methods:
 - [`sumRow()`](#sumrow) &mdash; Sums the given `$rowToSum` columns values to the existing row column values.
 - [`sumRowMetadata()`](#sumrowmetadata) &mdash; Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 - [`isSummaryRow()`](#issummaryrow) &mdash; Returns true if this row is the summary row, false if otherwise.
+- [`sumRowArray()`](#sumrowarray) &mdash; Helper function: sums 2 values
 - [`compareElements()`](#compareelements) &mdash; Helper function to compare array elements
 - [`isEqual()`](#isequal) &mdash; Helper function that tests if two rows are equal.
 
@@ -431,6 +432,22 @@ depends on the label of the row, and so, is not 100% accurate.
 #### Signature
 
 - It returns a(n) `bool` value.
+
+<a name="sumrowarray" id="sumrowarray"></a>
+### `sumRowArray()`
+
+Helper function: sums 2 values
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$thisColumnValue`
+    - `$columnToSumValue`
+- It can return one of the following values:
+    - `array`
+    - `int`
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="compareelements" id="compareelements"></a>
 ### `compareElements()`

@@ -35,16 +35,54 @@ This class defines the following constants:
 - `NUM_SECONDS_IN_DAY` &mdash; Number of seconds in a day.
 - `DATE_TIME_FORMAT` &mdash; The default date time string format.
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$timestamp`](#$timestamp) &mdash; The stored timestamp is always UTC based.
+- [`$timezone`](#$timezone) &mdash; Timezone the current date object is set to.
+
+<a name="timestamp" id="timestamp"></a>
+### `$timestamp`
+
+The stored timestamp is always UTC based.
+
+#### Description
+
+The returned timestamp via getTimestamp() will have the conversion applied
+
+#### Signature
+
+- It can be one of the following types:
+    - `int`
+    - `null`
+
+<a name="timezone" id="timezone"></a>
+### `$timezone`
+
+Timezone the current date object is set to.
+
+#### Description
+
+Timezone will only affect the returned timestamp via getTimestamp()
+
+#### Signature
+
+- It is a(n) `string` value.
+
 Methods
 -------
 
 The class defines the following methods:
 
+- [`__construct()`](#__construct) &mdash; Constructor.
 - [`factory()`](#factory) &mdash; Creates a new Date instance using a string datetime value.
 - [`getDatetime()`](#getdatetime) &mdash; Returns the current timestamp as a string with the following format: `'YYYY-MM-DD HH:MM:SS'`.
 - [`getDateStartUTC()`](#getdatestartutc) &mdash; Returns the start of the day of the current timestamp in UTC.
 - [`getDateEndUTC()`](#getdateendutc) &mdash; Returns the end of the day of the current timestamp in UTC.
 - [`setTimezone()`](#settimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
+- [`extractUtcOffset()`](#extractutcoffset) &mdash; Helper function that returns the offset in the timezone string 'UTC+14' Returns false if the timezone is not UTC+X or UTC-X
 - [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp in a timezone to UTC.
 - [`getTimestampUTC()`](#gettimestamputc) &mdash; Returns the Unix timestamp of the date in UTC.
 - [`getTimestamp()`](#gettimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
@@ -75,6 +113,20 @@ The class defines the following methods:
 - [`addPeriod()`](#addperiod) &mdash; Adds a period to `$this` date and returns the result in a new Date instance.
 - [`subPeriod()`](#subperiod) &mdash; Subtracts a period from `$this` date and returns the result in a new Date instance.
 - [`secondsToDays()`](#secondstodays) &mdash; Returns the number of days represented by a number of seconds.
+
+<a name="__construct" id="__construct"></a>
+### `__construct()`
+
+Constructor.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$timestamp`
+    - `$timezone`
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; If $timestamp is not an int.
 
 <a name="factory" id="factory"></a>
 ### `factory()`
@@ -148,6 +200,19 @@ See [getTimestamp](#getTimestamp) to see how the timezone is used.
 - It accepts the following parameter(s):
     - `$timezone`
 - It returns a(n) [`Date`](../Piwik/Date.md) value.
+
+<a name="extractutcoffset" id="extractutcoffset"></a>
+### `extractUtcOffset()`
+
+Helper function that returns the offset in the timezone string 'UTC+14' Returns false if the timezone is not UTC+X or UTC-X
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$timezone`
+- _Returns:_ utc offset or false
+    - `int`
+    - `bool`
 
 <a name="adjustfortimezone" id="adjustfortimezone"></a>
 ### `adjustForTimezone()`

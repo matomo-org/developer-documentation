@@ -27,6 +27,32 @@ take a look at the [BeautifyTimeRangeLabels](#) filter.
     $dataTable->queueFilter('BeautifyRangeLabels', array("1 visit", "%s visits"));
 
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$labelSingular`](#$labelsingular) &mdash; The string to use when the range being beautified is between 1-1 units.
+- [`$labelPlural`](#$labelplural) &mdash; The format string to use when the range being beautified references more than one unit.
+
+<a name="labelsingular" id="labelsingular"></a>
+### `$labelSingular`
+
+The string to use when the range being beautified is between 1-1 units.
+
+#### Signature
+
+- It is a(n) `string` value.
+
+<a name="labelplural" id="labelplural"></a>
+### `$labelPlural`
+
+The format string to use when the range being beautified references more than one unit.
+
+#### Signature
+
+- It is a(n) `string` value.
+
 Methods
 -------
 

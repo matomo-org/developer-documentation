@@ -14,6 +14,30 @@ periods. The Maps will contain a DataTable for each site and period combination.
 The Map implements some of the features of the DataTable such as queueFilter and getRowsCount.
 
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$array`](#$array) &mdash; Array containing the DataTable withing this Set
+- [`$keyName`](#$keyname)
+
+<a name="array" id="array"></a>
+### `$array`
+
+Array containing the DataTable withing this Set
+
+#### Signature
+
+- It is a(n) [`DataTable[]`](../../Piwik/DataTable.md) value.
+
+<a name="keyname" id="keyname"></a>
+### `$keyName`
+
+#### Signature
+
+- It is a(n) `string` value.
+
 Methods
 -------
 

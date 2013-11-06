@@ -84,6 +84,8 @@ The class defines the following methods:
 - [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
 - [`__get()`](#__get) &mdash; Retrieves an assigned variable.
 - [`render()`](#render) &mdash; Renders the current view.
+- [`renderTwigTemplate()`](#rendertwigtemplate)
+- [`applyFilter_cacheBuster()`](#applyfilter_cachebuster)
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field.
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response.
 - [`addForm()`](#addform) &mdash; Add form to view
@@ -166,6 +168,22 @@ See [setContentType](#setContentType).
 
 - _Returns:_ Generated template.
     - `string`
+
+<a name="rendertwigtemplate" id="rendertwigtemplate"></a>
+### `renderTwigTemplate()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="applyfilter_cachebuster" id="applyfilter_cachebuster"></a>
+### `applyFilter_cacheBuster()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$output`
+- It does not return anything.
 
 <a name="setcontenttype" id="setcontenttype"></a>
 ### `setContentType()`

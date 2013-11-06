@@ -68,6 +68,22 @@ contain the following information:
     }
 
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$pluginName`](#$pluginname) &mdash; Name of this plugin.
+
+<a name="pluginname" id="pluginname"></a>
+### `$pluginName`
+
+Name of this plugin.
+
+#### Signature
+
+- It is a(n) `string` value.
+
 Methods
 -------
 

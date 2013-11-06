@@ -28,6 +28,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`getClassNameFromInstance()`](#getclassnamefrominstance)
 - [`getObjectInstance()`](#getobjectinstance) &mdash; Return the object instance on which the method should be executed.
 - [`getClassName()`](#getclassname) &mdash; Returns the class name that contains the method to execute regularly.
 - [`getMethodName()`](#getmethodname) &mdash; Returns the method name that will be regularly executed.
@@ -51,6 +52,15 @@ Constructor.
     - `$methodParameter`
     - `$scheduledTime`
     - `$priority`
+- It does not return anything.
+
+<a name="getclassnamefrominstance" id="getclassnamefrominstance"></a>
+### `getClassNameFromInstance()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$_objectInstance`
 - It does not return anything.
 
 <a name="getobjectinstance" id="getobjectinstance"></a>

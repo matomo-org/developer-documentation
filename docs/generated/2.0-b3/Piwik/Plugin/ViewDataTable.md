@@ -40,8 +40,19 @@ Properties
 
 This abstract class defines the following properties:
 
+- [`$dataTable`](#$datatable) &mdash; DataTable loaded from the API for this ViewDataTable.
 - [`$config`](#$config)
 - [`$requestConfig`](#$requestconfig)
+- [`$request`](#$request)
+
+<a name="datatable" id="datatable"></a>
+### `$dataTable`
+
+DataTable loaded from the API for this ViewDataTable.
+
+#### Signature
+
+- It is a(n) [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="config" id="config"></a>
 ### `$config`
@@ -57,6 +68,13 @@ This abstract class defines the following properties:
 
 - It is a(n) `Piwik\ViewDataTable\RequestConfig` value.
 
+<a name="request" id="request"></a>
+### `$request`
+
+#### Signature
+
+- It is a(n) `Piwik\ViewDataTable\Request` value.
+
 Methods
 -------
 
@@ -65,11 +83,17 @@ The abstract class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getDefaultConfig()`](#getdefaultconfig) &mdash; Returns the default config.
 - [`getDefaultRequestConfig()`](#getdefaultrequestconfig) &mdash; Returns the default request config.
+- [`loadDataTableFromAPI()`](#loaddatatablefromapi)
 - [`getViewDataTableId()`](#getviewdatatableid) &mdash; Returns the viewDataTable ID for this DataTable visualization.
 - [`isViewDataTableId()`](#isviewdatatableid) &mdash; Detects whether the viewDataTable or one of its ancestors has the given id.
 - [`getDataTable()`](#getdatatable) &mdash; Returns the DataTable loaded from the API
 - [`setDataTable()`](#setdatatable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly.
+- [`checkStandardDataTable()`](#checkstandarddatatable) &mdash; Checks that the API returned a normal DataTable (as opposed to DataTable\Map)
 - [`render()`](#render) &mdash; Requests all needed data and renders the view.
+- [`buildView()`](#buildview)
+- [`getDefaultDataTableCssClass()`](#getdefaultdatatablecssclass)
+- [`getOverridableProperties()`](#getoverridableproperties) &mdash; Returns the list of view properties that can be overriden by query parameters.
+- [`getPropertyFromQueryParam()`](#getpropertyfromqueryparam)
 - [`isRequestingSingleDataTable()`](#isrequestingsingledatatable) &mdash; Determine if the view data table requests a single data table or not.
 - [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Here you can define whether your visualization can display a specific data table or not.
 
@@ -117,6 +141,15 @@ modifying this config or creating an own RequestConfig class that extends the de
 #### Signature
 
 - It returns a(n) `Piwik\ViewDataTable\RequestConfig` value.
+
+<a name="loaddatatablefromapi" id="loaddatatablefromapi"></a>
+### `loadDataTableFromAPI()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$fixedRequestParams`
+- It does not return anything.
 
 <a name="getviewdatatableid" id="getviewdatatableid"></a>
 ### `getViewDataTableId()`
@@ -172,6 +205,17 @@ It won't be loaded again from the API in this case
 - _Returns:_ $dataTable DataTable
     - `void`
 
+<a name="checkstandarddatatable" id="checkstandarddatatable"></a>
+### `checkStandardDataTable()`
+
+Checks that the API returned a normal DataTable (as opposed to DataTable\Map)
+
+#### Signature
+
+- It returns a(n) `void` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
 <a name="render" id="render"></a>
 ### `render()`
 
@@ -181,6 +225,39 @@ Requests all needed data and renders the view.
 
 - _Returns:_ The result of rendering.
     - `string`
+
+<a name="buildview" id="buildview"></a>
+### `buildView()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="getdefaultdatatablecssclass" id="getdefaultdatatablecssclass"></a>
+### `getDefaultDataTableCssClass()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="getoverridableproperties" id="getoverridableproperties"></a>
+### `getOverridableProperties()`
+
+Returns the list of view properties that can be overriden by query parameters.
+
+#### Signature
+
+- It returns a(n) `array` value.
+
+<a name="getpropertyfromqueryparam" id="getpropertyfromqueryparam"></a>
+### `getPropertyFromQueryParam()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$name`
+    - `$defaultValue`
+- It does not return anything.
 
 <a name="isrequestingsingledatatable" id="isrequestingsingledatatable"></a>
 ### `isRequestingSingleDataTable()`

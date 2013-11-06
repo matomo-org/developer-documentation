@@ -11,14 +11,37 @@ Description
 All plugin APIs are singletons and thus extend this class.
 
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$instances`](#$instances)
+
+<a name="instances" id="instances"></a>
+### `$instances`
+
+#### Signature
+
+- Its type is not specified.
+
+
 Methods
 -------
 
 The class defines the following methods:
 
+- [`__construct()`](#__construct)
 - [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class.
 - [`unsetInstance()`](#unsetinstance) &mdash; Used in tests only
 - [`setSingletonInstance()`](#setsingletoninstance) &mdash; Sets the singleton instance.
+
+<a name="__construct" id="__construct"></a>
+### `__construct()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getinstance" id="getinstance"></a>
 ### `getInstance()`

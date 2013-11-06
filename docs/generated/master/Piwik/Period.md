@@ -28,6 +28,47 @@ periodically, while every other date range is archived on-demand.
     $periodObject = Period::advancedFactory($period, $date);
 
 
+Properties
+----------
+
+This abstract class defines the following properties:
+
+- [`$subperiods`](#$subperiods) &mdash; Array of subperiods
+- [`$subperiodsProcessed`](#$subperiodsprocessed)
+- [`$label`](#$label)
+- [`$date`](#$date)
+
+<a name="subperiods" id="subperiods"></a>
+### `$subperiods`
+
+Array of subperiods
+
+#### Signature
+
+- It is a(n) [`Period[]`](../Piwik/Period.md) value.
+
+<a name="subperiodsprocessed" id="subperiodsprocessed"></a>
+### `$subperiodsProcessed`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="label" id="label"></a>
+### `$label`
+
+#### Signature
+
+- It is a(n) `string` value.
+
+<a name="date" id="date"></a>
+### `$date`
+
+#### Signature
+
+- It is a(n) [`Date`](../Piwik/Date.md) value.
+
 Methods
 -------
 
@@ -41,8 +82,11 @@ The abstract class defines the following methods:
 - [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period.
 - [`getId()`](#getid) &mdash; Returns the period ID.
 - [`getLabel()`](#getlabel) &mdash; Returns the label for the current period.
+- [`getDate()`](#getdate)
+- [`generate()`](#generate)
 - [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods.
 - [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period.
+- [`addSubperiod()`](#addsubperiod) &mdash; Add a date to the period.
 - [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period.
 - [`__toString()`](#__tostring) &mdash; See [toString](#toString).
 - [`getPrettyString()`](#getprettystring) &mdash; Returns a pretty string describing this period.
@@ -142,6 +186,20 @@ Returns the label for the current period.
 - _Returns:_ `"day"`, `"week"`, `"month"`, `"year"`, `"range"`
     - `string`
 
+<a name="getdate" id="getdate"></a>
+### `getDate()`
+
+#### Signature
+
+- It returns a(n) [`Date`](../Piwik/Date.md) value.
+
+<a name="generate" id="generate"></a>
+### `generate()`
+
+#### Signature
+
+- It does not return anything.
+
 <a name="getnumberofsubperiods" id="getnumberofsubperiods"></a>
 ### `getNumberOfSubperiods()`
 
@@ -164,6 +222,21 @@ this would be 12 months. For a month this would be 28-31 days. Etc.
 #### Signature
 
 - It returns a(n) [`Period[]`](../Piwik/Period.md) value.
+
+<a name="addsubperiod" id="addsubperiod"></a>
+### `addSubperiod()`
+
+Add a date to the period.
+
+#### Description
+
+Protected because it not yet supported to add periods after the initialization
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$period`
+- It does not return anything.
 
 <a name="tostring" id="tostring"></a>
 ### `toString()`

@@ -68,6 +68,7 @@ This class defines the following properties:
 - [`$mappingFromIdToName`](#$mappingfromidtoname)
 - [`$mappingFromIdToNameGoal`](#$mappingfromidtonamegoal)
 - [`$mappingFromNameToId`](#$mappingfromnametoid)
+- [`$metricsAggregatedFromLogs`](#$metricsaggregatedfromlogs)
 
 <a name="mappingfromidtoname" id="mappingfromidtoname"></a>
 ### `$mappingFromIdToName`
@@ -87,6 +88,14 @@ This class defines the following properties:
 
 <a name="mappingfromnametoid" id="mappingfromnametoid"></a>
 ### `$mappingFromNameToId`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="metricsaggregatedfromlogs" id="metricsaggregatedfromlogs"></a>
+### `$metricsAggregatedFromLogs`
 
 #### Signature
 

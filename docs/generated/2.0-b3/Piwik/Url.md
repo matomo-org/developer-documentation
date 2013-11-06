@@ -50,6 +50,7 @@ The class defines the following methods:
 - [`getCurrentHost()`](#getcurrenthost) &mdash; Returns the current host.
 - [`getCurrentQueryString()`](#getcurrentquerystring) &mdash; Returns the query string of the current URL.
 - [`getArrayFromCurrentQueryString()`](#getarrayfromcurrentquerystring) &mdash; Returns an array mapping query paramater names with query parameter values for the current URL.
+- [`getCurrentQueryStringWithParametersModified()`](#getcurrentquerystringwithparametersmodified) &mdash; Modifies the current query string with the supplied parameters and returns the result.
 - [`getQueryStringFromParameters()`](#getquerystringfromparameters) &mdash; Converts an an array of parameters name => value mappings to a query string.
 - [`redirectToReferrer()`](#redirecttoreferrer) &mdash; Redirects the user to the referrer.
 - [`redirectToUrl()`](#redirecttourl) &mdash; Redirects the user to the specified URL.
@@ -158,6 +159,24 @@ Returns an array mapping query paramater names with query parameter values for t
 
 - _Returns:_ If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"` this will return: ``` array( 'param1' => string 'value1', 'param2' => string 'value2' ) ```
     - `array`
+
+<a name="getcurrentquerystringwithparametersmodified" id="getcurrentquerystringwithparametersmodified"></a>
+### `getCurrentQueryStringWithParametersModified()`
+
+Modifies the current query string with the supplied parameters and returns the result.
+
+#### Description
+
+Parameters in the current URL will be overwritten with values
+in `$params` and parameters absent from the current URL but present in `$params`
+will be added to the result.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$params`
+- _Returns:_ eg, `"?param2=value2&param3=value3"`
+    - `string`
 
 <a name="getquerystringfromparameters" id="getquerystringfromparameters"></a>
 ### `getQueryStringFromParameters()`

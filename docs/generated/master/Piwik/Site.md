@@ -25,7 +25,17 @@ Properties
 
 This class defines the following properties:
 
+- [`$id`](#$id)
 - [`$infoSites`](#$infosites)
+
+<a name="id" id="id"></a>
+### `$id`
+
+#### Signature
+
+- It can be one of the following types:
+    - `int`
+    - `null`
 
 <a name="infosites" id="infosites"></a>
 ### `$infoSites`
@@ -46,6 +56,7 @@ The class defines the following methods:
 - [`getName()`](#getname) &mdash; Returns the name of the site.
 - [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site.
 - [`getId()`](#getid) &mdash; Returns the id of the site.
+- [`get()`](#get) &mdash; Returns a site property by name.
 - [`getCreationDate()`](#getcreationdate) &mdash; Returns the creation date of the site.
 - [`getTimezone()`](#gettimezone) &mdash; Returns the timezone of the size.
 - [`getCurrency()`](#getcurrency) &mdash; Returns the currency of the site.
@@ -57,6 +68,7 @@ The class defines the following methods:
 - [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site.
 - [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site ids and returns them as an array.
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
+- [`getFor()`](#getfor) &mdash; Utility function.
 - [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
 - [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
 - [`getCreationDateFor()`](#getcreationdatefor) &mdash; Returns the creation date of the site with the specified ID.
@@ -145,6 +157,19 @@ Returns the id of the site.
 - It returns a(n) `int` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
+
+<a name="get" id="get"></a>
+### `get()`
+
+Returns a site property by name.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$name`
+- It returns a(n) `mixed` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getcreationdate" id="getcreationdate"></a>
 ### `getCreationDate()`
@@ -270,6 +295,23 @@ See also [setSites](#setSites) and [setSitesFromArray](#setSitesFromArray).
 #### Signature
 
 - It does not return anything.
+
+<a name="getfor" id="getfor"></a>
+### `getFor()`
+
+Utility function.
+
+#### Description
+
+Returns the value of the specified field for the
+site with the specified ID.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$idsite`
+    - `$field`
+- It returns a(n) `mixed` value.
 
 <a name="getnamefor" id="getnamefor"></a>
 ### `getNameFor()`

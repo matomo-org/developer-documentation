@@ -30,6 +30,8 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct)
+- [`init()`](#init) &mdash; Define your settings and introduction here.
+- [`setIntroduction()`](#setintroduction) &mdash; Sets (overwrites) the plugin settings introduction.
 - [`getIntroduction()`](#getintroduction)
 - [`getSettingsForCurrentUser()`](#getsettingsforcurrentuser) &mdash; Returns only settings that can be displayed for current user.
 - [`getSettings()`](#getsettings) &mdash; Get all available settings without checking any permissions.
@@ -38,6 +40,7 @@ The abstract class defines the following methods:
 - [`getSettingValue()`](#getsettingvalue) &mdash; Gets the current value for this setting.
 - [`setSettingValue()`](#setsettingvalue) &mdash; Sets (overwrites) the value for the given setting.
 - [`removeSettingValue()`](#removesettingvalue) &mdash; Removes the value for the given setting.
+- [`addSetting()`](#addsetting) &mdash; Adds a new setting.
 
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
@@ -46,6 +49,26 @@ The abstract class defines the following methods:
 
 - It accepts the following parameter(s):
     - `$pluginName`
+- It does not return anything.
+
+<a name="init" id="init"></a>
+### `init()`
+
+Define your settings and introduction here.
+
+#### Signature
+
+- It does not return anything.
+
+<a name="setintroduction" id="setintroduction"></a>
+### `setIntroduction()`
+
+Sets (overwrites) the plugin settings introduction.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$introduction`
 - It does not return anything.
 
 <a name="getintroduction" id="getintroduction"></a>
@@ -152,4 +175,17 @@ effect.
 - It accepts the following parameter(s):
     - `$setting` (`Piwik\Settings\Setting`)
 - It does not return anything.
+
+<a name="addsetting" id="addsetting"></a>
+### `addSetting()`
+
+Adds a new setting.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$setting` (`Piwik\Settings\Setting`)
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; In case a setting having the same name already exists. In case the name contains non-alnum characters.
 

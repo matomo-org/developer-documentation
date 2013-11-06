@@ -17,6 +17,28 @@ other ranges are displayed in minutes.
     $dataTable->filter('BeautifyTimeRangeLabels', array("%1$s-%2$s min", "1 min", "%s min"));
 
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$labelSecondsPlural`](#$labelsecondsplural) &mdash; A format string used to create pretty range labels when the range's lower bound is between 0 and 60.
+
+<a name="labelsecondsplural" id="labelsecondsplural"></a>
+### `$labelSecondsPlural`
+
+A format string used to create pretty range labels when the range's lower bound is between 0 and 60.
+
+#### Description
+
+This format string must take two numeric parameters, one for each
+range bound.
+
+#### Signature
+
+- Its type is not specified.
+
+
 Methods
 -------
 

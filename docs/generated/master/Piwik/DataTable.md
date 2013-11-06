@@ -167,6 +167,147 @@ This metadata value must be an array that maps column names with valid operation
 
 See [addDataTable](#addDataTable) and [DataTable\Row::sumRow](#) for more information.
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$rows`](#$rows) &mdash; Array of Row
+- [`$currentId`](#$currentid) &mdash; Id assigned to the DataTable, used to lookup the table using the DataTable_Manager
+- [`$depthLevel`](#$depthlevel) &mdash; Current depth level of this data table 0 is the parent data table
+- [`$indexNotUpToDate`](#$indexnotuptodate) &mdash; This flag is set to false once we modify the table in a way that outdates the index
+- [`$rebuildIndexContinuously`](#$rebuildindexcontinuously) &mdash; This flag sets the index to be rebuild whenever a new row is added, as opposed to re-building the full index when getRowFromLabel is called.
+- [`$tableSortedBy`](#$tablesortedby) &mdash; Column name of last time the table was sorted
+- [`$queuedFilters`](#$queuedfilters) &mdash; List of Filter queued to this table
+- [`$rowsCountBeforeLimitFilter`](#$rowscountbeforelimitfilter) &mdash; We keep track of the number of rows before applying the LIMIT filter that deletes some rows
+- [`$enableRecursiveSort`](#$enablerecursivesort) &mdash; Defaults to false for performance reasons (most of the time we don't need recursive sorting so we save a looping over the dataTable)
+- [`$enableRecursiveFilters`](#$enablerecursivefilters) &mdash; When the table and all subtables are loaded, this flag will be set to true to ensure filters are applied to all subtables
+- [`$rowsIndexByLabel`](#$rowsindexbylabel)
+- [`$summaryRow`](#$summaryrow)
+- [`$maximumAllowedRows`](#$maximumallowedrows) &mdash; Maximum number of rows allowed in this datatable (including the summary row).
+
+<a name="rows" id="rows"></a>
+### `$rows`
+
+Array of Row
+
+#### Signature
+
+- It is a(n) [`Row[]`](../Piwik/DataTable/Row.md) value.
+
+<a name="currentid" id="currentid"></a>
+### `$currentId`
+
+Id assigned to the DataTable, used to lookup the table using the DataTable_Manager
+
+#### Signature
+
+- It is a(n) `int` value.
+
+<a name="depthlevel" id="depthlevel"></a>
+### `$depthLevel`
+
+Current depth level of this data table 0 is the parent data table
+
+#### Signature
+
+- It is a(n) `int` value.
+
+<a name="indexnotuptodate" id="indexnotuptodate"></a>
+### `$indexNotUpToDate`
+
+This flag is set to false once we modify the table in a way that outdates the index
+
+#### Signature
+
+- It is a(n) `bool` value.
+
+<a name="rebuildindexcontinuously" id="rebuildindexcontinuously"></a>
+### `$rebuildIndexContinuously`
+
+This flag sets the index to be rebuild whenever a new row is added, as opposed to re-building the full index when getRowFromLabel is called.
+
+#### Description
+
+This is to optimize and not rebuild the full Index in the case where we
+add row, getRowFromLabel, addRow, getRowFromLabel thousands of times.
+
+#### Signature
+
+- It is a(n) `bool` value.
+
+<a name="tablesortedby" id="tablesortedby"></a>
+### `$tableSortedBy`
+
+Column name of last time the table was sorted
+
+#### Signature
+
+- It is a(n) `string` value.
+
+<a name="queuedfilters" id="queuedfilters"></a>
+### `$queuedFilters`
+
+List of Filter queued to this table
+
+#### Signature
+
+- It is a(n) `array` value.
+
+<a name="rowscountbeforelimitfilter" id="rowscountbeforelimitfilter"></a>
+### `$rowsCountBeforeLimitFilter`
+
+We keep track of the number of rows before applying the LIMIT filter that deletes some rows
+
+#### Signature
+
+- It is a(n) `int` value.
+
+<a name="enablerecursivesort" id="enablerecursivesort"></a>
+### `$enableRecursiveSort`
+
+Defaults to false for performance reasons (most of the time we don't need recursive sorting so we save a looping over the dataTable)
+
+#### Signature
+
+- It is a(n) `bool` value.
+
+<a name="enablerecursivefilters" id="enablerecursivefilters"></a>
+### `$enableRecursiveFilters`
+
+When the table and all subtables are loaded, this flag will be set to true to ensure filters are applied to all subtables
+
+#### Signature
+
+- It is a(n) `bool` value.
+
+<a name="rowsindexbylabel" id="rowsindexbylabel"></a>
+### `$rowsIndexByLabel`
+
+#### Signature
+
+- It is a(n) `array` value.
+
+<a name="summaryrow" id="summaryrow"></a>
+### `$summaryRow`
+
+#### Signature
+
+- It is a(n) [`Row`](../Piwik/DataTable/Row.md) value.
+
+<a name="maximumallowedrows" id="maximumallowedrows"></a>
+### `$maximumAllowedRows`
+
+Maximum number of rows allowed in this datatable (including the summary row).
+
+#### Description
+
+If adding more rows is attempted, the extra rows get summed to the summary row.
+
+#### Signature
+
+- It is a(n) `int` value.
+
 Methods
 -------
 

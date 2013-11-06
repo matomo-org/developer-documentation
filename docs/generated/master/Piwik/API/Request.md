@@ -41,6 +41,21 @@ In most cases, using a Request object to query the API is the right way to go.
     echo "This DataTable has " . $dataTable->getRowsCount() . " rows.";
 
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$request`](#$request)
+
+<a name="request" id="request"></a>
+### `$request`
+
+#### Signature
+
+- Its type is not specified.
+
+
 Methods
 -------
 

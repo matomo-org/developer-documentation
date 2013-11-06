@@ -52,13 +52,38 @@ This class defines the following constants:
 
 - `SEGMENT_TRUNCATE_LIMIT` &mdash; Truncate the Segments to 8k
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$segment`](#$segment)
+- [`$availableSegments`](#$availablesegments)
+
+<a name="segment" id="segment"></a>
+### `$segment`
+
+#### Signature
+
+- It is a(n) `Piwik\SegmentExpression` value.
+
+<a name="availablesegments" id="availablesegments"></a>
+### `$availableSegments`
+
+#### Signature
+
+- Its type is not specified.
+
+
 Methods
 -------
 
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`initializeSegment()`](#initializesegment)
 - [`isEmpty()`](#isempty) &mdash; Returns true if the segment is empty, false if otherwise.
+- [`getCleanedExpression()`](#getcleanedexpression)
 - [`getString()`](#getstring) &mdash; Returns the segment condition.
 - [`getHash()`](#gethash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
 - [`getSelectQuery()`](#getselectquery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
@@ -75,6 +100,18 @@ Constructor.
     - `$idSites`
 - It does not return anything.
 
+<a name="initializesegment" id="initializesegment"></a>
+### `initializeSegment()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$string`
+    - `$idSites`
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
 <a name="isempty" id="isempty"></a>
 ### `isEmpty()`
 
@@ -82,6 +119,15 @@ Returns true if the segment is empty, false if otherwise.
 
 #### Signature
 
+- It does not return anything.
+
+<a name="getcleanedexpression" id="getcleanedexpression"></a>
+### `getCleanedExpression()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$expression`
 - It does not return anything.
 
 <a name="getstring" id="getstring"></a>

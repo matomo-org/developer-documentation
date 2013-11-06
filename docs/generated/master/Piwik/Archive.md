@@ -110,6 +110,7 @@ Methods
 
 The class defines the following methods:
 
+- [`__construct()`](#__construct)
 - [`build()`](#build) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional Segment.
 - [`factory()`](#factory) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
 - [`getNumeric()`](#getnumeric) &mdash; Queries and returns metric data in an array.
@@ -121,6 +122,17 @@ The class defines the following methods:
 - [`getDataTableFromArchive()`](#getdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
 - [`getParams()`](#getparams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 - [`getPluginForReport()`](#getpluginforreport) &mdash; Returns the name of the plugin that archives a given report.
+
+<a name="__construct" id="__construct"></a>
+### `__construct()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$params` (`Piwik\Archive\Parameters`)
+    - `$forceIndexedBySite`
+    - `$forceIndexedByDate`
+- It does not return anything.
 
 <a name="build" id="build"></a>
 ### `build()`

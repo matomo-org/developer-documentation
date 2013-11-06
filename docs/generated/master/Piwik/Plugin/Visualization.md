@@ -28,7 +28,10 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`buildView()`](#buildview)
 - [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable.
+- [`isThereDataToDisplay()`](#istheredatatodisplay)
+- [`getClientSideParametersToSet()`](#getclientsideparameterstoset) &mdash; This functions reads the customization values for the DataTable and returns an array (name,value) to be printed in Javascript.
 - [`beforeLoadDataTable()`](#beforeloaddatatable) &mdash; Hook that is intended to change the request config that is sent to the API.
 - [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](#beforegenericfiltersareappliedtoloadeddatatable) &mdash; Hook that is executed before generic filters like "filter_limit" and "filter_offset" are applied
 - [`afterGenericFiltersAreAppliedToLoadedDataTable()`](#aftergenericfiltersareappliedtoloadeddatatable) &mdash; This hook is executed after generic filters like "filter_limit" and "filter_offset" are applied
@@ -53,6 +56,13 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
     - `$apiMethodToRequestDataTable`
 - It does not return anything.
 
+<a name="buildview" id="buildview"></a>
+### `buildView()`
+
+#### Signature
+
+- It does not return anything.
+
 <a name="assigntemplatevar" id="assigntemplatevar"></a>
 ### `assignTemplateVar()`
 
@@ -69,6 +79,35 @@ assign either one variable by setting $vars and $value or an array of key/value 
     - `$vars`
     - `$value`
 - It does not return anything.
+
+<a name="istheredatatodisplay" id="istheredatatodisplay"></a>
+### `isThereDataToDisplay()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="getclientsideparameterstoset" id="getclientsideparameterstoset"></a>
+### `getClientSideParametersToSet()`
+
+This functions reads the customization values for the DataTable and returns an array (name,value) to be printed in Javascript.
+
+#### Description
+
+This array defines things such as:
+- name of the module & action to call to request data for this table
+- optional filters information, eg. filter_limit and filter_offset
+- etc.
+
+The values are loaded:
+- from the generic filters that are applied by default @see Piwik_API_DataTableGenericFilter.php::getGenericFiltersInformation()
+- from the values already available in the GET array
+- from the values set using methods from this class (eg. setSearchPattern(), setLimit(), etc.)
+
+#### Signature
+
+- _Returns:_ eg. array('show_offset_information' => 0, 'show_...
+    - `array`
 
 <a name="beforeloaddatatable" id="beforeloaddatatable"></a>
 ### `beforeLoadDataTable()`
