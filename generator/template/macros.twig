@@ -1,11 +1,11 @@
-{% macro class_item(class, short = false, indent = "") -%}
-{{ indent }}- {{ _self.class_name(class, short) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc|raw }}{% endif %}
+{% macro class_item(class, short = false, indent = "", replacePiwik = false) -%}
+{{ indent }}- {{ _self.class_name(class, short, "", replacePiwik) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc|raw }}{% endif %}
 {%- endmacro -%}
 
-{% macro class_name(class, short = false, suffix = "") -%}
+{% macro class_name(class, short = false, suffix = "", replacePiwik = false) -%}
 {% spaceless -%}
 {% if class.projectclass or class.phpclass %}
-[`{{ short ? class.shortname : class }}{{ suffix }}`]({% if class.projectclass %}{{ _self.markdown_path(class_path(class)) }}{% else %}http://php.net/class.{{ class }}{% endif %})
+[`{{ (short ? class.shortname : class)|replace({'Piwik\\': (replacePiwik ? '' : 'Piwik\\')}) }}{{ suffix }}`]({% if class.projectclass %}{{ _self.markdown_path(class_path(class)) }}{% else %}http://php.net/class.{{ class }}{% endif %})
 {% else %}
 `{{ class }}`
 {% endif %}

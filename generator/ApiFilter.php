@@ -43,7 +43,7 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
 
     public function acceptMethod(MethodReflection $method)
     {
-        if (!$method->isPublic()) {
+        if ($method->isPrivate()) {
             return false;
         }
 
@@ -60,7 +60,7 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
 
     public function acceptProperty(PropertyReflection $property)
     {
-        if (!$property->isPublic()) {
+        if ($property->isPrivate()) {
             return false;
         }
 
@@ -79,7 +79,11 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
     {
         $rc = new ReflectionClass($class->getName());
 
-        return $rc->isSubclassOf('Symfony\Component\Console\Command\Command');
+        if ($rc->isSubclassOf('Symfony\Component\Console\Command\Command')) {
+            return true;
+        }
+
+        return $rc->isSubclassOf('Piwik\Plugin\Controller');
     }
 
 
