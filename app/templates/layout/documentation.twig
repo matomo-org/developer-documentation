@@ -25,11 +25,11 @@
 
                             <div class="bs-sidebar">
                                 <ul class="nav nav-pills nav-stacked bs-sidenav">
-                                    <li>
-                                        {% for cat in categories %}
-                                        <a href="{{ cat.url }}"> {{ cat.title }}</a>
-                                        {% endfor %}
-                                    </li>
+                                    {% for cat in categories %}
+                                        <li>
+                                            <a href="{{ cat.url }}"> {{ cat.title }}</a>
+                                        </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
