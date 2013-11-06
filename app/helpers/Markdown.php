@@ -92,6 +92,8 @@ class Markdown {
         $this->transformIfNeeded();
 
         $sectionName = str_replace('/', '\/', $sectionName);
+        $sectionName = str_replace('\\', '\\\\', $sectionName);
+        
         $matches = array();
         $pattern = sprintf('/>%s<\/h2>(.*?)(<h2|$)/is', $sectionName);
 

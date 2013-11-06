@@ -15,6 +15,13 @@ class ApiReference {
         return '/api-reference/' . $key;
     }
 
+    public static function getClassNames()
+    {
+        $doc = new Document('generated/master/Classnames');
+
+        return $doc->getSections();
+    }
+
     public static function getReferences()
     {
         $menu = array();

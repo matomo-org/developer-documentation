@@ -69,7 +69,7 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
         'sectionTitle' => $className,
-        'categories'   => ApiReference::getReferences()
+        'categories'   => ApiReference::getClassNames()
     ));
 
 });
