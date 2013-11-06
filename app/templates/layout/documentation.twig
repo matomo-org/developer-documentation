@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <a data-toggle="collapse" data-parent="#sidebar" href="#collapseOne">
                             {% if menu and menu[activeMenu] %}
                             {{ menu[activeMenu].title }}
                             {% else %}
@@ -35,7 +35,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        <a data-toggle="collapse" data-parent="#sidebar" href="#collapseTwo">
                             {{ sectionTitle|e|replace({'/': '/&#8203;'})|raw }}
                         </a>
                     </h4>
