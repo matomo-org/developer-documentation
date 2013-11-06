@@ -101,6 +101,7 @@ $app->get('/guides/:category', function ($category) use ($app) {
 
 $app->post('/receive-commit-hook', function () use ($app) {
 
+    system('git pull');
     \helpers\Cache::invalidate();
 
     echo 'Here is a cookie!';
