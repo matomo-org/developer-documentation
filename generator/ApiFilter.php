@@ -47,6 +47,10 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
             return false;
         }
 
+        if ($method->isProtected() && !$this->hasApiTag($method)) {
+            return false;
+        }
+
         if ($this->hasApiTag($method)) {
             return true;
         }
@@ -61,6 +65,10 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
     public function acceptProperty(PropertyReflection $property)
     {
         if ($property->isPrivate()) {
+            return false;
+        }
+
+        if ($property->isProtected() && !$this->hasApiTag($property)) {
             return false;
         }
 
