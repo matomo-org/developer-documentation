@@ -2,6 +2,24 @@ body {
     padding-top: 80px;
 }
 
+#sidebar {
+    opacity: 0.65;
+    -webkit-transition: opacity 200ms linear;
+    -moz-transition: opacity 200ms linear;
+    -ms-transition: opacity 200ms linear;
+    -o-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+}
+
+#sidebar:hover {
+    opacity: 0.8;
+    -webkit-transition: opacity 200ms linear;
+    -moz-transition: opacity 200ms linear;
+    -ms-transition: opacity 200ms linear;
+    -o-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+}
+
 .jumbotron {
     padding-top: 48px;
     padding-bottom: 48px;
