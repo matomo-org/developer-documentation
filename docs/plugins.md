@@ -42,22 +42,18 @@ If you want to listen to a specific event, and trigger your own function when th
 
 For example if you want to execute your function `AddCityInformation()` when a new visitor is recorded by Piwik (hook `Tracker.newVisitorInformation`), in your class `MyPlugin` you would define a method:
 
-```
-function getListHooksRegistered()
+<pre><code>function getListHooksRegistered()
 {
     return array( 'Tracker.newVisitorInformation' => 'AddCityInformation' );
-}
-```
+}</code></pre>
 
 The hook `Tracker.newVisitorInformation` has an argument: an array containing the visitor’s information. You can add new elements to this array. Example:
 
-```
-function AddCityInformation( &$visitorInfo )
+<pre><code>function AddCityInformation( &$visitorInfo )
 {
     // we modify the variable, adding the new city field
     $visitorInfo['city'] = 'Paris, France';
-}
-```
+}</code></pre>
 
 You can have a look at the [provider plugin](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L31) to see an example of a plugin registering actions for multiple hooks.
 
@@ -73,7 +69,7 @@ Piwik_PostEvent( $eventName,  [ $object , [ $info ]])
 or in Twig templates:
 
 ```
-{{ '{{ postEvent($eventName) }}' }}
+{{ postEvent($eventName) }}
 ```
 By convention, the event name should be prefixed by the Plugin name.
 
@@ -212,7 +208,7 @@ or worse still:
 include($page);
 </code></pre>
 
-The user could set the `$lib_dir` or `$page` variables and include files such as `/etc/passwd` or remote files such as [http://www.example-hacker-website.com/whatever.php][1] with malicious code. This malicious code could potentially delete files, corrupt databases, or change the values of variables used to track authentication status.
+The user could set the `$lib_dir` or `$page` variables and include files such as `/etc/passwd` or remote files such as [http://www.example-hacker-website.com/whatever.php](http://www.example-hacker-website.com/whatever.php) with malicious code. This malicious code could potentially delete files, corrupt databases, or change the values of variables used to track authentication status.
 
 When using functions such as `readfile, fopen, file, include, require` using user data, you must be careful!
 
@@ -289,12 +285,8 @@ This is a recommendation for any PHP file that allows for direct execution. If i
 
 ### References
 
-* [Top 10 Security from The Open Web Application Security Project (OWASP)][2]
-* Top 10 php security list [part 1][3], [part 2][4]
- [1]: http://www.example-hacker-website.com/whatever.php
- [2]: http://www.owasp.org/index.php/Top_10_2007
- [3]: http://www.onlamp.com/pub/a/php/2003/03/20/php_security.html
- [4]: http://www.onlamp.com/pub/a/php/2003/04/03/php_security.html?CMP=AFC-ak_article&ATT=Ten+Security+Checks+for+PHP%2c+Part+2
+* [Top 10 Security from The Open Web Application Security Project (OWASP)](http://www.owasp.org/index.php/Top_10_2007)
+* Top 10 php security list [part 1](http://www.onlamp.com/pub/a/php/2003/03/20/php_security.html), [part 2](http://www.onlamp.com/pub/a/php/2003/04/03/php_security.html?CMP=AFC-ak_article&ATT=Ten+Security+Checks+for+PHP%2c+Part+2)
 
 #### Handle user/untrusted input
 #### Handling output

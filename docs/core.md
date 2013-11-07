@@ -13,7 +13,7 @@ In Piwik, we believe in **tested** and **readable** source code. This is why we 
 *   **Configuration and Constants** Does your code use constants that different users may want to change? These constants should be configurable.
 *   **Failure Handling** Does your code handle all error conditions, including corner cases? We do not want code with bugs in it.
 *   **Performance** Does your code scale well? What happens when there are hundreds of thousands of websites and billions of visits? If there are performance issues, are they easy to fix? We know how hard it can be to scale efficiently, but we would like for Piwik to be as fast as possible.
-*   ** Security** Are you using the [proper helper method](http://piwik.org/docs/plugins/security-checklist/) to retrieve GET or POST variables? Are you properly checking for user permissions to restrict data access?
+*   **Security** Are you using the [proper helper method](#security) to retrieve GET or POST variables? Are you properly checking for user permissions to restrict data access?
 *   **i18n** If your plugin contains text, is it all loaded from a language file?
 *   **View VS Controller** Does your php code contain any HTML? If your code outputs data in the browser, the output should be defined in a separate View template file (.tpl).
 *   **GPL Compatibility** Are any third-party components/libraries included? Are the licenses for them compatible with GPL v3? This is the license Piwik uses.
@@ -30,8 +30,8 @@ In Piwik, we believe in **tested** and **readable** source code. This is why we 
 
 Committed code should not generate php errors or warnings. Applying the following settings to your php configuration will enable you to achieve this goal:
 
-*   display_errors = On (php.ini)
-*   error_reporting = E_ALL | E_STRICT (php.ini)
+<pre><code>display_errors  = On (php.ini)
+error_reporting = E_ALL | E_STRICT (php.ini)</code></pre>
 
 ### Include Path
 
@@ -43,7 +43,7 @@ Piwik does not set or depend on the include path. Plugins should rely on the aut
 
 We have **high security standards**.
 
-All plugins developers should carefully read the page about **[Security in Piwik code](../../plugins/security-checklist)**.
+All plugins developers should carefully read the page about **[Security in Piwik code](/guides/plugins#security)**.
 
 ### Basic Clean Code recommendations
 
@@ -52,7 +52,7 @@ About classes:
 *   A class should follow the Single Responsibility Principle.
 *   Refactor classes and aim for files/classes that are at most 400 lines.
 *   Avoid classes with both public attributes and getters/setters. Choose to use getters and setters only when they make code easier to read.
-*   Add "private" keywords to class attributes when forgotten.
+*   Add `private` keywords to class attributes when forgotten.
 
 About methods and functions:
 
@@ -80,7 +80,7 @@ Despite their importance, comments can sometimes cause information overload &mda
 
 ### Debug &amp; logging
 
-In Piwik you can easily log debug messages to files, the database or the screen by enabling logging in your config/config.ini.php file. In your code, you can then call Piwik::log($message); to log new messages, or arrays. You can also show the debug output on screen by appending &amp;debug to the URL: this allows you to test and view debug messages only when needed, but still leave debug logging enabled. **See the FAQ to [enable logging output in Piwik ](http://piwik.org/faq/troubleshooting/#faq_115)and the various options.**
+In Piwik you can easily log debug messages to files, the database or the screen by enabling logging in your config/config.ini.php file. In your code, you can then call `Piwik::log($message)`; to log new messages, or arrays. You can also show the debug output on screen by appending &amp;debug to the URL: this allows you to test and view debug messages only when needed, but still leave debug logging enabled. **See the FAQ to [enable logging output in Piwik ](http://piwik.org/faq/troubleshooting/#faq_115)and the various options.**
 
 Piwik also comes with a SQL profiler, which reports the time spent by each query, how many times they were called, the total time spent in Mysql vs php, etc. It makes it easier to check the performance and overhead of your new code. See the FAQ to see how enable [SQL profiling](http://piwik.org/faq/troubleshooting/#faq_115).
 
@@ -119,7 +119,7 @@ _See also: [List of Features](http://piwik.org/features/), [Consultants](http://
 
 _This is a checklist describing every User Interface features of piwik that you have to test after any modification in UI code, or before any public release._
 
-** If you have modified the Javascript code, CSS, HTML, or PHP code that can be related to the User Interface, you have to go through this list to make sure everything is still working.**
+**If you have modified the Javascript code, CSS, HTML, or PHP code that can be related to the User Interface, you have to go through this list to make sure everything is still working.**
 
 ### Asset Merging
 
@@ -144,7 +144,7 @@ These different features should be tested within several browsers:
 *   Internet Explorer with Debug enabled (set debugging in Tools &gt; Internet &gt; Advanced &gt; Debug),
 *   Opera,
 *   Safari,
-*   CHrome
+*   Chrome
 
 To help testing you may generate screenshots of the page on a web server using http://browsershots.org/
 
@@ -307,15 +307,15 @@ In the top menu click on "Widgetize".
 
 ###  Testing the installer
 
-To view the installation screens, rename the file config/config.ini.php to config/_config.ini.php
+To view the installation screens, rename the file `config/config.ini.php` to `config/_config.ini.php`
 
 Refresh Piwik: you will be prompted to install Piwik. Install in a new database or use a different prefix to go through the install steps.
 
 ### Testing the Updater
 
-To test the updater process, first update the Piwik version number in the core/Version.php file, for example to 2.0-b100 (if you are using less than 2.0). Next, you need to create a new file in core/Updates/2.0-b100.php, copying an existing Update file for inspiration (rename the class to Piwik_Updates_2_0_b100).
+To test the updater process, first update the Piwik version number in the `core/Version.php` file, for example to 2.0-b100 (if you are using less than 2.0). Next, you need to create a new file in `core/Updates/2.0-b100.php`, copying an existing Update file for inspiration (rename the class to `Piwik_Updates_2_0_b100`).
 
-Refresh Piwik and you should see the Update screen. If you click "Update" and need to test the Updater again, you can update the version Piwik think it is using with the SQL query (source: [faq](http://piwik.org/faq/how-to-update/#faq_179)):
+Refresh Piwik and you should see the Update screen. If you click "Update" and need to test the Updater again, you can update the version Piwik think it is using with the SQL query (source: [FAQ](http://piwik.org/faq/how-to-update/#faq_179)):
 
 <pre>UPDATE `piwik_option` SET option_value = "1.X" WHERE option_name = "version_core";</pre>
 
