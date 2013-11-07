@@ -117,10 +117,8 @@ The class defines the following methods:
 - [`getDataTableFromNumeric()`](#getdatatablefromnumeric) &mdash; Queries and returns metric data in a DataTable instance.
 - [`getDataTable()`](#getdatatable) &mdash; Queries and returns a single report as a DataTable instance.
 - [`getDataTableExpanded()`](#getdatatableexpanded) &mdash; Queries and returns one report with all of its subtables loaded.
-- [`getRequestedPlugins()`](#getrequestedplugins) &mdash; Returns the list of plugins that archive the given reports.
-- [`getDataTableFromArchive()`](#getdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
 - [`getParams()`](#getparams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
-- [`getPluginForReport()`](#getpluginforreport) &mdash; Returns the name of the plugin that archives a given report.
+- [`getDataTableFromArchive()`](#getdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
 
 <a name="build" id="build"></a>
 <a name="build" id="build"></a>
@@ -309,17 +307,15 @@ indexed by period.
     - `$addMetadataSubtableId`
 - It returns a [`DataTable`](../Piwik/DataTable.md) value.
 
-<a name="getrequestedplugins" id="getrequestedplugins"></a>
-<a name="getRequestedPlugins" id="getRequestedPlugins"></a>
-### `getRequestedPlugins()`
+<a name="getparams" id="getparams"></a>
+<a name="getParams" id="getParams"></a>
+### `getParams()`
 
-Returns the list of plugins that archive the given reports.
+Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$archiveNames`
-- It returns a `array` value.
+- It returns a `Piwik\Archive\Parameters` value.
 
 <a name="getdatatablefromarchive" id="getdatatablefromarchive"></a>
 <a name="getDataTableFromArchive" id="getDataTableFromArchive"></a>
@@ -345,29 +341,4 @@ API methods can use this method to reduce code redundancy.
 - _Returns:_ @see [getDataTable](#getDataTable) and [getDataTableExpanded](#getDataTableExpanded) for more information
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)
-
-<a name="getparams" id="getparams"></a>
-<a name="getParams" id="getParams"></a>
-### `getParams()`
-
-Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
-
-#### Signature
-
-- It returns a `Piwik\Archive\Parameters` value.
-
-<a name="getpluginforreport" id="getpluginforreport"></a>
-<a name="getPluginForReport" id="getPluginForReport"></a>
-### `getPluginForReport()`
-
-Returns the name of the plugin that archives a given report.
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$report`
-- _Returns:_ Plugin name.
-    - `string`
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If a plugin cannot be found or if the plugin for the report isn&#039;t activated.
 
