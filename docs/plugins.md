@@ -89,11 +89,9 @@ Each public method within this class will be accessible over the API. Adding new
 #### Authenticate users
 
 ### Writing tests for your plugin
-We are sure you love tests as much as we do. That's why we want to make it as easy as possible for you to write tests. You can write three different types of tests for your plugin: 
+We are sure you love tests as much as we do. That's why we want to make it as easy as possible for you to write tests. 
 
- * Unit test
- * Integration test
- * Integration test that needs a database
+#### Generating a test class
 
 To create a test we highly recommend to use our [cli tool](#cli-tool). You can create a new test to executing the following command:
 
@@ -101,7 +99,23 @@ To create a test we highly recommend to use our [cli tool](#cli-tool). You can c
 
 Enter your plugin name as well as a test name and you can already start writing beautiful tests. The command will generate a `tests` folder within your plugin directory if it does not already exist and create a test file containing a dummy test depending on the entered test name.
 
-To execute a test simply execute the following command:
+#### Creating different kind of tests
+
+You can write three different types of tests for your plugin: 
+
+ * Unit test
+ * Integration test
+ * Integration test that needs a database
+
+By default we create a unit test for you. But there is an optional option to directly create a different kind of test:
+
+`./console generate:test -t "unit"`
+`./console generate:test -t "integration"`
+`./console generate:test -t "database"`
+
+#### Executing tests
+
+To execute all your plugin tests simply run the following command:
 
 `./console tests:run PluginName`
 
