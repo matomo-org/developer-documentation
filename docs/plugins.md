@@ -95,21 +95,23 @@ We are sure you love tests as much as we do. That's why we want to make it as ea
  * Integration test
  * Integration test that needs a database
 
-To create a test we highly recommend to use our [cli tool](#cli-tool) `console`. You can create a new test to executing the following command:
+To create a test we highly recommend to use our [cli tool](#cli-tool). You can create a new test to executing the following command:
 
 `./console generate:test`
 
-Choose or enter your plugin name as well as a test name and you can already start writing beautiful tests. The command will generate a `tests` folder within your plugin directory if it does not already exist and create a test file containing a dummy test depending on your entered test name.
+Enter your plugin name as well as a test name and you can already start writing beautiful tests. The command will generate a `tests` folder within your plugin directory if it does not already exist and create a test file containing a dummy test depending on the entered test name.
 
 To execute a test simply execute the following command:
 
 `./console tests:run PluginName`
 
-Replace `PluginName` with your plugin name. Note: The plugin name has is case sensitive. You can run a single test file as well by executing the following command:
+Do not forget to replace `PluginName` with your plugin name. Note: The plugin name is case sensitive. 
+
+You can run a single test file as well by executing the following command:
 
 `./console tests:run Testname`
 
-Note: The testname is case sensitive as well. 
+The testname is case sensitive as well. 
 
 ### How to create a Controller
 
