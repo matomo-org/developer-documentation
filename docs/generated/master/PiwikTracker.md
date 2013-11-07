@@ -26,7 +26,7 @@ This class defines the following properties:
 - [`$URL`](#$url) &mdash; Piwik base URL, for example http://example.org/piwik/ Must be set before using the class by calling  PiwikTracker::$URL = 'http://yourwebsite.org/piwik/';
 - [`$DEBUG_APPEND_URL`](#$debug_append_url)
 
-<a name="url" id="url"></a>
+<a name="$url" id="$url"></a>
 <a name="URL" id="URL"></a>
 ### `$URL`
 
@@ -36,7 +36,7 @@ Piwik base URL, for example http://example.org/piwik/ Must be set before using t
 
 - It is a `string` value.
 
-<a name="debug_append_url" id="debug_append_url"></a>
+<a name="$debug_append_url" id="$debug_append_url"></a>
 <a name="DEBUG_APPEND_URL" id="DEBUG_APPEND_URL"></a>
 ### `$DEBUG_APPEND_URL`
 

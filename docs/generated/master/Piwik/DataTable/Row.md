@@ -29,7 +29,7 @@ This class defines the following properties:
 - [`$c`](#$c) &mdash; This array contains the row information: - array indexed by self::COLUMNS contains the columns, pairs of (column names, value) - (optional) array indexed by self::METADATA contains the metadata,  pairs of (metadata name, value) - (optional) integer indexed by self::DATATABLE_ASSOCIATED contains the ID of the DataTable associated to this row.
 - [`$maxVisitsSummed`](#$maxvisitssummed)
 
-<a name="c" id="c"></a>
+<a name="$c" id="$c"></a>
 <a name="c" id="c"></a>
 ### `$c`
 
@@ -43,7 +43,7 @@ This ID can be used to read the DataTable from the DataTable_Manager.
 
 - It is a `array` value.
 
-<a name="maxvisitssummed" id="maxvisitssummed"></a>
+<a name="$maxvisitssummed" id="$maxvisitssummed"></a>
 <a name="maxVisitsSummed" id="maxVisitsSummed"></a>
 ### `$maxVisitsSummed`
 

@@ -44,7 +44,7 @@ This abstract class defines the following properties:
 - [`$idSite`](#$idsite) &mdash; The value of the `'idSite'` query parameter.
 - [`$site`](#$site) &mdash; The Site object created with ($idSite)[#idSite].
 
-<a name="pluginname" id="pluginname"></a>
+<a name="$pluginname" id="$pluginname"></a>
 <a name="pluginName" id="pluginName"></a>
 ### `$pluginName`
 
@@ -58,7 +58,7 @@ The plugin name, eg.
 
 - It is a `string` value.
 
-<a name="strdate" id="strdate"></a>
+<a name="$strdate" id="$strdate"></a>
 <a name="strDate" id="strDate"></a>
 ### `$strDate`
 
@@ -68,7 +68,7 @@ The value of the `'date'` query parameter.
 
 - It is a `string` value.
 
-<a name="date" id="date"></a>
+<a name="$date" id="$date"></a>
 <a name="date" id="date"></a>
 ### `$date`
 
@@ -80,7 +80,7 @@ The Date object created with ($strDate)[#strDate] or null if the requested date 
     - [`Date`](../../Piwik/Date.md)
     - `null`
 
-<a name="idsite" id="idsite"></a>
+<a name="$idsite" id="$idsite"></a>
 <a name="idSite" id="idSite"></a>
 ### `$idSite`
 
@@ -90,7 +90,7 @@ The value of the `'idSite'` query parameter.
 
 - It is a `int` value.
 
-<a name="site" id="site"></a>
+<a name="$site" id="$site"></a>
 <a name="site" id="site"></a>
 ### `$site`
 

@@ -27,7 +27,7 @@ This class defines the following properties:
 
 - [`$infoSites`](#$infosites)
 
-<a name="infosites" id="infosites"></a>
+<a name="$infosites" id="$infosites"></a>
 <a name="infoSites" id="infoSites"></a>
 ### `$infoSites`
 

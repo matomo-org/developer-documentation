@@ -59,7 +59,7 @@ This class defines the following properties:
 - [`$context`](#$context) &mdash; Context of the notification.
 - [`$priority`](#$priority) &mdash; The priority of the notification, the higher the priority, the higher the order.
 
-<a name="title" id="title"></a>
+<a name="$title" id="$title"></a>
 <a name="title" id="title"></a>
 ### `$title`
 
@@ -73,7 +73,7 @@ For instance the plugin name. The title is optional.
 
 - It is a `string` value.
 
-<a name="message" id="message"></a>
+<a name="$message" id="$message"></a>
 <a name="message" id="message"></a>
 ### `$message`
 
@@ -87,7 +87,7 @@ Must be set.
 
 - It is a `string` value.
 
-<a name="flags" id="flags"></a>
+<a name="$flags" id="$flags"></a>
 <a name="flags" id="flags"></a>
 ### `$flags`
 
@@ -95,7 +95,7 @@ Must be set.
 
 - It is a `int` value.
 
-<a name="type" id="type"></a>
+<a name="$type" id="$type"></a>
 <a name="type" id="type"></a>
 ### `$type`
 
@@ -109,7 +109,7 @@ See self::TYPE_*
 
 - It is a `string` value.
 
-<a name="context" id="context"></a>
+<a name="$context" id="$context"></a>
 <a name="context" id="context"></a>
 ### `$context`
 
@@ -123,7 +123,7 @@ For instance info, warning, success or error.
 
 - It is a `string` value.
 
-<a name="priority" id="priority"></a>
+<a name="$priority" id="$priority"></a>
 <a name="priority" id="priority"></a>
 ### `$priority`
 
