@@ -150,6 +150,151 @@ parent:: methods, checkUser* auth helpers, ...
 ### Scheduled Tasks
 ### Translating your plugins
 ## Security
+
+*This page aims to provide a quick reference on how to secure your PHP code, when developing Piwik Plugins*
+
+### Always load the GET/POST/etc. using Piwik_Common::getRequestVar()
+
+To be protected against Cross Site Scripting (XSS) you need to load all external variables using the function `Piwik::getRequestVar()`.
+
+Example: If you have a URL that looks like
+
+<pre><code>piwik/index.php?module=Home&date=yesterday</code></pre>
+
+If you want to read the `$_GET['date']` value, don't read it directly but use `Piwik_Common::getRequestVar('date')`
+
+* see `Piwik_Common::getRequestVar()` implementation for more details
+* see `Piwik_Common::sanitizeInputValues()` if you simply want to clean a given value (not coming from GET/POST/etc.) against XSS. Note that `Piwik_Common::getRequestVar()` calls `Piwik_Common::sanitizeInputValues()`.
+
+### Use the Piwik functions & bind parameters to execute SQL queries
+
+SQL injections make it possible for attackers to modify certain unsafe SQL queries, your script executes, in such a way that it could alter data in your database or give out sensible data to the attacker. That is because of unvalidated user input.
+
+Take a look at this code:
+
+<pre><code>&lt;?php
+    $idsite = $_GET['value'];
+    Piwik_Query( "SELECT * FROM ".Piwik_Common::prefixTable('site')." WHERE idsite = $idsite" );
+</code></pre>
+
+An attacker could hand over a string like `1 OR 1`, the query results in `"SELECT * FROM piwik_site WHERE idsite = 1 OR 1"`, thus returning all rows from piwik_site. We're not going into details here, SQL injections are covered quite well on the web. Please take a look at the resources listed at the bottom of this post.
+
+To safely execute SQL queries in Piwik, you have to **bind all the parameters passed to the SQL queries**. Use the following helper functions and provide query parameters using the `$parameters` array.
+
+* `function Piwik_Query( $sqlQuery, $parameters = array())`
+* `function Piwik_FetchAll( $sqlQuery, $parameters = array())`
+* `function Piwik_FetchOne( $sqlQuery, $parameters = array())`
+
+Example of binded parameters with `Piwik_FetchOne`
+
+<pre><code>&lt;?php
+$feedburnerFeedName = Piwik_FetchOne('SELECT feedburnerName
+    FROM '.Piwik_Common::prefixTable('site').
+    ' WHERE idsite = ? and name = ?',
+    array( Piwik_Common::getRequestVar('idSite'), Piwik_Common::getRequestVar('name') )
+);
+</code></pre>
+
+### Secure your software against remote file inclusion
+
+Consider the following code:
+
+<pre><code>&lt;?php
+// $lib_dir is an optional configuration variable
+include($lib_dir . "functions.inc");
+</code></pre>
+
+or worse still:
+
+<pre><code>&lt;?php
+// $page is a variable from the URL
+include($page);
+</code></pre>
+
+The user could set the `$lib_dir` or `$page` variables and include files such as `/etc/passwd` or remote files such as [http://www.example-hacker-website.com/whatever.php][1] with malicious code. This malicious code could potentially delete files, corrupt databases, or change the values of variables used to track authentication status.
+
+When using functions such as `readfile, fopen, file, include, require` using user data, you must be careful!
+
+**Possible solutions**
+
+* Are you sure you really need to use a user value to include a new file?
+* If yes, check the file name against a list of valid file names. For example,
+
+<pre><code>&lt;?php
+$valid_pages = array(
+    "apage.php"   => "",
+    "another.php" => "",
+    "more.php"    => ""
+);
+
+if (!isset($valid_pages[$page])) {
+    // Abort the script
+    die("Invalid request");
+}
+</code></pre>
+
+* If you must really use a variable from the browser, check the variable's value using code like the following:
+
+<pre><code>&lt;?php
+if (!(eregi("^[a-z_./]*$", $page) && !eregi("\\.\\.", $page))) {
+    // Abort the script
+    die("Invalid request");
+}
+</code></pre>
+
+### Secure your software against direct access
+
+The files of your plugins will usually be called by Piwik. Piwik is a wrapper around your software, it provides many useful features like user authentication and so on. Since developers usually test their plugins only through Piwik, they tend to forget about the possibility of calling files directly. Instead of calling your plugin by
+
+    http://yoursite.com/piwik/index.php?module=YourPlugin
+
+crackers also might try to use
+
+    http://yoursite.com/piwik/plugins/YourPlugin/YourPlugin.php
+
+As you can see, the PHP file will be executed directly, without Piwik as a wrapper around it. Now, if your file only contains some classes or functions, but does not execute any code, there is nothing wrong about that:
+
+Example class
+
+<pre><code>&lt;?php
+class myClass {
+    [SomeFunctionsHere]
+}
+function myFunction() {
+    [SomeCodeHere]
+}
+</code></pre>
+
+The cracker would just see an empty page when accessing your file directly. But if that PHP file actually executes anything, he would probably see a bunch of error messages, revealing important details of your system. Under some circumstances, he might also be able to execute any code he wants to, on your system!
+
+Conclusion: To make your plugin secure against direct access, insert this code line into the beginning of every PHP file that executes code:
+
+<pre><code>&lt;?php
+// no direct access
+defined('PIWIK_INCLUDE_PATH') or die('Restricted access');
+// your code here
+</code></pre>
+
+This is a recommendation for any PHP file that allows for direct execution. If in doubt, use the above!
+
+### Other tips
+
+* Make sure that accessing your files directly doesn't execute any function that could have an impact.
+* Use `.php` extension for all your PHP scripts
+* Avoid executing php code using one of the following functions: `eval(), exec(), passthru(), system(), popen(), preg_replace()` with "e" modifier
+* Make sure your code doesn't rely on `register_globals` set to `On`, which should be the case because PHP5 has `register_globals = Off` by default
+* If your plugin has Admin settings (e.g., your template includes CoreAdminHome/templates/header.tpl) then your Controller should extend `Piwik_Controller_Admin`.
+* Some servers will disable PHP functions for (undisclosed) security reasons. Replacement functions can sometimes be found in libs/upgradephp/upgrade.php, including `_parse_ini_file()`, `_glob()`, `_fnmatch()`, and `_readfile()`. The functions `safe_serialize()` and `safe_unserialize()` are like the built-in functions, but won't serialize/unserialize objects.
+
+### References
+
+* [Top 10 Security from The Open Web Application Security Project (OWASP)][2]
+* Top 10 php security list [part 1][3], [part 2][4]
+ [1]: http://www.example-hacker-website.com/whatever.php
+ [2]: http://www.owasp.org/index.php/Top_10_2007
+ [3]: http://www.onlamp.com/pub/a/php/2003/03/20/php_security.html
+ [4]: http://www.onlamp.com/pub/a/php/2003/04/03/php_security.html?CMP=AFC-ak_article&ATT=Ten+Security+Checks+for+PHP%2c+Part+2
+
 #### Handle user/untrusted input
 #### Handling output
 ### Release in Marketplace
