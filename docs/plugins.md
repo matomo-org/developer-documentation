@@ -133,7 +133,6 @@ parent:: methods, checkUser* auth helpers, ...
 #### Hint: Do not create any files in your plugins folder, it will be deleted on update --> use for instance tmp instead
 ## Templating
 ### Styling
-### Testing
 ### Scheduled Tasks
 ### Translating your plugins
 ## Security
