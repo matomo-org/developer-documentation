@@ -29,3 +29,5 @@ ExpiresByType image/x-icon "access 1 year"
 ExpiresDefault "access 8 days"
 </IfModule>
 ## EXPIRES CACHING ##
+
+AddType application/font-woff .woff
