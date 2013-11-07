@@ -49,6 +49,13 @@ class Guide {
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
+        $menu['core'] = array(
+            'title'       => 'Core Development',
+            'file'        => 'core',
+            'url'         => static::getUrl('core-development'),
+            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
+        );
+
         $menu['marketplace'] = array(
             'title'       => 'Marketplace',
             'file'        => 'marketplace',
