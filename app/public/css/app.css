@@ -105,7 +105,7 @@ body {
 }
 
 /* Nav: second level (shown on .active) */
-.bs-sidebar .nav .nav {
+#sidebar .bs-sidebar .nav .nav {
     display: none; /* Hide by default, but at >768px, show it */
     margin-bottom: 8px;
 }
@@ -118,7 +118,7 @@ body {
 
 /* Show and affix the side nav when space allows it */
 @media (min-width: 992px) {
-    .bs-sidebar .nav > .active > ul {
+    #sidebar .bs-sidebar .nav > .active > ul {
         display: block;
     }
     /* Widen the fixed sidebar */
@@ -138,6 +138,10 @@ body {
     #sidebar.affix .bs-sidenav {
         margin-top: 0;
         margin-bottom: 0;
+    }
+
+    #sidebar.expand .bs-sidebar .nav .nav {
+        display: block;
     }
 }
 @media (min-width: 1200px) {
