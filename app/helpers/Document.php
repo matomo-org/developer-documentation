@@ -79,6 +79,6 @@ class Document {
 
     public function linkToEditDocument()
     {
-        return 'https://github.com/piwik/developer-documentation/tree/master/docs/' . $this->name;
+        return 'https://github.com/piwik/developer-documentation/tree/master/docs/' . $this->name . '.md';
     }
 }
