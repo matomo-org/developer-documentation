@@ -8,6 +8,7 @@ The most interesting commands for developers are:
 * `generate:theme`
 * `generate:api`
 * `generate:controller`
+* `generate:test`
 * `generate:visualizationplugin`
 * `log:watch`
 * `tests:run`
@@ -86,6 +87,30 @@ Each public method within this class will be accessible over the API. Adding new
 #### Getting data from another API
 #### Returning data as an array or DataTable
 #### Authenticate users
+
+### Writing tests for your plugin
+We are sure you love tests as much as we do. That's why we want to make it as easy as possible for you to write tests. You can write three different types of tests for your plugin: 
+
+ * Unit test
+ * Integration test
+ * Integration test that needs a database
+
+To create a test we highly recommend to use our cli tool `console`. You can create a new test to executing the following command:
+
+`./console generate:test`
+
+Choose or enter your plugin name as well as a test name and you can already start writing beautiful tests. The command will generate a `tests` folder within your plugin directory if it does not already exist and create a test file containing a dummy test depending on your entered test name.
+
+To execute a test simply execute the following command:
+
+`./console tests:run PluginName`
+
+Replace `PluginName` with your plugin name. Note: The plugin name has is case sensitive. You can run a single test file as well by executing the following command:
+
+`./console tests:run Testname`
+
+Note: The testname is case sensitive as well. 
+
 ### How to create a Controller
 
 Start by using the CLI tool to create the needed files: `./console generate:controller`. This script creates a file named `Controller.php` within your plugin. The Controller already comes with a default action and template which is located in the `templates` directory.
