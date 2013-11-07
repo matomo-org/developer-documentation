@@ -17,7 +17,20 @@ function send404NotFound($app) {
     $app->pass();
 }
 
-$app->view->setData('menu', Home::getMainMenu());
+function initView($app)
+{
+    $path          = $app->request->getPath();
+    $activeSection = Home::getMenuItemByUrl($path);
+
+    $app->view->setData('menu', Home::getMainMenu());
+    $app->view->setData('path', $path);
+
+    if (!empty($activeSection['title'])) {
+        $app->view->setData('activeCategory', $activeSection['title']);
+    }
+}
+
+initView($app);
 
 $app->get('/', function () use ($app) {
 
