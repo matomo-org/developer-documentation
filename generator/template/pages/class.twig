@@ -53,7 +53,7 @@ This {{ class_type(class) }} defines the following properties:
 {% endfor %}
 {% for property in class.properties %}
 
-<a name="{{ property.name|lower }}" id="{{ property.name|lower }}"></a>
+<a name="${{ property.name|lower }}" id="${{ property.name|lower }}"></a>
 <a name="{{ property.name }}" id="{{ property.name }}"></a>
 ### `${{ property.name }}`
 {% if property.shortdesc %}
