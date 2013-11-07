@@ -95,7 +95,7 @@ We are sure you love tests as much as we do. That's why we want to make it as ea
  * Integration test
  * Integration test that needs a database
 
-To create a test we highly recommend to use our cli tool `console`. You can create a new test to executing the following command:
+To create a test we highly recommend to use our [cli tool](#cli-tool) `console`. You can create a new test to executing the following command:
 
 `./console generate:test`
 
