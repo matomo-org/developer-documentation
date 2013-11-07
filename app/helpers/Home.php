@@ -8,7 +8,7 @@
 
 namespace helpers;
 
-class Menu {
+class Home {
 
     private static function getUrl($key)
     {

@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-use helpers\Menu;
+use helpers\Home;
 use helpers\Guide;
 use helpers\Document;
 use helpers\ApiReference;
@@ -17,7 +17,7 @@ function send404NotFound($app) {
     $app->pass();
 }
 
-$app->view->setData('menu', Menu::getMainMenu());
+$app->view->setData('menu', Home::getMainMenu());
 
 $app->get('/', function () use ($app) {
 
