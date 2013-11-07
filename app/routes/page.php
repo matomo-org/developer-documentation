@@ -104,7 +104,8 @@ $app->get('/guides/:category', function ($category) use ($app) {
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
         'sectionTitle' => $doc->getTitle(),
-        'categories'   => Guide::getMainMenu()
+        'categories'   => Guide::getMainMenu(),
+        'linkToEditDocument' => $doc->linkToEditDocument()
     ));
 });
 

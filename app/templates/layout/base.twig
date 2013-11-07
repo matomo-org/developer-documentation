@@ -60,7 +60,10 @@
         <hr/>
 
         <footer>
-            <p>&copy; Piwik.org</p>
+            <p class="pull-left">&copy; Piwik.org</p>
+            <p class="pull-right">{% if linkToEditDocument is defined and linkToEditDocument %}
+                    <a href="{{ linkToEditDocument }}" target="_blank">Edit on GitHub</a>
+                {% endif %}</p>
         </footer>
     </div>
 {% endblock %}

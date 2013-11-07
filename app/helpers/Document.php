@@ -76,4 +76,9 @@ class Document {
     {
         return $this->markdown->getAvailableSections();
     }
+
+    public function linkToEditDocument()
+    {
+        return 'https://github.com/piwik/developer-documentation/tree/master/docs/' . $this->name;
+    }
 }
