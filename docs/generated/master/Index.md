@@ -103,6 +103,7 @@ Index
 ## D
 
 - [`$DEBUG_APPEND_URL()`](PiwikTracker.md#$debug_append_url) &mdash; _Property in class_ [`PiwikTracker`](PiwikTracker.md)
+- [`$DEBUG_LAST_REQUESTED_URL()`](PiwikTracker.md#$debug_last_requested_url) &mdash; _Property in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`doTrackPageView()`](PiwikTracker.md#dotrackpageview) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`doTrackEvent()`](PiwikTracker.md#dotrackevent) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`doTrackSiteSearch()`](PiwikTracker.md#dotracksitesearch) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
@@ -217,10 +218,8 @@ Index
 - [`getDataTableFromNumeric()`](Piwik/Archive.md#getdatatablefromnumeric) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
 - [`getDataTable()`](Piwik/Archive.md#getdatatable) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
 - [`getDataTableExpanded()`](Piwik/Archive.md#getdatatableexpanded) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
-- [`getRequestedPlugins()`](Piwik/Archive.md#getrequestedplugins) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
-- [`getDataTableFromArchive()`](Piwik/Archive.md#getdatatablefromarchive) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
 - [`getParams()`](Piwik/Archive.md#getparams) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
-- [`getPluginForReport()`](Piwik/Archive.md#getpluginforreport) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
+- [`getDataTableFromArchive()`](Piwik/Archive.md#getdatatablefromarchive) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
 - [`getParams()`](Piwik/ArchiveProcessor.md#getparams) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getLogAggregator()`](Piwik/ArchiveProcessor.md#getlogaggregator) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getRequestedPlugin()`](Piwik/ArchiveProcessor/Parameters.md#getrequestedplugin) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
