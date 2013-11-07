@@ -24,7 +24,7 @@ $iterator = Finder::create()
     ->files()
     ->name('*.php')
     ->exclude('tests')
-    ->in(array(PIWIK_DOCUMENT_ROOT . '/core', PIWIK_DOCUMENT_ROOT . '/plugins'))
+    ->in(array(PIWIK_DOCUMENT_ROOT . '/core', PIWIK_DOCUMENT_ROOT . '/plugins', PIWIK_DOCUMENT_ROOT . '/libs/PiwikTracker'))
 ;
 
 $latestStable = file_get_contents('http://builds.piwik.org/LATEST_BETA');
