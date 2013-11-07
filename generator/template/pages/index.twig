@@ -15,12 +15,12 @@
 {% for element in elements %}
 {%- set type = element[0] %}
 {%set value = element[1] %}
-{% if 'class' == type %}
+{% if 'class' == type and 'PiwikTracker' != value.shortname %}
 - {{ class_name(value, true) }}{% if has_namespaces %} &mdash; _Class in namespace_ [`{{ value.namespace }}`]({{ namespace_path(value.namespace)|replace({".html": ""}) }})
 {% endif %}
-{% elseif 'method' == type %}
+{% elseif 'method' == type and 'PiwikTracker' != value.class %}
 - [`{{ value.name }}()`]({{ markdown_path(class_path(value.class)) }}#{{ value.name|lower }}) &mdash; _Method in class_ {{ class_name(value.class, true) }}
-{% elseif 'property' == type %}
+{% elseif 'property' == type and 'PiwikTracker' != value.class %}
 - [`${{ value.name }}()`]({{ markdown_path(class_path(value.class)) }}#${{ value.name|lower }}) &mdash; _Property in class_ {{ class_name(value.class, true) }}
 {% endif %}
 {% endfor %}
