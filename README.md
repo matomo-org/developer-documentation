@@ -14,14 +14,6 @@ http://piwik.org
 
 GPLv3 or later
 
-## Install
-
- * Clone repository
- * git submodule init
- * git submodule update
- * cd generator && php composer.phar install
- * cd app && php composer.phar install
-
 ## Automatic documentation generation (API-Reference)
 
  * Execute `./generate.sh`
