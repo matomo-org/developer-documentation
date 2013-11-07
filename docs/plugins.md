@@ -109,9 +109,9 @@ You can write three different types of tests for your plugin:
 
 By default we create a unit test for you. But there is an optional option to directly create a different kind of test:
 
-`./console generate:test -t "unit"`
-`./console generate:test -t "integration"`
-`./console generate:test -t "database"`
+ * `./console generate:test -t "unit"`
+ * `./console generate:test -t "integration"`
+ * `./console generate:test -t "database"`
 
 #### Executing tests
 
