@@ -20,6 +20,8 @@ function getActualSidebarHeight()
         visibility: 'hidden', display: 'block', position: 'absolute'
     });
 
+    $('#collapseOne', copiedElement).css({display: 'block', height: 'auto'})
+
     $('body').append(copiedElement);
     var height = copiedElement.height();
     copiedElement.remove();
