@@ -20,31 +20,56 @@ require $rootDir . '/generator/vendor/nikic/php-parser/lib/bootstrap.php';
 require __DIR__ . '/hooks/Hooks.php';
 ini_set('xdebug.max_nesting_level', 2000);
 
-$target   = $rootDir . '/docs/generated/Hooks.md';
-
-$files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(PIWIK_DOCUMENT_ROOT));
-$phpFiles = new RegexIterator($files, '/piwik\/(core|plugins)(.*)\.php$/');
+use Sami\Version\GitVersionCollection;
 
 try {
 
-    $hooks = new Hooks();
-    $view  = array('hooks' => array());
+    function generateHookDoc($rootDir, $versionName)
+    {
+        $target   = $rootDir . '/docs/generated/' . $versionName . '/Hooks.md';
+        $files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(PIWIK_DOCUMENT_ROOT));
+        $phpFiles = new RegexIterator($files, '/piwik\/(core|plugins)(.*)\.php$/');
 
-    foreach ($phpFiles as $phpFile) {
-        $relativeFileName = str_replace(PIWIK_DOCUMENT_ROOT, '', $phpFile);
-        $foundHooks = $hooks->searchForHooksInFile($relativeFileName, $phpFile);
+        $hooks = new Hooks();
+        $view  = array('hooks' => array(), 'versionName' => $versionName);
 
-        if (!empty($foundHooks)) {
-            foreach ($foundHooks as $hook) {
-                $view['hooks'][] = $hook;
+        foreach ($phpFiles as $phpFile) {
+            $relativeFileName = str_replace(PIWIK_DOCUMENT_ROOT, '', $phpFile);
+            $foundHooks = $hooks->searchForHooksInFile($relativeFileName, $phpFile);
+
+            if (!empty($foundHooks)) {
+                foreach ($foundHooks as $hook) {
+                    $view['hooks'][] = $hook;
+                }
             }
         }
+
+        $view['hooks'] = $hooks->sortHooksByName($view['hooks']);
+        $view['hooks'] = $hooks->addUsages($view['hooks']);
+
+        $hooks->generateDocumentation($view, $target);
     }
 
-    $view['hooks'] = $hooks->sortHooksByName($view['hooks']);
-    $view['hooks'] = $hooks->addUsages($view['hooks']);
+    $latestStable = file_get_contents('http://builds.piwik.org/LATEST_BETA');
+    $latestStable = trim($latestStable);
 
-    $hooks->generateDocumentation($view, $target);
+    if (empty($latestStable)) {
+        echo 'Unable to fetch latest version';
+        exit(1);
+    }
+
+    /** @var $versions GitVersionCollection */
+    $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
+        ->add('master', 'master branch')
+        ->add($latestStable, 'latest stable')
+    ;
+
+    $versions->rewind();
+    while ($versions->valid()) {
+        $version = $versions->current();
+        generateHookDoc($rootDir, $version->getName());
+        $versions->next();
+    }
 
 } catch (Exception $e) {
     echo 'Parse Error: ', $e->getMessage();

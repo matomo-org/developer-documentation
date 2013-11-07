@@ -65,7 +65,7 @@ class ApiReference {
 
         $menu['hooks'] = array(
             'title'        => 'Hooks',
-            'file'         => 'generated/Hooks',
+            'file'         => 'generated/master/Hooks',
             'url'          => static::getUrl('hooks'),
             'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
             'callToAction' => 'Browse'

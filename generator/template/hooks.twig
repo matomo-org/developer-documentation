@@ -14,7 +14,7 @@ This is a complete list of available hooks.
 {% endif %}
 
 ### {{ hook.name }}
-_Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piwik/blob/master{{ hook.file }}) in line [{{ hook.line }}](https://github.com/piwik/piwik/blob/master{{ hook.file }}#L{{ hook.line }})_
+_Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piwik/blob/{{ versionName }}{{ hook.file }}) in line [{{ hook.line }}](https://github.com/piwik/piwik/blob/{{ versionName }}{{ hook.file }}#L{{ hook.line }})_
 
 {% if hook.comment %}
 {{ hook.comment.shortDesc|raw }}{% if hook.comment.longDesc %} {{ hook.comment.longDesc|raw }}{% endif %}
@@ -36,7 +36,7 @@ Callback Signature:
 Usages:
 
 {% for usage in hook.usages -%}
-[{{ usage.className }}::{{ usage.methodName }}](https://github.com/piwik/piwik/blob/master{{ usage.file }}#L{{ usage.startLine }}){% if not loop.last%}, {% endif %}
+[{{ usage.className }}::{{ usage.methodName }}](https://github.com/piwik/piwik/blob/{{ versionName }}{{ usage.file }}#L{{ usage.startLine }}){% if not loop.last%}, {% endif %}
 {% endfor %}
 
 {% endif %}
