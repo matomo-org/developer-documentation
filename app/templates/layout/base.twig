@@ -27,8 +27,8 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li {% if isHome is defined and isHome %} class="active"{% endif %}><a href="/">Home</a></li>
-                {% for itemName, item in menu %}
-                    <li {% if itemName == activeMenu %} class="active"{% endif %}>
+                {% for item in menu %}
+                    <li {% if path == item.url %} class="active"{% endif %}>
                         <a href="{{ item.url }}">{{ item.title }}</a>
                     </li>
                 {% endfor %}

@@ -47,7 +47,7 @@ class ApiReference {
     {
         $menu = array();
 
-        $menu['index'] = array(
+        $menu[] = array(
             'title'        => 'Overview',
             'file'         => 'generated/master/Index',
             'url'          => static::getUrl('index'),
@@ -55,7 +55,7 @@ class ApiReference {
             'callToAction' => 'Browse'
         );
 
-        $menu['classes'] = array(
+        $menu[] = array(
             'title'        => 'Classes',
             'file'         => 'generated/master/Classes',
             'url'          => static::getUrl('classes'),
@@ -63,7 +63,7 @@ class ApiReference {
             'callToAction' => 'Browse'
         );
 
-        $menu['hooks'] = array(
+        $menu[] = array(
             'title'        => 'Hooks',
             'file'         => 'generated/master/Hooks',
             'url'          => static::getUrl('hooks'),
@@ -71,7 +71,7 @@ class ApiReference {
             'callToAction' => 'Browse'
         );
 
-        $menu['phppiwiktracker'] = array(
+        $menu[] = array(
             'title'        => 'PHP Piwik Tracker',
             'file'         => 'generated/master/PiwikTracker',
             'url'          => static::getUrl('PHP-Piwik-Tracker'),

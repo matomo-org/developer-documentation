@@ -12,10 +12,6 @@
                             <a data-toggle="collapse" data-parent="#sidebar" href="#collapseOne">
                                 {% if activeCategory is defined and activeCategory %}
                                     {{ activeCategory }}
-                                {% elseif menu and menu[activeMenu] %}
-                                    {{ menu[activeMenu].title }}
-                                {% else %}
-                                    {{ activeMenu }}
                                 {% endif %}
                             </a>
                         </h4>

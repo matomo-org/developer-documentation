@@ -28,70 +28,70 @@ class Guide {
     {
         $menu = array();
 
-        $menu['introduction'] = array(
+        $menu[] = array(
             'title'       => 'Introduction',
             'file'        => 'introduction',
             'url'         => static::getUrl('introduction'),
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
-        $menu['plugins'] = array(
+        $menu[] = array(
             'title'       => 'Plugins',
             'file'        => 'plugins',
             'url'         => static::getUrl('plugins'),
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
-        $menu['themes'] = array(
+        $menu[] = array(
             'title'       => 'Themes',
             'file'        => 'themes',
             'url'         => static::getUrl('themes'),
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
-        $menu['core'] = array(
-            'title'       => 'Core Development',
-            'file'        => 'core',
-            'url'         => static::getUrl('core-development'),
-            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
-        );
-
-        $menu['marketplace'] = array(
+        $menu[] = array(
             'title'       => 'Marketplace',
             'file'        => 'marketplace',
             'url'         => static::getUrl('marketplace'),
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
-        $menu['tracking-api'] = array(
+        $menu[] = array(
+            'title'       => 'Core Development',
+            'file'        => 'core',
+            'url'         => static::getUrl('core-development'),
+            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
+        );
+
+        $menu[] = array(
             'title'       => 'Tracking API',
             'file'        => 'tracking-api',
             'url'         => static::getUrl('tracking-api'),
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
-        $menu['reporting-api'] = array(
+        $menu[] = array(
             'title'       => 'Reporting API',
             'file'        => 'reporting-api',
             'url'         => static::getUrl('reporting-api'),
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
-        $menu['javascript-api'] = array(
+        $menu[] = array(
             'title'       => 'JavaScript API',
             'file'        => 'javascript-api',
             'url'         => static::getUrl('javascript-api'),
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
-        $menu['faq'] = array(
+        $menu[] = array(
             'title'       => 'FAQ',
             'file'        => 'faq',
             'url'         => static::getUrl('faq'),
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
-        $menu['use-cases'] = array(
+        $menu[] = array(
             'title'       => 'Use cases',
             'file'        => 'use-cases',
             'url'         => static::getUrl('use-cases'),
