@@ -31,7 +31,7 @@ This class defines the following properties:
 
 - [`$lockPrivilegeGranted`](#$lockprivilegegranted) &mdash; Cached result of isLockprivilegeGranted function.
 
-<a name="lockprivilegegranted" id="lockprivilegegranted"></a>
+<a name="$lockprivilegegranted" id="$lockprivilegegranted"></a>
 <a name="lockPrivilegeGranted" id="lockPrivilegeGranted"></a>
 ### `$lockPrivilegeGranted`
 

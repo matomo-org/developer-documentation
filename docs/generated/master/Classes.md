@@ -3,7 +3,6 @@ Classes
 
 This is a complete list of available classes:
 
-- [`PiwikTracker`](PiwikTracker.md) &mdash; PiwikTracker implements the Piwik Tracking API.
 - [`API\Request`](Piwik/API/Request.md) &mdash; Dispatches API requests to the appropriate API method.
 - [`Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used to insert numeric and blob archive data.

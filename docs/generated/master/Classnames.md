@@ -1,5 +1,4 @@
 
-## PiwikTracker
 ## API\Request
 ## Archive
 ## ArchiveProcessor

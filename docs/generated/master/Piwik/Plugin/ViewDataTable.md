@@ -43,7 +43,7 @@ This abstract class defines the following properties:
 - [`$config`](#$config)
 - [`$requestConfig`](#$requestconfig)
 
-<a name="config" id="config"></a>
+<a name="$config" id="$config"></a>
 <a name="config" id="config"></a>
 ### `$config`
 
@@ -51,7 +51,7 @@ This abstract class defines the following properties:
 
 - It is a `Piwik\ViewDataTable\Config` value.
 
-<a name="requestconfig" id="requestconfig"></a>
+<a name="$requestconfig" id="$requestconfig"></a>
 <a name="requestConfig" id="requestConfig"></a>
 ### `$requestConfig`
 
