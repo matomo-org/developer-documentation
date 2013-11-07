@@ -3,7 +3,7 @@ function affixSidebar()
 {
     var $sidebar = $('#sidebar');
 
-    if ($sidebar && $sidebar.length && getActualSidebarHeight() <= $(window).height()) {
+    if ($sidebar && $sidebar.length && shouldEnableAffix()) {
         $sidebar.affix({
             offset: {
                 top: 100, bottom: 100
@@ -27,12 +27,17 @@ function getActualSidebarHeight()
     return height;
 }
 
+function shouldEnableAffix()
+{
+    return getActualSidebarHeight() <= $(window).height();
+}
+
 affixSidebar();
 
 $('#sidebar').on('hidden.bs.collapse', function () {
     var $sidebar = $('#sidebar');
 
-    if ($sidebar && $sidebar.length && getActualSidebarHeight() <= $(window).height()) {
+    if ($sidebar && $sidebar.length && shouldEnableAffix()) {
         var $affix = $sidebar.data('bs.affix');
 
         if ($affix) {
