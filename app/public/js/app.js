@@ -32,7 +32,7 @@ affixSidebar();
 $('#sidebar').on('hidden.bs.collapse', function () {
     var $sidebar = $('#sidebar');
 
-    if ($sidebar && $sidebar.length) {
+    if ($sidebar && $sidebar.length && getActualSidebarHeight() <= $(window).height()) {
         var $affix = $sidebar.data('bs.affix');
 
         if ($affix) {
