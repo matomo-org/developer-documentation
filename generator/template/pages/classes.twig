@@ -12,7 +12,9 @@
 This is a complete list of available classes:
 
 {% for class in classes if not class.interface %}
+{% if 'PiwikTracker' != class.shortname %}
 {{ class_item(class, false, "", true) }}
+{% endif %}
 {% else %}
 - There are no classes available.
 {% endfor %}
