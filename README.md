@@ -55,3 +55,4 @@ Works similar as adding a new guide except that you have to make the changes in 
 ### Adding a new teaser to the home page
 
 Works similar as adding a new guide except that you have to make the changes in the file [app/helpers/Home.php](app/helpers/Home.php).
+Please note it is currently not possible to define a file name here. So it is more or less only possible to change existing entries or to add new teasers to external links.
