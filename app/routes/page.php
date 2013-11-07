@@ -27,6 +27,7 @@ function initView($app)
 
     if (!empty($activeSection['title'])) {
         $app->view->setData('activeCategory', $activeSection['title']);
+        $app->view->setData('activeMenu', $activeSection['title']);
     }
 }
 
@@ -53,7 +54,6 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
     }
 
     $app->render('layout/documentation.twig', array(
-        'activeMenu'   => 'api-reference',
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
         'sectionTitle' => $doc->getTitle(),
@@ -87,7 +87,6 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
     }
 
     $app->render('layout/documentation.twig', array(
-        'activeMenu'     => 'api-reference',
         'activeCategory' => 'Classes',
         'doc'            => $doc->getRenderedContent(),
         'sections'       => $doc->getSections(),
@@ -113,7 +112,6 @@ $app->get('/guides/:category', function ($category) use ($app) {
     }
 
     $app->render('layout/documentation.twig', array(
-        'activeMenu'   => 'guides',
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
         'sectionTitle' => $doc->getTitle(),
@@ -125,8 +123,7 @@ $app->get('/guides/:category', function ($category) use ($app) {
 $app->get('/guides', function () use ($app) {
 
     $app->render('documentation.twig', array(
-        'activeMenu' => 'guides',
-        'guides'     => Guide::getMainMenu()
+        'guides' => Guide::getMainMenu()
     ));
 });
 
@@ -134,16 +131,14 @@ $app->get('/api-reference', function () use ($app) {
     $references = ApiReference::getReferencesMenu();
 
     $app->render('apireference.twig', array(
-        'references' => $references,
-        'activeMenu' => 'api-reference'
+        'references' => $references
     ));
 });
 
 $app->get('/support', function () use ($app) {
 
     $app->render('support.twig', array(
-        'activeMenu' => 'support',
-        'supports'   => Support::getMainMenu()
+        'supports' => Support::getMainMenu()
     ));
 });
 
