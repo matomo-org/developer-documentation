@@ -3,6 +3,6 @@ Website [developer.piwik.org](http://developer.piwik.org). Based on [Slim](http:
 ## Install
 
  * Clone repository
- * git submodule init
- * git submodule update
- * cd app && php composer.phar install
+ * `git submodule init`
+ * `git submodule update`
+ * `cd app && php composer.phar install`
