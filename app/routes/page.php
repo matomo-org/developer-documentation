@@ -60,7 +60,7 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
 
     $file = implode('/', $names);
 
-    if ('Piwik/' != substr($file, 0, 6) && 'PiwikTracker' != substr($file, 0, 12)) {
+    if ('Piwik/' != substr($file, 0, 6)) {
         $file = 'Piwik/' . $file;
     }
 

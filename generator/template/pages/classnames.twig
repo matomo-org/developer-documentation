@@ -1,7 +1,7 @@
 {% from "macros.twig" import class_name %}
 
 {% for class in classes if not class.interface %}
-{% if class.projectclass %}
+{% if class.projectclass and 'PiwikTracker' != class.shortname  %}
 ## {{ (class)|replace({'Piwik\\': ''}) }}
 {% endif %}
 {% endfor %}

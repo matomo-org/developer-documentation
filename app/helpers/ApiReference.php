@@ -71,6 +71,14 @@ class ApiReference {
             'callToAction' => 'Browse'
         );
 
+        $menu['phptracker'] = array(
+            'title'        => 'PHP Tracker',
+            'file'         => 'generated/master/PiwikTracker',
+            'url'          => static::getUrl('PHPTracker'),
+            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'callToAction' => 'Browse'
+        );
+
         return $menu;
     }
 }
