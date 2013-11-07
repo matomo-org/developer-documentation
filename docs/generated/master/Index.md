@@ -3,7 +3,6 @@ Index
 
 ## A
 
-- [`addEcommerceItem()`](PiwikTracker.md#addecommerceitem) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`Archive`](Piwik/Archive.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`applyQueuedFilters()`](Piwik/DataTable.md#applyqueuedfilters) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -102,18 +101,6 @@ Index
 
 ## D
 
-- [`$DEBUG_APPEND_URL()`](PiwikTracker.md#$debug_append_url) &mdash; _Property in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`$DEBUG_LAST_REQUESTED_URL()`](PiwikTracker.md#$debug_last_requested_url) &mdash; _Property in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`doTrackPageView()`](PiwikTracker.md#dotrackpageview) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`doTrackEvent()`](PiwikTracker.md#dotrackevent) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`doTrackSiteSearch()`](PiwikTracker.md#dotracksitesearch) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`doTrackGoal()`](PiwikTracker.md#dotrackgoal) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`doTrackAction()`](PiwikTracker.md#dotrackaction) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`doTrackEcommerceCartUpdate()`](PiwikTracker.md#dotrackecommercecartupdate) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`doBulkTrack()`](PiwikTracker.md#dobulktrack) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`doTrackEcommerceOrder()`](PiwikTracker.md#dotrackecommerceorder) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`deleteCookies()`](PiwikTracker.md#deletecookies) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`disableCookieSupport()`](PiwikTracker.md#disablecookiesupport) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`destroy()`](Piwik/Common.md#destroy) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`DataTable`](Piwik/DataTable.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`deleteColumn()`](Piwik/DataTable.md#deletecolumn) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -142,8 +129,6 @@ Index
 
 ## E
 
-- [`enableBulkTracking()`](PiwikTracker.md#enablebulktracking) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`enableCookies()`](PiwikTracker.md#enablecookies) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`enableRecursiveSort()`](Piwik/DataTable.md#enablerecursivesort) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`enableRecursiveFilters()`](Piwik/DataTable.md#enablerecursivefilters) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`enableRecursive()`](Piwik/DataTable/Filter.md#enablerecursive) &mdash; _Method in class_ [`Filter`](Piwik/DataTable/Filter.md)
@@ -196,17 +181,6 @@ Index
 
 ## G
 
-- [`getCustomVariable()`](PiwikTracker.md#getcustomvariable) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getUrlTrackEcommerceCartUpdate()`](PiwikTracker.md#geturltrackecommercecartupdate) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getUrlTrackEcommerceOrder()`](PiwikTracker.md#geturltrackecommerceorder) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getUrlTrackPageView()`](PiwikTracker.md#geturltrackpageview) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getUrlTrackEvent()`](PiwikTracker.md#geturltrackevent) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getUrlTrackSiteSearch()`](PiwikTracker.md#geturltracksitesearch) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getUrlTrackGoal()`](PiwikTracker.md#geturltrackgoal) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getUrlTrackAction()`](PiwikTracker.md#geturltrackaction) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getVisitorId()`](PiwikTracker.md#getvisitorid) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getAttributionInfo()`](PiwikTracker.md#getattributioninfo) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`getRequestTimeout()`](PiwikTracker.md#getrequesttimeout) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`getRequestArrayFromString()`](Piwik/API/Request.md#getrequestarrayfromstring) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
 - [`getClassNameAPI()`](Piwik/API/Request.md#getclassnameapi) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
 - [`getRequestParametersGET()`](Piwik/API/Request.md#getrequestparametersget) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
@@ -561,7 +535,6 @@ Index
 
 ## P
 
-- [`PiwikTracker`](PiwikTracker.md) &mdash; _Class in namespace_ [``]()
 - [`process()`](Piwik/API/Request.md#process) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
 - [`processRequest()`](Piwik/API/Request.md#processrequest) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
 - [`Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; _Class in namespace_ [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor)
@@ -624,33 +597,6 @@ Index
 
 ## S
 
-- [`setPageCharset()`](PiwikTracker.md#setpagecharset) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setUrl()`](PiwikTracker.md#seturl) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setUrlReferrer()`](PiwikTracker.md#seturlreferrer) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setGenerationTime()`](PiwikTracker.md#setgenerationtime) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setUrlReferer()`](PiwikTracker.md#seturlreferer) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setAttributionInfo()`](PiwikTracker.md#setattributioninfo) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setCustomVariable()`](PiwikTracker.md#setcustomvariable) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setNewVisitorId()`](PiwikTracker.md#setnewvisitorid) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setIdSite()`](PiwikTracker.md#setidsite) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setBrowserLanguage()`](PiwikTracker.md#setbrowserlanguage) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setUserAgent()`](PiwikTracker.md#setuseragent) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setCountry()`](PiwikTracker.md#setcountry) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setRegion()`](PiwikTracker.md#setregion) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setCity()`](PiwikTracker.md#setcity) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setLatitude()`](PiwikTracker.md#setlatitude) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setLongitude()`](PiwikTracker.md#setlongitude) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setEcommerceView()`](PiwikTracker.md#setecommerceview) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setForceVisitDateTime()`](PiwikTracker.md#setforcevisitdatetime) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setIp()`](PiwikTracker.md#setip) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setVisitorId()`](PiwikTracker.md#setvisitorid) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setTokenAuth()`](PiwikTracker.md#settokenauth) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setLocalTime()`](PiwikTracker.md#setlocaltime) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setResolution()`](PiwikTracker.md#setresolution) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setBrowserHasCookies()`](PiwikTracker.md#setbrowserhascookies) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setDebugStringAppend()`](PiwikTracker.md#setdebugstringappend) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setPlugins()`](PiwikTracker.md#setplugins) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
-- [`setRequestTimeout()`](PiwikTracker.md#setrequesttimeout) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`shouldLoadExpanded()`](Piwik/API/Request.md#shouldloadexpanded) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
 - [`setRequestedPlugin()`](Piwik/ArchiveProcessor/Parameters.md#setrequestedplugin) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
@@ -750,7 +696,6 @@ Index
 
 ## U
 
-- [`$URL()`](PiwikTracker.md#$url) &mdash; _Property in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`unprefixTable()`](Piwik/Common.md#unprefixtable) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`unsanitizeInputValues()`](Piwik/Common.md#unsanitizeinputvalues) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`unlockAllTables()`](Piwik/Db.md#unlockalltables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
@@ -784,7 +729,6 @@ Index
 
 ## _
 
-- [`__construct()`](PiwikTracker.md#__construct) &mdash; _Method in class_ [`PiwikTracker`](PiwikTracker.md)
 - [`__construct()`](Piwik/API/Request.md#__construct) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
 - [`__construct()`](Piwik/ArchiveProcessor/Parameters.md#__construct) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`__get()`](Piwik/Config.md#__get) &mdash; _Method in class_ [`Config`](Piwik/Config.md)
