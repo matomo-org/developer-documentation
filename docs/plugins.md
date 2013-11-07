@@ -32,7 +32,8 @@ Execute the command `./console generate:plugin` in order to create a new plugin.
 ### Defining new menus
 ### Using the database
 #### Create a new table
-#### Update schemaf
+#### Update schema
+
 ### Track additional data
 ### Understanding Hooks
 
