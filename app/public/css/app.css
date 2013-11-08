@@ -33,6 +33,7 @@ body {
 
 .documentation code {
     white-space: pre;
+    word-break: break-word;
 }
 
 .bs-side .panel-collapse {
