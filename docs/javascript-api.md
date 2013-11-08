@@ -34,7 +34,7 @@ In your Piwik tracking code, {$PIWIK_URL} would be replaced by your Piwik URL an
 
 This code might look a bit strange to those of you familiar with JavaScript, but that is because it is made to run asynchronously. In other words, browsers will not wait for the piwik.js file to be downloaded in order to show your page.
 
-For asynchronous tracking, configuration and tracking calls are pushed onto the global _paq array for execution, independent of the asynchronous loading of piwik.js. The format is:
+For asynchronous tracking, configuration and tracking calls are pushed onto the global `_paq` array for execution, independent of the asynchronous loading of piwik.js. The format is:
 
 <pre>_paq.push([ 'API_method_name', parameter_list ]);</pre>
 
@@ -63,34 +63,34 @@ By default, Piwik uses the URL of the current page as the page title in the Piwi
 
 A common use is to set the HTML Title value as the document title:
 
-`[...]`
+<pre><code>[...]
 
-**`_paq.push(['setDocumentTitle', document.title]);`**
+_paq.push(['setDocumentTitle', document.title]);
 
-`_paq.push(['trackPageView']);`
+_paq.push(['trackPageView']);
 
-`[...]`
+[...]</code></pre>
 
 
 If you track **multiple sub-domains in the same website**, you may want your page titles to be prefixed by the sub-domain make it easy for you to see the traffic and data for each sub-domain. You can do so simply in JavaScript:
 
-`[...]`
+<pre><code>[...]
 
-`_paq.push(['setDocumentTitle', document.domain + "/" + document.title]);`
+_paq.push(['setDocumentTitle', document.domain + "/" + document.title]);
 
-`_paq.push(['trackPageView']);`
+_paq.push(['trackPageView']);
 
-`[...]`
+[...]</code></pre>
 
 Advanced users can also dynamically generate the page name, for example, in PHP:
 
-`[...]`
+<pre><code>[...]
 
-`_paq.push(['setDocumentTitle', "<?php echo $myPageTitle ?>"]);`
+_paq.push(['setDocumentTitle', "<?php echo $myPageTitle ?>"]);
 
-`_paq.push(['trackPageView']);`
+_paq.push(['trackPageView']);
 
-`[...]`
+[...]</code></pre>
 
 ## Manually Trigger a Page View on Click or on JS Event
 
@@ -98,11 +98,11 @@ By default, Piwik tracks page views when the Javascript tracking code loads and 
 
 To track any user interaction or click with Piwik, you can manually call the Javascript function `trackPageView()`. For example, if you wanted to track a click on a JavaScript menu, you could write:
 
-`[...]`
+<pre><code>[...]
 
-`<a href="#" onclick="javascript:_paq.push(['trackPageView', 'Menu/Freedom']);">Freedom page</a>`
+&lt;a href="#" onclick="javascript:_paq.push(['trackPageView', 'Menu/Freedom']);">Freedom page&lt;/a>
 
-`[...]`
+[...]</code></pre>
 
 ## Manually Trigger a Conversion for a Goal
 
@@ -117,23 +117,23 @@ In some situations, you may want to register conversions on other types of actio
 
 To trigger a goal using the Piwik JavaScript Tracking, you can simply do:
 
-`[...]`
+<pre><code>[...]
 
-`// logs a conversion for goal 1`
+// logs a conversion for goal 1
 
-**`_paq.push(['trackGoal', 1]); `**
+_paq.push(['trackGoal', 1]);
 
-`[...]`
+[...]</code></pre>
 
 You can also register a conversion for this goal with a custom revenue. For example, you can generate the call to trackGoal dynamically to set the revenue of the transaction:
 
-`[...]`
+<pre><code>[...]
 
-`// logs a conversion for goal 1 with the custom revenue set`
+// logs a conversion for goal 1 with the custom revenue set
 
-**`_paq.push(['trackGoal', 1, <?php echo $cart->getCartValue(); ?>]);`**
+_paq.push(['trackGoal', 1, <?php echo $cart->getCartValue(); ?>]);
 
-`[...]`
+[...]</code></pre>
 
 Find more information about goal tracking in Piwik in the [**Tracking Goals**](http://piwik.org/docs/tracking-goals-web-analytics/) documentation.
 
