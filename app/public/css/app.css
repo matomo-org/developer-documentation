@@ -63,11 +63,6 @@ body {
     word-wrap: break-word;
 }
 
-/* By default it's not affixed in mobile views, so undo that */
-#sidebar.affix {
-    position: static;
-}
-
 /* First level of nav */
 .bs-sidenav {
     padding-top:    10px;
@@ -123,22 +118,8 @@ body {
         display: block;
     }
     /* Widen the fixed sidebar */
-    #sidebar,
-    #sidebar.affix-top,
-    #sidebar.affix-bottom {
+    #sidebar {
         width: 213px;
-    }
-    #sidebar.affix {
-        position: fixed; /* Undo the static from mobile first approach */
-        top: 80px;
-    }
-    #sidebar.affix-bottom {
-        position: absolute; /* Undo the static from mobile first approach */
-    }
-    #sidebar.affix-bottom .bs-sidenav,
-    #sidebar.affix .bs-sidenav {
-        margin-top: 0;
-        margin-bottom: 0;
     }
 
     #sidebar.expand .bs-sidebar .nav .nav {
@@ -147,10 +128,7 @@ body {
 }
 @media (min-width: 1200px) {
     /* Widen the fixed sidebar again */
-    #sidebar,
-    #sidebar.affix-bottom,
-    #sidebar.affix-top,
-    #sidebar.affix {
+    #sidebar {
         width: 263px;
     }
 }

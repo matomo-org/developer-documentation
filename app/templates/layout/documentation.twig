@@ -4,7 +4,7 @@
 
     <div class="col-md-3 bs-side">
 
-        <div class="panel-group" id="sidebar">
+        <div class="panel-group expand" id="sidebar">
             {% if categories|length %}
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -48,7 +48,7 @@
                             <div class="bs-sidebar">
                                 <ul class="nav nav-pills nav-stacked bs-sidenav">
                                     {% for section in sections %}
-                                        <li {% if sections|length == 1 %} class="active"{% endif %}>
+                                        <li>
                                             <a href="#{{ section.id }}"><i class="icon-chevron-right"></i> {{ section.title|striptags }}</a>
 
                                             {% if section.children|length %}
