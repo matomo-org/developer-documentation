@@ -85,6 +85,18 @@ Each public method within this class will be accessible over the API. Adding new
 #### Returning data as an array or DataTable
 #### Authenticate users
 
+### Creating a console command
+
+In order to enrich the [Piwik CLI tool](#cli-tool) your plugin can create an unlimited number of console commands. For example a particular plugin could provide long running administrative tasks via the console.
+
+We recommend to use the CLI tool to create a command:
+
+`./console generate:command`
+
+This will create a command for you and place it in the `Commands` directory of your plugin. Afterwards you have to register the command by subscribing to a hook. Read more about this in the [Hooks reference](/api-reference/hooks#consoleaddcommands).
+
+If you are interested in learning more about writing commands, read the [Symfony Commands documentation](http://symfony.com/doc/current/components/console/introduction.html).
+
 ### Writing tests for your plugin
 We are sure you love tests as much as we do. That's why we want to make it as easy as possible for you to write tests. 
 
