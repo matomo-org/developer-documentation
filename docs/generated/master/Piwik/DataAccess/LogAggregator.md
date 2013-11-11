@@ -15,9 +15,19 @@ in the log tables without creating their own SQL queries.
 
 ** TODO (explain 'dimension') **
 
+### Aggregation Functions
+
+** TODO (describe how to use functions)
+
 ### Examples
 
-** TODO **
+**Aggregating visit data**
+
+    // TODO
+
+**Aggregating conversion data**
+
+    // TODO
 
 
 Constants
@@ -48,7 +58,7 @@ The class defines the following methods:
 - [`queryVisitsByDimension()`](#queryvisitsbydimension) &mdash; Aggregates visit logs, optionally grouping by some dimension, and returns the aggregated data.
 - [`queryEcommerceItems()`](#queryecommerceitems) &mdash; Aggregates ecommerce item data (everything stored in the **log_conversion_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
 - [`queryActionsByDimension()`](#queryactionsbydimension) &mdash; Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.
-- [`getSelectsFromRangedColumn()`](#getselectsfromrangedcolumn) &mdash; Creates and returns an array of SQL SELECT expressions that will summarize the data in a column of a specified table, over a set of ranges.
+- [`getSelectsFromRangedColumn()`](#getselectsfromrangedcolumn) &mdash; Creates and returns an array of SQL SELECT expressions that will count the number of rows for which a specific column falls within specific ranges.
 
 <a name="queryvisitsbydimension" id="queryvisitsbydimension"></a>
 <a name="queryVisitsByDimension" id="queryVisitsByDimension"></a>
@@ -170,12 +180,43 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 <a name="getSelectsFromRangedColumn" id="getSelectsFromRangedColumn"></a>
 ### `getSelectsFromRangedColumn()`
 
-Creates and returns an array of SQL SELECT expressions that will summarize the data in a column of a specified table, over a set of ranges.
+Creates and returns an array of SQL SELECT expressions that will count the number of rows for which a specific column falls within specific ranges.
 
 #### Description
 
 The SELECT expressions will count the number of column values that are
 within each range.
+
+**Note:** The result of this function is meant for use in the `$additionalSelects` parameter
+in one of the query... methods (for example [queryVisitsByDimension](#queryVisitsByDimension)).
+
+**Example**
+
+    // summarize one column
+    $visitTotalActionsRanges = array(
+        array(1, 1),
+        array(2, 10),
+        array(10)
+    );
+    $selects = LogAggregator::getSelectsFromRangedColumn('visit_total_actions', $visitTotalActionsRanges, 'log_visit', 'vta');
+
+    // summarize another column in the same request
+    $visitCountVisitsRanges = array(
+        array(1, 1),
+        array(2, 20),
+        array(20)
+    );
+    $selects = array_merge(
+        $selects,
+        LogAggregator::getSelectsFromRangedColumn('visitor_count_visits', $visitCountVisitsRanges, 'log_visit', 'vcv')
+    );
+
+    // perform query
+    $logAggregator = // get the LogAggregator somehow
+    $query = $logAggregator->queryVisitsByDimension($dimensions = array(), $where = false, $selects);
+    $tableSummary = $query->fetch();
+    
+    $numberOfVisitsWithOneAction = $tableSummary['vta0'];
 
 #### Signature
 
@@ -185,6 +226,6 @@ within each range.
     - `$table`
     - `$selectColumnPrefix`
     - `$restrictToReturningVisitors`
-- _Returns:_ An array of SQL SELECT expressions.
+- _Returns:_ An array of SQL SELECT expressions, for example, ``` array( 'sum(case when log_visit.visit_total_actions between 0 and 2 then 1 else 0 end) as vta0', 'sum(case when log_visit.visit_total_actions > 2 then 1 else 0 end) as vta1' ) ```
     - `array`
 
