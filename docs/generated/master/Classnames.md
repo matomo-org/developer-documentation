@@ -65,10 +65,7 @@
 ## Plugin\Visualization
 ## RankingQuery
 ## ScheduledTask
-## ScheduledTime\Daily
-## ScheduledTime\Hourly
-## ScheduledTime\Monthly
-## ScheduledTime\Weekly
+## ScheduledTime
 ## Segment
 ## SettingsPiwik
 ## SettingsServer

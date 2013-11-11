@@ -109,7 +109,7 @@ Returns a [ScheduledTime](#) instance that describes when the method should be e
 
 #### Signature
 
-- It returns a `Piwik\ScheduledTime` value.
+- It returns a [`ScheduledTime`](../Piwik/ScheduledTime.md) value.
 
 <a name="getrescheduledtime" id="getrescheduledtime"></a>
 <a name="getRescheduledTime" id="getRescheduledTime"></a>

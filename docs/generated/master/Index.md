@@ -125,7 +125,6 @@ Index
 - [`deleteLike()`](Piwik/Option.md#deletelike) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
 - [`deactivate()`](Piwik/Plugin.md#deactivate) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`$date()`](Piwik/Plugin/Controller.md#$date) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
-- [`Daily`](Piwik/ScheduledTime/Daily.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 
 ## E
 
@@ -177,6 +176,7 @@ Index
 - [`fetchRemoteFile()`](Piwik/Http.md#fetchremotefile) &mdash; _Method in class_ [`Http`](Piwik/Http.md)
 - [`$flags()`](Piwik/Notification.md#$flags) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`factory()`](Piwik/Period.md#factory) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
+- [`factory()`](Piwik/ScheduledTime.md#factory) &mdash; _Method in class_ [`ScheduledTime`](Piwik/ScheduledTime.md)
 - [`Factory`](Piwik/ViewDataTable/Factory.md) &mdash; _Class in namespace_ [`Piwik\ViewDataTable`](Piwik/ViewDataTable)
 
 ## G
@@ -343,11 +343,8 @@ Index
 - [`getPriority()`](Piwik/ScheduledTask.md#getpriority) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
 - [`getName()`](Piwik/ScheduledTask.md#getname) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
 - [`getTaskName()`](Piwik/ScheduledTask.md#gettaskname) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
-- [`getRescheduledTime()`](Piwik/ScheduledTime/Daily.md#getrescheduledtime) &mdash; _Method in class_ [`Daily`](Piwik/ScheduledTime/Daily.md)
-- [`getRescheduledTime()`](Piwik/ScheduledTime/Hourly.md#getrescheduledtime) &mdash; _Method in class_ [`Hourly`](Piwik/ScheduledTime/Hourly.md)
-- [`getRescheduledTime()`](Piwik/ScheduledTime/Monthly.md#getrescheduledtime) &mdash; _Method in class_ [`Monthly`](Piwik/ScheduledTime/Monthly.md)
-- [`getRescheduledTime()`](Piwik/ScheduledTime/Weekly.md#getrescheduledtime) &mdash; _Method in class_ [`Weekly`](Piwik/ScheduledTime/Weekly.md)
-- [`getDayIntFromString()`](Piwik/ScheduledTime/Weekly.md#getdayintfromstring) &mdash; _Method in class_ [`Weekly`](Piwik/ScheduledTime/Weekly.md)
+- [`getScheduledTimeForPeriod()`](Piwik/ScheduledTime.md#getscheduledtimeforperiod) &mdash; _Method in class_ [`ScheduledTime`](Piwik/ScheduledTime.md)
+- [`getRescheduledTime()`](Piwik/ScheduledTime.md#getrescheduledtime) &mdash; _Method in class_ [`ScheduledTime`](Piwik/ScheduledTime.md)
 - [`getString()`](Piwik/Segment.md#getstring) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
 - [`getHash()`](Piwik/Segment.md#gethash) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
 - [`getSelectQuery()`](Piwik/Segment.md#getselectquery) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
@@ -418,7 +415,6 @@ Index
 
 - [`Http`](Piwik/Http.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`hasNoClear()`](Piwik/Notification.md#hasnoclear) &mdash; _Method in class_ [`Notification`](Piwik/Notification.md)
-- [`Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 
 ## I
 
@@ -517,7 +513,6 @@ Index
 - [`Manager`](Piwik/Notification/Manager.md) &mdash; _Class in namespace_ [`Piwik\Notification`](Piwik/Notification)
 - [`makePeriodFromQueryParams()`](Piwik/Period.md#makeperiodfromqueryparams) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
 - [`Manager`](Piwik/Plugin/Manager.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin)
-- [`Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 
 ## N
 
@@ -658,13 +653,9 @@ Index
 - [`setOthersLabel()`](Piwik/RankingQuery.md#setotherslabel) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setColumnToMarkExcludedRows()`](Piwik/RankingQuery.md#setcolumntomarkexcludedrows) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
-- [`setDay()`](Piwik/ScheduledTime/Daily.md#setday) &mdash; _Method in class_ [`Daily`](Piwik/ScheduledTime/Daily.md)
-- [`setHour()`](Piwik/ScheduledTime/Hourly.md#sethour) &mdash; _Method in class_ [`Hourly`](Piwik/ScheduledTime/Hourly.md)
-- [`setDay()`](Piwik/ScheduledTime/Hourly.md#setday) &mdash; _Method in class_ [`Hourly`](Piwik/ScheduledTime/Hourly.md)
-- [`setDayOfWeekFromString()`](Piwik/ScheduledTime/Monthly.md#setdayofweekfromstring) &mdash; _Method in class_ [`Monthly`](Piwik/ScheduledTime/Monthly.md)
-- [`setDay()`](Piwik/ScheduledTime/Monthly.md#setday) &mdash; _Method in class_ [`Monthly`](Piwik/ScheduledTime/Monthly.md)
-- [`setDayOfWeek()`](Piwik/ScheduledTime/Monthly.md#setdayofweek) &mdash; _Method in class_ [`Monthly`](Piwik/ScheduledTime/Monthly.md)
-- [`setDay()`](Piwik/ScheduledTime/Weekly.md#setday) &mdash; _Method in class_ [`Weekly`](Piwik/ScheduledTime/Weekly.md)
+- [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
+- [`setDay()`](Piwik/ScheduledTime.md#setday) &mdash; _Method in class_ [`ScheduledTime`](Piwik/ScheduledTime.md)
+- [`setHour()`](Piwik/ScheduledTime.md#sethour) &mdash; _Method in class_ [`ScheduledTime`](Piwik/ScheduledTime.md)
 - [`Segment`](Piwik/Segment.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`SettingsPiwik`](Piwik/SettingsPiwik.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`SettingsServer`](Piwik/SettingsServer.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
@@ -720,7 +711,6 @@ Index
 
 - [`walkPath()`](Piwik/DataTable.md#walkpath) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`warning()`](Piwik/Log.md#warning) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
-- [`Weekly`](Piwik/ScheduledTime/Weekly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 - [`WidgetsList`](Piwik/WidgetsList.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 
 ## Y
