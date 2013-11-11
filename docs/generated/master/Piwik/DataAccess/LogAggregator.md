@@ -48,6 +48,7 @@ The class defines the following methods:
 - [`queryVisitsByDimension()`](#queryvisitsbydimension) &mdash; Aggregates visit logs, optionally grouping by some dimension, and returns the aggregated data.
 - [`queryEcommerceItems()`](#queryecommerceitems) &mdash; Aggregates ecommerce item data (everything stored in the **log_conversion_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
 - [`queryActionsByDimension()`](#queryactionsbydimension) &mdash; Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.
+- [`getSelectsFromRangedColumn()`](#getselectsfromrangedcolumn) &mdash; Creates and returns an array of SQL SELECT expressions that will summarize the data in a column of a specified table, over a set of ranges.
 
 <a name="queryvisitsbydimension" id="queryvisitsbydimension"></a>
 <a name="queryVisitsByDimension" id="queryVisitsByDimension"></a>
@@ -164,4 +165,26 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
     - `$joinLogActionOnColumn`
 - _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
     - `mixed`
+
+<a name="getselectsfromrangedcolumn" id="getselectsfromrangedcolumn"></a>
+<a name="getSelectsFromRangedColumn" id="getSelectsFromRangedColumn"></a>
+### `getSelectsFromRangedColumn()`
+
+Creates and returns an array of SQL SELECT expressions that will summarize the data in a column of a specified table, over a set of ranges.
+
+#### Description
+
+The SELECT expressions will count the number of column values that are
+within each range.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$column`
+    - `$ranges`
+    - `$table`
+    - `$selectColumnPrefix`
+    - `$restrictToReturningVisitors`
+- _Returns:_ An array of SQL SELECT expressions.
+    - `array`
 

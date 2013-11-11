@@ -206,6 +206,7 @@ Index
 - [`getLanguagesList()`](Piwik/Common.md#getlanguageslist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguageToCountryList()`](Piwik/Common.md#getlanguagetocountrylist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getSqlStringFieldsArray()`](Piwik/Common.md#getsqlstringfieldsarray) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
+- [`getSelectsFromRangedColumn()`](Piwik/DataAccess/LogAggregator.md#getselectsfromrangedcolumn) &mdash; _Method in class_ [`LogAggregator`](Piwik/DataAccess/LogAggregator.md)
 - [`getSortedByColumnName()`](Piwik/DataTable.md#getsortedbycolumnname) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`getRowFromLabel()`](Piwik/DataTable.md#getrowfromlabel) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`getRowIdFromLabel()`](Piwik/DataTable.md#getrowidfromlabel) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
