@@ -7,8 +7,16 @@ rm -rf docs/cache
 mkdir docs/cache
 rm -rf docs/generated
 mkdir docs/generated
+cd piwik
+git reset --hard
+git clean -f -d
+git checkout master
+git pull
+cd ..
 php generator/vendor/tsteur/sami/sami.php update generator/config.php
 cd piwik
+git reset --hard
+git clean -f -d
 git checkout master
 git pull
 cd ..

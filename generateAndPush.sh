@@ -10,5 +10,6 @@ git checkout docs/generated
 git pull
 ./generate.sh
 git add docs/generated
+git rm $(git ls-files --deleted docs/generated)
 git commit -m 'updated plugins API documentation'
 git push
