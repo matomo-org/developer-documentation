@@ -3,84 +3,79 @@
 Settings
 ========
 
-Settings class that plugins can extend in order to create settings for their plugins.
+Base class of all Settings providers.
 
+Description
+-----------
 
-Constants
----------
+Plugins that define their own settings can extend
+this class to easily make their settings available to Piwik users.
 
-This abstract class defines the following constants:
+Descendants of this class should implement the [init](#init) method and call the
+[addSetting](#addSetting) method for each of the plugin's settings.
 
-- `TYPE_INT`
-- `TYPE_FLOAT`
-- `TYPE_STRING`
-- `TYPE_BOOL`
-- `TYPE_ARRAY`
-- `FIELD_RADIO`
-- `FIELD_TEXT`
-- `FIELD_TEXTAREA`
-- `FIELD_CHECKBOX`
-- `FIELD_PASSWORD`
-- `FIELD_MULTI_SELECT`
-- `FIELD_SINGLE_SELECT`
+For an example, see the [ExampleSettingsPlugin](#) plugin.
 
 Methods
 -------
 
 The abstract class defines the following methods:
 
-- [`__construct()`](#__construct)
-- [`getIntroduction()`](#getintroduction)
-- [`getSettingsForCurrentUser()`](#getsettingsforcurrentuser) &mdash; Returns only settings that can be displayed for current user.
-- [`getSettings()`](#getsettings) &mdash; Get all available settings without checking any permissions.
+- [`__construct()`](#__construct) &mdash; Constructor.
+- [`getIntroduction()`](#getintroduction) &mdash; Returns the introduction text for this plugin's settings.
+- [`getSettingsForCurrentUser()`](#getsettingsforcurrentuser) &mdash; Returns the settings that can be displayed for the current user.
+- [`getSettings()`](#getsettings) &mdash; Returns all available settings.
 - [`save()`](#save) &mdash; Saves (persists) the current setting values in the database.
-- [`removeAllPluginSettings()`](#removeallpluginsettings) &mdash; Removes all settings for this plugin.
-- [`getSettingValue()`](#getsettingvalue) &mdash; Gets the current value for this setting.
-- [`setSettingValue()`](#setsettingvalue) &mdash; Sets (overwrites) the value for the given setting.
-- [`removeSettingValue()`](#removesettingvalue) &mdash; Removes the value for the given setting.
+- [`removeAllPluginSettings()`](#removeallpluginsettings) &mdash; Removes all settings for this plugin from the database.
+- [`getSettingValue()`](#getsettingvalue) &mdash; Returns the current value for a setting.
+- [`setSettingValue()`](#setsettingvalue) &mdash; Sets (overwrites) the value of a setting in memory.
+- [`removeSettingValue()`](#removesettingvalue) &mdash; Unsets a setting value in memory.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
+Constructor.
+
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$pluginName`
-- It does not return anything.
+    - `$pluginName` (`string`) &mdash; The name of the plugin these settings are for.
 
 <a name="getintroduction" id="getintroduction"></a>
 <a name="getIntroduction" id="getIntroduction"></a>
 ### `getIntroduction()`
 
+Returns the introduction text for this plugin's settings.
+
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="getsettingsforcurrentuser" id="getsettingsforcurrentuser"></a>
 <a name="getSettingsForCurrentUser" id="getSettingsForCurrentUser"></a>
 ### `getSettingsForCurrentUser()`
 
-Returns only settings that can be displayed for current user.
-
-#### Description
-
-For instance a regular user won't see get
-any settings that require super user permissions.
+Returns the settings that can be displayed for the current user.
 
 #### Signature
 
-- It returns a `Piwik\Settings\Setting` value.
+- It returns a [`Setting[]`](../../Piwik/Settings/Setting.md) value.
 
 <a name="getsettings" id="getsettings"></a>
 <a name="getSettings" id="getSettings"></a>
 ### `getSettings()`
 
-Get all available settings without checking any permissions.
+Returns all available settings.
+
+#### Description
+
+This will include settings that are not available
+to the current user (such as settings available only to the Super User).
 
 #### Signature
 
-- It returns a `Piwik\Settings\Setting` value.
+- It returns a [`Setting[]`](../../Piwik/Settings/Setting.md) value.
 
 <a name="save" id="save"></a>
 <a name="save" id="save"></a>
@@ -96,11 +91,12 @@ Saves (persists) the current setting values in the database.
 <a name="removeAllPluginSettings" id="removeAllPluginSettings"></a>
 ### `removeAllPluginSettings()`
 
-Removes all settings for this plugin.
+Removes all settings for this plugin from the database.
 
 #### Description
 
-Useful for instance while uninstalling the plugin.
+Useful when uninstalling
+a plugin.
 
 #### Signature
 
@@ -110,55 +106,59 @@ Useful for instance while uninstalling the plugin.
 <a name="getSettingValue" id="getSettingValue"></a>
 ### `getSettingValue()`
 
-Gets the current value for this setting.
+Returns the current value for a setting.
 
 #### Description
 
-If no value is specified, the default value will be returned.
+If no value is stored, the default value
+is be returned.
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$setting` (`Piwik\Settings\Setting`)
+    - `$setting` ([`Setting`](../../Piwik/Settings/Setting.md))
 - It returns a `mixed` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; In case the setting does not exist or if the current user is not allowed to change the value of this setting.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the setting does not exist or if the current user is not allowed to change the value of this setting.
 
 <a name="setsettingvalue" id="setsettingvalue"></a>
 <a name="setSettingValue" id="setSettingValue"></a>
 ### `setSettingValue()`
 
-Sets (overwrites) the value for the given setting.
+Sets (overwrites) the value of a setting in memory.
 
 #### Description
 
-Make sure to call `save()` afterwards, otherwise the change
-has no effect. Before the value is saved a possibly define `validate` closure and `filter` closure will be
-called. Alternatively the value will be casted to the specfied setting type.
+To persist the change, [save](#save) must be
+called afterwards, otherwise the change has no effect.
+
+Before the setting is changed, the [Setting::validate](#) and [Setting::transform](#) closures
+will be invoked (if defined). If there is no validation filter, the setting value will be casted
+to the appropriate data type.
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$setting` (`Piwik\Settings\Setting`)
-    - `$value`
+    - `$setting` ([`Setting`](../../Piwik/Settings/Setting.md))
+    - `$value` (`string`)
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; In case the setting does not exist or if the current user is not allowed to change the value of this setting.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the setting does not exist or if the current user is not allowed to change the value of this setting.
 
 <a name="removesettingvalue" id="removesettingvalue"></a>
 <a name="removeSettingValue" id="removeSettingValue"></a>
 ### `removeSettingValue()`
 
-Removes the value for the given setting.
+Unsets a setting value in memory.
 
 #### Description
 
-Make sure to call `save()` afterwards, otherwise the removal has no
-effect.
+To persist the change, [save](#save) must be
+called afterwards, otherwise the change has no effect.
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$setting` (`Piwik\Settings\Setting`)
+    - `$setting` ([`Setting`](../../Piwik/Settings/Setting.md))
 - It does not return anything.
 

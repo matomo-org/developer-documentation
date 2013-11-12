@@ -27,7 +27,6 @@ periodically, while every other date range is archived on-demand.
     $period = Common::getRequestVar('period', null, 'string');
     $periodObject = Period::advancedFactory($period, $date);
 
-
 Methods
 -------
 
@@ -60,7 +59,6 @@ Constructor.
 
 - It accepts the following parameter(s):
     - `$date` ([`Date`](../Piwik/Date.md))
-- It does not return anything.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
@@ -75,8 +73,8 @@ Note: This method cannot create Range periods.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$strPeriod`
-    - `$date`
+    - `$strPeriod` (`string`) &mdash; `"day"`, `"week"`, `"month"`, `"year"`, `"range"`
+    - `$date` ([`Date`](../Piwik/Date.md)|`string`) &mdash; A date within the period or the range of dates.
 - It returns a [`Period`](../Piwik/Period.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$strPeriod` is invalid.
@@ -103,9 +101,9 @@ Creates a period instance using a Site instance and two strings describing the p
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$timezone`
-    - `$period`
-    - `$date`
+    - `$timezone` (`string`)
+    - `$period` (`string`) &mdash; The period string: day, week, month, year, range
+    - `$date` (`string`) &mdash; The date or date range string. Can be a special value including `'now'`, `'today'`, `'yesterday'`, `'yesterdaySameTime'`.
 - It returns a [`Period`](../Piwik/Period.md) value.
 
 <a name="getdatestart" id="getdatestart"></a>
@@ -184,7 +182,7 @@ Returns a list of strings representing the current period.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$format`
+    - `$format` (`string`) &mdash; The format of each individual day.
 - _Returns:_ An array of string dates that this period consists of.
     - `array`
 

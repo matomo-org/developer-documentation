@@ -24,7 +24,6 @@ class. (See [Metrics](#) for more information about integer metric names.)
         return $dataTable;
     }
 
-
 Methods
 -------
 
@@ -42,9 +41,8 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$mappingToApply`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will be eventually filtered.
+    - `$mappingToApply` (`array`|`null`) &mdash; The name mapping to apply. Must map old column names with new ones, eg, ``` array('OLD_COLUMN_NAME' => 'NEW_COLUMN NAME', 'OLD_COLUMN_NAME2' => 'NEW_COLUMN NAME2') ``` If null, [Metrics::$mappingFromIdToName](#) is used.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -55,6 +53,6 @@ See [ReplaceColumnNames](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

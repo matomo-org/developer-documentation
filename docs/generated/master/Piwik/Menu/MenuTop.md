@@ -25,7 +25,6 @@ the top menu.
         );
     }
 
-
 Methods
 -------
 
@@ -42,11 +41,11 @@ Adds a new entry to the TopMenu.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$topMenuName`
-    - `$url`
-    - `$displayedForCurrentUser`
-    - `$order`
-    - `$isHTML`
-    - `$tooltip`
+    - `$topMenuName` (`string`) &mdash; The menu item name. Can be a translation token.
+    - `$url` (`string`|`array`) &mdash; The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL. If `$isHTML` is true, this can be a string with HTML that is simply embedded.
+    - `$displayedForCurrentUser` (`boolean`) &mdash; Whether this menu entry should be displayed for the current user. If false, the entry will not be added.
+    - `$order` (`int`) &mdash; The order hint.
+    - `$isHTML` (`bool`) &mdash; Whether `$url` is an HTML string or a URL that will be rendered as a link.
+    - `$tooltip` (`bool`|`string`) &mdash; Optional tooltip to display.
 - It does not return anything.
 

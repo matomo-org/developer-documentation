@@ -27,7 +27,6 @@ Description
 
     Option::deleteLike('MyPlugin.MyOptionName.%');
 
-
 Methods
 -------
 
@@ -37,7 +36,6 @@ The class defines the following methods:
 - [`set()`](#set) &mdash; Sets an option value by name.
 - [`delete()`](#delete) &mdash; Deletes an option.
 - [`deleteLike()`](#deletelike) &mdash; Deletes all options that match the supplied pattern.
-- [`clearCache()`](#clearcache) &mdash; Clears the option value cache and forces a reload from the Database.
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
@@ -48,7 +46,7 @@ Returns the option value for the requested option `$name`.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash; The option name.
 - _Returns:_ The value or false, if not found.
     - `string`
     - `bool`
@@ -76,8 +74,8 @@ Deletes an option.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$value`
+    - `$name` (`string`) &mdash; Option name to match exactly.
+    - `$value` (`string`) &mdash; If supplied the option will be deleted only if its value matches this value.
 - It does not return anything.
 
 <a name="deletelike" id="deletelike"></a>
@@ -89,21 +87,7 @@ Deletes all options that match the supplied pattern.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$namePattern`
-    - `$value`
+    - `$namePattern` (`string`) &mdash; Pattern of key to match. `'%'` characters should be used as wildcards, and literal `'_'` characters should be escaped.
+    - `$value` (`string`) &mdash; If supplied options will be deleted only if their value matches this value.
 - It does not return anything.
-
-<a name="clearcache" id="clearcache"></a>
-<a name="clearCache" id="clearCache"></a>
-### `clearCache()`
-
-Clears the option value cache and forces a reload from the Database.
-
-#### Description
-
-Used in unit tests to reset the state of the object between tests.
-
-#### Signature
-
-- It returns a `void` value.
 

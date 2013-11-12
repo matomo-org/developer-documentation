@@ -34,15 +34,14 @@ Description
         }
     }
 
-
 Methods
 -------
 
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`aggregateDayReport()`](#aggregatedayreport) &mdash; Triggered when the archiving process is initiated for a day period.
-- [`aggregateMultipleReports()`](#aggregatemultiplereports) &mdash; Archive data for a non-day period.
+- [`aggregateDayReport()`](#aggregatedayreport) &mdash; Archives data for a day period.
+- [`aggregateMultipleReports()`](#aggregatemultiplereports) &mdash; Archives data for a non-day period.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -53,18 +52,23 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$aggregator` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md))
-- It does not return anything.
+    - `$aggregator` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md)) &mdash; The ArchiveProcessor instance sent to the archiving event observer.
 
 <a name="aggregatedayreport" id="aggregatedayreport"></a>
 <a name="aggregateDayReport" id="aggregateDayReport"></a>
 ### `aggregateDayReport()`
 
-Triggered when the archiving process is initiated for a day period.
+Archives data for a day period.
 
 #### Description
 
-Plugins that compute analytics data should create an Archiver class that descends from [Plugin\Archiver](#).
+Implementations of this method should do more computation intensive activities such
+as aggregating data across log tables. Since this method only deals w/ data logged for a day,
+aggregating individual log table rows isn't a problem. Doing this for any larger period,
+however, would cause performance issues.
+
+Aggregate log table rows using a [LogAggregator](#) instance. Get a [LogAggregator](#) instance
+using the [getLogAggregator](#getLogAggregator) method.
 
 #### Signature
 
@@ -74,7 +78,16 @@ Plugins that compute analytics data should create an Archiver class that descend
 <a name="aggregateMultipleReports" id="aggregateMultipleReports"></a>
 ### `aggregateMultipleReports()`
 
-Archive data for a non-day period.
+Archives data for a non-day period.
+
+#### Description
+
+Implementations of this method should only aggregate existing reports of subperiods of the
+current period. For example, it is more efficient to aggregate reports for each day of a
+week than to aggregate each log entry of the week.
+
+Use [ArchiveProcessor::aggregateNumericMetrics](#) and [ArchiveProcessor::aggregateDataTableRecords](#)
+to aggregate archived reports. Get the [ArchiveProcessor](#) instance using the [getProcessor](#getProcessor).
 
 #### Signature
 

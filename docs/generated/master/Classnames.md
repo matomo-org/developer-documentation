@@ -69,11 +69,11 @@
 ## Segment
 ## SettingsPiwik
 ## SettingsServer
+## Settings\Setting
 ## Settings\SystemSetting
 ## Settings\UserSetting
 ## Singleton
 ## Site
-## TaskScheduler
 ## Tracker\Request
 ## Url
 ## UrlHelper

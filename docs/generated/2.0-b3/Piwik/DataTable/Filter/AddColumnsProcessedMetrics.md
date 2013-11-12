@@ -21,7 +21,6 @@ Note: This filter must be called before [ReplaceColumnNames](#) is called.
 
     $dataTable->filter('AddColumnsProcessedMetrics');
 
-
 Methods
 -------
 
@@ -39,9 +38,8 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$deleteRowsWithNoVisit`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table to eventually filter.
+    - `$deleteRowsWithNoVisit` (`bool`) &mdash; Whether to delete rows with no visits or not.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -57,6 +55,6 @@ more information.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

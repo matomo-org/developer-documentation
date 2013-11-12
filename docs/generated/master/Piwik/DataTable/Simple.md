@@ -11,7 +11,6 @@ Description
 Simple DataTables are only used to slightly alter the output of some renderers
 (notably the XML renderer).
 
-
 Methods
 -------
 
@@ -28,6 +27,6 @@ Adds rows based on an array mapping label column values to value column values.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$array`
+    - `$array` (`array`) &mdash; Array containing the rows, eg, ``` array( 'Label row 1' => $value1, 'Label row 2' => $value2, ) ```
 - It does not return anything.
 

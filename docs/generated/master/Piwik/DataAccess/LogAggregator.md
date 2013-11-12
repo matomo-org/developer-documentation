@@ -85,27 +85,6 @@ _Note: A dimension is essentially the same as a **GROUP BY** field._
         // ... do something with aggregated data ...
     }
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `LOG_VISIT_TABLE`
-- `LOG_ACTIONS_TABLE`
-- `LOG_CONVERSION_TABLE`
-- `REVENUE_SUBTOTAL_FIELD`
-- `REVENUE_TAX_FIELD`
-- `REVENUE_SHIPPING_FIELD`
-- `REVENUE_DISCOUNT_FIELD`
-- `TOTAL_REVENUE_FIELD`
-- `ITEMS_COUNT_FIELD`
-- `CONVERSION_DATETIME_FIELD`
-- `ACTION_DATETIME_FIELD`
-- `VISIT_DATETIME_FIELD`
-- `IDGOAL_FIELD`
-- `FIELDS_SEPARATOR`
-
 Methods
 -------
 
@@ -150,11 +129,11 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$dimensions` (`array`)
-    - `$where`
-    - `$additionalSelects` (`array`)
-    - `$metrics`
-    - `$rankingQuery`
+    - `$dimensions` (`array`) &mdash; SELECT fields (or just one field) that will be grouped by, eg, `'referrer_name'` or `array('referrer_name', 'referrer_keyword')`. The metrics retrieved from the query will be specific to combinations of these fields. So if `array('referrer_name', 'referrer_keyword')` is supplied, the query will select the visits for each referrer/keyword combination.
+    - `$where` (`bool`|`string`) &mdash; Additional condition for the WHERE clause. Can be used to filter the set of visits that are considered for aggregation.
+    - `$additionalSelects` (`array`) &mdash; Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
+    - `$metrics` (`bool`|`array`) &mdash; The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - [Metrics::INDEX_NB_UNIQ_VISITORS](#) - [Metrics::INDEX_NB_VISITS](#) - [Metrics::INDEX_NB_ACTIONS](#) - [Metrics::INDEX_MAX_ACTIONS](#) - [Metrics::INDEX_SUM_VISIT_LENGTH](#) - [Metrics::INDEX_BOUNCE_COUNT](#) - [Metrics::INDEX_NB_VISITS_CONVERTED](#)
+    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash; A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](#).
 - _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.
     - `mixed`
 
@@ -193,7 +172,7 @@ Segmentation is not yet supported in this aggregation method.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$dimension`
+    - `$dimension` (`string`) &mdash; One or more **log_conversion_item** column to group aggregated data by. Eg, `'idaction_sku'` or `'idaction_sku, idaction_category'`.
 - _Returns:_ A statement object that can be used to iterate through the query's result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.
     - `Piwik\DataAccess\Zend_Db_Statement`
 
@@ -223,12 +202,12 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$dimensions`
-    - `$where`
-    - `$additionalSelects`
-    - `$metrics`
-    - `$rankingQuery`
-    - `$joinLogActionOnColumn`
+    - `$dimensions` (`array`|`string`) &mdash; One or more SELECT fields that will be used to group the log_action rows by. This parameter determines which log_action rows will be aggregated together.
+    - `$where` (`bool`|`string`) &mdash; Additional condition for the WHERE clause. Can be used to filter the set of visits that are considered for aggregation.
+    - `$additionalSelects` (`array`) &mdash; Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
+    - `$metrics` (`bool`|`array`) &mdash; The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - [Metrics::INDEX_NB_UNIQ_VISITORS](#) - [Metrics::INDEX_NB_VISITS](#) - [Metrics::INDEX_NB_ACTIONS](#)
+    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash; A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](#).
+    - `$joinLogActionOnColumn` (`bool`|`string`) &mdash; One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed.
 - _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
     - `mixed`
 
@@ -277,11 +256,11 @@ in one of the query... methods (for example [queryVisitsByDimension](#queryVisit
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$column`
-    - `$ranges`
-    - `$table`
-    - `$selectColumnPrefix`
-    - `$restrictToReturningVisitors`
+    - `$column` (`string`) &mdash; The name of a column in `$table` that will be summarized.
+    - `$ranges` (`array`) &mdash; An array of arrays describing the ranges over which the data in the table will be summarized. For example, ``` array( array(1, 1), array(2, 2), array(3, 5), array(6, 10), array(10) // everything over 10 ) ```
+    - `$table` (`string`) &mdash; The unprefixed name of the table whose rows will be summarized.
+    - `$selectColumnPrefix` (`string`) &mdash; The prefix to prepend to each SELECT expression. This prefix is used to differentiate different sets of range summarization SELECTs. You can supply different values to this argument to summarize several columns in one query (see above for an example).
+    - `$restrictToReturningVisitors` (`bool`) &mdash; Whether to only summarize rows that belong to visits of returning visitors or not. If this argument is true, then the SELECT expressions returned can only be used with the [queryVisitsByDimension](#queryVisitsByDimension) method.
 - _Returns:_ An array of SQL SELECT expressions, for example, ``` array( 'sum(case when log_visit.visit_total_actions between 0 and 2 then 1 else 0 end) as vta0', 'sum(case when log_visit.visit_total_actions > 2 then 1 else 0 end) as vta1' ) ```
     - `array`
 

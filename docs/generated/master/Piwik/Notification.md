@@ -15,24 +15,13 @@ $notification->context = Notification::CONTEXT_ERROR;
 \Piwik\Notification\Manager::notify('pluginname_id', $notification);
 ```
 
-
 Constants
 ---------
 
 This class defines the following constants:
 
-- `CONTEXT_SUCCESS`
-- `CONTEXT_ERROR`
-- `CONTEXT_INFO`
-- `CONTEXT_WARNING`
-- `PRIORITY_MIN` &mdash; Lowest priority
-- `PRIORITY_LOW` &mdash; Lower priority
-- `PRIORITY_HIGH` &mdash; Higher priority
-- `PRIORITY_MAX` &mdash; Highest priority
 - [`FLAG_NO_CLEAR`](#flag_no_clear) &mdash; If flag applied, no close icon will be displayed.
 - [`TYPE_TOAST`](#type_toast) &mdash; Implies transient.
-- `TYPE_PERSISTENT` &mdash; Notification will be displayed until the new user explicitly closes the notification
-- `TYPE_TRANSIENT` &mdash; Notification will be displayed only once.
 
 <a name="flag_no_clear" id="flag_no_clear"></a>
 <a name="FLAG_NO_CLEAR" id="FLAG_NO_CLEAR"></a>
@@ -58,6 +47,7 @@ This class defines the following properties:
 - [`$type`](#$type) &mdash; The type of the notification.
 - [`$context`](#$context) &mdash; Context of the notification.
 - [`$priority`](#$priority) &mdash; The priority of the notification, the higher the priority, the higher the order.
+- [`$raw`](#$raw) &mdash; Set to true in case you want the raw message output.
 
 <a name="$title" id="$title"></a>
 <a name="title" id="title"></a>
@@ -138,6 +128,20 @@ highest priority will be displayed first and all other notifications below. See 
 
 - It is a `int` value.
 
+<a name="$raw" id="$raw"></a>
+<a name="raw" id="raw"></a>
+### `$raw`
+
+Set to true in case you want the raw message output.
+
+#### Description
+
+Make sure to escape the text in this case by yourself.
+
+#### Signature
+
+- It is a `bool` value.
+
 Methods
 -------
 
@@ -154,8 +158,7 @@ The class defines the following methods:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$message`
-- It does not return anything.
+    - `$message` (`string`) &mdash; The notification message.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the message is empty.
 

@@ -67,7 +67,6 @@ contain the following information:
         }
     }
 
-
 Methods
 -------
 
@@ -95,8 +94,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$pluginName`
-- It does not return anything.
+    - `$pluginName` (`string`|`bool`) &mdash; A plugin name to force. If not supplied, it is set to the last part of the class name.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If plugin metadata is defined in both the getInformation() method and the plugin.json file.
 
@@ -241,7 +239,7 @@ Returns false if we can't find one.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$backtrace`
+    - `$backtrace` (`array`) &mdash; The result of the debug_backtrace() or Exception::getTrace().
 - It can return one of the following values:
     - `string`
     - `Piwik\false`

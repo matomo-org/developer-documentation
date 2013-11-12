@@ -5,7 +5,6 @@ Daily
 
 Daily class is used to schedule tasks every day.
 
-
 Methods
 -------
 
@@ -37,7 +36,7 @@ The class defines the following methods:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$_day`
+    - `$_day` (`int`)
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)

@@ -44,14 +44,6 @@ using this class when generating aggregation SQL queries.
     $segment = new Segment('', $idSites);
     // $segment->getSelectQuery will return a query that selects all visits
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `SEGMENT_TRUNCATE_LIMIT` &mdash; Truncate the Segments to 8k
-
 Methods
 -------
 
@@ -72,9 +64,8 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$segmentCondition`
-    - `$idSites`
-- It does not return anything.
+    - `$segmentCondition` (`string`) &mdash; The segment condition, eg, `'browserCode=ff;countryCode=CA'`.
+    - `$idSites` (`array`) &mdash; The list of sites the segment will be used with. Some segments are dependent on the site, such as goal segments.
 
 <a name="isempty" id="isempty"></a>
 <a name="isEmpty" id="isEmpty"></a>
@@ -115,12 +106,12 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$select`
-    - `$from`
-    - `$where`
-    - `$bind`
-    - `$orderBy`
-    - `$groupBy`
+    - `$select` (`string`) &mdash; The select clause. Should NOT include the **SELECT** just the columns, eg, `'t1.col1 as col1, t2.col2 as col2'`.
+    - `$from` (`array`) &mdash; Array of table names (without prefix), eg, `array('log_visit', 'log_conversion')`.
+    - `$where` (`Piwik\false`|`string`) &mdash; (optional) Where clause, eg, `'t1.col1 = ? AND t2.col2 = ?'`.
+    - `$bind` (`array`|`string`) &mdash; (optional) Bind parameters, eg, `array($col1Value, $col2Value)`.
+    - `$orderBy` (`Piwik\false`|`string`) &mdash; (optional) Order by clause, eg, `"t1.col1 ASC"`.
+    - `$groupBy` (`Piwik\false`|`string`) &mdash; (optional) Group by clause, eg, `"t2.col2"`.
 - _Returns:_ The entire select query.
     - `string`
 

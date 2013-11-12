@@ -72,7 +72,6 @@ The following functions are available to twig templates:
     $view->property2 = "another view property";
     echo $view->render();
 
-
 Methods
 -------
 
@@ -86,9 +85,6 @@ The class defines the following methods:
 - [`render()`](#render) &mdash; Renders the current view.
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field.
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response.
-- [`addForm()`](#addform) &mdash; Add form to view
-- [`assign()`](#assign) &mdash; Assign value to a variable for use in a template ToDo: This is ugly.
-- [`clearCompiledTemplates()`](#clearcompiledtemplates) &mdash; Clear compiled Smarty templates
 - [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template.
 
 <a name="__construct" id="__construct"></a>
@@ -100,8 +96,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$templateFile`
-- It does not return anything.
+    - `$templateFile` (`string`) &mdash; The template file to load. Must be in the following format: `"@MyPlugin/templateFileName"`. Note the absence of .twig from the end of the name.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>
@@ -136,8 +131,8 @@ Variable names may not be prefixed with '_'.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$key`
-    - `$val`
+    - `$key` (`string`) &mdash; The variable name.
+    - `$val` (`mixed`) &mdash; The variable value.
 - It does not return anything.
 
 <a name="__get" id="__get"></a>
@@ -153,7 +148,7 @@ Variable names may not be prefixed with '_'.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$key`
+    - `$key` (`string`) &mdash; The variable name.
 - _Returns:_ The variable value.
     - `mixed`
 
@@ -187,7 +182,7 @@ set just before rendering.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$contentType`
+    - `$contentType` (`string`)
 - It does not return anything.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
@@ -207,42 +202,7 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$option`
-- It does not return anything.
-
-<a name="addform" id="addform"></a>
-<a name="addForm" id="addForm"></a>
-### `addForm()`
-
-Add form to view
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$form` (`Piwik\QuickForm2`)
-- It does not return anything.
-
-<a name="assign" id="assign"></a>
-<a name="assign" id="assign"></a>
-### `assign()`
-
-Assign value to a variable for use in a template ToDo: This is ugly.
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$var`
-    - `$value`
-- It does not return anything.
-
-<a name="clearcompiledtemplates" id="clearcompiledtemplates"></a>
-<a name="clearCompiledTemplates" id="clearCompiledTemplates"></a>
-### `clearCompiledTemplates()`
-
-Clear compiled Smarty templates
-
-#### Signature
-
+    - `$option` (`string`) &mdash; ('deny' or 'sameorigin')
 - It does not return anything.
 
 <a name="singlereport" id="singlereport"></a>
@@ -254,9 +214,9 @@ Creates a View for and then renders the single report template.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$title`
-    - `$reportHtml`
-    - `$fetch`
+    - `$title` (`string`) &mdash; The report title.
+    - `$reportHtml` (`string`) &mdash; The report body HTML.
+    - `$fetch` (`bool`) &mdash; If true, return report contents as a string; otherwise echo to screen.
 - _Returns:_ The report contents if `$fetch` is true.
     - `string`
     - `void`

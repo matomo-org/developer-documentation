@@ -31,7 +31,6 @@ The general use case looks like this:
 
 For more examples, see RankingQueryTest.php
 
-
 Methods
 -------
 
@@ -56,8 +55,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$limit`
-- It does not return anything.
+    - `$limit` (`int`|`Piwik\false`) &mdash; The result row limit. See [setLimit](#setLimit).
 
 <a name="setlimit" id="setlimit"></a>
 <a name="setLimit" id="setLimit"></a>
@@ -68,7 +66,7 @@ Set the limit after which everything is grouped to "Others".
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$limit`
+    - `$limit` (`int`)
 - It does not return anything.
 
 <a name="setotherslabel" id="setotherslabel"></a>
@@ -80,7 +78,7 @@ Set the value to use for the label in the 'Others' row.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$value`
+    - `$value` (`string`)
 - It does not return anything.
 
 <a name="addlabelcolumn" id="addlabelcolumn"></a>
@@ -96,7 +94,7 @@ Labels are the columns that are replaced with "Others" after the limit.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$labelColumn`
+    - `$labelColumn` (`string`|`array`)
 - It does not return anything.
 
 <a name="addcolumn" id="addcolumn"></a>
@@ -108,8 +106,8 @@ Add a column that has be added to the outer queries.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$column`
-    - `$aggregationFunction`
+    - `$column` (`Piwik\$column`)
+    - `$aggregationFunction` (`string`|`bool`) &mdash; If set, this function is used to aggregate the values of "Others", eg, `'min'`, `'max'` or `'sum'`.
 - It does not return anything.
 
 <a name="setcolumntomarkexcludedrows" id="setcolumntomarkexcludedrows"></a>
@@ -127,7 +125,7 @@ by [execute](#execute).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$column`
+    - `$column` (`Piwik\$column`) &mdash; string Name of the column.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
@@ -154,8 +152,8 @@ for rows where `log_action.type = TYPE_ACTION_URL` and for rows `log_action.type
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$partitionColumn`
-    - `$possibleValues`
+    - `$partitionColumn` (`Piwik\$partitionColumn`) &mdash; string The column name to partion by.
+    - `$possibleValues` (`Piwik\$possibleValues`) &mdash; Array of possible column values.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
@@ -173,8 +171,8 @@ The object has to be configured first using the other methods.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$innerQuery`
-    - `$bind`
+    - `$innerQuery` (`Piwik\$innerQuery`) &mdash; string  The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](#) cannot apply ordering itself.
+    - `$bind` (`Piwik\$bind`) &mdash; array         Bindings for the inner query.
 - _Returns:_ The format depends on which methods have been used to configure the ranking query.
     - `array`
 
@@ -192,7 +190,7 @@ yourself, use this method.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$innerQuery`
+    - `$innerQuery` (`Piwik\$innerQuery`) &mdash; string  The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](#) cannot apply ordering itself.
 - _Returns:_ The entire ranking query SQL.
     - `string`
 

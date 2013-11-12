@@ -5,15 +5,15 @@ This is a complete list of available classes:
 
 - [`API\Request`](Piwik/API/Request.md) &mdash; Dispatches API requests to the appropriate API method.
 - [`Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
-- [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used to insert numeric and blob archive data.
+- [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used to insert numeric and blob archive data, and to aggregate archive data.
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; An ArchiveProcessor processes data for an Archive determined by these Parameters: website, period and segment.
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
 - [`DataAccess\LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; Contains methods that aggregates log data (visits, actions, conversions, ecommerce).
 - [`DataTable`](Piwik/DataTable.md) &mdash; The primary data structure used to store analytics data in Piwik.
 - [`DataTable\Filter`](Piwik/DataTable/Filter.md) &mdash; A filter is set of logic that manipulates a DataTable.
-- [`DataTable\Filter\AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md) &mdash; Adds the following columns to a DataTable using metrics that already exist:  - **conversion_rate**: percent value of `nb_conversions / nb_visits - **nb_actions_per_visit**: `nb_actions / nb_visits` - **avg_time_on_site**: in number of seconds, `round(visit_length / nb_visits)`.
-- [`DataTable\Filter\AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; Adds the following columns to a DataTable using metrics that already exist:  - **revenue_per_visit**: total goal and ecommerce revenue / nb_visits - **goal_%idGoal%_conversion_rate**: the conversion rate.
+- [`DataTable\Filter\AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md) &mdash; Adds the processed metrics columns to a DataTable using metrics that already exist.
+- [`DataTable\Filter\AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; Adds the Goal related metrics to a DataTable using metrics that already exist.
 - [`DataTable\Filter\AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md) &mdash; Add a summary row row to the table that is the sum of all other table rows.
 - [`DataTable\Filter\BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md) &mdash; A DataTable filter that replaces range label columns with prettier, human-friendlier versions.
 - [`DataTable\Filter\BeautifyTimeRangeLabels`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md) &mdash; A DataTable filter that replaces range labels whose values are in seconds with prettier, human-friendlier versions.
@@ -64,7 +64,7 @@ This is a complete list of available classes:
 - [`Plugin\Archiver`](Piwik/Plugin/Archiver.md) &mdash; The base class that should be extended by plugins that archive their own metrics.
 - [`Plugin\Controller`](Piwik/Plugin/Controller.md) &mdash; Base class of all plugin Controllers.
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
-- [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Settings class that plugins can extend in order to create settings for their plugins.
+- [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all Settings providers.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; This class is used to load (from the API) and customize the output of a given DataTable.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; Base class for all DataTable visualizations.
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
@@ -73,11 +73,11 @@ This is a complete list of available classes:
 - [`Segment`](Piwik/Segment.md) &mdash; Limits the set of visits Piwik uses when aggregating analytics data.
 - [`SettingsPiwik`](Piwik/SettingsPiwik.md) &mdash; Contains helper methods that can be used to get common Piwik settings.
 - [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and PHP settings.
-- [`Settings\SystemSetting`](Piwik/Settings/SystemSetting.md) &mdash; System wide setting.
-- [`Settings\UserSetting`](Piwik/Settings/UserSetting.md) &mdash; Per user setting.
+- [`Settings\Setting`](Piwik/Settings/Setting.md) &mdash; Base setting type class.
+- [`Settings\SystemSetting`](Piwik/Settings/SystemSetting.md) &mdash; Describes a system wide setting.
+- [`Settings\UserSetting`](Piwik/Settings/UserSetting.md) &mdash; Describes a per user setting.
 - [`Singleton`](Piwik/Singleton.md) &mdash; The singleton class restricts the instantiation of a class to one object only.
 - [`Site`](Piwik/Site.md) &mdash; Provides access to individual site data (such as name, URL, etc.).
-- [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; Manages scheduled task execution.
 - [`Tracker\Request`](Piwik/Tracker/Request.md) &mdash; Piwik - Open source web analytics
 - [`Url`](Piwik/Url.md) &mdash; Provides URL related helper methods.
 - [`UrlHelper`](Piwik/UrlHelper.md) &mdash; Contains less commonly needed URL helper methods.

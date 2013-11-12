@@ -5,15 +5,6 @@ Manager
 
 The singleton that manages plugin loading/unloading and installation/uninstallation.
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `DEFAULT_THEME` &mdash; Default theme used in Piwik.
-- `TRACKER_EVENT_PREFIX`
-
 Methods
 -------
 
@@ -35,7 +26,7 @@ Returns true if a plugin has been activated.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash; Name of plugin, eg, `'Actions'`.
 - It returns a `bool` value.
 
 <a name="ispluginloaded" id="ispluginloaded"></a>
@@ -47,7 +38,7 @@ Returns true if plugin is loaded (in memory).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash; Name of plugin, eg, `'Acions'`.
 - It returns a `bool` value.
 
 <a name="getthemeenabled" id="getthemeenabled"></a>

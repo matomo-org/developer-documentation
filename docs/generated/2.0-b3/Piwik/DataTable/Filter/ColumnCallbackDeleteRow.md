@@ -17,7 +17,6 @@ Description
         return in_array($label, $labelsToRemove);
     }));
 
-
 Methods
 -------
 
@@ -35,11 +34,10 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$columnsToFilter`
-    - `$function`
-    - `$functionParams`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable that will be filtered eventually.
+    - `$columnsToFilter` (`array`|`string`) &mdash; The column or array of columns that should be passed to the callback.
+    - `$function` (`Piwik\DataTable\Filter\callback`) &mdash; The callback that determines whether a row should be deleted or not. Should return `true` if the row should be deleted.
+    - `$functionParams` (`array`) &mdash; deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -50,6 +48,6 @@ Filters the given data table
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

@@ -20,7 +20,6 @@ The [ReplaceSummaryRow](#) filter will be queued after the table is truncated.
 
     $dataTable->filter('Truncate', array($truncateAfter = 500, $summaryRowLabel = Piwik::translate('General_Total')));
 
-
 Methods
 -------
 
@@ -39,12 +38,11 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$truncateAfter`
-    - `$labelSummaryRow`
-    - `$columnToSortByBeforeTruncating`
-    - `$filterRecursive`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will be filtered eventually.
+    - `$truncateAfter` (`int`) &mdash; The row index to truncate at. All rows passed this index will be removed.
+    - `$labelSummaryRow` (`string`) &mdash; The label to use for the summary row. Defaults to `Piwik::translate('General_Others')`.
+    - `$columnToSortByBeforeTruncating` (`string`) &mdash; The column to sort by before truncation, eg, `'nb_visits'`.
+    - `$filterRecursive` (`bool`) &mdash; If true executes this filter on all subtables descending from `$table`.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -55,7 +53,7 @@ Executes the filter, see [Truncate](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 
 <a name="addsummaryrow" id="addsummaryrow"></a>

@@ -10,18 +10,6 @@ Description
 
 This is the only external class loaded by the /piwik.php file.
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `REFERRER_TYPE_DIRECT_ENTRY`
-- `REFERRER_TYPE_SEARCH_ENGINE`
-- `REFERRER_TYPE_WEBSITE`
-- `REFERRER_TYPE_CAMPAIGN`
-- `HTML_ENCODING_QUOTE_STYLE`
-
 Methods
 -------
 
@@ -54,7 +42,7 @@ option.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` (`string`) &mdash; The table name to prefix, ie "log_visit"
 - _Returns:_ The prefixed name, ie "piwik-production_log_visit".
     - `string`
 
@@ -72,7 +60,7 @@ option.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` (`string`) &mdash; The prefixed table name, eg "piwik-production_log_visit".
 - _Returns:_ The unprefixed table name, eg "log_visit".
     - `string`
 
@@ -102,7 +90,7 @@ Multi-byte strlen() - works with UTF-8  Calls `mb_substr` if available and falls
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$string`
+    - `$string` (`string`)
 - It returns a `int` value.
 
 <a name="mb_strtolower" id="mb_strtolower"></a>
@@ -118,7 +106,7 @@ Calls `mb_strtolower` if available and falls back to `strtolower` if not.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$string`
+    - `$string` (`string`)
 - It returns a `string` value.
 
 <a name="sanitizeinputvalues" id="sanitizeinputvalues"></a>
@@ -149,8 +137,8 @@ NOTE: Sanitized input should not be used directly in an SQL query; SQL placehold
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$value`
-    - `$alreadyStripslashed`
+    - `$value` (`mixed`) &mdash; The variable to be cleaned. If an array is supplied, the contents of the array will be sanitized recursively. The keys of the array will also be sanitized.
+    - `$alreadyStripslashed` (`bool`)
 - _Returns:_ The sanitized value.
     - `mixed`
 - It throws one of the following exceptions:
@@ -173,7 +161,7 @@ have to use this method to unsanitize it after it is retrieved.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$value`
+    - `$value` (`string`|`array`) &mdash; The data to unsanitize. If an array is passed the array is sanitized recursively. Keys are not unsanitized.
 - _Returns:_ The unsanitized data.
     - `string`
     - `array`
@@ -197,10 +185,10 @@ If the variable doesn't have neither a value nor a default value provided, an ex
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$varName`
-    - `$varDefault`
-    - `$varType`
-    - `$requestArrayToUse`
+    - `$varName` (`string`) &mdash; Name of the request parameter to get. We look in `$_GET[$varName]` and `$_POST[$varName]` for the value.
+    - `$varDefault` (`string`|`null`) &mdash; The value to return if the request parameter doesn't exist or has an empty value.
+    - `$varType` (`string`|`null`) &mdash; Expected type, the value must be one of the following: `'array'`, `'int'`, `'integer'`, `'string'`, `'json'`. If `'json'`, the string value will be `json_decode`-d and all of entries sanitized.
+    - `$requestArrayToUse` (`array`|`null`) &mdash; The array to use instead of $_GET and $_POST.
 - _Returns:_ The sanitized request parameter.
     - `mixed`
 - It throws one of the following exceptions:
@@ -249,7 +237,7 @@ Used mainly to fill the `IN (...)` part of a query.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$fields`
+    - `$fields` (`array`|`string`) &mdash; The names of the mysql table fields to bind, e.g. `array(fieldName1, fieldName2, fieldName3)`.
 - _Returns:_ The placeholder string, e.g. `"?, ?, ?"`.
     - `string`
 
@@ -266,6 +254,6 @@ For more information: @link http://dev.piwik.org/trac/ticket/374
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$var`
+    - `$var` (`Piwik\$var`)
 - It does not return anything.
 

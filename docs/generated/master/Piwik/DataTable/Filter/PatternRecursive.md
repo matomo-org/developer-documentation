@@ -13,7 +13,6 @@ Description
     // only display index pageviews in Actions.getPageUrls
     $dataTable->filter('PatternRecursive', array('label', 'index'));
 
-
 Methods
 -------
 
@@ -31,10 +30,9 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$columnToFilter`
-    - `$patternToSearch`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table to eventually filter.
+    - `$columnToFilter` (`string`) &mdash; The column to match with the `$patternToSearch` pattern.
+    - `$patternToSearch` (`string`) &mdash; The regex pattern to use.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -45,7 +43,7 @@ See [PatternRecursive](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - _Returns:_ The number of deleted rows.
     - `int`
 

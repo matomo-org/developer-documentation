@@ -11,15 +11,6 @@ Description
 Contains helper methods for a variety of common tasks. Plugin developers are
 encouraged to reuse these methods.
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `LABEL_ID_GOAL_IS_ECOMMERCE_CART` &mdash; The idGoal query parameter value for the special 'abandoned carts' goal.
-- `LABEL_ID_GOAL_IS_ECOMMERCE_ORDER` &mdash; The idGoal query parameter value for the special 'ecommerce' goal.
-
 Methods
 -------
 
@@ -109,7 +100,7 @@ Returns true if the current user is either the super user or the user specified 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$theUser`
+    - `$theUser` (`string`) &mdash; A username.
 - It returns a `bool` value.
 
 <a name="checkuserissuperuserortheuser" id="checkuserissuperuserortheuser"></a>
@@ -121,7 +112,7 @@ Check that the current user is either the specified user or the superuser.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$theUser`
+    - `$theUser` (`string`) &mdash; A username.
 - It does not return anything.
 - It throws one of the following exceptions:
     - `NoAccessException` &mdash; If the user is neither the super user nor the user `$theUser`.
@@ -179,7 +170,7 @@ Returns true if the user has admin access to the requested sites, false if other
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idSites`
+    - `$idSites` (`int`|`array`) &mdash; The list of site IDs to check access for.
 - It returns a `bool` value.
 
 <a name="checkuserhasadminaccess" id="checkuserhasadminaccess"></a>
@@ -191,7 +182,7 @@ Checks that the current user has admin access to the requested list of sites.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idSites`
+    - `$idSites` (`int`|`array`) &mdash; The list of site IDs to check access for.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If user doesn&#039;t have admin access.
@@ -227,7 +218,7 @@ Returns true if the user has view access to the requested list of sites.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idSites`
+    - `$idSites` (`int`|`array`) &mdash; The list of site IDs to check access for.
 - It returns a `bool` value.
 
 <a name="checkuserhasviewaccess" id="checkuserhasviewaccess"></a>
@@ -239,7 +230,7 @@ Checks that the current user has view access to the requested list of sites
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idSites`
+    - `$idSites` (`int`|`array`) &mdash; The list of site IDs to check access for.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have view access to every site in the list.
@@ -275,9 +266,9 @@ Redirects the current request to a new module and action.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$newModule`
-    - `$newAction`
-    - `$parameters`
+    - `$newModule` (`string`) &mdash; The target module, eg, `'UserCountry'`.
+    - `$newAction` (`string`) &mdash; The target controller action, eg, `'index'`.
+    - `$parameters` (`array`) &mdash; The query parameter values to modify before redirecting.
 - It does not return anything.
 
 <a name="isvalidemailstring" id="isvalidemailstring"></a>
@@ -289,7 +280,7 @@ Returns true if the email address is a valid.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$emailAddress`
+    - `$emailAddress` (`string`)
 - It returns a `bool` value.
 
 <a name="postevent" id="postevent"></a>
@@ -301,10 +292,10 @@ Post an event to Piwik's event dispatcher which will execute the event's observe
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$eventName`
-    - `$params`
-    - `$pending`
-    - `$plugins`
+    - `$eventName` (`string`) &mdash; The event name.
+    - `$params` (`array`) &mdash; The parameter array to forward to observer callbacks.
+    - `$pending` (`bool`) &mdash; If true, plugins that are loaded after this event is fired will have their observers for this event executed.
+    - `$plugins` (`array`|`null`) &mdash; The list of plugins to execute observers for. If null, all plugin observers will be executed.
 - It returns a `void` value.
 
 <a name="addaction" id="addaction"></a>
@@ -321,8 +312,8 @@ need to use this function.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$eventName`
-    - `$function`
+    - `$eventName` (`string`) &mdash; The event name.
+    - `$function` (`callable`) &mdash; The observer.
 - It does not return anything.
 
 <a name="translate" id="translate"></a>
@@ -339,7 +330,7 @@ cannot be found for the ID, the ID is returned.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$translationId`
-    - `$args`
+    - `$translationId` (`string`) &mdash; Translation ID, eg, `'General_Date'`.
+    - `$args` (`array`|`string`|`int`) &mdash; `sprintf` arguments to be applied to the internationalized string.
 - It returns a `string` value.
 

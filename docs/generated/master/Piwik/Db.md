@@ -23,7 +23,6 @@ Plugins should use this class to execute SQL against the database.
 
     Db::query("DELETE FROM mytable WHERE id < ?", array(23));
 
-
 Properties
 ----------
 
@@ -97,7 +96,7 @@ Shouldn't be called directly, use [get](#get).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$dbInfos`
+    - `$dbInfos` (`array`|`null`) &mdash; Connection parameters in an array. Defaults to the `[database]` INI config section.
 - It does not return anything.
 
 <a name="exec" id="exec"></a>
@@ -115,7 +114,7 @@ number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
+    - `$sql` (`string`) &mdash; The SQL query.
 - It can return one of the following values:
     - `integer`
     - `Zend_Db_Statement`
@@ -137,8 +136,8 @@ See also [http://framework.zend.com/manual/en/zend.db.statement.html](http://fra
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
-    - `$parameters`
+    - `$sql` (`string`) &mdash; The SQL query.
+    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 - It returns a `Zend_Db_Statement` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
@@ -152,8 +151,8 @@ Executes the SQL query and fetches all the rows from the result set.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
-    - `$parameters`
+    - `$sql` (`string`) &mdash; The SQL query.
+    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 - _Returns:_ (one row in the array per row fetched in the DB)
     - `array`
 - It throws one of the following exceptions:
@@ -168,8 +167,8 @@ Executes an SQL query and fetches the first row of the result.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
-    - `$parameters`
+    - `$sql` (`string`) &mdash; The SQL query.
+    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 - It returns a `array` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
@@ -183,8 +182,8 @@ Executes an SQL query and fetches the first column of the first row of result se
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
-    - `$parameters`
+    - `$sql` (`string`) &mdash; The SQL query.
+    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 - It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
@@ -198,8 +197,8 @@ Executes an SQL query and returns the entire result set indexed by the first sel
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
-    - `$parameters`
+    - `$sql` (`string`) &mdash; The SQL query.
+    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 - _Returns:_ eg, ``` array('col1value1' => array('col2' => '...', 'col3' => ...), 'col1value2' => array('col2' => '...', 'col3' => ...)) ```
     - `array`
 - It throws one of the following exceptions:
@@ -227,11 +226,11 @@ locking the table for too long.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
-    - `$where`
-    - `$orderBy`
-    - `$maxRowsPerQuery`
-    - `$parameters`
+    - `$table` (`string`) &mdash; The name of the table to delete from. Must be prefixed (see [Common::prefixTable](#)).
+    - `$where` (`string`) &mdash; The where clause of the query. Must include the WHERE keyword.
+    - `$orderBy` (`Piwik\$orderBy`) &mdash; The column to order by and the order by direction, eg, `idvisit ASC`.
+    - `$maxRowsPerQuery` (`int`) &mdash; The maximum number of rows to delete per DELETE query.
+    - `$parameters` (`array`) &mdash; Parameters to bind in the query.
 - _Returns:_ The total number of rows deleted.
     - `int`
 
@@ -252,7 +251,7 @@ set to **1**.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$tables`
+    - `$tables` (`string`|`array`) &mdash; The name of the table to optimize or an array of tables to optimize.
 - It returns a `Zend_Db_Statement` value.
 
 <a name="droptables" id="droptables"></a>
@@ -268,7 +267,7 @@ The table names must be prefixed (see [Common::prefixTable](#)).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$tables`
+    - `$tables` (`string`|`array`) &mdash; The name of the table to drop or an array of table names to drop.
 - It returns a `Zend_Db_Statement` value.
 
 <a name="locktables" id="locktables"></a>
@@ -287,8 +286,8 @@ should still work in case it is not granted.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$tablesToRead`
-    - `$tablesToWrite`
+    - `$tablesToRead` (`string`|`array`) &mdash; The table or tables to obtain 'read' locks on.
+    - `$tablesToWrite` (`string`|`array`) &mdash; The table or tables to obtain 'write' locks on.
 - It returns a `Zend_Db_Statement` value.
 
 <a name="unlockalltables" id="unlockalltables"></a>
@@ -341,11 +340,11 @@ for too long.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
-    - `$first`
-    - `$last`
-    - `$step`
-    - `$params`
+    - `$sql` (`string`) &mdash; The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.
+    - `$first` (`int`) &mdash; The minimum ID to loop from.
+    - `$last` (`int`) &mdash; The maximum ID to loop to.
+    - `$step` (`int`) &mdash; The maximum number of rows to scan in each smaller SELECT.
+    - `$params` (`array`) &mdash; Parameters to bind in the query, `array(param1 => value1, param2 => value2)`
 - It returns a `string` value.
 
 <a name="segmentedfetchone" id="segmentedfetchone"></a>
@@ -364,11 +363,11 @@ the table will not be locked for too long.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
-    - `$first`
-    - `$last`
-    - `$step`
-    - `$params`
+    - `$sql` (`string`) &mdash; The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.
+    - `$first` (`int`) &mdash; The minimum ID to loop from.
+    - `$last` (`int`) &mdash; The maximum ID to loop to.
+    - `$step` (`int`) &mdash; The maximum number of rows to scan in each smaller SELECT.
+    - `$params` (`array`) &mdash; Parameters to bind in the query, `array(param1 => value1, param2 => value2)`
 - _Returns:_ An array of primitive values.
     - `array`
 
@@ -388,11 +387,11 @@ the table will not be locked for too long.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
-    - `$first`
-    - `$last`
-    - `$step`
-    - `$params`
+    - `$sql` (`string`) &mdash; The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.
+    - `$first` (`int`) &mdash; The minimum ID to loop from.
+    - `$last` (`int`) &mdash; The maximum ID to loop to.
+    - `$step` (`int`) &mdash; The maximum number of rows to scan in each smaller SELECT.
+    - `$params` (`array`) &mdash; Parameters to bind in the query, array( param1 => value1, param2 => value2)
 - _Returns:_ An array of rows that includes the result set of every executed query.
     - `array`
 
@@ -405,11 +404,11 @@ Performs a non-SELECT query on a table one chunk at a time.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sql`
-    - `$first`
-    - `$last`
-    - `$step`
-    - `$params`
+    - `$sql` (`string`) &mdash; The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.
+    - `$first` (`int`) &mdash; The minimum ID to loop from.
+    - `$last` (`int`) &mdash; The maximum ID to loop to.
+    - `$step` (`int`) &mdash; The maximum number of rows to scan in each smaller query.
+    - `$params` (`array`) &mdash; Parameters to bind in the query, `array(param1 => value1, param2 => value2)`
 - It does not return anything.
 
 <a name="getdblock" id="getdblock"></a>
@@ -426,8 +425,8 @@ retry a set number of time.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$lockName`
-    - `$maxRetries`
+    - `$lockName` (`string`) &mdash; The lock name.
+    - `$maxRetries` (`int`) &mdash; The max number of times to retry.
 - _Returns:_ `true` if the lock was obtained, `false` if otherwise.
     - `bool`
 
@@ -440,7 +439,7 @@ Releases a named lock.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$lockName`
+    - `$lockName` (`string`) &mdash; The lock name.
 - _Returns:_ `true` if the lock was released, `false` if otherwise.
     - `bool`
 

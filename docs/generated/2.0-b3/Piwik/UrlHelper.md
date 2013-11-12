@@ -5,7 +5,6 @@ UrlHelper
 
 Contains less commonly needed URL helper methods.
 
-
 Methods
 -------
 
@@ -49,7 +48,7 @@ Copied from the PHP comments at http://php.net/parse_url
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$parsed`
+    - `$parsed` (`array`) &mdash; Result of [parse_url](http://php.net/manual/en/function.parse-url.php).
 - _Returns:_ The URL or `false` if `$parsed` isn't an array.
     - `Piwik\false`
     - `string`
@@ -63,7 +62,7 @@ Returns a URL query string as an array.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$urlQuery`
+    - `$urlQuery` (`string`) &mdash; The query string.
 - _Returns:_ eg, `array('param1' => 'value1', 'param2' => 'value2')`
     - `array`
 
@@ -76,8 +75,8 @@ Returns the value of a single query parameter from the supplied query string.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$urlQuery`
-    - `$parameter`
+    - `$urlQuery` (`string`) &mdash; The query string.
+    - `$parameter` (`string`) &mdash; The query parameter name to return.
 - _Returns:_ Parameter value if found (can be the empty string!), null if not found.
     - `string`
     - `null`
@@ -91,7 +90,7 @@ Returns the path and query string of a URL.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$url`
+    - `$url` (`string`)
 - _Returns:_ eg, `/test/index.php?module=CoreHome` if `$url` is `http://piwik.org/test/index.php?module=CoreHome`.
     - `string`
 

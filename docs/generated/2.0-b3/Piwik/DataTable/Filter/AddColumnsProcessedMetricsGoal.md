@@ -36,16 +36,6 @@ Note: This filter must be called before [ReplaceColumnNames](#) is called.
     $dataTable->filter('AddColumnsProcessedMetricsGoal',
         array($enable = true, $idGoal = Piwik::LABEL_ID_GOAL_IS_ECOMMERCE_ORDER));
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `GOALS_MINIMAL_REPORT` &mdash; Process main goal metrics: conversion rate, revenue per visit
-- `GOALS_OVERVIEW` &mdash; Process main goal metrics, and conversion rate per goal
-- `GOALS_FULL_TABLE` &mdash; Process all goal and per-goal metrics
-
 Methods
 -------
 
@@ -63,10 +53,9 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$enable`
-    - `$processOnlyIdGoal`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will eventually filtered.
+    - `$enable` (`bool`) &mdash; Always set to true.
+    - `$processOnlyIdGoal` (`string`) &mdash; Defines what metrics to add (don't process metrics when you don't display them). If self::GOALS_FULL_TABLE, all Goal metrics (and per goal metrics) will be processed. If self::GOALS_OVERVIEW, only the main goal metrics will be added. If an int > 0, then will process only metrics for this specific Goal.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -82,6 +71,6 @@ more information.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

@@ -27,14 +27,6 @@ In the Controller of the plugin VisitorInterest
    }
 </pre>
 
-
-Constants
----------
-
-This abstract class defines the following constants:
-
-- `ID`
-
 Properties
 ----------
 
@@ -91,7 +83,6 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 - It accepts the following parameter(s):
     - `$controllerAction`
     - `$apiMethodToRequestDataTable`
-- It does not return anything.
 
 <a name="getdefaultconfig" id="getdefaultconfig"></a>
 <a name="getDefaultConfig" id="getDefaultConfig"></a>
@@ -149,7 +140,7 @@ Detects whether the viewDataTable or one of its ancestors has the given id.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$viewDataTableId`
+    - `$viewDataTableId` (`string`)
 - It returns a `bool` value.
 
 <a name="getdatatable" id="getdatatable"></a>
@@ -177,7 +168,7 @@ It won't be loaded again from the API in this case
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$dataTable`
+    - `$dataTable` (`Piwik\Plugin\$dataTable`)
 - _Returns:_ $dataTable DataTable
     - `void`
 

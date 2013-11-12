@@ -19,7 +19,6 @@ Description
 
     $name = Site::getNameFor($idSite);
 
-
 Properties
 ----------
 
@@ -77,8 +76,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
-- It does not return anything.
+    - `$idsite` (`int`) &mdash; The ID of the site we want data for.
 
 <a name="setsites" id="setsites"></a>
 <a name="setSites" id="setSites"></a>
@@ -89,7 +87,7 @@ Sets the cached site data with an array that associates site IDs with individual
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sites`
+    - `$sites` (`array`) &mdash; The array of sites data. Indexed by site ID. eg, ``` array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))` ```
 - It does not return anything.
 
 <a name="setsitesfromarray" id="setsitesfromarray"></a>
@@ -101,7 +99,7 @@ Sets the cached Site data with a non-associated array of site data.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sites`
+    - `$sites` (`array`) &mdash; The array of sites data. eg, ``` array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), ) ```
 - It does not return anything.
 
 <a name="__tostring" id="__tostring"></a>
@@ -271,8 +269,8 @@ Checks the given string for valid site ids and returns them as an array.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$ids`
-    - `$_restrictSitesToLogin`
+    - `$ids` (`string`) &mdash; Comma separated idSite list, eg, `'1,2,3,4'`.
+    - `$_restrictSitesToLogin` (`bool`|`string`) &mdash; Used only when running as a scheduled task.
 - _Returns:_ An array of valid, unique integers.
     - `array`
 
@@ -299,7 +297,7 @@ Returns the name of the site with the specified ID.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
+    - `$idsite` (`int`) &mdash; The site ID.
 - It returns a `string` value.
 
 <a name="gettimezonefor" id="gettimezonefor"></a>
@@ -311,7 +309,7 @@ Returns the timezone of the site with the specified ID.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
+    - `$idsite` (`int`) &mdash; The site ID.
 - It returns a `string` value.
 
 <a name="getcreationdatefor" id="getcreationdatefor"></a>
@@ -323,7 +321,7 @@ Returns the creation date of the site with the specified ID.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
+    - `$idsite` (`int`) &mdash; The site ID.
 - It returns a `string` value.
 
 <a name="getmainurlfor" id="getmainurlfor"></a>
@@ -335,7 +333,7 @@ Returns the url for the site with the specified ID.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
+    - `$idsite` (`int`) &mdash; The site ID.
 - It returns a `string` value.
 
 <a name="isecommerceenabledfor" id="isecommerceenabledfor"></a>
@@ -347,7 +345,7 @@ Returns whether the site with the specified ID is ecommerce enabled
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
+    - `$idsite` (`int`) &mdash; The site ID.
 - It returns a `string` value.
 
 <a name="issitesearchenabledfor" id="issitesearchenabledfor"></a>
@@ -359,7 +357,7 @@ Returns whether the site with the specified ID is Site Search enabled
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
+    - `$idsite` (`int`) &mdash; The site ID.
 - It returns a `string` value.
 
 <a name="getcurrencyfor" id="getcurrencyfor"></a>
@@ -371,7 +369,7 @@ Returns the currency of the site with the specified ID.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
+    - `$idsite` (`int`) &mdash; The site ID.
 - It returns a `string` value.
 
 <a name="getexcludedipsfor" id="getexcludedipsfor"></a>
@@ -383,7 +381,7 @@ Returns the excluded IP addresses of the site with the specified ID.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
+    - `$idsite` (`int`) &mdash; The site ID.
 - It returns a `string` value.
 
 <a name="getexcludedqueryparametersfor" id="getexcludedqueryparametersfor"></a>
@@ -395,6 +393,6 @@ Returns the excluded query parameters for the site with the specified ID.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idsite`
+    - `$idsite` (`int`) &mdash; The site ID.
 - It returns a `string` value.
 

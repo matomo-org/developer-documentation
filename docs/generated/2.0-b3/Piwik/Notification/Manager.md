@@ -3,7 +3,6 @@
 Manager
 =======
 
-
 Methods
 -------
 
@@ -25,7 +24,7 @@ by your application and has not yet been canceled, it will be replaced by the up
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$id`
+    - `$id` (`string`) &mdash; A unique identifier for this notification. Id must be a string and may contain only word characters (AlNum + underscore)
     - `$notification` ([`Notification`](../../Piwik/Notification.md))
 - It does not return anything.
 

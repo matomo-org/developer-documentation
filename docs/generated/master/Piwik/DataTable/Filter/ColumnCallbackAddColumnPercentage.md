@@ -14,4 +14,3 @@ See [ColumnCallbackAddColumnQuotient](#) for more information.
 
     $nbVisits = // ... get the visits for a period ...
     $dataTable->queueFilter('ColumnCallbackAddColumnPercentage', array('nb_visits', 'nb_visits_percentage', $nbVisits, 1));
-

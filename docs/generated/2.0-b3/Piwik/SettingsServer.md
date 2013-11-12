@@ -5,7 +5,6 @@ SettingsServer
 
 Contains helper methods that can be used to get information regarding the server, its settings and PHP settings.
 
-
 Methods
 -------
 

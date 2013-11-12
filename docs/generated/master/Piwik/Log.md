@@ -68,27 +68,6 @@ backends).
     Log::verbose("This log message uses %s params, but %s will only be called if the"
                . " configured log level includes %s.", "sprintf", "sprintf", "verbose");
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `NONE`
-- `ERROR`
-- `WARN`
-- `INFO`
-- `DEBUG`
-- `VERBOSE`
-- `LOG_LEVEL_CONFIG_OPTION`
-- `LOG_WRITERS_CONFIG_OPTION`
-- `LOGGER_FILE_PATH_CONFIG_OPTION`
-- `STRING_MESSAGE_FORMAT_OPTION`
-- `FORMAT_FILE_MESSAGE_EVENT`
-- `FORMAT_SCREEN_MESSAGE_EVENT`
-- `FORMAT_DATABASE_MESSAGE_EVENT`
-- `GET_AVAILABLE_WRITERS_EVENT`
-
 Methods
 -------
 

@@ -22,14 +22,6 @@ Description
     $dataTable = // ... get a DataTable that has a numerical bounce_rate column ...
     $dataTable->filter('ExcludeLowPopulation', array('bounce_rate', 0.10));
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `MINIMUM_SIGNIFICANT_PERCENTAGE_THRESHOLD`
-
 Methods
 -------
 
@@ -47,11 +39,10 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$columnToFilter`
-    - `$minimumValue`
-    - `$minimumPercentageThreshold`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable that will be filtered eventually.
+    - `$columnToFilter` (`string`) &mdash; The name of the column whose value will determine whether row is deleted or not.
+    - `$minimumValue` (`Piwik\DataTable\Filter\number`|`Piwik\DataTable\Filter\false`) &mdash; The minimum column value. Rows with column values < this number will be deleted. If false, `$minimumPercentageThreshold` is used.
+    - `$minimumPercentageThreshold` (`bool`|`float`) &mdash; If supplied, column values must be a greater percentage of the sum of all column values than this value.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -62,6 +53,6 @@ See [ExcludeLowPopulation](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

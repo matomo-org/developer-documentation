@@ -3,21 +3,6 @@ PiwikTracker
 
 PiwikTracker implements the Piwik Tracking API.
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `VERSION` &mdash; API Version
-- `LENGTH_VISITOR_ID` &mdash; Visitor ID length
-- `DEFAULT_CHARSET_PARAMETER_VALUES` &mdash; Charset
-- `FIRST_PARTY_COOKIES_PREFIX` &mdash; See piwik.js
-- `CVAR_INDEX_ECOMMERCE_ITEM_PRICE` &mdash; Ecommerce item page view tracking stores item's metadata in these Custom Variables slots.
-- `CVAR_INDEX_ECOMMERCE_ITEM_SKU`
-- `CVAR_INDEX_ECOMMERCE_ITEM_NAME`
-- `CVAR_INDEX_ECOMMERCE_ITEM_CATEGORY`
-
 Properties
 ----------
 
@@ -92,8 +77,6 @@ The class defines the following methods:
 - [`doBulkTrack()`](#dobulktrack) &mdash; Sends all stored tracking actions at once.
 - [`doTrackEcommerceOrder()`](#dotrackecommerceorder) &mdash; Tracks an Ecommerce order.
 - [`setEcommerceView()`](#setecommerceview) &mdash; Sets the current page view as an item (product) page view, or an Ecommerce Category page view.
-- [`getUrlTrackEcommerceCartUpdate()`](#geturltrackecommercecartupdate) &mdash; Returns URL used to track Ecommerce Cart updates Calling this function will reinitializes the property ecommerceItems to empty array so items will have to be added again via addEcommerceItem()
-- [`getUrlTrackEcommerceOrder()`](#geturltrackecommerceorder) &mdash; Returns URL used to track Ecommerce Orders Calling this function will reinitializes the property ecommerceItems to empty array so items will have to be added again via addEcommerceItem()
 - [`getUrlTrackPageView()`](#geturltrackpageview) &mdash; Builds URL to track a page view.
 - [`getUrlTrackEvent()`](#geturltrackevent) &mdash; Builds URL to track a custom event.
 - [`getUrlTrackSiteSearch()`](#geturltracksitesearch) &mdash; Builds URL to track a site search.
@@ -124,9 +107,8 @@ Builds a PiwikTracker object, used to track visits, pages and Goal conversions f
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idSite`
-    - `$apiUrl`
-- It does not return anything.
+    - `$idSite` (`int`) &mdash; Id site to be tracked
+    - `$apiUrl` (`string`) &mdash; "http://example.org/piwik/" or "http://piwik.example.org/" If set, will overwrite PiwikTracker::$URL
 
 <a name="setpagecharset" id="setpagecharset"></a>
 <a name="setPageCharset" id="setPageCharset"></a>
@@ -142,7 +124,7 @@ If required though, you can also specify another charset using this function.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$charset`
+    - `$charset` (`string`)
 - It does not return anything.
 
 <a name="seturl" id="seturl"></a>
@@ -154,7 +136,7 @@ Sets the current URL being tracked
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$url`
+    - `$url` (`string`) &mdash; Raw URL (not URL encoded)
 - It does not return anything.
 
 <a name="seturlreferrer" id="seturlreferrer"></a>
@@ -166,7 +148,7 @@ Sets the URL referrer used to track Referrers details for new visits.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$url`
+    - `$url` (`string`) &mdash; Raw URL (not URL encoded)
 - It does not return anything.
 
 <a name="setgenerationtime" id="setgenerationtime"></a>
@@ -178,7 +160,7 @@ Sets the time that generating the document on the server side took.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$timeMs`
+    - `$timeMs` (`int`) &mdash; Generation time in ms
 - It does not return anything.
 
 <a name="seturlreferer" id="seturlreferer"></a>
@@ -212,7 +194,7 @@ to the 'ref' first party cookie storing referral information.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$jsonEncoded`
+    - `$jsonEncoded` (`string`) &mdash; JSON encoded array containing Attribution info
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -230,10 +212,10 @@ See http://piwik.org/docs/custom-variables/
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$id`
-    - `$name`
-    - `$value`
-    - `$scope`
+    - `$id` (`int`) &mdash; Custom variable slot ID from 1-5
+    - `$name` (`string`) &mdash; Custom variable name
+    - `$value` (`string`) &mdash; Custom variable value
+    - `$scope` (`string`) &mdash; Custom variable scope. Possible values: visit, page, event
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -255,8 +237,8 @@ If scope is 'visit', it will attempt to read the value set in the first party co
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$id`
-    - `$scope`
+    - `$id` (`int`) &mdash; Custom Variable integer index to fetch from cookie. Should be a value from 1 to 5
+    - `$scope` (`string`) &mdash; Custom variable scope. Possible values: visit, page, event
 - _Returns:_ An array with this format: array( 0 => CustomVariableName, 1 => CustomVariableValue ) or false
     - `mixed`
 - It throws one of the following exceptions:
@@ -281,7 +263,7 @@ Sets the current site ID.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idSite`
+    - `$idSite` (`int`)
 - It does not return anything.
 
 <a name="setbrowserlanguage" id="setbrowserlanguage"></a>
@@ -297,7 +279,7 @@ Used to guess visitor countries when GeoIP is not enabled
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$acceptLanguage`
+    - `$acceptLanguage` (`string`) &mdash; For example "fr-fr"
 - It does not return anything.
 
 <a name="setuseragent" id="setuseragent"></a>
@@ -313,7 +295,7 @@ If this function is not called, the User Agent will default to the current user 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$userAgent`
+    - `$userAgent` (`string`)
 - It does not return anything.
 
 <a name="setcountry" id="setcountry"></a>
@@ -332,7 +314,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$country`
+    - `$country` (`string`)
 - It does not return anything.
 
 <a name="setregion" id="setregion"></a>
@@ -351,7 +333,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$region`
+    - `$region` (`string`)
 - It does not return anything.
 
 <a name="setcity" id="setcity"></a>
@@ -370,7 +352,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$city`
+    - `$city` (`string`)
 - It does not return anything.
 
 <a name="setlatitude" id="setlatitude"></a>
@@ -389,7 +371,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$lat`
+    - `$lat` (`float`)
 - It does not return anything.
 
 <a name="setlongitude" id="setlongitude"></a>
@@ -408,7 +390,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$long`
+    - `$long` (`float`)
 - It does not return anything.
 
 <a name="enablebulktracking" id="enablebulktracking"></a>
@@ -435,8 +417,8 @@ Enable Cookie Creation - this will cause a first party VisitorId cookie to be se
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$domain`
-    - `$path`
+    - `$domain` (`string`) &mdash; (optional) Set first-party cookie domain. Accepted values: example.com, *.example.com (same as .example.com) or subdomain.example.com
+    - `$path` (`string`) &mdash; (optional) Set first-party cookie path
 - It does not return anything.
 
 <a name="dotrackpageview" id="dotrackpageview"></a>
@@ -448,7 +430,7 @@ Tracks a page view
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$documentTitle`
+    - `$documentTitle` (`string`) &mdash; Page title as it will appear in the Actions > Page titles report
 - _Returns:_ Response string or true if using bulk requests.
     - `mixed`
 
@@ -461,10 +443,10 @@ Tracks an event
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$category`
-    - `$action`
-    - `$name`
-    - `$value`
+    - `$category` (`string`) &mdash; The Event Category (Videos, Music, Games...)
+    - `$action` (`string`) &mdash; The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
+    - `$name` (`string`) &mdash; (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)
+    - `$value` (`float`) &mdash; (optional) The Event's value
 - _Returns:_ Response string or true if using bulk requests.
     - `mixed`
 
@@ -481,9 +463,9 @@ These are used to populate reports in Actions > Site Search.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$keyword`
-    - `$category`
-    - `$countResults`
+    - `$keyword` (`string`) &mdash; Searched query on the site
+    - `$category` (`string`) &mdash; (optional) Search engine category if applicable
+    - `$countResults` (`bool`|`int`) &mdash; (optional) results displayed on the search result page. Used to track "zero result" keywords.
 - _Returns:_ Response or true if using bulk requests.
     - `mixed`
 
@@ -496,8 +478,8 @@ Records a Goal conversion
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idGoal`
-    - `$revenue`
+    - `$idGoal` (`int`) &mdash; Id Goal to record a conversion
+    - `$revenue` (`float`) &mdash; Revenue for this conversion
 - _Returns:_ Response or true if using bulk request
     - `mixed`
 
@@ -510,8 +492,8 @@ Tracks a download or outlink
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$actionUrl`
-    - `$actionType`
+    - `$actionUrl` (`string`) &mdash; URL of the download or outlink
+    - `$actionType` (`string`) &mdash; Type of the action: 'download' or 'link'
 - _Returns:_ Response or true if using bulk request
     - `mixed`
 
@@ -531,11 +513,11 @@ Ecommerce items added via this function are automatically cleared when doTrackEc
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sku`
-    - `$name`
-    - `$category`
-    - `$price`
-    - `$quantity`
+    - `$sku` (`string`) &mdash; (required) SKU, Product identifier
+    - `$name` (`string`) &mdash; (optional) Product name
+    - `$category` (`string`|`array`) &mdash; (optional) Product category, or array of product categories (up to 5 categories can be specified for a given product)
+    - `$price` (`float`|`int`) &mdash; (optional) Individual product price (supports integer and decimal prices)
+    - `$quantity` (`int`) &mdash; (optional) Product quantity. If not specified, will default to 1 in the Reports
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -555,7 +537,7 @@ Items which were in the previous cart and are not sent in later Cart updates wil
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$grandTotal`
+    - `$grandTotal` (`float`) &mdash; Cart grandTotal (typically the sum of all items' prices)
 - _Returns:_ Response or true if using bulk request
     - `mixed`
 
@@ -593,12 +575,12 @@ Only the parameters $orderId and $grandTotal are required.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$orderId`
-    - `$grandTotal`
-    - `$subTotal`
-    - `$tax`
-    - `$shipping`
-    - `$discount`
+    - `$orderId` (`string`|`int`) &mdash; (required) Unique Order ID. This will be used to count this order only once in the event the order page is reloaded several times. orderId must be unique for each transaction, even on different days, or the transaction will not be recorded by Piwik.
+    - `$grandTotal` (`float`) &mdash; (required) Grand Total revenue of the transaction (including tax, shipping, etc.)
+    - `$subTotal` (`float`) &mdash; (optional) Sub total amount, typically the sum of items prices for all items in this order (before Tax and Shipping costs are applied)
+    - `$tax` (`float`) &mdash; (optional) Tax amount for this order
+    - `$shipping` (`float`) &mdash; (optional) Shipping amount for this order
+    - `$discount` (`float`) &mdash; (optional) Discounted amount in this order
 - _Returns:_ Response or true if using bulk request
     - `mixed`
 
@@ -622,39 +604,10 @@ conversion rates (Conversion rate = Ecommerce orders containing this product or 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$sku`
-    - `$name`
-    - `$category`
-    - `$price`
-- It does not return anything.
-
-<a name="geturltrackecommercecartupdate" id="geturltrackecommercecartupdate"></a>
-<a name="getUrlTrackEcommerceCartUpdate" id="getUrlTrackEcommerceCartUpdate"></a>
-### `getUrlTrackEcommerceCartUpdate()`
-
-Returns URL used to track Ecommerce Cart updates Calling this function will reinitializes the property ecommerceItems to empty array so items will have to be added again via addEcommerceItem()
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$grandTotal`
-- It does not return anything.
-
-<a name="geturltrackecommerceorder" id="geturltrackecommerceorder"></a>
-<a name="getUrlTrackEcommerceOrder" id="getUrlTrackEcommerceOrder"></a>
-### `getUrlTrackEcommerceOrder()`
-
-Returns URL used to track Ecommerce Orders Calling this function will reinitializes the property ecommerceItems to empty array so items will have to be added again via addEcommerceItem()
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$orderId`
-    - `$grandTotal`
-    - `$subTotal`
-    - `$tax`
-    - `$shipping`
-    - `$discount`
+    - `$sku` (`string`) &mdash; Product SKU being viewed
+    - `$name` (`string`) &mdash; Product Name being viewed
+    - `$category` (`string`|`array`) &mdash; Category being viewed. On a Product page, this is the product's category. You can also specify an array of up to 5 categories for a given page view.
+    - `$price` (`float`) &mdash; Specify the price at which the item was displayed
 - It does not return anything.
 
 <a name="geturltrackpageview" id="geturltrackpageview"></a>
@@ -670,7 +623,7 @@ Builds URL to track a page view.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$documentTitle`
+    - `$documentTitle` (`string`) &mdash; Page view name as it will appear in Piwik reports
 - _Returns:_ URL to piwik.php with all parameters set to track the pageview
     - `string`
 
@@ -687,10 +640,10 @@ Builds URL to track a custom event.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$category`
-    - `$action`
-    - `$name`
-    - `$value`
+    - `$category` (`string`) &mdash; The Event Category (Videos, Music, Games...)
+    - `$action` (`string`) &mdash; The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
+    - `$name` (`string`) &mdash; (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)
+    - `$value` (`float`) &mdash; (optional) The Event's value
 - _Returns:_ URL to piwik.php with all parameters set to track the pageview
     - `string`
 
@@ -707,9 +660,9 @@ Builds URL to track a site search.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$keyword`
-    - `$category`
-    - `$countResults`
+    - `$keyword` (`string`)
+    - `$category` (`string`)
+    - `$countResults` (`int`)
 - It returns a `string` value.
 
 <a name="geturltrackgoal" id="geturltrackgoal"></a>
@@ -725,8 +678,8 @@ Builds URL to track a goal with idGoal and revenue.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$idGoal`
-    - `$revenue`
+    - `$idGoal` (`int`) &mdash; Id Goal to record a conversion
+    - `$revenue` (`float`) &mdash; Revenue for this conversion
 - _Returns:_ URL to piwik.php with all parameters set to track the goal conversion
     - `string`
 
@@ -743,8 +696,8 @@ Builds URL to track a new action.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$actionUrl`
-    - `$actionType`
+    - `$actionUrl` (`string`) &mdash; URL of the download or outlink
+    - `$actionType` (`string`) &mdash; Type of the action: 'download' or 'link'
 - _Returns:_ URL to piwik.php with all parameters set to track an action
     - `string`
 
@@ -768,7 +721,7 @@ Allowed only for Super User, must be used along with setTokenAuth()
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$dateTime`
+    - `$dateTime` (`string`) &mdash; Date with the format 'Y-m-d H:i:s', or a UNIX timestamp
 - It does not return anything.
 
 <a name="setip" id="setip"></a>
@@ -788,7 +741,7 @@ Allowed only for Super User, must be used along with setTokenAuth()
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$ip`
+    - `$ip` (`string`) &mdash; IP string, eg. 130.54.2.1
 - It does not return anything.
 
 <a name="setvisitorid" id="setvisitorid"></a>
@@ -813,7 +766,7 @@ If not set, the visitor ID will be fetched from the 1st party cookie, or will be
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$visitorId`
+    - `$visitorId` (`string`) &mdash; 16 hexadecimal characters visitor ID, eg. "33c31e01394bdc63"
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -883,7 +836,7 @@ The following features require access:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$token_auth`
+    - `$token_auth` (`string`) &mdash; token_auth 32 chars token_auth string
 - It does not return anything.
 
 <a name="setlocaltime" id="setlocaltime"></a>
@@ -895,7 +848,7 @@ Sets local visitor time
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$time`
+    - `$time` (`string`) &mdash; HH:MM:SS format
 - It does not return anything.
 
 <a name="setresolution" id="setresolution"></a>
@@ -907,8 +860,8 @@ Sets user resolution width and height.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$width`
-    - `$height`
+    - `$width` (`int`)
+    - `$height` (`int`)
 - It does not return anything.
 
 <a name="setbrowserhascookies" id="setbrowserhascookies"></a>
@@ -920,7 +873,7 @@ Sets if the browser supports cookies This is reported in "List of plugins" repor
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$bool`
+    - `$bool` (`bool`)
 - It does not return anything.
 
 <a name="setdebugstringappend" id="setdebugstringappend"></a>
@@ -932,7 +885,7 @@ Will append a custom string at the end of the Tracking request.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$string`
+    - `$string` (`string`)
 - It does not return anything.
 
 <a name="setplugins" id="setplugins"></a>
@@ -944,15 +897,15 @@ Sets visitor browser supported plugins
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$flash`
-    - `$java`
-    - `$director`
-    - `$quickTime`
-    - `$realPlayer`
-    - `$pdf`
-    - `$windowsMedia`
-    - `$gears`
-    - `$silverlight`
+    - `$flash` (`bool`)
+    - `$java` (`bool`)
+    - `$director` (`bool`)
+    - `$quickTime` (`bool`)
+    - `$realPlayer` (`bool`)
+    - `$pdf` (`bool`)
+    - `$windowsMedia` (`bool`)
+    - `$gears` (`bool`)
+    - `$silverlight` (`bool`)
 - It does not return anything.
 
 <a name="disablecookiesupport" id="disablecookiesupport"></a>
@@ -992,7 +945,7 @@ Sets the maximum number of seconds that the tracker will spend waiting for a res
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$timeout`
+    - `$timeout` (`int`)
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)

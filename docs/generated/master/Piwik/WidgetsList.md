@@ -11,7 +11,6 @@ Description
 Reports are added as dashboard widgets through the [WidgetsList.addWidgets](#)
 event. Plugins should call [add](#add) in event observers for this event.
 
-
 Methods
 -------
 
@@ -21,7 +20,6 @@ The class defines the following methods:
 - [`add()`](#add) &mdash; Adds a report to the list of dashboard widgets.
 - [`remove()`](#remove) &mdash; Removes one more widgets from the widget list.
 - [`isDefined()`](#isdefined) &mdash; Returns true if the widget with the given parameters exists in the widget list, false if otherwise.
-- [`_reset()`](#_reset) &mdash; Method to reset the widget list For testing only
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
@@ -43,11 +41,11 @@ Adds a report to the list of dashboard widgets.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$widgetCategory`
-    - `$widgetName`
-    - `$controllerName`
-    - `$controllerAction`
-    - `$customParameters`
+    - `$widgetCategory` (`string`) &mdash; The widget category. This can be a translation token.
+    - `$widgetName` (`string`) &mdash; The name of the widget. This can be a translation token.
+    - `$controllerName` (`string`) &mdash; The report's controller name (same as the plugin name).
+    - `$controllerAction` (`string`) &mdash; The report's controller action method name.
+    - `$customParameters` (`array`) &mdash; Extra query parameters that should be sent while getting this report.
 - It does not return anything.
 
 <a name="remove" id="remove"></a>
@@ -59,8 +57,8 @@ Removes one more widgets from the widget list.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$widgetCategory`
-    - `$widgetName`
+    - `$widgetCategory` (`string`) &mdash; The widget category. Can be a translation token.
+    - `$widgetName` (`string`|`Piwik\false`) &mdash; The name of the widget to remove. Cannot be a translation token. If not supplied, entire category will be removed.
 - It does not return anything.
 
 <a name="isdefined" id="isdefined"></a>
@@ -72,17 +70,7 @@ Returns true if the widget with the given parameters exists in the widget list, 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$controllerName`
-    - `$controllerAction`
+    - `$controllerName` (`string`) &mdash; The controller name of the widget's report.
+    - `$controllerAction` (`string`) &mdash; The controller action of the widget's report.
 - It returns a `bool` value.
-
-<a name="_reset" id="_reset"></a>
-<a name="_reset" id="_reset"></a>
-### `_reset()`
-
-Method to reset the widget list For testing only
-
-#### Signature
-
-- It does not return anything.
 

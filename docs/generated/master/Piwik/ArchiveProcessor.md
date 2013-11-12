@@ -3,23 +3,21 @@
 ArchiveProcessor
 ================
 
-Used to insert numeric and blob archive data.
+Used to insert numeric and blob archive data, and to aggregate archive data.
 
 Description
 -----------
 
-During the Archiving process a descendant of this class is used by plugins
+During the Archiving process an instance of this class is used by plugins
 to cache aggregated analytics statistics.
 
 When the [Archive](#) class is used to query for archive data and that archive
-data is found to be absent, the archiving process is launched. An ArchiveProcessor
-instance is created based on the period type and the archiving logic of every
-active plugin is executed through the [ArchiveProcessor.Day.compute](#) and
-[ArchiveProcessor.aggregateMultipleReports](#) events.
+data is found to be absent, the archiving process is launched. Instances of the
+[Archiver](#) classes for every plugin that supplies one are then used to
+execute archiving logic.
 
-Plugins receive ArchiveProcessor instances in those events and use them to
-aggregate data for the requested site, period and segment. The aggregate
-data is then persisted, again using the ArchiveProcessor instance.
+Plugins access ArchiveProcessor instances through the [Archiver](#) class. Read
+the docs for [Archiver](#) to learn more about the process.
 
 ### Limitations
 
@@ -39,8 +37,10 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 **Inserting numeric data**
 
     // function in an Archiver descendent
-    public function aggregateDayReport(ArchiveProcessor $archiveProcessor)
+    public function aggregateDayReport()
     {
+        $archiveProcessor = $this->getProcessor();
+
         $myFancyMetric = // ... calculate the metric value ...
         $archiveProcessor->insertNumericRecord('MyPlugin_myFancyMetric', $myFancyMetric);
     }
@@ -48,8 +48,10 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 **Inserting serialized DataTables**
 
     // function in an Archiver descendent
-    public function aggregateDayReport(ArchiveProcessor $archiveProcessor)
+    public function aggregateDayReport()
     {
+        $archiveProcessor = $this->getProcessor();
+
         $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
 
         $myDataTable = // ... use LogAggregator to generate a report about some log data ...
@@ -61,14 +63,30 @@ requests that initiate archiving, so statistics can be calculated in parallel.
         $archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
     }
 
+**Aggregating archive data**
+
+    // function in Archiver descendent
+    public function aggregateMultipleReports()
+    {
+        $archiveProcessor = $this->getProcessor();
+
+        // aggregate a metric
+        $archiveProcessor->aggregateNumericMetrics('MyPlugin_myFancyMetric');
+        $archiveProcessor->aggregateNumericMetrics('MyPlugin_mySuperFancyMetric', 'max');
+
+        // aggregate a report        
+        $archiveProcessor->aggregateDataTableRecords('MyPlugin_myFancyReport');
+    }
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`getParams()`](#getparams) &mdash; Returns the Parameters object containing Period, Site, Segment used for this archive.
+- [`getParams()`](#getparams) &mdash; Returns the Parameters object containing the site, period and segment used with this archive.
 - [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a [LogAggregator](#) instance for the site, period and segment this ArchiveProcessor will insert archive data for.
+- [`aggregateDataTableRecords()`](#aggregatedatatablerecords) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
+- [`aggregateNumericMetrics()`](#aggregatenumericmetrics) &mdash; Aggregates one or more metrics for every subperiod of the current period and inserts the results as metrics for the current period.
 - [`insertNumericRecords()`](#insertnumericrecords) &mdash; Caches multiple numeric records in the archive for this processor's site, period and segment.
 - [`insertNumericRecord()`](#insertnumericrecord) &mdash; Caches a single numeric record in the archive for this processor's site, period and segment.
 - [`insertBlobRecord()`](#insertblobrecord) &mdash; Caches one or more blob records in the archive for this processor's site, period and segment.
@@ -77,7 +95,7 @@ The class defines the following methods:
 <a name="getParams" id="getParams"></a>
 ### `getParams()`
 
-Returns the Parameters object containing Period, Site, Segment used for this archive.
+Returns the Parameters object containing the site, period and segment used with this archive.
 
 #### Signature
 
@@ -93,6 +111,43 @@ Returns a [LogAggregator](#) instance for the site, period and segment this Arch
 
 - It returns a [`LogAggregator`](../Piwik/DataAccess/LogAggregator.md) value.
 
+<a name="aggregatedatatablerecords" id="aggregatedatatablerecords"></a>
+<a name="aggregateDataTableRecords" id="aggregateDataTableRecords"></a>
+### `aggregateDataTableRecords()`
+
+Sums records for every subperiod of the current period and inserts the result as the record for this period.
+
+#### Description
+
+DataTables are summed recursively so subtables will be summed as well.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$recordNames` (`string`|`array`) &mdash; Name(s) of the report we are aggregating, eg, `'Referrers_type'`.
+    - `$maximumRowsInDataTableLevelZero` (`int`) &mdash; Maximum number of rows allowed in the top level DataTable.
+    - `$maximumRowsInSubDataTable` (`int`) &mdash; Maximum number of rows allowed in each subtable.
+    - `$columnToSortByBeforeTruncation` (`string`) &mdash; The name of the column to sort by before truncating a DataTable.
+    - `$columnAggregationOperations` (`array`) &mdash; Operations for aggregating columns, @see Row::sumRow().
+    - `$invalidSummedColumnNameToRenamedName` (`array`) &mdash; For columns that must change names when summed because they cannot be summed, eg, `array('nb_uniq_visitors' => 'sum_daily_nb_uniq_visitors')`.
+- _Returns:_ Returns the row counts of each aggregated report before truncation, eg, ``` array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... ) ```
+    - `array`
+
+<a name="aggregatenumericmetrics" id="aggregatenumericmetrics"></a>
+<a name="aggregateNumericMetrics" id="aggregateNumericMetrics"></a>
+### `aggregateNumericMetrics()`
+
+Aggregates one or more metrics for every subperiod of the current period and inserts the results as metrics for the current period.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$columns` (`array`|`string`) &mdash; Array of metric names to aggregate.
+    - `$operationToApply` (`bool`|`string`) &mdash; The operation to apply to the metric. Either `'sum'`, `'max'` or `'min'`.
+- _Returns:_ Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, ``` array( 'nb_visits' => 3040, 'nb_hits' => 405 ) ``` could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.
+    - `array`
+    - `int`
+
 <a name="insertnumericrecords" id="insertnumericrecords"></a>
 <a name="insertNumericRecords" id="insertNumericRecords"></a>
 ### `insertNumericRecords()`
@@ -102,7 +157,7 @@ Caches multiple numeric records in the archive for this processor's site, period
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$numericRecords`
+    - `$numericRecords` (`array`) &mdash; A name-value mapping of numeric values that should be archived, eg, ``` array('Referrers_distinctKeywords' => 23, 'Referrers_distinctCampaigns' => 234) ```
 - It does not return anything.
 
 <a name="insertnumericrecord" id="insertnumericrecord"></a>
@@ -118,8 +173,8 @@ Numeric values are not inserted if they equal 0.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$value`
+    - `$name` (`string`) &mdash; The name of the numeric value, eg, `'Referrers_distinctKeywords'`.
+    - `$value` (`float`) &mdash; The numeric value.
 - It does not return anything.
 
 <a name="insertblobrecord" id="insertblobrecord"></a>
@@ -131,7 +186,7 @@ Caches one or more blob records in the archive for this processor's site, period
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$values`
+    - `$name` (`string`) &mdash; The name of the record, eg, 'Referrers_type'.
+    - `$values` (`string`|`array`) &mdash; A blob string or an array of blob strings. If an array is used, the first element in the array will be inserted with the `$name` name. The others will be inserted with `$name . '_' . $index` as the record name (where $index is the index of the blob record in `$values`).
 - It does not return anything.
 

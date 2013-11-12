@@ -18,7 +18,6 @@ all subtables in the given DataTable's hierarchy.
 
     $dataTable->queueFilter('ReplaceSummaryRowLabel', array(Piwik::translate('General_Others')));
 
-
 Methods
 -------
 
@@ -36,9 +35,8 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$newLabel`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will eventually be filtered.
+    - `$newLabel` (`string`|`null`) &mdash; The new label for summary row. If null, defaults to `Piwik::translate('General_Others')`.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -49,6 +47,6 @@ See [ReplaceSummaryRowLabel](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

@@ -26,7 +26,6 @@ take a look at the [BeautifyTimeRangeLabels](#) filter.
 
     $dataTable->queueFilter('BeautifyRangeLabels', array("1 visit", "%s visits"));
 
-
 Methods
 -------
 
@@ -47,10 +46,9 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
-    - `$labelSingular`
-    - `$labelPlural`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable that will be filtered.
+    - `$labelSingular` (`string`) &mdash; The string to use when the range being beautified is equal to '1-1 units', eg `"1 visit"`.
+    - `$labelPlural` (`string`) &mdash; The string to use when the range being beautified references more than one unit. This must be a format string that takes one string parameter, eg, `"%s visits"`.
 
 <a name="beautify" id="beautify"></a>
 <a name="beautify" id="beautify"></a>
@@ -65,7 +63,7 @@ See [BeautifyRangeLabels](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$value`
+    - `$value` (`string`) &mdash; The range string. This must be in either a '$min-$max' format a '$min+' format.
 - _Returns:_ The pretty range label.
     - `string`
 
@@ -83,8 +81,8 @@ behavior based on the range values.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$oldLabel`
-    - `$lowerBound`
+    - `$oldLabel` (`string`) &mdash; The original label value.
+    - `$lowerBound` (`int`) &mdash; The lower bound of the range.
 - _Returns:_ The pretty range label.
     - `string`
 
@@ -102,9 +100,9 @@ behavior based on the range values.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$oldLabel`
-    - `$lowerBound`
-    - `$upperBound`
+    - `$oldLabel` (`string`) &mdash; The original label value.
+    - `$lowerBound` (`int`) &mdash; The lower bound of the range.
+    - `$upperBound` (`int`) &mdash; The upper bound of the range.
 - _Returns:_ The pretty range label.
     - `string`
 
@@ -122,8 +120,8 @@ behavior based on the range values.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$oldLabel`
-    - `$lowerBound`
+    - `$oldLabel` (`string`) &mdash; The original label value.
+    - `$lowerBound` (`int`) &mdash; The lower bound of the range.
 - _Returns:_ The pretty range label.
     - `string`
 

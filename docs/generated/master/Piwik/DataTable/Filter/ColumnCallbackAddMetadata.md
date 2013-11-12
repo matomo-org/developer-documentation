@@ -12,7 +12,6 @@ Description
 
     $dataTable->filter('ColumnCallbackAddMetadata', array('label', 'logo', 'Piwik\Plugins\MyPlugin\getLogoFromLabel'));
 
-
 Methods
 -------
 
@@ -30,13 +29,12 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$columnsToRead`
-    - `$metadataToAdd`
-    - `$functionToApply`
-    - `$functionParameters`
-    - `$applyToSummaryRow`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable instance that will be filtered.
+    - `$columnsToRead` (`string`|`array`) &mdash; The columns to read from each row and pass on to the callback.
+    - `$metadataToAdd` (`string`) &mdash; The name of the metadata field that will be added to each row.
+    - `$functionToApply` (`callable`) &mdash; The callback to apply for each row.
+    - `$functionParameters` (`array`) &mdash; deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
+    - `$applyToSummaryRow` (`bool`) &mdash; Whether the callback should be applied to the summary row or not.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -47,6 +45,6 @@ See [ColumnCallbackAddMetadata](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

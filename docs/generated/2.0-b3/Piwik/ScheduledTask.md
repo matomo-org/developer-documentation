@@ -10,18 +10,6 @@ Description
 
 See the [TaskScheduler](#) docs to learn more about scheduled tasks.
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `LOWEST_PRIORITY`
-- `LOW_PRIORITY`
-- `NORMAL_PRIORITY`
-- `HIGH_PRIORITY`
-- `HIGHEST_PRIORITY`
-
 Methods
 -------
 
@@ -36,7 +24,6 @@ The class defines the following methods:
 - [`getRescheduledTime()`](#getrescheduledtime) &mdash; Returns the time in milliseconds when this task will be executed next.
 - [`getPriority()`](#getpriority) &mdash; Returns the task priority.
 - [`getName()`](#getname) &mdash; Returns a unique name for this scheduled task.
-- [`getTaskName()`](#gettaskname)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -47,12 +34,11 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$objectInstance`
-    - `$methodName`
-    - `$methodParameter`
-    - `$scheduledTime`
-    - `$priority`
-- It does not return anything.
+    - `$objectInstance` (`mixed`) &mdash; The object or class name for the class that contains the method to regularly execute. Usually this will be a [Plugin](#) instance.
+    - `$methodName` (`string`) &mdash; The name of the method of `$objectInstance` that will be regularly executed.
+    - `$methodParameter` (`mixed`|`null`) &mdash; An optional parameter to pass to the method when executed. Must be convertible to string.
+    - `$scheduledTime` ([`ScheduledTime`](../Piwik/ScheduledTime.md)|`null`) &mdash; A [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
+    - `$priority` (`int`) &mdash; The priority of the task. Tasks with a higher priority will be executed first. Tasks with low priority will be executed last.
 
 <a name="getobjectinstance" id="getobjectinstance"></a>
 <a name="getObjectInstance" id="getObjectInstance"></a>
@@ -154,16 +140,4 @@ to store when tasks were last executed. The name is created using:
 #### Signature
 
 - It returns a `string` value.
-
-<a name="gettaskname" id="gettaskname"></a>
-<a name="getTaskName" id="getTaskName"></a>
-### `getTaskName()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$className`
-    - `$methodName`
-    - `$methodParameter`
-- It does not return anything.
 

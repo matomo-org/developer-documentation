@@ -5,7 +5,6 @@ Weekly
 
 Weekly class is used to schedule tasks every week.
 
-
 Methods
 -------
 
@@ -34,7 +33,7 @@ The class defines the following methods:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$day`
+    - `$day` (`int`) &mdash; the day to set, has to be >= 1 and < 8
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if parameter _day is invalid

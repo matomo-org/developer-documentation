@@ -19,7 +19,6 @@ NOTE: This filter should never be queued, it must be applied directly on a DataT
         return parse_url($labelUrl, PHP_URL_HOST);
     }));
 
-
 Methods
 -------
 
@@ -37,11 +36,10 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$groupByColumn`
-    - `$reduceFunction`
-    - `$parameters`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable to filter.
+    - `$groupByColumn` (`string`) &mdash; The column name to reduce.
+    - `$reduceFunction` (`callable`) &mdash; The reduce function. This must alter the `$groupByColumn` columng in some way.
+    - `$parameters` (`array`) &mdash; deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -52,6 +50,6 @@ See [GroupBy](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 
