@@ -19,16 +19,19 @@ Description
 
 {{ class.longdesc|raw }}
 {% endif %}
-
-{% if class.constants %}
+{% set found = false %}
+{% for constant in class.constants if constant.longdesc %}
+{% set found = true %}
+{% endfor %}
+{% if found and class.constants %}
 
 Constants
 ---------
 
 This {{ class_type(class) }} defines the following constants:
 
-{% for constant in class.constants %}
-- {% if constant.longdesc %}[`{{ constant.name }}`](#{{ constant.name|lower }}){% else %}`{{ constant.name }}`{% endif %}{% if constant.shortdesc %} &mdash; {{ constant.shortdesc|raw }}{% endif %}
+{% for constant in class.constants if constant.longdesc %}
+- [`{{ constant.name }}`](#{{ constant.name|lower }}){% if constant.shortdesc %} &mdash; {{ constant.shortdesc|raw }}{% endif %}
 
 {% endfor %}
 {% for constant in class.constants if constant.longdesc %}

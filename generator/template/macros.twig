@@ -65,7 +65,7 @@ class
 
 {% endfor %}
 {% endif %}
-{% if (member.hint|length > 1) or member.hintDesc %}
+{% if member.name != '__construct' %}{% if (member.hint|length > 1) or member.hintDesc %}
 {% if member.hintDesc %}
 - _Returns:_ {{ member.hintDesc|raw }}
 {% else %}
@@ -78,7 +78,7 @@ class
 - It returns a {{ _self.hint(member.hint[0]) }} value.
 {% else %}
 - It does not return anything.
-{% endif %}
+{% endif %}{% endif %}
 {% if member.exceptions %}
 - It throws one of the following exceptions:
 {% for exception in member.exceptions %}
