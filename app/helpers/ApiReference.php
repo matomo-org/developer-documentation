@@ -27,7 +27,7 @@ class ApiReference {
 
             $menu[$className] = array(
                 'title' => $className,
-                'url'   => static::getUrl('Piwik\\' . $className)
+                'url'   => static::getUrl('Piwik/' . str_replace('\\', '/', $className))
             );
         }
 
