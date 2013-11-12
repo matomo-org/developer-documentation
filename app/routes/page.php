@@ -12,6 +12,7 @@ use helpers\Document;
 use helpers\ApiReference;
 use helpers\Support;
 use helpers\DocumentNotExistException;
+use helpers\Git;
 
 function send404NotFound($app) {
     $app->pass();
@@ -24,6 +25,7 @@ function initView($app)
 
     $app->view->setData('menu', Home::getMainMenu());
     $app->view->setData('path', $path);
+    $app->view->setData('revision', Git::getCurrentShortRevision());
 
     if (!empty($activeSection['title'])) {
         $app->view->setData('activeCategory', $activeSection['title']);
