@@ -5,7 +5,6 @@ Mail
 
 Class for sending mails, for more information see: [http://framework.zend.com/manual/en/zend.mail.html](#http://framework.zend.com/manual/en/zend.mail.html)
 
-
 Methods
 -------
 
@@ -23,8 +22,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$charset`
-- It does not return anything.
+    - `$charset` (`string`) &mdash; charset, defaults to utf-8
 
 <a name="setfrom" id="setfrom"></a>
 <a name="setFrom" id="setFrom"></a>
@@ -35,7 +33,7 @@ Sets the sender.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$email`
-    - `$name`
+    - `$email` (`string`) &mdash; Email address of the sender.
+    - `$name` (`null`|`string`) &mdash; Name of the sender.
 - It returns a `Zend_Mail` value.
 

@@ -25,7 +25,6 @@ Plugins can subscribe to the
         );
     }
 
-
 Methods
 -------
 
@@ -42,9 +41,9 @@ Adds a new AdminMenu entry under the 'Settings' category.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$adminMenuName`
-    - `$url`
-    - `$displayedForCurrentUser`
-    - `$order`
+    - `$adminMenuName` (`string`) &mdash; The name of the admin menu entry. Can be a translation token.
+    - `$url` (`string`|`array`) &mdash; The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.
+    - `$displayedForCurrentUser` (`boolean`) &mdash; Whether this menu entry should be displayed for the current user. If false, the entry will not be added.
+    - `$order` (`int`) &mdash; The order hint.
 - It does not return anything.
 

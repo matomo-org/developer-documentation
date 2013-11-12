@@ -28,4 +28,3 @@ through Piwik's API.
 **Linking to an API method**
 
     <a href="?module=API&method=MyPlugin.myMethod&idSite=1&period=day&date=2013-10-23">Link</a>
-

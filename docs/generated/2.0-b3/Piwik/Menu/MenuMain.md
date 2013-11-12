@@ -25,7 +25,6 @@ the main menu.
         );
     }
 
-
 Methods
 -------
 
@@ -43,7 +42,7 @@ Returns if the URL was found in the menu.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$url`
+    - `$url` (`string`)
 - It returns a `boolean` value.
 
 <a name="getmenu" id="getmenu"></a>

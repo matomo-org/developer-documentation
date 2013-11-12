@@ -22,7 +22,6 @@ in [DataTable::filter()](#) and [DataTable::queueFilter()](#).
 To see examples of Filters look at the existing ones in the Piwik\DataTable\Filter
 namespace.
 
-
 Methods
 -------
 
@@ -43,7 +42,6 @@ Constructor.
 
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../Piwik/DataTable.md))
-- It does not return anything.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -54,7 +52,7 @@ Filters the supplied DataTable.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../Piwik/DataTable.md))
 - It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
@@ -71,7 +69,7 @@ is up to the derived Filter class.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$enable`
+    - `$enable` (`bool`)
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
@@ -83,6 +81,6 @@ Filters a row's subtable, if one exists and is loaded in memory.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$row` ([`Row`](../../Piwik/DataTable/Row.md))
+    - `$row` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash; The row whose subtable should be filter.
 - It does not return anything.
 

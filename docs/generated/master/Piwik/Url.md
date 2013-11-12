@@ -35,7 +35,6 @@ HTML.
     $view->realtimeMapUrl = $url;
     echo $view->render();
 
-
 Methods
 -------
 
@@ -77,7 +76,7 @@ Returns the current URL without the query string.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$checkTrustedHost`
+    - `$checkTrustedHost` (`bool`) &mdash; Whether to do trusted host check. Should ALWAYS be true, except in Controller.
 - _Returns:_ eg, `"http://example.org/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
     - `string`
 
@@ -142,8 +141,8 @@ Returns the current host.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$default`
-    - `$checkTrustedHost`
+    - `$default` (`string`) &mdash; Default value to return if host unknown
+    - `$checkTrustedHost` (`bool`) &mdash; Whether to do trusted host check. Should ALWAYS be true, except in Controller.
 - _Returns:_ eg, `"example.org"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
     - `string`
 
@@ -184,7 +183,7 @@ will be added to the result.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$params`
+    - `$params` (`array`) &mdash; set of parameters to modify/add in the current URL eg, `array('param3' => 'value3')`
 - _Returns:_ eg, `"?param2=value2&param3=value3"`
     - `string`
 
@@ -197,7 +196,7 @@ Converts an an array of parameters name => value mappings to a query string.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$parameters`
+    - `$parameters` (`array`) &mdash; eg. `array('param1' => 10, 'param2' => array(1,2))`
 - _Returns:_ eg. `"param1=10&param2[]=1&param2[]=2"`
     - `string`
 
@@ -225,7 +224,7 @@ Redirects the user to the specified URL.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$url`
+    - `$url` (`string`)
 - It does not return anything.
 
 <a name="getreferrer" id="getreferrer"></a>
@@ -249,7 +248,7 @@ Returns true if the URL points to something on the same host, false if otherwise
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$url`
+    - `$url` (`string`)
 - _Returns:_ True if local; false otherwise.
     - `bool`
 

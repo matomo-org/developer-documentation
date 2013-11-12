@@ -16,7 +16,6 @@ Nonces in Piwik are stored as a session variable and have a configurable expirat
 
 Learn more about nonces [here](http://en.wikipedia.org/wiki/Cryptographic_nonce).
 
-
 Methods
 -------
 
@@ -41,8 +40,8 @@ If none exists, a new nonce will be generated.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$id`
-    - `$ttl`
+    - `$id` (`string`) &mdash; Unique id to avoid namespace conflicts, e.g., `'ModuleName.ActionName'`.
+    - `$ttl` (`int`) &mdash; Optional time-to-live in seconds; default is 5 minutes. (ie, in 5 minutes, the nonce will no longer be valid).
 - It returns a `string` value.
 
 <a name="verifynonce" id="verifynonce"></a>
@@ -62,8 +61,8 @@ and if the HTTP origin is valid (see [getAcceptableOrigins](#getAcceptableOrigin
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$id`
-    - `$cnonce`
+    - `$id` (`string`) &mdash; Unique id
+    - `$cnonce` (`string`) &mdash; Nonce sent to client
 - _Returns:_ true if valid; false otherwise
     - `bool`
 
@@ -76,7 +75,7 @@ Force expiration of the current nonce.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$id`
+    - `$id` (`string`) &mdash; The unique nonce ID.
 - It does not return anything.
 
 <a name="getorigin" id="getorigin"></a>

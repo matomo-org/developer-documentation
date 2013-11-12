@@ -5,7 +5,6 @@ SettingsPiwik
 
 Contains helper methods that can be used to get common Piwik settings.
 
-
 Methods
 -------
 
@@ -66,6 +65,6 @@ year/range are not.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$periodLabel`
+    - `$periodLabel` (`string`) &mdash; `"day"`, `"week"`, `"month"`, `"year"` or `"range"`
 - It returns a `bool` value.
 

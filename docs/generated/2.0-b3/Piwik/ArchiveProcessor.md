@@ -61,7 +61,6 @@ requests that initiate archiving, so statistics can be calculated in parallel.
         $archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
     }
 
-
 Methods
 -------
 
@@ -102,7 +101,7 @@ Caches multiple numeric records in the archive for this processor's site, period
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$numericRecords`
+    - `$numericRecords` (`array`) &mdash; A name-value mapping of numeric values that should be archived, eg, ``` array('Referrers_distinctKeywords' => 23, 'Referrers_distinctCampaigns' => 234) ```
 - It does not return anything.
 
 <a name="insertnumericrecord" id="insertnumericrecord"></a>
@@ -118,8 +117,8 @@ Numeric values are not inserted if they equal 0.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$value`
+    - `$name` (`string`) &mdash; The name of the numeric value, eg, `'Referrers_distinctKeywords'`.
+    - `$value` (`float`) &mdash; The numeric value.
 - It does not return anything.
 
 <a name="insertblobrecord" id="insertblobrecord"></a>
@@ -131,7 +130,7 @@ Caches one or more blob records in the archive for this processor's site, period
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$values`
+    - `$name` (`string`) &mdash; The name of the record, eg, 'Referrers_type'.
+    - `$values` (`string`|`array`) &mdash; A blob string or an array of blob strings. If an array is used, the first element in the array will be inserted with the `$name` name. The others will be inserted with `$name . '_' . $index` as the record name (where $index is the index of the blob record in `$values`).
 - It does not return anything.
 

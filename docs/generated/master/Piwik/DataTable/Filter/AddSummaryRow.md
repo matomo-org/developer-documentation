@@ -15,7 +15,6 @@ Description
     // use a human readable label for the summary row (instead of '-1')
     $dataTable->filter('AddSummaryRow', array($labelSummaryRow = Piwik_Translate('General_Total')));
 
-
 Methods
 -------
 
@@ -33,9 +32,8 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$labelSummaryRow`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will be filtered.
+    - `$labelSummaryRow` (`int`) &mdash; The value of the label column for the new row.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -50,6 +48,6 @@ See [AddSummaryRow](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

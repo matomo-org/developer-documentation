@@ -5,7 +5,6 @@ Parameters
 
 An ArchiveProcessor processes data for an Archive determined by these Parameters: website, period and segment.
 
-
 Methods
 -------
 
@@ -32,7 +31,6 @@ The class defines the following methods:
     - `$site` ([`Site`](../../Piwik/Site.md))
     - `$period` ([`Period`](../../Piwik/Period.md))
     - `$segment` ([`Segment`](../../Piwik/Segment.md))
-- It does not return anything.
 
 <a name="setrequestedplugin" id="setrequestedplugin"></a>
 <a name="setRequestedPlugin" id="setRequestedPlugin"></a>

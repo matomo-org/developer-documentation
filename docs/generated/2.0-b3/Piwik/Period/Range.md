@@ -16,7 +16,6 @@ date=2007-07-24,2013-11-15).
 The range period differs from other periods mainly in that since it is arbitrary,
 range periods are not archived by the archive.php cron script.
 
-
 Methods
 -------
 
@@ -42,11 +41,10 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$strPeriod`
-    - `$strDate`
-    - `$timezone`
-    - `$today`
-- It does not return anything.
+    - `$strPeriod` (`string`) &mdash; The type of period each subperiod is. Either `'day'`, `'week'`, `'month'` or `'year'`.
+    - `$strDate` (`string`) &mdash; The date range, eg, `'2007-07-24,2013-11-15'`.
+    - `$timezone` (`string`) &mdash; The timezone to use, eg, `'UTC'`.
+    - `$today` (`bool`|[`Date`](../../Piwik/Date.md)) &mdash; The date to use as _today_. Defaults to `Date::factory('today', $timzeone)`.
 
 <a name="getlocalizedshortstring" id="getlocalizedshortstring"></a>
 <a name="getLocalizedShortString" id="getLocalizedShortString"></a>
@@ -111,7 +109,7 @@ Given a date string, returns false if not a date range, or returns the array con
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$dateString`
+    - `$dateString` (`string`)
 - _Returns:_ array(1 => dateStartString, 2 => dateEndString ) or false if the input was not a date range
     - `mixed`
 
@@ -136,8 +134,8 @@ Returns the date that is one period before the supplied date.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$date`
-    - `$period`
+    - `$date` (`bool`|`string`) &mdash; The date to get the last date of.
+    - `$period` (`bool`|`string`) &mdash; The period to use (either 'day', 'week', 'month', 'year');
 - _Returns:_ An array with two elements, a string for the date before $date and a Period instance for the period before $date.
     - `array`
 
@@ -150,10 +148,10 @@ Returns a date ragne string given a period type, end date and number of periods 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$period`
-    - `$lastN`
-    - `$endDate`
-    - `$site`
+    - `$period` (`string`) &mdash; The sub period type, `'day'`, `'week'`, `'month'` and `'year'`.
+    - `$lastN` (`int`) &mdash; The number of periods of type `$period` that the result range should span.
+    - `$endDate` (`string`) &mdash; The desired end date of the range.
+    - `$site` (`Piwik\Period\Site`) &mdash; The site whose timezone should be used.
 - _Returns:_ The date range string, eg, `'2012-01-02,2013-01-02'`.
     - `string`
 

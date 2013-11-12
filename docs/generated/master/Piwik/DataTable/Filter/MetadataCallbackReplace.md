@@ -14,7 +14,6 @@ Description
         return $url . '#index';
     }));
 
-
 Methods
 -------
 
@@ -31,10 +30,9 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
-    - `$metadataToFilter`
-    - `$functionToApply`
-    - `$functionParameters`
-    - `$extraColumnParameters`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable that will eventually be filtered.
+    - `$metadataToFilter` (`array`|`string`) &mdash; The metadata whose values should be passed to the callback and then replaced with the callback's result.
+    - `$functionToApply` (`callable`) &mdash; The function to execute. Must take the metadata value as a parameter and return a value that will be used to replace the original.
+    - `$functionParameters` (`array`|`null`) &mdash; deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
+    - `$extraColumnParameters` (`array`) &mdash; Extra column values that should be passed to the callback, but shouldn't be replaced.
 

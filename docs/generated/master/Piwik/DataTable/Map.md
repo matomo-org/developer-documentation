@@ -13,7 +13,6 @@ periods. The Maps will contain a DataTable for each site and period combination.
 
 The Map implements some of the features of the DataTable such as queueFilter and getRowsCount.
 
-
 Methods
 -------
 
@@ -71,7 +70,7 @@ See [getKeyName](#getKeyName).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`)
 - It does not return anything.
 
 <a name="getrowscount" id="getrowscount"></a>
@@ -97,8 +96,8 @@ See [DataTable::queueFilter](#) for more information..
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$className`
-    - `$parameters`
+    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash; Filter name, eg. `'Limit'` or a Closure.
+    - `$parameters` (`array`) &mdash; Filter parameters, eg. `array(50, 10)`.
 - It does not return anything.
 
 <a name="applyqueuedfilters" id="applyqueuedfilters"></a>
@@ -120,8 +119,8 @@ Apply a filter to all tables contained by this instance.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$className`
-    - `$parameters`
+    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash; Name of filter class or a Closure.
+    - `$parameters` (`array`) &mdash; Parameters to pass to the filter.
 - It does not return anything.
 
 <a name="getdatatables" id="getdatatables"></a>
@@ -145,7 +144,7 @@ Returns the table with the specific label.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$label`
+    - `$label` (`string`)
 - It can return one of the following values:
     - [`DataTable`](../../Piwik/DataTable.md)
     - [`Map`](../../Piwik/DataTable/Map.md)
@@ -171,8 +170,8 @@ Adds a new DataTable to the DataTable\Map.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
-    - `$label`
+    - `$table` ([`DataTable`](../../Piwik/DataTable.md))
+    - `$label` (`string`) &mdash; Label used to index this table in the array.
 - It does not return anything.
 
 <a name="__tostring" id="__tostring"></a>
@@ -210,8 +209,8 @@ Renames the given column in each contained DataTable.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$oldName`
-    - `$newName`
+    - `$oldName` (`string`)
+    - `$newName` (`string`)
 - It does not return anything.
 
 <a name="deletecolumns" id="deletecolumns"></a>
@@ -227,8 +226,8 @@ Deletes the specified columns in each contained DataTable.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$columns`
-    - `$deleteRecursiveInSubtables`
+    - `$columns` (`array`) &mdash; The columns to delete.
+    - `$deleteRecursiveInSubtables` (`bool`) &mdash; This param is currently not used.
 - It does not return anything.
 
 <a name="deleterow" id="deleterow"></a>
@@ -240,7 +239,7 @@ Deletes a table from the array of DataTables.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$id`
+    - `$id` (`string`) &mdash; The label associated with DataTable.
 - It does not return anything.
 
 <a name="deletecolumn" id="deletecolumn"></a>
@@ -256,7 +255,7 @@ Deletes the given column in every contained DataTable.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`)
 - It does not return anything.
 
 <a name="getcolumn" id="getcolumn"></a>
@@ -268,7 +267,7 @@ Returns the array containing all row values in all data tables for the requested
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash; The column name.
 - It returns a `array` value.
 
 <a name="mergechildren" id="mergechildren"></a>
@@ -379,7 +378,7 @@ Returns the intersection of children's metadata arrays (what they all have in co
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash; The metadata name.
 - It returns a `mixed` value.
 
 <a name="getcolumns" id="getcolumns"></a>

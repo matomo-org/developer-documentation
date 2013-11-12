@@ -5,7 +5,6 @@ Hourly
 
 Hourly class is used to schedule tasks every hour.
 
-
 Methods
 -------
 
@@ -38,7 +37,7 @@ The class defines the following methods:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$_hour`
+    - `$_hour` (`int`)
 - It returns a `int` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -54,7 +53,7 @@ The class defines the following methods:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$_day`
+    - `$_day` (`int`)
 - It returns a `int` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)

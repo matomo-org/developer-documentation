@@ -28,15 +28,6 @@ Tasks are executed when the cron archive.php script is executed.
 
     // TODO
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `GET_TASKS_EVENT`
-- `TIMETABLE_OPTION_STRING`
-
 Methods
 -------
 
@@ -76,9 +67,9 @@ Return the next scheduled time given the class and method names of a scheduled t
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$className`
-    - `$methodName`
-    - `$methodParameter`
+    - `$className` (`string`) &mdash; The name of the class that contains the scheduled task method.
+    - `$methodName` (`string`) &mdash; The name of the scheduled task method.
+    - `$methodParameter` (`string`|`null`) &mdash; Optional method parameter.
 - _Returns:_ int|bool The time in miliseconds when the scheduled task will be executed next or false if it is not scheduled to run.
     - `mixed`
 

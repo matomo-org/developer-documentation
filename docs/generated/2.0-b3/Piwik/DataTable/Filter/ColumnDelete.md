@@ -18,7 +18,6 @@ This filter is used to handle the **hideColumn** and **showColumn** query parame
     $columnsToKeep = array('nb_visits');
     $dataTable->filter('ColumnDelete', array(array(), $columnsToKeep));
 
-
 Constants
 ---------
 
@@ -49,11 +48,10 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$columnsToRemove`
-    - `$columnsToKeep`
-    - `$deleteIfZeroOnly`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable instance that will eventually be filtered.
+    - `$columnsToRemove` (`array`|`string`) &mdash; An array of column names or a comma-separated list of column names. These columns will be removed.
+    - `$columnsToKeep` (`array`|`string`) &mdash; An array of column names that should be kept or a comma-separated list of column names. Columns not in this list will be removed.
+    - `$deleteIfZeroOnly` (`bool`) &mdash; If true, columns will be removed only if their value is 0.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -69,6 +67,6 @@ each DataTable row.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

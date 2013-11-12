@@ -11,16 +11,6 @@ Description
 DataTable rows contain columns, metadata and a subtable ID. Columns and metadata
 are stored as an array of name => value mappings.
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `COLUMNS`
-- `METADATA`
-- `DATATABLE_ASSOCIATED`
-
 Properties
 ----------
 
@@ -58,9 +48,6 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`__sleep()`](#__sleep) &mdash; Because $this->c[self::DATATABLE_ASSOCIATED] is negative when the table is in memory, we must prior to serialize() call, make sure the ID is saved as positive integer
-- [`cleanPostSerialize()`](#cleanpostserialize) &mdash; Must be called after the row was serialized and __sleep was called.
-- [`__destruct()`](#__destruct) &mdash; When destroyed, a row destroys its associated subTable if there is one
 - [`__toString()`](#__tostring) &mdash; Applies a basic rendering to the Row and returns the output.
 - [`deleteColumn()`](#deletecolumn) &mdash; Deletes the given column.
 - [`renameColumn()`](#renamecolumn) &mdash; Renames a column.
@@ -84,7 +71,6 @@ The class defines the following methods:
 - [`sumRow()`](#sumrow) &mdash; Sums the given `$rowToSum` columns values to the existing row column values.
 - [`sumRowMetadata()`](#sumrowmetadata) &mdash; Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 - [`isSummaryRow()`](#issummaryrow) &mdash; Returns true if this row is the summary row, false if otherwise.
-- [`compareElements()`](#compareelements) &mdash; Helper function to compare array elements
 - [`isEqual()`](#isequal) &mdash; Helper function that tests if two rows are equal.
 
 <a name="__construct" id="__construct"></a>
@@ -96,42 +82,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$row`
-- It does not return anything.
-
-<a name="__sleep" id="__sleep"></a>
-<a name="__sleep" id="__sleep"></a>
-### `__sleep()`
-
-Because $this->c[self::DATATABLE_ASSOCIATED] is negative when the table is in memory, we must prior to serialize() call, make sure the ID is saved as positive integer
-
-#### Description
-
-Only serialize the "c" member
-
-#### Signature
-
-- It does not return anything.
-
-<a name="cleanpostserialize" id="cleanpostserialize"></a>
-<a name="cleanPostSerialize" id="cleanPostSerialize"></a>
-### `cleanPostSerialize()`
-
-Must be called after the row was serialized and __sleep was called.
-
-#### Signature
-
-- It does not return anything.
-
-<a name="__destruct" id="__destruct"></a>
-<a name="__destruct" id="__destruct"></a>
-### `__destruct()`
-
-When destroyed, a row destroys its associated subTable if there is one
-
-#### Signature
-
-- It does not return anything.
+    - `$row` (`array`) &mdash; An array with the following structure: ``` array( Row::COLUMNS => array('label' => 'Piwik', 'column1' => 42, 'visits' => 657, 'time_spent' => 155744), Row::METADATA => array('logo' => 'test.png'), Row::DATATABLE_ASSOCIATED => $subtable // DataTable object // (but in the row only the ID will be stored) ) ```
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -153,7 +104,7 @@ Deletes the given column.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash; The column name.
 - _Returns:_ True on success, false if the column does not exist.
     - `bool`
 
@@ -166,8 +117,8 @@ Renames a column.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$oldName`
-    - `$newName`
+    - `$oldName` (`string`) &mdash; The current name of the column.
+    - `$newName` (`string`) &mdash; The new name of the column.
 - It does not return anything.
 
 <a name="getcolumn" id="getcolumn"></a>
@@ -179,7 +130,7 @@ Returns a column by name.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash; The column name.
 - _Returns:_ The column value or false if it doesn't exist.
     - `mixed`
     - `Piwik\DataTable\false`
@@ -193,7 +144,7 @@ Returns the array of all metadata, or one requested metadata value.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`|`null`) &mdash; The name of the metadata to return or null to return all metadata.
 - It returns a `mixed` value.
 
 <a name="getcolumns" id="getcolumns"></a>
@@ -255,7 +206,7 @@ See [DataTable::addDataTable()](#) to learn how DataTables are summed.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$subTable` ([`DataTable`](../../Piwik/DataTable.md))
+    - `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash; Table to sum to this row's subtab.e.
 - It does not return anything.
 
 <a name="addsubtable" id="addsubtable"></a>
@@ -267,7 +218,7 @@ Attaches a subtable to this row.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$subTable` ([`DataTable`](../../Piwik/DataTable.md))
+    - `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash; DataTable to associate to this row.
 - _Returns:_ Returns `$subTable`.
     - [`DataTable`](../../Piwik/DataTable.md)
 - It throws one of the following exceptions:
@@ -282,7 +233,7 @@ Attaches a subtable to this row, overwriting the existing subtable, if any.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$subTable` ([`DataTable`](../../Piwik/DataTable.md))
+    - `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash; DataTable to associate to this row.
 - _Returns:_ Returns `$subTable`.
     - [`DataTable`](../../Piwik/DataTable.md)
 
@@ -319,7 +270,7 @@ Overwrites previously set columns.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$columns`
+    - `$columns` (`array`) &mdash; eg, `array('label' => 'www.php.net', 'nb_visits' => 15894)`
 - It does not return anything.
 
 <a name="setcolumn" id="setcolumn"></a>
@@ -331,8 +282,8 @@ Set the value `$value` to the column called `$name`.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$value`
+    - `$name` (`string`) &mdash; name of the column to set.
+    - `$value` (`mixed`) &mdash; value of the column to set.
 - It does not return anything.
 
 <a name="setmetadata" id="setmetadata"></a>
@@ -344,8 +295,8 @@ Set the value `$value` to the metadata called `$name`.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$value`
+    - `$name` (`string`) &mdash; name of the metadata to set.
+    - `$value` (`mixed`) &mdash; value of the metadata to set.
 - It does not return anything.
 
 <a name="deletemetadata" id="deletemetadata"></a>
@@ -357,7 +308,7 @@ Deletes one metadata value or all metadata values.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`bool`|`string`) &mdash; Metadata name (omit to delete entire metadata).
 - _Returns:_ true on success, false if the column didn't exist
     - `bool`
 
@@ -374,8 +325,8 @@ If the column already exists, throws an exception.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$value`
+    - `$name` (`string`) &mdash; name of the column to add.
+    - `$value` (`mixed`) &mdash; value of the column to set.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the column already exists.
@@ -389,7 +340,7 @@ Add many columns to this row.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$columns`
+    - `$columns` (`array`) &mdash; Name/Value pairs, e.g., `array('name' => $value , ...)`
 - It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if any column name does not exist.
@@ -407,8 +358,8 @@ If the metadata already exists, throws an exception.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$value`
+    - `$name` (`string`) &mdash; name of the metadata to add.
+    - `$value` (`mixed`) &mdash; value of the metadata to set.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the metadata already exists.
@@ -429,9 +380,9 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md))
-    - `$enableCopyMetadata`
-    - `$aggregationOperations`
+    - `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash; The row to sum to this row.
+    - `$enableCopyMetadata` (`bool`) &mdash; Whether metadata should be copied or not.
+    - `$aggregationOperations` (`array`) &mdash; for columns that should not be summed, determine which aggregation should be used (min, max). format: `array('column name' => 'function name')`
 - It does not return anything.
 
 <a name="sumrowmetadata" id="sumrowmetadata"></a>
@@ -443,7 +394,7 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$rowToSum`
+    - `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md))
 - It does not return anything.
 
 <a name="issummaryrow" id="issummaryrow"></a>
@@ -459,19 +410,6 @@ depends on the label of the row, and so, is not 100% accurate.
 
 #### Signature
 
-- It returns a `bool` value.
-
-<a name="compareelements" id="compareelements"></a>
-<a name="compareElements" id="compareElements"></a>
-### `compareElements()`
-
-Helper function to compare array elements
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$elem1`
-    - `$elem2`
 - It returns a `bool` value.
 
 <a name="isequal" id="isequal"></a>
@@ -490,7 +428,7 @@ Two rows are equal if:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$row1` ([`Row`](../../Piwik/DataTable/Row.md))
-    - `$row2` ([`Row`](../../Piwik/DataTable/Row.md))
+    - `$row1` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash; first to compare
+    - `$row2` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash; second to compare
 - It returns a `bool` value.
 

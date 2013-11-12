@@ -39,7 +39,6 @@ use it to call controller actions of other plugins.
 
 For a detailed explanation, see the documentation [here](http://piwik.org/docs/plugins/framework-overview).
 
-
 Methods
 -------
 
@@ -61,9 +60,9 @@ See also [fetchDispatch](#fetchDispatch).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$module`
-    - `$action`
-    - `$parameters`
+    - `$module` (`string`) &mdash; The name of the plugin whose controller to execute, eg, `'UserCountryMap'`.
+    - `$action` (`string`) &mdash; The controller action name, eg, `'realtimeMap'`.
+    - `$parameters` (`array`) &mdash; Array of parameters to pass to the controller action method.
 - _Returns:_ The returned value of the call. Often nothing as most controller actions echo, but do not return data.
     - `void`
     - `mixed`

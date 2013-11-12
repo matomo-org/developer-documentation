@@ -5,25 +5,6 @@ Settings
 
 Settings class that plugins can extend in order to create settings for their plugins.
 
-
-Constants
----------
-
-This abstract class defines the following constants:
-
-- `TYPE_INT`
-- `TYPE_FLOAT`
-- `TYPE_STRING`
-- `TYPE_BOOL`
-- `TYPE_ARRAY`
-- `FIELD_RADIO`
-- `FIELD_TEXT`
-- `FIELD_TEXTAREA`
-- `FIELD_CHECKBOX`
-- `FIELD_PASSWORD`
-- `FIELD_MULTI_SELECT`
-- `FIELD_SINGLE_SELECT`
-
 Methods
 -------
 
@@ -47,7 +28,6 @@ The abstract class defines the following methods:
 
 - It accepts the following parameter(s):
     - `$pluginName`
-- It does not return anything.
 
 <a name="getintroduction" id="getintroduction"></a>
 <a name="getIntroduction" id="getIntroduction"></a>
@@ -140,7 +120,7 @@ called. Alternatively the value will be casted to the specfied setting type.
 
 - It accepts the following parameter(s):
     - `$setting` (`Piwik\Settings\Setting`)
-    - `$value`
+    - `$value` (`string`)
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the setting does not exist or if the current user is not allowed to change the value of this setting.

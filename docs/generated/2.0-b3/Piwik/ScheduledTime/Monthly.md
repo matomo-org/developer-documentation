@@ -5,7 +5,6 @@ Monthly
 
 Monthly class is used to schedule tasks every month.
 
-
 Methods
 -------
 
@@ -41,7 +40,7 @@ The class defines the following methods:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$_day`
+    - `$_day` (`int`) &mdash; the day to set, has to be >= 1 and < 32
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if parameter _day is invalid
@@ -55,8 +54,8 @@ Makes this scheduled time execute on a particular day of the week on each month.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$_day`
-    - `$_week`
+    - `$_day` (`int`) &mdash; the day of the week to use, between 0-6 (inclusive). 0 -> Sunday
+    - `$_week` (`int`) &mdash; the week to use, between 0-3 (inclusive)
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if either parameter is invalid

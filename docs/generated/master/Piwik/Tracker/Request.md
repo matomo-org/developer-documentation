@@ -5,15 +5,6 @@ Request
 
 Piwik - Open source web analytics
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `UNKNOWN_RESOLUTION`
-- `GENERATION_TIME_MS_MAXIMUM`
-
 Methods
 -------
 
@@ -54,9 +45,8 @@ The class defines the following methods:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$params`
-    - `$tokenAuth`
-- It does not return anything.
+    - `$params` (`Piwik\Tracker\$params`)
+    - `$tokenAuth` (`bool`|`string`)
 
 <a name="isauthenticated" id="isauthenticated"></a>
 <a name="isAuthenticated" id="isAuthenticated"></a>

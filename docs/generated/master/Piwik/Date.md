@@ -26,15 +26,6 @@ say, in a loop.
     $date->addHour(5);
     echo $date->getLocalized("%longDay% the %day% of %longMonth% at %time%");
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `NUM_SECONDS_IN_DAY` &mdash; Number of seconds in a day.
-- `DATE_TIME_FORMAT` &mdash; The default date time string format.
-
 Methods
 -------
 
@@ -90,8 +81,8 @@ result will be in UTC.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$dateString`
-    - `$timezone`
+    - `$dateString` (`string`|`int`) &mdash; `'today'`, `'yesterday'`, `'now'`, `'yesterdaySameTime'`, a string with `'YYYY-MM-DD HH:MM:SS'` format or a unix timestamp.
+    - `$timezone` (`string`) &mdash; The timezone of `$dateString`. If specified, `$dateString` will be converted from UTC to this timezone before being used in the Date return value.
 - It returns a [`Date`](../Piwik/Date.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before Tue, 06 Aug 1991.
@@ -151,7 +142,7 @@ See [getTimestamp](#getTimestamp) to see how the timezone is used.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$timezone`
+    - `$timezone` (`string`) &mdash; eg, `'UTC'`, `'Europe/London'`, etc.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="adjustfortimezone" id="adjustfortimezone"></a>
@@ -163,8 +154,8 @@ Converts a timestamp in a timezone to UTC.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$timestamp`
-    - `$timezone`
+    - `$timestamp` (`int`) &mdash; The UNIX timestamp to adjust.
+    - `$timezone` (`string`) &mdash; The timezone to adjust from.
 - _Returns:_ The adjusted time as seconds from EPOCH.
     - `int`
 
@@ -226,7 +217,7 @@ for the list of format strings.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$format`
+    - `$format` (`string`)
 - It returns a `string` value.
 
 <a name="__tostring" id="__tostring"></a>
@@ -262,7 +253,7 @@ Performs three-way comparison of the month of the current date against the given
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$date` ([`Date`](../Piwik/Date.md))
+    - `$date` ([`Date`](../Piwik/Date.md)) &mdash; Month to compare
 - _Returns:_ Returns `0` if the current month is equal to `$date`'s, `-1` if the current month is earlier or `1` if the current month is later.
     - `int`
 
@@ -275,7 +266,7 @@ Performs three-way comparison of the month of the current date against the given
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$date` ([`Date`](../Piwik/Date.md))
+    - `$date` ([`Date`](../Piwik/Date.md)) &mdash; Year to compare
 - _Returns:_ Returns `0` if the current year is equal to `$date`'s, `-1` if the current year is earlier or `1` if the current year is later.
     - `int`
 
@@ -338,7 +329,7 @@ Returns a new Date instance with `$this` date's day and the specified new time o
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$time`
+    - `$time` (`string`) &mdash; String in the `'HH:MM:SS'` format.
 - _Returns:_ The new date with the time of day changed.
     - [`Date`](../Piwik/Date.md)
 
@@ -351,7 +342,7 @@ Returns a new Date instance with `$this` date's time of day and the day specifie
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$day`
+    - `$day` (`int`) &mdash; The day eg. `31`.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="setyear" id="setyear"></a>
@@ -363,7 +354,7 @@ Returns a new Date instance with `$this` date's time of day, month and day, but 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$year`
+    - `$year` (`int`) &mdash; The year, eg. `2010`.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="subday" id="subday"></a>
@@ -375,7 +366,7 @@ Subtracts `$n` number of days from `$this` date and returns a new Date object.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$n`
+    - `$n` (`int`) &mdash; An integer > 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="subweek" id="subweek"></a>
@@ -387,7 +378,7 @@ Subtracts `$n` weeks from `$this` date and returns a new Date object.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$n`
+    - `$n` (`int`) &mdash; An integer > 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="submonth" id="submonth"></a>
@@ -399,7 +390,7 @@ Subtracts `$n` months from `$this` date and returns the result as a new Date obj
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$n`
+    - `$n` (`int`) &mdash; An integer > 0.
 - _Returns:_ new date
     - [`Date`](../Piwik/Date.md)
 
@@ -412,7 +403,7 @@ Subtracts `$n` years from `$this` date and returns the result as a new Date obje
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$n`
+    - `$n` (`int`) &mdash; An integer > 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getlocalized" id="getlocalized"></a>
@@ -439,7 +430,7 @@ Allowed tags include:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$template`
+    - `$template` (`string`) &mdash; eg. `"%shortMonth% %longYear%"`
 - _Returns:_ eg. `"Aug 2009"`
     - `string`
 
@@ -456,7 +447,7 @@ instance.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$n`
+    - `$n` (`int`) &mdash; Number of days to add, must be > 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="addhour" id="addhour"></a>
@@ -468,7 +459,7 @@ Adds `$n` hours to `$this` date and returns the result in a new Date.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$n`
+    - `$n` (`int`) &mdash; Number of hours to add. Can be less than 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="addhourto" id="addhourto"></a>
@@ -486,8 +477,8 @@ Date instance does not have to be created.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$timestamp`
-    - `$n`
+    - `$timestamp` (`int`) &mdash; The timestamp to add to.
+    - `$n` (`Piwik\number`) &mdash; Number of hours to add, must be > 0.
 - _Returns:_ The result as a UNIX timestamp.
     - `int`
 
@@ -500,7 +491,7 @@ Subtracts `$n` hours from `$this` date and returns the result in a new Date.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$n`
+    - `$n` (`int`) &mdash; Number of hours to subtract. Can be less than 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="addperiod" id="addperiod"></a>
@@ -512,8 +503,8 @@ Adds a period to `$this` date and returns the result in a new Date instance.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$n`
-    - `$period`
+    - `$n` (`int`) &mdash; The number of periods to add. Can be negative.
+    - `$period` (`string`) &mdash; The type of period to add (YEAR, MONTH, WEEK, DAY, ...)
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="subperiod" id="subperiod"></a>
@@ -525,8 +516,8 @@ Subtracts a period from `$this` date and returns the result in a new Date instan
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$n`
-    - `$period`
+    - `$n` (`int`) &mdash; The number of periods to add. Can be negative.
+    - `$period` (`string`) &mdash; The type of period to add (YEAR, MONTH, WEEK, DAY, ...)
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="secondstodays" id="secondstodays"></a>
@@ -538,6 +529,6 @@ Returns the number of days represented by a number of seconds.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$secs`
+    - `$secs` (`int`)
 - It returns a `float` value.
 

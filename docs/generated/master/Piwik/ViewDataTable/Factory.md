@@ -22,7 +22,6 @@ In the Controller of the plugin VisitorInterest
  }
 </pre>
 
-
 Methods
 -------
 
@@ -47,10 +46,10 @@ If force is set to true, a ViewDataTable of the $defaultType will be returned in
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$defaultType`
-    - `$apiAction`
-    - `$controllerAction`
-    - `$forceDefault`
+    - `$defaultType` (`string`) &mdash; Any of these: table, cloud, graphPie, graphVerticalBar, graphEvolution, sparkline, generateDataChart*
+    - `$apiAction` (`string`|`bool`)
+    - `$controllerAction` (`string`|`bool`)
+    - `$forceDefault` (`bool`)
 - It can return one of the following values:
     - [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
     - [`Visualization`](../../Piwik/Plugin/Visualization.md)
@@ -67,9 +66,9 @@ Convenience method that creates and renders a ViewDataTable for a API method.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$pluginName`
-    - `$apiAction`
-    - `$fetch`
+    - `$pluginName` (`string`) &mdash; The name of the plugin (eg, UserSettings).
+    - `$apiAction` (`string`) &mdash; The name of the API action (eg, getResolution).
+    - `$fetch` (`bool`) &mdash; If true, the result is returned, if false it is echo'd.
 - _Returns:_ See $fetch.
     - `string`
     - `null`

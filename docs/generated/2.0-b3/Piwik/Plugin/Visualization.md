@@ -14,14 +14,6 @@ Each one will display DataTable data in a different way.
 
 TODO: must be more in depth
 
-
-Constants
----------
-
-This class defines the following constants:
-
-- `TEMPLATE_FILE`
-
 Methods
 -------
 
@@ -52,7 +44,6 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 - It accepts the following parameter(s):
     - `$controllerAction`
     - `$apiMethodToRequestDataTable`
-- It does not return anything.
 
 <a name="assigntemplatevar" id="assigntemplatevar"></a>
 <a name="assignTemplateVar" id="assignTemplateVar"></a>
@@ -68,8 +59,8 @@ assign either one variable by setting $vars and $value or an array of key/value 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$vars`
-    - `$value`
+    - `$vars` (`array`|`string`)
+    - `$value` (`mixed`)
 - It does not return anything.
 
 <a name="beforeloaddatatable" id="beforeloaddatatable"></a>

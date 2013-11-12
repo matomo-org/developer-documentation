@@ -15,7 +15,6 @@ Only metadata values are passed to the callback.
     // add a logo metadata based on the url metadata
     $dataTable->filter('MetadataCallbackAddMetadata', array('url', 'logo', 'Piwik\Plugins\MyPlugin\getLogoFromUrl'));
 
-
 Methods
 -------
 
@@ -33,12 +32,11 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$metadataToRead`
-    - `$metadataToAdd`
-    - `$functionToApply`
-    - `$applyToSummaryRow`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable that will eventually be filtered.
+    - `$metadataToRead` (`string`|`array`) &mdash; The metadata to read from each row and pass to the callback.
+    - `$metadataToAdd` (`string`) &mdash; The name of the metadata to add.
+    - `$functionToApply` (`callable`) &mdash; The callback to execute for each row. The result will be added as metadata with the name `$metadataToAdd`.
+    - `$applyToSummaryRow` (`bool`) &mdash; True if the callback should be applied to the summary row, false if otherwise.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -49,6 +47,6 @@ See [MetadataCallbackAddMetadata](#).
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It does not return anything.
 

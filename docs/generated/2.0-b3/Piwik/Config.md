@@ -30,7 +30,6 @@ values in `config/global.ini.php`.
     Config::getInstance()->MySection = array('myoption' => 1);
     Config::getInstance()->forceSave();
 
-
 Methods
 -------
 
@@ -49,7 +48,7 @@ Returns a configuration value or section by name.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash; The value or section name.
 - _Returns:_ The requested value requested. Returned by reference.
     - `string`
     - `array`
@@ -65,8 +64,8 @@ Sets a configuration value or section.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$value`
+    - `$name` (`string`) &mdash; This section name or value name to set.
+    - `$value` (`mixed`)
 - It does not return anything.
 
 <a name="forcesave" id="forcesave"></a>

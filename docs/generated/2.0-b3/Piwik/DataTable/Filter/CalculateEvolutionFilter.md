@@ -17,7 +17,6 @@ The evolution metric is calculated as:
 
     ((currentValue - pastValue) / pastValue) * 100
 
-
 Methods
 -------
 
@@ -37,12 +36,11 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
-    - `$pastDataTable`
-    - `$columnToAdd`
-    - `$columnToRead`
-    - `$quotientPrecision`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable being filtered.
+    - `$pastDataTable` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable containing data for the period in the past.
+    - `$columnToAdd` (`string`) &mdash; The column to add evolution data to, eg, `'visits_evolution'`.
+    - `$columnToRead` (`string`) &mdash; The column to use to calculate evolution data, eg, `'nb_visits'`.
+    - `$quotientPrecision` (`int`) &mdash; The precision to use when rounding the evolution value.
 
 <a name="calculate" id="calculate"></a>
 <a name="calculate" id="calculate"></a>
@@ -53,10 +51,10 @@ Calculates the evolution percentage for two arbitrary values.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$currentValue`
-    - `$pastValue`
-    - `$quotientPrecision`
-    - `$appendPercentSign`
+    - `$currentValue` (`float`|`int`) &mdash; The current metric value.
+    - `$pastValue` (`float`|`int`) &mdash; The value of the metric in the past. We measure the % change from this value to $currentValue.
+    - `$quotientPrecision` (`float`|`int`) &mdash; The quotient precision to round to.
+    - `$appendPercentSign` (`bool`) &mdash; Whether to append a '%' sign to the end of the number or not.
 - _Returns:_ The evolution percent, eg `'15%'`.
     - `string`
 

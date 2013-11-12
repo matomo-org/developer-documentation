@@ -10,7 +10,6 @@ Description
 
 Possible to specify a natural sorting (see php.net/natsort for details)
 
-
 Methods
 -------
 
@@ -32,12 +31,11 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
-    - `$columnToSort`
-    - `$order`
-    - `$naturalSort`
-    - `$recursiveSort`
-- It does not return anything.
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table to eventually filter.
+    - `$columnToSort` (`string`) &mdash; The name of the column to sort by.
+    - `$order` (`string`) &mdash; order `'asc'` or `'desc'`.
+    - `$naturalSort` (`bool`) &mdash; Whether to use a natural sort or not (see [http://php.net/natsort](#http://php.net/natsort)).
+    - `$recursiveSort` (`bool`) &mdash; Whether to sort all subtables or not.
 
 <a name="setorder" id="setorder"></a>
 <a name="setOrder" id="setOrder"></a>
@@ -48,7 +46,7 @@ Updates the order
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$order`
+    - `$order` (`string`) &mdash; asc|desc
 - It does not return anything.
 
 <a name="sort" id="sort"></a>
@@ -60,8 +58,8 @@ Sorting method used for sorting numbers
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$a`
-    - `$b`
+    - `$a` (`Piwik\DataTable\Filter\number`)
+    - `$b` (`Piwik\DataTable\Filter\number`)
 - It returns a `int` value.
 
 <a name="naturalsort" id="naturalsort"></a>
@@ -73,8 +71,8 @@ Sorting method used for sorting values natural
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$a`
-    - `$b`
+    - `$a` (`mixed`)
+    - `$b` (`mixed`)
 - It returns a `int` value.
 
 <a name="sortstring" id="sortstring"></a>
@@ -86,8 +84,8 @@ Sorting method used for sorting values
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$a`
-    - `$b`
+    - `$a` (`mixed`)
+    - `$b` (`mixed`)
 - It returns a `int` value.
 
 <a name="filter" id="filter"></a>
@@ -99,6 +97,6 @@ Sorts the given data table by defined column and sorting method
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table`
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
 - It returns a `mixed` value.
 

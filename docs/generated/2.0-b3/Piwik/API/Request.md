@@ -40,7 +40,6 @@ In most cases, using a Request object to query the API is the right way to go.
     ));
     echo "This DataTable has " . $dataTable->getRowsCount() . " rows.";
 
-
 Methods
 -------
 
@@ -48,15 +47,12 @@ The class defines the following methods:
 
 - [`getRequestArrayFromString()`](#getrequestarrayfromstring) &mdash; Converts the supplied request string into an array of query paramater name/value mappings.
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`renameModule()`](#renamemodule) &mdash; For backward compatibility: Piwik API still works if module=Referers, we rewrite to correct renamed plugin: Referrers
 - [`process()`](#process) &mdash; Dispatches the API request to the appropriate API method and returns the result after post-processing.
 - [`getClassNameAPI()`](#getclassnameapi) &mdash; Returns the class name of a plugin's API given the plugin name.
-- [`reloadAuthUsingTokenAuth()`](#reloadauthusingtokenauth) &mdash; If the token_auth is found in the $request parameter, the current session will be authenticated using this token_auth.
 - [`processRequest()`](#processrequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 - [`getRequestParametersGET()`](#getrequestparametersget) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
 - [`getBaseReportUrl()`](#getbasereporturl) &mdash; Returns URL for the current requested report w/o any filter parameters.
 - [`getCurrentUrlWithoutGenericFilters()`](#getcurrenturlwithoutgenericfilters) &mdash; Returns the current URL without generic filter query parameters.
-- [`shouldLoadExpanded()`](#shouldloadexpanded) &mdash; Returns whether the DataTable result will have to be expanded for the current request before rendering.
 - [`getRawSegmentFromRequest()`](#getrawsegmentfromrequest) &mdash; Returns the unmodified segment from the original request.
 
 <a name="getrequestarrayfromstring" id="getrequestarrayfromstring"></a>
@@ -73,7 +69,7 @@ forwarded to request array before it is returned.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$request`
+    - `$request` (`string`|`array`) &mdash; The base request string or array, eg, `'module=UserSettings&action=getWidescreen'`.
 - It returns a `array` value.
 
 <a name="__construct" id="__construct"></a>
@@ -85,20 +81,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$request`
-- It does not return anything.
-
-<a name="renamemodule" id="renamemodule"></a>
-<a name="renameModule" id="renameModule"></a>
-### `renameModule()`
-
-For backward compatibility: Piwik API still works if module=Referers, we rewrite to correct renamed plugin: Referrers
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$module`
-- It returns a `string` value.
+    - `$request` (`string`) &mdash; GET request that defines the API call (must at least contain a **method** parameter), eg, `'method=UserSettings.getWideScreen&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the $_GET and $_POST superglobal and fetch the values directly from the HTTP GET query.
 
 <a name="process" id="process"></a>
 <a name="process" id="process"></a>
@@ -136,24 +119,8 @@ Returns the class name of a plugin's API given the plugin name.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$plugin`
+    - `$plugin` (`string`) &mdash; The plugin name.
 - It returns a `string` value.
-
-<a name="reloadauthusingtokenauth" id="reloadauthusingtokenauth"></a>
-<a name="reloadAuthUsingTokenAuth" id="reloadAuthUsingTokenAuth"></a>
-### `reloadAuthUsingTokenAuth()`
-
-If the token_auth is found in the $request parameter, the current session will be authenticated using this token_auth.
-
-#### Description
-
-It will overwrite the previous Auth object.
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$request`
-- It returns a `void` value.
 
 <a name="processrequest" id="processrequest"></a>
 <a name="processRequest" id="processRequest"></a>
@@ -164,8 +131,8 @@ Helper method that processes an API request in one line using the variables in `
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$method`
-    - `$paramOverride`
+    - `$method` (`string`) &mdash; The API method to call, ie, Actions.getPageTitles
+    - `$paramOverride` (`array`) &mdash; The parameter name-value pairs to use instead of what's in $_GET & $_POST.
 - _Returns:_ The result of the API request.
     - `mixed`
 
@@ -193,9 +160,9 @@ Returns URL for the current requested report w/o any filter parameters.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$module`
-    - `$action`
-    - `$queryParams`
+    - `$module` (`string`) &mdash; The API module.
+    - `$action` (`string`) &mdash; The API action.
+    - `$queryParams` (`array`) &mdash; Query parameter overrides.
 - It returns a `string` value.
 
 <a name="getcurrenturlwithoutgenericfilters" id="getcurrenturlwithoutgenericfilters"></a>
@@ -207,18 +174,8 @@ Returns the current URL without generic filter query parameters.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$params`
+    - `$params` (`array`) &mdash; Query parameter values to override in the new URL.
 - It returns a `string` value.
-
-<a name="shouldloadexpanded" id="shouldloadexpanded"></a>
-<a name="shouldLoadExpanded" id="shouldLoadExpanded"></a>
-### `shouldLoadExpanded()`
-
-Returns whether the DataTable result will have to be expanded for the current request before rendering.
-
-#### Signature
-
-- It returns a `bool` value.
 
 <a name="getrawsegmentfromrequest" id="getrawsegmentfromrequest"></a>
 <a name="getRawSegmentFromRequest" id="getRawSegmentFromRequest"></a>

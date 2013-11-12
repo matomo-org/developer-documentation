@@ -11,7 +11,6 @@ Description
 Each user will be able to change this setting but each user can set a different value. That means
 a changed value does not effect any other users.
 
-
 Methods
 -------
 
@@ -29,10 +28,9 @@ The class defines the following methods:
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$name`
-    - `$title`
-    - `$userLogin`
-- It does not return anything.
+    - `$name` (`string`)
+    - `$title` (`string`)
+    - `$userLogin` (`null`|`string`) &mdash; Defaults to the current user login.
 
 <a name="getorder" id="getorder"></a>
 <a name="getOrder" id="getOrder"></a>
@@ -51,7 +49,7 @@ Sets (overwrites) the userLogin.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$userLogin`
+    - `$userLogin` (`Piwik\Settings\$userLogin`)
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case you set a userLogin that is not your userLogin and you are not the superUser.
@@ -70,7 +68,7 @@ is deleted. Otherwise a user could register with the same name afterwards and se
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$userLogin`
+    - `$userLogin` (`string`)
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the userLogin is empty.

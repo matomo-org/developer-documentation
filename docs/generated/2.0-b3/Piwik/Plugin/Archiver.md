@@ -34,7 +34,6 @@ Description
         }
     }
 
-
 Methods
 -------
 
@@ -53,8 +52,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$processing` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md))
-- It does not return anything.
+    - `$processing` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md)) &mdash; The ArchiveProcessor instance sent to the archiving event observer.
 
 <a name="aggregatedayreport" id="aggregatedayreport"></a>
 <a name="aggregateDayReport" id="aggregateDayReport"></a>
