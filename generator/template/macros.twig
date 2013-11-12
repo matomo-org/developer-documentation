@@ -60,8 +60,8 @@ class
 {% elseif "method" == type %}
 {% if member.parameters %}
 - It accepts the following parameter(s):
-{% for parameter in member.parameters %}
-    - `${{ parameter.name }}`{% if parameter.hint %} ({% for hint in parameter.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}){% endif %}{% if parameter.shortdesc %} &mdash; {{ parameter.shortdesc|raw }}{% endif %}
+{% for parameter in member.getParameters %}
+    - `${{ parameter.name }}`{% if parameter.hint %} ({% for hint in parameter.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}){% endif %}{% if parameter.shortDesc is defined and parameter.shortDesc %} &mdash; {{ parameter.shortDesc|raw }}{% endif %}{% if parameter.shortDesc is defined and parameter.longDesc %} &mdash; {{ parameter.longDesc|raw }}{% endif %}
 
 {% endfor %}
 {% endif %}
