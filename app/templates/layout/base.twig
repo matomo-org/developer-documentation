@@ -62,8 +62,11 @@
         <footer>
             <p class="pull-left">&copy; Piwik.org</p>
             <p class="pull-right">{% if linkToEditDocument is defined and linkToEditDocument %}
-                    <a href="{{ linkToEditDocument }}" target="_blank">Edit on GitHub</a>
+            <a href="{{ linkToEditDocument }}" target="_blank">Edit on GitHub</a>
                 {% endif %}</p>
+            <p class="pull-right">
+                <a href="mailto:developer@piwik.org" target="_blank">Give Feedback</a>{% if linkToEditDocument is defined and linkToEditDocument %}&nbsp;|&nbsp;{% endif %}
+            </p>
         </footer>
     </div>
 {% endblock %}
