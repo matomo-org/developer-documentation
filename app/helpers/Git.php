@@ -20,7 +20,7 @@ class Git
 
         $rev = shell_exec('git rev-parse --short HEAD');
 
-        if (!empty($rev)) {
+        if (empty($rev)) {
             return '';
         }
 
