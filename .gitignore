@@ -8,4 +8,5 @@ app/vendor
 app/composer.phar
 templates/cache/*
 *.log
+.idea
 app/tmp/logs/*

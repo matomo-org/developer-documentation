@@ -51,6 +51,10 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
             return false;
         }
 
+        if ($this->shouldBeIgnored($method)) {
+            return false;
+        }
+
         if ($this->hasApiTag($method)) {
             return true;
         }
@@ -81,6 +85,13 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
         }
 
         return false;
+    }
+
+    private function shouldBeIgnored(\Sami\Reflection\Reflection $reflection)
+    {
+        $ignoreTags = ($reflection->getTags('ignore'));
+
+        return !empty($ignoreTags);
     }
 
     private function inheritsFromBlacklistedClass(ClassReflection $class)
