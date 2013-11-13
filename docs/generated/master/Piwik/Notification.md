@@ -3,61 +3,95 @@
 Notification
 ============
 
-Notification class.
+Describes a UI notification.
 
 Description
 -----------
 
-Example:
-```
-$notification = new \Piwik\Notification('My Error Message');
-$notification->context = Notification::CONTEXT_ERROR;
-\Piwik\Notification\Manager::notify('pluginname_id', $notification);
-```
+UI notifications are messages displayed to the user near the top of the screen.
+Notifications consist of a message, a context (the message type), a priority
+and a display type.
+
+A notification's context will affect the way the message looks, but not how it
+is displayed. A notification's display type will determine how the message is
+displayed. The priority determines where it is shown in the list of
+all displayed notifications.
+
+### Examples
+
+**Display an error message**
+
+    $notification = new Notification('My Error Message');
+    $notification->context = Notification::CONTEXT_ERROR;
+    Notification\Manager::notify('myUniqueNotificationId', $notification);
+
+**Display a temporary success message**
+
+    $notification = new Notificiation('Success');
+    $notification->context = Notification::CONTEXT_SUCCESS;
+    $notification->type = Notification::TYPE_TOAST;
+    Notification\Manager::notify('myUniqueNotificationId', $notification);
+
+**Display a message near the top of the screen**
+
+    $notification = new Notification('Urgent: Your password has expired!');
+    $notification->context = Notification::CONTEXT_INFO;
+    $notification->type = Notification::TYPE_PERSISTENT;
+    $notification->priority = Notification::PRIORITY_MAX;
 
 Constants
 ---------
 
 This class defines the following constants:
 
-- [`FLAG_NO_CLEAR`](#flag_no_clear) &mdash; If flag applied, no close icon will be displayed.
-- [`TYPE_TOAST`](#type_toast) &mdash; Implies transient.
+- [`FLAG_NO_CLEAR`](#flag_no_clear) &mdash; If this flag applied, no close icon will be displayed.
+- [`TYPE_PERSISTENT`](#type_persistent) &mdash; Notifications of this type will be displayed until the new user explicitly closes the notification.
+- [`TYPE_TRANSIENT`](#type_transient) &mdash; Notifications of this type will be displayed only once.
 
 <a name="flag_no_clear" id="flag_no_clear"></a>
 <a name="FLAG_NO_CLEAR" id="FLAG_NO_CLEAR"></a>
 ### `FLAG_NO_CLEAR`
 
-Please note that persistent notifications always have a close
-icon
+_Note: persistent notifications always have a close
+icon._
 
-<a name="type_toast" id="type_toast"></a>
-<a name="TYPE_TOAST" id="TYPE_TOAST"></a>
-### `TYPE_TOAST`
+See [flags](#flags).
 
-Notification will be displayed for a few seconds and then faded out
+<a name="type_persistent" id="type_persistent"></a>
+<a name="TYPE_PERSISTENT" id="TYPE_PERSISTENT"></a>
+### `TYPE_PERSISTENT`
+
+The notifications will display even if the user reloads the page.
+
+<a name="type_transient" id="type_transient"></a>
+<a name="TYPE_TRANSIENT" id="TYPE_TRANSIENT"></a>
+### `TYPE_TRANSIENT`
+
+They will disappear after a page reload or
+change.
 
 Properties
 ----------
 
 This class defines the following properties:
 
-- [`$title`](#$title) &mdash; The title of the notification.
-- [`$message`](#$message) &mdash; The actual message that will be displayed.
-- [`$flags`](#$flags)
-- [`$type`](#$type) &mdash; The type of the notification.
-- [`$context`](#$context) &mdash; Context of the notification.
-- [`$priority`](#$priority) &mdash; The priority of the notification, the higher the priority, the higher the order.
-- [`$raw`](#$raw) &mdash; Set to true in case you want the raw message output.
+- [`$title`](#$title) &mdash; The notification title.
+- [`$message`](#$message) &mdash; The notification message.
+- [`$flags`](#$flags) &mdash; Contains extra display options.
+- [`$type`](#$type) &mdash; The notification's display type.
+- [`$context`](#$context) &mdash; The notification's context (message type).
+- [`$priority`](#$priority) &mdash; The notification's priority.
+- [`$raw`](#$raw) &mdash; If true, the message will not be escaped before being outputted as HTML.
 
 <a name="$title" id="$title"></a>
 <a name="title" id="title"></a>
 ### `$title`
 
-The title of the notification.
+The notification title.
 
 #### Description
 
-For instance the plugin name. The title is optional.
+The title is optional and is displayed directly before the message content.
 
 #### Signature
 
@@ -67,7 +101,7 @@ For instance the plugin name. The title is optional.
 <a name="message" id="message"></a>
 ### `$message`
 
-The actual message that will be displayed.
+The notification message.
 
 #### Description
 
@@ -81,6 +115,12 @@ Must be set.
 <a name="flags" id="flags"></a>
 ### `$flags`
 
+Contains extra display options.
+
+#### Description
+
+Usage: `$notification->flags = Notification::FLAG_BAR | Notification::FLAG_FOO`.
+
 #### Signature
 
 - It is a `int` value.
@@ -89,11 +129,11 @@ Must be set.
 <a name="type" id="type"></a>
 ### `$type`
 
-The type of the notification.
+The notification's display type.
 
 #### Description
 
-See self::TYPE_*
+See `TYPE_*` constants in [this class](#).
 
 #### Signature
 
@@ -103,11 +143,13 @@ See self::TYPE_*
 <a name="context" id="context"></a>
 ### `$context`
 
-Context of the notification.
+The notification's context (message type).
 
 #### Description
 
-For instance info, warning, success or error.
+See `CONTEXT_*` constants in [this class](#).
+
+A notification's context determines how it will be styled.
 
 #### Signature
 
@@ -117,12 +159,12 @@ For instance info, warning, success or error.
 <a name="priority" id="priority"></a>
 ### `$priority`
 
-The priority of the notification, the higher the priority, the higher the order.
+The notification's priority.
 
 #### Description
 
-Notifications having the
-highest priority will be displayed first and all other notifications below. See self::PRIORITY_*
+The higher the priority, the higher the order. See `PRIORITY_*`
+constants in [this class](#) to see possible priority values.
 
 #### Signature
 
@@ -132,11 +174,12 @@ highest priority will be displayed first and all other notifications below. See 
 <a name="raw" id="raw"></a>
 ### `$raw`
 
-Set to true in case you want the raw message output.
+If true, the message will not be escaped before being outputted as HTML.
 
 #### Description
 
-Make sure to escape the text in this case by yourself.
+If you set this to
+true, make sure you escape text yourself in order to avoid any possible XSS vulnerabilities.
 
 #### Signature
 
@@ -147,34 +190,46 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct)
-- [`hasNoClear()`](#hasnoclear)
-- [`getPriority()`](#getpriority)
+- [`__construct()`](#__construct) &mdash; Constructor.
+- [`hasNoClear()`](#hasnoclear) &mdash; Returns `1` if the notification will be displayed without a close button, `0` if otherwise.
+- [`getPriority()`](#getpriority) &mdash; Returns the notification's priority.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
+
+Constructor.
 
 #### Signature
 
 - It accepts the following parameter(s):
     - `$message` (`string`) &mdash; The notification message.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; In case the message is empty.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the message is empty.
 
 <a name="hasnoclear" id="hasnoclear"></a>
 <a name="hasNoClear" id="hasNoClear"></a>
 ### `hasNoClear()`
 
+Returns `1` if the notification will be displayed without a close button, `0` if otherwise.
+
 #### Signature
 
-- It does not return anything.
+- _Returns:_ `1` or `0`.
+    - `int`
 
 <a name="getpriority" id="getpriority"></a>
 <a name="getPriority" id="getPriority"></a>
 ### `getPriority()`
 
+Returns the notification's priority.
+
+#### Description
+
+If no priority has been set, a priority will be set based
+on the notification's context.
+
 #### Signature
 
-- It does not return anything.
+- It returns a `int` value.
 

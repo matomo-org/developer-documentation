@@ -43,7 +43,7 @@ to use since it requires that the data be sorted before adding.
 
 ### Manipulating DataTables
 
-There are two main ways to manipulate a DataTable. You can either:
+There are two ways to manipulate a DataTable. You can either:
 
 1. manually iterate through each row and manipulate the data,
 2. or you can use predefined Filters.

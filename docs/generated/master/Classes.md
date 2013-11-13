@@ -53,8 +53,8 @@ This is a complete list of available classes:
 - [`Metrics`](Piwik/Metrics.md) &mdash; This class contains metadata regarding core metrics and contains several related helper functions.
 - [`MetricsFormatter`](Piwik/MetricsFormatter.md) &mdash; Contains helper function that format numerical values in different ways.
 - [`Nonce`](Piwik/Nonce.md) &mdash; Nonce class.
-- [`Notification`](Piwik/Notification.md) &mdash; Notification class.
-- [`Notification\Manager`](Piwik/Notification/Manager.md)
+- [`Notification`](Piwik/Notification.md) &mdash; Describes a UI notification.
+- [`Notification\Manager`](Piwik/Notification/Manager.md) &mdash; Posts and removes UI notifications (see [Notification](#) to learn more).
 - [`Option`](Piwik/Option.md) &mdash; Convenient key-value storage for user specified options and temporary data that needs to be persisted beyond one request.
 - [`Period`](Piwik/Period.md) &mdash; Date range representation.
 - [`Period\Range`](Piwik/Period/Range.md) &mdash; Arbitrary date range representation.

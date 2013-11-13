@@ -3,28 +3,30 @@
 Manager
 =======
 
+Posts and removes UI notifications (see [Notification](#) to learn more).
+
 Methods
 -------
 
 The class defines the following methods:
 
-- [`notify()`](#notify) &mdash; Post a notification to be shown in the status bar.
+- [`notify()`](#notify) &mdash; Posts a notification that will be shown in Piwik's status bar.
 
 <a name="notify" id="notify"></a>
 <a name="notify" id="notify"></a>
 ### `notify()`
 
-Post a notification to be shown in the status bar.
+Posts a notification that will be shown in Piwik's status bar.
 
 #### Description
 
-If a notification with the same id has already been posted
-by your application and has not yet been canceled, it will be replaced by the updated information.
+If a notification with the same id
+has been posted and has not been closed/removed, it will be replaced with `$notification`.
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$id` (`string`) &mdash; A unique identifier for this notification. Id must be a string and may contain only word characters (AlNum + underscore)
-    - `$notification` ([`Notification`](../../Piwik/Notification.md))
+    - `$id` (`string`) &mdash; A unique identifier for this notification. The ID must be a valid HTML element ID. It can only contain alphanumeric characters (underscores can be used).
+    - `$notification` ([`Notification`](../../Piwik/Notification.md)) &mdash; The notification to post.
 - It does not return anything.
 
