@@ -68,8 +68,12 @@ This is a complete list of available classes:
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; This class is used to load (from the API) and customize the output of a given DataTable.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; Base class for all DataTable visualizations.
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
-- [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata describing and referencing a chunk of PHP code that should be executed regularly.
-- [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; The ScheduledTime abstract class is used as a base class for different types of scheduling intervals.
+- [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata describing a chunk of PHP code that should be executed at regular intervals.
+- [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; Describes the interval on which a scheduled task is executed.
+- [`ScheduledTime\Daily`](Piwik/ScheduledTime/Daily.md) &mdash; Daily class is used to schedule tasks every day.
+- [`ScheduledTime\Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.
+- [`ScheduledTime\Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; Monthly class is used to schedule tasks every month.
+- [`ScheduledTime\Weekly`](Piwik/ScheduledTime/Weekly.md) &mdash; Weekly class is used to schedule tasks every week.
 - [`Segment`](Piwik/Segment.md) &mdash; Limits the set of visits Piwik uses when aggregating analytics data.
 - [`SettingsPiwik`](Piwik/SettingsPiwik.md) &mdash; Contains helper methods that can be used to get common Piwik settings.
 - [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and PHP settings.

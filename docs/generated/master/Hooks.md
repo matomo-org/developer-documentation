@@ -973,7 +973,7 @@ Usages:
 - [TaskScheduler.getScheduledTasks](#taskschedulergetscheduledtasks)
 
 ### TaskScheduler.getScheduledTasks
-_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [94](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L94)_
+_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [105](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L105)_
 
 Triggered when the TaskScheduler runs scheduled tasks. Collects all the tasks that
 will be run.
@@ -990,7 +990,7 @@ public function getScheduledTasks(&$tasks)
         'Piwik\Plugins\CorePluginsAdmin\MarketplaceApiClient',
         'clearAllCacheEntries',
         null,
-        new Daily(),
+        ScheduledTime::factory('daily'),
         ScheduledTask::LOWEST_PRIORITY
     );
 }

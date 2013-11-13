@@ -639,6 +639,7 @@ Index
 - [`setOthersLabel()`](Piwik/RankingQuery.md#setotherslabel) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setColumnToMarkExcludedRows()`](Piwik/RankingQuery.md#setcolumntomarkexcludedrows) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
+- [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`setDay()`](Piwik/ScheduledTime/Daily.md#setday) &mdash; _Method in class_ [`Daily`](Piwik/ScheduledTime/Daily.md)
 - [`setHour()`](Piwik/ScheduledTime/Hourly.md#sethour) &mdash; _Method in class_ [`Hourly`](Piwik/ScheduledTime/Hourly.md)
 - [`setDay()`](Piwik/ScheduledTime/Hourly.md#setday) &mdash; _Method in class_ [`Hourly`](Piwik/ScheduledTime/Hourly.md)

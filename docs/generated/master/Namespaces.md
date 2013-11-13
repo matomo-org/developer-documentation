@@ -14,5 +14,6 @@ This is a complete list of available namespaces:
 - [`Piwik\Notification`](Piwik/Notification)
 - [`Piwik\Period`](Piwik/Period)
 - [`Piwik\Plugin`](Piwik/Plugin)
+- [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 - [`Piwik\Settings`](Piwik/Settings)
 - [`Piwik\ViewDataTable`](Piwik/ViewDataTable)

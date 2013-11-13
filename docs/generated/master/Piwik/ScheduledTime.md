@@ -3,45 +3,35 @@
 ScheduledTime
 =============
 
-The ScheduledTime abstract class is used as a base class for different types of scheduling intervals.
+Describes the interval on which a scheduled task is executed.
 
 Description
 -----------
 
-ScheduledTime::factory() is used to create a ScheduledTime object.
+Use the [factory](#factory) method
+to create ScheduledTime instances.
 
 Methods
 -------
 
 The abstract class defines the following methods:
 
-- [`setDay()`](#setday)
-- [`setHour()`](#sethour)
+- [`setHour()`](#sethour) &mdash; Sets the hour of the day on which the task should be executed.
 - [`factory()`](#factory) &mdash; Returns a new ScheduledTime instance using a string description of the scheduled period type and a string description of the day within the period to execute the task on.
-
-<a name="setday" id="setday"></a>
-<a name="setDay" id="setDay"></a>
-### `setDay()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$_day`
-- It does not return anything.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if method not supported by subclass or parameter _day is invalid
 
 <a name="sethour" id="sethour"></a>
 <a name="setHour" id="setHour"></a>
 ### `setHour()`
 
+Sets the hour of the day on which the task should be executed.
+
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$_hour` (`int`) &mdash; the hour to set, has to be >= 0 and < 24
+    - `$hour` (`int`) &mdash; Must be `>= 0` and `< 24`.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if method not supported by subclass or parameter _hour is invalid
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the current scheduled period is **hourly** or if `$hour` is invalid.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>

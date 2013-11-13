@@ -3,7 +3,7 @@
 ScheduledTask
 =============
 
-Contains metadata describing and referencing a chunk of PHP code that should be executed regularly.
+Contains metadata describing a chunk of PHP code that should be executed at regular intervals.
 
 Description
 -----------
@@ -16,7 +16,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getObjectInstance()`](#getobjectinstance) &mdash; Return the object instance on which the method should be executed.
+- [`getObjectInstance()`](#getobjectinstance) &mdash; Returns the object instance on which the method should be executed.
 - [`getClassName()`](#getclassname) &mdash; Returns the class name that contains the method to execute regularly.
 - [`getMethodName()`](#getmethodname) &mdash; Returns the method name that will be regularly executed.
 - [`getMethodParameter()`](#getmethodparameter) &mdash; Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
@@ -44,7 +44,7 @@ Constructor.
 <a name="getObjectInstance" id="getObjectInstance"></a>
 ### `getObjectInstance()`
 
-Return the object instance on which the method should be executed.
+Returns the object instance on which the method should be executed.
 
 #### Description
 

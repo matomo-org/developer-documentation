@@ -65,6 +65,7 @@
 ## Plugin\Visualization
 ## RankingQuery
 ## ScheduledTask
+## ScheduledTime
 ## ScheduledTime\Daily
 ## ScheduledTime\Hourly
 ## ScheduledTime\Monthly

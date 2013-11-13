@@ -69,6 +69,7 @@ This is a complete list of available classes:
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; Base class for all DataTable visualizations.
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata describing and referencing a chunk of PHP code that should be executed regularly.
+- [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; The ScheduledTime abstract class is used as a base class for different types of scheduling intervals.
 - [`ScheduledTime\Daily`](Piwik/ScheduledTime/Daily.md) &mdash; Daily class is used to schedule tasks every day.
 - [`ScheduledTime\Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.
 - [`ScheduledTime\Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; Monthly class is used to schedule tasks every month.
