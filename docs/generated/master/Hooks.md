@@ -1332,13 +1332,13 @@ Usages:
 
 
 ### ViewDataTable.configure
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [120](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L120)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [146](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L146)_
 
-Triggered during [ViewDataTable](#) is constructed. Subscribers should customize
+Triggered during [ViewDataTable](#) construction. Subscribers should customize
 the view based on the report that it is displaying.
 
 Plugins that define their own reports must subscribe to this event in order to
-customize how the Piwik UI will display and navigate the report.
+specify how the Piwik UI will display the report.
 
 **Example**
 
@@ -1362,7 +1362,7 @@ Usages:
 
 
 ### ViewDataTable.getDefaultType
-_Defined in [Piwik/ViewDataTable/Factory](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php) in line [163](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php#L163)_
+_Defined in [Piwik/ViewDataTable/Factory](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php) in line [149](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php#L149)_
 
 Triggered when gathering the default view types for all available reports. By default the HtmlTable
 visualization is used. If you define your own report, you may want to subscribe to this event to

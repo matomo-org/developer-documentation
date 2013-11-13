@@ -82,5 +82,7 @@
 ## UrlHelper
 ## Version
 ## View
+## ViewDataTable\Config
 ## ViewDataTable\Factory
+## ViewDataTable\RequestConfig
 ## WidgetsList

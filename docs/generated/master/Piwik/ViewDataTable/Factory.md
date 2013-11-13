@@ -3,24 +3,7 @@
 Factory
 =======
 
-This class is used to load (from the API) and customize the output of a given DataTable.
-
-Description
------------
-
-The build() method will create an object implementing ViewInterface
-You can customize the dataTable using the disable* methods.
-
-Example:
-In the Controller of the plugin VisitorInterest
-<pre>
- function getNumberOfVisitsPerVisitDuration( $fetch = false)
- {
-     $view = ViewDataTable/Factory::build( 'cloud', 'VisitorInterest.getNumberOfVisitsPerVisitDuration' );
-     $view->config->show_search = true;
-     $view->render();
- }
-</pre>
+TODO
 
 Methods
 -------
