@@ -403,6 +403,7 @@ Index
 - [`insertNumericRecord()`](Piwik/ArchiveProcessor.md#insertnumericrecord) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertBlobRecord()`](Piwik/ArchiveProcessor.md#insertblobrecord) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`isSingleSiteDayArchive()`](Piwik/ArchiveProcessor/Parameters.md#issinglesitedayarchive) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`isSingleSite()`](Piwik/ArchiveProcessor/Parameters.md#issinglesite) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`isEqual()`](Piwik/DataTable.md#isequal) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`isSubtableLoaded()`](Piwik/DataTable/Row.md#issubtableloaded) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`isSummaryRow()`](Piwik/DataTable/Row.md#issummaryrow) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)

@@ -21,6 +21,7 @@ The class defines the following methods:
 - [`getDateEnd()`](#getdateend) &mdash; Returns the Date end of this period.
 - [`getDateStart()`](#getdatestart) &mdash; Returns the Date start of this period.
 - [`isSingleSiteDayArchive()`](#issinglesitedayarchive)
+- [`isSingleSite()`](#issinglesite)
 - [`logStatusDebug()`](#logstatusdebug)
 
 <a name="__construct" id="__construct"></a>
@@ -127,6 +128,14 @@ Returns the Date start of this period.
 #### Signature
 
 - It returns a `bool` value.
+
+<a name="issinglesite" id="issinglesite"></a>
+<a name="isSingleSite" id="isSingleSite"></a>
+### `isSingleSite()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="logstatusdebug" id="logstatusdebug"></a>
 <a name="logStatusDebug" id="logStatusDebug"></a>
