@@ -1127,7 +1127,7 @@ Callback Signature:
 
 
 ### Tracker.Request.getIdSite
-_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [314](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L314)_
+_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [318](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L318)_
 
 Triggered when obtaining the ID of the site that is currently being tracked. This event can be used to modify the site ID from what is specified by the **idsite**
 query parameter.

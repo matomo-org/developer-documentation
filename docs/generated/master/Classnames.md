@@ -74,7 +74,6 @@
 ## Settings\UserSetting
 ## Singleton
 ## Site
-## Tracker\Request
 ## Url
 ## UrlHelper
 ## Version

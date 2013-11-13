@@ -128,8 +128,8 @@ DataTables are summed recursively so subtables will be summed as well.
     - `$maximumRowsInDataTableLevelZero` (`int`) &mdash; Maximum number of rows allowed in the top level DataTable.
     - `$maximumRowsInSubDataTable` (`int`) &mdash; Maximum number of rows allowed in each subtable.
     - `$columnToSortByBeforeTruncation` (`string`) &mdash; The name of the column to sort by before truncating a DataTable.
-    - `$columnAggregationOperations` (`array`) &mdash; Operations for aggregating columns, @see Row::sumRow().
-    - `$invalidSummedColumnNameToRenamedName` (`array`) &mdash; For columns that must change names when summed because they cannot be summed, eg, `array('nb_uniq_visitors' => 'sum_daily_nb_uniq_visitors')`.
+    - `$columnsAggregationOperation` (`array`) &mdash; Operations for aggregating columns, @see Row::sumRow().
+    - `$columnsToRenameAfterAggregation` (`array`) &mdash; For columns that must change names when summed because they cannot be summed, eg, `array('nb_uniq_visitors' => 'sum_daily_nb_uniq_visitors')`.
 - _Returns:_ Returns the row counts of each aggregated report before truncation, eg, ``` array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... ) ```
     - `array`
 

@@ -49,7 +49,6 @@ Index
 - [`addLabelColumn()`](Piwik/RankingQuery.md#addlabelcolumn) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`addColumn()`](Piwik/RankingQuery.md#addcolumn) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`$availableValues()`](Piwik/Settings/Setting.md#$availablevalues) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
-- [`authenticateSuperUserOrAdmin()`](Piwik/Tracker/Request.md#authenticatesuperuseroradmin) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
 - [`add()`](Piwik/WidgetsList.md#add) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## B
@@ -198,6 +197,8 @@ Index
 - [`getLogAggregator()`](Piwik/ArchiveProcessor.md#getlogaggregator) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getRequestedPlugin()`](Piwik/ArchiveProcessor/Parameters.md#getrequestedplugin) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`getSubPeriods()`](Piwik/ArchiveProcessor/Parameters.md#getsubperiods) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`getIdSites()`](Piwik/ArchiveProcessor/Parameters.md#getidsites) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSite()`](Piwik/ArchiveProcessor/Parameters.md#getsite) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSegment()`](Piwik/ArchiveProcessor/Parameters.md#getsegment) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getDateEnd()`](Piwik/ArchiveProcessor/Parameters.md#getdateend) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
@@ -370,24 +371,6 @@ Index
 - [`getCurrencyFor()`](Piwik/Site.md#getcurrencyfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getExcludedIpsFor()`](Piwik/Site.md#getexcludedipsfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getExcludedQueryParametersFor()`](Piwik/Site.md#getexcludedqueryparametersfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
-- [`getDaysSinceFirstVisit()`](Piwik/Tracker/Request.md#getdayssincefirstvisit) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getDaysSinceLastOrder()`](Piwik/Tracker/Request.md#getdayssincelastorder) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getDaysSinceLastVisit()`](Piwik/Tracker/Request.md#getdayssincelastvisit) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getVisitCount()`](Piwik/Tracker/Request.md#getvisitcount) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getBrowserLanguage()`](Piwik/Tracker/Request.md#getbrowserlanguage) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getLocalTime()`](Piwik/Tracker/Request.md#getlocaltime) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getGoalRevenue()`](Piwik/Tracker/Request.md#getgoalrevenue) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getParam()`](Piwik/Tracker/Request.md#getparam) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getCurrentTimestamp()`](Piwik/Tracker/Request.md#getcurrenttimestamp) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getIdSite()`](Piwik/Tracker/Request.md#getidsite) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getUserAgent()`](Piwik/Tracker/Request.md#getuseragent) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getCustomVariables()`](Piwik/Tracker/Request.md#getcustomvariables) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getVisitorId()`](Piwik/Tracker/Request.md#getvisitorid) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getIp()`](Piwik/Tracker/Request.md#getip) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getForcedVisitorId()`](Piwik/Tracker/Request.md#getforcedvisitorid) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getPlugins()`](Piwik/Tracker/Request.md#getplugins) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getParamsCount()`](Piwik/Tracker/Request.md#getparamscount) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`getPageGenerationTime()`](Piwik/Tracker/Request.md#getpagegenerationtime) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
 - [`getCurrentUrl()`](Piwik/Url.md#getcurrenturl) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getCurrentUrlWithoutQueryString()`](Piwik/Url.md#getcurrenturlwithoutquerystring) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getCurrentUrlWithoutFileName()`](Piwik/Url.md#getcurrenturlwithoutfilename) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
@@ -419,7 +402,7 @@ Index
 - [`insertNumericRecords()`](Piwik/ArchiveProcessor.md#insertnumericrecords) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertNumericRecord()`](Piwik/ArchiveProcessor.md#insertnumericrecord) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertBlobRecord()`](Piwik/ArchiveProcessor.md#insertblobrecord) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
-- [`isDayArchive()`](Piwik/ArchiveProcessor/Parameters.md#isdayarchive) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`isSingleSiteDayArchive()`](Piwik/ArchiveProcessor/Parameters.md#issinglesitedayarchive) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`isEqual()`](Piwik/DataTable.md#isequal) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`isSubtableLoaded()`](Piwik/DataTable/Row.md#issubtableloaded) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`isSummaryRow()`](Piwik/DataTable/Row.md#issummaryrow) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
@@ -467,7 +450,6 @@ Index
 - [`isSiteSearchEnabled()`](Piwik/Site.md#issitesearchenabled) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`isEcommerceEnabledFor()`](Piwik/Site.md#isecommerceenabledfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`isSiteSearchEnabledFor()`](Piwik/Site.md#issitesearchenabledfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
-- [`isAuthenticated()`](Piwik/Tracker/Request.md#isauthenticated) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
 - [`isLocalUrl()`](Piwik/Url.md#islocalurl) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`isDefined()`](Piwik/WidgetsList.md#isdefined) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
@@ -524,7 +506,6 @@ Index
 
 - [`optimizeTables()`](Piwik/Db.md#optimizetables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`Option`](Piwik/Option.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
-- [`overrideLocation()`](Piwik/Tracker/Request.md#overridelocation) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
 
 ## P
 
@@ -579,7 +560,6 @@ Index
 - [`render()`](Piwik/Plugin/ViewDataTable.md#render) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`removeAllUserSettingsForUser()`](Piwik/Settings/UserSetting.md#removeallusersettingsforuser) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)
-- [`Request`](Piwik/Tracker/Request.md) &mdash; _Class in namespace_ [`Piwik\Tracker`](Piwik/Tracker)
 - [`redirectToReferrer()`](Piwik/Url.md#redirecttoreferrer) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`redirectToUrl()`](Piwik/Url.md#redirecttourl) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`render()`](Piwik/View.md#render) &mdash; _Method in class_ [`View`](Piwik/View.md)
@@ -662,10 +642,6 @@ Index
 - [`Site`](Piwik/Site.md) &mdash; _Class in namespace_ [`Piwik`](Piwik)
 - [`setSites()`](Piwik/Site.md#setsites) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`setSitesFromArray()`](Piwik/Site.md#setsitesfromarray) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
-- [`setThirdPartyCookie()`](Piwik/Tracker/Request.md#setthirdpartycookie) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`setForceIp()`](Piwik/Tracker/Request.md#setforceip) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`setForceDateTime()`](Piwik/Tracker/Request.md#setforcedatetime) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
-- [`setForcedVisitorId()`](Piwik/Tracker/Request.md#setforcedvisitorid) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
 - [`setContentType()`](Piwik/View.md#setcontenttype) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`setXFrameOptions()`](Piwik/View.md#setxframeoptions) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`singleReport()`](Piwik/View.md#singlereport) &mdash; _Method in class_ [`View`](Piwik/View.md)
@@ -682,7 +658,6 @@ Index
 - [`$type()`](Piwik/Settings/Setting.md#$type) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$transform()`](Piwik/Settings/Setting.md#$transform) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$title()`](Piwik/Settings/Setting.md#$title) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
-- [`truncateCustomVariable()`](Piwik/Tracker/Request.md#truncatecustomvariable) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
 
 ## U
 
@@ -773,7 +748,6 @@ Index
 - [`__construct()`](Piwik/Settings/UserSetting.md#__construct) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)
 - [`__construct()`](Piwik/Site.md#__construct) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`__toString()`](Piwik/Site.md#__tostring) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
-- [`__construct()`](Piwik/Tracker/Request.md#__construct) &mdash; _Method in class_ [`Request`](Piwik/Tracker/Request.md)
 - [`__construct()`](Piwik/View.md#__construct) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`__set()`](Piwik/View.md#__set) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`__get()`](Piwik/View.md#__get) &mdash; _Method in class_ [`View`](Piwik/View.md)

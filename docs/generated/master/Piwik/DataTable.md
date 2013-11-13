@@ -217,7 +217,7 @@ The class defines the following methods:
 - [`setAllTableMetadata()`](#setalltablemetadata) &mdash; Sets metadata erasing existing values.
 - [`setMaximumAllowedRows()`](#setmaximumallowedrows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row).
 - [`walkPath()`](#walkpath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one.
-- [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with its subtable's rows.
+- [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtable's.
 - [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array.
 - [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
 
@@ -1037,7 +1037,7 @@ for more information about tree walking.
 <a name="mergeSubtables" id="mergeSubtables"></a>
 ### `mergeSubtables()`
 
-Returns a new DataTable in which the rows of this table are replaced with its subtable's rows.
+Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtable's.
 
 #### Signature
 

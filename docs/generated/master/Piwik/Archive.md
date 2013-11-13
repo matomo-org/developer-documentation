@@ -295,7 +295,9 @@ indexed by period.
     - `$idSubtable` (`int`|`string`|`null`) &mdash; The ID of the subtable to get (if any). The subtable will be expanded.
     - `$depth` (`int`|`null`) &mdash; The maximum number of subtable levels to load. If null, all levels are loaded. For example, if `1` is supplied, then the DataTable returned will have its subtables loaded. Those subtables, however, will NOT have their subtables loaded.
     - `$addMetadataSubtableId` (`bool`) &mdash; Whether to add the database subtable ID as metadata to each datatable, or not.
-- It returns a [`DataTable`](../Piwik/DataTable.md) value.
+- It can return one of the following values:
+    - [`DataTable`](../Piwik/DataTable.md)
+    - [`Map`](../Piwik/DataTable/Map.md)
 
 <a name="getparams" id="getparams"></a>
 <a name="getParams" id="getParams"></a>

@@ -15,5 +15,4 @@ This is a complete list of available namespaces:
 - [`Piwik\Period`](Piwik/Period)
 - [`Piwik\Plugin`](Piwik/Plugin)
 - [`Piwik\Settings`](Piwik/Settings)
-- [`Piwik\Tracker`](Piwik/Tracker)
 - [`Piwik\ViewDataTable`](Piwik/ViewDataTable)

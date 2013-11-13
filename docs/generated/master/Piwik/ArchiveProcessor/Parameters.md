@@ -14,11 +14,13 @@ The class defines the following methods:
 - [`setRequestedPlugin()`](#setrequestedplugin)
 - [`getRequestedPlugin()`](#getrequestedplugin)
 - [`getPeriod()`](#getperiod) &mdash; Returns the period we computing statistics for.
+- [`getSubPeriods()`](#getsubperiods) &mdash; Returns the array of Period which make up this archive.
+- [`getIdSites()`](#getidsites)
 - [`getSite()`](#getsite) &mdash; Returns the site we are computing statistics for.
 - [`getSegment()`](#getsegment) &mdash; The Segment used to limit the set of visits that are being aggregated.
 - [`getDateEnd()`](#getdateend) &mdash; Returns the Date end of this period.
 - [`getDateStart()`](#getdatestart) &mdash; Returns the Date start of this period.
-- [`isDayArchive()`](#isdayarchive)
+- [`isSingleSiteDayArchive()`](#issinglesitedayarchive)
 - [`logStatusDebug()`](#logstatusdebug)
 
 <a name="__construct" id="__construct"></a>
@@ -60,6 +62,24 @@ Returns the period we computing statistics for.
 
 - It returns a [`Period`](../../Piwik/Period.md) value.
 
+<a name="getsubperiods" id="getsubperiods"></a>
+<a name="getSubPeriods" id="getSubPeriods"></a>
+### `getSubPeriods()`
+
+Returns the array of Period which make up this archive.
+
+#### Signature
+
+- It returns a [`Period[]`](../../Piwik/Period.md) value.
+
+<a name="getidsites" id="getidsites"></a>
+<a name="getIdSites" id="getIdSites"></a>
+### `getIdSites()`
+
+#### Signature
+
+- It returns a `array` value.
+
 <a name="getsite" id="getsite"></a>
 <a name="getSite" id="getSite"></a>
 ### `getSite()`
@@ -100,9 +120,9 @@ Returns the Date start of this period.
 
 - It returns a [`Date`](../../Piwik/Date.md) value.
 
-<a name="isdayarchive" id="isdayarchive"></a>
-<a name="isDayArchive" id="isDayArchive"></a>
-### `isDayArchive()`
+<a name="issinglesitedayarchive" id="issinglesitedayarchive"></a>
+<a name="isSingleSiteDayArchive" id="isSingleSiteDayArchive"></a>
+### `isSingleSiteDayArchive()`
 
 #### Signature
 
