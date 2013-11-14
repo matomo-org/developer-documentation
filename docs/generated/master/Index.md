@@ -274,6 +274,7 @@ Index
 - [`getDataTables()`](Piwik/DataTable/Map.md#getdatatables) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getTable()`](Piwik/DataTable/Map.md#gettable) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getFirstRow()`](Piwik/DataTable/Map.md#getfirstrow) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
+- [`getLastRow()`](Piwik/DataTable/Map.md#getlastrow) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getColumn()`](Piwik/DataTable/Map.md#getcolumn) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getEmptyClone()`](Piwik/DataTable/Map.md#getemptyclone) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getMetadataIntersectArray()`](Piwik/DataTable/Map.md#getmetadataintersectarray) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
