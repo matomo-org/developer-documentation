@@ -11,8 +11,6 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`setRequestedPlugin()`](#setrequestedplugin)
-- [`getRequestedPlugin()`](#getrequestedplugin)
 - [`getPeriod()`](#getperiod) &mdash; Returns the period we computing statistics for.
 - [`getSubPeriods()`](#getsubperiods) &mdash; Returns the array of Period which make up this archive.
 - [`getIdSites()`](#getidsites)
@@ -34,24 +32,6 @@ The class defines the following methods:
     - `$site` ([`Site`](../../Piwik/Site.md))
     - `$period` ([`Period`](../../Piwik/Period.md))
     - `$segment` ([`Segment`](../../Piwik/Segment.md))
-
-<a name="setrequestedplugin" id="setrequestedplugin"></a>
-<a name="setRequestedPlugin" id="setRequestedPlugin"></a>
-### `setRequestedPlugin()`
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$plugin`
-- It does not return anything.
-
-<a name="getrequestedplugin" id="getrequestedplugin"></a>
-<a name="getRequestedPlugin" id="getRequestedPlugin"></a>
-### `getRequestedPlugin()`
-
-#### Signature
-
-- It does not return anything.
 
 <a name="getperiod" id="getperiod"></a>
 <a name="getPeriod" id="getPeriod"></a>

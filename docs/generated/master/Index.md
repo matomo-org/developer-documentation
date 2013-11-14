@@ -231,7 +231,6 @@ Index
 - [`getDataTableFromArchive()`](Piwik/Archive.md#getdatatablefromarchive) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
 - [`getParams()`](Piwik/ArchiveProcessor.md#getparams) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getLogAggregator()`](Piwik/ArchiveProcessor.md#getlogaggregator) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
-- [`getRequestedPlugin()`](Piwik/ArchiveProcessor/Parameters.md#getrequestedplugin) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSubPeriods()`](Piwik/ArchiveProcessor/Parameters.md#getsubperiods) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getIdSites()`](Piwik/ArchiveProcessor/Parameters.md#getidsites) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
@@ -623,7 +622,6 @@ Index
 
 ## S
 
-- [`setRequestedPlugin()`](Piwik/ArchiveProcessor/Parameters.md#setrequestedplugin) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`sort()`](Piwik/DataTable.md#sort) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](Piwik/DataTable.md#setmaximumdepthlevelallowedatleast) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
