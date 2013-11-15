@@ -155,6 +155,18 @@ Callback Signature:
 - `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a [DataTable](#).
 - `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The name of the namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
+## ArchiveProcessor
+
+- [ArchiveProcessor.Parameters.getIdSites](#archiveprocessorparametersgetidsites)
+
+### ArchiveProcessor.Parameters.getIdSites
+_Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php) in line [104](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php#L104)_
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$idSites)</code></pre>
+
 ## AssetManager
 
 - [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
