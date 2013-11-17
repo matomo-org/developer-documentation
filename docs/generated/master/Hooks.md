@@ -260,7 +260,7 @@ Usages:
 - [Config.NoConfigurationFile](#confignoconfigurationfile)
 
 ### Config.badConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [318](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L318)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [316](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L316)_
 
 Triggered if the INI config file has the incorrect format or if certain required configuration options are absent. This event can be used to start the installation process or to display a
 custom error message.
@@ -634,7 +634,7 @@ Callback Signature:
 
 
 ### Request.dispatchCoreAndPluginUpdatesScreen
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [330](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L330)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [328](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L328)_
 
 Triggered just after the platform is initialized and plugins are loaded. This event can be used to do early initialization. Note: At this point the user
 is not authenticated yet.
@@ -670,7 +670,7 @@ Usages:
 
 
 ### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [344](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L344)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [342](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L342)_
 
 Triggered before the user is authenticated. You can use it to create your own
 authentication object which implements the [Piwik\Auth](#) interface and overrides
@@ -1221,7 +1221,7 @@ Usages:
 - [Updater.checkForUpdates](#updatercheckforupdates)
 
 ### Updater.checkForUpdates
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [371](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L371)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [369](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L369)_
 
 Triggered after the platform is initialized and after the user has been authenticated, but before the platform dispatched the request. Piwik uses this event to check for updates to Piwik.
 
