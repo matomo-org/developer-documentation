@@ -11,7 +11,6 @@ Methods
 The class defines the following methods:
 
 - [`build()`](#build) &mdash; Returns a Piwik_ViewDataTable_* object.
-- [`renderReport()`](#renderreport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method.
 
 <a name="build" id="build"></a>
 <a name="build" id="build"></a>
@@ -37,24 +36,6 @@ If force is set to true, a ViewDataTable of the $defaultType will be returned in
     - [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
     - [`Visualization`](../../Piwik/Plugin/Visualization.md)
     - `Piwik\Plugins\CoreVisualizations\Visualizations\Sparkline;`
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
-
-<a name="renderreport" id="renderreport"></a>
-<a name="renderReport" id="renderReport"></a>
-### `renderReport()`
-
-Convenience method that creates and renders a ViewDataTable for a API method.
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$pluginName` (`string`) &mdash; The name of the plugin (eg, UserSettings).
-    - `$apiAction` (`string`) &mdash; The name of the API action (eg, getResolution).
-    - `$fetch` (`bool`) &mdash; If true, the result is returned, if false it is echo'd.
-- _Returns:_ See $fetch.
-    - `string`
-    - `null`
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
