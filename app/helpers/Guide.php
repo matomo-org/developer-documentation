@@ -98,6 +98,28 @@ class Guide {
             'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
         );
 
+        // TODO: remove above entries when new guides finished
+        $menu[] = array(
+            'title'       => 'Getting started extending Piwik',
+            'file'        => 'getting-started',
+            'url'         => static::getUrl('getting-started'),
+            'description' => 'Setup your development environment and learn the basics of Piwik plugin/theme development.'
+        );
+
+        $menu[] = array(
+            'title'       => 'MVC in Piwik',
+            'file'        => 'mvc-in-piwik',
+            'url'         => static::getUrl('mvc-in-piwik'),
+            'description' => 'Learn how Piwik handles HTTP requests and how Piwik generates HTML that is displayed to the user.'
+        );
+
+        $menu[] = array(
+            'title'       => 'Visualizing Report Data',
+            'file'        => 'visualizing-report-data',
+            'url'         => static::getUrl('visualizing-report-data'),
+            'description' => 'Learn about the different ways Piwik can display analytics data and how plugins can create new ways to display it.'
+        );
+
         return $menu;
     }
 }
