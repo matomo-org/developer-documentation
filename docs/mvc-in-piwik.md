@@ -44,7 +44,7 @@ Every request that is sent to Piwik's reporting side (as opposed to Piwik's trac
 
 [FrontController](#) looks for the **module** and **action** query parameters and invokes the controller method specified by **action** in the plugin specified by **module**. If no **action** is specified, Piwik sends the request to the controller's `index` method.
 
-The controller method that is called has to do one thing, which is output something (via `echo`). As a plugin developer you can do this in any way you'd like, Piwik won't stop you, but the convention used by the rest of Piwik is to create a Piwik [View](#), query APIs to request any needed data and then render the view. For example:
+The controller method that is called has to do one thing, which is return something that can be `echo`'d. As a plugin developer you can do this in any way you'd like, Piwik won't stop you, but the convention used by the rest of Piwik is to create a Piwik [View](#), query APIs to request any needed data and then render the view. For example:
 
     class Controller extends \Piwik\Plugin\Controller
     {
@@ -52,7 +52,7 @@ The controller method that is called has to do one thing, which is output someth
         {
             $view = new View("@MyPlugin\index.twig");
             $view->data = \Piwik\Plugins\MyPlugin\API::getInstance()->getData();
-            echo $view->render();
+            return $view->render();
         }
     }
 
@@ -128,7 +128,7 @@ For [ViewDataTable](#), [it's a bit more complicated](#).
 
 Once a view is configured, it is rendered via the [ViewInterface::render](#) method:
 
-    echo $view->render();
+    return $view->render();
 
 This is the same for all view types.
 
@@ -140,7 +140,7 @@ _If you do not know how to create Twig templates, learn how by [reading Twig's d
 
 **Template storage and referencing**
 
-Templates are stored in the **templates** subdirectory of a plugin's root directory. When you create a [View](#) instance you must tell it what template it should use using a string with the following format: `"@{PluginName}/{PluginFileName}". Piwik will look for a file named **{PluginFileName}** in the **{PluginName}** plugin's **templates** subdirectory.
+Templates are stored in the **templates** subdirectory of a plugin's root directory. When you create a [View](#) instance you must tell it what template it should use using a string with the following format: `"@PluginName/TemplateFileName". Piwik will look for a file named **TemplateFileName** in the **PluginName** plugin's **templates** subdirectory.
 
 TODO: describe template naming convention!
 
@@ -156,7 +156,7 @@ Every public method in a controller is exposed and can be called through an HTTP
 
 ### Controller Output
 
-Controller methods should `echo` their output instead of `return`ing it. Piwik will assume the output is HTML and will automatically take care of the appropriate HTTP response headers. If you want to output something other than HTML you will have to output the **Content-Type** HTTP response header. For example:
+Controller methods should `return`ing their output (as opposed to `echo`ing it). Piwik will assume the output is HTML and will automatically take care of the appropriate HTTP response headers. If you want to output something other than HTML you will have to output the **Content-Type** HTTP response header. For example:
 
     @header('Content-Type: application/json; charset=utf-8');
 
@@ -238,7 +238,7 @@ As a plugin developer you are welcome to generate your output in any way you'd l
         $view->neededData = API::getInstance()->getNeededData();
 
         // Step 4: render the view
-        echo $view->render();
+        return $view->render();
     }
 
 **Calling API methods**
@@ -251,39 +251,9 @@ Since controller methods do not take query parameter values as method parameters
     // save the annotation
     $view->annotation = Request::processRequest("Annotations.save");
 
-    echo $view->render();
+    return $view->render();
 
 The code invokes the Annotations API's **save** method forwarding all query parameters so the controller method doesn't have to call [Common::getRequestVar](#) several times.
-
-**Reusing controller methods**
-
-Some controller methods (most notably those that output HTML for a report) will need to be reused in other controller methods. In such a case, `echo`-ing output instead of returning is not always desired. Existing Piwik plugins solve this problem by adding a `$fetch` parameter to the controller method to reuse.
-
-For example:
-
-    // the action we will reuse
-    public function mySpecialReport($fetch = false)
-    {
-        $view = new View("@MyPlugin/mySpecialReport.twig");
-
-        // ... set some $view properties ...
-
-        if ($fetch) {
-            return $view->render();
-        } else {
-            echo $view->render();
-        }
-    }
-
-    // the action that mySpecialReport is reused in
-    public function index()
-    {
-        $view = new View("@MyPlugin/index.twig");
-        $view->mySpecialReport = $this->mySpecialReport($fetch = true);
-        echo $view->render();
-    }
-
-Many existing plugins follow this convention. See, for example, the **UserSettings** controller.
 
 ### Controller Security
 

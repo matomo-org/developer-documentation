@@ -110,7 +110,7 @@ class Guide {
             'title'       => 'MVC in Piwik',
             'file'        => 'mvc-in-piwik',
             'url'         => static::getUrl('mvc-in-piwik'),
-            'description' => 'Learn how Piwik handles HTTP requests and how Piwik generates HTML that is displayed to the user.'
+            'description' => 'Learn how Piwik handles HTTP requests and how Piwik generates the HTML that is displayed to the user.'
         );
 
         $menu[] = array(
