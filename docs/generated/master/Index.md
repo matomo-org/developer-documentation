@@ -427,7 +427,6 @@ Index
 - [`getTemplateFile()`](Piwik/View.md#gettemplatefile) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`getTemplateVars()`](Piwik/View.md#gettemplatevars) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`getProperties()`](Piwik/ViewDataTable/Config.md#getproperties) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`getFiltersToRun()`](Piwik/ViewDataTable/Config.md#getfilterstorun) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`getProperties()`](Piwik/ViewDataTable/RequestConfig.md#getproperties) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiModuleToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimoduletorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiMethodToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimethodtorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
@@ -723,7 +722,6 @@ Index
 - [`$show_pagination_control()`](Piwik/ViewDataTable/Config.md#$show_pagination_control) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_offset_information()`](Piwik/ViewDataTable/Config.md#$show_offset_information) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setController()`](Piwik/ViewDataTable/Config.md#setcontroller) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`setDefaultColumnsToDisplay()`](Piwik/ViewDataTable/Config.md#setdefaultcolumnstodisplay) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setDefaultSort()`](Piwik/ViewDataTable/RequestConfig.md#setdefaultsort) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## T

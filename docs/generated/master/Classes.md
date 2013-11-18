@@ -87,6 +87,6 @@ This is a complete list of available classes:
 - [`Version`](Piwik/Version.md) &mdash; Piwik version information.
 - [`View`](Piwik/View.md) &mdash; Encapsulates and manages a [Twig](http://twig.sensiolabs.org/) template.
 - [`ViewDataTable\Config`](Piwik/ViewDataTable/Config.md) &mdash; Contains base display properties for ViewDataTables.
-- [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; TODO
+- [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating [ViewDataTable](#) instances by ID.
 - [`ViewDataTable\RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; TODO
 - [`WidgetsList`](Piwik/WidgetsList.md) &mdash; Manages the global list of reports that can be displayed as dashboard widgets.
