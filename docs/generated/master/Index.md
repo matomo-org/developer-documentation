@@ -538,7 +538,6 @@ Index
 - [`Manager`](Piwik/Plugin/Manager.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin)
 - [`Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 - [`$metrics_documentation()`](Piwik/ViewDataTable/Config.md#$metrics_documentation) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`$metadata()`](Piwik/ViewDataTable/Config.md#$metadata) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 
 ## N
 
@@ -613,7 +612,6 @@ Index
 - [`redirectToUrl()`](Piwik/Url.md#redirecttourl) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`render()`](Piwik/View.md#render) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`$related_reports()`](Piwik/ViewDataTable/Config.md#$related_reports) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`$report_last_updated_message()`](Piwik/ViewDataTable/Config.md#$report_last_updated_message) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$report_id()`](Piwik/ViewDataTable/Config.md#$report_id) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; _Class in namespace_ [`Piwik\ViewDataTable`](Piwik/ViewDataTable)
 - [`$request_parameters_to_modify()`](Piwik/ViewDataTable/RequestConfig.md#$request_parameters_to_modify) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)

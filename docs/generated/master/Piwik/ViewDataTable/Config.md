@@ -107,8 +107,6 @@ This class defines the following properties:
 - [`$show_offset_information`](#$show_offset_information) &mdash; Controls whether offset information (ie, '5-10 of 20') is shown under the datatable.
 - [`$hide_annotations_view`](#$hide_annotations_view) &mdash; Controls whether annotations are shown or not.
 - [`$export_limit`](#$export_limit) &mdash; The filter_limit query parameter value to use in export links.
-- [`$report_last_updated_message`](#$report_last_updated_message) &mdash; TODO
-- [`$metadata`](#$metadata) &mdash; TODO
 - [`$report_id`](#$report_id) &mdash; TODO
 - [`$controllerName`](#$controllername) &mdash; TODO
 - [`$controllerAction`](#$controlleraction) &mdash; TODO
@@ -703,28 +701,6 @@ The filter_limit query parameter value to use in export links.
 #### Description
 
 Defaulted to the value of the `[General] API_datatable_default_limit` INI config option.
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$report_last_updated_message" id="$report_last_updated_message"></a>
-<a name="report_last_updated_message" id="report_last_updated_message"></a>
-### `$report_last_updated_message`
-
-TODO
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$metadata" id="$metadata"></a>
-<a name="metadata" id="metadata"></a>
-### `$metadata`
-
-TODO
 
 #### Signature
 
