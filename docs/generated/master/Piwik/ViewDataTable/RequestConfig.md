@@ -10,7 +10,7 @@ Properties
 
 This class defines the following properties:
 
-- [`$clientSideParameters`](#$clientsideparameters) &mdash; The list of ViewDataTable properties that are 'Client Side Parameters'.
+- [`$clientSideParameters`](#$clientsideparameters) &mdash; The list of request parameters that are 'Client Side Parameters'.
 - [`$overridableProperties`](#$overridableproperties) &mdash; The list of ViewDataTable properties that can be overriden by query parameters.
 - [`$filter_sort_column`](#$filter_sort_column) &mdash; Controls which column to sort the DataTable by before truncating and displaying.
 - [`$filter_sort_order`](#$filter_sort_order) &mdash; Controls the sort order.
@@ -30,7 +30,7 @@ This class defines the following properties:
 <a name="clientSideParameters" id="clientSideParameters"></a>
 ### `$clientSideParameters`
 
-The list of ViewDataTable properties that are 'Client Side Parameters'.
+The list of request parameters that are 'Client Side Parameters'.
 
 #### Signature
 
