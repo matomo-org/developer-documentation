@@ -24,7 +24,7 @@ Learn more about Piwik's MVC system [here](#).
         {
             $view = new View("@MyPlugin/index.twig");
             // ... setup view ...
-            echo $view->render();
+            return $view->render();
         }
     }
 
@@ -189,7 +189,6 @@ A helper method that renders a view either to the screen or to a string.
 
 - It accepts the following parameter(s):
     - `$view` (`Piwik\View\ViewInterface`) &mdash; The view to render.
-    - `$fetch` (`bool`) &mdash; If true, the result is returned as a string. If false, the rendered string is echo'd to the screen.
 - It can return one of the following values:
     - `string`
     - `void`

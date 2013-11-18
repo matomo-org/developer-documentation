@@ -214,9 +214,8 @@ Creates a View for and then renders the single report template.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$title` (`string`) &mdash; The report title.
-    - `$reportHtml` (`string`) &mdash; The report body HTML.
-    - `$fetch` (`bool`) &mdash; If true, return report contents as a string; otherwise echo to screen.
+    - `$title`
+    - `$reportHtml`
 - _Returns:_ The report contents if `$fetch` is true.
     - `string`
     - `void`
