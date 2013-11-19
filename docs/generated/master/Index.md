@@ -488,7 +488,6 @@ Index
 - [`isGdExtensionEnabled()`](Piwik/SettingsServer.md#isgdextensionenabled) &mdash; _Method in class_ [`SettingsServer`](Piwik/SettingsServer.md)
 - [`$introduction()`](Piwik/Settings/Setting.md#$introduction) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$inlineHelp()`](Piwik/Settings/Setting.md#$inlinehelp) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
-- [`$infoSites()`](Piwik/Site.md#$infosites) &mdash; _Property in class_ [`Site`](Piwik/Site.md)
 - [`isEcommerceEnabled()`](Piwik/Site.md#isecommerceenabled) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`isSiteSearchEnabled()`](Piwik/Site.md#issitesearchenabled) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`isEcommerceEnabledFor()`](Piwik/Site.md#isecommerceenabledfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)

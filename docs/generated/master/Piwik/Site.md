@@ -19,21 +19,6 @@ Description
 
     $name = Site::getNameFor($idSite);
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$infoSites`](#$infosites)
-
-<a name="$infosites" id="$infosites"></a>
-<a name="infoSites" id="infoSites"></a>
-### `$infoSites`
-
-#### Signature
-
-- It is a `array` value.
-
 Methods
 -------
 
