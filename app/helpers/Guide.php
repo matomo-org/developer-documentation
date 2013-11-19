@@ -120,6 +120,113 @@ class Guide {
             'description' => 'Learn about the different ways Piwik can display analytics data and how plugins can create new ways to display it.'
         );
 
+        $menu[] = array(
+            'title'       => 'All about Analytics Data',
+            'file'        => 'all-about-analytics-data',
+            'url'         => static::getUrl('all-about-analytics-data'),
+            'description' => 'Learn about how analytics reports are calculated and stored in Piwik (the Archiving Process) and how plugins can define their own reports.'
+        );
+
+        $menu[] = array(
+            'title'       => 'Theming',
+            'file'        => 'theming',
+            'url'         => static::getUrl('theming'),
+            'description' => 'Learn how themes can change Piwik\'s look and feel and how you can create your own.'
+        );
+
+        // TODO: why did I put scheduled tasks here?
+        $menu[] = array(
+            'title'       => 'Piwik\'s extensibility points',
+            'file'        => 'piwiks-extensibility-points',
+            'url'         => static::getUrl('piwiks-extensibility-points'),
+            'description' => 'Learn about everything that allows Piwik to be extended including, the eventing system, report metadata, scheduled tasks and, of course, plugins themselves.'
+        );
+
+        $menu[] = array(
+            'title'       => 'Contributing to Piwik Core',
+            'file'        => 'contributing-to-piwik-core',
+            'url'         => static::getUrl('contributing-to-piwik-core'),
+            'description' => 'Learn how to contribute changes to Piwik Core. Learn about Piwik\'s coding standards and the contribution process.'
+        );
+
+        $menu[] = array(
+            'title'       => 'Distributing your plugin',
+            'file'        => 'distributing-your-plugin',
+            'url'         => static::getUrl('distributing-your-plugin'),
+            'description' => 'Learn how to share your completed plugin with all other Piwik users. Learn about the Piwik marketplace and how you can use it to distribute your plugin.'
+        );
+
+        // TODO: where does the JavaScript Tracker docs go?
+        $menu[] = array(
+            'title'       => 'Piwik\'s Web API',
+            'file'        => 'piwiks-web-api',
+            'url'         => static::getUrl('piwiks-web-api'),
+            'description' => 'Learn how Piwik exposes API methods in its Reporting API and how third party applications can use its Tracking API.'
+        );
+
+        $menu[] = array(
+            'title'       => 'Persistence & the MySQL Backend',
+            'file'        => 'persistence-and-the-mysql-backend',
+            'url'         => static::getUrl('persistence-and-the-mysql-backend'),
+            'description' => 'Learn about what log data and analytics data consists of and about how it is stored in Piwik\'s MySQL database.'
+        );
+
+        $menu[] = array(
+            'title'       => 'All about Tracking',
+            'file'        => 'all-about-tracking',
+            'url'         => static::getUrl('all-about-tracking'),
+            'description' => 'Learn in detail about how Piwik\'s tracking system works.'
+        );
+
+        $menu[] = array(
+            'title'       => 'Testing your plugins',
+            'file'        => 'testing-your-plugins',
+            'url'         => static::getUrl('testing-your-plugin'),
+            'description' => 'Learn how to setup unit, integration and UI tests for your new plugin.'
+        );
+
+        $menu[] = array(
+            'title'       => 'Piwik on the command line',
+            'file'        => 'piwik-on-the-command-line',
+            'url'         => static::getUrl('piwik-on-the-command-line'),
+            'description' => 'Learn about Piwik\'s command line tool and how your plugin can extend it.'
+        );
+
+        $menu[] = array(
+            'title'        => 'Security in Piwik',
+            'file'         => 'security-in-piwik',
+            'url'          => static::getUrl('security-in-piwik'),
+            'description'  => 'Learn how Piwik protects itself from potential attackers and how you can write secure code for your plugin.'
+        );
+
+        $menu[] = array(
+            'title'        => 'Piwik configuration',
+            'file'         => 'piwik-configuration',
+            'url'          => static::getUrl('piwik-configuration'),
+            'description'  => 'Learn how Piwik is configured and how plugins can define their own configuration settings.'
+        );
+
+        $menu[] = array(
+            'title'        => 'Internationalization',
+            'file'         => 'internationalization',
+            'url'          => static::getUrl('internationalization'),
+            'description'  => 'Learn how Piwik makes its text available in many different languages and how your plugin can do the same.'
+        );
+
+        $menu[] = array(
+            'title'        => 'Scheduled Reports',
+            'file'         => 'scheduled-reports',
+            'url'          => static::getUrl('scheduled-reports'),
+            'description'  => 'Learn how to provide additional mediums and backends to the Scheduled Reports system.'
+        );
+
+        $menu[] = array(
+            'title'        => 'Working with Piwik\'s UI',
+            'file'         => 'working-with-piwiks-ui',
+            'url'          => static::getUrl('working-with-piwiks-ui'),
+            'description'  => 'Learn about Piwik\'s JavaScript code and how to write JavaScript for your plugin.'
+        );
+
         return $menu;
     }
 }

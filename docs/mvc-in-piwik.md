@@ -12,11 +12,8 @@ Expected Result: developers that understand how requests are handled by Piwik, h
 Notes: 
 
 What's missing? (stuff in my list that was not in when I wrote the 1st draft)
-  - user roles
-  - using controllers (FrontController::dispatch/fetchDispatch). should be in reusing controller methods section.
-  - how DataTables are processed when going through API\Request (not sure what should go here and not in Piwik's Web API docs)
+  - user roles (not sure where to put this... would be a short guide if on its own)
   - posting notifications (should go in controller section under 'alternative ways to communicate w/ the user'?)
-  - connection between reports & APIs
 -->
 
 ## About this guide
@@ -111,6 +108,8 @@ or they can be called using the [Piwik\API\Request](#) class:
     Request::processRequest("MyAPI.doSomething");
 
 Note how in the second method, the [Common::getRequestVar](#) method (which safely retrieves query parameter values) does not have to be called. The [Piwik\API\Request](#) class will forward the current request parameters to the API method which makes using it the better choice in some situations.
+
+Also note, that when [Piwik\API\Request](#) is used, [extra processing is applied to report data](#).
 
 ## Piwik Views (Views)
 
@@ -254,6 +253,18 @@ Since controller methods do not take query parameter values as method parameters
     return $view->render();
 
 The code invokes the Annotations API's **save** method forwarding all query parameters so the controller method doesn't have to call [Common::getRequestVar](#) several times.
+
+**Reusing Controller methods**
+
+Sometimes you may want to use a controller method that belongs to another controller (to say embed a control provided by another controller). You can use the [FrontController::fetchDispatch](#) method to accomplish this:
+
+    // controller method in our plugin's controller
+    public function index()
+    {
+        $view = new View("@MyPlugin/index.twig");
+        $view->realtimeMap = FrontController::getInstance()->fetchDispatch($module = "UserCountryMap", $method = "realtimeMap");
+        return $view->render();
+    }
 
 ### Controller Security
 

@@ -13,6 +13,7 @@ Expected Result: plugin developers who understand how ViewDataTable can be used 
 Notes: should introduce concept of creating new visualization? or perhaps the heading will be enough.
 
 What's missing? (stuff in my list that was not in when I wrote the 1st draft)
+- feel like i'm not imparting general understanding of visualization archictecture
 -->
 
 ## About this guide
