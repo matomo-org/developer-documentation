@@ -11,6 +11,7 @@ Description
 Manipulating these properties
 in a ViewDataTable instance will change how its report will be displayed.
 
+<a name="client-side-properties-desc"></a>
 **Client Side Properties**
 
 Client side properties are properties that should be passed on to the browser so
@@ -106,8 +107,6 @@ This class defines the following properties:
 - [`$show_offset_information`](#$show_offset_information) &mdash; Controls whether offset information (ie, '5-10 of 20') is shown under the datatable.
 - [`$hide_annotations_view`](#$hide_annotations_view) &mdash; Controls whether annotations are shown or not.
 - [`$export_limit`](#$export_limit) &mdash; The filter_limit query parameter value to use in export links.
-- [`$report_last_updated_message`](#$report_last_updated_message) &mdash; TODO
-- [`$metadata`](#$metadata) &mdash; TODO
 - [`$report_id`](#$report_id) &mdash; TODO
 - [`$controllerName`](#$controllername) &mdash; TODO
 - [`$controllerAction`](#$controlleraction) &mdash; TODO
@@ -204,10 +203,6 @@ Controls whether the goals footer icon is shown.
 Array property mapping DataTable column names with their internationalized names.
 
 #### Description
-
-The value you specify for this property is merged with the default value so you
-don't have to specify translations that already exist in the default value.
-TODO: still accurate?
 
 The default value for this property is set elsewhere. It will contain translations
 of common metrics.
@@ -712,28 +707,6 @@ Defaulted to the value of the `[General] API_datatable_default_limit` INI config
 - Its type is not specified.
 
 
-<a name="$report_last_updated_message" id="$report_last_updated_message"></a>
-<a name="report_last_updated_message" id="report_last_updated_message"></a>
-### `$report_last_updated_message`
-
-TODO
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$metadata" id="$metadata"></a>
-<a name="metadata" id="metadata"></a>
-### `$metadata`
-
-TODO
-
-#### Signature
-
-- Its type is not specified.
-
-
 <a name="$report_id" id="$report_id"></a>
 <a name="report_id" id="report_id"></a>
 ### `$report_id`
@@ -774,15 +747,13 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setController()`](#setcontroller) &mdash; TODO
-- [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; TODO
-- [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; TODO
-- [`getProperties()`](#getproperties) &mdash; TODO
-- [`setDefaultColumnsToDisplay()`](#setdefaultcolumnstodisplay) &mdash; TODO
-- [`getFiltersToRun()`](#getfilterstorun) &mdash; TODO
-- [`addRelatedReport()`](#addrelatedreport) &mdash; TODO
-- [`addRelatedReports()`](#addrelatedreports) &mdash; TODO
-- [`addTranslation()`](#addtranslation) &mdash; TODO
-- [`addTranslations()`](#addtranslations) &mdash; TODO
+- [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks display properties as client side properties.
+- [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable.
+- [`getProperties()`](#getproperties) &mdash; Returns array of all property values in this config object.
+- [`addRelatedReport()`](#addrelatedreport) &mdash; Adds a related report to the [related_reports](#related_reports) property.
+- [`addRelatedReports()`](#addrelatedreports) &mdash; Adds several related reports to the [related_reports](#related_reports) property.
+- [`addTranslation()`](#addtranslation) &mdash; Associates internationalized text with a metric.
+- [`addTranslations()`](#addtranslations) &mdash; Associates multiple translations with metrics.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -810,108 +781,125 @@ TODO
 <a name="addPropertiesThatShouldBeAvailableClientSide" id="addPropertiesThatShouldBeAvailableClientSide"></a>
 ### `addPropertiesThatShouldBeAvailableClientSide()`
 
-TODO
+Marks display properties as client side properties.
+
+#### Description
+
+[Read this](#client-side-properties-desc)
+to learn more.
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$propertyNames` (`array`)
+    - `$propertyNames` (`array`) &mdash; List of property names, eg, `array('show_limit_control', 'show_goals')`.
 - It does not return anything.
 
 <a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
 <a name="addPropertiesThatCanBeOverwrittenByQueryParams" id="addPropertiesThatCanBeOverwrittenByQueryParams"></a>
 ### `addPropertiesThatCanBeOverwrittenByQueryParams()`
 
-TODO
+Marks display properties as overridable.
+
+#### Description
+
+[Read this](#overridable-properties-desc) to
+learn more.
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$propertyNames` (`array`)
+    - `$propertyNames` (`array`) &mdash; List of property names, eg, `array('show_limit_control', 'show_goals')`.
 - It does not return anything.
 
 <a name="getproperties" id="getproperties"></a>
 <a name="getProperties" id="getProperties"></a>
 ### `getProperties()`
 
-TODO
+Returns array of all property values in this config object.
+
+#### Description
+
+Property values are mapped
+by name.
 
 #### Signature
 
-- It does not return anything.
-
-<a name="setdefaultcolumnstodisplay" id="setdefaultcolumnstodisplay"></a>
-<a name="setDefaultColumnsToDisplay" id="setDefaultColumnsToDisplay"></a>
-### `setDefaultColumnsToDisplay()`
-
-TODO
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$columns`
-    - `$hasNbVisits`
-    - `$hasNbUniqVisitors`
-- It does not return anything.
-
-<a name="getfilterstorun" id="getfilterstorun"></a>
-<a name="getFiltersToRun" id="getFiltersToRun"></a>
-### `getFiltersToRun()`
-
-TODO
-
-#### Signature
-
-- It does not return anything.
+- _Returns:_ eg, `array('show_limit_control' => 0, 'show_goals' => 1, ...)`
+    - `array`
 
 <a name="addrelatedreport" id="addrelatedreport"></a>
 <a name="addRelatedReport" id="addRelatedReport"></a>
 ### `addRelatedReport()`
 
-TODO
+Adds a related report to the [related_reports](#related_reports) property.
+
+#### Description
+
+If the report
+references the one that is currently being displayed, it will not be added to the related
+report list.
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$relatedReport`
-    - `$title`
-    - `$queryParams`
+    - `$relatedReport` (`string`) &mdash; The plugin and method of the report, eg, `'UserSettings.getBrowser'`.
+    - `$title` (`string`) &mdash; The report's display name, eg, `'Browsers'`.
+    - `$queryParams` (`array`) &mdash; Any extra query parameters to set in releated report's URL, eg, `array('idGoal' => 'ecommerceOrder')`.
 - It does not return anything.
 
 <a name="addrelatedreports" id="addrelatedreports"></a>
 <a name="addRelatedReports" id="addRelatedReports"></a>
 ### `addRelatedReports()`
 
-TODO
+Adds several related reports to the [related_reports](#related_reports) property.
+
+#### Description
+
+If
+any of the reports references the report that is currently being displayed, it will not
+be added to the list. All other reports will still be added though.
+
+If you need to make sure the related report URL has some extra query parameters,
+use [addRelatedReport](#addRelatedReport).
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$relatedReports`
+    - `$relatedReports` (`array`) &mdash; Array mapping report IDs with their internationalized display titles, eg, ``` array( 'UserSettings.getBrowser' => 'Browsers', 'UserSettings.getConfiguration' => 'Configurations' ) ```
 - It does not return anything.
 
 <a name="addtranslation" id="addtranslation"></a>
 <a name="addTranslation" id="addTranslation"></a>
 ### `addTranslation()`
 
-TODO
+Associates internationalized text with a metric.
+
+#### Description
+
+Overwrites existing mappings.
+
+See [translations](#translations).
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$key`
-    - `$translation`
+    - `$columnName` (`string`) &mdash; The name of a column in the report data, eg, `'nb_visits'` or `'goal_1_nb_conversions'`.
+    - `$translation` (`string`) &mdash; The internationalized text, eg, `'Visits'` or `"Conversions for 'My Goal'"`.
 - It does not return anything.
 
 <a name="addtranslations" id="addtranslations"></a>
 <a name="addTranslations" id="addTranslations"></a>
 ### `addTranslations()`
 
-TODO
+Associates multiple translations with metrics.
+
+#### Description
+
+See [translations](#translations) and [addTranslation](#addTranslation).
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$translations`
+    - `$translations` (`array`) &mdash; An array of column name => text mappings, eg, ``` array( 'nb_visits' => 'Visits', 'goal_1_nb_conversions' => "Conversions for 'My Goal'" ) ```
 - It does not return anything.
 

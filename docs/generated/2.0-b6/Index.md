@@ -231,7 +231,6 @@ Index
 - [`getDataTableFromArchive()`](Piwik/Archive.md#getdatatablefromarchive) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
 - [`getParams()`](Piwik/ArchiveProcessor.md#getparams) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getLogAggregator()`](Piwik/ArchiveProcessor.md#getlogaggregator) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
-- [`getRequestedPlugin()`](Piwik/ArchiveProcessor/Parameters.md#getrequestedplugin) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSubPeriods()`](Piwik/ArchiveProcessor/Parameters.md#getsubperiods) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getIdSites()`](Piwik/ArchiveProcessor/Parameters.md#getidsites) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
@@ -275,6 +274,7 @@ Index
 - [`getDataTables()`](Piwik/DataTable/Map.md#getdatatables) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getTable()`](Piwik/DataTable/Map.md#gettable) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getFirstRow()`](Piwik/DataTable/Map.md#getfirstrow) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
+- [`getLastRow()`](Piwik/DataTable/Map.md#getlastrow) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getColumn()`](Piwik/DataTable/Map.md#getcolumn) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getEmptyClone()`](Piwik/DataTable/Map.md#getemptyclone) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getMetadataIntersectArray()`](Piwik/DataTable/Map.md#getmetadataintersectarray) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
@@ -427,7 +427,6 @@ Index
 - [`getTemplateFile()`](Piwik/View.md#gettemplatefile) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`getTemplateVars()`](Piwik/View.md#gettemplatevars) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`getProperties()`](Piwik/ViewDataTable/Config.md#getproperties) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`getFiltersToRun()`](Piwik/ViewDataTable/Config.md#getfilterstorun) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`getProperties()`](Piwik/ViewDataTable/RequestConfig.md#getproperties) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiModuleToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimoduletorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiMethodToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimethodtorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
@@ -539,7 +538,6 @@ Index
 - [`Manager`](Piwik/Plugin/Manager.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin)
 - [`Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 - [`$metrics_documentation()`](Piwik/ViewDataTable/Config.md#$metrics_documentation) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`$metadata()`](Piwik/ViewDataTable/Config.md#$metadata) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 
 ## N
 
@@ -614,16 +612,13 @@ Index
 - [`redirectToUrl()`](Piwik/Url.md#redirecttourl) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`render()`](Piwik/View.md#render) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`$related_reports()`](Piwik/ViewDataTable/Config.md#$related_reports) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`$report_last_updated_message()`](Piwik/ViewDataTable/Config.md#$report_last_updated_message) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$report_id()`](Piwik/ViewDataTable/Config.md#$report_id) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`renderReport()`](Piwik/ViewDataTable/Factory.md#renderreport) &mdash; _Method in class_ [`Factory`](Piwik/ViewDataTable/Factory.md)
 - [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; _Class in namespace_ [`Piwik\ViewDataTable`](Piwik/ViewDataTable)
 - [`$request_parameters_to_modify()`](Piwik/ViewDataTable/RequestConfig.md#$request_parameters_to_modify) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`remove()`](Piwik/WidgetsList.md#remove) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## S
 
-- [`setRequestedPlugin()`](Piwik/ArchiveProcessor/Parameters.md#setrequestedplugin) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`sort()`](Piwik/DataTable.md#sort) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](Piwik/DataTable.md#setmaximumdepthlevelallowedatleast) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -725,7 +720,6 @@ Index
 - [`$show_pagination_control()`](Piwik/ViewDataTable/Config.md#$show_pagination_control) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_offset_information()`](Piwik/ViewDataTable/Config.md#$show_offset_information) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setController()`](Piwik/ViewDataTable/Config.md#setcontroller) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`setDefaultColumnsToDisplay()`](Piwik/ViewDataTable/Config.md#setdefaultcolumnstodisplay) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setDefaultSort()`](Piwik/ViewDataTable/RequestConfig.md#setdefaultsort) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## T

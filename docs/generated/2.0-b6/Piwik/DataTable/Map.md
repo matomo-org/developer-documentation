@@ -27,6 +27,7 @@ The class defines the following methods:
 - [`getDataTables()`](#getdatatables) &mdash; Returns the array of DataTables contained by this class.
 - [`getTable()`](#gettable) &mdash; Returns the table with the specific label.
 - [`getFirstRow()`](#getfirstrow) &mdash; Returns the first DataTable in the DataTable array.
+- [`getLastRow()`](#getlastrow) &mdash; Returns the last DataTable in the DataTable array.
 - [`addTable()`](#addtable) &mdash; Adds a new DataTable to the DataTable\Map.
 - [`__toString()`](#__tostring) &mdash; Returns a string output of this DataTable\Map (applying the default renderer to every DataTable of this DataTable\Map).
 - [`enableRecursiveSort()`](#enablerecursivesort)
@@ -160,6 +161,20 @@ Returns the first DataTable in the DataTable array.
 - It can return one of the following values:
     - [`DataTable`](../../Piwik/DataTable.md)
     - [`Map`](../../Piwik/DataTable/Map.md)
+    - `Piwik\DataTable\false`
+
+<a name="getlastrow" id="getlastrow"></a>
+<a name="getLastRow" id="getLastRow"></a>
+### `getLastRow()`
+
+Returns the last DataTable in the DataTable array.
+
+#### Signature
+
+- It can return one of the following values:
+    - [`DataTable`](../../Piwik/DataTable.md)
+    - [`Map`](../../Piwik/DataTable/Map.md)
+    - `Piwik\DataTable\false`
 
 <a name="addtable" id="addtable"></a>
 <a name="addTable" id="addTable"></a>
