@@ -939,7 +939,7 @@ Usages:
 - [Site.getSiteAttributes](#sitegetsiteattributes)
 
 ### Site.getSiteAttributes
-_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [81](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L81)_
+_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [87](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L87)_
 
 This event is called to get the details of a site by its ID. It can be used to
 add custom attributes for the website to the Tracker cache.
@@ -1151,7 +1151,7 @@ Callback Signature:
 
 
 ### Tracker.setTrackerCacheGeneral
-_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [144](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L144)_
+_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [150](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L150)_
 
 Triggered before the general tracker cache is saved to disk. This event can be
 used to add extra content to the cace.
