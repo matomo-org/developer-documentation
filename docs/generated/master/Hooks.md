@@ -954,7 +954,7 @@ Callback Signature:
 - [SitesManager.deleteSite.end](#sitesmanagerdeletesiteend)
 
 ### SitesManager.deleteSite.end
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [612](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L612)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [619](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L619)_
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you

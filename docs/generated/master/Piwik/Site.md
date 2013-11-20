@@ -44,6 +44,7 @@ The class defines the following methods:
 - [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site.
 - [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site ids and returns them as an array.
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
+- [`getSite()`](#getsite)
 - [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
 - [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
 - [`getTypeFor()`](#gettypefor) &mdash; Returns the type of the site with the specified ID.
@@ -301,6 +302,16 @@ See also [setSites](#setSites) and [setSitesFromArray](#setSitesFromArray).
 
 #### Signature
 
+- It does not return anything.
+
+<a name="getsite" id="getsite"></a>
+<a name="getSite" id="getSite"></a>
+### `getSite()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$id`
 - It does not return anything.
 
 <a name="getnamefor" id="getnamefor"></a>
