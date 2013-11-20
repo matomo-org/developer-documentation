@@ -27,6 +27,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setSites()`](#setsites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data.
 - [`setSitesFromArray()`](#setsitesfromarray) &mdash; Sets the cached Site data with a non-associated array of site data.
+- [`getMinMaxDateAcrossWebsites()`](#getminmaxdateacrosswebsites) &mdash; The Multisites reports displays the first calendar date as the earliest day available for all websites.
 - [`__toString()`](#__tostring) &mdash; Returns a string representation of the site this instance references.
 - [`getName()`](#getname) &mdash; Returns the name of the site.
 - [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site.
@@ -86,6 +87,23 @@ Sets the cached Site data with a non-associated array of site data.
 - It accepts the following parameter(s):
     - `$sites` (`array`) &mdash; The array of sites data. eg, ``` array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), ) ```
 - It does not return anything.
+
+<a name="getminmaxdateacrosswebsites" id="getminmaxdateacrosswebsites"></a>
+<a name="getMinMaxDateAcrossWebsites" id="getMinMaxDateAcrossWebsites"></a>
+### `getMinMaxDateAcrossWebsites()`
+
+The Multisites reports displays the first calendar date as the earliest day available for all websites.
+
+#### Description
+
+Also, today is the later "today" available across all timezones.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$siteIds` (`array`) &mdash; Array of IDs for each site being displayed.
+- _Returns:_ of two Date instances. First is the min-date & the second is the max date.
+    - [`Date[]`](../Piwik/Date.md)
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>

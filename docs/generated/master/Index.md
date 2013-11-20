@@ -389,6 +389,7 @@ Index
 - [`getOrder()`](Piwik/Settings/SystemSetting.md#getorder) &mdash; _Method in class_ [`SystemSetting`](Piwik/Settings/SystemSetting.md)
 - [`getOrder()`](Piwik/Settings/UserSetting.md#getorder) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)
 - [`getInstance()`](Piwik/Singleton.md#getinstance) &mdash; _Method in class_ [`Singleton`](Piwik/Singleton.md)
+- [`getMinMaxDateAcrossWebsites()`](Piwik/Site.md#getminmaxdateacrosswebsites) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getName()`](Piwik/Site.md#getname) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getMainUrl()`](Piwik/Site.md#getmainurl) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getId()`](Piwik/Site.md#getid) &mdash; _Method in class_ [`Site`](Piwik/Site.md)

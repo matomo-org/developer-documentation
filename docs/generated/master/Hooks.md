@@ -936,37 +936,25 @@ Usages:
 
 ## Site
 
-- [Site.getSiteAttributes](#sitegetsiteattributes)
+- [Site.setSite](#sitesetsite)
 
-### Site.getSiteAttributes
-_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [87](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L87)_
+### Site.setSite
+_Defined in [Piwik/Site](https://github.com/piwik/piwik/blob/master/core/Site.php) in line [102](https://github.com/piwik/piwik/blob/master/core/Site.php#L102)_
 
-This event is called to get the details of a site by its ID. It can be used to
-add custom attributes for the website to the Tracker cache.
-
-**Example**
-
-    public function getSiteAttributes($content, $idSite)
-    {
-        $sql = "SELECT info FROM " . Common::prefixTable('myplugin_extra_site_info') . " WHERE idsite = ?";
-        $content['myplugin_site_data'] = Db::fetchOne($sql, array($idSite));
-    }
+Piwik core APIs and plugins use the Site object to get information about websites. This event is called just before a Website information is stored in the memory cache.
+It can be used to modify the data for a website, such as decorate its name or change its created datetime.
 
 Callback Signature:
-<pre><code>function(&amp;$content, $idSite)</code></pre>
-- `array` `$content` List of attributes.
-- `int` `$idSite` The site ID.
-
-Usages:
-
-[Goals::fetchGoalsFromDb](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L438), [SitesManager::recordWebsiteDataInCache](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L73), [UsersManager::recordAdminUsersInCache](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L53)
+<pre><code>function($idSite, &amp;$infoSite)</code></pre>
+- `$idSite`
+- `$infoSite`
 
 ## SitesManager
 
 - [SitesManager.deleteSite.end](#sitesmanagerdeletesiteend)
 
 ### SitesManager.deleteSite.end
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [600](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L600)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [609](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L609)_
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -1018,6 +1006,7 @@ Usages:
 
 ## Tracker
 
+- [Tracker.Cache.getSiteAttributes](#trackercachegetsiteattributes)
 - [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
 - [Tracker.existingVisitInformation](#trackerexistingvisitinformation)
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
@@ -1030,6 +1019,30 @@ Usages:
 - [Tracker.Request.getIdSite](#trackerrequestgetidsite)
 - [Tracker.setTrackerCacheGeneral](#trackersettrackercachegeneral)
 - [Tracker.setVisitorIp](#trackersetvisitorip)
+
+### Tracker.Cache.getSiteAttributes
+_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [87](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L87)_
+
+This event is called to get the details of a site by its ID. It can be used to
+add custom attributes for the website to the Tracker cache.
+
+**Example**
+
+    public function getSiteAttributes($content, $idSite)
+    {
+        $sql = "SELECT info FROM " . Common::prefixTable('myplugin_extra_site_info') . " WHERE idsite = ?";
+        $content['myplugin_site_data'] = Db::fetchOne($sql, array($idSite));
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$content, $idSite)</code></pre>
+- `array` `$content` List of attributes.
+- `int` `$idSite` The site ID.
+
+Usages:
+
+[Goals::fetchGoalsFromDb](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L438), [SitesManager::recordWebsiteDataInCache](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L73), [UsersManager::recordAdminUsersInCache](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L53)
+
 
 ### Tracker.detectReferrerSearchEngine
 _Defined in [Piwik/Tracker/Referrer](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php) in line [143](https://github.com/piwik/piwik/blob/master/core/Tracker/Referrer.php#L143)_

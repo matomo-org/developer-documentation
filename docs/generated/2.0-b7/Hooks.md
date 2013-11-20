@@ -957,10 +957,6 @@ Callback Signature:
 - `array` `$content` List of attributes.
 - `int` `$idSite` The site ID.
 
-Usages:
-
-[Goals::fetchGoalsFromDb](https://github.com/piwik/piwik/blob/2.0-b7/plugins/Goals/Goals.php#L438), [SitesManager::recordWebsiteDataInCache](https://github.com/piwik/piwik/blob/2.0-b7/plugins/SitesManager/SitesManager.php#L73), [UsersManager::recordAdminUsersInCache](https://github.com/piwik/piwik/blob/2.0-b7/plugins/UsersManager/UsersManager.php#L53)
-
 ## SitesManager
 
 - [SitesManager.deleteSite.end](#sitesmanagerdeletesiteend)
