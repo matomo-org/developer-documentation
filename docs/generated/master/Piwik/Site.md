@@ -32,6 +32,7 @@ The class defines the following methods:
 - [`getName()`](#getname) &mdash; Returns the name of the site.
 - [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site.
 - [`getId()`](#getid) &mdash; Returns the id of the site.
+- [`getType()`](#gettype) &mdash; Returns the type of the website (by default "website")
 - [`getCreationDate()`](#getcreationdate) &mdash; Returns the creation date of the site.
 - [`getTimezone()`](#gettimezone) &mdash; Returns the timezone of the size.
 - [`getCurrency()`](#getcurrency) &mdash; Returns the currency of the site.
@@ -45,6 +46,7 @@ The class defines the following methods:
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
 - [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
 - [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
+- [`getTypeFor()`](#gettypefor) &mdash; Returns the type of the site with the specified ID.
 - [`getCreationDateFor()`](#getcreationdatefor) &mdash; Returns the creation date of the site with the specified ID.
 - [`getMainUrlFor()`](#getmainurlfor) &mdash; Returns the url for the site with the specified ID.
 - [`isEcommerceEnabledFor()`](#isecommerceenabledfor) &mdash; Returns whether the site with the specified ID is ecommerce enabled
@@ -154,6 +156,16 @@ Returns the id of the site.
 - It returns a `int` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
+
+<a name="gettype" id="gettype"></a>
+<a name="getType" id="getType"></a>
+### `getType()`
+
+Returns the type of the website (by default "website")
+
+#### Signature
+
+- It returns a `string` value.
 
 <a name="getcreationdate" id="getcreationdate"></a>
 <a name="getCreationDate" id="getCreationDate"></a>
@@ -313,6 +325,18 @@ Returns the timezone of the site with the specified ID.
 
 - It accepts the following parameter(s):
     - `$idsite` (`int`) &mdash; The site ID.
+- It returns a `string` value.
+
+<a name="gettypefor" id="gettypefor"></a>
+<a name="getTypeFor" id="getTypeFor"></a>
+### `getTypeFor()`
+
+Returns the type of the site with the specified ID.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$idsite` (`Piwik\$idsite`)
 - It returns a `string` value.
 
 <a name="getcreationdatefor" id="getcreationdatefor"></a>
