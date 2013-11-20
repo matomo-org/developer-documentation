@@ -30,3 +30,19 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 This guide assumes that you:
 
 * can code in PHP and JavaScript
+
+## Contribution Process
+
+### The review process
+
+## Piwik Core Code Standards
+
+### Automated Tests
+
+### Code that won't pass review
+
+## How to start contributing
+
+## Learn more
+
+* 

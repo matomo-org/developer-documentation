@@ -1,7 +1,14 @@
 # Working with Piwik's UI
 
 <!-- Meta (to be deleted)
-Purpose: describe how plugin developers should write JavaScript. describe surrounding function convention, UIControl class, require function, global variables defined by piwik, broadcast object (including popover stuff), javascript libraries used, color_manager class.
+Purpose:
+- describe how plugin developers should write JavaScript
+- describe surrounding function convention
+- UIControl class
+- require function
+- global variables defined by piwik
+- broadcast object (including popover stuff)
+- javascript libraries used, color_manager class.
 
 Audience: 
 
@@ -29,3 +36,34 @@ This guide assumes that you:
 * can use [jQuery](#)
 * and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
 
+## JavaScript Libraries Piwik depends on
+
+## JavaScript modularization
+
+## Important JavaScript classes
+
+### UIControl
+
+### Broadcast
+
+### Popover
+
+### ColorManager
+
+### AjaxHelper
+
+### DataTable
+
+## Global variables defined by Piwik
+
+## Coding conventions
+
+### Self-executing anonymous function wrapper
+
+### Private methods
+
+### 
+
+## Learn more
+
+* 

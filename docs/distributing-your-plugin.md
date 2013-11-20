@@ -27,3 +27,11 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 This guide assumes that you:
 
 * have already created a Piwik plugin
+
+## The Marketplace
+
+## Your plugin in the marketplace
+
+## Using the marketplace to improve your plugin
+
+## Our plans for the marketplace

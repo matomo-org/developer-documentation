@@ -25,3 +25,27 @@ This guide assumes that you:
 
 * can code in PHP,
 * and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
+
+## About Scheduled Reports
+
+
+
+## Transport Mediums
+
+<!-- about what mediums are and how they work -->
+
+### Existing Mediums
+
+### Defining your own
+
+## Output Formats
+
+<!-- about what formats are and how they are used, how reports are generated -->
+
+### Existing Formats
+
+### Defining your own
+
+## Learn more
+
+* 

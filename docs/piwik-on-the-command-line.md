@@ -28,3 +28,13 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 This guide assumes that you:
 
 * can code in PHP.
+
+## The `console` tool
+
+### Libraries used
+
+### Existing commands
+
+## Extending the tool
+
+### Adding new commands

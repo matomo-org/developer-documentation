@@ -25,3 +25,18 @@ This guide assumes that you:
 * can code in PHP and JavaScript,
 * and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
 
+## How themes work
+
+<!-- basics (CSS changes look & feel) + new templates -->
+
+### Using LESS
+
+### Theming colors in JavaScript & PHP
+
+## Creating a theme
+
+<!-- what to do -->
+
+## Learn more
+
+* 

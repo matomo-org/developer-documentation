@@ -28,5 +28,51 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 
 This guide assumes that you:
 
-* can write PHP and SQL code,
-* understand how relational databases work in general and MySQL in particular.
+* can write PHP and SQL code
+* and understand how relational databases work in general and MySQL in particular.
+
+## Log Data Persistence
+
+### Visits
+
+### Actions
+
+### Conversions
+
+### Conversion items
+
+## Archive Data Persistence
+
+### Metrics
+
+### Reports
+
+## Other Data Persistence
+
+### Sites
+
+### Users
+
+### Languages
+
+## The Database Logging Backend
+
+## Plugin Persistence
+
+### Reusing existing tables
+
+### Adding new tables
+
+## The MySQL Backend
+
+### Log Data Tables
+
+### Archive Tables
+
+### Other Tables
+
+## Other Backends
+
+## Learn more
+
+* 

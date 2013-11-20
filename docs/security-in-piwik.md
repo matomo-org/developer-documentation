@@ -24,3 +24,25 @@ This guide assumes that you:
 
 * can code in PHP, JavaScript and SQL,
 * and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
+
+## Introduction
+
+<!-- main point ALL OF THESE ARE IMPORTANT. if any is ignored, we will consider your plugin or contribution to be **unsafe** for other users to use. -->
+
+## Preventing XSS
+
+## Preventing CSRF
+
+## Preventing SQL Injection
+
+## Preventing Remote File Inclusion
+
+## Preventing Direct Access
+
+## Other Coding Guidelines
+
+<!-- include PHP + JavaScript guidelines (for jQuery use of .text/.val instead of .html). keep token_auth out of URL -->
+
+## Learn more
+
+* 

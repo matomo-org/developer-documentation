@@ -6,7 +6,8 @@ Purpose:
 - describe reporting API formats,
 - describe how data is processed before outputted through API,
 - describe generic filter query parameters,
-- describe how API handles exceptions, bulk API requests
+- describe how API handles exceptions
+- bulk API requests
 
 Audience: 
 
@@ -32,3 +33,25 @@ This guide assumes that you:
 
 * can code in PHP,
 * and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
+
+## The Reporting API
+
+<!-- structure of API -->
+
+### What gets exposed
+
+### API methods
+
+### Exceptions
+
+## Extra report processing
+
+### Special query parameters
+
+### Output formats
+
+### Bulk API Requests
+
+## Learn more
+
+* 

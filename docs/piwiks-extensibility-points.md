@@ -28,3 +28,19 @@ This guide assumes that you:
 
 * can code in PHP,
 * and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
+
+## Piwik Extensibilty
+
+## The Event System
+
+## Plugin Classes
+
+### API and Controller
+
+### Archiver
+
+### Settings
+
+## Learn More
+
+* 

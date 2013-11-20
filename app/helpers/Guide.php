@@ -179,10 +179,10 @@ class Guide {
         );
 
         $menu[] = array(
-            'title'       => 'Testing your plugins',
-            'file'        => 'testing-your-plugins',
-            'url'         => static::getUrl('testing-your-plugin'),
-            'description' => 'Learn how to setup unit, integration and UI tests for your new plugin.'
+            'title'       => 'Automated Tests',
+            'file'        => 'automated tests',
+            'url'         => static::getUrl('automated-tests'),
+            'description' => 'Learn how to setup unit, integration and UI tests for your new plugin and how to work with Piwik Core\'s tests.'
         );
 
         $menu[] = array(

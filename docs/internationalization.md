@@ -28,3 +28,26 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 This guide assumes that you:
 
 * can code in PHP and JavaScript
+
+## The Basics
+
+<!-- desc. of how it's accomplished. define terms like 'translation token' -->
+
+### Using internationalization in PHP
+
+### Using internationalization in JavaScript
+
+### Using internationalization in Twig Templates
+
+## Adding translation tokens
+
+<!-- basic steps -->
+
+### Guidelines for new translation tokens
+
+1. **Re-use!**
+2. 
+
+## Learn more
+
+* 

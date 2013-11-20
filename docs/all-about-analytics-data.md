@@ -39,5 +39,40 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 This guide assumes that you:
 
 * can code in PHP,
-* have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide),
+* and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
+
+## Analytics Reports & Metrics
+
+<!-- what is a report vs. metric,  -->
+
+### Reports and DataTables
+
+### Analytics Parameters
+
+## Report & Metric Persistence (Archive Data)
+
+## Report Aggregation
+
+### Aggregating Log Data
+
+### Aggregating Archive Data
+
+### Segments
+
+## Serving Reports
+
+<!-- APIs and serving reports -->
+
+### Transforming Archive Data into a human readable report
+
+### API processing of reports
+
+## The Archiving Process
+
+### Process initiation
+
+### The cron script
+
+## Learn more
+
 * 
