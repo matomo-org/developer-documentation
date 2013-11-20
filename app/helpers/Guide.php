@@ -227,6 +227,10 @@ class Guide {
             'description'  => 'Learn about Piwik\'s JavaScript code and how to write JavaScript for your plugin.'
         );
 
+        /* TODO: Guide review. Ask following questions:
+         - Are the titles appropriate to what is described within the guides?
+        */
+
         return $menu;
     }
 }
