@@ -348,7 +348,7 @@ Callback Signature:
 - [CronArchive.filterWebsiteIds](#cronarchivefilterwebsiteids)
 
 ### CronArchive.filterWebsiteIds
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [783](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L783)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [787](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L787)_
 
 When the cron to run archive.php is executed, it fetches the list of website IDs to process. Use this hook to add, remove, or change the order of websites IDs to pre-archive.
 
