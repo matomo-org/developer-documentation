@@ -19,21 +19,6 @@ Description
 
     $name = Site::getNameFor($idSite);
 
-Properties
-----------
-
-This class defines the following properties:
-
-- [`$infoSites`](#$infosites)
-
-<a name="$infosites" id="$infosites"></a>
-<a name="infoSites" id="infoSites"></a>
-### `$infoSites`
-
-#### Signature
-
-- It is a `array` value.
-
 Methods
 -------
 
@@ -42,10 +27,12 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setSites()`](#setsites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data.
 - [`setSitesFromArray()`](#setsitesfromarray) &mdash; Sets the cached Site data with a non-associated array of site data.
+- [`getMinMaxDateAcrossWebsites()`](#getminmaxdateacrosswebsites) &mdash; The Multisites reports displays the first calendar date as the earliest day available for all websites.
 - [`__toString()`](#__tostring) &mdash; Returns a string representation of the site this instance references.
 - [`getName()`](#getname) &mdash; Returns the name of the site.
 - [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site.
 - [`getId()`](#getid) &mdash; Returns the id of the site.
+- [`getType()`](#gettype) &mdash; Returns the type of the website (by default "website")
 - [`getCreationDate()`](#getcreationdate) &mdash; Returns the creation date of the site.
 - [`getTimezone()`](#gettimezone) &mdash; Returns the timezone of the size.
 - [`getCurrency()`](#getcurrency) &mdash; Returns the currency of the site.
@@ -57,8 +44,10 @@ The class defines the following methods:
 - [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site.
 - [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site ids and returns them as an array.
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
+- [`getSite()`](#getsite)
 - [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
 - [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
+- [`getTypeFor()`](#gettypefor) &mdash; Returns the type of the site with the specified ID.
 - [`getCreationDateFor()`](#getcreationdatefor) &mdash; Returns the creation date of the site with the specified ID.
 - [`getMainUrlFor()`](#getmainurlfor) &mdash; Returns the url for the site with the specified ID.
 - [`isEcommerceEnabledFor()`](#isecommerceenabledfor) &mdash; Returns whether the site with the specified ID is ecommerce enabled
@@ -101,6 +90,23 @@ Sets the cached Site data with a non-associated array of site data.
 - It accepts the following parameter(s):
     - `$sites` (`array`) &mdash; The array of sites data. eg, ``` array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), ) ```
 - It does not return anything.
+
+<a name="getminmaxdateacrosswebsites" id="getminmaxdateacrosswebsites"></a>
+<a name="getMinMaxDateAcrossWebsites" id="getMinMaxDateAcrossWebsites"></a>
+### `getMinMaxDateAcrossWebsites()`
+
+The Multisites reports displays the first calendar date as the earliest day available for all websites.
+
+#### Description
+
+Also, today is the later "today" available across all timezones.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$siteIds` (`array`) &mdash; Array of IDs for each site being displayed.
+- _Returns:_ of two Date instances. First is the min-date & the second is the max date.
+    - [`Date[]`](../Piwik/Date.md)
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -151,6 +157,16 @@ Returns the id of the site.
 - It returns a `int` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
+
+<a name="gettype" id="gettype"></a>
+<a name="getType" id="getType"></a>
+### `getType()`
+
+Returns the type of the website (by default "website")
+
+#### Signature
+
+- It returns a `string` value.
 
 <a name="getcreationdate" id="getcreationdate"></a>
 <a name="getCreationDate" id="getCreationDate"></a>
@@ -288,6 +304,16 @@ See also [setSites](#setSites) and [setSitesFromArray](#setSitesFromArray).
 
 - It does not return anything.
 
+<a name="getsite" id="getsite"></a>
+<a name="getSite" id="getSite"></a>
+### `getSite()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$id`
+- It does not return anything.
+
 <a name="getnamefor" id="getnamefor"></a>
 <a name="getNameFor" id="getNameFor"></a>
 ### `getNameFor()`
@@ -310,6 +336,18 @@ Returns the timezone of the site with the specified ID.
 
 - It accepts the following parameter(s):
     - `$idsite` (`int`) &mdash; The site ID.
+- It returns a `string` value.
+
+<a name="gettypefor" id="gettypefor"></a>
+<a name="getTypeFor" id="getTypeFor"></a>
+### `getTypeFor()`
+
+Returns the type of the site with the specified ID.
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$idsite` (`Piwik\$idsite`)
 - It returns a `string` value.
 
 <a name="getcreationdatefor" id="getcreationdatefor"></a>
