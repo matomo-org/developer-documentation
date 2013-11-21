@@ -306,6 +306,8 @@ Index
 - [`getDefaultMetricTranslations()`](Piwik/Metrics.md#getdefaultmetrictranslations) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
 - [`getDefaultMetrics()`](Piwik/Metrics.md#getdefaultmetrics) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
 - [`getDefaultProcessedMetrics()`](Piwik/Metrics.md#getdefaultprocessedmetrics) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
+- [`getReadableColumnName()`](Piwik/Metrics.md#getreadablecolumnname) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
+- [`getMetricIdsToProcessReportTotal()`](Piwik/Metrics.md#getmetricidstoprocessreporttotal) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
 - [`getDefaultMetricsDocumentation()`](Piwik/Metrics.md#getdefaultmetricsdocumentation) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
 - [`getPercentVisitColumn()`](Piwik/Metrics.md#getpercentvisitcolumn) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
 - [`getPrettyNumber()`](Piwik/MetricsFormatter.md#getprettynumber) &mdash; _Method in class_ [`MetricsFormatter`](Piwik/MetricsFormatter.md)
