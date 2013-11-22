@@ -72,6 +72,13 @@ Now, we'll run one more command so git remembers the original Piwik repository i
 
 This will save _https://github.com/piwik/piwik_ as a remote and name it _upstream_.
 
+#### Configuring up PHP
+
+Contributions should not generate PHP errors or warnings. Applying the following settings to your php.ini file will enable you to catch these errors:
+
+    display_errors  = On
+    error_reporting = E_ALL | E_STRICT
+
 ### Hacking Piwik
 
 Now that you have a copy of the latest Piwik source code, you can start modifying it. For this section, we'll assume there's a bug that you found and want to fix.

@@ -59,7 +59,7 @@ Well, we're not really sure. It might be hard to get your idea to scale, or mayb
 
 ## Guide Assumptions
 
-This assumes that you, the reader, can code in PHP and can setup your own local webserver. If you do not have these skills, you will not be able to successfully understand this guide.
+This guide assumes that you, the reader, can code in PHP and can setup your own local webserver. If you do not have these skills, you will not be able to successfully understand this guide.
 
 TODO: resources for learning PHP and setting up a localhost server
 
@@ -75,6 +75,7 @@ Before we start extending Piwik, let's make sure you have the tools you'll need 
   - ??? TODO
 - **A webserver,** such as [Apache](#) or [Nginx](#).
 - **[git](#)** so you can work with the latest Piwik source code.
+- **[composer](http://getcomposer.org/) so you can install the PHP libraries Piwik uses.
 - **A browser,** such as [Firefox](#) or [Chrome](#). Ok, so this you've probably got.
 
 The following tools aren't required for this guide, but you may find them useful when you continue writing your plugin:
@@ -91,7 +92,9 @@ Open a terminal and `cd` into the directory where you want to install Piwik. The
 
     git clone https://github.com/piwik/piwik piwik
 
-TODO: composer.phar!
+Then run the following command to install some third party libraries:
+
+    composer.phar install
 
 Now that you've got a copy of Piwik, you'll need to point your webserver to it. The specific instructions for configuring your webserver depends on the webserver itself. You can see instructions for Apache [here](#) and instructions for Nginx [here](#).
 
@@ -117,7 +120,7 @@ TODO: image goes here
 
 You're development environment is setup, and you are now ready to create a plugin! Creating a plugin consists primarily of creating a couple files. Piwik comes with a handy command-line tool that will do this legwork for you. In the root directory of your Piwik install, run the following command:
 
-    ./console TODO
+    ./console generate:plugin --name="MyPlugin"
 
 Replace **MyPlugin** with the name of your plugin (for example, **UserSettings** or **DevicesDetection**).
 
@@ -128,13 +131,20 @@ TODO: image goes here (use disabled MyPlugin image)
 <a name="plugin-directory-structure"></a>
 **Plugin directory structure**
 
-The command-line tool will create a new directory for your plugin (in the **plugins** sub-directory) and fill it with some files and folders. Here's what these files and folders do:
+The command-line tool will create a new directory for your plugin (in the **plugins** sub-directory) and fill it with some files and folders. Here's what these files and folders are for:
 
-TODO
+* **API.php**: Contains your plugin's API class. This class defines methods that serve data and will be accessible through Piwik's [Reporting API](#).
+* **Controller.php**: Contains your plugin's Controller class. This class defines methods that generate HTML output.
+* **MyPlugin.php**: Contains your plugin's Plugin Descriptor class. This class contains metadata about your plugin and a list of event handlers for Piwik events.
+* **plugin.json**: Contains plugin metadata such as the name, description, version, etc.
+* **README.md**: A dummy README file for your plugin.
+* **javascripts**: This folder is where you'll put all your new JavaScript files.
+* **screenshots**: TODO: ???
+* **templates**: This folder is where you'll put all your [Twig](http://twig.sensiolabs.org/) templates.
 
 ## Make your plugin do something
 
-For this guide we don't really want to do anything complicated, so we'll just add a new menu item to Piwik. In the plugin descriptor class ()
+For this guide we don't really want to do anything complicated, so we'll just add a new page to Piwik that executes some JavaScript. In the plugin descriptor class ()
 TODO (quickly explain the following:
 - events
 - idSite/period/date query parameters
