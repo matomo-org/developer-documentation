@@ -58,6 +58,8 @@ The class defines the following methods:
 - [`getDefaultMetricTranslations()`](#getdefaultmetrictranslations)
 - [`getDefaultMetrics()`](#getdefaultmetrics)
 - [`getDefaultProcessedMetrics()`](#getdefaultprocessedmetrics)
+- [`getReadableColumnName()`](#getreadablecolumnname)
+- [`getMetricIdsToProcessReportTotal()`](#getmetricidstoprocessreporttotal)
 - [`getDefaultMetricsDocumentation()`](#getdefaultmetricsdocumentation)
 - [`getPercentVisitColumn()`](#getpercentvisitcolumn)
 
@@ -96,6 +98,24 @@ The class defines the following methods:
 <a name="getdefaultprocessedmetrics" id="getdefaultprocessedmetrics"></a>
 <a name="getDefaultProcessedMetrics" id="getDefaultProcessedMetrics"></a>
 ### `getDefaultProcessedMetrics()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="getreadablecolumnname" id="getreadablecolumnname"></a>
+<a name="getReadableColumnName" id="getReadableColumnName"></a>
+### `getReadableColumnName()`
+
+#### Signature
+
+- It accepts the following parameter(s):
+    - `$columnIdRaw`
+- It does not return anything.
+
+<a name="getmetricidstoprocessreporttotal" id="getmetricidstoprocessreporttotal"></a>
+<a name="getMetricIdsToProcessReportTotal" id="getMetricIdsToProcessReportTotal"></a>
+### `getMetricIdsToProcessReportTotal()`
 
 #### Signature
 
