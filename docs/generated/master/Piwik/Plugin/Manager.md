@@ -12,7 +12,7 @@ The class defines the following methods:
 
 - [`isPluginActivated()`](#ispluginactivated) &mdash; Returns true if a plugin has been activated.
 - [`isPluginLoaded()`](#ispluginloaded) &mdash; Returns true if plugin is loaded (in memory).
-- [`getThemeEnabled()`](#getthemeenabled) &mdash; Returns the non default theme currently enabled.
+- [`getThemeEnabled()`](#getthemeenabled) &mdash; Returns the theme currently enabled.
 - [`returnLoadedPluginsInfo()`](#returnloadedpluginsinfo) &mdash; Returns info regarding all plugins.
 - [`getInstalledPluginsName()`](#getinstalledpluginsname) &mdash; Return list of names of installed plugins.
 - [`getMissingPlugins()`](#getmissingplugins) &mdash; Returns names of plugins that should be loaded, but cannot be since their files cannot be found.
@@ -45,11 +45,11 @@ Returns true if plugin is loaded (in memory).
 <a name="getThemeEnabled" id="getThemeEnabled"></a>
 ### `getThemeEnabled()`
 
-Returns the non default theme currently enabled.
+Returns the theme currently enabled.
 
 #### Description
 
-If Zeitgeist is enabled, returns false (Zeitgeist cannot be disabled).
+If no theme is enabled, Zeitgeist is returned (default theme)
 
 #### Signature
 
