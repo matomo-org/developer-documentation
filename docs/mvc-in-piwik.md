@@ -31,9 +31,9 @@ This guide assumes that you:
 
 * can code in PHP,
 * have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide),
-* and have knowledge of the Model-View-Controller design pattern (TODO: link).
+* and have knowledge of the [Model-View-Controller pattern](#).
 
-## HTTP Request Workflow (TODO: rename 'workflow'?)
+## HTTP Request Handling
 
 Piwik's MVC (Model-View-Controller) implementation is the first bit of code that is executed when Piwik handles an HTTP request.
 
@@ -141,7 +141,7 @@ _If you do not know how to create Twig templates, learn how by [reading Twig's d
 
 Templates are stored in the **templates** subdirectory of a plugin's root directory. When you create a [View](#) instance you must tell it what template it should use using a string with the following format: `"@PluginName/TemplateFileName". Piwik will look for a file named **TemplateFileName** in the **PluginName** plugin's **templates** subdirectory.
 
-TODO: describe template naming convention!
+Template files in Piwik have a very specific naming convention. If the file contains the output for a specific controller method, the file should be named after the method. For example, **myControllerMethod.twig**. In all other cases, the file should be named after what it contains and be prefixed with an underscore. For example, **_myEmbeddedWidget.twig**.
 
 **Twig functions and filters**
 
@@ -192,9 +192,6 @@ Plugins can call the [MenuAbstract::add](#) method within event handlers for the
 
 **Invoking controller methods via AJAX**
 
-TODO: where do we talk about adding JavaScript/LESS files? There may need to be another guide 'Working with Piwik's UI'
-TODO: also need to talk about special elements on the page and how to create your own widgets and how to use Piwik's JS code
-TODO: mention JS libs used, talk about ajaxHelper & uicontrol base object & require
 If you have your own custom JavaScript running on Piwik, you can use AJAX to dynamically invoke controller methods and display the result. For example:
 
     // invoke MyPlugin.myPage and append the result to the end of the #root element
@@ -266,9 +263,24 @@ Sometimes you may want to use a controller method that belongs to another contro
         return $view->render();
     }
 
+**Checking for correct HTTP methods**
+
+To maintain correct HTTP semantics, some controller methods should check whether the correct HTTP request method was used to invoke them. For example, tasks are normally executed via a **POST** rather than a **GET**. Controller methods that handle these tasks should check whether a POST was used:
+
+    public function myAdminTask()
+    {
+        // ... do some stuff ...
+
+        if ($_SERVER["REQUEST_METHOD"] != "POST") {
+            return;
+        }
+
+        // ... do some stuff ...
+    }
+
 ### Controller Security
 
-Like API methods, controller methods should make sure the current user is both valid and authorized to perform the requested action or view the requested data. This means calling the [access checking methods](#) that should also be called in API methods. It also means checking that the request method used is correct and that the supplied **token_auth** is valid (via [Controller::checkTokenInUrl](#)).
+Like API methods, controller methods should make sure the current user is both valid and authorized to perform the requested action or view the requested data. This means calling the [access checking methods](#) that should also be called in API methods and checking that the supplied **token_auth** is valid (via [Controller::checkTokenInUrl](#)).
 
 Here's an example of a secure controller method:
 
@@ -283,8 +295,6 @@ Here's an example of a secure controller method:
 
         // ... do some stuff ...
     }
-
-TODO: move checking for request method elsewhere. only about correct HTTP semantics
 
 ## Learn more
 

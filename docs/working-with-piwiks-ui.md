@@ -15,6 +15,9 @@ Audience:
 Expected Result: 
 
 Notes: 
+TODO: where do we talk about adding JavaScript/LESS files? There may need to be another guide 'Working with Piwik's UI'
+TODO: also need to talk about special elements on the page and how to create your own widgets and how to use Piwik's JS code
+TODO: mention JS libs used, talk about ajaxHelper & uicontrol base object & require
 
 What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 -->

@@ -51,7 +51,7 @@ To analyze data is to search for patterns in a set of _**things**_. In Piwik tho
 
 We search for patterns by _**reducing**_ the set of things. Or in other words, we search for patterns by grouping individual things together to create subsets that are both recognizable and meaningful.
 
-In Piwik the result of that grouping is the analytics data that is stores, displays and serves through an API. Read on to learn exactly what this data is, how Piwik calculates and stores it and how it is made available to Piwik users.
+In Piwik the result of that grouping is the analytics data that it stores, displays and serves through an API. Read on to learn exactly what this data is, how Piwik calculates and stores it and how it is made available to Piwik users.
 
 ## Analytics Reports & Metrics
 

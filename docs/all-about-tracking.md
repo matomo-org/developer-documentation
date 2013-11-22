@@ -40,12 +40,30 @@ This guide assumes that you:
 
 ## Tracker Functionality
 
+The Piwik Tracker tracks the data that Piwik analyzes. Tracker clients send HTTP requests to Piwik and based on the values of certain query parameters and HTTP request fields, visits, actions and conversions are tracked. This document explains exactly how this process works.
+
+### Types of Tracking Requests
+
+Different types of tracking requests will do different things. There are three types of tracking requests that the Piwik Tracker will recognize. These are requests to track visitor actions, requests to manually convert a goal and requests to track ecommerce orders. These three actions cannot be done simultaneously.
+
+#### Visit Tracking
+
+This type of tracking request is one that tracks visit related information such as a pageview, outlink or download. When the tracker receives this type of request, it will do the following things:
+
+1. determine if the visitor has 
+
+#### Manual Goal Conversion
+
+#### Ecommerce Tracking
+<!--
 ### Analyzing tracker requests
 
-**Referrer Detection**
+When the tracker receives a tracking request it will do its best to determine information based on the 
 
-**Conversion Detection**
+#### Conversion Detection
 
+#### Location Detection
+-->
 ### Inserting new log data
 
 ### The Tracker Cache
