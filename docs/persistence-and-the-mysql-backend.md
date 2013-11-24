@@ -14,6 +14,7 @@ Expected Result:
 Notes: 
 
 What's missing? (stuff in my list that was not in when I wrote the 1st draft)
+- how Piwik queries the tables. queries are not in one place, so hard to find
 -->
 
 ## About this guide
@@ -56,6 +57,7 @@ Log data is read when calculating analytics data and old data will sometimes be 
 
 Backends must ensure that inserting new log data is as fast as possible and aggregating log data is not too slow (though obviously, faster is better).
 
+<a name="log-data-persistence-visits"></a>
 ### Visits
 
 Each visit contains the following information:
@@ -90,7 +92,7 @@ Each visit contains the following information:
 * `'referer_name'`: referrer name; its meaning depends on the specific referrer type
 * `'referer_url'`: the referrer URL; its meaning depends on the specific referrer type
 * `'referer_keyword'`: the keyword used if a search engine was the referrer
-* `'config_id'`: TODO: what is this?
+* `'config_id'`: a hash of all the visit's configuration options, including the OS, browser name, browser version, browser language, IP address and  all browser plugin information
 * `'config_os'`: a short string identifiying the operating system used to make this visit. See [UserAgentParser](#) for more info
 * `'config_browser_name'`: a short string identifying the browser used to make this visit. See [UserAgentParser](#) for more info (TODO: what about devicesdetection?)
 * `'config_browser_version'`: a string identifying the version of the browser used to make this visit
@@ -125,6 +127,7 @@ Each visit contains the following information:
 
 Some plugins, such as the [Provider](#) plugin, will add new information to visits.
 
+<a name="log-data-persistence-visit-actions"></a>
 #### Visit Actions
 
 Visits also contain a list of actions, one for each action the visitor makes during the visit. Visit actions contain the following information:
@@ -150,6 +153,7 @@ Visits also contain a list of actions, one for each action the visitor makes dur
 TODO: custom events when finished
 TODO: replace page title action type w/ action name? need to describe somewhere what an 'action name' is.
 
+<a name="log-data-persistence-action-types"></a>
 ### Action Types
 
 Action types, such as a specific URL or page title, are analyzed as well as visits. Such analysis can lead to an understanding of, for example, which pages are more relevant to visitors than others.
@@ -159,7 +163,7 @@ When Piwik encounters a new action type, a new action type entity is persisted.
 Action types contain the following information:
 
 * `'name'`: a string describing the action type. Can be a URL, a page title, campaign name or anything else. The meaning is determined by the **type** field.
-* `'hash'`: the hash value for the name
+* `'hash'`: a hash value calculated using the name.
 * `'type'`: the action type's category. Can be one of the following values:
   * [Action::TYPE_PAGE_URL](#): the action type is a URL to a page on the website being tracked.
   * [Action::TYPE_OUTLINK](#): the action type is a URL is of a link on the website being tracked. A visitor clicked it.
@@ -175,6 +179,7 @@ Action types contain the following information:
   * `2`: `'https://'`
   * `3`: `'https://www.'`
 
+<a name="log-data-persistence-conversions"></a>
 ### Conversions
 
 When a visit action is tracked that matches a goal's conversion parameters, a conversion is created and persisted. A conversion is a tally that counts a desired action that one of your visitors took. Piwik will analyze these tallys in conjunction with the actions that caused them help users understand how to make their visitors take more desired actions.
@@ -198,18 +203,7 @@ A conversion consists of the following information:
 * `'revenue_shipping'`: if this conversion is for an ecommerce order or abandoned cart, this is the total cost of shipping
 * `'revenue_discount'`: if this conversion is for an ecommerce order or abandoned cart, this is the total discount applied to the order
 
-TODO: can conversions have their own custom variables or are these replicated?
-* `'custom_var_k1'`: 
-* `'custom_var_v1'`: 
-* `'custom_var_k2'`: 
-* `'custom_var_v2'`: 
-* `'custom_var_k3'`: 
-* `'custom_var_v3'`: 
-* `'custom_var_k4'`: 
-* `'custom_var_v4'`: 
-* `'custom_var_k5'`: 
-* `'custom_var_v5'`: 
-
+<a name="log-data-persistence-ecommerce-items"></a>
 ### Ecommerce items (aka, conversion items)
 
 An ecommerce item is an item that was sold in an ecommerce order or abandoned in an abandoned cart. They consist of the following information:
@@ -255,6 +249,7 @@ All archive data will contain the following information:
 
 ## Other Data Persistence
 
+<a name="other-data-site"></a>
 ### Websites (aka sites)
 
 **Site** entities contain information regarding a website whose visits are tracked. There won't be nearly as many of these as there are visits and archive data entries, but they will be queried often.
@@ -283,6 +278,7 @@ Site entities also contain a list of extra URLs that can be used to access the w
 
 Site entity data access occurs primarily through the [Piwik\Site](#) class. Anything that cannot be queried through that class can be queried through the [SitesManager](#) core plugin.
 
+<a name="other-data-goals"></a>
 #### Goals
 
 Each site has an optional list of goals. A goal is a desired action that a website visitor should take.
@@ -310,6 +306,7 @@ The following information is stored in a goal entity:
 
 _Note: The ecommerce and abandoned cart goals are two special goals that have special IDs. Ecommerce websites automatically have these goals._
 
+<a name="other-data-user"></a>
 ### Users
 
 User entities describe each Piwik user except the Super User. The following information is stored in a user entity:
@@ -325,6 +322,7 @@ User data is read on every UI and [Reporting API](#) request. TODO: the tracker 
 
 There is some user related information that is not stored directly in user entities. They are descirbed below:
 
+<a name="other-data-user-access"></a>
 #### User access
 
 Users can be allowed and disallowed access to websites. Piwik persists each user's access level for each website they have access to. If they don't have access to a website, then no information regarding that user + website combination will be persisted.
@@ -334,6 +332,7 @@ An access level can be one of the following values:
 * `'view'`: The user has view access but cannot add goals or change any settings for the site.
 * `'admin'`: The user can view analytics data for the site and add goals or change settings for the site.
 
+<a name="other-data-user-language-choice"></a>
 #### User language choice
 
 Piwik will also persist each user's language of choice. User logins will be associated with the name of the language (written in the chosen language as opposed to English). TODO: why not just associate it w/ the language code?
@@ -343,6 +342,8 @@ This association and the persistence logic is implemented by the [LanguagesManag
 ### [Options](#)
 
 Options are key-value pairs where the key is a string and the value is a another string (possibly bigger and possibly binary). They are queried on every UI and [Reporting API](#) request. The tracker will [cache](#) relevant option values and so will only query options when the cache needs updating.
+
+Some options should be loaded on every non-tracking request. These options have a special **autoload** property set to `1`.
 
 ## The Database Logging Backend
 
@@ -438,14 +439,443 @@ TODO: this seems it will be a problem in the long run. must be some way to clear
 
 ## The MySQL Backend
 
+This section lists each MySQL table used to store the data described above and details everything we did to them to make Piwik run as fast as possible.
+
+_Note: All table names in the MySQL database are prefixed with the value in the `[database] tables_prefix` INI config._ This is to ensure that non-piwik tables do not get overwritten or used by accident. It also makes it possible to store multiple instances of Piwik in one datbase.
+
 ### Log Data Tables
+
+#### log_visit
+
+This table stores [Visit entities](#log-data-persistence-visits).
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE log_visit (
+        idvisit INTEGER(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+        idsite INTEGER(10) UNSIGNED NOT NULL,
+        idvisitor BINARY(8) NOT NULL,
+        visitor_localtime TIME NOT NULL,
+        visitor_returning TINYINT(1) NOT NULL,
+        visitor_count_visits SMALLINT(5) UNSIGNED NOT NULL,
+        visitor_days_since_last SMALLINT(5) UNSIGNED NOT NULL,
+        visitor_days_since_order SMALLINT(5) UNSIGNED NOT NULL,
+        visitor_days_since_first SMALLINT(5) UNSIGNED NOT NULL,
+        visit_first_action_time DATETIME NOT NULL,
+        visit_last_action_time DATETIME NOT NULL,
+        visit_exit_idaction_url INTEGER(11) UNSIGNED NULL DEFAULT 0,
+        visit_exit_idaction_name INTEGER(11) UNSIGNED NOT NULL,
+        visit_entry_idaction_url INTEGER(11) UNSIGNED NOT NULL,
+        visit_entry_idaction_name INTEGER(11) UNSIGNED NOT NULL,
+        visit_total_actions SMALLINT(5) UNSIGNED NOT NULL,
+        visit_total_searches SMALLINT(5) UNSIGNED NOT NULL,
+        visit_total_events SMALLINT(5) UNSIGNED NOT NULL,
+        visit_total_time SMALLINT(5) UNSIGNED NOT NULL,
+        visit_goal_converted TINYINT(1) NOT NULL,
+        visit_goal_buyer TINYINT(1) NOT NULL,
+        referer_type TINYINT(1) UNSIGNED NULL,
+        referer_name VARCHAR(70) NULL,
+        referer_url TEXT NOT NULL,
+        referer_keyword VARCHAR(255) NULL,
+        config_id BINARY(8) NOT NULL,
+        config_os CHAR(3) NOT NULL,
+        config_browser_name VARCHAR(10) NOT NULL,
+        config_browser_version VARCHAR(20) NOT NULL,
+        config_resolution VARCHAR(9) NOT NULL,
+        config_pdf TINYINT(1) NOT NULL,
+        config_flash TINYINT(1) NOT NULL,
+        config_java TINYINT(1) NOT NULL,
+        config_director TINYINT(1) NOT NULL,
+        config_quicktime TINYINT(1) NOT NULL,
+        config_realplayer TINYINT(1) NOT NULL,
+        config_windowsmedia TINYINT(1) NOT NULL,
+        config_gears TINYINT(1) NOT NULL,
+        config_silverlight TINYINT(1) NOT NULL,
+        config_cookie TINYINT(1) NOT NULL,
+        location_ip VARBINARY(16) NOT NULL,
+        location_browser_lang VARCHAR(20) NOT NULL,
+        location_country CHAR(3) NOT NULL,
+        location_region char(2) DEFAULT NULL,
+        location_city varchar(255) DEFAULT NULL,
+        location_latitude float(10, 6) DEFAULT NULL,
+        location_longitude float(10, 6) DEFAULT NULL,
+        custom_var_k1 VARCHAR(200) DEFAULT NULL,
+        custom_var_v1 VARCHAR(200) DEFAULT NULL,
+        custom_var_k2 VARCHAR(200) DEFAULT NULL,
+        custom_var_v2 VARCHAR(200) DEFAULT NULL,
+        custom_var_k3 VARCHAR(200) DEFAULT NULL,
+        custom_var_v3 VARCHAR(200) DEFAULT NULL,
+        custom_var_k4 VARCHAR(200) DEFAULT NULL,
+        custom_var_v4 VARCHAR(200) DEFAULT NULL,
+        custom_var_k5 VARCHAR(200) DEFAULT NULL,
+        custom_var_v5 VARCHAR(200) DEFAULT NULL,
+        PRIMARY KEY(idvisit),
+        INDEX index_idsite_config_datetime (idsite, config_id, visit_last_action_time),
+        INDEX index_idsite_datetime (idsite, visit_last_action_time),
+        INDEX index_idsite_idvisitor (idsite, idvisitor)
+    )  DEFAULT CHARSET=utf8;
+
+The **index\_idsite\_config_datetime** index is used when trying to recognize returning visitors.
+
+The **index\_idsite\_datetime** index is used when aggregating visits. Since log aggregation occurs only for individual day periods, this index helps Piwik find the visits for a website and period quickly. Without it, log aggregation would require a table scan through the entire log_visit table.
+
+TODO: what is the index_idsite_idvisitor index used for? Live + visitor profile?
+
+#### log\_link\_visit\_action
+
+This table stores [Visit Action entities](#log-data-persistence-visit-actions).
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE log_link_visit_action (
+        idlink_va INTEGER(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+        idsite int(10) UNSIGNED NOT NULL,
+        idvisitor BINARY(8) NOT NULL,
+        server_time DATETIME NOT NULL,
+        idvisit INTEGER(10) UNSIGNED NOT NULL,
+        idaction_url INTEGER(10) UNSIGNED DEFAULT NULL,
+        idaction_url_ref INTEGER(10) UNSIGNED NULL DEFAULT 0,
+        idaction_name INTEGER(10) UNSIGNED,
+        idaction_name_ref INTEGER(10) UNSIGNED NOT NULL,
+        idaction_event_category INTEGER(10) UNSIGNED DEFAULT NULL,
+        idaction_event_action INTEGER(10) UNSIGNED DEFAULT NULL,
+        time_spent_ref_action INTEGER(10) UNSIGNED NOT NULL,
+        custom_var_k1 VARCHAR(200) DEFAULT NULL,
+        custom_var_v1 VARCHAR(200) DEFAULT NULL,
+        custom_var_k2 VARCHAR(200) DEFAULT NULL,
+        custom_var_v2 VARCHAR(200) DEFAULT NULL,
+        custom_var_k3 VARCHAR(200) DEFAULT NULL,
+        custom_var_v3 VARCHAR(200) DEFAULT NULL,
+        custom_var_k4 VARCHAR(200) DEFAULT NULL,
+        custom_var_v4 VARCHAR(200) DEFAULT NULL,
+        custom_var_k5 VARCHAR(200) DEFAULT NULL,
+        custom_var_v5 VARCHAR(200) DEFAULT NULL,
+        custom_float FLOAT NULL DEFAULT NULL,
+        PRIMARY KEY(idlink_va),
+        INDEX index_idvisit(idvisit),
+        INDEX index_idsite_servertime ( idsite, server_time )
+    )  DEFAULT CHARSET=utf8
+
+The `idsite` and `idvisitor` columns are copied from the visit action's associated visit in order to avoid having to join the log_visit table in some cases.
+
+The **index\_idvisit** index allows Piwik to quickly query the visit actions for a visit.
+
+The **index\_idsite\_servertime** index is used when aggregating visit actions. It allows quick access to the visit actions that were tracked for a specific website during a specific period and lets us avoid a table scan through the whole table.
+
+#### log_action
+
+This table stores [Action Type entities](#log-data-persistence-action-types).
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE log_action (
+        idaction INTEGER(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+        name TEXT,
+        hash INTEGER(10) UNSIGNED NOT NULL,
+        type TINYINT UNSIGNED NULL,
+        url_prefix TINYINT(2) NULL,
+        PRIMARY KEY(idaction),
+        INDEX index_type_hash (type, hash)
+    )  DEFAULT CHARSET=utf8
+
+The **index\_type\_hash** index is used during tracking to find existing action types.
+
+#### log_conversion
+
+This table stores [Conversion entities](#log-data-persistence-conversions).
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE `log_conversion` (
+        idvisit int(10) unsigned NOT NULL,
+        idsite int(10) unsigned NOT NULL,
+        idvisitor BINARY(8) NOT NULL,
+        server_time datetime NOT NULL,
+        idaction_url int(11) default NULL,
+        idlink_va int(11) default NULL,
+        referer_visit_server_date date default NULL,
+        referer_type int(10) unsigned default NULL,
+        referer_name varchar(70) default NULL,
+        referer_keyword varchar(255) default NULL,
+        visitor_returning tinyint(1) NOT NULL,
+        visitor_count_visits SMALLINT(5) UNSIGNED NOT NULL,
+        visitor_days_since_first SMALLINT(5) UNSIGNED NOT NULL,
+        visitor_days_since_order SMALLINT(5) UNSIGNED NOT NULL,
+        location_country char(3) NOT NULL,
+        location_region char(2) DEFAULT NULL,
+        location_city varchar(255) DEFAULT NULL,
+        location_latitude float(10, 6) DEFAULT NULL,
+        location_longitude float(10, 6) DEFAULT NULL,
+        url text NOT NULL,
+        idgoal int(10) NOT NULL,
+        buster int unsigned NOT NULL,
+        idorder varchar(100) default NULL,
+        items SMALLINT UNSIGNED DEFAULT NULL,
+        revenue float default NULL,
+        revenue_subtotal float default NULL,
+        revenue_tax float default NULL,
+        revenue_shipping float default NULL,
+        revenue_discount float default NULL,
+        custom_var_k1 VARCHAR(200) DEFAULT NULL,
+        custom_var_v1 VARCHAR(200) DEFAULT NULL,
+        custom_var_k2 VARCHAR(200) DEFAULT NULL,
+        custom_var_v2 VARCHAR(200) DEFAULT NULL,
+        custom_var_k3 VARCHAR(200) DEFAULT NULL,
+        custom_var_v3 VARCHAR(200) DEFAULT NULL,
+        custom_var_k4 VARCHAR(200) DEFAULT NULL,
+        custom_var_v4 VARCHAR(200) DEFAULT NULL,
+        custom_var_k5 VARCHAR(200) DEFAULT NULL,
+        custom_var_v5 VARCHAR(200) DEFAULT NULL,
+        PRIMARY KEY (idvisit, idgoal, buster),
+        UNIQUE KEY unique_idsite_idorder (idsite, idorder),
+        INDEX index_idsite_datetime ( idsite, server_time )
+    ) DEFAULT CHARSET=utf8
+
+All extra information stored in this table that is not listed for the conversion entity above is replicated from the Visit entity this conversion is for. This allows us to avoid joining the log_visit table in certain cases.
+
+The **index\_idsite\_datetime** index is used when aggregating conversions. It allows quick access to the conversions that were tracked for a specific website during a specific period and lets us avoid a table scan through the entire table.
+
+#### log\_conversion\_item
+
+This table stores [Ecommerce Item entities](#log-data-persistence-ecommerce-items).
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE `log_conversion_item` (
+        idsite int(10) UNSIGNED NOT NULL,
+        idvisitor BINARY(8) NOT NULL,
+        server_time DATETIME NOT NULL,
+        idvisit INTEGER(10) UNSIGNED NOT NULL,
+        idorder varchar(100) NOT NULL,
+
+        idaction_sku INTEGER(10) UNSIGNED NOT NULL,
+        idaction_name INTEGER(10) UNSIGNED NOT NULL,
+        idaction_category INTEGER(10) UNSIGNED NOT NULL,
+        idaction_category2 INTEGER(10) UNSIGNED NOT NULL,
+        idaction_category3 INTEGER(10) UNSIGNED NOT NULL,
+        idaction_category4 INTEGER(10) UNSIGNED NOT NULL,
+        idaction_category5 INTEGER(10) UNSIGNED NOT NULL,
+        price FLOAT NOT NULL,
+        quantity INTEGER(10) UNSIGNED NOT NULL,
+        deleted TINYINT(1) UNSIGNED NOT NULL,
+
+        PRIMARY KEY(idvisit, idorder, idaction_sku),
+        INDEX index_idsite_servertime ( idsite, server_time )
+    ) DEFAULT CHARSET=utf8
+
+The `idsite`, `idvisitor`, `server_time` and `idvisit` columns are copied from the Conversion entity this Ecommerce Item belongs to. The are copied so we can aggregate Ecommerce Items without having to join other tables.
+
+The **index\_idsite\_servertime** index is used when aggregating ecommerce items. It allows quick access to the items that were tracked for a specific website and during a specific period and lets us avoid a table scan through the entire table.
 
 ### Archive Tables
 
+In the MySQL backend archive data is partitioned by the month the archive data is for. So reports that aggregate visits from January, 2012 will be held in a different table from reports that aggregate visits from February 2012.
+
+Piwik creates two types of archive tables, one for each type of archive data. The **archive\_numeric** tables store metric data and the **archive\_blob** tables store report data.
+
+Archive tables are created dynamically. When Piwik needs to query or insert archive data for a certain month and it cannot find the table that holds this data, the table is created.
+
+The year and month of an archive table is appended as the suffix to the name. So the **archive\_numeric** table for January, 2012 would have the name **archive\_numeric\_2012\_01**.
+
+#### archive_numeric
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE archive_numeric_YYYY_MM (
+        idarchive INTEGER UNSIGNED NOT NULL,
+        name VARCHAR(255) NOT NULL,
+        idsite INTEGER UNSIGNED NULL,
+        date1 DATE NULL,
+        date2 DATE NULL,
+        period TINYINT UNSIGNED NULL,
+        ts_archived DATETIME NULL,
+        value DOUBLE NULL,
+        PRIMARY KEY(idarchive, name),
+        INDEX index_idsite_dates_period(idsite, date1, date2, period, ts_archived),
+        INDEX index_period_archived(period, ts_archived)
+    ) DEFAULT CHARSET=utf8
+
+The **index\_idsite\_dates\_period** index is used when querying archive data. It lets Piwik quickly query archive data for any site and period, and for data that was archived past a certain date-time.
+
+The **index\_period\_archived** index is used when [purging archive data](#). It allows Piwik to quickly find archive data for a specific period that is old enough to be purged.
+
+#### archive_blob
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE archive_blob (
+        idarchive INTEGER UNSIGNED NOT NULL,
+        name VARCHAR(255) NOT NULL,
+        idsite INTEGER UNSIGNED NULL,
+        date1 DATE NULL,
+        date2 DATE NULL,
+        period TINYINT UNSIGNED NULL,
+        ts_archived DATETIME NULL,
+        value MEDIUMBLOB NULL,
+        PRIMARY KEY(idarchive, name),
+        INDEX index_period_archived(period, ts_archived)
+    ) DEFAULT CHARSET=utf8
+
+The **index\_period\_archived** index is used in the same way as the one in **archive\_numeric** tables.
+
+**archive\_blob** tables do not have an index that makes it fast to query for rows by site, period and archived date. This is because they should not be queried this way. Instead, the **archive\_numeric** table should be queried and the `idarchive` values saved. These values can be used to query data in the **archive\_blob** table.
+
 ### Other Tables
+
+#### site
+
+This table stores [Website](#other-data-site) entities.
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE site (
+        idsite INTEGER(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+        name VARCHAR(90) NOT NULL,
+        main_url VARCHAR(255) NOT NULL,
+        ts_created TIMESTAMP NULL,
+        ecommerce TINYINT DEFAULT 0,
+        sitesearch TINYINT DEFAULT 1,
+        sitesearch_keyword_parameters TEXT NOT NULL,
+        sitesearch_category_parameters TEXT NOT NULL,
+        timezone VARCHAR( 50 ) NOT NULL,
+        currency CHAR( 3 ) NOT NULL,
+        excluded_ips TEXT NOT NULL,
+        excluded_parameters TEXT NOT NULL,
+        excluded_user_agents TEXT NOT NULL,
+        `group` VARCHAR(250) NOT NULL,
+        keep_url_fragment TINYINT NOT NULL DEFAULT 0,
+        PRIMARY KEY(idsite)
+    )  DEFAULT CHARSET=utf8
+
+##### site_url
+
+Thist able stores extra URLs for [Website](#other-data-site) entities.
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE site_url (
+        idsite INTEGER(10) UNSIGNED NOT NULL,
+        url VARCHAR(255) NOT NULL,
+        PRIMARY KEY(idsite, url)
+    )  DEFAULT CHARSET=utf8
+
+#### goal
+
+This table stores [Goal](#other-data-goal) entities.
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE `goal` (
+        `idsite` int(11) NOT NULL,
+        `idgoal` int(11) NOT NULL,
+        `name` varchar(50) NOT NULL,
+        `match_attribute` varchar(20) NOT NULL,
+        `pattern` varchar(255) NOT NULL,
+        `pattern_type` varchar(10) NOT NULL,
+        `case_sensitive` tinyint(4) NOT NULL,
+        `allow_multiple` tinyint(4) NOT NULL,
+        `revenue` float NOT NULL,
+        `deleted` tinyint(4) NOT NULL default '0',
+        PRIMARY KEY  (`idsite`,`idgoal`)
+    ) DEFAULT CHARSET=utf8
+
+#### users
+
+This table stores [User](#other-data-user) entities.
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE user (
+        login VARCHAR(100) NOT NULL,
+        password CHAR(32) NOT NULL,
+        alias VARCHAR(45) NOT NULL,
+        email VARCHAR(100) NOT NULL,
+        token_auth CHAR(32) NOT NULL,
+        date_registered TIMESTAMP NULL,
+        PRIMARY KEY(login),
+        UNIQUE KEY uniq_keytoken(token_auth)
+    )  DEFAULT CHARSET=utf8
+
+##### access
+
+This table stores [User Access information](#other-data-user-access).
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE access (
+        login VARCHAR(100) NOT NULL,
+        idsite INTEGER UNSIGNED NOT NULL,
+        access VARCHAR(10) NULL,
+        PRIMARY KEY(login, idsite)
+    )  DEFAULT CHARSET=utf8
+
+##### user_language
+
+This table stores [User Language Choice information](#other-data-user-language-choice).
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE user_language (
+        login VARCHAR( 100 ) NOT NULL ,
+        language VARCHAR( 10 ) NOT NULL ,
+        PRIMARY KEY ( login )
+    ) DEFAULT CHARSET=utf8
+
+This table is created by the [LanguagesManager](#) plugin.
+
+#### option
+
+This table stores [Option](#other-data-options) data.
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE `option` (
+        option_name VARCHAR( 255 ) NOT NULL,
+        option_value LONGTEXT NOT NULL,
+        autoload TINYINT NOT NULL DEFAULT '1',
+        PRIMARY KEY ( option_name ),
+        INDEX autoload( autoload )
+    )  DEFAULT CHARSET=utf8
+
+#### logger_message
+
+This table is used by the database logging backend.
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE logger_message (
+        idlogger_message INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+        tag VARCHAR(50) NULL,
+        timestamp TIMESTAMP NULL,
+        level VARCHAR(16) NULL,
+        message TEXT NULL,
+        PRIMARY KEY(idlogger_message)
+    ) DEFAULT CHARSET=utf8
+
+#### session
+
+This table does not store entity data. It is used by Piwik to store session data (as an alternative to using file-based sessions).
+
+The `CREATE TABLE` SQL for this table is:
+
+    CREATE TABLE session (
+        id CHAR(32) NOT NULL,
+        modified INTEGER,
+        lifetime INTEGER,
+        data TEXT,
+        PRIMARY KEY ( id )
+    )  DEFAULT CHARSET=utf8
 
 ## Other Backends
 
+Currently the MySQL backend is the only available backend. The use of MySQL is scattered throughout Piwik, so at the moment it is also not possible to create other backends.
+
+That being said, the use of other peristence solutions is on our TODO list. Piwik will eventually work with different relational databases and with different NoSQL solutions.
+
 ## Learn more
 
-* 
+* To learn **how the tracker inserts log data** see our [All About Tracking](#) guide.
+* To learn **how log data is aggregated** see our [All About Analytics](#) guide and take a look at the [LogAggregator](#) class.
+* To learn **how archive data is cached** see our [All About Analytics](#) guide.
+* To learn **about Piwik's logging utility** see this section in our [Getting started extending Piwik](#) guide.
+* To learn **about database backed sessions** read [this part of Piwik's user guide](#).
