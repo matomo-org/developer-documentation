@@ -9,7 +9,7 @@ This is a complete list of available hooks.
 - [API.$pluginName.$methodName.end](#apipluginnamemethodnameend)
 - [API.getReportMetadata](#apigetreportmetadata)
 - [API.getReportMetadata.end](#apigetreportmetadataend)
-- [API.getSegmentsMetadata](#apigetsegmentsmetadata)
+- [API.getSegmentDimensionMetadata](#apigetsegmentdimensionmetadata)
 - [API.Request.authenticate](#apirequestauthenticate)
 - [API.Request.dispatch](#apirequestdispatch)
 - [API.Request.dispatch.end](#apirequestdispatchend)
@@ -82,7 +82,7 @@ Usages:
 [Goals::getReportMetadata](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L128)
 
 
-### API.getSegmentsMetadata
+### API.getSegmentDimensionMetadata
 _Defined in [Piwik/Plugins/API/API](https://github.com/piwik/piwik/blob/master/plugins/API/API.php) in line [133](https://github.com/piwik/piwik/blob/master/plugins/API/API.php#L133)_
 
 Triggered when gathering all available segments. This event can be used to make new segments available.
