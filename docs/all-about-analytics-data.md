@@ -243,6 +243,8 @@ If no segment is supplied in the data query and data cannot be found, every repo
 
 Plugins that want to archive reports and metrics define a class called **Archiver** that extends from [Piwik\Plugin\Archiver](#). This class will be automatically detected and instantiated by Piwik during the archiving process.
 
+TODO: need more info?
+
 ### Report & Metric Aggregation
 
 Reports and metrics are calculated differently based on the period type.
