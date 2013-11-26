@@ -13,7 +13,8 @@ select visits that have a specific browser or come from a specific
 country, or both.
 
 Individual segment parameters (such as `browserCode` and `countryCode`)
-are defined by individual plugins. Read about the [API.getSegmentsMetadata](#)
+are defined by individual plugins. Read about the [API.getSegmentDimensionMetadataactionToLoadSubtab
+](#)
 event to learn more.
 
 Plugins that aggregate data stored in Piwik can support segments by

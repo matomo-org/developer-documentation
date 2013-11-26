@@ -9,7 +9,7 @@ This is a complete list of available hooks.
 - [API.$pluginName.$methodName.end](#apipluginnamemethodnameend)
 - [API.getReportMetadata](#apigetreportmetadata)
 - [API.getReportMetadata.end](#apigetreportmetadataend)
-- [API.getSegmentsMetadata](#apigetsegmentsmetadata)
+- [API.getSegmentDimensionMetadata](#apigetsegmentdimensionmetadata)
 - [API.Request.authenticate](#apirequestauthenticate)
 - [API.Request.dispatch](#apirequestdispatch)
 - [API.Request.dispatch.end](#apirequestdispatchend)
@@ -82,7 +82,7 @@ Usages:
 [Goals::getReportMetadata](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L128)
 
 
-### API.getSegmentsMetadata
+### API.getSegmentDimensionMetadata
 _Defined in [Piwik/Plugins/API/API](https://github.com/piwik/piwik/blob/master/plugins/API/API.php) in line [133](https://github.com/piwik/piwik/blob/master/plugins/API/API.php#L133)_
 
 Triggered when gathering all available segments. This event can be used to make new segments available.
@@ -348,7 +348,7 @@ Callback Signature:
 - [CronArchive.filterWebsiteIds](#cronarchivefilterwebsiteids)
 
 ### CronArchive.filterWebsiteIds
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [787](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L787)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [801](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L801)_
 
 When the cron to run archive.php is executed, it fetches the list of website IDs to process. Use this hook to add, remove, or change the order of websites IDs to pre-archive.
 

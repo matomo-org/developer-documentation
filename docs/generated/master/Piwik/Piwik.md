@@ -313,7 +313,7 @@ need to use this function.
 
 - It accepts the following parameter(s):
     - `$eventName` (`string`) &mdash; The event name.
-    - `$function` (`callable`) &mdash; The observer.
+    - `$function` (`callable`|`array`) &mdash; The observer.
 - It does not return anything.
 
 <a name="translate" id="translate"></a>

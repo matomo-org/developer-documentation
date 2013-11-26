@@ -45,7 +45,7 @@ Index
 - [`aggregateMultipleReports()`](Piwik/Plugin/Archiver.md#aggregatemultiplereports) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`assignTemplateVar()`](Piwik/Plugin/Visualization.md#assigntemplatevar) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`afterGenericFiltersAreAppliedToLoadedDataTable()`](Piwik/Plugin/Visualization.md#aftergenericfiltersareappliedtoloadeddatatable) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
-- [`afterAllFilteresAreApplied()`](Piwik/Plugin/Visualization.md#afterallfilteresareapplied) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
+- [`afterAllFiltersAreApplied()`](Piwik/Plugin/Visualization.md#afterallfiltersareapplied) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`addLabelColumn()`](Piwik/RankingQuery.md#addlabelcolumn) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`addColumn()`](Piwik/RankingQuery.md#addcolumn) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`$availableValues()`](Piwik/Settings/Setting.md#$availablevalues) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
