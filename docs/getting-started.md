@@ -22,6 +22,8 @@ Notes: This guide is a cross between a tutorial & a guide. It should be linked t
 
 TODO: (stuff that needs to go in SOME guide)
 - DataTable row actions
+
+TODO: removed scheduled reports guide. should be replaced w/ two tutorials (new output format + new transport medium)
 -->
 
 So you're a Piwik user and you need Piwik to do something it doesn't do. Or maybe you're a user of another web app and you want to integrate it with this amazing analytics software you've heard so much about (Piwik, naturally). Well, you've come to the right place!

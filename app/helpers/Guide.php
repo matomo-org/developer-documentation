@@ -214,13 +214,6 @@ class Guide {
         );
 
         $menu[] = array(
-            'title'        => 'Scheduled Reports',
-            'file'         => 'scheduled-reports',
-            'url'          => static::getUrl('scheduled-reports'),
-            'description'  => 'Learn how to provide additional mediums and backends to the Scheduled Reports system.'
-        );
-
-        $menu[] = array(
             'title'        => 'Working with Piwik\'s UI',
             'file'         => 'working-with-piwiks-ui',
             'url'          => static::getUrl('working-with-piwiks-ui'),
