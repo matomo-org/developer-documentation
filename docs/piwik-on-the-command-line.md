@@ -13,6 +13,7 @@ Expected Result:
 Notes: 
 
 What's missing? (stuff in my list that was not in when I wrote the 1st draft)
+- TODO: can probably get rid of this guide, move the info to other guides.
 -->
 
 ## About this guide
