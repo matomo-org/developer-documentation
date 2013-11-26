@@ -1143,7 +1143,7 @@ Callback Signature:
 
 
 ### Tracker.recordEcommerceGoal
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [414](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L414)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [415](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L415)_
 
 This hook is called after recording an ecommerce goal. You can use it for instance to sync the recorded goal
 with third party systems. `$goal` contains all available information like `items` and `revenue`.
@@ -1154,7 +1154,7 @@ Callback Signature:
 
 
 ### Tracker.recordStandardGoals
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [779](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L779)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [780](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L780)_
 
 This hook is called after recording a standard goal. You can use it for instance to sync the recorded
 goal with third party systems. `$goal` contains all available information like `url` and `revenue`.
