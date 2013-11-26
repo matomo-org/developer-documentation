@@ -63,9 +63,11 @@ _**Note: When returning [DataTable](#) or [DataTable\Map](#) instances, filters 
 
 If a method throws an exception, its message will appear in the output. The stack trace can be displayed during debugging by changing **ResponseBuilder::DISPLAY\_BACKTRACE\_DEBUG** to true.
 
+**To see the list of API methods your Piwik install supports, click the _API_ link at the very top of every Piwik page. See the demo's list [here](http://demo.piwik.org/index.php?module=API&action=listAllAPI&idSite=7&period=day&date=yesterday).**
+
 ## Extra report processing
 
-Reports that are returned by API methods, either in the form of a [DataTable](#) instance or [DataTable\Map](#) instance, are manipulated before they are outputted. A set of [DataTable\Filters](#) are executed on the reports based on the values of certain query parameters.
+Reports that are returned by API methods, either in the form of a [DataTable](#) instance or [DataTable\Map](#) instance, are manipulated before they are outputted. A set of [DataTable\Filter](#)s are executed on the reports based on the values of certain query parameters.
 
 The following is a list of filters that are applied, what they do and what query parameters control whether they will run or not. The order in which they appear in this list is also the order in which they are applied:
 
@@ -99,22 +101,38 @@ There are some other special query parameters that affect the way reports are pr
 <a name="output-formats"></a>
 ## Output formats
 
-The output of a Reporting API request is a serialized string of the API method's return value. The format of this string is determined by the value of the **format** query parameter. Currently Piwik supports the following output format:
+The output of a Reporting API request is a serialized string of the API method's return value. The format of this string is determined by the value of the **format** query parameter. Currently Piwik supports the following output formats:
 
-* **xml**
-* **json**
-* **csv**
-* **tsv**
-* **html**
-* **php**
+* **[xml](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=xml&idSite=7&period=day&date=yesterday&expanded=1)**
+* **[json](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=json&idSite=7&period=day&date=yesterday&expanded=1)**
+* **[csv](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=csv&idSite=7&period=day&date=yesterday&expanded=1)**
+* **[tsv](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=tsv&idSite=7&period=day&date=yesterday&expanded=1)** _(Excel)_
+* **[html](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=html&idSite=7&period=day&date=yesterday&expanded=1)** _(A simple HTML representation, does not use [report visualizations](#).)_
+* **[php](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=php&idSite=7&period=day&date=yesterday&expanded=1)** _(A serialized PHP array.)_
 
-There is a special output format value, **original**, that can be used when requesting data from within Piwik using [Piwik\API\Request](#).
+There is a special output format value, **original**, that can be used when requesting data from within Piwik using [Piwik\API\Request](#). This format will force the result to be returned as unprocessed and unserialized data.
+
+_Note: The [Request::processRequest](#) method automatically uses the **original** format, so in most cases you won't need to specify `format=original`._
 
 ## Special API Methods
 
-### 
+Some of the API methods in the API plugin have special meaning and uses:
 
-### Bulk API Requests
+### Report Metadata
+
+The **API.getMetadata**, **API.getReportMetadata** and **API.getProcessedReport** API methods can be used to get information about one or all reports. The information includes the metrics contained in the report, documentation for those metrics and [more](http://demo.piwik.org/index.php?module=API&method=API.getMetadata&apiModule=UserCountry&apiAction=getCountry&format=xml&idSite=7&period=day&date=yesterday&expanded=1).
+
+These methods can be used by third party applications that provide an interface to the analytics stored by Piwik. **API.getReportMetadata**, which returns metadata for every report, can be used to get a list of all available reports for a website. **API.getMetadata** can be used to get more information about a single report. **API.getProcessedReport** can be used to get the metadata of a single report along with the report's data.
+
+Report metadata can also be used within Piwik Core or within plugins for features that operate on a report or reports specified by the user. For example, the **ImageGraph** plugin, which outputs an image of a graph using report data, uses report metadata values as hints for how to draw the output graph. The **ScheduledReports** plugin also uses report metadata in a similar way. 
+
+TODO: is there an official set of properties for report metadata?
+
+### Row Evolution
+
+Piwik's [row evolution feature](http://demo.piwik.org/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#module=UserSettings&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3AUserSettings.getConfiguration$3A0$3AWindows$25207$2520$252F$2520Chrome$2520$252F$25201920x1080) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](http://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS&label=Windows+7) or [multi-row evolution data](http://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS).
+
+### Bulk API Requests (API.getBulkRequest)
 
 [Like the Tracking API](#), the Reporting API supports bulk requests. A bulk request allows applications to invoke and retrieve the results for multiple API methods with one HTTP request. This can save time and processing resources for most requests.
 
@@ -129,6 +147,28 @@ This example uses the following API requests:
 
 _Note: The separate API methods are executed synchronously, so for long running API methods, using a bulk request may be a bad idea._
 
+### Other Methods
+
+* **API.get**: Calls the `get` API method of all loaded plugins that support it and merges the result. The `get` methods all output the metrics that the plugin archives, so the reuslt of **API.get** is values for every metric your Piwik install supports (for the specified website & period).
+
+* **API.getSegmentDimensionMetadata**: Returns metadata for every supported [segment dimension](#). The following information is returned for each segment dimension:
+  
+  * `'type'`: The type of segment dimension.
+  * `'category'`: A translated string that describes the segment dimension's category.
+  * `'name'`: A translated string or a translation token that describes the segment dimension itself.
+  * `'segment'`: The segment dimension's ID. This is what gets used in segment expressions.
+  * `'acceptedValues'`: A string that describes what values should be used with the segment dimension.
+  * `'sqlSegment'`: The table column the segment dimension operates on, for example, `'log_visit.idvisitor'`.
+  * `'sqlFilterValue'`: An optional PHP callback that transforms the value supplied in a segment expression so it can be used in an SQL expression.
+  * `'permission'`: Whether the current user can use this segment dimension.
+
+* **API.getSuggestedValuesForSegment**: Returns a list of values that can be used with a specified segment dimension.
+
+* **API.getLogoUrl**: Returns a URL to the Piwik logo.
+
+* **API.getHeaderLogoUrl**: Returns a URL to a smaller version of the Piwik logo.
+
 ## Learn more
 
-* 
+* To learn **how API classes are used internally** read our [MVC in Piwik](#) guide.
+* To learn **about how to calculate a report** read our guide [ALl About Analytics Data](#).
