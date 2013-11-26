@@ -81,15 +81,20 @@ Well done, your plugin is hosted on Github!
 
 ### Setting up a WebHook for your Github Repository
 
-Follow the steps to setup the WebHook for your repository:
+Soon you will be able to publish the very first version of your Plugin or Theme.
+
+Follow the steps below to setup the WebHook for your repository:
 
  * Open your repository on GitHub and go to its settings page
  * Click 'Service Hooks'
  * Click 'WebHook URLs'.
- * Enter in the URL field: `http://plugins.piwik.org/postreceive-hook`
+ * Click 'Piwik Plugins' in the list.
+ * Click 'Active'
  * Click 'Update Settings'
 
-Now, when you commit a code change or a tag in your repository, the Piwik Marketplace will be notified. We are almost done publishing your plugin!
+Now when you commit a code change or a tag in your repository, the Piwik Marketplace will be notified.
+
+We are almost done publishing your plugin!
 
 ## Publish your plugin
 
