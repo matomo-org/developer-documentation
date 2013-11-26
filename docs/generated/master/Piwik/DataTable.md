@@ -28,7 +28,7 @@ always at the end of the DataTable.
 
 ### Populating DataTables
 
-Data can be added to DataTables in a couple different ways. You can either:
+Data can be added to DataTables in three different ways. You can either:
 
 1. create rows one by one and add them through [addRow](#addRow) then truncate if desired,
 2. create an array of DataTable\Row instances or an array of arrays and add them using
