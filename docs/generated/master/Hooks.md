@@ -129,7 +129,7 @@ Callback Signature:
 
 Usages:
 
-[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L56)
+[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L57)
 
 
 ### API.Request.dispatch
@@ -688,7 +688,7 @@ Callback Signature:
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L66)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L67)
 
 
 ### Request.initAuthenticationObject
@@ -700,7 +700,7 @@ the default authentication logic.
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L66)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L67)
 
 ## ScheduledReports
 
