@@ -1134,7 +1134,7 @@ attributes before they are saved in the log_conversion table.
 `$visitor` contains the current known visit information.
 
 Callback Signature:
-<pre><code>function($newGoal, $this-&gt;request)</code></pre>
+<pre><code>function(&amp;$newGoal, $this-&gt;request)</code></pre>
 - `array` `$goal` Array of SQL fields value for this conversion, will be inserted in the log_conversion table
 - `\Piwik\Tracker\Request` `$request` 
 
