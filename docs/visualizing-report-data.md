@@ -315,8 +315,8 @@ When extending **DataTable** the only method you are required to override is the
         init: function () {
             dataTablePrototype.init.call(this);
 
-            this._bindEventCallbacks(domElem);
-            this._addSeriesPicker(domElem);
+            this._bindEventCallbacks(this.$element);
+            this._addSeriesPicker(this.$element);
 
             // ... etc. ...
         }

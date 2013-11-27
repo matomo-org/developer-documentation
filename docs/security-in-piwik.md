@@ -178,7 +178,7 @@ Here are some other coding guidelines that will help make your code more secure:
 
 * Some servers will disable PHP functions for (undisclosed) security reasons. Replacement functions can sometimes be found in **libs/upgradephp/upgrade.php**, including `_parse_ini_file()`, `_glob()`, `_fnmatch()`, and `_readfile()`. The functions `safe_serialize()` and `safe_unserialize()` are like the built-in functions, but won't serialize & unserialize objects. TODO: is this useful at all? for security or for something else?
 
-TODO: what about: "Handle user/untrusted input & Handling output" both in plugins.md security section
+TODO: what about: "Handle user/untrusted input & Handling output" both in plugins.md security section. don't know what it means.
 
 ## Learn more
 
