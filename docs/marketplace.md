@@ -38,7 +38,7 @@ The following fields are required:
 ]
 </code></pre>
 
- Both email and homepage are optional.
+ Both `email` and `homepage` are optional.
 
 The following fields are optional:
 
