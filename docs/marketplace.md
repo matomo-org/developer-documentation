@@ -100,21 +100,20 @@ We are almost done publishing your plugin!
 
 ## Publish your plugin
 
-At this stage you have committed your plugin code to your Github repository which contains at least a plugin.json and a Readme.md file. The post-receive hook will notify the Marketplace that a new tag is available.
-Publishing your plugin is now as simple as tagging the version in git and pushing the tag to GitHub:
+At this stage you have committed your plugin code to your GitHub repository which contains at least a plugin.json and a README.md file. Publishing your plugin is now as simple as tagging the version in git and pushing the tag to GitHub:
 
 <pre><code>$ git tag 0.1.0
 
 $ git push origin --tags</code></pre>
 
-You may use any tag name. If the manifest file is valid, the new Plugin version will be built and added to the Marketplace: congratulations! You will receive an email to confirm your plugin was successfully published.
+The Webhook will notify the Marketplace that a new tag is available. You may use any tag name. If the manifest file is valid, the new Plugin version will be built and added to the Marketplace: congratulations! You will receive an email to confirm your plugin was successfully published.
 
 If there was an error during the validation, you will receive an email with helpful tips.
 
 
 ## Publish an updated version of your plugin
 
-To publish an update of your plugin on the Marketplace, simply update the version number tag in the plugin.json, commit, and create a new tag to trigger the release.
+To publish an update of your plugin on the Marketplace, simply update the version number tag in the plugin.json, commit, and create a new tag to trigger the release. 
 
 ## Troubleshooting
 
@@ -125,8 +124,10 @@ Some common validation errors are:
  * plugin.json manifest file not found
  * some of plugin.json required fields are not set
  * the version in plugin.json has already been published for this plugin
- * the readme.md file is missing
+ * the JSON in plugin.json manifest file is not valid
+ * the README.md file is missing
  * a plugin with this name already exists
+ * there is a PHP syntax error in your plugin
 
 If you still encounter trouble getting this process to work with your plugin, please join the IRC channel #piwik on freenode. If you can't seem to connect with someone in the IRC channel, please feel free to email us at hello@piwik.org.
 
