@@ -21,7 +21,7 @@ Manifest file must be named `plugin.json`, must live in the root of your reposit
 
 The following fields are required:
 
- * `name` - The name can only contain letters, numbers, and the characters `-` and `_`.
+ * `name` - The name can only contain letters, numbers, and the characters `-` and `_`. In addition, the name may not contain the words "Piwik", "Core" or "Analytics".
  * `version` - Version number must be a valid semantic version number per [node-semver](https://github.com/isaacs/node-semver).
  * `description` - A short description of your plugin (up to 150 characters). This will be displayed below the plugin name in search results, and displayed below the top-level heading on your plugin's page. You may include Piwik (if you want) and spaces and mixed case, unlike `name`.
  * `keywords` - An array of strings. This helps people discover your plugin as `keywords` are listed on the Marketplace. Keywords may only contain letters, numbers, hyphens, and dots.
