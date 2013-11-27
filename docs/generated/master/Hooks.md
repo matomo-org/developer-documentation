@@ -165,7 +165,7 @@ _Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/piwik/piwik/b
 
 
 Callback Signature:
-<pre><code>function(&amp;$idSites)</code></pre>
+<pre><code>function(&amp;$idSites, $this-&gt;getPeriod())</code></pre>
 
 ## AssetManager
 
