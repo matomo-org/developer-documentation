@@ -43,6 +43,8 @@ The following fields are required:
 The following fields are optional:
 
  * `theme` - A boolean set to true if your plugin is a Theme. A Theme is a plugin that will customize the look and feel of Piwik.
+ * `stylesheet` - In case you are creating a theme you can define the name of your root stylesheet file here. Read more about this in the [Theming](/guides/theming) guide.
+ * `javascript` - An array of JavaScript files which are used by your plugin. Those files will be loaded and executed in the browser each time a site in Piwik is opened. For example <pre><code>["javascripts/morpheus.js", "javascripts/example.js"]</code></pre>
  * `donate` - An array of information on how to donate to the plugin author (you!)
  * `paypal` - Your Paypal email address
  * `flattr` - The url to your Flattr page
