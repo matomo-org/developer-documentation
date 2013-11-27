@@ -21,7 +21,7 @@ Manifest file must be named `plugin.json`, must live in the root of your reposit
 
 The following fields are required:
 
- * `name` - The name can only contain letters, numbers, and the characters `-` and `_`.
+ * `name` - The name can only contain letters, numbers, and the characters `-` and `_`. In addition, the name may not contain the words "Piwik", "Core" or "Analytics".
  * `version` - Version number must be a valid semantic version number per [node-semver](https://github.com/isaacs/node-semver).
  * `description` - A short description of your plugin (up to 150 characters). This will be displayed below the plugin name in search results, and displayed below the top-level heading on your plugin's page. You may include Piwik (if you want) and spaces and mixed case, unlike `name`.
  * `keywords` - An array of strings. This helps people discover your plugin as `keywords` are listed on the Marketplace. Keywords may only contain letters, numbers, hyphens, and dots.
@@ -38,11 +38,13 @@ The following fields are required:
 ]
 </code></pre>
 
- Both email and homepage are optional.
+ Both `email` and `homepage` are optional.
 
 The following fields are optional:
 
  * `theme` - A boolean set to true if your plugin is a Theme. A Theme is a plugin that will customize the look and feel of Piwik.
+ * `stylesheet` - In case you are creating a theme you can define the name of your root stylesheet file here. Read more about this in the [Theming](/guides/theming) guide.
+ * `javascript` - An array of JavaScript files which are used by your plugin. Those files will be loaded and executed in the browser each time a site in Piwik is opened. For example <pre><code>["javascripts/morpheus.js", "javascripts/example.js"]</code></pre>
  * `donate` - An array of information on how to donate to the plugin author (you!)
  * `paypal` - Your Paypal email address
  * `flattr` - The url to your Flattr page
@@ -60,26 +62,26 @@ The following fields are optional:
 
 View a [plugin.json sample here](https://raw.github.com/tsteur/piwik-livetab-plugin/master/plugin.json)
 
-#### Creating a Readme.md
+#### Creating a README.md
 
-The Readme.md is used to make your plugin page in the Marketplace useful.
-Each plugin should have a readme file named Readme.md that adheres to the Piwik plugin readme file standard.
+The README.md is used to make your plugin page in the Marketplace useful.
+Each plugin should have a readme file named README.md that adheres to the Piwik plugin readme file standard.
 
 View a [README.md sample here](https://raw.github.com/tsteur/piwik-livetab-plugin/master/README.md)
 
 The Readme file is written in Markdown format.
-You may define the sections "Description", "Installation", "FAQ", "Changelog" and "Support", which will appear as category links on your Plugin page.
+You may define the sections "Description", "FAQ", "Changelog" and "Support", which will appear as category links on your Plugin page.
 
 
-### Hosting your plugin code on Github
-Next we will publish your plugin code on a Git repository on Github:
+### Hosting your plugin code on GitHub
+Next we will publish your plugin code on a Git repository on GitHub:
 
  * Create a new GitHub repository ([learn more](https://help.github.com/articles/create-a-repo)).
  * Push your plugin code in your repository. [See example repository](https://github.com/tsteur/piwik-livetab-plugin).
 
-Well done, your plugin is hosted on Github!
+Well done, your plugin is hosted on GitHub!
 
-### Setting up a WebHook for your Github Repository
+### Setting up a WebHook for your GitHub Repository
 
 Soon you will be able to publish the very first version of your Plugin or Theme.
 
@@ -98,21 +100,20 @@ We are almost done publishing your plugin!
 
 ## Publish your plugin
 
-At this stage you have committed your plugin code to your Github repository which contains at least a plugin.json and a Readme.md file. The post-receive hook will notify the Marketplace that a new tag is available.
-Publishing your plugin is now as simple as tagging the version in git and pushing the tag to GitHub:
+At this stage you have committed your plugin code to your GitHub repository which contains at least a plugin.json and a README.md file. Publishing your plugin is now as simple as tagging the version in git and pushing the tag to GitHub:
 
 <pre><code>$ git tag 0.1.0
 
 $ git push origin --tags</code></pre>
 
-You may use any tag name. If the manifest file is valid, the new Plugin version will be built and added to the Marketplace: congratulations! You will receive an email to confirm your plugin was successfully published.
+The Webhook will notify the Marketplace that a new tag is available. You may use any tag name. If the manifest file is valid, the new Plugin version will be built and added to the Marketplace: congratulations! You will receive an email to confirm your plugin was successfully published.
 
 If there was an error during the validation, you will receive an email with helpful tips.
 
 
 ## Publish an updated version of your plugin
 
-To publish an update of your plugin on the Marketplace, simply update the version number tag in the plugin.json, commit, and create a new tag to trigger the release.
+To publish an update of your plugin on the Marketplace, simply update the version number tag in the plugin.json, commit, and create a new tag to trigger the release. 
 
 ## Troubleshooting
 
@@ -123,8 +124,10 @@ Some common validation errors are:
  * plugin.json manifest file not found
  * some of plugin.json required fields are not set
  * the version in plugin.json has already been published for this plugin
- * the readme.md file is missing
+ * the JSON in plugin.json manifest file is not valid
+ * the README.md file is missing
  * a plugin with this name already exists
+ * there is a PHP syntax error in your plugin
 
 If you still encounter trouble getting this process to work with your plugin, please join the IRC channel #piwik on freenode. If you can't seem to connect with someone in the IRC channel, please feel free to email us at hello@piwik.org.
 

@@ -1024,6 +1024,7 @@ Usages:
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
 - [Tracker.isExcludedVisit](#trackerisexcludedvisit)
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
+- [Tracker.newConversionInformation](#trackernewconversioninformation)
 - [Tracker.newVisitorInformation](#trackernewvisitorinformation)
 - [Tracker.recordAction](#trackerrecordaction)
 - [Tracker.recordEcommerceGoal](#trackerrecordecommercegoal)
@@ -1113,6 +1114,19 @@ event can force the use of a custom visit object that extends from
 Callback Signature:
 <pre><code>function(&amp;$visit)</code></pre>
 - `\Piwik\Tracker\VisitInterface` `$visit` Initialized to null, but can be set to a created Visit object. If it isn't modified Piwik uses the default class.
+
+
+### Tracker.newConversionInformation
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [799](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L799)_
+
+This hook is called before inserting a new Goal Conversion.. You can use it to update the Goal
+attributes before they are saved in the log_conversion table.
+`$visitor` contains the current known visit information.
+
+Callback Signature:
+<pre><code>function($newGoal, $this-&gt;request)</code></pre>
+- `array` `$goal` Array of SQL fields value for this conversion, will be inserted in the log_conversion table
+- `\Piwik\Tracker\Request` `$request` 
 
 
 ### Tracker.newVisitorInformation
