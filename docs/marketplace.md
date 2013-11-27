@@ -62,26 +62,26 @@ The following fields are optional:
 
 View a [plugin.json sample here](https://raw.github.com/tsteur/piwik-livetab-plugin/master/plugin.json)
 
-#### Creating a Readme.md
+#### Creating a README.md
 
-The Readme.md is used to make your plugin page in the Marketplace useful.
-Each plugin should have a readme file named Readme.md that adheres to the Piwik plugin readme file standard.
+The README.md is used to make your plugin page in the Marketplace useful.
+Each plugin should have a readme file named README.md that adheres to the Piwik plugin readme file standard.
 
 View a [README.md sample here](https://raw.github.com/tsteur/piwik-livetab-plugin/master/README.md)
 
 The Readme file is written in Markdown format.
-You may define the sections "Description", "Installation", "FAQ", "Changelog" and "Support", which will appear as category links on your Plugin page.
+You may define the sections "Description", "FAQ", "Changelog" and "Support", which will appear as category links on your Plugin page.
 
 
-### Hosting your plugin code on Github
-Next we will publish your plugin code on a Git repository on Github:
+### Hosting your plugin code on GitHub
+Next we will publish your plugin code on a Git repository on GitHub:
 
  * Create a new GitHub repository ([learn more](https://help.github.com/articles/create-a-repo)).
  * Push your plugin code in your repository. [See example repository](https://github.com/tsteur/piwik-livetab-plugin).
 
-Well done, your plugin is hosted on Github!
+Well done, your plugin is hosted on GitHub!
 
-### Setting up a WebHook for your Github Repository
+### Setting up a WebHook for your GitHub Repository
 
 Soon you will be able to publish the very first version of your Plugin or Theme.
 
