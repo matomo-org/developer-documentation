@@ -380,7 +380,17 @@ Usages:
 
 ## Live
 
+- [Live.API.getIdSitesString](#liveapigetidsitesstring)
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
+
+### Live.API.getIdSitesString
+_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [591](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L591)_
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$idSite)</code></pre>
+
 
 ### Live.getExtraVisitorDetails
 _Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [387](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L387)_
