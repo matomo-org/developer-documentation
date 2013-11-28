@@ -391,6 +391,8 @@ This data can be used by JavaScript DataTable classes.
 
 e.g. array('typeReferrer' => ...)
 
+It can then be accessed in the twig templates by clientSideParameters.typeReferrer
+
 #### Signature
 
 - Its type is not specified.
