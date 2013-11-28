@@ -71,10 +71,7 @@ TODO: resources for learning PHP and setting up a localhost server
 
 Before we start extending Piwik, let's make sure you have the tools you'll need to do so. Make sure you have the following installed:
 
-- **A PHP IDE or a text editor.** We who work on Piwik reccommend you use one of the following tools:
-  - [PHPStorm](#) &mdash; a very powerful IDE built specifically for developing in PHP. Lets you debug PHP code.
-  - [Sublime Text](#) &mdash; a powerful and attractive text editor that can be used to program in almost any language, but it might not help you debug your PHP code.
-  - ??? TODO
+- **A PHP IDE or a text editor.** We who work on Piwik reccommend you use [PHPStorm](#), a very powerful IDE built specifically for developing in PHP.
 - **A webserver,** such as [Apache](#) or [Nginx](#).
 - **[git](#)** so you can work with the latest Piwik source code.
 - **[composer](http://getcomposer.org/) so you can install the PHP libraries Piwik uses.
