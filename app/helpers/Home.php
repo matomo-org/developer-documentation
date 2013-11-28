@@ -31,21 +31,21 @@ class Home {
         $menu[] = array(
             'title'        => 'Guides',
             'url'          => static::getUrl('guides'),
-            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'description'  => 'Learn how to create your own plugins and contributions or delve deep into Piwik\'s inner workings and learn how it all works.',
             'callToAction' => 'Get started'
         );
 
         $menu[] = array(
             'title'        => 'API Reference',
             'url'          => static::getUrl('api-reference'),
-            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'description'  => 'Detailed documentation for all classes that plugins might want to use. If you need help with a specific class, this is where to go.',
             'callToAction' => 'View Details'
         );
 
         $menu[] = array(
             'title'        => 'Support',
             'url'          => static::getUrl('support'),
-            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'description'  => 'If the documentation isn\'t helping you with something or you\'ve found a bug and want to report it, click here and learn how to get help.',
             'callToAction' => 'Get help'
         );
 

@@ -17,19 +17,19 @@ class Support {
         $menu['forums'] = array(
             'title'       => 'Forums',
             'url'         => 'http://forum.piwik.org/list.php?9',
-            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
+            'description' => 'Ask other developers for help. Someone might have encountered your problem before.'
         );
 
         $menu['tickets'] = array(
             'title'       => 'Tickets',
             'url'         => 'http://dev.piwik.org',
-            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
+            'description' => 'Create a bug report on our bug tracking system or check on the status of an existing bug.'
         );
 
         $menu['piwikpro'] = array(
             'title'       => 'Piwik Pro',
             'url'         => 'http://piwik.org/consulting/',
-            'description' => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'
+            'description' => 'If your looking for someone to create a plugin for you or want someone to fix a bug for you ASAP, then get in touch with a professional consultant.'
         );
 
 
