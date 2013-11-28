@@ -1032,6 +1032,7 @@ Usages:
 - [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
 - [Tracker.existingVisitInformation](#trackerexistingvisitinformation)
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
+- [Tracker.getVisitFieldsToPersist](#trackergetvisitfieldstopersist)
 - [Tracker.isExcludedVisit](#trackerisexcludedvisit)
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
 - [Tracker.newConversionInformation](#trackernewconversioninformation)
@@ -1100,6 +1101,16 @@ Callback Signature:
 - `array` `$dbInfos` Reference to an array containing database connection info, including: - **host**: The host name or IP address to the MySQL database. - **username**: The username to use when connecting to the database. - **password**: The password to use when connecting to the database. - **dbname**: The name of the Piwik MySQL database. - **port**: The MySQL database port to use. - **adapter**: either `'PDO_MYSQL'` or `'MYSQLI'`
 
 
+### Tracker.getVisitFieldsToPersist
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [974](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L974)_
+
+Use this event to load additional fields from the log_visit table into the visitor array for later use. When you add fields to this $fields array, they will be later available in Tracker.newConversionInformation
+or Tracker.newVisitorInformation.
+
+Callback Signature:
+<pre><code>function(&amp;$fields)</code></pre>
+
+
 ### Tracker.isExcludedVisit
 _Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php) in line [84](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php#L84)_
 
@@ -1127,15 +1138,16 @@ Callback Signature:
 
 
 ### Tracker.newConversionInformation
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [799](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L799)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [801](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L801)_
 
 This hook is called before inserting a new Goal Conversion.. You can use it to update the Goal
 attributes before they are saved in the log_conversion table.
 `$visitor` contains the current known visit information.
 
 Callback Signature:
-<pre><code>function(&amp;$newGoal, $this-&gt;request)</code></pre>
+<pre><code>function(&amp;$newGoal, $visitorInformation, $this-&gt;request)</code></pre>
 - `array` `$goal` Array of SQL fields value for this conversion, will be inserted in the log_conversion table
+- `array` `$visitorInformation` Array of log_visit field values for this visitor
 - `\Piwik\Tracker\Request` `$request` 
 
 
@@ -1152,7 +1164,7 @@ Callback Signature:
 
 Usages:
 
-[DevicesDetection::parseMobileVisitData](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L250), [Provider::enrichVisitWithProviderInfo](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L114), [UserCountry::getVisitorLocation](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L83)
+[DevicesDetection::parseMobileVisitData](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L250), [Provider::enrichVisitWithProviderInfo](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L114), [UserCountry::enrichVisitWithLocation](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L83)
 
 
 ### Tracker.recordAction

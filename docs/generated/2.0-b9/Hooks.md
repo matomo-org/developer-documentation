@@ -1124,7 +1124,7 @@ Callback Signature:
 
 Usages:
 
-[DevicesDetection::parseMobileVisitData](https://github.com/piwik/piwik/blob/2.0-b9/plugins/DevicesDetection/DevicesDetection.php#L250), [Provider::enrichVisitWithProviderInfo](https://github.com/piwik/piwik/blob/2.0-b9/plugins/Provider/Provider.php#L114), [UserCountry::getVisitorLocation](https://github.com/piwik/piwik/blob/2.0-b9/plugins/UserCountry/UserCountry.php#L83)
+[DevicesDetection::parseMobileVisitData](https://github.com/piwik/piwik/blob/2.0-b9/plugins/DevicesDetection/DevicesDetection.php#L250), [Provider::enrichVisitWithProviderInfo](https://github.com/piwik/piwik/blob/2.0-b9/plugins/Provider/Provider.php#L114), [UserCountry::enrichVisitWithLocation](https://github.com/piwik/piwik/blob/2.0-b9/plugins/UserCountry/UserCountry.php#L83)
 
 
 ### Tracker.recordAction
