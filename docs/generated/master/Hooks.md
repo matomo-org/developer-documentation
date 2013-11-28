@@ -1376,6 +1376,20 @@ Callback Signature:
 <pre><code>function($userLogin)</code></pre>
 - `string` `$userLogin` The user's login handle.
 
+## View
+
+- [View.ReportsByDimension.render](#viewreportsbydimensionrender)
+
+### View.ReportsByDimension.render
+_Defined in [Piwik/View/ReportsByDimension](https://github.com/piwik/piwik/blob/master/core/View/ReportsByDimension.php) in line [98](https://github.com/piwik/piwik/blob/master/core/View/ReportsByDimension.php#L98)_
+
+Use this hook to configure the "Report by dimension" UI controller. This controller is displayed for example
+in the Referrers>Overview and the Goals>Overview report. It displays a list of repotrs on the left, and when click
+loads the report on the right column. This hook can be used to filter this list of report. @see ReportsByDimension class for more info.
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
 ## ViewDataTable
 
 - [ViewDataTable.addViewDataTable](#viewdatatableaddviewdatatable)
