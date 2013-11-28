@@ -38,7 +38,7 @@ class Home {
         $menu[] = array(
             'title'        => 'API Reference',
             'url'          => static::getUrl('api-reference'),
-            'description'  => 'Detailed documentation for all classes that plugins might want to use. If you need help with a specific class, this is where to go.',
+            'description'  => 'Detailed documentation for every PHP class you might want to use. If you need help with a specific class, this is where to go.',
             'callToAction' => 'View Details'
         );
 

@@ -1,5 +1,8 @@
 {% macro teaser_list(teasers) %}
     {% for url,item in teasers %}
+        {% if loop.index0 % 3 == 0 %}
+        <div class="row">
+        {% endif %}
         <div class="col-xs-12 col-sm-6 col-md-4 teaser-item">
             <h2>{{ item.title }}</h2>
             <p>{{ item.description }}</p>
@@ -9,5 +12,8 @@
                 {% endif %}
                 role="button">{{ item.callToAction|default('Learn more') }} &raquo;</a></p>
         </div>
+        {% if loop.index0 % 3 == 2 or loop.last %}
+        </div>
+        {% %}
     {% endfor %}
 {% endmacro %}
