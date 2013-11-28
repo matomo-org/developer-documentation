@@ -260,7 +260,7 @@ Usages:
 - [Config.NoConfigurationFile](#confignoconfigurationfile)
 
 ### Config.badConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [316](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L316)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [344](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L344)_
 
 Triggered if the INI config file has the incorrect format or if certain required configuration options are absent. This event can be used to start the installation process or to display a
 custom error message.
@@ -275,7 +275,7 @@ Usages:
 
 
 ### Config.NoConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [236](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L236)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [264](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L264)_
 
 Triggered when the configuration file cannot be found or read. This usually
 means Piwik is not installed yet. This event can be used to start the
@@ -321,7 +321,7 @@ Usages:
 - [Controller.$module.$action.end](#controllermoduleactionend)
 
 ### Controller.$module.$action
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [111](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L111)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [113](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L113)_
 
 This event exists for convenience and is triggered directly after the [Request.dispatch](#) event is triggered. It can be used to do the same things as the [Request.dispatch](#) event, but for one controller
 action only. Using this event will result in a little less code than [Request.dispatch](#).
@@ -332,7 +332,7 @@ Callback Signature:
 
 
 ### Controller.$module.$action.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [127](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L127)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [129](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L129)_
 
 This event exists for convenience and is triggered immediately before the [Request.dispatch.end](#) event is triggered. It can be used to do the same things as the [Request.dispatch.end](#) event, but for one
 controller action only. Using this event will result in a little less code than
@@ -501,7 +501,7 @@ Callback Signature:
 - [Menu.Top.addItems](#menutopadditems)
 
 ### Menu.Admin.addItems
-_Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php) in line [83](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php#L83)_
+_Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php) in line [84](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php#L84)_
 
 Triggered when collecting all available admin menu items. Subscribe to this event if you want
 to add one or more items to the Piwik admin menu.
@@ -529,7 +529,7 @@ Usages:
 
 
 ### Menu.Reporting.addItems
-_Defined in [Piwik/Menu/MenuMain](https://github.com/piwik/piwik/blob/master/core/Menu/MenuMain.php) in line [89](https://github.com/piwik/piwik/blob/master/core/Menu/MenuMain.php#L89)_
+_Defined in [Piwik/Menu/MenuMain](https://github.com/piwik/piwik/blob/master/core/Menu/MenuMain.php) in line [90](https://github.com/piwik/piwik/blob/master/core/Menu/MenuMain.php#L90)_
 
 Triggered when collecting all available reporting menu items. Subscribe to this event if you
 want to add one or more items to the Piwik reporting menu.
@@ -557,7 +557,7 @@ Usages:
 
 
 ### Menu.Top.addItems
-_Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [113](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L113)_
+_Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [114](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L114)_
 
 Triggered when collecting all available menu items that are be displayed on the very top of every page, next to the login/logout links. Subscribe to this event if you want to add one or more items
 to the top menu.
@@ -644,7 +644,7 @@ Callback Signature:
 
 
 ### Request.dispatch.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [138](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L138)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [140](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L140)_
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if there was any) before
 the output is returned.
@@ -656,7 +656,7 @@ Callback Signature:
 
 
 ### Request.dispatchCoreAndPluginUpdatesScreen
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [328](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L328)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [356](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L356)_
 
 Triggered just after the platform is initialized and plugins are loaded. This event can be used to do early initialization. Note: At this point the user
 is not authenticated yet.
@@ -692,7 +692,7 @@ Usages:
 
 
 ### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [342](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L342)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [370](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L370)_
 
 Triggered before the user is authenticated. You can use it to create your own
 authentication object which implements the [Piwik\Auth](#) interface and overrides
@@ -1282,7 +1282,7 @@ Usages:
 - [Updater.checkForUpdates](#updatercheckforupdates)
 
 ### Updater.checkForUpdates
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [369](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L369)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [397](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L397)_
 
 Triggered after the platform is initialized and after the user has been authenticated, but before the platform dispatched the request. Piwik uses this event to check for updates to Piwik.
 
@@ -1323,7 +1323,7 @@ Usages:
 
 
 ### User.isNotAuthorized
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [152](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L152)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [154](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L154)_
 
 Triggered when a user with insufficient access permissions tries to view some resource. This event can be used to customize the error that occurs when a user is denied access
 (for example, displaying an error message, redirecting to a page other than login, etc.).
