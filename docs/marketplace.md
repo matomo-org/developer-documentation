@@ -29,14 +29,13 @@ The following fields are required:
  * `homepage` - The url to the plugin homepage.
  * `authors` - An array of people who created this plugin. An author is an object with a name field and optionally homepage and email. You must define at least one author, like this:
 
-<pre><code>"authors": [
-  {
-    "name": "Hacker",
-    "email": "marketplace@piwik.org",
-    "homepage": "http://piwik.org"
-  }
-]
-</code></pre>
+    "authors": [
+      {
+        "name": "Hacker",
+        "email": "marketplace@piwik.org",
+        "homepage": "http://piwik.org"
+      }
+    ]
 
  Both `email` and `homepage` are optional.
 
@@ -44,19 +43,19 @@ The following fields are optional:
 
  * `theme` - A boolean set to true if your plugin is a Theme. A Theme is a plugin that will customize the look and feel of Piwik.
  * `stylesheet` - In case you are creating a theme you can define the name of your root stylesheet file here. Read more about this in the [Theming](/guides/theming) guide.
- * `javascript` - An array of JavaScript files which are used by your plugin. Those files will be loaded and executed in the browser each time a site in Piwik is opened. For example <pre><code>["javascripts/morpheus.js", "javascripts/example.js"]</code></pre>
+ * `javascript` - An array of JavaScript files which are used by your plugin. Those files will be loaded and executed in the browser each time a site in Piwik is opened. For example <pre>["javascripts/morpheus.js", "javascripts/example.js"]
  * `donate` - An array of information on how to donate to the plugin author (you!)
  * `paypal` - Your Paypal email address
  * `flattr` - The url to your Flattr page
  * `bitcoin` - Your Bitcoin address
  For example:
 
-<pre><code>"donate":
-  {
-    "paypal": "supporters@piwik.org",
-    "flattr": "https://flattr.com/thing/131552/Piwik-Web-Analytics-Open-Source",
-    "bitcoin": "http://piwik.org"
-  }</code></pre>
+  "donate":
+    {
+      "paypal": "supporters@piwik.org",
+      "flattr": "https://flattr.com/thing/131552/Piwik-Web-Analytics-Open-Source",
+      "bitcoin": "http://piwik.org"
+    }
 
 ##### Sample plugin.json
 
@@ -102,9 +101,9 @@ We are almost done publishing your plugin!
 
 At this stage you have committed your plugin code to your GitHub repository which contains at least a plugin.json and a README.md file. Publishing your plugin is now as simple as tagging the version in git and pushing the tag to GitHub:
 
-<pre><code>$ git tag 0.1.0
+    $ git tag 0.1.0
 
-$ git push origin --tags</code></pre>
+    $ git push origin --tags
 
 The Webhook will notify the Marketplace that a new tag is available. You may use any tag name. If the manifest file is valid, the new Plugin version will be built and added to the Marketplace: congratulations! You will receive an email to confirm your plugin was successfully published.
 
