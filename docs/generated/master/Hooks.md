@@ -17,8 +17,8 @@ This is a complete list of available hooks.
 ### API.$pluginName.$methodName
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [196](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L196)_
 
-This event exists for convenience and is triggered directly after the [API.Request.dispatch](#) event is triggered. It can be used to modify the input that is passed to a single API method. This is also
-possible with the [API.Request.dispatch](#) event, however that event requires event handlers
+This event exists for convenience and is triggered directly after the [API.Request.dispatch](#apirequestdispatch) event is triggered. It can be used to modify the input that is passed to a single API method. This is also
+possible with the [API.Request.dispatch](#apirequestdispatch) event, however that event requires event handlers
 check if the plugin name and method name are correct before modifying the parameters.
 
 **Example**
@@ -35,13 +35,13 @@ Callback Signature:
 ### API.$pluginName.$methodName.end
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [231](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L231)_
 
-This event exists for convenience and is triggered immediately before the [API.Request.dispatch.end](#) event. It can be used to modify the output of a single API method. This is also possible with
-the [API.Request.dispatch.end](#) event, however that event requires event handlers
+This event exists for convenience and is triggered immediately before the [API.Request.dispatch.end](#apirequestdispatchend) event. It can be used to modify the output of a single API method. This is also possible with
+the [API.Request.dispatch.end](#apirequestdispatchend) event, however that event requires event handlers
 check if the plugin name and method name are correct before modifying the output.
 
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
-- `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a [DataTable](#).
+- `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a {@link Piwik\DataTable DataTable}.
 - `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The name of the namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
 
@@ -323,8 +323,8 @@ Usages:
 ### Controller.$module.$action
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [113](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L113)_
 
-This event exists for convenience and is triggered directly after the [Request.dispatch](#) event is triggered. It can be used to do the same things as the [Request.dispatch](#) event, but for one controller
-action only. Using this event will result in a little less code than [Request.dispatch](#).
+This event exists for convenience and is triggered directly after the [Request.dispatch](#requestdispatch) event is triggered. It can be used to do the same things as the [Request.dispatch](#requestdispatch) event, but for one controller
+action only. Using this event will result in a little less code than [Request.dispatch](#requestdispatch).
 
 Callback Signature:
 <pre><code>function(&amp;$parameters)</code></pre>
@@ -334,9 +334,9 @@ Callback Signature:
 ### Controller.$module.$action.end
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [129](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L129)_
 
-This event exists for convenience and is triggered immediately before the [Request.dispatch.end](#) event is triggered. It can be used to do the same things as the [Request.dispatch.end](#) event, but for one
+This event exists for convenience and is triggered immediately before the [Request.dispatch.end](#) event is triggered. It can be used to do the same things as the [Request.dispatch.end](#requestdispatchend) event, but for one
 controller action only. Using this event will result in a little less code than
-[Request.dispatch.end](#).
+[Request.dispatch.end](#requestdispatchend).
 
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>
@@ -506,7 +506,7 @@ _Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/co
 Triggered when collecting all available admin menu items. Subscribe to this event if you want
 to add one or more items to the Piwik admin menu.
 
-Menu items should be added via the [Menu::add](#) method.
+Menu items should be added via the Menu::add() method.
 
 **Example**
 
@@ -534,7 +534,7 @@ _Defined in [Piwik/Menu/MenuMain](https://github.com/piwik/piwik/blob/master/cor
 Triggered when collecting all available reporting menu items. Subscribe to this event if you
 want to add one or more items to the Piwik reporting menu.
 
-Menu items should be added via the [Menu::add](#) method.
+Menu items should be added via the add() method.
 
 **Example**
 
@@ -562,7 +562,7 @@ _Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core
 Triggered when collecting all available menu items that are be displayed on the very top of every page, next to the login/logout links. Subscribe to this event if you want to add one or more items
 to the top menu.
 
-Menu items should be added via the [MenuTop::addEntry](#addEntry) method.
+Menu items should be added via the addEntry() method.
 
 **Example**
 
@@ -695,7 +695,7 @@ Usages:
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [370](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L370)_
 
 Triggered before the user is authenticated. You can use it to create your own
-authentication object which implements the [Piwik\Auth](#) interface and overrides
+authentication object which implements the Piwik\Auth interface and overrides
 the default authentication logic.
 
 Usages:
@@ -1130,7 +1130,7 @@ _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Trac
 
 Triggered before a new `Piwik\Tracker\Visit` object is created. Subscribers to this
 event can force the use of a custom visit object that extends from
-[Piwik\Tracker\VisitInterface](#).
+Piwik\Tracker\VisitInterface.
 
 Callback Signature:
 <pre><code>function(&amp;$visit)</code></pre>
@@ -1174,7 +1174,7 @@ Triggered after successfully logging an action for a visit.
 
 Callback Signature:
 <pre><code>function($trackerAction = $this, $info)</code></pre>
-- `Action` `$trackerAction` The Action tracker instance.
+- `Action` `$tracker` Action The Action tracker instance.
 - `array` `$info` An array describing the current visit action. Includes the following information: - **idSite**: The ID of the site that we are tracking. - **idLinkVisitAction**: The ID of the row that was inserted into the log_link_visit_action table. - **idVisit**: The visit ID. - **idReferrerActionUrl**: The ID referencing the row in the log_action table that holds the URL of the visitor's last action. - **idReferrerActionName**: The ID referencing the row in the log_action table that holds the name of the visitor's last action. - **timeSpentReferrerAction**: The number of seconds since the visitor's last action.
 
 
@@ -1421,7 +1421,7 @@ Usages:
 ### ViewDataTable.configure
 _Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [146](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L146)_
 
-Triggered during [ViewDataTable](#) construction. Subscribers should customize
+Triggered during ViewDataTable construction. Subscribers should customize
 the view based on the report that it is displaying.
 
 Plugins that define their own reports must subscribe to this event in order to
@@ -1482,7 +1482,7 @@ _Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/
 Triggered once when the widget list is first requested. Collects all available widgets.
 
 Subscribe to this event to make your plugin's reports or other controller actions available
-as dashboard widgets. Event handlers should call the WidgetsList::add method for each
+as dashboard widgets. Event handlers should call the WidgetsList::add() method for each
 new dashboard widget.
 
 **Example**
