@@ -23,7 +23,7 @@ class ExternalMethodFormatter extends ApiReferenceFormatter {
 
             list($className, $method) = $this->parseLinkToExternalClass($link);
 
-            if ($this->isMethodLink($method) && $this->getApiClass($className)) {
+            if ($this->isMethodLink($method) && $this->scope->findClass($className)) {
                 return true;
             }
 
@@ -34,7 +34,7 @@ class ExternalMethodFormatter extends ApiReferenceFormatter {
     {
         list($className, $method) = $this->parseLinkToExternalClass($link);
 
-        $class      = $this->getApiClass($className);
+        $class      = $this->scope->findClass($className);
         $methodName = substr($method, 0, strlen($method) -2);
 
         $methodInstance = $class->getMethod($methodName);

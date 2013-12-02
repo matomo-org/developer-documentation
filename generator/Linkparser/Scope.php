@@ -24,4 +24,34 @@ class Scope {
      * @var string|null
      */
     public $namespace = null;
+
+    /**
+     * @param string $className
+     * @return ClassReflection|null
+     */
+    public function findClass($className)
+    {
+        if (empty($className)) {
+            return;
+        }
+
+        if (0 === strpos($className, '\\')) {
+            $className = substr($className, 1);
+        }
+
+        if (!empty($className) && array_key_exists($className, $this->classes)) {
+            return $this->classes[$className];
+
+        }
+
+        if (empty($this->namespace)) {
+            return;
+        }
+
+        $namespacedClassname = $this->namespace . '\\' . $className;
+
+        if (!empty($namespacedClassname) && array_key_exists($namespacedClassname, $this->classes)) {
+            return $this->classes[$namespacedClassname];
+        }
+    }
 }

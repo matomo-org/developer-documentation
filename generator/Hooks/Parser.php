@@ -154,19 +154,9 @@ class Parser {
     public function generateScope($hook)
     {
         $scope = new Scope();
-        $scope->classes = $this->sami->offsetGet('project')->getProjectClasses();
-
-        /** @var \Sami\Reflection\ClassReflection|null $class */
-        if (!empty($hook->class) && array_key_exists($hook->class, $scope->classes)) {
-            $scope->class     = $scope->classes[$hook->class];
-            $classArray       = $class->toArray();
-            $scope->namespace = $classArray['namespace'];
-        } elseif (!empty($hook->class)) {
-            $posLastNamespace = strrpos($hook->class, '\\');
-            if (false !== $posLastNamespace) {
-                $scope->namespace = substr($hook->class, 0, $posLastNamespace);
-            }
-        }
+        $scope->classes   = $this->sami->offsetGet('project')->getProjectClasses();
+        $scope->namespace = str_replace('/', '\\', $hook['namespace']);
+        $scope->class     = $scope->findClass($hook['class']);
 
         return $scope;
     }

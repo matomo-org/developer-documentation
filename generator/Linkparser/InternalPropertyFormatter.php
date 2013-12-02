@@ -26,7 +26,7 @@ class InternalPropertyFormatter extends ApiReferenceFormatter {
         $properties   = $this->scope->class->getProperties(true);
         $propertyName = substr($link->getDestination(), 1);
 
-        if (!array_key_exists($propertyName, $properties)) {
+        if (!$propertyName || !array_key_exists($propertyName, $properties)) {
             return;
         }
 

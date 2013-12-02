@@ -27,29 +27,6 @@ abstract class ApiReferenceFormatter extends Formatter {
         return $this->stringEndsWith($method, '()');
     }
 
-    /**
-     * @param string $className
-     * @return ClassReflection|null
-     */
-    protected function getApiClass($className)
-    {
-        if (0 === strpos($className, '\\')) {
-            $className = substr($className, 1);
-        }
-
-        if (array_key_exists($className, $this->scope->classes)) {
-
-            return $this->scope->classes[$className];
-        }
-
-        $classWithNamespace = $this->scope->namespace . '\\' . $className;
-
-        if ($this->scope->namespace && array_key_exists($classWithNamespace, $this->scope->classes)) {
-
-            return $this->scope->classes[$classWithNamespace];
-        }
-    }
-
     protected function isPropertyLink($property)
     {
         return (0 === strpos($property, '$'));
@@ -57,7 +34,7 @@ abstract class ApiReferenceFormatter extends Formatter {
 
     protected function getLinkToApiClass($className)
     {
-        $class = $this->getApiClass($className);
+        $class = $this->scope->findClass($className);
 
         if (empty($class)) {
             return;

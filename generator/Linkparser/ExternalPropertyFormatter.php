@@ -23,7 +23,7 @@ class ExternalPropertyFormatter extends ApiReferenceFormatter {
 
             list($className, $property) = $this->parseLinkToExternalClass($link);
 
-            if ($this->isPropertyLink($property) && $this->getApiClass($className)) {
+            if ($this->isPropertyLink($property) && $this->scope->findClass($className)) {
                 return true;
             }
         }
@@ -35,11 +35,11 @@ class ExternalPropertyFormatter extends ApiReferenceFormatter {
     {
         list($className, $property) = $this->parseLinkToExternalClass($link);
 
-        $class        = $this->getApiClass($className);
+        $class        = $this->scope->findClass($className);
         $properties   = $class->getProperties(true);
         $propertyName = substr($property, 1);
 
-        if (!array_key_exists($propertyName, $properties)) {
+        if (!$propertyName || !array_key_exists($propertyName, $properties)) {
             return;
         }
 

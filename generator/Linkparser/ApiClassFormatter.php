@@ -19,7 +19,7 @@ class ApiClassFormatter extends ApiReferenceFormatter {
 
     private function isApiClass(Link $link)
     {
-        $class = $this->getApiClass($link->getDestination());
+        $class = $this->scope->findClass($link->getDestination());
 
         return !empty($class);
     }
