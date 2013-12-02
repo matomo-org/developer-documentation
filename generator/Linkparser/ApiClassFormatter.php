@@ -19,18 +19,9 @@ class ApiClassFormatter extends ApiReferenceFormatter {
 
     private function isApiClass(Link $link)
     {
-        $class = $this->findApiClass($link);
+        $class = $this->scope->findClass($link->getDestination());
 
         return !empty($class) && $class->isProjectClass();
-    }
-
-    /**
-     * @param Link $link
-     * @return null|\Sami\Reflection\ClassReflection
-     */
-    private function findApiClass(Link $link)
-    {
-        return $this->scope->findClass($link->getDestination());
     }
 
     private function formatApiClass(Link $link)
@@ -41,8 +32,10 @@ class ApiClassFormatter extends ApiReferenceFormatter {
             return;
         }
 
-        $class = $this->findApiClass($link);
-        $link  = sprintf('[%s](%s)', $class->getShortName(), $linkToClass);
+        $description = $link->getDescription();
+        $description = str_replace('Piwik\\', '', $description);
+
+        $link = sprintf('[%s](%s)', $description, $linkToClass);
 
         return $link;
     }

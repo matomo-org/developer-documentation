@@ -44,7 +44,10 @@ class ExternalMethodFormatter extends ApiReferenceFormatter {
 
         $linkToClass = $this->getLinkToApiClass($className);
 
-        return sprintf('[%s](%s#%s)', $link->getDescription(), $linkToClass, strtolower($methodName));
+        $description = $link->getDescription();
+        $description = str_replace('Piwik\\', '', $description);
+
+        return sprintf('[%s](%s#%s)', $description, $linkToClass, strtolower($methodName));
     }
 
 }
