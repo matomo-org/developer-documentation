@@ -18,6 +18,15 @@ class MarkdownParser extends DefaultMarkdownParser {
         return "\n" . $this->hashBlock($block) . "\n\n";
     }
 
+    function makeCodeSpan($code) {
+        #
+        # Create a code span markup for $code. Called from handleSpanToken.
+        #
+        $code = htmlspecialchars(trim($code), ENT_NOQUOTES);
+        $code = $this->doAnchors($code);
+        return $this->hashPart("<code>$code</code>");
+    }
+
     function _doHeaders_callback_setext($matches) {
         # Terrible hack to check we haven't found an empty list item.
         if ($matches[2] == '-' && preg_match('{^-(?: |$)}', $matches[1]))
