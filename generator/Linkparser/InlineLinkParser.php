@@ -28,16 +28,16 @@ class InlineLinkParser {
 
     public function parse($comment)
     {
-        if (!preg_match_all('/{\@link(.*)}/', $comment, $matches)) {
-            return $comment;
-        }
+        if (preg_match_all('/{\@link(.*)}/', $comment, $matches)) {
 
-        foreach ($matches[0] as $key => $rawLink) {
+            foreach ($matches[0] as $key => $rawLink) {
 
-            $linkParser    = new LinkParser($this->scope);
-            $linkFormatted = $linkParser->parse($matches[1][$key]);
+                $linkParser    = new LinkParser($this->scope);
+                $linkFormatted = $linkParser->parse($matches[1][$key]);
 
-            $comment = str_replace($rawLink, $linkFormatted, $comment);
+                $comment = str_replace($rawLink, $linkFormatted, $comment);
+            }
+
         }
 
         return $comment;
