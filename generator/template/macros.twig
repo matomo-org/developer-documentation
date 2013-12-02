@@ -41,7 +41,7 @@ class
 {% endspaceless %}
 {%- endmacro -%}
 
-{% macro member_signature(type, member) -%}
+{% macro member_signature(type, member, class) -%}
 {% if member.final %}
 - It is a **finalized** {{ type }}.
 {% endif %}
@@ -61,7 +61,7 @@ class
 {% if member.parameters %}
 - It accepts the following parameter(s):
 {% for parameter in member.getParameters %}
-    - `${{ parameter.name }}`{% if parameter.hint %} ({% for hint in parameter.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}){% endif %}{% if parameter.shortDesc is defined and parameter.shortDesc %} &mdash; {{ parameter.shortDesc|raw }}{% endif %}{% if parameter.shortDesc is defined and parameter.longDesc %} &mdash; {{ parameter.longDesc|raw }}{% endif %}
+    - `${{ parameter.name }}`{% if parameter.hint %} ({% for hint in parameter.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}){% endif %}{% if parameter.shortDesc is defined and parameter.shortDesc %} &mdash; {{ parameter.shortDesc|inlinelinkparser(class)|raw }}{% endif %}{% if parameter.shortDesc is defined and parameter.longDesc %} &mdash; {{ parameter.longDesc|inlinelinkparser(class)|raw }}{% endif %}
 
 {% endfor %}
 {% endif %}

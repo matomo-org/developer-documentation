@@ -72,7 +72,7 @@ This {{ class_type(class) }} defines the following properties:
 
 #### Signature
 
-{{ member_signature("property", property) }}
+{{ member_signature("property", property, class) }}
 {% endfor %}
 {% endif %}
 {% if class.methods %}
@@ -113,7 +113,7 @@ The {{ class_type(class) }} defines the following methods:
 
 #### Signature
 
-{{ member_signature("method", method) }}
+{{ member_signature("method", method, class) }}
 {% endfor %}
 {% endif %}
 {% endblock %}
