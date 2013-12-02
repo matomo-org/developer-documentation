@@ -19,7 +19,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See [Limit](#).
+- [`filter()`](#filter) &mdash; See [Limit](/api-reference/Piwik/DataTable/Filter/Limit).
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -39,7 +39,7 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [Limit](#).
+See [Limit](/api-reference/Piwik/DataTable/Filter/Limit).
 
 #### Signature
 

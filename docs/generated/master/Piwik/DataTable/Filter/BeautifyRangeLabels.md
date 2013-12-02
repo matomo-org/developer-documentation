@@ -20,7 +20,7 @@ more than one unit (ie '2-2', '3-5' or '6+').
 
 This filter can be extended to vary exactly how ranges are prettified based
 on the range values found in the DataTable. To see an example of this,
-take a look at the [BeautifyTimeRangeLabels](#) filter.
+take a look at the [BeautifyTimeRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyTimeRangeLabels) filter.
 
 **Basic usage example**
 
@@ -58,7 +58,7 @@ Beautifies a range label and returns the pretty result.
 
 #### Description
 
-See [BeautifyRangeLabels](#).
+See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels).
 
 #### Signature
 

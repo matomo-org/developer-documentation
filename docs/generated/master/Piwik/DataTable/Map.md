@@ -92,7 +92,7 @@ Queue a filter to DataTable child of contained by this instance.
 
 #### Description
 
-See [DataTable::queueFilter](#) for more information..
+See [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter) for more information..
 
 #### Signature
 
@@ -352,7 +352,7 @@ Adds a DataTable to all the tables in this array.
 
 NOTE: Will only add `$tableToSum` if the childTable has some rows
 
-See [DataTable::addDataTable()](#).
+See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable).
 
 #### Signature
 

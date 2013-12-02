@@ -43,7 +43,7 @@ Executes the filter.
 
 #### Description
 
-See [AddSummaryRow](#).
+See [AddSummaryRow](/api-reference/Piwik/DataTable/Filter/AddSummaryRow).
 
 #### Signature
 

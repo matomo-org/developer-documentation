@@ -13,11 +13,11 @@ to cache aggregated analytics statistics.
 
 When the [Archive](/api-reference/Piwik/Archive) class is used to query for archive data and that archive
 data is found to be absent, the archiving process is launched. Instances of the
-[Archiver](#) classes for every plugin that supplies one are then used to
-execute archiving logic.
+[Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) classes for every plugin that supplies one are
+then used to execute archiving logic.
 
-Plugins access ArchiveProcessor instances through the [Archiver](/api-reference/Piwik/Plugin/Archiver) class.
-Read the docs for [Archiver](/api-reference/Piwik/Plugin/Archiver) to learn more about the process.
+Plugins access ArchiveProcessor instances through the [Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) class.
+Read the docs for [Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) to learn more about the process.
 
 ### Limitations
 
@@ -27,10 +27,10 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 
 ### See also
 
-- **[Archiver](/api-reference/Piwik/Plugin/Archiver)** - to learn how plugins should implement their own analytics
-                                               aggregation logic.
-- **[LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)** - to learn how plugins can perform data aggregation
-                                                             across Piwik's log tables.
+- **[Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver)** - to learn how plugins should implement their own analytics
+                                      aggregation logic.
+- **[DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)** - to learn how plugins can perform data aggregation
+                                               across Piwik's log tables.
 
 ### Examples
 
@@ -82,7 +82,7 @@ Methods
 The class defines the following methods:
 
 - [`getParams()`](#getparams) &mdash; Returns the Parameters object containing the site, period and segment used with this archive.
-- [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a [LogAggregator](#) instance for the site, period and segment this ArchiveProcessor will insert archive data for.
+- [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a `[DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` instance for the site, period and segment this ArchiveProcessor will insert archive data for.
 - [`aggregateDataTableRecords()`](#aggregatedatatablerecords) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
 - [`aggregateNumericMetrics()`](#aggregatenumericmetrics) &mdash; Aggregates one or more metrics for every subperiod of the current period and inserts the results as metrics for the current period.
 - [`insertNumericRecords()`](#insertnumericrecords) &mdash; Caches multiple numeric records in the archive for this processor's site, period and segment.
@@ -103,7 +103,7 @@ Returns the Parameters object containing the site, period and segment used with 
 <a name="getLogAggregator" id="getLogAggregator"></a>
 ### `getLogAggregator()`
 
-Returns a [LogAggregator](#) instance for the site, period and segment this ArchiveProcessor will insert archive data for.
+Returns a `[DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` instance for the site, period and segment this ArchiveProcessor will insert archive data for.
 
 #### Signature
 

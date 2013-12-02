@@ -8,7 +8,7 @@ A DataTable filter that replaces range labels whose values are in seconds with p
 Description
 -----------
 
-This filter customizes the behavior of the [BeautifyRangeLabels](#) filter
+This filter customizes the behavior of the [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels) filter
 so range values that are less than one minute are displayed in seconds but
 other ranges are displayed in minutes.
 

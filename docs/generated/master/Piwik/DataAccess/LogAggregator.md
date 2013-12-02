@@ -8,7 +8,7 @@ Contains methods that aggregates log data (visits, actions, conversions, ecommer
 Description
 -----------
 
-Plugin [Archiver](#) descendants can use the methods in this class to aggregate data
+Plugin [Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) descendants can use the methods in this class to aggregate data
 in the log tables without creating their own SQL queries.
 
 ### Aggregation Principles
@@ -133,8 +133,8 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
     - `$where` (`bool`|`string`) &mdash; Additional condition for the WHERE clause. Can be used to filter the set of visits that are considered for aggregation.
     - `$additionalSelects` (`array`) &mdash; Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
     - `$metrics` (`bool`|`array`) &mdash; The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - [Metrics::INDEX_NB_UNIQ_VISITORS](#) - [Metrics::INDEX_NB_VISITS](#) - [Metrics::INDEX_NB_ACTIONS](#) - [Metrics::INDEX_MAX_ACTIONS](#) - [Metrics::INDEX_SUM_VISIT_LENGTH](#) - [Metrics::INDEX_BOUNCE_COUNT](#) - [Metrics::INDEX_NB_VISITS_CONVERTED](#)
-    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash; A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](#).
-- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.
+    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash; A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by {@link Piwik\RankingQuery::execute()}.
+- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of {@link Piwik\RankingQuery::execute()}. Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.
     - `mixed`
 
 <a name="queryecommerceitems" id="queryecommerceitems"></a>
@@ -206,9 +206,9 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
     - `$where` (`bool`|`string`) &mdash; Additional condition for the WHERE clause. Can be used to filter the set of visits that are considered for aggregation.
     - `$additionalSelects` (`array`) &mdash; Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
     - `$metrics` (`bool`|`array`) &mdash; The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - [Metrics::INDEX_NB_UNIQ_VISITORS](#) - [Metrics::INDEX_NB_VISITS](#) - [Metrics::INDEX_NB_ACTIONS](#)
-    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash; A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](#).
+    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash; A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by {@link Piwik\RankingQuery::execute()}.
     - `$joinLogActionOnColumn` (`bool`|`string`) &mdash; One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed.
-- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
+- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of {@link Piwik\RankingQuery::execute()}. Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
     - `mixed`
 
 <a name="getselectsfromrangedcolumn" id="getselectsfromrangedcolumn"></a>

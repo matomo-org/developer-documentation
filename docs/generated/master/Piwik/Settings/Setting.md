@@ -33,7 +33,7 @@ Describes the setting's PHP data type.
 When saved, setting values will always be casted to this
 type.
 
-See [Settings](#) for a list of supported data types.
+See [Plugin\Settings](/api-reference/Piwik/Plugin/Settings) for a list of supported data types.
 
 #### Signature
 
@@ -47,7 +47,7 @@ Describes how the setting should be manipulated through Piwik's UI.
 
 #### Description
 
-See [Settings](#) for a list of supportted control types.
+See [Plugin\Settings](/api-reference/Piwik/Plugin/Settings) for a list of supportted control types.
 
 #### Signature
 
@@ -148,7 +148,7 @@ A closure that does some custom validation on the setting before the setting is 
 
 #### Description
 
-The closure should take two arguments: the setting value and the [Setting](#) instance being
+The closure should take two arguments: the setting value and the [Setting](/api-reference/Piwik/Settings/Setting) instance being
 validated. If the value is found to be invalid, the closure should throw an exception with
 a message that describes the error.
 

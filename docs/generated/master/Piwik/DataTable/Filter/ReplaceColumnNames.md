@@ -12,7 +12,7 @@ If no mapping is provided, this column will use one that maps index metric names
 (which are integers) with their string column names. In the database, reports are
 stored with integer metric names because it results in blobs that take up less space.
 When loading the reports, the column names must be replaced, which is handled by this
-class. (See [Metrics](#) for more information about integer metric names.)
+class. (See [Metrics](/api-reference/Piwik/Metrics) for more information about integer metric names.)
 
 **Basic example**
 
@@ -30,7 +30,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See [ReplaceColumnNames](#).
+- [`filter()`](#filter) &mdash; See [ReplaceColumnNames](/api-reference/Piwik/DataTable/Filter/ReplaceColumnNames).
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -42,13 +42,13 @@ Constructor.
 
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will be eventually filtered.
-    - `$mappingToApply` (`array`|`null`) &mdash; The name mapping to apply. Must map old column names with new ones, eg, ``` array('OLD_COLUMN_NAME' => 'NEW_COLUMN NAME', 'OLD_COLUMN_NAME2' => 'NEW_COLUMN NAME2') ``` If null, [Metrics::$mappingFromIdToName](#) is used.
+    - `$mappingToApply` (`array`|`null`) &mdash; The name mapping to apply. Must map old column names with new ones, eg, ``` array('OLD_COLUMN_NAME' => 'NEW_COLUMN NAME', 'OLD_COLUMN_NAME2' => 'NEW_COLUMN NAME2') ``` If null, {@link Piwik\Metrics::$mappingFromIdToName} is used.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [ReplaceColumnNames](#).
+See [ReplaceColumnNames](/api-reference/Piwik/DataTable/Filter/ReplaceColumnNames).
 
 #### Signature
 

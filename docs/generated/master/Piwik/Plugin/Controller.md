@@ -9,7 +9,7 @@ Description
 -----------
 
 Plugins that wish to add display HTML should create a Controller that either
-extends from this class or from [ControllerAdmin](#). Every public method in
+extends from this class or from Piwik\Plugin\ControllerAdmin. Every public method in
 the controller will be exposed as a controller action.
 
 Learn more about Piwik's MVC system [here](#).
@@ -114,8 +114,8 @@ The abstract class defines the following methods:
 - [`getUrlSparkline()`](#geturlsparkline) &mdash; Returns a URL to a sparkline image for a report served by the current plugin.
 - [`setMinDateView()`](#setmindateview) &mdash; Sets the first date available in the calendar.
 - [`setMaxDateView()`](#setmaxdateview) &mdash; Sets the last date available in the calendar.
-- [`setGeneralVariablesView()`](#setgeneralvariablesview) &mdash; Assigns variables to [View](#) instances that display an entire page.
-- [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Assigns a set of generally useful variables to a [View](#) instance.
+- [`setGeneralVariablesView()`](#setgeneralvariablesview) &mdash; Assigns variables to {@link Piwik\View) instances that display an entire page.
+- [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Assigns a set of generally useful variables to a {@link Piwik\View) instance.
 - [`setHostValidationVariablesView()`](#sethostvalidationvariablesview) &mdash; Checks if the current host is valid and sets variables on the given view, including:
 - [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
 - [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current http request to another module/action.
@@ -240,7 +240,7 @@ The result of this URL should be used with the [sparkline()](#) twig function.
 
 The current site ID and period will be used.
 
-See [Sparkline](#) for more information about the Sparkline visualization.
+See Piwik\Visualization\Sparkline for more information about the Sparkline visualization.
 
 #### Signature
 
@@ -285,7 +285,7 @@ for a site (which can depend on the timezone of a site).
 <a name="setGeneralVariablesView" id="setGeneralVariablesView"></a>
 ### `setGeneralVariablesView()`
 
-Assigns variables to [View](#) instances that display an entire page.
+Assigns variables to {@link Piwik\View) instances that display an entire page.
 
 #### Description
 
@@ -297,8 +297,8 @@ The following variables assigned:
 **prettyDate** - A pretty string description of the current period.
 **siteName** - The current site's name.
 **siteMainUrl** - The URL of the current site.
-**startDate** - The start date of the current period. A [Date](#) instance.
-**endDate** - The end date of the current period. A [Date](#) instance.
+**startDate** - The start date of the current period. A [Date](/api-reference/Piwik/Date) instance.
+**endDate** - The end date of the current period. A [Date](/api-reference/Piwik/Date) instance.
 **language** - The current language's language code.
 **config_action_url_category_delimiter** - The value of the `[General] action_url_category_delimiter`
                                            INI config option.
@@ -318,7 +318,7 @@ Will exit on error.
 <a name="setBasicVariablesView" id="setBasicVariablesView"></a>
 ### `setBasicVariablesView()`
 
-Assigns a set of generally useful variables to a [View](#) instance.
+Assigns a set of generally useful variables to a {@link Piwik\View) instance.
 
 #### Description
 

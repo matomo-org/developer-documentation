@@ -226,7 +226,7 @@ locking the table for too long.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` (`string`) &mdash; The name of the table to delete from. Must be prefixed (see [Common::prefixTable](#)).
+    - `$table` (`string`) &mdash; The name of the table to delete from. Must be prefixed (see {@link Piwik\Common::prefixTable()}).
     - `$where` (`string`) &mdash; The where clause of the query. Must include the WHERE keyword.
     - `$orderBy` (`Piwik\$orderBy`) &mdash; The column to order by and the order by direction, eg, `idvisit ASC`.
     - `$maxRowsPerQuery` (`int`) &mdash; The maximum number of rows to delete per DELETE query.
@@ -243,7 +243,7 @@ Runs an OPTIMIZE TABLE query on the supplied table or tables.
 #### Description
 
 The table names must be prefixed
-(see [Common::prefixTable](#)).
+(see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
 
 Tables will only be optimized if the `[General] enable_sql_optimize_queries` config option is
 set to **1**.
@@ -262,7 +262,7 @@ Drops the supplied table or tables.
 
 #### Description
 
-The table names must be prefixed (see [Common::prefixTable](#)).
+The table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
 
 #### Signature
 
@@ -278,7 +278,7 @@ Locks the supplied table or tables.
 
 #### Description
 
-The table names must be prefixed (see [Common::prefixTable](#)).
+The table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
 
 **NOTE:** Piwik does not require the LOCK TABLES privilege to be available. Piwik
 should still work in case it is not granted.

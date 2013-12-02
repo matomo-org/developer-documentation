@@ -3,7 +3,7 @@
 Manager
 =======
 
-Posts and removes UI notifications (see [Notification](#) to learn more).
+Posts and removes UI notifications (see [Notification](/api-reference/Piwik/Notification) to learn more).
 
 Methods
 -------

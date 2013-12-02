@@ -171,7 +171,7 @@ The object has to be configured first using the other methods.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$innerQuery` (`Piwik\$innerQuery`) &mdash; string  The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](#) cannot apply ordering itself.
+    - `$innerQuery` (`Piwik\$innerQuery`) &mdash; string  The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. {@link RankingQuery} cannot apply ordering itself.
     - `$bind` (`Piwik\$bind`) &mdash; array         Bindings for the inner query.
 - _Returns:_ The format depends on which methods have been used to configure the ranking query.
     - `array`
@@ -190,7 +190,7 @@ yourself, use this method.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$innerQuery` (`Piwik\$innerQuery`) &mdash; string  The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](#) cannot apply ordering itself.
+    - `$innerQuery` (`Piwik\$innerQuery`) &mdash; string  The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. {@link RankingQuery} cannot apply ordering itself.
 - _Returns:_ The entire ranking query SQL.
     - `string`
 

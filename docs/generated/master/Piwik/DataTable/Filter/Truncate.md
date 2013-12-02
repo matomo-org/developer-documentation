@@ -8,7 +8,7 @@ Truncates a DataTable by merging all rows after a certain index into a new summa
 Description
 -----------
 
-The [ReplaceSummaryRow](#) filter will be queued after the table is truncated.
+The ReplaceSummaryRow filter will be queued after the table is truncated.
 
 ### Examples
 
@@ -26,7 +26,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; Executes the filter, see [Truncate](#).
+- [`filter()`](#filter) &mdash; Executes the filter, see [Truncate](/api-reference/Piwik/DataTable/Filter/Truncate).
 - [`addSummaryRow()`](#addsummaryrow)
 
 <a name="__construct" id="__construct"></a>
@@ -48,7 +48,7 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Executes the filter, see [Truncate](#).
+Executes the filter, see [Truncate](/api-reference/Piwik/DataTable/Filter/Truncate).
 
 #### Signature
 

@@ -31,7 +31,7 @@ Metrics added are:
 Adding the **filter_update_columns_when_show_all_goals** query parameter to
 an API request will trigger the execution of this Filter.
 
-Note: This filter must be called before [ReplaceColumnNames](#) is called.
+Note: This filter must be called before [ReplaceColumnNames](/api-reference/Piwik/DataTable/Filter/ReplaceColumnNames) is called.
 
 **Basic usage example**
 

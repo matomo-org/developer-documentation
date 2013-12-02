@@ -133,7 +133,7 @@ The notification's display type.
 
 #### Description
 
-See `TYPE_*` constants in [this class](#).
+See `TYPE_*` constants in [Notification](/api-reference/Piwik/Notification).
 
 #### Signature
 
@@ -147,7 +147,7 @@ The notification's context (message type).
 
 #### Description
 
-See `CONTEXT_*` constants in [this class](#).
+See `CONTEXT_*` constants in [Notification](/api-reference/Piwik/Notification).
 
 A notification's context determines how it will be styled.
 
@@ -164,7 +164,7 @@ The notification's priority.
 #### Description
 
 The higher the priority, the higher the order. See `PRIORITY_*`
-constants in [this class](#) to see possible priority values.
+constants in [Notification](/api-reference/Piwik/Notification) to see possible priority values.
 
 #### Signature
 

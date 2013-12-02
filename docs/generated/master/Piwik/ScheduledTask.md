@@ -8,7 +8,7 @@ Contains metadata describing a chunk of PHP code that should be executed at regu
 Description
 -----------
 
-See the [TaskScheduler](#) docs to learn more about scheduled tasks.
+See the TaskScheduler docs to learn more about scheduled tasks.
 
 Methods
 -------
@@ -20,7 +20,7 @@ The class defines the following methods:
 - [`getClassName()`](#getclassname) &mdash; Returns the class name that contains the method to execute regularly.
 - [`getMethodName()`](#getmethodname) &mdash; Returns the method name that will be regularly executed.
 - [`getMethodParameter()`](#getmethodparameter) &mdash; Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
-- [`getScheduledTime()`](#getscheduledtime) &mdash; Returns a [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
+- [`getScheduledTime()`](#getscheduledtime) &mdash; Returns a [ScheduledTime](/api-reference/Piwik/ScheduledTime) instance that describes when the method should be executed and how long before the next execution.
 - [`getRescheduledTime()`](#getrescheduledtime) &mdash; Returns the time in milliseconds when this task will be executed next.
 - [`getPriority()`](#getpriority) &mdash; Returns the task priority.
 - [`getName()`](#getname) &mdash; Returns a unique name for this scheduled task.
@@ -37,7 +37,7 @@ Constructor.
     - `$objectInstance` (`mixed`) &mdash; The object or class name for the class that contains the method to regularly execute. Usually this will be a [Plugin](#) instance.
     - `$methodName` (`string`) &mdash; The name of the method of `$objectInstance` that will be regularly executed.
     - `$methodParameter` (`mixed`|`null`) &mdash; An optional parameter to pass to the method when executed. Must be convertible to string.
-    - `$scheduledTime` ([`ScheduledTime`](../Piwik/ScheduledTime.md)|`null`) &mdash; A [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
+    - `$scheduledTime` ([`ScheduledTime`](../Piwik/ScheduledTime.md)|`null`) &mdash; A {@link ScheduledTime} instance that describes when the method should be executed and how long before the next execution.
     - `$priority` (`int`) &mdash; The priority of the task. Tasks with a higher priority will be executed first. Tasks with low priority will be executed last.
 
 <a name="getobjectinstance" id="getobjectinstance"></a>
@@ -91,7 +91,7 @@ Returns the a value that will be passed to the method when executed, or `null` i
 <a name="getScheduledTime" id="getScheduledTime"></a>
 ### `getScheduledTime()`
 
-Returns a [ScheduledTime](#) instance that describes when the method should be executed and how long before the next execution.
+Returns a [ScheduledTime](/api-reference/Piwik/ScheduledTime) instance that describes when the method should be executed and how long before the next execution.
 
 #### Signature
 

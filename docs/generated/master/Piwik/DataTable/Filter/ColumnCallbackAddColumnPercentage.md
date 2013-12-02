@@ -8,7 +8,7 @@ Calculates a percentage value for each row of a DataTable and adds the result to
 Description
 -----------
 
-See [ColumnCallbackAddColumnQuotient](#) for more information.
+See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient) for more information.
 
 **Basic usage example**
 

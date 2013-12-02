@@ -3,7 +3,7 @@
 Simple
 ======
 
-A [DataTable](#) where every row has two columns: **label** and **value**.
+A [DataTable](/api-reference/Piwik/DataTable) where every row has two columns: **label** and **value**.
 
 Description
 -----------

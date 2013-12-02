@@ -28,7 +28,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See [ExcludeLowPopulation](#).
+- [`filter()`](#filter) &mdash; See [ExcludeLowPopulation](/api-reference/Piwik/DataTable/Filter/ExcludeLowPopulation).
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -48,7 +48,7 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [ExcludeLowPopulation](#).
+See [ExcludeLowPopulation](/api-reference/Piwik/DataTable/Filter/ExcludeLowPopulation).
 
 #### Signature
 

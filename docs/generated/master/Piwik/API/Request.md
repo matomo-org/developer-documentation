@@ -14,7 +14,7 @@ will do more after calling the API including: apply generic filters, apply queue
 and handle the **flat** and **label** query parameters.
 
 Additionally, the Request class will **forward current query parameters** to the request
-which is more convenient than calling [Common::getRequestVar](#) many times over.
+which is more convenient than calling [Common::getRequestVar()](/api-reference/Piwik/Common#getrequestvar) many times over.
 
 In most cases, using a Request object to query the API is the right way to go.
 

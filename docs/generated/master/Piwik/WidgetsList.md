@@ -8,8 +8,8 @@ Manages the global list of reports that can be displayed as dashboard widgets.
 Description
 -----------
 
-Reports are added as dashboard widgets through the [WidgetsList.addWidgets](#)
-event. Plugins should call [add](#add) in event observers for this event.
+Reports are added as dashboard widgets through the addWidgets
+event. Plugins should call [add()](/api-reference/Piwik/WidgetsList#add) in event observers for this event.
 
 Methods
 -------

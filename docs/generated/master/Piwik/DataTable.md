@@ -67,17 +67,17 @@ Note: Anonymous functions can be used as DataTable Filters.
 
 ### Applying Filters
 
-Filters can be applied now (via [filter](#filter)), or they can be applied later (via
-[queueFilter](#queueFilter)).
+Filters can be applied now (via [filter()](/api-reference/Piwik/DataTable#filter)), or they can be applied later (via
+[queueFilter()](/api-reference/Piwik/DataTable#queuefilter)).
 
 Filters that sort rows or manipulate the number of rows should be applied right away.
 Non-essential, presentation filters should be queued.
 
 ### Learn more
 
-- **[ArchiveProcessor](#)** &mdash; to learn how DataTables are persisted.
-- **[DataTable\Renderer](#)** &mdash; to learn how DataTable data is exported to XML, JSON, etc.
-- **[DataTable\Filter](#)** &mdash; to see all core Filters.
+- **[ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor)** &mdash; to learn how DataTables are persisted.
+- **DataTable\Renderer** &mdash; to learn how DataTable data is exported to XML, JSON, etc.
+- **[DataTable\Filter](/api-reference/Piwik/DataTable/Filter)** &mdash; to see all core Filters.
 
 ### Examples
 
@@ -146,7 +146,7 @@ Constants
 
 This class defines the following constants:
 
-- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable](#addDataTable) or [DataTable\Row::sumRow](#) is called.
+- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when or {@link Piwik\DataTable\Row::sumRow() is called.
 
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
@@ -159,7 +159,7 @@ This metadata value must be an array that maps column names with valid operation
 - `'min'`: does `min($column1, $column2)`
 - `'sum'`: does `$column1 + $column2`
 
-See [addDataTable](#addDataTable) and [DataTable\Row::sumRow](#) for more information.
+See and {@link DataTable\Row::sumRow() for more information.
 
 Methods
 -------
@@ -810,7 +810,7 @@ This DataTable and subtables can optionally be truncated before being serialized
 cases where DataTables can become quite large, they should be truncated before being persisted
 in an archive.
 
-The result of this method is intended for use with the [ArchiveProcessor::insertBlobRecord](#) method.
+The result of this method is intended for use with the [ArchiveProcessor::insertBlobRecord()](/api-reference/Piwik/ArchiveProcessor#insertblobrecord) method.
 
 #### Signature
 

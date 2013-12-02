@@ -3,7 +3,7 @@
 Row
 ===
 
-This is what a [DataTable](#) is composed of.
+This is what a [DataTable](/api-reference/Piwik/DataTable) is composed of.
 
 Description
 -----------
@@ -59,7 +59,7 @@ The class defines the following methods:
 - [`sumSubtable()`](#sumsubtable) &mdash; Sums a DataTable to this row's subtable.
 - [`addSubtable()`](#addsubtable) &mdash; Attaches a subtable to this row.
 - [`setSubtable()`](#setsubtable) &mdash; Attaches a subtable to this row, overwriting the existing subtable, if any.
-- [`isSubtableLoaded()`](#issubtableloaded) &mdash; Returns true if the subtable is currently loaded in memory via [DataTable\Manager](#).
+- [`isSubtableLoaded()`](#issubtableloaded) &mdash; Returns true if the subtable is currently loaded in memory via Piwik\DataTable\Manager.
 - [`removeSubtable()`](#removesubtable) &mdash; Removes the subtable reference.
 - [`setColumns()`](#setcolumns) &mdash; Set all the columns at once.
 - [`setColumn()`](#setcolumn) &mdash; Set the value `$value` to the column called `$name`.
@@ -201,7 +201,7 @@ Sums a DataTable to this row's subtable.
 If this row has no subtable a new
 one is created.
 
-See [DataTable::addDataTable()](#) to learn how DataTables are summed.
+See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to learn how DataTables are summed.
 
 #### Signature
 
@@ -241,7 +241,7 @@ Attaches a subtable to this row, overwriting the existing subtable, if any.
 <a name="isSubtableLoaded" id="isSubtableLoaded"></a>
 ### `isSubtableLoaded()`
 
-Returns true if the subtable is currently loaded in memory via [DataTable\Manager](#).
+Returns true if the subtable is currently loaded in memory via Piwik\DataTable\Manager.
 
 #### Signature
 
