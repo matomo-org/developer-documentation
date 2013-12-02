@@ -21,7 +21,7 @@ class ApiClassFormatter extends ApiReferenceFormatter {
     {
         $class = $this->scope->findClass($link->getDestination());
 
-        return !empty($class);
+        return !empty($class) && $class->isProjectClass();
     }
 
     private function formatApiClass(Link $link)

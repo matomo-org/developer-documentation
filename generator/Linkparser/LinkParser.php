@@ -42,6 +42,7 @@ class LinkParser {
         $formatter->append(new ExternalPropertyFormatter($this->scope));
         $formatter->append(new ExternalMethodFormatter($this->scope));
         $formatter->append(new ApiClassFormatter($this->scope));
+        $formatter->append(new PhpClassFormatter($this->scope));
         $formatter->append(new DefaultFormatter($this->scope));
 
         $linkFormatted = $formatter->format($link);
