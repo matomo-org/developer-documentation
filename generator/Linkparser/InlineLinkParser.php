@@ -8,9 +8,6 @@
 
 namespace Linkparser;
 
-use Sami\Sami;
-use Sami\Reflection\ClassReflection;
-
 class InlineLinkParser {
 
     /**

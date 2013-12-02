@@ -8,8 +8,6 @@
 
 namespace Linkparser;
 
-use Sami\Reflection\ClassReflection;
-
 abstract class ApiReferenceFormatter extends Formatter {
 
     protected function isLinkToExternalClass(Link $link)

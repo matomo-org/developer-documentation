@@ -30,6 +30,8 @@ class InternalPropertyFormatter extends ApiReferenceFormatter {
             return;
         }
 
-        return sprintf('[%s](#$%s)', $link->getDescription(), strtolower($propertyName));
+        $linkToClass = $this->getLinkToApiClass($this->scope->class->getName());
+
+        return sprintf('[%s](%s#$%s)', $link->getDescription(), $linkToClass, strtolower($propertyName));
     }
 }

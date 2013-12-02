@@ -36,6 +36,8 @@ class InternalMethodFormatter extends ApiReferenceFormatter {
             return;
         }
 
-        return sprintf('[%s](#%s)', $link->getDescription(), strtolower($methodName));
+        $linkToClass = $this->getLinkToApiClass($this->scope->class->getName());
+
+        return sprintf('[%s](%s#%s)', $link->getDescription(), $linkToClass, strtolower($methodName));
     }
 }
