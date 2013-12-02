@@ -1,5 +1,5 @@
 {% macro class_item(class, short = false, indent = "", replacePiwik = false) -%}
-{{ indent }}- {{ _self.class_name(class, short, "", replacePiwik) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc|raw }}{% endif %}
+{{ indent }}- {{ _self.class_name(class, short, "", replacePiwik) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc|inlinelinkparser(class)|raw }}{% endif %}
 {%- endmacro -%}
 
 {% macro class_name(class, short = false, suffix = "", replacePiwik = false) -%}
