@@ -349,7 +349,7 @@ The special view class we'll use is called [ViewDataTable](#), and here's how we
         // for the report. this is done by setting properties of the ViewDataTable::$config object.
         $view->config->show_table_all_columns = false;
         $view->config->show_goals = false;
-        $view->config->translations['label'] = Piwik::translate('UserSettings_ColumnBrowser');
+        $view->config->translations['label'] = 'Browser';
 
         return $view->render();
     }
@@ -408,9 +408,163 @@ Well, our simple plugin is done! It defines a new report, displays it and makes 
 
 ### Making the report configurable
 
-TODO (plugin settings)
+The report we've defined is interesting, but we could easily aggregate on another visit property. For example, the report could be **getLastVisitsByScreenType** or **getLastVisitsByCity**. In this section, we're going to make it possible for users to change what the report displays.
 
-#### Internationalizing your plugin
+#### Creating a plugin setting
+
+We'll create a **plugin setting** which will control which visit property the plugin uses to generate our report. The first step is to create a **Settings** class:
+
+    namespace Piwik\Plugins\MyPlugin; // remember to rename MyPlugin with the name of your plugin
+
+    class Settings extends \Piwik\Plugin\Settings
+    {
+        protected function init()
+        {
+            // ...
+        }
+    }
+
+Put this class in a file called **Settings.php** in your plugin's root directory.
+
+The **Settings** class is a special class that is automatically detected by Piwik. Piwik uses the information it sets to add a new section for your plugin in the _Plugins > Settings_ admin page.
+
+We're going to create one setting that can be set differently by each user. First, let's think about our new setting. It's going to determine the column of the **Live.getLastVisitsDetails** that we'll aggregate by. So it's a string and has a limited number of valid values. We'll use a single select dropdown (just a normal `<select>`) for it.
+
+Now, let's add an attribute and new method for this setting:
+
+    class Settings extends \Piwik\Plugin\Settings
+    {
+        public $realtimeReportDimension;
+
+        protected function init()
+        {
+            $this->realtimeReportDimension = $this->createRealtimeReportDimensionSetting();
+        }
+
+        private function createRealtimeReportDimensionSetting()
+        {
+            // ...
+        }
+    }
+
+Then we'll implement the `createRealtimeReportDimensionSetting` method:
+
+    private function createRealtimeReportDimensionSetting()
+    {
+        $setting = new \Piwik\Settings\UserSetting();
+        $setting->type = self::TYPE_STRING;
+        $setting->uiControlType = self::CONTROL_SINGLE_SELECT;
+        $setting->description   = 'Choose the dimension to aggregate by';
+        $setting->availableValues = MyPlugin::$availableDimensionsForAggregation; // replace 'MyPlugin'!
+        $setting->defaultValue = 'browser';
+        return $setting;
+    }
+
+Notice how `$settings->availableValues` is set to `MyPlugin::$availableDimensionsForAggregation`. The **availableValues** property should be set to an array mapping column values with their appropriate display text. This array will probably come in handy later, so we'll stash it in our plugin descriptor class.
+
+In your plugin descriptor class add the following code:
+
+    public static $availableDimensionsForAggregation = array(
+        'browser' => 'Browser',
+        'visitIp' => 'IP Address',
+        'visitorId' => 'Visitor ID',
+        'searches' => 'Number of Site Searches',
+        'events' => 'Number of Events',
+        'actions' => 'Number of Actions',
+        'visitDurationPretty' => 'Visit Duration',
+        'country' => 'Country',
+        'region' => 'Region',
+        'city' => 'City',
+        'operatingSystem' => 'Operating System',
+        'screenType' => 'Screen Type',
+        'resolution' => 'Resolution'
+
+        // we could add more, but let's not waste time.
+    );
+
+If you go to the _Plugins > Settings_ admin page you should see this new setting:
+
+TODO: image
+
+#### Using the new setting
+
+To use the setting, first we need to get the setting value in our API method and then aggregate using it. Change your API method to look like this:
+
+    public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
+    {
+        // get realtime visit data
+        $data = Piwik\Plugins\Live\API::getInstance()->getLastVisitsDetails(
+            $idSite,
+            $period,
+            $date,
+            $segment,
+            $numLastVisitorsToFetch = 100,
+            $minTimestamp = false,
+            $flat = false,
+            $doNotFetchActions = true
+        );
+
+        // read the setting value that contains the column value to aggregate on
+        $settings = new Settings();
+        $columnValue = $settings->realtimeReportDimension->getValue();
+
+        // count visits to create our result
+        $result = $data->getEmptyClone($keepFilters = false); // we could create a new instance by using new DataTable(),
+                                                              // but that wouldn't copy DataTable metadata, which can be
+                                                              // useful.
+
+        foreach ($data->getRows() as $visitRow) {
+            $columnValue = $visitRow->getColumn($columnName);
+
+            $resultRowForBrowser = $result->getRowFromLabel($columnValue);
+
+            // if there is no row for this browser, create it
+            if ($resultRowForBrowser === false) {
+                $result->addRowFromSimpleArray(array(
+                    'label' => $columnValue,
+                    'nb_visits' => 1
+                ));
+            } else { // if there is a row, increment the visit count
+                $resultRowForBrowser->setColumn('nb_visits', $resultRowFromBrowser->getColumn('nb_visits') + 1);
+            }
+        }
+
+        return $result;
+    }
+
+Now we'll want to make sure the column heading in the report display has the correct text. Right now, it will display **Browser** no matter what the setting value is:
+
+TODO: image
+
+Change the **getLastVisitsByBrowser** controller method to the following:
+
+    public function getLastVisitsByBrowser()
+    {
+        // ViewDataTable instances are created by the Factory, not through the new operator
+        $view = Piwik\ViewDataTable\Factory::build(
+            $defaultVisualization = 'table',
+            $apiAction = 'MyPlugin.getLastVisitsByBrowser' // remember to replace MyPlugin with the name of your plugin
+        );
+
+        // after a ViewDataTable instance is created, it must be configured so the display is perfect
+        // for the report. this is done by setting properties of the ViewDataTable::$config object.
+        $view->config->show_table_all_columns = false;
+        $view->config->show_goals = false;
+
+        $settings = new Settings();
+        $columnToAggregate = $settings->realtimeReportDimension->getValue();
+        $columnLabel = MyPlugin::$availableDimensionsForAggregation[$columnToAggregate]; // remember to replace MyPlugin with the name of your plugin
+
+        $view->config->translations['label'] = $columnLabel;
+
+        return $view->render();
+    }
+
+### Internationalizing your plugin
+
+TODO: possible to internationalize a plugin?
+
+### Conclusion
 
 ## What to read next
 
