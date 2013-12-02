@@ -3,7 +3,7 @@
 Config
 ======
 
-Singleton that provides read &amp; write access to Piwik&#039;s INI configuration.
+Singleton that provides read & write access to Piwik's INI configuration.
 
 Description
 -----------

@@ -3,7 +3,7 @@
 MenuAbstract
 ============
 
-Base class for classes that manage one of Piwik&#039;s menus.
+Base class for classes that manage one of Piwik's menus.
 
 Description
 -----------

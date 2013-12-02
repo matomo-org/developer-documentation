@@ -3,7 +3,7 @@
 Archive
 =======
 
-The **Archive** class is used to query cached analytics statistics (termed &quot;archive data&quot;).
+The **Archive** class is used to query cached analytics statistics (termed "archive data").
 
 Description
 -----------
