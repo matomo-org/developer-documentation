@@ -15,10 +15,12 @@ define('PIWIK_INCLUDE_PATH', PIWIK_DOCUMENT_ROOT);
 require_once $rootDir . '/generator/vendor/autoload.php';
 require_once PIWIK_INCLUDE_PATH . '/core/Loader.php';
 require_once __DIR__ . '/ApiFilter.php';
+require_once __DIR__ . '/InlineLinkParser.php';
 
 use Sami\Sami;
 use Sami\Version\GitVersionCollection;
 use Symfony\Component\Finder\Finder;
+use Sami\Reflection\ClassReflection;
 
 $iterator = Finder::create()
     ->files()
@@ -40,7 +42,7 @@ $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
     ->add($latestStable, 'latest stable')
 ;
 
-return new Sami($iterator, array(
+$sami = new Sami($iterator, array(
     'theme'                => 'markdown',
     'versions'             => $versions,
     'title'                => 'Piwik Plugin API',
@@ -50,3 +52,16 @@ return new Sami($iterator, array(
     'default_opened_level' => 5,
     'filter'               => new ApiFilter()
 ));
+
+/** @var Twig_Environment $twig */
+$twig = $sami->offsetGet('twig');
+
+$twig->addFilter(new Twig_SimpleFilter('linkparser', function ($description, ClassReflection $class) use ($sami) {
+
+    $linkConverter     = new InlineLinkParser($class, $sami);
+    $parsedDescription = $linkConverter->parse($description);
+
+    return $parsedDescription;
+}));
+
+return $sami;

@@ -17,7 +17,7 @@
 Description
 -----------
 
-{{ class.longdesc|raw }}
+{{ class.longdesc|linkparser(class)|raw }}
 {% endif %}
 {% set found = false %}
 {% for constant in class.constants if constant.longdesc %}
@@ -40,7 +40,7 @@ This {{ class_type(class) }} defines the following constants:
 <a name="{{ constant.name }}" id="{{ constant.name }}"></a>
 ### `{{ constant.name }}`
 
-{{ constant.longdesc|raw }}
+{{ constant.longdesc|linkparser(class)|raw }}
 {% endfor %}
 {% endif %}
 {% if class.properties %}
@@ -67,7 +67,7 @@ This {{ class_type(class) }} defines the following properties:
 
 #### Description
 
-{{ property.longdesc|raw }}
+{{ property.longdesc|linkparser(class)|raw }}
 {% endif %}
 
 #### Signature
@@ -99,7 +99,7 @@ The {{ class_type(class) }} defines the following methods:
 
 #### Description
 
-{{ method.longdesc|raw }}
+{{ method.longdesc|linkparser(class)|raw }}
 {% endif %}
 {% if method.tags("see") %}
 
