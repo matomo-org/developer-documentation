@@ -304,7 +304,7 @@ installation process or to display a custom error message.
 Callback Signature:
 <pre><code>function($exception)</code></pre>
 
-- `Exception` `$exception` The exception that was thrown by `Config::getInstance()`.
+- `[Exception](http://php.net/class.Exception)` `$exception` The exception that was thrown by `Config::getInstance()`.
 
 Usages:
 
