@@ -29,6 +29,7 @@ check if the plugin name and method name are correct before modifying the parame
 
 Callback Signature:
 <pre><code>function(&amp;$finalParameters)</code></pre>
+
 - `array` `$finalParameters` List of parameters that will be passed to the API method.
 
 
@@ -41,7 +42,9 @@ check if the plugin name and method name are correct before modifying the output
 
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
+
 - `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a {@link Piwik\DataTable DataTable}.
+
 - `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The name of the namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
 
@@ -57,7 +60,9 @@ TODO: list all information that is required in $availableReports.
 
 Callback Signature:
 <pre><code>function(&amp;$availableReports, $parameters)</code></pre>
+
 - `string` `$availableReports` The list of available reports. Append to this list to make a report available.
+
 - `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some report depend on this data. For example, Goals reports depend on the site IDs being request. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
 
 Usages:
@@ -74,7 +79,9 @@ of available reports.
 
 Callback Signature:
 <pre><code>function(&amp;$availableReports, $parameters)</code></pre>
+
 - `array` `$availableReports` List of all report metadata.
+
 - `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some report depend on this data. For example, Goals reports depend on the site IDs being request. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
 
 Usages:
@@ -105,7 +112,9 @@ Triggered when gathering all available segments. This event can be used to make 
 
 Callback Signature:
 <pre><code>function(&amp;$segments, $idSites)</code></pre>
+
 - `array` `$segments` The list of available segments. Append to this list to add new segments. Each element in this list must contain the following information: - **type**: Either `'metric'` or `'dimension'`. `'metric'` means the value is a numeric and `'dimension'` means it is a string. Also, `'metric'` values will be displayed **Visit (metrics)** in the Segment Editor. - **category**: The segment category name. This can be an existing segment category visible in the segment editor. - **name**: The pretty name of the segment. - **segment**: The segment name, eg, `'visitIp'` or `'searches'`. - **acceptedValues**: A string describing one or two exacmple values, eg `'13.54.122.1, etc.'`. - **sqlSegment**: The table column this segment will segment by. For example, `'log_visit.location_ip'` for the **visitIp** segment. - **sqlFilter**: A PHP callback to apply to segment values before they are used in SQL. - **permission**: True if the current user has view access to this segment, false if otherwise.
+
 - `array` `$idSites` The list of site IDs we're getting the available segments for. Some segments (such as Goal segments) depend on the site.
 
 Usages:
@@ -125,6 +134,7 @@ is setup to use `$token_auth` when its `authenticate()` method is executed.
 
 Callback Signature:
 <pre><code>function($token_auth)</code></pre>
+
 - `string` `$token_auth` The value of the **token_auth** query parameter.
 
 Usages:
@@ -140,8 +150,11 @@ one.
 
 Callback Signature:
 <pre><code>function(&amp;$finalParameters, $pluginName, $methodName)</code></pre>
+
 - `array` `$finalParameters` List of parameters that will be passed to the API method.
+
 - `string` `$pluginName` The name of the plugin being dispatched to.
+
 - `string` `$methodName` The name of the API method that will be called.
 
 
@@ -152,7 +165,9 @@ Triggered directly after an API request is dispatched. This event can be used to
 
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
+
 - `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a [DataTable](#).
+
 - `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The name of the namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
 ## ArchiveProcessor
@@ -182,6 +197,7 @@ with it.
 
 Callback Signature:
 <pre><code>function(&amp;$mergedContent)</code></pre>
+
 - `string` `$mergedContent` The minified and merged JavaScript.
 
 
@@ -192,6 +208,7 @@ Triggered after all less stylesheets are compiled to CSS, minified and merged in
 
 Callback Signature:
 <pre><code>function(&amp;$mergedContent)</code></pre>
+
 - `string` `$mergedContent` The merged an minified CSS.
 
 
@@ -218,6 +235,7 @@ immediately after a change.
 
 Callback Signature:
 <pre><code>function(&amp;$jsFiles)</code></pre>
+
 - `string` `$jsFiles` The JavaScript files to load.
 
 Usages:
@@ -248,6 +266,7 @@ reloaded immediately after a change.
 
 Callback Signature:
 <pre><code>function(&amp;$stylesheets)</code></pre>
+
 - `string` `$stylesheets` The list of stylesheet paths.
 
 Usages:
@@ -267,6 +286,7 @@ custom error message.
 
 Callback Signature:
 <pre><code>function($exception)</code></pre>
+
 - `$exception`
 
 Usages:
@@ -283,6 +303,7 @@ installation process or to display a custom error message.
 
 Callback Signature:
 <pre><code>function($exception)</code></pre>
+
 - `Exception` `$exception` The exception that was thrown by `Config::getInstance()`.
 
 Usages:
@@ -309,6 +330,7 @@ public function addConsoleCommands(&$commands)
 
 Callback Signature:
 <pre><code>function(&amp;$commands)</code></pre>
+
 - `array` `$commands` An array containing a list of command classnames.
 
 Usages:
@@ -328,6 +350,7 @@ action only. Using this event will result in a little less code than [Request.di
 
 Callback Signature:
 <pre><code>function(&amp;$parameters)</code></pre>
+
 - `array` `$parameters` The arguments passed to the controller action.
 
 
@@ -340,7 +363,9 @@ controller action only. Using this event will result in a little less code than
 
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>
+
 - `mixed` `$result` The result of the controller action.
+
 - `array` `$parameters` The arguments passed to the controller action.
 
 ## CronArchive
@@ -372,6 +397,7 @@ Goals pages.
 
 Callback Signature:
 <pre><code>function(&amp;$reportsWithGoals)</code></pre>
+
 - `array` `$reportsWithGoals` The list of reports that have Goal metrics.
 
 Usages:
@@ -409,6 +435,7 @@ The following visitor profile elements can be set to augment the visitor profile
 
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
+
 - `array` `$visitorProfile` The normal visitor profile info.
 
 ## Log
@@ -426,11 +453,16 @@ this event to convert objects to strings before they are logged.
 
 Callback Signature:
 <pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
+
 - `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set $message to the string that should be logged.
+
 - `int` `$level` The log level used with this log entry.
+
 - `string` `$tag` The current plugin that started logging (or if no plugin, the current class).
+
 - `string` `$datetime` Datetime of the logging call.
-- `Log` `$logger` The Log singleton.
+
+- `[Log](/api-reference/Piwik/Log)` `$logger` The Log singleton.
 
 
 ### Log.formatFileMessage
@@ -441,11 +473,16 @@ this event to convert objects to strings before they are logged.
 
 Callback Signature:
 <pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
+
 - `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set $message to the string that should be logged.
+
 - `int` `$level` The log level used with this log entry.
+
 - `string` `$tag` The current plugin that started logging (or if no plugin, the current class).
+
 - `string` `$datetime` Datetime of the logging call.
-- `Log` `$logger` The Log singleton.
+
+- `[Log](/api-reference/Piwik/Log)` `$logger` The Log singleton.
 
 
 ### Log.formatScreenMessage
@@ -459,11 +496,16 @@ This means YOU MUST SANITIZE THE MESSAGE YOURSELF if you use this event.
 
 Callback Signature:
 <pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
+
 - `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set $message to the string that should be logged.
+
 - `int` `$level` The log level used with this log entry.
+
 - `string` `$tag` The current plugin that started logging (or if no plugin, the current class).
+
 - `string` `$datetime` Datetime of the logging call.
-- `Log` `$logger` The Log singleton.
+
+- `[Log](/api-reference/Piwik/Log)` `$logger` The Log singleton.
 
 
 ### Log.getAvailableWriters
@@ -492,6 +534,7 @@ Logging writers must be associated by name in the array passed to event handlers
 
 Callback Signature:
 <pre><code>function(&amp;$writers)</code></pre>
+
 - `$`
 
 ## Menu
@@ -562,7 +605,7 @@ _Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core
 Triggered when collecting all available menu items that are be displayed on the very top of every page, next to the login/logout links. Subscribe to this event if you want to add one or more items
 to the top menu.
 
-Menu items should be added via the addEntry() method.
+Menu items should be added via the [addEntry()](#addentry) method.
 
 **Example**
 
@@ -620,6 +663,7 @@ database.
 
 Callback Signature:
 <pre><code>function(&amp;$dbInfos)</code></pre>
+
 - `array` `$dbInfos` Reference to an array containing database connection info, including: - **host**: The host name or IP address to the MySQL database. - **username**: The username to use when connecting to the database. - **password**: The password to use when connecting to the database. - **dbname**: The name of the Piwik MySQL database. - **port**: The MySQL database port to use. - **adapter**: either `'PDO_MYSQL'` or `'MYSQLI'`
 
 ## Request
@@ -638,8 +682,11 @@ and can be used to change the plugin and action that is being dispatched to.
 
 Callback Signature:
 <pre><code>function(&amp;$module, &amp;$action, &amp;$parameters)</code></pre>
+
 - `string` `$module` The name of the plugin being dispatched to.
+
 - `string` `$action` The name of the controller method being dispatched to.
+
 - `array` `$parameters` The arguments passed to the controller action.
 
 
@@ -651,7 +698,9 @@ the output is returned.
 
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>
+
 - `mixed` `$result` The result of the controller action.
+
 - `array` `$parameters` The arguments passed to the controller action.
 
 
@@ -684,6 +733,7 @@ the [Piwik\Registry](#) to an object that implements the [Auth](#) interface.
 
 Callback Signature:
 <pre><code>function($allowCookieAuthentication = true)</code></pre>
+
 - `bool` `$allowCookieAuthentication` Whether authentication based on $_COOKIE values should be allowed.
 
 Usages:
@@ -724,7 +774,9 @@ at a time.
 
 Callback Signature:
 <pre><code>function(&amp;$allowMultipleReports, $reportType)</code></pre>
+
 - `bool` `$allowMultipleReports` Whether the backend type can handle multiple Piwik reports or not.
+
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
 Usages:
@@ -740,9 +792,13 @@ handle their new report types.
 
 Callback Signature:
 <pre><code>function(&amp;$reportRenderer, $reportType, $outputType, $report)</code></pre>
+
 - `ReportRenderer` `$reportRenderer` This variable should be set to an instance that extends [ReportRenderer](#) by one of the event subscribers.
+
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+
 - `string` `$outputType` The output format of the report, eg, `'html'`, `'pdf'`, etc.
+
 - `array` `$report` An array describing the scheduled report that is being generated.
 
 Usages:
@@ -758,6 +814,7 @@ this event to make their format available.
 
 Callback Signature:
 <pre><code>function(&amp;$reportFormats, $reportType)</code></pre>
+
 - `array` `$reportFormats` An array mapping string IDs for each available scheduled report format with icon paths for those formats. Add your new format's ID to this array.
 
 Usages:
@@ -773,8 +830,11 @@ event to list the Piwik reports that their backend supports.
 
 Callback Signature:
 <pre><code>function(&amp;$availableReportMetadata, $reportType, $idSite)</code></pre>
+
 - `array` `$availableReportMetadata` 
+
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+
 - `int` `$idSite` The ID of the site we're getting available reports for.
 
 Usages:
@@ -790,7 +850,9 @@ event to list the available report parameters for their backend.
 
 Callback Signature:
 <pre><code>function(&amp;$availableParameters, $reportType)</code></pre>
+
 - `array` `$availableParameters` The list of available parameters for this report type. This is an array that maps paramater IDs with a boolean that indicates whether the parameter is mandatory or not.
+
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
 Usages:
@@ -807,8 +869,11 @@ format.
 
 Callback Signature:
 <pre><code>function(&amp;$recipients, $report[&#039;type&#039;], $report)</code></pre>
+
 - `array` `$recipients` An array of strings describing each of the scheduled reports recipients. Can be, for example, a list of email addresses or phone numbers or whatever else your plugin uses.
+
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+
 - `array` `$report` An array describing the scheduled report that is being generated.
 
 Usages:
@@ -824,6 +889,7 @@ event to make their backend available.
 
 Callback Signature:
 <pre><code>function(&amp;$reportTypes)</code></pre>
+
 - `array` `$reportTypes` An array mapping string IDs for each available scheduled report backend with icon paths for those backends. Add your new backend's ID to this array.
 
 Usages:
@@ -843,9 +909,13 @@ TODO: list data available in $report or make it a new class that can be document
 
 Callback Signature:
 <pre><code>function(&amp;$processedReports, $reportType, $outputType, $report)</code></pre>
+
 - `array` `$processedReports` The list of processed reports in the scheduled report. Includes report data and metadata.
+
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+
 - `string` `$outputType` The output format of the report, eg, `'html'`, `'pdf'`, etc.
+
 - `array` `$report` An array describing the scheduled report that is being generated.
 
 Usages:
@@ -861,13 +931,21 @@ send the scheduled report uses their backend.
 
 Callback Signature:
 <pre><code>function($report[&#039;type&#039;], $report, $contents, $filename, $prettyDate, $reportSubject, $reportTitle, $additionalFiles)</code></pre>
+
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+
 - `array` `$report` An array describing the scheduled report that is being generated.
+
 - `string` `$contents` The contents of the scheduled report that was generated and now should be sent.
+
 - `string` `$filename` The path to the file where the scheduled report has been saved.
+
 - `string` `$prettyDate` A prettified date string for the data within the scheduled report.
+
 - `string` `$reportSubject` A string describing what's in the scheduled report.
+
 - `string` `$reportTitle` The scheduled report's given title.
+
 - `array` `$additionalFiles` The list of additional files that should be sent with this report.
 
 Usages:
@@ -884,7 +962,9 @@ event to validate the custom parameters defined with
 
 Callback Signature:
 <pre><code>function(&amp;$parameters, $reportType)</code></pre>
+
 - `array` `$parameters` The list of parameters for the scheduled report.
+
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
 Usages:
@@ -903,6 +983,7 @@ or do something else.
 
 Callback Signature:
 <pre><code>function($idSegment)</code></pre>
+
 - `int` `$idSegment` The ID of the segment being deleted.
 
 Usages:
@@ -928,6 +1009,7 @@ SegmentEditor API.
 
 Callback Signature:
 <pre><code>function(&amp;$segmentsToProcess)</code></pre>
+
 - `array` `$segmentsToProcess` List of segment definitions, eg, ``` array( 'browserCode=ff;resolution=800x600', 'country=JP;city=Tokyo' ) ``` Add segments to process to this array in your event handler.
 
 Usages:
@@ -949,7 +1031,9 @@ SegmentEditor API.
 
 Callback Signature:
 <pre><code>function(&amp;$segments, $idSite)</code></pre>
+
 - `array` `$segmentsToProcess` List of segment definitions, eg, ``` array( 'browserCode=ff;resolution=800x600', 'country=JP;city=Tokyo' ) ``` Add segments to process to this array in your event handler.
+
 - `int` `$idSite` The ID of the site to get segments for.
 
 Usages:
@@ -968,7 +1052,9 @@ It can be used to modify the data for a website, such as decorate its name or ch
 
 Callback Signature:
 <pre><code>function($idSite, &amp;$infoSite)</code></pre>
+
 - `$idSite`
+
 - `$infoSite`
 
 ## SitesManager
@@ -984,6 +1070,7 @@ should clean up that information here.
 
 Callback Signature:
 <pre><code>function($idSite)</code></pre>
+
 - `int` `$idSite` The ID of the site being deleted.
 
 Usages:
@@ -1020,7 +1107,8 @@ public function getScheduledTasks(&$tasks)
 
 Callback Signature:
 <pre><code>function(&amp;$tasks)</code></pre>
-- `ScheduledTask` `$tasks` List of tasks to run periodically.
+
+- `[ScheduledTask](/api-reference/Piwik/ScheduledTask)` `$tasks` List of tasks to run periodically.
 
 Usages:
 
@@ -1060,7 +1148,9 @@ add custom attributes for the website to the Tracker cache.
 
 Callback Signature:
 <pre><code>function(&amp;$content, $idSite)</code></pre>
+
 - `array` `$content` List of attributes.
+
 - `int` `$idSite` The site ID.
 
 Usages:
@@ -1076,7 +1166,9 @@ logic.
 
 Callback Signature:
 <pre><code>function(&amp;$searchEngineInformation, $this-&gt;referrerUrl)</code></pre>
+
 - `array` `$searchEngineInformation` An array with the following information: - **name**: The search engine name. - **keywords**: The search keywords used. This parameter will be defaulted to the results of Piwik's default search engine detection logic.
+
 - `string`
 
 
@@ -1098,6 +1190,7 @@ database.
 
 Callback Signature:
 <pre><code>function(&amp;$configDb)</code></pre>
+
 - `array` `$dbInfos` Reference to an array containing database connection info, including: - **host**: The host name or IP address to the MySQL database. - **username**: The username to use when connecting to the database. - **password**: The password to use when connecting to the database. - **dbname**: The name of the Piwik MySQL database. - **port**: The MySQL database port to use. - **adapter**: either `'PDO_MYSQL'` or `'MYSQLI'`
 
 
@@ -1118,6 +1211,7 @@ Triggered on every pageview of a visitor. This event can be used to tell the Tra
 
 Callback Signature:
 <pre><code>function(&amp;$excluded)</code></pre>
+
 - `bool` `$excluded` Whether the pageview should be excluded or not. Initialized to `false`. Event subscribers should set it to `true` in order to exclude the pageview.
 
 Usages:
@@ -1134,6 +1228,7 @@ Piwik\Tracker\VisitInterface.
 
 Callback Signature:
 <pre><code>function(&amp;$visit)</code></pre>
+
 - `\Piwik\Tracker\VisitInterface` `$visit` Initialized to null, but can be set to a created Visit object. If it isn't modified Piwik uses the default class.
 
 
@@ -1146,8 +1241,11 @@ attributes before they are saved in the log_conversion table.
 
 Callback Signature:
 <pre><code>function(&amp;$newGoal, $visitorInformation, $this-&gt;request)</code></pre>
+
 - `array` `$goal` Array of SQL fields value for this conversion, will be inserted in the log_conversion table
+
 - `array` `$visitorInformation` Array of log_visit field values for this visitor
+
 - `\Piwik\Tracker\Request` `$request` 
 
 
@@ -1159,7 +1257,9 @@ into the visit log table.
 
 Callback Signature:
 <pre><code>function(&amp;$this-&gt;visitorInfo, $this-&gt;request)</code></pre>
+
 - `array` `$visitInfo` Information regarding the visit. This is information that persisted to the database.
+
 - `\Piwik\Tracker\Request` `$request` Request object, contains many useful methods such as getUserAgent() or getIp() to get the original IP.
 
 Usages:
@@ -1174,7 +1274,9 @@ Triggered after successfully logging an action for a visit.
 
 Callback Signature:
 <pre><code>function($trackerAction = $this, $info)</code></pre>
+
 - `Action` `$tracker` Action The Action tracker instance.
+
 - `array` `$info` An array describing the current visit action. Includes the following information: - **idSite**: The ID of the site that we are tracking. - **idLinkVisitAction**: The ID of the row that was inserted into the log_link_visit_action table. - **idVisit**: The visit ID. - **idReferrerActionUrl**: The ID referencing the row in the log_action table that holds the URL of the visitor's last action. - **idReferrerActionName**: The ID referencing the row in the log_action table that holds the name of the visitor's last action. - **timeSpentReferrerAction**: The number of seconds since the visitor's last action.
 
 
@@ -1207,7 +1309,9 @@ query parameter.
 
 Callback Signature:
 <pre><code>function(&amp;$idSite, $this-&gt;params)</code></pre>
+
 - `int` `$idSite` Initialized to the value of the **idsite** query parameter. If a subscriber sets this variable, the value it uses must be greater than 0.
+
 - `array` `$params` The entire array of request parameters passed with this tracking request.
 
 
@@ -1231,6 +1335,7 @@ request means an extra unnecessary database query on each visitor action.
 
 Callback Signature:
 <pre><code>function(&amp;$cacheContent)</code></pre>
+
 - `array` `$cacheContent` Array of cached data. Each piece of data must be mapped by name.
 
 Usages:
@@ -1271,6 +1376,7 @@ Event handlers should add whole translation keys, ie, keys that include the plug
 
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
+
 - `array` `$result` The whole list of client side translation keys.
 
 Usages:
@@ -1315,6 +1421,7 @@ parameter. Plugins can override this logic by subscribing to this event.
 
 Callback Signature:
 <pre><code>function(&amp;$lang)</code></pre>
+
 - `string` `$lang` The language that should be used for the user. Will be initialized to the value of the **language** query parameter.
 
 Usages:
@@ -1330,6 +1437,7 @@ Triggered when a user with insufficient access permissions tries to view some re
 
 Callback Signature:
 <pre><code>function($exception)</code></pre>
+
 - `NoAccessException` `$exception` The exception that was caught.
 
 Usages:
@@ -1349,6 +1457,7 @@ Triggered after a new user is created.
 
 Callback Signature:
 <pre><code>function($userLogin)</code></pre>
+
 - `string` `$userLogin` The new user's login handle.
 
 
@@ -1360,6 +1469,7 @@ deleted. For example, the Dashboard plugin uses this event to remove the user's 
 
 Callback Signature:
 <pre><code>function($userLogin)</code></pre>
+
 - `string` `$userLogin` The login handle of the deleted user.
 
 Usages:
@@ -1374,6 +1484,7 @@ Triggered after an existing user has been updated.
 
 Callback Signature:
 <pre><code>function($userLogin)</code></pre>
+
 - `string` `$userLogin` The user's login handle.
 
 ## View
@@ -1411,6 +1522,7 @@ this event and add visualization class names to the incoming array.
 
 Callback Signature:
 <pre><code>function(&amp;$visualizations)</code></pre>
+
 - `array` `$visualizations` The array of all available visualizations.
 
 Usages:
@@ -1421,7 +1533,7 @@ Usages:
 ### ViewDataTable.configure
 _Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [146](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L146)_
 
-Triggered during ViewDataTable construction. Subscribers should customize
+Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that it is displaying.
 
 Plugins that define their own reports must subscribe to this event in order to
@@ -1441,7 +1553,8 @@ specify how the Piwik UI will display the report.
 
 Callback Signature:
 <pre><code>function($this)</code></pre>
-- `ViewDataTable` `$view` The instance to configure.
+
+- `[ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)` `$view` The instance to configure.
 
 Usages:
 
@@ -1466,6 +1579,7 @@ public function getDefaultTypeViewDataTable(&$defaultViewTypes)
 
 Callback Signature:
 <pre><code>function(&amp;self::$defaultViewTypes)</code></pre>
+
 - `array` `$defaultViewTypes` The array mapping report IDs with visualization IDs.
 
 Usages:
@@ -1482,7 +1596,7 @@ _Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/
 Triggered once when the widget list is first requested. Collects all available widgets.
 
 Subscribe to this event to make your plugin's reports or other controller actions available
-as dashboard widgets. Event handlers should call the WidgetsList::add() method for each
+as dashboard widgets. Event handlers should call the [WidgetsList::add()](/api-reference/Piwik/WidgetsList#add) method for each
 new dashboard widget.
 
 **Example**
