@@ -114,8 +114,8 @@ The abstract class defines the following methods:
 - [`getUrlSparkline()`](#geturlsparkline) &mdash; Returns a URL to a sparkline image for a report served by the current plugin.
 - [`setMinDateView()`](#setmindateview) &mdash; Sets the first date available in the calendar.
 - [`setMaxDateView()`](#setmaxdateview) &mdash; Sets the last date available in the calendar.
-- [`setGeneralVariablesView()`](#setgeneralvariablesview) &mdash; Assigns variables to {@link Piwik\View) instances that display an entire page.
-- [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Assigns a set of generally useful variables to a {@link Piwik\View) instance.
+- [`setGeneralVariablesView()`](#setgeneralvariablesview) &mdash; Assigns variables to [View](/api-reference/Piwik/View) instances that display an entire page.
+- [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance.
 - [`setHostValidationVariablesView()`](#sethostvalidationvariablesview) &mdash; Checks if the current host is valid and sets variables on the given view, including:
 - [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
 - [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current http request to another module/action.
@@ -285,7 +285,7 @@ for a site (which can depend on the timezone of a site).
 <a name="setGeneralVariablesView" id="setGeneralVariablesView"></a>
 ### `setGeneralVariablesView()`
 
-Assigns variables to {@link Piwik\View) instances that display an entire page.
+Assigns variables to [View](/api-reference/Piwik/View) instances that display an entire page.
 
 #### Description
 
@@ -304,7 +304,7 @@ The following variables assigned:
                                            INI config option.
 **topMenu** - The result of `MenuTop::getInstance()->getMenu()`.
 
-As well as the variables set by [setPeriodVariablesView](#setPeriodVariablesView).
+As well as the variables set by [setPeriodVariablesView()](/api-reference/Piwik/Plugin/Controller#setperiodvariablesview).
 
 Will exit on error.
 
@@ -318,7 +318,7 @@ Will exit on error.
 <a name="setBasicVariablesView" id="setBasicVariablesView"></a>
 ### `setBasicVariablesView()`
 
-Assigns a set of generally useful variables to a {@link Piwik\View) instance.
+Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance.
 
 #### Description
 
@@ -337,7 +337,7 @@ The following variables assigned:
 **enableFrames** - The value of the `[General] enable_framed_pages` INI config option. If
                    true, [View::setXFrameOptions](#) is called on the view.
 
-Also calls [setHostValidationVariablesView](#setHostValidationVariablesView).
+Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/Controller#sethostvalidationvariablesview).
 
 #### Signature
 
