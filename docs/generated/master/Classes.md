@@ -36,8 +36,8 @@ This is a complete list of available classes:
 - [`DataTable\Filter\Sort`](Piwik/DataTable/Filter/Sort.md) &mdash; Sorts a DataTable based on the value of a specific column.
 - [`DataTable\Filter\Truncate`](Piwik/DataTable/Filter/Truncate.md) &mdash; Truncates a DataTable by merging all rows after a certain index into a new summary row, unless the count of rows is less than the index.
 - [`DataTable\Map`](Piwik/DataTable/Map.md) &mdash; Stores an array of DataTables indexed by one type of DataTable metadata (such as site ID or period).
-- [`DataTable\Row`](Piwik/DataTable/Row.md) &mdash; This is what a {@link Piwik\DataTable} is composed of.
-- [`DataTable\Simple`](Piwik/DataTable/Simple.md) &mdash; A {@link Piwik\DataTable} where every row has two columns: **label** and **value**.
+- [`DataTable\Row`](Piwik/DataTable/Row.md) &mdash; This is what a [DataTable](/api-reference/Piwik/DataTable) is composed of.
+- [`DataTable\Simple`](Piwik/DataTable/Simple.md) &mdash; A [DataTable](/api-reference/Piwik/DataTable) where every row has two columns: **label** and **value**.
 - [`Date`](Piwik/Date.md) &mdash; Utility class that wraps date/time related PHP functions.
 - [`Db`](Piwik/Db.md) &mdash; Helper class that contains SQL related helper functions.
 - [`Filesystem`](Piwik/Filesystem.md) &mdash; Contains helper functions that involve the filesystem.
@@ -54,7 +54,7 @@ This is a complete list of available classes:
 - [`MetricsFormatter`](Piwik/MetricsFormatter.md) &mdash; Contains helper function that format numerical values in different ways.
 - [`Nonce`](Piwik/Nonce.md) &mdash; Nonce class.
 - [`Notification`](Piwik/Notification.md) &mdash; Describes a UI notification.
-- [`Notification\Manager`](Piwik/Notification/Manager.md) &mdash; Posts and removes UI notifications (see {@link Piwik\Notification} to learn more).
+- [`Notification\Manager`](Piwik/Notification/Manager.md) &mdash; Posts and removes UI notifications (see [Notification](/api-reference/Piwik/Notification) to learn more).
 - [`Option`](Piwik/Option.md) &mdash; Convenient key-value storage for user specified options and temporary data that needs to be persisted beyond one request.
 - [`Period`](Piwik/Period.md) &mdash; Date range representation.
 - [`Period\Range`](Piwik/Period/Range.md) &mdash; Arbitrary date range representation.
@@ -87,6 +87,6 @@ This is a complete list of available classes:
 - [`Version`](Piwik/Version.md) &mdash; Piwik version information.
 - [`View`](Piwik/View.md) &mdash; Encapsulates and manages a [Twig](http://twig.sensiolabs.org/) template.
 - [`ViewDataTable\Config`](Piwik/ViewDataTable/Config.md) &mdash; Contains base display properties for ViewDataTables.
-- [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating {@link Piwik\Plugin\ViewDataTable} instances by ID.
+- [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
 - [`ViewDataTable\RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; TODO
 - [`WidgetsList`](Piwik/WidgetsList.md) &mdash; Manages the global list of reports that can be displayed as dashboard widgets.
