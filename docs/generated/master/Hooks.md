@@ -605,7 +605,7 @@ _Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core
 Triggered when collecting all available menu items that are be displayed on the very top of every page, next to the login/logout links. Subscribe to this event if you want to add one or more items
 to the top menu.
 
-Menu items should be added via the [addEntry()](#addentry) method.
+Menu items should be added via the [addEntry()](/api-reference/Piwik/Menu/MenuTop#addentry) method.
 
 **Example**
 
