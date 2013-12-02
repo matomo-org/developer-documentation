@@ -48,26 +48,18 @@ class ApiReference {
         $menu = array();
 
         $menu[] = array(
-            'title'        => 'Overview',
-            'file'         => 'generated/master/Index',
-            'url'          => static::getUrl('index'),
-            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
-            'callToAction' => 'Browse'
-        );
-
-        $menu[] = array(
             'title'        => 'Classes',
             'file'         => 'generated/master/Classes',
             'url'          => static::getUrl('classes'),
-            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'description'  => 'View reference docs for every Piwik class that plugin developers should use.',
             'callToAction' => 'Browse'
         );
 
         $menu[] = array(
-            'title'        => 'Hooks',
+            'title'        => 'Events',
             'file'         => 'generated/master/Hooks',
             'url'          => static::getUrl('hooks'),
-            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'description'  => 'View reference docs for every event posted by Piwik and its Core Plugins.',
             'callToAction' => 'Browse'
         );
 
@@ -75,7 +67,15 @@ class ApiReference {
             'title'        => 'PHP Piwik Tracker',
             'file'         => 'generated/master/PiwikTracker',
             'url'          => static::getUrl('PHP-Piwik-Tracker'),
-            'description'  => 'Extend Piwik by writing your own plugins or themes. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            'description'  => 'View reference docs for the PHP tracking client.',
+            'callToAction' => 'Browse'
+        );
+
+        $menu[] = array(
+            'title'        => 'Index',
+            'file'         => 'generated/master/Index',
+            'url'          => static::getUrl('index'),
+            'description'  => 'View every class and method in an alphabetized index.',
             'callToAction' => 'Browse'
         );
 
