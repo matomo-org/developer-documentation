@@ -43,7 +43,7 @@ check if the plugin name and method name are correct before modifying the output
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
-- `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a {@link Piwik\DataTable DataTable}.
+- `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a [DataTable](/api-reference/Piwik/DataTable).
 
 - `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The name of the namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
@@ -166,7 +166,7 @@ Triggered directly after an API request is dispatched. This event can be used to
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
-- `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a {@link Piwik\DataTable}.
+- `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a [DataTable](/api-reference/Piwik/DataTable).
 
 - `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The name of the namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
@@ -793,7 +793,7 @@ handle their new report types.
 Callback Signature:
 <pre><code>function(&amp;$reportRenderer, $reportType, $outputType, $report)</code></pre>
 
-- `ReportRenderer` `$reportRenderer` This variable should be set to an instance that extends {@link Piwik\ReportRenderer} by one of the event subscribers.
+- `ReportRenderer` `$reportRenderer` This variable should be set to an instance that extends Piwik\ReportRenderer by one of the event subscribers.
 
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
