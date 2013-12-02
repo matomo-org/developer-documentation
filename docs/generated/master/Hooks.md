@@ -577,7 +577,7 @@ _Defined in [Piwik/Menu/MenuMain](https://github.com/piwik/piwik/blob/master/cor
 Triggered when collecting all available reporting menu items. Subscribe to this event if you
 want to add one or more items to the Piwik reporting menu.
 
-Menu items should be added via the add() method.
+Menu items should be added via the [add()](/api-reference/Piwik/Menu/MenuMain#add) method.
 
 **Example**
 
