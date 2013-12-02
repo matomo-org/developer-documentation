@@ -67,7 +67,7 @@ class
 {% endif %}
 {% if member.name != '__construct' %}{% if (member.hint|length > 1) or member.hintDesc %}
 {% if member.hintDesc %}
-- _Returns:_ {{ member.hintDesc|raw }}
+- _Returns:_ {{ member.hintDesc|inlinelinkparser(class)|raw }}
 {% else %}
 - It can return one of the following values:
 {% endif %}
