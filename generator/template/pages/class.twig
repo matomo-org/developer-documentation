@@ -10,7 +10,7 @@
 {% block content %}
 {% if class.shortdesc %}
 
-{{ class.shortdesc }}
+{{ class.shortdesc|linkparser(class)|raw }}
 {% endif %}
 {% if class.longdesc %}
 
@@ -31,7 +31,7 @@ Constants
 This {{ class_type(class) }} defines the following constants:
 
 {% for constant in class.constants if constant.longdesc %}
-- [`{{ constant.name }}`](#{{ constant.name|lower }}){% if constant.shortdesc %} &mdash; {{ constant.shortdesc|raw }}{% endif %}
+- [`{{ constant.name }}`](#{{ constant.name|lower }}){% if constant.shortdesc %} &mdash; {{ constant.shortdesc|linkparser(class)|raw }}{% endif %}
 
 {% endfor %}
 {% for constant in class.constants if constant.longdesc %}
@@ -51,7 +51,7 @@ Properties
 This {{ class_type(class) }} defines the following properties:
 
 {% for property in class.properties %}
-- [`${{ property.name }}`](#${{ property.name|lower }}){% if property.shortdesc %} &mdash; {{ property.shortdesc|raw }}{% endif %}
+- [`${{ property.name }}`](#${{ property.name|lower }}){% if property.shortdesc %} &mdash; {{ property.shortdesc|linkparser(class)|raw }}{% endif %}
 
 {% endfor %}
 {% for property in class.properties %}
@@ -61,7 +61,7 @@ This {{ class_type(class) }} defines the following properties:
 ### `${{ property.name }}`
 {% if property.shortdesc %}
 
-{{ property.shortdesc|raw }}
+{{ property.shortdesc|linkparser(class)|raw }}
 {% endif %}
 {% if property.longdesc|raw %}
 
@@ -83,7 +83,7 @@ Methods
 The {{ class_type(class) }} defines the following methods:
 
 {% for method in class.methods %}
-- [`{{ method.name }}()`](#{{ method.name|lower }}){% if method.shortdesc %} &mdash; {{ method.shortdesc|raw }}{% endif %}
+- [`{{ method.name }}()`](#{{ method.name|lower }}){% if method.shortdesc %} &mdash; {{ method.shortdesc|linkparser(class)|raw }}{% endif %}
 
 {% endfor %}
 
@@ -93,7 +93,7 @@ The {{ class_type(class) }} defines the following methods:
 ### `{{ method.name }}()`
 {% if method.shortdesc %}
 
-{{ method.shortdesc|raw }}
+{{ method.shortdesc|linkparser(class)|raw }}
 {% endif %}
 {% if method.longdesc %}
 
