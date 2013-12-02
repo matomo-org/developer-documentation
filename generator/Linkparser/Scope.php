@@ -8,15 +8,17 @@
 
 namespace Linkparser;
 
+use Sami\Reflection\ClassReflection;
+
 class Scope {
 
     /**
-     * @var \Sami\Reflection\ClassReflection|null
+     * @var ClassReflection|null
      */
     public $class = null;
 
     /**
-     * @var \Sami\Reflection\ClassReflection[]
+     * @var ClassReflection[]
      */
     public $classes = array();
 

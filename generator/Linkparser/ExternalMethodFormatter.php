@@ -35,11 +35,10 @@ class ExternalMethodFormatter extends ApiReferenceFormatter {
         list($className, $method) = $this->parseLinkToExternalClass($link);
 
         $class      = $this->scope->findClass($className);
-        $methodName = substr($method, 0, strlen($method) -2);
+        $methods    = $class->getMethods(true);
+        $methodName = substr($method, 0, strlen($method) - 2);
 
-        $methodInstance = $class->getMethod($methodName);
-
-        if (empty($methodInstance)) {
+        if (empty($methodName) || !array_key_exists($methodName, $methods)) {
             return;
         }
 

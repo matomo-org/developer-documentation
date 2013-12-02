@@ -30,9 +30,9 @@ class InternalMethodFormatter extends ApiReferenceFormatter {
             return;
         }
 
-        $method = $this->scope->class->getMethod($methodName);
+        $methods = $this->scope->class->getMethods(true);
 
-        if (empty($method)) {
+        if (empty($methodName) || !array_key_exists($methodName, $methods)) {
             return;
         }
 
