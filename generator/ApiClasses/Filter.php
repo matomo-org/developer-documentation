@@ -6,6 +6,8 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
+namespace ApiClasses;
+
 use \Sami\Reflection\ClassReflection;
 use \Sami\Reflection\MethodReflection;
 use \Sami\Reflection\PropertyReflection;
@@ -14,7 +16,7 @@ use \Sami\Reflection\PropertyReflection;
  * Class ApiFilter
  * Accept a class, method or property only if doc block contains a tag "@api".
  */
-class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
+class Filter extends \Sami\Parser\Filter\DefaultFilter {
 
     public function acceptClass(ClassReflection $class)
     {
@@ -96,7 +98,7 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
 
     private function inheritsFromBlacklistedClass(ClassReflection $class)
     {
-        $rc = new ReflectionClass($class->getName());
+        $rc = new \ReflectionClass($class->getName());
 
         if ($rc->isSubclassOf('Symfony\Component\Console\Command\Command')) {
             return true;
@@ -115,7 +117,7 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
 
     private function isAnyMethodAnApi(ClassReflection $class)
     {
-        $rc = new ReflectionClass($class->getName());
+        $rc = new \ReflectionClass($class->getName());
 
         $methods = $rc->getMethods();
         foreach ($methods as $method) {
@@ -131,7 +133,7 @@ class ApiFilter extends \Sami\Parser\Filter\DefaultFilter {
 
     private function isAnyPropertyAnApi(ClassReflection $class)
     {
-        $rc = new ReflectionClass($class->getName());
+        $rc = new \ReflectionClass($class->getName());
 
         $props = $rc->getProperties();
         foreach ($props as $prop) {

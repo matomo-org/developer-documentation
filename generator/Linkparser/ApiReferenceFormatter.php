@@ -17,20 +17,9 @@ abstract class ApiReferenceFormatter extends Formatter {
         return 0 < strpos($link->getDestination(), '::');
     }
 
-    protected function parseClassAndSymbol(Link $link)
+    protected function parseLinkToExternalClass(Link $link)
     {
         return explode('::', $link->getDestination());
-    }
-
-    private function stringEndsWith($haystack, $needle)
-    {
-        if ('' === $needle) {
-            return true;
-        }
-
-        $lastCharacters = substr($haystack, -strlen($needle));
-
-        return $lastCharacters === $needle;
     }
 
     protected function isMethodLink($method)
@@ -44,10 +33,16 @@ abstract class ApiReferenceFormatter extends Formatter {
      */
     protected function getApiClass($className)
     {
-        if (in_array($className, $this->scope->classNames)) {
+        if (array_key_exists($className, $this->scope->classes)) {
+
             return $this->scope->classes[$className];
-        } elseif (in_array($this->scope->namespace . '\\' . $className, $this->scope->classNames)) {
-            return $this->scope->classes[$this->scope->namespace . '\\' . $className];
+        }
+
+        $classWithNamespace = $this->scope->namespace . '\\' . $className;
+
+        if ($this->scope->namespace && array_key_exists($classWithNamespace, $this->scope->classes)) {
+
+            return $this->scope->classes[$classWithNamespace];
         }
     }
 
@@ -64,10 +59,20 @@ abstract class ApiReferenceFormatter extends Formatter {
             return;
         }
 
-        $className = $class->getName();
-
+        $className = $class->getName(); // classname including namespace
         $className = str_replace('\\', '/', $className);
 
         return '/api-reference/' . $className;
+    }
+
+    private function stringEndsWith($haystack, $needle)
+    {
+        if ('' === $needle) {
+            return true;
+        }
+
+        $lastCharacters = substr($haystack, -strlen($needle));
+
+        return $lastCharacters === $needle;
     }
 }

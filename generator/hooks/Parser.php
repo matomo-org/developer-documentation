@@ -1,18 +1,27 @@
 <?php
 
-require 'MyConstantVisitor.php';
-require 'MyHookVisitor.php';
+namespace Hooks;
 
-class Hooks {
+use Sami\Sami;
+use Linkparser\InlineLinkParser;
+use Linkparser\Scope;
+
+class Parser {
 
     /**
-     * @var PHPParser_Parser
+     * @var \PHPParser_Parser
      */
     private $parser;
 
-    public function __construct()
+    /**
+     * @var Sami
+     */
+    private $sami;
+
+    public function __construct($sami)
     {
-        $this->parser = new PHPParser_Parser(new PHPParser_Lexer);
+        $this->sami    = $sami;
+        $this->parser  = new \PHPParser_Parser(new \PHPParser_Lexer);
     }
 
     public function searchForHooksInFile($filename, $phpFile)
@@ -25,7 +34,7 @@ class Hooks {
 
         $stmts = $this->parser->parse($code);
 
-        $traverser = new PHPParser_NodeTraverser();
+        $traverser = new \PHPParser_NodeTraverser();
         $traverser->addVisitor(new MyConstantVisitor());
         $traverser->addVisitor(new MyHookVisitor($filename));
         $hooks = $traverser->traverse($stmts);
@@ -79,7 +88,7 @@ class Hooks {
             }
 
             $className        = get_class($plugin);
-            $reflectionClass  = new ReflectionClass($className);
+            $reflectionClass  = new \ReflectionClass($className);
             $reflectionMethod = $reflectionClass->getMethod($methodName);
 
             $usages[] = array(
@@ -108,12 +117,36 @@ class Hooks {
 
     public function generateDocumentation($viewVariables, $target)
     {
-        $loader = new Twig_Loader_Filesystem(__DIR__ . '/../template');
-        $twig   = new Twig_Environment($loader, array());
-        $filter = new Twig_SimpleFilter('onlyalnum', function ($string) {
+        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../template');
+        $twig   = new \Twig_Environment($loader, array());
+        $filter = new \Twig_SimpleFilter('onlyalnum', function ($string) {
             return preg_replace("/[^a-zA-Z0-9]+/", "", $string);
         });
         $twig->addFilter($filter);
+
+        $sami = $this->sami;
+        $twig->addFilter(new \Twig_SimpleFilter('linkparser', function ($description, $hook) use ($sami) {
+
+            $scope = new Scope();
+            $scope->classes = $sami->offsetGet('project')->getProjectClasses();
+
+            /** @var \Sami\Reflection\ClassReflection|null $class */
+            if (!empty($hook->class) && array_key_exists($hook->class, $scope->classes)) {
+                $scope->class     = $scope->classes[$hook->class];
+                $classArray       = $class->toArray();
+                $scope->namespace = $classArray['namespace'];
+            } elseif (!empty($hook->class)) {
+                $posLastNamespace = strrpos($hook->class, '\\');
+                if (false !== $posLastNamespace) {
+                    $scope->namespace = substr($hook->class, 0, $posLastNamespace);
+                }
+            }
+
+            $linkConverter     = new InlineLinkParser($scope);
+            $parsedDescription = $linkConverter->parse($description);
+
+            return $parsedDescription;
+        }));
 
         $documentation = $twig->render('hooks.twig', $viewVariables);
 

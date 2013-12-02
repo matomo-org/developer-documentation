@@ -10,8 +10,14 @@ namespace Linkparser;
 
 abstract class Formatter {
 
+    /**
+     * @var Scope
+     */
     protected $scope;
 
+    /**
+     * @param Scope $scope
+     */
     public function __construct($scope)
     {
         $this->scope = $scope;

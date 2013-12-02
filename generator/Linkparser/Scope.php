@@ -10,8 +10,18 @@ namespace Linkparser;
 
 class Scope {
 
-    public $class;
-    public $classes;
-    public $classNames;
-    public $namespace;
+    /**
+     * @var \Sami\Reflection\ClassReflection|null
+     */
+    public $class = null;
+
+    /**
+     * @var \Sami\Reflection\ClassReflection[]
+     */
+    public $classes = array();
+
+    /**
+     * @var string|null
+     */
+    public $namespace = null;
 }

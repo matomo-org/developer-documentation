@@ -10,7 +10,14 @@ namespace Linkparser;
 
 class Link {
 
+    /**
+     * @var string
+     */
     private $destination;
+
+    /**
+     * @var string
+     */
     private $description;
 
     public function __construct($link)
@@ -18,24 +25,24 @@ class Link {
         list($this->destination, $this->description) = $this->parseLinkAndDescription($link);
     }
 
-    private function parseLinkAndDescription($link)
+    private function parseLinkAndDescription($destination)
     {
-        $link        = trim($link);
-        $description = $link;
+        $destination = trim($destination);
+        $description = $destination;
 
-        if ($this->containsDescription($link)) {
-            $parts = explode(' ', $link);
+        if ($this->containsDescription($destination)) {
+            $parts = explode(' ', $destination);
 
-            $link        = array_shift($parts);
+            $destination = array_shift($parts);
             $description = implode(' ', $parts);
         }
 
-        return array($link, $description);
+        return array($destination, $description);
     }
 
-    private function containsDescription($link)
+    private function containsDescription($destination)
     {
-        return false !== strpos($link, ' ');
+        return false !== strpos($destination, ' ');
     }
 
     public function getDestination()

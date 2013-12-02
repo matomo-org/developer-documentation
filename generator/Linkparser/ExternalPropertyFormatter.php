@@ -21,9 +21,9 @@ class ExternalPropertyFormatter extends ApiReferenceFormatter {
     {
         if ($this->isLinkToExternalClass($link)) {
 
-            list($className, $property) = $this->parseClassAndSymbol($link);
+            list($className, $property) = $this->parseLinkToExternalClass($link);
 
-            if ($this->isPropertyLink($property) && $this->getLinkToApiClass($className)) {
+            if ($this->isPropertyLink($property) && $this->getApiClass($className)) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ class ExternalPropertyFormatter extends ApiReferenceFormatter {
 
     private function formatExternalProperty(Link $link)
     {
-        list($className, $property) = $this->parseClassAndSymbol($link);
+        list($className, $property) = $this->parseLinkToExternalClass($link);
 
         $class        = $this->getApiClass($className);
         $properties   = $class->getProperties(true);

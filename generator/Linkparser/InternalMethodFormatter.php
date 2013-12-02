@@ -26,6 +26,10 @@ class InternalMethodFormatter extends ApiReferenceFormatter {
     {
         $methodName = substr($link->getDestination(), 0, strlen($link->getDestination()) -2);
 
+        if (empty($this->scope->class)) {
+            return;
+        }
+
         $method = $this->scope->class->getMethod($methodName);
 
         if (empty($method)) {

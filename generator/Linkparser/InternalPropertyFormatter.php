@@ -19,6 +19,10 @@ class InternalPropertyFormatter extends ApiReferenceFormatter {
 
     private function formatInternalProperty(Link $link)
     {
+        if (empty($this->scope->class)) {
+            return;
+        }
+
         $properties   = $this->scope->class->getProperties(true);
         $propertyName = substr($link->getDestination(), 1);
 

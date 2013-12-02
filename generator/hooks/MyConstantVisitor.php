@@ -8,7 +8,9 @@
  * @package Piwik
  */
 
-class MyConstantVisitor extends PHPParser_NodeVisitorAbstract
+namespace Hooks;
+
+class MyConstantVisitor extends \PHPParser_NodeVisitorAbstract
 {
     public static $constants = array();
 
@@ -17,11 +19,11 @@ class MyConstantVisitor extends PHPParser_NodeVisitorAbstract
         self::$constants = array();
     }
 
-    public function leaveNode(PHPParser_Node $node) {
+    public function leaveNode(\PHPParser_Node $node) {
 
-        if ($node instanceof PHPParser_Node_Const) {
+        if ($node instanceof \PHPParser_Node_Const) {
 
-            $prettyPrinter = new PHPParser_PrettyPrinter_Default();
+            $prettyPrinter = new \PHPParser_PrettyPrinter_Default();
 
             static::$constants[$node->name] = $prettyPrinter->prettyPrintExpr($node->value);
         }

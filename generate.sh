@@ -13,11 +13,4 @@ git clean -f -d
 git checkout master
 git pull
 cd ..
-php generator/vendor/tsteur/sami/sami.php update generator/config.php
-cd piwik
-git reset --hard
-git clean -f -d
-git checkout master
-git pull
-cd ..
-php generator/hooks.php
+php generator/generate.php

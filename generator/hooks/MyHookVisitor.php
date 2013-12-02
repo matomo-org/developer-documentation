@@ -8,7 +8,9 @@
  * @package Piwik
  */
 
-class MyHookVisitor extends PHPParser_NodeVisitorAbstract
+namespace Hooks;
+
+class MyHookVisitor extends \PHPParser_NodeVisitorAbstract
 {
     private $events     = array();
     private $classes    = array();
@@ -42,24 +44,24 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
         return $this->namespaces[$len - 1];
     }
 
-    public function enterNode(PHPParser_Node $node)
+    public function enterNode(\PHPParser_Node $node)
     {
-        if ($node instanceof PHPParser_Node_Stmt_Namespace) {
+        if ($node instanceof \PHPParser_Node_Stmt_Namespace) {
 
             if (!empty($node->name->parts[0])) {
                 $this->namespaces[] = implode('/', $node->name->parts);
             }
 
-        } elseif ($node instanceof PHPParser_Node_Stmt_Class) {
+        } elseif ($node instanceof \PHPParser_Node_Stmt_Class) {
 
             $this->classes[] = $node->name;
 
         }
     }
 
-    public function leaveNode(PHPParser_Node $node) {
+    public function leaveNode(\PHPParser_Node $node) {
 
-        if ($node instanceof PHPParser_Node_Expr_StaticCall) {
+        if ($node instanceof \PHPParser_Node_Expr_StaticCall) {
             if (!$node->name || 'postEvent' !== $node->name) {
                 return;
             }
@@ -111,9 +113,9 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
         return $this->events;
     }
 
-    public function getArg(PHPParser_Node_Arg $arg)
+    public function getArg(\PHPParser_Node_Arg $arg)
     {
-        if ($arg->value instanceof PHPParser_Node_Expr_ClassConstFetch) {
+        if ($arg->value instanceof \PHPParser_Node_Expr_ClassConstFetch) {
 
             $constant  = $arg->value;
             $rightPart = $constant->name;
@@ -123,19 +125,19 @@ class MyHookVisitor extends PHPParser_NodeVisitorAbstract
             }
         }
 
-        $prettyPrinter = new PHPParser_PrettyPrinter_Default();
+        $prettyPrinter = new \PHPParser_PrettyPrinter_Default();
 
         return $prettyPrinter->prettyPrintExpr($arg->value);
     }
 
-    private function getDocComment(PHPParser_Node $node)
+    private function getDocComment(\PHPParser_Node $node)
     {
         $docComment = $node->getDocComment();
         if (empty($docComment)) {
             return;
         }
 
-        $docParser = new Sami\Parser\DocBlockParser();
+        $docParser = new \Sami\Parser\DocBlockParser();
         $parsedDoc = $docParser->parse($docComment->getText());
 
         $ignore = $parsedDoc->getTag('ignore');
