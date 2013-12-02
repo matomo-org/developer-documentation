@@ -52,24 +52,26 @@ Please note it is currently not possible to define a file name here. So it is mo
 ### Supported inline links in comments
 
 ```
-{@link Map}  // class within this namespace
+{@link Map}                  // class within this namespace
 {@link Piwik\DataTable\Map}  // full classname
-{@link getKeyName()}   // method within this class
-{@link $myproperty}    // property within this class
-{@link Map::getKeyName()} // method from any class
-{@link Map::$myproperty}  // property from any class
-{@link http://piwik.org}  // http link
-{@link https://piwik.org} // https link
-{@link mailto:test}       // mailto link
+{@link \Exception}           // php internal class
+{@link getKeyName()}         // method within this class
+{@link $myproperty}          // property within this class
+{@link Map::getKeyName()}    // method from any class
+{@link Map::$myproperty}     // property from any class
+{@link http://piwik.org}     // http link
+{@link https://piwik.org}    // https link
+{@link mailto:test}          // mailto link
 &#160;
 &#160;
-{@link Map Description Text}  // class within this namespace
+{@link Map Description Text}                  // class within this namespace
 {@link Piwik\DataTable\Map Description Text}  // full classname
-{@link getKeyName() Description Text}   // method within this class
-{@link $myproperty Description Text}    // property within this class
-{@link Map::getKeyName() Description Text} // method from any class
-{@link Map::$myproperty Description Text}  // property from any class
-{@link http://piwik.org Description Text}  // http link
-{@link https://piwik.org Description Text} // https link
-{@link mailto:test Description Text}       // mailto link
+{@link \Exception Description Text}           // php internal class
+{@link getKeyName() Description Text}         // method within this class
+{@link $myproperty Description Text}          // property within this class
+{@link Map::getKeyName() Description Text}    // method from any class
+{@link Map::$myproperty Description Text}     // property from any class
+{@link http://piwik.org Description Text}     // http link
+{@link https://piwik.org Description Text}    // https link
+{@link mailto:test Description Text}          // mailto link
 ```
