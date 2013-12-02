@@ -183,7 +183,7 @@ Our template will be named **index.twig** since the method it's in is named `'in
 
 Now we'll create our Twig template. In the **templates** subdirectory of your plugin's root directory, add a file named **index.twig**. In the file, add the following code:
 
-    <h1>Real Time Analytics</h1>
+    <h1>Realtime Analytics</h1>
 
     <strong>Hello world!</strong>
 
@@ -229,7 +229,7 @@ TODO image
 
 ### Adding a new report
 
-We've created a plugin and got it to display something in Piwik's UI. Now let's make it show something useful. We're going to create a new report that uses the real time visit data returned by the [Live!](#) plugin and reports on the browsers used.
+We've created a plugin and got it to display something in Piwik's UI. Now let's make it show something useful. We're going to create a new report that uses the realtime visit data returned by the [Live!](#) plugin and reports on the browsers used.
 
 TODO: another Note below
 
@@ -254,7 +254,7 @@ You can see the output of this method if you visit this URL: **http://localhost/
 
 #### Implementing the API method
 
-Our new report will use real time visit data, so the first thing our API method must do is get it. We'll use the **Live.getLastVisitsDetails** method:
+Our new report will use realtime visit data, so the first thing our API method must do is get it. We'll use the **Live.getLastVisitsDetails** method:
 
     public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
     {
@@ -365,7 +365,7 @@ Now that we have a method that outputs a display for the report, we need to embe
 
 And change the **index.twig** template to look like this:
 
-    <h1>Real Time Analytics</h1>
+    <h1>Realtime Analytics</h1>
 
     {{ getLastVisitsByBrowserReport|raw }}
 
@@ -466,7 +466,7 @@ In your plugin descriptor class add the following code:
 
     public static $availableDimensionsForAggregation = array(
         'browser' => 'Browser',
-        'visitIp' => 'IP Address',
+        'visitIp' => 'IP',
         'visitorId' => 'Visitor ID',
         'searches' => 'Number of Site Searches',
         'events' => 'Number of Events',
@@ -560,11 +560,103 @@ Change the **getLastVisitsByBrowser** controller method to the following:
         return $view->render();
     }
 
+#### Rename the report
+
+Finally, we'll rename the report. After all, it can do more than just aggregate the last 100 visits by browser. Rename all occurances of **getLastVisitsByBrowser** with **getLastVisitsByDimension**. Make sure you replace it in the following files:
+
+* API.php
+* Controller.php
+* plugin.js
+* index.twig
+
 ### Internationalizing your plugin
 
-TODO: possible to internationalize a plugin?
+The other improvement we'll make to our plugin is to use Piwik's [internationalization](http://en.wikipedia.org/wiki/Internationalization) system so our plugin can be made available in multiple languages.
 
-### Conclusion
+Internationalization is achieved in Piwik by replacing translated text, like `"Realtime Analaytics"`, with unique identifiers, like `"MyPlugin_RealtimeAnalytics"` called **translation tokens**.
+
+Translation tokens are associated with translated text in multiple JSON files, one for each supported language. In code, the translation tokens are converted into translated text based on the user's selected language.
+
+#### Creating a language file
+
+To internationalize our plugin, first, we'll create an english language file to hold our translated text. In your plugin's root directory, create a subdirectory named **lang**. In that folder, create a file named **en.json** and put the following in it (replace **MyPlugin** with the name of your plugin):
+
+    {
+        "MyPlugin": {
+
+        }
+    }
+
+We're going to move all of the translated text in our plugin to this file.
+
+#### Internationalizing our Twig Template
+
+Translation tokens are translated in templates via the [translate](#) filter. We only use one piece of translated text in our template: `"Realtime Analytics"`. First, we'll add an entry for this in the **en.json** file we just created. We'll use the **RealtimeAnalytics** translation token:
+
+    {
+        "MyPlugin": {
+            "RealtimeAnalytics": "Realtime Analytics"
+        }
+    }
+
+Then replace the text in your template with the following:
+
+    <h1>{{ MyPlugin_RealtimeAnalytics|translate }}</h1>
+
+    {{ getLastVisitsByDimensionReport|raw }}
+
+#### Internationalizing our setting
+
+Now, let's internationalize the text we use in our **Settings** class. First, we'll add entries for the text we use:
+
+    {
+        "MyPlugin": {
+            "RealtimeAnalytics": "Realtime Analytics",
+            "ReportDimensionSettingDescription" : "Choose the dimension to aggregate by"
+        }
+    }
+
+Then we'll use the new translation token in the **createRealtimeReportDimensionSetting** method:
+
+    $setting->description   = \Piwik::translate('MyPlugin_ReportDimensionSettingDescription'); // replace 'MyPlugin'!
+
+We also need to internationalize the names of each possible setting value. We'll do this by using translated text in the `MyPlugin::$availableDimensionsForAggregation` static variable. Of course, we can't call [Piwik::translate](#) when setting a static field, so we'll have to add a new method.
+
+We're not going to add any translation tokens to our **en.json** file this time. This is because the translations already exist for core plugins. Replace the `MyPlugin::$availableDimensionsForAggregation` field with this:
+
+    public static $availableDimensionsForAggregation = array(
+        'browser' => 'UserSettings_ColumnBrowser',
+        'visitIp' => 'General_IP',
+        'visitorId' => 'General_VisitorID',
+        'searches' => 'General_NbSearches',
+        'events' => 'Events_NbEvents',
+        'actions' => 'General_NbActions',
+        'visitDurationPretty' => 'VisitorInterest_ColumnVisitDuration',
+        'country' => 'UserCountry_Country',
+        'region' => 'UserCountry_Region',
+        'city' => 'UserCountry_City',
+        'operatingSystem' => 'UserSettings_ColumnOperatingSystem',
+        'screenType' => 'UserSettings_ColumnTypeOfScreen',
+        'resolution' => 'UserSettings_ColumnResolution'
+
+        // we could add more, but let's not waste time.
+    );
+
+Then, add this method to your plugin's plugin descriptor class:
+
+    public static function getAvailableDimensionsForAggregation()
+    {
+        return array_map(array('Piwik', 'translate'), self::$availableDimensionsForAggregation);
+    }
+
+Finally in the **createRealtimeReportDimensionSetting** method, replace `MyPlugin::$availableDimensionsForAggregation` with `MyPlugin::getAvailableDimensionsForAggregation()`.
+
+#### Internationalizing report column headers
+
+Since we already use translation tokens in the `MyPlugin::$availableDimensionsForAggregation` field, and the column headers are set using the same data, all we have to do is use `MyPlugin::getAvailableDimensionsForAggregation` in the **getLastVisitsByDimension** controller method:
+
+    $columnTranslations = MyPlugin::getAvailableDimensionsForAggregation(); // remember to replace MyPlugin with the name of your plugin
+    $columnLabel = $columnTranslations[$columnToAggregate];
 
 ## What to read next
 
@@ -574,16 +666,13 @@ Ok! You've set up your development environment and created your plugin! Now all 
 
 Based on what you want your plugin to accomplish, here's what you might want to read next:
 
-* **If **
+* If you're interested in **creating new analytics reports**, you may want to read our [All About Analytics Data](#) and [Visualizing Report Data](#) guides.
+* If you're interested in **changing the look and feel of Piwik**, read our [Theming](#) guide.
+* If you're interested in **taking part in core development**, read our [Contributing to Piwik Core](#) guide.
+* If you're interested in **integrating Piwik with another technology**, you might want to read our [All About Tracking](#) guide to learn how to use our Tracking API. You might also want to read our [Piwik's Web API](#) guide to learn about Piwik's Reporting API.
+* If you'd like to **add new console commands**, read our [Piwik on the command line](#) guide.
+* If you want to **use automated testing to ensure your plugin works**, read your [Automated Tests](#) guide.
 
+And **make sure to read our security guide, [Security in Piwik](#)**! We have very high security standards that your plugin or contribution **must** respect.
 
-TODO: make sure the below are in the list directly above this.
-**The Console Tool**
-
-The **console** tool we just used can do more than create a new plugin. If you'd like to know more about what it can do, you can read about it [here](#).
-
-### Plugin Debugging Tools (FIXME: Tools is a bad word...)
-
-**Test Data Generation**
-
-**Logging**
+When you've completed your plugin, you can read our [Distributing your plugin](#) guide to learn how to **share your plugin with other Piwik users**.
