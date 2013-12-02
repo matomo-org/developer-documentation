@@ -226,7 +226,7 @@ locking the table for too long.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$table` (`string`) &mdash; The name of the table to delete from. Must be prefixed (see {@link Piwik\Common::prefixTable()}).
+    - `$table` (`string`) &mdash; The name of the table to delete from. Must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
     - `$where` (`string`) &mdash; The where clause of the query. Must include the WHERE keyword.
     - `$orderBy` (`Piwik\$orderBy`) &mdash; The column to order by and the order by direction, eg, `idvisit ASC`.
     - `$maxRowsPerQuery` (`int`) &mdash; The maximum number of rows to delete per DELETE query.

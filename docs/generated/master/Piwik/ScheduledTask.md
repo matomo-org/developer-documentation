@@ -37,7 +37,7 @@ Constructor.
     - `$objectInstance` (`mixed`) &mdash; The object or class name for the class that contains the method to regularly execute. Usually this will be a [Plugin](#) instance.
     - `$methodName` (`string`) &mdash; The name of the method of `$objectInstance` that will be regularly executed.
     - `$methodParameter` (`mixed`|`null`) &mdash; An optional parameter to pass to the method when executed. Must be convertible to string.
-    - `$scheduledTime` ([`ScheduledTime`](../Piwik/ScheduledTime.md)|`null`) &mdash; A {@link ScheduledTime} instance that describes when the method should be executed and how long before the next execution.
+    - `$scheduledTime` ([`ScheduledTime`](../Piwik/ScheduledTime.md)|`null`) &mdash; A [ScheduledTime](/api-reference/Piwik/ScheduledTime) instance that describes when the method should be executed and how long before the next execution.
     - `$priority` (`int`) &mdash; The priority of the task. Tasks with a higher priority will be executed first. Tasks with low priority will be executed last.
 
 <a name="getobjectinstance" id="getobjectinstance"></a>

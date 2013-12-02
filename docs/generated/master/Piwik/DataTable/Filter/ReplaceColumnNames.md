@@ -42,7 +42,7 @@ Constructor.
 
 - It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will be eventually filtered.
-    - `$mappingToApply` (`array`|`null`) &mdash; The name mapping to apply. Must map old column names with new ones, eg, ``` array('OLD_COLUMN_NAME' => 'NEW_COLUMN NAME', 'OLD_COLUMN_NAME2' => 'NEW_COLUMN NAME2') ``` If null, {@link Piwik\Metrics::$mappingFromIdToName} is used.
+    - `$mappingToApply` (`array`|`null`) &mdash; The name mapping to apply. Must map old column names with new ones, eg, ``` array('OLD_COLUMN_NAME' => 'NEW_COLUMN NAME', 'OLD_COLUMN_NAME2' => 'NEW_COLUMN NAME2') ``` If null, [Metrics::$mappingFromIdToName](/api-reference/Piwik/Metrics#$mappingfromidtoname) is used.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
