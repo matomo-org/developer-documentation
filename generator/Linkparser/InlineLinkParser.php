@@ -19,10 +19,6 @@ class InlineLinkParser {
     private $scope;
 
     /**
-     * If class/namespace of scope is not given, there might be links which cannot be resolved. For instance {@link Map}
-     * because we won't know that we are in namespace `Piwik\DataTable`. Or we cannot resolve {@link $mytest} when we
-     * don't know the current class.
-     *
      * @param Scope $scope
      */
     public function __construct(Scope $scope)
@@ -38,17 +34,8 @@ class InlineLinkParser {
 
         foreach ($matches[0] as $key => $rawLink) {
 
-            $link = new Link($matches[1][$key]);
-
-            $formatter = new ExternalLinkFormatter($this->scope);
-            $formatter->append(new InternalPropertyFormatter($this->scope));
-            $formatter->append(new InternalMethodFormatter($this->scope));
-            $formatter->append(new ExternalPropertyFormatter($this->scope));
-            $formatter->append(new ExternalMethodFormatter($this->scope));
-            $formatter->append(new ApiClassFormatter($this->scope));
-            $formatter->append(new DefaultFormatter($this->scope));
-
-            $linkFormatted = $formatter->format($link);
+            $linkParser    = new LinkParser($this->scope);
+            $linkFormatted = $linkParser->parse($matches[1][$key]);
 
             $comment = str_replace($rawLink, $linkFormatted, $comment);
         }

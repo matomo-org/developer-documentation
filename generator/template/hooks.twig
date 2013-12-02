@@ -17,7 +17,7 @@ This is a complete list of available hooks.
 _Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piwik/blob/{{ versionName }}{{ hook.file }}) in line [{{ hook.line }}](https://github.com/piwik/piwik/blob/{{ versionName }}{{ hook.file }}#L{{ hook.line }})_
 
 {% if hook.comment %}
-{{ hook.comment.shortDesc|linkparser(hook)|raw }}{% if hook.comment.longDesc %} {{ hook.comment.longDesc|linkparser(hook)|raw }}{% endif %}
+{{ hook.comment.shortDesc|inlinelinkparser(hook)|raw }}{% if hook.comment.longDesc %} {{ hook.comment.longDesc|inlinelinkparser(hook)|raw }}{% endif %}
 {% endif %}
 
 {% if hook.arguments %}
@@ -26,7 +26,7 @@ Callback Signature:
 <pre><code>{{ hook.arguments|replace({'array(': 'function('}) }}</code></pre>
 {% if hook.comment and hook.comment.params %}
 {% for param in hook.comment.params %}
-- {% if param[0] and param[0][0] and param[0][0][0] %}`{{ param[0][0][0] }}`{% endif %}{% if param[1] %} `${{ param[1] }}`{% endif %}{% if param[1] %} {{ param[2]|raw }}{% endif %}
+- {% if param[0] and param[0][0] and param[0][0][0] %}`{{ param[0][0][0]|linkparser(hook)|raw }}`{% endif %}{% if param[1] %} `${{ param[1] }}`{% endif %}{% if param[1] %} {{ param[2]|raw }}{% endif %}
 
 {% endfor %}
 {% endif %}

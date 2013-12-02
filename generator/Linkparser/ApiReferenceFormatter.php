@@ -33,6 +33,10 @@ abstract class ApiReferenceFormatter extends Formatter {
      */
     protected function getApiClass($className)
     {
+        if (0 === strpos($className, '\\')) {
+            $className = substr($className, 1);
+        }
+
         if (array_key_exists($className, $this->scope->classes)) {
 
             return $this->scope->classes[$className];

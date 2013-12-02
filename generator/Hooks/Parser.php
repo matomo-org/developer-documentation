@@ -2,6 +2,7 @@
 
 namespace Hooks;
 
+use Linkparser\LinkParser;
 use Sami\Sami;
 use Linkparser\InlineLinkParser;
 use Linkparser\Scope;
@@ -124,23 +125,20 @@ class Parser {
         });
         $twig->addFilter($filter);
 
-        $sami = $this->sami;
-        $twig->addFilter(new \Twig_SimpleFilter('linkparser', function ($description, $hook) use ($sami) {
+        $self = $this;
+        $twig->addFilter(new \Twig_SimpleFilter('linkparser', function ($text, $hook) use ($self) {
 
-            $scope = new Scope();
-            $scope->classes = $sami->offsetGet('project')->getProjectClasses();
+            $scope = $self->generateScope($hook);
 
-            /** @var \Sami\Reflection\ClassReflection|null $class */
-            if (!empty($hook->class) && array_key_exists($hook->class, $scope->classes)) {
-                $scope->class     = $scope->classes[$hook->class];
-                $classArray       = $class->toArray();
-                $scope->namespace = $classArray['namespace'];
-            } elseif (!empty($hook->class)) {
-                $posLastNamespace = strrpos($hook->class, '\\');
-                if (false !== $posLastNamespace) {
-                    $scope->namespace = substr($hook->class, 0, $posLastNamespace);
-                }
-            }
+            $linkConverter = new LinkParser($scope);
+            $parsedText    = $linkConverter->parse($text);
+
+            return $parsedText;
+        }));
+
+        $twig->addFilter(new \Twig_SimpleFilter('inlinelinkparser', function ($description, $hook) use ($self) {
+
+            $scope = $self->generateScope($hook);
 
             $linkConverter     = new InlineLinkParser($scope);
             $parsedDescription = $linkConverter->parse($description);
@@ -151,6 +149,26 @@ class Parser {
         $documentation = $twig->render('hooks.twig', $viewVariables);
 
         file_put_contents($target, $documentation);
+    }
+
+    public function generateScope($hook)
+    {
+        $scope = new Scope();
+        $scope->classes = $this->sami->offsetGet('project')->getProjectClasses();
+
+        /** @var \Sami\Reflection\ClassReflection|null $class */
+        if (!empty($hook->class) && array_key_exists($hook->class, $scope->classes)) {
+            $scope->class     = $scope->classes[$hook->class];
+            $classArray       = $class->toArray();
+            $scope->namespace = $classArray['namespace'];
+        } elseif (!empty($hook->class)) {
+            $posLastNamespace = strrpos($hook->class, '\\');
+            if (false !== $posLastNamespace) {
+                $scope->namespace = substr($hook->class, 0, $posLastNamespace);
+            }
+        }
+
+        return $scope;
     }
 
 }

@@ -15,6 +15,7 @@ use Symfony\Component\Finder\Finder;
 use Sami\Reflection\ClassReflection;
 use Sami\Version\GitVersionCollection;
 use Linkparser\InlineLinkParser;
+use Linkparser\LinkParser;
 use Linkparser\Scope;
 use Hooks\Parser as HooksParser;
 use ApiClasses\Filter as ApiClassFilter;
@@ -46,15 +47,24 @@ try {
         /** @var Twig_Environment $twig */
         $twig = $sami->offsetGet('twig');
 
-        $twig->addFilter(new Twig_SimpleFilter('linkparser', function ($description, ClassReflection $class) use ($sami) {
+        $twig->addFilter(new Twig_SimpleFilter('inlinelinkparser', function ($description, ClassReflection $class) use ($sami) {
             $scope = new Scope();
-            $scope->class      = $class;
-            $scope->classes    = $sami->offsetGet('project')->getProjectClasses();
-            $scope->namespace  = $class->getNamespace();
+            $scope->class     = $class;
+            $scope->classes   = $sami->offsetGet('project')->getProjectClasses();
+            $scope->namespace = $class->getNamespace();
 
             $linkConverter = new InlineLinkParser($scope);
             return $linkConverter->parse($description);
+        }));
 
+        $twig->addFilter(new Twig_SimpleFilter('linkparser', function ($description, ClassReflection $class) use ($sami) {
+            $scope = new Scope();
+            $scope->class     = $class;
+            $scope->classes   = $sami->offsetGet('project')->getProjectClasses();
+            $scope->namespace = $class->getNamespace();
+
+            $linkConverter = new LinkParser($scope);
+            return $linkConverter->parse($description);
         }));
 
         $sami['project']->update();
