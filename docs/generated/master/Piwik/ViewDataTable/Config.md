@@ -897,7 +897,7 @@ Associates multiple translations with metrics.
 
 #### Description
 
-See and {@link addTranslation().
+See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations) and [addTranslation()](/api-reference/Piwik/ViewDataTable/Config#addtranslation).
 
 #### Signature
 

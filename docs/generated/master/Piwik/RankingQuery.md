@@ -145,7 +145,7 @@ limited resulting in several limited result sets.
 
 For example, you can run a query aggregating some data on the log_action table and
 partition by log_action.type with the possible values of Piwik\Tracker\Action::TYPE_PAGE_URL,
-{@link Piwik\Tracker\Action::TYPE_DOWNLOAD.
+Piwik\Tracker\Action::TYPE_OUTLINK, Piwik\Tracker\Action::TYPE_DOWNLOAD.
 The result will be three separate result sets that are aggregated the same ways, but for rows
 where `log_action.type = TYPE_OUTLINK`, for rows where `log_action.type = TYPE_ACTION_URL` and for
 rows `log_action.type = TYPE_DOWNLOAD`.

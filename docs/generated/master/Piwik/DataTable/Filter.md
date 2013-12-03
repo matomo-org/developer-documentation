@@ -17,7 +17,7 @@ Existing filters do things like,
 - etc.
 
 Filters are called with a DataTable instance and extra parameters that are specified
-in and {@link Piwik\DataTable::queueFilter().
+in [DataTable::filter()](/api-reference/Piwik/DataTable#filter) and [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter).
 
 To see examples of Filters look at the existing ones in the Piwik\DataTable\Filter
 namespace.

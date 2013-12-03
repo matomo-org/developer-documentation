@@ -32,7 +32,7 @@ Data can be added to DataTables in three different ways. You can either:
 
 1. create rows one by one and add them through [addRow()](/api-reference/Piwik/DataTable#addrow) then truncate if desired,
 2. create an array of DataTable\Row instances or an array of arrays and add them using
-   or {@link addRowsFromSimpleArray()
+   [addRowsFromArray()](/api-reference/Piwik/DataTable#addrowsfromarray) or [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable#addrowsfromsimplearray)
    then truncate if desired,
 3. or set the maximum number of allowed rows (with [setMaximumAllowedRows()](/api-reference/Piwik/DataTable#setmaximumallowedrows))
    and add rows one by one.
@@ -146,7 +146,7 @@ Constants
 
 This class defines the following constants:
 
-- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when or {@link Piwik\DataTable\Row::sumRow() is called.
+- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [DataTable\Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.
 
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
@@ -159,7 +159,7 @@ This metadata value must be an array that maps column names with valid operation
 - `'min'`: does `min($column1, $column2)`
 - `'sum'`: does `$column1 + $column2`
 
-See and {@link DataTable\Row::sumRow() for more information.
+See [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) and [DataTable\Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) for more information.
 
 Methods
 -------
@@ -1070,7 +1070,7 @@ Creates a new DataTable instance from a serialized DataTable string.
 
 #### Description
 
-See and {@link addRowsFromSerializedArray()
+See [getSerialized()](/api-reference/Piwik/DataTable#getserialized) and [addRowsFromSerializedArray()](/api-reference/Piwik/DataTable#addrowsfromserializedarray)
 for more information on DataTable serialization.
 
 #### Signature

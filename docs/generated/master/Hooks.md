@@ -720,7 +720,7 @@ _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/mast
 
 Triggered shortly before the user is authenticated. This event can be used by plugins that provide their own authentication mechanism
 to make that mechanism available. Subscribers should set the `'auth'` object in
-the to an object that implements the {@link Piwik\Auth interface.
+the Piwik\Registry to an object that implements the Piwik\Auth interface.
 
 **Example**
 

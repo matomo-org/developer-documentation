@@ -116,7 +116,7 @@ Returns the task priority.
 #### Description
 
 The priority will be an integer whose value is
-between and {@link LOW_PRIORITY.
+between HIGH_PRIORITY and LOW_PRIORITY.
 
 #### Signature
 

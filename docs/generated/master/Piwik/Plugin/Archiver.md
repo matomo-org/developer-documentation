@@ -67,7 +67,7 @@ as aggregating data across log tables. Since this method only deals w/ data logg
 aggregating individual log table rows isn't a problem. Doing this for any larger period,
 however, would cause performance issues.
 
-Aggregate log table rows using a instance. Get a {@link Piwik\DataAccess\LogAggregator instance
+Aggregate log table rows using a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance. Get a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance
 using the getLogAggregator() method.
 
 #### Signature
@@ -86,8 +86,8 @@ Implementations of this method should only aggregate existing reports of subperi
 current period. For example, it is more efficient to aggregate reports for each day of a
 week than to aggregate each log entry of the week.
 
-Use and {@link Piwik\ArchiveProcessor::aggregateDataTableRecords()
-to aggregate archived reports. Get the instance using the {@link getProcessor().
+Use [ArchiveProcessor::aggregateNumericMetrics()](/api-reference/Piwik/ArchiveProcessor#aggregatenumericmetrics) and [ArchiveProcessor::aggregateDataTableRecords()](/api-reference/Piwik/ArchiveProcessor#aggregatedatatablerecords)
+to aggregate archived reports. Get the [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance using the getProcessor().
 
 #### Signature
 
