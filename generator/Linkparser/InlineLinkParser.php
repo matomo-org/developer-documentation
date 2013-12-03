@@ -25,7 +25,7 @@ class InlineLinkParser {
 
     public function parse($comment)
     {
-        if (preg_match_all('/{\@link(.*)}/', $comment, $matches)) {
+        if (preg_match_all('/{\@link(.*?)}/', $comment, $matches)) {
 
             foreach ($matches[0] as $key => $rawLink) {
 
