@@ -13,8 +13,13 @@ class DefaultFormatter extends ApiReferenceFormatter {
     public function formatting(Link $link)
     {
         $description = $link->getDescription();
-        $description = str_replace('_', '\_', $description);
+        $description = $this->makeSureDescriptionGetsNotEmphasizedAccidentally($description);
 
         return $description;
+    }
+
+    private function makeSureDescriptionGetsNotEmphasizedAccidentally($description)
+    {
+        return str_replace('_', '\_', $description);
     }
 }
