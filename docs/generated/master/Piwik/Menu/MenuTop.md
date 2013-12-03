@@ -8,7 +8,7 @@ Contains menu entries for the Top menu (the menu at the very top of the page).
 Description
 -----------
 
-Plugins can subscribe to the [Menu.Top.addItems](#) event to add new pages to
+Plugins can subscribe to the {@hook Menu.Top.addItems} event to add new pages to
 the top menu.
 
 **Example**
