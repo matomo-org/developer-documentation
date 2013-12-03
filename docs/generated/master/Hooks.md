@@ -287,7 +287,7 @@ custom error message.
 Callback Signature:
 <pre><code>function($exception)</code></pre>
 
-- `$exception`
+- `[Exception](http://php.net/class.Exception)` `$exception` The exception thrown from creating and testing the database connection.
 
 Usages:
 
@@ -1052,9 +1052,9 @@ It can be used to modify the data for a website, such as decorate its name or ch
 Callback Signature:
 <pre><code>function($idSite, &amp;$infoSite)</code></pre>
 
-- `$idSite`
+- `int` `$idSite` Website ID
 
-- `$infoSite`
+- `array` `$infoSite` Website information array
 
 ## SitesManager
 
