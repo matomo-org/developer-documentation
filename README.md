@@ -49,7 +49,14 @@ Works similar as adding a new guide except that you have to make the changes in 
 Works similar as adding a new guide except that you have to make the changes in the file [app/helpers/Home.php](app/helpers/Home.php).
 Please note it is currently not possible to define a file name here. So it is more or less only possible to change existing entries or to add new teasers to external links.
 
-### Supported inline links in comments
+### Supported inline tags in comments
+
+
+```
+{@hook Request.dispatch}                    // link to Request.dispatch hook
+{@hook Request.dispatch description text}   // link to Request.dispatch hook with different link text
+{@hook # description}                       // link to hooks page
+```
 
 ```
 {@link Map}                  // class within this namespace
