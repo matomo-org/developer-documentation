@@ -9,6 +9,7 @@
 namespace Linkparser;
 
 use Sami\Reflection\ClassReflection;
+use Sami\Reflection\ConstantReflection;
 
 class Scope {
 

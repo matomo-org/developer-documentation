@@ -30,6 +30,18 @@ abstract class ApiReferenceFormatter extends Formatter {
         return (0 === strpos($property, '$'));
     }
 
+    protected function isConstantLink($constant)
+    {
+        if (empty($constant)
+            || $this->isPropertyLink($constant)
+            || $this->isMethodLink($constant)) {
+
+            return false;
+        }
+
+        return $constant === strtoupper($constant);
+    }
+
     protected function getLinkToApiClass($className)
     {
         $class = $this->scope->findClass($className);

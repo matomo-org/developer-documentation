@@ -24,13 +24,12 @@ class InternalMethodFormatter extends ApiReferenceFormatter {
 
     private function formatInternalMethod(Link $link)
     {
-        $methodName = substr($link->getDestination(), 0, strlen($link->getDestination()) -2);
-
         if (empty($this->scope->class)) {
             return;
         }
 
-        $methods = $this->scope->class->getMethods(true);
+        $methodName = substr($link->getDestination(), 0, strlen($link->getDestination()) - 2);
+        $methods    = $this->scope->class->getMethods(true);
 
         if (empty($methodName) || !array_key_exists($methodName, $methods)) {
             return;
