@@ -87,7 +87,7 @@ current period. For example, it is more efficient to aggregate reports for each 
 week than to aggregate each log entry of the week.
 
 Use and {@link Piwik\ArchiveProcessor::aggregateDataTableRecords()
-to aggregate archived reports. Get the [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance using the [getProcessor](#getProcessor).
+to aggregate archived reports. Get the instance using the {@link getProcessor().
 
 #### Signature
 

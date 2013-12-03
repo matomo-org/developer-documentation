@@ -8,7 +8,7 @@ Describes the interval on which a scheduled task is executed.
 Description
 -----------
 
-Use the [factory](#factory) method
+Use the [factory()](/api-reference/Piwik/ScheduledTime#factory) method
 to create ScheduledTime instances.
 
 Methods

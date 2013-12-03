@@ -55,7 +55,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$limit` (`int`|`Piwik\false`) &mdash; The result row limit. See [setLimit](#setLimit).
+    - `$limit` (`int`|`Piwik\false`) &mdash; The result row limit. See [setLimit()](/api-reference/Piwik/RankingQuery#setlimit).
 
 <a name="setlimit" id="setlimit"></a>
 <a name="setLimit" id="setLimit"></a>
@@ -120,7 +120,7 @@ Sets a column that will be used to filter the result into two categories.
 
 Rows where this column has a value > 0 will be removed from the result and put
 into another array. Both the result and the array of excluded rows are returned
-by [execute](#execute).
+by [execute()](/api-reference/Piwik/RankingQuery#execute).
 
 #### Signature
 
@@ -144,10 +144,11 @@ that equals a possible value). Each of these new sets of rows will be individual
 limited resulting in several limited result sets.
 
 For example, you can run a query aggregating some data on the log_action table and
-partition by log_action.type with the possible values of [TYPE_ACTION_URL](#),
-[TYPE_OUTLINK](#), [TYPE_DOWNLOAD](#). The result will be three separate result sets
-that are aggregated the same ways, but for rows where `log_action.type = TYPE_OUTLINK`,
-for rows where `log_action.type = TYPE_ACTION_URL` and for rows `log_action.type = TYPE_DOWNLOAD`.
+partition by log_action.type with the possible values of Piwik\Tracker\Action::TYPE_PAGE_URL,
+{@link Piwik\Tracker\Action::TYPE_DOWNLOAD.
+The result will be three separate result sets that are aggregated the same ways, but for rows
+where `log_action.type = TYPE_OUTLINK`, for rows where `log_action.type = TYPE_ACTION_URL` and for
+rows `log_action.type = TYPE_DOWNLOAD`.
 
 #### Signature
 

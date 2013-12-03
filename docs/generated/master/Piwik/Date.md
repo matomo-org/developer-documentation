@@ -42,12 +42,12 @@ The class defines the following methods:
 - [`isLater()`](#islater) &mdash; Returns true if the current date is older than the given `$date`.
 - [`isEarlier()`](#isearlier) &mdash; Returns true if the current date is earlier than the given `$date`.
 - [`toString()`](#tostring) &mdash; Converts this date to the requested string format.
-- [`__toString()`](#__tostring) &mdash; See [toString](#toString).
+- [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Date#tostring).
 - [`compareWeek()`](#compareweek) &mdash; Performs three-way comparison of the week of the current date against the given `$date`'s week.
 - [`compareMonth()`](#comparemonth) &mdash; Performs three-way comparison of the month of the current date against the given `$date`'s month.
 - [`compareYear()`](#compareyear) &mdash; Performs three-way comparison of the month of the current date against the given `$date`'s year.
 - [`isToday()`](#istoday) &mdash; Returns true if current date is today.
-- [`now()`](#now) &mdash; Returns a date object set to now in UTC (same as [today](#today), except that the time is also set).
+- [`now()`](#now) &mdash; Returns a date object set to now in UTC (same as [today()](/api-reference/Piwik/Date#today), except that the time is also set).
 - [`today()`](#today) &mdash; Returns a date object set to today at midnight in UTC.
 - [`yesterday()`](#yesterday) &mdash; Returns a date object set to yesterday at midnight in UTC.
 - [`yesterdaySameTime()`](#yesterdaysametime) &mdash; Returns a date object set to yesterday with the current time of day in UTC.
@@ -137,7 +137,7 @@ Returns a new date object with the same timestamp as `$this` but with a new time
 
 #### Description
 
-See [getTimestamp](#getTimestamp) to see how the timezone is used.
+See [getTimestamp()](/api-reference/Piwik/Date#gettimestamp) to see how the timezone is used.
 
 #### Signature
 
@@ -224,7 +224,7 @@ for the list of format strings.
 <a name="__toString" id="__toString"></a>
 ### `__toString()`
 
-See [toString](#toString).
+See [toString()](/api-reference/Piwik/Date#tostring).
 
 #### Signature
 
@@ -284,7 +284,7 @@ Returns true if current date is today.
 <a name="now" id="now"></a>
 ### `now()`
 
-Returns a date object set to now in UTC (same as [today](#today), except that the time is also set).
+Returns a date object set to now in UTC (same as [today()](/api-reference/Piwik/Date#today), except that the time is also set).
 
 #### Signature
 
@@ -471,7 +471,7 @@ Adds N number of hours to a UNIX timestamp and returns the result.
 #### Description
 
 Using
-this static function instead of [addHour](#addHour) will be faster since a
+this static function instead of [addHour()](/api-reference/Piwik/Date#addhour) will be faster since a
 Date instance does not have to be created.
 
 #### Signature

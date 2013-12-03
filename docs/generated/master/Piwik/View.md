@@ -161,7 +161,7 @@ Renders the current view.
 #### Description
 
 Also sends the stored 'Content-Type' HTML header.
-See [setContentType](#setContentType).
+See [setContentType()](/api-reference/Piwik/View#setcontenttype).
 
 #### Signature
 

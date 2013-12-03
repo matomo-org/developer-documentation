@@ -66,7 +66,7 @@ Set the keyName.
 
 #### Description
 
-See [getKeyName](#getKeyName).
+See [getKeyName()](/api-reference/Piwik/DataTable/Map#getkeyname).
 
 #### Signature
 

@@ -13,16 +13,15 @@ for one or more periods and one optional segment.
 
 If archive data is not found, this class will initiate the archiving process. [1](#footnote-1)
 
-**Archive** instances must be created using the [build](#build) factory method;
+**Archive** instances must be created using the [build()](/api-reference/Piwik/Archive#build) factory method;
 they cannot be constructed.
 
-You can search for metrics (such as `nb_visits`) using the [getNumeric](#getNumeric) and
-[getDataTableFromNumeric](#getDataTableFromNumeric) methods. You can search for
-reports using the [getBlob](#getBlob), [getDataTable](#getDataTable) and
-[getDataTableExpanded](#getDataTableExpanded) methods.
+You can search for metrics (such as `nb_visits`) using the [getNumeric()](/api-reference/Piwik/Archive#getnumeric) and
+[getDataTableFromNumeric()](/api-reference/Piwik/Archive#getdatatablefromnumeric) methods. You can search for
+reports using the {@link getDataTable()} and {@link getDataTableExpanded() methods.
 
 If you're creating an API that returns report data, you may want to use the
-[getDataTableFromArchive](#getDataTableFromArchive) helper function.
+[getDataTableFromArchive()](/api-reference/Piwik/Archive#getdatatablefromarchive) helper function.
 
 ### Learn more
 
@@ -122,16 +121,16 @@ This method uses data that is found in query parameters, so the parameters to th
 function can all be strings.
 
 If you want to create an Archive instance with an array of Period instances, use
-[Archive::factory](#factory).
+[Archive::factory()](/api-reference/Piwik/Archive#factory).
 
 #### Signature
 
 - It accepts the following parameter(s):
     - `$idSites` (`string`|`int`|`array`) &mdash; A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.
     - `$period` (`string`) &mdash; 'day', `'week'`, `'month'`, `'year'` or `'range'`
-    - `$strDate` ([`Date`](../Piwik/Date.md)|`string`) &mdash; 'YYYY-MM-DD', magic keywords (ie, 'today'; @see Date::factory()) or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').
-    - `$segment` (`Piwik\false`|`string`) &mdash; Segment definition or false if no segment should be used. @see Piwik\Segment
-    - `$_restrictSitesToLogin` (`Piwik\false`|`string`) &mdash; Used only when running as a scheduled task.
+    - `$strDate` ([`Date`](../Piwik/Date.md)|`string`) &mdash; 'YYYY-MM-DD', magic keywords (ie, 'today'; [Date::factory()](/api-reference/Piwik/Date#factory) or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').
+    - `$segment` (`bool`|`Piwik\false`|`string`) &mdash; Segment definition or false if no segment should be used. [Segment](/api-reference/Piwik/Segment)
+    - `$_restrictSitesToLogin` (`bool`|`Piwik\false`|`string`) &mdash; Used only when running as a scheduled task.
 - It returns a [`Archive`](../Piwik/Archive.md) value.
 
 <a name="factory" id="factory"></a>
@@ -143,10 +142,10 @@ Returns a new Archive instance that will query archive data for the given set of
 #### Description
 
 This method uses an array of Period instances and a Segment instance, instead of strings
-like [Archive::build](#build).
+like [build()](/api-reference/Piwik/Archive#build).
 
 If you want to create an Archive instance using data found in query parameters,
-use [Archive::build](#build).
+use [build()](/api-reference/Piwik/Archive#build).
 
 #### Signature
 
@@ -166,10 +165,10 @@ Queries and returns metric data in an array.
 
 #### Description
 
-If multiple sites were requested in [build](#build) or [factory](#factory) the result will
+If multiple sites were requested in or {@link factory() the result will
 be indexed by site ID.
 
-If multiple periods were requested in [build](#build) or [factory](#factory) the result will
+If multiple periods were requested in or {@link factory() the result will
 be indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -194,10 +193,10 @@ Reports are stored in blobs as serialized arrays of DataTable\Row instances, but
 data can technically be anything. In other words, you can store whatever you want
 as archive data blobs.
 
-If multiple sites were requested in [build](#build) or [factory](#factory) the result will
+If multiple sites were requested in or {@link factory() the result will
 be indexed by site ID.
 
-If multiple periods were requested in [build](#build) or [factory](#factory) the result will
+If multiple periods were requested in or {@link factory() the result will
 be indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -219,10 +218,10 @@ Queries and returns metric data in a DataTable instance.
 
 #### Description
 
-If multiple sites were requested in [build](#build) or [factory](#factory) the result will
+If multiple sites were requested in or {@link factory() the result will
 be a DataTable\Map that is indexed by site ID.
 
-If multiple periods were requested in [build](#build) or [factory](#factory) the result will
+If multiple periods were requested in or {@link factory() the result will
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -251,10 +250,10 @@ Queries and returns a single report as a DataTable instance.
 This method will query blob data that is a serialized array of of DataTable\Row's and
 unserialize it.
 
-If multiple sites were requested in [build](#build) or [factory](#factory) the result will
+If multiple sites were requested in or {@link factory() the result will
 be a DataTable\Map that is indexed by site ID.
 
-If multiple periods were requested in [build](#build) or [factory](#factory) the result will
+If multiple periods were requested in or {@link factory() the result will
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -278,10 +277,10 @@ Queries and returns one report with all of its subtables loaded.
 
 #### Description
 
-If multiple sites were requested in [build](#build) or [factory](#factory) the result will
+If multiple sites were requested in or {@link factory() the result will
 be a DataTable\Map that is indexed by site ID.
 
-If multiple periods were requested in [build](#build) or [factory](#factory) the result will
+If multiple periods were requested in or {@link factory() the result will
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -323,14 +322,14 @@ API methods can use this method to reduce code redundancy.
 
 - It accepts the following parameter(s):
     - `$name` (`string`) &mdash; The name of the report to return.
-    - `$idSite` (`int`|`string`|`array`) &mdash; @see [build](#build)
-    - `$period` (`string`) &mdash; @see [build](#build)
-    - `$date` (`string`) &mdash; @see [build](#build)
-    - `$segment` (`string`) &mdash; @see [build](#build)
-    - `$expanded` (`bool`) &mdash; If true, loads all subtables. @see [getDataTableExpanded](#getDataTableExpanded)
-    - `$idSubtable` (`int`|`null`) &mdash; @see [getDataTableExpanded](#getDataTableExpanded)
-    - `$depth` (`int`|`null`) &mdash; @see [getDataTableExpanded](#getDataTableExpanded)
-- _Returns:_ @see [getDataTable](#getDataTable) and [getDataTableExpanded](#getDataTableExpanded) for more information
+    - `$idSite` (`int`|`string`|`array`) &mdash; @see [build()](/api-reference/Piwik/Archive#build)
+    - `$period` (`string`) &mdash; @see [build()](/api-reference/Piwik/Archive#build)
+    - `$date` (`string`) &mdash; @see [build()](/api-reference/Piwik/Archive#build)
+    - `$segment` (`string`) &mdash; @see [build()](/api-reference/Piwik/Archive#build)
+    - `$expanded` (`bool`) &mdash; If true, loads all subtables. See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
+    - `$idSubtable` (`int`|`null`) &mdash; See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
+    - `$depth` (`int`|`null`) &mdash; See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
+- _Returns:_ See and {@link getDataTableExpanded() for more information
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)
 

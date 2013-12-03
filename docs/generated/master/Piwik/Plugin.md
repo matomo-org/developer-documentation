@@ -162,10 +162,10 @@ Uninstalls the plugins.
 #### Description
 
 Derived classes should implement this class if the changes
-made in [install](#install) should be undone during uninstallation.
+made in [install()](/api-reference/Piwik/Plugin#install) should be undone during uninstallation.
 
-In most cases, if you have an [install](#install) method, you should provide 
-an [uninstall](#uninstall) method.
+In most cases, if you have an [install()](/api-reference/Piwik/Plugin#install) method, you should provide
+an [uninstall()](/api-reference/Piwik/Plugin#uninstall) method.
 
 #### Signature
 

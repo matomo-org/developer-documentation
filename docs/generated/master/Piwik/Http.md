@@ -15,7 +15,7 @@ Methods
 
 The class defines the following methods:
 
-- [`getTransportMethod()`](#gettransportmethod) &mdash; Returns the "best" available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
+- [`getTransportMethod()`](#gettransportmethod) &mdash; Returns the "best" available transport method for [sendHttpRequest()](/api-reference/Piwik/Http#sendhttprequest) calls.
 - [`sendHttpRequest()`](#sendhttprequest) &mdash; Sends an HTTP request using best available transport method.
 - [`downloadChunk()`](#downloadchunk) &mdash; Downloads the next chunk of a specific file.
 - [`fetchRemoteFile()`](#fetchremotefile) &mdash; Fetches a file located at `$url` and saves it to `$destinationPath`.
@@ -24,7 +24,7 @@ The class defines the following methods:
 <a name="getTransportMethod" id="getTransportMethod"></a>
 ### `getTransportMethod()`
 
-Returns the "best" available transport method for [sendHttpRequest()](#sendHttpRequest) calls.
+Returns the "best" available transport method for [sendHttpRequest()](/api-reference/Piwik/Http#sendhttprequest) calls.
 
 #### Signature
 

@@ -766,7 +766,7 @@ Usages:
 - [ScheduledReports.validateReportParameters](#scheduledreportsvalidatereportparameters)
 
 ### ScheduledReports.allowMultipleReports
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [776](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L776)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [775](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L775)_
 
 Triggered when we're determining if a scheduled report backend can handle sending multiple Piwik reports in one scheduled report or not. Plugins that provide their own scheduled reports backend should use this
 event to specify whether their backend can send more than one Piwik report
@@ -807,7 +807,7 @@ Usages:
 
 
 ### ScheduledReports.getReportFormats
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [822](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L822)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [821](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L821)_
 
 Triggered when gathering all available scheduled report formats. Plugins that provide their own scheduled report format should use
 this event to make their format available.
@@ -823,7 +823,7 @@ Usages:
 
 
 ### ScheduledReports.getReportMetadata
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [748](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L748)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [747](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L747)_
 
 Triggered when gathering the list of Piwik reports that can be used with a certain scheduled reports backend. Plugins that provide their own scheduled reports backend should use this
 event to list the Piwik reports that their backend supports.
@@ -861,7 +861,7 @@ Usages:
 
 
 ### ScheduledReports.getReportRecipients
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [853](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L853)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [852](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L852)_
 
 Triggered when getting the list of recipients of a scheduled report. Plugins that provide their own scheduled report backend should use this event
 so the list of recipients can be extracted from their backend's specific report
@@ -882,7 +882,7 @@ Usages:
 
 
 ### ScheduledReports.getReportTypes
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [800](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L800)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [799](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L799)_
 
 Triggered when gathering all available scheduled report backend types. Plugins that provide their own scheduled reports backend should use this
 event to make their backend available.
@@ -954,11 +954,10 @@ Usages:
 
 
 ### ScheduledReports.validateReportParameters
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [631](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L631)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [630](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L630)_
 
 Triggered when validating the parameters for a scheduled report. Plugins that provide their own scheduled reports backend should use this
-event to validate the custom parameters defined with
-[ScheduledReports.getReportParameters](#ScheduledReports.getReportParameters).
+event to validate the custom parameters defined with ScheduledReports::getReportParameters().
 
 Callback Signature:
 <pre><code>function(&amp;$parameters, $reportType)</code></pre>

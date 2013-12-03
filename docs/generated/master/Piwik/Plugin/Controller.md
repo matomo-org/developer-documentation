@@ -110,7 +110,7 @@ The abstract class defines the following methods:
 - [`getDefaultAction()`](#getdefaultaction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
 - [`renderView()`](#renderview) &mdash; A helper method that renders a view either to the screen or to a string.
 - [`getLastUnitGraph()`](#getlastunitgraph) &mdash; Returns a ViewDataTable object that will render a jqPlot evolution graph for the last30 days/weeks/etc.
-- [`getLastUnitGraphAcrossPlugins()`](#getlastunitgraphacrossplugins) &mdash; Same as [getLastUnitGraph](#getLastUnitGraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
+- [`getLastUnitGraphAcrossPlugins()`](#getlastunitgraphacrossplugins) &mdash; Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
 - [`getUrlSparkline()`](#geturlsparkline) &mdash; Returns a URL to a sparkline image for a report served by the current plugin.
 - [`setMinDateView()`](#setmindateview) &mdash; Sets the first date available in the calendar.
 - [`setMaxDateView()`](#setmaxdateview) &mdash; Sets the last date available in the calendar.
@@ -215,7 +215,7 @@ of the current period, relative to the current date.
 <a name="getLastUnitGraphAcrossPlugins" id="getLastUnitGraphAcrossPlugins"></a>
 ### `getLastUnitGraphAcrossPlugins()`
 
-Same as [getLastUnitGraph](#getLastUnitGraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
+Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
 
 #### Signature
 
@@ -335,7 +335,7 @@ The following variables assigned:
 **logoSVG** - The SVG logo URL to use.
 **hasSVGLogo** - True if there is a SVG logo, false if otherwise.
 **enableFrames** - The value of the `[General] enable_framed_pages` INI config option. If
-                   true, [View::setXFrameOptions](#) is called on the view.
+                   true, [View::setXFrameOptions()](/api-reference/Piwik/View#setxframeoptions) is called on the view.
 
 Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/Controller#sethostvalidationvariablesview).
 

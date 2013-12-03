@@ -67,7 +67,7 @@ Adds the processed metrics.
 
 #### Description
 
-See [AddColumnsProcessedMetrics](#AddColumnsProcessedMetrics) for
+See [AddColumnsProcessedMetrics](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetrics) for
 more information.
 
 #### Signature

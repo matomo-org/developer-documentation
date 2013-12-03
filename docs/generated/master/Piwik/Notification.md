@@ -55,7 +55,7 @@ This class defines the following constants:
 _Note: persistent notifications always have a close
 icon._
 
-See [flags](#flags).
+See [$flags](/api-reference/Piwik/Notification#$flags).
 
 <a name="type_persistent" id="type_persistent"></a>
 <a name="TYPE_PERSISTENT" id="TYPE_PERSISTENT"></a>

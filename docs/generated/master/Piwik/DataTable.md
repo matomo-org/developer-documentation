@@ -14,7 +14,7 @@ Description
 DataTables consist of rows and each row consists of columns. A column value can be
 be numeric, a string or an array.
 
-Every row has an ID. The ID is either the index of the row or [ID_SUMMARY_ROW](#ID_SUMMARY_ROW).
+Every row has an ID. The ID is either the index of the row or ID_SUMMARY_ROW.
 
 DataTables are hierarchical data structures. Each row can also contain an additional
 nested sub-DataTable (commonly referred to as a 'subtable').
@@ -30,11 +30,11 @@ always at the end of the DataTable.
 
 Data can be added to DataTables in three different ways. You can either:
 
-1. create rows one by one and add them through [addRow](#addRow) then truncate if desired,
+1. create rows one by one and add them through [addRow()](/api-reference/Piwik/DataTable#addrow) then truncate if desired,
 2. create an array of DataTable\Row instances or an array of arrays and add them using
-   [addRowsFromArray](#addRowsFromArray) or [addRowsFromSimpleArray](#addRowsFromSimpleArray)
+   or {@link addRowsFromSimpleArray()
    then truncate if desired,
-3. or set the maximum number of allowed rows (with [setMaximumAllowedRows](#setMaximumAllowedRows))
+3. or set the maximum number of allowed rows (with [setMaximumAllowedRows()](/api-reference/Piwik/DataTable#setmaximumallowedrows))
    and add rows one by one.
 
 If you want to eventually truncate your data (standard practice for all Piwik plugins),
@@ -269,7 +269,7 @@ Returns the name of the column this table was sorted by (if any).
 
 #### Description
 
-See [sort](#sort).
+See [sort()](/api-reference/Piwik/DataTable#sort).
 
 #### Signature
 
@@ -285,7 +285,7 @@ Enables recursive sorting.
 
 #### Description
 
-If this method is called [sort](#sort) will also sort all
+If this method is called [sort()](/api-reference/Piwik/DataTable#sort) will also sort all
 subtables.
 
 #### Signature
@@ -300,7 +300,7 @@ Enables recursive filtering.
 
 #### Description
 
-If this method is called then the [filter](#filter) method
+If this method is called then the [filter()](/api-reference/Piwik/DataTable#filter) method
 will apply filters to every subtable in addition to this instance.
 
 #### Signature
@@ -315,7 +315,7 @@ Applies filter to this datatable.
 
 #### Description
 
-If [enableRecursiveFilters](#enableRecursiveFilters) was called, the filter will be applied
+If [enableRecursiveFilters()](/api-reference/Piwik/DataTable#enablerecursivefilters) was called, the filter will be applied
 to all subtables as well.
 
 #### Signature
@@ -334,7 +334,7 @@ Adds a filter and a list of parameters to the list of queued filters.
 #### Description
 
 These filters will be
-executed when [applyQueuedFilters](#applyQueuedFilters) is called.
+executed when [applyQueuedFilters()](/api-reference/Piwik/DataTable#applyqueuedfilters) is called.
 
 Filters that prettify the output or don't need the full set of rows should be queued. This
 way they will be run after the table is truncated which will result in better performance.
@@ -354,7 +354,7 @@ Applies all filters that were previously queued to the table.
 
 #### Description
 
-See [queueFilter](#queueFilter)
+See [queueFilter()](/api-reference/Piwik/DataTable#queuefilter)
 for more information.
 
 #### Signature
@@ -376,7 +376,7 @@ If the subtables for this table are loaded, they will be summed as well.
 
 Rows are summed together by summing individual columns. By default columns are summed by
 adding one column value to another. Some columns cannot be aggregated this way. In these
-cases, the [COLUMN_AGGREGATION_OPS_METADATA_NAME](#COLUMN_AGGREGATION_OPS_METADATA_NAME)
+cases, the [COLUMN_AGGREGATION_OPS_METADATA_NAME](/api-reference/Piwik/DataTable#piwik\datatable::column_aggregation_ops_metadata_name)
 metadata can be used to specify a different type of operation.
 
 #### Signature
@@ -442,7 +442,7 @@ Returns a row by ID.
 
 #### Description
 
-The ID is either the index of the row or [ID_SUMMARY_ROW](#ID_SUMMARY_ROW).
+The ID is either the index of the row or ID_SUMMARY_ROW.
 
 #### Signature
 
@@ -474,7 +474,7 @@ Adds a row to this table.
 
 #### Description
 
-If [setMaximumAllowedRows](#setMaximumAllowedRows) was called and the current row count is 
+If [setMaximumAllowedRows()](/api-reference/Piwik/DataTable#setmaximumallowedrows) was called and the current row count is
 at the maximum, the new row will be summed to the summary row. If there is no summary row,
 this row is set as the summary row.
 
@@ -831,12 +831,12 @@ Adds a set of rows from a serialized DataTable string.
 
 #### Description
 
-See [serialize](#serialize).
+See serialize().
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$stringSerialized` (`string`) &mdash; A serialized DataTable string in the format of a string in the array returned by [serialize](#serialize). This function will successfully load DataTables serialized by Piwik 1.X.
+    - `$stringSerialized` (`string`) &mdash; A serialized DataTable string in the format of a string in the array returned by serialize(). This function will successfully load DataTables serialized by Piwik 1.X.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if `$stringSerialized` is invalid.
@@ -1054,7 +1054,7 @@ Returns a new DataTable created with data from a 'simple' array.
 
 #### Description
 
-See [addRowsFromSimpleArray](#addRowsFromSimpleArray).
+See [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable#addrowsfromsimplearray).
 
 #### Signature
 
@@ -1070,7 +1070,7 @@ Creates a new DataTable instance from a serialized DataTable string.
 
 #### Description
 
-See [getSerialized](#getSerialized) and [addRowsFromSerializedArray](#addRowsFromSerializedArray)
+See and {@link addRowsFromSerializedArray()
 for more information on DataTable serialization.
 
 #### Signature

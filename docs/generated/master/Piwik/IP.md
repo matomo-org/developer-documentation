@@ -29,7 +29,7 @@ The class defines the following methods:
 - [`sanitizeIpRange()`](#sanitizeiprange) &mdash; Sanitize human-readable (user-supplied) IP address range.
 - [`P2N()`](#p2n) &mdash; Convert presentation format IP address to network address format.
 - [`N2P()`](#n2p) &mdash; Convert network address format to presentation format.
-- [`prettyPrint()`](#prettyprint) &mdash; Alias for [N2P()](#N2P).
+- [`prettyPrint()`](#prettyprint) &mdash; Alias for [N2P()](/api-reference/Piwik/IP#n2p).
 - [`isIPv4()`](#isipv4) &mdash; Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if otherwise.
 - [`long2ip()`](#long2ip) &mdash; Convert IP address (in network address format) to presentation format.
 - [`isIPv6()`](#isipv6) &mdash; Returns true if $ip is an IPv6 address, false if otherwise.
@@ -98,7 +98,7 @@ Convert network address format to presentation format.
 
 #### Description
 
-See also [prettyPreint](#prettyPrint).
+See also [prettyPrint()](/api-reference/Piwik/IP#prettyprint).
 
 #### Signature
 
@@ -111,7 +111,7 @@ See also [prettyPreint](#prettyPrint).
 <a name="prettyPrint" id="prettyPrint"></a>
 ### `prettyPrint()`
 
-Alias for [N2P()](#N2P).
+Alias for [N2P()](/api-reference/Piwik/IP#n2p).
 
 #### Signature
 

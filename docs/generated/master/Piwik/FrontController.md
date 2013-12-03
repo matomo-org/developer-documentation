@@ -55,7 +55,7 @@ Executes the requested plugin controller action.
 
 #### Description
 
-See also [fetchDispatch](#fetchDispatch).
+See also [fetchDispatch()](/api-reference/Piwik/FrontController#fetchdispatch).
 
 #### Signature
 

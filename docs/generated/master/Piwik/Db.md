@@ -91,7 +91,7 @@ Create the database object and connects to the database.
 
 #### Description
 
-Shouldn't be called directly, use [get](#get).
+Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get).
 
 #### Signature
 

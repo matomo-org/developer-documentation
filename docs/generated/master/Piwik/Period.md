@@ -42,7 +42,7 @@ The abstract class defines the following methods:
 - [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods.
 - [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period.
 - [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period.
-- [`__toString()`](#__tostring) &mdash; See [toString](#toString).
+- [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Period#tostring).
 - [`getPrettyString()`](#getprettystring) &mdash; Returns a pretty string describing this period.
 - [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns a short string description of this period that is localized with the currently used language.
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns a long string description of this period that is localized with the currently used language.
@@ -178,7 +178,7 @@ Returns a list of strings representing the current period.
 <a name="__toString" id="__toString"></a>
 ### `__toString()`
 
-See [toString](#toString).
+See [toString()](/api-reference/Piwik/Period#tostring).
 
 #### Signature
 

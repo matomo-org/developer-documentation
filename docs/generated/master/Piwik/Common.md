@@ -117,7 +117,7 @@ Sanitizes a string to help avoid XSS vulnerabilities.
 
 #### Description
 
-This function is automatically called when [getRequestVar](#getRequestVar) is called,
+This function is automatically called when [getRequestVar()](/api-reference/Piwik/Common#getrequestvar) is called,
 so you should not normally have to use it.
 
 You should used it when outputting data that isn't escaped and was

@@ -29,10 +29,10 @@ If you are creating your own visualization and want to add new display propertie
 it, extend this class and add your properties as fields.
 
 Properties are marked as client side properties by calling the
-[addPropertiesThatShouldBeAvailableClientSide](#addPropertiesThatShouldBeAvailableClientSide) method.
+[addPropertiesThatShouldBeAvailableClientSide()](/api-reference/Piwik/ViewDataTable/Config#addpropertiesthatshouldbeavailableclientside) method.
 
 Properties are marked as overridable by calling the
-[addPropertiesThatCanBeOverwrittenByQueryParams](#addPropertiesThatCanBeOverwrittenByQueryParams) method.
+[addPropertiesThatCanBeOverwrittenByQueryParams()](/api-reference/Piwik/ViewDataTable/Config#addpropertiesthatcanbeoverwrittenbyqueryparams) method.
 
 ### Example
 
@@ -752,8 +752,8 @@ The class defines the following methods:
 - [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks display properties as client side properties.
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable.
 - [`getProperties()`](#getproperties) &mdash; Returns array of all property values in this config object.
-- [`addRelatedReport()`](#addrelatedreport) &mdash; Adds a related report to the [related_reports](#related_reports) property.
-- [`addRelatedReports()`](#addrelatedreports) &mdash; Adds several related reports to the [related_reports](#related_reports) property.
+- [`addRelatedReport()`](#addrelatedreport) &mdash; Adds a related report to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
+- [`addRelatedReports()`](#addrelatedreports) &mdash; Adds several related reports to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 - [`addTranslation()`](#addtranslation) &mdash; Associates internationalized text with a metric.
 - [`addTranslations()`](#addtranslations) &mdash; Associates multiple translations with metrics.
 
@@ -833,7 +833,7 @@ by name.
 <a name="addRelatedReport" id="addRelatedReport"></a>
 ### `addRelatedReport()`
 
-Adds a related report to the [related_reports](#related_reports) property.
+Adds a related report to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 
 #### Description
 
@@ -853,7 +853,7 @@ report list.
 <a name="addRelatedReports" id="addRelatedReports"></a>
 ### `addRelatedReports()`
 
-Adds several related reports to the [related_reports](#related_reports) property.
+Adds several related reports to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 
 #### Description
 
@@ -862,7 +862,7 @@ any of the reports references the report that is currently being displayed, it w
 be added to the list. All other reports will still be added though.
 
 If you need to make sure the related report URL has some extra query parameters,
-use [addRelatedReport](#addRelatedReport).
+use [addRelatedReport()](/api-reference/Piwik/ViewDataTable/Config#addrelatedreport).
 
 #### Signature
 
@@ -880,7 +880,7 @@ Associates internationalized text with a metric.
 
 Overwrites existing mappings.
 
-See [translations](#translations).
+See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations).
 
 #### Signature
 
@@ -897,7 +897,7 @@ Associates multiple translations with metrics.
 
 #### Description
 
-See [translations](#translations) and [addTranslation](#addTranslation).
+See and {@link addTranslation().
 
 #### Signature
 

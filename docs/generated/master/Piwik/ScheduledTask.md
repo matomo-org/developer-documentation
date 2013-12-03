@@ -34,7 +34,7 @@ Constructor.
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$objectInstance` (`mixed`) &mdash; The object or class name for the class that contains the method to regularly execute. Usually this will be a [Plugin](#) instance.
+    - `$objectInstance` (`mixed`) &mdash; The object or class name for the class that contains the method to regularly execute. Usually this will be a [Plugin](/api-reference/Piwik/Plugin) instance.
     - `$methodName` (`string`) &mdash; The name of the method of `$objectInstance` that will be regularly executed.
     - `$methodParameter` (`mixed`|`null`) &mdash; An optional parameter to pass to the method when executed. Must be convertible to string.
     - `$scheduledTime` ([`ScheduledTime`](../Piwik/ScheduledTime.md)|`null`) &mdash; A [ScheduledTime](/api-reference/Piwik/ScheduledTime) instance that describes when the method should be executed and how long before the next execution.
@@ -116,7 +116,7 @@ Returns the task priority.
 #### Description
 
 The priority will be an integer whose value is
-between [ScheduledTask::HIGH_PRIORITY](#) and [ScheduledTask::LOW_PRIORITY](#).
+between and {@link LOW_PRIORITY.
 
 #### Signature
 

@@ -298,7 +298,7 @@ Clears the site data cache.
 
 #### Description
 
-See also [setSites](#setSites) and [setSitesFromArray](#setSitesFromArray).
+See also and {@link setSitesFromArray().
 
 #### Signature
 

@@ -11,8 +11,8 @@ Description
 Plugins that define their own settings can extend
 this class to easily make their settings available to Piwik users.
 
-Descendants of this class should implement the [init](#init) method and call the
-[addSetting](#addSetting) method for each of the plugin's settings.
+Descendants of this class should implement the init() method and call the
+addSetting() method for each of the plugin's settings.
 
 For an example, see the Piwik\Plugins\ExampleSettingsPlugin\ExampleSettingsPlugin plugin.
 
@@ -129,7 +129,7 @@ Sets (overwrites) the value of a setting in memory.
 
 #### Description
 
-To persist the change, [save](#save) must be
+To persist the change, [save()](/api-reference/Piwik/Plugin/Settings#save) must be
 called afterwards, otherwise the change has no effect.
 
 Before the setting is changed, the Piwik\Settings\Setting::validate() and
@@ -153,7 +153,7 @@ Unsets a setting value in memory.
 
 #### Description
 
-To persist the change, [save](#save) must be
+To persist the change, [save()](/api-reference/Piwik/Plugin/Settings#save) must be
 called afterwards, otherwise the change has no effect.
 
 #### Signature
