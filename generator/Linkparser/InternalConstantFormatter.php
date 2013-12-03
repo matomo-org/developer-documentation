@@ -44,7 +44,9 @@ class InternalConstantFormatter extends ApiReferenceFormatter {
         }
 
         $linkToClass = $this->getLinkToApiClass($this->scope->class->getName());
+        $description = $link->getDescription();
+        $description = str_replace('_', '\_', $description);
 
-        return sprintf('[%s](%s#%s)', $link->getDescription(), $linkToClass, strtolower($constant));
+        return sprintf('[%s](%s#%s)', $description, $linkToClass, strtolower($constant));
     }
 }

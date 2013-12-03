@@ -12,6 +12,9 @@ class DefaultFormatter extends ApiReferenceFormatter {
 
     public function formatting(Link $link)
     {
-        return $link->getDescription();
+        $description = $link->getDescription();
+        $description = str_replace('_', '\_', $description);
+
+        return $description;
     }
 }

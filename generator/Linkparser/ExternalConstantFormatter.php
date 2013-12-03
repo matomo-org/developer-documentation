@@ -51,6 +51,7 @@ class ExternalConstantFormatter extends ApiReferenceFormatter {
 
         $description = $link->getDescription();
         $description = str_replace('Piwik\\', '', $description);
+        $description = str_replace('_', '\_', $description);
 
         return sprintf('[%s](%s#%s)', $description, $linkToClass, strtolower($constantName));
     }
