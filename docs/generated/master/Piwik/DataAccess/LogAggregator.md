@@ -103,7 +103,6 @@ Aggregates visit logs, optionally grouping by some dimension, and returns the ag
 
 #### Description
 
-<a name="queryVisitsByDimension-result-set"></a>
 **Result Set**
 
 The following columns are in each row of the result set:
@@ -134,7 +133,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
     - `$additionalSelects` (`array`) &mdash; Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
     - `$metrics` (`bool`|`array`) &mdash; The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS` - `Metrics::INDEX_MAX_ACTIONS` - `Metrics::INDEX_SUM_VISIT_LENGTH` - `Metrics::INDEX_BOUNCE_COUNT` - `Metrics::INDEX_NB_VISITS_CONVERTED`
     - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash; A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
-- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.
+- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension) to see what aggregate data is calculated by the query.
     - `mixed`
 
 <a name="queryecommerceitems" id="queryecommerceitems"></a>

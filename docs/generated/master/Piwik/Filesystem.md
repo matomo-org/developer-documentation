@@ -43,14 +43,14 @@ Recursively find pathnames that match a pattern.
 
 #### Description
 
-See [glob](#http://php.net/manual/en/function.glob.php) for more info.
+See glob for more info.
 
 #### Signature
 
 - It accepts the following parameter(s):
     - `$sDir` (`string`) &mdash; directory The directory to glob in.
     - `$sPattern` (`string`) &mdash; pattern The pattern to match paths against.
-    - `$nFlags` (`int`) &mdash; `glob()` flags. See [http://php.net/manual/en/function.glob.php](#http://php.net/manual/en/function.glob.php).
+    - `$nFlags` (`int`) &mdash; `glob()` flags. See [http://php.net/manual/en/function.glob.php](http://php.net/manual/en/function.glob.php).
 - _Returns:_ The list of paths that match the pattern.
     - `array`
 

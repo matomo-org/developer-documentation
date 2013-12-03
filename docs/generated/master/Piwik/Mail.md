@@ -3,7 +3,7 @@
 Mail
 ====
 
-Class for sending mails, for more information see: [http://framework.zend.com/manual/en/zend.mail.html](#http://framework.zend.com/manual/en/zend.mail.html)
+Class for sending mails, for more information see: [http://framework.zend.com/manual/en/zend.mail.html](http://framework.zend.com/manual/en/zend.mail.html)
 
 Methods
 -------

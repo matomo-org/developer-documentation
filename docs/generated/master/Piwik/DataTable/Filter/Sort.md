@@ -34,7 +34,7 @@ Constructor.
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table to eventually filter.
     - `$columnToSort` (`string`) &mdash; The name of the column to sort by.
     - `$order` (`string`) &mdash; order `'asc'` or `'desc'`.
-    - `$naturalSort` (`bool`) &mdash; Whether to use a natural sort or not (see [http://php.net/natsort](#http://php.net/natsort)).
+    - `$naturalSort` (`bool`) &mdash; Whether to use a natural sort or not (see [http://php.net/natsort](http://php.net/natsort)).
     - `$recursiveSort` (`bool`) &mdash; Whether to sort all subtables or not.
 
 <a name="setorder" id="setorder"></a>
