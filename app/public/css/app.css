@@ -200,3 +200,15 @@ body {
 .btn-twitter.active {
     background-color: #01538d \9;
 }
+
+/* bootstrap overrides */
+pre {
+    background-color:transparent;
+    border-width:0px;
+    padding:0;
+}
+
+pre > code {
+    border-radius: 4px;
+    padding:9.5px;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
+    <link href="/css/highlightjs/monokai_sublime.css" rel="stylesheet" media="screen">
     <link href="/css/app.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <!--[if lt IE 9]>
     <script src="/js/html5shiv.3.7.0.js?{{ revision|e('html_attr') }}"></script>
@@ -74,6 +75,25 @@
 <script src="/js/jquery.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/bootstrap.min.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/app.js?{{ revision|e('html_attr') }}"></script>
+<script src="/js/highlight.pack.js?{{ revision|e('html_attr') }}"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    hljs.initHighlightingOnLoad();
+
+    // hack to highlight inline code, can be removed when highlight.js version 8 is released
+    var highlighted = $('pre code').first(),
+        backgroundColor = highlighted.css('background-color'),
+        foregroundColor = highlighted.css('color');
+    
+    $('code').each(function(i, e) {
+        if ($(e).parent().is('pre')) {
+            return;
+        }
+
+        $(e).css({'background-color': backgroundColor, 'color': foregroundColor});
+    });
+});
+</script>
 
 <!-- Piwik -->
 <script type="text/javascript">

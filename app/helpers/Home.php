@@ -32,14 +32,14 @@ class Home {
             'title'        => 'Guides',
             'url'          => static::getUrl('guides'),
             'description'  => 'Learn how to create your own plugins and contributions or delve deep into Piwik\'s inner workings and learn how it all works.',
-            'callToAction' => 'Get started'
+            'callToAction' => 'Start learning'
         );
 
         $menu[] = array(
             'title'        => 'API Reference',
             'url'          => static::getUrl('api-reference'),
             'description'  => 'Detailed documentation for every PHP class you might want to use. If you need help with a specific class, this is where to go.',
-            'callToAction' => 'View Details'
+            'callToAction' => 'Go'
         );
 
         $menu[] = array(
