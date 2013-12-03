@@ -63,6 +63,7 @@ Note: In constrast to @link we do not check whether a hook with the given name e
 {@link Map}                  // class within this namespace
 {@link Piwik\DataTable\Map}  // full classname
 {@link \Exception}           // php internal class
+{@link serialize()}          // php internal function
 {@link getKeyName()}         // method within this class
 {@link $myproperty}          // property within this class
 {@link INDEX_NB_UNIQ_VISITORS}  // constant within this class, note: a link will be only generated if the constant has a long description
