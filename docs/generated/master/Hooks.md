@@ -17,8 +17,8 @@ This is a complete list of available hooks.
 ### API.$pluginName.$methodName
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [196](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L196)_
 
-This event exists for convenience and is triggered directly after the {@hook API.Request.dispatch} event is triggered. It can be used to modify the input that is passed to a single API method. This is also
-possible with the {@hook API.Request.dispatch} event, however that event requires event handlers
+This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch) event is triggered. It can be used to modify the input that is passed to a single API method. This is also
+possible with the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch) event, however that event requires event handlers
 check if the plugin name and method name are correct before modifying the parameters.
 
 **Example**
@@ -36,8 +36,8 @@ Callback Signature:
 ### API.$pluginName.$methodName.end
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [231](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L231)_
 
-This event exists for convenience and is triggered immediately before the {@hook API.Request.dispatch.end} event. It can be used to modify the output of a single API method. This is also possible with
-the {@hook API.Request.dispatch.end} event, however that event requires event handlers
+This event exists for convenience and is triggered immediately before the [API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event. It can be used to modify the output of a single API method. This is also possible with
+the [API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event, however that event requires event handlers
 check if the plugin name and method name are correct before modifying the output.
 
 Callback Signature:
@@ -345,8 +345,8 @@ Usages:
 ### Controller.$module.$action
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [113](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L113)_
 
-This event exists for convenience and is triggered directly after the {@hook Request.dispatch} event is triggered. It can be used to do the same things as the {@hook Request.dispatch} event, but for one controller
-action only. Using this event will result in a little less code than {@hook Request.dispatch}.
+This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/hooks#requestdispatch) event is triggered. It can be used to do the same things as the [Request.dispatch](/api-reference/hooks#requestdispatch) event, but for one controller
+action only. Using this event will result in a little less code than [Request.dispatch](/api-reference/hooks#requestdispatch).
 
 Callback Signature:
 <pre><code>function(&amp;$parameters)</code></pre>
@@ -357,9 +357,9 @@ Callback Signature:
 ### Controller.$module.$action.end
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [129](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L129)_
 
-This event exists for convenience and is triggered immediately before the {@hook Request.dispatch.end} event is triggered. It can be used to do the same things as the {@hook Request.dispatch.end} event, but for one
+This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/hooks#requestdispatchend) event is triggered. It can be used to do the same things as the [Request.dispatch.end](/api-reference/hooks#requestdispatchend) event, but for one
 controller action only. Using this event will result in a little less code than
-{@hook Request.dispatch.end}.
+[Request.dispatch.end](/api-reference/hooks#requestdispatchend).
 
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>

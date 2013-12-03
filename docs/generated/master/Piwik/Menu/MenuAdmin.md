@@ -9,7 +9,7 @@ Description
 -----------
 
 Plugins can subscribe to the 
-{@hook Menu.Admin.addItems} event to add new pages to the admin menu.
+[Menu.Admin.addItems](/api-reference/hooks#menuadminadditems) event to add new pages to the admin menu.
 
 **Example**
 
