@@ -8,7 +8,7 @@ Truncates a DataTable by merging all rows after a certain index into a new summa
 Description
 -----------
 
-The ReplaceSummaryRow filter will be queued after the table is truncated.
+The [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummaryRowLabel) filter will be queued after the table is truncated.
 
 ### Examples
 

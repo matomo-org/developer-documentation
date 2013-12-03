@@ -9,7 +9,7 @@ Description
 -----------
 
 Plugins that wish to add display HTML should create a Controller that either
-extends from this class or from Piwik\Plugin\ControllerAdmin. Every public method in
+extends from this class or from ControllerAdmin. Every public method in
 the controller will be exposed as a controller action.
 
 Learn more about Piwik's MVC system [here](#).
