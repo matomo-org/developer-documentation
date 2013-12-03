@@ -72,8 +72,8 @@ Note: In constrast to @link we do not check whether a hook with the given name e
 {@link http://piwik.org}     // http link
 {@link https://piwik.org}    // https link
 {@link mailto:test}          // mailto link
-&#160;
-&#160;
+
+
 {@link Map Description Text}                  // class within this namespace
 {@link Piwik\DataTable\Map Description Text}  // full classname
 {@link \Exception Description Text}           // php internal class
