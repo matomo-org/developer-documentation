@@ -103,7 +103,7 @@ Aggregates visit logs, optionally grouping by some dimension, and returns the ag
 
 #### Description
 
-<a name="queryVisitsByDimension-result-set"/>
+<a name="queryVisitsByDimension-result-set"></a>
 **Result Set**
 
 The following columns are in each row of the result set:
@@ -145,7 +145,7 @@ Aggregates ecommerce item data (everything stored in the **log_conversion_item**
 
 #### Description
 
-<a name="queryEcommerceItems-result-set"/>
+<a name="queryEcommerceItems-result-set"></a>
 **Result Set**
 
 The following columns are in each row of the result set:
@@ -184,7 +184,7 @@ Aggregates action data (everything in the log_action table) and returns a DB sta
 
 #### Description
 
-<a name="queryActionsByDimension-result-set"/>
+<a name="queryActionsByDimension-result-set"></a>
 **Result Set**
 
 Each row of the result set represents an aggregated group of actions. The following columns
