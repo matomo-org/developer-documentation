@@ -51,12 +51,13 @@ Please note it is currently not possible to define a file name here. So it is mo
 
 ### Supported inline tags in comments
 
-
 ```
 {@hook Request.dispatch}                    // link to Request.dispatch hook
 {@hook Request.dispatch description text}   // link to Request.dispatch hook with different link text
 {@hook # description}                       // link to hooks page
 ```
+
+Note: In constrast to @link we do not check whether a hook with the given name exists.
 
 ```
 {@link Map}                  // class within this namespace
