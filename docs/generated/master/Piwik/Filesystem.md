@@ -43,7 +43,7 @@ Recursively find pathnames that match a pattern.
 
 #### Description
 
-See glob for more info.
+See [glob](http://php.net/manual/en/function.glob.php) for more info.
 
 #### Signature
 
