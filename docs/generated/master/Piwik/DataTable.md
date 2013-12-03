@@ -831,12 +831,12 @@ Adds a set of rows from a serialized DataTable string.
 
 #### Description
 
-See serialize().
+See [serialize()](http://php.net/function.serialize()).
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$stringSerialized` (`string`) &mdash; A serialized DataTable string in the format of a string in the array returned by serialize(). This function will successfully load DataTables serialized by Piwik 1.X.
+    - `$stringSerialized` (`string`) &mdash; A serialized DataTable string in the format of a string in the array returned by [serialize()](http://php.net/function.serialize()). This function will successfully load DataTables serialized by Piwik 1.X.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if `$stringSerialized` is invalid.
