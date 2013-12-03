@@ -49,23 +49,32 @@ Works similar as adding a new guide except that you have to make the changes in 
 Works similar as adding a new guide except that you have to make the changes in the file [app/helpers/Home.php](app/helpers/Home.php).
 Please note it is currently not possible to define a file name here. So it is more or less only possible to change existing entries or to add new teasers to external links.
 
-### Supported inline links in comments
+### Supported inline tags in comments
+
+```
+{@hook Request.dispatch}                    // link to Request.dispatch hook
+{@hook Request.dispatch description text}   // link to Request.dispatch hook with different link text
+{@hook # description}                       // link to hooks page
+```
+
+Note: In constrast to @link we do not check whether a hook with the given name exists.
 
 ```
 {@link Map}                  // class within this namespace
 {@link Piwik\DataTable\Map}  // full classname
 {@link \Exception}           // php internal class
+{@link serialize()}          // php internal function
 {@link getKeyName()}         // method within this class
 {@link $myproperty}          // property within this class
-{@link INDEX_NB_UNIQ_VISITORS}  // constant within this class
+{@link INDEX_NB_UNIQ_VISITORS}  // constant within this class, note: a link will be only generated if the constant has a long description
 {@link Map::getKeyName()}    // method from any class
 {@link Map::$myproperty}     // property from any class
-{@link Piwik\Metrics::INDEX_NB_UNIQ_VISITORS}  // constant from any class
+{@link Piwik\Metrics::INDEX_NB_UNIQ_VISITORS}  // constant from any class, note: a link will be only generated if the constant has a long description
 {@link http://piwik.org}     // http link
 {@link https://piwik.org}    // https link
 {@link mailto:test}          // mailto link
-&#160;
-&#160;
+
+
 {@link Map Description Text}                  // class within this namespace
 {@link Piwik\DataTable\Map Description Text}  // full classname
 {@link \Exception Description Text}           // php internal class

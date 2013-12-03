@@ -18,7 +18,7 @@ they cannot be constructed.
 
 You can search for metrics (such as `nb_visits`) using the [getNumeric()](/api-reference/Piwik/Archive#getnumeric) and
 [getDataTableFromNumeric()](/api-reference/Piwik/Archive#getdatatablefromnumeric) methods. You can search for
-reports using the {@link getDataTable()} and {@link getDataTableExpanded() methods.
+reports using the [getBlob()](/api-reference/Piwik/Archive#getblob), [getDataTable()](/api-reference/Piwik/Archive#getdatatable) and [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded) methods.
 
 If you're creating an API that returns report data, you may want to use the
 [getDataTableFromArchive()](/api-reference/Piwik/Archive#getdatatablefromarchive) helper function.
@@ -165,10 +165,10 @@ Queries and returns metric data in an array.
 
 #### Description
 
-If multiple sites were requested in or {@link factory() the result will
+If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be indexed by site ID.
 
-If multiple periods were requested in or {@link factory() the result will
+If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -193,10 +193,10 @@ Reports are stored in blobs as serialized arrays of DataTable\Row instances, but
 data can technically be anything. In other words, you can store whatever you want
 as archive data blobs.
 
-If multiple sites were requested in or {@link factory() the result will
+If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be indexed by site ID.
 
-If multiple periods were requested in or {@link factory() the result will
+If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -218,10 +218,10 @@ Queries and returns metric data in a DataTable instance.
 
 #### Description
 
-If multiple sites were requested in or {@link factory() the result will
+If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be a DataTable\Map that is indexed by site ID.
 
-If multiple periods were requested in or {@link factory() the result will
+If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -250,10 +250,10 @@ Queries and returns a single report as a DataTable instance.
 This method will query blob data that is a serialized array of of DataTable\Row's and
 unserialize it.
 
-If multiple sites were requested in or {@link factory() the result will
+If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be a DataTable\Map that is indexed by site ID.
 
-If multiple periods were requested in or {@link factory() the result will
+If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -277,10 +277,10 @@ Queries and returns one report with all of its subtables loaded.
 
 #### Description
 
-If multiple sites were requested in or {@link factory() the result will
+If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be a DataTable\Map that is indexed by site ID.
 
-If multiple periods were requested in or {@link factory() the result will
+If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
@@ -329,7 +329,7 @@ API methods can use this method to reduce code redundancy.
     - `$expanded` (`bool`) &mdash; If true, loads all subtables. See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
     - `$idSubtable` (`int`|`null`) &mdash; See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
     - `$depth` (`int`|`null`) &mdash; See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
-- _Returns:_ See and {@link getDataTableExpanded() for more information
+- _Returns:_ See [getDataTable()](/api-reference/Piwik/Archive#getdatatable) and [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded) for more information
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)
 

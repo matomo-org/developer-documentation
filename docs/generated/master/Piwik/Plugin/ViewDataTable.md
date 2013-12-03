@@ -21,7 +21,7 @@ that output an image, should extend ViewDataTable directly.
 
 ViewDataTable output can be customized by setting one of many available display
 properties. Display properties are stored as fields in [ViewDataTable\Config](/api-reference/Piwik/ViewDataTable/Config) objects. ViewDataTables
-store a [ViewDataTable\Config](/api-reference/Piwik/ViewDataTable/Config) object in the {@link $config} field.
+store a [ViewDataTable\Config](/api-reference/Piwik/ViewDataTable/Config) object in the [$config](/api-reference/Piwik/Plugin/ViewDataTable#$config) field.
 
 Display properties can be set at any time before rendering.
 

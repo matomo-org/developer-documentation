@@ -45,7 +45,7 @@ This is a complete list of available classes:
 - [`Http`](Piwik/Http.md) &mdash; Server-side http client to retrieve content from remote servers, and optionally save to a local file.
 - [`IP`](Piwik/IP.md) &mdash; Contains IP address helper functions (for both IPv4 and IPv6).
 - [`Log`](Piwik/Log.md) &mdash; Logging utility class.
-- [`Mail`](Piwik/Mail.md) &mdash; Class for sending mails, for more information see: [http://framework.zend.com/manual/en/zend.mail.html](#http://framework.zend.com/manual/en/zend.mail.html)
+- [`Mail`](Piwik/Mail.md) &mdash; Class for sending mails, for more information see: [http://framework.zend.com/manual/en/zend.mail.html](http://framework.zend.com/manual/en/zend.mail.html)
 - [`Menu\MenuAbstract`](Piwik/Menu/MenuAbstract.md) &mdash; Base class for classes that manage one of Piwik's menus.
 - [`Menu\MenuAdmin`](Piwik/Menu/MenuAdmin.md) &mdash; Contains menu entries for the Admin menu.
 - [`Menu\MenuMain`](Piwik/Menu/MenuMain.md) &mdash; Contains menu entries for the Main menu (the menu displayed under the Piwik logo).

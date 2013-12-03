@@ -17,6 +17,7 @@ in a ViewDataTable instance will change how its report will be displayed.
 Client side properties are properties that should be passed on to the browser so
 client side JavaScript can use them. Only affects ViewDataTables that output HTML.
 
+<a name="overridable-properties-desc"></a>
 **Overridable Properties**
 
 Overridable properties are properties that can be set via the query string.
@@ -897,7 +898,7 @@ Associates multiple translations with metrics.
 
 #### Description
 
-See and {@link addTranslation().
+See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations) and [addTranslation()](/api-reference/Piwik/ViewDataTable/Config#addtranslation).
 
 #### Signature
 

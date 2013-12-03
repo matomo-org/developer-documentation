@@ -12,6 +12,35 @@ class DefaultFormatter extends ApiReferenceFormatter {
 
     public function formatting(Link $link)
     {
-        return $link->getDescription();
+        $this->logUnresolvedLink($link);
+
+        $description = $link->getDescription();
+        $description = $this->makeSureDescriptionGetsNotEmphasizedAccidentally($description);
+
+        return $description;
+    }
+
+    private function logUnresolvedLink(Link $link)
+    {
+        $blacklist = array('array', 'string', 'mixed', 'int', 'integer', 'bool');
+
+        if (in_array($link->getDestination(), $blacklist)) {
+            return;
+        }
+
+        $message = 'Unresolved link: "' . $link->getDestination() . '"';
+
+        if (empty($this->scope->class) && $this->scope->namespace) {
+            $message .= ' in Namespace '  . $this->scope->namespace;
+        } elseif (!empty($this->scope->class)) {
+            $message .= ' in Class ' . $this->scope->class;
+        }
+
+        error_log($message);
+    }
+
+    private function makeSureDescriptionGetsNotEmphasizedAccidentally($description)
+    {
+        return str_replace('_', '\_', $description);
     }
 }

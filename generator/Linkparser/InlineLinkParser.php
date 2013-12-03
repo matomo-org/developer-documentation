@@ -25,12 +25,25 @@ class InlineLinkParser {
 
     public function parse($comment)
     {
-        if (preg_match_all('/{\@link(.*)}/', $comment, $matches)) {
+        if (preg_match_all('/{\@link(.*?)}/', $comment, $matches)) {
 
             foreach ($matches[0] as $key => $rawLink) {
 
                 $linkParser    = new LinkParser($this->scope);
                 $linkFormatted = $linkParser->parse($matches[1][$key]);
+
+                $comment = str_replace($rawLink, $linkFormatted, $comment);
+            }
+
+        }
+
+        if (preg_match_all('/{\@hook(.*?)}/', $comment, $matches)) {
+
+            foreach ($matches[0] as $key => $rawLink) {
+
+                $link = new Link($matches[1][$key]);
+                $anchor = strtolower(str_replace('.', '', $link->getDestination()));
+                $linkFormatted = sprintf('[%s](/api-reference/hooks#%s)', $link->getDescription(), $anchor);
 
                 $comment = str_replace($rawLink, $linkFormatted, $comment);
             }

@@ -42,16 +42,20 @@ class ExternalConstantFormatter extends ApiReferenceFormatter {
 
         $constant = $constants[$constantName];
 
-        // we are displaying only constants having a long description.
-        if (!$constant || !$constant->getLongDesc()) {
+        if (!$constant) {
             return;
         }
-
-        $linkToClass = $this->getLinkToApiClass($className);
 
         $description = $link->getDescription();
         $description = str_replace('Piwik\\', '', $description);
 
-        return sprintf('[%s](%s#%s)', $description, $linkToClass, strtolower($constantName));
+        if ($constant->getLongDesc()) {
+            // we are displaying a link only to constants having a long description.
+            $linkToClass = $this->getLinkToApiClass($className);
+
+            return sprintf('`[%s](%s#%s)`', $description, $linkToClass, strtolower($constantName));
+        }
+
+        return sprintf('`%s`', $description);
     }
 }

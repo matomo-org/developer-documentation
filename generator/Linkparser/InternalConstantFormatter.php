@@ -38,13 +38,19 @@ class InternalConstantFormatter extends ApiReferenceFormatter {
 
         $constant = $constants[$constName];
 
-        // we are displaying only constants having a long description.
-        if (!$constant || !$constant->getLongDesc()) {
+        if (!$constant) {
             return;
         }
 
-        $linkToClass = $this->getLinkToApiClass($this->scope->class->getName());
+        $description = $link->getDescription();
 
-        return sprintf('[%s](%s#%s)', $link->getDescription(), $linkToClass, strtolower($constant));
+        if ($constant->getLongDesc()) {
+            // we are displaying a link only to constants having a long description.
+            $linkToClass = $this->getLinkToApiClass($this->scope->class->getName());
+
+            return sprintf('`[%s](%s#%s)`', $description, $linkToClass, strtolower($constant));
+        }
+
+        return sprintf('`%s`', $description);
     }
 }

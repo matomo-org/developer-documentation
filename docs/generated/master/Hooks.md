@@ -17,8 +17,8 @@ This is a complete list of available hooks.
 ### API.$pluginName.$methodName
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [196](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L196)_
 
-This event exists for convenience and is triggered directly after the [API.Request.dispatch](#apirequestdispatch) event is triggered. It can be used to modify the input that is passed to a single API method. This is also
-possible with the [API.Request.dispatch](#apirequestdispatch) event, however that event requires event handlers
+This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch) event is triggered. It can be used to modify the input that is passed to a single API method. This is also
+possible with the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch) event, however that event requires event handlers
 check if the plugin name and method name are correct before modifying the parameters.
 
 **Example**
@@ -36,8 +36,8 @@ Callback Signature:
 ### API.$pluginName.$methodName.end
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [231](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L231)_
 
-This event exists for convenience and is triggered immediately before the [API.Request.dispatch.end](#apirequestdispatchend) event. It can be used to modify the output of a single API method. This is also possible with
-the [API.Request.dispatch.end](#apirequestdispatchend) event, however that event requires event handlers
+This event exists for convenience and is triggered immediately before the [API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event. It can be used to modify the output of a single API method. This is also possible with
+the [API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event, however that event requires event handlers
 check if the plugin name and method name are correct before modifying the output.
 
 Callback Signature:
@@ -287,7 +287,7 @@ custom error message.
 Callback Signature:
 <pre><code>function($exception)</code></pre>
 
-- `$exception`
+- `[Exception](http://php.net/class.Exception)` `$exception` The exception thrown from creating and testing the database connection.
 
 Usages:
 
@@ -345,8 +345,8 @@ Usages:
 ### Controller.$module.$action
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [113](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L113)_
 
-This event exists for convenience and is triggered directly after the [Request.dispatch](#requestdispatch) event is triggered. It can be used to do the same things as the [Request.dispatch](#requestdispatch) event, but for one controller
-action only. Using this event will result in a little less code than [Request.dispatch](#requestdispatch).
+This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/hooks#requestdispatch) event is triggered. It can be used to do the same things as the [Request.dispatch](/api-reference/hooks#requestdispatch) event, but for one controller
+action only. Using this event will result in a little less code than [Request.dispatch](/api-reference/hooks#requestdispatch).
 
 Callback Signature:
 <pre><code>function(&amp;$parameters)</code></pre>
@@ -357,9 +357,9 @@ Callback Signature:
 ### Controller.$module.$action.end
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [129](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L129)_
 
-This event exists for convenience and is triggered immediately before the [Request.dispatch.end](#) event is triggered. It can be used to do the same things as the [Request.dispatch.end](#requestdispatchend) event, but for one
+This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/hooks#requestdispatchend) event is triggered. It can be used to do the same things as the [Request.dispatch.end](/api-reference/hooks#requestdispatchend) event, but for one
 controller action only. Using this event will result in a little less code than
-[Request.dispatch.end](#requestdispatchend).
+[Request.dispatch.end](/api-reference/hooks#requestdispatchend).
 
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>
@@ -549,7 +549,7 @@ _Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/co
 Triggered when collecting all available admin menu items. Subscribe to this event if you want
 to add one or more items to the Piwik admin menu.
 
-Menu items should be added via the Menu::add() method.
+Menu items should be added via the [add()](/api-reference/Piwik/Menu/MenuAdmin#add) method.
 
 **Example**
 
@@ -720,7 +720,7 @@ _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/mast
 
 Triggered shortly before the user is authenticated. This event can be used by plugins that provide their own authentication mechanism
 to make that mechanism available. Subscribers should set the `'auth'` object in
-the to an object that implements the {@link Piwik\Auth interface.
+the Piwik\Registry to an object that implements the Piwik\Auth interface.
 
 **Example**
 
@@ -1052,9 +1052,9 @@ It can be used to modify the data for a website, such as decorate its name or ch
 Callback Signature:
 <pre><code>function($idSite, &amp;$infoSite)</code></pre>
 
-- `$idSite`
+- `int` `$idSite` Website ID
 
-- `$infoSite`
+- `array` `$infoSite` Website information array
 
 ## SitesManager
 

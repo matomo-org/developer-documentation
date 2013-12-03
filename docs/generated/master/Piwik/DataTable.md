@@ -14,7 +14,7 @@ Description
 DataTables consist of rows and each row consists of columns. A column value can be
 be numeric, a string or an array.
 
-Every row has an ID. The ID is either the index of the row or ID_SUMMARY_ROW.
+Every row has an ID. The ID is either the index of the row or `ID_SUMMARY_ROW`.
 
 DataTables are hierarchical data structures. Each row can also contain an additional
 nested sub-DataTable (commonly referred to as a 'subtable').
@@ -32,7 +32,7 @@ Data can be added to DataTables in three different ways. You can either:
 
 1. create rows one by one and add them through [addRow()](/api-reference/Piwik/DataTable#addrow) then truncate if desired,
 2. create an array of DataTable\Row instances or an array of arrays and add them using
-   or {@link addRowsFromSimpleArray()
+   [addRowsFromArray()](/api-reference/Piwik/DataTable#addrowsfromarray) or [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable#addrowsfromsimplearray)
    then truncate if desired,
 3. or set the maximum number of allowed rows (with [setMaximumAllowedRows()](/api-reference/Piwik/DataTable#setmaximumallowedrows))
    and add rows one by one.
@@ -146,7 +146,7 @@ Constants
 
 This class defines the following constants:
 
-- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when or {@link Piwik\DataTable\Row::sumRow() is called.
+- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [DataTable\Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.
 
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
@@ -159,7 +159,7 @@ This metadata value must be an array that maps column names with valid operation
 - `'min'`: does `min($column1, $column2)`
 - `'sum'`: does `$column1 + $column2`
 
-See and {@link DataTable\Row::sumRow() for more information.
+See [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) and [DataTable\Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) for more information.
 
 Methods
 -------
@@ -376,7 +376,7 @@ If the subtables for this table are loaded, they will be summed as well.
 
 Rows are summed together by summing individual columns. By default columns are summed by
 adding one column value to another. Some columns cannot be aggregated this way. In these
-cases, the [COLUMN_AGGREGATION_OPS_METADATA_NAME](/api-reference/Piwik/DataTable#piwik\datatable::column_aggregation_ops_metadata_name)
+cases, the `[COLUMN_AGGREGATION_OPS_METADATA_NAME](/api-reference/Piwik/DataTable#piwik\datatable::column_aggregation_ops_metadata_name)`
 metadata can be used to specify a different type of operation.
 
 #### Signature
@@ -442,7 +442,7 @@ Returns a row by ID.
 
 #### Description
 
-The ID is either the index of the row or ID_SUMMARY_ROW.
+The ID is either the index of the row or `ID_SUMMARY_ROW`.
 
 #### Signature
 
@@ -831,12 +831,12 @@ Adds a set of rows from a serialized DataTable string.
 
 #### Description
 
-See serialize().
+See [serialize()](http://php.net/function.serialize()).
 
 #### Signature
 
 - It accepts the following parameter(s):
-    - `$stringSerialized` (`string`) &mdash; A serialized DataTable string in the format of a string in the array returned by serialize(). This function will successfully load DataTables serialized by Piwik 1.X.
+    - `$stringSerialized` (`string`) &mdash; A serialized DataTable string in the format of a string in the array returned by [serialize()](http://php.net/function.serialize()). This function will successfully load DataTables serialized by Piwik 1.X.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if `$stringSerialized` is invalid.
@@ -1070,7 +1070,7 @@ Creates a new DataTable instance from a serialized DataTable string.
 
 #### Description
 
-See and {@link addRowsFromSerializedArray()
+See [getSerialized()](/api-reference/Piwik/DataTable#getserialized) and [addRowsFromSerializedArray()](/api-reference/Piwik/DataTable#addrowsfromserializedarray)
 for more information on DataTable serialization.
 
 #### Signature

@@ -298,7 +298,7 @@ Clears the site data cache.
 
 #### Description
 
-See also and {@link setSitesFromArray().
+See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray()](/api-reference/Piwik/Site#setsitesfromarray).
 
 #### Signature
 

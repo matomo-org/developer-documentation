@@ -16,7 +16,7 @@
 {%- set type = element[0] %}
 {%set value = element[1] %}
 {% if 'class' == type and 'PiwikTracker' != value.shortname %}
-- {{ class_name(value, true) }}{% if has_namespaces %} &mdash; _Class in namespace_ [`{{ value.namespace }}`]({{ namespace_path(value.namespace)|replace({".html": ""}) }})
+- {{ class_name(value, true) }}{% if has_namespaces %} &mdash; _Class in namespace_ {% if value.namespace in classes|keys %}[`{{ value.namespace }}`]({{ namespace_path(value.namespace)|replace({".html": ""}) }}){% else %}`{{ value.namespace }}`{% endif %} 
 {% endif %}
 {% elseif 'method' == type and 'PiwikTracker' != value.class %}
 - [`{{ value.name }}()`]({{ markdown_path(class_path(value.class)) }}#{{ value.name|lower }}) &mdash; _Method in class_ {{ class_name(value.class, true) }}
