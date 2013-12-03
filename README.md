@@ -57,10 +57,10 @@ Please note it is currently not possible to define a file name here. So it is mo
 {@link \Exception}           // php internal class
 {@link getKeyName()}         // method within this class
 {@link $myproperty}          // property within this class
-{@link INDEX_NB_UNIQ_VISITORS}  // constant within this class
+{@link INDEX_NB_UNIQ_VISITORS}  // constant within this class, note: a link will be only generated if the constant has a long description
 {@link Map::getKeyName()}    // method from any class
 {@link Map::$myproperty}     // property from any class
-{@link Piwik\Metrics::INDEX_NB_UNIQ_VISITORS}  // constant from any class
+{@link Piwik\Metrics::INDEX_NB_UNIQ_VISITORS}  // constant from any class, note: a link will be only generated if the constant has a long description
 {@link http://piwik.org}     // http link
 {@link https://piwik.org}    // https link
 {@link mailto:test}          // mailto link
