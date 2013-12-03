@@ -14,7 +14,7 @@ Description
 DataTables consist of rows and each row consists of columns. A column value can be
 be numeric, a string or an array.
 
-Every row has an ID. The ID is either the index of the row or ID\_SUMMARY\_ROW.
+Every row has an ID. The ID is either the index of the row or `ID_SUMMARY_ROW`.
 
 DataTables are hierarchical data structures. Each row can also contain an additional
 nested sub-DataTable (commonly referred to as a 'subtable').
@@ -376,7 +376,7 @@ If the subtables for this table are loaded, they will be summed as well.
 
 Rows are summed together by summing individual columns. By default columns are summed by
 adding one column value to another. Some columns cannot be aggregated this way. In these
-cases, the [COLUMN\_AGGREGATION\_OPS\_METADATA\_NAME](/api-reference/Piwik/DataTable#piwik\datatable::column_aggregation_ops_metadata_name)
+cases, the `[COLUMN_AGGREGATION_OPS_METADATA_NAME](/api-reference/Piwik/DataTable#piwik\datatable::column_aggregation_ops_metadata_name)`
 metadata can be used to specify a different type of operation.
 
 #### Signature
@@ -442,7 +442,7 @@ Returns a row by ID.
 
 #### Description
 
-The ID is either the index of the row or ID\_SUMMARY\_ROW.
+The ID is either the index of the row or `ID_SUMMARY_ROW`.
 
 #### Signature
 

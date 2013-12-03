@@ -91,7 +91,7 @@ Methods
 The class defines the following methods:
 
 - [`queryVisitsByDimension()`](#queryvisitsbydimension) &mdash; Aggregates visit logs, optionally grouping by some dimension, and returns the aggregated data.
-- [`queryEcommerceItems()`](#queryecommerceitems) &mdash; Aggregates ecommerce item data (everything stored in the **log_conversion_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
+- [`queryEcommerceItems()`](#queryecommerceitems) &mdash; Aggregates ecommerce item data (everything stored in the **log\_conversion\_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
 - [`queryActionsByDimension()`](#queryactionsbydimension) &mdash; Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.
 - [`getSelectsFromRangedColumn()`](#getselectsfromrangedcolumn) &mdash; Creates and returns an array of SQL SELECT expressions that will count the number of rows for which a specific column falls within specific ranges.
 
@@ -108,18 +108,18 @@ Aggregates visit logs, optionally grouping by some dimension, and returns the ag
 
 The following columns are in each row of the result set:
 
-- **Piwik\Metrics::INDEX\_NB\_UNIQ\_VISITORS**: The total number of unique visitors in this group
+- **`Metrics::INDEX_NB_UNIQ_VISITORS`**: The total number of unique visitors in this group
                                                      of aggregated visits.
-- **Piwik\Metrics::INDEX\_NB\_VISITS**: The total number of visits aggregated.
-- **Piwik\Metrics::INDEX\_NB\_ACTIONS**: The total number of actions performed in this group of
+- **`Metrics::INDEX_NB_VISITS`**: The total number of visits aggregated.
+- **`Metrics::INDEX_NB_ACTIONS`**: The total number of actions performed in this group of
                                                aggregated visits.
-- **Piwik\Metrics::INDEX\_MAX\_ACTIONS**: The maximum actions perfomred in one visit for this group of
+- **`Metrics::INDEX_MAX_ACTIONS`**: The maximum actions perfomred in one visit for this group of
                                                 visits.
-- **Piwik\Metrics::INDEX\_SUM\_VISIT\_LENGTH**: The total amount of time spent on the site for this
+- **`Metrics::INDEX_SUM_VISIT_LENGTH`**: The total amount of time spent on the site for this
                                                      group of visits.
-- **Piwik\Metrics::INDEX\_BOUNCE\_COUNT**: The total number of bounced visits in this group of
+- **`Metrics::INDEX_BOUNCE_COUNT`**: The total number of bounced visits in this group of
                                                  visits.
-- **Piwik\Metrics::INDEX\_NB\_VISITS\_CONVERTED**: The total number of visits for which at least one
+- **`Metrics::INDEX_NB_VISITS_CONVERTED`**: The total number of visits for which at least one
                                                         conversion occurred, for this group of visits.
 
 Additional data can be selected by setting the `$additionalSelects` parameter.
@@ -132,7 +132,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
     - `$dimensions` (`array`) &mdash; SELECT fields (or just one field) that will be grouped by, eg, `'referrer_name'` or `array('referrer_name', 'referrer_keyword')`. The metrics retrieved from the query will be specific to combinations of these fields. So if `array('referrer_name', 'referrer_keyword')` is supplied, the query will select the visits for each referrer/keyword combination.
     - `$where` (`bool`|`string`) &mdash; Additional condition for the WHERE clause. Can be used to filter the set of visits that are considered for aggregation.
     - `$additionalSelects` (`array`) &mdash; Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
-    - `$metrics` (`bool`|`array`) &mdash; The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - Piwik\Metrics::INDEX\_NB\_UNIQ\_VISITORS - Piwik\Metrics::INDEX\_NB\_VISITS - Piwik\Metrics::INDEX\_NB\_ACTIONS - Piwik\Metrics::INDEX\_MAX\_ACTIONS - Piwik\Metrics::INDEX\_SUM\_VISIT\_LENGTH - Piwik\Metrics::INDEX\_BOUNCE\_COUNT - Piwik\Metrics::INDEX\_NB\_VISITS\_CONVERTED
+    - `$metrics` (`bool`|`array`) &mdash; The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS` - `Metrics::INDEX_MAX_ACTIONS` - `Metrics::INDEX_SUM_VISIT_LENGTH` - `Metrics::INDEX_BOUNCE_COUNT` - `Metrics::INDEX_NB_VISITS_CONVERTED`
     - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash; A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
 - _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.
     - `mixed`
@@ -141,7 +141,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 <a name="queryEcommerceItems" id="queryEcommerceItems"></a>
 ### `queryEcommerceItems()`
 
-Aggregates ecommerce item data (everything stored in the **log_conversion_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
+Aggregates ecommerce item data (everything stored in the **log\_conversion\_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
 
 #### Description
 
@@ -150,16 +150,16 @@ Aggregates ecommerce item data (everything stored in the **log_conversion_item**
 
 The following columns are in each row of the result set:
 
-- **Piwik\Metrics::INDEX\_ECOMMERCE\_ITEM\_REVENUE**: The total revenue for the group of items
+- **`Metrics::INDEX_ECOMMERCE_ITEM_REVENUE`**: The total revenue for the group of items
                                                           this row aggregated.
-- **Piwik\Metrics::INDEX\_ECOMMERCE\_ITEM\_QUANTITY**: The total number of items of the group
+- **`Metrics::INDEX_ECOMMERCE_ITEM_QUANTITY`**: The total number of items of the group
                                                             this row aggregated.
-- **Piwik\Metrics::INDEX\_ECOMMERCE\_ITEM\_PRICE**: The total price for the group of items this
+- **`Metrics::INDEX_ECOMMERCE_ITEM_PRICE`**: The total price for the group of items this
                                                          row aggregated.
-- **Piwik\Metrics::INDEX\_ECOMMERCE\_ORDERS**: The total number of orders this group of items
+- **`Metrics::INDEX_ECOMMERCE_ORDERS`**: The total number of orders this group of items
                                                      belongs to. This will be <= to the total number
                                                      of items in this group.
-- **Piwik\Metrics::INDEX\_NB\_VISITS**: The total number of visits during which each item in
+- **`Metrics::INDEX_NB_VISITS`**: The total number of visits during which each item in
                                               this group of items was logged.
 - **ecommerceType**: Either Piwik\Tracker\GoalManager::IDGOAL\_CART if the items in this group were
                      abandoned by a visitor, or Piwik\Tracker\GoalManager::IDGOAL\_ORDER if they
@@ -190,10 +190,10 @@ Aggregates action data (everything in the log_action table) and returns a DB sta
 Each row of the result set represents an aggregated group of actions. The following columns
 are in each aggregate row:
 
-- **Piwik\Metrics::INDEX\_NB\_UNIQ\_VISITORS**: The total number of unique visitors that performed
+- **`Metrics::INDEX_NB_UNIQ_VISITORS`**: The total number of unique visitors that performed
                                             the actions in this group.
-- **Piwik\Metrics::INDEX\_NB\_VISITS**: The total number of visits these actions belong to.
-- **Piwik\Metrics::INDEX\_NB\_ACTIONS**: The total number of actions in this aggregate group.
+- **`Metrics::INDEX_NB_VISITS`**: The total number of visits these actions belong to.
+- **`Metrics::INDEX_NB_ACTIONS`**: The total number of actions in this aggregate group.
 
 Additional data can be selected through the `$additionalSelects` parameter.
 
@@ -205,7 +205,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
     - `$dimensions` (`array`|`string`) &mdash; One or more SELECT fields that will be used to group the log_action rows by. This parameter determines which log_action rows will be aggregated together.
     - `$where` (`bool`|`string`) &mdash; Additional condition for the WHERE clause. Can be used to filter the set of visits that are considered for aggregation.
     - `$additionalSelects` (`array`) &mdash; Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
-    - `$metrics` (`bool`|`array`) &mdash; The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - Piwik\Metrics::INDEX\_NB\_UNIQ\_VISITORS - Piwik\Metrics::INDEX\_NB\_VISITS - Piwik\Metrics::INDEX\_NB\_ACTIONS
+    - `$metrics` (`bool`|`array`) &mdash; The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS`
     - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash; A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
     - `$joinLogActionOnColumn` (`bool`|`string`) &mdash; One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed.
 - _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
