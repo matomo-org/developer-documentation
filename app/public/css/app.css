@@ -202,6 +202,14 @@ body {
     background-color: #01538d \9;
 }
 
+.navbar-inverse .navbar-nav > li > a.start-here-link {
+    color:#428BCA;
+}
+
+.navbar-inverse .navbar-nav > li > a.start-here-link:hover {
+    color:white;
+}
+
 #quick-search-typeahead {
     margin-top:15px;
 }
