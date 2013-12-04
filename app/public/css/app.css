@@ -32,7 +32,8 @@ body {
 }
 
 .documentation code {
-    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     word-break: break-word;
 }
 
@@ -201,6 +202,26 @@ body {
     background-color: #01538d \9;
 }
 
+#quick-search-typeahead {
+    margin-top:15px;
+}
+
+#quick-search-typeahead > input {
+    width:256px;
+}
+
+.typeahead {
+    min-width:256px;
+    margin-top:-1px;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    font-size:.8em;
+}
+
+.dropdown-menu > li > a {
+    white-space: normal;
+}
+
 /* bootstrap overrides */
 pre {
     background-color:transparent;
@@ -211,4 +232,8 @@ pre {
 pre > code {
     border-radius: 4px;
     padding:9.5px;
+}
+
+p {
+    margin: 0 0 15px;
 }

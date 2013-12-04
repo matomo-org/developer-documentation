@@ -89,11 +89,11 @@ Now that you've got the necessary tools, you can install Piwik. First, we'll get
 
 Open a terminal and `cd` into the directory where you want to install Piwik. Then run the following command:
 
-    git clone https://github.com/piwik/piwik piwik
+    $ git clone https://github.com/piwik/piwik piwik
 
 Then run the following command to install some third party libraries:
 
-    composer.phar install
+    $ composer.phar install
 
 Now that you've got a copy of Piwik, you'll need to point your webserver to it. The specific instructions for configuring your webserver depends on the webserver itself. You can see instructions for Apache [here](#) and instructions for Nginx [here](#).
 

@@ -81,4 +81,35 @@ class ApiReference {
 
         return $menu;
     }
+
+    public static function getDocumentList()
+    {
+        $indexPath = '../../docs/generated/master/Index.md';
+        $indexMarkdown = file_get_contents($indexPath);
+
+        $count = preg_match_all("/^- \[`?([a-zA-Z0-9_\(\)\$]+)`?\]\(([\$a-zA-Z0-9_.\/\#]+)\)/m", $indexMarkdown, $documentMatches);
+
+        $result = array();
+        for ($i = 0; $i < $count; ++$i) {
+            $url = $documentMatches[2][$i];
+            $url = str_replace('.md', '', $url);
+            $url = self::getUrl($url);
+
+            $parts = explode('/', $url);
+            $parts = explode('#', end($parts));
+            $className = reset($parts);
+
+            $title = $documentMatches[1][$i];
+            if (strpos($title, "()") !== false) { // is method
+                $title = $className . '::' . $title . ' <em>(Method)</em>';
+            } else if (strpos($title, "$") !== false) { // is property
+                $title = $className . '::' . $title . ' <em>(Property)</em>';
+            } else { // is class
+                $title .= ' <em>(Class)</em>';
+            }
+
+            $result[$url] = $title;
+        }
+        return $result;
+    }
 }

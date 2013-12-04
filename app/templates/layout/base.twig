@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
-    <link href="/css/highlightjs/monokai_sublime.css" rel="stylesheet" media="screen">
+    <link href="/css/highlightjs/monokai_sublime.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/app.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <!--[if lt IE 9]>
     <script src="/js/html5shiv.3.7.0.js?{{ revision|e('html_attr') }}"></script>
@@ -35,6 +35,13 @@
                 {% endfor %}
                 <li><a href="http://piwik.org/blog/category/development/" target="_blank">Blog</a></li>
                 <li><a href="http://piwik.org/" target="_blank">Piwik.org</a></li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <div id="quick-search-typeahead">
+                        <input type="text" placeholder="Quick search..."/>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>

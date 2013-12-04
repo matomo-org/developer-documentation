@@ -155,4 +155,13 @@ class Guide {
 
         return $menu;
     }
+
+    public static function getDocumentList()
+    {
+        $result = array();
+        foreach (self::getMainMenu() as $info) {
+            $result[$info['url']] = $info['title'] . ' <em>(Guide)</em>';
+        }
+        return $result;
+    }
 }

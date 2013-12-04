@@ -144,6 +144,16 @@ $app->get('/support', function () use ($app) {
     ));
 });
 
+$app->get('/data/documents.json', function () use ($app) {
+    $documentsMap = array_merge(Guide::getDocumentList(), ApiReference::getDocumentList());
+    $documentsData = array(
+        'urls' => array_keys($documentsMap),
+        'names' => array_values($documentsMap)
+    );
+
+    echo json_encode($documentsData);
+});
+
 $app->post('/receive-commit-hook', function () use ($app) {
 
     system('git pull');
