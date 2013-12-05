@@ -547,6 +547,7 @@ Index
 - [`naturalSort()`](Piwik/DataTable/Filter/Sort.md#naturalsort) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`now()`](Piwik/Date.md#now) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`N2P()`](Piwik/IP.md#n2p) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
+- [`NoAccessException`](Piwik/NoAccessException.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Nonce`](Piwik/Nonce.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Notification`](Piwik/Notification.md) &mdash; _Class in namespace_ `Piwik` 
 - [`notify()`](Piwik/Notification/Manager.md#notify) &mdash; _Method in class_ [`Manager`](Piwik/Notification/Manager.md)

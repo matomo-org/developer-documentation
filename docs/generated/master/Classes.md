@@ -52,6 +52,7 @@ This is a complete list of available classes:
 - [`Menu\MenuTop`](Piwik/Menu/MenuTop.md) &mdash; Contains menu entries for the Top menu (the menu at the very top of the page).
 - [`Metrics`](Piwik/Metrics.md) &mdash; This class contains metadata regarding core metrics and contains several related helper functions.
 - [`MetricsFormatter`](Piwik/MetricsFormatter.md) &mdash; Contains helper function that format numerical values in different ways.
+- [`NoAccessException`](Piwik/NoAccessException.md) &mdash; Exception thrown when a user doesn't have sufficient access to a resource.
 - [`Nonce`](Piwik/Nonce.md) &mdash; Nonce class.
 - [`Notification`](Piwik/Notification.md) &mdash; Describes a UI notification.
 - [`Notification\Manager`](Piwik/Notification/Manager.md) &mdash; Posts and removes UI notifications (see [Notification](/api-reference/Piwik/Notification) to learn more).

@@ -48,6 +48,7 @@
 ## Menu\MenuTop
 ## Metrics
 ## MetricsFormatter
+## NoAccessException
 ## Nonce
 ## Notification
 ## Notification\Manager

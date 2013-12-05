@@ -15,16 +15,19 @@ This is a complete list of available hooks.
 - [API.Request.dispatch.end](#apirequestdispatchend)
 
 ### API.$pluginName.$methodName
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [196](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L196)_
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [209](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L209)_
 
-This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch) event is triggered. It can be used to modify the input that is passed to a single API method. This is also
-possible with the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch) event, however that event requires event handlers
-check if the plugin name and method name are correct before modifying the parameters.
+Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch)
+event is triggered. It can be used to modify the arguments passed to a **single** API method.
+
+_Note: This is can be accomplished with the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch) event as well, however
+event handlers for that event will have to do more work._
 
 **Example**
 
     Piwik::addAction('API.Actions.getPageUrls', function (&$parameters) {
-        // ...
+        // force use of a single website. for some reason.
+        $parameters['idSite'] = 1;
     });
 
 Callback Signature:
@@ -34,36 +37,50 @@ Callback Signature:
 
 
 ### API.$pluginName.$methodName.end
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [231](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L231)_
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [259](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L259)_
 
-This event exists for convenience and is triggered immediately before the [API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event. It can be used to modify the output of a single API method. This is also possible with
-the [API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event, however that event requires event handlers
-check if the plugin name and method name are correct before modifying the output.
+Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
+[API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event. It can be used to modify the output of a **single**
+API method.
+
+_Note: This can be accomplished with the [API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event as well,
+however event handlers for that event will have to do more work._
+
+**Example**
+
+    // append (0 hits) to the end of row labels whose row has 0 hits
+    Piwik::addAction('API.Actions.getPageUrls', function (&$returnValue, $info)) {
+        $returnValue->filter('ColumnCallbackReplace', 'label', function ($label, $hits) {
+            if ($hits === 0) {
+                return $label . " (0 hits)";
+            } else {
+                return $label;
+            }
+        }, null, array('nb_hits'));
+    }
 
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
-- `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a [DataTable](/api-reference/Piwik/DataTable).
+- `mixed` `$returnedValue` The API method's return value. Can be an object, such as a [DataTable](/api-reference/Piwik/DataTable) instance. could be a [DataTable](/api-reference/Piwik/DataTable).
 
-- `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The name of the namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
+- `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
 
 ### API.getReportMetadata
-_Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [112](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L112)_
+_Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [134](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L134)_
 
-Triggered when gathering the metadata for all available reports. Plugins that define new reports should use this event to make them available in via
+Triggered when gathering metadata for all available reports. Plugins that define new reports should use this event to make them available in via
 the metadata API. By doing so, the report will become available in scheduled reports
 as well as in the Piwik Mobile App. In fact, any third party app that uses the metadata
 API will automatically have access to the new report.
 
-TODO: list all information that is required in $availableReports.
-
 Callback Signature:
 <pre><code>function(&amp;$availableReports, $parameters)</code></pre>
 
-- `string` `$availableReports` The list of available reports. Append to this list to make a report available.
+- `string` `$availableReports` The list of available reports. Append to this list to make a report available. Every element of this array must contain the following information: - **category**: A translated string describing the report's category. - **name**: The translated display title of the report. - **module**: The plugin of the report. - **action**: The API method that serves the report. The following information is optional: - **dimension**: The report's [dimension](/guides/all-about-analytics-data#dimensions) if any. - **metrics**: An array mapping metric names with their display names. - **metricsDocumentation**: An array mapping metric names with their translated documentation. - **processedMetrics**: The array of metrics in the report that are calculated using existing metrics. Can be set to `false` if the report contains no processed metrics. - **order**: The order of the report in the list of reports with the same category.
 
-- `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some report depend on this data. For example, Goals reports depend on the site IDs being request. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
+- `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some reports depend on this data. For example, Goals reports depend on the site IDs being requested. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`. TODO: put dimensions section in all about analytics data
 
 Usages:
 
@@ -71,7 +88,7 @@ Usages:
 
 
 ### API.getReportMetadata.end
-_Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [149](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L149)_
+_Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [172](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L172)_
 
 Triggered after all available reports are collected. This event can be used to modify the report metadata of reports in other plugins. You
 could, for example, add custom metrics to every report or remove reports from the list
@@ -80,7 +97,7 @@ of available reports.
 Callback Signature:
 <pre><code>function(&amp;$availableReports, $parameters)</code></pre>
 
-- `array` `$availableReports` List of all report metadata.
+- `array` `$availableReports` List of all report metadata. Read the [API.getReportMetadata](/api-reference/hooks#apigetreportmetadata) docs to see what this array contains.
 
 - `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some report depend on this data. For example, Goals reports depend on the site IDs being request. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
 
@@ -92,7 +109,7 @@ Usages:
 ### API.getSegmentDimensionMetadata
 _Defined in [Piwik/Plugins/API/API](https://github.com/piwik/piwik/blob/master/plugins/API/API.php) in line [133](https://github.com/piwik/piwik/blob/master/plugins/API/API.php#L133)_
 
-Triggered when gathering all available segments. This event can be used to make new segments available.
+Triggered when gathering all available segment dimensions. This event can be used to make new segment dimensions available.
 
 **Example**
 
@@ -100,7 +117,7 @@ Triggered when gathering all available segments. This event can be used to make 
     {
         $segments[] = array(
             'type'           => 'dimension',
-           'category'       => Piwik::translate('General_Visit'),
+            'category'       => Piwik::translate('General_Visit'),
             'name'           => 'General_VisitorIP',
             'segment'        => 'visitIp',
             'acceptedValues' => '13.54.122.1, etc.',
@@ -113,23 +130,20 @@ Triggered when gathering all available segments. This event can be used to make 
 Callback Signature:
 <pre><code>function(&amp;$segments, $idSites)</code></pre>
 
-- `array` `$segments` The list of available segments. Append to this list to add new segments. Each element in this list must contain the following information: - **type**: Either `'metric'` or `'dimension'`. `'metric'` means the value is a numeric and `'dimension'` means it is a string. Also, `'metric'` values will be displayed **Visit (metrics)** in the Segment Editor. - **category**: The segment category name. This can be an existing segment category visible in the segment editor. - **name**: The pretty name of the segment. - **segment**: The segment name, eg, `'visitIp'` or `'searches'`. - **acceptedValues**: A string describing one or two exacmple values, eg `'13.54.122.1, etc.'`. - **sqlSegment**: The table column this segment will segment by. For example, `'log_visit.location_ip'` for the **visitIp** segment. - **sqlFilter**: A PHP callback to apply to segment values before they are used in SQL. - **permission**: True if the current user has view access to this segment, false if otherwise.
+- `array` `$dimensions` The list of available segment dimensions. Append to this list to add new segments. Each element in this list must contain the following information: - **type**: Either `'metric'` or `'dimension'`. `'metric'` means the value is a numeric and `'dimension'` means it is a string. Also, `'metric'` values will be displayed under **Visit (metrics)** in the Segment Editor. - **category**: The segment category name. This can be an existing segment category visible in the segment editor. - **name**: The pretty name of the segment. Can be a translation token. - **segment**: The segment name, eg, `'visitIp'` or `'searches'`. - **acceptedValues**: A string describing one or two exacmple values, eg `'13.54.122.1, etc.'`. - **sqlSegment**: The table column this segment will segment by. For example, `'log_visit.location_ip'` for the **visitIp** segment. - **sqlFilter**: A PHP callback to apply to segment values before they are used in SQL. - **permission**: True if the current user has view access to this segment, false if otherwise.
 
 - `array` `$idSites` The list of site IDs we're getting the available segments for. Some segments (such as Goal segments) depend on the site.
 
 Usages:
 
-[Actions::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L63), [CustomVariables::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L85), [DevicesDetection::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L181), [Events::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L30), [Goals::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L416), [Provider::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L61), [Referrers::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L188), [UserCountry::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L204), [UserSettings::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L432), [VisitTime::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L106)
+[Actions::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L63), [CustomVariables::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L85), [DevicesDetection::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L181), [Events::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L30), [Goals::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L433), [Provider::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L61), [Referrers::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L188), [UserCountry::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L204), [UserSettings::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L432), [VisitTime::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L106)
 
 
 ### API.Request.authenticate
 _Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [250](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L250)_
 
-Triggered when authenticating an API request. Only triggered if the **token_auth**
-query parameter is found in the request.
-
-Plugins that provide authentication capabilities should subscribe to this event
-and make sure the authentication object (the object returned by `Registry::get('auth')`)
+Triggered when authenticating an API request, but only if the **token_auth** query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
+and make sure the global authentication object (the object returned by `Registry::get('auth')`)
 is setup to use `$token_auth` when its `authenticate()` method is executed.
 
 Callback Signature:
@@ -143,32 +157,63 @@ Usages:
 
 
 ### API.Request.dispatch
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [178](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L178)_
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [189](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L189)_
 
-Triggered before an API request is dispatched. This event can be used to modify the input that is passed to every API method or just
-one.
+Triggered before an API request is dispatched. This event can be used to modify the arguments passed to one or more API methods.
+
+**Example**
+
+    Piwik::addAction('API.Request.dispatch', function (&$parameters, $pluginName, $methodName) {
+        if ($pluginName == 'Actions') {
+            if ($methodName == 'getPageUrls') {
+                // ... do something ...
+            } else {
+                // ... do something else ...
+            }
+        }
+    });
 
 Callback Signature:
 <pre><code>function(&amp;$finalParameters, $pluginName, $methodName)</code></pre>
 
 - `array` `$finalParameters` List of parameters that will be passed to the API method.
 
-- `string` `$pluginName` The name of the plugin being dispatched to.
+- `string` `$pluginName` The name of the plugin the API method belongs to.
 
 - `string` `$methodName` The name of the API method that will be called.
 
 
 ### API.Request.dispatch.end
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [252](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L252)_
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [299](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L299)_
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
+
+**Example**
+
+    // append (0 hits) to the end of row labels whose row has 0 hits for any report that has the 'nb_hits' metric
+    Piwik::addAction('API.Actions.getPageUrls', function (&$returnValue, $info)) {
+        // don't process non-DataTable reports and reports that don't have the nb_hits column
+        if (!($returnValue instanceof DataTableInterface)
+            || in_array('nb_hits', $returnValue->getColumns())
+        ) {
+            return;
+        }
+
+        $returnValue->filter('ColumnCallbackReplace', 'label', function ($label, $hits) {
+            if ($hits === 0) {
+                return $label . " (0 hits)";
+            } else {
+                return $label;
+            }
+        }, null, array('nb_hits'));
+    }
 
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
-- `mixed` `$returnedValue` The value returned from the API method. This will not be a rendered string, but an actual object. For example, it could be a [DataTable](/api-reference/Piwik/DataTable).
+- `mixed` `$returnedValue` The API method's return value. Can be an object, such as a [DataTable](/api-reference/Piwik/DataTable) instance.
 
-- `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The name of the namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
+- `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
 ## ArchiveProcessor
 
@@ -192,7 +237,7 @@ Callback Signature:
 ### AssetManager.filterMergedJavaScripts
 _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [393](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L393)_
 
-Triggered after all JavaScript files Piwik uses are minified and merged into a single file, but before the merged JavaScript is written to disk. Plugins can use this event to modify merged JavaScript or do something else
+Triggered after all the JavaScript files Piwik uses are minified and merged into a single file, but before the merged JavaScript is written to disk. Plugins can use this event to modify merged JavaScript or do something else
 with it.
 
 Callback Signature:
@@ -209,7 +254,7 @@ Triggered after all less stylesheets are compiled to CSS, minified and merged in
 Callback Signature:
 <pre><code>function(&amp;$mergedContent)</code></pre>
 
-- `string` `$mergedContent` The merged an minified CSS.
+- `string` `$mergedContent` The merged and minified CSS.
 
 
 ### AssetManager.getJavaScriptFiles
@@ -218,19 +263,19 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 Triggered when gathering the list of all JavaScript files needed by Piwik and its plugins. Plugins that have their own JavaScript should use this event to make those
 files load in the browser.
 
-JavaScript files should be placed within a **javascripts** subfolder in your
+JavaScript files should be placed within a **javascripts** subdirectory in your
 plugin's root directory.
 
-Note: In case you are developing your plugin you may enable the config setting
-`[Debug] disable_merged_assets`. Otherwise your JavaScript won't be reloaded
-immediately after a change.
+_Note: While you are developing your plugin you should enable the config setting
+`[Debug] disable_merged_assets` so JavaScript files will be reloaded immediately
+after every change._
 
 **Example**
 
-    public function getJsFiles(&jsFiles)
+    public function getJsFiles(&$jsFiles)
     {
-        jsFiles[] = "plugins/MyPlugin/javascripts/myfile.js";
-        jsFiles[] = "plugins/MyPlugin/javascripts/anotherone.js";
+        $jsFiles[] = "plugins/MyPlugin/javascripts/myfile.js";
+        $jsFiles[] = "plugins/MyPlugin/javascripts/anotherone.js";
     }
 
 Callback Signature:
@@ -240,7 +285,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L58), [Annotations::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Annotations/Annotations.php#L43), [CoreAdminHome::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreAdminHome/CoreAdminHome.php#L78), [CoreHome::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L62), [CorePluginsAdmin::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L102), [CoreVisualizations::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/CoreVisualizations.php#L55), [Dashboard::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L233), [ExamplePlugin::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/ExamplePlugin/ExamplePlugin.php#L28), [Feedback::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Feedback/Feedback.php#L53), [Goals::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L428), [LanguagesManager::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L63), [Live::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L47), [MobileMessaging::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/MobileMessaging/MobileMessaging.php#L100), [MultiSites::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/MultiSites/MultiSites.php#L85), [Overlay::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Overlay/Overlay.php#L40), [PrivacyManager::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/PrivacyManager/PrivacyManager.php#L155), [ScheduledReports::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L122), [SegmentEditor::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/SegmentEditor.php#L100), [SitesManager::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L60), [Transitions::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Transitions/Transitions.php#L36), [UserCountry::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L78), [UserCountryMap::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/UserCountryMap/UserCountryMap.php#L67), [UsersManager::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L78), [Widgetize::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/Widgetize.php#L44)
+[Actions::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L58), [Annotations::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Annotations/Annotations.php#L43), [CoreAdminHome::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreAdminHome/CoreAdminHome.php#L78), [CoreHome::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L62), [CorePluginsAdmin::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L102), [CoreVisualizations::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/CoreVisualizations.php#L55), [Dashboard::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L233), [ExamplePlugin::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/ExamplePlugin/ExamplePlugin.php#L28), [Feedback::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Feedback/Feedback.php#L53), [Goals::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L445), [LanguagesManager::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L63), [Live::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L47), [MobileMessaging::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/MobileMessaging/MobileMessaging.php#L100), [MultiSites::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/MultiSites/MultiSites.php#L85), [Overlay::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Overlay/Overlay.php#L40), [PrivacyManager::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/PrivacyManager/PrivacyManager.php#L155), [ScheduledReports::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L122), [SegmentEditor::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/SegmentEditor.php#L100), [SitesManager::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L60), [Transitions::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Transitions/Transitions.php#L36), [UserCountry::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L78), [UserCountryMap::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/UserCountryMap/UserCountryMap.php#L67), [UsersManager::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L78), [Widgetize::getJsFiles](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/Widgetize.php#L44)
 
 
 ### AssetManager.getStylesheetFiles
@@ -249,12 +294,12 @@ _Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core
 Triggered when gathering the list of all stylesheets (CSS and LESS) needed by Piwik and its plugins. Plugins that have stylesheets should use this event to make those stylesheets
 load.
 
-Stylesheets should be placed within a **stylesheets** subfolder in your plugin's
+Stylesheets should be placed within a **stylesheets** subdirectory in your plugin's
 root directory.
 
-Note: In case you are developing your plugin you may enable the config setting
-`[Debug] disable_merged_assets`. Otherwise your custom stylesheets won't be
-reloaded immediately after a change.
+_Note: While you are developing your plugin you should enable the config setting
+`[Debug] disable_merged_assets` so your stylesheets will be reloaded immediately
+after a change._
 
 **Example**
 
@@ -271,7 +316,7 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/API/API.php#L730), [Actions::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L53), [Annotations::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Annotations/Annotations.php#L35), [CoreAdminHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreAdminHome/CoreAdminHome.php#L69), [CoreHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L43), [CorePluginsAdmin::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L54), [CoreVisualizations::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/CoreVisualizations.php#L49), [DBStats::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L84), [Dashboard::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L242), [ExampleRssWidget::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/ExampleRssWidget/ExampleRssWidget.php#L32), [Feedback::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Feedback/Feedback.php#L48), [Goals::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L433), [Installation::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Installation/Installation.php#L92), [LanguagesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L58), [Live::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L41), [MobileMessaging::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/MobileMessaging/MobileMessaging.php#L105), [MultiSites::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/MultiSites/MultiSites.php#L90), [SegmentEditor::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/SegmentEditor.php#L105), [SitesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L51), [Transitions::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Transitions/Transitions.php#L31), [UserCountry::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L73), [UserCountryMap::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/UserCountryMap/UserCountryMap.php#L77), [UsersManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L87), [Widgetize::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/Widgetize.php#L54)
+[Plugin::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/API/API.php#L730), [Actions::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L53), [Annotations::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Annotations/Annotations.php#L35), [CoreAdminHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreAdminHome/CoreAdminHome.php#L69), [CoreHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L43), [CorePluginsAdmin::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L54), [CoreVisualizations::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/CoreVisualizations.php#L49), [DBStats::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L84), [Dashboard::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L242), [ExampleRssWidget::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/ExampleRssWidget/ExampleRssWidget.php#L32), [Feedback::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Feedback/Feedback.php#L48), [Goals::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L450), [Installation::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Installation/Installation.php#L92), [LanguagesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L58), [Live::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L41), [MobileMessaging::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/MobileMessaging/MobileMessaging.php#L105), [MultiSites::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/MultiSites/MultiSites.php#L90), [SegmentEditor::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/SegmentEditor.php#L105), [SitesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L51), [Transitions::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Transitions/Transitions.php#L31), [UserCountry::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L73), [UserCountryMap::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/UserCountryMap/UserCountryMap.php#L77), [UsersManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L87), [Widgetize::getStylesheetFiles](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/Widgetize.php#L54)
 
 ## Config
 
@@ -279,10 +324,9 @@ Usages:
 - [Config.NoConfigurationFile](#confignoconfigurationfile)
 
 ### Config.badConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [344](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L344)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [349](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L349)_
 
-Triggered if the INI config file has the incorrect format or if certain required configuration options are absent. This event can be used to start the installation process or to display a
-custom error message.
+Triggered if the INI config file has the incorrect format or if certain required configuration options are absent. This event can be used to start the installation process or to display a custom error message.
 
 Callback Signature:
 <pre><code>function($exception)</code></pre>
@@ -295,11 +339,9 @@ Usages:
 
 
 ### Config.NoConfigurationFile
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [264](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L264)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [268](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L268)_
 
-Triggered when the configuration file cannot be found or read. This usually
-means Piwik is not installed yet. This event can be used to start the
-installation process or to display a custom error message.
+Triggered when the configuration file cannot be found or read, which usually means Piwik is not installed yet. This event can be used to start the installation process or to display a custom error message.
 
 Callback Signature:
 <pre><code>function($exception)</code></pre>
@@ -315,23 +357,22 @@ Usages:
 - [Console.addCommands](#consoleaddcommands)
 
 ### Console.addCommands
-_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [64](https://github.com/piwik/piwik/blob/master/core/Console.php#L64)_
+_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [63](https://github.com/piwik/piwik/blob/master/core/Console.php#L63)_
 
-Triggered when gathering all available console commands. Plugins that want to expose new console commands
+Triggered to gather all available console commands. Plugins that want to expose new console commands
 should subscribe to this event and add commands to the incoming array.
 
 **Example**
-```
-public function addConsoleCommands(&$commands)
-{
-    $commands[] = 'Piwik\Plugins\MyPlugin\Commands\MyCommand';
-}
-```
+
+    public function addConsoleCommands(&$commands)
+    {
+        $commands[] = 'Piwik\Plugins\MyPlugin\Commands\MyCommand';
+    }
 
 Callback Signature:
 <pre><code>function(&amp;$commands)</code></pre>
 
-- `array` `$commands` An array containing a list of command classnames.
+- `array` `$commands` An array containing a list of command class names.
 
 Usages:
 
@@ -343,9 +384,12 @@ Usages:
 - [Controller.$module.$action.end](#controllermoduleactionend)
 
 ### Controller.$module.$action
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [113](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L113)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [115](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L115)_
 
-This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/hooks#requestdispatch) event is triggered. It can be used to do the same things as the [Request.dispatch](/api-reference/hooks#requestdispatch) event, but for one controller
+Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/hooks#requestdispatch)
+event is triggered.
+
+It can be used to do the same things as the [Request.dispatch](/api-reference/hooks#requestdispatch) event, but for one controller
 action only. Using this event will result in a little less code than [Request.dispatch](/api-reference/hooks#requestdispatch).
 
 Callback Signature:
@@ -355,9 +399,12 @@ Callback Signature:
 
 
 ### Controller.$module.$action.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [129](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L129)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [133](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L133)_
 
-This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/hooks#requestdispatchend) event is triggered. It can be used to do the same things as the [Request.dispatch.end](/api-reference/hooks#requestdispatchend) event, but for one
+Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/hooks#requestdispatchend)
+event is triggered.
+
+It can be used to do the same things as the [Request.dispatch.end](/api-reference/hooks#requestdispatchend) event, but for one
 controller action only. Using this event will result in a little less code than
 [Request.dispatch.end](/api-reference/hooks#requestdispatchend).
 
@@ -373,36 +420,49 @@ Callback Signature:
 - [CronArchive.filterWebsiteIds](#cronarchivefilterwebsiteids)
 
 ### CronArchive.filterWebsiteIds
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [801](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L801)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [806](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L806)_
 
-When the cron to run archive.php is executed, it fetches the list of website IDs to process. Use this hook to add, remove, or change the order of websites IDs to pre-archive.
+Triggered by the **archive.php** cron script so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
+the order in which websites will be archived.
 
 Callback Signature:
 <pre><code>function(&amp;$websiteIds)</code></pre>
+
+- `array` `$websiteIds` The list of website IDs to launch the archiving process for.
 
 ## Goals
 
 - [Goals.getReportsWithGoalMetrics](#goalsgetreportswithgoalmetrics)
 
 ### Goals.getReportsWithGoalMetrics
-_Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php) in line [376](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L376)_
+_Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php) in line [393](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L393)_
 
 Triggered when gathering all reports that contain Goal metrics. The list of reports
-will be displayed on the left column of the bottom of the Goals Overview page and
-each individual Goal page.
+will be displayed on the left column of the bottom of every _Goals_ page.
 
-If plugins define reports that contain Goal metrics (such as conversions or revenue),
-they can use this event to make sure their reports can be loaded on the relevant
-Goals pages.
+If plugins define reports that contain goal metrics (such as **conversions** or **revenue**),
+they can use this event to make sure their reports can be viewed on Goals pages.
+
+**Example**
+
+    public function getReportsWithGoalMetrics(&$reports)
+    {
+        $reports[] = array(
+            'category' => Piwik::translate('MyPlugin_myReportCategory'),
+            'name' => Piwik::translate('MyPlugin_myReportDimension'),
+            'module' => 'MyPlugin',
+            'action' => 'getMyReport'
+        );
+    }
 
 Callback Signature:
 <pre><code>function(&amp;$reportsWithGoals)</code></pre>
 
-- `array` `$reportsWithGoals` The list of reports that have Goal metrics.
+- `array` `$reportsWithGoals` The list of arrays describing reports that have Goal metrics. Each element of this array must be an array with the following properties: - **category**: The report category. This should be a translated string. - **name**: The report's translated name. - **module**: The plugin the report is in, eg, `'UserCountry'`. - **action**: The API method of the report, eg, `'getCountry'`.
 
 Usages:
 
-[CustomVariables::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L126), [Goals::getActualReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L399), [Referrers::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L257), [UserCountry::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L306), [VisitTime::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L97)
+[CustomVariables::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L126), [Goals::getActualReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L416), [Referrers::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L257), [UserCountry::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L306), [VisitTime::getReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L97)
 
 ## Live
 
@@ -436,7 +496,7 @@ The following visitor profile elements can be set to augment the visitor profile
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
 
-- `array` `$visitorProfile` The normal visitor profile info.
+- `array` `$visitorProfile` The unaugmented visitor profile info.
 
 ## Log
 
@@ -446,15 +506,23 @@ Callback Signature:
 - [Log.getAvailableWriters](#loggetavailablewriters)
 
 ### Log.formatDatabaseMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [435](https://github.com/piwik/piwik/blob/master/core/Log.php#L435)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [461](https://github.com/piwik/piwik/blob/master/core/Log.php#L461)_
 
-This event is called when trying to log an object to a database table. Plugins can use
+Triggered when trying to log an object to a database table. Plugins can use
 this event to convert objects to strings before they are logged.
+
+**Example**
+
+    public function formatDatabaseMessage(&$message, $level, $tag, $datetime, $logger) {
+        if ($message instanceof MyCustomDebugInfo) {
+            $message = $message->formatForDatabase();
+        }
+    }
 
 Callback Signature:
 <pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
 
-- `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set $message to the string that should be logged.
+- `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set `$message` to the string that should be logged.
 
 - `int` `$level` The log level used with this log entry.
 
@@ -466,15 +534,23 @@ Callback Signature:
 
 
 ### Log.formatFileMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [353](https://github.com/piwik/piwik/blob/master/core/Log.php#L353)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [363](https://github.com/piwik/piwik/blob/master/core/Log.php#L363)_
 
-This event is called when trying to log an object to a file. Plugins can use
+Triggered when trying to log an object to a file. Plugins can use
 this event to convert objects to strings before they are logged.
+
+**Example**
+
+    public function formatFileMessage(&$message, $level, $tag, $datetime, $logger) {
+        if ($message instanceof MyCustomDebugInfo) {
+            $message = $message->formatForFile();
+        }
+    }
 
 Callback Signature:
 <pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
 
-- `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set $message to the string that should be logged.
+- `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set `$message` to the string that should be logged.
 
 - `int` `$level` The log level used with this log entry.
 
@@ -486,18 +562,26 @@ Callback Signature:
 
 
 ### Log.formatScreenMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [405](https://github.com/piwik/piwik/blob/master/core/Log.php#L405)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [423](https://github.com/piwik/piwik/blob/master/core/Log.php#L423)_
 
-This event is called when trying to log an object to the screen. Plugins can use
+Triggered when trying to log an object to the screen. Plugins can use
 this event to convert objects to strings before they are logged.
 
 The result of this callback can be HTML so no sanitization is done on the result.
-This means YOU MUST SANITIZE THE MESSAGE YOURSELF if you use this event.
+This means **YOU MUST SANITIZE THE MESSAGE YOURSELF** if you use this event.
+
+**Example**
+
+    public function formatScreenMessage(&$message, $level, $tag, $datetime, $logger) {
+        if ($message instanceof MyCustomDebugInfo) {
+            $message = Common::sanitizeInputValue($message->formatForScreen());
+        }
+    }
 
 Callback Signature:
 <pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
 
-- `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set $message to the string that should be logged.
+- `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set `$message` to the string that should be logged.
 
 - `int` `$level` The log level used with this log entry.
 
@@ -509,22 +593,24 @@ Callback Signature:
 
 
 ### Log.getAvailableWriters
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [325](https://github.com/piwik/piwik/blob/master/core/Log.php#L325)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [327](https://github.com/piwik/piwik/blob/master/core/Log.php#L327)_
 
 This event is called when the Log instance is created. Plugins can use this event to
 make new logging writers available.
 
-A logging writer is a callback that takes the following arguments:
-  int $level, string $tag, string $datetime, string $message
+A logging writer is a callback with the following signature:
 
-$level is the log level to use, $tag is the log tag used, $datetime is the date time
-of the logging call and $message is the formatted log message.
+    function (int $level, string $tag, string $datetime, string $message)
 
-Logging writers must be associated by name in the array passed to event handlers.
+`$level` is the log level to use, `$tag` is the log tag used, `$datetime` is the date time
+of the logging call and `$message` is the formatted log message.
 
-***Example**
+Logging writers must be associated by name in the array passed to event handlers. The
+name specified can be used in Piwik's INI configuration.
 
-    function (&$writers) {
+**Example**
+
+    public function getAvailableWriters(&$writers) {
         $writers['myloggername'] = function ($level, $tag, $datetime, $message) {
             // ...
         };
@@ -535,7 +621,7 @@ Logging writers must be associated by name in the array passed to event handlers
 Callback Signature:
 <pre><code>function(&amp;$writers)</code></pre>
 
-- `$`
+- `array` `$writers` Array mapping writer names with logging writers.
 
 ## Menu
 
@@ -596,14 +682,13 @@ Menu items should be added via the [add()](/api-reference/Piwik/Menu/MenuMain#ad
 
 Usages:
 
-[Actions::addMenus](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L483), [CustomVariables::addMenus](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L53), [Dashboard::addMenus](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L201), [DevicesDetection::addMenu](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L273), [ExampleUI::addReportingMenuItems](https://github.com/piwik/piwik/blob/master/plugins/ExampleUI/ExampleUI.php#L32), [Goals::addMenus](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L468), [Live::addMenu](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L54), [Provider::addMenu](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L100), [Referrers::addMenus](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L245), [UserCountry::addMenu](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L188), [UserCountryMap::addMenu](https://github.com/piwik/piwik/blob/master/plugins/UserCountryMap/UserCountryMap.php#L62), [UserSettings::addMenu](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L464), [VisitFrequency::addMenu](https://github.com/piwik/piwik/blob/master/plugins/VisitFrequency/VisitFrequency.php#L67), [VisitTime::addMenu](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L92), [VisitorInterest::addMenu](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L113), [VisitsSummary::addMenu](https://github.com/piwik/piwik/blob/master/plugins/VisitsSummary/VisitsSummary.php#L70)
+[Actions::addMenus](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L483), [CustomVariables::addMenus](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L53), [Dashboard::addMenus](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L201), [DevicesDetection::addMenu](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L273), [ExampleUI::addReportingMenuItems](https://github.com/piwik/piwik/blob/master/plugins/ExampleUI/ExampleUI.php#L32), [Goals::addMenus](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L485), [Live::addMenu](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L54), [Provider::addMenu](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L100), [Referrers::addMenus](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L245), [UserCountry::addMenu](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L188), [UserCountryMap::addMenu](https://github.com/piwik/piwik/blob/master/plugins/UserCountryMap/UserCountryMap.php#L62), [UserSettings::addMenu](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L464), [VisitFrequency::addMenu](https://github.com/piwik/piwik/blob/master/plugins/VisitFrequency/VisitFrequency.php#L67), [VisitTime::addMenu](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L92), [VisitorInterest::addMenu](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L113), [VisitsSummary::addMenu](https://github.com/piwik/piwik/blob/master/plugins/VisitsSummary/VisitsSummary.php#L70)
 
 
 ### Menu.Top.addItems
-_Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [114](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L114)_
+_Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [115](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L115)_
 
-Triggered when collecting all available menu items that are be displayed on the very top of every page, next to the login/logout links. Subscribe to this event if you want to add one or more items
-to the top menu.
+Triggered when collecting all available menu items that are be displayed on the very top of every page, next to the login/logout links. Subscribe to this event if you want to add one or more items to the top menu.
 
 Menu items should be added via the [addEntry()](/api-reference/Piwik/Menu/MenuTop#addentry) method.
 
@@ -630,26 +715,26 @@ Usages:
 - [Provider.getCleanHostname](#providergetcleanhostname)
 
 ### Provider.getCleanHostname
-_Defined in [Piwik/Plugins/Provider/Provider](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php) in line [185](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L185)_
+_Defined in [Piwik/Plugins/Provider/Provider](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php) in line [187](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L187)_
 
-Triggered when prettifying a hostname string. depending on a given hostname.
-
-This event can be used to customize the way a hostname is displayed in the 
+Triggered when prettifying a hostname string. This event can be used to customize the way a hostname is displayed in the 
 Providers report.
 
 **Example**
 
-```
-public function getCleanHostname(&$cleanHostname, $hostname)
-{
-    if ('fvae.VARG.ceaga.site.co.jp' == $hostname) {
-        $cleanHostname = 'site.co.jp';
+    public function getCleanHostname(&$cleanHostname, $hostname)
+    {
+        if ('fvae.VARG.ceaga.site.co.jp' == $hostname) {
+            $cleanHostname = 'site.co.jp';
+        }
     }
-}
-```
 
 Callback Signature:
 <pre><code>function(&amp;$cleanHostname, $hostname)</code></pre>
+
+- `string` `$cleanHostname` The hostname string to display. Set by the event handler.
+
+- `string` `$hostname` The full hostname.
 
 ## Reporting
 
@@ -658,13 +743,12 @@ Callback Signature:
 ### Reporting.getDatabaseConfig
 _Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [93](https://github.com/piwik/piwik/blob/master/core/Db.php#L93)_
 
-Triggered before a connection to the database is established. This event can be used to dynamically change the settings used to connect to the
-database.
+Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
 
 Callback Signature:
 <pre><code>function(&amp;$dbInfos)</code></pre>
 
-- `array` `$dbInfos` Reference to an array containing database connection info, including: - **host**: The host name or IP address to the MySQL database. - **username**: The username to use when connecting to the database. - **password**: The password to use when connecting to the database. - **dbname**: The name of the Piwik MySQL database. - **port**: The MySQL database port to use. - **adapter**: either `'PDO_MYSQL'` or `'MYSQLI'`
+- `array`
 
 ## Request
 
@@ -678,7 +762,7 @@ Callback Signature:
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [100](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L100)_
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
-and can be used to change the plugin and action that is being dispatched to.
+and can be used to change the controller action being dispatched to.
 
 Callback Signature:
 <pre><code>function(&amp;$module, &amp;$action, &amp;$parameters)</code></pre>
@@ -691,24 +775,24 @@ Callback Signature:
 
 
 ### Request.dispatch.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [140](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L140)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [143](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L143)_
 
-Triggered after a controller action is successfully called. This event can be used to modify controller action output (if there was any) before
-the output is returned.
+Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>
 
-- `mixed` `$result` The result of the controller action.
+- `mixed` `$result` The controller action result.
 
 - `array` `$parameters` The arguments passed to the controller action.
 
 
 ### Request.dispatchCoreAndPluginUpdatesScreen
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [356](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L356)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [363](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L363)_
 
-Triggered just after the platform is initialized and plugins are loaded. This event can be used to do early initialization. Note: At this point the user
-is not authenticated yet.
+Triggered just after the platform is initialized and plugins are loaded. This event can be used to do early initialization.
+
+_Note: At this point the user is not authenticated yet._
 
 Usages:
 
@@ -718,7 +802,7 @@ Usages:
 ### Request.initAuthenticationObject
 _Defined in [Piwik/Plugins/Overlay/API](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php) in line [128](https://github.com/piwik/piwik/blob/master/plugins/Overlay/API.php#L128)_
 
-Triggered shortly before the user is authenticated. This event can be used by plugins that provide their own authentication mechanism
+Triggered immediately before the user is authenticated. This event can be used by plugins that provide their own authentication mechanism
 to make that mechanism available. Subscribers should set the `'auth'` object in
 the Piwik\Registry to an object that implements the Piwik\Auth interface.
 
@@ -734,7 +818,7 @@ the Piwik\Registry to an object that implements the Piwik\Auth interface.
 Callback Signature:
 <pre><code>function($allowCookieAuthentication = true)</code></pre>
 
-- `bool` `$allowCookieAuthentication` Whether authentication based on $_COOKIE values should be allowed.
+- `bool` `$allowCookieAuthentication` Whether authentication based on `$_COOKIE` values should be allowed.
 
 Usages:
 
@@ -742,11 +826,16 @@ Usages:
 
 
 ### Request.initAuthenticationObject
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [370](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L370)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [385](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L385)_
 
-Triggered before the user is authenticated. You can use it to create your own
-authentication object which implements the Piwik\Auth interface and overrides
-the default authentication logic.
+Triggered before the user is authenticated, when the global authentication object should be created. Plugins that provide their own authentication implementation should use this event
+to set the global authentication object (which must derive from Piwik\Auth).
+
+**Example**
+
+    Piwik::addAction('Request.initAuthenticationObject', function() {
+        Piwik\Registry::set('auth', new MyAuthImplementation());
+    });
 
 Usages:
 
@@ -766,9 +855,9 @@ Usages:
 - [ScheduledReports.validateReportParameters](#scheduledreportsvalidatereportparameters)
 
 ### ScheduledReports.allowMultipleReports
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [775](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L775)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [776](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L776)_
 
-Triggered when we're determining if a scheduled report backend can handle sending multiple Piwik reports in one scheduled report or not. Plugins that provide their own scheduled reports backend should use this
+Triggered when we're determining if a scheduled report transport medium can handle sending multiple Piwik reports in one scheduled report or not. Plugins that provide their own transport mediums should use this
 event to specify whether their backend can send more than one Piwik report
 at a time.
 
@@ -785,10 +874,10 @@ Usages:
 
 
 ### ScheduledReports.getRendererInstance
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [426](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L426)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [425](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L425)_
 
-Triggered when obtaining a renderer instance based on the scheduled report type. Plugins that provide new scheduled report backends should use this event to
-handle their new report types.
+Triggered when obtaining a renderer instance based on the scheduled report output format. Plugins that provide new scheduled report output formats should use this event to
+handle their new report formats.
 
 Callback Signature:
 <pre><code>function(&amp;$reportRenderer, $reportType, $outputType, $report)</code></pre>
@@ -807,7 +896,7 @@ Usages:
 
 
 ### ScheduledReports.getReportFormats
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [821](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L821)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [823](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L823)_
 
 Triggered when gathering all available scheduled report formats. Plugins that provide their own scheduled report format should use
 this event to make their format available.
@@ -817,21 +906,26 @@ Callback Signature:
 
 - `array` `$reportFormats` An array mapping string IDs for each available scheduled report format with icon paths for those formats. Add your new format's ID to this array.
 
+- `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+
 Usages:
 
 [MobileMessaging::getReportFormats](https://github.com/piwik/piwik/blob/master/plugins/MobileMessaging/MobileMessaging.php#L152), [ScheduledReports::getReportFormats](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L194)
 
 
 ### ScheduledReports.getReportMetadata
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [747](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L747)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [748](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L748)_
 
-Triggered when gathering the list of Piwik reports that can be used with a certain scheduled reports backend. Plugins that provide their own scheduled reports backend should use this
+TODO: change this event so it returns a list of API methods instead of report metadata arrays. Triggered when gathering the list of Piwik reports that can be used with a certain
+transport medium.
+
+Plugins that provide their own transport mediums should use this
 event to list the Piwik reports that their backend supports.
 
 Callback Signature:
 <pre><code>function(&amp;$availableReportMetadata, $reportType, $idSite)</code></pre>
 
-- `array` `$availableReportMetadata` 
+- `array` `$availableReportMetadata` An array containg report metadata for each supported report.
 
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
@@ -843,10 +937,10 @@ Usages:
 
 
 ### ScheduledReports.getReportParameters
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [603](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L603)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [602](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L602)_
 
-Triggered when gathering the available parameters for a scheduled report type. Plugins that provide their own scheduled reports backend should use this
-event to list the available report parameters for their backend.
+Triggered when gathering the available parameters for a scheduled report type. Plugins that provide their own scheduled report transport mediums should use this
+event to list the available report parameters for their transport medium.
 
 Callback Signature:
 <pre><code>function(&amp;$availableParameters, $reportType)</code></pre>
@@ -861,10 +955,10 @@ Usages:
 
 
 ### ScheduledReports.getReportRecipients
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [852](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L852)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [854](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L854)_
 
-Triggered when getting the list of recipients of a scheduled report. Plugins that provide their own scheduled report backend should use this event
-so the list of recipients can be extracted from their backend's specific report
+Triggered when getting the list of recipients of a scheduled report. Plugins that provide their own scheduled report transport medium should use this event
+to extract the list of recipients their backend's specific scheduled report
 format.
 
 Callback Signature:
@@ -884,13 +978,13 @@ Usages:
 ### ScheduledReports.getReportTypes
 _Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [799](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L799)_
 
-Triggered when gathering all available scheduled report backend types. Plugins that provide their own scheduled reports backend should use this
-event to make their backend available.
+Triggered when gathering all available transport mediums. Plugins that provide their own transport mediums should use this
+event to make their medium available.
 
 Callback Signature:
 <pre><code>function(&amp;$reportTypes)</code></pre>
 
-- `array` `$reportTypes` An array mapping string IDs for each available scheduled report backend with icon paths for those backends. Add your new backend's ID to this array.
+- `array` `$reportTypes` An array mapping transport medium IDs with the paths to those mediums' icons. Add your new backend's ID to this array.
 
 Usages:
 
@@ -898,11 +992,10 @@ Usages:
 
 
 ### ScheduledReports.processReports
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [404](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L404)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [403](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L403)_
 
-Triggered when generating the content of scheduled reports. This event can be used to modify the content of processed report data or
-metadata, either for one specific report/report type/output format or all
-of them.
+Triggered when generating the content of scheduled reports. This event can be used to modify the report data or report metadata of one or more reports
+in a scheduled report, before the scheduled report is rendered and delivered.
 
 TODO: list data available in $report or make it a new class that can be documented (same for
       all other events that use a $report)
@@ -910,9 +1003,9 @@ TODO: list data available in $report or make it a new class that can be document
 Callback Signature:
 <pre><code>function(&amp;$processedReports, $reportType, $outputType, $report)</code></pre>
 
-- `array` `$processedReports` The list of processed reports in the scheduled report. Includes report data and metadata.
+- `array` `$processedReports` The list of processed reports in the scheduled report. Entries includes report data and metadata for each report.
 
-- `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+- `string` `$reportType` A string ID describing how the scheduled report will be sent, eg, `'sms'` or `'email'`.
 
 - `string` `$outputType` The output format of the report, eg, `'html'`, `'pdf'`, etc.
 
@@ -924,10 +1017,10 @@ Usages:
 
 
 ### ScheduledReports.sendReport
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [545](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L545)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [544](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L544)_
 
-Triggered when sending scheduled reports. Plugins that provide new scheduled report backends should use this event to
-send the scheduled report uses their backend.
+Triggered when sending scheduled reports. Plugins that provide new scheduled report transport mediums should use this event to
+send the scheduled report.
 
 Callback Signature:
 <pre><code>function($report[&#039;type&#039;], $report, $contents, $filename, $prettyDate, $reportSubject, $reportTitle, $additionalFiles)</code></pre>
@@ -944,7 +1037,7 @@ Callback Signature:
 
 - `string` `$reportSubject` A string describing what's in the scheduled report.
 
-- `string` `$reportTitle` The scheduled report's given title.
+- `string` `$reportTitle` The scheduled report's given title (given by a Piwik user).
 
 - `array` `$additionalFiles` The list of additional files that should be sent with this report.
 
@@ -954,7 +1047,7 @@ Usages:
 
 
 ### ScheduledReports.validateReportParameters
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [630](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L630)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [629](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L629)_
 
 Triggered when validating the parameters for a scheduled report. Plugins that provide their own scheduled reports backend should use this
 event to validate the custom parameters defined with ScheduledReports::getReportParameters().
@@ -995,21 +1088,28 @@ Usages:
 - [Segments.getKnownSegmentsToArchiveForSite](#segmentsgetknownsegmentstoarchiveforsite)
 
 ### Segments.getKnownSegmentsToArchiveAllSites
-_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [86](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L86)_
+_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [92](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L92)_
 
 Triggered during the cron archiving process to collect segments that should be pre-processed for all websites. The archiving process will be launched
-for each of these segments when archiving data for each site.
+for each of these segments when archiving data.
 
-This event can be used to add segments to be pre-processed. This can be provide
-enhanced performance if your plugin depends on data from a specific segment.
+This event can be used to add segments to be pre-processed. If your plugin depends
+on data from a specific segment, this event could be used to provide enhanced
+performance.
 
-Note: If you just want to add a segment that is managed by the user, you should use the
-SegmentEditor API.
+_Note: If you just want to add a segment that is managed by the user, use the
+SegmentEditor API._
+
+**Example**
+
+    Piwik::addAction('Segments.getKnownSegmentsToArchiveAllSites', function (&$segments) {
+        $segments[] = 'country=jp;city=Tokyo';
+    });
 
 Callback Signature:
 <pre><code>function(&amp;$segmentsToProcess)</code></pre>
 
-- `array` `$segmentsToProcess` List of segment definitions, eg, ``` array( 'browserCode=ff;resolution=800x600', 'country=JP;city=Tokyo' ) ``` Add segments to process to this array in your event handler.
+- `array` `$segmentsToProcess` List of segment definitions, eg, array( 'browserCode=ff;resolution=800x600', 'country=jp;city=Tokyo' ) Add segments to this array in your event handler.
 
 Usages:
 
@@ -1017,21 +1117,26 @@ Usages:
 
 
 ### Segments.getKnownSegmentsToArchiveForSite
-_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [127](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L127)_
+_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [137](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L137)_
 
 Triggered during the cron archiving process to collect segments that should be pre-processed for one specific site. The archiving process will be launched
 for each of these segments when archiving data for that one site.
 
-This event can be used to add segments to be pre-processed. This can be provide
-enhanced performance if your plugin depends on data from a specific segment.
+This event can be used to add segments to be pre-processed for one site.
 
-Note: If you just want to add a segment that is managed by the user, you should use the
-SegmentEditor API.
+_Note: If you just want to add a segment that is managed by the user, you should use the
+SegmentEditor API._
+
+**Example**
+
+    Piwik::addAction('Segments.getKnownSegmentsToArchiveForSite', function (&$segments, $idSite) {
+        $segments[] = 'country=jp;city=Tokyo';
+    });
 
 Callback Signature:
 <pre><code>function(&amp;$segments, $idSite)</code></pre>
 
-- `array` `$segmentsToProcess` List of segment definitions, eg, ``` array( 'browserCode=ff;resolution=800x600', 'country=JP;city=Tokyo' ) ``` Add segments to process to this array in your event handler.
+- `array` `$segmentsToProcess` List of segment definitions, eg, array( 'browserCode=ff;resolution=800x600', 'country=JP;city=Tokyo' ) Add segments to this array in your event handler.
 
 - `int` `$idSite` The ID of the site to get segments for.
 
@@ -1044,17 +1149,24 @@ Usages:
 - [Site.setSite](#sitesetsite)
 
 ### Site.setSite
-_Defined in [Piwik/Site](https://github.com/piwik/piwik/blob/master/core/Site.php) in line [104](https://github.com/piwik/piwik/blob/master/core/Site.php#L104)_
+_Defined in [Piwik/Site](https://github.com/piwik/piwik/blob/master/core/Site.php) in line [111](https://github.com/piwik/piwik/blob/master/core/Site.php#L111)_
 
-Piwik core APIs and plugins use the Site object to get information about websites. This event is called just before a Website information is stored in the memory cache.
-It can be used to modify the data for a website, such as decorate its name or change its created datetime.
+Triggered so plugins can modify website entities without modifying the database. This event should **not** be used to add data that is expensive to compute. If you
+need to make HTTP requests or query the database for more information, this is not
+the place to do it.
+
+**Example**
+
+    Piwik::addAction('Site.setSite', function ($idSite, &$info) {
+        $info['name'] .= " (original)";
+    });
 
 Callback Signature:
 <pre><code>function($idSite, &amp;$infoSite)</code></pre>
 
-- `int` `$idSite` Website ID
+- `int` `$idSite` The ID of the website entity that will be modified.
 
-- `array` `$infoSite` Website information array
+- `array` `$infoSite` The website entity. [Learn more.](/guides/persistence-and-the-mysql-backend#websites-aka-sites)
 
 ## SitesManager
 
@@ -1081,28 +1193,25 @@ Usages:
 - [TaskScheduler.getScheduledTasks](#taskschedulergetscheduledtasks)
 
 ### TaskScheduler.getScheduledTasks
-_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [105](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L105)_
+_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [102](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L102)_
 
-Triggered when the TaskScheduler runs scheduled tasks. Collects all the tasks that
-will be run.
+Triggered during scheduled task execution. Collects all the tasks to run.
 
 Subscribe to this event to schedule code execution on an hourly, daily, weekly or monthly
 basis.
 
 **Example**
 
-```
-public function getScheduledTasks(&$tasks)
-{
-    $tasks[] = new ScheduledTask(
-        'Piwik\Plugins\CorePluginsAdmin\MarketplaceApiClient',
-        'clearAllCacheEntries',
-        null,
-        ScheduledTime::factory('daily'),
-        ScheduledTask::LOWEST_PRIORITY
-    );
-}
-```
+    public function getScheduledTasks(&$tasks)
+    {
+        $tasks[] = new ScheduledTask(
+            'Piwik\Plugins\CorePluginsAdmin\MarketplaceApiClient',
+            'clearAllCacheEntries',
+            null,
+            ScheduledTime::factory('daily'),
+            ScheduledTask::LOWEST_PRIORITY
+        );
+    }
 
 Callback Signature:
 <pre><code>function(&amp;$tasks)</code></pre>
@@ -1132,10 +1241,10 @@ Usages:
 - [Tracker.setVisitorIp](#trackersetvisitorip)
 
 ### Tracker.Cache.getSiteAttributes
-_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [87](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L87)_
+_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [90](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L90)_
 
-This event is called to get the details of a site by its ID. It can be used to
-add custom attributes for the website to the Tracker cache.
+Triggered to get the attributes of a site entity that might be used by the Tracker. Plugins add new site attributes for use in other tracking events must
+use this event to put those attributes in the Tracker Cache.
 
 **Example**
 
@@ -1148,13 +1257,13 @@ add custom attributes for the website to the Tracker cache.
 Callback Signature:
 <pre><code>function(&amp;$content, $idSite)</code></pre>
 
-- `array` `$content` List of attributes.
+- `array` `$content` Array mapping of site attribute names with values.
 
-- `int` `$idSite` The site ID.
+- `int` `$idSite` The site ID to get attributes for.
 
 Usages:
 
-[Goals::fetchGoalsFromDb](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L438), [SitesManager::recordWebsiteDataInCache](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L73), [UsersManager::recordAdminUsersInCache](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L53)
+[Goals::fetchGoalsFromDb](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L455), [SitesManager::recordWebsiteDataInCache](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L73), [UsersManager::recordAdminUsersInCache](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L53)
 
 
 ### Tracker.detectReferrerSearchEngine
@@ -1166,26 +1275,29 @@ logic.
 Callback Signature:
 <pre><code>function(&amp;$searchEngineInformation, $this-&gt;referrerUrl)</code></pre>
 
-- `array` `$searchEngineInformation` An array with the following information: - **name**: The search engine name. - **keywords**: The search keywords used. This parameter will be defaulted to the results of Piwik's default search engine detection logic.
+- `array` `$searchEngineInformation` An array with the following information: - **name**: The search engine name. - **keywords**: The search keywords used. This parameter is initialized to the results of Piwik's default search engine detection logic.
 
 - `string`
 
 
 ### Tracker.existingVisitInformation
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [244](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L244)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [256](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L256)_
 
-This event is triggered before updating an existing visit's row. Use it to change any visitor information before
-the visitor is saved, or register information about an existing visitor.
+Triggered before a [visit entity](/guides/persistence-and-the-mysql-backend#visits) is updated when tracking an action for an existing visit. This event can be used to modify the visit properties that will be updated before the changes
+are persisted.
 
 Callback Signature:
 <pre><code>function(&amp;$valuesToUpdate, $this-&gt;visitorInfo)</code></pre>
+
+- `array` `$valuesToUpdate` Visit entity properties that will be updated.
+
+- `array` `$visit` The entire visit entity. Read [this](/guides/persistence-and-the-mysql-backend#visits) to see what it contains.
 
 
 ### Tracker.getDatabaseConfig
 _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [542](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L542)_
 
-Triggered before a connection to the database is established in the Tracker. This event can be used to dynamically change the settings used to connect to the
-database.
+Triggered before a connection to the database is established by the Tracker. This event can be used to change the database connection settings used by the Tracker.
 
 Callback Signature:
 <pre><code>function(&amp;$configDb)</code></pre>
@@ -1194,24 +1306,36 @@ Callback Signature:
 
 
 ### Tracker.getVisitFieldsToPersist
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [974](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L974)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [999](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L999)_
 
-Use this event to load additional fields from the log_visit table into the visitor array for later use. When you add fields to this $fields array, they will be later available in Tracker.newConversionInformation
-or Tracker.newVisitorInformation.
+Triggered when checking if the current action being tracked belongs to an existing visit. This event collects a list of [visit entity]() properties that should be loaded when reading
+the existing visit. Properties that appear in this list will be available in other tracking
+events such as [Tracker.newConversionInformation](/api-reference/hooks#trackernewconversioninformation) and [Tracker.newVisitorInformation](/api-reference/hooks#trackernewvisitorinformation).
+
+Plugins can use this event to load additional visit entity properties for later use during tracking.
+When you add fields to this $fields array, they will be later available in Tracker.newConversionInformation
+
+**Example**
+
+    Piwik::addAction('Tracker.getVisitFieldsToPersist', function (&$fields) {
+        $fields[] = 'custom_visit_property';
+    });
 
 Callback Signature:
 <pre><code>function(&amp;$fields)</code></pre>
+
+- `array` `$fields` The list of visit properties to load.
 
 
 ### Tracker.isExcludedVisit
 _Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php) in line [84](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php#L84)_
 
-Triggered on every pageview of a visitor. This event can be used to tell the Tracker not to record this particular pageview.
+Triggered on every tracking request. This event can be used to tell the Tracker not to record this particular action or visit.
 
 Callback Signature:
 <pre><code>function(&amp;$excluded)</code></pre>
 
-- `bool` `$excluded` Whether the pageview should be excluded or not. Initialized to `false`. Event subscribers should set it to `true` in order to exclude the pageview.
+- `bool` `$excluded` Whether the request should be excluded or not. Initialized to `false`. Event subscribers should set it to `true` in order to exclude the request.
 
 Usages:
 
@@ -1221,45 +1345,43 @@ Usages:
 ### Tracker.makeNewVisitObject
 _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [599](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L599)_
 
-Triggered before a new `Piwik\Tracker\Visit` object is created. Subscribers to this
+Triggered before a new **visit object** is created. Subscribers to this
 event can force the use of a custom visit object that extends from
 Piwik\Tracker\VisitInterface.
 
 Callback Signature:
 <pre><code>function(&amp;$visit)</code></pre>
 
-- `\Piwik\Tracker\VisitInterface` `$visit` Initialized to null, but can be set to a created Visit object. If it isn't modified Piwik uses the default class.
+- `\Piwik\Tracker\VisitInterface` `$visit` Initialized to null, but can be set to a new visit object. If it isn't modified Piwik uses the default class.
 
 
 ### Tracker.newConversionInformation
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [801](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L801)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [815](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L815)_
 
-This hook is called before inserting a new Goal Conversion.. You can use it to update the Goal
-attributes before they are saved in the log_conversion table.
-`$visitor` contains the current known visit information.
+Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
 
 Callback Signature:
-<pre><code>function(&amp;$newGoal, $visitorInformation, $this-&gt;request)</code></pre>
+<pre><code>function(&amp;$conversion, $visitInformation, $this-&gt;request)</code></pre>
 
-- `array` `$goal` Array of SQL fields value for this conversion, will be inserted in the log_conversion table
+- `array` `$conversion` The conversion entity. Read [this](/guides/persistence-and-the-mysql-backend#conversions) to see what it contains.
 
-- `array` `$visitorInformation` Array of log_visit field values for this visitor
+- `array` `$visitInformation` The visit entity that we are tracking a conversion for. See what information it contains [here](/guides/persistence-and-the-mysql-backend#visits).
 
-- `\Piwik\Tracker\Request` `$request` 
+- `\Piwik\Tracker\Request` `$request` An object describing the tracking request being processed.
 
 
 ### Tracker.newVisitorInformation
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [298](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L298)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [310](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L310)_
 
-This event can be used to determine and set new visit information before the visit is logged. The UserCountry plugin, for example, uses this event to inject location information
-into the visit log table.
+Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
+The UserCountry plugin, for example, uses this event to add location information for each visit.
 
 Callback Signature:
 <pre><code>function(&amp;$this-&gt;visitorInfo, $this-&gt;request)</code></pre>
 
-- `array` `$visitInfo` Information regarding the visit. This is information that persisted to the database.
+- `array` `$visit` The visit entity. Read [this](/guides/persistence-and-the-mysql-backend#visits) to see what information it contains.
 
-- `\Piwik\Tracker\Request` `$request` Request object, contains many useful methods such as getUserAgent() or getIp() to get the original IP.
+- `\Piwik\Tracker\Request` `$request` An object describing the tracking request being processed.
 
 Usages:
 
@@ -1267,63 +1389,68 @@ Usages:
 
 
 ### Tracker.recordAction
-_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [333](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L333)_
+_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [315](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L315)_
 
-Triggered after successfully logging an action for a visit.
+Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions).
 
 Callback Signature:
-<pre><code>function($trackerAction = $this, $info)</code></pre>
+<pre><code>function($trackerAction = $this, $visitAction)</code></pre>
 
 - `Action` `$tracker` Action The Action tracker instance.
 
-- `array` `$info` An array describing the current visit action. Includes the following information: - **idSite**: The ID of the site that we are tracking. - **idLinkVisitAction**: The ID of the row that was inserted into the log_link_visit_action table. - **idVisit**: The visit ID. - **idReferrerActionUrl**: The ID referencing the row in the log_action table that holds the URL of the visitor's last action. - **idReferrerActionName**: The ID referencing the row in the log_action table that holds the name of the visitor's last action. - **timeSpentReferrerAction**: The number of seconds since the visitor's last action.
+- `array` `$visitAction` The visit action entity that was persisted. Read [this](/guides/persistence-and-the-mysql-backend#visit-actions) to see what it contains.
 
 
 ### Tracker.recordEcommerceGoal
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [415](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L415)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [421](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L421)_
 
-This hook is called after recording an ecommerce goal. You can use it for instance to sync the recorded goal
-with third party systems. `$goal` contains all available information like `items` and `revenue`.
-`$visitor` contains the current known visit information.
+Triggered after successfully persisting an ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
+the tracker down._
 
 Callback Signature:
-<pre><code>function($goal, $visitorInformation)</code></pre>
+<pre><code>function($conversion, $visitInformation)</code></pre>
+
+- `array` `$conversion` The conversion entity that was just persisted. See what information it contains [here](/guides/persistence-and-the-mysql-backend#conversions).
+
+- `array` `$visitInformation` The visit entity that we are tracking a conversion for. See what information it contains [here](/guides/persistence-and-the-mysql-backend#visits).
 
 
 ### Tracker.recordStandardGoals
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [780](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L780)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [791](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L791)_
 
-This hook is called after recording a standard goal. You can use it for instance to sync the recorded
-goal with third party systems. `$goal` contains all available information like `url` and `revenue`.
+Triggered after successfully recording a non-ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
+the tracker down._
 
 Callback Signature:
-<pre><code>function($newGoal)</code></pre>
+<pre><code>function($conversion)</code></pre>
+
+- `array` `$conversion` The conversion entity that was just persisted. See what information it contains [here](/guides/persistence-and-the-mysql-backend#conversions).
 
 
 ### Tracker.Request.getIdSite
 _Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [318](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L318)_
 
-Triggered when obtaining the ID of the site that is currently being tracked. This event can be used to modify the site ID from what is specified by the **idsite**
-query parameter.
+Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
+website.
 
 Callback Signature:
 <pre><code>function(&amp;$idSite, $this-&gt;params)</code></pre>
 
 - `int` `$idSite` Initialized to the value of the **idsite** query parameter. If a subscriber sets this variable, the value it uses must be greater than 0.
 
-- `array` `$params` The entire array of request parameters passed with this tracking request.
+- `array` `$params` The entire array of request parameters in the current tracking request.
 
 
 ### Tracker.setTrackerCacheGeneral
-_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [150](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L150)_
+_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [154](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L154)_
 
-Triggered before the general tracker cache is saved to disk. This event can be
-used to add extra content to the cace.
+Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache) is saved to disk. This event can be used to add extra content to the cache.
 
 Data that is used during tracking but is expensive to compute/query should be
-cached so as not to slow the tracker down. One example of such data are options
-that are stored in the piwik_option table. Requesting data on each tracking
-request means an extra unnecessary database query on each visitor action.
+cached to keep tracking efficient. One example of such data are options
+that are stored in the piwik_option table. Querying data for each tracking
+request means an extra unnecessary database query for each visitor action. Using
+a cache solves this problem.
 
 **Example**
 
@@ -1343,12 +1470,14 @@ Usages:
 
 
 ### Tracker.setVisitorIp
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [96](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L96)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [101](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L101)_
 
-This event can be used for instance to anonymize the IP (after testing for IP exclusion).
+Triggered after visits are tested for exclusion so plugins can modify the IP address persisted with a visit. This event is primarily used by the **AnonymizeIP** plugin to anonymize IP addresses.
 
 Callback Signature:
 <pre><code>function(&amp;$this-&gt;visitorInfo[&#039;location_ip&#039;])</code></pre>
+
+- `string` `$ip` The visitor's IP address.
 
 Usages:
 
@@ -1359,10 +1488,10 @@ Usages:
 - [Translate.getClientSideTranslationKeys](#translategetclientsidetranslationkeys)
 
 ### Translate.getClientSideTranslationKeys
-_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [194](https://github.com/piwik/piwik/blob/master/core/Translate.php#L194)_
+_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [196](https://github.com/piwik/piwik/blob/master/core/Translate.php#L196)_
 
 Triggered before generating the JavaScript code that allows i18n strings to be used in the browser. Plugins should subscribe to this event to specify which translations
-should be available in JavaScript code.
+should be available to JavaScript.
 
 Event handlers should add whole translation keys, ie, keys that include the plugin name.
 
@@ -1380,16 +1509,16 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L97), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L111), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/CoreVisualizations.php#L64), [Dashboard::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L279), [Feedback::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Feedback/Feedback.php#L58), [Goals::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L644), [Live::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L67), [Overlay::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Overlay/Overlay.php#L46), [ScheduledReports::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L103), [SitesManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L212), [Transitions::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Transitions/Transitions.php#L41), [UserCountry::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L477), [UsersManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L139), [Widgetize::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/Widgetize.php#L63)
+[CoreHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L97), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L111), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/CoreVisualizations.php#L64), [Dashboard::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L279), [Feedback::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Feedback/Feedback.php#L58), [Goals::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L661), [Live::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L67), [Overlay::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Overlay/Overlay.php#L46), [ScheduledReports::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L103), [SitesManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/SitesManager.php#L212), [Transitions::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Transitions/Transitions.php#L41), [UserCountry::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L477), [UsersManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L139), [Widgetize::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/Widgetize.php#L63)
 
 ## Updater
 
 - [Updater.checkForUpdates](#updatercheckforupdates)
 
 ### Updater.checkForUpdates
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [397](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L397)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [412](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L412)_
 
-Triggered after the platform is initialized and after the user has been authenticated, but before the platform dispatched the request. Piwik uses this event to check for updates to Piwik.
+Triggered after the platform is initialized and after the user has been authenticated, but before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
 
 Usages:
 
@@ -1421,7 +1550,7 @@ parameter. Plugins can override this logic by subscribing to this event.
 Callback Signature:
 <pre><code>function(&amp;$lang)</code></pre>
 
-- `string` `$lang` The language that should be used for the user. Will be initialized to the value of the **language** query parameter.
+- `string` `$lang` The language that should be used for the current user. Will be initialized to the value of the **language** query parameter.
 
 Usages:
 
@@ -1429,7 +1558,7 @@ Usages:
 
 
 ### User.isNotAuthorized
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [154](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L154)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [157](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L157)_
 
 Triggered when a user with insufficient access permissions tries to view some resource. This event can be used to customize the error that occurs when a user is denied access
 (for example, displaying an error message, redirecting to a page other than login, etc.).
@@ -1437,7 +1566,7 @@ Triggered when a user with insufficient access permissions tries to view some re
 Callback Signature:
 <pre><code>function($exception)</code></pre>
 
-- `NoAccessException` `$exception` The exception that was caught.
+- `[NoAccessException](/api-reference/Piwik/NoAccessException)` `$exception` The exception that was caught.
 
 Usages:
 
@@ -1463,8 +1592,8 @@ Callback Signature:
 ### UsersManager.deleteUser
 _Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [661](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L661)_
 
-Triggered after a user has been deleted. This event should be used to clean up any data that is related to the user that was
-deleted. For example, the Dashboard plugin uses this event to remove the user's dashboards.
+Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
+The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
 
 Callback Signature:
 <pre><code>function($userLogin)</code></pre>
@@ -1491,14 +1620,15 @@ Callback Signature:
 - [View.ReportsByDimension.render](#viewreportsbydimensionrender)
 
 ### View.ReportsByDimension.render
-_Defined in [Piwik/View/ReportsByDimension](https://github.com/piwik/piwik/blob/master/core/View/ReportsByDimension.php) in line [98](https://github.com/piwik/piwik/blob/master/core/View/ReportsByDimension.php#L98)_
+_Defined in [Piwik/View/ReportsByDimension](https://github.com/piwik/piwik/blob/master/core/View/ReportsByDimension.php) in line [101](https://github.com/piwik/piwik/blob/master/core/View/ReportsByDimension.php#L101)_
 
-Use this hook to configure the "Report by dimension" UI controller. This controller is displayed for example
-in the Referrers>Overview and the Goals>Overview report. It displays a list of repotrs on the left, and when click
-loads the report on the right column. This hook can be used to filter this list of report. @see ReportsByDimension class for more info.
+Triggered before rendering ReportsByDimension views. Plugins can use this event to configure ReportsByDimension instances by
+adding or removing reports to display.
 
 Callback Signature:
 <pre><code>function($this)</code></pre>
+
+- `ReportsByDimension` `$this` The view instance.
 
 ## ViewDataTable
 
@@ -1530,16 +1660,17 @@ Usages:
 
 
 ### ViewDataTable.configure
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [146](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L146)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [147](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L147)_
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
-the view based on the report that it is displaying.
+the view based on the report that is being displayed.
 
 Plugins that define their own reports must subscribe to this event in order to
-specify how the Piwik UI will display the report.
+specify how the Piwik UI should display the report.
 
 **Example**
 
+    // event handler
     public function configureViewDataTable(ViewDataTable $view)
     {
         switch ($view->requestConfig->apiMethodToRequestDataTable) {
@@ -1557,24 +1688,26 @@ Callback Signature:
 
 Usages:
 
-[Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L520), [CustomVariables::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L135), [DBStats::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L108), [DevicesDetection::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L278), [Goals::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L509), [Provider::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L221), [Referrers::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L294), [UserCountry::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L349), [UserSettings::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L187), [VisitTime::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L134), [VisitorInterest::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L145)
+[Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L520), [CustomVariables::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L135), [DBStats::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DBStats/DBStats.php#L108), [DevicesDetection::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L278), [Goals::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L526), [Provider::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L223), [Referrers::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L294), [UserCountry::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L349), [UserSettings::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L187), [VisitTime::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L134), [VisitorInterest::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L145)
 
 
 ### ViewDataTable.getDefaultType
-_Defined in [Piwik/ViewDataTable/Factory](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php) in line [169](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php#L169)_
+_Defined in [Piwik/ViewDataTable/Factory](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php) in line [173](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php#L173)_
 
-Triggered when gathering the default view types for all available reports. By default the HtmlTable
-visualization is used. If you define your own report, you may want to subscribe to this event to
-make sure another Visualization is used (for example, a pie graph, bar graph, or something else).
+Triggered when gathering the default view types for all available reports. If you define your own report, you may want to subscribe to this event to
+make sure the correct default Visualization is used (for example, a pie graph,
+bar graph, or something else).
+
+If there is no default type associated with a report, the **table** visualization
+used.
 
 **Example**
-```
-public function getDefaultTypeViewDataTable(&$defaultViewTypes)
-{
-    $defaultViewTypes['Referrers.getSocials']       = HtmlTable::ID;
-    $defaultViewTypes['Referrers.getUrlsForSocial'] = Pie::ID;
-}
-```
+
+    public function getDefaultTypeViewDataTable(&$defaultViewTypes)
+    {
+        $defaultViewTypes['Referrers.getSocials']       = HtmlTable::ID;
+        $defaultViewTypes['Referrers.getUrlsForSocial'] = Pie::ID;
+    }
 
 Callback Signature:
 <pre><code>function(&amp;self::$defaultViewTypes)</code></pre>
@@ -1590,24 +1723,20 @@ Usages:
 - [WidgetsList.addWidgets](#widgetslistaddwidgets)
 
 ### WidgetsList.addWidgets
-_Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [92](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L92)_
+_Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [90](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L90)_
 
-Triggered once when the widget list is first requested. Collects all available widgets.
-
-Subscribe to this event to make your plugin's reports or other controller actions available
+Used to collect all available dashboard widgets. Subscribe to this event to make your plugin's reports or other controller actions available
 as dashboard widgets. Event handlers should call the [WidgetsList::add()](/api-reference/Piwik/WidgetsList#add) method for each
 new dashboard widget.
 
 **Example**
 
-```
-public function addWidgets()
-{
-    WidgetsList::add('General_Actions', 'General_Pages', 'Actions', 'getPageUrls');
-}
-```
+    public function addWidgets()
+    {
+        WidgetsList::add('General_Actions', 'General_Pages', 'Actions', 'getPageUrls');
+    }
 
 Usages:
 
-[Actions::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L460), [CoreHome::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L37), [CustomVariables::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L48), [DevicesDetection::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L168), [ExampleRssWidget::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/ExampleRssWidget/ExampleRssWidget.php#L37), [Goals::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L444), [Live::addWidget](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L59), [Provider::addWidget](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L95), [Referrers::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L228), [SEO::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/SEO/SEO.php#L43), [UserCountry::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L171), [UserSettings::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L451), [VisitFrequency::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/VisitFrequency/VisitFrequency.php#L61), [VisitTime::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L85), [VisitorInterest::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L105), [VisitsSummary::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/VisitsSummary/VisitsSummary.php#L63)
+[Actions::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L460), [CoreHome::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L37), [CustomVariables::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L48), [DevicesDetection::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L168), [ExampleRssWidget::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/ExampleRssWidget/ExampleRssWidget.php#L37), [Goals::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L461), [Live::addWidget](https://github.com/piwik/piwik/blob/master/plugins/Live/Live.php#L59), [Provider::addWidget](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L95), [Referrers::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L228), [SEO::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/SEO/SEO.php#L43), [UserCountry::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L171), [UserSettings::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L451), [VisitFrequency::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/VisitFrequency/VisitFrequency.php#L61), [VisitTime::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L85), [VisitorInterest::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L105), [VisitsSummary::addWidgets](https://github.com/piwik/piwik/blob/master/plugins/VisitsSummary/VisitsSummary.php#L63)
 

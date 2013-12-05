@@ -461,7 +461,7 @@ Piwik or user settings.
 
 - It does not return anything.
 - It throws one of the following exceptions:
-    - `Piwik\NoAccessException` &mdash; If the token doesn&#039;t match.
+    - [`Piwik\NoAccessException`](../../Piwik/NoAccessException.md) &mdash; If the token doesn&#039;t match.
 
 <a name="getcalendarprettydate" id="getcalendarprettydate"></a>
 <a name="getCalendarPrettyDate" id="getCalendarPrettyDate"></a>
