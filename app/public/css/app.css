@@ -245,3 +245,11 @@ pre > code {
 p {
     margin: 0 0 15px;
 }
+
+pre.inline-code-pre {
+  display:inline-block;
+}
+
+pre.inline-code-pre>code {
+  padding:2px 4px;
+}

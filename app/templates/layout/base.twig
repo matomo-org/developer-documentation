@@ -89,16 +89,13 @@ $(document).ready(function () {
     hljs.initHighlightingOnLoad();
 
     // hack to highlight inline code, can be removed when highlight.js version 8 is released
-    var highlighted = $('pre code').first(),
-        backgroundColor = highlighted.css('background-color'),
-        foregroundColor = highlighted.css('color');
-    
     $('code').each(function(i, e) {
         if ($(e).parent().is('pre')) {
             return;
         }
 
-        $(e).css({'background-color': backgroundColor, 'color': foregroundColor});
+        $(e).addClass('php').wrap('<pre class="inline-pre"></pre>');
+        hljs.highlightBlock(e);
     });
 });
 </script>
