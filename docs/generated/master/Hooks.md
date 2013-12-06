@@ -1660,7 +1660,7 @@ Usages:
 
 
 ### ViewDataTable.configure
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [147](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L147)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [215](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L215)_
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed.

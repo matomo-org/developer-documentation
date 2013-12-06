@@ -723,7 +723,6 @@ Index
 - [`$subtable_controller_action`](Piwik/ViewDataTable/Config.md#$subtable_controller_action) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_pagination_control`](Piwik/ViewDataTable/Config.md#$show_pagination_control) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_offset_information`](Piwik/ViewDataTable/Config.md#$show_offset_information) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
-- [`setController()`](Piwik/ViewDataTable/Config.md#setcontroller) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setDefaultSort()`](Piwik/ViewDataTable/RequestConfig.md#setdefaultsort) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## T

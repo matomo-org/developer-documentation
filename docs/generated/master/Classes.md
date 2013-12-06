@@ -66,8 +66,8 @@ This is a complete list of available classes:
 - [`Plugin\Controller`](Piwik/Plugin/Controller.md) &mdash; Base class of all plugin Controllers.
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
 - [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all Settings providers.
-- [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all analytics visualizations.
-- [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; Base class for all DataTable visualizations.
+- [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
+- [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata describing a chunk of PHP code that should be executed at regular intervals.
 - [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; Describes the interval on which a scheduled task is executed.
@@ -87,7 +87,7 @@ This is a complete list of available classes:
 - [`UrlHelper`](Piwik/UrlHelper.md) &mdash; Contains less commonly needed URL helper methods.
 - [`Version`](Piwik/Version.md) &mdash; Piwik version information.
 - [`View`](Piwik/View.md) &mdash; Encapsulates and manages a [Twig](http://twig.sensiolabs.org/) template.
-- [`ViewDataTable\Config`](Piwik/ViewDataTable/Config.md) &mdash; Contains base display properties for ViewDataTables.
+- [`ViewDataTable\Config`](Piwik/ViewDataTable/Config.md) &mdash; Contains base display properties for [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)s.
 - [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
-- [`ViewDataTable\RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; TODO
+- [`ViewDataTable\RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; Contains base request properties for [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances.
 - [`WidgetsList`](Piwik/WidgetsList.md) &mdash; Manages the global list of reports that can be displayed as dashboard widgets.

@@ -3,13 +3,13 @@
 Config
 ======
 
-Contains base display properties for ViewDataTables.
+Contains base display properties for [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)s.
 
 Description
 -----------
 
-Manipulating these properties
-in a ViewDataTable instance will change how its report will be displayed.
+Manipulating these
+properties in a ViewDataTable instance will change how its report will be displayed.
 
 <a name="client-side-properties-desc"></a>
 **Client Side Properties**
@@ -23,6 +23,16 @@ client side JavaScript can use them. Only affects ViewDataTables that output HTM
 Overridable properties are properties that can be set via the query string.
 If a request has a query parameter that matches an overridable property, the property
 will be set to the query parameter value.
+
+**Reusing base properties**
+
+Many of the properties in this class only have meaning for the [Plugin\Visualization](/api-reference/Piwik/Plugin/Visualization)
+class, but can be set for other visualizations that extend [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) 
+directly.
+
+Visualizations that extend [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) directly and want to re-use these
+properties must make sure the properties are used in the exact same way they are used in
+[Plugin\Visualization](/api-reference/Piwik/Plugin/Visualization).
 
 **Defining new display properties**
 
@@ -108,9 +118,9 @@ This class defines the following properties:
 - [`$show_offset_information`](#$show_offset_information) &mdash; Controls whether offset information (ie, '5-10 of 20') is shown under the datatable.
 - [`$hide_annotations_view`](#$hide_annotations_view) &mdash; Controls whether annotations are shown or not.
 - [`$export_limit`](#$export_limit) &mdash; The filter_limit query parameter value to use in export links.
-- [`$report_id`](#$report_id) &mdash; TODO
-- [`$controllerName`](#$controllername) &mdash; TODO
-- [`$controllerAction`](#$controlleraction) &mdash; TODO
+- [`$report_id`](#$report_id)
+- [`$controllerName`](#$controllername)
+- [`$controllerAction`](#$controlleraction)
 
 <a name="$clientsideproperties" id="$clientsideproperties"></a>
 <a name="clientSideProperties" id="clientSideProperties"></a>
@@ -714,8 +724,6 @@ Defaulted to the value of the `[General] API_datatable_default_limit` INI config
 <a name="report_id" id="report_id"></a>
 ### `$report_id`
 
-TODO
-
 #### Signature
 
 - Its type is not specified.
@@ -725,8 +733,6 @@ TODO
 <a name="controllerName" id="controllerName"></a>
 ### `$controllerName`
 
-TODO
-
 #### Signature
 
 - Its type is not specified.
@@ -735,8 +741,6 @@ TODO
 <a name="$controlleraction" id="$controlleraction"></a>
 <a name="controllerAction" id="controllerAction"></a>
 ### `$controllerAction`
-
-TODO
 
 #### Signature
 
@@ -749,7 +753,6 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`setController()`](#setcontroller) &mdash; TODO
 - [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks display properties as client side properties.
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable.
 - [`getProperties()`](#getproperties) &mdash; Returns array of all property values in this config object.
@@ -766,19 +769,6 @@ Constructor.
 
 #### Signature
 
-
-<a name="setcontroller" id="setcontroller"></a>
-<a name="setController" id="setController"></a>
-### `setController()`
-
-TODO
-
-#### Signature
-
-- It accepts the following parameter(s):
-    - `$controllerName`
-    - `$controllerAction`
-- It does not return anything.
 
 <a name="addpropertiesthatshouldbeavailableclientside" id="addpropertiesthatshouldbeavailableclientside"></a>
 <a name="addPropertiesThatShouldBeAvailableClientSide" id="addPropertiesThatShouldBeAvailableClientSide"></a>
