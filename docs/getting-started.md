@@ -22,7 +22,6 @@ Notes: This guide is a cross between a tutorial & a guide. It should be linked t
 
 TODO: (stuff that needs to go in SOME guide)
 - DataTable row actions
-
 TODO: removed scheduled reports guide. should be replaced w/ two tutorials (new output format + new transport medium)
 -->
 
@@ -33,6 +32,12 @@ This guide will show you:
 - **how to get your development environment setup,**
 - **how to create a new Piwik Plugin,**
 - **and where to go next to continue building your extension.**
+
+**Guide Assumptions**
+
+This guide assumes that you, the reader, can code in PHP and can setup your own local webserver. If you do not have these skills, you will not be able to successfully understand this guide.
+
+There are many resources on the internet you can use to learn PHP. We reccomend reading [these tutorials](http://devzone.zend.com/6/).
 
 ## Piwik Plugins
 
@@ -58,12 +63,6 @@ These are only a few of the possibilities. Many of the existing plugins do thing
 Well, we're not really sure. It might be hard to get your idea to scale, or maybe your idea involves creating some hardware that you have to distribute, but these problems can all be overcome in some way.
 
 **Right now, we think _anything_ is possible with Piwik, and we want YOU to prove us right!**
-
-## Guide Assumptions
-
-This guide assumes that you, the reader, can code in PHP and can setup your own local webserver. If you do not have these skills, you will not be able to successfully understand this guide.
-
-TODO: resources for learning PHP and setting up a localhost server
 
 ## Getting setup to extend Piwik
 
@@ -99,6 +98,18 @@ Now that you've got a copy of Piwik, you'll need to point your webserver to it. 
 
 Once your webserver is configured, load Piwik in your browser by going to the URL `http://localhost/`. Complete the installation process by following the instructions presented to you.
 
+#### Adding anonymous access to your reports
+
+Before we finish, we're going to allow anyone to view reports on your new Piwik environment. Open the _Manage > Users_ admin page and click the red icon in the **View** column for the **anonymous** user:
+
+<img src="/img/getting_started_users_manager_anonymous.png"/>
+
+This will make it possible to view raw report data without having to supply a **token_auth**.
+
+#### Installing the VisitorGenerator plugin
+
+Finally, you'll want to install a plugin that will help with development. [Download the VisitorGenerator plugin here](http://plugins.piwik.org/VisitorGenerator) and install it by extracting the archive's contents to your Piwik's **plugins** subdirectory.
+
 ### Add some test data
 
 You've got the necessary tools and Piwik itself. You're ready to create your first plugin now, but before we do that, let's add some test data for you to play with.
@@ -107,13 +118,13 @@ In your browser load Piwik and navigate to _Settings > Plugins > Manage_. Look f
 
 On this page you'll see a form where you can select a site and enter a number of days to generate data for:
 
-TODO: image goes here
+<img src="/img/visitor_generator_form.png"/>
 
 Let's generate data for three days. Enter **3** in the **Days to compute** field, check the **Yes, I am sure!** checkbox and click **Submit**.
 
 Now click on the **Dashboard** link at the top of the screen. You should see that reports that were previously empty now display some statistics:
 
-TODO: image goes here
+<img src="/img/dashboard_after_test_data.png"/>
 
 ## Create a plugin
 
@@ -125,7 +136,7 @@ Replace **MyPlugin** with the name of your plugin (for example, **UserSettings**
 
 In your browser load Piwik and navigate to _Settings > Plugins > Manage_. Look for your plugin in the list of plugins, you should see it disabled:
 
-TODO: image goes here (use disabled MyPlugin image)
+<img src="/img/disabled_my_plugin.png"/>
 
 <a name="plugin-directory-structure"></a>
 **Plugin directory structure**
@@ -149,7 +160,7 @@ For this guide we don't want to do anything really complicated, so we'll just de
 
 First, let's add a new reporting page to Piwik. Links to Piwik's reporting pages are displayed on the main page under the logo:
 
-TODO image
+<img src="/img/reporting_menu.png"/>
 
 What gets put there is determined by plugins that add menu items through the [MenuMain](#) class.
 
@@ -173,15 +184,17 @@ Inside the Controller method we'll generate HTML by using a [View](#). View obje
 Right now, we don't have much to display, so we won't be setting any properties. In your controller method, add the following code (replacing `'MyPlugin'` with the name of your plugin):
 
     $view = new View("@MyPlugin/index.twig");
-    echo $view->render();
+    return $view->render();
 
-TODO: the following paragraph is a note.
+<div markdown="1" class="alert alert-warning">
+**Template Naming Convention**
 
-Our template will be named **index.twig** since the method it's in is named `'index'`. This is the naming convention used in Piwik. If a template doesn't correspond to a controller method, its name should describe what it outputs and be prefixed with an underscore (for example, **_dataTable.twig**).
+Our template will be named **index.twig** since the method it's in is named **index**. This is the naming convention used in Piwik. If a template doesn't correspond to a controller method, its name should describe what it outputs and be prefixed with an underscore (for example, **_dataTable.twig**).
+</div>
 
 #### Adding a Twig template
 
-Now we'll create our Twig template. In the **templates** subdirectory of your plugin's root directory, add a file named **index.twig**. In the file, add the following code:
+The **console** tool will automatically create a Now we'll create our Twig template. In the **templates** subdirectory of your plugin's root directory, add a file named **index.twig**. In the file, add the following code:
 
     <h1>Realtime Analytics</h1>
 
@@ -189,15 +202,17 @@ Now we'll create our Twig template. In the **templates** subdirectory of your pl
 
 If you open a browser and open the URL **http://localhost/index.php?module=MyPlugin&action=index&idSite=1&date=today&period=day** after replacing **MyPlugin** with the name of your plugin, you should see the page you just created!
 
-TODO: image
+<img src="/img/myplugin_index_noembed.png"/>
 
 #### Adding a menu item
 
 Now that there's a page, we need to add it to the reporting menu so users can get to it. The [MenuMain](#) class (and other menu managing classes) allows plugins to add menu items through an **event** named [Menu.Reporting.addItems](#).
 
-TODO: below paragraph is another sidenote
+<div markdown="1" class="alert alert-warning">
+**About Events**
 
 **Events** are one of the main ways Piwik allows plugins to add new functionality. At certain points during execution, Piwik will post an event to the **EventDispatcher**. Plugins can register callbacks with events so those callbacks will be called when events are posted.
+</div>
 
 Our plugin has to handle this event, so we'll associate a method with the event. In the **getListHooksRegistered** method of your plugin descriptor class (the class that extends [Piwik\Plugin](#) and has the same name as your plugin), add the following code:
 
@@ -210,10 +225,10 @@ Then add this method to the class:
 
     public function getReportingMenuItems()
     {
-        Piwik\Menu\MenuMain::getInstance()->add(
-            $category = 'General_Visitors',                       // this is a 'translation token'. it will be replaced by
-                                                                  // a translated string based on the user's language preference.
-                                                                  // read about internationalization below to learn more.
+        \Piwik\Menu\MenuMain::getInstance()->add(
+            $category = 'General_Visitors', // this is a 'translation token'. it will be replaced by
+                                            // a translated string based on the user's language preference.
+                                            // read about internationalization below to learn more.
             $title = 'Real-time Reports',
             $urlParams = array('module' => $this->getPluginName(), 'action' => 'index')
         );
@@ -221,19 +236,21 @@ Then add this method to the class:
 
 Now, if you load Piwik in a browser, you'll see the menu item:
 
-TODO image
+<img src="/img/myplugin_visitors_menu_item.png"/>
 
 If you click on it, the page will be loaded below the period selector:
 
-TODO image
+<img src="/img/myplugin_index_embed.png"/>
 
 ### Adding a new report
 
 We've created a plugin and got it to display something in Piwik's UI. Now let's make it show something useful. We're going to create a new report that uses the realtime visit data returned by the [Live!](#) plugin and reports on the browsers used.
 
-TODO: another Note below
+<div markdown="1" class="alert alert-warning">
+**On reports and metrics**
 
-**On reports and metrics:** Reports and metrics are the two types of analytics data Piwik calculates and stores. Metrics are just single values, like **visits**. Reports are two dimensional arrays of values, usually metric values and are stored using the [DataTable](#) class.
+Reports and metrics are the two types of analytics data Piwik calculates and stores. Metrics are just single values, like **visits**. Reports are two dimensional arrays of values, usually metric values and are stored using the [DataTable](#) class.
+</div>
 
 #### Adding an API method
 
@@ -244,11 +261,13 @@ Reports and metrics are all served through API class methods, so we'll add a new
         return array();
     }
 
-TODO: another Note below (2 paragraphs)
+<div markdown="1" class="alert alert-warning">
+**Analytics Parameters**
 
 Every API method that serves a report or metric will have the parameters listed above. This is because all analytics data describes data that is tracked for a certain website and during a certain period. A [segment](#) can be supplied to further reduce the data that is analyzed, but it is optional (which is why the parameter defaults to `false`).
 
 The website is determined by the `$idSite` parameter and the period by both the `$period` and `$date` parameters. The segment is determined by the value in the `$segment` parameter.
+</div>
 
 You can see the output of this method if you visit this URL: **http://localhost/index.php?module=API&method=MyPlugin.getLastVisitsByBrowser&idSite=1&date=today&period=week** (remember to replace **MyPlugin** with the name of your plugin).
 
@@ -258,7 +277,7 @@ Our new report will use realtime visit data, so the first thing our API method m
 
     public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
     {
-        $data = Piwik\Plugins\Live\API::getInstance()->getLastVisitsDetails(
+        $data = \Piwik\Plugins\Live\API::getInstance()->getLastVisitsDetails(
             $idSite,
             $period,
             $date,
@@ -268,21 +287,24 @@ Our new report will use realtime visit data, so the first thing our API method m
             $flat = false,
             $doNotFetchActions = true
         );
+        $data->applyQueuedFilters();
 
         return array();
     }
 
 This will return a [DataTable](#) instance that holds information for each visit in its rows.
 
-TODO: another note below
+<div markdown="1" class="alert alert-warning">
+**About [DataTable](#)s**
 
 As stated above [DataTable](#)s store report data. They are essentially just an array of rows, where each row is an array of columns.
+</div>
 
 Now that we've got a list of visits, we need to count the number of visits for each browser used. We'll do this by manually iterating through each row to create a new [DataTable](#) instance:
 
     public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
     {
-        $data = Piwik\Plugins\Live\API::getInstance()->getLastVisitsDetails(
+        $data = \Piwik\Plugins\Live\API::getInstance()->getLastVisitsDetails(
             $idSite,
             $period,
             $date,
@@ -309,7 +331,7 @@ Now that we've got a list of visits, we need to count the number of visits for e
                     'nb_visits' => 1
                 ));
             } else { // if there is a row, increment the visit count
-                $resultRowForBrowser->setColumn('nb_visits', $resultRowFromBrowser->getColumn('nb_visits') + 1);
+                $resultRowForBrowser->setColumn('nb_visits', $resultRowForBrowser->getColumn('nb_visits') + 1);
             }
         }
 
@@ -318,15 +340,15 @@ Now that we've got a list of visits, we need to count the number of visits for e
 
 If you visit **http://localhost/index.php?module=API&method=MyPlugin.getLastVisitsByBrowser&idSite=1&date=today&period=week** you should see the new report!
 
-TODO: need to test the tutorial
-
-TODO: another note below
+<div markdown="1" class="alert alert-warning">
+**Realtime Reports vs Archived Reports**
 
 This new API method directly accesses visit data. That is because the report is a real-time report. Most reports aren't in real-time because the amount of time it would take to process the visits they report on would make the UI unusable. These reports are calculated and **cached** during the [Archiving Process](#). To learn more, read our [All About Analytics Data](#) guide.
+</div>
 
 ### Displaying the report
 
-Now that we've defined a new report, we need to display it. We'll do this be adding a new method to our controller:
+Now that we've defined a new report, we need to display it. We'll do this by adding a new method to our controller:
 
     public function getLastVisitsByBrowser()
     {
@@ -340,7 +362,7 @@ The special view class we'll use is called [ViewDataTable](#), and here's how we
     public function getLastVisitsByBrowser()
     {
         // ViewDataTable instances are created by the Factory, not through the new operator
-        $view = Piwik\ViewDataTable\Factory::build(
+        $view = \Piwik\ViewDataTable\Factory::build(
             $defaultVisualization = 'table',
             $apiAction = 'MyPlugin.getLastVisitsByBrowser' // remember to replace MyPlugin with the name of your plugin
         );
@@ -353,6 +375,14 @@ The special view class we'll use is called [ViewDataTable](#), and here's how we
 
         return $view->render();
     }
+
+<div markdown="1" class="alert alert-warning">
+**Report Visualizations**
+
+The [ViewDataTable](#) class outputs what Piwik calls a **report visualization**. Report visualizations display an analytics report in some way. They can be in any format, including HTML or JavaScript (like the default **table** visualization or one of the graphs) or an image (like the **sparkline** visualization).
+
+Plugins can create their own visualizations. To find out how, read our [Visualizing Report Data](#) guide (after your done with this guide, of course).
+</div>
 
 Now that we have a method that outputs a display for the report, we need to embed it in the plugin's main page. Change the `index()` controller method to look like this:
 
@@ -371,38 +401,45 @@ And change the **index.twig** template to look like this:
 
 Now if you view the page in Piwik, you'll see something like this:
 
-TODO image
+<img src="/img/myplugin_new_report_display.png"/>
 
 ### Updating the report in realtime
 
-So now there's a page with a report that displays the browsers of the latest visitors. It uses realtime data, but it's not truly realtime since after a couple minutes, the report will be out of date. To make the report more realtime we'll make sure it updates itself every 30 seconds.
+So now there's a page with a report that displays the browsers of the latest visitors. It uses realtime data, but it's not truly realtime since after a couple minutes, the report will be out of date. To make the report more realtime we'll add an option for the user to update the report.
+
+We'll allow the user to update the report by clicking a link. Add the following to the bottom of your **index.twig** file:
+
+    <a id="realtime-reports-reload" href="#">Reload</a>
 
 #### Adding JavaScript files to Piwik
 
 To make the report reload itself, we'll have to write some JavaScript code. This means we'll need a JavaScript file.
 
-The `console` command line tool will automatically generate a JavaScript file called **plugin.js** which we'll use. If it didn't exist, though, we'd have to create a new file in the **javascripts** subdirectory and let Piwik know about it by handling the [AssetManager.getJavaScriptFiles](#) event.
+The `console` command line tool will automatically generate a JavaScript file called **plugin.js** which we'll use. If it didn't exist, though, we'd have to create a new file in the **javascripts** subdirectory and let Piwik know about through the [AssetManager.getJavaScriptFiles](#) event.
 
 #### Reloading the report
 
 In your **plugin.js** file, add the following code in the `$(document).ready` callback:
 
-    // we select each report so we only create intervals if there are relevant reports on the page
-    $('div.dataTable[data-report=MyPlugin.getLastVisitsByBrowser]').each(function () { // remember to replace MyPlugin w/ your plugin's name!
-        var domElement = this;
+    // Piwik loads most content via AJAX, so we use $.on instead of $.click directly
+    $('body').on('click', '#realtime-reports-reload', function (e) {
+        e.preventDefault();
+
+        var $dataTableRoot = $('div.dataTable[data-report="MyPlugin.getLastVisitsByBrowser"]');
 
         // in the UI, the root element of a displayed report has a JavaScript object associated with it.
         // we can use this object to reload the report.
-        var dataTableInstance = $(domElement).data('uiControlObject');
+        var dataTableInstance = $dataTableRoot.data('uiControlObject');
 
-        setInterval(function () {
-            dataTableInstance.reloadAjaxDataTable();
-        }, 1000 * 30);
+        // we want the table to be completely reset, so we'll reset some query parameters then reload
+        // the report
+        dataTableInstance.resetAllFilters();
+        dataTableInstance.reloadAjaxDataTable();
+
+        return false;
     });
 
-If you view the report now and open the console ([Firebug](#) for Firefox, developer tools for Chrome), you should see the new AJAX requests being sent:
-
-TODO: images
+If you click on the new **Reload** link, you'll see the report being reloaded.
 
 Well, our simple plugin is done! It defines a new report, displays it and makes sure the data it displays is fresh. But we can do better! The next two sections will show you how.
 
@@ -413,6 +450,8 @@ The report we've defined is interesting, but we could easily aggregate on anothe
 #### Creating a plugin setting
 
 We'll create a **plugin setting** which will control which visit property the plugin uses to generate our report. The first step is to create a **Settings** class:
+
+    <?php
 
     namespace Piwik\Plugins\MyPlugin; // remember to rename MyPlugin with the name of your plugin
 
@@ -439,6 +478,7 @@ Now, let's add an attribute and new method for this setting:
         protected function init()
         {
             $this->realtimeReportDimension = $this->createRealtimeReportDimensionSetting();
+            $this->addSetting($this->realtimeReportDimension);
         }
 
         private function createRealtimeReportDimensionSetting()
@@ -451,12 +491,12 @@ Then we'll implement the `createRealtimeReportDimensionSetting` method:
 
     private function createRealtimeReportDimensionSetting()
     {
-        $setting = new \Piwik\Settings\UserSetting();
+        $setting = new \Piwik\Settings\UserSetting('reportDimension', 'Report Dimension');
         $setting->type = self::TYPE_STRING;
         $setting->uiControlType = self::CONTROL_SINGLE_SELECT;
         $setting->description   = 'Choose the dimension to aggregate by';
         $setting->availableValues = MyPlugin::$availableDimensionsForAggregation; // replace 'MyPlugin'!
-        $setting->defaultValue = 'browser';
+        $setting->defaultValue = 'browserName';
         return $setting;
     }
 
@@ -465,7 +505,7 @@ Notice how `$settings->availableValues` is set to `MyPlugin::$availableDimension
 In your plugin descriptor class add the following code:
 
     public static $availableDimensionsForAggregation = array(
-        'browser' => 'Browser',
+        'browserName' => 'Browser',
         'visitIp' => 'IP',
         'visitorId' => 'Visitor ID',
         'searches' => 'Number of Site Searches',
@@ -484,7 +524,7 @@ In your plugin descriptor class add the following code:
 
 If you go to the _Plugins > Settings_ admin page you should see this new setting:
 
-TODO: image
+<img src="/img/myplugin_settings_page.png"/>
 
 #### Using the new setting
 
@@ -493,7 +533,7 @@ To use the setting, first we need to get the setting value in our API method and
     public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
     {
         // get realtime visit data
-        $data = Piwik\Plugins\Live\API::getInstance()->getLastVisitsDetails(
+        $data = \Piwik\Plugins\Live\API::getInstance()->getLastVisitsDetails(
             $idSite,
             $period,
             $date,
@@ -503,10 +543,11 @@ To use the setting, first we need to get the setting value in our API method and
             $flat = false,
             $doNotFetchActions = true
         );
+        $data->applyQueuedFilters();
 
         // read the setting value that contains the column value to aggregate on
-        $settings = new Settings();
-        $columnValue = $settings->realtimeReportDimension->getValue();
+        $settings = new Settings('MyPlugin');
+        $columnName = $settings->realtimeReportDimension->getValue();
 
         // count visits to create our result
         $result = $data->getEmptyClone($keepFilters = false); // we could create a new instance by using new DataTable(),
@@ -525,7 +566,7 @@ To use the setting, first we need to get the setting value in our API method and
                     'nb_visits' => 1
                 ));
             } else { // if there is a row, increment the visit count
-                $resultRowForBrowser->setColumn('nb_visits', $resultRowFromBrowser->getColumn('nb_visits') + 1);
+                $resultRowForBrowser->setColumn('nb_visits', $resultRowForBrowser->getColumn('nb_visits') + 1);
             }
         }
 
@@ -534,14 +575,14 @@ To use the setting, first we need to get the setting value in our API method and
 
 Now we'll want to make sure the column heading in the report display has the correct text. Right now, it will display **Browser** no matter what the setting value is:
 
-TODO: image
+<img src="/img/myplugin_incorrect_browser_header.png"/>
 
 Change the **getLastVisitsByBrowser** controller method to the following:
 
     public function getLastVisitsByBrowser()
     {
         // ViewDataTable instances are created by the Factory, not through the new operator
-        $view = Piwik\ViewDataTable\Factory::build(
+        $view = \Piwik\ViewDataTable\Factory::build(
             $defaultVisualization = 'table',
             $apiAction = 'MyPlugin.getLastVisitsByBrowser' // remember to replace MyPlugin with the name of your plugin
         );
@@ -551,7 +592,7 @@ Change the **getLastVisitsByBrowser** controller method to the following:
         $view->config->show_table_all_columns = false;
         $view->config->show_goals = false;
 
-        $settings = new Settings();
+        $settings = new Settings('MyPlugin');
         $columnToAggregate = $settings->realtimeReportDimension->getValue();
         $columnLabel = MyPlugin::$availableDimensionsForAggregation[$columnToAggregate]; // remember to replace MyPlugin with the name of your plugin
 
@@ -560,9 +601,13 @@ Change the **getLastVisitsByBrowser** controller method to the following:
         return $view->render();
     }
 
+View the report now and you'll see:
+
+<img src="/img/myplugin_correct_browser_header.png"/>
+
 #### Rename the report
 
-Finally, we'll rename the report. After all, it can do more than just aggregate the last 100 visits by browser. Rename all occurances of **getLastVisitsByBrowser** with **getLastVisitsByDimension**. Make sure you replace it in the following files:
+Finally, we'll rename the report. After all, it can do more than just aggregate the last 100 visits by browser now. Rename all occurances of **getLastVisitsByBrowser** with **getLastVisitsByDimension**. Make sure you replace it in the following files:
 
 * API.php
 * Controller.php
