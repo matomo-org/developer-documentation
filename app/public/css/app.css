@@ -230,6 +230,10 @@ body {
     white-space: normal;
 }
 
+.alert {
+    margin-top:15px 1.5em 0 1.5em;
+}
+
 /* bootstrap overrides */
 pre {
     background-color:transparent;
@@ -248,6 +252,7 @@ p {
 
 pre.inline-code-pre {
   display:inline-block;
+  margin:0;
 }
 
 pre.inline-code-pre>code {
