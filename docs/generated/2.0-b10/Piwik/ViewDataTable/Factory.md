@@ -74,7 +74,7 @@ See [ViewDataTable docs](#) to read about the ViewDataTable implementations that
       <div markdown="1" class="parameter">
       `$defaultType` (`string`|`null`) &mdash;
 
-      <div markdown="1" class="param-desc"> A ViewDataTable ID representing the default ViewDataTable type to use. If the **viewDataTable** query parameter is not found, this value is used as the ID of the ViewDataTable to create.  If a visualization type is configured for the report being displayed, it is used instead of the default type. (See [ViewDataTable.getDefaultType](#)). If nothing is configured for the report and `null` is supplied for this argument, **table** is used.</div>
+      <div markdown="1" class="param-desc"> A ViewDataTable ID representing the default ViewDataTable type to use. If the **viewDataTable** query parameter is not found, this value is used as the ID of the ViewDataTable to create. If a visualization type is configured for the report being displayed, it is used instead of the default type. (See [ViewDataTable.getDefaultType](#)). If nothing is configured for the report and `null` is supplied for this argument, **table** is used.</div>
 
       <div style="clear:both;"/>
 

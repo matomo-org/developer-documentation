@@ -70,7 +70,7 @@ Returns a new ScheduledTime instance using a string description of the scheduled
       <div markdown="1" class="parameter">
       `$periodDay` (`string`|`int`|`Piwik\false`) &mdash;
 
-      <div markdown="1" class="param-desc"> A string describing the day within the scheduled period to execute the task on. Only valid for week and month periods.  If `'weekly'` is supplied for `$periodType`, this should be a day of the week, for example, `'monday'` or `'tuesday'`.  If `'monthly'` is supplied for `$periodType`, this can be a numeric day in the month or a day in one week of the month. For example, `12`, `23`, `'first sunday'` or `'fourth tuesday'`.</div>
+      <div markdown="1" class="param-desc"> A string describing the day within the scheduled period to execute the task on. Only valid for week and month periods. If `'weekly'` is supplied for `$periodType`, this should be a day of the week, for example, `'monday'` or `'tuesday'`. If `'monthly'` is supplied for `$periodType`, this can be a numeric day in the month or a day in one week of the month. For example, `12`, `23`, `'first sunday'` or `'fourth tuesday'`.</div>
 
       <div style="clear:both;"/>
 

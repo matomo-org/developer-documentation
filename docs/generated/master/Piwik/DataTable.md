@@ -1187,7 +1187,7 @@ The result of this method is intended for use with the [ArchiveProcessor::insert
       </div>
    </li>
    </ul>
-- _Returns:_ The array of serialized DataTables: array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae',  // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige',  // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE',  // etc. );
+- _Returns:_ The array of serialized DataTables: array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae', // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige', // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE', // etc. );
     - `array`
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If infinite recursion detected. This will occur if a table&#039;s subtable is one of its parent tables.
@@ -1585,7 +1585,7 @@ Returns a new DataTable in which the rows of this table are replaced with the ag
       <div markdown="1" class="parameter">
       `$labelColumn` (`string`|`bool`) &mdash;
 
-      <div markdown="1" class="param-desc"> If supplied the label of the parent row will be added to a new column in each subtable row.  If set to, 'label' each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.</div>
+      <div markdown="1" class="param-desc"> If supplied the label of the parent row will be added to a new column in each subtable row. If set to, 'label' each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.</div>
 
       <div style="clear:both;"/>
 
