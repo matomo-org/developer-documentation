@@ -14,3 +14,4 @@ git checkout master
 git pull
 cd ..
 php generator/generate.php
+rm -rf app/tmp/cache/*
