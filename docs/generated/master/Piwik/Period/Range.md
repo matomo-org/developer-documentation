@@ -40,11 +40,50 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$strPeriod` (`string`) &mdash; The type of period each subperiod is. Either `'day'`, `'week'`, `'month'` or `'year'`.
-    - `$strDate` (`string`) &mdash; The date range, eg, `'2007-07-24,2013-11-15'`.
-    - `$timezone` (`string`) &mdash; The timezone to use, eg, `'UTC'`.
-    - `$today` (`bool`|[`Date`](../../Piwik/Date.md)) &mdash; The date to use as _today_. Defaults to `Date::factory('today', $timzeone)`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$strPeriod` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The type of period each subperiod is. Either `'day'`, `'week'`, `'month'` or `'year'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$strDate` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The date range, eg, `'2007-07-24,2013-11-15'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$timezone` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The timezone to use, eg, `'UTC'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$today` (`bool`|[`Date`](../../Piwik/Date.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The date to use as _today_. Defaults to `Date::factory('today', $timzeone)`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="getlocalizedshortstring" id="getlocalizedshortstring"></a>
 <a name="getLocalizedShortString" id="getLocalizedShortString"></a>
@@ -96,8 +135,20 @@ Sets the default end date of the period
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$oDate` ([`Date`](../../Piwik/Date.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$oDate` ([`Date`](../../Piwik/Date.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="parsedaterange" id="parsedaterange"></a>
@@ -108,8 +159,20 @@ Given a date string, returns false if not a date range, or returns the array con
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$dateString` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$dateString` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ array(1 => dateStartString, 2 => dateEndString ) or false if the input was not a date range
     - `mixed`
 
@@ -133,9 +196,30 @@ Returns the date that is one period before the supplied date.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$date` (`bool`|`string`) &mdash; The date to get the last date of.
-    - `$period` (`bool`|`string`) &mdash; The period to use (either 'day', 'week', 'month', 'year');
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$date` (`bool`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The date to get the last date of.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$period` (`bool`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The period to use (either 'day', 'week', 'month', 'year');</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ An array with two elements, a string for the date before $date and a Period instance for the period before $date.
     - `array`
 
@@ -147,11 +231,50 @@ Returns a date ragne string given a period type, end date and number of periods 
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$period` (`string`) &mdash; The sub period type, `'day'`, `'week'`, `'month'` and `'year'`.
-    - `$lastN` (`int`) &mdash; The number of periods of type `$period` that the result range should span.
-    - `$endDate` (`string`) &mdash; The desired end date of the range.
-    - `$site` (`Piwik\Period\Site`) &mdash; The site whose timezone should be used.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$period` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The sub period type, `'day'`, `'week'`, `'month'` and `'year'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lastN` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The number of periods of type `$period` that the result range should span.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$endDate` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The desired end date of the range.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$site` (`Piwik\Period\Site`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site whose timezone should be used.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The date range string, eg, `'2012-01-02,2013-01-02'`.
     - `string`
 

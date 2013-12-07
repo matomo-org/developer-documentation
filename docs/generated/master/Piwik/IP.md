@@ -50,8 +50,20 @@ Removes the port and the last portion of a CIDR IP address.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ipString` (`string`) &mdash; The IP address to sanitize.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ipString` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The IP address to sanitize.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="sanitizeiprange" id="sanitizeiprange"></a>
@@ -71,8 +83,20 @@ Accepts the following formats for $ipRange:
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ipRangeString` (`string`) &mdash; IP address range
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ipRangeString` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> IP address range</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ IP address range in CIDR notation OR false
     - `string`
     - `bool`
@@ -85,8 +109,20 @@ Convert presentation format IP address to network address format.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ipString` (`string`) &mdash; IP address, either IPv4 or IPv6, e.g., `"127.0.0.1"`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ipString` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> IP address, either IPv4 or IPv6, e.g., `"127.0.0.1"`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Binary-safe string, e.g., `"\x7F\x00\x00\x01"`.
     - `string`
 
@@ -102,8 +138,20 @@ See also [prettyPrint()](/api-reference/Piwik/IP#prettyprint).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ip` (`string`) &mdash; IP address in network address format.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ip` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> IP address in network address format.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ IP address in presentation format.
     - `string`
 
@@ -115,8 +163,20 @@ Alias for [N2P()](/api-reference/Piwik/IP#n2p).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ip` (`string`) &mdash; IP address in network address format.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ip` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> IP address in network address format.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ IP address in presentation format.
     - `string`
 
@@ -128,8 +188,20 @@ Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if 
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ip` (`string`) &mdash; IP address in network address format.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ip` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> IP address in network address format.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ True if IPv4, else false.
     - `bool`
 
@@ -149,8 +221,20 @@ returned by the built-in ip2long() function, from Piwik 1.3 and earlier.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ip` (`string`) &mdash; IPv4 address in network address format.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ip` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> IPv4 address in network address format.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ IP address in presentation format.
     - `string`
 
@@ -167,8 +251,20 @@ a naive check. It assumes that whatever format $ip is in, it is well-formed.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ip` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ip` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `bool` value.
 
 <a name="ismappedipv4" id="ismappedipv4"></a>
@@ -179,8 +275,20 @@ Returns true if $ip is a IPv4 mapped address, false if otherwise.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ip` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ip` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `bool` value.
 
 <a name="getipv4frommappedipv6" id="getipv4frommappedipv6"></a>
@@ -191,8 +299,20 @@ Returns an IPv4 address from a 'mapped' IPv6 address.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ip` (`string`) &mdash; eg, `'::ffff:192.0.2.128'`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ip` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> eg, `'::ffff:192.0.2.128'`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ eg, `'192.0.2.128'`
     - `string`
 
@@ -204,8 +324,20 @@ Get low and high IP addresses for a specified range.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ipRange` (`array`) &mdash; An IP address range in presentation format.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ipRange` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> An IP address range in presentation format.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Array `array($lowIp, $highIp)` in network address format, or false on failure.
     - `array`
     - `bool`
@@ -222,9 +354,30 @@ An IPv4-mapped address should be range checked with an IPv4-mapped address range
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ip` (`string`) &mdash; IP address in network address format
-    - `$ipRanges` (`array`) &mdash; List of IP address ranges
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ip` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> IP address in network address format</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ipRanges` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> List of IP address ranges</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ True if in any of the specified IP address ranges; else false.
     - `bool`
 
@@ -251,9 +404,30 @@ Returns a non-proxy IP address from header.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$default` (`string`) &mdash; Default value to return if there no matching proxy header.
-    - `$proxyHeaders` (`array`) &mdash; List of proxy headers.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$default` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Default value to return if there no matching proxy header.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$proxyHeaders` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> List of proxy headers.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="getlastipfromlist" id="getlastipfromlist"></a>
@@ -264,9 +438,30 @@ Returns the last IP address in a comma separated list, subject to an optional ex
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$csv` (`string`) &mdash; Comma separated list of elements.
-    - `$excludedIps` (`array`) &mdash; Optional list of excluded IP addresses (or IP address ranges).
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$csv` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Comma separated list of elements.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$excludedIps` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Optional list of excluded IP addresses (or IP address ranges).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Last (non-excluded) IP address in the list.
     - `string`
 
@@ -278,8 +473,20 @@ Get hostname for a given IP address.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ipStr` (`string`) &mdash; Human-readable IP address.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ipStr` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Human-readable IP address.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The hostname or unmodified $ipStr on failure.
     - `string`
 

@@ -147,9 +147,30 @@ If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezon
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$date` (`string`) &mdash; today, yesterday, YYYY-MM-DD
-    - `$timezone` (`string`) &mdash; default timezone to use
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$date` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> today, yesterday, YYYY-MM-DD</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$timezone` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> default timezone to use</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a [`Date`](../../Piwik/Date.md) value.
 
 <a name="setdate" id="setdate"></a>
@@ -165,8 +186,20 @@ construction.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$date` ([`Date`](../../Piwik/Date.md)) &mdash; The new Date.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$date` ([`Date`](../../Piwik/Date.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The new Date.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `void` value.
 
 <a name="getdefaultaction" id="getdefaultaction"></a>
@@ -187,8 +220,20 @@ A helper method that renders a view either to the screen or to a string.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$view` (`Piwik\View\ViewInterface`) &mdash; The view to render.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$view` (`Piwik\View\ViewInterface`) &mdash;
+
+      <div markdown="1" class="param-desc"> The view to render.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It can return one of the following values:
     - `string`
     - `void`
@@ -205,10 +250,40 @@ of the current period, relative to the current date.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$currentModuleName` (`string`) &mdash; The name of the current plugin.
-    - `$currentControllerAction` (`string`) &mdash; The name of the action that renders the desired report.
-    - `$apiMethod` (`string`) &mdash; The API method that the ViewDataTable will use to get graph data.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$currentModuleName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the current plugin.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$currentControllerAction` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the action that renders the desired report.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$apiMethod` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The API method that the ViewDataTable will use to get graph data.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
 
 <a name="getlastunitgraphacrossplugins" id="getlastunitgraphacrossplugins"></a>
@@ -219,13 +294,70 @@ Same as [getLastUnitGraph](#getLastUnitGraph), but will set some properties of t
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$currentModuleName` (`string`) &mdash; The name of the current plugin.
-    - `$currentControllerAction` (`string`) &mdash; The name of the action that renders the desired report.
-    - `$columnsToDisplay` (`array`) &mdash; The value to use for the ViewDataTable's columns_to_display config property.
-    - `$selectableColumns` (`array`) &mdash; The value to use for the ViewDataTable's selectable_columns config property.
-    - `$reportDocumentation` (`bool`|`string`) &mdash; The value to use for the ViewDataTable's documentation config property.
-    - `$apiMethod` (`string`) &mdash; The API method that the ViewDataTable will use to get graph data.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$currentModuleName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the current plugin.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$currentControllerAction` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the action that renders the desired report.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columnsToDisplay` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The value to use for the ViewDataTable's columns_to_display config property.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$selectableColumns` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The value to use for the ViewDataTable's selectable_columns config property.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$reportDocumentation` (`bool`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The value to use for the ViewDataTable's documentation config property.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$apiMethod` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The API method that the ViewDataTable will use to get graph data.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
 
 <a name="geturlsparkline" id="geturlsparkline"></a>
@@ -244,9 +376,30 @@ See [Sparkline](#) for more information about the Sparkline visualization.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$action` (`string`) &mdash; Method name of the controller that serves the report.
-    - `$customParameters` (`array`) &mdash; The array of query parameter name/value pairs that should be set in result URL.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$action` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Method name of the controller that serves the report.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$customParameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The array of query parameter name/value pairs that should be set in result URL.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The generated URL.
     - `string`
 
@@ -258,9 +411,30 @@ Sets the first date available in the calendar.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$minDate` ([`Date`](../../Piwik/Date.md)) &mdash; The min date.
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash; The view that contains the period selector.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$minDate` ([`Date`](../../Piwik/Date.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The min date.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$view` ([`View`](../../Piwik/View.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The view that contains the period selector.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setmaxdateview" id="setmaxdateview"></a>
@@ -276,9 +450,30 @@ for a site (which can depend on the timezone of a site).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$maxDate` ([`Date`](../../Piwik/Date.md)) &mdash; The max date.
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash; The view that contains the period selector.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$maxDate` ([`Date`](../../Piwik/Date.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The max date.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$view` ([`View`](../../Piwik/View.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The view that contains the period selector.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setgeneralvariablesview" id="setgeneralvariablesview"></a>
@@ -310,8 +505,20 @@ Will exit on error.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$view` ([`View`](../../Piwik/View.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `void` value.
 
 <a name="setbasicvariablesview" id="setbasicvariablesview"></a>
@@ -341,8 +548,20 @@ Also calls [setHostValidationVariablesView](#setHostValidationVariablesView).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$view` ([`View`](../../Piwik/View.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="sethostvalidationvariablesview" id="sethostvalidationvariablesview"></a>
@@ -361,8 +580,20 @@ Checks if the current host is valid and sets variables on the given view, includ
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$view` ([`View`](../../Piwik/View.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setperiodvariablesview" id="setperiodvariablesview"></a>
@@ -379,8 +610,20 @@ Sets general period variables on a view, including:  - **displayUniqueVisitors**
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$view` ([`View`](../../Piwik/View.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current period is invalid.
@@ -399,13 +642,70 @@ This function will exit immediately after executing.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$moduleToRedirect` (`string`) &mdash; The plugin to redirect to, eg. `"MultiSites"`.
-    - `$actionToRedirect` (`string`) &mdash; Action, eg. `"index"`.
-    - `$websiteId` (`int`|`null`) &mdash; The new idSite query parameter, eg, `1`.
-    - `$defaultPeriod` (`string`|`null`) &mdash; The new period query parameter, eg, `'day'`.
-    - `$defaultDate` (`string`|`null`) &mdash; The new date query parameter, eg, `'today'`.
-    - `$parameters` (`array`) &mdash; Other query parameters to append to the URL.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$moduleToRedirect` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The plugin to redirect to, eg. `"MultiSites"`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$actionToRedirect` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Action, eg. `"index"`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$websiteId` (`int`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The new idSite query parameter, eg, `1`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$defaultPeriod` (`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The new period query parameter, eg, `'day'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$defaultDate` (`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The new date query parameter, eg, `'today'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Other query parameters to append to the URL.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getdefaultwebsiteid" id="getdefaultwebsiteid"></a>
@@ -471,8 +771,20 @@ Returns a prettified date string for use in period selector widget.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$period` ([`Period`](../../Piwik/Period.md)) &mdash; The period to return a pretty string for.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$period` ([`Period`](../../Piwik/Period.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The period to return a pretty string for.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="getevolutionhtml" id="getevolutionhtml"></a>
@@ -490,11 +802,50 @@ No HTML is returned if the current value and evolution percent are both 0.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$date` (`string`) &mdash; The date of the current value.
-    - `$currentValue` (`int`) &mdash; The value to calculate evolution to.
-    - `$pastDate` (`string`) &mdash; The date of past value.
-    - `$pastValue` (`int`) &mdash; The value in the past to calculate evolution from.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$date` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The date of the current value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$currentValue` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The value to calculate evolution to.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$pastDate` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The date of past value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$pastValue` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The value in the past to calculate evolution from.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The HTML or false if the evolution is 0 and the current value is 0.
     - `string`
     - `bool`

@@ -64,8 +64,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The ID of the site we want data for.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The ID of the site we want data for.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="setsites" id="setsites"></a>
 <a name="setSites" id="setSites"></a>
@@ -75,8 +87,20 @@ Sets the cached site data with an array that associates site IDs with individual
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sites` (`array`) &mdash; The array of sites data. Indexed by site ID. eg, ``` array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))` ```
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sites` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The array of sites data. Indexed by site ID. eg, ``` array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))` ```</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setsitesfromarray" id="setsitesfromarray"></a>
@@ -87,8 +111,20 @@ Sets the cached Site data with a non-associated array of site data.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sites` (`array`) &mdash; The array of sites data. eg, ``` array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), ) ```
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sites` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The array of sites data. eg, ``` array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), ) ```</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getminmaxdateacrosswebsites" id="getminmaxdateacrosswebsites"></a>
@@ -103,8 +139,20 @@ Also, today is the later "today" available across all timezones.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$siteIds` (`array`) &mdash; Array of IDs for each site being displayed.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$siteIds` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Array of IDs for each site being displayed.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ of two Date instances. First is the min-date & the second is the max date.
     - [`Date[]`](../Piwik/Date.md)
 
@@ -284,9 +332,30 @@ Checks the given string for valid site ids and returns them as an array.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ids` (`string`) &mdash; Comma separated idSite list, eg, `'1,2,3,4'`.
-    - `$_restrictSitesToLogin` (`bool`|`string`) &mdash; Used only when running as a scheduled task.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ids` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Comma separated idSite list, eg, `'1,2,3,4'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$_restrictSitesToLogin` (`bool`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Used only when running as a scheduled task.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ An array of valid, unique integers.
     - `array`
 
@@ -310,8 +379,20 @@ See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$id`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$id`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getnamefor" id="getnamefor"></a>
@@ -322,8 +403,20 @@ Returns the name of the site with the specified ID.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The site ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="gettimezonefor" id="gettimezonefor"></a>
@@ -334,8 +427,20 @@ Returns the timezone of the site with the specified ID.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The site ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="gettypefor" id="gettypefor"></a>
@@ -346,8 +451,20 @@ Returns the type of the site with the specified ID.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`Piwik\$idsite`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`Piwik\$idsite`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="getcreationdatefor" id="getcreationdatefor"></a>
@@ -358,8 +475,20 @@ Returns the creation date of the site with the specified ID.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The site ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="getmainurlfor" id="getmainurlfor"></a>
@@ -370,8 +499,20 @@ Returns the url for the site with the specified ID.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The site ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="isecommerceenabledfor" id="isecommerceenabledfor"></a>
@@ -382,8 +523,20 @@ Returns whether the site with the specified ID is ecommerce enabled
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The site ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="issitesearchenabledfor" id="issitesearchenabledfor"></a>
@@ -394,8 +547,20 @@ Returns whether the site with the specified ID is Site Search enabled
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The site ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="getcurrencyfor" id="getcurrencyfor"></a>
@@ -406,8 +571,20 @@ Returns the currency of the site with the specified ID.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The site ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="getexcludedipsfor" id="getexcludedipsfor"></a>
@@ -418,8 +595,20 @@ Returns the excluded IP addresses of the site with the specified ID.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The site ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="getexcludedqueryparametersfor" id="getexcludedqueryparametersfor"></a>
@@ -430,7 +619,19 @@ Returns the excluded query parameters for the site with the specified ID.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idsite` (`int`) &mdash; The site ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idsite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The site ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 

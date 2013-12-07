@@ -31,9 +31,30 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will be filtered.
-    - `$labelSummaryRow` (`int`) &mdash; The value of the label column for the new row.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The table that will be filtered.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$labelSummaryRow` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The value of the label column for the new row.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -47,7 +68,19 @@ See [AddSummaryRow](#).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

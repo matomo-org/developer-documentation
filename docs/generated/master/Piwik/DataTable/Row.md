@@ -81,8 +81,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$row` (`array`) &mdash; An array with the following structure: ``` array( Row::COLUMNS => array('label' => 'Piwik', 'column1' => 42, 'visits' => 657, 'time_spent' => 155744), Row::METADATA => array('logo' => 'test.png'), Row::DATATABLE_ASSOCIATED => $subtable // DataTable object // (but in the row only the ID will be stored) ) ```
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$row` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> An array with the following structure: ``` array( Row::COLUMNS => array('label' => 'Piwik', 'column1' => 42, 'visits' => 657, 'time_spent' => 155744), Row::METADATA => array('logo' => 'test.png'), Row::DATATABLE_ASSOCIATED => $subtable // DataTable object // (but in the row only the ID will be stored) ) ```</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -103,8 +115,20 @@ Deletes the given column.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The column name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The column name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ True on success, false if the column does not exist.
     - `bool`
 
@@ -116,9 +140,30 @@ Renames a column.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$oldName` (`string`) &mdash; The current name of the column.
-    - `$newName` (`string`) &mdash; The new name of the column.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$oldName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The current name of the column.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$newName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The new name of the column.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getcolumn" id="getcolumn"></a>
@@ -129,8 +174,20 @@ Returns a column by name.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The column name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The column name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The column value or false if it doesn't exist.
     - `mixed`
     - `Piwik\DataTable\false`
@@ -143,8 +200,20 @@ Returns the array of all metadata, or one requested metadata value.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`|`null`) &mdash; The name of the metadata to return or null to return all metadata.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the metadata to return or null to return all metadata.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `mixed` value.
 
 <a name="getcolumns" id="getcolumns"></a>
@@ -205,8 +274,20 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to 
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash; Table to sum to this row's subtab.e.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> Table to sum to this row's subtab.e.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="addsubtable" id="addsubtable"></a>
@@ -217,8 +298,20 @@ Attaches a subtable to this row.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash; DataTable to associate to this row.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> DataTable to associate to this row.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Returns `$subTable`.
     - [`DataTable`](../../Piwik/DataTable.md)
 - It throws one of the following exceptions:
@@ -232,8 +325,20 @@ Attaches a subtable to this row, overwriting the existing subtable, if any.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash; DataTable to associate to this row.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> DataTable to associate to this row.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Returns `$subTable`.
     - [`DataTable`](../../Piwik/DataTable.md)
 
@@ -269,8 +374,20 @@ Overwrites previously set columns.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$columns` (`array`) &mdash; eg, `array('label' => 'www.php.net', 'nb_visits' => 15894)`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columns` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> eg, `array('label' => 'www.php.net', 'nb_visits' => 15894)`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setcolumn" id="setcolumn"></a>
@@ -281,9 +398,30 @@ Set the value `$value` to the column called `$name`.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; name of the column to set.
-    - `$value` (`mixed`) &mdash; value of the column to set.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> name of the column to set.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"> value of the column to set.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setmetadata" id="setmetadata"></a>
@@ -294,9 +432,30 @@ Set the value `$value` to the metadata called `$name`.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; name of the metadata to set.
-    - `$value` (`mixed`) &mdash; value of the metadata to set.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> name of the metadata to set.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"> value of the metadata to set.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="deletemetadata" id="deletemetadata"></a>
@@ -307,8 +466,20 @@ Deletes one metadata value or all metadata values.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`bool`|`string`) &mdash; Metadata name (omit to delete entire metadata).
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`bool`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Metadata name (omit to delete entire metadata).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ true on success, false if the column didn't exist
     - `bool`
 
@@ -324,9 +495,30 @@ If the column already exists, throws an exception.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; name of the column to add.
-    - `$value` (`mixed`) &mdash; value of the column to set.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> name of the column to add.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"> value of the column to set.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the column already exists.
@@ -339,8 +531,20 @@ Add many columns to this row.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$columns` (`array`) &mdash; Name/Value pairs, e.g., `array('name' => $value , ...)`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columns` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Name/Value pairs, e.g., `array('name' => $value , ...)`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if any column name does not exist.
@@ -357,9 +561,30 @@ If the metadata already exists, throws an exception.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; name of the metadata to add.
-    - `$value` (`mixed`) &mdash; value of the metadata to set.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> name of the metadata to add.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"> value of the metadata to set.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the metadata already exists.
@@ -379,10 +604,40 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash; The row to sum to this row.
-    - `$enableCopyMetadata` (`bool`) &mdash; Whether metadata should be copied or not.
-    - `$aggregationOperations` (`array`) &mdash; for columns that should not be summed, determine which aggregation should be used (min, max). format: `array('column name' => 'function name')`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The row to sum to this row.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$enableCopyMetadata` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> Whether metadata should be copied or not.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$aggregationOperations` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> for columns that should not be summed, determine which aggregation should be used (min, max). format: `array('column name' => 'function name')`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="sumrowmetadata" id="sumrowmetadata"></a>
@@ -393,8 +648,20 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="issummaryrow" id="issummaryrow"></a>
@@ -427,8 +694,29 @@ Two rows are equal if:
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$row1` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash; first to compare
-    - `$row2` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash; second to compare
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$row1` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> first to compare</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$row2` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> second to compare</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `bool` value.
 

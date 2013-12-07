@@ -30,12 +30,60 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table to eventually filter.
-    - `$columnToSort` (`string`) &mdash; The name of the column to sort by.
-    - `$order` (`string`) &mdash; order `'asc'` or `'desc'`.
-    - `$naturalSort` (`bool`) &mdash; Whether to use a natural sort or not (see [http://php.net/natsort](http://php.net/natsort)).
-    - `$recursiveSort` (`bool`) &mdash; Whether to sort all subtables or not.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The table to eventually filter.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columnToSort` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the column to sort by.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$order` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> order `'asc'` or `'desc'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$naturalSort` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> Whether to use a natural sort or not (see [http://php.net/natsort](http://php.net/natsort)).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$recursiveSort` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> Whether to sort all subtables or not.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="setorder" id="setorder"></a>
 <a name="setOrder" id="setOrder"></a>
@@ -45,8 +93,20 @@ Updates the order
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$order` (`string`) &mdash; asc|desc
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$order` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> asc|desc</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="sort" id="sort"></a>
@@ -57,9 +117,30 @@ Sorting method used for sorting numbers
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$a` (`Piwik\DataTable\Filter\number`)
-    - `$b` (`Piwik\DataTable\Filter\number`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$a` (`Piwik\DataTable\Filter\number`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$b` (`Piwik\DataTable\Filter\number`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `int` value.
 
 <a name="naturalsort" id="naturalsort"></a>
@@ -70,9 +151,30 @@ Sorting method used for sorting values natural
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$a` (`mixed`)
-    - `$b` (`mixed`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$a` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$b` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `int` value.
 
 <a name="sortstring" id="sortstring"></a>
@@ -83,9 +185,30 @@ Sorting method used for sorting values
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$a` (`mixed`)
-    - `$b` (`mixed`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$a` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$b` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `int` value.
 
 <a name="filter" id="filter"></a>
@@ -96,7 +219,19 @@ Sorts the given data table by defined column and sorting method
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `mixed` value.
 

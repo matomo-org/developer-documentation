@@ -59,10 +59,40 @@ See also [fetchDispatch()](/api-reference/Piwik/FrontController#fetchdispatch).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$module` (`string`) &mdash; The name of the plugin whose controller to execute, eg, `'UserCountryMap'`.
-    - `$action` (`string`) &mdash; The controller action name, eg, `'realtimeMap'`.
-    - `$parameters` (`array`) &mdash; Array of parameters to pass to the controller action method.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$module` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the plugin whose controller to execute, eg, `'UserCountryMap'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$action` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The controller action name, eg, `'realtimeMap'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Array of parameters to pass to the controller action method.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The returned value of the call. Often nothing as most controller actions echo, but do not return data.
     - `void`
     - `mixed`
@@ -82,10 +112,40 @@ of whatever is in the output buffer.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$module`
-    - `$actionName`
-    - `$parameters`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$module`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$actionName`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The `echo`'d data or the return value of the controller action.
     - `string`
 

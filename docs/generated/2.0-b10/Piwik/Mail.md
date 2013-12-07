@@ -21,8 +21,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$charset` (`string`) &mdash; charset, defaults to utf-8
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$charset` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> charset, defaults to utf-8</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="setfrom" id="setfrom"></a>
 <a name="setFrom" id="setFrom"></a>
@@ -32,8 +44,29 @@ Sets the sender.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$email` (`string`) &mdash; Email address of the sender.
-    - `$name` (`null`|`string`) &mdash; Name of the sender.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$email` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Email address of the sender.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`null`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Name of the sender.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `Zend_Mail` value.
 

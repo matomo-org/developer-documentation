@@ -239,11 +239,11 @@ Archiving logic (the logic that calculates and caches analytics data) is defined
 
 If no segment is supplied in the data query and data cannot be found, every report of every plugin will be generated and cached all at once. If a segment is supplied, then the reports that belong to the same plugins as the requested data will be generated and cached.
 
-### The Archiver class
+<div markdown="1" class="alert alert-warning">
+**Plugin Archiver**
 
 Plugins that want to archive reports and metrics define a class called **Archiver** that extends from [Piwik\Plugin\Archiver](#). This class will be automatically detected and instantiated by Piwik during the archiving process.
-
-TODO: need more info?
+</div>
 
 ### Report & Metric Aggregation
 
@@ -298,9 +298,11 @@ Reports are served through [APIs](#). API methods access persisted **[records](#
 
 As stated above, records are not the same as reports. Records are structured primarily to be stored not be read by either humans or other software. Thus API methods cannot simply access persisted data and return it. They must manipulated and made presentable.
 
-TODO: the below paragraph should be marked as an "note". ie, it should look special and have some sort of info icon
+<div markdown="1" class="alert alert-warning">
+**DataTable Filters**
 
 [DataTable](#) instances, which are used to hold reports, are manipulated by either iterating through rows and manually making changes or through the use of DataTable [Filters](#). DataTable Filters manipulate DataTable instances in some way. There are several predefined ones that allow you to do common things easily.
+</div>
 
 Making a report presentable involves undo-ing the [changes that made it more efficient to store](#record-storage-guidelines). Column names can be changed from integer IDs to string metric names via the [ReplaceColumnNames](#) [DataTable](#) filter:
 

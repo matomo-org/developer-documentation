@@ -26,7 +26,19 @@ Adds rows based on an array mapping label column values to value column values.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$array` (`array`) &mdash; Array containing the rows, eg, ``` array( 'Label row 1' => $value1, 'Label row 2' => $value2, ) ```
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$array` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Array containing the rows, eg, ``` array( 'Label row 1' => $value1, 'Label row 2' => $value2, ) ```</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

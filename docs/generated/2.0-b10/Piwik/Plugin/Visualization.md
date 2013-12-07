@@ -41,9 +41,30 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 #### Signature
 
 - It is a **finalized** method.
-- It accepts the following parameter(s):
-    - `$controllerAction`
-    - `$apiMethodToRequestDataTable`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$controllerAction`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$apiMethodToRequestDataTable`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="assigntemplatevar" id="assigntemplatevar"></a>
 <a name="assignTemplateVar" id="assignTemplateVar"></a>
@@ -58,9 +79,30 @@ assign either one variable by setting $vars and $value or an array of key/value 
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$vars` (`array`|`string`)
-    - `$value` (`mixed`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$vars` (`array`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="beforeloaddatatable" id="beforeloaddatatable"></a>

@@ -34,11 +34,50 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable this filter will run over.
-    - `$labelSecondsPlural` (`string`) &mdash; A string to use when beautifying range labels whose lower bound is between 0 and 60. Must be a format string that takes two numeric params.
-    - `$labelMinutesSingular` (`string`) &mdash; A string to use when replacing a range that equals 60-60 (or 1 minute - 1 minute).
-    - `$labelMinutesPlural` (`string`) &mdash; A string to use when replacing a range that spans multiple minutes. This must be a format string that takes one string parameter.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The DataTable this filter will run over.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$labelSecondsPlural` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> A string to use when beautifying range labels whose lower bound is between 0 and 60. Must be a format string that takes two numeric params.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$labelMinutesSingular` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> A string to use when replacing a range that equals 60-60 (or 1 minute - 1 minute).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$labelMinutesPlural` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> A string to use when replacing a range that spans multiple minutes. This must be a format string that takes one string parameter.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="getsingleunitlabel" id="getsingleunitlabel"></a>
 <a name="getSingleUnitLabel" id="getSingleUnitLabel"></a>
@@ -53,9 +92,30 @@ will be in seconds. Otherwise, it will be in minutes.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$oldLabel` (`string`) &mdash; The original label value.
-    - `$lowerBound` (`int`) &mdash; The lower bound of the range.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$oldLabel` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The original label value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lowerBound` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The lower bound of the range.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The pretty range label.
     - `string`
 
@@ -72,10 +132,40 @@ will be in seconds. Otherwise, it will be in minutes.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$oldLabel` (`string`) &mdash; The original label value.
-    - `$lowerBound` (`int`) &mdash; The lower bound of the range.
-    - `$upperBound` (`int`) &mdash; The upper bound of the range.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$oldLabel` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The original label value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lowerBound` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The lower bound of the range.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$upperBound` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The upper bound of the range.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The pretty range label.
     - `string`
 
@@ -92,9 +182,30 @@ will be in seconds. Otherwise, it will be in minutes.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$oldLabel` (`string`) &mdash; The original label value.
-    - `$lowerBound` (`int`) &mdash; The lower bound of the range.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$oldLabel` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The original label value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lowerBound` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The lower bound of the range.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The pretty range label.
     - `string`
 

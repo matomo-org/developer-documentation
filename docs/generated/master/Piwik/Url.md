@@ -75,8 +75,20 @@ Returns the current URL without the query string.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$checkTrustedHost` (`bool`) &mdash; Whether to do trusted host check. Should ALWAYS be true, except in Controller.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$checkTrustedHost` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> Whether to do trusted host check. Should ALWAYS be true, except in Controller.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ eg, `"http://example.org/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
     - `string`
 
@@ -140,9 +152,30 @@ Returns the current host.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$default` (`string`) &mdash; Default value to return if host unknown
-    - `$checkTrustedHost` (`bool`) &mdash; Whether to do trusted host check. Should ALWAYS be true, except in Controller.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$default` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Default value to return if host unknown</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$checkTrustedHost` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> Whether to do trusted host check. Should ALWAYS be true, except in Controller.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ eg, `"example.org"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
     - `string`
 
@@ -182,8 +215,20 @@ will be added to the result.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$params` (`array`) &mdash; set of parameters to modify/add in the current URL eg, `array('param3' => 'value3')`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$params` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> set of parameters to modify/add in the current URL eg, `array('param3' => 'value3')`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ eg, `"?param2=value2&param3=value3"`
     - `string`
 
@@ -195,8 +240,20 @@ Converts an an array of parameters name => value mappings to a query string.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$parameters` (`array`) &mdash; eg. `array('param1' => 10, 'param2' => array(1,2))`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> eg. `array('param1' => 10, 'param2' => array(1,2))`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ eg. `"param1=10&param2[]=1&param2[]=2"`
     - `string`
 
@@ -223,8 +280,20 @@ Redirects the user to the specified URL.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$url` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getreferrer" id="getreferrer"></a>
@@ -247,8 +316,20 @@ Returns true if the URL points to something on the same host, false if otherwise
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$url` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ True if local; false otherwise.
     - `bool`
 

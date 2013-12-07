@@ -106,9 +106,30 @@ Builds a PiwikTracker object, used to track visits, pages and Goal conversions f
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idSite` (`int`) &mdash; Id site to be tracked
-    - `$apiUrl` (`string`) &mdash; "http://example.org/piwik/" or "http://piwik.example.org/" If set, will overwrite PiwikTracker::$URL
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> Id site to be tracked</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$apiUrl` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> "http://example.org/piwik/" or "http://piwik.example.org/" If set, will overwrite PiwikTracker::$URL</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="setpagecharset" id="setpagecharset"></a>
 <a name="setPageCharset" id="setPageCharset"></a>
@@ -123,8 +144,20 @@ If required though, you can also specify another charset using this function.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$charset` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$charset` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="seturl" id="seturl"></a>
@@ -135,8 +168,20 @@ Sets the current URL being tracked
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$url` (`string`) &mdash; Raw URL (not URL encoded)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Raw URL (not URL encoded)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="seturlreferrer" id="seturlreferrer"></a>
@@ -147,8 +192,20 @@ Sets the URL referrer used to track Referrers details for new visits.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$url` (`string`) &mdash; Raw URL (not URL encoded)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Raw URL (not URL encoded)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setgenerationtime" id="setgenerationtime"></a>
@@ -159,8 +216,20 @@ Sets the time that generating the document on the server side took.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$timeMs` (`int`) &mdash; Generation time in ms
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$timeMs` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> Generation time in ms</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="seturlreferer" id="seturlreferer"></a>
@@ -169,8 +238,20 @@ Sets the time that generating the document on the server side took.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$url`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setattributioninfo" id="setattributioninfo"></a>
@@ -193,8 +274,20 @@ to the 'ref' first party cookie storing referral information.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$jsonEncoded` (`string`) &mdash; JSON encoded array containing Attribution info
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$jsonEncoded` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> JSON encoded array containing Attribution info</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -211,11 +304,50 @@ See http://piwik.org/docs/custom-variables/
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$id` (`int`) &mdash; Custom variable slot ID from 1-5
-    - `$name` (`string`) &mdash; Custom variable name
-    - `$value` (`string`) &mdash; Custom variable value
-    - `$scope` (`string`) &mdash; Custom variable scope. Possible values: visit, page, event
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$id` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> Custom variable slot ID from 1-5</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Custom variable name</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Custom variable value</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$scope` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Custom variable scope. Possible values: visit, page, event</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -236,9 +368,30 @@ If scope is 'visit', it will attempt to read the value set in the first party co
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$id` (`int`) &mdash; Custom Variable integer index to fetch from cookie. Should be a value from 1 to 5
-    - `$scope` (`string`) &mdash; Custom variable scope. Possible values: visit, page, event
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$id` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> Custom Variable integer index to fetch from cookie. Should be a value from 1 to 5</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$scope` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Custom variable scope. Possible values: visit, page, event</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ An array with this format: array( 0 => CustomVariableName, 1 => CustomVariableValue ) or false
     - `mixed`
 - It throws one of the following exceptions:
@@ -262,8 +415,20 @@ Sets the current site ID.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idSite` (`int`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSite` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setbrowserlanguage" id="setbrowserlanguage"></a>
@@ -278,8 +443,20 @@ Used to guess visitor countries when GeoIP is not enabled
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$acceptLanguage` (`string`) &mdash; For example "fr-fr"
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$acceptLanguage` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> For example "fr-fr"</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setuseragent" id="setuseragent"></a>
@@ -294,8 +471,20 @@ If this function is not called, the User Agent will default to the current user 
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$userAgent` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$userAgent` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setcountry" id="setcountry"></a>
@@ -313,8 +502,20 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$country` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$country` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setregion" id="setregion"></a>
@@ -332,8 +533,20 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$region` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$region` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setcity" id="setcity"></a>
@@ -351,8 +564,20 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$city` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$city` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setlatitude" id="setlatitude"></a>
@@ -370,8 +595,20 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$lat` (`float`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lat` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setlongitude" id="setlongitude"></a>
@@ -389,8 +626,20 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$long` (`float`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$long` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="enablebulktracking" id="enablebulktracking"></a>
@@ -416,9 +665,30 @@ Enable Cookie Creation - this will cause a first party VisitorId cookie to be se
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$domain` (`string`) &mdash; (optional) Set first-party cookie domain. Accepted values: example.com, *.example.com (same as .example.com) or subdomain.example.com
-    - `$path` (`string`) &mdash; (optional) Set first-party cookie path
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$domain` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Set first-party cookie domain. Accepted values: example.com, *.example.com (same as .example.com) or subdomain.example.com</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$path` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Set first-party cookie path</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="dotrackpageview" id="dotrackpageview"></a>
@@ -429,8 +699,20 @@ Tracks a page view
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$documentTitle` (`string`) &mdash; Page title as it will appear in the Actions > Page titles report
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$documentTitle` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Page title as it will appear in the Actions > Page titles report</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Response string or true if using bulk requests.
     - `mixed`
 
@@ -442,11 +724,50 @@ Tracks an event
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$category` (`string`) &mdash; The Event Category (Videos, Music, Games...)
-    - `$action` (`string`) &mdash; The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
-    - `$name` (`string`) &mdash; (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)
-    - `$value` (`float`) &mdash; (optional) The Event's value
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$category` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The Event Category (Videos, Music, Games...)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$action` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) The Event's value</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Response string or true if using bulk requests.
     - `mixed`
 
@@ -462,10 +783,40 @@ These are used to populate reports in Actions > Site Search.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$keyword` (`string`) &mdash; Searched query on the site
-    - `$category` (`string`) &mdash; (optional) Search engine category if applicable
-    - `$countResults` (`bool`|`int`) &mdash; (optional) results displayed on the search result page. Used to track "zero result" keywords.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$keyword` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Searched query on the site</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$category` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Search engine category if applicable</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$countResults` (`bool`|`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) results displayed on the search result page. Used to track "zero result" keywords.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Response or true if using bulk requests.
     - `mixed`
 
@@ -477,9 +828,30 @@ Records a Goal conversion
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idGoal` (`int`) &mdash; Id Goal to record a conversion
-    - `$revenue` (`float`) &mdash; Revenue for this conversion
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idGoal` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> Id Goal to record a conversion</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$revenue` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> Revenue for this conversion</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Response or true if using bulk request
     - `mixed`
 
@@ -491,9 +863,30 @@ Tracks a download or outlink
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$actionUrl` (`string`) &mdash; URL of the download or outlink
-    - `$actionType` (`string`) &mdash; Type of the action: 'download' or 'link'
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$actionUrl` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> URL of the download or outlink</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$actionType` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Type of the action: 'download' or 'link'</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Response or true if using bulk request
     - `mixed`
 
@@ -512,12 +905,60 @@ Ecommerce items added via this function are automatically cleared when doTrackEc
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sku` (`string`) &mdash; (required) SKU, Product identifier
-    - `$name` (`string`) &mdash; (optional) Product name
-    - `$category` (`string`|`array`) &mdash; (optional) Product category, or array of product categories (up to 5 categories can be specified for a given product)
-    - `$price` (`float`|`int`) &mdash; (optional) Individual product price (supports integer and decimal prices)
-    - `$quantity` (`int`) &mdash; (optional) Product quantity. If not specified, will default to 1 in the Reports
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sku` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> (required) SKU, Product identifier</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Product name</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$category` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Product category, or array of product categories (up to 5 categories can be specified for a given product)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$price` (`float`|`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Individual product price (supports integer and decimal prices)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$quantity` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Product quantity. If not specified, will default to 1 in the Reports</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -536,8 +977,20 @@ Items which were in the previous cart and are not sent in later Cart updates wil
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$grandTotal` (`float`) &mdash; Cart grandTotal (typically the sum of all items' prices)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$grandTotal` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> Cart grandTotal (typically the sum of all items' prices)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Response or true if using bulk request
     - `mixed`
 
@@ -574,13 +1027,70 @@ Only the parameters $orderId and $grandTotal are required.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$orderId` (`string`|`int`) &mdash; (required) Unique Order ID. This will be used to count this order only once in the event the order page is reloaded several times. orderId must be unique for each transaction, even on different days, or the transaction will not be recorded by Piwik.
-    - `$grandTotal` (`float`) &mdash; (required) Grand Total revenue of the transaction (including tax, shipping, etc.)
-    - `$subTotal` (`float`) &mdash; (optional) Sub total amount, typically the sum of items prices for all items in this order (before Tax and Shipping costs are applied)
-    - `$tax` (`float`) &mdash; (optional) Tax amount for this order
-    - `$shipping` (`float`) &mdash; (optional) Shipping amount for this order
-    - `$discount` (`float`) &mdash; (optional) Discounted amount in this order
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$orderId` (`string`|`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> (required) Unique Order ID. This will be used to count this order only once in the event the order page is reloaded several times. orderId must be unique for each transaction, even on different days, or the transaction will not be recorded by Piwik.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$grandTotal` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> (required) Grand Total revenue of the transaction (including tax, shipping, etc.)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$subTotal` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Sub total amount, typically the sum of items prices for all items in this order (before Tax and Shipping costs are applied)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tax` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Tax amount for this order</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$shipping` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Shipping amount for this order</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$discount` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) Discounted amount in this order</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Response or true if using bulk request
     - `mixed`
 
@@ -603,11 +1113,50 @@ conversion rates (Conversion rate = Ecommerce orders containing this product or 
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sku` (`string`) &mdash; Product SKU being viewed
-    - `$name` (`string`) &mdash; Product Name being viewed
-    - `$category` (`string`|`array`) &mdash; Category being viewed. On a Product page, this is the product's category. You can also specify an array of up to 5 categories for a given page view.
-    - `$price` (`float`) &mdash; Specify the price at which the item was displayed
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sku` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Product SKU being viewed</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Product Name being viewed</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$category` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Category being viewed. On a Product page, this is the product's category. You can also specify an array of up to 5 categories for a given page view.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$price` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> Specify the price at which the item was displayed</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="geturltrackpageview" id="geturltrackpageview"></a>
@@ -622,8 +1171,20 @@ Builds URL to track a page view.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$documentTitle` (`string`) &mdash; Page view name as it will appear in Piwik reports
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$documentTitle` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Page view name as it will appear in Piwik reports</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ URL to piwik.php with all parameters set to track the pageview
     - `string`
 
@@ -639,11 +1200,50 @@ Builds URL to track a custom event.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$category` (`string`) &mdash; The Event Category (Videos, Music, Games...)
-    - `$action` (`string`) &mdash; The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
-    - `$name` (`string`) &mdash; (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)
-    - `$value` (`float`) &mdash; (optional) The Event's value
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$category` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The Event Category (Videos, Music, Games...)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$action` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) The Event's value</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ URL to piwik.php with all parameters set to track the pageview
     - `string`
 
@@ -659,10 +1259,40 @@ Builds URL to track a site search.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$keyword` (`string`)
-    - `$category` (`string`)
-    - `$countResults` (`int`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$keyword` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$category` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$countResults` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="geturltrackgoal" id="geturltrackgoal"></a>
@@ -677,9 +1307,30 @@ Builds URL to track a goal with idGoal and revenue.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idGoal` (`int`) &mdash; Id Goal to record a conversion
-    - `$revenue` (`float`) &mdash; Revenue for this conversion
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idGoal` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> Id Goal to record a conversion</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$revenue` (`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> Revenue for this conversion</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ URL to piwik.php with all parameters set to track the goal conversion
     - `string`
 
@@ -695,9 +1346,30 @@ Builds URL to track a new action.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$actionUrl` (`string`) &mdash; URL of the download or outlink
-    - `$actionType` (`string`) &mdash; Type of the action: 'download' or 'link'
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$actionUrl` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> URL of the download or outlink</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$actionType` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Type of the action: 'download' or 'link'</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ URL to piwik.php with all parameters set to track an action
     - `string`
 
@@ -720,8 +1392,20 @@ Allowed only for Super User, must be used along with setTokenAuth()
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$dateTime` (`string`) &mdash; Date with the format 'Y-m-d H:i:s', or a UNIX timestamp
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$dateTime` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Date with the format 'Y-m-d H:i:s', or a UNIX timestamp</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setip" id="setip"></a>
@@ -740,8 +1424,20 @@ Allowed only for Super User, must be used along with setTokenAuth()
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$ip` (`string`) &mdash; IP string, eg. 130.54.2.1
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ip` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> IP string, eg. 130.54.2.1</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setvisitorid" id="setvisitorid"></a>
@@ -765,8 +1461,20 @@ If not set, the visitor ID will be fetched from the 1st party cookie, or will be
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$visitorId` (`string`) &mdash; 16 hexadecimal characters visitor ID, eg. "33c31e01394bdc63"
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$visitorId` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> 16 hexadecimal characters visitor ID, eg. "33c31e01394bdc63"</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -835,8 +1543,20 @@ The following features require access:
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$token_auth` (`string`) &mdash; token_auth 32 chars token_auth string
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$token_auth` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> token_auth 32 chars token_auth string</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setlocaltime" id="setlocaltime"></a>
@@ -847,8 +1567,20 @@ Sets local visitor time
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$time` (`string`) &mdash; HH:MM:SS format
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$time` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> HH:MM:SS format</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setresolution" id="setresolution"></a>
@@ -859,9 +1591,30 @@ Sets user resolution width and height.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$width` (`int`)
-    - `$height` (`int`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$width` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$height` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setbrowserhascookies" id="setbrowserhascookies"></a>
@@ -872,8 +1625,20 @@ Sets if the browser supports cookies This is reported in "List of plugins" repor
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$bool` (`bool`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$bool` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setdebugstringappend" id="setdebugstringappend"></a>
@@ -884,8 +1649,20 @@ Will append a custom string at the end of the Tracking request.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$string` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$string` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setplugins" id="setplugins"></a>
@@ -896,16 +1673,100 @@ Sets visitor browser supported plugins
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$flash` (`bool`)
-    - `$java` (`bool`)
-    - `$director` (`bool`)
-    - `$quickTime` (`bool`)
-    - `$realPlayer` (`bool`)
-    - `$pdf` (`bool`)
-    - `$windowsMedia` (`bool`)
-    - `$gears` (`bool`)
-    - `$silverlight` (`bool`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$flash` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$java` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$director` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$quickTime` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$realPlayer` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$pdf` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$windowsMedia` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$gears` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$silverlight` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="disablecookiesupport" id="disablecookiesupport"></a>
@@ -944,8 +1805,20 @@ Sets the maximum number of seconds that the tracker will spend waiting for a res
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$timeout` (`int`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$timeout` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)

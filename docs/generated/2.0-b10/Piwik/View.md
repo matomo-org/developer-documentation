@@ -95,8 +95,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$templateFile` (`string`) &mdash; The template file to load. Must be in the following format: `"@MyPlugin/templateFileName"`. Note the absence of .twig from the end of the name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$templateFile` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The template file to load. Must be in the following format: `"@MyPlugin/templateFileName"`. Note the absence of .twig from the end of the name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>
@@ -130,9 +142,30 @@ Variable names may not be prefixed with '_'.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$key` (`string`) &mdash; The variable name.
-    - `$val` (`mixed`) &mdash; The variable value.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$key` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The variable name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$val` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"> The variable value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="__get" id="__get"></a>
@@ -147,8 +180,20 @@ Variable names may not be prefixed with '_'.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$key` (`string`) &mdash; The variable name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$key` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The variable name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The variable value.
     - `mixed`
 
@@ -181,8 +226,20 @@ set just before rendering.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$contentType` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentType` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
@@ -201,8 +258,20 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$option` (`string`) &mdash; ('deny' or 'sameorigin')
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$option` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> ('deny' or 'sameorigin')</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="singlereport" id="singlereport"></a>
@@ -213,9 +282,30 @@ Creates a View for and then renders the single report template.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$title`
-    - `$reportHtml`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$title`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$reportHtml`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The report contents if `$fetch` is true.
     - `string`
     - `void`

@@ -51,8 +51,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$aggregator` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md)) &mdash; The ArchiveProcessor instance sent to the archiving event observer.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$aggregator` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The ArchiveProcessor instance sent to the archiving event observer.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="aggregatedayreport" id="aggregatedayreport"></a>
 <a name="aggregateDayReport" id="aggregateDayReport"></a>

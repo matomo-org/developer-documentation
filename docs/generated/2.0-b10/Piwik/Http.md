@@ -39,16 +39,100 @@ Sends an HTTP request using best available transport method.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$aUrl` (`string`) &mdash; The target URL.
-    - `$timeout` (`int`) &mdash; The number of seconds to wait before aborting the HTTP request.
-    - `$userAgent` (`string`|`null`) &mdash; The user agent to use.
-    - `$destinationPath` (`string`|`null`) &mdash; If supplied, the HTTP response will be saved to the file specified by this path.
-    - `$followDepth` (`int`|`null`) &mdash; Internal redirect count. Should always pass `null` for this parameter.
-    - `$acceptLanguage` (`bool`) &mdash; The value to use for the `'Accept-Language'` HTTP request header.
-    - `$byteRange` (`array`|`bool`) &mdash; For `Range:` header. Should be two element array of bytes, eg, `array(0, 1024)` Doesn't work w/ `fopen` transport method.
-    - `$getExtendedInfo` (`bool`) &mdash; If true returns the status code, headers & response, if false just the response.
-    - `$httpMethod` (`string`) &mdash; The HTTP method to use. Defaults to `'GET'`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$aUrl` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The target URL.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$timeout` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The number of seconds to wait before aborting the HTTP request.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$userAgent` (`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The user agent to use.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$destinationPath` (`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> If supplied, the HTTP response will be saved to the file specified by this path.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$followDepth` (`int`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> Internal redirect count. Should always pass `null` for this parameter.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$acceptLanguage` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> The value to use for the `'Accept-Language'` HTTP request header.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$byteRange` (`array`|`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> For `Range:` header. Should be two element array of bytes, eg, `array(0, 1024)` Doesn't work w/ `fopen` transport method.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$getExtendedInfo` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> If true returns the status code, headers & response, if false just the response.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$httpMethod` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The HTTP method to use. Defaults to `'GET'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success: - status => the HTTP status code - headers => the HTTP headers - data => the HTTP response data `false` is still returned on failure.
     - `bool`
     - `string`
@@ -111,10 +195,40 @@ of a download's progress.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$url` (`string`) &mdash; The url to download from.
-    - `$outputPath` (`string`) &mdash; The path to the file to save/append to.
-    - `$isContinuation` (`bool`) &mdash; True if this is the continuation of a download, or if we're starting a fresh one.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The url to download from.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$outputPath` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The path to the file to save/append to.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$isContinuation` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> True if this is the continuation of a download, or if we're starting a fresh one.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `array` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the file already exists and we&#039;re starting a new download, if we&#039;re trying to continue a download that never started
@@ -127,11 +241,50 @@ Fetches a file located at `$url` and saves it to `$destinationPath`.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$url` (`string`) &mdash; The URL of the file to download.
-    - `$destinationPath` (`string`) &mdash; The path to download the file to.
-    - `$tries` (`int`) &mdash; (deprecated)
-    - `$timeout` (`int`) &mdash; The amount of seconds to wait before aborting the HTTP request.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The URL of the file to download.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$destinationPath` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The path to download the file to.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tries` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> (deprecated)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$timeout` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The amount of seconds to wait before aborting the HTTP request.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ true on success, throws Exception on failure
     - `bool`
 - It throws one of the following exceptions:

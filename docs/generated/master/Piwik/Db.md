@@ -95,8 +95,20 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$dbInfos` (`array`|`null`) &mdash; Connection parameters in an array. Defaults to the `[database]` INI config section.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$dbInfos` (`array`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> Connection parameters in an array. Defaults to the `[database]` INI config section.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="exec" id="exec"></a>
@@ -113,8 +125,20 @@ number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL query.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It can return one of the following values:
     - `integer`
     - `Zend_Db_Statement`
@@ -135,9 +159,30 @@ See also [http://framework.zend.com/manual/en/zend.db.statement.html](http://fra
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL query.
-    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `Zend_Db_Statement` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
@@ -150,9 +195,30 @@ Executes the SQL query and fetches all the rows from the result set.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL query.
-    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ (one row in the array per row fetched in the DB)
     - `array`
 - It throws one of the following exceptions:
@@ -166,9 +232,30 @@ Executes an SQL query and fetches the first row of the result.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL query.
-    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `array` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
@@ -181,9 +268,30 @@ Executes an SQL query and fetches the first column of the first row of result se
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL query.
-    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
@@ -196,9 +304,30 @@ Executes an SQL query and returns the entire result set indexed by the first sel
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL query.
-    - `$parameters` (`array`) &mdash; Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ eg, ``` array('col1value1' => array('col2' => '...', 'col3' => ...), 'col1value2' => array('col2' => '...', 'col3' => ...)) ```
     - `array`
 - It throws one of the following exceptions:
@@ -225,12 +354,60 @@ locking the table for too long.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` (`string`) &mdash; The name of the table to delete from. Must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
-    - `$where` (`string`) &mdash; The where clause of the query. Must include the WHERE keyword.
-    - `$orderBy` (`Piwik\$orderBy`) &mdash; The column to order by and the order by direction, eg, `idvisit ASC`.
-    - `$maxRowsPerQuery` (`int`) &mdash; The maximum number of rows to delete per DELETE query.
-    - `$parameters` (`array`) &mdash; Parameters to bind in the query.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the table to delete from. Must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$where` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The where clause of the query. Must include the WHERE keyword.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$orderBy` (`Piwik\$orderBy`) &mdash;
+
+      <div markdown="1" class="param-desc"> The column to order by and the order by direction, eg, `idvisit ASC`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$maxRowsPerQuery` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum number of rows to delete per DELETE query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The total number of rows deleted.
     - `int`
 
@@ -250,8 +427,20 @@ set to **1**.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$tables` (`string`|`array`) &mdash; The name of the table to optimize or an array of tables to optimize.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tables` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the table to optimize or an array of tables to optimize.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `Zend_Db_Statement` value.
 
 <a name="droptables" id="droptables"></a>
@@ -266,8 +455,20 @@ The table names must be prefixed (see [Common::prefixTable()](/api-reference/Piw
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$tables` (`string`|`array`) &mdash; The name of the table to drop or an array of table names to drop.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tables` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the table to drop or an array of table names to drop.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `Zend_Db_Statement` value.
 
 <a name="locktables" id="locktables"></a>
@@ -285,9 +486,30 @@ should still work in case it is not granted.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$tablesToRead` (`string`|`array`) &mdash; The table or tables to obtain 'read' locks on.
-    - `$tablesToWrite` (`string`|`array`) &mdash; The table or tables to obtain 'write' locks on.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tablesToRead` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The table or tables to obtain 'read' locks on.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tablesToWrite` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The table or tables to obtain 'write' locks on.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `Zend_Db_Statement` value.
 
 <a name="unlockalltables" id="unlockalltables"></a>
@@ -339,12 +561,60 @@ for too long.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.
-    - `$first` (`int`) &mdash; The minimum ID to loop from.
-    - `$last` (`int`) &mdash; The maximum ID to loop to.
-    - `$step` (`int`) &mdash; The maximum number of rows to scan in each smaller SELECT.
-    - `$params` (`array`) &mdash; Parameters to bind in the query, `array(param1 => value1, param2 => value2)`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$first` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The minimum ID to loop from.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$last` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum ID to loop to.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$step` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum number of rows to scan in each smaller SELECT.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$params` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, `array(param1 => value1, param2 => value2)`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="segmentedfetchone" id="segmentedfetchone"></a>
@@ -362,12 +632,60 @@ the table will not be locked for too long.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.
-    - `$first` (`int`) &mdash; The minimum ID to loop from.
-    - `$last` (`int`) &mdash; The maximum ID to loop to.
-    - `$step` (`int`) &mdash; The maximum number of rows to scan in each smaller SELECT.
-    - `$params` (`array`) &mdash; Parameters to bind in the query, `array(param1 => value1, param2 => value2)`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$first` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The minimum ID to loop from.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$last` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum ID to loop to.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$step` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum number of rows to scan in each smaller SELECT.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$params` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, `array(param1 => value1, param2 => value2)`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ An array of primitive values.
     - `array`
 
@@ -386,12 +704,60 @@ the table will not be locked for too long.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.
-    - `$first` (`int`) &mdash; The minimum ID to loop from.
-    - `$last` (`int`) &mdash; The maximum ID to loop to.
-    - `$step` (`int`) &mdash; The maximum number of rows to scan in each smaller SELECT.
-    - `$params` (`array`) &mdash; Parameters to bind in the query, array( param1 => value1, param2 => value2)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$first` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The minimum ID to loop from.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$last` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum ID to loop to.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$step` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum number of rows to scan in each smaller SELECT.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$params` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, array( param1 => value1, param2 => value2)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ An array of rows that includes the result set of every executed query.
     - `array`
 
@@ -403,12 +769,60 @@ Performs a non-SELECT query on a table one chunk at a time.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$sql` (`string`) &mdash; The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.
-    - `$first` (`int`) &mdash; The minimum ID to loop from.
-    - `$last` (`int`) &mdash; The maximum ID to loop to.
-    - `$step` (`int`) &mdash; The maximum number of rows to scan in each smaller query.
-    - `$params` (`array`) &mdash; Parameters to bind in the query, `array(param1 => value1, param2 => value2)`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$sql` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$first` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The minimum ID to loop from.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$last` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum ID to loop to.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$step` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum number of rows to scan in each smaller query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$params` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, `array(param1 => value1, param2 => value2)`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getdblock" id="getdblock"></a>
@@ -424,9 +838,30 @@ retry a set number of time.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$lockName` (`string`) &mdash; The lock name.
-    - `$maxRetries` (`int`) &mdash; The max number of times to retry.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lockName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The lock name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$maxRetries` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The max number of times to retry.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ `true` if the lock was obtained, `false` if otherwise.
     - `bool`
 
@@ -438,8 +873,20 @@ Releases a named lock.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$lockName` (`string`) &mdash; The lock name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lockName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The lock name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ `true` if the lock was released, `false` if otherwise.
     - `bool`
 

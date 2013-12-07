@@ -34,9 +34,30 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will eventually be filtered.
-    - `$newLabel` (`string`|`null`) &mdash; The new label for summary row. If null, defaults to `Piwik::translate('General_Others')`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The table that will eventually be filtered.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$newLabel` (`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The new label for summary row. If null, defaults to `Piwik::translate('General_Others')`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -46,7 +67,19 @@ See [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummar
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

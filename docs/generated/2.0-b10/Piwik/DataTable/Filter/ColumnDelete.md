@@ -47,11 +47,50 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable instance that will eventually be filtered.
-    - `$columnsToRemove` (`array`|`string`) &mdash; An array of column names or a comma-separated list of column names. These columns will be removed.
-    - `$columnsToKeep` (`array`|`string`) &mdash; An array of column names that should be kept or a comma-separated list of column names. Columns not in this list will be removed.
-    - `$deleteIfZeroOnly` (`bool`) &mdash; If true, columns will be removed only if their value is 0.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The DataTable instance that will eventually be filtered.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columnsToRemove` (`array`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> An array of column names or a comma-separated list of column names. These columns will be removed.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columnsToKeep` (`array`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> An array of column names that should be kept or a comma-separated list of column names. Columns not in this list will be removed.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$deleteIfZeroOnly` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> If true, columns will be removed only if their value is 0.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -66,7 +105,19 @@ each DataTable row.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

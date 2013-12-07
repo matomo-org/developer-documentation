@@ -27,9 +27,30 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The persisted name of the setting.
-    - `$title` (`string`) &mdash; The display name of the setting.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The persisted name of the setting.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$title` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The display name of the setting.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="getorder" id="getorder"></a>
 <a name="getOrder" id="getOrder"></a>

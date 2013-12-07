@@ -41,8 +41,20 @@ option.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` (`string`) &mdash; The table name to prefix, ie "log_visit"
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The table name to prefix, ie "log_visit"</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The prefixed name, ie "piwik-production_log_visit".
     - `string`
 
@@ -59,8 +71,20 @@ option.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` (`string`) &mdash; The prefixed table name, eg "piwik-production_log_visit".
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The prefixed table name, eg "piwik-production_log_visit".</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The unprefixed table name, eg "log_visit".
     - `string`
 
@@ -76,9 +100,30 @@ Calls `mb_substr` if available and falls back to `substr` if it's not.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$string`
-    - `$start`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$string`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$start`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="mb_strlen" id="mb_strlen"></a>
@@ -89,8 +134,20 @@ Multi-byte strlen() - works with UTF-8  Calls `mb_substr` if available and falls
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$string` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$string` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `int` value.
 
 <a name="mb_strtolower" id="mb_strtolower"></a>
@@ -105,8 +162,20 @@ Calls `mb_strtolower` if available and falls back to `strtolower` if not.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$string` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$string` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="sanitizeinputvalues" id="sanitizeinputvalues"></a>
@@ -136,9 +205,30 @@ NOTE: Sanitized input should not be used directly in an SQL query; SQL placehold
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$value` (`mixed`) &mdash; The variable to be cleaned. If an array is supplied, the contents of the array will be sanitized recursively. The keys of the array will also be sanitized.
-    - `$alreadyStripslashed` (`bool`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"> The variable to be cleaned. If an array is supplied, the contents of the array will be sanitized recursively. The keys of the array will also be sanitized.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$alreadyStripslashed` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The sanitized value.
     - `mixed`
 - It throws one of the following exceptions:
@@ -160,8 +250,20 @@ have to use this method to unsanitize it after it is retrieved.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$value` (`string`|`array`) &mdash; The data to unsanitize. If an array is passed the array is sanitized recursively. Keys are not unsanitized.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The data to unsanitize. If an array is passed the array is sanitized recursively. Keys are not unsanitized.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The unsanitized data.
     - `string`
     - `array`
@@ -184,11 +286,50 @@ If the variable doesn't have neither a value nor a default value provided, an ex
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$varName` (`string`) &mdash; Name of the request parameter to get. We look in `$_GET[$varName]` and `$_POST[$varName]` for the value.
-    - `$varDefault` (`string`|`null`) &mdash; The value to return if the request parameter doesn't exist or has an empty value.
-    - `$varType` (`string`|`null`) &mdash; Expected type, the value must be one of the following: `'array'`, `'int'`, `'integer'`, `'string'`, `'json'`. If `'json'`, the string value will be `json_decode`-d and all of entries sanitized.
-    - `$requestArrayToUse` (`array`|`null`) &mdash; The array to use instead of $_GET and $_POST.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$varName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Name of the request parameter to get. We look in `$_GET[$varName]` and `$_POST[$varName]` for the value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$varDefault` (`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The value to return if the request parameter doesn't exist or has an empty value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$varType` (`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> Expected type, the value must be one of the following: `'array'`, `'int'`, `'integer'`, `'string'`, `'json'`. If `'json'`, the string value will be `json_decode`-d and all of entries sanitized.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$requestArrayToUse` (`array`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The array to use instead of $_GET and $_POST.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The sanitized request parameter.
     - `mixed`
 - It throws one of the following exceptions:
@@ -236,8 +377,20 @@ Used mainly to fill the `IN (...)` part of a query.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$fields` (`array`|`string`) &mdash; The names of the mysql table fields to bind, e.g. `array(fieldName1, fieldName2, fieldName3)`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$fields` (`array`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The names of the mysql table fields to bind, e.g. `array(fieldName1, fieldName2, fieldName3)`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The placeholder string, e.g. `"?, ?, ?"`.
     - `string`
 
@@ -253,7 +406,19 @@ For more information: @link http://dev.piwik.org/trac/ticket/374
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$var` (`Piwik\$var`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$var` (`Piwik\$var`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

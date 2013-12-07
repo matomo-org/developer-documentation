@@ -40,12 +40,60 @@ Adds a report to the list of dashboard widgets.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$widgetCategory` (`string`) &mdash; The widget category. This can be a translation token.
-    - `$widgetName` (`string`) &mdash; The name of the widget. This can be a translation token.
-    - `$controllerName` (`string`) &mdash; The report's controller name (same as the plugin name).
-    - `$controllerAction` (`string`) &mdash; The report's controller action method name.
-    - `$customParameters` (`array`) &mdash; Extra query parameters that should be sent while getting this report.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$widgetCategory` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The widget category. This can be a translation token.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$widgetName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the widget. This can be a translation token.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$controllerName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The report's controller name (same as the plugin name).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$controllerAction` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The report's controller action method name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$customParameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Extra query parameters that should be sent while getting this report.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="remove" id="remove"></a>
@@ -56,9 +104,30 @@ Removes one more widgets from the widget list.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$widgetCategory` (`string`) &mdash; The widget category. Can be a translation token.
-    - `$widgetName` (`string`|`Piwik\false`) &mdash; The name of the widget to remove. Cannot be a translation token. If not supplied, entire category will be removed.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$widgetCategory` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The widget category. Can be a translation token.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$widgetName` (`string`|`Piwik\false`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the widget to remove. Cannot be a translation token. If not supplied, entire category will be removed.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="isdefined" id="isdefined"></a>
@@ -69,8 +138,29 @@ Returns true if the widget with the given parameters exists in the widget list, 
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$controllerName` (`string`) &mdash; The controller name of the widget's report.
-    - `$controllerAction` (`string`) &mdash; The controller action of the widget's report.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$controllerName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The controller name of the widget's report.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$controllerAction` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The controller action of the widget's report.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `bool` value.
 

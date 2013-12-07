@@ -29,9 +29,30 @@ query string.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$queryParameters`
-    - `$parametersToExclude`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$queryParameters`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parametersToExclude`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ A query string, eg, `"?site=0"`.
     - `string`
 
@@ -47,8 +68,20 @@ Copied from the PHP comments at http://php.net/parse_url
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$parsed` (`array`) &mdash; Result of [parse_url](http://php.net/manual/en/function.parse-url.php).
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parsed` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Result of [parse_url](http://php.net/manual/en/function.parse-url.php).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The URL or `false` if `$parsed` isn't an array.
     - `Piwik\false`
     - `string`
@@ -61,8 +94,20 @@ Returns a URL query string as an array.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$urlQuery` (`string`) &mdash; The query string.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$urlQuery` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The query string.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ eg, `array('param1' => 'value1', 'param2' => 'value2')`
     - `array`
 
@@ -74,9 +119,30 @@ Returns the value of a single query parameter from the supplied query string.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$urlQuery` (`string`) &mdash; The query string.
-    - `$parameter` (`string`) &mdash; The query parameter name to return.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$urlQuery` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The query string.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameter` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The query parameter name to return.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ Parameter value if found (can be the empty string!), null if not found.
     - `string`
     - `null`
@@ -89,8 +155,20 @@ Returns the path and query string of a URL.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$url` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ eg, `/test/index.php?module=CoreHome` if `$url` is `http://piwik.org/test/index.php?module=CoreHome`.
     - `string`
 

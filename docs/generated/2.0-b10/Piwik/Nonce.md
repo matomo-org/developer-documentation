@@ -39,9 +39,30 @@ If none exists, a new nonce will be generated.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$id` (`string`) &mdash; Unique id to avoid namespace conflicts, e.g., `'ModuleName.ActionName'`.
-    - `$ttl` (`int`) &mdash; Optional time-to-live in seconds; default is 5 minutes. (ie, in 5 minutes, the nonce will no longer be valid).
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$id` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Unique id to avoid namespace conflicts, e.g., `'ModuleName.ActionName'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$ttl` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> Optional time-to-live in seconds; default is 5 minutes. (ie, in 5 minutes, the nonce will no longer be valid).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="verifynonce" id="verifynonce"></a>
@@ -60,9 +81,30 @@ and if the HTTP origin is valid (see [getAcceptableOrigins](#getAcceptableOrigin
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$id` (`string`) &mdash; Unique id
-    - `$cnonce` (`string`) &mdash; Nonce sent to client
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$id` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Unique id</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$cnonce` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Nonce sent to client</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ true if valid; false otherwise
     - `bool`
 
@@ -74,8 +116,20 @@ Force expiration of the current nonce.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$id` (`string`) &mdash; The unique nonce ID.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$id` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The unique nonce ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getorigin" id="getorigin"></a>

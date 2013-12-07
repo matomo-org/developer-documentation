@@ -92,8 +92,20 @@ to configured writers.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$message`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$message`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="warning" id="warning"></a>
@@ -104,8 +116,20 @@ Logs a message using the WARNING log level.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$message`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$message`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="info" id="info"></a>
@@ -116,8 +140,20 @@ Logs a message using the INFO log level.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$message`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$message`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="debug" id="debug"></a>
@@ -128,8 +164,20 @@ Logs a message using the DEBUG log level.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$message`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$message`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="verbose" id="verbose"></a>
@@ -140,7 +188,19 @@ Logs a message using the VERBOSE log level.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$message`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$message`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

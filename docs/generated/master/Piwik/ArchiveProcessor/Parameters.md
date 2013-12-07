@@ -28,10 +28,40 @@ The class defines the following methods:
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$site` ([`Site`](../../Piwik/Site.md))
-    - `$period` ([`Period`](../../Piwik/Period.md))
-    - `$segment` ([`Segment`](../../Piwik/Segment.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$site` ([`Site`](../../Piwik/Site.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$period` ([`Period`](../../Piwik/Period.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$segment` ([`Segment`](../../Piwik/Segment.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="getperiod" id="getperiod"></a>
 <a name="getPeriod" id="getPeriod"></a>
@@ -123,7 +153,19 @@ Returns the Date start of this period.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$isTemporary`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$isTemporary`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

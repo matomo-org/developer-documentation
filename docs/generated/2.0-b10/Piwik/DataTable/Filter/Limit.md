@@ -29,11 +29,50 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable that will be filtered eventually.
-    - `$offset` (`int`) &mdash; The starting row index to keep.
-    - `$limit` (`int`) &mdash; Number of rows to keep (specify -1 to keep all rows).
-    - `$keepSummaryRow` (`bool`) &mdash; Whether to keep the summary row or not.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The DataTable that will be filtered eventually.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$offset` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The starting row index to keep.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$limit` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> Number of rows to keep (specify -1 to keep all rows).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$keepSummaryRow` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> Whether to keep the summary row or not.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -43,7 +82,19 @@ See [Limit](#).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

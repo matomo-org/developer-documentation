@@ -263,8 +263,20 @@ The class defines the following methods:
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$propertyNames` (`array`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$propertyNames` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
@@ -273,8 +285,20 @@ The class defines the following methods:
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$propertyNames` (`array`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$propertyNames` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="setdefaultsort" id="setdefaultsort"></a>
@@ -283,9 +307,30 @@ The class defines the following methods:
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$columnsToDisplay`
-    - `$hasNbUniqVisitors`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columnsToDisplay`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$hasNbUniqVisitors`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="arequeuedfiltersdisabled" id="arequeuedfiltersdisabled"></a>

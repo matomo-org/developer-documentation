@@ -60,9 +60,30 @@ Note: This method cannot create Range periods.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$strPeriod` (`string`) &mdash; `"day"`, `"week"`, `"month"`, `"year"`, `"range"`.
-    - `$date` ([`Date`](../Piwik/Date.md)|`string`) &mdash; A date within the period or the range of dates.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$strPeriod` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> `"day"`, `"week"`, `"month"`, `"year"`, `"range"`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$date` ([`Date`](../Piwik/Date.md)|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> A date within the period or the range of dates.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a [`Period`](../Piwik/Period.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$strPeriod` is invalid.
@@ -75,9 +96,30 @@ Returns true $dateString and $period correspond to multiple periods.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$dateString`
-    - `$period`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$dateString`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$period`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `boolean` value.
 
 <a name="makeperiodfromqueryparams" id="makeperiodfromqueryparams"></a>
@@ -88,10 +130,40 @@ Creates a period instance using a Site instance and two strings describing the p
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$timezone` (`string`)
-    - `$period` (`string`) &mdash; The period string: day, week, month, year, range
-    - `$date` (`string`) &mdash; The date or date range string. Can be a special value including `'now'`, `'today'`, `'yesterday'`, `'yesterdaySameTime'`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$timezone` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$period` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The period string: day, week, month, year, range</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$date` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The date or date range string. Can be a special value including `'now'`, `'today'`, `'yesterday'`, `'yesterdaySameTime'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a [`Period`](../Piwik/Period.md) value.
 
 <a name="getdatestart" id="getdatestart"></a>
@@ -169,8 +241,20 @@ Returns a list of strings representing the current period.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$format` (`string`) &mdash; The format of each individual day.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$format` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The format of each individual day.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ An array of string dates that this period consists of.
     - `array`
 

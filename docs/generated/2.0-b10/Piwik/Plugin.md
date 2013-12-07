@@ -93,8 +93,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$pluginName` (`string`|`bool`) &mdash; A plugin name to force. If not supplied, it is set to the last part of the class name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$pluginName` (`string`|`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> A plugin name to force. If not supplied, it is set to the last part of the class name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If plugin metadata is defined in both the getInformation() method and the plugin.json file.
 
@@ -238,8 +250,20 @@ Returns false if we can't find one.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$backtrace` (`array`) &mdash; The result of the debug_backtrace() or Exception::getTrace().
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$backtrace` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The result of the debug_backtrace() or Exception::getTrace().</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It can return one of the following values:
     - `string`
     - `Piwik\false`

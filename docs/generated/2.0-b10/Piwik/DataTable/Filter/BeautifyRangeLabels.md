@@ -45,10 +45,40 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable that will be filtered.
-    - `$labelSingular` (`string`) &mdash; The string to use when the range being beautified is equal to '1-1 units', eg `"1 visit"`.
-    - `$labelPlural` (`string`) &mdash; The string to use when the range being beautified references more than one unit. This must be a format string that takes one string parameter, eg, `"%s visits"`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The DataTable that will be filtered.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$labelSingular` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The string to use when the range being beautified is equal to '1-1 units', eg `"1 visit"`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$labelPlural` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The string to use when the range being beautified references more than one unit. This must be a format string that takes one string parameter, eg, `"%s visits"`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="beautify" id="beautify"></a>
 <a name="beautify" id="beautify"></a>
@@ -62,8 +92,20 @@ See [BeautifyRangeLabels](#).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$value` (`string`) &mdash; The range string. This must be in either a '$min-$max' format a '$min+' format.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The range string. This must be in either a '$min-$max' format a '$min+' format.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The pretty range label.
     - `string`
 
@@ -80,9 +122,30 @@ behavior based on the range values.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$oldLabel` (`string`) &mdash; The original label value.
-    - `$lowerBound` (`int`) &mdash; The lower bound of the range.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$oldLabel` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The original label value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lowerBound` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The lower bound of the range.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The pretty range label.
     - `string`
 
@@ -99,10 +162,40 @@ behavior based on the range values.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$oldLabel` (`string`) &mdash; The original label value.
-    - `$lowerBound` (`int`) &mdash; The lower bound of the range.
-    - `$upperBound` (`int`) &mdash; The upper bound of the range.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$oldLabel` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The original label value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lowerBound` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The lower bound of the range.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$upperBound` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The upper bound of the range.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The pretty range label.
     - `string`
 
@@ -119,9 +212,30 @@ behavior based on the range values.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$oldLabel` (`string`) &mdash; The original label value.
-    - `$lowerBound` (`int`) &mdash; The lower bound of the range.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$oldLabel` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The original label value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$lowerBound` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The lower bound of the range.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The pretty range label.
     - `string`
 

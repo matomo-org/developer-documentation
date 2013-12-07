@@ -68,8 +68,20 @@ forwarded to request array before it is returned.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$request` (`string`|`array`) &mdash; The base request string or array, eg, `'module=UserSettings&action=getWidescreen'`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$request` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The base request string or array, eg, `'module=UserSettings&action=getWidescreen'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `array` value.
 
 <a name="__construct" id="__construct"></a>
@@ -80,8 +92,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$request` (`string`) &mdash; GET request that defines the API call (must at least contain a **method** parameter), eg, `'method=UserSettings.getWideScreen&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the $_GET and $_POST superglobal and fetch the values directly from the HTTP GET query.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$request` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> GET request that defines the API call (must at least contain a **method** parameter), eg, `'method=UserSettings.getWideScreen&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the $_GET and $_POST superglobal and fetch the values directly from the HTTP GET query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="process" id="process"></a>
 <a name="process" id="process"></a>
@@ -118,8 +142,20 @@ Returns the class name of a plugin's API given the plugin name.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$plugin` (`string`) &mdash; The plugin name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$plugin` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The plugin name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="processrequest" id="processrequest"></a>
@@ -130,9 +166,30 @@ Helper method that processes an API request in one line using the variables in `
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$method` (`string`) &mdash; The API method to call, ie, Actions.getPageTitles
-    - `$paramOverride` (`array`) &mdash; The parameter name-value pairs to use instead of what's in $_GET & $_POST.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$method` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The API method to call, ie, Actions.getPageTitles</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$paramOverride` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The parameter name-value pairs to use instead of what's in $_GET & $_POST.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The result of the API request.
     - `mixed`
 
@@ -159,10 +216,40 @@ Returns URL for the current requested report w/o any filter parameters.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$module` (`string`) &mdash; The API module.
-    - `$action` (`string`) &mdash; The API action.
-    - `$queryParams` (`array`) &mdash; Query parameter overrides.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$module` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The API module.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$action` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The API action.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$queryParams` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Query parameter overrides.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="getcurrenturlwithoutgenericfilters" id="getcurrenturlwithoutgenericfilters"></a>
@@ -173,8 +260,20 @@ Returns the current URL without generic filter query parameters.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$params` (`array`) &mdash; Query parameter values to override in the new URL.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$params` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Query parameter values to override in the new URL.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="getrawsegmentfromrequest" id="getrawsegmentfromrequest"></a>

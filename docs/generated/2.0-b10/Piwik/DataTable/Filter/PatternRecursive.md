@@ -29,10 +29,40 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table to eventually filter.
-    - `$columnToFilter` (`string`) &mdash; The column to match with the `$patternToSearch` pattern.
-    - `$patternToSearch` (`string`) &mdash; The regex pattern to use.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The table to eventually filter.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columnToFilter` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The column to match with the `$patternToSearch` pattern.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$patternToSearch` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The regex pattern to use.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -42,8 +72,20 @@ See [PatternRecursive](#).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The number of deleted rows.
     - `int`
 

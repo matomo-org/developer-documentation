@@ -25,8 +25,20 @@ Returns true if a plugin has been activated.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; Name of plugin, eg, `'Actions'`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Name of plugin, eg, `'Actions'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `bool` value.
 
 <a name="ispluginloaded" id="ispluginloaded"></a>
@@ -37,8 +49,20 @@ Returns true if plugin is loaded (in memory).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; Name of plugin, eg, `'Acions'`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Name of plugin, eg, `'Acions'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `bool` value.
 
 <a name="getthemeenabled" id="getthemeenabled"></a>

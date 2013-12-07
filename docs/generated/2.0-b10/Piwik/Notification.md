@@ -202,8 +202,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$message` (`string`) &mdash; The notification message.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$message` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The notification message.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the message is empty.
 

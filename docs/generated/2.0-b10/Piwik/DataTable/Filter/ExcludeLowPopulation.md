@@ -38,11 +38,50 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The DataTable that will be filtered eventually.
-    - `$columnToFilter` (`string`) &mdash; The name of the column whose value will determine whether row is deleted or not.
-    - `$minimumValue` (`Piwik\DataTable\Filter\number`|`Piwik\DataTable\Filter\false`) &mdash; The minimum column value. Rows with column values < this number will be deleted. If false, `$minimumPercentageThreshold` is used.
-    - `$minimumPercentageThreshold` (`bool`|`float`) &mdash; If supplied, column values must be a greater percentage of the sum of all column values than this value.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The DataTable that will be filtered eventually.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columnToFilter` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the column whose value will determine whether row is deleted or not.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$minimumValue` (`Piwik\DataTable\Filter\number`|`Piwik\DataTable\Filter\false`) &mdash;
+
+      <div markdown="1" class="param-desc"> The minimum column value. Rows with column values < this number will be deleted. If false, `$minimumPercentageThreshold` is used.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$minimumPercentageThreshold` (`bool`|`float`) &mdash;
+
+      <div markdown="1" class="param-desc"> If supplied, column values must be a greater percentage of the sum of all column values than this value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -52,7 +91,19 @@ See [ExcludeLowPopulation](#).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

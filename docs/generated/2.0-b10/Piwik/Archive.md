@@ -126,12 +126,60 @@ If you want to create an Archive instance with an array of Period instances, use
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$idSites` (`string`|`int`|`array`) &mdash; A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.
-    - `$period` (`string`) &mdash; 'day', `'week'`, `'month'`, `'year'` or `'range'`
-    - `$strDate` ([`Date`](../Piwik/Date.md)|`string`) &mdash; 'YYYY-MM-DD', magic keywords (ie, 'today'; @see Date::factory()) or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').
-    - `$segment` (`Piwik\false`|`string`) &mdash; Segment definition or false if no segment should be used. @see Piwik\Segment
-    - `$_restrictSitesToLogin` (`Piwik\false`|`string`) &mdash; Used only when running as a scheduled task.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSites` (`string`|`int`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$period` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> 'day', `'week'`, `'month'`, `'year'` or `'range'`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$strDate` ([`Date`](../Piwik/Date.md)|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> 'YYYY-MM-DD', magic keywords (ie, 'today'; @see Date::factory()) or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$segment` (`Piwik\false`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Segment definition or false if no segment should be used. @see Piwik\Segment</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$_restrictSitesToLogin` (`Piwik\false`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Used only when running as a scheduled task.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a [`Archive`](../Piwik/Archive.md) value.
 
 <a name="factory" id="factory"></a>
@@ -150,12 +198,60 @@ use [Archive::build](#build).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$segment` ([`Segment`](../Piwik/Segment.md)) &mdash; The segment to use. For no segment, use `new Segment('', $idSites)`.
-    - `$periods` (`array`) &mdash; An array of Period instances.
-    - `$idSites` (`array`) &mdash; An array of site IDs (eg, `array(1, 2, 3)`).
-    - `$idSiteIsAll` (`bool`) &mdash; Whether `'all'` sites are being queried or not. If true, then the result of querying functions will be indexed by site, regardless of whether `count($idSites) == 1`.
-    - `$isMultipleDate` (`bool`) &mdash; Whether multiple dates are being queried or not. If true, then the result of querying functions will be indexed by period, regardless of whether `count($periods) == 1`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$segment` ([`Segment`](../Piwik/Segment.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The segment to use. For no segment, use `new Segment('', $idSites)`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$periods` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> An array of Period instances.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSites` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> An array of site IDs (eg, `array(1, 2, 3)`).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSiteIsAll` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> Whether `'all'` sites are being queried or not. If true, then the result of querying functions will be indexed by site, regardless of whether `count($idSites) == 1`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$isMultipleDate` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> Whether multiple dates are being queried or not. If true, then the result of querying functions will be indexed by period, regardless of whether `count($periods) == 1`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a [`Archive`](../Piwik/Archive.md) value.
 
 <a name="getnumeric" id="getnumeric"></a>
@@ -177,8 +273,20 @@ will be indexed by site ID first, then period.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$names` (`string`|`array`) &mdash; One or more archive names, eg, `'nb_visits'`, `'Referrers_distinctKeywords'`, etc.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$names` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> One or more archive names, eg, `'nb_visits'`, `'Referrers_distinctKeywords'`, etc.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ False if there is no data to return, a numeric if only we're not querying for multiple sites/dates, or an array if multiple sites, dates or names are queried for.
     - `mixed`
 
@@ -205,9 +313,30 @@ will be indexed by site ID first, then period.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$names` (`string`|`array`) &mdash; One or more archive names, eg, `'Referrers_keywordBySearchEngine'`.
-    - `$idSubtable` (`null`|`string`) &mdash; If we're returning serialized DataTable data, then this refers to the subtable ID to return. If set to 'all', all subtables of each requested report are returned.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$names` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> One or more archive names, eg, `'Referrers_keywordBySearchEngine'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSubtable` (`null`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> If we're returning serialized DataTable data, then this refers to the subtable ID to return. If set to 'all', all subtables of each requested report are returned.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ An array of appropriately indexed blob data.
     - `array`
 
@@ -234,8 +363,20 @@ Note: Every DataTable instance returned will have at most one row in it. The con
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$names` (`string`|`array`) &mdash; One or more archive names, eg, 'nb_visits', 'Referrers_distinctKeywords', etc.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$names` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> One or more archive names, eg, 'nb_visits', 'Referrers_distinctKeywords', etc.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ A DataTable if multiple sites and periods were not requested. An appropriately indexed DataTable\Map if otherwise.
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)
@@ -263,9 +404,30 @@ indexed by period.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The name of the record to get. This method can only query one record at a time.
-    - `$idSubtable` (`int`|`string`|`null`) &mdash; The ID of the subtable to get (if any).
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the record to get. This method can only query one record at a time.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSubtable` (`int`|`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The ID of the subtable to get (if any).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ A DataTable if multiple sites and periods were not requested. An appropriately indexed DataTable\Map if otherwise.
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)
@@ -290,11 +452,50 @@ indexed by period.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The name of the record to get.
-    - `$idSubtable` (`int`|`string`|`null`) &mdash; The ID of the subtable to get (if any). The subtable will be expanded.
-    - `$depth` (`int`|`null`) &mdash; The maximum number of subtable levels to load. If null, all levels are loaded. For example, if `1` is supplied, then the DataTable returned will have its subtables loaded. Those subtables, however, will NOT have their subtables loaded.
-    - `$addMetadataSubtableId` (`bool`) &mdash; Whether to add the database subtable ID as metadata to each datatable, or not.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the record to get.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSubtable` (`int`|`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The ID of the subtable to get (if any). The subtable will be expanded.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$depth` (`int`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The maximum number of subtable levels to load. If null, all levels are loaded. For example, if `1` is supplied, then the DataTable returned will have its subtables loaded. Those subtables, however, will NOT have their subtables loaded.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$addMetadataSubtableId` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> Whether to add the database subtable ID as metadata to each datatable, or not.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It can return one of the following values:
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)
@@ -321,15 +522,90 @@ API methods can use this method to reduce code redundancy.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The name of the report to return.
-    - `$idSite` (`int`|`string`|`array`) &mdash; @see [build](#build)
-    - `$period` (`string`) &mdash; @see [build](#build)
-    - `$date` (`string`) &mdash; @see [build](#build)
-    - `$segment` (`string`) &mdash; @see [build](#build)
-    - `$expanded` (`bool`) &mdash; If true, loads all subtables. @see [getDataTableExpanded](#getDataTableExpanded)
-    - `$idSubtable` (`int`|`null`) &mdash; @see [getDataTableExpanded](#getDataTableExpanded)
-    - `$depth` (`int`|`null`) &mdash; @see [getDataTableExpanded](#getDataTableExpanded)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the report to return.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSite` (`int`|`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> @see [build](#build)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$period` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> @see [build](#build)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$date` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> @see [build](#build)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$segment` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> @see [build](#build)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$expanded` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> If true, loads all subtables. @see [getDataTableExpanded](#getDataTableExpanded)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSubtable` (`int`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> @see [getDataTableExpanded](#getDataTableExpanded)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$depth` (`int`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> @see [getDataTableExpanded](#getDataTableExpanded)</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ @see [getDataTable](#getDataTable) and [getDataTableExpanded](#getDataTableExpanded) for more information
     - [`DataTable`](../Piwik/DataTable.md)
     - [`Map`](../Piwik/DataTable/Map.md)

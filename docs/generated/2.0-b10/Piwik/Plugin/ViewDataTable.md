@@ -107,9 +107,30 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$controllerAction`
-    - `$apiMethodToRequestDataTable`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$controllerAction`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$apiMethodToRequestDataTable`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="getdefaultconfig" id="getdefaultconfig"></a>
 <a name="getDefaultConfig" id="getDefaultConfig"></a>
@@ -166,8 +187,20 @@ Detects whether the viewDataTable or one of its ancestors has the given id.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$viewDataTableId` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$viewDataTableId` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `bool` value.
 
 <a name="getdatatable" id="getdatatable"></a>
@@ -194,8 +227,20 @@ It won't be loaded again from the API in this case
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$dataTable` (`Piwik\Plugin\$dataTable`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$dataTable` (`Piwik\Plugin\$dataTable`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ $dataTable DataTable
     - `void`
 
@@ -234,7 +279,19 @@ icon will be displayed.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `bool` value.
 

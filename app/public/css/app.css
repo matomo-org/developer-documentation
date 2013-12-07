@@ -234,6 +234,15 @@ body {
     margin-top:15px 1.5em 0 1.5em;
 }
 
+.parameter > *:first-child {
+    float:left;
+    margin:0 .5em 0 0;
+}
+
+.parameter > .param-desc {
+    overflow:hidden;
+}
+
 /* bootstrap overrides */
 pre {
     background-color:transparent;

@@ -29,10 +29,40 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The setting's persisted name.
-    - `$title` (`string`) &mdash; The setting's display name.
-    - `$userLogin` (`null`|`string`) &mdash; The user this setting applies to. Will default to the current user login.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The setting's persisted name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$title` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The setting's display name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$userLogin` (`null`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The user this setting applies to. Will default to the current user login.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="getorder" id="getorder"></a>
 <a name="getOrder" id="getOrder"></a>
@@ -56,8 +86,20 @@ Sets the name of the user this setting will be set for.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$userLogin` (`Piwik\Settings\$userLogin`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$userLogin` (`Piwik\Settings\$userLogin`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the current user does not have permission to set the setting value of `$userLogin`.
@@ -75,8 +117,20 @@ a user is deleted.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$userLogin` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$userLogin` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the `$userLogin` is empty.

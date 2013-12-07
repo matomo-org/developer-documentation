@@ -39,8 +39,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$pluginName` (`string`) &mdash; The name of the plugin these settings are for.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$pluginName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the plugin these settings are for.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="getintroduction" id="getintroduction"></a>
 <a name="getIntroduction" id="getIntroduction"></a>
@@ -115,8 +127,20 @@ is be returned.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$setting` ([`Setting`](../../Piwik/Settings/Setting.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$setting` ([`Setting`](../../Piwik/Settings/Setting.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `mixed` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the setting does not exist or if the current user is not allowed to change the value of this setting.
@@ -138,9 +162,30 @@ to the appropriate data type.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$setting` ([`Setting`](../../Piwik/Settings/Setting.md))
-    - `$value` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$setting` ([`Setting`](../../Piwik/Settings/Setting.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the setting does not exist or if the current user is not allowed to change the value of this setting.
@@ -158,7 +203,19 @@ called afterwards, otherwise the change has no effect.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$setting` ([`Setting`](../../Piwik/Settings/Setting.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$setting` ([`Setting`](../../Piwik/Settings/Setting.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

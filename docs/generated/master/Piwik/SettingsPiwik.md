@@ -64,7 +64,19 @@ year/range are not.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$periodLabel` (`string`) &mdash; `"day"`, `"week"`, `"month"`, `"year"` or `"range"`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$periodLabel` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> `"day"`, `"week"`, `"month"`, `"year"` or `"range"`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `bool` value.
 

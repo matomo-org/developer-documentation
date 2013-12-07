@@ -45,8 +45,20 @@ Returns the option value for the requested option `$name`.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The option name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The option name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - _Returns:_ The value or false, if not found.
     - `string`
     - `bool`
@@ -59,10 +71,40 @@ Sets an option value by name.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name`
-    - `$value`
-    - `$autoload`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$autoload`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="delete" id="delete"></a>
@@ -73,9 +115,30 @@ Deletes an option.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; Option name to match exactly.
-    - `$value` (`string`) &mdash; If supplied the option will be deleted only if its value matches this value.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Option name to match exactly.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> If supplied the option will be deleted only if its value matches this value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="deletelike" id="deletelike"></a>
@@ -86,8 +149,29 @@ Deletes all options that match the supplied pattern.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$namePattern` (`string`) &mdash; Pattern of key to match. `'%'` characters should be used as wildcards, and literal `'_'` characters should be escaped.
-    - `$value` (`string`) &mdash; If supplied options will be deleted only if their value matches this value.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$namePattern` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Pattern of key to match. `'%'` characters should be used as wildcards, and literal `'_'` characters should be escaped.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> If supplied options will be deleted only if their value matches this value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

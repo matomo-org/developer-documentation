@@ -40,8 +40,20 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -51,8 +63,20 @@ Filters the supplied DataTable.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
@@ -68,8 +92,20 @@ is up to the derived Filter class.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$enable` (`bool`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$enable` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
@@ -80,7 +116,19 @@ Filters a row's subtable, if one exists and is loaded in memory.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$row` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash; The row whose subtable should be filter.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$row` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The row whose subtable should be filter.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

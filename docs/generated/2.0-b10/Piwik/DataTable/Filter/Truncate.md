@@ -37,12 +37,60 @@ Constructor.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash; The table that will be filtered eventually.
-    - `$truncateAfter` (`int`) &mdash; The row index to truncate at. All rows passed this index will be removed.
-    - `$labelSummaryRow` (`string`) &mdash; The label to use for the summary row. Defaults to `Piwik::translate('General_Others')`.
-    - `$columnToSortByBeforeTruncating` (`string`) &mdash; The column to sort by before truncation, eg, `'nb_visits'`.
-    - `$filterRecursive` (`bool`) &mdash; If true executes this filter on all subtables descending from `$table`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The table that will be filtered eventually.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$truncateAfter` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The row index to truncate at. All rows passed this index will be removed.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$labelSummaryRow` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The label to use for the summary row. Defaults to `Piwik::translate('General_Others')`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columnToSortByBeforeTruncating` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The column to sort by before truncation, eg, `'nb_visits'`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$filterRecursive` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> If true executes this filter on all subtables descending from `$table`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -52,8 +100,20 @@ Executes the filter, see [Truncate](#).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="addsummaryrow" id="addsummaryrow"></a>
@@ -62,7 +122,19 @@ Executes the filter, see [Truncate](#).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table`
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 

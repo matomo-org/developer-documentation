@@ -70,8 +70,20 @@ See [getKeyName](#getKeyName).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getrowscount" id="getrowscount"></a>
@@ -96,9 +108,30 @@ See [DataTable::queueFilter](#) for more information..
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash; Filter name, eg. `'Limit'` or a Closure.
-    - `$parameters` (`array`) &mdash; Filter parameters, eg. `array(50, 10)`.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+
+      <div markdown="1" class="param-desc"> Filter name, eg. `'Limit'` or a Closure.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Filter parameters, eg. `array(50, 10)`.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="applyqueuedfilters" id="applyqueuedfilters"></a>
@@ -119,9 +152,30 @@ Apply a filter to all tables contained by this instance.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash; Name of filter class or a Closure.
-    - `$parameters` (`array`) &mdash; Parameters to pass to the filter.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+
+      <div markdown="1" class="param-desc"> Name of filter class or a Closure.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$parameters` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Parameters to pass to the filter.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getdatatables" id="getdatatables"></a>
@@ -144,8 +198,20 @@ Returns the table with the specific label.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$label` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$label` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It can return one of the following values:
     - [`DataTable`](../../Piwik/DataTable.md)
     - [`Map`](../../Piwik/DataTable/Map.md)
@@ -184,9 +250,30 @@ Adds a new DataTable to the DataTable\Map.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../Piwik/DataTable.md))
-    - `$label` (`string`) &mdash; Label used to index this table in the array.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$label` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Label used to index this table in the array.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="__tostring" id="__tostring"></a>
@@ -223,9 +310,30 @@ Renames the given column in each contained DataTable.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$oldName` (`string`)
-    - `$newName` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$oldName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$newName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="deletecolumns" id="deletecolumns"></a>
@@ -240,9 +348,30 @@ Deletes the specified columns in each contained DataTable.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$columns` (`array`) &mdash; The columns to delete.
-    - `$deleteRecursiveInSubtables` (`bool`) &mdash; This param is currently not used.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$columns` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The columns to delete.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$deleteRecursiveInSubtables` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> This param is currently not used.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="deleterow" id="deleterow"></a>
@@ -253,8 +382,20 @@ Deletes a table from the array of DataTables.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$id` (`string`) &mdash; The label associated with DataTable.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$id` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The label associated with DataTable.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="deletecolumn" id="deletecolumn"></a>
@@ -269,8 +410,20 @@ Deletes the given column in every contained DataTable.
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`)
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="getcolumn" id="getcolumn"></a>
@@ -281,8 +434,20 @@ Returns the array containing all row values in all data tables for the requested
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The column name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The column name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `array` value.
 
 <a name="mergechildren" id="mergechildren"></a>
@@ -356,8 +521,20 @@ See [DataTable::addDataTable()](#).
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$tableToSum` ([`DataTable`](../../Piwik/DataTable.md))
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tableToSum` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It does not return anything.
 
 <a name="mergesubtables" id="mergesubtables"></a>
@@ -392,8 +569,20 @@ Returns the intersection of children's metadata arrays (what they all have in co
 
 #### Signature
 
-- It accepts the following parameter(s):
-    - `$name` (`string`) &mdash; The metadata name.
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The metadata name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `mixed` value.
 
 <a name="getcolumns" id="getcolumns"></a>
