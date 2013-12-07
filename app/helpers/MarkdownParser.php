@@ -8,7 +8,7 @@
 
 namespace helpers;
 
-use \dflydev\markdown\MarkdownParser as DefaultMarkdownParser;
+use \dflydev\markdown\MarkdownExtraParser as DefaultMarkdownParser;
 
 class MarkdownParser extends DefaultMarkdownParser {
     function _doHeaders_callback_atx($matches) {
