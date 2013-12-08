@@ -137,8 +137,6 @@ Builds a PiwikTracker object, used to track visits, pages and Goal conversions f
 
 By default, Piwik expects utf-8 encoded values, for example for the page URL parameter values, Page Title, etc.
 
-#### Description
-
 It is recommended to only send UTF-8 data to Piwik.
 If required though, you can also specify another charset using this function.
 
@@ -260,8 +258,6 @@ Sets the time that generating the document on the server side took.
 
 Sets the attribution information to the visit, so that subsequent Goal conversions are properly attributed to the right Referrer URL, timestamp, Campaign Name & Keyword.
 
-#### Description
-
 This must be a JSON encoded string that would typically be fetched from the JS API:
 piwikTracker.getAttributionInfo() and that you have JSON encoded via JSON2.stringify()
 
@@ -297,8 +293,6 @@ to the 'ref' first party cookie storing referral information.
 ### `setCustomVariable()`
 
 Sets Visit Custom Variable.
-
-#### Description
 
 See http://piwik.org/docs/custom-variables/
 
@@ -358,8 +352,6 @@ See http://piwik.org/docs/custom-variables/
 
 Returns the currently assigned Custom Variable.
 
-#### Description
-
 If scope is 'visit', it will attempt to read the value set in the first party cookie created by Piwik Tracker ($_COOKIE array).
 
 #### See Also
@@ -392,8 +384,18 @@ If scope is 'visit', it will attempt to read the value set in the first party co
       </div>
    </li>
    </ul>
-- _Returns:_ An array with this format: array( 0 => CustomVariableName, 1 => CustomVariableValue ) or false
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">An array with this format: array( 0 => CustomVariableName, 1 => CustomVariableValue ) or false</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -437,8 +439,6 @@ Sets the current site ID.
 
 Sets the Browser language.
 
-#### Description
-
 Used to guess visitor countries when GeoIP is not enabled
 
 #### Signature
@@ -465,8 +465,6 @@ Used to guess visitor countries when GeoIP is not enabled
 
 Sets the user agent, used to detect OS and browser.
 
-#### Description
-
 If this function is not called, the User Agent will default to the current user agent.
 
 #### Signature
@@ -492,8 +490,6 @@ If this function is not called, the User Agent will default to the current user 
 ### `setCountry()`
 
 Sets the country of the visitor.
-
-#### Description
 
 If not used, Piwik will try to find the country
 using either the visitor's IP address or language.
@@ -524,8 +520,6 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 Sets the region of the visitor.
 
-#### Description
-
 If not used, Piwik may try to find the region
 using the visitor's IP address (if configured to do so).
 
@@ -554,8 +548,6 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 ### `setCity()`
 
 Sets the city of the visitor.
-
-#### Description
 
 If not used, Piwik may try to find the city
 using the visitor's IP address (if configured to do so).
@@ -586,8 +578,6 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 Sets the latitude of the visitor.
 
-#### Description
-
 If not used, Piwik may try to find the visitor's
 latitude using the visitor's IP address (if configured to do so).
 
@@ -617,8 +607,6 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 Sets the longitude of the visitor.
 
-#### Description
-
 If not used, Piwik may try to find the visitor's
 longitude using the visitor's IP address (if configured to do so).
 
@@ -647,8 +635,6 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 ### `enableBulkTracking()`
 
 Enables the bulk request feature.
-
-#### Description
 
 When used, each tracking action is stored until the
 doBulkTrack method is called. This method will send all tracking data at once.
@@ -713,8 +699,18 @@ Tracks a page view
       </div>
    </li>
    </ul>
-- _Returns:_ Response string or true if using bulk requests.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">Response string or true if using bulk requests.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="dotrackevent" id="dotrackevent"></a>
 <a name="doTrackEvent" id="doTrackEvent"></a>
@@ -768,16 +764,24 @@ Tracks an event
       </div>
    </li>
    </ul>
-- _Returns:_ Response string or true if using bulk requests.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">Response string or true if using bulk requests.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="dotracksitesearch" id="dotracksitesearch"></a>
 <a name="doTrackSiteSearch" id="doTrackSiteSearch"></a>
 ### `doTrackSiteSearch()`
 
 Tracks an internal Site Search query, and optionally tracks the Search Category, and Search results Count.
-
-#### Description
 
 These are used to populate reports in Actions > Site Search.
 
@@ -817,8 +821,18 @@ These are used to populate reports in Actions > Site Search.
       </div>
    </li>
    </ul>
-- _Returns:_ Response or true if using bulk requests.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">Response or true if using bulk requests.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="dotrackgoal" id="dotrackgoal"></a>
 <a name="doTrackGoal" id="doTrackGoal"></a>
@@ -852,8 +866,18 @@ Records a Goal conversion
       </div>
    </li>
    </ul>
-- _Returns:_ Response or true if using bulk request
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">Response or true if using bulk request</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="dotrackaction" id="dotrackaction"></a>
 <a name="doTrackAction" id="doTrackAction"></a>
@@ -887,16 +911,24 @@ Tracks a download or outlink
       </div>
    </li>
    </ul>
-- _Returns:_ Response or true if using bulk request
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">Response or true if using bulk request</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="addecommerceitem" id="addecommerceitem"></a>
 <a name="addEcommerceItem" id="addEcommerceItem"></a>
 ### `addEcommerceItem()`
 
 Adds an item in the Ecommerce order.
-
-#### Description
 
 This should be called before doTrackEcommerceOrder(), or before doTrackEcommerceCartUpdate().
 This function can be called for all individual products in the cart (or order).
@@ -969,8 +1001,6 @@ Ecommerce items added via this function are automatically cleared when doTrackEc
 
 Tracks a Cart Update (add item, remove item, update item).
 
-#### Description
-
 On every Cart update, you must call addEcommerceItem() for each item (product) in the cart,
 including the items that haven't been updated since the last cart update.
 Items which were in the previous cart and are not sent in later Cart updates will be deleted from the cart (in the database).
@@ -991,8 +1021,18 @@ Items which were in the previous cart and are not sent in later Cart updates wil
       </div>
    </li>
    </ul>
-- _Returns:_ Response or true if using bulk request
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">Response or true if using bulk request</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="dobulktrack" id="dobulktrack"></a>
 <a name="doBulkTrack" id="doBulkTrack"></a>
@@ -1000,16 +1040,24 @@ Items which were in the previous cart and are not sent in later Cart updates wil
 
 Sends all stored tracking actions at once.
 
-#### Description
-
 Only has an effect if bulk tracking is enabled.
 
 To enable bulk tracking, call enableBulkTracking().
 
 #### Signature
 
-- _Returns:_ Response
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">Response</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -1018,8 +1066,6 @@ To enable bulk tracking, call enableBulkTracking().
 ### `doTrackEcommerceOrder()`
 
 Tracks an Ecommerce order.
-
-#### Description
 
 If the Ecommerce order contains items (products), you must call first the addEcommerceItem() for each item in the order.
 All revenues (grandTotal, subTotal, tax, shipping, discount) will be individually summed and reported in Piwik reports.
@@ -1091,16 +1137,24 @@ Only the parameters $orderId and $grandTotal are required.
       </div>
    </li>
    </ul>
-- _Returns:_ Response or true if using bulk request
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">Response or true if using bulk request</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="setecommerceview" id="setecommerceview"></a>
 <a name="setEcommerceView" id="setEcommerceView"></a>
 ### `setEcommerceView()`
 
 Sets the current page view as an item (product) page view, or an Ecommerce Category page view.
-
-#### Description
 
 This must be called before doTrackPageView() on this product/category page.
 It will set 3 custom variables of scope "page" with the SKU, Name and Category for this page view.
@@ -1185,8 +1239,18 @@ Builds URL to track a page view.
       </div>
    </li>
    </ul>
-- _Returns:_ URL to piwik.php with all parameters set to track the pageview
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">URL to piwik.php with all parameters set to track the pageview</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="geturltrackevent" id="geturltrackevent"></a>
 <a name="getUrlTrackEvent" id="getUrlTrackEvent"></a>
@@ -1244,8 +1308,18 @@ Builds URL to track a custom event.
       </div>
    </li>
    </ul>
-- _Returns:_ URL to piwik.php with all parameters set to track the pageview
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">URL to piwik.php with all parameters set to track the pageview</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="geturltracksitesearch" id="geturltracksitesearch"></a>
 <a name="getUrlTrackSiteSearch" id="getUrlTrackSiteSearch"></a>
@@ -1331,8 +1405,18 @@ Builds URL to track a goal with idGoal and revenue.
       </div>
    </li>
    </ul>
-- _Returns:_ URL to piwik.php with all parameters set to track the goal conversion
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">URL to piwik.php with all parameters set to track the goal conversion</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="geturltrackaction" id="geturltrackaction"></a>
 <a name="getUrlTrackAction" id="getUrlTrackAction"></a>
@@ -1370,16 +1454,24 @@ Builds URL to track a new action.
       </div>
    </li>
    </ul>
-- _Returns:_ URL to piwik.php with all parameters set to track an action
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">URL to piwik.php with all parameters set to track an action</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="setforcevisitdatetime" id="setforcevisitdatetime"></a>
 <a name="setForceVisitDateTime" id="setForceVisitDateTime"></a>
 ### `setForceVisitDateTime()`
 
 Overrides server date and time for the tracking requests.
-
-#### Description
 
 By default Piwik will track requests for the "current datetime" but this function allows you
 to track visits in the past. All times are in UTC.
@@ -1414,8 +1506,6 @@ Allowed only for Super User, must be used along with setTokenAuth()
 
 Overrides IP address
 
-#### Description
-
 Allowed only for Super User, must be used along with setTokenAuth()
 
 #### See Also
@@ -1445,8 +1535,6 @@ Allowed only for Super User, must be used along with setTokenAuth()
 ### `setVisitorId()`
 
 Forces the requests to be recorded for the specified Visitor ID rather than using the heuristics based on IP and other attributes.
-
-#### Description
 
 Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
@@ -1485,8 +1573,6 @@ If not set, the visitor ID will be fetched from the 1st party cookie, or will be
 
 If the user initiating the request has the Piwik first party cookie, this function will try and return the ID parsed from this first party cookie (found in $_COOKIE).
 
-#### Description
-
 If you call this function from a server, where the call is triggered by a cron or script
 not initiated by the actual visitor being tracked, then it will return
 the random Visitor ID that was assigned to this visit object.
@@ -1495,8 +1581,18 @@ This can be used if you wish to record more visits, actions or goals for this vi
 
 #### Signature
 
-- _Returns:_ 16 hex chars visitor ID string
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">16 hex chars visitor ID string</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="deletecookies" id="deletecookies"></a>
 <a name="deleteCookies" id="deleteCookies"></a>
@@ -1514,8 +1610,6 @@ Deletes all first party cookies from the client
 
 Returns the currently assigned Attribution Information stored in a first party cookie.
 
-#### Description
-
 This function will only work if the user is initiating the current request, and his cookies
 can be read by PHP from the $_COOKIE array.
 
@@ -1525,16 +1619,24 @@ can be read by PHP from the $_COOKIE array.
 
 #### Signature
 
-- _Returns:_ JSON Encoded string containing the Referrer information for Goal conversion attribution. Will return false if the cookie could not be found
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">JSON Encoded string containing the Referrer information for Goal conversion attribution. Will return false if the cookie could not be found</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="settokenauth" id="settokenauth"></a>
 <a name="setTokenAuth" id="setTokenAuth"></a>
 ### `setTokenAuth()`
 
 Some Tracking API functionnality requires express authentication, using either the Super User token_auth, or a user with 'admin' access to the website.
-
-#### Description
 
 The following features require access:
 - force the visitor IP
@@ -1775,8 +1877,6 @@ Sets visitor browser supported plugins
 
 By default, PiwikTracker will read first party cookies from the request and write updated cookies in the response (using setrawcookie).
 
-#### Description
-
 This can be disabled by calling this function.
 
 #### Signature
@@ -1788,8 +1888,6 @@ This can be disabled by calling this function.
 ### `getRequestTimeout()`
 
 Returns the maximum number of seconds the tracker will spend waiting for a response from Piwik.
-
-#### Description
 
 Defaults to 600 seconds.
 

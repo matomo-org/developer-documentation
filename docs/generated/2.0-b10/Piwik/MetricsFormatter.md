@@ -1,4 +1,4 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 MetricsFormatter
 ================
@@ -23,8 +23,6 @@ The class defines the following methods:
 ### `getPrettyNumber()`
 
 Returns a prettified string representation of a number.
-
-#### Description
 
 The result will have
 thousands separators and a decimal point specific to the current locale.
@@ -143,8 +141,18 @@ Returns a prettified memory size value.
       </div>
    </li>
    </ul>
-- _Returns:_ eg, `'128 M'` or `'256 K'`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `'128 M'` or `'256 K'`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getprettymoney" id="getprettymoney"></a>
 <a name="getPrettyMoney" id="getPrettyMoney"></a>
@@ -266,8 +274,18 @@ Returns the currency symbol for a site.
       </div>
    </li>
    </ul>
-- _Returns:_ eg, `'$'`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `'$'`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcurrencylist" id="getcurrencylist"></a>
 <a name="getCurrencyList" id="getCurrencyList"></a>
@@ -277,6 +295,16 @@ Returns the list of all known currency symbols.
 
 #### Signature
 
-- _Returns:_ An array mapping currency codes to their respective currency symbols and a description, eg, `array('USD' => array('$', 'US dollar'))`.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array mapping currency codes to their respective currency symbols and a description, eg, `array('USD' => array('$', 'US dollar'))`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

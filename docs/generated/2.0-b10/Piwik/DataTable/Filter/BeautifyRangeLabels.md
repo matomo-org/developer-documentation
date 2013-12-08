@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 BeautifyRangeLabels
 ===================
 
 A DataTable filter that replaces range label columns with prettier, human-friendlier versions.
-
-Description
------------
 
 When reports that summarize data over a set of ranges (such as the
 reports in the VisitorInterest plugin) are archived, they are
@@ -86,8 +83,6 @@ Constructor.
 
 Beautifies a range label and returns the pretty result.
 
-#### Description
-
 See [BeautifyRangeLabels](#).
 
 #### Signature
@@ -106,16 +101,24 @@ See [BeautifyRangeLabels](#).
       </div>
    </li>
    </ul>
-- _Returns:_ The pretty range label.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The pretty range label.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getsingleunitlabel" id="getsingleunitlabel"></a>
 <a name="getSingleUnitLabel" id="getSingleUnitLabel"></a>
 ### `getSingleUnitLabel()`
 
 Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
-
-#### Description
 
 This function can be overridden in derived types to customize beautifcation
 behavior based on the range values.
@@ -146,16 +149,24 @@ behavior based on the range values.
       </div>
    </li>
    </ul>
-- _Returns:_ The pretty range label.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The pretty range label.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getrangelabel" id="getrangelabel"></a>
 <a name="getRangeLabel" id="getRangeLabel"></a>
 ### `getRangeLabel()`
 
 Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
-
-#### Description
 
 This function can be overridden in derived types to customize beautifcation
 behavior based on the range values.
@@ -196,16 +207,24 @@ behavior based on the range values.
       </div>
    </li>
    </ul>
-- _Returns:_ The pretty range label.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The pretty range label.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getunboundedlabel" id="getunboundedlabel"></a>
 <a name="getUnboundedLabel" id="getUnboundedLabel"></a>
 ### `getUnboundedLabel()`
 
 Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
-
-#### Description
 
 This function can be overridden in derived types to customize beautifcation
 behavior based on the range values.
@@ -236,6 +255,16 @@ behavior based on the range values.
       </div>
    </li>
    </ul>
-- _Returns:_ The pretty range label.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The pretty range label.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

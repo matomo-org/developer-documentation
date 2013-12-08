@@ -1,4 +1,4 @@
-<small>Piwik\ArchiveProcessor</small>
+<small>Piwik\ArchiveProcessor\</small>
 
 Parameters
 ==========

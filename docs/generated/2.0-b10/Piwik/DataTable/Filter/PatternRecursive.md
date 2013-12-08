@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 PatternRecursive
 ================
 
 Deletes rows for which a specific column in both the row and all subtables that descend from the row do not match a supplied regex pattern.
-
-Description
------------
 
 **Example**
 
@@ -86,6 +83,16 @@ See [PatternRecursive](#).
       </div>
    </li>
    </ul>
-- _Returns:_ The number of deleted rows.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">The number of deleted rows.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

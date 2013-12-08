@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 DataTable
 =========
 
 The primary data structure used to store analytics data in Piwik.
-
-Description
------------
 
 <a name="class-desc-the-basics"></a>
 ### The Basics
@@ -227,8 +224,6 @@ The class defines the following methods:
 
 Constructor.
 
-#### Description
-
 Creates an empty DataTable.
 
 #### Signature
@@ -239,8 +234,6 @@ Creates an empty DataTable.
 ### `__destruct()`
 
 Destructor.
-
-#### Description
 
 Makes sure DataTable memory will be cleaned up.
 
@@ -288,23 +281,28 @@ Sorts the DataTable rows using the supplied callback function.
 
 Returns the name of the column this table was sorted by (if any).
 
-#### Description
-
 See [sort()](/api-reference/Piwik/DataTable#sort).
 
 #### Signature
 
-- _Returns:_ The sorted column name or false if none.
-    - `Piwik\false`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`Piwik\false`|`string`) &mdash;
+    <div markdown="1" class="param-desc">The sorted column name or false if none.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="enablerecursivesort" id="enablerecursivesort"></a>
 <a name="enableRecursiveSort" id="enableRecursiveSort"></a>
 ### `enableRecursiveSort()`
 
 Enables recursive sorting.
-
-#### Description
 
 If this method is called [sort()](/api-reference/Piwik/DataTable#sort) will also sort all
 subtables.
@@ -319,8 +317,6 @@ subtables.
 
 Enables recursive filtering.
 
-#### Description
-
 If this method is called then the [filter()](/api-reference/Piwik/DataTable#filter) method
 will apply filters to every subtable in addition to this instance.
 
@@ -333,8 +329,6 @@ will apply filters to every subtable in addition to this instance.
 ### `filter()`
 
 Applies filter to this datatable.
-
-#### Description
 
 If [enableRecursiveFilters()](/api-reference/Piwik/DataTable#enablerecursivefilters) was called, the filter will be applied
 to all subtables as well.
@@ -372,8 +366,6 @@ to all subtables as well.
 ### `queueFilter()`
 
 Adds a filter and a list of parameters to the list of queued filters.
-
-#### Description
 
 These filters will be
 executed when [applyQueuedFilters()](/api-reference/Piwik/DataTable#applyqueuedfilters) is called.
@@ -415,8 +407,6 @@ way they will be run after the table is truncated which will result in better pe
 
 Applies all filters that were previously queued to the table.
 
-#### Description
-
 See [queueFilter()](/api-reference/Piwik/DataTable#queuefilter)
 for more information.
 
@@ -429,8 +419,6 @@ for more information.
 ### `addDataTable()`
 
 Sums a DataTable to this one.
-
-#### Description
 
 This method will sum rows that have the same label. If a row is found in `$tableToSum` whose
 label is not found in `$this`, the row will be added to `$this` DataTable.
@@ -466,8 +454,6 @@ metadata can be used to specify a different type of operation.
 
 Returns the Row whose `'label'` column is equal to `$label`.
 
-#### Description
-
 This method executes in constant time except for the first call which caches row
 label => row ID mappings.
 
@@ -487,9 +473,18 @@ label => row ID mappings.
       </div>
    </li>
    </ul>
-- _Returns:_ The row if found, false if otherwise.
-    - [`Row`](../Piwik/DataTable/Row.md)
-    - `Piwik\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc">The row if found, false if otherwise.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getrowidfromlabel" id="getrowidfromlabel"></a>
 <a name="getRowIdFromLabel" id="getRowIdFromLabel"></a>
@@ -497,8 +492,6 @@ label => row ID mappings.
 
 Returns the row id for the row whose `'label'` column is equal to `$label`.
 
-#### Description
-
 This method executes in constant time except for the first call which caches row
 label => row ID mappings.
 
@@ -518,8 +511,18 @@ label => row ID mappings.
       </div>
    </li>
    </ul>
-- _Returns:_ The row ID.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">The row ID.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getemptyclone" id="getemptyclone"></a>
 <a name="getEmptyClone" id="getEmptyClone"></a>
@@ -551,8 +554,6 @@ Returns an empty DataTable with the same metadata and queued filters as `$this` 
 
 Returns a row by ID.
 
-#### Description
-
 The ID is either the index of the row or `ID_SUMMARY_ROW`.
 
 #### Signature
@@ -571,9 +572,18 @@ The ID is either the index of the row or `ID_SUMMARY_ROW`.
       </div>
    </li>
    </ul>
-- _Returns:_ The Row or false if not found.
-    - [`Row`](../Piwik/DataTable/Row.md)
-    - `Piwik\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc">The Row or false if not found.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getrowfromidsubdatatable" id="getrowfromidsubdatatable"></a>
 <a name="getRowFromIdSubDataTable" id="getRowFromIdSubDataTable"></a>
@@ -597,17 +607,24 @@ Returns the row that has a subtable with ID matching `$idSubtable`.
       </div>
    </li>
    </ul>
-- _Returns:_ The row or false if not found
-    - [`Row`](../Piwik/DataTable/Row.md)
-    - `Piwik\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc">The row or false if not found</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="addrow" id="addrow"></a>
 <a name="addRow" id="addRow"></a>
 ### `addRow()`
 
 Adds a row to this table.
-
-#### Description
 
 If [setMaximumAllowedRows()](/api-reference/Piwik/DataTable#setmaximumallowedrows) was called and the current row count is
 at the maximum, the new row will be summed to the summary row. If there is no summary row,
@@ -629,16 +646,24 @@ this row is set as the summary row.
       </div>
    </li>
    </ul>
-- _Returns:_ `$row` or the summary row if we're at the maximum number of rows.
-    - [`Row`](../Piwik/DataTable/Row.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
+    <div markdown="1" class="param-desc">`$row` or the summary row if we're at the maximum number of rows.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="addsummaryrow" id="addsummaryrow"></a>
 <a name="addSummaryRow" id="addSummaryRow"></a>
 ### `addSummaryRow()`
 
 Sets the summary row.
-
-#### Description
 
 Note: A dataTable can have only one summary row.
 
@@ -658,8 +683,18 @@ Note: A dataTable can have only one summary row.
       </div>
    </li>
    </ul>
-- _Returns:_ Returns `$row`.
-    - [`Row`](../Piwik/DataTable/Row.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
+    <div markdown="1" class="param-desc">Returns `$row`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
@@ -676,8 +711,6 @@ Returns the DataTable ID.
 ### `addRowFromArray()`
 
 Adds a new row from an array.
-
-#### Description
 
 You can add Row metadata with this method.
 
@@ -704,8 +737,6 @@ You can add Row metadata with this method.
 ### `addRowFromSimpleArray()`
 
 Adds a new row a from an array of column values.
-
-#### Description
 
 Row metadata cannot be added with this method.
 
@@ -759,8 +790,18 @@ Returns an array containing all column values for the requested column.
       </div>
    </li>
    </ul>
-- _Returns:_ The array of column values.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">The array of column values.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcolumnsstartingwith" id="getcolumnsstartingwith"></a>
 <a name="getColumnsStartingWith" id="getColumnsStartingWith"></a>
@@ -784,16 +825,24 @@ Returns an array containing all column values of columns whose name starts with 
       </div>
    </li>
    </ul>
-- _Returns:_ The array of column values.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">The array of column values.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcolumns" id="getcolumns"></a>
 <a name="getColumns" id="getColumns"></a>
 ### `getColumns()`
 
 Returns the list of columns the rows in this datatable contain.
-
-#### Description
 
 This will return the
 columns of the first row with data and assume they occur in every other row as well.
@@ -803,8 +852,18 @@ Note: If column names still use their in-database INDEX values (@see Metrics), t
 
 #### Signature
 
-- _Returns:_ Array of string column names.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">Array of string column names.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getrowsmetadata" id="getrowsmetadata"></a>
 <a name="getRowsMetadata" id="getRowsMetadata"></a>
@@ -848,9 +907,18 @@ Returns the first row of the DataTable.
 
 #### Signature
 
-- _Returns:_ The first row or `false` if it cannot be found.
-    - [`Row`](../Piwik/DataTable/Row.md)
-    - `Piwik\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc">The first row or `false` if it cannot be found.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getlastrow" id="getlastrow"></a>
 <a name="getLastRow" id="getLastRow"></a>
@@ -858,24 +926,29 @@ Returns the first row of the DataTable.
 
 Returns the last row of the DataTable.
 
-#### Description
-
 If there is a summary row, it
 will always be considered the last row.
 
 #### Signature
 
-- _Returns:_ The last row or `false` if it cannot be found.
-    - [`Row`](../Piwik/DataTable/Row.md)
-    - `Piwik\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc">The last row or `false` if it cannot be found.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getrowscountrecursive" id="getrowscountrecursive"></a>
 <a name="getRowsCountRecursive" id="getRowsCountRecursive"></a>
 ### `getRowsCountRecursive()`
 
 Returns the number of rows in this DataTable summed with the row count of each subtable in the DataTable hierarchy.
-
-#### Description
 
 This includes the subtables of subtables and further descendants.
 
@@ -888,8 +961,6 @@ This includes the subtables of subtables and further descendants.
 ### `deleteColumn()`
 
 Delete a column by name in every row.
-
-#### Description
 
 This change is NOT applied recursively to all
 subtables.
@@ -925,8 +996,6 @@ subtables.
 ### `renameColumn()`
 
 Rename a column in every row.
-
-#### Description
 
 This change is applied recursively to all subtables.
 
@@ -1050,8 +1119,18 @@ Deletes rows from `$offset` to `$offset + $limit`.
       </div>
    </li>
    </ul>
-- _Returns:_ The number of rows deleted.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">The number of rows deleted.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="deleterows" id="deleterows"></a>
 <a name="deleteRows" id="deleteRows"></a>
@@ -1085,8 +1164,6 @@ Deletes a set of rows by ID.
 
 Returns a string representation of this DataTable for convenient viewing.
 
-#### Description
-
 Note: This uses the Html DataTable renderer.
 
 #### Signature
@@ -1098,8 +1175,6 @@ Note: This uses the Html DataTable renderer.
 ### `isEqual()`
 
 Returns true if both DataTable instances are exactly the same.
-
-#### Description
 
 DataTables are equal if they have the same number of rows, if
 each row has a label that exists in the other table, and if each row
@@ -1139,8 +1214,6 @@ of rows is not important.
 ### `getSerialized()`
 
 Serializes an entire DataTable hierarchy and returns the array of serialized DataTables.
-
-#### Description
 
 The first element in the returned array will be the serialized representation of this DataTable.
 Every subsequent element will be a serialized subtable.
@@ -1187,8 +1260,18 @@ The result of this method is intended for use with the [ArchiveProcessor::insert
       </div>
    </li>
    </ul>
-- _Returns:_ The array of serialized DataTables: array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae', // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige', // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE', // etc. );
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">The array of serialized DataTables: array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae', // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige', // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE', // etc. );</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If infinite recursion detected. This will occur if a table&#039;s subtable is one of its parent tables.
 
@@ -1197,8 +1280,6 @@ The result of this method is intended for use with the [ArchiveProcessor::insert
 ### `addRowsFromSerializedArray()`
 
 Adds a set of rows from a serialized DataTable string.
-
-#### Description
 
 See [serialize()](http://php.net/function.serialize()).
 
@@ -1228,8 +1309,6 @@ See [serialize()](http://php.net/function.serialize()).
 
 Adds many rows from an array.
 
-#### Description
-
 You can add Row metadata with this method.
 
 #### Signature
@@ -1255,8 +1334,6 @@ You can add Row metadata with this method.
 ### `addRowsFromSimpleArray()`
 
 Adds many rows from an array containing arrays of column values.
-
-#### Description
 
 Row metadata cannot be added with this method.
 
@@ -1285,8 +1362,6 @@ Row metadata cannot be added with this method.
 ### `makeFromIndexedArray()`
 
 Rewrites the input $array array (     LABEL => array(col1 => X, col2 => Y),     LABEL2 => array(col1 => X, col2 => Y), ) to a DataTable, ie.
-
-#### Description
 
 with the internal structure
 array (
@@ -1339,8 +1414,6 @@ array (
 
 Sets the maximum depth level to at least a certain value.
 
-#### Description
-
 If the current value is
 greater than the supplied level, the maximum nesting level is not changed.
 
@@ -1388,9 +1461,18 @@ Returns metadata by name.
       </div>
    </li>
    </ul>
-- _Returns:_ The metadata value or false if it cannot be found.
-    - `mixed`
-    - `Piwik\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc">The metadata value or false if it cannot be found.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="setmetadata" id="setmetadata"></a>
 <a name="setMetadata" id="setMetadata"></a>
@@ -1490,8 +1572,6 @@ Sets metadata erasing existing values.
 
 Sets the maximum number of rows allowed in this datatable (including the summary row).
 
-#### Description
-
 If adding more then the allowed number of rows is attempted, the extra
 rows are summed to the summary row.
 
@@ -1518,8 +1598,6 @@ rows are summed to the summary row.
 ### `walkPath()`
 
 Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one.
-
-#### Description
 
 The number of path segments that
 were successfully walked is also returned.
@@ -1567,8 +1645,18 @@ for more information about tree walking.
       </div>
    </li>
    </ul>
-- _Returns:_ First element is the found row or false. Second element is the number of path segments walked. If a row is found, this will be == to count($path). Otherwise, it will be the index of the path segment that we could not find.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">First element is the found row or false. Second element is the number of path segments walked. If a row is found, this will be == to count($path). Otherwise, it will be the index of the path segment that we could not find.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="mergesubtables" id="mergesubtables"></a>
 <a name="mergeSubtables" id="mergeSubtables"></a>
@@ -1610,8 +1698,6 @@ Returns a new DataTable in which the rows of this table are replaced with the ag
 
 Returns a new DataTable created with data from a 'simple' array.
 
-#### Description
-
 See [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable#addrowsfromsimplearray).
 
 #### Signature
@@ -1637,8 +1723,6 @@ See [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable#addrowsfromsimplea
 ### `fromSerializedArray()`
 
 Creates a new DataTable instance from a serialized DataTable string.
-
-#### Description
 
 See [getSerialized()](/api-reference/Piwik/DataTable#getserialized) and [addRowsFromSerializedArray()](/api-reference/Piwik/DataTable#addrowsfromserializedarray)
 for more information on DataTable serialization.

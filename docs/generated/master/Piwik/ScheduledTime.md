@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 ScheduledTime
 =============
 
 Describes the interval on which a scheduled task is executed.
-
-Description
------------
 
 Use the [factory()](/api-reference/Piwik/ScheduledTime#factory) method
 to create ScheduledTime instances.

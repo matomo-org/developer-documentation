@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Segment
 =======
 
 Limits the set of visits Piwik uses when aggregating analytics data.
-
-Description
------------
 
 A segment is a condition used to filter visits. They can, for example,
 select visits that have a specific browser or come from a specific
@@ -190,6 +187,16 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
       </div>
    </li>
    </ul>
-- _Returns:_ The entire select query.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The entire select query.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

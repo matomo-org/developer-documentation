@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 AddColumnsProcessedMetrics
 ==========================
 
 Adds processed metrics columns to a DataTable using metrics that already exist.
-
-Description
------------
 
 Columns added are:
 
@@ -71,8 +68,6 @@ Constructor.
 ### `filter()`
 
 Adds the processed metrics.
-
-#### Description
 
 See [AddColumnsProcessedMetrics](#AddColumnsProcessedMetrics) for
 more information.

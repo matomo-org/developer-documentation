@@ -1,4 +1,4 @@
-<small>Piwik\ScheduledTime</small>
+<small>Piwik\ScheduledTime\</small>
 
 Weekly
 ======

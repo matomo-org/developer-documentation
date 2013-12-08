@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 ColumnCallbackAddMetadata
 =========================
 
 Executes a callback for each row of a DataTable and adds the result as a new metadata column.
-
-Description
------------
 
 **Basic usage example**
 

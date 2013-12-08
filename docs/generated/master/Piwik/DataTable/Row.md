@@ -1,12 +1,9 @@
-<small>Piwik\DataTable</small>
+<small>Piwik\DataTable\</small>
 
 Row
 ===
 
 This is what a [DataTable](/api-reference/Piwik/DataTable) is composed of.
-
-Description
------------
 
 DataTable rows contain columns, metadata and a subtable ID. Columns and metadata
 are stored as an array of name => value mappings.
@@ -24,8 +21,6 @@ This class defines the following properties:
 ### `$c`
 
 This array contains the row information: - array indexed by self::COLUMNS contains the columns, pairs of (column names, value) - (optional) array indexed by self::METADATA contains the metadata,  pairs of (metadata name, value) - (optional) integer indexed by self::DATATABLE_ASSOCIATED contains the ID of the DataTable associated to this row.
-
-#### Description
 
 This ID can be used to read the DataTable from the DataTable_Manager.
 
@@ -104,8 +99,18 @@ Applies a basic rendering to the Row and returns the output.
 
 #### Signature
 
-- _Returns:_ describing the row. Example: "- 1 ['label' => 'piwik', 'nb_uniq_visitors' => 1685, 'nb_visits' => 1861] [] [idsubtable = 1375]"
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">describing the row. Example: "- 1 ['label' => 'piwik', 'nb_uniq_visitors' => 1685, 'nb_visits' => 1861] [] [idsubtable = 1375]"</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="deletecolumn" id="deletecolumn"></a>
 <a name="deleteColumn" id="deleteColumn"></a>
@@ -129,8 +134,18 @@ Deletes the given column.
       </div>
    </li>
    </ul>
-- _Returns:_ True on success, false if the column does not exist.
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">True on success, false if the column does not exist.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="renamecolumn" id="renamecolumn"></a>
 <a name="renameColumn" id="renameColumn"></a>
@@ -188,9 +203,18 @@ Returns a column by name.
       </div>
    </li>
    </ul>
-- _Returns:_ The column value or false if it doesn't exist.
-    - `mixed`
-    - `Piwik\DataTable\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`|`Piwik\DataTable\false`) &mdash;
+    <div markdown="1" class="param-desc">The column value or false if it doesn't exist.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getmetadata" id="getmetadata"></a>
 <a name="getMetadata" id="getMetadata"></a>
@@ -224,8 +248,18 @@ Returns the array containing all the columns.
 
 #### Signature
 
-- _Returns:_ Example: ``` array( 'column1'   => VALUE, 'label'     => 'www.php.net' 'nb_visits' => 15894, ) ```
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">Example: ``` array( 'column1'   => VALUE, 'label'     => 'www.php.net' 'nb_visits' => 15894, ) ```</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getidsubdatatable" id="getidsubdatatable"></a>
 <a name="getIdSubDataTable" id="getIdSubDataTable"></a>
@@ -233,15 +267,22 @@ Returns the array containing all the columns.
 
 Returns the ID of the subDataTable.
 
-#### Description
-
 If there is no such a table, returns null.
 
 #### Signature
 
-- It can return one of the following values:
-    - `int`
-    - `null`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`|`null`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getsubtable" id="getsubtable"></a>
 <a name="getSubtable" id="getSubtable"></a>
@@ -249,23 +290,28 @@ If there is no such a table, returns null.
 
 Returns the associated subtable, if one exists.
 
-#### Description
-
 Returns `false` if none exists.
 
 #### Signature
 
-- It can return one of the following values:
-    - [`DataTable`](../../Piwik/DataTable.md)
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|`bool`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="sumsubtable" id="sumsubtable"></a>
 <a name="sumSubtable" id="sumSubtable"></a>
 ### `sumSubtable()`
 
 Sums a DataTable to this row's subtable.
-
-#### Description
 
 If this row has no subtable a new
 one is created.
@@ -312,8 +358,18 @@ Attaches a subtable to this row.
       </div>
    </li>
    </ul>
-- _Returns:_ Returns `$subTable`.
-    - [`DataTable`](../../Piwik/DataTable.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+    <div markdown="1" class="param-desc">Returns `$subTable`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if a subtable already exists for this row.
 
@@ -339,8 +395,18 @@ Attaches a subtable to this row, overwriting the existing subtable, if any.
       </div>
    </li>
    </ul>
-- _Returns:_ Returns `$subTable`.
-    - [`DataTable`](../../Piwik/DataTable.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+    <div markdown="1" class="param-desc">Returns `$subTable`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="issubtableloaded" id="issubtableloaded"></a>
 <a name="isSubtableLoaded" id="isSubtableLoaded"></a>
@@ -367,8 +433,6 @@ Removes the subtable reference.
 ### `setColumns()`
 
 Set all the columns at once.
-
-#### Description
 
 Overwrites previously set columns.
 
@@ -480,16 +544,24 @@ Deletes one metadata value or all metadata values.
       </div>
    </li>
    </ul>
-- _Returns:_ true on success, false if the column didn't exist
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">true on success, false if the column didn't exist</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="addcolumn" id="addcolumn"></a>
 <a name="addColumn" id="addColumn"></a>
 ### `addColumn()`
 
 Add a new column to the row.
-
-#### Description
 
 If the column already exists, throws an exception.
 
@@ -555,8 +627,6 @@ Add many columns to this row.
 
 Add a new metadata to the row.
 
-#### Description
-
 If the metadata already exists, throws an exception.
 
 #### Signature
@@ -594,8 +664,6 @@ If the metadata already exists, throws an exception.
 ### `sumRow()`
 
 Sums the given `$rowToSum` columns values to the existing row column values.
-
-#### Description
 
 Only the int or float values will be summed. Label columns will be ignored
 even if they have a numeric value.
@@ -670,8 +738,6 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 
 Returns true if this row is the summary row, false if otherwise.
 
-#### Description
-
 This function
 depends on the label of the row, and so, is not 100% accurate.
 
@@ -684,8 +750,6 @@ depends on the label of the row, and so, is not 100% accurate.
 ### `isEqual()`
 
 Helper function that tests if two rows are equal.
-
-#### Description
 
 Two rows are equal if:
 

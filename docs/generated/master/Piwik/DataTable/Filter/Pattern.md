@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 Pattern
 =======
 
 Deletes every row for which a specific column does not match a supplied regex pattern.
-
-Description
------------
 
 **Example**
 

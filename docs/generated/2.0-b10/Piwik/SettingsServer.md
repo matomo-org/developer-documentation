@@ -1,4 +1,4 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 SettingsServer
 ==============
@@ -22,8 +22,6 @@ The class defines the following methods:
 ### `isArchivePhpTriggered()`
 
 Returns true if the current script execution was triggered misc/cron/archive.php.
-
-#### Description
 
 Helpful for error handling: directly throw error without HTML (eg. when DB is down).
 
@@ -76,8 +74,6 @@ Returns true if this php version/build supports timezone manipulation (e.g., php
 ### `isGdExtensionEnabled()`
 
 Returns true if the GD PHP extension is available, false if otherwise.
-
-#### Description
 
 ImageGraph and sparklines depend on the GD extension.
 

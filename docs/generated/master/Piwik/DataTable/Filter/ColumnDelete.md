@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 ColumnDelete
 ============
 
 Filter that will remove columns from a DataTable using either a blacklist, whitelist or both.
-
-Description
------------
 
 This filter is used to handle the **hideColumn** and **showColumn** query parameters.
 
@@ -97,8 +94,6 @@ Constructor.
 ### `filter()`
 
 Filters the given DataTable.
-
-#### Description
 
 Removes columns that are not desired from
 each DataTable row.

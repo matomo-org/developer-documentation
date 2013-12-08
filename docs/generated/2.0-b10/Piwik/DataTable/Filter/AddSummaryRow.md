@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 AddSummaryRow
 =============
 
 Add a summary row row to the table that is the sum of all other table rows.
-
-Description
------------
 
 **Basic usage example**
 
@@ -61,8 +58,6 @@ Constructor.
 ### `filter()`
 
 Executes the filter.
-
-#### Description
 
 See [AddSummaryRow](#).
 

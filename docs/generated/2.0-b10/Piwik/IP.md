@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 IP
 ==
 
 Contains IP address helper functions (for both IPv4 and IPv6).
-
-Description
------------
 
 As of Piwik 1.3, IP addresses are stored in the DB has VARBINARY(16),
 and passed around in network address format which has the advantage of
@@ -72,8 +69,6 @@ Removes the port and the last portion of a CIDR IP address.
 
 Sanitize human-readable (user-supplied) IP address range.
 
-#### Description
-
 Accepts the following formats for $ipRange:
 - single IPv4 address, e.g., 127.0.0.1
 - single IPv6 address, e.g., ::1/128
@@ -97,9 +92,18 @@ Accepts the following formats for $ipRange:
       </div>
    </li>
    </ul>
-- _Returns:_ IP address range in CIDR notation OR false
-    - `string`
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`bool`) &mdash;
+    <div markdown="1" class="param-desc">IP address range in CIDR notation OR false</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="p2n" id="p2n"></a>
 <a name="P2N" id="P2N"></a>
@@ -123,16 +127,24 @@ Convert presentation format IP address to network address format.
       </div>
    </li>
    </ul>
-- _Returns:_ Binary-safe string, e.g., `"\x7F\x00\x00\x01"`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">Binary-safe string, e.g., `"\x7F\x00\x00\x01"`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="n2p" id="n2p"></a>
 <a name="N2P" id="N2P"></a>
 ### `N2P()`
 
 Convert network address format to presentation format.
-
-#### Description
 
 See also [prettyPreint](#prettyPrint).
 
@@ -152,8 +164,18 @@ See also [prettyPreint](#prettyPrint).
       </div>
    </li>
    </ul>
-- _Returns:_ IP address in presentation format.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">IP address in presentation format.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="prettyprint" id="prettyprint"></a>
 <a name="prettyPrint" id="prettyPrint"></a>
@@ -177,8 +199,18 @@ Alias for [N2P()](#N2P).
       </div>
    </li>
    </ul>
-- _Returns:_ IP address in presentation format.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">IP address in presentation format.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="isipv4" id="isipv4"></a>
 <a name="isIPv4" id="isIPv4"></a>
@@ -202,16 +234,24 @@ Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if 
       </div>
    </li>
    </ul>
-- _Returns:_ True if IPv4, else false.
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">True if IPv4, else false.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="long2ip" id="long2ip"></a>
 <a name="long2ip" id="long2ip"></a>
 ### `long2ip()`
 
 Convert IP address (in network address format) to presentation format.
-
-#### Description
 
 This is a backward compatibility function for code that only expects
 IPv4 addresses (i.e., doesn't support IPv6).
@@ -235,16 +275,24 @@ returned by the built-in ip2long() function, from Piwik 1.3 and earlier.
       </div>
    </li>
    </ul>
-- _Returns:_ IP address in presentation format.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">IP address in presentation format.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="isipv6" id="isipv6"></a>
 <a name="isIPv6" id="isIPv6"></a>
 ### `isIPv6()`
 
 Returns true if $ip is an IPv6 address, false if otherwise.
-
-#### Description
 
 This function does
 a naive check. It assumes that whatever format $ip is in, it is well-formed.
@@ -313,8 +361,18 @@ Returns an IPv4 address from a 'mapped' IPv6 address.
       </div>
    </li>
    </ul>
-- _Returns:_ eg, `'192.0.2.128'`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `'192.0.2.128'`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getipsforrange" id="getipsforrange"></a>
 <a name="getIpsForRange" id="getIpsForRange"></a>
@@ -338,17 +396,24 @@ Get low and high IP addresses for a specified range.
       </div>
    </li>
    </ul>
-- _Returns:_ Array `array($lowIp, $highIp)` in network address format, or false on failure.
-    - `array`
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`|`bool`) &mdash;
+    <div markdown="1" class="param-desc">Array `array($lowIp, $highIp)` in network address format, or false on failure.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="isipinrange" id="isipinrange"></a>
 <a name="isIpInRange" id="isIpInRange"></a>
 ### `isIpInRange()`
 
 Determines if an IP address is in a specified IP address range.
-
-#### Description
 
 An IPv4-mapped address should be range checked with an IPv4-mapped address range.
 
@@ -378,8 +443,18 @@ An IPv4-mapped address should be range checked with an IPv4-mapped address range
       </div>
    </li>
    </ul>
-- _Returns:_ True if in any of the specified IP address ranges; else false.
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">True if in any of the specified IP address ranges; else false.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getipfromheader" id="getipfromheader"></a>
 <a name="getIpFromHeader" id="getIpFromHeader"></a>
@@ -387,14 +462,22 @@ An IPv4-mapped address should be range checked with an IPv4-mapped address range
 
 Returns the most accurate IP address availble for the current user, in IPv4 format.
 
-#### Description
-
 This could be the proxy client's IP address.
 
 #### Signature
 
-- _Returns:_ IP address in presentation format.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">IP address in presentation format.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getnonproxyipfromheader" id="getnonproxyipfromheader"></a>
 <a name="getNonProxyIpFromHeader" id="getNonProxyIpFromHeader"></a>
@@ -462,8 +545,18 @@ Returns the last IP address in a comma separated list, subject to an optional ex
       </div>
    </li>
    </ul>
-- _Returns:_ Last (non-excluded) IP address in the list.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">Last (non-excluded) IP address in the list.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="gethostbyaddr" id="gethostbyaddr"></a>
 <a name="getHostByAddr" id="getHostByAddr"></a>
@@ -487,6 +580,16 @@ Get hostname for a given IP address.
       </div>
    </li>
    </ul>
-- _Returns:_ The hostname or unmodified $ipStr on failure.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The hostname or unmodified $ipStr on failure.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

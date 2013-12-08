@@ -1,4 +1,4 @@
-<small>Piwik\Settings</small>
+<small>Piwik\Settings\</small>
 
 Setting
 =======
@@ -28,8 +28,6 @@ This abstract class defines the following properties:
 
 Describes the setting's PHP data type.
 
-#### Description
-
 When saved, setting values will always be casted to this
 type.
 
@@ -45,8 +43,6 @@ See [Settings](#) for a list of supported data types.
 
 Describes how the setting should be manipulated through Piwik's UI.
 
-#### Description
-
 See [Settings](#) for a list of supportted control types.
 
 #### Signature
@@ -59,8 +55,6 @@ See [Settings](#) for a list of supportted control types.
 
 Name-value mapping of HTML attributes that will be added HTML form control, eg, `array('size' => 3)`.
 
-#### Description
-
 Attributes will be escaped before outputting.
 
 #### Signature
@@ -72,8 +66,6 @@ Attributes will be escaped before outputting.
 ### `$availableValues`
 
 The list of all available values for this setting.
-
-#### Description
 
 If null, the setting can have any value.
 
@@ -112,8 +104,6 @@ Text that will appear above this setting's section in the _Plugin Settings_ admi
 
 Text that will be appear directly underneath the setting title in the _Plugin Settings_ admin page.
 
-#### Description
-
 If set, should be a short description of the setting.
 
 #### Signature
@@ -127,8 +117,6 @@ If set, should be a short description of the setting.
 ### `$inlineHelp`
 
 Text that will appear next to the setting's section in the _Plugin Settings_ admin page.
-
-#### Description
 
 If set,
 it should contain information about the setting that is more specific than a general description,
@@ -145,8 +133,6 @@ such as the format of the setting value if it has a special format.
 ### `$validate`
 
 A closure that does some custom validation on the setting before the setting is persisted.
-
-#### Description
 
 The closure should take two arguments: the setting value and the [Setting](#) instance being
 validated. If the value is found to be invalid, the closure should throw an exception with
@@ -173,8 +159,6 @@ $setting->validate = function ($value, Setting $setting) {
 ### `$transform`
 
 A closure that transforms the setting value.
-
-#### Description
 
 If supplied, this closure will be executed after
 the setting has been validated.
@@ -206,8 +190,6 @@ $setting->transform = function ($value, Setting $setting) {
 ### `$defaultValue`
 
 Default value of this setting.
-
-#### Description
 
 The default value is not casted to the appropriate data type. This means _**you**_ have to make
 sure the value is of the correct type.
@@ -323,8 +305,6 @@ Sets the object used to persist settings.
 
 Returns the previously persisted setting value.
 
-#### Description
-
 If no value was set, the default value
 is returned.
 
@@ -375,8 +355,6 @@ Returns the unique string key used to store this setting.
 ### `getOrder()`
 
 Returns the display order.
-
-#### Description
 
 The lower the return value, the earlier the setting will be displayed.
 

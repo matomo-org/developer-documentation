@@ -1,4 +1,4 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Mail
 ====

@@ -1,12 +1,9 @@
-<small>Piwik\Plugin</small>
+<small>Piwik\Plugin\</small>
 
 Controller
 ==========
 
 Base class of all plugin Controllers.
-
-Description
------------
 
 Plugins that wish to add display HTML should create a Controller that either
 extends from this class or from ControllerAdmin. Every public method in
@@ -48,8 +45,6 @@ This abstract class defines the following properties:
 ### `$pluginName`
 
 The plugin name, eg.
-
-#### Description
 
 `'Referrers'`.
 
@@ -141,8 +136,6 @@ Constructor.
 
 Helper method that converts "today" or "yesterday" to the specified timezone.
 
-#### Description
-
 If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezone.
 
 #### Signature
@@ -178,8 +171,6 @@ If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezon
 ### `setDate()`
 
 Sets the date to be used by all other methods in the controller.
-
-#### Description
 
 If the date has to be modified, this method should be called just after
 construction.
@@ -234,17 +225,24 @@ A helper method that renders a view either to the screen or to a string.
       </div>
    </li>
    </ul>
-- It can return one of the following values:
-    - `string`
-    - `void`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`void`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getlastunitgraph" id="getlastunitgraph"></a>
 <a name="getLastUnitGraph" id="getLastUnitGraph"></a>
 ### `getLastUnitGraph()`
 
 Returns a ViewDataTable object that will render a jqPlot evolution graph for the last30 days/weeks/etc.
-
-#### Description
 
 of the current period, relative to the current date.
 
@@ -366,8 +364,6 @@ Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitg
 
 Returns a URL to a sparkline image for a report served by the current plugin.
 
-#### Description
-
 The result of this URL should be used with the [sparkline()](#) twig function.
 
 The current site ID and period will be used.
@@ -400,8 +396,18 @@ See Piwik\Visualization\Sparkline for more information about the Sparkline visua
       </div>
    </li>
    </ul>
-- _Returns:_ The generated URL.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The generated URL.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="setmindateview" id="setmindateview"></a>
 <a name="setMinDateView" id="setMinDateView"></a>
@@ -443,8 +449,6 @@ Sets the first date available in the calendar.
 
 Sets the last date available in the calendar.
 
-#### Description
-
 Usually this just the "today" date
 for a site (which can depend on the timezone of a site).
 
@@ -481,8 +485,6 @@ for a site (which can depend on the timezone of a site).
 ### `setGeneralVariablesView()`
 
 Assigns variables to [View](/api-reference/Piwik/View) instances that display an entire page.
-
-#### Description
 
 The following variables assigned:
 
@@ -527,8 +529,6 @@ Will exit on error.
 
 Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance.
 
-#### Description
-
 The following variables assigned:
 
 **debugTrackVisitsInsidePiwikUI** - The value of the `[Debug] track_visits_inside_piwik_ui`
@@ -570,8 +570,6 @@ Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/Contro
 
 Checks if the current host is valid and sets variables on the given view, including:
 
-#### Description
-
 - **isValidHost** - true if host is valid, false if otherwise
 - **invalidHostMessage** - message to display if host is invalid (only set if host is invalid)
 - **invalidHost** - the invalid hostname (only set if host is invalid)
@@ -602,8 +600,6 @@ Checks if the current host is valid and sets variables on the given view, includ
 
 Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
 
-#### Description
-
 - **period** - The value of the **period** query parameter.
 - **otherPeriods** - `array('day', 'week', 'month', 'year', 'range')`
 - **periodsNames** - List of available periods mapped to their singular and plural translations.
@@ -633,8 +629,6 @@ Sets general period variables on a view, including:  - **displayUniqueVisitors**
 ### `redirectToIndex()`
 
 Helper method used to redirect the current http request to another module/action.
-
-#### Description
 
 If specified, will also change the idSite, date and/or period query parameters.
 
@@ -716,9 +710,18 @@ Returns default site ID that Piwik should load.
 
 #### Signature
 
-- It can return one of the following values:
-    - `bool`
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`|`int`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getdefaultdate" id="getdefaultdate"></a>
 <a name="getDefaultDate" id="getDefaultDate"></a>
@@ -728,8 +731,18 @@ Returns default date for Piwik reports.
 
 #### Signature
 
-- _Returns:_ `'today'`, `'2010-01-01'`, etc.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">`'today'`, `'2010-01-01'`, etc.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getdefaultperiod" id="getdefaultperiod"></a>
 <a name="getDefaultPeriod" id="getDefaultPeriod"></a>
@@ -739,16 +752,24 @@ Returns default period type for Piwik reports.
 
 #### Signature
 
-- _Returns:_ `'day'`, `'week'`, `'month'`, `'year'` or `'range'`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">`'day'`, `'week'`, `'month'`, `'year'` or `'range'`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="checktokeninurl" id="checktokeninurl"></a>
 <a name="checkTokenInUrl" id="checkTokenInUrl"></a>
 ### `checkTokenInUrl()`
 
 Checks that the token_auth in the URl matches the current logged in user's token_auth.
-
-#### Description
 
 This is a protection against CSRF should be used in controller
 actions that are either invoked via AJAX or redirect to a page
@@ -792,8 +813,6 @@ Returns a prettified date string for use in period selector widget.
 ### `getEvolutionHtml()`
 
 Calculates the evolution from one value to another and returns HTML displaying the evolution percent.
-
-#### Description
 
 The HTML includes an up/down arrow and is colored red, black or
 green depending on whether the evolution is negative, 0 or positive.
@@ -846,7 +865,16 @@ No HTML is returned if the current value and evolution percent are both 0.
       </div>
    </li>
    </ul>
-- _Returns:_ The HTML or false if the evolution is 0 and the current value is 0.
-    - `string`
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`bool`) &mdash;
+    <div markdown="1" class="param-desc">The HTML or false if the evolution is 0 and the current value is 0.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

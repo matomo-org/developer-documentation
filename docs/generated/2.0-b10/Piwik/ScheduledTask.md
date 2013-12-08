@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 ScheduledTask
 =============
 
 Contains metadata describing a chunk of PHP code that should be executed at regular intervals.
-
-Description
------------
 
 See the [TaskScheduler](#) docs to learn more about scheduled tasks.
 
@@ -94,8 +91,6 @@ Constructor.
 
 Returns the object instance on which the method should be executed.
 
-#### Description
-
 Returns a class
 name if the method is static.
 
@@ -131,9 +126,18 @@ Returns the a value that will be passed to the method when executed, or `null` i
 
 #### Signature
 
-- It can return one of the following values:
-    - `string`
-    - `null`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`null`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getscheduledtime" id="getscheduledtime"></a>
 <a name="getScheduledTime" id="getScheduledTime"></a>
@@ -161,8 +165,6 @@ Returns the time in milliseconds when this task will be executed next.
 
 Returns the task priority.
 
-#### Description
-
 The priority will be an integer whose value is
 between [ScheduledTask::HIGH_PRIORITY](#) and [ScheduledTask::LOW_PRIORITY](#).
 
@@ -175,8 +177,6 @@ between [ScheduledTask::HIGH_PRIORITY](#) and [ScheduledTask::LOW_PRIORITY](#).
 ### `getName()`
 
 Returns a unique name for this scheduled task.
-
-#### Description
 
 The name is stored in the DB and is used
 to store when tasks were last executed. The name is created using:

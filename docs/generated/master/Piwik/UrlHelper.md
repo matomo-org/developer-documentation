@@ -1,4 +1,4 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 UrlHelper
 =========
@@ -21,8 +21,6 @@ The class defines the following methods:
 ### `getQueryStringWithExcludedParameters()`
 
 Converts an array of query parameter name/value mappings into a query string.
-
-#### Description
 
 Parameters that are in `$parametersToExclude` will not appear in the result
 query string.
@@ -53,16 +51,24 @@ query string.
       </div>
    </li>
    </ul>
-- _Returns:_ A query string, eg, `"?site=0"`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">A query string, eg, `"?site=0"`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getparseurlreverse" id="getparseurlreverse"></a>
 <a name="getParseUrlReverse" id="getParseUrlReverse"></a>
 ### `getParseUrlReverse()`
 
 Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php) function.
-
-#### Description
 
 Copied from the PHP comments at http://php.net/parse_url
 
@@ -82,9 +88,18 @@ Copied from the PHP comments at http://php.net/parse_url
       </div>
    </li>
    </ul>
-- _Returns:_ The URL or `false` if `$parsed` isn't an array.
-    - `Piwik\false`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`Piwik\false`|`string`) &mdash;
+    <div markdown="1" class="param-desc">The URL or `false` if `$parsed` isn't an array.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getarrayfromquerystring" id="getarrayfromquerystring"></a>
 <a name="getArrayFromQueryString" id="getArrayFromQueryString"></a>
@@ -108,8 +123,18 @@ Returns a URL query string as an array.
       </div>
    </li>
    </ul>
-- _Returns:_ eg, `array('param1' => 'value1', 'param2' => 'value2')`
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">eg, `array('param1' => 'value1', 'param2' => 'value2')`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getparameterfromquerystring" id="getparameterfromquerystring"></a>
 <a name="getParameterFromQueryString" id="getParameterFromQueryString"></a>
@@ -143,9 +168,18 @@ Returns the value of a single query parameter from the supplied query string.
       </div>
    </li>
    </ul>
-- _Returns:_ Parameter value if found (can be the empty string!), null if not found.
-    - `string`
-    - `null`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`null`) &mdash;
+    <div markdown="1" class="param-desc">Parameter value if found (can be the empty string!), null if not found.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getpathandqueryfromurl" id="getpathandqueryfromurl"></a>
 <a name="getPathAndQueryFromUrl" id="getPathAndQueryFromUrl"></a>
@@ -169,6 +203,16 @@ Returns the path and query string of a URL.
       </div>
    </li>
    </ul>
-- _Returns:_ eg, `/test/index.php?module=CoreHome` if `$url` is `http://piwik.org/test/index.php?module=CoreHome`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `/test/index.php?module=CoreHome` if `$url` is `http://piwik.org/test/index.php?module=CoreHome`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Date
 ====
 
 Utility class that wraps date/time related PHP functions.
-
-Description
------------
 
 Using this class can
 be easier than using `date`, `time`, `date_default_timezone_set`, etc.
@@ -73,8 +70,6 @@ The class defines the following methods:
 
 Creates a new Date instance using a string datetime value.
 
-#### Description
-
 The timezone of the Date
 result will be in UTC.
 
@@ -124,8 +119,6 @@ Returns the current timestamp as a string with the following format: `'YYYY-MM-D
 
 Returns the start of the day of the current timestamp in UTC.
 
-#### Description
-
 For example,
 if the current timestamp is `'2007-07-24 14:04:24'` in UTC, the result will
 be `'2007-07-24'`.
@@ -140,8 +133,6 @@ be `'2007-07-24'`.
 
 Returns the end of the day of the current timestamp in UTC.
 
-#### Description
-
 For example,
 if the current timestamp is `'2007-07-24 14:03:24'` in UTC, the result will
 be `'2007-07-24 23:59:59'`.
@@ -155,8 +146,6 @@ be `'2007-07-24 23:59:59'`.
 ### `setTimezone()`
 
 Returns a new date object with the same timestamp as `$this` but with a new timezone.
-
-#### Description
 
 See [getTimestamp](#getTimestamp) to see how the timezone is used.
 
@@ -210,8 +199,18 @@ Converts a timestamp in a timezone to UTC.
       </div>
    </li>
    </ul>
-- _Returns:_ The adjusted time as seconds from EPOCH.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">The adjusted time as seconds from EPOCH.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="gettimestamputc" id="gettimestamputc"></a>
 <a name="getTimestampUTC" id="getTimestampUTC"></a>
@@ -287,8 +286,6 @@ Returns true if the current date is earlier than the given `$date`.
 
 Converts this date to the requested string format.
 
-#### Description
-
 See [http://php.net/date](http://php.net/date)
 for the list of format strings.
 
@@ -318,8 +315,18 @@ See [toString](#toString).
 
 #### Signature
 
-- _Returns:_ The current date in `'YYYY-MM-DD'` format.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The current date in `'YYYY-MM-DD'` format.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="compareweek" id="compareweek"></a>
 <a name="compareWeek" id="compareWeek"></a>
@@ -343,8 +350,18 @@ Performs three-way comparison of the week of the current date against the given 
       </div>
    </li>
    </ul>
-- _Returns:_ Returns `0` if the current week is equal to `$date`'s, `-1` if the current week is earlier or `1` if the current week is later.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">Returns `0` if the current week is equal to `$date`'s, `-1` if the current week is earlier or `1` if the current week is later.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="comparemonth" id="comparemonth"></a>
 <a name="compareMonth" id="compareMonth"></a>
@@ -368,8 +385,18 @@ Performs three-way comparison of the month of the current date against the given
       </div>
    </li>
    </ul>
-- _Returns:_ Returns `0` if the current month is equal to `$date`'s, `-1` if the current month is earlier or `1` if the current month is later.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">Returns `0` if the current month is equal to `$date`'s, `-1` if the current month is earlier or `1` if the current month is later.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="compareyear" id="compareyear"></a>
 <a name="compareYear" id="compareYear"></a>
@@ -393,8 +420,18 @@ Performs three-way comparison of the month of the current date against the given
       </div>
    </li>
    </ul>
-- _Returns:_ Returns `0` if the current year is equal to `$date`'s, `-1` if the current year is earlier or `1` if the current year is later.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">Returns `0` if the current year is equal to `$date`'s, `-1` if the current year is earlier or `1` if the current year is later.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="istoday" id="istoday"></a>
 <a name="isToday" id="isToday"></a>
@@ -468,8 +505,18 @@ Returns a new Date instance with `$this` date's day and the specified new time o
       </div>
    </li>
    </ul>
-- _Returns:_ The new date with the time of day changed.
-    - [`Date`](../Piwik/Date.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Date`](../Piwik/Date.md)) &mdash;
+    <div markdown="1" class="param-desc">The new date with the time of day changed.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="setday" id="setday"></a>
 <a name="setDay" id="setDay"></a>
@@ -589,8 +636,18 @@ Subtracts `$n` months from `$this` date and returns the result as a new Date obj
       </div>
    </li>
    </ul>
-- _Returns:_ new date
-    - [`Date`](../Piwik/Date.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Date`](../Piwik/Date.md)) &mdash;
+    <div markdown="1" class="param-desc">new date</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="subyear" id="subyear"></a>
 <a name="subYear" id="subYear"></a>
@@ -622,8 +679,6 @@ Subtracts `$n` years from `$this` date and returns the result as a new Date obje
 
 Returns a localized date string using the given template.
 
-#### Description
-
 The template should contain tags that will be replaced with localized date strings.
 
 Allowed tags include:
@@ -653,16 +708,24 @@ Allowed tags include:
       </div>
    </li>
    </ul>
-- _Returns:_ eg. `"Aug 2009"`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg. `"Aug 2009"`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="addday" id="addday"></a>
 <a name="addDay" id="addDay"></a>
 ### `addDay()`
 
 Adds `$n` days to `$this` date and returns the result in a new Date.
-
-#### Description
 
 instance.
 
@@ -714,8 +777,6 @@ Adds `$n` hours to `$this` date and returns the result in a new Date.
 
 Adds N number of hours to a UNIX timestamp and returns the result.
 
-#### Description
-
 Using
 this static function instead of [addHour](#addHour) will be faster since a
 Date instance does not have to be created.
@@ -746,8 +807,18 @@ Date instance does not have to be created.
       </div>
    </li>
    </ul>
-- _Returns:_ The result as a UNIX timestamp.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">The result as a UNIX timestamp.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="subhour" id="subhour"></a>
 <a name="subHour" id="subHour"></a>

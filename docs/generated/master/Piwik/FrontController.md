@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 FrontController
 ===============
 
 This singleton dispatches requests to the appropriate plugin Controller.
-
-Description
------------
 
 Piwik uses this class for all requests that go through index.php. Plugins can
 use it to call controller actions of other plugins.
@@ -53,8 +50,6 @@ The class defines the following methods:
 
 Executes the requested plugin controller action.
 
-#### Description
-
 See also [fetchDispatch()](/api-reference/Piwik/FrontController#fetchdispatch).
 
 #### Signature
@@ -93,9 +88,18 @@ See also [fetchDispatch()](/api-reference/Piwik/FrontController#fetchdispatch).
       </div>
    </li>
    </ul>
-- _Returns:_ The returned value of the call. Often nothing as most controller actions echo, but do not return data.
-    - `void`
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`void`|`mixed`) &mdash;
+    <div markdown="1" class="param-desc">The returned value of the call. Often nothing as most controller actions echo, but do not return data.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - `Exception|\Piwik\PluginDeactivatedException` &mdash; in case the plugin doesn&#039;t exist, the action doesn&#039;t exist, there is not enough permission, etc.
 
@@ -104,8 +108,6 @@ See also [fetchDispatch()](/api-reference/Piwik/FrontController#fetchdispatch).
 ### `fetchDispatch()`
 
 Executes the requested plugin controller action and returns the data the action echos.
-
-#### Description
 
 Note: If the plugin controller returns something, the return value is returned instead
 of whatever is in the output buffer.
@@ -146,6 +148,16 @@ of whatever is in the output buffer.
       </div>
    </li>
    </ul>
-- _Returns:_ The `echo`'d data or the return value of the controller action.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The `echo`'d data or the return value of the controller action.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

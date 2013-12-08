@@ -1,12 +1,9 @@
-<small>Piwik\ViewDataTable</small>
+<small>Piwik\ViewDataTable\</small>
 
 RequestConfig
 =============
 
 Contains base request properties for [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances.
-
-Description
------------
 
 Manipulating
 these properties will change the way a [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) loads report data.
@@ -122,8 +119,6 @@ The list of ViewDataTable properties that can be overriden by query parameters.
 
 Controls which column to sort the DataTable by before truncating and displaying.
 
-#### Description
-
 Default value: If the report contains nb_uniq_visitors and nb_uniq_visitors is a
                displayed column, then the default value is 'nb_uniq_visitors'.
                Otherwise, it is 'nb_visits'.
@@ -138,8 +133,6 @@ Default value: If the report contains nb_uniq_visitors and nb_uniq_visitors is a
 ### `$filter_sort_order`
 
 Controls the sort order.
-
-#### Description
 
 Either 'asc' or 'desc'.
 
@@ -156,8 +149,6 @@ Default value: 'desc'
 
 The number of items to truncate the data set to before rendering the DataTable view.
 
-#### Description
-
 Default value: false
 
 #### Signature
@@ -170,8 +161,6 @@ Default value: false
 ### `$filter_offset`
 
 The number of items from the start of the data set that should be ignored.
-
-#### Description
 
 Default value: 0
 
@@ -208,8 +197,6 @@ The column to apply a filter pattern to.
 
 Stores the column name to filter when filtering out rows with low values.
 
-#### Description
-
 Default value: false
 
 #### Signature
@@ -222,8 +209,6 @@ Default value: false
 ### `$filter_excludelowpop_value`
 
 Stores the value considered 'low' when filtering out rows w/ low values.
-
-#### Description
 
 Default value: false
 
@@ -238,8 +223,6 @@ Default value: false
 ### `$request_parameters_to_modify`
 
 An array property that contains query parameter name/value overrides for API requests made by ViewDataTable.
-
-#### Description
 
 E.g. array('idSite' => ..., 'period' => 'month')
 
@@ -267,8 +250,6 @@ Whether to run generic filters on the DataTable before rendering or not.
 
 Whether to run ViewDataTable's list of queued filters or not.
 
-#### Description
-
 NOTE: Priority queued filters are always run.
 
 Default value: false
@@ -292,8 +273,6 @@ Default value: false
 ### `$idSubtable`
 
 If the current dataTable refers to a subDataTable (eg.
-
-#### Description
 
 keywordsBySearchEngineId for id=X) this variable is set to the Id
 

@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Notification
 ============
 
 Describes a UI notification.
-
-Description
------------
 
 UI notifications are messages displayed to the user near the top of the screen.
 Notifications consist of a message, a context (the message type), a priority
@@ -89,8 +86,6 @@ This class defines the following properties:
 
 The notification title.
 
-#### Description
-
 The title is optional and is displayed directly before the message content.
 
 #### Signature
@@ -102,8 +97,6 @@ The title is optional and is displayed directly before the message content.
 ### `$message`
 
 The notification message.
-
-#### Description
 
 Must be set.
 
@@ -117,8 +110,6 @@ Must be set.
 
 Contains extra display options.
 
-#### Description
-
 Usage: `$notification->flags = Notification::FLAG_BAR | Notification::FLAG_FOO`.
 
 #### Signature
@@ -131,8 +122,6 @@ Usage: `$notification->flags = Notification::FLAG_BAR | Notification::FLAG_FOO`.
 
 The notification's display type.
 
-#### Description
-
 See `TYPE_*` constants in [this class](#).
 
 #### Signature
@@ -144,8 +133,6 @@ See `TYPE_*` constants in [this class](#).
 ### `$context`
 
 The notification's context (message type).
-
-#### Description
 
 See `CONTEXT_*` constants in [this class](#).
 
@@ -161,8 +148,6 @@ A notification's context determines how it will be styled.
 
 The notification's priority.
 
-#### Description
-
 The higher the priority, the higher the order. See `PRIORITY_*`
 constants in [this class](#) to see possible priority values.
 
@@ -175,8 +160,6 @@ constants in [this class](#) to see possible priority values.
 ### `$raw`
 
 If true, the message will not be escaped before being outputted as HTML.
-
-#### Description
 
 If you set this to
 true, make sure you escape text yourself in order to avoid any possible XSS vulnerabilities.
@@ -227,16 +210,24 @@ Returns `1` if the notification will be displayed without a close button, `0` if
 
 #### Signature
 
-- _Returns:_ `1` or `0`.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">`1` or `0`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getpriority" id="getpriority"></a>
 <a name="getPriority" id="getPriority"></a>
 ### `getPriority()`
 
 Returns the notification's priority.
-
-#### Description
 
 If no priority has been set, a priority will be set based
 on the notification's context.

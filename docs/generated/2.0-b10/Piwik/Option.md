@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Option
 ======
 
 Convenient key-value storage for user specified options and temporary data that needs to be persisted beyond one request.
-
-Description
------------
 
 ### Examples
 
@@ -59,9 +56,18 @@ Returns the option value for the requested option `$name`.
       </div>
    </li>
    </ul>
-- _Returns:_ The value or false, if not found.
-    - `string`
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`bool`) &mdash;
+    <div markdown="1" class="param-desc">The value or false, if not found.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="set" id="set"></a>
 <a name="set" id="set"></a>

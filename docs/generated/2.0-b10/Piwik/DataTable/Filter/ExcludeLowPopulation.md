@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 ExcludeLowPopulation
 ====================
 
 Deletes all rows for which a specific column has a value that is lower than specific minimum threshold value.
-
-Description
------------
 
 **Basic usage examples**
 

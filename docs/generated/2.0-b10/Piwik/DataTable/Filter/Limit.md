@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 Limit
 =====
 
 Delete all rows from the table that are not in the given offset -> offset+limit range.
-
-Description
------------
 
 **Basic example usage**
 

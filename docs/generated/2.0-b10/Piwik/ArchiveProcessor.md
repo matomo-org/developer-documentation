@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 ArchiveProcessor
 ================
 
 Used to insert numeric and blob archive data, and to aggregate archive data.
-
-Description
------------
 
 During the Archiving process an instance of this class is used by plugins
 to cache aggregated analytics statistics.
@@ -115,8 +112,6 @@ Returns a [LogAggregator](#) instance for the site, period and segment this Arch
 
 Sums records for every subperiod of the current period and inserts the result as the record for this period.
 
-#### Description
-
 DataTables are summed recursively so subtables will be summed as well.
 
 #### Signature
@@ -185,8 +180,18 @@ DataTables are summed recursively so subtables will be summed as well.
       </div>
    </li>
    </ul>
-- _Returns:_ Returns the row counts of each aggregated report before truncation, eg, ``` array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... ) ```
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">Returns the row counts of each aggregated report before truncation, eg, ``` array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... ) ```</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="aggregatenumericmetrics" id="aggregatenumericmetrics"></a>
 <a name="aggregateNumericMetrics" id="aggregateNumericMetrics"></a>
@@ -220,9 +225,18 @@ Aggregates one or more metrics for every subperiod of the current period and ins
       </div>
    </li>
    </ul>
-- _Returns:_ Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, ``` array( 'nb_visits' => 3040, 'nb_hits' => 405 ) ``` could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.
-    - `array`
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`|`int`) &mdash;
+    <div markdown="1" class="param-desc">Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, ``` array( 'nb_visits' => 3040, 'nb_hits' => 405 ) ``` could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="insertnumericrecords" id="insertnumericrecords"></a>
 <a name="insertNumericRecords" id="insertNumericRecords"></a>
@@ -253,8 +267,6 @@ Caches multiple numeric records in the archive for this processor's site, period
 ### `insertNumericRecord()`
 
 Caches a single numeric record in the archive for this processor's site, period and segment.
-
-#### Description
 
 Numeric values are not inserted if they equal 0.
 

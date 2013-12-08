@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Common
 ======
 
 Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
-
-Description
------------
 
 This is the only external class loaded by the /piwik.php file.
 
@@ -34,8 +31,6 @@ The class defines the following methods:
 
 Returns a prefixed table name.
 
-#### Description
-
 The table prefix is determined by the `[database] tables_prefix` INI config
 option.
 
@@ -55,16 +50,24 @@ option.
       </div>
    </li>
    </ul>
-- _Returns:_ The prefixed name, ie "piwik-production_log_visit".
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The prefixed name, ie "piwik-production_log_visit".</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="unprefixtable" id="unprefixtable"></a>
 <a name="unprefixTable" id="unprefixTable"></a>
 ### `unprefixTable()`
 
 Removes the prefix from a table name and returns the result.
-
-#### Description
 
 The table prefix is determined by the `[database] tables_prefix` INI config
 option.
@@ -85,16 +88,24 @@ option.
       </div>
    </li>
    </ul>
-- _Returns:_ The unprefixed table name, eg "log_visit".
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The unprefixed table name, eg "log_visit".</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="mb_substr" id="mb_substr"></a>
 <a name="mb_substr" id="mb_substr"></a>
 ### `mb_substr()`
 
 Multi-byte substr() - works with UTF-8.
-
-#### Description
 
 Calls `mb_substr` if available and falls back to `substr` if it's not.
 
@@ -156,8 +167,6 @@ Multi-byte strlen() - works with UTF-8  Calls `mb_substr` if available and falls
 
 Multi-byte strtolower() - works with UTF-8.
 
-#### Description
-
 Calls `mb_strtolower` if available and falls back to `strtolower` if not.
 
 #### Signature
@@ -183,8 +192,6 @@ Calls `mb_strtolower` if available and falls back to `strtolower` if not.
 ### `sanitizeInputValues()`
 
 Sanitizes a string to help avoid XSS vulnerabilities.
-
-#### Description
 
 This function is automatically called when [getRequestVar](#getRequestVar) is called,
 so you should not normally have to use it.
@@ -229,8 +236,18 @@ NOTE: Sanitized input should not be used directly in an SQL query; SQL placehold
       </div>
    </li>
    </ul>
-- _Returns:_ The sanitized value.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">The sanitized value.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$value` is of an incorrect type.
 
@@ -239,8 +256,6 @@ NOTE: Sanitized input should not be used directly in an SQL query; SQL placehold
 ### `unsanitizeInputValues()`
 
 Unsanitizes one or more values and returns the result.
-
-#### Description
 
 This method should be used when you need to unescape data that was obtained from
 the user.
@@ -264,17 +279,24 @@ have to use this method to unsanitize it after it is retrieved.
       </div>
    </li>
    </ul>
-- _Returns:_ The unsanitized data.
-    - `string`
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`array`) &mdash;
+    <div markdown="1" class="param-desc">The unsanitized data.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getrequestvar" id="getrequestvar"></a>
 <a name="getRequestVar" id="getRequestVar"></a>
 ### `getRequestVar()`
 
 Gets a sanitized request parameter by name from the `$_GET` and `$_POST` superglobals.
-
-#### Description
 
 Use this function to get request parameter values. **_NEVER use `$_GET` and `$_POST` directly._**
 
@@ -330,8 +352,18 @@ If the variable doesn't have neither a value nor a default value provided, an ex
       </div>
    </li>
    </ul>
-- _Returns:_ The sanitized request parameter.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">The sanitized request parameter.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the request parameter doesn&#039;t exist and there is no default value or if the request parameter exists but has an incorrect type.
 
@@ -347,8 +379,18 @@ Returns the list of valid language codes.
 
 #### Signature
 
-- _Returns:_ Array of two letter ISO codes mapped with language name (in English). E.g. `array('en' => 'English')`.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">Array of two letter ISO codes mapped with language name (in English). E.g. `array('en' => 'English')`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getlanguagetocountrylist" id="getlanguagetocountrylist"></a>
 <a name="getLanguageToCountryList" id="getLanguageToCountryList"></a>
@@ -362,16 +404,24 @@ Returns list of language to country mappings.
 
 #### Signature
 
-- _Returns:_ Array of two letter ISO language codes mapped with two letter ISO country codes: `array('fr' => 'fr'), // French => France`
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">Array of two letter ISO language codes mapped with two letter ISO country codes: `array('fr' => 'fr'), // French => France`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getsqlstringfieldsarray" id="getsqlstringfieldsarray"></a>
 <a name="getSqlStringFieldsArray" id="getSqlStringFieldsArray"></a>
 ### `getSqlStringFieldsArray()`
 
 Returns a string with a comma separated list of placeholders for use in an SQL query based on the list of fields we're referencing.
-
-#### Description
 
 Used mainly to fill the `IN (...)` part of a query.
 
@@ -391,16 +441,24 @@ Used mainly to fill the `IN (...)` part of a query.
       </div>
    </li>
    </ul>
-- _Returns:_ The placeholder string, e.g. `"?, ?, ?"`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The placeholder string, e.g. `"?, ?, ?"`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="destroy" id="destroy"></a>
 <a name="destroy" id="destroy"></a>
 ### `destroy()`
 
 Mark orphaned object for garbage collection.
-
-#### Description
 
 For more information: @link http://dev.piwik.org/trac/ticket/374
 

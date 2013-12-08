@@ -1,12 +1,9 @@
-<small>Piwik\Menu</small>
+<small>Piwik\Menu\</small>
 
 MenuAbstract
 ============
 
 Base class for classes that manage one of Piwik's menus.
-
-Description
------------
 
 There are three menus in Piwik, the main menu, the top menu and the admin menu.
 Each menu has a class that manages the rendering of it. Each class invokes

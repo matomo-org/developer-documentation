@@ -1,12 +1,9 @@
-<small>Piwik\DataTable</small>
+<small>Piwik\DataTable\</small>
 
 Simple
 ======
 
 A [DataTable](/api-reference/Piwik/DataTable) where every row has two columns: **label** and **value**.
-
-Description
------------
 
 Simple DataTables are only used to slightly alter the output of some renderers
 (notably the XML renderer).

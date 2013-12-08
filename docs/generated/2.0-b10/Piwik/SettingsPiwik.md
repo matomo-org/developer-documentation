@@ -1,4 +1,4 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 SettingsPiwik
 =============
@@ -23,16 +23,24 @@ Returns the list of stored segments to pre-process for all sites when executing 
 
 #### Signature
 
-- _Returns:_ The list of stored segments that apply to all sites.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">The list of stored segments that apply to all sites.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getpiwikurl" id="getpiwikurl"></a>
 <a name="getPiwikUrl" id="getPiwikUrl"></a>
 ### `getPiwikUrl()`
 
 Returns the URL to this Piwik instance, eg.
-
-#### Description
 
 http://demo.piwik.org/ or http://example.org/piwik/.
 
@@ -55,8 +63,6 @@ Returns true if segmentation is allowed for this user, false if otherwise.
 ### `isUniqueVisitorsEnabled()`
 
 Returns true if unique visitors should be processed for the given period type.
-
-#### Description
 
 Unique visitor processing is controlled by the **[General] enable_processing_unique_visitors_...**
 INI config options. By default, day/week/month periods always process unique visitors and

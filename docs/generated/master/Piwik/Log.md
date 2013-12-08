@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Log
 ===
 
 Logging utility class.
-
-Description
------------
 
 Log entries are made with a message and log level. The logging utility will tag each
 log entry with the name of the plugin that's doing the logging. If no plugin is found,
@@ -84,8 +81,6 @@ The class defines the following methods:
 ### `error()`
 
 Logs a message using the ERROR log level.
-
-#### Description
 
 Note: Messages logged with the ERROR level are always logged to the screen in addition
 to configured writers.

@@ -1,12 +1,9 @@
-<small>Piwik\ViewDataTable</small>
+<small>Piwik\ViewDataTable\</small>
 
 Config
 ======
 
 Contains base display properties for [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)s.
-
-Description
------------
 
 Manipulating these
 properties in a ViewDataTable instance will change how its report will be displayed.
@@ -150,8 +147,6 @@ The list of ViewDataTable properties that can be overriden by query parameters.
 
 Controls what footer icons are displayed on the bottom left of the DataTable view.
 
-#### Description
-
 The value of this property must be an array of footer icon groups. Footer icon groups
 have set of properties, including an array of arrays describing footer icons. For
 example:
@@ -212,8 +207,6 @@ Controls whether the goals footer icon is shown.
 ### `$translations`
 
 Array property mapping DataTable column names with their internationalized names.
-
-#### Description
 
 The default value for this property is set elsewhere. It will contain translations
 of common metrics.
@@ -295,8 +288,6 @@ Controls whether the row that contains all footer icons & the limit selector is 
 
 Array property that determines which columns will be shown.
 
-#### Description
-
 Columns not in this array
 should not appear in ViewDataTable visualizations.
 
@@ -339,8 +330,6 @@ Controls whether to display a tiny upside-down caret over the currently active v
 
 Related reports are listed below a datatable view.
 
-#### Description
-
 When clicked, the original report will
 change to the clicked report and the list will change so the original report can be
 navigated back to.
@@ -355,8 +344,6 @@ navigated back to.
 ### `$title`
 
 The report title.
-
-#### Description
 
 Used with related reports so report headings can be changed when switching
 reports.
@@ -396,8 +383,6 @@ Contains the documentation for a report.
 
 Array property containing custom data to be saved in JSON in the data-params HTML attribute of a data table div.
 
-#### Description
-
 This data can be used by JavaScript DataTable classes.
 
 e.g. array('typeReferrer' => ...)
@@ -414,8 +399,6 @@ It can then be accessed in the twig templates by clientSideParameters.typeReferr
 ### `$show_limit_control`
 
 Controls whether the limit dropdown (which allows users to change the number of data shown) is always shown or not.
-
-#### Description
 
 Normally shown only if pagination is enabled.
 
@@ -518,8 +501,6 @@ Stores an HTML message (if any) to display under the datatable view.
 
 Array property that stores documentation for individual metrics.
 
-#### Description
-
 E.g. `array('nb_visits' => '...', ...)`
 
 By default this is set to values retrieved from report metadata (via API.getReportMetadata API method).
@@ -546,8 +527,6 @@ Row metadata name that contains the tooltip for the specific row.
 
 The URL to the report the view is displaying.
 
-#### Description
-
 Modifying this means clicking back to this report
 from a Related Report will go to a different URL. Can be used to load an entire page instead
 of a single report when going back to the original report.
@@ -565,8 +544,6 @@ The URL used to request the report without generic filters.
 
 CSS class to use in the output HTML div.
 
-#### Description
-
 This is added in addition to the visualization CSS
 class.
 
@@ -580,8 +557,6 @@ class.
 ### `$datatable_js_type`
 
 The JavaScript class to instantiate after the result HTML is obtained.
-
-#### Description
 
 This class handles all
 interactive behavior for the DataTable view.
@@ -608,8 +583,6 @@ If true, searching through the DataTable will search through all subtables.
 
 The unit of the displayed column.
 
-#### Description
-
 Valid if only one non-label column is displayed.
 
 #### Signature
@@ -634,8 +607,6 @@ Controls whether to show the 'Export as Image' footer icon.
 
 Array of DataTable filters that should be run before displaying a DataTable.
 
-#### Description
-
 Elements
 of this array can either be a closure or an array with at most three elements, including:
 - the filter name (or a closure)
@@ -658,8 +629,6 @@ If a closure is used, the view is appended as a parameter.
 
 Contains the controller action to call when requesting subtables of the current report.
 
-#### Description
-
 By default, this is set to the controller action used to request the report.
 
 #### Signature
@@ -672,8 +641,6 @@ By default, this is set to the controller action used to request the report.
 ### `$show_pagination_control`
 
 Controls whether the 'prev'/'next' links are shown in the DataTable footer.
-
-#### Description
 
 These links
 change the 'filter_offset' query parameter, thus allowing pagination.
@@ -710,8 +677,6 @@ Controls whether annotations are shown or not.
 ### `$export_limit`
 
 The filter_limit query parameter value to use in export links.
-
-#### Description
 
 Defaulted to the value of the `[General] API_datatable_default_limit` INI config option.
 
@@ -776,8 +741,6 @@ Constructor.
 
 Marks display properties as client side properties.
 
-#### Description
-
 [Read this](#client-side-properties-desc)
 to learn more.
 
@@ -804,8 +767,6 @@ to learn more.
 ### `addPropertiesThatCanBeOverwrittenByQueryParams()`
 
 Marks display properties as overridable.
-
-#### Description
 
 [Read this](#overridable-properties-desc) to
 learn more.
@@ -834,23 +795,29 @@ learn more.
 
 Returns array of all property values in this config object.
 
-#### Description
-
 Property values are mapped
 by name.
 
 #### Signature
 
-- _Returns:_ eg, `array('show_limit_control' => 0, 'show_goals' => 1, ...)`
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">eg, `array('show_limit_control' => 0, 'show_goals' => 1, ...)`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="addrelatedreport" id="addrelatedreport"></a>
 <a name="addRelatedReport" id="addRelatedReport"></a>
 ### `addRelatedReport()`
 
 Adds a related report to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
-
-#### Description
 
 If the report
 references the one that is currently being displayed, it will not be added to the related
@@ -900,8 +867,6 @@ report list.
 
 Adds several related reports to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 
-#### Description
-
 If
 any of the reports references the report that is currently being displayed, it will not
 be added to the list. All other reports will still be added though.
@@ -932,8 +897,6 @@ use [addRelatedReport()](/api-reference/Piwik/ViewDataTable/Config#addrelatedrep
 ### `addTranslation()`
 
 Associates internationalized text with a metric.
-
-#### Description
 
 Overwrites existing mappings.
 
@@ -972,8 +935,6 @@ See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations).
 ### `addTranslations()`
 
 Associates multiple translations with metrics.
-
-#### Description
 
 See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations) and [addTranslation()](/api-reference/Piwik/ViewDataTable/Config#addtranslation).
 

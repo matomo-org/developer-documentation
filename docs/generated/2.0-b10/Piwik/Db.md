@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Db
 ==
 
 Helper class that contains SQL related helper functions.
-
-Description
------------
 
 Plugins should use this class to execute SQL against the database.
 
@@ -35,8 +32,6 @@ This class defines the following properties:
 ### `$lockPrivilegeGranted`
 
 Cached result of isLockprivilegeGranted function.
-
-#### Description
 
 Public so tests can simulate the situation where the lock tables privilege isn't granted.
 
@@ -78,18 +73,24 @@ Returns the database connection and creates it if it hasn't been already.
 
 #### Signature
 
-- It can return one of the following values:
-    - `Piwik\Tracker\Db`
-    - `Piwik\Db\AdapterInterface`
-    - [`Db`](../Piwik/Db.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`Piwik\Tracker\Db`|`Piwik\Db\AdapterInterface`|[`Db`](../Piwik/Db.md)) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="createdatabaseobject" id="createdatabaseobject"></a>
 <a name="createDatabaseObject" id="createDatabaseObject"></a>
 ### `createDatabaseObject()`
 
 Create the database object and connects to the database.
-
-#### Description
 
 Shouldn't be called directly, use [get](#get).
 
@@ -117,8 +118,6 @@ Shouldn't be called directly, use [get](#get).
 
 Executes an unprepared SQL query.
 
-#### Description
-
 Recommended for DDL statements like CREATE,
 DROP and ALTER. The return value is DBMS-specific. For MySQLI, it returns the
 number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
@@ -139,9 +138,18 @@ number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
       </div>
    </li>
    </ul>
-- It can return one of the following values:
-    - `integer`
-    - `Zend_Db_Statement`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`integer`|`Zend_Db_Statement`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is an error in the SQL.
 
@@ -150,8 +158,6 @@ number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
 ### `query()`
 
 Executes an SQL query and returns the Zend_Db_Statement object.
-
-#### Description
 
 If you want to fetch data from the DB you should use one of the fetch... functions.
 
@@ -219,8 +225,18 @@ Executes the SQL query and fetches all the rows from the result set.
       </div>
    </li>
    </ul>
-- _Returns:_ (one row in the array per row fetched in the DB)
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">(one row in the array per row fetched in the DB)</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -328,8 +344,18 @@ Executes an SQL query and returns the entire result set indexed by the first sel
       </div>
    </li>
    </ul>
-- _Returns:_ eg, ``` array('col1value1' => array('col2' => '...', 'col3' => ...), 'col1value2' => array('col2' => '...', 'col3' => ...)) ```
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">eg, ``` array('col1value1' => array('col2' => '...', 'col3' => ...), 'col1value2' => array('col2' => '...', 'col3' => ...)) ```</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -338,8 +364,6 @@ Executes an SQL query and returns the entire result set indexed by the first sel
 ### `deleteAllRows()`
 
 Deletes all desired rows in a table, while using a limit.
-
-#### Description
 
 This function will execute many
 DELETE queries until there are no more rows to delete.
@@ -408,16 +432,24 @@ locking the table for too long.
       </div>
    </li>
    </ul>
-- _Returns:_ The total number of rows deleted.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">The total number of rows deleted.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="optimizetables" id="optimizetables"></a>
 <a name="optimizeTables" id="optimizeTables"></a>
 ### `optimizeTables()`
 
 Runs an OPTIMIZE TABLE query on the supplied table or tables.
-
-#### Description
 
 The table names must be prefixed
 (see [Common::prefixTable](#)).
@@ -449,8 +481,6 @@ set to **1**.
 
 Drops the supplied table or tables.
 
-#### Description
-
 The table names must be prefixed (see [Common::prefixTable](#)).
 
 #### Signature
@@ -476,8 +506,6 @@ The table names must be prefixed (see [Common::prefixTable](#)).
 ### `lockTables()`
 
 Locks the supplied table or tables.
-
-#### Description
 
 The table names must be prefixed (see [Common::prefixTable](#)).
 
@@ -518,8 +546,6 @@ should still work in case it is not granted.
 
 Releases all table locks.
 
-#### Description
-
 **NOTE:** Piwik does not require the LOCK TABLES privilege to be available. Piwik
 should still work in case it is not granted.
 
@@ -532,8 +558,6 @@ should still work in case it is not granted.
 ### `segmentedFetchFirst()`
 
 Performs a SELECT on a table one chunk at a time and returns the first successfully fetched value.
-
-#### Description
 
 In other words, if running a SELECT on one chunk of the table doesn't
 return a value, we move on to the next chunk and we keep moving until
@@ -623,8 +647,6 @@ for too long.
 
 Performs a SELECT on a table one chunk at a time and returns an array of every fetched value.
 
-#### Description
-
 This function will break up a SELECT into several smaller SELECTs and
 accumulate the result. It should be used when performing a SELECT that can
 take a long time to finish. Using several smaller SELECTs will ensure that
@@ -686,16 +708,24 @@ the table will not be locked for too long.
       </div>
    </li>
    </ul>
-- _Returns:_ An array of primitive values.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array of primitive values.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="segmentedfetchall" id="segmentedfetchall"></a>
 <a name="segmentedFetchAll" id="segmentedFetchAll"></a>
 ### `segmentedFetchAll()`
 
 Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
-
-#### Description
 
 This function will break up a SELECT into several smaller SELECTs and
 accumulate the result. It should be used when performing a SELECT that can
@@ -758,8 +788,18 @@ the table will not be locked for too long.
       </div>
    </li>
    </ul>
-- _Returns:_ An array of rows that includes the result set of every executed query.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array of rows that includes the result set of every executed query.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="segmentedquery" id="segmentedquery"></a>
 <a name="segmentedQuery" id="segmentedQuery"></a>
@@ -831,8 +871,6 @@ Performs a non-SELECT query on a table one chunk at a time.
 
 Attempts to get a named lock.
 
-#### Description
-
 This function uses a timeout of 1s, but will
 retry a set number of time.
 
@@ -862,8 +900,18 @@ retry a set number of time.
       </div>
    </li>
    </ul>
-- _Returns:_ `true` if the lock was obtained, `false` if otherwise.
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">`true` if the lock was obtained, `false` if otherwise.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="releasedblock" id="releasedblock"></a>
 <a name="releaseDbLock" id="releaseDbLock"></a>
@@ -887,8 +935,18 @@ Releases a named lock.
       </div>
    </li>
    </ul>
-- _Returns:_ `true` if the lock was released, `false` if otherwise.
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">`true` if the lock was released, `false` if otherwise.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="islockprivilegegranted" id="islockprivilegegranted"></a>
 <a name="isLockPrivilegeGranted" id="isLockPrivilegeGranted"></a>

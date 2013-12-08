@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 WidgetsList
 ===========
 
 Manages the global list of reports that can be displayed as dashboard widgets.
-
-Description
------------
 
 Reports are added as dashboard widgets through the [WidgetsList.addWidgets](#)
 event. Plugins should call [add](#add) in event observers for this event.
@@ -29,8 +26,18 @@ Returns all available widgets.
 
 #### Signature
 
-- _Returns:_ Maps widget categories with an array of widget information, eg, ``` array( 'Visitors' => array( array(...), array(...) ), 'Visits' => array( array(...), array(...) ), ) ```
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">Maps widget categories with an array of widget information, eg, ``` array( 'Visitors' => array( array(...), array(...) ), 'Visits' => array( array(...), array(...) ), ) ```</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>

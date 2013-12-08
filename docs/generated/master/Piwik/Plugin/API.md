@@ -1,12 +1,9 @@
-<small>Piwik\Plugin</small>
+<small>Piwik\Plugin\</small>
 
 API
 ===
 
 The base class of all API singletons.
-
-Description
------------
 
 Plugins that want to expose functionality through an API should create a class
 that derives from this one. Every public method in that class will be callable

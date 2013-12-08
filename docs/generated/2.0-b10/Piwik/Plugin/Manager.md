@@ -1,4 +1,4 @@
-<small>Piwik\Plugin</small>
+<small>Piwik\Plugin\</small>
 
 Manager
 =======
@@ -71,8 +71,6 @@ Returns true if plugin is loaded (in memory).
 
 Returns the theme currently enabled.
 
-#### Description
-
 If no theme is enabled, Zeitgeist is returned (default theme)
 
 #### Signature
@@ -85,14 +83,22 @@ If no theme is enabled, Zeitgeist is returned (default theme)
 
 Returns info regarding all plugins.
 
-#### Description
-
 Loads plugins that can be loaded.
 
 #### Signature
 
-- _Returns:_ An array that maps plugin names with arrays of plugin info. Plugin info arrays will contain the following entries: - **activated**: Whether the plugin is activated. - **alwaysActivated**: Whether the plugin should always be activated, or not. - **uninstallable**: Whether the plugin is uninstallable or not. - **invalid**: If the plugin is invalid, this property will be set to true. If the plugin is not invalid, this property will not exist. - **info**: If the plugin was loaded, will hold the plugin information. See [Plugin::getInformation](#).
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array that maps plugin names with arrays of plugin info. Plugin info arrays will contain the following entries: - **activated**: Whether the plugin is activated. - **alwaysActivated**: Whether the plugin should always be activated, or not. - **uninstallable**: Whether the plugin is uninstallable or not. - **invalid**: If the plugin is invalid, this property will be set to true. If the plugin is not invalid, this property will not exist. - **info**: If the plugin was loaded, will hold the plugin information. See [Plugin::getInformation](#).</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getinstalledpluginsname" id="getinstalledpluginsname"></a>
 <a name="getInstalledPluginsName" id="getInstalledPluginsName"></a>

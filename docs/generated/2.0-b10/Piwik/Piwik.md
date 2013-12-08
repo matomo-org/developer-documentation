@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Piwik
 =====
 
 Main piwik helper class.
-
-Description
------------
 
 Contains helper methods for a variety of common tasks. Plugin developers are
 encouraged to reuse these methods.
@@ -457,8 +454,6 @@ Post an event to Piwik's event dispatcher which will execute the event's observe
 
 Register an observer to an event.
 
-#### Description
-
 Observers should normally be defined in plugin objects. It is unlikely that you will
 need to use this function.
 
@@ -495,8 +490,6 @@ need to use this function.
 ### `translate()`
 
 Returns an internationalized string using a translation ID.
-
-#### Description
 
 If a translation
 cannot be found for the ID, the ID is returned.

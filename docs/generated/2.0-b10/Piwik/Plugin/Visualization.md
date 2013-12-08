@@ -1,12 +1,9 @@
-<small>Piwik\Plugin</small>
+<small>Piwik\Plugin\</small>
 
 Visualization
 =============
 
 Base class for all DataTable visualizations.
-
-Description
------------
 
 A Visualization is a special kind of ViewDataTable that comes with some
 handy hooks. Different visualizations are used to handle different values of the viewDataTable query parameter.
@@ -32,8 +29,6 @@ The class defines the following methods:
 ### `__construct()`
 
 Constructor.
-
-#### Description
 
 Initializes the default config, requestConfig and the request itself. After configuring some
 mandatory properties reports can modify the view by listening to the hook 'ViewDataTable.configure'.
@@ -71,8 +66,6 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 ### `assignTemplateVar()`
 
 Assigns a template variable.
-
-#### Description
 
 All assigned variables are available in the twig view template afterwards. You can
 assign either one variable by setting $vars and $value or an array of key/value pairs.
@@ -140,8 +133,6 @@ This hook is executed after generic filters like "filter_limit" and "filter_offs
 ### `afterAllFiltersAreApplied()`
 
 This hook is executed after the data table is loaded and after all filteres are applied.
-
-#### Description
 
 Format the data that you want to pass to the view here.
 

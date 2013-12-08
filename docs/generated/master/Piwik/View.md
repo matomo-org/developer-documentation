@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 View
 ====
 
 Encapsulates and manages a [Twig](http://twig.sensiolabs.org/) template.
-
-Description
------------
 
 View lets you set properties that will be passed on to a Twig template.
 View will also set several properties that will be available in all Twig
@@ -136,8 +133,6 @@ Returns the variables to bind to the template when rendering.
 
 Directly assigns a variable to the view script.
 
-#### Description
-
 Variable names may not be prefixed with '_'.
 
 #### Signature
@@ -174,8 +169,6 @@ Variable names may not be prefixed with '_'.
 
 Retrieves an assigned variable.
 
-#### Description
-
 Variable names may not be prefixed with '_'.
 
 #### Signature
@@ -194,8 +187,18 @@ Variable names may not be prefixed with '_'.
       </div>
    </li>
    </ul>
-- _Returns:_ The variable value.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">The variable value.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
@@ -203,23 +206,29 @@ Variable names may not be prefixed with '_'.
 
 Renders the current view.
 
-#### Description
-
 Also sends the stored 'Content-Type' HTML header.
 See [setContentType()](/api-reference/Piwik/View#setcontenttype).
 
 #### Signature
 
-- _Returns:_ Generated template.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">Generated template.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="setcontenttype" id="setcontenttype"></a>
 <a name="setContentType" id="setContentType"></a>
 ### `setContentType()`
 
 Set stored value used in the Content-Type HTTP header field.
-
-#### Description
 
 The header is
 set just before rendering.
@@ -247,8 +256,6 @@ set just before rendering.
 ### `setXFrameOptions()`
 
 Set X-Frame-Options field in the HTTP response.
-
-#### Description
 
 The header is set just
 before rendering.
@@ -306,7 +313,16 @@ Creates a View for and then renders the single report template.
       </div>
    </li>
    </ul>
-- _Returns:_ The report contents if `$fetch` is true.
-    - `string`
-    - `void`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`void`) &mdash;
+    <div markdown="1" class="param-desc">The report contents if `$fetch` is true.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

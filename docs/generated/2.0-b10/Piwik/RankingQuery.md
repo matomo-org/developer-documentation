@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 RankingQuery
 ============
 
 The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
-
-Description
------------
 
 The
 advanced use cases are explained in the doc comments of the methods.
@@ -123,8 +120,6 @@ Set the value to use for the label in the 'Others' row.
 
 Add a label column.
 
-#### Description
-
 Labels are the columns that are replaced with "Others" after the limit.
 
 #### Signature
@@ -185,8 +180,6 @@ Add a column that has be added to the outer queries.
 
 Sets a column that will be used to filter the result into two categories.
 
-#### Description
-
 Rows where this column has a value > 0 will be removed from the result and put
 into another array. Both the result and the array of excluded rows are returned
 by [execute](#execute).
@@ -216,8 +209,6 @@ by [execute](#execute).
 ### `partitionResultIntoMultipleGroups()`
 
 This method can be used to parition the result based on the possible values of one table column.
-
-#### Description
 
 This means the query will split the result set into other sets of rows
 for each possible value you provide (where the rows of each set have a column value
@@ -266,8 +257,6 @@ for rows where `log_action.type = TYPE_ACTION_URL` and for rows `log_action.type
 
 Executes the query.
 
-#### Description
-
 The object has to be configured first using the other methods.
 
 #### Signature
@@ -296,16 +285,24 @@ The object has to be configured first using the other methods.
       </div>
    </li>
    </ul>
-- _Returns:_ The format depends on which methods have been used to configure the ranking query.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">The format depends on which methods have been used to configure the ranking query.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="generatequery" id="generatequery"></a>
 <a name="generateQuery" id="generateQuery"></a>
 ### `generateQuery()`
 
 Generate the SQL code that does the magic.
-
-#### Description
 
 If you want to get the result, use execute() instead. If you want to run the query
 yourself, use this method.
@@ -326,6 +323,16 @@ yourself, use this method.
       </div>
    </li>
    </ul>
-- _Returns:_ The entire ranking query SQL.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The entire ranking query SQL.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

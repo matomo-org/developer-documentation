@@ -1,12 +1,9 @@
-<small>Piwik\Plugin</small>
+<small>Piwik\Plugin\</small>
 
 ViewDataTable
 =============
 
 The base class of all analytics visualizations.
-
-Description
------------
 
 ViewDataTable instances load analytics data via Piwik's API and then output some
 type of visualization of that data.
@@ -100,8 +97,6 @@ The abstract class defines the following methods:
 
 Constructor.
 
-#### Description
-
 Initializes the default config, requestConfig and the request itself. After configuring some
 mandatory properties reports can modify the view by listening to the hook 'ViewDataTable.configure'.
 
@@ -138,8 +133,6 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 
 Returns the default config.
 
-#### Description
-
 Custom viewDataTables can change the default config to their needs by either
 modifying this config or creating an own Config class that extends the default Config.
 
@@ -153,8 +146,6 @@ modifying this config or creating an own Config class that extends the default C
 
 Returns the default request config.
 
-#### Description
-
 Custom viewDataTables can change the default config to their needs by either
 modifying this config or creating an own RequestConfig class that extends the default RequestConfig.
 
@@ -167,8 +158,6 @@ modifying this config or creating an own RequestConfig class that extends the de
 ### `getViewDataTableId()`
 
 Returns the viewDataTable ID for this DataTable visualization.
-
-#### Description
 
 Derived classes  should declare a const ID field
 with the viewDataTable ID.
@@ -221,8 +210,6 @@ Returns the DataTable loaded from the API
 
 To prevent calling an API multiple times, the DataTable can be set directly.
 
-#### Description
-
 It won't be loaded again from the API in this case
 
 #### Signature
@@ -241,8 +228,18 @@ It won't be loaded again from the API in this case
       </div>
    </li>
    </ul>
-- _Returns:_ $dataTable DataTable
-    - `void`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`void`) &mdash;
+    <div markdown="1" class="param-desc">$dataTable DataTable</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
@@ -252,8 +249,18 @@ Requests all needed data and renders the view.
 
 #### Signature
 
-- _Returns:_ The result of rendering.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The result of rendering.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="isrequestingsingledatatable" id="isrequestingsingledatatable"></a>
 <a name="isRequestingSingleDataTable" id="isRequestingSingleDataTable"></a>
@@ -270,8 +277,6 @@ Determine if the view data table requests a single data table or not.
 ### `canDisplayViewDataTable()`
 
 Here you can define whether your visualization can display a specific data table or not.
-
-#### Description
 
 For instance you may
 only display your visualization in case a single data table is requested. If the method returns true, the footer

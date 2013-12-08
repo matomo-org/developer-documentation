@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 Sort
 ====
 
 Sorts a DataTable based on the value of a specific column.
-
-Description
------------
 
 Possible to specify a natural sorting (see php.net/natsort for details)
 

@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 ColumnCallbackAddColumnPercentage
 =================================
 
 Calculates a percentage value for each row of a DataTable and adds the result to each row.
-
-Description
------------
 
 See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient) for more information.
 

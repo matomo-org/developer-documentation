@@ -1,4 +1,4 @@
-<small>Piwik\Notification</small>
+<small>Piwik\Notification\</small>
 
 Manager
 =======
@@ -17,8 +17,6 @@ The class defines the following methods:
 ### `notify()`
 
 Posts a notification that will be shown in Piwik's status bar.
-
-#### Description
 
 If a notification with the same id
 has been posted and has not been closed/removed, it will be replaced with `$notification`.

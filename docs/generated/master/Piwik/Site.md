@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Site
 ====
 
 Provides access to individual site data (such as name, URL, etc.).
-
-Description
------------
 
 ### Examples
 
@@ -133,8 +130,6 @@ Sets the cached Site data with a non-associated array of site data.
 
 The Multisites reports displays the first calendar date as the earliest day available for all websites.
 
-#### Description
-
 Also, today is the later "today" available across all timezones.
 
 #### Signature
@@ -153,16 +148,24 @@ Also, today is the later "today" available across all timezones.
       </div>
    </li>
    </ul>
-- _Returns:_ of two Date instances. First is the min-date & the second is the max date.
-    - [`Date[]`](../Piwik/Date.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Date[]`](../Piwik/Date.md)) &mdash;
+    <div markdown="1" class="param-desc">of two Date instances. First is the min-date & the second is the max date.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
 ### `__toString()`
 
 Returns a string representation of the site this instance references.
-
-#### Description
 
 Useful for debugging.
 
@@ -356,16 +359,24 @@ Checks the given string for valid site ids and returns them as an array.
       </div>
    </li>
    </ul>
-- _Returns:_ An array of valid, unique integers.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array of valid, unique integers.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="clearcache" id="clearcache"></a>
 <a name="clearCache" id="clearCache"></a>
 ### `clearCache()`
 
 Clears the site data cache.
-
-#### Description
 
 See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray()](/api-reference/Piwik/Site#setsitesfromarray).
 

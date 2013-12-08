@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Plugin
 ======
 
 Base class of all Plugin Descriptor classes.
-
-Description
------------
 
 Any plugin that wants to add event observers to one of Piwik's [hooks](/api-reference/hooks##),
 or has special installation/uninstallation logic must implement this class.
@@ -128,16 +125,24 @@ Returns a list of hooks with associated event observers.
 
 #### Signature
 
-- _Returns:_ eg, array( 'API.getReportMetadata' => 'myPluginFunction', 'Another.event'         => array( 'function' => 'myOtherPluginFunction', 'after'    => true // execute after callbacks w/o ordering ) 'Yet.Another.event'     => array( 'function' => 'myOtherPluginFunction', 'before'   => true // execute before callbacks w/o ordering ) )
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">eg, array( 'API.getReportMetadata' => 'myPluginFunction', 'Another.event'         => array( 'function' => 'myOtherPluginFunction', 'after'    => true // execute after callbacks w/o ordering ) 'Yet.Another.event'     => array( 'function' => 'myOtherPluginFunction', 'before'   => true // execute before callbacks w/o ordering ) )</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="postload" id="postload"></a>
 <a name="postLoad" id="postLoad"></a>
 ### `postLoad()`
 
 This method is executed after a plugin is loaded and translations are registered.
-
-#### Description
 
 Useful for initialization code that uses translated strings from the plugin.
 
@@ -150,8 +155,6 @@ Useful for initialization code that uses translated strings from the plugin.
 ### `install()`
 
 Installs the plugin.
-
-#### Description
 
 Derived classes should implement this class if the plugin
 needs to:
@@ -170,8 +173,6 @@ needs to:
 ### `uninstall()`
 
 Uninstalls the plugins.
-
-#### Description
 
 Derived classes should implement this class if the changes
 made in [install()](/api-reference/Piwik/Plugin#install) should be undone during uninstallation.
@@ -244,8 +245,6 @@ Returns the plugin's base class name without the namespace, e.g., "UserCountry" 
 
 Extracts the plugin name from a backtrace array.
 
-#### Description
-
 Returns false if we can't find one.
 
 #### Signature
@@ -264,7 +263,16 @@ Returns false if we can't find one.
       </div>
    </li>
    </ul>
-- It can return one of the following values:
-    - `string`
-    - `Piwik\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

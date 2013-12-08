@@ -1,12 +1,9 @@
-<small>Piwik\DataAccess</small>
+<small>Piwik\DataAccess\</small>
 
 LogAggregator
 =============
 
 Contains methods that aggregates log data (visits, actions, conversions, ecommerce).
-
-Description
------------
 
 Plugin [Archiver](#) descendants can use the methods in this class to aggregate data
 in the log tables without creating their own SQL queries.
@@ -101,8 +98,6 @@ The class defines the following methods:
 
 Aggregates visit logs, optionally grouping by some dimension, and returns the aggregated data.
 
-#### Description
-
 <a name="queryVisitsByDimension-result-set"/>
 **Result Set**
 
@@ -182,16 +177,24 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
       </div>
    </li>
    </ul>
-- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryVisitsByDimension-result-set) to see what aggregate data is calculated by the query.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="queryecommerceitems" id="queryecommerceitems"></a>
 <a name="queryEcommerceItems" id="queryEcommerceItems"></a>
 ### `queryEcommerceItems()`
 
 Aggregates ecommerce item data (everything stored in the **log_conversion_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
-
-#### Description
 
 <a name="queryEcommerceItems-result-set"/>
 **Result Set**
@@ -233,16 +236,24 @@ Segmentation is not yet supported in this aggregation method.
       </div>
    </li>
    </ul>
-- _Returns:_ A statement object that can be used to iterate through the query's result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.
-    - `Piwik\DataAccess\Zend_Db_Statement`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`Piwik\DataAccess\Zend_Db_Statement`) &mdash;
+    <div markdown="1" class="param-desc">A statement object that can be used to iterate through the query's result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="queryactionsbydimension" id="queryactionsbydimension"></a>
 <a name="queryActionsByDimension" id="queryActionsByDimension"></a>
 ### `queryActionsByDimension()`
 
 Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.
-
-#### Description
 
 <a name="queryActionsByDimension-result-set"/>
 **Result Set**
@@ -325,16 +336,24 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
       </div>
    </li>
    </ul>
-- _Returns:_ A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](#). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getselectsfromrangedcolumn" id="getselectsfromrangedcolumn"></a>
 <a name="getSelectsFromRangedColumn" id="getSelectsFromRangedColumn"></a>
 ### `getSelectsFromRangedColumn()`
 
 Creates and returns an array of SQL SELECT expressions that will count the number of rows for which a specific column falls within specific ranges.
-
-#### Description
 
 The SELECT expressions will count the number of column values that are
 within each range.
@@ -426,6 +445,16 @@ in one of the query... methods (for example [queryVisitsByDimension](#queryVisit
       </div>
    </li>
    </ul>
-- _Returns:_ An array of SQL SELECT expressions, for example, ``` array( 'sum(case when log_visit.visit_total_actions between 0 and 2 then 1 else 0 end) as vta0', 'sum(case when log_visit.visit_total_actions > 2 then 1 else 0 end) as vta1' ) ```
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array of SQL SELECT expressions, for example, ``` array( 'sum(case when log_visit.visit_total_actions between 0 and 2 then 1 else 0 end) as vta0', 'sum(case when log_visit.visit_total_actions > 2 then 1 else 0 end) as vta1' ) ```</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

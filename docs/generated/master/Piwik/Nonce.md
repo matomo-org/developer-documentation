@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Nonce
 =====
 
 Nonce class.
-
-Description
------------
 
 A cryptographic nonce -- "number used only once" -- is often recommended as
 part of a robust defense against cross-site request forgery (CSRF/XSRF). This
@@ -32,8 +29,6 @@ The class defines the following methods:
 ### `getNonce()`
 
 Returns the existing nonce.
-
-#### Description
 
 If none exists, a new nonce will be generated.
 
@@ -71,8 +66,6 @@ If none exists, a new nonce will be generated.
 
 Returns if a nonce is valid and comes from a valid request.
 
-#### Description
-
 A nonce is valid if it matches the current nonce and if the current nonce
 has not expired.
 
@@ -105,8 +98,18 @@ and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piw
       </div>
    </li>
    </ul>
-- _Returns:_ true if valid; false otherwise
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">true if valid; false otherwise</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="discardnonce" id="discardnonce"></a>
 <a name="discardNonce" id="discardNonce"></a>
@@ -140,9 +143,18 @@ Returns Origin HTTP header or false if not found.
 
 #### Signature
 
-- It can return one of the following values:
-    - `string`
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`bool`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getacceptableorigins" id="getacceptableorigins"></a>
 <a name="getAcceptableOrigins" id="getAcceptableOrigins"></a>

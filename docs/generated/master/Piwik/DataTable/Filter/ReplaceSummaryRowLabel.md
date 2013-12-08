@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 ReplaceSummaryRowLabel
 ======================
 
 Replaces the label of the summary row with a supplied label.
-
-Description
------------
 
 This filter is only used to prettify the summary row label and so it should
 always be queued on a DataTable.

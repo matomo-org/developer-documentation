@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 AddColumnsProcessedMetricsGoal
 ==============================
 
 Adds the Goal related metrics to a DataTable using metrics that already exist.
-
-Description
------------
 
 Metrics added are:
 - **revenue_per_visit**: total goal and ecommerce revenue / nb_visits
@@ -94,8 +91,6 @@ Constructor.
 ### `filter()`
 
 Adds the processed metrics.
-
-#### Description
 
 See [AddColumnsProcessedMetrics](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetrics) for
 more information.

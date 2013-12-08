@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Url
 ===
 
 Provides URL related helper methods.
-
-Description
------------
 
 This class provides simple methods that can be used to parse and modify
 the current URL. It is most useful when plugins need to redirect the current
@@ -64,8 +61,18 @@ Returns the current URL.
 
 #### Signature
 
-- _Returns:_ eg, `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcurrenturlwithoutquerystring" id="getcurrenturlwithoutquerystring"></a>
 <a name="getCurrentUrlWithoutQueryString" id="getCurrentUrlWithoutQueryString"></a>
@@ -89,8 +96,18 @@ Returns the current URL without the query string.
       </div>
    </li>
    </ul>
-- _Returns:_ eg, `"http://example.org/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `"http://example.org/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcurrenturlwithoutfilename" id="getcurrenturlwithoutfilename"></a>
 <a name="getCurrentUrlWithoutFileName" id="getCurrentUrlWithoutFileName"></a>
@@ -100,8 +117,18 @@ Returns the current URL without the query string and without the name of the fil
 
 #### Signature
 
-- _Returns:_ eg, `"http://example.org/dir1/dir2/"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `"http://example.org/dir1/dir2/"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcurrentscriptpath" id="getcurrentscriptpath"></a>
 <a name="getCurrentScriptPath" id="getCurrentScriptPath"></a>
@@ -109,14 +136,22 @@ Returns the current URL without the query string and without the name of the fil
 
 Returns the path to the script being executed.
 
-#### Description
-
 The script file name is not included.
 
 #### Signature
 
-- _Returns:_ eg, `"/dir1/dir2/"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `"/dir1/dir2/"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcurrentscriptname" id="getcurrentscriptname"></a>
 <a name="getCurrentScriptName" id="getCurrentScriptName"></a>
@@ -124,14 +159,22 @@ The script file name is not included.
 
 Returns the path to the script being executed.
 
-#### Description
-
 Includes the script file name.
 
 #### Signature
 
-- _Returns:_ eg, `"/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `"/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcurrentscheme" id="getcurrentscheme"></a>
 <a name="getCurrentScheme" id="getCurrentScheme"></a>
@@ -141,8 +184,18 @@ Returns the current URL's protocol.
 
 #### Signature
 
-- _Returns:_ `'https'` or `'http'`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">`'https'` or `'http'`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcurrenthost" id="getcurrenthost"></a>
 <a name="getCurrentHost" id="getCurrentHost"></a>
@@ -176,8 +229,18 @@ Returns the current host.
       </div>
    </li>
    </ul>
-- _Returns:_ eg, `"example.org"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `"example.org"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcurrentquerystring" id="getcurrentquerystring"></a>
 <a name="getCurrentQueryString" id="getCurrentQueryString"></a>
@@ -187,8 +250,18 @@ Returns the query string of the current URL.
 
 #### Signature
 
-- _Returns:_ eg, `"?param1=value1&param2=value2"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `"?param1=value1&param2=value2"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getarrayfromcurrentquerystring" id="getarrayfromcurrentquerystring"></a>
 <a name="getArrayFromCurrentQueryString" id="getArrayFromCurrentQueryString"></a>
@@ -198,16 +271,24 @@ Returns an array mapping query paramater names with query parameter values for t
 
 #### Signature
 
-- _Returns:_ If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"` this will return: ``` array( 'param1' => string 'value1', 'param2' => string 'value2' ) ```
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"` this will return: ``` array( 'param1' => string 'value1', 'param2' => string 'value2' ) ```</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getcurrentquerystringwithparametersmodified" id="getcurrentquerystringwithparametersmodified"></a>
 <a name="getCurrentQueryStringWithParametersModified" id="getCurrentQueryStringWithParametersModified"></a>
 ### `getCurrentQueryStringWithParametersModified()`
 
 Modifies the current query string with the supplied parameters and returns the result.
-
-#### Description
 
 Parameters in the current URL will be overwritten with values
 in `$params` and parameters absent from the current URL but present in `$params`
@@ -229,8 +310,18 @@ will be added to the result.
       </div>
    </li>
    </ul>
-- _Returns:_ eg, `"?param2=value2&param3=value3"`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `"?param2=value2&param3=value3"`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getquerystringfromparameters" id="getquerystringfromparameters"></a>
 <a name="getQueryStringFromParameters" id="getQueryStringFromParameters"></a>
@@ -254,16 +345,24 @@ Converts an an array of parameters name => value mappings to a query string.
       </div>
    </li>
    </ul>
-- _Returns:_ eg. `"param1=10&param2[]=1&param2[]=2"`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg. `"param1=10&param2[]=1&param2[]=2"`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="redirecttoreferrer" id="redirecttoreferrer"></a>
 <a name="redirectToReferrer" id="redirectToReferrer"></a>
 ### `redirectToReferrer()`
 
 Redirects the user to the referrer.
-
-#### Description
 
 If no referrer exists, the user is redirected
 to the current URL without query string.
@@ -304,9 +403,18 @@ Returns the HTTP_REFERER header, or false if not found.
 
 #### Signature
 
-- It can return one of the following values:
-    - `string`
-    - `Piwik\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="islocalurl" id="islocalurl"></a>
 <a name="isLocalUrl" id="isLocalUrl"></a>
@@ -330,6 +438,16 @@ Returns true if the URL points to something on the same host, false if otherwise
       </div>
    </li>
    </ul>
-- _Returns:_ True if local; false otherwise.
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">True if local; false otherwise.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

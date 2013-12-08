@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 ColumnCallbackDeleteRow
 =======================
 
 Delete all rows for which a callback returns true.
-
-Description
------------
 
 // TODO: modify
 

@@ -1,4 +1,4 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Filesystem
 ==========
@@ -21,8 +21,6 @@ The class defines the following methods:
 ### `mkdir()`
 
 Attempts to create a new directory.
-
-#### Description
 
 All errors are silenced.
 
@@ -62,8 +60,6 @@ Note: This function does not create directories recursively.
 
 Recursively find pathnames that match a pattern.
 
-#### Description
-
 See [glob](#http://php.net/manual/en/function.glob.php) for more info.
 
 #### Signature
@@ -102,8 +98,18 @@ See [glob](#http://php.net/manual/en/function.glob.php) for more info.
       </div>
    </li>
    </ul>
-- _Returns:_ The list of paths that match the pattern.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">The list of paths that match the pattern.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="unlinkrecursive" id="unlinkrecursive"></a>
 <a name="unlinkRecursive" id="unlinkRecursive"></a>

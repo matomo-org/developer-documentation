@@ -1,12 +1,9 @@
-<small>Piwik\Plugin</small>
+<small>Piwik\Plugin\</small>
 
 Settings
 ========
 
 Base class of all Settings providers.
-
-Description
------------
 
 Plugins that define their own settings can extend
 this class to easily make their settings available to Piwik users.
@@ -80,8 +77,6 @@ Returns the settings that can be displayed for the current user.
 
 Returns all available settings.
 
-#### Description
-
 This will include settings that are not available
 to the current user (such as settings available only to the Super User).
 
@@ -105,8 +100,6 @@ Saves (persists) the current setting values in the database.
 
 Removes all settings for this plugin from the database.
 
-#### Description
-
 Useful when uninstalling
 a plugin.
 
@@ -119,8 +112,6 @@ a plugin.
 ### `getSettingValue()`
 
 Returns the current value for a setting.
-
-#### Description
 
 If no value is stored, the default value
 is be returned.
@@ -150,8 +141,6 @@ is be returned.
 ### `setSettingValue()`
 
 Sets (overwrites) the value of a setting in memory.
-
-#### Description
 
 To persist the change, [save()](/api-reference/Piwik/Plugin/Settings#save) must be
 called afterwards, otherwise the change has no effect.
@@ -195,8 +184,6 @@ filter, the setting value will be casted to the appropriate data type.
 ### `removeSettingValue()`
 
 Unsets a setting value in memory.
-
-#### Description
 
 To persist the change, [save()](/api-reference/Piwik/Plugin/Settings#save) must be
 called afterwards, otherwise the change has no effect.

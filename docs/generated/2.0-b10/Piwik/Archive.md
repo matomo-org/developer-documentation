@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Archive
 =======
 
 The **Archive** class is used to query cached analytics statistics (termed "archive data").
-
-Description
------------
 
 You can use **Archive** instances to get archive data for one or more sites,
 for one or more periods and one optional segment.
@@ -116,8 +113,6 @@ The class defines the following methods:
 
 Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional Segment.
 
-#### Description
-
 This method uses data that is found in query parameters, so the parameters to this
 function can all be strings.
 
@@ -187,8 +182,6 @@ If you want to create an Archive instance with an array of Period instances, use
 ### `factory()`
 
 Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
-
-#### Description
 
 This method uses an array of Period instances and a Segment instance, instead of strings
 like [Archive::build](#build).
@@ -260,8 +253,6 @@ use [Archive::build](#build).
 
 Queries and returns metric data in an array.
 
-#### Description
-
 If multiple sites were requested in [build](#build) or [factory](#factory) the result will
 be indexed by site ID.
 
@@ -287,16 +278,24 @@ will be indexed by site ID first, then period.
       </div>
    </li>
    </ul>
-- _Returns:_ False if there is no data to return, a numeric if only we're not querying for multiple sites/dates, or an array if multiple sites, dates or names are queried for.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">False if there is no data to return, a numeric if only we're not querying for multiple sites/dates, or an array if multiple sites, dates or names are queried for.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getblob" id="getblob"></a>
 <a name="getBlob" id="getBlob"></a>
 ### `getBlob()`
 
 Queries and returns blob data in an array.
-
-#### Description
 
 Reports are stored in blobs as serialized arrays of DataTable\Row instances, but this
 data can technically be anything. In other words, you can store whatever you want
@@ -337,16 +336,24 @@ will be indexed by site ID first, then period.
       </div>
    </li>
    </ul>
-- _Returns:_ An array of appropriately indexed blob data.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array of appropriately indexed blob data.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getdatatablefromnumeric" id="getdatatablefromnumeric"></a>
 <a name="getDataTableFromNumeric" id="getDataTableFromNumeric"></a>
 ### `getDataTableFromNumeric()`
 
 Queries and returns metric data in a DataTable instance.
-
-#### Description
 
 If multiple sites were requested in [build](#build) or [factory](#factory) the result will
 be a DataTable\Map that is indexed by site ID.
@@ -377,17 +384,24 @@ Note: Every DataTable instance returned will have at most one row in it. The con
       </div>
    </li>
    </ul>
-- _Returns:_ A DataTable if multiple sites and periods were not requested. An appropriately indexed DataTable\Map if otherwise.
-    - [`DataTable`](../Piwik/DataTable.md)
-    - [`Map`](../Piwik/DataTable/Map.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md)) &mdash;
+    <div markdown="1" class="param-desc">A DataTable if multiple sites and periods were not requested. An appropriately indexed DataTable\Map if otherwise.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getdatatable" id="getdatatable"></a>
 <a name="getDataTable" id="getDataTable"></a>
 ### `getDataTable()`
 
 Queries and returns a single report as a DataTable instance.
-
-#### Description
 
 This method will query blob data that is a serialized array of of DataTable\Row's and
 unserialize it.
@@ -428,17 +442,24 @@ indexed by period.
       </div>
    </li>
    </ul>
-- _Returns:_ A DataTable if multiple sites and periods were not requested. An appropriately indexed DataTable\Map if otherwise.
-    - [`DataTable`](../Piwik/DataTable.md)
-    - [`Map`](../Piwik/DataTable/Map.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md)) &mdash;
+    <div markdown="1" class="param-desc">A DataTable if multiple sites and periods were not requested. An appropriately indexed DataTable\Map if otherwise.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getdatatableexpanded" id="getdatatableexpanded"></a>
 <a name="getDataTableExpanded" id="getDataTableExpanded"></a>
 ### `getDataTableExpanded()`
 
 Queries and returns one report with all of its subtables loaded.
-
-#### Description
 
 If multiple sites were requested in [build](#build) or [factory](#factory) the result will
 be a DataTable\Map that is indexed by site ID.
@@ -496,9 +517,18 @@ indexed by period.
       </div>
    </li>
    </ul>
-- It can return one of the following values:
-    - [`DataTable`](../Piwik/DataTable.md)
-    - [`Map`](../Piwik/DataTable/Map.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md)) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getparams" id="getparams"></a>
 <a name="getParams" id="getParams"></a>
@@ -515,8 +545,6 @@ Returns an object describing the set of sites, the set of periods and the segmen
 ### `getDataTableFromArchive()`
 
 Helper function that creates an Archive instance and queries for report data using query parameter data.
-
-#### Description
 
 API methods can use this method to reduce code redundancy.
 
@@ -606,7 +634,16 @@ API methods can use this method to reduce code redundancy.
       </div>
    </li>
    </ul>
-- _Returns:_ @see [getDataTable](#getDataTable) and [getDataTableExpanded](#getDataTableExpanded) for more information
-    - [`DataTable`](../Piwik/DataTable.md)
-    - [`Map`](../Piwik/DataTable/Map.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md)) &mdash;
+    <div markdown="1" class="param-desc">@see [getDataTable](#getDataTable) and [getDataTableExpanded](#getDataTableExpanded) for more information</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

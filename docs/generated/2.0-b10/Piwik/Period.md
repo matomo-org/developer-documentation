@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Period
 ======
 
 Date range representation.
-
-Description
------------
 
 Piwik allows users to view aggregated statistics for each day and for date
 ranges consisting of several days. When requesting data, a _date_ string and
@@ -53,8 +50,6 @@ The abstract class defines the following methods:
 ### `factory()`
 
 Creates a new Period instance with a period ID and Date instance.
-
-#### Description
 
 Note: This method cannot create Range periods.
 
@@ -194,8 +189,18 @@ Returns the period ID.
 
 #### Signature
 
-- _Returns:_ A integer unique to this type of period.
-    - `int`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`int`) &mdash;
+    <div markdown="1" class="param-desc">A integer unique to this type of period.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getlabel" id="getlabel"></a>
 <a name="getLabel" id="getLabel"></a>
@@ -205,8 +210,18 @@ Returns the label for the current period.
 
 #### Signature
 
-- _Returns:_ `"day"`, `"week"`, `"month"`, `"year"`, `"range"`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">`"day"`, `"week"`, `"month"`, `"year"`, `"range"`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getnumberofsubperiods" id="getnumberofsubperiods"></a>
 <a name="getNumberOfSubperiods" id="getNumberOfSubperiods"></a>
@@ -223,8 +238,6 @@ Returns the number of available subperiods.
 ### `getSubperiods()`
 
 Returns the set of Period instances that together make up this period.
-
-#### Description
 
 For a year,
 this would be 12 months. For a month this would be 28-31 days. Etc.
@@ -255,8 +268,18 @@ Returns a list of strings representing the current period.
       </div>
    </li>
    </ul>
-- _Returns:_ An array of string dates that this period consists of.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array of string dates that this period consists of.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -306,6 +329,16 @@ Returns a succinct string describing this period.
 
 #### Signature
 
-- _Returns:_ eg, `'2012-01-01,2012-01-31'`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `'2012-01-01,2012-01-31'`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

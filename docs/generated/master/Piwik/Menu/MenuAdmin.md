@@ -1,12 +1,9 @@
-<small>Piwik\Menu</small>
+<small>Piwik\Menu\</small>
 
 MenuAdmin
 =========
 
 Contains menu entries for the Admin menu.
-
-Description
------------
 
 Plugins can subscribe to the 
 [Menu.Admin.addItems](/api-reference/hooks#menuadminadditems) event to add new pages to the admin menu.

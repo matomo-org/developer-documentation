@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 ColumnCallbackAddColumnQuotient
 ===============================
 
 Calculates the quotient of two columns and adds the result as a new column for each row of a DataTable.
-
-Description
------------
 
 This filter is used to calculate rate values (eg, `'bounce_rate'`), averages
 (eg, `'avg_time_on_page'`) and other types of values.

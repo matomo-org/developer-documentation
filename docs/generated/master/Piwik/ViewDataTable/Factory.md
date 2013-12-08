@@ -1,12 +1,9 @@
-<small>Piwik\ViewDataTable</small>
+<small>Piwik\ViewDataTable\</small>
 
 Factory
 =======
 
 Provides a means of creating [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
-
-Description
------------
 
 ### Examples
 
@@ -57,8 +54,6 @@ The class defines the following methods:
 ### `build()`
 
 Creates a [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance by ID.
-
-#### Description
 
 If the **viewDataTable** query parameter is set,
 this parameter's value is used as the ID.

@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 Truncate
 ========
 
 Truncates a DataTable by merging all rows after a certain index into a new summary row, unless the count of rows is less than the index.
-
-Description
------------
 
 The [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummaryRowLabel) filter will be queued after the table is truncated.
 

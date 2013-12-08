@@ -1,12 +1,9 @@
-<small>Piwik\Plugin</small>
+<small>Piwik\Plugin\</small>
 
 Visualization
 =============
 
 The base class for report visualizations that output HTML and use JavaScript.
-
-Description
------------
 
 Report visualizations that extend from this class will be displayed like all others in
 the Piwik UI. The following extra UI controls will be displayed around the visualization
@@ -129,8 +126,6 @@ The class defines the following methods:
 
 Constructor.
 
-#### Description
-
 Initializes the default config, requestConfig and the request itself. After configuring some
 mandatory properties reports can modify the view by listening to the hook 'ViewDataTable.configure'.
 
@@ -167,8 +162,6 @@ mandatory properties reports can modify the view by listening to the hook 'ViewD
 ### `assignTemplateVar()`
 
 Assigns a template variable.
-
-#### Description
 
 All assigned variables are available in the twig view template afterwards. You can
 assign either one variable by setting $vars and $value or an array of key/value pairs.
@@ -236,8 +229,6 @@ This hook is executed after generic filters like "filter_limit" and "filter_offs
 ### `afterAllFiltersAreApplied()`
 
 This hook is executed after the data table is loaded and after all filteres are applied.
-
-#### Description
 
 Format the data that you want to pass to the view here.
 

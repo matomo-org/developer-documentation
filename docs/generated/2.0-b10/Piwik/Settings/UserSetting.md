@@ -1,12 +1,9 @@
-<small>Piwik\Settings</small>
+<small>Piwik\Settings\</small>
 
 UserSetting
 ===========
 
 Describes a per user setting.
-
-Description
------------
 
 Each user will be able to change this setting but each user
 can set a different value. Changes from one user will not affect other users.
@@ -70,8 +67,6 @@ Constructor.
 
 Returns the display order.
 
-#### Description
-
 User settings are displayed after system settings.
 
 #### Signature
@@ -109,8 +104,6 @@ Sets the name of the user this setting will be set for.
 ### `removeAllUserSettingsForUser()`
 
 Unsets all settings for a user.
-
-#### Description
 
 The settings will be removed from the database. Used when
 a user is deleted.

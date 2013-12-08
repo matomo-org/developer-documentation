@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 ColumnCallbackAddColumn
 =======================
 
 Adds a new column to every row of a DataTable based on the result of callback.
-
-Description
------------
 
 **Basic usage example**
 

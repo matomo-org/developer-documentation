@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 GroupBy
 =======
 
 DataTable filter that will group DataTable rows together based on the results of a reduce function.
-
-Description
------------
 
 Rows with the same reduce result will be summed and merged.
 

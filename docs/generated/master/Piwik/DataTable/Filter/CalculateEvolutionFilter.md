@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 CalculateEvolutionFilter
 ========================
 
 A DataTable filter that calculates the evolution of a metric and adds it to each row as a percentage.
-
-Description
------------
 
 **This filter cannot be used as an argument to [DataTable::filter()](/api-reference/Piwik/DataTable#filter)** since
 it requires corresponding data from another datatable. Instead, to use it,
@@ -142,8 +139,18 @@ Calculates the evolution percentage for two arbitrary values.
       </div>
    </li>
    </ul>
-- _Returns:_ The evolution percent, eg `'15%'`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The evolution percent, eg `'15%'`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="appendpercentsign" id="appendpercentsign"></a>
 <a name="appendPercentSign" id="appendPercentSign"></a>

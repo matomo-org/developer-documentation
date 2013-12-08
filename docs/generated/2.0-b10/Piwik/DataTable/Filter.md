@@ -1,12 +1,9 @@
-<small>Piwik\DataTable</small>
+<small>Piwik\DataTable\</small>
 
 Filter
 ======
 
 A filter is set of logic that manipulates a DataTable.
-
-Description
------------
 
 Existing filters do things like,
 
@@ -84,8 +81,6 @@ Filters the supplied DataTable.
 ### `enableRecursive()`
 
 Enables/Disables recursive filtering.
-
-#### Description
 
 Whether this property is actually used
 is up to the derived Filter class.

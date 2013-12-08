@@ -1,12 +1,9 @@
-<small>Piwik\DataTable</small>
+<small>Piwik\DataTable\</small>
 
 Map
 ===
 
 Stores an array of DataTables indexed by one type of DataTable metadata (such as site ID or period).
-
-Description
------------
 
 DataTable Maps are returned on all queries that involve multiple sites and/or multiple
 periods. The Maps will contain a DataTable for each site and period combination.
@@ -49,22 +46,28 @@ The class defines the following methods:
 
 Returns a string description of the data used to index the DataTables.
 
-#### Description
-
 This label is used by DataTable Renderers (it becomes a column name or the XML description tag).
 
 #### Signature
 
-- _Returns:_ eg, `'idSite'`, `'period'`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg, `'idSite'`, `'period'`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="setkeyname" id="setkeyname"></a>
 <a name="setKeyName" id="setKeyName"></a>
 ### `setKeyName()`
 
 Set the keyName.
-
-#### Description
 
 See [getKeyName()](/api-reference/Piwik/DataTable/Map#getkeyname).
 
@@ -101,8 +104,6 @@ Returns the number of DataTables in this DataTable\Map.
 ### `queueFilter()`
 
 Queue a filter to DataTable child of contained by this instance.
-
-#### Description
 
 See [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter) for more information..
 
@@ -186,9 +187,18 @@ Returns the array of DataTables contained by this class.
 
 #### Signature
 
-- It can return one of the following values:
-    - [`DataTable[]`](../../Piwik/DataTable.md)
-    - [`Map[]`](../../Piwik/DataTable/Map.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable[]`](../../Piwik/DataTable.md)|[`Map[]`](../../Piwik/DataTable/Map.md)) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="gettable" id="gettable"></a>
 <a name="getTable" id="getTable"></a>
@@ -212,9 +222,18 @@ Returns the table with the specific label.
       </div>
    </li>
    </ul>
-- It can return one of the following values:
-    - [`DataTable`](../../Piwik/DataTable.md)
-    - [`Map`](../../Piwik/DataTable/Map.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getfirstrow" id="getfirstrow"></a>
 <a name="getFirstRow" id="getFirstRow"></a>
@@ -224,10 +243,18 @@ Returns the first DataTable in the DataTable array.
 
 #### Signature
 
-- It can return one of the following values:
-    - [`DataTable`](../../Piwik/DataTable.md)
-    - [`Map`](../../Piwik/DataTable/Map.md)
-    - `Piwik\DataTable\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`Piwik\DataTable\false`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getlastrow" id="getlastrow"></a>
 <a name="getLastRow" id="getLastRow"></a>
@@ -237,10 +264,18 @@ Returns the last DataTable in the DataTable array.
 
 #### Signature
 
-- It can return one of the following values:
-    - [`DataTable`](../../Piwik/DataTable.md)
-    - [`Map`](../../Piwik/DataTable/Map.md)
-    - `Piwik\DataTable\false`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`Piwik\DataTable\false`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="addtable" id="addtable"></a>
 <a name="addTable" id="addTable"></a>
@@ -456,8 +491,6 @@ Returns the array containing all row values in all data tables for the requested
 
 Merges the rows of every child DataTable into a new DataTable and returns it.
 
-#### Description
-
 This function will also set the label of the merged rows
 to the label of the DataTable they were originally from.
 
@@ -503,17 +536,24 @@ query results into one DataTable w/ different rows differentiated by site ID.
 
 #### Signature
 
-- It can return one of the following values:
-    - [`DataTable`](../../Piwik/DataTable.md)
-    - [`Map`](../../Piwik/DataTable/Map.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="adddatatable" id="adddatatable"></a>
 <a name="addDataTable" id="addDataTable"></a>
 ### `addDataTable()`
 
 Adds a DataTable to all the tables in this array.
-
-#### Description
 
 NOTE: Will only add `$tableToSum` if the childTable has some rows
 

@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Http
 ====
 
 Server-side http client to retrieve content from remote servers, and optionally save to a local file.
-
-Description
------------
 
 Used to check for the latest Piwik version and download updates.
 
@@ -28,8 +25,18 @@ Returns the "best" available transport method for [sendHttpRequest()](#sendHttpR
 
 #### Signature
 
-- _Returns:_ Either `'curl'`, `'fopen'` or `'socket'`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">Either `'curl'`, `'fopen'` or `'socket'`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="sendhttprequest" id="sendhttprequest"></a>
 <a name="sendHttpRequest" id="sendHttpRequest"></a>
@@ -133,9 +140,18 @@ Sends an HTTP request using best available transport method.
       </div>
    </li>
    </ul>
-- _Returns:_ If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success: - status => the HTTP status code - headers => the HTTP headers - data => the HTTP response data `false` is still returned on failure.
-    - `bool`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`|`string`) &mdash;
+    <div markdown="1" class="param-desc">If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success: - status => the HTTP status code - headers => the HTTP headers - data => the HTTP response data `false` is still returned on failure.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent, if there are more than 5 redirects or if the request times out.
 
@@ -144,8 +160,6 @@ Sends an HTTP request using best available transport method.
 ### `downloadChunk()`
 
 Downloads the next chunk of a specific file.
-
-#### Description
 
 The next chunk's byte range
 is determined by the existing file's size and the expected file size, which
@@ -285,8 +299,18 @@ Fetches a file located at `$url` and saves it to `$destinationPath`.
       </div>
    </li>
    </ul>
-- _Returns:_ true on success, throws Exception on failure
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">true on success, throws Exception on failure</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent, if there are more than 5 redirects or if the request times out.
 

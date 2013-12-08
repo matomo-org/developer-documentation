@@ -1,12 +1,9 @@
-<small>Piwik\Period</small>
+<small>Piwik\Period\</small>
 
 Range
 =====
 
 Arbitrary date range representation.
-
-Description
------------
 
 This class represents a period that contains a list of consecutive days as subperiods
 It is created when the **period** query parameter is set to **range** and is used
@@ -173,8 +170,18 @@ Given a date string, returns false if not a date range, or returns the array con
       </div>
    </li>
    </ul>
-- _Returns:_ array(1 => dateStartString, 2 => dateEndString ) or false if the input was not a date range
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">array(1 => dateStartString, 2 => dateEndString ) or false if the input was not a date range</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getdateend" id="getdateend"></a>
 <a name="getDateEnd" id="getDateEnd"></a>
@@ -184,9 +191,18 @@ Returns the end date of the period
 
 #### Signature
 
-- It can return one of the following values:
-    - `null`
-    - [`Date`](../../Piwik/Date.md)
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`null`|[`Date`](../../Piwik/Date.md)) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getlastdate" id="getlastdate"></a>
 <a name="getLastDate" id="getLastDate"></a>
@@ -220,8 +236,18 @@ Returns the date that is one period before the supplied date.
       </div>
    </li>
    </ul>
-- _Returns:_ An array with two elements, a string for the date before $date and a Period instance for the period before $date.
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array with two elements, a string for the date before $date and a Period instance for the period before $date.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getrelativetoenddate" id="getrelativetoenddate"></a>
 <a name="getRelativeToEndDate" id="getRelativeToEndDate"></a>
@@ -275,6 +301,16 @@ Returns a date ragne string given a period type, end date and number of periods 
       </div>
    </li>
    </ul>
-- _Returns:_ The date range string, eg, `'2012-01-02,2013-01-02'`.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The date range string, eg, `'2012-01-02,2013-01-02'`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

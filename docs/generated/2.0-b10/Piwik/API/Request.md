@@ -1,12 +1,9 @@
-<small>Piwik\API</small>
+<small>Piwik\API\</small>
 
 Request
 =======
 
 Dispatches API requests to the appropriate API method.
-
-Description
------------
 
 The Request class is used throughout Piwik to call API methods. The difference
 between using Request and calling API methods directly is that Request
@@ -61,8 +58,6 @@ The class defines the following methods:
 
 Converts the supplied request string into an array of query paramater name/value mappings.
 
-#### Description
-
 The current query parameters (everything in `$_GET` and `$_POST`) are
 forwarded to request array before it is returned.
 
@@ -113,8 +108,6 @@ Constructor.
 
 Dispatches the API request to the appropriate API method and returns the result after post-processing.
 
-#### Description
-
 Post-processing includes:
 
 - flattening if **flat** is 0
@@ -126,10 +119,18 @@ Post-processing includes:
 
 #### Signature
 
-- _Returns:_ The data resulting from the API call.
-    - [`DataTable`](../../Piwik/DataTable.md)
-    - `Piwik\API\Map`
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|`Piwik\API\Map`|`string`) &mdash;
+    <div markdown="1" class="param-desc">The data resulting from the API call.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - `PluginDeactivatedException` &mdash; if the module plugin is not activated.
     - [`Exception`](http://php.net/class.Exception) &mdash; if the requested API method cannot be called, if required parameters for the API method are missing or if the API method throws an exception and the **format** query parameter is **original**.
@@ -190,16 +191,24 @@ Helper method that processes an API request in one line using the variables in `
       </div>
    </li>
    </ul>
-- _Returns:_ The result of the API request.
-    - `mixed`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">The result of the API request.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getrequestparametersget" id="getrequestparametersget"></a>
 <a name="getRequestParametersGET" id="getRequestParametersGET"></a>
 ### `getRequestParametersGET()`
 
 Returns the original request parameters in the current query string as an array mapping query parameter names with values.
-
-#### Description
 
 This result of this function will not be affected
 by any modifications to `$_GET` and will not include parameters in `$_POST`.
@@ -284,7 +293,16 @@ Returns the unmodified segment from the original request.
 
 #### Signature
 
-- It can return one of the following values:
-    - `array`
-    - `bool`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`|`bool`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

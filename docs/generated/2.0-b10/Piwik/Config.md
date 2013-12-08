@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Config
 ======
 
 Singleton that provides read & write access to Piwik's INI configuration.
-
-Description
------------
 
 This class reads and writes to the `config/config.ini.php` file. If config
 options are missing from that file, this class will look for their default
@@ -61,9 +58,18 @@ Returns a configuration value or section by name.
       </div>
    </li>
    </ul>
-- _Returns:_ The requested value requested. Returned by reference.
-    - `string`
-    - `array`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`array`) &mdash;
+    <div markdown="1" class="param-desc">The requested value requested. Returned by reference.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the value requested not found in either `config.ini.php` or `global.ini.php`.
 

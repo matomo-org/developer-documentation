@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Singleton
 =========
 
 The singleton class restricts the instantiation of a class to one object only.
-
-Description
------------
 
 All plugin APIs are singletons and thus extend this class.
 
@@ -22,8 +19,6 @@ The class defines the following methods:
 ### `getInstance()`
 
 Returns the singleton instance for the derived class.
-
-#### Description
 
 If the singleton instance
 has not been created, this method will create it.

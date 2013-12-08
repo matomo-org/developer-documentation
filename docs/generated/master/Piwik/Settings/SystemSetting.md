@@ -1,12 +1,9 @@
-<small>Piwik\Settings</small>
+<small>Piwik\Settings\</small>
 
 SystemSetting
 =============
 
 Describes a system wide setting.
-
-Description
------------
 
 Only the super user can change this type of setting and
 the value of this setting will affect all users.
@@ -57,8 +54,6 @@ Constructor.
 ### `getOrder()`
 
 Returns the display order.
-
-#### Description
 
 User settings are displayed after system settings.
 

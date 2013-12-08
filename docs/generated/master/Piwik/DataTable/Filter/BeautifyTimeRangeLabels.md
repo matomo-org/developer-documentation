@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 BeautifyTimeRangeLabels
 =======================
 
 A DataTable filter that replaces range labels whose values are in seconds with prettier, human-friendlier versions.
-
-Description
------------
 
 This filter customizes the behavior of the [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels) filter
 so range values that are less than one minute are displayed in seconds but
@@ -85,8 +82,6 @@ Constructor.
 
 Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
 
-#### Description
-
 If the lower bound of the range is less than 60 the pretty range label
 will be in seconds. Otherwise, it will be in minutes.
 
@@ -116,16 +111,24 @@ will be in seconds. Otherwise, it will be in minutes.
       </div>
    </li>
    </ul>
-- _Returns:_ The pretty range label.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The pretty range label.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getrangelabel" id="getrangelabel"></a>
 <a name="getRangeLabel" id="getRangeLabel"></a>
 ### `getRangeLabel()`
 
 Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
-
-#### Description
 
 If the lower bound of the range is less than 60 the pretty range label
 will be in seconds. Otherwise, it will be in minutes.
@@ -166,16 +169,24 @@ will be in seconds. Otherwise, it will be in minutes.
       </div>
    </li>
    </ul>
-- _Returns:_ The pretty range label.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The pretty range label.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getunboundedlabel" id="getunboundedlabel"></a>
 <a name="getUnboundedLabel" id="getUnboundedLabel"></a>
 ### `getUnboundedLabel()`
 
 Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
-
-#### Description
 
 If the lower bound of the range is less than 60 the pretty range label
 will be in seconds. Otherwise, it will be in minutes.
@@ -206,6 +217,16 @@ will be in seconds. Otherwise, it will be in minutes.
       </div>
    </li>
    </ul>
-- _Returns:_ The pretty range label.
-    - `string`
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The pretty range label.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

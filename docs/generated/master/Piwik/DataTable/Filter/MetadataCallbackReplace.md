@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 MetadataCallbackReplace
 =======================
 
 Execute a callback for each row of a DataTable using certain column values and metadata and replaces row metadata with the result.
-
-Description
------------
 
 **Basic usage example**
 

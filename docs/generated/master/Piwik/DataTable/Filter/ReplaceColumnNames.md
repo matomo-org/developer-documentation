@@ -1,12 +1,9 @@
-<small>Piwik\DataTable\Filter</small>
+<small>Piwik\DataTable\Filter\</small>
 
 ReplaceColumnNames
 ==================
 
 Replaces column names in each row of a table using an array that maps old column names new ones.
-
-Description
------------
 
 If no mapping is provided, this column will use one that maps index metric names
 (which are integers) with their string column names. In the database, reports are

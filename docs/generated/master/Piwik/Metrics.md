@@ -1,12 +1,9 @@
-<small>Piwik</small>
+<small>Piwik\</small>
 
 Metrics
 =======
 
 This class contains metadata regarding core metrics and contains several related helper functions.
-
-Description
------------
 
 Of note are the `INDEX_...` constants. In the database, metric column names
 are stored in DataTable rows are stored as integers to save space. The integer

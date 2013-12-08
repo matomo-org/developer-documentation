@@ -1,12 +1,9 @@
-<small>Piwik\Plugin</small>
+<small>Piwik\Plugin\</small>
 
 Archiver
 ========
 
 The base class that should be extended by plugins that archive their own metrics.
-
-Description
------------
 
 ### Examples
 
@@ -72,8 +69,6 @@ Constructor.
 
 Archives data for a day period.
 
-#### Description
-
 Implementations of this method should do more computation intensive activities such
 as aggregating data across log tables. Since this method only deals w/ data logged for a day,
 aggregating individual log table rows isn't a problem. Doing this for any larger period,
@@ -91,8 +86,6 @@ using the getLogAggregator() method.
 ### `aggregateMultipleReports()`
 
 Archives data for a non-day period.
-
-#### Description
 
 Implementations of this method should only aggregate existing reports of subperiods of the
 current period. For example, it is more efficient to aggregate reports for each day of a
