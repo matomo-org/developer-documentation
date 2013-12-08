@@ -78,14 +78,19 @@ class
    </ul>
 {% endif %}
 {% if member.name != '__construct' %}{% if (member.hint|length > 1) or member.hintDesc %}
-{% if member.hintDesc %}
-- _Returns:_ {{ member.hintDesc|inlinelinkparser(class)|raw }}
-{% else %}
-- It can return one of the following values:
-{% endif %}
-{% for hint in member.hint %}
-    - {{ _self.hint(hint) }}
-{% endfor -%}
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_ {% if member.hint %} ({% for hint in member.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}) &mdash;{% endif %}
+
+    <div markdown="1" class="param-desc">{% if member.hintDesc %}{{ member.hintDesc|inlinelinkparser(class)|raw }}{% endif %}</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 {% elseif member.hint|length > 0 %}
 - It returns a {{ _self.hint(member.hint[0]) }} value.
 {% else %}

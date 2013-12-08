@@ -3,7 +3,7 @@
 {% set path = parts|slice(0, -1)|join("\\") %}
 {% set name = parts|slice(-1, 1)|join("\\") %}
 {% if path|length > 0 %}
-<small>{{ path }}</small>
+<small>{{ path }}\</small>
 
 {% endif %}
 {{ name }}

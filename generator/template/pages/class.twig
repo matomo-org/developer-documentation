@@ -14,9 +14,6 @@
 {% endif %}
 {% if class.longdesc %}
 
-Description
------------
-
 {{ class.longdesc|inlinelinkparser(class)|raw }}
 {% endif %}
 {% set found = false %}
@@ -65,8 +62,6 @@ This {{ class_type(class) }} defines the following properties:
 {% endif %}
 {% if property.longdesc|raw %}
 
-#### Description
-
 {{ property.longdesc|inlinelinkparser(class)|raw }}
 {% endif %}
 
@@ -96,8 +91,6 @@ The {{ class_type(class) }} defines the following methods:
 {{ method.shortdesc|inlinelinkparser(class)|raw }}
 {% endif %}
 {% if method.longdesc %}
-
-#### Description
 
 {{ method.longdesc|inlinelinkparser(class)|raw }}
 {% endif %}
