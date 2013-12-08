@@ -109,7 +109,7 @@ class Guide {
 
         $menu[] = array(
             'title'       => 'Automated Tests',
-            'file'        => 'automated tests',
+            'file'        => 'automated-tests',
             'url'         => static::getUrl('automated-tests'),
             'description' => 'Learn how to setup unit, integration and UI tests for your new plugin and how to work with Piwik Core\'s tests.'
         );
