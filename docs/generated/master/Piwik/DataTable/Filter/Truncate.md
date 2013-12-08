@@ -3,7 +3,9 @@
 Truncate
 ========
 
-Truncates a DataTable by merging all rows after a certain index into a new summary row, unless the count of rows is less than the index.
+Truncates a DataTable by merging all rows after a certain index into a new summary row.
+
+If the count of rows is less than the index, nothing happens.
 
 The [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummaryRowLabel) filter will be queued after the table is truncated.
 
@@ -24,7 +26,6 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; Executes the filter, see [Truncate](/api-reference/Piwik/DataTable/Filter/Truncate).
-- [`addSummaryRow()`](#addsummaryrow)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -103,28 +104,6 @@ Executes the filter, see [Truncate](/api-reference/Piwik/DataTable/Filter/Trunca
    <li>
       <div markdown="1" class="parameter">
       `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-- It does not return anything.
-
-<a name="addsummaryrow" id="addsummaryrow"></a>
-<a name="addSummaryRow" id="addSummaryRow"></a>
-### `addSummaryRow()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table`
 
       <div markdown="1" class="param-desc"></div>
 

@@ -13,28 +13,28 @@ This is a complete list of available classes:
 - [`DataTable`](Piwik/DataTable.md) &mdash; The primary data structure used to store analytics data in Piwik.
 - [`DataTable\Filter`](Piwik/DataTable/Filter.md) &mdash; A filter is set of logic that manipulates a DataTable.
 - [`DataTable\Filter\AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md) &mdash; Adds processed metrics columns to a DataTable using metrics that already exist.
-- [`DataTable\Filter\AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; Adds the Goal related metrics to a DataTable using metrics that already exist.
-- [`DataTable\Filter\AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md) &mdash; Add a summary row row to the table that is the sum of all other table rows.
+- [`DataTable\Filter\AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; Adds goal related metrics to a DataTable using metrics that already exist.
+- [`DataTable\Filter\AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md) &mdash; Adds a summary row to DataTables that contains the sum of all other table rows.
 - [`DataTable\Filter\BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md) &mdash; A DataTable filter that replaces range label columns with prettier, human-friendlier versions.
 - [`DataTable\Filter\BeautifyTimeRangeLabels`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md) &mdash; A DataTable filter that replaces range labels whose values are in seconds with prettier, human-friendlier versions.
 - [`DataTable\Filter\CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md) &mdash; A DataTable filter that calculates the evolution of a metric and adds it to each row as a percentage.
 - [`DataTable\Filter\ColumnCallbackAddColumn`](Piwik/DataTable/Filter/ColumnCallbackAddColumn.md) &mdash; Adds a new column to every row of a DataTable based on the result of callback.
 - [`DataTable\Filter\ColumnCallbackAddColumnPercentage`](Piwik/DataTable/Filter/ColumnCallbackAddColumnPercentage.md) &mdash; Calculates a percentage value for each row of a DataTable and adds the result to each row.
 - [`DataTable\Filter\ColumnCallbackAddColumnQuotient`](Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md) &mdash; Calculates the quotient of two columns and adds the result as a new column for each row of a DataTable.
-- [`DataTable\Filter\ColumnCallbackAddMetadata`](Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md) &mdash; Executes a callback for each row of a DataTable and adds the result as a new metadata column.
-- [`DataTable\Filter\ColumnCallbackDeleteRow`](Piwik/DataTable/Filter/ColumnCallbackDeleteRow.md) &mdash; Delete all rows for which a callback returns true.
+- [`DataTable\Filter\ColumnCallbackAddMetadata`](Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md) &mdash; Executes a callback for each row of a DataTable and adds the result as a new row metadata value.
+- [`DataTable\Filter\ColumnCallbackDeleteRow`](Piwik/DataTable/Filter/ColumnCallbackDeleteRow.md) &mdash; Deletes all rows for which a callback returns true.
 - [`DataTable\Filter\ColumnDelete`](Piwik/DataTable/Filter/ColumnDelete.md) &mdash; Filter that will remove columns from a DataTable using either a blacklist, whitelist or both.
-- [`DataTable\Filter\ExcludeLowPopulation`](Piwik/DataTable/Filter/ExcludeLowPopulation.md) &mdash; Deletes all rows for which a specific column has a value that is lower than specific minimum threshold value.
+- [`DataTable\Filter\ExcludeLowPopulation`](Piwik/DataTable/Filter/ExcludeLowPopulation.md) &mdash; Deletes all rows for which a specific column has a value that is lower than specified minimum threshold value.
 - [`DataTable\Filter\GroupBy`](Piwik/DataTable/Filter/GroupBy.md) &mdash; DataTable filter that will group DataTable rows together based on the results of a reduce function.
-- [`DataTable\Filter\Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; Delete all rows from the table that are not in the given offset -> offset+limit range.
+- [`DataTable\Filter\Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; Delete all rows from the table that are not in the given [offset, offset+limit) range.
 - [`DataTable\Filter\MetadataCallbackAddMetadata`](Piwik/DataTable/Filter/MetadataCallbackAddMetadata.md) &mdash; Executes a callback for each row of a DataTable and adds the result to the row as a metadata value.
-- [`DataTable\Filter\MetadataCallbackReplace`](Piwik/DataTable/Filter/MetadataCallbackReplace.md) &mdash; Execute a callback for each row of a DataTable using certain column values and metadata and replaces row metadata with the result.
+- [`DataTable\Filter\MetadataCallbackReplace`](Piwik/DataTable/Filter/MetadataCallbackReplace.md) &mdash; Execute a callback for each row of a DataTable passing certain column values and metadata as metadata, and replaces row metadata with the callback result.
 - [`DataTable\Filter\Pattern`](Piwik/DataTable/Filter/Pattern.md) &mdash; Deletes every row for which a specific column does not match a supplied regex pattern.
-- [`DataTable\Filter\PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md) &mdash; Deletes rows for which a specific column in both the row and all subtables that descend from the row do not match a supplied regex pattern.
+- [`DataTable\Filter\PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md) &mdash; Deletes rows that do not contain a column that matches a regex pattern and do not contain a subtable that contains a column that matches a regex pattern.
 - [`DataTable\Filter\ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md) &mdash; Replaces column names in each row of a table using an array that maps old column names new ones.
 - [`DataTable\Filter\ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md) &mdash; Replaces the label of the summary row with a supplied label.
 - [`DataTable\Filter\Sort`](Piwik/DataTable/Filter/Sort.md) &mdash; Sorts a DataTable based on the value of a specific column.
-- [`DataTable\Filter\Truncate`](Piwik/DataTable/Filter/Truncate.md) &mdash; Truncates a DataTable by merging all rows after a certain index into a new summary row, unless the count of rows is less than the index.
+- [`DataTable\Filter\Truncate`](Piwik/DataTable/Filter/Truncate.md) &mdash; Truncates a DataTable by merging all rows after a certain index into a new summary row.
 - [`DataTable\Map`](Piwik/DataTable/Map.md) &mdash; Stores an array of DataTables indexed by one type of DataTable metadata (such as site ID or period).
 - [`DataTable\Row`](Piwik/DataTable/Row.md) &mdash; This is what a [DataTable](/api-reference/Piwik/DataTable) is composed of.
 - [`DataTable\Simple`](Piwik/DataTable/Simple.md) &mdash; A [DataTable](/api-reference/Piwik/DataTable) where every row has two columns: **label** and **value**.
@@ -42,7 +42,7 @@ This is a complete list of available classes:
 - [`Db`](Piwik/Db.md) &mdash; Contains SQL related helper functions for Piwik's MySQL database.
 - [`Filesystem`](Piwik/Filesystem.md) &mdash; Contains helper functions that deal with the filesystem.
 - [`FrontController`](Piwik/FrontController.md) &mdash; This singleton dispatches requests to the appropriate plugin Controller.
-- [`Http`](Piwik/Http.md) &mdash; Server-side http client to retrieve content from remote servers, and optionally save to a local file.
+- [`Http`](Piwik/Http.md) &mdash; Contains HTTP client related helper methods that can retrieve content from remote servers and optionally save to a local file.
 - [`IP`](Piwik/IP.md) &mdash; Contains IP address helper functions (for both IPv4 and IPv6).
 - [`Log`](Piwik/Log.md) &mdash; Logging utility class.
 - [`Mail`](Piwik/Mail.md) &mdash; Class for sending mails, for more information see: [http://framework.zend.com/manual/en/zend.mail.html](http://framework.zend.com/manual/en/zend.mail.html)
@@ -89,7 +89,7 @@ This is a complete list of available classes:
 - [`Plugins\UserSettings\Archiver`](Piwik/Plugins/UserSettings/Archiver.md) &mdash; Archiver for UserSettings Plugin
 - [`Plugins\VisitTime\Archiver`](Piwik/Plugins/VisitTime/Archiver.md)
 - [`Plugins\VisitorInterest\Archiver`](Piwik/Plugins/VisitorInterest/Archiver.md)
-- [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
+- [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.
 - [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; Describes the interval on which a scheduled task is executed.
 - [`ScheduledTime\Daily`](Piwik/ScheduledTime/Daily.md) &mdash; Daily class is used to schedule tasks every day.
@@ -102,8 +102,8 @@ This is a complete list of available classes:
 - [`Settings\Setting`](Piwik/Settings/Setting.md) &mdash; Base setting type class.
 - [`Settings\SystemSetting`](Piwik/Settings/SystemSetting.md) &mdash; Describes a system wide setting.
 - [`Settings\UserSetting`](Piwik/Settings/UserSetting.md) &mdash; Describes a per user setting.
-- [`Singleton`](Piwik/Singleton.md) &mdash; The singleton class restricts the instantiation of a class to one object only.
-- [`Site`](Piwik/Site.md) &mdash; Provides access to individual site data (such as name, URL, etc.).
+- [`Singleton`](Piwik/Singleton.md) &mdash; The singleton base class restricts the instantiation of derived classes to one object only.
+- [`Site`](Piwik/Site.md) &mdash; Provides access to individual [site entity](/guides/persistence-and-the-mysql-backend#websites-aka-sites) data (including name, URL, etc.).
 - [`Url`](Piwik/Url.md) &mdash; Provides URL related helper methods.
 - [`UrlHelper`](Piwik/UrlHelper.md) &mdash; Contains less commonly needed URL helper methods.
 - [`Version`](Piwik/Version.md) &mdash; Piwik version information.

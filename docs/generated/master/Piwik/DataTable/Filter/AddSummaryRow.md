@@ -3,7 +3,7 @@
 AddSummaryRow
 =============
 
-Add a summary row row to the table that is the sum of all other table rows.
+Adds a summary row to DataTables that contains the sum of all other table rows.
 
 **Basic usage example**
 

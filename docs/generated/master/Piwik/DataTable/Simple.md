@@ -30,7 +30,7 @@ Adds rows based on an array mapping label column values to value column values.
       <div markdown="1" class="parameter">
       `$array` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Array containing the rows, eg, ``` array( 'Label row 1' => $value1, 'Label row 2' => $value2, ) ```</div>
+      <div markdown="1" class="param-desc"> Array containing the rows, eg, array( 'Label row 1' => $value1, 'Label row 2' => $value2, )</div>
 
       <div style="clear:both;"/>
 

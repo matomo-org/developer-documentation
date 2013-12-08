@@ -7,7 +7,7 @@ DataTable filter that will group DataTable rows together based on the results of
 
 Rows with the same reduce result will be summed and merged.
 
-NOTE: This filter should never be queued, it must be applied directly on a DataTable.
+_NOTE: This filter should never be queued, it must be applied directly on a DataTable._
 
 **Basic usage example**
 

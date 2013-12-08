@@ -54,7 +54,7 @@ The class defines the following methods:
 - [`sumSubtable()`](#sumsubtable) &mdash; Sums a DataTable to this row's subtable.
 - [`addSubtable()`](#addsubtable) &mdash; Attaches a subtable to this row.
 - [`setSubtable()`](#setsubtable) &mdash; Attaches a subtable to this row, overwriting the existing subtable, if any.
-- [`isSubtableLoaded()`](#issubtableloaded) &mdash; Returns true if the subtable is currently loaded in memory via Piwik\DataTable\Manager.
+- [`isSubtableLoaded()`](#issubtableloaded) &mdash; Returns `true` if the subtable is currently loaded in memory via Piwik\DataTable\Manager.
 - [`removeSubtable()`](#removesubtable) &mdash; Removes the subtable reference.
 - [`setColumns()`](#setcolumns) &mdash; Set all the columns at once.
 - [`setColumn()`](#setcolumn) &mdash; Set the value `$value` to the column called `$name`.
@@ -65,7 +65,7 @@ The class defines the following methods:
 - [`addMetadata()`](#addmetadata) &mdash; Add a new metadata to the row.
 - [`sumRow()`](#sumrow) &mdash; Sums the given `$rowToSum` columns values to the existing row column values.
 - [`sumRowMetadata()`](#sumrowmetadata) &mdash; Sums the metadata in `$rowToSum` with the metadata in `$this` row.
-- [`isSummaryRow()`](#issummaryrow) &mdash; Returns true if this row is the summary row, false if otherwise.
+- [`isSummaryRow()`](#issummaryrow) &mdash; Returns `true` if this row is the summary row, `false` if otherwise.
 - [`isEqual()`](#isequal) &mdash; Helper function that tests if two rows are equal.
 
 <a name="__construct" id="__construct"></a>
@@ -83,7 +83,7 @@ Constructor.
       <div markdown="1" class="parameter">
       `$row` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> An array with the following structure: ``` array( Row::COLUMNS => array('label' => 'Piwik', 'column1' => 42, 'visits' => 657, 'time_spent' => 155744), Row::METADATA => array('logo' => 'test.png'), Row::DATATABLE_ASSOCIATED => $subtable // DataTable object // (but in the row only the ID will be stored) ) ```</div>
+      <div markdown="1" class="param-desc"> An array with the following structure: array( Row::COLUMNS => array('label' => 'Piwik', 'column1' => 42, 'visits' => 657, 'time_spent' => 155744), Row::METADATA => array('logo' => 'test.png'), Row::DATATABLE_ASSOCIATED => $subtable // DataTable object // (but in the row only the ID will be stored) )</div>
 
       <div style="clear:both;"/>
 
@@ -139,7 +139,7 @@ Deletes the given column.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`bool`) &mdash;
-    <div markdown="1" class="param-desc">True on success, false if the column does not exist.</div>
+    <div markdown="1" class="param-desc">`true` on success, `false` if the column does not exist.</div>
 
     <div style="clear:both;"/>
 
@@ -253,7 +253,7 @@ Returns the array containing all the columns.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Example: ``` array( 'column1'   => VALUE, 'label'     => 'www.php.net' 'nb_visits' => 15894, ) ```</div>
+    <div markdown="1" class="param-desc">Example: array( 'column1'   => VALUE, 'label'     => 'www.php.net' 'nb_visits' => 15894, )</div>
 
     <div style="clear:both;"/>
 
@@ -327,7 +327,7 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to 
       <div markdown="1" class="parameter">
       `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
 
-      <div markdown="1" class="param-desc"> Table to sum to this row's subtab.e.</div>
+      <div markdown="1" class="param-desc"> Table to sum to this row's subtable.</div>
 
       <div style="clear:both;"/>
 
@@ -412,7 +412,7 @@ Attaches a subtable to this row, overwriting the existing subtable, if any.
 <a name="isSubtableLoaded" id="isSubtableLoaded"></a>
 ### `isSubtableLoaded()`
 
-Returns true if the subtable is currently loaded in memory via Piwik\DataTable\Manager.
+Returns `true` if the subtable is currently loaded in memory via Piwik\DataTable\Manager.
 
 #### Signature
 
@@ -434,7 +434,7 @@ Removes the subtable reference.
 
 Set all the columns at once.
 
-Overwrites previously set columns.
+Overwrites **all** previously set columns.
 
 #### Signature
 
@@ -549,7 +549,7 @@ Deletes one metadata value or all metadata values.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`bool`) &mdash;
-    <div markdown="1" class="param-desc">true on success, false if the column didn't exist</div>
+    <div markdown="1" class="param-desc">`true` on success, `false` if the column didn't exist</div>
 
     <div style="clear:both;"/>
 
@@ -736,7 +736,7 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 <a name="isSummaryRow" id="isSummaryRow"></a>
 ### `isSummaryRow()`
 
-Returns true if this row is the summary row, false if otherwise.
+Returns `true` if this row is the summary row, `false` if otherwise.
 
 This function
 depends on the label of the row, and so, is not 100% accurate.
@@ -755,6 +755,8 @@ Two rows are equal if:
 
 - they have exactly the same columns / metadata
 - they have a subDataTable associated, then we check that both of them are the same.
+
+Column order is not important.
 
 #### Signature
 

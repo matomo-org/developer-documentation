@@ -10,8 +10,8 @@ or has special installation/uninstallation logic must implement this class.
 Plugins that can specify everything they need to in the _plugin.json_ files,
 such as themes, don't need to implement this class.
 
-The name of the implementation of this class should be the same name as the
-plugin they are a part of (eg, `class UserCountry extends Plugin`).
+Class implementations should be named after the plugin they are a part of
+(eg, `class UserCountry extends Plugin`).
 
 ### Plugin Metadata
 
@@ -45,10 +45,10 @@ contain the following information:
         public function getListHooksRegistered()
         {
             return array(
-                'API.getReportMetadata' => 'myPluginFunction',
+                'API.getReportMetadata' => 'getReportMetadata',
                 'Another.event'         => array(
                                                'function' => 'myOtherPluginFunction',
-                                               'after'    => true // execute after callbacks w/o ordering
+                                               'after'    => true // executes this callback after others
                                            )
             );
         }
@@ -62,6 +62,16 @@ contain the following information:
         {
             Db::exec("DROP TABLE IF EXISTS " . Common::prefixTable('mytable'));
         }
+        
+        public function getReportMetadata(&$metadata)
+        {
+            // ...
+        }
+
+        public function myOtherPluginFunction()
+        {
+            // ...
+        }
     }
 
 Methods
@@ -70,7 +80,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getInformation()`](#getinformation) &mdash; Returns the plugin details - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
+- [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:  - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
 - [`getListHooksRegistered()`](#getlisthooksregistered) &mdash; Returns a list of hooks with associated event observers.
 - [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered.
 - [`install()`](#install) &mdash; Installs the plugin.
@@ -78,8 +88,8 @@ The class defines the following methods:
 - [`activate()`](#activate) &mdash; Executed every time the plugin is enabled.
 - [`deactivate()`](#deactivate) &mdash; Executed every time the plugin is disabled.
 - [`getVersion()`](#getversion) &mdash; Returns the plugin version number.
-- [`isTheme()`](#istheme) &mdash; Returns true if this plugin is a theme, false if otherwise.
-- [`getPluginName()`](#getpluginname) &mdash; Returns the plugin's base class name without the namespace, e.g., "UserCountry" when the plugin class is "Piwik\Plugins\UserCountry\UserCountry".
+- [`isTheme()`](#istheme) &mdash; Returns `true` if this plugin is a theme, `false` if otherwise.
+- [`getPluginName()`](#getpluginname) &mdash; Returns the plugin's base class name without the namespace, e.g., `"UserCountry"` when the plugin class is `"Piwik\Plugins\UserCountry\UserCountry"`.
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
 
 <a name="__construct" id="__construct"></a>
@@ -105,13 +115,13 @@ Constructor.
    </li>
    </ul>
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If plugin metadata is defined in both the getInformation() method and the plugin.json file.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If plugin metadata is defined in both the getInformation() method and the **plugin.json** file.
 
 <a name="getinformation" id="getinformation"></a>
 <a name="getInformation" id="getInformation"></a>
 ### `getInformation()`
 
-Returns the plugin details - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
+Returns plugin information, including:  - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
 
 #### Signature
 
@@ -122,6 +132,8 @@ Returns the plugin details - 'description' => string        // 1-2 sentence desc
 ### `getListHooksRegistered()`
 
 Returns a list of hooks with associated event observers.
+
+Derived classes should use this method to associate callbacks with events.
 
 #### Signature
 
@@ -144,7 +156,7 @@ Returns a list of hooks with associated event observers.
 
 This method is executed after a plugin is loaded and translations are registered.
 
-Useful for initialization code that uses translated strings from the plugin.
+Useful for initialization code that uses translated strings.
 
 #### Signature
 
@@ -158,6 +170,7 @@ Installs the plugin.
 
 Derived classes should implement this class if the plugin
 needs to:
+
 - create tables
 - update existing tables
 - etc.
@@ -174,8 +187,8 @@ needs to:
 
 Uninstalls the plugins.
 
-Derived classes should implement this class if the changes
-made in [install()](/api-reference/Piwik/Plugin#install) should be undone during uninstallation.
+Derived classes should implement this method if the changes
+made in [install()](/api-reference/Piwik/Plugin#install) need to be undone during uninstallation.
 
 In most cases, if you have an [install()](/api-reference/Piwik/Plugin#install) method, you should provide
 an [uninstall()](/api-reference/Piwik/Plugin#uninstall) method.
@@ -221,7 +234,7 @@ Returns the plugin version number.
 <a name="isTheme" id="isTheme"></a>
 ### `isTheme()`
 
-Returns true if this plugin is a theme, false if otherwise.
+Returns `true` if this plugin is a theme, `false` if otherwise.
 
 #### Signature
 
@@ -232,7 +245,7 @@ Returns true if this plugin is a theme, false if otherwise.
 <a name="getPluginName" id="getPluginName"></a>
 ### `getPluginName()`
 
-Returns the plugin's base class name without the namespace, e.g., "UserCountry" when the plugin class is "Piwik\Plugins\UserCountry\UserCountry".
+Returns the plugin's base class name without the namespace, e.g., `"UserCountry"` when the plugin class is `"Piwik\Plugins\UserCountry\UserCountry"`.
 
 #### Signature
 
@@ -245,7 +258,7 @@ Returns the plugin's base class name without the namespace, e.g., "UserCountry" 
 
 Extracts the plugin name from a backtrace array.
 
-Returns false if we can't find one.
+Returns `false` if we can't find one.
 
 #### Signature
 
@@ -256,7 +269,7 @@ Returns false if we can't find one.
       <div markdown="1" class="parameter">
       `$backtrace` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The result of the debug_backtrace() or Exception::getTrace().</div>
+      <div markdown="1" class="param-desc"> The result of [debug_backtrace()](http://php.net/function.debug_backtrace()) or [Exception::getTrace()](http://www.php.net/manual/en/exception.gettrace.php).</div>
 
       <div style="clear:both;"/>
 

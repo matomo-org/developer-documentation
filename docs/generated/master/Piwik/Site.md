@@ -3,7 +3,16 @@
 Site
 ====
 
-Provides access to individual site data (such as name, URL, etc.).
+Provides access to individual [site entity](/guides/persistence-and-the-mysql-backend#websites-aka-sites) data (including name, URL, etc.).
+
+**Data Cache**
+
+Site data can be cached in order to avoid performing too many queries.
+If a method needs many site entities, it is more efficient to query all of what
+you need beforehand via the **SitesManager** API, then cache it using [setSites()](/api-reference/Piwik/Site#setsites) or
+[setSitesFromArray()](/api-reference/Piwik/Site#setsitesfromarray).
+
+Subsequent calls to `new Site($id)` will use the data in the cache instead of querying the database.
 
 ### Examples
 
@@ -24,12 +33,11 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setSites()`](#setsites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data.
 - [`setSitesFromArray()`](#setsitesfromarray) &mdash; Sets the cached Site data with a non-associated array of site data.
-- [`getMinMaxDateAcrossWebsites()`](#getminmaxdateacrosswebsites) &mdash; The Multisites reports displays the first calendar date as the earliest day available for all websites.
 - [`__toString()`](#__tostring) &mdash; Returns a string representation of the site this instance references.
 - [`getName()`](#getname) &mdash; Returns the name of the site.
 - [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site.
 - [`getId()`](#getid) &mdash; Returns the id of the site.
-- [`getType()`](#gettype) &mdash; Returns the type of the website (by default "website")
+- [`getType()`](#gettype) &mdash; Returns the website type (by default `"website"`, which means it is a single website).
 - [`getCreationDate()`](#getcreationdate) &mdash; Returns the creation date of the site.
 - [`getTimezone()`](#gettimezone) &mdash; Returns the timezone of the size.
 - [`getCurrency()`](#getcurrency) &mdash; Returns the currency of the site.
@@ -39,16 +47,15 @@ The class defines the following methods:
 - [`getSearchKeywordParameters()`](#getsearchkeywordparameters) &mdash; Returns the site search keyword query parameters for the site.
 - [`getSearchCategoryParameters()`](#getsearchcategoryparameters) &mdash; Returns the site search category query parameters for the site.
 - [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site.
-- [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site ids and returns them as an array.
+- [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site IDs and returns them as an array.
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
-- [`getSite()`](#getsite)
 - [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
 - [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
 - [`getTypeFor()`](#gettypefor) &mdash; Returns the type of the site with the specified ID.
 - [`getCreationDateFor()`](#getcreationdatefor) &mdash; Returns the creation date of the site with the specified ID.
 - [`getMainUrlFor()`](#getmainurlfor) &mdash; Returns the url for the site with the specified ID.
-- [`isEcommerceEnabledFor()`](#isecommerceenabledfor) &mdash; Returns whether the site with the specified ID is ecommerce enabled
-- [`isSiteSearchEnabledFor()`](#issitesearchenabledfor) &mdash; Returns whether the site with the specified ID is Site Search enabled
+- [`isEcommerceEnabledFor()`](#isecommerceenabledfor) &mdash; Returns whether the site with the specified ID is ecommerce enabled or not.
+- [`isSiteSearchEnabledFor()`](#issitesearchenabledfor) &mdash; Returns whether the site with the specified ID is Site Search enabled.
 - [`getCurrencyFor()`](#getcurrencyfor) &mdash; Returns the currency of the site with the specified ID.
 - [`getExcludedIpsFor()`](#getexcludedipsfor) &mdash; Returns the excluded IP addresses of the site with the specified ID.
 - [`getExcludedQueryParametersFor()`](#getexcludedqueryparametersfor) &mdash; Returns the excluded query parameters for the site with the specified ID.
@@ -91,7 +98,7 @@ Sets the cached site data with an array that associates site IDs with individual
       <div markdown="1" class="parameter">
       `$sites` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The array of sites data. Indexed by site ID. eg, ``` array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))` ```</div>
+      <div markdown="1" class="param-desc"> The array of sites data. Indexed by site ID. eg, array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))`</div>
 
       <div style="clear:both;"/>
 
@@ -115,7 +122,7 @@ Sets the cached Site data with a non-associated array of site data.
       <div markdown="1" class="parameter">
       `$sites` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The array of sites data. eg, ``` array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), ) ```</div>
+      <div markdown="1" class="param-desc"> The array of sites data. eg, array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), )</div>
 
       <div style="clear:both;"/>
 
@@ -123,43 +130,6 @@ Sets the cached Site data with a non-associated array of site data.
    </li>
    </ul>
 - It does not return anything.
-
-<a name="getminmaxdateacrosswebsites" id="getminmaxdateacrosswebsites"></a>
-<a name="getMinMaxDateAcrossWebsites" id="getMinMaxDateAcrossWebsites"></a>
-### `getMinMaxDateAcrossWebsites()`
-
-The Multisites reports displays the first calendar date as the earliest day available for all websites.
-
-Also, today is the later "today" available across all timezones.
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$siteIds` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Array of IDs for each site being displayed.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Date[]`](../Piwik/Date.md)) &mdash;
-    <div markdown="1" class="param-desc">of two Date instances. First is the min-date & the second is the max date.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -213,7 +183,7 @@ Returns the id of the site.
 <a name="getType" id="getType"></a>
 ### `getType()`
 
-Returns the type of the website (by default "website")
+Returns the website type (by default `"website"`, which means it is a single website).
 
 #### Signature
 
@@ -331,7 +301,7 @@ Returns whether Site Search Tracking is enabled for the site.
 <a name="getIdSitesFromIdSitesString" id="getIdSitesFromIdSitesString"></a>
 ### `getIdSitesFromIdSitesString()`
 
-Checks the given string for valid site ids and returns them as an array.
+Checks the given string for valid site IDs and returns them as an array.
 
 #### Signature
 
@@ -340,9 +310,9 @@ Checks the given string for valid site ids and returns them as an array.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$ids` (`string`) &mdash;
+      `$ids` (`string`|`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Comma separated idSite list, eg, `'1,2,3,4'`.</div>
+      <div markdown="1" class="param-desc"> Comma separated idSite list, eg, `'1,2,3,4'` or an array of IDs, eg, `array(1, 2, 3, 4)`.</div>
 
       <div style="clear:both;"/>
 
@@ -352,7 +322,7 @@ Checks the given string for valid site ids and returns them as an array.
       <div markdown="1" class="parameter">
       `$_restrictSitesToLogin` (`bool`|`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> Used only when running as a scheduled task.</div>
+      <div markdown="1" class="param-desc"> Implementation detail. Used only when running as a scheduled task.</div>
 
       <div style="clear:both;"/>
 
@@ -382,28 +352,6 @@ See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray
 
 #### Signature
 
-- It does not return anything.
-
-<a name="getsite" id="getsite"></a>
-<a name="getSite" id="getSite"></a>
-### `getSite()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$id`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
 - It does not return anything.
 
 <a name="getnamefor" id="getnamefor"></a>
@@ -530,7 +478,7 @@ Returns the url for the site with the specified ID.
 <a name="isEcommerceEnabledFor" id="isEcommerceEnabledFor"></a>
 ### `isEcommerceEnabledFor()`
 
-Returns whether the site with the specified ID is ecommerce enabled
+Returns whether the site with the specified ID is ecommerce enabled or not.
 
 #### Signature
 
@@ -554,7 +502,7 @@ Returns whether the site with the specified ID is ecommerce enabled
 <a name="isSiteSearchEnabledFor" id="isSiteSearchEnabledFor"></a>
 ### `isSiteSearchEnabledFor()`
 
-Returns whether the site with the specified ID is Site Search enabled
+Returns whether the site with the specified ID is Site Search enabled.
 
 #### Signature
 

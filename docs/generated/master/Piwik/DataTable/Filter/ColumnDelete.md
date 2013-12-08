@@ -34,7 +34,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; Filters the given DataTable.
+- [`filter()`](#filter) &mdash; See [ColumnDelete](/api-reference/Piwik/DataTable/Filter/ColumnDelete).
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -93,10 +93,7 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Filters the given DataTable.
-
-Removes columns that are not desired from
-each DataTable row.
+See [ColumnDelete](/api-reference/Piwik/DataTable/Filter/ColumnDelete).
 
 #### Signature
 

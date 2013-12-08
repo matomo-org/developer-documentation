@@ -14,23 +14,29 @@ HTML.
 
 **Redirect to a different controller action**
 
-    $url = Url::getCurrentQueryStringWithParametersModified(array(
-        'module' => 'UserSettings',
-        'action' => 'index'
-    ));
-    Url::redirectToUrl($url);
+    public function myControllerAction()
+    {
+        $url = Url::getCurrentQueryStringWithParametersModified(array(
+            'module' => 'UserSettings',
+            'action' => 'index'
+        ));
+        Url::redirectToUrl($url);
+    }
 
 **Link to a different controller action in a template**
 
-    $url = Url::getCurrentQueryStringWithParametersModified(array(
-        'module' => 'UserCountryMap',
-        'action' => 'realtimeMap',
-        'changeVisitAlpha' => 0,
-        'removeOldVisits' => 0
-    ));
-    $view = new View("@MyPlugin/myPopup");
-    $view->realtimeMapUrl = $url;
-    echo $view->render();
+    public function myControllerAction()
+    {
+        $url = Url::getCurrentQueryStringWithParametersModified(array(
+            'module' => 'UserCountryMap',
+            'action' => 'realtimeMap',
+            'changeVisitAlpha' => 0,
+            'removeOldVisits' => 0
+        ));
+        $view = new View("@MyPlugin/myPopup");
+        $view->realtimeMapUrl = $url;
+        return $view->render();
+    }
 
 Methods
 -------
@@ -47,11 +53,11 @@ The class defines the following methods:
 - [`getCurrentQueryString()`](#getcurrentquerystring) &mdash; Returns the query string of the current URL.
 - [`getArrayFromCurrentQueryString()`](#getarrayfromcurrentquerystring) &mdash; Returns an array mapping query paramater names with query parameter values for the current URL.
 - [`getCurrentQueryStringWithParametersModified()`](#getcurrentquerystringwithparametersmodified) &mdash; Modifies the current query string with the supplied parameters and returns the result.
-- [`getQueryStringFromParameters()`](#getquerystringfromparameters) &mdash; Converts an an array of parameters name => value mappings to a query string.
+- [`getQueryStringFromParameters()`](#getquerystringfromparameters) &mdash; Converts an array of parameters name => value mappings to a query string.
 - [`redirectToReferrer()`](#redirecttoreferrer) &mdash; Redirects the user to the referrer.
 - [`redirectToUrl()`](#redirecttourl) &mdash; Redirects the user to the specified URL.
-- [`getReferrer()`](#getreferrer) &mdash; Returns the HTTP_REFERER header, or false if not found.
-- [`isLocalUrl()`](#islocalurl) &mdash; Returns true if the URL points to something on the same host, false if otherwise.
+- [`getReferrer()`](#getreferrer) &mdash; Returns the **HTTP_REFERER** `$_SERVER` variable, or `false` if not found.
+- [`isLocalUrl()`](#islocalurl) &mdash; Returns `true` if the URL points to something on the same host, `false` if otherwise.
 
 <a name="getcurrenturl" id="getcurrenturl"></a>
 <a name="getCurrentUrl" id="getCurrentUrl"></a>
@@ -89,7 +95,7 @@ Returns the current URL without the query string.
       <div markdown="1" class="parameter">
       `$checkTrustedHost` (`bool`) &mdash;
 
-      <div markdown="1" class="param-desc"> Whether to do trusted host check. Should ALWAYS be true, except in Controller.</div>
+      <div markdown="1" class="param-desc"> Whether to do trusted host check. Should ALWAYS be true, except in [Plugin\Controller](/api-reference/Piwik/Plugin/Controller).</div>
 
       <div style="clear:both;"/>
 
@@ -276,7 +282,7 @@ Returns an array mapping query paramater names with query parameter values for t
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"` this will return: ``` array( 'param1' => string 'value1', 'param2' => string 'value2' ) ```</div>
+    <div markdown="1" class="param-desc">If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"` this will return: array( 'param1' => string 'value1', 'param2' => string 'value2' )</div>
 
     <div style="clear:both;"/>
 
@@ -327,7 +333,7 @@ will be added to the result.
 <a name="getQueryStringFromParameters" id="getQueryStringFromParameters"></a>
 ### `getQueryStringFromParameters()`
 
-Converts an an array of parameters name => value mappings to a query string.
+Converts an array of parameters name => value mappings to a query string.
 
 #### Signature
 
@@ -399,7 +405,7 @@ Redirects the user to the specified URL.
 <a name="getReferrer" id="getReferrer"></a>
 ### `getReferrer()`
 
-Returns the HTTP_REFERER header, or false if not found.
+Returns the **HTTP_REFERER** `$_SERVER` variable, or `false` if not found.
 
 #### Signature
 
@@ -420,7 +426,7 @@ Returns the HTTP_REFERER header, or false if not found.
 <a name="isLocalUrl" id="isLocalUrl"></a>
 ### `isLocalUrl()`
 
-Returns true if the URL points to something on the same host, false if otherwise.
+Returns `true` if the URL points to something on the same host, `false` if otherwise.
 
 #### Signature
 

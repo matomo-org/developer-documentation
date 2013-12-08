@@ -384,7 +384,7 @@ Usages:
 - [Controller.$module.$action.end](#controllermoduleactionend)
 
 ### Controller.$module.$action
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [115](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L115)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [114](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L114)_
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/hooks#requestdispatch)
 event is triggered.
@@ -399,7 +399,7 @@ Callback Signature:
 
 
 ### Controller.$module.$action.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [133](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L133)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [132](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L132)_
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/hooks#requestdispatchend)
 event is triggered.
@@ -506,7 +506,7 @@ Callback Signature:
 - [Log.getAvailableWriters](#loggetavailablewriters)
 
 ### Log.formatDatabaseMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [461](https://github.com/piwik/piwik/blob/master/core/Log.php#L461)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [486](https://github.com/piwik/piwik/blob/master/core/Log.php#L486)_
 
 Triggered when trying to log an object to a database table. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -534,7 +534,7 @@ Callback Signature:
 
 
 ### Log.formatFileMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [363](https://github.com/piwik/piwik/blob/master/core/Log.php#L363)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [388](https://github.com/piwik/piwik/blob/master/core/Log.php#L388)_
 
 Triggered when trying to log an object to a file. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -562,7 +562,7 @@ Callback Signature:
 
 
 ### Log.formatScreenMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [423](https://github.com/piwik/piwik/blob/master/core/Log.php#L423)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [448](https://github.com/piwik/piwik/blob/master/core/Log.php#L448)_
 
 Triggered when trying to log an object to the screen. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -593,7 +593,7 @@ Callback Signature:
 
 
 ### Log.getAvailableWriters
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [327](https://github.com/piwik/piwik/blob/master/core/Log.php#L327)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [352](https://github.com/piwik/piwik/blob/master/core/Log.php#L352)_
 
 This event is called when the Log instance is created. Plugins can use this event to
 make new logging writers available.
@@ -759,7 +759,7 @@ Callback Signature:
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 
 ### Request.dispatch
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [100](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L100)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [99](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L99)_
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -775,7 +775,7 @@ Callback Signature:
 
 
 ### Request.dispatch.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [143](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L143)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [142](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L142)_
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -1149,7 +1149,7 @@ Usages:
 - [Site.setSite](#sitesetsite)
 
 ### Site.setSite
-_Defined in [Piwik/Site](https://github.com/piwik/piwik/blob/master/core/Site.php) in line [111](https://github.com/piwik/piwik/blob/master/core/Site.php#L111)_
+_Defined in [Piwik/Site](https://github.com/piwik/piwik/blob/master/core/Site.php) in line [120](https://github.com/piwik/piwik/blob/master/core/Site.php#L120)_
 
 Triggered so plugins can modify website entities without modifying the database. This event should **not** be used to add data that is expensive to compute. If you
 need to make HTTP requests or query the database for more information, this is not
@@ -1345,8 +1345,8 @@ Usages:
 ### Tracker.makeNewVisitObject
 _Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [599](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L599)_
 
-Triggered before a new **visit object** is created. Subscribers to this
-event can force the use of a custom visit object that extends from
+Triggered before a new **visit tracking object** is created. Subscribers to this
+event can force the use of a custom visit tracking object that extends from
 Piwik\Tracker\VisitInterface.
 
 Callback Signature:
@@ -1558,7 +1558,7 @@ Usages:
 
 
 ### User.isNotAuthorized
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [157](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L157)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [156](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L156)_
 
 Triggered when a user with insufficient access permissions tries to view some resource. This event can be used to customize the error that occurs when a user is denied access
 (for example, displaying an error message, redirecting to a page other than login, etc.).

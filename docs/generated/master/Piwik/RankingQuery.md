@@ -3,10 +3,11 @@
 RankingQuery
 ============
 
-The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
+The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 
-The
-advanced use cases are explained in the doc comments of the methods.
+It als
+allows for some more fancy things that can be configured via method calls of this
+class. The advanced use cases are explained in the doc comments of the methods.
 
 The general use case looks like this:
 

@@ -36,14 +36,14 @@ The class defines the following methods:
 - [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp in a timezone to UTC.
 - [`getTimestampUTC()`](#gettimestamputc) &mdash; Returns the Unix timestamp of the date in UTC.
 - [`getTimestamp()`](#gettimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
-- [`isLater()`](#islater) &mdash; Returns true if the current date is older than the given `$date`.
-- [`isEarlier()`](#isearlier) &mdash; Returns true if the current date is earlier than the given `$date`.
+- [`isLater()`](#islater) &mdash; Returns `true` if the current date is older than the given `$date`.
+- [`isEarlier()`](#isearlier) &mdash; Returns `true` if the current date is earlier than the given `$date`.
 - [`toString()`](#tostring) &mdash; Converts this date to the requested string format.
 - [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Date#tostring).
 - [`compareWeek()`](#compareweek) &mdash; Performs three-way comparison of the week of the current date against the given `$date`'s week.
 - [`compareMonth()`](#comparemonth) &mdash; Performs three-way comparison of the month of the current date against the given `$date`'s month.
 - [`compareYear()`](#compareyear) &mdash; Performs three-way comparison of the month of the current date against the given `$date`'s year.
-- [`isToday()`](#istoday) &mdash; Returns true if current date is today.
+- [`isToday()`](#istoday) &mdash; Returns `true` if current date is today.
 - [`now()`](#now) &mdash; Returns a date object set to now in UTC (same as [today()](/api-reference/Piwik/Date#today), except that the time is also set).
 - [`today()`](#today) &mdash; Returns a date object set to today at midnight in UTC.
 - [`yesterday()`](#yesterday) &mdash; Returns a date object set to yesterday at midnight in UTC.
@@ -92,7 +92,7 @@ result will be in UTC.
       <div markdown="1" class="parameter">
       `$timezone` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The timezone of `$dateString`. If specified, `$dateString` will be converted from UTC to this timezone before being used in the Date return value.</div>
+      <div markdown="1" class="param-desc"> The timezone of `$dateString`. If specified, `$dateString` will be converted from this timezone to UTC before being used in the Date return value.</div>
 
       <div style="clear:both;"/>
 
@@ -236,7 +236,7 @@ Returns the unix timestamp of the date in UTC, converted from the current timest
 <a name="isLater" id="isLater"></a>
 ### `isLater()`
 
-Returns true if the current date is older than the given `$date`.
+Returns `true` if the current date is older than the given `$date`.
 
 #### Signature
 
@@ -260,7 +260,7 @@ Returns true if the current date is older than the given `$date`.
 <a name="isEarlier" id="isEarlier"></a>
 ### `isEarlier()`
 
-Returns true if the current date is earlier than the given `$date`.
+Returns `true` if the current date is earlier than the given `$date`.
 
 #### Signature
 
@@ -437,7 +437,7 @@ Performs three-way comparison of the month of the current date against the given
 <a name="isToday" id="isToday"></a>
 ### `isToday()`
 
-Returns true if current date is today.
+Returns `true` if current date is today.
 
 #### Signature
 

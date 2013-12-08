@@ -5,7 +5,7 @@ Archive
 
 The **Archive** class is used to query cached analytics statistics (termed "archive data").
 
-You can use **Archive** instances to get archive data for one or more sites,
+You can use **Archive** instances to get data that was archived for one or more sites,
 for one or more periods and one optional segment.
 
 If archive data is not found, this class will initiate the archiving process. [1](#footnote-1)
@@ -22,7 +22,7 @@ If you're creating an API that returns report data, you may want to use the
 
 ### Learn more
 
-Learn more about _archiving_ [here](#).
+Learn more about _archiving_ [here](/guides/all-about-analytics-data).
 
 ### Limitations
 
@@ -88,7 +88,7 @@ Learn more about _archiving_ [here](#).
 
 <a name="footnote-1"></a>
 [1]: The archiving process will not be launched if browser archiving is disabled
-     and the current request came from a browser (and not the archive.php cron
+     and the current request came from a browser (and not the **archive.php** cron
      script).
 
 Methods
@@ -101,7 +101,7 @@ The class defines the following methods:
 - [`getNumeric()`](#getnumeric) &mdash; Queries and returns metric data in an array.
 - [`getBlob()`](#getblob) &mdash; Queries and returns blob data in an array.
 - [`getDataTableFromNumeric()`](#getdatatablefromnumeric) &mdash; Queries and returns metric data in a DataTable instance.
-- [`getDataTable()`](#getdatatable) &mdash; Queries and returns a single report as a DataTable instance.
+- [`getDataTable()`](#getdatatable) &mdash; Queries and returns one or more reports as DataTable instances.
 - [`getDataTableExpanded()`](#getdatatableexpanded) &mdash; Queries and returns one report with all of its subtables loaded.
 - [`getParams()`](#getparams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 - [`getDataTableFromArchive()`](#getdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
@@ -113,7 +113,7 @@ The class defines the following methods:
 Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional Segment.
 
 This method uses data that is found in query parameters, so the parameters to this
-function can all be strings.
+function can be string values.
 
 If you want to create an Archive instance with an array of Period instances, use
 [Archive::factory()](/api-reference/Piwik/Archive#factory).
@@ -281,8 +281,8 @@ will be indexed by site ID first, then period.
 <ul>
   <li>
     <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">False if there is no data to return, a numeric if only we're not querying for multiple sites/dates, or an array if multiple sites, dates or names are queried for.</div>
+    _Returns:_  (`Piwik\false`|`Piwik\numeric`|`array`) &mdash;
+    <div markdown="1" class="param-desc">`false` if there is no data to return, a single numeric value if we're not querying for multiple sites/periods, or an array if multiple sites, periods or names are queried for.</div>
 
     <div style="clear:both;"/>
 
@@ -296,7 +296,7 @@ will be indexed by site ID first, then period.
 
 Queries and returns blob data in an array.
 
-Reports are stored in blobs as serialized arrays of DataTable\Row instances, but this
+Reports are stored in blobs as serialized arrays of [DataTable\Row](/api-reference/Piwik/DataTable/Row) instances, but this
 data can technically be anything. In other words, you can store whatever you want
 as archive data blobs.
 
@@ -358,14 +358,14 @@ If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build
 be a DataTable\Map that is indexed by site ID.
 
 If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
-be a DataTable\Map that is indexed by period.
+be a [DataTable\Map](/api-reference/Piwik/DataTable/Map) that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
-will be a DataTable\Map indexed by site ID which contains DataTable\Map instances that are
+will be a [DataTable\Map](/api-reference/Piwik/DataTable/Map) indexed by site ID which contains [DataTable\Map](/api-reference/Piwik/DataTable/Map) instances that are
 indexed by period.
 
-Note: Every DataTable instance returned will have at most one row in it. The contents of each
-      row will be the requested metrics for the appropriate site and period.
+_Note: Every DataTable instance returned will have at most one row in it. The contents of each
+       row will be the requested metrics for the appropriate site and period._
 
 #### Signature
 
@@ -400,19 +400,19 @@ Note: Every DataTable instance returned will have at most one row in it. The con
 <a name="getDataTable" id="getDataTable"></a>
 ### `getDataTable()`
 
-Queries and returns a single report as a DataTable instance.
+Queries and returns one or more reports as DataTable instances.
 
-This method will query blob data that is a serialized array of of DataTable\Row's and
+This method will query blob data that is a serialized array of of [DataTable\Row](/api-reference/Piwik/DataTable/Row)'s and
 unserialize it.
 
 If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
-be a DataTable\Map that is indexed by site ID.
+be a [DataTable\Map](/api-reference/Piwik/DataTable/Map) that is indexed by site ID.
 
 If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
-will be a DataTable\Map indexed by site ID which contains DataTable\Map instances that are
+will be a [DataTable\Map](/api-reference/Piwik/DataTable/Map) indexed by site ID which contains [DataTable\Map](/api-reference/Piwik/DataTable/Map) instances that are
 indexed by period.
 
 #### Signature
@@ -446,7 +446,7 @@ indexed by period.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  ([`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md)) &mdash;
-    <div markdown="1" class="param-desc">A DataTable if multiple sites and periods were not requested. An appropriately indexed DataTable\Map if otherwise.</div>
+    <div markdown="1" class="param-desc">A DataTable if multiple sites and periods were not requested. An appropriately indexed [DataTable\Map](/api-reference/Piwik/DataTable/Map) if otherwise.</div>
 
     <div style="clear:both;"/>
 
@@ -467,7 +467,7 @@ If multiple periods were requested in [build()](/api-reference/Piwik/Archive#bui
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
-will be a DataTable\Map indexed by site ID which contains DataTable\Map instances that are
+will be a [indexed](/api-reference/Piwik/DataTable/Map) by site ID which contains [DataTable\Map](/api-reference/Piwik/DataTable/Map) instances that are
 indexed by period.
 
 #### Signature

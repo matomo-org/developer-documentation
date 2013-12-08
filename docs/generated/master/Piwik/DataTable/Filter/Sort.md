@@ -5,7 +5,7 @@ Sort
 
 Sorts a DataTable based on the value of a specific column.
 
-Possible to specify a natural sorting (see php.net/natsort for details)
+It is possible to specify a natural sorting (see [php.net/natsort](http://php.net/natsort) for details).
 
 Methods
 -------
@@ -17,7 +17,7 @@ The class defines the following methods:
 - [`sort()`](#sort) &mdash; Sorting method used for sorting numbers
 - [`naturalSort()`](#naturalsort) &mdash; Sorting method used for sorting values natural
 - [`sortString()`](#sortstring) &mdash; Sorting method used for sorting values
-- [`filter()`](#filter) &mdash; Sorts the given data table by defined column and sorting method
+- [`filter()`](#filter) &mdash; See [Sort](/api-reference/Piwik/DataTable/Filter/Sort).
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -212,7 +212,7 @@ Sorting method used for sorting values
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Sorts the given data table by defined column and sorting method
+See [Sort](/api-reference/Piwik/DataTable/Filter/Sort).
 
 #### Signature
 

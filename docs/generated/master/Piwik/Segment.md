@@ -9,8 +9,8 @@ A segment is a condition used to filter visits. They can, for example,
 select visits that have a specific browser or come from a specific
 country, or both.
 
-Individual segment parameters (such as `browserCode` and `countryCode`)
-are defined by individual plugins. Read about the [API.getSegmentDimensionMetadata](/api-reference/hooks#apigetsegmentdimensionmetadata)
+Individual segment dimensions (such as `browserCode` and `countryCode`)
+are defined by plugins. Read about the [API.getSegmentDimensionMetadata](/api-reference/hooks#apigetsegmentdimensionmetadata)
 event to learn more.
 
 Plugins that aggregate data stored in Piwik can support segments by
@@ -35,7 +35,7 @@ using this class when generating aggregation SQL queries.
     
     Db::fetchAll($query['sql'], $query['bind']);
 
-**Creating a 'null' segment**
+**Creating a _null_ segment**
 
     $idSites = array(1,2,3);
     $segment = new Segment('', $idSites);
@@ -47,7 +47,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`isEmpty()`](#isempty) &mdash; Returns true if the segment is empty, false if otherwise.
+- [`isEmpty()`](#isempty) &mdash; Returns `true` if the segment is empty, `false` if otherwise.
 - [`getString()`](#getstring) &mdash; Returns the segment condition.
 - [`getHash()`](#gethash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
 - [`getSelectQuery()`](#getselectquery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
@@ -89,7 +89,7 @@ Constructor.
 <a name="isEmpty" id="isEmpty"></a>
 ### `isEmpty()`
 
-Returns true if the segment is empty, false if otherwise.
+Returns `true` if the segment is empty, `false` if otherwise.
 
 #### Signature
 

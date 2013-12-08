@@ -3,7 +3,7 @@
 ColumnCallbackAddMetadata
 =========================
 
-Executes a callback for each row of a DataTable and adds the result as a new metadata column.
+Executes a callback for each row of a DataTable and adds the result as a new row metadata value.
 
 **Basic usage example**
 

@@ -3,7 +3,7 @@
 AddColumnsProcessedMetricsGoal
 ==============================
 
-Adds the Goal related metrics to a DataTable using metrics that already exist.
+Adds goal related metrics to a DataTable using metrics that already exist.
 
 Metrics added are:
 - **revenue_per_visit**: total goal and ecommerce revenue / nb_visits
@@ -28,7 +28,7 @@ Metrics added are:
 Adding the **filter_update_columns_when_show_all_goals** query parameter to
 an API request will trigger the execution of this Filter.
 
-Note: This filter must be called before [ReplaceColumnNames](/api-reference/Piwik/DataTable/Filter/ReplaceColumnNames) is called.
+_Note: This filter must be called before [ReplaceColumnNames](/api-reference/Piwik/DataTable/Filter/ReplaceColumnNames) is called._
 
 **Basic usage example**
 

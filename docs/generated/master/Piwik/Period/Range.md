@@ -11,7 +11,7 @@ to calculate the subperiods of multiple period requests (eg, when period=day and
 date=2007-07-24,2013-11-15).
 
 The range period differs from other periods mainly in that since it is arbitrary,
-range periods are not archived by the archive.php cron script.
+range periods are not pre-archived by the **archive.php** cron script.
 
 Methods
 -------
@@ -21,13 +21,13 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns the current period as a localized short string.
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns the current period as a localized long string.
-- [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period
-- [`getPrettyString()`](#getprettystring) &mdash; Returns the current period as a string
-- [`setDefaultEndDate()`](#setdefaultenddate) &mdash; Sets the default end date of the period
-- [`parseDateRange()`](#parsedaterange) &mdash; Given a date string, returns false if not a date range, or returns the array containing date start, date end
-- [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period
+- [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period.
+- [`getPrettyString()`](#getprettystring) &mdash; Returns the current period as a string.
+- [`setDefaultEndDate()`](#setdefaultenddate) &mdash; Sets the default end date of the period.
+- [`parseDateRange()`](#parsedaterange) &mdash; Given a date string, returns `false` if not a date range, or returns the array containing start and end dates.
+- [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period.
 - [`getLastDate()`](#getlastdate) &mdash; Returns the date that is one period before the supplied date.
-- [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date ragne string given a period type, end date and number of periods the range spans over.
+- [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date range string given a period type, end date and number of periods the range spans over.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -106,7 +106,7 @@ Returns the current period as a localized long string.
 <a name="getDateStart" id="getDateStart"></a>
 ### `getDateStart()`
 
-Returns the start date of the period
+Returns the start date of the period.
 
 #### Signature
 
@@ -118,7 +118,7 @@ Returns the start date of the period
 <a name="getPrettyString" id="getPrettyString"></a>
 ### `getPrettyString()`
 
-Returns the current period as a string
+Returns the current period as a string.
 
 #### Signature
 
@@ -128,7 +128,7 @@ Returns the current period as a string
 <a name="setDefaultEndDate" id="setDefaultEndDate"></a>
 ### `setDefaultEndDate()`
 
-Sets the default end date of the period
+Sets the default end date of the period.
 
 #### Signature
 
@@ -152,7 +152,7 @@ Sets the default end date of the period
 <a name="parseDateRange" id="parseDateRange"></a>
 ### `parseDateRange()`
 
-Given a date string, returns false if not a date range, or returns the array containing date start, date end
+Given a date string, returns `false` if not a date range, or returns the array containing start and end dates.
 
 #### Signature
 
@@ -175,7 +175,7 @@ Given a date string, returns false if not a date range, or returns the array con
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">array(1 => dateStartString, 2 => dateEndString ) or false if the input was not a date range</div>
+    <div markdown="1" class="param-desc">array(1 => dateStartString, 2 => dateEndString) or `false` if the input was not a date range.</div>
 
     <div style="clear:both;"/>
 
@@ -187,7 +187,7 @@ Given a date string, returns false if not a date range, or returns the array con
 <a name="getDateEnd" id="getDateEnd"></a>
 ### `getDateEnd()`
 
-Returns the end date of the period
+Returns the end date of the period.
 
 #### Signature
 
@@ -253,7 +253,7 @@ Returns the date that is one period before the supplied date.
 <a name="getRelativeToEndDate" id="getRelativeToEndDate"></a>
 ### `getRelativeToEndDate()`
 
-Returns a date ragne string given a period type, end date and number of periods the range spans over.
+Returns a date range string given a period type, end date and number of periods the range spans over.
 
 #### Signature
 

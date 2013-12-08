@@ -20,7 +20,6 @@ Index
 - [`AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
 - [`AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
 - [`appendPercentSign()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#appendpercentsign) &mdash; _Method in class_ [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
-- [`addSummaryRow()`](Piwik/DataTable/Filter/Truncate.md#addsummaryrow) &mdash; _Method in class_ [`Truncate`](Piwik/DataTable/Filter/Truncate.md)
 - [`applyQueuedFilters()`](Piwik/DataTable/Map.md#applyqueuedfilters) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`addTable()`](Piwik/DataTable/Map.md#addtable) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`addDataTable()`](Piwik/DataTable/Map.md#adddatatable) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
@@ -211,7 +210,6 @@ Index
 - [`fetchAssoc()`](Piwik/Db.md#fetchassoc) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`Filesystem`](Piwik/Filesystem.md) &mdash; _Class in namespace_ `Piwik` 
 - [`FrontController`](Piwik/FrontController.md) &mdash; _Class in namespace_ `Piwik` 
-- [`fetchDispatch()`](Piwik/FrontController.md#fetchdispatch) &mdash; _Method in class_ [`FrontController`](Piwik/FrontController.md)
 - [`fetchRemoteFile()`](Piwik/Http.md#fetchremotefile) &mdash; _Method in class_ [`Http`](Piwik/Http.md)
 - [`$flags`](Piwik/Notification.md#$flags) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`factory()`](Piwik/Period.md#factory) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
@@ -403,7 +401,6 @@ Index
 - [`getOrder()`](Piwik/Settings/SystemSetting.md#getorder) &mdash; _Method in class_ [`SystemSetting`](Piwik/Settings/SystemSetting.md)
 - [`getOrder()`](Piwik/Settings/UserSetting.md#getorder) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)
 - [`getInstance()`](Piwik/Singleton.md#getinstance) &mdash; _Method in class_ [`Singleton`](Piwik/Singleton.md)
-- [`getMinMaxDateAcrossWebsites()`](Piwik/Site.md#getminmaxdateacrosswebsites) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getName()`](Piwik/Site.md#getname) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getMainUrl()`](Piwik/Site.md#getmainurl) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getId()`](Piwik/Site.md#getid) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
@@ -416,7 +413,6 @@ Index
 - [`getSearchKeywordParameters()`](Piwik/Site.md#getsearchkeywordparameters) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getSearchCategoryParameters()`](Piwik/Site.md#getsearchcategoryparameters) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getIdSitesFromIdSitesString()`](Piwik/Site.md#getidsitesfromidsitesstring) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
-- [`getSite()`](Piwik/Site.md#getsite) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getNameFor()`](Piwik/Site.md#getnamefor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getTimezoneFor()`](Piwik/Site.md#gettimezonefor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getTypeFor()`](Piwik/Site.md#gettypefor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)

@@ -3,7 +3,7 @@
 Http
 ====
 
-Server-side http client to retrieve content from remote servers, and optionally save to a local file.
+Contains HTTP client related helper methods that can retrieve content from remote servers and optionally save to a local file.
 
 Used to check for the latest Piwik version and download updates.
 
@@ -145,7 +145,7 @@ Sends an HTTP request using best available transport method.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`bool`|`string`) &mdash;
-    <div markdown="1" class="param-desc">If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success: - status => the HTTP status code - headers => the HTTP headers - data => the HTTP response data `false` is still returned on failure.</div>
+    <div markdown="1" class="param-desc">If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success: - **status**: the HTTP status code - **headers**: the HTTP headers - **data**: the HTTP response data `false` is still returned on failure.</div>
 
     <div style="clear:both;"/>
 
@@ -166,8 +166,8 @@ is determined by the existing file's size and the expected file size, which
 is stored in the piwik_option table before starting a download. The expected
 file size is obtained through a `HEAD` HTTP request.
 
-Note: this function uses the `Range` HTTP header to accomplish downloading in
-parts.
+_Note: this function uses the **Range** HTTP header to accomplish downloading in
+parts. Not every server supports this header._
 
 The proper use of this function is to call it once per request. The browser
 should continue to send requests to Piwik which will in turn call this method
@@ -176,36 +176,36 @@ of a download's progress.
 
 **Example Usage**
 
-    ```
-    // browser JavaScript
-    var downloadFile = function (isStart) {
-        var ajax = new ajaxHelper();
-        ajax.addParams({
-            module: 'MyPlugin',
-            action: 'myAction',
-            isStart: isStart ? 1 : 0
-        }, 'post');
-        ajax.setCallback(function (response) {
-            var progress = response.progress
-            // ...update progress...
+```
+// browser JavaScript
+var downloadFile = function (isStart) {
+    var ajax = new ajaxHelper();
+    ajax.addParams({
+        module: 'MyPlugin',
+        action: 'myAction',
+        isStart: isStart ? 1 : 0
+    }, 'post');
+    ajax.setCallback(function (response) {
+        var progress = response.progress
+        // ...update progress...
 
-            downloadFile(false);
-        });
-        ajax.send();
-    }
+        downloadFile(false);
+    });
+    ajax.send();
+}
 
-    downloadFile(true);
-    ```
+downloadFile(true);
+```
 
-    ```
-    // PHP controller action
-    public function myAction()
-    {
-        $outputPath = PIWIK_INCLUDE_PATH . '/tmp/averybigfile.zip';
-        $isStart = Common::getRequestVar('isStart', 1, 'int');
-        Http::downloadChunk("http://bigfiles.com/averybigfile.zip", $outputPath, $isStart == 1);
-    }
-    ```
+```
+// PHP controller action
+public function myAction()
+{
+    $outputPath = PIWIK_INCLUDE_PATH . '/tmp/averybigfile.zip';
+    $isStart = Common::getRequestVar('isStart', 1, 'int');
+    Http::downloadChunk("http://bigfiles.com/averybigfile.zip", $outputPath, $isStart == 1);
+}
+```
 
 #### Signature
 
@@ -236,7 +236,7 @@ of a download's progress.
       <div markdown="1" class="parameter">
       `$isContinuation` (`bool`) &mdash;
 
-      <div markdown="1" class="param-desc"> True if this is the continuation of a download, or if we're starting a fresh one.</div>
+      <div markdown="1" class="param-desc"> `true` if this is the continuation of a download, or if we're starting a fresh one.</div>
 
       <div style="clear:both;"/>
 
@@ -304,7 +304,7 @@ Fetches a file located at `$url` and saves it to `$destinationPath`.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`bool`) &mdash;
-    <div markdown="1" class="param-desc">true on success, throws Exception on failure</div>
+    <div markdown="1" class="param-desc">`true` on success, throws Exception on failure</div>
 
     <div style="clear:both;"/>
 

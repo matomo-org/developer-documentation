@@ -15,14 +15,15 @@ the screen, regardless of whether the [log] log_writer config option includes th
 screen writer.
 
 Currently, Piwik supports the following logging backends:
-- logging to the screen
-- logging to a file
-- logging to a database
+
+- **screen**: logging to the screen
+- **file**: logging to a file
+- **database**: logging to Piwik's MySQL database
 
 ### Logging configuration
 
 The logging utility can be configured by manipulating the INI config options in the
-[log] section.
+`[log]` section.
 
 The following configuration options can be set:
 
@@ -46,13 +47,18 @@ The following configuration options can be set:
 ### Custom message formatting
 
 If you'd like to format log messages differently for different backends, you can use
-one of the `'Log.format...Message'` events. These events are fired when an object is
-logged. You can create your own custom class containing the information to log and
-listen to this event.
+one of the `'Log.format...Message'` events.
+
+These events are fired when an object is logged. You can create your own custom class
+containing the information to log and listen to these events to format it correctly for
+different backends.
+
+If you don't care about the backend when formatting an object, implement a `__toString()`
+in the custom class.
 
 ### Custom log writers
 
-New logging backends can be added via the `'Log.getAvailableWriters'` event. A log
+New logging backends can be added via the [Log.getAvailableWriters](/api-reference/hooks#loggetavailablewriters)` event. A log
 writer is just a callback that accepts log entry information (such as the message,
 level, etc.), so any backend could conceivably be used (including existing PSR3
 backends).
@@ -64,6 +70,25 @@ backends).
     Log::error("This log message will end up on the screen and in a file.")
     Log::verbose("This log message uses %s params, but %s will only be called if the"
                . " configured log level includes %s.", "sprintf", "sprintf", "verbose");
+
+**Logging objects**
+
+    class MyDebugInfo
+    {
+        // ...
+
+        public function __toString()
+        {
+            return // ...
+        }
+    }
+
+    try {
+        $myThirdPartyServiceClient->doSomething();
+    } catch (Exception $unexpectedError) {
+        $debugInfo = new MyDebugInfo($unexpectedError, $myThirdPartyServiceClient);
+        Log::debug($debugInfo);
+    }
 
 Methods
 -------
@@ -82,8 +107,8 @@ The class defines the following methods:
 
 Logs a message using the ERROR log level.
 
-Note: Messages logged with the ERROR level are always logged to the screen in addition
-to configured writers.
+_Note: Messages logged with the ERROR level are always logged to the screen in addition
+to configured writers._
 
 #### Signature
 

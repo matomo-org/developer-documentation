@@ -3,7 +3,7 @@
 MetadataCallbackReplace
 =======================
 
-Execute a callback for each row of a DataTable using certain column values and metadata and replaces row metadata with the result.
+Execute a callback for each row of a DataTable passing certain column values and metadata as metadata, and replaces row metadata with the callback result.
 
 **Basic usage example**
 

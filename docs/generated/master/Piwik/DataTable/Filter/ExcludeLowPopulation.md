@@ -3,7 +3,7 @@
 ExcludeLowPopulation
 ====================
 
-Deletes all rows for which a specific column has a value that is lower than specific minimum threshold value.
+Deletes all rows for which a specific column has a value that is lower than specified minimum threshold value.
 
 **Basic usage examples**
 
@@ -52,7 +52,7 @@ Constructor.
       <div markdown="1" class="parameter">
       `$columnToFilter` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The name of the column whose value will determine whether row is deleted or not.</div>
+      <div markdown="1" class="param-desc"> The name of the column whose value will determine whether a row is deleted or not.</div>
 
       <div style="clear:both;"/>
 
@@ -72,7 +72,7 @@ Constructor.
       <div markdown="1" class="parameter">
       `$minimumPercentageThreshold` (`bool`|`float`) &mdash;
 
-      <div markdown="1" class="param-desc"> If supplied, column values must be a greater percentage of the sum of all column values than this value.</div>
+      <div markdown="1" class="param-desc"> If supplied, column values must be a greater percentage of the sum of all column values than this precentage.</div>
 
       <div style="clear:both;"/>
 

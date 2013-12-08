@@ -250,7 +250,7 @@ Whether to run generic filters on the DataTable before rendering or not.
 
 Whether to run ViewDataTable's list of queued filters or not.
 
-NOTE: Priority queued filters are always run.
+_NOTE: Priority queued filters are always run._
 
 Default value: false
 
@@ -288,11 +288,11 @@ Methods
 The class defines the following methods:
 
 - [`getProperties()`](#getproperties)
-- [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside)
-- [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams)
+- [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks request properties as client side properties.
+- [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable.
 - [`setDefaultSort()`](#setdefaultsort)
-- [`areQueuedFiltersDisabled()`](#arequeuedfiltersdisabled) &mdash; Returns true if queued filters have been disabled, false if otherwise.
-- [`areGenericFiltersDisabled()`](#aregenericfiltersdisabled) &mdash; Returns true if generic filters have been disabled, false if otherwise.
+- [`areQueuedFiltersDisabled()`](#arequeuedfiltersdisabled) &mdash; Returns `true` if queued filters have been disabled, `false` if otherwise.
+- [`areGenericFiltersDisabled()`](#aregenericfiltersdisabled) &mdash; Returns `true` if generic filters have been disabled, `false` if otherwise.
 - [`getApiModuleToRequest()`](#getapimoduletorequest)
 - [`getApiMethodToRequest()`](#getapimethodtorequest)
 
@@ -308,6 +308,11 @@ The class defines the following methods:
 <a name="addPropertiesThatShouldBeAvailableClientSide" id="addPropertiesThatShouldBeAvailableClientSide"></a>
 ### `addPropertiesThatShouldBeAvailableClientSide()`
 
+Marks request properties as client side properties.
+
+[Read this](#client-side-properties-desc)
+to learn more.
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -317,7 +322,7 @@ The class defines the following methods:
       <div markdown="1" class="parameter">
       `$propertyNames` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"></div>
+      <div markdown="1" class="param-desc"> List of property names, eg, `array('disable_queued_filters', 'filter_column')`.</div>
 
       <div style="clear:both;"/>
 
@@ -330,6 +335,11 @@ The class defines the following methods:
 <a name="addPropertiesThatCanBeOverwrittenByQueryParams" id="addPropertiesThatCanBeOverwrittenByQueryParams"></a>
 ### `addPropertiesThatCanBeOverwrittenByQueryParams()`
 
+Marks display properties as overridable.
+
+[Read this](#overridable-properties-desc) to
+learn more.
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -339,7 +349,7 @@ The class defines the following methods:
       <div markdown="1" class="parameter">
       `$propertyNames` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"></div>
+      <div markdown="1" class="param-desc"> List of property names, eg, `array('disable_queued_filters', 'filter_column')`.</div>
 
       <div style="clear:both;"/>
 
@@ -384,7 +394,7 @@ The class defines the following methods:
 <a name="areQueuedFiltersDisabled" id="areQueuedFiltersDisabled"></a>
 ### `areQueuedFiltersDisabled()`
 
-Returns true if queued filters have been disabled, false if otherwise.
+Returns `true` if queued filters have been disabled, `false` if otherwise.
 
 #### Signature
 
@@ -394,7 +404,7 @@ Returns true if queued filters have been disabled, false if otherwise.
 <a name="areGenericFiltersDisabled" id="areGenericFiltersDisabled"></a>
 ### `areGenericFiltersDisabled()`
 
-Returns true if generic filters have been disabled, false if otherwise.
+Returns `true` if generic filters have been disabled, `false` if otherwise.
 
 #### Signature
 

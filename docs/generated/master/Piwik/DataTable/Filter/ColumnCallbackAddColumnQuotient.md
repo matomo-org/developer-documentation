@@ -8,6 +8,10 @@ Calculates the quotient of two columns and adds the result as a new column for e
 This filter is used to calculate rate values (eg, `'bounce_rate'`), averages
 (eg, `'avg_time_on_page'`) and other types of values.
 
+**Basic usage example**
+
+    $dataTable->queueFilter('ColumnCallbackAddColumnQuotient', array('bounce_rate', 'bounce_count', 'nb_visits', $precision = 2));
+
 Methods
 -------
 

@@ -58,7 +58,7 @@ Creates a [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) inst
 If the **viewDataTable** query parameter is set,
 this parameter's value is used as the ID.
 
-See [ViewDataTable docs](#) to read about the ViewDataTable implementations that are packaged with Piwik.
+See [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the visualizations that are packaged with Piwik.
 
 #### Signature
 
