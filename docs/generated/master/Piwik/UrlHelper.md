@@ -22,8 +22,7 @@ The class defines the following methods:
 
 Converts an array of query parameter name/value mappings into a query string.
 
-Parameters that are in `$parametersToExclude` will not appear in the result
-query string.
+Parameters that are in `$parametersToExclude` will not appear in the result.
 
 #### Signature
 
@@ -70,7 +69,7 @@ query string.
 
 Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php) function.
 
-Copied from the PHP comments at http://php.net/parse_url
+Copied from the PHP comments at [http://php.net/parse_url](http://php.net/parse_url).
 
 #### Signature
 
@@ -116,7 +115,7 @@ Returns a URL query string as an array.
       <div markdown="1" class="parameter">
       `$urlQuery` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The query string.</div>
+      <div markdown="1" class="param-desc"> The query string, eg, `'?param1=value1&param2=value2'`.</div>
 
       <div style="clear:both;"/>
 
@@ -196,7 +195,7 @@ Returns the path and query string of a URL.
       <div markdown="1" class="parameter">
       `$url` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"></div>
+      <div markdown="1" class="param-desc"> The URL.</div>
 
       <div style="clear:both;"/>
 

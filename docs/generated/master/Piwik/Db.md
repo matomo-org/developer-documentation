@@ -3,13 +3,11 @@
 Db
 ==
 
-Helper class that contains SQL related helper functions.
+Contains SQL related helper functions for Piwik's MySQL database.
 
-Plugins should use this class to execute SQL against the database.
+Plugins should always use this class to execute SQL against the database.
 
 ### Examples
-
-**Basic Usage**
 
     $rows = Db::fetchAll("SELECT col1, col2 FROM mytable WHERE thing = ?", array('thingvalue'));
     foreach ($rows as $row) {
@@ -17,6 +15,7 @@ Plugins should use this class to execute SQL against the database.
     }
 
     $value = Db::fetchOne("SELECT MAX(col1) FROM mytable");
+    doSomethingElse($value);
 
     Db::query("DELETE FROM mytable WHERE id < ?", array(23));
 
@@ -45,22 +44,22 @@ Methods
 The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
-- [`createDatabaseObject()`](#createdatabaseobject) &mdash; Create the database object and connects to the database.
+- [`createDatabaseObject()`](#createdatabaseobject) &mdash; Connects to the database.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
-- [`query()`](#query) &mdash; Executes an SQL query and returns the Zend_Db_Statement object.
-- [`fetchAll()`](#fetchall) &mdash; Executes the SQL query and fetches all the rows from the result set.
-- [`fetchRow()`](#fetchrow) &mdash; Executes an SQL query and fetches the first row of the result.
-- [`fetchOne()`](#fetchone) &mdash; Executes an SQL query and fetches the first column of the first row of result set.
-- [`fetchAssoc()`](#fetchassoc) &mdash; Executes an SQL query and returns the entire result set indexed by the first selected field.
+- [`query()`](#query) &mdash; Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
+- [`fetchAll()`](#fetchall) &mdash; Executes an SQL `SELECT` statement and returns all fetched rows from the result set.
+- [`fetchRow()`](#fetchrow) &mdash; Executes an SQL `SELECT` statement and returns the first row of the result set.
+- [`fetchOne()`](#fetchone) &mdash; Executes an SQL `SELECT` statement and returns the first column value of the first row in the result set.
+- [`fetchAssoc()`](#fetchassoc) &mdash; Executes an SQL `SELECT` statement and returns the entire result set indexed by the first selected field.
 - [`deleteAllRows()`](#deleteallrows) &mdash; Deletes all desired rows in a table, while using a limit.
-- [`optimizeTables()`](#optimizetables) &mdash; Runs an OPTIMIZE TABLE query on the supplied table or tables.
+- [`optimizeTables()`](#optimizetables) &mdash; Runs an `OPTIMIZE TABLE` query on the supplied table or tables.
 - [`dropTables()`](#droptables) &mdash; Drops the supplied table or tables.
 - [`lockTables()`](#locktables) &mdash; Locks the supplied table or tables.
 - [`unlockAllTables()`](#unlockalltables) &mdash; Releases all table locks.
-- [`segmentedFetchFirst()`](#segmentedfetchfirst) &mdash; Performs a SELECT on a table one chunk at a time and returns the first successfully fetched value.
-- [`segmentedFetchOne()`](#segmentedfetchone) &mdash; Performs a SELECT on a table one chunk at a time and returns an array of every fetched value.
+- [`segmentedFetchFirst()`](#segmentedfetchfirst) &mdash; Performs a `SELECT` statement on a table one chunk at a time and returns the first successfully fetched value.
+- [`segmentedFetchOne()`](#segmentedfetchone) &mdash; Performs a `SELECT` on a table one chunk at a time and returns an array of every fetched value.
 - [`segmentedFetchAll()`](#segmentedfetchall) &mdash; Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
-- [`segmentedQuery()`](#segmentedquery) &mdash; Performs a non-SELECT query on a table one chunk at a time.
+- [`segmentedQuery()`](#segmentedquery) &mdash; Performs a `UPDATE` or `DELETE` statement on a table one chunk at a time.
 - [`getDbLock()`](#getdblock) &mdash; Attempts to get a named lock.
 - [`releaseDbLock()`](#releasedblock) &mdash; Releases a named lock.
 - [`isLockPrivilegeGranted()`](#islockprivilegegranted) &mdash; Checks whether the database user is allowed to lock tables.
@@ -90,9 +89,9 @@ Returns the database connection and creates it if it hasn't been already.
 <a name="createDatabaseObject" id="createDatabaseObject"></a>
 ### `createDatabaseObject()`
 
-Create the database object and connects to the database.
+Connects to the database.
 
-Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get).
+Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
 
 #### Signature
 
@@ -118,9 +117,10 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get).
 
 Executes an unprepared SQL query.
 
-Recommended for DDL statements like CREATE,
-DROP and ALTER. The return value is DBMS-specific. For MySQLI, it returns the
-number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
+Recommended for DDL statements like `CREATE`,
+`DROP` and `ALTER`. The return value is DBMS-specific. For MySQLI, it returns the
+number of rows affected. For PDO, it returns a
+[Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) object.
 
 #### Signature
 
@@ -157,11 +157,10 @@ number of rows affected. For PDO, it returns the `Zend_Db_Statement` object.
 <a name="query" id="query"></a>
 ### `query()`
 
-Executes an SQL query and returns the Zend_Db_Statement object.
+Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
 
-If you want to fetch data from the DB you should use one of the fetch... functions.
-
-See also [http://framework.zend.com/manual/en/zend.db.statement.html](http://framework.zend.com/manual/en/zend.db.statement.html).
+This method is meant for non-query SQL statements like `INSERT` and `UPDATE. If you want to fetch
+data from the DB you should use one of the fetch... functions.
 
 #### Signature
 
@@ -197,7 +196,7 @@ See also [http://framework.zend.com/manual/en/zend.db.statement.html](http://fra
 <a name="fetchAll" id="fetchAll"></a>
 ### `fetchAll()`
 
-Executes the SQL query and fetches all the rows from the result set.
+Executes an SQL `SELECT` statement and returns all fetched rows from the result set.
 
 #### Signature
 
@@ -230,7 +229,7 @@ Executes the SQL query and fetches all the rows from the result set.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">(one row in the array per row fetched in the DB)</div>
+    <div markdown="1" class="param-desc">The fetched rows, each element is an associative array mapping column names with column values.</div>
 
     <div style="clear:both;"/>
 
@@ -244,7 +243,7 @@ Executes the SQL query and fetches all the rows from the result set.
 <a name="fetchRow" id="fetchRow"></a>
 ### `fetchRow()`
 
-Executes an SQL query and fetches the first row of the result.
+Executes an SQL `SELECT` statement and returns the first row of the result set.
 
 #### Signature
 
@@ -272,7 +271,18 @@ Executes an SQL query and fetches the first row of the result.
       </div>
    </li>
    </ul>
-- It returns a `array` value.
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">The fetched row, each element is an associative array mapping column names with column values.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -280,7 +290,7 @@ Executes an SQL query and fetches the first row of the result.
 <a name="fetchOne" id="fetchOne"></a>
 ### `fetchOne()`
 
-Executes an SQL query and fetches the first column of the first row of result set.
+Executes an SQL `SELECT` statement and returns the first column value of the first row in the result set.
 
 #### Signature
 
@@ -316,7 +326,7 @@ Executes an SQL query and fetches the first column of the first row of result se
 <a name="fetchAssoc" id="fetchAssoc"></a>
 ### `fetchAssoc()`
 
-Executes an SQL query and returns the entire result set indexed by the first selected field.
+Executes an SQL `SELECT` statement and returns the entire result set indexed by the first selected field.
 
 #### Signature
 
@@ -373,6 +383,7 @@ locking the table for too long.
 
 **Example**
 
+    // delete all visit rows whose ID is less than a certain value, 100000 rows at a time
     $idVisit = // ...
     Db::deleteAllRows(Common::prefixTable('log_visit'), "WHERE idvisit <= ?", "idvisit ASC", 100000, array($idVisit));
 
@@ -415,7 +426,7 @@ locking the table for too long.
       <div markdown="1" class="parameter">
       `$maxRowsPerQuery` (`int`) &mdash;
 
-      <div markdown="1" class="param-desc"> The maximum number of rows to delete per DELETE query.</div>
+      <div markdown="1" class="param-desc"> The maximum number of rows to delete per `DELETE` query.</div>
 
       <div style="clear:both;"/>
 
@@ -425,7 +436,7 @@ locking the table for too long.
       <div markdown="1" class="parameter">
       `$parameters` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Parameters to bind in the query.</div>
+      <div markdown="1" class="param-desc"> Parameters to bind for each query.</div>
 
       <div style="clear:both;"/>
 
@@ -449,12 +460,9 @@ locking the table for too long.
 <a name="optimizeTables" id="optimizeTables"></a>
 ### `optimizeTables()`
 
-Runs an OPTIMIZE TABLE query on the supplied table or tables.
+Runs an `OPTIMIZE TABLE` query on the supplied table or tables.
 
-The table names must be prefixed
-(see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
-
-Tables will only be optimized if the `[General] enable_sql_optimize_queries` config option is
+Tables will only be optimized if the `[General] enable_sql_optimize_queries` INI config option is
 set to **1**.
 
 #### Signature
@@ -466,7 +474,7 @@ set to **1**.
       <div markdown="1" class="parameter">
       `$tables` (`string`|`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The name of the table to optimize or an array of tables to optimize.</div>
+      <div markdown="1" class="param-desc"> The name of the table to optimize or an array of tables to optimize. Table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).</div>
 
       <div style="clear:both;"/>
 
@@ -481,8 +489,6 @@ set to **1**.
 
 Drops the supplied table or tables.
 
-The table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
-
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -492,7 +498,7 @@ The table names must be prefixed (see [Common::prefixTable()](/api-reference/Piw
       <div markdown="1" class="parameter">
       `$tables` (`string`|`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The name of the table to drop or an array of table names to drop.</div>
+      <div markdown="1" class="param-desc"> The name of the table to drop or an array of table names to drop. Table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).</div>
 
       <div style="clear:both;"/>
 
@@ -507,10 +513,8 @@ The table names must be prefixed (see [Common::prefixTable()](/api-reference/Piw
 
 Locks the supplied table or tables.
 
-The table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
-
-**NOTE:** Piwik does not require the LOCK TABLES privilege to be available. Piwik
-should still work in case it is not granted.
+**NOTE:** Piwik does not require the `LOCK TABLES` privilege to be available. Piwik
+should still work if it has not been granted.
 
 #### Signature
 
@@ -521,7 +525,7 @@ should still work in case it is not granted.
       <div markdown="1" class="parameter">
       `$tablesToRead` (`string`|`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The table or tables to obtain 'read' locks on.</div>
+      <div markdown="1" class="param-desc"> The table or tables to obtain 'read' locks on. Table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).</div>
 
       <div style="clear:both;"/>
 
@@ -531,7 +535,7 @@ should still work in case it is not granted.
       <div markdown="1" class="parameter">
       `$tablesToWrite` (`string`|`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The table or tables to obtain 'write' locks on.</div>
+      <div markdown="1" class="param-desc"> The table or tables to obtain 'write' locks on. Table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).</div>
 
       <div style="clear:both;"/>
 
@@ -546,8 +550,8 @@ should still work in case it is not granted.
 
 Releases all table locks.
 
-**NOTE:** Piwik does not require the LOCK TABLES privilege to be available. Piwik
-should still work in case it is not granted.
+**NOTE:** Piwik does not require the `LOCK TABLES` privilege to be available. Piwik
+should still work if it has not been granted.
 
 #### Signature
 
@@ -557,15 +561,15 @@ should still work in case it is not granted.
 <a name="segmentedFetchFirst" id="segmentedFetchFirst"></a>
 ### `segmentedFetchFirst()`
 
-Performs a SELECT on a table one chunk at a time and returns the first successfully fetched value.
+Performs a `SELECT` statement on a table one chunk at a time and returns the first successfully fetched value.
 
-In other words, if running a SELECT on one chunk of the table doesn't
-return a value, we move on to the next chunk and we keep moving until
-the SELECT returns a value.
+This function will execute a query on one set of rows in a table. If nothing
+is fetched, it will execute the query on the next set of rows and so on until
+the query returns a value.
 
-This function will break up a SELECT into several smaller SELECTs and
-should be used when performing a SELECT that can take a long time to finish.
-Using several smaller SELECTs will ensure that the table will not be locked
+This function will break up a `SELECT into several smaller `SELECT`s and
+should be used when performing a `SELECT` that can take a long time to finish.
+Using several smaller `SELECT`s will ensure that the table will not be locked
 for too long.
 
 **Example**
@@ -592,7 +596,7 @@ for too long.
       <div markdown="1" class="parameter">
       `$sql` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.</div>
+      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the `WHERE` expression must be as follows: `'id >= ? AND id < ?'` where **id** is the int id of the table.</div>
 
       <div style="clear:both;"/>
 
@@ -622,7 +626,7 @@ for too long.
       <div markdown="1" class="parameter">
       `$step` (`int`) &mdash;
 
-      <div markdown="1" class="param-desc"> The maximum number of rows to scan in each smaller SELECT.</div>
+      <div markdown="1" class="param-desc"> The maximum number of rows to scan in one query.</div>
 
       <div style="clear:both;"/>
 
@@ -632,7 +636,7 @@ for too long.
       <div markdown="1" class="parameter">
       `$params` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Parameters to bind in the query, `array(param1 => value1, param2 => value2)`</div>
+      <div markdown="1" class="param-desc"> Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`</div>
 
       <div style="clear:both;"/>
 
@@ -645,11 +649,14 @@ for too long.
 <a name="segmentedFetchOne" id="segmentedFetchOne"></a>
 ### `segmentedFetchOne()`
 
-Performs a SELECT on a table one chunk at a time and returns an array of every fetched value.
+Performs a `SELECT` on a table one chunk at a time and returns an array of every fetched value.
 
-This function will break up a SELECT into several smaller SELECTs and
-accumulate the result. It should be used when performing a SELECT that can
-take a long time to finish. Using several smaller SELECTs will ensure that
+This function will break up a `SELECT` query into several smaller queries by
+using only a limited number of rows at a time. It will accumulate the results
+of each smaller query and return the result.
+
+This function should be used when performing a `SELECT` that can
+take a long time to finish. Using several smaller queries will ensure that
 the table will not be locked for too long.
 
 #### Signature
@@ -661,7 +668,7 @@ the table will not be locked for too long.
       <div markdown="1" class="parameter">
       `$sql` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.</div>
+      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the `WHERE` expression must be as follows: `'id >= ? AND id < ?'` where **id** is the int id of the table.</div>
 
       <div style="clear:both;"/>
 
@@ -691,7 +698,7 @@ the table will not be locked for too long.
       <div markdown="1" class="parameter">
       `$step` (`int`) &mdash;
 
-      <div markdown="1" class="param-desc"> The maximum number of rows to scan in each smaller SELECT.</div>
+      <div markdown="1" class="param-desc"> The maximum number of rows to scan in one query.</div>
 
       <div style="clear:both;"/>
 
@@ -727,9 +734,12 @@ the table will not be locked for too long.
 
 Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
 
-This function will break up a SELECT into several smaller SELECTs and
-accumulate the result. It should be used when performing a SELECT that can
-take a long time to finish. Using several smaller SELECTs will ensure that
+This function will break up a `SELECT` query into several smaller queries by
+using only a limited number of rows at a time. It will accumulate the results
+of each smaller query and return the result.
+
+This function should be used when performing a `SELECT` that can
+take a long time to finish. Using several smaller queries will ensure that
 the table will not be locked for too long.
 
 #### Signature
@@ -741,7 +751,7 @@ the table will not be locked for too long.
       <div markdown="1" class="parameter">
       `$sql` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.</div>
+      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the `WHERE` expression must be as follows: `'id >= ? AND id < ?'` where **id** is the int id of the table.</div>
 
       <div style="clear:both;"/>
 
@@ -771,7 +781,7 @@ the table will not be locked for too long.
       <div markdown="1" class="parameter">
       `$step` (`int`) &mdash;
 
-      <div markdown="1" class="param-desc"> The maximum number of rows to scan in each smaller SELECT.</div>
+      <div markdown="1" class="param-desc"> The maximum number of rows to scan in one query.</div>
 
       <div style="clear:both;"/>
 
@@ -793,7 +803,7 @@ the table will not be locked for too long.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">An array of rows that includes the result set of every executed query.</div>
+    <div markdown="1" class="param-desc">An array of rows that includes the result set of every smaller query.</div>
 
     <div style="clear:both;"/>
 
@@ -805,7 +815,14 @@ the table will not be locked for too long.
 <a name="segmentedQuery" id="segmentedQuery"></a>
 ### `segmentedQuery()`
 
-Performs a non-SELECT query on a table one chunk at a time.
+Performs a `UPDATE` or `DELETE` statement on a table one chunk at a time.
+
+This function will break up a query into several smaller queries by
+using only a limited number of rows at a time.
+
+This function should be used when executing a non-query statement will
+take a long time to finish. Using several smaller queries will ensure that
+the table will not be locked for too long.
 
 #### Signature
 
@@ -816,7 +833,7 @@ Performs a non-SELECT query on a table one chunk at a time.
       <div markdown="1" class="parameter">
       `$sql` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the WHERE expression must be as follows: 'id >= ? AND id < ?' where 'id' is the int id of the table.</div>
+      <div markdown="1" class="param-desc"> The SQL to perform. The last two conditions of the `WHERE` expression must be as follows: `'id >= ? AND id < ?'` where **id** is the int id of the table.</div>
 
       <div style="clear:both;"/>
 
@@ -846,7 +863,7 @@ Performs a non-SELECT query on a table one chunk at a time.
       <div markdown="1" class="parameter">
       `$step` (`int`) &mdash;
 
-      <div markdown="1" class="param-desc"> The maximum number of rows to scan in each smaller query.</div>
+      <div markdown="1" class="param-desc"> The maximum number of rows to scan in one query.</div>
 
       <div style="clear:both;"/>
 
@@ -872,7 +889,7 @@ Performs a non-SELECT query on a table one chunk at a time.
 Attempts to get a named lock.
 
 This function uses a timeout of 1s, but will
-retry a set number of time.
+retry a set number of times.
 
 #### Signature
 

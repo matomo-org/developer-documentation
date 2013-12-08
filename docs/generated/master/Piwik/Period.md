@@ -5,16 +5,15 @@ Period
 
 Date range representation.
 
-Piwik allows users to view aggregated statistics for each day and for date
-ranges consisting of several days. When requesting data, a _date_ string and
-a _period_ string must be used to specify the date range to view statistics
-for. This is the class that Piwik uses to represent and manipulate those
-date ranges.
+Piwik allows users to view aggregated statistics for single days and for date
+ranges consisting of several days. When requesting data, a **date** string and
+a **period** string must be used to specify the date range that the data regards.
+This is the class Piwik uses to represent and manipulate those date ranges.
 
 There are five types of periods in Piwik: day, week, month, year and range,
 where **range** is any date range. The reason the other periods exist instead
-of just **range** is that Piwik will archive for days, weeks, months and years
-periodically, while every other date range is archived on-demand.
+of just **range** is that Piwik will pre-archive reports for days, weeks, months
+and years, while every other date range is archived on-demand.
 
 ### Examples
 
@@ -29,9 +28,9 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`factory()`](#factory) &mdash; Creates a new Period instance with a period ID and Date instance.
-- [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true $dateString and $period correspond to multiple periods.
-- [`makePeriodFromQueryParams()`](#makeperiodfromqueryparams) &mdash; Creates a period instance using a Site instance and two strings describing the period & date.
+- [`factory()`](#factory) &mdash; Creates a new Period instance with a period ID and [Date](/api-reference/Piwik/Date) instance.
+- [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods.
+- [`makePeriodFromQueryParams()`](#makeperiodfromqueryparams) &mdash; Creates a Period instance using a period, date and timezone.
 - [`getDateStart()`](#getdatestart) &mdash; Returns the first day of the period.
 - [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period.
 - [`getId()`](#getid) &mdash; Returns the period ID.
@@ -49,9 +48,9 @@ The abstract class defines the following methods:
 <a name="factory" id="factory"></a>
 ### `factory()`
 
-Creates a new Period instance with a period ID and Date instance.
+Creates a new Period instance with a period ID and [Date](/api-reference/Piwik/Date) instance.
 
-Note: This method cannot create Range periods.
+_Note: This method cannot create [Period\Range](/api-reference/Piwik/Period/Range) periods._
 
 #### Signature
 
@@ -87,7 +86,16 @@ Note: This method cannot create Range periods.
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
 ### `isMultiplePeriod()`
 
-Returns true $dateString and $period correspond to multiple periods.
+Returns true if `$dateString` and `$period` represent multiple periods.
+
+Will return true for date/period combinations where date references multiple
+dates and period is not `'range'`. For example, will return true for:
+
+- **date** = `2012-01-01,2012-02-01` and **period** = `'day'`
+- **date** = `2012-01-01,2012-02-01` and **period** = `'week'`
+- **date** = `last7` and **period** = `'month'`
+
+etc.
 
 #### Signature
 
@@ -121,7 +129,7 @@ Returns true $dateString and $period correspond to multiple periods.
 <a name="makePeriodFromQueryParams" id="makePeriodFromQueryParams"></a>
 ### `makePeriodFromQueryParams()`
 
-Creates a period instance using a Site instance and two strings describing the period & date.
+Creates a Period instance using a period, date and timezone.
 
 #### Signature
 
@@ -132,7 +140,7 @@ Creates a period instance using a Site instance and two strings describing the p
       <div markdown="1" class="parameter">
       `$timezone` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"></div>
+      <div markdown="1" class="param-desc"> The timezone of the date. Only used if `$date` is `'now'`, `'today'`, `'yesterday'` or `'yesterdaySameTime'`.</div>
 
       <div style="clear:both;"/>
 
@@ -142,7 +150,7 @@ Creates a period instance using a Site instance and two strings describing the p
       <div markdown="1" class="parameter">
       `$period` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The period string: day, week, month, year, range</div>
+      <div markdown="1" class="param-desc"> The period string: `"day"`, `"week"`, `"month"`, `"year"`, `"range"`.</div>
 
       <div style="clear:both;"/>
 
@@ -194,7 +202,7 @@ Returns the period ID.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">A integer unique to this type of period.</div>
+    <div markdown="1" class="param-desc">A unique integer for this type of period.</div>
 
     <div style="clear:both;"/>
 

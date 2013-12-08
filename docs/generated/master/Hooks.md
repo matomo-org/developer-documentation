@@ -140,7 +140,7 @@ Usages:
 
 
 ### API.Request.authenticate
-_Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [250](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L250)_
+_Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [265](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L265)_
 
 Triggered when authenticating an API request, but only if the **token_auth** query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
 and make sure the global authentication object (the object returned by `Registry::get('auth')`)
@@ -220,7 +220,7 @@ Callback Signature:
 - [ArchiveProcessor.Parameters.getIdSites](#archiveprocessorparametersgetidsites)
 
 ### ArchiveProcessor.Parameters.getIdSites
-_Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php) in line [104](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php#L104)_
+_Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php) in line [111](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php#L111)_
 
 
 
@@ -741,7 +741,7 @@ Callback Signature:
 - [Reporting.getDatabaseConfig](#reportinggetdatabaseconfig)
 
 ### Reporting.getDatabaseConfig
-_Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [93](https://github.com/piwik/piwik/blob/master/core/Db.php#L93)_
+_Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [92](https://github.com/piwik/piwik/blob/master/core/Db.php#L92)_
 
 Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
 
@@ -1088,7 +1088,7 @@ Usages:
 - [Segments.getKnownSegmentsToArchiveForSite](#segmentsgetknownsegmentstoarchiveforsite)
 
 ### Segments.getKnownSegmentsToArchiveAllSites
-_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [92](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L92)_
+_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [91](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L91)_
 
 Triggered during the cron archiving process to collect segments that should be pre-processed for all websites. The archiving process will be launched
 for each of these segments when archiving data.
@@ -1117,7 +1117,7 @@ Usages:
 
 
 ### Segments.getKnownSegmentsToArchiveForSite
-_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [137](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L137)_
+_Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php) in line [136](https://github.com/piwik/piwik/blob/master/core/SettingsPiwik.php#L136)_
 
 Triggered during the cron archiving process to collect segments that should be pre-processed for one specific site. The archiving process will be launched
 for each of these segments when archiving data for that one site.
@@ -1566,7 +1566,7 @@ Triggered when a user with insufficient access permissions tries to view some re
 Callback Signature:
 <pre><code>function($exception)</code></pre>
 
-- `[NoAccessException](/api-reference/Piwik/NoAccessException)` `$exception` The exception that was caught.
+- `[\NoAccessException](/api-reference/Piwik/NoAccessException)` `$exception` The exception that was caught.
 
 Usages:
 
@@ -1660,7 +1660,7 @@ Usages:
 
 
 ### ViewDataTable.configure
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [215](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L215)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [220](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L220)_
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed.

@@ -3,22 +3,19 @@
 LogAggregator
 =============
 
-Contains methods that aggregates log data (visits, actions, conversions, ecommerce).
+Contains methods that calculate metrics by aggregating log data (visits, actions, conversions, ecommerce items).
 
-Plugin [Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) descendants can use the methods in this class to aggregate data
-in the log tables without creating their own SQL queries.
+You can use the methods in this class within [Archiver](/api-reference/Piwik/Plugin/Archiver) descendants
+to aggregate log data without having to write SQL queries.
 
-### Aggregation Principles
+### Aggregation Dimension
 
-**Dimensions**
+All aggregation methods accept a **dimension** parameter. These parameters are important as
+they control how rows in a table are aggregated together.
 
-Every aggregation method aggregates rows in a specific table. The rows that are
-aggregated together are chosen by **_dimensions_** that you specify.
-
-A **_dimension_** is a table column. In aggregation methods, rows that have the same
-values for the specified dimensions are aggregated together. Using dimensions you
-can calculate metrics for an entity (visits, actions, etc.) based on the values of one
-or more of the entity's properties.
+A **_dimension_** is just a table column. Rows that have the same values for these columns are
+aggregated together. The result of these aggregations is a set of metrics for every recorded value
+of a **dimension**.
 
 _Note: A dimension is essentially the same as a **GROUP BY** field._
 
@@ -35,7 +32,7 @@ _Note: A dimension is essentially the same as a **GROUP BY** field._
         $where = 'log_visit.visitor_returning = 1',
 
         // also count visits for each browser language that are not located in the US
-        $additionalSelects = array('sum(case when log_visit.location_country = 'us' then 1 else 0 end) as nonus'),
+        $additionalSelects = array('sum(case when log_visit.location_country <> 'us' then 1 else 0 end) as nonus'),
 
         // we're only interested in visits, unique visitors & actions, so don't waste time calculating anything else
         $metrics = array(Metrics::INDEX_NB_UNIQ_VISITORS, Metrics::INDEX_NB_VISITS, Metrics::INDEX_NB_ACTIONS),
@@ -87,16 +84,19 @@ Methods
 
 The class defines the following methods:
 
-- [`queryVisitsByDimension()`](#queryvisitsbydimension) &mdash; Aggregates visit logs, optionally grouping by some dimension, and returns the aggregated data.
-- [`queryEcommerceItems()`](#queryecommerceitems) &mdash; Aggregates ecommerce item data (everything stored in the **log\_conversion\_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
-- [`queryActionsByDimension()`](#queryactionsbydimension) &mdash; Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.
-- [`getSelectsFromRangedColumn()`](#getselectsfromrangedcolumn) &mdash; Creates and returns an array of SQL SELECT expressions that will count the number of rows for which a specific column falls within specific ranges.
+- [`queryVisitsByDimension()`](#queryvisitsbydimension) &mdash; Executes and returns a query aggregating visit logs, optionally grouping by some dimension.
+- [`queryEcommerceItems()`](#queryecommerceitems) &mdash; Executes and returns a query aggregating ecommerce item data (everything stored in the **log\_conversion\_item** table)  and returns a DB statement that can be used to iterate over the result
+- [`queryActionsByDimension()`](#queryactionsbydimension) &mdash; Executes and returns a query aggregating action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the result
+- [`getSelectsFromRangedColumn()`](#getselectsfromrangedcolumn) &mdash; Creates and returns an array of SQL `SELECT` expressions that will each count how many rows have a column whose value is within a certain range.
 
 <a name="queryvisitsbydimension" id="queryvisitsbydimension"></a>
 <a name="queryVisitsByDimension" id="queryVisitsByDimension"></a>
 ### `queryVisitsByDimension()`
 
-Aggregates visit logs, optionally grouping by some dimension, and returns the aggregated data.
+Executes and returns a query aggregating visit logs, optionally grouping by some dimension.
+
+Returns
+a DB statement that can be used to iterate over the result
 
 **Result Set**
 
@@ -129,7 +129,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
       <div markdown="1" class="parameter">
       `$dimensions` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> SELECT fields (or just one field) that will be grouped by, eg, `'referrer_name'` or `array('referrer_name', 'referrer_keyword')`. The metrics retrieved from the query will be specific to combinations of these fields. So if `array('referrer_name', 'referrer_keyword')` is supplied, the query will select the visits for each referrer/keyword combination.</div>
+      <div markdown="1" class="param-desc"> `SELECT` fields (or just one field) that will be grouped by, eg, `'referrer_name'` or `array('referrer_name', 'referrer_keyword')`. The metrics retrieved from the query will be specific to combinations of these fields. So if `array('referrer_name', 'referrer_keyword')` is supplied, the query will aggregate visits for each referrer/keyword combination.</div>
 
       <div style="clear:both;"/>
 
@@ -139,7 +139,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
       <div markdown="1" class="parameter">
       `$where` (`bool`|`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> Additional condition for the WHERE clause. Can be used to filter the set of visits that are considered for aggregation.</div>
+      <div markdown="1" class="param-desc"> Additional condition for the `WHERE` clause. Can be used to filter the set of visits that are considered for aggregation.</div>
 
       <div style="clear:both;"/>
 
@@ -149,7 +149,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
       <div markdown="1" class="parameter">
       `$additionalSelects` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.</div>
+      <div markdown="1" class="param-desc"> Additional `SELECT` fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.</div>
 
       <div style="clear:both;"/>
 
@@ -193,31 +193,28 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 <a name="queryEcommerceItems" id="queryEcommerceItems"></a>
 ### `queryEcommerceItems()`
 
-Aggregates ecommerce item data (everything stored in the **log\_conversion\_item** table) and returns a DB statement that can be used to iterate over the aggregated data.
+Executes and returns a query aggregating ecommerce item data (everything stored in the **log\_conversion\_item** table)  and returns a DB statement that can be used to iterate over the result
 
 <a name="queryEcommerceItems-result-set"></a>
 **Result Set**
 
-The following columns are in each row of the result set:
+Each row of the result set represents an aggregated group of ecommerce items. The following
+columns are in each row of the result set:
 
-- **`Metrics::INDEX_ECOMMERCE_ITEM_REVENUE`**: The total revenue for the group of items
-                                                          this row aggregated.
-- **`Metrics::INDEX_ECOMMERCE_ITEM_QUANTITY`**: The total number of items of the group
-                                                            this row aggregated.
-- **`Metrics::INDEX_ECOMMERCE_ITEM_PRICE`**: The total price for the group of items this
-                                                         row aggregated.
+- **`Metrics::INDEX_ECOMMERCE_ITEM_REVENUE`**: The total revenue for the group of items.
+- **`Metrics::INDEX_ECOMMERCE_ITEM_QUANTITY`**: The total number of items in this group.
+- **`Metrics::INDEX_ECOMMERCE_ITEM_PRICE`**: The total price for the group of items.
 - **`Metrics::INDEX_ECOMMERCE_ORDERS`**: The total number of orders this group of items
                                                      belongs to. This will be <= to the total number
                                                      of items in this group.
-- **`Metrics::INDEX_NB_VISITS`**: The total number of visits during which each item in
-                                              this group of items was logged.
+- **`Metrics::INDEX_NB_VISITS`**: The total number of visits that caused these items to be logged.
 - **ecommerceType**: Either Piwik\Tracker\GoalManager::IDGOAL\_CART if the items in this group were
                      abandoned by a visitor, or Piwik\Tracker\GoalManager::IDGOAL\_ORDER if they
                      were ordered by a visitor.
 
 **Limitations**
 
-Segmentation is not yet supported in this aggregation method.
+Segmentation is not yet supported for this aggregation method.
 
 #### Signature
 
@@ -228,7 +225,7 @@ Segmentation is not yet supported in this aggregation method.
       <div markdown="1" class="parameter">
       `$dimension` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> One or more **log_conversion_item** column to group aggregated data by. Eg, `'idaction_sku'` or `'idaction_sku, idaction_category'`.</div>
+      <div markdown="1" class="param-desc"> One or more **log\_conversion\_item** columns to group aggregated data by. Eg, `'idaction_sku'` or `'idaction_sku, idaction_category'`.</div>
 
       <div style="clear:both;"/>
 
@@ -252,7 +249,7 @@ Segmentation is not yet supported in this aggregation method.
 <a name="queryActionsByDimension" id="queryActionsByDimension"></a>
 ### `queryActionsByDimension()`
 
-Aggregates action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the aggregated data.
+Executes and returns a query aggregating action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the result
 
 <a name="queryActionsByDimension-result-set"></a>
 **Result Set**
@@ -267,7 +264,7 @@ are in each aggregate row:
 
 Additional data can be selected through the `$additionalSelects` parameter.
 
-_Note: The metrics returned by this query can be customized by the `$metrics` parameter._
+_Note: The metrics calculated by this query can be customized by the `$metrics` parameter._
 
 #### Signature
 
@@ -308,7 +305,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
       <div markdown="1" class="parameter">
       `$metrics` (`bool`|`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS`</div>
+      <div markdown="1" class="param-desc"> The set of metrics to calculate and return. If `false`, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS`</div>
 
       <div style="clear:both;"/>
 
@@ -328,7 +325,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
       <div markdown="1" class="parameter">
       `$joinLogActionOnColumn` (`bool`|`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed.</div>
+      <div markdown="1" class="param-desc"> One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed (since there is only one column).</div>
 
       <div style="clear:both;"/>
 
@@ -352,10 +349,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 <a name="getSelectsFromRangedColumn" id="getSelectsFromRangedColumn"></a>
 ### `getSelectsFromRangedColumn()`
 
-Creates and returns an array of SQL SELECT expressions that will count the number of rows for which a specific column falls within specific ranges.
-
-The SELECT expressions will count the number of column values that are
-within each range.
+Creates and returns an array of SQL `SELECT` expressions that will each count how many rows have a column whose value is within a certain range.
 
 **Note:** The result of this function is meant for use in the `$additionalSelects` parameter
 in one of the query... methods (for example [queryVisitsByDimension()](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension)).
@@ -381,12 +375,15 @@ in one of the query... methods (for example [queryVisitsByDimension()](/api-refe
         LogAggregator::getSelectsFromRangedColumn('visitor_count_visits', $visitCountVisitsRanges, 'log_visit', 'vcv')
     );
 
-    // perform query
+    // perform the query
     $logAggregator = // get the LogAggregator somehow
     $query = $logAggregator->queryVisitsByDimension($dimensions = array(), $where = false, $selects);
     $tableSummary = $query->fetch();
     
     $numberOfVisitsWithOneAction = $tableSummary['vta0'];
+    $numberOfVisitsBetweenTwoAnd10 = $tableSummary['vta1'];
+
+    $numberOfVisitsWithVisitCountOfOne = $tableSummary['vcv0'];
 
 #### Signature
 
@@ -407,7 +404,7 @@ in one of the query... methods (for example [queryVisitsByDimension()](/api-refe
       <div markdown="1" class="parameter">
       `$ranges` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> An array of arrays describing the ranges over which the data in the table will be summarized. For example, ``` array( array(1, 1), array(2, 2), array(3, 5), array(6, 10), array(10) // everything over 10 ) ```</div>
+      <div markdown="1" class="param-desc"> The array of ranges over which the data in the table will be summarized. For example, ``` array( array(1, 1), array(2, 2), array(3, 8), array(8) // everything over 8 ) ```</div>
 
       <div style="clear:both;"/>
 

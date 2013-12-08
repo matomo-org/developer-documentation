@@ -3,7 +3,7 @@
 ScheduledTask
 =============
 
-Contains metadata describing a chunk of PHP code that should be executed at regular intervals.
+Contains metadata referencing PHP code that should be executed at regular intervals.
 
 See the TaskScheduler docs to learn more about scheduled tasks.
 
@@ -13,10 +13,10 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getObjectInstance()`](#getobjectinstance) &mdash; Returns the object instance on which the method should be executed.
-- [`getClassName()`](#getclassname) &mdash; Returns the class name that contains the method to execute regularly.
-- [`getMethodName()`](#getmethodname) &mdash; Returns the method name that will be regularly executed.
-- [`getMethodParameter()`](#getmethodparameter) &mdash; Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
+- [`getObjectInstance()`](#getobjectinstance) &mdash; Returns the object instance that contains the method to execute.
+- [`getClassName()`](#getclassname) &mdash; Returns the name of the class that contains the method to execute.
+- [`getMethodName()`](#getmethodname) &mdash; Returns the name of the method that will be executed.
+- [`getMethodParameter()`](#getmethodparameter) &mdash; Returns the value that will be passed to the method when executed, or `null` if no value will be supplied.
 - [`getScheduledTime()`](#getscheduledtime) &mdash; Returns a [ScheduledTime](/api-reference/Piwik/ScheduledTime) instance that describes when the method should be executed and how long before the next execution.
 - [`getRescheduledTime()`](#getrescheduledtime) &mdash; Returns the time in milliseconds when this task will be executed next.
 - [`getPriority()`](#getpriority) &mdash; Returns the task priority.
@@ -37,7 +37,7 @@ Constructor.
       <div markdown="1" class="parameter">
       `$objectInstance` (`mixed`) &mdash;
 
-      <div markdown="1" class="param-desc"> The object or class name for the class that contains the method to regularly execute. Usually this will be a [Plugin](/api-reference/Piwik/Plugin) instance.</div>
+      <div markdown="1" class="param-desc"> The object or class that contains the method to execute regularly. Usually this will be a [Plugin](/api-reference/Piwik/Plugin) instance.</div>
 
       <div style="clear:both;"/>
 
@@ -47,7 +47,7 @@ Constructor.
       <div markdown="1" class="parameter">
       `$methodName` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The name of the method of `$objectInstance` that will be regularly executed.</div>
+      <div markdown="1" class="param-desc"> The name of the method that will be regularly executed.</div>
 
       <div style="clear:both;"/>
 
@@ -89,7 +89,7 @@ Constructor.
 <a name="getObjectInstance" id="getObjectInstance"></a>
 ### `getObjectInstance()`
 
-Returns the object instance on which the method should be executed.
+Returns the object instance that contains the method to execute.
 
 Returns a class
 name if the method is static.
@@ -102,7 +102,7 @@ name if the method is static.
 <a name="getClassName" id="getClassName"></a>
 ### `getClassName()`
 
-Returns the class name that contains the method to execute regularly.
+Returns the name of the class that contains the method to execute.
 
 #### Signature
 
@@ -112,7 +112,7 @@ Returns the class name that contains the method to execute regularly.
 <a name="getMethodName" id="getMethodName"></a>
 ### `getMethodName()`
 
-Returns the method name that will be regularly executed.
+Returns the name of the method that will be executed.
 
 #### Signature
 
@@ -122,7 +122,7 @@ Returns the method name that will be regularly executed.
 <a name="getMethodParameter" id="getMethodParameter"></a>
 ### `getMethodParameter()`
 
-Returns the a value that will be passed to the method when executed, or `null` if no value will be supplied.
+Returns the value that will be passed to the method when executed, or `null` if no value will be supplied.
 
 #### Signature
 
@@ -179,9 +179,9 @@ between `HIGH_PRIORITY` and `LOW_PRIORITY`.
 Returns a unique name for this scheduled task.
 
 The name is stored in the DB and is used
-to store when tasks were last executed. The name is created using:
+to store a task's previous execution time. The name is created using:
 
-- the class name that contains the method to execute,
+- the name of the class that contains the method to execute,
 - the name of the method to regularly execute,
 - and the value that is passed to the executed task.
 

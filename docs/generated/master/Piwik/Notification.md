@@ -9,10 +9,11 @@ UI notifications are messages displayed to the user near the top of the screen.
 Notifications consist of a message, a context (the message type), a priority
 and a display type.
 
-A notification's context will affect the way the message looks, but not how it
-is displayed. A notification's display type will determine how the message is
-displayed. The priority determines where it is shown in the list of
-all displayed notifications.
+**The context** affects the way the message looks, but not how it is displayed.
+
+**The display type** determines how the message is displayed.
+
+**The priority** determines where it is shown in the list of all displayed notifications.
 
 ### Examples
 
@@ -41,7 +42,7 @@ Constants
 
 This class defines the following constants:
 
-- [`FLAG_NO_CLEAR`](#flag_no_clear) &mdash; If this flag applied, no close icon will be displayed.
+- [`FLAG_NO_CLEAR`](#flag_no_clear) &mdash; If this flag is applied, no close icon will be displayed.
 - [`TYPE_PERSISTENT`](#type_persistent) &mdash; Notifications of this type will be displayed until the new user explicitly closes the notification.
 - [`TYPE_TRANSIENT`](#type_transient) &mdash; Notifications of this type will be displayed only once.
 
@@ -162,7 +163,7 @@ constants in [Notification](/api-reference/Piwik/Notification) to see possible p
 If true, the message will not be escaped before being outputted as HTML.
 
 If you set this to
-true, make sure you escape text yourself in order to avoid any possible XSS vulnerabilities.
+`true`, make sure you escape text yourself in order to avoid XSS vulnerabilities.
 
 #### Signature
 

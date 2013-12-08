@@ -67,6 +67,27 @@ This is a complete list of available classes:
 - [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all Settings providers.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all analytics visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; Base class for all DataTable visualizations.
+- [`Plugins\Actions\Archiver`](Piwik/Plugins/Actions/Archiver.md) &mdash; Class encapsulating logic to process Day/Period Archiving for the Actions reports
+- [`Plugins\CoreVisualizations\Visualizations\Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; Generates a tag cloud from a given data array.
+- [`Plugins\CoreVisualizations\Visualizations\Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; This is an abstract visualization that should be the base of any 'graph' visualization.
+- [`Plugins\CoreVisualizations\Visualizations\HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md) &mdash; DataTable visualization that shows DataTable data in an HTML table.
+- [`Plugins\CoreVisualizations\Visualizations\HtmlTable\AllColumns`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable/AllColumns.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md) &mdash; DataTable visualization that displays DataTable data in a JQPlot graph.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Bar`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Bar.md) &mdash; Visualization that renders HTML for a Bar graph using jqPlot.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md) &mdash; Visualization that renders HTML for a line graph using jqPlot.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Pie`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Pie.md) &mdash; Visualization that renders HTML for a Pie graph using jqPlot.
+- [`Plugins\CustomVariables\Archiver`](Piwik/Plugins/CustomVariables/Archiver.md)
+- [`Plugins\DevicesDetection\Archiver`](Piwik/Plugins/DevicesDetection/Archiver.md)
+- [`Plugins\ExampleVisualization\SimpleTable`](Piwik/Plugins/ExampleVisualization/SimpleTable.md) &mdash; SimpleTable Visualization.
+- [`Plugins\Goals\Archiver`](Piwik/Plugins/Goals/Archiver.md)
+- [`Plugins\Goals\Visualizations\Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_goals_columns to true.
+- [`Plugins\Live\VisitorLog`](Piwik/Plugins/Live/VisitorLog.md) &mdash; A special DataTable visualization for the Live.getLastVisitsDetails API method.
+- [`Plugins\Provider\Archiver`](Piwik/Plugins/Provider/Archiver.md)
+- [`Plugins\Referrers\Archiver`](Piwik/Plugins/Referrers/Archiver.md)
+- [`Plugins\UserCountry\Archiver`](Piwik/Plugins/UserCountry/Archiver.md)
+- [`Plugins\UserSettings\Archiver`](Piwik/Plugins/UserSettings/Archiver.md) &mdash; Archiver for UserSettings Plugin
+- [`Plugins\VisitTime\Archiver`](Piwik/Plugins/VisitTime/Archiver.md)
+- [`Plugins\VisitorInterest\Archiver`](Piwik/Plugins/VisitorInterest/Archiver.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata describing a chunk of PHP code that should be executed at regular intervals.
 - [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; Describes the interval on which a scheduled task is executed.

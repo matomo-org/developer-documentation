@@ -3,7 +3,15 @@
 Archiver
 ========
 
-The base class that should be extended by plugins that archive their own metrics.
+The base class that should be extended by plugins that compute their own analytics data.
+
+Descendants should implement the [aggregateDayReport()](/api-reference/Piwik/Plugin/Archiver#aggregatedayreport) and [aggregateMultipleReports()](/api-reference/Piwik/Plugin/Archiver#aggregatemultiplereports)
+methods.
+
+Both of these methods should persist analytics data using the [\ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor)
+instance returned by [getProcessor()](/api-reference/Piwik/Plugin/Archiver#getprocessor). The [aggregateDayReport()](/api-reference/Piwik/Plugin/Archiver#aggregatedayreport) method should
+compute analytics data using the [\DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance
+returned by [getLogAggregator()](/api-reference/Piwik/Plugin/Archiver#getlogaggregator).
 
 ### Examples
 
@@ -39,6 +47,8 @@ The abstract class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`aggregateDayReport()`](#aggregatedayreport) &mdash; Archives data for a day period.
 - [`aggregateMultipleReports()`](#aggregatemultiplereports) &mdash; Archives data for a non-day period.
+- [`getProcessor()`](#getprocessor) &mdash; Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance that can be used to insert archive data for the period, segment and site we are archiving data for.
+- [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -53,9 +63,9 @@ Constructor.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$aggregator` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md)) &mdash;
+      `$processor` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md)) &mdash;
 
-      <div markdown="1" class="param-desc"> The ArchiveProcessor instance sent to the archiving event observer.</div>
+      <div markdown="1" class="param-desc"> The ArchiveProcessor instance to use when persisting archive data.</div>
 
       <div style="clear:both;"/>
 
@@ -72,10 +82,10 @@ Archives data for a day period.
 Implementations of this method should do more computation intensive activities such
 as aggregating data across log tables. Since this method only deals w/ data logged for a day,
 aggregating individual log table rows isn't a problem. Doing this for any larger period,
-however, would cause performance issues.
+however, would cause performance degradation.
 
-Aggregate log table rows using a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance. Get a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance
-using the getLogAggregator() method.
+Aggregate log table rows using a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance. Get a
+[DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance using the [getLogAggregator()](/api-reference/Piwik/Plugin/Archiver#getlogaggregator) method.
 
 #### Signature
 
@@ -92,9 +102,30 @@ current period. For example, it is more efficient to aggregate reports for each 
 week than to aggregate each log entry of the week.
 
 Use [ArchiveProcessor::aggregateNumericMetrics()](/api-reference/Piwik/ArchiveProcessor#aggregatenumericmetrics) and [ArchiveProcessor::aggregateDataTableRecords()](/api-reference/Piwik/ArchiveProcessor#aggregatedatatablerecords)
-to aggregate archived reports. Get the [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance using the getProcessor().
+to aggregate archived reports. Get the [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance using the [getProcessor()](/api-reference/Piwik/Plugin/Archiver#getprocessor)
+method.
 
 #### Signature
 
 - It does not return anything.
+
+<a name="getprocessor" id="getprocessor"></a>
+<a name="getProcessor" id="getProcessor"></a>
+### `getProcessor()`
+
+Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance that can be used to insert archive data for the period, segment and site we are archiving data for.
+
+#### Signature
+
+- It returns a [`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md) value.
+
+<a name="getlogaggregator" id="getlogaggregator"></a>
+<a name="getLogAggregator" id="getLogAggregator"></a>
+### `getLogAggregator()`
+
+Returns a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
+
+#### Signature
+
+- It returns a [`LogAggregator`](../../Piwik/DataAccess/LogAggregator.md) value.
 

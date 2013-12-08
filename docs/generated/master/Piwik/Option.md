@@ -60,8 +60,8 @@ Returns the option value for the requested option `$name`.
 <ul>
   <li>
     <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`bool`) &mdash;
-    <div markdown="1" class="param-desc">The value or false, if not found.</div>
+    _Returns:_  (`string`|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc">The value or `false`, if not found.</div>
 
     <div style="clear:both;"/>
 
@@ -172,7 +172,7 @@ Deletes all options that match the supplied pattern.
       <div markdown="1" class="parameter">
       `$value` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> If supplied options will be deleted only if their value matches this value.</div>
+      <div markdown="1" class="param-desc"> If supplied, options will be deleted only if their value matches this value.</div>
 
       <div style="clear:both;"/>
 

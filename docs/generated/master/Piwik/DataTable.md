@@ -9,7 +9,7 @@ The primary data structure used to store analytics data in Piwik.
 ### The Basics
 
 DataTables consist of rows and each row consists of columns. A column value can be
-be numeric, a string or an array.
+a numeric, a string or an array.
 
 Every row has an ID. The ID is either the index of the row or `ID_SUMMARY_ROW`.
 
@@ -20,7 +20,7 @@ Both DataTables and DataTable rows can hold **metadata**. _DataTable metadata_ i
 regarding all the data, such as the site or period that the data is for. _Row metadata_
 is information regarding that row, such as a browser logo or website URL.
 
-Finally, DataTables all contain a special _summary_ row. This row, if it exists, is
+Finally, all DataTables contain a special _summary_ row. This row, if it exists, is
 always at the end of the DataTable.
 
 ### Populating DataTables
@@ -43,9 +43,9 @@ to use since it requires that the data be sorted before adding.
 There are two ways to manipulate a DataTable. You can either:
 
 1. manually iterate through each row and manipulate the data,
-2. or you can use predefined Filters.
+2. or you can use predefined filters.
 
-A Filter is a class that has a 'filter' method which will manipulate a DataTable in
+A filter is a class that has a 'filter' method which will manipulate a DataTable in
 some way. There are several predefined Filters that allow you to do common things,
 such as,
 
@@ -55,12 +55,15 @@ such as,
 - sort an entire DataTable,
 - and more.
 
-Using these Filters instead of writing your own code will increase code clarity and
-reduce code redundancy. Additionally, Filters have the advantage that they can be
-applied to DataTable\Map instances. So you can visit every DataTable in a DataTable\Map
+Using these filters instead of writing your own code will increase code clarity and
+reduce code redundancy. Additionally, filters have the advantage that they can be
+applied to DataTable\Map instances. So you can visit every DataTable in a [DataTable\Map](/api-reference/Piwik/DataTable/Map)
 without having to write a recursive visiting function.
 
-Note: Anonymous functions can be used as DataTable Filters.
+All predefined filters exist in the **Piwik\DataTable\Filter** namespace.
+
+_Note: For convenience, [anonymous functions](http://www.php.net/manual/en/functions.anonymous.php)
+can be used as DataTable filters._
 
 ### Applying Filters
 
@@ -72,9 +75,7 @@ Non-essential, presentation filters should be queued.
 
 ### Learn more
 
-- **[ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor)** &mdash; to learn how DataTables are persisted.
-- **DataTable\Renderer** &mdash; to learn how DataTable data is exported to XML, JSON, etc.
-- **[DataTable\Filter](/api-reference/Piwik/DataTable/Filter)** &mdash; to see all core Filters.
+- See **[ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor)** to learn how DataTables are persisted.
 
 ### Examples
 
@@ -169,7 +170,7 @@ The class defines the following methods:
 - [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any).
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting.
 - [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering.
-- [`filter()`](#filter) &mdash; Applies filter to this datatable.
+- [`filter()`](#filter) &mdash; Applies a filter to this datatable.
 - [`queueFilter()`](#queuefilter) &mdash; Adds a filter and a list of parameters to the list of queued filters.
 - [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Applies all filters that were previously queued to the table.
 - [`addDataTable()`](#adddatatable) &mdash; Sums a DataTable to this one.
@@ -186,12 +187,12 @@ The class defines the following methods:
 - [`getRows()`](#getrows) &mdash; Returns the array of Rows.
 - [`getColumn()`](#getcolumn) &mdash; Returns an array containing all column values for the requested column.
 - [`getColumnsStartingWith()`](#getcolumnsstartingwith) &mdash; Returns an array containing all column values of columns whose name starts with `$name`.
-- [`getColumns()`](#getcolumns) &mdash; Returns the list of columns the rows in this datatable contain.
+- [`getColumns()`](#getcolumns) &mdash; Returns the names of every column this DataTable contains.
 - [`getRowsMetadata()`](#getrowsmetadata) &mdash; Returns an array containing the requested metadata value of each row.
 - [`getRowsCount()`](#getrowscount) &mdash; Returns the number of rows in the table including the summary row.
 - [`getFirstRow()`](#getfirstrow) &mdash; Returns the first row of the DataTable.
 - [`getLastRow()`](#getlastrow) &mdash; Returns the last row of the DataTable.
-- [`getRowsCountRecursive()`](#getrowscountrecursive) &mdash; Returns the number of rows in this DataTable summed with the row count of each subtable in the DataTable hierarchy.
+- [`getRowsCountRecursive()`](#getrowscountrecursive) &mdash; Returns the number of rows in the entire DataTable hierarchy.
 - [`deleteColumn()`](#deletecolumn) &mdash; Delete a column by name in every row.
 - [`__sleep()`](#__sleep)
 - [`renameColumn()`](#renamecolumn) &mdash; Rename a column in every row.
@@ -203,18 +204,18 @@ The class defines the following methods:
 - [`isEqual()`](#isequal) &mdash; Returns true if both DataTable instances are exactly the same.
 - [`getSerialized()`](#getserialized) &mdash; Serializes an entire DataTable hierarchy and returns the array of serialized DataTables.
 - [`addRowsFromSerializedArray()`](#addrowsfromserializedarray) &mdash; Adds a set of rows from a serialized DataTable string.
-- [`addRowsFromArray()`](#addrowsfromarray) &mdash; Adds many rows from an array.
-- [`addRowsFromSimpleArray()`](#addrowsfromsimplearray) &mdash; Adds many rows from an array containing arrays of column values.
-- [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input $array array (     LABEL => array(col1 => X, col2 => Y),     LABEL2 => array(col1 => X, col2 => Y), ) to a DataTable, ie.
+- [`addRowsFromArray()`](#addrowsfromarray) &mdash; Adds multiple rows from an array.
+- [`addRowsFromSimpleArray()`](#addrowsfromsimplearray) &mdash; Adds multiple rows from an array containing arrays of column values.
+- [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input `$array`      array (         LABEL => array(col1 => X, col2 => Y),         LABEL2 => array(col1 => X, col2 => Y),     )  to a DataTable with rows that look like:      array (         array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),         array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),     )
 - [`setMaximumDepthLevelAllowedAtLeast()`](#setmaximumdepthlevelallowedatleast) &mdash; Sets the maximum depth level to at least a certain value.
 - [`getMetadata()`](#getmetadata) &mdash; Returns metadata by name.
 - [`setMetadata()`](#setmetadata) &mdash; Sets a metadata value by name.
 - [`getAllTableMetadata()`](#getalltablemetadata) &mdash; Returns all table metadata.
 - [`setMetadataValues()`](#setmetadatavalues) &mdash; Sets several metadata values by name.
-- [`setAllTableMetadata()`](#setalltablemetadata) &mdash; Sets metadata erasing existing values.
+- [`setAllTableMetadata()`](#setalltablemetadata) &mdash; Sets metadata, erasing existing values.
 - [`setMaximumAllowedRows()`](#setmaximumallowedrows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row).
-- [`walkPath()`](#walkpath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one.
-- [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtable's.
+- [`walkPath()`](#walkpath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or `false` if it cannot find one.
+- [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtables.
 - [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array.
 - [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
 
@@ -256,7 +257,7 @@ Sorts the DataTable rows using the supplied callback function.
       <div markdown="1" class="parameter">
       `$functionCallback` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> A comparison callback compatible with `usort`.</div>
+      <div markdown="1" class="param-desc"> A comparison callback compatible with usort.</div>
 
       <div style="clear:both;"/>
 
@@ -266,7 +267,7 @@ Sorts the DataTable rows using the supplied callback function.
       <div markdown="1" class="parameter">
       `$columnSortedBy` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The column name `$functionCallback` sorts by. This is stored so we can determine how the DataTable is sorted in the future.</div>
+      <div markdown="1" class="param-desc"> The column name `$functionCallback` sorts by. This is stored so we can determine how the DataTable was sorted in the future.</div>
 
       <div style="clear:both;"/>
 
@@ -328,7 +329,7 @@ will apply filters to every subtable in addition to this instance.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Applies filter to this datatable.
+Applies a filter to this datatable.
 
 If [enableRecursiveFilters()](/api-reference/Piwik/DataTable#enablerecursivefilters) was called, the filter will be applied
 to all subtables as well.
@@ -342,7 +343,7 @@ to all subtables as well.
       <div markdown="1" class="parameter">
       `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
 
-      <div markdown="1" class="param-desc"> Class name, eg. "Sort" or "Sort". If no namespace is supplied, `Piwik\DataTable\Filter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.</div>
+      <div markdown="1" class="param-desc"> Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\Filter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.</div>
 
       <div style="clear:both;"/>
 
@@ -352,7 +353,7 @@ to all subtables as well.
       <div markdown="1" class="parameter">
       `$parameters` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Array of parameters pass to the filter in addition to the table.</div>
+      <div markdown="1" class="param-desc"> Array of extra parameters to pass to the filter.</div>
 
       <div style="clear:both;"/>
 
@@ -370,7 +371,7 @@ Adds a filter and a list of parameters to the list of queued filters.
 These filters will be
 executed when [applyQueuedFilters()](/api-reference/Piwik/DataTable#applyqueuedfilters) is called.
 
-Filters that prettify the output or don't need the full set of rows should be queued. This
+Filters that prettify the column values or don't need the full set of rows should be queued. This
 way they will be run after the table is truncated which will result in better performance.
 
 #### Signature
@@ -382,7 +383,7 @@ way they will be run after the table is truncated which will result in better pe
       <div markdown="1" class="parameter">
       `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
 
-      <div markdown="1" class="param-desc"> The class name of the filter, eg. Limit</div>
+      <div markdown="1" class="param-desc"> The class name of the filter, eg. `'Limit'`.</div>
 
       <div style="clear:both;"/>
 
@@ -392,7 +393,7 @@ way they will be run after the table is truncated which will result in better pe
       <div markdown="1" class="parameter">
       `$parameters` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The parameters to give to the filter, eg. array( $offset, $limit) for the filter Limit</div>
+      <div markdown="1" class="param-desc"> The parameters to give to the filter, eg. `array($offset, $limit)` for the Limit filter.</div>
 
       <div style="clear:both;"/>
 
@@ -421,7 +422,7 @@ for more information.
 Sums a DataTable to this one.
 
 This method will sum rows that have the same label. If a row is found in `$tableToSum` whose
-label is not found in `$this`, the row will be added to `$this` DataTable.
+label is not found in `$this`, the row will be added to `$this`.
 
 If the subtables for this table are loaded, they will be summed as well.
 
@@ -478,7 +479,7 @@ label => row ID mappings.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc">The row if found, false if otherwise.</div>
+    <div markdown="1" class="param-desc">The row if found, `false` if otherwise.</div>
 
     <div style="clear:both;"/>
 
@@ -665,7 +666,7 @@ this row is set as the summary row.
 
 Sets the summary row.
 
-Note: A dataTable can have only one summary row.
+_Note: A DataTable can have only one summary row._
 
 #### Signature
 
@@ -712,7 +713,7 @@ Returns the DataTable ID.
 
 Adds a new row from an array.
 
-You can add Row metadata with this method.
+You can add row metadata with this method.
 
 #### Signature
 
@@ -723,7 +724,7 @@ You can add Row metadata with this method.
       <div markdown="1" class="parameter">
       `$row` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> eg. array(Row::COLUMNS => array('visits' => 13, 'test' => 'toto'), Row::METADATA => array('mymetadata' => 'myvalue'))</div>
+      <div markdown="1" class="param-desc"> eg. `array(Row::COLUMNS => array('visits' => 13, 'test' => 'toto'), Row::METADATA => array('mymetadata' => 'myvalue'))`</div>
 
       <div style="clear:both;"/>
 
@@ -749,7 +750,7 @@ Row metadata cannot be added with this method.
       <div markdown="1" class="parameter">
       `$row` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> eg. array('name' => 'google analytics', 'license' => 'commercial')</div>
+      <div markdown="1" class="param-desc"> eg. `array('name' => 'google analytics', 'license' => 'commercial')`</div>
 
       <div style="clear:both;"/>
 
@@ -842,13 +843,13 @@ Returns an array containing all column values of columns whose name starts with 
 <a name="getColumns" id="getColumns"></a>
 ### `getColumns()`
 
-Returns the list of columns the rows in this datatable contain.
+Returns the names of every column this DataTable contains.
 
-This will return the
-columns of the first row with data and assume they occur in every other row as well.
+This method will return the
+columns of the first row with data and will assume they occur in every other row as well.
 
-Note: If column names still use their in-database INDEX values (@see Metrics), they
-      will be converted to their string name in the array result.
+_ Note: If column names still use their in-database INDEX values (@see Metrics), they
+       will be converted to their string name in the array result._
 
 #### Signature
 
@@ -948,9 +949,10 @@ will always be considered the last row.
 <a name="getRowsCountRecursive" id="getRowsCountRecursive"></a>
 ### `getRowsCountRecursive()`
 
-Returns the number of rows in this DataTable summed with the row count of each subtable in the DataTable hierarchy.
+Returns the number of rows in the entire DataTable hierarchy.
 
-This includes the subtables of subtables and further descendants.
+This is the number of rows in this DataTable
+summed with the row count of each descendant subtable.
 
 #### Signature
 
@@ -1164,7 +1166,7 @@ Deletes a set of rows by ID.
 
 Returns a string representation of this DataTable for convenient viewing.
 
-Note: This uses the Html DataTable renderer.
+_Note: This uses the **html** DataTable renderer._
 
 #### Signature
 
@@ -1283,6 +1285,8 @@ Adds a set of rows from a serialized DataTable string.
 
 See [serialize()](http://php.net/function.serialize()).
 
+_Note: This function will successfully load DataTables serialized by Piwik 1.X._
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -1292,7 +1296,7 @@ See [serialize()](http://php.net/function.serialize()).
       <div markdown="1" class="parameter">
       `$stringSerialized` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> A serialized DataTable string in the format of a string in the array returned by [serialize()](http://php.net/function.serialize()). This function will successfully load DataTables serialized by Piwik 1.X.</div>
+      <div markdown="1" class="param-desc"> A string with the format of a string in the array returned by [serialize()](http://php.net/function.serialize()).</div>
 
       <div style="clear:both;"/>
 
@@ -1307,9 +1311,9 @@ See [serialize()](http://php.net/function.serialize()).
 <a name="addRowsFromArray" id="addRowsFromArray"></a>
 ### `addRowsFromArray()`
 
-Adds many rows from an array.
+Adds multiple rows from an array.
 
-You can add Row metadata with this method.
+You can add row metadata with this method.
 
 #### Signature
 
@@ -1333,7 +1337,7 @@ You can add Row metadata with this method.
 <a name="addRowsFromSimpleArray" id="addRowsFromSimpleArray"></a>
 ### `addRowsFromSimpleArray()`
 
-Adds many rows from an array containing arrays of column values.
+Adds multiple rows from an array containing arrays of column values.
 
 Row metadata cannot be added with this method.
 
@@ -1346,7 +1350,7 @@ Row metadata cannot be added with this method.
       <div markdown="1" class="parameter">
       `$array` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Array with the simple structure: array( array( col1_name => valueA, col2_name => valueC, ...), array( col1_name => valueB, col2_name => valueD, ...), )</div>
+      <div markdown="1" class="param-desc"> Array with the following structure: array( array( col1_name => valueA, col2_name => valueC, ...), array( col1_name => valueB, col2_name => valueD, ...), )</div>
 
       <div style="clear:both;"/>
 
@@ -1355,30 +1359,27 @@ Row metadata cannot be added with this method.
    </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - [`Exception`](http://php.net/class.Exception) &mdash; if `$array` is in an incorrect format.
 
 <a name="makefromindexedarray" id="makefromindexedarray"></a>
 <a name="makeFromIndexedArray" id="makeFromIndexedArray"></a>
 ### `makeFromIndexedArray()`
 
-Rewrites the input $array array (     LABEL => array(col1 => X, col2 => Y),     LABEL2 => array(col1 => X, col2 => Y), ) to a DataTable, ie.
+Rewrites the input `$array`      array (         LABEL => array(col1 => X, col2 => Y),         LABEL2 => array(col1 => X, col2 => Y),     )  to a DataTable with rows that look like:      array (         array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),         array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),     )
 
-with the internal structure
-array (
-    array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),
-    array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),
-)
+Will also convert arrays like: 
 
-It also works with array having only one value per row, eg.
-array (
-    LABEL => X,
-    LABEL2 => Y,
-)
-would be converted to:
-array (
-    array( Row::COLUMNS => array('label' => LABEL, 'value' => X)),
-    array( Row::COLUMNS => array('label' => LABEL2, 'value' => Y)),
-)
+    array (
+        LABEL => X,
+        LABEL2 => Y,
+    )
+
+to:
+
+    array (
+        array( Row::COLUMNS => array('label' => LABEL, 'value' => X)),
+        array( Row::COLUMNS => array('label' => LABEL2, 'value' => Y)),
+    )
 
 #### Signature
 
@@ -1389,7 +1390,7 @@ array (
       <div markdown="1" class="parameter">
       `$array` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Indexed array, two formats are supported</div>
+      <div markdown="1" class="param-desc"> Indexed array, two formats supported, see above.</div>
 
       <div style="clear:both;"/>
 
@@ -1399,7 +1400,7 @@ array (
       <div markdown="1" class="parameter">
       `$subtablePerLabel` (`array`|`null`) &mdash;
 
-      <div markdown="1" class="param-desc"> An indexed array of up to one DataTable to associate as a sub table</div>
+      <div markdown="1" class="param-desc"> An array mapping label values with DataTable instances to associate as a subtable.</div>
 
       <div style="clear:both;"/>
 
@@ -1415,7 +1416,7 @@ array (
 Sets the maximum depth level to at least a certain value.
 
 If the current value is
-greater than the supplied level, the maximum nesting level is not changed.
+greater than `$atLeastLevel`, the maximum nesting level is not changed.
 
 The maximum depth level determines the maximum number of subtable levels in the
 DataTable tree. For example, if it is set to `2`, this DataTable is allowed to
@@ -1466,7 +1467,7 @@ Returns metadata by name.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`mixed`|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc">The metadata value or false if it cannot be found.</div>
+    <div markdown="1" class="param-desc">The metadata value or `false` if it cannot be found.</div>
 
     <div style="clear:both;"/>
 
@@ -1546,7 +1547,7 @@ Sets several metadata values by name.
 <a name="setAllTableMetadata" id="setAllTableMetadata"></a>
 ### `setAllTableMetadata()`
 
-Sets metadata erasing existing values.
+Sets metadata, erasing existing values.
 
 #### Signature
 
@@ -1597,14 +1598,14 @@ rows are summed to the summary row.
 <a name="walkPath" id="walkPath"></a>
 ### `walkPath()`
 
-Traverses a DataTable tree using an array of labels and returns the row it finds or false if it cannot find one.
+Traverses a DataTable tree using an array of labels and returns the row it finds or `false` if it cannot find one.
 
 The number of path segments that
 were successfully walked is also returned.
 
-If $missingRowColumns is supplied, the specified path is created. When
-a subtable is encountered w/o the queried label, a new row is created
-with the label, and a subtable is added to the row.
+If `$missingRowColumns` is supplied, the specified path is created. When
+a subtable is encountered w/o the required label, a new row is created
+with the label, and a new subtable is added to the row.
 
 Read [http://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods](http://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods)
 for more information about tree walking.
@@ -1650,7 +1651,7 @@ for more information about tree walking.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">First element is the found row or false. Second element is the number of path segments walked. If a row is found, this will be == to count($path). Otherwise, it will be the index of the path segment that we could not find.</div>
+    <div markdown="1" class="param-desc">First element is the found row or `false`. Second element is the number of path segments walked. If a row is found, this will be == to `count($path)`. Otherwise, it will be the index of the path segment that we could not find.</div>
 
     <div style="clear:both;"/>
 
@@ -1662,7 +1663,7 @@ for more information about tree walking.
 <a name="mergeSubtables" id="mergeSubtables"></a>
 ### `mergeSubtables()`
 
-Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtable's.
+Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtables.
 
 #### Signature
 
@@ -1673,7 +1674,7 @@ Returns a new DataTable in which the rows of this table are replaced with the ag
       <div markdown="1" class="parameter">
       `$labelColumn` (`string`|`bool`) &mdash;
 
-      <div markdown="1" class="param-desc"> If supplied the label of the parent row will be added to a new column in each subtable row. If set to, 'label' each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.</div>
+      <div markdown="1" class="param-desc"> If supplied the label of the parent row will be added to a new column in each subtable row. If set to, `'label'` each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.</div>
 
       <div style="clear:both;"/>
 
@@ -1683,7 +1684,7 @@ Returns a new DataTable in which the rows of this table are replaced with the ag
       <div markdown="1" class="parameter">
       `$useMetadataColumn` (`bool`) &mdash;
 
-      <div markdown="1" class="param-desc"> If true and if $labelColumn is supplied, the parent row's label will be added as metadata and not a new column.</div>
+      <div markdown="1" class="param-desc"> If true and if `$labelColumn` is supplied, the parent row's label will be added as metadata and not a new column.</div>
 
       <div style="clear:both;"/>
 

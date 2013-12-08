@@ -11,11 +11,11 @@ Properties
 This abstract class defines the following properties:
 
 - [`$type`](#$type) &mdash; Describes the setting's PHP data type.
-- [`$uiControlType`](#$uicontroltype) &mdash; Describes how the setting should be manipulated through Piwik's UI.
+- [`$uiControlType`](#$uicontroltype) &mdash; Describes what HTML element should be used to manipulate the setting through Piwik's UI.
 - [`$uiControlAttributes`](#$uicontrolattributes) &mdash; Name-value mapping of HTML attributes that will be added HTML form control, eg, `array('size' => 3)`.
 - [`$availableValues`](#$availablevalues) &mdash; The list of all available values for this setting.
 - [`$introduction`](#$introduction) &mdash; Text that will appear above this setting's section in the _Plugin Settings_ admin page.
-- [`$description`](#$description) &mdash; Text that will be appear directly underneath the setting title in the _Plugin Settings_ admin page.
+- [`$description`](#$description) &mdash; Text that will appear directly underneath the setting title in the _Plugin Settings_ admin page.
 - [`$inlineHelp`](#$inlinehelp) &mdash; Text that will appear next to the setting's section in the _Plugin Settings_ admin page.
 - [`$validate`](#$validate) &mdash; A closure that does some custom validation on the setting before the setting is persisted.
 - [`$transform`](#$transform) &mdash; A closure that transforms the setting value.
@@ -41,9 +41,9 @@ See [Plugin\Settings](/api-reference/Piwik/Plugin/Settings) for a list of suppor
 <a name="uiControlType" id="uiControlType"></a>
 ### `$uiControlType`
 
-Describes how the setting should be manipulated through Piwik's UI.
+Describes what HTML element should be used to manipulate the setting through Piwik's UI.
 
-See [Plugin\Settings](/api-reference/Piwik/Plugin/Settings) for a list of supportted control types.
+See [Plugin\Settings](/api-reference/Piwik/Plugin/Settings) for a list of supported control types.
 
 #### Signature
 
@@ -102,7 +102,7 @@ Text that will appear above this setting's section in the _Plugin Settings_ admi
 <a name="description" id="description"></a>
 ### `$description`
 
-Text that will be appear directly underneath the setting title in the _Plugin Settings_ admin page.
+Text that will appear directly underneath the setting title in the _Plugin Settings_ admin page.
 
 If set, should be a short description of the setting.
 
@@ -140,13 +140,11 @@ a message that describes the error.
 
 **Example**
 
-```
-$setting->validate = function ($value, Setting $setting) {
-    if ($value > 60) {
-        throw new \Exception('The time limit is not allowed to be greater than 60 minutes.');
+    $setting->validate = function ($value, Setting $setting) {
+        if ($value > 60) {
+            throw new \Exception('The time limit is not allowed to be greater than 60 minutes.');
+        }
     }
-}
-```
 
 #### Signature
 
@@ -169,15 +167,13 @@ data type._
 
 **Example**
 
-```
-$setting->transform = function ($value, Setting $setting) {
-    if ($value > 30) {
-        $value = 30;
-    }
+    $setting->transform = function ($value, Setting $setting) {
+        if ($value > 30) {
+            $value = 30;
+        }
 
-    return (int) $value;
-}
-```
+        return (int) $value;
+    }
 
 #### Signature
 
@@ -215,7 +211,7 @@ The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getName()`](#getname) &mdash; Returns the setting's persisted name, eg, `'refreshInterval'`.
-- [`canBeDisplayedForCurrentUser()`](#canbedisplayedforcurrentuser) &mdash; Returns true if this setting can be displayed for the current user, false if otherwise.
+- [`canBeDisplayedForCurrentUser()`](#canbedisplayedforcurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 - [`setStorage()`](#setstorage) &mdash; Sets the object used to persist settings.
 - [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value.
 - [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value.
@@ -269,7 +265,7 @@ Returns the setting's persisted name, eg, `'refreshInterval'`.
 <a name="canBeDisplayedForCurrentUser" id="canBeDisplayedForCurrentUser"></a>
 ### `canBeDisplayedForCurrentUser()`
 
-Returns true if this setting can be displayed for the current user, false if otherwise.
+Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 
 #### Signature
 

@@ -25,9 +25,11 @@ The following process is used to render reports:
 - The report is loaded through Piwik's Reporting API.
 - The display and request properties that require report data in order to determine a default
   value are defaulted. These properties are:
+
   - [ViewDataTable\Config::$columns_to_display](/api-reference/Piwik/ViewDataTable/Config#$columns_to_display)
   - [ViewDataTable\RequestConfig::$filter_sort_column](/api-reference/Piwik/ViewDataTable/RequestConfig#$filter_sort_column)
   - [ViewDataTable\RequestConfig::$filter_sort_order](/api-reference/Piwik/ViewDataTable/RequestConfig#$filter_sort_order)
+
 - Priority filters are applied to the report (see [ViewDataTable\Config::$filters](/api-reference/Piwik/ViewDataTable/Config#$filters)).
 - The filters that are applied to every report in the Reporting API (called **generic filters**)
   are applied. (see [API\Request](/api-reference/Piwik/API/Request))
@@ -100,71 +102,39 @@ guide.
         public function beforeRender()
         {
             $this->config->max_graph_elements = false;
-            $this->config->datatable_js_type  = 'TreemapDataTable';
+            $this->config->datatable_js_type  = 'MyVisualization';
             $this->config->show_flatten_table = false;
             $this->config->show_pagination_control = false;
             $this->config->show_offset_information = false;
         }
     }
 
+Constants
+---------
+
+This class defines the following constants:
+
+- [`TEMPLATE_FILE`](#template_file) &mdash; The Twig template file to use when rendering, eg, `"@MyPlugin/_myVisualization.twig"`.
+
+<a name="template_file" id="template_file"></a>
+<a name="TEMPLATE_FILE" id="TEMPLATE_FILE"></a>
+### `TEMPLATE_FILE`
+
+Must be defined by classes that extend Visualization.
+
 Methods
 -------
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
-- [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable.
-- [`beforeLoadDataTable()`](#beforeloaddatatable) &mdash; Hook that is intended to change the request config that is sent to the API.
-- [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](#beforegenericfiltersareappliedtoloadeddatatable) &mdash; Hook that is executed before generic filters like "filter_limit" and "filter_offset" are applied
-- [`afterGenericFiltersAreAppliedToLoadedDataTable()`](#aftergenericfiltersareappliedtoloadeddatatable) &mdash; This hook is executed after generic filters like "filter_limit" and "filter_offset" are applied
-- [`afterAllFiltersAreApplied()`](#afterallfiltersareapplied) &mdash; This hook is executed after the data table is loaded and after all filteres are applied.
-- [`beforeRender()`](#beforerender) &mdash; Hook to make sure config properties have a specific value because the default config can be changed by a report or by request ($_GET and $_POST) params.
-
-<a name="__construct" id="__construct"></a>
-<a name="__construct" id="__construct"></a>
-### `__construct()`
-
-Constructor.
-
-Initializes the default config, requestConfig and the request itself. After configuring some
-mandatory properties reports can modify the view by listening to the hook 'ViewDataTable.configure'.
-
-#### Signature
-
-- It is a **finalized** method.
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$controllerAction`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$apiMethodToRequestDataTable`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+- [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable making it available in the Twig template specified by `[TEMPLATE_FILE](/api-reference/Piwik/Plugin/Visualization#piwik\plugin\visualization::template_file)`.
+- [`isThereDataToDisplay()`](#istheredatatodisplay) &mdash; Returns `true` if there is data to display, `false` if otherwise.
 
 <a name="assigntemplatevar" id="assigntemplatevar"></a>
 <a name="assignTemplateVar" id="assignTemplateVar"></a>
 ### `assignTemplateVar()`
 
-Assigns a template variable.
-
-All assigned variables are available in the twig view template afterwards. You can
-assign either one variable by setting $vars and $value or an array of key/value pairs.
+Assigns a template variable making it available in the Twig template specified by `[TEMPLATE_FILE](/api-reference/Piwik/Plugin/Visualization#piwik\plugin\visualization::template_file)`.
 
 #### Signature
 
@@ -175,7 +145,7 @@ assign either one variable by setting $vars and $value or an array of key/value 
       <div markdown="1" class="parameter">
       `$vars` (`array`|`string`) &mdash;
 
-      <div markdown="1" class="param-desc"></div>
+      <div markdown="1" class="param-desc"> One or more variable names to set.</div>
 
       <div style="clear:both;"/>
 
@@ -185,7 +155,7 @@ assign either one variable by setting $vars and $value or an array of key/value 
       <div markdown="1" class="parameter">
       `$value` (`mixed`) &mdash;
 
-      <div markdown="1" class="param-desc"></div>
+      <div markdown="1" class="param-desc"> The value to set each variable to.</div>
 
       <div style="clear:both;"/>
 
@@ -194,53 +164,13 @@ assign either one variable by setting $vars and $value or an array of key/value 
    </ul>
 - It does not return anything.
 
-<a name="beforeloaddatatable" id="beforeloaddatatable"></a>
-<a name="beforeLoadDataTable" id="beforeLoadDataTable"></a>
-### `beforeLoadDataTable()`
+<a name="istheredatatodisplay" id="istheredatatodisplay"></a>
+<a name="isThereDataToDisplay" id="isThereDataToDisplay"></a>
+### `isThereDataToDisplay()`
 
-Hook that is intended to change the request config that is sent to the API.
+Returns `true` if there is data to display, `false` if otherwise.
 
-#### Signature
-
-- It does not return anything.
-
-<a name="beforegenericfiltersareappliedtoloadeddatatable" id="beforegenericfiltersareappliedtoloadeddatatable"></a>
-<a name="beforeGenericFiltersAreAppliedToLoadedDataTable" id="beforeGenericFiltersAreAppliedToLoadedDataTable"></a>
-### `beforeGenericFiltersAreAppliedToLoadedDataTable()`
-
-Hook that is executed before generic filters like "filter_limit" and "filter_offset" are applied
-
-#### Signature
-
-- It does not return anything.
-
-<a name="aftergenericfiltersareappliedtoloadeddatatable" id="aftergenericfiltersareappliedtoloadeddatatable"></a>
-<a name="afterGenericFiltersAreAppliedToLoadedDataTable" id="afterGenericFiltersAreAppliedToLoadedDataTable"></a>
-### `afterGenericFiltersAreAppliedToLoadedDataTable()`
-
-This hook is executed after generic filters like "filter_limit" and "filter_offset" are applied
-
-#### Signature
-
-- It does not return anything.
-
-<a name="afterallfiltersareapplied" id="afterallfiltersareapplied"></a>
-<a name="afterAllFiltersAreApplied" id="afterAllFiltersAreApplied"></a>
-### `afterAllFiltersAreApplied()`
-
-This hook is executed after the data table is loaded and after all filteres are applied.
-
-Format the data that you want to pass to the view here.
-
-#### Signature
-
-- It does not return anything.
-
-<a name="beforerender" id="beforerender"></a>
-<a name="beforeRender" id="beforeRender"></a>
-### `beforeRender()`
-
-Hook to make sure config properties have a specific value because the default config can be changed by a report or by request ($_GET and $_POST) params.
+Derived classes should override this method if they change the amount of data that is loaded.
 
 #### Signature
 

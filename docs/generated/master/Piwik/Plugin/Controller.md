@@ -7,9 +7,10 @@ Base class of all plugin Controllers.
 
 Plugins that wish to add display HTML should create a Controller that either
 extends from this class or from ControllerAdmin. Every public method in
-the controller will be exposed as a controller action.
+the controller will be exposed as a controller method and can be invoked via
+an HTTP request.
 
-Learn more about Piwik's MVC system [here](#).
+Learn more about Piwik's MVC system [here](/guides/mvc-in-piwik).
 
 ### Examples
 
@@ -35,10 +36,10 @@ Properties
 This abstract class defines the following properties:
 
 - [`$pluginName`](#$pluginname) &mdash; The plugin name, eg.
-- [`$strDate`](#$strdate) &mdash; The value of the `'date'` query parameter.
+- [`$strDate`](#$strdate) &mdash; The value of the **date** query parameter.
 - [`$date`](#$date) &mdash; The Date object created with ($strDate)[#strDate] or null if the requested date is a range.
-- [`$idSite`](#$idsite) &mdash; The value of the `'idSite'` query parameter.
-- [`$site`](#$site) &mdash; The Site object created with ($idSite)[#idSite].
+- [`$idSite`](#$idsite) &mdash; The value of the **idSite** query parameter.
+- [`$site`](#$site) &mdash; The Site object created with [$idSite](/api-reference/Piwik/Plugin/Controller#$idsite).
 
 <a name="$pluginname" id="$pluginname"></a>
 <a name="pluginName" id="pluginName"></a>
@@ -56,7 +57,7 @@ The plugin name, eg.
 <a name="strDate" id="strDate"></a>
 ### `$strDate`
 
-The value of the `'date'` query parameter.
+The value of the **date** query parameter.
 
 #### Signature
 
@@ -78,7 +79,7 @@ The Date object created with ($strDate)[#strDate] or null if the requested date 
 <a name="idSite" id="idSite"></a>
 ### `$idSite`
 
-The value of the `'idSite'` query parameter.
+The value of the **idSite** query parameter.
 
 #### Signature
 
@@ -88,7 +89,7 @@ The value of the `'idSite'` query parameter.
 <a name="site" id="site"></a>
 ### `$site`
 
-The Site object created with ($idSite)[#idSite].
+The Site object created with [$idSite](/api-reference/Piwik/Plugin/Controller#$idsite).
 
 #### Signature
 
@@ -100,24 +101,24 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getDateParameterInTimezone()`](#getdateparameterintimezone) &mdash; Helper method that converts "today" or "yesterday" to the specified timezone.
+- [`getDateParameterInTimezone()`](#getdateparameterintimezone) &mdash; Helper method that converts `"today"` or `"yesterday"` to the specified timezone.
 - [`setDate()`](#setdate) &mdash; Sets the date to be used by all other methods in the controller.
 - [`getDefaultAction()`](#getdefaultaction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
-- [`renderView()`](#renderview) &mdash; A helper method that renders a view either to the screen or to a string.
+- [`renderReport()`](#renderreport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method.
 - [`getLastUnitGraph()`](#getlastunitgraph) &mdash; Returns a ViewDataTable object that will render a jqPlot evolution graph for the last30 days/weeks/etc.
 - [`getLastUnitGraphAcrossPlugins()`](#getlastunitgraphacrossplugins) &mdash; Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
 - [`getUrlSparkline()`](#geturlsparkline) &mdash; Returns a URL to a sparkline image for a report served by the current plugin.
-- [`setMinDateView()`](#setmindateview) &mdash; Sets the first date available in the calendar.
-- [`setMaxDateView()`](#setmaxdateview) &mdash; Sets the last date available in the calendar.
+- [`setMinDateView()`](#setmindateview) &mdash; Sets the first date available in the period selector's calendar.
+- [`setMaxDateView()`](#setmaxdateview) &mdash; Sets the last date available in the period selector's calendar.
 - [`setGeneralVariablesView()`](#setgeneralvariablesview) &mdash; Assigns variables to [View](/api-reference/Piwik/View) instances that display an entire page.
 - [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance.
 - [`setHostValidationVariablesView()`](#sethostvalidationvariablesview) &mdash; Checks if the current host is valid and sets variables on the given view, including:
 - [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
-- [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current http request to another module/action.
+- [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current HTTP request to another module/action.
 - [`getDefaultWebsiteId()`](#getdefaultwebsiteid) &mdash; Returns default site ID that Piwik should load.
 - [`getDefaultDate()`](#getdefaultdate) &mdash; Returns default date for Piwik reports.
 - [`getDefaultPeriod()`](#getdefaultperiod) &mdash; Returns default period type for Piwik reports.
-- [`checkTokenInUrl()`](#checktokeninurl) &mdash; Checks that the token_auth in the URl matches the current logged in user's token_auth.
+- [`checkTokenInUrl()`](#checktokeninurl) &mdash; Checks that the token_auth in the URL matches the currently logged-in user's token_auth.
 - [`getCalendarPrettyDate()`](#getcalendarprettydate) &mdash; Returns a prettified date string for use in period selector widget.
 - [`getEvolutionHtml()`](#getevolutionhtml) &mdash; Calculates the evolution from one value to another and returns HTML displaying the evolution percent.
 
@@ -134,7 +135,7 @@ Constructor.
 <a name="getDateParameterInTimezone" id="getDateParameterInTimezone"></a>
 ### `getDateParameterInTimezone()`
 
-Helper method that converts "today" or "yesterday" to the specified timezone.
+Helper method that converts `"today"` or `"yesterday"` to the specified timezone.
 
 If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezone.
 
@@ -147,7 +148,7 @@ If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezon
       <div markdown="1" class="parameter">
       `$date` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> today, yesterday, YYYY-MM-DD</div>
+      <div markdown="1" class="param-desc"> `'today'`, `'yesterday'`, `'YYYY-MM-DD'`</div>
 
       <div style="clear:both;"/>
 
@@ -157,7 +158,7 @@ If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezon
       <div markdown="1" class="parameter">
       `$timezone` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> default timezone to use</div>
+      <div markdown="1" class="param-desc"> The timezone to use.</div>
 
       <div style="clear:both;"/>
 
@@ -203,11 +204,11 @@ Returns the name of the default method that will be called when visiting: index.
 
 - It returns a `string` value.
 
-<a name="renderview" id="renderview"></a>
-<a name="renderView" id="renderView"></a>
-### `renderView()`
+<a name="renderreport" id="renderreport"></a>
+<a name="renderReport" id="renderReport"></a>
+### `renderReport()`
 
-A helper method that renders a view either to the screen or to a string.
+Convenience method that creates and renders a ViewDataTable for a API method.
 
 #### Signature
 
@@ -216,9 +217,9 @@ A helper method that renders a view either to the screen or to a string.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$view` (`Piwik\View\ViewInterface`) &mdash;
+      `$apiAction`
 
-      <div markdown="1" class="param-desc"> The view to render.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
@@ -230,13 +231,15 @@ A helper method that renders a view either to the screen or to a string.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`string`|`void`) &mdash;
-    <div markdown="1" class="param-desc"></div>
+    <div markdown="1" class="param-desc">See `$fetch`.</div>
 
     <div style="clear:both;"/>
 
     </div>
   </li>
 </ul>
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if `$pluginName` is not an existing plugin or if `$apiAction` is not an existing method of the plugin&#039;s API.
 
 <a name="getlastunitgraph" id="getlastunitgraph"></a>
 <a name="getLastUnitGraph" id="getLastUnitGraph"></a>
@@ -364,11 +367,9 @@ Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitg
 
 Returns a URL to a sparkline image for a report served by the current plugin.
 
-The result of this URL should be used with the [sparkline()](#) twig function.
+The result of this URL should be used with the [sparkline()](/api-reference/Piwik/View#twig) twig function.
 
 The current site ID and period will be used.
-
-See Piwik\Visualization\Sparkline for more information about the Sparkline visualization.
 
 #### Signature
 
@@ -413,7 +414,7 @@ See Piwik\Visualization\Sparkline for more information about the Sparkline visua
 <a name="setMinDateView" id="setMinDateView"></a>
 ### `setMinDateView()`
 
-Sets the first date available in the calendar.
+Sets the first date available in the period selector's calendar.
 
 #### Signature
 
@@ -447,10 +448,10 @@ Sets the first date available in the calendar.
 <a name="setMaxDateView" id="setMaxDateView"></a>
 ### `setMaxDateView()`
 
-Sets the last date available in the calendar.
+Sets the last date available in the period selector's calendar.
 
-Usually this just the "today" date
-for a site (which can depend on the timezone of a site).
+Usually this is just the "today" date
+for a site (which varies based on the timezone of a site).
 
 #### Signature
 
@@ -628,9 +629,7 @@ Sets general period variables on a view, including:  - **displayUniqueVisitors**
 <a name="redirectToIndex" id="redirectToIndex"></a>
 ### `redirectToIndex()`
 
-Helper method used to redirect the current http request to another module/action.
-
-If specified, will also change the idSite, date and/or period query parameters.
+Helper method used to redirect the current HTTP request to another module/action.
 
 This function will exit immediately after executing.
 
@@ -708,6 +707,8 @@ This function will exit immediately after executing.
 
 Returns default site ID that Piwik should load.
 
+_Note: This value is a Piwik setting set by each user._
+
 #### Signature
 
 
@@ -728,6 +729,8 @@ Returns default site ID that Piwik should load.
 ### `getDefaultDate()`
 
 Returns default date for Piwik reports.
+
+_Note: This value is a Piwik setting set by each user._
 
 #### Signature
 
@@ -769,12 +772,10 @@ Returns default period type for Piwik reports.
 <a name="checkTokenInUrl" id="checkTokenInUrl"></a>
 ### `checkTokenInUrl()`
 
-Checks that the token_auth in the URl matches the current logged in user's token_auth.
+Checks that the token_auth in the URL matches the currently logged-in user's token_auth.
 
-This is a protection against CSRF should be used in controller
-actions that are either invoked via AJAX or redirect to a page
-within the site. It should be used in all controller actions that modify
-Piwik or user settings.
+This is a protection against CSRF and should be used in all controller
+methods that modify Piwik or any user settings.
 
 **The token_auth should never appear in the browser's address bar.**
 
@@ -869,8 +870,8 @@ No HTML is returned if the current value and evolution percent are both 0.
 <ul>
   <li>
     <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`bool`) &mdash;
-    <div markdown="1" class="param-desc">The HTML or false if the evolution is 0 and the current value is 0.</div>
+    _Returns:_  (`string`|`Piwik\Plugin\false`) &mdash;
+    <div markdown="1" class="param-desc">The HTML or `false` if the evolution is 0 and the current value is 0.</div>
 
     <div style="clear:both;"/>
 

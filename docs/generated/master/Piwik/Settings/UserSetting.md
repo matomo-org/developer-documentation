@@ -5,8 +5,8 @@ UserSetting
 
 Describes a per user setting.
 
-Each user will be able to change this setting but each user
-can set a different value. Changes from one user will not affect other users.
+Each user will be able to change this setting for themselves,
+but not for other users.
 
 Methods
 -------

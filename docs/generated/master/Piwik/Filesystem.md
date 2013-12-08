@@ -3,7 +3,7 @@
 Filesystem
 ==========
 
-Contains helper functions that involve the filesystem.
+Contains helper functions that deal with the filesystem.
 
 Methods
 -------
@@ -24,7 +24,7 @@ Attempts to create a new directory.
 
 All errors are silenced.
 
-Note: This function does not create directories recursively.
+_Note: This function does **not** create directories recursively._
 
 #### Signature
 
@@ -45,7 +45,7 @@ Note: This function does not create directories recursively.
       <div markdown="1" class="parameter">
       `$denyAccess` (`bool`) &mdash;
 
-      <div markdown="1" class="param-desc"> Whether to deny browser access to this new folder by creating a .htaccess file.</div>
+      <div markdown="1" class="param-desc"> Whether to deny browser access to this new folder by creating an **.htaccess** file.</div>
 
       <div style="clear:both;"/>
 
@@ -91,7 +91,7 @@ See [glob](http://php.net/manual/en/function.glob.php) for more info.
       <div markdown="1" class="parameter">
       `$nFlags` (`int`) &mdash;
 
-      <div markdown="1" class="param-desc"> `glob()` flags. See [http://php.net/manual/en/function.glob.php](http://php.net/manual/en/function.glob.php).</div>
+      <div markdown="1" class="param-desc"> `glob()` . See [glob()](http://php.net/manual/en/function.glob.php).</div>
 
       <div style="clear:both;"/>
 
@@ -136,7 +136,7 @@ Recursively deletes a directory.
       <div markdown="1" class="parameter">
       `$deleteRootToo` (`boolean`) &mdash;
 
-      <div markdown="1" class="param-desc"> Whether to delete `$dir` or just its contents.</div>
+      <div markdown="1" class="param-desc"> If true, `$dir` is deleted, otherwise just its contents.</div>
 
       <div style="clear:both;"/>
 
@@ -197,7 +197,7 @@ Copies a file from `$source` to `$dest`.
       </div>
    </li>
    </ul>
-- It returns a `bool` value.
+- It returns a `Piwik\true` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the file cannot be copied.
 

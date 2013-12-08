@@ -7,13 +7,23 @@ Dispatches API requests to the appropriate API method.
 
 The Request class is used throughout Piwik to call API methods. The difference
 between using Request and calling API methods directly is that Request
-will do more after calling the API including: apply generic filters, apply queued filters,
-and handle the **flat** and **label** query parameters.
+will do more after calling the API including: applying generic filters, applying queued filters,
+and handling the **flat** and **label** query parameters.
 
 Additionally, the Request class will **forward current query parameters** to the request
 which is more convenient than calling [Common::getRequestVar()](/api-reference/Piwik/Common#getrequestvar) many times over.
 
-In most cases, using a Request object to query the API is the right way to go.
+In most cases, using a Request object to query the API is the correct approach.
+
+### Post-processing
+
+The return value of API methods undergo some extra processing before being returned by Request.
+To learn more about what happens to API results, read [this](/guides/piwiks-web-api#extra-report-processing).
+
+### Output Formats
+
+The value returned by Request will be serialized to a certain format before being returned.
+To see the list of supported output formats, read [this](/guides/piwiks-web-api#output-formats).
 
 ### Examples
 
@@ -26,14 +36,15 @@ In most cases, using a Request object to query the API is the right way to go.
 
 **Getting a unrendered DataTable**
 
-    // use convenience the convenience method 'processRequest'
+    // use the convenience method 'processRequest'
     $dataTable = Request::processRequest('UserSettings.getWideScreen', array(
         'idSite' => 1,
         'date' => 'yesterday',
         'period' => 'week',
-        'format' => 'original', // this is the important bit
         'filter_limit' => 5,
         'filter_offset' => 0
+
+        'format' => 'original', // this is the important bit
     ));
     echo "This DataTable has " . $dataTable->getRowsCount() . " rows.";
 
@@ -45,12 +56,12 @@ The class defines the following methods:
 - [`getRequestArrayFromString()`](#getrequestarrayfromstring) &mdash; Converts the supplied request string into an array of query paramater name/value mappings.
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`process()`](#process) &mdash; Dispatches the API request to the appropriate API method and returns the result after post-processing.
-- [`getClassNameAPI()`](#getclassnameapi) &mdash; Returns the class name of a plugin's API given the plugin name.
+- [`getClassNameAPI()`](#getclassnameapi) &mdash; Returns the name of a plugin's API class by plugin name.
 - [`processRequest()`](#processrequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 - [`getRequestParametersGET()`](#getrequestparametersget) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
-- [`getBaseReportUrl()`](#getbasereporturl) &mdash; Returns URL for the current requested report w/o any filter parameters.
+- [`getBaseReportUrl()`](#getbasereporturl) &mdash; Returns the URL for the current requested report w/o any filter parameters.
 - [`getCurrentUrlWithoutGenericFilters()`](#getcurrenturlwithoutgenericfilters) &mdash; Returns the current URL without generic filter query parameters.
-- [`getRawSegmentFromRequest()`](#getrawsegmentfromrequest) &mdash; Returns the unmodified segment from the original request.
+- [`getRawSegmentFromRequest()`](#getrawsegmentfromrequest) &mdash; Returns the segment query parameter from the original request, without modifications.
 
 <a name="getrequestarrayfromstring" id="getrequestarrayfromstring"></a>
 <a name="getRequestArrayFromString" id="getRequestArrayFromString"></a>
@@ -92,9 +103,9 @@ Constructor.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$request` (`string`) &mdash;
+      `$request` (`string`|`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> GET request that defines the API call (must at least contain a **method** parameter), eg, `'method=UserSettings.getWideScreen&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the $_GET and $_POST superglobal and fetch the values directly from the HTTP GET query.</div>
+      <div markdown="1" class="param-desc"> Query string that defines the API call (must at least contain a **method** parameter), eg, `'method=UserSettings.getWideScreen&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the values in the `$_GET` and `$_POST` superglobals.</div>
 
       <div style="clear:both;"/>
 
@@ -114,8 +125,12 @@ Post-processing includes:
 - running generic filters unless **disable_generic_filters** is set to 1
 - URL decoding label column values
 - running queued filters unless **disable_queued_filters** is set to 1
-- removes columns based on the values of the **hideColumns** and **showColumns** query parameters
-- filters rows if the **label** query parameter is set
+- removing columns based on the values of the **hideColumns** and **showColumns** query parameters
+- filtering rows if the **label** query parameter is set
+- converting the result to the appropriate format (ie, XML, JSON, etc.)
+
+If `'original'` is supplied for the output format, the result is returned as a PHP
+object.
 
 #### Signature
 
@@ -139,7 +154,7 @@ Post-processing includes:
 <a name="getClassNameAPI" id="getClassNameAPI"></a>
 ### `getClassNameAPI()`
 
-Returns the class name of a plugin's API given the plugin name.
+Returns the name of a plugin's API class by plugin name.
 
 #### Signature
 
@@ -150,14 +165,25 @@ Returns the class name of a plugin's API given the plugin name.
       <div markdown="1" class="parameter">
       `$plugin` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The plugin name.</div>
+      <div markdown="1" class="param-desc"> The plugin name, eg, `'Referrers'`.</div>
 
       <div style="clear:both;"/>
 
       </div>
    </li>
    </ul>
-- It returns a `string` value.
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The fully qualified API class name, eg, `'\Piwik\Plugins\Referrers\API'`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="processrequest" id="processrequest"></a>
 <a name="processRequest" id="processRequest"></a>
@@ -174,7 +200,7 @@ Helper method that processes an API request in one line using the variables in `
       <div markdown="1" class="parameter">
       `$method` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The API method to call, ie, Actions.getPageTitles</div>
+      <div markdown="1" class="param-desc"> The API method to call, ie, `'Actions.getPageTitles'`.</div>
 
       <div style="clear:both;"/>
 
@@ -184,7 +210,7 @@ Helper method that processes an API request in one line using the variables in `
       <div markdown="1" class="parameter">
       `$paramOverride` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The parameter name-value pairs to use instead of what's in $_GET & $_POST.</div>
+      <div markdown="1" class="param-desc"> The parameter name-value pairs to use instead of what's in `$_GET` & `$_POST`.</div>
 
       <div style="clear:both;"/>
 
@@ -196,7 +222,7 @@ Helper method that processes an API request in one line using the variables in `
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">The result of the API request.</div>
+    <div markdown="1" class="param-desc">The result of the API request. See [process()](/api-reference/Piwik/API/Request#process).</div>
 
     <div style="clear:both;"/>
 
@@ -210,7 +236,7 @@ Helper method that processes an API request in one line using the variables in `
 
 Returns the original request parameters in the current query string as an array mapping query parameter names with values.
 
-This result of this function will not be affected
+The result of this function will not be affected
 by any modifications to `$_GET` and will not include parameters in `$_POST`.
 
 #### Signature
@@ -221,7 +247,7 @@ by any modifications to `$_GET` and will not include parameters in `$_POST`.
 <a name="getBaseReportUrl" id="getBaseReportUrl"></a>
 ### `getBaseReportUrl()`
 
-Returns URL for the current requested report w/o any filter parameters.
+Returns the URL for the current requested report w/o any filter parameters.
 
 #### Signature
 
@@ -289,7 +315,7 @@ Returns the current URL without generic filter query parameters.
 <a name="getRawSegmentFromRequest" id="getRawSegmentFromRequest"></a>
 ### `getRawSegmentFromRequest()`
 
-Returns the unmodified segment from the original request.
+Returns the segment query parameter from the original request, without modifications.
 
 #### Signature
 

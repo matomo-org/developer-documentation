@@ -8,6 +8,8 @@ Describes a system wide setting.
 Only the super user can change this type of setting and
 the value of this setting will affect all users.
 
+See [\Plugin\Settings](/api-reference/Piwik/Plugin/Settings).
+
 Methods
 -------
 
@@ -55,7 +57,7 @@ Constructor.
 
 Returns the display order.
 
-User settings are displayed after system settings.
+System settings are displayed before user settings.
 
 #### Signature
 

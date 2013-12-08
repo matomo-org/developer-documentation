@@ -6,7 +6,7 @@ WidgetsList
 Manages the global list of reports that can be displayed as dashboard widgets.
 
 Reports are added as dashboard widgets through the [WidgetsList.addWidgets](/api-reference/hooks#widgetslistaddwidgets)
-event. Plugins should call [add()](/api-reference/Piwik/WidgetsList#add) in event observers for this event.
+event. Observers for this event should call the [add()](/api-reference/Piwik/WidgetsList#add) method to add reports.
 
 Methods
 -------
@@ -15,8 +15,8 @@ The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns all available widgets.
 - [`add()`](#add) &mdash; Adds a report to the list of dashboard widgets.
-- [`remove()`](#remove) &mdash; Removes one more widgets from the widget list.
-- [`isDefined()`](#isdefined) &mdash; Returns true if the widget with the given parameters exists in the widget list, false if otherwise.
+- [`remove()`](#remove) &mdash; Removes one or more widgets from the widget list.
+- [`isDefined()`](#isdefined) &mdash; Returns `true` if a report exists in the widget list, `false` if otherwise.
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
@@ -31,7 +31,7 @@ Returns all available widgets.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Maps widget categories with an array of widget information, eg, ``` array( 'Visitors' => array( array(...), array(...) ), 'Visits' => array( array(...), array(...) ), ) ```</div>
+    <div markdown="1" class="param-desc">Array Mapping widget categories with an array of widget information, eg, ``` array( 'Visitors' => array( array(...), // info about first widget in this category array(...) // info about second widget in this category, etc. ), 'Visits' => array( array(...), array(...) ), ) ```</div>
 
     <div style="clear:both;"/>
 
@@ -107,7 +107,7 @@ Adds a report to the list of dashboard widgets.
 <a name="remove" id="remove"></a>
 ### `remove()`
 
-Removes one more widgets from the widget list.
+Removes one or more widgets from the widget list.
 
 #### Signature
 
@@ -128,7 +128,7 @@ Removes one more widgets from the widget list.
       <div markdown="1" class="parameter">
       `$widgetName` (`string`|`Piwik\false`) &mdash;
 
-      <div markdown="1" class="param-desc"> The name of the widget to remove. Cannot be a translation token. If not supplied, entire category will be removed.</div>
+      <div markdown="1" class="param-desc"> The name of the widget to remove. Cannot be a translation token. If not supplied, the entire category will be removed.</div>
 
       <div style="clear:both;"/>
 
@@ -141,7 +141,7 @@ Removes one more widgets from the widget list.
 <a name="isDefined" id="isDefined"></a>
 ### `isDefined()`
 
-Returns true if the widget with the given parameters exists in the widget list, false if otherwise.
+Returns `true` if a report exists in the widget list, `false` if otherwise.
 
 #### Signature
 
@@ -152,7 +152,7 @@ Returns true if the widget with the given parameters exists in the widget list, 
       <div markdown="1" class="parameter">
       `$controllerName` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The controller name of the widget's report.</div>
+      <div markdown="1" class="param-desc"> The controller name of the report.</div>
 
       <div style="clear:both;"/>
 
@@ -162,7 +162,7 @@ Returns true if the widget with the given parameters exists in the widget list, 
       <div markdown="1" class="parameter">
       `$controllerAction` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The controller action of the widget's report.</div>
+      <div markdown="1" class="param-desc"> The controller action of the report.</div>
 
       <div style="clear:both;"/>
 

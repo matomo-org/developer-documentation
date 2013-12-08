@@ -5,11 +5,11 @@ This is a complete list of available classes:
 
 - [`API\Request`](Piwik/API/Request.md) &mdash; Dispatches API requests to the appropriate API method.
 - [`Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
-- [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used to insert numeric and blob archive data, and to aggregate archive data.
-- [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; An ArchiveProcessor processes data for an Archive determined by these Parameters: website, period and segment.
+- [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used by [Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
+- [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
-- [`DataAccess\LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; Contains methods that aggregates log data (visits, actions, conversions, ecommerce).
+- [`DataAccess\LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; Contains methods that calculate metrics by aggregating log data (visits, actions, conversions, ecommerce items).
 - [`DataTable`](Piwik/DataTable.md) &mdash; The primary data structure used to store analytics data in Piwik.
 - [`DataTable\Filter`](Piwik/DataTable/Filter.md) &mdash; A filter is set of logic that manipulates a DataTable.
 - [`DataTable\Filter\AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md) &mdash; Adds processed metrics columns to a DataTable using metrics that already exist.
@@ -39,8 +39,8 @@ This is a complete list of available classes:
 - [`DataTable\Row`](Piwik/DataTable/Row.md) &mdash; This is what a [DataTable](/api-reference/Piwik/DataTable) is composed of.
 - [`DataTable\Simple`](Piwik/DataTable/Simple.md) &mdash; A [DataTable](/api-reference/Piwik/DataTable) where every row has two columns: **label** and **value**.
 - [`Date`](Piwik/Date.md) &mdash; Utility class that wraps date/time related PHP functions.
-- [`Db`](Piwik/Db.md) &mdash; Helper class that contains SQL related helper functions.
-- [`Filesystem`](Piwik/Filesystem.md) &mdash; Contains helper functions that involve the filesystem.
+- [`Db`](Piwik/Db.md) &mdash; Contains SQL related helper functions for Piwik's MySQL database.
+- [`Filesystem`](Piwik/Filesystem.md) &mdash; Contains helper functions that deal with the filesystem.
 - [`FrontController`](Piwik/FrontController.md) &mdash; This singleton dispatches requests to the appropriate plugin Controller.
 - [`Http`](Piwik/Http.md) &mdash; Server-side http client to retrieve content from remote servers, and optionally save to a local file.
 - [`IP`](Piwik/IP.md) &mdash; Contains IP address helper functions (for both IPv4 and IPv6).
@@ -62,14 +62,35 @@ This is a complete list of available classes:
 - [`Piwik`](Piwik/Piwik.md) &mdash; Main piwik helper class.
 - [`Plugin`](Piwik/Plugin.md) &mdash; Base class of all Plugin Descriptor classes.
 - [`Plugin\API`](Piwik/Plugin/API.md) &mdash; The base class of all API singletons.
-- [`Plugin\Archiver`](Piwik/Plugin/Archiver.md) &mdash; The base class that should be extended by plugins that archive their own metrics.
+- [`Plugin\Archiver`](Piwik/Plugin/Archiver.md) &mdash; The base class that should be extended by plugins that compute their own analytics data.
 - [`Plugin\Controller`](Piwik/Plugin/Controller.md) &mdash; Base class of all plugin Controllers.
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
-- [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all Settings providers.
+- [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all plugin settings providers.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
+- [`Plugins\Actions\Archiver`](Piwik/Plugins/Actions/Archiver.md) &mdash; Class encapsulating logic to process Day/Period Archiving for the Actions reports
+- [`Plugins\CoreVisualizations\Visualizations\Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; Generates a tag cloud from a given data array.
+- [`Plugins\CoreVisualizations\Visualizations\Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; This is an abstract visualization that should be the base of any 'graph' visualization.
+- [`Plugins\CoreVisualizations\Visualizations\HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md) &mdash; DataTable visualization that shows DataTable data in an HTML table.
+- [`Plugins\CoreVisualizations\Visualizations\HtmlTable\AllColumns`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable/AllColumns.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md) &mdash; DataTable visualization that displays DataTable data in a JQPlot graph.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Bar`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Bar.md) &mdash; Visualization that renders HTML for a Bar graph using jqPlot.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md) &mdash; Visualization that renders HTML for a line graph using jqPlot.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Pie`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Pie.md) &mdash; Visualization that renders HTML for a Pie graph using jqPlot.
+- [`Plugins\CustomVariables\Archiver`](Piwik/Plugins/CustomVariables/Archiver.md)
+- [`Plugins\DevicesDetection\Archiver`](Piwik/Plugins/DevicesDetection/Archiver.md)
+- [`Plugins\ExampleVisualization\SimpleTable`](Piwik/Plugins/ExampleVisualization/SimpleTable.md) &mdash; SimpleTable Visualization.
+- [`Plugins\Goals\Archiver`](Piwik/Plugins/Goals/Archiver.md)
+- [`Plugins\Goals\Visualizations\Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_goals_columns to true.
+- [`Plugins\Live\VisitorLog`](Piwik/Plugins/Live/VisitorLog.md) &mdash; A special DataTable visualization for the Live.getLastVisitsDetails API method.
+- [`Plugins\Provider\Archiver`](Piwik/Plugins/Provider/Archiver.md)
+- [`Plugins\Referrers\Archiver`](Piwik/Plugins/Referrers/Archiver.md)
+- [`Plugins\UserCountry\Archiver`](Piwik/Plugins/UserCountry/Archiver.md)
+- [`Plugins\UserSettings\Archiver`](Piwik/Plugins/UserSettings/Archiver.md) &mdash; Archiver for UserSettings Plugin
+- [`Plugins\VisitTime\Archiver`](Piwik/Plugins/VisitTime/Archiver.md)
+- [`Plugins\VisitorInterest\Archiver`](Piwik/Plugins/VisitorInterest/Archiver.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while grouping the rest to "Others" and allows for some more fancy things that can be configured via method calls of this class.
-- [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata describing a chunk of PHP code that should be executed at regular intervals.
+- [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.
 - [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; Describes the interval on which a scheduled task is executed.
 - [`ScheduledTime\Daily`](Piwik/ScheduledTime/Daily.md) &mdash; Daily class is used to schedule tasks every day.
 - [`ScheduledTime\Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.
@@ -77,7 +98,7 @@ This is a complete list of available classes:
 - [`ScheduledTime\Weekly`](Piwik/ScheduledTime/Weekly.md) &mdash; Weekly class is used to schedule tasks every week.
 - [`Segment`](Piwik/Segment.md) &mdash; Limits the set of visits Piwik uses when aggregating analytics data.
 - [`SettingsPiwik`](Piwik/SettingsPiwik.md) &mdash; Contains helper methods that can be used to get common Piwik settings.
-- [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and PHP settings.
+- [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and currently used PHP settings.
 - [`Settings\Setting`](Piwik/Settings/Setting.md) &mdash; Base setting type class.
 - [`Settings\SystemSetting`](Piwik/Settings/SystemSetting.md) &mdash; Describes a system wide setting.
 - [`Settings\UserSetting`](Piwik/Settings/UserSetting.md) &mdash; Describes a per user setting.

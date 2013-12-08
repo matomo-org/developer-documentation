@@ -9,7 +9,7 @@ A cryptographic nonce -- "number used only once" -- is often recommended as
 part of a robust defense against cross-site request forgery (CSRF/XSRF). This
 class provides static methods that create and manage nonce values.
 
-Nonces in Piwik are stored as a session variable and have a configurable expiration:
+Nonces in Piwik are stored as a session variable and have a configurable expiration.
 
 Learn more about nonces [here](http://en.wikipedia.org/wiki/Cryptographic_nonce).
 
@@ -18,17 +18,17 @@ Methods
 
 The class defines the following methods:
 
-- [`getNonce()`](#getnonce) &mdash; Returns the existing nonce.
+- [`getNonce()`](#getnonce) &mdash; Returns an existing nonce by ID.
 - [`verifyNonce()`](#verifynonce) &mdash; Returns if a nonce is valid and comes from a valid request.
 - [`discardNonce()`](#discardnonce) &mdash; Force expiration of the current nonce.
-- [`getOrigin()`](#getorigin) &mdash; Returns Origin HTTP header or false if not found.
-- [`getAcceptableOrigins()`](#getacceptableorigins) &mdash; Returns a list acceptable values for the HTTP Origin header.
+- [`getOrigin()`](#getorigin) &mdash; Returns the **Origin** HTTP header or `false` if not found.
+- [`getAcceptableOrigins()`](#getacceptableorigins) &mdash; Returns a list acceptable values for the HTTP **Origin** header.
 
 <a name="getnonce" id="getnonce"></a>
 <a name="getNonce" id="getNonce"></a>
 ### `getNonce()`
 
-Returns the existing nonce.
+Returns an existing nonce by ID.
 
 If none exists, a new nonce will be generated.
 
@@ -81,7 +81,7 @@ and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piw
       <div markdown="1" class="parameter">
       `$id` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> Unique id</div>
+      <div markdown="1" class="param-desc"> The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).</div>
 
       <div style="clear:both;"/>
 
@@ -91,7 +91,7 @@ and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piw
       <div markdown="1" class="parameter">
       `$cnonce` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> Nonce sent to client</div>
+      <div markdown="1" class="param-desc"> Nonce sent from client.</div>
 
       <div style="clear:both;"/>
 
@@ -103,7 +103,7 @@ and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piw
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`bool`) &mdash;
-    <div markdown="1" class="param-desc">true if valid; false otherwise</div>
+    <div markdown="1" class="param-desc">`true` if valid; `false` otherwise.</div>
 
     <div style="clear:both;"/>
 
@@ -139,7 +139,7 @@ Force expiration of the current nonce.
 <a name="getOrigin" id="getOrigin"></a>
 ### `getOrigin()`
 
-Returns Origin HTTP header or false if not found.
+Returns the **Origin** HTTP header or `false` if not found.
 
 #### Signature
 
@@ -160,7 +160,7 @@ Returns Origin HTTP header or false if not found.
 <a name="getAcceptableOrigins" id="getAcceptableOrigins"></a>
 ### `getAcceptableOrigins()`
 
-Returns a list acceptable values for the HTTP Origin header.
+Returns a list acceptable values for the HTTP **Origin** header.
 
 #### Signature
 

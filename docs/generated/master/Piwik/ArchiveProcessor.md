@@ -3,24 +3,7 @@
 ArchiveProcessor
 ================
 
-Used to insert numeric and blob archive data, and to aggregate archive data.
-
-During the Archiving process an instance of this class is used by plugins
-to cache aggregated analytics statistics.
-
-When the [Archive](/api-reference/Piwik/Archive) class is used to query for archive data and that archive
-data is found to be absent, the archiving process is launched. Instances of the
-[Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) classes for every plugin that supplies one are
-then used to execute archiving logic.
-
-Plugins access ArchiveProcessor instances through the [Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) class.
-Read the docs for [Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) to learn more about the process.
-
-### Limitations
-
-- It is currently only possible to aggregate statistics for one site and period
-at a time. The archive.php cron script does, however, issue asynchronous HTTP
-requests that initiate archiving, so statistics can be calculated in parallel.
+Used by [Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 
 ### See also
 
@@ -33,7 +16,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 
 **Inserting numeric data**
 
-    // function in an Archiver descendent
+    // function in an Archiver descendant
     public function aggregateDayReport()
     {
         $archiveProcessor = $this->getProcessor();
@@ -44,7 +27,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 
 **Inserting serialized DataTables**
 
-    // function in an Archiver descendent
+    // function in an Archiver descendant
     public function aggregateDayReport()
     {
         $archiveProcessor = $this->getProcessor();
@@ -60,7 +43,7 @@ requests that initiate archiving, so statistics can be calculated in parallel.
 
 **Aggregating archive data**
 
-    // function in Archiver descendent
+    // function in Archiver descendant
     public function aggregateMultipleReports()
     {
         $archiveProcessor = $this->getProcessor();
@@ -78,7 +61,7 @@ Methods
 
 The class defines the following methods:
 
-- [`getParams()`](#getparams) &mdash; Returns the Parameters object containing the site, period and segment used with this archive.
+- [`getParams()`](#getparams) &mdash; Returns the Parameters object containing the site, period and segment we're archiving data for.
 - [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a `[DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` instance for the site, period and segment this ArchiveProcessor will insert archive data for.
 - [`aggregateDataTableRecords()`](#aggregatedatatablerecords) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
 - [`aggregateNumericMetrics()`](#aggregatenumericmetrics) &mdash; Aggregates one or more metrics for every subperiod of the current period and inserts the results as metrics for the current period.
@@ -90,7 +73,7 @@ The class defines the following methods:
 <a name="getParams" id="getParams"></a>
 ### `getParams()`
 
-Returns the Parameters object containing the site, period and segment used with this archive.
+Returns the Parameters object containing the site, period and segment we're archiving data for.
 
 #### Signature
 
@@ -163,7 +146,7 @@ DataTables are summed recursively so subtables will be summed as well.
       <div markdown="1" class="parameter">
       `$columnsAggregationOperation` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Operations for aggregating columns, @see Row::sumRow().</div>
+      <div markdown="1" class="param-desc"> Operations for aggregating columns, see Row::sumRow().</div>
 
       <div style="clear:both;"/>
 
@@ -173,7 +156,7 @@ DataTables are summed recursively so subtables will be summed as well.
       <div markdown="1" class="parameter">
       `$columnsToRenameAfterAggregation` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> For columns that must change names when summed because they cannot be summed, eg, `array('nb_uniq_visitors' => 'sum_daily_nb_uniq_visitors')`.</div>
+      <div markdown="1" class="param-desc"> Columns mapped to new names for columns that must change names when summed because they cannot be summed, eg, `array('nb_uniq_visitors' => 'sum_daily_nb_uniq_visitors')`.</div>
 
       <div style="clear:both;"/>
 
@@ -185,7 +168,7 @@ DataTables are summed recursively so subtables will be summed as well.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Returns the row counts of each aggregated report before truncation, eg, ``` array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... ) ```</div>
+    <div markdown="1" class="param-desc">Returns the row counts of each aggregated report before truncation, eg, array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... )</div>
 
     <div style="clear:both;"/>
 
@@ -230,7 +213,7 @@ Aggregates one or more metrics for every subperiod of the current period and ins
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`|`int`) &mdash;
-    <div markdown="1" class="param-desc">Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, ``` array( 'nb_visits' => 3040, 'nb_hits' => 405 ) ``` could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.</div>
+    <div markdown="1" class="param-desc">Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, array( 'nb_visits' => 3040, 'nb_hits' => 405 ) could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.</div>
 
     <div style="clear:both;"/>
 
@@ -253,7 +236,7 @@ Caches multiple numeric records in the archive for this processor's site, period
       <div markdown="1" class="parameter">
       `$numericRecords` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> A name-value mapping of numeric values that should be archived, eg, ``` array('Referrers_distinctKeywords' => 23, 'Referrers_distinctCampaigns' => 234) ```</div>
+      <div markdown="1" class="param-desc"> A name-value mapping of numeric values that should be archived, eg, array('Referrers_distinctKeywords' => 23, 'Referrers_distinctCampaigns' => 234)</div>
 
       <div style="clear:both;"/>
 
@@ -268,7 +251,7 @@ Caches multiple numeric records in the archive for this processor's site, period
 
 Caches a single numeric record in the archive for this processor's site, period and segment.
 
-Numeric values are not inserted if they equal 0.
+Numeric values are not inserted if they equal `0`.
 
 #### Signature
 
