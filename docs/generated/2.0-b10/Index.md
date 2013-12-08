@@ -765,6 +765,7 @@ Index
 - [`$type`](Piwik/Settings/Setting.md#$type) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$transform`](Piwik/Settings/Setting.md#$transform) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$title`](Piwik/Settings/Setting.md#$title) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
+- [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; _Class in namespace_ `Piwik` 
 - [`$translations`](Piwik/ViewDataTable/Config.md#$translations) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$title`](Piwik/ViewDataTable/Config.md#$title) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$tooltip_metadata_name`](Piwik/ViewDataTable/Config.md#$tooltip_metadata_name) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)

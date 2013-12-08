@@ -625,6 +625,7 @@ Index
 - [`render()`](Piwik/Plugin/ViewDataTable.md#render) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; _Class in namespace_ `Piwik` 
 - [`removeAllUserSettingsForUser()`](Piwik/Settings/UserSetting.md#removeallusersettingsforuser) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)
+- [`rescheduleTask()`](Piwik/TaskScheduler.md#rescheduletask) &mdash; _Method in class_ [`TaskScheduler`](Piwik/TaskScheduler.md)
 - [`redirectToReferrer()`](Piwik/Url.md#redirecttoreferrer) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`redirectToUrl()`](Piwik/Url.md#redirecttourl) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`render()`](Piwik/View.md#render) &mdash; _Method in class_ [`View`](Piwik/View.md)
@@ -751,6 +752,7 @@ Index
 - [`$type`](Piwik/Settings/Setting.md#$type) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$transform`](Piwik/Settings/Setting.md#$transform) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$title`](Piwik/Settings/Setting.md#$title) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
+- [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; _Class in namespace_ `Piwik` 
 - [`$translations`](Piwik/ViewDataTable/Config.md#$translations) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$title`](Piwik/ViewDataTable/Config.md#$title) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$tooltip_metadata_name`](Piwik/ViewDataTable/Config.md#$tooltip_metadata_name) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)

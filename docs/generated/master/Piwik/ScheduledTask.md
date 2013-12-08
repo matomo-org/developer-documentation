@@ -5,7 +5,7 @@ ScheduledTask
 
 Contains metadata referencing PHP code that should be executed at regular intervals.
 
-See the TaskScheduler docs to learn more about scheduled tasks.
+See the [TaskScheduler](/api-reference/Piwik/TaskScheduler) docs to learn more about scheduled tasks.
 
 Methods
 -------

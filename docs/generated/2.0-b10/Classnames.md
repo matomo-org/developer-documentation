@@ -99,6 +99,7 @@
 ## Settings\UserSetting
 ## Singleton
 ## Site
+## TaskScheduler
 ## Url
 ## UrlHelper
 ## Version

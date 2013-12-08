@@ -104,6 +104,7 @@ This is a complete list of available classes:
 - [`Settings\UserSetting`](Piwik/Settings/UserSetting.md) &mdash; Describes a per user setting.
 - [`Singleton`](Piwik/Singleton.md) &mdash; The singleton base class restricts the instantiation of derived classes to one object only.
 - [`Site`](Piwik/Site.md) &mdash; Provides access to individual [site entity](/guides/persistence-and-the-mysql-backend#websites-aka-sites) data (including name, URL, etc.).
+- [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; Manages scheduled task execution.
 - [`Url`](Piwik/Url.md) &mdash; Provides URL related helper methods.
 - [`UrlHelper`](Piwik/UrlHelper.md) &mdash; Contains less commonly needed URL helper methods.
 - [`Version`](Piwik/Version.md) &mdash; Piwik version information.
