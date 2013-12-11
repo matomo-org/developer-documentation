@@ -622,6 +622,13 @@ The Piwik JavaScript API has been tested with numerous web browsers. To maximize
 
 The piwik.js is minified to reduce the size that your website visitors will have to download. The YUI Compressor is used to minify the JavaScript ([more information](https://github.com/piwik/piwik/blob/master/js/README#L1)). You can find the original non minified version in [/js/piwik.js](https://github.com/piwik/piwik/blob/master/js/piwik.js#L1).
 
-Questions?
+## Frequently Asked Questions
 
 If you have any question about JavaScript Tracking in Piwik, [please search the website](http://piwik.org/search/), or [ask in the forums](http://forum.piwik.org). Enjoy!
+
+*[How do enable tracking for users without Javascript?](http://piwik.org/faq/how-to/#faq_176)
+*[How does Piwik track downloads?](http://piwik.org/faq/new-to-piwik/#faq_47)
+*[How to track error pages and get the list of 404 and referrers urls.](http://piwik.org/faq/how-to/#faq_60)
+*[How can I set custom groups of pages (structure) so that page view are aggregated by categories?](http://piwik.org/faq/how-to/#faq_62)
+*[How do I setup Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](http://piwik.org/faq/how-to/#faq_132)
+*[How do I disable all tracking cookies used by Piwik in the javascript code?](http://piwik.org/faq/general/#faq_157)
