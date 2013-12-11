@@ -64,6 +64,14 @@ class ApiReference {
         );
 
         $menu[] = array(
+            'title'        => 'Index',
+            'file'         => 'generated/master/Index',
+            'url'          => static::getUrl('index'),
+            'description'  => 'View every class and method in an alphabetized index.',
+            'callToAction' => 'Browse'
+        );
+
+        $menu[] = array(
             'title'        => 'PHP Piwik Tracker',
             'file'         => 'generated/master/PiwikTracker',
             'url'          => static::getUrl('PHP-Piwik-Tracker'),
@@ -72,10 +80,9 @@ class ApiReference {
         );
 
         $menu[] = array(
-            'title'        => 'Index',
-            'file'         => 'generated/master/Index',
-            'url'          => static::getUrl('index'),
-            'description'  => 'View every class and method in an alphabetized index.',
+            'title'        => 'Tracking Web API',
+            'url'          => static::getUrl('tracking-api'),
+            'description'  => 'View reference docs for the Tracking Web API.',
             'callToAction' => 'Browse'
         );
 
