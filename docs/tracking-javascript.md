@@ -37,30 +37,33 @@ This code might look a bit strange to those of you familiar with JavaScript, but
 
 For asynchronous tracking, configuration and tracking calls are pushed onto the global `_paq` array for execution, independent of the asynchronous loading of piwik.js. The format is:
 
-<pre>_paq.push([ 'API_method_name', parameter_list ]);</pre>
+<pre><code>_paq.push([ 'API_method_name', parameter_list ]);</code></pre>
 
 You can also push functions to be executed. For example:
 
-<pre>var visitor_id;
+<pre><code>var visitor_id;
 _paq.push([ function() { visitor_id = this.getVisitorId(); }]);
-</pre>
+</code></pre>
 
 or for example, to fetch a custom variable (name,value) using the asynchronous code:
 
-<pre>
+<pre><code>
 _paq.push(['setCustomVariable','1','VisitorType','Member']);
 _paq.push([ function() { var customVariable = this.getCustomVariable(1); }]);
-</pre>
+</code></pre>
 
 You can push to the _paq array even after the piwik.js file has been loaded and run.
 
-If your Piwik tracking code doesn't look like this one, you may be using the deprecated version. Older versions still work as expected and will track your visitors, but we highly recommend that you update your pages to use the most recent tracking code.
+If your Piwik tracking code doesn't look like this one, you may be using the deprecated version.
+Older versions still work as expected and will track your visitors, but we highly recommend that you update your pages to use the most recent tracking code.
 
 ## Features of the JavaScript Tracker
 
 ## Customize the Page Name Displayed in Piwik
 
-By default, Piwik uses the URL of the current page as the page title in the Piwik interface. If your URLs are not simple, or if you want to customize the way Piwik tracks your pages, you can specify the page title to use in the JavaScript code.
+By default, Piwik uses the URL of the current page as the page title in the Piwik interface.
+If your URLs are not simple, or if you want to customize the way Piwik tracks your pages,
+you can specify the page title to use in the JavaScript code.
 
 A common use is to set the HTML Title value as the document title:
 
