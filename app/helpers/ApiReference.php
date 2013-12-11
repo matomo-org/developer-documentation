@@ -72,10 +72,17 @@ class ApiReference {
         );
 
         $menu[] = array(
-            'title'        => 'PHP Piwik Tracker',
+            'title'        => 'PHP Tracking client',
             'file'         => 'generated/master/PiwikTracker',
             'url'          => static::getUrl('PHP-Piwik-Tracker'),
             'description'  => 'View reference docs for the PHP tracking client.',
+            'callToAction' => 'Browse'
+        );
+        $menu[] = array(
+            'title'        => 'Javascript Tracking client',
+            'file'         => 'tracking-javascript',
+            'url'          => static::getUrl('tracking-javascript'),
+            'description'  => 'View reference docs for the Javascript tracking client.',
             'callToAction' => 'Browse'
         );
 
