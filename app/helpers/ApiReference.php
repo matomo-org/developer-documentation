@@ -81,6 +81,7 @@ class ApiReference {
 
         $menu[] = array(
             'title'        => 'Tracking Web API',
+            'file'         => 'tracking-api',
             'url'          => static::getUrl('tracking-api'),
             'description'  => 'View reference docs for the Tracking Web API.',
             'callToAction' => 'Browse'
