@@ -1,3 +1,5 @@
+# Report Metadata API Methods
+
 The standard Piwik Analytics APIs return raw data, for example: visits, page views, revenue, conversions.
 
 The Metadata API is the service that calls other APIs, then add more metadata around it, for example, it will:
