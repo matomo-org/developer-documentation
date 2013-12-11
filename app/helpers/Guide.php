@@ -149,6 +149,13 @@ class Guide {
             'description'  => 'Learn about Piwik\'s JavaScript code and how to write JavaScript for your plugin.'
         );
 
+        $menu[] = array(
+            'title'        => 'Querying the Reporting API',
+            'file'         => 'querying-the-reporting-api',
+            'url'          => static::getUrl('querying-the-reporting-api'),
+            'description'  => 'Learn how to query for report data via HTTP requests and from within Piwik\'s source code.'
+        );
+
         /* TODO: Guide review. Ask following questions:
          - Are the titles appropriate to what is described within the guides?
         */

@@ -94,6 +94,31 @@ class ApiReference {
             'callToAction' => 'Browse'
         );
 
+        $menu[] = array(
+            'title'        => 'Reporting API Listing',
+            'file'         => 'reporting-api/listing',
+            'url'          => static::getUrl('reporting-api-listing'),
+            'description'  => 'View every API method exposed in and every parameter supported by Piwik\'s Reporting API.',
+            'callToAction' => 'Browse'
+        );
+
+
+        $menu[] = array(
+            'title'        => 'Metadata',
+            'file'         => 'reporting-api/metadata',
+            'url'          => static::getUrl('metadata'),
+            'description'  => 'View information about API methods that query report metadata.',
+            'callToAction' => 'Browse'
+        );
+
+        $menu[] = array(
+            'title'        => 'Segmentation',
+            'file'         => 'reporting-api/segmentation',
+            'url'          => static::getUrl('segmentation'),
+            'description'  => 'View all available segment dimensions and segment operators.',
+            'callToAction' => 'Browse'
+        );
+
         return $menu;
     }
 

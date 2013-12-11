@@ -38,6 +38,18 @@ class MarkdownParser extends DefaultMarkdownParser {
         return "\n" . $this->hashBlock($block) . "\n\n";
     }
 
+    function _doAnchors_reference_callback($matches) {
+        $link_text = $matches[2];
+
+        $isInclude = preg_match("/include url=\"([^\"]+)\"/", $link_text, $linkMatches);
+        if (!$isInclude) {
+            return parent::_doAnchors_reference_callback($matches);
+        }
+
+        $url = $linkMatches[1];
+        return $this->hashBlock(file_get_contents($url));
+    }
+
     public static function headlineTextToId($headlineText)
     {
         $headlineText = strip_tags($headlineText);
