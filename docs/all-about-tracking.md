@@ -144,7 +144,7 @@ Plugins that want to add new data to the log tables themselves can alter the tab
 
 To track page views, events, visits, you have to send a HTTP request to your Tracking REST API endpoint, for example, **http://your-piwik-domain.tld/piwik.php** with the correct query parameters set.
 
-[View the Tracking Web API Reference docs.](http://developer.piwik.org/api-reference/tracking-api)
+[View the Tracking Web API Reference docs.](/api-reference/tracking-api)
 
 ## Learn more
 
