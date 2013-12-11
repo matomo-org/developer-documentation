@@ -247,7 +247,7 @@ _paq.push(['trackPageView']);
 
 **Delete a Custom Variable**
 
-<pre>deleteCustomVariable (index, scope )</pre>
+<pre><code>deleteCustomVariable (index, scope )<code></pre>
 
 If you created a custom variable and then decide to remove this variable from a visit or page view, you can use deleteCustomVariable.
 
@@ -263,7 +263,7 @@ _paq.push(['trackPageView']);
 
 **Get the Name and Value of a Custom Variable**
 
-<pre>getCustomVariable (index, scope )</pre>
+<pre><code>getCustomVariable (index, scope )</code></pre>
 
 This function is mostly useful if scope = "visit".
 
@@ -471,15 +471,11 @@ _paq.push(['trackPageView']);
 
 By default, any file ending with one of these extensions will be considered a 'download' in the Piwik interface:
 
-`7z|aac|arc|arj|apk|asf|asx|avi|bin|bz|bz2|csv|deb|dmg|doc|
-
+<pre>7z|aac|arc|arj|apk|asf|asx|avi|bin|bz|bz2|csv|deb|dmg|doc|
 exe|flv|gif|gz|gzip|hqx|jar|jpg|jpeg|js|mp2|mp3|mp4|mpg|
-
 mpeg|mov|movie|msi|msp|odb|odf|odg|odp|ods|odt|ogg|ogv|
-
 pdf|phps|png|ppt|qt|qtm|ra|ram|rar|rpm|sea|sit|tar|
-
-tbz|tbz2|tgz|torrent|txt|wav|wma|wmv|wpd||xls|xml|z|zip`
+tbz|tbz2|tgz|torrent|txt|wav|wma|wmv|wpd||xls|xml|z|zip</pre>
 
 To replace the list of extensions you want to track as file downloads, you can use `setDownloadExtensions( string )`:
 
