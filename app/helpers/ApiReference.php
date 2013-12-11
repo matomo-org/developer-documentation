@@ -97,7 +97,7 @@ class ApiReference {
         $menu[] = array(
             'title'        => 'Reporting API Listing',
             'file'         => 'reporting-api/listing',
-            'url'          => static::getUrl('reporting-api-listing'),
+            'url'          => static::getUrl('reporting-api'),
             'description'  => 'View every API method exposed in and every parameter supported by Piwik\'s Reporting API.',
             'callToAction' => 'Browse'
         );
