@@ -1,6 +1,7 @@
-# JavaScript API
+# Javascript Tracking client How-to
 
-Piwik is equipped with a powerful JavaScript Tracking API. Advanced users can use the Piwik tracking code to customize the way some of the web analytics data is recorded in Piwik. Plugin developers can also pass custom JSON data to the Piwik tracking script, and use this data in plugins.
+Piwik is equipped with a powerful JavaScript Tracking API. Advanced users can use the Piwik tracking code to customize the way some of
+the web analytics data is recorded in Piwik.
 
 ## Where can I Find the Piwik Tracking Code?
 
@@ -86,7 +87,7 @@ Advanced users can also dynamically generate the page name, for example, in PHP:
 
 <pre><code>[...]
 
-_paq.push(['setDocumentTitle', "<?php echo $myPageTitle ?>"]);
+_paq.push(['setDocumentTitle', "&lt;?php echo $myPageTitle ?&gt;"]);
 
 _paq.push(['trackPageView']);
 
@@ -129,9 +130,9 @@ You can also register a conversion for this goal with a custom revenue. For exam
 
 <pre><code>[...]
 
-// logs a conversion for goal 1 with the custom revenue set
+/* logs a conversion for goal 1 with the custom revenue set */
 
-_paq.push(['trackGoal', 1, <?php echo $cart->getCartValue(); ?>]);
+_paq.push(['trackGoal', 1, &lt;?php echo $cart-&gt;getCartValue(); ?&gt;]);
 
 [...]</code></pre>
 
@@ -185,7 +186,7 @@ This function is used to create, or update a custom variable name and value. For
 
 **<span style="color: #ff6600;">Important:</span>** a given custom variable name must always be stored in the same "index". For example, if you choose to store the variable **name = "Gender"** in **index = 1** and you record another custom variable in index = 1, then the "Gender" variable will be deleted and replaced with the new custom variable stored in index 1.
 
-<pre>[...]
+<code><pre>[...]
 _paq.push(['setCustomVariable',
     // Index, the number from 1 to 5 where this custom variable name is stored
     1,
@@ -199,7 +200,7 @@ _paq.push(['setCustomVariable',
 
 _paq.push(['trackPageView']);
 [...]
-</pre>
+</pre></code>
 
 You only need to set a variable with scope "visit" once, and the value will be recorded for the whole visit.
 
@@ -209,7 +210,7 @@ You only need to set a variable with scope "visit" once, and the value will be r
 
 As well as tracking custom variables for "visits", it is sometimes useful to track custom variables for each page view separately. For example, for a "News" website or blog, a given article may be categorized into one or several categories. In this case, you could set one or several custom variables with `name="category"`, one with `value="Sports"` and another with `value="Europe"` if the article is classified in Sports and Europe Categories. The custom variables report will then report on how many visits and page views were in each of your website's categories. This information can be difficult to obtain with standard Piwik reports because they report on "Best Page URLs" and "Best Page Titles" which might not contain the "category" information.
 
-<pre>[...]
+<code><pre>[...]
 // Track 2 custom variables with the same name, but in different slots.
 // You will then access the statistics about your articles' categories in the 'Visitors &gt; custom variables' report
 _paq.push(['setCustomVariable', 1, 'Category', 'Sports', 'page']);
@@ -221,11 +222,11 @@ _paq.push(['setCustomVariable', 2, 'Category', 'Europe', 'page']);
 
 _paq.push(['trackPageView']);
 [...]
-</pre>
+</pre></code>
 
 **<span style="color: #ff6600;">Important:</span>** It is possible to store a custom variables of scope "visit" in "index" 1, and store a different custom variable of scope "page" in the same "index" 1. Therefore, you can technically **track up to 10 custom variables names and values on every page** of your website (5 with a "page" scope stored in the actual page view, 5 with a "visit" scope stored in the visit).
 
-<pre>[...]
+<code><pre>[...]
 _paq.push(['setCustomVariable',
     // Index, the number from 1 to 5 where this custom variable name is stored for the current page view
     1,
@@ -239,7 +240,7 @@ _paq.push(['setCustomVariable',
 
 _paq.push(['trackPageView']);
 [...]
-</pre>
+</pre></code>
 
 **Delete a Custom Variable**
 
@@ -249,13 +250,13 @@ If you created a custom variable and then decide to remove this variable from a 
 
 To persist the change in the Piwik server, you must call the function before the call to `trackPageView();`
 
-`[...]`
+<code><pre>[...]
 
-`_paq.push(['deleteCustomVariable', 1, "visit"]); // Delete the variable in index 1 stored for the current visit`
+_paq.push(['deleteCustomVariable', 1, "visit"]); // Delete the variable in index 1 stored for the current visit
 
-`_paq.push(['trackPageView']);`
+_paq.push(['trackPageView']);
 
-`[...]`
+[...]</pre></code>
 
 **Get the Name and Value of a Custom Variable**
 
@@ -305,7 +306,7 @@ _paq.push(['trackPageView']);
 
 If you want to record visits for the main domain name as well as its subdomains, you would want to share cookies across all domains. You can do so by calling `setCookieDomain()`, in all subdomains tracking codes.
 
-<pre><code>[...]
+<pre><code> [...]
 _paq.push(['setSiteId', 1]);
 
 _paq.push(['setTrackerUrl', u+'piwik.php']);
@@ -506,7 +507,7 @@ It is possible to track a page using multiple Piwik trackers that point to the s
 
 Note: When using multiple trackers, you must use the synchronous Javascript tracker object (ie. this will not work with the asynchronous tag):
 
-<pre>&lt;script type="text/javascript"&gt;
+<code><pre>&lt;script type="text/javascript"&gt;
 
 try {
     var piwikTracker = Piwik.getTracker("http://URL_1/piwik.php", 1);
@@ -515,11 +516,11 @@ try {
     piwik2.trackPageView();
 } catch( err ) {}
 
-&lt;/script&gt;</pre>
+&lt;/script&gt;</pre></code>
 
 Note that you can also set the website ID and the Piwik tracker URL manually, instead of setting them in the getTracker call:
 
-<pre>// we replace Piwik.getTracker("http://example.com/piwik/", 12)
+<code><pre>// we replace Piwik.getTracker("http://example.com/piwik/", 12)
 
 var piwikTracker = Piwik.getTracker();
 
@@ -527,7 +528,7 @@ piwikTracker.setSiteId( 12 );
 
 piwikTracker.setTrackerUrl( "http://example.com/piwik/" );
 
-piwikTracker.trackPageView();</pre>
+piwikTracker.trackPageView();</pre></code>
 
 ## List of all Methods Available in the Tracking API
 
@@ -626,9 +627,9 @@ The piwik.js is minified to reduce the size that your website visitors will have
 
 If you have any question about JavaScript Tracking in Piwik, [please search the website](http://piwik.org/search/), or [ask in the forums](http://forum.piwik.org). Enjoy!
 
-*[How do enable tracking for users without Javascript?](http://piwik.org/faq/how-to/#faq_176)
-*[How does Piwik track downloads?](http://piwik.org/faq/new-to-piwik/#faq_47)
-*[How to track error pages and get the list of 404 and referrers urls.](http://piwik.org/faq/how-to/#faq_60)
-*[How can I set custom groups of pages (structure) so that page view are aggregated by categories?](http://piwik.org/faq/how-to/#faq_62)
-*[How do I setup Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](http://piwik.org/faq/how-to/#faq_132)
-*[How do I disable all tracking cookies used by Piwik in the javascript code?](http://piwik.org/faq/general/#faq_157)
+* [How do enable tracking for users without Javascript?](http://piwik.org/faq/how-to/#faq_176)
+* [How does Piwik track downloads?](http://piwik.org/faq/new-to-piwik/#faq_47)
+* [How to track error pages and get the list of 404 and referrers urls.](http://piwik.org/faq/how-to/#faq_60)
+* [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](http://piwik.org/faq/how-to/#faq_62)
+* [How do I setup Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](http://piwik.org/faq/how-to/#faq_132)
+* [How do I disable all tracking cookies used by Piwik in the javascript code?](http://piwik.org/faq/general/#faq_157)
