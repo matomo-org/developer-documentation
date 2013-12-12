@@ -242,12 +242,11 @@ _paq.push(['setCustomVariable',
 ]);
 
 _paq.push(['trackPageView']);
-[...]
-</code></pre>
+[...]</code></pre>
 
 **Delete a Custom Variable**
 
-<pre><code>deleteCustomVariable (index, scope )<code></pre>
+<pre><code>deleteCustomVariable (index, scope )</code></pre>
 
 If you created a custom variable and then decide to remove this variable from a visit or page view, you can use deleteCustomVariable.
 
