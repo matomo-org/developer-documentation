@@ -43,7 +43,7 @@ When 'period=range', the following keywords are supported for the parameter 'dat
 
     *   for example, 'referrerName==twitter.com' will return the requested API report, processed for the subset of users coming from twitter.com
     *   segments can be combined in AND and OR operations. For example, to filter for "Visits where (Referrer name is Google OR Referrer name is Bing) AND Country is India", you would write:
-<code><pre>referrerName==Google,referrerName==Bing;country==IN</pre></code>
+_referrerName==Google,referrerName==Bing;country==IN_
 
         *   see [segmentation documentation](/reporting-api/segmentation) for the list of available dimensions & metrics, example values for each, and more information about the custom segment parameter
 

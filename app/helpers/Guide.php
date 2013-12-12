@@ -150,6 +150,13 @@ class Guide {
         );
 
         $menu[] = array(
+            'title'        => 'Getting started with Reporting API',
+            'file'         => 'reporting-api-tutorial',
+            'url'          => static::getUrl('reporting-api-tutorial'),
+            'description'  => 'The Reporting API tutorial in less than one minute.'
+        );
+
+        $menu[] = array(
             'title'        => 'Querying the Reporting API',
             'file'         => 'querying-the-reporting-api',
             'url'          => static::getUrl('querying-the-reporting-api'),
