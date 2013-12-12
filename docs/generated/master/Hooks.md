@@ -470,7 +470,7 @@ Usages:
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 
 ### Live.API.getIdSitesString
-_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [698](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L698)_
+_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [696](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L696)_
 
 
 
