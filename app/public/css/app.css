@@ -47,8 +47,8 @@ body {
 
 .bs-side .panel-heading {
     border-color: #7cabd4;
-    background-color: #84b4dd;
-    color: #ffffff;
+    background-color: #bbb;
+    color: #333;
 }
 
 .teaser-item {
@@ -68,8 +68,7 @@ body {
 .bs-sidenav {
     padding-top:    10px;
     padding-bottom: 10px;
-    text-shadow: 0 1px 0 #7cabd4;
-    background-color: #84b4dd;
+    background-color: #bbb;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -77,15 +76,17 @@ body {
 /* All levels of nav */
 .bs-sidebar .nav > li > a {
     display: block;
-    color: #fff;
+    color: #333;
     padding: 5px 15px;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-style:bold;
+    border-right: 1px solid transparent;
 }
 .bs-sidebar .nav > li > a:hover,
 .bs-sidebar .nav > li > a:focus {
     text-decoration: none;
-    background-color: #357ebd;
+    background-color: #ccc;
     border-right: 1px solid #357ebd;
 }
 .bs-sidebar .nav > .active > a,
