@@ -141,11 +141,9 @@ class ApiReference {
 
             $title = $documentMatches[1][$i];
             if (strpos($title, "()") !== false) { // is method
-                $title = $className . '::' . $title . ' <em>(Method)</em>';
+                $title = $className . '::' . $title;
             } else if (strpos($title, "$") !== false) { // is property
-                $title = $className . '::' . $title . ' <em>(Property)</em>';
-            } else { // is class
-                $title .= ' <em>(Class)</em>';
+                $title = $className . '::' . $title;
             }
 
             $result[$url] = $title;
