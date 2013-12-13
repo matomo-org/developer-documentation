@@ -1,4 +1,4 @@
-# Piwik's Web API
+# Piwik's Reporting API
 
 <!-- Meta (to be deleted)
 Purpose:

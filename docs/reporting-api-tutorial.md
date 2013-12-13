@@ -8,33 +8,33 @@ To build the URL of the API call, you need:
 
 *   your Piwik base URL (replace demo.piwik.org with the URL and path of your Piwik server
 
-        **http://demo.piwik.org/?module=API**
+    **http://demo.piwik.org/?module=API**
 
 *   the name of the method you want to call. It has the format _moduleName.methodToCall_ (see the list on [API Methods](/reporting-api/listing#api-method-list)). You need to request the last keywords from the plugin Referers: the method parameter is:
 
-        **method=Referers.getKeywords**
+    **method=Referers.getKeywords**
 
 *   the website id.
 
-        **idSite=1**
+    **idSite=1**
 
 *   the date parameter. This can be _today_, _yesterday_, or any date with the format _YYYY-MM-DD_
 
-        **date=yesterday**
+    **date=yesterday**
 
 *   the period parameter. This can be _day_, _week_, _month_ or _year_
 
-        **period=day**
+    **period=day**
 
     Alternatively, if you wanted to request all of the keywords from a given date, you could use a date range parameter. For example, to request all of the keywords since January 1st 2011:`**period=range&date=2011-01-01,yesterday**`
 
 *   the format parameter. Defines the output format of the data: XML, JSON, CSV, PHP (serialized PHP), HTML (simple html)
 
-        **format=xml**
+    **format=xml**
 
 *   (optional) the filter_limit parameter that defines the number of rows returned
 
-        **filter_limit=10**
+    **filter_limit=10**
 
 The final url is **[http://demo.piwik.org/?module=API&method=Referers.getKeywords&idSite=3&date=yesterday&period=day&format=xml&filter_limit=10](http://demo.piwik.org/?module=API&method=Referers.getKeywords&idSite=3&date=yesterday&period=day&format=xml&filter_limit=10)**
 
@@ -42,8 +42,8 @@ The final url is **[http://demo.piwik.org/?module=API&method=Referers.getKeyword
 
 Here is the output of this request:
 
-<pre markdown="1">[include url="http://demo.piwik.org/?module=API&method=Referers.getKeywords&idSite=3&date=yesterday&period=day&format=xml&filter_limit=10"]
-</pre>
+<pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=Referers.getKeywords&idSite=3&date=yesterday&period=day&format=xml&filter_limit=10" escape="true"]
+</code></pre>
 
 ## Other useful examples
 

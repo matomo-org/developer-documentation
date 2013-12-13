@@ -58,11 +58,15 @@
     {% endif %}
 {% endblock %}
 
+{% if noContainer is not defined %}
 <div class="container">
+{% endif %}
     {% block content %}
         {{ content|raw }}
     {% endblock %}
+{% if noContainer is not defined %}
 </div>
+{% endif %}
 
 {% block footer %}
     <div class="container">

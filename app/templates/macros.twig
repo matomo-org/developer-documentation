@@ -17,3 +17,21 @@
         {% endif %}
     {% endfor %}
 {% endmacro %}
+{% macro categorized_teaser_list(teasers) %}
+    {% for category,items in teasers %}
+      <div class="category-list">
+        <div class="teaser-category-group-title"><div class="container"><h1>{{ category }}</h1></div></div>
+        {% for url,item in items %}
+            <div class="container">
+                <div class="categorized-teaser-item">
+                    <h3><a href="{{ item.url }}" {% if 'http' == item.url[:4] %}target="_blank"{% endif %}><strong>{{ item.title }}</strong></a></h3>
+                    <p><em>{{ item.description }}</em>&nbsp;&nbsp;<a href="{{ item.url }}"
+                        {% if 'http' == item.url[:4] %}
+                            target="_blank"
+                        {% endif %}><em>{{ item.callToAction|default('Learn more') }} &raquo;</em></a></p>
+                </div>
+            </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+{% endmacro %}

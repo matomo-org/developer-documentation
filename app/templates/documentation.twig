@@ -1,5 +1,5 @@
 {% extends 'layout/base.twig' %}
-{% from "macros.twig" import teaser_list %}
+{% from "macros.twig" import teaser_list, categorized_teaser_list %}
 
 {% block headline %}
     {% set title = 'Guides' %}
@@ -7,5 +7,9 @@
 {% endblock %}
 
 {% block content %}
+    {% if categorized %}
+    {{ categorized_teaser_list(guides) }}
+    {% else %}
     {{ teaser_list(guides) }}
+    {% endif %}
 {% endblock %}

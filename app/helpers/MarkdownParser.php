@@ -41,13 +41,18 @@ class MarkdownParser extends DefaultMarkdownParser {
     function _doAnchors_reference_callback($matches) {
         $link_text = $matches[2];
 
-        $isInclude = preg_match("/include url=\"([^\"]+)\"/", $link_text, $linkMatches);
+        $isInclude = preg_match("/include url=\"([^\"]+)\"(?: escape=\"([^\"]+)\")/", $link_text, $linkMatches);
         if (!$isInclude) {
             return parent::_doAnchors_reference_callback($matches);
         }
 
         $url = $linkMatches[1];
-        return $this->hashBlock(file_get_contents($url));
+        $contents = file_get_contents($url);
+        if (isset($linkMatches[2]) && $linkMatches[2] == 'true') {
+            $contents = htmlspecialchars($contents);
+        }
+
+        return $this->hashPart($contents);
     }
 
     public static function headlineTextToId($headlineText)

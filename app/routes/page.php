@@ -125,7 +125,9 @@ $app->get('/guides/:category', function ($category) use ($app) {
 $app->get('/guides', function () use ($app) {
 
     $app->render('documentation.twig', array(
-        'guides' => Guide::getMainMenu()
+        'guides' => Guide::getMainMenu(),
+        'categorized' => true,
+        'noContainer' => true
     ));
 });
 
