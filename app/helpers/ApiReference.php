@@ -36,9 +36,11 @@ class ApiReference {
 
     public static function getMenuItemByUrl($url)
     {
-        foreach (static::getReferencesMenu() as $menu) {
-            if ($url == $menu['url']) {
-                return $menu;
+        foreach (static::getMainMenu() as $items) {
+            foreach ($items as $menu) {
+                if ($url == $menu['url']) {
+                    return $menu;
+                }
             }
         }
     }
@@ -52,7 +54,8 @@ class ApiReference {
             'file'         => 'generated/master/Classes',
             'url'          => static::getUrl('classes'),
             'description'  => 'View reference docs for every Piwik class that plugin developers should use.',
-            'callToAction' => 'Browse'
+            'callToAction' => 'Browse',
+            'category'     => 'PHP Documentation'
         );
 
         $menu[] = array(
@@ -60,7 +63,8 @@ class ApiReference {
             'file'         => 'generated/master/Hooks',
             'url'          => static::getUrl('hooks'),
             'description'  => 'View reference docs for every event posted by Piwik and its Core Plugins.',
-            'callToAction' => 'Browse'
+            'callToAction' => 'Browse',
+            'category'     => 'PHP Documentation'
         );
 
         $menu[] = array(
@@ -68,7 +72,8 @@ class ApiReference {
             'file'         => 'generated/master/Index',
             'url'          => static::getUrl('index'),
             'description'  => 'View every class and method in an alphabetized index.',
-            'callToAction' => 'Browse'
+            'callToAction' => 'Browse',
+            'category'     => 'PHP Documentation'
         );
 
         $menu[] = array(
@@ -76,14 +81,16 @@ class ApiReference {
             'file'         => 'generated/master/PiwikTracker',
             'url'          => static::getUrl('PHP-Piwik-Tracker'),
             'description'  => 'View reference docs for the PHP tracking client.',
-            'callToAction' => 'Browse'
+            'callToAction' => 'Browse',
+            'category'     => 'PHP Documentation'
         );
         $menu[] = array(
             'title'        => 'Javascript Tracking client',
             'file'         => 'tracking-javascript',
             'url'          => static::getUrl('tracking-javascript'),
             'description'  => 'View reference docs for the Javascript tracking client.',
-            'callToAction' => 'Browse'
+            'callToAction' => 'Browse',
+            'category'     => 'JavaScript Documentation'
         );
 
         $menu[] = array(
@@ -91,7 +98,8 @@ class ApiReference {
             'file'         => 'tracking-api',
             'url'          => static::getUrl('tracking-api'),
             'description'  => 'View reference docs for the Tracking Web API.',
-            'callToAction' => 'Browse'
+            'callToAction' => 'Browse',
+            'category'     => 'Web API Documentation'
         );
 
         $menu[] = array(
@@ -99,7 +107,8 @@ class ApiReference {
             'file'         => 'reporting-api/listing',
             'url'          => static::getUrl('reporting-api'),
             'description'  => 'View every API method exposed in and every parameter supported by Piwik\'s Reporting API.',
-            'callToAction' => 'Browse'
+            'callToAction' => 'Browse',
+            'category'     => 'Web API Documentation'
         );
 
 
@@ -108,7 +117,8 @@ class ApiReference {
             'file'         => 'reporting-api/metadata',
             'url'          => static::getUrl('metadata'),
             'description'  => 'View information about API methods that query report metadata.',
-            'callToAction' => 'Browse'
+            'callToAction' => 'Browse',
+            'category'     => 'Web API Documentation'
         );
 
         $menu[] = array(
@@ -116,10 +126,15 @@ class ApiReference {
             'file'         => 'reporting-api/segmentation',
             'url'          => static::getUrl('segmentation'),
             'description'  => 'View all available segment dimensions and segment operators.',
-            'callToAction' => 'Browse'
+            'callToAction' => 'Browse',
+            'category'     => 'Web API Documentation'
         );
 
-        return $menu;
+        $result = array();
+        foreach ($menu as $item) {
+            $result[$item['category']][$item['url']] = $item;
+        }
+        return $result;
     }
 
     public static function getDocumentList()

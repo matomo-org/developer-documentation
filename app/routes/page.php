@@ -135,7 +135,9 @@ $app->get('/api-reference', function () use ($app) {
     $references = ApiReference::getReferencesMenu();
 
     $app->render('apireference.twig', array(
-        'references' => $references
+        'references' => $references,
+        'categorized' => true,
+        'noContainer' => true
     ));
 });
 

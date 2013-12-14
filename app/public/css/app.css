@@ -68,6 +68,22 @@ body {
     margin-bottom: 48px;
 }
 
+.header-with-background {
+    background-color:#0859A8;
+    margin-top:-28px;
+}
+
+.header-with-background h1 {
+    color:white;
+    font-size:63px;
+    font-weight:bold;
+    padding: 20px 0 20px 0;
+}
+
+.header-with-background .page-header {
+    border-bottom-width:0px;
+}
+
 .social-footer {
     text-align: center;
     margin-top: 40px;

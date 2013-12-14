@@ -1,11 +1,17 @@
 {% extends 'layout/base.twig' %}
-{% from "macros.twig" import teaser_list %}
+{% from "macros.twig" import teaser_list, categorized_teaser_list %}
 
 {% block headline %}
     {% set title = 'API Reference' %}
+    <div class="header-with-background">
     {{ parent() }}
+  </div>
 {% endblock %}
 
 {% block content %}
+    {% if categorized %}
+    {{ categorized_teaser_list(references) }}
+    {% else %}
     {{ teaser_list(references) }}
+    {% endif %}
 {% endblock %}
