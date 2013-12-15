@@ -107,6 +107,19 @@ It can be sent to Piwik using curl with the following command:
 
 This will track **two** actions using only **one** HTTP request to Piwik.
 
+## Debugging the Tracker
+
+To verify that your data is being tracked properly, you can enable debug logging in the Piwik tracking file, **piwik.php**.
+
+**Tracking requests will then output the tracking log messages rather than displaying a 1*1 transparent GIF beacon.**
+
+Follow these steps to enable debug logging for the tracker:
+
+1. In the file `path/to/piwik/piwik.php`, you can set `$GLOBALS['PIWIK_TRACKER_DEBUG'] = true;`
+2. Look at the HTTP requests that are sent to Piwik.
+    * If the requests take place in a browser, you can use a tool like the [Firebug](http://getfirebug.com/) to see all requests to **piwik.php**.
+    * If the requests are triggered from your app or software directly, you can output or log the output of tracking requests and to view the debug messages.
+
 ## Learn more
 
 * For **a list of tracking clients** see this [page](http://piwik.org/docs/tracking-api/).
