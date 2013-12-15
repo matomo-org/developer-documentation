@@ -186,7 +186,7 @@ class Guide {
         $menu[] = array(
             'title'       => 'Core Team Workflow',
             'file'        => 'core-team-workflow',
-            'url'         => static::getUrl('contributing-to-piwik-core'),
+            'url'         => static::getUrl('core-team-workflow'),
             'description' => 'Learn how the core development team manages Piwik development and makes changes to the source code. Learn how you can participate in this process..',
             'category'    => 'About the Piwik Project'
         );
