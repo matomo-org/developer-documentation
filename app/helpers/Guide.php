@@ -47,14 +47,6 @@ class Guide {
         );
 
         $menu[] = array(
-            'title'       => 'Contributing to Piwik Core',
-            'file'        => 'contributing-to-piwik-core',
-            'url'         => static::getUrl('contributing-to-piwik-core'),
-            'description' => 'Learn how to contribute changes to Piwik Core. Learn about Piwik\'s coding standards and the contribution process.',
-            'category'    => 'Getting Started'
-        );
-
-        $menu[] = array(
             'title'       => 'All about Analytics Data',
             'file'        => 'all-about-analytics-data',
             'url'         => static::getUrl('all-about-analytics-data'),
@@ -181,6 +173,22 @@ class Guide {
             'url'         => static::getUrl('piwik-on-the-command-line'),
             'description' => 'Learn about Piwik\'s command line tool and how your plugin can extend it.',
             'category'    => 'Piwik Internals'
+        );
+
+        $menu[] = array(
+            'title'       => 'Contributing to Piwik Core',
+            'file'        => 'contributing-to-piwik-core',
+            'url'         => static::getUrl('contributing-to-piwik-core'),
+            'description' => 'Learn how to contribute changes to Piwik Core. Learn about Piwik\'s coding standards and the contribution process.',
+            'category'    => 'About the Piwik Project'
+        );
+
+        $menu[] = array(
+            'title'       => 'Core Team Workflow',
+            'file'        => 'core-team-workflow',
+            'url'         => static::getUrl('core-team-workflow'),
+            'description' => 'Learn how the core development team manages Piwik development and makes changes to the source code. Learn how you can participate in this process..',
+            'category'    => 'About the Piwik Project'
         );
 
         /* TODO: Guide review. Ask following questions:
