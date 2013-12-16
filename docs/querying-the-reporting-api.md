@@ -2,12 +2,12 @@
 
 This guide explains how to call the Piwik API to request your web analytics data. There are two methods:
 
-*   using the standard REST API over HTTP
+*   using the standard HTTP API over HTTP
 *   using the Piwik PHP library files directly
 
-## Call the Piwik API using the REST API over HTTP
+## Call the Piwik API using the HTTP API over HTTP
 
-If you want to request data in any language (PHP, Python, Ruby, ASP, C++, Java, etc.) you can use the REST API. It is a simple way to request data via standard HTTP GET.
+If you want to request data in any language (PHP, Python, Ruby, ASP, C++, Java, etc.) you can use the HTTP API. It is a simple way to request data via standard HTTP GET.
 
 **Security Notice:** if the API call requires the token_auth and the HTTP request is sent over untrusted networks, we highly advise that you use an encrypted request. Otherwise, your token\_auth is exposed to eavesdroppers. This can be done using https instead of http. In the following example, replace the string "http" by "https".
 

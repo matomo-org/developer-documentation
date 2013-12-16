@@ -714,7 +714,7 @@ Based on what you want your plugin to accomplish, here's what you might want to 
 * If you're interested in **creating new analytics reports**, you may want to read our [All About Analytics Data](#) and [Visualizing Report Data](#) guides.
 * If you're interested in **changing the look and feel of Piwik**, read our [Theming](#) guide.
 * If you're interested in **taking part in core development**, read our [Contributing to Piwik Core](#) guide.
-* If you're interested in **integrating Piwik with another technology**, you might want to read our [All About Tracking](#) guide to learn how to use our Tracking API. You might also want to read our [Piwik's REST API](#) guide to learn about Piwik's Reporting API.
+* If you're interested in **integrating Piwik with another technology**, you might want to read our [All About Tracking](#) guide to learn how to use our Tracking API. You might also want to read our [Piwik's HTTP API](#) guide to learn about Piwik's Reporting API.
 * If you'd like to **add new console commands**, read our [Piwik on the command line](#) guide.
 * If you want to **use automated testing to ensure your plugin works**, read your [Automated Tests](#) guide.
 
