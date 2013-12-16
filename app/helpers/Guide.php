@@ -95,14 +95,6 @@ class Guide {
         );
 
         $menu[] = array(
-            'title'       => 'Automated Tests',
-            'file'        => 'automated-tests',
-            'url'         => static::getUrl('automated-tests'),
-            'description' => 'Learn how to setup unit, integration and UI tests for your new plugin and how to work with Piwik Core\'s tests.',
-            'category'    => 'Piwik Development'
-        );
-
-        $menu[] = array(
             'title'        => 'Security in Piwik',
             'file'         => 'security-in-piwik',
             'url'          => static::getUrl('security-in-piwik'),
@@ -115,6 +107,22 @@ class Guide {
             'file'         => 'internationalization',
             'url'          => static::getUrl('internationalization'),
             'description'  => 'Learn how Piwik makes its text available in many different languages and how your plugin can do the same.',
+            'category'    => 'Piwik Development'
+        );
+
+        $menu[] = array(
+            'title'       => 'Automated Tests',
+            'file'        => 'automated-tests',
+            'url'         => static::getUrl('automated-tests'),
+            'description' => 'Learn how to setup unit, integration and UI tests for your new plugin and how to work with Piwik Core\'s tests.',
+            'category'    => 'Piwik Development'
+        );
+
+        $menu[] = array(
+            'title'       => 'Manual UI Testing',
+            'file'        => 'manual-ui-testing',
+            'url'         => static::getUrl('manual-ui-testing'),
+            'description' => 'Learn how to manually test every part of the Piwik UI to ensure your code did not result in regressions.',
             'category'    => 'Piwik Development'
         );
 
