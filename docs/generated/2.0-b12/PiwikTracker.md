@@ -1,7 +1,7 @@
 PiwikTracker
 ============
 
-PiwikTracker implements the Piwik Tracking HTTP API.
+PiwikTracker implements the Piwik Tracking Web API.
 
 The PHP Tracking Client provides all features of the Javascript Tracker, such as Ecommerce Tracking, Custom Variable, Event tracking and more.
 Functions are named the same as the Javascript functions.
