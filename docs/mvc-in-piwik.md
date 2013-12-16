@@ -59,13 +59,13 @@ Read on to learn more about the individual components in this workflow.
 
 ## Piwik APIs (Models)
 
-Piwik APIs serve two purposes: they serve the data used in views and they [automatically expose plugin functionality through a REST API](#).
+Piwik APIs serve two purposes: they serve the data used in views and they [automatically expose plugin functionality through a HTTP API](#).
 
 In this guide, we discuss the first purpose.
 
 ### About API Classes
 
-Plugins provide APIs by defining a class named API that derives from [Piwik\Plugins\API](#). Every public method that does not have the `@ignore` annotation is exposed as part of Piwik's [Reporting REST API](#).
+Plugins provide APIs by defining a class named API that derives from [Piwik\Plugins\API](#). Every public method that does not have the `@ignore` annotation is exposed as part of Piwik's [Reporting HTTP API](#).
 
 All APIs are singletons. To access API methods programatically the [Singleton::getInstance](#) method must be called first:
 
@@ -299,6 +299,6 @@ Here's an example of a secure controller method:
 ## Learn more
 
 * To learn **how to display analytics data in a controller method** read our [Visualizing Report Data](#) guide.
-* To learn **how Piwik automatically exposes API classes in a REST API** read our [Piwik's REST API](#) guide.
+* To learn **how Piwik automatically exposes API classes in a HTTP API** read our [Piwik's HTTP API](#) guide.
 * To learn **more about writing secure code with Piwik** read our [Security](#) guide.
 * To learn **how to add custom JavaScript in addition to your plugin's HTML output** or **how to style your plugin's HTML output** read our [Working with Piwik's UI](#) guide.

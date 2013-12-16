@@ -75,7 +75,7 @@ class Guide {
             'file'        => 'piwiks-web-api',
             'url'         => static::getUrl('piwiks-reporting-api'),
             'description' => 'Learn how Piwik exposes API methods in its Reporting API and how third party applications can use its Tracking API.',
-            'category'    => 'Piwik REST APIs'
+            'category'    => 'Piwik HTTP APIs'
         );
 
         $menu[] = array(
@@ -83,7 +83,7 @@ class Guide {
             'file'         => 'querying-the-reporting-api',
             'url'          => static::getUrl('querying-the-reporting-api'),
             'description'  => 'Learn how to query for report data via HTTP requests and from within Piwik\'s source code.',
-            'category'    => 'Piwik REST APIs'
+            'category'    => 'Piwik HTTP APIs'
         );
 
         $menu[] = array(
