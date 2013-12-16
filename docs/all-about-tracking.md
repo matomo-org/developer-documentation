@@ -134,11 +134,11 @@ Plugins can add extra data to tracked visits by handling the [Tracker.newVisitor
 
 Plugins that want to add new data to the log tables themselves can alter the tables to add new columns. See [this section in the Peristence & the MySQL Backend guide](#).
 
-## The Tracking Web API
+## The Tracking REST API
 
 To track page views, events, visits, you have to send a HTTP request to your Tracking REST API endpoint, for example, **http://your-piwik-domain.tld/piwik.php** with the correct query parameters set.
 
-[View the Tracking Web API Reference docs.](/api-reference/tracking-api)
+[View the Tracking REST API Reference docs.](/api-reference/tracking-api)
 
 ## Learn more
 

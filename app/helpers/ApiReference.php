@@ -94,12 +94,12 @@ class ApiReference {
         );
 
         $menu[] = array(
-            'title'        => 'Tracking Web API',
+            'title'        => 'Tracking REST API',
             'file'         => 'tracking-api',
             'url'          => static::getUrl('tracking-api'),
-            'description'  => 'View reference docs for the Tracking Web API.',
+            'description'  => 'View reference docs for the Tracking REST API.',
             'callToAction' => 'Browse',
-            'category'     => 'Web API Documentation'
+            'category'     => 'REST API Documentation'
         );
 
         $menu[] = array(
@@ -108,7 +108,7 @@ class ApiReference {
             'url'          => static::getUrl('reporting-api'),
             'description'  => 'View every API method exposed in and every parameter supported by Piwik\'s Reporting API.',
             'callToAction' => 'Browse',
-            'category'     => 'Web API Documentation'
+            'category'     => 'REST API Documentation'
         );
 
 
@@ -118,7 +118,7 @@ class ApiReference {
             'url'          => static::getUrl('metadata'),
             'description'  => 'View information about API methods that query report metadata.',
             'callToAction' => 'Browse',
-            'category'     => 'Web API Documentation'
+            'category'     => 'REST API Documentation'
         );
 
         $menu[] = array(
@@ -127,7 +127,7 @@ class ApiReference {
             'url'          => static::getUrl('segmentation'),
             'description'  => 'View all available segment dimensions and segment operators.',
             'callToAction' => 'Browse',
-            'category'     => 'Web API Documentation'
+            'category'     => 'REST API Documentation'
         );
 
         $result = array();

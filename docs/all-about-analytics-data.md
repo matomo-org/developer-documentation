@@ -312,10 +312,10 @@ Metadata and [processed metrics](#processed-metrics) should also be added within
 
 ### API processing of reports
 
-When a report is returned from an API method it goes through some extra processing based on what query parameters are set for the request. To see exactly what happens to a report, read the relevant section in our [Piwik's Web API](#) guide.
+When a report is returned from an API method it goes through some extra processing based on what query parameters are set for the request. To see exactly what happens to a report, read the relevant section in our [Piwik's REST API](#) guide.
 
 ## Learn more
 
 * To learn **how log data and archive data are stored and processed in MySQL** read our [Persistence and the MySQL Backend](#) guide.
-* To learn more about **how reports are served in the Reporting API** read our [Piwik's Web API](#) guide.
+* To learn more about **how reports are served in the Reporting API** read our [Piwik's REST API](#) guide.
 * To learn more about **how reports are displayed** read our [Visualizing Report Data](#) guide.

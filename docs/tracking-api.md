@@ -1,4 +1,4 @@
-## The Tracking Web API
+## The Tracking REST API
 
 To track page views, events, visits, you have to send a HTTP request to your Tracking REST API endpoint, for example, **http://your-piwik-domain.tld/piwik.php** with the correct query parameters set.
 
@@ -68,7 +68,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 
 #### Tracking Bots
 
-By default Piwik does not track bots. If you use the Tracking Web API directly, you may be interested in tracking bot reqeusts. To enable Bot Tracking in Piwik, set the parameter &**bots**=1 in your requests to piwik.php.
+By default Piwik does not track bots. If you use the Tracking REST API directly, you may be interested in tracking bot reqeusts. To enable Bot Tracking in Piwik, set the parameter &**bots**=1 in your requests to piwik.php.
 
 #### Example Tracking Request
 
