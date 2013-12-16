@@ -8,6 +8,14 @@ $('a').each(function (index, a) {
     }
 });
 
+$('.documentation img').each(function (index, img) {
+    var imageSrc = $(img).attr('src');
+
+    if (imageSrc) {
+        $(img).wrap('<a href="' + imageSrc + '" target="_blank"></a>');
+    }
+});
+
 var quickSearchData = null;
 $('#quick-search-typeahead>input').typeahead({
     source: function (query, process) {
