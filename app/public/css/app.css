@@ -25,6 +25,11 @@ body {
     padding-bottom: 48px;
 }
 
+.documentation {
+    line-height: 150%;
+    margin-left: 5px;
+}
+
 .documentation h1 {
     padding-bottom: 9px;
     margin: 0px 0 20px;
@@ -35,6 +40,10 @@ body {
     white-space: pre-wrap;
     word-wrap: break-word;
     word-break: break-word;
+}
+
+.bs-side {
+    padding-left: 0px;
 }
 
 .bs-side .panel-collapse {
