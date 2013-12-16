@@ -33,7 +33,7 @@ event handlers for that event will have to do more work._
 Callback Signature:
 <pre><code>function(&amp;$finalParameters)</code></pre>
 
-- `array` `$finalParameters` List of parameters that will be passed to the API method.
+- `array` `&$finalParameters` List of parameters that will be passed to the API method.
 
 
 ### API.$pluginName.$methodName.end
@@ -78,7 +78,7 @@ API will automatically have access to the new report.
 Callback Signature:
 <pre><code>function(&amp;$availableReports, $parameters)</code></pre>
 
-- `string` `$availableReports` The list of available reports. Append to this list to make a report available. Every element of this array must contain the following information: - **category**: A translated string describing the report's category. - **name**: The translated display title of the report. - **module**: The plugin of the report. - **action**: The API method that serves the report. The following information is optional: - **dimension**: The report's [dimension](/guides/all-about-analytics-data#dimensions) if any. - **metrics**: An array mapping metric names with their display names. - **metricsDocumentation**: An array mapping metric names with their translated documentation. - **processedMetrics**: The array of metrics in the report that are calculated using existing metrics. Can be set to `false` if the report contains no processed metrics. - **order**: The order of the report in the list of reports with the same category.
+- `string` `&$availableReports` The list of available reports. Append to this list to make a report available. Every element of this array must contain the following information: - **category**: A translated string describing the report's category. - **name**: The translated display title of the report. - **module**: The plugin of the report. - **action**: The API method that serves the report. The following information is optional: - **dimension**: The report's [dimension](/guides/all-about-analytics-data#dimensions) if any. - **metrics**: An array mapping metric names with their display names. - **metricsDocumentation**: An array mapping metric names with their translated documentation. - **processedMetrics**: The array of metrics in the report that are calculated using existing metrics. Can be set to `false` if the report contains no processed metrics. - **order**: The order of the report in the list of reports with the same category.
 
 - `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some reports depend on this data. For example, Goals reports depend on the site IDs being requested. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`. TODO: put dimensions section in all about analytics data
 
@@ -97,7 +97,7 @@ of available reports.
 Callback Signature:
 <pre><code>function(&amp;$availableReports, $parameters)</code></pre>
 
-- `array` `$availableReports` List of all report metadata. Read the [API.getReportMetadata](/api-reference/hooks#apigetreportmetadata) docs to see what this array contains.
+- `array` `&$availableReports` List of all report metadata. Read the [API.getReportMetadata](/api-reference/hooks#apigetreportmetadata) docs to see what this array contains.
 
 - `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some report depend on this data. For example, Goals reports depend on the site IDs being request. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
 
@@ -176,7 +176,7 @@ Triggered before an API request is dispatched. This event can be used to modify 
 Callback Signature:
 <pre><code>function(&amp;$finalParameters, $pluginName, $methodName)</code></pre>
 
-- `array` `$finalParameters` List of parameters that will be passed to the API method.
+- `array` `&$finalParameters` List of parameters that will be passed to the API method.
 
 - `string` `$pluginName` The name of the plugin the API method belongs to.
 
@@ -243,7 +243,7 @@ with it.
 Callback Signature:
 <pre><code>function(&amp;$mergedContent)</code></pre>
 
-- `string` `$mergedContent` The minified and merged JavaScript.
+- `string` `&$mergedContent` The minified and merged JavaScript.
 
 
 ### AssetManager.filterMergedStylesheets
@@ -254,7 +254,7 @@ Triggered after all less stylesheets are compiled to CSS, minified and merged in
 Callback Signature:
 <pre><code>function(&amp;$mergedContent)</code></pre>
 
-- `string` `$mergedContent` The merged and minified CSS.
+- `string` `&$mergedContent` The merged and minified CSS.
 
 
 ### AssetManager.getJavaScriptFiles
@@ -281,7 +281,7 @@ after every change._
 Callback Signature:
 <pre><code>function(&amp;$jsFiles)</code></pre>
 
-- `string` `$jsFiles` The JavaScript files to load.
+- `string` `&$jsFiles` The JavaScript files to load.
 
 Usages:
 
@@ -312,7 +312,7 @@ after a change._
 Callback Signature:
 <pre><code>function(&amp;$stylesheets)</code></pre>
 
-- `string` `$stylesheets` The list of stylesheet paths.
+- `string` `&$stylesheets` The list of stylesheet paths.
 
 Usages:
 
@@ -372,7 +372,7 @@ should subscribe to this event and add commands to the incoming array.
 Callback Signature:
 <pre><code>function(&amp;$commands)</code></pre>
 
-- `array` `$commands` An array containing a list of command class names.
+- `array` `&$commands` An array containing a list of command class names.
 
 Usages:
 
@@ -395,7 +395,7 @@ action only. Using this event will result in a little less code than [Request.di
 Callback Signature:
 <pre><code>function(&amp;$parameters)</code></pre>
 
-- `array` `$parameters` The arguments passed to the controller action.
+- `array` `&$parameters` The arguments passed to the controller action.
 
 
 ### Controller.$module.$action.end
@@ -411,7 +411,7 @@ controller action only. Using this event will result in a little less code than
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>
 
-- `mixed` `$result` The result of the controller action.
+- `mixed` `&$result` The result of the controller action.
 
 - `array` `$parameters` The arguments passed to the controller action.
 
@@ -428,7 +428,7 @@ the order in which websites will be archived.
 Callback Signature:
 <pre><code>function(&amp;$websiteIds)</code></pre>
 
-- `array` `$websiteIds` The list of website IDs to launch the archiving process for.
+- `array` `&$websiteIds` The list of website IDs to launch the archiving process for.
 
 ## Goals
 
@@ -458,7 +458,7 @@ they can use this event to make sure their reports can be viewed on Goals pages.
 Callback Signature:
 <pre><code>function(&amp;$reportsWithGoals)</code></pre>
 
-- `array` `$reportsWithGoals` The list of arrays describing reports that have Goal metrics. Each element of this array must be an array with the following properties: - **category**: The report category. This should be a translated string. - **name**: The report's translated name. - **module**: The plugin the report is in, eg, `'UserCountry'`. - **action**: The API method of the report, eg, `'getCountry'`.
+- `array` `&$reportsWithGoals` The list of arrays describing reports that have Goal metrics. Each element of this array must be an array with the following properties: - **category**: The report category. This should be a translated string. - **name**: The report's translated name. - **module**: The plugin the report is in, eg, `'UserCountry'`. - **action**: The API method of the report, eg, `'getCountry'`.
 
 Usages:
 
@@ -522,7 +522,7 @@ this event to convert objects to strings before they are logged.
 Callback Signature:
 <pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
 
-- `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set `$message` to the string that should be logged.
+- `mixed` `&$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set `$message` to the string that should be logged.
 
 - `int` `$level` The log level used with this log entry.
 
@@ -550,7 +550,7 @@ this event to convert objects to strings before they are logged.
 Callback Signature:
 <pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
 
-- `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set `$message` to the string that should be logged.
+- `mixed` `&$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set `$message` to the string that should be logged.
 
 - `int` `$level` The log level used with this log entry.
 
@@ -581,7 +581,7 @@ This means **YOU MUST SANITIZE THE MESSAGE YOURSELF** if you use this event.
 Callback Signature:
 <pre><code>function(&amp;$message, $level, $tag, $datetime, $logger)</code></pre>
 
-- `mixed` `$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set `$message` to the string that should be logged.
+- `mixed` `&$message` The object that is being logged. Event handlers should check if the object is of a certain type and if it is, set `$message` to the string that should be logged.
 
 - `int` `$level` The log level used with this log entry.
 
@@ -621,7 +621,7 @@ name specified can be used in Piwik's INI configuration.
 Callback Signature:
 <pre><code>function(&amp;$writers)</code></pre>
 
-- `array` `$writers` Array mapping writer names with logging writers.
+- `array` `&$writers` Array mapping writer names with logging writers.
 
 ## Menu
 
@@ -732,7 +732,7 @@ Providers report.
 Callback Signature:
 <pre><code>function(&amp;$cleanHostname, $hostname)</code></pre>
 
-- `string` `$cleanHostname` The hostname string to display. Set by the event handler.
+- `string` `&$cleanHostname` The hostname string to display. Set by the event handler.
 
 - `string` `$hostname` The full hostname.
 
@@ -767,11 +767,11 @@ and can be used to change the controller action being dispatched to.
 Callback Signature:
 <pre><code>function(&amp;$module, &amp;$action, &amp;$parameters)</code></pre>
 
-- `string` `$module` The name of the plugin being dispatched to.
+- `string` `&$module` The name of the plugin being dispatched to.
 
-- `string` `$action` The name of the controller method being dispatched to.
+- `string` `&$action` The name of the controller method being dispatched to.
 
-- `array` `$parameters` The arguments passed to the controller action.
+- `array` `&$parameters` The arguments passed to the controller action.
 
 
 ### Request.dispatch.end
@@ -782,7 +782,7 @@ Triggered after a controller action is successfully called. This event can be us
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>
 
-- `mixed` `$result` The controller action result.
+- `mixed` `&$result` The controller action result.
 
 - `array` `$parameters` The arguments passed to the controller action.
 
@@ -864,7 +864,7 @@ at a time.
 Callback Signature:
 <pre><code>function(&amp;$allowMultipleReports, $reportType)</code></pre>
 
-- `bool` `$allowMultipleReports` Whether the backend type can handle multiple Piwik reports or not.
+- `bool` `&$allowMultipleReports` Whether the backend type can handle multiple Piwik reports or not.
 
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
@@ -882,13 +882,13 @@ handle their new report formats.
 Callback Signature:
 <pre><code>function(&amp;$reportRenderer, $reportType, $outputType, $report)</code></pre>
 
-- `ReportRenderer` `$reportRenderer` This variable should be set to an instance that extends Piwik\ReportRenderer by one of the event subscribers.
+- `ReportRenderer` `&$reportRenderer` This variable should be set to an instance that extends Piwik\ReportRenderer by one of the event subscribers.
 
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
 - `string` `$outputType` The output format of the report, eg, `'html'`, `'pdf'`, etc.
 
-- `array` `$report` An array describing the scheduled report that is being generated.
+- `array` `&$report` An array describing the scheduled report that is being generated.
 
 Usages:
 
@@ -904,7 +904,7 @@ this event to make their format available.
 Callback Signature:
 <pre><code>function(&amp;$reportFormats, $reportType)</code></pre>
 
-- `array` `$reportFormats` An array mapping string IDs for each available scheduled report format with icon paths for those formats. Add your new format's ID to this array.
+- `array` `&$reportFormats` An array mapping string IDs for each available scheduled report format with icon paths for those formats. Add your new format's ID to this array.
 
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
@@ -925,7 +925,7 @@ event to list the Piwik reports that their backend supports.
 Callback Signature:
 <pre><code>function(&amp;$availableReportMetadata, $reportType, $idSite)</code></pre>
 
-- `array` `$availableReportMetadata` An array containg report metadata for each supported report.
+- `array` `&$availableReportMetadata` An array containg report metadata for each supported report.
 
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
@@ -945,7 +945,7 @@ event to list the available report parameters for their transport medium.
 Callback Signature:
 <pre><code>function(&amp;$availableParameters, $reportType)</code></pre>
 
-- `array` `$availableParameters` The list of available parameters for this report type. This is an array that maps paramater IDs with a boolean that indicates whether the parameter is mandatory or not.
+- `array` `&$availableParameters` The list of available parameters for this report type. This is an array that maps paramater IDs with a boolean that indicates whether the parameter is mandatory or not.
 
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
@@ -964,7 +964,7 @@ format.
 Callback Signature:
 <pre><code>function(&amp;$recipients, $report[&#039;type&#039;], $report)</code></pre>
 
-- `array` `$recipients` An array of strings describing each of the scheduled reports recipients. Can be, for example, a list of email addresses or phone numbers or whatever else your plugin uses.
+- `array` `&$recipients` An array of strings describing each of the scheduled reports recipients. Can be, for example, a list of email addresses or phone numbers or whatever else your plugin uses.
 
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
@@ -984,7 +984,7 @@ event to make their medium available.
 Callback Signature:
 <pre><code>function(&amp;$reportTypes)</code></pre>
 
-- `array` `$reportTypes` An array mapping transport medium IDs with the paths to those mediums' icons. Add your new backend's ID to this array.
+- `array` `&$reportTypes` An array mapping transport medium IDs with the paths to those mediums' icons. Add your new backend's ID to this array.
 
 Usages:
 
@@ -1003,7 +1003,7 @@ TODO: list data available in $report or make it a new class that can be document
 Callback Signature:
 <pre><code>function(&amp;$processedReports, $reportType, $outputType, $report)</code></pre>
 
-- `array` `$processedReports` The list of processed reports in the scheduled report. Entries includes report data and metadata for each report.
+- `array` `&$processedReports` The list of processed reports in the scheduled report. Entries includes report data and metadata for each report.
 
 - `string` `$reportType` A string ID describing how the scheduled report will be sent, eg, `'sms'` or `'email'`.
 
@@ -1055,7 +1055,7 @@ event to validate the custom parameters defined with ScheduledReports::getReport
 Callback Signature:
 <pre><code>function(&amp;$parameters, $reportType)</code></pre>
 
-- `array` `$parameters` The list of parameters for the scheduled report.
+- `array` `&$parameters` The list of parameters for the scheduled report.
 
 - `string` `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
 
@@ -1109,7 +1109,7 @@ SegmentEditor API._
 Callback Signature:
 <pre><code>function(&amp;$segmentsToProcess)</code></pre>
 
-- `array` `$segmentsToProcess` List of segment definitions, eg, array( 'browserCode=ff;resolution=800x600', 'country=jp;city=Tokyo' ) Add segments to this array in your event handler.
+- `array` `&$segmentsToProcess` List of segment definitions, eg, array( 'browserCode=ff;resolution=800x600', 'country=jp;city=Tokyo' ) Add segments to this array in your event handler.
 
 Usages:
 
@@ -1166,7 +1166,7 @@ Callback Signature:
 
 - `int` `$idSite` The ID of the website entity that will be modified.
 
-- `array` `$infoSite` The website entity. [Learn more.](/guides/persistence-and-the-mysql-backend#websites-aka-sites)
+- `array` `&$infoSite` The website entity. [Learn more.](/guides/persistence-and-the-mysql-backend#websites-aka-sites)
 
 ## SitesManager
 
@@ -1216,7 +1216,7 @@ basis.
 Callback Signature:
 <pre><code>function(&amp;$tasks)</code></pre>
 
-- `[ScheduledTask](/api-reference/Piwik/ScheduledTask)` `$tasks` List of tasks to run periodically.
+- `[ScheduledTask](/api-reference/Piwik/ScheduledTask)` `&$tasks` List of tasks to run periodically.
 
 Usages:
 
@@ -1257,7 +1257,7 @@ use this event to put those attributes in the Tracker Cache.
 Callback Signature:
 <pre><code>function(&amp;$content, $idSite)</code></pre>
 
-- `array` `$content` Array mapping of site attribute names with values.
+- `array` `&$content` Array mapping of site attribute names with values.
 
 - `int` `$idSite` The site ID to get attributes for.
 
@@ -1275,7 +1275,7 @@ logic.
 Callback Signature:
 <pre><code>function(&amp;$searchEngineInformation, $this-&gt;referrerUrl)</code></pre>
 
-- `array` `$searchEngineInformation` An array with the following information: - **name**: The search engine name. - **keywords**: The search keywords used. This parameter is initialized to the results of Piwik's default search engine detection logic.
+- `array` `&$searchEngineInformation` An array with the following information: - **name**: The search engine name. - **keywords**: The search keywords used. This parameter is initialized to the results of Piwik's default search engine detection logic.
 
 - `string`
 
@@ -1289,7 +1289,7 @@ are persisted.
 Callback Signature:
 <pre><code>function(&amp;$valuesToUpdate, $this-&gt;visitorInfo)</code></pre>
 
-- `array` `$valuesToUpdate` Visit entity properties that will be updated.
+- `array` `&$valuesToUpdate` Visit entity properties that will be updated.
 
 - `array` `$visit` The entire visit entity. Read [this](/guides/persistence-and-the-mysql-backend#visits) to see what it contains.
 
@@ -1324,7 +1324,7 @@ When you add fields to this $fields array, they will be later available in Track
 Callback Signature:
 <pre><code>function(&amp;$fields)</code></pre>
 
-- `array` `$fields` The list of visit properties to load.
+- `array` `&$fields` The list of visit properties to load.
 
 
 ### Tracker.isExcludedVisit
@@ -1335,7 +1335,7 @@ Triggered on every tracking request. This event can be used to tell the Tracker 
 Callback Signature:
 <pre><code>function(&amp;$excluded)</code></pre>
 
-- `bool` `$excluded` Whether the request should be excluded or not. Initialized to `false`. Event subscribers should set it to `true` in order to exclude the request.
+- `bool` `&$excluded` Whether the request should be excluded or not. Initialized to `false`. Event subscribers should set it to `true` in order to exclude the request.
 
 Usages:
 
@@ -1352,7 +1352,7 @@ Piwik\Tracker\VisitInterface.
 Callback Signature:
 <pre><code>function(&amp;$visit)</code></pre>
 
-- `\Piwik\Tracker\VisitInterface` `$visit` Initialized to null, but can be set to a new visit object. If it isn't modified Piwik uses the default class.
+- `\Piwik\Tracker\VisitInterface` `&$visit` Initialized to null, but can be set to a new visit object. If it isn't modified Piwik uses the default class.
 
 
 ### Tracker.newConversionInformation
@@ -1363,7 +1363,7 @@ Triggered before persisting a new [conversion entity](/guides/persistence-and-th
 Callback Signature:
 <pre><code>function(&amp;$conversion, $visitInformation, $this-&gt;request)</code></pre>
 
-- `array` `$conversion` The conversion entity. Read [this](/guides/persistence-and-the-mysql-backend#conversions) to see what it contains.
+- `array` `&$conversion` The conversion entity. Read [this](/guides/persistence-and-the-mysql-backend#conversions) to see what it contains.
 
 - `array` `$visitInformation` The visit entity that we are tracking a conversion for. See what information it contains [here](/guides/persistence-and-the-mysql-backend#visits).
 
@@ -1436,7 +1436,7 @@ website.
 Callback Signature:
 <pre><code>function(&amp;$idSite, $this-&gt;params)</code></pre>
 
-- `int` `$idSite` Initialized to the value of the **idsite** query parameter. If a subscriber sets this variable, the value it uses must be greater than 0.
+- `int` `&$idSite` Initialized to the value of the **idsite** query parameter. If a subscriber sets this variable, the value it uses must be greater than 0.
 
 - `array` `$params` The entire array of request parameters in the current tracking request.
 
@@ -1462,7 +1462,7 @@ a cache solves this problem.
 Callback Signature:
 <pre><code>function(&amp;$cacheContent)</code></pre>
 
-- `array` `$cacheContent` Array of cached data. Each piece of data must be mapped by name.
+- `array` `&$cacheContent` Array of cached data. Each piece of data must be mapped by name.
 
 Usages:
 
@@ -1505,7 +1505,7 @@ Event handlers should add whole translation keys, ie, keys that include the plug
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
 
-- `array` `$result` The whole list of client side translation keys.
+- `array` `&$result` The whole list of client side translation keys.
 
 Usages:
 
@@ -1550,7 +1550,7 @@ parameter. Plugins can override this logic by subscribing to this event.
 Callback Signature:
 <pre><code>function(&amp;$lang)</code></pre>
 
-- `string` `$lang` The language that should be used for the current user. Will be initialized to the value of the **language** query parameter.
+- `string` `&$lang` The language that should be used for the current user. Will be initialized to the value of the **language** query parameter.
 
 Usages:
 
@@ -1652,7 +1652,7 @@ this event and add visualization class names to the incoming array.
 Callback Signature:
 <pre><code>function(&amp;$visualizations)</code></pre>
 
-- `array` `$visualizations` The array of all available visualizations.
+- `array` `&$visualizations` The array of all available visualizations.
 
 Usages:
 
