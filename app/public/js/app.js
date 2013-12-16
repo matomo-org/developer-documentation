@@ -9,9 +9,11 @@ $('a').each(function (index, a) {
 });
 
 $('.documentation img').each(function (index, img) {
-    var imageSrc = $(img).attr('src');
+    var imageSrc    = $(img).attr('src');
+    var imageWidth  = $(img).width();
+    var parentWidth = $(img).parent().width();
 
-    if (imageSrc) {
+    if (imageSrc && imageWidth >= parentWidth) {
         $(img).wrap('<a href="' + imageSrc + '" target="_blank"></a>');
     }
 });
