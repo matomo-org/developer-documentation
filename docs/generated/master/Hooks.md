@@ -235,7 +235,7 @@ Callback Signature:
 - [AssetManager.getStylesheetFiles](#assetmanagergetstylesheetfiles)
 
 ### AssetManager.filterMergedJavaScripts
-_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [393](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L393)_
+_Defined in [Piwik/AssetManager/UIAssetMerger/JScriptUIAssetMerger](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/JScriptUIAssetMerger.php) in line [73](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/JScriptUIAssetMerger.php#L73)_
 
 Triggered after all the JavaScript files Piwik uses are minified and merged into a single file, but before the merged JavaScript is written to disk. Plugins can use this event to modify merged JavaScript or do something else
 with it.
@@ -247,7 +247,7 @@ Callback Signature:
 
 
 ### AssetManager.filterMergedStylesheets
-_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [168](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L168)_
+_Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [77](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L77)_
 
 Triggered after all less stylesheets are compiled to CSS, minified and merged into one file, but before the generated CSS is written to disk. This event can be used to modify merged CSS.
 
@@ -258,7 +258,7 @@ Callback Signature:
 
 
 ### AssetManager.getJavaScriptFiles
-_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [451](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L451)_
+_Defined in [Piwik/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php) in line [49](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php#L49)_
 
 Triggered when gathering the list of all JavaScript files needed by Piwik and its plugins. Plugins that have their own JavaScript should use this event to make those
 files load in the browser.
@@ -279,9 +279,9 @@ after every change._
     }
 
 Callback Signature:
-<pre><code>function(&amp;$jsFiles)</code></pre>
+<pre><code>function(&amp;$this-&gt;fileLocations)</code></pre>
 
-- `string` `&$jsFiles` The JavaScript files to load.
+- `string` `$jsFiles` The JavaScript files to load.
 
 Usages:
 
@@ -289,7 +289,7 @@ Usages:
 
 
 ### AssetManager.getStylesheetFiles
-_Defined in [Piwik/AssetManager](https://github.com/piwik/piwik/blob/master/core/AssetManager.php) in line [315](https://github.com/piwik/piwik/blob/master/core/AssetManager.php#L315)_
+_Defined in [Piwik/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher.php) in line [57](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher.php#L57)_
 
 Triggered when gathering the list of all stylesheets (CSS and LESS) needed by Piwik and its plugins. Plugins that have stylesheets should use this event to make those stylesheets
 load.
@@ -310,9 +310,9 @@ after a change._
     }
 
 Callback Signature:
-<pre><code>function(&amp;$stylesheets)</code></pre>
+<pre><code>function(&amp;$this-&gt;fileLocations)</code></pre>
 
-- `string` `&$stylesheets` The list of stylesheet paths.
+- `string` `$stylesheets` The list of stylesheet paths.
 
 Usages:
 

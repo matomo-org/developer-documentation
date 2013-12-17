@@ -238,7 +238,6 @@ Returns `true` if this plugin is a theme, `false` if otherwise.
 
 #### Signature
 
-- It is a **finalized** method.
 - It returns a `bool` value.
 
 <a name="getpluginname" id="getpluginname"></a>
