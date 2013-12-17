@@ -13,15 +13,11 @@ If you want to request data in any language (PHP, Python, Ruby, ASP, C++, Java, 
 
 You can, for example, get your top 100 search engine keywords used to find your website during the current week. Here is an example in PHP:
 
-<pre markdown="1"><code>
-[include url="https://raw.github.com/piwik/piwik/master/misc/others/api_rest_call.php"]
-</code></pre>
+<pre><code markdown="1">[include url="https://raw.github.com/piwik/piwik/master/misc/others/api_rest_call.php" escape="true"]</code></pre>
 
 Here is the output of this code:
 
-<pre markdown="1"><code>
-[include url="http://piwik.org/wp-content/uploads/api_rest_call.php"]
-</code></pre>
+<pre><code markdown="1">[include url="http://piwik.org/wp-content/uploads/api_rest_call.php" escape="true"]</code></pre>
 
 ## Call the Piwik API in PHP
 
@@ -29,8 +25,8 @@ If you want to request data in a PHP script that is on the same server as Piwik,
 
 If you are developing a plugin, you have to use this technique.
 
-<pre markdown="1"><code>[include url="https://raw.github.com/piwik/piwik/master/misc/others/api_internal_call.php"]</code></pre>
+<pre><code markdown="1">[include url="https://raw.github.com/piwik/piwik/master/misc/others/api_internal_call.php" escape="true"]</code></pre>
 
 Here is the output of this script:
 
-<pre markdown="1"><code>[include url="http://demo.piwik.org/misc/others/api_internal_call.php"]</code></pre>
+<pre><code markdown="1">[include url="http://demo.piwik.org/misc/others/api_internal_call.php" escape="true"]</code></pre>
