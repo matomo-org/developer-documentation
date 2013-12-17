@@ -66,7 +66,7 @@ class MarkdownParser extends DefaultMarkdownParser {
         }
 
         $url = $linkMatches[1];
-        $contents = file_get_contents($url);
+        $contents = mb_convert_encoding(file_get_contents($url), 'HTML-ENTITIES', 'utf-8');
         if (isset($linkMatches[2]) && $linkMatches[2] == 'true') {
             $contents = htmlspecialchars($contents);
         }

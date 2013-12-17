@@ -320,3 +320,15 @@ pre.inline-code-pre>code {
 }
 
 /* reporting api listing styles */
+.apiDescription, .apiMethod {
+    margin: 0 0 10px;
+}
+
+.apiDescription ul {
+    margin: 10px 0;
+}
+
+.apiMethod .example {
+    margin-left: 5px;
+    color: #9E9E9E;
+}
