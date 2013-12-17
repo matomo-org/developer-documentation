@@ -14,7 +14,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setOrder()`](#setorder) &mdash; Updates the order
-- [`sort()`](#sort) &mdash; Sorting method used for sorting numbers
+- [`numberSort()`](#numbersort) &mdash; Sorting method used for sorting numbers
 - [`naturalSort()`](#naturalsort) &mdash; Sorting method used for sorting values natural
 - [`sortString()`](#sortstring) &mdash; Sorting method used for sorting values
 - [`filter()`](#filter) &mdash; See [Sort](/api-reference/Piwik/DataTable/Filter/Sort).
@@ -106,9 +106,9 @@ Updates the order
    </ul>
 - It does not return anything.
 
-<a name="sort" id="sort"></a>
-<a name="sort" id="sort"></a>
-### `sort()`
+<a name="numbersort" id="numbersort"></a>
+<a name="numberSort" id="numberSort"></a>
+### `numberSort()`
 
 Sorting method used for sorting numbers
 

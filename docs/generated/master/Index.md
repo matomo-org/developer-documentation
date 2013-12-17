@@ -556,6 +556,7 @@ Index
 
 ## N
 
+- [`numberSort()`](Piwik/DataTable/Filter/Sort.md#numbersort) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`naturalSort()`](Piwik/DataTable/Filter/Sort.md#naturalsort) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`now()`](Piwik/Date.md#now) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`N2P()`](Piwik/IP.md#n2p) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
@@ -646,7 +647,6 @@ Index
 - [`setMaximumAllowedRows()`](Piwik/DataTable.md#setmaximumallowedrows) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`Sort`](Piwik/DataTable/Filter/Sort.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`setOrder()`](Piwik/DataTable/Filter/Sort.md#setorder) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
-- [`sort()`](Piwik/DataTable/Filter/Sort.md#sort) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`sortString()`](Piwik/DataTable/Filter/Sort.md#sortstring) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`setKeyName()`](Piwik/DataTable/Map.md#setkeyname) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`sumSubtable()`](Piwik/DataTable/Row.md#sumsubtable) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
