@@ -7,7 +7,7 @@
 ## Config
 ## DataAccess\LogAggregator
 ## DataTable
-## DataTable\Filter
+## DataTable\BaseFilter
 ## DataTable\Filter\AddColumnsProcessedMetrics
 ## DataTable\Filter\AddColumnsProcessedMetricsGoal
 ## DataTable\Filter\AddSummaryRow

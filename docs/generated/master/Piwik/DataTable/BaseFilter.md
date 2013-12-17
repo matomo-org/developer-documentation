@@ -1,7 +1,7 @@
 <small>Piwik\DataTable\</small>
 
-Filter
-======
+BaseFilter
+==========
 
 A filter is set of logic that manipulates a DataTable.
 
@@ -16,7 +16,7 @@ Existing filters do things like,
 Filters are called with a DataTable instance and extra parameters that are specified
 in [DataTable::filter()](/api-reference/Piwik/DataTable#filter) and [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter).
 
-To see examples of Filters look at the existing ones in the Piwik\DataTable\Filter
+To see examples of Filters look at the existing ones in the Piwik\DataTable\BaseFilter
 namespace.
 
 Methods
@@ -83,7 +83,7 @@ Manipulates a DataTable in some way.
 Enables/Disables recursive filtering.
 
 Whether this property is actually used
-is up to the derived Filter class.
+is up to the derived BaseFilter class.
 
 #### Signature
 
