@@ -47,7 +47,8 @@ class Markdown {
             return '';
         }
 
-        return array_shift($sections);
+        $first = reset($sections);
+        return $first['title'];
     }
 
     public function getAvailableSections()
@@ -64,21 +65,21 @@ class Markdown {
 
         foreach ($sections as $section) {
 
-            $content     = $this->getSectionContent($section);
+            $content     = $this->getSectionContent($section['title']);
             $subSections = $this->getAvailableSectionsFromContent('h3', $content);
 
             $sub = array();
             foreach ($subSections as $subSection) {
                 $sub[] = array(
-                    'title'    => $subSection,
-                    'id'       => MarkdownParser::headlineTextToId($subSection),
+                    'title'    => $subSection['title'],
+                    'id'       => $subSection['id'],
                     'children' => array()
                 );
             }
 
             $parsed[] = array(
-                'title'    => $section,
-                'id'       => MarkdownParser::headlineTextToId($section),
+                'title'    => $section['title'],
+                'id'       => $section['id'],
                 'children' => $sub
             );
 
@@ -125,14 +126,22 @@ class Markdown {
             return array();
         }
 
-        $regex = sprintf('/<%s(.*?)>(.*)<\/%s>/', $headline, $headline);
+        $regex = sprintf('/(?:<a[^>]*name=["\']([^"\']+)["\'][^>]*><\/a>\s*)?<%s(.*?)>(.*)<\/%s>/', $headline, $headline);
 
-        preg_match_all($regex, $content, $matches);
+        $resultCount = preg_match_all($regex, $content, $matches);
 
-        if (!empty($matches[2])) {
-            return $matches[2];
+        $result = array();
+        for ($i = 0; $i < $resultCount; ++$i) {
+            $title = $matches[3][$i];
+
+            if (!empty($matches[1][$i])) {
+                $id = $matches[1][$i];
+            } else {
+                $id = MarkdownParser::headlineTextToId($title);
+            }
+
+            $result[] = array('id' => $id, 'title' => $title);
         }
-
-        return array();
+        return $result;
     }
 }

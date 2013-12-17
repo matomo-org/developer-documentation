@@ -18,13 +18,32 @@ class MarkdownParser extends DefaultMarkdownParser {
         return "\n" . $this->hashBlock($block) . "\n\n";
     }
 
+    function _doCodeBlocks_callback($matches) {
+      $codeblock = $matches[1];
+      $codeblock = $this->outdent($codeblock);
+
+      list($codeblock, $language) = $this->handleCodeLanguageSpecifier($codeblock);
+      $languageSuffix = $language ? " class=\"$language\"" : "";
+
+      $codeblock = htmlspecialchars($codeblock, ENT_NOQUOTES);
+
+      # trim leading newlines and trailing newlines
+      $codeblock = preg_replace('/\A\n+|\n+\z/', '', $codeblock);
+
+      $codeblock = "<pre><code$languageSuffix>$codeblock\n</code></pre>";
+      return "\n\n".$this->hashBlock($codeblock)."\n\n";
+    }
+
     function makeCodeSpan($code) {
         #
         # Create a code span markup for $code. Called from handleSpanToken.
         #
+        list($code, $language) = $this->handleCodeLanguageSpecifier($code);
+        $languageSuffix = $language ? " class=\"$language\"" : "";
+
         $code = htmlspecialchars(trim($code), ENT_NOQUOTES);
         $code = $this->doAnchors($code);
-        return $this->hashPart("<code>$code</code>");
+        return $this->hashPart("<code$languageSuffix>$code</code>");
     }
 
     function _doHeaders_callback_setext($matches) {
@@ -65,5 +84,18 @@ class MarkdownParser extends DefaultMarkdownParser {
         $headlineText = strtolower($headlineText);
 
         return $headlineText;
+    }
+
+    public function handleCodeLanguageSpecifier($codeString)
+    {
+        $language = false;
+        if (preg_match("/\A\s*\[([^\]]+)\]/", $codeString, $matches)
+            && in_array($matches[1], array('php', 'ini', 'http', 'javascript'))
+        ) {
+            $language = $matches[1];
+            $codeString = substr($codeString, strlen($matches[0]));
+        }
+
+        return array($codeString, $language);
     }
 }
