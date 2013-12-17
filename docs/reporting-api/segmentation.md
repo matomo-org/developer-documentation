@@ -10,6 +10,8 @@ Segmentation can be applied to most API functions. The **segment** parameter con
 
 For example, you can request the "Best Keywords" report processed for all visits where "Country is Germany AND Browser is Firefox" (), by doing the following request:
 
+    [http]
+
     http://piwik.example.org/index.php
     ?token_auth=yourTokenHere
     &format=xml
@@ -86,7 +88,7 @@ You can combine several segments together with AND and OR logic.
 
 Examples
 
-<table class="exampleBoolean">
+<table class="exampleBoolean" markdown="1">
 <tbody>
 <tr>
 <td>`&segment=country==US,country==DE`
@@ -98,7 +100,7 @@ Country is either (United States OR Germany)</td>
 
 Examples
 
-<table class="exampleBoolean">
+<table class="exampleBoolean" markdown="1">
 <tbody>
 <tr>
 <td>`&segment=visitorType==returning;country==FR`
@@ -110,6 +112,7 @@ Visitors from Search engines AND Keyword is not Piwik</td>
 </tr>
 </tbody>
 </table>
+
 Note that if you combine OR and AND operators, the OR operator will take precedence. For example, the following query
 `&segment=referrerType==search;referrerKeyword==Piwik,referrerKeyword==analytics`
 will select "Visitors from Search engines AND (Keyword is Piwik OR Keyword is analytics)"

@@ -11,6 +11,14 @@ namespace helpers;
 use \dflydev\markdown\MarkdownExtraParser as DefaultMarkdownParser;
 
 class MarkdownParser extends DefaultMarkdownParser {
+
+    function __construct(array $configuration = null) {
+        parent::__construct($configuration);
+
+        // hack to make sure <pre><code markdown="1"> blocks render correctly
+        $this->block_tags_re = 'p|div|h[1-6]|blockquote|table|dl|ol|ul|address|form|fieldset|iframe|hr|legend';
+    }
+
     function _doHeaders_callback_atx($matches) {
         $level = strlen($matches[1]);
         $id    = static::headlineTextToId($this->runSpanGamut($matches[2]));

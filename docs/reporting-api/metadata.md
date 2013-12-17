@@ -26,7 +26,7 @@ The URL would be [http://demo.piwik.org/?**module=API&method=API.getProcessedRep
 
 The returned XML is:
 
-<pre markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en"]</pre>
+<pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en" escape="true"]</code></pre>
 
 ## List and Definition of 'metadata' Response Attributes
 
@@ -49,7 +49,7 @@ There are two types of reports in Piwik, and each have a slightly different form
 
     Simple Metrics reports simply contain a list of metrics and their values. For example, VisitsSummary.get returns the main metrics (visits, pages, unique visitors) for the specified website ([example URL](http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous)).
 
-    <pre markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous"]</pre>
+    <pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous" escape="true"]</code></pre>
 
 *   **Reports with dimensions**
 
@@ -57,7 +57,7 @@ There are two types of reports in Piwik, and each have a slightly different form
 
     Example of a report with dimensions metadata ([example URL](http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referers&apiAction=getKeywords&format=xml&token_auth=anonymous)):
 
-    <pre markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referers&apiAction=getKeywords&format=xml&token_auth=anonymous"]</pre>
+    <pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referers&apiAction=getKeywords&format=xml&token_auth=anonymous" escape="true"]</code></pre>
 
 ## Static Image Graphs
 
@@ -76,6 +76,7 @@ _URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSumma
     ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getBrowser&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
 _URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getBrowser&token\_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250_
+
 *   Example: Horizontal Bar Graph Plotting Countries for the Current Week
 
     ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
