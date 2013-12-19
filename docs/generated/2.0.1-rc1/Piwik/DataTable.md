@@ -60,7 +60,7 @@ reduce code redundancy. Additionally, filters have the advantage that they can b
 applied to DataTable\Map instances. So you can visit every DataTable in a [DataTable\Map](/api-reference/Piwik/DataTable/Map)
 without having to write a recursive visiting function.
 
-All predefined filters exist in the **Piwik\DataTable\Filter** namespace.
+All predefined filters exist in the **Piwik\DataTable\BaseFilter** namespace.
 
 _Note: For convenience, [anonymous functions](http://www.php.net/manual/en/functions.anonymous.php)
 can be used as DataTable filters._
@@ -343,7 +343,7 @@ to all subtables as well.
       <div markdown="1" class="parameter">
       `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
 
-      <div markdown="1" class="param-desc"> Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\Filter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.</div>
+      <div markdown="1" class="param-desc"> Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.</div>
 
       <div style="clear:both;"/>
 

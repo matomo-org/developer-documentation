@@ -16,9 +16,9 @@ Index
 - [`addRowsFromSerializedArray()`](Piwik/DataTable.md#addrowsfromserializedarray) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`addRowsFromArray()`](Piwik/DataTable.md#addrowsfromarray) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`addRowsFromSimpleArray()`](Piwik/DataTable.md#addrowsfromsimplearray) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
-- [`AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`appendPercentSign()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#appendpercentsign) &mdash; _Method in class_ [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
 - [`applyQueuedFilters()`](Piwik/DataTable/Map.md#applyqueuedfilters) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`addTable()`](Piwik/DataTable/Map.md#addtable) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
@@ -73,9 +73,10 @@ Index
 ## B
 
 - [`build()`](Piwik/Archive.md#build) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
-- [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`BaseFilter`](Piwik/DataTable/BaseFilter.md) &mdash; _Class in namespace_ [`Piwik\DataTable`](Piwik/DataTable) 
+- [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`beautify()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#beautify) &mdash; _Method in class_ [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
-- [`BeautifyTimeRangeLabels`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`BeautifyTimeRangeLabels`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`Bar`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Bar.md) &mdash; _Class in namespace_ [`Piwik\Plugins\CoreVisualizations\Visualizations\JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph) 
 - [`build()`](Piwik/ViewDataTable/Factory.md#build) &mdash; _Method in class_ [`Factory`](Piwik/ViewDataTable/Factory.md)
 
@@ -83,14 +84,14 @@ Index
 
 - [`Common`](Piwik/Common.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Config`](Piwik/Config.md) &mdash; _Class in namespace_ `Piwik` 
-- [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`calculate()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#calculate) &mdash; _Method in class_ [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
-- [`ColumnCallbackAddColumn`](Piwik/DataTable/Filter/ColumnCallbackAddColumn.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`ColumnCallbackAddColumnPercentage`](Piwik/DataTable/Filter/ColumnCallbackAddColumnPercentage.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`ColumnCallbackAddColumnQuotient`](Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`ColumnCallbackAddMetadata`](Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`ColumnCallbackDeleteRow`](Piwik/DataTable/Filter/ColumnCallbackDeleteRow.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`ColumnDelete`](Piwik/DataTable/Filter/ColumnDelete.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`ColumnCallbackAddColumn`](Piwik/DataTable/Filter/ColumnCallbackAddColumn.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`ColumnCallbackAddColumnPercentage`](Piwik/DataTable/Filter/ColumnCallbackAddColumnPercentage.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`ColumnCallbackAddColumnQuotient`](Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`ColumnCallbackAddMetadata`](Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`ColumnCallbackDeleteRow`](Piwik/DataTable/Filter/ColumnCallbackDeleteRow.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`ColumnDelete`](Piwik/DataTable/Filter/ColumnDelete.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`$c`](Piwik/DataTable/Row.md#$c) &mdash; _Property in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`compareWeek()`](Piwik/Date.md#compareweek) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`compareMonth()`](Piwik/Date.md#comparemonth) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
@@ -165,8 +166,8 @@ Index
 
 - [`enableRecursiveSort()`](Piwik/DataTable.md#enablerecursivesort) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`enableRecursiveFilters()`](Piwik/DataTable.md#enablerecursivefilters) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
-- [`enableRecursive()`](Piwik/DataTable/Filter.md#enablerecursive) &mdash; _Method in class_ [`Filter`](Piwik/DataTable/Filter.md)
-- [`ExcludeLowPopulation`](Piwik/DataTable/Filter/ExcludeLowPopulation.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`enableRecursive()`](Piwik/DataTable/BaseFilter.md#enablerecursive) &mdash; _Method in class_ [`BaseFilter`](Piwik/DataTable/BaseFilter.md)
+- [`ExcludeLowPopulation`](Piwik/DataTable/Filter/ExcludeLowPopulation.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`enableRecursiveSort()`](Piwik/DataTable/Map.md#enablerecursivesort) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`exec()`](Piwik/Db.md#exec) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`error()`](Piwik/Log.md#error) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
@@ -181,9 +182,8 @@ Index
 - [`forceSave()`](Piwik/Config.md#forcesave) &mdash; _Method in class_ [`Config`](Piwik/Config.md)
 - [`filter()`](Piwik/DataTable.md#filter) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`fromSerializedArray()`](Piwik/DataTable.md#fromserializedarray) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
-- [`Filter`](Piwik/DataTable/Filter.md) &mdash; _Class in namespace_ [`Piwik\DataTable`](Piwik/DataTable) 
-- [`filter()`](Piwik/DataTable/Filter.md#filter) &mdash; _Method in class_ [`Filter`](Piwik/DataTable/Filter.md)
-- [`filterSubTable()`](Piwik/DataTable/Filter.md#filtersubtable) &mdash; _Method in class_ [`Filter`](Piwik/DataTable/Filter.md)
+- [`filter()`](Piwik/DataTable/BaseFilter.md#filter) &mdash; _Method in class_ [`BaseFilter`](Piwik/DataTable/BaseFilter.md)
+- [`filterSubTable()`](Piwik/DataTable/BaseFilter.md#filtersubtable) &mdash; _Method in class_ [`BaseFilter`](Piwik/DataTable/BaseFilter.md)
 - [`filter()`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md#filter) &mdash; _Method in class_ [`AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md)
 - [`filter()`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md#filter) &mdash; _Method in class_ [`AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md)
 - [`filter()`](Piwik/DataTable/Filter/AddSummaryRow.md#filter) &mdash; _Method in class_ [`AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md)
@@ -276,7 +276,7 @@ Index
 - [`getSingleUnitLabel()`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md#getsingleunitlabel) &mdash; _Method in class_ [`BeautifyTimeRangeLabels`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md)
 - [`getRangeLabel()`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md#getrangelabel) &mdash; _Method in class_ [`BeautifyTimeRangeLabels`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md)
 - [`getUnboundedLabel()`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md#getunboundedlabel) &mdash; _Method in class_ [`BeautifyTimeRangeLabels`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md)
-- [`GroupBy`](Piwik/DataTable/Filter/GroupBy.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`GroupBy`](Piwik/DataTable/Filter/GroupBy.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`getKeyName()`](Piwik/DataTable/Map.md#getkeyname) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getRowsCount()`](Piwik/DataTable/Map.md#getrowscount) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`getDataTables()`](Piwik/DataTable/Map.md#getdatatables) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
@@ -516,7 +516,7 @@ Index
 ## L
 
 - [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; _Class in namespace_ `Piwik\DataAccess` 
-- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`$lockPrivilegeGranted`](Piwik/Db.md#$lockprivilegegranted) &mdash; _Property in class_ [`Db`](Piwik/Db.md)
 - [`lockTables()`](Piwik/Db.md#locktables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`long2ip()`](Piwik/IP.md#long2ip) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
@@ -530,8 +530,8 @@ Index
 - [`makeFromIndexedArray()`](Piwik/DataTable.md#makefromindexedarray) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`mergeSubtables()`](Piwik/DataTable.md#mergesubtables) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`makeFromSimpleArray()`](Piwik/DataTable.md#makefromsimplearray) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
-- [`MetadataCallbackAddMetadata`](Piwik/DataTable/Filter/MetadataCallbackAddMetadata.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`MetadataCallbackReplace`](Piwik/DataTable/Filter/MetadataCallbackReplace.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`MetadataCallbackAddMetadata`](Piwik/DataTable/Filter/MetadataCallbackAddMetadata.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`MetadataCallbackReplace`](Piwik/DataTable/Filter/MetadataCallbackReplace.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`Map`](Piwik/DataTable/Map.md) &mdash; _Class in namespace_ [`Piwik\DataTable`](Piwik/DataTable) 
 - [`mergeChildren()`](Piwik/DataTable/Map.md#mergechildren) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`mergeSubtables()`](Piwik/DataTable/Map.md#mergesubtables) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
@@ -556,6 +556,7 @@ Index
 
 ## N
 
+- [`numberSort()`](Piwik/DataTable/Filter/Sort.md#numbersort) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`naturalSort()`](Piwik/DataTable/Filter/Sort.md#naturalsort) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`now()`](Piwik/Date.md#now) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`N2P()`](Piwik/IP.md#n2p) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
@@ -578,8 +579,8 @@ Index
 - [`Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; _Class in namespace_ [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor) 
 - [`prefixTable()`](Piwik/Common.md#prefixtable) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`prependPlusSignToNumber()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#prependplussigntonumber) &mdash; _Method in class_ [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
-- [`Pattern`](Piwik/DataTable/Filter/Pattern.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`Pattern`](Piwik/DataTable/Filter/Pattern.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`P2N()`](Piwik/IP.md#p2n) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`prettyPrint()`](Piwik/IP.md#prettyprint) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`$priority`](Piwik/Notification.md#$priority) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
@@ -606,8 +607,8 @@ Index
 
 - [`Request`](Piwik/API/Request.md) &mdash; _Class in namespace_ `Piwik\API` 
 - [`renameColumn()`](Piwik/DataTable.md#renamecolumn) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
-- [`ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
-- [`ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`renameColumn()`](Piwik/DataTable/Map.md#renamecolumn) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`Row`](Piwik/DataTable/Row.md) &mdash; _Class in namespace_ [`Piwik\DataTable`](Piwik/DataTable) 
 - [`renameColumn()`](Piwik/DataTable/Row.md#renamecolumn) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
@@ -644,9 +645,8 @@ Index
 - [`setMetadataValues()`](Piwik/DataTable.md#setmetadatavalues) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`setAllTableMetadata()`](Piwik/DataTable.md#setalltablemetadata) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumAllowedRows()`](Piwik/DataTable.md#setmaximumallowedrows) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
-- [`Sort`](Piwik/DataTable/Filter/Sort.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`Sort`](Piwik/DataTable/Filter/Sort.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`setOrder()`](Piwik/DataTable/Filter/Sort.md#setorder) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
-- [`sort()`](Piwik/DataTable/Filter/Sort.md#sort) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`sortString()`](Piwik/DataTable/Filter/Sort.md#sortstring) &mdash; _Method in class_ [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`setKeyName()`](Piwik/DataTable/Map.md#setkeyname) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`sumSubtable()`](Piwik/DataTable/Row.md#sumsubtable) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
@@ -742,7 +742,7 @@ Index
 
 ## T
 
-- [`Truncate`](Piwik/DataTable/Filter/Truncate.md) &mdash; _Class in namespace_ [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter) 
+- [`Truncate`](Piwik/DataTable/Filter/Truncate.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`toString()`](Piwik/Date.md#tostring) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`today()`](Piwik/Date.md#today) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`$title`](Piwik/Notification.md#$title) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
@@ -803,7 +803,7 @@ Index
 - [`__destruct()`](Piwik/DataTable.md#__destruct) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`__sleep()`](Piwik/DataTable.md#__sleep) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`__toString()`](Piwik/DataTable.md#__tostring) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
-- [`__construct()`](Piwik/DataTable/Filter.md#__construct) &mdash; _Method in class_ [`Filter`](Piwik/DataTable/Filter.md)
+- [`__construct()`](Piwik/DataTable/BaseFilter.md#__construct) &mdash; _Method in class_ [`BaseFilter`](Piwik/DataTable/BaseFilter.md)
 - [`__construct()`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md#__construct) &mdash; _Method in class_ [`AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md)
 - [`__construct()`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md#__construct) &mdash; _Method in class_ [`AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md)
 - [`__construct()`](Piwik/DataTable/Filter/AddSummaryRow.md#__construct) &mdash; _Method in class_ [`AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md)
