@@ -33,7 +33,7 @@ The class defines the following methods:
 - [`getDateStartUTC()`](#getdatestartutc) &mdash; Returns the start of the day of the current timestamp in UTC.
 - [`getDateEndUTC()`](#getdateendutc) &mdash; Returns the end of the day of the current timestamp in UTC.
 - [`setTimezone()`](#settimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
-- [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp in a timezone to UTC.
+- [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp in a from UTC to a timezone.
 - [`getTimestampUTC()`](#gettimestamputc) &mdash; Returns the Unix timestamp of the date in UTC.
 - [`getTimestamp()`](#gettimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
 - [`isLater()`](#islater) &mdash; Returns `true` if the current date is older than the given `$date`.
@@ -92,7 +92,7 @@ result will be in UTC.
       <div markdown="1" class="parameter">
       `$timezone` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The timezone of `$dateString`. If specified, `$dateString` will be converted from this timezone to UTC before being used in the Date return value.</div>
+      <div markdown="1" class="param-desc"> The timezone of the result. If specified, `$dateString` will be converted from UTC to this timezone before being used in the Date return value.</div>
 
       <div style="clear:both;"/>
 
@@ -171,7 +171,7 @@ See [getTimestamp()](/api-reference/Piwik/Date#gettimestamp) to see how the time
 <a name="adjustForTimezone" id="adjustForTimezone"></a>
 ### `adjustForTimezone()`
 
-Converts a timestamp in a timezone to UTC.
+Converts a timestamp in a from UTC to a timezone.
 
 #### Signature
 
@@ -192,7 +192,7 @@ Converts a timestamp in a timezone to UTC.
       <div markdown="1" class="parameter">
       `$timezone` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The timezone to adjust from.</div>
+      <div markdown="1" class="param-desc"> The timezone to adjust to.</div>
 
       <div style="clear:both;"/>
 
