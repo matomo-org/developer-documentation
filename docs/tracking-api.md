@@ -50,6 +50,14 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `revenue` &mdash; A monetary value that was generated as revenue by this goal conversion. Only used if **idgoal** is specified in the request.
     * `gt_ms` &mdash; The amount of time it took the server to generate this action, in milliseconds. This value is used to process the **Avg. generation time** column in the Page URL and Page Title reports, as well as a site wide running average of the speed of your server. _Note: when using the Javascript tracker this value is set to the ime for server to generate response + the time for client to download response._
 
+* Ecommerce info
+    * `ec_id` &mdash; The unique string identifier for the ecommerce order
+    * `ec_st` &mdash; The sub total of the order (excludes shipping)
+    * `ec_tx` &mdash; Tax Amount of the order
+    * `ec_sh` &mdash; Shipping cost of the Order
+    * `ec_dt` &mdash; Discount offered
+    * `ec_items` &mdash; Items in the Ecommerce order. This is a JSON encoded array of items. Each item is an array with the following info in this order: item sku, item name, item category, item price, item quantity.
+
 * Special parameters
 
     The following parameters require that you set `&token_auth=` to the token\_auth value of the Super User or a user with admin access to the website visits are being tracked for.
