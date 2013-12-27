@@ -95,6 +95,13 @@ _URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSetting
 
 _URL = index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=UserSettings&apiAction=getOS&token\_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D_
 
+*   Example: Line chart of Custom Variables names and values, filtered to show only custom variable containing the string "logged"
+
+    ![](http://demo.piwik.org/?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*)
+
+_URL = index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token\_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*_
+
+
 The static Graphs API requires the standard Piwik parameters (idSite, date, period, etc.) but also accepts the following parameters:
 
 *   **graphType** - defines the type of graph to draw. Accepted values are: '**evolution**' (line graph), '**horizontalBar**' (horizontal bar graph), 'verticalBar' (vertical bar graph) and 'pie' (2D Pie chart)
