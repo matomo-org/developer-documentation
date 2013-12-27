@@ -15,7 +15,7 @@ This is a complete list of available hooks.
 - [API.Request.dispatch.end](#apirequestdispatchend)
 
 ### API.$pluginName.$methodName
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [209](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L209)_
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [210](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L210)_
 
 Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch)
 event is triggered. It can be used to modify the arguments passed to a **single** API method.
@@ -37,7 +37,7 @@ Callback Signature:
 
 
 ### API.$pluginName.$methodName.end
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [259](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L259)_
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [260](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L260)_
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
 [API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event. It can be used to modify the output of a **single**
@@ -157,7 +157,7 @@ Usages:
 
 
 ### API.Request.dispatch
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [189](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L189)_
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [190](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L190)_
 
 Triggered before an API request is dispatched. This event can be used to modify the arguments passed to one or more API methods.
 
@@ -184,7 +184,7 @@ Callback Signature:
 
 
 ### API.Request.dispatch.end
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [299](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L299)_
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [300](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L300)_
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
 
