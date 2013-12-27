@@ -563,6 +563,7 @@ _Configuration of the Tracker Object_
 *   `setCustomUrl( string )` - Override the page's reported URL
 *   `setReferrerUrl( string )` - Override the detected Http-Referer
 *   `setSiteId( integer )` - Specify the website ID. Redundant: can be specified in `getTracker()` constructor.
+*   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. http://piwik.example.org/ or https://example.org/piwik/. This function is only useful when the 'Overlay' report is not working. By default you do not need to use this function.
 *   `setTrackerUrl( string )` - Specify the Piwik server URL. Redundant: can be specified in `getTracker()` constructor.
 *   `setDownloadClasses( string | array )` - Set classes to be treated as downloads (in addition to piwik_download)
 *   `setDownloadExtensions( string )` - Set list of file extensions to be recognized as downloads. Example: 'doc|pdf|txt'
