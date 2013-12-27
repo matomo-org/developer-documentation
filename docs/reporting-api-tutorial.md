@@ -10,7 +10,7 @@ To build the URL of the API call, you need:
 
     **http://demo.piwik.org/?module=API**
 
-*   the name of the method you want to call. It has the format _moduleName.methodToCall_ (see the list on [API Methods](/reporting-api/listing#api-method-list)). You need to request the last keywords from the plugin Referers: the method parameter is:
+*   the name of the method you want to call. It has the format _moduleName.methodToCall_ (see the list on [API Methods](/api-reference/reporting-api#api-method-list)). You need to request the last keywords from the plugin Referers: the method parameter is:
 
     **method=Referers.getKeywords**
 
@@ -58,9 +58,9 @@ Here is the output of this request:
 
 *   RSS feed containing the top 30 keywords for the last 3 weeks,  ordered by the number of actions people did when coming from these  keywords
 [http://demo.piwik.org/?module=API&method=Referers.getKeywords&idSite=3&period=week&date=last3&format=rss&filter_limit=30&filter_sort_column=3](http://demo.piwik.org/?module=API&method=Referers.getKeywords&idSite=3&period=week&date=last3&format=rss&filter_limit=30&filter_sort_column=3)
-You can get the data in one of these formats: XML, JSON, HTML, CSV, TSV, etc. See the [API Reference](/reporting-api/listing) for the documentation.
+You can get the data in one of these formats: XML, JSON, HTML, CSV, TSV, etc. See the [API Reference](/api-reference/reporting-api) for the documentation.
 
 There are also functions for Websites, Users, Goals, PDF Reports (create, update, delete operations) and a lot more, such as: adding Annotations, creating custom Segments,
 
-Check out the [Piwik API Reference](/reporting-api/listing)
+Check out the [Piwik API Reference](/api-reference/reporting-api)
 
