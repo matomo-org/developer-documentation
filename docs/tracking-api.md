@@ -51,6 +51,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `gt_ms` &mdash; The amount of time it took the server to generate this action, in milliseconds. This value is used to process the **Avg. generation time** column in the Page URL and Page Title reports, as well as a site wide running average of the speed of your server. _Note: when using the Javascript tracker this value is set to the ime for server to generate response + the time for client to download response._
 
 * Ecommerce info
+
     * `ec_id` &mdash; The unique string identifier for the ecommerce order
     * `ec_st` &mdash; The sub total of the order (excludes shipping)
     * `ec_tx` &mdash; Tax Amount of the order
@@ -76,7 +77,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 
 #### Tracking Bots
 
-By default Piwik does not track bots. If you use the Tracking HTTP API directly, you may be interested in tracking bot reqeusts. To enable Bot Tracking in Piwik, set the parameter &**bots**=1 in your requests to piwik.php.
+By default Piwik does not track bots. If you use the Tracking HTTP API directly, you may be interested in tracking bot requests. To enable Bot Tracking in Piwik, set the parameter &**bots**=1 in your requests to piwik.php.
 
 #### Example Tracking Request
 
