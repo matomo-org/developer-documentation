@@ -80,5 +80,11 @@
     </div>
     <div class="col-md-7 documentation">
         {{ doc|raw }}
+        {% if thisItem.prev is defined or thisItem.next is defined %}
+        <div class="guide-navigation">
+          {% if thisItem.prev is defined %}<a class="guide-nav-prev" href="{{ thisItem.prev }}">&laquo; Previous</a>{% endif %}
+          {% if thisItem.next is defined %}<a class="guide-nav-next" href="{{ thisItem.next }}">Next &raquo;</a>{% endif %}
+        </div>
+        {% endif %}
     </div>
 {% endblock %}

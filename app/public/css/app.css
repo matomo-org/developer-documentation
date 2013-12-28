@@ -294,6 +294,14 @@ body {
     overflow:hidden;
 }
 
+.guide-nav-prev {
+  float:left;
+}
+
+.guide-nav-next {
+  float:right;
+}
+
 /* bootstrap overrides */
 pre {
     background-color:transparent;

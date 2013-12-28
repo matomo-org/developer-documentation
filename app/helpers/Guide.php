@@ -31,11 +31,31 @@ class Guide {
         $menu = array();
 
         $menu[] = array(
-            'title'       => 'Getting started extending Piwik',
-            'file'        => 'getting-started',
-            'url'         => static::getUrl('getting-started'),
-            'description' => 'Setup your development environment and learn the basics of Piwik plugin/theme development.',
-            'category'    => 'Getting Started'
+            'title'       => 'Getting Started Part I: Setting Up',
+            'file'        => 'getting-started-part-1',
+            'url'         => static::getUrl('getting-started-part-1'),
+            'description' => 'Setup your development environment and create an empty Piwik plugin.',
+            'category'    => 'Getting Started',
+            'next'        => static::getUrl('getting-started-part-2')
+        );
+
+        $menu[] = array(
+            'title'       => 'Getting Started Part II: Tour of Piwik Internals',
+            'file'        => 'getting-started-part-2',
+            'url'         => static::getUrl('getting-started-part-2'),
+            'description' => 'Learn the basics of Piwik plugin development by making your plugin define a new report.',
+            'category'    => 'Getting Started',
+            'next'        => static::getUrl('getting-started-part-3'),
+            'prev'        => static::getUrl('getting-started-part-1')
+        );
+
+        $menu[] = array(
+            'title'       => 'Getting Started Part III: Extras',
+            'file'        => 'getting-started-part-3',
+            'url'         => static::getUrl('getting-started-part-3'),
+            'category'    => 'Getting Started',
+            'description' => 'Learn how to make plugins configurable and available in different languages by building on the result of part II.',
+            'prev'        => static::getUrl('getting-started-part-2')
         );
 
         $menu[] = array(

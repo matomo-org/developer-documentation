@@ -98,7 +98,7 @@ Sets the cached site data with an array that associates site IDs with individual
       <div markdown="1" class="parameter">
       `$sites` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The array of sites data. Indexed by site ID. eg, array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))`</div>
+      <div markdown="1" class="param-desc"> The array of sites data. Indexed by site ID. eg,  array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))`</div>
 
       <div style="clear:both;"/>
 
@@ -122,7 +122,7 @@ Sets the cached Site data with a non-associated array of site data.
       <div markdown="1" class="parameter">
       `$sites` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The array of sites data. eg, array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), )</div>
+      <div markdown="1" class="param-desc"> The array of sites data. eg,  array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), )</div>
 
       <div style="clear:both;"/>
 

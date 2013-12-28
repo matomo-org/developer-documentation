@@ -113,12 +113,24 @@ $app->get('/guides/:category', function ($category) use ($app) {
         return;
     }
 
+    $mainMenu = Guide::getMainMenu();
+    $thisMenuItem = null;
+    foreach ($mainMenu as $itemCategory => $items) {
+        foreach ($items as $item) {
+            if ($item['file'] == $category) {
+                $thisMenuItem = $item;
+                break;
+            }
+        }
+    }
+
     $app->render('layout/documentation.twig', array(
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
         'sectionTitle' => $doc->getTitle(),
-        'categories'   => Guide::getMainMenu(),
-        'linkToEditDocument' => $doc->linkToEditDocument()
+        'categories'   => $mainMenu,
+        'linkToEditDocument' => $doc->linkToEditDocument(),
+        'thisItem'     => $thisMenuItem
     ));
 });
 
