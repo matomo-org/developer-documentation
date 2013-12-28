@@ -46,7 +46,8 @@ class ExternalPropertyFormatter extends ApiReferenceFormatter {
         $linkToClass = $this->getLinkToApiClass($className);
 
         $description = $link->getDescription();
-        $description = str_replace('Piwik\\', '', $description);
+        $parts = explode("\\", $description);
+        $description = end($parts);
 
         return sprintf('[%s](%s#$%s)', $description, $linkToClass, strtolower($propertyName));
     }
