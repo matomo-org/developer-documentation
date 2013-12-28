@@ -305,8 +305,8 @@ body {
 h2[id]:before, h3[id]:before {
   content:"";
   display:block;
-  padding-top:52px;
-  margin-top:-52px;
+  padding-top:60px;
+  margin-top:-60px;
 }
 
 /* bootstrap overrides */
