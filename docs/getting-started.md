@@ -132,7 +132,13 @@ You're development environment is setup, and you are now ready to create a plugi
 
     ./console generate:plugin --name="MyPlugin"
 
-Replace **MyPlugin** with the name of your plugin (for example, **UserSettings** or **DevicesDetection**). When the tool asks if it should create an API & Controller, enter `'y'`.
+When the tool asks if it should create an API & Controller, enter `'y'`. This will create a new plugin named **MyPlugin**.
+
+<div markdown="1" class="alert alert-warning">
+**Note**
+
+You can use any name for your plugin, but this guide will assume you've created one named **MyPlugin**. If you use a different name, make sure to change `MyPlugin` to the name you used when copying the code in this guide.
+</div>
 
 In your browser load Piwik and navigate to _Settings > Plugins > Manage_. Look for your plugin in the list of plugins, you should see it disabled:
 
@@ -181,7 +187,7 @@ To add a new page, we'll start by creating the page itself. In Piwik, HTML is ge
 
 Inside the Controller method we'll generate HTML by using a [View](#). View objects manage Twig templates; they define some basic properties, [filters](#) and [Twig functions](#) for templates to use, and allow you to set other template properties.
 
-Right now, we don't have much to display, so we won't be setting any properties. In your controller method, add the following code (replacing `'MyPlugin'` with the name of your plugin):
+Right now, we don't have much to display, so we won't be setting any properties. In your controller method, add the following code:
 
     $view = new View("@MyPlugin/index.twig");
     return $view->render();
@@ -200,7 +206,7 @@ The **console** tool will automatically create a Now we'll create our Twig templ
 
     <strong>Hello world!</strong>
 
-If you open a browser and open the URL **http://localhost/index.php?module=MyPlugin&action=index&idSite=1&date=today&period=day** after replacing **MyPlugin** with the name of your plugin, you should see the page you just created!
+If you open a browser and open the URL **http://localhost/index.php?module=MyPlugin&action=index&idSite=1&date=today&period=day** (remember to replace **MyPlugin** with the name of your plugin), you should see the page you just created!
 
 <img src="/img/myplugin_index_noembed.png"/>
 
@@ -269,7 +275,7 @@ Every API method that serves a report or metric will have the parameters listed 
 The website is determined by the `$idSite` parameter and the period by both the `$period` and `$date` parameters. The segment is determined by the value in the `$segment` parameter.
 </div>
 
-You can see the output of this method if you visit this URL: **http://localhost/index.php?module=API&method=MyPlugin.getLastVisitsByBrowser&idSite=1&date=today&period=week** (remember to replace **MyPlugin** with the name of your plugin).
+You can see the output of this method if you visit this URL: **http://localhost/index.php?module=API&method=MyPlugin.getLastVisitsByBrowser&idSite=1&date=today&period=week**.
 
 #### Implementing the API method
 
@@ -364,7 +370,7 @@ The special view class we'll use is called [ViewDataTable](#), and here's how we
         // ViewDataTable instances are created by the Factory, not through the new operator
         $view = \Piwik\ViewDataTable\Factory::build(
             $defaultVisualization = 'table',
-            $apiAction = 'MyPlugin.getLastVisitsByBrowser' // remember to replace MyPlugin with the name of your plugin
+            $apiAction = 'MyPlugin.getLastVisitsByBrowser'
         );
 
         // after a ViewDataTable instance is created, it must be configured so the display is perfect
@@ -453,7 +459,7 @@ We'll create a **plugin setting** which will control which visit property the pl
 
     <?php
 
-    namespace Piwik\Plugins\MyPlugin; // remember to rename MyPlugin with the name of your plugin
+    namespace Piwik\Plugins\MyPlugin;
 
     class Settings extends \Piwik\Plugin\Settings
     {
@@ -495,7 +501,7 @@ Then we'll implement the `createRealtimeReportDimensionSetting` method:
         $setting->type = self::TYPE_STRING;
         $setting->uiControlType = self::CONTROL_SINGLE_SELECT;
         $setting->description   = 'Choose the dimension to aggregate by';
-        $setting->availableValues = MyPlugin::$availableDimensionsForAggregation; // replace 'MyPlugin'!
+        $setting->availableValues = MyPlugin::$availableDimensionsForAggregation;
         $setting->defaultValue = 'browserName';
         return $setting;
     }
