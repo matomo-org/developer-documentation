@@ -8,7 +8,7 @@ Describes a system wide setting.
 Only the super user can change this type of setting and
 the value of this setting will affect all users.
 
-See [\Plugin\Settings](/api-reference/Piwik/Plugin/Settings).
+See [Settings](/api-reference/Piwik/Plugin/Settings).
 
 Methods
 -------

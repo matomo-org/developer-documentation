@@ -31,7 +31,7 @@ Describes the setting's PHP data type.
 When saved, setting values will always be casted to this
 type.
 
-See [Plugin\Settings](/api-reference/Piwik/Plugin/Settings) for a list of supported data types.
+See [Settings](/api-reference/Piwik/Plugin/Settings) for a list of supported data types.
 
 #### Signature
 
@@ -43,7 +43,7 @@ See [Plugin\Settings](/api-reference/Piwik/Plugin/Settings) for a list of suppor
 
 Describes what HTML element should be used to manipulate the setting through Piwik's UI.
 
-See [Plugin\Settings](/api-reference/Piwik/Plugin/Settings) for a list of supported control types.
+See [Settings](/api-reference/Piwik/Plugin/Settings) for a list of supported control types.
 
 #### Signature
 

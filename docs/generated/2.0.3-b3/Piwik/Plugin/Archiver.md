@@ -8,9 +8,9 @@ The base class that should be extended by plugins that compute their own analyti
 Descendants should implement the [aggregateDayReport()](/api-reference/Piwik/Plugin/Archiver#aggregatedayreport) and [aggregateMultipleReports()](/api-reference/Piwik/Plugin/Archiver#aggregatemultiplereports)
 methods.
 
-Both of these methods should persist analytics data using the [\ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor)
+Both of these methods should persist analytics data using the [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor)
 instance returned by [getProcessor()](/api-reference/Piwik/Plugin/Archiver#getprocessor). The [aggregateDayReport()](/api-reference/Piwik/Plugin/Archiver#aggregatedayreport) method should
-compute analytics data using the [\DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance
+compute analytics data using the [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance
 returned by [getLogAggregator()](/api-reference/Piwik/Plugin/Archiver#getlogaggregator).
 
 ### Examples
@@ -48,7 +48,7 @@ The abstract class defines the following methods:
 - [`aggregateDayReport()`](#aggregatedayreport) &mdash; Archives data for a day period.
 - [`aggregateMultipleReports()`](#aggregatemultiplereports) &mdash; Archives data for a non-day period.
 - [`getProcessor()`](#getprocessor) &mdash; Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance that can be used to insert archive data for the period, segment and site we are archiving data for.
-- [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
+- [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -84,8 +84,8 @@ as aggregating data across log tables. Since this method only deals w/ data logg
 aggregating individual log table rows isn't a problem. Doing this for any larger period,
 however, would cause performance degradation.
 
-Aggregate log table rows using a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance. Get a
-[DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance using the [getLogAggregator()](/api-reference/Piwik/Plugin/Archiver#getlogaggregator) method.
+Aggregate log table rows using a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance. Get a
+[LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance using the [getLogAggregator()](/api-reference/Piwik/Plugin/Archiver#getlogaggregator) method.
 
 #### Signature
 
@@ -123,7 +123,7 @@ Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance tha
 <a name="getLogAggregator" id="getLogAggregator"></a>
 ### `getLogAggregator()`
 
-Returns a [DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
+Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
 
 #### Signature
 

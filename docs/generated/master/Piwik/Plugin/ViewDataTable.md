@@ -14,7 +14,7 @@ that output an image, should extend ViewDataTable directly.
 
 ### Creating ViewDataTables
 
-ViewDataTable instances are not created via the new operator, instead the [ViewDataTable\Factory](/api-reference/Piwik/ViewDataTable/Factory)
+ViewDataTable instances are not created via the new operator, instead the [Factory](/api-reference/Piwik/ViewDataTable/Factory)
 class is used.
 
 The specific subclass to create is determined, first, by the **viewDataTable** query paramater.
@@ -26,8 +26,8 @@ displayed is used.
 **Display properties**
 
 ViewDataTable output can be customized by setting one of many available display
-properties. Display properties are stored as fields in [ViewDataTable\Config](/api-reference/Piwik/ViewDataTable/Config) objects.
-ViewDataTables store a [ViewDataTable\Config](/api-reference/Piwik/ViewDataTable/Config) object in the [$config](/api-reference/Piwik/Plugin/ViewDataTable#$config) field.
+properties. Display properties are stored as fields in [Config](/api-reference/Piwik/ViewDataTable/Config) objects.
+ViewDataTables store a [Config](/api-reference/Piwik/ViewDataTable/Config) object in the [$config](/api-reference/Piwik/Plugin/ViewDataTable#$config) field.
 
 Display properties can be set at any time before rendering.
 
@@ -37,7 +37,7 @@ Request properties are similar to display properties in the way they are set. Th
 however, not used to customize ViewDataTable instances, but in the request to Piwik's
 API when loading analytics data.
 
-Request properties are set by setting the fields of a [ViewDataTable\RequestConfig](/api-reference/Piwik/ViewDataTable/RequestConfig) object stored in
+Request properties are set by setting the fields of a [RequestConfig](/api-reference/Piwik/ViewDataTable/RequestConfig) object stored in
 the [$requestConfig](/api-reference/Piwik/Plugin/ViewDataTable#$requestconfig) field. They can be set at any time before rendering.
 Setting them after data is loaded will have no effect.
 
@@ -207,7 +207,7 @@ way reports are displayed.
 Returns the default config instance.
 
 Visualizations that define their own display properties should override this method and
-return an instance of their new [ViewDataTable\Config](/api-reference/Piwik/ViewDataTable/Config) descendant.
+return an instance of their new [Config](/api-reference/Piwik/ViewDataTable/Config) descendant.
 
 See the last example [here](/api-reference/Piwik/Plugin/ViewDataTable) for more information.
 
@@ -222,7 +222,7 @@ See the last example [here](/api-reference/Piwik/Plugin/ViewDataTable) for more 
 Returns the default request config instance.
 
 Visualizations that define their own request properties should override this method and
-return an instance of their new [ViewDataTable\RequestConfig](/api-reference/Piwik/ViewDataTable/RequestConfig) descendant.
+return an instance of their new [RequestConfig](/api-reference/Piwik/ViewDataTable/RequestConfig) descendant.
 
 See the last example [here](/api-reference/Piwik/Plugin/ViewDataTable) for more information.
 

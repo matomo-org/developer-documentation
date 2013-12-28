@@ -95,7 +95,7 @@ Returns the current URL without the query string.
       <div markdown="1" class="parameter">
       `$checkTrustedHost` (`bool`) &mdash;
 
-      <div markdown="1" class="param-desc"> Whether to do trusted host check. Should ALWAYS be true, except in [Plugin\Controller](/api-reference/Piwik/Plugin/Controller).</div>
+      <div markdown="1" class="param-desc"> Whether to do trusted host check. Should ALWAYS be true, except in [Controller](/api-reference/Piwik/Plugin/Controller).</div>
 
       <div style="clear:both;"/>
 

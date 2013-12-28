@@ -3,13 +3,13 @@
 ArchiveProcessor
 ================
 
-Used by [Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
+Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 
 ### See also
 
-- **[Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver)** - to learn how plugins should implement their own analytics
+- **[Archiver](/api-reference/Piwik/Plugin/Archiver)** - to learn how plugins should implement their own analytics
                                       aggregation logic.
-- **[DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)** - to learn how plugins can perform data aggregation
+- **[LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)** - to learn how plugins can perform data aggregation
                                                across Piwik's log tables.
 
 ### Examples
@@ -62,7 +62,7 @@ Methods
 The class defines the following methods:
 
 - [`getParams()`](#getparams) &mdash; Returns the Parameters object containing the site, period and segment we're archiving data for.
-- [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a `[DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` instance for the site, period and segment this ArchiveProcessor will insert archive data for.
+- [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a `[LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` instance for the site, period and segment this ArchiveProcessor will insert archive data for.
 - [`aggregateDataTableRecords()`](#aggregatedatatablerecords) &mdash; Sums records for every subperiod of the current period and inserts the result as the record for this period.
 - [`aggregateNumericMetrics()`](#aggregatenumericmetrics) &mdash; Aggregates one or more metrics for every subperiod of the current period and inserts the results as metrics for the current period.
 - [`insertNumericRecords()`](#insertnumericrecords) &mdash; Caches multiple numeric records in the archive for this processor's site, period and segment.
@@ -83,7 +83,7 @@ Returns the Parameters object containing the site, period and segment we're arch
 <a name="getLogAggregator" id="getLogAggregator"></a>
 ### `getLogAggregator()`
 
-Returns a `[DataAccess\LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` instance for the site, period and segment this ArchiveProcessor will insert archive data for.
+Returns a `[LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` instance for the site, period and segment this ArchiveProcessor will insert archive data for.
 
 #### Signature
 

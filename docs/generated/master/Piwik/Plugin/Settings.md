@@ -145,8 +145,8 @@ Sets (overwrites) the value of a setting in memory.
 To persist the change, [save()](/api-reference/Piwik/Plugin/Settings#save) must be
 called afterwards, otherwise the change has no effect.
 
-Before the setting is changed, the [Settings\Setting::$validate](/api-reference/Piwik/Settings/Setting#$validate) and
-[Settings\Setting::$transform](/api-reference/Piwik/Settings/Setting#$transform) closures will be invoked (if defined). If there is no validation
+Before the setting is changed, the [Setting::$validate](/api-reference/Piwik/Settings/Setting#$validate) and
+[Setting::$transform](/api-reference/Piwik/Settings/Setting#$transform) closures will be invoked (if defined). If there is no validation
 filter, the setting value will be casted to the appropriate data type.
 
 #### Signature

@@ -57,7 +57,7 @@ such as,
 
 Using these filters instead of writing your own code will increase code clarity and
 reduce code redundancy. Additionally, filters have the advantage that they can be
-applied to DataTable\Map instances. So you can visit every DataTable in a [DataTable\Map](/api-reference/Piwik/DataTable/Map)
+applied to DataTable\Map instances. So you can visit every DataTable in a [Map](/api-reference/Piwik/DataTable/Map)
 without having to write a recursive visiting function.
 
 All predefined filters exist in the **Piwik\DataTable\BaseFilter** namespace.
@@ -144,7 +144,7 @@ Constants
 
 This class defines the following constants:
 
-- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [DataTable\Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.
+- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.
 
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
@@ -157,7 +157,7 @@ This metadata value must be an array that maps column names with valid operation
 - `'min'`: does `min($column1, $column2)`
 - `'sum'`: does `$column1 + $column2`
 
-See [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) and [DataTable\Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) for more information.
+See [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) and [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) for more information.
 
 Methods
 -------

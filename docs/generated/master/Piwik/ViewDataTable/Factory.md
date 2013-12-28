@@ -3,7 +3,7 @@
 Factory
 =======
 
-Provides a means of creating [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
+Provides a means of creating [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
 
 ### Examples
 
@@ -47,18 +47,18 @@ Methods
 
 The class defines the following methods:
 
-- [`build()`](#build) &mdash; Creates a [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance by ID.
+- [`build()`](#build) &mdash; Creates a [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance by ID.
 
 <a name="build" id="build"></a>
 <a name="build" id="build"></a>
 ### `build()`
 
-Creates a [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance by ID.
+Creates a [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance by ID.
 
 If the **viewDataTable** query parameter is set,
 this parameter's value is used as the ID.
 
-See [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the visualizations that are packaged with Piwik.
+See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the visualizations that are packaged with Piwik.
 
 #### Signature
 

@@ -3,7 +3,7 @@
 Config
 ======
 
-Contains base display properties for [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)s.
+Contains base display properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)s.
 
 Manipulating these
 properties in a ViewDataTable instance will change how its report will be displayed.
@@ -23,13 +23,13 @@ will be set to the query parameter value.
 
 **Reusing base properties**
 
-Many of the properties in this class only have meaning for the [Plugin\Visualization](/api-reference/Piwik/Plugin/Visualization)
-class, but can be set for other visualizations that extend [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) 
+Many of the properties in this class only have meaning for the [Visualization](/api-reference/Piwik/Plugin/Visualization)
+class, but can be set for other visualizations that extend [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) 
 directly.
 
-Visualizations that extend [Plugin\ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) directly and want to re-use these
+Visualizations that extend [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) directly and want to re-use these
 properties must make sure the properties are used in the exact same way they are used in
-[Plugin\Visualization](/api-reference/Piwik/Plugin/Visualization).
+[Visualization](/api-reference/Piwik/Plugin/Visualization).
 
 **Defining new display properties**
 

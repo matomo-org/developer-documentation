@@ -50,7 +50,7 @@ The abstract class defines the following methods:
 
 Creates a new Period instance with a period ID and [Date](/api-reference/Piwik/Date) instance.
 
-_Note: This method cannot create [Period\Range](/api-reference/Piwik/Period/Range) periods._
+_Note: This method cannot create [Range](/api-reference/Piwik/Period/Range) periods._
 
 #### Signature
 

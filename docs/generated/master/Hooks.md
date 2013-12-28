@@ -1566,7 +1566,7 @@ Triggered when a user with insufficient access permissions tries to view some re
 Callback Signature:
 <pre><code>function($exception)</code></pre>
 
-- `[\NoAccessException](/api-reference/Piwik/NoAccessException)` `$exception` The exception that was caught.
+- `[NoAccessException](/api-reference/Piwik/NoAccessException)` `$exception` The exception that was caught.
 
 Usages:
 

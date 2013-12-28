@@ -296,7 +296,7 @@ will be indexed by site ID first, then period.
 
 Queries and returns blob data in an array.
 
-Reports are stored in blobs as serialized arrays of [DataTable\Row](/api-reference/Piwik/DataTable/Row) instances, but this
+Reports are stored in blobs as serialized arrays of [Row](/api-reference/Piwik/DataTable/Row) instances, but this
 data can technically be anything. In other words, you can store whatever you want
 as archive data blobs.
 
@@ -358,10 +358,10 @@ If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build
 be a DataTable\Map that is indexed by site ID.
 
 If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
-be a [DataTable\Map](/api-reference/Piwik/DataTable/Map) that is indexed by period.
+be a [Map](/api-reference/Piwik/DataTable/Map) that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
-will be a [DataTable\Map](/api-reference/Piwik/DataTable/Map) indexed by site ID which contains [DataTable\Map](/api-reference/Piwik/DataTable/Map) instances that are
+will be a [Map](/api-reference/Piwik/DataTable/Map) indexed by site ID which contains [Map](/api-reference/Piwik/DataTable/Map) instances that are
 indexed by period.
 
 _Note: Every DataTable instance returned will have at most one row in it. The contents of each
@@ -402,17 +402,17 @@ _Note: Every DataTable instance returned will have at most one row in it. The co
 
 Queries and returns one or more reports as DataTable instances.
 
-This method will query blob data that is a serialized array of of [DataTable\Row](/api-reference/Piwik/DataTable/Row)'s and
+This method will query blob data that is a serialized array of of [Row](/api-reference/Piwik/DataTable/Row)'s and
 unserialize it.
 
 If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
-be a [DataTable\Map](/api-reference/Piwik/DataTable/Map) that is indexed by site ID.
+be a [Map](/api-reference/Piwik/DataTable/Map) that is indexed by site ID.
 
 If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
-will be a [DataTable\Map](/api-reference/Piwik/DataTable/Map) indexed by site ID which contains [DataTable\Map](/api-reference/Piwik/DataTable/Map) instances that are
+will be a [Map](/api-reference/Piwik/DataTable/Map) indexed by site ID which contains [Map](/api-reference/Piwik/DataTable/Map) instances that are
 indexed by period.
 
 #### Signature
@@ -446,7 +446,7 @@ indexed by period.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  ([`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md)) &mdash;
-    <div markdown="1" class="param-desc">A DataTable if multiple sites and periods were not requested. An appropriately indexed [DataTable\Map](/api-reference/Piwik/DataTable/Map) if otherwise.</div>
+    <div markdown="1" class="param-desc">A DataTable if multiple sites and periods were not requested. An appropriately indexed [Map](/api-reference/Piwik/DataTable/Map) if otherwise.</div>
 
     <div style="clear:both;"/>
 
@@ -467,7 +467,7 @@ If multiple periods were requested in [build()](/api-reference/Piwik/Archive#bui
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
-will be a [indexed](/api-reference/Piwik/DataTable/Map) by site ID which contains [DataTable\Map](/api-reference/Piwik/DataTable/Map) instances that are
+will be a [indexed](/api-reference/Piwik/DataTable/Map) by site ID which contains [Map](/api-reference/Piwik/DataTable/Map) instances that are
 indexed by period.
 
 #### Signature

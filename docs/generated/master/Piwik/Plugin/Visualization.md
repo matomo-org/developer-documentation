@@ -10,12 +10,12 @@ the Piwik UI. The following extra UI controls will be displayed around the visua
 itself:
 
 - report documentation,
-- a footer message (if [ViewDataTable\Config::$show_footer_message](/api-reference/Piwik/ViewDataTable/Config#$show_footer_message) is set),
-- a list of links to related reports (if [ViewDataTable\Config::$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) is set),
+- a footer message (if [Config::$show_footer_message](/api-reference/Piwik/ViewDataTable/Config#$show_footer_message) is set),
+- a list of links to related reports (if [Config::$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) is set),
 - a button that allows users to switch visualizations,
 - a control that allows users to export report data in different formats,
 - a limit control that allows users to change the amount of rows displayed (if
-  [ViewDataTable\Config::$show_limit_control](/api-reference/Piwik/ViewDataTable/Config#$show_limit_control) is true),
+  [Config::$show_limit_control](/api-reference/Piwik/ViewDataTable/Config#$show_limit_control) is true),
 - and more depending on the visualization.
 
 ### Rendering Process
@@ -26,13 +26,13 @@ The following process is used to render reports:
 - The display and request properties that require report data in order to determine a default
   value are defaulted. These properties are:
 
-  - [ViewDataTable\Config::$columns_to_display](/api-reference/Piwik/ViewDataTable/Config#$columns_to_display)
-  - [ViewDataTable\RequestConfig::$filter_sort_column](/api-reference/Piwik/ViewDataTable/RequestConfig#$filter_sort_column)
-  - [ViewDataTable\RequestConfig::$filter_sort_order](/api-reference/Piwik/ViewDataTable/RequestConfig#$filter_sort_order)
+  - [Config::$columns_to_display](/api-reference/Piwik/ViewDataTable/Config#$columns_to_display)
+  - [RequestConfig::$filter_sort_column](/api-reference/Piwik/ViewDataTable/RequestConfig#$filter_sort_column)
+  - [RequestConfig::$filter_sort_order](/api-reference/Piwik/ViewDataTable/RequestConfig#$filter_sort_order)
 
-- Priority filters are applied to the report (see [ViewDataTable\Config::$filters](/api-reference/Piwik/ViewDataTable/Config#$filters)).
+- Priority filters are applied to the report (see [Config::$filters](/api-reference/Piwik/ViewDataTable/Config#$filters)).
 - The filters that are applied to every report in the Reporting API (called **generic filters**)
-  are applied. (see [API\Request](/api-reference/Piwik/API/Request))
+  are applied. (see [Request](/api-reference/Piwik/API/Request))
 - The report's queued filters are applied.
 - A [View](/api-reference/Piwik/View) instance is created and rendered.
 
