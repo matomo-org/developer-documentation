@@ -91,7 +91,7 @@ This will make it possible to view raw report data without having to supply a **
 
 #### Installing the VisitorGenerator plugin
 
-Finally, you'll want to install a plugin that will help with development. [Download the VisitorGenerator plugin here](http://plugins.piwik.org/VisitorGenerator) and install it by extracting the archive's contents to your Piwik's **plugins** subdirectory.
+Finally, you'll want to install a plugin that will help with development. Within Piwik, go to the _Platform > Marketplace_ admin page. Click on the **installing a new plugin from the Marketplace** link and install the **VisitorGenerator** plugin.
 
 ### Add some test data
 

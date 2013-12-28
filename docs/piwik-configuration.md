@@ -28,7 +28,7 @@ This guide assumes that you:
 
 ## Piwik Configuration
 
-Piwik uses to mtehods to store configuration settings, the INI files in the **config** folder and **Options** which are persisted to the database. These methods are used by **Piwik Core** and should not be used by plugins. Plugins use a separate method of configuration [described below](#plugin-configuration).
+Piwik uses two methods to store configuration settings, the INI files in the **config** folder and **Options** which are persisted to the database. These methods are used by **Piwik Core** and should not be used by plugins. Plugins use a separate method of configuration [described below](#plugin-configuration).
 
 ### The INI files
 

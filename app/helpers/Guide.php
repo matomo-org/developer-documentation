@@ -159,16 +159,24 @@ class Guide {
             'file'         => 'working-with-piwiks-ui',
             'url'          => static::getUrl('working-with-piwiks-ui'),
             'description'  => 'Learn about Piwik\'s JavaScript code and how to write JavaScript for your plugin.',
-            'category'    => 'Piwik\'s UI'
+            'category'     => 'Piwik\'s UI'
         );
 
         $menu[] = array(
-            'title'        => 'Piwik configuration',
-            'file'         => 'piwik-configuration',
-            'url'          => static::getUrl('piwik-configuration'),
-            'description'  => 'Learn how Piwik is configured and how plugins can define their own configuration settings.',
+            'title'       => 'Piwik configuration',
+            'file'        => 'piwik-configuration',
+            'url'         => static::getUrl('piwik-configuration'),
+            'description' => 'Learn how Piwik is configured and how plugins can define their own configuration settings.',
             'category'    => 'Piwik Configuration'
         );
+
+        /*$menu[] = array(
+            'title'       => 'Piwik\'s INI configuration',
+            'file'        => 'piwiks-ini-configuration',
+            'url'         => static::getUrl('piwiks-ini-configuration'),
+            'description' => 'Learn how Piwik reads and manipulates the INI configuration settings.',
+            'category'    => 'Piwik Configuration'
+        );*/
 
         $menu[] = array(
             'title'       => 'Distributing your plugin',
