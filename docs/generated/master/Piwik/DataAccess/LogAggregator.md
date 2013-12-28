@@ -159,7 +159,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
       <div markdown="1" class="parameter">
       `$metrics` (`bool`|`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used:  - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS` - `Metrics::INDEX_MAX_ACTIONS` - `Metrics::INDEX_SUM_VISIT_LENGTH` - `Metrics::INDEX_BOUNCE_COUNT` - `Metrics::INDEX_NB_VISITS_CONVERTED`</div>
+      <div markdown="1" class="param-desc"> The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS` - `Metrics::INDEX_MAX_ACTIONS` - `Metrics::INDEX_SUM_VISIT_LENGTH` - `Metrics::INDEX_BOUNCE_COUNT` - `Metrics::INDEX_NB_VISITS_CONVERTED`</div>
 
       <div style="clear:both;"/>
 
@@ -305,7 +305,7 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
       <div markdown="1" class="parameter">
       `$metrics` (`bool`|`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> The set of metrics to calculate and return. If `false`, the query will select all of them. The following values can be used:  - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS`</div>
+      <div markdown="1" class="param-desc"> The set of metrics to calculate and return. If `false`, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS`</div>
 
       <div style="clear:both;"/>
 
@@ -325,7 +325,7 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
       <div markdown="1" class="parameter">
       `$joinLogActionOnColumn` (`bool`|`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array.  If a string is used for this parameter, the table alias is not suffixed (since there is only one column).</div>
+      <div markdown="1" class="param-desc"> One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed (since there is only one column).</div>
 
       <div style="clear:both;"/>
 

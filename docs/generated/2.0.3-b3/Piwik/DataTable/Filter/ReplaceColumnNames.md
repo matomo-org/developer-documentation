@@ -54,7 +54,7 @@ Constructor.
       <div markdown="1" class="parameter">
       `$mappingToApply` (`array`|`null`) &mdash;
 
-      <div markdown="1" class="param-desc"> The name mapping to apply. Must map old column names with new ones, eg,  array('OLD_COLUMN_NAME' => 'NEW_COLUMN NAME', 'OLD_COLUMN_NAME2' => 'NEW_COLUMN NAME2')  If null, [Metrics::$mappingFromIdToName](/api-reference/Piwik/Metrics#$mappingfromidtoname) is used.</div>
+      <div markdown="1" class="param-desc"> The name mapping to apply. Must map old column names with new ones, eg, array('OLD_COLUMN_NAME' => 'NEW_COLUMN NAME', 'OLD_COLUMN_NAME2' => 'NEW_COLUMN NAME2') If null, [Metrics::$mappingFromIdToName](/api-reference/Piwik/Metrics#$mappingfromidtoname) is used.</div>
 
       <div style="clear:both;"/>
 

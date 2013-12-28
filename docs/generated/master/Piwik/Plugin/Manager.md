@@ -92,7 +92,7 @@ Loads plugins that can be loaded.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">An array that maps plugin names with arrays of plugin information. Plugin information consists of the following entries:  - **activated**: Whether the plugin is activated. - **alwaysActivated**: Whether the plugin should always be activated, or not. - **uninstallable**: Whether the plugin is uninstallable or not. - **invalid**: If the plugin is invalid, this property will be set to true. If the plugin is not invalid, this property will not exist. - **info**: If the plugin was loaded, will hold the plugin information. See [Plugin::getInformation()](/api-reference/Piwik/Plugin#getinformation).</div>
+    <div markdown="1" class="param-desc">An array that maps plugin names with arrays of plugin information. Plugin information consists of the following entries: - **activated**: Whether the plugin is activated. - **alwaysActivated**: Whether the plugin should always be activated, or not. - **uninstallable**: Whether the plugin is uninstallable or not. - **invalid**: If the plugin is invalid, this property will be set to true. If the plugin is not invalid, this property will not exist. - **info**: If the plugin was loaded, will hold the plugin information. See [Plugin::getInformation()](/api-reference/Piwik/Plugin#getinformation).</div>
 
     <div style="clear:both;"/>
 
