@@ -106,11 +106,13 @@ $(document).ready(function () {
 
 <!-- Piwik -->
 <script type="text/javascript">
+
+    var _paq = _paq || [];
+    _paq.push(["setCookieDomain", "*.piwik.org"]);
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+        
     function track() {
-        var _paq = _paq || [];
-        _paq.push(["setCookieDomain", "*.piwik.org"]);
-        _paq.push(["trackPageView"]);
-        _paq.push(["enableLinkTracking"]);
 
         (function() {
             var u=(("https:" == document.location.protocol) ? "https" : "http") + "://demo.piwik.org/";
