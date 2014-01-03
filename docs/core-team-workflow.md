@@ -148,3 +148,14 @@ There are three mailing lists you can subscribe to and use to communicate with c
 ### Using IRC
 
 Some core team members are available via IRC at [irc.freenode.net/#piwik](irc://irc.freenode.net#piwik) ([webchat](http://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a)).
+
+### In the forums
+
+Check out the forums at [forum.piwik.org](http://forum.piwik.org)
+
+Join the community and share your tips, suggestions, or questions [in the forums](http://forum.piwik.org). Several team members and other community members will be happy to answer.
+
+### By email
+
+If you would like to join the Piwik community, [Get involved](http://piwik.org/get-involved/),
+and <a href='mailto:hello@piwik.org?subject=Join the Piwik team'>get in touch</a>.
