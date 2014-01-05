@@ -81,7 +81,7 @@ _URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSetting
 
     ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
-_URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getResolution&token\_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250_
+_URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token\_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250_
 
 *   Example: Graph Plotting User Screen Resolutions for the Current Month
 
