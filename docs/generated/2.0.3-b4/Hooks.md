@@ -708,7 +708,7 @@ Menu items should be added via the [addEntry()](/api-reference/Piwik/Menu/MenuTo
 
 Usages:
 
-[Plugin::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/API/API.php#L708), [Dashboard::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/Dashboard/Dashboard.php#L219), [ExampleUI::addTopMenuItems](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ExampleUI/ExampleUI.php#L48), [Feedback::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/Feedback/Feedback.php#L36), [LanguagesManager::showLanguagesSelector](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/LanguagesManager/LanguagesManager.php#L68), [MultiSites::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/MultiSites/MultiSites.php#L78), [ScheduledReports::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ScheduledReports/ScheduledReports.php#L464), [Widgetize::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/Widgetize/Widgetize.php#L36)
+[Plugin::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/API/API.php#L708), [Dashboard::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/Dashboard/Dashboard.php#L219), [ExampleUI::addTopMenuItems](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ExampleUI/ExampleUI.php#L48), [Feedback::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/Feedback/Feedback.php#L36), [LanguagesManager::showLanguagesSelector](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/LanguagesManager/LanguagesManager.php#L68), [MultiSites::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/MultiSites/MultiSites.php#L78), [ScheduledReports::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ScheduledReports/ScheduledReports.php#L463), [Widgetize::addTopMenu](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/Widgetize/Widgetize.php#L36)
 
 ## Provider
 
@@ -1080,7 +1080,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentDeactivation](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ScheduledReports/ScheduledReports.php#L446)
+[ScheduledReports::segmentDeactivation](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ScheduledReports/ScheduledReports.php#L445)
 
 ## Segments
 
@@ -1220,7 +1220,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/CoreAdminHome/CoreAdminHome.php#L50), [CorePluginsAdmin::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L43), [DBStats::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/DBStats/DBStats.php#L58), [PrivacyManager::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/PrivacyManager/PrivacyManager.php#L139), [ScheduledReports::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ScheduledReports/ScheduledReports.php#L419), [UserCountry::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/UserCountry/UserCountry.php#L67)
+[CoreAdminHome::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/CoreAdminHome/CoreAdminHome.php#L50), [CorePluginsAdmin::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L43), [DBStats::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/DBStats/DBStats.php#L58), [PrivacyManager::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/PrivacyManager/PrivacyManager.php#L139), [ScheduledReports::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ScheduledReports/ScheduledReports.php#L418), [UserCountry::getScheduledTasks](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/UserCountry/UserCountry.php#L67)
 
 ## Tracker
 
@@ -1602,7 +1602,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/CoreAdminHome/CoreAdminHome.php#L45), [Dashboard::deleteDashboardLayout](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/Dashboard/Dashboard.php#L248), [LanguagesManager::deleteUserLanguage](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/LanguagesManager/LanguagesManager.php#L110), [ScheduledReports::deleteUserReport](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ScheduledReports/ScheduledReports.php#L515)
+[CoreAdminHome::cleanupUser](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/CoreAdminHome/CoreAdminHome.php#L45), [Dashboard::deleteDashboardLayout](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/Dashboard/Dashboard.php#L248), [LanguagesManager::deleteUserLanguage](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/LanguagesManager/LanguagesManager.php#L110), [ScheduledReports::deleteUserReport](https://github.com/piwik/piwik/blob/2.0.3-b4/plugins/ScheduledReports/ScheduledReports.php#L514)
 
 
 ### UsersManager.updateUser.end
