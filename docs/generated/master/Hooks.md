@@ -1193,7 +1193,7 @@ Usages:
 - [TaskScheduler.getScheduledTasks](#taskschedulergetscheduledtasks)
 
 ### TaskScheduler.getScheduledTasks
-_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [102](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L102)_
+_Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [112](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L112)_
 
 Triggered during scheduled task execution. Collects all the tasks to run.
 
