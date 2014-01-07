@@ -686,7 +686,7 @@ Usages:
 
 
 ### Menu.Top.addItems
-_Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [115](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L115)_
+_Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [120](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L120)_
 
 Triggered when collecting all available menu items that are be displayed on the very top of every page, next to the login/logout links. Subscribe to this event if you want to add one or more items to the top menu.
 
