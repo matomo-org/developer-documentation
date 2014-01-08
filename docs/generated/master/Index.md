@@ -465,6 +465,7 @@ Index
 - [`isEqual()`](Piwik/DataTable/Row.md#isequal) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`isLater()`](Piwik/Date.md#islater) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`isEarlier()`](Piwik/Date.md#isearlier) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
+- [`isLeapYear()`](Piwik/Date.md#isleapyear) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`isToday()`](Piwik/Date.md#istoday) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`isLockPrivilegeGranted()`](Piwik/Db.md#islockprivilegegranted) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`IP`](Piwik/IP.md) &mdash; _Class in namespace_ `Piwik` 
