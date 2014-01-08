@@ -68,7 +68,7 @@ Callback Signature:
 
 
 ### API.getReportMetadata
-_Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [134](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L134)_
+_Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [205](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L205)_
 
 Triggered when gathering metadata for all available reports. Plugins that define new reports should use this event to make them available in via
 the metadata API. By doing so, the report will become available in scheduled reports
@@ -88,7 +88,7 @@ Usages:
 
 
 ### API.getReportMetadata.end
-_Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [172](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L172)_
+_Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [243](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L243)_
 
 Triggered after all available reports are collected. This event can be used to modify the report metadata of reports in other plugins. You
 could, for example, add custom metrics to every report or remove reports from the list
