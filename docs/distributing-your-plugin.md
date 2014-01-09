@@ -90,13 +90,13 @@ The following fields are not required for publishing a plugin, but you may want 
   }
   ```
 
-  By default the specified version defines the miniumum version but you can also use another comparison by prefixing the version with one of the following values: `<>`, `!=`, `>`, `>=`, `<`, `<=`, `==`.
+  By default the specified version defines the miniumum version but you can define another comparison by prefixing the version with one of the following values: `<>`, `!=`, `>`, `>=`, `<`, `<=`, `==`.
 
   For example:
 
   ```
   "require": {
-    "piwik": "<=2.2.0", // requires Piwik 2.2.0 or lower
+    "piwik": "<=2.2.0", // requires Piwik 2.2.0 or lower but at least Piwik 2.0.0
     "php": ">=5.4.0" // requires at least PHP 5.4.0
   }
   ```
