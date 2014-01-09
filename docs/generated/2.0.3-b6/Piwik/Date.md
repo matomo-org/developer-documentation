@@ -38,6 +38,7 @@ The class defines the following methods:
 - [`getTimestamp()`](#gettimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
 - [`isLater()`](#islater) &mdash; Returns `true` if the current date is older than the given `$date`.
 - [`isEarlier()`](#isearlier) &mdash; Returns `true` if the current date is earlier than the given `$date`.
+- [`isLeapYear()`](#isleapyear) &mdash; Returns `true` if the current year is a leap year, false otherwise.
 - [`toString()`](#tostring) &mdash; Converts this date to the requested string format.
 - [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Date#tostring).
 - [`compareWeek()`](#compareweek) &mdash; Performs three-way comparison of the week of the current date against the given `$date`'s week.
@@ -278,6 +279,16 @@ Returns `true` if the current date is earlier than the given `$date`.
       </div>
    </li>
    </ul>
+- It returns a `bool` value.
+
+<a name="isleapyear" id="isleapyear"></a>
+<a name="isLeapYear" id="isLeapYear"></a>
+### `isLeapYear()`
+
+Returns `true` if the current year is a leap year, false otherwise.
+
+#### Signature
+
 - It returns a `bool` value.
 
 <a name="tostring" id="tostring"></a>
