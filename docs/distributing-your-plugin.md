@@ -79,7 +79,7 @@ The **plugin.json** file must contain the following information:
 
 The following fields are not required for publishing a plugin, but you may want to add them:
 
-* **require** - Defines packages required by this plugin. The plugin will not be installed unless those requirements can be met. Two packages are supported at the moment: 'piwik' and 'php'. 
+* **require** - Defines packages required by this plugin. The plugin will not be installed unless those requirements can be met. Two packages are supported at the moment: `piwik` and `php`. 
 
   For example:
 
@@ -90,7 +90,7 @@ The following fields are not required for publishing a plugin, but you may want 
   }
   ```
 
-By default the specified version defines the miniumum version but you can also use another comparison by prefixing the version with one of the following values: `<>`, `!=`, `>`, `>=`, `<`, `<=`, `==`.
+  By default the specified version defines the miniumum version but you can also use another comparison by prefixing the version with one of the following values: `<>`, `!=`, `>`, `>=`, `<`, `<=`, `==`.
 
   For example:
 
