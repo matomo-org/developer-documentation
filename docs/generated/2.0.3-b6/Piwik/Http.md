@@ -145,7 +145,7 @@ Sends an HTTP request using best available transport method.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`bool`|`string`) &mdash;
-    <div markdown="1" class="param-desc">If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success:  - **status**: the HTTP status code - **headers**: the HTTP headers - **data**: the HTTP response data  `false` is still returned on failure.</div>
+    <div markdown="1" class="param-desc">If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success: - **status**: the HTTP status code - **headers**: the HTTP headers - **data**: the HTTP response data `false` is still returned on failure.</div>
 
     <div style="clear:both;"/>
 

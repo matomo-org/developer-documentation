@@ -83,7 +83,7 @@ Constructor.
       <div markdown="1" class="parameter">
       `$row` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> An array with the following structure:  array( Row::COLUMNS => array('label' => 'Piwik', 'column1' => 42, 'visits' => 657, 'time_spent' => 155744), Row::METADATA => array('logo' => 'test.png'), Row::DATATABLE_ASSOCIATED => $subtable // DataTable object // (but in the row only the ID will be stored) )</div>
+      <div markdown="1" class="param-desc"> An array with the following structure: array( Row::COLUMNS => array('label' => 'Piwik', 'column1' => 42, 'visits' => 657, 'time_spent' => 155744), Row::METADATA => array('logo' => 'test.png'), Row::DATATABLE_ASSOCIATED => $subtable // DataTable object // (but in the row only the ID will be stored) )</div>
 
       <div style="clear:both;"/>
 
@@ -253,7 +253,7 @@ Returns the array containing all the columns.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Example:  array( 'column1'   => VALUE, 'label'     => 'www.php.net' 'nb_visits' => 15894, )</div>
+    <div markdown="1" class="param-desc">Example: array( 'column1'   => VALUE, 'label'     => 'www.php.net' 'nb_visits' => 15894, )</div>
 
     <div style="clear:both;"/>
 

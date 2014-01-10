@@ -168,7 +168,7 @@ DataTables are summed recursively so subtables will be summed as well.
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Returns the row counts of each aggregated report before truncation, eg,  array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... )</div>
+    <div markdown="1" class="param-desc">Returns the row counts of each aggregated report before truncation, eg, array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... )</div>
 
     <div style="clear:both;"/>
 
@@ -213,7 +213,7 @@ Aggregates one or more metrics for every subperiod of the current period and ins
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`|`int`) &mdash;
-    <div markdown="1" class="param-desc">Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`,  array( 'nb_visits' => 3040, 'nb_hits' => 405 )  could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.</div>
+    <div markdown="1" class="param-desc">Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, array( 'nb_visits' => 3040, 'nb_hits' => 405 ) could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.</div>
 
     <div style="clear:both;"/>
 
@@ -236,7 +236,7 @@ Caches multiple numeric records in the archive for this processor's site, period
       <div markdown="1" class="parameter">
       `$numericRecords` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> A name-value mapping of numeric values that should be archived, eg,  array('Referrers_distinctKeywords' => 23, 'Referrers_distinctCampaigns' => 234)</div>
+      <div markdown="1" class="param-desc"> A name-value mapping of numeric values that should be archived, eg, array('Referrers_distinctKeywords' => 23, 'Referrers_distinctCampaigns' => 234)</div>
 
       <div style="clear:both;"/>
 
