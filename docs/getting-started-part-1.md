@@ -54,6 +54,9 @@ Well, we're not really sure. It might be hard to get your idea to scale, or mayb
 Before we start extending Piwik, let's make sure you have the tools you'll need to do so. Make sure you have the following installed:
 
 - **A PHP IDE or a text editor.** We who work on Piwik reccommend you use [PHPStorm](#), a very powerful IDE built specifically for developing in PHP.
+  
+  _Note: We have published our [customized PSR coding style XML file](https://github.com/piwik/piwik/tree/master/misc/others/phpstorm-codestyles) for Phpstorm that you can use._
+
 - **A webserver,** such as [Apache](#) or [Nginx](#).
 - **[git](#)** so you can work with the latest Piwik source code.
 - **[composer](http://getcomposer.org/)** so you can install the PHP libraries Piwik uses.

@@ -162,7 +162,7 @@ class Guide {
             'category'     => 'Piwik\'s UI'
         );
 
-        $menu[] = array(
+        $menu[] = array( // TODO: finish splitting up.
             'title'       => 'Piwik configuration',
             'file'        => 'piwik-configuration',
             'url'         => static::getUrl('piwik-configuration'),
@@ -170,13 +170,13 @@ class Guide {
             'category'    => 'Piwik Configuration'
         );
 
-        /*$menu[] = array(
+        $menu[] = array(
             'title'       => 'Piwik\'s INI configuration',
             'file'        => 'piwiks-ini-configuration',
             'url'         => static::getUrl('piwiks-ini-configuration'),
             'description' => 'Learn how Piwik reads and manipulates the INI configuration settings.',
             'category'    => 'Piwik Configuration'
-        );*/
+        );
 
         $menu[] = array(
             'title'       => 'Distributing your plugin',
@@ -186,12 +186,12 @@ class Guide {
             'category'    => 'Distributing your plugin'
         );
 
-        // TODO: why did I put scheduled tasks here?
+        // TODO: create guide for scheduled tasks
         $menu[] = array(
             'title'       => 'Piwik\'s extensibility points',
             'file'        => 'piwiks-extensibility-points',
             'url'         => static::getUrl('piwiks-extensibility-points'),
-            'description' => 'Learn about everything that allows Piwik to be extended including, the eventing system, report metadata, scheduled tasks and, of course, plugins themselves.',
+            'description' => 'Learn about everything that allows Piwik to be extended including, the eventing system, report metadata, and plugins themselves.',
             'category'    => 'Piwik Internals'
         );
 

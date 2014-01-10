@@ -209,9 +209,7 @@ The following are a list of guidelines and requirements for contributions to Piw
 
 * **Make sure your source code files are encoded in UTF8.**
 
-TODO: where to put these?
-*   Several Piwik devs are using Phpstorm IDE. We have published our [customized PSR coding style xml file](https://github.com/piwik/piwik/tree/master/misc/others/phpstorm-codestyles) for Phpstorm if you wish to reuse it.
-*   Files in Piwik's Git repository are stored using Linux EOL markers (LF).
+* **Make sure lines end with Linux EOL markers (LF).** To learn how to let git manage line endings for you, read [this](https://help.github.com/articles/dealing-with-line-endings#platform-all).
 
 ### Coding Considerations
 

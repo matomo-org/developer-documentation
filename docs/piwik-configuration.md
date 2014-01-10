@@ -30,13 +30,6 @@ This guide assumes that you:
 
 Piwik uses two methods to store configuration settings, the INI files in the **config** folder and **Options** which are persisted to the database. These methods are used by **Piwik Core** and should not be used by plugins. Plugins use a separate method of configuration [described below](#plugin-configuration).
 
-### The INI files
-
-INI configuration options are stored in both the **config/config.ini.php** and **config/global.ini.php** files. The **global.ini.php** file contains the default values for configuration options. If an option does not exist in **config.ini.php** the value in **global.ini.php** is used.
-
-Plugins and other code can access and modify INI config options using the [Piwik\Config](#) class.
-
-_To learn more about individual configuration options, read the documentation in [global.ini.php](#https://github.com/piwik/piwik/blob/master/config/global.ini.php)._
 
 ### Options
 
@@ -100,7 +93,5 @@ Plugins can define their own configuration options by creating a class named **S
 Plugins that do this will cause new sections to appear in the _Settings > Plugins_ admin page:
 
 TODO: image of result of above code
-
-TODO: how do you access plugin settings?
 
 _See the [ExampleSettingsPlugin](#) to see what other things can be done._
