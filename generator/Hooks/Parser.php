@@ -146,7 +146,7 @@ class Parser {
             return $parsedDescription;
         }));
 
-        $documentation = $twig->render('hooks.twig', $viewVariables);
+        $documentation = $twig->render('events.twig', $viewVariables);
 
         file_put_contents($target, $documentation);
     }

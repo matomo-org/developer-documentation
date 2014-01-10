@@ -333,7 +333,7 @@ _See [sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues) to
       <div markdown="1" class="parameter">
       `$varType` (`string`|`null`) &mdash;
 
-      <div markdown="1" class="param-desc"> Expected type of the request variable. This parameters value must be one of the following: `'array'`, `'int'`, `'integer'`, `'string'`, `'json'`. If `'json'`, the string value will be `json_decode`-d and then sanitized.</div>
+      <div markdown="1" class="param-desc"> Expected type of the request variable. This parameters value must be one of the following: `'array'`, `'int'`, `'integer'`, `'string'`, `'json'`.  If `'json'`, the string value will be `json_decode`-d and then sanitized.</div>
 
       <div style="clear:both;"/>
 
@@ -429,7 +429,7 @@ to fill the `IN (...)` part of a query.
       <div markdown="1" class="parameter">
       `$fields` (`array`|`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The names of the mysql table fields to bind, e.g. `array(fieldName1, fieldName2, fieldName3)`. _Note: The content of the array isn't important, just its length._</div>
+      <div markdown="1" class="param-desc"> The names of the mysql table fields to bind, e.g. `array(fieldName1, fieldName2, fieldName3)`.  _Note: The content of the array isn't important, just its length._</div>
 
       <div style="clear:both;"/>
 

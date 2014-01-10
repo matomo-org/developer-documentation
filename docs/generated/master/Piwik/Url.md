@@ -282,7 +282,7 @@ Returns an array mapping query paramater names with query parameter values for t
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"` this will return: array( 'param1' => string 'value1', 'param2' => string 'value2' )</div>
+    <div markdown="1" class="param-desc">If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"` this will return:  array( 'param1' => string 'value1', 'param2' => string 'value2' )</div>
 
     <div style="clear:both;"/>
 

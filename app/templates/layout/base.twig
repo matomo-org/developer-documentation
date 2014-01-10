@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Piwik - Developer</title>
+    <title>{% if title|default is not empty %}{{ title }} - {% endif %}Piwik Analytics - Developer Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
@@ -14,7 +14,6 @@
 
 </head>
 <body>
-
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -49,7 +48,7 @@
 </div>
 
 {% block headline %}
-    {% if title is defined and title %}
+    {% if title is defined and title and (setPageHeader is not defined or setPageHeader) %}
         <div class="container">
             <div class="col-md-12">
                 <div class="page-header"><h1>{{ title }}</h1></div>

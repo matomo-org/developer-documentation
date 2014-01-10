@@ -61,7 +61,7 @@ class ApiReference {
         $menu[] = array(
             'title'        => 'Events',
             'file'         => 'generated/master/Hooks',
-            'url'          => static::getUrl('hooks'),
+            'url'          => static::getUrl('events'),
             'description'  => 'View reference docs for every event posted by Piwik and its Core Plugins.',
             'callToAction' => 'Browse',
             'category'     => 'PHP Documentation'

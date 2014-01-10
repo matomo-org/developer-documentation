@@ -1267,7 +1267,7 @@ The result of this method is intended for use with the [ArchiveProcessor::insert
   <li>
     <div markdown="1" class="parameter">
     _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">The array of serialized DataTables: array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae', // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige', // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE', // etc. );</div>
+    <div markdown="1" class="param-desc">The array of serialized DataTables:  array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae',  // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige',  // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE',  // etc. );</div>
 
     <div style="clear:both;"/>
 
@@ -1324,7 +1324,7 @@ You can add row metadata with this method.
       <div markdown="1" class="parameter">
       `$array` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Array with the following structure array( // row1 array( Row::COLUMNS => array( col1_name => value1, col2_name => value2, ...), Row::METADATA => array( metadata1_name => value1,  ...), // see Row ), // row2 array( ... ), )</div>
+      <div markdown="1" class="param-desc"> Array with the following structure  array( // row1 array( Row::COLUMNS => array( col1_name => value1, col2_name => value2, ...), Row::METADATA => array( metadata1_name => value1,  ...), // see Row ), // row2 array( ... ), )</div>
 
       <div style="clear:both;"/>
 
@@ -1350,7 +1350,7 @@ Row metadata cannot be added with this method.
       <div markdown="1" class="parameter">
       `$array` (`array`) &mdash;
 
-      <div markdown="1" class="param-desc"> Array with the following structure: array( array( col1_name => valueA, col2_name => valueC, ...), array( col1_name => valueB, col2_name => valueD, ...), )</div>
+      <div markdown="1" class="param-desc"> Array with the following structure:  array( array( col1_name => valueA, col2_name => valueC, ...), array( col1_name => valueB, col2_name => valueD, ...), )</div>
 
       <div style="clear:both;"/>
 
@@ -1674,7 +1674,7 @@ Returns a new DataTable in which the rows of this table are replaced with the ag
       <div markdown="1" class="parameter">
       `$labelColumn` (`string`|`bool`) &mdash;
 
-      <div markdown="1" class="param-desc"> If supplied the label of the parent row will be added to a new column in each subtable row. If set to, `'label'` each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.</div>
+      <div markdown="1" class="param-desc"> If supplied the label of the parent row will be added to a new column in each subtable row.  If set to, `'label'` each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.</div>
 
       <div style="clear:both;"/>
 

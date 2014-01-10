@@ -1,4 +1,4 @@
-Hooks
+Events
 ==========
 
 This is a complete list of available hooks.
@@ -64,7 +64,7 @@ Callback Signature:
 
 - `mixed` `$returnedValue` The API method's return value. Can be an object, such as a [DataTable](/api-reference/Piwik/DataTable) instance. could be a [DataTable](/api-reference/Piwik/DataTable).
 
-- `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
+- `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data:  - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
 
 ### API.getReportMetadata
@@ -78,9 +78,9 @@ API will automatically have access to the new report.
 Callback Signature:
 <pre><code>function(&amp;$availableReports, $parameters)</code></pre>
 
-- `string` `&$availableReports` The list of available reports. Append to this list to make a report available. Every element of this array must contain the following information: - **category**: A translated string describing the report's category. - **name**: The translated display title of the report. - **module**: The plugin of the report. - **action**: The API method that serves the report. The following information is optional: - **dimension**: The report's [dimension](/guides/all-about-analytics-data#dimensions) if any. - **metrics**: An array mapping metric names with their display names. - **metricsDocumentation**: An array mapping metric names with their translated documentation. - **processedMetrics**: The array of metrics in the report that are calculated using existing metrics. Can be set to `false` if the report contains no processed metrics. - **order**: The order of the report in the list of reports with the same category.
+- `string` `&$availableReports` The list of available reports. Append to this list to make a report available.  Every element of this array must contain the following information:  - **category**: A translated string describing the report's category. - **name**: The translated display title of the report. - **module**: The plugin of the report. - **action**: The API method that serves the report.  The following information is optional:  - **dimension**: The report's [dimension](/guides/all-about-analytics-data#dimensions) if any. - **metrics**: An array mapping metric names with their display names. - **metricsDocumentation**: An array mapping metric names with their translated documentation. - **processedMetrics**: The array of metrics in the report that are calculated using existing metrics. Can be set to `false` if the report contains no processed metrics. - **order**: The order of the report in the list of reports with the same category.
 
-- `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some reports depend on this data. For example, Goals reports depend on the site IDs being requested. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`. TODO: put dimensions section in all about analytics data
+- `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some reports depend on this data. For example, Goals reports depend on the site IDs being requested. Contains the following information:  - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.  TODO: put dimensions section in all about analytics data
 
 Usages:
 
@@ -99,7 +99,7 @@ Callback Signature:
 
 - `array` `&$availableReports` List of all report metadata. Read the [API.getReportMetadata](/api-reference/hooks#apigetreportmetadata) docs to see what this array contains.
 
-- `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some report depend on this data. For example, Goals reports depend on the site IDs being request. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
+- `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some report depend on this data. For example, Goals reports depend on the site IDs being request. Contains the following information:  - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
 
 Usages:
 
@@ -130,7 +130,7 @@ Triggered when gathering all available segment dimensions. This event can be use
 Callback Signature:
 <pre><code>function(&amp;$segments, $idSites)</code></pre>
 
-- `array` `$dimensions` The list of available segment dimensions. Append to this list to add new segments. Each element in this list must contain the following information: - **type**: Either `'metric'` or `'dimension'`. `'metric'` means the value is a numeric and `'dimension'` means it is a string. Also, `'metric'` values will be displayed under **Visit (metrics)** in the Segment Editor. - **category**: The segment category name. This can be an existing segment category visible in the segment editor. - **name**: The pretty name of the segment. Can be a translation token. - **segment**: The segment name, eg, `'visitIp'` or `'searches'`. - **acceptedValues**: A string describing one or two exacmple values, eg `'13.54.122.1, etc.'`. - **sqlSegment**: The table column this segment will segment by. For example, `'log_visit.location_ip'` for the **visitIp** segment. - **sqlFilter**: A PHP callback to apply to segment values before they are used in SQL. - **permission**: True if the current user has view access to this segment, false if otherwise.
+- `array` `$dimensions` The list of available segment dimensions. Append to this list to add new segments. Each element in this list must contain the following information:  - **type**: Either `'metric'` or `'dimension'`. `'metric'` means the value is a numeric and `'dimension'` means it is a string. Also, `'metric'` values will be displayed under **Visit (metrics)** in the Segment Editor. - **category**: The segment category name. This can be an existing segment category visible in the segment editor. - **name**: The pretty name of the segment. Can be a translation token. - **segment**: The segment name, eg, `'visitIp'` or `'searches'`. - **acceptedValues**: A string describing one or two exacmple values, eg `'13.54.122.1, etc.'`. - **sqlSegment**: The table column this segment will segment by. For example, `'log_visit.location_ip'` for the **visitIp** segment. - **sqlFilter**: A PHP callback to apply to segment values before they are used in SQL. - **permission**: True if the current user has view access to this segment, false if otherwise.
 
 - `array` `$idSites` The list of site IDs we're getting the available segments for. Some segments (such as Goal segments) depend on the site.
 
@@ -213,7 +213,7 @@ Callback Signature:
 
 - `mixed` `$returnedValue` The API method's return value. Can be an object, such as a [DataTable](/api-reference/Piwik/DataTable) instance.
 
-- `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
+- `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data:  - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
 ## ArchiveProcessor
 
@@ -458,7 +458,7 @@ they can use this event to make sure their reports can be viewed on Goals pages.
 Callback Signature:
 <pre><code>function(&amp;$reportsWithGoals)</code></pre>
 
-- `array` `&$reportsWithGoals` The list of arrays describing reports that have Goal metrics. Each element of this array must be an array with the following properties: - **category**: The report category. This should be a translated string. - **name**: The report's translated name. - **module**: The plugin the report is in, eg, `'UserCountry'`. - **action**: The API method of the report, eg, `'getCountry'`.
+- `array` `&$reportsWithGoals` The list of arrays describing reports that have Goal metrics. Each element of this array must be an array with the following properties:  - **category**: The report category. This should be a translated string. - **name**: The report's translated name. - **module**: The plugin the report is in, eg, `'UserCountry'`. - **action**: The API method of the report, eg, `'getCountry'`.
 
 Usages:
 
@@ -1136,7 +1136,7 @@ SegmentEditor API._
 Callback Signature:
 <pre><code>function(&amp;$segmentsToProcess)</code></pre>
 
-- `array` `&$segmentsToProcess` List of segment definitions, eg, array( 'browserCode=ff;resolution=800x600', 'country=jp;city=Tokyo' ) Add segments to this array in your event handler.
+- `array` `&$segmentsToProcess` List of segment definitions, eg,  array( 'browserCode=ff;resolution=800x600', 'country=jp;city=Tokyo' )  Add segments to this array in your event handler.
 
 Usages:
 
@@ -1163,7 +1163,7 @@ SegmentEditor API._
 Callback Signature:
 <pre><code>function(&amp;$segments, $idSite)</code></pre>
 
-- `array` `$segmentsToProcess` List of segment definitions, eg, array( 'browserCode=ff;resolution=800x600', 'country=JP;city=Tokyo' ) Add segments to this array in your event handler.
+- `array` `$segmentsToProcess` List of segment definitions, eg,  array( 'browserCode=ff;resolution=800x600', 'country=JP;city=Tokyo' )  Add segments to this array in your event handler.
 
 - `int` `$idSite` The ID of the site to get segments for.
 
@@ -1302,7 +1302,7 @@ logic.
 Callback Signature:
 <pre><code>function(&amp;$searchEngineInformation, $this-&gt;referrerUrl)</code></pre>
 
-- `array` `&$searchEngineInformation` An array with the following information: - **name**: The search engine name. - **keywords**: The search keywords used. This parameter is initialized to the results of Piwik's default search engine detection logic.
+- `array` `&$searchEngineInformation` An array with the following information:  - **name**: The search engine name. - **keywords**: The search keywords used.  This parameter is initialized to the results of Piwik's default search engine detection logic.
 
 - `string`
 
@@ -1329,7 +1329,7 @@ Triggered before a connection to the database is established by the Tracker. Thi
 Callback Signature:
 <pre><code>function(&amp;$configDb)</code></pre>
 
-- `array` `$dbInfos` Reference to an array containing database connection info, including: - **host**: The host name or IP address to the MySQL database. - **username**: The username to use when connecting to the database. - **password**: The password to use when connecting to the database. - **dbname**: The name of the Piwik MySQL database. - **port**: The MySQL database port to use. - **adapter**: either `'PDO_MYSQL'` or `'MYSQLI'`
+- `array` `$dbInfos` Reference to an array containing database connection info, including:  - **host**: The host name or IP address to the MySQL database. - **username**: The username to use when connecting to the database. - **password**: The password to use when connecting to the database. - **dbname**: The name of the Piwik MySQL database. - **port**: The MySQL database port to use. - **adapter**: either `'PDO_MYSQL'` or `'MYSQLI'`
 
 
 ### Tracker.getVisitFieldsToPersist
