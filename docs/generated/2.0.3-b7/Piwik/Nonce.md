@@ -23,6 +23,7 @@ The class defines the following methods:
 - [`discardNonce()`](#discardnonce) &mdash; Force expiration of the current nonce.
 - [`getOrigin()`](#getorigin) &mdash; Returns the **Origin** HTTP header or `false` if not found.
 - [`getAcceptableOrigins()`](#getacceptableorigins) &mdash; Returns a list acceptable values for the HTTP **Origin** header.
+- [`checkNonce()`](#checknonce) &mdash; Verifies and discards a nonce.
 
 <a name="getnonce" id="getnonce"></a>
 <a name="getNonce" id="getNonce"></a>
@@ -165,4 +166,40 @@ Returns a list acceptable values for the HTTP **Origin** header.
 #### Signature
 
 - It returns a `array` value.
+
+<a name="checknonce" id="checknonce"></a>
+<a name="checkNonce" id="checkNonce"></a>
+### `checkNonce()`
+
+Verifies and discards a nonce.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$nonceName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$nonce` (`string`|`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> The nonce from the client. If `null`, the value from the **nonce** query parameter is used.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the nonce is invalid. See {@link verifyNonce()}.
 

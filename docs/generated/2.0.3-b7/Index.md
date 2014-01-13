@@ -99,6 +99,7 @@ Index
 - [`createDatabaseObject()`](Piwik/Db.md#createdatabaseobject) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`copy()`](Piwik/Filesystem.md#copy) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`copyRecursive()`](Piwik/Filesystem.md#copyrecursive) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
+- [`checkNonce()`](Piwik/Nonce.md#checknonce) &mdash; _Method in class_ [`Nonce`](Piwik/Nonce.md)
 - [`$context`](Piwik/Notification.md#$context) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`checkUserIsSuperUserOrTheUser()`](Piwik/Piwik.md#checkuserissuperuserortheuser) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`checkUserIsNotAnonymous()`](Piwik/Piwik.md#checkuserisnotanonymous) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
