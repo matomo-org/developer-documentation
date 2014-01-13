@@ -1609,7 +1609,7 @@ Callback Signature:
 
 
 ### UsersManager.deleteUser
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [664](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L664)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [667](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L667)_
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
