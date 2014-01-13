@@ -1495,7 +1495,7 @@ Usages:
 ### Tracker.setVisitorIp
 _Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [101](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L101)_
 
-Triggered after visits are tested for exclusion so plugins can modify the IP address persisted with a visit. This event is primarily used by the **AnonymizeIP** plugin to anonymize IP addresses.
+Triggered after visits are tested for exclusion so plugins can modify the IP address persisted with a visit. This event is primarily used by the **PrivacyManager** plugin to anonymize IP addresses.
 
 Callback Signature:
 <pre><code>function(&amp;$this-&gt;visitorInfo[&#039;location_ip&#039;])</code></pre>
