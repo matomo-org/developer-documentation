@@ -763,6 +763,28 @@ Callback Signature:
 
 - `string` `$hostname` The full hostname.
 
+## Referrer
+
+- [Referrer.addSearchEngineUrls](#referreraddsearchengineurls)
+- [Referrer.addSocialUrls](#referreraddsocialurls)
+
+### Referrer.addSearchEngineUrls
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [735](https://github.com/piwik/piwik/blob/master/core/Common.php#L735)_
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$searchEngines)</code></pre>
+
+
+### Referrer.addSocialUrls
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [774](https://github.com/piwik/piwik/blob/master/core/Common.php#L774)_
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$socialUrls)</code></pre>
+
 ## Reporting
 
 - [Reporting.getDatabaseConfig](#reportinggetdatabaseconfig)
