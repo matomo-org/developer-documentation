@@ -3,6 +3,18 @@ Events
 
 This is a complete list of available hooks.
 
+## Access
+
+- [Access.createAccessSingleton](#accesscreateaccesssingleton)
+
+### Access.createAccessSingleton
+_Defined in [Piwik/Access](https://github.com/piwik/piwik/blob/master/core/Access.php) in line [50](https://github.com/piwik/piwik/blob/master/core/Access.php#L50)_
+
+
+
+Callback Signature:
+<pre><code>function(&amp;self::$instance)</code></pre>
+
 ## API
 
 - [API.$pluginName.$methodName](#apipluginnamemethodname)
