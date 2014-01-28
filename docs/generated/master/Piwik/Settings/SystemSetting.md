@@ -5,7 +5,7 @@ SystemSetting
 
 Describes a system wide setting.
 
-Only the super user can change this type of setting and
+Only the Super User can change this type of setting and
 the value of this setting will affect all users.
 
 See [Settings](/api-reference/Piwik/Plugin/Settings).
