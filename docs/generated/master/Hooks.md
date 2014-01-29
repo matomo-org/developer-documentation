@@ -1643,7 +1643,7 @@ Usages:
 - [UsersManager.updateUser.end](#usersmanagerupdateuserend)
 
 ### UsersManager.addUser.end
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [348](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L348)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [350](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L350)_
 
 Triggered after a new user is created.
 
@@ -1654,7 +1654,7 @@ Callback Signature:
 
 
 ### UsersManager.deleteUser
-_Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php) in line [267](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php#L267)_
+_Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php) in line [268](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php#L268)_
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
@@ -1670,7 +1670,7 @@ Usages:
 
 
 ### UsersManager.updateUser.end
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [438](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L438)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [440](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L440)_
 
 Triggered after an existing user has been updated.
 
