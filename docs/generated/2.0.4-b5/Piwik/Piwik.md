@@ -14,16 +14,15 @@ Methods
 The class defines the following methods:
 
 - [`getCurrentUserEmail()`](#getcurrentuseremail) &mdash; Returns the current user's email address.
-- [`getSuperUserLogin()`](#getsuperuserlogin) &mdash; Returns the super user's username.
-- [`getSuperUserEmail()`](#getsuperuseremail) &mdash; Returns the super user's email address.
 - [`getCurrentUserLogin()`](#getcurrentuserlogin) &mdash; Returns the current user's username.
 - [`getCurrentUserTokenAuth()`](#getcurrentusertokenauth) &mdash; Returns the current user's token auth.
-- [`isUserIsSuperUserOrTheUser()`](#isuserissuperuserortheuser) &mdash; Returns `true` if the current user is either the super user or the user specified by `$theUser`.
-- [`checkUserIsSuperUserOrTheUser()`](#checkuserissuperuserortheuser) &mdash; Check that the current user is either the specified user or the superuser.
-- [`isUserIsSuperUser()`](#isuserissuperuser) &mdash; Returns true if the current user is the Super User.
+- [`hasUserSuperUserAccessOrIsTheUser()`](#hasusersuperuseraccessoristheuser) &mdash; Returns `true` if the current user is either the Super User or the user specified by `$theUser`.
+- [`checkUserHasSuperUserAccessOrIsTheUser()`](#checkuserhassuperuseraccessoristheuser) &mdash; Check that the current user is either the specified user or the superuser.
+- [`hasTheUserSuperUserAccess()`](#hastheusersuperuseraccess) &mdash; Check whether the given user has superuser access.
+- [`hasUserSuperUserAccess()`](#hasusersuperuseraccess) &mdash; Returns true if the current user has Super User access.
 - [`isUserIsAnonymous()`](#isuserisanonymous) &mdash; Returns true if the current user is the special **anonymous** user or not.
 - [`checkUserIsNotAnonymous()`](#checkuserisnotanonymous) &mdash; Checks that the user is not the anonymous user.
-- [`checkUserIsSuperUser()`](#checkuserissuperuser) &mdash; Check that the current user is the superuser.
+- [`checkUserHasSuperUserAccess()`](#checkuserhassuperuseraccess) &mdash; Check that the current user has superuser access.
 - [`isUserHasAdminAccess()`](#isuserhasadminaccess) &mdash; Returns `true` if the user has admin access to the requested sites, `false` if otherwise.
 - [`checkUserHasAdminAccess()`](#checkuserhasadminaccess) &mdash; Checks that the current user has admin access to the requested list of sites.
 - [`isUserHasSomeAdminAccess()`](#isuserhassomeadminaccess) &mdash; Returns `true` if the current user has admin access to at least one site.
@@ -43,26 +42,6 @@ The class defines the following methods:
 ### `getCurrentUserEmail()`
 
 Returns the current user's email address.
-
-#### Signature
-
-- It returns a `string` value.
-
-<a name="getsuperuserlogin" id="getsuperuserlogin"></a>
-<a name="getSuperUserLogin" id="getSuperUserLogin"></a>
-### `getSuperUserLogin()`
-
-Returns the super user's username.
-
-#### Signature
-
-- It returns a `string` value.
-
-<a name="getsuperuseremail" id="getsuperuseremail"></a>
-<a name="getSuperUserEmail" id="getSuperUserEmail"></a>
-### `getSuperUserEmail()`
-
-Returns the super user's email address.
 
 #### Signature
 
@@ -88,11 +67,11 @@ Returns the current user's token auth.
 
 - It returns a `string` value.
 
-<a name="isuserissuperuserortheuser" id="isuserissuperuserortheuser"></a>
-<a name="isUserIsSuperUserOrTheUser" id="isUserIsSuperUserOrTheUser"></a>
-### `isUserIsSuperUserOrTheUser()`
+<a name="hasusersuperuseraccessoristheuser" id="hasusersuperuseraccessoristheuser"></a>
+<a name="hasUserSuperUserAccessOrIsTheUser" id="hasUserSuperUserAccessOrIsTheUser"></a>
+### `hasUserSuperUserAccessOrIsTheUser()`
 
-Returns `true` if the current user is either the super user or the user specified by `$theUser`.
+Returns `true` if the current user is either the Super User or the user specified by `$theUser`.
 
 #### Signature
 
@@ -112,9 +91,9 @@ Returns `true` if the current user is either the super user or the user specifie
    </ul>
 - It returns a `bool` value.
 
-<a name="checkuserissuperuserortheuser" id="checkuserissuperuserortheuser"></a>
-<a name="checkUserIsSuperUserOrTheUser" id="checkUserIsSuperUserOrTheUser"></a>
-### `checkUserIsSuperUserOrTheUser()`
+<a name="checkuserhassuperuseraccessoristheuser" id="checkuserhassuperuseraccessoristheuser"></a>
+<a name="checkUserHasSuperUserAccessOrIsTheUser" id="checkUserHasSuperUserAccessOrIsTheUser"></a>
+### `checkUserHasSuperUserAccessOrIsTheUser()`
 
 Check that the current user is either the specified user or the superuser.
 
@@ -136,13 +115,37 @@ Check that the current user is either the specified user or the superuser.
    </ul>
 - It does not return anything.
 - It throws one of the following exceptions:
-    - `NoAccessException` &mdash; If the user is neither the super user nor the user `$theUser`.
+    - `NoAccessException` &mdash; If the user is neither the Super User nor the user `$theUser`.
 
-<a name="isuserissuperuser" id="isuserissuperuser"></a>
-<a name="isUserIsSuperUser" id="isUserIsSuperUser"></a>
-### `isUserIsSuperUser()`
+<a name="hastheusersuperuseraccess" id="hastheusersuperuseraccess"></a>
+<a name="hasTheUserSuperUserAccess" id="hasTheUserSuperUserAccess"></a>
+### `hasTheUserSuperUserAccess()`
 
-Returns true if the current user is the Super User.
+Check whether the given user has superuser access.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$theUser` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> A username.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `bool` value.
+
+<a name="hasusersuperuseraccess" id="hasusersuperuseraccess"></a>
+<a name="hasUserSuperUserAccess" id="hasUserSuperUserAccess"></a>
+### `hasUserSuperUserAccess()`
+
+Returns true if the current user has Super User access.
 
 #### Signature
 
@@ -170,11 +173,11 @@ Checks that the user is not the anonymous user.
 - It throws one of the following exceptions:
     - `NoAccessException` &mdash; if the current user is the anonymous user.
 
-<a name="checkuserissuperuser" id="checkuserissuperuser"></a>
-<a name="checkUserIsSuperUser" id="checkUserIsSuperUser"></a>
-### `checkUserIsSuperUser()`
+<a name="checkuserhassuperuseraccess" id="checkuserhassuperuseraccess"></a>
+<a name="checkUserHasSuperUserAccess" id="checkUserHasSuperUserAccess"></a>
+### `checkUserHasSuperUserAccess()`
 
-Check that the current user is the superuser.
+Check that the current user has superuser access.
 
 #### Signature
 
