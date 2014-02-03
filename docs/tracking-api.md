@@ -65,7 +65,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 
     * `token_auth` &mdash; 32 character authorization key used to authenticate the API request.
     * `cip` &mdash; Override value for the visitor IP (both IPv4 and IPv6 notations supported).
-    * `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is: `2011-04-05 00:11:42` (remember to URL encode the value!).
+    * `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is: `2011-04-05 00:11:42` (remember to URL encode the value!). The datetime must be sent in UTC timezone.
       _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](http://piwik.org/faq/how-to/#faq_59)._
     * `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). When specified, the Visitor ID will be "enforced". This means that if there is no recent visit with this visitor ID, a new one will be created. If a visit is found in the last 30 minutes with your specified Visitor Id, then the new action will be recorded to this existing visit.
     * `new_visit` &mdash; If set to 1, will force a new visit to be created for this action. This feature is also [available in Javascript](http://piwik.org/faq/how-to/#faq_187).
