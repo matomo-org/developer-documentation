@@ -10,7 +10,7 @@ Adds a summary row to DataTables that contains the sum of all other table rows.
     $dataTable->filter('AddSummaryRow');
 
     // use a human readable label for the summary row (instead of '-1')
-    $dataTable->filter('AddSummaryRow', array($labelSummaryRow = Piwik_Translate('General_Total')));
+    $dataTable->filter('AddSummaryRow', array($labelSummaryRow = Piwik::translate('General_Total')));
 
 Methods
 -------
