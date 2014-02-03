@@ -537,7 +537,7 @@ The following variables assigned:
 **isSuperUser** - True if the current user is the Super User, false if otherwise.
 **hasSomeAdminAccess** - True if the current user has admin access to at least one site,
                          false if otherwise.
-**isCustomLogo** - The value of the `[branding] use_custom_logo` INI config option.
+**isCustomLogo** - The value of the `branding_use_custom_logo` option.
 **logoHeader** - The header logo URL to use.
 **logoLarge** - The large logo URL to use.
 **logoSVG** - The SVG logo URL to use.
