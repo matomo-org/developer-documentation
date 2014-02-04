@@ -44,6 +44,7 @@ Methods
 The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
+- [`getDbConfig()`](#getdbconfig)
 - [`createDatabaseObject()`](#createdatabaseobject) &mdash; Connects to the database.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
 - [`query()`](#query) &mdash; Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
@@ -85,6 +86,28 @@ Returns the database connection and creates it if it hasn't been already.
   </li>
 </ul>
 
+<a name="getdbconfig" id="getdbconfig"></a>
+<a name="getDbConfig" id="getDbConfig"></a>
+### `getDbConfig()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$dbConfig`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
 <a name="createdatabaseobject" id="createdatabaseobject"></a>
 <a name="createDatabaseObject" id="createDatabaseObject"></a>
 ### `createDatabaseObject()`
@@ -100,7 +123,7 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$dbInfos` (`array`|`null`) &mdash;
+      `$dbConfig` (`array`|`null`) &mdash;
 
       <div markdown="1" class="param-desc"> Connection parameters in an array. Defaults to the `[database]` INI config section.</div>
 

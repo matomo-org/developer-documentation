@@ -40,6 +40,7 @@ This is a complete list of available classes:
 - [`DataTable\Simple`](Piwik/DataTable/Simple.md) &mdash; A [DataTable](/api-reference/Piwik/DataTable) where every row has two columns: **label** and **value**.
 - [`Date`](Piwik/Date.md) &mdash; Utility class that wraps date/time related PHP functions.
 - [`Db`](Piwik/Db.md) &mdash; Contains SQL related helper functions for Piwik's MySQL database.
+- [`DbHelper`](Piwik/DbHelper.md) &mdash; Contains database related helper functions.
 - [`Filesystem`](Piwik/Filesystem.md) &mdash; Contains helper functions that deal with the filesystem.
 - [`FrontController`](Piwik/FrontController.md) &mdash; This singleton dispatches requests to the appropriate plugin Controller.
 - [`Http`](Piwik/Http.md) &mdash; Contains HTTP client related helper methods that can retrieve content from remote servers and optionally save to a local file.

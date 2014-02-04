@@ -97,6 +97,7 @@ Index
 - [`compareMonth()`](Piwik/Date.md#comparemonth) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`compareYear()`](Piwik/Date.md#compareyear) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`createDatabaseObject()`](Piwik/Db.md#createdatabaseobject) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
+- [`createTable()`](Piwik/DbHelper.md#createtable) &mdash; _Method in class_ [`DbHelper`](Piwik/DbHelper.md)
 - [`copy()`](Piwik/Filesystem.md#copy) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`copyRecursive()`](Piwik/Filesystem.md#copyrecursive) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`checkNonce()`](Piwik/Nonce.md#checknonce) &mdash; _Method in class_ [`Nonce`](Piwik/Nonce.md)
@@ -146,6 +147,7 @@ Index
 - [`Db`](Piwik/Db.md) &mdash; _Class in namespace_ `Piwik` 
 - [`deleteAllRows()`](Piwik/Db.md#deleteallrows) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`dropTables()`](Piwik/Db.md#droptables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
+- [`DbHelper`](Piwik/DbHelper.md) &mdash; _Class in namespace_ `Piwik` 
 - [`dispatch()`](Piwik/FrontController.md#dispatch) &mdash; _Method in class_ [`FrontController`](Piwik/FrontController.md)
 - [`downloadChunk()`](Piwik/Http.md#downloadchunk) &mdash; _Method in class_ [`Http`](Piwik/Http.md)
 - [`debug()`](Piwik/Log.md#debug) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
@@ -300,6 +302,7 @@ Index
 - [`getTimestamp()`](Piwik/Date.md#gettimestamp) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`getLocalized()`](Piwik/Date.md#getlocalized) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`get()`](Piwik/Db.md#get) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
+- [`getDbConfig()`](Piwik/Db.md#getdbconfig) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`getDbLock()`](Piwik/Db.md#getdblock) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`globr()`](Piwik/Filesystem.md#globr) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`getTransportMethod()`](Piwik/Http.md#gettransportmethod) &mdash; _Method in class_ [`Http`](Piwik/Http.md)

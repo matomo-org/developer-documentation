@@ -36,6 +36,7 @@
 ## DataTable\Simple
 ## Date
 ## Db
+## DbHelper
 ## Filesystem
 ## FrontController
 ## Http
