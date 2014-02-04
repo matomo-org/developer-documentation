@@ -59,13 +59,13 @@
                                 <ul class="nav nav-pills nav-stacked bs-sidenav">
                                     {% for section in sections %}
                                         <li>
-                                            <a href="#{{ section.id }}"><i class="icon-chevron-right"></i> {{ section.title|striptags }}</a>
+                                            <a href="#{{ section.id }}"><i class="icon-chevron-right"></i> {{ section.title|striptags|raw }}</a>
 
                                             {% if section.children|length %}
                                                 <ul class="nav">
 
                                                 {% for subsection in section.children %}
-                                                    <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags }}</a></li>
+                                                    <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
                                                 {% endfor %}
 
                                                 </ul>
