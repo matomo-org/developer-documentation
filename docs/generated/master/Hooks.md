@@ -1588,6 +1588,18 @@ Usages:
 
 [CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L80)
 
+## Url
+
+- [Url.filterTrustedHosts](#urlfiltertrustedhosts)
+
+### Url.filterTrustedHosts
+_Defined in [Piwik/Url](https://github.com/piwik/piwik/blob/master/core/Url.php) in line [247](https://github.com/piwik/piwik/blob/master/core/Url.php#L247)_
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$trustedHosts)</code></pre>
+
 ## User
 
 - [User.getLanguage](#usergetlanguage)
