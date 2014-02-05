@@ -109,4 +109,5 @@
 ## ViewDataTable\Config
 ## ViewDataTable\Factory
 ## ViewDataTable\RequestConfig
+## View\UIControl
 ## WidgetsList

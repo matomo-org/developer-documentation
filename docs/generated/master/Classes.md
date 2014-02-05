@@ -113,4 +113,5 @@ This is a complete list of available classes:
 - [`ViewDataTable\Config`](Piwik/ViewDataTable/Config.md) &mdash; Contains base display properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)s.
 - [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
 - [`ViewDataTable\RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; Contains base request properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances.
+- [`View\UIControl`](Piwik/View/UIControl.md) &mdash; Base type of UI controls.
 - [`WidgetsList`](Piwik/WidgetsList.md) &mdash; Manages the global list of reports that can be displayed as dashboard widgets.

@@ -34,4 +34,5 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\VisitorInterest`](Piwik/Plugins/VisitorInterest)
 - [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 - [`Piwik\Settings`](Piwik/Settings)
+- [`Piwik\View`](Piwik/View)
 - [`Piwik\ViewDataTable`](Piwik/ViewDataTable)

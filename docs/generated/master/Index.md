@@ -773,6 +773,7 @@ Index
 - [`UserSetting`](Piwik/Settings/UserSetting.md) &mdash; _Class in namespace_ `Piwik\Settings` 
 - [`Url`](Piwik/Url.md) &mdash; _Class in namespace_ `Piwik` 
 - [`UrlHelper`](Piwik/UrlHelper.md) &mdash; _Class in namespace_ `Piwik` 
+- [`UIControl`](Piwik/View/UIControl.md) &mdash; _Class in namespace_ [`Piwik\View`](Piwik/View) 
 
 ## V
 
@@ -855,3 +856,4 @@ Index
 - [`__set()`](Piwik/View.md#__set) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`__get()`](Piwik/View.md#__get) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`__construct()`](Piwik/ViewDataTable/Config.md#__construct) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
+- [`__construct()`](Piwik/View/UIControl.md#__construct) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
