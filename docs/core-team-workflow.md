@@ -9,8 +9,7 @@ This guide describes how we, the team of developers that makes changes to Piwik 
 * you'd like to know **how the core team works**
 * you'd like to know **how to reach the core team**
 * you'd like to know **how to submit a bug report or feature request**
-* you'd like to know **how to take part in core development by submiting a patch or pull request**
-* you'd like to know **how to try and get your plugin included in Piwik Core**
+* you'd like to know **how to take part in core development by submiting a pull request**
 
 **Guide assumptions**
 
@@ -18,45 +17,54 @@ This guide describes how we, the team of developers that makes changes to Piwik 
 
 ## How we manage our work
 
-We use **[trac](http://dev.piwik.org/trac)** to keep track of all bugs, feature requests, and other tasks concerning Piwik, the website and all documentation.
+We use **[trac](http://dev.piwik.org/trac)** to keep track of all bugs, feature requests and other tasks concerning Piwik, the website and all documentation.
 
 We make sure all tickets contain enough information, including:
 
 * if a bug, details regarding how to reproduce it,
-* if a new feature, some sort of specification,
-* if a UI improvement, mockups or detailed a description of the changes.
+* if a new feature, explain the use case with suggestions or a specification,
+* if a UI improvement, mockups or a detailed description of the changes.
 
-We are rather obsessed with keeping trac an organized place. Tickets are generally prioritized tickets by severity (e.g. bugs). Developers (Piwik team members or external contributors) decide for themselves which features they would like to implement.
+We are rather obsessed with keeping trac an organized place. Tickets are generally prioritized tickets by severity. Tickets are either of the type 'Bug', 'New feature' or 'Task'. All Bugs are moved to the current roadmap because of our [no-bug policy](http://piwik.org/roadmap/). Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
 
-While we are aiming to implement the features in our roadmap, we are also open to accept new [unplanned features](http://dev.piwik.org/trac/query?status=assigned&status=new&status=reopened&group=status&milestone=Feature+requests) when the code and documentation meet our quality standards.
+## Roadmaps
 
-### Our release process
+Trac, Piwik's official issue tracker, has been used since [the beginning of the project](http://piwik.org/history/). As of 2014, we have closed over 4000 tickets and there are still 450 tickets opened and being considered for Piwik. All opened tickets are grouped in [Roadmaps](http://dev.piwik.org/trac/roadmap). Click the menu link 'Roadmap' [in trac](http://dev.piwik.org). The Current roadmap is listed at the very top. The current roadmap contains all the most important tickets to fix in accordance with our [mission and vision for the Piwik analytics platform](http://piwik.org/roadmap/). Tickets with a priority of 'critical' and 'major' are the most important ones to get done according to the core team, the product owner's vision and of course, the community suggestions and feedback.
 
-A release is ready when all assigned tickets [to the corresponding roadmap](http://dev.piwik.org/trac/roadmap) are closed. When this happens, and the release is considered **stable**, the release is tagged with the release number (see [all tags](https://github.com/piwik/piwik/tags)).
+All other important and exciting tickets are moved to [The Great Piwik 2.x Backlog](http://dev.piwik.org/trac/query?status=assigned&status=new&status=reopened&milestone=2.x+-+The+Great+Piwik+2.x+Backlog&group=priority&col=id&col=summary&col=owner&col=type&col=priority&col=component&col=time&order=priority). This roadmap is our active Tickets Backlog. From time to time, we move one ticket from the Great Piwik 2.x Backlog to the current roadmap.
 
-A shell script is run by the release manager to generate the archives (zip and tar.gz) which are copied to the build server [builds.piwik.org](http://builds.piwik.org/). The file [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. Within hours, thousands of Piwik installations will be updated by users via the one click upgrade mechanism – or manual upgrade.
+Other ideas and suggestions which we are not planning to implement in the future are moved to the [Future Releases roadmap](http://dev.piwik.org/trac/query?status=assigned&status=new&status=reopened&milestone=Future+releases&group=priority&col=id&col=summary&col=owner&col=type&col=priority&col=component&col=time&order=priority).
+
+## Our release process
+
+We generally publish a new Piwik release about once a month. A release is ready when the following release conditions are met. Our [continuous integration tests](http://piwik.org/qa/) must be green. Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik. All critical tickets [to the corresponding roadmap](http://dev.piwik.org/trac/roadmap) must be closed.
+
+To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)). A shell script is then run to generate the archives (zip and tar.gz) which are copied to the build server [builds.piwik.org](http://builds.piwik.org/). The file [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. Within hours, thousands of Piwik installations will be updated by users via the one click [upgrade mechanism](http://piwik.org/docs/update/) – or by manual upgrades.
+
+The Changelog is then updated with a new entry for this release. The changelog typically lists [all tickets closed in this release](http://dev.piwik.org/trac/report/1), and point people to the newest [FAQs](http://piwik.org/faq/) and [User guides](http://piwik.org/faq/).
 
 Releases that contain the string “alpha”, “beta”, “rc”, are built for testing purposes and are not advertised on [piwik.org](http://piwik.org). They are, however, made available on the build server and the [builds.piwik.org/LATEST_BETA](http://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string. You can enable Piwik to use the latest Beta release automatically if you want to test the latest features ([see this faq to learn how](http://piwik.org/faq/how-to-update/#faq_159)).
 
-### Source Code Management
+
+## Source Code Management
 
 The Piwik git repository is hosted at [Github](https://github.com) and is publicly accessible at [https://github.com/piwik/piwik](https://github.com/piwik/piwik).
 
 In case Github goes down, we maintain a backup Git Mirror at: [git.piwik.org](http://git.piwik.org).
 
+#### Git repositories
+
+As of 2014, we are managing [over twenty repositories at Github](https://github.com/piwik). This includes the [main repository for Piwik](https://github.com/piwik/piwik) and several plugins, themes, and toolsets to make the most out of Piwik, such as Piwik clients for software development in Python, Ruby, C#, SDKs for iOS, debian packages and useful Piwik developer tools.
+
 #### Git Owners
 
-All developers from the [Piwik team](http://piwik.org/the-piwik-team/) can commit to the git repo.
-
-- Matthieu Aubry ([mattab](https://github.com/mattab)) is Release manager.
-- Thomas Steur ([tsteur](https://github.com/tsteur)) owns the [Piwik Mobile app](http://piwik.org/mobile/).
-- Cyril B. (CyrilB) is our resident Python guru and owns the [Log Analytics](http://piwik.org/log-analytics/) tool.
+All developers from the [Piwik team](http://piwik.org/the-piwik-team/) can push to all git repositories.
 
 ### Git commit process
 
 All code committed to git is reviewed by at least one other developer in the team. Very often, Piwik developers themselves will send bigger changes by pull request for review before committing. All pull requests or patches submitted by external developers are extensively reviewed.
 
-It is highly recommended that code committed in the [master branch](https://github.com/piwik/piwik) respects the [Piwik coding standards](http://piwik.org/participate/coding-standards), does not cause tests to fail, and does not create reressions in the UI. It is also highly recommended that the [UI be manually tested](http://piwik.org/participate/user-interface) if the user interface is affected by the change. Finally, the commit message should reference a ticket number when applicable; for example,
+It is highly recommended that code committed in the [master branch](https://github.com/piwik/piwik) respects the [Piwik coding standards](http://piwik.org/participate/coding-standards), does not cause tests to fail, and does not create regessions in the UI or the platform. It is also highly recommended that the [UI be manually tested](http://piwik.org/participate/user-interface) if the user interface is affected by the change. Finally, the commit message should reference a ticket number in almost all cases; for example,
 
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 
@@ -78,9 +86,9 @@ One way to help core development is to submit a report when you find a bug.
 
 If you believe you have found a bug in Piwik, please do the following:
 
-* make sure you are using the latest [Piwik release](http://piwik.org/participate/?page_id=348)
-* search in the [forum](http://forum.piwik.org/), [FAQ](http://piwik.org/participate/?page_id=73) and the [bug tracker](http://dev.piwik.org/) if a similar or the same bug has already been reported.
-* if your bug seems new, do you understand how to reproduce it?
+* make sure you are using the latest [Piwik release](http://piwik.org/download/)
+* search in the [forum](http://forum.piwik.org/), [FAQ](http://piwik.org/faq/) and the [bug tracker](http://dev.piwik.org/) if a similar or the same bug has already been reported.
+* if your bug seems new, do you know the steps to follow to reproduce it?
 * if you are ready to report a bug, register an account [in the bug tracker](http://dev.piwik.org/), login and create a new ticket
 * make sure the title and description are as descriptive and clear as possible. In the bug description, please post instructions on how to reproduce, data sets that show the error if possible, screenshots, what exactly is not working? Is the issue new to you, or has it always failed? If you give a clear description, you will greatly help developers trying to reproduce and fix the issue.
 
@@ -88,9 +96,9 @@ If you believe you have found a bug in Piwik, please do the following:
 
 Another way to contribute is to submit a feature request when you realize there is something you need that is missing in Piwik.
 
-You can tell us what we can do to improve Piwik in the [Feature Suggestions forum](http://forum.piwik.org/index.php?showforum=3). Please check that it is not already in the [list of Piwik tickets](http://dev.piwik.org/trac/query?status=new&status=assigned&status=reopened&group=milestone&order=priority).
+You can tell us what we can do to improve Piwik in the [Feature Suggestions forum](http://forum.piwik.org/index.php?showforum=3). Please check that it is not already in the [list of Piwik tickets](http://dev.piwik.org/trac/query?status=assigned&status=new&status=reopened&type=!Bug&group=milestone&col=id&col=summary&col=status&col=owner&col=type&col=priority&col=component&order=priority).
 
-When submitting a significant new feature, it is highly recommended to be as descriptive as possible when creating a ticket. The ticket should contain
+When submitting a significant new feature, it is recommended to be as descriptive as possible when creating a ticket. The ticket should contain
 
 - a description of the product vision
 - a few use cases to show how useful this feature would be
@@ -122,16 +130,29 @@ In most cases, it should be enough for your plugin to be available on the [marke
 
 ### Becoming a Core Contributor
 
-If you want to become a core contributor and gain commit access to our git repository, simply continue to contribute patches and pull requests. When a certain amount are accepted and we trust your skills and judgement, we'll give you commit and add you to the core team.
+If you want to become a core contributor and gain commit access to our git repository, simply continue to contribute patches and pull requests. When a certain amount are accepted and we trust your skills and judgement, we may give you full access to Piwik and invite you to [join us in the core team](http://piwik.org/team/)!
+
+### Get involved!
+
+[How do I get involved in the Piwik project?](http://piwik.org/get-involved/) If you are not a developer, check out these other very useful ways to participate to Piwik.
 
 ## Getting in touch with the Core Team
 
 There are several ways to talk to the Piwik team:
 
+### In the forums
+
+Join us in the forums at [forum.piwik.org](http://forum.piwik.org)
+
+Discover our [vibrant Piwik community](http://forum.piwik.org/) where analytics tips are shared, suggestions on how to make the most out of Piwik, or general questions. Several team members visit the forums regularly, as well as active members of the community.
+
+### By email
+
+You can contact the team by email <a href='mailto:hello@piwik.org?subject=Contact the Piwik team'>hello (at) piwik.org</a>. [Learn how to get involved](http://piwik.org/get-involved/),
+
 ### Through our mailing lists
 
 There are three mailing lists you can subscribe to and use to communicate with core team members:
-
 
 - piwik-hackers [Archives](http://lists.piwik.org/pipermail/piwik-hackers/), [Subscribe](http://lists.piwik.org/cgi-bin/mailman/listinfo/piwik-hackers), [Search the archives](http://www.google.com/coop/cse?cx=012634963936527368460%3Akcozfhhm0io)
 
@@ -149,13 +170,3 @@ There are three mailing lists you can subscribe to and use to communicate with c
 
 Some core team members are available via IRC at [irc.freenode.net/#piwik](irc://irc.freenode.net#piwik) ([webchat](http://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a)).
 
-### In the forums
-
-Check out the forums at [forum.piwik.org](http://forum.piwik.org)
-
-Join the community and share your tips, suggestions, or questions [in the forums](http://forum.piwik.org). Several team members and other community members will be happy to answer.
-
-### By email
-
-If you would like to join the Piwik community, [Get involved](http://piwik.org/get-involved/),
-and <a href='mailto:hello@piwik.org?subject=Join the Piwik team'>get in touch</a>.
