@@ -76,11 +76,11 @@ and a comment will be automatically added to the ticket #159 with a link to the 
 
 When applicable, the related [online documentation](http://piwik.org/docs/) and the related [FAQs](http://piwik.org/faq/) should be updated.
 
-### How can I join the Piwik team?
+## How do I become an official Piwik team member?
 
-All Piwik team members have contributed major improvements to the project, bringing their talent towards our common goal of building the best open analytics platform.
+All [Piwik team members](http://piwik.org/team/) have contributed major improvements to the project. They have contributed their talent towards our common goal of building the best open analytics platform. Some of these achievements were feats of engineering, as documented on our [blog posts](http://piwik.org/blob/) over the last few years.
 
-To gain push access to our git repository, and be an official Piwik team member, one must create a positive change in the project, such as  [contributing pull requests](http://developer.piwik.org/guides/contributing-to-piwik-core), bringing new ideas or functionnality, marketing or product visions. When a certain amount of work has been achieved, we will trust your skills and judgement, we may give you full access to Piwik and invite you to [join us in the core team](http://piwik.org/team/). We also meet every year in a beautiful European city for almost a week!
+To gain push access to our git repository, and be an official Piwik team member, one must make positive changes in the project, such as  [contributing pull requests](http://developer.piwik.org/guides/contributing-to-piwik-core), bringing new ideas, code, marketing, product visions. When a certain amount of work has been achieved, when we trust your skills and judgement, we will invite you to [join us in the core team](http://piwik.org/team/). Most of us also meet once a year in a beautiful European city for brainstorming the future of analytics, open source, [privacy](http://piwik.org/blog/2014/01/data-privacy-day-january-28th/) and Piwik.
 
 There are other useful ways to participate to Piwik without joining the team, learn more: [How do I get involved?](http://piwik.org/get-involved/).
 
