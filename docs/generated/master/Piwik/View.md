@@ -136,6 +136,20 @@ Returns the variables to bind to the template when rendering.
 
 #### Signature
 
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$override` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Template variable override values. Mainly useful when including View templates in other templates.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `array` value.
 
 <a name="__set" id="__set"></a>

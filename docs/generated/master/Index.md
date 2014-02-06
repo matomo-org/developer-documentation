@@ -128,6 +128,10 @@ Index
 - [`$controllerName`](Piwik/ViewDataTable/Config.md#$controllername) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$controllerAction`](Piwik/ViewDataTable/Config.md#$controlleraction) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$clientSideParameters`](Piwik/ViewDataTable/RequestConfig.md#$clientsideparameters) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`$clientSideProperties`](Piwik/View/UIControl.md#$clientsideproperties) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`$clientSideParameters`](Piwik/View/UIControl.md#$clientsideparameters) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`$cssIdentifier`](Piwik/View/UIControl.md#$cssidentifier) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`$cssClass`](Piwik/View/UIControl.md#$cssclass) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
 
 ## D
 
@@ -516,6 +520,7 @@ Index
 ## J
 
 - [`JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
+- [`$jsClass`](Piwik/View/UIControl.md#$jsclass) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
 
 ## L
 
@@ -638,6 +643,7 @@ Index
 - [`$report_id`](Piwik/ViewDataTable/Config.md#$report_id) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; _Class in namespace_ `Piwik\ViewDataTable` 
 - [`$request_parameters_to_modify`](Piwik/ViewDataTable/RequestConfig.md#$request_parameters_to_modify) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`render()`](Piwik/View/UIControl.md#render) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`remove()`](Piwik/WidgetsList.md#remove) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## S
