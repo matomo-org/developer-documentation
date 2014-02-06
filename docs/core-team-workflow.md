@@ -121,7 +121,7 @@ If you've already developed a plugin that you think should be included in Piwik 
 - testability &ndash; use of unit tests and impact to manual testing (e.g., differences when plugin is activated vs deactivated)
 - maturity &ndash; history and popularity of the plugin
 - performance &ndash; impact on archiving and/or UI interaction
-- supportability &ndash; likelihood of spawning support tickets and forum posts of the “how do I?” or “why does it?” variety
+- supportability &ndash; likelihood of spawning support tickets and forum posts of the "how do I?" or "why does it?" variety
 - complexity &ndash; simpler is better; +1 if developer has git commit privileges
 - dependencies &ndash; does it depend on closed source and/or paid subscription services?
 - licensing &ndash; license compatibility with GPLv3
