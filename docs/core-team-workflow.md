@@ -115,16 +115,16 @@ And of course if you can code and want to directly help Piwik development, you c
 
 If you've already developed a plugin that you think should be included in Piwik Core, you can offer it for inclusion. The adoption of a plugin into the Piwik core requires that we consider such criteria as (but not limited to):
 
-- audience – plugin appeals to a broad spectrum of users
-- desirabilty – is it a frequently requested feature by the Piwik community?
-- functionality – feature completeness
-- testability – use of unit tests and impact to manual testing (e.g., differences when plugin is activated vs deactivated)
-- maturity – history and popularity of the plugin
-- performance – impact on archiving and/or UI interaction
-- supportability – likelihood of spawning support tickets and forum posts of the “how do I?” or “why does it?” variety
-- complexity – simpler is better; +1 if developer has git commit privileges
-- dependencies – does it depend on closed source and/or paid subscription services?
-- licensing – license compatibility with GPLv3
+- audience &ndash; plugin appeals to a broad spectrum of users
+- desirabilty &ndash; is it a frequently requested feature by the Piwik community?
+- functionality &ndash; feature completeness
+- testability &ndash; use of unit tests and impact to manual testing (e.g., differences when plugin is activated vs deactivated)
+- maturity &ndash; history and popularity of the plugin
+- performance &ndash; impact on archiving and/or UI interaction
+- supportability &ndash; likelihood of spawning support tickets and forum posts of the “how do I?” or “why does it?” variety
+- complexity &ndash; simpler is better; +1 if developer has git commit privileges
+- dependencies &ndash; does it depend on closed source and/or paid subscription services?
+- licensing &ndash; license compatibility with GPLv3
 
 In most cases, it should be enough for your plugin to be available on the [marketplace](http://plugins.piwik.org).
 
