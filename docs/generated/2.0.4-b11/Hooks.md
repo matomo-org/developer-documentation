@@ -328,7 +328,7 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/API/API.php#L708), [Actions::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Actions/Actions.php#L50), [Annotations::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Annotations/Annotations.php#L32), [CoreAdminHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreAdminHome/CoreAdminHome.php#L66), [CoreHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreHome/CoreHome.php#L40), [CorePluginsAdmin::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L51), [CoreVisualizations::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreVisualizations/CoreVisualizations.php#L47), [DBStats::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/DBStats/DBStats.php#L81), [Dashboard::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Dashboard/Dashboard.php#L240), [ExampleRssWidget::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/ExampleRssWidget/ExampleRssWidget.php#L29), [Feedback::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Feedback/Feedback.php#L45), [Goals::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Goals/Goals.php#L449), [Installation::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Installation/Installation.php#L89), [LanguagesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/LanguagesManager/LanguagesManager.php#L56), [Live::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Live/Live.php#L38), [MobileMessaging::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/MobileMessaging/MobileMessaging.php#L102), [MultiSites::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/MultiSites/MultiSites.php#L86), [SegmentEditor::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/SegmentEditor/SegmentEditor.php#L95), [SitesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/SitesManager/SitesManager.php#L48), [Transitions::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Transitions/Transitions.php#L28), [UserCountry::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UserCountry/UserCountry.php#L72), [UserCountryMap::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UserCountryMap/UserCountryMap.php#L75), [UsersManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UsersManager/UsersManager.php#L85), [Widgetize::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Widgetize/Widgetize.php#L51)
+[Plugin::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/API/API.php#L708), [Actions::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Actions/Actions.php#L50), [Annotations::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Annotations/Annotations.php#L32), [CoreAdminHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreAdminHome/CoreAdminHome.php#L66), [CoreHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreHome/CoreHome.php#L40), [CorePluginsAdmin::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L51), [CoreVisualizations::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreVisualizations/CoreVisualizations.php#L47), [DBStats::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/DBStats/DBStats.php#L81), [Dashboard::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Dashboard/Dashboard.php#L240), [ExampleRssWidget::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/ExampleRssWidget/ExampleRssWidget.php#L29), [Feedback::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Feedback/Feedback.php#L45), [Goals::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Goals/Goals.php#L449), [Installation::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Installation/Installation.php#L109), [LanguagesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/LanguagesManager/LanguagesManager.php#L56), [Live::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Live/Live.php#L38), [MobileMessaging::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/MobileMessaging/MobileMessaging.php#L102), [MultiSites::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/MultiSites/MultiSites.php#L86), [SegmentEditor::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/SegmentEditor/SegmentEditor.php#L95), [SitesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/SitesManager/SitesManager.php#L48), [Transitions::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Transitions/Transitions.php#L28), [UserCountry::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UserCountry/UserCountry.php#L72), [UserCountryMap::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UserCountryMap/UserCountryMap.php#L75), [UsersManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UsersManager/UsersManager.php#L85), [Widgetize::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Widgetize/Widgetize.php#L51)
 
 ## Config
 
@@ -347,7 +347,7 @@ Callback Signature:
 
 Usages:
 
-[Installation::dispatch](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Installation/Installation.php#L51)
+[Installation::dispatch](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Installation/Installation.php#L74)
 
 
 ### Config.NoConfigurationFile
@@ -362,7 +362,7 @@ Callback Signature:
 
 Usages:
 
-[Installation::dispatch](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Installation/Installation.php#L51)
+[Installation::dispatch](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Installation/Installation.php#L74)
 
 ## Console
 
@@ -666,7 +666,7 @@ Menu items should be added via the [add()](/api-reference/Piwik/Menu/MenuAdmin#a
 
 Usages:
 
-[CoreAdminHome::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreAdminHome/CoreAdminHome.php#L90), [CorePluginsAdmin::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L57), [DBStats::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/DBStats/DBStats.php#L44), [DevicesDetection::addAdminMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/DevicesDetection/DevicesDetection.php#L104), [Installation::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Installation/Installation.php#L78), [MobileMessaging::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/MobileMessaging/MobileMessaging.php#L85), [PrivacyManager::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/PrivacyManager/PrivacyManager.php#L178), [SitesManager::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/SitesManager/SitesManager.php#L37), [UserCountry::addAdminMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UserCountry/UserCountry.php#L197), [UsersManager::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UsersManager/UsersManager.php#L93)
+[CoreAdminHome::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreAdminHome/CoreAdminHome.php#L90), [CorePluginsAdmin::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L57), [DBStats::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/DBStats/DBStats.php#L44), [DevicesDetection::addAdminMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/DevicesDetection/DevicesDetection.php#L104), [Installation::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Installation/Installation.php#L98), [MobileMessaging::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/MobileMessaging/MobileMessaging.php#L85), [PrivacyManager::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/PrivacyManager/PrivacyManager.php#L178), [SitesManager::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/SitesManager/SitesManager.php#L37), [UserCountry::addAdminMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UserCountry/UserCountry.php#L197), [UsersManager::addMenu](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/UsersManager/UsersManager.php#L93)
 
 
 ### Menu.Reporting.addItems
@@ -835,6 +835,10 @@ Callback Signature:
 
 - `array` `&$parameters` The arguments passed to the controller action.
 
+Usages:
+
+[Installation::dispatchIfNotInstalledYet](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Installation/Installation.php#L40)
+
 
 ### Request.dispatch.end
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/2.0.4-b11/core/FrontController.php) in line [542](https://github.com/piwik/piwik/blob/2.0.4-b11/core/FrontController.php#L542)_
@@ -858,7 +862,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreUpdater/CoreUpdater.php#L53)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreUpdater/CoreUpdater.php#L95)
 
 
 ### Request.initAuthenticationObject
@@ -1586,7 +1590,7 @@ Triggered after the platform is initialized and after the user has been authenti
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreUpdater/CoreUpdater.php#L80)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/CoreUpdater/CoreUpdater.php#L124)
 
 ## Url
 
