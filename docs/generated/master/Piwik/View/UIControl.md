@@ -98,7 +98,10 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`__set()`](#__set) &mdash; Sets a variable.
+- [`__get()`](#__get) &mdash; Gets a view variable.
 - [`render()`](#render) &mdash; Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
+- [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -108,6 +111,79 @@ Constructor.
 
 #### Signature
 
+
+<a name="__set" id="__set"></a>
+<a name="__set" id="__set"></a>
+### `__set()`
+
+Sets a variable.
+
+See View::\_\_set().
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$key` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The variable name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$val` (`mixed`) &mdash;
+
+      <div markdown="1" class="param-desc"> The variable value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="__get" id="__get"></a>
+<a name="__get" id="__get"></a>
+### `__get()`
+
+Gets a view variable.
+
+See View::\_\_get().
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$key` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The variable name.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">The variable value.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
@@ -129,4 +205,28 @@ Renders the control view within a containing <div> that is used by the UIControl
     </div>
   </li>
 </ul>
+
+<a name="gettemplatevars" id="gettemplatevars"></a>
+<a name="getTemplateVars" id="getTemplateVars"></a>
+### `getTemplateVars()`
+
+See View::getTemplateVars().
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$override` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Template variable override values. Mainly useful when including View templates in other templates.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `array` value.
 

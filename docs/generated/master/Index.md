@@ -450,6 +450,7 @@ Index
 - [`getProperties()`](Piwik/ViewDataTable/RequestConfig.md#getproperties) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiModuleToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimoduletorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiMethodToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimethodtorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`getTemplateVars()`](Piwik/View/UIControl.md#gettemplatevars) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`get()`](Piwik/WidgetsList.md#get) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## H
@@ -863,3 +864,5 @@ Index
 - [`__get()`](Piwik/View.md#__get) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`__construct()`](Piwik/ViewDataTable/Config.md#__construct) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`__construct()`](Piwik/View/UIControl.md#__construct) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`__set()`](Piwik/View/UIControl.md#__set) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`__get()`](Piwik/View/UIControl.md#__get) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
