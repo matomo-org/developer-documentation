@@ -1597,7 +1597,7 @@ Usages:
 - [Url.filterTrustedHosts](#urlfiltertrustedhosts)
 
 ### Url.filterTrustedHosts
-_Defined in [Piwik/Url](https://github.com/piwik/piwik/blob/master/core/Url.php) in line [533](https://github.com/piwik/piwik/blob/master/core/Url.php#L533)_
+_Defined in [Piwik/Url](https://github.com/piwik/piwik/blob/master/core/Url.php) in line [534](https://github.com/piwik/piwik/blob/master/core/Url.php#L534)_
 
 
 
