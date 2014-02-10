@@ -128,6 +128,10 @@ Index
 - [`$controllerName`](Piwik/ViewDataTable/Config.md#$controllername) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$controllerAction`](Piwik/ViewDataTable/Config.md#$controlleraction) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$clientSideParameters`](Piwik/ViewDataTable/RequestConfig.md#$clientsideparameters) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`$clientSideProperties`](Piwik/View/UIControl.md#$clientsideproperties) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`$clientSideParameters`](Piwik/View/UIControl.md#$clientsideparameters) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`$cssIdentifier`](Piwik/View/UIControl.md#$cssidentifier) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`$cssClass`](Piwik/View/UIControl.md#$cssclass) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
 
 ## D
 
@@ -446,6 +450,7 @@ Index
 - [`getProperties()`](Piwik/ViewDataTable/RequestConfig.md#getproperties) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiModuleToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimoduletorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiMethodToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimethodtorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`getTemplateVars()`](Piwik/View/UIControl.md#gettemplatevars) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`get()`](Piwik/WidgetsList.md#get) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## H
@@ -516,6 +521,7 @@ Index
 ## J
 
 - [`JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
+- [`$jsClass`](Piwik/View/UIControl.md#$jsclass) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
 
 ## L
 
@@ -638,6 +644,7 @@ Index
 - [`$report_id`](Piwik/ViewDataTable/Config.md#$report_id) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; _Class in namespace_ `Piwik\ViewDataTable` 
 - [`$request_parameters_to_modify`](Piwik/ViewDataTable/RequestConfig.md#$request_parameters_to_modify) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`render()`](Piwik/View/UIControl.md#render) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`remove()`](Piwik/WidgetsList.md#remove) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## S
@@ -857,3 +864,5 @@ Index
 - [`__get()`](Piwik/View.md#__get) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`__construct()`](Piwik/ViewDataTable/Config.md#__construct) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`__construct()`](Piwik/View/UIControl.md#__construct) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`__set()`](Piwik/View/UIControl.md#__set) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`__get()`](Piwik/View/UIControl.md#__get) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
