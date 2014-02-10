@@ -165,7 +165,7 @@ Callback Signature:
 
 Usages:
 
-[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Login/Login.php#L54)
+[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Login/Login.php#L53)
 
 
 ### API.Request.dispatch
@@ -872,7 +872,7 @@ _Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/2.0.4-b1
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Login/Login.php#L64)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Login/Login.php#L69)
 
 
 ### Request.initAuthenticationObject
@@ -898,7 +898,7 @@ Callback Signature:
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Login/Login.php#L64)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Login/Login.php#L69)
 
 
 ### Request.initAuthenticationObject
@@ -915,7 +915,7 @@ to set the global authentication object (which must derive from Piwik\Auth).
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Login/Login.php#L64)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.0.4-b11/plugins/Login/Login.php#L69)
 
 ## ScheduledReports
 

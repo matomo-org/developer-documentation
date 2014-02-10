@@ -165,7 +165,7 @@ Callback Signature:
 
 Usages:
 
-[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L54)
+[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L53)
 
 
 ### API.Request.dispatch
@@ -872,7 +872,7 @@ _Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/c
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L64)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
 
 
 ### Request.initAuthenticationObject
@@ -886,19 +886,19 @@ the Piwik\Registry to an object that implements the Piwik\Auth interface.
 
     use Piwik\Registry;
 
-    public function initAuthenticationObject($allowCookieAuthentication)
+    public function initAuthenticationObject($activateCookieAuth)
     {
-        Registry::set('auth', new LDAPAuth($allowCookieAuthentication));
+        Registry::set('auth', new LDAPAuth($activateCookieAuth));
     }
 
 Callback Signature:
-<pre><code>function($allowCookieAuthentication = true)</code></pre>
+<pre><code>function($activateCookieAuth = true)</code></pre>
 
-- `bool` `$allowCookieAuthentication` Whether authentication based on `$_COOKIE` values should be allowed.
+- `bool` `$activateCookieAuth` Whether authentication based on `$_COOKIE` values should be allowed.
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L64)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
 
 
 ### Request.initAuthenticationObject
@@ -915,7 +915,7 @@ to set the global authentication object (which must derive from Piwik\Auth).
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L64)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L69)
 
 ## ScheduledReports
 
