@@ -1246,10 +1246,22 @@ Callback Signature:
 
 ## SitesManager
 
+- [SitesManager.addSite.end](#sitesmanageraddsiteend)
 - [SitesManager.deleteSite.end](#sitesmanagerdeletesiteend)
 
+### SitesManager.addSite.end
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [568](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L568)_
+
+Triggered after a site has been added.
+
+Callback Signature:
+<pre><code>function($idSite)</code></pre>
+
+- `int` `$idSite` The ID of the site that was added.
+
+
 ### SitesManager.deleteSite.end
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [616](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L616)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [623](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L623)_
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
