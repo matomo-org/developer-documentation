@@ -396,7 +396,7 @@ Usages:
 - [Controller.$module.$action.end](#controllermoduleactionend)
 
 ### Controller.$module.$action
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [516](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L516)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [519](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L519)_
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/hooks#requestdispatch)
 event is triggered.
@@ -411,7 +411,7 @@ Callback Signature:
 
 
 ### Controller.$module.$action.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [533](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L533)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [536](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L536)_
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/hooks#requestdispatchend)
 event is triggered.
@@ -821,7 +821,7 @@ Callback Signature:
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 
 ### Request.dispatch
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [501](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L501)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [504](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L504)_
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -841,7 +841,7 @@ Usages:
 
 
 ### Request.dispatch.end
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [543](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L543)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [546](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L546)_
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -1597,7 +1597,7 @@ Usages:
 - [Url.filterTrustedHosts](#urlfiltertrustedhosts)
 
 ### Url.filterTrustedHosts
-_Defined in [Piwik/Url](https://github.com/piwik/piwik/blob/master/core/Url.php) in line [534](https://github.com/piwik/piwik/blob/master/core/Url.php#L534)_
+_Defined in [Piwik/Url](https://github.com/piwik/piwik/blob/master/core/Url.php) in line [547](https://github.com/piwik/piwik/blob/master/core/Url.php#L547)_
 
 
 
@@ -1650,7 +1650,7 @@ Callback Signature:
 
 Usages:
 
-[Login::noAccess](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L41)
+[Login::noAccess](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L42)
 
 ## UsersManager
 

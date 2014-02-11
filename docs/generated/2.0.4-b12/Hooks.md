@@ -1650,7 +1650,7 @@ Callback Signature:
 
 Usages:
 
-[Login::noAccess](https://github.com/piwik/piwik/blob/2.0.4-b12/plugins/Login/Login.php#L41)
+[Login::noAccess](https://github.com/piwik/piwik/blob/2.0.4-b12/plugins/Login/Login.php#L42)
 
 ## UsersManager
 
