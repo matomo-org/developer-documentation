@@ -152,6 +152,7 @@ Index
 - [`deleteAllRows()`](Piwik/Db.md#deleteallrows) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`dropTables()`](Piwik/Db.md#droptables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`DbHelper`](Piwik/DbHelper.md) &mdash; _Class in namespace_ `Piwik` 
+- [`deleteFileIfExists()`](Piwik/Filesystem.md#deletefileifexists) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`dispatch()`](Piwik/FrontController.md#dispatch) &mdash; _Method in class_ [`FrontController`](Piwik/FrontController.md)
 - [`downloadChunk()`](Piwik/Http.md#downloadchunk) &mdash; _Method in class_ [`Http`](Piwik/Http.md)
 - [`debug()`](Piwik/Log.md#debug) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
@@ -438,6 +439,7 @@ Index
 - [`getArrayFromCurrentQueryString()`](Piwik/Url.md#getarrayfromcurrentquerystring) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getCurrentQueryStringWithParametersModified()`](Piwik/Url.md#getcurrentquerystringwithparametersmodified) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getQueryStringFromParameters()`](Piwik/Url.md#getquerystringfromparameters) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
+- [`getQueryFromUrl()`](Piwik/Url.md#getqueryfromurl) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getReferrer()`](Piwik/Url.md#getreferrer) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getQueryStringWithExcludedParameters()`](Piwik/UrlHelper.md#getquerystringwithexcludedparameters) &mdash; _Method in class_ [`UrlHelper`](Piwik/UrlHelper.md)
 - [`getParseUrlReverse()`](Piwik/UrlHelper.md#getparseurlreverse) &mdash; _Method in class_ [`UrlHelper`](Piwik/UrlHelper.md)
