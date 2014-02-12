@@ -15,6 +15,7 @@ The class defines the following methods:
 - [`unlinkRecursive()`](#unlinkrecursive) &mdash; Recursively deletes a directory.
 - [`copy()`](#copy) &mdash; Copies a file from `$source` to `$dest`.
 - [`copyRecursive()`](#copyrecursive) &mdash; Copies the contents of a directory recursively from `$source` to `$target`.
+- [`deleteFileIfExists()`](#deletefileifexists) &mdash; Deletes the given file if it exists.
 
 <a name="mkdir" id="mkdir"></a>
 <a name="mkdir" id="mkdir"></a>
@@ -246,4 +247,39 @@ Copies the contents of a directory recursively from `$source` to `$target`.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If a file cannot be copied.
+
+<a name="deletefileifexists" id="deletefileifexists"></a>
+<a name="deleteFileIfExists" id="deleteFileIfExists"></a>
+### `deleteFileIfExists()`
+
+Deletes the given file if it exists.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$pathToFile` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`) &mdash;
+    <div markdown="1" class="param-desc">true in case of success or if file does not exist, false otherwise. It might fail in case the file is not writeable.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
