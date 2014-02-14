@@ -266,7 +266,7 @@ Piwik also comes with a SQL profiler, which reports the time spent by each query
 
 If you are fixing a small bug or simply modifying the UI, there is usually no need to write new tests. But if you are adding a new feature to Piwik, adding a new API method or modifying a core Archiving or Tracking algorithm, generally it is required to also submit new or updated Unit tests or Integration tests.
 
-For more information about running or creating tests, read our [Automated Testing](#) guide.
+For more information about running or creating tests, read our [Automated Testing](/guides/automated-tests) guide.
 
 When naming unit/integration tests, it helps to use the **Given**, **When**, **Then** convention for writing tests.
 
@@ -282,4 +282,4 @@ If all UI tests pass, you have successfully made a change to the Piwik UI.
 
 * To **learn the basics of Piwik development** in our [Getting started extending Piwik](#) guide.
 * To see a **list of available things you could work on** see our [roadmaps](http://dev.piwik.org/trac/roadmap)
-* To learn **more about Piwik's test suite** see our [Automated Testing](#) guide.
+* To learn **more about Piwik's test suite** see our [Automated Testing](/guides/automated-tests) guide.
