@@ -1440,7 +1440,7 @@ Callback Signature:
 
 
 ### Tracker.newConversionInformation
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [814](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L814)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [813](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L813)_
 
 Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
 
@@ -1486,7 +1486,7 @@ Callback Signature:
 
 
 ### Tracker.recordEcommerceGoal
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [420](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L420)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [419](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L419)_
 
 Triggered after successfully persisting an ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
@@ -1500,7 +1500,7 @@ Callback Signature:
 
 
 ### Tracker.recordStandardGoals
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [790](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L790)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [789](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L789)_
 
 Triggered after successfully recording a non-ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
