@@ -100,6 +100,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`__set()`](#__set) &mdash; Sets a variable.
 - [`__get()`](#__get) &mdash; Gets a view variable.
+- [`__isset()`](#__isset)
 - [`render()`](#render) &mdash; Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
 - [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
 
@@ -184,6 +185,28 @@ See View::\_\_get().
     </div>
   </li>
 </ul>
+
+<a name="__isset" id="__isset"></a>
+<a name="__isset" id="__isset"></a>
+### `__isset()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$key`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>

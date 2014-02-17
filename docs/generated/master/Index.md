@@ -868,3 +868,4 @@ Index
 - [`__construct()`](Piwik/View/UIControl.md#__construct) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`__set()`](Piwik/View/UIControl.md#__set) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`__get()`](Piwik/View/UIControl.md#__get) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`__isset()`](Piwik/View/UIControl.md#__isset) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
