@@ -365,7 +365,7 @@ Usages:
 - [Console.addCommands](#consoleaddcommands)
 
 ### Console.addCommands
-_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [66](https://github.com/piwik/piwik/blob/master/core/Console.php#L66)_
+_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [79](https://github.com/piwik/piwik/blob/master/core/Console.php#L79)_
 
 Triggered to gather all available console commands. Plugins that want to expose new console commands
 should subscribe to this event and add commands to the incoming array.
