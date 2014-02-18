@@ -720,7 +720,7 @@ Menu items should be added via the [addEntry()](/api-reference/Piwik/Menu/MenuTo
 
 Usages:
 
-[Plugin::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/API/API.php#L684), [Dashboard::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/Dashboard/Dashboard.php#L217), [ExampleUI::addTopMenuItems](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ExampleUI/ExampleUI.php#L45), [Feedback::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/Feedback/Feedback.php#L33), [LanguagesManager::showLanguagesSelector](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/LanguagesManager/LanguagesManager.php#L66), [MultiSites::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/MultiSites/MultiSites.php#L74), [ScheduledReports::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L496), [Widgetize::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/Widgetize/Widgetize.php#L33)
+[Plugin::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/API/API.php#L684), [Dashboard::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/Dashboard/Dashboard.php#L217), [ExampleUI::addTopMenuItems](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ExampleUI/ExampleUI.php#L45), [Feedback::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/Feedback/Feedback.php#L33), [LanguagesManager::showLanguagesSelector](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/LanguagesManager/LanguagesManager.php#L66), [MultiSites::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/MultiSites/MultiSites.php#L74), [ScheduledReports::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L514), [Widgetize::addTopMenu](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/Widgetize/Widgetize.php#L33)
 
 ## MobileMessaging
 
@@ -747,7 +747,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::deletePhoneNumber](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L383)
+[ScheduledReports::deletePhoneNumber](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L401)
 
 ## Provider
 
@@ -1048,7 +1048,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportRecipients](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/MobileMessaging/MobileMessaging.php#L183), [ScheduledReports::getReportRecipients](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L425)
+[MobileMessaging::getReportRecipients](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/MobileMessaging/MobileMessaging.php#L183), [ScheduledReports::getReportRecipients](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L443)
 
 
 ### ScheduledReports.getReportTypes
@@ -1156,7 +1156,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentDeactivation](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L478)
+[ScheduledReports::segmentDeactivation](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L496)
 
 ## Segments
 
@@ -1308,7 +1308,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CoreAdminHome/CoreAdminHome.php#L47), [CorePluginsAdmin::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L40), [DBStats::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/DBStats/DBStats.php#L55), [PrivacyManager::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/PrivacyManager/PrivacyManager.php#L157), [ScheduledReports::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L459), [UserCountry::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/UserCountry/UserCountry.php#L64)
+[CoreAdminHome::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CoreAdminHome/CoreAdminHome.php#L47), [CorePluginsAdmin::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L40), [DBStats::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/DBStats/DBStats.php#L55), [PrivacyManager::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/PrivacyManager/PrivacyManager.php#L157), [ScheduledReports::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L477), [UserCountry::getScheduledTasks](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/UserCountry/UserCountry.php#L64)
 
 ## Tracker
 
@@ -1694,7 +1694,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CoreAdminHome/CoreAdminHome.php#L42), [Dashboard::deleteDashboardLayout](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/Dashboard/Dashboard.php#L246), [LanguagesManager::deleteUserLanguage](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/LanguagesManager/LanguagesManager.php#L108), [ScheduledReports::deleteUserReport](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L547)
+[CoreAdminHome::cleanupUser](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CoreAdminHome/CoreAdminHome.php#L42), [Dashboard::deleteDashboardLayout](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/Dashboard/Dashboard.php#L246), [LanguagesManager::deleteUserLanguage](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/LanguagesManager/LanguagesManager.php#L108), [ScheduledReports::deleteUserReport](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/ScheduledReports/ScheduledReports.php#L565)
 
 
 ### UsersManager.updateUser.end
