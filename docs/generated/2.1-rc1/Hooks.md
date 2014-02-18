@@ -862,7 +862,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CoreUpdater/CoreUpdater.php#L95)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CoreUpdater/CoreUpdater.php#L105)
 
 
 ### Request.initAuthenticationObject
@@ -1602,7 +1602,7 @@ Triggered after the platform is initialized and after the user has been authenti
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CoreUpdater/CoreUpdater.php#L124)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.1-rc1/plugins/CoreUpdater/CoreUpdater.php#L134)
 
 ## Url
 
