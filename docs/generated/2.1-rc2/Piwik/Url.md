@@ -54,7 +54,6 @@ The class defines the following methods:
 - [`getArrayFromCurrentQueryString()`](#getarrayfromcurrentquerystring) &mdash; Returns an array mapping query paramater names with query parameter values for the current URL.
 - [`getCurrentQueryStringWithParametersModified()`](#getcurrentquerystringwithparametersmodified) &mdash; Modifies the current query string with the supplied parameters and returns the result.
 - [`getQueryStringFromParameters()`](#getquerystringfromparameters) &mdash; Converts an array of parameters name => value mappings to a query string.
-- [`getQueryFromUrl()`](#getqueryfromurl) &mdash; Returns the query part from any valid url and adds additional parameters to the query part if needed.
 - [`redirectToReferrer()`](#redirecttoreferrer) &mdash; Redirects the user to the referrer.
 - [`redirectToUrl()`](#redirecttourl) &mdash; Redirects the user to the specified URL.
 - [`getReferrer()`](#getreferrer) &mdash; Returns the **HTTP_REFERER** `$_SERVER` variable, or `false` if not found.
@@ -358,51 +357,6 @@ Converts an array of parameters name => value mappings to a query string.
     <div markdown="1" class="parameter">
     _Returns:_  (`string`) &mdash;
     <div markdown="1" class="param-desc">eg. `"param1=10&param2[]=1&param2[]=2"`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
-
-<a name="getqueryfromurl" id="getqueryfromurl"></a>
-<a name="getQueryFromUrl" id="getQueryFromUrl"></a>
-### `getQueryFromUrl()`
-
-Returns the query part from any valid url and adds additional parameters to the query part if needed.
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$aUrl` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Any url eg `"http://example.com/piwik/?foo=bar"`</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$additionalParamsToAdd` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> If not empty the given parameters will be added to the query.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">eg. `"foo=bar&foo2=bar2"`</div>
 
     <div style="clear:both;"/>
 

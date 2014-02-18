@@ -15,6 +15,7 @@ The class defines the following methods:
 - [`getArrayFromQueryString()`](#getarrayfromquerystring) &mdash; Returns a URL query string as an array.
 - [`getParameterFromQueryString()`](#getparameterfromquerystring) &mdash; Returns the value of a single query parameter from the supplied query string.
 - [`getPathAndQueryFromUrl()`](#getpathandqueryfromurl) &mdash; Returns the path and query string of a URL.
+- [`getQueryFromUrl()`](#getqueryfromurl) &mdash; Returns the query part from any valid url and adds additional parameters to the query part if needed.
 
 <a name="getquerystringwithexcludedparameters" id="getquerystringwithexcludedparameters"></a>
 <a name="getQueryStringWithExcludedParameters" id="getQueryStringWithExcludedParameters"></a>
@@ -208,6 +209,51 @@ Returns the path and query string of a URL.
     <div markdown="1" class="parameter">
     _Returns:_  (`string`) &mdash;
     <div markdown="1" class="param-desc">eg, `/test/index.php?module=CoreHome` if `$url` is `http://piwik.org/test/index.php?module=CoreHome`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="getqueryfromurl" id="getqueryfromurl"></a>
+<a name="getQueryFromUrl" id="getQueryFromUrl"></a>
+### `getQueryFromUrl()`
+
+Returns the query part from any valid url and adds additional parameters to the query part if needed.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Any url eg `"http://example.com/piwik/?foo=bar"`</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$additionalParamsToAdd` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> If not empty the given parameters will be added to the query.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg. `"foo=bar&foo2=bar2"`</div>
 
     <div style="clear:both;"/>
 
