@@ -384,7 +384,7 @@ Callback Signature:
 
 Usages:
 
-[CoreConsole::addConsoleCommands](https://github.com/piwik/piwik/blob/master/plugins/CoreConsole/CoreConsole.php#L25), [ExampleCommand::addConsoleCommands](https://github.com/piwik/piwik/blob/master/plugins/ExampleCommand/ExampleCommand.php#L25), [LanguagesManager::addConsoleCommands](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L45)
+[CoreConsole::addConsoleCommands](https://github.com/piwik/piwik/blob/master/plugins/CoreConsole/CoreConsole.php#L25), [CoreUpdater::addConsoleCommands](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L40), [ExampleCommand::addConsoleCommands](https://github.com/piwik/piwik/blob/master/plugins/ExampleCommand/ExampleCommand.php#L25), [LanguagesManager::addConsoleCommands](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L45)
 
 ## Controller
 
@@ -777,7 +777,7 @@ Callback Signature:
 - [Referrer.addSocialUrls](#referreraddsocialurls)
 
 ### Referrer.addSearchEngineUrls
-_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [737](https://github.com/piwik/piwik/blob/master/core/Common.php#L737)_
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [749](https://github.com/piwik/piwik/blob/master/core/Common.php#L749)_
 
 
 
@@ -786,7 +786,7 @@ Callback Signature:
 
 
 ### Referrer.addSocialUrls
-_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [776](https://github.com/piwik/piwik/blob/master/core/Common.php#L776)_
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [788](https://github.com/piwik/piwik/blob/master/core/Common.php#L788)_
 
 
 
@@ -858,7 +858,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L106)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L112)
 
 
 ### Request.initAuthenticationObject
@@ -1598,14 +1598,14 @@ Triggered after the platform is initialized and after the user has been authenti
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L135)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L141)
 
 ## Url
 
 - [Url.filterTrustedHosts](#urlfiltertrustedhosts)
 
 ### Url.filterTrustedHosts
-_Defined in [Piwik/Url](https://github.com/piwik/piwik/blob/master/core/Url.php) in line [552](https://github.com/piwik/piwik/blob/master/core/Url.php#L552)_
+_Defined in [Piwik/Url](https://github.com/piwik/piwik/blob/master/core/Url.php) in line [556](https://github.com/piwik/piwik/blob/master/core/Url.php#L556)_
 
 
 

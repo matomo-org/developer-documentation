@@ -384,7 +384,7 @@ Callback Signature:
 
 Usages:
 
-[CoreConsole::addConsoleCommands](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/CoreConsole/CoreConsole.php#L25), [ExampleCommand::addConsoleCommands](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/ExampleCommand/ExampleCommand.php#L25), [LanguagesManager::addConsoleCommands](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/LanguagesManager/LanguagesManager.php#L45)
+[CoreConsole::addConsoleCommands](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/CoreConsole/CoreConsole.php#L25), [CoreUpdater::addConsoleCommands](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/CoreUpdater/CoreUpdater.php#L40), [ExampleCommand::addConsoleCommands](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/ExampleCommand/ExampleCommand.php#L25), [LanguagesManager::addConsoleCommands](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/LanguagesManager/LanguagesManager.php#L45)
 
 ## Controller
 
@@ -858,7 +858,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/CoreUpdater/CoreUpdater.php#L106)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/CoreUpdater/CoreUpdater.php#L112)
 
 
 ### Request.initAuthenticationObject
@@ -1598,7 +1598,7 @@ Triggered after the platform is initialized and after the user has been authenti
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/CoreUpdater/CoreUpdater.php#L135)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.1-rc4/plugins/CoreUpdater/CoreUpdater.php#L141)
 
 ## Url
 
