@@ -44,7 +44,7 @@ Methods
 The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
-- [`getDbConfig()`](#getdbconfig)
+- [`getDatabaseConfig()`](#getdatabaseconfig)
 - [`createDatabaseObject()`](#createdatabaseobject) &mdash; Connects to the database.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
 - [`query()`](#query) &mdash; Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
@@ -86,9 +86,9 @@ Returns the database connection and creates it if it hasn't been already.
   </li>
 </ul>
 
-<a name="getdbconfig" id="getdbconfig"></a>
-<a name="getDbConfig" id="getDbConfig"></a>
-### `getDbConfig()`
+<a name="getdatabaseconfig" id="getdatabaseconfig"></a>
+<a name="getDatabaseConfig" id="getDatabaseConfig"></a>
+### `getDatabaseConfig()`
 
 #### Signature
 

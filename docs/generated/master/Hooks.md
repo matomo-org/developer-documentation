@@ -438,6 +438,20 @@ Callback Signature:
 
 - `array` `&$websiteIds` The list of website IDs to launch the archiving process for.
 
+## Db
+
+- [Db.getDatabaseConfig](#dbgetdatabaseconfig)
+
+### Db.getDatabaseConfig
+_Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [82](https://github.com/piwik/piwik/blob/master/core/Db.php#L82)_
+
+Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
+
+Callback Signature:
+<pre><code>function(&amp;$dbConfig)</code></pre>
+
+- `array`
+
 ## Goals
 
 - [Goals.getReportsWithGoalMetrics](#goalsgetreportswithgoalmetrics)
@@ -792,20 +806,6 @@ _Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Commo
 
 Callback Signature:
 <pre><code>function(&amp;$socialUrls)</code></pre>
-
-## Reporting
-
-- [Reporting.getDatabaseConfig](#reportinggetdatabaseconfig)
-
-### Reporting.getDatabaseConfig
-_Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [82](https://github.com/piwik/piwik/blob/master/core/Db.php#L82)_
-
-Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
-
-Callback Signature:
-<pre><code>function(&amp;$dbConfig)</code></pre>
-
-- `array`
 
 ## Request
 
