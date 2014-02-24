@@ -29,7 +29,7 @@ We are rather obsessed with keeping trac an organized place. Tickets are general
 
 ## Roadmaps and Backlog
 
-Trac, Piwik's official issue tracker, has been used since [the beginning of the project](http://piwik.org/history/). All opened tickets are grouped in [Roadmaps](http://dev.piwik.org/trac/roadmap). Click the menu link 'Roadmap' [in trac](http://dev.piwik.org). The Current roadmap is listed at the very top. The current roadmap contains all the most important tickets to fix in accordance with our [mission and vision for the Piwik analytics platform](http://piwik.org/roadmap/).
+Trac, Piwik's official issue tracker, has been used since [the beginning of the project](http://piwik.org/history/). All opened tickets are grouped in [Roadmaps](http://dev.piwik.org/trac/roadmap). Click the menu link 'Roadmap' [in trac](http://dev.piwik.org). The Current roadmap is listed at the very top and contains all the most important tickets to fix in accordance with our [mission and vision for the Piwik analytics platform](http://piwik.org/roadmap/).
 
 All other important and exciting tickets are moved to [The Great Piwik 2.x Backlog](http://dev.piwik.org/trac/query?status=assigned&status=new&status=reopened&milestone=2.x+-+The+Great+Piwik+2.x+Backlog&group=priority&col=id&col=summary&col=owner&col=type&col=priority&col=component&col=time&order=priority). This roadmap is our active Tickets Backlog. From time to time, we move one ticket from the Great Piwik 2.x Backlog to the current roadmap.
 

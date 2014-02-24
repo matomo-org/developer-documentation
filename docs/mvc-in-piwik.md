@@ -286,7 +286,7 @@ Here's an example of a secure controller method:
 
     public function myAdminTask()
     {
-        Piwik::checkUserIsSuperUser();
+        Piwik::checkUserHasSuperUserAccess();
         $this->checkTokenInUrl();
 
         if ($_SERVER["REQUEST_METHOD"] != "POST") {

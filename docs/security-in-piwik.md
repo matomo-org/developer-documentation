@@ -81,7 +81,7 @@ In every API method that executes some admin level function, make sure to check 
     // method in an API class
     public function changeSettingsForUser($userLogin)
     {
-        Piwik::checkUserIsSuperUserOrTheUser($userLogin);
+        Piwik::checkUserHasSuperUserAccessOrIsTheUser($userLogin);
     }
 
 #### **token_auth** in the browser
