@@ -421,6 +421,7 @@ Index
 - [`getSearchCategoryParameters()`](Piwik/Site.md#getsearchcategoryparameters) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getIdSitesFromIdSitesString()`](Piwik/Site.md#getidsitesfromidsitesstring) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getNameFor()`](Piwik/Site.md#getnamefor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
+- [`getGroupFor()`](Piwik/Site.md#getgroupfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getTimezoneFor()`](Piwik/Site.md#gettimezonefor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getTypeFor()`](Piwik/Site.md#gettypefor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`getCreationDateFor()`](Piwik/Site.md#getcreationdatefor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
