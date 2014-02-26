@@ -128,8 +128,6 @@ Index
 - [`$controllerName`](Piwik/ViewDataTable/Config.md#$controllername) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$controllerAction`](Piwik/ViewDataTable/Config.md#$controlleraction) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$clientSideParameters`](Piwik/ViewDataTable/RequestConfig.md#$clientsideparameters) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`$clientSideProperties`](Piwik/View/UIControl.md#$clientsideproperties) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
-- [`$clientSideParameters`](Piwik/View/UIControl.md#$clientsideparameters) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`$cssIdentifier`](Piwik/View/UIControl.md#$cssidentifier) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`$cssClass`](Piwik/View/UIControl.md#$cssclass) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
 
@@ -454,6 +452,8 @@ Index
 - [`getApiModuleToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimoduletorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiMethodToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimethodtorequest) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getTemplateVars()`](Piwik/View/UIControl.md#gettemplatevars) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`getClientSideProperties()`](Piwik/View/UIControl.md#getclientsideproperties) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`getClientSideParameters()`](Piwik/View/UIControl.md#getclientsideparameters) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`get()`](Piwik/WidgetsList.md#get) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## H
@@ -525,6 +525,7 @@ Index
 
 - [`JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
 - [`$jsClass`](Piwik/View/UIControl.md#$jsclass) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`$jsNamespace`](Piwik/View/UIControl.md#$jsnamespace) &mdash; _Property in class_ [`UIControl`](Piwik/View/UIControl.md)
 
 ## L
 
@@ -759,6 +760,7 @@ Index
 - [`Truncate`](Piwik/DataTable/Filter/Truncate.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`toString()`](Piwik/Date.md#tostring) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`today()`](Piwik/Date.md#today) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
+- [`tableExists()`](Piwik/Db.md#tableexists) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`$title`](Piwik/Notification.md#$title) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`$type`](Piwik/Notification.md#$type) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`toString()`](Piwik/Period.md#tostring) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
