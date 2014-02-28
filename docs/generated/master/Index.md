@@ -119,6 +119,7 @@ Index
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md#$config) &mdash; _Property in class_ [`HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md)
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md#$config) &mdash; _Property in class_ [`JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md)
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md#$config) &mdash; _Property in class_ [`Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md)
+- [`$config`](Piwik/Plugins/Insights/Visualizations/Insight.md#$config) &mdash; _Property in class_ [`Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md)
 - [`canBeDisplayedForCurrentUser()`](Piwik/Settings/Setting.md#canbedisplayedforcurrentuser) &mdash; _Method in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`clearCache()`](Piwik/Site.md#clearcache) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`Config`](Piwik/ViewDataTable/Config.md) &mdash; _Class in namespace_ `Piwik\ViewDataTable` 
@@ -352,6 +353,7 @@ Index
 - [`getPrettyString()`](Piwik/Period/Range.md#getprettystring) &mdash; _Method in class_ [`Range`](Piwik/Period/Range.md)
 - [`getDateEnd()`](Piwik/Period/Range.md#getdateend) &mdash; _Method in class_ [`Range`](Piwik/Period/Range.md)
 - [`getLastDate()`](Piwik/Period/Range.md#getlastdate) &mdash; _Method in class_ [`Range`](Piwik/Period/Range.md)
+- [`getDateXPeriodsAgo()`](Piwik/Period/Range.md#getdatexperiodsago) &mdash; _Method in class_ [`Range`](Piwik/Period/Range.md)
 - [`getRelativeToEndDate()`](Piwik/Period/Range.md#getrelativetoenddate) &mdash; _Method in class_ [`Range`](Piwik/Period/Range.md)
 - [`getCurrentUserEmail()`](Piwik/Piwik.md#getcurrentuseremail) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`getCurrentUserLogin()`](Piwik/Piwik.md#getcurrentuserlogin) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
@@ -502,6 +504,7 @@ Index
 - [`isViewDataTableId()`](Piwik/Plugin/ViewDataTable.md#isviewdatatableid) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`isRequestingSingleDataTable()`](Piwik/Plugin/ViewDataTable.md#isrequestingsingledatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`isThereDataToDisplay()`](Piwik/Plugin/Visualization.md#istheredatatodisplay) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
+- [`Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md) &mdash; _Class in namespace_ `Piwik\Plugins\Insights\Visualizations` 
 - [`isEmpty()`](Piwik/Segment.md#isempty) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
 - [`isSegmentationEnabled()`](Piwik/SettingsPiwik.md#issegmentationenabled) &mdash; _Method in class_ [`SettingsPiwik`](Piwik/SettingsPiwik.md)
 - [`isUniqueVisitorsEnabled()`](Piwik/SettingsPiwik.md#isuniquevisitorsenabled) &mdash; _Method in class_ [`SettingsPiwik`](Piwik/SettingsPiwik.md)
@@ -638,6 +641,7 @@ Index
 - [`removeSettingValue()`](Piwik/Plugin/Settings.md#removesettingvalue) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`$requestConfig`](Piwik/Plugin/ViewDataTable.md#$requestconfig) &mdash; _Property in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`render()`](Piwik/Plugin/ViewDataTable.md#render) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
+- [`$requestConfig`](Piwik/Plugins/Insights/Visualizations/Insight.md#$requestconfig) &mdash; _Property in class_ [`Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; _Class in namespace_ `Piwik` 
 - [`removeAllUserSettingsForUser()`](Piwik/Settings/UserSetting.md#removeallusersettingsforuser) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)
 - [`rescheduleTask()`](Piwik/TaskScheduler.md#rescheduletask) &mdash; _Method in class_ [`TaskScheduler`](Piwik/TaskScheduler.md)
