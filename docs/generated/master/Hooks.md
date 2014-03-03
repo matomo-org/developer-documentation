@@ -927,7 +927,7 @@ Usages:
 - [ScheduledReports.validateReportParameters](#scheduledreportsvalidatereportparameters)
 
 ### ScheduledReports.allowMultipleReports
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [773](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L773)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [778](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L778)_
 
 Triggered when we're determining if a scheduled report transport medium can handle sending multiple Piwik reports in one scheduled report or not. Plugins that provide their own transport mediums should use this
 event to specify whether their backend can send more than one Piwik report
@@ -946,7 +946,7 @@ Usages:
 
 
 ### ScheduledReports.getRendererInstance
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [422](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L422)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [427](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L427)_
 
 Triggered when obtaining a renderer instance based on the scheduled report output format. Plugins that provide new scheduled report output formats should use this event to
 handle their new report formats.
@@ -968,7 +968,7 @@ Usages:
 
 
 ### ScheduledReports.getReportFormats
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [820](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L820)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [825](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L825)_
 
 Triggered when gathering all available scheduled report formats. Plugins that provide their own scheduled report format should use
 this event to make their format available.
@@ -986,7 +986,7 @@ Usages:
 
 
 ### ScheduledReports.getReportMetadata
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [745](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L745)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [750](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L750)_
 
 TODO: change this event so it returns a list of API methods instead of report metadata arrays. Triggered when gathering the list of Piwik reports that can be used with a certain
 transport medium.
@@ -1009,7 +1009,7 @@ Usages:
 
 
 ### ScheduledReports.getReportParameters
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [599](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L599)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [604](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L604)_
 
 Triggered when gathering the available parameters for a scheduled report type. Plugins that provide their own scheduled report transport mediums should use this
 event to list the available report parameters for their transport medium.
@@ -1027,7 +1027,7 @@ Usages:
 
 
 ### ScheduledReports.getReportRecipients
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [851](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L851)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [856](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L856)_
 
 Triggered when getting the list of recipients of a scheduled report. Plugins that provide their own scheduled report transport medium should use this event
 to extract the list of recipients their backend's specific scheduled report
@@ -1048,7 +1048,7 @@ Usages:
 
 
 ### ScheduledReports.getReportTypes
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [796](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L796)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [801](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L801)_
 
 Triggered when gathering all available transport mediums. Plugins that provide their own transport mediums should use this
 event to make their medium available.
@@ -1064,7 +1064,7 @@ Usages:
 
 
 ### ScheduledReports.processReports
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [400](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L400)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [405](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L405)_
 
 Triggered when generating the content of scheduled reports. This event can be used to modify the report data or report metadata of one or more reports
 in a scheduled report, before the scheduled report is rendered and delivered.
@@ -1089,7 +1089,7 @@ Usages:
 
 
 ### ScheduledReports.sendReport
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [541](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L541)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [546](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L546)_
 
 Triggered when sending scheduled reports. Plugins that provide new scheduled report transport mediums should use this event to
 send the scheduled report.
@@ -1119,7 +1119,7 @@ Usages:
 
 
 ### ScheduledReports.validateReportParameters
-_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [626](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L626)_
+_Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php) in line [631](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/API.php#L631)_
 
 Triggered when validating the parameters for a scheduled report. Plugins that provide their own scheduled reports backend should use this
 event to validate the custom parameters defined with ScheduledReports::getReportParameters().
@@ -1246,7 +1246,7 @@ Callback Signature:
 - [SitesManager.deleteSite.end](#sitesmanagerdeletesiteend)
 
 ### SitesManager.addSite.end
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [568](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L568)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [572](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L572)_
 
 Triggered after a site has been added.
 
@@ -1257,7 +1257,7 @@ Callback Signature:
 
 
 ### SitesManager.deleteSite.end
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [623](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L623)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [627](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L627)_
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
