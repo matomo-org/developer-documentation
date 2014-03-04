@@ -45,7 +45,7 @@ When 'period=range', the following keywords are supported for the parameter 'dat
     *   segments can be combined in AND and OR operations. For example, to filter for "Visits where (Referrer name is Google OR Referrer name is Bing) AND Country is India", you would write:
 _referrerName==Google,referrerName==Bing;country==IN_
 
-        *   see [segmentation documentation](/reporting-api/segmentation) for the list of available dimensions & metrics, example values for each, and more information about the custom segment parameter
+        *   see [segmentation documentation](/api-reference/segmentation) for the list of available dimensions & metrics, example values for each, and more information about the custom segment parameter
 
 *   **format**; defines the format of the output
 
