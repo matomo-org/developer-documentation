@@ -61,6 +61,7 @@ The class defines the following methods:
 - [`segmentedFetchOne()`](#segmentedfetchone) &mdash; Performs a `SELECT` on a table one chunk at a time and returns an array of every fetched value.
 - [`segmentedFetchAll()`](#segmentedfetchall) &mdash; Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
 - [`segmentedQuery()`](#segmentedquery) &mdash; Performs a `UPDATE` or `DELETE` statement on a table one chunk at a time.
+- [`tableExists()`](#tableexists) &mdash; Returns `true` if a table in the database, `false` if otherwise.
 - [`getDbLock()`](#getdblock) &mdash; Attempts to get a named lock.
 - [`releaseDbLock()`](#releasedblock) &mdash; Releases a named lock.
 - [`isLockPrivilegeGranted()`](#islockprivilegegranted) &mdash; Checks whether the database user is allowed to lock tables.
@@ -904,6 +905,30 @@ the table will not be locked for too long.
    </li>
    </ul>
 - It does not return anything.
+
+<a name="tableexists" id="tableexists"></a>
+<a name="tableExists" id="tableExists"></a>
+### `tableExists()`
+
+Returns `true` if a table in the database, `false` if otherwise.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tableName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the table to check for. Must be prefixed.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `bool` value.
 
 <a name="getdblock" id="getdblock"></a>
 <a name="getDbLock" id="getDbLock"></a>

@@ -83,6 +83,7 @@ This is a complete list of available classes:
 - [`Plugins\ExampleVisualization\SimpleTable`](Piwik/Plugins/ExampleVisualization/SimpleTable.md) &mdash; SimpleTable Visualization.
 - [`Plugins\Goals\Archiver`](Piwik/Plugins/Goals/Archiver.md)
 - [`Plugins\Goals\Visualizations\Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_goals_columns to true.
+- [`Plugins\Insights\Visualizations\Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md) &mdash; InsightsVisualization Visualization.
 - [`Plugins\Live\VisitorLog`](Piwik/Plugins/Live/VisitorLog.md) &mdash; A special DataTable visualization for the Live.getLastVisitsDetails API method.
 - [`Plugins\Provider\Archiver`](Piwik/Plugins/Provider/Archiver.md)
 - [`Plugins\Referrers\Archiver`](Piwik/Plugins/Referrers/Archiver.md)

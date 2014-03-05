@@ -27,6 +27,7 @@ The class defines the following methods:
 - [`parseDateRange()`](#parsedaterange) &mdash; Given a date string, returns `false` if not a date range, or returns the array containing start and end dates.
 - [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period.
 - [`getLastDate()`](#getlastdate) &mdash; Returns the date that is one period before the supplied date.
+- [`getDateXPeriodsAgo()`](#getdatexperiodsago) &mdash; Returns the date that is X periods before the supplied date.
 - [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date range string given a period type, end date and number of periods the range spans over.
 
 <a name="__construct" id="__construct"></a>
@@ -230,6 +231,61 @@ Returns the date that is one period before the supplied date.
       `$period` (`bool`|`string`) &mdash;
 
       <div markdown="1" class="param-desc"> The period to use (either 'day', 'week', 'month', 'year');</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">An array with two elements, a string for the date before $date and a Period instance for the period before $date.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="getdatexperiodsago" id="getdatexperiodsago"></a>
+<a name="getDateXPeriodsAgo" id="getDateXPeriodsAgo"></a>
+### `getDateXPeriodsAgo()`
+
+Returns the date that is X periods before the supplied date.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$subXPeriods`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$date`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$period`
+
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
