@@ -12,6 +12,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setFrom()`](#setfrom) &mdash; Sets the sender.
+- [`send()`](#send)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -69,4 +70,26 @@ Sets the sender.
    </li>
    </ul>
 - It returns a `Zend_Mail` value.
+
+<a name="send" id="send"></a>
+<a name="send" id="send"></a>
+### `send()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$transport`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
 

@@ -695,6 +695,7 @@ Index
 - [`sanitizeIp()`](Piwik/IP.md#sanitizeip) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`sanitizeIpRange()`](Piwik/IP.md#sanitizeiprange) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`setFrom()`](Piwik/Mail.md#setfrom) &mdash; _Method in class_ [`Mail`](Piwik/Mail.md)
+- [`send()`](Piwik/Mail.md#send) &mdash; _Method in class_ [`Mail`](Piwik/Mail.md)
 - [`set()`](Piwik/Option.md#set) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
 - [`setDefaultEndDate()`](Piwik/Period/Range.md#setdefaultenddate) &mdash; _Method in class_ [`Range`](Piwik/Period/Range.md)
 - [`$strDate`](Piwik/Plugin/Controller.md#$strdate) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
