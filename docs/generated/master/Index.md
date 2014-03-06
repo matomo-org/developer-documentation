@@ -119,7 +119,6 @@ Index
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md#$config) &mdash; _Property in class_ [`HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md)
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md#$config) &mdash; _Property in class_ [`JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md)
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md#$config) &mdash; _Property in class_ [`Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md)
-- [`$config`](Piwik/Plugins/Insights/Visualizations/Insight.md#$config) &mdash; _Property in class_ [`Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md)
 - [`canBeDisplayedForCurrentUser()`](Piwik/Settings/Setting.md#canbedisplayedforcurrentuser) &mdash; _Method in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`clearCache()`](Piwik/Site.md#clearcache) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`Config`](Piwik/ViewDataTable/Config.md) &mdash; _Class in namespace_ `Piwik\ViewDataTable` 
