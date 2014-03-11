@@ -11,6 +11,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`setDefaultFromPiwik()`](#setdefaultfrompiwik)
 - [`setFrom()`](#setfrom) &mdash; Sets the sender.
 - [`send()`](#send)
 
@@ -36,6 +37,14 @@ Constructor.
       </div>
    </li>
    </ul>
+
+<a name="setdefaultfrompiwik" id="setdefaultfrompiwik"></a>
+<a name="setDefaultFromPiwik" id="setDefaultFromPiwik"></a>
+### `setDefaultFromPiwik()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="setfrom" id="setfrom"></a>
 <a name="setFrom" id="setFrom"></a>

@@ -693,6 +693,7 @@ Index
 - [`sendHttpRequest()`](Piwik/Http.md#sendhttprequest) &mdash; _Method in class_ [`Http`](Piwik/Http.md)
 - [`sanitizeIp()`](Piwik/IP.md#sanitizeip) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`sanitizeIpRange()`](Piwik/IP.md#sanitizeiprange) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
+- [`setDefaultFromPiwik()`](Piwik/Mail.md#setdefaultfrompiwik) &mdash; _Method in class_ [`Mail`](Piwik/Mail.md)
 - [`setFrom()`](Piwik/Mail.md#setfrom) &mdash; _Method in class_ [`Mail`](Piwik/Mail.md)
 - [`send()`](Piwik/Mail.md#send) &mdash; _Method in class_ [`Mail`](Piwik/Mail.md)
 - [`set()`](Piwik/Option.md#set) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
