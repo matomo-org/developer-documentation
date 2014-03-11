@@ -24,6 +24,7 @@ I recommend to watch some videos and read a few resources about the benefits and
 * [Considering Speed and Slowness in AngularJS](https://www.exratione.com/2013/12/considering-speed-and-slowness-in-angularjs/)
 * [The Hitchhiker’s Guide to the Directive](http://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/)
 * [Build custom directives with AngularJS](http://www.ng-newsletter.com/posts/directives.html)
+* [When to use directives, controllers or services in AngularJS](http://kirkbushell.me/when-to-use-directives-controllers-or-services-in-angular/)
 
 
 ## Some random notes and tips
