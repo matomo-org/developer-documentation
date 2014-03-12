@@ -97,6 +97,8 @@ If a component, say a filter, can be reused in different plugins and is not plug
 
 Filenames are always lower case and words are separated by dashes. In general we have one file per class/component/filter/...
 
+**Important**: Our directives always start with `piwik-` for instance `<div piwik-onenter="close()">`
+
 ### Related links
 * https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub
 * http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript
