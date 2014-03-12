@@ -42,9 +42,9 @@ I recommend to watch some videos and read a few resources about the benefits and
 * The second most important thing to understand are probably [directives](http://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/).
 * Try to keep the number of data-bound elements low (< 200)
 * The ng-repeat directive of AngularJS is getting slow above 2500 two-way data bindings.
-* Sometimes you need some properties only in the view (HTML template). Try to prefix them with "view". For instance ```<div ng-show='view.showPaginator'>```
+* Sometimes you need some properties only in the view (HTML template). Try to prefix them with `view`. For instance ```<div ng-show='view.showPaginator'>```
 * When Angular detects the presence of a jQuery version in your page, it uses the full jQuery implementation in lieu of jqLite.
-* "Here are two rules for filters: firstly, if the same effect can be simply achieved by decorating the underlying data, such as by adding a "formattedValue" property, then do it that way. It will always be faster because it only happens once, not multiple times per digest cycle. Secondly, when you do have good reasons to write a filter make sure that it is blindingly fast." --> No DOM access if possible as filters are called many many times. [Read more](https://www.exratione.com/2013/12/considering-speed-and-slowness-in-angularjs/)
+* "Here are two rules for filters: firstly, if the same effect can be simply achieved by decorating the underlying data, such as by adding a 'formattedValue' property, then do it that way. It will always be faster because it only happens once, not multiple times per digest cycle. Secondly, when you do have good reasons to write a filter make sure that it is blindingly fast." --> No DOM access if possible as filters are called many many times. [Read more](https://www.exratione.com/2013/12/considering-speed-and-slowness-in-angularjs/)
 * Do not access the DOM within a Controller, only from directives and only if needed
 * AngularJS is unique as it does not force you to use a model but it is definitely recommend. There is no class to extend to create a model, still you should always use a model and keep the controller as short as possible.
 * Difference between Services, Factories, Provider:
@@ -57,32 +57,41 @@ I recommend to watch some videos and read a few resources about the benefits and
 ## Namespacing
 
 ## Code organization / file structure
-There are lots of discussions about the best file structure. In the past we divided a feature into multiple folders called "javascripts", "stylesheets", ... From now on we want to
+There are lots of discussions about the best file structure. In the past we divided a feature into multiple folders called `javascripts`, `stylesheets`, ... From now on we want to
 organize files per feature which is [recommended](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub) by the Angular Team and also works best in large projects.
 
 Basically we create a folder for each feature within the plugin folder. Say we want to create a "site selector" than we create the following files:
 + CoreHome
-  + siteselector
-    + siteselector-directive.js
-    + siteselector-controller.js
-    + siteselector-filter.js
-    + siteselector-model.js
-    + siteselector.css
-    + siteselector.html
+  + angularjs
+    + siteselector
+      + siteselector-directive.js
+      + siteselector-controller.js
+      + siteselector-filter.js
+      + siteselector-model.js
+      + siteselector.css
+      + siteselector.html
+    + common
+      + filters
+        + corehomespecific.js
 
-What's the adventage of this? Beside that is scales with the project you will notice immediately what a plugin does when opening a plugin folder whereas this is not the case if you see only "javascripts", "templates" and "stylesheets" folders. Another advantage is we could - in theory - extract a feature into a separate repository and share single widgets with other people.
-If a component, say a filter, can be reused in different places - which hopefully is the case the most times - we but them into `CoreHome/common`:
+Sometimes you might have some reusable components within your plugin in which case you can but them into a `common` folder.
+What's the adventage of this? Beside that is scales with the project you will notice immediately what a plugin does when opening a plugin folder whereas this is not the case if you see only `javascripts`, `templates` and `stylesheets` folders. Another advantage is we could - in theory - extract a feature into a separate repository and share single widgets with other people.
+
+There is currently the `angularjs` namespace within a plugin which is a bit annoying, we know. Long term we will remove this folder. medium term - once we have more Angular components - we will give this folder at least a better, more meaningful, name. With the existing assets structure of jQuery code it is hard to find the least annoying solution for this.
+
+If a component, say a filter, can be reused in different plugins and is not plugin specific we but them into `CoreHome/angularjs/common`:
 
 + CoreHome
-  + common
-    + filters
-      + evolution.js
-      + translate.js
-    + services
-      + piwik-api.js
-    + directives
-      + focusif.js
-      + focus-anywhere-but-here.js
+  + angularjs
+    + common
+      + filters
+        + evolution.js
+        + translate.js
+      + services
+        + piwik-api.js
+      + directives
+        + focusif.js
+        + focus-anywhere-but-here.js
 
 Filenames are always lower case and words are separated by dashes. In general we have one file per class/component/filter/...
 
