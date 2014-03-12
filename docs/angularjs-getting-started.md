@@ -53,7 +53,7 @@ I recommend to watch some videos and read a few resources about the benefits and
    * `Providers` have the advantage that they can be configured during the module configuration phase. A service and factory are both provider.
    [Read more](http://stackoverflow.com/questions/15666048/angular-js-service-vs-provider-vs-factory)
 * If you don't know promises yet, read about it: [http://www.sitepoint.com/overview-javascript-promises/](http://www.sitepoint.com/overview-javascript-promises/)
-* When working with promises you will notice that .catch() and .finally() won't work in IE8. Use promise['finally']() instead. [Read more](https://github.com/angular/angular.js/commit/f078762d48d0d5d9796dcdf2cb0241198677582c)
+* When working with promises you will notice that `.catch()` and `.finally()` won't work in IE8. Use `promise['finally']()` instead. [Read more](https://github.com/angular/angular.js/commit/f078762d48d0d5d9796dcdf2cb0241198677582c)
 
 ## Namespacing
 
