@@ -70,7 +70,9 @@ Basically we create a folder for each feature within the plugin folder. Say we w
       + siteselector-model.js
       + siteselector.css
       + siteselector.html
+      + search.png
     + common
+      + images
       + filters
         + corehomespecific.js
 
