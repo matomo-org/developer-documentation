@@ -232,7 +232,7 @@ Callback Signature:
 - [ArchiveProcessor.Parameters.getIdSites](#archiveprocessorparametersgetidsites)
 
 ### ArchiveProcessor.Parameters.getIdSites
-_Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php) in line [109](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php#L109)_
+_Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php) in line [110](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Parameters.php#L110)_
 
 
 
