@@ -132,6 +132,7 @@ You can post events within Twig templates by using the **postEvent** function:
 
     {{ postEvent('MyPlugin.MyEventInATemplate') }}
 
+
 The **postEvent** function will pass a string by reference to all event handlers and then insert the string into the template. Event handlers can modify the string, inserting HTML into templates in other plugins:
 
     class MyOtherPlugin extends \Piwik\Plugin
@@ -147,6 +148,18 @@ The **postEvent** function will pass a string by reference to all event handlers
         {
             $outString .= '<h1>This text was injected!</h1>';
         }
+    }
+
+When posting events, the templates can pass extra parameters:
+
+    {{ postEvent('MyPlugin.MyEventInATemplate', usefulVariable, usefulVariableBis) }}
+
+Event handler can read these optional values as follows:
+
+    public function handleMyEventInATemplate(&$outString, $usefulVariable, $usefulVariableBis)
+    {
+        $outString .= '<h1>This text was injected!</h1>';
+        $outString .= $usefulVariable . " - " . $usefulVariableBis;
     }
 
 ## Plugin Classes
