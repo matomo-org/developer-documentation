@@ -214,7 +214,7 @@ Translation tokens are translated in templates via the [translate](#) filter. We
 
 Then replace the text in your template with the following:
 
-    <h1>{{ MyPlugin_RealtimeAnalytics|translate }}</h1>
+    <h1>{{ 'MyPlugin_RealtimeAnalytics'|translate }}</h1>
 
     {{ getLastVisitsByDimensionReport|raw }}
 
