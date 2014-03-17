@@ -428,7 +428,7 @@ Callback Signature:
 - [CronArchive.filterWebsiteIds](#cronarchivefilterwebsiteids)
 
 ### CronArchive.filterWebsiteIds
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [797](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L797)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [793](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L793)_
 
 Triggered by the **archive.php** cron script so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
