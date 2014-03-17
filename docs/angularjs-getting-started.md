@@ -13,7 +13,7 @@ With using AngularJS we are trying to achieve different goals:
 * Getting rid of jQuery soup [[0]](http://programming.oreilly.com/2014/01/keeping-jquery-in-check.html) [[1]](http://martinfowler.com/bliki/SegregatedDOM.html) and reducing complexity in our frontend
 * More reusable code (models, services, filters, directives, ...)
 * Shift some work from the server side into client side
-* Faster response (especially once we can use AngularJS routing and [AMD](http://requirejs.org/docs/whyamd.html))
+* Faster response (especially once we can use AngularJS routing and [AMD](http://requirejs.org/docs/whyamd.html)). If you are not familiar with AMD -> please ignore for now
 
 ## Before you start using AngularJS
 I recommend to watch some videos and read a few resources about the benefits and best practices of AngularJS. It is important to understand how AngularJS works and especially to be aware of pitfalls and best practices.
