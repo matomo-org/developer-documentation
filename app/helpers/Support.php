@@ -20,8 +20,8 @@ class Support {
             'description' => 'Ask other developers for help. Someone might have encountered your problem before.'
         );
 
-        $menu['tickets'] = array(
-            'title'       => 'Tickets',
+        $menu['issues'] = array(
+            'title'       => 'Issues',
             'url'         => 'http://dev.piwik.org',
             'description' => 'Create a bug report on our bug tracking system or check on the status of an existing bug.'
         );

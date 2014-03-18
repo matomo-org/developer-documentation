@@ -185,6 +185,24 @@ body {
     }
 }
 
+.btn-piwik:hover {
+    color: #ffffff;
+}
+
+.btn-piwik {
+    color: #ffffff;
+    text-shadow: 0 0.7px 0 rgba(0, 0, 0, 0.1);
+    background-color: #d4291f;
+    *background-color: #d4291f;
+    background-image: -moz-linear-gradient(top, #d4291f, #d4291f);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d4291f), to(#d4291f));
+    background-image: -webkit-linear-gradient(top, #d4291f, #d4291f);
+    background-image: -o-linear-gradient(top, #d4291f, #d4291f);
+    background-image: linear-gradient(to bottom, #d4291f, #d4291f);
+    background-repeat: repeat-x;
+    border-color: #e6e6e6 #e6e6e6 #c0c0c0;
+    border-color: rgba(0, 0, 0, 0.2);
+}
 
 .btn-github {
     color: #000000;
