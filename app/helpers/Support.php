@@ -32,6 +32,11 @@ class Support {
             'description' => 'If your looking for someone to create a plugin for you or want someone to fix a bug for you ASAP, then get in touch with a professional consultant.'
         );
 
+        $menu['roadmap'] = array(
+            'title'       => 'Roadmap',
+            'url'         => 'http://piwik.org/roadmap/',
+            'description' => 'Our mission is to liberate web analytics worldwide, and help you grow your project with better data insights. Check out what else we have planned for the future.'
+        );
 
         return $menu;
     }
