@@ -26,6 +26,13 @@ class Support {
             'description' => 'Create a bug report on our bug tracking system or check on the status of an existing bug.'
         );
 
+        $menu['irc'] = array(
+            'title'        => 'IRC',
+            'url'          => 'http://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a',
+            'description'  => 'Speak to us and the community in IRC: irc.freenode.net/#piwik',
+            'callToAction' => 'Webchat'
+        );
+
         $menu['piwikpro'] = array(
             'title'       => 'Piwik Pro',
             'url'         => 'http://piwik.org/consulting/',
