@@ -1623,10 +1623,6 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/2.1.1-b3
 
 Triggered after the platform is initialized and after the user has been authenticated, but before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
 
-Usages:
-
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.1.1-b3/plugins/CoreUpdater/CoreUpdater.php#L162)
-
 ## Url
 
 - [Url.filterTrustedHosts](#urlfiltertrustedhosts)
