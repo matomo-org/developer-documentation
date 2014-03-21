@@ -656,6 +656,7 @@ Index
 
 ## S
 
+- [`shouldLoadFlatten()`](Piwik/API/Request.md#shouldloadflatten) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
 - [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`sort()`](Piwik/DataTable.md#sort) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](Piwik/DataTable.md#setmaximumdepthlevelallowedatleast) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
