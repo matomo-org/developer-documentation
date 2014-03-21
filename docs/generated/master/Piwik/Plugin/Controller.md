@@ -225,6 +225,16 @@ Convenience method that creates and renders a ViewDataTable for a API method.
 
       </div>
    </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$controllerAction`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
    </ul>
 
 <ul>

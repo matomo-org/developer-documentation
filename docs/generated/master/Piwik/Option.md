@@ -30,6 +30,7 @@ Methods
 The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns the option value for the requested option `$name`.
+- [`getLike()`](#getlike) &mdash; Returns option values for options whose names are like a given pattern.
 - [`set()`](#set) &mdash; Sets an option value by name.
 - [`delete()`](#delete) &mdash; Deletes an option.
 - [`deleteLike()`](#deletelike) &mdash; Deletes all options that match the supplied pattern.
@@ -62,6 +63,41 @@ Returns the option value for the requested option `$name`.
     <div markdown="1" class="parameter">
     _Returns:_  (`string`|`Piwik\false`) &mdash;
     <div markdown="1" class="param-desc">The value or `false`, if not found.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="getlike" id="getlike"></a>
+<a name="getLike" id="getLike"></a>
+### `getLike()`
+
+Returns option values for options whose names are like a given pattern.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$namePattern` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The pattern used in the SQL `LIKE` expression used to SELECT options.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`array`) &mdash;
+    <div markdown="1" class="param-desc">Array mapping option names with option values.</div>
 
     <div style="clear:both;"/>
 

@@ -336,6 +336,7 @@ Index
 - [`getAcceptableOrigins()`](Piwik/Nonce.md#getacceptableorigins) &mdash; _Method in class_ [`Nonce`](Piwik/Nonce.md)
 - [`getPriority()`](Piwik/Notification.md#getpriority) &mdash; _Method in class_ [`Notification`](Piwik/Notification.md)
 - [`get()`](Piwik/Option.md#get) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
+- [`getLike()`](Piwik/Option.md#getlike) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
 - [`getDateStart()`](Piwik/Period.md#getdatestart) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
 - [`getDateEnd()`](Piwik/Period.md#getdateend) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
 - [`getId()`](Piwik/Period.md#getid) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
