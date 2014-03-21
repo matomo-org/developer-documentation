@@ -189,19 +189,19 @@ The following are a list of guidelines and requirements for contributions to Piw
 
 * **Write _efficient_ code.** Does your code scale well? What happens when there are hundreds of thousands of websites and billions of visits? Please note any potential performance issues and whether they would be easy to fix. We know how hard it can be to scale efficiently, but we would like for Piwik to be as fast as possible.
 
-* **Follow our [security guidelines](#).** We do not allow any security vulnerabilities in contributions.
+* **Follow our [security guidelines](/guides/security-in-piwik).** We do not allow any security vulnerabilities in contributions.
 
 ### Specific Considerations
 
 * **Add new configuration settings for fixed values that may users may change.** Does your code use constants that users may want to change? They should be made configurable.
 
-* **Use automated testing to test your PHP.** If you've written new PHP code, have you created unit and integration tests for them? Some code cannot be tested this way (such as code in controllers), but all code that could benefit  from automated tests should have tests written for them. Read our [Automated Testing](#) guide to learn about Piwik's test suite.
+* **Use automated testing to test your PHP.** If you've written new PHP code, have you created unit and integration tests for them? Some code cannot be tested this way (such as code in controllers), but all code that could benefit  from automated tests should have tests written for them. Read our [Automated Testing](/guides/automated-tests) guide to learn about Piwik's test suite.
 
-* **Internationalize your text.** If your contribution has text, is it loaded from a language file? We want all text in Piwik Core to be available in as many languages as possible. To learn more about i18n in Piwik read our [Internationalization](#) guide.
+* **Internationalize your text.** If your contribution has text, is it loaded from a language file? We want all text in Piwik Core to be available in as many languages as possible. To learn more about i18n in Piwik read our [Internationalization](/guides/internationalization) guide.
 
 * **Generate HTML in template files only.** Does your PHP code contain HTML? It shouldn't. All HTML generation should be handled by Twig templates.
 
-* **If your contribution includes changes to the UI, make sure to do manual testing of all relevant areas of Piwik's UI.** See [this section](#manual-ui-testing) for details on how to do these tests.
+* **If your contribution includes changes to the UI, make sure to do manual testing of all relevant areas of Piwik's UI.** See [this section](/guides/manual-ui-testing) for details on how to do these tests.
 
 * **If your contribution includes third-party components & libraries, make sure they include GPL compatible licenses.** Third-party components/libraries must be compatible with GPL v3 since this is the license used by Piwik.
 
