@@ -49,49 +49,7 @@ class ApiReference {
     {
         $menu = array();
 
-        $menu[] = array(
-            'title'        => 'Classes',
-            'file'         => 'generated/master/Classes',
-            'url'          => static::getUrl('classes'),
-            'description'  => 'View reference docs for every Piwik class that plugin developers should use.',
-            'callToAction' => 'Browse',
-            'category'     => 'PHP Documentation'
-        );
-
-        $menu[] = array(
-            'title'        => 'Events',
-            'file'         => 'generated/master/Hooks',
-            'url'          => static::getUrl('events'),
-            'description'  => 'View reference docs for every event posted by Piwik and its Core Plugins.',
-            'callToAction' => 'Browse',
-            'category'     => 'PHP Documentation'
-        );
-
-        $menu[] = array(
-            'title'        => 'Index',
-            'file'         => 'generated/master/Index',
-            'url'          => static::getUrl('index'),
-            'description'  => 'View every class and method in an alphabetized index.',
-            'callToAction' => 'Browse',
-            'category'     => 'PHP Documentation'
-        );
-
-        $menu[] = array(
-            'title'        => 'PHP Tracking client',
-            'file'         => 'generated/master/PiwikTracker',
-            'url'          => static::getUrl('PHP-Piwik-Tracker'),
-            'description'  => 'View reference docs for the PHP tracking client.',
-            'callToAction' => 'Browse',
-            'category'     => 'PHP Documentation'
-        );
-        $menu[] = array(
-            'title'        => 'Javascript Tracking client',
-            'file'         => 'tracking-javascript',
-            'url'          => static::getUrl('tracking-javascript'),
-            'description'  => 'View reference docs for the Javascript tracking client.',
-            'callToAction' => 'Browse',
-            'category'     => 'JavaScript Documentation'
-        );
+        /* Web APIs */
 
         $menu[] = array(
             'title'        => 'Tracking HTTP API',
@@ -129,6 +87,57 @@ class ApiReference {
             'callToAction' => 'Browse',
             'category'     => 'HTTP API Documentation'
         );
+
+        /* Javascript tracking */
+
+        $menu[] = array(
+            'title'        => 'Javascript Tracking client',
+            'file'         => 'tracking-javascript',
+            'url'          => static::getUrl('tracking-javascript'),
+            'description'  => 'View reference docs for the Javascript tracking client.',
+            'callToAction' => 'Browse',
+            'category'     => 'JavaScript Documentation'
+        );
+
+        /* Platform API */
+
+        $menu[] = array(
+            'title'        => 'Classes',
+            'file'         => 'generated/master/Classes',
+            'url'          => static::getUrl('classes'),
+            'description'  => 'View reference docs for every Piwik class that plugin developers should use.',
+            'callToAction' => 'Browse',
+            'category'     => 'PHP Documentation'
+        );
+
+        $menu[] = array(
+            'title'        => 'Events',
+            'file'         => 'generated/master/Hooks',
+            'url'          => static::getUrl('events'),
+            'description'  => 'View reference docs for every event posted by Piwik and its Core Plugins.',
+            'callToAction' => 'Browse',
+            'category'     => 'PHP Documentation'
+        );
+
+        $menu[] = array(
+            'title'        => 'Index',
+            'file'         => 'generated/master/Index',
+            'url'          => static::getUrl('index'),
+            'description'  => 'View every class and method in an alphabetized index.',
+            'callToAction' => 'Browse',
+            'category'     => 'PHP Documentation'
+        );
+
+        $menu[] = array(
+            'title'        => 'PHP Tracking client',
+            'file'         => 'generated/master/PiwikTracker',
+            'url'          => static::getUrl('PHP-Piwik-Tracker'),
+            'description'  => 'View reference docs for the PHP tracking client.',
+            'callToAction' => 'Browse',
+            'category'     => 'PHP Documentation'
+        );
+
+
 
         $result = array();
         foreach ($menu as $item) {
