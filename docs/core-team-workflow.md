@@ -131,9 +131,9 @@ One way to help core development is to submit a report when you find a bug.
 If you believe you have found a bug in Piwik, please do the following:
 
 * make sure you are using the latest [Piwik release](http://piwik.org/download/)
-* search in the [forum](http://forum.piwik.org/), [FAQ](http://piwik.org/faq/) and the [bug tracker](http://dev.piwik.org/) if a similar or the same bug has already been reported.
+* search in the [forum](http://forum.piwik.org/), [FAQ](http://piwik.org/faq/) and the [issue tracker](http://dev.piwik.org/) if a similar or the same bug has already been reported.
 * if your bug seems new, do you know the steps to follow to reproduce it?
-* if you are ready to report a bug, register an account [in the bug tracker](http://dev.piwik.org/), login and create a new ticket
+* if you are ready to report a bug, register an account [in the issue tracker](http://dev.piwik.org/), login and create a new ticket
 * make sure the title and description are as descriptive and clear as possible. Is the issue new to you, or has it always failed? If you give a clear description, you will greatly help developers trying to reproduce and fix the issue.
 * In the bug description, please post instructions on how to reproduce, data sets that show the error if possible, screenshots, what exactly is not working? Also include details about relevant parts of your configuration (Browser, OS, PHP version, etc.).
 
