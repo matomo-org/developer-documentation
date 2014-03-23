@@ -100,6 +100,12 @@ Filenames are always lower case and words are separated by dashes. In general we
 
 **Important**: Our directives always start with `piwik-` for instance `<div piwik-onenter="close()">`
 
+### Coding style guide
+
+* As our minifier does not rename any variables we do not have to declare dependencies separately, we can simply write `function ($http)` instead of `['$http', function ($http) {}]`
+* In AngularJS there are many ways to define attributes for a directive (Class, HTML Attributes, Elementname, ...). We are using HTML attributes and as we do not really aim to be W3C compliant we chose not to prefix attributes with "data-" to keep templates clean. 
+
+
 ### Related links
 * https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub
 * http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript
