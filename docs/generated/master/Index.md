@@ -102,6 +102,7 @@ Index
 - [`copyRecursive()`](Piwik/Filesystem.md#copyrecursive) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`checkNonce()`](Piwik/Nonce.md#checknonce) &mdash; _Method in class_ [`Nonce`](Piwik/Nonce.md)
 - [`$context`](Piwik/Notification.md#$context) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
+- [`clearCachedOption()`](Piwik/Option.md#clearcachedoption) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
 - [`checkUserHasSuperUserAccessOrIsTheUser()`](Piwik/Piwik.md#checkuserhassuperuseraccessoristheuser) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`checkUserIsNotAnonymous()`](Piwik/Piwik.md#checkuserisnotanonymous) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`checkUserHasSuperUserAccess()`](Piwik/Piwik.md#checkuserhassuperuseraccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)

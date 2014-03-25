@@ -34,6 +34,7 @@ The class defines the following methods:
 - [`set()`](#set) &mdash; Sets an option value by name.
 - [`delete()`](#delete) &mdash; Deletes an option.
 - [`deleteLike()`](#deletelike) &mdash; Deletes all options that match the supplied pattern.
+- [`clearCachedOption()`](#clearcachedoption)
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
@@ -209,6 +210,28 @@ Deletes all options that match the supplied pattern.
       `$value` (`string`) &mdash;
 
       <div markdown="1" class="param-desc"> If supplied, options will be deleted only if their value matches this value.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="clearcachedoption" id="clearcachedoption"></a>
+<a name="clearCachedOption" id="clearCachedOption"></a>
+### `clearCachedOption()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name`
+
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
