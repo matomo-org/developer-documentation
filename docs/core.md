@@ -162,7 +162,7 @@ Test that these features work:
 *   Sort by column ("column sorted" icon should appear once the action is completed)
 *   Pagination (previous/next), verify that 'current' and 'max' numbers are correct
 *   Pagination should be reseted after a table refresh (column sort)
-*   Test the Cog icon, in Page URLs report, and in Referers&gt; Websites.
+*   Test the Cog icon, in Page URLs report, and in Referrers&gt; Websites.
 *   Test the "Number of rows to display" element works in the bottom right
 *
 

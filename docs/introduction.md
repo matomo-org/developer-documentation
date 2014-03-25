@@ -91,7 +91,7 @@ The table **archive\_blob_** stores anything that is not a number. A BLOB is a b
 Both tables have exactly the same structure except the type of the **value** field ([BLOB](http://dev.mysql.com/doc/refman/5.0/en/blob.html) in one case, [FLOAT](http://dev.mysql.com/doc/refman/5.0/en/numeric-types.html) in the other). The structure has the following fields:
 
 *   **idarchive** defines a unique archive. All data for a specific website over a specific period (day/week/etc.) for a specific date will have the same **idarchive**. In other words this **idarchive** is the same as if (**idsite**,**period**,**date1**,**date2**) was the primary key.
-*   **name** is the description of the **value** of the record. For example, if you store the number of distinct keywords used a pertinent **name** could be 'Referers_distinctKeywords'
+*   **name** is the description of the **value** of the record. For example, if you store the number of distinct keywords used a pertinent **name** could be 'Referrers_distinctKeywords'
 *   **idsite** is the website that the record refers to
 *   **date1** and **date2** are the starting and ending dates that the record refers to. If the archive refers to a single day, **date1** = **date2**. The class handling the date logic is [Piwik_Date](https://github.com/piwik/piwik/blob/master/core/Date.php).
 *   **period** defines the period type: day/week/month/year. All period-related logic is located in the classes [Piwik\_Period](https://github.com/piwik/piwik/blob/master/core/Period.php).

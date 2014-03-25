@@ -55,9 +55,9 @@ There are two types of reports in Piwik, and each have a slightly different form
 
     Most reports, however, will have a 'dimension' entry in the returned array. Reports with dimensions will display a list of metrics for each 'dimension'. For example, the list of visits, pages, time on site will be output for each keyword.
 
-    Example of a report with dimensions metadata ([example URL](http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referers&apiAction=getKeywords&format=xml&token_auth=anonymous)):
+    Example of a report with dimensions metadata ([example URL](http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referrers&apiAction=getKeywords&format=xml&token_auth=anonymous)):
 
-    <pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referers&apiAction=getKeywords&format=xml&token_auth=anonymous" escape="true"]</code></pre>
+    <pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referrers&apiAction=getKeywords&format=xml&token_auth=anonymous" escape="true"]</code></pre>
 
 ## Static Image Graphs
 

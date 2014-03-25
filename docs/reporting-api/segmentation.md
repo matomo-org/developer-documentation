@@ -18,7 +18,7 @@ For example, you can request the "Best Keywords" report processed for all visits
     &date=2011-01-11
     &period=week
     &idSite=1
-    &module=API&method=Referers.getKeywords
+    &module=API&method=Referrers.getKeywords
     &segment=browserCode==FF;country==DE
 
 Example URL of top countries used by visits landing on the page: [virtual-drums.com/](http://www.virtual-drums.com/): [demo.piwik.org/?module=API&method=**UserCountry.getCountry**&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en**&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F**](http://demo.piwik.org/?module=API&method=UserCountry.getCountry&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F)
