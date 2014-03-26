@@ -52,7 +52,10 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 
 * Ecommerce info
 
+    Use the following values to record a cart and/or an ecommerce order. You must also set `&idgoal=0` in the request.
+
     * `ec_id` &mdash; The unique string identifier for the ecommerce order
+    * `revenue` &mdash; The grand total for the ecommerce order
     * `ec_st` &mdash; The sub total of the order (excludes shipping)
     * `ec_tx` &mdash; Tax Amount of the order
     * `ec_sh` &mdash; Shipping cost of the Order
