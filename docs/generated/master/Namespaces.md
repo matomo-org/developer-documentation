@@ -32,6 +32,7 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\Referrers`](Piwik/Plugins/Referrers)
 - [`Piwik\Plugins\UserCountry`](Piwik/Plugins/UserCountry)
 - [`Piwik\Plugins\UserSettings`](Piwik/Plugins/UserSettings)
+- [`Piwik\Plugins\VisitFrequency`](Piwik/Plugins/VisitFrequency)
 - [`Piwik\Plugins\VisitTime`](Piwik/Plugins/VisitTime)
 - [`Piwik\Plugins\VisitorInterest`](Piwik/Plugins/VisitorInterest)
 - [`Piwik\ScheduledTime`](Piwik/ScheduledTime)

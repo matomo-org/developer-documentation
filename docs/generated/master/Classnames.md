@@ -85,6 +85,7 @@
 ## Plugins\Referrers\Archiver
 ## Plugins\UserCountry\Archiver
 ## Plugins\UserSettings\Archiver
+## Plugins\VisitFrequency\Archiver
 ## Plugins\VisitTime\Archiver
 ## Plugins\VisitorInterest\Archiver
 ## RankingQuery

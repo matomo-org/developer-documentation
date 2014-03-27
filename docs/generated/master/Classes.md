@@ -89,6 +89,7 @@ This is a complete list of available classes:
 - [`Plugins\Referrers\Archiver`](Piwik/Plugins/Referrers/Archiver.md)
 - [`Plugins\UserCountry\Archiver`](Piwik/Plugins/UserCountry/Archiver.md)
 - [`Plugins\UserSettings\Archiver`](Piwik/Plugins/UserSettings/Archiver.md) &mdash; Archiver for UserSettings Plugin
+- [`Plugins\VisitFrequency\Archiver`](Piwik/Plugins/VisitFrequency/Archiver.md) &mdash; Introduced to provide backwards compatibility for pre-2.0 data.
 - [`Plugins\VisitTime\Archiver`](Piwik/Plugins/VisitTime/Archiver.md)
 - [`Plugins\VisitorInterest\Archiver`](Piwik/Plugins/VisitorInterest/Archiver.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
