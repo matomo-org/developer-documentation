@@ -446,6 +446,16 @@ metadata can be used to specify a different type of operation.
 
       </div>
    </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$doAggregateSubTables`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
    </ul>
 - It does not return anything.
 
@@ -1008,9 +1018,9 @@ This change is applied recursively to all subtables.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$oldName` (`string`) &mdash;
+      `$oldName`
 
-      <div markdown="1" class="param-desc"> Old column name.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
@@ -1018,9 +1028,19 @@ This change is applied recursively to all subtables.
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$newName` (`string`) &mdash;
+      `$newName`
 
-      <div markdown="1" class="param-desc"> New column name.</div>
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$doRenameColumnsOfSubTables`
+
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 

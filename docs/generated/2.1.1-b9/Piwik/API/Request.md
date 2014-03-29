@@ -61,6 +61,7 @@ The class defines the following methods:
 - [`getRequestParametersGET()`](#getrequestparametersget) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
 - [`getBaseReportUrl()`](#getbasereporturl) &mdash; Returns the URL for the current requested report w/o any filter parameters.
 - [`getCurrentUrlWithoutGenericFilters()`](#getcurrenturlwithoutgenericfilters) &mdash; Returns the current URL without generic filter query parameters.
+- [`shouldLoadFlatten()`](#shouldloadflatten)
 - [`getRawSegmentFromRequest()`](#getrawsegmentfromrequest) &mdash; Returns the segment query parameter from the original request, without modifications.
 
 <a name="getrequestarrayfromstring" id="getrequestarrayfromstring"></a>
@@ -310,6 +311,14 @@ Returns the current URL without generic filter query parameters.
    </li>
    </ul>
 - It returns a `string` value.
+
+<a name="shouldloadflatten" id="shouldloadflatten"></a>
+<a name="shouldLoadFlatten" id="shouldLoadFlatten"></a>
+### `shouldLoadFlatten()`
+
+#### Signature
+
+- It returns a `bool` value.
 
 <a name="getrawsegmentfromrequest" id="getrawsegmentfromrequest"></a>
 <a name="getRawSegmentFromRequest" id="getRawSegmentFromRequest"></a>

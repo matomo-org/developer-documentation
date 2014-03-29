@@ -83,11 +83,13 @@ This is a complete list of available classes:
 - [`Plugins\ExampleVisualization\SimpleTable`](Piwik/Plugins/ExampleVisualization/SimpleTable.md) &mdash; SimpleTable Visualization.
 - [`Plugins\Goals\Archiver`](Piwik/Plugins/Goals/Archiver.md)
 - [`Plugins\Goals\Visualizations\Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_goals_columns to true.
+- [`Plugins\Insights\Visualizations\Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md) &mdash; InsightsVisualization Visualization.
 - [`Plugins\Live\VisitorLog`](Piwik/Plugins/Live/VisitorLog.md) &mdash; A special DataTable visualization for the Live.getLastVisitsDetails API method.
 - [`Plugins\Provider\Archiver`](Piwik/Plugins/Provider/Archiver.md)
 - [`Plugins\Referrers\Archiver`](Piwik/Plugins/Referrers/Archiver.md)
 - [`Plugins\UserCountry\Archiver`](Piwik/Plugins/UserCountry/Archiver.md)
 - [`Plugins\UserSettings\Archiver`](Piwik/Plugins/UserSettings/Archiver.md) &mdash; Archiver for UserSettings Plugin
+- [`Plugins\VisitFrequency\Archiver`](Piwik/Plugins/VisitFrequency/Archiver.md) &mdash; Introduced to provide backwards compatibility for pre-2.0 data.
 - [`Plugins\VisitTime\Archiver`](Piwik/Plugins/VisitTime/Archiver.md)
 - [`Plugins\VisitorInterest\Archiver`](Piwik/Plugins/VisitorInterest/Archiver.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
