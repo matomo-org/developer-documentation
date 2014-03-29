@@ -50,7 +50,6 @@ The class defines the following methods:
 - [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site IDs and returns them as an array.
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
 - [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
-- [`getGroupFor()`](#getgroupfor) &mdash; Returns the group of the site with the specified ID.
 - [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
 - [`getTypeFor()`](#gettypefor) &mdash; Returns the type of the site with the specified ID.
 - [`getCreationDateFor()`](#getcreationdatefor) &mdash; Returns the creation date of the site with the specified ID.
@@ -360,30 +359,6 @@ See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray
 ### `getNameFor()`
 
 Returns the name of the site with the specified ID.
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$idsite` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The site ID.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-- It returns a `string` value.
-
-<a name="getgroupfor" id="getgroupfor"></a>
-<a name="getGroupFor" id="getGroupFor"></a>
-### `getGroupFor()`
-
-Returns the group of the site with the specified ID.
 
 #### Signature
 

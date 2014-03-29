@@ -79,7 +79,6 @@
 ## Plugins\ExampleVisualization\SimpleTable
 ## Plugins\Goals\Archiver
 ## Plugins\Goals\Visualizations\Goals
-## Plugins\Insights\Visualizations\Insight
 ## Plugins\Live\VisitorLog
 ## Plugins\Provider\Archiver
 ## Plugins\Referrers\Archiver

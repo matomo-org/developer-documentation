@@ -173,16 +173,6 @@ If you want to create an Archive instance with an array of Period instances, use
 
       </div>
    </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$skipAggregationOfSubTables` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether the archive, when it is processed, should also aggregate all sub-tables</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
    </ul>
 - It returns a [`Archive`](../Piwik/Archive.md) value.
 
@@ -248,16 +238,6 @@ use [build()](/api-reference/Piwik/Archive#build).
       `$isMultipleDate` (`bool`) &mdash;
 
       <div markdown="1" class="param-desc"> Whether multiple dates are being queried or not. If true, then the result of querying functions will be indexed by period, regardless of whether `count($periods) == 1`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$skipAggregationOfSubTables` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether the archive should skip aggregation of all sub-tables</div>
 
       <div style="clear:both;"/>
 
@@ -637,16 +617,6 @@ API methods can use this method to reduce code redundancy.
       `$idSubtable` (`int`|`null`) &mdash;
 
       <div markdown="1" class="param-desc"> See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$skipAggregationOfSubTables` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether or not we should skip the aggregation of all sub-tables and only aggregate parent DataTable.</div>
 
       <div style="clear:both;"/>
 

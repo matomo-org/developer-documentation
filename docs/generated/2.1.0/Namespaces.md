@@ -25,8 +25,6 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\ExampleVisualization`](Piwik/Plugins/ExampleVisualization)
 - [`Piwik\Plugins\Goals`](Piwik/Plugins/Goals)
 - [`Piwik\Plugins\Goals\Visualizations`](Piwik/Plugins/Goals/Visualizations)
-- [`Piwik\Plugins\Insights`](Piwik/Plugins/Insights)
-- [`Piwik\Plugins\Insights\Visualizations`](Piwik/Plugins/Insights/Visualizations)
 - [`Piwik\Plugins\Live`](Piwik/Plugins/Live)
 - [`Piwik\Plugins\Provider`](Piwik/Plugins/Provider)
 - [`Piwik\Plugins\Referrers`](Piwik/Plugins/Referrers)

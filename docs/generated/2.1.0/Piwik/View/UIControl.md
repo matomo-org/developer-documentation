@@ -25,10 +25,35 @@ Properties
 
 This class defines the following properties:
 
+- [`$clientSideProperties`](#$clientsideproperties) &mdash; Holds the array of values that are passed to the UIControl JavaScript class.
+- [`$clientSideParameters`](#$clientsideparameters) &mdash; Holds an array of values that are passed to the UIControl JavaScript class.
 - [`$cssIdentifier`](#$cssidentifier) &mdash; The CSS class that is used to map the root element of this control with the JavaScript class.
 - [`$jsClass`](#$jsclass) &mdash; The name of the JavaScript class that handles the behavior of this control.
-- [`$jsNamespace`](#$jsnamespace) &mdash; The JavaScript module that contains the JavaScript class.
 - [`$cssClass`](#$cssclass) &mdash; Extra CSS class(es) for the root element.
+
+<a name="$clientsideproperties" id="$clientsideproperties"></a>
+<a name="clientSideProperties" id="clientSideProperties"></a>
+### `$clientSideProperties`
+
+Holds the array of values that are passed to the UIControl JavaScript class.
+
+#### Signature
+
+- It is a `array` value.
+
+<a name="$clientsideparameters" id="$clientsideparameters"></a>
+<a name="clientSideParameters" id="clientSideParameters"></a>
+### `$clientSideParameters`
+
+Holds an array of values that are passed to the UIControl JavaScript class.
+
+These values
+differ from those in [$clientSideProperties](/api-reference/Piwik/View/UIControl#$clientsideproperties) in that they are meant to passed as
+request parameters when the JavaScript code makes an AJAX request.
+
+#### Signature
+
+- It is a `array` value.
 
 <a name="$cssidentifier" id="$cssidentifier"></a>
 <a name="cssIdentifier" id="cssIdentifier"></a>
@@ -48,17 +73,10 @@ This field must be set prior to rendering.
 
 The name of the JavaScript class that handles the behavior of this control.
 
+The JavaScript class must exist in the **piwik/UI** JavaScript module (so it will exist in
+`window.piwik.UI`).
+
 This field must be set prior to rendering.
-
-#### Signature
-
-- It is a `string` value.
-
-<a name="$jsnamespace" id="$jsnamespace"></a>
-<a name="jsNamespace" id="jsNamespace"></a>
-### `$jsNamespace`
-
-The JavaScript module that contains the JavaScript class.
 
 #### Signature
 
@@ -85,8 +103,6 @@ The class defines the following methods:
 - [`__isset()`](#__isset)
 - [`render()`](#render) &mdash; Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
 - [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
-- [`getClientSideProperties()`](#getclientsideproperties) &mdash; Returns the array of property names whose values are passed to the UIControl JavaScript class.
-- [`getClientSideParameters()`](#getclientsideparameters) &mdash; Returns an array of property names whose values are passed to the UIControl JavaScript class.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -235,32 +251,5 @@ See View::getTemplateVars().
       </div>
    </li>
    </ul>
-- It returns a `array` value.
-
-<a name="getclientsideproperties" id="getclientsideproperties"></a>
-<a name="getClientSideProperties" id="getClientSideProperties"></a>
-### `getClientSideProperties()`
-
-Returns the array of property names whose values are passed to the UIControl JavaScript class.
-
-Should be overriden by descendants.
-
-#### Signature
-
-- It returns a `array` value.
-
-<a name="getclientsideparameters" id="getclientsideparameters"></a>
-<a name="getClientSideParameters" id="getClientSideParameters"></a>
-### `getClientSideParameters()`
-
-Returns an array of property names whose values are passed to the UIControl JavaScript class.
-
-These values differ from those in $clientSideProperties in that they are meant to passed as
-request parameters when the JavaScript code makes an AJAX request.
-
-Should be overriden by descendants.
-
-#### Signature
-
 - It returns a `array` value.
 
