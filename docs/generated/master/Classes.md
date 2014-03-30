@@ -9,6 +9,7 @@ This is a complete list of available classes:
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
+- [`Console`](Piwik/Console.md)
 - [`DataAccess\LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; Contains methods that calculate metrics by aggregating log data (visits, actions, conversions, ecommerce items).
 - [`DataTable`](Piwik/DataTable.md) &mdash; The primary data structure used to store analytics data in Piwik.
 - [`DataTable\BaseFilter`](Piwik/DataTable/BaseFilter.md) &mdash; A filter is set of logic that manipulates a DataTable.

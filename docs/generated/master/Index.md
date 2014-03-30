@@ -85,6 +85,7 @@ Index
 
 - [`Common`](Piwik/Common.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Config`](Piwik/Config.md) &mdash; _Class in namespace_ `Piwik` 
+- [`Console`](Piwik/Console.md) &mdash; _Class in namespace_ `Piwik` 
 - [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`calculate()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#calculate) &mdash; _Method in class_ [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
 - [`ColumnCallbackAddColumn`](Piwik/DataTable/Filter/ColumnCallbackAddColumn.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 

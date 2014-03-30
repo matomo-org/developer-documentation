@@ -365,7 +365,7 @@ Usages:
 - [Console.addCommands](#consoleaddcommands)
 
 ### Console.addCommands
-_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [83](https://github.com/piwik/piwik/blob/master/core/Console.php#L83)_
+_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [87](https://github.com/piwik/piwik/blob/master/core/Console.php#L87)_
 
 Triggered to gather all available console commands. Plugins that want to expose new console commands
 should subscribe to this event and add commands to the incoming array.
@@ -430,7 +430,7 @@ Callback Signature:
 - [CronArchive.filterWebsiteIds](#cronarchivefilterwebsiteids)
 
 ### CronArchive.archiveSingleSite.finish
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [189](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L189)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [200](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L200)_
 
 
 
@@ -439,7 +439,7 @@ Callback Signature:
 
 
 ### CronArchive.archiveSingleSite.start
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [185](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L185)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [196](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L196)_
 
 
 
@@ -448,7 +448,7 @@ Callback Signature:
 
 
 ### CronArchive.filterWebsiteIds
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [772](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L772)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [784](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L784)_
 
 Triggered by the **archive.php** cron script so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.

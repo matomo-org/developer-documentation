@@ -5,6 +5,7 @@
 ## ArchiveProcessor\Parameters
 ## Common
 ## Config
+## Console
 ## DataAccess\LogAggregator
 ## DataTable
 ## DataTable\BaseFilter
