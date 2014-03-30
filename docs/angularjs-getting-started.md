@@ -131,18 +131,6 @@ We are currently not using AngularJS Routing. The goal is to use it in long term
 ## Testing
 We use [Karma](http://karma-runner.github.io) + [Chai](http://chaijs.com) + [Mocha] (http://visionmedia.github.io/mocha/) to write unit tests. Read more about it here: [https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md](https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md)
 
-We do not have a general `tests` folder containing all test files. Instead we create a file having the same name appended by "_test.js" in the same directory.
-
-For instance you want to test a file named `startfrom.js` then we create a file named `startfrom_test.js`:
-`plugins/CoreHome/angularjs/common/filters/startfrom.js` => 
-`plugins/CoreHome/angularjs/common/filters/startfrom_test.js`
-
-Examples:
- * [Filter test](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/angularjs/common/filters/startfrom_test.js)
- * A good resource for more examples is the [AngularJS Unit Testing](http://docs.angularjs.org/guide/unit-testing) documentation
-
-FYI: You can use this technology to write tests for your jQuery code as well.
-
 ## How to document
 TBD
 
