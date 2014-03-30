@@ -129,9 +129,19 @@ They make use of different components
 We are currently not using AngularJS Routing. The goal is to use it in long term to get rid of piwikBroadcast and many other classes.
 
 ## Testing
-TBD.
+We use Karma + Chai to write unit tests. Read more about it here: [https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md](https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md)
 
-See some notes in [#4691](http://dev.piwik.org/trac/ticket/4691)
+We do not have a tests folder where all test files are located. Instead we create a file having the same name appended by "_test.js" in the same directory.
+
+Example when filename is `startfrom.js` we create a file named `startfrom_test.js`:
+`plugins/CoreHome/angularjs/common/filters/startfrom.js` => 
+`plugins/CoreHome/angularjs/common/filters/startfrom_test.js`
+
+Examples:
+ * [Filter test](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/angularjs/common/filters/startfrom_test.js)
+ * A good resource for more examples is the [AngularJS Unit Testing](http://docs.angularjs.org/guide/unit-testing) documentation
+
+FYI: You can use this technology to write tests for your jQuery code as well.
 
 ## How to document
 TBD
