@@ -575,7 +575,7 @@ Callback Signature:
 - [Log.getAvailableWriters](#loggetavailablewriters)
 
 ### Log.formatDatabaseMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [499](https://github.com/piwik/piwik/blob/master/core/Log.php#L499)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [507](https://github.com/piwik/piwik/blob/master/core/Log.php#L507)_
 
 Triggered when trying to log an object to a database table. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -603,7 +603,7 @@ Callback Signature:
 
 
 ### Log.formatFileMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [400](https://github.com/piwik/piwik/blob/master/core/Log.php#L400)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [408](https://github.com/piwik/piwik/blob/master/core/Log.php#L408)_
 
 Triggered when trying to log an object to a file. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -631,7 +631,7 @@ Callback Signature:
 
 
 ### Log.formatScreenMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [461](https://github.com/piwik/piwik/blob/master/core/Log.php#L461)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [469](https://github.com/piwik/piwik/blob/master/core/Log.php#L469)_
 
 Triggered when trying to log an object to the screen. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -662,7 +662,7 @@ Callback Signature:
 
 
 ### Log.getAvailableWriters
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [359](https://github.com/piwik/piwik/blob/master/core/Log.php#L359)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [367](https://github.com/piwik/piwik/blob/master/core/Log.php#L367)_
 
 This event is called when the Log instance is created. Plugins can use this event to
 make new logging writers available.
