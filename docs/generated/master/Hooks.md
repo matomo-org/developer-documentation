@@ -430,7 +430,7 @@ Callback Signature:
 - [CronArchive.filterWebsiteIds](#cronarchivefilterwebsiteids)
 
 ### CronArchive.archiveSingleSite.finish
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [200](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L200)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [201](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L201)_
 
 
 
@@ -439,7 +439,7 @@ Callback Signature:
 
 
 ### CronArchive.archiveSingleSite.start
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [196](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L196)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [197](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L197)_
 
 
 
@@ -448,7 +448,7 @@ Callback Signature:
 
 
 ### CronArchive.filterWebsiteIds
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [800](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L800)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [805](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L805)_
 
 Triggered by the **archive.php** cron script so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
