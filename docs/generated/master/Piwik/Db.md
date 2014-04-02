@@ -55,6 +55,7 @@ The class defines the following methods:
 - [`deleteAllRows()`](#deleteallrows) &mdash; Deletes all desired rows in a table, while using a limit.
 - [`optimizeTables()`](#optimizetables) &mdash; Runs an `OPTIMIZE TABLE` query on the supplied table or tables.
 - [`dropTables()`](#droptables) &mdash; Drops the supplied table or tables.
+- [`getColumnNamesFromTable()`](#getcolumnnamesfromtable) &mdash; Get columns information from table
 - [`lockTables()`](#locktables) &mdash; Locks the supplied table or tables.
 - [`unlockAllTables()`](#unlockalltables) &mdash; Releases all table locks.
 - [`segmentedFetchFirst()`](#segmentedfetchfirst) &mdash; Performs a `SELECT` statement on a table one chunk at a time and returns the first successfully fetched value.
@@ -523,6 +524,30 @@ Drops the supplied table or tables.
       `$tables` (`string`|`array`) &mdash;
 
       <div markdown="1" class="param-desc"> The name of the table to drop or an array of table names to drop. Table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `Zend_Db_Statement` value.
+
+<a name="getcolumnnamesfromtable" id="getcolumnnamesfromtable"></a>
+<a name="getColumnNamesFromTable" id="getColumnNamesFromTable"></a>
+### `getColumnNamesFromTable()`
+
+Get columns information from table
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` (`string`|`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the table you want to get the columns definition for.</div>
 
       <div style="clear:both;"/>
 

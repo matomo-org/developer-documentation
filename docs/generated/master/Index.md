@@ -309,6 +309,7 @@ Index
 - [`getLocalized()`](Piwik/Date.md#getlocalized) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`get()`](Piwik/Db.md#get) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`getDatabaseConfig()`](Piwik/Db.md#getdatabaseconfig) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
+- [`getColumnNamesFromTable()`](Piwik/Db.md#getcolumnnamesfromtable) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`getDbLock()`](Piwik/Db.md#getdblock) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`globr()`](Piwik/Filesystem.md#globr) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`getTransportMethod()`](Piwik/Http.md#gettransportmethod) &mdash; _Method in class_ [`Http`](Piwik/Http.md)
