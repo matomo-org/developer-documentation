@@ -52,7 +52,6 @@ Index
 - [`Archiver`](Piwik/Plugins/Referrers/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Referrers` 
 - [`Archiver`](Piwik/Plugins/UserCountry/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\UserCountry` 
 - [`Archiver`](Piwik/Plugins/UserSettings/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\UserSettings` 
-- [`Archiver`](Piwik/Plugins/VisitFrequency/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\VisitFrequency` 
 - [`Archiver`](Piwik/Plugins/VisitTime/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\VisitTime` 
 - [`Archiver`](Piwik/Plugins/VisitorInterest/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\VisitorInterest` 
 - [`addLabelColumn()`](Piwik/RankingQuery.md#addlabelcolumn) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
