@@ -922,7 +922,7 @@ Usages:
 
 
 ### Request.initAuthenticationObject
-_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [109](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L109)_
+_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [110](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L110)_
 
 
 
@@ -1441,7 +1441,7 @@ Callback Signature:
 
 
 ### Tracker.existingVisitInformation
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [254](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L254)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [255](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L255)_
 
 Triggered before a [visit entity](/guides/persistence-and-the-mysql-backend#visits) is updated when tracking an action for an existing visit. This event can be used to modify the visit properties that will be updated before the changes
 are persisted.
@@ -1455,7 +1455,7 @@ Callback Signature:
 
 
 ### Tracker.getDatabaseConfig
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [535](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L535)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [531](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L531)_
 
 Triggered before a connection to the database is established by the Tracker. This event can be used to change the database connection settings used by the Tracker.
 
@@ -1499,7 +1499,7 @@ Callback Signature:
 
 
 ### Tracker.makeNewVisitObject
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [617](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L617)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [613](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L613)_
 
 Triggered before a new **visit tracking object** is created. Subscribers to this
 event can force the use of a custom visit tracking object that extends from
@@ -1527,7 +1527,7 @@ Callback Signature:
 
 
 ### Tracker.newVisitorInformation
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [308](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L308)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [309](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L309)_
 
 Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
 The UserCountry plugin, for example, uses this event to add location information for each visit.
@@ -1584,7 +1584,7 @@ Callback Signature:
 
 
 ### Tracker.Request.getIdSite
-_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [329](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L329)_
+_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [330](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L330)_
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
@@ -1626,7 +1626,7 @@ Usages:
 
 
 ### Tracker.setVisitorIp
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [97](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L97)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [98](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L98)_
 
 Triggered after visits are tested for exclusion so plugins can modify the IP address persisted with a visit. This event is primarily used by the **PrivacyManager** plugin to anonymize IP addresses.
 
