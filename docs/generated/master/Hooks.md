@@ -1304,9 +1304,10 @@ Callback Signature:
 
 - [SitesManager.addSite.end](#sitesmanageraddsiteend)
 - [SitesManager.deleteSite.end](#sitesmanagerdeletesiteend)
+- [SitesManager.getImageTrackingCode](#sitesmanagergetimagetrackingcode)
 
 ### SitesManager.addSite.end
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [572](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L572)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [621](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L621)_
 
 Triggered after a site has been added.
 
@@ -1317,7 +1318,7 @@ Callback Signature:
 
 
 ### SitesManager.deleteSite.end
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [627](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L627)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [676](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L676)_
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -1331,6 +1332,21 @@ Callback Signature:
 Usages:
 
 [Goals::deleteSiteGoals](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L127), [ScheduledReports::deleteSiteReport](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L112), [UsersManager::deleteSite](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L73)
+
+
+### SitesManager.getImageTrackingCode
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [129](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L129)_
+
+Triggered when generating image link tracking code server side. Plugins can use
+this event to customise the image tracking code that is displayed to the
+user.
+
+Callback Signature:
+<pre><code>function(&amp;$piwikUrl, &amp;$urlParams)</code></pre>
+
+- `string` `$piwikHost` The domain and URL path to the Piwik installation, eg, `'examplepiwik.com/path/to/piwik'`.
+
+- `array` `&$urlParams` The query parameters used in the <img> element's src URL. See Piwik's image tracking docs for more info.
 
 ## TaskScheduler
 
