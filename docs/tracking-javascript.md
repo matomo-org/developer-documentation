@@ -252,9 +252,7 @@ If you created a custom variable and then decide to remove this variable from a 
 
 To persist the change in the Piwik server, you must call the function before the call to `trackPageView();`
 
-<pre><code>[...]
-
-_paq.push(['deleteCustomVariable', 1, "visit"]); // Delete the variable in index 1 stored for the current visit
+<pre><code>[...]_paq.push(['deleteCustomVariable', 1, "visit"]); // Delete the variable in index 1 stored for the current visit
 
 _paq.push(['trackPageView']);
 
@@ -268,9 +266,7 @@ This function is mostly useful if scope = "visit".
 
 In this case, custom variables are recorded in a first party cookie for the duration of the visit (30 minutes after the last action). You can actually retrieve the custom variable names and values using piwikTracker.getCustomVariable. If there is no custom variable in the requested index, it will return false.
 
-<pre><code>[...]
-
-_paq.push([ function() {
+<pre><code>[...]_paq.push([ function() {
 
     var customVariable = this.getCustomVariable( 1, "visit" );
     // Returns the custom variable: [ "gender", "male" ]
@@ -533,9 +529,6 @@ piwikTracker.trackPageView();</code></pre>
 _Requesting the Tracker Instance from the Piwik Class_
 
 *   `Piwik.getTracker( trackerUrl, siteId )` - get a new instance of the Tracker
-    *   [Google Analytics equivalent] _getTracker(account)
-    *   [Yahoo! Analytics equivalent] getTracker(account)
-
 *   `Piwik.getAsyncTracker()` - get the internal instance of the Tracker used for asynchronous tracking
 
 _Using the Tracker Object_
@@ -545,21 +538,14 @@ _Using the Tracker Object_
 *   `setRequestMethod( method )` - Set the request method to either "GET" or "POST". (The default is "GET".) To use the POST request method, the Piwik host must be the same as the tracked website host (Piwik installed in the same domain as your tracked website).
 *   `trackGoal( idGoal, [customRevenue]);` - Manually log a conversion for the goal idGoal, passing in the custom revenue customRevenue if specified
 *   `trackLink( url, linkType )` - Manually log a click from your own code. url is the full URL which is to be tracked as a click. linkType can either be 'link' for an outlink or 'download' for a download.
-*   `trackPageView([customTitle])` - Log visit to this page
-    *   [Google Analytics equivalent] _trackPageview(opt_pageURL)
-    *   [Yahoo! Analytics equivalent] submit()
-
+*   `trackEvent(category, action, [name], [value])` - Logs an event with an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name and optional numeric value.
+*   `trackPageView([customTitle])` - Logs a visit to this page
 *   `trackSiteSearch(keyword, [category], [resultsCount])` - Log an internal site search for a specific keyword, in an optional category, specifying the optional count of search results in the page.
 
 _Configuration of the Tracker Object_
 
 *   `setDocumentTitle( string )` - Override document.title
-    *   [Yahoo! Analytics equivalent] YWATracker.setDocumentName("xxx")
-
 *   `setDomains( array)` - Set array of hostnames or domains to be treated as local. For wildcard subdomains, you can use: `setDomains('.example.com');` or `setDomains('*.example.com');`
-    *   [Google Analytics equivalent] _setDomainName(".example.com")
-    *   [Yahoo! Analytics equivalent] setDomains("*.abc.net")
-
 *   `setCustomUrl( string )` - Override the page's reported URL
 *   `setReferrerUrl( string )` - Override the detected Http-Referer
 *   `setSiteId( integer )` - Specify the website ID. Redundant: can be specified in `getTracker()` constructor.
