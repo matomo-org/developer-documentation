@@ -555,7 +555,7 @@ Usages:
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 
 ### Live.API.getIdSitesString
-_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [695](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L695)_
+_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [693](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L693)_
 
 
 
