@@ -149,6 +149,7 @@ Index
 - [`deleteMetadata()`](Piwik/DataTable/Row.md#deletemetadata) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`Date`](Piwik/Date.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Db`](Piwik/Db.md) &mdash; _Class in namespace_ `Piwik` 
+- [`destroyDatabaseObject()`](Piwik/Db.md#destroydatabaseobject) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`deleteAllRows()`](Piwik/Db.md#deleteallrows) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`dropTables()`](Piwik/Db.md#droptables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`DbHelper`](Piwik/DbHelper.md) &mdash; _Class in namespace_ `Piwik` 
