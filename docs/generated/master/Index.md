@@ -566,7 +566,6 @@ Index
 - [`Metrics`](Piwik/Metrics.md) &mdash; _Class in namespace_ `Piwik` 
 - [`$mappingFromIdToName`](Piwik/Metrics.md#$mappingfromidtoname) &mdash; _Property in class_ [`Metrics`](Piwik/Metrics.md)
 - [`$mappingFromIdToNameGoal`](Piwik/Metrics.md#$mappingfromidtonamegoal) &mdash; _Property in class_ [`Metrics`](Piwik/Metrics.md)
-- [`$mappingFromNameToId`](Piwik/Metrics.md#$mappingfromnametoid) &mdash; _Property in class_ [`Metrics`](Piwik/Metrics.md)
 - [`MetricsFormatter`](Piwik/MetricsFormatter.md) &mdash; _Class in namespace_ `Piwik` 
 - [`$message`](Piwik/Notification.md#$message) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`Manager`](Piwik/Notification/Manager.md) &mdash; _Class in namespace_ [`Piwik\Notification`](Piwik/Notification) 
