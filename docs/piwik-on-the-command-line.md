@@ -29,7 +29,7 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 This guide assumes that you:
 
 * can code in PHP,
-* and have installed Piwik (if not read our [Getting Started](#) guide)
+* and have installed Piwik (if not read our [Getting Started](/guides/getting-started-part-1) guide)
 
 ## The **console** tool
 
@@ -43,7 +43,7 @@ or
 
 **Libraries Used**
 
-The console app uses the [Symfony Console component](http://symfony.com/doc/current/components/console/introduction.html). It would have been installed when you ran [composer.phar](#) while installing Piwik.
+The console app uses the [Symfony Console component](http://symfony.com/doc/current/components/console/introduction.html). It would have been installed when you ran [composer.phar](http://getcomposer.org/) while installing Piwik.
 
 ### Commands
 
@@ -61,6 +61,10 @@ where `<<command>>` should be replaced with the command you are interested in.
 
 ## Adding new commands
 
-Plugins can extend the command line tool by creating their own commands. To create your own command, create a class that extends [ConsoleCommand](#) and expose it using the [Console.addCommands](#) event.
+Plugins can extend the command line tool by creating their own commands. To do so you can use the CLI itself: 
 
-See the documentation for the class and event mentioned and see the docs for [SymfonyCommand](#) to learn more about how your command should be coded.
+    ./console generate:command
+    
+This will create a folder named `Commands` within your plugin, if necessary, along a PHP file which represents the actual command. You can add an unlimited number of commands using the CLI.
+
+See the docs for [SymfonyCommand](http://symfony.com/doc/current/components/console/index.html) to learn more about how your command should be coded.
