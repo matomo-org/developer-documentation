@@ -101,6 +101,17 @@ The following fields are not required for publishing a plugin, but you may want 
   }
   ```
   
+  You can define multiple ranges, separated by a comma, which will be treated as a logical `AND`. This can be useful in case you know your plugin is only compatible with a limited number of Piwik versions.
+  
+  For example:
+
+  ```
+  "require": {
+    "piwik": ">=2.0.0,<=2.2.0", // requires a Piwik version 2.0.0 up to 2.2.0
+  }
+  ```
+  
+  
 * **donate** - An object containing information on how to donate to the plugin author (you!). The object can contain any of the following fields:
 
   * **paypal** - Your paypal email address.
