@@ -24,9 +24,9 @@ There are many resources on the internet you can use to learn PHP. We recommend 
 
 ## Piwik Plugins
 
-Pretty much all the functionality you see when you use Piwik is provided through **_Piwik Plugins_**. The core of Piwik (unsurprisingly termed _**Piwik Core**_) contains the tools that the plugins use to provide this functionality. If you wanted to add more functionality to Piwik you'd create your own plugin and distribute it on the [Piwik Marketplace](#) so other users could use it.
+Pretty much all the functionality you see when you use Piwik is provided through **_Piwik Plugins_**. The core of Piwik (unsurprisingly termed _**Piwik Core**_) contains the tools that the plugins use to provide this functionality. If you wanted to add more functionality to Piwik you'd create your own plugin and distribute it on the [Piwik Marketplace](http://plugins.piwik.org) so other users could use it.
 
-_Note: If you want to integrate another piece of software with Piwik and you only need to know how to track visits or how to retrieve reports, read more about the [Tracking API](#) and the [Reporting API](#)._
+_Note: If you want to integrate another piece of software with Piwik and you only need to know how to track visits or how to retrieve reports, read more about the [Tracking API](/api-reference/tracking-api) and the [Reporting API](/api-reference/reporting-api)._
 
 ### What's possible with Piwik plugins?
 
@@ -37,7 +37,7 @@ Here are some of the things you could accomplish through your own plugin:
 - show existing reports in novel new ways
 - send scheduled reports through new mediums or in new formats
 
-These are only a few of the possibilities. Many of the existing plugins do things that cannot be categorized in such a way. For example, the [Annotations](#) plugin lets users create save notes for dates without needing any modifications to **Piwik Core**. The [DBStats](#) plugin will show users statistics about their MySQL database. The [Dashboard](#) plugin provides a configurable way to view multiple reports at once.
+These are only a few of the possibilities. Many of the existing plugins do things that cannot be categorized in such a way. For example, the [Annotations](http://piwik.org/docs/annotations/) plugin lets users create save notes for dates without needing any modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](http://piwik.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
 
 **Whatever ideas your imagination cooks up, we think it's highly probable you can implement them with Piwik.**
 
@@ -53,20 +53,20 @@ Well, we're not really sure. It might be hard to get your idea to scale, or mayb
 
 Before we start extending Piwik, let's make sure you have the tools you'll need to do so. Make sure you have the following installed:
 
-- **A PHP IDE or a text editor.** We who work on Piwik reccommend you use [PHPStorm](#), a very powerful IDE built specifically for developing in PHP.
+- **A PHP IDE or a text editor.** We who work on Piwik reccommend you use [PHPStorm](http://www.jetbrains.com/phpstorm/), a very powerful IDE built specifically for developing in PHP.
   
   _Note: We have published our [customized PSR coding style XML file](https://github.com/piwik/piwik/tree/master/misc/others/phpstorm-codestyles) for Phpstorm that you can use._
 
-- **A webserver,** such as [Apache](#) or [Nginx](#).
-- **[git](#)** so you can work with the latest Piwik source code.
+- **A webserver,** such as [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/).
+- **[git](http://git-scm.com/)** so you can work with the latest Piwik source code.
 - **[composer](http://getcomposer.org/)** so you can install the PHP libraries Piwik uses.
-- **A browser,** such as [Firefox](#) or [Chrome](#). Ok, so this you've probably got.
+- **A browser,** such as [Firefox](http://www.mozilla.org/en-US/firefox/new/) or [Chrome](http://www.google.com/chrome). Ok, so this you've probably got.
 
 The following tools aren't required for this guide, but you may find them useful when you continue writing your plugin:
 
-- **[PHPUnit](#)** Necessary if you want to write or run automated tests.
-- **[xhprof](#)** If you'd like to profile your code and debug any inefficiencies. See also [our guide for installing xhprof](#).
-- **[python](#)** If you're going to be doing something with the log importer.
+- **[PHPUnit](http://phpunit.de/)** Necessary if you want to write or run automated tests.
+- **[xhprof](https://github.com/facebook/xhprof)** If you'd like to profile your code and debug any inefficiencies. 
+- **[python](https://www.python.org/)** If you're going to be doing something with the log importer.
 
 ### Get & Install Piwik
 
@@ -135,7 +135,7 @@ In your browser load Piwik and navigate to _Settings > Plugins > Manage_. Look f
 
 The command-line tool will create a new directory for your plugin (in the **plugins** sub-directory) and fill it with some files and folders. Here's what these files and folders are for:
 
-* **API.php**: Contains your plugin's API class. This class defines methods that serve data and will be accessible through Piwik's [Reporting API](#).
+* **API.php**: Contains your plugin's API class. This class defines methods that serve data and will be accessible through Piwik's [Reporting API](/api-reference/reporting-api).
 * **Controller.php**: Contains your plugin's Controller class. This class defines methods that generate HTML output.
 * **MyPlugin.php**: Contains your plugin's Plugin Descriptor class. This class contains metadata about your plugin and a list of event handlers for Piwik events.
 * **plugin.json**: Contains plugin metadata such as the name, description, version, etc.
@@ -148,17 +148,17 @@ The command-line tool will create a new directory for your plugin (in the **plug
 
 Ok! You've set up your development environment and created your plugin! Now all you have to do is make it do what you want. The bad news is that this is the hard part. The good news is that we've written a bunch of other guides to help you shorten the learning curve.
 
-**_Note: Our guides are great, but if you learn better through examples or just don't want to do a lot of reading, why not check out our [tutorials](#)? We've written one for everything we think you might want to do._**
+**_Note: Our guides are great, but if you learn better through examples or just don't want to do a lot of reading, why not check out our [tutorials](/guides)? We've written one for everything we think you might want to do._**
 
 If you'd like to learn the basics of Piwik plugin development all at once, continue on to the [next part in this series of guides](/guides/getting-started-part-2). If you want to learn how to do just one thing, try reading one of our other guides:
 
-* If you're interested in **creating new analytics reports**, you may want to read our [All About Analytics Data](#) and [Visualizing Report Data](#) guides.
-* If you're interested in **changing the look and feel of Piwik**, read our [Theming](#) guide.
-* If you're interested in **taking part in core development**, read our [Contributing to Piwik Core](#) guide.
-* If you're interested in **integrating Piwik with another technology**, you might want to read our [All About Tracking](#) guide to learn how to use our Tracking API. You might also want to read our [Piwik's HTTP API](#) guide to learn about Piwik's Reporting API.
-* If you'd like to **add new console commands**, read our [Piwik on the command line](#) guide.
-* If you want to **use automated testing to ensure your plugin works**, read your [Automated Tests](#) guide.
+* If you're interested in **creating new analytics reports**, you may want to read our [All About Analytics Data](/guides/all-about-analytics-data) and [Visualizing Report Data](/guides/visualizing-report-data) guides.
+* If you're interested in **changing the look and feel of Piwik**, read our [Theming](/guides/theming) guide.
+* If you're interested in **taking part in core development**, read our [Contributing to Piwik Core](/guides/contributing-to-piwik-core) guide.
+* If you're interested in **integrating Piwik with another technology**, you might want to read our [All About Tracking](/guides/all-about-tracking) guide to learn how to use our Tracking API. You might also want to read our [Piwik's HTTP API](/api-reference/tracking-api) guide to learn about Piwik's Reporting API.
+* If you'd like to **add new console commands**, read our [Piwik on the command line](/guides/piwik-on-the-command-line) guide.
+* If you want to **use automated testing to ensure your plugin works**, read your [Automated Tests](/guides/automated-tests) guide.
 
-And **make sure to read our security guide, [Security in Piwik](#)**! We have very high security standards that your plugin or contribution **must** respect.
+And **make sure to read our security guide, [Security in Piwik](/guides/security-in-piwik)**! We have very high security standards that your plugin or contribution **must** respect.
 
-When you've completed your plugin, you can read our [Distributing your plugin](#) guide to learn how to **share your plugin with other Piwik users**.
+When you've completed your plugin, you can read our [Distributing your plugin](/guides/distributing-your-plugin) guide to learn how to **share your plugin with other Piwik users**.
