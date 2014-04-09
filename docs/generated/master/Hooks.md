@@ -148,7 +148,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L68), [CustomVariables::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L134), [DevicesDetection::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L192), [Events::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L27), [Goals::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L446), [Provider::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L59), [Referrers::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L194), [UserCountry::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L215), [UserSettings::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L428), [VisitTime::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L104)
+[Actions::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L68), [CustomVariables::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L134), [DevicesDetection::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L192), [Events::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L39), [Goals::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L446), [Provider::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L59), [Referrers::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L194), [UserCountry::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L215), [UserSettings::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L428), [VisitTime::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L104)
 
 
 ### API.Request.authenticate
@@ -794,6 +794,24 @@ Menu items should be added via the [addEntry()](/api-reference/Piwik/Menu/MenuTo
 Usages:
 
 [Plugin::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/API/API.php#L692), [Dashboard::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L216), [ExampleUI::addTopMenuItems](https://github.com/piwik/piwik/blob/master/plugins/ExampleUI/ExampleUI.php#L45), [Feedback::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/Feedback/Feedback.php#L33), [LanguagesManager::showLanguagesSelector](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L67), [MultiSites::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/MultiSites/MultiSites.php#L96), [ScheduledReports::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L509), [Widgetize::addTopMenu](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/Widgetize.php#L33)
+
+## Metrics
+
+- [Metrics.getDefaultMetricTranslations](#metricsgetdefaultmetrictranslations)
+
+### Metrics.getDefaultMetricTranslations
+_Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [263](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L263)_
+
+Use this event to register translations for metrics processed by your plugin.
+
+Callback Signature:
+<pre><code>function(&amp;$translations)</code></pre>
+
+- `string` `&$translations` The array mapping of column_name => Plugin_TranslationForColumn
+
+Usages:
+
+[Events::getDefaultMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L28)
 
 ## MobileMessaging
 
