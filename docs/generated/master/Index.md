@@ -366,6 +366,7 @@ Index
 - [`getListHooksRegistered()`](Piwik/Plugin.md#getlisthooksregistered) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getVersion()`](Piwik/Plugin.md#getversion) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getPluginName()`](Piwik/Plugin.md#getpluginname) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`getMissingDependencies()`](Piwik/Plugin.md#getmissingdependencies) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getPluginNameFromBacktrace()`](Piwik/Plugin.md#getpluginnamefrombacktrace) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getProcessor()`](Piwik/Plugin/Archiver.md#getprocessor) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`getLogAggregator()`](Piwik/Plugin/Archiver.md#getlogaggregator) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
@@ -469,6 +470,7 @@ Index
 - [`hasUserSuperUserAccessOrIsTheUser()`](Piwik/Piwik.md#hasusersuperuseraccessoristheuser) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`hasTheUserSuperUserAccess()`](Piwik/Piwik.md#hastheusersuperuseraccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`hasUserSuperUserAccess()`](Piwik/Piwik.md#hasusersuperuseraccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
+- [`hasMissingDependencies()`](Piwik/Plugin.md#hasmissingdependencies) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
 - [`Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`$hide_annotations_view`](Piwik/ViewDataTable/Config.md#$hide_annotations_view) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
