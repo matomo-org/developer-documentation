@@ -49,6 +49,7 @@ The abstract class defines the following methods:
 - [`aggregateMultipleReports()`](#aggregatemultiplereports) &mdash; Archives data for a non-day period.
 - [`getProcessor()`](#getprocessor) &mdash; Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance that can be used to insert archive data for the period, segment and site we are archiving data for.
 - [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
+- [`isEnabled()`](#isenabled) &mdash; Whether this Archiver should be used or not.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -128,4 +129,14 @@ Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instanc
 #### Signature
 
 - It returns a [`LogAggregator`](../../Piwik/DataAccess/LogAggregator.md) value.
+
+<a name="isenabled" id="isenabled"></a>
+<a name="isEnabled" id="isEnabled"></a>
+### `isEnabled()`
+
+Whether this Archiver should be used or not.
+
+#### Signature
+
+- It returns a `bool` value.
 

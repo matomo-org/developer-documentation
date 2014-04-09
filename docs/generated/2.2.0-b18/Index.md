@@ -47,6 +47,7 @@ Index
 - [`AllColumns`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable/AllColumns.md) &mdash; _Class in namespace_ [`Piwik\Plugins\CoreVisualizations\Visualizations\HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable) 
 - [`Archiver`](Piwik/Plugins/CustomVariables/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\CustomVariables` 
 - [`Archiver`](Piwik/Plugins/DevicesDetection/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\DevicesDetection` 
+- [`Archiver`](Piwik/Plugins/Events/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Events` 
 - [`Archiver`](Piwik/Plugins/Goals/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Goals` 
 - [`Archiver`](Piwik/Plugins/Provider/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Provider` 
 - [`Archiver`](Piwik/Plugins/Referrers/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Referrers` 

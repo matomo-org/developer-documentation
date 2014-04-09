@@ -47,6 +47,7 @@ Index
 - [`AllColumns`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable/AllColumns.md) &mdash; _Class in namespace_ [`Piwik\Plugins\CoreVisualizations\Visualizations\HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable) 
 - [`Archiver`](Piwik/Plugins/CustomVariables/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\CustomVariables` 
 - [`Archiver`](Piwik/Plugins/DevicesDetection/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\DevicesDetection` 
+- [`Archiver`](Piwik/Plugins/Events/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Events` 
 - [`Archiver`](Piwik/Plugins/Goals/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Goals` 
 - [`Archiver`](Piwik/Plugins/Provider/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Provider` 
 - [`Archiver`](Piwik/Plugins/Referrers/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Referrers` 
@@ -504,6 +505,7 @@ Index
 - [`isValidEmailString()`](Piwik/Piwik.md#isvalidemailstring) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`install()`](Piwik/Plugin.md#install) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`isTheme()`](Piwik/Plugin.md#istheme) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`isEnabled()`](Piwik/Plugin/Archiver.md#isenabled) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`$idSite`](Piwik/Plugin/Controller.md#$idsite) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`isPluginActivated()`](Piwik/Plugin/Manager.md#ispluginactivated) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
 - [`isPluginLoaded()`](Piwik/Plugin/Manager.md#ispluginloaded) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)

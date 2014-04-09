@@ -81,6 +81,7 @@ This is a complete list of available classes:
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Pie`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Pie.md) &mdash; Visualization that renders HTML for a Pie graph using jqPlot.
 - [`Plugins\CustomVariables\Archiver`](Piwik/Plugins/CustomVariables/Archiver.md)
 - [`Plugins\DevicesDetection\Archiver`](Piwik/Plugins/DevicesDetection/Archiver.md)
+- [`Plugins\Events\Archiver`](Piwik/Plugins/Events/Archiver.md) &mdash; Processing reports for Events
 - [`Plugins\ExampleVisualization\SimpleTable`](Piwik/Plugins/ExampleVisualization/SimpleTable.md) &mdash; SimpleTable Visualization.
 - [`Plugins\Goals\Archiver`](Piwik/Plugins/Goals/Archiver.md)
 - [`Plugins\Goals\Visualizations\Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_goals_columns to true.
