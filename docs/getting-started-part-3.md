@@ -233,7 +233,7 @@ Then we'll use the new translation token in the **createRealtimeReportDimensionS
 
     $setting->description   = \Piwik::translate('MyPlugin_ReportDimensionSettingDescription');
 
-We also need to internationalize the names of each possible setting value. We'll do this by using translated text in the `MyPlugin::$availableDimensionsForAggregation` static variable. Of course, we can't call [Piwik::translate](#) when setting a static field, so we'll have to add a new method.
+We also need to internationalize the names of each possible setting value. We'll do this by using translated text in the `MyPlugin::$availableDimensionsForAggregation` static variable. Of course, we can't call [Piwik::translate](/api-reference/Piwik/Piwik#translate) when setting a static field, so we'll have to add a new method.
 
 We're not going to add any translation tokens to our **en.json** file this time. This is because the translations already exist for core plugins. Replace the `MyPlugin::$availableDimensionsForAggregation` field with this:
 
@@ -272,5 +272,5 @@ Since we already use translation tokens in the `MyPlugin::$availableDimensionsFo
     $columnLabel = $columnTranslations[$columnToAggregate];
 
 <div markdown="1" class="alert alert-warning">
-**If you believe you're ready to start developing your plugin,** please take the time to read our security guide [Security in Piwik](#). We have very high security standards that your plugin or contribution **must** respect.
+**If you believe you're ready to start developing your plugin,** please take the time to read our security guide [Security in Piwik](/guides/security-in-piwik). We have very high security standards that your plugin or contribution **must** respect.
 </div>
