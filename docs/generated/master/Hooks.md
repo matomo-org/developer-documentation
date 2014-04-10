@@ -799,7 +799,7 @@ Usages:
 - [Metrics.getDefaultMetricTranslations](#metricsgetdefaultmetrictranslations)
 
 ### Metrics.getDefaultMetricTranslations
-_Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [261](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L261)_
+_Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [263](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L263)_
 
 Use this event to register translations for metrics processed by your plugin.
 
