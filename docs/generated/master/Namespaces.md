@@ -23,7 +23,6 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\CustomVariables`](Piwik/Plugins/CustomVariables)
 - [`Piwik\Plugins\DevicesDetection`](Piwik/Plugins/DevicesDetection)
 - [`Piwik\Plugins\Events`](Piwik/Plugins/Events)
-- [`Piwik\Plugins\Events\Visualizations`](Piwik/Plugins/Events/Visualizations)
 - [`Piwik\Plugins\ExampleVisualization`](Piwik/Plugins/ExampleVisualization)
 - [`Piwik\Plugins\Goals`](Piwik/Plugins/Goals)
 - [`Piwik\Plugins\Goals\Visualizations`](Piwik/Plugins/Goals/Visualizations)

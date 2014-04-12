@@ -182,7 +182,6 @@ Index
 - [`exec()`](Piwik/Db.md#exec) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`error()`](Piwik/Log.md#error) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
 - [`Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md) &mdash; _Class in namespace_ [`Piwik\Plugins\CoreVisualizations\Visualizations\JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph) 
-- [`Events`](Piwik/Plugins/Events/Visualizations/Events.md) &mdash; _Class in namespace_ `Piwik\Plugins\Events\Visualizations` 
 - [`execute()`](Piwik/RankingQuery.md#execute) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`$enable_sort`](Piwik/ViewDataTable/Config.md#$enable_sort) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$export_limit`](Piwik/ViewDataTable/Config.md#$export_limit) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
@@ -649,7 +648,6 @@ Index
 - [`removeSettingValue()`](Piwik/Plugin/Settings.md#removesettingvalue) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`$requestConfig`](Piwik/Plugin/ViewDataTable.md#$requestconfig) &mdash; _Property in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`render()`](Piwik/Plugin/ViewDataTable.md#render) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
-- [`$requestConfig`](Piwik/Plugins/Events/Visualizations/Events.md#$requestconfig) &mdash; _Property in class_ [`Events`](Piwik/Plugins/Events/Visualizations/Events.md)
 - [`$requestConfig`](Piwik/Plugins/Insights/Visualizations/Insight.md#$requestconfig) &mdash; _Property in class_ [`Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; _Class in namespace_ `Piwik` 
 - [`removeAllUserSettingsForUser()`](Piwik/Settings/UserSetting.md#removeallusersettingsforuser) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)
