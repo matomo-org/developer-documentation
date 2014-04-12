@@ -78,6 +78,7 @@
 ## Plugins\CustomVariables\Archiver
 ## Plugins\DevicesDetection\Archiver
 ## Plugins\Events\Archiver
+## Plugins\Events\Visualizations\Events
 ## Plugins\ExampleVisualization\SimpleTable
 ## Plugins\Goals\Archiver
 ## Plugins\Goals\Visualizations\Goals
