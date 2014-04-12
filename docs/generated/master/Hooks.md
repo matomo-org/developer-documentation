@@ -1673,7 +1673,7 @@ Callback Signature:
 - [Translate.getClientSideTranslationKeys](#translategetclientsidetranslationkeys)
 
 ### Translate.getClientSideTranslationKeys
-_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [193](https://github.com/piwik/piwik/blob/master/core/Translate.php#L193)_
+_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [196](https://github.com/piwik/piwik/blob/master/core/Translate.php#L196)_
 
 Triggered before generating the JavaScript code that allows i18n strings to be used in the browser. Plugins should subscribe to this event to specify which translations
 should be available to JavaScript.
@@ -1714,7 +1714,7 @@ Callback Signature:
 - [User.isNotAuthorized](#userisnotauthorized)
 
 ### User.getLanguage
-_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [124](https://github.com/piwik/piwik/blob/master/core/Translate.php#L124)_
+_Defined in [Piwik/Translate](https://github.com/piwik/piwik/blob/master/core/Translate.php) in line [127](https://github.com/piwik/piwik/blob/master/core/Translate.php#L127)_
 
 Triggered when the current user's language is requested. By default the current language is determined by the **language** query
 parameter. Plugins can override this logic by subscribing to this event.
