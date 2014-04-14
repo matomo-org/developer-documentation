@@ -548,6 +548,20 @@ Usages:
 
 [Actions::addReportToInsightsOverview](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L51), [Referrers::addReportToInsightsOverview](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L49), [UserCountry::addReportToInsightsOverview](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L61)
 
+## LanguageManager
+
+- [LanguageManager.getAvailableLanguages](#languagemanagergetavailablelanguages)
+
+### LanguageManager.getAvailableLanguages
+_Defined in [Piwik/Plugins/LanguagesManager/API](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php) in line [75](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php#L75)_
+
+Hook called after loading available language files. Use this hook to customise the list of languagesPath available in Piwik.
+
+Callback Signature:
+<pre><code>function(&amp;$languages)</code></pre>
+
+- `array`
+
 ## Live
 
 - [Live.API.getIdSitesString](#liveapigetidsitesstring)
