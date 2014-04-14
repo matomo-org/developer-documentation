@@ -165,7 +165,7 @@ Callback Signature:
 
 Usages:
 
-[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L53)
+[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L59)
 
 
 ### API.Request.dispatch
@@ -297,7 +297,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Actions/Actions.php#L63), [Annotations::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Annotations/Annotations.php#L40), [CoreAdminHome::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/CoreAdminHome/CoreAdminHome.php#L74), [CoreHome::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/CoreHome/CoreHome.php#L60), [CorePluginsAdmin::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L123), [CoreVisualizations::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/CoreVisualizations/CoreVisualizations.php#L53), [Dashboard::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Dashboard/Dashboard.php#L230), [ExamplePlugin::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/ExamplePlugin/ExamplePlugin.php#L25), [Feedback::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Feedback/Feedback.php#L52), [Goals::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Goals/Goals.php#L458), [Insights::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Insights/Insights.php#L46), [LanguagesManager::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/LanguagesManager/LanguagesManager.php#L50), [Live::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Live/Live.php#L44), [MobileMessaging::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/MobileMessaging/MobileMessaging.php#L97), [MultiSites::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/MultiSites/MultiSites.php#L103), [Overlay::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Overlay/Overlay.php#L38), [PrivacyManager::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/PrivacyManager/PrivacyManager.php#L173), [ScheduledReports::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/ScheduledReports/ScheduledReports.php#L122), [SegmentEditor::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/SegmentEditor/SegmentEditor.php#L95), [SitesManager::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/SitesManager/SitesManager.php#L57), [Transitions::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Transitions/Transitions.php#L33), [UserCountry::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/UserCountry/UserCountry.php#L84), [UserCountryMap::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/UserCountryMap/UserCountryMap.php#L66), [UsersManager::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/UsersManager/UsersManager.php#L83), [Widgetize::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Widgetize/Widgetize.php#L41)
+[Actions::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Actions/Actions.php#L63), [Annotations::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Annotations/Annotations.php#L40), [CoreAdminHome::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/CoreAdminHome/CoreAdminHome.php#L74), [CoreHome::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/CoreHome/CoreHome.php#L60), [CorePluginsAdmin::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L123), [CoreVisualizations::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/CoreVisualizations/CoreVisualizations.php#L53), [Dashboard::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Dashboard/Dashboard.php#L230), [ExamplePlugin::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/ExamplePlugin/ExamplePlugin.php#L25), [Feedback::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Feedback/Feedback.php#L52), [Goals::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Goals/Goals.php#L458), [Insights::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Insights/Insights.php#L46), [LanguagesManager::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/LanguagesManager/LanguagesManager.php#L50), [Live::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Live/Live.php#L44), [Login::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L39), [MobileMessaging::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/MobileMessaging/MobileMessaging.php#L97), [MultiSites::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/MultiSites/MultiSites.php#L103), [Overlay::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Overlay/Overlay.php#L38), [PrivacyManager::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/PrivacyManager/PrivacyManager.php#L173), [ScheduledReports::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/ScheduledReports/ScheduledReports.php#L122), [SegmentEditor::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/SegmentEditor/SegmentEditor.php#L95), [SitesManager::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/SitesManager/SitesManager.php#L57), [Transitions::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Transitions/Transitions.php#L33), [UserCountry::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/UserCountry/UserCountry.php#L84), [UserCountryMap::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/UserCountryMap/UserCountryMap.php#L66), [UsersManager::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/UsersManager/UsersManager.php#L83), [Widgetize::getJsFiles](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Widgetize/Widgetize.php#L41)
 
 
 ### AssetManager.getStylesheetFiles
@@ -940,7 +940,7 @@ _Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/2.2.0-b1
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L69)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L75)
 
 
 ### Request.initAuthenticationObject
@@ -966,7 +966,7 @@ Callback Signature:
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L69)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L75)
 
 
 ### Request.initAuthenticationObject
@@ -983,7 +983,7 @@ to set the global authentication object (which must derive from Piwik\Auth).
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L69)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L75)
 
 ## ScheduledReports
 
@@ -1733,7 +1733,7 @@ Callback Signature:
 
 Usages:
 
-[Login::noAccess](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L42)
+[Login::noAccess](https://github.com/piwik/piwik/blob/2.2.0-b18/plugins/Login/Login.php#L48)
 
 ## UsersManager
 
