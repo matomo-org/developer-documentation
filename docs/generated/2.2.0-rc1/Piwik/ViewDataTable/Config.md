@@ -88,6 +88,7 @@ This class defines the following properties:
 - [`$show_all_views_icons`](#$show_all_views_icons) &mdash; Controls whether graph and non core viewDataTable footer icons are shown or not.
 - [`$show_active_view_icon`](#$show_active_view_icon) &mdash; Controls whether to display a tiny upside-down caret over the currently active view icon.
 - [`$related_reports`](#$related_reports) &mdash; Related reports are listed below a datatable view.
+- [`$related_reports_title`](#$related_reports_title) &mdash; "Related Reports" is displayed by default before listing the Related reports, The string can be changed.
 - [`$title`](#$title) &mdash; The report title.
 - [`$show_related_reports`](#$show_related_reports) &mdash; Controls whether a report's related reports are listed with the view or not.
 - [`$documentation`](#$documentation) &mdash; Contains the documentation for a report.
@@ -333,6 +334,17 @@ Related reports are listed below a datatable view.
 When clicked, the original report will
 change to the clicked report and the list will change so the original report can be
 navigated back to.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$related_reports_title" id="$related_reports_title"></a>
+<a name="related_reports_title" id="related_reports_title"></a>
+### `$related_reports_title`
+
+"Related Reports" is displayed by default before listing the Related reports, The string can be changed.
 
 #### Signature
 

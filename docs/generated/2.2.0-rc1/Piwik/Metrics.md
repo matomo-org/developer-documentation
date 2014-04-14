@@ -16,7 +16,6 @@ This class defines the following properties:
 
 - [`$mappingFromIdToName`](#$mappingfromidtoname)
 - [`$mappingFromIdToNameGoal`](#$mappingfromidtonamegoal)
-- [`$mappingFromNameToId`](#$mappingfromnametoid)
 
 <a name="$mappingfromidtoname" id="$mappingfromidtoname"></a>
 <a name="mappingFromIdToName" id="mappingFromIdToName"></a>
@@ -30,15 +29,6 @@ This class defines the following properties:
 <a name="$mappingfromidtonamegoal" id="$mappingfromidtonamegoal"></a>
 <a name="mappingFromIdToNameGoal" id="mappingFromIdToNameGoal"></a>
 ### `$mappingFromIdToNameGoal`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$mappingfromnametoid" id="$mappingfromnametoid"></a>
-<a name="mappingFromNameToId" id="mappingFromNameToId"></a>
-### `$mappingFromNameToId`
 
 #### Signature
 

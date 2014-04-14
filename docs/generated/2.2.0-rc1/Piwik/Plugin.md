@@ -89,6 +89,8 @@ The class defines the following methods:
 - [`getVersion()`](#getversion) &mdash; Returns the plugin version number.
 - [`isTheme()`](#istheme) &mdash; Returns `true` if this plugin is a theme, `false` if otherwise.
 - [`getPluginName()`](#getpluginname) &mdash; Returns the plugin's base class name without the namespace, e.g., `"UserCountry"` when the plugin class is `"Piwik\Plugins\UserCountry\UserCountry"`.
+- [`hasMissingDependencies()`](#hasmissingdependencies) &mdash; Detect whether there are any missing dependencies.
+- [`getMissingDependencies()`](#getmissingdependencies)
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
 
 <a name="__construct" id="__construct"></a>
@@ -249,6 +251,52 @@ Returns the plugin's base class name without the namespace, e.g., `"UserCountry"
 
 - It is a **finalized** method.
 - It returns a `string` value.
+
+<a name="hasmissingdependencies" id="hasmissingdependencies"></a>
+<a name="hasMissingDependencies" id="hasMissingDependencies"></a>
+### `hasMissingDependencies()`
+
+Detect whether there are any missing dependencies.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$piwikVersion` (`null`) &mdash;
+
+      <div markdown="1" class="param-desc"> Defaults to the current Piwik version</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `bool` value.
+
+<a name="getmissingdependencies" id="getmissingdependencies"></a>
+<a name="getMissingDependencies" id="getMissingDependencies"></a>
+### `getMissingDependencies()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$piwikVersion`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
 
 <a name="getpluginnamefrombacktrace" id="getpluginnamefrombacktrace"></a>
 <a name="getPluginNameFromBacktrace" id="getPluginNameFromBacktrace"></a>

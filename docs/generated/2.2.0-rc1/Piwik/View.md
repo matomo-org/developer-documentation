@@ -322,9 +322,9 @@ a new template.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$title`
+      `$title` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"></div>
+      <div markdown="1" class="param-desc"> The report title.</div>
 
       <div style="clear:both;"/>
 
@@ -332,9 +332,9 @@ a new template.
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$reportHtml`
+      `$reportHtml` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"></div>
+      <div markdown="1" class="param-desc"> The report body HTML.</div>
 
       <div style="clear:both;"/>
 

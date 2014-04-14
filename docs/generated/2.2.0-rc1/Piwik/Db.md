@@ -46,6 +46,7 @@ The class defines the following methods:
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
 - [`getDatabaseConfig()`](#getdatabaseconfig)
 - [`createDatabaseObject()`](#createdatabaseobject) &mdash; Connects to the database.
+- [`destroyDatabaseObject()`](#destroydatabaseobject) &mdash; Disconnects and destroys the database connection.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
 - [`query()`](#query) &mdash; Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
 - [`fetchAll()`](#fetchall) &mdash; Executes an SQL `SELECT` statement and returns all fetched rows from the result set.
@@ -134,6 +135,18 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
       </div>
    </li>
    </ul>
+- It does not return anything.
+
+<a name="destroydatabaseobject" id="destroydatabaseobject"></a>
+<a name="destroyDatabaseObject" id="destroyDatabaseObject"></a>
+### `destroyDatabaseObject()`
+
+Disconnects and destroys the database connection.
+
+For tests.
+
+#### Signature
+
 - It does not return anything.
 
 <a name="exec" id="exec"></a>

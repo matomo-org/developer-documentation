@@ -88,7 +88,7 @@ This class defines the following properties:
 - [`$request_parameters_to_modify`](#$request_parameters_to_modify) &mdash; An array property that contains query parameter name/value overrides for API requests made by ViewDataTable.
 - [`$disable_generic_filters`](#$disable_generic_filters) &mdash; Whether to run generic filters on the DataTable before rendering or not.
 - [`$disable_queued_filters`](#$disable_queued_filters) &mdash; Whether to run ViewDataTable's list of queued filters or not.
-- [`$apiMethodToRequestDataTable`](#$apimethodtorequestdatatable)
+- [`$apiMethodToRequestDataTable`](#$apimethodtorequestdatatable) &mdash; returns 'Plugin.apiMethodName' used for this ViewDataTable, eg.
 - [`$idSubtable`](#$idsubtable) &mdash; If the current dataTable refers to a subDataTable (eg.
 
 <a name="$clientsideparameters" id="$clientsideparameters"></a>
@@ -263,10 +263,13 @@ Default value: false
 <a name="apiMethodToRequestDataTable" id="apiMethodToRequestDataTable"></a>
 ### `$apiMethodToRequestDataTable`
 
+returns 'Plugin.apiMethodName' used for this ViewDataTable, eg.
+
+'Actions.getPageUrls'
+
 #### Signature
 
-- Its type is not specified.
-
+- It is a `string` value.
 
 <a name="$idsubtable" id="$idsubtable"></a>
 <a name="idSubtable" id="idSubtable"></a>
