@@ -438,16 +438,6 @@ Post an event to Piwik's event dispatcher which will execute the event's observe
 
       </div>
    </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$plugins` (`array`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> The list of plugins to execute observers for. If null, all plugin observers will be executed.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
    </ul>
 - It does not return anything.
 
