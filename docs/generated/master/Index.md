@@ -153,6 +153,7 @@ Index
 - [`destroyDatabaseObject()`](Piwik/Db.md#destroydatabaseobject) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`deleteAllRows()`](Piwik/Db.md#deleteallrows) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`dropTables()`](Piwik/Db.md#droptables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
+- [`dropAllTables()`](Piwik/Db.md#dropalltables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`DbHelper`](Piwik/DbHelper.md) &mdash; _Class in namespace_ `Piwik` 
 - [`deleteFileIfExists()`](Piwik/Filesystem.md#deletefileifexists) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`dispatch()`](Piwik/FrontController.md#dispatch) &mdash; _Method in class_ [`FrontController`](Piwik/FrontController.md)
