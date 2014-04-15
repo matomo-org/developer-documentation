@@ -373,7 +373,7 @@ _Learn more about theming in our [Theming](#) guide._
 
 The **DataTable** class is the base of all JavaScript classes that manage [report visualizations](#). If your creating your own report visualization, you may have to extend it.
 
-To learn more about extending the class, see our [Visualizing Report Data](#) guide.
+To learn more about extending the class, see our [Visualizing Report Data](https://github.com/piwik/developer-documentation/blob/master/docs/visualizing-report-data.md) guide.
 
 TODO: should i talk about everything the class does here? guide could get much longer.
 
