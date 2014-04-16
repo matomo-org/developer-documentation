@@ -56,6 +56,7 @@ The class defines the following methods:
 - [`deleteAllRows()`](#deleteallrows) &mdash; Deletes all desired rows in a table, while using a limit.
 - [`optimizeTables()`](#optimizetables) &mdash; Runs an `OPTIMIZE TABLE` query on the supplied table or tables.
 - [`dropTables()`](#droptables) &mdash; Drops the supplied table or tables.
+- [`dropAllTables()`](#dropalltables) &mdash; Drops all tables
 - [`getColumnNamesFromTable()`](#getcolumnnamesfromtable) &mdash; Get columns information from table
 - [`lockTables()`](#locktables) &mdash; Locks the supplied table or tables.
 - [`unlockAllTables()`](#unlockalltables) &mdash; Releases all table locks.
@@ -544,6 +545,16 @@ Drops the supplied table or tables.
    </li>
    </ul>
 - It returns a `Zend_Db_Statement` value.
+
+<a name="dropalltables" id="dropalltables"></a>
+<a name="dropAllTables" id="dropAllTables"></a>
+### `dropAllTables()`
+
+Drops all tables
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getcolumnnamesfromtable" id="getcolumnnamesfromtable"></a>
 <a name="getColumnNamesFromTable" id="getColumnNamesFromTable"></a>
