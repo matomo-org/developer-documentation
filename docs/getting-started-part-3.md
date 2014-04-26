@@ -2,7 +2,7 @@
 
 ## About this guide
 
-In [Part II](/guides/getting-started-part-2) you created a plugin that defines and displays a new report. In this guide, we'll enhance our plugin by making it configurable and internationalized. You'll learn:
+In [Part II](/guides/getting-started-part-2) you created a plugin that defines and displays a new report. In this guide, we'll enhance that plugin by making it configurable and internationalized. You'll learn:
 
 * **how to add settings to your plugin**
 * **how to make your plugin available in multiple languages**
@@ -113,7 +113,7 @@ To use the setting, first we need to get the setting value in our API method and
         );
         $data->applyQueuedFilters();
 
-        // read the setting value that contains the column value to aggregate on
+        // read the setting value that contains the column value to aggregate by
         $settings = new Settings('MyPlugin');
         $columnName = $settings->realtimeReportDimension->getValue();
 
@@ -186,7 +186,7 @@ Finally, we'll rename the report. After all, it can do more than just aggregate 
 
 The other improvement we'll make to our plugin is to use Piwik's [internationalization](http://en.wikipedia.org/wiki/Internationalization) system so our plugin can be made available in multiple languages.
 
-Internationalization is achieved in Piwik by replacing translated text, like `"Realtime Analaytics"`, with unique identifiers, like `"MyPlugin_RealtimeAnalytics"` called **translation tokens**.
+Internationalization is achieved in Piwik by replacing translated text, like `"Realtime Analytics"`, with unique identifiers, like `"MyPlugin_RealtimeAnalytics"` called **translation tokens**.
 
 Translation tokens are associated with translated text in multiple JSON files, one for each supported language. In code, the translation tokens are converted into translated text based on the user's selected language.
 
@@ -204,11 +204,12 @@ We're going to move all of the translated text in our plugin to this file.
 
 #### Internationalizing our Twig Template
 
-Translation tokens are translated in templates via the [translate](#) filter. We only use one piece of translated text in our template: `"Realtime Analytics"`. First, we'll add an entry for this in the **en.json** file we just created. We'll use the **RealtimeAnalytics** translation token:
+Translation tokens are translated in templates via the [translate](http://developer.piwik.org/api-reference/Piwik/View) Twig filter. We use two pieces of translated text in our template: `"Realtime Analytics"` and `"Reload"`. First, we'll add entries for them in the **en.json** file we just created. We'll use the **RealtimeAnalytics** and "Reload" translation tokens:
 
     {
         "MyPlugin": {
-            "RealtimeAnalytics": "Realtime Analytics"
+            "RealtimeAnalytics": "Realtime Analytics",
+            "Reload": "Reload"
         }
     }
 
@@ -218,6 +219,8 @@ Then replace the text in your template with the following:
 
     {{ getLastVisitsByDimensionReport|raw }}
 
+    <a id="realtime-reports-reload" href="#">{{ 'MyPlugin_Reload'|translate }}</a>
+
 #### Internationalizing our setting
 
 Now, let's internationalize the text we use in our **Settings** class. First, we'll add entries for the text we use:
@@ -225,6 +228,7 @@ Now, let's internationalize the text we use in our **Settings** class. First, we
     {
         "MyPlugin": {
             "RealtimeAnalytics": "Realtime Analytics",
+            "Reload": "Reload",
             "ReportDimensionSettingDescription" : "Choose the dimension to aggregate by"
         }
     }
@@ -233,7 +237,7 @@ Then we'll use the new translation token in the **createRealtimeReportDimensionS
 
     $setting->description   = \Piwik::translate('MyPlugin_ReportDimensionSettingDescription');
 
-We also need to internationalize the names of each possible setting value. We'll do this by using translated text in the `MyPlugin::$availableDimensionsForAggregation` static variable. Of course, we can't call [Piwik::translate](/api-reference/Piwik/Piwik#translate) when setting a static field, so we'll have to add a new method.
+We also need to internationalize the names of each possible setting value. We'll do this by using translated text in the `MyPlugin::$availableDimensionsForAggregation` static variable. Of course, we can't call [Piwik::translate](/api-reference/Piwik/Piwik#translate) when setting a static field, so we'll have to add a new method that returns the array.
 
 We're not going to add any translation tokens to our **en.json** file this time. This is because the translations already exist for core plugins. Replace the `MyPlugin::$availableDimensionsForAggregation` field with this:
 
