@@ -131,8 +131,9 @@ Follow these steps to enable and view debug logging for the tracker:
 
 1. In your config file `path/to/piwik/config/config.ini.php`, write the following:
 
-    [Tracker]
-    debug = 1
+    `[Tracker]
+    debug = 1`
+
 
 2. Look at the HTTP requests that are sent to Piwik.
     * If the requests take place in a browser, you can use a tool like the [Firebug](http://getfirebug.com/) to see all requests to **piwik.php**.
