@@ -127,9 +127,12 @@ To verify that your data is being tracked properly, you can enable debug logging
 
 **Tracking requests will then output the tracking log messages rather than displaying a 1*1 transparent GIF beacon.**
 
-Follow these steps to enable debug logging for the tracker:
+Follow these steps to enable and view debug logging for the tracker:
 
-1. In the file `path/to/piwik/piwik.php`, you can set `$GLOBALS['PIWIK_TRACKER_DEBUG'] = true;`
+1. In your config file `path/to/piwik/config/config.ini.php`, write the following:
+    [Tracker]
+    debug = 1
+
 2. Look at the HTTP requests that are sent to Piwik.
     * If the requests take place in a browser, you can use a tool like the [Firebug](http://getfirebug.com/) to see all requests to **piwik.php**.
     * If the requests are triggered from your app or software directly, you can output or log the output of tracking requests and to view the debug messages.
