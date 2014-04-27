@@ -130,6 +130,7 @@ To verify that your data is being tracked properly, you can enable debug logging
 Follow these steps to enable and view debug logging for the tracker:
 
 1. In your config file `path/to/piwik/config/config.ini.php`, write the following:
+
     [Tracker]
     debug = 1
 
