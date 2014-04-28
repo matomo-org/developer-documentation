@@ -25,7 +25,7 @@ In Piwik, **themes** are special types of plugins that change the look and feel 
 This guide assumes that you:
 
 * can code in PHP and JavaScript,
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
+* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
 ## Creating a theme
 
@@ -48,7 +48,7 @@ Every theme has one main file that contains all of your theme's styling override
 
 The generated theme will already have a file for your new styles, so you don't need to set this property. The file is called **theme.less** and is located in the **stylesheets** directory of your theme.
 
-You can put your entire theme into this one file if you want, but this will not result in easy to read and easy to maintain code. Instead, you should group your theme's styles based on the part of Piwik they modify and place them in separate LESS files. In **theme.less** you can [@import](#) them.
+You can put your entire theme into this one file if you want, but this will not result in easy to read and easy to maintain code. Instead, you should group your theme's styles based on the part of Piwik they modify and place them in separate LESS files. In **theme.less** you can [@import](/features/#import-directives-feature) them.
 
 ### Adding JavaScript files
 
@@ -105,7 +105,7 @@ Here is a list of all named colors in Piwik:
   * **lastPointColor**: The color of the point that marks the last value of the data set.
   * **maxPointColo**: The color of the point that marks the maximum value observed in the data set.
 
-* _Namespace_: **bar-graph-colors**: contains colors for bar graph [report visualizations](#).
+* _Namespace_: **bar-graph-colors**: contains colors for bar graph [report visualizations](/guides/visualizing-report-data).
 
   * **grid-background**: The background color of the graph.
   <!-- TODO: This color has no effect since borderWidth is set to 0. Should it be removed? (same for other jqplot visualizations) * **grid-border**:  -->
@@ -122,7 +122,7 @@ Here is a list of all named colors in Piwik:
   * **ticks**: The color of x-axis gridlines and x-axis ticks.
   * **single-metric-label**: The color of the series name label if only **one** series is displayed. If you don't care about whether there's one series displayed or not, set this color to the one you used in **series1**.
 
-* _Namespace_: **pie-graph-colors**: contains colors for pie graph [report visualizations](#).
+* _Namespace_: **pie-graph-colors**: contains colors for pie graph [report visualizations](/guides/visualizing-report-data).
 
   * **grid-background**: The background color of the graph.
   <!-- * **grid-border**:  -->
@@ -138,7 +138,7 @@ Here is a list of all named colors in Piwik:
   * **series10**: The color of the pie graph segment representing the tenth value in the data displayed.
   * **single-metric-label**: The color of the series name label if only **one** series is displayed. If you don't care about whether there's one series displayed or not, set this color to the one you used in **series1**.
 
-* _Namespace_: **evolution-graph-colors**: contains colors for evolution graph [report visualizations](#) (the big line graphs that display data over time).
+* _Namespace_: **evolution-graph-colors**: contains colors for evolution graph [report visualizations](/guides/visualizing-report-data) (the big line graphs that display data over time).
 
   * **grid-background**: The background color of the graph.
   <!-- * **grid-border**: -->
@@ -155,7 +155,7 @@ Here is a list of all named colors in Piwik:
   * **ticks**: The color of x-axis gridlines and x-axis ticks.
   * **single-metric-label**: The color of the series name label if only **one** series is displayed. If you don't care about whether there's one series displayed or not, set this color to the one you used in **series1**.
 
-* _Namespace_: **realtime-map**: contains colors for the [Realtime Visitors Map](#).
+* _Namespace_: **realtime-map**: contains colors for the [Realtime Visitors Map](http://piwik.org/docs/real-time-visitor-world-map/).
 
   * **white-bg**: The background color for the map when using the _light theme_. 
   * **white-fill**: The country/region fill color for the map when using the _light theme_.
@@ -166,12 +166,12 @@ Here is a list of all named colors in Piwik:
   * **website-referrer-color**: The fill color of a visit whose referrer was a website _(only used if the Referrer Type color mode is used)_.
   * **direct-referrer-color**: The fill color of a visit that has no referrer _(only used if the Referrer Type color mode is used)_.
   * **search-referrer-color**: The fill color of a visit whose referrer was a search engine _(only used if the Referrer Type color mode is used)_.
-  * **live-widget-highlight**: The color to use when highlighting a visit in the live widget _(only used when embedding both the realtime map and the [Live widget](#) in the dashboard)_.
-  * **live-widget-unhighlight**: The color to use when unhighlighting a visit in the live widget _(only used when embedding both the realtime map and the [Live widget](#) in the dashboard)_.
+  * **live-widget-highlight**: The color to use when highlighting a visit in the live widget _(only used when embedding both the realtime map and the Live widget in the dashboard)_.
+  * **live-widget-unhighlight**: The color to use when unhighlighting a visit in the live widget _(only used when embedding both the realtime map and the Live widget in the dashboard)_.
   * **symbol-animate-fill**: The starting fill color to use when animating the appearance of a new visit. The ending fill color is always the visit's normal color.
   <!-- TODO: hue of visit color is not themable still -->
 
-* _Namespace_: **visitor-map**: contains colors for the [Visitors Map](#).
+* _Namespace_: **visitor-map**: contains colors for the [Visitors Map](http://piwik.org/docs/visitors-map/).
 
 <!-- TODO: should probably rename some of these colors -->
 
@@ -218,13 +218,13 @@ This file is the first file imported in the **theme.less** file.
 
 ## Making a plugin themable
 
-Plugins that define their own UI widgets or new [report visualizations](#) are, for the most part, already themable. As long as they rely entirely on CSS for the look and feel, they can be easily themed.
+Plugins that define their own UI widgets or new [report visualizations](/guides/visualizing-report-data) are, for the most part, already themable. As long as they rely entirely on CSS for the look and feel, they can be easily themed.
 
 If these new widgets or visualizations use colors in JavaScript or PHP, more work must be done to make them themable.
 
 ### Using CSS colors in JavaScript
 
-To use colors defined in CSS within JavaScript, the [ColorManager](#) class must be used. Using it is straightforward. After you define some named colors in CSS like this:
+To use colors defined in CSS within JavaScript, the [ColorManager](/guides/working-with-piwiks-ui#colormanager) class must be used. Using it is straightforward. After you define some named colors in CSS like this:
 
     .my-color-namespace[data-name=my-color-name] {
         color: red;
@@ -234,7 +234,7 @@ To use colors defined in CSS within JavaScript, the [ColorManager](#) class must
         color: blue;
     }
 
-You access them through [ColorManager](#) like this:
+You access them through [ColorManager](/guides/working-with-piwiks-ui#colormanager) like this:
 
     var ColorManager = require('piwik').ColorManager;
 
@@ -271,5 +271,5 @@ Then use those colors in PHP:
 
 ## Learn more
 
-* To learn **more about creating new report visualizations** read our [Visualizing Report Data](#) guide.
-* To learn **more about writing JavaScript for Piwik plugins and themes** read our [Working with Piwik's UI](#) guide.
+* To learn **more about creating new report visualizations** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.
+* To learn **more about writing JavaScript for Piwik plugins and themes** read our [Working with Piwik's UI](/guides/working-with-piwiks-ui) guide.
