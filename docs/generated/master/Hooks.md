@@ -1535,7 +1535,7 @@ Callback Signature:
 
 
 ### Tracker.isExcludedVisit
-_Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php) in line [82](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php#L82)_
+_Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php) in line [83](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php#L83)_
 
 Triggered on every tracking request. This event can be used to tell the Tracker not to record this particular action or visit.
 
