@@ -30,18 +30,20 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 This guide assumes that you:
 
 * can code in PHP,
-* have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide),
-* and have knowledge of the [Model-View-Controller pattern](#).
+* have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide),
+* and have knowledge of the [Model-View-Controller pattern](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
 
 ## HTTP Request Handling
 
 Piwik's MVC (Model-View-Controller) implementation is the first bit of code that is executed when Piwik handles an HTTP request.
 
-Every request that is sent to Piwik's reporting side (as opposed to Piwik's tracking side) is sent to the index.php file in Piwik's root directory. This file creates an instance of the [FrontController](#) and uses it to dispatch the current request.
+Every request that is sent to Piwik's reporting side (as opposed to Piwik's tracking side) is sent to the **index.php** file in Piwik's root directory. This file creates an instance of the [FrontController](/api-reference/Piwik/FrontController) and uses it to dispatch the current request.
 
-[FrontController](#) looks for the **module** and **action** query parameters and invokes the controller method specified by **action** in the plugin specified by **module**. If no **action** is specified, Piwik sends the request to the controller's `index` method.
+[FrontController](/api-reference/Piwik/FrontController) looks for the **module** and **action** query parameters and invokes the controller method specified by **action** in the plugin specified by **module**. If no **action** is specified, Piwik sends the request to the controller's `index` method.
 
-The controller method that is called has to do one thing, which is return something that can be `echo`'d. As a plugin developer you can do this in any way you'd like, Piwik won't stop you, but the convention used by the rest of Piwik is to create a Piwik [View](#), query APIs to request any needed data and then render the view. For example:
+For example, a URL with `module=MyPlugin&action=myAction` will invoke the **Piwik\Plugins\MyPlugin\Controller::myAction()** method. A URL with `module=MyPlugin&action=index` will invoke the **Piwik\Plugins\MyPlugin\Controller::index()** method.
+
+The controller method that is called has to do one thing: return something that can be `echo`'d. As a plugin developer you can do this in any way you'd like, Piwik won't stop you, but the convention used by the rest of Piwik is to create a Piwik [View](/api-reference/Piwik/View), query APIs to request any needed data and then render the view. For example:
 
     class Controller extends \Piwik\Plugin\Controller
     {
@@ -59,29 +61,29 @@ Read on to learn more about the individual components in this workflow.
 
 ## Piwik APIs (Models)
 
-Piwik APIs serve two purposes: they serve the data used in views and they [automatically expose plugin functionality through a HTTP API](#).
+Piwik APIs serve two purposes: they serve the data used in controller methods and they [automatically expose plugin functionality through an HTTP API](/guides/piwiks-reporting-api).
 
 In this guide, we discuss the first purpose.
 
 ### About API Classes
 
-Plugins provide APIs by defining a class named API that derives from [Piwik\Plugins\API](#). Every public method that does not have the `@ignore` annotation is exposed as part of Piwik's [Reporting HTTP API](#).
+Plugins provide APIs by defining a class named API that derives from [Piwik\Plugins\API](/api-reference/Piwik/Plugin/API). Every public method that does not have the `@ignore` annotation is exposed as part of Piwik's [Reporting HTTP API](/guides/piwiks-reporting-api).
 
-All APIs are singletons. To access API methods programatically the [Singleton::getInstance](#) method must be called first:
+All APIs are singletons. To access API methods programatically the [Singleton::getInstance](/api-reference/Piwik/Singleton#getinstance) method must be called first:
 
     MyAPI::getInstance()->doSomething();
 
 **API methods**
 
-API methods can take any number of parameters. Since they can be called through HTTP, methods must assume that parameters will be passed as strings. This also means that method parameters can only be simple values, such as `string`s, `bool`s, `numeric`s, etc.
+API methods can take any number of parameters. Since they can be called through HTTP, methods must assume that parameters will be passed as strings. This also means that method parameters can only be simple values, such as `string`s, `bool`s, `numeric`s, etc. or an array with simple values.
 
-API methods can return only one of four types of data: either a simple value (`string`, `bool`, `numeric`, etc), a [DataTable](#) instance, a [DataTable\Map](#) instance or an array of any of these values. This is so Piwik will always be able to convert the result into the desired output format in the reporting API.
+API methods can return only one of four types of data: either a simple value (`string`, `bool`, `numeric`, etc), a [DataTable](/api-reference/Piwik/DataTable) instance, a [DataTable\Map](/api-reference/Piwik/DataTable/Map) instance or an array of any of these values. This is so Piwik will always be able to convert the result into the desired output format in the reporting API.
 
 If an API method encounters an error, it should throw an exception. Piwik will be able to convert exceptions to the desired output format in the reporting API.
 
 **API method security**
 
-All API methods should check whether the current user is allowed to invoke the method. If the API method is read-only, this means checking that the user has view access to the resources the method returns. If the API method does something, this normally means checking that the user has admin access to the functionality (or alternatively checking that the user is the super user). For example,
+All API methods should check whether the current user is allowed to invoke the method. If the API method is read-only, this means checking that the user has view access to the resources the method returns. If the API method performs an action, this normally means checking that the user has admin access to the functionality (or alternatively checking that the user is the super user). For example,
 
     public function getAllForSite($idSite)
     {
@@ -91,7 +93,7 @@ All API methods should check whether the current user is allowed to invoke the m
     }
 
 
-Look at the `check...` methods in the [Piwik](#) class to see what types of checks can be made.
+Look at the `check...` methods in the [Piwik](/api-reference/Piwik/Piwik) class to see what types of checks can be made.
 
 **Calling API methods**
 
@@ -103,19 +105,19 @@ API methods can be called in two ways. They can be called directly after getting
         Common::getRequestVar('period')
     );
 
-or they can be called using the [Piwik\API\Request](#) class:
+or they can be called using the [Piwik\API\Request](/api-reference/Piwik/API/Request) class:
 
     Request::processRequest("MyAPI.doSomething");
 
-Note how in the second method, the [Common::getRequestVar](#) method (which safely retrieves query parameter values) does not have to be called. The [Piwik\API\Request](#) class will forward the current request parameters to the API method which makes using it the better choice in some situations.
+Note how in the second method, the [Common::getRequestVar](/api-reference/Piwik/Common#getrequestvar) method (which safely retrieves query parameter values) does not have to be called. The [Piwik\API\Request](/api-reference/Piwik/API/Request) class will forward the current request parameters to the API method which makes using it the better choice in some situations.
 
-Also note, that when [Piwik\API\Request](#) is used, [extra processing is applied to report data](#).
+Also note, that when [Piwik\API\Request](/api-reference/Piwik/API/Request) is used, [extra processing is applied to report data](/guides/piwiks-reporting-api#extra-report-processing).
 
 ## Piwik Views (Views)
 
-Piwik Views are classes that implement [ViewInterface](#). The main view class [Piwik\View](#) will use a [Twig](#) template that is specified upon construction to generate output. There is also another class called [ViewDataTable](#) that is used specifically to visualize analytics data.
+Piwik Views are classes that implement **ViewInterface**. The main view class [Piwik\View](/api-reference/Piwik/View) will use a [Twig](http://twig.sensiolabs.org) template that is specified upon construction to generate output. There is also another class called [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) that is used specifically to visualize analytics data.
 
-Using a view is straightforward. First, it is configured. The meaning of this is different based on the View type. For [Piwik\View](#) instances, it simply means setting properties, for example:
+Using a view is straightforward. First, it is configured. The meaning of this is different based on the View type. For [Piwik\View](/api-reference/Piwik/View) instances, it simply means setting properties, for example:
 
     $view = new View("@MyPlugin/myTemplate.twig");
 
@@ -123,9 +125,9 @@ Using a view is straightforward. First, it is configured. The meaning of this is
     $view->property1 = 'property1';
     $view->property2 = 'here's another property';
 
-For [ViewDataTable](#), [it's a bit more complicated](#).
+For [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable), [it's a bit more complicated](/guides/visualizing-report-data).
 
-Once a view is configured, it is rendered via the [ViewInterface::render](#) method:
+Once a view is configured, it is rendered via the [View::render](/api-reference/Piwik/View#render) method:
 
     return $view->render();
 
@@ -133,29 +135,29 @@ This is the same for all view types.
 
 ### Twig Templates
 
-The preferred way to generate anything text-based (like HTML) using data is to define Twig templates and use [View](#). Plugin developers should not accomplish this task with new view types unless they need to output something that is not text-based (such as an image).
+The preferred way to generate anything text-based (like HTML) using data is to define Twig templates and use a [View](/api-reference/Piwik/View). Plugin developers should not accomplish this task with new view types unless they need to output something that is not text-based (such as an image).
 
-_If you do not know how to create Twig templates, learn how by [reading Twig's documentation](#)._
+_If you do not know how to create Twig templates, learn how by [reading Twig's documentation](http://twig.sensiolabs.org/documentation)._
 
 **Template storage and referencing**
 
-Templates are stored in the **templates** subdirectory of a plugin's root directory. When you create a [View](#) instance you must tell it what template it should use using a string with the following format: `"@PluginName/TemplateFileName". Piwik will look for a file named **TemplateFileName** in the **PluginName** plugin's **templates** subdirectory.
+Templates are stored in the **templates** subdirectory of a plugin's root directory. When you create a [View](/api-reference/Piwik/View) instance you must tell it what template it should use using a string with the following format: `"@PluginName/TemplateFileName"`. Piwik will look for a file named **TemplateFileName.twig** in the **PluginName** plugin's **templates** subdirectory.
 
 Template files in Piwik have a very specific naming convention. If the file contains the output for a specific controller method, the file should be named after the method. For example, **myControllerMethod.twig**. In all other cases, the file should be named after what it contains and be prefixed with an underscore. For example, **_myEmbeddedWidget.twig**.
 
 **Twig functions and filters**
 
-The [View](#) class adds several filters and functions before rendering a template. It will also define properties that the template can use. To learn exactly what's defined, read the [View class docs](#).
+The [View](/api-reference/Piwik/View) class adds several filters and functions before rendering a template. It will also define properties that the template can use. To learn exactly what's defined, read the [View class docs](/api-reference/Piwik/View).
 
 ## Piwik Controllers
 
-Controllers are the objects in Piwik that output HTML. Every plugin that wants to output HTML should define its own Controller that extends [Piwik\Plugin\Controller](#).
+Controllers are the objects in Piwik that output HTML. Every plugin that wants to output HTML should define its own Controller that extends [Piwik\Plugin\Controller](/api-reference/Piwik/Plugin/Controller).
 
 Every public method in a controller is exposed and can be called through an HTTP request. **When creating your controller, care should be taken to avoid exposing methods that don't need to be. It may be possible for an attacker to use these methods.**
 
 ### Controller Output
 
-Controller methods should `return`ing their output (as opposed to `echo`ing it). Piwik will assume the output is HTML and will automatically take care of the appropriate HTTP response headers. If you want to output something other than HTML you will have to output the **Content-Type** HTTP response header. For example:
+Controller methods should `return` their output (as opposed to `echo`ing it). Piwik will assume the output is HTML and will automatically take care of the appropriate HTTP response headers. If you want to output something other than HTML you will have to output the **Content-Type** HTTP response header. For example:
 
     @header('Content-Type: application/json; charset=utf-8');
 
@@ -172,11 +174,11 @@ Here's how you do both:
 
 Menu items are added through an event. Each menu has its own event:
 
-* [Menu.Admin.addItems](#) for the menu shown on the left when a user clicks _Settings_.
-* [Menu.Top.addItems](#) for the menu shown at the very top of each page.
-* [Menu.Reporting.addItems](#) for the main menu shown on non-admin pages (the menu [just below the logo](#)) TODO: link to image here
+* [Menu.Admin.addItems](/api-reference/events#menuadminadditems) for the menu shown on the left when a user clicks _Settings_.
+* [Menu.Top.addItems](/api-reference/events#menutopadditems) for the menu shown at the very top of each page.
+* [Menu.Reporting.addItems](/api-reference/events#menureportingadditems) for the main menu shown on non-admin pages (the menu just below the logo)
 
-Plugins can call the [MenuAbstract::add](#) method within event handlers for these events to add menu items. For example, the following will add a menu item titled **My Menu Item** to the admin menu that links to the **MyPlugin.myPage** controller method.
+Plugins can call the [MenuAbstract::add](/api-reference/Piwik/Menu/MenuAbstract#add) method within event handlers for these events to add menu items. For example, the following will add a menu item titled **My Menu Item** that links to the **MyPlugin.myPage** controller method to the admin menu.
 
     // an event handler for Menu.Admin.addItems
     public function addAdminMenuItems()
@@ -192,7 +194,7 @@ Plugins can call the [MenuAbstract::add](#) method within event handlers for the
 
 **Invoking controller methods via AJAX**
 
-If you have your own custom JavaScript running on Piwik, you can use AJAX to dynamically invoke controller methods and display the result. For example:
+If you have your own custom JavaScript running on Piwik you can use AJAX to dynamically invoke controller methods and display the result. For example:
 
     // invoke MyPlugin.myPage and append the result to the end of the #root element
     var ajax = new ajaxHelper();
@@ -206,13 +208,15 @@ If you have your own custom JavaScript running on Piwik, you can use AJAX to dyn
     ajax.setFormat('html');
     ajax.send(false);
 
+The **ajaxHelper** JavaScript class is stored in the [piwik/plugins/Zeitgeist/javascripts/ajaxHelper.js](https://github.com/piwik/piwik/blob/master/plugins/Zeitgeist/javascripts/ajaxHelper.js) file.
+
 ### Controller method conventions
 
 **Getting query parameters**
 
-Unlike API methods, controller methods do not take query parameters as input. If you need to access a query parameter value, use the [Common::getRequestVar](#) method.
+Unlike API methods, controller methods do not take query parameters as input. If you need to access a query parameter value, use the [Common::getRequestVar](/api-reference/Piwik/Common#getrequestvar) method.
 
-**_To avoid XSS vulnerabilities, never access `$_GET`/`$_POST` directly, always go through [Common::getRequestVar](#)._**
+**_To avoid XSS vulnerabilities, never access `$_GET`/`$_POST` directly, always go through [Common::getRequestVar](/api-reference/Piwik/Common#getrequestvar)._**
 
 **Generating Output**
 
@@ -239,7 +243,7 @@ As a plugin developer you are welcome to generate your output in any way you'd l
 
 **Calling API methods**
 
-Since controller methods do not take query parameter values as method parameters it can sometimes be a pain to invoke API methods within controller methods. In this case, controllers make use of the [Piwik\API\Request](#) class which will forward all query parameters to an API method. For example, let's look at some of the code in the **save** method in the [Annotations](#) plugin controller:
+Since controller methods do not take query parameter values as method parameters it can sometimes be a pain to invoke API methods within controller methods. In this case, controllers make use of the [Piwik\API\Request](/api-reference/Piwik/API/Request) class which will forward all query parameters to an API method. For example, let's look at some of the code in the **save** method in the [Annotations](https://github.com/piwik/piwik/blob/master/plugins/Annotations/Controller.php) plugin controller:
 
     $view = new View('@Annotations/saveAnnotation');
 
@@ -249,23 +253,23 @@ Since controller methods do not take query parameter values as method parameters
 
     return $view->render();
 
-The code invokes the Annotations API's **save** method forwarding all query parameters so the controller method doesn't have to call [Common::getRequestVar](#) several times.
+The code invokes the Annotations API's **save** method forwarding all query parameters so the controller method doesn't have to call [Common::getRequestVar](/api-reference/Piwik/Common#getrequestvar) several times.
 
 **Reusing Controller methods**
 
-Sometimes you may want to use a controller method that belongs to another controller (to say embed a control provided by another controller). You can use the [FrontController::fetchDispatch](#) method to accomplish this:
+Sometimes you may want to use a controller method that belongs to another controller (to, say, embed a control provided by another controller). You can use the [FrontController::dispatch](/api-reference/Piwik/FrontController#dispatch) method to accomplish this:
 
     // controller method in our plugin's controller
     public function index()
     {
         $view = new View("@MyPlugin/index.twig");
-        $view->realtimeMap = FrontController::getInstance()->fetchDispatch($module = "UserCountryMap", $method = "realtimeMap");
+        $view->realtimeMap = FrontController::getInstance()->dispatch($module = "UserCountryMap", $method = "realtimeMap");
         return $view->render();
     }
 
 **Checking for correct HTTP methods**
 
-To maintain correct HTTP semantics, some controller methods should check whether the correct HTTP request method was used to invoke them. For example, tasks are normally executed via a **POST** rather than a **GET**. Controller methods that handle these tasks should check whether a POST was used:
+To maintain correct HTTP semantics, some controller methods should check whether the correct HTTP request method was used to invoke them. For example, non-read-only actions are normally executed via a **POST** rather than a **GET**. Controller methods that handle these tasks should check whether a POST was used:
 
     public function myAdminTask()
     {
@@ -280,7 +284,7 @@ To maintain correct HTTP semantics, some controller methods should check whether
 
 ### Controller Security
 
-Like API methods, controller methods should make sure the current user is both valid and authorized to perform the requested action or view the requested data. This means calling the [access checking methods](#) that should also be called in API methods and checking that the supplied **token_auth** is valid (via [Controller::checkTokenInUrl](#)).
+Like API methods, controller methods should make sure the current user is both valid and authorized to perform the requested action or view the requested data. This means calling the [access checking methods](/api-reference/Piwik/Piwik) that should also be called in API methods and checking that the supplied **token_auth** is valid (via [Controller::checkTokenInUrl](/api-reference/Piwik/Plugin/Controller#checktokeninurl)).
 
 Here's an example of a secure controller method:
 
@@ -298,7 +302,7 @@ Here's an example of a secure controller method:
 
 ## Learn more
 
-* To learn **how to display analytics data in a controller method** read our [Visualizing Report Data](#) guide.
-* To learn **how Piwik automatically exposes API classes in a HTTP API** read our [Piwik's HTTP API](#) guide.
-* To learn **more about writing secure code with Piwik** read our [Security](#) guide.
-* To learn **how to add custom JavaScript in addition to your plugin's HTML output** or **how to style your plugin's HTML output** read our [Working with Piwik's UI](#) guide.
+* To learn **how to display analytics data in a controller method** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.
+* To learn **how Piwik automatically exposes API classes in a HTTP API** read our [Piwik's HTTP API](/guides/piwiks-reporting-api) guide.
+* To learn **more about writing secure code with Piwik** read our [Security](/guides/security-in-piwik) guide.
+* To learn **how to add custom JavaScript in addition to your plugin's HTML output** or **how to style your plugin's HTML output** read our [Working with Piwik's UI](/guides/working-with-piwiks-ui) guide.

@@ -273,7 +273,7 @@ The special view class we'll use is called [ViewDataTable](/api-reference/Piwik/
 
 The [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) class outputs a **report visualization**. Report visualizations display an analytics report in some way. They can be in any format, including HTML with JavaScript (like the default **table** visualization or one of the graphs) or an image (like the **sparkline** visualization).
 
-It is possible for plugins can create their own visualizations. To find out how, read our [Visualizing Report Data](/guides/visualizing-report-data) guide (after you're done with this guide, of course).
+It is possible for plugins to create their own visualizations. To find out how, read our [Visualizing Report Data](/guides/visualizing-report-data) guide (after you're done with this guide, of course).
 </div>
 
 Now that we have a method that outputs a display for the report, we need to embed it in the plugin's main page. Change the `index()` controller method to look like this:

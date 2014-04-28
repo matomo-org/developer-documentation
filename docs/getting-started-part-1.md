@@ -30,7 +30,7 @@ _Note: If you want to integrate another piece of software with Piwik and you onl
 
 ### What's possible with Piwik plugins?
 
-Here are some of the things you can accomplish by creating a plugin plugin:
+Here are some of the things you can accomplish by creating a plugin:
 
 - track new visitor data and create new reports that aggregate the new data
 - track third party data and display it in new reports
@@ -112,7 +112,7 @@ Once the visits have been added, click on the **Dashboard** link at the top of t
 
 ## Create a plugin
 
-You're development environment is setup, and you are now ready to create a plugin! Creating a plugin consists primarily of creating a couple files. Piwik comes with a handy command-line tool that will do this legwork for you. In the root directory of your Piwik install, run the following command:
+Your development environment is setup, and you are now ready to create a plugin! Creating a plugin consists primarily of creating a couple files. Piwik comes with a handy command-line tool that will do this legwork for you. In the root directory of your Piwik install, run the following command:
 
     ./console generate:plugin --name="MyPlugin"
 
