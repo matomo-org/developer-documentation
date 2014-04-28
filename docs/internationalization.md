@@ -31,7 +31,7 @@ This guide assumes that you:
 * can code in PHP and JavaScript,
 * can create Twig templates,
 * know what [internationalization](http://en.wikipedia.org/wiki/Internationalization_and_localization) is,
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
+* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
 ## The Basics
 
@@ -43,7 +43,7 @@ Translated text entries are allowed to contain `sprintf` parameters, for example
 
 ### Using internationalization in PHP
 
-To translate text in PHP, use the [Piwik::translate](#) function. For example,
+To translate text in PHP, use the [Piwik::translate](/api-reference/Piwik/Piwik#translate) function. For example,
 
     $translatedText = Piwik::translate('MyPlugin_MyText');
 
@@ -67,7 +67,7 @@ Translating text in the browser is a bit more complicated than on the server. Th
 
 Piwik solves this problem by allowing plugins to define which translation tokens should be available in the browser and sending only the translations of those keys in the current language to the browser.
 
-To mark a translation token so it will be available client side use the [Translate.getClientSideTranslationKeys](#) event:
+To mark a translation token so it will be available client side use the [Translate.getClientSideTranslationKeys](/api-reference/events#translategetclientsidetranslationkeys) event:
 
     // an event handler in MyPlugin.php
     public function getClientSideTranslationKeys(&$translationKeys)
@@ -82,11 +82,9 @@ To use these translations in JavaScript, use the global `_pk_translate` JavaScri
 
 ## Adding translation tokens
 
-**If you are developing a plugin or theme** add the translation token to your plugin's language file. TODO: where does the language file go?
+**If you are developing a plugin or theme** add the translation token to your plugin's language files. The language files should be added to a **lang** subdirectory of your plugin (ie, **plugins/MyPlugin/lang/en.json**).
 
 **If you are developing a contribution for Piwik Core** add the translation token and the english translation to **lang/en.json**.
-
-TODO: show example (after we fiture)
 
 ### Guidelines for new translation tokens
 
