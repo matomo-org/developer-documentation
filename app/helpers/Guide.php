@@ -139,14 +139,6 @@ class Guide {
         );
 
         $menu[] = array(
-            'title'       => 'Manual UI Testing',
-            'file'        => 'manual-ui-testing',
-            'url'         => static::getUrl('manual-ui-testing'),
-            'description' => 'Learn how to manually test every part of the Piwik UI to ensure your code did not result in regressions.',
-            'category'    => 'Piwik Development'
-        );
-
-        $menu[] = array(
             'title'       => 'Visualizing Report Data',
             'file'        => 'visualizing-report-data',
             'url'         => static::getUrl('visualizing-report-data'),
