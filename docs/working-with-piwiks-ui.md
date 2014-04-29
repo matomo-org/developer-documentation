@@ -369,7 +369,7 @@ _Learn more about theming in our [Theming](/guides/theming) guide._
 <a name="classes-DataTable"></a>
 ### DataTable
 
-The **DataTable** class is the base of all JavaScript classes that manage [report visualizations](#). If your creating your own report visualization, you may have to extend it.
+The **DataTable** class is the base of all JavaScript classes that manage [report visualizations](/guides/visualizing-report-data#about-visualizations). If your creating your own report visualization, you may have to extend it.
 
 To learn more about extending the class, see our [Visualizing Report Data](https://github.com/piwik/developer-documentation/blob/master/docs/visualizing-report-data.md) guide.
 
@@ -379,7 +379,7 @@ To learn more about extending the class, see our [Visualizing Report Data](https
 
 Piwik defines several global variables (held in `window.piwik`) regarding the current request. Here is what they are and how you should use them:
 
-* `piwik.token_auth`: The [token_auth](#) of the current user. Should be used in AJAX requests, but should never appear in the URL.
+* `piwik.token_auth`: The **token_auth** of the current user. Should be used in AJAX requests, but should never appear in the URL.
 * `piwik.piwik_url`: The URL to this Piwik instance.
 * `piwik.userLogin`: The current user's login handle (if there is a current user).
 * `piwik.idSite`: The ID of the currently selected website.

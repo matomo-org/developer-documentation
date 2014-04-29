@@ -82,7 +82,7 @@ Then run the following command to install some third party libraries:
 
     $ composer.phar install
 
-Now that you've got a copy of Piwik, you'll need to point your webserver to it. The specific instructions for configuring your webserver depends on the webserver itself. You can see instructions for Apache [here](#) and instructions for Nginx [here](#).
+Now that you've got a copy of Piwik, you'll need to point your webserver to it. The specific instructions for configuring your webserver depends on the webserver itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
 
 Once your webserver is configured, load Piwik in your browser by loading `http://localhost/`. Follow the instructions to complete the installation process.
 
