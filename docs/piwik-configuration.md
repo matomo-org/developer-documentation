@@ -24,25 +24,24 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 This guide assumes that you:
 
 * can code in PHP,
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
+* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
 ## Piwik Configuration
 
 Piwik uses two methods to store configuration settings, the INI files in the **config** folder and **Options** which are persisted to the database. These methods are used by **Piwik Core** and should not be used by plugins. Plugins use a separate method of configuration [described below](#plugin-configuration).
 
-
 ### Options
 
-Some Piwik configuration settings are stored as **Options**. **Options** are just key value pairs that are persisted in the database. To learn more about options, read the docs for the [Option](#) class.
+Some Piwik configuration settings are stored as **Options**. **Options** are just key value pairs that are persisted in the database. To learn more about options, read the docs for the [Option](/api-reference/Piwik/Option) class.
 
-TODO: this helps people w/ distributed setups correct? need to find out how
+<!-- TODO: this helps people w/ distributed setups correct? need to find out how -->
 
-_To learn about how options are persisted in the MySQL backend Piwik uses, read our [Persistence & the MySQL Backend](#) guide.
+_To learn about how options are persisted in the MySQL backend Piwik uses, read our [Persistence & the MySQL Backend](/guides/persistence-and-the-mysql-backend) guide.
 
 <a name="plugin-configuration"></a>
 ## Plugin Configuration
 
-Plugins can define their own configuration options by creating a class named **Settings** that extends [Piwik\Plugin\Settings](#). The subclass should implement the [Settings::init](#) method adding settings that can be set by the user. For example,
+Plugins can define their own configuration options by creating a class named **Settings** that extends [Piwik\Plugin\Settings](/api-reference/Piwik/Plugin/Settings). The subclass should implement the **Settings::init** method adding settings that can be set by the user. For example,
 
     class Settings extends \Piwik\Plugin\Settings
     {
@@ -90,8 +89,8 @@ Plugins can define their own configuration options by creating a class named **S
         }
     }
 
-Plugins that do this will cause new sections to appear in the _Settings > Plugins_ admin page:
+Plugins that do this will cause new sections to appear in the _Settings > Plugins_ admin page.
 
-TODO: image of result of above code
+<!-- TODO: image of result of above code -->
 
-_See the [ExampleSettingsPlugin](#) to see what other things can be done._
+_See the [ExampleSettingsPlugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleSettingsPlugin) to see what else is possible._
