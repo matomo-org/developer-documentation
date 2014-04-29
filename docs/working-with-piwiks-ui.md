@@ -39,7 +39,7 @@ This guide assumes that you:
 * can code in JavaScript,
 * can use [jQuery](http://jquery.com/),
 * know what CSS and [LESS](http://lesscss.org/) is,
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](#) guide).
+* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
 ## JavaScript Libraries Piwik depends on
 
@@ -60,7 +60,7 @@ This suggestion is important for contributions, but doubly important for plugins
 
 JavaScript, CSS and LESS assets only exist in plugins. Piwik's core code (everything in the `core/` subdirectory) does not contain or define any asset files.
 
-Plugins tell Piwik about their asset files through the [AssetManager.getStylesheetFiles](#) and [AssetManager.getJavaScriptFiles](#) events. Each event passes an array by reference to event handlers. Event handlers should add paths to assets to the array:
+Plugins tell Piwik about their asset files through the [AssetManager.getStylesheetFiles](/api-reference/events#assetmanagergetstylesheetfiles) and [AssetManager.getJavaScriptFiles](/api-reference/events#assetmanagergetjavascriptfiles) events. Each event passes an array by reference to event handlers. Event handlers should append paths to assets to the incoming array:
 
     // event handler for AssetManager.getStylesheetFiles
     public function getStylesheetFiles(&$files)
@@ -77,13 +77,11 @@ Plugins tell Piwik about their asset files through the [AssetManager.getStyleshe
 
 ### Asset merging and compiling
 
-In production environments, Piwik will concatenate all JavaScript into one file and minify it before serving it. LESS files will automatically be compiled into CSS and merged into one CSS file. Piwik does this in order to keep loading the UI fast. Learn more about asset merging in [this blog post](#).
+In production environments, Piwik will concatenate all JavaScript into one file and minify it before serving it. LESS files will automatically be compiled into CSS and merged into one CSS file. Piwik does this so the UI will load quickly. Learn more about asset merging in [this blog post](http://piwik.org/blog/2010/07/making-piwik-ui-faster/).
 
 JavaScript is merged only when enabling or disabling a plugin or theme. LESS compilation and merging is done whenever a LESS file changes (does not include LESS files that are included by others).
 
 If the `[Debug] disable_merged_assets` INI config option is set to `1`, assets will not be merged. It can be useful to disable merged assets while developing a contribution or plugin since changes to JavaScript will then appear immediately.
-
-TODO: make sure getting started talks about disabling asset merging
 
 ## JavaScript modularization
 
@@ -151,7 +149,7 @@ _Note: Though the object is stored in `window` and not a JS namespace, it can st
 * **getHash**: Returns the hash of the URL.
 
 To learn more about an individual function, see the method documentation in the **plugins/CoreHome/javascripts/broadcast.js** file.
-TODO: document broadcast.js functions better
+
 #### Loading new Piwik pages
 
 To load a new page below the main Piwik menu, use the **propagateNewPage** function with a URL to the controller method whose output should be displayed:
@@ -196,7 +194,7 @@ Then, when you want to launch a popover, call the **propagateNewPopoverParameter
 
 ### ajaxHelper
 
-The `ajaxHelper` class should be used whenever you need to create an AJAX request. **Plugins should not use `$.ajax` directly.** `ajaxHelper` does some extra things that make it harder to write insecure code. It also keeps track of the current ongoing AJAX requests which is vital to the [UI tests](#).
+The `ajaxHelper` class should be used whenever you need to create an AJAX request. **Plugins should not use `$.ajax` directly.** `ajaxHelper` does some extra things that make it harder to write insecure code. It also keeps track of the current ongoing AJAX requests which is vital to the [UI tests](/guides/automated-tests#ui-tests).
 
 To use the `ajaxHelper`, create an instance, configure it, and then call the **send** method. To learn more, read the documentation in the source code (located in **plugins/Zeitgeist/javascripts/ajaxHelper.js**).
 
@@ -217,11 +215,11 @@ An example:
 
     })(require, jQuery);
 
-TODO: change name of ajaxHelper class to AjaxHelper?
+<!-- TODO: change name of ajaxHelper class to AjaxHelper? -->
 
 ### UIControl
 
-`UIControl` is meant to be the base type of all JavaScript widget classes. These classes manage and attach behavior to an element. Examples of classes that extend from UIControl include **[DataTable](#classes-DataTable)** (the base of all [report visualization](#) JavaScript classes) and **VisitorProfileControl** (used to manage the [visitor profile](#)).
+`UIControl` is meant to be the base type of all JavaScript widget classes. These classes manage and attach behavior to an element. Examples of classes that extend from UIControl include **[DataTable](#classes-DataTable)** (the base of all [report visualization](/guides/visualizing-report-data) JavaScript classes) and **VisitorProfileControl** (used to manage the [visitor profile](http://piwik.org/docs/user-profile/)).
 
 `UIControl` allows descendants to clean up resources, provides a mechanism for server side code to send information to the UI and provides a method of listening to dashboard widget resize events.
 
@@ -312,7 +310,7 @@ To redraw or resize elements in your control when a widget is resized, call the 
 
 ### Piwik_Popover
 
-The **Piwik_Popover** object is stored directly in the `window` object and contains popover creation and management functions. Popovers created directly through this object are not persistent. To create persistent popovers, use the [broadcast object](#).
+The **Piwik_Popover** object is stored directly in the `window` object and contains popover creation and management functions. Popovers created directly through this object are not persistent. To create persistent popovers, use the `broadcast` global object.
 
 To learn more about the object, see the documentation in the source code (located in **plugins/CoreHome/javascripts/popover.js**).
 
@@ -342,7 +340,7 @@ To close the currently displayed popover, call the **close** method:
 
 ### ColorManager
 
-If your control uses color values to, for example, draw in canvas elements, and you want to make those colors [theme-able](#), you must use the **ColorManager** singleton.
+If your control uses color values to, for example, draw in canvas elements, and you want to make those colors [theme-able](/guides/theming), you must use the **ColorManager** singleton.
 
 JavaScript colors are stored in CSS like this:
 
@@ -366,7 +364,7 @@ In your JavaScript, you can use **ColorManager** to access these colors:
 
 To learn more about the singleton, read the source code documentation (located in **plugins/CoreHome/javascripts/color_manager.js**).
 
-_Learn more about theming in our [Theming](#) guide._
+_Learn more about theming in our [Theming](/guides/theming) guide._
 
 <a name="classes-DataTable"></a>
 ### DataTable
@@ -375,7 +373,7 @@ The **DataTable** class is the base of all JavaScript classes that manage [repor
 
 To learn more about extending the class, see our [Visualizing Report Data](https://github.com/piwik/developer-documentation/blob/master/docs/visualizing-report-data.md) guide.
 
-TODO: should i talk about everything the class does here? guide could get much longer.
+<!-- TODO: should i talk about everything the class does here? guide could get much longer. (note, will probably have to change when angularjs is used anyway...) -->
 
 ## Global variables defined by Piwik
 
@@ -407,7 +405,7 @@ Every JavaScript file you create should surround its code in a self-executing an
 
     })(require, jQuery);
 
-If you need to use global objects, they should be passed in to the anonymous function as is done above. Anything that should be made available to other files should be exposed via [require](#).
+If you need to use global objects, they should be passed in to the anonymous function as is done above. Anything that should be made available to other files should be exposed via [require](#javascript-modularization).
 
 ### Private methods
 
@@ -426,6 +424,6 @@ Prefix all private and protected methods in classes with an **_**:
 
 ## Learn more
 
-* To learn **about creating new report visualizations** read our [Visualizing Report Data](#) guide.
-* To learn **more about the asset merging system** read this [blog post](#) by the system's author.
-* To learn **more about theming** read our [Theming](#) guide.
+* To learn **about creating new report visualizations** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.
+* To learn **more about the asset merging system** read this [blog post](http://piwik.org/blog/2010/07/making-piwik-ui-faster/) by the system's author.
+* To learn **more about theming** read our [Theming](/guides/theming) guide.

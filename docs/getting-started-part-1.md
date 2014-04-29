@@ -86,6 +86,20 @@ Now that you've got a copy of Piwik, you'll need to point your webserver to it. 
 
 Once your webserver is configured, load Piwik in your browser by loading `http://localhost/`. Follow the instructions to complete the installation process.
 
+#### Development configuration
+
+After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier. In **config/config.ini.php** set the following configuration options:
+
+    [Debug]
+    disable_merged_assets = 1
+
+If you plan on running automated tests, you'll have to set the following configuration options:
+
+    [database_tests]
+    password = ...
+    user = ...
+
+
 #### Adding anonymous access to your reports
 
 Before we finish, we're going to allow anyone to view reports on your new Piwik environment. Open the _Manage > Users_ admin page and click the red icon in the **View** column for the **anonymous** user:
