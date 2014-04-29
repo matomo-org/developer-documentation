@@ -36,12 +36,12 @@ This guide assumes that you:
 
 Piwik persists two main types of data: log data and archive data. **Log data** is everything that Piwik tracks and **archive data** is analytics data that is cached.
 
-Piwik also persists other simpler forms of data including information about each:
+Piwik also persists other simpler forms of data including:
 
-* website being tracked,
-* user,
-* goal,
-* and [option](#).
+* websites,
+* users,
+* goals,
+* and options.
 
 This guide describes exactly what information this data consists of and exactly how the MySQL backend persists it.
 
@@ -83,49 +83,49 @@ Each visit contains the following information:
 * `'visit_goal_converted'`: whether this visit converted a goal or not
 * `'visit_goal_buyer'`: whether the visitor ordered something during this visit or not
 * `'referer_type'`: the type of this visitor's referrer. Can be one of the following values:
-  * [Common::REFERRER_TYPE_DIRECT_ENTRY](#): If set to this value, other `'referer_...'` fields have no meaning.
-  * [Common::REFERRER_TYPE_SEARCH_ENGINE](#): If set to this value, `'referer_url'` is the url of the search engine and `'referer_keyword'` is the keyword used (if we can find it).
-  TODO: for search engine, will referer_name be set? (same for website)
-  * [Common::REFERRER_TYPE_WEBSITE](#): If set to this value, `'referer_url'` is the url of the website.
-  * [Common::REFERRER_TYPE_CAMPAIGN](#): If set to this value, `'referer_name'` is the name of the campaign.
-  TODO: double check campaign info
+  * **Common::REFERRER\_TYPE\_DIRECT\_ENTRY**: If set to this value, other `'referer_...'` fields have no meaning.
+  * **Common::REFERRER\_TYPE\_SEARCH\_ENGINE**: If set to this value, `'referer_url'` is the url of the search engine and `'referer_keyword'` is the keyword used (if we can find it).
+  <!-- TODO: for search engine, will referer_name be set? (same for website) -->
+  * **Common::REFERRER\_TYPE\_WEBSITE**: If set to this value, `'referer_url'` is the url of the website.
+  * **Common::REFERRER\_TYPE\_CAMPAIGN**: If set to this value, `'referer_name'` is the name of the campaign.
+  <-- TODO: double check campaign info -->
 * `'referer_name'`: referrer name; its meaning depends on the specific referrer type
 * `'referer_url'`: the referrer URL; its meaning depends on the specific referrer type
 * `'referer_keyword'`: the keyword used if a search engine was the referrer
 * `'config_id'`: a hash of all the visit's configuration options, including the OS, browser name, browser version, browser language, IP address and  all browser plugin information
-* `'config_os'`: a short string identifiying the operating system used to make this visit. See [UserAgentParser](#) for more info
-* `'config_browser_name'`: a short string identifying the browser used to make this visit. See [UserAgentParser](#) for more info (TODO: what about devicesdetection?)
+* `'config_os'`: a short string identifiying the operating system used to make this visit. See [UserAgentParser](https://github.com/piwik/piwik/blob/master/libs/UserAgentParser/UserAgentParser.php) for more info
+* `'config_browser_name'`: a short string identifying the browser used to make this visit. See [UserAgentParser](https://github.com/piwik/piwik/blob/master/libs/UserAgentParser/UserAgentParser.php) for more info <!-- (TODO: what about devicesdetection?) -->
 * `'config_browser_version'`: a string identifying the version of the browser used to make this visit
 * `'config_resolution'`: a string identifying the screen resolution the visitor used to make this visit (eg, `'1024x768'`)
 * `'config_pdf'`: whether the visitor's browser can view PDF files or not
 * `'config_flash'`: whether the visitor's browser can view flash files or not
 * `'config_java'`: whether the visitor's browser can run Java or not
-* `'config_director'`: TODO
+* `'config_director'`: <!-- TODO what is this? -->
 * `'config_quicktime'`: whether the visitor's browser uses quicktime to play media files or not
 * `'config_realplayer'`: whether the visitor's browser can play realplayer media files or not
 * `'config_windowsmedia'`: whether the visitor's browser uses windows media player to play media files
-* `'config_gears'`: TODO
+* `'config_gears'`: <!-- TODO what is this? -->
 * `'config_silverlight'`: whether the visitor's browser can run silverlight programs or not
 * `'config_cookie'`: whether the visitor's browser has cookies enabled or not
-* `'location_ip'`: the IP address of the computer that the visit was made from. can be [anonymized](#)
+* `'location_ip'`: the IP address of the computer that the visit was made from. Can be [anonymized](http://piwik.org/docs/privacy/#step-1-automatically-anonymize-visitor-ips)
 * `'location_browser_lang'`: a string describing the language used in the visitor's browser
-* `'location_country'`: a two character string describing the country the visitor was located in while visiting the site. set by the [UserCountry](#) plugin.
-* `'location_region'`: a two character string describing the region of the country the visitor was in. set by the [UserCountry](#) plugin.
-* `'location_city'`: a string naming the city the visitor was in while visiting the site. set by the [UserCountry](#) plugin.
-* `'location_latitude'`: the latitude of the visitor while he/she visited the site. set by the [UserCountry](#) plugin.
-* `'location_longitude'`: the longitude of the visitor while he/she visited the site. set by the [UserCountry](#) plugin.
-* `'custom_var_k1'`: the custom variable name of the visit in the first slot for visit custom variables
-* `'custom_var_v1'`: the custom variable value of the visit in the first slot for visit custom variables
-* `'custom_var_k2'`: the custom variable name of the visit in the second slot for visit custom variables
-* `'custom_var_v2'`: the custom variable value of the visit in the second slot for visit custom variables
-* `'custom_var_k3'`: the custom variable name of the visit in the third slot for visit custom variables
-* `'custom_var_v3'`: the custom variable value of the visit in the third slot for visit custom variables
-* `'custom_var_k4'`: the custom variable name of the visit in the fourth slot for visit custom variables
-* `'custom_var_v4'`: the custom variable value of the visit in the fourth slot for visit custom variables
-* `'custom_var_k5'`: the custom variable name of the visit in the fifth slot for visit custom variables
-* `'custom_var_v5'`: the custom variable value of the visit in the fifth slot for visit custom variables
+* `'location_country'`: a two character string describing the country the visitor was located in while visiting the site. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
+* `'location_region'`: a two character string describing the region of the country the visitor was in. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
+* `'location_city'`: a string naming the city the visitor was in while visiting the site. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
+* `'location_latitude'`: the latitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
+* `'location_longitude'`: the longitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
+* `'custom_var_k1'`: the custom variable name of the visit in the first slot for visit custom variables.
+* `'custom_var_v1'`: the custom variable value of the visit in the first slot for visit custom variables.
+* `'custom_var_k2'`: the custom variable name of the visit in the second slot for visit custom variables.
+* `'custom_var_v2'`: the custom variable value of the visit in the second slot for visit custom variables.
+* `'custom_var_k3'`: the custom variable name of the visit in the third slot for visit custom variables.
+* `'custom_var_v3'`: the custom variable value of the visit in the third slot for visit custom variables.
+* `'custom_var_k4'`: the custom variable name of the visit in the fourth slot for visit custom variables.
+* `'custom_var_v4'`: the custom variable value of the visit in the fourth slot for visit custom variables.
+* `'custom_var_k5'`: the custom variable name of the visit in the fifth slot for visit custom variables.
+* `'custom_var_v5'`: the custom variable value of the visit in the fifth slot for visit custom variables.
 
-Some plugins, such as the [Provider](#) plugin, will add new information to visits.
+Some plugins, such as the [Provider](https://github.com/piwik/piwik/tree/master/plugins/Provider) plugin, will add new information to visits.
 
 <a name="log-data-persistence-visit-actions"></a>
 #### Visit Actions
@@ -150,8 +150,8 @@ Visits also contain a list of actions, one for each action the visitor makes dur
 * `'custom_var_v5'`: the custom variable value of the  slot for page custom variables
 * `'custom_float'`: an unspecified float field, usually used to hold the time it took the server to serve this action
 
-TODO: custom events when finished
-TODO: replace page title action type w/ action name? need to describe somewhere what an 'action name' is.
+<!-- TODO: custom events when finished -->
+<!-- TODO: replace page title action type w/ action name? need to describe somewhere what an 'action name' is. -->
 
 <a name="log-data-persistence-action-types"></a>
 ### Action Types
@@ -165,14 +165,14 @@ Action types contain the following information:
 * `'name'`: a string describing the action type. Can be a URL, a page title, campaign name or anything else. The meaning is determined by the **type** field.
 * `'hash'`: a hash value calculated using the name.
 * `'type'`: the action type's category. Can be one of the following values:
-  * [Action::TYPE_PAGE_URL](#): the action type is a URL to a page on the website being tracked.
-  * [Action::TYPE_OUTLINK](#): the action type is a URL is of a link on the website being tracked. A visitor clicked it.
-  * [Action::TYPE_DOWNLOAD](#): the action type is a URL of a file that was downloaded from the website being tracked.
-  * [Action::TYPE_PAGE_TITLE](#): the action type is the page title of a page on the website being tracked.
-  * [Action::TYPE_ECOMMERCE_ITEM_SKU](#): the action type is the SKU of an ecommerce item that is sold on the site.
-  * [Action::TYPE_ECOMMERCE_ITEM_NAME](#): the action type is the name of an ecommerce item that is sold on the site.
-  * [Action::TYPE_ECOMMERCE_ITEM_CATEGORY](#): the action type is the name of an ecommerce item category that is used on the site.
-  * [Action::TYPE_SITE_SEARCH](#): the action type is a site search action.
+  * **Piwik\Tracker\Action::TYPE\_PAGE\_URL**: the action type is a URL to a page on the website being tracked.
+  * **Piwik\Tracker\Action::TYPE\_OUTLINK**: the action type is a URL is of a link on the website being tracked. A visitor clicked it.
+  * **Piwik\Tracker\Action::TYPE\_DOWNLOAD**: the action type is a URL of a file that was downloaded from the website being tracked.
+  * **Piwik\Tracker\Action::TYPE\_PAGE\_TITLE**: the action type is the page title of a page on the website being tracked.
+  * **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_SKU**: the action type is the SKU of an ecommerce item that is sold on the site.
+  * **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_NAME**: the action type is the name of an ecommerce item that is sold on the site.
+  * **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_CATEGORY**: the action type is the name of an ecommerce item category that is used on the site.
+  * **Piwik\Tracker\Action::TYPE_SITE_SEARCH**: the action type is a site search action.
 * `'url_prefix'`: if the name is a URL this refers to the prefix of the URL. The prefix is removed from actual URLs so the protocol and **www.** parts of a URL are ignored during analysis. Can be the following values:
   * `0`: `'http://'`
   * `1`: `'http://www.'`
@@ -182,7 +182,7 @@ Action types contain the following information:
 <a name="log-data-persistence-conversions"></a>
 ### Conversions
 
-When a visit action is tracked that matches a goal's conversion parameters, a conversion is created and persisted. A conversion is a tally that counts a desired action that one of your visitors took. Piwik will analyze these tallys in conjunction with the actions that caused them help users understand how to make their visitors take more desired actions.
+When a visit action is tracked that matches a goal's conversion parameters, a conversion is created and persisted. A conversion is a tally that counts a desired action that one of your visitors took. Piwik will analyze these tallies in conjunction with the actions that caused them in order to help Piwik users understand how to make their visitors take more desired actions.
 
 A conversion consists of the following information:
 
@@ -192,7 +192,7 @@ A conversion consists of the following information:
 * `'server_time'`: the datetime of the conversion in the server's timezone
 * `'idaction_url'`: the ID of the URL action type of the visit action that caused this conversion
 * `'idlink_va'`: the ID of the specific visit action that resulted in this conversion
-* `'referer_visit_server_date'`: TODO: what is this? tied to _refts query parameter
+* `'referer_visit_server_date'`: <!-- TODO: what is this? tied to _refts query parameter -->
 * `'url'`: the URL that caused this conversion to be tracked
 * `'idgoal'`: the ID of the goal this conversion is for
 * `'idorder'`: if this conversion is for an ecommerce order or abandoned cart, this will be the order's ID
@@ -208,7 +208,7 @@ A conversion consists of the following information:
 
 An ecommerce item is an item that was sold in an ecommerce order or abandoned in an abandoned cart. They consist of the following information:
 
-* `'server_time'`: TODO: time of visit action? or time ecommerce item was added?
+* `'server_time'`: <!-- TODO: time of visit action? or time ecommerce item was added? -->
 * `'idorder'`: the ID of the order that this ecommerce item is a part of
 * `'idaction_sku'`: the ID of the action type entity that contains the item's SKU
 * `'idaction_name'`: the ID of the action type entity that contains the ecommerce item's name
@@ -221,11 +221,11 @@ An ecommerce item is an item that was sold in an ecommerce order or abandoned in
 * `'quantity'`: the amount of this item that were present in the associated ecommerce order
 * `'deleted'`: whether this item was removed from the order or not
 
-TODO: this action type stuff is rather confusing. needs to be described better or refactored. are they actually a type of action a user can take? if so, why is SKU an idaction? and why url + page title?
+<!-- TODO: this action type stuff is rather confusing. needs to be renamed, described better or refactored. are they actually a type of action a user can take? if so, why is SKU an idaction? and why url + page title? -->
 
 ## Archive Data Persistence
 
-Archive data consists of **metrics** and **reports**. Metrics are numeric values and are stored as such. Reports are stored in [DataTable](#) instances and persisted as compressed binary strings.
+Archive data consists of **metrics** and **reports**. Metrics are numeric values and are stored as such. Reports are stored in [DataTable](/api-reference/Piwik/DataTable) instances and persisted as compressed binary strings.
 
 Archive data is associated with the website ID, period and segment it is for along with the data's identifying name. All archive data will be queried many times by this information. Currently, the segment is hashed and attached to the end of the metric name.
 
@@ -254,7 +254,7 @@ All archive data will contain the following information:
 
 **Site** entities contain information regarding a website whose visits are tracked. There won't be nearly as many of these as there are visits and archive data entries, but they will be queried often.
 
-Every reporting request (either through the [Reporting API](#) or through Piwik's UI) will query one or more site entities. The tracker will only query site data if the [tracker cache](#) needs to be updated. For most tracking requests, site data will not be queried (thus resulting in greater performance for the tracker).
+Every reporting request (either through the [Reporting API](/guides/piwiks-reporting-api) or through Piwik's UI) will query one or more site entities. The tracker will only query site data if the [tracker cache](/guides/all-about-tracking#the-tracker-cache) needs to be updated. For most tracking requests, site data will not be queried (thus resulting in greater performance for the tracker).
 
 Site entities contain the following information:
 
@@ -271,12 +271,12 @@ Site entities contain the following information:
 * `'excluded_ips'`: a comma separated list of IP addresses or IP address ranges. Visits that come from one of these IP addresses will not be tracked for this website.
 * `'excluded_parameters'`: a comma separated list of query parameter names. These query parameters will be removed from page URLs before visits and actions are tracked.
 * `'excluded_user_agents'`: a comma separated list of strings. Visits with a user agent that contains one of these strings will not be tracked for this website.
-* `'group'`: TODO: is this implemented yet?
+* `'group'`: <!-- TODO: is this implemented yet? -->
 * `'keep_url_fragment'`: `1` if the URL fragment (everything after the `#`) should be kept in the URL when tracking actions, `0` if not.
 
 Site entities also contain a list of extra URLs that can be used to access the website. These are not stored within site entities themselves.
 
-Site entity data access occurs primarily through the [Piwik\Site](#) class. Anything that cannot be queried through that class can be queried through the [SitesManager](#) core plugin.
+Site entity data access occurs primarily through the [Piwik\Site](/api-reference/Piwik/Site) class. Anything that cannot be queried through that class can be queried through the [SitesManager](https://github.com/piwik/piwik/tree/master/plugins/SitesManager) core plugin.
 
 <a name="other-data-goals"></a>
 #### Goals
@@ -289,7 +289,7 @@ The following information is stored in a goal entity:
 * `'idgoal'`: The ID for this goal (unique only among goals for this website).
 * `'name'`: The name of this goal.
 * `'match_attribute'`: string describing what part of the request should be matched against when converting a goal. Can be one of the following values:
-  * `'manually'`: the goal is converted by manual [conversion requests](#).
+  * `'manually'`: the goal is converted by [manual conversion requests](/api-reference/tracking-javascript#manually-trigger-a-conversion-for-a-goal).
   * `'url'`: the goal is converted based on what the action URL contains.
   * `'title'`: the goal is converted based on what the action page title contains.
   * `'file'`: the goal is converted based on what the filename of a downloaded file contains.
@@ -302,9 +302,9 @@ The following information is stored in a goal entity:
 * `'case_sensitive'`: `1` if the matching should be case sensitive, `0` if otherwise.
 * `'allow_multiple'`: `1` if multiple conversions are allowed per visit, `0` if otherwise.
 * `'revenue'`: the amount of revenue a conversion generates (if any).
-* `'deleted'`: `1` if this goal was deleted by a Piwik user, `0` if not. TODO: why not remove goals? to keep conversions valid?
+* `'deleted'`: `1` if this goal was deleted by a Piwik user, `0` if not. <!-- TODO: why not DELETE goals? is it to keep conversions referencing old goals valid? -->
 
-_Note: The ecommerce and abandoned cart goals are two special goals that have special IDs. Ecommerce websites automatically have these goals._
+_Note: The ecommerce and abandoned cart goals are two special goals with special IDs. Ecommerce websites automatically have these goals._
 
 <a name="other-data-user"></a>
 ### Users
@@ -315,10 +315,10 @@ User entities describe each Piwik user except the Super User. The following info
 * `'password'`: a hash of the user's password.
 * `'alias'`: the user's alias if any. This value is displayed instead of the login handle when addressing the user in the UI.
 * `'email'`: the user's email address.
-* `'token_auth'`: a user's [token auth](#).
+* `'token_auth'`: a user's token auth.
 * `'date_registered'`: the date the user data was persisted.
 
-User data is read on every UI and [Reporting API](#) request. TODO: the tracker uses a token_auth, does that mean it reads user data? or is that data cached? or is it just for the superuser so the config is used?
+User data is read on every UI and [Reporting API](/guides/piwiks-reporting-api) request. <~-- TODO: the tracker uses a token_auth, does that mean it reads user data? or is that data cached? or is it just for the superuser so the config is used? -->
 
 There is some user related information that is not stored directly in user entities. They are descirbed below:
 
@@ -335,34 +335,36 @@ An access level can be one of the following values:
 <a name="other-data-user-language-choice"></a>
 #### User language choice
 
-Piwik will also persist each user's language of choice. User logins will be associated with the name of the language (written in the chosen language as opposed to English). TODO: why not just associate it w/ the language code?
+Piwik will also persist each user's language of choice. User logins are associated with the name of the language (written in the chosen language as opposed to English). <!-- TODO: why not just associate it w/ the language code? -->
 
-This association and the persistence logic is implemented by the [LanguagesManager](#) plugin.
+This association and the persistence logic is implemented by the [LanguagesManager](https://github.com/piwik/piwik/tree/master/plugins/LanguagesManager) plugin.
 
-### [Options](#)
+### [Options](/api-reference/Piwik/Option)
 
-Options are key-value pairs where the key is a string and the value is a another string (possibly bigger and possibly binary). They are queried on every UI and [Reporting API](#) request. The tracker will [cache](#) relevant option values and so will only query options when the cache needs updating.
+Options are key-value pairs where the key is a string and the value is a another string (possibly bigger and possibly binary). They are queried on every UI and [Reporting API](/guides/piwiks-reporting-api) request. The tracker will [cache](/guides/all-about-tracking#the-tracker-cache) relevant option values and so will only query options when the cache needs updating.
 
 Some options should be loaded on every non-tracking request. These options have a special **autoload** property set to `1`.
 
 ## The Database Logging Backend
 
-Piwik includes a [logging utility](#) that can be used to aid development or troubleshoot live Piwik installs. The utility can output log messages to multiple backends, including the database.
+Piwik includes a [logging utility](/api-reference/Piwik/Log) that can be used to aid development or troubleshoot live Piwik installs. The utility can output log messages to multiple backends, including the database.
 
 Every log entry contains the following information (all of which is persisted):
 
 * `'tag'`: A string used to categorize the log entry. This will either be the name of the plugin that logged a message or, if it cannot be found, the name of the class.
 * `'timestamp'`: When the log entry was made.
-* `'level'`: The log level (as a string). Describes the severity of the entry. See [Piwik\Log](#) for a list of levels.
+* `'level'`: The log level (as a string). Describes the severity of the entry. See [Piwik\Log](/api-reference/Piwik/Log) for a list of levels.
 * `'message'`: The log entry's message.
 
 ## Plugin Persistence
 
 Plugins can provide persistence for new data if they need to. At the moment, since MySQL is the only supported backend, this means directly adding and using new tables.
 
-To add new tables to Piwik's MySQL database, execute a `CREATE TABLE` statement in the plugin descriptor's [install](#) method. For example:
+To add new tables to Piwik's MySQL database, execute a `CREATE TABLE` statement in the plugin descriptor's [install](/api-reference/Piwik/Plugin#install) method. For example:
 
     use Piwik\Db;
+    use Piwik\Common;
+    use \Exception;
 
     public class MyPlugin extends \Piwik\Plugin
     {
@@ -388,9 +390,11 @@ To add new tables to Piwik's MySQL database, execute a `CREATE TABLE` statement 
         // ...
     }
 
-Plugins should also clean up after themselves by dropping the tables in the [uninstall](#) method:
+Plugins should also clean up after themselves by dropping the tables in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method:
 
     use Piwik\Db;
+    use Piwik\Common;
+    use \Exception;
 
     public class MyPlugin extends \Piwik\Plugin
     {
@@ -404,11 +408,11 @@ Plugins should also clean up after themselves by dropping the tables in the [uni
         // ...
     }
 
-**Note: New tables should be appropriately [prefixed](#).**
+**Note: New tables should be appropriately [prefixed](/api-reference/Piwik/Common#prefixtable).**
 
 ### Augmenting existing tables
 
-Plugins can also augment existing tables. If, for example, a plugin wanted to track extra visit information, the plugin could add columns to the log data tables to have a place to put this new data. This would also be done in the [install](#) method:
+Plugins can also augment existing tables. If, for example, a plugin wanted to track extra visit information, the plugin could add columns to log data tables and set these columns during tracking.This would also be done in the [install](/api-reference/Piwik/Plugin#install) method:
 
     use Piwik\Db;
 
@@ -433,9 +437,9 @@ Plugins can also augment existing tables. If, for example, a plugin wanted to tr
         // ...
     }
 
-Plugins should remove the column in the [uninstall](#) method, **unless doing so take very long time**. Since log tables can have millions and even billions of entries, removing columns from these tables when a plugin is uninstalled would be a bad idea.
+Plugins should remove the column in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method, **unless doing so take very long time**. Since log tables can have millions and even billions of entries, removing columns from these tables when a plugin is uninstalled would be a bad idea.
 
-TODO: this seems it will be a problem in the long run. must be some way to clear away unused data, even if the user has to say specifically they want to get rid of it.
+<!-- TODO: this seems it will be a problem in the long run. must be some way to clear away unused data, even if the user has to say specifically they want to get rid of it. -->
 
 ## The MySQL Backend
 
@@ -519,7 +523,7 @@ The **index\_idsite\_config_datetime** index is used when trying to recognize re
 
 The **index\_idsite\_datetime** index is used when aggregating visits. Since log aggregation occurs only for individual day periods, this index helps Piwik find the visits for a website and period quickly. Without it, log aggregation would require a table scan through the entire log_visit table.
 
-TODO: what is the index_idsite_idvisitor index used for? Live + visitor profile?
+<!-- TODO: what is the index\_idsite\_idvisitor index used for? Live + visitor profile? -->
 
 #### log\_link\_visit\_action
 
@@ -663,7 +667,7 @@ The `CREATE TABLE` SQL for this table is:
         INDEX index_idsite_servertime ( idsite, server_time )
     ) DEFAULT CHARSET=utf8
 
-The `idsite`, `idvisitor`, `server_time` and `idvisit` columns are copied from the Conversion entity this Ecommerce Item belongs to. The are copied so we can aggregate Ecommerce Items without having to join other tables.
+The `idsite`, `idvisitor`, `server_time` and `idvisit` columns are copied from the Conversion entity this Ecommerce Item belongs to. They are copied so we can aggregate Ecommerce Items without having to join other tables.
 
 The **index\_idsite\_servertime** index is used when aggregating ecommerce items. It allows quick access to the items that were tracked for a specific website and during a specific period and lets us avoid a table scan through the entire table.
 
@@ -697,7 +701,7 @@ The `CREATE TABLE` SQL for this table is:
 
 The **index\_idsite\_dates\_period** index is used when querying archive data. It lets Piwik quickly query archive data for any site and period, and for data that was archived past a certain date-time.
 
-The **index\_period\_archived** index is used when [purging archive data](#). It allows Piwik to quickly find archive data for a specific period that is old enough to be purged.
+The **index\_period\_archived** index is used when [purging archive data](http://piwik.org/docs/managing-your-databases-size/). It allows Piwik to quickly find archive data for a specific period that is old enough to be purged.
 
 #### archive_blob
 
@@ -749,7 +753,7 @@ The `CREATE TABLE` SQL for this table is:
 
 ##### site_url
 
-Thist able stores extra URLs for [Website](#other-data-site) entities.
+This table stores extra URLs for [Website](#other-data-site) entities.
 
 The `CREATE TABLE` SQL for this table is:
 
@@ -821,7 +825,7 @@ The `CREATE TABLE` SQL for this table is:
         PRIMARY KEY ( login )
     ) DEFAULT CHARSET=utf8
 
-This table is created by the [LanguagesManager](#) plugin.
+This table is created by the [LanguagesManager](https://github.com/piwik/piwik/tree/master/plugins/LanguagesManager) plugin.
 
 #### option
 
@@ -874,8 +878,8 @@ That being said, the use of other peristence solutions is on our TODO list. Piwi
 
 ## Learn more
 
-* To learn **how the tracker inserts log data** see our [All About Tracking](#) guide.
-* To learn **how log data is aggregated** see our [All About Analytics](#) guide and take a look at the [LogAggregator](#) class.
-* To learn **how archive data is cached** see our [All About Analytics](#) guide.
-* To learn **about Piwik's logging utility** see this section in our [Getting started extending Piwik](#) guide.
-* To learn **about database backed sessions** read [this part of Piwik's user guide](#).
+* To learn **how the tracker inserts log data** see our [All About Tracking](/guides/all-about-tracking) guide.
+* To learn **how log data is aggregated** see our [All About Analytics](/guides/all-about-analytics-data) guide and take a look at the [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) class.
+* To learn **how archive data is cached** see our [All About Analytics](/guides/all-about-analytics-data) guide.
+* To learn **about Piwik's logging utility** see this section in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.
+* To learn **about database backed sessions** read [this FAQ entry](http://piwik.org/faq/how-to-install/faq_133/).

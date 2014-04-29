@@ -153,7 +153,7 @@ The command-line tool will create a new directory for your plugin (in the **plug
 * **plugin.json**: Contains plugin metadata such as the name, description, version, etc.
 * **README.md**: A dummy README file for your plugin.
 * **javascripts**: This folder is where you'll put all your new JavaScript files.
-* **screenshots**: TODO: ???
+* **screenshots**: <!-- TODO: ??? -->
 * **templates**: This folder is where you'll put all your [Twig](http://twig.sensiolabs.org/) templates.
 
 ## What to read next

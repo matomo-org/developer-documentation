@@ -87,7 +87,7 @@ The following is a list of core metrics that relate to a single action type:
 * **Exit Visits**: The total number of visits that ended with this action. _Internally stored with the `'exit_nb_visits'` metric name._
 * **Unique Entry Visitors**: The total number of unique visitors that started a visit with this action. _Internally stored with the `'entry_nb_uniq_visitors'` metric name._
 * **Entry Visits**: The total number of visits that started with this action. _Internally stored with the `'entry_nb_visits'` metric name._
-* **Entry Actions**: ??? TODO: isn't this the same as entry visits? _Internally stored with the `'entry_nb_actions'` metric name._
+* **Entry Actions**: <!-- TODO: isn't this the same as entry visits? --> _Internally stored with the `'entry_nb_actions'` metric name._
 * **Entry Sum Visit Length**: The sum of each entry visit's elapsed time. _Internally stored with the `'entry_sum_visit_length'` metric name._
 * **Entry Bounce Count**: The number of visits that consisted of this action and no other. _Internally stored with the `'entry_bounce_count'` metric name._
 * **Hits From Search**: The number of times this action was done after a site search. _Internally stored with the `'nb_hits_following_search'` metric name._
