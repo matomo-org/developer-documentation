@@ -63,8 +63,8 @@ where `<<command>>` should be replaced with the command you are interested in.
 
 Plugins can extend the command line tool by creating their own commands. To do so you can use the CLI itself: 
 
-    ./console generate:command
+    ./console generate:command --pluginname=MyPlugin
     
-This will create a folder named `Commands` within your plugin, if necessary, along a PHP file which represents the actual command. You can add an unlimited number of commands using the CLI.
+This will create a folder named `Commands` within your plugin, if necessary, along with a PHP file which represents the actual command. You can add an unlimited number of commands using the CLI.
 
 See the docs for [SymfonyCommand](http://symfony.com/doc/current/components/console/index.html) to learn more about how your command should be coded.
