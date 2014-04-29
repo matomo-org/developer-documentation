@@ -17,7 +17,7 @@ This guide describes how we, the team of developers that makes changes to Piwik 
 
 ## How we manage our work
 
-We use **[trac](http://dev.piwik.org/trac)** to keep track of all bugs, feature requests and other tasks concerning Piwik, the website and all documentation.
+We use **[trac](http://dev.piwik.org/trac)** to keep track of all bugs, feature requests and tasks that concern Piwik, the website and Piwik's documentation.
 
 We make sure all tickets contain enough information, including:
 
@@ -25,7 +25,7 @@ We make sure all tickets contain enough information, including:
 * if a new feature, explain the use case with suggestions or a specification,
 * if a UI improvement, mockups or a detailed description of the changes.
 
-We are rather obsessed with keeping trac an organized place. Tickets are generally prioritized tickets by severity. Tickets are either of the type 'Bug', 'New feature' or 'Task'. All Bugs are moved to the current roadmap because of our [no-bug policy](http://piwik.org/roadmap/). Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
+We are rather obsessed with keeping trac an organized place. Tickets are generally prioritized by severity. Tickets are either of the type 'Bug', 'New feature' or 'Task'. All Bugs are moved to the current roadmap because of our [no-bug policy](http://piwik.org/roadmap/). Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
 
 ## Roadmaps and Backlog
 
@@ -37,14 +37,13 @@ Other ideas and suggestions which we are not planning to implement in the future
 
 ## Our release process
 
-We generally publish a new Piwik release about once a month. A release is ready when the following release conditions are met. Our [continuous integration tests](http://piwik.org/qa/) must be green. Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik. All critical tickets [to the corresponding roadmap](http://dev.piwik.org/trac/roadmap) must be closed. All [officially supported plugins](http://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](http://plugins.piwik.org/) must be compatible.
+We try to publish a new Piwik release about once a month. A release is ready when the following release conditions are met. Our [continuous integration tests](http://piwik.org/qa/) must be green. Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik. All critical tickets [to the corresponding roadmap](http://dev.piwik.org/trac/roadmap) must be closed. All [officially supported plugins](http://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](http://plugins.piwik.org/) must be compatible.
 
 To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)). A shell script is then run to generate the archives (zip and tar.gz) which are copied to the build server [builds.piwik.org](http://builds.piwik.org/). The file [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. Within hours, Piwik installations will be updated by users via the one click [upgrade mechanism](http://piwik.org/docs/update/) &ndash; or by manual upgrades.
 
 The Changelog is then updated with a new entry for this release. The changelog typically lists [all tickets closed in this release](http://dev.piwik.org/trac/report/1), and point people to the newest [FAQs](http://piwik.org/faq/) and [User guides](http://piwik.org/faq/).
 
 Releases that contain the string "alpha", "beta", "rc", are built for testing purposes and are not advertised on [piwik.org](http://piwik.org). They are, however, made available on the build server and the [builds.piwik.org/LATEST_BETA](http://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string. You can enable Piwik to use the latest Beta release automatically if you want to test the latest features ([see this faq to learn how](http://piwik.org/faq/how-to-update/#faq_159)).
-
 
 ## Source Code Management
 
@@ -54,7 +53,7 @@ In case Github goes down, we maintain a backup Git Mirror at: [git.piwik.org](ht
 
 #### Git repositories
 
-As of 2014, we are managing [over twenty repositories at Github](https://github.com/piwik). This includes the [main repository for Piwik](https://github.com/piwik/piwik) and several plugins, themes, and toolsets to make the most out of Piwik, such as Piwik clients for software development in Python, Ruby, C#, SDKs for iOS, debian packages and useful Piwik developer tools.
+As of 2014, we manage [over twenty repositories at Github](https://github.com/piwik). This includes the [main repository for Piwik](https://github.com/piwik/piwik) and several plugins, themes, and toolsets to make the most out of Piwik, such as Piwik clients for software development in Python, Ruby, C#, SDKs for iOS, debian packages and other useful Piwik developer tools.
 
 #### Git Owners
 
@@ -64,7 +63,7 @@ All developers from the [Piwik team](http://piwik.org/the-piwik-team/) can push 
 
 All code committed to git is reviewed by at least one other developer in the team. Very often, Piwik developers themselves will send bigger changes by pull request for review before committing. All pull requests or patches submitted by external developers are extensively reviewed.
 
-It is highly recommended that code committed in the [master branch](https://github.com/piwik/piwik) respects the [Piwik coding standards](http://piwik.org/participate/coding-standards), does not cause tests to fail, and does not create regessions in the UI or the platform. It is also highly recommended that the [UI be manually tested](http://piwik.org/participate/user-interface) if the user interface is affected by the change. Finally, the commit message should reference a ticket number in almost all cases; for example,
+It is highly recommended that code committed in the [master branch](https://github.com/piwik/piwik) respects the [Piwik coding standards](http://piwik.org/participate/coding-standards), does not cause tests to fail, and does not create regessions in the UI or the platform. And the commit message should reference a ticket number in almost all cases; for example,
 
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 
@@ -122,7 +121,7 @@ There are many ways you can make a difference in the project and influence the o
 
 ### Comment on existing tickets
 
-If you find a new feature request very exciting or important, or if you experience a particular bug, the best way to be heard by the Piwik team is to comment on the ticket. This will help us schedule with higher priority the features that are most often requested and commented on.
+If you find a new feature request very exciting or important, or if you're experiencing a particular bug, the best way to be heard by the Piwik team is to comment on the ticket. This will help us schedule with higher priority the features that are most often requested and commented on.
 
 ### Submitting a bug report
 
@@ -163,7 +162,7 @@ If you've already developed a plugin that you think should be included in Piwik 
 - audience &ndash; plugin appeals to a broad spectrum of users
 - desirabilty &ndash; is it a frequently requested feature by the Piwik community?
 - functionality &ndash; feature completeness
-- testability &ndash; use of unit tests and impact to manual testing (e.g., differences when plugin is activated vs deactivated)
+- testability &ndash; use of unit, integration and UI tests and impact to manual testing (e.g., differences when plugin is activated vs deactivated)
 - maturity &ndash; history and popularity of the plugin
 - performance &ndash; impact on archiving and/or UI interaction
 - supportability &ndash; likelihood of spawning support tickets and forum posts of the "how do I?" or "why does it?" variety
