@@ -100,8 +100,8 @@ Some applications such as the [Piwik log importer](http://piwik.org/log-analytic
 
 To send a bulk tracking request, an HTTP POST must be made with a JSON object to the Piwik tracking endpoint. The object must contain the following properties:
 
-* `token_auth` &mdash; token_auth can be found in the API page. Provide at least Admin or Super User permission to use
 * `requests` &mdash; an array of individual tracking requests. Each tracking request should be the query string you'd send if you were going to track that action individually.
+* `token_auth` &mdash; (optional) token_auth which is found in the API page. Specify this only needed if you use any of the parameters that require `token_auth`
 
 #### Example Requests
 
@@ -115,9 +115,9 @@ This is an example of the payload of a bulk tracking request:
        "token_auth": "33dc3f2536d3025974cccb4b4d2d98f4"
     }
 
-It can be sent to Piwik using curl with the following command:
+Here is the command to send this request to Piwik using curl (without the `token_auth` which is optional in this case):
 
-    curl -i -X POST -d '{"requests":["?idsite=1&url=http://example.org&action_name=Test bulk log Pageview&rec=1","?idsite=1&url=http://example.net/test.htm&action_name=Another bulk page view&rec=1"],"token_auth":"33dc3f2536d3025974cccb4b4d2d98f4"}' http://piwik.example.com/piwik.php
+    curl -i -X POST -d '{"requests":["?idsite=1&url=http://example.org&action_name=Test bulk log Pageview&rec=1","?idsite=1&url=http://example.net/test.htm&action_name=Another bulk page view&rec=1"]}' http://piwik.example.com/piwik.php
 
 This will track **two** actions using only **one** HTTP request to Piwik.
 
