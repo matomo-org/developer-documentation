@@ -46,7 +46,7 @@ The abstract class defines the following methods:
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$period`
+      `$period` (`Piwik\$period`) &mdash;
 
       <div markdown="1" class="param-desc"></div>
 
@@ -56,7 +56,7 @@ The abstract class defines the following methods:
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$date`
+      `$date` (`Piwik\$date`) &mdash;
 
       <div markdown="1" class="param-desc"></div>
 
