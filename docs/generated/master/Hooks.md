@@ -1835,7 +1835,7 @@ Callback Signature:
 - [ViewDataTable.getDefaultType](#viewdatatablegetdefaulttype)
 
 ### ViewDataTable.addViewDataTable
-_Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [82](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L82)_
+_Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [83](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L83)_
 
 Triggered when gathering all available DataTable visualizations. Plugins that want to expose new DataTable visualizations should subscribe to
 this event and add visualization class names to the incoming array.
@@ -1858,7 +1858,7 @@ Usages:
 
 
 ### ViewDataTable.configure
-_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [216](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L216)_
+_Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [217](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L217)_
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed.
@@ -1890,7 +1890,7 @@ Usages:
 
 
 ### ViewDataTable.getDefaultType
-_Defined in [Piwik/ViewDataTable/Factory](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php) in line [169](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php#L169)_
+_Defined in [Piwik/ViewDataTable/Factory](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php) in line [183](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Factory.php#L183)_
 
 Triggered when gathering the default view types for all available reports. If you define your own report, you may want to subscribe to this event to
 make sure the correct default Visualization is used (for example, a pie graph,

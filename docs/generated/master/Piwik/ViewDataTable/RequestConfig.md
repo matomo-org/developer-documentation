@@ -80,6 +80,8 @@ This class defines the following properties:
 - [`$filter_sort_column`](#$filter_sort_column) &mdash; Controls which column to sort the DataTable by before truncating and displaying.
 - [`$filter_sort_order`](#$filter_sort_order) &mdash; Controls the sort order.
 - [`$filter_limit`](#$filter_limit) &mdash; The number of items to truncate the data set to before rendering the DataTable view.
+- [`$flat`](#$flat) &mdash; If set to true, the returned data will contain the flattened view of the table data set.
+- [`$expanded`](#$expanded) &mdash; If set to true, the returned data will contain the first level results, as well as all sub-tables.
 - [`$filter_offset`](#$filter_offset) &mdash; The number of items from the start of the data set that should be ignored.
 - [`$filter_pattern`](#$filter_pattern) &mdash; A regex pattern to use to filter the DataTable before it is shown.
 - [`$filter_column`](#$filter_column) &mdash; The column to apply a filter pattern to.
@@ -148,6 +150,34 @@ Default value: 'desc'
 ### `$filter_limit`
 
 The number of items to truncate the data set to before rendering the DataTable view.
+
+Default value: false
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$flat" id="$flat"></a>
+<a name="flat" id="flat"></a>
+### `$flat`
+
+If set to true, the returned data will contain the flattened view of the table data set.
+
+The children of all first level rows will be aggregated under one row.
+
+Default value: false
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$expanded" id="$expanded"></a>
+<a name="expanded" id="expanded"></a>
+### `$expanded`
+
+If set to true, the returned data will contain the first level results, as well as all sub-tables.
 
 Default value: false
 

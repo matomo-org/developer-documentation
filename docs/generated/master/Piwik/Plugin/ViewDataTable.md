@@ -198,6 +198,16 @@ way reports are displayed.
 
       </div>
    </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$overrideParams`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
    </ul>
 
 <a name="getdefaultconfig" id="getdefaultconfig"></a>
