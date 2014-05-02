@@ -10,7 +10,7 @@ Methods
 
 The class defines the following methods:
 
-- [`isArchivePhpTriggered()`](#isarchivephptriggered) &mdash; Returns true if the current script execution was triggered by the cron archiving script (**misc/cron/archive.php**).
+- [`isArchivePhpTriggered()`](#isarchivephptriggered) &mdash; Returns true if the current script execution was triggered by the cron archiving script.
 - [`isIIS()`](#isiis) &mdash; Returns `true` if running on Microsoft IIS 7 (or above), `false` if otherwise.
 - [`isApache()`](#isapache) &mdash; Returns `true` if running on an Apache web server, `false` if otherwise.
 - [`isWindows()`](#iswindows) &mdash; Returns `true` if running on a Windows operating system, `false` if otherwise.
@@ -21,7 +21,7 @@ The class defines the following methods:
 <a name="isArchivePhpTriggered" id="isArchivePhpTriggered"></a>
 ### `isArchivePhpTriggered()`
 
-Returns true if the current script execution was triggered by the cron archiving script (**misc/cron/archive.php**).
+Returns true if the current script execution was triggered by the cron archiving script.
 
 Helpful for error handling: directly throw error without HTML (eg. when DB is down).
 

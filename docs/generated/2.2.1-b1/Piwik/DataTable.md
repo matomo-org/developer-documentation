@@ -115,7 +115,7 @@ Non-essential, presentation filters should be queued.
 
     $dataTable = \Piwik\Plugins\Referrers\API::getInstance()->getSearchEngines($idSite = 1, $period = 'day', $date = '2007-07-24');
     $oldPeriod = $dataTable->metadata['period'];
-    $dataTable->metadata['period'] = Period::factory('week', Date::factory('2013-10-18'));
+    $dataTable->metadata['period'] = Period\Factory::build('week', Date::factory('2013-10-18'));
 
 **Serializing & unserializing**
 

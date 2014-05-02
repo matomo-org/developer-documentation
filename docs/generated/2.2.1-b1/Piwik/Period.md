@@ -13,24 +13,15 @@ This is the class Piwik uses to represent and manipulate those date ranges.
 There are five types of periods in Piwik: day, week, month, year and range,
 where **range** is any date range. The reason the other periods exist instead
 of just **range** is that Piwik will pre-archive reports for days, weeks, months
-and years, while every other date range is archived on-demand.
-
-### Examples
-
-**Building a period from 'date' and 'period' query parameters**
-
-    $date = Common::getRequestVar('date', null, 'string');
-    $period = Common::getRequestVar('period', null, 'string');
-    $periodObject = Period::advancedFactory($period, $date);
+and years, while every custom date range is archived on-demand.
 
 Methods
 -------
 
 The abstract class defines the following methods:
 
-- [`factory()`](#factory) &mdash; Creates a new Period instance with a period ID and [Date](/api-reference/Piwik/Date) instance.
+- [`factory()`](#factory)
 - [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods.
-- [`makePeriodFromQueryParams()`](#makeperiodfromqueryparams) &mdash; Creates a Period instance using a period, date and timezone.
 - [`getDateStart()`](#getdatestart) &mdash; Returns the first day of the period.
 - [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period.
 - [`getId()`](#getid) &mdash; Returns the period ID.
@@ -48,10 +39,6 @@ The abstract class defines the following methods:
 <a name="factory" id="factory"></a>
 ### `factory()`
 
-Creates a new Period instance with a period ID and [Date](/api-reference/Piwik/Date) instance.
-
-_Note: This method cannot create [Range](/api-reference/Piwik/Period/Range) periods._
-
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -59,9 +46,9 @@ _Note: This method cannot create [Range](/api-reference/Piwik/Period/Range) peri
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$strPeriod` (`string`) &mdash;
+      `$period` (`Piwik\$period`) &mdash;
 
-      <div markdown="1" class="param-desc"> `"day"`, `"week"`, `"month"`, `"year"`, `"range"`.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
@@ -69,9 +56,9 @@ _Note: This method cannot create [Range](/api-reference/Piwik/Period/Range) peri
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$date` ([`Date`](../Piwik/Date.md)|`string`) &mdash;
+      `$date` (`Piwik\$date`) &mdash;
 
-      <div markdown="1" class="param-desc"> A date within the period or the range of dates.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
@@ -79,8 +66,6 @@ _Note: This method cannot create [Range](/api-reference/Piwik/Period/Range) peri
    </li>
    </ul>
 - It returns a [`Period`](../Piwik/Period.md) value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If `$strPeriod` is invalid.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
@@ -124,50 +109,6 @@ etc.
    </li>
    </ul>
 - It returns a `boolean` value.
-
-<a name="makeperiodfromqueryparams" id="makeperiodfromqueryparams"></a>
-<a name="makePeriodFromQueryParams" id="makePeriodFromQueryParams"></a>
-### `makePeriodFromQueryParams()`
-
-Creates a Period instance using a period, date and timezone.
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$timezone` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The timezone of the date. Only used if `$date` is `'now'`, `'today'`, `'yesterday'` or `'yesterdaySameTime'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The period string: `"day"`, `"week"`, `"month"`, `"year"`, `"range"`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The date or date range string. Can be a special value including `'now'`, `'today'`, `'yesterday'`, `'yesterdaySameTime'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-- It returns a [`Period`](../Piwik/Period.md) value.
 
 <a name="getdatestart" id="getdatestart"></a>
 <a name="getDateStart" id="getDateStart"></a>

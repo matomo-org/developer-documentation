@@ -542,7 +542,7 @@ Assigns a set of generally useful variables to a [View](/api-reference/Piwik/Vie
 
 The following variables assigned:
 
-**debugTrackVisitsInsidePiwikUI** - The value of the `[Debug] track_visits_inside_piwik_ui`
+**enableMeasurePiwikForSiteId** - The value of the `[Debug] enable_measure_piwik_usage_in_idsite`
                                     INI config option.
 **isSuperUser** - True if the current user is the Super User, false if otherwise.
 **hasSomeAdminAccess** - True if the current user has admin access to at least one site,
