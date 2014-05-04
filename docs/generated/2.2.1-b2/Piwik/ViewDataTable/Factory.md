@@ -77,7 +77,7 @@ See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$apiAction` (`string`|`Piwik\ViewDataTable\false`) &mdash;
+      `$apiAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
 
       <div markdown="1" class="param-desc"> The API method for the report that will be displayed, eg, `'UserSettings.getBrowser'`.</div>
 
@@ -87,7 +87,7 @@ See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$controllerAction` (`string`|`Piwik\ViewDataTable\false`) &mdash;
+      `$controllerAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
 
       <div markdown="1" class="param-desc"> The controller name and action dedicated to displaying the report. This action is used when reloading reports or changing the report visualization. Defaulted to `$apiAction` if `false` is supplied.</div>
 

@@ -186,6 +186,7 @@ Index
 - [`execute()`](Piwik/RankingQuery.md#execute) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`$enable_sort`](Piwik/ViewDataTable/Config.md#$enable_sort) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$export_limit`](Piwik/ViewDataTable/Config.md#$export_limit) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$expanded`](Piwik/ViewDataTable/RequestConfig.md#$expanded) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## F
 
@@ -231,6 +232,7 @@ Index
 - [`$filter_sort_column`](Piwik/ViewDataTable/RequestConfig.md#$filter_sort_column) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`$filter_sort_order`](Piwik/ViewDataTable/RequestConfig.md#$filter_sort_order) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`$filter_limit`](Piwik/ViewDataTable/RequestConfig.md#$filter_limit) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`$flat`](Piwik/ViewDataTable/RequestConfig.md#$flat) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`$filter_offset`](Piwik/ViewDataTable/RequestConfig.md#$filter_offset) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`$filter_pattern`](Piwik/ViewDataTable/RequestConfig.md#$filter_pattern) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`$filter_column`](Piwik/ViewDataTable/RequestConfig.md#$filter_column) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
