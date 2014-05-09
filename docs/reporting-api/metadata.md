@@ -106,6 +106,6 @@ The static Graphs API requires the standard Piwik parameters (idSite, date, peri
 
 *   **graphType** - defines the type of graph to draw. Accepted values are: '**evolution**' (line graph), '**horizontalBar**' (horizontal bar graph), 'verticalBar' (vertical bar graph) and 'pie' (2D Pie chart)
 *   **width** and **height** - define the width and height in pixels of the generated image
-*   **column** - by default, the graph will plot the number of visits (nb_visits). You can specify another metric such as: nb_actions, nb_visits_converted, etc.
+*   **column** - by default, the graph will plot the number of visits (nb_visits). You can specify another metric such as: nb_actions, nb_visits_converted, nb_uniq_visitors, etc.
 *   **colors** - you can specify a comma separated list of hexadecimal colors to use in the graph instead of the default colors, eg. _&colors=FFFF00,00FF00,FF0000_
 *   **aliasedGraph** - by default, graphs are "smooth" (anti-aliased). If you are generating hundreds of graphs and are concerned with performance, you can set aliasedGraph=0. This will disable anti-aliasing and graphs will be generated faster, but won't look so pretty.
