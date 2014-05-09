@@ -157,6 +157,7 @@ The class defines the following methods:
 - [`getUrlTrackGoal()`](#geturltrackgoal) &mdash; Builds URL to track a goal with idGoal and revenue.
 - [`getUrlTrackAction()`](#geturltrackaction) &mdash; Builds URL to track a new action.
 - [`setForceVisitDateTime()`](#setforcevisitdatetime) &mdash; Overrides server date and time for the tracking requests.
+- [`setForceNewVisit()`](#setforcenewvisit) &mdash; Forces Piwik to create a new visit for the tracking request.
 - [`setIp()`](#setip) &mdash; Overrides IP address
 - [`setVisitorId()`](#setvisitorid) &mdash; Forces the requests to be recorded for the specified Visitor ID rather than using the heuristics based on IP and other attributes.
 - [`getVisitorId()`](#getvisitorid) &mdash; If the user initiating the request has the Piwik first party cookie, this function will try and return the ID parsed from this first party cookie (found in $_COOKIE).
@@ -1572,6 +1573,25 @@ Allowed only for Super User, must be used along with setTokenAuth()
       </div>
    </li>
    </ul>
+- It does not return anything.
+
+<a name="setforcenewvisit" id="setforcenewvisit"></a>
+<a name="setForceNewVisit" id="setForceNewVisit"></a>
+### `setForceNewVisit()`
+
+Forces Piwik to create a new visit for the tracking request.
+
+By default, Piwik will create a new visit if the last request by this user was more than 30 minutes ago.
+If you call setForceNewVisit() before calling doTrack*, then a new visit will be created for this request.
+
+Allowed only for Super User, must be used along with setTokenAuth()
+
+#### See Also
+
+- `setTokenAuth()`
+
+#### Signature
+
 - It does not return anything.
 
 <a name="setip" id="setip"></a>
