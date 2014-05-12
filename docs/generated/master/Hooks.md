@@ -435,7 +435,7 @@ _Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
 Callback Signature:
-<pre><code>function($idsite, $completed)</code></pre>
+<pre><code>function($idSite, $completed)</code></pre>
 
 - `int` `$idSite` The ID of the site we're archiving data for.
 
@@ -446,7 +446,7 @@ _Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
 Callback Signature:
-<pre><code>function($idsite)</code></pre>
+<pre><code>function($idSite)</code></pre>
 
 - `int` `$idSite` The ID of the site we're archiving data for.
 
@@ -471,7 +471,7 @@ This event is triggered after a CronArchive instance is initialized.
 Callback Signature:
 <pre><code>function($this-&gt;websites-&gt;getInitialSiteIds())</code></pre>
 
-- `array` `$websiteIds` The list of website IDs this CronArchive instance is processing. This will be the enitre list of IDs regardless of whether some have already been processed.
+- `array` `$websiteIds` The list of website IDs this CronArchive instance is processing. This will be the entire list of IDs regardless of whether some have already been processed.
 
 ## Db
 
