@@ -1774,6 +1774,7 @@ Usages:
 
 - [UsersManager.addUser.end](#usersmanageradduserend)
 - [UsersManager.deleteUser](#usersmanagerdeleteuser)
+- [UsersManager.getDefaultDates](#usersmanagergetdefaultdates)
 - [UsersManager.updateUser.end](#usersmanagerupdateuserend)
 
 ### UsersManager.addUser.end
@@ -1801,6 +1802,17 @@ Callback Signature:
 Usages:
 
 [CoreAdminHome::cleanupUser](https://github.com/piwik/piwik/blob/master/plugins/CoreAdminHome/CoreAdminHome.php#L41), [CoreVisualizations::deleteUser](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/CoreVisualizations.php#L39), [Dashboard::deleteDashboardLayout](https://github.com/piwik/piwik/blob/master/plugins/Dashboard/Dashboard.php#L245), [LanguagesManager::deleteUserLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L109), [ScheduledReports::deleteUserReport](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L564)
+
+
+### UsersManager.getDefaultDates
+_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [193](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L193)_
+
+Triggered when the list of available dates is requested, for example for the User Settings > Report date to load by default.
+
+Callback Signature:
+<pre><code>function(&amp;$dates)</code></pre>
+
+- `array` `&$dates` Array of (date => translation)
 
 
 ### UsersManager.updateUser.end
