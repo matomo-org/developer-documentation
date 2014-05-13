@@ -499,20 +499,20 @@ _paq.push(['trackPageView']);
 
 It is possible to track a page using multiple Piwik trackers that point to the same or different Piwik servers. To improve page loading time, you can load piwik.js once. Each call to `Piwik.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
 
-Note: When using multiple trackers, you must use the synchronous Javascript tracker object (ie. this will not work with the asynchronous tag):
-
 <pre><code>&lt;script type="text/javascript"&gt;
 
-try {
-    var piwikTracker = Piwik.getTracker("http://URL_1/piwik.php", 1);
-    piwikTracker.trackPageView();
-    var piwik2 = Piwik.getTracker("http://URL_2/piwik.php", 4);
-    piwik2.trackPageView();
-} catch( err ) {}
+window.piwikAsyncInit = function () {
+    try {
+        var piwikTracker = Piwik.getTracker("http://apache.piwik/piwik.php", 1);
+        piwikTracker.trackPageView();
+        var piwik2 = Piwik.getTracker("http://apache.piwik/piwik.php", 4);
+        piwik2.trackPageView();
+    } catch( err ) {}
+}
 
 &lt;/script&gt;</code></pre>
 
-Note that you can also set the website ID and the Piwik tracker URL manually, instead of setting them in the getTracker call:
+The `piwikAsyncInit` method will be executed once the Piwik is loaded and initialized. Note that you can also set the website ID and the Piwik tracker URL manually, instead of setting them in the getTracker call:
 
 <pre><code>// we replace Piwik.getTracker("http://example.com/piwik/", 12)
 
