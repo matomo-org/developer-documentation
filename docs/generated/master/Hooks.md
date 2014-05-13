@@ -568,7 +568,7 @@ Callback Signature:
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 
 ### Live.API.getIdSitesString
-_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [700](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L700)_
+_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [712](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L712)_
 
 
 
