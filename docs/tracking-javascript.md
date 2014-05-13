@@ -503,9 +503,9 @@ It is possible to track a page using multiple Piwik trackers that point to the s
 
 window.piwikAsyncInit = function () {
     try {
-        var piwikTracker = Piwik.getTracker("http://apache.piwik/piwik.php", 1);
+        var piwikTracker = Piwik.getTracker("http://URL_1/piwik.php", 1);
         piwikTracker.trackPageView();
-        var piwik2 = Piwik.getTracker("http://apache.piwik/piwik.php", 4);
+        var piwik2 = Piwik.getTracker("http://URL_2/piwik.php", 4);
         piwik2.trackPageView();
     } catch( err ) {}
 }
