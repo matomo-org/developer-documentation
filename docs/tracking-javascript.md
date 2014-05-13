@@ -512,7 +512,9 @@ window.piwikAsyncInit = function () {
 
 &lt;/script&gt;</code></pre>
 
-The `piwikAsyncInit` method will be executed once the Piwik is loaded and initialized. Note that you can also set the website ID and the Piwik tracker URL manually, instead of setting them in the getTracker call:
+The `piwikAsyncInit` method was introduced in Piwik 2.3 and will be executed once the Piwik tracker is loaded and initialized. In earlier versions you must load Piwik synchronous.
+
+Note that you can also set the website ID and the Piwik tracker URL manually, instead of setting them in the getTracker call:
 
 <pre><code>// we replace Piwik.getTracker("http://example.com/piwik/", 12)
 
