@@ -508,7 +508,7 @@ window.piwikAsyncInit = function () {
         var piwik2 = Piwik.getTracker("http://URL_2/piwik.php", 4);
         piwik2.trackPageView();
     } catch( err ) {}
-}
+};
 
 &lt;/script&gt;</code></pre>
 
