@@ -765,11 +765,11 @@ Menu items should be added via the [add()](/api-reference/Piwik/Menu/MenuMain#ad
 
 **Example**
 
-    use Piwik\Menu\Main;
+    use Piwik\Menu\MenuMain;
 
     public function addMenuItems()
     {
-        Main::getInstance()->add(
+        MenuMain::getInstance()->add(
             'CustomMenuName',
             'CustomSubmenuName',
             array('module' => 'MyPlugin', 'action' => 'index'),
