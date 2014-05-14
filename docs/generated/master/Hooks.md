@@ -604,7 +604,7 @@ Callback Signature:
 - [Log.getAvailableWriters](#loggetavailablewriters)
 
 ### Log.formatDatabaseMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [634](https://github.com/piwik/piwik/blob/master/core/Log.php#L634)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [638](https://github.com/piwik/piwik/blob/master/core/Log.php#L638)_
 
 Triggered when trying to log an object to a database table. Plugins can use
 this event to convert objects to strings before they are logged.
@@ -632,7 +632,7 @@ Callback Signature:
 
 
 ### Log.formatFileMessage
-_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [674](https://github.com/piwik/piwik/blob/master/core/Log.php#L674)_
+_Defined in [Piwik/Log](https://github.com/piwik/piwik/blob/master/core/Log.php) in line [678](https://github.com/piwik/piwik/blob/master/core/Log.php#L678)_
 
 Triggered when trying to log an object to a file. Plugins can use
 this event to convert objects to strings before they are logged.
