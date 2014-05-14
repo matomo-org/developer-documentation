@@ -48,7 +48,6 @@ The class defines the following methods:
 - [`renameColumn()`](#renamecolumn) &mdash; Renames a column.
 - [`getColumn()`](#getcolumn) &mdash; Returns a column by name.
 - [`getMetadata()`](#getmetadata) &mdash; Returns the array of all metadata, or one requested metadata value.
-- [`hasColumn()`](#hascolumn) &mdash; Returns true if a column having the given name is already registered.
 - [`getColumns()`](#getcolumns) &mdash; Returns the array containing all the columns.
 - [`getIdSubDataTable()`](#getidsubdatatable) &mdash; Returns the ID of the subDataTable.
 - [`getSubtable()`](#getsubtable) &mdash; Returns the associated subtable, if one exists.
@@ -240,33 +239,6 @@ Returns the array of all metadata, or one requested metadata value.
    </li>
    </ul>
 - It returns a `mixed` value.
-
-<a name="hascolumn" id="hascolumn"></a>
-<a name="hasColumn" id="hasColumn"></a>
-### `hasColumn()`
-
-Returns true if a column having the given name is already registered.
-
-The value will not be evaluated, it will
-just check whether a column exists independent of its value.
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-- It returns a `bool` value.
 
 <a name="getcolumns" id="getcolumns"></a>
 <a name="getColumns" id="getColumns"></a>
@@ -612,7 +584,7 @@ If the column already exists, throws an exception.
       <div markdown="1" class="parameter">
       `$value` (`mixed`) &mdash;
 
-      <div markdown="1" class="param-desc"> value of the column to set or a PHP callable.</div>
+      <div markdown="1" class="param-desc"> value of the column to set.</div>
 
       <div style="clear:both;"/>
 

@@ -88,7 +88,8 @@ Learn more about _archiving_ [here](/guides/all-about-analytics-data).
 
 <a name="footnote-1"></a>
 [1]: The archiving process will not be launched if browser archiving is disabled
-     and the current request came from a browser.
+     and the current request came from a browser (and not the **archive.php** cron
+     script).
 
 Methods
 -------
