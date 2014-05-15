@@ -11,7 +11,7 @@ to calculate the subperiods of multiple period requests (eg, when period=day and
 date=2007-07-24,2013-11-15).
 
 The range period differs from other periods mainly in that since it is arbitrary,
-range periods are not pre-archived by the **archive.php** cron script.
+range periods are not pre-archived by the cron core:archive command.
 
 Methods
 -------
