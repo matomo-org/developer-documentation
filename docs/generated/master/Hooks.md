@@ -259,7 +259,7 @@ Callback Signature:
 
 
 ### AssetManager.filterMergedStylesheets
-_Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [80](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L80)_
+_Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [72](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L72)_
 
 Triggered after all less stylesheets are compiled to CSS, minified and merged into one file, but before the generated CSS is written to disk. This event can be used to modify merged CSS.
 
