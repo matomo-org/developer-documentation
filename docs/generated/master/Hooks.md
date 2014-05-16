@@ -949,7 +949,7 @@ _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/c
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
 Callback Signature:
-<pre><code>function(&amp;$result, $parameters)</code></pre>
+<pre><code>function(&amp;$result, $module, $action, $parameters)</code></pre>
 
 - `mixed` `&$result` The controller action result.
 
