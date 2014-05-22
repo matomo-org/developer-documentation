@@ -52,7 +52,7 @@ You can put your entire theme into this one file if you want, but this will not 
 
 ### Adding JavaScript files
 
-Themes can also add new JavaScript files. These files can be used to style things that can't be styled through CSS or LESS, such as radio buttons.
+Themes can also add new JavaScript files. These files can be used to style things that can't be styled through CSS or LESS.
 
 To add JavaScript files, add them as an array to to the **javascript** property in your theme's **plugin.json** file:
 
@@ -64,14 +64,42 @@ To add JavaScript files, add them as an array to to the **javascript** property 
         "javascript": ["javascripts/myJavaScriptFile.js", "javascripts/myOtherJavaScriptFile.js"]
     }
 
-### Theming colors
+### Simple theming
 
-Colors that are used in CSS are simple to override. Simply set the colors for the element, for example:
 
-    // changing the dataTable header column color
-    table.dataTable th {
-        color: red;
+#### Colors and fonts
+
+Colors that are used in CSS are simple to override. Usually it is enough to just change the value of less variables. For example to change the background from white to black you can simply define the following variable:
+
+    @theme-color-background-base: #000;
+    
+To change the link color to red you override the link variable:
+
+    @theme-color-link: #f00;
+    
+To change the font you override the font variable:
+
+    @theme-fontFamily-base: Verdana, sans-serif;
+    
+You get the point. It is a common convention among themes to put all color values in a **_colors.less** file. This is already done for you if you have created your theme using the above mentioned console command. Just uncomment the variables you want to change. For a list of available variables have a look at the [Example Theme plugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleTheme/stylesheets).
+
+Although we do not recommend to do so you can change the colors of a specific element directly, for example:
+
+    #login {
+        background-color: red;
     }
+
+Please use this method only if needed as elements, id's or class names might change in the future and break your theme.
+
+#### Icons 
+
+Overriding icons is fairly easy. Just create a folder named `images` and place an icon having the same file name as the origin icon. For a complete list of icons you can override have a look at the [Zeitgeist theme](https://github.com/piwik/piwik/tree/master/plugins/Zeitgeist/images). It is not possible yet to override icons used in reports such as browser or search engine icons.
+
+#### Logo and favicon
+
+As Piwik users can upload their own logo and favicon using the admin interface a theme is not supposed to change any of those. 
+
+### Advanced theming 
 
 #### Theming colors used in JavaScript & PHP
 
@@ -205,16 +233,6 @@ Here is a list of all named colors in Piwik:
 
 <a name="named-colors-footnote-1"></a>
 [1] Metrics that use the _special metrics_ color scale are the following: **avg\_time\_on\_site**, **nb\_actions\_per\_visit** and **bounce\_rate**
-
-#### colors.less
-
-It is a common convention among themes to put all color values in a **colors.less** file as LESS variables, for example:
-
-    @lightBlack = #ccc;
-    @darkred = darken(red, 30%);
-    // etc.
-
-This file is the first file imported in the **theme.less** file.
 
 ## Making a plugin themable
 
