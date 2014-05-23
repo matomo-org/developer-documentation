@@ -50,7 +50,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `revenue` &mdash; A monetary value that was generated as revenue by this goal conversion. Only used if **idgoal** is specified in the request.
     * `gt_ms` &mdash; The amount of time it took the server to generate this action, in milliseconds. This value is used to process the **Avg. generation time** column in the Page URL and Page Title reports, as well as a site wide running average of the speed of your server. _Note: when using the Javascript tracker this value is set to the ime for server to generate response + the time for client to download response._
 
-* Optional Event Tracking info
+* Optional [Event Tracking](http://piwik.org/docs/event-tracking/) info
     * `e_c` &mdash; The event category. Must not be empty. (eg. Videos, Music, Games...)
     * `e_a` &mdash; The event action. Must not be empty. (eg. Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
     * `e_n` &mdash; The event name.  (eg. a Movie name, or Song name, or File name...)
