@@ -21,7 +21,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
   * `rand` **(recommended)** &mdash; Meant to hold a random value that is generated before each request. Using it helps avoid the tracking request being cached by the browser or a proxy.
   * `apiv` **(recommended)** &mdash; The parameter &amp;apiv=1 defines the api version to use (currently always set to 1)
 
-* Optional visitor info _(We recommend that these parameters be used if the information is available and relevant to your use case.)_
+* Optional User info _(We recommend that these parameters be used if the information is available and relevant to your use case.)_
 
     * `urlref` &mdash; The full HTTP Referrer URL. This value is used to determine how someone got to your website (ie, through a website, search engine or campaign).
     * `_cvar` &mdash; Visit scope [custom variables](http://piwik.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
@@ -38,7 +38,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `ua` &mdash; An override value for the **User-Agent** HTTP header field. The user agent is used to detect the operating system and browser used.
     * `lang` &mdash; An override value for the **Accept-Language** HTTP header field. This value is used to detect the visitor's country if [GeoIP](http://piwik.org/faq/troubleshooting/#faq_65) is not enabled.
 
-* Optional action/event info
+* Optional Action info (measure Page view, Outlink, Download, Site search)
 
     * `cvar` &mdash; Page scope [custom variables](http://piwik.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
     * `link` &mdash; An external URL the user has opened. Used for tracking outlink clicks. We recommend to also set the **url** parameter to this same value.
@@ -49,6 +49,12 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `idgoal` &mdash; If specified, the tracking request will trigger a conversion for the goal of the website being tracked with this ID.
     * `revenue` &mdash; A monetary value that was generated as revenue by this goal conversion. Only used if **idgoal** is specified in the request.
     * `gt_ms` &mdash; The amount of time it took the server to generate this action, in milliseconds. This value is used to process the **Avg. generation time** column in the Page URL and Page Title reports, as well as a site wide running average of the speed of your server. _Note: when using the Javascript tracker this value is set to the ime for server to generate response + the time for client to download response._
+
+* Optional Event Tracking info
+    * `e_c` &mdash; The event category. Must not be empty. (eg. Videos, Music, Games...)
+    * `e_a` &mdash; The event action. Must not be empty. (eg. Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
+    * `e_n` &mdash; The event name.  (eg. a Movie name, or Song name, or File name...)
+    * `e_v` &mdash; The event value. Must be a float or integer value (numeric), not a string.
 
 * Ecommerce info
 
