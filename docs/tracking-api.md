@@ -46,9 +46,9 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `search` &mdash; The Site Search keyword. When specified, the request will not be tracked as a normal pageview but will instead be tracked as a [Site Search](http://piwik.org/docs/site-search/) request.
     * `search_cat` &mdash; when **search** is specified, you can optionally specify a search category with this parameter.
     * `search_count` &mdash; when **search** is specified, we also recommend to set the search\_count to the number of search results displayed on the results page. When keywords are tracked with &search_count=0 they will appear in the "No Result Search Keyword" report.
-    * `idgoal` &mdash; If specified, the tracking request will trigger a conversion for the goal of the website being tracked with this ID.
+    * `idgoal` &mdash; If specified, the tracking request will trigger a conversion for the [goal](http://piwik.org/docs/tracking-goals-web-analytics/) of the website being tracked with this ID.
     * `revenue` &mdash; A monetary value that was generated as revenue by this goal conversion. Only used if **idgoal** is specified in the request.
-    * `gt_ms` &mdash; The amount of time it took the server to generate this action, in milliseconds. This value is used to process the **Avg. generation time** column in the Page URL and Page Title reports, as well as a site wide running average of the speed of your server. _Note: when using the Javascript tracker this value is set to the ime for server to generate response + the time for client to download response._
+    * `gt_ms` &mdash; The amount of time it took the server to generate this action, in milliseconds. This value is used to process the [Page speed report](http://piwik.org/docs/page-speed/) **Avg. generation time** column in the Page URL and Page Title reports, as well as a site wide running average of the speed of your server. _Note: when using the Javascript tracker this value is set to the ime for server to generate response + the time for client to download response._
 
 * Optional [Event Tracking](http://piwik.org/docs/event-tracking/) info
     * `e_c` &mdash; The event category. Must not be empty. (eg. Videos, Music, Games...)
@@ -58,7 +58,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 
 * Ecommerce info
 
-    Use the following values to record a cart and/or an ecommerce order. You must also set `&idgoal=0` in the request.
+    Use the following values to record a cart and/or an [ecommerce](http://piwik.org/docs/ecommerce-analytics/) order. You must also set `&idgoal=0` in the request.
 
     * `ec_id` &mdash; The unique string identifier for the ecommerce order
     * `revenue` &mdash; The grand total for the ecommerce order
