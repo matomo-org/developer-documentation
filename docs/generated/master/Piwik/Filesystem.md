@@ -42,16 +42,6 @@ _Note: This function does **not** create directories recursively._
 
       </div>
    </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$denyAccess` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether to deny browser access to this new folder by creating an **.htaccess** file.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
    </ul>
 - It does not return anything.
 
