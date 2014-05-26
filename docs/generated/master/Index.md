@@ -34,8 +34,7 @@ Index
 - [`addHourTo()`](Piwik/Date.md#addhourto) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`addPeriod()`](Piwik/Date.md#addperiod) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`add()`](Piwik/Menu/MenuAbstract.md#add) &mdash; _Method in class_ [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
-- [`addEntry()`](Piwik/Menu/MenuAdmin.md#addentry) &mdash; _Method in class_ [`MenuAdmin`](Piwik/Menu/MenuAdmin.md)
-- [`addEntry()`](Piwik/Menu/MenuTop.md#addentry) &mdash; _Method in class_ [`MenuTop`](Piwik/Menu/MenuTop.md)
+- [`addHtml()`](Piwik/Menu/MenuTop.md#addhtml) &mdash; _Method in class_ [`MenuTop`](Piwik/Menu/MenuTop.md)
 - [`addAction()`](Piwik/Piwik.md#addaction) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`activate()`](Piwik/Plugin.md#activate) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`API`](Piwik/Plugin/API.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
@@ -114,6 +113,10 @@ Index
 - [`checkUserHasSomeViewAccess()`](Piwik/Piwik.md#checkuserhassomeviewaccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`Controller`](Piwik/Plugin/Controller.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`checkTokenInUrl()`](Piwik/Plugin/Controller.md#checktokeninurl) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
+- [`configureReportingMenu()`](Piwik/Plugin/Menu.md#configurereportingmenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
+- [`configureTopMenu()`](Piwik/Plugin/Menu.md#configuretopmenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
+- [`configureUserMenu()`](Piwik/Plugin/Menu.md#configureusermenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
+- [`configureAdminMenu()`](Piwik/Plugin/Menu.md#configureadminmenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
 - [`$config`](Piwik/Plugin/ViewDataTable.md#$config) &mdash; _Property in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`canDisplayViewDataTable()`](Piwik/Plugin/ViewDataTable.md#candisplayviewdatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
@@ -183,6 +186,7 @@ Index
 - [`enableRecursiveSort()`](Piwik/DataTable/Map.md#enablerecursivesort) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`exec()`](Piwik/Db.md#exec) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`error()`](Piwik/Log.md#error) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
+- [`editUrl()`](Piwik/Menu/MenuAbstract.md#editurl) &mdash; _Method in class_ [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
 - [`Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md) &mdash; _Class in namespace_ [`Piwik\Plugins\CoreVisualizations\Visualizations\JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph) 
 - [`execute()`](Piwik/RankingQuery.md#execute) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`$enable_sort`](Piwik/ViewDataTable/Config.md#$enable_sort) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
@@ -571,7 +575,9 @@ Index
 - [`MenuAbstract`](Piwik/Menu/MenuAbstract.md) &mdash; _Class in namespace_ `Piwik\Menu` 
 - [`MenuAdmin`](Piwik/Menu/MenuAdmin.md) &mdash; _Class in namespace_ `Piwik\Menu` 
 - [`MenuMain`](Piwik/Menu/MenuMain.md) &mdash; _Class in namespace_ `Piwik\Menu` 
+- [`MenuReporting`](Piwik/Menu/MenuReporting.md) &mdash; _Class in namespace_ `Piwik\Menu` 
 - [`MenuTop`](Piwik/Menu/MenuTop.md) &mdash; _Class in namespace_ `Piwik\Menu` 
+- [`MenuUser`](Piwik/Menu/MenuUser.md) &mdash; _Class in namespace_ `Piwik\Menu` 
 - [`Metrics`](Piwik/Metrics.md) &mdash; _Class in namespace_ `Piwik` 
 - [`$mappingFromIdToName`](Piwik/Metrics.md#$mappingfromidtoname) &mdash; _Property in class_ [`Metrics`](Piwik/Metrics.md)
 - [`$mappingFromIdToNameGoal`](Piwik/Metrics.md#$mappingfromidtonamegoal) &mdash; _Property in class_ [`Metrics`](Piwik/Metrics.md)
@@ -579,6 +585,7 @@ Index
 - [`$message`](Piwik/Notification.md#$message) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`Manager`](Piwik/Notification/Manager.md) &mdash; _Class in namespace_ [`Piwik\Notification`](Piwik/Notification) 
 - [`Manager`](Piwik/Plugin/Manager.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
+- [`Menu`](Piwik/Plugin/Menu.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`$metrics_documentation`](Piwik/ViewDataTable/Config.md#$metrics_documentation) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 
@@ -642,6 +649,8 @@ Index
 - [`renameColumn()`](Piwik/DataTable/Row.md#renamecolumn) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`removeSubtable()`](Piwik/DataTable/Row.md#removesubtable) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`releaseDbLock()`](Piwik/Db.md#releasedblock) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
+- [`remove()`](Piwik/Menu/MenuAbstract.md#remove) &mdash; _Method in class_ [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
+- [`rename()`](Piwik/Menu/MenuAbstract.md#rename) &mdash; _Method in class_ [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
 - [`$raw`](Piwik/Notification.md#$raw) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`Range`](Piwik/Period/Range.md) &mdash; _Class in namespace_ [`Piwik\Period`](Piwik/Period) 
 - [`redirectToModule()`](Piwik/Piwik.md#redirecttomodule) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)

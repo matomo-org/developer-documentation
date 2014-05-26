@@ -47,7 +47,9 @@
 ## Menu\MenuAbstract
 ## Menu\MenuAdmin
 ## Menu\MenuMain
+## Menu\MenuReporting
 ## Menu\MenuTop
+## Menu\MenuUser
 ## Metrics
 ## MetricsFormatter
 ## NoAccessException
@@ -63,6 +65,7 @@
 ## Plugin\Archiver
 ## Plugin\Controller
 ## Plugin\Manager
+## Plugin\Menu
 ## Plugin\Settings
 ## Plugin\ViewDataTable
 ## Plugin\Visualization
