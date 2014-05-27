@@ -96,17 +96,23 @@ _paq.push(['trackPageView']);
 
 [...]</code></pre>
 
-## Manually Trigger a Page View on Click or on JS Event
+## Manually Trigger an Event on Click
 
-By default, Piwik tracks page views when the Javascript tracking code loads and executes on each page view. However, on modern websites or web applications, user interactions do not necessarily involve loading a new page. For example, when users click on a JavaScript link, or when they click on a tab (which triggers a JS event), or when they interact with elements of the user interface, you can still track these interactions with Piwik.
+By default, Piwik tracks page views when the Javascript tracking code loads and executes on each page view.
+However, on modern websites or web applications, user interactions do not necessarily involve loading a new page.
+For example, when users click on a JavaScript link, or when they click on a tab (which triggers a JS event),
+or when they interact with elements of the user interface, you can still track these interactions with Piwik.
 
-To track any user interaction or click with Piwik, you can manually call the Javascript function `trackPageView()`. For example, if you wanted to track a click on a JavaScript menu, you could write:
+To track any user interaction or click with Piwik, you can manually call the Javascript function `trackEvent()`.
+For example, if you wanted to track a click on a JavaScript menu, you could write:
 
 <pre><code>[...]
 
-&lt;a href="#" onclick="javascript:_paq.push(['trackPageView', 'Menu/Freedom']);">Freedom page&lt;/a>
+&lt;a href="#" onclick="javascript:_paq.push(['trackEvent', 'Menu', 'Freedom']);">Freedom page&lt;/a>
 
 [...]</code></pre>
+
+You can learn more about [Event Tracking](http://piwik.org/docs/event-tracking/).
 
 ## Manually Trigger a Conversion for a Goal
 
@@ -161,7 +167,7 @@ _paq.push(['trackSiteSearch',
     0
 ]);
 
-// We recommend not to call `trackPageView()` on the Site Search Result page
+// We recommend not to call trackPageView() on the Site Search Result page
 // _paq.push(['trackPageView']);
 [...]
 </code></pre>
@@ -538,11 +544,11 @@ _Using the Tracker Object_
 *   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use a pseudo-click handler to track browsers (such as Firefox) which don't generate click events for the middle mouse button. By default only "true" mouse click events are handled.
 *   `addListener( element )` - Add click listener to a specific link element. When clicked, Piwik will log the click automatically.
 *   `setRequestMethod( method )` - Set the request method to either "GET" or "POST". (The default is "GET".) To use the POST request method, the Piwik host must be the same as the tracked website host (Piwik installed in the same domain as your tracked website).
-*   `trackGoal( idGoal, [customRevenue]);` - Manually log a conversion for the goal idGoal, passing in the custom revenue customRevenue if specified
-*   `trackLink( url, linkType )` - Manually log a click from your own code. url is the full URL which is to be tracked as a click. linkType can either be 'link' for an outlink or 'download' for a download.
 *   `trackEvent(category, action, [name], [value])` - Logs an event with an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name and optional numeric value.
 *   `trackPageView([customTitle])` - Logs a visit to this page
 *   `trackSiteSearch(keyword, [category], [resultsCount])` - Log an internal site search for a specific keyword, in an optional category, specifying the optional count of search results in the page.
+*   `trackGoal( idGoal, [customRevenue]);` - Manually log a conversion for the goal idGoal, passing in the custom revenue customRevenue if specified
+*   `trackLink( url, linkType )` - Manually log a click from your own code. url is the full URL which is to be tracked as a click. linkType can either be 'link' for an outlink or 'download' for a download.
 
 _Configuration of the Tracker Object_
 
@@ -597,8 +603,8 @@ Starting with Piwik 1.2, first party cookies are used. Consideration must be giv
 
 *   `setCookiePath( path )` - the default is '/'.
 *   `setVisitorCookieTimeout( seconds )` - the default is 2 years
-*   `setSessionCookieTimeout( seconds )` - the default is 30 minutes
 *   `setReferralCookieTimeout( seconds )` - the default is 6 months
+*   `setSessionCookieTimeout( seconds )` - the default is 30 minutes
 
 ## Unit Tests Covering piwik.js
 
