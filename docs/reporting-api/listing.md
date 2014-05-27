@@ -172,6 +172,14 @@ Here is a list of metrics returned by the API and their definition.
 *   nb\_visits - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](http://piwik.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The number of visits on the Product/Category page.
 *   conversion\_rate - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](http://piwik.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The conversion rate is the number of orders (or abandoned\_carts if the request contains '&abandonedCarts=1') containing this product/category divided by number of visits on the product/category page.
 
+#### Event tracking metrics, appearing in Events API calls:
+* nb_events - Number of events
+* nb_events_with_value - Number of events which had a value set
+* sum_event_value - Sum of Event values
+* min_event_value - Minimum Event value
+* max_event_value - Maximum Event value
+* avg_event_value - Average of Event values
+
 ## API Method List
 
 [include url="http://demo.piwik.org/?module=API&action=listAllMethods&prefixUrl=http://demo.piwik.org/&idSite=7"]
