@@ -208,7 +208,7 @@ If you have your own custom JavaScript running on Piwik you can use AJAX to dyna
     ajax.setFormat('html');
     ajax.send(false);
 
-The **ajaxHelper** JavaScript class is stored in the [piwik/plugins/Zeitgeist/javascripts/ajaxHelper.js](https://github.com/piwik/piwik/blob/master/plugins/Zeitgeist/javascripts/ajaxHelper.js) file.
+The **ajaxHelper** JavaScript class is stored in the [piwik/plugins/Morpheus/javascripts/ajaxHelper.js](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/javascripts/ajaxHelper.js) file.
 
 ### Controller method conventions
 
