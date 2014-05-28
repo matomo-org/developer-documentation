@@ -46,7 +46,6 @@
 ## Mail
 ## Menu\MenuAbstract
 ## Menu\MenuAdmin
-## Menu\MenuMain
 ## Menu\MenuReporting
 ## Menu\MenuTop
 ## Menu\MenuUser

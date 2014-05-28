@@ -574,7 +574,6 @@ Index
 - [`Mail`](Piwik/Mail.md) &mdash; _Class in namespace_ `Piwik` 
 - [`MenuAbstract`](Piwik/Menu/MenuAbstract.md) &mdash; _Class in namespace_ `Piwik\Menu` 
 - [`MenuAdmin`](Piwik/Menu/MenuAdmin.md) &mdash; _Class in namespace_ `Piwik\Menu` 
-- [`MenuMain`](Piwik/Menu/MenuMain.md) &mdash; _Class in namespace_ `Piwik\Menu` 
 - [`MenuReporting`](Piwik/Menu/MenuReporting.md) &mdash; _Class in namespace_ `Piwik\Menu` 
 - [`MenuTop`](Piwik/Menu/MenuTop.md) &mdash; _Class in namespace_ `Piwik\Menu` 
 - [`MenuUser`](Piwik/Menu/MenuUser.md) &mdash; _Class in namespace_ `Piwik\Menu` 
