@@ -24,7 +24,7 @@ First, let's add a new reporting page to Piwik. Links to Piwik's reporting pages
 
 <img src="/img/reporting_menu.png"/>
 
-This menu's contents are determined by plugins that add menu items through the [MenuMain](/api-reference/Piwik/Menu/MenuMain) class.
+This menu's contents are determined by plugins that add menu items through the [MenuReporting](/api-reference/Piwik/Menu/MenuReporting) class.
 
 #### Adding a controller method
 
@@ -76,26 +76,13 @@ If you open a browser and open the URL **http://localhost/index.php?module=MyPlu
 
 #### Adding a menu item
 
-Now that there's a page, we need to add it to the reporting menu so users can get to it. The [MenuMain](/api-reference/Piwik/Menu/MenuMain) class allows plugins to add menu items through an **event** named [Menu.Reporting.addItems](/api-reference/events#menureportingadditems).
+Now that there's a page, we need to add it to the reporting menu so users can get to it. The [MenuReporting](/api-reference/Piwik/Menu/MenuReporting) class allows plugins to add menu items. First you have to create a menu file using the console command `./console generate:menu`. This will generate a file named `Menu.php` in the root of your plugin.
 
-<div markdown="1" class="alert alert-warning">
-**About Events**
+Now you can add your menu items in the Menu class:
 
-**Events** are one of the main ways Piwik allows plugins to add new functionality. At certain points during execution, Piwik will post an event to the **EventDispatcher**. Plugins can register callbacks with events so those callbacks will be invoked at those times.
-</div>
-
-Our plugin has to handle this event, so we'll associate a method with the event. In the **getListHooksRegistered** method of your plugin descriptor class (the class in **MyPlugin.php**), add the following code:
-
-    return array(
-        'AssetManager.getJavaScriptFiles' => 'getJsFiles',
-        'Menu.Reporting.addItems' => 'getReportingMenuItems'
-    );
-
-Then add this method to the class:
-
-    public function getReportingMenuItems()
+    public function configureReportingMenu(\Piwik\Menu\MenuReporting $menu)
     {
-        \Piwik\Menu\MenuMain::getInstance()->add(
+        $menu->add(
             $category = 'General_Visitors', // this is a 'translation token'. it will be replaced by
                                             // a translated string based on the user's language preference.
                                             // read about internationalization below to learn more.

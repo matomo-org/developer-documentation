@@ -35,37 +35,7 @@ To create an empty theme, run the following command from Piwik's root directory:
 
 After you enter the appropriate information, a theme will be created for you in the **plugins** directory.
 
-### Adding styles
-
-Every theme has one main file that contains all of your theme's styling overrides. The location of this file is determined by the **stylesheet** property in your theme's **plugin.json** file. The property's value is a path relative to the plugin's root directory:
-
-    {
-        "name": "MyTheme",
-        "description": "A new theme.",
-        "theme": true,
-        "stylesheet": "stylesheets/theme.less"
-    }
-
-The generated theme will already have a file for your new styles, so you don't need to set this property. The file is called **theme.less** and is located in the **stylesheets** directory of your theme.
-
-You can put your entire theme into this one file if you want, but this will not result in easy to read and easy to maintain code. Instead, you should group your theme's styles based on the part of Piwik they modify and place them in separate LESS files. In **theme.less** you can [@import](/features/#import-directives-feature) them.
-
-### Adding JavaScript files
-
-Themes can also add new JavaScript files. These files can be used to style things that can't be styled through CSS or LESS.
-
-To add JavaScript files, add them as an array to to the **javascript** property in your theme's **plugin.json** file:
-
-    {
-        "name": "MyTheme",
-        "description": "A new theme.",
-        "theme": true,
-        "stylesheet": "stylesheets/theme.less",
-        "javascript": ["javascripts/myJavaScriptFile.js", "javascripts/myOtherJavaScriptFile.js"]
-    }
-
 ### Simple theming
-
 
 #### Colors and fonts
 
@@ -93,7 +63,7 @@ Please use this method only if needed as elements, id's or class names might cha
 
 #### Icons 
 
-Overriding icons is fairly easy. Just create a folder named `images` and place an icon having the same file name as the origin icon. For a complete list of icons you can override have a look at the [Zeitgeist theme](https://github.com/piwik/piwik/tree/master/plugins/Zeitgeist/images). It is not possible yet to override icons used in reports such as browser or search engine icons.
+Overriding icons is fairly easy. Just create a folder named `images` and place an icon having the same file name as the origin icon. For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/piwik/piwik/tree/master/plugins/Morpheus/images). It is not possible yet to override icons used in reports such as browser or search engine icons.
 
 #### Logo and favicon
 
@@ -101,6 +71,35 @@ As Piwik users can upload their own logo and favicon using the admin interface a
 
 ### Advanced theming 
 
+#### Adding styles
+
+Every theme has one main file that contains all of your theme's styling overrides. The location of this file is determined by the **stylesheet** property in your theme's **plugin.json** file. The property's value is a path relative to the plugin's root directory:
+
+    {
+        "name": "MyTheme",
+        "description": "A new theme.",
+        "theme": true,
+        "stylesheet": "stylesheets/theme.less"
+    }
+
+The generated theme will already have a file for your new styles, so you don't need to set this property. The file is called **theme.less** and is located in the **stylesheets** directory of your theme.
+
+You can put your entire theme into this one file if you want, but this will not result in easy to read and easy to maintain code. Instead, you should group your theme's styles based on the part of Piwik they modify and place them in separate LESS files. In **theme.less** you can [@import](/features/#import-directives-feature) them.
+
+#### Adding JavaScript files
+
+Themes can also add new JavaScript files. These files can be used to style things that can't be styled through CSS or LESS.
+
+To add JavaScript files, add them as an array to to the **javascript** property in your theme's **plugin.json** file:
+
+    {
+        "name": "MyTheme",
+        "description": "A new theme.",
+        "theme": true,
+        "stylesheet": "stylesheets/theme.less",
+        "javascript": ["javascripts/myJavaScriptFile.js", "javascripts/myOtherJavaScriptFile.js"]
+    }
+    
 #### Theming colors used in JavaScript & PHP
 
 Some colors are only used in JavaScript and in PHP. We've made it possible for those colors to be specified through CSS, but the process is a bit different than setting colors of normal HTML elements.

@@ -147,6 +147,7 @@ More to come!
 
 ### Further Learning AngularJS Links
 * [Recipes with Angular.js](https://leanpub.com/recipes-with-angular-js/read)
+* [Angular Basics Guide](http://www.angularbasics.co.uk/)
 * [Huge AngularJS related link collection](https://github.com/jmcunningham/AngularJS-Learning)
 * [Google Chrome extension for AngularJS](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en). It helps you for instance to get insights into scopes
 * [PHPStorm extension for AngularJS](http://plugins.jetbrains.com/plugin/6971?pr=phpStorm)

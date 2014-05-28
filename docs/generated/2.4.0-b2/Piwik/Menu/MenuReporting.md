@@ -1,19 +1,19 @@
 <small>Piwik\Menu\</small>
 
-MenuMain
-========
+MenuReporting
+=============
 
-Contains menu entries for the Main menu (the menu displayed under the Piwik logo).
+Contains menu entries for the Reporting menu (the menu displayed under the Piwik logo).
 
 Plugins can subscribe to the [Menu.Reporting.addItems](/api-reference/hooks#menureportingadditems) event to add new pages to
-the main menu.
+the reporting menu.
 
 **Example**
 
     // add a new page in an observer to Menu.Admin.addItems
-    public function addMainMenuItem()
+    public function addReportingMenuItem()
     {
-        MenuMain::getInstance()->add(
+        MenuReporting::getInstance()->add(
             'MyPlugin_MyTranslatedMenuCategory',
             'MyPlugin_MyTranslatedMenuName',
             array('module' => 'MyPlugin', 'action' => 'index'),

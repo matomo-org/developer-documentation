@@ -71,7 +71,7 @@ Returns `true` if plugin is loaded (in memory).
 
 Returns the currently enabled theme.
 
-If no theme is enabled, the **Zeitgeist** plugin is returned (this is the base and default theme).
+If no theme is enabled, the **Morpheus** plugin is returned (this is the base and default theme).
 
 #### Signature
 

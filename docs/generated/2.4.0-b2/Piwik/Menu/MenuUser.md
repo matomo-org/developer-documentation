@@ -5,14 +5,15 @@ MenuUser
 
 Contains menu entries for the User menu (the menu at the very top of the page).
 
-Plugins can implement the `configureUserMenu()` method of the `Menu` plugin class to add, rename of remove
-items. If your plugin does not have a `Menu` class yet you can create one using `./console generate:menu`.
+Plugins can subscribe to the [Menu.User.addItems](/api-reference/hooks#menuuseradditems) event to add new pages to
+the user menu.
 
 **Example**
 
-    public function configureUserMenu(MenuUser $menu)
+    // add a new page in an observer to Menu.User.addItems
+    public function addUserMenuItem()
     {
-        $menu->add(
+        MenuUser::getInstance()->add(
             'MyPlugin_MyTranslatedMenuCategory',
             'MyPlugin_MyTranslatedMenuName',
             array('module' => 'MyPlugin', 'action' => 'index'),

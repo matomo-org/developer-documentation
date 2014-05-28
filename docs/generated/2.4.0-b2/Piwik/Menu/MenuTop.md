@@ -27,13 +27,13 @@ Methods
 
 The class defines the following methods:
 
-- [`addEntry()`](#addentry) &mdash; Adds a new entry to the TopMenu.
+- [`addHtml()`](#addhtml) &mdash; Directly adds a menu entry containing html.
 
-<a name="addentry" id="addentry"></a>
-<a name="addEntry" id="addEntry"></a>
-### `addEntry()`
+<a name="addhtml" id="addhtml"></a>
+<a name="addHtml" id="addHtml"></a>
+### `addHtml()`
 
-Adds a new entry to the TopMenu.
+Directly adds a menu entry containing html.
 
 #### Signature
 
@@ -42,9 +42,9 @@ Adds a new entry to the TopMenu.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$topMenuName` (`string`) &mdash;
+      `$menuName` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The menu item name. Can be a translation token.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
@@ -52,9 +52,9 @@ Adds a new entry to the TopMenu.
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$url` (`string`|`array`) &mdash;
+      `$data` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL. If `$isHTML` is true, this can be a string with HTML that is simply embedded.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
@@ -64,7 +64,7 @@ Adds a new entry to the TopMenu.
       <div markdown="1" class="parameter">
       `$displayedForCurrentUser` (`boolean`) &mdash;
 
-      <div markdown="1" class="param-desc"> Whether this menu entry should be displayed for the current user. If false, the entry will not be added.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
@@ -74,7 +74,7 @@ Adds a new entry to the TopMenu.
       <div markdown="1" class="parameter">
       `$order` (`int`) &mdash;
 
-      <div markdown="1" class="param-desc"> The order hint.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
@@ -82,19 +82,9 @@ Adds a new entry to the TopMenu.
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$isHTML` (`bool`) &mdash;
+      `$tooltip` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> Whether `$url` is an HTML string or a URL that will be rendered as a link.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$tooltip` (`bool`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Optional tooltip to display.</div>
+      <div markdown="1" class="param-desc"> Tooltip to display.</div>
 
       <div style="clear:both;"/>
 
