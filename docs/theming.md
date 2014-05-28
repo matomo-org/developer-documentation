@@ -93,7 +93,7 @@ Please use this method only if needed as elements, id's or class names might cha
 
 #### Icons 
 
-Overriding icons is fairly easy. Just create a folder named `images` and place an icon having the same file name as the origin icon. For a complete list of icons you can override have a look at the [Zeitgeist theme](https://github.com/piwik/piwik/tree/master/plugins/Zeitgeist/images). It is not possible yet to override icons used in reports such as browser or search engine icons.
+Overriding icons is fairly easy. Just create a folder named `images` and place an icon having the same file name as the origin icon. For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/piwik/piwik/tree/master/plugins/Morpheus/images). It is not possible yet to override icons used in reports such as browser or search engine icons.
 
 #### Logo and favicon
 
