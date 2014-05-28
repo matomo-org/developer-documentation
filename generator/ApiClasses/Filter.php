@@ -28,6 +28,10 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
             return false;
         }
 
+        if ($this->shouldBeIgnored($class)) {
+            return false;
+        }
+
         if ($this->hasApiTag($class)) {
             return true;
         }
