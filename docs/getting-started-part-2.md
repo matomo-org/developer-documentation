@@ -24,7 +24,7 @@ First, let's add a new reporting page to Piwik. Links to Piwik's reporting pages
 
 <img src="/img/reporting_menu.png"/>
 
-This menu's contents are determined by plugins that add menu items through the [MenuMain](/api-reference/Piwik/Menu/MenuMain) class.
+This menu's contents are determined by plugins that add menu items through the [MenuReporting](/api-reference/Piwik/Menu/MenuReporting) class.
 
 #### Adding a controller method
 
