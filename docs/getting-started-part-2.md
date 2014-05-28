@@ -76,7 +76,7 @@ If you open a browser and open the URL **http://localhost/index.php?module=MyPlu
 
 #### Adding a menu item
 
-Now that there's a page, we need to add it to the reporting menu so users can get to it. The [MenuMain](/api-reference/Piwik/Menu/MenuMain) class allows plugins to add menu items. First you have to create a menu file using the console command `./console generate:menu`. This will generate a file named `Menu.php` in the root of your plugin.
+Now that there's a page, we need to add it to the reporting menu so users can get to it. The [MenuReporting](/api-reference/Piwik/Menu/MenuReporting) class allows plugins to add menu items. First you have to create a menu file using the console command `./console generate:menu`. This will generate a file named `Menu.php` in the root of your plugin.
 
 Now you can add your menu items in the Menu class:
 
