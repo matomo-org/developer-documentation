@@ -126,7 +126,6 @@ Index
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md#$config) &mdash; _Property in class_ [`JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md)
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md#$config) &mdash; _Property in class_ [`Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md)
 - [`$config`](Piwik/Plugins/Live/VisitorLog.md#$config) &mdash; _Property in class_ [`VisitorLog`](Piwik/Plugins/Live/VisitorLog.md)
-- [`canBeDisplayedForCurrentUser()`](Piwik/Settings/Setting.md#canbedisplayedforcurrentuser) &mdash; _Method in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`clearCache()`](Piwik/Site.md#clearcache) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`Config`](Piwik/ViewDataTable/Config.md) &mdash; _Class in namespace_ `Piwik\ViewDataTable` 
 - [`$clientSideProperties`](Piwik/ViewDataTable/Config.md#$clientsideproperties) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
@@ -533,6 +532,8 @@ Index
 - [`isGdExtensionEnabled()`](Piwik/SettingsServer.md#isgdextensionenabled) &mdash; _Method in class_ [`SettingsServer`](Piwik/SettingsServer.md)
 - [`$introduction`](Piwik/Settings/Setting.md#$introduction) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$inlineHelp`](Piwik/Settings/Setting.md#$inlinehelp) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
+- [`isWritableByCurrentUser()`](Piwik/Settings/Setting.md#iswritablebycurrentuser) &mdash; _Method in class_ [`Setting`](Piwik/Settings/Setting.md)
+- [`isReadableByCurrentUser()`](Piwik/Settings/Setting.md#isreadablebycurrentuser) &mdash; _Method in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`isEcommerceEnabled()`](Piwik/Site.md#isecommerceenabled) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`isSiteSearchEnabled()`](Piwik/Site.md#issitesearchenabled) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`isEcommerceEnabledFor()`](Piwik/Site.md#isecommerceenabledfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
@@ -662,6 +663,7 @@ Index
 - [`render()`](Piwik/Plugin/ViewDataTable.md#render) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`$requestConfig`](Piwik/Plugins/Insights/Visualizations/Insight.md#$requestconfig) &mdash; _Property in class_ [`Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; _Class in namespace_ `Piwik` 
+- [`$readableByCurrentUser`](Piwik/Settings/SystemSetting.md#$readablebycurrentuser) &mdash; _Property in class_ [`SystemSetting`](Piwik/Settings/SystemSetting.md)
 - [`removeAllUserSettingsForUser()`](Piwik/Settings/UserSetting.md#removeallusersettingsforuser) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)
 - [`rescheduleTask()`](Piwik/TaskScheduler.md#rescheduletask) &mdash; _Method in class_ [`TaskScheduler`](Piwik/TaskScheduler.md)
 - [`redirectToReferrer()`](Piwik/Url.md#redirecttoreferrer) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
