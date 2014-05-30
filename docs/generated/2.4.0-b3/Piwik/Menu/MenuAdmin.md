@@ -5,15 +5,14 @@ MenuAdmin
 
 Contains menu entries for the Admin menu.
 
-Plugins can subscribe to the 
-[Menu.Admin.addItems](/api-reference/hooks#menuadminadditems) event to add new pages to the admin menu.
+Plugins can implement the `configureAdminMenu()` method of the `Menu` plugin class to add, rename of remove
+items. If your plugin does not have a `Menu` class yet you can create one using `./console generate:menu`.
 
 **Example**
 
-    // add a new page in an observer to Menu.Admin.addItems
-    public function addAdminMenuItem()
+    public function configureAdminMenu(MenuAdmin $menu)
     {
-        MenuAdmin::getInstance()->add(
+        $menu->add(
             'MyPlugin_MyTranslatedAdminMenuCategory',
             'MyPlugin_MyTranslatedAdminPageName',
             array('module' => 'MyPlugin', 'action' => 'index'),

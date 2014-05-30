@@ -211,7 +211,8 @@ The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getName()`](#getname) &mdash; Returns the setting's persisted name, eg, `'refreshInterval'`.
-- [`canBeDisplayedForCurrentUser()`](#canbedisplayedforcurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
+- [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
+- [`isReadableByCurrentUser()`](#isreadablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 - [`setStorage()`](#setstorage) &mdash; Sets the object used to persist settings.
 - [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value.
 - [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value.
@@ -261,9 +262,19 @@ Returns the setting's persisted name, eg, `'refreshInterval'`.
 
 - It returns a `string` value.
 
-<a name="canbedisplayedforcurrentuser" id="canbedisplayedforcurrentuser"></a>
-<a name="canBeDisplayedForCurrentUser" id="canBeDisplayedForCurrentUser"></a>
-### `canBeDisplayedForCurrentUser()`
+<a name="iswritablebycurrentuser" id="iswritablebycurrentuser"></a>
+<a name="isWritableByCurrentUser" id="isWritableByCurrentUser"></a>
+### `isWritableByCurrentUser()`
+
+Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="isreadablebycurrentuser" id="isreadablebycurrentuser"></a>
+<a name="isReadableByCurrentUser" id="isReadableByCurrentUser"></a>
+### `isReadableByCurrentUser()`
 
 Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 

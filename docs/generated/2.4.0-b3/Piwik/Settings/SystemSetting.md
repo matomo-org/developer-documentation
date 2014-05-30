@@ -10,6 +10,23 @@ the value of this setting will affect all users.
 
 See [Settings](/api-reference/Piwik/Plugin/Settings).
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$readableByCurrentUser`](#$readablebycurrentuser) &mdash; By default the value of the system setting is only readable by SuperUsers but someone the value should be readable by everyone.
+
+<a name="$readablebycurrentuser" id="$readablebycurrentuser"></a>
+<a name="readableByCurrentUser" id="readableByCurrentUser"></a>
+### `$readableByCurrentUser`
+
+By default the value of the system setting is only readable by SuperUsers but someone the value should be readable by everyone.
+
+#### Signature
+
+- It is a `bool` value.
+
 Methods
 -------
 
