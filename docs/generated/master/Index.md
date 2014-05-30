@@ -42,6 +42,8 @@ Index
 - [`aggregateDayReport()`](Piwik/Plugin/Archiver.md#aggregatedayreport) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`aggregateMultipleReports()`](Piwik/Plugin/Archiver.md#aggregatemultiplereports) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`assignTemplateVar()`](Piwik/Plugin/Visualization.md#assigntemplatevar) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
+- [`afterGenericFiltersAreAppliedToLoadedDataTable()`](Piwik/Plugin/Visualization.md#aftergenericfiltersareappliedtoloadeddatatable) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
+- [`afterAllFiltersAreApplied()`](Piwik/Plugin/Visualization.md#afterallfiltersareapplied) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`Archiver`](Piwik/Plugins/Actions/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\Actions` 
 - [`AllColumns`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable/AllColumns.md) &mdash; _Class in namespace_ [`Piwik\Plugins\CoreVisualizations\Visualizations\HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable) 
 - [`Archiver`](Piwik/Plugins/CustomVariables/Archiver.md) &mdash; _Class in namespace_ `Piwik\Plugins\CustomVariables` 
@@ -77,6 +79,9 @@ Index
 - [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`beautify()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#beautify) &mdash; _Method in class_ [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
 - [`BeautifyTimeRangeLabels`](Piwik/DataTable/Filter/BeautifyTimeRangeLabels.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
+- [`beforeLoadDataTable()`](Piwik/Plugin/Visualization.md#beforeloaddatatable) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
+- [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](Piwik/Plugin/Visualization.md#beforegenericfiltersareappliedtoloadeddatatable) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
+- [`beforeRender()`](Piwik/Plugin/Visualization.md#beforerender) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`Bar`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Bar.md) &mdash; _Class in namespace_ [`Piwik\Plugins\CoreVisualizations\Visualizations\JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph) 
 - [`build()`](Piwik/ViewDataTable/Factory.md#build) &mdash; _Method in class_ [`Factory`](Piwik/ViewDataTable/Factory.md)
 
