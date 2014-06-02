@@ -365,7 +365,7 @@ Usages:
 - [Console.filterCommands](#consolefiltercommands)
 
 ### Console.filterCommands
-_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [99](https://github.com/piwik/piwik/blob/master/core/Console.php#L99)_
+_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [97](https://github.com/piwik/piwik/blob/master/core/Console.php#L97)_
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
 should subscribe to this event and remove commands from the existing list.
@@ -811,7 +811,7 @@ Callback Signature:
 - [Referrer.addSocialUrls](#referreraddsocialurls)
 
 ### Referrer.addSearchEngineUrls
-_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [753](https://github.com/piwik/piwik/blob/master/core/Common.php#L753)_
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [766](https://github.com/piwik/piwik/blob/master/core/Common.php#L766)_
 
 
 
@@ -820,7 +820,7 @@ Callback Signature:
 
 
 ### Referrer.addSocialUrls
-_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [792](https://github.com/piwik/piwik/blob/master/core/Common.php#L792)_
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [805](https://github.com/piwik/piwik/blob/master/core/Common.php#L805)_
 
 
 
