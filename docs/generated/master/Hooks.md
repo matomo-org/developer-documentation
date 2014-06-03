@@ -1443,7 +1443,7 @@ Callback Signature:
 
 
 ### Tracker.getVisitFieldsToPersist
-_Defined in [Piwik/Tracker/Visitor](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php) in line [284](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php#L284)_
+_Defined in [Piwik/Tracker/Visitor](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php) in line [282](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php#L282)_
 
 Triggered when checking if the current action being tracked belongs to an existing visit. This event collects a list of [visit entity]() properties that should be loaded when reading
 the existing visit. Properties that appear in this list will be available in other tracking
