@@ -1418,7 +1418,7 @@ Callback Signature:
 
 
 ### Tracker.existingVisitInformation
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [259](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L259)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [266](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L266)_
 
 Triggered before a [visit entity](/guides/persistence-and-the-mysql-backend#visits) is updated when tracking an action for an existing visit. This event can be used to modify the visit properties that will be updated before the changes
 are persisted.
@@ -1443,7 +1443,7 @@ Callback Signature:
 
 
 ### Tracker.getVisitFieldsToPersist
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [917](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L917)_
+_Defined in [Piwik/Tracker/Visitor](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php) in line [284](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php#L284)_
 
 Triggered when checking if the current action being tracked belongs to an existing visit. This event collects a list of [visit entity]() properties that should be loaded when reading
 the existing visit. Properties that appear in this list will be available in other tracking
@@ -1504,7 +1504,7 @@ Callback Signature:
 
 
 ### Tracker.newVisitorInformation
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [313](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L313)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [320](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L320)_
 
 Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
 The UserCountry plugin, for example, uses this event to add location information for each visit.
