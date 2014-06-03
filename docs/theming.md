@@ -24,7 +24,7 @@ In Piwik, **themes** are special types of plugins that change the look and feel 
 
 This guide assumes that you:
 
-* can code in PHP and JavaScript,
+* can code in HTML, PHP, CSS and JavaScript,
 * and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
 ## Creating a theme
@@ -37,9 +37,11 @@ After you enter the appropriate information, a theme will be created for you in 
 
 ### Simple theming
 
+For simple theming we mean slighty and fast modifications to the CSS using [Leaner CSS](http://en.wikipedia.org/wiki/LESS_%28stylesheet_language%29). Yes Sir, Piwik uses LESS.
+ 
 #### Colors and fonts
 
-Colors that are used in CSS are simple to override. Usually it is enough to just change the value of less variables. For example to change the background from white to black you can simply define the following variable:
+Colors that are used in CSS are simple to override. Usually it is enough to just change the value of variables set using LESS. For example to change the background from white to black you can simply define the following variable:
 
     @theme-color-background-base: #000;
     
@@ -61,7 +63,7 @@ Although we do not recommend to do so you can change the colors of a specific el
 
 Please use this method only if needed as elements, id's or class names might change in the future and break your theme.
 
-#### Icons 
+#### Icons override
 
 Overriding icons is fairly easy. Just create a folder named `images` and place an icon having the same file name as the origin icon. For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/piwik/piwik/tree/master/plugins/Morpheus/images). It is not possible yet to override icons used in reports such as browser or search engine icons.
 
@@ -285,6 +287,26 @@ Then use those colors in PHP:
 
         // ... generate the image ...
     }
+
+## Twig, the template engine
+
+Piwik is using [Twig template language](http://en.wikipedia.org/wiki/Twig_%28template_engine%29), its language was inspired by Jinja and Django.
+
+If you're going to edit HTML output, don't hack dirty Piwik templates, because after the next upgrade you could loose all your modifications.
+
+In a short sentence: you can override Twig themes in Piwik writing your own plugin that brings new templates saved in an appropriate directory, using the same filename of the original template. Go on reading to learn more.
+
+### Twig themes templates override
+
+Themes could bring twig templates with them, so can be overridden by placing a twig template of the same name in **plugins/[myTheme]/templates**.
+
+<!-- we need a more explicit example -->
+
+### Twig plugins templates override
+
+Plugins bring also templates that can be overridden by placing twig templates of the same name in your **plugins/[myTheme]/templates/plugin/[overridenPlugin]/**
+
+<!-- we need an example for this also -->
 
 ## Learn more
 
