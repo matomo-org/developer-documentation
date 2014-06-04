@@ -278,9 +278,7 @@ And change the **index.twig** template to look like this:
 
     {{ getLastVisitsByBrowserReport|raw }}
 
-Now if you view the page in Piwik, you'll see something like this:
 
-<img src="/img/myplugin_new_report_display.png"/>
 
 ### Updating the report in realtime
 
