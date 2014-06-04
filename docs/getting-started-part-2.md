@@ -103,7 +103,7 @@ If you click on it, the page will be loaded below the period selector:
 
 ### Adding a new report
 
-We've created a plugin and got it to display something in Piwik's UI. Now let's make it show something useful. We're going to create a new report that shows the browsers used by the most recent visits to a website. We'll be using data returned by the [Live!](/docs/real-time/#the-real-time-live-widget) plugin so we won't have to do much processing ourselves.
+We've created a plugin and got it to display something in Piwik's UI. Now let's make it show something useful. We're going to create a new report that shows the browsers used by the most recent visits to a website. We'll be using data returned by the [Live!](http://piwik.org/docs/real-time/#the-real-time-live-widget) plugin so we won't have to do much processing ourselves.
 
 <div markdown="1" class="alert alert-warning">
 **On reports and metrics**
