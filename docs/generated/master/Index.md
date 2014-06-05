@@ -809,6 +809,7 @@ Index
 - [`Tasks`](Piwik/Plugins/CorePluginsAdmin/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\CorePluginsAdmin` 
 - [`Tasks`](Piwik/Plugins/CoreUpdater/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreUpdater` 
 - [`Tasks`](Piwik/Plugins/DBStats/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\DBStats` 
+- [`Tasks`](Piwik/Plugins/ExamplePlugin/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\ExamplePlugin` 
 - [`Tasks`](Piwik/Plugins/PrivacyManager/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\PrivacyManager` 
 - [`Tasks`](Piwik/Plugins/ScheduledReports/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\ScheduledReports` 
 - [`Tasks`](Piwik/Plugins/UserCountry/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\UserCountry` 

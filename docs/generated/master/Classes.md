@@ -89,6 +89,7 @@ This is a complete list of available classes:
 - [`Plugins\DBStats\Tasks`](Piwik/Plugins/DBStats/Tasks.md)
 - [`Plugins\DevicesDetection\Archiver`](Piwik/Plugins/DevicesDetection/Archiver.md)
 - [`Plugins\Events\Archiver`](Piwik/Plugins/Events/Archiver.md) &mdash; Processing reports for Events
+- [`Plugins\ExamplePlugin\Tasks`](Piwik/Plugins/ExamplePlugin/Tasks.md)
 - [`Plugins\ExampleVisualization\SimpleTable`](Piwik/Plugins/ExampleVisualization/SimpleTable.md) &mdash; SimpleTable Visualization.
 - [`Plugins\Goals\Archiver`](Piwik/Plugins/Goals/Archiver.md)
 - [`Plugins\Goals\Visualizations\Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_goals_columns to true.

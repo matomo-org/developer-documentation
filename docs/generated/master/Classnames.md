@@ -85,6 +85,7 @@
 ## Plugins\DBStats\Tasks
 ## Plugins\DevicesDetection\Archiver
 ## Plugins\Events\Archiver
+## Plugins\ExamplePlugin\Tasks
 ## Plugins\ExampleVisualization\SimpleTable
 ## Plugins\Goals\Archiver
 ## Plugins\Goals\Visualizations\Goals
