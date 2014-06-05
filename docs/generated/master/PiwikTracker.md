@@ -130,6 +130,7 @@ The class defines the following methods:
 - [`setAttributionInfo()`](#setattributioninfo) &mdash; Sets the attribution information to the visit, so that subsequent Goal conversions are properly attributed to the right Referrer URL, timestamp, Campaign Name & Keyword.
 - [`setCustomVariable()`](#setcustomvariable) &mdash; Sets Visit Custom Variable.
 - [`getCustomVariable()`](#getcustomvariable) &mdash; Returns the currently assigned Custom Variable.
+- [`clearCustomVariables()`](#clearcustomvariables) &mdash; Clears any Custom Variable that may be have been set.
 - [`setNewVisitorId()`](#setnewvisitorid) &mdash; Sets the current visitor ID to a random new one.
 - [`setIdSite()`](#setidsite) &mdash; Sets the current site ID.
 - [`setBrowserLanguage()`](#setbrowserlanguage) &mdash; Sets the Browser language.
@@ -474,6 +475,19 @@ If scope is 'visit', it will attempt to read the value set in the first party co
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
+<a name="clearcustomvariables" id="clearcustomvariables"></a>
+<a name="clearCustomVariables" id="clearCustomVariables"></a>
+### `clearCustomVariables()`
+
+Clears any Custom Variable that may be have been set.
+
+This can be useful when you have enabled bulk requests,
+and you wish to clear Custom Variables of 'visit' scope.
+
+#### Signature
+
+- It does not return anything.
+
 <a name="setnewvisitorid" id="setnewvisitorid"></a>
 <a name="setNewVisitorId" id="setNewVisitorId"></a>
 ### `setNewVisitorId()`
@@ -714,8 +728,8 @@ Enables the bulk request feature.
 When used, each tracking action is stored until the
 doBulkTrack method is called. This method will send all tracking data at once.
 
-Note: when you enable bulk tracking, all the properties of this object will be reset
-after each request is sent (ie. datetimes, settings, visitor id, etc. will be initialized to "false").
+Note: when you enable bulk tracking, consider calling clearCustomVariables() before setting other
+attributes to your visitors and requests to track.
 
 #### Signature
 
