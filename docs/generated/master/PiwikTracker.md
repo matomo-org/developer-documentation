@@ -714,6 +714,9 @@ Enables the bulk request feature.
 When used, each tracking action is stored until the
 doBulkTrack method is called. This method will send all tracking data at once.
 
+Note: when you enable bulk tracking, all the properties of this object will be reset
+after each request is sent (ie. datetimes, settings, visitor id, etc. will be initialized to "false").
+
 #### Signature
 
 - It does not return anything.
