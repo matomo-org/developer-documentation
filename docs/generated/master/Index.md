@@ -122,6 +122,7 @@ Index
 - [`configureTopMenu()`](Piwik/Plugin/Menu.md#configuretopmenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
 - [`configureUserMenu()`](Piwik/Plugin/Menu.md#configureusermenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
 - [`configureAdminMenu()`](Piwik/Plugin/Menu.md#configureadminmenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
+- [`custom()`](Piwik/Plugin/Tasks.md#custom) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`$config`](Piwik/Plugin/ViewDataTable.md#$config) &mdash; _Property in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`canDisplayViewDataTable()`](Piwik/Plugin/ViewDataTable.md#candisplayviewdatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
@@ -172,6 +173,7 @@ Index
 - [`deleteLike()`](Piwik/Option.md#deletelike) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
 - [`deactivate()`](Piwik/Plugin.md#deactivate) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`$date`](Piwik/Plugin/Controller.md#$date) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
+- [`daily()`](Piwik/Plugin/Tasks.md#daily) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`Daily`](Piwik/ScheduledTime/Daily.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`$description`](Piwik/Settings/Setting.md#$description) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$defaultValue`](Piwik/Settings/Setting.md#$defaultvalue) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
@@ -234,6 +236,7 @@ Index
 - [`fetchRemoteFile()`](Piwik/Http.md#fetchremotefile) &mdash; _Method in class_ [`Http`](Piwik/Http.md)
 - [`$flags`](Piwik/Notification.md#$flags) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`factory()`](Piwik/Period.md#factory) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
+- [`findComponent()`](Piwik/Plugin.md#findcomponent) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`factory()`](Piwik/ScheduledTime.md#factory) &mdash; _Method in class_ [`ScheduledTime`](Piwik/ScheduledTime.md)
 - [`$footer_icons`](Piwik/ViewDataTable/Config.md#$footer_icons) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$filters`](Piwik/ViewDataTable/Config.md#$filters) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
@@ -485,6 +488,7 @@ Index
 - [`hasTheUserSuperUserAccess()`](Piwik/Piwik.md#hastheusersuperuseraccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`hasUserSuperUserAccess()`](Piwik/Piwik.md#hasusersuperuseraccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`hasMissingDependencies()`](Piwik/Plugin.md#hasmissingdependencies) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`hourly()`](Piwik/Plugin/Tasks.md#hourly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
 - [`Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`$hide_annotations_view`](Piwik/ViewDataTable/Config.md#$hide_annotations_view) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
@@ -591,6 +595,7 @@ Index
 - [`Manager`](Piwik/Notification/Manager.md) &mdash; _Class in namespace_ [`Piwik\Notification`](Piwik/Notification) 
 - [`Manager`](Piwik/Plugin/Manager.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`Menu`](Piwik/Plugin/Menu.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
+- [`monthly()`](Piwik/Plugin/Tasks.md#monthly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`$metrics_documentation`](Piwik/ViewDataTable/Config.md#$metrics_documentation) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 
@@ -799,6 +804,14 @@ Index
 - [`$type`](Piwik/Notification.md#$type) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`toString()`](Piwik/Period.md#tostring) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
 - [`translate()`](Piwik/Piwik.md#translate) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
+- [`Tasks`](Piwik/Plugin/Tasks.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
+- [`Tasks`](Piwik/Plugins/CoreAdminHome/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreAdminHome` 
+- [`Tasks`](Piwik/Plugins/CorePluginsAdmin/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\CorePluginsAdmin` 
+- [`Tasks`](Piwik/Plugins/CoreUpdater/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreUpdater` 
+- [`Tasks`](Piwik/Plugins/DBStats/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\DBStats` 
+- [`Tasks`](Piwik/Plugins/PrivacyManager/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\PrivacyManager` 
+- [`Tasks`](Piwik/Plugins/ScheduledReports/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\ScheduledReports` 
+- [`Tasks`](Piwik/Plugins/UserCountry/Tasks.md) &mdash; _Class in namespace_ `Piwik\Plugins\UserCountry` 
 - [`$type`](Piwik/Settings/Setting.md#$type) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$transform`](Piwik/Settings/Setting.md#$transform) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$title`](Piwik/Settings/Setting.md#$title) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
@@ -836,6 +849,7 @@ Index
 
 - [`walkPath()`](Piwik/DataTable.md#walkpath) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`warning()`](Piwik/Log.md#warning) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
+- [`weekly()`](Piwik/Plugin/Tasks.md#weekly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`Weekly`](Piwik/ScheduledTime/Weekly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`WidgetsList`](Piwik/WidgetsList.md) &mdash; _Class in namespace_ `Piwik` 
 

@@ -66,9 +66,13 @@
 ## Plugin\Manager
 ## Plugin\Menu
 ## Plugin\Settings
+## Plugin\Tasks
 ## Plugin\ViewDataTable
 ## Plugin\Visualization
 ## Plugins\Actions\Archiver
+## Plugins\CoreAdminHome\Tasks
+## Plugins\CorePluginsAdmin\Tasks
+## Plugins\CoreUpdater\Tasks
 ## Plugins\CoreVisualizations\Visualizations\Cloud
 ## Plugins\CoreVisualizations\Visualizations\Graph
 ## Plugins\CoreVisualizations\Visualizations\HtmlTable
@@ -78,6 +82,7 @@
 ## Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution
 ## Plugins\CoreVisualizations\Visualizations\JqplotGraph\Pie
 ## Plugins\CustomVariables\Archiver
+## Plugins\DBStats\Tasks
 ## Plugins\DevicesDetection\Archiver
 ## Plugins\Events\Archiver
 ## Plugins\ExampleVisualization\SimpleTable
@@ -85,9 +90,12 @@
 ## Plugins\Goals\Visualizations\Goals
 ## Plugins\Insights\Visualizations\Insight
 ## Plugins\Live\VisitorLog
+## Plugins\PrivacyManager\Tasks
 ## Plugins\Provider\Archiver
 ## Plugins\Referrers\Archiver
+## Plugins\ScheduledReports\Tasks
 ## Plugins\UserCountry\Archiver
+## Plugins\UserCountry\Tasks
 ## Plugins\UserSettings\Archiver
 ## Plugins\VisitTime\Archiver
 ## Plugins\VisitorInterest\Archiver

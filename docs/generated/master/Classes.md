@@ -70,9 +70,13 @@ This is a complete list of available classes:
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
 - [`Plugin\Menu`](Piwik/Plugin/Menu.md) &mdash; Base class of all plugin menu providers.
 - [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all plugin settings providers.
+- [`Plugin\Tasks`](Piwik/Plugin/Tasks.md)
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
 - [`Plugins\Actions\Archiver`](Piwik/Plugins/Actions/Archiver.md) &mdash; Class encapsulating logic to process Day/Period Archiving for the Actions reports
+- [`Plugins\CoreAdminHome\Tasks`](Piwik/Plugins/CoreAdminHome/Tasks.md)
+- [`Plugins\CorePluginsAdmin\Tasks`](Piwik/Plugins/CorePluginsAdmin/Tasks.md)
+- [`Plugins\CoreUpdater\Tasks`](Piwik/Plugins/CoreUpdater/Tasks.md)
 - [`Plugins\CoreVisualizations\Visualizations\Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; Generates a tag cloud from a given data array.
 - [`Plugins\CoreVisualizations\Visualizations\Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; This is an abstract visualization that should be the base of any 'graph' visualization.
 - [`Plugins\CoreVisualizations\Visualizations\HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md) &mdash; DataTable visualization that shows DataTable data in an HTML table.
@@ -82,6 +86,7 @@ This is a complete list of available classes:
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md) &mdash; Visualization that renders HTML for a line graph using jqPlot.
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Pie`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Pie.md) &mdash; Visualization that renders HTML for a Pie graph using jqPlot.
 - [`Plugins\CustomVariables\Archiver`](Piwik/Plugins/CustomVariables/Archiver.md)
+- [`Plugins\DBStats\Tasks`](Piwik/Plugins/DBStats/Tasks.md)
 - [`Plugins\DevicesDetection\Archiver`](Piwik/Plugins/DevicesDetection/Archiver.md)
 - [`Plugins\Events\Archiver`](Piwik/Plugins/Events/Archiver.md) &mdash; Processing reports for Events
 - [`Plugins\ExampleVisualization\SimpleTable`](Piwik/Plugins/ExampleVisualization/SimpleTable.md) &mdash; SimpleTable Visualization.
@@ -89,9 +94,12 @@ This is a complete list of available classes:
 - [`Plugins\Goals\Visualizations\Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_goals_columns to true.
 - [`Plugins\Insights\Visualizations\Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md) &mdash; InsightsVisualization Visualization.
 - [`Plugins\Live\VisitorLog`](Piwik/Plugins/Live/VisitorLog.md) &mdash; A special DataTable visualization for the Live.getLastVisitsDetails API method.
+- [`Plugins\PrivacyManager\Tasks`](Piwik/Plugins/PrivacyManager/Tasks.md)
 - [`Plugins\Provider\Archiver`](Piwik/Plugins/Provider/Archiver.md)
 - [`Plugins\Referrers\Archiver`](Piwik/Plugins/Referrers/Archiver.md)
+- [`Plugins\ScheduledReports\Tasks`](Piwik/Plugins/ScheduledReports/Tasks.md)
 - [`Plugins\UserCountry\Archiver`](Piwik/Plugins/UserCountry/Archiver.md)
+- [`Plugins\UserCountry\Tasks`](Piwik/Plugins/UserCountry/Tasks.md)
 - [`Plugins\UserSettings\Archiver`](Piwik/Plugins/UserSettings/Archiver.md) &mdash; Archiver for UserSettings Plugin
 - [`Plugins\VisitTime\Archiver`](Piwik/Plugins/VisitTime/Archiver.md)
 - [`Plugins\VisitorInterest\Archiver`](Piwik/Plugins/VisitorInterest/Archiver.md)
