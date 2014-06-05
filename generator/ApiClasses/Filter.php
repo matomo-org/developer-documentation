@@ -107,6 +107,14 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         if ($rc->isSubclassOf('Symfony\Component\Console\Command\Command')) {
             return true;
         }
+        
+        if ($rc->isSubclassOf('Piwik\Plugin\Tasks')) {
+            return true;
+        }
+        
+        if ($rc->isSubclassOf('Piwik\Plugin\Menu')) {
+            return true;
+        }
 
         return $rc->isSubclassOf('Piwik\Plugin\Controller');
     }
