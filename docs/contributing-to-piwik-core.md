@@ -174,6 +174,7 @@ And finally, now that the changes are part of Piwik, there's no need for your fe
 
     git branch -D bugfix
 
+
 <a name="piwik-core-coding-standards"></a>
 ## Piwik Core Code Standards
 
@@ -271,12 +272,6 @@ For more information about running or creating tests, read our [Automated Testin
 When naming unit/integration tests, it helps to use the **Given**, **When**, **Then** convention for writing tests.
 
 Tests are critical part of ensuring Piwik stays a stable and useful software platform. We aim to keep test code as clean as production code so it is easy to improve and maintain.
-
-### Manual UI Testing
-
-**If you have modified the Javascript code, CSS, HTML, or PHP code that can affect the User Interface, you must manually test the UI to make sure everything still works.** Read about each manual check and test in our [Manual UI Testing](/guides/manual-ui-testing) guide.
-
-If all UI tests pass, you have successfully made a change to the Piwik UI.
 
 ## Learn more
 
