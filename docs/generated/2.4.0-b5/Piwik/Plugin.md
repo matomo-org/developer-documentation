@@ -89,6 +89,7 @@ The class defines the following methods:
 - [`getVersion()`](#getversion) &mdash; Returns the plugin version number.
 - [`isTheme()`](#istheme) &mdash; Returns `true` if this plugin is a theme, `false` if otherwise.
 - [`getPluginName()`](#getpluginname) &mdash; Returns the plugin's base class name without the namespace, e.g., `"UserCountry"` when the plugin class is `"Piwik\Plugins\UserCountry\UserCountry"`.
+- [`findComponent()`](#findcomponent) &mdash; Tries to find a component such as a Menu or Tasks within this plugin.
 - [`hasMissingDependencies()`](#hasmissingdependencies) &mdash; Detect whether there are any missing dependencies.
 - [`getMissingDependencies()`](#getmissingdependencies)
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
@@ -251,6 +252,51 @@ Returns the plugin's base class name without the namespace, e.g., `"UserCountry"
 
 - It is a **finalized** method.
 - It returns a `string` value.
+
+<a name="findcomponent" id="findcomponent"></a>
+<a name="findComponent" id="findComponent"></a>
+### `findComponent()`
+
+Tries to find a component such as a Menu or Tasks within this plugin.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$componentName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the component you want to look for. In case you request a component named 'Menu' it'll look for a file named 'Menu.php' within the root of the plugin folder that implements a class named Piwik\Plugin\$PluginName\Menu . If such a file exists but does not implement this class it'll silently ignored.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$expectedSubclass` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> If not empty, a check will be performed whether a found file extends the given subclass. If the requested file exists but does not extend this class a warning will be shown to advice a developer to extend this certain class.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`stdClass`](http://php.net/class.stdClass)|`null`) &mdash;
+    <div markdown="1" class="param-desc">Null if the requested component does not exist or an instance of the found component.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="hasmissingdependencies" id="hasmissingdependencies"></a>
 <a name="hasMissingDependencies" id="hasMissingDependencies"></a>

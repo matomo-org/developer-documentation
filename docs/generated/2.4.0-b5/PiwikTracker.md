@@ -130,6 +130,7 @@ The class defines the following methods:
 - [`setAttributionInfo()`](#setattributioninfo) &mdash; Sets the attribution information to the visit, so that subsequent Goal conversions are properly attributed to the right Referrer URL, timestamp, Campaign Name & Keyword.
 - [`setCustomVariable()`](#setcustomvariable) &mdash; Sets Visit Custom Variable.
 - [`getCustomVariable()`](#getcustomvariable) &mdash; Returns the currently assigned Custom Variable.
+- [`clearCustomVariables()`](#clearcustomvariables) &mdash; Clears any Custom Variable that may be have been set.
 - [`setNewVisitorId()`](#setnewvisitorid) &mdash; Sets the current visitor ID to a random new one.
 - [`setIdSite()`](#setidsite) &mdash; Sets the current site ID.
 - [`setBrowserLanguage()`](#setbrowserlanguage) &mdash; Sets the Browser language.
@@ -473,6 +474,19 @@ If scope is 'visit', it will attempt to read the value set in the first party co
 </ul>
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
+
+<a name="clearcustomvariables" id="clearcustomvariables"></a>
+<a name="clearCustomVariables" id="clearCustomVariables"></a>
+### `clearCustomVariables()`
+
+Clears any Custom Variable that may be have been set.
+
+This can be useful when you have enabled bulk requests,
+and you wish to clear Custom Variables of 'visit' scope.
+
+#### Signature
+
+- It does not return anything.
 
 <a name="setnewvisitorid" id="setnewvisitorid"></a>
 <a name="setNewVisitorId" id="setNewVisitorId"></a>

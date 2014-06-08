@@ -66,6 +66,7 @@
 ## Plugin\Manager
 ## Plugin\Menu
 ## Plugin\Settings
+## Plugin\Tasks
 ## Plugin\ViewDataTable
 ## Plugin\Visualization
 ## Plugins\CoreVisualizations\Visualizations\Cloud

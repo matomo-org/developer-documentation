@@ -70,6 +70,7 @@ This is a complete list of available classes:
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
 - [`Plugin\Menu`](Piwik/Plugin/Menu.md) &mdash; Base class of all plugin menu providers.
 - [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all plugin settings providers.
+- [`Plugin\Tasks`](Piwik/Plugin/Tasks.md) &mdash; Base class for all Tasks declarations.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
 - [`Plugins\CoreVisualizations\Visualizations\Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; Generates a tag cloud from a given data array.
