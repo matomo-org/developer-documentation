@@ -59,7 +59,6 @@ Index
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](Piwik/ViewDataTable/RequestConfig.md#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`areQueuedFiltersDisabled()`](Piwik/ViewDataTable/RequestConfig.md#arequeuedfiltersdisabled) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`areGenericFiltersDisabled()`](Piwik/ViewDataTable/RequestConfig.md#aregenericfiltersdisabled) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`add()`](Piwik/WidgetsList.md#add) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## B
 
@@ -114,6 +113,7 @@ Index
 - [`custom()`](Piwik/Plugin/Tasks.md#custom) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`$config`](Piwik/Plugin/ViewDataTable.md#$config) &mdash; _Property in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`canDisplayViewDataTable()`](Piwik/Plugin/ViewDataTable.md#candisplayviewdatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
+- [`configure()`](Piwik/Plugin/Widgets.md#configure) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md#$config) &mdash; _Property in class_ [`Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md)
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md#$config) &mdash; _Property in class_ [`Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md)
@@ -466,7 +466,6 @@ Index
 - [`getTemplateVars()`](Piwik/View/UIControl.md#gettemplatevars) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`getClientSideProperties()`](Piwik/View/UIControl.md#getclientsideproperties) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`getClientSideParameters()`](Piwik/View/UIControl.md#getclientsideparameters) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
-- [`get()`](Piwik/WidgetsList.md#get) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## H
 
@@ -538,7 +537,6 @@ Index
 - [`isSiteSearchEnabledFor()`](Piwik/Site.md#issitesearchenabledfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`isLocalUrl()`](Piwik/Url.md#islocalurl) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`$idSubtable`](Piwik/ViewDataTable/RequestConfig.md#$idsubtable) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`isDefined()`](Piwik/WidgetsList.md#isdefined) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## J
 
@@ -674,7 +672,6 @@ Index
 - [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; _Class in namespace_ `Piwik\ViewDataTable` 
 - [`$request_parameters_to_modify`](Piwik/ViewDataTable/RequestConfig.md#$request_parameters_to_modify) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`render()`](Piwik/View/UIControl.md#render) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
-- [`remove()`](Piwik/WidgetsList.md#remove) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## S
 
@@ -832,8 +829,8 @@ Index
 - [`walkPath()`](Piwik/DataTable.md#walkpath) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`warning()`](Piwik/Log.md#warning) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
 - [`weekly()`](Piwik/Plugin/Tasks.md#weekly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
+- [`Widgets`](Piwik/Plugin/Widgets.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`Weekly`](Piwik/ScheduledTime/Weekly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
-- [`WidgetsList`](Piwik/WidgetsList.md) &mdash; _Class in namespace_ `Piwik` 
 
 ## Y
 

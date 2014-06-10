@@ -73,6 +73,7 @@ This is a complete list of available classes:
 - [`Plugin\Tasks`](Piwik/Plugin/Tasks.md) &mdash; Base class for all Tasks declarations.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
+- [`Plugin\Widgets`](Piwik/Plugin/Widgets.md) &mdash; Base class of all plugin widget providers.
 - [`Plugins\CoreVisualizations\Visualizations\Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; Generates a tag cloud from a given data array.
 - [`Plugins\CoreVisualizations\Visualizations\Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; This is an abstract visualization that should be the base of any 'graph' visualization.
 - [`Plugins\CoreVisualizations\Visualizations\HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md) &mdash; DataTable visualization that shows DataTable data in an HTML table.
@@ -109,4 +110,3 @@ This is a complete list of available classes:
 - [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
 - [`ViewDataTable\RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; Contains base request properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances.
 - [`View\UIControl`](Piwik/View/UIControl.md) &mdash; Base type of UI controls.
-- [`WidgetsList`](Piwik/WidgetsList.md) &mdash; Manages the global list of reports that can be displayed as dashboard widgets.

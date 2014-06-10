@@ -69,6 +69,7 @@
 ## Plugin\Tasks
 ## Plugin\ViewDataTable
 ## Plugin\Visualization
+## Plugin\Widgets
 ## Plugins\CoreVisualizations\Visualizations\Cloud
 ## Plugins\CoreVisualizations\Visualizations\Graph
 ## Plugins\CoreVisualizations\Visualizations\HtmlTable
@@ -105,4 +106,3 @@
 ## ViewDataTable\Factory
 ## ViewDataTable\RequestConfig
 ## View\UIControl
-## WidgetsList
