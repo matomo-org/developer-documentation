@@ -49,6 +49,8 @@ The class defines the following methods:
 
 Executes the requested plugin controller method.
 
+See also fetchDispatch().
+
 #### Signature
 
 -  It accepts the following parameter(s):
