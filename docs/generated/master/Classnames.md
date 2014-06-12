@@ -82,6 +82,7 @@
 ## Plugins\Goals\Visualizations\Goals
 ## Plugins\Insights\Visualizations\Insight
 ## Plugins\Live\VisitorLog
+## Plugins\UsersManager\UserPreferences
 ## RankingQuery
 ## ScheduledTask
 ## ScheduledTime
