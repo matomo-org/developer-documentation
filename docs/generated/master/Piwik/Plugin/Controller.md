@@ -115,6 +115,9 @@ The abstract class defines the following methods:
 - [`setHostValidationVariablesView()`](#sethostvalidationvariablesview) &mdash; Checks if the current host is valid and sets variables on the given view, including:
 - [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
 - [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current HTTP request to another module/action.
+- [`getDefaultWebsiteId()`](#getdefaultwebsiteid) &mdash; Returns default site ID that Piwik should load.
+- [`getDefaultDate()`](#getdefaultdate) &mdash; Returns default date for Piwik reports.
+- [`getDefaultPeriod()`](#getdefaultperiod) &mdash; Returns default period type for Piwik reports.
 - [`checkTokenInUrl()`](#checktokeninurl) &mdash; Checks that the token_auth in the URL matches the currently logged-in user's token_auth.
 - [`getCalendarPrettyDate()`](#getcalendarprettydate) &mdash; Returns a prettified date string for use in period selector widget.
 - [`getEvolutionHtml()`](#getevolutionhtml) &mdash; Calculates the evolution from one value to another and returns HTML displaying the evolution percent.
@@ -707,6 +710,73 @@ This function will exit immediately after executing.
    </li>
    </ul>
 - It does not return anything.
+
+<a name="getdefaultwebsiteid" id="getdefaultwebsiteid"></a>
+<a name="getDefaultWebsiteId" id="getDefaultWebsiteId"></a>
+### `getDefaultWebsiteId()`
+
+Returns default site ID that Piwik should load.
+
+_Note: This value is a Piwik setting set by each user._
+
+#### Signature
+
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`|`int`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="getdefaultdate" id="getdefaultdate"></a>
+<a name="getDefaultDate" id="getDefaultDate"></a>
+### `getDefaultDate()`
+
+Returns default date for Piwik reports.
+
+_Note: This value is a Piwik setting set by each user._
+
+#### Signature
+
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">`'today'`, `'2010-01-01'`, etc.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="getdefaultperiod" id="getdefaultperiod"></a>
+<a name="getDefaultPeriod" id="getDefaultPeriod"></a>
+### `getDefaultPeriod()`
+
+Returns default period type for Piwik reports.
+
+#### Signature
+
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">`'day'`, `'week'`, `'month'`, `'year'` or `'range'`</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="checktokeninurl" id="checktokeninurl"></a>
 <a name="checkTokenInUrl" id="checkTokenInUrl"></a>

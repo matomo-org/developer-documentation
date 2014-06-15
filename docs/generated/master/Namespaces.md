@@ -25,7 +25,6 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\Insights`](Piwik/Plugins/Insights)
 - [`Piwik\Plugins\Insights\Visualizations`](Piwik/Plugins/Insights/Visualizations)
 - [`Piwik\Plugins\Live`](Piwik/Plugins/Live)
-- [`Piwik\Plugins\UsersManager`](Piwik/Plugins/UsersManager)
 - [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 - [`Piwik\Settings`](Piwik/Settings)
 - [`Piwik\View`](Piwik/View)
