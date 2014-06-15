@@ -93,6 +93,7 @@ The class defines the following methods:
 - [`hasMissingDependencies()`](#hasmissingdependencies) &mdash; Detect whether there are any missing dependencies.
 - [`getMissingDependencies()`](#getmissingdependencies)
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
+- [`getPluginNameFromNamespace()`](#getpluginnamefromnamespace) &mdash; Extracts the plugin name from a namespace name or a fully qualified class name.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -362,6 +363,44 @@ Returns `false` if we can't find one.
       `$backtrace` (`array`) &mdash;
 
       <div markdown="1" class="param-desc"> The result of [debug_backtrace()](http://php.net/function.debug_backtrace()) or [Exception::getTrace()](http://www.php.net/manual/en/exception.gettrace.php).</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`Piwik\false`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="getpluginnamefromnamespace" id="getpluginnamefromnamespace"></a>
+<a name="getPluginNameFromNamespace" id="getPluginNameFromNamespace"></a>
+### `getPluginNameFromNamespace()`
+
+Extracts the plugin name from a namespace name or a fully qualified class name.
+
+Returns `false`
+if we can't find one.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$namespaceOrClassName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The namespace or class string.</div>
 
       <div style="clear:both;"/>
 

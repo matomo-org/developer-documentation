@@ -373,6 +373,7 @@ Index
 - [`getPluginName()`](Piwik/Plugin.md#getpluginname) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getMissingDependencies()`](Piwik/Plugin.md#getmissingdependencies) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getPluginNameFromBacktrace()`](Piwik/Plugin.md#getpluginnamefrombacktrace) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`getPluginNameFromNamespace()`](Piwik/Plugin.md#getpluginnamefromnamespace) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getProcessor()`](Piwik/Plugin/Archiver.md#getprocessor) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`getLogAggregator()`](Piwik/Plugin/Archiver.md#getlogaggregator) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`getDateParameterInTimezone()`](Piwik/Plugin/Controller.md#getdateparameterintimezone) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
