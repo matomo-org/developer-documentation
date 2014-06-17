@@ -54,8 +54,28 @@ Make sure the name you chose is currently available, and if it's not, pick anoth
 
 ### Getting your plugin ready to publish
 
-Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/piwik/piwik/blob/master/plugins/ExamplePlugin/plugin.json)** file. The **README.md** file should contain a description of your plugin and some documentation.
+Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/piwik/piwik/blob/master/plugins/ExamplePlugin/plugin.json)** file.
 
+#### README.md file
+The **README.md** file should contain a description of your plugin and some documentation.
+Sections in this file are used to build the plugin page on the Marketplace.
+
+Let's take a look at the CustomAlerts plugin [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
+This file is written in Markdown format. It includes the following sections: `Description`, `FAQ`, `Changelog` and `Support`.
+The sections in your README are then directly displayed on your plugin page in the Marketplace! Checkout the [CustomAlerts plugin](http://plugins.piwik.org/CustomAlerts) page created from the README file.
+
+#### Screenshots
+
+To make your plugin shine on the Piwik marketplace: include screenshots in your Git repository!
+
+Prepare a few screenshots of your plugin in action.
+Place them in a directory `screenshots/` in your plugin folder.
+Give them a descriptive name: filenames will be used as the legend below each screenshot.
+
+See the result for the [CustomAlerts plugin screenshots](http://plugins.piwik.org/CustomAlerts) (click on the Screenshots link).
+These screenshots are stored [in git: CustomAlerts/screenshots](https://github.com/piwik/plugin-CustomAlerts/tree/master/screenshots).
+
+#### plugin.json file
 <a name="plugin-json-required-fields"></a>
 The **plugin.json** file must contain the following information:
 
