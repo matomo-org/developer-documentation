@@ -298,15 +298,15 @@ In a short sentence: you can override Twig themes in Piwik writing your own plug
 
 ### Twig themes templates override
 
-Themes could bring twig templates with them, so can be overridden by placing a twig template of the same name in **plugins/[myTheme]/templates**.
+Themes could bring Twig templates with them and they could be overridden by placing a .twig file of the same name in your templates directory: **./plugins/[myThemePlugin]/templates/dashboard.twig**.
 
-<!-- we need a more explicit example -->
+<!-- we need a more explicit example, ExampleTheme plugin in Piwik codebase could be the best place -->
 
 ### Twig plugins templates override
 
-Plugins bring also templates that can be overridden by placing twig templates of the same name in your **plugins/[myTheme]/templates/plugin/[overridenPlugin]/**
+Plugins bring also templates that can be overridden by placing a .twig file of the same name in your custom plugin templates directory:  **./plugins/[myThemePlugin]/templates/plugins/[overridenPlugin]/[overridenTemplate].twig**
 
-<!-- we need an example for this also -->
+<!-- we need a more explicit example for this. Maybe in the codebase, ExampleVisualization plugin could bring a twig template ovveriding ExampleTheme simpleTable.twig -->
 
 ## Learn more
 
