@@ -43,7 +43,7 @@ class InlineLinkParser {
 
                 $link = new Link($matches[1][$key]);
                 $anchor = strtolower(str_replace('.', '', $link->getDestination()));
-                $linkFormatted = sprintf('[%s](/api-reference/hooks#%s)', $link->getDescription(), $anchor);
+                $linkFormatted = sprintf('[%s](/api-reference/events#%s)', $link->getDescription(), $anchor);
 
                 $comment = str_replace($rawLink, $linkFormatted, $comment);
             }
