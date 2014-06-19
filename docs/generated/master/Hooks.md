@@ -566,9 +566,10 @@ Callback Signature:
 
 - [Live.API.getIdSitesString](#liveapigetidsitesstring)
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
+- [Live.makeNewVisitorObject](#livemakenewvisitorobject)
 
 ### Live.API.getIdSitesString
-_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [716](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L716)_
+_Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [718](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L718)_
 
 
 
@@ -595,6 +596,21 @@ Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
 
 - `array` `$visitorProfile` The unaugmented visitor profile info.
+
+
+### Live.makeNewVisitorObject
+_Defined in [Piwik/Plugins/Live/VisitorFactory](https://github.com/piwik/piwik/blob/master/plugins/Live/VisitorFactory.php) in line [39](https://github.com/piwik/piwik/blob/master/plugins/Live/VisitorFactory.php#L39)_
+
+Triggered while visit is filtering in live plugin. Subscribers to this
+event can force the use of a custom visitor object that extends from
+Piwik\Plugins\Live\VisitorInterface.
+
+Callback Signature:
+<pre><code>function(&amp;$visitor, $visitorRawData)</code></pre>
+
+- `\Piwik\Plugins\Live\VisitorInterface` `&$visitor` Initialized to null, but can be set to a new visitor object. If it isn't modified Piwik uses the default class.
+
+- `array` `$visitorRawData` Raw data using in Visitor object constructor.
 
 ## Log
 

@@ -73,8 +73,8 @@ _Note: A dimension is essentially the same as a **GROUP BY** field._
         $country = $row['location_country'];
         $numEcommerceSales = $row[Metrics::INDEX_GOAL_NB_CONVERSIONS];
         $numVisitsWithEcommerceSales = $row[Metrics::INDEX_GOAL_NB_VISITS_CONVERTED];
-        $avgTaxForCountry = $country['avg_tax'];
-        $maxShippingForCountry = $country['max_shipping'];
+        $avgTaxForCountry = $row['avg_tax'];
+        $maxShippingForCountry = $row['max_shipping'];
 
         // ... do something with aggregated data ...
     }
