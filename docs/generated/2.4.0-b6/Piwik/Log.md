@@ -58,7 +58,7 @@ in the custom class.
 
 ### Custom log writers
 
-New logging backends can be added via the [Log.getAvailableWriters](/api-reference/hooks#loggetavailablewriters)` event. A log
+New logging backends can be added via the [Log.getAvailableWriters](/api-reference/events#loggetavailablewriters)` event. A log
 writer is just a callback that accepts log entry information (such as the message,
 level, etc.), so any backend could conceivably be used (including existing PSR3
 backends).

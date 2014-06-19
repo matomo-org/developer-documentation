@@ -29,10 +29,10 @@ Callback Signature:
 ### API.$pluginName.$methodName
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/2.4.0-b6/core/API/Proxy.php) in line [206](https://github.com/piwik/piwik/blob/2.4.0-b6/core/API/Proxy.php#L206)_
 
-Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch)
+Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/events#apirequestdispatch)
 event is triggered. It can be used to modify the arguments passed to a **single** API method.
 
-_Note: This is can be accomplished with the [API.Request.dispatch](/api-reference/hooks#apirequestdispatch) event as well, however
+_Note: This is can be accomplished with the [API.Request.dispatch](/api-reference/events#apirequestdispatch) event as well, however
 event handlers for that event will have to do more work._
 
 **Example**
@@ -52,10 +52,10 @@ Callback Signature:
 _Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/2.4.0-b6/core/API/Proxy.php) in line [256](https://github.com/piwik/piwik/blob/2.4.0-b6/core/API/Proxy.php#L256)_
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
-[API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event. It can be used to modify the output of a **single**
+[API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event. It can be used to modify the output of a **single**
 API method.
 
-_Note: This can be accomplished with the [API.Request.dispatch.end](/api-reference/hooks#apirequestdispatchend) event as well,
+_Note: This can be accomplished with the [API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event as well,
 however event handlers for that event will have to do more work._
 
 **Example**
@@ -109,7 +109,7 @@ of available reports.
 Callback Signature:
 <pre><code>function(&amp;$availableReports, $parameters)</code></pre>
 
-- `array` `&$availableReports` List of all report metadata. Read the [API.getReportMetadata](/api-reference/hooks#apigetreportmetadata) docs to see what this array contains.
+- `array` `&$availableReports` List of all report metadata. Read the [API.getReportMetadata](/api-reference/events#apigetreportmetadata) docs to see what this array contains.
 
 - `array` `$parameters` Contains the values of the sites and period we are getting reports for. Some report depend on this data. For example, Goals reports depend on the site IDs being request. Contains the following information: - **idSites**: The array of site IDs we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
 
@@ -393,11 +393,11 @@ Callback Signature:
 ### Controller.$module.$action
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/2.4.0-b6/core/FrontController.php) in line [500](https://github.com/piwik/piwik/blob/2.4.0-b6/core/FrontController.php#L500)_
 
-Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/hooks#requestdispatch)
+Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
 
-It can be used to do the same things as the [Request.dispatch](/api-reference/hooks#requestdispatch) event, but for one controller
-action only. Using this event will result in a little less code than [Request.dispatch](/api-reference/hooks#requestdispatch).
+It can be used to do the same things as the [Request.dispatch](/api-reference/events#requestdispatch) event, but for one controller
+action only. Using this event will result in a little less code than [Request.dispatch](/api-reference/events#requestdispatch).
 
 Callback Signature:
 <pre><code>function(&amp;$parameters)</code></pre>
@@ -408,12 +408,12 @@ Callback Signature:
 ### Controller.$module.$action.end
 _Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/2.4.0-b6/core/FrontController.php) in line [517](https://github.com/piwik/piwik/blob/2.4.0-b6/core/FrontController.php#L517)_
 
-Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/hooks#requestdispatchend)
+Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
 
-It can be used to do the same things as the [Request.dispatch.end](/api-reference/hooks#requestdispatchend) event, but for one
+It can be used to do the same things as the [Request.dispatch.end](/api-reference/events#requestdispatchend) event, but for one
 controller action only. Using this event will result in a little less code than
-[Request.dispatch.end](/api-reference/hooks#requestdispatchend).
+[Request.dispatch.end](/api-reference/events#requestdispatchend).
 
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>
@@ -1521,7 +1521,7 @@ _Defined in [Piwik/Tracker/Visitor](https://github.com/piwik/piwik/blob/2.4.0-b6
 
 Triggered when checking if the current action being tracked belongs to an existing visit. This event collects a list of [visit entity]() properties that should be loaded when reading
 the existing visit. Properties that appear in this list will be available in other tracking
-events such as [Tracker.newConversionInformation](/api-reference/hooks#trackernewconversioninformation) and [Tracker.newVisitorInformation](/api-reference/hooks#trackernewvisitorinformation).
+events such as [Tracker.newConversionInformation](/api-reference/events#trackernewconversioninformation) and [Tracker.newVisitorInformation](/api-reference/events#trackernewvisitorinformation).
 
 Plugins can use this event to load additional visit entity properties for later use during tracking.
 When you add fields to this $fields array, they will be later available in Tracker.newConversionInformation

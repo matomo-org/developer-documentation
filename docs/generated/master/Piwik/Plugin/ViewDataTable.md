@@ -48,7 +48,7 @@ ways to render a report within its controller method. You can either:
 
 1. manually create and configure a ViewDataTable instance
 2. invoke Piwik\Plugin\Controller::renderReport and configure the ViewDataTable instance
-   in the [ViewDataTable.configure](/api-reference/hooks#viewdatatableconfigure) event.
+   in the [ViewDataTable.configure](/api-reference/events#viewdatatableconfigure) event.
 
 ViewDataTable instances are configured by setting and modifying display properties and request
 properties.
@@ -81,7 +81,7 @@ First, a controller method that displays a single report:
         return $this->renderReport(__FUNCTION__);`
     }
 
-Then the event handler for the [ViewDataTable.configure](/api-reference/hooks#viewdatatableconfigure) event:
+Then the event handler for the [ViewDataTable.configure](/api-reference/events#viewdatatableconfigure) event:
 
     public function configureViewDataTable(ViewDataTable $view)
     {
@@ -170,7 +170,7 @@ The abstract class defines the following methods:
 Constructor.
 
 Initializes display and request properties to their default values.
-Posts the [ViewDataTable.configure](/api-reference/hooks#viewdatatableconfigure) event which plugins can use to configure the
+Posts the [ViewDataTable.configure](/api-reference/events#viewdatatableconfigure) event which plugins can use to configure the
 way reports are displayed.
 
 #### Signature

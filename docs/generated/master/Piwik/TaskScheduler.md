@@ -7,7 +7,7 @@ Manages scheduled task execution.
 
 A scheduled task is a callback that should be executed every so often (such as daily,
 weekly, monthly, etc.). They are registered with **TaskScheduler** through the
-[TaskScheduler.getScheduledTasks](/api-reference/hooks#taskschedulergetscheduledtasks) event.
+[TaskScheduler.getScheduledTasks](/api-reference/events#taskschedulergetscheduledtasks) event.
 
 Tasks are executed when the cron core:archive command is executed.
 
