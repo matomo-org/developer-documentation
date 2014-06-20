@@ -290,23 +290,18 @@ Then use those colors in PHP:
 
 ## Twig, the template engine
 
-Piwik is using [Twig template language](http://en.wikipedia.org/wiki/Twig_%28template_engine%29), its language was inspired by Jinja and Django.
+Piwik uses [Twig template language](http://en.wikipedia.org/wiki/Twig_%28template_engine%29).
 
-If you're going to edit HTML output, don't hack dirty Piwik templates, because after the next upgrade you could loose all your modifications.
+When creating a theme, you do not need to create or change any template.
+The recommended best way to create a theme for Piwik is to only use LESS (CSS) and Javascript.
 
-In a short sentence: you can override Twig themes in Piwik writing your own plugin that brings new templates saved in an appropriate directory, using the same filename of the original template. Go on reading to learn more.
+However in some rare cases where advanced customisation is needed, it may be of interest to customise .twig templates files.
 
-### Twig themes templates override
+Please note: this is not recommended, use at your own risk!
 
-Themes could bring Twig templates with them and they could be overridden by placing a .twig file of the same name in your templates directory: **./plugins/[myThemePlugin]/templates/dashboard.twig**.
+ * To override a twig templates from default `Morpheus` theme: place a .twig template file with the same name in your `templates/` directory as follows: `./plugins/[myThemePlugin]/templates/dashboard.twig`
+ * To override twig templates used in a plugin: place a .twig template file with the same name in your plugin's `templates/` directory as follows: `./plugins/[myThemePlugin]/templates/plugins/[overridenPlugin]/[overridenTemplate].twig`
 
-<!-- we need a more explicit example, ExampleTheme plugin in Piwik codebase could be the best place -->
-
-### Twig plugins templates override
-
-Plugins bring also templates that can be overridden by placing a .twig file of the same name in your custom plugin templates directory:  **./plugins/[myThemePlugin]/templates/plugins/[overridenPlugin]/[overridenTemplate].twig**
-
-<!-- we need a more explicit example for this. Maybe in the codebase, ExampleVisualization plugin could bring a twig template ovveriding ExampleTheme simpleTable.twig -->
 
 ## Learn more
 
