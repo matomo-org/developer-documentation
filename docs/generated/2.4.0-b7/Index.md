@@ -373,6 +373,7 @@ Index
 - [`getPluginName()`](Piwik/Plugin.md#getpluginname) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getMissingDependencies()`](Piwik/Plugin.md#getmissingdependencies) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getPluginNameFromBacktrace()`](Piwik/Plugin.md#getpluginnamefrombacktrace) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`getPluginNameFromNamespace()`](Piwik/Plugin.md#getpluginnamefromnamespace) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getProcessor()`](Piwik/Plugin/Archiver.md#getprocessor) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`getLogAggregator()`](Piwik/Plugin/Archiver.md#getlogaggregator) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`getDateParameterInTimezone()`](Piwik/Plugin/Controller.md#getdateparameterintimezone) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
@@ -380,9 +381,6 @@ Index
 - [`getLastUnitGraph()`](Piwik/Plugin/Controller.md#getlastunitgraph) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`getLastUnitGraphAcrossPlugins()`](Piwik/Plugin/Controller.md#getlastunitgraphacrossplugins) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`getUrlSparkline()`](Piwik/Plugin/Controller.md#geturlsparkline) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
-- [`getDefaultWebsiteId()`](Piwik/Plugin/Controller.md#getdefaultwebsiteid) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
-- [`getDefaultDate()`](Piwik/Plugin/Controller.md#getdefaultdate) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
-- [`getDefaultPeriod()`](Piwik/Plugin/Controller.md#getdefaultperiod) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`getCalendarPrettyDate()`](Piwik/Plugin/Controller.md#getcalendarprettydate) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`getEvolutionHtml()`](Piwik/Plugin/Controller.md#getevolutionhtml) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`getThemeEnabled()`](Piwik/Plugin/Manager.md#getthemeenabled) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
@@ -398,6 +396,9 @@ Index
 - [`getDataTable()`](Piwik/Plugin/ViewDataTable.md#getdatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
 - [`Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; _Class in namespace_ `Piwik\Plugins\Goals\Visualizations` 
+- [`getDefaultWebsiteId()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultwebsiteid) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
+- [`getDefaultDate()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultdate) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
+- [`getDefaultPeriod()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultperiod) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`generateQuery()`](Piwik/RankingQuery.md#generatequery) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`getObjectInstance()`](Piwik/ScheduledTask.md#getobjectinstance) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
 - [`getClassName()`](Piwik/ScheduledTask.md#getclassname) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
@@ -806,6 +807,7 @@ Index
 - [`unlockAllTables()`](Piwik/Db.md#unlockalltables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`unlinkRecursive()`](Piwik/Filesystem.md#unlinkrecursive) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`uninstall()`](Piwik/Plugin.md#uninstall) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md) &mdash; _Class in namespace_ `Piwik\Plugins\UsersManager` 
 - [`$uiControlType`](Piwik/Settings/Setting.md#$uicontroltype) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$uiControlAttributes`](Piwik/Settings/Setting.md#$uicontrolattributes) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`UserSetting`](Piwik/Settings/UserSetting.md) &mdash; _Class in namespace_ `Piwik\Settings` 
