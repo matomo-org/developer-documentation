@@ -77,6 +77,7 @@ This class defines the following properties:
 - [`$footer_icons`](#$footer_icons) &mdash; Controls what footer icons are displayed on the bottom left of the DataTable view.
 - [`$show_visualization_only`](#$show_visualization_only) &mdash; Controls whether the buttons and UI controls around the visualization or shown or if just the visualization alone is shown.
 - [`$show_goals`](#$show_goals) &mdash; Controls whether the goals footer icon is shown.
+- [`$show_insights`](#$show_insights) &mdash; Controls whether the 'insights' footer icon is shown.
 - [`$translations`](#$translations) &mdash; Array property mapping DataTable column names with their internationalized names.
 - [`$show_exclude_low_population`](#$show_exclude_low_population) &mdash; Controls whether the 'Exclude Low Population' option (visible in the popup that displays after clicking the 'cog' icon) is shown.
 - [`$show_flatten_table`](#$show_flatten_table) &mdash; Whether to show the 'Flatten' option (visible in the popup that displays after clicking the 'cog' icon).
@@ -197,6 +198,17 @@ Controls whether the buttons and UI controls around the visualization or shown o
 ### `$show_goals`
 
 Controls whether the goals footer icon is shown.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$show_insights" id="$show_insights"></a>
+<a name="show_insights" id="show_insights"></a>
+### `$show_insights`
+
+Controls whether the 'insights' footer icon is shown.
 
 #### Signature
 

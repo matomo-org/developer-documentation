@@ -756,6 +756,7 @@ Index
 - [`singleReport()`](Piwik/View.md#singlereport) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`$show_visualization_only`](Piwik/ViewDataTable/Config.md#$show_visualization_only) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_goals`](Piwik/ViewDataTable/Config.md#$show_goals) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$show_insights`](Piwik/ViewDataTable/Config.md#$show_insights) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_exclude_low_population`](Piwik/ViewDataTable/Config.md#$show_exclude_low_population) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_flatten_table`](Piwik/ViewDataTable/Config.md#$show_flatten_table) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_table`](Piwik/ViewDataTable/Config.md#$show_table) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
