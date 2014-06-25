@@ -34,6 +34,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `h` &mdash; The current hour (local time).
     * `m` &mdash; The current minute (local time).
     * `s` &mdash; The current second (local time).
+    * plugins used by the visitor can be specified by setting the following parameters to 1: `fla` (Flash), `java` (Java), `dir` (Director), `qt` (Quicktime), `realp` (Real Player), `pdf` (PDF), `wma` (Windows Media), `gears` (Gears), `ag` (Silverlight).
 
     * `ua` &mdash; An override value for the **User-Agent** HTTP header field. The user agent is used to detect the operating system and browser used.
     * `lang` &mdash; An override value for the **Accept-Language** HTTP header field. This value is used to detect the visitor's country if [GeoIP](http://piwik.org/faq/troubleshooting/#faq_65) is not enabled.
@@ -49,6 +50,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `idgoal` &mdash; If specified, the tracking request will trigger a conversion for the [goal](http://piwik.org/docs/tracking-goals-web-analytics/) of the website being tracked with this ID.
     * `revenue` &mdash; A monetary value that was generated as revenue by this goal conversion. Only used if **idgoal** is specified in the request.
     * `gt_ms` &mdash; The amount of time it took the server to generate this action, in milliseconds. This value is used to process the [Page speed report](http://piwik.org/docs/page-speed/) **Avg. generation time** column in the Page URL and Page Title reports, as well as a site wide running average of the speed of your server. _Note: when using the Javascript tracker this value is set to the ime for server to generate response + the time for client to download response._
+    * `cs` &mdash; The charset of the page being tracked. Specify the charset if the data you send to Piwik is encoded in a different character set than the default `utf-8`.
 
 * Optional [Event Tracking](http://piwik.org/docs/event-tracking/) info
     * `e_c` &mdash; The event category. Must not be empty. (eg. Videos, Music, Games...)
