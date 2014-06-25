@@ -605,6 +605,7 @@ Starting with Piwik 1.2, first party cookies are used. Consideration must be giv
 *   `setSessionCookieTimeout( seconds )` - the default is 30 minutes
 
 _Advanced uses_
+
 *   `addListener( element )` - Add click listener to a specific link element. When clicked, Piwik will log the click automatically.
 *   `setRequestMethod( method )` - Set the request method to either "GET" or "POST". (The default is "GET".) To use the POST request method, the Piwik host must be the same as the tracked website host (Piwik installed in the same domain as your tracked website).
 *   `setCustomRequestProcessing( function )` - Set a function that will process the request content. The function will be called once the request (query parameters string) has been prepared, and before the request content is sent.
