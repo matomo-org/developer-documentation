@@ -542,8 +542,6 @@ _Requesting the Tracker Instance from the Piwik Class_
 _Using the Tracker Object_
 
 *   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use a pseudo-click handler to track browsers (such as Firefox) which don't generate click events for the middle mouse button. By default only "true" mouse click events are handled.
-*   `addListener( element )` - Add click listener to a specific link element. When clicked, Piwik will log the click automatically.
-*   `setRequestMethod( method )` - Set the request method to either "GET" or "POST". (The default is "GET".) To use the POST request method, the Piwik host must be the same as the tracked website host (Piwik installed in the same domain as your tracked website).
 *   `trackEvent(category, action, [name], [value])` - Logs an event with an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name and optional numeric value.
 *   `trackPageView([customTitle])` - Logs a visit to this page
 *   `trackSiteSearch(keyword, [category], [resultsCount])` - Log an internal site search for a specific keyword, in an optional category, specifying the optional count of search results in the page.
@@ -605,6 +603,13 @@ Starting with Piwik 1.2, first party cookies are used. Consideration must be giv
 *   `setVisitorCookieTimeout( seconds )` - the default is 2 years
 *   `setReferralCookieTimeout( seconds )` - the default is 6 months
 *   `setSessionCookieTimeout( seconds )` - the default is 30 minutes
+
+_Advanced uses_
+*   `addListener( element )` - Add click listener to a specific link element. When clicked, Piwik will log the click automatically.
+*   `setRequestMethod( method )` - Set the request method to either "GET" or "POST". (The default is "GET".) To use the POST request method, the Piwik host must be the same as the tracked website host (Piwik installed in the same domain as your tracked website).
+*   `setCustomRequestProcessing( function )` - Set a function that will process the request content. The function will be called once the request (query parameters string) has been prepared, and before the request content is sent.
+*   `setRequestContentType( contentType )` - Set request Content-Type header value. Applicable when "POST" request method is used via `setRequestMethod`.
+
 
 ## Unit Tests Covering piwik.js
 
