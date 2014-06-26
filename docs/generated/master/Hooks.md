@@ -1608,7 +1608,7 @@ Callback Signature:
 
 
 ### Tracker.newVisitorInformation
-_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [318](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L318)_
+_Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [320](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L320)_
 
 Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
 The UserCountry plugin, for example, uses this event to add location information for each visit.
