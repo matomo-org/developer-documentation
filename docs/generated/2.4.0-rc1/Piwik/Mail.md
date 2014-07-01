@@ -13,6 +13,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setDefaultFromPiwik()`](#setdefaultfrompiwik)
 - [`setFrom()`](#setfrom) &mdash; Sets the sender.
+- [`setReplyTo()`](#setreplyto) &mdash; Set Reply-To Header
 - [`send()`](#send)
 
 <a name="__construct" id="__construct"></a>
@@ -72,6 +73,40 @@ Sets the sender.
       `$name` (`null`|`string`) &mdash;
 
       <div markdown="1" class="param-desc"> Name of the sender.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `Zend_Mail` value.
+
+<a name="setreplyto" id="setreplyto"></a>
+<a name="setReplyTo" id="setReplyTo"></a>
+### `setReplyTo()`
+
+Set Reply-To Header
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$email` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`null`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
