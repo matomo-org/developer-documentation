@@ -74,8 +74,7 @@ Related classes: [Piwik_Site](https://github.com/piwik/piwik/blob/master/core/Si
 
 ##### Archived Data
 
-An archive in Piwik is the aggregate of data for a given period. It's the result of the logs being processed into meaningful data (see the section
-[Statistics Logger](http://dev.piwik.org/trac/wiki/DatabaseSchema#Statisticslogger)).
+An archive in Piwik is the aggregate of data for a given period. It's the result of the logs being processed into meaningful data.
 
 A row in this **archive_** table contains some data for a given date/period on a website. For example, a record could contain the list of countries on the website idsite = 3 for the week of the January, 7th 2008.
 

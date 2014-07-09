@@ -22,7 +22,7 @@ class Support {
 
         $menu['issues'] = array(
             'title'       => 'Issues',
-            'url'         => 'http://dev.piwik.org',
+            'url'         => 'https://github.com/piwik/piwik/issues',
             'description' => 'Create a bug report on our bug tracking system or check on the status of an existing bug.'
         );
 

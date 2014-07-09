@@ -109,7 +109,7 @@ See also: [List of Features](http://piwik.org/features/), [Consultants](http://p
 
 ## User Interface
 
-Usability is very important for us. If you can write html, css or even jquery: discuss, suggest or submit a new user interface or usability improvement. You can submit recommendations on how to improve the current UI, or tackle any of the [open tickets related to UI improvements](http://dev.piwik.org/trac/query?status=assigned&amp;status=new&amp;status=reopened&amp;group=status&amp;component=UI+%28templates%2C+javascript%29&amp;order=priority&amp;col=id&amp;col=summary&amp;col=owner&amp;col=type&amp;col=priority&amp;col=component&amp;col=sensitive).
+Usability is very important for us. If you can write html, css or even jquery: discuss, suggest or submit a new user interface or usability improvement. You can submit recommendations on how to improve the current UI, or tackle any of the [open tickets related to UI improvements](https://github.com/piwik/piwik/issues?labels=C%3A+UI+-+UX+%28AngularJS+twig+less%29&milestone=3&page=1&state=open).
 
 Below are the quality requirements and test plans for Piwik's interface.
 

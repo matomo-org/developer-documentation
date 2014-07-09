@@ -35,7 +35,7 @@ This guide assumes that you:
 
 ## Contribution Process
 
-The contribution process starts with a bug you want to fix or an idea that you want to implement. _If you don't have one, feel free to pick an open ticket on [dev.piwik.org](http://dev.piwik.org/trac/roadmap)._
+The contribution process starts with a bug you want to fix or an idea that you want to implement. _If you don't have one, feel free to pick an open ticket on [github.com/piwik/piwik/issues/milestones](https://github.com/piwik/piwik/issues/milestones)._
 
 Once you've decided on something, continue below.
 
@@ -276,5 +276,5 @@ Tests are critical part of ensuring Piwik stays a stable and useful software pla
 ## Learn more
 
 * To **learn the basics of Piwik development** in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.
-* To see a **list of available things you could work on** see our [roadmaps](http://dev.piwik.org/trac/roadmap)
+* To see a **list of available things you could work on** see our [upcoming milestone](https://github.com/piwik/piwik/issues/milestones)
 * To learn **more about Piwik's test suite** see our [Automated Testing](/guides/automated-tests) guide.

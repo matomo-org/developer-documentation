@@ -17,7 +17,7 @@ This guide describes how we, the team of developers that makes changes to Piwik 
 
 ## How we manage our work
 
-We use **[trac](http://dev.piwik.org/trac)** to keep track of all bugs, feature requests and tasks that concern Piwik, the website and Piwik's documentation.
+We use **[Github](https://github.com/piwik/piwik/issues)** to keep track of all bugs, feature requests and tasks that concern Piwik, the website and Piwik's documentation.
 
 We make sure all tickets contain enough information, including:
 
@@ -25,23 +25,23 @@ We make sure all tickets contain enough information, including:
 * if a new feature, explain the use case with suggestions or a specification,
 * if a UI improvement, mockups or a detailed description of the changes.
 
-We are rather obsessed with keeping trac an organized place. Tickets are generally prioritized by severity. Tickets are either of the type 'Bug', 'New feature' or 'Task'. All Bugs are moved to the current roadmap because of our [no-bug policy](http://piwik.org/roadmap/). Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
+We are rather obsessed with keeping trac an organized place. Tickets are generally prioritized by severity. Tickets are either of the type 'Bug', 'New feature' or 'Task'. All Bugs are moved to the current milestone because of our [no-bug policy](http://piwik.org/roadmap/). Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
 
-## Roadmaps and Backlog
+## Milestones and Backlog
 
-Trac, Piwik's official issue tracker, has been used since [the beginning of the project](http://piwik.org/history/). All opened tickets are grouped in [Roadmaps](http://dev.piwik.org/trac/roadmap). Click the menu link 'Roadmap' [in trac](http://dev.piwik.org). The Current roadmap is listed at the very top and contains all the most important tickets to fix in accordance with our [mission and vision for the Piwik analytics platform](http://piwik.org/roadmap/).
+Trac, Piwik's official issue tracker, has been used since [the beginning of the project](http://piwik.org/history/). All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). The Current milestone is listed at the very top and contains all the most important tickets to fix in accordance with our [mission and vision for the Piwik analytics platform](http://piwik.org/roadmap/).
 
-All other important and exciting tickets are moved to [The Great Piwik 2.x Backlog](http://dev.piwik.org/trac/query?status=assigned&status=new&status=reopened&milestone=2.x+-+The+Great+Piwik+2.x+Backlog&group=priority&col=id&col=summary&col=owner&col=type&col=priority&col=component&col=time&order=priority). This roadmap is our active Tickets Backlog. From time to time, we move one ticket from the Great Piwik 2.x Backlog to the current roadmap.
+All other important and exciting tickets are moved to [The Great Piwik 2.x Backlog](https://github.com/piwik/piwik/issues?milestone=40&state=open). This milestone is our active Tickets Backlog. From time to time, we move one ticket from the Great Piwik 2.x Backlog to the current milestone.
 
-Other ideas and suggestions which we are not planning to implement in the future are moved to the [Future Releases roadmap](http://dev.piwik.org/trac/query?status=assigned&status=new&status=reopened&milestone=Future+releases&group=priority&col=id&col=summary&col=owner&col=type&col=priority&col=component&col=time&order=priority).
+Other ideas and suggestions which we are not planning to implement in the future are moved to the [Future Releases milestone](https://github.com/piwik/piwik/issues?milestone=3&state=open).
 
 ## Our release process
 
-We try to publish a new Piwik release about once a month. A release is ready when the following release conditions are met. Our [continuous integration tests](http://piwik.org/qa/) must be green. Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik. All critical tickets [to the corresponding roadmap](http://dev.piwik.org/trac/roadmap) must be closed. All [officially supported plugins](http://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](http://plugins.piwik.org/) must be compatible.
+We try to publish a new Piwik release about once a month. A release is ready when the following release conditions are met. Our [continuous integration tests](http://piwik.org/qa/) must be green. Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik. All critical tickets [to the corresponding milestone](https://github.com/piwik/piwik/issues/milestones) must be closed. All [officially supported plugins](http://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](http://plugins.piwik.org/) must be compatible.
 
 To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)). A shell script is then run to generate the archives (zip and tar.gz) which are copied to the build server [builds.piwik.org](http://builds.piwik.org/). The file [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. Within hours, Piwik installations will be updated by users via the one click [upgrade mechanism](http://piwik.org/docs/update/) &ndash; or by manual upgrades.
 
-The Changelog is then updated with a new entry for this release. The changelog typically lists [all tickets closed in this release](http://dev.piwik.org/trac/report/1), and point people to the newest [FAQs](http://piwik.org/faq/) and [User guides](http://piwik.org/faq/).
+The Changelog is then updated with a new entry for this release. The changelog typically lists all tickets closed in this release, and point people to the newest [FAQs](http://piwik.org/faq/) and [User guides](http://piwik.org/faq/).
 
 Releases that contain the string "alpha", "beta", "rc", are built for testing purposes and are not advertised on [piwik.org](http://piwik.org). They are, however, made available on the build server and the [builds.piwik.org/LATEST_BETA](http://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string. You can enable Piwik to use the latest Beta release automatically if you want to test the latest features ([see this faq to learn how](http://piwik.org/faq/how-to-update/#faq_159)).
 
@@ -67,7 +67,7 @@ It is highly recommended that code committed in the [master branch](https://gith
 
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 
-This message will automatically close the ticket [#159](http://dev.piwik.org/trac/ticket/159) in trac. You can also use the magic keyword
+This message will automatically close the ticket [#472](https://github.com/piwik/piwik/issues/472) in trac. You can also use the magic keyword
 
     Refs #159
 
@@ -130,9 +130,9 @@ One way to help core development is to submit a report when you find a bug.
 If you believe you have found a bug in Piwik, please do the following:
 
 * make sure you are using the latest [Piwik release](http://piwik.org/download/)
-* search in the [forum](http://forum.piwik.org/), [FAQ](http://piwik.org/faq/) and the [issue tracker](http://dev.piwik.org/) if a similar or the same bug has already been reported.
+* search in the [forum](http://forum.piwik.org/), [FAQ](http://piwik.org/faq/) and the [issue tracker](https://github.com/piwik/piwik/issues) if a similar or the same bug has already been reported.
 * if your bug seems new, do you know the steps to follow to reproduce it?
-* if you are ready to report a bug, register an account [in the issue tracker](http://dev.piwik.org/), login and create a new ticket
+* if you are ready to report a bug, register an account [in the issue tracker](https://github.com/piwik/piwik/issues), login and [create a new ticket](https://github.com/piwik/piwik/issues/new)
 * make sure the title and description are as descriptive and clear as possible. Is the issue new to you, or has it always failed? If you give a clear description, you will greatly help developers trying to reproduce and fix the issue.
 * In the bug description, please post instructions on how to reproduce, data sets that show the error if possible, screenshots, what exactly is not working? Also include details about relevant parts of your configuration (Browser, OS, PHP version, etc.).
 
@@ -140,7 +140,7 @@ If you believe you have found a bug in Piwik, please do the following:
 
 Another way to contribute is to submit a feature request when you realize there is something you need that is missing in Piwik.
 
-You can tell us what we can do to improve Piwik in the [Feature Suggestions forum](http://forum.piwik.org/index.php?showforum=3). Please check that it is not already in the [list of Piwik tickets](http://dev.piwik.org/trac/query?status=assigned&status=new&status=reopened&type=!Bug&group=milestone&col=id&col=summary&col=status&col=owner&col=type&col=priority&col=component&order=priority).
+You can tell us what we can do to improve Piwik in the [Feature Suggestions forum](http://forum.piwik.org/index.php?showforum=3). Please check that it is not already in the [list of Piwik tickets](https://github.com/piwik/piwik/issues).
 
 When submitting a significant new feature, it is recommended to be as descriptive as possible when creating a ticket. The ticket should contain
 
