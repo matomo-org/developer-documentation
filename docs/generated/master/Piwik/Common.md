@@ -455,7 +455,7 @@ to fill the `IN (...)` part of a query.
 
 Marks an orphaned object for garbage collection.
 
-For more information: [http://dev.piwik.org/trac/ticket/374](http://dev.piwik.org/trac/ticket/374)
+For more information: [https://github.com/piwik/piwik/issues/374](https://github.com/piwik/piwik/issues/374)
 
 #### Signature
 
