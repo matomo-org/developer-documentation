@@ -25,11 +25,11 @@ We make sure all tickets contain enough information, including:
 * if a new feature, explain the use case with suggestions or a specification,
 * if a UI improvement, mockups or a detailed description of the changes.
 
-We are rather obsessed with keeping trac an organized place. Tickets are generally prioritized by severity. Tickets are either of the type 'Bug', 'New feature' or 'Task'. All Bugs are moved to the current milestone because of our [no-bug policy](http://piwik.org/roadmap/). Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
+We are rather obsessed with keeping our issue tracker an organized place. Tickets are generally prioritized by severity. Tickets are either of the type 'Bug', 'New feature' or 'Task'. All Bugs are moved to the current milestone because of our [no-bug policy](http://piwik.org/roadmap/). Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
 
 ## Milestones and Backlog
 
-Trac, Piwik's official issue tracker, has been used since [the beginning of the project](http://piwik.org/history/). All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). The Current milestone is listed at the very top and contains all the most important tickets to fix in accordance with our [mission and vision for the Piwik analytics platform](http://piwik.org/roadmap/).
+We have been using an issue tracker since [the beginning of the project](http://piwik.org/history/). All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). The Current milestone is listed at the very top and contains all the most important tickets to fix in accordance with our [mission and vision for the Piwik analytics platform](http://piwik.org/roadmap/).
 
 All other important and exciting tickets are moved to [The Great Piwik 2.x Backlog](https://github.com/piwik/piwik/issues?milestone=40&state=open). This milestone is our active Tickets Backlog. From time to time, we move one ticket from the Great Piwik 2.x Backlog to the current milestone.
 
@@ -67,7 +67,7 @@ It is highly recommended that code committed in the [master branch](https://gith
 
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 
-This message will automatically close the ticket [#472](https://github.com/piwik/piwik/issues/472) in trac. You can also use the magic keyword
+This message will automatically close the ticket [#472](https://github.com/piwik/piwik/issues/472). You can also use the magic keyword
 
     Refs #159
 
@@ -106,10 +106,6 @@ There are three mailing lists you can subscribe to and use to communicate with c
 - piwik-git [Archives](http://lists.piwik.org/pipermail/piwik-git/) (or [older svn](http://lists.piwik.org/pipermail/piwik-svn/)), [Subscribe](http://lists.piwik.org/cgi-bin/mailman/listinfo/piwik-git), [Search the archives](http://www.google.com/coop/cse?cx=012634963936527368460%3Afzsqvqnvzoi)
 
   This mailing list notifies all the commits to our [Git repository](https://github.com/piwik/piwik).
-
-- piwik-trac [Archives](http://lists.piwik.org/pipermail/piwik-trac/), [Subscribe](http://lists.piwik.org/cgi-bin/mailman/listinfo/piwik-trac), [Search the archives](http://www.google.com/coop/cse?cx=012634963936527368460%3Apjvqvv4fcvk)
-
-  This mailing list notifies all the changes to tickets in Trac (new ticket, closed, modifications, new comments, etc.)
 
 ### Using IRC
 
