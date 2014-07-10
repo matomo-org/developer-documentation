@@ -72,7 +72,7 @@ Here is an overview of the parameters you can add to any API request, where appl
 
 *   **flat**; some API functions have a parameter 'expanded', which means that the data is hierarchical. For such API function, if 'flat' is set to 1, the returned data will contain the flattened view of the table data set. The children of all first level rows will be aggregated under one row. This is useful for example to see all Custom Variables names and values at once, for example, [Piwik forum user status](http://demo.piwik.org/index.php?module=API&method=CustomVariables.getCustomVariables&idSite=7&period=month&date=yesterday&format=xml&token_auth=anonymous&flat=1), or to see the full URLs not broken down by directory or structure.
 
-*   **label**; this parameter can be used to search only for the row matching a given label. When specified, the report data will be filtered and return only the rows where the row label matches the specified parameter. For example you can set &label=Nice%20Keyword to keep only the row with a label "Nice Keyword".
+*   **label**; this parameter can be used to search only for the row matching a given label. When specified, the report data will be filtered and return only the row where the row label matches the specified parameter. For example you can set &label=Nice%20Keyword to keep only the row with a label "Nice Keyword".
 There are also generic filters you can choose to apply on all APIs that return web analytics reports. For example, there is a filter for sorting by column, define start and number of rows to return, a filter to only return rows matching a given string,
 
 *   **filter\_offset**; defines the offset of the starting row being returned
