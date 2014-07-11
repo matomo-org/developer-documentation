@@ -152,6 +152,7 @@ More to come!
 * [Google Chrome extension for AngularJS](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en). It helps you for instance to get insights into scopes
 * [PHPStorm extension for AngularJS](http://plugins.jetbrains.com/plugin/6971?pr=phpStorm)
 * [Improving ng-repeat Performance with track by](http://www.codelord.net/2014/04/15/improving-ng-repeat-performance-with-track-by/)
+* [Debugging AngularJS Apps from the Console](http://ionicframework.com/blog/angularjs-console/)
 
 ### AngularJS modules
 * http://bower.io/search/?q=angularjs#!%2Fsearch%2Fangular
