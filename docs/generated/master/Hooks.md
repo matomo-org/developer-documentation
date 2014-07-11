@@ -1644,7 +1644,7 @@ Usages:
 
 
 ### Tracker.recordAction
-_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [305](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L305)_
+_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [307](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L307)_
 
 Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions).
 
