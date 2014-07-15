@@ -69,11 +69,28 @@ This is a complete list of available classes:
 - [`Plugin\Archiver`](Piwik/Plugin/Archiver.md) &mdash; The base class that should be extended by plugins that compute their own analytics data.
 - [`Plugin\Controller`](Piwik/Plugin/Controller.md) &mdash; Base class of all plugin Controllers.
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
+- [`Plugin\Report`](Piwik/Plugin/Report.md)
 - [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all plugin settings providers.
 - [`Plugin\Tasks`](Piwik/Plugin/Tasks.md) &mdash; Base class for all Tasks declarations.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
 - [`Plugin\Widgets`](Piwik/Plugin/Widgets.md) &mdash; Base class of all plugin widget providers.
+- [`Plugins\Actions\Reports\Base`](Piwik/Plugins/Actions/Reports/Base.md)
+- [`Plugins\Actions\Reports\Get`](Piwik/Plugins/Actions/Reports/Get.md)
+- [`Plugins\Actions\Reports\GetDownloads`](Piwik/Plugins/Actions/Reports/GetDownloads.md)
+- [`Plugins\Actions\Reports\GetEntryPageTitles`](Piwik/Plugins/Actions/Reports/GetEntryPageTitles.md)
+- [`Plugins\Actions\Reports\GetEntryPageUrls`](Piwik/Plugins/Actions/Reports/GetEntryPageUrls.md)
+- [`Plugins\Actions\Reports\GetExitPageTitles`](Piwik/Plugins/Actions/Reports/GetExitPageTitles.md)
+- [`Plugins\Actions\Reports\GetExitPageUrls`](Piwik/Plugins/Actions/Reports/GetExitPageUrls.md)
+- [`Plugins\Actions\Reports\GetOutlinks`](Piwik/Plugins/Actions/Reports/GetOutlinks.md)
+- [`Plugins\Actions\Reports\GetPageTitles`](Piwik/Plugins/Actions/Reports/GetPageTitles.md)
+- [`Plugins\Actions\Reports\GetPageTitlesFollowingSiteSearch`](Piwik/Plugins/Actions/Reports/GetPageTitlesFollowingSiteSearch.md)
+- [`Plugins\Actions\Reports\GetPageUrls`](Piwik/Plugins/Actions/Reports/GetPageUrls.md)
+- [`Plugins\Actions\Reports\GetPageUrlsFollowingSiteSearch`](Piwik/Plugins/Actions/Reports/GetPageUrlsFollowingSiteSearch.md)
+- [`Plugins\Actions\Reports\GetSiteSearchCategories`](Piwik/Plugins/Actions/Reports/GetSiteSearchCategories.md)
+- [`Plugins\Actions\Reports\GetSiteSearchKeywords`](Piwik/Plugins/Actions/Reports/GetSiteSearchKeywords.md)
+- [`Plugins\Actions\Reports\GetSiteSearchNoResultKeywords`](Piwik/Plugins/Actions/Reports/GetSiteSearchNoResultKeywords.md)
+- [`Plugins\Actions\Reports\SiteSearchBase`](Piwik/Plugins/Actions/Reports/SiteSearchBase.md)
 - [`Plugins\CoreHome\Widgets`](Piwik/Plugins/CoreHome/Widgets.md)
 - [`Plugins\CoreVisualizations\Visualizations\Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; Generates a tag cloud from a given data array.
 - [`Plugins\CoreVisualizations\Visualizations\Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; This is an abstract visualization that should be the base of any 'graph' visualization.
@@ -83,19 +100,109 @@ This is a complete list of available classes:
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Bar`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Bar.md) &mdash; Visualization that renders HTML for a Bar graph using jqPlot.
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md) &mdash; Visualization that renders HTML for a line graph using jqPlot.
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Pie`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Pie.md) &mdash; Visualization that renders HTML for a Pie graph using jqPlot.
+- [`Plugins\CustomVariables\Reports\Base`](Piwik/Plugins/CustomVariables/Reports/Base.md)
+- [`Plugins\CustomVariables\Reports\GetCustomVariables`](Piwik/Plugins/CustomVariables/Reports/GetCustomVariables.md)
+- [`Plugins\CustomVariables\Reports\GetCustomVariablesValuesFromNameId`](Piwik/Plugins/CustomVariables/Reports/GetCustomVariablesValuesFromNameId.md)
+- [`Plugins\DBStats\Reports\Base`](Piwik/Plugins/DBStats/Reports/Base.md)
+- [`Plugins\DBStats\Reports\GetAdminDataSummary`](Piwik/Plugins/DBStats/Reports/GetAdminDataSummary.md) &mdash; Shows a datatable that displays the amount of space each 'admin' table takes up in the MySQL database.
+- [`Plugins\DBStats\Reports\GetDatabaseUsageSummary`](Piwik/Plugins/DBStats/Reports/GetDatabaseUsageSummary.md) &mdash; Shows a datatable that displays how much space the tracker tables, numeric archive tables, report tables and other tables take up in the MySQL database.
+- [`Plugins\DBStats\Reports\GetIndividualMetricsSummary`](Piwik/Plugins/DBStats/Reports/GetIndividualMetricsSummary.md) &mdash; Shows a datatable that displays how many occurances there are of each individual metric type stored in the MySQL database.
+- [`Plugins\DBStats\Reports\GetIndividualReportsSummary`](Piwik/Plugins/DBStats/Reports/GetIndividualReportsSummary.md) &mdash; Shows a datatable that displays how many occurances there are of each individual report type stored in the MySQL database.
+- [`Plugins\DBStats\Reports\GetMetricDataSummary`](Piwik/Plugins/DBStats/Reports/GetMetricDataSummary.md) &mdash; Shows a datatable that displays the amount of space each numeric archive table takes up in the MySQL database.
+- [`Plugins\DBStats\Reports\GetMetricDataSummaryByYear`](Piwik/Plugins/DBStats/Reports/GetMetricDataSummaryByYear.md) &mdash; Shows a datatable that displays the amount of space each numeric archive table takes up in the MySQL database, for each year of numeric data.
+- [`Plugins\DBStats\Reports\GetReportDataSummary`](Piwik/Plugins/DBStats/Reports/GetReportDataSummary.md) &mdash; Shows a datatable that displays the amount of space each blob archive table takes up in the MySQL database.
+- [`Plugins\DBStats\Reports\GetReportDataSummaryByYear`](Piwik/Plugins/DBStats/Reports/GetReportDataSummaryByYear.md) &mdash; Shows a datatable that displays the amount of space each blob archive table takes up in the MySQL database, for each year of blob data.
+- [`Plugins\DBStats\Reports\GetTrackerDataSummary`](Piwik/Plugins/DBStats/Reports/GetTrackerDataSummary.md) &mdash; Shows a datatable that displays the amount of space each individual log table takes up in the MySQL database.
+- [`Plugins\DevicesDetection\Reports\Base`](Piwik/Plugins/DevicesDetection/Reports/Base.md)
+- [`Plugins\DevicesDetection\Reports\GetBrand`](Piwik/Plugins/DevicesDetection/Reports/GetBrand.md)
+- [`Plugins\DevicesDetection\Reports\GetBrowserFamilies`](Piwik/Plugins/DevicesDetection/Reports/GetBrowserFamilies.md)
+- [`Plugins\DevicesDetection\Reports\GetBrowserVersions`](Piwik/Plugins/DevicesDetection/Reports/GetBrowserVersions.md)
+- [`Plugins\DevicesDetection\Reports\GetModel`](Piwik/Plugins/DevicesDetection/Reports/GetModel.md)
+- [`Plugins\DevicesDetection\Reports\GetOsFamilies`](Piwik/Plugins/DevicesDetection/Reports/GetOsFamilies.md)
+- [`Plugins\DevicesDetection\Reports\GetOsVersions`](Piwik/Plugins/DevicesDetection/Reports/GetOsVersions.md)
+- [`Plugins\DevicesDetection\Reports\GetType`](Piwik/Plugins/DevicesDetection/Reports/GetType.md)
+- [`Plugins\Events\Reports\Base`](Piwik/Plugins/Events/Reports/Base.md)
+- [`Plugins\Events\Reports\GetAction`](Piwik/Plugins/Events/Reports/GetAction.md)
+- [`Plugins\Events\Reports\GetCategory`](Piwik/Plugins/Events/Reports/GetCategory.md)
+- [`Plugins\Events\Reports\GetName`](Piwik/Plugins/Events/Reports/GetName.md)
+- [`Plugins\ExamplePlugin\Reports\Base`](Piwik/Plugins/ExamplePlugin/Reports/Base.md)
+- [`Plugins\ExamplePlugin\Reports\GetExampleReport`](Piwik/Plugins/ExamplePlugin/Reports/GetExampleReport.md)
 - [`Plugins\ExamplePlugin\Widgets`](Piwik/Plugins/ExamplePlugin/Widgets.md) &mdash; This class allows you to add your own widgets to the Piwik platform.
 - [`Plugins\ExampleRssWidget\Widgets`](Piwik/Plugins/ExampleRssWidget/Widgets.md)
 - [`Plugins\ExampleVisualization\Visualizations\SimpleTable`](Piwik/Plugins/ExampleVisualization/Visualizations/SimpleTable.md) &mdash; SimpleTable Visualization.
+- [`Plugins\Goals\Reports\BaseEcommerce`](Piwik/Plugins/Goals/Reports/BaseEcommerce.md)
+- [`Plugins\Goals\Reports\BaseEcommerceItem`](Piwik/Plugins/Goals/Reports/BaseEcommerceItem.md)
+- [`Plugins\Goals\Reports\BaseGoal`](Piwik/Plugins/Goals/Reports/BaseGoal.md)
+- [`Plugins\Goals\Reports\Get`](Piwik/Plugins/Goals/Reports/Get.md)
+- [`Plugins\Goals\Reports\GetDaysToConversion`](Piwik/Plugins/Goals/Reports/GetDaysToConversion.md)
+- [`Plugins\Goals\Reports\GetDaysToConversionAbandonedCart`](Piwik/Plugins/Goals/Reports/GetDaysToConversionAbandonedCart.md)
+- [`Plugins\Goals\Reports\GetDaysToConversionEcommerceOrder`](Piwik/Plugins/Goals/Reports/GetDaysToConversionEcommerceOrder.md)
+- [`Plugins\Goals\Reports\GetEcommerceAbandonedCart`](Piwik/Plugins/Goals/Reports/GetEcommerceAbandonedCart.md)
+- [`Plugins\Goals\Reports\GetEcommerceOrder`](Piwik/Plugins/Goals/Reports/GetEcommerceOrder.md)
+- [`Plugins\Goals\Reports\GetItemsCategory`](Piwik/Plugins/Goals/Reports/GetItemsCategory.md)
+- [`Plugins\Goals\Reports\GetItemsName`](Piwik/Plugins/Goals/Reports/GetItemsName.md)
+- [`Plugins\Goals\Reports\GetItemsSku`](Piwik/Plugins/Goals/Reports/GetItemsSku.md)
+- [`Plugins\Goals\Reports\GetVisitsUntilConversion`](Piwik/Plugins/Goals/Reports/GetVisitsUntilConversion.md)
+- [`Plugins\Goals\Reports\GetVisitsUntilConversionAbandonedCart`](Piwik/Plugins/Goals/Reports/GetVisitsUntilConversionAbandonedCart.md)
+- [`Plugins\Goals\Reports\GetVisitsUntilConversionEcommerceOrder`](Piwik/Plugins/Goals/Reports/GetVisitsUntilConversionEcommerceOrder.md)
 - [`Plugins\Goals\Visualizations\Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_goals_columns to true.
 - [`Plugins\Goals\Widgets`](Piwik/Plugins/Goals/Widgets.md)
 - [`Plugins\Insights\Visualizations\Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md) &mdash; InsightsVisualization Visualization.
 - [`Plugins\Insights\Widgets`](Piwik/Plugins/Insights/Widgets.md)
+- [`Plugins\Live\Reports\Base`](Piwik/Plugins/Live/Reports/Base.md)
+- [`Plugins\Live\Reports\GetLastVisitsDetails`](Piwik/Plugins/Live/Reports/GetLastVisitsDetails.md)
+- [`Plugins\Live\Reports\GetSimpleLastVisitCount`](Piwik/Plugins/Live/Reports/GetSimpleLastVisitCount.md)
 - [`Plugins\Live\VisitorLog`](Piwik/Plugins/Live/VisitorLog.md) &mdash; A special DataTable visualization for the Live.getLastVisitsDetails API method.
 - [`Plugins\Live\Widgets`](Piwik/Plugins/Live/Widgets.md)
+- [`Plugins\MultiSites\Reports\Base`](Piwik/Plugins/MultiSites/Reports/Base.md)
+- [`Plugins\MultiSites\Reports\GetAll`](Piwik/Plugins/MultiSites/Reports/GetAll.md)
+- [`Plugins\MultiSites\Reports\GetOne`](Piwik/Plugins/MultiSites/Reports/GetOne.md)
+- [`Plugins\Provider\Reports\GetProvider`](Piwik/Plugins/Provider/Reports/GetProvider.md)
+- [`Plugins\Referrers\Reports\Base`](Piwik/Plugins/Referrers/Reports/Base.md)
+- [`Plugins\Referrers\Reports\GetAll`](Piwik/Plugins/Referrers/Reports/GetAll.md)
+- [`Plugins\Referrers\Reports\GetCampaigns`](Piwik/Plugins/Referrers/Reports/GetCampaigns.md)
+- [`Plugins\Referrers\Reports\GetKeywords`](Piwik/Plugins/Referrers/Reports/GetKeywords.md)
+- [`Plugins\Referrers\Reports\GetKeywordsFromCampaignId`](Piwik/Plugins/Referrers/Reports/GetKeywordsFromCampaignId.md)
+- [`Plugins\Referrers\Reports\GetKeywordsFromSearchEngineId`](Piwik/Plugins/Referrers/Reports/GetKeywordsFromSearchEngineId.md)
+- [`Plugins\Referrers\Reports\GetReferrerType`](Piwik/Plugins/Referrers/Reports/GetReferrerType.md)
+- [`Plugins\Referrers\Reports\GetSearchEngines`](Piwik/Plugins/Referrers/Reports/GetSearchEngines.md)
+- [`Plugins\Referrers\Reports\GetSearchEnginesFromKeywordId`](Piwik/Plugins/Referrers/Reports/GetSearchEnginesFromKeywordId.md)
+- [`Plugins\Referrers\Reports\GetSocials`](Piwik/Plugins/Referrers/Reports/GetSocials.md)
+- [`Plugins\Referrers\Reports\GetUrlsForSocial`](Piwik/Plugins/Referrers/Reports/GetUrlsForSocial.md)
+- [`Plugins\Referrers\Reports\GetUrlsFromWebsiteId`](Piwik/Plugins/Referrers/Reports/GetUrlsFromWebsiteId.md)
+- [`Plugins\Referrers\Reports\GetWebsites`](Piwik/Plugins/Referrers/Reports/GetWebsites.md)
 - [`Plugins\Referrers\Widgets`](Piwik/Plugins/Referrers/Widgets.md)
 - [`Plugins\SEO\Widgets`](Piwik/Plugins/SEO/Widgets.md)
+- [`Plugins\UserCountry\Reports\Base`](Piwik/Plugins/UserCountry/Reports/Base.md)
+- [`Plugins\UserCountry\Reports\GetCity`](Piwik/Plugins/UserCountry/Reports/GetCity.md)
+- [`Plugins\UserCountry\Reports\GetContinent`](Piwik/Plugins/UserCountry/Reports/GetContinent.md)
+- [`Plugins\UserCountry\Reports\GetCountry`](Piwik/Plugins/UserCountry/Reports/GetCountry.md)
+- [`Plugins\UserCountry\Reports\GetRegion`](Piwik/Plugins/UserCountry/Reports/GetRegion.md)
+- [`Plugins\UserSettings\Reports\Base`](Piwik/Plugins/UserSettings/Reports/Base.md)
+- [`Plugins\UserSettings\Reports\GetBrowser`](Piwik/Plugins/UserSettings/Reports/GetBrowser.md)
+- [`Plugins\UserSettings\Reports\GetBrowserType`](Piwik/Plugins/UserSettings/Reports/GetBrowserType.md)
+- [`Plugins\UserSettings\Reports\GetBrowserVersion`](Piwik/Plugins/UserSettings/Reports/GetBrowserVersion.md)
+- [`Plugins\UserSettings\Reports\GetConfiguration`](Piwik/Plugins/UserSettings/Reports/GetConfiguration.md)
+- [`Plugins\UserSettings\Reports\GetLanguage`](Piwik/Plugins/UserSettings/Reports/GetLanguage.md)
+- [`Plugins\UserSettings\Reports\GetMobileVsDesktop`](Piwik/Plugins/UserSettings/Reports/GetMobileVsDesktop.md)
+- [`Plugins\UserSettings\Reports\GetOS`](Piwik/Plugins/UserSettings/Reports/GetOS.md)
+- [`Plugins\UserSettings\Reports\GetOSFamily`](Piwik/Plugins/UserSettings/Reports/GetOSFamily.md)
+- [`Plugins\UserSettings\Reports\GetPlugin`](Piwik/Plugins/UserSettings/Reports/GetPlugin.md)
+- [`Plugins\UserSettings\Reports\GetResolution`](Piwik/Plugins/UserSettings/Reports/GetResolution.md)
+- [`Plugins\UserSettings\Reports\GetWideScreen`](Piwik/Plugins/UserSettings/Reports/GetWideScreen.md)
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
+- [`Plugins\VisitFrequency\Reports\Get`](Piwik/Plugins/VisitFrequency/Reports/Get.md)
 - [`Plugins\VisitFrequency\Widgets`](Piwik/Plugins/VisitFrequency/Widgets.md)
+- [`Plugins\VisitTime\Reports\Base`](Piwik/Plugins/VisitTime/Reports/Base.md)
+- [`Plugins\VisitTime\Reports\GetByDayOfWeek`](Piwik/Plugins/VisitTime/Reports/GetByDayOfWeek.md)
+- [`Plugins\VisitTime\Reports\GetVisitInformationPerLocalTime`](Piwik/Plugins/VisitTime/Reports/GetVisitInformationPerLocalTime.md)
+- [`Plugins\VisitTime\Reports\GetVisitInformationPerServerTime`](Piwik/Plugins/VisitTime/Reports/GetVisitInformationPerServerTime.md)
+- [`Plugins\VisitorInterest\Reports\Base`](Piwik/Plugins/VisitorInterest/Reports/Base.md)
+- [`Plugins\VisitorInterest\Reports\GetNumberOfVisitsByDaysSinceLast`](Piwik/Plugins/VisitorInterest/Reports/GetNumberOfVisitsByDaysSinceLast.md)
+- [`Plugins\VisitorInterest\Reports\GetNumberOfVisitsByVisitCount`](Piwik/Plugins/VisitorInterest/Reports/GetNumberOfVisitsByVisitCount.md)
+- [`Plugins\VisitorInterest\Reports\GetNumberOfVisitsPerPage`](Piwik/Plugins/VisitorInterest/Reports/GetNumberOfVisitsPerPage.md)
+- [`Plugins\VisitorInterest\Reports\GetNumberOfVisitsPerVisitDuration`](Piwik/Plugins/VisitorInterest/Reports/GetNumberOfVisitsPerVisitDuration.md)
+- [`Plugins\VisitsSummary\Reports\Get`](Piwik/Plugins/VisitsSummary/Reports/Get.md)
 - [`Plugins\VisitsSummary\Widgets`](Piwik/Plugins/VisitsSummary/Widgets.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.
