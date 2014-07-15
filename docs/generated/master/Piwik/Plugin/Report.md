@@ -52,7 +52,7 @@ The translation key of the category the report belongs to.
 The translation key of the widget title.
 
 If a widget title is set, the platform will automatically configure/add
-a widget for this report. Alternatively, this behavior can be overwritten in configureWidget().
+a widget for this report. Alternatively, this behavior can be overwritten in [configureWidget()](/api-reference/Piwik/Plugin/Report#configurewidget).
 
 #### Signature
 
@@ -75,7 +75,7 @@ Optional widget params that will be appended to the widget URL if a [$widgetTitl
 The translation key of the menu title.
 
 If a menu title is set, the platform will automatically add a menu item
-to the reporting menu. Alternatively, this behavior can be overwritten in configureReportingMenu().
+to the reporting menu. Alternatively, this behavior can be overwritten in [configureReportingMenu()](/api-reference/Piwik/Plugin/Report#configurereportingmenu).
 
 #### Signature
 
@@ -192,7 +192,19 @@ Methods
 The class defines the following methods:
 
 - [`init()`](#init) &mdash; Here you can do any instance initialization and overwrite any default values.
+- [`isEnabled()`](#isenabled) &mdash; Defines whether a report is enabled or not.
+- [`checkIsEnabled()`](#checkisenabled) &mdash; This method checks whether the report is available, see {@isEnabled()}.
+- [`getDefaultTypeViewDataTable()`](#getdefaulttypeviewdatatable) &mdash; Returns the id of the default visualization for this report.
+- [`configureView()`](#configureview) &mdash; Here you can configure how your report should be displayed and which capabilities your report has.
+- [`render()`](#render) &mdash; Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
+- [`configureWidget()`](#configurewidget) &mdash; By default a widget will be configured for this report if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
+- [`configureReportingMenu()`](#configurereportingmenu) &mdash; By default a menu item will be added to the reporting menu if a [$menuTitle](/api-reference/Piwik/Plugin/Report#$menutitle) is set.
+- [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
+- [`configureReportMetadata()`](#configurereportmetadata) &mdash; If the report is enabled the report metadata for this report will be built and added to the list of available reports.
+- [`getRelatedReports()`](#getrelatedreports) &mdash; Get the list of related reports if there are any.
+- [`factory()`](#factory) &mdash; Get an instance of a specific report belonging to the given module and having the given action.
+- [`getAllReports()`](#getallreports) &mdash; Returns a list of all available reports.
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
@@ -207,6 +219,170 @@ created in most page requests.
 #### Signature
 
 - It does not return anything.
+
+<a name="isenabled" id="isenabled"></a>
+<a name="isEnabled" id="isEnabled"></a>
+### `isEnabled()`
+
+Defines whether a report is enabled or not.
+
+For instance some reports might not be available to every user or
+might depend on a setting (such as Ecommerce) of a site. In such a case you can perform any checks and then
+return `true` or `false`. If your report is only available to users having super user access you can do the
+following: `return Piwik::hasUserSuperUserAccess();`
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="checkisenabled" id="checkisenabled"></a>
+<a name="checkIsEnabled" id="checkIsEnabled"></a>
+### `checkIsEnabled()`
+
+This method checks whether the report is available, see {@isEnabled()}.
+
+If not, it triggers an exception
+containing a message that will be displayed to the user. You can overwrite this message in case you want to
+customize the error message. Eg.
+```
+       if (!$this->isEnabled()) {
+           throw new Exception('Setting XYZ is not enabled or the user has not enough permission');
+       }
+```
+
+#### Signature
+
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
+<a name="getdefaulttypeviewdatatable" id="getdefaulttypeviewdatatable"></a>
+<a name="getDefaultTypeViewDataTable" id="getDefaultTypeViewDataTable"></a>
+### `getDefaultTypeViewDataTable()`
+
+Returns the id of the default visualization for this report.
+
+Eg 'table' or 'pie'. Defaults to the HTML table.
+
+#### Signature
+
+- It returns a `string` value.
+
+<a name="configureview" id="configureview"></a>
+<a name="configureView" id="configureView"></a>
+### `configureView()`
+
+Here you can configure how your report should be displayed and which capabilities your report has.
+
+For instance
+whether your report supports a "search" or not. EG `$view->config->show_search = false`. You can also change the
+default request config. For instance you can change how many rows are displayed by default:
+`$view->requestConfig->filter_limit = 10;`. See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) for more information.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="render" id="render"></a>
+<a name="render" id="render"></a>
+### `render()`
+
+Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
+
+If you want to customize the render process or just render any custom view
+you can overwrite this method.
+
+#### Signature
+
+- It returns a `string` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; In case the given API action does not exist yet.
+
+<a name="configurewidget" id="configurewidget"></a>
+<a name="configureWidget" id="configureWidget"></a>
+### `configureWidget()`
+
+By default a widget will be configured for this report if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
+
+If you want to customize
+the way the widget is added or modify any other behavior you can overwrite this method.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$widget` (`Piwik\WidgetsList`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="configurereportingmenu" id="configurereportingmenu"></a>
+<a name="configureReportingMenu" id="configureReportingMenu"></a>
+### `configureReportingMenu()`
+
+By default a menu item will be added to the reporting menu if a [$menuTitle](/api-reference/Piwik/Plugin/Report#$menutitle) is set.
+
+If you want to
+customize the way the item is added or modify any other behavior you can overwrite this method. For instance
+in case you need to add additional url properties beside module and action which are added by default.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$menu` ([`MenuReporting`](../../Piwik/Menu/MenuReporting.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="getmetrics" id="getmetrics"></a>
+<a name="getMetrics" id="getMetrics"></a>
+### `getMetrics()`
+
+Returns an array of supported metrics and their corresponding translations.
+
+Eg `array('nb_visits' => 'Visits')`.
+By default the given [$metrics](/api-reference/Piwik/Plugin/Report#$metrics) are used and their corresponding translations are looked up automatically.
+If your metric is not translated, you should add the default metric translation for this metric using
+the [Metrics.getDefaultMetricTranslations](/api-reference/events#metricsgetdefaultmetrictranslations) event. If you want to overwrite any default metric translation
+you should overwrite this method, call this parent method to get all default translations and overwrite any
+custom metric translations.
+
+#### Signature
+
+- It returns a `array` value.
 
 <a name="getmetricsdocumentation" id="getmetricsdocumentation"></a>
 <a name="getMetricsDocumentation" id="getMetricsDocumentation"></a>
@@ -225,4 +401,114 @@ translations and overwrite any custom metric translations.
 #### Signature
 
 - It returns a `array` value.
+
+<a name="configurereportmetadata" id="configurereportmetadata"></a>
+<a name="configureReportMetadata" id="configureReportMetadata"></a>
+### `configureReportMetadata()`
+
+If the report is enabled the report metadata for this report will be built and added to the list of available reports.
+
+Overwrite this method and leave it empty in case you do not want your report to be added to the report
+metadata. In this case your report won't be visible for instance in the mobile app and scheduled reports
+generator. We recommend to change this behavior only if you are familiar with the Piwik core. `$infos` contains
+the current requested date, period and site.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$availableReports` (`Piwik\Plugin\$availableReports`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$infos` (`Piwik\Plugin\$infos`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="getrelatedreports" id="getrelatedreports"></a>
+<a name="getRelatedReports" id="getRelatedReports"></a>
+### `getRelatedReports()`
+
+Get the list of related reports if there are any.
+
+They will be displayed for instance below a report as a
+recommended related report.
+
+#### Signature
+
+- It returns a [`Report[]`](../../Piwik/Plugin/Report.md) value.
+
+<a name="factory" id="factory"></a>
+<a name="factory" id="factory"></a>
+### `factory()`
+
+Get an instance of a specific report belonging to the given module and having the given action.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$module` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$action` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`null`|[`Report`](../../Piwik/Plugin/Report.md)) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="getallreports" id="getallreports"></a>
+<a name="getAllReports" id="getAllReports"></a>
+### `getAllReports()`
+
+Returns a list of all available reports.
+
+Even not enabled reports will be returned. They will be already sorted
+depending on the order and category of the report.
+
+#### Signature
+
+- It returns a [`Report[]`](../../Piwik/Plugin/Report.md) value.
 
