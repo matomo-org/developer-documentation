@@ -10,6 +10,7 @@ require_once PIWIK_INCLUDE_PATH . '/vendor/autoload.php';
 require $rootDir . '/generator/vendor/autoload.php';
 require_once PIWIK_INCLUDE_PATH . '/core/Loader.php';
 require $rootDir . '/generator/vendor/nikic/php-parser/lib/bootstrap.php';
+require_once PIWIK_INCLUDE_PATH . '/libs/upgradephp/upgrade.php';
 
 ini_set('xdebug.max_nesting_level', 2000);
 
