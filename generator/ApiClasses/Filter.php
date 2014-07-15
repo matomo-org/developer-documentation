@@ -120,6 +120,17 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
             return true;
         }
 
+        if ($rc->isSubclassOf('Piwik\Plugin\Report')) {
+            return true;
+        }
+
+        if ($rc->isSubclassOf('Piwik\Columns\Dimension') ||
+            $rc->isSubclassOf('Piwik\Plugin\Dimension\ActionDimension') ||
+            $rc->isSubclassOf('Piwik\Plugin\Dimension\ConversionDimension') ||
+            $rc->isSubclassOf('Piwik\Plugin\Dimension\VisitDimension')) {
+            return true;
+        }
+
         return $rc->isSubclassOf('Piwik\Plugin\Controller');
     }
 
