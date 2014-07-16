@@ -88,7 +88,7 @@ Once your webserver is configured, load Piwik in your browser by loading `http:/
 
 #### Development configuration
 
-After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier. In **config/config.ini.php** set the following configuration options:
+After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier. In **config/global.ini.php** set the following configuration options:
 
     [Debug]
     disable_merged_assets = 1
