@@ -192,7 +192,7 @@ Now that we've defined a new report, we need to define how the report should be 
 
 As we will only display the number of visitors and not the number of unique visitors or actions which Piwik assumes by default we need to modify the supported metrics in the **init** method of the report as follows:
 
-    $this->metrics('nb_visits');
+    $this->metrics = array('nb_visits');
 
 If everything worked the report will look like this:
 
