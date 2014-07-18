@@ -3,6 +3,7 @@
 ## Archive
 ## ArchiveProcessor
 ## ArchiveProcessor\Parameters
+## Columns\Dimension
 ## Common
 ## Config
 ## Console
@@ -38,7 +39,6 @@
 ## Date
 ## Db
 ## DbHelper
-## Development
 ## Filesystem
 ## FrontController
 ## Http
@@ -66,11 +66,14 @@
 ## Plugin\Controller
 ## Plugin\Manager
 ## Plugin\Report
+## Plugin\Segment
 ## Plugin\Settings
 ## Plugin\Tasks
 ## Plugin\ViewDataTable
 ## Plugin\Visualization
 ## Plugin\Widgets
+## Plugins\Actions\Segment
+## Plugins\CoreHome\Segment
 ## Plugins\CoreHome\Widgets
 ## Plugins\CoreVisualizations\Visualizations\Cloud
 ## Plugins\CoreVisualizations\Visualizations\Graph
@@ -80,6 +83,7 @@
 ## Plugins\CoreVisualizations\Visualizations\JqplotGraph\Bar
 ## Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution
 ## Plugins\CoreVisualizations\Visualizations\JqplotGraph\Pie
+## Plugins\Events\Segment
 ## Plugins\ExamplePlugin\Widgets
 ## Plugins\ExampleRssWidget\Widgets
 ## Plugins\ExampleVisualization\Visualizations\SimpleTable
@@ -89,10 +93,14 @@
 ## Plugins\Insights\Widgets
 ## Plugins\Live\VisitorLog
 ## Plugins\Live\Widgets
+## Plugins\Referrers\Segment
 ## Plugins\Referrers\Widgets
 ## Plugins\SEO\Widgets
+## Plugins\UserCountry\Segment
+## Plugins\UserSettings\Segment
 ## Plugins\UsersManager\UserPreferences
 ## Plugins\VisitFrequency\Widgets
+## Plugins\VisitTime\Segment
 ## Plugins\VisitsSummary\Widgets
 ## RankingQuery
 ## ScheduledTask

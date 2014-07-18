@@ -3,6 +3,15 @@
 Report
 ======
 
+Defines a new report.
+
+This class contains all information a report defines except the corresponding API method which
+needs to be defined in the 'API.php'. You can define the name of the report, a documentation, the supported metrics,
+how the report should be displayed, which features the report has (eg search) and much more.
+
+You can create a new report using the console command `./console generate:report`. The generated report will guide
+you through the creation of a report.
+
 Properties
 ----------
 
@@ -13,9 +22,9 @@ This class defines the following properties:
 - [`$widgetTitle`](#$widgettitle) &mdash; The translation key of the widget title.
 - [`$widgetParams`](#$widgetparams) &mdash; Optional widget params that will be appended to the widget URL if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
 - [`$menuTitle`](#$menutitle) &mdash; The translation key of the menu title.
-- [`$processedMetrics`](#$processedmetrics) &mdash; The processed metrics this report supports, eg "average time on site" or "actions per visit".
-- [`$hasGoalMetrics`](#$hasgoalmetrics) &mdash; Set this property to true in case your report supports goal metrics.
 - [`$metrics`](#$metrics) &mdash; An array of supported metrics.
+- [`$processedMetrics`](#$processedmetrics) &mdash; The processed metrics this report supports, eg `avg_time_on_site` or `nb_actions_per_visit`.
+- [`$hasGoalMetrics`](#$hasgoalmetrics) &mdash; Set this property to true in case your report supports goal metrics.
 - [`$constantRowsCount`](#$constantrowscount) &mdash; Set it to boolean `true` if your report always returns a constant count of rows, for instance always 24 rows for 1-24 hours.
 - [`$isSubtableReport`](#$issubtablereport) &mdash; Set it to boolean `true` if this report is a subtable report and won't be used as a standalone report.
 - [`$parameters`](#$parameters) &mdash; Some reports may require additonal URL parameters that need to be sent when a report is requested.
@@ -81,16 +90,29 @@ to the reporting menu. Alternatively, this behavior can be overwritten in [confi
 
 - It is a `string` value.
 
+<a name="$metrics" id="$metrics"></a>
+<a name="metrics" id="metrics"></a>
+### `$metrics`
+
+An array of supported metrics.
+
+Eg `array('nb_visits', 'nb_actions', ...)`. Defaults to the platform default
+metrics see Metrics::getDefaultProcessedMetrics().
+
+#### Signature
+
+- It is a `array` value.
+
 <a name="$processedmetrics" id="$processedmetrics"></a>
 <a name="processedMetrics" id="processedMetrics"></a>
 ### `$processedMetrics`
 
-The processed metrics this report supports, eg "average time on site" or "actions per visit".
+The processed metrics this report supports, eg `avg_time_on_site` or `nb_actions_per_visit`.
 
 Defaults to the
 platform default processed metrics, see Metrics::getDefaultProcessedMetrics(). Set it to boolean `false`
-if your report does not support any processed metrics at all. Otherwise an array of metric names and their
-translations. Eg `array('avg_time_on_site' => "Average sime on site")`
+if your report does not support any processed metrics at all. Otherwise an array of metric names.
+Eg `array('avg_time_on_site', 'nb_actions_per_visit', ...)`
 
 #### Signature
 
@@ -110,19 +132,6 @@ automatically added to the report metadata and the report will be displayed in t
 #### Signature
 
 - It is a `bool` value.
-
-<a name="$metrics" id="$metrics"></a>
-<a name="metrics" id="metrics"></a>
-### `$metrics`
-
-An array of supported metrics.
-
-Eg `array('nb_visits', 'nb_actions', ...)`. Defaults to the platform default
-metrics see Metrics::getDefaultProcessedMetrics().
-
-#### Signature
-
-- It is a `array` value.
 
 <a name="$constantrowscount" id="$constantrowscount"></a>
 <a name="constantRowsCount" id="constantRowsCount"></a>
@@ -200,6 +209,7 @@ The class defines the following methods:
 - [`configureWidget()`](#configurewidget) &mdash; By default a widget will be configured for this report if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
 - [`configureReportingMenu()`](#configurereportingmenu) &mdash; By default a menu item will be added to the reporting menu if a [$menuTitle](/api-reference/Piwik/Plugin/Report#$menutitle) is set.
 - [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
+- [`getProcessedMetrics()`](#getprocessedmetrics) &mdash; Returns an array of supported processed metrics and their corresponding translations.
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
 - [`configureReportMetadata()`](#configurereportmetadata) &mdash; If the report is enabled the report metadata for this report will be built and added to the list of available reports.
 - [`getRelatedReports()`](#getrelatedreports) &mdash; Get the list of related reports if there are any.
@@ -245,9 +255,9 @@ If not, it triggers an exception
 containing a message that will be displayed to the user. You can overwrite this message in case you want to
 customize the error message. Eg.
 ```
-       if (!$this->isEnabled()) {
-           throw new Exception('Setting XYZ is not enabled or the user has not enough permission');
-       }
+    if (!$this->isEnabled()) {
+        throw new Exception('Setting XYZ is not enabled or the user has not enough permission');
+    }
 ```
 
 #### Signature
@@ -375,10 +385,27 @@ Returns an array of supported metrics and their corresponding translations.
 
 Eg `array('nb_visits' => 'Visits')`.
 By default the given [$metrics](/api-reference/Piwik/Plugin/Report#$metrics) are used and their corresponding translations are looked up automatically.
-If your metric is not translated, you should add the default metric translation for this metric using
+If a metric is not translated, you should add the default metric translation for this metric using
 the [Metrics.getDefaultMetricTranslations](/api-reference/events#metricsgetdefaultmetrictranslations) event. If you want to overwrite any default metric translation
 you should overwrite this method, call this parent method to get all default translations and overwrite any
 custom metric translations.
+
+#### Signature
+
+- It returns a `array` value.
+
+<a name="getprocessedmetrics" id="getprocessedmetrics"></a>
+<a name="getProcessedMetrics" id="getProcessedMetrics"></a>
+### `getProcessedMetrics()`
+
+Returns an array of supported processed metrics and their corresponding translations.
+
+Eg
+`array('nb_visits' => 'Visits')`. By default the given [$processedMetrics](/api-reference/Piwik/Plugin/Report#$processedmetrics) are used and their
+corresponding translations are looked up automatically. If a metric is not translated, you should add the
+default metric translation for this metric using the [Metrics.getDefaultMetricTranslations](/api-reference/events#metricsgetdefaultmetrictranslations) event. If you
+want to overwrite any default metric translation you should overwrite this method, call this parent method to
+get all default translations and overwrite any custom metric translations.
 
 #### Signature
 

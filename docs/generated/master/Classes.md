@@ -7,6 +7,7 @@ This is a complete list of available classes:
 - [`Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.
+- [`Columns\Dimension`](Piwik/Columns/Dimension.md)
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
 - [`Console`](Piwik/Console.md)
@@ -42,7 +43,6 @@ This is a complete list of available classes:
 - [`Date`](Piwik/Date.md) &mdash; Utility class that wraps date/time related PHP functions.
 - [`Db`](Piwik/Db.md) &mdash; Contains SQL related helper functions for Piwik's MySQL database.
 - [`DbHelper`](Piwik/DbHelper.md) &mdash; Contains database related helper functions.
-- [`Development`](Piwik/Development.md) &mdash; Development related checks and tools
 - [`Filesystem`](Piwik/Filesystem.md) &mdash; Contains helper functions that deal with the filesystem.
 - [`FrontController`](Piwik/FrontController.md) &mdash; This singleton dispatches requests to the appropriate plugin Controller.
 - [`Http`](Piwik/Http.md) &mdash; Contains HTTP client related helper methods that can retrieve content from remote servers and optionally save to a local file.
@@ -69,12 +69,15 @@ This is a complete list of available classes:
 - [`Plugin\Archiver`](Piwik/Plugin/Archiver.md) &mdash; The base class that should be extended by plugins that compute their own analytics data.
 - [`Plugin\Controller`](Piwik/Plugin/Controller.md) &mdash; Base class of all plugin Controllers.
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
-- [`Plugin\Report`](Piwik/Plugin/Report.md)
+- [`Plugin\Report`](Piwik/Plugin/Report.md) &mdash; Defines a new report.
+- [`Plugin\Segment`](Piwik/Plugin/Segment.md) &mdash; Creates a new segment that can be used for instance within the \Piwik\Columns\Dimension::configureSegment() method.
 - [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all plugin settings providers.
 - [`Plugin\Tasks`](Piwik/Plugin/Tasks.md) &mdash; Base class for all Tasks declarations.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
 - [`Plugin\Widgets`](Piwik/Plugin/Widgets.md) &mdash; Base class of all plugin widget providers.
+- [`Plugins\Actions\Segment`](Piwik/Plugins/Actions/Segment.md) &mdash; Actions segment base class
+- [`Plugins\CoreHome\Segment`](Piwik/Plugins/CoreHome/Segment.md) &mdash; CoreHome segment base class
 - [`Plugins\CoreHome\Widgets`](Piwik/Plugins/CoreHome/Widgets.md)
 - [`Plugins\CoreVisualizations\Visualizations\Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; Generates a tag cloud from a given data array.
 - [`Plugins\CoreVisualizations\Visualizations\Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; This is an abstract visualization that should be the base of any 'graph' visualization.
@@ -84,6 +87,7 @@ This is a complete list of available classes:
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Bar`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Bar.md) &mdash; Visualization that renders HTML for a Bar graph using jqPlot.
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md) &mdash; Visualization that renders HTML for a line graph using jqPlot.
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Pie`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Pie.md) &mdash; Visualization that renders HTML for a Pie graph using jqPlot.
+- [`Plugins\Events\Segment`](Piwik/Plugins/Events/Segment.md) &mdash; Events segment base class.
 - [`Plugins\ExamplePlugin\Widgets`](Piwik/Plugins/ExamplePlugin/Widgets.md) &mdash; This class allows you to add your own widgets to the Piwik platform.
 - [`Plugins\ExampleRssWidget\Widgets`](Piwik/Plugins/ExampleRssWidget/Widgets.md)
 - [`Plugins\ExampleVisualization\Visualizations\SimpleTable`](Piwik/Plugins/ExampleVisualization/Visualizations/SimpleTable.md) &mdash; SimpleTable Visualization.
@@ -93,10 +97,14 @@ This is a complete list of available classes:
 - [`Plugins\Insights\Widgets`](Piwik/Plugins/Insights/Widgets.md)
 - [`Plugins\Live\VisitorLog`](Piwik/Plugins/Live/VisitorLog.md) &mdash; A special DataTable visualization for the Live.getLastVisitsDetails API method.
 - [`Plugins\Live\Widgets`](Piwik/Plugins/Live/Widgets.md)
+- [`Plugins\Referrers\Segment`](Piwik/Plugins/Referrers/Segment.md) &mdash; Referrers segment base class.
 - [`Plugins\Referrers\Widgets`](Piwik/Plugins/Referrers/Widgets.md)
 - [`Plugins\SEO\Widgets`](Piwik/Plugins/SEO/Widgets.md)
+- [`Plugins\UserCountry\Segment`](Piwik/Plugins/UserCountry/Segment.md) &mdash; UserCountry segment base class.
+- [`Plugins\UserSettings\Segment`](Piwik/Plugins/UserSettings/Segment.md) &mdash; UserSettings segment base class.
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`Plugins\VisitFrequency\Widgets`](Piwik/Plugins/VisitFrequency/Widgets.md)
+- [`Plugins\VisitTime\Segment`](Piwik/Plugins/VisitTime/Segment.md) &mdash; VisitTime segment base class.
 - [`Plugins\VisitsSummary\Widgets`](Piwik/Plugins/VisitsSummary/Widgets.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.
