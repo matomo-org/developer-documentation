@@ -133,9 +133,9 @@ To verify that your data is being tracked properly, you can enable debug logging
 
 ## Extending the Tracker
 
-Plugins can add extra data to tracked visits by handling the [Tracker.newVisitorInformation](/api-reference/events#trackernewvisitorinformation) event. The UserCountry plugin uses this event to add geolocation information to a visit and the DevicesDetection plugin uses this event to add device information beyond the operating system used.
+Plugins can add extra data to tracked visits by creating a new dimension using the `./console generate:dimension` command. Most Piwik plugins uses dimensions to track additional data beside the standard ones. They are located in a folder named **Columns** in the plugins that make use of it. The UserCountry plugin uses dimensions to add geolocation information to a visit and the DevicesDetection plugin uses them to add device information beyond the operating system used.
 
-Plugins that want to add new data to the log tables themselves can alter the tables to add new columns. See [this section in the Peristence & the MySQL Backend guide](/guides/persistence-and-the-mysql-backend#augmenting-existing-tables).
+Plugins that want to add new data to the log tables themselves can alter the tables to add new columns. See [this section in the Peristence & the MySQL Backend guide](/guides/persistence-and-the-mysql-backend#augmenting-existing-tables) and {@link \Piwik\Plugin\Dimension\VisitDimension}, {@link \Piwik\Plugin\Dimension\ActionDimension}, {@link \Piwik\Plugin\Dimension\ConversionDimension}.
 
 ## The Tracking HTTP API
 
