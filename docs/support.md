@@ -5,4 +5,4 @@
 ### Suggest improvements
 ### Tickets
 
-Dev.piwik.org
+https://github.com/piwik/piwik/issues

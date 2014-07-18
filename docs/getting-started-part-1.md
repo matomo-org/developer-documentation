@@ -88,17 +88,15 @@ Once your webserver is configured, load Piwik in your browser by loading `http:/
 
 #### Development configuration
 
-After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier. In **config/config.ini.php** set the following configuration options:
+After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier and to make sure all changes take affect immediately. Piwik comes with a handy command-line tool that will do this work for you. In the root directory of your Piwik install, run the following command to enable the development mode:
 
-    [Debug]
-    disable_merged_assets = 1
+    ./console development:enable --full
 
-If you plan on running automated tests, you'll have to set the following configuration options:
+If you plan on running automated tests, you'll have to set the following configuration options in **config/config.ini.php**:
 
     [database_tests]
     password = ...
     user = ...
-
 
 #### Adding anonymous access to your reports
 
@@ -126,7 +124,7 @@ Once the visits have been added, click on the **Dashboard** link at the top of t
 
 ## Create a plugin
 
-Your development environment is setup, and you are now ready to create a plugin! Creating a plugin consists primarily of creating a couple files. Piwik comes with a handy command-line tool that will do this legwork for you. In the root directory of your Piwik install, run the following command:
+Your development environment is setup, and you are now ready to create a plugin! Creating a plugin consists primarily of creating a couple files which can be done by running the following command:
 
     ./console generate:plugin --name="MyPlugin"
 
