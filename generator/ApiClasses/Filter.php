@@ -124,10 +124,13 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
             return true;
         }
 
-        if ($rc->isSubclassOf('Piwik\Columns\Dimension') ||
-            $rc->isSubclassOf('Piwik\Plugin\Dimension\ActionDimension') ||
-            $rc->isSubclassOf('Piwik\Plugin\Dimension\ConversionDimension') ||
-            $rc->isSubclassOf('Piwik\Plugin\Dimension\VisitDimension')) {
+        $isTrackingDimension = $rc->isSubclassOf('Piwik\Plugin\Dimension\ActionDimension') ||
+                               $rc->isSubclassOf('Piwik\Plugin\Dimension\ConversionDimension') ||
+                               $rc->isSubclassOf('Piwik\Plugin\Dimension\VisitDimension');
+
+        if ((!$isTrackingDimension && $rc->isSubclassOf('Piwik\Columns\Dimension'))
+            || $isTrackingDimension) {
+
             return true;
         }
 
