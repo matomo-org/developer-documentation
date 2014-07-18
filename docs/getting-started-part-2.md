@@ -32,9 +32,9 @@ Additionally, each row of a report can link to another DataTable. These linked D
 
 To add a new report you should use the CLI tool and execute the following command:
 
-`./console generate:report`.
+`./console generate:report`
 
-This command will guide you through the creation of a report and ask you several things such as the name of your plugin and the name of the report you want to create. When it asks you for a report name enter **Last Visits By Browser**, leave the dimension empty and choose the category "Visitor" by moving the arrow keys up or down.
+This command will guide you through the creation of a report and ask you several things such as the name of your plugin and the name of the report you want to create. When it asks you for a report name enter "Last Visits By Browser", choose the category "Visitors" by moving the arrow keys up or down and leave the dimension empty.
 
 #### Adding a menu item
 
@@ -64,13 +64,13 @@ Making a widget is as easy as adding the report to the menu. Just define a prope
 
 A widget allows users to add your report to the dashboard and they can embed the report for instance using an iframe on any page.
 
-#### Adding an API method
+### Adding a API method
 
-Reports and metrics should always be served through API class methods. So we'll add a new one for our report. In your plugin's API class (stored in **API.php**), add the following method:
+Reports and metrics should always be served through API class methods. The report generator automatically creates this method for you so we only have to implement it. In your plugin's API class (stored in **API.php**), look for the following method:
 
     public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
     {
-        return array();
+        ...
     }
 
 <div markdown="1" class="alert alert-warning">
@@ -138,6 +138,7 @@ To create this report, we'll go through every visit in the data returned by **Li
             $flat = false,
             $doNotFetchActions = true
         );
+        $data->applyQueuedFilters();
 
         $result = $data->getEmptyClone($keepFilters = false); // we could create a new instance by using new DataTable(),
                                                               // but that wouldn't copy DataTable metadata, which can be
@@ -185,7 +186,17 @@ Now that we've defined a new report, we need to define how the report should be 
 
         $view->config->show_table_all_columns = false;
         $view->config->addTranslation('label', 'Browser');
+
+        $view->config->columns_to_display = array_merge(array('label'), $this->metrics);
     }
+
+As we will only display the number of visitors and not the number of unique visitors or actions which Piwik assumes by default we need to modify the supported metrics in the **init** method of the report as follows:
+
+    $this->metrics('nb_visits');
+
+If everything worked the report will look like this:
+
+<img src="/img/myplugin_index_embed_2.png"/>
 
 <div markdown="1" class="alert alert-warning">
 **Report Visualizations**

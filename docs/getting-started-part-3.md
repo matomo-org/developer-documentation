@@ -158,6 +158,8 @@ Change the configureView() method in the **getLastVisitsByBrowser** report to th
         $columnLabel = MyPlugin::$availableDimensionsForAggregation[$columnToAggregate];
 
         $view->config->addTranslation('label', $columnLabel);
+
+        $view->config->columns_to_display = array_merge(array('label'), $this->metrics);
     }
 
 View the report now and you'll see:
@@ -169,7 +171,7 @@ View the report now and you'll see:
 Finally, we'll rename the report. After all, it can do more than just aggregate the last 100 visits by browser now. Rename all occurances of **getLastVisitsByBrowser** with **getLastVisitsByDimension**. Make sure you replace it in the following files:
 
 * API.php
-* Reports/GetLastVisitsByBrowser.php (The filename has to be modified as well)
+* Reports/GetLastVisitsByBrowser.php (The filename has to be modified to **GetLastVisitsByDimension.php** as well)
 * plugin.js
 
 ### Internationalizing your plugin
@@ -180,36 +182,32 @@ Internationalization is achieved in Piwik by replacing translated text, like `"R
 
 Translation tokens are associated with translated text in multiple JSON files, one for each supported language. In code, the translation tokens are converted into translated text based on the user's selected language.
 
-#### Creating a language file
+#### Locating the language file
 
-To internationalize our plugin, first, we'll create an english language file to hold our translated text. In your plugin's root directory, create a subdirectory named **lang**. In that folder, create a file named **en.json** and put the following in it:
+To internationalize our plugin, an english language file to hold our translated text is needed. This file is already created for you by the report generator. It is located in your plugin's **lang** directory. In that folder, a file named **en.json** should exist containing translations:
 
     {
         "MyPlugin": {
-
+            "LastVisitsByBrowser":"Last Visits By Browser"
         }
     }
 
 We're going to move all of the translated text in our plugin to this file.
 
-#### Internationalizing our Twig Template
+#### Internationalizing our Report
 
-Translation tokens are translated in templates via the [translate](http://developer.piwik.org/api-reference/Piwik/View) Twig filter. We use two pieces of translated text in our template: `"Realtime Analytics"` and `"Reload"`. First, we'll add entries for them in the **en.json** file we just created. We'll use the **RealtimeAnalytics** and "Reload" translation tokens:
+We use one piece of translated text in our report: `"Real-time reports"`. First, we'll add entries for it in the **en.json** file we just located. We'll use the **RealtimeReports** translation token:
 
     {
         "MyPlugin": {
-            "RealtimeAnalytics": "Realtime Analytics",
-            "Reload": "Reload"
+            "RealtimeReports": "Real-time reports"
         }
     }
 
-Then replace the text in your template with the following:
+Then replace the text in your report class **GetLastVisitsByDimension** with the following:
 
-    <h1>{{ 'MyPlugin_RealtimeAnalytics'|translate }}</h1>
-
-    {{ getLastVisitsByDimensionReport|raw }}
-
-    <a id="realtime-reports-reload" href="#">{{ 'MyPlugin_Reload'|translate }}</a>
+    $this->menuTitle   = 'MyPlugin_RealtimeReports';
+    $this->widgetTitle = $this->menuTitle;
 
 #### Internationalizing our setting
 
@@ -217,8 +215,7 @@ Now, let's internationalize the text we use in our **Settings** class. First, we
 
     {
         "MyPlugin": {
-            "RealtimeAnalytics": "Realtime Analytics",
-            "Reload": "Reload",
+            "RealtimeReports": "Real-time reports"
             "ReportDimensionSettingDescription" : "Choose the dimension to aggregate by"
         }
     }
