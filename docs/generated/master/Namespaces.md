@@ -15,6 +15,7 @@ This is a complete list of available namespaces:
 - [`Piwik\Notification`](Piwik/Notification)
 - [`Piwik\Period`](Piwik/Period)
 - [`Piwik\Plugin`](Piwik/Plugin)
+- [`Piwik\Plugin\Dimension`](Piwik/Plugin/Dimension)
 - [`Piwik\Plugins`](Piwik/Plugins)
 - [`Piwik\Plugins\Actions`](Piwik/Plugins/Actions)
 - [`Piwik\Plugins\CoreHome`](Piwik/Plugins/CoreHome)

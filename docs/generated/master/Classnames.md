@@ -64,6 +64,9 @@
 ## Plugin\API
 ## Plugin\Archiver
 ## Plugin\Controller
+## Plugin\Dimension\ActionDimension
+## Plugin\Dimension\ConversionDimension
+## Plugin\Dimension\VisitDimension
 ## Plugin\Manager
 ## Plugin\Report
 ## Plugin\Segment
