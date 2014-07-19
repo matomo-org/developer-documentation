@@ -9,12 +9,36 @@ Methods
 The class defines the following methods:
 
 - [`getDefaultWebsiteId()`](#getdefaultwebsiteid) &mdash; Returns default site ID that Piwik should load.
+- [`getDefaultReport()`](#getdefaultreport) &mdash; Returns default site ID that Piwik should load.
 - [`getDefaultDate()`](#getdefaultdate) &mdash; Returns default date for Piwik reports.
 - [`getDefaultPeriod()`](#getdefaultperiod) &mdash; Returns default period type for Piwik reports.
 
 <a name="getdefaultwebsiteid" id="getdefaultwebsiteid"></a>
 <a name="getDefaultWebsiteId" id="getDefaultWebsiteId"></a>
 ### `getDefaultWebsiteId()`
+
+Returns default site ID that Piwik should load.
+
+_Note: This value is a Piwik setting set by each user._
+
+#### Signature
+
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`bool`|`int`) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="getdefaultreport" id="getdefaultreport"></a>
+<a name="getDefaultReport" id="getDefaultReport"></a>
+### `getDefaultReport()`
 
 Returns default site ID that Piwik should load.
 

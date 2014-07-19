@@ -425,6 +425,7 @@ Index
 - [`Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
 - [`Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; _Class in namespace_ `Piwik\Plugins\Goals\Visualizations` 
 - [`getDefaultWebsiteId()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultwebsiteid) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
+- [`getDefaultReport()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultreport) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultDate()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultdate) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultPeriod()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultperiod) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`generateQuery()`](Piwik/RankingQuery.md#generatequery) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
