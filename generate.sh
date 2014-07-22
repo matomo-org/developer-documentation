@@ -14,4 +14,9 @@ git checkout master
 git pull
 cd ..
 php generator/generate.php
+GENERATION_SUCCESS=$?
 rm -rf app/tmp/cache/*
+
+if [ $GENERATION_SUCCESS -ne 0 ]; then
+  exit 1;
+fi
