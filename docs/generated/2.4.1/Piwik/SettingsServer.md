@@ -53,6 +53,8 @@ Returns `true` if running on an Apache web server, `false` if otherwise.
 <a name="isWindows" id="isWindows"></a>
 ### `isWindows()`
 
+Since Piwik 0.6.5
+
 Returns `true` if running on a Windows operating system, `false` if otherwise.
 
 #### Signature

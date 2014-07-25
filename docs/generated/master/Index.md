@@ -278,6 +278,7 @@ Index
 - [`getSite()`](Piwik/ArchiveProcessor/Parameters.md#getsite) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSegment()`](Piwik/ArchiveProcessor/Parameters.md#getsegment) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getName()`](Piwik/Columns/Dimension.md#getname) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
+- [`getAllDimensions()`](Piwik/Columns/Dimension.md#getalldimensions) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getRequestVar()`](Piwik/Common.md#getrequestvar) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguagesList()`](Piwik/Common.md#getlanguageslist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguageToCountryList()`](Piwik/Common.md#getlanguagetocountrylist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
@@ -652,6 +653,7 @@ Index
 - [`onConvertedVisit()`](Piwik/Plugin/Dimension/VisitDimension.md#onconvertedvisit) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`onAnyGoalConversion()`](Piwik/Plugin/Dimension/VisitDimension.md#onanygoalconversion) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`$order`](Piwik/Plugin/Report.md#$order) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`$orderOfReports`](Piwik/Plugin/Report.md#$orderofreports) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`$overridableProperties`](Piwik/ViewDataTable/Config.md#$overridableproperties) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$overridableProperties`](Piwik/ViewDataTable/RequestConfig.md#$overridableproperties) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 

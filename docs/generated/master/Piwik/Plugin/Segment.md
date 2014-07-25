@@ -27,13 +27,11 @@ This class defines the following constants:
 
 - [`TYPE_DIMENSION`](#type_dimension) &mdash; Segment type 'dimension'.
 - [`TYPE_METRIC`](#type_metric) &mdash; Segment type 'metric'.
-
 <a name="type_dimension" id="type_dimension"></a>
 <a name="TYPE_DIMENSION" id="TYPE_DIMENSION"></a>
 ### `TYPE_DIMENSION`
 
 Can be used along with [setType()](/api-reference/Piwik/Plugin/Segment#settype).
-
 <a name="type_metric" id="type_metric"></a>
 <a name="TYPE_METRIC" id="TYPE_METRIC"></a>
 ### `TYPE_METRIC`

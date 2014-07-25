@@ -42,6 +42,7 @@ The abstract class defines the following methods:
 
 - [`addSegment()`](#addsegment) &mdash; Adds a new segment.
 - [`getName()`](#getname) &mdash; Get the translated name of the dimension.
+- [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension.
 
 <a name="addsegment" id="addsegment"></a>
 <a name="addSegment" id="addSegment"></a>
@@ -80,4 +81,14 @@ Defaults to an empty string.
 #### Signature
 
 - It returns a `string` value.
+
+<a name="getalldimensions" id="getalldimensions"></a>
+<a name="getAllDimensions" id="getAllDimensions"></a>
+### `getAllDimensions()`
+
+Gets an instance of all available visit, action and conversion dimension.
+
+#### Signature
+
+- It returns a [`Dimension[]`](../../Piwik/Columns/Dimension.md) value.
 
