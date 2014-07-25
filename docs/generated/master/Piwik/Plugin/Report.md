@@ -3,6 +3,8 @@
 Report
 ======
 
+Since Piwik 2.5.0
+
 Defines a new report.
 
 This class contains all information a report defines except the corresponding API method which
@@ -30,6 +32,7 @@ This class defines the following properties:
 - [`$parameters`](#$parameters) &mdash; Some reports may require additonal URL parameters that need to be sent when a report is requested.
 - [`$actionToLoadSubTables`](#$actiontoloadsubtables) &mdash; The name of the API action to load a subtable if supported.
 - [`$order`](#$order) &mdash; The order of the report.
+- [`$orderOfReports`](#$orderofreports)
 
 <a name="$name" id="$name"></a>
 <a name="name" id="name"></a>
@@ -194,6 +197,14 @@ the menu and the mobile app.
 #### Signature
 
 - It is a `int` value.
+
+<a name="$orderofreports" id="$orderofreports"></a>
+<a name="orderOfReports" id="orderOfReports"></a>
+### `$orderOfReports`
+
+#### Signature
+
+- It is a `array` value.
 
 Methods
 -------
