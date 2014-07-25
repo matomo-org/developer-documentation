@@ -63,6 +63,7 @@ class Document {
         $html = $this->markdown->transform();
 
         $html = preg_replace('/href="([^(http)].*?)(.md)(.*?)"/', 'href="${1}${3}"', $html);
+        $html = preg_replace('/href="((..\/)+)Piwik(.*?)(.md)(.*?)"/', 'href="${1}Piwik${3}${5}"', $html);
 
         return $html;
     }
