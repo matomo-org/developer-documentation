@@ -115,8 +115,12 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         if ($rc->isSubclassOf('Piwik\Plugin\Archiver')) {
             return true;
         }
-        
+
         if ($rc->isSubclassOf('Piwik\Plugin\Menu')) {
+            return true;
+        }
+
+        if ($rc->isSubclassOf('Piwik\Plugin\Segment')) {
             return true;
         }
 
