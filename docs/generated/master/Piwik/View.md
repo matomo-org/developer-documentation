@@ -44,9 +44,9 @@ The following filters are available to twig templates:
                  to the filter.
 - **urlRewriteWithParameters**: Modifies the current query string with the given
                                 set of parameters, eg,
-
+                                
                                     {{ {'module':'MyPlugin', 'action':'index'} | urlRewriteWithParameters }}
-
+                                
 - **sumTime**: Pretty formats an number of seconds.
 - **money**: Formats a numerical value as a monetary value using the currency
              of the supplied site (second arg is site ID).

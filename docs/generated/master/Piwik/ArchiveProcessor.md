@@ -37,7 +37,7 @@ Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and
         $dataTable = // ... build by aggregating visits ...
         $serializedData = $dataTable->getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
                                                     $columnToSortBy = Metrics::INDEX_NB_VISITS);
-
+        
         $archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
     }
 
@@ -52,7 +52,7 @@ Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and
         $archiveProcessor->aggregateNumericMetrics('MyPlugin_myFancyMetric');
         $archiveProcessor->aggregateNumericMetrics('MyPlugin_mySuperFancyMetric', 'max');
 
-        // aggregate a report
+        // aggregate a report        
         $archiveProcessor->aggregateDataTableRecords('MyPlugin_myFancyReport');
     }
 

@@ -15,7 +15,7 @@ The class defines the following methods:
 - [`prefixTable()`](#prefixtable) &mdash; Returns a prefixed table name.
 - [`unprefixTable()`](#unprefixtable) &mdash; Removes the prefix from a table name and returns the result.
 - [`mb_substr()`](#mb_substr) &mdash; Multi-byte substr() - works with UTF-8.
-- [`mb_strlen()`](#mb_strlen) &mdash; Multi-byte strlen() - works with UTF-8
+- [`mb_strlen()`](#mb_strlen) &mdash; Multi-byte strlen() - works with UTF-8  Calls `mb_substr` if available and falls back to `substr` if not.
 - [`mb_strtolower()`](#mb_strtolower) &mdash; Multi-byte strtolower() - works with UTF-8.
 - [`sanitizeInputValues()`](#sanitizeinputvalues) &mdash; Sanitizes a string to help avoid XSS vulnerabilities.
 - [`unsanitizeInputValues()`](#unsanitizeinputvalues) &mdash; Unsanitizes one or more values and returns the result.
@@ -141,9 +141,7 @@ Calls `mb_substr` if available and falls back to `substr` if it's not.
 <a name="mb_strlen" id="mb_strlen"></a>
 ### `mb_strlen()`
 
-Multi-byte strlen() - works with UTF-8
-
-Calls `mb_substr` if available and falls back to `substr` if not.
+Multi-byte strlen() - works with UTF-8  Calls `mb_substr` if available and falls back to `substr` if not.
 
 #### Signature
 

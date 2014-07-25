@@ -27,7 +27,7 @@ will be set to the query parameter value.
 **Reusing base properties**
 
 Many of the properties in this class only have meaning for the [Visualization](/api-reference/Piwik/Plugin/Visualization)
-class, but can be set for other visualizations that extend [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)
+class, but can be set for other visualizations that extend [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) 
 directly.
 
 Visualizations that extend [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) directly and want to re-use these
