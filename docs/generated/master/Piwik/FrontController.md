@@ -28,7 +28,7 @@ use it to call controller actions of other plugins.
         $_GET['removeOldVisits'] = false;
         $_GET['showFooterMessage'] = false;
         $realtimeMap = FrontController::getInstance()->fetchDispatch('UserCountryMap', 'realtimeMap');
-        
+
         $view = new View('@MyPlugin/myPopupWithRealtimeMap.twig');
         $view->realtimeMap = $realtimeMap;
         return $realtimeMap->render();
