@@ -16,7 +16,8 @@ The class defines the following methods:
 
 <a name="getpiwikurl" id="getpiwikurl"></a>
 <a name="getPiwikUrl" id="getPiwikUrl"></a>
-### `getPiwikUrl() `
+### `getPiwikUrl()`
+
 Returns the URL to this Piwik instance, eg.
 
 **http://demo.piwik.org/** or **http://example.org/piwik/**.
@@ -27,7 +28,8 @@ Returns the URL to this Piwik instance, eg.
 
 <a name="issegmentationenabled" id="issegmentationenabled"></a>
 <a name="isSegmentationEnabled" id="isSegmentationEnabled"></a>
-### `isSegmentationEnabled() `
+### `isSegmentationEnabled()`
+
 Returns `true` if segmentation is allowed for this user, `false` if otherwise.
 
 #### Signature
@@ -36,7 +38,8 @@ Returns `true` if segmentation is allowed for this user, `false` if otherwise.
 
 <a name="isuniquevisitorsenabled" id="isuniquevisitorsenabled"></a>
 <a name="isUniqueVisitorsEnabled" id="isUniqueVisitorsEnabled"></a>
-### `isUniqueVisitorsEnabled() `
+### `isUniqueVisitorsEnabled()`
+
 Returns true if unique visitors should be processed for the given period type.
 
 Unique visitor processing is controlled by the `[General] enable_processing_unique_visitors_...`

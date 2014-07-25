@@ -25,7 +25,8 @@ The class defines the following methods:
 
 <a name="configurereportingmenu" id="configurereportingmenu"></a>
 <a name="configureReportingMenu" id="configureReportingMenu"></a>
-### `configureReportingMenu() `
+### `configureReportingMenu()`
+
 Configures the reporting menu which should only contain links to reports of a specific site such as "Search Engines", "Page Titles" or "Locations & Provider".
 
 #### Signature
@@ -48,7 +49,8 @@ Configures the reporting menu which should only contain links to reports of a sp
 
 <a name="configuretopmenu" id="configuretopmenu"></a>
 <a name="configureTopMenu" id="configureTopMenu"></a>
-### `configureTopMenu() `
+### `configureTopMenu()`
+
 Configures the top menu which is supposed to contain analytics related items such as the "All Websites Dashboard".
 
 #### Signature
@@ -71,7 +73,8 @@ Configures the top menu which is supposed to contain analytics related items suc
 
 <a name="configureusermenu" id="configureusermenu"></a>
 <a name="configureUserMenu" id="configureUserMenu"></a>
-### `configureUserMenu() `
+### `configureUserMenu()`
+
 Configures the user menu which is supposed to contain user and help related items such as "User settings", "Alerts" or "Email Reports".
 
 #### Signature
@@ -94,7 +97,8 @@ Configures the user menu which is supposed to contain user and help related item
 
 <a name="configureadminmenu" id="configureadminmenu"></a>
 <a name="configureAdminMenu" id="configureAdminMenu"></a>
-### `configureAdminMenu() `
+### `configureAdminMenu()`
+
 Configures the admin menu which is supposed to contain only administration related items such as "Websites", "Users" or "Plugin settings".
 
 #### Signature

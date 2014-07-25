@@ -33,11 +33,12 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class.
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. *inherited from* [`Singleton`](../../Piwik/Singleton.md)
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance() *inherited from*` [`Singleton`](../../Piwik/Singleton.md)
+### `getInstance()`
+
 Returns the singleton instance for the derived class.
 
 If the singleton instance

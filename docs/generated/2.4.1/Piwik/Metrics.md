@@ -52,42 +52,48 @@ The class defines the following methods:
 
 <a name="getvisitsmetricnames" id="getvisitsmetricnames"></a>
 <a name="getVisitsMetricNames" id="getVisitsMetricNames"></a>
-### `getVisitsMetricNames() `
+### `getVisitsMetricNames()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="getmappingfromidtoname" id="getmappingfromidtoname"></a>
 <a name="getMappingFromIdToName" id="getMappingFromIdToName"></a>
-### `getMappingFromIdToName() `
+### `getMappingFromIdToName()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="getdefaultmetrictranslations" id="getdefaultmetrictranslations"></a>
 <a name="getDefaultMetricTranslations" id="getDefaultMetricTranslations"></a>
-### `getDefaultMetricTranslations() `
+### `getDefaultMetricTranslations()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="getdefaultmetrics" id="getdefaultmetrics"></a>
 <a name="getDefaultMetrics" id="getDefaultMetrics"></a>
-### `getDefaultMetrics() `
+### `getDefaultMetrics()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="getdefaultprocessedmetrics" id="getdefaultprocessedmetrics"></a>
 <a name="getDefaultProcessedMetrics" id="getDefaultProcessedMetrics"></a>
-### `getDefaultProcessedMetrics() `
+### `getDefaultProcessedMetrics()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="getreadablecolumnname" id="getreadablecolumnname"></a>
 <a name="getReadableColumnName" id="getReadableColumnName"></a>
-### `getReadableColumnName() `
+### `getReadableColumnName()`
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -108,21 +114,24 @@ The class defines the following methods:
 
 <a name="getmetricidstoprocessreporttotal" id="getmetricidstoprocessreporttotal"></a>
 <a name="getMetricIdsToProcessReportTotal" id="getMetricIdsToProcessReportTotal"></a>
-### `getMetricIdsToProcessReportTotal() `
+### `getMetricIdsToProcessReportTotal()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="getdefaultmetricsdocumentation" id="getdefaultmetricsdocumentation"></a>
 <a name="getDefaultMetricsDocumentation" id="getDefaultMetricsDocumentation"></a>
-### `getDefaultMetricsDocumentation() `
+### `getDefaultMetricsDocumentation()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="getpercentvisitcolumn" id="getpercentvisitcolumn"></a>
 <a name="getPercentVisitColumn" id="getPercentVisitColumn"></a>
-### `getPercentVisitColumn() `
+### `getPercentVisitColumn()`
+
 #### Signature
 
 - It does not return anything.

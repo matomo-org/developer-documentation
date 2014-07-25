@@ -37,7 +37,8 @@ The abstract class defines the following methods:
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
-### `factory() `
+### `factory()`
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -68,7 +69,8 @@ The abstract class defines the following methods:
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
-### `isMultiplePeriod() `
+### `isMultiplePeriod()`
+
 Returns true if `$dateString` and `$period` represent multiple periods.
 
 Will return true for date/period combinations where date references multiple
@@ -110,7 +112,8 @@ etc.
 
 <a name="getdatestart" id="getdatestart"></a>
 <a name="getDateStart" id="getDateStart"></a>
-### `getDateStart() `
+### `getDateStart()`
+
 Returns the first day of the period.
 
 #### Signature
@@ -119,7 +122,8 @@ Returns the first day of the period.
 
 <a name="getdateend" id="getdateend"></a>
 <a name="getDateEnd" id="getDateEnd"></a>
-### `getDateEnd() `
+### `getDateEnd()`
+
 Returns the last day of the period.
 
 #### Signature
@@ -128,7 +132,8 @@ Returns the last day of the period.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
-### `getId() `
+### `getId()`
+
 Returns the period ID.
 
 #### Signature
@@ -148,7 +153,8 @@ Returns the period ID.
 
 <a name="getlabel" id="getlabel"></a>
 <a name="getLabel" id="getLabel"></a>
-### `getLabel() `
+### `getLabel()`
+
 Returns the label for the current period.
 
 #### Signature
@@ -168,7 +174,8 @@ Returns the label for the current period.
 
 <a name="getnumberofsubperiods" id="getnumberofsubperiods"></a>
 <a name="getNumberOfSubperiods" id="getNumberOfSubperiods"></a>
-### `getNumberOfSubperiods() `
+### `getNumberOfSubperiods()`
+
 Returns the number of available subperiods.
 
 #### Signature
@@ -177,7 +184,8 @@ Returns the number of available subperiods.
 
 <a name="getsubperiods" id="getsubperiods"></a>
 <a name="getSubperiods" id="getSubperiods"></a>
-### `getSubperiods() `
+### `getSubperiods()`
+
 Returns the set of Period instances that together make up this period.
 
 For a year,
@@ -189,7 +197,8 @@ this would be 12 months. For a month this would be 28-31 days. Etc.
 
 <a name="tostring" id="tostring"></a>
 <a name="toString" id="toString"></a>
-### `toString() `
+### `toString()`
+
 Returns a list of strings representing the current period.
 
 #### Signature
@@ -223,7 +232,8 @@ Returns a list of strings representing the current period.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
-### `__toString() `
+### `__toString()`
+
 See [toString()](/api-reference/Piwik/Period#tostring).
 
 #### Signature
@@ -232,7 +242,8 @@ See [toString()](/api-reference/Piwik/Period#tostring).
 
 <a name="getprettystring" id="getprettystring"></a>
 <a name="getPrettyString" id="getPrettyString"></a>
-### `getPrettyString() `
+### `getPrettyString()`
+
 Returns a pretty string describing this period.
 
 #### Signature
@@ -241,7 +252,8 @@ Returns a pretty string describing this period.
 
 <a name="getlocalizedshortstring" id="getlocalizedshortstring"></a>
 <a name="getLocalizedShortString" id="getLocalizedShortString"></a>
-### `getLocalizedShortString() `
+### `getLocalizedShortString()`
+
 Returns a short string description of this period that is localized with the currently used language.
 
 #### Signature
@@ -250,7 +262,8 @@ Returns a short string description of this period that is localized with the cur
 
 <a name="getlocalizedlongstring" id="getlocalizedlongstring"></a>
 <a name="getLocalizedLongString" id="getLocalizedLongString"></a>
-### `getLocalizedLongString() `
+### `getLocalizedLongString()`
+
 Returns a long string description of this period that is localized with the currently used language.
 
 #### Signature
@@ -259,7 +272,8 @@ Returns a long string description of this period that is localized with the curr
 
 <a name="getrangestring" id="getrangestring"></a>
 <a name="getRangeString" id="getRangeString"></a>
-### `getRangeString() `
+### `getRangeString()`
+
 Returns a succinct string describing this period.
 
 #### Signature

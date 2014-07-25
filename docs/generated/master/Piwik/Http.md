@@ -19,7 +19,8 @@ The class defines the following methods:
 
 <a name="gettransportmethod" id="gettransportmethod"></a>
 <a name="getTransportMethod" id="getTransportMethod"></a>
-### `getTransportMethod() `
+### `getTransportMethod()`
+
 Returns the "best" available transport method for [sendHttpRequest()](/api-reference/Piwik/Http#sendhttprequest) calls.
 
 #### Signature
@@ -39,7 +40,8 @@ Returns the "best" available transport method for [sendHttpRequest()](/api-refer
 
 <a name="sendhttprequest" id="sendhttprequest"></a>
 <a name="sendHttpRequest" id="sendHttpRequest"></a>
-### `sendHttpRequest() `
+### `sendHttpRequest()`
+
 Sends an HTTP request using best available transport method.
 
 #### Signature
@@ -155,7 +157,8 @@ Sends an HTTP request using best available transport method.
 
 <a name="downloadchunk" id="downloadchunk"></a>
 <a name="downloadChunk" id="downloadChunk"></a>
-### `downloadChunk() `
+### `downloadChunk()`
+
 Downloads the next chunk of a specific file.
 
 The next chunk's byte range
@@ -246,7 +249,8 @@ public function myAction()
 
 <a name="fetchremotefile" id="fetchremotefile"></a>
 <a name="fetchRemoteFile" id="fetchRemoteFile"></a>
-### `fetchRemoteFile() `
+### `fetchRemoteFile()`
+
 Fetches a file located at `$url` and saves it to `$destinationPath`.
 
 #### Signature

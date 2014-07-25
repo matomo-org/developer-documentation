@@ -41,12 +41,13 @@ Methods
 
 The class defines the following methods:
 
-- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class.
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. *inherited from* [`Singleton`](../Piwik/Singleton.md)
 - [`dispatch()`](#dispatch) &mdash; Executes the requested plugin controller method.
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance() *inherited from*` [`Singleton`](../Piwik/Singleton.md)
+### `getInstance()`
+
 Returns the singleton instance for the derived class.
 
 If the singleton instance
@@ -58,7 +59,8 @@ has not been created, this method will create it.
 
 <a name="dispatch" id="dispatch"></a>
 <a name="dispatch" id="dispatch"></a>
-### `dispatch() `
+### `dispatch()`
+
 Executes the requested plugin controller method.
 
 #### Signature

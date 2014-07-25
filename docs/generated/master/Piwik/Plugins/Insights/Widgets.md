@@ -8,31 +8,34 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct)
-- [`getCategory()`](#getcategory)
-- [`addWidget()`](#addwidget)
-- [`init()`](#init)
-- [`getWidgets()`](#getwidgets)
-- [`configureWidgetsList()`](#configurewidgetslist) &mdash; Configures the widgets.
-- [`getAllWidgets()`](#getallwidgets)
-- [`factory()`](#factory)
+- [`__construct()`](#__construct) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`getCategory()`](#getcategory) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`addWidget()`](#addwidget) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`init()`](#init) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`getWidgets()`](#getwidgets) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`configureWidgetsList()`](#configurewidgetslist) &mdash; Configures the widgets. *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`getAllWidgets()`](#getallwidgets) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`factory()`](#factory) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct() *inherited from*` [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+### `__construct()`
+
 #### Signature
 
 
 <a name="getcategory" id="getcategory"></a>
 <a name="getCategory" id="getCategory"></a>
-### `getCategory() *inherited from*` [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+### `getCategory()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="addwidget" id="addwidget"></a>
 <a name="addWidget" id="addWidget"></a>
-### `addWidget() *inherited from*` [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+### `addWidget()`
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -73,21 +76,24 @@ The class defines the following methods:
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
-### `init() *inherited from*` [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+### `init()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="getwidgets" id="getwidgets"></a>
 <a name="getWidgets" id="getWidgets"></a>
-### `getWidgets() *inherited from*` [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+### `getWidgets()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="configurewidgetslist" id="configurewidgetslist"></a>
 <a name="configureWidgetsList" id="configureWidgetsList"></a>
-### `configureWidgetsList() *inherited from*` [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+### `configureWidgetsList()`
+
 Configures the widgets.
 
 Here you can for instance remove widgets.
@@ -112,14 +118,16 @@ Here you can for instance remove widgets.
 
 <a name="getallwidgets" id="getallwidgets"></a>
 <a name="getAllWidgets" id="getAllWidgets"></a>
-### `getAllWidgets() *inherited from*` [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+### `getAllWidgets()`
+
 #### Signature
 
 - It returns a [`Widgets[]`](../../../Piwik/Plugin/Widgets.md) value.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
-### `factory() *inherited from*` [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+### `factory()`
+
 #### Signature
 
 -  It accepts the following parameter(s):

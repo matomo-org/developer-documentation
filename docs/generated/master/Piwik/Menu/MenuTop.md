@@ -26,15 +26,16 @@ Methods
 
 The class defines the following methods:
 
-- [`add()`](#add) &mdash; Adds a new entry to the menu.
-- [`remove()`](#remove) &mdash; Removes an existing entry from the menu.
-- [`rename()`](#rename) &mdash; Renames a single menu entry.
-- [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry.
+- [`add()`](#add) &mdash; Adds a new entry to the menu. *inherited from* [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`remove()`](#remove) &mdash; Removes an existing entry from the menu. *inherited from* [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`rename()`](#rename) &mdash; Renames a single menu entry. *inherited from* [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. *inherited from* [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`addHtml()`](#addhtml) &mdash; Directly adds a menu entry containing html.
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>
-### `add() *inherited from*` [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+### `add()`
+
 Adds a new entry to the menu.
 
 #### Signature
@@ -107,7 +108,8 @@ Adds a new entry to the menu.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
-### `remove() *inherited from*` [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+### `remove()`
+
 Removes an existing entry from the menu.
 
 #### Signature
@@ -140,7 +142,8 @@ Removes an existing entry from the menu.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
-### `rename() *inherited from*` [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+### `rename()`
+
 Renames a single menu entry.
 
 #### Signature
@@ -193,7 +196,8 @@ Renames a single menu entry.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
-### `editUrl() *inherited from*` [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+### `editUrl()`
+
 Edits a URL of an existing menu entry.
 
 #### Signature
@@ -236,7 +240,8 @@ Edits a URL of an existing menu entry.
 
 <a name="addhtml" id="addhtml"></a>
 <a name="addHtml" id="addHtml"></a>
-### `addHtml() `
+### `addHtml()`
+
 Directly adds a menu entry containing html.
 
 #### Signature

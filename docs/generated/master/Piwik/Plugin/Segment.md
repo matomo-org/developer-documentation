@@ -58,7 +58,8 @@ The class defines the following methods:
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
-### `init() `
+### `init()`
+
 Here you can initialize this segment and set any default values.
 
 It is called directly after the object is
@@ -70,7 +71,8 @@ created.
 
 <a name="setacceptedvalues" id="setacceptedvalues"></a>
 <a name="setAcceptedValues" id="setAcceptedValues"></a>
-### `setAcceptedValues() `
+### `setAcceptedValues()`
+
 Here you should explain which values are accepted/useful for your segment, for example: "1, 2, 3, etc." or "comcast.net, proxad.net, etc.".
 
 If the value needs any special encoding you should mention
@@ -96,7 +98,8 @@ this as well. For example "Any URL including protocol. The URL must be URL encod
 
 <a name="setcategory" id="setcategory"></a>
 <a name="setCategory" id="setCategory"></a>
-### `setCategory() `
+### `setCategory()`
+
 Set (overwrite) the category this segment belongs to.
 
 It should be a translation key such as 'General_Actions'
@@ -122,7 +125,8 @@ or 'General_Visit'.
 
 <a name="setname" id="setname"></a>
 <a name="setName" id="setName"></a>
-### `setName() `
+### `setName()`
+
 Set (overwrite) the segment display name.
 
 This name will be visible in the API and the UI. It should be a
@@ -148,7 +152,8 @@ translation key such as 'Actions_ColumnEntryPageTitle' or 'UserSettings_ColumnRe
 
 <a name="setsegment" id="setsegment"></a>
 <a name="setSegment" id="setSegment"></a>
-### `setSegment() `
+### `setSegment()`
+
 Set (overwrite) the name of the segment.
 
 The name should be lower case first and has to be unique. The segment
@@ -175,7 +180,8 @@ you need to set "&segment=searches>0" in the UI.
 
 <a name="setsqlfilter" id="setsqlfilter"></a>
 <a name="setSqlFilter" id="setSqlFilter"></a>
-### `setSqlFilter() `
+### `setSqlFilter()`
+
 Sometimes you want users to set values that differ from the way they are actually stored.
 
 For instance if you
@@ -205,7 +211,8 @@ or callable: `string $valueToMatch`, `string $segment` (see [setSegment()](/api-
 
 <a name="setsqlfiltervalue" id="setsqlfiltervalue"></a>
 <a name="setSqlFilterValue" id="setSqlFilterValue"></a>
-### `setSqlFilterValue() `
+### `setSqlFilterValue()`
+
 Similar to [setSqlFilter()](/api-reference/Piwik/Plugin/Segment#setsqlfilter) you can map a given segment value to another value.
 
 For instance you could map
@@ -233,7 +240,8 @@ segment. This callback is called shortly before [setSqlFilter()](/api-reference/
 
 <a name="setsqlsegment" id="setsqlsegment"></a>
 <a name="setSqlSegment" id="setSqlSegment"></a>
-### `setSqlSegment() `
+### `setSqlSegment()`
+
 Defines to which column in the MySQL database the segment belongs: 'mytablename.mycolumnname'.
 
 Eg
@@ -259,7 +267,8 @@ Eg
 
 <a name="settype" id="settype"></a>
 <a name="setType" id="setType"></a>
-### `setType() `
+### `setType()`
+
 Set (overwrite) the type of this segment which is usually either a 'dimension' or a 'metric'.
 
 #### Signature
@@ -282,7 +291,8 @@ Set (overwrite) the type of this segment which is usually either a 'dimension' o
 
 <a name="setpermission" id="setpermission"></a>
 <a name="setPermission" id="setPermission"></a>
-### `setPermission() `
+### `setPermission()`
+
 You can restrict the access to this segment by passing a boolean `false`.
 
 For instance if you want to make

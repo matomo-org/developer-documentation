@@ -46,7 +46,8 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct() `
+### `__construct()`
+
 Constructor.
 
 #### Signature
@@ -88,7 +89,8 @@ Constructor.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
-### `filter() `
+### `filter()`
+
 Adds the processed metrics.
 
 See [AddColumnsProcessedMetrics](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetrics) for

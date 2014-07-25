@@ -32,14 +32,15 @@ Methods
 
 The class defines the following methods:
 
-- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class.
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. *inherited from* [`Singleton`](../Piwik/Singleton.md)
 - [`__get()`](#__get) &mdash; Returns a configuration value or section by name.
 - [`__set()`](#__set) &mdash; Sets a configuration value or section.
 - [`forceSave()`](#forcesave) &mdash; Writes the current configuration to the **config.ini.php** file.
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance() *inherited from*` [`Singleton`](../Piwik/Singleton.md)
+### `getInstance()`
+
 Returns the singleton instance for the derived class.
 
 If the singleton instance
@@ -51,7 +52,8 @@ has not been created, this method will create it.
 
 <a name="__get" id="__get"></a>
 <a name="__get" id="__get"></a>
-### `__get() `
+### `__get()`
+
 Returns a configuration value or section by name.
 
 #### Signature
@@ -87,7 +89,8 @@ Returns a configuration value or section by name.
 
 <a name="__set" id="__set"></a>
 <a name="__set" id="__set"></a>
-### `__set() `
+### `__set()`
+
 Sets a configuration value or section.
 
 #### Signature
@@ -120,7 +123,8 @@ Sets a configuration value or section.
 
 <a name="forcesave" id="forcesave"></a>
 <a name="forceSave" id="forceSave"></a>
-### `forceSave() `
+### `forceSave()`
+
 Writes the current configuration to the **config.ini.php** file.
 
 Only writes options whose

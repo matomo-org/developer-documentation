@@ -18,7 +18,8 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct() `
+### `__construct()`
+
 Constructor.
 
 #### Signature
@@ -40,14 +41,16 @@ Constructor.
 
 <a name="setdefaultfrompiwik" id="setdefaultfrompiwik"></a>
 <a name="setDefaultFromPiwik" id="setDefaultFromPiwik"></a>
-### `setDefaultFromPiwik() `
+### `setDefaultFromPiwik()`
+
 #### Signature
 
 - It does not return anything.
 
 <a name="setfrom" id="setfrom"></a>
 <a name="setFrom" id="setFrom"></a>
-### `setFrom() `
+### `setFrom()`
+
 Sets the sender.
 
 #### Signature
@@ -80,7 +83,8 @@ Sets the sender.
 
 <a name="setreplyto" id="setreplyto"></a>
 <a name="setReplyTo" id="setReplyTo"></a>
-### `setReplyTo() `
+### `setReplyTo()`
+
 Set Reply-To Header
 
 #### Signature
@@ -113,7 +117,8 @@ Set Reply-To Header
 
 <a name="send" id="send"></a>
 <a name="send" id="send"></a>
-### `send() `
+### `send()`
+
 #### Signature
 
 -  It accepts the following parameter(s):

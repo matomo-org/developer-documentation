@@ -42,7 +42,8 @@ The class defines the following methods:
 
 <a name="getkeyname" id="getkeyname"></a>
 <a name="getKeyName" id="getKeyName"></a>
-### `getKeyName() `
+### `getKeyName()`
+
 Returns a string description of the data used to index the DataTables.
 
 This label is used by DataTable Renderers (it becomes a column name or the XML description tag).
@@ -64,7 +65,8 @@ This label is used by DataTable Renderers (it becomes a column name or the XML d
 
 <a name="setkeyname" id="setkeyname"></a>
 <a name="setKeyName" id="setKeyName"></a>
-### `setKeyName() `
+### `setKeyName()`
+
 Set the name of they metadata used to index DataTables.
 
 See [getKeyName()](/api-reference/Piwik/DataTable/Map#getkeyname).
@@ -89,7 +91,8 @@ See [getKeyName()](/api-reference/Piwik/DataTable/Map#getkeyname).
 
 <a name="getrowscount" id="getrowscount"></a>
 <a name="getRowsCount" id="getRowsCount"></a>
-### `getRowsCount() `
+### `getRowsCount()`
+
 Returns the number of DataTables in this DataTable\Map.
 
 #### Signature
@@ -98,7 +101,8 @@ Returns the number of DataTables in this DataTable\Map.
 
 <a name="queuefilter" id="queuefilter"></a>
 <a name="queueFilter" id="queueFilter"></a>
-### `queueFilter() `
+### `queueFilter()`
+
 Queue a filter to DataTable child of contained by this instance.
 
 See [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter) for more information..
@@ -133,7 +137,8 @@ See [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter) for m
 
 <a name="applyqueuedfilters" id="applyqueuedfilters"></a>
 <a name="applyQueuedFilters" id="applyQueuedFilters"></a>
-### `applyQueuedFilters() `
+### `applyQueuedFilters()`
+
 Apply the filters previously queued to each DataTable contained by this DataTable\Map.
 
 #### Signature
@@ -142,7 +147,8 @@ Apply the filters previously queued to each DataTable contained by this DataTabl
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
-### `filter() `
+### `filter()`
+
 Apply a filter to all tables contained by this instance.
 
 #### Signature
@@ -175,7 +181,8 @@ Apply a filter to all tables contained by this instance.
 
 <a name="getdatatables" id="getdatatables"></a>
 <a name="getDataTables" id="getDataTables"></a>
-### `getDataTables() `
+### `getDataTables()`
+
 Returns the array of DataTables contained by this class.
 
 #### Signature
@@ -195,7 +202,8 @@ Returns the array of DataTables contained by this class.
 
 <a name="gettable" id="gettable"></a>
 <a name="getTable" id="getTable"></a>
-### `getTable() `
+### `getTable()`
+
 Returns the table with the specific label.
 
 #### Signature
@@ -229,7 +237,8 @@ Returns the table with the specific label.
 
 <a name="getfirstrow" id="getfirstrow"></a>
 <a name="getFirstRow" id="getFirstRow"></a>
-### `getFirstRow() `
+### `getFirstRow()`
+
 Returns the first element in the Map's array.
 
 #### Signature
@@ -249,7 +258,8 @@ Returns the first element in the Map's array.
 
 <a name="getlastrow" id="getlastrow"></a>
 <a name="getLastRow" id="getLastRow"></a>
-### `getLastRow() `
+### `getLastRow()`
+
 Returns the last element in the Map's array.
 
 #### Signature
@@ -269,7 +279,8 @@ Returns the last element in the Map's array.
 
 <a name="addtable" id="addtable"></a>
 <a name="addTable" id="addTable"></a>
-### `addTable() `
+### `addTable()`
+
 Adds a new DataTable or Map instance to this DataTable\Map.
 
 #### Signature
@@ -302,7 +313,8 @@ Adds a new DataTable or Map instance to this DataTable\Map.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
-### `__toString() `
+### `__toString()`
+
 Returns a string output of this DataTable\Map (applying the default renderer to every DataTable of this DataTable\Map).
 
 #### Signature
@@ -311,7 +323,8 @@ Returns a string output of this DataTable\Map (applying the default renderer to 
 
 <a name="enablerecursivesort" id="enablerecursivesort"></a>
 <a name="enableRecursiveSort" id="enableRecursiveSort"></a>
-### `enableRecursiveSort() `
+### `enableRecursiveSort()`
+
 See DataTable::enableRecursiveSort().
 
 #### Signature
@@ -320,7 +333,8 @@ See DataTable::enableRecursiveSort().
 
 <a name="renamecolumn" id="renamecolumn"></a>
 <a name="renameColumn" id="renameColumn"></a>
-### `renameColumn() `
+### `renameColumn()`
+
 Renames the given column in each contained DataTable.
 
 See DataTable::renameColumn().
@@ -355,7 +369,8 @@ See DataTable::renameColumn().
 
 <a name="deletecolumns" id="deletecolumns"></a>
 <a name="deleteColumns" id="deleteColumns"></a>
-### `deleteColumns() `
+### `deleteColumns()`
+
 Deletes the specified columns in each contained DataTable.
 
 See DataTable::deleteColumns().
@@ -390,7 +405,8 @@ See DataTable::deleteColumns().
 
 <a name="deleterow" id="deleterow"></a>
 <a name="deleteRow" id="deleteRow"></a>
-### `deleteRow() `
+### `deleteRow()`
+
 Deletes a table from the array of DataTables.
 
 #### Signature
@@ -413,7 +429,8 @@ Deletes a table from the array of DataTables.
 
 <a name="deletecolumn" id="deletecolumn"></a>
 <a name="deleteColumn" id="deleteColumn"></a>
-### `deleteColumn() `
+### `deleteColumn()`
+
 Deletes the given column in every contained DataTable.
 
 #### See Also
@@ -440,7 +457,8 @@ Deletes the given column in every contained DataTable.
 
 <a name="getcolumn" id="getcolumn"></a>
 <a name="getColumn" id="getColumn"></a>
-### `getColumn() `
+### `getColumn()`
+
 Returns the array containing all column values in all contained DataTables for the requested column.
 
 #### Signature
@@ -463,7 +481,8 @@ Returns the array containing all column values in all contained DataTables for t
 
 <a name="mergechildren" id="mergechildren"></a>
 <a name="mergeChildren" id="mergeChildren"></a>
-### `mergeChildren() `
+### `mergeChildren()`
+
 Merges the rows of every child DataTable into a new one and returns it.
 
 This function will also set the label of the merged rows
@@ -530,7 +549,8 @@ Note: This DataTable/Map will be destroyed and will be no longer usable after th
 
 <a name="adddatatable" id="adddatatable"></a>
 <a name="addDataTable" id="addDataTable"></a>
-### `addDataTable() `
+### `addDataTable()`
+
 Sums a DataTable to all the tables in this array.
 
 _Note: Will only add `$tableToSum` if the childTable has some rows._
@@ -557,7 +577,8 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable).
 
 <a name="mergesubtables" id="mergesubtables"></a>
 <a name="mergeSubtables" id="mergeSubtables"></a>
-### `mergeSubtables() `
+### `mergeSubtables()`
+
 Returns a new DataTable\Map w/ child tables that have had their subtables merged.
 
 See DataTable::mergeSubtables().
@@ -568,7 +589,8 @@ See DataTable::mergeSubtables().
 
 <a name="getemptyclone" id="getemptyclone"></a>
 <a name="getEmptyClone" id="getEmptyClone"></a>
-### `getEmptyClone() `
+### `getEmptyClone()`
+
 Returns a new DataTable\Map w/o any child DataTables, but with the same key name as this instance.
 
 #### Signature
@@ -577,7 +599,8 @@ Returns a new DataTable\Map w/o any child DataTables, but with the same key name
 
 <a name="getmetadataintersectarray" id="getmetadataintersectarray"></a>
 <a name="getMetadataIntersectArray" id="getMetadataIntersectArray"></a>
-### `getMetadataIntersectArray() `
+### `getMetadataIntersectArray()`
+
 Returns the intersection of children's metadata arrays (what they all have in common).
 
 #### Signature
@@ -600,7 +623,8 @@ Returns the intersection of children's metadata arrays (what they all have in co
 
 <a name="getcolumns" id="getcolumns"></a>
 <a name="getColumns" id="getColumns"></a>
-### `getColumns() `
+### `getColumns()`
+
 See DataTable::getColumns().
 
 #### Signature

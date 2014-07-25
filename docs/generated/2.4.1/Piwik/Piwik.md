@@ -39,7 +39,8 @@ The class defines the following methods:
 
 <a name="getcurrentuseremail" id="getcurrentuseremail"></a>
 <a name="getCurrentUserEmail" id="getCurrentUserEmail"></a>
-### `getCurrentUserEmail() `
+### `getCurrentUserEmail()`
+
 Returns the current user's email address.
 
 #### Signature
@@ -48,7 +49,8 @@ Returns the current user's email address.
 
 <a name="getcurrentuserlogin" id="getcurrentuserlogin"></a>
 <a name="getCurrentUserLogin" id="getCurrentUserLogin"></a>
-### `getCurrentUserLogin() `
+### `getCurrentUserLogin()`
+
 Returns the current user's username.
 
 #### Signature
@@ -57,7 +59,8 @@ Returns the current user's username.
 
 <a name="getcurrentusertokenauth" id="getcurrentusertokenauth"></a>
 <a name="getCurrentUserTokenAuth" id="getCurrentUserTokenAuth"></a>
-### `getCurrentUserTokenAuth() `
+### `getCurrentUserTokenAuth()`
+
 Returns the current user's token auth.
 
 #### Signature
@@ -66,7 +69,8 @@ Returns the current user's token auth.
 
 <a name="hasusersuperuseraccessoristheuser" id="hasusersuperuseraccessoristheuser"></a>
 <a name="hasUserSuperUserAccessOrIsTheUser" id="hasUserSuperUserAccessOrIsTheUser"></a>
-### `hasUserSuperUserAccessOrIsTheUser() `
+### `hasUserSuperUserAccessOrIsTheUser()`
+
 Returns `true` if the current user is either the Super User or the user specified by `$theUser`.
 
 #### Signature
@@ -89,7 +93,8 @@ Returns `true` if the current user is either the Super User or the user specifie
 
 <a name="checkuserhassuperuseraccessoristheuser" id="checkuserhassuperuseraccessoristheuser"></a>
 <a name="checkUserHasSuperUserAccessOrIsTheUser" id="checkUserHasSuperUserAccessOrIsTheUser"></a>
-### `checkUserHasSuperUserAccessOrIsTheUser() `
+### `checkUserHasSuperUserAccessOrIsTheUser()`
+
 Check that the current user is either the specified user or the superuser.
 
 #### Signature
@@ -114,7 +119,8 @@ Check that the current user is either the specified user or the superuser.
 
 <a name="hastheusersuperuseraccess" id="hastheusersuperuseraccess"></a>
 <a name="hasTheUserSuperUserAccess" id="hasTheUserSuperUserAccess"></a>
-### `hasTheUserSuperUserAccess() `
+### `hasTheUserSuperUserAccess()`
+
 Check whether the given user has superuser access.
 
 #### Signature
@@ -137,7 +143,8 @@ Check whether the given user has superuser access.
 
 <a name="hasusersuperuseraccess" id="hasusersuperuseraccess"></a>
 <a name="hasUserSuperUserAccess" id="hasUserSuperUserAccess"></a>
-### `hasUserSuperUserAccess() `
+### `hasUserSuperUserAccess()`
+
 Returns true if the current user has Super User access.
 
 #### Signature
@@ -146,7 +153,8 @@ Returns true if the current user has Super User access.
 
 <a name="isuserisanonymous" id="isuserisanonymous"></a>
 <a name="isUserIsAnonymous" id="isUserIsAnonymous"></a>
-### `isUserIsAnonymous() `
+### `isUserIsAnonymous()`
+
 Returns true if the current user is the special **anonymous** user or not.
 
 #### Signature
@@ -155,7 +163,8 @@ Returns true if the current user is the special **anonymous** user or not.
 
 <a name="checkuserisnotanonymous" id="checkuserisnotanonymous"></a>
 <a name="checkUserIsNotAnonymous" id="checkUserIsNotAnonymous"></a>
-### `checkUserIsNotAnonymous() `
+### `checkUserIsNotAnonymous()`
+
 Checks that the user is not the anonymous user.
 
 #### Signature
@@ -166,7 +175,8 @@ Checks that the user is not the anonymous user.
 
 <a name="checkuserhassuperuseraccess" id="checkuserhassuperuseraccess"></a>
 <a name="checkUserHasSuperUserAccess" id="checkUserHasSuperUserAccess"></a>
-### `checkUserHasSuperUserAccess() `
+### `checkUserHasSuperUserAccess()`
+
 Check that the current user has superuser access.
 
 #### Signature
@@ -177,7 +187,8 @@ Check that the current user has superuser access.
 
 <a name="isuserhasadminaccess" id="isuserhasadminaccess"></a>
 <a name="isUserHasAdminAccess" id="isUserHasAdminAccess"></a>
-### `isUserHasAdminAccess() `
+### `isUserHasAdminAccess()`
+
 Returns `true` if the user has admin access to the requested sites, `false` if otherwise.
 
 #### Signature
@@ -200,7 +211,8 @@ Returns `true` if the user has admin access to the requested sites, `false` if o
 
 <a name="checkuserhasadminaccess" id="checkuserhasadminaccess"></a>
 <a name="checkUserHasAdminAccess" id="checkUserHasAdminAccess"></a>
-### `checkUserHasAdminAccess() `
+### `checkUserHasAdminAccess()`
+
 Checks that the current user has admin access to the requested list of sites.
 
 #### Signature
@@ -225,7 +237,8 @@ Checks that the current user has admin access to the requested list of sites.
 
 <a name="isuserhassomeadminaccess" id="isuserhassomeadminaccess"></a>
 <a name="isUserHasSomeAdminAccess" id="isUserHasSomeAdminAccess"></a>
-### `isUserHasSomeAdminAccess() `
+### `isUserHasSomeAdminAccess()`
+
 Returns `true` if the current user has admin access to at least one site.
 
 #### Signature
@@ -234,7 +247,8 @@ Returns `true` if the current user has admin access to at least one site.
 
 <a name="checkuserhassomeadminaccess" id="checkuserhassomeadminaccess"></a>
 <a name="checkUserHasSomeAdminAccess" id="checkUserHasSomeAdminAccess"></a>
-### `checkUserHasSomeAdminAccess() `
+### `checkUserHasSomeAdminAccess()`
+
 Checks that the current user has admin access to at least one site.
 
 #### Signature
@@ -245,7 +259,8 @@ Checks that the current user has admin access to at least one site.
 
 <a name="isuserhasviewaccess" id="isuserhasviewaccess"></a>
 <a name="isUserHasViewAccess" id="isUserHasViewAccess"></a>
-### `isUserHasViewAccess() `
+### `isUserHasViewAccess()`
+
 Returns `true` if the user has view access to the requested list of sites.
 
 #### Signature
@@ -268,7 +283,8 @@ Returns `true` if the user has view access to the requested list of sites.
 
 <a name="checkuserhasviewaccess" id="checkuserhasviewaccess"></a>
 <a name="checkUserHasViewAccess" id="checkUserHasViewAccess"></a>
-### `checkUserHasViewAccess() `
+### `checkUserHasViewAccess()`
+
 Checks that the current user has view access to the requested list of sites
 
 #### Signature
@@ -293,7 +309,8 @@ Checks that the current user has view access to the requested list of sites
 
 <a name="isuserhassomeviewaccess" id="isuserhassomeviewaccess"></a>
 <a name="isUserHasSomeViewAccess" id="isUserHasSomeViewAccess"></a>
-### `isUserHasSomeViewAccess() `
+### `isUserHasSomeViewAccess()`
+
 Returns `true` if the current user has view access to at least one site.
 
 #### Signature
@@ -302,7 +319,8 @@ Returns `true` if the current user has view access to at least one site.
 
 <a name="checkuserhassomeviewaccess" id="checkuserhassomeviewaccess"></a>
 <a name="checkUserHasSomeViewAccess" id="checkUserHasSomeViewAccess"></a>
-### `checkUserHasSomeViewAccess() `
+### `checkUserHasSomeViewAccess()`
+
 Checks that the current user has view access to at least one site.
 
 #### Signature
@@ -313,7 +331,8 @@ Checks that the current user has view access to at least one site.
 
 <a name="redirecttomodule" id="redirecttomodule"></a>
 <a name="redirectToModule" id="redirectToModule"></a>
-### `redirectToModule() `
+### `redirectToModule()`
+
 Redirects the current request to a new module and action.
 
 #### Signature
@@ -356,7 +375,8 @@ Redirects the current request to a new module and action.
 
 <a name="isvalidemailstring" id="isvalidemailstring"></a>
 <a name="isValidEmailString" id="isValidEmailString"></a>
-### `isValidEmailString() `
+### `isValidEmailString()`
+
 Returns `true` if supplied the email address is a valid.
 
 #### Signature
@@ -379,7 +399,8 @@ Returns `true` if supplied the email address is a valid.
 
 <a name="postevent" id="postevent"></a>
 <a name="postEvent" id="postEvent"></a>
-### `postEvent() `
+### `postEvent()`
+
 Post an event to Piwik's event dispatcher which will execute the event's observers.
 
 #### Signature
@@ -432,7 +453,8 @@ Post an event to Piwik's event dispatcher which will execute the event's observe
 
 <a name="addaction" id="addaction"></a>
 <a name="addAction" id="addAction"></a>
-### `addAction() `
+### `addAction()`
+
 Register an observer to an event.
 
 **_Note: Observers should normally be defined in plugin objects. It is unlikely that you will
@@ -468,7 +490,8 @@ need to use this function._**
 
 <a name="translate" id="translate"></a>
 <a name="translate" id="translate"></a>
-### `translate() `
+### `translate()`
+
 Returns an internationalized string using a translation token.
 
 If a translation

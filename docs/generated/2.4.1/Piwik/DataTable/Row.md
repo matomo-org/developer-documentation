@@ -71,7 +71,8 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct() `
+### `__construct()`
+
 Constructor.
 
 #### Signature
@@ -93,7 +94,8 @@ Constructor.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
-### `__toString() `
+### `__toString()`
+
 Applies a basic rendering to the Row and returns the output.
 
 #### Signature
@@ -113,7 +115,8 @@ Applies a basic rendering to the Row and returns the output.
 
 <a name="deletecolumn" id="deletecolumn"></a>
 <a name="deleteColumn" id="deleteColumn"></a>
-### `deleteColumn() `
+### `deleteColumn()`
+
 Deletes the given column.
 
 #### Signature
@@ -147,7 +150,8 @@ Deletes the given column.
 
 <a name="renamecolumn" id="renamecolumn"></a>
 <a name="renameColumn" id="renameColumn"></a>
-### `renameColumn() `
+### `renameColumn()`
+
 Renames a column.
 
 #### Signature
@@ -180,7 +184,8 @@ Renames a column.
 
 <a name="getcolumn" id="getcolumn"></a>
 <a name="getColumn" id="getColumn"></a>
-### `getColumn() `
+### `getColumn()`
+
 Returns a column by name.
 
 #### Signature
@@ -214,7 +219,8 @@ Returns a column by name.
 
 <a name="getmetadata" id="getmetadata"></a>
 <a name="getMetadata" id="getMetadata"></a>
-### `getMetadata() `
+### `getMetadata()`
+
 Returns the array of all metadata, or one requested metadata value.
 
 #### Signature
@@ -237,7 +243,8 @@ Returns the array of all metadata, or one requested metadata value.
 
 <a name="hascolumn" id="hascolumn"></a>
 <a name="hasColumn" id="hasColumn"></a>
-### `hasColumn() `
+### `hasColumn()`
+
 Returns true if a column having the given name is already registered.
 
 The value will not be evaluated, it will
@@ -263,7 +270,8 @@ just check whether a column exists independent of its value.
 
 <a name="getcolumns" id="getcolumns"></a>
 <a name="getColumns" id="getColumns"></a>
-### `getColumns() `
+### `getColumns()`
+
 Returns the array containing all the columns.
 
 #### Signature
@@ -283,7 +291,8 @@ Returns the array containing all the columns.
 
 <a name="getidsubdatatable" id="getidsubdatatable"></a>
 <a name="getIdSubDataTable" id="getIdSubDataTable"></a>
-### `getIdSubDataTable() `
+### `getIdSubDataTable()`
+
 Returns the ID of the subDataTable.
 
 If there is no such a table, returns null.
@@ -305,7 +314,8 @@ If there is no such a table, returns null.
 
 <a name="getsubtable" id="getsubtable"></a>
 <a name="getSubtable" id="getSubtable"></a>
-### `getSubtable() `
+### `getSubtable()`
+
 Returns the associated subtable, if one exists.
 
 Returns `false` if none exists.
@@ -327,7 +337,8 @@ Returns `false` if none exists.
 
 <a name="sumsubtable" id="sumsubtable"></a>
 <a name="sumSubtable" id="sumSubtable"></a>
-### `sumSubtable() `
+### `sumSubtable()`
+
 Sums a DataTable to this row's subtable.
 
 If this row has no subtable a new
@@ -355,7 +366,8 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to 
 
 <a name="addsubtable" id="addsubtable"></a>
 <a name="addSubtable" id="addSubtable"></a>
-### `addSubtable() `
+### `addSubtable()`
+
 Attaches a subtable to this row.
 
 #### Signature
@@ -391,7 +403,8 @@ Attaches a subtable to this row.
 
 <a name="setsubtable" id="setsubtable"></a>
 <a name="setSubtable" id="setSubtable"></a>
-### `setSubtable() `
+### `setSubtable()`
+
 Attaches a subtable to this row, overwriting the existing subtable, if any.
 
 #### Signature
@@ -425,7 +438,8 @@ Attaches a subtable to this row, overwriting the existing subtable, if any.
 
 <a name="issubtableloaded" id="issubtableloaded"></a>
 <a name="isSubtableLoaded" id="isSubtableLoaded"></a>
-### `isSubtableLoaded() `
+### `isSubtableLoaded()`
+
 Returns `true` if the subtable is currently loaded in memory via Piwik\DataTable\Manager.
 
 #### Signature
@@ -434,7 +448,8 @@ Returns `true` if the subtable is currently loaded in memory via Piwik\DataTable
 
 <a name="removesubtable" id="removesubtable"></a>
 <a name="removeSubtable" id="removeSubtable"></a>
-### `removeSubtable() `
+### `removeSubtable()`
+
 Removes the subtable reference.
 
 #### Signature
@@ -443,7 +458,8 @@ Removes the subtable reference.
 
 <a name="setcolumns" id="setcolumns"></a>
 <a name="setColumns" id="setColumns"></a>
-### `setColumns() `
+### `setColumns()`
+
 Set all the columns at once.
 
 Overwrites **all** previously set columns.
@@ -468,7 +484,8 @@ Overwrites **all** previously set columns.
 
 <a name="setcolumn" id="setcolumn"></a>
 <a name="setColumn" id="setColumn"></a>
-### `setColumn() `
+### `setColumn()`
+
 Set the value `$value` to the column called `$name`.
 
 #### Signature
@@ -501,7 +518,8 @@ Set the value `$value` to the column called `$name`.
 
 <a name="setmetadata" id="setmetadata"></a>
 <a name="setMetadata" id="setMetadata"></a>
-### `setMetadata() `
+### `setMetadata()`
+
 Set the value `$value` to the metadata called `$name`.
 
 #### Signature
@@ -534,7 +552,8 @@ Set the value `$value` to the metadata called `$name`.
 
 <a name="deletemetadata" id="deletemetadata"></a>
 <a name="deleteMetadata" id="deleteMetadata"></a>
-### `deleteMetadata() `
+### `deleteMetadata()`
+
 Deletes one metadata value or all metadata values.
 
 #### Signature
@@ -568,7 +587,8 @@ Deletes one metadata value or all metadata values.
 
 <a name="addcolumn" id="addcolumn"></a>
 <a name="addColumn" id="addColumn"></a>
-### `addColumn() `
+### `addColumn()`
+
 Add a new column to the row.
 
 If the column already exists, throws an exception.
@@ -605,7 +625,8 @@ If the column already exists, throws an exception.
 
 <a name="addcolumns" id="addcolumns"></a>
 <a name="addColumns" id="addColumns"></a>
-### `addColumns() `
+### `addColumns()`
+
 Add many columns to this row.
 
 #### Signature
@@ -630,7 +651,8 @@ Add many columns to this row.
 
 <a name="addmetadata" id="addmetadata"></a>
 <a name="addMetadata" id="addMetadata"></a>
-### `addMetadata() `
+### `addMetadata()`
+
 Add a new metadata to the row.
 
 If the metadata already exists, throws an exception.
@@ -667,7 +689,8 @@ If the metadata already exists, throws an exception.
 
 <a name="sumrow" id="sumrow"></a>
 <a name="sumRow" id="sumRow"></a>
-### `sumRow() `
+### `sumRow()`
+
 Sums the given `$rowToSum` columns values to the existing row column values.
 
 Only the int or float values will be summed. Label columns will be ignored
@@ -715,7 +738,8 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
 
 <a name="sumrowmetadata" id="sumrowmetadata"></a>
 <a name="sumRowMetadata" id="sumRowMetadata"></a>
-### `sumRowMetadata() `
+### `sumRowMetadata()`
+
 Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 
 #### Signature
@@ -738,7 +762,8 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 
 <a name="issummaryrow" id="issummaryrow"></a>
 <a name="isSummaryRow" id="isSummaryRow"></a>
-### `isSummaryRow() `
+### `isSummaryRow()`
+
 Returns `true` if this row is the summary row, `false` if otherwise.
 
 This function
@@ -750,7 +775,8 @@ depends on the label of the row, and so, is not 100% accurate.
 
 <a name="isequal" id="isequal"></a>
 <a name="isEqual" id="isEqual"></a>
-### `isEqual() `
+### `isEqual()`
+
 Helper function that tests if two rows are equal.
 
 Two rows are equal if:

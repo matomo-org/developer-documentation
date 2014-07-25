@@ -8,11 +8,12 @@ Methods
 
 The class defines the following methods:
 
-- [`configure()`](#configure) &mdash; Configures the widgets.
+- [`configure()`](#configure) &mdash; Configures the widgets. *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
 
 <a name="configure" id="configure"></a>
 <a name="configure" id="configure"></a>
-### `configure() *inherited from*` [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+### `configure()`
+
 Configures the widgets.
 
 Here you can for instance add or remove widgets.

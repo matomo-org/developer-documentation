@@ -71,7 +71,8 @@ The class defines the following methods:
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
-### `get() `
+### `get()`
+
 Returns the database connection and creates it if it hasn't been already.
 
 #### Signature
@@ -91,7 +92,8 @@ Returns the database connection and creates it if it hasn't been already.
 
 <a name="getdatabaseconfig" id="getdatabaseconfig"></a>
 <a name="getDatabaseConfig" id="getDatabaseConfig"></a>
-### `getDatabaseConfig() `
+### `getDatabaseConfig()`
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -112,7 +114,8 @@ Returns the database connection and creates it if it hasn't been already.
 
 <a name="createdatabaseobject" id="createdatabaseobject"></a>
 <a name="createDatabaseObject" id="createDatabaseObject"></a>
-### `createDatabaseObject() `
+### `createDatabaseObject()`
+
 Connects to the database.
 
 Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
@@ -137,7 +140,8 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
 
 <a name="destroydatabaseobject" id="destroydatabaseobject"></a>
 <a name="destroyDatabaseObject" id="destroyDatabaseObject"></a>
-### `destroyDatabaseObject() `
+### `destroyDatabaseObject()`
+
 Disconnects and destroys the database connection.
 
 For tests.
@@ -148,7 +152,8 @@ For tests.
 
 <a name="exec" id="exec"></a>
 <a name="exec" id="exec"></a>
-### `exec() `
+### `exec()`
+
 Executes an unprepared SQL query.
 
 Recommended for DDL statements like `CREATE`,
@@ -189,7 +194,8 @@ number of rows affected. For PDO, it returns a
 
 <a name="query" id="query"></a>
 <a name="query" id="query"></a>
-### `query() `
+### `query()`
+
 Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
 
 This method is meant for non-query SQL statements like `INSERT` and `UPDATE. If you want to fetch
@@ -227,7 +233,8 @@ data from the DB you should use one of the fetch... functions.
 
 <a name="fetchall" id="fetchall"></a>
 <a name="fetchAll" id="fetchAll"></a>
-### `fetchAll() `
+### `fetchAll()`
+
 Executes an SQL `SELECT` statement and returns all fetched rows from the result set.
 
 #### Signature
@@ -273,7 +280,8 @@ Executes an SQL `SELECT` statement and returns all fetched rows from the result 
 
 <a name="fetchrow" id="fetchrow"></a>
 <a name="fetchRow" id="fetchRow"></a>
-### `fetchRow() `
+### `fetchRow()`
+
 Executes an SQL `SELECT` statement and returns the first row of the result set.
 
 #### Signature
@@ -319,7 +327,8 @@ Executes an SQL `SELECT` statement and returns the first row of the result set.
 
 <a name="fetchone" id="fetchone"></a>
 <a name="fetchOne" id="fetchOne"></a>
-### `fetchOne() `
+### `fetchOne()`
+
 Executes an SQL `SELECT` statement and returns the first column value of the first row in the result set.
 
 #### Signature
@@ -354,7 +363,8 @@ Executes an SQL `SELECT` statement and returns the first column value of the fir
 
 <a name="fetchassoc" id="fetchassoc"></a>
 <a name="fetchAssoc" id="fetchAssoc"></a>
-### `fetchAssoc() `
+### `fetchAssoc()`
+
 Executes an SQL `SELECT` statement and returns the entire result set indexed by the first selected field.
 
 #### Signature
@@ -400,7 +410,8 @@ Executes an SQL `SELECT` statement and returns the entire result set indexed by 
 
 <a name="deleteallrows" id="deleteallrows"></a>
 <a name="deleteAllRows" id="deleteAllRows"></a>
-### `deleteAllRows() `
+### `deleteAllRows()`
+
 Deletes all desired rows in a table, while using a limit.
 
 This function will execute many
@@ -486,7 +497,8 @@ locking the table for too long.
 
 <a name="optimizetables" id="optimizetables"></a>
 <a name="optimizeTables" id="optimizeTables"></a>
-### `optimizeTables() `
+### `optimizeTables()`
+
 Runs an `OPTIMIZE TABLE` query on the supplied table or tables.
 
 Tables will only be optimized if the `[General] enable_sql_optimize_queries` INI config option is
@@ -512,7 +524,8 @@ set to **1**.
 
 <a name="droptables" id="droptables"></a>
 <a name="dropTables" id="dropTables"></a>
-### `dropTables() `
+### `dropTables()`
+
 Drops the supplied table or tables.
 
 #### Signature
@@ -535,7 +548,8 @@ Drops the supplied table or tables.
 
 <a name="dropalltables" id="dropalltables"></a>
 <a name="dropAllTables" id="dropAllTables"></a>
-### `dropAllTables() `
+### `dropAllTables()`
+
 Drops all tables
 
 #### Signature
@@ -544,7 +558,8 @@ Drops all tables
 
 <a name="getcolumnnamesfromtable" id="getcolumnnamesfromtable"></a>
 <a name="getColumnNamesFromTable" id="getColumnNamesFromTable"></a>
-### `getColumnNamesFromTable() `
+### `getColumnNamesFromTable()`
+
 Get columns information from table
 
 #### Signature
@@ -567,7 +582,8 @@ Get columns information from table
 
 <a name="locktables" id="locktables"></a>
 <a name="lockTables" id="lockTables"></a>
-### `lockTables() `
+### `lockTables()`
+
 Locks the supplied table or tables.
 
 **NOTE:** Piwik does not require the `LOCK TABLES` privilege to be available. Piwik
@@ -603,7 +619,8 @@ should still work if it has not been granted.
 
 <a name="unlockalltables" id="unlockalltables"></a>
 <a name="unlockAllTables" id="unlockAllTables"></a>
-### `unlockAllTables() `
+### `unlockAllTables()`
+
 Releases all table locks.
 
 **NOTE:** Piwik does not require the `LOCK TABLES` privilege to be available. Piwik
@@ -615,7 +632,8 @@ should still work if it has not been granted.
 
 <a name="segmentedfetchfirst" id="segmentedfetchfirst"></a>
 <a name="segmentedFetchFirst" id="segmentedFetchFirst"></a>
-### `segmentedFetchFirst() `
+### `segmentedFetchFirst()`
+
 Performs a `SELECT` statement on a table one chunk at a time and returns the first successfully fetched value.
 
 This function will execute a query on one set of rows in a table. If nothing
@@ -702,7 +720,8 @@ for too long.
 
 <a name="segmentedfetchone" id="segmentedfetchone"></a>
 <a name="segmentedFetchOne" id="segmentedFetchOne"></a>
-### `segmentedFetchOne() `
+### `segmentedFetchOne()`
+
 Performs a `SELECT` on a table one chunk at a time and returns an array of every fetched value.
 
 This function will break up a `SELECT` query into several smaller queries by
@@ -784,7 +803,8 @@ the table will not be locked for too long.
 
 <a name="segmentedfetchall" id="segmentedfetchall"></a>
 <a name="segmentedFetchAll" id="segmentedFetchAll"></a>
-### `segmentedFetchAll() `
+### `segmentedFetchAll()`
+
 Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
 
 This function will break up a `SELECT` query into several smaller queries by
@@ -866,7 +886,8 @@ the table will not be locked for too long.
 
 <a name="segmentedquery" id="segmentedquery"></a>
 <a name="segmentedQuery" id="segmentedQuery"></a>
-### `segmentedQuery() `
+### `segmentedQuery()`
+
 Performs a `UPDATE` or `DELETE` statement on a table one chunk at a time.
 
 This function will break up a query into several smaller queries by
@@ -936,7 +957,8 @@ the table will not be locked for too long.
 
 <a name="tableexists" id="tableexists"></a>
 <a name="tableExists" id="tableExists"></a>
-### `tableExists() `
+### `tableExists()`
+
 Returns `true` if a table in the database, `false` if otherwise.
 
 #### Signature
@@ -959,7 +981,8 @@ Returns `true` if a table in the database, `false` if otherwise.
 
 <a name="getdblock" id="getdblock"></a>
 <a name="getDbLock" id="getDbLock"></a>
-### `getDbLock() `
+### `getDbLock()`
+
 Attempts to get a named lock.
 
 This function uses a timeout of 1s, but will
@@ -1006,7 +1029,8 @@ retry a set number of times.
 
 <a name="releasedblock" id="releasedblock"></a>
 <a name="releaseDbLock" id="releaseDbLock"></a>
-### `releaseDbLock() `
+### `releaseDbLock()`
+
 Releases a named lock.
 
 #### Signature
@@ -1040,7 +1064,8 @@ Releases a named lock.
 
 <a name="islockprivilegegranted" id="islockprivilegegranted"></a>
 <a name="isLockPrivilegeGranted" id="isLockPrivilegeGranted"></a>
-### `isLockPrivilegeGranted() `
+### `isLockPrivilegeGranted()`
+
 Checks whether the database user is allowed to lock tables.
 
 #### Signature

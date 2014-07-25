@@ -52,8 +52,8 @@ Methods
 The abstract class defines the following methods:
 
 - [`addSegment()`](#addsegment) &mdash; Adds a new segment.
-- [`getName()`](#getname) &mdash; Get the translated name of the dimension.
-- [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension.
+- [`getName()`](#getname) &mdash; Get the translated name of the dimension. *inherited from* [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension. *inherited from* [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`install()`](#install) &mdash; Installs the action dimension in case it is not installed yet.
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and columnType is set.
 - [`onLookupAction()`](#onlookupaction) &mdash; If the value you want to save for your dimension is something like a page title or page url, you usually do not want to save the raw value over and over again to save bytes in the database.
@@ -62,7 +62,8 @@ The abstract class defines the following methods:
 
 <a name="addsegment" id="addsegment"></a>
 <a name="addSegment" id="addSegment"></a>
-### `addSegment() `
+### `addSegment()`
+
 Adds a new segment.
 
 It automatically sets the SQL segment depending on the column name in case none is set
@@ -92,7 +93,8 @@ already.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
-### `getName() *inherited from*` [`Dimension`](../../../Piwik/Columns/Dimension.md)
+### `getName()`
+
 Get the translated name of the dimension.
 
 Defaults to an empty string.
@@ -103,7 +105,8 @@ Defaults to an empty string.
 
 <a name="getalldimensions" id="getalldimensions"></a>
 <a name="getAllDimensions" id="getAllDimensions"></a>
-### `getAllDimensions() *inherited from*` [`Dimension`](../../../Piwik/Columns/Dimension.md)
+### `getAllDimensions()`
+
 Gets an instance of all available visit, action and conversion dimension.
 
 #### Signature
@@ -112,7 +115,8 @@ Gets an instance of all available visit, action and conversion dimension.
 
 <a name="install" id="install"></a>
 <a name="install" id="install"></a>
-### `install() `
+### `install()`
+
 Installs the action dimension in case it is not installed yet.
 
 The installation is already implemented based on
@@ -152,7 +156,8 @@ Example:
 
 <a name="uninstall" id="uninstall"></a>
 <a name="uninstall" id="uninstall"></a>
-### `uninstall() `
+### `uninstall()`
+
 Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and columnType is set.
 
 In case you perform any custom
@@ -168,7 +173,8 @@ will be done.
 
 <a name="onlookupaction" id="onlookupaction"></a>
 <a name="onLookupAction" id="onLookupAction"></a>
-### `onLookupAction() `
+### `onLookupAction()`
+
 If the value you want to save for your dimension is something like a page title or page url, you usually do not want to save the raw value over and over again to save bytes in the database.
 
 Instead you want to save each value
@@ -219,7 +225,8 @@ those.
 
 <a name="getactionid" id="getactionid"></a>
 <a name="getActionId" id="getActionId"></a>
-### `getActionId() `
+### `getActionId()`
+
 An action id.
 
 The value returned by the lookup action will be associated with this id in the log_action table.
@@ -232,7 +239,8 @@ The value returned by the lookup action will be associated with this id in the l
 
 <a name="onnewaction" id="onnewaction"></a>
 <a name="onNewAction" id="onNewAction"></a>
-### `onNewAction() `
+### `onNewAction()`
+
 This event is triggered before a new action is logged to the `log_link_visit_action` table.
 
 It overwrites any

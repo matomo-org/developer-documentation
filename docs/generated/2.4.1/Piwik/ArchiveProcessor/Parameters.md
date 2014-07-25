@@ -20,7 +20,8 @@ The class defines the following methods:
 
 <a name="getperiod" id="getperiod"></a>
 <a name="getPeriod" id="getPeriod"></a>
-### `getPeriod() `
+### `getPeriod()`
+
 Returns the period we are computing statistics for.
 
 #### Signature
@@ -29,7 +30,8 @@ Returns the period we are computing statistics for.
 
 <a name="getsite" id="getsite"></a>
 <a name="getSite" id="getSite"></a>
-### `getSite() `
+### `getSite()`
+
 Returns the site we are computing statistics for.
 
 #### Signature
@@ -38,7 +40,8 @@ Returns the site we are computing statistics for.
 
 <a name="getsegment" id="getsegment"></a>
 <a name="getSegment" id="getSegment"></a>
-### `getSegment() `
+### `getSegment()`
+
 The Segment used to limit the set of visits that are being aggregated.
 
 #### Signature

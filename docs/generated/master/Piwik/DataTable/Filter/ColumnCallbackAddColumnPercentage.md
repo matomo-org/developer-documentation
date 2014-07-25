@@ -17,12 +17,13 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient).
+- [`__construct()`](#__construct) &mdash; Constructor. *inherited from* [`ColumnCallbackAddColumnQuotient`](../../../Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md)
+- [`filter()`](#filter) &mdash; See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient). *inherited from* [`ColumnCallbackAddColumnQuotient`](../../../Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct() *inherited from*` [`ColumnCallbackAddColumnQuotient`](../../../Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md)
+### `__construct()`
+
 Constructor.
 
 #### Signature
@@ -104,7 +105,8 @@ Constructor.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
-### `filter() *inherited from*` [`ColumnCallbackAddColumnQuotient`](../../../Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md)
+### `filter()`
+
 See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient).
 
 #### Signature

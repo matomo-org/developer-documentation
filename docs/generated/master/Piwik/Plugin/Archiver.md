@@ -53,7 +53,8 @@ The abstract class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct() `
+### `__construct()`
+
 Constructor.
 
 #### Signature
@@ -75,7 +76,8 @@ Constructor.
 
 <a name="aggregatedayreport" id="aggregatedayreport"></a>
 <a name="aggregateDayReport" id="aggregateDayReport"></a>
-### `aggregateDayReport() `
+### `aggregateDayReport()`
+
 Archives data for a day period.
 
 Implementations of this method should do more computation intensive activities such
@@ -92,7 +94,8 @@ Aggregate log table rows using a [LogAggregator](/api-reference/Piwik/DataAccess
 
 <a name="aggregatemultiplereports" id="aggregatemultiplereports"></a>
 <a name="aggregateMultipleReports" id="aggregateMultipleReports"></a>
-### `aggregateMultipleReports() `
+### `aggregateMultipleReports()`
+
 Archives data for a non-day period.
 
 Implementations of this method should only aggregate existing reports of subperiods of the
@@ -109,7 +112,8 @@ method.
 
 <a name="getprocessor" id="getprocessor"></a>
 <a name="getProcessor" id="getProcessor"></a>
-### `getProcessor() `
+### `getProcessor()`
+
 Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance that can be used to insert archive data for the period, segment and site we are archiving data for.
 
 #### Signature
@@ -118,7 +122,8 @@ Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance tha
 
 <a name="getlogaggregator" id="getlogaggregator"></a>
 <a name="getLogAggregator" id="getLogAggregator"></a>
-### `getLogAggregator() `
+### `getLogAggregator()`
+
 Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
 
 #### Signature
@@ -127,7 +132,8 @@ Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instanc
 
 <a name="isenabled" id="isenabled"></a>
 <a name="isEnabled" id="isEnabled"></a>
-### `isEnabled() `
+### `isEnabled()`
+
 Whether this Archiver should be used or not.
 
 #### Signature

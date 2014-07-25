@@ -51,7 +51,8 @@ The class defines the following methods:
 
 <a name="build" id="build"></a>
 <a name="build" id="build"></a>
-### `build() `
+### `build()`
+
 Creates a [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance by ID.
 
 If the **viewDataTable** query parameter is set,

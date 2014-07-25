@@ -19,12 +19,13 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; See [MetadataCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/MetadataCallbackAddMetadata).
-- [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering.
-- [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory.
+- [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. *inherited from* [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+- [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. *inherited from* [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct() `
+### `__construct()`
+
 Constructor.
 
 #### Signature
@@ -86,7 +87,8 @@ Constructor.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
-### `filter() `
+### `filter()`
+
 See [MetadataCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/MetadataCallbackAddMetadata).
 
 #### Signature
@@ -109,7 +111,8 @@ See [MetadataCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/Metadata
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>
-### `enableRecursive() *inherited from*` [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+### `enableRecursive()`
+
 Enables/Disables recursive filtering.
 
 Whether this property is actually used
@@ -135,7 +138,8 @@ is up to the derived BaseFilter class.
 
 <a name="filtersubtable" id="filtersubtable"></a>
 <a name="filterSubTable" id="filterSubTable"></a>
-### `filterSubTable() *inherited from*` [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+### `filterSubTable()`
+
 Filters a row's subtable, if one exists and is loaded in memory.
 
 #### Signature

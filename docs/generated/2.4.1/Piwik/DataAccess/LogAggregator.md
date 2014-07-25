@@ -91,7 +91,8 @@ The class defines the following methods:
 
 <a name="queryvisitsbydimension" id="queryvisitsbydimension"></a>
 <a name="queryVisitsByDimension" id="queryVisitsByDimension"></a>
-### `queryVisitsByDimension() `
+### `queryVisitsByDimension()`
+
 Executes and returns a query aggregating visit logs, optionally grouping by some dimension.
 
 Returns
@@ -190,7 +191,8 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 
 <a name="queryecommerceitems" id="queryecommerceitems"></a>
 <a name="queryEcommerceItems" id="queryEcommerceItems"></a>
-### `queryEcommerceItems() `
+### `queryEcommerceItems()`
+
 Executes and returns a query aggregating ecommerce item data (everything stored in the **log\_conversion\_item** table)  and returns a DB statement that can be used to iterate over the result
 
 <a name="queryEcommerceItems-result-set"></a>
@@ -245,7 +247,8 @@ Segmentation is not yet supported for this aggregation method.
 
 <a name="queryactionsbydimension" id="queryactionsbydimension"></a>
 <a name="queryActionsByDimension" id="queryActionsByDimension"></a>
-### `queryActionsByDimension() `
+### `queryActionsByDimension()`
+
 Executes and returns a query aggregating action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the result
 
 <a name="queryActionsByDimension-result-set"></a>
@@ -344,7 +347,8 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
 
 <a name="getselectsfromrangedcolumn" id="getselectsfromrangedcolumn"></a>
 <a name="getSelectsFromRangedColumn" id="getSelectsFromRangedColumn"></a>
-### `getSelectsFromRangedColumn() `
+### `getSelectsFromRangedColumn()`
+
 Creates and returns an array of SQL `SELECT` expressions that will each count how many rows have a column whose value is within a certain range.
 
 **Note:** The result of this function is meant for use in the `$additionalSelects` parameter

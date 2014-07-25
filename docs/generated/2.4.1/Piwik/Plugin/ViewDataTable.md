@@ -165,7 +165,8 @@ The abstract class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct() `
+### `__construct()`
+
 Constructor.
 
 Initializes display and request properties to their default values.
@@ -211,7 +212,8 @@ way reports are displayed.
 
 <a name="getdefaultconfig" id="getdefaultconfig"></a>
 <a name="getDefaultConfig" id="getDefaultConfig"></a>
-### `getDefaultConfig() `
+### `getDefaultConfig()`
+
 Returns the default config instance.
 
 Visualizations that define their own display properties should override this method and
@@ -225,7 +227,8 @@ See the last example [here](/api-reference/Piwik/Plugin/ViewDataTable) for more 
 
 <a name="getdefaultrequestconfig" id="getdefaultrequestconfig"></a>
 <a name="getDefaultRequestConfig" id="getDefaultRequestConfig"></a>
-### `getDefaultRequestConfig() `
+### `getDefaultRequestConfig()`
+
 Returns the default request config instance.
 
 Visualizations that define their own request properties should override this method and
@@ -239,7 +242,8 @@ See the last example [here](/api-reference/Piwik/Plugin/ViewDataTable) for more 
 
 <a name="getviewdatatableid" id="getviewdatatableid"></a>
 <a name="getViewDataTableId" id="getViewDataTableId"></a>
-### `getViewDataTableId() `
+### `getViewDataTableId()`
+
 Returns the viewDataTable ID for this DataTable visualization.
 
 Derived classes should not override this method. They should instead declare a const ID field
@@ -253,7 +257,8 @@ with the viewDataTable ID.
 
 <a name="isviewdatatableid" id="isviewdatatableid"></a>
 <a name="isViewDataTableId" id="isViewDataTableId"></a>
-### `isViewDataTableId() `
+### `isViewDataTableId()`
+
 Returns `true` if this instance's or any of its ancestors' viewDataTable IDs equals the supplied ID, `false` if otherwise.
 
 Can be used to test whether a ViewDataTable object is an instance of a certain visualization or not,
@@ -279,7 +284,8 @@ without having to know where that visualization is.
 
 <a name="getdatatable" id="getdatatable"></a>
 <a name="getDataTable" id="getDataTable"></a>
-### `getDataTable() `
+### `getDataTable()`
+
 Returns the DataTable loaded from the API.
 
 #### Signature
@@ -290,7 +296,8 @@ Returns the DataTable loaded from the API.
 
 <a name="setdatatable" id="setdatatable"></a>
 <a name="setDataTable" id="setDataTable"></a>
-### `setDataTable() `
+### `setDataTable()`
+
 To prevent calling an API multiple times, the DataTable can be set directly.
 
 It won't be loaded from the API in this case.
@@ -315,7 +322,8 @@ It won't be loaded from the API in this case.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
-### `render() `
+### `render()`
+
 Requests all needed data and renders the view.
 
 #### Signature
@@ -335,7 +343,8 @@ Requests all needed data and renders the view.
 
 <a name="isrequestingsingledatatable" id="isrequestingsingledatatable"></a>
 <a name="isRequestingSingleDataTable" id="isRequestingSingleDataTable"></a>
-### `isRequestingSingleDataTable() `
+### `isRequestingSingleDataTable()`
+
 Returns `true` if this instance will request a single DataTable, `false` if requesting more than one.
 
 #### Signature
@@ -344,7 +353,8 @@ Returns `true` if this instance will request a single DataTable, `false` if requ
 
 <a name="candisplayviewdatatable" id="candisplayviewdatatable"></a>
 <a name="canDisplayViewDataTable" id="canDisplayViewDataTable"></a>
-### `canDisplayViewDataTable() `
+### `canDisplayViewDataTable()`
+
 Returns `true` if this visualization can display some type of data or not.
 
 New visualization classes should override this method if they can only visualize certain
