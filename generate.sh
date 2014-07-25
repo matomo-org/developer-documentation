@@ -11,7 +11,7 @@ cd piwik
 git reset --hard
 git clean -f -d
 git checkout master
-git pull
+git pull origin master
 cd ..
 php generator/generate.php
 GENERATION_SUCCESS=$?
