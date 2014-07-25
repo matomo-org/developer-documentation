@@ -68,6 +68,7 @@
 ## Plugin\Dimension\ConversionDimension
 ## Plugin\Dimension\VisitDimension
 ## Plugin\Manager
+## Plugin\Menu
 ## Plugin\Report
 ## Plugin\Segment
 ## Plugin\Settings
@@ -122,3 +123,4 @@
 ## ViewDataTable\Factory
 ## ViewDataTable\RequestConfig
 ## View\UIControl
+## WidgetsList

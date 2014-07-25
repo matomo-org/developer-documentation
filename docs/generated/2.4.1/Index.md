@@ -59,6 +59,7 @@ Index
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](Piwik/ViewDataTable/RequestConfig.md#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`areQueuedFiltersDisabled()`](Piwik/ViewDataTable/RequestConfig.md#arequeuedfiltersdisabled) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`areGenericFiltersDisabled()`](Piwik/ViewDataTable/RequestConfig.md#aregenericfiltersdisabled) &mdash; _Method in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`add()`](Piwik/WidgetsList.md#add) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## B
 
@@ -324,6 +325,7 @@ Index
 - [`getNonProxyIpFromHeader()`](Piwik/IP.md#getnonproxyipfromheader) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`getLastIpFromList()`](Piwik/IP.md#getlastipfromlist) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`getHostByAddr()`](Piwik/IP.md#gethostbyaddr) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
+- [`getMenu()`](Piwik/Menu/MenuReporting.md#getmenu) &mdash; _Method in class_ [`MenuReporting`](Piwik/Menu/MenuReporting.md)
 - [`getVisitsMetricNames()`](Piwik/Metrics.md#getvisitsmetricnames) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
 - [`getMappingFromIdToName()`](Piwik/Metrics.md#getmappingfromidtoname) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
 - [`getDefaultMetricTranslations()`](Piwik/Metrics.md#getdefaultmetrictranslations) &mdash; _Method in class_ [`Metrics`](Piwik/Metrics.md)
@@ -467,6 +469,7 @@ Index
 - [`getTemplateVars()`](Piwik/View/UIControl.md#gettemplatevars) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`getClientSideProperties()`](Piwik/View/UIControl.md#getclientsideproperties) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`getClientSideParameters()`](Piwik/View/UIControl.md#getclientsideparameters) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`get()`](Piwik/WidgetsList.md#get) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## H
 
@@ -502,6 +505,7 @@ Index
 - [`isMappedIPv4()`](Piwik/IP.md#ismappedipv4) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`isIpInRange()`](Piwik/IP.md#isipinrange) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`info()`](Piwik/Log.md#info) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
+- [`isUrlFound()`](Piwik/Menu/MenuReporting.md#isurlfound) &mdash; _Method in class_ [`MenuReporting`](Piwik/Menu/MenuReporting.md)
 - [`isMultiplePeriod()`](Piwik/Period.md#ismultipleperiod) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
 - [`isUserIsAnonymous()`](Piwik/Piwik.md#isuserisanonymous) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`isUserHasAdminAccess()`](Piwik/Piwik.md#isuserhasadminaccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
@@ -538,6 +542,7 @@ Index
 - [`isSiteSearchEnabledFor()`](Piwik/Site.md#issitesearchenabledfor) &mdash; _Method in class_ [`Site`](Piwik/Site.md)
 - [`isLocalUrl()`](Piwik/Url.md#islocalurl) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`$idSubtable`](Piwik/ViewDataTable/RequestConfig.md#$idsubtable) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`isDefined()`](Piwik/WidgetsList.md#isdefined) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## J
 
@@ -673,6 +678,7 @@ Index
 - [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; _Class in namespace_ `Piwik\ViewDataTable` 
 - [`$request_parameters_to_modify`](Piwik/ViewDataTable/RequestConfig.md#$request_parameters_to_modify) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`render()`](Piwik/View/UIControl.md#render) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`remove()`](Piwik/WidgetsList.md#remove) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## S
 
@@ -854,6 +860,7 @@ Index
 - [`Widgets`](Piwik/Plugins/VisitorInterest/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\VisitorInterest` 
 - [`Widgets`](Piwik/Plugins/VisitsSummary/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\VisitsSummary` 
 - [`Weekly`](Piwik/ScheduledTime/Weekly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
+- [`WidgetsList`](Piwik/WidgetsList.md) &mdash; _Class in namespace_ `Piwik` 
 
 ## Y
 

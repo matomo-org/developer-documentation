@@ -349,7 +349,7 @@ the way the widget is added or modify any other behavior you can overwrite this 
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$widget` (`Piwik\WidgetsList`) &mdash;
+      `$widget` ([`WidgetsList`](../../Piwik/WidgetsList.md)) &mdash;
 
       <div markdown="1" class="param-desc"></div>
 

@@ -112,7 +112,7 @@ Here you can for instance remove widgets.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$widgetsList` (`Piwik\WidgetsList`) &mdash;
+      `$widgetsList` ([`WidgetsList`](../../Piwik/WidgetsList.md)) &mdash;
 
       <div markdown="1" class="param-desc"></div>
 

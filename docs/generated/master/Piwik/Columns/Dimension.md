@@ -3,6 +3,8 @@
 Dimension
 =========
 
+Since Piwik 2.5.0
+
 Properties
 ----------
 

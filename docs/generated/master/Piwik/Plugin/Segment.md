@@ -3,6 +3,8 @@
 Segment
 =======
 
+Since Piwik 2.5.0
+
 Creates a new segment that can be used for instance within the \Piwik\Columns\Dimension::configureSegment() method.
 
 Make sure to set at least the following values: [setName()](/api-reference/Piwik/Plugin/Segment#setname), [setSegment()](/api-reference/Piwik/Plugin/Segment#setsegment),

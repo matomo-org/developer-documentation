@@ -3,10 +3,12 @@
 ActionDimension
 ===============
 
+Since Piwik 2.5.0
+
 Defines a new action dimension that records any information during tracking for each action.
 
 You can record any action information by implementing one of the following events: [onLookupAction()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#onlookupaction) and
-getActionId() or [onNewAction()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#onnewaction). By defining a [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and [$columnType](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columntype) a new
+[getActionId()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#getactionid) or [onNewAction()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#onnewaction). By defining a [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and [$columnType](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columntype) a new
 column will be created in the database (table `log_link_visit_action`) automatically and the values you return in
 the previous mentioned events will be saved in this column.
 
@@ -20,6 +22,7 @@ The abstract class defines the following methods:
 - [`install()`](#install) &mdash; Installs the action dimension in case it is not installed yet.
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and columnType is set.
 - [`onLookupAction()`](#onlookupaction) &mdash; If the value you want to save for your dimension is something like a page title or page url, you usually do not want to save the raw value over and over again to save bytes in the database.
+- [`getActionId()`](#getactionid) &mdash; An action id.
 - [`onNewAction()`](#onnewaction) &mdash; This event is triggered before a new action is logged to the `log_link_visit_action` table.
 - [`addSegment()`](#addsegment) &mdash; Adds a new segment.
 
@@ -132,6 +135,20 @@ those.
     </div>
   </li>
 </ul>
+
+<a name="getactionid" id="getactionid"></a>
+<a name="getActionId" id="getActionId"></a>
+### `getActionId()`
+
+An action id.
+
+The value returned by the lookup action will be associated with this id in the log_action table.
+
+#### Signature
+
+- It returns a `int` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; in case not implemented
 
 <a name="onnewaction" id="onnewaction"></a>
 <a name="onNewAction" id="onNewAction"></a>

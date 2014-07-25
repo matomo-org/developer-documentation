@@ -3,6 +3,8 @@
 ConversionDimension
 ===================
 
+Since Piwik 2.5.0
+
 Defines a new conversion dimension that records any visit related information during tracking.
 
 You can record any visit information by implementing one of the following events:

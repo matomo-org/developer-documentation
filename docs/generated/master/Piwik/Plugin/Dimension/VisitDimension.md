@@ -3,6 +3,8 @@
 VisitDimension
 ==============
 
+Since Piwik 2.5.0
+
 Defines a new visit dimension that records any visit related information during tracking.
 
 You can record any visit information by implementing one of the following events: [onNewVisit()](/api-reference/Piwik/Plugin/Dimension/VisitDimension#onnewvisit),
@@ -25,6 +27,7 @@ The abstract class defines the following methods:
 - [`onExistingVisit()`](#onexistingvisit) &mdash; The `onExistingVisit` method is triggered when a visitor was recognized meaning it is not a new visitor.
 - [`onConvertedVisit()`](#onconvertedvisit) &mdash; This event is executed shortly after `onNewVisit` or `onExistingVisit` in case the visitor converted a goal.
 - [`onAnyGoalConversion()`](#onanygoalconversion) &mdash; By implementing this event you can persist a value to the `log_conversion` table in case a conversion happens.
+- [`getAllDimensions()`](#getalldimensions) &mdash; Get all visit dimensions that are defined by all activated plugins.
 
 <a name="install" id="install"></a>
 <a name="install" id="install"></a>
@@ -364,4 +367,14 @@ created automatically.
     </div>
   </li>
 </ul>
+
+<a name="getalldimensions" id="getalldimensions"></a>
+<a name="getAllDimensions" id="getAllDimensions"></a>
+### `getAllDimensions()`
+
+Get all visit dimensions that are defined by all activated plugins.
+
+#### Signature
+
+- It returns a [`VisitDimension[]`](../../../Piwik/Plugin/Dimension/VisitDimension.md) value.
 

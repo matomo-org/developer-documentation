@@ -72,6 +72,7 @@ This is a complete list of available classes:
 - [`Plugin\Dimension\ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md) &mdash; Defines a new conversion dimension that records any visit related information during tracking.
 - [`Plugin\Dimension\VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md) &mdash; Defines a new visit dimension that records any visit related information during tracking.
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
+- [`Plugin\Menu`](Piwik/Plugin/Menu.md) &mdash; Base class of all plugin menu providers.
 - [`Plugin\Report`](Piwik/Plugin/Report.md) &mdash; Defines a new report.
 - [`Plugin\Segment`](Piwik/Plugin/Segment.md) &mdash; Creates a new segment that can be used for instance within the \Piwik\Columns\Dimension::configureSegment() method.
 - [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all plugin settings providers.
@@ -126,3 +127,4 @@ This is a complete list of available classes:
 - [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
 - [`ViewDataTable\RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; Contains base request properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances.
 - [`View\UIControl`](Piwik/View/UIControl.md) &mdash; Base type of UI controls.
+- [`WidgetsList`](Piwik/WidgetsList.md) &mdash; Manages the global list of reports that can be displayed as dashboard widgets.
