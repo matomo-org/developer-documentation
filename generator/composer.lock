@@ -401,7 +401,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/piwik/Sami",
-                "reference": "7d3f6085e527bc634b73e4c5adf5d3eb75e8fce9"
+                "reference": "86461af5e815aa850365aae098d2591f4f9e6067"
             },
             "require": {
                 "dflydev/markdown": "1.0.*",
