@@ -41,6 +41,7 @@ try {
             'cache_dir'            => $rootDir.'/docs/cache/%version%',
             'template_dirs'        => array($rootDir.'/generator/template'),
             'default_opened_level' => 5,
+            'include_parent_data'  => true,
             'filter'               => new ApiClassFilter()
         ));
 
