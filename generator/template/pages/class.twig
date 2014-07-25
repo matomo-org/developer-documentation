@@ -102,7 +102,7 @@ The {{ class_type(class) }} defines the following methods:
 {% for method in methods %}
 <a name="{{ method.name|lower }}" id="{{ method.name|lower }}"></a>
 <a name="{{ method.name }}" id="{{ method.name }}"></a>
-### `{{ method.name }}()` {% if class.methods[method.name] is not defined %}*inherited from {{ class_name(method.getClass, true, "", true) }}*{%endif%}
+### `{{ method.name }}() {% if class.methods[method.name] is not defined %}*inherited from*` {{ class_name(method.getClass, true, "", true) }}{%else%}`{%endif%}
 {% if method.tags("since")|length %}
 {% for since in method.tags("since") %}
 
