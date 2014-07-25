@@ -48,8 +48,7 @@ The class defines the following methods:
 
 <a name="assigntemplatevar" id="assigntemplatevar"></a>
 <a name="assignTemplateVar" id="assignTemplateVar"></a>
-### `assignTemplateVar()`
-
+### `assignTemplateVar()` *inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)*
 Assigns a template variable making it available in the Twig template specified by `TEMPLATE_FILE`.
 
 #### Signature
@@ -82,8 +81,7 @@ Assigns a template variable making it available in the Twig template specified b
 
 <a name="istheredatatodisplay" id="istheredatatodisplay"></a>
 <a name="isThereDataToDisplay" id="isThereDataToDisplay"></a>
-### `isThereDataToDisplay()`
-
+### `isThereDataToDisplay()` *inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)*
 Returns `true` if there is data to display, `false` if otherwise.
 
 Derived classes should override this method if they change the amount of data that is loaded.
@@ -94,8 +92,7 @@ Derived classes should override this method if they change the amount of data th
 
 <a name="beforeloaddatatable" id="beforeloaddatatable"></a>
 <a name="beforeLoadDataTable" id="beforeLoadDataTable"></a>
-### `beforeLoadDataTable()`
-
+### `beforeLoadDataTable()` *inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)*
 Hook that is called before loading report data from the API.
 
 Use this method to change the request parameters that is sent to the API when requesting
@@ -107,8 +104,7 @@ data.
 
 <a name="beforegenericfiltersareappliedtoloadeddatatable" id="beforegenericfiltersareappliedtoloadeddatatable"></a>
 <a name="beforeGenericFiltersAreAppliedToLoadedDataTable" id="beforeGenericFiltersAreAppliedToLoadedDataTable"></a>
-### `beforeGenericFiltersAreAppliedToLoadedDataTable()`
-
+### `beforeGenericFiltersAreAppliedToLoadedDataTable()` *inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)*
 Hook that is executed before generic filters are applied.
 
 Use this method if you need access to the entire dataset (since generic filters will
@@ -120,8 +116,7 @@ limit and truncate reports).
 
 <a name="aftergenericfiltersareappliedtoloadeddatatable" id="aftergenericfiltersareappliedtoloadeddatatable"></a>
 <a name="afterGenericFiltersAreAppliedToLoadedDataTable" id="afterGenericFiltersAreAppliedToLoadedDataTable"></a>
-### `afterGenericFiltersAreAppliedToLoadedDataTable()`
-
+### `afterGenericFiltersAreAppliedToLoadedDataTable()` *inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)*
 Hook that is executed after generic filters are applied.
 
 #### Signature
@@ -130,8 +125,7 @@ Hook that is executed after generic filters are applied.
 
 <a name="afterallfiltersareapplied" id="afterallfiltersareapplied"></a>
 <a name="afterAllFiltersAreApplied" id="afterAllFiltersAreApplied"></a>
-### `afterAllFiltersAreApplied()`
-
+### `afterAllFiltersAreApplied()` *inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)*
 Hook that is executed after the report data is loaded and after all filters have been applied.
 
 Use this method to format the report data before the view is rendered.
@@ -142,8 +136,7 @@ Use this method to format the report data before the view is rendered.
 
 <a name="beforerender" id="beforerender"></a>
 <a name="beforeRender" id="beforeRender"></a>
-### `beforeRender()`
-
+### `beforeRender()` *inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)*
 Hook that is executed directly before rendering.
 
 Use this hook to force display properties to

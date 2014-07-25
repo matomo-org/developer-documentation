@@ -37,8 +37,7 @@ The abstract class defines the following methods:
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance()`
-
+### `getInstance()` *inherited from [`Singleton`](../../Piwik/Singleton.md)*
 Returns the singleton instance for the derived class.
 
 If the singleton instance

@@ -15,8 +15,7 @@ The class defines the following methods:
 
 <a name="getdefaultwebsiteid" id="getdefaultwebsiteid"></a>
 <a name="getDefaultWebsiteId" id="getDefaultWebsiteId"></a>
-### `getDefaultWebsiteId()`
-
+### `getDefaultWebsiteId()` 
 Returns default site ID that Piwik should load.
 
 _Note: This value is a Piwik setting set by each user._
@@ -38,8 +37,7 @@ _Note: This value is a Piwik setting set by each user._
 
 <a name="getdefaultreport" id="getdefaultreport"></a>
 <a name="getDefaultReport" id="getDefaultReport"></a>
-### `getDefaultReport()`
-
+### `getDefaultReport()` 
 Returns default site ID that Piwik should load.
 
 _Note: This value is a Piwik setting set by each user._
@@ -61,8 +59,7 @@ _Note: This value is a Piwik setting set by each user._
 
 <a name="getdefaultdate" id="getdefaultdate"></a>
 <a name="getDefaultDate" id="getDefaultDate"></a>
-### `getDefaultDate()`
-
+### `getDefaultDate()` 
 Returns default date for Piwik reports.
 
 _Note: This value is a Piwik setting set by each user._
@@ -84,8 +81,7 @@ _Note: This value is a Piwik setting set by each user._
 
 <a name="getdefaultperiod" id="getdefaultperiod"></a>
 <a name="getDefaultPeriod" id="getDefaultPeriod"></a>
-### `getDefaultPeriod()`
-
+### `getDefaultPeriod()` 
 Returns default period type for Piwik reports.
 
 #### Signature

@@ -20,8 +20,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature

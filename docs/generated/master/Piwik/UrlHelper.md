@@ -19,8 +19,7 @@ The class defines the following methods:
 
 <a name="getquerystringwithexcludedparameters" id="getquerystringwithexcludedparameters"></a>
 <a name="getQueryStringWithExcludedParameters" id="getQueryStringWithExcludedParameters"></a>
-### `getQueryStringWithExcludedParameters()`
-
+### `getQueryStringWithExcludedParameters()` 
 Converts an array of query parameter name/value mappings into a query string.
 
 Parameters that are in `$parametersToExclude` will not appear in the result.
@@ -66,8 +65,7 @@ Parameters that are in `$parametersToExclude` will not appear in the result.
 
 <a name="getparseurlreverse" id="getparseurlreverse"></a>
 <a name="getParseUrlReverse" id="getParseUrlReverse"></a>
-### `getParseUrlReverse()`
-
+### `getParseUrlReverse()` 
 Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php) function.
 
 Copied from the PHP comments at [http://php.net/parse_url](http://php.net/parse_url).
@@ -103,8 +101,7 @@ Copied from the PHP comments at [http://php.net/parse_url](http://php.net/parse_
 
 <a name="getarrayfromquerystring" id="getarrayfromquerystring"></a>
 <a name="getArrayFromQueryString" id="getArrayFromQueryString"></a>
-### `getArrayFromQueryString()`
-
+### `getArrayFromQueryString()` 
 Returns a URL query string as an array.
 
 #### Signature
@@ -138,8 +135,7 @@ Returns a URL query string as an array.
 
 <a name="getparameterfromquerystring" id="getparameterfromquerystring"></a>
 <a name="getParameterFromQueryString" id="getParameterFromQueryString"></a>
-### `getParameterFromQueryString()`
-
+### `getParameterFromQueryString()` 
 Returns the value of a single query parameter from the supplied query string.
 
 #### Signature
@@ -183,8 +179,7 @@ Returns the value of a single query parameter from the supplied query string.
 
 <a name="getpathandqueryfromurl" id="getpathandqueryfromurl"></a>
 <a name="getPathAndQueryFromUrl" id="getPathAndQueryFromUrl"></a>
-### `getPathAndQueryFromUrl()`
-
+### `getPathAndQueryFromUrl()` 
 Returns the path and query string of a URL.
 
 #### Signature
@@ -218,8 +213,7 @@ Returns the path and query string of a URL.
 
 <a name="getqueryfromurl" id="getqueryfromurl"></a>
 <a name="getQueryFromUrl" id="getQueryFromUrl"></a>
-### `getQueryFromUrl()`
-
+### `getQueryFromUrl()` 
 Returns the query part from any valid url and adds additional parameters to the query part if needed.
 
 #### Signature

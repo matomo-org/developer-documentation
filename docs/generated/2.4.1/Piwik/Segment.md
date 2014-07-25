@@ -54,8 +54,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -87,8 +86,7 @@ Constructor.
 
 <a name="isempty" id="isempty"></a>
 <a name="isEmpty" id="isEmpty"></a>
-### `isEmpty()`
-
+### `isEmpty()` 
 Returns `true` if the segment is empty, `false` if otherwise.
 
 #### Signature
@@ -97,8 +95,7 @@ Returns `true` if the segment is empty, `false` if otherwise.
 
 <a name="getstring" id="getstring"></a>
 <a name="getString" id="getString"></a>
-### `getString()`
-
+### `getString()` 
 Returns the segment condition.
 
 #### Signature
@@ -107,8 +104,7 @@ Returns the segment condition.
 
 <a name="gethash" id="gethash"></a>
 <a name="getHash" id="getHash"></a>
-### `getHash()`
-
+### `getHash()` 
 Returns a hash of the segment condition, or the empty string if the segment condition is empty.
 
 #### Signature
@@ -117,8 +113,7 @@ Returns a hash of the segment condition, or the empty string if the segment cond
 
 <a name="getselectquery" id="getselectquery"></a>
 <a name="getSelectQuery" id="getSelectQuery"></a>
-### `getSelectQuery()`
-
+### `getSelectQuery()` 
 Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
 
 #### Signature

@@ -35,8 +35,7 @@ The class defines the following methods:
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>
-### `add()`
-
+### `add()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
 Adds a new entry to the menu.
 
 #### Signature
@@ -109,8 +108,7 @@ Adds a new entry to the menu.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
-### `remove()`
-
+### `remove()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
 Removes an existing entry from the menu.
 
 #### Signature
@@ -143,8 +141,7 @@ Removes an existing entry from the menu.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
-### `rename()`
-
+### `rename()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
 Renames a single menu entry.
 
 #### Signature
@@ -197,8 +194,7 @@ Renames a single menu entry.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
-### `editUrl()`
-
+### `editUrl()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
 Edits a URL of an existing menu entry.
 
 #### Signature
@@ -241,8 +237,7 @@ Edits a URL of an existing menu entry.
 
 <a name="isurlfound" id="isurlfound"></a>
 <a name="isUrlFound" id="isUrlFound"></a>
-### `isUrlFound()`
-
+### `isUrlFound()` 
 Returns if the URL was found in the menu.
 
 #### Signature
@@ -265,8 +260,7 @@ Returns if the URL was found in the menu.
 
 <a name="getmenu" id="getmenu"></a>
 <a name="getMenu" id="getMenu"></a>
-### `getMenu()`
-
+### `getMenu()` 
 Triggers the Menu.Reporting.addItems hook and returns the menu.
 
 #### Signature

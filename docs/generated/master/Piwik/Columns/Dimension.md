@@ -48,8 +48,7 @@ The abstract class defines the following methods:
 
 <a name="addsegment" id="addsegment"></a>
 <a name="addSegment" id="addSegment"></a>
-### `addSegment()`
-
+### `addSegment()` 
 Adds a new segment.
 
 The segment type will be set to 'dimension' automatically if not already set.
@@ -74,8 +73,7 @@ The segment type will be set to 'dimension' automatically if not already set.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
-### `getName()`
-
+### `getName()` 
 Get the translated name of the dimension.
 
 Defaults to an empty string.
@@ -86,8 +84,7 @@ Defaults to an empty string.
 
 <a name="getalldimensions" id="getalldimensions"></a>
 <a name="getAllDimensions" id="getAllDimensions"></a>
-### `getAllDimensions()`
-
+### `getAllDimensions()` 
 Gets an instance of all available visit, action and conversion dimension.
 
 #### Signature

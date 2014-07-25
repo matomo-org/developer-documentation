@@ -24,8 +24,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -87,8 +86,7 @@ Constructor.
 
 <a name="getobjectinstance" id="getobjectinstance"></a>
 <a name="getObjectInstance" id="getObjectInstance"></a>
-### `getObjectInstance()`
-
+### `getObjectInstance()` 
 Returns the object instance that contains the method to execute.
 
 Returns a class
@@ -100,8 +98,7 @@ name if the method is static.
 
 <a name="getclassname" id="getclassname"></a>
 <a name="getClassName" id="getClassName"></a>
-### `getClassName()`
-
+### `getClassName()` 
 Returns the name of the class that contains the method to execute.
 
 #### Signature
@@ -110,8 +107,7 @@ Returns the name of the class that contains the method to execute.
 
 <a name="getmethodname" id="getmethodname"></a>
 <a name="getMethodName" id="getMethodName"></a>
-### `getMethodName()`
-
+### `getMethodName()` 
 Returns the name of the method that will be executed.
 
 #### Signature
@@ -120,8 +116,7 @@ Returns the name of the method that will be executed.
 
 <a name="getmethodparameter" id="getmethodparameter"></a>
 <a name="getMethodParameter" id="getMethodParameter"></a>
-### `getMethodParameter()`
-
+### `getMethodParameter()` 
 Returns the value that will be passed to the method when executed, or `null` if no value will be supplied.
 
 #### Signature
@@ -141,8 +136,7 @@ Returns the value that will be passed to the method when executed, or `null` if 
 
 <a name="getscheduledtime" id="getscheduledtime"></a>
 <a name="getScheduledTime" id="getScheduledTime"></a>
-### `getScheduledTime()`
-
+### `getScheduledTime()` 
 Returns a [ScheduledTime](/api-reference/Piwik/ScheduledTime) instance that describes when the method should be executed and how long before the next execution.
 
 #### Signature
@@ -151,8 +145,7 @@ Returns a [ScheduledTime](/api-reference/Piwik/ScheduledTime) instance that desc
 
 <a name="getrescheduledtime" id="getrescheduledtime"></a>
 <a name="getRescheduledTime" id="getRescheduledTime"></a>
-### `getRescheduledTime()`
-
+### `getRescheduledTime()` 
 Returns the time in milliseconds when this task will be executed next.
 
 #### Signature
@@ -161,8 +154,7 @@ Returns the time in milliseconds when this task will be executed next.
 
 <a name="getpriority" id="getpriority"></a>
 <a name="getPriority" id="getPriority"></a>
-### `getPriority()`
-
+### `getPriority()` 
 Returns the task priority.
 
 The priority will be an integer whose value is
@@ -174,8 +166,7 @@ between `HIGH_PRIORITY` and `LOW_PRIORITY`.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
-### `getName()`
-
+### `getName()` 
 Returns a unique name for this scheduled task.
 
 The name is stored in the DB and is used

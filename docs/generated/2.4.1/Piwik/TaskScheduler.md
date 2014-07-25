@@ -46,8 +46,7 @@ The class defines the following methods:
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance()`
-
+### `getInstance()` *inherited from [`Singleton`](../Piwik/Singleton.md)*
 Returns the singleton instance for the derived class.
 
 If the singleton instance
@@ -59,8 +58,7 @@ has not been created, this method will create it.
 
 <a name="rescheduletask" id="rescheduletask"></a>
 <a name="rescheduleTask" id="rescheduleTask"></a>
-### `rescheduleTask()`
-
+### `rescheduleTask()` 
 Determines a task's scheduled time and persists it, overwriting the previous scheduled time.
 
 Call this method if your task's scheduled time has changed due to, for example, an option that

@@ -20,8 +20,7 @@ The class defines the following methods:
 
 <a name="getprettynumber" id="getprettynumber"></a>
 <a name="getPrettyNumber" id="getPrettyNumber"></a>
-### `getPrettyNumber()`
-
+### `getPrettyNumber()` 
 Returns a prettified string representation of a number.
 
 The result will have
@@ -48,8 +47,7 @@ thousands separators and a decimal point specific to the current locale, eg,
 
 <a name="getprettytimefromseconds" id="getprettytimefromseconds"></a>
 <a name="getPrettyTimeFromSeconds" id="getPrettyTimeFromSeconds"></a>
-### `getPrettyTimeFromSeconds()`
-
+### `getPrettyTimeFromSeconds()` 
 Returns a prettified time value (in seconds).
 
 #### Signature
@@ -102,8 +100,7 @@ Returns a prettified time value (in seconds).
 
 <a name="getprettysizefrombytes" id="getprettysizefrombytes"></a>
 <a name="getPrettySizeFromBytes" id="getPrettySizeFromBytes"></a>
-### `getPrettySizeFromBytes()`
-
+### `getPrettySizeFromBytes()` 
 Returns a prettified memory size value.
 
 #### Signature
@@ -157,8 +154,7 @@ Returns a prettified memory size value.
 
 <a name="getprettymoney" id="getprettymoney"></a>
 <a name="getPrettyMoney" id="getPrettyMoney"></a>
-### `getPrettyMoney()`
-
+### `getPrettyMoney()` 
 Returns a pretty formated monetary value using the currency associated with a site.
 
 #### Signature
@@ -201,8 +197,7 @@ Returns a pretty formated monetary value using the currency associated with a si
 
 <a name="getprettyvalue" id="getprettyvalue"></a>
 <a name="getPrettyValue" id="getPrettyValue"></a>
-### `getPrettyValue()`
-
+### `getPrettyValue()` 
 Prettifies a metric value based on the column name.
 
 #### Signature
@@ -255,8 +250,7 @@ Prettifies a metric value based on the column name.
 
 <a name="getcurrencysymbol" id="getcurrencysymbol"></a>
 <a name="getCurrencySymbol" id="getCurrencySymbol"></a>
-### `getCurrencySymbol()`
-
+### `getCurrencySymbol()` 
 Returns the currency symbol for a site.
 
 #### Signature
@@ -290,8 +284,7 @@ Returns the currency symbol for a site.
 
 <a name="getcurrencylist" id="getcurrencylist"></a>
 <a name="getCurrencyList" id="getCurrencyList"></a>
-### `getCurrencyList()`
-
+### `getCurrencyList()` 
 Returns the list of all known currency symbols.
 
 #### Signature

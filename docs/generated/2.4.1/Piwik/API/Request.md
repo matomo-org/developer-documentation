@@ -66,8 +66,7 @@ The class defines the following methods:
 
 <a name="getrequestarrayfromstring" id="getrequestarrayfromstring"></a>
 <a name="getRequestArrayFromString" id="getRequestArrayFromString"></a>
-### `getRequestArrayFromString()`
-
+### `getRequestArrayFromString()` 
 Converts the supplied request string into an array of query paramater name/value mappings.
 
 The current query parameters (everything in `$_GET` and `$_POST`) are
@@ -93,8 +92,7 @@ forwarded to request array before it is returned.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -116,8 +114,7 @@ Constructor.
 
 <a name="process" id="process"></a>
 <a name="process" id="process"></a>
-### `process()`
-
+### `process()` 
 Dispatches the API request to the appropriate API method and returns the result after post-processing.
 
 Post-processing includes:
@@ -153,8 +150,7 @@ object.
 
 <a name="getclassnameapi" id="getclassnameapi"></a>
 <a name="getClassNameAPI" id="getClassNameAPI"></a>
-### `getClassNameAPI()`
-
+### `getClassNameAPI()` 
 Returns the name of a plugin's API class by plugin name.
 
 #### Signature
@@ -188,8 +184,7 @@ Returns the name of a plugin's API class by plugin name.
 
 <a name="processrequest" id="processrequest"></a>
 <a name="processRequest" id="processRequest"></a>
-### `processRequest()`
-
+### `processRequest()` 
 Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 
 #### Signature
@@ -233,8 +228,7 @@ Helper method that processes an API request in one line using the variables in `
 
 <a name="getrequestparametersget" id="getrequestparametersget"></a>
 <a name="getRequestParametersGET" id="getRequestParametersGET"></a>
-### `getRequestParametersGET()`
-
+### `getRequestParametersGET()` 
 Returns the original request parameters in the current query string as an array mapping query parameter names with values.
 
 The result of this function will not be affected
@@ -246,8 +240,7 @@ by any modifications to `$_GET` and will not include parameters in `$_POST`.
 
 <a name="getbasereporturl" id="getbasereporturl"></a>
 <a name="getBaseReportUrl" id="getBaseReportUrl"></a>
-### `getBaseReportUrl()`
-
+### `getBaseReportUrl()` 
 Returns the URL for the current requested report w/o any filter parameters.
 
 #### Signature
@@ -290,8 +283,7 @@ Returns the URL for the current requested report w/o any filter parameters.
 
 <a name="getcurrenturlwithoutgenericfilters" id="getcurrenturlwithoutgenericfilters"></a>
 <a name="getCurrentUrlWithoutGenericFilters" id="getCurrentUrlWithoutGenericFilters"></a>
-### `getCurrentUrlWithoutGenericFilters()`
-
+### `getCurrentUrlWithoutGenericFilters()` 
 Returns the current URL without generic filter query parameters.
 
 #### Signature
@@ -314,16 +306,14 @@ Returns the current URL without generic filter query parameters.
 
 <a name="shouldloadflatten" id="shouldloadflatten"></a>
 <a name="shouldLoadFlatten" id="shouldLoadFlatten"></a>
-### `shouldLoadFlatten()`
-
+### `shouldLoadFlatten()` 
 #### Signature
 
 - It returns a `bool` value.
 
 <a name="getrawsegmentfromrequest" id="getrawsegmentfromrequest"></a>
 <a name="getRawSegmentFromRequest" id="getRawSegmentFromRequest"></a>
-### `getRawSegmentFromRequest()`
-
+### `getRawSegmentFromRequest()` 
 Returns the segment query parameter from the original request, without modifications.
 
 #### Signature

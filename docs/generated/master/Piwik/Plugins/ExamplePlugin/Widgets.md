@@ -26,23 +26,20 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` *inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)*
 #### Signature
 
 
 <a name="getcategory" id="getcategory"></a>
 <a name="getCategory" id="getCategory"></a>
-### `getCategory()`
-
+### `getCategory()` *inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)*
 #### Signature
 
 - It does not return anything.
 
 <a name="addwidget" id="addwidget"></a>
 <a name="addWidget" id="addWidget"></a>
-### `addWidget()`
-
+### `addWidget()` *inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)*
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -83,24 +80,21 @@ The class defines the following methods:
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
-### `init()`
-
+### `init()` *inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)*
 #### Signature
 
 - It does not return anything.
 
 <a name="getwidgets" id="getwidgets"></a>
 <a name="getWidgets" id="getWidgets"></a>
-### `getWidgets()`
-
+### `getWidgets()` *inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)*
 #### Signature
 
 - It does not return anything.
 
 <a name="configurewidgetslist" id="configurewidgetslist"></a>
 <a name="configureWidgetsList" id="configureWidgetsList"></a>
-### `configureWidgetsList()`
-
+### `configureWidgetsList()` *inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)*
 Configures the widgets.
 
 Here you can for instance remove widgets.
@@ -125,16 +119,14 @@ Here you can for instance remove widgets.
 
 <a name="getallwidgets" id="getallwidgets"></a>
 <a name="getAllWidgets" id="getAllWidgets"></a>
-### `getAllWidgets()`
-
+### `getAllWidgets()` *inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)*
 #### Signature
 
 - It returns a [`Widgets[]`](../../../Piwik/Plugin/Widgets.md) value.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
-### `factory()`
-
+### `factory()` *inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)*
 #### Signature
 
 -  It accepts the following parameter(s):

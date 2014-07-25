@@ -20,8 +20,7 @@ The class defines the following methods:
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance()`
-
+### `getInstance()` *inherited from [`Singleton`](../../Piwik/Singleton.md)*
 Returns the singleton instance for the derived class.
 
 If the singleton instance
@@ -33,8 +32,7 @@ has not been created, this method will create it.
 
 <a name="ispluginactivated" id="ispluginactivated"></a>
 <a name="isPluginActivated" id="isPluginActivated"></a>
-### `isPluginActivated()`
-
+### `isPluginActivated()` 
 Returns `true` if a plugin has been activated.
 
 #### Signature
@@ -57,8 +55,7 @@ Returns `true` if a plugin has been activated.
 
 <a name="ispluginloaded" id="ispluginloaded"></a>
 <a name="isPluginLoaded" id="isPluginLoaded"></a>
-### `isPluginLoaded()`
-
+### `isPluginLoaded()` 
 Returns `true` if plugin is loaded (in memory).
 
 #### Signature
@@ -81,8 +78,7 @@ Returns `true` if plugin is loaded (in memory).
 
 <a name="getthemeenabled" id="getthemeenabled"></a>
 <a name="getThemeEnabled" id="getThemeEnabled"></a>
-### `getThemeEnabled()`
-
+### `getThemeEnabled()` 
 Returns the currently enabled theme.
 
 If no theme is enabled, the **Morpheus** plugin is returned (this is the base and default theme).
@@ -93,8 +89,7 @@ If no theme is enabled, the **Morpheus** plugin is returned (this is the base an
 
 <a name="returnloadedpluginsinfo" id="returnloadedpluginsinfo"></a>
 <a name="returnLoadedPluginsInfo" id="returnLoadedPluginsInfo"></a>
-### `returnLoadedPluginsInfo()`
-
+### `returnLoadedPluginsInfo()` 
 Returns info regarding all plugins.
 
 Loads plugins that can be loaded.
@@ -116,8 +111,7 @@ Loads plugins that can be loaded.
 
 <a name="getinstalledpluginsname" id="getinstalledpluginsname"></a>
 <a name="getInstalledPluginsName" id="getInstalledPluginsName"></a>
-### `getInstalledPluginsName()`
-
+### `getInstalledPluginsName()` 
 Return names of all installed plugins.
 
 #### Signature
@@ -126,8 +120,7 @@ Return names of all installed plugins.
 
 <a name="getmissingplugins" id="getmissingplugins"></a>
 <a name="getMissingPlugins" id="getMissingPlugins"></a>
-### `getMissingPlugins()`
-
+### `getMissingPlugins()` 
 Returns names of plugins that should be loaded, but cannot be since their files cannot be found.
 
 #### Signature

@@ -38,8 +38,7 @@ The class defines the following methods:
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>
-### `add()`
-
+### `add()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
 Adds a new entry to the menu.
 
 #### Signature
@@ -112,8 +111,7 @@ Adds a new entry to the menu.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
-### `remove()`
-
+### `remove()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
 Removes an existing entry from the menu.
 
 #### Signature
@@ -146,8 +144,7 @@ Removes an existing entry from the menu.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
-### `rename()`
-
+### `rename()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
 Renames a single menu entry.
 
 #### Signature
@@ -200,8 +197,7 @@ Renames a single menu entry.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
-### `editUrl()`
-
+### `editUrl()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
 Edits a URL of an existing menu entry.
 
 #### Signature
@@ -244,8 +240,7 @@ Edits a URL of an existing menu entry.
 
 <a name="addvisitorsitem" id="addvisitorsitem"></a>
 <a name="addVisitorsItem" id="addVisitorsItem"></a>
-### `addVisitorsItem()`
-
+### `addVisitorsItem()` 
 Since Piwik 2.5.0
 
 See [add()](/api-reference/Piwik/Menu/MenuReporting#add).
@@ -302,8 +297,7 @@ Adds a new menu item to the visitors section of the reporting menu.
 
 <a name="addactionsitem" id="addactionsitem"></a>
 <a name="addActionsItem" id="addActionsItem"></a>
-### `addActionsItem()`
-
+### `addActionsItem()` 
 Since Piwik 2.5.0
 
 See [add()](/api-reference/Piwik/Menu/MenuReporting#add).
@@ -360,8 +354,7 @@ Adds a new menu item to the actions section of the reporting menu.
 
 <a name="addreferrersitem" id="addreferrersitem"></a>
 <a name="addReferrersItem" id="addReferrersItem"></a>
-### `addReferrersItem()`
-
+### `addReferrersItem()` 
 Since Piwik 2.5.0
 
 See [add()](/api-reference/Piwik/Menu/MenuReporting#add).
@@ -418,8 +411,7 @@ Adds a new menu item to the referrers section of the reporting menu.
 
 <a name="isurlfound" id="isurlfound"></a>
 <a name="isUrlFound" id="isUrlFound"></a>
-### `isUrlFound()`
-
+### `isUrlFound()` 
 Returns if the URL was found in the menu.
 
 #### Signature
@@ -442,8 +434,7 @@ Returns if the URL was found in the menu.
 
 <a name="getmenu" id="getmenu"></a>
 <a name="getMenu" id="getMenu"></a>
-### `getMenu()`
-
+### `getMenu()` 
 Triggers the Menu.Reporting.addItems hook and returns the menu.
 
 #### Signature

@@ -30,8 +30,7 @@ The abstract class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -53,8 +52,7 @@ Constructor.
 
 <a name="getintroduction" id="getintroduction"></a>
 <a name="getIntroduction" id="getIntroduction"></a>
-### `getIntroduction()`
-
+### `getIntroduction()` 
 Returns the introduction text for this plugin's settings.
 
 #### Signature
@@ -63,8 +61,7 @@ Returns the introduction text for this plugin's settings.
 
 <a name="getsettingsforcurrentuser" id="getsettingsforcurrentuser"></a>
 <a name="getSettingsForCurrentUser" id="getSettingsForCurrentUser"></a>
-### `getSettingsForCurrentUser()`
-
+### `getSettingsForCurrentUser()` 
 Returns the settings that can be displayed for the current user.
 
 #### Signature
@@ -73,8 +70,7 @@ Returns the settings that can be displayed for the current user.
 
 <a name="getsettings" id="getsettings"></a>
 <a name="getSettings" id="getSettings"></a>
-### `getSettings()`
-
+### `getSettings()` 
 Returns all available settings.
 
 This will include settings that are not available
@@ -86,8 +82,7 @@ to the current user (such as settings available only to the Super User).
 
 <a name="save" id="save"></a>
 <a name="save" id="save"></a>
-### `save()`
-
+### `save()` 
 Saves (persists) the current setting values in the database.
 
 #### Signature
@@ -96,8 +91,7 @@ Saves (persists) the current setting values in the database.
 
 <a name="removeallpluginsettings" id="removeallpluginsettings"></a>
 <a name="removeAllPluginSettings" id="removeAllPluginSettings"></a>
-### `removeAllPluginSettings()`
-
+### `removeAllPluginSettings()` 
 Removes all settings for this plugin from the database.
 
 Useful when uninstalling
@@ -109,8 +103,7 @@ a plugin.
 
 <a name="getsettingvalue" id="getsettingvalue"></a>
 <a name="getSettingValue" id="getSettingValue"></a>
-### `getSettingValue()`
-
+### `getSettingValue()` 
 Returns the current value for a setting.
 
 If no value is stored, the default value
@@ -138,8 +131,7 @@ is be returned.
 
 <a name="setsettingvalue" id="setsettingvalue"></a>
 <a name="setSettingValue" id="setSettingValue"></a>
-### `setSettingValue()`
-
+### `setSettingValue()` 
 Sets (overwrites) the value of a setting in memory.
 
 To persist the change, [save()](/api-reference/Piwik/Plugin/Settings#save) must be
@@ -181,8 +173,7 @@ filter, the setting value will be casted to the appropriate data type.
 
 <a name="removesettingvalue" id="removesettingvalue"></a>
 <a name="removeSettingValue" id="removeSettingValue"></a>
-### `removeSettingValue()`
-
+### `removeSettingValue()` 
 Unsets a setting value in memory.
 
 To persist the change, [save()](/api-reference/Piwik/Plugin/Settings#save) must be

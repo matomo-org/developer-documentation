@@ -41,8 +41,7 @@ The class defines the following methods:
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
-### `factory()`
-
+### `factory()` *inherited from [`Period`](../../Piwik/Period.md)*
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -73,8 +72,7 @@ The class defines the following methods:
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
-### `isMultiplePeriod()`
-
+### `isMultiplePeriod()` *inherited from [`Period`](../../Piwik/Period.md)*
 Returns true if `$dateString` and `$period` represent multiple periods.
 
 Will return true for date/period combinations where date references multiple
@@ -116,8 +114,7 @@ etc.
 
 <a name="getdatestart" id="getdatestart"></a>
 <a name="getDateStart" id="getDateStart"></a>
-### `getDateStart()`
-
+### `getDateStart()` 
 Returns the start date of the period.
 
 #### Signature
@@ -128,8 +125,7 @@ Returns the start date of the period.
 
 <a name="getdateend" id="getdateend"></a>
 <a name="getDateEnd" id="getDateEnd"></a>
-### `getDateEnd()`
-
+### `getDateEnd()` 
 Returns the end date of the period.
 
 #### Signature
@@ -149,8 +145,7 @@ Returns the end date of the period.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
-### `getId()`
-
+### `getId()` *inherited from [`Period`](../../Piwik/Period.md)*
 Returns the period ID.
 
 #### Signature
@@ -170,8 +165,7 @@ Returns the period ID.
 
 <a name="getlabel" id="getlabel"></a>
 <a name="getLabel" id="getLabel"></a>
-### `getLabel()`
-
+### `getLabel()` *inherited from [`Period`](../../Piwik/Period.md)*
 Returns the label for the current period.
 
 #### Signature
@@ -191,8 +185,7 @@ Returns the label for the current period.
 
 <a name="getnumberofsubperiods" id="getnumberofsubperiods"></a>
 <a name="getNumberOfSubperiods" id="getNumberOfSubperiods"></a>
-### `getNumberOfSubperiods()`
-
+### `getNumberOfSubperiods()` *inherited from [`Period`](../../Piwik/Period.md)*
 Returns the number of available subperiods.
 
 #### Signature
@@ -201,8 +194,7 @@ Returns the number of available subperiods.
 
 <a name="getsubperiods" id="getsubperiods"></a>
 <a name="getSubperiods" id="getSubperiods"></a>
-### `getSubperiods()`
-
+### `getSubperiods()` *inherited from [`Period`](../../Piwik/Period.md)*
 Returns the set of Period instances that together make up this period.
 
 For a year,
@@ -214,8 +206,7 @@ this would be 12 months. For a month this would be 28-31 days. Etc.
 
 <a name="tostring" id="tostring"></a>
 <a name="toString" id="toString"></a>
-### `toString()`
-
+### `toString()` *inherited from [`Period`](../../Piwik/Period.md)*
 Returns a list of strings representing the current period.
 
 #### Signature
@@ -249,8 +240,7 @@ Returns a list of strings representing the current period.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
-### `__toString()`
-
+### `__toString()` *inherited from [`Period`](../../Piwik/Period.md)*
 See [toString()](/api-reference/Piwik/Period/Range#tostring).
 
 #### Signature
@@ -259,8 +249,7 @@ See [toString()](/api-reference/Piwik/Period/Range#tostring).
 
 <a name="getprettystring" id="getprettystring"></a>
 <a name="getPrettyString" id="getPrettyString"></a>
-### `getPrettyString()`
-
+### `getPrettyString()` 
 Returns the current period as a string.
 
 #### Signature
@@ -269,8 +258,7 @@ Returns the current period as a string.
 
 <a name="getlocalizedshortstring" id="getlocalizedshortstring"></a>
 <a name="getLocalizedShortString" id="getLocalizedShortString"></a>
-### `getLocalizedShortString()`
-
+### `getLocalizedShortString()` 
 Returns the current period as a localized short string.
 
 #### Signature
@@ -279,8 +267,7 @@ Returns the current period as a localized short string.
 
 <a name="getlocalizedlongstring" id="getlocalizedlongstring"></a>
 <a name="getLocalizedLongString" id="getLocalizedLongString"></a>
-### `getLocalizedLongString()`
-
+### `getLocalizedLongString()` 
 Returns the current period as a localized long string.
 
 #### Signature
@@ -289,8 +276,7 @@ Returns the current period as a localized long string.
 
 <a name="getrangestring" id="getrangestring"></a>
 <a name="getRangeString" id="getRangeString"></a>
-### `getRangeString()`
-
+### `getRangeString()` *inherited from [`Period`](../../Piwik/Period.md)*
 Returns a succinct string describing this period.
 
 #### Signature
@@ -310,8 +296,7 @@ Returns a succinct string describing this period.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -363,8 +348,7 @@ Constructor.
 
 <a name="setdefaultenddate" id="setdefaultenddate"></a>
 <a name="setDefaultEndDate" id="setDefaultEndDate"></a>
-### `setDefaultEndDate()`
-
+### `setDefaultEndDate()` 
 Sets the default end date of the period.
 
 #### Signature
@@ -387,8 +371,7 @@ Sets the default end date of the period.
 
 <a name="parsedaterange" id="parsedaterange"></a>
 <a name="parseDateRange" id="parseDateRange"></a>
-### `parseDateRange()`
-
+### `parseDateRange()` 
 Given a date string, returns `false` if not a date range, or returns the array containing start and end dates.
 
 #### Signature
@@ -422,8 +405,7 @@ Given a date string, returns `false` if not a date range, or returns the array c
 
 <a name="getlastdate" id="getlastdate"></a>
 <a name="getLastDate" id="getLastDate"></a>
-### `getLastDate()`
-
+### `getLastDate()` 
 Returns the date that is one period before the supplied date.
 
 #### Signature
@@ -467,8 +449,7 @@ Returns the date that is one period before the supplied date.
 
 <a name="getdatexperiodsago" id="getdatexperiodsago"></a>
 <a name="getDateXPeriodsAgo" id="getDateXPeriodsAgo"></a>
-### `getDateXPeriodsAgo()`
-
+### `getDateXPeriodsAgo()` 
 Returns the date that is X periods before the supplied date.
 
 #### Signature
@@ -522,8 +503,7 @@ Returns the date that is X periods before the supplied date.
 
 <a name="getrelativetoenddate" id="getrelativetoenddate"></a>
 <a name="getRelativeToEndDate" id="getRelativeToEndDate"></a>
-### `getRelativeToEndDate()`
-
+### `getRelativeToEndDate()` 
 Returns a date range string given a period type, end date and number of periods the range spans over.
 
 #### Signature

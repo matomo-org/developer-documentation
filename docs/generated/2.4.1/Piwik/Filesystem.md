@@ -19,8 +19,7 @@ The class defines the following methods:
 
 <a name="mkdir" id="mkdir"></a>
 <a name="mkdir" id="mkdir"></a>
-### `mkdir()`
-
+### `mkdir()` 
 Attempts to create a new directory.
 
 All errors are silenced.
@@ -47,8 +46,7 @@ _Note: This function does **not** create directories recursively._
 
 <a name="globr" id="globr"></a>
 <a name="globr" id="globr"></a>
-### `globr()`
-
+### `globr()` 
 Recursively find pathnames that match a pattern.
 
 See [glob](http://php.net/manual/en/function.glob.php) for more info.
@@ -104,8 +102,7 @@ See [glob](http://php.net/manual/en/function.glob.php) for more info.
 
 <a name="unlinkrecursive" id="unlinkrecursive"></a>
 <a name="unlinkRecursive" id="unlinkRecursive"></a>
-### `unlinkRecursive()`
-
+### `unlinkRecursive()` 
 Recursively deletes a directory.
 
 #### Signature
@@ -148,8 +145,7 @@ Recursively deletes a directory.
 
 <a name="copy" id="copy"></a>
 <a name="copy" id="copy"></a>
-### `copy()`
-
+### `copy()` 
 Copies a file from `$source` to `$dest`.
 
 #### Signature
@@ -194,8 +190,7 @@ Copies a file from `$source` to `$dest`.
 
 <a name="copyrecursive" id="copyrecursive"></a>
 <a name="copyRecursive" id="copyRecursive"></a>
-### `copyRecursive()`
-
+### `copyRecursive()` 
 Copies the contents of a directory recursively from `$source` to `$target`.
 
 #### Signature
@@ -240,8 +235,7 @@ Copies the contents of a directory recursively from `$source` to `$target`.
 
 <a name="deletefileifexists" id="deletefileifexists"></a>
 <a name="deleteFileIfExists" id="deleteFileIfExists"></a>
-### `deleteFileIfExists()`
-
+### `deleteFileIfExists()` 
 Deletes the given file if it exists.
 
 #### Signature

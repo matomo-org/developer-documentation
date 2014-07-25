@@ -237,8 +237,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -270,8 +269,7 @@ Constructor.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
-### `getName()`
-
+### `getName()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
 Returns the setting's persisted name, eg, `'refreshInterval'`.
 
 #### Signature
@@ -280,8 +278,7 @@ Returns the setting's persisted name, eg, `'refreshInterval'`.
 
 <a name="iswritablebycurrentuser" id="iswritablebycurrentuser"></a>
 <a name="isWritableByCurrentUser" id="isWritableByCurrentUser"></a>
-### `isWritableByCurrentUser()`
-
+### `isWritableByCurrentUser()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
 Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 
 #### Signature
@@ -290,8 +287,7 @@ Returns `true` if this setting can be displayed for the current user, `false` if
 
 <a name="isreadablebycurrentuser" id="isreadablebycurrentuser"></a>
 <a name="isReadableByCurrentUser" id="isReadableByCurrentUser"></a>
-### `isReadableByCurrentUser()`
-
+### `isReadableByCurrentUser()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
 Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 
 #### Signature
@@ -300,8 +296,7 @@ Returns `true` if this setting can be displayed for the current user, `false` if
 
 <a name="setstorage" id="setstorage"></a>
 <a name="setStorage" id="setStorage"></a>
-### `setStorage()`
-
+### `setStorage()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
 Sets the object used to persist settings.
 
 #### Signature
@@ -324,8 +319,7 @@ Sets the object used to persist settings.
 
 <a name="getvalue" id="getvalue"></a>
 <a name="getValue" id="getValue"></a>
-### `getValue()`
-
+### `getValue()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
 Returns the previously persisted setting value.
 
 If no value was set, the default value
@@ -339,8 +333,7 @@ is returned.
 
 <a name="setvalue" id="setvalue"></a>
 <a name="setValue" id="setValue"></a>
-### `setValue()`
-
+### `setValue()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
 Sets and persists this setting's value overwriting any existing value.
 
 #### Signature
@@ -365,8 +358,7 @@ Sets and persists this setting's value overwriting any existing value.
 
 <a name="getkey" id="getkey"></a>
 <a name="getKey" id="getKey"></a>
-### `getKey()`
-
+### `getKey()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
 Returns the unique string key used to store this setting.
 
 #### Signature
@@ -375,8 +367,7 @@ Returns the unique string key used to store this setting.
 
 <a name="getorder" id="getorder"></a>
 <a name="getOrder" id="getOrder"></a>
-### `getOrder()`
-
+### `getOrder()` 
 Returns the display order.
 
 System settings are displayed before user settings.

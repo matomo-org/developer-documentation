@@ -331,16 +331,14 @@ The class defines the following methods:
 
 <a name="getproperties" id="getproperties"></a>
 <a name="getProperties" id="getProperties"></a>
-### `getProperties()`
-
+### `getProperties()` 
 #### Signature
 
 - It does not return anything.
 
 <a name="addpropertiesthatshouldbeavailableclientside" id="addpropertiesthatshouldbeavailableclientside"></a>
 <a name="addPropertiesThatShouldBeAvailableClientSide" id="addPropertiesThatShouldBeAvailableClientSide"></a>
-### `addPropertiesThatShouldBeAvailableClientSide()`
-
+### `addPropertiesThatShouldBeAvailableClientSide()` 
 Marks request properties as client side properties.
 
 [Read this](#client-side-properties-desc)
@@ -366,8 +364,7 @@ to learn more.
 
 <a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
 <a name="addPropertiesThatCanBeOverwrittenByQueryParams" id="addPropertiesThatCanBeOverwrittenByQueryParams"></a>
-### `addPropertiesThatCanBeOverwrittenByQueryParams()`
-
+### `addPropertiesThatCanBeOverwrittenByQueryParams()` 
 Marks display properties as overridable.
 
 [Read this](#overridable-properties-desc) to
@@ -393,8 +390,7 @@ learn more.
 
 <a name="setdefaultsort" id="setdefaultsort"></a>
 <a name="setDefaultSort" id="setDefaultSort"></a>
-### `setDefaultSort()`
-
+### `setDefaultSort()` 
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -425,8 +421,7 @@ learn more.
 
 <a name="arequeuedfiltersdisabled" id="arequeuedfiltersdisabled"></a>
 <a name="areQueuedFiltersDisabled" id="areQueuedFiltersDisabled"></a>
-### `areQueuedFiltersDisabled()`
-
+### `areQueuedFiltersDisabled()` 
 Returns `true` if queued filters have been disabled, `false` if otherwise.
 
 #### Signature
@@ -435,8 +430,7 @@ Returns `true` if queued filters have been disabled, `false` if otherwise.
 
 <a name="aregenericfiltersdisabled" id="aregenericfiltersdisabled"></a>
 <a name="areGenericFiltersDisabled" id="areGenericFiltersDisabled"></a>
-### `areGenericFiltersDisabled()`
-
+### `areGenericFiltersDisabled()` 
 Returns `true` if generic filters have been disabled, `false` if otherwise.
 
 #### Signature
@@ -445,16 +439,14 @@ Returns `true` if generic filters have been disabled, `false` if otherwise.
 
 <a name="getapimoduletorequest" id="getapimoduletorequest"></a>
 <a name="getApiModuleToRequest" id="getApiModuleToRequest"></a>
-### `getApiModuleToRequest()`
-
+### `getApiModuleToRequest()` 
 #### Signature
 
 - It does not return anything.
 
 <a name="getapimethodtorequest" id="getapimethodtorequest"></a>
 <a name="getApiMethodToRequest" id="getApiMethodToRequest"></a>
-### `getApiMethodToRequest()`
-
+### `getApiMethodToRequest()` 
 #### Signature
 
 - It does not return anything.

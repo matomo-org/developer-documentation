@@ -19,8 +19,7 @@ The class defines the following methods:
 
 <a name="isarchivephptriggered" id="isarchivephptriggered"></a>
 <a name="isArchivePhpTriggered" id="isArchivePhpTriggered"></a>
-### `isArchivePhpTriggered()`
-
+### `isArchivePhpTriggered()` 
 Returns true if the current script execution was triggered by the cron archiving script.
 
 Helpful for error handling: directly throw error without HTML (eg. when DB is down).
@@ -31,8 +30,7 @@ Helpful for error handling: directly throw error without HTML (eg. when DB is do
 
 <a name="isiis" id="isiis"></a>
 <a name="isIIS" id="isIIS"></a>
-### `isIIS()`
-
+### `isIIS()` 
 Returns `true` if running on Microsoft IIS 7 (or above), `false` if otherwise.
 
 #### Signature
@@ -41,8 +39,7 @@ Returns `true` if running on Microsoft IIS 7 (or above), `false` if otherwise.
 
 <a name="isapache" id="isapache"></a>
 <a name="isApache" id="isApache"></a>
-### `isApache()`
-
+### `isApache()` 
 Returns `true` if running on an Apache web server, `false` if otherwise.
 
 #### Signature
@@ -51,8 +48,7 @@ Returns `true` if running on an Apache web server, `false` if otherwise.
 
 <a name="iswindows" id="iswindows"></a>
 <a name="isWindows" id="isWindows"></a>
-### `isWindows()`
-
+### `isWindows()` 
 Since Piwik 0.6.5
 
 Returns `true` if running on a Windows operating system, `false` if otherwise.
@@ -63,8 +59,7 @@ Returns `true` if running on a Windows operating system, `false` if otherwise.
 
 <a name="istimezonesupportenabled" id="istimezonesupportenabled"></a>
 <a name="isTimezoneSupportEnabled" id="isTimezoneSupportEnabled"></a>
-### `isTimezoneSupportEnabled()`
-
+### `isTimezoneSupportEnabled()` 
 Returns `true` if this PHP version/build supports timezone manipulation (e.g., php >= 5.2, or compiled with **EXPERIMENTAL_DATE_SUPPORT=1** for php < 5.2).
 
 #### Signature
@@ -73,8 +68,7 @@ Returns `true` if this PHP version/build supports timezone manipulation (e.g., p
 
 <a name="isgdextensionenabled" id="isgdextensionenabled"></a>
 <a name="isGdExtensionEnabled" id="isGdExtensionEnabled"></a>
-### `isGdExtensionEnabled()`
-
+### `isGdExtensionEnabled()` 
 Returns `true` if the GD PHP extension is available, `false` if otherwise.
 
 _Note: ImageGraph and the sparkline report visualization depend on the GD extension._

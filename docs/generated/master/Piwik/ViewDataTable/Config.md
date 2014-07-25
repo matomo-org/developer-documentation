@@ -752,8 +752,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -761,8 +760,7 @@ Constructor.
 
 <a name="addpropertiesthatshouldbeavailableclientside" id="addpropertiesthatshouldbeavailableclientside"></a>
 <a name="addPropertiesThatShouldBeAvailableClientSide" id="addPropertiesThatShouldBeAvailableClientSide"></a>
-### `addPropertiesThatShouldBeAvailableClientSide()`
-
+### `addPropertiesThatShouldBeAvailableClientSide()` 
 Marks display properties as client side properties.
 
 [Read this](#client-side-properties-desc)
@@ -788,8 +786,7 @@ to learn more.
 
 <a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
 <a name="addPropertiesThatCanBeOverwrittenByQueryParams" id="addPropertiesThatCanBeOverwrittenByQueryParams"></a>
-### `addPropertiesThatCanBeOverwrittenByQueryParams()`
-
+### `addPropertiesThatCanBeOverwrittenByQueryParams()` 
 Marks display properties as overridable.
 
 [Read this](#overridable-properties-desc) to
@@ -815,8 +812,7 @@ learn more.
 
 <a name="getproperties" id="getproperties"></a>
 <a name="getProperties" id="getProperties"></a>
-### `getProperties()`
-
+### `getProperties()` 
 Returns array of all property values in this config object.
 
 Property values are mapped
@@ -839,8 +835,7 @@ by name.
 
 <a name="addrelatedreport" id="addrelatedreport"></a>
 <a name="addRelatedReport" id="addRelatedReport"></a>
-### `addRelatedReport()`
-
+### `addRelatedReport()` 
 Adds a related report to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 
 If the report
@@ -887,8 +882,7 @@ report list.
 
 <a name="addrelatedreports" id="addrelatedreports"></a>
 <a name="addRelatedReports" id="addRelatedReports"></a>
-### `addRelatedReports()`
-
+### `addRelatedReports()` 
 Adds several related reports to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 
 If
@@ -918,8 +912,7 @@ use [addRelatedReport()](/api-reference/Piwik/ViewDataTable/Config#addrelatedrep
 
 <a name="addtranslation" id="addtranslation"></a>
 <a name="addTranslation" id="addTranslation"></a>
-### `addTranslation()`
-
+### `addTranslation()` 
 Associates internationalized text with a metric.
 
 Overwrites existing mappings.
@@ -956,8 +949,7 @@ See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations).
 
 <a name="addtranslations" id="addtranslations"></a>
 <a name="addTranslations" id="addTranslations"></a>
-### `addTranslations()`
-
+### `addTranslations()` 
 Associates multiple translations with metrics.
 
 See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations) and [addTranslation()](/api-reference/Piwik/ViewDataTable/Config#addtranslation).

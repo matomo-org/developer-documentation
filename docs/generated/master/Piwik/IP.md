@@ -41,8 +41,7 @@ The class defines the following methods:
 
 <a name="sanitizeip" id="sanitizeip"></a>
 <a name="sanitizeIp" id="sanitizeIp"></a>
-### `sanitizeIp()`
-
+### `sanitizeIp()` 
 Removes the port and the last portion of a CIDR IP address.
 
 #### Signature
@@ -65,8 +64,7 @@ Removes the port and the last portion of a CIDR IP address.
 
 <a name="sanitizeiprange" id="sanitizeiprange"></a>
 <a name="sanitizeIpRange" id="sanitizeIpRange"></a>
-### `sanitizeIpRange()`
-
+### `sanitizeIpRange()` 
 Sanitize human-readable (user-supplied) IP address range.
 
 Accepts the following formats for $ipRange:
@@ -107,8 +105,7 @@ Accepts the following formats for $ipRange:
 
 <a name="p2n" id="p2n"></a>
 <a name="P2N" id="P2N"></a>
-### `P2N()`
-
+### `P2N()` 
 Converts an IP address in presentation format to network address format.
 
 #### Signature
@@ -142,8 +139,7 @@ Converts an IP address in presentation format to network address format.
 
 <a name="n2p" id="n2p"></a>
 <a name="N2P" id="N2P"></a>
-### `N2P()`
-
+### `N2P()` 
 Convert network address format to presentation format.
 
 See also [prettyPrint()](/api-reference/Piwik/IP#prettyprint).
@@ -179,8 +175,7 @@ See also [prettyPrint()](/api-reference/Piwik/IP#prettyprint).
 
 <a name="prettyprint" id="prettyprint"></a>
 <a name="prettyPrint" id="prettyPrint"></a>
-### `prettyPrint()`
-
+### `prettyPrint()` 
 Alias for [N2P()](/api-reference/Piwik/IP#n2p).
 
 #### Signature
@@ -214,8 +209,7 @@ Alias for [N2P()](/api-reference/Piwik/IP#n2p).
 
 <a name="isipv4" id="isipv4"></a>
 <a name="isIPv4" id="isIPv4"></a>
-### `isIPv4()`
-
+### `isIPv4()` 
 Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if otherwise.
 
 #### Signature
@@ -249,8 +243,7 @@ Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if 
 
 <a name="long2ip" id="long2ip"></a>
 <a name="long2ip" id="long2ip"></a>
-### `long2ip()`
-
+### `long2ip()` 
 Converts an IP address (in network address format) to presentation format.
 
 This is a backward compatibility function for code that only expects
@@ -290,8 +283,7 @@ returned by the built-in ip2long() function, from Piwik 1.3 and earlier.
 
 <a name="isipv6" id="isipv6"></a>
 <a name="isIPv6" id="isIPv6"></a>
-### `isIPv6()`
-
+### `isIPv6()` 
 Returns true if $ip is an IPv6 address, false if otherwise.
 
 This function does
@@ -317,8 +309,7 @@ a naive check. It assumes that whatever format $ip is in, it is well-formed.
 
 <a name="ismappedipv4" id="ismappedipv4"></a>
 <a name="isMappedIPv4" id="isMappedIPv4"></a>
-### `isMappedIPv4()`
-
+### `isMappedIPv4()` 
 Returns true if $ip is a IPv4 mapped address, false if otherwise.
 
 #### Signature
@@ -341,8 +332,7 @@ Returns true if $ip is a IPv4 mapped address, false if otherwise.
 
 <a name="getipv4frommappedipv6" id="getipv4frommappedipv6"></a>
 <a name="getIPv4FromMappedIPv6" id="getIPv4FromMappedIPv6"></a>
-### `getIPv4FromMappedIPv6()`
-
+### `getIPv4FromMappedIPv6()` 
 Returns an IPv4 address from a 'mapped' IPv6 address.
 
 #### Signature
@@ -376,8 +366,7 @@ Returns an IPv4 address from a 'mapped' IPv6 address.
 
 <a name="getipsforrange" id="getipsforrange"></a>
 <a name="getIpsForRange" id="getIpsForRange"></a>
-### `getIpsForRange()`
-
+### `getIpsForRange()` 
 Get low and high IP addresses for a specified range.
 
 #### Signature
@@ -411,8 +400,7 @@ Get low and high IP addresses for a specified range.
 
 <a name="isipinrange" id="isipinrange"></a>
 <a name="isIpInRange" id="isIpInRange"></a>
-### `isIpInRange()`
-
+### `isIpInRange()` 
 Determines if an IP address is in a specified IP address range.
 
 An IPv4-mapped address should be range checked with an IPv4-mapped address range.
@@ -458,8 +446,7 @@ An IPv4-mapped address should be range checked with an IPv4-mapped address range
 
 <a name="getipfromheader" id="getipfromheader"></a>
 <a name="getIpFromHeader" id="getIpFromHeader"></a>
-### `getIpFromHeader()`
-
+### `getIpFromHeader()` 
 Returns the most accurate IP address availble for the current user, in IPv4 format.
 
 This could be the proxy client's IP address.
@@ -481,8 +468,7 @@ This could be the proxy client's IP address.
 
 <a name="getnonproxyipfromheader" id="getnonproxyipfromheader"></a>
 <a name="getNonProxyIpFromHeader" id="getNonProxyIpFromHeader"></a>
-### `getNonProxyIpFromHeader()`
-
+### `getNonProxyIpFromHeader()` 
 Returns a non-proxy IP address from header.
 
 #### Signature
@@ -515,8 +501,7 @@ Returns a non-proxy IP address from header.
 
 <a name="getlastipfromlist" id="getlastipfromlist"></a>
 <a name="getLastIpFromList" id="getLastIpFromList"></a>
-### `getLastIpFromList()`
-
+### `getLastIpFromList()` 
 Returns the last IP address in a comma separated list, subject to an optional exclusion list.
 
 #### Signature
@@ -560,8 +545,7 @@ Returns the last IP address in a comma separated list, subject to an optional ex
 
 <a name="gethostbyaddr" id="gethostbyaddr"></a>
 <a name="getHostByAddr" id="getHostByAddr"></a>
-### `getHostByAddr()`
-
+### `getHostByAddr()` 
 Retirms the hostname for a given IP address.
 
 #### Signature

@@ -21,8 +21,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -94,8 +93,7 @@ Constructor.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
-### `filter()`
-
+### `filter()` 
 See [ColumnCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddMetadata).
 
 #### Signature
@@ -118,8 +116,7 @@ See [ColumnCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/ColumnCall
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>
-### `enableRecursive()`
-
+### `enableRecursive()` *inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)*
 Enables/Disables recursive filtering.
 
 Whether this property is actually used
@@ -145,8 +142,7 @@ is up to the derived BaseFilter class.
 
 <a name="filtersubtable" id="filtersubtable"></a>
 <a name="filterSubTable" id="filterSubTable"></a>
-### `filterSubTable()`
-
+### `filterSubTable()` *inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)*
 Filters a row's subtable, if one exists and is loaded in memory.
 
 #### Signature

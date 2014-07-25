@@ -23,8 +23,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -86,8 +85,7 @@ Constructor.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
-### `filter()`
-
+### `filter()` 
 See [Sort](/api-reference/Piwik/DataTable/Filter/Sort).
 
 #### Signature
@@ -110,8 +108,7 @@ See [Sort](/api-reference/Piwik/DataTable/Filter/Sort).
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>
-### `enableRecursive()`
-
+### `enableRecursive()` *inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)*
 Enables/Disables recursive filtering.
 
 Whether this property is actually used
@@ -137,8 +134,7 @@ is up to the derived BaseFilter class.
 
 <a name="filtersubtable" id="filtersubtable"></a>
 <a name="filterSubTable" id="filterSubTable"></a>
-### `filterSubTable()`
-
+### `filterSubTable()` *inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)*
 Filters a row's subtable, if one exists and is loaded in memory.
 
 #### Signature
@@ -161,8 +157,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 
 <a name="setorder" id="setorder"></a>
 <a name="setOrder" id="setOrder"></a>
-### `setOrder()`
-
+### `setOrder()` 
 Updates the order
 
 #### Signature
@@ -185,8 +180,7 @@ Updates the order
 
 <a name="numbersort" id="numbersort"></a>
 <a name="numberSort" id="numberSort"></a>
-### `numberSort()`
-
+### `numberSort()` 
 Sorting method used for sorting numbers
 
 #### Signature
@@ -219,8 +213,7 @@ Sorting method used for sorting numbers
 
 <a name="naturalsort" id="naturalsort"></a>
 <a name="naturalSort" id="naturalSort"></a>
-### `naturalSort()`
-
+### `naturalSort()` 
 Sorting method used for sorting values natural
 
 #### Signature
@@ -253,8 +246,7 @@ Sorting method used for sorting values natural
 
 <a name="sortstring" id="sortstring"></a>
 <a name="sortString" id="sortString"></a>
-### `sortString()`
-
+### `sortString()` 
 Sorting method used for sorting values
 
 #### Signature

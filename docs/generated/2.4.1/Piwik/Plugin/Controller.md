@@ -121,8 +121,7 @@ The abstract class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()`
-
+### `__construct()` 
 Constructor.
 
 #### Signature
@@ -130,8 +129,7 @@ Constructor.
 
 <a name="getdateparameterintimezone" id="getdateparameterintimezone"></a>
 <a name="getDateParameterInTimezone" id="getDateParameterInTimezone"></a>
-### `getDateParameterInTimezone()`
-
+### `getDateParameterInTimezone()` 
 Helper method that converts `"today"` or `"yesterday"` to the specified timezone.
 
 If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezone.
@@ -166,8 +164,7 @@ If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezon
 
 <a name="setdate" id="setdate"></a>
 <a name="setDate" id="setDate"></a>
-### `setDate()`
-
+### `setDate()` 
 Sets the date to be used by all other methods in the controller.
 
 If the date has to be modified, this method should be called just after
@@ -193,8 +190,7 @@ construction.
 
 <a name="getdefaultaction" id="getdefaultaction"></a>
 <a name="getDefaultAction" id="getDefaultAction"></a>
-### `getDefaultAction()`
-
+### `getDefaultAction()` 
 Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
 
 #### Signature
@@ -203,8 +199,7 @@ Returns the name of the default method that will be called when visiting: index.
 
 <a name="renderreport" id="renderreport"></a>
 <a name="renderReport" id="renderReport"></a>
-### `renderReport()`
-
+### `renderReport()` 
 Convenience method that creates and renders a ViewDataTable for a API method.
 
 #### Signature
@@ -250,8 +245,7 @@ Convenience method that creates and renders a ViewDataTable for a API method.
 
 <a name="getlastunitgraph" id="getlastunitgraph"></a>
 <a name="getLastUnitGraph" id="getLastUnitGraph"></a>
-### `getLastUnitGraph()`
-
+### `getLastUnitGraph()` 
 Returns a ViewDataTable object that will render a jqPlot evolution graph for the last30 days/weeks/etc.
 
 of the current period, relative to the current date.
@@ -296,8 +290,7 @@ of the current period, relative to the current date.
 
 <a name="getlastunitgraphacrossplugins" id="getlastunitgraphacrossplugins"></a>
 <a name="getLastUnitGraphAcrossPlugins" id="getLastUnitGraphAcrossPlugins"></a>
-### `getLastUnitGraphAcrossPlugins()`
-
+### `getLastUnitGraphAcrossPlugins()` 
 Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
 
 #### Signature
@@ -370,8 +363,7 @@ Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitg
 
 <a name="geturlsparkline" id="geturlsparkline"></a>
 <a name="getUrlSparkline" id="getUrlSparkline"></a>
-### `getUrlSparkline()`
-
+### `getUrlSparkline()` 
 Returns a URL to a sparkline image for a report served by the current plugin.
 
 The result of this URL should be used with the [sparkline()](/api-reference/Piwik/View#twig) twig function.
@@ -419,8 +411,7 @@ The current site ID and period will be used.
 
 <a name="setmindateview" id="setmindateview"></a>
 <a name="setMinDateView" id="setMinDateView"></a>
-### `setMinDateView()`
-
+### `setMinDateView()` 
 Sets the first date available in the period selector's calendar.
 
 #### Signature
@@ -453,8 +444,7 @@ Sets the first date available in the period selector's calendar.
 
 <a name="setmaxdateview" id="setmaxdateview"></a>
 <a name="setMaxDateView" id="setMaxDateView"></a>
-### `setMaxDateView()`
-
+### `setMaxDateView()` 
 Sets the last date available in the period selector's calendar.
 
 Usually this is just the "today" date
@@ -490,8 +480,7 @@ for a site (which varies based on the timezone of a site).
 
 <a name="setgeneralvariablesview" id="setgeneralvariablesview"></a>
 <a name="setGeneralVariablesView" id="setGeneralVariablesView"></a>
-### `setGeneralVariablesView()`
-
+### `setGeneralVariablesView()` 
 Assigns variables to [View](/api-reference/Piwik/View) instances that display an entire page.
 
 The following variables assigned:
@@ -533,8 +522,7 @@ Will exit on error.
 
 <a name="setbasicvariablesview" id="setbasicvariablesview"></a>
 <a name="setBasicVariablesView" id="setBasicVariablesView"></a>
-### `setBasicVariablesView()`
-
+### `setBasicVariablesView()` 
 Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance.
 
 The following variables assigned:
@@ -574,8 +562,7 @@ Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/Contro
 
 <a name="sethostvalidationvariablesview" id="sethostvalidationvariablesview"></a>
 <a name="setHostValidationVariablesView" id="setHostValidationVariablesView"></a>
-### `setHostValidationVariablesView()`
-
+### `setHostValidationVariablesView()` 
 Checks if the current host is valid and sets variables on the given view, including:
 
 - **isValidHost** - true if host is valid, false if otherwise
@@ -604,8 +591,7 @@ Checks if the current host is valid and sets variables on the given view, includ
 
 <a name="setperiodvariablesview" id="setperiodvariablesview"></a>
 <a name="setPeriodVariablesView" id="setPeriodVariablesView"></a>
-### `setPeriodVariablesView()`
-
+### `setPeriodVariablesView()` 
 Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
 
 - **period** - The value of the **period** query parameter.
@@ -634,8 +620,7 @@ Sets general period variables on a view, including:  - **displayUniqueVisitors**
 
 <a name="redirecttoindex" id="redirecttoindex"></a>
 <a name="redirectToIndex" id="redirectToIndex"></a>
-### `redirectToIndex()`
-
+### `redirectToIndex()` 
 Helper method used to redirect the current HTTP request to another module/action.
 
 This function will exit immediately after executing.
@@ -710,8 +695,7 @@ This function will exit immediately after executing.
 
 <a name="checktokeninurl" id="checktokeninurl"></a>
 <a name="checkTokenInUrl" id="checkTokenInUrl"></a>
-### `checkTokenInUrl()`
-
+### `checkTokenInUrl()` 
 Checks that the token_auth in the URL matches the currently logged-in user's token_auth.
 
 This is a protection against CSRF and should be used in all controller
@@ -727,8 +711,7 @@ methods that modify Piwik or any user settings.
 
 <a name="getcalendarprettydate" id="getcalendarprettydate"></a>
 <a name="getCalendarPrettyDate" id="getCalendarPrettyDate"></a>
-### `getCalendarPrettyDate()`
-
+### `getCalendarPrettyDate()` 
 Returns a prettified date string for use in period selector widget.
 
 #### Signature
@@ -751,8 +734,7 @@ Returns a prettified date string for use in period selector widget.
 
 <a name="getevolutionhtml" id="getevolutionhtml"></a>
 <a name="getEvolutionHtml" id="getEvolutionHtml"></a>
-### `getEvolutionHtml()`
-
+### `getEvolutionHtml()` 
 Calculates the evolution from one value to another and returns HTML displaying the evolution percent.
 
 The HTML includes an up/down arrow and is colored red, black or
