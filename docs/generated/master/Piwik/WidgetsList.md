@@ -13,10 +13,24 @@ Methods
 
 The class defines the following methods:
 
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class.
 - [`get()`](#get) &mdash; Returns all available widgets.
 - [`add()`](#add) &mdash; Adds a report to the list of dashboard widgets.
 - [`remove()`](#remove) &mdash; Removes one or more widgets from the widget list.
 - [`isDefined()`](#isdefined) &mdash; Returns `true` if a report exists in the widget list, `false` if otherwise.
+
+<a name="getinstance" id="getinstance"></a>
+<a name="getInstance" id="getInstance"></a>
+### `getInstance()`
+
+Returns the singleton instance for the derived class.
+
+If the singleton instance
+has not been created, this method will create it.
+
+#### Signature
+
+- It returns a [`Singleton`](../Piwik/Singleton.md) value.
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>

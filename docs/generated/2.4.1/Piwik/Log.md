@@ -95,11 +95,25 @@ Methods
 
 The class defines the following methods:
 
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class.
 - [`error()`](#error) &mdash; Logs a message using the ERROR log level.
 - [`warning()`](#warning) &mdash; Logs a message using the WARNING log level.
 - [`info()`](#info) &mdash; Logs a message using the INFO log level.
 - [`debug()`](#debug) &mdash; Logs a message using the DEBUG log level.
 - [`verbose()`](#verbose) &mdash; Logs a message using the VERBOSE log level.
+
+<a name="getinstance" id="getinstance"></a>
+<a name="getInstance" id="getInstance"></a>
+### `getInstance()`
+
+Returns the singleton instance for the derived class.
+
+If the singleton instance
+has not been created, this method will create it.
+
+#### Signature
+
+- It returns a [`Singleton`](../Piwik/Singleton.md) value.
 
 <a name="error" id="error"></a>
 <a name="error" id="error"></a>

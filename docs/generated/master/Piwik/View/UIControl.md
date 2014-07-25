@@ -79,11 +79,15 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename.
+- [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
 - [`__set()`](#__set) &mdash; Sets a variable.
 - [`__get()`](#__get) &mdash; Gets a view variable.
-- [`__isset()`](#__isset)
 - [`render()`](#render) &mdash; Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
-- [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
+- [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field.
+- [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response.
+- [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template.
+- [`__isset()`](#__isset)
 - [`getClientSideProperties()`](#getclientsideproperties) &mdash; Returns the array of property names whose values are passed to the UIControl JavaScript class.
 - [`getClientSideParameters()`](#getclientsideparameters) &mdash; Returns an array of property names whose values are passed to the UIControl JavaScript class.
 
@@ -95,6 +99,40 @@ Constructor.
 
 #### Signature
 
+
+<a name="gettemplatefile" id="gettemplatefile"></a>
+<a name="getTemplateFile" id="getTemplateFile"></a>
+### `getTemplateFile()`
+
+Returns the template filename.
+
+#### Signature
+
+- It returns a `string` value.
+
+<a name="gettemplatevars" id="gettemplatevars"></a>
+<a name="getTemplateVars" id="getTemplateVars"></a>
+### `getTemplateVars()`
+
+See View::getTemplateVars().
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$override` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Template variable override values. Mainly useful when including View templates in other templates.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `array` value.
 
 <a name="__set" id="__set"></a>
 <a name="__set" id="__set"></a>
@@ -169,28 +207,6 @@ See View::\_\_get().
   </li>
 </ul>
 
-<a name="__isset" id="__isset"></a>
-<a name="__isset" id="__isset"></a>
-### `__isset()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$key`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-- It does not return anything.
-
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
 ### `render()`
@@ -212,11 +228,14 @@ Renders the control view within a containing <div> that is used by the UIControl
   </li>
 </ul>
 
-<a name="gettemplatevars" id="gettemplatevars"></a>
-<a name="getTemplateVars" id="getTemplateVars"></a>
-### `getTemplateVars()`
+<a name="setcontenttype" id="setcontenttype"></a>
+<a name="setContentType" id="setContentType"></a>
+### `setContentType()`
 
-See View::getTemplateVars().
+Set stored value used in the Content-Type HTTP header field.
+
+The header is
+set just before rendering.
 
 #### Signature
 
@@ -225,16 +244,116 @@ See View::getTemplateVars().
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$override` (`array`) &mdash;
+      `$contentType` (`string`) &mdash;
 
-      <div markdown="1" class="param-desc"> Template variable override values. Mainly useful when including View templates in other templates.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
       </div>
    </li>
    </ul>
-- It returns a `array` value.
+- It does not return anything.
+
+<a name="setxframeoptions" id="setxframeoptions"></a>
+<a name="setXFrameOptions" id="setXFrameOptions"></a>
+### `setXFrameOptions()`
+
+Set X-Frame-Options field in the HTTP response.
+
+The header is set just
+before rendering.
+
+_Note: setting this allows you to make sure the View **cannot** be
+embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options)._
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$option` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> ('deny' or 'sameorigin')</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="singlereport" id="singlereport"></a>
+<a name="singleReport" id="singleReport"></a>
+### `singleReport()`
+
+Creates a View for and then renders the single report template.
+
+Can be used for pages that display only one report to avoid having to create
+a new template.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$title` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The report title.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$reportHtml` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The report body HTML.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`|`void`) &mdash;
+    <div markdown="1" class="param-desc">The report contents if `$fetch` is true.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="__isset" id="__isset"></a>
+<a name="__isset" id="__isset"></a>
+### `__isset()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$key`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
 
 <a name="getclientsideproperties" id="getclientsideproperties"></a>
 <a name="getClientSideProperties" id="getClientSideProperties"></a>

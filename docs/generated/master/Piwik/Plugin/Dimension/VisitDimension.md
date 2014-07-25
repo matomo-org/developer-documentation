@@ -14,20 +14,106 @@ automatically and the values you return in the previous mentioned events will be
 
 You can create a new dimension using the console command `./console generate:dimension`.
 
+Properties
+----------
+
+This abstract class defines the following properties:
+
+- [`$columnName`](#$columnname) &mdash; This will be the name of the column in the database table if a $columnType is specified.
+- [`$columnType`](#$columntype) &mdash; If a columnType is defined, we will create a column in the MySQL table having this type.
+
+<a name="$columnname" id="$columnname"></a>
+<a name="columnName" id="columnName"></a>
+### `$columnName`
+
+This will be the name of the column in the database table if a $columnType is specified.
+
+#### Signature
+
+- It is a `string` value.
+
+<a name="$columntype" id="$columntype"></a>
+<a name="columnType" id="columnType"></a>
+### `$columnType`
+
+If a columnType is defined, we will create a column in the MySQL table having this type.
+
+Please make sure
+MySQL understands this type. Once you change the column type the Piwik platform will notify the user to
+perform an update which can sometimes take a long time so be careful when choosing the correct column type.
+
+#### Signature
+
+- It is a `string` value.
+
 Methods
 -------
 
 The abstract class defines the following methods:
 
+- [`addSegment()`](#addsegment) &mdash; Adds a new segment.
+- [`getName()`](#getname) &mdash; Get the translated name of the dimension.
+- [`getAllDimensions()`](#getalldimensions) &mdash; Get all visit dimensions that are defined by all activated plugins.
 - [`install()`](#install) &mdash; Installs the visit dimension in case it is not installed yet.
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/VisitDimension#$columnname) and columnType is set.
-- [`addSegment()`](#addsegment) &mdash; Adds a new segment.
 - [`getRequiredVisitFields()`](#getrequiredvisitfields) &mdash; Sometimes you may want to make sure another dimension is executed before your dimension so you can persist this dimensions' value depending on the value of other dimensions.
 - [`onNewVisit()`](#onnewvisit) &mdash; The `onNewVisit` method is triggered when a new visitor is detected.
 - [`onExistingVisit()`](#onexistingvisit) &mdash; The `onExistingVisit` method is triggered when a visitor was recognized meaning it is not a new visitor.
 - [`onConvertedVisit()`](#onconvertedvisit) &mdash; This event is executed shortly after `onNewVisit` or `onExistingVisit` in case the visitor converted a goal.
 - [`onAnyGoalConversion()`](#onanygoalconversion) &mdash; By implementing this event you can persist a value to the `log_conversion` table in case a conversion happens.
-- [`getAllDimensions()`](#getalldimensions) &mdash; Get all visit dimensions that are defined by all activated plugins.
+
+<a name="addsegment" id="addsegment"></a>
+<a name="addSegment" id="addSegment"></a>
+### `addSegment()`
+
+Adds a new segment.
+
+It automatically sets the SQL segment depending on the column name in case none is set
+already.
+
+#### See Also
+
+- `\Piwik\Columns\Dimension::addSegment()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$segment` ([`Segment`](../../../Piwik/Plugin/Segment.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="getname" id="getname"></a>
+<a name="getName" id="getName"></a>
+### `getName()`
+
+Get the translated name of the dimension.
+
+Defaults to an empty string.
+
+#### Signature
+
+- It returns a `string` value.
+
+<a name="getalldimensions" id="getalldimensions"></a>
+<a name="getAllDimensions" id="getAllDimensions"></a>
+### `getAllDimensions()`
+
+Get all visit dimensions that are defined by all activated plugins.
+
+#### Signature
+
+- It returns a [`VisitDimension[]`](../../../Piwik/Plugin/Dimension/VisitDimension.md) value.
 
 <a name="install" id="install"></a>
 <a name="install" id="install"></a>
@@ -86,37 +172,6 @@ will be done.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
-
-<a name="addsegment" id="addsegment"></a>
-<a name="addSegment" id="addSegment"></a>
-### `addSegment()`
-
-Adds a new segment.
-
-It automatically sets the SQL segment depending on the column name in case none is set
-already.
-
-#### See Also
-
-- `\Piwik\Columns\Dimension::addSegment()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$segment` ([`Segment`](../../../Piwik/Plugin/Segment.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-- It does not return anything.
 
 <a name="getrequiredvisitfields" id="getrequiredvisitfields"></a>
 <a name="getRequiredVisitFields" id="getRequiredVisitFields"></a>
@@ -367,14 +422,4 @@ created automatically.
     </div>
   </li>
 </ul>
-
-<a name="getalldimensions" id="getalldimensions"></a>
-<a name="getAllDimensions" id="getAllDimensions"></a>
-### `getAllDimensions()`
-
-Get all visit dimensions that are defined by all activated plugins.
-
-#### Signature
-
-- It returns a [`VisitDimension[]`](../../../Piwik/Plugin/Dimension/VisitDimension.md) value.
 

@@ -10,12 +10,26 @@ Methods
 
 The class defines the following methods:
 
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class.
 - [`isPluginActivated()`](#ispluginactivated) &mdash; Returns `true` if a plugin has been activated.
 - [`isPluginLoaded()`](#ispluginloaded) &mdash; Returns `true` if plugin is loaded (in memory).
 - [`getThemeEnabled()`](#getthemeenabled) &mdash; Returns the currently enabled theme.
 - [`returnLoadedPluginsInfo()`](#returnloadedpluginsinfo) &mdash; Returns info regarding all plugins.
 - [`getInstalledPluginsName()`](#getinstalledpluginsname) &mdash; Return names of all installed plugins.
 - [`getMissingPlugins()`](#getmissingplugins) &mdash; Returns names of plugins that should be loaded, but cannot be since their files cannot be found.
+
+<a name="getinstance" id="getinstance"></a>
+<a name="getInstance" id="getInstance"></a>
+### `getInstance()`
+
+Returns the singleton instance for the derived class.
+
+If the singleton instance
+has not been created, this method will create it.
+
+#### Signature
+
+- It returns a [`Singleton`](../../Piwik/Singleton.md) value.
 
 <a name="ispluginactivated" id="ispluginactivated"></a>
 <a name="isPluginActivated" id="isPluginActivated"></a>

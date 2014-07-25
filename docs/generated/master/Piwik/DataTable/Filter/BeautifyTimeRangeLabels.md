@@ -19,6 +19,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`beautify()`](#beautify) &mdash; Beautifies a range label and returns the pretty result.
 - [`getSingleUnitLabel()`](#getsingleunitlabel) &mdash; Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
 - [`getRangeLabel()`](#getrangelabel) &mdash; Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
 - [`getUnboundedLabel()`](#getunboundedlabel) &mdash; Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
@@ -75,6 +76,43 @@ Constructor.
       </div>
    </li>
    </ul>
+
+<a name="beautify" id="beautify"></a>
+<a name="beautify" id="beautify"></a>
+### `beautify()`
+
+Beautifies a range label and returns the pretty result.
+
+See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The range string. This must be in either a '$min-$max' format a '$min+' format.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">The pretty range label.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 
 <a name="getsingleunitlabel" id="getsingleunitlabel"></a>
 <a name="getSingleUnitLabel" id="getSingleUnitLabel"></a>
