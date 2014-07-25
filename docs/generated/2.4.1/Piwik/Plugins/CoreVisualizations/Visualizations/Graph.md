@@ -14,7 +14,7 @@ Constants
 
 This abstract class defines the following constants:
 
-- [`TEMPLATE_FILE`](#template_file) &mdash; The Twig template file to use when rendering, eg, `"@MyPlugin/_myVisualization.twig"`.
+- [`TEMPLATE_FILE`](#template_file) &mdash; The Twig template file to use when rendering, eg, `"@MyPlugin/_myVisualization.twig"`. Inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
 <a name="template_file" id="template_file"></a>
 <a name="TEMPLATE_FILE" id="TEMPLATE_FILE"></a>
 ### `TEMPLATE_FILE`
@@ -27,7 +27,7 @@ Properties
 This abstract class defines the following properties:
 
 - [`$config`](#$config) &mdash; Graph\Config$config
-- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization.
+- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization. Inherited from [`ViewDataTable`](../../../../Piwik/Plugin/ViewDataTable.md)
 
 <a name="$config" id="$config"></a>
 <a name="config" id="config"></a>
@@ -54,13 +54,13 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable making it available in the Twig template specified by `[TEMPLATE_FILE](/api-reference/Piwik/Plugins/CoreVisualizations/Visualizations/Graph#piwik\plugin\visualization::template_file)`. *inherited from* [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
-- [`isThereDataToDisplay()`](#istheredatatodisplay) &mdash; Returns `true` if there is data to display, `false` if otherwise. *inherited from* [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
-- [`beforeLoadDataTable()`](#beforeloaddatatable) &mdash; Hook that is called before loading report data from the API. *inherited from* [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
-- [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](#beforegenericfiltersareappliedtoloadeddatatable) &mdash; Hook that is executed before generic filters are applied. *inherited from* [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
-- [`afterGenericFiltersAreAppliedToLoadedDataTable()`](#aftergenericfiltersareappliedtoloadeddatatable) &mdash; Hook that is executed after generic filters are applied. *inherited from* [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
-- [`afterAllFiltersAreApplied()`](#afterallfiltersareapplied) &mdash; Hook that is executed after the report data is loaded and after all filters have been applied. *inherited from* [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
-- [`beforeRender()`](#beforerender) &mdash; Hook that is executed directly before rendering. *inherited from* [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
+- [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable making it available in the Twig template specified by `[TEMPLATE_FILE](/api-reference/Piwik/Plugins/CoreVisualizations/Visualizations/Graph#piwik\plugin\visualization::template_file)`. Inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
+- [`isThereDataToDisplay()`](#istheredatatodisplay) &mdash; Returns `true` if there is data to display, `false` if otherwise. Inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
+- [`beforeLoadDataTable()`](#beforeloaddatatable) &mdash; Hook that is called before loading report data from the API. Inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
+- [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](#beforegenericfiltersareappliedtoloadeddatatable) &mdash; Hook that is executed before generic filters are applied. Inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
+- [`afterGenericFiltersAreAppliedToLoadedDataTable()`](#aftergenericfiltersareappliedtoloadeddatatable) &mdash; Hook that is executed after generic filters are applied. Inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
+- [`afterAllFiltersAreApplied()`](#afterallfiltersareapplied) &mdash; Hook that is executed after the report data is loaded and after all filters have been applied. Inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
+- [`beforeRender()`](#beforerender) &mdash; Hook that is executed directly before rendering. Inherited from [`Visualization`](../../../../Piwik/Plugin/Visualization.md)
 
 <a name="assigntemplatevar" id="assigntemplatevar"></a>
 <a name="assignTemplateVar" id="assignTemplateVar"></a>

@@ -10,8 +10,8 @@ Properties
 
 This class defines the following properties:
 
-- [`$config`](#$config) &mdash; HtmlTable\Config$config
-- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization.
+- [`$config`](#$config) &mdash; HtmlTable\Config$config Inherited from [`HtmlTable`](../../../../../Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md)
+- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization. Inherited from [`ViewDataTable`](../../../../../Piwik/Plugin/ViewDataTable.md)
 
 <a name="$config" id="$config"></a>
 <a name="config" id="config"></a>

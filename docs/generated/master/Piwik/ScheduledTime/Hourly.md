@@ -10,8 +10,8 @@ Methods
 
 The class defines the following methods:
 
-- [`setHour()`](#sethour) &mdash; Sets the hour of the day on which the task should be executed. *inherited from* [`ScheduledTime`](../../Piwik/ScheduledTime.md)
-- [`factory()`](#factory) &mdash; Returns a new ScheduledTime instance using a string description of the scheduled period type and a string description of the day within the period to execute the task on. *inherited from* [`ScheduledTime`](../../Piwik/ScheduledTime.md)
+- [`setHour()`](#sethour) &mdash; Sets the hour of the day on which the task should be executed. Inherited from [`ScheduledTime`](../../Piwik/ScheduledTime.md)
+- [`factory()`](#factory) &mdash; Returns a new ScheduledTime instance using a string description of the scheduled period type and a string description of the day within the period to execute the task on. Inherited from [`ScheduledTime`](../../Piwik/ScheduledTime.md)
 
 <a name="sethour" id="sethour"></a>
 <a name="setHour" id="setHour"></a>

@@ -41,7 +41,7 @@ Methods
 
 The class defines the following methods:
 
-- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. *inherited from* [`Singleton`](../Piwik/Singleton.md)
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../Piwik/Singleton.md)
 - [`rescheduleTask()`](#rescheduletask) &mdash; Determines a task's scheduled time and persists it, overwriting the previous scheduled time.
 
 <a name="getinstance" id="getinstance"></a>

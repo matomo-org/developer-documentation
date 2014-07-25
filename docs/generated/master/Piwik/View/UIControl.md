@@ -79,14 +79,14 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename. *inherited from* [`View`](../../Piwik/View.md)
+- [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename. Inherited from [`View`](../../Piwik/View.md)
 - [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
 - [`__set()`](#__set) &mdash; Sets a variable.
 - [`__get()`](#__get) &mdash; Gets a view variable.
 - [`render()`](#render) &mdash; Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
-- [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field. *inherited from* [`View`](../../Piwik/View.md)
-- [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response. *inherited from* [`View`](../../Piwik/View.md)
-- [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template. *inherited from* [`View`](../../Piwik/View.md)
+- [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field. Inherited from [`View`](../../Piwik/View.md)
+- [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response. Inherited from [`View`](../../Piwik/View.md)
+- [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template. Inherited from [`View`](../../Piwik/View.md)
 - [`__isset()`](#__isset)
 - [`getClientSideProperties()`](#getclientsideproperties) &mdash; Returns the array of property names whose values are passed to the UIControl JavaScript class.
 - [`getClientSideParameters()`](#getclientsideparameters) &mdash; Returns an array of property names whose values are passed to the UIControl JavaScript class.

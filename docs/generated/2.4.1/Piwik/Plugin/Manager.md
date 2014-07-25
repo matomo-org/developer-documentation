@@ -10,7 +10,7 @@ Methods
 
 The class defines the following methods:
 
-- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. *inherited from* [`Singleton`](../../Piwik/Singleton.md)
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../../Piwik/Singleton.md)
 - [`isPluginActivated()`](#ispluginactivated) &mdash; Returns `true` if a plugin has been activated.
 - [`isPluginLoaded()`](#ispluginloaded) &mdash; Returns `true` if plugin is loaded (in memory).
 - [`getThemeEnabled()`](#getthemeenabled) &mdash; Returns the currently enabled theme.

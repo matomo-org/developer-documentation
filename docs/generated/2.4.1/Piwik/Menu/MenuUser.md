@@ -26,10 +26,10 @@ Methods
 
 The class defines the following methods:
 
-- [`add()`](#add) &mdash; Adds a new entry to the menu. *inherited from* [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
-- [`remove()`](#remove) &mdash; Removes an existing entry from the menu. *inherited from* [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
-- [`rename()`](#rename) &mdash; Renames a single menu entry. *inherited from* [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
-- [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. *inherited from* [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`add()`](#add) &mdash; Adds a new entry to the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>

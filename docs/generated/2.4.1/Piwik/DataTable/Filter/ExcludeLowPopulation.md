@@ -26,8 +26,8 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; See [ExcludeLowPopulation](/api-reference/Piwik/DataTable/Filter/ExcludeLowPopulation).
-- [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. *inherited from* [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
-- [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. *inherited from* [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+- [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+- [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>

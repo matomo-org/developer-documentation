@@ -19,8 +19,8 @@ Properties
 
 This abstract class defines the following properties:
 
-- [`$columnName`](#$columnname) &mdash; This will be the name of the column in the database table if a $columnType is specified.
-- [`$columnType`](#$columntype) &mdash; If a columnType is defined, we will create a column in the MySQL table having this type.
+- [`$columnName`](#$columnname) &mdash; This will be the name of the column in the database table if a $columnType is specified. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`$columnType`](#$columntype) &mdash; If a columnType is defined, we will create a column in the MySQL table having this type. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 
 <a name="$columnname" id="$columnname"></a>
 <a name="columnName" id="columnName"></a>
@@ -52,8 +52,8 @@ Methods
 The abstract class defines the following methods:
 
 - [`addSegment()`](#addsegment) &mdash; Adds a new segment.
-- [`getName()`](#getname) &mdash; Get the translated name of the dimension. *inherited from* [`Dimension`](../../../Piwik/Columns/Dimension.md)
-- [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension. *inherited from* [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`getName()`](#getname) &mdash; Get the translated name of the dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`install()`](#install) &mdash; Installs the action dimension in case it is not installed yet.
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and columnType is set.
 - [`onLookupAction()`](#onlookupaction) &mdash; If the value you want to save for your dimension is something like a page title or page url, you usually do not want to save the raw value over and over again to save bytes in the database.

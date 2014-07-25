@@ -95,7 +95,7 @@ Methods
 
 The class defines the following methods:
 
-- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. *inherited from* [`Singleton`](../Piwik/Singleton.md)
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../Piwik/Singleton.md)
 - [`error()`](#error) &mdash; Logs a message using the ERROR log level.
 - [`warning()`](#warning) &mdash; Logs a message using the WARNING log level.
 - [`info()`](#info) &mdash; Logs a message using the INFO log level.

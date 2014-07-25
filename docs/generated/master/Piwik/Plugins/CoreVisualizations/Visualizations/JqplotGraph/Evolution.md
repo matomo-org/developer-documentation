@@ -11,7 +11,7 @@ Properties
 This class defines the following properties:
 
 - [`$config`](#$config) &mdash; Evolution\Config$config
-- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization.
+- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization. Inherited from [`ViewDataTable`](../../../../../Piwik/Plugin/ViewDataTable.md)
 
 <a name="$config" id="$config"></a>
 <a name="config" id="config"></a>

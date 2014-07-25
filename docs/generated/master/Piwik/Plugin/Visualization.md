@@ -126,8 +126,8 @@ Properties
 
 This class defines the following properties:
 
-- [`$config`](#$config) &mdash; Contains display properties for this visualization.
-- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization.
+- [`$config`](#$config) &mdash; Contains display properties for this visualization. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 
 <a name="$config" id="$config"></a>
 <a name="config" id="config"></a>
@@ -154,16 +154,16 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`getDefaultConfig()`](#getdefaultconfig) &mdash; Returns the default config instance. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`getDefaultRequestConfig()`](#getdefaultrequestconfig) &mdash; Returns the default request config instance. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`getViewDataTableId()`](#getviewdatatableid) &mdash; Returns the viewDataTable ID for this DataTable visualization. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`isViewDataTableId()`](#isviewdatatableid) &mdash; Returns `true` if this instance's or any of its ancestors' viewDataTable IDs equals the supplied ID, `false` if otherwise. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`getDataTable()`](#getdatatable) &mdash; Returns the DataTable loaded from the API. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`setDataTable()`](#setdatatable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`render()`](#render) &mdash; Requests all needed data and renders the view. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`isRequestingSingleDataTable()`](#isrequestingsingledatatable) &mdash; Returns `true` if this instance will request a single DataTable, `false` if requesting more than one. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Returns `true` if this visualization can display some type of data or not. *inherited from* [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`getDefaultConfig()`](#getdefaultconfig) &mdash; Returns the default config instance. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`getDefaultRequestConfig()`](#getdefaultrequestconfig) &mdash; Returns the default request config instance. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`getViewDataTableId()`](#getviewdatatableid) &mdash; Returns the viewDataTable ID for this DataTable visualization. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`isViewDataTableId()`](#isviewdatatableid) &mdash; Returns `true` if this instance's or any of its ancestors' viewDataTable IDs equals the supplied ID, `false` if otherwise. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`getDataTable()`](#getdatatable) &mdash; Returns the DataTable loaded from the API. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`setDataTable()`](#setdatatable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`render()`](#render) &mdash; Requests all needed data and renders the view. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`isRequestingSingleDataTable()`](#isrequestingsingledatatable) &mdash; Returns `true` if this instance will request a single DataTable, `false` if requesting more than one. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Returns `true` if this visualization can display some type of data or not. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable making it available in the Twig template specified by `[TEMPLATE_FILE](/api-reference/Piwik/Plugin/Visualization#piwik\plugin\visualization::template_file)`.
 - [`isThereDataToDisplay()`](#istheredatatodisplay) &mdash; Returns `true` if there is data to display, `false` if otherwise.
 - [`beforeLoadDataTable()`](#beforeloaddatatable) &mdash; Hook that is called before loading report data from the API.

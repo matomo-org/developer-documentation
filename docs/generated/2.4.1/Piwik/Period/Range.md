@@ -18,20 +18,20 @@ Methods
 
 The class defines the following methods:
 
-- [`factory()`](#factory) *inherited from* [`Period`](../../Piwik/Period.md)
-- [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods. *inherited from* [`Period`](../../Piwik/Period.md)
+- [`factory()`](#factory) Inherited from [`Period`](../../Piwik/Period.md)
+- [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period.
 - [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period.
-- [`getId()`](#getid) &mdash; Returns the period ID. *inherited from* [`Period`](../../Piwik/Period.md)
-- [`getLabel()`](#getlabel) &mdash; Returns the label for the current period. *inherited from* [`Period`](../../Piwik/Period.md)
-- [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods. *inherited from* [`Period`](../../Piwik/Period.md)
-- [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period. *inherited from* [`Period`](../../Piwik/Period.md)
-- [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period. *inherited from* [`Period`](../../Piwik/Period.md)
-- [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Period/Range#tostring). *inherited from* [`Period`](../../Piwik/Period.md)
+- [`getId()`](#getid) &mdash; Returns the period ID. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getLabel()`](#getlabel) &mdash; Returns the label for the current period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Period/Range#tostring). Inherited from [`Period`](../../Piwik/Period.md)
 - [`getPrettyString()`](#getprettystring) &mdash; Returns the current period as a string.
 - [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns the current period as a localized short string.
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns the current period as a localized long string.
-- [`getRangeString()`](#getrangestring) &mdash; Returns a succinct string describing this period. *inherited from* [`Period`](../../Piwik/Period.md)
+- [`getRangeString()`](#getrangestring) &mdash; Returns a succinct string describing this period. Inherited from [`Period`](../../Piwik/Period.md)
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setDefaultEndDate()`](#setdefaultenddate) &mdash; Sets the default end date of the period.
 - [`parseDateRange()`](#parsedaterange) &mdash; Given a date string, returns `false` if not a date range, or returns the array containing start and end dates.

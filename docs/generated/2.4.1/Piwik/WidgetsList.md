@@ -13,7 +13,7 @@ Methods
 
 The class defines the following methods:
 
-- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. *inherited from* [`Singleton`](../Piwik/Singleton.md)
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../Piwik/Singleton.md)
 - [`get()`](#get) &mdash; Returns all available widgets.
 - [`add()`](#add) &mdash; Adds a report to the list of dashboard widgets.
 - [`remove()`](#remove) &mdash; Removes one or more widgets from the widget list.

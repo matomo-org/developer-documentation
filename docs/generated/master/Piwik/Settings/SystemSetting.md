@@ -15,17 +15,17 @@ Properties
 
 This class defines the following properties:
 
-- [`$type`](#$type) &mdash; Describes the setting's PHP data type.
-- [`$uiControlType`](#$uicontroltype) &mdash; Describes what HTML element should be used to manipulate the setting through Piwik's UI.
-- [`$uiControlAttributes`](#$uicontrolattributes) &mdash; Name-value mapping of HTML attributes that will be added HTML form control, eg, `array('size' => 3)`.
-- [`$availableValues`](#$availablevalues) &mdash; The list of all available values for this setting.
-- [`$introduction`](#$introduction) &mdash; Text that will appear above this setting's section in the _Plugin Settings_ admin page.
-- [`$description`](#$description) &mdash; Text that will appear directly underneath the setting title in the _Plugin Settings_ admin page.
-- [`$inlineHelp`](#$inlinehelp) &mdash; Text that will appear next to the setting's section in the _Plugin Settings_ admin page.
-- [`$validate`](#$validate) &mdash; A closure that does some custom validation on the setting before the setting is persisted.
-- [`$transform`](#$transform) &mdash; A closure that transforms the setting value.
-- [`$defaultValue`](#$defaultvalue) &mdash; Default value of this setting.
-- [`$title`](#$title) &mdash; This setting's display name, for example, `'Refresh Interval'`.
+- [`$type`](#$type) &mdash; Describes the setting's PHP data type. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$uiControlType`](#$uicontroltype) &mdash; Describes what HTML element should be used to manipulate the setting through Piwik's UI. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$uiControlAttributes`](#$uicontrolattributes) &mdash; Name-value mapping of HTML attributes that will be added HTML form control, eg, `array('size' => 3)`. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$availableValues`](#$availablevalues) &mdash; The list of all available values for this setting. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$introduction`](#$introduction) &mdash; Text that will appear above this setting's section in the _Plugin Settings_ admin page. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$description`](#$description) &mdash; Text that will appear directly underneath the setting title in the _Plugin Settings_ admin page. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$inlineHelp`](#$inlinehelp) &mdash; Text that will appear next to the setting's section in the _Plugin Settings_ admin page. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$validate`](#$validate) &mdash; A closure that does some custom validation on the setting before the setting is persisted. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$transform`](#$transform) &mdash; A closure that transforms the setting value. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$defaultValue`](#$defaultvalue) &mdash; Default value of this setting. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$title`](#$title) &mdash; This setting's display name, for example, `'Refresh Interval'`. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`$readableByCurrentUser`](#$readablebycurrentuser) &mdash; By default the value of the system setting is only readable by SuperUsers but someone the value should be readable by everyone.
 
 <a name="$type" id="$type"></a>
@@ -228,13 +228,13 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getName()`](#getname) &mdash; Returns the setting's persisted name, eg, `'refreshInterval'`. *inherited from* [`Setting`](../../Piwik/Settings/Setting.md)
-- [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise. *inherited from* [`Setting`](../../Piwik/Settings/Setting.md)
-- [`isReadableByCurrentUser()`](#isreadablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise. *inherited from* [`Setting`](../../Piwik/Settings/Setting.md)
-- [`setStorage()`](#setstorage) &mdash; Sets the object used to persist settings. *inherited from* [`Setting`](../../Piwik/Settings/Setting.md)
-- [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value. *inherited from* [`Setting`](../../Piwik/Settings/Setting.md)
-- [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value. *inherited from* [`Setting`](../../Piwik/Settings/Setting.md)
-- [`getKey()`](#getkey) &mdash; Returns the unique string key used to store this setting. *inherited from* [`Setting`](../../Piwik/Settings/Setting.md)
+- [`getName()`](#getname) &mdash; Returns the setting's persisted name, eg, `'refreshInterval'`. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`isReadableByCurrentUser()`](#isreadablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`setStorage()`](#setstorage) &mdash; Sets the object used to persist settings. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`getKey()`](#getkey) &mdash; Returns the unique string key used to store this setting. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`getOrder()`](#getorder) &mdash; Returns the display order.
 
 <a name="__construct" id="__construct"></a>

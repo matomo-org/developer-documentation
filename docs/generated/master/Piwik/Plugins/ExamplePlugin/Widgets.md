@@ -15,14 +15,14 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
-- [`getCategory()`](#getcategory) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
-- [`addWidget()`](#addwidget) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
-- [`init()`](#init) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
-- [`getWidgets()`](#getwidgets) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
-- [`configureWidgetsList()`](#configurewidgetslist) &mdash; Configures the widgets. *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
-- [`getAllWidgets()`](#getallwidgets) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
-- [`factory()`](#factory) *inherited from* [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`__construct()`](#__construct) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`getCategory()`](#getcategory) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`addWidget()`](#addwidget) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`init()`](#init) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`getWidgets()`](#getwidgets) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`configureWidgetsList()`](#configurewidgetslist) &mdash; Configures the widgets. Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`getAllWidgets()`](#getallwidgets) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`factory()`](#factory) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>

@@ -19,7 +19,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`beautify()`](#beautify) &mdash; Beautifies a range label and returns the pretty result. *inherited from* [`BeautifyRangeLabels`](../../../Piwik/DataTable/Filter/BeautifyRangeLabels.md)
+- [`beautify()`](#beautify) &mdash; Beautifies a range label and returns the pretty result. Inherited from [`BeautifyRangeLabels`](../../../Piwik/DataTable/Filter/BeautifyRangeLabels.md)
 - [`getSingleUnitLabel()`](#getsingleunitlabel) &mdash; Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
 - [`getRangeLabel()`](#getrangelabel) &mdash; Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
 - [`getUnboundedLabel()`](#getunboundedlabel) &mdash; Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.

@@ -14,7 +14,7 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. *inherited from* [`Singleton`](../../Piwik/Singleton.md)
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../../Piwik/Singleton.md)
 - [`add()`](#add) &mdash; Adds a new entry to the menu.
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu.
 - [`rename()`](#rename) &mdash; Renames a single menu entry.

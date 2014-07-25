@@ -10,8 +10,8 @@ Properties
 
 This class defines the following properties:
 
-- [`$config`](#$config) &mdash; JqplotGraph\Config$config
-- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization.
+- [`$config`](#$config) &mdash; JqplotGraph\Config$config Inherited from [`JqplotGraph`](../../../../../Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph.md)
+- [`$requestConfig`](#$requestconfig) &mdash; Contains request properties for this visualization. Inherited from [`ViewDataTable`](../../../../../Piwik/Plugin/ViewDataTable.md)
 
 <a name="$config" id="$config"></a>
 <a name="config" id="config"></a>
