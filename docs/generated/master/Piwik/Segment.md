@@ -32,7 +32,7 @@ using this class when generating aggregation SQL queries.
         $orderBy = "table.col1 DESC",
         $groupBy = "table2.col2"
     );
-    
+
     Db::fetchAll($query['sql'], $query['bind']);
 
 **Creating a _null_ segment**

@@ -36,7 +36,7 @@ Learn more about _archiving_ [here](/guides/all-about-analytics-data).
     // one site and one period
     $archive = Archive::build($idSite = 1, $period = 'week', $date = '2013-03-08');
     return $archive->getDataTableFromNumeric(array('nb_visits', 'nb_actions'));
-    
+
     // all sites and multiple dates
     $archive = Archive::build($idSite = 'all', $period = 'month', $date = '2013-01-02,2013-03-08');
     return $archive->getDataTableFromNumeric(array('nb_visits', 'nb_actions'));
@@ -46,7 +46,7 @@ Learn more about _archiving_ [here](/guides/all-about-analytics-data).
     // one site and one period
     $archive = Archive::build($idSite = 1, $period = 'week', $date = '2013-03-08');
     $data = $archive->getNumeric(array('nb_visits', 'nb_actions'));
-    
+
     $visits = $data['nb_visits'];
     $actions = $data['nb_actions'];
 
@@ -55,11 +55,11 @@ Learn more about _archiving_ [here](/guides/all-about-analytics-data).
     // multiple sites and multiple dates
     $archive = Archive::build($idSite = '1,2,3', $period = 'month', $date = '2013-01-02,2013-03-08');
     $data = $archive->getNumeric('nb_visits');
-    
+
     $janSite1Visits = $data['1']['2013-01-01,2013-01-31']['nb_visits'];
     $febSite1Visits = $data['1']['2013-02-01,2013-02-28']['nb_visits'];
     // ... etc.
-    
+
 **_Querying for reports_**
 
     $archive = Archive::build($idSite = 1, $period = 'week', $date = '2013-03-08');
@@ -81,7 +81,7 @@ Learn more about _archiving_ [here](/guides/all-about-analytics-data).
     // get data for first range
     $archive = Archive::build($idSite = 1, $period = 'range', $date = '2013-03-08,2013-03-12');
     $dataTable = $archive->getDataTableFromNumeric(array('nb_visits', 'nb_actions'));
-    
+
     // get data for second range
     $archive = Archive::build($idSite = 1, $period = 'range', $date = '2013-03-15,2013-03-20');
     $dataTable = $archive->getDataTableFromNumeric(array('nb_visits', 'nb_actions'));

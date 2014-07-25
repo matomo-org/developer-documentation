@@ -647,7 +647,7 @@ for too long.
 
 **Example**
 
-    // find the most recent visit that is older than a certain date 
+    // find the most recent visit that is older than a certain date
     $dateStart = // ...
     $sql = "SELECT idvisit
           FROM $logVisit

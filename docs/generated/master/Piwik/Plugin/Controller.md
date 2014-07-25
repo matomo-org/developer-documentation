@@ -113,7 +113,7 @@ The abstract class defines the following methods:
 - [`setGeneralVariablesView()`](#setgeneralvariablesview) &mdash; Assigns variables to [View](/api-reference/Piwik/View) instances that display an entire page.
 - [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance.
 - [`setHostValidationVariablesView()`](#sethostvalidationvariablesview) &mdash; Checks if the current host is valid and sets variables on the given view, including:
-- [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
+- [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including:
 - [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current HTTP request to another module/action.
 - [`checkTokenInUrl()`](#checktokeninurl) &mdash; Checks that the token_auth in the URL matches the currently logged-in user's token_auth.
 - [`getCalendarPrettyDate()`](#getcalendarprettydate) &mdash; Returns a prettified date string for use in period selector widget.
@@ -606,8 +606,10 @@ Checks if the current host is valid and sets variables on the given view, includ
 <a name="setPeriodVariablesView" id="setPeriodVariablesView"></a>
 ### `setPeriodVariablesView()`
 
-Sets general period variables on a view, including:  - **displayUniqueVisitors** - Whether unique visitors should be displayed for the current                               period.
+Sets general period variables on a view, including:
 
+- **displayUniqueVisitors** - Whether unique visitors should be displayed for the current
+                              period.
 - **period** - The value of the **period** query parameter.
 - **otherPeriods** - `array('day', 'week', 'month', 'year', 'range')`
 - **periodsNames** - List of available periods mapped to their singular and plural translations.

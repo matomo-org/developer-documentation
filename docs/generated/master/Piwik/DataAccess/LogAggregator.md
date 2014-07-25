@@ -25,7 +25,7 @@ _Note: A dimension is essentially the same as a **GROUP BY** field._
 
     $archiveProcessor = // ...
     $logAggregator = $archiveProcessor->getLogAggregator();
-    
+
     // get metrics for every used browser language of all visits by returning visitors
     $query = $logAggregator->queryVisitsByDimension(
         $dimensions = array('log_visit.location_browser_lang'),
@@ -379,7 +379,7 @@ in one of the query... methods (for example [queryVisitsByDimension()](/api-refe
     $logAggregator = // get the LogAggregator somehow
     $query = $logAggregator->queryVisitsByDimension($dimensions = array(), $where = false, $selects);
     $tableSummary = $query->fetch();
-    
+
     $numberOfVisitsWithOneAction = $tableSummary['vta0'];
     $numberOfVisitsBetweenTwoAnd10 = $tableSummary['vta1'];
 

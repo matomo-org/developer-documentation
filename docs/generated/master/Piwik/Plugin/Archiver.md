@@ -22,16 +22,16 @@ returned by [getLogAggregator()](/api-reference/Piwik/Plugin/Archiver#getlogaggr
         public function aggregateDayReport()
         {
             $logAggregator = $this->getLogAggregator();
-            
+
             $data = $logAggregator->queryVisitsByDimension(...);
-            
+
             $dataTable = new DataTable();
             $dataTable->addRowsFromSimpleArray($data);
 
             $archiveProcessor = $this->getProcessor();
             $archiveProcessor->insertBlobRecords('MyPlugin_myReport', $dataTable->getSerialized(500));
         }
-        
+
         public function aggregateMultipleReports()
         {
             $archiveProcessor = $this->getProcessor();

@@ -61,7 +61,7 @@ contain the following information:
         {
             Db::exec("DROP TABLE IF EXISTS " . Common::prefixTable('mytable'));
         }
-        
+
         public function getReportMetadata(&$metadata)
         {
             // ...
@@ -79,7 +79,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:  - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
+- [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:
 - [`getListHooksRegistered()`](#getlisthooksregistered) &mdash; Returns a list of hooks with associated event observers.
 - [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered.
 - [`install()`](#install) &mdash; Installs the plugin.
@@ -125,7 +125,16 @@ Constructor.
 <a name="getInformation" id="getInformation"></a>
 ### `getInformation()`
 
-Returns plugin information, including:  - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
+Returns plugin information, including:
+
+- 'description' => string        // 1-2 sentence description of the plugin
+- 'author' => string             // plugin author
+- 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org")
+- 'homepage' => string           // plugin homepage URL
+- 'license' => string            // plugin license
+- 'license_homepage' => string   // license homepage URL
+- 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release
+- 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
 
 #### Signature
 
