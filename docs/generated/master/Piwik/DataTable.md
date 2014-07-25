@@ -145,7 +145,6 @@ Constants
 This class defines the following constants:
 
 - [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.
-
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
 ### `COLUMN_AGGREGATION_OPS_METADATA_NAME`

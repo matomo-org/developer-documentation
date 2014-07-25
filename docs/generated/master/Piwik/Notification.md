@@ -45,7 +45,6 @@ This class defines the following constants:
 - [`FLAG_NO_CLEAR`](#flag_no_clear) &mdash; If this flag is applied, no close icon will be displayed.
 - [`TYPE_PERSISTENT`](#type_persistent) &mdash; Notifications of this type will be displayed until the new user explicitly closes the notification.
 - [`TYPE_TRANSIENT`](#type_transient) &mdash; Notifications of this type will be displayed only once.
-
 <a name="flag_no_clear" id="flag_no_clear"></a>
 <a name="FLAG_NO_CLEAR" id="FLAG_NO_CLEAR"></a>
 ### `FLAG_NO_CLEAR`
@@ -54,13 +53,11 @@ _Note: persistent notifications always have a close
 icon._
 
 See [$flags](/api-reference/Piwik/Notification#$flags).
-
 <a name="type_persistent" id="type_persistent"></a>
 <a name="TYPE_PERSISTENT" id="TYPE_PERSISTENT"></a>
 ### `TYPE_PERSISTENT`
 
 The notifications will display even if the user reloads the page.
-
 <a name="type_transient" id="type_transient"></a>
 <a name="TYPE_TRANSIENT" id="TYPE_TRANSIENT"></a>
 ### `TYPE_TRANSIENT`

@@ -13,7 +13,6 @@ Constants
 This class defines the following constants:
 
 - [`TEMPLATE`](#template) &mdash; The Twig template file that generates the control's HTML.
-
 <a name="template" id="template"></a>
 <a name="TEMPLATE" id="TEMPLATE"></a>
 ### `TEMPLATE`

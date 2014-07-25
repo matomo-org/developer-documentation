@@ -21,6 +21,8 @@ This class defines the following properties:
 <a name="readableByCurrentUser" id="readableByCurrentUser"></a>
 ### `$readableByCurrentUser`
 
+Since Piwik 2.4.0
+
 By default the value of the system setting is only readable by SuperUsers but someone the value should be readable by everyone.
 
 #### Signature

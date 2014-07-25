@@ -115,7 +115,6 @@ Constants
 This class defines the following constants:
 
 - [`TEMPLATE_FILE`](#template_file) &mdash; The Twig template file to use when rendering, eg, `"@MyPlugin/_myVisualization.twig"`.
-
 <a name="template_file" id="template_file"></a>
 <a name="TEMPLATE_FILE" id="TEMPLATE_FILE"></a>
 ### `TEMPLATE_FILE`
