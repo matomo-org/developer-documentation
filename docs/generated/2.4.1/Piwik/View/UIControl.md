@@ -93,7 +93,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Constructor.
 
 #### Signature
@@ -101,7 +101,7 @@ Constructor.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>
-### `getTemplateFile()` *inherited from [`View`](../../Piwik/View.md)*
+### `getTemplateFile() *inherited from*` [`View`](../../Piwik/View.md)
 Returns the template filename.
 
 #### Signature
@@ -110,7 +110,7 @@ Returns the template filename.
 
 <a name="gettemplatevars" id="gettemplatevars"></a>
 <a name="getTemplateVars" id="getTemplateVars"></a>
-### `getTemplateVars()` 
+### `getTemplateVars() `
 See View::getTemplateVars().
 
 #### Signature
@@ -133,7 +133,7 @@ See View::getTemplateVars().
 
 <a name="__set" id="__set"></a>
 <a name="__set" id="__set"></a>
-### `__set()` 
+### `__set() `
 Sets a variable.
 
 See View::\_\_set().
@@ -168,7 +168,7 @@ See View::\_\_set().
 
 <a name="__get" id="__get"></a>
 <a name="__get" id="__get"></a>
-### `__get()` 
+### `__get() `
 Gets a view variable.
 
 See View::\_\_get().
@@ -204,7 +204,7 @@ See View::\_\_get().
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
-### `render()` 
+### `render() `
 Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
 
 #### Signature
@@ -224,7 +224,7 @@ Renders the control view within a containing <div> that is used by the UIControl
 
 <a name="setcontenttype" id="setcontenttype"></a>
 <a name="setContentType" id="setContentType"></a>
-### `setContentType()` *inherited from [`View`](../../Piwik/View.md)*
+### `setContentType() *inherited from*` [`View`](../../Piwik/View.md)
 Set stored value used in the Content-Type HTTP header field.
 
 The header is
@@ -250,7 +250,7 @@ set just before rendering.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
 <a name="setXFrameOptions" id="setXFrameOptions"></a>
-### `setXFrameOptions()` *inherited from [`View`](../../Piwik/View.md)*
+### `setXFrameOptions() *inherited from*` [`View`](../../Piwik/View.md)
 Set X-Frame-Options field in the HTTP response.
 
 The header is set just
@@ -279,7 +279,7 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 
 <a name="singlereport" id="singlereport"></a>
 <a name="singleReport" id="singleReport"></a>
-### `singleReport()` *inherited from [`View`](../../Piwik/View.md)*
+### `singleReport() *inherited from*` [`View`](../../Piwik/View.md)
 Creates a View for and then renders the single report template.
 
 Can be used for pages that display only one report to avoid having to create
@@ -326,7 +326,7 @@ a new template.
 
 <a name="__isset" id="__isset"></a>
 <a name="__isset" id="__isset"></a>
-### `__isset()` 
+### `__isset() `
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -347,7 +347,7 @@ a new template.
 
 <a name="getclientsideproperties" id="getclientsideproperties"></a>
 <a name="getClientSideProperties" id="getClientSideProperties"></a>
-### `getClientSideProperties()` 
+### `getClientSideProperties() `
 Returns the array of property names whose values are passed to the UIControl JavaScript class.
 
 Should be overriden by descendants.
@@ -358,7 +358,7 @@ Should be overriden by descendants.
 
 <a name="getclientsideparameters" id="getclientsideparameters"></a>
 <a name="getClientSideParameters" id="getClientSideParameters"></a>
-### `getClientSideParameters()` 
+### `getClientSideParameters() `
 Returns an array of property names whose values are passed to the UIControl JavaScript class.
 
 These values differ from those in $clientSideProperties in that they are meant to passed as

@@ -67,7 +67,7 @@ The class defines the following methods:
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
-### `factory()` 
+### `factory() `
 Creates a new Date instance using a string datetime value.
 
 The timezone of the Date
@@ -105,7 +105,7 @@ result will be in UTC.
 
 <a name="getdatetime" id="getdatetime"></a>
 <a name="getDatetime" id="getDatetime"></a>
-### `getDatetime()` 
+### `getDatetime() `
 Returns the current timestamp as a string with the following format: `'YYYY-MM-DD HH:MM:SS'`.
 
 #### Signature
@@ -114,7 +114,7 @@ Returns the current timestamp as a string with the following format: `'YYYY-MM-D
 
 <a name="getdatestartutc" id="getdatestartutc"></a>
 <a name="getDateStartUTC" id="getDateStartUTC"></a>
-### `getDateStartUTC()` 
+### `getDateStartUTC() `
 Returns the start of the day of the current timestamp in UTC.
 
 For example,
@@ -127,7 +127,7 @@ be `'2007-07-24'`.
 
 <a name="getdateendutc" id="getdateendutc"></a>
 <a name="getDateEndUTC" id="getDateEndUTC"></a>
-### `getDateEndUTC()` 
+### `getDateEndUTC() `
 Returns the end of the day of the current timestamp in UTC.
 
 For example,
@@ -140,7 +140,7 @@ be `'2007-07-24 23:59:59'`.
 
 <a name="settimezone" id="settimezone"></a>
 <a name="setTimezone" id="setTimezone"></a>
-### `setTimezone()` 
+### `setTimezone() `
 Returns a new date object with the same timestamp as `$this` but with a new timezone.
 
 See [getTimestamp()](/api-reference/Piwik/Date#gettimestamp) to see how the timezone is used.
@@ -165,7 +165,7 @@ See [getTimestamp()](/api-reference/Piwik/Date#gettimestamp) to see how the time
 
 <a name="adjustfortimezone" id="adjustfortimezone"></a>
 <a name="adjustForTimezone" id="adjustForTimezone"></a>
-### `adjustForTimezone()` 
+### `adjustForTimezone() `
 Converts a timestamp in a from UTC to a timezone.
 
 #### Signature
@@ -209,7 +209,7 @@ Converts a timestamp in a from UTC to a timezone.
 
 <a name="gettimestamputc" id="gettimestamputc"></a>
 <a name="getTimestampUTC" id="getTimestampUTC"></a>
-### `getTimestampUTC()` 
+### `getTimestampUTC() `
 Returns the Unix timestamp of the date in UTC.
 
 #### Signature
@@ -218,7 +218,7 @@ Returns the Unix timestamp of the date in UTC.
 
 <a name="gettimestamp" id="gettimestamp"></a>
 <a name="getTimestamp" id="getTimestamp"></a>
-### `getTimestamp()` 
+### `getTimestamp() `
 Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
 
 #### Signature
@@ -227,7 +227,7 @@ Returns the unix timestamp of the date in UTC, converted from the current timest
 
 <a name="islater" id="islater"></a>
 <a name="isLater" id="isLater"></a>
-### `isLater()` 
+### `isLater() `
 Returns `true` if the current date is older than the given `$date`.
 
 #### Signature
@@ -250,7 +250,7 @@ Returns `true` if the current date is older than the given `$date`.
 
 <a name="isearlier" id="isearlier"></a>
 <a name="isEarlier" id="isEarlier"></a>
-### `isEarlier()` 
+### `isEarlier() `
 Returns `true` if the current date is earlier than the given `$date`.
 
 #### Signature
@@ -273,7 +273,7 @@ Returns `true` if the current date is earlier than the given `$date`.
 
 <a name="isleapyear" id="isleapyear"></a>
 <a name="isLeapYear" id="isLeapYear"></a>
-### `isLeapYear()` 
+### `isLeapYear() `
 Returns `true` if the current year is a leap year, false otherwise.
 
 #### Signature
@@ -282,7 +282,7 @@ Returns `true` if the current year is a leap year, false otherwise.
 
 <a name="tostring" id="tostring"></a>
 <a name="toString" id="toString"></a>
-### `toString()` 
+### `toString() `
 Converts this date to the requested string format.
 
 See [http://php.net/date](http://php.net/date)
@@ -308,7 +308,7 @@ for the list of format strings.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
-### `__toString()` 
+### `__toString() `
 See [toString()](/api-reference/Piwik/Date#tostring).
 
 #### Signature
@@ -328,7 +328,7 @@ See [toString()](/api-reference/Piwik/Date#tostring).
 
 <a name="compareweek" id="compareweek"></a>
 <a name="compareWeek" id="compareWeek"></a>
-### `compareWeek()` 
+### `compareWeek() `
 Performs three-way comparison of the week of the current date against the given `$date`'s week.
 
 #### Signature
@@ -362,7 +362,7 @@ Performs three-way comparison of the week of the current date against the given 
 
 <a name="comparemonth" id="comparemonth"></a>
 <a name="compareMonth" id="compareMonth"></a>
-### `compareMonth()` 
+### `compareMonth() `
 Performs three-way comparison of the month of the current date against the given `$date`'s month.
 
 #### Signature
@@ -396,7 +396,7 @@ Performs three-way comparison of the month of the current date against the given
 
 <a name="compareyear" id="compareyear"></a>
 <a name="compareYear" id="compareYear"></a>
-### `compareYear()` 
+### `compareYear() `
 Performs three-way comparison of the month of the current date against the given `$date`'s year.
 
 #### Signature
@@ -430,7 +430,7 @@ Performs three-way comparison of the month of the current date against the given
 
 <a name="istoday" id="istoday"></a>
 <a name="isToday" id="isToday"></a>
-### `isToday()` 
+### `isToday() `
 Returns `true` if current date is today.
 
 #### Signature
@@ -439,7 +439,7 @@ Returns `true` if current date is today.
 
 <a name="now" id="now"></a>
 <a name="now" id="now"></a>
-### `now()` 
+### `now() `
 Returns a date object set to now in UTC (same as [today()](/api-reference/Piwik/Date#today), except that the time is also set).
 
 #### Signature
@@ -448,7 +448,7 @@ Returns a date object set to now in UTC (same as [today()](/api-reference/Piwik/
 
 <a name="today" id="today"></a>
 <a name="today" id="today"></a>
-### `today()` 
+### `today() `
 Returns a date object set to today at midnight in UTC.
 
 #### Signature
@@ -457,7 +457,7 @@ Returns a date object set to today at midnight in UTC.
 
 <a name="yesterday" id="yesterday"></a>
 <a name="yesterday" id="yesterday"></a>
-### `yesterday()` 
+### `yesterday() `
 Returns a date object set to yesterday at midnight in UTC.
 
 #### Signature
@@ -466,7 +466,7 @@ Returns a date object set to yesterday at midnight in UTC.
 
 <a name="yesterdaysametime" id="yesterdaysametime"></a>
 <a name="yesterdaySameTime" id="yesterdaySameTime"></a>
-### `yesterdaySameTime()` 
+### `yesterdaySameTime() `
 Returns a date object set to yesterday with the current time of day in UTC.
 
 #### Signature
@@ -475,7 +475,7 @@ Returns a date object set to yesterday with the current time of day in UTC.
 
 <a name="settime" id="settime"></a>
 <a name="setTime" id="setTime"></a>
-### `setTime()` 
+### `setTime() `
 Returns a new Date instance with `$this` date's day and the specified new time of day.
 
 #### Signature
@@ -509,7 +509,7 @@ Returns a new Date instance with `$this` date's day and the specified new time o
 
 <a name="setday" id="setday"></a>
 <a name="setDay" id="setDay"></a>
-### `setDay()` 
+### `setDay() `
 Returns a new Date instance with `$this` date's time of day and the day specified by `$day`.
 
 #### Signature
@@ -532,7 +532,7 @@ Returns a new Date instance with `$this` date's time of day and the day specifie
 
 <a name="setyear" id="setyear"></a>
 <a name="setYear" id="setYear"></a>
-### `setYear()` 
+### `setYear() `
 Returns a new Date instance with `$this` date's time of day, month and day, but with a new year (specified by `$year`).
 
 #### Signature
@@ -555,7 +555,7 @@ Returns a new Date instance with `$this` date's time of day, month and day, but 
 
 <a name="subday" id="subday"></a>
 <a name="subDay" id="subDay"></a>
-### `subDay()` 
+### `subDay() `
 Subtracts `$n` number of days from `$this` date and returns a new Date object.
 
 #### Signature
@@ -578,7 +578,7 @@ Subtracts `$n` number of days from `$this` date and returns a new Date object.
 
 <a name="subweek" id="subweek"></a>
 <a name="subWeek" id="subWeek"></a>
-### `subWeek()` 
+### `subWeek() `
 Subtracts `$n` weeks from `$this` date and returns a new Date object.
 
 #### Signature
@@ -601,7 +601,7 @@ Subtracts `$n` weeks from `$this` date and returns a new Date object.
 
 <a name="submonth" id="submonth"></a>
 <a name="subMonth" id="subMonth"></a>
-### `subMonth()` 
+### `subMonth() `
 Subtracts `$n` months from `$this` date and returns the result as a new Date object.
 
 #### Signature
@@ -635,7 +635,7 @@ Subtracts `$n` months from `$this` date and returns the result as a new Date obj
 
 <a name="subyear" id="subyear"></a>
 <a name="subYear" id="subYear"></a>
-### `subYear()` 
+### `subYear() `
 Subtracts `$n` years from `$this` date and returns the result as a new Date object.
 
 #### Signature
@@ -658,7 +658,7 @@ Subtracts `$n` years from `$this` date and returns the result as a new Date obje
 
 <a name="getlocalized" id="getlocalized"></a>
 <a name="getLocalized" id="getLocalized"></a>
-### `getLocalized()` 
+### `getLocalized() `
 Returns a localized date string using the given template.
 
 The template should contain tags that will be replaced with localized date strings.
@@ -705,7 +705,7 @@ Allowed tags include:
 
 <a name="addday" id="addday"></a>
 <a name="addDay" id="addDay"></a>
-### `addDay()` 
+### `addDay() `
 Adds `$n` days to `$this` date and returns the result in a new Date.
 
 instance.
@@ -730,7 +730,7 @@ instance.
 
 <a name="addhour" id="addhour"></a>
 <a name="addHour" id="addHour"></a>
-### `addHour()` 
+### `addHour() `
 Adds `$n` hours to `$this` date and returns the result in a new Date.
 
 #### Signature
@@ -753,7 +753,7 @@ Adds `$n` hours to `$this` date and returns the result in a new Date.
 
 <a name="addhourto" id="addhourto"></a>
 <a name="addHourTo" id="addHourTo"></a>
-### `addHourTo()` 
+### `addHourTo() `
 Adds N number of hours to a UNIX timestamp and returns the result.
 
 Using
@@ -801,7 +801,7 @@ Date instance does not have to be created.
 
 <a name="subhour" id="subhour"></a>
 <a name="subHour" id="subHour"></a>
-### `subHour()` 
+### `subHour() `
 Subtracts `$n` hours from `$this` date and returns the result in a new Date.
 
 #### Signature
@@ -824,7 +824,7 @@ Subtracts `$n` hours from `$this` date and returns the result in a new Date.
 
 <a name="addperiod" id="addperiod"></a>
 <a name="addPeriod" id="addPeriod"></a>
-### `addPeriod()` 
+### `addPeriod() `
 Adds a period to `$this` date and returns the result in a new Date instance.
 
 #### Signature
@@ -857,7 +857,7 @@ Adds a period to `$this` date and returns the result in a new Date instance.
 
 <a name="subperiod" id="subperiod"></a>
 <a name="subPeriod" id="subPeriod"></a>
-### `subPeriod()` 
+### `subPeriod() `
 Subtracts a period from `$this` date and returns the result in a new Date instance.
 
 #### Signature
@@ -890,7 +890,7 @@ Subtracts a period from `$this` date and returns the result in a new Date instan
 
 <a name="secondstodays" id="secondstodays"></a>
 <a name="secondsToDays" id="secondsToDays"></a>
-### `secondsToDays()` 
+### `secondsToDays() `
 Returns the number of days represented by a number of seconds.
 
 #### Signature

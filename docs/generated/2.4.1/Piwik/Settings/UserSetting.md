@@ -226,7 +226,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Constructor.
 
 #### Signature
@@ -268,7 +268,7 @@ Constructor.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
-### `getName()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
+### `getName() *inherited from*` [`Setting`](../../Piwik/Settings/Setting.md)
 Returns the setting's persisted name, eg, `'refreshInterval'`.
 
 #### Signature
@@ -277,7 +277,7 @@ Returns the setting's persisted name, eg, `'refreshInterval'`.
 
 <a name="iswritablebycurrentuser" id="iswritablebycurrentuser"></a>
 <a name="isWritableByCurrentUser" id="isWritableByCurrentUser"></a>
-### `isWritableByCurrentUser()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
+### `isWritableByCurrentUser() *inherited from*` [`Setting`](../../Piwik/Settings/Setting.md)
 Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 
 #### Signature
@@ -286,7 +286,7 @@ Returns `true` if this setting can be displayed for the current user, `false` if
 
 <a name="isreadablebycurrentuser" id="isreadablebycurrentuser"></a>
 <a name="isReadableByCurrentUser" id="isReadableByCurrentUser"></a>
-### `isReadableByCurrentUser()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
+### `isReadableByCurrentUser() *inherited from*` [`Setting`](../../Piwik/Settings/Setting.md)
 Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 
 #### Signature
@@ -295,7 +295,7 @@ Returns `true` if this setting can be displayed for the current user, `false` if
 
 <a name="setstorage" id="setstorage"></a>
 <a name="setStorage" id="setStorage"></a>
-### `setStorage()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
+### `setStorage() *inherited from*` [`Setting`](../../Piwik/Settings/Setting.md)
 Sets the object used to persist settings.
 
 #### Signature
@@ -318,7 +318,7 @@ Sets the object used to persist settings.
 
 <a name="getvalue" id="getvalue"></a>
 <a name="getValue" id="getValue"></a>
-### `getValue()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
+### `getValue() *inherited from*` [`Setting`](../../Piwik/Settings/Setting.md)
 Returns the previously persisted setting value.
 
 If no value was set, the default value
@@ -332,7 +332,7 @@ is returned.
 
 <a name="setvalue" id="setvalue"></a>
 <a name="setValue" id="setValue"></a>
-### `setValue()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
+### `setValue() *inherited from*` [`Setting`](../../Piwik/Settings/Setting.md)
 Sets and persists this setting's value overwriting any existing value.
 
 #### Signature
@@ -357,7 +357,7 @@ Sets and persists this setting's value overwriting any existing value.
 
 <a name="getkey" id="getkey"></a>
 <a name="getKey" id="getKey"></a>
-### `getKey()` *inherited from [`Setting`](../../Piwik/Settings/Setting.md)*
+### `getKey() *inherited from*` [`Setting`](../../Piwik/Settings/Setting.md)
 Returns the unique string key used to store this setting.
 
 #### Signature
@@ -366,7 +366,7 @@ Returns the unique string key used to store this setting.
 
 <a name="getorder" id="getorder"></a>
 <a name="getOrder" id="getOrder"></a>
-### `getOrder()` 
+### `getOrder() `
 Returns the display order.
 
 User settings are displayed after system settings.
@@ -377,7 +377,7 @@ User settings are displayed after system settings.
 
 <a name="setuserlogin" id="setuserlogin"></a>
 <a name="setUserLogin" id="setUserLogin"></a>
-### `setUserLogin()` 
+### `setUserLogin() `
 Sets the name of the user this setting will be set for.
 
 #### Signature
@@ -402,7 +402,7 @@ Sets the name of the user this setting will be set for.
 
 <a name="removeallusersettingsforuser" id="removeallusersettingsforuser"></a>
 <a name="removeAllUserSettingsForUser" id="removeAllUserSettingsForUser"></a>
-### `removeAllUserSettingsForUser()` 
+### `removeAllUserSettingsForUser() `
 Unsets all settings for a user.
 
 The settings will be removed from the database. Used when

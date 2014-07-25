@@ -22,7 +22,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` *inherited from [`ColumnCallbackAddColumnQuotient`](../../../Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md)*
+### `__construct() *inherited from*` [`ColumnCallbackAddColumnQuotient`](../../../Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md)
 Constructor.
 
 #### Signature
@@ -104,7 +104,7 @@ Constructor.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
-### `filter()` *inherited from [`ColumnCallbackAddColumnQuotient`](../../../Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md)*
+### `filter() *inherited from*` [`ColumnCallbackAddColumnQuotient`](../../../Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md)
 See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient).
 
 #### Signature

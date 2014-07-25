@@ -98,7 +98,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Constructor.
 
 #### Signature
@@ -122,7 +122,7 @@ Constructor.
 
 <a name="getinformation" id="getinformation"></a>
 <a name="getInformation" id="getInformation"></a>
-### `getInformation()` 
+### `getInformation() `
 Returns plugin information, including:
 
 - 'description' => string        // 1-2 sentence description of the plugin
@@ -140,7 +140,7 @@ Returns plugin information, including:
 
 <a name="getlisthooksregistered" id="getlisthooksregistered"></a>
 <a name="getListHooksRegistered" id="getListHooksRegistered"></a>
-### `getListHooksRegistered()` 
+### `getListHooksRegistered() `
 Returns a list of hooks with associated event observers.
 
 Derived classes should use this method to associate callbacks with events.
@@ -162,7 +162,7 @@ Derived classes should use this method to associate callbacks with events.
 
 <a name="postload" id="postload"></a>
 <a name="postLoad" id="postLoad"></a>
-### `postLoad()` 
+### `postLoad() `
 This method is executed after a plugin is loaded and translations are registered.
 
 Useful for initialization code that uses translated strings.
@@ -173,7 +173,7 @@ Useful for initialization code that uses translated strings.
 
 <a name="install" id="install"></a>
 <a name="install" id="install"></a>
-### `install()` 
+### `install() `
 Installs the plugin.
 
 Derived classes should implement this class if the plugin
@@ -191,7 +191,7 @@ needs to:
 
 <a name="uninstall" id="uninstall"></a>
 <a name="uninstall" id="uninstall"></a>
-### `uninstall()` 
+### `uninstall() `
 Uninstalls the plugins.
 
 Derived classes should implement this method if the changes
@@ -208,7 +208,7 @@ an [uninstall()](/api-reference/Piwik/Plugin#uninstall) method.
 
 <a name="activate" id="activate"></a>
 <a name="activate" id="activate"></a>
-### `activate()` 
+### `activate() `
 Executed every time the plugin is enabled.
 
 #### Signature
@@ -217,7 +217,7 @@ Executed every time the plugin is enabled.
 
 <a name="deactivate" id="deactivate"></a>
 <a name="deactivate" id="deactivate"></a>
-### `deactivate()` 
+### `deactivate() `
 Executed every time the plugin is disabled.
 
 #### Signature
@@ -226,7 +226,7 @@ Executed every time the plugin is disabled.
 
 <a name="getversion" id="getversion"></a>
 <a name="getVersion" id="getVersion"></a>
-### `getVersion()` 
+### `getVersion() `
 Returns the plugin version number.
 
 #### Signature
@@ -236,7 +236,7 @@ Returns the plugin version number.
 
 <a name="istheme" id="istheme"></a>
 <a name="isTheme" id="isTheme"></a>
-### `isTheme()` 
+### `isTheme() `
 Returns `true` if this plugin is a theme, `false` if otherwise.
 
 #### Signature
@@ -245,7 +245,7 @@ Returns `true` if this plugin is a theme, `false` if otherwise.
 
 <a name="getpluginname" id="getpluginname"></a>
 <a name="getPluginName" id="getPluginName"></a>
-### `getPluginName()` 
+### `getPluginName() `
 Returns the plugin's base class name without the namespace, e.g., `"UserCountry"` when the plugin class is `"Piwik\Plugins\UserCountry\UserCountry"`.
 
 #### Signature
@@ -255,7 +255,7 @@ Returns the plugin's base class name without the namespace, e.g., `"UserCountry"
 
 <a name="findcomponent" id="findcomponent"></a>
 <a name="findComponent" id="findComponent"></a>
-### `findComponent()` 
+### `findComponent() `
 Tries to find a component such as a Menu or Tasks within this plugin.
 
 #### Signature
@@ -299,7 +299,7 @@ Tries to find a component such as a Menu or Tasks within this plugin.
 
 <a name="findmultiplecomponents" id="findmultiplecomponents"></a>
 <a name="findMultipleComponents" id="findMultipleComponents"></a>
-### `findMultipleComponents()` 
+### `findMultipleComponents() `
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -330,7 +330,7 @@ Tries to find a component such as a Menu or Tasks within this plugin.
 
 <a name="hasmissingdependencies" id="hasmissingdependencies"></a>
 <a name="hasMissingDependencies" id="hasMissingDependencies"></a>
-### `hasMissingDependencies()` 
+### `hasMissingDependencies() `
 Detect whether there are any missing dependencies.
 
 #### Signature
@@ -353,7 +353,7 @@ Detect whether there are any missing dependencies.
 
 <a name="getmissingdependencies" id="getmissingdependencies"></a>
 <a name="getMissingDependencies" id="getMissingDependencies"></a>
-### `getMissingDependencies()` 
+### `getMissingDependencies() `
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -374,7 +374,7 @@ Detect whether there are any missing dependencies.
 
 <a name="getpluginnamefrombacktrace" id="getpluginnamefrombacktrace"></a>
 <a name="getPluginNameFromBacktrace" id="getPluginNameFromBacktrace"></a>
-### `getPluginNameFromBacktrace()` 
+### `getPluginNameFromBacktrace() `
 Extracts the plugin name from a backtrace array.
 
 Returns `false` if we can't find one.
@@ -410,7 +410,7 @@ Returns `false` if we can't find one.
 
 <a name="getpluginnamefromnamespace" id="getpluginnamefromnamespace"></a>
 <a name="getPluginNameFromNamespace" id="getPluginNameFromNamespace"></a>
-### `getPluginNameFromNamespace()` 
+### `getPluginNameFromNamespace() `
 Extracts the plugin name from a namespace name or a fully qualified class name.
 
 Returns `false`

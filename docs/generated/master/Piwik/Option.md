@@ -38,7 +38,7 @@ The class defines the following methods:
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
-### `get()` 
+### `get() `
 Returns the option value for the requested option `$name`.
 
 #### Signature
@@ -72,7 +72,7 @@ Returns the option value for the requested option `$name`.
 
 <a name="getlike" id="getlike"></a>
 <a name="getLike" id="getLike"></a>
-### `getLike()` 
+### `getLike() `
 Returns option values for options whose names are like a given pattern.
 
 #### Signature
@@ -106,7 +106,7 @@ Returns option values for options whose names are like a given pattern.
 
 <a name="set" id="set"></a>
 <a name="set" id="set"></a>
-### `set()` 
+### `set() `
 Sets an option value by name.
 
 #### Signature
@@ -149,7 +149,7 @@ Sets an option value by name.
 
 <a name="delete" id="delete"></a>
 <a name="delete" id="delete"></a>
-### `delete()` 
+### `delete() `
 Deletes an option.
 
 #### Signature
@@ -182,7 +182,7 @@ Deletes an option.
 
 <a name="deletelike" id="deletelike"></a>
 <a name="deleteLike" id="deleteLike"></a>
-### `deleteLike()` 
+### `deleteLike() `
 Deletes all options that match the supplied pattern.
 
 #### Signature
@@ -215,7 +215,7 @@ Deletes all options that match the supplied pattern.
 
 <a name="clearcachedoption" id="clearcachedoption"></a>
 <a name="clearCachedOption" id="clearCachedOption"></a>
-### `clearCachedOption()` 
+### `clearCachedOption() `
 #### Signature
 
 -  It accepts the following parameter(s):

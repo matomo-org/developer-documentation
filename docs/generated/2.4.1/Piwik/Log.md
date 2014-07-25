@@ -104,7 +104,7 @@ The class defines the following methods:
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance()` *inherited from [`Singleton`](../Piwik/Singleton.md)*
+### `getInstance() *inherited from*` [`Singleton`](../Piwik/Singleton.md)
 Returns the singleton instance for the derived class.
 
 If the singleton instance
@@ -116,7 +116,7 @@ has not been created, this method will create it.
 
 <a name="error" id="error"></a>
 <a name="error" id="error"></a>
-### `error()` 
+### `error() `
 Logs a message using the ERROR log level.
 
 _Note: Messages logged with the ERROR level are always logged to the screen in addition
@@ -142,7 +142,7 @@ to configured writers._
 
 <a name="warning" id="warning"></a>
 <a name="warning" id="warning"></a>
-### `warning()` 
+### `warning() `
 Logs a message using the WARNING log level.
 
 #### Signature
@@ -165,7 +165,7 @@ Logs a message using the WARNING log level.
 
 <a name="info" id="info"></a>
 <a name="info" id="info"></a>
-### `info()` 
+### `info() `
 Logs a message using the INFO log level.
 
 #### Signature
@@ -188,7 +188,7 @@ Logs a message using the INFO log level.
 
 <a name="debug" id="debug"></a>
 <a name="debug" id="debug"></a>
-### `debug()` 
+### `debug() `
 Logs a message using the DEBUG log level.
 
 #### Signature
@@ -211,7 +211,7 @@ Logs a message using the DEBUG log level.
 
 <a name="verbose" id="verbose"></a>
 <a name="verbose" id="verbose"></a>
-### `verbose()` 
+### `verbose() `
 Logs a message using the VERBOSE log level.
 
 #### Signature

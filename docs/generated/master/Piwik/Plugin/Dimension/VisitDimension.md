@@ -64,7 +64,7 @@ The abstract class defines the following methods:
 
 <a name="addsegment" id="addsegment"></a>
 <a name="addSegment" id="addSegment"></a>
-### `addSegment()` 
+### `addSegment() `
 Adds a new segment.
 
 It automatically sets the SQL segment depending on the column name in case none is set
@@ -94,7 +94,7 @@ already.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
-### `getName()` *inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)*
+### `getName() *inherited from*` [`Dimension`](../../../Piwik/Columns/Dimension.md)
 Get the translated name of the dimension.
 
 Defaults to an empty string.
@@ -105,7 +105,7 @@ Defaults to an empty string.
 
 <a name="getalldimensions" id="getalldimensions"></a>
 <a name="getAllDimensions" id="getAllDimensions"></a>
-### `getAllDimensions()` 
+### `getAllDimensions() `
 Get all visit dimensions that are defined by all activated plugins.
 
 #### Signature
@@ -114,7 +114,7 @@ Get all visit dimensions that are defined by all activated plugins.
 
 <a name="install" id="install"></a>
 <a name="install" id="install"></a>
-### `install()` 
+### `install() `
 Installs the visit dimension in case it is not installed yet.
 
 The installation is already implemented based on
@@ -154,7 +154,7 @@ Example:
 
 <a name="uninstall" id="uninstall"></a>
 <a name="uninstall" id="uninstall"></a>
-### `uninstall()` 
+### `uninstall() `
 Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/VisitDimension#$columnname) and columnType is set.
 
 In case you perform any custom
@@ -170,7 +170,7 @@ will be done.
 
 <a name="getrequiredvisitfields" id="getrequiredvisitfields"></a>
 <a name="getRequiredVisitFields" id="getRequiredVisitFields"></a>
-### `getRequiredVisitFields()` 
+### `getRequiredVisitFields() `
 Sometimes you may want to make sure another dimension is executed before your dimension so you can persist this dimensions' value depending on the value of other dimensions.
 
 You can do this by defining an array of
@@ -183,7 +183,7 @@ Otherwise those values may not be available.
 
 <a name="onnewvisit" id="onnewvisit"></a>
 <a name="onNewVisit" id="onNewVisit"></a>
-### `onNewVisit()` 
+### `onNewVisit() `
 The `onNewVisit` method is triggered when a new visitor is detected.
 
 This means you can define an initial
@@ -241,7 +241,7 @@ the event "onExistingVisit" is executed. Meaning for each visitor this method is
 
 <a name="onexistingvisit" id="onexistingvisit"></a>
 <a name="onExistingVisit" id="onExistingVisit"></a>
-### `onExistingVisit()` 
+### `onExistingVisit() `
 The `onExistingVisit` method is triggered when a visitor was recognized meaning it is not a new visitor.
 
 You can overwrite any previous value set by the event `onNewVisit` by implemting this event. By returning boolean
@@ -298,7 +298,7 @@ You can overwrite any previous value set by the event `onNewVisit` by implemting
 
 <a name="onconvertedvisit" id="onconvertedvisit"></a>
 <a name="onConvertedVisit" id="onConvertedVisit"></a>
-### `onConvertedVisit()` 
+### `onConvertedVisit() `
 This event is executed shortly after `onNewVisit` or `onExistingVisit` in case the visitor converted a goal.
 
 Usually this event is not needed and you can simply remove this method therefore. An example would be for
@@ -356,7 +356,7 @@ current value.
 
 <a name="onanygoalconversion" id="onanygoalconversion"></a>
 <a name="onAnyGoalConversion" id="onAnyGoalConversion"></a>
-### `onAnyGoalConversion()` 
+### `onAnyGoalConversion() `
 By implementing this event you can persist a value to the `log_conversion` table in case a conversion happens.
 
 The persisted value will be logged along the conversion and will not be changed afterwards. This allows you to

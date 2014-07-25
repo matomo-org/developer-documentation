@@ -177,7 +177,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Constructor.
 
 #### Signature
@@ -201,7 +201,7 @@ Constructor.
 
 <a name="hasnoclear" id="hasnoclear"></a>
 <a name="hasNoClear" id="hasNoClear"></a>
-### `hasNoClear()` 
+### `hasNoClear() `
 Returns `1` if the notification will be displayed without a close button, `0` if otherwise.
 
 #### Signature
@@ -221,7 +221,7 @@ Returns `1` if the notification will be displayed without a close button, `0` if
 
 <a name="getpriority" id="getpriority"></a>
 <a name="getPriority" id="getPriority"></a>
-### `getPriority()` 
+### `getPriority() `
 Returns the notification's priority.
 
 If no priority has been set, a priority will be set based

@@ -46,7 +46,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Constructor.
 
 #### Signature
@@ -68,7 +68,7 @@ Constructor.
 
 <a name="setlimit" id="setlimit"></a>
 <a name="setLimit" id="setLimit"></a>
-### `setLimit()` 
+### `setLimit() `
 Set the limit after which everything is grouped to "Others".
 
 #### Signature
@@ -91,7 +91,7 @@ Set the limit after which everything is grouped to "Others".
 
 <a name="setotherslabel" id="setotherslabel"></a>
 <a name="setOthersLabel" id="setOthersLabel"></a>
-### `setOthersLabel()` 
+### `setOthersLabel() `
 Set the value to use for the label in the 'Others' row.
 
 #### Signature
@@ -114,7 +114,7 @@ Set the value to use for the label in the 'Others' row.
 
 <a name="addlabelcolumn" id="addlabelcolumn"></a>
 <a name="addLabelColumn" id="addLabelColumn"></a>
-### `addLabelColumn()` 
+### `addLabelColumn() `
 Add a label column.
 
 Labels are the columns that are replaced with "Others" after the limit.
@@ -139,7 +139,7 @@ Labels are the columns that are replaced with "Others" after the limit.
 
 <a name="addcolumn" id="addcolumn"></a>
 <a name="addColumn" id="addColumn"></a>
-### `addColumn()` 
+### `addColumn() `
 Add a column that has be added to the outer queries.
 
 #### Signature
@@ -172,7 +172,7 @@ Add a column that has be added to the outer queries.
 
 <a name="setcolumntomarkexcludedrows" id="setcolumntomarkexcludedrows"></a>
 <a name="setColumnToMarkExcludedRows" id="setColumnToMarkExcludedRows"></a>
-### `setColumnToMarkExcludedRows()` 
+### `setColumnToMarkExcludedRows() `
 Sets a column that will be used to filter the result into two categories.
 
 Rows where this column has a value > 0 will be removed from the result and put
@@ -201,7 +201,7 @@ by [execute()](/api-reference/Piwik/RankingQuery#execute).
 
 <a name="partitionresultintomultiplegroups" id="partitionresultintomultiplegroups"></a>
 <a name="partitionResultIntoMultipleGroups" id="partitionResultIntoMultipleGroups"></a>
-### `partitionResultIntoMultipleGroups()` 
+### `partitionResultIntoMultipleGroups() `
 This method can be used to parition the result based on the possible values of one table column.
 
 This means the query will split the result set into other sets of rows
@@ -248,7 +248,7 @@ rows `log_action.type = TYPE_DOWNLOAD`.
 
 <a name="execute" id="execute"></a>
 <a name="execute" id="execute"></a>
-### `execute()` 
+### `execute() `
 Executes the query.
 
 The object has to be configured first using the other methods.
@@ -294,7 +294,7 @@ The object has to be configured first using the other methods.
 
 <a name="generatequery" id="generatequery"></a>
 <a name="generateQuery" id="generateQuery"></a>
-### `generateQuery()` 
+### `generateQuery() `
 Generate the SQL code that does the magic.
 
 If you want to get the result, use execute() instead. If you want to run the query

@@ -107,7 +107,7 @@ The class defines the following methods:
 
 <a name="build" id="build"></a>
 <a name="build" id="build"></a>
-### `build()` 
+### `build() `
 Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional Segment.
 
 This method uses data that is found in query parameters, so the parameters to this
@@ -186,7 +186,7 @@ If you want to create an Archive instance with an array of Period instances, use
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
-### `factory()` 
+### `factory() `
 Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
 
 This method uses an array of Period instances and a Segment instance, instead of strings
@@ -265,7 +265,7 @@ use [build()](/api-reference/Piwik/Archive#build).
 
 <a name="getnumeric" id="getnumeric"></a>
 <a name="getNumeric" id="getNumeric"></a>
-### `getNumeric()` 
+### `getNumeric() `
 Queries and returns metric data in an array.
 
 If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
@@ -308,7 +308,7 @@ will be indexed by site ID first, then period.
 
 <a name="getblob" id="getblob"></a>
 <a name="getBlob" id="getBlob"></a>
-### `getBlob()` 
+### `getBlob() `
 Queries and returns blob data in an array.
 
 Reports are stored in blobs as serialized arrays of [Row](/api-reference/Piwik/DataTable/Row) instances, but this
@@ -365,7 +365,7 @@ will be indexed by site ID first, then period.
 
 <a name="getdatatablefromnumeric" id="getdatatablefromnumeric"></a>
 <a name="getDataTableFromNumeric" id="getDataTableFromNumeric"></a>
-### `getDataTableFromNumeric()` 
+### `getDataTableFromNumeric() `
 Queries and returns metric data in a DataTable instance.
 
 If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
@@ -412,7 +412,7 @@ _Note: Every DataTable instance returned will have at most one row in it. The co
 
 <a name="getdatatable" id="getdatatable"></a>
 <a name="getDataTable" id="getDataTable"></a>
-### `getDataTable()` 
+### `getDataTable() `
 Queries and returns one or more reports as DataTable instances.
 
 This method will query blob data that is a serialized array of of [Row](/api-reference/Piwik/DataTable/Row)'s and
@@ -469,7 +469,7 @@ indexed by period.
 
 <a name="getdatatableexpanded" id="getdatatableexpanded"></a>
 <a name="getDataTableExpanded" id="getDataTableExpanded"></a>
-### `getDataTableExpanded()` 
+### `getDataTableExpanded() `
 Queries and returns one report with all of its subtables loaded.
 
 If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
@@ -543,7 +543,7 @@ indexed by period.
 
 <a name="getparams" id="getparams"></a>
 <a name="getParams" id="getParams"></a>
-### `getParams()` 
+### `getParams() `
 Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 
 #### Signature
@@ -552,7 +552,7 @@ Returns an object describing the set of sites, the set of periods and the segmen
 
 <a name="getdatatablefromarchive" id="getdatatablefromarchive"></a>
 <a name="getDataTableFromArchive" id="getDataTableFromArchive"></a>
-### `getDataTableFromArchive()` 
+### `getDataTableFromArchive() `
 Helper function that creates an Archive instance and queries for report data using query parameter data.
 
 API methods can use this method to reduce code redundancy.

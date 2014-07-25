@@ -39,7 +39,7 @@ The class defines the following methods:
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance()` *inherited from [`Singleton`](../Piwik/Singleton.md)*
+### `getInstance() *inherited from*` [`Singleton`](../Piwik/Singleton.md)
 Returns the singleton instance for the derived class.
 
 If the singleton instance
@@ -51,7 +51,7 @@ has not been created, this method will create it.
 
 <a name="__get" id="__get"></a>
 <a name="__get" id="__get"></a>
-### `__get()` 
+### `__get() `
 Returns a configuration value or section by name.
 
 #### Signature
@@ -87,7 +87,7 @@ Returns a configuration value or section by name.
 
 <a name="__set" id="__set"></a>
 <a name="__set" id="__set"></a>
-### `__set()` 
+### `__set() `
 Sets a configuration value or section.
 
 #### Signature
@@ -120,7 +120,7 @@ Sets a configuration value or section.
 
 <a name="forcesave" id="forcesave"></a>
 <a name="forceSave" id="forceSave"></a>
-### `forceSave()` 
+### `forceSave() `
 Writes the current configuration to the **config.ini.php** file.
 
 Only writes options whose

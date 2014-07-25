@@ -97,7 +97,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Constructor.
 
 #### Signature
@@ -119,7 +119,7 @@ Constructor.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>
-### `getTemplateFile()` 
+### `getTemplateFile() `
 Returns the template filename.
 
 #### Signature
@@ -128,7 +128,7 @@ Returns the template filename.
 
 <a name="gettemplatevars" id="gettemplatevars"></a>
 <a name="getTemplateVars" id="getTemplateVars"></a>
-### `getTemplateVars()` 
+### `getTemplateVars() `
 Returns the variables to bind to the template when rendering.
 
 #### Signature
@@ -151,7 +151,7 @@ Returns the variables to bind to the template when rendering.
 
 <a name="__set" id="__set"></a>
 <a name="__set" id="__set"></a>
-### `__set()` 
+### `__set() `
 Directly assigns a variable to the view script.
 
 Variable names may not be prefixed with '_'.
@@ -186,7 +186,7 @@ Variable names may not be prefixed with '_'.
 
 <a name="__get" id="__get"></a>
 <a name="__get" id="__get"></a>
-### `__get()` 
+### `__get() `
 Retrieves an assigned variable.
 
 Variable names may not be prefixed with '_'.
@@ -222,7 +222,7 @@ Variable names may not be prefixed with '_'.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
-### `render()` 
+### `render() `
 Renders the current view.
 
 Also sends the stored 'Content-Type' HTML header.
@@ -245,7 +245,7 @@ See [setContentType()](/api-reference/Piwik/View#setcontenttype).
 
 <a name="setcontenttype" id="setcontenttype"></a>
 <a name="setContentType" id="setContentType"></a>
-### `setContentType()` 
+### `setContentType() `
 Set stored value used in the Content-Type HTTP header field.
 
 The header is
@@ -271,7 +271,7 @@ set just before rendering.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
 <a name="setXFrameOptions" id="setXFrameOptions"></a>
-### `setXFrameOptions()` 
+### `setXFrameOptions() `
 Set X-Frame-Options field in the HTTP response.
 
 The header is set just
@@ -300,7 +300,7 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 
 <a name="singlereport" id="singlereport"></a>
 <a name="singleReport" id="singleReport"></a>
-### `singleReport()` 
+### `singleReport() `
 Creates a View for and then renders the single report template.
 
 Can be used for pages that display only one report to avoid having to create

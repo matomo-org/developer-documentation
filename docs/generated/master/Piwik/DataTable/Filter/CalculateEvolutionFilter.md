@@ -26,7 +26,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Constructor.
 
 #### Signature
@@ -88,7 +88,7 @@ Constructor.
 
 <a name="calculate" id="calculate"></a>
 <a name="calculate" id="calculate"></a>
-### `calculate()` 
+### `calculate() `
 Calculates the evolution percentage for two arbitrary values.
 
 #### Signature
@@ -152,7 +152,7 @@ Calculates the evolution percentage for two arbitrary values.
 
 <a name="appendpercentsign" id="appendpercentsign"></a>
 <a name="appendPercentSign" id="appendPercentSign"></a>
-### `appendPercentSign()` 
+### `appendPercentSign() `
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -173,7 +173,7 @@ Calculates the evolution percentage for two arbitrary values.
 
 <a name="prependplussigntonumber" id="prependplussigntonumber"></a>
 <a name="prependPlusSignToNumber" id="prependPlusSignToNumber"></a>
-### `prependPlusSignToNumber()` 
+### `prependPlusSignToNumber() `
 #### Signature
 
 -  It accepts the following parameter(s):

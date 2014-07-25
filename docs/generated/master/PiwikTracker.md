@@ -176,7 +176,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Builds a PiwikTracker object, used to track visits, pages and Goal conversions for a specific website, by using the Piwik Tracking API.
 
 #### Signature
@@ -208,7 +208,7 @@ Builds a PiwikTracker object, used to track visits, pages and Goal conversions f
 
 <a name="setpagecharset" id="setpagecharset"></a>
 <a name="setPageCharset" id="setPageCharset"></a>
-### `setPageCharset()` 
+### `setPageCharset() `
 By default, Piwik expects utf-8 encoded values, for example for the page URL parameter values, Page Title, etc.
 
 It is recommended to only send UTF-8 data to Piwik.
@@ -234,7 +234,7 @@ If required though, you can also specify another charset using this function.
 
 <a name="seturl" id="seturl"></a>
 <a name="setUrl" id="setUrl"></a>
-### `setUrl()` 
+### `setUrl() `
 Sets the current URL being tracked
 
 #### Signature
@@ -257,7 +257,7 @@ Sets the current URL being tracked
 
 <a name="seturlreferrer" id="seturlreferrer"></a>
 <a name="setUrlReferrer" id="setUrlReferrer"></a>
-### `setUrlReferrer()` 
+### `setUrlReferrer() `
 Sets the URL referrer used to track Referrers details for new visits.
 
 #### Signature
@@ -280,7 +280,7 @@ Sets the URL referrer used to track Referrers details for new visits.
 
 <a name="setgenerationtime" id="setgenerationtime"></a>
 <a name="setGenerationTime" id="setGenerationTime"></a>
-### `setGenerationTime()` 
+### `setGenerationTime() `
 Sets the time that generating the document on the server side took.
 
 #### Signature
@@ -303,7 +303,7 @@ Sets the time that generating the document on the server side took.
 
 <a name="seturlreferer" id="seturlreferer"></a>
 <a name="setUrlReferer" id="setUrlReferer"></a>
-### `setUrlReferer()` 
+### `setUrlReferer() `
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -324,7 +324,7 @@ Sets the time that generating the document on the server side took.
 
 <a name="setattributioninfo" id="setattributioninfo"></a>
 <a name="setAttributionInfo" id="setAttributionInfo"></a>
-### `setAttributionInfo()` 
+### `setAttributionInfo() `
 Sets the attribution information to the visit, so that subsequent Goal conversions are properly attributed to the right Referrer URL, timestamp, Campaign Name & Keyword.
 
 This must be a JSON encoded string that would typically be fetched from the JS API:
@@ -359,7 +359,7 @@ to the 'ref' first party cookie storing referral information.
 
 <a name="setcustomvariable" id="setcustomvariable"></a>
 <a name="setCustomVariable" id="setCustomVariable"></a>
-### `setCustomVariable()` 
+### `setCustomVariable() `
 Sets Visit Custom Variable.
 
 See http://piwik.org/docs/custom-variables/
@@ -416,7 +416,7 @@ See http://piwik.org/docs/custom-variables/
 
 <a name="getcustomvariable" id="getcustomvariable"></a>
 <a name="getCustomVariable" id="getCustomVariable"></a>
-### `getCustomVariable()` 
+### `getCustomVariable() `
 Returns the currently assigned Custom Variable.
 
 If scope is 'visit', it will attempt to read the value set in the first party cookie created by Piwik Tracker ($_COOKIE array).
@@ -468,7 +468,7 @@ If scope is 'visit', it will attempt to read the value set in the first party co
 
 <a name="clearcustomvariables" id="clearcustomvariables"></a>
 <a name="clearCustomVariables" id="clearCustomVariables"></a>
-### `clearCustomVariables()` 
+### `clearCustomVariables() `
 Clears any Custom Variable that may be have been set.
 
 This can be useful when you have enabled bulk requests,
@@ -480,7 +480,7 @@ and you wish to clear Custom Variables of 'visit' scope.
 
 <a name="setnewvisitorid" id="setnewvisitorid"></a>
 <a name="setNewVisitorId" id="setNewVisitorId"></a>
-### `setNewVisitorId()` 
+### `setNewVisitorId() `
 Sets the current visitor ID to a random new one.
 
 #### Signature
@@ -489,7 +489,7 @@ Sets the current visitor ID to a random new one.
 
 <a name="setidsite" id="setidsite"></a>
 <a name="setIdSite" id="setIdSite"></a>
-### `setIdSite()` 
+### `setIdSite() `
 Sets the current site ID.
 
 #### Signature
@@ -512,7 +512,7 @@ Sets the current site ID.
 
 <a name="setbrowserlanguage" id="setbrowserlanguage"></a>
 <a name="setBrowserLanguage" id="setBrowserLanguage"></a>
-### `setBrowserLanguage()` 
+### `setBrowserLanguage() `
 Sets the Browser language.
 
 Used to guess visitor countries when GeoIP is not enabled
@@ -537,7 +537,7 @@ Used to guess visitor countries when GeoIP is not enabled
 
 <a name="setuseragent" id="setuseragent"></a>
 <a name="setUserAgent" id="setUserAgent"></a>
-### `setUserAgent()` 
+### `setUserAgent() `
 Sets the user agent, used to detect OS and browser.
 
 If this function is not called, the User Agent will default to the current user agent.
@@ -562,7 +562,7 @@ If this function is not called, the User Agent will default to the current user 
 
 <a name="setcountry" id="setcountry"></a>
 <a name="setCountry" id="setCountry"></a>
-### `setCountry()` 
+### `setCountry() `
 Sets the country of the visitor.
 
 If not used, Piwik will try to find the country
@@ -590,7 +590,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 <a name="setregion" id="setregion"></a>
 <a name="setRegion" id="setRegion"></a>
-### `setRegion()` 
+### `setRegion() `
 Sets the region of the visitor.
 
 If not used, Piwik may try to find the region
@@ -618,7 +618,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 <a name="setcity" id="setcity"></a>
 <a name="setCity" id="setCity"></a>
-### `setCity()` 
+### `setCity() `
 Sets the city of the visitor.
 
 If not used, Piwik may try to find the city
@@ -646,7 +646,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 <a name="setlatitude" id="setlatitude"></a>
 <a name="setLatitude" id="setLatitude"></a>
-### `setLatitude()` 
+### `setLatitude() `
 Sets the latitude of the visitor.
 
 If not used, Piwik may try to find the visitor's
@@ -674,7 +674,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 <a name="setlongitude" id="setlongitude"></a>
 <a name="setLongitude" id="setLongitude"></a>
-### `setLongitude()` 
+### `setLongitude() `
 Sets the longitude of the visitor.
 
 If not used, Piwik may try to find the visitor's
@@ -702,7 +702,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 
 <a name="enablebulktracking" id="enablebulktracking"></a>
 <a name="enableBulkTracking" id="enableBulkTracking"></a>
-### `enableBulkTracking()` 
+### `enableBulkTracking() `
 Enables the bulk request feature.
 
 When used, each tracking action is stored until the
@@ -714,7 +714,7 @@ doBulkTrack method is called. This method will send all tracking data at once.
 
 <a name="enablecookies" id="enablecookies"></a>
 <a name="enableCookies" id="enableCookies"></a>
-### `enableCookies()` 
+### `enableCookies() `
 Enable Cookie Creation - this will cause a first party VisitorId cookie to be set when the VisitorId is set or reset
 
 #### Signature
@@ -747,7 +747,7 @@ Enable Cookie Creation - this will cause a first party VisitorId cookie to be se
 
 <a name="dotrackpageview" id="dotrackpageview"></a>
 <a name="doTrackPageView" id="doTrackPageView"></a>
-### `doTrackPageView()` 
+### `doTrackPageView() `
 Tracks a page view
 
 #### Signature
@@ -781,7 +781,7 @@ Tracks a page view
 
 <a name="dotrackevent" id="dotrackevent"></a>
 <a name="doTrackEvent" id="doTrackEvent"></a>
-### `doTrackEvent()` 
+### `doTrackEvent() `
 Tracks an event
 
 #### Signature
@@ -845,7 +845,7 @@ Tracks an event
 
 <a name="dotracksitesearch" id="dotracksitesearch"></a>
 <a name="doTrackSiteSearch" id="doTrackSiteSearch"></a>
-### `doTrackSiteSearch()` 
+### `doTrackSiteSearch() `
 Tracks an internal Site Search query, and optionally tracks the Search Category, and Search results Count.
 
 These are used to populate reports in Actions > Site Search.
@@ -901,7 +901,7 @@ These are used to populate reports in Actions > Site Search.
 
 <a name="dotrackgoal" id="dotrackgoal"></a>
 <a name="doTrackGoal" id="doTrackGoal"></a>
-### `doTrackGoal()` 
+### `doTrackGoal() `
 Records a Goal conversion
 
 #### Signature
@@ -945,7 +945,7 @@ Records a Goal conversion
 
 <a name="dotrackaction" id="dotrackaction"></a>
 <a name="doTrackAction" id="doTrackAction"></a>
-### `doTrackAction()` 
+### `doTrackAction() `
 Tracks a download or outlink
 
 #### Signature
@@ -989,7 +989,7 @@ Tracks a download or outlink
 
 <a name="addecommerceitem" id="addecommerceitem"></a>
 <a name="addEcommerceItem" id="addEcommerceItem"></a>
-### `addEcommerceItem()` 
+### `addEcommerceItem() `
 Adds an item in the Ecommerce order.
 
 This should be called before doTrackEcommerceOrder(), or before doTrackEcommerceCartUpdate().
@@ -1059,7 +1059,7 @@ Ecommerce items added via this function are automatically cleared when doTrackEc
 
 <a name="dotrackecommercecartupdate" id="dotrackecommercecartupdate"></a>
 <a name="doTrackEcommerceCartUpdate" id="doTrackEcommerceCartUpdate"></a>
-### `doTrackEcommerceCartUpdate()` 
+### `doTrackEcommerceCartUpdate() `
 Tracks a Cart Update (add item, remove item, update item).
 
 On every Cart update, you must call addEcommerceItem() for each item (product) in the cart,
@@ -1097,7 +1097,7 @@ Items which were in the previous cart and are not sent in later Cart updates wil
 
 <a name="dobulktrack" id="dobulktrack"></a>
 <a name="doBulkTrack" id="doBulkTrack"></a>
-### `doBulkTrack()` 
+### `doBulkTrack() `
 Sends all stored tracking actions at once.
 
 Only has an effect if bulk tracking is enabled.
@@ -1123,7 +1123,7 @@ To enable bulk tracking, call enableBulkTracking().
 
 <a name="dotrackecommerceorder" id="dotrackecommerceorder"></a>
 <a name="doTrackEcommerceOrder" id="doTrackEcommerceOrder"></a>
-### `doTrackEcommerceOrder()` 
+### `doTrackEcommerceOrder() `
 Tracks an Ecommerce order.
 
 If the Ecommerce order contains items (products), you must call first the addEcommerceItem() for each item in the order.
@@ -1211,7 +1211,7 @@ Only the parameters $orderId and $grandTotal are required.
 
 <a name="setecommerceview" id="setecommerceview"></a>
 <a name="setEcommerceView" id="setEcommerceView"></a>
-### `setEcommerceView()` 
+### `setEcommerceView() `
 Sets the current page view as an item (product) page view, or an Ecommerce Category page view.
 
 This must be called before doTrackPageView() on this product/category page.
@@ -1273,7 +1273,7 @@ conversion rates (Conversion rate = Ecommerce orders containing this product or 
 
 <a name="geturltrackpageview" id="geturltrackpageview"></a>
 <a name="getUrlTrackPageView" id="getUrlTrackPageView"></a>
-### `getUrlTrackPageView()` 
+### `getUrlTrackPageView() `
 Builds URL to track a page view.
 
 #### See Also
@@ -1311,7 +1311,7 @@ Builds URL to track a page view.
 
 <a name="geturltrackevent" id="geturltrackevent"></a>
 <a name="getUrlTrackEvent" id="getUrlTrackEvent"></a>
-### `getUrlTrackEvent()` 
+### `getUrlTrackEvent() `
 Builds URL to track a custom event.
 
 #### See Also
@@ -1379,7 +1379,7 @@ Builds URL to track a custom event.
 
 <a name="geturltracksitesearch" id="geturltracksitesearch"></a>
 <a name="getUrlTrackSiteSearch" id="getUrlTrackSiteSearch"></a>
-### `getUrlTrackSiteSearch()` 
+### `getUrlTrackSiteSearch() `
 Builds URL to track a site search.
 
 #### See Also
@@ -1426,7 +1426,7 @@ Builds URL to track a site search.
 
 <a name="geturltrackgoal" id="geturltrackgoal"></a>
 <a name="getUrlTrackGoal" id="getUrlTrackGoal"></a>
-### `getUrlTrackGoal()` 
+### `getUrlTrackGoal() `
 Builds URL to track a goal with idGoal and revenue.
 
 #### See Also
@@ -1474,7 +1474,7 @@ Builds URL to track a goal with idGoal and revenue.
 
 <a name="geturltrackaction" id="geturltrackaction"></a>
 <a name="getUrlTrackAction" id="getUrlTrackAction"></a>
-### `getUrlTrackAction()` 
+### `getUrlTrackAction() `
 Builds URL to track a new action.
 
 #### See Also
@@ -1522,7 +1522,7 @@ Builds URL to track a new action.
 
 <a name="setforcevisitdatetime" id="setforcevisitdatetime"></a>
 <a name="setForceVisitDateTime" id="setForceVisitDateTime"></a>
-### `setForceVisitDateTime()` 
+### `setForceVisitDateTime() `
 Overrides server date and time for the tracking requests.
 
 By default Piwik will track requests for the "current datetime" but this function allows you
@@ -1554,7 +1554,7 @@ Allowed only for Super User, must be used along with setTokenAuth()
 
 <a name="setforcenewvisit" id="setforcenewvisit"></a>
 <a name="setForceNewVisit" id="setForceNewVisit"></a>
-### `setForceNewVisit()` 
+### `setForceNewVisit() `
 Forces Piwik to create a new visit for the tracking request.
 
 By default, Piwik will create a new visit if the last request by this user was more than 30 minutes ago.
@@ -1572,7 +1572,7 @@ Allowed only for Super User, must be used along with setTokenAuth()
 
 <a name="setip" id="setip"></a>
 <a name="setIp" id="setIp"></a>
-### `setIp()` 
+### `setIp() `
 Overrides IP address
 
 Allowed only for Super User, must be used along with setTokenAuth()
@@ -1601,7 +1601,7 @@ Allowed only for Super User, must be used along with setTokenAuth()
 
 <a name="setvisitorid" id="setvisitorid"></a>
 <a name="setVisitorId" id="setVisitorId"></a>
-### `setVisitorId()` 
+### `setVisitorId() `
 Forces the requests to be recorded for the specified Visitor ID rather than using the heuristics based on IP and other attributes.
 
 Allowed only for Admin/Super User, must be used along with setTokenAuth().
@@ -1637,7 +1637,7 @@ If not set, the visitor ID will be fetched from the 1st party cookie, or will be
 
 <a name="getvisitorid" id="getvisitorid"></a>
 <a name="getVisitorId" id="getVisitorId"></a>
-### `getVisitorId()` 
+### `getVisitorId() `
 If the user initiating the request has the Piwik first party cookie, this function will try and return the ID parsed from this first party cookie (found in $_COOKIE).
 
 If you call this function from a server, where the call is triggered by a cron or script
@@ -1663,7 +1663,7 @@ This can be used if you wish to record more visits, actions or goals for this vi
 
 <a name="deletecookies" id="deletecookies"></a>
 <a name="deleteCookies" id="deleteCookies"></a>
-### `deleteCookies()` 
+### `deleteCookies() `
 Deletes all first party cookies from the client
 
 #### Signature
@@ -1672,7 +1672,7 @@ Deletes all first party cookies from the client
 
 <a name="getattributioninfo" id="getattributioninfo"></a>
 <a name="getAttributionInfo" id="getAttributionInfo"></a>
-### `getAttributionInfo()` 
+### `getAttributionInfo() `
 Returns the currently assigned Attribution Information stored in a first party cookie.
 
 This function will only work if the user is initiating the current request, and his cookies
@@ -1699,7 +1699,7 @@ can be read by PHP from the $_COOKIE array.
 
 <a name="settokenauth" id="settokenauth"></a>
 <a name="setTokenAuth" id="setTokenAuth"></a>
-### `setTokenAuth()` 
+### `setTokenAuth() `
 Some Tracking API functionnality requires express authentication, using either the Super User token_auth, or a user with 'admin' access to the website.
 
 The following features require access:
@@ -1727,7 +1727,7 @@ The following features require access:
 
 <a name="setlocaltime" id="setlocaltime"></a>
 <a name="setLocalTime" id="setLocalTime"></a>
-### `setLocalTime()` 
+### `setLocalTime() `
 Sets local visitor time
 
 #### Signature
@@ -1750,7 +1750,7 @@ Sets local visitor time
 
 <a name="setresolution" id="setresolution"></a>
 <a name="setResolution" id="setResolution"></a>
-### `setResolution()` 
+### `setResolution() `
 Sets user resolution width and height.
 
 #### Signature
@@ -1783,7 +1783,7 @@ Sets user resolution width and height.
 
 <a name="setbrowserhascookies" id="setbrowserhascookies"></a>
 <a name="setBrowserHasCookies" id="setBrowserHasCookies"></a>
-### `setBrowserHasCookies()` 
+### `setBrowserHasCookies() `
 Sets if the browser supports cookies This is reported in "List of plugins" report in Piwik.
 
 #### Signature
@@ -1806,7 +1806,7 @@ Sets if the browser supports cookies This is reported in "List of plugins" repor
 
 <a name="setdebugstringappend" id="setdebugstringappend"></a>
 <a name="setDebugStringAppend" id="setDebugStringAppend"></a>
-### `setDebugStringAppend()` 
+### `setDebugStringAppend() `
 Will append a custom string at the end of the Tracking request.
 
 #### Signature
@@ -1829,7 +1829,7 @@ Will append a custom string at the end of the Tracking request.
 
 <a name="setplugins" id="setplugins"></a>
 <a name="setPlugins" id="setPlugins"></a>
-### `setPlugins()` 
+### `setPlugins() `
 Sets visitor browser supported plugins
 
 #### Signature
@@ -1932,7 +1932,7 @@ Sets visitor browser supported plugins
 
 <a name="disablecookiesupport" id="disablecookiesupport"></a>
 <a name="disableCookieSupport" id="disableCookieSupport"></a>
-### `disableCookieSupport()` 
+### `disableCookieSupport() `
 By default, PiwikTracker will read first party cookies from the request and write updated cookies in the response (using setrawcookie).
 
 This can be disabled by calling this function.
@@ -1943,7 +1943,7 @@ This can be disabled by calling this function.
 
 <a name="getrequesttimeout" id="getrequesttimeout"></a>
 <a name="getRequestTimeout" id="getRequestTimeout"></a>
-### `getRequestTimeout()` 
+### `getRequestTimeout() `
 Returns the maximum number of seconds the tracker will spend waiting for a response from Piwik.
 
 Defaults to 600 seconds.
@@ -1954,7 +1954,7 @@ Defaults to 600 seconds.
 
 <a name="setrequesttimeout" id="setrequesttimeout"></a>
 <a name="setRequestTimeout" id="setRequestTimeout"></a>
-### `setRequestTimeout()` 
+### `setRequestTimeout() `
 Sets the maximum number of seconds that the tracker will spend waiting for a response from Piwik.
 
 #### Signature

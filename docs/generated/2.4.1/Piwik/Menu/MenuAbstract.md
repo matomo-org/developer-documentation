@@ -22,7 +22,7 @@ The abstract class defines the following methods:
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance()` *inherited from [`Singleton`](../../Piwik/Singleton.md)*
+### `getInstance() *inherited from*` [`Singleton`](../../Piwik/Singleton.md)
 Returns the singleton instance for the derived class.
 
 If the singleton instance
@@ -34,7 +34,7 @@ has not been created, this method will create it.
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>
-### `add()` 
+### `add() `
 Adds a new entry to the menu.
 
 #### Signature
@@ -107,7 +107,7 @@ Adds a new entry to the menu.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
-### `remove()` 
+### `remove() `
 Removes an existing entry from the menu.
 
 #### Signature
@@ -140,7 +140,7 @@ Removes an existing entry from the menu.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
-### `rename()` 
+### `rename() `
 Renames a single menu entry.
 
 #### Signature
@@ -193,7 +193,7 @@ Renames a single menu entry.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
-### `editUrl()` 
+### `editUrl() `
 Edits a URL of an existing menu entry.
 
 #### Signature

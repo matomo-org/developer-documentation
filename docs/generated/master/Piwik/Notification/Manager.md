@@ -14,7 +14,7 @@ The class defines the following methods:
 
 <a name="notify" id="notify"></a>
 <a name="notify" id="notify"></a>
-### `notify()` 
+### `notify() `
 Posts a notification that will be shown in Piwik's status bar.
 
 If a notification with the same ID

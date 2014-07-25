@@ -46,7 +46,7 @@ The class defines the following methods:
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance()` *inherited from [`Singleton`](../Piwik/Singleton.md)*
+### `getInstance() *inherited from*` [`Singleton`](../Piwik/Singleton.md)
 Returns the singleton instance for the derived class.
 
 If the singleton instance
@@ -58,7 +58,7 @@ has not been created, this method will create it.
 
 <a name="dispatch" id="dispatch"></a>
 <a name="dispatch" id="dispatch"></a>
-### `dispatch()` 
+### `dispatch() `
 Executes the requested plugin controller method.
 
 #### Signature

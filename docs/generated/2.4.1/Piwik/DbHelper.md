@@ -14,7 +14,7 @@ The class defines the following methods:
 
 <a name="createtable" id="createtable"></a>
 <a name="createTable" id="createTable"></a>
-### `createTable()` 
+### `createTable() `
 Creates a new table in the database.
 
 Example:

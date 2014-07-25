@@ -38,7 +38,7 @@ The class defines the following methods:
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>
-### `add()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
+### `add() *inherited from*` [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 Adds a new entry to the menu.
 
 #### Signature
@@ -111,7 +111,7 @@ Adds a new entry to the menu.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
-### `remove()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
+### `remove() *inherited from*` [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 Removes an existing entry from the menu.
 
 #### Signature
@@ -144,7 +144,7 @@ Removes an existing entry from the menu.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
-### `rename()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
+### `rename() *inherited from*` [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 Renames a single menu entry.
 
 #### Signature
@@ -197,7 +197,7 @@ Renames a single menu entry.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
-### `editUrl()` *inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)*
+### `editUrl() *inherited from*` [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 Edits a URL of an existing menu entry.
 
 #### Signature
@@ -240,7 +240,7 @@ Edits a URL of an existing menu entry.
 
 <a name="adddevelopmentitem" id="adddevelopmentitem"></a>
 <a name="addDevelopmentItem" id="addDevelopmentItem"></a>
-### `addDevelopmentItem()` 
+### `addDevelopmentItem() `
 Since Piwik 2.5.0
 
 See [add()](/api-reference/Piwik/Menu/MenuAdmin#add).
@@ -297,7 +297,7 @@ Adds a new menu item to the development section of the admin menu.
 
 <a name="adddiagnosticitem" id="adddiagnosticitem"></a>
 <a name="addDiagnosticItem" id="addDiagnosticItem"></a>
-### `addDiagnosticItem()` 
+### `addDiagnosticItem() `
 Since Piwik 2.5.0
 
 See [add()](/api-reference/Piwik/Menu/MenuAdmin#add).
@@ -354,7 +354,7 @@ Adds a new menu item to the diagnostic section of the admin menu.
 
 <a name="addplatformitem" id="addplatformitem"></a>
 <a name="addPlatformItem" id="addPlatformItem"></a>
-### `addPlatformItem()` 
+### `addPlatformItem() `
 Since Piwik 2.5.0
 
 See [add()](/api-reference/Piwik/Menu/MenuAdmin#add).
@@ -411,7 +411,7 @@ Adds a new menu item to the platform section of the admin menu.
 
 <a name="addsettingsitem" id="addsettingsitem"></a>
 <a name="addSettingsItem" id="addSettingsItem"></a>
-### `addSettingsItem()` 
+### `addSettingsItem() `
 Since Piwik 2.5.0
 
 See [add()](/api-reference/Piwik/Menu/MenuAdmin#add).
@@ -468,7 +468,7 @@ Adds a new menu item to the settings section of the admin menu.
 
 <a name="addmanageitem" id="addmanageitem"></a>
 <a name="addManageItem" id="addManageItem"></a>
-### `addManageItem()` 
+### `addManageItem() `
 Since Piwik 2.5.0
 
 See [add()](/api-reference/Piwik/Menu/MenuAdmin#add).

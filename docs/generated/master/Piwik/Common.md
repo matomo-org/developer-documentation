@@ -27,7 +27,7 @@ The class defines the following methods:
 
 <a name="prefixtable" id="prefixtable"></a>
 <a name="prefixTable" id="prefixTable"></a>
-### `prefixTable()` 
+### `prefixTable() `
 Returns a prefixed table name.
 
 The table prefix is determined by the `[database] tables_prefix` INI config
@@ -64,7 +64,7 @@ option.
 
 <a name="unprefixtable" id="unprefixtable"></a>
 <a name="unprefixTable" id="unprefixTable"></a>
-### `unprefixTable()` 
+### `unprefixTable() `
 Removes the prefix from a table name and returns the result.
 
 The table prefix is determined by the `[database] tables_prefix` INI config
@@ -101,7 +101,7 @@ option.
 
 <a name="mb_substr" id="mb_substr"></a>
 <a name="mb_substr" id="mb_substr"></a>
-### `mb_substr()` 
+### `mb_substr() `
 Multi-byte substr() - works with UTF-8.
 
 Calls `mb_substr` if available and falls back to `substr` if it's not.
@@ -136,7 +136,7 @@ Calls `mb_substr` if available and falls back to `substr` if it's not.
 
 <a name="mb_strlen" id="mb_strlen"></a>
 <a name="mb_strlen" id="mb_strlen"></a>
-### `mb_strlen()` 
+### `mb_strlen() `
 Multi-byte strlen() - works with UTF-8
 
 Calls `mb_substr` if available and falls back to `substr` if not.
@@ -161,7 +161,7 @@ Calls `mb_substr` if available and falls back to `substr` if not.
 
 <a name="mb_strtolower" id="mb_strtolower"></a>
 <a name="mb_strtolower" id="mb_strtolower"></a>
-### `mb_strtolower()` 
+### `mb_strtolower() `
 Multi-byte strtolower() - works with UTF-8.
 
 Calls `mb_strtolower` if available and falls back to `strtolower` if not.
@@ -186,7 +186,7 @@ Calls `mb_strtolower` if available and falls back to `strtolower` if not.
 
 <a name="sanitizeinputvalues" id="sanitizeinputvalues"></a>
 <a name="sanitizeInputValues" id="sanitizeInputValues"></a>
-### `sanitizeInputValues()` 
+### `sanitizeInputValues() `
 Sanitizes a string to help avoid XSS vulnerabilities.
 
 This function is automatically called when [getRequestVar()](/api-reference/Piwik/Common#getrequestvar) is called,
@@ -249,7 +249,7 @@ should still be used._
 
 <a name="unsanitizeinputvalues" id="unsanitizeinputvalues"></a>
 <a name="unsanitizeInputValues" id="unsanitizeInputValues"></a>
-### `unsanitizeInputValues()` 
+### `unsanitizeInputValues() `
 Unsanitizes one or more values and returns the result.
 
 This method should be used when you need to unescape data that was obtained from
@@ -289,7 +289,7 @@ have to use this method to unsanitize it in order to, for example, output it in 
 
 <a name="getrequestvar" id="getrequestvar"></a>
 <a name="getRequestVar" id="getRequestVar"></a>
-### `getRequestVar()` 
+### `getRequestVar() `
 Gets a sanitized request parameter by name from the `$_GET` and `$_POST` superglobals.
 
 Use this function to get request parameter values. **_NEVER use `$_GET` and `$_POST` directly._**
@@ -361,7 +361,7 @@ _See [sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues) to
 
 <a name="getlanguageslist" id="getlanguageslist"></a>
 <a name="getLanguagesList" id="getLanguagesList"></a>
-### `getLanguagesList()` 
+### `getLanguagesList() `
 Returns the list of valid language codes.
 
 See [core/DataFiles/Languages.php](https://github.com/piwik/piwik/blob/master/core/DataFiles/Languages.php).
@@ -383,7 +383,7 @@ See [core/DataFiles/Languages.php](https://github.com/piwik/piwik/blob/master/co
 
 <a name="getlanguagetocountrylist" id="getlanguagetocountrylist"></a>
 <a name="getLanguageToCountryList" id="getLanguageToCountryList"></a>
-### `getLanguageToCountryList()` 
+### `getLanguageToCountryList() `
 Returns a list of language to country mappings.
 
 See [core/DataFiles/LanguageToCountry.php](https://github.com/piwik/piwik/blob/master/core/DataFiles/LanguageToCountry.php).
@@ -405,7 +405,7 @@ See [core/DataFiles/LanguageToCountry.php](https://github.com/piwik/piwik/blob/m
 
 <a name="getsqlstringfieldsarray" id="getsqlstringfieldsarray"></a>
 <a name="getSqlStringFieldsArray" id="getSqlStringFieldsArray"></a>
-### `getSqlStringFieldsArray()` 
+### `getSqlStringFieldsArray() `
 Returns a string with a comma separated list of placeholders for use in an SQL query.
 
 Used mainly
@@ -442,7 +442,7 @@ to fill the `IN (...)` part of a query.
 
 <a name="destroy" id="destroy"></a>
 <a name="destroy" id="destroy"></a>
-### `destroy()` 
+### `destroy() `
 Marks an orphaned object for garbage collection.
 
 For more information: [https://github.com/piwik/piwik/issues/374](https://github.com/piwik/piwik/issues/374)

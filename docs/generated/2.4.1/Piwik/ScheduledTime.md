@@ -18,7 +18,7 @@ The abstract class defines the following methods:
 
 <a name="sethour" id="sethour"></a>
 <a name="setHour" id="setHour"></a>
-### `setHour()` 
+### `setHour() `
 Sets the hour of the day on which the task should be executed.
 
 #### Signature
@@ -43,7 +43,7 @@ Sets the hour of the day on which the task should be executed.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
-### `factory()` 
+### `factory() `
 Returns a new ScheduledTime instance using a string description of the scheduled period type and a string description of the day within the period to execute the task on.
 
 #### Signature

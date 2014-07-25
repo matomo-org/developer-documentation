@@ -21,7 +21,7 @@ The class defines the following methods:
 
 <a name="getinstance" id="getinstance"></a>
 <a name="getInstance" id="getInstance"></a>
-### `getInstance()` *inherited from [`Singleton`](../Piwik/Singleton.md)*
+### `getInstance() *inherited from*` [`Singleton`](../Piwik/Singleton.md)
 Returns the singleton instance for the derived class.
 
 If the singleton instance
@@ -33,7 +33,7 @@ has not been created, this method will create it.
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
-### `get()` 
+### `get() `
 Returns all available widgets.
 
 #### Signature
@@ -53,7 +53,7 @@ Returns all available widgets.
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>
-### `add()` 
+### `add() `
 Adds a report to the list of dashboard widgets.
 
 #### Signature
@@ -116,7 +116,7 @@ Adds a report to the list of dashboard widgets.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
-### `remove()` 
+### `remove() `
 Removes one or more widgets from the widget list.
 
 #### Signature
@@ -149,7 +149,7 @@ Removes one or more widgets from the widget list.
 
 <a name="isdefined" id="isdefined"></a>
 <a name="isDefined" id="isDefined"></a>
-### `isDefined()` 
+### `isDefined() `
 Returns `true` if a report exists in the widget list, `false` if otherwise.
 
 #### Signature

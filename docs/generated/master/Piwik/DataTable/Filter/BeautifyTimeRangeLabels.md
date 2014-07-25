@@ -26,7 +26,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Constructor.
 
 #### Signature
@@ -78,7 +78,7 @@ Constructor.
 
 <a name="beautify" id="beautify"></a>
 <a name="beautify" id="beautify"></a>
-### `beautify()` *inherited from [`BeautifyRangeLabels`](../../../Piwik/DataTable/Filter/BeautifyRangeLabels.md)*
+### `beautify() *inherited from*` [`BeautifyRangeLabels`](../../../Piwik/DataTable/Filter/BeautifyRangeLabels.md)
 Beautifies a range label and returns the pretty result.
 
 See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels).
@@ -114,7 +114,7 @@ See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLab
 
 <a name="getsingleunitlabel" id="getsingleunitlabel"></a>
 <a name="getSingleUnitLabel" id="getSingleUnitLabel"></a>
-### `getSingleUnitLabel()` 
+### `getSingleUnitLabel() `
 Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
 
 If the lower bound of the range is less than 60 the pretty range label
@@ -161,7 +161,7 @@ will be in seconds. Otherwise, it will be in minutes.
 
 <a name="getrangelabel" id="getrangelabel"></a>
 <a name="getRangeLabel" id="getRangeLabel"></a>
-### `getRangeLabel()` 
+### `getRangeLabel() `
 Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
 
 If the lower bound of the range is less than 60 the pretty range label
@@ -218,7 +218,7 @@ will be in seconds. Otherwise, it will be in minutes.
 
 <a name="getunboundedlabel" id="getunboundedlabel"></a>
 <a name="getUnboundedLabel" id="getUnboundedLabel"></a>
-### `getUnboundedLabel()` 
+### `getUnboundedLabel() `
 Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
 
 If the lower bound of the range is less than 60 the pretty range label

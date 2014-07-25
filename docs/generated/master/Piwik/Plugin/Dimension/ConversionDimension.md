@@ -63,7 +63,7 @@ The abstract class defines the following methods:
 
 <a name="addsegment" id="addsegment"></a>
 <a name="addSegment" id="addSegment"></a>
-### `addSegment()` 
+### `addSegment() `
 Adds a new segment.
 
 It automatically sets the SQL segment depending on the column name in case none is set
@@ -93,7 +93,7 @@ already.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
-### `getName()` *inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)*
+### `getName() *inherited from*` [`Dimension`](../../../Piwik/Columns/Dimension.md)
 Get the translated name of the dimension.
 
 Defaults to an empty string.
@@ -104,7 +104,7 @@ Defaults to an empty string.
 
 <a name="getalldimensions" id="getalldimensions"></a>
 <a name="getAllDimensions" id="getAllDimensions"></a>
-### `getAllDimensions()` *inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)*
+### `getAllDimensions() *inherited from*` [`Dimension`](../../../Piwik/Columns/Dimension.md)
 Gets an instance of all available visit, action and conversion dimension.
 
 #### Signature
@@ -113,7 +113,7 @@ Gets an instance of all available visit, action and conversion dimension.
 
 <a name="install" id="install"></a>
 <a name="install" id="install"></a>
-### `install()` 
+### `install() `
 Installs the conversion dimension in case it is not installed yet.
 
 The installation is already implemented based
@@ -153,7 +153,7 @@ Example:
 
 <a name="uninstall" id="uninstall"></a>
 <a name="uninstall" id="uninstall"></a>
-### `uninstall()` 
+### `uninstall() `
 Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#$columnname) and columnType is set.
 
 In case you perform any custom
@@ -169,7 +169,7 @@ will be done.
 
 <a name="onecommerceorderconversion" id="onecommerceorderconversion"></a>
 <a name="onEcommerceOrderConversion" id="onEcommerceOrderConversion"></a>
-### `onEcommerceOrderConversion()` 
+### `onEcommerceOrderConversion() `
 This event is triggered when an ecommerce order is converted.
 
 Any returned value will be persist in the database.
@@ -236,7 +236,7 @@ Return boolean `false` if you do not want to change the value in some cases.
 
 <a name="onecommercecartupdateconversion" id="onecommercecartupdateconversion"></a>
 <a name="onEcommerceCartUpdateConversion" id="onEcommerceCartUpdateConversion"></a>
-### `onEcommerceCartUpdateConversion()` 
+### `onEcommerceCartUpdateConversion() `
 This event is triggered when an ecommerce cart update is converted.
 
 Any returned value will be persist in the
@@ -303,7 +303,7 @@ database. Return boolean `false` if you do not want to change the value in some 
 
 <a name="ongoalconversion" id="ongoalconversion"></a>
 <a name="onGoalConversion" id="onGoalConversion"></a>
-### `onGoalConversion()` 
+### `onGoalConversion() `
 This event is triggered when an any custom goal is converted.
 
 Any returned value will be persist in the

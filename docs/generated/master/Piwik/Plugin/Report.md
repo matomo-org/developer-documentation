@@ -229,7 +229,7 @@ The class defines the following methods:
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
-### `init()` 
+### `init() `
 Here you can do any instance initialization and overwrite any default values.
 
 You should avoid doing time
@@ -242,7 +242,7 @@ created in most page requests.
 
 <a name="isenabled" id="isenabled"></a>
 <a name="isEnabled" id="isEnabled"></a>
-### `isEnabled()` 
+### `isEnabled() `
 Defines whether a report is enabled or not.
 
 For instance some reports might not be available to every user or
@@ -256,7 +256,7 @@ following: `return Piwik::hasUserSuperUserAccess();`
 
 <a name="checkisenabled" id="checkisenabled"></a>
 <a name="checkIsEnabled" id="checkIsEnabled"></a>
-### `checkIsEnabled()` 
+### `checkIsEnabled() `
 This method checks whether the report is available, see {@isEnabled()}.
 
 If not, it triggers an exception
@@ -276,7 +276,7 @@ customize the error message. Eg.
 
 <a name="getdefaulttypeviewdatatable" id="getdefaulttypeviewdatatable"></a>
 <a name="getDefaultTypeViewDataTable" id="getDefaultTypeViewDataTable"></a>
-### `getDefaultTypeViewDataTable()` 
+### `getDefaultTypeViewDataTable() `
 Returns the id of the default visualization for this report.
 
 Eg 'table' or 'pie'. Defaults to the HTML table.
@@ -287,7 +287,7 @@ Eg 'table' or 'pie'. Defaults to the HTML table.
 
 <a name="configureview" id="configureview"></a>
 <a name="configureView" id="configureView"></a>
-### `configureView()` 
+### `configureView() `
 Here you can configure how your report should be displayed and which capabilities your report has.
 
 For instance
@@ -315,7 +315,7 @@ default request config. For instance you can change how many rows are displayed 
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
-### `render()` 
+### `render() `
 Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
 
 If you want to customize the render process or just render any custom view
@@ -329,7 +329,7 @@ you can overwrite this method.
 
 <a name="configurewidget" id="configurewidget"></a>
 <a name="configureWidget" id="configureWidget"></a>
-### `configureWidget()` 
+### `configureWidget() `
 By default a widget will be configured for this report if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
 
 If you want to customize
@@ -355,7 +355,7 @@ the way the widget is added or modify any other behavior you can overwrite this 
 
 <a name="configurereportingmenu" id="configurereportingmenu"></a>
 <a name="configureReportingMenu" id="configureReportingMenu"></a>
-### `configureReportingMenu()` 
+### `configureReportingMenu() `
 By default a menu item will be added to the reporting menu if a [$menuTitle](/api-reference/Piwik/Plugin/Report#$menutitle) is set.
 
 If you want to
@@ -382,7 +382,7 @@ in case you need to add additional url properties beside module and action which
 
 <a name="getmetrics" id="getmetrics"></a>
 <a name="getMetrics" id="getMetrics"></a>
-### `getMetrics()` 
+### `getMetrics() `
 Returns an array of supported metrics and their corresponding translations.
 
 Eg `array('nb_visits' => 'Visits')`.
@@ -398,7 +398,7 @@ custom metric translations.
 
 <a name="getprocessedmetrics" id="getprocessedmetrics"></a>
 <a name="getProcessedMetrics" id="getProcessedMetrics"></a>
-### `getProcessedMetrics()` 
+### `getProcessedMetrics() `
 Returns an array of supported processed metrics and their corresponding translations.
 
 Eg
@@ -414,7 +414,7 @@ get all default translations and overwrite any custom metric translations.
 
 <a name="getmetricsdocumentation" id="getmetricsdocumentation"></a>
 <a name="getMetricsDocumentation" id="getMetricsDocumentation"></a>
-### `getMetricsDocumentation()` 
+### `getMetricsDocumentation() `
 Returns an array of metric documentations and their corresponding translations.
 
 Eg
@@ -431,7 +431,7 @@ translations and overwrite any custom metric translations.
 
 <a name="configurereportmetadata" id="configurereportmetadata"></a>
 <a name="configureReportMetadata" id="configureReportMetadata"></a>
-### `configureReportMetadata()` 
+### `configureReportMetadata() `
 If the report is enabled the report metadata for this report will be built and added to the list of available reports.
 
 Overwrite this method and leave it empty in case you do not want your report to be added to the report
@@ -469,7 +469,7 @@ the current requested date, period and site.
 
 <a name="getrelatedreports" id="getrelatedreports"></a>
 <a name="getRelatedReports" id="getRelatedReports"></a>
-### `getRelatedReports()` 
+### `getRelatedReports() `
 Get the list of related reports if there are any.
 
 They will be displayed for instance below a report as a
@@ -481,7 +481,7 @@ recommended related report.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
-### `factory()` 
+### `factory() `
 Get an instance of a specific report belonging to the given module and having the given action.
 
 #### Signature
@@ -525,7 +525,7 @@ Get an instance of a specific report belonging to the given module and having th
 
 <a name="getallreports" id="getallreports"></a>
 <a name="getAllReports" id="getAllReports"></a>
-### `getAllReports()` 
+### `getAllReports() `
 Returns a list of all available reports.
 
 Even not enabled reports will be returned. They will be already sorted

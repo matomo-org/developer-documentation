@@ -63,7 +63,7 @@ The class defines the following methods:
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
-### `__construct()` 
+### `__construct() `
 Constructor.
 
 #### Signature
@@ -85,7 +85,7 @@ Constructor.
 
 <a name="setsites" id="setsites"></a>
 <a name="setSites" id="setSites"></a>
-### `setSites()` 
+### `setSites() `
 Sets the cached site data with an array that associates site IDs with individual site data.
 
 #### Signature
@@ -108,7 +108,7 @@ Sets the cached site data with an array that associates site IDs with individual
 
 <a name="setsitesfromarray" id="setsitesfromarray"></a>
 <a name="setSitesFromArray" id="setSitesFromArray"></a>
-### `setSitesFromArray()` 
+### `setSitesFromArray() `
 Sets the cached Site data with a non-associated array of site data.
 
 #### Signature
@@ -131,7 +131,7 @@ Sets the cached Site data with a non-associated array of site data.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
-### `__toString()` 
+### `__toString() `
 Returns a string representation of the site this instance references.
 
 Useful for debugging.
@@ -142,7 +142,7 @@ Useful for debugging.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
-### `getName()` 
+### `getName() `
 Returns the name of the site.
 
 #### Signature
@@ -153,7 +153,7 @@ Returns the name of the site.
 
 <a name="getmainurl" id="getmainurl"></a>
 <a name="getMainUrl" id="getMainUrl"></a>
-### `getMainUrl()` 
+### `getMainUrl() `
 Returns the main url of the site.
 
 #### Signature
@@ -164,7 +164,7 @@ Returns the main url of the site.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
-### `getId()` 
+### `getId() `
 Returns the id of the site.
 
 #### Signature
@@ -175,7 +175,7 @@ Returns the id of the site.
 
 <a name="gettype" id="gettype"></a>
 <a name="getType" id="getType"></a>
-### `getType()` 
+### `getType() `
 Returns the website type (by default `"website"`, which means it is a single website).
 
 #### Signature
@@ -184,7 +184,7 @@ Returns the website type (by default `"website"`, which means it is a single web
 
 <a name="getcreationdate" id="getcreationdate"></a>
 <a name="getCreationDate" id="getCreationDate"></a>
-### `getCreationDate()` 
+### `getCreationDate() `
 Returns the creation date of the site.
 
 #### Signature
@@ -195,7 +195,7 @@ Returns the creation date of the site.
 
 <a name="gettimezone" id="gettimezone"></a>
 <a name="getTimezone" id="getTimezone"></a>
-### `getTimezone()` 
+### `getTimezone() `
 Returns the timezone of the size.
 
 #### Signature
@@ -206,7 +206,7 @@ Returns the timezone of the size.
 
 <a name="getcurrency" id="getcurrency"></a>
 <a name="getCurrency" id="getCurrency"></a>
-### `getCurrency()` 
+### `getCurrency() `
 Returns the currency of the site.
 
 #### Signature
@@ -217,7 +217,7 @@ Returns the currency of the site.
 
 <a name="getexcludedips" id="getexcludedips"></a>
 <a name="getExcludedIps" id="getExcludedIps"></a>
-### `getExcludedIps()` 
+### `getExcludedIps() `
 Returns the excluded ips of the site.
 
 #### Signature
@@ -228,7 +228,7 @@ Returns the excluded ips of the site.
 
 <a name="getexcludedqueryparameters" id="getexcludedqueryparameters"></a>
 <a name="getExcludedQueryParameters" id="getExcludedQueryParameters"></a>
-### `getExcludedQueryParameters()` 
+### `getExcludedQueryParameters() `
 Returns the excluded query parameters of the site.
 
 #### Signature
@@ -239,7 +239,7 @@ Returns the excluded query parameters of the site.
 
 <a name="isecommerceenabled" id="isecommerceenabled"></a>
 <a name="isEcommerceEnabled" id="isEcommerceEnabled"></a>
-### `isEcommerceEnabled()` 
+### `isEcommerceEnabled() `
 Returns whether ecommerce is enabled for the site.
 
 #### Signature
@@ -250,7 +250,7 @@ Returns whether ecommerce is enabled for the site.
 
 <a name="getsearchkeywordparameters" id="getsearchkeywordparameters"></a>
 <a name="getSearchKeywordParameters" id="getSearchKeywordParameters"></a>
-### `getSearchKeywordParameters()` 
+### `getSearchKeywordParameters() `
 Returns the site search keyword query parameters for the site.
 
 #### Signature
@@ -261,7 +261,7 @@ Returns the site search keyword query parameters for the site.
 
 <a name="getsearchcategoryparameters" id="getsearchcategoryparameters"></a>
 <a name="getSearchCategoryParameters" id="getSearchCategoryParameters"></a>
-### `getSearchCategoryParameters()` 
+### `getSearchCategoryParameters() `
 Returns the site search category query parameters for the site.
 
 #### Signature
@@ -272,7 +272,7 @@ Returns the site search category query parameters for the site.
 
 <a name="issitesearchenabled" id="issitesearchenabled"></a>
 <a name="isSiteSearchEnabled" id="isSiteSearchEnabled"></a>
-### `isSiteSearchEnabled()` 
+### `isSiteSearchEnabled() `
 Returns whether Site Search Tracking is enabled for the site.
 
 #### Signature
@@ -283,7 +283,7 @@ Returns whether Site Search Tracking is enabled for the site.
 
 <a name="getidsitesfromidsitesstring" id="getidsitesfromidsitesstring"></a>
 <a name="getIdSitesFromIdSitesString" id="getIdSitesFromIdSitesString"></a>
-### `getIdSitesFromIdSitesString()` 
+### `getIdSitesFromIdSitesString() `
 Checks the given string for valid site IDs and returns them as an array.
 
 #### Signature
@@ -327,7 +327,7 @@ Checks the given string for valid site IDs and returns them as an array.
 
 <a name="clearcache" id="clearcache"></a>
 <a name="clearCache" id="clearCache"></a>
-### `clearCache()` 
+### `clearCache() `
 Clears the site data cache.
 
 See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray()](/api-reference/Piwik/Site#setsitesfromarray).
@@ -338,7 +338,7 @@ See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray
 
 <a name="getnamefor" id="getnamefor"></a>
 <a name="getNameFor" id="getNameFor"></a>
-### `getNameFor()` 
+### `getNameFor() `
 Returns the name of the site with the specified ID.
 
 #### Signature
@@ -361,7 +361,7 @@ Returns the name of the site with the specified ID.
 
 <a name="getgroupfor" id="getgroupfor"></a>
 <a name="getGroupFor" id="getGroupFor"></a>
-### `getGroupFor()` 
+### `getGroupFor() `
 Returns the group of the site with the specified ID.
 
 #### Signature
@@ -384,7 +384,7 @@ Returns the group of the site with the specified ID.
 
 <a name="gettimezonefor" id="gettimezonefor"></a>
 <a name="getTimezoneFor" id="getTimezoneFor"></a>
-### `getTimezoneFor()` 
+### `getTimezoneFor() `
 Returns the timezone of the site with the specified ID.
 
 #### Signature
@@ -407,7 +407,7 @@ Returns the timezone of the site with the specified ID.
 
 <a name="gettypefor" id="gettypefor"></a>
 <a name="getTypeFor" id="getTypeFor"></a>
-### `getTypeFor()` 
+### `getTypeFor() `
 Returns the type of the site with the specified ID.
 
 #### Signature
@@ -430,7 +430,7 @@ Returns the type of the site with the specified ID.
 
 <a name="getcreationdatefor" id="getcreationdatefor"></a>
 <a name="getCreationDateFor" id="getCreationDateFor"></a>
-### `getCreationDateFor()` 
+### `getCreationDateFor() `
 Returns the creation date of the site with the specified ID.
 
 #### Signature
@@ -453,7 +453,7 @@ Returns the creation date of the site with the specified ID.
 
 <a name="getmainurlfor" id="getmainurlfor"></a>
 <a name="getMainUrlFor" id="getMainUrlFor"></a>
-### `getMainUrlFor()` 
+### `getMainUrlFor() `
 Returns the url for the site with the specified ID.
 
 #### Signature
@@ -476,7 +476,7 @@ Returns the url for the site with the specified ID.
 
 <a name="isecommerceenabledfor" id="isecommerceenabledfor"></a>
 <a name="isEcommerceEnabledFor" id="isEcommerceEnabledFor"></a>
-### `isEcommerceEnabledFor()` 
+### `isEcommerceEnabledFor() `
 Returns whether the site with the specified ID is ecommerce enabled or not.
 
 #### Signature
@@ -499,7 +499,7 @@ Returns whether the site with the specified ID is ecommerce enabled or not.
 
 <a name="issitesearchenabledfor" id="issitesearchenabledfor"></a>
 <a name="isSiteSearchEnabledFor" id="isSiteSearchEnabledFor"></a>
-### `isSiteSearchEnabledFor()` 
+### `isSiteSearchEnabledFor() `
 Returns whether the site with the specified ID is Site Search enabled.
 
 #### Signature
@@ -522,7 +522,7 @@ Returns whether the site with the specified ID is Site Search enabled.
 
 <a name="getcurrencyfor" id="getcurrencyfor"></a>
 <a name="getCurrencyFor" id="getCurrencyFor"></a>
-### `getCurrencyFor()` 
+### `getCurrencyFor() `
 Returns the currency of the site with the specified ID.
 
 #### Signature
@@ -545,7 +545,7 @@ Returns the currency of the site with the specified ID.
 
 <a name="getexcludedipsfor" id="getexcludedipsfor"></a>
 <a name="getExcludedIpsFor" id="getExcludedIpsFor"></a>
-### `getExcludedIpsFor()` 
+### `getExcludedIpsFor() `
 Returns the excluded IP addresses of the site with the specified ID.
 
 #### Signature
@@ -568,7 +568,7 @@ Returns the excluded IP addresses of the site with the specified ID.
 
 <a name="getexcludedqueryparametersfor" id="getexcludedqueryparametersfor"></a>
 <a name="getExcludedQueryParametersFor" id="getExcludedQueryParametersFor"></a>
-### `getExcludedQueryParametersFor()` 
+### `getExcludedQueryParametersFor() `
 Returns the excluded query parameters for the site with the specified ID.
 
 #### Signature

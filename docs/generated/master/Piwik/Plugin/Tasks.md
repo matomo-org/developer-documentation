@@ -22,7 +22,7 @@ The class defines the following methods:
 
 <a name="hourly" id="hourly"></a>
 <a name="hourly" id="hourly"></a>
-### `hourly()` 
+### `hourly() `
 Schedule the given tasks/method to run once every hour.
 
 #### Signature
@@ -65,7 +65,7 @@ Schedule the given tasks/method to run once every hour.
 
 <a name="daily" id="daily"></a>
 <a name="daily" id="daily"></a>
-### `daily()` 
+### `daily() `
 Schedule the given tasks/method to run once every day.
 
 See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
@@ -110,7 +110,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 
 <a name="weekly" id="weekly"></a>
 <a name="weekly" id="weekly"></a>
-### `weekly()` 
+### `weekly() `
 Schedule the given tasks/method to run once every week.
 
 See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
@@ -155,7 +155,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 
 <a name="monthly" id="monthly"></a>
 <a name="monthly" id="monthly"></a>
-### `monthly()` 
+### `monthly() `
 Schedule the given tasks/method to run once every month.
 
 See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
@@ -200,7 +200,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 
 <a name="custom" id="custom"></a>
 <a name="custom" id="custom"></a>
-### `custom()` 
+### `custom() `
 Schedules the given tasks/method to run depending at the given scheduled time.
 
 Unlike the convenient methods
