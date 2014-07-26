@@ -345,7 +345,7 @@ Usages:
 - [Console.filterCommands](#consolefiltercommands)
 
 ### Console.filterCommands
-_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [95](https://github.com/piwik/piwik/blob/master/core/Console.php#L95)_
+_Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [94](https://github.com/piwik/piwik/blob/master/core/Console.php#L94)_
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
 should subscribe to this event and remove commands from the existing list.
