@@ -1841,7 +1841,7 @@ Usages:
 
 
 ### UsersManager.getDefaultDates
-_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [193](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L193)_
+_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [194](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L194)_
 
 Triggered when the list of available dates is requested, for example for the User Settings > Report date to load by default.
 
