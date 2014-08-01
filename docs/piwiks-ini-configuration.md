@@ -53,7 +53,7 @@ For example, the following code will output every config option in the [General]
 
 Configuration options can be modified in memory through the [Config](/api-reference/Piwik/Config) singleton in the same way they are set:
 
-    Config::getInstance()->General['disable_merged_assets'] = 1;
+    Config::getInstance()->Development['disable_merged_assets'] = 1;
 
 To persist these changes so they will appear in the INI files, call the [forceSave](/api-reference/Piwik/Config#forcesave) method:
 
