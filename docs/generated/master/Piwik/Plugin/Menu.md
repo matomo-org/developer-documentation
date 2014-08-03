@@ -3,6 +3,8 @@
 Menu
 ====
 
+Since Piwik 2.4.0
+
 Base class of all plugin menu providers.
 
 Plugins that define their own menu items can extend this class to easily

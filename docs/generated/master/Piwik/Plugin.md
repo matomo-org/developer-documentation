@@ -61,7 +61,7 @@ contain the following information:
         {
             Db::exec("DROP TABLE IF EXISTS " . Common::prefixTable('mytable'));
         }
-        
+
         public function getReportMetadata(&$metadata)
         {
             // ...
@@ -79,7 +79,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:  - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
+- [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:
 - [`getListHooksRegistered()`](#getlisthooksregistered) &mdash; Returns a list of hooks with associated event observers.
 - [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered.
 - [`install()`](#install) &mdash; Installs the plugin.
@@ -90,6 +90,7 @@ The class defines the following methods:
 - [`isTheme()`](#istheme) &mdash; Returns `true` if this plugin is a theme, `false` if otherwise.
 - [`getPluginName()`](#getpluginname) &mdash; Returns the plugin's base class name without the namespace, e.g., `"UserCountry"` when the plugin class is `"Piwik\Plugins\UserCountry\UserCountry"`.
 - [`findComponent()`](#findcomponent) &mdash; Tries to find a component such as a Menu or Tasks within this plugin.
+- [`findMultipleComponents()`](#findmultiplecomponents)
 - [`hasMissingDependencies()`](#hasmissingdependencies) &mdash; Detect whether there are any missing dependencies.
 - [`getMissingDependencies()`](#getmissingdependencies)
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
@@ -124,7 +125,16 @@ Constructor.
 <a name="getInformation" id="getInformation"></a>
 ### `getInformation()`
 
-Returns plugin information, including:  - 'description' => string        // 1-2 sentence description of the plugin - 'author' => string             // plugin author - 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org") - 'homepage' => string           // plugin homepage URL - 'license' => string            // plugin license - 'license_homepage' => string   // license homepage URL - 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release - 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
+Returns plugin information, including:
+
+- 'description' => string        // 1-2 sentence description of the plugin
+- 'author' => string             // plugin author
+- 'author_homepage' => string    // author homepage URL (or email "mailto:youremail@example.org")
+- 'homepage' => string           // plugin homepage URL
+- 'license' => string            // plugin license
+- 'license_homepage' => string   // license homepage URL
+- 'version' => string            // plugin version number; examples and 3rd party plugins must not use Version::VERSION; 3rd party plugins must increment the version number with each plugin release
+- 'theme' => bool                // Whether this plugin is a theme (a theme is a plugin, but a plugin is not necessarily a theme)
 
 #### Signature
 
@@ -298,6 +308,38 @@ Tries to find a component such as a Menu or Tasks within this plugin.
     </div>
   </li>
 </ul>
+
+<a name="findmultiplecomponents" id="findmultiplecomponents"></a>
+<a name="findMultipleComponents" id="findMultipleComponents"></a>
+### `findMultipleComponents()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$directoryWithinPlugin`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$expectedSubclass`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
 
 <a name="hasmissingdependencies" id="hasmissingdependencies"></a>
 <a name="hasMissingDependencies" id="hasMissingDependencies"></a>

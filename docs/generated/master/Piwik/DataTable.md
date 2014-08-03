@@ -91,7 +91,7 @@ Non-essential, presentation filters should be queued.
         Row::COLUMNS => array('label' => 'thing2', 'nb_visits' => 2, 'nb_actions' => 2),
         Row::METADATA => array('url' => 'http://thing2.com')
     )));
-    
+
     // using an array of rows
     $dataTable = new DataTable();
     $dataTable->addRowsFromArray(array(
@@ -120,11 +120,11 @@ Non-essential, presentation filters should be queued.
 **Serializing & unserializing**
 
     $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
-    
+
     $dataTable = // ... build by aggregating visits ...
     $serializedData = $dataTable->getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
                                                 $columnToSortBy = Metrics::INDEX_NB_VISITS);
-    
+
     $serializedDataTable = $serializedData[0];
     $serailizedSubTable = $serializedData[$idSubtable];
 
@@ -205,7 +205,7 @@ The class defines the following methods:
 - [`addRowsFromSerializedArray()`](#addrowsfromserializedarray) &mdash; Adds a set of rows from a serialized DataTable string.
 - [`addRowsFromArray()`](#addrowsfromarray) &mdash; Adds multiple rows from an array.
 - [`addRowsFromSimpleArray()`](#addrowsfromsimplearray) &mdash; Adds multiple rows from an array containing arrays of column values.
-- [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input `$array`      array (         LABEL => array(col1 => X, col2 => Y),         LABEL2 => array(col1 => X, col2 => Y),     )  to a DataTable with rows that look like:      array (         array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),         array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),     )
+- [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input `$array`
 - [`setMaximumDepthLevelAllowedAtLeast()`](#setmaximumdepthlevelallowedatleast) &mdash; Sets the maximum depth level to at least a certain value.
 - [`getMetadata()`](#getmetadata) &mdash; Returns metadata by name.
 - [`setMetadata()`](#setmetadata) &mdash; Sets a metadata value by name.
@@ -1384,9 +1384,21 @@ Row metadata cannot be added with this method.
 <a name="makeFromIndexedArray" id="makeFromIndexedArray"></a>
 ### `makeFromIndexedArray()`
 
-Rewrites the input `$array`      array (         LABEL => array(col1 => X, col2 => Y),         LABEL2 => array(col1 => X, col2 => Y),     )  to a DataTable with rows that look like:      array (         array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),         array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),     )
+Rewrites the input `$array`
 
-Will also convert arrays like: 
+array (
+        LABEL => array(col1 => X, col2 => Y),
+        LABEL2 => array(col1 => X, col2 => Y),
+    )
+
+to a DataTable with rows that look like:
+
+    array (
+        array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),
+        array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),
+    )
+
+Will also convert arrays like:
 
     array (
         LABEL => X,

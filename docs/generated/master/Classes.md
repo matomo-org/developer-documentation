@@ -7,6 +7,7 @@ This is a complete list of available classes:
 - [`Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.
+- [`Columns\Dimension`](Piwik/Columns/Dimension.md)
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
 - [`Console`](Piwik/Console.md)
@@ -67,13 +68,19 @@ This is a complete list of available classes:
 - [`Plugin\API`](Piwik/Plugin/API.md) &mdash; The base class of all API singletons.
 - [`Plugin\Archiver`](Piwik/Plugin/Archiver.md) &mdash; The base class that should be extended by plugins that compute their own analytics data.
 - [`Plugin\Controller`](Piwik/Plugin/Controller.md) &mdash; Base class of all plugin Controllers.
+- [`Plugin\Dimension\ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md) &mdash; Defines a new action dimension that records any information during tracking for each action.
+- [`Plugin\Dimension\ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md) &mdash; Defines a new conversion dimension that records any visit related information during tracking.
+- [`Plugin\Dimension\VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md) &mdash; Defines a new visit dimension that records any visit related information during tracking.
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
 - [`Plugin\Menu`](Piwik/Plugin/Menu.md) &mdash; Base class of all plugin menu providers.
+- [`Plugin\Report`](Piwik/Plugin/Report.md) &mdash; Defines a new report.
+- [`Plugin\Segment`](Piwik/Plugin/Segment.md) &mdash; Creates a new segment that can be used for instance within the \Piwik\Columns\Dimension::configureSegment() method.
 - [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all plugin settings providers.
 - [`Plugin\Tasks`](Piwik/Plugin/Tasks.md) &mdash; Base class for all Tasks declarations.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
 - [`Plugin\Widgets`](Piwik/Plugin/Widgets.md) &mdash; Base class of all plugin widget providers.
+- [`Plugins\CoreHome\Widgets`](Piwik/Plugins/CoreHome/Widgets.md)
 - [`Plugins\CoreVisualizations\Visualizations\Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; Generates a tag cloud from a given data array.
 - [`Plugins\CoreVisualizations\Visualizations\Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; This is an abstract visualization that should be the base of any 'graph' visualization.
 - [`Plugins\CoreVisualizations\Visualizations\HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md) &mdash; DataTable visualization that shows DataTable data in an HTML table.
@@ -82,11 +89,20 @@ This is a complete list of available classes:
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Bar`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Bar.md) &mdash; Visualization that renders HTML for a Bar graph using jqPlot.
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution.md) &mdash; Visualization that renders HTML for a line graph using jqPlot.
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Pie`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Pie.md) &mdash; Visualization that renders HTML for a Pie graph using jqPlot.
-- [`Plugins\ExampleVisualization\SimpleTable`](Piwik/Plugins/ExampleVisualization/SimpleTable.md) &mdash; SimpleTable Visualization.
+- [`Plugins\ExamplePlugin\Widgets`](Piwik/Plugins/ExamplePlugin/Widgets.md) &mdash; This class allows you to add your own widgets to the Piwik platform.
+- [`Plugins\ExampleRssWidget\Widgets`](Piwik/Plugins/ExampleRssWidget/Widgets.md)
+- [`Plugins\ExampleVisualization\Visualizations\SimpleTable`](Piwik/Plugins/ExampleVisualization/Visualizations/SimpleTable.md) &mdash; SimpleTable Visualization.
 - [`Plugins\Goals\Visualizations\Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_goals_columns to true.
+- [`Plugins\Goals\Widgets`](Piwik/Plugins/Goals/Widgets.md)
 - [`Plugins\Insights\Visualizations\Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md) &mdash; InsightsVisualization Visualization.
+- [`Plugins\Insights\Widgets`](Piwik/Plugins/Insights/Widgets.md)
 - [`Plugins\Live\VisitorLog`](Piwik/Plugins/Live/VisitorLog.md) &mdash; A special DataTable visualization for the Live.getLastVisitsDetails API method.
+- [`Plugins\Live\Widgets`](Piwik/Plugins/Live/Widgets.md)
+- [`Plugins\Referrers\Widgets`](Piwik/Plugins/Referrers/Widgets.md)
+- [`Plugins\SEO\Widgets`](Piwik/Plugins/SEO/Widgets.md)
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
+- [`Plugins\VisitFrequency\Widgets`](Piwik/Plugins/VisitFrequency/Widgets.md)
+- [`Plugins\VisitsSummary\Widgets`](Piwik/Plugins/VisitsSummary/Widgets.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.
 - [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; Describes the interval on which a scheduled task is executed.

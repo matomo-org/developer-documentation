@@ -7,6 +7,7 @@ Index
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; _Class in namespace_ `Piwik` 
 - [`aggregateDataTableRecords()`](Piwik/ArchiveProcessor.md#aggregatedatatablerecords) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`aggregateNumericMetrics()`](Piwik/ArchiveProcessor.md#aggregatenumericmetrics) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
+- [`addSegment()`](Piwik/Columns/Dimension.md#addsegment) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`applyQueuedFilters()`](Piwik/DataTable.md#applyqueuedfilters) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`addDataTable()`](Piwik/DataTable.md#adddatatable) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`addRow()`](Piwik/DataTable.md#addrow) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -34,16 +35,32 @@ Index
 - [`addHourTo()`](Piwik/Date.md#addhourto) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`addPeriod()`](Piwik/Date.md#addperiod) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`add()`](Piwik/Menu/MenuAbstract.md#add) &mdash; _Method in class_ [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
+- [`addDevelopmentItem()`](Piwik/Menu/MenuAdmin.md#adddevelopmentitem) &mdash; _Method in class_ [`MenuAdmin`](Piwik/Menu/MenuAdmin.md)
+- [`addDiagnosticItem()`](Piwik/Menu/MenuAdmin.md#adddiagnosticitem) &mdash; _Method in class_ [`MenuAdmin`](Piwik/Menu/MenuAdmin.md)
+- [`addPlatformItem()`](Piwik/Menu/MenuAdmin.md#addplatformitem) &mdash; _Method in class_ [`MenuAdmin`](Piwik/Menu/MenuAdmin.md)
+- [`addSettingsItem()`](Piwik/Menu/MenuAdmin.md#addsettingsitem) &mdash; _Method in class_ [`MenuAdmin`](Piwik/Menu/MenuAdmin.md)
+- [`addManageItem()`](Piwik/Menu/MenuAdmin.md#addmanageitem) &mdash; _Method in class_ [`MenuAdmin`](Piwik/Menu/MenuAdmin.md)
+- [`addVisitorsItem()`](Piwik/Menu/MenuReporting.md#addvisitorsitem) &mdash; _Method in class_ [`MenuReporting`](Piwik/Menu/MenuReporting.md)
+- [`addActionsItem()`](Piwik/Menu/MenuReporting.md#addactionsitem) &mdash; _Method in class_ [`MenuReporting`](Piwik/Menu/MenuReporting.md)
+- [`addReferrersItem()`](Piwik/Menu/MenuReporting.md#addreferrersitem) &mdash; _Method in class_ [`MenuReporting`](Piwik/Menu/MenuReporting.md)
 - [`addHtml()`](Piwik/Menu/MenuTop.md#addhtml) &mdash; _Method in class_ [`MenuTop`](Piwik/Menu/MenuTop.md)
+- [`addManageItem()`](Piwik/Menu/MenuUser.md#addmanageitem) &mdash; _Method in class_ [`MenuUser`](Piwik/Menu/MenuUser.md)
+- [`addPlatformItem()`](Piwik/Menu/MenuUser.md#addplatformitem) &mdash; _Method in class_ [`MenuUser`](Piwik/Menu/MenuUser.md)
 - [`addAction()`](Piwik/Piwik.md#addaction) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`activate()`](Piwik/Plugin.md#activate) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`API`](Piwik/Plugin/API.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`Archiver`](Piwik/Plugin/Archiver.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`aggregateDayReport()`](Piwik/Plugin/Archiver.md#aggregatedayreport) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`aggregateMultipleReports()`](Piwik/Plugin/Archiver.md#aggregatemultiplereports) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
+- [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md) &mdash; _Class in namespace_ `Piwik\Plugin\Dimension` 
+- [`addSegment()`](Piwik/Plugin/Dimension/ActionDimension.md#addsegment) &mdash; _Method in class_ [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
+- [`addSegment()`](Piwik/Plugin/Dimension/ConversionDimension.md#addsegment) &mdash; _Method in class_ [`ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md)
+- [`addSegment()`](Piwik/Plugin/Dimension/VisitDimension.md#addsegment) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
+- [`$actionToLoadSubTables`](Piwik/Plugin/Report.md#$actiontoloadsubtables) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`assignTemplateVar()`](Piwik/Plugin/Visualization.md#assigntemplatevar) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`afterGenericFiltersAreAppliedToLoadedDataTable()`](Piwik/Plugin/Visualization.md#aftergenericfiltersareappliedtoloadeddatatable) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`afterAllFiltersAreApplied()`](Piwik/Plugin/Visualization.md#afterallfiltersareapplied) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
+- [`addWidget()`](Piwik/Plugin/Widgets.md#addwidget) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`AllColumns`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable/AllColumns.md) &mdash; _Class in namespace_ [`Piwik\Plugins\CoreVisualizations\Visualizations\HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable) 
 - [`addLabelColumn()`](Piwik/RankingQuery.md#addlabelcolumn) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`addColumn()`](Piwik/RankingQuery.md#addcolumn) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
@@ -76,6 +93,8 @@ Index
 
 ## C
 
+- [`$columnName`](Piwik/Columns/Dimension.md#$columnname) &mdash; _Property in class_ [`Dimension`](Piwik/Columns/Dimension.md)
+- [`$columnType`](Piwik/Columns/Dimension.md#$columntype) &mdash; _Property in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`Common`](Piwik/Common.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Config`](Piwik/Config.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Console`](Piwik/Console.md) &mdash; _Class in namespace_ `Piwik` 
@@ -107,14 +126,22 @@ Index
 - [`checkUserHasSomeViewAccess()`](Piwik/Piwik.md#checkuserhassomeviewaccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`Controller`](Piwik/Plugin/Controller.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`checkTokenInUrl()`](Piwik/Plugin/Controller.md#checktokeninurl) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
+- [`ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md) &mdash; _Class in namespace_ `Piwik\Plugin\Dimension` 
 - [`configureReportingMenu()`](Piwik/Plugin/Menu.md#configurereportingmenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
 - [`configureTopMenu()`](Piwik/Plugin/Menu.md#configuretopmenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
 - [`configureUserMenu()`](Piwik/Plugin/Menu.md#configureusermenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
 - [`configureAdminMenu()`](Piwik/Plugin/Menu.md#configureadminmenu) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
+- [`$category`](Piwik/Plugin/Report.md#$category) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`$constantRowsCount`](Piwik/Plugin/Report.md#$constantrowscount) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`checkIsEnabled()`](Piwik/Plugin/Report.md#checkisenabled) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`configureView()`](Piwik/Plugin/Report.md#configureview) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`configureWidget()`](Piwik/Plugin/Report.md#configurewidget) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`configureReportingMenu()`](Piwik/Plugin/Report.md#configurereportingmenu) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`configureReportMetadata()`](Piwik/Plugin/Report.md#configurereportmetadata) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`custom()`](Piwik/Plugin/Tasks.md#custom) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`$config`](Piwik/Plugin/ViewDataTable.md#$config) &mdash; _Property in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`canDisplayViewDataTable()`](Piwik/Plugin/ViewDataTable.md#candisplayviewdatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
-- [`configure()`](Piwik/Plugin/Widgets.md#configure) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
+- [`configureWidgetsList()`](Piwik/Plugin/Widgets.md#configurewidgetslist) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md#$config) &mdash; _Property in class_ [`Cloud`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud.md)
 - [`$config`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md#$config) &mdash; _Property in class_ [`Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md)
@@ -135,6 +162,7 @@ Index
 
 ## D
 
+- [`Dimension`](Piwik/Columns/Dimension.md) &mdash; _Class in namespace_ `Piwik\Columns` 
 - [`destroy()`](Piwik/Common.md#destroy) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`DataTable`](Piwik/DataTable.md) &mdash; _Class in namespace_ `Piwik` 
 - [`deleteColumn()`](Piwik/DataTable.md#deletecolumn) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -227,6 +255,9 @@ Index
 - [`$flags`](Piwik/Notification.md#$flags) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`factory()`](Piwik/Period.md#factory) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
 - [`findComponent()`](Piwik/Plugin.md#findcomponent) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`findMultipleComponents()`](Piwik/Plugin.md#findmultiplecomponents) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`factory()`](Piwik/Plugin/Report.md#factory) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`factory()`](Piwik/Plugin/Widgets.md#factory) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`factory()`](Piwik/ScheduledTime.md#factory) &mdash; _Method in class_ [`ScheduledTime`](Piwik/ScheduledTime.md)
 - [`$footer_icons`](Piwik/ViewDataTable/Config.md#$footer_icons) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$filters`](Piwik/ViewDataTable/Config.md#$filters) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
@@ -261,6 +292,8 @@ Index
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSite()`](Piwik/ArchiveProcessor/Parameters.md#getsite) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSegment()`](Piwik/ArchiveProcessor/Parameters.md#getsegment) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`getName()`](Piwik/Columns/Dimension.md#getname) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
+- [`getAllDimensions()`](Piwik/Columns/Dimension.md#getalldimensions) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getRequestVar()`](Piwik/Common.md#getrequestvar) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguagesList()`](Piwik/Common.md#getlanguageslist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguageToCountryList()`](Piwik/Common.md#getlanguagetocountrylist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
@@ -385,9 +418,18 @@ Index
 - [`getUrlSparkline()`](Piwik/Plugin/Controller.md#geturlsparkline) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`getCalendarPrettyDate()`](Piwik/Plugin/Controller.md#getcalendarprettydate) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`getEvolutionHtml()`](Piwik/Plugin/Controller.md#getevolutionhtml) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
+- [`getActionId()`](Piwik/Plugin/Dimension/ActionDimension.md#getactionid) &mdash; _Method in class_ [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
+- [`getRequiredVisitFields()`](Piwik/Plugin/Dimension/VisitDimension.md#getrequiredvisitfields) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
+- [`getAllDimensions()`](Piwik/Plugin/Dimension/VisitDimension.md#getalldimensions) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`getThemeEnabled()`](Piwik/Plugin/Manager.md#getthemeenabled) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
 - [`getInstalledPluginsName()`](Piwik/Plugin/Manager.md#getinstalledpluginsname) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
 - [`getMissingPlugins()`](Piwik/Plugin/Manager.md#getmissingplugins) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
+- [`getDefaultTypeViewDataTable()`](Piwik/Plugin/Report.md#getdefaulttypeviewdatatable) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`getMetrics()`](Piwik/Plugin/Report.md#getmetrics) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`getProcessedMetrics()`](Piwik/Plugin/Report.md#getprocessedmetrics) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`getMetricsDocumentation()`](Piwik/Plugin/Report.md#getmetricsdocumentation) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`getRelatedReports()`](Piwik/Plugin/Report.md#getrelatedreports) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`getAllReports()`](Piwik/Plugin/Report.md#getallreports) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`getIntroduction()`](Piwik/Plugin/Settings.md#getintroduction) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`getSettingsForCurrentUser()`](Piwik/Plugin/Settings.md#getsettingsforcurrentuser) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`getSettings()`](Piwik/Plugin/Settings.md#getsettings) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
@@ -396,9 +438,13 @@ Index
 - [`getDefaultRequestConfig()`](Piwik/Plugin/ViewDataTable.md#getdefaultrequestconfig) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`getViewDataTableId()`](Piwik/Plugin/ViewDataTable.md#getviewdatatableid) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`getDataTable()`](Piwik/Plugin/ViewDataTable.md#getdatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
+- [`getCategory()`](Piwik/Plugin/Widgets.md#getcategory) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
+- [`getWidgets()`](Piwik/Plugin/Widgets.md#getwidgets) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
+- [`getAllWidgets()`](Piwik/Plugin/Widgets.md#getallwidgets) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`Graph`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
 - [`Goals`](Piwik/Plugins/Goals/Visualizations/Goals.md) &mdash; _Class in namespace_ `Piwik\Plugins\Goals\Visualizations` 
 - [`getDefaultWebsiteId()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultwebsiteid) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
+- [`getDefaultReport()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultreport) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultDate()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultdate) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultPeriod()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultperiod) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`generateQuery()`](Piwik/RankingQuery.md#generatequery) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
@@ -480,6 +526,7 @@ Index
 - [`hasTheUserSuperUserAccess()`](Piwik/Piwik.md#hastheusersuperuseraccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`hasUserSuperUserAccess()`](Piwik/Piwik.md#hasusersuperuseraccess) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`hasMissingDependencies()`](Piwik/Plugin.md#hasmissingdependencies) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`$hasGoalMetrics`](Piwik/Plugin/Report.md#$hasgoalmetrics) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`hourly()`](Piwik/Plugin/Tasks.md#hourly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`HtmlTable`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreVisualizations\Visualizations` 
 - [`Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
@@ -517,11 +564,19 @@ Index
 - [`isTheme()`](Piwik/Plugin.md#istheme) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`isEnabled()`](Piwik/Plugin/Archiver.md#isenabled) &mdash; _Method in class_ [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`$idSite`](Piwik/Plugin/Controller.md#$idsite) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
+- [`install()`](Piwik/Plugin/Dimension/ActionDimension.md#install) &mdash; _Method in class_ [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
+- [`install()`](Piwik/Plugin/Dimension/ConversionDimension.md#install) &mdash; _Method in class_ [`ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md)
+- [`install()`](Piwik/Plugin/Dimension/VisitDimension.md#install) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`isPluginActivated()`](Piwik/Plugin/Manager.md#ispluginactivated) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
 - [`isPluginLoaded()`](Piwik/Plugin/Manager.md#ispluginloaded) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
+- [`$isSubtableReport`](Piwik/Plugin/Report.md#$issubtablereport) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`init()`](Piwik/Plugin/Report.md#init) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`isEnabled()`](Piwik/Plugin/Report.md#isenabled) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`init()`](Piwik/Plugin/Segment.md#init) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
 - [`isViewDataTableId()`](Piwik/Plugin/ViewDataTable.md#isviewdatatableid) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`isRequestingSingleDataTable()`](Piwik/Plugin/ViewDataTable.md#isrequestingsingledatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`isThereDataToDisplay()`](Piwik/Plugin/Visualization.md#istheredatatodisplay) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
+- [`init()`](Piwik/Plugin/Widgets.md#init) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`Insight`](Piwik/Plugins/Insights/Visualizations/Insight.md) &mdash; _Class in namespace_ `Piwik\Plugins\Insights\Visualizations` 
 - [`isEmpty()`](Piwik/Segment.md#isempty) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
 - [`isSegmentationEnabled()`](Piwik/SettingsPiwik.md#issegmentationenabled) &mdash; _Method in class_ [`SettingsPiwik`](Piwik/SettingsPiwik.md)
@@ -588,6 +643,8 @@ Index
 - [`Manager`](Piwik/Notification/Manager.md) &mdash; _Class in namespace_ [`Piwik\Notification`](Piwik/Notification) 
 - [`Manager`](Piwik/Plugin/Manager.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`Menu`](Piwik/Plugin/Menu.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
+- [`$menuTitle`](Piwik/Plugin/Report.md#$menutitle) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`$metrics`](Piwik/Plugin/Report.md#$metrics) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`monthly()`](Piwik/Plugin/Tasks.md#monthly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`$metrics_documentation`](Piwik/ViewDataTable/Config.md#$metrics_documentation) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
@@ -602,11 +659,23 @@ Index
 - [`Nonce`](Piwik/Nonce.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Notification`](Piwik/Notification.md) &mdash; _Class in namespace_ `Piwik` 
 - [`notify()`](Piwik/Notification/Manager.md#notify) &mdash; _Method in class_ [`Manager`](Piwik/Notification/Manager.md)
+- [`$name`](Piwik/Plugin/Report.md#$name) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 
 ## O
 
 - [`optimizeTables()`](Piwik/Db.md#optimizetables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`Option`](Piwik/Option.md) &mdash; _Class in namespace_ `Piwik` 
+- [`onLookupAction()`](Piwik/Plugin/Dimension/ActionDimension.md#onlookupaction) &mdash; _Method in class_ [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
+- [`onNewAction()`](Piwik/Plugin/Dimension/ActionDimension.md#onnewaction) &mdash; _Method in class_ [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
+- [`onEcommerceOrderConversion()`](Piwik/Plugin/Dimension/ConversionDimension.md#onecommerceorderconversion) &mdash; _Method in class_ [`ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md)
+- [`onEcommerceCartUpdateConversion()`](Piwik/Plugin/Dimension/ConversionDimension.md#onecommercecartupdateconversion) &mdash; _Method in class_ [`ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md)
+- [`onGoalConversion()`](Piwik/Plugin/Dimension/ConversionDimension.md#ongoalconversion) &mdash; _Method in class_ [`ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md)
+- [`onNewVisit()`](Piwik/Plugin/Dimension/VisitDimension.md#onnewvisit) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
+- [`onExistingVisit()`](Piwik/Plugin/Dimension/VisitDimension.md#onexistingvisit) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
+- [`onConvertedVisit()`](Piwik/Plugin/Dimension/VisitDimension.md#onconvertedvisit) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
+- [`onAnyGoalConversion()`](Piwik/Plugin/Dimension/VisitDimension.md#onanygoalconversion) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
+- [`$order`](Piwik/Plugin/Report.md#$order) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`$orderOfReports`](Piwik/Plugin/Report.md#$orderofreports) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`$overridableProperties`](Piwik/ViewDataTable/Config.md#$overridableproperties) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$overridableProperties`](Piwik/ViewDataTable/RequestConfig.md#$overridableproperties) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
@@ -629,6 +698,8 @@ Index
 - [`Plugin`](Piwik/Plugin.md) &mdash; _Class in namespace_ `Piwik` 
 - [`postLoad()`](Piwik/Plugin.md#postload) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`$pluginName`](Piwik/Plugin/Controller.md#$pluginname) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
+- [`$processedMetrics`](Piwik/Plugin/Report.md#$processedmetrics) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`$parameters`](Piwik/Plugin/Report.md#$parameters) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`Pie`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Pie.md) &mdash; _Class in namespace_ [`Piwik\Plugins\CoreVisualizations\Visualizations\JqplotGraph`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph) 
 - [`partitionResultIntoMultipleGroups()`](Piwik/RankingQuery.md#partitionresultintomultiplegroups) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 
@@ -660,6 +731,8 @@ Index
 - [`renderReport()`](Piwik/Plugin/Controller.md#renderreport) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`redirectToIndex()`](Piwik/Plugin/Controller.md#redirecttoindex) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`returnLoadedPluginsInfo()`](Piwik/Plugin/Manager.md#returnloadedpluginsinfo) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
+- [`Report`](Piwik/Plugin/Report.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
+- [`render()`](Piwik/Plugin/Report.md#render) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`removeAllPluginSettings()`](Piwik/Plugin/Settings.md#removeallpluginsettings) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`removeSettingValue()`](Piwik/Plugin/Settings.md#removesettingvalue) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`$requestConfig`](Piwik/Plugin/ViewDataTable.md#$requestconfig) &mdash; _Property in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
@@ -735,11 +808,21 @@ Index
 - [`setBasicVariablesView()`](Piwik/Plugin/Controller.md#setbasicvariablesview) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`setHostValidationVariablesView()`](Piwik/Plugin/Controller.md#sethostvalidationvariablesview) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`setPeriodVariablesView()`](Piwik/Plugin/Controller.md#setperiodvariablesview) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
+- [`Segment`](Piwik/Plugin/Segment.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
+- [`setAcceptedValues()`](Piwik/Plugin/Segment.md#setacceptedvalues) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
+- [`setCategory()`](Piwik/Plugin/Segment.md#setcategory) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
+- [`setName()`](Piwik/Plugin/Segment.md#setname) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
+- [`setSegment()`](Piwik/Plugin/Segment.md#setsegment) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
+- [`setSqlFilter()`](Piwik/Plugin/Segment.md#setsqlfilter) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
+- [`setSqlFilterValue()`](Piwik/Plugin/Segment.md#setsqlfiltervalue) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
+- [`setSqlSegment()`](Piwik/Plugin/Segment.md#setsqlsegment) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
+- [`setType()`](Piwik/Plugin/Segment.md#settype) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
+- [`setPermission()`](Piwik/Plugin/Segment.md#setpermission) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
 - [`Settings`](Piwik/Plugin/Settings.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`save()`](Piwik/Plugin/Settings.md#save) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`setSettingValue()`](Piwik/Plugin/Settings.md#setsettingvalue) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`setDataTable()`](Piwik/Plugin/ViewDataTable.md#setdatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
-- [`SimpleTable`](Piwik/Plugins/ExampleVisualization/SimpleTable.md) &mdash; _Class in namespace_ `Piwik\Plugins\ExampleVisualization` 
+- [`SimpleTable`](Piwik/Plugins/ExampleVisualization/Visualizations/SimpleTable.md) &mdash; _Class in namespace_ `Piwik\Plugins\ExampleVisualization\Visualizations` 
 - [`setLimit()`](Piwik/RankingQuery.md#setlimit) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setOthersLabel()`](Piwik/RankingQuery.md#setotherslabel) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setColumnToMarkExcludedRows()`](Piwik/RankingQuery.md#setcolumntomarkexcludedrows) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
@@ -815,6 +898,9 @@ Index
 - [`unlockAllTables()`](Piwik/Db.md#unlockalltables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`unlinkRecursive()`](Piwik/Filesystem.md#unlinkrecursive) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`uninstall()`](Piwik/Plugin.md#uninstall) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`uninstall()`](Piwik/Plugin/Dimension/ActionDimension.md#uninstall) &mdash; _Method in class_ [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
+- [`uninstall()`](Piwik/Plugin/Dimension/ConversionDimension.md#uninstall) &mdash; _Method in class_ [`ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md)
+- [`uninstall()`](Piwik/Plugin/Dimension/VisitDimension.md#uninstall) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md) &mdash; _Class in namespace_ `Piwik\Plugins\UsersManager` 
 - [`$uiControlType`](Piwik/Settings/Setting.md#$uicontroltype) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$uiControlAttributes`](Piwik/Settings/Setting.md#$uicontrolattributes) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
@@ -827,6 +913,7 @@ Index
 
 - [`verbose()`](Piwik/Log.md#verbose) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
 - [`verifyNonce()`](Piwik/Nonce.md#verifynonce) &mdash; _Method in class_ [`Nonce`](Piwik/Nonce.md)
+- [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md) &mdash; _Class in namespace_ `Piwik\Plugin\Dimension` 
 - [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`Visualization`](Piwik/Plugin/Visualization.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`VisitorLog`](Piwik/Plugins/Live/VisitorLog.md) &mdash; _Class in namespace_ `Piwik\Plugins\Live` 
@@ -838,8 +925,20 @@ Index
 
 - [`walkPath()`](Piwik/DataTable.md#walkpath) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`warning()`](Piwik/Log.md#warning) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
+- [`$widgetTitle`](Piwik/Plugin/Report.md#$widgettitle) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`$widgetParams`](Piwik/Plugin/Report.md#$widgetparams) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`weekly()`](Piwik/Plugin/Tasks.md#weekly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`Widgets`](Piwik/Plugin/Widgets.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
+- [`Widgets`](Piwik/Plugins/CoreHome/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreHome` 
+- [`Widgets`](Piwik/Plugins/ExamplePlugin/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\ExamplePlugin` 
+- [`Widgets`](Piwik/Plugins/ExampleRssWidget/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\ExampleRssWidget` 
+- [`Widgets`](Piwik/Plugins/Goals/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\Goals` 
+- [`Widgets`](Piwik/Plugins/Insights/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\Insights` 
+- [`Widgets`](Piwik/Plugins/Live/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\Live` 
+- [`Widgets`](Piwik/Plugins/Referrers/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\Referrers` 
+- [`Widgets`](Piwik/Plugins/SEO/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\SEO` 
+- [`Widgets`](Piwik/Plugins/VisitFrequency/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\VisitFrequency` 
+- [`Widgets`](Piwik/Plugins/VisitsSummary/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\VisitsSummary` 
 - [`Weekly`](Piwik/ScheduledTime/Weekly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`WidgetsList`](Piwik/WidgetsList.md) &mdash; _Class in namespace_ `Piwik` 
 
@@ -894,6 +993,7 @@ Index
 - [`__construct()`](Piwik/Plugin/Controller.md#__construct) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`__construct()`](Piwik/Plugin/Settings.md#__construct) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`__construct()`](Piwik/Plugin/ViewDataTable.md#__construct) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
+- [`__construct()`](Piwik/Plugin/Widgets.md#__construct) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`__construct()`](Piwik/RankingQuery.md#__construct) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`__construct()`](Piwik/ScheduledTask.md#__construct) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
 - [`__construct()`](Piwik/Segment.md#__construct) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)

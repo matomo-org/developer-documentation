@@ -1,28 +1,28 @@
-<small>Piwik\Plugin\</small>
+<small>Piwik\Plugins\ExamplePlugin\</small>
 
 Widgets
 =======
 
-Base class of all plugin widget providers.
+This class allows you to add your own widgets to the Piwik platform.
 
-Plugins that define their own widgets can extend this class to easily
-add new widgets, to remove or to rename existing items.
-
-For an example, see the [https://github.com/piwik/piwik/blob/master/plugins/ExampleRssWidget/Widget.php](https://github.com/piwik/piwik/blob/master/plugins/ExampleRssWidget/Widget.php) plugin.
+In case you want to remove widgets from another
+plugin please have a look at the "configureWidgetsList()" method.
+To configure a widget simply call the corresponding methods as described in the API-Reference:
+http://developer.piwik.org/api-reference/Piwik/Plugin\Widgets
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct)
-- [`getCategory()`](#getcategory)
-- [`addWidget()`](#addwidget)
-- [`init()`](#init)
-- [`getWidgets()`](#getwidgets)
-- [`configureWidgetsList()`](#configurewidgetslist) &mdash; Configures the widgets.
-- [`getAllWidgets()`](#getallwidgets)
-- [`factory()`](#factory)
+- [`__construct()`](#__construct) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`getCategory()`](#getcategory) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`addWidget()`](#addwidget) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`init()`](#init) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`getWidgets()`](#getwidgets) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`configureWidgetsList()`](#configurewidgetslist) &mdash; Configures the widgets. Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`getAllWidgets()`](#getallwidgets) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
+- [`factory()`](#factory) Inherited from [`Widgets`](../../../Piwik/Plugin/Widgets.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -112,7 +112,7 @@ Here you can for instance remove widgets.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$widgetsList` ([`WidgetsList`](../../Piwik/WidgetsList.md)) &mdash;
+      `$widgetsList` ([`WidgetsList`](../../../Piwik/WidgetsList.md)) &mdash;
 
       <div markdown="1" class="param-desc"></div>
 
@@ -129,7 +129,7 @@ Here you can for instance remove widgets.
 
 #### Signature
 
-- It returns a [`Widgets[]`](../../Piwik/Plugin/Widgets.md) value.
+- It returns a [`Widgets[]`](../../../Piwik/Plugin/Widgets.md) value.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>

@@ -10,7 +10,7 @@ Adds a new column to every row of a DataTable based on the result of callback.
     $callback = function ($visits, $timeSpent) {
         return round($timeSpent / $visits, 2);
     };
-    
+
     $dataTable->filter('ColumnCallbackAddColumn', array(array('nb_visits', 'sum_time_spent'), 'avg_time_on_site', $callback));
 
 Methods

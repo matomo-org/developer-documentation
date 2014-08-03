@@ -30,6 +30,8 @@ The class defines the following methods:
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`addManageItem()`](#addmanageitem) &mdash; See [add()](/api-reference/Piwik/Menu/MenuUser#add).
+- [`addPlatformItem()`](#addplatformitem) &mdash; See [add()](/api-reference/Piwik/Menu/MenuUser#add).
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>
@@ -227,6 +229,122 @@ Edits a URL of an existing menu entry.
    <li>
       <div markdown="1" class="parameter">
       `$newUrl` (`Piwik\Menu\$newUrl`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="addmanageitem" id="addmanageitem"></a>
+<a name="addManageItem" id="addManageItem"></a>
+### `addManageItem()`
+
+Since Piwik 2.5.0
+
+See [add()](/api-reference/Piwik/Menu/MenuUser#add).
+
+Adds a new menu item to the manage section of the user menu.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$menuName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$order` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tooltip` (`bool`|`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="addplatformitem" id="addplatformitem"></a>
+<a name="addPlatformItem" id="addPlatformItem"></a>
+### `addPlatformItem()`
+
+Since Piwik 2.5.0
+
+See [add()](/api-reference/Piwik/Menu/MenuUser#add).
+
+Adds a new menu item to the platform section of the user menu.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$menuName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$url` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$order` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$tooltip` (`bool`|`string`) &mdash;
 
       <div markdown="1" class="param-desc"></div>
 

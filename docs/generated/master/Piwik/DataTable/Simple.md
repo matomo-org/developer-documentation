@@ -74,7 +74,7 @@ The class defines the following methods:
 - [`addRowsFromSerializedArray()`](#addrowsfromserializedarray) &mdash; Adds a set of rows from a serialized DataTable string. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`addRowsFromArray()`](#addrowsfromarray) &mdash; Adds rows based on an array mapping label column values to value column values.
 - [`addRowsFromSimpleArray()`](#addrowsfromsimplearray) &mdash; Adds multiple rows from an array containing arrays of column values. Inherited from [`DataTable`](../../Piwik/DataTable.md)
-- [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input `$array`      array (         LABEL => array(col1 => X, col2 => Y),         LABEL2 => array(col1 => X, col2 => Y),     )  to a DataTable with rows that look like:      array (         array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),         array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),     ) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input `$array` Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](#setmaximumdepthlevelallowedatleast) &mdash; Sets the maximum depth level to at least a certain value. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getMetadata()`](#getmetadata) &mdash; Returns metadata by name. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setMetadata()`](#setmetadata) &mdash; Sets a metadata value by name. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -1251,9 +1251,21 @@ Row metadata cannot be added with this method.
 <a name="makeFromIndexedArray" id="makeFromIndexedArray"></a>
 ### `makeFromIndexedArray()`
 
-Rewrites the input `$array`      array (         LABEL => array(col1 => X, col2 => Y),         LABEL2 => array(col1 => X, col2 => Y),     )  to a DataTable with rows that look like:      array (         array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),         array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),     )
+Rewrites the input `$array`
 
-Will also convert arrays like: 
+array (
+        LABEL => array(col1 => X, col2 => Y),
+        LABEL2 => array(col1 => X, col2 => Y),
+    )
+
+to a DataTable with rows that look like:
+
+    array (
+        array( Row::COLUMNS => array('label' => LABEL, col1 => X, col2 => Y)),
+        array( Row::COLUMNS => array('label' => LABEL2, col1 => X, col2 => Y)),
+    )
+
+Will also convert arrays like:
 
     array (
         LABEL => X,
