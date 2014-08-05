@@ -929,16 +929,6 @@ Index
 - [`$widgetParams`](Piwik/Plugin/Report.md#$widgetparams) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`weekly()`](Piwik/Plugin/Tasks.md#weekly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`Widgets`](Piwik/Plugin/Widgets.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
-- [`Widgets`](Piwik/Plugins/CoreHome/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\CoreHome` 
-- [`Widgets`](Piwik/Plugins/ExamplePlugin/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\ExamplePlugin` 
-- [`Widgets`](Piwik/Plugins/ExampleRssWidget/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\ExampleRssWidget` 
-- [`Widgets`](Piwik/Plugins/Goals/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\Goals` 
-- [`Widgets`](Piwik/Plugins/Insights/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\Insights` 
-- [`Widgets`](Piwik/Plugins/Live/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\Live` 
-- [`Widgets`](Piwik/Plugins/Referrers/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\Referrers` 
-- [`Widgets`](Piwik/Plugins/SEO/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\SEO` 
-- [`Widgets`](Piwik/Plugins/VisitFrequency/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\VisitFrequency` 
-- [`Widgets`](Piwik/Plugins/VisitsSummary/Widgets.md) &mdash; _Class in namespace_ `Piwik\Plugins\VisitsSummary` 
 - [`Weekly`](Piwik/ScheduledTime/Weekly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`WidgetsList`](Piwik/WidgetsList.md) &mdash; _Class in namespace_ `Piwik` 
 
