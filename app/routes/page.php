@@ -160,6 +160,37 @@ $app->get('/support', function () use ($app) {
     ));
 });
 
+$app->get('/changelog', function () use ($app) {
+
+    $fetchContent = false;
+    $targetFile   = '../../docs/changelog.md';
+
+    if (!file_exists($targetFile)) {
+        $fetchContent = true;
+    } else {
+        $lastModified = filemtime($targetFile);
+        $invalidateAfterSeconds = 60 * 60 * 4; // invalidate every 4 hours
+        if (time() - $lastModified > $invalidateAfterSeconds) {
+            $fetchContent = true;
+        }
+    }
+
+    if ($fetchContent) {
+        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/master/CHANGELOG.md');
+        file_put_contents($targetFile, $markdown);
+    }
+
+    $document = new Document('changelog');
+    $content  = $document->getRenderedContent();
+    $content  = preg_replace('/<h1(.*?)<\/h1>/', '', $content);
+
+    $app->render('changelog.twig', array(
+        'changelog' => $content,
+        'title' => $document->getTitle(),
+        'linkToEditDocument' => 'https://github.com/piwik/piwik/blob/master/CHANGELOG.md'
+    ));
+});
+
 $app->get('/data/documents.json', function () use ($app) {
     $documentsMap = array_merge(Guide::getDocumentList(), ApiReference::getDocumentList());
     $documentsData = array(

@@ -43,6 +43,13 @@ class Home {
         );
 
         $menu[] = array(
+            'title'        => 'Changelog',
+            'url'          => static::getUrl('changelog'),
+            'description'  => '',
+            'callToAction' => ''
+        );
+
+        $menu[] = array(
             'title'        => 'Support',
             'url'          => static::getUrl('support'),
             'description'  => 'If the documentation isn\'t helping you with something or you\'ve found a bug and want to report it, click here and learn how to get help.',
