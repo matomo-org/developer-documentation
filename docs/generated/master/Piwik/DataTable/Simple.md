@@ -86,6 +86,7 @@ The class defines the following methods:
 - [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtables. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getIterator()`](#getiterator) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -1643,4 +1644,23 @@ for more information on DataTable serialization.
    </li>
    </ul>
 - It returns a [`DataTable`](../../Piwik/DataTable.md) value.
+
+<a name="getiterator" id="getiterator"></a>
+<a name="getIterator" id="getIterator"></a>
+### `getIterator()`
+
+#### Signature
+
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`ArrayIterator`](http://php.net/class.ArrayIterator)|[`Row[]`](../../Piwik/DataTable/Row.md)) &mdash;
+    <div markdown="1" class="param-desc"></div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

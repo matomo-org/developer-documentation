@@ -318,6 +318,7 @@ Index
 - [`getSerialized()`](Piwik/DataTable.md#getserialized) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`getMetadata()`](Piwik/DataTable.md#getmetadata) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`getAllTableMetadata()`](Piwik/DataTable.md#getalltablemetadata) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
+- [`getIterator()`](Piwik/DataTable.md#getiterator) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`getSingleUnitLabel()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#getsingleunitlabel) &mdash; _Method in class_ [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
 - [`getRangeLabel()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#getrangelabel) &mdash; _Method in class_ [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
 - [`getUnboundedLabel()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#getunboundedlabel) &mdash; _Method in class_ [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
@@ -340,6 +341,7 @@ Index
 - [`getColumns()`](Piwik/DataTable/Row.md#getcolumns) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`getIdSubDataTable()`](Piwik/DataTable/Row.md#getidsubdatatable) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`getSubtable()`](Piwik/DataTable/Row.md#getsubtable) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
+- [`getIterator()`](Piwik/DataTable/Row.md#getiterator) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`getDatetime()`](Piwik/Date.md#getdatetime) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`getDateStartUTC()`](Piwik/Date.md#getdatestartutc) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`getDateEndUTC()`](Piwik/Date.md#getdateendutc) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
@@ -663,6 +665,10 @@ Index
 
 ## O
 
+- [`offsetExists()`](Piwik/DataTable/Row.md#offsetexists) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
+- [`offsetGet()`](Piwik/DataTable/Row.md#offsetget) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
+- [`offsetSet()`](Piwik/DataTable/Row.md#offsetset) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
+- [`offsetUnset()`](Piwik/DataTable/Row.md#offsetunset) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`optimizeTables()`](Piwik/Db.md#optimizetables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`Option`](Piwik/Option.md) &mdash; _Class in namespace_ `Piwik` 
 - [`onLookupAction()`](Piwik/Plugin/Dimension/ActionDimension.md#onlookupaction) &mdash; _Method in class_ [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
