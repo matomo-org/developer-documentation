@@ -400,7 +400,7 @@ Plugins should also clean up after themselves by dropping the tables in the [uni
     {
         // ...
 
-        public function install()
+        public function uninstall()
         {
             Db::dropTables(Common::prefixTable('mynewtable'));
         }
