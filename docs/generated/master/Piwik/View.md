@@ -90,6 +90,7 @@ The class defines the following methods:
 - [`getTemplateVars()`](#gettemplatevars) &mdash; Returns the variables to bind to the template when rendering.
 - [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
 - [`__get()`](#__get) &mdash; Retrieves an assigned variable.
+- [`__isset()`](#__isset) &mdash; Returns true if a template variable has been set or not.
 - [`render()`](#render) &mdash; Renders the current view.
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field.
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response.
@@ -224,6 +225,30 @@ Variable names may not be prefixed with '_'.
     </div>
   </li>
 </ul>
+
+<a name="__isset" id="__isset"></a>
+<a name="__isset" id="__isset"></a>
+### `__isset()`
+
+Returns true if a template variable has been set or not.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$name` (`Piwik\$name`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the template variable.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `bool` value.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>

@@ -1001,6 +1001,7 @@ Index
 - [`__construct()`](Piwik/View.md#__construct) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`__set()`](Piwik/View.md#__set) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`__get()`](Piwik/View.md#__get) &mdash; _Method in class_ [`View`](Piwik/View.md)
+- [`__isset()`](Piwik/View.md#__isset) &mdash; _Method in class_ [`View`](Piwik/View.md)
 - [`__construct()`](Piwik/ViewDataTable/Config.md#__construct) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`__construct()`](Piwik/View/UIControl.md#__construct) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
 - [`__set()`](Piwik/View/UIControl.md#__set) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)

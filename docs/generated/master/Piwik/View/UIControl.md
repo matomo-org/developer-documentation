@@ -83,11 +83,11 @@ The class defines the following methods:
 - [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
 - [`__set()`](#__set) &mdash; Sets a variable.
 - [`__get()`](#__get) &mdash; Gets a view variable.
+- [`__isset()`](#__isset) &mdash; Returns true if a template variable has been set or not.
 - [`render()`](#render) &mdash; Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field. Inherited from [`View`](../../Piwik/View.md)
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response. Inherited from [`View`](../../Piwik/View.md)
 - [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template. Inherited from [`View`](../../Piwik/View.md)
-- [`__isset()`](#__isset)
 - [`getClientSideProperties()`](#getclientsideproperties) &mdash; Returns the array of property names whose values are passed to the UIControl JavaScript class.
 - [`getClientSideParameters()`](#getclientsideparameters) &mdash; Returns an array of property names whose values are passed to the UIControl JavaScript class.
 
@@ -206,6 +206,30 @@ See View::\_\_get().
     </div>
   </li>
 </ul>
+
+<a name="__isset" id="__isset"></a>
+<a name="__isset" id="__isset"></a>
+### `__isset()`
+
+Returns true if a template variable has been set or not.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$key`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `bool` value.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
@@ -332,28 +356,6 @@ a new template.
     </div>
   </li>
 </ul>
-
-<a name="__isset" id="__isset"></a>
-<a name="__isset" id="__isset"></a>
-### `__isset()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$key`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-- It does not return anything.
 
 <a name="getclientsideproperties" id="getclientsideproperties"></a>
 <a name="getClientSideProperties" id="getClientSideProperties"></a>
