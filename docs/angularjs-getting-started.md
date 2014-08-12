@@ -19,6 +19,7 @@ With using AngularJS we are trying to achieve different goals:
 I recommend to watch some videos and read a few resources about the benefits and best practices of AngularJS. It is important to understand how AngularJS works and especially to be aware of pitfalls and best practices.
 * [Video AngularJS introduction](http://www.youtube.com/watch?v=i9MHigUZKEM)
 * [Video Best Practices](http://www.youtube.com/watch?v=ZhfUv0spHCY)
+* [Great AngularJS style guide that we should follow](https://github.com/johnpapa/angularjs-styleguide)
 * [Video Course (lots of short videos, good to watch videos from time to time or when needed)](http://www.youtube.com/playlist?list=PLP6DbQBkn9ymGQh2qpk9ImLHdSH5T7yw7)
 * [Common Pitfalls](http://docs.angularjs.org/misc/faq#common-pitfalls)
 * [Considering Speed and Slowness in AngularJS](https://www.exratione.com/2013/12/considering-speed-and-slowness-in-angularjs/)
@@ -104,6 +105,7 @@ Filenames are always lower case and words are separated by dashes. In general we
 
 * As our minifier does not rename any variables we do not have to declare dependencies separately, we can simply write `function ($http)` instead of `['$http', function ($http) {}]`
 * In AngularJS there are many ways to define attributes for a directive (Class, HTML Attributes, Elementname, ...). We are using HTML attributes and as we do not really aim to be W3C compliant we chose not to prefix attributes with "data-" to keep templates clean. 
+* See here for a more complete style guide: https://github.com/johnpapa/angularjs-styleguide
 
 
 ### Related links
