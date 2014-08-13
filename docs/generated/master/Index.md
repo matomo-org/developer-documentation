@@ -734,6 +734,7 @@ Index
 - [`$raw`](Piwik/Notification.md#$raw) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`Range`](Piwik/Period/Range.md) &mdash; _Class in namespace_ [`Piwik\Period`](Piwik/Period) 
 - [`redirectToModule()`](Piwik/Piwik.md#redirecttomodule) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
+- [`renderTemplate()`](Piwik/Plugin/Controller.md#rendertemplate) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`renderReport()`](Piwik/Plugin/Controller.md#renderreport) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`redirectToIndex()`](Piwik/Plugin/Controller.md#redirecttoindex) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`returnLoadedPluginsInfo()`](Piwik/Plugin/Manager.md#returnloadedpluginsinfo) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)

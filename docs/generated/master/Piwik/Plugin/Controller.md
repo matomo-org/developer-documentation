@@ -104,6 +104,7 @@ The abstract class defines the following methods:
 - [`getDateParameterInTimezone()`](#getdateparameterintimezone) &mdash; Helper method that converts `"today"` or `"yesterday"` to the specified timezone.
 - [`setDate()`](#setdate) &mdash; Sets the date to be used by all other methods in the controller.
 - [`getDefaultAction()`](#getdefaultaction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
+- [`renderTemplate()`](#rendertemplate) &mdash; Assigns the given variables to the template and renders it.
 - [`renderReport()`](#renderreport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method.
 - [`getLastUnitGraph()`](#getlastunitgraph) &mdash; Returns a ViewDataTable object that will render a jqPlot evolution graph for the last30 days/weeks/etc.
 - [`getLastUnitGraphAcrossPlugins()`](#getlastunitgraphacrossplugins) &mdash; Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
@@ -199,6 +200,53 @@ Returns the name of the default method that will be called when visiting: index.
 
 #### Signature
 
+- It returns a `string` value.
+
+<a name="rendertemplate" id="rendertemplate"></a>
+<a name="renderTemplate" id="renderTemplate"></a>
+### `renderTemplate()`
+
+Since Piwik 2.5.0
+
+Assigns the given variables to the template and renders it.
+
+Example:
+```
+public function myControllerAction () {
+   return $this->renderTemplate('index', array(
+       'answerToLife' => '42'
+   ));
+}
+    ```
+This will render the 'index.twig' file within the plugin templates folder and assign the view variable
+`answerToLife` to `42`.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$template` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the template file. If only a name is given it will automatically use the template within the plugin folder. For instance 'myTemplate' will result in '@$pluginName/myTemplate.twig'. Alternatively you can include the full path: '@anyOtherFolder/otherTemplate'. The trailing '.twig' is not needed.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$variables` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> For instance array('myViewVar' => 'myValue'). In template you can use {{ myViewVar }}</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 - It returns a `string` value.
 
 <a name="renderreport" id="renderreport"></a>
