@@ -268,9 +268,9 @@ _paq.push(['trackPageView']);
 
 <pre><code>getCustomVariable (index, scope )</code></pre>
 
-This function is mostly useful if scope = "visit".
+This function can be used to get the custom variable name and value. By default, it will only work for custom variables that were set during the same page load.
 
-In this case, custom variables are recorded in a first party cookie for the duration of the visit (30 minutes after the last action). You can actually retrieve the custom variable names and values using piwikTracker.getCustomVariable. If there is no custom variable in the requested index, it will return false.
+Note: it is possible to configure Piwik so that `getCustomVariable` will also return the name and value of a custom variable of scope "visit", even when it was set in a previous pageview in the same visit. To enable this behavior, call the Javascript function `storeCustomVariablesInCookie` before the call to `trackPageView`. This will enable the storage of Custom Variables of scope "visit" in a first party cookie. The custom variables cookie will be valid for the duration of the visit (30 minutes after the last action). You can then retrieve the custom variable names and values using `getCustomVariable`. If there is no custom variable in the requested index, it will return false.
 
 <pre><code>[...]_paq.push([ function() {
 
@@ -588,6 +588,7 @@ _Configuration of the Tracker Object_
 *   `setCustomVariable (index, name, value, scope)` - Set a custom variable.
 *   `deleteCustomVariable (index, scope )` - Delete a custom variable.
 *   `getCustomVariable (index, scope )` - Retrieve a custom variable.
+*   `storeCustomVariablesInCookie()` -  When called then the Custom Variables of scope "visit" will be stored (persisted) in a first party cookie for the duration of the visit. This is useful if you want to call `getCustomVariable` later in the visit. (by default custom variables are not stored on the visitor's computer.)
 *   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](http://piwik.org/faq/how-to/#faq_120))
 *   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](http://piwik.org/faq/how-to/#faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
