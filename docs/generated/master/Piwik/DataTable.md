@@ -218,6 +218,10 @@ The class defines the following methods:
 - [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array.
 - [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
 - [`getIterator()`](#getiterator)
+- [`offsetExists()`](#offsetexists)
+- [`offsetGet()`](#offsetget)
+- [`offsetSet()`](#offsetset)
+- [`offsetUnset()`](#offsetunset)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -1796,4 +1800,102 @@ for more information on DataTable serialization.
     </div>
   </li>
 </ul>
+
+<a name="offsetexists" id="offsetexists"></a>
+<a name="offsetExists" id="offsetExists"></a>
+### `offsetExists()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$offset`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="offsetget" id="offsetget"></a>
+<a name="offsetGet" id="offsetGet"></a>
+### `offsetGet()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$offset`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="offsetset" id="offsetset"></a>
+<a name="offsetSet" id="offsetSet"></a>
+### `offsetSet()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$offset`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$value`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="offsetunset" id="offsetunset"></a>
+<a name="offsetUnset" id="offsetUnset"></a>
+### `offsetUnset()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$offset`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
 

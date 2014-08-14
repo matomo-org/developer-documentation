@@ -665,6 +665,10 @@ Index
 
 ## O
 
+- [`offsetExists()`](Piwik/DataTable.md#offsetexists) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
+- [`offsetGet()`](Piwik/DataTable.md#offsetget) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
+- [`offsetSet()`](Piwik/DataTable.md#offsetset) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
+- [`offsetUnset()`](Piwik/DataTable.md#offsetunset) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`offsetExists()`](Piwik/DataTable/Row.md#offsetexists) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`offsetGet()`](Piwik/DataTable/Row.md#offsetget) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`offsetSet()`](Piwik/DataTable/Row.md#offsetset) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
