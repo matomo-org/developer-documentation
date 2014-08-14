@@ -132,6 +132,10 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
             return true;
         }
 
+        if ($rc->isSubclassOf('Piwik\Plugin\Visualization')) {
+            return true;
+        }
+
         $trackingDimensions = array(
             'Piwik\Plugin\Dimension\ActionDimension',
             'Piwik\Plugin\Dimension\ConversionDimension',
