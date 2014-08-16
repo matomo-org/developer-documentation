@@ -422,6 +422,7 @@ Index
 - [`getMetricsDocumentation()`](Piwik/Plugin/Report.md#getmetricsdocumentation) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`getRelatedReports()`](Piwik/Plugin/Report.md#getrelatedreports) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`getAllReports()`](Piwik/Plugin/Report.md#getallreports) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`getPluginName()`](Piwik/Plugin/Settings.md#getpluginname) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`getIntroduction()`](Piwik/Plugin/Settings.md#getintroduction) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`getSettingsForCurrentUser()`](Piwik/Plugin/Settings.md#getsettingsforcurrentuser) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`getSettings()`](Piwik/Plugin/Settings.md#getsettings) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)

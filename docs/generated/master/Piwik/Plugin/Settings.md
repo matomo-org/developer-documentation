@@ -19,6 +19,7 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`getPluginName()`](#getpluginname)
 - [`getIntroduction()`](#getintroduction) &mdash; Returns the introduction text for this plugin's settings.
 - [`getSettingsForCurrentUser()`](#getsettingsforcurrentuser) &mdash; Returns the settings that can be displayed for the current user.
 - [`getSettings()`](#getsettings) &mdash; Returns all available settings.
@@ -41,15 +42,23 @@ Constructor.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$pluginName` (`string`) &mdash;
+      `$pluginName`
 
-      <div markdown="1" class="param-desc"> The name of the plugin these settings are for.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
       </div>
    </li>
    </ul>
+
+<a name="getpluginname" id="getpluginname"></a>
+<a name="getPluginName" id="getPluginName"></a>
+### `getPluginName()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getintroduction" id="getintroduction"></a>
 <a name="getIntroduction" id="getIntroduction"></a>
