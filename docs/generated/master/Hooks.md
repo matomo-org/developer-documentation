@@ -828,7 +828,7 @@ Callback Signature:
 
 
 ### Menu.Reporting.addItems
-_Defined in [Piwik/Menu/MenuReporting](https://github.com/piwik/piwik/blob/master/core/Menu/MenuReporting.php) in line [112](https://github.com/piwik/piwik/blob/master/core/Menu/MenuReporting.php#L112)_
+_Defined in [Piwik/Menu/MenuReporting](https://github.com/piwik/piwik/blob/master/core/Menu/MenuReporting.php) in line [127](https://github.com/piwik/piwik/blob/master/core/Menu/MenuReporting.php#L127)_
 
 
 
