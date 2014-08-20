@@ -312,6 +312,24 @@ For UI tests run,
 
     $ ./console tests:run-ui --plugin=MyPlugin
 
+### Running your tests on Travis-CI
+
+[Travis-CI](http://travis-ci.org) is a continuous integration tool that will run automated tests for a github repository every time one or more commits are pushed to it. Piwik uses Travis to automatically run its test suite on every commit (for every branch and pull request).
+
+Plugins can do the same if they include a **.travis.yml** file in their github repository. You can generate this file using the **generate:travis-yml** Piwik console command:
+
+    ./console generate:travis-yml --plugin=MyPlugin
+
+The command will automatically detect if you have unit and/or UI tests in your plugin's **tests/** directory and create a .travis.yml file that will run them. The tests will be run against both Piwik **master** and against the latest stable version.
+
+#### Autoupdating the .travis.yml file
+
+The generate:travis-yml will be changed over time as we modify the travis build process. The generated .travis.yml file will check if it is out of date from within travis and let you know by failing the build. In such a case you will have to re-run the command and commit the changes to get the build to run again.
+
+To avoid having to do this you can setup auto-updating by using the `--github-token=` option when calling **generate:travis-yml**. You should supply a [github token](https://help.github.com/articles/creating-an-access-token-for-command-line-use) that has read and write access to the repository the build is for. When a .travis.yml file is found to be out of date, the travis build will update the file and push a commit using the github token.
+
+_Note: You will need the [travis command line tool](http://blog.travis-ci.com/2013-01-14-new-client/) to setup auto-updating._
+
 ## Learn more
 
 * To learn **more about what you can do with phpunit** read phpunit's [user docs](http://phpunit.de/documentation.html).
