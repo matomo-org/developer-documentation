@@ -41,9 +41,9 @@ Constructor.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$pluginName` (`string`) &mdash;
+      `$pluginName`
 
-      <div markdown="1" class="param-desc"> The name of the plugin these settings are for.</div>
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 
