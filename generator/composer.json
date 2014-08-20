@@ -11,6 +11,18 @@
             "homepage": "http://piwik.org/the-piwik-team/"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Piwik\\Plugins\\": "../piwik/plugins/",
+            "Piwik\\": "../piwik/core/"
+        },
+        "psr-0": {
+            "Zend_": "../piwik/libs/",
+            "HTML_": "../piwik/libs/",
+            "PEAR_": "../piwik/libs/",
+            "Archive_": "../piwik/libs/"
+        }
+    },
     "repositories": [
         {
             "type": "git",
