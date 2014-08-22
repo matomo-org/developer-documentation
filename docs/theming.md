@@ -53,7 +53,7 @@ To change the font you override the font variable:
 
     @theme-fontFamily-base: Verdana, sans-serif;
     
-You get the point. It is a common convention among themes to put all color values in a **_colors.less** file. This is already done for you if you have created your theme using the above mentioned console command. Just uncomment the variables you want to change. For a list of available variables have a look at the [Example Theme plugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleTheme/stylesheets).
+You get the point. It is a common convention among themes to put all color values in a **_colors.less** file. This is already done for you if you have created your theme using the above mentioned console command. Just uncomment the variables you want to change. For a list of available variables have a look at the [Example Theme plugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleTheme/stylesheets). Please note in case you are not using the theme generator: Overwriting a variable will only work if they are defined in a less file that is imported by another less file. 
 
 Although we do not recommend to do so you can change the colors of a specific element directly, for example:
 
