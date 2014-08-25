@@ -564,7 +564,7 @@ Usages:
 - [LanguageManager.getAvailableLanguages](#languagemanagergetavailablelanguages)
 
 ### LanguageManager.getAvailableLanguages
-_Defined in [Piwik/Plugins/LanguagesManager/API](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php) in line [75](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php#L75)_
+_Defined in [Piwik/Plugins/LanguagesManager/API](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php) in line [76](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php#L76)_
 
 Hook called after loading available language files. Use this hook to customise the list of languagesPath available in Piwik.
 
