@@ -1535,7 +1535,7 @@ Callback Signature:
 
 
 ### Tracker.end
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [255](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L255)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [258](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L258)_
 
 
 
@@ -1555,7 +1555,7 @@ Callback Signature:
 
 
 ### Tracker.getDatabaseConfig
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [566](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L566)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [569](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L569)_
 
 Triggered before a connection to the database is established by the Tracker. This event can be used to change the database connection settings used by the Tracker.
 
@@ -1577,7 +1577,7 @@ Callback Signature:
 
 
 ### Tracker.makeNewVisitObject
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [648](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L648)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [651](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L651)_
 
 Triggered before a new **visit tracking object** is created. Subscribers to this
 event can force the use of a custom visit tracking object that extends from
