@@ -828,7 +828,7 @@ Callback Signature:
 
 
 ### Menu.Reporting.addItems
-_Defined in [Piwik/Menu/MenuReporting](https://github.com/piwik/piwik/blob/2.5.0/core/Menu/MenuReporting.php) in line [127](https://github.com/piwik/piwik/blob/2.5.0/core/Menu/MenuReporting.php#L127)_
+_Defined in [Piwik/Menu/MenuReporting](https://github.com/piwik/piwik/blob/2.5.0/core/Menu/MenuReporting.php) in line [112](https://github.com/piwik/piwik/blob/2.5.0/core/Menu/MenuReporting.php#L112)_
 
 
 
@@ -1555,7 +1555,7 @@ Callback Signature:
 
 
 ### Tracker.getDatabaseConfig
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker.php) in line [566](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker.php#L566)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker.php) in line [567](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker.php#L567)_
 
 Triggered before a connection to the database is established by the Tracker. This event can be used to change the database connection settings used by the Tracker.
 
@@ -1577,7 +1577,7 @@ Callback Signature:
 
 
 ### Tracker.makeNewVisitObject
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker.php) in line [648](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker.php#L648)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker.php) in line [649](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker.php#L649)_
 
 Triggered before a new **visit tracking object** is created. Subscribers to this
 event can force the use of a custom visit tracking object that extends from
@@ -1590,7 +1590,7 @@ Callback Signature:
 
 
 ### Tracker.newConversionInformation
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php) in line [738](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php#L738)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php) in line [724](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php#L724)_
 
 Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
 
@@ -1632,7 +1632,7 @@ Callback Signature:
 
 
 ### Tracker.recordEcommerceGoal
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php) in line [331](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php#L331)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php) in line [317](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php#L317)_
 
 Triggered after successfully persisting an ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
@@ -1646,7 +1646,7 @@ Callback Signature:
 
 
 ### Tracker.recordStandardGoals
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php) in line [714](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php#L714)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php) in line [700](https://github.com/piwik/piwik/blob/2.5.0/core/Tracker/GoalManager.php#L700)_
 
 Triggered after successfully recording a non-ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
