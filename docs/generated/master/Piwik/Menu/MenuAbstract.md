@@ -15,7 +15,7 @@ Methods
 The abstract class defines the following methods:
 
 - [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../../Piwik/Singleton.md)
-- [`add()`](#add) &mdash; Adds a new entry to the menu.
+- [`addItem()`](#additem) &mdash; Adds a new entry to the menu.
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu.
 - [`rename()`](#rename) &mdash; Renames a single menu entry.
 - [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry.
@@ -33,9 +33,11 @@ has not been created, this method will create it.
 
 - It returns a [`Singleton`](../../Piwik/Singleton.md) value.
 
-<a name="add" id="add"></a>
-<a name="add" id="add"></a>
-### `add()`
+<a name="additem" id="additem"></a>
+<a name="addItem" id="addItem"></a>
+### `addItem()`
+
+Since Piwik 2.7.0
 
 Adds a new entry to the menu.
 
@@ -69,16 +71,6 @@ Adds a new entry to the menu.
       `$url` (`string`|`array`) &mdash;
 
       <div markdown="1" class="param-desc"> The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$displayedForCurrentUser` (`boolean`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether this menu entry should be displayed for the current user. If false, the entry will not be added.</div>
 
       <div style="clear:both;"/>
 

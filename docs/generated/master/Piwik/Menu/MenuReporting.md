@@ -26,19 +26,21 @@ Methods
 
 The class defines the following methods:
 
-- [`add()`](#add) &mdash; Adds a new entry to the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`addItem()`](#additem) &mdash; Adds a new entry to the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
-- [`addVisitorsItem()`](#addvisitorsitem) &mdash; See [add()](/api-reference/Piwik/Menu/MenuReporting#add).
-- [`addActionsItem()`](#addactionsitem) &mdash; See [add()](/api-reference/Piwik/Menu/MenuReporting#add).
-- [`addReferrersItem()`](#addreferrersitem) &mdash; See [add()](/api-reference/Piwik/Menu/MenuReporting#add).
+- [`addVisitorsItem()`](#addvisitorsitem) &mdash; See add().
+- [`addActionsItem()`](#addactionsitem) &mdash; See add().
+- [`addReferrersItem()`](#addreferrersitem) &mdash; See add().
 - [`isUrlFound()`](#isurlfound) &mdash; Returns if the URL was found in the menu.
 - [`getMenu()`](#getmenu) &mdash; Triggers the Menu.Reporting.addItems hook and returns the menu.
 
-<a name="add" id="add"></a>
-<a name="add" id="add"></a>
-### `add()`
+<a name="additem" id="additem"></a>
+<a name="addItem" id="addItem"></a>
+### `addItem()`
+
+Since Piwik 2.7.0
 
 Adds a new entry to the menu.
 
@@ -72,16 +74,6 @@ Adds a new entry to the menu.
       `$url` (`string`|`array`) &mdash;
 
       <div markdown="1" class="param-desc"> The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$displayedForCurrentUser` (`boolean`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether this menu entry should be displayed for the current user. If false, the entry will not be added.</div>
 
       <div style="clear:both;"/>
 
@@ -248,7 +240,7 @@ Edits a URL of an existing menu entry.
 
 Since Piwik 2.5.0
 
-See [add()](/api-reference/Piwik/Menu/MenuReporting#add).
+See add().
 
 Adds a new menu item to the visitors section of the reporting menu.
 
@@ -306,7 +298,7 @@ Adds a new menu item to the visitors section of the reporting menu.
 
 Since Piwik 2.5.0
 
-See [add()](/api-reference/Piwik/Menu/MenuReporting#add).
+See add().
 
 Adds a new menu item to the actions section of the reporting menu.
 
@@ -364,7 +356,7 @@ Adds a new menu item to the actions section of the reporting menu.
 
 Since Piwik 2.5.0
 
-See [add()](/api-reference/Piwik/Menu/MenuReporting#add).
+See add().
 
 Adds a new menu item to the referrers section of the reporting menu.
 

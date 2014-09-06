@@ -34,7 +34,7 @@ Index
 - [`addHour()`](Piwik/Date.md#addhour) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`addHourTo()`](Piwik/Date.md#addhourto) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`addPeriod()`](Piwik/Date.md#addperiod) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
-- [`add()`](Piwik/Menu/MenuAbstract.md#add) &mdash; _Method in class_ [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
+- [`addItem()`](Piwik/Menu/MenuAbstract.md#additem) &mdash; _Method in class_ [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
 - [`addDevelopmentItem()`](Piwik/Menu/MenuAdmin.md#adddevelopmentitem) &mdash; _Method in class_ [`MenuAdmin`](Piwik/Menu/MenuAdmin.md)
 - [`addDiagnosticItem()`](Piwik/Menu/MenuAdmin.md#adddiagnosticitem) &mdash; _Method in class_ [`MenuAdmin`](Piwik/Menu/MenuAdmin.md)
 - [`addPlatformItem()`](Piwik/Menu/MenuAdmin.md#addplatformitem) &mdash; _Method in class_ [`MenuAdmin`](Piwik/Menu/MenuAdmin.md)
@@ -891,6 +891,8 @@ Index
 - [`uninstall()`](Piwik/Plugin/Dimension/ActionDimension.md#uninstall) &mdash; _Method in class_ [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
 - [`uninstall()`](Piwik/Plugin/Dimension/ConversionDimension.md#uninstall) &mdash; _Method in class_ [`ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md)
 - [`uninstall()`](Piwik/Plugin/Dimension/VisitDimension.md#uninstall) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
+- [`urlForDefaultAction()`](Piwik/Plugin/Menu.md#urlfordefaultaction) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
+- [`urlForAction()`](Piwik/Plugin/Menu.md#urlforaction) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
 - [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md) &mdash; _Class in namespace_ `Piwik\Plugins\UsersManager` 
 - [`$uiControlType`](Piwik/Settings/Setting.md#$uicontroltype) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$uiControlAttributes`](Piwik/Settings/Setting.md#$uicontrolattributes) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)

@@ -26,16 +26,18 @@ Methods
 
 The class defines the following methods:
 
-- [`add()`](#add) &mdash; Adds a new entry to the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`addItem()`](#additem) &mdash; Adds a new entry to the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
-- [`addManageItem()`](#addmanageitem) &mdash; See [add()](/api-reference/Piwik/Menu/MenuUser#add).
-- [`addPlatformItem()`](#addplatformitem) &mdash; See [add()](/api-reference/Piwik/Menu/MenuUser#add).
+- [`addManageItem()`](#addmanageitem) &mdash; See add().
+- [`addPlatformItem()`](#addplatformitem) &mdash; See add().
 
-<a name="add" id="add"></a>
-<a name="add" id="add"></a>
-### `add()`
+<a name="additem" id="additem"></a>
+<a name="addItem" id="addItem"></a>
+### `addItem()`
+
+Since Piwik 2.7.0
 
 Adds a new entry to the menu.
 
@@ -69,16 +71,6 @@ Adds a new entry to the menu.
       `$url` (`string`|`array`) &mdash;
 
       <div markdown="1" class="param-desc"> The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$displayedForCurrentUser` (`boolean`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether this menu entry should be displayed for the current user. If false, the entry will not be added.</div>
 
       <div style="clear:both;"/>
 
@@ -245,7 +237,7 @@ Edits a URL of an existing menu entry.
 
 Since Piwik 2.5.0
 
-See [add()](/api-reference/Piwik/Menu/MenuUser#add).
+See add().
 
 Adds a new menu item to the manage section of the user menu.
 
@@ -303,7 +295,7 @@ Adds a new menu item to the manage section of the user menu.
 
 Since Piwik 2.5.0
 
-See [add()](/api-reference/Piwik/Menu/MenuUser#add).
+See add().
 
 Adds a new menu item to the platform section of the user menu.
 
