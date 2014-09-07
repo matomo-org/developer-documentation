@@ -211,13 +211,13 @@ Since Piwik 2.5.0
 Assigns the given variables to the template and renders it.
 
 Example:
-```
-public function myControllerAction () {
-   return $this->renderTemplate('index', array(
-       'answerToLife' => '42'
-   ));
-}
-    ```
+
+    public function myControllerAction () {
+       return $this->renderTemplate('index', array(
+           'answerToLife' => '42'
+       ));
+    }
+
 This will render the 'index.twig' file within the plugin templates folder and assign the view variable
 `answerToLife` to `42`.
 
