@@ -38,7 +38,9 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 
     * `ua` &mdash; An override value for the **User-Agent** HTTP header field. The user agent is used to detect the operating system and browser used.
     * `lang` &mdash; An override value for the **Accept-Language** HTTP header field. This value is used to detect the visitor's country if [GeoIP](http://piwik.org/faq/troubleshooting/#faq_65) is not enabled.
-    * `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). When specified, the Visitor ID will be "enforced". This means that if there is no recent visit with this visitor ID, a new one will be created. If a visit is found in the last 30 minutes with your specified Visitor Id, then the new action will be recorded to this existing visit.
+    * `uid` &mdash; defines the User ID for this request. User ID is any non empty unique string identifying the user (such as an email address or a username). To access this value, users must be logged-in in your system so you can fetch this user ID from your system, and pass it to Piwik. The User ID appears in the visitor log, the Visitor profile, and you can [Segment](http://developer.piwik.org/api-reference/segmentation) reports for one or several User ID (`userId` segment). When specified, the User ID will be "enforced". This means that if there is no recent visit with this User ID, a new one will be created. If a visit is found in the last 30 minutes with your specified User ID, then the new action will be recorded to this existing visit. 
+    * `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). We recommended to set the User ID via `uid` rather than use this `cid`.  
+    
 
 * Optional Action info (measure Page view, Outlink, Download, Site search)
 
