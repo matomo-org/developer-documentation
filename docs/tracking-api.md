@@ -38,6 +38,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 
     * `ua` &mdash; An override value for the **User-Agent** HTTP header field. The user agent is used to detect the operating system and browser used.
     * `lang` &mdash; An override value for the **Accept-Language** HTTP header field. This value is used to detect the visitor's country if [GeoIP](http://piwik.org/faq/troubleshooting/#faq_65) is not enabled.
+    * `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). When specified, the Visitor ID will be "enforced". This means that if there is no recent visit with this visitor ID, a new one will be created. If a visit is found in the last 30 minutes with your specified Visitor Id, then the new action will be recorded to this existing visit.
 
 * Optional Action info (measure Page view, Outlink, Download, Site search)
 
@@ -78,7 +79,6 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `cip` &mdash; Override value for the visitor IP (both IPv4 and IPv6 notations supported).
     * `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is: `2011-04-05 00:11:42` (remember to URL encode the value!). The datetime must be sent in UTC timezone.
       _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](http://piwik.org/faq/how-to/#faq_59)._
-    * `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). When specified, the Visitor ID will be "enforced". This means that if there is no recent visit with this visitor ID, a new one will be created. If a visit is found in the last 30 minutes with your specified Visitor Id, then the new action will be recorded to this existing visit.
     * `new_visit` &mdash; If set to 1, will force a new visit to be created for this action. This feature is also [available in Javascript](http://piwik.org/faq/how-to/#faq_187).
     * `country` &mdash; An override value for the country. Should be set to the two letter country code of the visitor (lowercase), eg **fr**, **de**, **us**.
     * `region` &mdash; An override value for the region. Should be set to the two letter region code as defined by [MaxMind's](http://www.maxmind.com?rId=piwik) GeoIP databases. See [here](http://dev.maxmind.com/static/maxmind-region-codes.csv) for a list of them for every country (the region codes are located in the second column, to the left of the region name and to the right of the country code).
