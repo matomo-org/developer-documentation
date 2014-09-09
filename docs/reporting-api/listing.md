@@ -131,6 +131,7 @@ Here is a list of metrics returned by the API and their definition.
 
 *   nb\_uniq\_visitors - Number of unique visitors
 *   nb\_visits - Number of Visits (30 min of inactivity considered a new visit)
+*   nb\_users - Number of unique active users (visitors with a known [User ID](http://piwik.org/docs/user-id/)). If you are not using User ID then this metric will be set to zero.
 *   nb\_actions - Number of actions (page views, outlinks and downloads)
 *   sum\_visit\_length - Total time spent, in seconds
 *   bounce\_count - Number of visits that bounced (viewed only one page)
