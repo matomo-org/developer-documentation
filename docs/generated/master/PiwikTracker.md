@@ -1601,12 +1601,6 @@ Forces Piwik to create a new visit for the tracking request.
 By default, Piwik will create a new visit if the last request by this user was more than 30 minutes ago.
 If you call setForceNewVisit() before calling doTrack*, then a new visit will be created for this request.
 
-Allowed only for Super User, must be used along with setTokenAuth()
-
-#### See Also
-
-- `setTokenAuth()`
-
 #### Signature
 
 - It does not return anything.
