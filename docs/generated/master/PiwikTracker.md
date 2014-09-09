@@ -32,8 +32,8 @@ The following code snippet is an advanced example of how to track a Page View us
      $t->setIp( "134.10.22.1" );
      $t->setForceVisitDateTime( '2011-04-05 23:55:02' );
 
-     // if you wanted to force to record the page view or conversion to a specific visitorId
-     // $t->setVisitorId( "33c31e01394bdc63" );
+     // if you wanted to force to record the page view or conversion to a specific User ID
+     // $t->setUserId( "username@example.org" );
      // Mandatory: set the URL being tracked
      $t->setUrl( $url = 'http://example.org/store/list-category-toys/' );
 
@@ -160,8 +160,11 @@ The class defines the following methods:
 - [`setForceVisitDateTime()`](#setforcevisitdatetime) &mdash; Overrides server date and time for the tracking requests.
 - [`setForceNewVisit()`](#setforcenewvisit) &mdash; Forces Piwik to create a new visit for the tracking request.
 - [`setIp()`](#setip) &mdash; Overrides IP address
-- [`setVisitorId()`](#setvisitorid) &mdash; Forces the requests to be recorded for the specified Visitor ID rather than using the heuristics based on IP and other attributes.
+- [`setUserId()`](#setuserid) &mdash; Force the action to be recorded for a specific User.
+- [`getUserIdHashed()`](#getuseridhashed) &mdash; Hash function used internally by Piwik to hash a User ID into the Visitor ID.
+- [`setVisitorId()`](#setvisitorid) &mdash; Forces the requests to be recorded for the specified Visitor ID.
 - [`getVisitorId()`](#getvisitorid) &mdash; If the user initiating the request has the Piwik first party cookie, this function will try and return the ID parsed from this first party cookie (found in $_COOKIE).
+- [`getUserId()`](#getuserid) &mdash; Returns the User ID string, which may have been set via:     $v->setUserId('username@example.org');
 - [`deleteCookies()`](#deletecookies) &mdash; Deletes all first party cookies from the client
 - [`getAttributionInfo()`](#getattributioninfo) &mdash; Returns the currently assigned Attribution Information stored in a first party cookie.
 - [`setTokenAuth()`](#settokenauth) &mdash; Some Tracking API functionnality requires express authentication, using either the Super User token_auth, or a user with 'admin' access to the website.
@@ -1638,22 +1641,73 @@ Allowed only for Super User, must be used along with setTokenAuth()
    </ul>
 - It does not return anything.
 
+<a name="setuserid" id="setuserid"></a>
+<a name="setUserId" id="setUserId"></a>
+### `setUserId()`
+
+Force the action to be recorded for a specific User.
+
+The User ID is a string representing a given user in your system.
+
+A User ID can be a username, UUID or an email address, or any number or string that uniquely identifies a user or client.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$userId` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> Any user ID string (eg. email address, ID, username). Must be non empty. Set to false to de-assign a user id previously set.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
+<a name="getuseridhashed" id="getuseridhashed"></a>
+<a name="getUserIdHashed" id="getUserIdHashed"></a>
+### `getUserIdHashed()`
+
+Hash function used internally by Piwik to hash a User ID into the Visitor ID.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$id` (`$id`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a `string` value.
+
 <a name="setvisitorid" id="setvisitorid"></a>
 <a name="setVisitorId" id="setVisitorId"></a>
 ### `setVisitorId()`
 
-Forces the requests to be recorded for the specified Visitor ID rather than using the heuristics based on IP and other attributes.
+Forces the requests to be recorded for the specified Visitor ID.
 
-Allowed only for Admin/Super User, must be used along with setTokenAuth().
+Note: it is recommended to use ->setUserId($userId); instead.
 
-You may set the Visitor ID based on a user attribute, for example the user email:
-     $v->setVisitorId( substr(md5( $userEmail ), 0, 16));
+Rather than letting Piwik attribute the user with a heuristic based on IP and other user fingeprinting attributes,
+force the action to be recorded for a particular visitor.
 
+If you use both setVisitorId and setUserId, setUserId will take precedence.
 If not set, the visitor ID will be fetched from the 1st party cookie, or will be set to a random UUID.
-
-#### See Also
-
-- `setTokenAuth()`
 
 #### Signature
 
@@ -1702,6 +1756,16 @@ This can be used if you wish to record more visits, actions or goals for this vi
   </li>
 </ul>
 
+<a name="getuserid" id="getuserid"></a>
+<a name="getUserId" id="getUserId"></a>
+### `getUserId()`
+
+Returns the User ID string, which may have been set via:     $v->setUserId('username@example.org');
+
+#### Signature
+
+- It returns a `bool` value.
+
 <a name="deletecookies" id="deletecookies"></a>
 <a name="deleteCookies" id="deleteCookies"></a>
 ### `deleteCookies()`
@@ -1749,7 +1813,6 @@ Some Tracking API functionnality requires express authentication, using either t
 The following features require access:
 - force the visitor IP
 - force the date & time of the tracking requests rather than track for the current datetime
-- force Piwik to track the requests to a specific VisitorId rather than use the standard visitor matching heuristic
 
 #### Signature
 
