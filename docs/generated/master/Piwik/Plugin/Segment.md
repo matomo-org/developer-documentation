@@ -54,6 +54,7 @@ The class defines the following methods:
 - [`setSqlFilterValue()`](#setsqlfiltervalue) &mdash; Similar to [setSqlFilter()](/api-reference/Piwik/Plugin/Segment#setsqlfilter) you can map a given segment value to another value.
 - [`setSqlSegment()`](#setsqlsegment) &mdash; Defines to which column in the MySQL database the segment belongs: 'mytablename.mycolumnname'.
 - [`setType()`](#settype) &mdash; Set (overwrite) the type of this segment which is usually either a 'dimension' or a 'metric'.
+- [`setSuggestedValuesCallback()`](#setsuggestedvaluescallback) &mdash; Set callback which will be executed when user will call for suggested values for segment.
 - [`setPermission()`](#setpermission) &mdash; You can restrict the access to this segment by passing a boolean `false`.
 
 <a name="init" id="init"></a>
@@ -281,6 +282,30 @@ Set (overwrite) the type of this segment which is usually either a 'dimension' o
       `$type` (`string`) &mdash;
 
       <div markdown="1" class="param-desc"> See constansts TYPE_*</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="setsuggestedvaluescallback" id="setsuggestedvaluescallback"></a>
+<a name="setSuggestedValuesCallback" id="setSuggestedValuesCallback"></a>
+### `setSuggestedValuesCallback()`
+
+Set callback which will be executed when user will call for suggested values for segment.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$suggestedValuesCallback` (`callable`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 

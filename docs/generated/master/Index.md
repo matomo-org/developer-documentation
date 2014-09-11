@@ -808,6 +808,7 @@ Index
 - [`setSqlFilterValue()`](Piwik/Plugin/Segment.md#setsqlfiltervalue) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
 - [`setSqlSegment()`](Piwik/Plugin/Segment.md#setsqlsegment) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
 - [`setType()`](Piwik/Plugin/Segment.md#settype) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
+- [`setSuggestedValuesCallback()`](Piwik/Plugin/Segment.md#setsuggestedvaluescallback) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
 - [`setPermission()`](Piwik/Plugin/Segment.md#setpermission) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
 - [`Settings`](Piwik/Plugin/Settings.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`save()`](Piwik/Plugin/Settings.md#save) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
