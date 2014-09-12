@@ -21,7 +21,7 @@ In Piwik, we believe in **tested** and **readable** source code. This is why we 
 ### PHP File Formatting, Naming Conventions, Coding Style
 
 *   The Piwik source code follows the [PSR 1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md#basic-coding-standard) and [PSR 2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md#coding-style-guide) coding standards. Starting in Piwik 2.0 we will also follow [PSR 0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md#mandatory).
-*   Several Piwik devs are using Phpstorm IDE. We have published our [customized PSR coding style xml file](https://github.com/piwik/piwik/tree/master/misc/others/phpstorm-codestyles) for Phpstorm if you wish to reuse it.
+*   Several Piwik devs are using Phpstorm IDE. We have published our [customized PSR coding style xml file](https://github.com/piwik/piwik/tree/master/misc/phpstorm-codestyles) for Phpstorm if you wish to reuse it.
 *   Please read PSR 1 &amp; 2 for more information.
 *   Files in Piwik's Git repository are stored using Linux EOL markers (LF).
 *   All source code files are encoded in UTF8.
