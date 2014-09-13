@@ -978,6 +978,7 @@ Index
 - [`__construct()`](Piwik/RankingQuery.md#__construct) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`__construct()`](Piwik/ScheduledTask.md#__construct) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
 - [`__construct()`](Piwik/Segment.md#__construct) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
+- [`__toString()`](Piwik/Segment.md#__tostring) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
 - [`__construct()`](Piwik/Settings/Setting.md#__construct) &mdash; _Method in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`__construct()`](Piwik/Settings/SystemSetting.md#__construct) &mdash; _Method in class_ [`SystemSetting`](Piwik/Settings/SystemSetting.md)
 - [`__construct()`](Piwik/Settings/UserSetting.md#__construct) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)

@@ -51,6 +51,7 @@ The class defines the following methods:
 - [`getString()`](#getstring) &mdash; Returns the segment condition.
 - [`getHash()`](#gethash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
 - [`getSelectQuery()`](#getselectquery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
+- [`__toString()`](#__tostring) &mdash; Returns the segment string.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -199,4 +200,14 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
     </div>
   </li>
 </ul>
+
+<a name="__tostring" id="__tostring"></a>
+<a name="__toString" id="__toString"></a>
+### `__toString()`
+
+Returns the segment string.
+
+#### Signature
+
+- It returns a `string` value.
 
