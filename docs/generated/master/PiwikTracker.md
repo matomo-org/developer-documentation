@@ -144,6 +144,8 @@ The class defines the following methods:
 - [`enableCookies()`](#enablecookies) &mdash; Enable Cookie Creation - this will cause a first party VisitorId cookie to be set when the VisitorId is set or reset
 - [`doTrackPageView()`](#dotrackpageview) &mdash; Tracks a page view
 - [`doTrackEvent()`](#dotrackevent) &mdash; Tracks an event
+- [`doTrackContentImpression()`](#dotrackcontentimpression) &mdash; Tracks a content impression
+- [`doTrackContentInteraction()`](#dotrackcontentinteraction) &mdash; Tracks a content interaction.
 - [`doTrackSiteSearch()`](#dotracksitesearch) &mdash; Tracks an internal Site Search query, and optionally tracks the Search Category, and Search results Count.
 - [`doTrackGoal()`](#dotrackgoal) &mdash; Records a Goal conversion
 - [`doTrackAction()`](#dotrackaction) &mdash; Tracks a download or outlink
@@ -154,6 +156,8 @@ The class defines the following methods:
 - [`setEcommerceView()`](#setecommerceview) &mdash; Sets the current page view as an item (product) page view, or an Ecommerce Category page view.
 - [`getUrlTrackPageView()`](#geturltrackpageview) &mdash; Builds URL to track a page view.
 - [`getUrlTrackEvent()`](#geturltrackevent) &mdash; Builds URL to track a custom event.
+- [`getUrlTrackContentImpression()`](#geturltrackcontentimpression) &mdash; Builds URL to track a content impression.
+- [`getUrlTrackContentInteraction()`](#geturltrackcontentinteraction) &mdash; Builds URL to track a content impression.
 - [`getUrlTrackSiteSearch()`](#geturltracksitesearch) &mdash; Builds URL to track a site search.
 - [`getUrlTrackGoal()`](#geturltrackgoal) &mdash; Builds URL to track a goal with idGoal and revenue.
 - [`getUrlTrackAction()`](#geturltrackaction) &mdash; Builds URL to track a new action.
@@ -869,6 +873,129 @@ Tracks an event
   </li>
 </ul>
 
+<a name="dotrackcontentimpression" id="dotrackcontentimpression"></a>
+<a name="doTrackContentImpression" id="doTrackContentImpression"></a>
+### `doTrackContentImpression()`
+
+Tracks a content impression
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the content. For instance 'Ad Foo Bar'</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentPiece` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The actual content. For instance the path to an image, video, audio, any text</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentTarget` (`string`|`false`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) The target of the content. For instance the URL of a landing page.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">Response string or true if using bulk requests.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="dotrackcontentinteraction" id="dotrackcontentinteraction"></a>
+<a name="doTrackContentInteraction" id="doTrackContentInteraction"></a>
+### `doTrackContentInteraction()`
+
+Tracks a content interaction.
+
+Make sure you have tracked a content impression using the same content name and
+content piece, otherwise it will not count. To do so you should call the method doTrackContentImpression();
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$interaction` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the interaction with the content. For instance a 'click'</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the content. For instance 'Ad Foo Bar'</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentPiece` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The actual content. For instance the path to an image, video, audio, any text</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentTarget` (`string`|`false`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) The target the content leading to when an interaction occurs. For instance the URL of a landing page.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">Response string or true if using bulk requests.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
 <a name="dotracksitesearch" id="dotracksitesearch"></a>
 <a name="doTrackSiteSearch" id="doTrackSiteSearch"></a>
 ### `doTrackSiteSearch()`
@@ -1412,6 +1539,138 @@ Builds URL to track a custom event.
     </div>
   </li>
 </ul>
+
+<a name="geturltrackcontentimpression" id="geturltrackcontentimpression"></a>
+<a name="getUrlTrackContentImpression" id="getUrlTrackContentImpression"></a>
+### `getUrlTrackContentImpression()`
+
+Builds URL to track a content impression.
+
+#### See Also
+
+- `doTrackContentImpression()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the content. For instance 'Ad Foo Bar'</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentPiece` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The actual content. For instance the path to an image, video, audio, any text</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentTarget` (`string`|`false`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) The target of the content. For instance the URL of a landing page.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">URL to piwik.php with all parameters set to track the pageview</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; In case $contentName is empty
+
+<a name="geturltrackcontentinteraction" id="geturltrackcontentinteraction"></a>
+<a name="getUrlTrackContentInteraction" id="getUrlTrackContentInteraction"></a>
+### `getUrlTrackContentInteraction()`
+
+Builds URL to track a content impression.
+
+#### See Also
+
+- `doTrackContentInteraction()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$interaction` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the interaction with the content. For instance a 'click'</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentName` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The name of the content. For instance 'Ad Foo Bar'</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentPiece` (`string`) &mdash;
+
+      <div markdown="1" class="param-desc"> The actual content. For instance the path to an image, video, audio, any text</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$contentTarget` (`string`|`false`) &mdash;
+
+      <div markdown="1" class="param-desc"> (optional) The target the content leading to when an interaction occurs. For instance the URL of a landing page.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">URL to piwik.php with all parameters set to track the pageview</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; In case $interaction or $contentName is empty
 
 <a name="geturltracksitesearch" id="geturltracksitesearch"></a>
 <a name="getUrlTrackSiteSearch" id="getUrlTrackSiteSearch"></a>
