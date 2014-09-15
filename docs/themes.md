@@ -35,17 +35,17 @@ It is better to prefix your sub stylesheet file name with an '_'.
 ## Graphs
 
 You can style some graph elements.
-You should see [plugins/CoreHome/stylesheets/jqplotColors.less](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/stylesheets/jqplotColors.less) for more informations.
+You should see [plugins/CoreHome/stylesheets/jqplotColors.less](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/stylesheets/jqplotColors.less) for more information.
 
 ## Sparklines
 
 You can style some sparklines elements.
-You should see "[plugins/CoreHome/stylesheets/sparklineColors.less](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/stylesheets/sparklineColors.less)" for more informations.
+You should see "[plugins/CoreHome/stylesheets/sparklineColors.less](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/stylesheets/sparklineColors.less)" for more information.
 
 ## Transitions
 
 You can style some transitions elements.
-You should see "[plugins/Transition/stylesheets/_transitionColors.less](https://github.com/piwik/piwik/blob/master/plugins/Transitions/stylesheets/_transitionColors.less)" for more informations.
+You should see "[plugins/Transition/stylesheets/_transitionColors.less](https://github.com/piwik/piwik/blob/master/plugins/Transitions/stylesheets/_transitionColors.less)" for more information.
 
 ## Testing
 ## Limitations

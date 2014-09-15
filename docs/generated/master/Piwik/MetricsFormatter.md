@@ -13,7 +13,7 @@ The class defines the following methods:
 - [`getPrettyNumber()`](#getprettynumber) &mdash; Returns a prettified string representation of a number.
 - [`getPrettyTimeFromSeconds()`](#getprettytimefromseconds) &mdash; Returns a prettified time value (in seconds).
 - [`getPrettySizeFromBytes()`](#getprettysizefrombytes) &mdash; Returns a prettified memory size value.
-- [`getPrettyMoney()`](#getprettymoney) &mdash; Returns a pretty formated monetary value using the currency associated with a site.
+- [`getPrettyMoney()`](#getprettymoney) &mdash; Returns a pretty formatted monetary value using the currency associated with a site.
 - [`getPrettyValue()`](#getprettyvalue) &mdash; Prettifies a metric value based on the column name.
 - [`getCurrencySymbol()`](#getcurrencysymbol) &mdash; Returns the currency symbol for a site.
 - [`getCurrencyList()`](#getcurrencylist) &mdash; Returns the list of all known currency symbols.
@@ -159,7 +159,7 @@ Returns a prettified memory size value.
 <a name="getPrettyMoney" id="getPrettyMoney"></a>
 ### `getPrettyMoney()`
 
-Returns a pretty formated monetary value using the currency associated with a site.
+Returns a pretty formatted monetary value using the currency associated with a site.
 
 #### Signature
 
