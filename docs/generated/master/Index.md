@@ -211,6 +211,7 @@ Index
 ## F
 
 - [`factory()`](Piwik/Archive.md#factory) &mdash; _Method in class_ [`Archive`](Piwik/Archive.md)
+- [`factory()`](Piwik/Columns/Dimension.md#factory) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`forceSave()`](Piwik/Config.md#forcesave) &mdash; _Method in class_ [`Config`](Piwik/Config.md)
 - [`filter()`](Piwik/DataTable.md#filter) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`fromSerializedArray()`](Piwik/DataTable.md#fromserializedarray) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -283,6 +284,7 @@ Index
 - [`getSite()`](Piwik/ArchiveProcessor/Parameters.md#getsite) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSegment()`](Piwik/ArchiveProcessor/Parameters.md#getsegment) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getName()`](Piwik/Columns/Dimension.md#getname) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
+- [`getId()`](Piwik/Columns/Dimension.md#getid) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](Piwik/Columns/Dimension.md#getalldimensions) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getRequestVar()`](Piwik/Common.md#getrequestvar) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguagesList()`](Piwik/Common.md#getlanguageslist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
