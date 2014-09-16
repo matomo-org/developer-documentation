@@ -232,7 +232,7 @@ rows `log_action.type = TYPE_DOWNLOAD`.
       <div markdown="1" class="parameter">
       `$partitionColumn` (`Piwik\$partitionColumn`) &mdash;
 
-      <div markdown="1" class="param-desc"> string The column name to partition by.</div>
+      <div markdown="1" class="param-desc"> string The column name to partion by.</div>
 
       <div style="clear:both;"/>
 

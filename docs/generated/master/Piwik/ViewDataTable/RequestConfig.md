@@ -76,7 +76,7 @@ Properties
 This class defines the following properties:
 
 - [`$clientSideParameters`](#$clientsideparameters) &mdash; The list of request parameters that are 'Client Side Parameters'.
-- [`$overridableProperties`](#$overridableproperties) &mdash; The list of ViewDataTable properties that can be overridden by query parameters.
+- [`$overridableProperties`](#$overridableproperties) &mdash; The list of ViewDataTable properties that can be overriden by query parameters.
 - [`$filter_sort_column`](#$filter_sort_column) &mdash; Controls which column to sort the DataTable by before truncating and displaying.
 - [`$filter_sort_order`](#$filter_sort_order) &mdash; Controls the sort order.
 - [`$filter_limit`](#$filter_limit) &mdash; The number of items to truncate the data set to before rendering the DataTable view.
@@ -108,7 +108,7 @@ The list of request parameters that are 'Client Side Parameters'.
 <a name="overridableProperties" id="overridableProperties"></a>
 ### `$overridableProperties`
 
-The list of ViewDataTable properties that can be overridden by query parameters.
+The list of ViewDataTable properties that can be overriden by query parameters.
 
 #### Signature
 

@@ -363,7 +363,7 @@ a new template.
 
 Returns the array of property names whose values are passed to the UIControl JavaScript class.
 
-Should be overridden by descendants.
+Should be overriden by descendants.
 
 #### Signature
 
@@ -378,7 +378,7 @@ Returns an array of property names whose values are passed to the UIControl Java
 These values differ from those in $clientSideProperties in that they are meant to passed as
 request parameters when the JavaScript code makes an AJAX request.
 
-Should be overridden by descendants.
+Should be overriden by descendants.
 
 #### Signature
 
