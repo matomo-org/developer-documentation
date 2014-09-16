@@ -73,7 +73,7 @@ Properties
 This class defines the following properties:
 
 - [`$clientSideProperties`](#$clientsideproperties) &mdash; The list of ViewDataTable properties that are 'Client Side Properties'.
-- [`$overridableProperties`](#$overridableproperties) &mdash; The list of ViewDataTable properties that can be overriden by query parameters.
+- [`$overridableProperties`](#$overridableproperties) &mdash; The list of ViewDataTable properties that can be overridden by query parameters.
 - [`$footer_icons`](#$footer_icons) &mdash; Controls what footer icons are displayed on the bottom left of the DataTable view.
 - [`$show_visualization_only`](#$show_visualization_only) &mdash; Controls whether the buttons and UI controls around the visualization or shown or if just the visualization alone is shown.
 - [`$show_goals`](#$show_goals) &mdash; Controls whether the goals footer icon is shown.
@@ -136,7 +136,7 @@ The list of ViewDataTable properties that are 'Client Side Properties'.
 <a name="overridableProperties" id="overridableProperties"></a>
 ### `$overridableProperties`
 
-The list of ViewDataTable properties that can be overriden by query parameters.
+The list of ViewDataTable properties that can be overridden by query parameters.
 
 #### Signature
 

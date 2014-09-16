@@ -176,7 +176,7 @@ Here are some other coding guidelines that will help make your code more secure:
 
 * **Make sure your code doesn't rely on `register_globals` set to `On`. Note: PHP5 sets `register_globals` to `Off` by default.**
 
-* **If your plugin has admin functionality (functionality only an adminstrator or the super user can use) then your plugin's Controller must extend [Piwik\Plugin\ControllerAdmin](/api-reference/Piwik/Plugin/ControllerAdmin).**
+* **If your plugin has admin functionality (functionality only an administrator or the super user can use) then your plugin's Controller must extend [Piwik\Plugin\ControllerAdmin](/api-reference/Piwik/Plugin/ControllerAdmin).**
 
 * Some servers will disable PHP functions for (undisclosed) security reasons. Replacement functions can sometimes be found in **libs/upgradephp/upgrade.php**, including `_parse_ini_file()`, `_glob()`, `_fnmatch()`, and `_readfile()`. The functions `safe_serialize()` and `safe_unserialize()` are like the built-in functions, but won't serialize & unserialize objects. <!-- TODO: is this useful at all? for security or for something else? -->
 

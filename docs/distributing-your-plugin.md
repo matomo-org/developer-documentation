@@ -38,7 +38,7 @@ It's also a great way for you to:
 * see how many people use your plugin
 * allow people to donate money
 * get exposure for your skills and work
-* get feedback in the form of comments and ratings _(comming soon)_
+* get feedback in the form of comments and ratings _(coming soon)_
 
 ## Adding your plugin to the marketplace
 
