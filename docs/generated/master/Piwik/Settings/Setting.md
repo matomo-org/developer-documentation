@@ -211,7 +211,7 @@ The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getName()`](#getname) &mdash; Returns the setting's persisted name, eg, `'refreshInterval'`.
-- [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
+- [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting is writable for the current user, `false` if otherwise.
 - [`isReadableByCurrentUser()`](#isreadablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 - [`setStorage()`](#setstorage) &mdash; Sets the object used to persist settings.
 - [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value.
@@ -266,7 +266,10 @@ Returns the setting's persisted name, eg, `'refreshInterval'`.
 <a name="isWritableByCurrentUser" id="isWritableByCurrentUser"></a>
 ### `isWritableByCurrentUser()`
 
-Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
+Returns `true` if this setting is writable for the current user, `false` if otherwise.
+
+In case it returns
+writable for the current user it will be visible in the Plugin settings UI.
 
 #### Signature
 
