@@ -176,7 +176,7 @@ If no content name is set, it will default to the content piece in case there is
 
 If content piece contains a domain that is the same as the current website's domain we will remove it
 
-<pre><code>&lt;a href="http://www.example.com" data-track-content>Lorem ipsum dolor sit amet...&lt;/p>&lt;/a>
+<pre><code>&lt;a href="http://www.example.com" data-track-content>Lorem ipsum dolor sit amet...&lt;/a>
 // content name   = Unknown
 // content piece  = Unknown
 // content target = http://www.example.com</code></pre>
@@ -217,7 +217,6 @@ As no specific target element is set, we will read the `href` attribute of the c
 No `href` attribute is used as the link is executed via JavaScript. Therefore a `data-content-target` attribute with a value has to be specified.
 
 <pre><code>&lt;div data-track-content>&lt;input type="submit"/>&lt;/div>
-
 // content name   = Unknown
 // content piece  = Unknown
 // content target = ""</code></pre>
@@ -225,7 +224,6 @@ No `href` attribute is used as the link is executed via JavaScript. Therefore a 
 As there is neither a `data-content-target` attribute nor a `href` attribute we cannot detect the target.
 
 <pre><code>&lt;div data-track-content>&lt;input type="submit" data-content-target="http://www.example.com"/>&lt;/div>
-
 // content name   = Unknown
 // content piece  = Unknown
 // content target = "http://www.example.com"</code></pre>
