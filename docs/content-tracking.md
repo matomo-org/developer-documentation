@@ -31,6 +31,7 @@ For more details about this have a look at the JavaScript Tracker API reference:
 
 
 Example for tracking all content impressions
+
 ```
 var _paq = _paq || [];
 _paq.push(['setTrackerUrl', 'piwik.php']);
@@ -41,6 +42,7 @@ _paq.push(['trackAllContentImpressions']);
 ```
 
 Example for tracking only visible content impressions
+
 ```
 [...]
 _paq.push(['trackPageView']);
@@ -58,6 +60,7 @@ HTML attributes are the recommended way to go as they allow you to set specific 
 If you let us automatically detect those values it can influence your tracking over time. For instance if you provide the same page in different languages we might end up in many different content blocks that actually all represent the same block. Also if you add a `title` attribute to an element after a while the detected content name could change. Analyzing the evolution of a content block will no longer work in this case. Therefore it is recommended to use the HTML attributes to tag your content and to specify values that do not change over time.
 
 The following attributes and their corresponding CSS classes are used which are explained in detail in the next chapters:
+
 * `[data-track-content] or .piwikTrackContent` == Defines a content block
 * `[data-content-name=""]` == Defines the name of the content block
 * `[data-content-piece=""] or .piwikContentPiece` == Defines the content piece
@@ -75,7 +78,7 @@ Here we are defining a content block having the name "My Product Name". The used
 You can use either the attribute `data-track-content` or the CSS class `piwikTrackContent`. The attribute does not require any value. If you do not define a content block no content will be tracked.
 
 Examples:
-```
+<pre><code>
 <img src="img-en.jpg" data-track-content/>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
@@ -85,7 +88,7 @@ Examples:
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
 // content target = ""
-```
+</code></pre>
 
 As you can see in these examples we do detect the content piece and name automatically based on the `src` attribute of the image. The content target cannot be detected since an image does not define a `href` attribute. We would track an interaction automatically as soon as a visitor clicks on the image.
 
