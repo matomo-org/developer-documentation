@@ -1,50 +1,51 @@
-# Technical concept for implementing Content Tracking [#4996](#4996)
+# Extended guide to Content Tracking
 
-See https://github.com/piwik/piwik/issues/4996 for explanation of the actual feature.
+We built a way in Piwik to determine the performance of the pieces of content on any page of the website or app. You would use content tracking for instance when displaying ads on a website. An ad can be an image or a banner. Different ads might be displayed on the same page to different visitors or there could be even no ads sometimes. On the other side the same ad can be displayed on different pages. Use content tracking if you want to know how often a specific ad was displayed on any page and how often it was clicked. 
 
-## Naming
+This feature is not only limited to ads or images. You can basically use it for any kind of content. A shorter user guide is coming.
+
+## Naming 
 | Name  | Purpose |
 | ------------- | ------------- |
-| Content block | Is a container which consists of a content name, piece, target and an interaction. |
+| Content block | Is a container which consists of a content name, piec and a target. |
 | Content name | A name that represents a content block. The name will be visible in reports. One name can belong to differnt content pieces. |
 | Content piece | This is the actual content that was displayed, eg a path to a video/image/audio file, a text, ... |
-| Content target | For instance the URL of a landing page where the user was led to after interacting with the content block. |
-| Content impression | Any content block that was displayed on a page, such as a banner or an ad. Optionally you can tell Piwik to track only impressions for content blocks that were actually visible. |
-| Content interaction | Any content block that was interacted with by a user. This means usually a 'click' on a banner or ad happened, but it can be any interaction. |
+| Content target | For instance the URL of a landing page where the user was led to after interacting with the content block. In a single page website it could be also the name of an anchor. In a mobile app it could be the name of the screen you are going to open. |
+| Content impression | Any content block that was displayed on a page, such as a banner or an ad. Optionally you can tell Piwik to track only impressions for visible content blocks. |
+| Content interaction | An interaction is happening when a visitor is interacting with a content block. This means usually a 'click' on a banner or ad, but it can be any interaction. |
 | Content interaction rate | The ratio of content impressions to interactions. For instance an ad was displayed a 100 times and there were 2 interactions results in a rate of 2%. |
 
 ## Tracking the content completely programmatically
 
-You can track content impressions and interactions with the content completely programmatically. To do so have a look at the methods `trackContentImpression` and `trackContentInteraction` in the JavaScript Tracker API reference.
+You can track content impressions and interactions completely programmatically. To do so have a look at the methods [`trackContentImpression` and `trackContentInteraction`](http://developer.piwik.org/api-reference/tracking-javascript#tracking-content-impressions-and-interactions-manually) in the JavaScript Tracker API reference.
 
-Track content for instance this way if you cannot easily change the markup of your site or if you want to control it when an impression and when an interaction is triggered. 
+Track content this way if you cannot easily change the markup of your site or if you want to completely control any impression and interaction tracking to match your process.
 
-## Tracking the content completely declarative
+## Tracking the content declarative
 
 ### Initializing the tracker
 
-To make things work we need to inizialize the tracker first. Here you have to decide whether you want to track all content blocks within a side or only the ones that are actually visible.
+To make things work we need to inizialize the tracker first. Here you have to decide whether you want to track all content blocks within a page or only the ones that are actually visible.
 
-For more details about this have a look at the JavaScript Tracker API reference: `trackAllContentImpressions` and `trackVisibleContentImpressions`
+For more details about this have a look at the JavaScript Tracker API reference: [`trackAllContentImpressions`](http://developer.piwik.org/api-reference/tracking-javascript#track-all-content-impressions-within-a-page) and [`trackVisibleContentImpressions`](http://developer.piwik.org/api-reference/tracking-javascript#track-only-visible-content-impressions-within-a-page)
 
-Example to track only visible content impressions
+
+Example for tracking all content impressions
 ```
 var _paq = _paq || [];
 _paq.push(['setTrackerUrl', 'piwik.php']);
 _paq.push(['setSiteId', 1]);
-_paq.push(['trackPageView']);
-_paq.push(['trackVisibleContentImpressions']);
 _paq.push(['enableLinkTracking']);
-```
-
-Example to track all content impressions
-```
-var _paq = _paq || [];
-_paq.push(['setTrackerUrl', 'piwik.php']);
-_paq.push(['setSiteId', 1]);
 _paq.push(['trackPageView']);
 _paq.push(['trackAllContentImpressions']);
-_paq.push(['enableLinkTracking']);
+```
+
+Example for tracking only visible content impressions
+```
+[...]
+_paq.push(['trackPageView']);
+_paq.push(['trackVisibleContentImpressions']);
+[...]
 ```
 
 ### Tagging content
