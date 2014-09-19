@@ -16,6 +16,8 @@ $('.documentation img').each(function (index, img) {
     }
 });
 
+$('.documentation table').addClass('table table-striped table-bordered');
+
 var quickSearchData = null;
 $('#quick-search-typeahead>input').typeahead({
     source: function (query, process) {
