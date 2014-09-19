@@ -91,6 +91,14 @@ class Guide {
         );
 
         $menu[] = array(
+            'title'       => 'Content tracking',
+            'file'        => 'content-tracking',
+            'url'         => static::getUrl('content-tracking'),
+            'description' => 'Learn how to track content in Piwik.',
+            'category'    => 'In-depth guides'
+        );
+
+        $menu[] = array(
             'title'       => 'Piwik\'s Reporting API',
             'file'        => 'piwiks-web-api',
             'url'         => static::getUrl('piwiks-reporting-api'),
