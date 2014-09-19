@@ -285,6 +285,84 @@ _paq.push(['trackPageView']);
 
 [...]</code></pre>
 
+## Tracking content impressions
+
+There are several ways to track content impressions and interactions manually, semi-automatically and automatically. Please be aware that content impressions will be tracked using bulk tracking which will always send a `POST` request, even if `GET` is configured which is the default.
+
+### Track all content impressions within a page
+
+You can use the method `trackAllContentImpressions()` to scan the entire DOM for content blocks. For each content block we will track a content impression immediately. If you only want to track visible content impression have a look at `trackVisibleContentImpressions()`.
+
+<pre><code>[...]
+
+_paq.push(['trackPageView']);
+_paq.push(['trackAllContentImpressions']);
+
+[...]</code></pre>
+
+We won't send an impression of the same content block twice if you call this method multiple times unless `trackPageView()` is called meanwhile. This is useful for single page applications. 
+
+### Track only visible content impressions within a page.
+Enable to track only visible content impressions via `trackVisibleContentImpressions(checkOnSroll, timeIntervalInMs)`. With visible we mean the content block has been in the view port and is not hidden (opacity, visibility, display, ...).
+
+* Optionally you can tell us to not rescan the DOM after each scroll by passing `checkOnSroll=false`. Otherwise we will check whether the previously hidden content blocks became visible meanwhile after a scroll and if so track the impression.
+  * Limitation: If a content block is placed within a scrollable element (`overflow: scroll`), we do currently not detect when such an element becomes visible.
+* Optionally you can tell us to rescan the entire DOM for new content impressions every X milliseconds by passing `timeIntervalInMs=500`. By default we will rescan the DOM every 750ms. To disable it pass `timeIntervalInMs=0`.
+  * Rescanning the entire DOM and detecting the visible state of content blocks can take a while depending on the browser, hardware and amount of content. In case your frames per second goes down you might want to increase the interval or disable it completely. In case you disable it you can still rescan the DOM manually at any time by calling this method again or `trackContentImpressionsWithinNode()`.
+  
+Both `checkOnScroll` and `timeIntervalInMs` cannot be changed after this method was called the first time.
+
+<pre><code>[...]
+
+_paq.push(['trackPageView']);
+_paq.push(['trackVisibleContentImpressions', true, 750]);
+
+[...]</code></pre>
+
+
+### Track content impressions only for a part of the page
+
+Use the method `trackContentImpressionsWithinNode(domNode, contentTarget)` if you are adding elements to your DOM after we have tracked the initial impressions. Calling this method will make sure an impression will be tracked for all content blocks contained within this node.
+
+Example
+<pre><code>var div = $('&lt;div>...&lt;div data-track-content>...&lt;/div>...&lt;div data-track-content>...&lt;/div>&lt;/div>');
+$('#id').append(div);
+
+_paq.push(['trackContentImpressionsWithinNode', div[0]]);</code></pre>
+
+We would detect two new content impresssions in this example. In case you have enabled to track only visible content blocks we will respect this.
+
+### Track an interaction semi-automatic
+
+Interactions with content blocks are usually tracked automatically as soon as a visitor is clicking on it. Sometimes you might want to trigger an interaction manually for instance in case you want to trigger an interaction based on a form submit or a double click. To do so call the method `trackContentInteractionNode(domNode, contentInteraction)`.
+
+Example
+```
+formElement.addEventListener('submit', function () {
+    _paq.push(['trackContentInteractionNode', this, 'submittedForm']);
+});
+```
+
+* The passed `domNode` can be any node within a content block or the content block element itself. Nothing will be tracked in case there is no content block found.
+* Optionally you can set the name of the content interaction, for instance `click` or `submit`. If none is provided, the value `Unknown` will be used. 
+* You should disable the automatic interaction tracking of that content block by setting the CSS class `piwikContentIgnoreInteraction` or the attribute `data-content-ignoreinteraction`. Otherwise an interaction might be tracked on top of it as soon as a visitor performs a click.
+
+We call this kind of tracking semi-automatic as you triggered the interaction manually but the content name, piece and target is detected automatically. Detecting the content name and piece automatically makes sure we can map the interaction with a previously tracked impression.
+
+### Tracking content impressions and interactions manually
+You should use the methods `trackContentImpression(contentName, contentPiece, contentTarget)` and `trackContentInteraction(contentName, contentPiece, contentInteraction)` only in conjunction together. It is not recommended to use `trackContentInteraction()` after an impression was tracked automatically as we can map an interaction to an impression only if you do set the same content name and piece that was used to track the related impression.
+
+Example
+```
+_paq.push(['trackContentImpression', 'Content Name', 'Content Piece', 'http://www.example.com']);
+
+div.addEventListener('click', function () {
+    _paq.push(['trackContentInteraction', 'Content Name', 'Content Piece', 'tabActivated']);
+});
+```
+
+Be aware that each call to those methods will send one request to your Piwik tracker instance. Doing this too many times can cause performance problems.
+
 ## Cookie Configuration for Domains and Subdomains
 
 Piwik uses first-party cookies to keep track some information (number of visits, original referrer, and unique visitor ID). First[party cookies ensure higher user privacy (since cookies are not sent to a third-party server), and are therefore accepted in most browsers by default.
@@ -547,6 +625,12 @@ _Using the Tracker Object_
 *   `trackSiteSearch(keyword, [category], [resultsCount])` - Log an internal site search for a specific keyword, in an optional category, specifying the optional count of search results in the page.
 *   `trackGoal( idGoal, [customRevenue]);` - Manually log a conversion for the goal idGoal, passing in the custom revenue customRevenue if specified
 *   `trackLink( url, linkType )` - Manually log a click from your own code. url is the full URL which is to be tracked as a click. linkType can either be 'link' for an outlink or 'download' for a download.
+*   `trackAllContentImpressions()` - Scans the entire DOM for all content blocks and tracks all impressions once the DOM ready event has been triggered.
+*   `trackVisibleContentImpressions ( checkOnSroll, timeIntervalInMs )` - Scans the entire DOM for all content blocks as soon as the page is loaded. It tracks an impression only if a content block is actually visible.
+*   `trackContentImpressionsWithinNode( domNode )` - Scans the given DOM node and its children for content blocks and tracks an impression for them if no impression was already tracked for it.
+*   `trackContentInteractionNode( domNode, contentInteraction )` - Tracks an interaction with the given DOM node / content block.
+*   `trackContentImpression( contentName, contentPiece, contentTarget )` - Tracks a content impression using the specified values. 
+*   `trackContentInteraction( contentInteraction, contentName, contentPiece, contentTarget )` - Tracks a content interaction using the specified values.
 
 _Configuration of the Tracker Object_
 
