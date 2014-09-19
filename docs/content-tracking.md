@@ -108,7 +108,7 @@ As you can see a specific value for the content piece is defined which can be us
 
 
 <pre><code>&lt;a href="http://www.example.com" data-track-content>&lt;img src="img-en.jpg" data-content-piece/>&lt;/a>
-or
+// or
 &lt;a href="http://www.example.com" data-track-content>&lt;img src="img-en.jpg" class="piwikContentPiece"/>&lt;/a>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
@@ -117,7 +117,7 @@ or
 In these examples we were able to detect the name and the piece of the content automatically based on the `src` attribute. We will automatically build a fully qualified URL for the image.
 
 <pre><code>&lt;a href="http://www.example.com" data-track-content>&lt;p data-content-piece>Lorem ipsum dolor sit amet&lt;/p>&lt;/a>
-or
+// or
 &lt;a href="http://www.example.com" data-track-content>&lt;p class="piwikContentPiece">Lorem ipsum dolor sit amet&lt;/p>&lt;/a>
 // content name   = Unknown
 // content piece  = Unknown
@@ -137,7 +137,7 @@ Better:
 // content piece  = My content
 // content target = http://www.example.com</code></pre>
 
-### How do we detect the content name?
+#### How do we detect the content name?
 
 The content name represents a content block which will help you in the Piwik UI to easily identify a specific block. A content name groups different content pieces together. For instance while a content name could be "My Product 1" there could be many different content pieces to exactly know which content was displayed and interacted with. For example "Buy now", "Click here to buy", "/image.png".
 
@@ -231,7 +231,7 @@ As there is neither a `data-content-target` attribute nor a `href` attribute we 
 As the `data-content-target` attribute is set with a value, we can detect the content target.
 
 <pre><code>&lt;div data-track-content>&lt;a href="http://www.example.com" data-content-target>Click me&lt;/a>&lt;/div>
-or
+// or
 &lt;div data-track-content>&lt;a href="http://www.example.com" class="piwikContentTarget">Click me&lt;/a>&lt;/div>
 // content name   = Unknown
 // content piece  = Unknown
@@ -275,7 +275,7 @@ Examples
 
 In all examples we would track the impression automatically but not the interaction.
 
-#### Putting it all together
+### Putting it all together
 
 <pre><code>&lt;a href="http://ad.example.com" data-track-content>
     &lt;img src="http://www.example.com/path/xyz.jpg" data-content-piece />
