@@ -32,23 +32,19 @@ For more details about this have a look at the JavaScript Tracker API reference:
 
 Example for tracking all content impressions
 
-```
-var _paq = _paq || [];
+<pre><code>var _paq = _paq || [];
 _paq.push(['setTrackerUrl', 'piwik.php']);
 _paq.push(['setSiteId', 1]);
 _paq.push(['enableLinkTracking']);
 _paq.push(['trackPageView']);
-_paq.push(['trackAllContentImpressions']);
-```
+_paq.push(['trackAllContentImpressions']);</code></pre>
 
 Example for tracking only visible content impressions
 
-```
-[...]
+<pre><code>[...]
 _paq.push(['trackPageView']);
 _paq.push(['trackVisibleContentImpressions']);
-[...]
-```
+[...]</code></pre>
 
 ### Tagging content
 
@@ -71,9 +67,7 @@ The following attributes and their corresponding CSS classes are used which are 
 
 Good example:
 
-```
-&lt;a href="http://www.example.org" data-track-content data-content-name="My Product Name" data-content-piece="Buy now">translate('Buy it now')&lt;/a>
-```
+<pre><code>&lt;a href="http://www.example.org" data-track-content data-content-name="My Product Name" data-content-piece="Buy now">translate('Buy it now')&lt;/a></code></pre>
 
 Here we are defining a content block having the name "My Product Name". The used content piece will be always "Buy now" even if you use a translated version for different visitors based on their language. This can make it easier to analyze the data. The content target would be detected based on the `href` attribute which is usually ok but you can set a specified value using the `data-content-target` attribute.
 
@@ -105,35 +99,29 @@ As you can see in these examples we do detect the content piece and name automat
 
 Examples:
 
-```
-&lt;a href="http://www.example.com" data-track-content>&lt;img src="img-en.jpg" data-content-piece="img.jpg"/>&lt;/a>
+<pre><code>&lt;a href="http://www.example.com" data-track-content>&lt;img src="img-en.jpg" data-content-piece="img.jpg"/>&lt;/a>
 // content name   = img.jpg
 // content piece  = img.jpg
-// content target = http://www.example.com
-```
+// content target = http://www.example.com</code></pre>
 
 As you can see a specific value for the content piece is defined which can be useful if your text or images are different for each language. This time we can also automatically detect the content target since we have set the content block on an `a` element. More about this later. The `data-content-piece` attribute can be set on any element, even in the `a` element.
 
 
-```
-&lt;a href="http://www.example.com" data-track-content>&lt;img src="img-en.jpg" data-content-piece/>&lt;/a>
+<pre><code>&lt;a href="http://www.example.com" data-track-content>&lt;img src="img-en.jpg" data-content-piece/>&lt;/a>
 or
 &lt;a href="http://www.example.com" data-track-content>&lt;img src="img-en.jpg" class="piwikContentPiece"/>&lt;/a>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
-// content target = http://www.example.com
-```
+// content target = http://www.example.com</code></pre>
 
 In these examples we were able to detect the name and the piece of the content automatically based on the `src` attribute. We will automatically build a fully qualified URL for the image.
 
-```
-&lt;a href="http://www.example.com" data-track-content>&lt;p data-content-piece>Lorem ipsum dolor sit amet&lt;/p>&lt;/a>
+<pre><code>&lt;a href="http://www.example.com" data-track-content>&lt;p data-content-piece>Lorem ipsum dolor sit amet&lt;/p>&lt;/a>
 or
 &lt;a href="http://www.example.com" data-track-content>&lt;p class="piwikContentPiece">Lorem ipsum dolor sit amet&lt;/p>&lt;/a>
 // content name   = Unknown
 // content piece  = Unknown
-// content target = http://www.example.com
-```
+// content target = http://www.example.com</code></pre>
 
 As the content piece element is not a media we cannot detect the content automatically. In such a case you have to define the `data-content-piece` attribute and set a value to it. We do not use the text of this element by default because
 
@@ -144,12 +132,10 @@ As the content piece element is not a media we cannot detect the content automat
 
 Better:
 
-```
-&lt;a href="http://www.example.com" data-track-content>&lt;p data-content-piece="My content">Lorem ipsum dolor sit amet...&lt;/p>&lt;/a>
+<pre><code>&lt;a href="http://www.example.com" data-track-content>&lt;p data-content-piece="My content">Lorem ipsum dolor sit amet...&lt;/p>&lt;/a>
 // content name   = My content
 // content piece  = My content
-// content target = http://www.example.com
-```
+// content target = http://www.example.com</code></pre>
 
 ### How do we detect the content name?
 
@@ -167,48 +153,38 @@ Detecting the name automatically based on a title or a content piece can result 
 
 Examples:
 
-```
-&lt;img src="img-en.jpg" data-track-content data-content-name="Image1"/>
+<pre><code>&lt;img src="img-en.jpg" data-track-content data-content-name="Image1"/>
 // content name   = Image1
 // content piece  = absoluteUrl(img-en.jpg)
-// content target = ""
-```
+// content target = ""</code></pre>
 
 This example is the way to go by defining a `data-content-name` attribute anywhere we can easily detect the name of the content.
 
-```
-&lt;img src="img-en.jpg" data-track-content/>
+<pre><code>&lt;img src="img-en.jpg" data-track-content/>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
-// content target = ""
-```
+// content target = ""</code></pre>
 
 If no content name is set, it will default to the content piece in case there is one. As the image has the same domain as the current page only the absolute path of the image will be used as a name. 
 
-```
-&lt;img src="http://www.example.com/path/img-en.jpg" data-track-content/>
+<pre><code>&lt;img src="http://www.example.com/path/img-en.jpg" data-track-content/>
 // content name   = /path/img-en.jpg
 // content piece  = http://www.example.com/path/img-en.jpg
-// content target = ""
-```
+// content target = ""</code></pre>
 
 If content piece contains a domain that is the same as the current website's domain we will remove it
 
-```
-&lt;a href="http://www.example.com" data-track-content>Lorem ipsum dolor sit amet...&lt;/p>&lt;/a>
+<pre><code>&lt;a href="http://www.example.com" data-track-content>Lorem ipsum dolor sit amet...&lt;/p>&lt;/a>
 // content name   = Unknown
 // content piece  = Unknown
-// content target = http://www.example.com
-```
+// content target = http://www.example.com</code></pre>
 
 In case there is no content name, no content piece and no title set anywhere it will default to "Unknown". To get a useful content name you should set either the `data-content-name` or a `title` attribute.
 
-```
-&lt;a href="http://www.example.com" data-track-content title="Block Title">&lt;span title="Inner Title" data-content-piece>Lorem ipsum dolor sit amet...&lt;/span>&lt;/a>
+<pre><code>&lt;a href="http://www.example.com" data-track-content title="Block Title">&lt;span title="Inner Title" data-content-piece>Lorem ipsum dolor sit amet...&lt;/span>&lt;/a>
 // content name   = Block Title
 // content piece  = Unknown
-// content target = http://www.example.com
-```
+// content target = http://www.example.com</code></pre>
 
 In case there is no content name and no content piece we will fall back to the `title` attribute of the content block. The `title` attribute of the block element takes precendence over the piece element in this example.
 
@@ -224,52 +200,42 @@ The content target is the element that we will use to detect the URL of the land
 
 Examples:
 
-```
-&lt;a href="http://www.example.com" data-track-content>Click me&lt;/a>
+<pre><code>&lt;a href="http://www.example.com" data-track-content>Click me&lt;/a>
 // content name   = Unknown
 // content piece  = Unknown
-// content target = "http://www.example.com"
-```
+// content target = "http://www.example.com"</code></pre>
 
 As no specific target element is set, we will read the `href` attribute of the content block.
 
-```
-&lt;a onclick="location.href='http://www.example.com'" data-content-target="http://www.example.com" data-track-content>Click me&lt;/a>
+<pre><code>&lt;a onclick="location.href='http://www.example.com'" data-content-target="http://www.example.com" data-track-content>Click me&lt;/a>
 // content name   = Unknown
 // content piece  = Unknown
-// content target = "http://www.example.com"
-```
+// content target = "http://www.example.com"</code></pre>
 
 No `href` attribute is used as the link is executed via JavaScript. Therefore a `data-content-target` attribute with a value has to be specified.
 
-```
-&lt;div data-track-content>&lt;input type="submit"/>&lt;/div>
+<pre><code>&lt;div data-track-content>&lt;input type="submit"/>&lt;/div>
 
 // content name   = Unknown
 // content piece  = Unknown
-// content target = ""
-```
+// content target = ""</code></pre>
 
 As there is neither a `data-content-target` attribute nor a `href` attribute we cannot detect the target.
 
-```
-&lt;div data-track-content>&lt;input type="submit" data-content-target="http://www.example.com"/>&lt;/div>
+<pre><code>&lt;div data-track-content>&lt;input type="submit" data-content-target="http://www.example.com"/>&lt;/div>
 
 // content name   = Unknown
 // content piece  = Unknown
-// content target = "http://www.example.com"
-```
+// content target = "http://www.example.com"</code></pre>
 
 As the `data-content-target` attribute is set with a value, we can detect the content target.
 
-```
-&lt;div data-track-content>&lt;a href="http://www.example.com" data-content-target>Click me&lt;/a>&lt;/div>
+<pre><code>&lt;div data-track-content>&lt;a href="http://www.example.com" data-content-target>Click me&lt;/a>&lt;/div>
 or
 &lt;div data-track-content>&lt;a href="http://www.example.com" class="piwikContentTarget">Click me&lt;/a>&lt;/div>
 // content name   = Unknown
 // content piece  = Unknown
-// content target = "http://www.example.com"
-```
+// content target = "http://www.example.com"</code></pre>
 
 As the target element has a `href` attribute we can detect the content target automatically.
 
@@ -301,49 +267,41 @@ Maybe you do not want us to track any interaction automatically as explained bef
 
 Examples
 
-```
-&lt;a href="http://outlink.example.com" class="piwikTrackContent piwikContentIgnoreInteraction">Add to shopping cart&lt;/a>
+<pre><code>&lt;a href="http://outlink.example.com" class="piwikTrackContent piwikContentIgnoreInteraction">Add to shopping cart&lt;/a>
 
 &lt;a href="http://outlink.example.com" data-track-content data-content-ignoreinteraction>Add to shopping cart&lt;/a>
 
-&lt;div data-track-content>&lt;a href="http://outlink.example.com" data-content-target data-content-ignoreinteraction>Add to shopping cart&lt;/a>&lt;/div>
-```
+&lt;div data-track-content>&lt;a href="http://outlink.example.com" data-content-target data-content-ignoreinteraction>Add to shopping cart&lt;/a>&lt;/div></code></pre>
 
 In all examples we would track the impression automatically but not the interaction.
 
 #### Putting it all together
 
-```
-&lt;a href="http://ad.example.com" data-track-content>
+<pre><code>&lt;a href="http://ad.example.com" data-track-content>
     &lt;img src="http://www.example.com/path/xyz.jpg" data-content-piece />
 &lt;/a>
 // content name   = /path/xyz.jpg
 // content piece  = http://www.example.com/path/xyz.jpg
-// content target = http://ad.example.com
-```
+// content target = http://ad.example.com</code></pre>
 
 A typical example for a content block that displays a banner ad.
 
-```
-&lt;a href="http://ad.example.com" data-track-content data-content-name="My Ad">
+<pre><code>&lt;a href="http://ad.example.com" data-track-content data-content-name="My Ad">
     Lorem ipsum....
 &lt;/a>
 // content name   = My Ad
 // content piece  = Unknown
-// content target = http://ad.example.com
-```
+// content target = http://ad.example.com</code></pre>
 
 A typical example for a content block that displays a text ad.
 
-```
-&lt;div data-track-content data-content-name="My Ad">
+<pre><code>&lt;div data-track-content data-content-name="My Ad">
     &lt;img src="http://www.example.com/path/xyz.jpg" data-content-piece />
     &lt;a href="/anylink" data-content-target>Add to shopping cart&lt;/a>
 &lt;/div>
 // content name   = My Ad
 // content piece  = http://www.example.com/path/xyz.jpg
-// content target = /anylink
-```
+// content target = /anylink</code></pre>
 
 A typical example for a content block that displays an image - which is the content piece - and a call to action link - which is the content target - below. We would replace the `href=/anylink` with a link to piwik.php of your Piwik installation which will in turn redirect the user to the actual target to actually track the interaction.
 
