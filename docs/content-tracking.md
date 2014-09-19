@@ -305,3 +305,5 @@ A typical example for a content block that displays a text ad.
 
 A typical example for a content block that displays an image - which is the content piece - and a call to action link - which is the content target - below. We would replace the `href=/anylink` with a link to piwik.php of your Piwik installation which will in turn redirect the user to the actual target to actually track the interaction.
 
+## What's next?
+Have a look at the [JavaScript Tracker API reference](http://developer.piwik.org/api-reference/tracking-javascript#content-tracking) if you did not have a look yet. 
