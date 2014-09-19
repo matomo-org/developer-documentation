@@ -285,7 +285,7 @@ _paq.push(['trackPageView']);
 
 [...]</code></pre>
 
-## Tracking content impressions
+## Content Tracking
 
 There are several ways to track content impressions and interactions manually, semi-automatically and automatically. Please be aware that content impressions will be tracked using bulk tracking which will always send a `POST` request, even if `GET` is configured which is the default.
 
