@@ -1,6 +1,6 @@
 # In-depth guide to Content Tracking
 
-We built a way in Piwik to determine the performance of the pieces of content on any page of the website or app. You would use content tracking for instance when displaying ads on a website. An ad can be an image or a banner. Different ads might be displayed on the same page to different visitors or there could be even no ads sometimes. On the other side the same ad can be displayed on different pages. Use content tracking if you want to know how often a specific ad was displayed on any page and how often it was clicked. 
+We built a way to determine the performance of the pieces of content on any page of the website or app. You would use content tracking for instance when displaying ads on a website. An ad can be an image or a banner. Different ads might be displayed on the same page to different visitors or there could be even no ads sometimes. On the other side the same ad can be displayed on different pages. Use content tracking if you want to know how often a specific ad was displayed on any page and how often it was clicked. 
 
 This feature is not only limited to ads or images. You can basically use it for any kind of content. A shorter user guide is coming.
 
@@ -81,7 +81,9 @@ Examples:
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
 // content target = ""
-
+//
+// or
+// 
 &lt;img src="img-en.jpg" class="piwikTrackContent"/>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
