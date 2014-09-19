@@ -70,6 +70,7 @@ The following attributes and their corresponding CSS classes are used which are 
 | `[data-content-ignoreinteraction] or .piwikContentIgnoreInteraction` | Tells Piwik to not automatically track the interaction |
 
 Good example:
+
 ```
 &lt;a href="http://www.example.org" data-track-content data-content-name="My Product Name" data-content-piece="Buy now">translate('Buy it now')&lt;/a>
 ```
@@ -77,11 +78,12 @@ Good example:
 Here we are defining a content block having the name "My Product Name". The used content piece will be always "Buy now" even if you use a translated version for different visitors based on their language. This can make it easier to analyze the data. The content target would be detected based on the `href` attribute which is usually ok but you can set a specified value using the `data-content-target` attribute.
 
 #### How to define a block of content?
+
 You can use either the attribute `data-track-content` or the CSS class `piwikTrackContent`. The attribute does not require any value. If you do not define a content block no content will be tracked.
 
 Examples:
-<pre><code>
-&lt;img src="img-en.jpg" data-track-content/>
+
+<pre><code>&lt;img src="img-en.jpg" data-track-content/>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
 // content target = ""
@@ -89,8 +91,7 @@ Examples:
 &lt;img src="img-en.jpg" class="piwikTrackContent"/>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
-// content target = ""
-</code></pre>
+// content target = ""</code></pre>
 
 As you can see in these examples we do detect the content piece and name automatically based on the `src` attribute of the image. The content target cannot be detected since an image does not define a `href` attribute. We would track an interaction automatically as soon as a visitor clicks on the image.
 
@@ -103,13 +104,16 @@ As you can see in these examples we do detect the content piece and name automat
 * If we haven't found anything we will fall back to use the value "Unknown". In such a case you should set the attribute `data-content-piece` telling us explicitly what the content is.
 
 Examples:
+
 ```
 &lt;a href="http://www.example.com" data-track-content>&lt;img src="img-en.jpg" data-content-piece="img.jpg"/>&lt;/a>
 // content name   = img.jpg
 // content piece  = img.jpg
 // content target = http://www.example.com
 ```
+
 As you can see a specific value for the content piece is defined which can be useful if your text or images are different for each language. This time we can also automatically detect the content target since we have set the content block on an `a` element. More about this later. The `data-content-piece` attribute can be set on any element, even in the `a` element.
+
 
 ```
 &lt;a href="http://www.example.com" data-track-content>&lt;img src="img-en.jpg" data-content-piece/>&lt;/a>
@@ -132,12 +136,14 @@ or
 ```
 
 As the content piece element is not a media we cannot detect the content automatically. In such a case you have to define the `data-content-piece` attribute and set a value to it. We do not use the text of this element by default because
+
 * the text might change often resulting in many different content pieces
 * the text could be very long and cutting the text automatically could be inaccurate
 * the text could be translated which would result in many different content pieces although it is always the same
 * the text might contain user specific or sensitive content
 
 Better:
+
 ```
 &lt;a href="http://www.example.com" data-track-content>&lt;p data-content-piece="My content">Lorem ipsum dolor sit amet...&lt;/p>&lt;/a>
 // content name   = My content
@@ -146,6 +152,7 @@ Better:
 ```
 
 ### How do we detect the content name?
+
 The content name represents a content block which will help you in the Piwik UI to easily identify a specific block. A content name groups different content pieces together. For instance while a content name could be "My Product 1" there could be many different content pieces to exactly know which content was displayed and interacted with. For example "Buy now", "Click here to buy", "/image.png".
 
 * The simplest scenario is to provide an HTML attribute `data-content-name` with a value anywhere within a content block or in the content block element itself.
@@ -159,6 +166,7 @@ The content name represents a content block which will help you in the Piwik UI 
 Detecting the name automatically based on a title or a content piece can result in many different content names. Once more we recommend to specify a name via the `data-content-name` attribute.
 
 Examples:
+
 ```
 &lt;img src="img-en.jpg" data-track-content data-content-name="Image1"/>
 // content name   = Image1
@@ -205,6 +213,7 @@ In case there is no content name, no content piece and no title set anywhere it 
 In case there is no content name and no content piece we will fall back to the `title` attribute of the content block. The `title` attribute of the block element takes precendence over the piece element in this example.
 
 #### How do we detect the content target element?
+
 The content target is the element that we will use to detect the URL of the landing page of the content block. The target element is usually a link or a button element. We detect the target element either by the attribute `data-content-target` or by the class `.piwikContentTarget`. If no such element can be found we will fall back to the content block element.
 
 #### How do we detect the content target?
@@ -214,6 +223,7 @@ The content target is the element that we will use to detect the URL of the land
 * If there is no such attribute we will use an empty string ""
 
 Examples:
+
 ```
 &lt;a href="http://www.example.com" data-track-content>Click me&lt;/a>
 // content name   = Unknown
@@ -270,6 +280,7 @@ Piwik tracks an interaction automatically by listening to clicks on the target e
 Generally we track interactions differently based on the type of the link.
 
 ##### Links to the same domain
+
 In case we detect a link element having an `href` attribute to the same domain as the current page we will replace the `href` attribute with a link to the `piwik.php` tracker URL. Whenever a user clicks on such a link we will first send the user to the `piwik.php` of your Piwik installation and then redirect the user from there to the actual page. This makes sure to track the interaction if someone opens the URL with a right click.
 
 If the URL of the replaced `href` attribute changes meanwhile by your code we will respect the new link. 
@@ -277,9 +288,11 @@ If the URL of the replaced `href` attribute changes meanwhile by your code we wi
 Note: The referrer information will get lost when redirecting from piwik.php to your page. If you depend on this you need to disable automatic tracking of interaction see below.
 
 ##### Outlinks and downloads
+
 Outlinks and downloads are handled as before. If a user clicks on a download or outlink we will track this action as usual along with some information related to the content interaction. If link tracking is not enabled we will track downloads having the same domain via `piwik.php` and all others via XHR.
 
 ##### Anchor links
+
 Anchor and all other kind of links will be tracked using an XHR.
 
 #### How to prevent the automatic tracking of an interaction?
@@ -287,6 +300,7 @@ Anchor and all other kind of links will be tracked using an XHR.
 Maybe you do not want us to track any interaction automatically as explained before. To do so you can either set the attribute `data-content-ignoreinteraction` or the CSS class `piwikContentIgnoreInteraction` on the content target element. In single page application you might have to disable automatic tracking of an interaction as otherwise a page reload and a redirect would occur.
 
 Examples
+
 ```
 &lt;a href="http://outlink.example.com" class="piwikTrackContent piwikContentIgnoreInteraction">Add to shopping cart&lt;/a>
 
