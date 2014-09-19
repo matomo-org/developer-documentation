@@ -63,6 +63,14 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `e_n` &mdash; The event name.  (eg. a Movie name, or Song name, or File name...)
     * `e_v` &mdash; The event value. Must be a float or integer value (numeric), not a string.
 
+* Optional [Content Tracking](http://developer.piwik.org/guides/content-tracking/) info
+    * `c_n` &mdash; The name of the content. For instance 'Ad Foo Bar'
+    * `c_p` &mdash; The actual content piece. For instance the path to an image, video, audio, any text
+    * `c_t` &mdash; The target of the content. For instance the URL of a landing page
+    * `c_i` &mdash; The name of the interaction with the content. For instance a 'click'
+    
+  To track a content impression set `c_n` and optionally `c_p` and `c_t`. To track a content interaction set `c_i` and `c_n` and optionally `c_p` and `c_t`. To map an interaction to an impression make sure to set the same value for `c_n` and `c_p`. It is recommended to set a value for `c_p`.
+
 * Ecommerce info
 
     Use the following values to record a cart and/or an [ecommerce](http://piwik.org/docs/ecommerce-analytics/) order. You must also set `&idgoal=0` in the request.
