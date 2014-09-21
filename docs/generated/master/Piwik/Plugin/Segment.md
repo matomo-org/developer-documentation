@@ -54,6 +54,7 @@ The class defines the following methods:
 - [`setSqlFilterValue()`](#setsqlfiltervalue) &mdash; Similar to [setSqlFilter()](/api-reference/Piwik/Plugin/Segment#setsqlfilter) you can map a given segment value to another value.
 - [`setSqlSegment()`](#setsqlsegment) &mdash; Defines to which column in the MySQL database the segment belongs: 'mytablename.mycolumnname'.
 - [`setType()`](#settype) &mdash; Set (overwrite) the type of this segment which is usually either a 'dimension' or a 'metric'.
+- [`getSegment()`](#getsegment) &mdash; Returns the name of this segment as it should appear in segment expressions.
 - [`setSuggestedValuesCallback()`](#setsuggestedvaluescallback) &mdash; Set callback which will be executed when user will call for suggested values for segment.
 - [`setPermission()`](#setpermission) &mdash; You can restrict the access to this segment by passing a boolean `false`.
 
@@ -289,6 +290,16 @@ Set (overwrite) the type of this segment which is usually either a 'dimension' o
    </li>
    </ul>
 - It does not return anything.
+
+<a name="getsegment" id="getsegment"></a>
+<a name="getSegment" id="getSegment"></a>
+### `getSegment()`
+
+Returns the name of this segment as it should appear in segment expressions.
+
+#### Signature
+
+- It returns a `string` value.
 
 <a name="setsuggestedvaluescallback" id="setsuggestedvaluescallback"></a>
 <a name="setSuggestedValuesCallback" id="setSuggestedValuesCallback"></a>

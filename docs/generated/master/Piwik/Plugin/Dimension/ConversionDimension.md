@@ -57,6 +57,7 @@ The abstract class defines the following methods:
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`factory()`](#factory) &mdash; Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#getid)). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`install()`](#install) &mdash; Installs the conversion dimension in case it is not installed yet.
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#$columnname) and columnType is set.
 - [`onEcommerceOrderConversion()`](#onecommerceorderconversion) &mdash; This event is triggered when an ecommerce order is converted.
@@ -176,6 +177,18 @@ Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwi
     </div>
   </li>
 </ul>
+
+<a name="getmodule" id="getmodule"></a>
+<a name="getModule" id="getModule"></a>
+### `getModule()`
+
+Returns the name of the plugin that contains this Dimension.
+
+#### Signature
+
+- It returns a `string` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the Dimension is not located within a Plugin module.
 
 <a name="install" id="install"></a>
 <a name="install" id="install"></a>

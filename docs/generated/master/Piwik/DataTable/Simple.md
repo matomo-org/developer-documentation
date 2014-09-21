@@ -86,6 +86,7 @@ The class defines the following methods:
 - [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtables. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`clearQueuedFilters()`](#clearqueuedfilters) &mdash; Unsets all queued filters. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getIterator()`](#getiterator) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`offsetExists()`](#offsetexists) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`offsetGet()`](#offsetget) Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -1648,6 +1649,16 @@ for more information on DataTable serialization.
    </li>
    </ul>
 - It returns a [`DataTable`](../../Piwik/DataTable.md) value.
+
+<a name="clearqueuedfilters" id="clearqueuedfilters"></a>
+<a name="clearQueuedFilters" id="clearQueuedFilters"></a>
+### `clearQueuedFilters()`
+
+Unsets all queued filters.
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getiterator" id="getiterator"></a>
 <a name="getIterator" id="getIterator"></a>

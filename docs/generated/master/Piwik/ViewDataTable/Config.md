@@ -81,6 +81,10 @@ This class defines the following properties:
 - [`$translations`](#$translations) &mdash; Array property mapping DataTable column names with their internationalized names.
 - [`$show_exclude_low_population`](#$show_exclude_low_population) &mdash; Controls whether the 'Exclude Low Population' option (visible in the popup that displays after clicking the 'cog' icon) is shown.
 - [`$show_flatten_table`](#$show_flatten_table) &mdash; Whether to show the 'Flatten' option (visible in the popup that displays after clicking the 'cog' icon).
+- [`$show_pivot_by_subtable`](#$show_pivot_by_subtable) &mdash; Whether to show the 'Pivot by subtable' option (visible in the popup that displays after clicking the 'cog' icon).
+- [`$pivot_by_dimension`](#$pivot_by_dimension) &mdash; The ID of the dimension to pivot by when the 'pivot by subtable' option is clicked.
+- [`$pivot_by_column`](#$pivot_by_column) &mdash; The column to display in pivot tables.
+- [`$pivot_dimension_name`](#$pivot_dimension_name) &mdash; The human readable name of the pivot dimension.
 - [`$show_table`](#$show_table) &mdash; Controls whether the footer icon that allows users to switch to the 'normal' DataTable view is shown.
 - [`$show_table_all_columns`](#$show_table_all_columns) &mdash; Controls whether the 'All Columns' footer icon is shown.
 - [`$show_footer`](#$show_footer) &mdash; Controls whether the entire view footer is shown.
@@ -245,6 +249,55 @@ Controls whether the 'Exclude Low Population' option (visible in the popup that 
 ### `$show_flatten_table`
 
 Whether to show the 'Flatten' option (visible in the popup that displays after clicking the 'cog' icon).
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$show_pivot_by_subtable" id="$show_pivot_by_subtable"></a>
+<a name="show_pivot_by_subtable" id="show_pivot_by_subtable"></a>
+### `$show_pivot_by_subtable`
+
+Whether to show the 'Pivot by subtable' option (visible in the popup that displays after clicking the 'cog' icon).
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$pivot_by_dimension" id="$pivot_by_dimension"></a>
+<a name="pivot_by_dimension" id="pivot_by_dimension"></a>
+### `$pivot_by_dimension`
+
+The ID of the dimension to pivot by when the 'pivot by subtable' option is clicked.
+
+Defaults
+to the subtable dimension of the report being displayed.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$pivot_by_column" id="$pivot_by_column"></a>
+<a name="pivot_by_column" id="pivot_by_column"></a>
+### `$pivot_by_column`
+
+The column to display in pivot tables.
+
+Defaults to the first non-label column if not specified.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$pivot_dimension_name" id="$pivot_dimension_name"></a>
+<a name="pivot_dimension_name" id="pivot_dimension_name"></a>
+### `$pivot_dimension_name`
+
+The human readable name of the pivot dimension.
 
 #### Signature
 
@@ -749,6 +802,7 @@ The class defines the following methods:
 - [`addRelatedReports()`](#addrelatedreports) &mdash; Adds several related reports to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 - [`addTranslation()`](#addtranslation) &mdash; Associates internationalized text with a metric.
 - [`addTranslations()`](#addtranslations) &mdash; Associates multiple translations with metrics.
+- [`disablePivotBySubtableIfTableHasNoSubtables()`](#disablepivotbysubtableiftablehasnosubtables)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -972,6 +1026,28 @@ See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations) and
       `$translations` (`array`) &mdash;
 
       <div markdown="1" class="param-desc"> An array of column name => text mappings, eg, ``` array( 'nb_visits' => 'Visits', 'goal_1_nb_conversions' => "Conversions for 'My Goal'" ) ```</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="disablepivotbysubtableiftablehasnosubtables" id="disablepivotbysubtableiftablehasnosubtables"></a>
+<a name="disablePivotBySubtableIfTableHasNoSubtables" id="disablePivotBySubtableIfTableHasNoSubtables"></a>
+### `disablePivotBySubtableIfTableHasNoSubtables()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$table` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
 
       <div style="clear:both;"/>
 

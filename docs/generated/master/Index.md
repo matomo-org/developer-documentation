@@ -97,6 +97,7 @@ Index
 - [`Common`](Piwik/Common.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Config`](Piwik/Config.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Console`](Piwik/Console.md) &mdash; _Class in namespace_ `Piwik` 
+- [`clearQueuedFilters()`](Piwik/DataTable.md#clearqueuedfilters) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
 - [`calculate()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#calculate) &mdash; _Method in class_ [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
 - [`ColumnCallbackAddColumn`](Piwik/DataTable/Filter/ColumnCallbackAddColumn.md) &mdash; _Class in namespace_ `Piwik\DataTable\Filter` 
@@ -190,6 +191,7 @@ Index
 - [`$documentation`](Piwik/ViewDataTable/Config.md#$documentation) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$datatable_css_class`](Piwik/ViewDataTable/Config.md#$datatable_css_class) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$datatable_js_type`](Piwik/ViewDataTable/Config.md#$datatable_js_type) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
+- [`disablePivotBySubtableIfTableHasNoSubtables()`](Piwik/ViewDataTable/Config.md#disablepivotbysubtableiftablehasnosubtables) &mdash; _Method in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$disable_generic_filters`](Piwik/ViewDataTable/RequestConfig.md#$disable_generic_filters) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`$disable_queued_filters`](Piwik/ViewDataTable/RequestConfig.md#$disable_queued_filters) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
@@ -248,6 +250,8 @@ Index
 - [`factory()`](Piwik/Period.md#factory) &mdash; _Method in class_ [`Period`](Piwik/Period.md)
 - [`findComponent()`](Piwik/Plugin.md#findcomponent) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`findMultipleComponents()`](Piwik/Plugin.md#findmultiplecomponents) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
+- [`fetch()`](Piwik/Plugin/Report.md#fetch) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`fetchSubtable()`](Piwik/Plugin/Report.md#fetchsubtable) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`factory()`](Piwik/Plugin/Report.md#factory) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`factory()`](Piwik/ScheduledTime.md#factory) &mdash; _Method in class_ [`ScheduledTime`](Piwik/ScheduledTime.md)
 - [`$footer_icons`](Piwik/ViewDataTable/Config.md#$footer_icons) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
@@ -286,6 +290,7 @@ Index
 - [`getName()`](Piwik/Columns/Dimension.md#getname) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getId()`](Piwik/Columns/Dimension.md#getid) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](Piwik/Columns/Dimension.md#getalldimensions) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
+- [`getModule()`](Piwik/Columns/Dimension.md#getmodule) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getRequestVar()`](Piwik/Common.md#getrequestvar) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguagesList()`](Piwik/Common.md#getlanguageslist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguageToCountryList()`](Piwik/Common.md#getlanguagetocountrylist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
@@ -423,7 +428,10 @@ Index
 - [`getProcessedMetrics()`](Piwik/Plugin/Report.md#getprocessedmetrics) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`getMetricsDocumentation()`](Piwik/Plugin/Report.md#getmetricsdocumentation) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`getRelatedReports()`](Piwik/Plugin/Report.md#getrelatedreports) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`getSubtableDimension()`](Piwik/Plugin/Report.md#getsubtabledimension) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`getAllReports()`](Piwik/Plugin/Report.md#getallreports) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`getForDimension()`](Piwik/Plugin/Report.md#getfordimension) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`getSegment()`](Piwik/Plugin/Segment.md#getsegment) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
 - [`getIntroduction()`](Piwik/Plugin/Settings.md#getintroduction) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`getSettingsForCurrentUser()`](Piwik/Plugin/Settings.md#getsettingsforcurrentuser) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`getSettings()`](Piwik/Plugin/Settings.md#getsettings) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
@@ -560,6 +568,7 @@ Index
 - [`$isSubtableReport`](Piwik/Plugin/Report.md#$issubtablereport) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`init()`](Piwik/Plugin/Report.md#init) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`isEnabled()`](Piwik/Plugin/Report.md#isenabled) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
+- [`isSubtableReport()`](Piwik/Plugin/Report.md#issubtablereport) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`init()`](Piwik/Plugin/Segment.md#init) &mdash; _Method in class_ [`Segment`](Piwik/Plugin/Segment.md)
 - [`isViewDataTableId()`](Piwik/Plugin/ViewDataTable.md#isviewdatatableid) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`isRequestingSingleDataTable()`](Piwik/Plugin/ViewDataTable.md#isrequestingsingledatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
@@ -695,6 +704,12 @@ Index
 - [`$processedMetrics`](Piwik/Plugin/Report.md#$processedmetrics) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`$parameters`](Piwik/Plugin/Report.md#$parameters) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`partitionResultIntoMultipleGroups()`](Piwik/RankingQuery.md#partitionresultintomultiplegroups) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
+- [`$pivot_by_dimension`](Piwik/ViewDataTable/Config.md#$pivot_by_dimension) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$pivot_by_column`](Piwik/ViewDataTable/Config.md#$pivot_by_column) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$pivot_dimension_name`](Piwik/ViewDataTable/Config.md#$pivot_dimension_name) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$pivotBy`](Piwik/ViewDataTable/RequestConfig.md#$pivotby) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`$pivotByColumn`](Piwik/ViewDataTable/RequestConfig.md#$pivotbycolumn) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`$pivotByColumnLimit`](Piwik/ViewDataTable/RequestConfig.md#$pivotbycolumnlimit) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## Q
 
@@ -842,6 +857,7 @@ Index
 - [`$show_insights`](Piwik/ViewDataTable/Config.md#$show_insights) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_exclude_low_population`](Piwik/ViewDataTable/Config.md#$show_exclude_low_population) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_flatten_table`](Piwik/ViewDataTable/Config.md#$show_flatten_table) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$show_pivot_by_subtable`](Piwik/ViewDataTable/Config.md#$show_pivot_by_subtable) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_table`](Piwik/ViewDataTable/Config.md#$show_table) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_table_all_columns`](Piwik/ViewDataTable/Config.md#$show_table_all_columns) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_footer`](Piwik/ViewDataTable/Config.md#$show_footer) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)

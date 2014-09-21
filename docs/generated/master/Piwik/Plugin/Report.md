@@ -224,8 +224,13 @@ The class defines the following methods:
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
 - [`configureReportMetadata()`](#configurereportmetadata) &mdash; If the report is enabled the report metadata for this report will be built and added to the list of available reports.
 - [`getRelatedReports()`](#getrelatedreports) &mdash; Get the list of related reports if there are any.
+- [`getSubtableDimension()`](#getsubtabledimension) &mdash; Returns the Dimension instance of this report's subtable report.
+- [`isSubtableReport()`](#issubtablereport) &mdash; Returns true if the report is for another report's subtable, false if otherwise.
+- [`fetch()`](#fetch) &mdash; Fetches the report represented by this instance.
+- [`fetchSubtable()`](#fetchsubtable) &mdash; Fetches a subtable for the report represented by this instance.
 - [`factory()`](#factory) &mdash; Get an instance of a specific report belonging to the given module and having the given action.
 - [`getAllReports()`](#getallreports) &mdash; Returns a list of all available reports.
+- [`getForDimension()`](#getfordimension) &mdash; Finds a top level report that provides stats for a specific Dimension.
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
@@ -492,6 +497,95 @@ recommended related report.
 
 - It returns a [`Report[]`](../../Piwik/Plugin/Report.md) value.
 
+<a name="getsubtabledimension" id="getsubtabledimension"></a>
+<a name="getSubtableDimension" id="getSubtableDimension"></a>
+### `getSubtableDimension()`
+
+Returns the Dimension instance of this report's subtable report.
+
+#### Signature
+
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Dimension`](../../Piwik/Columns/Dimension.md)|`null`) &mdash;
+    <div markdown="1" class="param-desc">The subtable report's dimension or null if there is subtable report or no dimension for the subtable report.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+
+<a name="issubtablereport" id="issubtablereport"></a>
+<a name="isSubtableReport" id="isSubtableReport"></a>
+### `isSubtableReport()`
+
+Returns true if the report is for another report's subtable, false if otherwise.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="fetch" id="fetch"></a>
+<a name="fetch" id="fetch"></a>
+### `fetch()`
+
+Fetches the report represented by this instance.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$paramOverride` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Query parameter overrides.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
+
+<a name="fetchsubtable" id="fetchsubtable"></a>
+<a name="fetchSubtable" id="fetchSubtable"></a>
+### `fetchSubtable()`
+
+Fetches a subtable for the report represented by this instance.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$idSubtable` (`int`) &mdash;
+
+      <div markdown="1" class="param-desc"> The subtable ID.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$paramOverride` (`array`) &mdash;
+
+      <div markdown="1" class="param-desc"> Query parameter overrides.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
+
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
 ### `factory()`
@@ -549,4 +643,39 @@ depending on the order and category of the report.
 #### Signature
 
 - It returns a [`Report[]`](../../Piwik/Plugin/Report.md) value.
+
+<a name="getfordimension" id="getfordimension"></a>
+<a name="getForDimension" id="getForDimension"></a>
+### `getForDimension()`
+
+Finds a top level report that provides stats for a specific Dimension.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$dimension` ([`Dimension`](../../Piwik/Columns/Dimension.md)) &mdash;
+
+      <div markdown="1" class="param-desc"> The dimension whose report we're looking for.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  ([`Report`](../../Piwik/Plugin/Report.md)|`null`) &mdash;
+    <div markdown="1" class="param-desc">The</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
 

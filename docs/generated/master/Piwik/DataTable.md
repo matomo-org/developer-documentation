@@ -217,6 +217,7 @@ The class defines the following methods:
 - [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtables.
 - [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array.
 - [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
+- [`clearQueuedFilters()`](#clearqueuedfilters) &mdash; Unsets all queued filters.
 - [`getIterator()`](#getiterator)
 - [`offsetExists()`](#offsetexists)
 - [`offsetGet()`](#offsetget)
@@ -1781,6 +1782,16 @@ for more information on DataTable serialization.
    </li>
    </ul>
 - It returns a [`DataTable`](../Piwik/DataTable.md) value.
+
+<a name="clearqueuedfilters" id="clearqueuedfilters"></a>
+<a name="clearQueuedFilters" id="clearQueuedFilters"></a>
+### `clearQueuedFilters()`
+
+Unsets all queued filters.
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getiterator" id="getiterator"></a>
 <a name="getIterator" id="getIterator"></a>

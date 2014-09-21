@@ -614,7 +614,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L44), [CoreHome::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L29), [CustomVariables::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L46), [DevicesDetection::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L47), [Events::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L30), [Provider::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L45), [Referrers::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L36), [UserCountry::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L43), [UserSettings::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L44), [VisitTime::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L24), [VisitorInterest::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L51)
+[Actions::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L44), [CoreHome::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L29), [CustomVariables::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L46), [DevicesDetection::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L47), [Events::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L31), [Provider::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L45), [Referrers::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L36), [UserCountry::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L43), [UserSettings::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L44), [VisitTime::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L24), [VisitorInterest::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L51)
 
 
 ### Live.getExtraVisitorDetails
@@ -879,7 +879,7 @@ Callback Signature:
 - [Metrics.getDefaultMetricTranslations](#metricsgetdefaultmetrictranslations)
 
 ### Metrics.getDefaultMetricDocumentationTranslations
-_Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [396](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L396)_
+_Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [397](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L397)_
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
@@ -890,11 +890,11 @@ Callback Signature:
 
 Usages:
 
-[Actions::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L73), [Events::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L40)
+[Actions::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L73), [Events::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L41)
 
 
 ### Metrics.getDefaultMetricTranslations
-_Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [286](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L286)_
+_Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [287](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L287)_
 
 Use this event to register translations for metrics processed by your plugin.
 
@@ -905,7 +905,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L50), [Contents::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/Contents/Contents.php#L25), [Events::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L35), [Goals::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L112), [MultiSites::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/MultiSites/MultiSites.php#L35), [UserSettings::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L65), [VisitFrequency::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/VisitFrequency/VisitFrequency.php#L26)
+[Actions::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L50), [Contents::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/Contents/Contents.php#L25), [Events::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L36), [Goals::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/Goals/Goals.php#L112), [MultiSites::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/MultiSites/MultiSites.php#L35), [UserSettings::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L65), [VisitFrequency::addMetricTranslations](https://github.com/piwik/piwik/blob/master/plugins/VisitFrequency/VisitFrequency.php#L26)
 
 ## MobileMessaging
 
@@ -1988,7 +1988,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L145), [Events::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L153)
+[Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L145), [Events::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L154)
 
 ## WidgetsList
 

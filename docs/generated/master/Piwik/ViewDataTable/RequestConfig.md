@@ -92,6 +92,9 @@ This class defines the following properties:
 - [`$disable_queued_filters`](#$disable_queued_filters) &mdash; Whether to run ViewDataTable's list of queued filters or not.
 - [`$apiMethodToRequestDataTable`](#$apimethodtorequestdatatable) &mdash; returns 'Plugin.apiMethodName' used for this ViewDataTable, eg.
 - [`$idSubtable`](#$idsubtable) &mdash; If the current dataTable refers to a subDataTable (eg.
+- [`$pivotBy`](#$pivotby) &mdash; Dimension ID to pivot by.
+- [`$pivotByColumn`](#$pivotbycolumn) &mdash; The column to display in a pivot table, eg, `'nb_visits'`.
+- [`$pivotByColumnLimit`](#$pivotbycolumnlimit) &mdash; The maximum number of columns to display in a pivot table.
 
 <a name="$clientsideparameters" id="$clientsideparameters"></a>
 <a name="clientSideParameters" id="clientSideParameters"></a>
@@ -315,6 +318,44 @@ keywordsBySearchEngineId for id=X) this variable is set to the Id
     - `bool`
     - `int`
 
+<a name="$pivotby" id="$pivotby"></a>
+<a name="pivotBy" id="pivotBy"></a>
+### `$pivotBy`
+
+Dimension ID to pivot by.
+
+See Piwik\DataTable\Filter\PivotByDimension for more info.
+
+#### Signature
+
+- It is a `string` value.
+
+<a name="$pivotbycolumn" id="$pivotbycolumn"></a>
+<a name="pivotByColumn" id="pivotByColumn"></a>
+### `$pivotByColumn`
+
+The column to display in a pivot table, eg, `'nb_visits'`.
+
+See Piwik\DataTable\Filter\PivotByDimension
+for more info.
+
+#### Signature
+
+- It is a `string` value.
+
+<a name="$pivotbycolumnlimit" id="$pivotbycolumnlimit"></a>
+<a name="pivotByColumnLimit" id="pivotByColumnLimit"></a>
+### `$pivotByColumnLimit`
+
+The maximum number of columns to display in a pivot table.
+
+See Piwik\DataTable\Filter\PivotByDimension
+for more info.
+
+#### Signature
+
+- It is a `int` value.
+
 Methods
 -------
 
@@ -413,6 +454,16 @@ learn more.
    <li>
       <div markdown="1" class="parameter">
       `$hasNbUniqVisitors`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$actualColumns`
 
       <div markdown="1" class="param-desc"></div>
 

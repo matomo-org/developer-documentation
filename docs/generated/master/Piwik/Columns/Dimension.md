@@ -47,6 +47,7 @@ The abstract class defines the following methods:
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension.
 - [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension.
 - [`factory()`](#factory) &mdash; Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Columns/Dimension#getid)).
+- [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension.
 
 <a name="addsegment" id="addsegment"></a>
 <a name="addSegment" id="addSegment"></a>
@@ -156,4 +157,16 @@ Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwi
     </div>
   </li>
 </ul>
+
+<a name="getmodule" id="getmodule"></a>
+<a name="getModule" id="getModule"></a>
+### `getModule()`
+
+Returns the name of the plugin that contains this Dimension.
+
+#### Signature
+
+- It returns a `string` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the Dimension is not located within a Plugin module.
 
