@@ -63,7 +63,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `e_n` &mdash; The event name.  (eg. a Movie name, or Song name, or File name...)
     * `e_v` &mdash; The event value. Must be a float or integer value (numeric), not a string.
 
-* Optional [Content Tracking](http://developer.piwik.org/guides/content-tracking/) info
+* Optional [Content Tracking](http://piwik.org/docs/content-tracking/) info
     * `c_n` &mdash; The name of the content. For instance 'Ad Foo Bar'
     * `c_p` &mdash; The actual content piece. For instance the path to an image, video, audio, any text
     * `c_t` &mdash; The target of the content. For instance the URL of a landing page
