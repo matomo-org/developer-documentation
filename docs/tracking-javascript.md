@@ -288,9 +288,11 @@ _paq.push(['trackPageView']);
 
 ## User ID
 
-[User ID](http://piwik.org/docs/user-id/) is a feature in Piwik that lets you connect together a given user’s data collected from multiple devices and multiple browsers. There are two steps to implementing User ID:
- * You must assign a unique and persistent non empty string that represents each logged-in user. Typically this ID will be an email address or a username provided by your authentication system.
- * You must then pass this User ID string to Piwik via the `setUserId` method call just before calling track* function, for example:
+[User ID](http://piwik.org/docs/user-id/) is a feature in Piwik that lets you connect together a given user's data collected from multiple devices and multiple browsers. There are two steps to implementing User ID:
+
+* You must assign a unique and persistent non empty string that represents each logged-in user. Typically this ID will be an email address or a username provided by your authentication system.
+* You must then pass this User ID string to Piwik via the `setUserId` method call just before calling track* function, for example:
+
 <pre><code>[...]
 _paq.push(['setUserId', 'USER_ID_HERE']);
 _paq.push(['trackPageView']);
