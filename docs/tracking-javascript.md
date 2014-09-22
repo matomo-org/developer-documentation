@@ -372,11 +372,9 @@ We would detect two new content impresssions in this example. In case you have e
 Interactions with content blocks are usually tracked automatically as soon as a visitor is clicking on it. Sometimes you might want to trigger an interaction manually for instance in case you want to trigger an interaction based on a form submit or a double click. To do so call the method `trackContentInteractionNode(domNode, contentInteraction)`.
 
 Example
-```
-formElement.addEventListener('submit', function () {
+<pre><code>formElement.addEventListener('submit', function () {
     _paq.push(['trackContentInteractionNode', this, 'submittedForm']);
-});
-```
+});</code></pre>
 
 * The passed `domNode` can be any node within a content block or the content block element itself. Nothing will be tracked in case there is no content block found.
 * Optionally you can set the name of the content interaction, for instance `click` or `submit`. If none is provided, the value `Unknown` will be used. 
@@ -388,13 +386,11 @@ We call this kind of tracking semi-automatic as you triggered the interaction ma
 You should use the methods `trackContentImpression(contentName, contentPiece, contentTarget)` and `trackContentInteraction(contentName, contentPiece, contentInteraction)` only in conjunction together. It is not recommended to use `trackContentInteraction()` after an impression was tracked automatically as we can map an interaction to an impression only if you do set the same content name and piece that was used to track the related impression.
 
 Example
-```
-_paq.push(['trackContentImpression', 'Content Name', 'Content Piece', 'http://www.example.com']);
+<pre><code>_paq.push(['trackContentImpression', 'Content Name', 'Content Piece', 'http://www.example.com']);
 
 div.addEventListener('click', function () {
     _paq.push(['trackContentInteraction', 'Content Name', 'Content Piece', 'tabActivated']);
-});
-```
+});</code></pre>
 
 Be aware that each call to those methods will send one request to your Piwik tracker instance. Doing this too many times can cause performance problems.
 
