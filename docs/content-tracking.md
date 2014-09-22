@@ -325,9 +325,7 @@ Examples
 
 <pre><code>&lt;a href="http://outlink.example.com" class="piwikTrackContent piwikContentIgnoreInteraction">Add to shopping cart&lt;/a>
 
-&lt;a href="http://outlink.example.com" data-track-content data-content-ignoreinteraction>Add to shopping cart&lt;/a>
-
-&lt;div data-track-content>&lt;a href="http://outlink.example.com" data-content-target data-content-ignoreinteraction>Add to shopping cart&lt;/a>&lt;/div></code></pre>
+&lt;a href="http://outlink.example.com" data-track-content data-content-ignoreinteraction>Add to shopping cart&lt;/a></code></pre>
 
 In all examples we would track the impression automatically but not the interaction.
 
