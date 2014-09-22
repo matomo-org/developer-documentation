@@ -285,6 +285,39 @@ _paq.push(['trackPageView']);
 
 [...]</code></pre>
 
+
+## User ID
+
+[User ID](http://piwik.org/docs/user-id/) is a feature in Piwik that lets you connect together a given user’s data collected from multiple devices and multiple browsers. There are two steps to implementing User ID:
+ * You must assign a unique and persistent non empty string that represents each logged-in user. Typically this ID will be an email address or a username provided by your authentication system.
+ * You must then pass this User ID string to Piwik via the `setUserId` method call just before calling track* function, for example:
+<pre><code>[...]
+_paq.push(['setUserId', 'USER_ID_HERE']);
+_paq.push(['trackPageView']);
+[...]</code></pre>
+
+Note: `USER_ID_HERE` must be a unique and persistent non empty string that represents a user across devices.
+
+Let's take an example. Imagine that your website authenticate your users via a login form using a PHP script. Here is what your Piwik JavaScript snippet may look like:
+
+<pre><code>[...]
+
+var _paq = _paq || [];
+
+&lt;?php
+// If used is logged-in then call 'setUserId' 
+// $userId variable must be set by the server when the user has successfully authenticated to your app.
+if (isset($userId)) {
+     echo sprintf("_paq.push(['setUserId', '%s']);", $userId);
+}
+?&gt;
+
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+[...]</code></pre>
+
+
+
 ## Content Tracking
 
 There are several ways to track content impressions and interactions manually, semi-automatically and automatically. Please be aware that content impressions will be tracked using bulk tracking which will always send a `POST` request, even if `GET` is configured which is the default.
