@@ -389,7 +389,7 @@ Example
 <pre><code>_paq.push(['trackContentImpression', 'Content Name', 'Content Piece', 'http://www.example.com']);
 
 div.addEventListener('click', function () {
-    _paq.push(['trackContentInteraction', 'Content Name', 'Content Piece', 'tabActivated']);
+    _paq.push(['trackContentInteraction', 'tabActivated', 'Content Name', 'Content Piece', 'http://www.example.com']);
 });</code></pre>
 
 Be aware that each call to those methods will send one request to your Piwik tracker instance. Doing this too many times can cause performance problems.
