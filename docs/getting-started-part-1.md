@@ -128,7 +128,7 @@ Your development environment is setup, and you are now ready to create a plugin!
 
     ./console generate:plugin --name="MyPlugin"
 
-When the tool asks if it should create an API & Controller, enter `'y'`. This will create a new plugin named **MyPlugin**.
+This will create a new plugin named **MyPlugin**.
 
 <div markdown="1" class="alert alert-warning">
 **Note**
@@ -145,14 +145,10 @@ In your browser load Piwik and navigate to _Settings > Plugins > Manage_. Look f
 
 The command-line tool will create a new directory for your plugin (in the **plugins** sub-directory) and fill it with some files and folders. Here's what these files and folders are for:
 
-* **API.php**: Contains your plugin's API class. This class defines methods that serve data and will be accessible through Piwik's [Reporting API](/api-reference/reporting-api).
-* **Controller.php**: Contains your plugin's Controller class. This class defines methods that generate HTML output.
 * **MyPlugin.php**: Contains your plugin's Plugin Descriptor class. This class contains metadata about your plugin and a list of event handlers for Piwik events.
 * **plugin.json**: Contains plugin metadata such as the name, description, version, etc.
 * **README.md**: A dummy README file for your plugin.
-* **javascripts**: This folder is where you'll put all your new JavaScript files.
-* **screenshots**: <!-- TODO: ??? -->
-* **templates**: This folder is where you'll put all your [Twig](http://twig.sensiolabs.org/) templates.
+* **screenshots**: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](http://developer.piwik.org/guides/distributing-your-plugin).
 
 ## What to read next
 
