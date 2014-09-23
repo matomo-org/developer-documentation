@@ -67,6 +67,54 @@ class Guide {
         );
 
         $menu[] = array(
+            'title'        => 'How to create a custom theme',
+            'file'         => '',
+            'url'          => 'http://piwik.org/blog/2014/08/create-custom-theme-piwik-introducing-piwik-platform/',
+            'description'  => 'Get started in customizing the look of Piwik.',
+            'category'    => 'Getting Started'
+        );
+
+        $menu[] = array(
+            'title'        => 'How to create a scheduled task',
+            'file'         => '',
+            'url'          => 'http://piwik.org/blog/2014/08/create-scheduled-task-introducing-piwik-platform/',
+            'description'  => 'Learn how to execute scheduled tasks in the background, for instance sending a daily email.',
+            'category'    => 'Getting Started'
+        );
+
+        $menu[] = array(
+            'title'        => 'How to create a widget',
+            'file'         => '',
+            'url'          => 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/',
+            'description'  => 'Learn how to easily create a new widget.',
+            'category'    => 'Getting Started'
+        );
+
+        $menu[] = array(
+            'title'        => 'How to create a widget',
+            'file'         => '',
+            'url'          => 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/',
+            'description'  => 'Learn how to easily create a new widget.',
+            'category'    => 'Getting Started'
+        );
+
+        $menu[] = array(
+            'title'        => 'How to add new pages and menu items',
+            'file'         => '',
+            'url'          => 'http://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/',
+            'description'  => 'Get started in Controller, View and Menu API.',
+            'category'     => 'Getting Started'
+        );
+
+        $menu[] = array(
+            'title'        => 'How to make your plugin configurable',
+            'file'         => '',
+            'url'          => 'http://piwik.org/blog/2014/09/make-plugin-configurable-introducing-piwik-platform/',
+            'description'  => 'Learn how to define settings for your plugin.',
+            'category'     => 'Getting Started'
+        );
+
+        $menu[] = array(
             'title'       => 'All about Analytics Data',
             'file'        => 'all-about-analytics-data',
             'url'         => static::getUrl('all-about-analytics-data'),
