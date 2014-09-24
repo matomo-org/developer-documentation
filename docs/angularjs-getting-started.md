@@ -67,11 +67,11 @@ Basically we create a folder for each feature within the plugin folder. Say we w
   + angularjs
     + siteselector
       + siteselector.directive.js
+      + siteselector.directive.less
+      + siteselector.directive.html
       + siteselector.controller.js
       + siteselector.filter.js
-      + siteselector.model.js
-      + siteselector.css
-      + siteselector.html
+      + siteselector-model.service.js
       + search.png
     + common
       + images
@@ -101,7 +101,7 @@ If a component, say a filter, can be reused in different plugins and is not plug
         + focusif.js
         + focus-anywhere-but-here.js
 
-Filenames are always lower case and words are separated by dashes. In general we have one file per class/component/filter/...
+Filenames are always lower case and words are separated by dashes. In general we have one file per type. The type - eg filter, directive or service - does not have to appear in the filename in this case as it is already placed in the related folder.
 
 **Important**: Our directives always start with `piwik-` for instance `<div piwik-onenter="close()">`
 
