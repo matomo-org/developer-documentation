@@ -60,16 +60,16 @@ I recommend to watch some videos and read a few resources about the benefits and
 
 ## Code organization / file structure
 There are lots of discussions about the best file structure. In the past we divided a feature into multiple folders called `javascripts`, `stylesheets`, ... From now on we want to
-organize files per feature which is [recommended](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub) by the Angular Team and also works best in large projects.
+organize files per feature which is [recommended](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub) by the Angular Team and also works best in large projects. 
 
 Basically we create a folder for each feature within the plugin folder. Say we want to create a "site selector" than we create the following files:
 + CoreHome
   + angularjs
     + siteselector
-      + siteselector-directive.js
-      + siteselector-controller.js
-      + siteselector-filter.js
-      + siteselector-model.js
+      + siteselector.directive.js
+      + siteselector.controller.js
+      + siteselector.filter.js
+      + siteselector.model.js
       + siteselector.css
       + siteselector.html
       + search.png
@@ -81,7 +81,11 @@ Basically we create a folder for each feature within the plugin folder. Say we w
 Sometimes you might have some reusable components within your plugin in which case you can but them into a `common` folder.
 What's the adventage of this? Beside that is scales with the project you will notice immediately what a plugin does when opening a plugin folder whereas this is not the case if you see only `javascripts`, `templates` and `stylesheets` folders. Another advantage is we could - in theory - extract a feature into a separate repository and share single widgets with other people.
 
+A module always ends with `.module.js`. A service or factory always ends with `.service.js`, a controller with `.controller.js`, a directive with `.directive.js` and a filter with `.filter.js`. Filenames are lowercase and words should be separated by a dash: `site-selector.directive.js`. If there is a config for an app the file has to be named as `appname.config.js`, eg. `piwikApp.config.js`.
+
 There is currently the `angularjs` namespace within a plugin which is a bit annoying, we know. Long term we will remove this folder. medium term - once we have more Angular components - we will give this folder at least a better, more meaningful, name. With the existing assets structure of jQuery code it is hard to find the least annoying solution for this.
+
+For a more detailed naming convention have a look at the [Angular Naming Guide](https://github.com/johnpapa/angularjs-styleguide#naming).
 
 If a component, say a filter, can be reused in different plugins and is not plugin specific we but them into `CoreHome/angularjs/common`:
 
@@ -103,9 +107,8 @@ Filenames are always lower case and words are separated by dashes. In general we
 
 ### Coding style guide
 
-* As our minifier does not rename any variables we do not have to declare dependencies separately, we can simply write `function ($http)` instead of `['$http', function ($http) {}]`
 * In AngularJS there are many ways to define attributes for a directive (Class, HTML Attributes, Elementname, ...). We are using HTML attributes and as we do not really aim to be W3C compliant we chose not to prefix attributes with "data-" to keep templates clean. 
-* See here for a more complete style guide: https://github.com/johnpapa/angularjs-styleguide
+* See here for a complete style guide: https://github.com/johnpapa/angularjs-styleguide . We are using this style guide for any type as long as not mentioned differently in this document.
 
 
 ### Related links
