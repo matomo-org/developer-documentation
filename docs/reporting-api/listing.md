@@ -76,6 +76,7 @@ Here is an overview of the parameters you can add to any API request, where appl
 There are also generic filters you can choose to apply on all APIs that return web analytics reports. For example, there is a filter for sorting by column, define start and number of rows to return, a filter to only return rows matching a given string,
 
 *   **pivotBy**; this parameter can be used to create a pivot table of a report using a specified dimension. Pivoting a report will intersect a report with another report and display a single metric for values along two dimensions. To pivot a report, this query parameter must be set to the ID of the dimension to pivot by. For example, **queryParam=Referrers.Keyword** would pivot against the Keyword dimension.
+
     Note: If you want to pivot against a dimension that is not the dimension of a report's subtable, you must set the **pivot_by_filter_enable_fetch_by_segment** INI config variable to 1. Using segments will allow you to pivot by any dimension, but currently, it will be slow.
 *   **pivotByColumn**; specifies which column should be displayed in a pivoted report. Should be used with **pivotBy** and set to a column name, for example, **nb_visits**.
 *   **pivotByColumnLimit**; The maximum number of columns that should be displayed in a pivot table. All other columns are aggregated into an 'Others' column.
