@@ -112,7 +112,7 @@ For example, if you wanted to track a click on a JavaScript menu, you could writ
 
 [...]</code></pre>
 
-You can learn more about [Event Tracking](http://piwik.org/docs/event-tracking/).
+You can learn more about [Tracking Events](http://piwik.org/docs/event-tracking/#tracking-events) in the user guide.
 
 ## Manually Trigger a Conversion for a Goal
 
