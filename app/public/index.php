@@ -29,7 +29,7 @@ $app = new Slim(array(
     )
 ));
 
-$app->add(new CacheMiddleware());
+//$app->add(new CacheMiddleware());
 
 $app->error(function (\Exception $e) use ($app) {
     Log::error('An unhandled exception occurred: ' . $e->getMessage() . $e->getTraceAsString());

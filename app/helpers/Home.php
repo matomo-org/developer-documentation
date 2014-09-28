@@ -29,31 +29,60 @@ class Home {
         $menu = array();
 
         $menu[] = array(
-            'title'        => 'Guides',
-            'url'          => static::getUrl('guides'),
-            'description'  => 'Learn how to create your own plugins and contributions or delve deep into Piwik\'s inner workings and learn how it all works.',
-            'callToAction' => 'Start learning'
+            'title'       => 'Integrate Piwik',
+            'url'         => static::getUrl('integration'),
+            'description' => 'Track your application or access Piwik reports using the HTTP API.',
+            'links'       => array(
+                'Track your application' => static::getUrl('integration#tracking'),
+                'Access Piwik reports'   => static::getUrl('integration#reporting'),
+                'Client libraries & SDK' => static::getUrl('integration#clients'),
+            ),
         );
 
         $menu[] = array(
-            'title'        => 'API Reference',
-            'url'          => static::getUrl('api-reference'),
-            'description'  => 'Detailed documentation for every PHP class you might want to use. If you need help with a specific class, this is where to go.',
-            'callToAction' => 'Go'
+            'title'       => 'Develop Plugins',
+            'url'         => static::getUrl('plugins'),
+            'description' => 'Extend and customize Piwik by developing plugins and themes.',
+            'links'       => array(
+                'Getting started with Plugins' => static::getUrl('plugins#getting-started'),
+                'Plugin documentation'         => static::getUrl('plugins#documentation'),
+                'Custom themes'                => static::getUrl('plugins#themes'),
+                'Distributing your Plugin'     => static::getUrl('plugins#marketplace'),
+            ),
         );
 
         $menu[] = array(
-            'title'        => 'Changelog',
-            'url'          => static::getUrl('changelog'),
-            'description'  => '',
-            'callToAction' => ''
+            'title'       => 'Develop Piwik',
+            'url'         => static::getUrl('contributing'),
+            'description' => 'Discover how Piwik works and get involved in its development with the Core team.',
+            'links'       => array(
+                'Contributing to Piwik'    => static::getUrl('contributing#introduction'),
+                'How Piwik works'          => static::getUrl('contributing#internals'),
+                'The development workflow' => static::getUrl('contributing#workflow'),
+            ),
         );
 
         $menu[] = array(
-            'title'        => 'Support',
-            'url'          => static::getUrl('support'),
-            'description'  => 'If the documentation isn\'t helping you with something or you\'ve found a bug and want to report it, click here and learn how to get help.',
-            'callToAction' => 'Get help'
+            'title'       => 'API Reference',
+            'url'         => static::getUrl('api-reference'),
+            'description' => 'Check out the low-level documentation for the HTTP, Javascript or PHP API.',
+            'links'       => array(
+                'HTTP API'       => static::getUrl('api-reference#http'),
+                'Javascript API' => static::getUrl('api-reference#javascript'),
+                'PHP API'        => static::getUrl('api-reference#php'),
+            ),
+        );
+
+        $menu[] = array(
+            'title'       => 'Community & Support',
+            'url'         => static::getUrl('support'),
+            'description' => 'Get help or get involved with the developer community.',
+            'links'       => array(
+                'Developer blog' => 'http://piwik.org/blog/category/development/',
+                'Forums'         => 'http://forum.piwik.org/list.php?9',
+                'IRC'            => 'http://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a',
+                'Issues'         => 'https://github.com/piwik/piwik/issues',
+            ),
         );
 
         return $menu;
