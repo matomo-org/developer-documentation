@@ -36,6 +36,7 @@ The class defines the following methods:
 - [`postEvent()`](#postevent) &mdash; Post an event to Piwik's event dispatcher which will execute the event's observers.
 - [`addAction()`](#addaction) &mdash; Register an observer to an event.
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation token.
+- [`doAsSuperUser()`](#doassuperuser) &mdash; Executes a callback with superuser privileges, making sure those privileges are rescinded before this method exits.
 
 <a name="getcurrentuseremail" id="getcurrentuseremail"></a>
 <a name="getCurrentUserEmail" id="getCurrentUserEmail"></a>
@@ -535,4 +536,43 @@ cannot be found for the toke, the token is returned.
     </div>
   </li>
 </ul>
+
+<a name="doassuperuser" id="doassuperuser"></a>
+<a name="doAsSuperUser" id="doAsSuperUser"></a>
+### `doAsSuperUser()`
+
+Executes a callback with superuser privileges, making sure those privileges are rescinded before this method exits.
+
+Privileges will be rescinded even if an exception is thrown.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$function` (`Piwik\callback`) &mdash;
+
+      <div markdown="1" class="param-desc"> The callback to execute. Should accept no arguments.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`mixed`) &mdash;
+    <div markdown="1" class="param-desc">The result of `$function`.</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; rethrows any exceptions thrown by `$function`.
 

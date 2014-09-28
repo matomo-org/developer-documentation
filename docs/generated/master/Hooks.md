@@ -784,62 +784,27 @@ Callback Signature:
 - [Login.initSession.end](#logininitsessionend)
 
 ### Login.authenticate
-_Defined in [Piwik/Plugins/Login/Auth](https://github.com/piwik/piwik/blob/master/plugins/Login/Auth.php) in line [165](https://github.com/piwik/piwik/blob/master/plugins/Login/Auth.php#L165)_
+_Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php) in line [143](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php#L143)_
 
-Triggered before authenticate function. This event propagate login and token_auth which will be using in authenticate process.
 
-This event exists to enable possibility for user authentication prevention.
-For example when user is locked or inactive.
-
-**Example**
-
-    Piwik::addAction('Login.authenticate', function ($login, $tokenAuth) {
-        if (!UserActivityManager::isActive ($login, $tokenAuth) {
-            throw new Exception('Your account is inactive.');
-        }
-    });
 
 Callback Signature:
-<pre><code>function($login, $tokenAuth)</code></pre>
-
-- `string` `$login` User login.
-
-- `string` `$tokenAuth` User token auth.
+<pre><code>function($auth-&gt;getLogin(), $tokenAuth)</code></pre>
 
 
 ### Login.authenticate.successful
-_Defined in [Piwik/Plugins/Login/Auth](https://github.com/piwik/piwik/blob/master/plugins/Login/Auth.php) in line [227](https://github.com/piwik/piwik/blob/master/plugins/Login/Auth.php#L227)_
+_Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php) in line [196](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php#L196)_
 
-Triggered after successful authenticate, but before cookie creation. This event propagate login and token_auth which was used in authenticate process.
 
-This event exists to enable the ability to custom action before the cookie will be created,
-but after a successful authentication.
-For example when user have to fill survey or change password.
-
-**Example**
-
-    Piwik::addAction('Login.authenticate.successful', function ($login, $tokenAuth) {
-        // redirect to change password action
-    });
 
 Callback Signature:
-<pre><code>function($login, $tokenAuth)</code></pre>
-
-- `string` `$login` User login.
-
-- `string` `$tokenAuth` User token auth.
+<pre><code>function($authResult-&gt;getIdentity(), $authResult-&gt;getTokenAuth())</code></pre>
 
 
 ### Login.initSession.end
-_Defined in [Piwik/Plugins/Login/Auth](https://github.com/piwik/piwik/blob/master/plugins/Login/Auth.php) in line [99](https://github.com/piwik/piwik/blob/master/plugins/Login/Auth.php#L99)_
+_Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php) in line [124](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php#L124)_
 
-Triggered after session initialize. This event notify about end of init session process.
 
-**Example**
-
-    Piwik::addAction('Login.initSession.end', function () {
-        // session has been initialized
-    });
 
 ## Menu
 

@@ -3,6 +3,7 @@
 ## Archive
 ## ArchiveProcessor
 ## ArchiveProcessor\Parameters
+## AuthResult
 ## Columns\Dimension
 ## Common
 ## Config
@@ -76,6 +77,7 @@
 ## Plugin\ViewDataTable
 ## Plugin\Visualization
 ## Plugin\Widgets
+## Plugins\Login\SessionInitializer
 ## Plugins\UsersManager\UserPreferences
 ## RankingQuery
 ## ScheduledTask

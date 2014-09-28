@@ -7,6 +7,7 @@ This is a complete list of available classes:
 - [`Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.
+- [`AuthResult`](Piwik/AuthResult.md) &mdash; Authentication result.
 - [`Columns\Dimension`](Piwik/Columns/Dimension.md)
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
@@ -80,6 +81,7 @@ This is a complete list of available classes:
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
 - [`Plugin\Widgets`](Piwik/Plugin/Widgets.md) &mdash; Base class of all plugin widget providers.
+- [`Plugins\Login\SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; Initializes authenticated sessions using an Auth implementation.
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.

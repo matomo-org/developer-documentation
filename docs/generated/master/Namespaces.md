@@ -17,6 +17,7 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugin`](Piwik/Plugin)
 - [`Piwik\Plugin\Dimension`](Piwik/Plugin/Dimension)
 - [`Piwik\Plugins`](Piwik/Plugins)
+- [`Piwik\Plugins\Login`](Piwik/Plugins/Login)
 - [`Piwik\Plugins\UsersManager`](Piwik/Plugins/UsersManager)
 - [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 - [`Piwik\Settings`](Piwik/Settings)

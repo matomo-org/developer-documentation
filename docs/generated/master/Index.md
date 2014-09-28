@@ -7,6 +7,7 @@ Index
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; _Class in namespace_ `Piwik` 
 - [`aggregateDataTableRecords()`](Piwik/ArchiveProcessor.md#aggregatedatatablerecords) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`aggregateNumericMetrics()`](Piwik/ArchiveProcessor.md#aggregatenumericmetrics) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
+- [`AuthResult`](Piwik/AuthResult.md) &mdash; _Class in namespace_ `Piwik` 
 - [`addSegment()`](Piwik/Columns/Dimension.md#addsegment) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`applyQueuedFilters()`](Piwik/DataTable.md#applyqueuedfilters) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`addDataTable()`](Piwik/DataTable.md#adddatatable) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -182,6 +183,7 @@ Index
 - [`discardNonce()`](Piwik/Nonce.md#discardnonce) &mdash; _Method in class_ [`Nonce`](Piwik/Nonce.md)
 - [`delete()`](Piwik/Option.md#delete) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
 - [`deleteLike()`](Piwik/Option.md#deletelike) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
+- [`doAsSuperUser()`](Piwik/Piwik.md#doassuperuser) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`deactivate()`](Piwik/Plugin.md#deactivate) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`$date`](Piwik/Plugin/Controller.md#$date) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`daily()`](Piwik/Plugin/Tasks.md#daily) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
@@ -287,6 +289,9 @@ Index
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSite()`](Piwik/ArchiveProcessor/Parameters.md#getsite) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSegment()`](Piwik/ArchiveProcessor/Parameters.md#getsegment) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`getIdentity()`](Piwik/AuthResult.md#getidentity) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
+- [`getTokenAuth()`](Piwik/AuthResult.md#gettokenauth) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
+- [`getCode()`](Piwik/AuthResult.md#getcode) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
 - [`getName()`](Piwik/Columns/Dimension.md#getname) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getId()`](Piwik/Columns/Dimension.md#getid) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](Piwik/Columns/Dimension.md#getalldimensions) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
@@ -440,6 +445,7 @@ Index
 - [`getDefaultRequestConfig()`](Piwik/Plugin/ViewDataTable.md#getdefaultrequestconfig) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`getViewDataTableId()`](Piwik/Plugin/ViewDataTable.md#getviewdatatableid) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`getDataTable()`](Piwik/Plugin/ViewDataTable.md#getdatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
+- [`getHashTokenAuth()`](Piwik/Plugins/Login/SessionInitializer.md#gethashtokenauth) &mdash; _Method in class_ [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md)
 - [`getDefaultWebsiteId()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultwebsiteid) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultReport()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultreport) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultDate()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultdate) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
@@ -516,6 +522,7 @@ Index
 
 ## H
 
+- [`hasSuperUserAccess()`](Piwik/AuthResult.md#hassuperuseraccess) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
 - [`hasColumn()`](Piwik/DataTable/Row.md#hascolumn) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`Http`](Piwik/Http.md) &mdash; _Class in namespace_ `Piwik` 
 - [`hasNoClear()`](Piwik/Notification.md#hasnoclear) &mdash; _Method in class_ [`Notification`](Piwik/Notification.md)
@@ -574,6 +581,7 @@ Index
 - [`isRequestingSingleDataTable()`](Piwik/Plugin/ViewDataTable.md#isrequestingsingledatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`isThereDataToDisplay()`](Piwik/Plugin/Visualization.md#istheredatatodisplay) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`init()`](Piwik/Plugin/Widgets.md#init) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
+- [`initSession()`](Piwik/Plugins/Login/SessionInitializer.md#initsession) &mdash; _Method in class_ [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md)
 - [`isEmpty()`](Piwik/Segment.md#isempty) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
 - [`isSegmentationEnabled()`](Piwik/SettingsPiwik.md#issegmentationenabled) &mdash; _Method in class_ [`SettingsPiwik`](Piwik/SettingsPiwik.md)
 - [`isUniqueVisitorsEnabled()`](Piwik/SettingsPiwik.md#isuniquevisitorsenabled) &mdash; _Method in class_ [`SettingsPiwik`](Piwik/SettingsPiwik.md)
@@ -831,6 +839,7 @@ Index
 - [`save()`](Piwik/Plugin/Settings.md#save) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`setSettingValue()`](Piwik/Plugin/Settings.md#setsettingvalue) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`setDataTable()`](Piwik/Plugin/ViewDataTable.md#setdatatable) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
+- [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; _Class in namespace_ `Piwik\Plugins\Login` 
 - [`setLimit()`](Piwik/RankingQuery.md#setlimit) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setOthersLabel()`](Piwik/RankingQuery.md#setotherslabel) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setColumnToMarkExcludedRows()`](Piwik/RankingQuery.md#setcolumntomarkexcludedrows) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
@@ -933,6 +942,7 @@ Index
 
 ## W
 
+- [`wasAuthenticationSuccessful()`](Piwik/AuthResult.md#wasauthenticationsuccessful) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
 - [`walkPath()`](Piwik/DataTable.md#walkpath) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`warning()`](Piwik/Log.md#warning) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
 - [`$widgetTitle`](Piwik/Plugin/Report.md#$widgettitle) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
@@ -951,6 +961,7 @@ Index
 ## _
 
 - [`__construct()`](Piwik/API/Request.md#__construct) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
+- [`__construct()`](Piwik/AuthResult.md#__construct) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
 - [`__get()`](Piwik/Config.md#__get) &mdash; _Method in class_ [`Config`](Piwik/Config.md)
 - [`__set()`](Piwik/Config.md#__set) &mdash; _Method in class_ [`Config`](Piwik/Config.md)
 - [`__construct()`](Piwik/DataTable.md#__construct) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -993,6 +1004,7 @@ Index
 - [`__construct()`](Piwik/Plugin/Controller.md#__construct) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`__construct()`](Piwik/Plugin/Settings.md#__construct) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)
 - [`__construct()`](Piwik/Plugin/ViewDataTable.md#__construct) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
+- [`__construct()`](Piwik/Plugins/Login/SessionInitializer.md#__construct) &mdash; _Method in class_ [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md)
 - [`__construct()`](Piwik/RankingQuery.md#__construct) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`__construct()`](Piwik/ScheduledTask.md#__construct) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
 - [`__construct()`](Piwik/Segment.md#__construct) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
