@@ -59,52 +59,64 @@ class DevelopPlugins
                 ],
             ],
             [
-                'category' => 'Plugin documentation',
-                'id'       => 'documentation',
+                'category' => 'Basics',
+                'id'       => 'basics',
                 'items'    => [
                     [
-                        'title'       => 'MVC in Piwik',
+                        'title'       => 'Controllers and views',
                         'file'        => 'mvc-in-piwik',
                         'url'         => static::getUrl('mvc-in-piwik'),
                         'description' => 'Learn how Piwik handles HTTP requests and how Piwik generates the HTML that is displayed to the user.',
                     ],
                     [
-                        'title'       => 'Piwik configuration',
+                        'title'       => 'Configuration',
                         'file'        => 'piwik-configuration',
                         'url'         => static::getUrl('piwik-configuration'),
                         'description' => 'Learn how Piwik is configured and how plugins can define their own configuration settings.',
                     ],
                     [
-                        'title'       => 'Piwik\'s INI configuration',
+                        'title'       => 'INI configuration',
                         'file'        => 'piwiks-ini-configuration',
                         'url'         => static::getUrl('piwiks-ini-configuration'),
                         'description' => 'Learn how Piwik reads and manipulates the INI configuration settings.',
                     ],
                     [
-                        'title'       => 'Persistence & the MySQL Backend',
+                        'title'       => 'Make your plugin configurable',
+                        'url'         => 'http://piwik.org/blog/2014/09/make-plugin-configurable-introducing-piwik-platform/',
+                        'description' => 'Learn how to define settings for your plugin.',
+                    ],
+                    [
+                        'title'       => 'Persistence & MySQL',
                         'file'        => 'persistence-and-the-mysql-backend',
                         'url'         => static::getUrl('persistence-and-the-mysql-backend'),
                         'description' => 'Learn about what log data and analytics data consists of and about how it is stored in Piwik\'s MySQL database.',
                     ],
                     [
-                        'title'       => 'How to create a scheduled task',
+                        'title'       => 'Security',
+                        'file'        => 'security-in-piwik',
+                        'url'         => static::getUrl('security-in-piwik'),
+                        'description' => 'Learn how Piwik protects itself from potential attackers and how you can write secure code for your plugin.',
+                    ],
+                ],
+            ],
+            [
+                'category' => 'Advanced topics',
+                'id'       => 'advanced',
+                'items'    => [
+                    [
+                        'title'       => 'Scheduled tasks',
                         'url'         => 'http://piwik.org/blog/2014/08/create-scheduled-task-introducing-piwik-platform/',
                         'description' => 'Learn how to execute scheduled tasks in the background, for instance sending a daily email.',
                     ],
                     [
-                        'title'       => 'How to create a widget',
+                        'title'       => 'Widgets',
                         'url'         => 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/',
                         'description' => 'Learn how to easily create a new widget.',
                     ],
                     [
-                        'title'       => 'How to add new pages and menu items',
+                        'title'       => 'Adding pages and menu items',
                         'url'         => 'http://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/',
                         'description' => 'Get started in Controller, View and Menu API.',
-                    ],
-                    [
-                        'title'       => 'How to make your plugin configurable',
-                        'url'         => 'http://piwik.org/blog/2014/09/make-plugin-configurable-introducing-piwik-platform/',
-                        'description' => 'Learn how to define settings for your plugin.',
                     ],
                     [
                         'title'       => 'All about Analytics Data',
@@ -113,19 +125,13 @@ class DevelopPlugins
                         'description' => 'Learn about how analytics reports are calculated and stored in Piwik (the Archiving Process) and how plugins can define their own reports.',
                     ],
                     [
-                        'title'       => 'Security in Piwik',
-                        'file'        => 'security-in-piwik',
-                        'url'         => static::getUrl('security-in-piwik'),
-                        'description' => 'Learn how Piwik protects itself from potential attackers and how you can write secure code for your plugin.',
-                    ],
-                    [
                         'title'       => 'Internationalization',
                         'file'        => 'internationalization',
                         'url'         => static::getUrl('internationalization'),
                         'description' => 'Learn how Piwik makes its text available in many different languages and how your plugin can do the same.',
                     ],
                     [
-                        'title'       => 'Automated Tests',
+                        'title'       => 'Tests',
                         'file'        => 'automated-tests',
                         'url'         => static::getUrl('automated-tests'),
                         'description' => 'Learn how to setup unit, integration and UI tests for your new plugin and how to work with Piwik Core\'s tests.',

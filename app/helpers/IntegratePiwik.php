@@ -59,7 +59,7 @@ class IntegratePiwik {
                 ],
             ],
             [
-                'category' => 'Accessing Piwik reports',
+                'category' => 'Accessing Piwik data',
                 'id'       => 'reporting',
                 'items'    => [
                     [

@@ -27,64 +27,64 @@ class Home {
 
     public static function getMainMenu()
     {
-        $menu = array();
+        $menu = [];
 
-        $menu[] = array(
+        $menu[] = [
             'title'       => 'Integrate Piwik',
             'url'         => static::getUrl('integration'),
-            'description' => 'Track your application or access Piwik reports using the HTTP API.',
-            'links'       => array(
+            'description' => 'Track your application or access Piwik data using the HTTP API.',
+            'links'       => [
                 'Track your application' => static::getUrl('integration#tracking'),
-                'Access Piwik reports'   => static::getUrl('integration#reporting'),
+                'Access Piwik data'      => static::getUrl('integration#reporting'),
                 'Client libraries & SDK' => static::getUrl('integration#clients'),
-            ),
-        );
+            ],
+        ];
 
-        $menu[] = array(
+        $menu[] = [
             'title'       => 'Develop Plugins',
             'url'         => static::getUrl('plugins'),
             'description' => 'Extend and customize Piwik by developing plugins and themes.',
-            'links'       => array(
+            'links'       => [
                 'Getting started with Plugins' => static::getUrl('plugins#getting-started'),
-                'Plugin documentation'         => static::getUrl('plugins#documentation'),
+                'Write a plugin'               => static::getUrl('plugins#basics'),
                 'Custom themes'                => static::getUrl('plugins#themes'),
-                'Distributing your Plugin'     => static::getUrl('plugins#marketplace'),
-            ),
-        );
+                'The Marketplace'              => static::getUrl('plugins#marketplace'),
+            ],
+        ];
 
-        $menu[] = array(
+        $menu[] = [
             'title'       => 'Develop Piwik',
             'url'         => static::getUrl('contributing'),
             'description' => 'Discover how Piwik works and get involved in its development with the Core team.',
-            'links'       => array(
+            'links'       => [
                 'Contributing to Piwik'    => static::getUrl('contributing#introduction'),
                 'How Piwik works'          => static::getUrl('contributing#internals'),
                 'The development workflow' => static::getUrl('contributing#workflow'),
-            ),
-        );
+            ],
+        ];
 
-        $menu[] = array(
+        $menu[] = [
             'title'       => 'API Reference',
             'url'         => static::getUrl('api-reference'),
             'description' => 'Check out the low-level documentation for the HTTP, Javascript or PHP API.',
-            'links'       => array(
+            'links'       => [
                 'HTTP API'       => static::getUrl('api-reference#http'),
                 'Javascript API' => static::getUrl('api-reference#javascript'),
                 'PHP API'        => static::getUrl('api-reference#php'),
-            ),
-        );
+            ],
+        ];
 
-        $menu[] = array(
+        $menu[] = [
             'title'       => 'Community & Support',
             'url'         => static::getUrl('support'),
             'description' => 'Get help or get involved with the developer community.',
-            'links'       => array(
+            'links'       => [
                 'Developer blog' => 'http://piwik.org/blog/category/development/',
                 'Forums'         => 'http://forum.piwik.org/list.php?9',
                 'IRC'            => 'http://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a',
                 'Issues'         => 'https://github.com/piwik/piwik/issues',
-            ),
-        );
+            ],
+        ];
 
         return $menu;
     }
