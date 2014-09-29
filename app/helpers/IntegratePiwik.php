@@ -102,16 +102,10 @@ class IntegratePiwik {
                 'id'       => 'clients',
                 'items'    => [
                     [
-                        'title'       => 'Tracking clients (TODO)',
-                        'file'        => 'tracking-clients',
-                        'url'         => static::getUrl('tracking-clients'),
-                        'description' => 'To be written…',
-                    ],
-                    [
-                        'title'       => 'Reporting clients (TODO)',
-                        'file'        => 'reporting-clients',
-                        'url'         => static::getUrl('reporting-clients'),
-                        'description' => 'To be written…',
+                        'title'       => 'Tracking API clients',
+                        'file'        => 'integration/tracking-api-clients',
+                        'url'         => static::getUrl('tracking-api-clients'),
+                        'description' => 'View all client libraries that are available to use Piwik\'s Tracking HTTP API from your application.',
                     ],
                 ],
             ],
