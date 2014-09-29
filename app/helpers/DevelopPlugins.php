@@ -75,12 +75,6 @@ class DevelopPlugins
                         'description' => 'Learn how Piwik is configured and how plugins can define their own configuration settings.',
                     ],
                     [
-                        'title'       => 'INI configuration',
-                        'file'        => 'piwiks-ini-configuration',
-                        'url'         => static::getUrl('piwiks-ini-configuration'),
-                        'description' => 'Learn how Piwik reads and manipulates the INI configuration settings.',
-                    ],
-                    [
                         'title'       => 'Make your plugin configurable',
                         'url'         => 'http://piwik.org/blog/2014/09/make-plugin-configurable-introducing-piwik-platform/',
                         'description' => 'Learn how to define settings for your plugin.',

@@ -47,9 +47,10 @@ class DevelopPiwik
                 'id'       => 'internals',
                 'items'    => [
                     [
-                        'title'       => 'Piwik Core and the plugin architecture',
-                        'url'         => static::getUrl('piwik-architecture'),
-                        'description' => 'To be written…',
+                        'title'       => 'Piwik\'s INI Configuration',
+                        'file'        => 'contributing/piwiks-ini-configuration',
+                        'url'         => static::getUrl('piwiks-ini-configuration'),
+                        'description' => 'Learn how Piwik reads and manipulates the INI configuration settings.',
                     ],
                 ],
             ],
