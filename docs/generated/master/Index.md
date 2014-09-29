@@ -7,6 +7,8 @@ Index
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; _Class in namespace_ `Piwik` 
 - [`aggregateDataTableRecords()`](Piwik/ArchiveProcessor.md#aggregatedatatablerecords) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`aggregateNumericMetrics()`](Piwik/ArchiveProcessor.md#aggregatenumericmetrics) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
+- [`Auth`](Piwik/Auth.md) &mdash; _Class in namespace_ `Piwik` 
+- [`authenticate()`](Piwik/Auth.md#authenticate) &mdash; _Method in class_ [`Auth`](Piwik/Auth.md)
 - [`AuthResult`](Piwik/AuthResult.md) &mdash; _Class in namespace_ `Piwik` 
 - [`addSegment()`](Piwik/Columns/Dimension.md#addsegment) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`applyQueuedFilters()`](Piwik/DataTable.md#applyqueuedfilters) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -289,6 +291,9 @@ Index
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSite()`](Piwik/ArchiveProcessor/Parameters.md#getsite) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSegment()`](Piwik/ArchiveProcessor/Parameters.md#getsegment) &mdash; _Method in class_ [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`getName()`](Piwik/Auth.md#getname) &mdash; _Method in class_ [`Auth`](Piwik/Auth.md)
+- [`getLogin()`](Piwik/Auth.md#getlogin) &mdash; _Method in class_ [`Auth`](Piwik/Auth.md)
+- [`getTokenAuthSecret()`](Piwik/Auth.md#gettokenauthsecret) &mdash; _Method in class_ [`Auth`](Piwik/Auth.md)
 - [`getIdentity()`](Piwik/AuthResult.md#getidentity) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
 - [`getTokenAuth()`](Piwik/AuthResult.md#gettokenauth) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
 - [`getCode()`](Piwik/AuthResult.md#getcode) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
@@ -767,11 +772,16 @@ Index
 - [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; _Class in namespace_ `Piwik\ViewDataTable` 
 - [`$request_parameters_to_modify`](Piwik/ViewDataTable/RequestConfig.md#$request_parameters_to_modify) &mdash; _Property in class_ [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`render()`](Piwik/View/UIControl.md#render) &mdash; _Method in class_ [`UIControl`](Piwik/View/UIControl.md)
+- [`render()`](Piwik/View/ViewInterface.md#render) &mdash; _Method in class_ [`ViewInterface`](Piwik/View/ViewInterface.md)
 - [`remove()`](Piwik/WidgetsList.md#remove) &mdash; _Method in class_ [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## S
 
 - [`shouldLoadFlatten()`](Piwik/API/Request.md#shouldloadflatten) &mdash; _Method in class_ [`Request`](Piwik/API/Request.md)
+- [`setTokenAuth()`](Piwik/Auth.md#settokenauth) &mdash; _Method in class_ [`Auth`](Piwik/Auth.md)
+- [`setLogin()`](Piwik/Auth.md#setlogin) &mdash; _Method in class_ [`Auth`](Piwik/Auth.md)
+- [`setPassword()`](Piwik/Auth.md#setpassword) &mdash; _Method in class_ [`Auth`](Piwik/Auth.md)
+- [`setPasswordHash()`](Piwik/Auth.md#setpasswordhash) &mdash; _Method in class_ [`Auth`](Piwik/Auth.md)
 - [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`sort()`](Piwik/DataTable.md#sort) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](Piwik/DataTable.md#setmaximumdepthlevelallowedatleast) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
@@ -939,6 +949,7 @@ Index
 - [`$validate`](Piwik/Settings/Setting.md#$validate) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`Version`](Piwik/Version.md) &mdash; _Class in namespace_ `Piwik` 
 - [`View`](Piwik/View.md) &mdash; _Class in namespace_ `Piwik` 
+- [`ViewInterface`](Piwik/View/ViewInterface.md) &mdash; _Class in namespace_ [`Piwik\View`](Piwik/View) 
 
 ## W
 

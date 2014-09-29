@@ -87,7 +87,7 @@ Authenticates the user and, if successful, initializes an authenticated session.
    <ul>
    <li>
       <div markdown="1" class="parameter">
-      `$auth` (`Piwik\Auth`) &mdash;
+      `$auth` ([`Auth`](../../../Piwik/Auth.md)) &mdash;
 
       <div markdown="1" class="param-desc"> The Auth implementation to use.</div>
 

@@ -5,7 +5,7 @@ AuthResult
 
 Authentication result.
 
-This is what is returned by authentication attempts using Auth
+This is what is returned by authentication attempts using [Auth](/api-reference/Piwik/Auth)
 implementations.
 
 Methods
