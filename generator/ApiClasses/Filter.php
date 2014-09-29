@@ -20,7 +20,9 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
 
     public function acceptClass(ClassReflection $class)
     {
-        if (!class_exists($class->getName())) {
+        if (!class_exists($class->getName())
+            && !interface_exists($class->getName())
+        ) {
             return false;
         }
 
