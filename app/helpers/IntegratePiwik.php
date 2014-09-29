@@ -12,7 +12,7 @@ class IntegratePiwik {
 
     private static function getUrl($key)
     {
-        return '/integration/' . $key;
+        return '/guides/' . $key;
     }
 
     public static function getMenuItemByUrl($url)
@@ -25,6 +25,11 @@ class IntegratePiwik {
             }
         }
         return null;
+    }
+
+    public static function getCategoryName()
+    {
+        return 'Integrate Piwik';
     }
 
     public static function getMainMenu()
@@ -103,7 +108,7 @@ class IntegratePiwik {
                 'items'    => [
                     [
                         'title'       => 'Tracking API clients',
-                        'file'        => 'integration/tracking-api-clients',
+                        'file'        => 'tracking-api-clients',
                         'url'         => static::getUrl('tracking-api-clients'),
                         'description' => 'View all client libraries that are available to use Piwik\'s Tracking HTTP API from your application.',
                     ],

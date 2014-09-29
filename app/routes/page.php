@@ -99,19 +99,21 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
     ]);
 });
 
-$app->get('/integration', function () use ($app) {
+$app->get('/guides/:page', function ($page) use ($app) {
 
-    $app->render('documentation.twig', [
-        'title'       => 'Integrate Piwik',
-        'guides'      => IntegratePiwik::getMainMenu(),
-        'categorized' => true,
-        'noContainer' => true
-    ]);
-});
-
-$app->get('/integration/:page', function ($page) use ($app) {
-
-    $guide = IntegratePiwik::getMenuItemByUrl('/integration/' . $page);
+    $guideClasses = [
+        'helpers\IntegratePiwik',
+        'helpers\DevelopPlugins',
+        'helpers\DevelopPiwik',
+    ];
+    foreach ($guideClasses as $guideClass) {
+        $guide = $guideClass::getMenuItemByUrl('/guides/' . $page);
+        if ($guide) {
+            $mainMenu = $guideClass::getMainMenu();
+            $activeCategory = $guideClass::getCategoryName();
+            break;
+        }
+    }
 
     if (empty($guide)) {
         send404NotFound($app);
@@ -125,7 +127,6 @@ $app->get('/integration/:page', function ($page) use ($app) {
         return;
     }
 
-    $mainMenu = IntegratePiwik::getMainMenu();
     $thisMenuItem = null;
     foreach ($mainMenu as $category) {
         foreach ($category['items'] as $item) {
@@ -137,12 +138,24 @@ $app->get('/integration/:page', function ($page) use ($app) {
     }
 
     $app->render('layout/documentation.twig', [
-        'doc'          => $doc->getRenderedContent(),
-        'sections'     => $doc->getSections(),
-        'sectionTitle' => $doc->getTitle(),
-        'categories'   => $mainMenu,
+        'doc'                => $doc->getRenderedContent(),
+        'sections'           => $doc->getSections(),
+        'sectionTitle'       => $doc->getTitle(),
+        'categories'         => $mainMenu,
         'linkToEditDocument' => $doc->linkToEditDocument(),
-        'thisItem'     => $thisMenuItem
+        'thisItem'           => $thisMenuItem,
+        'activeCategory'     => $activeCategory,
+        'activeMenu'         => $activeCategory,
+    ]);
+});
+
+$app->get('/integration', function () use ($app) {
+
+    $app->render('documentation.twig', [
+        'title'       => 'Integrate Piwik',
+        'guides'      => IntegratePiwik::getMainMenu(),
+        'categorized' => true,
+        'noContainer' => true
     ]);
 });
 
@@ -156,43 +169,6 @@ $app->get('/plugins', function () use ($app) {
     ]);
 });
 
-$app->get('/plugins/:page', function ($page) use ($app) {
-
-    $guide = DevelopPlugins::getMenuItemByUrl('/plugins/' . $page);
-
-    if (empty($guide)) {
-        send404NotFound($app);
-        return;
-    }
-
-    try {
-        $doc = new Document($guide['file']);
-    } catch (DocumentNotExistException $e) {
-        send404NotFound($app);
-        return;
-    }
-
-    $mainMenu = DevelopPlugins::getMainMenu();
-    $thisMenuItem = null;
-    foreach ($mainMenu as $category) {
-        foreach ($category['items'] as $item) {
-            if (isset($item['file']) && ($item['file'] == $page)) {
-                $thisMenuItem = $item;
-                break;
-            }
-        }
-    }
-
-    $app->render('layout/documentation.twig', [
-        'doc'          => $doc->getRenderedContent(),
-        'sections'     => $doc->getSections(),
-        'sectionTitle' => $doc->getTitle(),
-        'categories'   => $mainMenu,
-        'linkToEditDocument' => $doc->linkToEditDocument(),
-        'thisItem'     => $thisMenuItem
-    ]);
-});
-
 $app->get('/contributing', function () use ($app) {
 
     $app->render('documentation.twig', [
@@ -200,43 +176,6 @@ $app->get('/contributing', function () use ($app) {
         'guides'      => DevelopPiwik::getMainMenu(),
         'categorized' => true,
         'noContainer' => true
-    ]);
-});
-
-$app->get('/contributing/:page', function ($page) use ($app) {
-
-    $guide = DevelopPiwik::getMenuItemByUrl('/contributing/' . $page);
-
-    if (empty($guide)) {
-        send404NotFound($app);
-        return;
-    }
-
-    try {
-        $doc = new Document($guide['file']);
-    } catch (DocumentNotExistException $e) {
-        send404NotFound($app);
-        return;
-    }
-
-    $mainMenu = DevelopPiwik::getMainMenu();
-    $thisMenuItem = null;
-    foreach ($mainMenu as $category) {
-        foreach ($category['items'] as $item) {
-            if (isset($item['file']) && ($item['file'] == $page)) {
-                $thisMenuItem = $item;
-                break;
-            }
-        }
-    }
-
-    $app->render('layout/documentation.twig', [
-        'doc'          => $doc->getRenderedContent(),
-        'sections'     => $doc->getSections(),
-        'sectionTitle' => $doc->getTitle(),
-        'categories'   => $mainMenu,
-        'linkToEditDocument' => $doc->linkToEditDocument(),
-        'thisItem'     => $thisMenuItem
     ]);
 });
 

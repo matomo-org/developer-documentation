@@ -12,7 +12,7 @@ class DevelopPiwik
 {
     private static function getUrl($key)
     {
-        return '/contributing/' . $key;
+        return '/guides/' . $key;
     }
 
     public static function getMenuItemByUrl($url)
@@ -25,6 +25,11 @@ class DevelopPiwik
             }
         }
         return null;
+    }
+
+    public static function getCategoryName()
+    {
+        return 'Develop Piwik';
     }
 
     public static function getMainMenu()
@@ -48,7 +53,7 @@ class DevelopPiwik
                 'items'    => [
                     [
                         'title'       => 'Piwik\'s INI Configuration',
-                        'file'        => 'contributing/piwiks-ini-configuration',
+                        'file'        => 'piwiks-ini-configuration',
                         'url'         => static::getUrl('piwiks-ini-configuration'),
                         'description' => 'Learn how Piwik reads and manipulates the INI configuration settings.',
                     ],

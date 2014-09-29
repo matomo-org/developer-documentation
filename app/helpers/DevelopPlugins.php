@@ -12,7 +12,7 @@ class DevelopPlugins
 {
     private static function getUrl($key)
     {
-        return '/plugins/' . $key;
+        return '/guides/' . $key;
     }
 
     public static function getMenuItemByUrl($url)
@@ -25,6 +25,11 @@ class DevelopPlugins
             }
         }
         return null;
+    }
+
+    public static function getCategoryName()
+    {
+        return 'Develop Plugins';
     }
 
     public static function getMainMenu()
@@ -63,7 +68,7 @@ class DevelopPlugins
                 'id'       => 'basics',
                 'items'    => [
                     [
-                        'title'       => 'Controllers and views',
+                        'title'       => 'MVC (Model-View-Controller) in Piwik',
                         'file'        => 'mvc-in-piwik',
                         'url'         => static::getUrl('mvc-in-piwik'),
                         'description' => 'Learn how Piwik handles HTTP requests and how Piwik generates the HTML that is displayed to the user.',
