@@ -2,6 +2,10 @@ body {
     padding-top: 80px;
 }
 
+a, a:hover, a:focus {
+    color: #528AB8;
+}
+
 #sidebar {
     opacity: 0.65;
     -webkit-transition: opacity 200ms linear;
@@ -88,9 +92,9 @@ body {
 
 .header-with-background h1 {
     color:white;
-    font-size:63px;
+    font-size:60px;
     font-weight:bold;
-    padding: 20px 0 20px 0;
+    padding: 15px 0;
 }
 
 .header-with-background .page-header {
@@ -110,8 +114,10 @@ body {
     background-color: #ecf0f1;
 }
 
-.teaser-category-group-title h1 {
-    line-height:2em;
+.teaser-category-group-title h2 {
+    line-height: 1.8em;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /* First level of nav */

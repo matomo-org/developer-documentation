@@ -7,8 +7,10 @@
 
         <div class="col-xs-12 col-sm-6 col-md-4 teaser-item">
             <h2>
-                <span class="text-muted">#</span>
-                <a href="{{ item.url }}">{{ item.title }}</a>
+                <span class="text-success">#</span>
+                <strong>
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                </strong>
             </h2>
 
             <p>{{ item.description }}</p>
@@ -45,7 +47,7 @@
         <div class="category-list">
             <div class="teaser-category-group-title">
                 <div class="container">
-                    <h1 id="{{ category.id }}">{{ category.category }}</h1>
+                    <h2 id="{{ category.id }}">{{ category.category }}</h2>
                 </div>
             </div>
 
