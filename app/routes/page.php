@@ -149,6 +149,11 @@ $app->get('/guides/:page', function ($page) use ($app) {
     ]);
 });
 
+$app->get('/guides', function () use ($app) {
+
+    $app->redirect('/', 301);
+});
+
 $app->get('/integration', function () use ($app) {
 
     $app->render('documentation.twig', [
