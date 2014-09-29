@@ -3,12 +3,12 @@
 Auth
 ====
 
-Base for authentication implementations.
+Base interface for authentication implementations.
 
-Plugins that provide Auth implementations
-must provide a class that implements this interface. Additionally, an instance
-of that class must be set in the [Registry](/api-reference/Piwik/Registry) class with the 'auth'
-key during the [Request.initAuthenticationObject](http://developer.piwik.org/api-reference/events#requestinitauthenticationobject)
+Plugins that provide Auth implementations must provide a class that implements
+this interface. Additionally, an instance of that class must be set in the
+[Registry](/api-reference/Piwik/Registry) class with the 'auth' key during the
+[Request.initAuthenticationObject](http://developer.piwik.org/api-reference/events#requestinitauthenticationobject)
 event.
 
 Authentication implementations must support authentication via username and
