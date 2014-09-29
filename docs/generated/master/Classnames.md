@@ -80,6 +80,7 @@
 ## Plugins\Login\SessionInitializer
 ## Plugins\UsersManager\UserPreferences
 ## RankingQuery
+## Registry
 ## ScheduledTask
 ## ScheduledTime
 ## ScheduledTime\Daily

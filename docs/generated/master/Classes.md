@@ -84,6 +84,7 @@ This is a complete list of available classes:
 - [`Plugins\Login\SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; Initializes authenticated sessions using an Auth implementation.
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
+- [`Registry`](Piwik/Registry.md) &mdash; Registry class.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.
 - [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; Describes the interval on which a scheduled task is executed.
 - [`ScheduledTime\Daily`](Piwik/ScheduledTime/Daily.md) &mdash; Daily class is used to schedule tasks every day.

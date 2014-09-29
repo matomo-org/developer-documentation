@@ -456,6 +456,8 @@ Index
 - [`getDefaultDate()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultdate) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultPeriod()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultperiod) &mdash; _Method in class_ [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`generateQuery()`](Piwik/RankingQuery.md#generatequery) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
+- [`get()`](Piwik/Registry.md#get) &mdash; _Method in class_ [`Registry`](Piwik/Registry.md)
+- [`getKey()`](Piwik/Registry.md#getkey) &mdash; _Method in class_ [`Registry`](Piwik/Registry.md)
 - [`getObjectInstance()`](Piwik/ScheduledTask.md#getobjectinstance) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
 - [`getClassName()`](Piwik/ScheduledTask.md#getclassname) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
 - [`getMethodName()`](Piwik/ScheduledTask.md#getmethodname) &mdash; _Method in class_ [`ScheduledTask`](Piwik/ScheduledTask.md)
@@ -537,6 +539,7 @@ Index
 - [`hasMissingDependencies()`](Piwik/Plugin.md#hasmissingdependencies) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`$hasGoalMetrics`](Piwik/Plugin/Report.md#$hasgoalmetrics) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`hourly()`](Piwik/Plugin/Tasks.md#hourly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
+- [`hasKey()`](Piwik/Registry.md#haskey) &mdash; _Method in class_ [`Registry`](Piwik/Registry.md)
 - [`Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; _Class in namespace_ [`Piwik\ScheduledTime`](Piwik/ScheduledTime) 
 - [`$hide_annotations_view`](Piwik/ViewDataTable/Config.md#$hide_annotations_view) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 
@@ -587,6 +590,7 @@ Index
 - [`isThereDataToDisplay()`](Piwik/Plugin/Visualization.md#istheredatatodisplay) &mdash; _Method in class_ [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`init()`](Piwik/Plugin/Widgets.md#init) &mdash; _Method in class_ [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`initSession()`](Piwik/Plugins/Login/SessionInitializer.md#initsession) &mdash; _Method in class_ [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md)
+- [`isRegistered()`](Piwik/Registry.md#isregistered) &mdash; _Method in class_ [`Registry`](Piwik/Registry.md)
 - [`isEmpty()`](Piwik/Segment.md#isempty) &mdash; _Method in class_ [`Segment`](Piwik/Segment.md)
 - [`isSegmentationEnabled()`](Piwik/SettingsPiwik.md#issegmentationenabled) &mdash; _Method in class_ [`SettingsPiwik`](Piwik/SettingsPiwik.md)
 - [`isUniqueVisitorsEnabled()`](Piwik/SettingsPiwik.md#isuniquevisitorsenabled) &mdash; _Method in class_ [`SettingsPiwik`](Piwik/SettingsPiwik.md)
@@ -760,6 +764,7 @@ Index
 - [`$requestConfig`](Piwik/Plugin/ViewDataTable.md#$requestconfig) &mdash; _Property in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`render()`](Piwik/Plugin/ViewDataTable.md#render) &mdash; _Method in class_ [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; _Class in namespace_ `Piwik` 
+- [`Registry`](Piwik/Registry.md) &mdash; _Class in namespace_ `Piwik` 
 - [`$readableByCurrentUser`](Piwik/Settings/SystemSetting.md#$readablebycurrentuser) &mdash; _Property in class_ [`SystemSetting`](Piwik/Settings/SystemSetting.md)
 - [`removeAllUserSettingsForUser()`](Piwik/Settings/UserSetting.md#removeallusersettingsforuser) &mdash; _Method in class_ [`UserSetting`](Piwik/Settings/UserSetting.md)
 - [`rescheduleTask()`](Piwik/TaskScheduler.md#rescheduletask) &mdash; _Method in class_ [`TaskScheduler`](Piwik/TaskScheduler.md)
@@ -853,6 +858,8 @@ Index
 - [`setLimit()`](Piwik/RankingQuery.md#setlimit) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setOthersLabel()`](Piwik/RankingQuery.md#setotherslabel) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setColumnToMarkExcludedRows()`](Piwik/RankingQuery.md#setcolumntomarkexcludedrows) &mdash; _Method in class_ [`RankingQuery`](Piwik/RankingQuery.md)
+- [`set()`](Piwik/Registry.md#set) &mdash; _Method in class_ [`Registry`](Piwik/Registry.md)
+- [`setKey()`](Piwik/Registry.md#setkey) &mdash; _Method in class_ [`Registry`](Piwik/Registry.md)
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; _Class in namespace_ `Piwik` 
 - [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; _Class in namespace_ `Piwik` 
 - [`setHour()`](Piwik/ScheduledTime.md#sethour) &mdash; _Method in class_ [`ScheduledTime`](Piwik/ScheduledTime.md)
