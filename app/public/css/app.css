@@ -376,12 +376,15 @@ pre.inline-code-pre>code {
     width: inherit;
     position: fixed;
     top: 80px;
+    /* When the sidebar content gets too long for the screen */
+    max-height: 85%;
+    overflow-y: auto;
 }
 .affix-bottom {
     width: inherit;
     position: absolute;
     top: auto;
-    bottom: 100px;
+    bottom: 0;
 }
 .affix-top {
 }
