@@ -1,18 +1,16 @@
-{% set title = 'Guides' %}
-
 {% extends 'layout/base.twig' %}
 {% from "macros.twig" import teaser_list, categorized_teaser_list %}
 
 {% block headline %}
     <div class="header-with-background">
-    {{ parent() }}
+        {{ parent() }}
     </div>
 {% endblock %}
 
 {% block content %}
     {% if categorized %}
-    {{ categorized_teaser_list(guides) }}
+        {{ categorized_teaser_list(guides) }}
     {% else %}
-    {{ teaser_list(guides) }}
+        {{ teaser_list(guides) }}
     {% endif %}
 {% endblock %}

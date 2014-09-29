@@ -10,7 +10,7 @@ namespace helpers;
 
 class ApiReference {
 
-    private static function getUrl($key)
+    public static function getUrl($key)
     {
         return '/api-reference/' . $key;
     }
@@ -36,114 +36,101 @@ class ApiReference {
 
     public static function getMenuItemByUrl($url)
     {
-        foreach (static::getReferencesMenu() as $items) {
-            foreach ($items as $menu) {
+        foreach (static::getReferencesMenu() as $category) {
+            foreach ($category['items'] as $menu) {
                 if ($url == $menu['url']) {
                     return $menu;
                 }
             }
         }
+        return null;
     }
 
     public static function getReferencesMenu()
     {
-        $menu = array();
-
-        /* Web APIs */
-
-        $menu[] = array(
-            'title'        => 'Tracking HTTP API',
-            'file'         => 'tracking-api',
-            'url'          => static::getUrl('tracking-api'),
-            'description'  => 'View reference docs for the Tracking HTTP API.',
-            'callToAction' => 'Browse',
-            'category'     => 'HTTP API Documentation'
-        );
-
-        $menu[] = array(
-            'title'        => 'Reporting API Listing',
-            'file'         => 'reporting-api/listing',
-            'url'          => static::getUrl('reporting-api'),
-            'description'  => 'View every API method exposed in and every parameter supported by Piwik\'s Reporting API.',
-            'callToAction' => 'Browse',
-            'category'     => 'HTTP API Documentation'
-        );
-
-
-        $menu[] = array(
-            'title'        => 'Metadata',
-            'file'         => 'reporting-api/metadata',
-            'url'          => static::getUrl('metadata'),
-            'description'  => 'View information about API methods that query report metadata.',
-            'callToAction' => 'Browse',
-            'category'     => 'HTTP API Documentation'
-        );
-
-        $menu[] = array(
-            'title'        => 'Segmentation',
-            'file'         => 'reporting-api/segmentation',
-            'url'          => static::getUrl('segmentation'),
-            'description'  => 'View all available segment dimensions and segment operators.',
-            'callToAction' => 'Browse',
-            'category'     => 'HTTP API Documentation'
-        );
-
-        /* Javascript tracking */
-
-        $menu[] = array(
-            'title'        => 'Javascript Tracking client',
-            'file'         => 'tracking-javascript',
-            'url'          => static::getUrl('tracking-javascript'),
-            'description'  => 'View reference docs for the Javascript tracking client.',
-            'callToAction' => 'Browse',
-            'category'     => 'JavaScript Documentation'
-        );
-
-        /* Platform API */
-
-        $menu[] = array(
-            'title'        => 'Classes',
-            'file'         => 'generated/master/Classes',
-            'url'          => static::getUrl('classes'),
-            'description'  => 'View reference docs for every Piwik class that plugin developers should use.',
-            'callToAction' => 'Browse',
-            'category'     => 'PHP Documentation'
-        );
-
-        $menu[] = array(
-            'title'        => 'Events',
-            'file'         => 'generated/master/Hooks',
-            'url'          => static::getUrl('events'),
-            'description'  => 'View reference docs for every event posted by Piwik and its Core Plugins.',
-            'callToAction' => 'Browse',
-            'category'     => 'PHP Documentation'
-        );
-
-        $menu[] = array(
-            'title'        => 'Index',
-            'file'         => 'generated/master/Index',
-            'url'          => static::getUrl('index'),
-            'description'  => 'View every class and method in an alphabetized index.',
-            'callToAction' => 'Browse',
-            'category'     => 'PHP Documentation'
-        );
-
-        $menu[] = array(
-            'title'        => 'PHP Tracking client',
-            'file'         => 'generated/master/PiwikTracker',
-            'url'          => static::getUrl('PHP-Piwik-Tracker'),
-            'description'  => 'View reference docs for the PHP tracking client.',
-            'callToAction' => 'Browse',
-            'category'     => 'PHP Documentation'
-        );
-
-
-
-        $result = array();
-        foreach ($menu as $item) {
-            $result[$item['category']][$item['url']] = $item;
-        }
-        return $result;
+        return [
+            [
+                'category' => 'HTTP API Documentation',
+                'id'       => 'http',
+                'items'    => [
+                    [
+                        'title'        => 'Tracking HTTP API',
+                        'file'         => 'tracking-api',
+                        'url'          => static::getUrl('tracking-api'),
+                        'description'  => 'View reference docs for the Tracking HTTP API.',
+                        'callToAction' => 'Browse',
+                    ],
+                    [
+                        'title'        => 'Reporting API Listing',
+                        'file'         => 'reporting-api/listing',
+                        'url'          => static::getUrl('reporting-api'),
+                        'description'  => 'View every API method exposed in and every parameter supported by Piwik\'s Reporting API.',
+                        'callToAction' => 'Browse',
+                    ],
+                    [
+                        'title'        => 'Metadata',
+                        'file'         => 'reporting-api/metadata',
+                        'url'          => static::getUrl('metadata'),
+                        'description'  => 'View information about API methods that query report metadata.',
+                        'callToAction' => 'Browse',
+                    ],
+                    [
+                        'title'        => 'Segmentation',
+                        'file'         => 'reporting-api/segmentation',
+                        'url'          => static::getUrl('segmentation'),
+                        'description'  => 'View all available segment dimensions and segment operators.',
+                        'callToAction' => 'Browse',
+                    ],
+                ],
+            ],
+            [
+                'category' => 'JavaScript Documentation',
+                'id'       => 'javascript',
+                'items'    => [
+                    [
+                        'title'        => 'Javascript Tracking client',
+                        'file'         => 'tracking-javascript',
+                        'url'          => static::getUrl('tracking-javascript'),
+                        'description'  => 'View reference docs for the Javascript tracking client.',
+                        'callToAction' => 'Browse',
+                    ],
+                ],
+            ],
+            [
+                'category' => 'PHP Documentation',
+                'id'       => 'php',
+                'items'    => [
+                    [
+                        'title'        => 'Classes',
+                        'file'         => 'generated/master/Classes',
+                        'url'          => static::getUrl('classes'),
+                        'description'  => 'View reference docs for every Piwik class that plugin developers should use.',
+                        'callToAction' => 'Browse',
+                    ],
+                    [
+                        'title'        => 'Events',
+                        'file'         => 'generated/master/Hooks',
+                        'url'          => static::getUrl('events'),
+                        'description'  => 'View reference docs for every event posted by Piwik and its Core Plugins.',
+                        'callToAction' => 'Browse',
+                    ],
+                    [
+                        'title'        => 'Index',
+                        'file'         => 'generated/master/Index',
+                        'url'          => static::getUrl('index'),
+                        'description'  => 'View every class and method in an alphabetized index.',
+                        'callToAction' => 'Browse',
+                    ],
+                    [
+                        'title'        => 'PHP Tracking client',
+                        'file'         => 'generated/master/PiwikTracker',
+                        'url'          => static::getUrl('PHP-Piwik-Tracker'),
+                        'description'  => 'View reference docs for the PHP tracking client.',
+                        'callToAction' => 'Browse',
+                    ],
+                ],
+            ],
+        ];
     }
 
     public static function getDocumentList()

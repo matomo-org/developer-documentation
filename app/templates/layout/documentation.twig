@@ -23,18 +23,18 @@
 
                             <div class="bs-sidebar">
                                 <ul class="nav nav-pills nav-stacked bs-sidenav">
-                                    {% for cat, items in categories %}
-                                    <li>
-                                        <a><i class="icon-chevron-right"></i> {{ cat }}</a>
+                                    {% for category in categories %}
+                                        <li>
+                                            <a><i class="icon-chevron-right"></i> {{ category.category }}</a>
 
-                                        <ul class="nav">
-                                          {% for item in items %}
-                                          <li title="{{ item.title|raw }}">
-                                              <a href="{{ item.url }}"> {{ item.title }}</a>
-                                          </li>
-                                          {% endfor %}
-                                        </ul>
-                                    </li>
+                                            <ul class="nav">
+                                              {% for item in category.items %}
+                                                  <li title="{{ item.title|raw }}">
+                                                      <a href="{{ item.url }}"> {{ item.title }}</a>
+                                                  </li>
+                                              {% endfor %}
+                                            </ul>
+                                        </li>
                                     {% endfor %}
                                 </ul>
                             </div>

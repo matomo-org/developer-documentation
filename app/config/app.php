@@ -1,2 +1,2 @@
 <?php
-define('CACHING_ENABLED', true);
+define('CACHING_ENABLED', false);

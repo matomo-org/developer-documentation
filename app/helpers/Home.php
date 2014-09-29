@@ -10,7 +10,7 @@ namespace helpers;
 
 class Home {
 
-    private static function getUrl($key)
+    public static function getUrl($key)
     {
         return '/' . $key;
     }
@@ -22,6 +22,7 @@ class Home {
                 return $menu;
             }
         }
+        return null;
     }
 
     public static function getMainMenu()
