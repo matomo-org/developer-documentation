@@ -7,6 +7,9 @@
  */
 
 require '../vendor/autoload.php';
+if (file_exists('../config/local.php')) {
+    require '../config/local.php';
+}
 require '../config/app.php';
 
 use Slim\Slim;

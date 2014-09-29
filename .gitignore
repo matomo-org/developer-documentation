@@ -4,6 +4,7 @@
 /app/vendor
 /app/composer.phar
 /.idea
+/app/config/local.php
 /app/tmp/cache/*
 /app/tmp/logs/*
 /docs/changelog.md
