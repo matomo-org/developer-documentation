@@ -371,3 +371,17 @@ pre.inline-code-pre>code {
     margin-left: 5px;
     color: #9E9E9E;
 }
+
+.affix {
+    width: inherit;
+    position: fixed;
+    top: 80px;
+}
+.affix-bottom {
+    width: inherit;
+    position: absolute;
+    top: auto;
+    bottom: 100px;
+}
+.affix-top {
+}
