@@ -1,5 +1,10 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
     padding-top: 80px;
+    margin-bottom: 80px;
 }
 
 a, a:hover, a:focus {
@@ -387,4 +392,17 @@ pre.inline-code-pre>code {
     bottom: 0;
 }
 .affix-top {
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #2c3e50;
+    padding-top: 20px;
+    color: white;
+}
+footer a, footer a:hover, footer a:focus {
+    color: #18bc9c;
 }

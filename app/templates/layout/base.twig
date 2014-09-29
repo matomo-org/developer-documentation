@@ -63,10 +63,8 @@
 {% endif %}
 
 {% block footer %}
-    <div class="container">
-        <hr/>
-
-        <footer>
+    <footer>
+        <div class="container">
             <p class="pull-left">&copy; <a href="http://piwik.org">Piwik.org</a></p>
             <p class="pull-right">{% if linkToEditDocument is defined and linkToEditDocument %}
             <a href="{{ linkToEditDocument }}" target="_blank">Edit on GitHub</a>
@@ -74,8 +72,8 @@
             <p class="pull-right">
                 <a href="mailto:developer@piwik.org?subject=Feedback%20Developer%20Guides">Give Feedback</a>{% if linkToEditDocument is defined and linkToEditDocument %}&nbsp;|&nbsp;{% endif %}
             </p>
-        </footer>
-    </div>
+        </div>
+    </footer>
 {% endblock %}
 
 <script src="/js/jquery.js?{{ revision|e('html_attr') }}"></script>
