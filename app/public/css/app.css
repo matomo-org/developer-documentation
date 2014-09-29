@@ -354,15 +354,6 @@ p {
     margin: 0 0 15px;
 }
 
-pre.inline-code-pre {
-  display:inline-block;
-  margin:0;
-}
-
-pre.inline-code-pre>code {
-  padding:2px 4px;
-}
-
 /* reporting api listing styles */
 .apiDescription, .apiMethod {
     margin: 0 0 10px;
