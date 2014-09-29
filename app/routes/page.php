@@ -228,7 +228,12 @@ $app->get('/changelog', function () use ($app) {
 });
 
 $app->get('/data/documents.json', function () use ($app) {
-    $documentsMap = array_merge(IntegratePiwik::getDocumentList(), ApiReference::getDocumentList());
+    $documentsMap = array_merge(
+        IntegratePiwik::getDocumentList(),
+        DevelopPlugins::getDocumentList(),
+        DevelopPiwik::getDocumentList(),
+        ApiReference::getDocumentList()
+    );
     $documentsData = [
         'urls' => array_keys($documentsMap),
         'names' => array_values($documentsMap)

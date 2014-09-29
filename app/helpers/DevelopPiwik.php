@@ -88,4 +88,15 @@ class DevelopPiwik
             ],
         ];
     }
+
+    public static function getDocumentList()
+    {
+        $result = array();
+        foreach (self::getMainMenu() as $category) {
+            foreach ($category['items'] as $item) {
+                $result[$item['url']] = $item['title'] . ' <em>(Guide)</em>';
+            }
+        }
+        return $result;
+    }
 }
