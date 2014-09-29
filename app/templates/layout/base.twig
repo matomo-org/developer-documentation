@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% if title|default is not empty %}{{ title }} - {% endif %}Piwik Analytics - Developer Docs</title>
+    <title>{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Piwik Analytics - Developer Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap-theme.min.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
