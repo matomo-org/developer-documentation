@@ -236,7 +236,7 @@ Segmentation is not yet supported for this aggregation method.
 <ul>
   <li>
     <div markdown="1" class="parameter">
-    _Returns:_  (`Piwik\DataAccess\Zend_Db_Statement`) &mdash;
+    _Returns:_  (`Zend_Db_Statement`) &mdash;
     <div markdown="1" class="param-desc">A statement object that can be used to iterate through the query's result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.</div>
 
     <div style="clear:both;"/>

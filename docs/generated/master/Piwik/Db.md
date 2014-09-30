@@ -453,7 +453,7 @@ locking the table for too long.
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$orderBy` (`Piwik\$orderBy`) &mdash;
+      `$orderBy` (`string`) &mdash;
 
       <div markdown="1" class="param-desc"> The column to order by and the order by direction, eg, `idvisit ASC`.</div>
 

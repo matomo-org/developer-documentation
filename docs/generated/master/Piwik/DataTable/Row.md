@@ -730,7 +730,7 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$aggregationOperations` (`array`) &mdash;
+      `$aggregationOperations` (`array`|`bool`) &mdash;
 
       <div markdown="1" class="param-desc"> for columns that should not be summed, determine which aggregation should be used (min, max). format: `array('column name' => 'function name')`</div>
 
@@ -740,6 +740,8 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
    </li>
    </ul>
 - It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="sumrowmetadata" id="sumrowmetadata"></a>
 <a name="sumRowMetadata" id="sumRowMetadata"></a>

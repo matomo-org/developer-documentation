@@ -85,6 +85,8 @@ Constructor.
       </div>
    </li>
    </ul>
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="isempty" id="isempty"></a>
 <a name="isEmpty" id="isEmpty"></a>

@@ -84,6 +84,8 @@ Constructor.
       </div>
    </li>
    </ul>
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getobjectinstance" id="getobjectinstance"></a>
 <a name="getObjectInstance" id="getObjectInstance"></a>

@@ -563,7 +563,7 @@ Returns a date range string given a period type, end date and number of periods 
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$site` (`Piwik\Period\Site`) &mdash;
+      `$site` ([`Site`](../../Piwik/Site.md)) &mdash;
 
       <div markdown="1" class="param-desc"> The site whose timezone should be used.</div>
 

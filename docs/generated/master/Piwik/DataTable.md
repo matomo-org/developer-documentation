@@ -453,7 +453,7 @@ metadata can be used to specify a different type of operation.
    </li>
    <li>
       <div markdown="1" class="parameter">
-      `$doAggregateSubTables`
+      `$doAggregateSubTables` (`bool`) &mdash;
 
       <div markdown="1" class="param-desc"></div>
 
@@ -463,6 +463,8 @@ metadata can be used to specify a different type of operation.
    </li>
    </ul>
 - It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getrowfromlabel" id="getrowfromlabel"></a>
 <a name="getRowFromLabel" id="getRowFromLabel"></a>

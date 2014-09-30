@@ -112,7 +112,7 @@ See [ColumnDelete](/api-reference/Piwik/DataTable/Filter/ColumnDelete).
       </div>
    </li>
    </ul>
-- It does not return anything.
+- It returns a [`DataTable`](../../../Piwik/DataTable.md) value.
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>

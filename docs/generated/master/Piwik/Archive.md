@@ -300,7 +300,7 @@ will be indexed by site ID first, then period.
 <ul>
   <li>
     <div markdown="1" class="parameter">
-    _Returns:_  (`Piwik\false`|`Piwik\numeric`|`array`) &mdash;
+    _Returns:_  (`Piwik\false`|`integer`|`array`) &mdash;
     <div markdown="1" class="param-desc">`false` if there is no data to return, a single numeric value if we're not querying for multiple sites/periods, or an array if multiple sites, periods or names are queried for.</div>
 
     <div style="clear:both;"/>
@@ -674,4 +674,6 @@ API methods can use this method to reduce code redundancy.
     </div>
   </li>
 </ul>
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 

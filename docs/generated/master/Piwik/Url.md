@@ -400,6 +400,8 @@ Redirects the user to the specified URL.
    </li>
    </ul>
 - It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getreferrer" id="getreferrer"></a>
 <a name="getReferrer" id="getReferrer"></a>
