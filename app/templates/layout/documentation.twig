@@ -4,91 +4,95 @@
 
 {% block content %}
 
-    <div class="col-md-3 bs-side">
+    <div class="row">
 
-        <div class="panel-group expand" id="sidebar" data-spy="affix" data-offset-top="10" data-offset-bottom="0">
-            {% if categories|length %}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#sidebar" href="#collapseOne">
-                                {% if activeCategory is defined and activeCategory %}
-                                    {{ activeCategory }}
-                                {% endif %}
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse {% if 0 == sections|length %}in{% endif %}">
-                        <div class="panel-body">
+        <div class="col-md-3 bs-side">
 
-                            <div class="bs-sidebar">
-                                <ul class="nav nav-pills nav-stacked bs-sidenav">
-                                    {% for category in categories %}
-                                        <li>
-                                            <a><i class="icon-chevron-right"></i> {{ category.category }}</a>
-
-                                            <ul class="nav">
-                                              {% for item in category.items %}
-                                                  <li title="{{ item.title|raw }}">
-                                                      <a href="{{ item.url }}"> {{ item.title }}</a>
-                                                  </li>
-                                              {% endfor %}
-                                            </ul>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+            <div class="panel-group expand" id="sidebar" data-spy="affix" data-offset-top="10" data-offset-bottom="0">
+                {% if categories|length %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#sidebar" href="#collapseOne">
+                                    {% if activeCategory is defined and activeCategory %}
+                                        {{ activeCategory }}
+                                    {% endif %}
+                                </a>
+                            </h4>
                         </div>
-                    </div>
-                </div>
-            {% endif %}
-            {% if sections|length %}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#sidebar" href="#collapseTwo">
-                                {{ sectionTitle|striptags|raw }}
-                            </a>
-                        </h4>
-                    </div>
+                        <div id="collapseOne" class="panel-collapse collapse {% if 0 == sections|length %}in{% endif %}">
+                            <div class="panel-body">
 
-                    <div id="collapseTwo" class="panel-collapse collapse in">
-                        <div class="panel-body">
+                                <div class="bs-sidebar">
+                                    <ul class="nav nav-pills nav-stacked bs-sidenav">
+                                        {% for category in categories %}
+                                            <li>
+                                                <a><i class="icon-chevron-right"></i> {{ category.category }}</a>
 
-                            <div class="bs-sidebar">
-                                <ul class="nav nav-pills nav-stacked bs-sidenav">
-                                    {% for section in sections %}
-                                        <li>
-                                            <a href="#{{ section.id }}"><i class="icon-chevron-right"></i> {{ section.title|striptags|raw }}</a>
-
-                                            {% if section.children|length %}
                                                 <ul class="nav">
-
-                                                {% for subsection in section.children %}
-                                                    <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
-                                                {% endfor %}
-
+                                                  {% for item in category.items %}
+                                                      <li title="{{ item.title|raw }}">
+                                                          <a href="{{ item.url }}"> {{ item.title }}</a>
+                                                      </li>
+                                                  {% endfor %}
                                                 </ul>
-                                            {% endif %}
-                                        </li>
-                                    {% endfor %}
-                                </ul>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
+                {% endif %}
+                {% if sections|length %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#sidebar" href="#collapseTwo">
+                                    {{ sectionTitle|striptags|raw }}
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="collapseTwo" class="panel-collapse collapse in">
+                            <div class="panel-body">
+
+                                <div class="bs-sidebar">
+                                    <ul class="nav nav-pills nav-stacked bs-sidenav">
+                                        {% for section in sections %}
+                                            <li>
+                                                <a href="#{{ section.id }}"><i class="icon-chevron-right"></i> {{ section.title|striptags|raw }}</a>
+
+                                                {% if section.children|length %}
+                                                    <ul class="nav">
+
+                                                    {% for subsection in section.children %}
+                                                        <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
+                                                    {% endfor %}
+
+                                                    </ul>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-9 documentation">
+            {{ doc|raw }}
+            {% if thisItem.prev is defined or thisItem.next is defined %}
+                <div class="guide-navigation">
+                    {% if thisItem.prev is defined %}<a class="guide-nav-prev" href="{{ thisItem.prev }}">&laquo; Previous</a>{% endif %}
+                    {% if thisItem.next is defined %}<a class="guide-nav-next" href="{{ thisItem.next }}">Next &raquo;</a>{% endif %}
                 </div>
             {% endif %}
         </div>
-    </div>
 
-    <div class="col-md-7 documentation">
-        {{ doc|raw }}
-        {% if thisItem.prev is defined or thisItem.next is defined %}
-            <div class="guide-navigation">
-                {% if thisItem.prev is defined %}<a class="guide-nav-prev" href="{{ thisItem.prev }}">&laquo; Previous</a>{% endif %}
-                {% if thisItem.next is defined %}<a class="guide-nav-next" href="{{ thisItem.next }}">Next &raquo;</a>{% endif %}
-            </div>
-        {% endif %}
     </div>
 
 {% endblock %}

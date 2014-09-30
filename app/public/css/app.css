@@ -36,7 +36,6 @@ a, a:hover, a:focus {
 
 .documentation {
     line-height: 150%;
-    margin-left: 5px;
 }
 
 .documentation img {
@@ -53,10 +52,6 @@ a, a:hover, a:focus {
     white-space: pre-wrap;
     word-wrap: break-word;
     word-break: break-word;
-}
-
-.bs-side {
-    padding-left: 0px;
 }
 
 .bs-side .panel-collapse {
