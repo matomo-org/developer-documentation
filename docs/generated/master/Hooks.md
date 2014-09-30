@@ -784,7 +784,7 @@ Callback Signature:
 - [Login.initSession.end](#logininitsessionend)
 
 ### Login.authenticate
-_Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php) in line [143](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php#L143)_
+_Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php) in line [154](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php#L154)_
 
 
 
@@ -793,7 +793,7 @@ Callback Signature:
 
 
 ### Login.authenticate.successful
-_Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php) in line [196](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php#L196)_
+_Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php) in line [207](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php#L207)_
 
 
 
@@ -802,7 +802,7 @@ Callback Signature:
 
 
 ### Login.initSession.end
-_Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php) in line [124](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php#L124)_
+_Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php) in line [125](https://github.com/piwik/piwik/blob/master/plugins/Login/SessionInitializer.php#L125)_
 
 
 
@@ -1790,7 +1790,7 @@ Usages:
 - [UsersManager.updateUser.end](#usersmanagerupdateuserend)
 
 ### UsersManager.addUser.end
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [347](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L347)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [352](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L352)_
 
 Triggered after a new user is created.
 
@@ -1861,7 +1861,7 @@ Usages:
 
 
 ### UsersManager.removeSiteAccess
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [575](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L575)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [580](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L580)_
 
 
 
@@ -1874,7 +1874,7 @@ Usages:
 
 
 ### UsersManager.updateUser.end
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [452](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L452)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [457](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L457)_
 
 Triggered after an existing user has been updated. Event notify about password change.
 

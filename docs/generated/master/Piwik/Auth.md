@@ -108,7 +108,7 @@ uses an MD5 hash of a user's password.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the token auth cannot be calculated at the current time.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the token auth secret does not exist or cannot be obtained.
 
 <a name="setlogin" id="setlogin"></a>
 <a name="setLogin" id="setLogin"></a>
