@@ -31,7 +31,7 @@ class ApiReference {
             );
         }
 
-        return $menu;
+        return [['items' => $menu]];
     }
 
     public static function getMenuItemByUrl($url)
