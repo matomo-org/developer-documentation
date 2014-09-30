@@ -6,8 +6,10 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
+use helpers\DevelopPiwik;
+use helpers\DevelopPlugins;
 use helpers\Home;
-use helpers\Guide;
+use helpers\IntegratePiwik;
 use helpers\Document;
 use helpers\ApiReference;
 use helpers\Support;
@@ -37,7 +39,7 @@ initView($app);
 
 $app->get('/', function () use ($app) {
 
-    $app->render('index.twig', array('isHome' => true));
+    $app->render('index.twig', ['isHome' => true]);
 });
 
 $app->get('/api-reference/:reference', function ($reference) use ($app) {
@@ -55,12 +57,12 @@ $app->get('/api-reference/:reference', function ($reference) use ($app) {
         return;
     }
 
-    $app->render('layout/documentation.twig', array(
+    $app->render('layout/documentation.twig', [
         'doc'          => $doc->getRenderedContent(),
         'sections'     => $doc->getSections(),
         'sectionTitle' => $doc->getTitle(),
         'categories'   => ApiReference::getReferencesMenu()
-    ));
+    ]);
 
 });
 
@@ -88,18 +90,30 @@ $app->get('/api-reference/:names+', function ($names) use ($app) {
         return;
     }
 
-    $app->render('layout/documentation.twig', array(
+    $app->render('layout/documentation.twig', [
         'activeCategory' => 'Classes',
         'doc'            => $doc->getRenderedContent(),
         'sections'       => $doc->getSections(),
         'sectionTitle'   => $className,
         'categories'     => ApiReference::getClassesMenu()
-    ));
+    ]);
 });
 
-$app->get('/guides/:category', function ($category) use ($app) {
+$app->get('/guides/:page', function ($page) use ($app) {
 
-    $guide = Guide::getMenuItemByUrl('/guides/' . $category);
+    $guideClasses = [
+        'helpers\IntegratePiwik',
+        'helpers\DevelopPlugins',
+        'helpers\DevelopPiwik',
+    ];
+    foreach ($guideClasses as $guideClass) {
+        $guide = $guideClass::getMenuItemByUrl('/guides/' . $page);
+        if ($guide) {
+            $mainMenu = $guideClass::getMainMenu();
+            $activeCategory = $guideClass::getCategoryName();
+            break;
+        }
+    }
 
     if (empty($guide)) {
         send404NotFound($app);
@@ -113,51 +127,78 @@ $app->get('/guides/:category', function ($category) use ($app) {
         return;
     }
 
-    $mainMenu = Guide::getMainMenu();
     $thisMenuItem = null;
-    foreach ($mainMenu as $itemCategory => $items) {
-        foreach ($items as $item) {
-            if ($item['file'] == $category) {
+    foreach ($mainMenu as $category) {
+        foreach ($category['items'] as $item) {
+            if (isset($item['file']) && ($item['file'] == $page)) {
                 $thisMenuItem = $item;
                 break;
             }
         }
     }
 
-    $app->render('layout/documentation.twig', array(
-        'doc'          => $doc->getRenderedContent(),
-        'sections'     => $doc->getSections(),
-        'sectionTitle' => $doc->getTitle(),
-        'categories'   => $mainMenu,
+    $app->render('layout/documentation.twig', [
+        'doc'                => $doc->getRenderedContent(),
+        'sections'           => $doc->getSections(),
+        'sectionTitle'       => $doc->getTitle(),
+        'categories'         => $mainMenu,
         'linkToEditDocument' => $doc->linkToEditDocument(),
-        'thisItem'     => $thisMenuItem
-    ));
+        'thisItem'           => $thisMenuItem,
+        'activeCategory'     => $activeCategory,
+        'activeMenu'         => $activeCategory,
+    ]);
 });
 
 $app->get('/guides', function () use ($app) {
 
-    $app->render('documentation.twig', array(
-        'guides' => Guide::getMainMenu(),
+    $app->redirect('/', 301);
+});
+
+$app->get('/integration', function () use ($app) {
+
+    $app->render('documentation.twig', [
+        'title'       => 'Integrate Piwik',
+        'guides'      => IntegratePiwik::getMainMenu(),
         'categorized' => true,
         'noContainer' => true
-    ));
+    ]);
+});
+
+$app->get('/plugins', function () use ($app) {
+
+    $app->render('documentation.twig', [
+        'title'       => 'Develop Plugins',
+        'guides'      => DevelopPlugins::getMainMenu(),
+        'categorized' => true,
+        'noContainer' => true
+    ]);
+});
+
+$app->get('/contributing', function () use ($app) {
+
+    $app->render('documentation.twig', [
+        'title'       => 'Develop Piwik',
+        'guides'      => DevelopPiwik::getMainMenu(),
+        'categorized' => true,
+        'noContainer' => true
+    ]);
 });
 
 $app->get('/api-reference', function () use ($app) {
     $references = ApiReference::getReferencesMenu();
 
-    $app->render('apireference.twig', array(
+    $app->render('apireference.twig', [
         'references' => $references,
         'categorized' => true,
         'noContainer' => true
-    ));
+    ]);
 });
 
 $app->get('/support', function () use ($app) {
 
-    $app->render('support.twig', array(
+    $app->render('support.twig', [
         'supports' => Support::getMainMenu()
-    ));
+    ]);
 });
 
 $app->get('/changelog', function () use ($app) {
@@ -184,19 +225,24 @@ $app->get('/changelog', function () use ($app) {
     $content  = $document->getRenderedContent();
     $content  = preg_replace('/<h1(.*?)<\/h1>/', '', $content);
 
-    $app->render('changelog.twig', array(
+    $app->render('changelog.twig', [
         'changelog' => $content,
         'title' => $document->getTitle(),
         'linkToEditDocument' => 'https://github.com/piwik/piwik/blob/master/CHANGELOG.md'
-    ));
+    ]);
 });
 
 $app->get('/data/documents.json', function () use ($app) {
-    $documentsMap = array_merge(Guide::getDocumentList(), ApiReference::getDocumentList());
-    $documentsData = array(
+    $documentsMap = array_merge(
+        IntegratePiwik::getDocumentList(),
+        DevelopPlugins::getDocumentList(),
+        DevelopPiwik::getDocumentList(),
+        ApiReference::getDocumentList()
+    );
+    $documentsData = [
         'urls' => array_keys($documentsMap),
         'names' => array_values($documentsMap)
-    );
+    ];
 
     echo json_encode($documentsData);
 });

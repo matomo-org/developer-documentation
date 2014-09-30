@@ -16,6 +16,21 @@ Piwik Developer Documentation
 
 GPLv3 or later
 
+### Run locally
+
+```
+$ cd app/
+$ composer install
+$ php -S 0.0.0.0:8000
+```
+
+To disable caching, create a `app/config/local.php` file with the following:
+
+```php
+<?php
+define('CACHING_ENABLED', false);
+```
+
 ### Automatic documentation generation (API-Reference)
 
  * Execute `./generate.sh`

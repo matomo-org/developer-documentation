@@ -1,5 +1,14 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
     padding-top: 80px;
+    margin-bottom: 80px;
+}
+
+a, a:hover, a:focus {
+    color: #528AB8;
 }
 
 #sidebar {
@@ -82,15 +91,15 @@ body {
 }
 
 .header-with-background {
-    background-color:#0859A8;
+    background-color: #18bc9c;
     margin-top:-28px;
 }
 
 .header-with-background h1 {
     color:white;
-    font-size:63px;
+    font-size:60px;
     font-weight:bold;
-    padding: 20px 0 20px 0;
+    padding: 15px 0;
 }
 
 .header-with-background .page-header {
@@ -107,11 +116,13 @@ body {
 }
 
 .teaser-category-group-title {
-    background-color: #eee;
+    background-color: #ecf0f1;
 }
 
-.teaser-category-group-title h1 {
-    line-height:2em;
+.teaser-category-group-title h2 {
+    line-height: 1.8em;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /* First level of nav */
@@ -343,15 +354,6 @@ p {
     margin: 0 0 15px;
 }
 
-pre.inline-code-pre {
-  display:inline-block;
-  margin:0;
-}
-
-pre.inline-code-pre>code {
-  padding:2px 4px;
-}
-
 /* reporting api listing styles */
 .apiDescription, .apiMethod {
     margin: 0 0 10px;
@@ -364,4 +366,34 @@ pre.inline-code-pre>code {
 .apiMethod .example {
     margin-left: 5px;
     color: #9E9E9E;
+}
+
+.affix {
+    width: inherit;
+    position: fixed;
+    top: 80px;
+    /* When the sidebar content gets too long for the screen */
+    max-height: 85%;
+    overflow-y: auto;
+}
+.affix-bottom {
+    width: inherit;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+}
+.affix-top {
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #2c3e50;
+    padding-top: 20px;
+    color: white;
+}
+footer a, footer a:hover, footer a:focus {
+    color: #18bc9c;
 }
