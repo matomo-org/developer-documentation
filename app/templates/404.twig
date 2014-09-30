@@ -1,0 +1,29 @@
+{% extends 'layout/base.twig' %}
+
+{% block headline %}
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+        }
+    </style>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>
+                404
+            </h1>
+            <p>We did not find that page!</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <p>
+        <a href="/">Get back to the home page</a>
+    </p>
+{% endblock %}
+
+
+{% block piwik_customization %}
+    _paq.push(["setCustomVariable", 1, "error404", "1", "page"]);
+{% endblock %}

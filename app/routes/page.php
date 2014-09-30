@@ -37,6 +37,10 @@ function initView($app)
 
 initView($app);
 
+$app->notFound(function () use ($app) {
+    $app->render('404.twig');
+});
+
 $app->get('/', function () use ($app) {
 
     $app->render('index.twig', ['isHome' => true]);

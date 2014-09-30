@@ -94,6 +94,7 @@ $(document).ready(function () {
     _paq.push(["setCookieDomain", "*.piwik.org"]);
     _paq.push(["trackPageView"]);
     _paq.push(["enableLinkTracking"]);
+    {% block piwik_customization %}{% endblock %}
         
     function track() {
 
