@@ -4,6 +4,7 @@ Classes
 This is a complete list of available classes:
 
 - [`API\Request`](Piwik/API/Request.md) &mdash; Dispatches API requests to the appropriate API method.
+- [`Access`](Piwik/Access.md) &mdash; Singleton that manages user access to Piwik resources.
 - [`Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.

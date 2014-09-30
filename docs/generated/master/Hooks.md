@@ -8,7 +8,7 @@ This is a complete list of available hooks.
 - [Access.createAccessSingleton](#accesscreateaccesssingleton)
 
 ### Access.createAccessSingleton
-_Defined in [Piwik/Access](https://github.com/piwik/piwik/blob/master/core/Access.php) in line [90](https://github.com/piwik/piwik/blob/master/core/Access.php#L90)_
+_Defined in [Piwik/Access](https://github.com/piwik/piwik/blob/master/core/Access.php) in line [91](https://github.com/piwik/piwik/blob/master/core/Access.php#L91)_
 
 
 
@@ -410,7 +410,7 @@ Callback Signature:
 - [CronArchive.init.finish](#cronarchiveinitfinish)
 
 ### CronArchive.archiveSingleSite.finish
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [335](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L335)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [337](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L337)_
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -421,7 +421,7 @@ Callback Signature:
 
 
 ### CronArchive.archiveSingleSite.start
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [325](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L325)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [327](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L327)_
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -432,7 +432,7 @@ Callback Signature:
 
 
 ### CronArchive.filterWebsiteIds
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [938](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L938)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [940](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L940)_
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -444,7 +444,7 @@ Callback Signature:
 
 
 ### CronArchive.init.finish
-_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [277](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L277)_
+_Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [279](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L279)_
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -1489,7 +1489,7 @@ Callback Signature:
 - [Tracker.setVisitorIp](#trackersetvisitorip)
 
 ### Tracker.Cache.getSiteAttributes
-_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [90](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L90)_
+_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [87](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L87)_
 
 Triggered to get the attributes of a site entity that might be used by the Tracker. Plugins add new site attributes for use in other tracking events must
 use this event to put those attributes in the Tracker Cache.
@@ -1666,7 +1666,7 @@ Callback Signature:
 
 
 ### Tracker.setTrackerCacheGeneral
-_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [156](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L156)_
+_Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [151](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L151)_
 
 Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache) is saved to disk. This event can be used to add extra content to the cache.
 

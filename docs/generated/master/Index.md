@@ -3,6 +3,7 @@ Index
 
 ## A
 
+- [`Access`](Piwik/Access.md) &mdash; _Class in namespace_ `Piwik` 
 - [`Archive`](Piwik/Archive.md) &mdash; _Class in namespace_ `Piwik` 
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; _Class in namespace_ `Piwik` 
 - [`aggregateDataTableRecords()`](Piwik/ArchiveProcessor.md#aggregatedatatablerecords) &mdash; _Method in class_ [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
@@ -158,6 +159,7 @@ Index
 
 ## D
 
+- [`doAsSuperUser()`](Piwik/Access.md#doassuperuser) &mdash; _Method in class_ [`Access`](Piwik/Access.md)
 - [`Dimension`](Piwik/Columns/Dimension.md) &mdash; _Class in namespace_ `Piwik\Columns` 
 - [`destroy()`](Piwik/Common.md#destroy) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`DataTable`](Piwik/DataTable.md) &mdash; _Class in namespace_ `Piwik` 
