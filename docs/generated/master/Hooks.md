@@ -1613,7 +1613,7 @@ Callback Signature:
 
 
 ### Tracker.recordAction
-_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [369](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L369)_
+_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [371](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L371)_
 
 Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions).
 

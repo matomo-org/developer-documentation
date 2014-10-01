@@ -1930,6 +1930,8 @@ A User ID can be a username, UUID or an email address, or any number or string t
 
 Hash function used internally by Piwik to hash a User ID into the Visitor ID.
 
+Note: matches implementation of Tracker\Request->getUserIdHashed()
+
 #### Signature
 
 -  It accepts the following parameter(s):
