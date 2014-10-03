@@ -22,6 +22,7 @@ The class defines the following methods:
 
 - [`urlForDefaultAction()`](#urlfordefaultaction) &mdash; Generates a URL for the default action of the plugin controller.
 - [`urlForAction()`](#urlforaction) &mdash; Generates a URL for the given action.
+- [`urlForDefaultUserParams()`](#urlfordefaultuserparams) &mdash; Returns the &idSite=X&period=Y&date=Z query string fragment, fetched from current logged-in user's preferences.
 - [`configureReportingMenu()`](#configurereportingmenu) &mdash; Configures the reporting menu which should only contain links to reports of a specific site such as "Search Engines", "Page Titles" or "Locations & Provider".
 - [`configureTopMenu()`](#configuretopmenu) &mdash; Configures the top menu which is supposed to contain analytics related items such as the "All Websites Dashboard".
 - [`configureUserMenu()`](#configureusermenu) &mdash; Configures the user menu which is supposed to contain user and help related items such as "User settings", "Alerts" or "Email Reports".
@@ -100,6 +101,63 @@ action of another module, meaning not your plugin, you should use the method url
    </li>
    </ul>
 - It returns a `array` value.
+
+<a name="urlfordefaultuserparams" id="urlfordefaultuserparams"></a>
+<a name="urlForDefaultUserParams" id="urlForDefaultUserParams"></a>
+### `urlForDefaultUserParams()`
+
+Returns the &idSite=X&period=Y&date=Z query string fragment, fetched from current logged-in user's preferences.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$websiteId` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$defaultPeriod` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   <li>
+      <div markdown="1" class="parameter">
+      `$defaultDate` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+
+<ul>
+  <li>
+    <div markdown="1" class="parameter">
+    _Returns:_  (`string`) &mdash;
+    <div markdown="1" class="param-desc">eg '&idSite=1&period=week&date=today'</div>
+
+    <div style="clear:both;"/>
+
+    </div>
+  </li>
+</ul>
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; in case a website was not specified and a default website id could not be found
 
 <a name="configurereportingmenu" id="configurereportingmenu"></a>
 <a name="configureReportingMenu" id="configureReportingMenu"></a>

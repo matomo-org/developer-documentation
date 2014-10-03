@@ -940,6 +940,7 @@ Index
 - [`uninstall()`](Piwik/Plugin/Dimension/VisitDimension.md#uninstall) &mdash; _Method in class_ [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`urlForDefaultAction()`](Piwik/Plugin/Menu.md#urlfordefaultaction) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
 - [`urlForAction()`](Piwik/Plugin/Menu.md#urlforaction) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
+- [`urlForDefaultUserParams()`](Piwik/Plugin/Menu.md#urlfordefaultuserparams) &mdash; _Method in class_ [`Menu`](Piwik/Plugin/Menu.md)
 - [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md) &mdash; _Class in namespace_ `Piwik\Plugins\UsersManager` 
 - [`$uiControlType`](Piwik/Settings/Setting.md#$uicontroltype) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
 - [`$uiControlAttributes`](Piwik/Settings/Setting.md#$uicontrolattributes) &mdash; _Property in class_ [`Setting`](Piwik/Settings/Setting.md)
