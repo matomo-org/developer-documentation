@@ -75,9 +75,9 @@ class DevelopPiwik
                         'description' => 'Our mission is to liberate web analytics worldwide, and help you grow your project with better data insights. Check out what else we have planned for the future.',
                     ],
                     [
-                        'title'       => 'Changelog',
-                        'url'         => '/changelog',
-                        'description' => 'The changelog for released versions.',
+                        'title'       => 'Platform Changelog',
+                        'url'         => Home::getUrl('changelog'),
+                        'description' => 'What has changed in the latest Piwik versions for the developers.',
                     ],
                     [
                         'title'       => 'Issues',
