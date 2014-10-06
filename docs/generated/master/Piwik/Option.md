@@ -35,6 +35,7 @@ The class defines the following methods:
 - [`delete()`](#delete) &mdash; Deletes an option.
 - [`deleteLike()`](#deletelike) &mdash; Deletes all options that match the supplied pattern.
 - [`clearCachedOption()`](#clearcachedoption)
+- [`setSingletonInstance()`](#setsingletoninstance) &mdash; Sets the singleton instance.
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
@@ -230,6 +231,32 @@ Deletes all options that match the supplied pattern.
    <li>
       <div markdown="1" class="parameter">
       `$name`
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
+
+<a name="setsingletoninstance" id="setsingletoninstance"></a>
+<a name="setSingletonInstance" id="setSingletonInstance"></a>
+### `setSingletonInstance()`
+
+Sets the singleton instance.
+
+For testing purposes.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$instance` (`mixed`) &mdash;
 
       <div markdown="1" class="param-desc"></div>
 
