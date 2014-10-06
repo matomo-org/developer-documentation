@@ -831,7 +831,6 @@ Index
 - [`setReplyTo()`](Piwik/Mail.md#setreplyto) &mdash; _Method in class_ [`Mail`](Piwik/Mail.md)
 - [`send()`](Piwik/Mail.md#send) &mdash; _Method in class_ [`Mail`](Piwik/Mail.md)
 - [`set()`](Piwik/Option.md#set) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
-- [`setSingletonInstance()`](Piwik/Option.md#setsingletoninstance) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
 - [`setDefaultEndDate()`](Piwik/Period/Range.md#setdefaultenddate) &mdash; _Method in class_ [`Range`](Piwik/Period/Range.md)
 - [`$strDate`](Piwik/Plugin/Controller.md#$strdate) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`$site`](Piwik/Plugin/Controller.md#$site) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
