@@ -273,6 +273,24 @@ When naming unit/integration tests, it helps to use the **Given**, **When**, **T
 
 Tests are critical part of ensuring Piwik stays a stable and useful software platform. We aim to keep test code as clean as production code so it is easy to improve and maintain.
 
+### Submitting a plugin
+
+If you've already developed a plugin that you think should be included in Piwik Core, you can offer it for inclusion. 
+The adoption of a plugin into the Piwik core requires that we consider such criteria as (but not limited to):
+
+- audience &ndash; plugin appeals to a broad spectrum of users
+- desirability &ndash; is it a frequently requested feature by the Piwik community?
+- functionality &ndash; feature completeness
+- testability &ndash; use of unit, integration and UI tests and impact to manual testing (e.g., differences when plugin is activated vs deactivated)
+- maturity &ndash; history and popularity of the plugin
+- performance &ndash; impact on archiving and/or UI interaction
+- supportability &ndash; likelihood of spawning support tickets and forum posts of the "how do I?" or "why does it?" variety
+- complexity &ndash; simpler is better; +1 if developer has git commit privileges
+- dependencies &ndash; does it depend on closed source and/or paid subscription services?
+- licensing &ndash; license compatibility with GPLv3
+
+In most cases, it should be enough for your plugin to be available on the [marketplace](http://plugins.piwik.org).
+
 ## Learn more
 
 * To **learn the basics of Piwik development** in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.
