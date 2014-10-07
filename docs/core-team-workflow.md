@@ -29,11 +29,13 @@ We are rather obsessed with keeping our issue tracker an organized place. Ticket
 
 ## Milestones and Backlog
 
-We have been using an issue tracker since [the beginning of the project](http://piwik.org/history/). All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). The Current milestone is listed at the very top and contains all the most important tickets to fix in accordance with our [mission and vision for the Piwik analytics platform](http://piwik.org/roadmap/).
+We have been using an issue tracker since [the beginning of the project](http://piwik.org/history/). All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). 
+The versions milestones are listed at the very top and contains all the most important issues to close in accordance with our vision for the Piwik analytics platform](http://piwik.org/roadmap/).
 
-All other important and exciting tickets are moved to [The Great Piwik 2.x Backlog](https://github.com/piwik/piwik/issues?milestone=40&state=open). This milestone is our active Tickets Backlog. From time to time, we move one ticket from the Great Piwik 2.x Backlog to the current milestone.
+All important tickets that are not yet scheduled for a specific version are moved to [Short term milestone](https://github.com/piwik/piwik/milestones/Short%20term). 
+This milestone is our active Tickets Backlog. From time to time, we move one ticket from `Short term` to the current version milestone (eg. `Piwik 3.0.0`).
 
-Other ideas and suggestions which we are not planning to implement in the future are moved to the [Future Releases milestone](https://github.com/piwik/piwik/issues?milestone=3&state=open).
+Other ideas and suggestions which we haven't yet scheduled are moved to the [Mid term](https://github.com/piwik/piwik/milestones/Mid%20term) and [Long term](https://github.com/piwik/piwik/milestones/Long%20term) milestone.
 
 ## Our release process
 
@@ -41,7 +43,7 @@ We try to publish a new Piwik release about once a month. A release is ready whe
 
 To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)). A shell script is then run to generate the archives (zip and tar.gz) which are copied to the build server [builds.piwik.org](http://builds.piwik.org/). The file [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. Within hours, Piwik installations will be updated by users via the one click [upgrade mechanism](http://piwik.org/docs/update/) &ndash; or by manual upgrades.
 
-The Changelog is then updated with a new entry for this release. The changelog typically lists all tickets closed in this release, and point people to the newest [FAQs](http://piwik.org/faq/) and [User guides](http://piwik.org/faq/).
+The [Changelog](http://piwik.org/changelog/) is then updated with a new entry for this release. The changelog typically lists all tickets closed in this release, and point people to the newest [FAQs](http://piwik.org/faq/) and [User guides](http://piwik.org/faq/).
 
 Releases that contain the string "alpha", "beta", "rc", are built for testing purposes and are not advertised on [piwik.org](http://piwik.org). They are, however, made available on the build server and the [builds.piwik.org/LATEST_BETA](http://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string. You can enable Piwik to use the latest Beta release automatically if you want to test the latest features ([see this faq to learn how](http://piwik.org/faq/how-to-update/#faq_159)).
 
@@ -58,6 +60,12 @@ As of 2014, we manage [over twenty repositories at Github](https://github.com/pi
 #### Git Owners
 
 All developers from the [Piwik team](http://piwik.org/the-piwik-team/) can push to all git repositories.
+
+#### Git mailing list
+
+piwik-git [Archives](http://lists.piwik.org/pipermail/piwik-git/), [Subscribe](http://lists.piwik.org/cgi-bin/mailman/listinfo/piwik-git), [Search the archives](http://www.google.com/coop/cse?cx=012634963936527368460%3Afzsqvqnvzoi)
+
+This mailing list notifies all the commits to our [Git repository](https://github.com/piwik/piwik).
 
 ### Git commit process
 
@@ -95,27 +103,17 @@ Discover our [vibrant Piwik community](http://forum.piwik.org/) where analytics 
 
 You can contact the team by email <a href='mailto:hello@piwik.org?subject=Contact the Piwik team'>hello (at) piwik.org</a>.
 
-### Through our mailing lists
-
-There are three mailing lists you can subscribe to and use to communicate with core team members:
-
-- piwik-hackers [Archives](http://lists.piwik.org/pipermail/piwik-hackers/), [Subscribe](http://lists.piwik.org/cgi-bin/mailman/listinfo/piwik-hackers), [Search the archives](http://www.google.com/coop/cse?cx=012634963936527368460%3Akcozfhhm0io)
-
-  This mailing list is used to discuss Piwik internals, ask questions about the architecture, discuss new ideas, etc.
-
-- piwik-git [Archives](http://lists.piwik.org/pipermail/piwik-git/) (or [older svn](http://lists.piwik.org/pipermail/piwik-svn/)), [Subscribe](http://lists.piwik.org/cgi-bin/mailman/listinfo/piwik-git), [Search the archives](http://www.google.com/coop/cse?cx=012634963936527368460%3Afzsqvqnvzoi)
-
-  This mailing list notifies all the commits to our [Git repository](https://github.com/piwik/piwik).
+Or contact the team [using the contact form](http://piwik.org/contact/).
 
 ### Using IRC
 
-Some core team members are available via IRC at [irc.freenode.net/#piwik](irc://irc.freenode.net#piwik) ([webchat](http://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a)).
+Some team members may be available in IRC at [irc.freenode.net/#piwik](irc://irc.freenode.net#piwik) ([webchat](http://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a)).
 
 ## Influencing Piwik development
 
 There are many ways you can make a difference in the project and influence the overall goodness of Piwik, most of which do not include coding. Read on to learn all the ways you can contribute to Piwik:
 
-### Comment on existing tickets
+### Comment on existing issues
 
 If you find a new feature request very exciting or important, or if you're experiencing a particular bug, the best way to be heard by the Piwik team is to comment on the ticket. This will help us schedule with higher priority the features that are most often requested and commented on.
 
@@ -151,19 +149,3 @@ Please put as much information as possible as it will help in estimating the eff
 
 And of course if you can code and want to directly help Piwik development, you can contribute changes. To learn about contributing code changes, read our [Contributing to Piwik Core](/guides/contributing-to-piwik-core) guide.
 
-### Submitting a plugin
-
-If you've already developed a plugin that you think should be included in Piwik Core, you can offer it for inclusion. The adoption of a plugin into the Piwik core requires that we consider such criteria as (but not limited to):
-
-- audience &ndash; plugin appeals to a broad spectrum of users
-- desirabilty &ndash; is it a frequently requested feature by the Piwik community?
-- functionality &ndash; feature completeness
-- testability &ndash; use of unit, integration and UI tests and impact to manual testing (e.g., differences when plugin is activated vs deactivated)
-- maturity &ndash; history and popularity of the plugin
-- performance &ndash; impact on archiving and/or UI interaction
-- supportability &ndash; likelihood of spawning support tickets and forum posts of the "how do I?" or "why does it?" variety
-- complexity &ndash; simpler is better; +1 if developer has git commit privileges
-- dependencies &ndash; does it depend on closed source and/or paid subscription services?
-- licensing &ndash; license compatibility with GPLv3
-
-In most cases, it should be enough for your plugin to be available on the [marketplace](http://plugins.piwik.org).

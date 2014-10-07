@@ -275,7 +275,7 @@ Tests are critical part of ensuring Piwik stays a stable and useful software pla
 
 ### Submitting a plugin
 
-If you've already developed a plugin that you think should be included in Piwik Core, you can offer it for inclusion. 
+If you've already developed a plugin (congratulations!) and you think could be included in Piwik Core, you can offer it for inclusion. 
 The adoption of a plugin into the Piwik core requires that we consider such criteria as (but not limited to):
 
 - audience &ndash; plugin appeals to a broad spectrum of users
