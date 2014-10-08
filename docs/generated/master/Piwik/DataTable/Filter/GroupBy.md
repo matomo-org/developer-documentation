@@ -61,7 +61,7 @@ Constructor.
       <div markdown="1" class="parameter">
       `$reduceFunction` (`callable`) &mdash;
 
-      <div markdown="1" class="param-desc"> The reduce function. This must alter the `$groupByColumn` columng in some way.</div>
+      <div markdown="1" class="param-desc"> The reduce function. This must alter the `$groupByColumn` columng in some way. If not set then the filter will group by the raw column value.</div>
 
       <div style="clear:both;"/>
 
