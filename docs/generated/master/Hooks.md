@@ -1825,7 +1825,7 @@ Callback Signature:
 
 
 ### UsersManager.deleteUser
-_Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php) in line [253](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php#L253)_
+_Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php) in line [258](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php#L258)_
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
@@ -1865,7 +1865,7 @@ Usages:
 
 
 ### UsersManager.removeSiteAccess
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [580](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L580)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [585](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L585)_
 
 
 
@@ -1878,7 +1878,7 @@ Usages:
 
 
 ### UsersManager.updateUser.end
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [457](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L457)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [462](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L462)_
 
 Triggered after an existing user has been updated. Event notify about password change.
 
