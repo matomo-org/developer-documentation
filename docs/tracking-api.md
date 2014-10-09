@@ -91,6 +91,8 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `cip` &mdash; Override value for the visitor IP (both IPv4 and IPv6 notations supported).
     * `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is: `2011-04-05 00:11:42` (remember to URL encode the value!). The datetime must be sent in UTC timezone.
       _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](http://piwik.org/faq/how-to/#faq_59)._
+      
+      If you set `cdt` to a datetime older than four hours then `token_auth` must be set. If you set `cdt` with a datetime in the last four hours then you don't need to pass the `token_auth`.
     * `country` &mdash; An override value for the country. Should be set to the two letter country code of the visitor (lowercase), eg **fr**, **de**, **us**.
     * `region` &mdash; An override value for the region. Should be set to the two letter region code as defined by [MaxMind's](http://www.maxmind.com?rId=piwik) GeoIP databases. See [here](http://dev.maxmind.com/static/maxmind-region-codes.csv) for a list of them for every country (the region codes are located in the second column, to the left of the region name and to the right of the country code).
     * `city` &mdash; An override value for the city. The name of the city the visitor is located in, eg, **Tokyo**.
