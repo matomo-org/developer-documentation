@@ -1015,7 +1015,7 @@ Usages:
 
 
 ### Request.initAuthenticationObject
-_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [108](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L108)_
+_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [109](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L109)_
 
 
 
@@ -1533,7 +1533,7 @@ Callback Signature:
 
 
 ### Tracker.end
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [253](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L253)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [238](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L238)_
 
 
 
@@ -1553,7 +1553,7 @@ Callback Signature:
 
 
 ### Tracker.getDatabaseConfig
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [576](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L576)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [559](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L559)_
 
 Triggered before a connection to the database is established by the Tracker. This event can be used to change the database connection settings used by the Tracker.
 
@@ -1575,7 +1575,7 @@ Callback Signature:
 
 
 ### Tracker.makeNewVisitObject
-_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [658](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L658)_
+_Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [641](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L641)_
 
 Triggered before a new **visit tracking object** is created. Subscribers to this
 event can force the use of a custom visit tracking object that extends from
@@ -1656,7 +1656,7 @@ Callback Signature:
 
 
 ### Tracker.Request.getIdSite
-_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [347](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L347)_
+_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [389](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L389)_
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
