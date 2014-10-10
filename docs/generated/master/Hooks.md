@@ -1852,7 +1852,7 @@ Callback Signature:
 
 
 ### UsersManager.removeSiteAccess
-_Defined in [Piwik/Plugins/ScheduledReports/tests/ScheduledReportsTest](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/tests/ScheduledReportsTest.php) in line [94](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/tests/ScheduledReportsTest.php#L94)_
+_Defined in [Piwik/Plugins/ScheduledReports/tests/ScheduledReportsTest](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/tests/Integration/ScheduledReportsTest.php) in line [95](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/tests/Integration/ScheduledReportsTest.php#L95)_
 
 
 
