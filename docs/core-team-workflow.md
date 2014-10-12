@@ -50,36 +50,37 @@ Most important labels are tagged to issues:
 [Performance](https://github.com/piwik/piwik/labels/c:%20Performance), 
 [Tests & QA](https://github.com/piwik/piwik/labels/c:%20Tests%20&%20QA), 
 [AngularJS](https://github.com/piwik/piwik/labels/c:%20AngularJS), 
+[Usability](https://github.com/piwik/piwik/labels/c:%20Usability), 
 [Platform](https://github.com/piwik/piwik/labels/c:%20Platform),
 [Marketplace](https://github.com/piwik/piwik/labels/c:%20Marketplace) and
-[Website piwik.org](). 
+[Website piwik.org](https://github.com/piwik/piwik/labels/c:%20Website%20piwik.org). 
 
-Other important labels used are for [Critical](https://github.com/piwik/piwik/labels/Critical) and [Major](https://github.com/piwik/piwik/labels/Major) issues. New developers can quickly make an impact by working on an [Easy pick](https://github.com/piwik/piwik/labels/Easy%20pick) issues.
-
+Other important labels used are for [Critical](https://github.com/piwik/piwik/labels/Critical) and [Major](https://github.com/piwik/piwik/labels/Major) issues. 
+New developers can quickly make an impact by hacking on an [Easy pick](https://github.com/piwik/piwik/labels/Easy%20pick) issues.
 
 ## Our release process
-
+### Frequent releases
 We try to publish a new Piwik release about once a month. A release is ready when the following release conditions are met. Our [continuous integration tests](http://piwik.org/qa/) must be green. Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik. All critical tickets [to the corresponding milestone](https://github.com/piwik/piwik/issues/milestones) must be closed. All [officially supported plugins](http://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](http://plugins.piwik.org/) must be compatible.
 
 To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)). A shell script is then run to generate the archives (zip and tar.gz) which are copied to the build server [builds.piwik.org](http://builds.piwik.org/). The file [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. Within hours, Piwik installations will be updated by users via the one click [upgrade mechanism](http://piwik.org/docs/update/) &ndash; or by manual upgrades.
 
-The [Changelog](http://piwik.org/changelog/) is then updated with a new entry for this release. The changelog typically lists all tickets closed in this release, and point people to the newest [FAQs](http://piwik.org/faq/) and [User guides](http://piwik.org/faq/).
-
 Releases that contain the string "alpha", "beta", "rc", are built for testing purposes and are not advertised on [piwik.org](http://piwik.org). They are, however, made available on the build server and the [builds.piwik.org/LATEST_BETA](http://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string. You can enable Piwik to use the latest Beta release automatically if you want to test the latest features ([see this faq to learn how](http://piwik.org/faq/how-to-update/#faq_159)).
+
+### Changelog
+
+The [Changelog](http://piwik.org/changelog/) is then updated with a new entry for this release. The changelog typically lists all tickets closed in this release, and point people to the newest [FAQs](http://piwik.org/faq/) and [User guides](http://piwik.org/faq/).
 
 ## Source Code Management
 
 The Piwik git repository is hosted at [Github](https://github.com) and is publicly accessible at [https://github.com/piwik/piwik](https://github.com/piwik/piwik).
 
+As of 2014, we manage [over fourty repositories at Github](https://github.com/piwik). This includes the [main repository for Piwik](https://github.com/piwik/piwik) and several plugins, themes, and toolsets to make the most out of Piwik, such as Piwik clients for software development in Python, Ruby, C#, SDKs for iOS, debian packages and other useful Piwik developer tools.
+
 In case Github goes down, we maintain a backup Git Mirror at: [git.piwik.org](http://git.piwik.org).
-
-#### Git repositories
-
-As of 2014, we manage [over twenty repositories at Github](https://github.com/piwik). This includes the [main repository for Piwik](https://github.com/piwik/piwik) and several plugins, themes, and toolsets to make the most out of Piwik, such as Piwik clients for software development in Python, Ruby, C#, SDKs for iOS, debian packages and other useful Piwik developer tools.
 
 #### Git Owners
 
-All developers from the [Piwik team](http://piwik.org/the-piwik-team/) can push to all git repositories.
+All developers from the Piwik organization can push to all git repositories.
 
 #### Git mailing list
 
