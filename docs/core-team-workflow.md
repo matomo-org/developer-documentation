@@ -34,7 +34,7 @@ We have been using an issue tracker since [the beginning of the project](http://
 
 ## How we organise the issue tracker
 
-### Milestones 
+#### Milestones 
 All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). 
 The versions milestones are listed at the very top and contains all the most important issues to close in accordance with our vision for the Piwik analytics platform](http://piwik.org/roadmap/).
 
@@ -43,7 +43,7 @@ This milestone is our active Tickets Backlog. From time to time, we move one tic
 
 Other suggestions, tasks and feature requests which we haven't yet scheduled are moved to the [Mid term](https://github.com/piwik/piwik/milestones/Mid%20term) and [Long term](https://github.com/piwik/piwik/milestones/Long%20term) milestone.
 
-### Labels
+#### Labels
 Most important labels are tagged to issues: 
 [Privacy](https://github.com/piwik/piwik/labels/c:%20Privacy), 
 [Security](https://github.com/piwik/piwik/labels/c:%20Security), 
@@ -97,7 +97,7 @@ piwik-git [Archives](http://lists.piwik.org/pipermail/piwik-git/), [Subscribe](h
 
 This mailing list notifies all the commits to our [Git repository](https://github.com/piwik/piwik).
 
-### Git commit process
+#### Git commit process
 
 All code committed to git is reviewed by at least one other developer in the team. Very often, Piwik developers themselves will send bigger changes by pull request for review before committing. All pull requests or patches submitted by external developers are extensively reviewed.
 
