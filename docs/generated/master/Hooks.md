@@ -1794,7 +1794,7 @@ Usages:
 - [UsersManager.updateUser.end](#usersmanagerupdateuserend)
 
 ### UsersManager.addUser.end
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [352](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L352)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [359](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L359)_
 
 Triggered after a new user is created.
 
@@ -1825,7 +1825,7 @@ Callback Signature:
 
 
 ### UsersManager.deleteUser
-_Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php) in line [258](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php#L258)_
+_Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php) in line [255](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php#L255)_
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
@@ -1841,7 +1841,7 @@ Usages:
 
 
 ### UsersManager.getDefaultDates
-_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [194](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L194)_
+_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [196](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L196)_
 
 Triggered when the list of available dates is requested, for example for the User Settings > Report date to load by default.
 
@@ -1865,7 +1865,7 @@ Usages:
 
 
 ### UsersManager.removeSiteAccess
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [585](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L585)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [595](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L595)_
 
 
 
@@ -1878,7 +1878,7 @@ Usages:
 
 
 ### UsersManager.updateUser.end
-_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [462](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L462)_
+_Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [471](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L471)_
 
 Triggered after an existing user has been updated. Event notify about password change.
 
