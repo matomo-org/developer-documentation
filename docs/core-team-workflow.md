@@ -32,7 +32,7 @@ All Bugs are moved to the current milestone because of our [no-bug policy](http:
 Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
 We have been using an issue tracker since [the beginning of the project](http://piwik.org/history/). 
 
-## How we organise the issue tracker
+## How we organise issues
 
 #### Milestones 
 All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). 
@@ -58,7 +58,7 @@ Most important labels are tagged to issues:
 Other important labels used are for [Critical](https://github.com/piwik/piwik/labels/Critical) and [Major](https://github.com/piwik/piwik/labels/Major) issues. 
 New developers can quickly make an impact by hacking on an [Easy pick](https://github.com/piwik/piwik/labels/Easy%20pick) issues.
 
-## How we release new versions of Piwik
+## How we release new versions
 ### Frequent releases
 We try to publish a new Piwik release [about once a month](http://piwik.org/faq/new-to-piwik/faq_18926/). A release is ready when the following release conditions are met. 
 Our [continuous integration tests](http://piwik.org/qa/) must be green. 
@@ -118,7 +118,7 @@ To gain push access to our git repository, and be an official Piwik team member,
 
 There are other useful ways to participate to Piwik without joining the team, learn more: [How do I get involved?](http://piwik.org/get-involved/).
 
-## Getting in touch with the Core Team
+## Getting in touch with Core Team
 
 ### In the forums
 
