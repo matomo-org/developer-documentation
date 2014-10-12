@@ -15,7 +15,7 @@ This guide describes how we, the team of developers that makes changes to Piwik 
 
 **This guide makes no assumptions.** You do not need to know how to code or know how Piwik works in order to understand this guide.
 
-## How we manage our work
+## How we manage our work with issue tracker
 
 We use **[Github](https://github.com/piwik/piwik/issues)** to keep track of all bugs, feature requests and tasks that concern Piwik, the website and Piwik's documentation.
 
@@ -25,17 +25,37 @@ We make sure all tickets contain enough information, including:
 * if a new feature, explain the use case with suggestions or a specification,
 * if a UI improvement, mockups or a detailed description of the changes.
 
-We are rather obsessed with keeping our issue tracker an organized place. Tickets are generally prioritized by severity. Tickets are either of the type 'Bug', 'New feature' or 'Task'. All Bugs are moved to the current milestone because of our [no-bug policy](http://piwik.org/roadmap/). Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
+We are rather obsessed with keeping our issue tracker an organized place. 
+Tickets are generally prioritized by severity. 
+Tickets are either of the type 'Bug', 'Enhancement' or 'Task'. 
+All Bugs are moved to the current milestone because of our [no-bug policy](http://piwik.org/roadmap/). 
+Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
+We have been using an issue tracker since [the beginning of the project](http://piwik.org/history/). 
 
-## Milestones and Backlog
+## How we organise the issue tracker
 
-We have been using an issue tracker since [the beginning of the project](http://piwik.org/history/). All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). 
+### Milestones 
+All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). 
 The versions milestones are listed at the very top and contains all the most important issues to close in accordance with our vision for the Piwik analytics platform](http://piwik.org/roadmap/).
 
 Very important issues and all bugs are moved to [Short term milestone](https://github.com/piwik/piwik/milestones/Short%20term). 
 This milestone is our active Tickets Backlog. From time to time, we move one ticket from `Short term` to the current version milestone (eg. `Piwik 3.0.0`).
 
-Other tasks, suggestions and feature requests which we haven't yet scheduled are moved to the [Mid term](https://github.com/piwik/piwik/milestones/Mid%20term) and [Long term](https://github.com/piwik/piwik/milestones/Long%20term) milestone.
+Other suggestions, tasks and feature requests which we haven't yet scheduled are moved to the [Mid term](https://github.com/piwik/piwik/milestones/Mid%20term) and [Long term](https://github.com/piwik/piwik/milestones/Long%20term) milestone.
+
+### Labels
+Most important labels are tagged to issues: 
+[Privacy](https://github.com/piwik/piwik/labels/c:%20Privacy), 
+[Security](https://github.com/piwik/piwik/labels/c:%20Security), 
+[Performance](https://github.com/piwik/piwik/labels/c:%20Performance), 
+[Tests & QA](https://github.com/piwik/piwik/labels/c:%20Tests%20&%20QA), 
+[AngularJS](https://github.com/piwik/piwik/labels/c:%20AngularJS), 
+[Platform](https://github.com/piwik/piwik/labels/c:%20Platform),
+[Marketplace](https://github.com/piwik/piwik/labels/c:%20Marketplace) and
+[Website piwik.org](). 
+
+Other important labels used are for [Critical](https://github.com/piwik/piwik/labels/Critical) and [Major](https://github.com/piwik/piwik/labels/Major) issues. New developers can quickly make an impact by working on an [Easy pick](https://github.com/piwik/piwik/labels/Easy%20pick) issues.
+
 
 ## Our release process
 
@@ -75,11 +95,8 @@ It is highly recommended that code committed in the [master branch](https://gith
 
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 
-This message will automatically close the ticket [#472](https://github.com/piwik/piwik/issues/472). You can also use the magic keyword
-
-    Refs #159
-
-and a comment will be automatically added to the ticket #159 with a link to the commit on Github.
+This message will automatically close the ticket [#472](https://github.com/piwik/piwik/issues/472). 
+You can also use the magic keyword `Refs #159` and a comment will be automatically added to the ticket #159 with a link to the commit on Github.
 
 When applicable, the related [online documentation](http://piwik.org/docs/) and the related [FAQs](http://piwik.org/faq/) should be updated.
 
