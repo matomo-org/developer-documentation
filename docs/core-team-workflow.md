@@ -49,7 +49,6 @@ Most important labels are tagged to issues:
 [Security](https://github.com/piwik/piwik/labels/c:%20Security), 
 [Performance](https://github.com/piwik/piwik/labels/c:%20Performance), 
 [Tests & QA](https://github.com/piwik/piwik/labels/c:%20Tests%20&%20QA), 
-[AngularJS](https://github.com/piwik/piwik/labels/c:%20AngularJS), 
 [Usability](https://github.com/piwik/piwik/labels/c:%20Usability), 
 [Platform](https://github.com/piwik/piwik/labels/c:%20Platform),
 [Marketplace](https://github.com/piwik/piwik/labels/c:%20Marketplace) and
