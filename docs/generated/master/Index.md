@@ -28,7 +28,6 @@ Index
 - [`applyQueuedFilters()`](Piwik/DataTable/Map.md#applyqueuedfilters) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`addTable()`](Piwik/DataTable/Map.md#addtable) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
 - [`addDataTable()`](Piwik/DataTable/Map.md#adddatatable) &mdash; _Method in class_ [`Map`](Piwik/DataTable/Map.md)
-- [`addSubtable()`](Piwik/DataTable/Row.md#addsubtable) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`addColumn()`](Piwik/DataTable/Row.md#addcolumn) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`addColumns()`](Piwik/DataTable/Row.md#addcolumns) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`addMetadata()`](Piwik/DataTable/Row.md#addmetadata) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)

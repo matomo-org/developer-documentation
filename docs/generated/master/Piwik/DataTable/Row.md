@@ -53,7 +53,6 @@ The class defines the following methods:
 - [`getIdSubDataTable()`](#getidsubdatatable) &mdash; Returns the ID of the subDataTable.
 - [`getSubtable()`](#getsubtable) &mdash; Returns the associated subtable, if one exists.
 - [`sumSubtable()`](#sumsubtable) &mdash; Sums a DataTable to this row's subtable.
-- [`addSubtable()`](#addsubtable) &mdash; Attaches a subtable to this row.
 - [`setSubtable()`](#setsubtable) &mdash; Attaches a subtable to this row, overwriting the existing subtable, if any.
 - [`isSubtableLoaded()`](#issubtableloaded) &mdash; Returns `true` if the subtable is currently loaded in memory via Piwik\DataTable\Manager.
 - [`removeSubtable()`](#removesubtable) &mdash; Removes the subtable reference.
@@ -368,43 +367,6 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to 
    </li>
    </ul>
 - It does not return anything.
-
-<a name="addsubtable" id="addsubtable"></a>
-<a name="addSubtable" id="addSubtable"></a>
-### `addSubtable()`
-
-Attaches a subtable to this row.
-
-#### Signature
-
--  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> DataTable to associate to this row.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
-    <div markdown="1" class="param-desc">Returns `$subTable`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if a subtable already exists for this row.
 
 <a name="setsubtable" id="setsubtable"></a>
 <a name="setSubtable" id="setSubtable"></a>
