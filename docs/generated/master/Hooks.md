@@ -1588,7 +1588,7 @@ Callback Signature:
 
 
 ### Tracker.newConversionInformation
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [720](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L720)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [722](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L722)_
 
 Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
 
@@ -1617,7 +1617,7 @@ Callback Signature:
 
 
 ### Tracker.recordAction
-_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [370](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L370)_
+_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [387](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L387)_
 
 Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions).
 
@@ -1630,7 +1630,7 @@ Callback Signature:
 
 
 ### Tracker.recordEcommerceGoal
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [353](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L353)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [355](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L355)_
 
 Triggered after successfully persisting an ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
@@ -1644,7 +1644,7 @@ Callback Signature:
 
 
 ### Tracker.recordStandardGoals
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [696](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L696)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [698](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L698)_
 
 Triggered after successfully recording a non-ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
