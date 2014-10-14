@@ -402,6 +402,15 @@ Callback Signature:
 
 - `array` `$parameters` The arguments passed to the controller action.
 
+## CoreUpdater
+
+- [CoreUpdater.update.end](#coreupdaterupdateend)
+
+### CoreUpdater.update.end
+_Defined in [Piwik/Plugins/CoreUpdater/CoreUpdater](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php) in line [91](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L91)_
+
+Triggered after Piwik has been updated.
+
 ## CronArchive
 
 - [CronArchive.archiveSingleSite.finish](#cronarchivearchivesinglesitefinish)
@@ -910,7 +919,33 @@ Triggered after the platform is initialized and after the user has been authenti
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L149), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L42)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L154), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L42)
+
+## PluginManager
+
+- [PluginManager.pluginActivated](#pluginmanagerpluginactivated)
+- [PluginManager.pluginDeactivated](#pluginmanagerplugindeactivated)
+
+### PluginManager.pluginActivated
+_Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [459](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L459)_
+
+Event triggered after a plugin has been activated.
+
+Callback Signature:
+<pre><code>function($pluginName)</code></pre>
+
+- `string` `$pluginName` The plugin that has been activated.
+
+
+### PluginManager.pluginDeactivated
+_Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [299](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L299)_
+
+Event triggered after a plugin has been deactivated.
+
+Callback Signature:
+<pre><code>function($pluginName)</code></pre>
+
+- `string` `$pluginName` The plugin that has been deactivated.
 
 ## Provider
 
@@ -1011,7 +1046,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L120)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L125)
 
 
 ### Request.initAuthenticationObject
@@ -1389,6 +1424,25 @@ Callback Signature:
 Usages:
 
 [SegmentEditor::getKnownSegmentsToArchiveForSite](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/SegmentEditor.php#L66)
+
+## Settings
+
+- [Settings.$pluginName.settingsUpdated](#settingspluginnamesettingsupdated)
+
+### Settings.$pluginName.settingsUpdated
+_Defined in [Piwik/Plugin/Settings](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php) in line [185](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php#L185)_
+
+Triggered after a plugin settings have been updated. **Example**
+
+    Piwik::addAction('Settings.MyPlugin.settingsUpdated', function (Settings $settings) {
+        $value = $settings->someSetting->getValue();
+        // Do something with the new setting value
+    });
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
+- `[Settings](/api-reference/Piwik/Plugin/Settings)` `$settings` The plugin settings object.
 
 ## Site
 
