@@ -718,7 +718,7 @@ Starting with Piwik 1.2, first party cookies are used. Consideration must be giv
 *   `setCookieDomain( domain )` - the default is the document domain; if your web site can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
 
 *   `setCookiePath( path )` - the default is '/'.
-*   `setVisitorCookieTimeout( seconds )` - the default is 2 years
+*   `setVisitorCookieTimeout( seconds )` - the default is 13 months
 *   `setReferralCookieTimeout( seconds )` - the default is 6 months
 *   `setSessionCookieTimeout( seconds )` - the default is 30 minutes
 
