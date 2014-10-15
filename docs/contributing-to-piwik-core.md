@@ -35,7 +35,7 @@ This guide assumes that you:
 
 ## Contribution Process
 
-The contribution process starts with a bug you want to fix or an idea that you want to implement. _If you don't have one, feel free to pick an open ticket on [github.com/piwik/piwik/issues/milestones](https://github.com/piwik/piwik/issues/milestones)._
+The contribution process starts with a bug you want to fix or an idea that you want to implement. _If you don't have one, feel free to pick an open ticket on [github.com/piwik/piwik/milestones](https://github.com/piwik/piwik/milestones)._
 
 Once you've decided on something, continue below.
 
