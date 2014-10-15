@@ -979,7 +979,7 @@ Callback Signature:
 - [Referrer.addSocialUrls](#referreraddsocialurls)
 
 ### Referrer.addSearchEngineUrls
-_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [805](https://github.com/piwik/piwik/blob/master/core/Common.php#L805)_
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [815](https://github.com/piwik/piwik/blob/master/core/Common.php#L815)_
 
 
 
@@ -988,7 +988,7 @@ Callback Signature:
 
 
 ### Referrer.addSocialUrls
-_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [844](https://github.com/piwik/piwik/blob/master/core/Common.php#L844)_
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [854](https://github.com/piwik/piwik/blob/master/core/Common.php#L854)_
 
 
 
