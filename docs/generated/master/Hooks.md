@@ -1913,7 +1913,7 @@ Usages:
 
 
 ### UsersManager.getDefaultDates
-_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [196](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L196)_
+_Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [197](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L197)_
 
 Triggered when the list of available dates is requested, for example for the User Settings > Report date to load by default.
 
