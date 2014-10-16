@@ -72,7 +72,7 @@ Open a terminal and `cd` into the directory where you want to install Piwik. The
 
     $ git clone https://github.com/piwik/piwik piwik
     $ cd piwik
-    $ git submodule update
+    $ git submodule update --init
 
 Then run the following command to install the third party libraries:
 
