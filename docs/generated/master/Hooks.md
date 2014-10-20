@@ -956,7 +956,7 @@ Callback Signature:
 
 
 ### PluginManager.pluginDeactivated
-_Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [299](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L299)_
+_Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [300](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L300)_
 
 Event triggered after a plugin has been deactivated.
 
