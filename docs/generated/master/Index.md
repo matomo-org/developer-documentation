@@ -504,6 +504,7 @@ Index
 - [`getCurrentUrlWithoutFileName()`](Piwik/Url.md#getcurrenturlwithoutfilename) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getCurrentScriptPath()`](Piwik/Url.md#getcurrentscriptpath) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getCurrentScriptName()`](Piwik/Url.md#getcurrentscriptname) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
+- [`getCurrentPathInfo()`](Piwik/Url.md#getcurrentpathinfo) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getCurrentScheme()`](Piwik/Url.md#getcurrentscheme) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getCurrentHost()`](Piwik/Url.md#getcurrenthost) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
 - [`getCurrentQueryString()`](Piwik/Url.md#getcurrentquerystring) &mdash; _Method in class_ [`Url`](Piwik/Url.md)
