@@ -1,4 +1,4 @@
-# Core Team Workflow
+# The Core Team Workflow
 
 ## About this guide
 
@@ -9,7 +9,7 @@ This guide describes how we, the team of developers that makes changes to Piwik 
 * you'd like to know **how the core team works**
 * you'd like to know **how to reach the core team**
 * you'd like to know **how to submit a bug report or feature request**
-* you'd like to know **how to take part in core development by submiting a pull request**
+* you'd like to know **how to take part in core development by submitting a pull request**
 
 **Guide assumptions**
 
@@ -34,16 +34,16 @@ We have been using an issue tracker since [the beginning of the project](http://
 
 ## How we organise issues
 
-#### Milestones 
+### Milestones 
 All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). 
-The versions milestones are listed at the very top and contains all the most important issues to close in accordance with our vision for the Piwik analytics platform](http://piwik.org/roadmap/).
+The versions milestones are listed at the very top and contains all the most important issues to close in accordance with [our vision for the Piwik analytics platform](http://piwik.org/roadmap/).
 
 Very important issues and all bugs are moved to [Short term milestone](https://github.com/piwik/piwik/milestones/Short%20term). 
-This milestone is our active Tickets Backlog. From time to time, we move one ticket from `Short term` to the current version milestone (eg. `Piwik 3.0.0`).
+This milestone is our active tickets backlog. From time to time, we move one ticket from `Short term` to the current version milestone (eg. `Piwik 3.0.0`).
 
-Other suggestions, tasks and feature requests which we haven't yet scheduled are moved to the [Mid term](https://github.com/piwik/piwik/milestones/Mid%20term) and [Long term](https://github.com/piwik/piwik/milestones/Long%20term) milestone.
+Other suggestions, tasks and feature requests which we haven't yet scheduled are moved to the [Mid term](https://github.com/piwik/piwik/milestones/Mid%20term) or [Long term](https://github.com/piwik/piwik/milestones/Long%20term) milestones.
 
-#### Labels
+### Labels
 Most important labels are tagged to issues: 
 [Privacy](https://github.com/piwik/piwik/labels/c:%20Privacy), 
 [Security](https://github.com/piwik/piwik/labels/c:%20Security), 
@@ -58,12 +58,15 @@ Other important labels used are for [Critical](https://github.com/piwik/piwik/la
 New developers can quickly make an impact by hacking on an [Easy pick](https://github.com/piwik/piwik/labels/Easy%20pick) issues.
 
 ## How we release new versions
+
 ### Frequent releases
-We try to publish a new Piwik release [about once a month](http://piwik.org/faq/new-to-piwik/faq_18926/). A release is ready when the following release conditions are met. 
-Our [continuous integration tests](http://piwik.org/qa/) must be green. 
-Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik. 
-All critical tickets [to the corresponding milestone](https://github.com/piwik/piwik/issues/milestones) must be closed. 
-All [officially supported plugins](http://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](http://plugins.piwik.org/) must be compatible.
+We try to publish a new Piwik release [about once a month](http://piwik.org/faq/new-to-piwik/faq_18926/). A release is ready when the following release conditions are met: 
+
+- Our [continuous integration tests](http://piwik.org/qa/) must be green.
+- All critical tickets [to the corresponding milestone](https://github.com/piwik/piwik/issues/milestones) must be closed. 
+- All [officially supported plugins](http://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](http://plugins.piwik.org/) must be compatible.
+
+Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik.
 
 To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)). 
 A shell script is then run to generate the archives (zip and tar.gz) which are copied to the build server [builds.piwik.org](http://builds.piwik.org/) and [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. 
@@ -92,9 +95,7 @@ All developers from the Piwik organization can push to all git repositories.
 
 #### Git mailing list
 
-piwik-git [Archives](http://lists.piwik.org/pipermail/piwik-git/), [Subscribe](http://lists.piwik.org/cgi-bin/mailman/listinfo/piwik-git), [Search the archives](http://www.google.com/coop/cse?cx=012634963936527368460%3Afzsqvqnvzoi)
-
-This mailing list notifies all the commits to our [Git repository](https://github.com/piwik/piwik).
+This mailing list notifies all the commits to our [Git repository](https://github.com/piwik/piwik): [Archives](http://lists.piwik.org/pipermail/piwik-git/), [Subscribe](http://lists.piwik.org/cgi-bin/mailman/listinfo/piwik-git), [Search the archives](http://www.google.com/coop/cse?cx=012634963936527368460%3Afzsqvqnvzoi).
 
 #### Git commit process
 
@@ -105,7 +106,7 @@ It is highly recommended that code committed in the [master branch](https://gith
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 
 This message will automatically close the ticket [#472](https://github.com/piwik/piwik/issues/472). 
-You can also use the magic keyword `Refs #159` and a comment will be automatically added to the ticket #159 with a link to the commit on Github.
+You can also use simply `#159` and a comment will be automatically added to the ticket #159 with a link to the commit on Github.
 
 When applicable, the related [online documentation](http://piwik.org/docs/) and the related [FAQs](http://piwik.org/faq/) should be updated.
 
@@ -115,13 +116,11 @@ When applicable, the related [online documentation](http://piwik.org/docs/) and 
 
 Join us in the forums at [forum.piwik.org](http://forum.piwik.org)
 
-Discover our [vibrant Piwik community](http://forum.piwik.org/) where analytics tips are shared, suggestions on how to make the most out of Piwik, or general questions. Several team members visit the forums regularly, as well as active members of the community.
+Discover our vibrant community where analytics tips are shared, suggestions on how to make the most out of Piwik, or general questions. Several team members visit the forums regularly, as well as active members of the community.
 
 ### By email
 
-You can contact the team by email <a href='mailto:hello@piwik.org?subject=Contact the Piwik team'>hello (at) piwik.org</a>.
-
-Or contact the team [using the contact form](http://piwik.org/contact/).
+You can contact the team by email: <a href='mailto:hello@piwik.org?subject=Contact the Piwik team'>hello (at) piwik.org</a>, or using [the contact form](http://piwik.org/contact/).
 
 ### Using IRC
 
@@ -129,11 +128,11 @@ Some team members may be available in IRC at [irc.freenode.net/#piwik](irc://irc
 
 ## Influencing Piwik development
 
-There are many ways you can make a difference in the project and influence the overall goodness of Piwik, most of which do not include coding. Read on to learn all the ways you can contribute to Piwik:
+There are many ways you can make a difference in the project and influence the overall goodness of Piwik, most of which do not include coding.
 
 ### Comment on existing issues
 
-If you find a new feature request very exciting or important, or if you're experiencing a particular bug, the best way to be heard by the Piwik team is to comment on the ticket. This will help us schedule with higher priority the features that are most often requested and commented on.
+If you find a new feature request very exciting or important, or if you're experiencing a particular bug, the best way to be heard by the Piwik team is to comment on the ticket. Features that are most requested are often higher on the priority list.
 
 ### Submitting a bug report
 
@@ -143,25 +142,25 @@ If you believe you have found a bug in Piwik, please do the following:
 
 * make sure you are using the latest [Piwik release](http://piwik.org/download/)
 * search in the [forum](http://forum.piwik.org/), [FAQ](http://piwik.org/faq/) and the [issue tracker](https://github.com/piwik/piwik/issues) if a similar or the same bug has already been reported.
-* if your bug seems new, do you know the steps to follow to reproduce it?
+* if your bug seems new, try to identify the steps to reproduce it.
 * if you are ready to report a bug, register an account [in the issue tracker](https://github.com/piwik/piwik/issues), login and [create a new ticket](https://github.com/piwik/piwik/issues/new)
-* make sure the title and description are as descriptive and clear as possible. Is the issue new to you, or has it always failed? If you give a clear description, you will greatly help developers trying to reproduce and fix the issue.
-* In the bug description, please post instructions on how to reproduce, data sets that show the error if possible, screenshots, what exactly is not working? Also include details about relevant parts of your configuration (Browser, OS, PHP version, etc.).
+* make sure the title and description are as descriptive and clear as possible. Is the issue new to you, or has it always failed? If you give a clear description, you will help developers trying to reproduce and fix the issue.
+* in the ticket, post instructions on how to reproduce the bug, add data sets if applicable, screenshots. Also include details about relevant parts of your configuration (browser, OS, PHP version, etc.).
 
 ### Submitting a feature request
 
-Another way to contribute is to submit a feature request when you realize there is something you need that is missing in Piwik.
+Another way to contribute is to submit a feature request.
 
 You can tell us what we can do to improve Piwik in the [Feature Suggestions forum](http://forum.piwik.org/index.php?showforum=3). Please check that it is not already in the [list of Piwik tickets](https://github.com/piwik/piwik/issues).
 
-When submitting a significant new feature, it is recommended to be as descriptive as possible when creating a ticket. The ticket should contain
+When submitting a significant new feature, it is recommended to be as descriptive as possible. The ticket should contain:
 
 - a description of the product vision
 - a few use cases to show how useful this feature would be
 - mockups of what the new screens would be and how the existing screens would have to change
 - if applicable, examples of how the feature is implemented in other existing tools
 
-Please put as much information as possible as it will help in estimating the effort of the task and in determining how doable it would be (by the Piwik core team or a Piwik consultant). We will help with any technical details and questions outlined in the ticket.
+Please put as much information as possible as it will help to estimate the effort needed (by the Piwik core team or by a Piwik consultant). We will help with any technical details and questions outlined in the ticket.
 
 ### Contributing code
 
@@ -173,5 +172,5 @@ All [Piwik team members](http://piwik.org/team/) have contributed major improvem
 
 To gain push access to our git repository, and be an official Piwik team member, one must make positive changes in the project, such as  [contributing pull requests](http://developer.piwik.org/guides/contributing-to-piwik-core), bringing new ideas, code, marketing, product visions. When a certain amount of work has been achieved, when we trust your skills and judgement, we will invite you to [join us in the core team](http://piwik.org/team/). Most of us also meet once a year in a beautiful European city for brainstorming the future of analytics, open source, [privacy](http://piwik.org/blog/2014/01/data-privacy-day-january-28th/) and Piwik.
 
-There are other useful ways to participate to Piwik without joining the team, learn more: [How do I get involved?](http://piwik.org/get-involved/).
+There are other useful ways to participate to Piwik without joining the team, learn more: [How do I get involved?](http://piwik.org/get-involved/)
 
