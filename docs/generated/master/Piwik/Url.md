@@ -48,7 +48,6 @@ The class defines the following methods:
 - [`getCurrentUrlWithoutFileName()`](#getcurrenturlwithoutfilename) &mdash; Returns the current URL without the query string and without the name of the file being executed.
 - [`getCurrentScriptPath()`](#getcurrentscriptpath) &mdash; Returns the path to the script being executed.
 - [`getCurrentScriptName()`](#getcurrentscriptname) &mdash; Returns the path to the script being executed.
-- [`getCurrentPathInfo()`](#getcurrentpathinfo) &mdash; Returns the current PATH_INFO from the request.
 - [`getCurrentScheme()`](#getcurrentscheme) &mdash; Returns the current URL's protocol.
 - [`getCurrentHost()`](#getcurrenthost) &mdash; Returns the current host.
 - [`getCurrentQueryString()`](#getcurrentquerystring) &mdash; Returns the query string of the current URL.
@@ -170,6 +169,20 @@ Includes the script file name.
 
 #### Signature
 
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$removePathInfo` (`bool`) &mdash;
+
+      <div markdown="1" class="param-desc"> If true (default value) then the PATH_INFO will be stripped.</div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
 
 <ul>
   <li>
@@ -182,23 +195,6 @@ Includes the script file name.
     </div>
   </li>
 </ul>
-
-<a name="getcurrentpathinfo" id="getcurrentpathinfo"></a>
-<a name="getCurrentPathInfo" id="getCurrentPathInfo"></a>
-### `getCurrentPathInfo()`
-
-Returns the current PATH_INFO from the request.
-
-Contains any client-provided pathname information trailing the actual
-script filename but preceding the query string, if available.
-
-For instance, if the current script was accessed via the URL
-http://www.example.com/php/path_info.php/some/stuff?foo=bar
-then getCurrentPathInfo() would return "/some/stuff".
-
-#### Signature
-
-- It returns a `string` value.
 
 <a name="getcurrentscheme" id="getcurrentscheme"></a>
 <a name="getCurrentScheme" id="getCurrentScheme"></a>
