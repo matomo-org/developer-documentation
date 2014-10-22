@@ -19,7 +19,7 @@ Callback Signature:
 
 - [API.$pluginName.$methodName](#apipluginnamemethodname)
 - [API.$pluginName.$methodName.end](#apipluginnamemethodnameend)
-- [API.DocumentationGenerator.$hideString](#apidocumentationgeneratorhidestring)
+- [API.DocumentationGenerator.$token](#apidocumentationgeneratortoken)
 - [API.getReportMetadata.end](#apigetreportmetadataend)
 - [API.getSegmentDimensionMetadata](#apigetsegmentdimensionmetadata)
 - [API.Request.authenticate](#apirequestauthenticate)
@@ -79,29 +79,15 @@ Callback Signature:
 - `array` `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
 
-### API.DocumentationGenerator.$hideString
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [500](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L500)_
+### API.DocumentationGenerator.$token
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [494](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L494)_
 
-Triggered to check if plugin should be hidden from the API for the current user. This event exists for checking if the user should be able to see the plugin API.
-If &$response is set to false then the user will be able to see the plugin API.
-If &$response is set to true then the plugin API will be hidden for the user.
-
-**Example**
-
-    public function checkIfNotSuperUser(&$response)
-    {
-         try {
-                 Piwik::checkUserHasSuperUserAccess();
-                 $response = false;
-         } catch (\Exception $e) {
-                 $response = true;
-         }
-     }
+This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
 
 Callback Signature:
-<pre><code>function(&amp;$response)</code></pre>
+<pre><code>function(&amp;$hide)</code></pre>
 
-- `bool` `&$response` Boolean value containing information if the plugin API should be hidden from the current user.
+- `bool` `&$hide` whether to hide APIs tagged with $token should be displayed.
 
 
 ### API.getReportMetadata.end
