@@ -224,14 +224,3 @@ The content of the tabs is determined by the headings in your **README.md** file
 On the right side is the download link, information about your plugin and some relevant links.
 
 <!-- TODO: image -->
-
-## Our plans for the marketplace
-
-Like Piwik, the marketplace is a constant work in progress! We will be improving and changing it often to make it easier for you to find users for your plugin.
-
-Here are the things we are currently working on:
-
-* Allowing users to leave feedback through comments on plugin pages.
-* Allowing users to rate existing plugins.
-
-<!-- * TODO: what else? -->
