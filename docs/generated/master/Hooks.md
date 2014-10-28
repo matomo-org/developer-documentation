@@ -80,7 +80,7 @@ Callback Signature:
 
 
 ### API.DocumentationGenerator.$token
-_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [494](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L494)_
+_Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [504](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L504)_
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
 
