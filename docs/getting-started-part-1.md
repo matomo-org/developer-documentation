@@ -88,7 +88,16 @@ Piwik should now be available at [http://localhost:8000/](http://localhost:8000/
 
 Once Piwik is running, open it in your browser and follow the instructions to complete the installation.
 
-#### Development configuration
+#### Adding anonymous access to your reports
+
+Before we finish, we're going to allow anyone to view reports on your new Piwik environment. Open the _Manage > Users_ admin page and click the red icon in the **View** column for the **anonymous** user:
+
+<img src="/img/getting_started_users_manager_anonymous.png"/>
+
+This will make it possible to view raw report data without having to supply a **token_auth**.
+
+
+### Enable Development mode
 
 After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier and to make sure all changes take affect immediately. Piwik comes with a handy command-line tool that will do this work for you. In the root directory of your Piwik install, run the following command to enable the development mode:
 
@@ -99,15 +108,7 @@ If you plan on running automated tests, you'll have to set the following configu
     [database_tests]
     password = ...
     user = ...
-
-#### Adding anonymous access to your reports
-
-Before we finish, we're going to allow anyone to view reports on your new Piwik environment. Open the _Manage > Users_ admin page and click the red icon in the **View** column for the **anonymous** user:
-
-<img src="/img/getting_started_users_manager_anonymous.png"/>
-
-This will make it possible to view raw report data without having to supply a **token_auth**.
-
+    
 ### Add some test data
 
 You're now ready to create your first plugin, but before we do that, let's add some test data for you to play with.
