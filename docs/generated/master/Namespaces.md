@@ -11,6 +11,7 @@ This is a complete list of available namespaces:
 - [`Piwik\DataAccess`](Piwik/DataAccess)
 - [`Piwik\DataTable`](Piwik/DataTable)
 - [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter)
+- [`Piwik\Exceptions`](Piwik/Exceptions)
 - [`Piwik\Menu`](Piwik/Menu)
 - [`Piwik\Notification`](Piwik/Notification)
 - [`Piwik\Period`](Piwik/Period)
