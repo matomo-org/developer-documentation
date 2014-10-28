@@ -301,6 +301,7 @@ Index
 - [`getName()`](Piwik/Columns/Dimension.md#getname) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getId()`](Piwik/Columns/Dimension.md#getid) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](Piwik/Columns/Dimension.md#getalldimensions) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
+- [`getDimensions()`](Piwik/Columns/Dimension.md#getdimensions) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getModule()`](Piwik/Columns/Dimension.md#getmodule) &mdash; _Method in class_ [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getRequestVar()`](Piwik/Common.md#getrequestvar) &mdash; _Method in class_ [`Common`](Piwik/Common.md)
 - [`getLanguagesList()`](Piwik/Common.md#getlanguageslist) &mdash; _Method in class_ [`Common`](Piwik/Common.md)

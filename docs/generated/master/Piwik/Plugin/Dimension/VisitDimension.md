@@ -55,6 +55,7 @@ The abstract class defines the following methods:
 - [`getName()`](#getname) &mdash; Get the translated name of the dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](#getalldimensions) &mdash; Get all visit dimensions that are defined by all activated plugins.
+- [`getDimensions()`](#getdimensions) Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`factory()`](#factory) &mdash; Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Plugin/Dimension/VisitDimension#getid)). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`install()`](#install) &mdash; Installs the visit dimension in case it is not installed yet.
@@ -143,6 +144,28 @@ Get all visit dimensions that are defined by all activated plugins.
 #### Signature
 
 - It returns a [`VisitDimension[]`](../../../Piwik/Plugin/Dimension/VisitDimension.md) value.
+
+<a name="getdimensions" id="getdimensions"></a>
+<a name="getDimensions" id="getDimensions"></a>
+### `getDimensions()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$plugin` ([`Plugin`](../../../Piwik/Plugin.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>

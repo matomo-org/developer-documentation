@@ -46,6 +46,7 @@ The abstract class defines the following methods:
 - [`getName()`](#getname) &mdash; Get the translated name of the dimension.
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension.
 - [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension.
+- [`getDimensions()`](#getdimensions)
 - [`factory()`](#factory) &mdash; Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Columns/Dimension#getid)).
 - [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension.
 
@@ -122,6 +123,28 @@ Gets an instance of all available visit, action and conversion dimension.
 #### Signature
 
 - It returns a [`Dimension[]`](../../Piwik/Columns/Dimension.md) value.
+
+<a name="getdimensions" id="getdimensions"></a>
+<a name="getDimensions" id="getDimensions"></a>
+### `getDimensions()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+
+   <ul>
+   <li>
+      <div markdown="1" class="parameter">
+      `$plugin` ([`Plugin`](../../Piwik/Plugin.md)) &mdash;
+
+      <div markdown="1" class="param-desc"></div>
+
+      <div style="clear:both;"/>
+
+      </div>
+   </li>
+   </ul>
+- It does not return anything.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
