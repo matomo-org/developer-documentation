@@ -101,7 +101,7 @@ This will make it possible to view raw report data without having to supply a **
 
 After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier and to make sure all changes take affect immediately. Piwik comes with a handy command-line tool that will do this work for you. In the root directory of your Piwik install, run the following command to enable the development mode:
 
-    ./console development:enable --full
+    ./console development:enable
 
 If you plan on running automated tests, you'll have to set the following configuration options in `config/config.ini.php`:
 
