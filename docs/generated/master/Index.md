@@ -361,7 +361,6 @@ Index
 - [`getDatabaseConfig()`](Piwik/Db.md#getdatabaseconfig) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`getColumnNamesFromTable()`](Piwik/Db.md#getcolumnnamesfromtable) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`getDbLock()`](Piwik/Db.md#getdblock) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
-- [`getHtmlMessage()`](Piwik/Exceptions/HtmlMessageException.md#gethtmlmessage) &mdash; _Method in class_ [`HtmlMessageException`](Piwik/Exceptions/HtmlMessageException.md)
 - [`globr()`](Piwik/Filesystem.md#globr) &mdash; _Method in class_ [`Filesystem`](Piwik/Filesystem.md)
 - [`getTransportMethod()`](Piwik/Http.md#gettransportmethod) &mdash; _Method in class_ [`Http`](Piwik/Http.md)
 - [`getIPv4FromMappedIPv6()`](Piwik/IP.md#getipv4frommappedipv6) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
@@ -535,6 +534,7 @@ Index
 - [`hasSuperUserAccess()`](Piwik/AuthResult.md#hassuperuseraccess) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
 - [`hasColumn()`](Piwik/DataTable/Row.md#hascolumn) &mdash; _Method in class_ [`Row`](Piwik/DataTable/Row.md)
 - [`HtmlMessageException`](Piwik/Exceptions/HtmlMessageException.md) &mdash; _Class in namespace_ `Piwik\Exceptions` 
+- [`HtmlMessageExceptionInterface`](Piwik/Exceptions/HtmlMessageExceptionInterface.md) &mdash; _Class in namespace_ `Piwik\Exceptions` 
 - [`Http`](Piwik/Http.md) &mdash; _Class in namespace_ `Piwik` 
 - [`hasNoClear()`](Piwik/Notification.md#hasnoclear) &mdash; _Method in class_ [`Notification`](Piwik/Notification.md)
 - [`hasUserSuperUserAccessOrIsTheUser()`](Piwik/Piwik.md#hasusersuperuseraccessoristheuser) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
