@@ -5,17 +5,8 @@ IP
 
 Contains IP address helper functions (for both IPv4 and IPv6).
 
-As of Piwik 1.3, IP addresses are stored in the DB has VARBINARY(16),
-and passed around in network address format which has the advantage of
-being in big-endian byte order. This allows for binary-safe string
-comparison of addresses (of the same length), even on Intel x86.
-
-As a matter of naming convention, we use `$ip` for the network address format
-and `$ipString` for the presentation format (i.e., human-readable form).
-
-We're not using the network address format (in_addr) for socket functions,
-so we don't have to worry about incompatibility with Windows UNICODE
-and inetPtonW().
+As of Piwik 2.9, most methods in this class are deprecated. You are
+encouraged to use classes from the Piwik "Network" component:
 
 Methods
 -------
@@ -37,13 +28,17 @@ The class defines the following methods:
 - [`getIpFromHeader()`](#getipfromheader) &mdash; Returns the most accurate IP address availble for the current user, in IPv4 format.
 - [`getNonProxyIpFromHeader()`](#getnonproxyipfromheader) &mdash; Returns a non-proxy IP address from header.
 - [`getLastIpFromList()`](#getlastipfromlist) &mdash; Returns the last IP address in a comma separated list, subject to an optional exclusion list.
-- [`getHostByAddr()`](#gethostbyaddr) &mdash; Retirms the hostname for a given IP address.
+- [`getHostByAddr()`](#gethostbyaddr) &mdash; Returns the hostname for a given IP address.
 
 <a name="sanitizeip" id="sanitizeip"></a>
 <a name="sanitizeIp" id="sanitizeIp"></a>
 ### `sanitizeIp()`
 
 Removes the port and the last portion of a CIDR IP address.
+
+#### See Also
+
+- `\Piwik\Network\IPUtils`
 
 #### Signature
 
@@ -75,6 +70,10 @@ Accepts the following formats for $ipRange:
 - IPv4 block using CIDR notation, e.g., 192.168.0.0/22 represents the IPv4 addresses from 192.168.0.0 to 192.168.3.255
 - IPv6 block using CIDR notation, e.g., 2001:DB8::/48 represents the IPv6 addresses from 2001:DB8:0:0:0:0:0:0 to 2001:DB8:0:FFFF:FFFF:FFFF:FFFF:FFFF
 - wildcards, e.g., 192.168.0.*
+
+#### See Also
+
+- `\Piwik\Network\IPUtils`
 
 #### Signature
 
@@ -110,6 +109,10 @@ Accepts the following formats for $ipRange:
 ### `P2N()`
 
 Converts an IP address in presentation format to network address format.
+
+#### See Also
+
+- `\Piwik\Network\IPUtils`
 
 #### Signature
 
@@ -218,6 +221,10 @@ Alias for [N2P()](/api-reference/Piwik/IP#n2p).
 
 Returns true if `$ip` is an IPv4, IPv4-compat, or IPv4-mapped address, false if otherwise.
 
+#### See Also
+
+- `\Piwik\Network\IP`
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -297,6 +304,10 @@ Returns true if $ip is an IPv6 address, false if otherwise.
 This function does
 a naive check. It assumes that whatever format $ip is in, it is well-formed.
 
+#### See Also
+
+- `\Piwik\Network\IP`
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -321,6 +332,10 @@ a naive check. It assumes that whatever format $ip is in, it is well-formed.
 
 Returns true if $ip is a IPv4 mapped address, false if otherwise.
 
+#### See Also
+
+- `\Piwik\Network\IP`
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -344,6 +359,10 @@ Returns true if $ip is a IPv4 mapped address, false if otherwise.
 ### `getIPv4FromMappedIPv6()`
 
 Returns an IPv4 address from a 'mapped' IPv6 address.
+
+#### See Also
+
+- `\Piwik\Network\IP`
 
 #### Signature
 
@@ -379,6 +398,10 @@ Returns an IPv4 address from a 'mapped' IPv6 address.
 ### `getIpsForRange()`
 
 Get low and high IP addresses for a specified range.
+
+#### See Also
+
+- `\Piwik\Network\IPUtils`
 
 #### Signature
 
@@ -416,6 +439,10 @@ Get low and high IP addresses for a specified range.
 Determines if an IP address is in a specified IP address range.
 
 An IPv4-mapped address should be range checked with an IPv4-mapped address range.
+
+#### See Also
+
+- `\Piwik\Network\IP`
 
 #### Signature
 
@@ -562,7 +589,11 @@ Returns the last IP address in a comma separated list, subject to an optional ex
 <a name="getHostByAddr" id="getHostByAddr"></a>
 ### `getHostByAddr()`
 
-Retirms the hostname for a given IP address.
+Returns the hostname for a given IP address.
+
+#### See Also
+
+- `\Piwik\Network\IP`
 
 #### Signature
 

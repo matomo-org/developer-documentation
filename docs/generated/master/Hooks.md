@@ -1097,7 +1097,7 @@ Usages:
 
 
 ### Request.initAuthenticationObject
-_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [109](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L109)_
+_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [110](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L110)_
 
 
 
@@ -1522,7 +1522,7 @@ Callback Signature:
 - [SitesManager.getImageTrackingCode](#sitesmanagergetimagetrackingcode)
 
 ### SitesManager.addSite.end
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [567](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L567)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [568](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L568)_
 
 Triggered after a site has been added.
 
@@ -1533,7 +1533,7 @@ Callback Signature:
 
 
 ### SitesManager.deleteSite.end
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [614](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L614)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [615](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L615)_
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -1550,7 +1550,7 @@ Usages:
 
 
 ### SitesManager.getImageTrackingCode
-_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [131](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L131)_
+_Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [132](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L132)_
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
@@ -1757,7 +1757,7 @@ Callback Signature:
 
 
 ### Tracker.Request.getIdSite
-_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [389](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L389)_
+_Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [390](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L390)_
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
