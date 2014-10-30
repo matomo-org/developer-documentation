@@ -524,7 +524,7 @@ Callback Signature:
 - [FrontController.modifyErrorPage](#frontcontrollermodifyerrorpage)
 
 ### FrontController.modifyErrorPage
-_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [635](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L635)_
+_Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [645](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L645)_
 
 Triggered before a Piwik error page is displayed to the user. This event can be used to modify the content of the error page that is displayed when
 an exception is caught.
