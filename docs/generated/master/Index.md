@@ -629,6 +629,7 @@ Index
 - [`lockTables()`](Piwik/Db.md#locktables) &mdash; _Method in class_ [`Db`](Piwik/Db.md)
 - [`long2ip()`](Piwik/IP.md#long2ip) &mdash; _Method in class_ [`IP`](Piwik/IP.md)
 - [`Log`](Piwik/Log.md) &mdash; _Class in namespace_ `Piwik` 
+- [`loadAllPluginsAndGetTheirInfo()`](Piwik/Plugin/Manager.md#loadallpluginsandgettheirinfo) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
 
 ## M
 
@@ -760,7 +761,6 @@ Index
 - [`renderTemplate()`](Piwik/Plugin/Controller.md#rendertemplate) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`renderReport()`](Piwik/Plugin/Controller.md#renderreport) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
 - [`redirectToIndex()`](Piwik/Plugin/Controller.md#redirecttoindex) &mdash; _Method in class_ [`Controller`](Piwik/Plugin/Controller.md)
-- [`returnLoadedPluginsInfo()`](Piwik/Plugin/Manager.md#returnloadedpluginsinfo) &mdash; _Method in class_ [`Manager`](Piwik/Plugin/Manager.md)
 - [`Report`](Piwik/Plugin/Report.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`render()`](Piwik/Plugin/Report.md#render) &mdash; _Method in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`removeAllPluginSettings()`](Piwik/Plugin/Settings.md#removeallpluginsettings) &mdash; _Method in class_ [`Settings`](Piwik/Plugin/Settings.md)

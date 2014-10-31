@@ -14,7 +14,7 @@ The class defines the following methods:
 - [`isPluginActivated()`](#ispluginactivated) &mdash; Returns `true` if a plugin has been activated.
 - [`isPluginLoaded()`](#ispluginloaded) &mdash; Returns `true` if plugin is loaded (in memory).
 - [`getThemeEnabled()`](#getthemeenabled) &mdash; Returns the currently enabled theme.
-- [`returnLoadedPluginsInfo()`](#returnloadedpluginsinfo) &mdash; Returns info regarding all plugins.
+- [`loadAllPluginsAndGetTheirInfo()`](#loadallpluginsandgettheirinfo) &mdash; Returns info regarding all plugins.
 - [`getInstalledPluginsName()`](#getinstalledpluginsname) &mdash; Return names of all installed plugins.
 - [`getMissingPlugins()`](#getmissingplugins) &mdash; Returns names of plugins that should be loaded, but cannot be since their files cannot be found.
 
@@ -91,9 +91,9 @@ If no theme is enabled, the **Morpheus** plugin is returned (this is the base an
 
 - It returns a [`Plugin`](../../Piwik/Plugin.md) value.
 
-<a name="returnloadedpluginsinfo" id="returnloadedpluginsinfo"></a>
-<a name="returnLoadedPluginsInfo" id="returnLoadedPluginsInfo"></a>
-### `returnLoadedPluginsInfo()`
+<a name="loadallpluginsandgettheirinfo" id="loadallpluginsandgettheirinfo"></a>
+<a name="loadAllPluginsAndGetTheirInfo" id="loadAllPluginsAndGetTheirInfo"></a>
+### `loadAllPluginsAndGetTheirInfo()`
 
 Returns info regarding all plugins.
 
