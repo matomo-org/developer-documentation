@@ -2058,7 +2058,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L145), [Events::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L154)
+[Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L143), [Events::configureViewDataTable](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L154)
 
 ## WidgetsList
 
