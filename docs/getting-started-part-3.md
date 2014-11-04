@@ -13,11 +13,11 @@ This guide assumes that you've completed [Part II](/guides/getting-started-part-
 
 ### Making the report configurable
 
-The report we've defined is interesting, but we could easily aggregate on another visit property. For example, the report could be **getLastVisitsByScreenType** or **getLastVisitsByCity**. In this section, we're going to make it possible for users to change what the report displays.
+The report we've defined is interesting, but we could easily aggregate on another visit property. For example, the report could be `getLastVisitsByScreenType` or `getLastVisitsByCity`. In this section, we're going to make it possible for users to change what the report displays.
 
 #### Creating a plugin setting
 
-We'll create a **plugin setting** which will control which visit property the plugin uses to generate our report. The first step is to create a **Settings** class:
+We'll create a **plugin setting** which will control which visit property the plugin uses to generate our report. For this, we need to create a `Settings` class at the root of your plugin's directory:
 
     <?php
 
@@ -31,13 +31,11 @@ We'll create a **plugin setting** which will control which visit property the pl
         }
     }
 
-Put this class in a file called **Settings.php** in your plugin's root directory.
+The `Settings` class is a special class that is automatically detected by Piwik. Piwik uses the information it sets to add a new section for your plugin in the _Plugins > Settings_ admin page.
 
-The **Settings** class is a special class that is automatically detected by Piwik. Piwik uses the information it sets to add a new section for your plugin in the _Plugins > Settings_ admin page.
+We're going to create one setting that can be set differently by each user. Our setting will determine the column of the `Live.getLastVisitsDetails` that we'll aggregate by. So it's a string and has a limited number of valid values. We'll use a single select dropdown (just a normal `<select>`) for it.
 
-We're going to create one setting that can be set differently by each user. First, let's think about our new setting. It's going to determine the column of the **Live.getLastVisitsDetails** that we'll aggregate by. So it's a string and has a limited number of valid values. We'll use a single select dropdown (just a normal `<select>`) for it.
-
-Now, let's add an attribute and new method for this setting:
+Let's add an attribute and new method for this setting:
 
     class Settings extends \Piwik\Plugin\Settings
     {
@@ -55,7 +53,7 @@ Now, let's add an attribute and new method for this setting:
         }
     }
 
-Then we'll implement the `createRealtimeReportDimensionSetting` method:
+Then we'll implement the `createRealtimeReportDimensionSetting()` method:
 
     private function createRealtimeReportDimensionSetting()
     {
@@ -65,12 +63,13 @@ Then we'll implement the `createRealtimeReportDimensionSetting` method:
         $setting->description   = 'Choose the dimension to aggregate by';
         $setting->availableValues = MyPlugin::$availableDimensionsForAggregation;
         $setting->defaultValue = 'browserName';
+        
         return $setting;
     }
 
-Notice how `$settings->availableValues` is set to `MyPlugin::$availableDimensionsForAggregation`. The **availableValues** property should be set to an array mapping column values with their appropriate display text. This array will probably come in handy later, so we'll stash it in our plugin descriptor class.
+Notice how `$settings->availableValues` is set from `MyPlugin::$availableDimensionsForAggregation`. The **availableValues** property should be set to an array mapping column values with their appropriate display text. This array will probably come in handy later so we'll put it in a static class attribute.
 
-In your plugin descriptor class add the following code:
+In your plugin class add the following code:
 
     public static $availableDimensionsForAggregation = array(
         'browserName' => 'Browser',
@@ -96,7 +95,7 @@ If you go to the _Plugins > Settings_ admin page you should see this new setting
 
 #### Using the new setting
 
-To use the setting, first we need to get the setting value in our API method and then aggregate using it. Change your API method to look like this:
+To use the setting, we first need to get the setting value in our API method and then aggregate using it. Change your API method to this:
 
     public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
     {
@@ -117,24 +116,24 @@ To use the setting, first we need to get the setting value in our API method and
         $settings = new Settings('MyPlugin');
         $columnName = $settings->realtimeReportDimension->getValue();
 
-        // count visits to create our result
-        $result = $data->getEmptyClone($keepFilters = false); // we could create a new instance by using new DataTable(),
-                                                              // but that wouldn't copy DataTable metadata, which can be
-                                                              // useful.
+        // we could create a new instance by using new DataTable(),
+        // but we would loose DataTable metadata, which can be useful.
+        $result = $data->getEmptyClone($keepFilters = false);
 
         foreach ($data->getRows() as $visitRow) {
             $columnValue = $visitRow->getColumn($columnName);
 
-            $resultRowForBrowser = $result->getRowFromLabel($columnValue);
+            $resultRow = $result->getRowFromLabel($columnValue);
 
             // if there is no row for this browser, create it
-            if ($resultRowForBrowser === false) {
+            if ($resultRow === false) {
                 $result->addRowFromSimpleArray(array(
-                    'label' => $columnValue,
+                    'label'     => $columnValue,
                     'nb_visits' => 1
                 ));
-            } else { // if there is a row, increment the visit count
-                $resultRowForBrowser->setColumn('nb_visits', $resultRowForBrowser->getColumn('nb_visits') + 1);
+            } else { // if there is a row, increment the counter
+                $counter = $resultRow->getColumn('nb_visits');
+                $resultRow->setColumn('nb_visits', $counter + 1);
             }
         }
 
@@ -145,7 +144,7 @@ Now we'll want to make sure the column heading in the report display has the cor
 
 <img src="/img/myplugin_incorrect_browser_header.png"/>
 
-Change the configureView() method in the **getLastVisitsByBrowser** report to the following:
+Change the `configureView()` method in the **getLastVisitsByBrowser** report to the following:
 
     public function configureView(ViewDataTable $view)
     {
@@ -162,16 +161,16 @@ Change the configureView() method in the **getLastVisitsByBrowser** report to th
         $view->config->columns_to_display = array_merge(array('label'), $this->metrics);
     }
 
-View the report now and you'll see:
+Open the report and you'll now see:
 
 <img src="/img/myplugin_correct_browser_header.png"/>
 
 #### Rename the report
 
-Finally, we'll rename the report. After all, it can do more than just aggregate the last 100 visits by browser now. Rename all occurances of **getLastVisitsByBrowser** with **getLastVisitsByDimension**. Make sure you replace it in the following files:
+Finally, we'll rename the report. After all, it can do more than just aggregate the last 100 visits by browser now. Rename all occurences of `getLastVisitsByBrowser` to `getLastVisitsByDimension`. Make sure you replace it in the following files:
 
 * API.php
-* Reports/GetLastVisitsByBrowser.php (The filename has to be modified to **GetLastVisitsByDimension.php** as well)
+* Reports/GetLastVisitsByBrowser.php (The filename has to be renamed to **GetLastVisitsByDimension.php** as well)
 * plugin.js
 
 ### Internationalizing your plugin
@@ -180,11 +179,11 @@ The other improvement we'll make to our plugin is to use Piwik's [internationali
 
 Internationalization is achieved in Piwik by replacing translated text, like `"Realtime Analytics"`, with unique identifiers, like `"MyPlugin_RealtimeAnalytics"` called **translation tokens**.
 
-Translation tokens are associated with translated text in multiple JSON files, one for each supported language. In code, the translation tokens are converted into translated text based on the user's selected language.
+Translation tokens are associated with translated text in multiple JSON files, one for each supported language. In the code, the translation tokens are converted into translated text based on the user's selected language.
 
 #### Locating the language file
 
-To internationalize our plugin, an english language file to hold our translated text is needed. This file is already created for you by the report generator. It is located in your plugin's **lang** directory. In that folder, a file named **en.json** should exist containing translations:
+To internationalize our plugin, an english language file to hold our translated text is needed. This file is already created for you by the report generator. It is located in your plugin's `lang/` directory. In that folder, a file named `en.json` should exist containing translations:
 
     {
         "MyPlugin": {
@@ -192,11 +191,11 @@ To internationalize our plugin, an english language file to hold our translated 
         }
     }
 
-We're going to move all of the translated text in our plugin to this file.
+We're going to move all of the translated text of our plugin into this file.
 
 #### Internationalizing our Report
 
-We use one piece of translated text in our report: `"Real-time reports"`. First, we'll add entries for it in the **en.json** file we just located. We'll use the **RealtimeReports** translation token:
+We use one piece of translated text in our report: `"Real-time reports"`. First, we'll add entries for it in the `en.json` file we just located. We'll use the **RealtimeReports** translation token:
 
     {
         "MyPlugin": {
@@ -204,14 +203,14 @@ We use one piece of translated text in our report: `"Real-time reports"`. First,
         }
     }
 
-Then replace the text in your report class **GetLastVisitsByDimension** with the following:
+Then replace the text in your report class `GetLastVisitsByDimension` with the following:
 
     $this->menuTitle   = 'MyPlugin_RealtimeReports';
     $this->widgetTitle = $this->menuTitle;
 
 #### Internationalizing our setting
 
-Now, let's internationalize the text we use in our **Settings** class. First, we'll add entries for the text we use:
+Let's internationalize the text we use in our `Settings` class. First, we'll add entries for the text we use:
 
     {
         "MyPlugin": {
@@ -220,13 +219,13 @@ Now, let's internationalize the text we use in our **Settings** class. First, we
         }
     }
 
-Then we'll use the new translation token in the **createRealtimeReportDimensionSetting** method:
+Then we'll use the new translation token in the `createRealtimeReportDimensionSetting()` method:
 
     $setting->description   = \Piwik::translate('MyPlugin_ReportDimensionSettingDescription');
 
 We also need to internationalize the names of each possible setting value. We'll do this by using translated text in the `MyPlugin::$availableDimensionsForAggregation` static variable. Of course, we can't call [Piwik::translate](/api-reference/Piwik/Piwik#translate) when setting a static field, so we'll have to add a new method that returns the array.
 
-We're not going to add any translation tokens to our **en.json** file this time. This is because the translations already exist for core plugins. Replace the `MyPlugin::$availableDimensionsForAggregation` field with this:
+We're not going to add any translation tokens to `en.json` this time because the translations already exist in core plugins. Replace `MyPlugin::$availableDimensionsForAggregation` field with this:
 
     public static $availableDimensionsForAggregation = array(
         'browser' => 'UserSettings_ColumnBrowser',
@@ -253,11 +252,11 @@ Then, add this method to your plugin's plugin descriptor class:
         return array_map(array('Piwik', 'translate'), self::$availableDimensionsForAggregation);
     }
 
-Finally in the **createRealtimeReportDimensionSetting** method, replace `MyPlugin::$availableDimensionsForAggregation` with `MyPlugin::getAvailableDimensionsForAggregation()`.
+Finally in the `createRealtimeReportDimensionSetting()` method, replace `MyPlugin::$availableDimensionsForAggregation` by `MyPlugin::getAvailableDimensionsForAggregation()`.
 
 #### Internationalizing report column headers
 
-Since we already use translation tokens in the `MyPlugin::$availableDimensionsForAggregation` field, and the column headers are set using the same data, all we have to do is use `MyPlugin::getAvailableDimensionsForAggregation` in the **configureView** report method:
+Since we already use translation tokens in the `MyPlugin::$availableDimensionsForAggregation` field, and the column headers are set using the same data, all we have to do is use `MyPlugin::getAvailableDimensionsForAggregation` in the `configureView()` report method:
 
     $columnTranslations = MyPlugin::getAvailableDimensionsForAggregation();
     $columnLabel = $columnTranslations[$columnToAggregate];
