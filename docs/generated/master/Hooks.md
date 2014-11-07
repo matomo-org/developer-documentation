@@ -1092,7 +1092,7 @@ Callback Signature:
 - [Referrer.addSocialUrls](#referreraddsocialurls)
 
 ### Referrer.addSearchEngineUrls
-_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [815](https://github.com/piwik/piwik/blob/master/core/Common.php#L815)_
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [818](https://github.com/piwik/piwik/blob/master/core/Common.php#L818)_
 
 
 
@@ -1101,7 +1101,7 @@ Callback Signature:
 
 
 ### Referrer.addSocialUrls
-_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [854](https://github.com/piwik/piwik/blob/master/core/Common.php#L854)_
+_Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [857](https://github.com/piwik/piwik/blob/master/core/Common.php#L857)_
 
 
 
@@ -1755,7 +1755,7 @@ Callback Signature:
 
 
 ### Tracker.newConversionInformation
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [722](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L722)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [724](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L724)_
 
 Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
 
@@ -1784,7 +1784,7 @@ Callback Signature:
 
 
 ### Tracker.recordAction
-_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [387](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L387)_
+_Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [397](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L397)_
 
 Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions).
 
@@ -1797,7 +1797,7 @@ Callback Signature:
 
 
 ### Tracker.recordEcommerceGoal
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [355](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L355)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [357](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L357)_
 
 Triggered after successfully persisting an ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
@@ -1811,7 +1811,7 @@ Callback Signature:
 
 
 ### Tracker.recordStandardGoals
-_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [698](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L698)_
+_Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [700](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L700)_
 
 Triggered after successfully recording a non-ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
