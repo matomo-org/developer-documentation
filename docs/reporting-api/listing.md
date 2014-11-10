@@ -85,7 +85,7 @@ There are also generic filters you can choose to apply on all APIs that return w
 *   **filter\_limit**; defines the number of rows to be returned. Set to -1 to return all rows. By default, only the top 100 rows are returned.
 *   **filter\_truncate**; if set, will truncate the table after $filter\_truncate rows. The last row will be named 'Others' (localized in the requested language) and the columns will be an aggregate of statistics of all truncated rows.
 *   **filter\_pattern**; defines the text you want to search for in the **filter\_column**. Only the row with the given column matching the pattern will be returned. The pattern will be interpreted as regular expression. Example: `(en|de)\.mydomain`.
-*   **filter\_column** ; defines the column that we want to search for a text (see **filter\_pattern**). If not specified, defaults to 'label' (from Piwik 1.7)
+*   **filter\_column** ; defines the column that we want to search for a text (see **filter\_pattern**). If not specified, defaults to 'label'
 *   **filter\_sort_order**; defines the order of the results, asc or desc
 *   **filter\_sort\_column**; defines the column to be sorted by
 *   **filter\_excludelowpop**; defines the column to use for the threshold of value **filter\_excludelowpop\_value**; only the columns with a value greater than **filter\_excludelowpop\_value**; will be returned
