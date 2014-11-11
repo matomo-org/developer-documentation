@@ -1,39 +1,27 @@
-<small>Piwik\</small>
+<small>Piwik\Period\</small>
 
-Period
-======
-
-Date range representation.
-
-Piwik allows users to view aggregated statistics for single days and for date
-ranges consisting of several days. When requesting data, a **date** string and
-a **period** string must be used to specify the date range that the data regards.
-This is the class Piwik uses to represent and manipulate those date ranges.
-
-There are five types of periods in Piwik: day, week, month, year and range,
-where **range** is any date range. The reason the other periods exist instead
-of just **range** is that Piwik will pre-archive reports for days, weeks, months
-and years, while every custom date range is archived on-demand.
+Month
+=====
 
 Methods
 -------
 
-The abstract class defines the following methods:
+The class defines the following methods:
 
-- [`factory()`](#factory)
-- [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods.
-- [`getDateStart()`](#getdatestart) &mdash; Returns the first day of the period.
-- [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period.
-- [`getId()`](#getid) &mdash; Returns the period ID.
-- [`getLabel()`](#getlabel) &mdash; Returns the label for the current period.
-- [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods.
-- [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period.
-- [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period.
-- [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Period#tostring).
-- [`getPrettyString()`](#getprettystring) &mdash; Returns a pretty string describing this period.
-- [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns a short string description of this period that is localized with the currently used language.
-- [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns a long string description of this period that is localized with the currently used language.
-- [`getRangeString()`](#getrangestring) &mdash; Returns the date range string comprising two dates
+- [`factory()`](#factory) Inherited from [`Period`](../../Piwik/Period.md)
+- [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getDateStart()`](#getdatestart) &mdash; Returns the first day of the period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getId()`](#getid) &mdash; Returns the period ID. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getLabel()`](#getlabel) &mdash; Returns the label for the current period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Period/Month#tostring). Inherited from [`Period`](../../Piwik/Period.md)
+- [`getPrettyString()`](#getprettystring) &mdash; Returns a pretty string describing this period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns a short string description of this period that is localized with the currently used language. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns a long string description of this period that is localized with the currently used language. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getRangeString()`](#getrangestring) &mdash; Returns the date range string comprising two dates Inherited from [`Period`](../../Piwik/Period.md)
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
@@ -65,7 +53,7 @@ The abstract class defines the following methods:
       </div>
    </li>
    </ul>
-- It returns a [`Period`](../Piwik/Period.md) value.
+- It returns a [`Period`](../../Piwik/Period.md) value.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
@@ -118,7 +106,7 @@ Returns the first day of the period.
 
 #### Signature
 
-- It returns a [`Date`](../Piwik/Date.md) value.
+- It returns a [`Date`](../../Piwik/Date.md) value.
 
 <a name="getdateend" id="getdateend"></a>
 <a name="getDateEnd" id="getDateEnd"></a>
@@ -128,7 +116,7 @@ Returns the last day of the period.
 
 #### Signature
 
-- It returns a [`Date`](../Piwik/Date.md) value.
+- It returns a [`Date`](../../Piwik/Date.md) value.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
@@ -193,7 +181,7 @@ this would be 12 months. For a month this would be 28-31 days. Etc.
 
 #### Signature
 
-- It returns a [`Period[]`](../Piwik/Period.md) value.
+- It returns a [`Period[]`](../../Piwik/Period.md) value.
 
 <a name="tostring" id="tostring"></a>
 <a name="toString" id="toString"></a>
@@ -234,7 +222,7 @@ Returns a list of strings representing the current period.
 <a name="__toString" id="__toString"></a>
 ### `__toString()`
 
-See [toString()](/api-reference/Piwik/Period#tostring).
+See [toString()](/api-reference/Piwik/Period/Month#tostring).
 
 #### Signature
 

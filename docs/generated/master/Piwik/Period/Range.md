@@ -31,7 +31,7 @@ The class defines the following methods:
 - [`getPrettyString()`](#getprettystring) &mdash; Returns the current period as a string.
 - [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns the current period as a localized short string.
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns the current period as a localized long string.
-- [`getRangeString()`](#getrangestring) &mdash; Returns a succinct string describing this period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getRangeString()`](#getrangestring) &mdash; Returns the date range string comprising two dates Inherited from [`Period`](../../Piwik/Period.md)
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setDefaultEndDate()`](#setdefaultenddate) &mdash; Sets the default end date of the period.
 - [`parseDateRange()`](#parsedaterange) &mdash; Given a date string, returns `false` if not a date range, or returns the array containing start and end dates.
@@ -291,7 +291,7 @@ Returns the current period as a localized long string.
 <a name="getRangeString" id="getRangeString"></a>
 ### `getRangeString()`
 
-Returns a succinct string describing this period.
+Returns the date range string comprising two dates
 
 #### Signature
 

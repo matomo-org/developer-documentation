@@ -65,7 +65,11 @@ This is a complete list of available classes:
 - [`Notification\Manager`](Piwik/Notification/Manager.md) &mdash; Posts and removes UI notifications (see [Notification](/api-reference/Piwik/Notification) to learn more).
 - [`Option`](Piwik/Option.md) &mdash; Convenient key-value storage for user specified options and temporary data that needs to be persisted beyond one request.
 - [`Period`](Piwik/Period.md) &mdash; Date range representation.
+- [`Period\Day`](Piwik/Period/Day.md)
+- [`Period\Month`](Piwik/Period/Month.md)
 - [`Period\Range`](Piwik/Period/Range.md) &mdash; Arbitrary date range representation.
+- [`Period\Week`](Piwik/Period/Week.md)
+- [`Period\Year`](Piwik/Period/Year.md)
 - [`Piwik`](Piwik/Piwik.md) &mdash; Main piwik helper class.
 - [`Plugin`](Piwik/Plugin.md) &mdash; Base class of all Plugin Descriptor classes.
 - [`Plugin\API`](Piwik/Plugin/API.md) &mdash; The base class of all API singletons.
