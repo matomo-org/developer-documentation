@@ -186,7 +186,6 @@ Index
 - [`discardNonce()`](Piwik/Nonce.md#discardnonce) &mdash; _Method in class_ [`Nonce`](Piwik/Nonce.md)
 - [`delete()`](Piwik/Option.md#delete) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
 - [`deleteLike()`](Piwik/Option.md#deletelike) &mdash; _Method in class_ [`Option`](Piwik/Option.md)
-- [`Day`](Piwik/Period/Day.md) &mdash; _Class in namespace_ [`Piwik\Period`](Piwik/Period) 
 - [`doAsSuperUser()`](Piwik/Piwik.md#doassuperuser) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`deactivate()`](Piwik/Plugin.md#deactivate) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`$date`](Piwik/Plugin/Controller.md#$date) &mdash; _Property in class_ [`Controller`](Piwik/Plugin/Controller.md)
@@ -659,7 +658,6 @@ Index
 - [`MetricsFormatter`](Piwik/MetricsFormatter.md) &mdash; _Class in namespace_ `Piwik` 
 - [`$message`](Piwik/Notification.md#$message) &mdash; _Property in class_ [`Notification`](Piwik/Notification.md)
 - [`Manager`](Piwik/Notification/Manager.md) &mdash; _Class in namespace_ [`Piwik\Notification`](Piwik/Notification) 
-- [`Month`](Piwik/Period/Month.md) &mdash; _Class in namespace_ [`Piwik\Period`](Piwik/Period) 
 - [`Manager`](Piwik/Plugin/Manager.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`Menu`](Piwik/Plugin/Menu.md) &mdash; _Class in namespace_ [`Piwik\Plugin`](Piwik/Plugin) 
 - [`$menuTitle`](Piwik/Plugin/Report.md#$menutitle) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
@@ -970,7 +968,6 @@ Index
 - [`wasAuthenticationSuccessful()`](Piwik/AuthResult.md#wasauthenticationsuccessful) &mdash; _Method in class_ [`AuthResult`](Piwik/AuthResult.md)
 - [`walkPath()`](Piwik/DataTable.md#walkpath) &mdash; _Method in class_ [`DataTable`](Piwik/DataTable.md)
 - [`warning()`](Piwik/Log.md#warning) &mdash; _Method in class_ [`Log`](Piwik/Log.md)
-- [`Week`](Piwik/Period/Week.md) &mdash; _Class in namespace_ [`Piwik\Period`](Piwik/Period) 
 - [`$widgetTitle`](Piwik/Plugin/Report.md#$widgettitle) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`$widgetParams`](Piwik/Plugin/Report.md#$widgetparams) &mdash; _Property in class_ [`Report`](Piwik/Plugin/Report.md)
 - [`weekly()`](Piwik/Plugin/Tasks.md#weekly) &mdash; _Method in class_ [`Tasks`](Piwik/Plugin/Tasks.md)
@@ -982,7 +979,6 @@ Index
 
 - [`yesterday()`](Piwik/Date.md#yesterday) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
 - [`yesterdaySameTime()`](Piwik/Date.md#yesterdaysametime) &mdash; _Method in class_ [`Date`](Piwik/Date.md)
-- [`Year`](Piwik/Period/Year.md) &mdash; _Class in namespace_ [`Piwik\Period`](Piwik/Period) 
 - [`$y_axis_unit`](Piwik/ViewDataTable/Config.md#$y_axis_unit) &mdash; _Property in class_ [`Config`](Piwik/ViewDataTable/Config.md)
 
 ## _

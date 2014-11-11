@@ -61,11 +61,7 @@
 ## Notification\Manager
 ## Option
 ## Period
-## Period\Day
-## Period\Month
 ## Period\Range
-## Period\Week
-## Period\Year
 ## Piwik
 ## Plugin
 ## Plugin\API
