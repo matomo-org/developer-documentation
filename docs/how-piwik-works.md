@@ -11,8 +11,7 @@
 
 This guide assumes that you:
 
-- and have a general understanding of web technologies like web applications, servers, HTTP, PHP…
-- can code in PHP
+- have a general understanding of web technologies like web applications, servers, HTTP, PHP…
 
 ## Introduction
 
@@ -40,7 +39,7 @@ Plugins are not just targeted at 3rd party developers who want to customize Piwi
 As a result, there are two kinds of plugins:
 
 - default plugins provide Piwik's base features: they are included in the repository and in the distribution
-- additional plugins can be installed manually (by copying them in the `plugin/` folder) or through Piwik's web interface
+- additional plugins can be installed manually (by copying them in the `plugins/` folder) or through [Piwik's MarketPlace](http://plugins.piwik.org/) in the web interface
 
 ## The codebase
 
@@ -49,7 +48,7 @@ Here are the main files and folders composing Piwik's codebase:
     config/
     core/           # Piwik Core classes
     lang/           # Translations
-    plugins/        # Plugin classes
+    plugins/        # Plugin classes along with their assets
     tests/
     vendor/         # Libraries installed by Composer
     console         # Entry point for the CLI interface
@@ -87,7 +86,7 @@ The `Piwik\Plugin\API\Controller` class will be called, and it will dispatch the
 
 This API lets the Javascript tracker submit analytics data for a single action (page view, …).
 
-Its entry point is different from Piwik's web application and HTTP reporting API: it is in the `js/` directory.
+Its entry point is different from Piwik's web application and HTTP reporting API: it is through the `piwik.php` file.
 
 Read more about this in the ["The Tracking HTTP API" reference](api-reference/tracking-api).
 
@@ -105,7 +104,7 @@ Read more about this in the ["Piwik on the Command Line" guide](guides/piwik-on-
 
 ## Data model, processing and storage
 
-Piwik lets you collect analytics data to retreive it later in "reports". Lets see what happens between these parts and how Piwik models, processes and stores data.
+Piwik lets you collect analytics data to retrieve it later as reports. Lets see what happens between these parts and how Piwik models, processes and stores data.
 
 ### Log data: raw analytics data
 
@@ -132,6 +131,8 @@ The **archiving process** will read Log data and aggregate it to produce "**Arch
 - day
 - week
 - month
+- year
+- custom date range, also called **segment**
 
 Archive data can be:
 
@@ -145,7 +146,7 @@ Archive data can be:
     
     `DataTable` objects stored in database are named *records* to differentiate them from `DataTable` objects manipulated and returned by Piwik's API that we name *reports*.
 
-Every numeric metric or table record is processed and stored at each aggregation level: day, week and month. For example, that means that the "Entry pages" report is processed and stored for every day of the month as well as for every week, and every month. Such data is redundant, but that is essential to guarantee fast performances.
+Every numeric metric or table record is processed and stored at each aggregation level: day, week and month. For example, that means that the "Entry pages" report is processed and stored for every day of the month as well as for every week, month, year and segment (custom date range). Such data is redundant, but that is essential to guarantee fast performances.
 
 Because Archive data must be fast to query, it is splitted in separate tables per month. We will then have:
 
