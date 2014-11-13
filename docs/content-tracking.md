@@ -331,5 +331,37 @@ Examples
 
 In all examples we would track the impression automatically but not the interaction.
 
+
+### FAQ
+
+#### How can I track dynamically loaded elements?
+
+You have initialized all content blocks on page load via `trackContentImpression` or `trackVisibleContentImpressions`. Now you are adding
+more HTML elements to the DOM, for instance a new banner, and you want to make sure to track an impression for it as well as an interaction
+if a user interacts with it. 
+
+Call `_paq.push(['trackContentImpressionsWithinNode', domNode]);` to make sure an impression will be tracked for all content blocks contained within this `domNode`. An interaction will be tracked automatically once the user interacts with any content block.
+
+Read more about tracking content impressions programmatically in the [JavaScript Tracking guide](http://developer.piwik.org/api-reference/tracking-javascript#content-tracking).
+
+#### What can I do if an impression is tracked automatically but not an interaction?
+
+Surely you are wondering why the interaction is not tracked automatically. There can be many reasons for it. For example if the target node is not actually clickable or if there is already a click listener on this element that stops the event. 
+
+If, for some reason, the interaction won't be tracked automatically you can trigger it manually by calling `_paq.push(['trackContentInteractionNode', domNode, typeOfInteraction])`.
+
+Example: 
+
+```
+formElement.addEventListener('submit', function () {
+    _paq.push(['trackContentInteractionNode', this, 'submittedForm']);
+});
+```
+
+This will track an interaction named "submittedForm" once the user submits a form. Be aware that it will only work if the passed `domNode` is actually within a content block.
+
+Read more about tracking content interactions manually in the [JavaScript Tracking guide](http://developer.piwik.org/api-reference/tracking-javascript#content-tracking).
+
+
 ## What's next?
 Have a look at the [JavaScript Tracker API reference](http://developer.piwik.org/api-reference/tracking-javascript#content-tracking) if you did not have a look yet. 
