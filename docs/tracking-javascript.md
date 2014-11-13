@@ -8,9 +8,8 @@ the web analytics data is recorded in Piwik.
 To use all the features described in this page, you need to use the latest version of the tracking code. To find the tracking code for your website, please follow the steps below:
 
 *   Log in to Piwik with your admin or Super User account
-*   Click on Settings to access the administration area
-*   Click on Websites to list the websites that you are tracking in Piwik
-*   Click on View Tracking code for the website you wish to track
+*   Click on your username in the top right menu, and click Settings to access the administration area
+*   Click on Tracking Code in the left menu
 *   You can now copy and paste the JavaScript Tracking code into your pages, just before the &lt;/body&gt; tag.
 
 The Piwik Tracking code looks as follows:
