@@ -332,9 +332,9 @@ Examples
 In all examples we would track the impression automatically but not the interaction.
 
 
-### FAQ
+## FAQ
 
-#### How can I track dynamically loaded elements?
+### How can I track dynamically loaded elements?
 
 You have initialized all content blocks on page load via `trackContentImpression` or `trackVisibleContentImpressions`. Now you are adding
 more HTML elements to the DOM, for instance a new banner, and you want to make sure to track an impression for it as well as an interaction
@@ -344,7 +344,7 @@ Call `_paq.push(['trackContentImpressionsWithinNode', domNode]);` to make sure a
 
 Read more about tracking content impressions programmatically in the [JavaScript Tracking guide](http://developer.piwik.org/api-reference/tracking-javascript#content-tracking).
 
-#### What can I do if an impression is tracked automatically but not an interaction?
+### What can I do if an impression is tracked automatically but not an interaction?
 
 Surely you are wondering why the interaction is not tracked automatically. There can be many reasons for it. For example if the target node is not actually clickable or if there is already a click listener on this element that stops the event. 
 
