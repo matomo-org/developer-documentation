@@ -142,6 +142,7 @@ The class defines the following methods:
 - [`setLongitude()`](#setlongitude) &mdash; Sets the longitude of the visitor.
 - [`enableBulkTracking()`](#enablebulktracking) &mdash; Enables the bulk request feature.
 - [`enableCookies()`](#enablecookies) &mdash; Enable Cookie Creation - this will cause a first party VisitorId cookie to be set when the VisitorId is set or reset
+- [`disableSendImageResponse()`](#disablesendimageresponse) &mdash; If image response is disabled Piwik will respond with a HTTP 204 header instead of responding with a gif.
 - [`doTrackPageView()`](#dotrackpageview) &mdash; Tracks a page view
 - [`doTrackEvent()`](#dotrackevent) &mdash; Tracks an event
 - [`doTrackContentImpression()`](#dotrackcontentimpression) &mdash; Tracks a content impression
@@ -771,6 +772,16 @@ Enable Cookie Creation - this will cause a first party VisitorId cookie to be se
       </div>
    </li>
    </ul>
+- It does not return anything.
+
+<a name="disablesendimageresponse" id="disablesendimageresponse"></a>
+<a name="disableSendImageResponse" id="disableSendImageResponse"></a>
+### `disableSendImageResponse()`
+
+If image response is disabled Piwik will respond with a HTTP 204 header instead of responding with a gif.
+
+#### Signature
+
 - It does not return anything.
 
 <a name="dotrackpageview" id="dotrackpageview"></a>
