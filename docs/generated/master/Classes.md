@@ -45,7 +45,6 @@ This is a complete list of available classes:
 - [`Date`](Piwik/Date.md) &mdash; Utility class that wraps date/time related PHP functions.
 - [`Db`](Piwik/Db.md) &mdash; Contains SQL related helper functions for Piwik's MySQL database.
 - [`DbHelper`](Piwik/DbHelper.md) &mdash; Contains database related helper functions.
-- [`Exceptions\HtmlMessageException`](Piwik/Exceptions/HtmlMessageException.md) &mdash; An exception whose message has HTML content.
 - [`Filesystem`](Piwik/Filesystem.md) &mdash; Contains helper functions that deal with the filesystem.
 - [`FrontController`](Piwik/FrontController.md) &mdash; This singleton dispatches requests to the appropriate plugin Controller.
 - [`Http`](Piwik/Http.md) &mdash; Contains HTTP client related helper methods that can retrieve content from remote servers and optionally save to a local file.

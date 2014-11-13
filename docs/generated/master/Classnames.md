@@ -41,7 +41,6 @@
 ## Date
 ## Db
 ## DbHelper
-## Exceptions\HtmlMessageException
 ## Filesystem
 ## FrontController
 ## Http
