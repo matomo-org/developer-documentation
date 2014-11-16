@@ -74,11 +74,13 @@ Plugin controllers return a view (usually HTML content) which is sent in the HTT
 
 #### User interface
 
-Piwik's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers, some parts of the Piwik UI are written using AngularJS.
+Piwik's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers (built using the [Twig templating engine](http://twig.sensiolabs.org/)), some parts of the Piwik UI are written using AngularJS.
 
 AngularJS is a JavaScript front-end framework, which means that the user interface is built on the client side and the data is fetched from the HTTP Reporting API (described in the next section) as JSON. That also means a better user experience as it lets Piwik developers build a more dynamic and reactive application.
 
 A part of Piwik's long-term roadmap is to move more and more parts of Piwik's UI to AngularJS.
+
+Read more about this in the ["Working with Piwik's UI" guide](guides/working-with-piwiks-ui).
 
 ### The HTTP Reporting API
 
