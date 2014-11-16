@@ -72,6 +72,14 @@ In this example, the front controller will call the action `index` on the contro
 
 Plugin controllers return a view (usually HTML content) which is sent in the HTTP response.
 
+#### User interface
+
+Piwik's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers, some parts of the Piwik UI are written using AngularJS.
+
+AngularJS is a JavaScript front-end framework, which means that the user interface is built on the client side and the data is fetched from the HTTP Reporting API (described in the next section) as JSON. That also means a better user experience as it lets Piwik developers build a more dynamic and reactive application.
+
+A part of Piwik's long-term roadmap is to move more and more parts of Piwik's UI to AngularJS.
+
 ### The HTTP Reporting API
 
 The HTTP reporting API works similarly to the web application. It has the same entry point and is also dispatched by the front controller.
@@ -113,7 +121,7 @@ The HTTP tracking API (i.e. the `Piwik\Tracker` component) receives **raw** anal
 Log data is represented in PHP as `Piwik\Tracker\Visit` objects, and is stored into the following tables:
 
 - `log_visit` contains one entry per visit (returning visitor)
-- `log_action` contains all the action types
+- `log_action` contains all the type of actions possible on the website (e.g. unique URLs, page titles, download URLs…)
 - `log_link_visit_action` contains one entry per action of a visitor (page view, …)
 - `log_conversion` contains conversions (actions that match goals) that happen during a visit
 - `log_conversion_item` contains e-commerce conversion items
@@ -132,7 +140,7 @@ The **archiving process** will read Log data and aggregate it to produce "**Arch
 - week
 - month
 - year
-- custom date range, also called **segment**
+- custom date range
 
 Archive data can be:
 
@@ -146,7 +154,7 @@ Archive data can be:
     
     `DataTable` objects stored in database are named *records* to differentiate them from `DataTable` objects manipulated and returned by Piwik's API that we name *reports*.
 
-Every numeric metric or table record is processed and stored at each aggregation level: day, week and month. For example, that means that the "Entry pages" report is processed and stored for every day of the month as well as for every week, month, year and segment (custom date range). Such data is redundant, but that is essential to guarantee fast performances.
+Every numeric metric or table record is processed and stored at each aggregation level: day, week and month. For example, that means that the "Entry pages" report is processed and stored for every day of the month as well as for every week, month, year and custom date range. Such data is redundant, but that is essential to guarantee fast performances.
 
 Because Archive data must be fast to query, it is splitted in separate tables per month. We will then have:
 
