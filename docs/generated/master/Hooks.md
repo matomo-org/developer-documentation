@@ -635,7 +635,7 @@ Usages:
 - [Installation.defaultSettingsForm.submit](#installationdefaultsettingsformsubmit)
 
 ### Installation.defaultSettingsForm.init
-_Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/master/plugins/Installation/Controller.php) in line [414](https://github.com/piwik/piwik/blob/master/plugins/Installation/Controller.php#L414)_
+_Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/master/plugins/Installation/Controller.php) in line [412](https://github.com/piwik/piwik/blob/master/plugins/Installation/Controller.php#L412)_
 
 Triggered on initialization of the form to customize default Piwik settings (at the end of the installation process).
 
@@ -650,7 +650,7 @@ Usages:
 
 
 ### Installation.defaultSettingsForm.submit
-_Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/master/plugins/Installation/Controller.php) in line [425](https://github.com/piwik/piwik/blob/master/plugins/Installation/Controller.php#L425)_
+_Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/master/plugins/Installation/Controller.php) in line [423](https://github.com/piwik/piwik/blob/master/plugins/Installation/Controller.php#L423)_
 
 Triggered on submission of the form to customize default Piwik settings (at the end of the installation process).
 
