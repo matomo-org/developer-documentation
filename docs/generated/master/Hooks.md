@@ -1648,6 +1648,7 @@ Callback Signature:
 - [Tracker.end](#trackerend)
 - [Tracker.existingVisitInformation](#trackerexistingvisitinformation)
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
+- [Tracker.getVisitFieldsToPersist](#trackergetvisitfieldstopersist)
 - [Tracker.isExcludedVisit](#trackerisexcludedvisit)
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
 - [Tracker.newConversionInformation](#trackernewconversioninformation)
@@ -1728,6 +1729,18 @@ Callback Signature:
 <pre><code>function(&amp;$configDb)</code></pre>
 
 - `array` `$dbInfos` Reference to an array containing database connection info, including: - **host**: The host name or IP address to the MySQL database. - **username**: The username to use when connecting to the database. - **password**: The password to use when connecting to the database. - **dbname**: The name of the Piwik MySQL database. - **port**: The MySQL database port to use. - **adapter**: either `'PDO\MYSQL'` or `'MYSQLI'` - **type**: The MySQL engine to use, for instance 'InnoDB'
+
+
+### Tracker.getVisitFieldsToPersist
+_Defined in [Piwik/Tracker/Visitor](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php) in line [219](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php#L219)_
+
+This event collects a list of [visit entity](/guides/persistence-and-the-mysql-backend#visits) properties that should be loaded when reading the existing visit. Properties that appear in this list will be available in other tracking
+events such as 'onExistingVisit'.
+
+Plugins can use this event to load additional visit entity properties for later use during tracking.
+
+Callback Signature:
+<pre><code>function(&amp;$fields)</code></pre>
 
 
 ### Tracker.isExcludedVisit
