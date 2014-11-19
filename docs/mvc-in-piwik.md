@@ -47,11 +47,11 @@ Examples:
 
 - `module=MyPlugin&action=hello` will invoke:
 
-    Piwik\Plugins\MyPlugin\Controller::hello()
+        Piwik\Plugins\MyPlugin\Controller::hello()
 
 - `module=MyPlugin` will invoke:
 
-    Piwik\Plugins\MyPlugin\Controller::index()
+        Piwik\Plugins\MyPlugin\Controller::index()
 
 Controller methods have one thing to do: **return a string response** (or anything that can be cast to a string). Such string could contain HTML, JSON, …
 
