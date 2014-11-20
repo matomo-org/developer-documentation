@@ -179,7 +179,7 @@ Everytime you push a new tag to your Github repository, a new version of your pl
 
 **Assuming all goes well, your plugin should now be visible on the marketplace!**
 
-#### Troubleshooting
+### Troubleshooting
 
 If your plugin is not on the marketplace, then there was an error validating your **plugin.json** file and you will receive an email describing what the problem was.
 
@@ -195,7 +195,7 @@ Here are some common errors:
 
 If you still encounter trouble while publishing your plugin, please join the IRC channel **#piwik** on [freenode](http://freenode.net/). If you can't find anyone in the IRC channel, please ask for help [on the forums](http://forum.piwik.org/).
 
-#### Rules for Plugins
+### Rules for Plugins
 
 There are some restrictions regarding what can be published on the marketplace. Chances are your plugin is fine, but if we find a plugin that violates one of the following rules, it will be immediately removed:
 
