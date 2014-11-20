@@ -25,19 +25,19 @@ _To learn more about individual configuration options, read the documentation in
 
 The INI config options are grouped into different sections. Sections are declared in the INI configuration with surrounding brackets, for example:
 
-    [ini]
-
-    [MySection]
-    my_config_value = 1
+```ini
+[MySection]
+my_config_value = 1
+```
 
 An option can be used to store multiple items by appending **[]** to the name and setting it more than once, for example:
 
-    [ini]
-
-    [MySection]
-    myarray[] = 1
-    myarray[] = 2
-    myarray[] = 3
+```ini
+[MySection]
+myarray[] = 1
+myarray[] = 2
+myarray[] = 3
+```
 
 ### Reading INI configuration
 
