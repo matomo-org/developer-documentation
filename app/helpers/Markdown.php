@@ -8,6 +8,8 @@
 
 namespace helpers;
 
+use helpers\Markdown\MarkdownParserFactory;
+
 class Markdown {
 
     /**
@@ -58,30 +60,30 @@ class Markdown {
         $sections = $this->getAvailableSectionsFromContent('h2', $this->transformedHtml);
 
         if (empty($sections)) {
-            return array();
+            return [];
         }
 
-        $parsed = array();
+        $parsed = [];
 
         foreach ($sections as $section) {
 
             $content     = $this->getSectionContent($section['title']);
             $subSections = $this->getAvailableSectionsFromContent('h3', $content);
 
-            $sub = array();
+            $sub = [];
             foreach ($subSections as $subSection) {
-                $sub[] = array(
+                $sub[] = [
                     'title'    => $subSection['title'],
                     'id'       => $subSection['id'],
-                    'children' => array()
-                );
+                    'children' => []
+                ];
             }
 
-            $parsed[] = array(
+            $parsed[] = [
                 'title'    => $section['title'],
                 'id'       => $section['id'],
                 'children' => $sub
-            );
+            ];
 
         }
 
@@ -95,7 +97,7 @@ class Markdown {
         $sectionName = str_replace('\\', '\\\\', $sectionName);
         $sectionName = str_replace('/', '\/', $sectionName);
 
-        $matches = array();
+        $matches = [];
         $pattern = sprintf('/>%s<\/h2>(.*?)(<h2|$)/is', $sectionName);
 
         preg_match($pattern, $this->transformedHtml, $matches);
@@ -115,22 +117,22 @@ class Markdown {
             return $this->transformedHtml;
         }
 
-        $parser = new MarkdownParser();
+        $parser = MarkdownParserFactory::build();
 
-        $this->transformedHtml = $parser->transform($this->markdown);
+        $this->transformedHtml = $parser->parse($this->markdown);
     }
 
     private function getAvailableSectionsFromContent($headline, $content)
     {
         if (empty($content)) {
-            return array();
+            return [];
         }
 
         $regex = sprintf('/(?:<a[^>]*name=["\']([^"\']+)["\'][^>]*><\/a>\s*)?<%s(.*?)>(.*)<\/%s>/', $headline, $headline);
 
         $resultCount = preg_match_all($regex, $content, $matches);
 
-        $result = array();
+        $result = [];
         for ($i = 0; $i < $resultCount; ++$i) {
             $title = $matches[3][$i];
 
@@ -140,7 +142,7 @@ class Markdown {
                 $id = MarkdownParser::headlineTextToId($title);
             }
 
-            $result[] = array('id' => $id, 'title' => $title);
+            $result[] = ['id' => $id, 'title' => $title];
         }
         return $result;
     }
