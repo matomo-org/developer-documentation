@@ -108,8 +108,6 @@ By default Piwik does not track bots. If you use the Tracking HTTP API directly,
 
 Here is an example of a real tracking request used by the [Piwik Mobile app](http://piwik.org/mobile/) when anonymously tracking Mobile App usage:
 
-    [http]
-
     http://piwik-server/piwik.php?_cvar={"1":["OS","iphone 5.0"],"2":["Piwik Mobile Version","1.6.2"],"3":["Locale","en::en"],"4":["Num Accounts","2"]}&action_name=View settings&url=http://mobileapp.piwik.org/window/settings &idsite=8876&rand=351459&h=18&m=13&s=3 &rec=1&apiv=1&cookie= &urlref=http://iphone.mobileapp.piwik.org&_id=af344a398df83874 &_idvc=19&res=320×480&
 
 _Note: for clarity, parameter values are not URL encoded in this example._
