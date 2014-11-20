@@ -51,7 +51,7 @@ MARKDOWN;
     public function preprocessor_should_call_wrapped_parser()
     {
         $wrapped = $this->getMockForAbstractClass('helpers\Markdown\MarkdownParserInterface');
-        $wrapped->expect($this->once())
+        $wrapped->expects($this->once())
             ->method('parse')
             ->with('foo')
             ->willReturn('bar');
