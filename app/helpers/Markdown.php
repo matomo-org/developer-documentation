@@ -9,6 +9,7 @@
 namespace helpers;
 
 use helpers\Markdown\MarkdownParserFactory;
+use helpers\Markdown\TitleIdPreprocessor;
 
 class Markdown {
 
@@ -139,7 +140,7 @@ class Markdown {
             if (!empty($matches[1][$i])) {
                 $id = $matches[1][$i];
             } else {
-                $id = MarkdownParser::headlineTextToId($title);
+                $id = TitleIdPreprocessor::headlineTextToHtmlId($title);
             }
 
             $result[] = ['id' => $id, 'title' => $title];
