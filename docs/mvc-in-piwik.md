@@ -49,15 +49,15 @@ Examples:
 
 - `module=MyPlugin&action=hello` will invoke:
 
-```ev
-Piwik\Plugins\MyPlugin\Controller::hello()
-```
+    ```php
+    Piwik\Plugins\MyPlugin\Controller::hello()
+    ```
 
 - `module=MyPlugin` will invoke:
 
-```
-Piwik\Plugins\MyPlugin\Controller::index()
-```
+    ```php
+    Piwik\Plugins\MyPlugin\Controller::index()
+    ```
 
 Controller methods have one thing to do: **return a string response** (or anything that can be cast to a string). Such string could contain HTML, JSON, …
 
