@@ -11,7 +11,7 @@
 
 This guide assumes that you:
 
-- have a general understanding of web technologies like web applications, servers, HTTP, PHP…
+- have a general understanding of web technologies like web applications, servers, HTTP, PHP...
 
 ## Introduction
 
