@@ -52,6 +52,18 @@ class DevelopPiwik
                 'id'       => 'internals',
                 'items'    => [
                     [
+                        'title'       => 'How Piwik Works',
+                        'file'        => 'how-piwik-works',
+                        'url'         => static::getUrl('how-piwik-works'),
+                        'description' => 'A global overview of how Piwik works.',
+                    ],
+                    [
+                        'title'       => 'All about Analytics Data',
+                        'file'        => 'all-about-analytics-data',
+                        'url'         => static::getUrl('all-about-analytics-data'),
+                        'description' => 'Learn about how analytics reports are calculated and stored in Piwik (the Archiving Process) and how plugins can define their own reports.',
+                    ],
+                    [
                         'title'       => 'Piwik\'s INI Configuration',
                         'file'        => 'piwiks-ini-configuration',
                         'url'         => static::getUrl('piwiks-ini-configuration'),

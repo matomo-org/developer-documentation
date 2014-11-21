@@ -118,12 +118,6 @@ class DevelopPlugins
                         'description' => 'Get started in Controller, View and Menu API.',
                     ],
                     [
-                        'title'       => 'All about Analytics Data',
-                        'file'        => 'all-about-analytics-data',
-                        'url'         => static::getUrl('all-about-analytics-data'),
-                        'description' => 'Learn about how analytics reports are calculated and stored in Piwik (the Archiving Process) and how plugins can define their own reports.',
-                    ],
-                    [
                         'title'       => 'Internationalization',
                         'file'        => 'internationalization',
                         'url'         => static::getUrl('internationalization'),
