@@ -10,8 +10,6 @@ Segmentation can be applied to most API functions. The **segment** parameter con
 
 For example, you can request the "Best Keywords" report processed for all visits where "Country is Germany AND Browser is Firefox" (), by doing the following request:
 
-    [http]
-
     http://piwik.example.org/index.php
     ?token_auth=yourTokenHere
     &format=xml
@@ -119,7 +117,7 @@ will select "Visitors from Search engines AND (Keyword is Piwik OR Keyword is an
 
 ### List of segments
 
-[include url="http://demo.piwik.org/index.php?module=API&action=listSegments&language=en"]
+{@include http://demo.piwik.org/index.php?module=API&action=listSegments&language=en}
 
 ### Segment where value is empty / is not empty
 

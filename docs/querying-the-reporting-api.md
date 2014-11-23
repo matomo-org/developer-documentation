@@ -17,11 +17,15 @@ If the API call requires the token_auth and the HTTP request is sent over untrus
 
 You can, for example, get the top 100 search engine keywords used to find your website during the current week. Here is an example in PHP:
 
-<pre><code markdown="1">[include url="https://raw.github.com/piwik/piwik/master/misc/others/api_rest_call.php" escape="true"]</code></pre>
+```php
+{@include escape https://raw.github.com/piwik/piwik/master/misc/others/api_rest_call.php}
+```
 
 Here is the output of this code:
 
-<pre><code markdown="1">[include url="http://piwik.org/wp-content/uploads/api_rest_call.php" escape="true"]</code></pre>
+```html
+{@include escape http://piwik.org/wp-content/uploads/api_rest_call.php}
+```
 
 ## Call the Piwik API in PHP
 
@@ -29,8 +33,12 @@ If you want to request data in a PHP script **that is on the same server as Piwi
 
 If you are developing a plugin, you should be using this technique.
 
-<pre><code markdown="1">[include url="https://raw.github.com/piwik/piwik/master/misc/others/api_internal_call.php" escape="true"]</code></pre>
+```php
+{@include escape https://raw.github.com/piwik/piwik/master/misc/others/api_internal_call.php}
+```
 
 Here is the output of this script:
 
-<pre><code markdown="1">[include url="http://demo.piwik.org/misc/others/api_internal_call.php" escape="true"]</code></pre>
+```xml
+{@include escape http://demo.piwik.org/misc/others/api_internal_call.php}
+```

@@ -42,8 +42,9 @@ The final url is **[http://demo.piwik.org/?module=API&method=Referrers.getKeywor
 
 Here is the output of this request:
 
-<pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=Referrers.getKeywords&idSite=3&date=yesterday&period=day&format=xml&filter_limit=10" escape="true"]
-</code></pre>
+```xml
+{@include escape http://demo.piwik.org/?module=API&method=Referrers.getKeywords&idSite=3&date=yesterday&period=day&format=xml&filter_limit=10}
+```
 
 ## Other useful examples
 

@@ -26,7 +26,9 @@ The URL would be [http://demo.piwik.org/?**module=API&method=API.getProcessedRep
 
 The returned XML is:
 
-<pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en" escape="true"]</code></pre>
+```xml
+{@include escape http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en}
+```
 
 ## List and Definition of 'metadata' Response Attributes
 
@@ -49,7 +51,9 @@ There are two types of reports in Piwik, and each have a slightly different form
 
     Simple Metrics reports simply contain a list of metrics and their values. For example, VisitsSummary.get returns the main metrics (visits, pages, unique visitors) for the specified website ([example URL](http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous)).
 
-    <pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous" escape="true"]</code></pre>
+    ```xml
+    {@include escape http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous}
+    ```
 
 *   **Reports with dimensions**
 
@@ -57,7 +61,9 @@ There are two types of reports in Piwik, and each have a slightly different form
 
     Example of a report with dimensions metadata ([example URL](http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referrers&apiAction=getKeywords&format=xml&token_auth=anonymous)):
 
-    <pre><code markdown="1">[include url="http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referrers&apiAction=getKeywords&format=xml&token_auth=anonymous" escape="true"]</code></pre>
+    ```xml
+    {@include escape http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referrers&apiAction=getKeywords&format=xml&token_auth=anonymous}
+    ```
 
 ## Static Image Graphs
 
