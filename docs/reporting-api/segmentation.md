@@ -4,11 +4,11 @@ Learn how to use the powerful segmentation feature available in Piwik. This page
 
 This page explains how to build and use the 'segment' API URL parameter, and you will find the list of all the supported visitor segments (country, entry page, keyword, returning visitor, etc.).
 
-### Segment Parameter in the API URL Request
+## Segment Parameter in the API URL Request
 
 Segmentation can be applied to most API functions. The **segment** parameter contains the definition of the segment you wish to filter your reports to.
 
-For example, you can request the "Best Keywords" report processed for all visits where "Country is Germany AND Browser is Firefox" (), by doing the following request:
+For example, you can request the "Best Keywords" report processed for all visits where "Country is Germany AND Browser is Firefox" by doing the following request:
 
     http://piwik.example.org/index.php
     ?token_auth=yourTokenHere
@@ -23,99 +23,37 @@ Example URL of top countries used by visits landing on the page: [virtual-drums.
 
 Let's take a look at the segment string.
 
-### Segment operators
+## Segment operators
 
-<table class="segments" markdown="1">
-<tbody>
-<tr>
-<td class="segmentString">==</td>
-<td>Equals</td>
-<td>`&segment=country==IN`
-Return results where the country is India</td>
-</tr>
-<tr>
-<td class="segmentString">!=</td>
-<td>Does not equal</td>
-<td>`&segment=actions!=1`
-Return results where the number of actions (page views, downloads, etc.) is not 1</td>
-</tr>
-<tr>
-<td class="segmentString"><=</td>
-<td>Less than or equal to</td>
-<td>`&segment=actions<=4`
-Return results where the number of actions (page views, downloads, etc.) is 4 or less</td>
-</tr>
-<tr>
-<td class="segmentString"><</td>
-<td>Less than</td>
-<td>`&segment=visitServerHour<12`
-Return results where the Server time (hour) is before midday.</td>
-</tr>
-<tr>
-<td class="segmentString">>=</td>
-<td>Greater than or equal to</td>
-<td>`&segment=visitDuration>=600`
-Return results where visitors spent 10 minutes or more on the website.</td>
-</tr>
-<tr>
-<td class="segmentString">></td>
-<td>Greater than</td>
-<td>`&segment=daysSinceLastVisit>1`
-Return results where visitors are coming back to the website 2 days or more after their previous visit.</td>
-</tr>
-<tr>
-<td class="segmentString">=@</td>
-<td>Contains</td>
-<td>`&segment=referrerName=@piwik`
-Return results where the Referer name (website domain or search engine name) contains the word "piwik".</td>
-</tr>
-<tr>
-<td class="segmentString">!@</td>
-<td>Does not contain</td>
-<td>`&segment=referrerKeyword!@yourBrand`
-Return results where the keyword used to access the website does not contain word "yourBrand".</td>
-</tr>
-</tbody>
-</table>
+Operator | Behavior           | Example
+-- | ------------------------ | -------------
+== | Equals                   | `&segment=country==IN` Return results where the country is India
+!= | Not equals               | `&segment=actions!=1` Return results where the number of actions (page views, downloads, etc.) is not 1
+<= | Less than or equal to    | `&segment=actions<=4` Return results where the number of actions (page views, downloads, etc.) is 4 or less
+<  | Less than                | `&segment=visitServerHour<12` Return results where the Server time (hour) is before midday.
+>= | Greater than or equal to | `&segment=visitDuration>=600` Return results where visitors spent 10 minutes or more on the website.
+>  | Greater than             | `&segment=daysSinceLastVisit>1` Return results where visitors are coming back to the website 2 days or more after their previous visit.
+=@ | Contains                 | `&segment=referrerName=@piwik` Return results where the Referer name (website domain or search engine name) contains the word "piwik".
+!@ | Does not contain         | `&segment=referrerKeyword!@yourBrand` Return results where the keyword used to access the website does not contain word "yourBrand".
 
-### Combine Segments with AND and OR expressions
+## Combine Segments with AND and OR expressions
 
 You can combine several segments together with AND and OR logic.
 
-**OR** operator is the <span class="code" style="display: inline;">,</span> (comma) character.
+**OR** operator is the `,` (comma) character, for example:
 
-Examples
+- `&segment=country==US,country==DE` Country is either (United States OR Germany)
 
-<table class="exampleBoolean" markdown="1">
-<tbody>
-<tr>
-<td>`&segment=country==US,country==DE`
-Country is either (United States OR Germany)</td>
-</tr>
-</tbody>
-</table>
-**AND** operator is the <span class="code" style="display: inline;">;</span> (semi-colon) character.
+**AND** operator is the `;` (semi-colon) character, for example:
 
-Examples
-
-<table class="exampleBoolean" markdown="1">
-<tbody>
-<tr>
-<td>`&segment=visitorType==returning;country==FR`
-Returning visitors AND Country is France</td>
-</tr>
-<tr>
-<td>`&segment=referrerType==search;referrerKeyword!=Piwik`
-Visitors from Search engines AND Keyword is not Piwik</td>
-</tr>
-</tbody>
-</table>
+- `&segment=visitorType==returning;country==FR` Returning visitors AND Country is France
+- `&segment=referrerType==search;referrerKeyword!=Piwik` Visitors from Search engines AND Keyword is not Piwik
 
 Note that if you combine OR and AND operators, the OR operator will take precedence. For example, the following query
 `&segment=referrerType==search;referrerKeyword==Piwik,referrerKeyword==analytics`
 will select "Visitors from Search engines AND (Keyword is Piwik OR Keyword is analytics)"
 
-### List of segments
+## List of segments
 
 {@include http://demo.piwik.org/index.php?module=API&action=listSegments&language=en}
 
@@ -130,4 +68,4 @@ You can combine it with other segments, for example to select all visitors that 
 Similarly, you can segment your traffic to select visitors where a particular segment is not empty (a value was set). This is similar to the SQL "is not null" clause. To do so, you can leave the value blank after the operator `!=` in the segment string. For example to select all visitors that come from India and have a City set, you can write:
 `city!=;countryCode==in`
 
-_Note: Leaving an empty value is supported for the operators == and !=_
+*Note: Leaving an empty value is supported for the operators == and !==*
