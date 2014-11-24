@@ -126,7 +126,7 @@ a, a:hover, a:focus {
 }
 
 /* All levels of nav */
-.bs-sidebar .nav > li > a {
+.bs-sidebar .nav > li > a, .bs-sidebar .nav > li > span {
     display: block;
     padding: 5px 15px;
     overflow: hidden;
@@ -134,8 +134,8 @@ a, a:hover, a:focus {
     font-weight: bold;
 }
 
-.bs-sidebar .nav-pills>li>a {
-    border-radius: 0px;
+.bs-sidebar .nav-pills > li > a {
+    border-radius: 0;
 }
 
 /* Nav: second level (shown on .active) */

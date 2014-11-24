@@ -8,6 +8,7 @@
 
 namespace helpers\Content\Category;
 
+use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
 use helpers\Content\RemoteGuide;
 
@@ -22,7 +23,15 @@ class DevelopCategory extends Category
     {
         return [
             new Guide('develop-introduction'),
-            new Guide('getting-started'),
+            new EmptySubCategory('Getting Started With Plugins', [
+                new Guide('getting-started-part-1'),
+                new Guide('getting-started-part-2'),
+                new Guide('getting-started-part-3'),
+            ]),
+            new EmptySubCategory('Understanding Piwik', [
+                new Guide('how-piwik-works'),
+                new Guide('all-about-analytics-data'),
+            ]),
             new Guide('mvc-in-piwik'),
             new Guide('piwik-configuration'),
             new RemoteGuide('Make your plugin configurable', 'http://piwik.org/blog/2014/09/make-plugin-configurable-introducing-piwik-platform/'),
@@ -32,7 +41,6 @@ class DevelopCategory extends Category
             new RemoteGuide('Scheduled tasks', 'http://piwik.org/blog/2014/08/create-scheduled-task-introducing-piwik-platform/'),
             new RemoteGuide('Widgets', 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/'),
             new RemoteGuide('Adding pages and menu items', 'http://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/'),
-            new Guide('all-about-analytics-data'),
             new Guide('internationalization'),
             new Guide('automated-tests'),
             new Guide('visualizing-report-data'),
@@ -40,7 +48,10 @@ class DevelopCategory extends Category
             new Guide('piwiks-extensibility-points'),
             new Guide('piwik-on-the-command-line'),
             new Guide('distributing-your-plugin'),
-            new Guide('core-development'),
+            new EmptySubCategory('Piwik Core development', [
+                new Guide('contributing-to-piwik-core'),
+                new Guide('core-team-workflow'),
+            ]),
             new RemoteGuide('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
         ];
     }

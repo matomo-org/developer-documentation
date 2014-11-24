@@ -23,7 +23,11 @@
                                 <ul class="nav nav-pills nav-stacked bs-sidenav">
                                     {% for item in category.items %}
                                         <li title="{{ item.title|raw }}">
-                                            <a href="{{ item.menuUrl }}"><i class="icon-chevron-right"></i> {{ item.menuTitle }}</a>
+                                            {% if item.menuUrl %}
+                                                <a href="{{ item.menuUrl }}">{{ item.menuTitle }}</a>
+                                            {% else %}
+                                                <span>{{ item.menuTitle }}</span>
+                                            {% endif %}
 
                                             <ul class="nav">
                                               {% for subItem in item.subItems %}

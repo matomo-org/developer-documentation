@@ -27,7 +27,7 @@ class EmptySubCategory implements MenuItem
 
     public function getMenuUrl()
     {
-        return '#';
+        return null;
     }
 
     public function getSubItems()
