@@ -69,7 +69,7 @@ We try to publish a new Piwik release [about once a month](http://piwik.org/faq/
 Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik.
 
 To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)). 
-A shell script is then run to generate the archives (zip and tar.gz) which are copied to the build server [builds.piwik.org](http://builds.piwik.org/) and [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. 
+A shell script is then run to generate the archives (zip and tar.gz) which are [cryptographically signed](http://piwik.org/blog/2014/11/verify-signatures-piwik-packages/) and then copied to the build server [builds.piwik.org](http://builds.piwik.org/) and [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. 
 Within hours, Piwik installations will be updated by users via the one click [upgrade mechanism](http://piwik.org/docs/update/) &ndash; or by manual upgrades.
 
 Releases that contain the string "alpha", "beta", "rc", are built for testing purposes and are not advertised on [piwik.org](http://piwik.org).
