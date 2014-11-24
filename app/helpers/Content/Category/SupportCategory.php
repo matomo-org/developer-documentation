@@ -14,7 +14,7 @@ class SupportCategory extends Category
 {
     public function getName()
     {
-        return 'Support';
+        return 'Community & Support';
     }
 
     public function getUrl()

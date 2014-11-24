@@ -14,7 +14,7 @@ class ChangelogCategory extends Category
 {
     public function getName()
     {
-        return 'Changelog';
+        return 'Platform Changelog';
     }
 
     public function getUrl()
