@@ -6,17 +6,25 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-use helpers\DevelopPiwik;
-use helpers\DevelopPlugins;
+use helpers\Content\ApiReferenceGuide;
+use helpers\Content\Category\Category;
+use helpers\Content\Category\CategoryList;
+use helpers\Content\Category\ChangelogCategory;
+use helpers\Content\Category\DesignCategory;
+use helpers\Content\Category\DevelopCategory;
+use helpers\Content\Guide;
+use helpers\Content\PhpDoc;
 use helpers\Home;
-use helpers\IntegratePiwik;
-use helpers\Document;
-use helpers\ApiReference;
-use helpers\Support;
+use helpers\Content\Category\IntegrateCategory;
+use helpers\Content\Category\ApiReferenceCategory;
+use helpers\Redirects;
+use helpers\SearchIndex;
+use helpers\Content\Category\SupportCategory;
 use helpers\DocumentNotExistException;
 use helpers\Git;
+use Slim\Slim;
 
-function send404NotFound($app) {
+function send404NotFound(Slim $app) {
     $app->pass();
 }
 
@@ -35,178 +43,108 @@ function initView($app)
     }
 }
 
+function renderGuide(Slim $app, Guide $guide, Category $category)
+{
+    $app->render('guide.twig', [
+        'category'           => $category,
+        'guide'              => $guide,
+        'linkToEditDocument' => $guide->linkToEdit(),
+        'activeMenu'         => $category->getName(),
+    ]);
+}
+
 initView($app);
 
 $app->notFound(function () use ($app) {
     $app->render('404.twig');
 });
 
+// Redirects
+foreach (Redirects::getRedirects() as $url => $redirect) {
+    $app->get($url, function () use ($app, $redirect) {
+        $app->redirect($redirect, 301);
+    });
+}
+
 $app->get('/', function () use ($app) {
-
-    $app->render('index.twig', ['isHome' => true]);
+    $app->view->setData('home', Home::getMainMenu());
+    $app->render('home.twig', ['isHome' => true]);
 });
 
-$app->get('/api-reference/:reference', function ($reference) use ($app) {
-    $reference = ApiReference::getMenuItemByUrl('/api-reference/' . $reference);
-
-    if (empty($reference)) {
-        send404NotFound($app);
-        return;
-    }
-
+$app->get('/guides/:name', function ($name) use ($app) {
     try {
-        $doc = new Document($reference['file']);
+        $guide = new Guide($name);
     } catch (DocumentNotExistException $e) {
         send404NotFound($app);
         return;
     }
+    $category = CategoryList::getCategory($guide->getCategory());
 
-    $app->render('layout/documentation.twig', [
-        'doc'          => $doc->getRenderedContent(),
-        'sections'     => $doc->getSections(),
-        'sectionTitle' => $doc->getTitle(),
-        'categories'   => ApiReference::getReferencesMenu()
-    ]);
-
-});
-
-$app->get('/api-reference/:names+', function ($names) use ($app) {
-    if (!ctype_alnum(implode('', $names))) {
-        send404NotFound($app);
-        return;
-    }
-
-    $names     = array_filter($names);
-    $className = implode('\\', $names);
-
-    $file = implode('/', $names);
-
-    if ('Piwik/' != substr($file, 0, 6)) {
-        $file = 'Piwik/' . $file;
-    }
-
-    $file = 'generated/master/' . $file;
-
-    try {
-        $doc = new Document($file);
-    } catch (DocumentNotExistException $e) {
-        send404NotFound($app);
-        return;
-    }
-
-    $app->render('layout/documentation.twig', [
-        'activeCategory' => 'Classes',
-        'doc'            => $doc->getRenderedContent(),
-        'sections'       => $doc->getSections(),
-        'sectionTitle'   => $className,
-        'categories'     => ApiReference::getClassesMenu()
-    ]);
-});
-
-$app->get('/guides/:page', function ($page) use ($app) {
-
-    $guideClasses = [
-        'helpers\IntegratePiwik',
-        'helpers\DevelopPlugins',
-        'helpers\DevelopPiwik',
-    ];
-    foreach ($guideClasses as $guideClass) {
-        $guide = $guideClass::getMenuItemByUrl('/guides/' . $page);
-        if ($guide) {
-            $mainMenu = $guideClass::getMainMenu();
-            $activeCategory = $guideClass::getCategoryName();
-            break;
-        }
-    }
-
-    if (empty($guide)) {
-        send404NotFound($app);
-        return;
-    }
-
-    try {
-        $doc = new Document($guide['file']);
-    } catch (DocumentNotExistException $e) {
-        send404NotFound($app);
-        return;
-    }
-
-    $thisMenuItem = null;
-    foreach ($mainMenu as $category) {
-        foreach ($category['items'] as $item) {
-            if (isset($item['file']) && ($item['file'] == $page)) {
-                $thisMenuItem = $item;
-                break;
-            }
-        }
-    }
-
-    $app->render('layout/documentation.twig', [
-        'doc'                => $doc->getRenderedContent(),
-        'sections'           => $doc->getSections(),
-        'sectionTitle'       => $doc->getTitle(),
-        'categories'         => $mainMenu,
-        'linkToEditDocument' => $doc->linkToEditDocument(),
-        'thisItem'           => $thisMenuItem,
-        'activeCategory'     => $activeCategory,
-        'activeMenu'         => $activeCategory,
-    ]);
-});
-
-$app->get('/guides', function () use ($app) {
-
-    $app->redirect('/', 301);
+    renderGuide($app, $guide, $category);
 });
 
 $app->get('/integration', function () use ($app) {
-
-    $app->render('documentation.twig', [
-        'title'       => 'Integrate Piwik',
-        'guides'      => IntegratePiwik::getMainMenu(),
-        'categorized' => true,
-        'noContainer' => true
-    ]);
+    $category = new IntegrateCategory();
+    renderGuide($app, $category->getIntroGuide(), $category);
 });
 
-$app->get('/plugins', function () use ($app) {
-
-    $app->render('documentation.twig', [
-        'title'       => 'Develop Plugins',
-        'guides'      => DevelopPlugins::getMainMenu(),
-        'categorized' => true,
-        'noContainer' => true
-    ]);
+$app->get('/design', function () use ($app) {
+    $category = new DesignCategory();
+    renderGuide($app, $category->getIntroGuide(), $category);
 });
 
-$app->get('/contributing', function () use ($app) {
+$app->get('/develop', function () use ($app) {
+    $category = new DevelopCategory();
+    renderGuide($app, $category->getIntroGuide(), $category);
+});
 
-    $app->render('documentation.twig', [
-        'title'       => 'Develop Piwik',
-        'guides'      => DevelopPiwik::getMainMenu(),
-        'categorized' => true,
-        'noContainer' => true
-    ]);
+$app->get('/api-reference/Piwik/:names+', function ($names) use ($app) {
+    if (! ctype_alnum(implode('', $names))) {
+        send404NotFound($app);
+        return;
+    }
+
+    $names = array_filter($names);
+    $file = 'Piwik/' . implode('/', $names);
+
+    try {
+        $doc = new PhpDoc($file, $file);
+    } catch (DocumentNotExistException $e) {
+        send404NotFound($app);
+        return;
+    }
+
+    renderGuide($app, $doc, new ApiReferenceCategory());
+});
+
+$app->get('/api-reference/classes', function () use ($app) {
+    renderGuide($app, new PhpDoc('Classes', 'classes'), new ApiReferenceCategory());
+});
+$app->get('/api-reference/events', function () use ($app) {
+    renderGuide($app, new PhpDoc('Hooks', 'events'), new ApiReferenceCategory());
+});
+$app->get('/api-reference/index', function () use ($app) {
+    renderGuide($app, new PhpDoc('Index', 'index'), new ApiReferenceCategory());
+});
+$app->get('/api-reference/PHP-Piwik-Tracker', function () use ($app) {
+    renderGuide($app, new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker'), new ApiReferenceCategory());
+});
+
+$app->get('/api-reference/:reference', function ($reference) use ($app) {
+    renderGuide($app, new ApiReferenceGuide($reference), new ApiReferenceCategory());
 });
 
 $app->get('/api-reference', function () use ($app) {
-    $references = ApiReference::getReferencesMenu();
-
-    $app->render('apireference.twig', [
-        'references' => $references,
-        'categorized' => true,
-        'noContainer' => true
-    ]);
+    $category = new ApiReferenceCategory();
+    renderGuide($app, $category->getIntroGuide(), $category);
 });
 
 $app->get('/support', function () use ($app) {
-
-    $app->render('support.twig', [
-        'supports' => Support::getMainMenu()
-    ]);
+    $category = new SupportCategory();
+    renderGuide($app, $category->getIntroGuide(), $category);
 });
 
 $app->get('/changelog', function () use ($app) {
-
     $fetchContent = false;
     $targetFile   = '../../docs/changelog.md';
 
@@ -225,34 +163,19 @@ $app->get('/changelog', function () use ($app) {
         file_put_contents($targetFile, $markdown);
     }
 
-    $document = new Document('changelog');
-    $content  = $document->getRenderedContent();
-    $content  = preg_replace('/<h1(.*?)<\/h1>/', '', $content);
-
-    $app->render('changelog.twig', [
-        'changelog' => $content,
-        'title' => $document->getTitle(),
-        'linkToEditDocument' => 'https://github.com/piwik/piwik/blob/master/CHANGELOG.md'
-    ]);
+    renderGuide($app, new Guide('changelog'), new ChangelogCategory());
 });
 
-$app->get('/data/documents.json', function () use ($app) {
-    $documentsMap = array_merge(
-        IntegratePiwik::getDocumentList(),
-        DevelopPlugins::getDocumentList(),
-        DevelopPiwik::getDocumentList(),
-        ApiReference::getDocumentList()
-    );
-    $documentsData = [
-        'urls' => array_keys($documentsMap),
-        'names' => array_values($documentsMap)
-    ];
-
-    echo json_encode($documentsData);
+$app->get('/data/documents', function () use ($app) {
+    $searchIndex = new SearchIndex();
+    $index = $searchIndex->buildIndex();
+    echo json_encode([
+        'urls' => array_keys($index),
+        'names' => array_values($index)
+    ], JSON_PRETTY_PRINT);
 });
 
 $app->post('/receive-commit-hook', function () use ($app) {
-
     system('git pull');
     \helpers\Cache::invalidate();
 

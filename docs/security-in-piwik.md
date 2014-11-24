@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # Security in Piwik
 
 <!-- Meta (to be deleted)

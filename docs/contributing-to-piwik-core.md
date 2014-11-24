@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # Contributing to Piwik Core
 
 <!-- Meta (to be deleted)

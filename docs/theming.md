@@ -1,3 +1,6 @@
+---
+category: Design
+---
 # Theming
 
 <!-- Meta (to be deleted)

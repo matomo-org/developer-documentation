@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # Piwik Configuration
 
 <!-- Meta (to be deleted)

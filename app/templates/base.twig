@@ -28,9 +28,9 @@
             <ul class="nav navbar-nav">
                 <li {% if isHome is defined and isHome %} class="active"{% endif %}><a href="/">Home</a></li>
                 {% for item in menu %}
-                    {% if item.mainMenu %}
+                    {% if item.menuTitle %}
                         <li {% if activeMenu == item.title %} class="active"{% endif %}>
-                            <a href="{{ item.url }}">{{ item.title }}</a>
+                            <a href="{{ item.url }}">{{ item.menuTitle }}</a>
                         </li>
                     {% endif %}
                 {% endfor %}

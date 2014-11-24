@@ -1,50 +1,35 @@
 <?php
+
+namespace helpers\Markdown;
+
 /**
- * Piwik - Open source web analytics
- *
- * @link http://piwik.org
- * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
+ * Extracts sections from Markdown content.
  */
-
-namespace helpers;
-
-use helpers\Markdown\MarkdownParserFactory;
-use helpers\Markdown\TitleIdPreprocessor;
-
-class Markdown {
-
+class ExtractSectionsPostprocessor implements MarkdownParserInterface
+{
     /**
-     * @var string
+     * @var MarkdownParserInterface
      */
-    private $markdown = '';
+    private $wrapped;
 
-    /**
-     * @var string
-     */
-    private $transformedHtml = '';
-
-    public function __construct($markdown)
+    public function __construct(MarkdownParserInterface $wrapped)
     {
-        $this->markdown = $markdown;
+        $this->wrapped = $wrapped;
     }
 
-    public function setTransformedHtml($html)
+    public function parse($markdown)
     {
-        $this->transformedHtml = $html;
+        $document = $this->wrapped->parse($markdown);
+
+        $document->title = $this->getTitle($document->htmlContent);
+        $document->sections = $this->getAvailableSections($document->htmlContent);
+
+        return $document;
     }
 
-    public function transform()
+    private function getTitle($html)
     {
-        $this->transformIfNeeded();
-
-        return $this->transformedHtml;
-    }
-
-    public function getTitle()
-    {
-        $this->transformIfNeeded();
-
-        $sections = $this->getAvailableSectionsFromContent('h1', $this->transformedHtml);
+        $sections = $this->getAvailableSectionsFromContent('h1', $html);
 
         if (empty($sections)) {
             return '';
@@ -54,11 +39,9 @@ class Markdown {
         return $first['title'];
     }
 
-    public function getAvailableSections()
+    private function getAvailableSections($html)
     {
-        $this->transformIfNeeded();
-
-        $sections = $this->getAvailableSectionsFromContent('h2', $this->transformedHtml);
+        $sections = $this->getAvailableSectionsFromContent('h2', $html);
 
         if (empty($sections)) {
             return [];
@@ -68,7 +51,7 @@ class Markdown {
 
         foreach ($sections as $section) {
 
-            $content     = $this->getSectionContent($section['title']);
+            $content     = $this->getSectionContent($section['title'], $html);
             $subSections = $this->getAvailableSectionsFromContent('h3', $content);
 
             $sub = [];
@@ -91,17 +74,15 @@ class Markdown {
         return $parsed;
     }
 
-    private function getSectionContent($sectionName)
+    private function getSectionContent($sectionName, $html)
     {
-        $this->transformIfNeeded();
-
         $sectionName = str_replace('\\', '\\\\', $sectionName);
         $sectionName = str_replace('/', '\/', $sectionName);
 
         $matches = [];
         $pattern = sprintf('/>%s<\/h2>(.*?)(<h2|$)/is', $sectionName);
 
-        preg_match($pattern, $this->transformedHtml, $matches);
+        preg_match($pattern, $html, $matches);
 
         if (!empty($matches[1])) {
             $parsed = $matches[1];
@@ -112,26 +93,15 @@ class Markdown {
         return $parsed;
     }
 
-    private function transformIfNeeded()
+    private function getAvailableSectionsFromContent($headline, $html)
     {
-        if (!empty($this->transformedHtml)) {
-            return $this->transformedHtml;
-        }
-
-        $parser = MarkdownParserFactory::build();
-
-        $this->transformedHtml = $parser->parse($this->markdown);
-    }
-
-    private function getAvailableSectionsFromContent($headline, $content)
-    {
-        if (empty($content)) {
+        if (empty($html)) {
             return [];
         }
 
         $regex = sprintf('/(?:<a[^>]*name=["\']([^"\']+)["\'][^>]*><\/a>\s*)?<%s(.*?)>(.*)<\/%s>/', $headline, $headline);
 
-        $resultCount = preg_match_all($regex, $content, $matches);
+        $resultCount = preg_match_all($regex, $html, $matches);
 
         $result = [];
         for ($i = 0; $i < $resultCount; ++$i) {

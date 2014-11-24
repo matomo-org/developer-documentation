@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # Distributing Your Plugin
 
 <!-- Meta (to be deleted)

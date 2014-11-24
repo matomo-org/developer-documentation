@@ -1,3 +1,6 @@
+---
+category: Design
+---
 # Designing a custom theme
 
 ## Activate the development mode

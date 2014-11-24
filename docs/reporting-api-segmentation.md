@@ -1,10 +1,14 @@
+---
+category: API Reference
+title: Segmentation
+---
 # Segmentation in the API
 
 Learn how to use the powerful segmentation feature available in Piwik. This page explains how to build the 'segment' parameter in your API requests. Segmentation makes it easy to request any Piwik report for a subset of your audience.
 
 This page explains how to build and use the 'segment' API URL parameter, and you will find the list of all the supported visitor segments (country, entry page, keyword, returning visitor, etc.).
 
-### Segment Parameter in the API URL Request
+## Segment Parameter in the API URL Request
 
 Segmentation can be applied to most API functions. The **segment** parameter contains the definition of the segment you wish to filter your reports to.
 
@@ -23,7 +27,7 @@ Example URL of top countries used by visits landing on the page: [virtual-drums.
 
 Let's take a look at the segment string.
 
-### Segment operators
+## Segment operators
 
 <table class="segments" markdown="1">
 <tbody>
@@ -78,7 +82,7 @@ Return results where the keyword used to access the website does not contain wor
 </tbody>
 </table>
 
-### Combine Segments with AND and OR expressions
+## Combine Segments with AND and OR expressions
 
 You can combine several segments together with AND and OR logic.
 
@@ -115,7 +119,7 @@ Note that if you combine OR and AND operators, the OR operator will take precede
 `&segment=referrerType==search;referrerKeyword==Piwik,referrerKeyword==analytics`
 will select "Visitors from Search engines AND (Keyword is Piwik OR Keyword is analytics)"
 
-### List of segments
+## List of segments
 
 {@include http://demo.piwik.org/index.php?module=API&action=listSegments&language=en}
 

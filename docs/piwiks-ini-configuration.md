@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # Piwik's INI Configuration
 
 ## About this guide

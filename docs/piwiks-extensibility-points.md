@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # Piwik's Extensibility Points
 
 <!-- Meta (to be deleted)

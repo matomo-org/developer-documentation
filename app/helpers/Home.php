@@ -30,47 +30,44 @@ class Home {
         $menu = [];
 
         $menu[] = [
-            'title'       => 'Integrate Piwik',
-            'url'         => static::getUrl('integration'),
+            'title'       => 'Integrate',
+            'menuTitle'   => 'Integrate',
+            'url'         => '/integration',
             'description' => 'Track your application or access Piwik data using the HTTP API.',
-            'mainMenu'    => true,
             'links'       => [
-                'Track your application' => static::getUrl('integration#tracking'),
-                'Access Piwik data'      => static::getUrl('integration#reporting'),
-                'Client libraries & SDK' => static::getUrl('integration#clients'),
+                'Track your application' => '/guides/tracking-introduction',
+                'Access Piwik data'      => '/guides/reporting-introduction',
+                'Client libraries & SDK' => '/guides/tracking-api-clients',
             ],
         ];
 
         $menu[] = [
-            'title'       => 'Develop Plugins',
-            'url'         => static::getUrl('plugins'),
-            'description' => 'Extend and customize Piwik by developing plugins and themes.',
-            'mainMenu'    => true,
+            'title'       => 'Develop',
+            'menuTitle'   => 'Develop',
+            'url'         => '/develop',
+            'description' => 'Extend and customize Piwik by contributing or developing plugins.',
             'links'       => [
-                'Getting started with Plugins' => static::getUrl('plugins#getting-started'),
-                'Write a plugin'               => static::getUrl('plugins#basics'),
-                'Custom themes'                => static::getUrl('plugins#themes'),
-                'The Marketplace'              => static::getUrl('plugins#marketplace'),
+                'Getting started with Plugins' => '/guides/getting-started',
+                'MVC in Piwik'                 => '/guides/mvc-in-piwik',
+                'The Marketplace'              => '/guides/distributing-your-plugin',
             ],
         ];
 
         $menu[] = [
-            'title'       => 'Develop Piwik',
-            'url'         => static::getUrl('contributing'),
+            'title'       => 'Design',
+            'menuTitle'   => 'Design',
+            'url'         => '/design',
             'description' => 'Discover how Piwik works and get involved in its development with the Core team.',
-            'mainMenu'    => true,
             'links'       => [
-                'Contributing to Piwik'    => static::getUrl('contributing#introduction'),
-                'How Piwik works'          => static::getUrl('contributing#internals'),
-                'The development workflow' => static::getUrl('contributing#workflow'),
+                'Writing a theme' => '/guides/theming',
             ],
         ];
 
         $menu[] = [
             'title'       => 'API Reference',
-            'url'         => static::getUrl('api-reference'),
+            'menuTitle'   => 'API Reference',
+            'url'         => '/api-reference',
             'description' => 'Check out the low-level documentation for the HTTP, Javascript or PHP API.',
-            'mainMenu'    => true,
             'links'       => [
                 'HTTP API'       => static::getUrl('api-reference#http'),
                 'Javascript API' => static::getUrl('api-reference#javascript'),
@@ -79,25 +76,24 @@ class Home {
         ];
 
         $menu[] = [
+            'title'       => 'Platform Changelog',
+            'menuTitle'   => 'Changelog',
+            'url'         => '/changelog',
+            'description' => 'What has changed in the latest Piwik versions for the developers.',
+            'links'       => [
+            ],
+        ];
+
+        $menu[] = [
             'title'       => 'Community & Support',
-            'url'         => static::getUrl('support'),
+            'menuTitle'   => 'Support',
+            'url'         => '/support',
             'description' => 'Get support or get involved with the developer community.',
-            'mainMenu'    => true,
             'links'       => [
                 'Developer blog' => 'http://piwik.org/blog/category/development/',
                 'Forums'         => 'http://forum.piwik.org/list.php?9',
                 'IRC'            => 'http://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a',
                 'Issues'         => 'https://github.com/piwik/piwik/issues',
-            ],
-        ];
-
-        $menu[] = [
-            'title'       => 'Platform Changelog',
-            'url'         => static::getUrl('changelog'),
-            'description' => 'What has changed in the latest Piwik versions for the developers.',
-            'mainMenu'    => false,
-            'links'       => [
-                'Changelog' => static::getUrl('changelog'),
             ],
         ];
 

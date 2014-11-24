@@ -12,9 +12,13 @@ class MarkdownParserFactory
      */
     public static function build()
     {
-        return new IncludeFilePostprocessor(
-            new TitleIdPreprocessor(
-                new Parsedown()
+        return new ProcessLinks(
+            new ExtractSectionsPostprocessor(
+                new IncludeFilePostprocessor(
+                    new TitleIdPreprocessor(
+                        new Parsedown()
+                    )
+                )
             )
         );
     }

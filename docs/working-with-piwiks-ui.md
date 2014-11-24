@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # Working with Piwik's UI
 
 <!-- Meta (to be deleted)

@@ -21,7 +21,7 @@ use helpers\CacheMiddleware;
 $app = new Slim(array(
     'view' => new Twig(),
     'log.enabled' => true,
-    'debug'       => false,
+    'debug'       => DEBUG,
     'templates.path' => '../templates',
     'templates.cache' => realpath('../tmp/templates'),
     'templates.charset' => 'utf-8',

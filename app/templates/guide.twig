@@ -1,0 +1,88 @@
+{% if sectionTitle is defined %}{% set title = sectionTitle %}{% endif %}
+{% set setPageHeader = false %}
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-3 bs-side">
+
+            <div class="panel-group">
+                {% if category.items|length %}
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a href="{{ category.url }}">
+                                    {{ category.name }}
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="bs-sidebar">
+                                <ul class="nav nav-pills nav-stacked bs-sidenav">
+                                    {% for item in category.items %}
+                                        <li title="{{ item.title|raw }}">
+                                            <a href="{{ item.menuUrl }}"><i class="icon-chevron-right"></i> {{ item.menuTitle }}</a>
+
+                                            <ul class="nav">
+                                              {% for subItem in item.subItems %}
+                                                  <li title="{{ subItem.title|raw }}">
+                                                      <a href="{{ subItem.menuUrl }}"> {{ subItem.menuTitle }}</a>
+                                                  </li>
+                                              {% endfor %}
+                                            </ul>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if guide.sections|length %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                {{ guide.title|striptags|raw }}
+                            </h4>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="bs-sidebar">
+                                <ul class="nav nav-pills nav-stacked bs-sidenav">
+                                    {% for section in guide.sections %}
+                                        <li>
+                                            <a href="#{{ section.id }}"><i class="icon-chevron-right"></i> {{ section.title|striptags|raw }}</a>
+
+                                            {% if section.children|length %}
+                                                <ul class="nav">
+
+                                                {% for subsection in section.children %}
+                                                    <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
+                                                {% endfor %}
+
+                                                </ul>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-9 documentation">
+            {{ guide.renderedContent|raw }}
+            {% if guide.previous or guide.next %}
+                <div class="guide-navigation">
+                    {% if guide.previous %}<a class="guide-nav-prev" href="{{ guide.previous }}">&laquo; Previous</a>{% endif %}
+                    {% if guide.next %}<a class="guide-nav-next" href="{{ guide.next }}">Next &raquo;</a>{% endif %}
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+{% endblock %}

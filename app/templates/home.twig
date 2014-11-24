@@ -1,4 +1,4 @@
-{% extends 'layout/base.twig' %}
+{% extends 'base.twig' %}
 {% from "macros.twig" import teaser_list %}
 
 {% block headline %}
@@ -24,7 +24,7 @@
 
 {% block content %}
     <div class="row">
-        {{ teaser_list(menu) }}
+        {{ teaser_list(home) }}
     </div>
 {% endblock %}
 
@@ -34,8 +34,8 @@
             <a href="http://piwik.org/blog/2014/05/piwik-expanding-seeking-talented-software-engineer-new-zealand-poland/" class="btn btn-xs btn-success">We're hiring a software engineer!</a>
             <br/><br/>
             <a href="http://piwik.org" class="btn btn-xs btn-piwik">Piwik.org</a>
-            <a href="https://twitter.com/piwik" target="_blank" class="btn btn-xs btn-twitter"><i class="fa fa-twitter"></i> | Twitter</a>
-            <a href="https://github.com/piwik" target="_blank" class="btn btn-xs btn-github"><i class="fa fa-github"></i> | GitHub</a>
+            <a href="https://twitter.com/piwik" target="_blank" class="btn btn-xs btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+            <a href="https://github.com/piwik" target="_blank" class="btn btn-xs btn-github"><i class="fa fa-github"></i> GitHub</a>
 
         </div>
     </div>

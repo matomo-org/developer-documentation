@@ -2,20 +2,33 @@
 
 namespace helpers\Markdown;
 
+use Mni\FrontYAML\Bridge\Parsedown\ParsedownParser;
+use Mni\FrontYAML\Parser;
+
 /**
  * Parses Markdown Extra using ParsedownExtra.
  */
 class Parsedown implements MarkdownParserInterface
 {
-    private $parsedown;
+    private $parser;
 
     public function __construct()
     {
-        $this->parsedown = new \ParsedownExtra();
+        // Use the FrontYAML parser to decode both Markdown and FrontYAML metadata
+        $this->parser = new Parser(null, new ParsedownParser(new \ParsedownExtra()));
     }
 
     public function parse($markdown)
     {
-        return $this->parsedown->text($markdown);
+        $parsed = $this->parser->parse($markdown);
+
+        $html = $parsed->getContent();
+        $metadata = $parsed->getYAML();
+
+        if (! is_array($metadata)) {
+            $metadata = [];
+        }
+
+        return new Document($html, $metadata);
     }
 }

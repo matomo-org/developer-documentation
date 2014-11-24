@@ -1,3 +1,6 @@
+---
+category: Integrate
+---
 # Tracking API Clients
 
 ## About this guide

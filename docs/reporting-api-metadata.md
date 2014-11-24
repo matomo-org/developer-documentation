@@ -1,3 +1,7 @@
+---
+category: API Reference
+title: Metadata
+---
 # Report Metadata API Methods
 
 The standard Piwik Analytics APIs return raw data, for example: visits, page views, revenue, conversions.

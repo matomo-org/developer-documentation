@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # MVC (Model-View-Controller) in Piwik
 
 <!-- Meta (to be deleted)

@@ -1,3 +1,8 @@
+---
+category: Develop
+previous: getting-started-part-1
+next: getting-started-part-3
+---
 # Getting Started Part II: Tour of Piwik Internals
 
 ## About this guide

@@ -1,0 +1,57 @@
+<?php
+/**
+ * Piwik - Open source web analytics
+ *
+ * @link http://piwik.org
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
+ */
+
+namespace helpers\Content\Category;
+
+use helpers\Content\Guide;
+use helpers\Content\RemoteGuide;
+
+class DevelopCategory extends Category
+{
+    public function getName()
+    {
+        return 'Develop';
+    }
+
+    public function getItems()
+    {
+        return [
+            new Guide('develop-introduction'),
+            new Guide('getting-started'),
+            new Guide('mvc-in-piwik'),
+            new Guide('piwik-configuration'),
+            new RemoteGuide('Make your plugin configurable', 'http://piwik.org/blog/2014/09/make-plugin-configurable-introducing-piwik-platform/'),
+            new Guide('piwiks-ini-configuration'),
+            new Guide('persistence-and-the-mysql-backend'),
+            new Guide('security-in-piwik'),
+            new RemoteGuide('Scheduled tasks', 'http://piwik.org/blog/2014/08/create-scheduled-task-introducing-piwik-platform/'),
+            new RemoteGuide('Widgets', 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/'),
+            new RemoteGuide('Adding pages and menu items', 'http://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/'),
+            new Guide('all-about-analytics-data'),
+            new Guide('internationalization'),
+            new Guide('automated-tests'),
+            new Guide('visualizing-report-data'),
+            new Guide('working-with-piwiks-ui'),
+            new Guide('piwiks-extensibility-points'),
+            new Guide('piwik-on-the-command-line'),
+            new Guide('distributing-your-plugin'),
+            new Guide('core-development'),
+            new RemoteGuide('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
+        ];
+    }
+
+    public function getUrl()
+    {
+        return '/develop';
+    }
+
+    public function getIntroGuide()
+    {
+        return new Guide('develop-introduction');
+    }
+}

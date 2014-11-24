@@ -1,4 +1,7 @@
-# Javascript Tracking client How-to
+---
+category: API Reference
+---
+# Javascript Tracking Client
 
 Piwik is equipped with a powerful JavaScript Tracking API. Advanced users can use the Piwik tracking code to customize the way some of
 the web analytics data is recorded in Piwik.

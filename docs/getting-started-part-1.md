@@ -1,3 +1,7 @@
+---
+category: Develop
+next: getting-started-part-2
+---
 # Getting Started Part I: Setting Up
 
 <!-- Meta (to be deleted)

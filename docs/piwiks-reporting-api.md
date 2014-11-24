@@ -1,3 +1,6 @@
+---
+category: Integrate
+---
 # Piwik's Reporting API
 
 <!-- Meta (to be deleted)

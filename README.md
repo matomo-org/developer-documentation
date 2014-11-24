@@ -24,11 +24,19 @@ $ cd public/
 $ php -S 0.0.0.0:8000
 ```
 
-To disable caching, create a `app/config/local.php` file with the following:
+To disable caching and enable debugging, create a `app/config/local.php` file with the following:
 
 ```php
 <?php
 define('CACHING_ENABLED', false);
+define('DEBUG', true);
+```
+
+Without cache, the website might be slow because of the inclusion of remote files (through HTTP). You can disable that
+locally by adding this to your `local.php`:
+
+```php
+define('DISABLE_INCLUDE', true);
 ```
 
 ## Automatic documentation generation (API-Reference)

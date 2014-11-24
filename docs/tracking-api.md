@@ -1,8 +1,11 @@
-## The Tracking HTTP API
+---
+category: API Reference
+---
+# The Tracking HTTP API
 
 To track page views, events, visits, you have to send a HTTP request to your Tracking HTTP API endpoint, for example, **http://your-piwik-domain.tld/piwik.php** with the correct query parameters set.
 
-### Supported Query Parameters
+## Supported Query Parameters
 
 This section lists the various query parameters that are supported by the Tracking API. The data for some of these fields will not be available in your app / software which is expected, but you should provide as much information as you can.
 
@@ -100,11 +103,11 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `lat` &mdash; An override value for the visitor's latitude, eg _22.456_.
     * `long` &mdash; An override value for the visitor's longitude, eg _22.456_.
 
-#### Tracking Bots
+### Tracking Bots
 
 By default Piwik does not track bots. If you use the Tracking HTTP API directly, you may be interested in tracking bot requests. To enable Bot Tracking in Piwik, set the parameter &**bots**=1 in your requests to piwik.php.
 
-#### Example Tracking Request
+### Example Tracking Request
 
 Here is an example of a real tracking request used by the [Piwik Mobile app](http://piwik.org/mobile/) when anonymously tracking Mobile App usage:
 
@@ -123,7 +126,7 @@ To send a bulk tracking request, an HTTP POST must be made with a JSON object to
 * `requests` &mdash; an array of individual tracking requests. Each tracking request should be the query string you'd send if you were going to track that action individually.
 * `token_auth` &mdash; (optional) token_auth which is found in the API page. Specify this only needed if you use any of the parameters that require `token_auth`
 
-#### Example Requests
+### Example Requests
 
 This is an example of the payload of a bulk tracking request:
 
