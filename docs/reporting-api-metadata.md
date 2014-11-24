@@ -23,10 +23,10 @@ The method **API.getProcessedReport** can be called to request the full data set
 *   'reportMetadata' - (optional) contains the metadata for each row, for example: logo URLs, country codes, search engine URLs, etc.
 For example, if you want to display the top five countries that visitors come from you would build the API Request as follows:
 
-*   User countries report: <tt markdown="1">&**apiModule**=UserCountry&**apiAction**=getCountry</tt>
-*   Truncated to 5 rows: <tt markdown="1">&**filter_truncate**=5</tt>
-*   Labels can be translated into a specific language. As with other API calls, you can use the parameter <tt markdown="1">&**language**=xx</tt> (replacing xx with the translation code).
-The URL would be [http://demo.piwik.org/?**module=API&method=API.getProcessedReport**&idSite=3&date=yesterday&period=day&**apiModule=UserCountry&apiAction=getCountry**&language=en&format=xml&token_auth=anonymous&filter_truncate=5](http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en)
+*   User countries report: `&apiModule=UserCountry&apiAction=getCountry`
+*   Truncated to 5 rows: `&filter_truncate=5`
+*   Labels can be translated into a specific language. As with other API calls, you can use the parameter `&language=xx` (replacing xx with the translation code).
+The URL would be [http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&language=en&format=xml&token_auth=anonymous&filter_truncate=5](http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en)
 
 The returned XML is:
 
@@ -38,7 +38,7 @@ The returned XML is:
 
 *   **category** -  category under which the report appears
 *   **name** -  the report name
-*   **module** and 'action' - used to build the standard API request to fetch the data for this report, <tt> ?module=API&method=$module.$action </tt> (replace $module by the 'module' attribute, replace $action by the 'action' attribute)
+*   **module** and 'action' - used to build the standard API request to fetch the data for this report, `?module=API&method=$module.$action` (replace $module by the 'module' attribute, replace $action by the 'action' attribute)
 *   **metrics** - list of basic metrics in the report
 *   **processedMetrics** - list of processed metrics in the report. Processed metrics are usually ratios (conversion rates, average actions per visit, etc.). Processed metrics don't appear in standard non-metadata API responses.
 *   **metricsGoal** and 'processedMetricsGoal' -  list of goal metrics available for this report.
@@ -79,37 +79,37 @@ In the following examples, to see the URL used to generate the image, right-clic
 
     ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummary&apiAction=get&token_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250)
 
-_URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummary&apiAction=get&token\_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250_
+URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummary&apiAction=get&token_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250`
 
 *   Example: Horizontal Bar Graph Plotting Browsers for the Current Month
 
     ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getBrowser&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
-_URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getBrowser&token\_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250_
+URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getBrowser&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Horizontal Bar Graph Plotting Countries for the Current Week
 
     ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
-_URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token\_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250_
+URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Graph Plotting User Screen Resolutions for the Current Month
 
     ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250)
 
-_URL = index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getResolution&token\_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250_
+URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Pie Chart with Custom Colors
 
     ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=UserSettings&apiAction=getOS&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D)
 
-_URL = index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=UserSettings&apiAction=getOS&token\_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D_
+URL: `index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=UserSettings&apiAction=getOS&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D`
 
 *   Example: Line chart of Custom Variables names and values, filtered to show only custom variable containing the string "logged"
 
     ![](http://demo.piwik.org/?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*)
 
-_URL = index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token\_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*_
+URL: `index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*`
 
 
 The static Graphs API requires the standard Piwik parameters (idSite, date, period, etc.) but also accepts the following parameters:
