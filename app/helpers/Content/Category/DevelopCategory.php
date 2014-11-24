@@ -51,8 +51,8 @@ class DevelopCategory extends Category
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),
+                new RemoteGuide('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
             ]),
-            new RemoteGuide('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
         ];
     }
 
