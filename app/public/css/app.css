@@ -77,14 +77,6 @@ p {
     overflow:hidden;
 }
 
-.guide-nav-prev {
-    float:left;
-}
-
-.guide-nav-next {
-    float:right;
-}
-
 h2[id]:before, h3[id]:before {
   content:"";
   display:block;

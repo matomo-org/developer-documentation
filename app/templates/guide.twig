@@ -99,9 +99,19 @@
             {% endif %}
 
             {% if guide.previous or guide.next %}
-                <div class="guide-navigation">
-                    {% if guide.previous %}<a class="guide-nav-prev" href="{{ guide.previous }}">&laquo; Previous</a>{% endif %}
-                    {% if guide.next %}<a class="guide-nav-next" href="{{ guide.next }}">Next &raquo;</a>{% endif %}
+                <div class="clearfix guide-navigation">
+                    {% if guide.previous %}
+                        <a class="guide-navigation-prev" href="{{ guide.previous.menuUrl }}">
+                            <i class="fa fa-long-arrow-left"></i>
+                            {{ guide.previous.menuTitle }}
+                        </a>
+                    {% endif %}
+                    {% if guide.next %}
+                        <a class="guide-navigation-next" href="{{ guide.next.menuUrl }}">
+                            {{ guide.next.menuTitle }}
+                            <i class="fa fa-long-arrow-right"></i>
+                        </a>
+                    {% endif %}
                 </div>
             {% endif %}
 

@@ -108,7 +108,7 @@ class Guide implements MenuItem
     public function getPrevious()
     {
         if (isset($this->document->metadata['previous'])) {
-            return $this->document->metadata['previous'];
+            return new static($this->document->metadata['previous']);
         }
 
         return null;
@@ -117,12 +117,12 @@ class Guide implements MenuItem
     public function getNext()
     {
         if (isset($this->document->metadata['next'])) {
-            return $this->document->metadata['next'];
+            return new static($this->document->metadata['next']);
         }
 
         $subGuides = $this->getSubItems();
         if (count($subGuides) > 0) {
-            return $subGuides[0]->getMenuUrl();
+            return $subGuides[0];
         }
 
         return null;
