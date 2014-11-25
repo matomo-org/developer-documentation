@@ -8,22 +8,6 @@ subGuides:
 ---
 # MVC (Model-View-Controller)
 
-<!-- Meta (to be deleted)
-Purpose:
- - describe request -> FrontController -> Controller -> API + twig views -> output process
- - describe Twig templates + how to use
-
-Audience: plugin developers or core developers that want to know more about controllers, API, Twig Views
-
-Expected Result: developers that understand how requests are handled by Piwik, how to implement controller methods, API methods, twig views.
-
-Notes: 
-
-What's missing? (stuff in my list that was not in when I wrote the 1st draft)
-  - user roles (not sure where to put this... would be a short guide if on its own)
-  - posting notifications (should go in controller section under 'alternative ways to communicate w/ the user'?)
--->
-
 ## About this guide
 
 **Read this guide if**

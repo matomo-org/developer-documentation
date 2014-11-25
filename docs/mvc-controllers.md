@@ -26,27 +26,7 @@ Here's how you do both:
 
 ### Adding controller methods as menu items
 
-Menu items are added through an event. Each menu has its own event:
-
-* [`Menu.Admin.addItems`](/api-reference/events#menuadminadditems) for the menu shown on the left when a user clicks *Settings*.
-* [`Menu.Top.addItems`](/api-reference/events#menutopadditems) for the menu shown at the very top of each page.
-* [`Menu.Reporting.addItems`](/api-reference/events#menureportingadditems) for the main menu shown on non-admin pages (the menu just below the logo)
-
-Plugins can call the [`MenuAbstract::add()`](/api-reference/Piwik/Menu/MenuAbstract#add) method within event handlers for these events to add menu items. For example, the following will add a menu item titled *My Menu Item* that links to the *MyPlugin.myPage* controller method to the admin menu.
-
-```php
-// an event handler for Menu.Admin.addItems
-public function addAdminMenuItems()
-{
-    MenuAdmin::add(
-        "My Menu Category",
-        "My Menu Item",
-        array('module' => 'MyPlugin', 'action' => 'myPage'),
-        $isVisible = true,
-        $order = 10
-    );
-}
-```
+To add menu items in Piwik, read [the following guide](http://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/).
 
 ### Invoking controller methods via AJAX
 

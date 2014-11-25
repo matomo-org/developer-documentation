@@ -12,7 +12,7 @@ $view = new View("@MyPlugin/myTemplate.twig");
 
 // set properties
 $view->property1 = 'property1';
-$view->property2 = 'here's another property';
+$view->property2 = 'here is another property';
 ```
 
 For [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable), [it's a bit more complicated](/guides/visualizing-report-data).
