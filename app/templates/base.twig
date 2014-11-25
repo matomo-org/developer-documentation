@@ -78,7 +78,15 @@
 {% block footer %}
     <footer>
         <div class="container">
-            <p class="pull-left">&copy; <a href="http://piwik.org">Piwik.org</a></p>
+            <p class="pull-left">
+                &copy; <a href="http://piwik.org">Piwik.org</a>
+                |
+                <a href="http://piwik.org/blog/2014/05/piwik-expanding-seeking-talented-software-engineer-new-zealand-poland/" title="We're hiring a software engineer!">Jobs</a>
+                |
+                <a href="https://twitter.com/piwik"><i class="fa fa-twitter"></i> Twitter</a>
+                |
+                <a href="https://github.com/piwik"><i class="fa fa-github"></i> GitHub</a>
+            </p>
             <p class="pull-right">{% if linkToEditDocument is defined and linkToEditDocument %}
             <a href="{{ linkToEditDocument }}" target="_blank">Edit on GitHub</a>
                 {% endif %}</p>
