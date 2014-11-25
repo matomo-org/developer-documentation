@@ -12,11 +12,14 @@ class MarkdownParserFactory
      */
     public static function build()
     {
+        // Welcome to the decorators party!
         return new ProcessLinks(
             new ExtractSectionsPostprocessor(
                 new IncludeFilePostprocessor(
                     new TitleIdPreprocessor(
-                        new MichelfMarkdown()
+                        new FrontYamlParser(
+                            new MichelfMarkdown()
+                        )
                     )
                 )
             )

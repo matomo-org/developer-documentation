@@ -27,7 +27,7 @@ class Document
      */
     public $metadata = array();
 
-    public function __construct($htmlContent, array $metadata)
+    public function __construct($htmlContent, array $metadata = [])
     {
         $this->htmlContent = $htmlContent;
         $this->metadata = $metadata;
