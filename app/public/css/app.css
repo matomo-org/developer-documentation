@@ -16,6 +16,22 @@ code {
     border-radius: 0;
 }
 
+/* bootstrap overrides */
+pre {
+    background-color:transparent;
+    border-width: 0;
+    padding:0;
+}
+
+pre > code {
+    border-radius: 4px;
+    padding: 9px;
+}
+
+p {
+    margin: 0 0 15px;
+}
+
 /* Active navbar item color */
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
     color: #2faadd;
@@ -216,22 +232,6 @@ h2[id]:before, h3[id]:before {
   margin-top:-60px;
 }
 
-/* bootstrap overrides */
-pre {
-    background-color:transparent;
-    border-width:0px;
-    padding:0;
-}
-
-pre > code {
-    border-radius: 4px;
-    padding:9.5px;
-}
-
-p {
-    margin: 0 0 15px;
-}
-
 /* reporting api listing styles */
 .apiDescription, .apiMethod {
     margin: 0 0 10px;
@@ -251,12 +251,10 @@ footer {
     bottom: 0;
     width: 100%;
     height: 60px;
-    background-color: #2c3e50;
-    padding-top: 20px;
-    color: white;
-}
-footer a, footer a:hover, footer a:focus {
-    color: #18bc9c;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-top: 1px solid #dfdfdf;
+    font-size: 14px;
 }
 
 /* Menu navbar */
