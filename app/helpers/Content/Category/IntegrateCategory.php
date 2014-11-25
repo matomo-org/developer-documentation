@@ -28,7 +28,6 @@ class IntegrateCategory extends Category
             new Guide('integrate-introduction'),
             new Guide('tracking-introduction'),
             new Guide('reporting-introduction'),
-            new Guide('tracking-api-clients'),
         ];
     }
 
