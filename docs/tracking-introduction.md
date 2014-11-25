@@ -1,9 +1,10 @@
 ---
 category: Integrate
 subGuides:
+  - tracking-javascript-guide
+  - tracking-api-clients
   - all-about-tracking
   - content-tracking
-  - tracking-api-clients
 ---
 # Tracking your application
 
