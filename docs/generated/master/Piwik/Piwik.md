@@ -31,6 +31,7 @@ The class defines the following methods:
 - [`checkUserHasViewAccess()`](#checkuserhasviewaccess) &mdash; Checks that the current user has view access to the requested list of sites
 - [`isUserHasSomeViewAccess()`](#isuserhassomeviewaccess) &mdash; Returns `true` if the current user has view access to at least one site.
 - [`checkUserHasSomeViewAccess()`](#checkuserhassomeviewaccess) &mdash; Checks that the current user has view access to at least one site.
+- [`getLoginPluginName()`](#getloginpluginname) &mdash; Returns the name of the Login plugin currently being used.
 - [`redirectToModule()`](#redirecttomodule) &mdash; Redirects the current request to a new module and action.
 - [`isValidEmailString()`](#isvalidemailstring) &mdash; Returns `true` if supplied the email address is a valid.
 - [`postEvent()`](#postevent) &mdash; Post an event to Piwik's event dispatcher which will execute the event's observers.
@@ -329,6 +330,19 @@ Checks that the current user has view access to at least one site.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have view access to any site.
+
+<a name="getloginpluginname" id="getloginpluginname"></a>
+<a name="getLoginPluginName" id="getLoginPluginName"></a>
+### `getLoginPluginName()`
+
+Returns the name of the Login plugin currently being used.
+
+Must be used since it is not allowed to hardcode 'Login' in URLs
+in case another Login plugin is being used.
+
+#### Signature
+
+- It returns a `string` value.
 
 <a name="redirecttomodule" id="redirecttomodule"></a>
 <a name="redirectToModule" id="redirectToModule"></a>

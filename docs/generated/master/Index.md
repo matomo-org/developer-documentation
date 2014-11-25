@@ -413,6 +413,7 @@ Index
 - [`getCurrentUserEmail()`](Piwik/Piwik.md#getcurrentuseremail) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`getCurrentUserLogin()`](Piwik/Piwik.md#getcurrentuserlogin) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`getCurrentUserTokenAuth()`](Piwik/Piwik.md#getcurrentusertokenauth) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
+- [`getLoginPluginName()`](Piwik/Piwik.md#getloginpluginname) &mdash; _Method in class_ [`Piwik`](Piwik/Piwik.md)
 - [`getInformation()`](Piwik/Plugin.md#getinformation) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getListHooksRegistered()`](Piwik/Plugin.md#getlisthooksregistered) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
 - [`getVersion()`](Piwik/Plugin.md#getversion) &mdash; _Method in class_ [`Plugin`](Piwik/Plugin.md)
