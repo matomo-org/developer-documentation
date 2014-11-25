@@ -1,7 +1,7 @@
 ---
 category: Develop
 subGuides:
-  - mvc-http-requests-handling
+  - http-requests-handling
   - mvc-models
   - mvc-views
   - mvc-controllers

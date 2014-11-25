@@ -1,7 +1,7 @@
 ---
 category: Integrate
 ---
-# Piwik API Tutorial: Get Your Top 10 Keywords
+# Reporting API Tutorial: Get your top 10 keywords
 
 This tutorial will show you how easy it is to request the **yesterday's top 10 keywords in XML format**.
 

@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# HTTP Request Handling
+# How Piwik Handles HTTP Requests
 
 Piwik's MVC (Model-View-Controller) implementation is the first bit of code that is executed when Piwik handles an HTTP request.
 
