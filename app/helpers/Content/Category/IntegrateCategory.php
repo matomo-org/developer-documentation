@@ -14,7 +14,7 @@ class IntegrateCategory extends Category
 {
     public function getName()
     {
-        return 'Integrate Piwik';
+        return 'Integrate';
     }
 
     public function getUrl()

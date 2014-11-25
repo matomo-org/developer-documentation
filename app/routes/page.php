@@ -14,7 +14,6 @@ use helpers\Content\Category\DesignCategory;
 use helpers\Content\Category\DevelopCategory;
 use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
-use helpers\Home;
 use helpers\Content\Category\IntegrateCategory;
 use helpers\Content\Category\ApiReferenceCategory;
 use helpers\Redirects;
@@ -30,17 +29,7 @@ function send404NotFound(Slim $app) {
 
 function initView($app)
 {
-    $path          = $app->request->getPath();
-    $activeSection = Home::getMenuItemByUrl($path);
-
-    $app->view->setData('menu', Home::getMainMenu());
-    $app->view->setData('path', $path);
     $app->view->setData('revision', Git::getCurrentShortRevision());
-
-    if (!empty($activeSection['title'])) {
-        $app->view->setData('activeCategory', $activeSection['title']);
-        $app->view->setData('activeMenu', $activeSection['title']);
-    }
 }
 
 function renderGuide(Slim $app, Guide $guide, Category $category)
@@ -67,7 +56,6 @@ foreach (Redirects::getRedirects() as $url => $redirect) {
 }
 
 $app->get('/', function () use ($app) {
-    $app->view->setData('home', Home::getMainMenu());
     $app->render('home.twig', ['isHome' => true]);
 });
 

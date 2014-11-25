@@ -1,13 +1,6 @@
 {% extends 'base.twig' %}
-{% from "macros.twig" import teaser_list %}
 
 {% block headline %}
-    <style type="text/css">
-        body {
-            padding-top: 40px;
-        }
-    </style>
-
     <div class="jumbotron">
         <div class="container">
             <h1>
@@ -20,12 +13,66 @@
             <p>Welcome to the Piwik Developer Zone, the center of innovation in analytics.</p>
         </div>
     </div>
+
+    <section class="jumbotron-categories">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>
+                        <i class="fa fa-plug"></i> Integrate
+                    </h2>
+                    <p>
+                        Track your application or access <br/> Piwik data using the HTTP API.
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-lg" href="/integration">Integrate Piwik</a>
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <h2>
+                        <i class="fa fa-code"></i> Develop
+                    </h2>
+                    <p>
+                        Extend and customize Piwik by <br/> contributing or developing plugins.
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-lg" href="/develop">Develop Piwik &amp; Plugins</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
 
 {% block content %}
     <div class="row">
-        {{ teaser_list(home) }}
+
+        <div class="col-sm-6 col-md-4">
+            <h2>
+                <span class="text-success">#</span>
+                <a href="/api-reference">API Reference</a>
+            </h2>
+            <p>Check out the low-level documentation for the HTTP, Javascript or PHP API.</p>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <h2>
+                <span class="text-success">#</span>
+                <a href="/changelog">Platform Changelog</a>
+            </h2>
+            <p>What has changed in the latest Piwik versions for the developers.</p>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <h2>
+                <span class="text-success">#</span>
+                <a href="/support">Community &amp; Support</a>
+            </h2>
+            <p>Get support or get involved with the developer community.</p>
+        </div>
+
     </div>
+    <hr>
 {% endblock %}
 
 {% block footer %}

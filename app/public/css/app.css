@@ -9,25 +9,23 @@ body {
     font-size: 15px;
     color: #404040;
 }
-
+h1, h2, h3, h4, h5, h6 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 code {
     color: #767575;
     background-color: #f5f5f5;
     border-radius: 0;
 }
-
-/* bootstrap overrides */
 pre {
     background-color:transparent;
     border-width: 0;
     padding:0;
 }
-
 pre > code {
     border-radius: 4px;
     padding: 9px;
 }
-
 p {
     margin: 0 0 15px;
 }
@@ -37,61 +35,9 @@ p {
     color: #2faadd;
 }
 
-.jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
-}
-
-.teaser-item {
-    margin-bottom: 40px;
-}
-
-.categorized-teaser-item {
-    margin-bottom: 10px;
-    margin-left: 24px;
-}
-
-.category-list > .container:nth-child(2) > .categorized-teaser-item {
-    margin-top: 32px;
-}
-
-.category-list > .container:last-child > .categorized-teaser-item {
-    margin-bottom: 48px;
-}
-
-.header-with-background {
-    background-color: #18bc9c;
-    margin-top:-28px;
-}
-
-.header-with-background h1 {
-    color:white;
-    font-size:60px;
-    font-weight:bold;
-    padding: 15px 0;
-}
-
-.header-with-background .page-header {
-    border-bottom-width:0px;
-}
-
 .social-footer {
     text-align: center;
     margin-top: 40px;
-}
-
-#sidebar .panel-title a {
-    word-wrap: break-word;
-}
-
-.teaser-category-group-title {
-    background-color: #ecf0f1;
-}
-
-.teaser-category-group-title h2 {
-    line-height: 1.8em;
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
 .btn-piwik:hover {
@@ -208,10 +154,6 @@ p {
         width:256px;
     }
 }
-@media (min-width: 992px) {
-}
-@media (max-width: 992px) {
-}
 
 .alert {
     margin-top:15px 1.5em 0 1.5em;
@@ -227,11 +169,11 @@ p {
 }
 
 .guide-nav-prev {
-  float:left;
+    float:left;
 }
 
 .guide-nav-next {
-  float:right;
+    float:right;
 }
 
 h2[id]:before, h3[id]:before {
@@ -280,4 +222,31 @@ footer {
         padding-left: 10px;
         padding-right: 10px;
     }
+}
+
+
+/* Home page */
+.jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-top: -40px;
+    margin-bottom: 0;
+}
+.jumbotron-categories {
+    background: #0F3D57;
+    padding: 50px 0;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.jumbotron-categories h2 {
+    font-size: 62px;
+    line-height: 78px;
+}
+.jumbotron-categories p {
+    font-weight: 300;
+    font-size: 17px;
+}
+.jumbotron-categories li a {
+    color: #91aabf;
 }

@@ -29,14 +29,22 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li {% if isHome is defined and isHome %} class="active"{% endif %}><a href="/">Home</a></li>
-                {% for item in menu %}
-                    {% if item.menuTitle %}
-                        <li {% if activeMenu == item.title %} class="active"{% endif %}>
-                            <a href="{{ item.url }}">{{ item.menuTitle }}</a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
+                <li {% if isHome %}class="active"{% endif %}><a href="/">Home</a></li>
+                <li {% if activeMenu == 'Integrate' %}class="active"{% endif %}>
+                    <a href="/integration">Integrate</a>
+                </li>
+                <li {% if activeMenu == 'Develop' %}class="active"{% endif %}>
+                    <a href="/develop">Develop</a>
+                </li>
+                <li {% if activeMenu == 'API Reference' %}class="active"{% endif %}>
+                    <a href="/api-reference">API Reference</a>
+                </li>
+                <li {% if activeMenu == 'Changelog' %}class="active"{% endif %}>
+                    <a href="/changelog">Changelog</a>
+                </li>
+                <li {% if activeMenu == 'Support' %}class="active"{% endif %}>
+                    <a href="/support">Support</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav pull-right">
                 <li>
