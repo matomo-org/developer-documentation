@@ -83,13 +83,28 @@
         </div>
 
         <div class="col-md-9 documentation">
+
             {{ guide.renderedContent|raw }}
+
+            {% if guide.subItems is not empty %}
+                <h2>What's next?</h2>
+
+                <ul>
+                    {% for subItem in guide.subItems %}
+                        <li>
+                            <a href="{{ subItem.menuUrl }}"> {{ subItem.menuTitle }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
             {% if guide.previous or guide.next %}
                 <div class="guide-navigation">
                     {% if guide.previous %}<a class="guide-nav-prev" href="{{ guide.previous }}">&laquo; Previous</a>{% endif %}
                     {% if guide.next %}<a class="guide-nav-next" href="{{ guide.next }}">Next &raquo;</a>{% endif %}
                 </div>
             {% endif %}
+
         </div>
 
     </div>
