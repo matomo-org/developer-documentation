@@ -59,31 +59,11 @@ Returns a configuration value or section by name.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$name` (`string`) &mdash;
+       The value or section name.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The value or section name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`array`) &mdash;
-    <div markdown="1" class="param-desc">The requested value requested. Returned by reference.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string`|`array` &mdash;
+    The requested value requested. Returned by reference.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the value requested not found in either `config.ini.php` or `global.ini.php`.
 
@@ -96,29 +76,10 @@ Sets a configuration value or section.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> This section name or value name to set.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value` (`mixed`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       This section name or value name to set.
+    - `$value` (`mixed`) &mdash;
+      
 - It does not return anything.
 
 <a name="forcesave" id="forcesave"></a>

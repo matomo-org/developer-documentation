@@ -24,28 +24,9 @@ has been posted and has not been closed/removed, it will be replaced with `$noti
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$id` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> A unique identifier for this notification. The ID must be a valid HTML element ID. It can only contain alphanumeric characters (underscores can be used).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$notification` ([`Notification`](../../Piwik/Notification.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The notification to post.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$id` (`string`) &mdash;
+       A unique identifier for this notification. The ID must be a valid HTML element ID. It can only contain alphanumeric characters (underscores can be used).
+    - `$notification` ([`Notification`](../../Piwik/Notification.md)) &mdash;
+       The notification to post.
 - It does not return anything.
 

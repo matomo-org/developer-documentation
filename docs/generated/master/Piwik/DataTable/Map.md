@@ -51,17 +51,8 @@ This label is used by DataTable Renderers (it becomes a column name or the XML d
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">eg, `'idSite'`, `'period'`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    eg, `'idSite'`, `'period'`
 
 <a name="setkeyname" id="setkeyname"></a>
 <a name="setKeyName" id="setKeyName"></a>
@@ -74,19 +65,8 @@ See [getKeyName()](/api-reference/Piwik/DataTable/Map#getkeyname).
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+      
 - It does not return anything.
 
 <a name="getrowscount" id="getrowscount"></a>
@@ -110,29 +90,10 @@ See [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter) for m
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
-
-      <div markdown="1" class="param-desc"> Filter name, eg. `'Limit'` or a Closure.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$parameters` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Filter parameters, eg. `array(50, 10)`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+       Filter name, eg. `'Limit'` or a Closure.
+    - `$parameters` (`array`) &mdash;
+       Filter parameters, eg. `array(50, 10)`.
 - It does not return anything.
 
 <a name="applyqueuedfilters" id="applyqueuedfilters"></a>
@@ -154,29 +115,10 @@ Apply a filter to all tables contained by this instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
-
-      <div markdown="1" class="param-desc"> Name of filter class or a Closure.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$parameters` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Parameters to pass to the filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+       Name of filter class or a Closure.
+    - `$parameters` (`array`) &mdash;
+       Parameters to pass to the filter.
 - It does not return anything.
 
 <a name="getdatatables" id="getdatatables"></a>
@@ -188,17 +130,8 @@ Returns the array of DataTables contained by this class.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`DataTable[]`](../../Piwik/DataTable.md)|[`Map[]`](../../Piwik/DataTable/Map.md)) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`DataTable[]`](../../Piwik/DataTable.md)|[`Map[]`](../../Piwik/DataTable/Map.md) &mdash;
+    
 
 <a name="gettable" id="gettable"></a>
 <a name="getTable" id="getTable"></a>
@@ -209,31 +142,11 @@ Returns the table with the specific label.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$label` (`string`) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$label` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md) &mdash;
+    
 
 <a name="getfirstrow" id="getfirstrow"></a>
 <a name="getFirstRow" id="getFirstRow"></a>
@@ -244,17 +157,8 @@ Returns the first element in the Map's array.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`Piwik\DataTable\false`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`Piwik\DataTable\false` &mdash;
+    
 
 <a name="getlastrow" id="getlastrow"></a>
 <a name="getLastRow" id="getLastRow"></a>
@@ -265,17 +169,8 @@ Returns the last element in the Map's array.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`Piwik\DataTable\false`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`Piwik\DataTable\false` &mdash;
+    
 
 <a name="addtable" id="addtable"></a>
 <a name="addTable" id="addTable"></a>
@@ -286,29 +181,10 @@ Adds a new DataTable or Map instance to this DataTable\Map.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$label` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Label used to index this table in the array.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)) &mdash;
+      
+    - `$label` (`string`) &mdash;
+       Label used to index this table in the array.
 - It does not return anything.
 
 <a name="__tostring" id="__tostring"></a>
@@ -342,29 +218,10 @@ See DataTable::renameColumn().
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$oldName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$newName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$oldName` (`string`) &mdash;
+      
+    - `$newName` (`string`) &mdash;
+      
 - It does not return anything.
 
 <a name="deletecolumns" id="deletecolumns"></a>
@@ -378,29 +235,10 @@ See DataTable::deleteColumns().
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columns` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The columns to delete.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$deleteRecursiveInSubtables` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> This param is currently not used.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$columns` (`array`) &mdash;
+       The columns to delete.
+    - `$deleteRecursiveInSubtables` (`bool`) &mdash;
+       This param is currently not used.
 - It does not return anything.
 
 <a name="deleterow" id="deleterow"></a>
@@ -412,19 +250,8 @@ Deletes a table from the array of DataTables.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$id` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The label associated with DataTable.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$id` (`string`) &mdash;
+       The label associated with DataTable.
 - It does not return anything.
 
 <a name="deletecolumn" id="deletecolumn"></a>
@@ -440,19 +267,8 @@ Deletes the given column in every contained DataTable.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+      
 - It does not return anything.
 
 <a name="getcolumn" id="getcolumn"></a>
@@ -464,19 +280,8 @@ Returns the array containing all column values in all contained DataTables for t
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The column name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       The column name.
 - It returns a `array` value.
 
 <a name="mergechildren" id="mergechildren"></a>
@@ -535,17 +340,8 @@ Note: This DataTable/Map will be destroyed and will be no longer usable after th
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md) &mdash;
+    
 
 <a name="adddatatable" id="adddatatable"></a>
 <a name="addDataTable" id="addDataTable"></a>
@@ -560,19 +356,8 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable).
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$tableToSum` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$tableToSum` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="mergesubtables" id="mergesubtables"></a>
@@ -606,19 +391,8 @@ Returns the intersection of children's metadata arrays (what they all have in co
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The metadata name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       The metadata name.
 - It returns a `mixed` value.
 
 <a name="getcolumns" id="getcolumns"></a>

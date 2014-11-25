@@ -40,31 +40,11 @@ Privileges will be rescinded even if an exception is thrown.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$function` (`Piwik\callback`) &mdash;
+       The callback to execute. Should accept no arguments.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$function` (`Piwik\callback`) &mdash;
-
-      <div markdown="1" class="param-desc"> The callback to execute. Should accept no arguments.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">The result of `$function`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed` &mdash;
+    The result of `$function`.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; rethrows any exceptions thrown by `$function`.
 

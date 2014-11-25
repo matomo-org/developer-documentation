@@ -46,29 +46,10 @@ The class defines the following methods:
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period` (`Piwik\$period`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date` (`Piwik\$date`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$period` (`Piwik\$period`) &mdash;
+      
+    - `$date` (`Piwik\$date`) &mdash;
+      
 - It returns a [`Period`](../../Piwik/Period.md) value.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
@@ -89,29 +70,10 @@ etc.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dateString`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$dateString`
+      
+    - `$period`
+      
 - It returns a `boolean` value.
 
 <a name="getdatestart" id="getdatestart"></a>
@@ -135,17 +97,8 @@ Returns the end date of the period.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`null`|[`Date`](../../Piwik/Date.md)) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `null`|[`Date`](../../Piwik/Date.md) &mdash;
+    
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
@@ -156,17 +109,8 @@ Returns the period ID.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">A unique integer for this type of period.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    A unique integer for this type of period.
 
 <a name="getlabel" id="getlabel"></a>
 <a name="getLabel" id="getLabel"></a>
@@ -177,17 +121,8 @@ Returns the label for the current period.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">`"day"`, `"week"`, `"month"`, `"year"`, `"range"`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    `"day"`, `"week"`, `"month"`, `"year"`, `"range"`
 
 <a name="getnumberofsubperiods" id="getnumberofsubperiods"></a>
 <a name="getNumberOfSubperiods" id="getNumberOfSubperiods"></a>
@@ -221,31 +156,11 @@ Returns a list of strings representing the current period.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$format` (`string`) &mdash;
+       The format of each individual day.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$format` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The format of each individual day.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">An array of string dates that this period consists of.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    An array of string dates that this period consists of.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -296,17 +211,8 @@ Returns the date range string comprising two dates
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">eg, `'2012-01-01,2012-01-31'`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    eg, `'2012-01-01,2012-01-31'`.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -317,49 +223,14 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$strPeriod` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The type of period each subperiod is. Either `'day'`, `'week'`, `'month'` or `'year'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$strDate` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The date range, eg, `'2007-07-24,2013-11-15'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$timezone` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The timezone to use, eg, `'UTC'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$today` (`bool`|[`Date`](../../Piwik/Date.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The date to use as _today_. Defaults to `Date::factory('today', $timzeone)`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$strPeriod` (`string`) &mdash;
+       The type of period each subperiod is. Either `'day'`, `'week'`, `'month'` or `'year'`.
+    - `$strDate` (`string`) &mdash;
+       The date range, eg, `'2007-07-24,2013-11-15'`.
+    - `$timezone` (`string`) &mdash;
+       The timezone to use, eg, `'UTC'`.
+    - `$today` (`bool`|[`Date`](../../Piwik/Date.md)) &mdash;
+       The date to use as _today_. Defaults to `Date::factory('today', $timzeone)`.
 
 <a name="setdefaultenddate" id="setdefaultenddate"></a>
 <a name="setDefaultEndDate" id="setDefaultEndDate"></a>
@@ -370,19 +241,8 @@ Sets the default end date of the period.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$oDate` ([`Date`](../../Piwik/Date.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$oDate` ([`Date`](../../Piwik/Date.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="parsedaterange" id="parsedaterange"></a>
@@ -394,31 +254,11 @@ Given a date string, returns `false` if not a date range, or returns the array c
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$dateString` (`string`) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dateString` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">array(1 => dateStartString, 2 => dateEndString) or `false` if the input was not a date range.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed` &mdash;
+    array(1 => dateStartString, 2 => dateEndString) or `false` if the input was not a date range.
 
 <a name="getlastdate" id="getlastdate"></a>
 <a name="getLastDate" id="getLastDate"></a>
@@ -429,41 +269,13 @@ Returns the date that is one period before the supplied date.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$date` (`bool`|`string`) &mdash;
+       The date to get the last date of.
+    - `$period` (`bool`|`string`) &mdash;
+       The period to use (either 'day', 'week', 'month', 'year');
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date` (`bool`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The date to get the last date of.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period` (`bool`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The period to use (either 'day', 'week', 'month', 'year');</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">An array with two elements, a string for the date before $date and a Period instance for the period before $date.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    An array with two elements, a string for the date before $date and a Period instance for the period before $date.
 
 <a name="getdatexperiodsago" id="getdatexperiodsago"></a>
 <a name="getDateXPeriodsAgo" id="getDateXPeriodsAgo"></a>
@@ -474,51 +286,15 @@ Returns the date that is X periods before the supplied date.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$subXPeriods`
+      
+    - `$date`
+      
+    - `$period`
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$subXPeriods`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">An array with two elements, a string for the date before $date and a Period instance for the period before $date.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    An array with two elements, a string for the date before $date and a Period instance for the period before $date.
 
 <a name="getrelativetoenddate" id="getrelativetoenddate"></a>
 <a name="getRelativeToEndDate" id="getRelativeToEndDate"></a>
@@ -529,59 +305,15 @@ Returns a date range string given a period type, end date and number of periods 
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$period` (`string`) &mdash;
+       The sub period type, `'day'`, `'week'`, `'month'` and `'year'`.
+    - `$lastN` (`int`) &mdash;
+       The number of periods of type `$period` that the result range should span.
+    - `$endDate` (`string`) &mdash;
+       The desired end date of the range.
+    - `$site` ([`Site`](../../Piwik/Site.md)) &mdash;
+       The site whose timezone should be used.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The sub period type, `'day'`, `'week'`, `'month'` and `'year'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$lastN` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The number of periods of type `$period` that the result range should span.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$endDate` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The desired end date of the range.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$site` ([`Site`](../../Piwik/Site.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The site whose timezone should be used.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The date range string, eg, `'2012-01-02,2013-01-02'`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The date range string, eg, `'2012-01-02,2013-01-02'`.
 

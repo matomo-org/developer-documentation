@@ -76,19 +76,8 @@ forwarded to request array before it is returned.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$request` (`string`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The base request string or array, eg, `'module=UserSettings&action=getWidescreen'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$request` (`string`|`array`) &mdash;
+       The base request string or array, eg, `'module=UserSettings&action=getWidescreen'`.
 - It returns a `array` value.
 
 <a name="__construct" id="__construct"></a>
@@ -100,19 +89,8 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$request` (`string`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Query string that defines the API call (must at least contain a **method** parameter), eg, `'method=UserSettings.getWideScreen&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the values in the `$_GET` and `$_POST` superglobals.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$request` (`string`|`array`) &mdash;
+       Query string that defines the API call (must at least contain a **method** parameter), eg, `'method=UserSettings.getWideScreen&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the values in the `$_GET` and `$_POST` superglobals.
 
 <a name="process" id="process"></a>
 <a name="process" id="process"></a>
@@ -136,17 +114,8 @@ object.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`DataTable`](../../Piwik/DataTable.md)|`Piwik\API\Map`|`string`) &mdash;
-    <div markdown="1" class="param-desc">The data resulting from the API call.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|`Piwik\API\Map`|`string` &mdash;
+    The data resulting from the API call.
 - It throws one of the following exceptions:
     - `PluginDeactivatedException` &mdash; if the module plugin is not activated.
     - [`Exception`](http://php.net/class.Exception) &mdash; if the requested API method cannot be called, if required parameters for the API method are missing or if the API method throws an exception and the **format** query parameter is **original**.
@@ -160,31 +129,11 @@ Returns the name of a plugin's API class by plugin name.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$plugin` (`string`) &mdash;
+       The plugin name, eg, `'Referrers'`.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$plugin` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The plugin name, eg, `'Referrers'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The fully qualified API class name, eg, `'\Piwik\Plugins\Referrers\API'`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The fully qualified API class name, eg, `'\Piwik\Plugins\Referrers\API'`.
 
 <a name="processrequest" id="processrequest"></a>
 <a name="processRequest" id="processRequest"></a>
@@ -195,41 +144,13 @@ Helper method that processes an API request in one line using the variables in `
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$method` (`string`) &mdash;
+       The API method to call, ie, `'Actions.getPageTitles'`.
+    - `$paramOverride` (`array`) &mdash;
+       The parameter name-value pairs to use instead of what's in `$_GET` & `$_POST`.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$method` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The API method to call, ie, `'Actions.getPageTitles'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$paramOverride` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The parameter name-value pairs to use instead of what's in `$_GET` & `$_POST`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">The result of the API request. See [process()](/api-reference/Piwik/API/Request#process).</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed` &mdash;
+    The result of the API request. See [process()](/api-reference/Piwik/API/Request#process).
 
 <a name="getrequestparametersget" id="getrequestparametersget"></a>
 <a name="getRequestParametersGET" id="getRequestParametersGET"></a>
@@ -253,39 +174,12 @@ Returns the URL for the current requested report w/o any filter parameters.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$module` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The API module.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$action` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The API action.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$queryParams` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Query parameter overrides.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$module` (`string`) &mdash;
+       The API module.
+    - `$action` (`string`) &mdash;
+       The API action.
+    - `$queryParams` (`array`) &mdash;
+       Query parameter overrides.
 - It returns a `string` value.
 
 <a name="getcurrenturlwithoutgenericfilters" id="getcurrenturlwithoutgenericfilters"></a>
@@ -297,19 +191,8 @@ Returns the current URL without generic filter query parameters.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$params` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Query parameter values to override in the new URL.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$params` (`array`) &mdash;
+       Query parameter values to override in the new URL.
 - It returns a `string` value.
 
 <a name="shouldloadflatten" id="shouldloadflatten"></a>
@@ -329,15 +212,6 @@ Returns the segment query parameter from the original request, without modificat
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`|`bool`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array`|`bool` &mdash;
+    
 

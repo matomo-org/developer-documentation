@@ -27,8 +27,7 @@ Constants
 
 This class defines the following constants:
 
-- [`TYPE_DIMENSION`](#type_dimension) &mdash; Segment type 'dimension'.
-- [`TYPE_METRIC`](#type_metric) &mdash; Segment type 'metric'.
+- [`TYPE_DIMENSION`](#type_dimension) — Segment type 'dimension'.- [`TYPE_METRIC`](#type_metric) — Segment type 'metric'.
 <a name="type_dimension" id="type_dimension"></a>
 <a name="TYPE_DIMENSION" id="TYPE_DIMENSION"></a>
 ### `TYPE_DIMENSION`
@@ -83,19 +82,8 @@ this as well. For example "Any URL including protocol. The URL must be URL encod
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$acceptedValues` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$acceptedValues` (`string`) &mdash;
+      
 - It does not return anything.
 
 <a name="setcategory" id="setcategory"></a>
@@ -110,19 +98,8 @@ or 'General_Visit'.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$category` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$category` (`string`) &mdash;
+      
 - It does not return anything.
 
 <a name="setname" id="setname"></a>
@@ -137,19 +114,8 @@ translation key such as 'Actions_ColumnEntryPageTitle' or 'UserSettings_ColumnRe
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+      
 - It does not return anything.
 
 <a name="setsegment" id="setsegment"></a>
@@ -165,19 +131,8 @@ you need to set "&segment=searches>0" in the UI.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$segment` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$segment` (`string`) &mdash;
+      
 - It does not return anything.
 
 <a name="setsqlfilter" id="setsqlfilter"></a>
@@ -196,19 +151,8 @@ or callable: `string $valueToMatch`, `string $segment` (see [setSegment()](/api-
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$sqlFilter` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$sqlFilter` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+      
 - It does not return anything.
 
 <a name="setsqlfiltervalue" id="setsqlfiltervalue"></a>
@@ -225,19 +169,8 @@ segment. This callback is called shortly before [setSqlFilter()](/api-reference/
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$sqlFilterValue` (`string`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$sqlFilterValue` (`string`|`array`) &mdash;
+      
 - It does not return anything.
 
 <a name="setsqlsegment" id="setsqlsegment"></a>
@@ -252,19 +185,8 @@ Eg
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$sqlSegment` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$sqlSegment` (`string`) &mdash;
+      
 - It does not return anything.
 
 <a name="settype" id="settype"></a>
@@ -276,19 +198,8 @@ Set (overwrite) the type of this segment which is usually either a 'dimension' o
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$type` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> See constansts TYPE_*</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$type` (`string`) &mdash;
+       See constansts TYPE_*
 - It does not return anything.
 
 <a name="getsegment" id="getsegment"></a>
@@ -310,19 +221,8 @@ Set callback which will be executed when user will call for suggested values for
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$suggestedValuesCallback` (`callable`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$suggestedValuesCallback` (`callable`) &mdash;
+      
 - It does not return anything.
 
 <a name="setpermission" id="setpermission"></a>
@@ -338,18 +238,7 @@ a certain segment only available to users having super user access you could do 
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$permission` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$permission` (`bool`) &mdash;
+      
 - It does not return anything.
 

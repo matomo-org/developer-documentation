@@ -62,29 +62,10 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$segmentCondition` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The segment condition, eg, `'browserCode=ff;countryCode=CA'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$idSites` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The list of sites the segment will be used with. Some segments are dependent on the site, such as goal segments.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$segmentCondition` (`string`) &mdash;
+       The segment condition, eg, `'browserCode=ff;countryCode=CA'`.
+    - `$idSites` (`array`) &mdash;
+       The list of sites the segment will be used with. Some segments are dependent on the site, such as goal segments.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -127,81 +108,21 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$select` (`string`) &mdash;
+       The select clause. Should NOT include the **SELECT** just the columns, eg, `'t1.col1 as col1, t2.col2 as col2'`.
+    - `$from` (`array`) &mdash;
+       Array of table names (without prefix), eg, `array('log_visit', 'log_conversion')`.
+    - `$where` (`Piwik\false`|`string`) &mdash;
+       (optional) Where clause, eg, `'t1.col1 = ? AND t2.col2 = ?'`.
+    - `$bind` (`array`|`string`) &mdash;
+       (optional) Bind parameters, eg, `array($col1Value, $col2Value)`.
+    - `$orderBy` (`Piwik\false`|`string`) &mdash;
+       (optional) Order by clause, eg, `"t1.col1 ASC"`.
+    - `$groupBy` (`Piwik\false`|`string`) &mdash;
+       (optional) Group by clause, eg, `"t2.col2"`.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$select` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The select clause. Should NOT include the **SELECT** just the columns, eg, `'t1.col1 as col1, t2.col2 as col2'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$from` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Array of table names (without prefix), eg, `array('log_visit', 'log_conversion')`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$where` (`Piwik\false`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> (optional) Where clause, eg, `'t1.col1 = ? AND t2.col2 = ?'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$bind` (`array`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> (optional) Bind parameters, eg, `array($col1Value, $col2Value)`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$orderBy` (`Piwik\false`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> (optional) Order by clause, eg, `"t1.col1 ASC"`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$groupBy` (`Piwik\false`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> (optional) Group by clause, eg, `"t2.col2"`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The entire select query.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The entire select query.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>

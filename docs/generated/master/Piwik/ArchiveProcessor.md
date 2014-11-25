@@ -100,81 +100,21 @@ DataTables are summed recursively so subtables will be summed as well.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$recordNames` (`string`|`array`) &mdash;
+       Name(s) of the report we are aggregating, eg, `'Referrers_type'`.
+    - `$maximumRowsInDataTableLevelZero` (`int`) &mdash;
+       Maximum number of rows allowed in the top level DataTable.
+    - `$maximumRowsInSubDataTable` (`int`) &mdash;
+       Maximum number of rows allowed in each subtable.
+    - `$columnToSortByBeforeTruncation` (`string`) &mdash;
+       The name of the column to sort by before truncating a DataTable.
+    - `$columnsAggregationOperation` (`array`) &mdash;
+       Operations for aggregating columns, see Row::sumRow().
+    - `$columnsToRenameAfterAggregation` (`array`) &mdash;
+       Columns mapped to new names for columns that must change names when summed because they cannot be summed, eg, `array('nb_uniq_visitors' => 'sum_daily_nb_uniq_visitors')`.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$recordNames` (`string`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Name(s) of the report we are aggregating, eg, `'Referrers_type'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$maximumRowsInDataTableLevelZero` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> Maximum number of rows allowed in the top level DataTable.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$maximumRowsInSubDataTable` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> Maximum number of rows allowed in each subtable.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnToSortByBeforeTruncation` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the column to sort by before truncating a DataTable.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnsAggregationOperation` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Operations for aggregating columns, see Row::sumRow().</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnsToRenameAfterAggregation` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Columns mapped to new names for columns that must change names when summed because they cannot be summed, eg, `array('nb_uniq_visitors' => 'sum_daily_nb_uniq_visitors')`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Returns the row counts of each aggregated report before truncation, eg, array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... )</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    Returns the row counts of each aggregated report before truncation, eg, array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... )
 
 <a name="aggregatenumericmetrics" id="aggregatenumericmetrics"></a>
 <a name="aggregateNumericMetrics" id="aggregateNumericMetrics"></a>
@@ -185,41 +125,13 @@ Aggregates one or more metrics for every subperiod of the current period and ins
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$columns` (`array`|`string`) &mdash;
+       Array of metric names to aggregate.
+    - `$operationToApply` (`bool`|`string`) &mdash;
+       The operation to apply to the metric. Either `'sum'`, `'max'` or `'min'`.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columns` (`array`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Array of metric names to aggregate.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$operationToApply` (`bool`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The operation to apply to the metric. Either `'sum'`, `'max'` or `'min'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`|`int`) &mdash;
-    <div markdown="1" class="param-desc">Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, array( 'nb_visits' => 3040, 'nb_hits' => 405 ) could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array`|`int` &mdash;
+    Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, array( 'nb_visits' => 3040, 'nb_hits' => 405 ) could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.
 
 <a name="insertnumericrecords" id="insertnumericrecords"></a>
 <a name="insertNumericRecords" id="insertNumericRecords"></a>
@@ -230,19 +142,8 @@ Caches multiple numeric records in the archive for this processor's site, period
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$numericRecords` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> A name-value mapping of numeric values that should be archived, eg, array('Referrers_distinctKeywords' => 23, 'Referrers_distinctCampaigns' => 234)</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$numericRecords` (`array`) &mdash;
+       A name-value mapping of numeric values that should be archived, eg, array('Referrers_distinctKeywords' => 23, 'Referrers_distinctCampaigns' => 234)
 - It does not return anything.
 
 <a name="insertnumericrecord" id="insertnumericrecord"></a>
@@ -256,29 +157,10 @@ Numeric values are not inserted if they equal `0`.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the numeric value, eg, `'Referrers_distinctKeywords'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value` (`float`) &mdash;
-
-      <div markdown="1" class="param-desc"> The numeric value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       The name of the numeric value, eg, `'Referrers_distinctKeywords'`.
+    - `$value` (`float`) &mdash;
+       The numeric value.
 - It does not return anything.
 
 <a name="insertblobrecord" id="insertblobrecord"></a>
@@ -290,28 +172,9 @@ Caches one or more blob records in the archive for this processor's site, period
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the record, eg, 'Referrers_type'.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$values` (`string`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> A blob string or an array of blob strings. If an array is used, the first element in the array will be inserted with the `$name` name. The others will be inserted with `$name . '_' . $index` as the record name (where $index is the index of the blob record in `$values`).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       The name of the record, eg, 'Referrers_type'.
+    - `$values` (`string`|`array`) &mdash;
+       A blob string or an array of blob strings. If an array is used, the first element in the array will be inserted with the `$name` name. The others will be inserted with `$name . '_' . $index` as the record name (where $index is the index of the blob record in `$values`).
 - It does not return anything.
 

@@ -97,19 +97,8 @@ The class defines the following methods:
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnIdRaw`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$columnIdRaw`
+      
 - It does not return anything.
 
 <a name="getmetricidstoprocessreporttotal" id="getmetricidstoprocessreporttotal"></a>

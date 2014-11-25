@@ -105,19 +105,8 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$templateFile` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The template file to load. Must be in the following format: `"@MyPlugin/templateFileName"`. Note the absence of .twig from the end of the name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$templateFile` (`string`) &mdash;
+       The template file to load. Must be in the following format: `"@MyPlugin/templateFileName"`. Note the absence of .twig from the end of the name.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>
@@ -138,19 +127,8 @@ Returns the variables to bind to the template when rendering.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$override` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Template variable override values. Mainly useful when including View templates in other templates.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$override` (`array`) &mdash;
+       Template variable override values. Mainly useful when including View templates in other templates.
 - It returns a `array` value.
 
 <a name="__set" id="__set"></a>
@@ -164,29 +142,10 @@ Variable names may not be prefixed with '_'.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$key` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The variable name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$val` (`mixed`) &mdash;
-
-      <div markdown="1" class="param-desc"> The variable value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$key` (`string`) &mdash;
+       The variable name.
+    - `$val` (`mixed`) &mdash;
+       The variable value.
 - It does not return anything.
 
 <a name="__get" id="__get"></a>
@@ -200,31 +159,11 @@ Variable names may not be prefixed with '_'.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$key` (`string`) &mdash;
+       The variable name.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$key` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The variable name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">The variable value.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed` &mdash;
+    The variable value.
 
 <a name="__isset" id="__isset"></a>
 <a name="__isset" id="__isset"></a>
@@ -235,19 +174,8 @@ Returns true if a template variable has been set or not.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`Piwik\$name`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the template variable.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`Piwik\$name`) &mdash;
+       The name of the template variable.
 - It returns a `bool` value.
 
 <a name="render" id="render"></a>
@@ -262,17 +190,8 @@ See [setContentType()](/api-reference/Piwik/View#setcontenttype).
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">Generated template.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    Generated template.
 
 <a name="setcontenttype" id="setcontenttype"></a>
 <a name="setContentType" id="setContentType"></a>
@@ -286,19 +205,8 @@ set just before rendering.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$contentType` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$contentType` (`string`) &mdash;
+      
 - It does not return anything.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
@@ -316,19 +224,8 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$option` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> ('deny' or 'sameorigin')</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$option` (`string`) &mdash;
+       ('deny' or 'sameorigin')
 - It does not return anything.
 
 <a name="singlereport" id="singlereport"></a>
@@ -343,39 +240,11 @@ a new template.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$title` (`string`) &mdash;
+       The report title.
+    - `$reportHtml` (`string`) &mdash;
+       The report body HTML.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$title` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The report title.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$reportHtml` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The report body HTML.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`void`) &mdash;
-    <div markdown="1" class="param-desc">The report contents if `$fetch` is true.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string`|`void` &mdash;
+    The report contents if `$fetch` is true.
 

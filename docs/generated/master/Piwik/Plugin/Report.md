@@ -308,19 +308,8 @@ default request config. For instance you can change how many rows are displayed 
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="render" id="render"></a>
@@ -350,19 +339,8 @@ the way the widget is added or modify any other behavior you can overwrite this 
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$widget` ([`WidgetsList`](../../Piwik/WidgetsList.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$widget` ([`WidgetsList`](../../Piwik/WidgetsList.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="configurereportingmenu" id="configurereportingmenu"></a>
@@ -378,19 +356,8 @@ in case you need to add additional url properties beside module and action which
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$menu` ([`MenuReporting`](../../Piwik/Menu/MenuReporting.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$menu` ([`MenuReporting`](../../Piwik/Menu/MenuReporting.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="getmetrics" id="getmetrics"></a>
@@ -459,29 +426,10 @@ the current requested date, period and site.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$availableReports` (`Piwik\Plugin\$availableReports`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$infos` (`Piwik\Plugin\$infos`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$availableReports` (`Piwik\Plugin\$availableReports`) &mdash;
+      
+    - `$infos` (`Piwik\Plugin\$infos`) &mdash;
+      
 - It does not return anything.
 
 <a name="getrelatedreports" id="getrelatedreports"></a>
@@ -506,17 +454,8 @@ Returns the Dimension instance of this report's subtable report.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Dimension`](../../Piwik/Columns/Dimension.md)|`null`) &mdash;
-    <div markdown="1" class="param-desc">The subtable report's dimension or null if there is subtable report or no dimension for the subtable report.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
+    The subtable report's dimension or null if there is subtable report or no dimension for the subtable report.
 
 <a name="issubtablereport" id="issubtablereport"></a>
 <a name="isSubtableReport" id="isSubtableReport"></a>
@@ -537,19 +476,8 @@ Fetches the report represented by this instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$paramOverride` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Query parameter overrides.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$paramOverride` (`array`) &mdash;
+       Query parameter overrides.
 - It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="fetchsubtable" id="fetchsubtable"></a>
@@ -561,29 +489,10 @@ Fetches a subtable for the report represented by this instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$idSubtable` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The subtable ID.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$paramOverride` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Query parameter overrides.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$idSubtable` (`int`) &mdash;
+       The subtable ID.
+    - `$paramOverride` (`array`) &mdash;
+       Query parameter overrides.
 - It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="factory" id="factory"></a>
@@ -595,41 +504,13 @@ Get an instance of a specific report belonging to the given module and having th
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$module` (`string`) &mdash;
+      
+    - `$action` (`string`) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$module` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$action` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`null`|[`Report`](../../Piwik/Plugin/Report.md)) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `null`|[`Report`](../../Piwik/Plugin/Report.md) &mdash;
+    
 
 <a name="getallreports" id="getallreports"></a>
 <a name="getAllReports" id="getAllReports"></a>
@@ -653,29 +534,9 @@ Finds a top level report that provides stats for a specific Dimension.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$dimension` ([`Dimension`](../../Piwik/Columns/Dimension.md)) &mdash;
+       The dimension whose report we're looking for.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dimension` ([`Dimension`](../../Piwik/Columns/Dimension.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The dimension whose report we're looking for.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Report`](../../Piwik/Plugin/Report.md)|`null`) &mdash;
-    <div markdown="1" class="param-desc">The</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Report`](../../Piwik/Plugin/Report.md)|`null` &mdash;
+    The
 

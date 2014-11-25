@@ -825,19 +825,8 @@ to learn more.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$propertyNames` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> List of property names, eg, `array('show_limit_control', 'show_goals')`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$propertyNames` (`array`) &mdash;
+       List of property names, eg, `array('show_limit_control', 'show_goals')`.
 - It does not return anything.
 
 <a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
@@ -852,19 +841,8 @@ learn more.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$propertyNames` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> List of property names, eg, `array('show_limit_control', 'show_goals')`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$propertyNames` (`array`) &mdash;
+       List of property names, eg, `array('show_limit_control', 'show_goals')`.
 - It does not return anything.
 
 <a name="getproperties" id="getproperties"></a>
@@ -879,17 +857,8 @@ by name.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">eg, `array('show_limit_control' => 0, 'show_goals' => 1, ...)`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    eg, `array('show_limit_control' => 0, 'show_goals' => 1, ...)`
 
 <a name="addrelatedreport" id="addrelatedreport"></a>
 <a name="addRelatedReport" id="addRelatedReport"></a>
@@ -904,39 +873,12 @@ report list.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$relatedReport` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The plugin and method of the report, eg, `'UserSettings.getBrowser'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$title` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The report's display name, eg, `'Browsers'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$queryParams` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Any extra query parameters to set in releated report's URL, eg, `array('idGoal' => 'ecommerceOrder')`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$relatedReport` (`string`) &mdash;
+       The plugin and method of the report, eg, `'UserSettings.getBrowser'`.
+    - `$title` (`string`) &mdash;
+       The report's display name, eg, `'Browsers'`.
+    - `$queryParams` (`array`) &mdash;
+       Any extra query parameters to set in releated report's URL, eg, `array('idGoal' => 'ecommerceOrder')`.
 - It does not return anything.
 
 <a name="addrelatedreports" id="addrelatedreports"></a>
@@ -955,19 +897,8 @@ use [addRelatedReport()](/api-reference/Piwik/ViewDataTable/Config#addrelatedrep
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$relatedReports` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Array mapping report IDs with their internationalized display titles, eg, ``` array( 'UserSettings.getBrowser' => 'Browsers', 'UserSettings.getConfiguration' => 'Configurations' ) ```</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$relatedReports` (`array`) &mdash;
+       Array mapping report IDs with their internationalized display titles, eg, ``` array( 'UserSettings.getBrowser' => 'Browsers', 'UserSettings.getConfiguration' => 'Configurations' ) ```
 - It does not return anything.
 
 <a name="addtranslation" id="addtranslation"></a>
@@ -983,29 +914,10 @@ See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations).
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of a column in the report data, eg, `'nb_visits'` or `'goal_1_nb_conversions'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$translation` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The internationalized text, eg, `'Visits'` or `"Conversions for 'My Goal'"`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$columnName` (`string`) &mdash;
+       The name of a column in the report data, eg, `'nb_visits'` or `'goal_1_nb_conversions'`.
+    - `$translation` (`string`) &mdash;
+       The internationalized text, eg, `'Visits'` or `"Conversions for 'My Goal'"`.
 - It does not return anything.
 
 <a name="addtranslations" id="addtranslations"></a>
@@ -1019,19 +931,8 @@ See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations) and
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$translations` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> An array of column name => text mappings, eg, ``` array( 'nb_visits' => 'Visits', 'goal_1_nb_conversions' => "Conversions for 'My Goal'" ) ```</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$translations` (`array`) &mdash;
+       An array of column name => text mappings, eg, ``` array( 'nb_visits' => 'Visits', 'goal_1_nb_conversions' => "Conversions for 'My Goal'" ) ```
 - It does not return anything.
 
 <a name="disablepivotbysubtableiftablehasnosubtables" id="disablepivotbysubtableiftablehasnosubtables"></a>
@@ -1041,18 +942,7 @@ See [$translations](/api-reference/Piwik/ViewDataTable/Config#$translations) and
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+      
 - It does not return anything.
 

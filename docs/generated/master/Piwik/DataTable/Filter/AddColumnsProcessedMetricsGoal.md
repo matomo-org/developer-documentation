@@ -53,39 +53,12 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The table that will eventually filtered.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$enable` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Always set to true.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$processOnlyIdGoal` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Defines what metrics to add (don't process metrics when you don't display them). If self::GOALS_FULL_TABLE, all Goal metrics (and per goal metrics) will be processed. If self::GOALS_OVERVIEW, only the main goal metrics will be added. If an int > 0, then will process only metrics for this specific Goal.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The table that will eventually filtered.
+    - `$enable` (`bool`) &mdash;
+       Always set to true.
+    - `$processOnlyIdGoal` (`string`) &mdash;
+       Defines what metrics to add (don't process metrics when you don't display them). If self::GOALS_FULL_TABLE, all Goal metrics (and per goal metrics) will be processed. If self::GOALS_OVERVIEW, only the main goal metrics will be added. If an int > 0, then will process only metrics for this specific Goal.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -99,18 +72,7 @@ more information.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
 - It does not return anything.
 

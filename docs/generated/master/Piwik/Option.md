@@ -45,31 +45,11 @@ Returns the option value for the requested option `$name`.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$name` (`string`) &mdash;
+       The option name.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The option name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc">The value or `false`, if not found.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string`|`Piwik\false` &mdash;
+    The value or `false`, if not found.
 
 <a name="getlike" id="getlike"></a>
 <a name="getLike" id="getLike"></a>
@@ -80,31 +60,11 @@ Returns option values for options whose names are like a given pattern.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$namePattern` (`string`) &mdash;
+       The pattern used in the SQL `LIKE` expression used to SELECT options.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$namePattern` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The pattern used in the SQL `LIKE` expression used to SELECT options.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Array mapping option names with option values.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    Array mapping option names with option values.
 
 <a name="set" id="set"></a>
 <a name="set" id="set"></a>
@@ -115,39 +75,12 @@ Sets an option value by name.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$autoload`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name`
+      
+    - `$value`
+      
+    - `$autoload`
+      
 - It does not return anything.
 
 <a name="delete" id="delete"></a>
@@ -159,29 +92,10 @@ Deletes an option.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Option name to match exactly.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> If supplied the option will be deleted only if its value matches this value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       Option name to match exactly.
+    - `$value` (`string`) &mdash;
+       If supplied the option will be deleted only if its value matches this value.
 - It does not return anything.
 
 <a name="deletelike" id="deletelike"></a>
@@ -193,29 +107,10 @@ Deletes all options that match the supplied pattern.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$namePattern` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Pattern of key to match. `'%'` characters should be used as wildcards, and literal `'_'` characters should be escaped.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> If supplied, options will be deleted only if their value matches this value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$namePattern` (`string`) &mdash;
+       Pattern of key to match. `'%'` characters should be used as wildcards, and literal `'_'` characters should be escaped.
+    - `$value` (`string`) &mdash;
+       If supplied, options will be deleted only if their value matches this value.
 - It does not return anything.
 
 <a name="clearcachedoption" id="clearcachedoption"></a>
@@ -225,18 +120,7 @@ Deletes all options that match the supplied pattern.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name`
+      
 - It does not return anything.
 

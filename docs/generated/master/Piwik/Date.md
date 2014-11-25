@@ -77,29 +77,10 @@ result will be in UTC.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dateString` (`string`|`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> `'today'`, `'yesterday'`, `'now'`, `'yesterdaySameTime'`, a string with `'YYYY-MM-DD HH:MM:SS'` format or a unix timestamp.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$timezone` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The timezone of the result. If specified, `$dateString` will be converted from UTC to this timezone before being used in the Date return value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$dateString` (`string`|`int`) &mdash;
+       `'today'`, `'yesterday'`, `'now'`, `'yesterdaySameTime'`, a string with `'YYYY-MM-DD HH:MM:SS'` format or a unix timestamp.
+    - `$timezone` (`string`) &mdash;
+       The timezone of the result. If specified, `$dateString` will be converted from UTC to this timezone before being used in the Date return value.
 - It returns a [`Date`](../Piwik/Date.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before Tue, 06 Aug 1991.
@@ -153,19 +134,8 @@ See [getTimestamp()](/api-reference/Piwik/Date#gettimestamp) to see how the time
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$timezone` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> eg, `'UTC'`, `'Europe/London'`, etc.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$timezone` (`string`) &mdash;
+       eg, `'UTC'`, `'Europe/London'`, etc.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="adjustfortimezone" id="adjustfortimezone"></a>
@@ -177,41 +147,13 @@ Converts a timestamp in a from UTC to a timezone.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$timestamp` (`int`) &mdash;
+       The UNIX timestamp to adjust.
+    - `$timezone` (`string`) &mdash;
+       The timezone to adjust to.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$timestamp` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The UNIX timestamp to adjust.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$timezone` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The timezone to adjust to.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">The adjusted time as seconds from EPOCH.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    The adjusted time as seconds from EPOCH.
 
 <a name="gettimestamputc" id="gettimestamputc"></a>
 <a name="getTimestampUTC" id="getTimestampUTC"></a>
@@ -242,19 +184,8 @@ Returns `true` if the current date is older than the given `$date`.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date` ([`Date`](../Piwik/Date.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$date` ([`Date`](../Piwik/Date.md)) &mdash;
+      
 - It returns a `bool` value.
 
 <a name="isearlier" id="isearlier"></a>
@@ -266,19 +197,8 @@ Returns `true` if the current date is earlier than the given `$date`.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date` ([`Date`](../Piwik/Date.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$date` ([`Date`](../Piwik/Date.md)) &mdash;
+      
 - It returns a `bool` value.
 
 <a name="isleapyear" id="isleapyear"></a>
@@ -303,19 +223,8 @@ for the list of format strings.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$format` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$format` (`string`) &mdash;
+      
 - It returns a `string` value.
 
 <a name="__tostring" id="__tostring"></a>
@@ -327,17 +236,8 @@ See [toString()](/api-reference/Piwik/Date#tostring).
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The current date in `'YYYY-MM-DD'` format.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The current date in `'YYYY-MM-DD'` format.
 
 <a name="compareweek" id="compareweek"></a>
 <a name="compareWeek" id="compareWeek"></a>
@@ -348,31 +248,11 @@ Performs three-way comparison of the week of the current date against the given 
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$date` ([`Date`](../Piwik/Date.md)) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date` ([`Date`](../Piwik/Date.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">Returns `0` if the current week is equal to `$date`'s, `-1` if the current week is earlier or `1` if the current week is later.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    Returns `0` if the current week is equal to `$date`'s, `-1` if the current week is earlier or `1` if the current week is later.
 
 <a name="comparemonth" id="comparemonth"></a>
 <a name="compareMonth" id="compareMonth"></a>
@@ -383,31 +263,11 @@ Performs three-way comparison of the month of the current date against the given
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$date` ([`Date`](../Piwik/Date.md)) &mdash;
+       Month to compare
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date` ([`Date`](../Piwik/Date.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> Month to compare</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">Returns `0` if the current month is equal to `$date`'s, `-1` if the current month is earlier or `1` if the current month is later.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    Returns `0` if the current month is equal to `$date`'s, `-1` if the current month is earlier or `1` if the current month is later.
 
 <a name="compareyear" id="compareyear"></a>
 <a name="compareYear" id="compareYear"></a>
@@ -418,31 +278,11 @@ Performs three-way comparison of the month of the current date against the given
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$date` ([`Date`](../Piwik/Date.md)) &mdash;
+       Year to compare
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date` ([`Date`](../Piwik/Date.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> Year to compare</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">Returns `0` if the current year is equal to `$date`'s, `-1` if the current year is earlier or `1` if the current year is later.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    Returns `0` if the current year is equal to `$date`'s, `-1` if the current year is earlier or `1` if the current year is later.
 
 <a name="istoday" id="istoday"></a>
 <a name="isToday" id="isToday"></a>
@@ -503,31 +343,11 @@ Returns a new Date instance with `$this` date's day and the specified new time o
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$time` (`string`) &mdash;
+       String in the `'HH:MM:SS'` format.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$time` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> String in the `'HH:MM:SS'` format.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Date`](../Piwik/Date.md)) &mdash;
-    <div markdown="1" class="param-desc">The new date with the time of day changed.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Date`](../Piwik/Date.md) &mdash;
+    The new date with the time of day changed.
 
 <a name="setday" id="setday"></a>
 <a name="setDay" id="setDay"></a>
@@ -538,19 +358,8 @@ Returns a new Date instance with `$this` date's time of day and the day specifie
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$day` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The day eg. `31`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$day` (`int`) &mdash;
+       The day eg. `31`.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="setyear" id="setyear"></a>
@@ -562,19 +371,8 @@ Returns a new Date instance with `$this` date's time of day, month and day, but 
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$year` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The year, eg. `2010`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$year` (`int`) &mdash;
+       The year, eg. `2010`.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="subday" id="subday"></a>
@@ -586,19 +384,8 @@ Subtracts `$n` number of days from `$this` date and returns a new Date object.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> An integer > 0.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$n` (`int`) &mdash;
+       An integer > 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="subweek" id="subweek"></a>
@@ -610,19 +397,8 @@ Subtracts `$n` weeks from `$this` date and returns a new Date object.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> An integer > 0.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$n` (`int`) &mdash;
+       An integer > 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="submonth" id="submonth"></a>
@@ -634,31 +410,11 @@ Subtracts `$n` months from `$this` date and returns the result as a new Date obj
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$n` (`int`) &mdash;
+       An integer > 0.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> An integer > 0.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Date`](../Piwik/Date.md)) &mdash;
-    <div markdown="1" class="param-desc">new date</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Date`](../Piwik/Date.md) &mdash;
+    new date
 
 <a name="subyear" id="subyear"></a>
 <a name="subYear" id="subYear"></a>
@@ -669,19 +425,8 @@ Subtracts `$n` years from `$this` date and returns the result as a new Date obje
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> An integer > 0.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$n` (`int`) &mdash;
+       An integer > 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getlocalized" id="getlocalized"></a>
@@ -706,31 +451,11 @@ Allowed tags include:
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$template` (`string`) &mdash;
+       eg. `"%shortMonth% %longYear%"`
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$template` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> eg. `"%shortMonth% %longYear%"`</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">eg. `"Aug 2009"`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    eg. `"Aug 2009"`
 
 <a name="addday" id="addday"></a>
 <a name="addDay" id="addDay"></a>
@@ -743,19 +468,8 @@ instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> Number of days to add, must be > 0.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$n` (`int`) &mdash;
+       Number of days to add, must be > 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="addhour" id="addhour"></a>
@@ -767,19 +481,8 @@ Adds `$n` hours to `$this` date and returns the result in a new Date.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> Number of hours to add. Can be less than 0.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$n` (`int`) &mdash;
+       Number of hours to add. Can be less than 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="addhourto" id="addhourto"></a>
@@ -795,41 +498,13 @@ Date instance does not have to be created.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$timestamp` (`int`) &mdash;
+       The timestamp to add to.
+    - `$n` (`Piwik\number`) &mdash;
+       Number of hours to add, must be > 0.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$timestamp` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The timestamp to add to.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`Piwik\number`) &mdash;
-
-      <div markdown="1" class="param-desc"> Number of hours to add, must be > 0.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">The result as a UNIX timestamp.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    The result as a UNIX timestamp.
 
 <a name="subhour" id="subhour"></a>
 <a name="subHour" id="subHour"></a>
@@ -840,19 +515,8 @@ Subtracts `$n` hours from `$this` date and returns the result in a new Date.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> Number of hours to subtract. Can be less than 0.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$n` (`int`) &mdash;
+       Number of hours to subtract. Can be less than 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="addperiod" id="addperiod"></a>
@@ -864,29 +528,10 @@ Adds a period to `$this` date and returns the result in a new Date instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The number of periods to add. Can be negative.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The type of period to add (YEAR, MONTH, WEEK, DAY, ...)</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$n` (`int`) &mdash;
+       The number of periods to add. Can be negative.
+    - `$period` (`string`) &mdash;
+       The type of period to add (YEAR, MONTH, WEEK, DAY, ...)
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="subperiod" id="subperiod"></a>
@@ -898,29 +543,10 @@ Subtracts a period from `$this` date and returns the result in a new Date instan
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$n` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The number of periods to add. Can be negative.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The type of period to add (YEAR, MONTH, WEEK, DAY, ...)</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$n` (`int`) &mdash;
+       The number of periods to add. Can be negative.
+    - `$period` (`string`) &mdash;
+       The type of period to add (YEAR, MONTH, WEEK, DAY, ...)
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="secondstodays" id="secondstodays"></a>
@@ -932,18 +558,7 @@ Returns the number of days represented by a number of seconds.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$secs` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$secs` (`int`) &mdash;
+      
 - It returns a `float` value.
 

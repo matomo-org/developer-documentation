@@ -10,7 +10,7 @@
         "slim/slim": "2.*",
         "slim/extras": "2.*",
         "slim/views": "0.1.*",
-        "erusev/parsedown-extra": "~0.2.0",
+        "michelf/php-markdown": "1.4.1",
         "mnapoli/front-yaml": "~1.2"
     },
     "require-dev": {

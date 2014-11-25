@@ -66,51 +66,15 @@ Executes the requested plugin controller method.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$module` (`string`) &mdash;
+       The name of the plugin whose controller to execute, eg, `'UserCountryMap'`.
+    - `$action` (`string`) &mdash;
+       The controller method name, eg, `'realtimeMap'`.
+    - `$parameters` (`array`) &mdash;
+       Array of parameters to pass to the controller method.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$module` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the plugin whose controller to execute, eg, `'UserCountryMap'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$action` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The controller method name, eg, `'realtimeMap'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$parameters` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Array of parameters to pass to the controller method.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`void`|`mixed`) &mdash;
-    <div markdown="1" class="param-desc">The returned value of the call. This is the output of the controller method.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `void`|`mixed` &mdash;
+    The returned value of the call. This is the output of the controller method.
 - It throws one of the following exceptions:
     - `Exception|\Piwik\PluginDeactivatedException` &mdash; in case the plugin doesn&#039;t exist, the action doesn&#039;t exist, there is not enough permission, etc.
 

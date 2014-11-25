@@ -10,6 +10,7 @@ mkdir docs/generated
 cd piwik
 git reset --hard
 git clean -f -d
+gif fetch
 git checkout master
 git pull origin master
 cd ..

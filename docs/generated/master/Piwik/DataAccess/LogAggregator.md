@@ -123,71 +123,19 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$dimensions` (`array`) &mdash;
+       `SELECT` fields (or just one field) that will be grouped by, eg, `'referrer_name'` or `array('referrer_name', 'referrer_keyword')`. The metrics retrieved from the query will be specific to combinations of these fields. So if `array('referrer_name', 'referrer_keyword')` is supplied, the query will aggregate visits for each referrer/keyword combination.
+    - `$where` (`bool`|`string`) &mdash;
+       Additional condition for the `WHERE` clause. Can be used to filter the set of visits that are considered for aggregation.
+    - `$additionalSelects` (`array`) &mdash;
+       Additional `SELECT` fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
+    - `$metrics` (`bool`|`array`) &mdash;
+       The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS` - `Metrics::INDEX_MAX_ACTIONS` - `Metrics::INDEX_SUM_VISIT_LENGTH` - `Metrics::INDEX_BOUNCE_COUNT` - `Metrics::INDEX_NB_VISITS_CONVERTED`
+    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash;
+       A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dimensions` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> `SELECT` fields (or just one field) that will be grouped by, eg, `'referrer_name'` or `array('referrer_name', 'referrer_keyword')`. The metrics retrieved from the query will be specific to combinations of these fields. So if `array('referrer_name', 'referrer_keyword')` is supplied, the query will aggregate visits for each referrer/keyword combination.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$where` (`bool`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Additional condition for the `WHERE` clause. Can be used to filter the set of visits that are considered for aggregation.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$additionalSelects` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Additional `SELECT` fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$metrics` (`bool`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS` - `Metrics::INDEX_MAX_ACTIONS` - `Metrics::INDEX_SUM_VISIT_LENGTH` - `Metrics::INDEX_BOUNCE_COUNT` - `Metrics::INDEX_NB_VISITS_CONVERTED`</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension) to see what aggregate data is calculated by the query.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed` &mdash;
+    A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension) to see what aggregate data is calculated by the query.
 
 <a name="queryecommerceitems" id="queryecommerceitems"></a>
 <a name="queryEcommerceItems" id="queryEcommerceItems"></a>
@@ -219,31 +167,11 @@ Segmentation is not yet supported for this aggregation method.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$dimension` (`string`) &mdash;
+       One or more **log\_conversion\_item** columns to group aggregated data by. Eg, `'idaction_sku'` or `'idaction_sku, idaction_category'`.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dimension` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> One or more **log\_conversion\_item** columns to group aggregated data by. Eg, `'idaction_sku'` or `'idaction_sku, idaction_category'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`Zend_Db_Statement`) &mdash;
-    <div markdown="1" class="param-desc">A statement object that can be used to iterate through the query's result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `Zend_Db_Statement` &mdash;
+    A statement object that can be used to iterate through the query's result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.
 
 <a name="queryactionsbydimension" id="queryactionsbydimension"></a>
 <a name="queryActionsByDimension" id="queryActionsByDimension"></a>
@@ -269,81 +197,21 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$dimensions` (`array`|`string`) &mdash;
+       One or more SELECT fields that will be used to group the log_action rows by. This parameter determines which log_action rows will be aggregated together.
+    - `$where` (`bool`|`string`) &mdash;
+       Additional condition for the WHERE clause. Can be used to filter the set of visits that are considered for aggregation.
+    - `$additionalSelects` (`array`) &mdash;
+       Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
+    - `$metrics` (`bool`|`array`) &mdash;
+       The set of metrics to calculate and return. If `false`, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS`
+    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash;
+       A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
+    - `$joinLogActionOnColumn` (`bool`|`string`) &mdash;
+       One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed (since there is only one column).
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dimensions` (`array`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> One or more SELECT fields that will be used to group the log_action rows by. This parameter determines which log_action rows will be aggregated together.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$where` (`bool`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Additional condition for the WHERE clause. Can be used to filter the set of visits that are considered for aggregation.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$additionalSelects` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$metrics` (`bool`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The set of metrics to calculate and return. If `false`, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS`</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$joinLogActionOnColumn` (`bool`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed (since there is only one column).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed` &mdash;
+    A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
 
 <a name="getselectsfromrangedcolumn" id="getselectsfromrangedcolumn"></a>
 <a name="getSelectsFromRangedColumn" id="getSelectsFromRangedColumn"></a>
@@ -388,69 +256,17 @@ in one of the query... methods (for example [queryVisitsByDimension()](/api-refe
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$column` (`string`) &mdash;
+       The name of a column in `$table` that will be summarized.
+    - `$ranges` (`array`) &mdash;
+       The array of ranges over which the data in the table will be summarized. For example, ``` array( array(1, 1), array(2, 2), array(3, 8), array(8) // everything over 8 ) ```
+    - `$table` (`string`) &mdash;
+       The unprefixed name of the table whose rows will be summarized.
+    - `$selectColumnPrefix` (`string`) &mdash;
+       The prefix to prepend to each SELECT expression. This prefix is used to differentiate different sets of range summarization SELECTs. You can supply different values to this argument to summarize several columns in one query (see above for an example).
+    - `$restrictToReturningVisitors` (`bool`) &mdash;
+       Whether to only summarize rows that belong to visits of returning visitors or not. If this argument is true, then the SELECT expressions returned can only be used with the [queryVisitsByDimension()](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension) method.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$column` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of a column in `$table` that will be summarized.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$ranges` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The array of ranges over which the data in the table will be summarized. For example, ``` array( array(1, 1), array(2, 2), array(3, 8), array(8) // everything over 8 ) ```</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The unprefixed name of the table whose rows will be summarized.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$selectColumnPrefix` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The prefix to prepend to each SELECT expression. This prefix is used to differentiate different sets of range summarization SELECTs. You can supply different values to this argument to summarize several columns in one query (see above for an example).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$restrictToReturningVisitors` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether to only summarize rows that belong to visits of returning visitors or not. If this argument is true, then the SELECT expressions returned can only be used with the [queryVisitsByDimension()](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension) method.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">An array of SQL SELECT expressions, for example, ``` array( 'sum(case when log_visit.visit_total_actions between 0 and 2 then 1 else 0 end) as vta0', 'sum(case when log_visit.visit_total_actions > 2 then 1 else 0 end) as vta1' ) ```</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    An array of SQL SELECT expressions, for example, ``` array( 'sum(case when log_visit.visit_total_actions between 0 and 2 then 1 else 0 end) as vta0', 'sum(case when log_visit.visit_total_actions > 2 then 1 else 0 end) as vta1' ) ```
 

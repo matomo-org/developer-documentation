@@ -176,39 +176,12 @@ way reports are displayed.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$controllerAction`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$apiMethodToRequestDataTable`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$overrideParams`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$controllerAction`
+      
+    - `$apiMethodToRequestDataTable`
+      
+    - `$overrideParams`
+      
 
 <a name="getdefaultconfig" id="getdefaultconfig"></a>
 <a name="getDefaultConfig" id="getDefaultConfig"></a>
@@ -267,19 +240,8 @@ without having to know where that visualization is.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$viewDataTableId` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The viewDataTable ID to check for, eg, `'table'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$viewDataTableId` (`string`) &mdash;
+       The viewDataTable ID to check for, eg, `'table'`.
 - It returns a `bool` value.
 
 <a name="getdatatable" id="getdatatable"></a>
@@ -305,19 +267,8 @@ It won't be loaded from the API in this case.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The DataTable to use.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+       The DataTable to use.
 - It returns a `void` value.
 
 <a name="render" id="render"></a>
@@ -329,17 +280,8 @@ Requests all needed data and renders the view.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The result of rendering.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The result of rendering.
 
 <a name="isrequestingsingledatatable" id="isrequestingsingledatatable"></a>
 <a name="isRequestingSingleDataTable" id="isRequestingSingleDataTable"></a>
@@ -365,18 +307,7 @@ graph footer icon should not be displayed.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> Contains the API request being checked.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)) &mdash;
+       Contains the API request being checked.
 - It returns a `bool` value.
 

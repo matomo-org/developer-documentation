@@ -228,29 +228,10 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The setting's persisted name. Only alphanumeric characters are allowed, eg, `'refreshInterval'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$title` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The setting's display name, eg, `'Refresh Interval'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       The setting's persisted name. Only alphanumeric characters are allowed, eg, `'refreshInterval'`.
+    - `$title` (`string`) &mdash;
+       The setting's display name, eg, `'Refresh Interval'`.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
@@ -294,19 +275,8 @@ Sets the object used to persist settings.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$storage` (`Piwik\Settings\StorageInterface`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$storage` (`Piwik\Settings\StorageInterface`) &mdash;
+      
 - It returns a `Piwik\Settings\StorageInterface` value.
 
 <a name="getvalue" id="getvalue"></a>
@@ -333,19 +303,8 @@ Sets and persists this setting's value overwriting any existing value.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value` (`mixed`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$value` (`mixed`) &mdash;
+      
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the current user is not allowed to change the value of this setting.

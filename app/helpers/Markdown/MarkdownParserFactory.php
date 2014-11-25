@@ -16,7 +16,7 @@ class MarkdownParserFactory
             new ExtractSectionsPostprocessor(
                 new IncludeFilePostprocessor(
                     new TitleIdPreprocessor(
-                        new Parsedown()
+                        new MichelfMarkdown()
                     )
                 )
             )

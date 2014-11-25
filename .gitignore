@@ -8,3 +8,4 @@
 /app/tmp/cache/*
 /app/tmp/logs/*
 /docs/changelog.md
+/docs/cache/

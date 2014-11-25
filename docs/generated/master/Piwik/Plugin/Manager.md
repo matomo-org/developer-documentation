@@ -40,19 +40,8 @@ Returns `true` if a plugin has been activated.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Name of plugin, eg, `'Actions'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       Name of plugin, eg, `'Actions'`.
 - It returns a `bool` value.
 
 <a name="ispluginloaded" id="ispluginloaded"></a>
@@ -64,19 +53,8 @@ Returns `true` if plugin is loaded (in memory).
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Name of plugin, eg, `'Acions'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       Name of plugin, eg, `'Acions'`.
 - It returns a `bool` value.
 
 <a name="getthemeenabled" id="getthemeenabled"></a>
@@ -102,17 +80,8 @@ Loads plugins that can be loaded.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">An array that maps plugin names with arrays of plugin information. Plugin information consists of the following entries: - **activated**: Whether the plugin is activated. - **alwaysActivated**: Whether the plugin should always be activated, or not. - **uninstallable**: Whether the plugin is uninstallable or not. - **invalid**: If the plugin is invalid, this property will be set to true. If the plugin is not invalid, this property will not exist. - **info**: If the plugin was loaded, will hold the plugin information. See [Plugin::getInformation()](/api-reference/Piwik/Plugin#getinformation).</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    An array that maps plugin names with arrays of plugin information. Plugin information consists of the following entries: - **activated**: Whether the plugin is activated. - **alwaysActivated**: Whether the plugin should always be activated, or not. - **uninstallable**: Whether the plugin is uninstallable or not. - **invalid**: If the plugin is invalid, this property will be set to true. If the plugin is not invalid, this property will not exist. - **info**: If the plugin was loaded, will hold the plugin information. See [Plugin::getInformation()](/api-reference/Piwik/Plugin#getinformation).
 
 <a name="getinstalledpluginsname" id="getinstalledpluginsname"></a>
 <a name="getInstalledPluginsName" id="getInstalledPluginsName"></a>
