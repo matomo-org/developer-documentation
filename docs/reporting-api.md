@@ -7,6 +7,6 @@ subGuides:
 ---
 # Reporting API
 
-TODO
+This section contains the API reference for the Reporting HTTP API.
 
-Explain why metadata and segmentation is separated from "listing".
+The Metadata and Segmentation API references are split into dedicated articles in order to keep them shorter and readable.
