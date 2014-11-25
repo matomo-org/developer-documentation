@@ -51,12 +51,8 @@
     font-weight: normal;
 }
 
-.bs-side .panel-collapse {
-}
 .bs-side .panel-body {
     padding:0;
-}
-.bs-side .panel-heading {
 }
 .panel-body a, .panel-body a:hover, .panel-body a:focus {
     color: #2c3e50;
