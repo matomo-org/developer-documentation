@@ -34,9 +34,9 @@ Constants
 This {{ class_type(class) }} defines the following constants:
 
 {% for constant in constants if constant.longdesc %}
-- [`{{ constant.name }}`](#{{ constant.name|lower }}){% if constant.shortdesc %} &mdash; {{ constant.shortdesc|inlinelinkparser(class)|raw }}{% endif %}{% if class.constants[constant.name] is not defined %} Inherited from {{ class_name(constant.getClass, true, "", true) }}{%endif%}
-
+- [`{{ constant.name }}`](#{{ constant.name|lower }}){% if constant.shortdesc %} — {{ constant.shortdesc|inlinelinkparser(class)|raw }}{% endif %}{% if class.constants[constant.name] is not defined %} Inherited from {{ class_name(constant.getClass, true, "", true) }}{%endif%}
 {% endfor %}
+
 {% for constant in constants if constant.longdesc %}
 <a name="{{ constant.name|lower }}" id="{{ constant.name|lower }}"></a>
 <a name="{{ constant.name }}" id="{{ constant.name }}"></a>

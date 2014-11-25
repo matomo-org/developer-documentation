@@ -14,7 +14,7 @@ class MarkdownParserFactory
     {
         return new IncludeFilePostprocessor(
             new TitleIdPreprocessor(
-                new Parsedown()
+                new MichelfMarkdown()
             )
         );
     }

@@ -122,5 +122,6 @@ try {
     }
 
 } catch (Exception $e) {
-    echo 'Parse Error: ', $e->getMessage();
+    echo 'Parse Error: ', $e->getMessage() . PHP_EOL;
+    echo $e->getTraceAsString();
 }
