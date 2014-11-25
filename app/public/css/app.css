@@ -5,64 +5,25 @@ html {
 body {
     padding-top: 80px;
     margin-bottom: 80px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #404040;
 }
 
-a, a:hover, a:focus {
-    color: #528AB8;
+code {
+    color: #767575;
+    background-color: #f5f5f5;
+    border-radius: 0;
 }
 
-#sidebar {
-    opacity: 0.65;
-    -webkit-transition: opacity 200ms linear;
-    -moz-transition: opacity 200ms linear;
-    -ms-transition: opacity 200ms linear;
-    -o-transition: opacity 200ms linear;
-    transition: opacity 200ms linear;
-}
-
-#sidebar:hover {
-    opacity: 0.8;
-    -webkit-transition: opacity 200ms linear;
-    -moz-transition: opacity 200ms linear;
-    -ms-transition: opacity 200ms linear;
-    -o-transition: opacity 200ms linear;
-    transition: opacity 200ms linear;
+/* Active navbar item color */
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+    color: #2faadd;
 }
 
 .jumbotron {
     padding-top: 48px;
     padding-bottom: 48px;
-}
-
-.documentation {
-    line-height: 150%;
-}
-
-.documentation img {
-    max-width: 100%;
-}
-
-.documentation h1 {
-    padding-bottom: 9px;
-    margin: 0px 0 20px;
-    border-bottom: 1px solid #eeeeee;
-}
-
-.documentation code {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    word-break: break-word;
-}
-
-.bs-side .panel-collapse {
-}
-.bs-side .panel-body {
-    padding:0;
-}
-.bs-side .panel-heading {
-}
-.panel-body a, .panel-body a:hover, .panel-body a:focus {
-    color: #2c3e50;
 }
 
 .teaser-item {
@@ -115,89 +76,6 @@ a, a:hover, a:focus {
     line-height: 1.8em;
     margin-top: 15px;
     margin-bottom: 15px;
-}
-
-/* First level of nav */
-.bs-sidenav {
-    padding-top:    10px;
-    padding-bottom: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* All levels of nav */
-.bs-sidebar .nav > li > a, .bs-sidebar .nav > li > span {
-    display: block;
-    padding: 5px 15px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: bold;
-}
-
-.bs-sidebar .nav-pills > li > a {
-    border-radius: 0;
-}
-.nav-pills li.active>a, .nav-pills li.active>a:hover, .nav-pills li.active>a:focus {
-    color: #ffffff;
-    background-color: #2c3e50;
-}
-
-/* Nav: second level (shown on .active) */
-#sidebar .bs-sidebar .nav .nav {
-    display: none; /* Hide by default, but at >768px, show it */
-    margin-bottom: 8px;
-}
-.bs-sidebar .nav .nav > li > a {
-    padding-top:    3px;
-    padding-bottom: 3px;
-    padding-left: 25px;
-    font-size: 90%;
-    font-weight: normal;
-}
-
-#sidebar.affix {
-    position: fixed;
-    top: 80px;
-    /* When the sidebar content gets too long for the screen */
-    max-height: 85%;
-    overflow-y: auto;
-}
-#sidebar.affix-bottom {
-    width: inherit;
-    position: absolute;
-    top: auto;
-    bottom: 0;
-}
-#sidebar.affix-top {
-}
-
-/* Show and affix the side nav when space allows it */
-@media (min-width: 992px) {
-    #sidebar .bs-sidebar .nav > .active > ul {
-        display: block;
-    }
-    /* Widen the fixed sidebar */
-    #sidebar.affix {
-        width: 213px;
-    }
-
-    #sidebar.expand .bs-sidebar .nav .nav {
-        display: block;
-    }
-}
-@media (min-width: 1200px) {
-    /* Widen the fixed sidebar again */
-    #sidebar.affix {
-        width: 263px;
-    }
-}
-@media (max-width: 992px) {
-    #sidebar.affix {
-        width: inherit;
-        position: inherit;
-        top: auto;
-        max-height: none;
-    }
 }
 
 .btn-piwik:hover {
@@ -284,14 +162,6 @@ a, a:hover, a:focus {
 .btn-twitter:active,
 .btn-twitter.active {
     background-color: #01538d \9;
-}
-
-.navbar-inverse .navbar-nav > li > a.start-here-link {
-    color:#428BCA;
-}
-
-.navbar-inverse .navbar-nav > li > a.start-here-link:hover {
-    color:white;
 }
 
 /* Search bar */

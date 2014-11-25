@@ -1,0 +1,63 @@
+/* Customize all "primary" panels */
+.panel-primary {
+    border: 1px solid #d0d0d0;
+    box-shadow: 0 0 5px #d0d0d0;
+    background-color: #f0f0f0;
+}
+.panel-primary > .panel-heading {
+    background-color: #d0d0d0;
+    color: #8a8989;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.panel-primary li.active > a, .panel-primary li.active > a:hover, .panel-primary li.active > a:focus {
+    font-weight: bold !important;
+    color: #246998;
+    background-color: transparent;
+}
+
+/* First level of nav */
+.bs-sidenav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* All levels of nav */
+.bs-sidebar .nav > li > a, .bs-sidebar .nav > li > span {
+    display: block;
+    padding: 5px 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
+
+.bs-sidebar .nav-pills > li > a {
+    border-radius: 0;
+}
+
+/* Nav: second level */
+.bs-sidebar .nav .nav {
+    margin-bottom: 10px;
+}
+.bs-sidebar .nav .nav > li > a {
+    padding-top:    3px;
+    padding-bottom: 3px;
+    padding-left: 25px;
+    font-size: 90%;
+    font-weight: normal;
+}
+
+.bs-side .panel-collapse {
+}
+.bs-side .panel-body {
+    padding:0;
+}
+.bs-side .panel-heading {
+}
+.panel-body a, .panel-body a:hover, .panel-body a:focus {
+    color: #2c3e50;
+}

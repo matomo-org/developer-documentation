@@ -3,18 +3,21 @@
 <head>
     <title>{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Piwik Analytics - Developer Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/bootstrap-theme.min.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
+    <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/highlightjs/github.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/app.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
+    <link href="/css/sidebar.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
+    <link href="/css/documentation.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
     <script src="/js/html5shiv.3.7.0.js?{{ revision|e('html_attr') }}"></script>
     <script src="/js/respond.min.1.3.0.js?{{ revision|e('html_attr') }}"></script>
     <![endif]-->
-
 </head>
 <body>
-<div id="menu" class="navbar navbar-default navbar-fixed-top">
+
+<div id="menu" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
