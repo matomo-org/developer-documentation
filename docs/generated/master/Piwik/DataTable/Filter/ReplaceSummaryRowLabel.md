@@ -34,29 +34,10 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The table that will eventually be filtered.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$newLabel` (`string`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> The new label for summary row. If null, defaults to `Piwik::translate('General_Others')`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The table that will eventually be filtered.
+    - `$newLabel` (`string`|`null`) &mdash;
+       The new label for summary row. If null, defaults to `Piwik::translate('General_Others')`.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -67,19 +48,8 @@ See [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummar
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
@@ -94,19 +64,8 @@ is up to the derived BaseFilter class.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$enable` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$enable` (`bool`) &mdash;
+      
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
@@ -118,18 +77,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The row whose subtable should be filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
 - It does not return anything.
 

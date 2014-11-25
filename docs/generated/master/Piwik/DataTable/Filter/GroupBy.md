@@ -35,49 +35,14 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The DataTable to filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$groupByColumn` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The column name to reduce.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$reduceFunction` (`callable`) &mdash;
-
-      <div markdown="1" class="param-desc"> The reduce function. This must alter the `$groupByColumn` columng in some way. If not set then the filter will group by the raw column value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$parameters` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The DataTable to filter.
+    - `$groupByColumn` (`string`) &mdash;
+       The column name to reduce.
+    - `$reduceFunction` (`callable`) &mdash;
+       The reduce function. This must alter the `$groupByColumn` columng in some way. If not set then the filter will group by the raw column value.
+    - `$parameters` (`array`) &mdash;
+       deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -88,19 +53,8 @@ See [GroupBy](/api-reference/Piwik/DataTable/Filter/GroupBy).
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
@@ -115,19 +69,8 @@ is up to the derived BaseFilter class.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$enable` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$enable` (`bool`) &mdash;
+      
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
@@ -139,18 +82,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The row whose subtable should be filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
 - It does not return anything.
 

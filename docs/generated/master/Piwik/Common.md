@@ -37,31 +37,11 @@ option.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$table` (`string`) &mdash;
+       The table name to prefix, ie "log_visit"
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The table name to prefix, ie "log_visit"</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The prefixed name, ie "piwik-production_log_visit".</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The prefixed name, ie "piwik-production_log_visit".
 
 <a name="unprefixtable" id="unprefixtable"></a>
 <a name="unprefixTable" id="unprefixTable"></a>
@@ -75,31 +55,11 @@ option.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$table` (`string`) &mdash;
+       The prefixed table name, eg "piwik-production_log_visit".
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The prefixed table name, eg "piwik-production_log_visit".</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The unprefixed table name, eg "log_visit".</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The unprefixed table name, eg "log_visit".
 
 <a name="mb_substr" id="mb_substr"></a>
 <a name="mb_substr" id="mb_substr"></a>
@@ -112,29 +72,10 @@ Calls `mb_substr` if available and falls back to `substr` if it's not.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$string`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$start`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$string`
+      
+    - `$start`
+      
 - It returns a `string` value.
 
 <a name="mb_strlen" id="mb_strlen"></a>
@@ -148,19 +89,8 @@ Calls `mb_substr` if available and falls back to `substr` if not.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$string` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$string` (`string`) &mdash;
+      
 - It returns a `int` value.
 
 <a name="mb_strtolower" id="mb_strtolower"></a>
@@ -174,19 +104,8 @@ Calls `mb_strtolower` if available and falls back to `strtolower` if not.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$string` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$string` (`string`) &mdash;
+      
 - It returns a `string` value.
 
 <a name="sanitizeinputvalues" id="sanitizeinputvalues"></a>
@@ -215,41 +134,13 @@ should still be used._
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$value` (`mixed`) &mdash;
+       The variable to be sanitized. If an array is supplied, the contents of the array will be sanitized recursively. The keys of the array will also be sanitized.
+    - `$alreadyStripslashed` (`bool`) &mdash;
+       Implementation detail, ignore.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value` (`mixed`) &mdash;
-
-      <div markdown="1" class="param-desc"> The variable to be sanitized. If an array is supplied, the contents of the array will be sanitized recursively. The keys of the array will also be sanitized.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$alreadyStripslashed` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Implementation detail, ignore.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">The sanitized value.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed` &mdash;
+    The sanitized value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$value` is of an incorrect type.
 
@@ -268,31 +159,11 @@ have to use this method to unsanitize it in order to, for example, output it in 
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$value` (`string`|`array`) &mdash;
+       The data to unsanitize. If an array is passed, the array is sanitized recursively. Key values are not unsanitized.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value` (`string`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The data to unsanitize. If an array is passed, the array is sanitized recursively. Key values are not unsanitized.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`array`) &mdash;
-    <div markdown="1" class="param-desc">The unsanitized data.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string`|`array` &mdash;
+    The unsanitized data.
 
 <a name="getrequestvar" id="getrequestvar"></a>
 <a name="getRequestVar" id="getRequestVar"></a>
@@ -309,61 +180,17 @@ _See [sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues) to
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$varName` (`string`) &mdash;
+       Name of the request parameter to get. By default, we look in `$_GET[$varName]` and `$_POST[$varName]` for the value.
+    - `$varDefault` (`string`|`null`) &mdash;
+       The value to return if the request parameter cannot be found or has an empty value.
+    - `$varType` (`string`|`null`) &mdash;
+       Expected type of the request variable. This parameters value must be one of the following: `'array'`, `'int'`, `'integer'`, `'string'`, `'json'`. If `'json'`, the string value will be `json_decode`-d and then sanitized.
+    - `$requestArrayToUse` (`array`|`null`) &mdash;
+       The array to use instead of `$_GET` and `$_POST`.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$varName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Name of the request parameter to get. By default, we look in `$_GET[$varName]` and `$_POST[$varName]` for the value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$varDefault` (`string`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> The value to return if the request parameter cannot be found or has an empty value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$varType` (`string`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> Expected type of the request variable. This parameters value must be one of the following: `'array'`, `'int'`, `'integer'`, `'string'`, `'json'`. If `'json'`, the string value will be `json_decode`-d and then sanitized.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$requestArrayToUse` (`array`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> The array to use instead of `$_GET` and `$_POST`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">The sanitized request parameter.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed` &mdash;
+    The sanitized request parameter.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the request parameter doesn&#039;t exist and there is no default value, or if the request parameter exists but has an incorrect type.
 
@@ -378,17 +205,8 @@ See [core/DataFiles/Languages.php](https://github.com/piwik/piwik/blob/master/co
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Array of two letter ISO codes mapped with their associated language names (in English). E.g. `array('en' => 'English', 'ja' => 'Japanese')`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    Array of two letter ISO codes mapped with their associated language names (in English). E.g. `array('en' => 'English', 'ja' => 'Japanese')`.
 
 <a name="getlanguagetocountrylist" id="getlanguagetocountrylist"></a>
 <a name="getLanguageToCountryList" id="getLanguageToCountryList"></a>
@@ -401,17 +219,8 @@ See [core/DataFiles/LanguageToCountry.php](https://github.com/piwik/piwik/blob/m
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Array of two letter ISO language codes mapped with two letter ISO country codes: `array('fr' => 'fr') // French => France`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    Array of two letter ISO language codes mapped with two letter ISO country codes: `array('fr' => 'fr') // French => France`
 
 <a name="getsqlstringfieldsarray" id="getsqlstringfieldsarray"></a>
 <a name="getSqlStringFieldsArray" id="getSqlStringFieldsArray"></a>
@@ -425,31 +234,11 @@ to fill the `IN (...)` part of a query.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$fields` (`array`|`string`) &mdash;
+       The names of the mysql table fields to bind, e.g. `array(fieldName1, fieldName2, fieldName3)`. _Note: The content of the array isn't important, just its length._
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$fields` (`array`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The names of the mysql table fields to bind, e.g. `array(fieldName1, fieldName2, fieldName3)`. _Note: The content of the array isn't important, just its length._</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The placeholder string, e.g. `"?, ?, ?"`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The placeholder string, e.g. `"?, ?, ?"`.
 
 <a name="destroy" id="destroy"></a>
 <a name="destroy" id="destroy"></a>
@@ -462,18 +251,7 @@ For more information: [https://github.com/piwik/piwik/issues/374](https://github
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$var` (`Piwik\$var`) &mdash;
-
-      <div markdown="1" class="param-desc"> The object to destroy.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$var` (`Piwik\$var`) &mdash;
+       The object to destroy.
 - It does not return anything.
 

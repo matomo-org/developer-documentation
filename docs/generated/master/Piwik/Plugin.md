@@ -105,19 +105,8 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$pluginName` (`string`|`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> A plugin name to force. If not supplied, it is set to the last part of the class name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$pluginName` (`string`|`bool`) &mdash;
+       A plugin name to force. If not supplied, it is set to the last part of the class name.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If plugin metadata is defined in both the getInformation() method and the **plugin.json** file.
 
@@ -151,17 +140,8 @@ Derived classes should use this method to associate callbacks with events.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">eg, array( 'API.getReportMetadata' => 'myPluginFunction', 'Another.event'         => array( 'function' => 'myOtherPluginFunction', 'after'    => true // execute after callbacks w/o ordering ) 'Yet.Another.event'     => array( 'function' => 'myOtherPluginFunction', 'before'   => true // execute before callbacks w/o ordering ) )</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    eg, array( 'API.getReportMetadata' => 'myPluginFunction', 'Another.event'         => array( 'function' => 'myOtherPluginFunction', 'after'    => true // execute after callbacks w/o ordering ) 'Yet.Another.event'     => array( 'function' => 'myOtherPluginFunction', 'before'   => true // execute before callbacks w/o ordering ) )
 
 <a name="postload" id="postload"></a>
 <a name="postLoad" id="postLoad"></a>
@@ -273,41 +253,13 @@ Tries to find a component such as a Menu or Tasks within this plugin.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$componentName` (`string`) &mdash;
+       The name of the component you want to look for. In case you request a component named 'Menu' it'll look for a file named 'Menu.php' within the root of the plugin folder that implements a class named Piwik\Plugin\$PluginName\Menu . If such a file exists but does not implement this class it'll silently ignored.
+    - `$expectedSubclass` (`string`) &mdash;
+       If not empty, a check will be performed whether a found file extends the given subclass. If the requested file exists but does not extend this class a warning will be shown to advice a developer to extend this certain class.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$componentName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the component you want to look for. In case you request a component named 'Menu' it'll look for a file named 'Menu.php' within the root of the plugin folder that implements a class named Piwik\Plugin\$PluginName\Menu . If such a file exists but does not implement this class it'll silently ignored.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$expectedSubclass` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> If not empty, a check will be performed whether a found file extends the given subclass. If the requested file exists but does not extend this class a warning will be shown to advice a developer to extend this certain class.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`stdClass`](http://php.net/class.stdClass)|`null`) &mdash;
-    <div markdown="1" class="param-desc">Null if the requested component does not exist or an instance of the found component.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`stdClass`](http://php.net/class.stdClass)|`null` &mdash;
+    Null if the requested component does not exist or an instance of the found component.
 
 <a name="findmultiplecomponents" id="findmultiplecomponents"></a>
 <a name="findMultipleComponents" id="findMultipleComponents"></a>
@@ -316,29 +268,10 @@ Tries to find a component such as a Menu or Tasks within this plugin.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$directoryWithinPlugin`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$expectedSubclass`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$directoryWithinPlugin`
+      
+    - `$expectedSubclass`
+      
 - It does not return anything.
 
 <a name="hasmissingdependencies" id="hasmissingdependencies"></a>
@@ -350,19 +283,8 @@ Detect whether there are any missing dependencies.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$piwikVersion` (`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> Defaults to the current Piwik version</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$piwikVersion` (`null`) &mdash;
+       Defaults to the current Piwik version
 - It returns a `bool` value.
 
 <a name="getmissingdependencies" id="getmissingdependencies"></a>
@@ -372,19 +294,8 @@ Detect whether there are any missing dependencies.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$piwikVersion`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$piwikVersion`
+      
 - It does not return anything.
 
 <a name="getpluginnamefrombacktrace" id="getpluginnamefrombacktrace"></a>
@@ -398,31 +309,11 @@ Returns `false` if we can't find one.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$backtrace` (`array`) &mdash;
+       The result of [debug_backtrace()](http://php.net/function.debug_backtrace()) or [Exception::getTrace()](http://www.php.net/manual/en/exception.gettrace.php).
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$backtrace` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The result of [debug_backtrace()](http://php.net/function.debug_backtrace()) or [Exception::getTrace()](http://www.php.net/manual/en/exception.gettrace.php).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string`|`Piwik\false` &mdash;
+    
 
 <a name="getpluginnamefromnamespace" id="getpluginnamefromnamespace"></a>
 <a name="getPluginNameFromNamespace" id="getPluginNameFromNamespace"></a>
@@ -436,29 +327,9 @@ if we can't find one.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$namespaceOrClassName` (`string`) &mdash;
+       The namespace or class string.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$namespaceOrClassName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The namespace or class string.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string`|`Piwik\false` &mdash;
+    
 

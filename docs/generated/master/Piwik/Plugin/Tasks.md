@@ -29,39 +29,12 @@ Schedule the given tasks/method to run once every hour.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the method that will be called when the task is being exectuted. To make it work you need to create a public method having the given method name in your Tasks class.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodParameter` (`null`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Can be null if the task does not need any parameter or a string. It is not possible to specify multiple parameters as an array etc. If you need to pass multiple parameters separate them via any characters such as '###'. For instance '$param1###$param2###$param3'</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$priority` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> Can be any constant such as self::LOW_PRIORITY</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$methodName` (`string`) &mdash;
+       The name of the method that will be called when the task is being exectuted. To make it work you need to create a public method having the given method name in your Tasks class.
+    - `$methodParameter` (`null`|`string`) &mdash;
+       Can be null if the task does not need any parameter or a string. It is not possible to specify multiple parameters as an array etc. If you need to pass multiple parameters separate them via any characters such as '###'. For instance '$param1###$param2###$param3'
+    - `$priority` (`int`) &mdash;
+       Can be any constant such as self::LOW_PRIORITY
 - It returns a [`ScheduledTime`](../../Piwik/ScheduledTime.md) value.
 
 <a name="daily" id="daily"></a>
@@ -75,39 +48,12 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodName`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodParameter`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$priority`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$methodName`
+      
+    - `$methodParameter`
+      
+    - `$priority`
+      
 - It does not return anything.
 
 <a name="weekly" id="weekly"></a>
@@ -121,39 +67,12 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodName`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodParameter`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$priority`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$methodName`
+      
+    - `$methodParameter`
+      
+    - `$priority`
+      
 - It does not return anything.
 
 <a name="monthly" id="monthly"></a>
@@ -167,39 +86,12 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodName`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodParameter`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$priority`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$methodName`
+      
+    - `$methodParameter`
+      
+    - `$priority`
+      
 - It does not return anything.
 
 <a name="custom" id="custom"></a>
@@ -215,59 +107,16 @@ either an instance of a class or a class name. For more information about these 
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$objectOrClassName` (`string`|`object`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodParameter` (`null`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$time` (`string`|[`ScheduledTime`](../../Piwik/ScheduledTime.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$priority` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$objectOrClassName` (`string`|`object`) &mdash;
+      
+    - `$methodName` (`string`) &mdash;
+      
+    - `$methodParameter` (`null`|`string`) &mdash;
+      
+    - `$time` (`string`|[`ScheduledTime`](../../Piwik/ScheduledTime.md)) &mdash;
+      
+    - `$priority` (`int`) &mdash;
+      
 - It returns a [`ScheduledTime`](../../Piwik/ScheduledTime.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If a wrong time format is given. Needs to be either a string such as &#039;daily&#039;, &#039;weekly&#039;, ... or an instance of {@link Piwik\ScheduledTime}

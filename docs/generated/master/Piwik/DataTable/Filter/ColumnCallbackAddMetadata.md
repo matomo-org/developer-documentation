@@ -28,69 +28,18 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The DataTable instance that will be filtered.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnsToRead` (`string`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The columns to read from each row and pass on to the callback.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$metadataToAdd` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the metadata field that will be added to each row.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$functionToApply` (`callable`) &mdash;
-
-      <div markdown="1" class="param-desc"> The callback to apply for each row.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$functionParameters` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$applyToSummaryRow` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether the callback should be applied to the summary row or not.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The DataTable instance that will be filtered.
+    - `$columnsToRead` (`string`|`array`) &mdash;
+       The columns to read from each row and pass on to the callback.
+    - `$metadataToAdd` (`string`) &mdash;
+       The name of the metadata field that will be added to each row.
+    - `$functionToApply` (`callable`) &mdash;
+       The callback to apply for each row.
+    - `$functionParameters` (`array`) &mdash;
+       deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
+    - `$applyToSummaryRow` (`bool`) &mdash;
+       Whether the callback should be applied to the summary row or not.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -101,19 +50,8 @@ See [ColumnCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/ColumnCall
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
@@ -128,19 +66,8 @@ is up to the derived BaseFilter class.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$enable` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$enable` (`bool`) &mdash;
+      
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
@@ -152,18 +79,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The row whose subtable should be filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
 - It does not return anything.
 

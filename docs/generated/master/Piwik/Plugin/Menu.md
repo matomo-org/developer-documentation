@@ -47,19 +47,8 @@ $menu->addItem('UI Framework', '', $this->urlForDefaultAction(), $orderId = 30);
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$additionalParams` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Optional URL parameters that will be appended to the URL</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$additionalParams` (`array`) &mdash;
+       Optional URL parameters that will be appended to the URL
 - It returns a `array` value.
 
 <a name="urlforaction" id="urlforaction"></a>
@@ -77,29 +66,10 @@ action of another module, meaning not your plugin, you should use the method url
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$controllerAction` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the action that should be executed within your controller</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$additionalParams` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Optional URL parameters that will be appended to the URL</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$controllerAction` (`string`) &mdash;
+       The name of the action that should be executed within your controller
+    - `$additionalParams` (`array`) &mdash;
+       Optional URL parameters that will be appended to the URL
 - It returns a `array` value.
 
 <a name="urlfordefaultuserparams" id="urlfordefaultuserparams"></a>
@@ -111,51 +81,15 @@ Returns the &idSite=X&period=Y&date=Z query string fragment, fetched from curren
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$websiteId` (`bool`) &mdash;
+      
+    - `$defaultPeriod` (`bool`) &mdash;
+      
+    - `$defaultDate` (`bool`) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$websiteId` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$defaultPeriod` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$defaultDate` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">eg '&idSite=1&period=week&date=today'</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    eg '&idSite=1&period=week&date=today'
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; in case a website was not specified and a default website id could not be found
 
@@ -168,19 +102,8 @@ Configures the reporting menu which should only contain links to reports of a sp
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$menu` ([`MenuReporting`](../../Piwik/Menu/MenuReporting.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$menu` ([`MenuReporting`](../../Piwik/Menu/MenuReporting.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="configuretopmenu" id="configuretopmenu"></a>
@@ -192,19 +115,8 @@ Configures the top menu which is supposed to contain analytics related items suc
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$menu` ([`MenuTop`](../../Piwik/Menu/MenuTop.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$menu` ([`MenuTop`](../../Piwik/Menu/MenuTop.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="configureusermenu" id="configureusermenu"></a>
@@ -216,19 +128,8 @@ Configures the user menu which is supposed to contain user and help related item
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$menu` ([`MenuUser`](../../Piwik/Menu/MenuUser.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$menu` ([`MenuUser`](../../Piwik/Menu/MenuUser.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="configureadminmenu" id="configureadminmenu"></a>
@@ -240,18 +141,7 @@ Configures the admin menu which is supposed to contain only administration relat
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$menu` ([`MenuAdmin`](../../Piwik/Menu/MenuAdmin.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$menu` ([`MenuAdmin`](../../Piwik/Menu/MenuAdmin.md)) &mdash;
+      
 - It does not return anything.
 

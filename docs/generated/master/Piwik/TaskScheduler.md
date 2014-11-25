@@ -69,18 +69,7 @@ was changed.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$task` ([`ScheduledTask`](../Piwik/ScheduledTask.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> Describes the scheduled task being rescheduled.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$task` ([`ScheduledTask`](../Piwik/ScheduledTask.md)) &mdash;
+       Describes the scheduled task being rescheduled.
 - It does not return anything.
 

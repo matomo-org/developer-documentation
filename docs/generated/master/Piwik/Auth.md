@@ -69,19 +69,8 @@ Sets the authentication token to authenticate with.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$token_auth` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> authentication token</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$token_auth` (`string`) &mdash;
+       authentication token
 - It does not return anything.
 
 <a name="getlogin" id="getlogin"></a>
@@ -119,19 +108,8 @@ Sets the login name to authenticate with.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$login` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The username.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$login` (`string`) &mdash;
+       The username.
 - It does not return anything.
 
 <a name="setpassword" id="setpassword"></a>
@@ -143,19 +121,8 @@ Sets the password to authenticate with.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$password` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Password (not hashed).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$password` (`string`) &mdash;
+       Password (not hashed).
 - It does not return anything.
 
 <a name="setpasswordhash" id="setpasswordhash"></a>
@@ -169,19 +136,8 @@ The hash will be an MD5 hash.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$passwordHash` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The hashed password.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$passwordHash` (`string`) &mdash;
+       The hashed password.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if authentication by hashed password is not supported.

@@ -60,19 +60,8 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$processor` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The ArchiveProcessor instance to use when persisting archive data.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$processor` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md)) &mdash;
+       The ArchiveProcessor instance to use when persisting archive data.
 
 <a name="aggregatedayreport" id="aggregatedayreport"></a>
 <a name="aggregateDayReport" id="aggregateDayReport"></a>

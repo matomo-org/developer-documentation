@@ -31,79 +31,20 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The DataTable that will eventually be filtered.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnNameToAdd` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the column to add the quotient value to.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnValueToRead` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the column that holds the dividend.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$divisorValueOrDivisorColumnName` (`Piwik\DataTable\Filter\number`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Either numeric value to use as the divisor for every row, or the name of the column whose value should be used as the divisor.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$quotientPrecision` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The precision to use when rounding the quotient.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$shouldSkipRows` (`bool`|`Piwik\DataTable\Filter\number`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether rows w/o the column to read should be skipped or not.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$getDivisorFromSummaryRow` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether to get the divisor from the summary row or the current row iteration.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The DataTable that will eventually be filtered.
+    - `$columnNameToAdd` (`string`) &mdash;
+       The name of the column to add the quotient value to.
+    - `$columnValueToRead` (`string`) &mdash;
+       The name of the column that holds the dividend.
+    - `$divisorValueOrDivisorColumnName` (`Piwik\DataTable\Filter\number`|`string`) &mdash;
+       Either numeric value to use as the divisor for every row, or the name of the column whose value should be used as the divisor.
+    - `$quotientPrecision` (`int`) &mdash;
+       The precision to use when rounding the quotient.
+    - `$shouldSkipRows` (`bool`|`Piwik\DataTable\Filter\number`) &mdash;
+       Whether rows w/o the column to read should be skipped or not.
+    - `$getDivisorFromSummaryRow` (`bool`) &mdash;
+       Whether to get the divisor from the summary row or the current row iteration.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -114,19 +55,8 @@ See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/Colu
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
@@ -141,19 +71,8 @@ is up to the derived BaseFilter class.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$enable` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$enable` (`bool`) &mdash;
+      
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
@@ -165,18 +84,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The row whose subtable should be filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
 - It does not return anything.
 

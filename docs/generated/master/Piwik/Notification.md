@@ -42,9 +42,7 @@ Constants
 
 This class defines the following constants:
 
-- [`FLAG_NO_CLEAR`](#flag_no_clear) &mdash; If this flag is applied, no close icon will be displayed.
-- [`TYPE_PERSISTENT`](#type_persistent) &mdash; Notifications of this type will be displayed until the new user explicitly closes the notification.
-- [`TYPE_TRANSIENT`](#type_transient) &mdash; Notifications of this type will be displayed only once.
+- [`FLAG_NO_CLEAR`](#flag_no_clear) — If this flag is applied, no close icon will be displayed.- [`TYPE_PERSISTENT`](#type_persistent) — Notifications of this type will be displayed until the new user explicitly closes the notification.- [`TYPE_TRANSIENT`](#type_transient) — Notifications of this type will be displayed only once.
 <a name="flag_no_clear" id="flag_no_clear"></a>
 <a name="FLAG_NO_CLEAR" id="FLAG_NO_CLEAR"></a>
 ### `FLAG_NO_CLEAR`
@@ -184,19 +182,8 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$message` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The notification message.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$message` (`string`) &mdash;
+       The notification message.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the message is empty.
 
@@ -209,17 +196,8 @@ Returns `1` if the notification will be displayed without a close button, `0` if
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">`1` or `0`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    `1` or `0`.
 
 <a name="getpriority" id="getpriority"></a>
 <a name="getPriority" id="getPriority"></a>

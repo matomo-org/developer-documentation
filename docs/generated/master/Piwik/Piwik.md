@@ -78,19 +78,8 @@ Returns `true` if the current user is either the Super User or the user specifie
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$theUser` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> A username.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$theUser` (`string`) &mdash;
+       A username.
 - It returns a `bool` value.
 
 <a name="checkuserhassuperuseraccessoristheuser" id="checkuserhassuperuseraccessoristheuser"></a>
@@ -102,19 +91,8 @@ Check that the current user is either the specified user or the superuser.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$theUser` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> A username.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$theUser` (`string`) &mdash;
+       A username.
 - It does not return anything.
 - It throws one of the following exceptions:
     - `NoAccessException` &mdash; If the user is neither the Super User nor the user `$theUser`.
@@ -128,19 +106,8 @@ Check whether the given user has superuser access.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$theUser` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> A username.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$theUser` (`string`) &mdash;
+       A username.
 - It returns a `bool` value.
 
 <a name="hasusersuperuseraccess" id="hasusersuperuseraccess"></a>
@@ -196,19 +163,8 @@ Returns `true` if the user has admin access to the requested sites, `false` if o
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$idSites` (`int`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The list of site IDs to check access for.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$idSites` (`int`|`array`) &mdash;
+       The list of site IDs to check access for.
 - It returns a `bool` value.
 
 <a name="checkuserhasadminaccess" id="checkuserhasadminaccess"></a>
@@ -220,19 +176,8 @@ Checks that the current user has admin access to the requested list of sites.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$idSites` (`int`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> One or more site IDs to check access for.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$idSites` (`int`|`array`) &mdash;
+       One or more site IDs to check access for.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If user doesn&#039;t have admin access.
@@ -268,19 +213,8 @@ Returns `true` if the user has view access to the requested list of sites.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$idSites` (`int`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> One or more site IDs to check access for.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$idSites` (`int`|`array`) &mdash;
+       One or more site IDs to check access for.
 - It returns a `bool` value.
 
 <a name="checkuserhasviewaccess" id="checkuserhasviewaccess"></a>
@@ -292,19 +226,8 @@ Checks that the current user has view access to the requested list of sites
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$idSites` (`int`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The list of site IDs to check access for.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$idSites` (`int`|`array`) &mdash;
+       The list of site IDs to check access for.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have view access to every site in the list.
@@ -353,39 +276,12 @@ Redirects the current request to a new module and action.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$newModule` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The target module, eg, `'UserCountry'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$newAction` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The target controller action, eg, `'index'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$parameters` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The query parameter values to modify before redirecting.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$newModule` (`string`) &mdash;
+       The target module, eg, `'UserCountry'`.
+    - `$newAction` (`string`) &mdash;
+       The target controller action, eg, `'index'`.
+    - `$parameters` (`array`) &mdash;
+       The query parameter values to modify before redirecting.
 - It does not return anything.
 
 <a name="isvalidemailstring" id="isvalidemailstring"></a>
@@ -397,19 +293,8 @@ Returns `true` if supplied the email address is a valid.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$emailAddress` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$emailAddress` (`string`) &mdash;
+      
 - It returns a `bool` value.
 
 <a name="postevent" id="postevent"></a>
@@ -421,49 +306,14 @@ Post an event to Piwik's event dispatcher which will execute the event's observe
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$eventName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The event name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$params` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The parameter array to forward to observer callbacks.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$pending` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> If true, plugins that are loaded after this event is fired will have their observers for this event executed.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$plugins` (`array`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> The list of plugins to execute observers for. If null, all plugin observers will be executed.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$eventName` (`string`) &mdash;
+       The event name.
+    - `$params` (`array`) &mdash;
+       The parameter array to forward to observer callbacks.
+    - `$pending` (`bool`) &mdash;
+       If true, plugins that are loaded after this event is fired will have their observers for this event executed.
+    - `$plugins` (`array`|`null`) &mdash;
+       The list of plugins to execute observers for. If null, all plugin observers will be executed.
 - It does not return anything.
 
 <a name="addaction" id="addaction"></a>
@@ -478,29 +328,10 @@ need to use this function._**
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$eventName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The event name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$function` (`callable`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The observer.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$eventName` (`string`) &mdash;
+       The event name.
+    - `$function` (`callable`|`array`) &mdash;
+       The observer.
 - It does not return anything.
 
 <a name="translate" id="translate"></a>
@@ -515,41 +346,13 @@ cannot be found for the toke, the token is returned.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$translationId` (`string`) &mdash;
+       Translation ID, eg, `'General_Date'`.
+    - `$args` (`array`|`string`|`int`) &mdash;
+       `sprintf` arguments to be applied to the internationalized string.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$translationId` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Translation ID, eg, `'General_Date'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$args` (`array`|`string`|`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> `sprintf` arguments to be applied to the internationalized string.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The translated string or `$translationId`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The translated string or `$translationId`.
 
 <a name="doassuperuser" id="doassuperuser"></a>
 <a name="doAsSuperUser" id="doAsSuperUser"></a>
@@ -562,31 +365,11 @@ Privileges will be rescinded even if an exception is thrown.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$function` (`Piwik\callback`) &mdash;
+       The callback to execute. Should accept no arguments.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$function` (`Piwik\callback`) &mdash;
-
-      <div markdown="1" class="param-desc"> The callback to execute. Should accept no arguments.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`) &mdash;
-    <div markdown="1" class="param-desc">The result of `$function`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed` &mdash;
+    The result of `$function`.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; rethrows any exceptions thrown by `$function`.
 

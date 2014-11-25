@@ -29,28 +29,9 @@ DbHelper::createTable('tablename', $tableDefinition);
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$nameWithoutPrefix` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the table without any piwik prefix.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$createDefinition` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The table create definition</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$nameWithoutPrefix` (`string`) &mdash;
+       The name of the table without any piwik prefix.
+    - `$createDefinition` (`string`) &mdash;
+       The table create definition
 - It does not return anything.
 

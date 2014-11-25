@@ -61,19 +61,8 @@ The segment type will be set to 'dimension' automatically if not already set.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$segment` ([`Segment`](../../Piwik/Plugin/Segment.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$segment` ([`Segment`](../../Piwik/Plugin/Segment.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="getname" id="getname"></a>
@@ -100,17 +89,8 @@ of the dimension, but is modified to be more human readable
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">eg, `"Referrers.Keywords"`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    eg, `"Referrers.Keywords"`
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the plugin and simple class name of this instance cannot be determined. This would only happen if the dimension is located in the wrong directory.
 
@@ -131,19 +111,8 @@ Gets an instance of all available visit, action and conversion dimension.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$plugin` ([`Plugin`](../../Piwik/Plugin.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$plugin` ([`Plugin`](../../Piwik/Plugin.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="factory" id="factory"></a>
@@ -155,31 +124,11 @@ Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwi
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$dimensionId` (`string`) &mdash;
+       See [getId()](/api-reference/Piwik/Columns/Dimension#getid).
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dimensionId` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> See [getId()](/api-reference/Piwik/Columns/Dimension#getid).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Dimension`](../../Piwik/Columns/Dimension.md)|`null`) &mdash;
-    <div markdown="1" class="param-desc">The created instance or null if there is no Dimension for $dimensionId or if the plugin that contains the Dimension is not loaded.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
+    The created instance or null if there is no Dimension for $dimensionId or if the plugin that contains the Dimension is not loaded.
 
 <a name="getmodule" id="getmodule"></a>
 <a name="getModule" id="getModule"></a>

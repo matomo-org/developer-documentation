@@ -31,49 +31,14 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The DataTable that will be filtered eventually.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnsToFilter` (`array`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The column or array of columns that should be passed to the callback.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$function` (`Piwik\DataTable\Filter\callback`) &mdash;
-
-      <div markdown="1" class="param-desc"> The callback that determines whether a row should be deleted or not. Should return `true` if the row should be deleted.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$functionParams` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The DataTable that will be filtered eventually.
+    - `$columnsToFilter` (`array`|`string`) &mdash;
+       The column or array of columns that should be passed to the callback.
+    - `$function` (`Piwik\DataTable\Filter\callback`) &mdash;
+       The callback that determines whether a row should be deleted or not. Should return `true` if the row should be deleted.
+    - `$functionParams` (`array`) &mdash;
+       deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -84,19 +49,8 @@ Filters the given data table
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
@@ -111,19 +65,8 @@ is up to the derived BaseFilter class.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$enable` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$enable` (`bool`) &mdash;
+      
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
@@ -135,18 +78,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The row whose subtable should be filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
 - It does not return anything.
 

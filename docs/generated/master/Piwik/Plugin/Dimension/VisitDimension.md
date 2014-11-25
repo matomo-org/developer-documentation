@@ -82,19 +82,8 @@ already.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$segment` ([`Segment`](../../../Piwik/Plugin/Segment.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$segment` ([`Segment`](../../../Piwik/Plugin/Segment.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="getname" id="getname"></a>
@@ -121,17 +110,8 @@ of the dimension, but is modified to be more human readable
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">eg, `"Referrers.Keywords"`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    eg, `"Referrers.Keywords"`
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the plugin and simple class name of this instance cannot be determined. This would only happen if the dimension is located in the wrong directory.
 
@@ -152,19 +132,8 @@ Get all visit dimensions that are defined by all activated plugins.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$plugin` ([`Plugin`](../../../Piwik/Plugin.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$plugin` ([`Plugin`](../../../Piwik/Plugin.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="factory" id="factory"></a>
@@ -176,31 +145,11 @@ Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwi
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$dimensionId` (`string`) &mdash;
+       See [getId()](/api-reference/Piwik/Plugin/Dimension/VisitDimension#getid).
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dimensionId` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> See [getId()](/api-reference/Piwik/Plugin/Dimension/VisitDimension#getid).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Dimension`](../../../Piwik/Columns/Dimension.md)|`null`) &mdash;
-    <div markdown="1" class="param-desc">The created instance or null if there is no Dimension for $dimensionId or if the plugin that contains the Dimension is not loaded.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Dimension`](../../../Piwik/Columns/Dimension.md)|`null` &mdash;
+    The created instance or null if there is no Dimension for $dimensionId or if the plugin that contains the Dimension is not loaded.
 
 <a name="getmodule" id="getmodule"></a>
 <a name="getModule" id="getModule"></a>
@@ -243,17 +192,8 @@ Example:
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">An array containing the table name as key and an array of MySQL alter table statements that should be executed on the given table. Example: ``` array( 'log_visit' => array("ADD COLUMN `$this->columnName` $this->columnType", "ADD INDEX ...") ); ```</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    An array containing the table name as key and an array of MySQL alter table statements that should be executed on the given table. Example: ``` array( 'log_visit' => array("ADD COLUMN `$this->columnName` $this->columnType", "ADD INDEX ...") ); ```
 
 <a name="uninstall" id="uninstall"></a>
 <a name="uninstall" id="uninstall"></a>
@@ -299,51 +239,15 @@ the event "onExistingVisit" is executed. Meaning for each visitor this method is
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$request` (`Piwik\Tracker\Request`) &mdash;
+      
+    - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
+      
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$request` (`Piwik\Tracker\Request`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`|`Piwik\Plugin\Dimension\false`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed`|`Piwik\Plugin\Dimension\false` &mdash;
+    
 
 <a name="onexistingvisit" id="onexistingvisit"></a>
 <a name="onExistingVisit" id="onExistingVisit"></a>
@@ -357,51 +261,15 @@ You can overwrite any previous value set by the event `onNewVisit` by implemting
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$request` (`Piwik\Tracker\Request`) &mdash;
+      
+    - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
+      
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$request` (`Piwik\Tracker\Request`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`|`Piwik\Plugin\Dimension\false`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed`|`Piwik\Plugin\Dimension\false` &mdash;
+    
 
 <a name="onconvertedvisit" id="onconvertedvisit"></a>
 <a name="onConvertedVisit" id="onConvertedVisit"></a>
@@ -416,51 +284,15 @@ current value.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$request` (`Piwik\Tracker\Request`) &mdash;
+      
+    - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
+      
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$request` (`Piwik\Tracker\Request`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`|`Piwik\Plugin\Dimension\false`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed`|`Piwik\Plugin\Dimension\false` &mdash;
+    
 
 <a name="onanygoalconversion" id="onanygoalconversion"></a>
 <a name="onAnyGoalConversion" id="onAnyGoalConversion"></a>
@@ -476,49 +308,13 @@ created automatically.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$request` (`Piwik\Tracker\Request`) &mdash;
+      
+    - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
+      
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$request` (`Piwik\Tracker\Request`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`|`Piwik\Plugin\Dimension\false`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed`|`Piwik\Plugin\Dimension\false` &mdash;
+    
 

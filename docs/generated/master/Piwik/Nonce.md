@@ -36,29 +36,10 @@ If none exists, a new nonce will be generated.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$id` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Unique id to avoid namespace conflicts, e.g., `'ModuleName.ActionName'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$ttl` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> Optional time-to-live in seconds; default is 5 minutes. (ie, in 5 minutes, the nonce will no longer be valid).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$id` (`string`) &mdash;
+       Unique id to avoid namespace conflicts, e.g., `'ModuleName.ActionName'`.
+    - `$ttl` (`int`) &mdash;
+       Optional time-to-live in seconds; default is 5 minutes. (ie, in 5 minutes, the nonce will no longer be valid).
 - It returns a `string` value.
 
 <a name="verifynonce" id="verifynonce"></a>
@@ -76,41 +57,13 @@ and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piw
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$id` (`string`) &mdash;
+       The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).
+    - `$cnonce` (`string`) &mdash;
+       Nonce sent from client.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$id` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$cnonce` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Nonce sent from client.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`bool`) &mdash;
-    <div markdown="1" class="param-desc">`true` if valid; `false` otherwise.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `bool` &mdash;
+    `true` if valid; `false` otherwise.
 
 <a name="discardnonce" id="discardnonce"></a>
 <a name="discardNonce" id="discardNonce"></a>
@@ -121,19 +74,8 @@ Force expiration of the current nonce.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$id` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The unique nonce ID.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$id` (`string`) &mdash;
+       The unique nonce ID.
 - It does not return anything.
 
 <a name="getorigin" id="getorigin"></a>
@@ -145,17 +87,8 @@ Returns the **Origin** HTTP header or `false` if not found.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`bool`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string`|`bool` &mdash;
+    
 
 <a name="getacceptableorigins" id="getacceptableorigins"></a>
 <a name="getAcceptableOrigins" id="getAcceptableOrigins"></a>
@@ -176,29 +109,10 @@ Verifies and discards a nonce.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$nonceName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$nonce` (`string`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> The nonce from the client. If `null`, the value from the **nonce** query parameter is used.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$nonceName` (`string`) &mdash;
+       The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).
+    - `$nonce` (`string`|`null`) &mdash;
+       The nonce from the client. If `null`, the value from the **nonce** query parameter is used.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the nonce is invalid. See {@link verifyNonce()}.

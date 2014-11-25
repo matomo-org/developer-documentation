@@ -144,7 +144,7 @@ Constants
 
 This class defines the following constants:
 
-- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) &mdash; Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.
+- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) — Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
 ### `COLUMN_AGGREGATION_OPS_METADATA_NAME`
@@ -256,29 +256,10 @@ Sorts the DataTable rows using the supplied callback function.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$functionCallback` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> A comparison callback compatible with usort.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnSortedBy` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The column name `$functionCallback` sorts by. This is stored so we can determine how the DataTable was sorted in the future.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$functionCallback` (`string`) &mdash;
+       A comparison callback compatible with usort.
+    - `$columnSortedBy` (`string`) &mdash;
+       The column name `$functionCallback` sorts by. This is stored so we can determine how the DataTable was sorted in the future.
 - It does not return anything.
 
 <a name="getsortedbycolumnname" id="getsortedbycolumnname"></a>
@@ -292,17 +273,8 @@ See [sort()](/api-reference/Piwik/DataTable#sort).
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`Piwik\false`|`string`) &mdash;
-    <div markdown="1" class="param-desc">The sorted column name or false if none.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `Piwik\false`|`string` &mdash;
+    The sorted column name or false if none.
 
 <a name="enablerecursivesort" id="enablerecursivesort"></a>
 <a name="enableRecursiveSort" id="enableRecursiveSort"></a>
@@ -342,29 +314,10 @@ to all subtables as well.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
-
-      <div markdown="1" class="param-desc"> Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$parameters` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Array of extra parameters to pass to the filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+       Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.
+    - `$parameters` (`array`) &mdash;
+       Array of extra parameters to pass to the filter.
 - It does not return anything.
 
 <a name="queuefilter" id="queuefilter"></a>
@@ -382,29 +335,10 @@ way they will be run after the table is truncated which will result in better pe
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
-
-      <div markdown="1" class="param-desc"> The class name of the filter, eg. `'Limit'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$parameters` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The parameters to give to the filter, eg. `array($offset, $limit)` for the Limit filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+       The class name of the filter, eg. `'Limit'`.
+    - `$parameters` (`array`) &mdash;
+       The parameters to give to the filter, eg. `array($offset, $limit)` for the Limit filter.
 - It does not return anything.
 
 <a name="applyqueuedfilters" id="applyqueuedfilters"></a>
@@ -439,29 +373,10 @@ metadata can be used to specify a different type of operation.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$tableToSum` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$doAggregateSubTables` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$tableToSum` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
+      
+    - `$doAggregateSubTables` (`bool`) &mdash;
+      
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -478,31 +393,11 @@ label => row ID mappings.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$label` (`string`) &mdash;
+       `'label'` column value to look for.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$label` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> `'label'` column value to look for.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc">The row if found, `false` if otherwise.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+    The row if found, `false` if otherwise.
 
 <a name="getrowidfromlabel" id="getrowidfromlabel"></a>
 <a name="getRowIdFromLabel" id="getRowIdFromLabel"></a>
@@ -516,31 +411,11 @@ label => row ID mappings.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$label` (`string`) &mdash;
+       `'label'` column value to look for.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$label` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> `'label'` column value to look for.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">The row ID.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    The row ID.
 
 <a name="getemptyclone" id="getemptyclone"></a>
 <a name="getEmptyClone" id="getEmptyClone"></a>
@@ -551,19 +426,8 @@ Returns an empty DataTable with the same metadata and queued filters as `$this` 
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$keepFilters` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether to pass the queued filter list to the new DataTable or not.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$keepFilters` (`bool`) &mdash;
+       Whether to pass the queued filter list to the new DataTable or not.
 - It returns a [`DataTable`](../Piwik/DataTable.md) value.
 
 <a name="getrowfromid" id="getrowfromid"></a>
@@ -577,31 +441,11 @@ The ID is either the index of the row or `ID_SUMMARY_ROW`.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$id` (`int`) &mdash;
+       The row ID.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$id` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The row ID.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc">The Row or false if not found.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+    The Row or false if not found.
 
 <a name="getrowfromidsubdatatable" id="getrowfromidsubdatatable"></a>
 <a name="getRowFromIdSubDataTable" id="getRowFromIdSubDataTable"></a>
@@ -612,31 +456,11 @@ Returns the row that has a subtable with ID matching `$idSubtable`.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$idSubTable` (`int`) &mdash;
+       The subtable ID.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$idSubTable` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The subtable ID.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc">The row or false if not found</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+    The row or false if not found
 
 <a name="addrow" id="addrow"></a>
 <a name="addRow" id="addRow"></a>
@@ -651,31 +475,11 @@ this row is set as the summary row.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$row` ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
-    <div markdown="1" class="param-desc">`$row` or the summary row if we're at the maximum number of rows.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md) &mdash;
+    `$row` or the summary row if we're at the maximum number of rows.
 
 <a name="addsummaryrow" id="addsummaryrow"></a>
 <a name="addSummaryRow" id="addSummaryRow"></a>
@@ -688,31 +492,11 @@ _Note: A DataTable can have only one summary row._
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$row` ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
+      
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
-    <div markdown="1" class="param-desc">Returns `$row`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md) &mdash;
+    Returns `$row`.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
@@ -735,19 +519,8 @@ You can add row metadata with this method.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> eg. `array(Row::COLUMNS => array('visits' => 13, 'test' => 'toto'), Row::METADATA => array('mymetadata' => 'myvalue'))`</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$row` (`array`) &mdash;
+       eg. `array(Row::COLUMNS => array('visits' => 13, 'test' => 'toto'), Row::METADATA => array('mymetadata' => 'myvalue'))`
 - It does not return anything.
 
 <a name="addrowfromsimplearray" id="addrowfromsimplearray"></a>
@@ -761,19 +534,8 @@ Row metadata cannot be added with this method.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> eg. `array('name' => 'google analytics', 'license' => 'commercial')`</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$row` (`array`) &mdash;
+       eg. `array('name' => 'google analytics', 'license' => 'commercial')`
 - It does not return anything.
 
 <a name="getrows" id="getrows"></a>
@@ -795,31 +557,11 @@ Returns an array containing all column values for the requested column.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$name` (`string`) &mdash;
+       The column name.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The column name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">The array of column values.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    The array of column values.
 
 <a name="getcolumnsstartingwith" id="getcolumnsstartingwith"></a>
 <a name="getColumnsStartingWith" id="getColumnsStartingWith"></a>
@@ -830,31 +572,11 @@ Returns an array containing all column values of columns whose name starts with 
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$namePrefix` (`Piwik\$namePrefix`) &mdash;
+       The column name prefix.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$namePrefix` (`Piwik\$namePrefix`) &mdash;
-
-      <div markdown="1" class="param-desc"> The column name prefix.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">The array of column values.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    The array of column values.
 
 <a name="getcolumns" id="getcolumns"></a>
 <a name="getColumns" id="getColumns"></a>
@@ -871,17 +593,8 @@ _ Note: If column names still use their in-database INDEX values (@see Metrics),
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">Array of string column names.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    Array of string column names.
 
 <a name="getrowsmetadata" id="getrowsmetadata"></a>
 <a name="getRowsMetadata" id="getRowsMetadata"></a>
@@ -892,19 +605,8 @@ Returns an array containing the requested metadata value of each row.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The metadata column to return.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       The metadata column to return.
 - It returns a `array` value.
 
 <a name="getrowscount" id="getrowscount"></a>
@@ -926,17 +628,8 @@ Returns the first row of the DataTable.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc">The first row or `false` if it cannot be found.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+    The first row or `false` if it cannot be found.
 
 <a name="getlastrow" id="getlastrow"></a>
 <a name="getLastRow" id="getLastRow"></a>
@@ -950,17 +643,8 @@ will always be considered the last row.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`Row`](../Piwik/DataTable/Row.md)|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc">The last row or `false` if it cannot be found.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+    The last row or `false` if it cannot be found.
 
 <a name="getrowscountrecursive" id="getrowscountrecursive"></a>
 <a name="getRowsCountRecursive" id="getRowsCountRecursive"></a>
@@ -987,19 +671,8 @@ subtables.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Column name to delete.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       Column name to delete.
 - It does not return anything.
 
 <a name="__sleep" id="__sleep"></a>
@@ -1021,39 +694,12 @@ This change is applied recursively to all subtables.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$oldName`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$newName`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$doRenameColumnsOfSubTables`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$oldName`
+      
+    - `$newName`
+      
+    - `$doRenameColumnsOfSubTables`
+      
 - It does not return anything.
 
 <a name="deletecolumns" id="deletecolumns"></a>
@@ -1065,29 +711,10 @@ Deletes several columns by name in every row.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$names` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> List of column names to delete.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$deleteRecursiveInSubtables` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether to apply this change to all subtables or not.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$names` (`array`) &mdash;
+       List of column names to delete.
+    - `$deleteRecursiveInSubtables` (`bool`) &mdash;
+       Whether to apply this change to all subtables or not.
 - It does not return anything.
 
 <a name="deleterow" id="deleterow"></a>
@@ -1099,19 +726,8 @@ Deletes a row by ID.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$id` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The row ID.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$id` (`int`) &mdash;
+       The row ID.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the row `$id` cannot be found.
@@ -1125,41 +741,13 @@ Deletes rows from `$offset` to `$offset + $limit`.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$offset` (`int`) &mdash;
+       The offset to start deleting rows from.
+    - `$limit` (`int`|`null`) &mdash;
+       The number of rows to delete. If `null` all rows after the offset will be removed.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$offset` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The offset to start deleting rows from.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$limit` (`int`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> The number of rows to delete. If `null` all rows after the offset will be removed.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">The number of rows deleted.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    The number of rows deleted.
 
 <a name="deleterows" id="deleterows"></a>
 <a name="deleteRows" id="deleteRows"></a>
@@ -1170,19 +758,8 @@ Deletes a set of rows by ID.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$rowIds` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The list of row IDs to delete.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$rowIds` (`array`) &mdash;
+       The list of row IDs to delete.
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If a row ID cannot be found.
@@ -1213,29 +790,10 @@ of rows is not important.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table1` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table2` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table1` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
+      
+    - `$table2` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
+      
 - It returns a `bool` value.
 
 <a name="getserialized" id="getserialized"></a>
@@ -1256,51 +814,15 @@ The result of this method is intended for use with the [ArchiveProcessor::insert
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$maximumRowsInDataTable` (`int`) &mdash;
+       If not null, defines the maximum number of rows allowed in the serialized DataTable.
+    - `$maximumRowsInSubDataTable` (`int`) &mdash;
+       If not null, defines the maximum number of rows allowed in serialized subtables.
+    - `$columnToSortByBeforeTruncation` (`string`) &mdash;
+       The column to sort by before truncating, eg, `Metrics::INDEX_NB_VISITS`.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$maximumRowsInDataTable` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> If not null, defines the maximum number of rows allowed in the serialized DataTable.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$maximumRowsInSubDataTable` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> If not null, defines the maximum number of rows allowed in serialized subtables.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnToSortByBeforeTruncation` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The column to sort by before truncating, eg, `Metrics::INDEX_NB_VISITS`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">The array of serialized DataTables: array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae', // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige', // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE', // etc. );</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    The array of serialized DataTables: array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae', // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige', // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE', // etc. );
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If infinite recursion detected. This will occur if a table&#039;s subtable is one of its parent tables.
 
@@ -1317,19 +839,8 @@ _Note: This function will successfully load DataTables serialized by Piwik 1.X._
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$stringSerialized` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> A string with the format of a string in the array returned by [serialize()](http://php.net/function.serialize()).</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$stringSerialized` (`string`) &mdash;
+       A string with the format of a string in the array returned by [serialize()](http://php.net/function.serialize()).
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if `$stringSerialized` is invalid.
@@ -1345,19 +856,8 @@ You can add row metadata with this method.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$array` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Array with the following structure array( // row1 array( Row::COLUMNS => array( col1_name => value1, col2_name => value2, ...), Row::METADATA => array( metadata1_name => value1,  ...), // see Row ), // row2 array( ... ), )</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$array` (`array`) &mdash;
+       Array with the following structure array( // row1 array( Row::COLUMNS => array( col1_name => value1, col2_name => value2, ...), Row::METADATA => array( metadata1_name => value1,  ...), // see Row ), // row2 array( ... ), )
 - It does not return anything.
 
 <a name="addrowsfromsimplearray" id="addrowsfromsimplearray"></a>
@@ -1371,19 +871,8 @@ Row metadata cannot be added with this method.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$array` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Array with the following structure: array( array( col1_name => valueA, col2_name => valueC, ...), array( col1_name => valueB, col2_name => valueD, ...), )</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$array` (`array`) &mdash;
+       Array with the following structure: array( array( col1_name => valueA, col2_name => valueC, ...), array( col1_name => valueB, col2_name => valueD, ...), )
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if `$array` is in an incorrect format.
@@ -1423,29 +912,10 @@ to:
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$array` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Indexed array, two formats supported, see above.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$subtablePerLabel` (`array`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> An array mapping label values with DataTable instances to associate as a subtable.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$array` (`array`) &mdash;
+       Indexed array, two formats supported, see above.
+    - `$subtablePerLabel` (`array`|`null`) &mdash;
+       An array mapping label values with DataTable instances to associate as a subtable.
 - It returns a [`DataTable`](../Piwik/DataTable.md) value.
 
 <a name="setmaximumdepthlevelallowedatleast" id="setmaximumdepthlevelallowedatleast"></a>
@@ -1464,19 +934,8 @@ have subtables, but the subtables are not.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$atLeastLevel` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$atLeastLevel` (`int`) &mdash;
+      
 - It does not return anything.
 
 <a name="getmetadata" id="getmetadata"></a>
@@ -1488,31 +947,11 @@ Returns metadata by name.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$name` (`string`) &mdash;
+       The metadata name.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The metadata name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`mixed`|`Piwik\false`) &mdash;
-    <div markdown="1" class="param-desc">The metadata value or `false` if it cannot be found.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `mixed`|`Piwik\false` &mdash;
+    The metadata value or `false` if it cannot be found.
 
 <a name="setmetadata" id="setmetadata"></a>
 <a name="setMetadata" id="setMetadata"></a>
@@ -1523,29 +962,10 @@ Sets a metadata value by name.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The metadata name.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value` (`mixed`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$name` (`string`) &mdash;
+       The metadata name.
+    - `$value` (`mixed`) &mdash;
+      
 - It does not return anything.
 
 <a name="getalltablemetadata" id="getalltablemetadata"></a>
@@ -1567,19 +987,8 @@ Sets several metadata values by name.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$values` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> Array mapping metadata names with metadata values.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$values` (`array`) &mdash;
+       Array mapping metadata names with metadata values.
 - It does not return anything.
 
 <a name="setalltablemetadata" id="setalltablemetadata"></a>
@@ -1591,19 +1000,8 @@ Sets metadata, erasing existing values.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$metadata`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$metadata`
+      
 - It does not return anything.
 
 <a name="setmaximumallowedrows" id="setmaximumallowedrows"></a>
@@ -1618,19 +1016,8 @@ rows are summed to the summary row.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$maximumAllowedRows` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> If `0`, the maximum number of rows is unset.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$maximumAllowedRows` (`int`) &mdash;
+       If `0`, the maximum number of rows is unset.
 - It does not return anything.
 
 <a name="walkpath" id="walkpath"></a>
@@ -1652,51 +1039,15 @@ for more information about tree walking.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$path` (`array`) &mdash;
+       The path to walk. An array of label values. The first element refers to a row in this DataTable, the second in a subtable of the first row, the third a subtable of the second row, etc.
+    - `$missingRowColumns` (`array`|`bool`) &mdash;
+       The default columns to use when creating new rows. If this parameter is supplied, new rows will be created for path labels that cannot be found.
+    - `$maxSubtableRows` (`int`) &mdash;
+       The maximum number of allowed rows in new subtables. New subtables are only created if `$missingRowColumns` is provided.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$path` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The path to walk. An array of label values. The first element refers to a row in this DataTable, the second in a subtable of the first row, the third a subtable of the second row, etc.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$missingRowColumns` (`array`|`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> The default columns to use when creating new rows. If this parameter is supplied, new rows will be created for path labels that cannot be found.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$maxSubtableRows` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The maximum number of allowed rows in new subtables. New subtables are only created if `$missingRowColumns` is provided.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">First element is the found row or `false`. Second element is the number of path segments walked. If a row is found, this will be == to `count($path)`. Otherwise, it will be the index of the path segment that we could not find.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    First element is the found row or `false`. Second element is the number of path segments walked. If a row is found, this will be == to `count($path)`. Otherwise, it will be the index of the path segment that we could not find.
 
 <a name="mergesubtables" id="mergesubtables"></a>
 <a name="mergeSubtables" id="mergeSubtables"></a>
@@ -1707,29 +1058,10 @@ Returns a new DataTable in which the rows of this table are replaced with the ag
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$labelColumn` (`string`|`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> If supplied the label of the parent row will be added to a new column in each subtable row. If set to, `'label'` each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$useMetadataColumn` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> If true and if `$labelColumn` is supplied, the parent row's label will be added as metadata and not a new column.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$labelColumn` (`string`|`bool`) &mdash;
+       If supplied the label of the parent row will be added to a new column in each subtable row. If set to, `'label'` each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.
+    - `$useMetadataColumn` (`bool`) &mdash;
+       If true and if `$labelColumn` is supplied, the parent row's label will be added as metadata and not a new column.
 - It returns a [`DataTable`](../Piwik/DataTable.md) value.
 
 <a name="makefromsimplearray" id="makefromsimplearray"></a>
@@ -1743,19 +1075,8 @@ See [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable#addrowsfromsimplea
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$array` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$array` (`array`) &mdash;
+      
 - It returns a [`DataTable`](../Piwik/DataTable.md) value.
 
 <a name="fromserializedarray" id="fromserializedarray"></a>
@@ -1770,19 +1091,8 @@ for more information on DataTable serialization.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$data` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$data` (`string`) &mdash;
+      
 - It returns a [`DataTable`](../Piwik/DataTable.md) value.
 
 <a name="clearqueuedfilters" id="clearqueuedfilters"></a>
@@ -1802,17 +1112,8 @@ Unsets all queued filters.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  ([`ArrayIterator`](http://php.net/class.ArrayIterator)|[`Row[]`](../Piwik/DataTable/Row.md)) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  [`ArrayIterator`](http://php.net/class.ArrayIterator)|[`Row[]`](../Piwik/DataTable/Row.md) &mdash;
+    
 
 <a name="offsetexists" id="offsetexists"></a>
 <a name="offsetExists" id="offsetExists"></a>
@@ -1821,19 +1122,8 @@ Unsets all queued filters.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$offset`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$offset`
+      
 - It does not return anything.
 
 <a name="offsetget" id="offsetget"></a>
@@ -1843,19 +1133,8 @@ Unsets all queued filters.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$offset`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$offset`
+      
 - It does not return anything.
 
 <a name="offsetset" id="offsetset"></a>
@@ -1865,29 +1144,10 @@ Unsets all queued filters.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$offset`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$value`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$offset`
+      
+    - `$value`
+      
 - It does not return anything.
 
 <a name="offsetunset" id="offsetunset"></a>
@@ -1897,18 +1157,7 @@ Unsets all queued filters.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$offset`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$offset`
+      
 - It does not return anything.
 

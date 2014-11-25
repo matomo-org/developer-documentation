@@ -44,59 +44,16 @@ Adds a new entry to the menu.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$menuName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The menu's category name. Can be a translation token.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$subMenuName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The menu item's name. Can be a translation token.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$url` (`string`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$order` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The order hint.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$tooltip` (`bool`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> An optional tooltip to display or false to display the tooltip.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$menuName` (`string`) &mdash;
+       The menu's category name. Can be a translation token.
+    - `$subMenuName` (`string`) &mdash;
+       The menu item's name. Can be a translation token.
+    - `$url` (`string`|`array`) &mdash;
+       The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.
+    - `$order` (`int`) &mdash;
+       The order hint.
+    - `$tooltip` (`bool`|`string`) &mdash;
+       An optional tooltip to display or false to display the tooltip.
 - It does not return anything.
 
 <a name="remove" id="remove"></a>
@@ -108,29 +65,10 @@ Removes an existing entry from the menu.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$menuName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The menu's category name. Can be a translation token.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$subMenuName` (`bool`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The menu item's name. Can be a translation token.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$menuName` (`string`) &mdash;
+       The menu's category name. Can be a translation token.
+    - `$subMenuName` (`bool`|`string`) &mdash;
+       The menu item's name. Can be a translation token.
 - It does not return anything.
 
 <a name="rename" id="rename"></a>
@@ -142,49 +80,14 @@ Renames a single menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$mainMenuOriginal` (`Piwik\Menu\$mainMenuOriginal`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$subMenuOriginal` (`Piwik\Menu\$subMenuOriginal`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$mainMenuRenamed` (`Piwik\Menu\$mainMenuRenamed`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$subMenuRenamed` (`Piwik\Menu\$subMenuRenamed`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$mainMenuOriginal` (`Piwik\Menu\$mainMenuOriginal`) &mdash;
+      
+    - `$subMenuOriginal` (`Piwik\Menu\$subMenuOriginal`) &mdash;
+      
+    - `$mainMenuRenamed` (`Piwik\Menu\$mainMenuRenamed`) &mdash;
+      
+    - `$subMenuRenamed` (`Piwik\Menu\$subMenuRenamed`) &mdash;
+      
 - It does not return anything.
 
 <a name="editurl" id="editurl"></a>
@@ -196,38 +99,11 @@ Edits a URL of an existing menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$mainMenuToEdit` (`Piwik\Menu\$mainMenuToEdit`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$subMenuToEdit` (`Piwik\Menu\$subMenuToEdit`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$newUrl` (`Piwik\Menu\$newUrl`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$mainMenuToEdit` (`Piwik\Menu\$mainMenuToEdit`) &mdash;
+      
+    - `$subMenuToEdit` (`Piwik\Menu\$subMenuToEdit`) &mdash;
+      
+    - `$newUrl` (`Piwik\Menu\$newUrl`) &mdash;
+      
 - It does not return anything.
 

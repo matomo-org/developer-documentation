@@ -42,29 +42,10 @@ The abstract class defines the following methods:
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period` (`Piwik\$period`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$date` (`Piwik\$date`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$period` (`Piwik\$period`) &mdash;
+      
+    - `$date` (`Piwik\$date`) &mdash;
+      
 - It returns a [`Period`](../Piwik/Period.md) value.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
@@ -85,29 +66,10 @@ etc.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$dateString`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$period`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$dateString`
+      
+    - `$period`
+      
 - It returns a `boolean` value.
 
 <a name="getdatestart" id="getdatestart"></a>
@@ -139,17 +101,8 @@ Returns the period ID.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`int`) &mdash;
-    <div markdown="1" class="param-desc">A unique integer for this type of period.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `int` &mdash;
+    A unique integer for this type of period.
 
 <a name="getlabel" id="getlabel"></a>
 <a name="getLabel" id="getLabel"></a>
@@ -160,17 +113,8 @@ Returns the label for the current period.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">`"day"`, `"week"`, `"month"`, `"year"`, `"range"`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    `"day"`, `"week"`, `"month"`, `"year"`, `"range"`
 
 <a name="getnumberofsubperiods" id="getnumberofsubperiods"></a>
 <a name="getNumberOfSubperiods" id="getNumberOfSubperiods"></a>
@@ -204,31 +148,11 @@ Returns a list of strings representing the current period.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$format` (`string`) &mdash;
+       The format of each individual day.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$format` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The format of each individual day.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`array`) &mdash;
-    <div markdown="1" class="param-desc">An array of string dates that this period consists of.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `array` &mdash;
+    An array of string dates that this period consists of.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -279,15 +203,6 @@ Returns the date range string comprising two dates
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">eg, `'2012-01-01,2012-01-31'`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    eg, `'2012-01-01,2012-01-31'`.
 

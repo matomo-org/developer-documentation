@@ -63,49 +63,14 @@ See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$defaultType` (`string`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> A ViewDataTable ID representing the default ViewDataTable type to use. If the **viewDataTable** query parameter is not found, this value is used as the ID of the ViewDataTable to create. If a visualization type is configured for the report being displayed, it is used instead of the default type. (See [ViewDataTable.getDefaultType](/api-reference/events#viewdatatablegetdefaulttype)). If nothing is configured for the report and `null` is supplied for this argument, **table** is used.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$apiAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The API method for the report that will be displayed, eg, `'UserSettings.getBrowser'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$controllerAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The controller name and action dedicated to displaying the report. This action is used when reloading reports or changing the report visualization. Defaulted to `$apiAction` if `false` is supplied.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$forceDefault` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> If true, then the visualization type that was configured for the report will be ignored and `$defaultType` will be used as the default.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$defaultType` (`string`|`null`) &mdash;
+       A ViewDataTable ID representing the default ViewDataTable type to use. If the **viewDataTable** query parameter is not found, this value is used as the ID of the ViewDataTable to create. If a visualization type is configured for the report being displayed, it is used instead of the default type. (See [ViewDataTable.getDefaultType](/api-reference/events#viewdatatablegetdefaulttype)). If nothing is configured for the report and `null` is supplied for this argument, **table** is used.
+    - `$apiAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
+       The API method for the report that will be displayed, eg, `'UserSettings.getBrowser'`.
+    - `$controllerAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
+       The controller name and action dedicated to displaying the report. This action is used when reloading reports or changing the report visualization. Defaulted to `$apiAction` if `false` is supplied.
+    - `$forceDefault` (`bool`) &mdash;
+       If true, then the visualization type that was configured for the report will be ignored and `$defaultType` will be used as the default.
 - It returns a [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)

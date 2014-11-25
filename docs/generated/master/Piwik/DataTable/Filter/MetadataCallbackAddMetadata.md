@@ -31,59 +31,16 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The DataTable that will eventually be filtered.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$metadataToRead` (`string`|`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> The metadata to read from each row and pass to the callback.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$metadataToAdd` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the metadata to add.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$functionToApply` (`callable`) &mdash;
-
-      <div markdown="1" class="param-desc"> The callback to execute for each row. The result will be added as metadata with the name `$metadataToAdd`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$applyToSummaryRow` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> True if the callback should be applied to the summary row, false if otherwise.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The DataTable that will eventually be filtered.
+    - `$metadataToRead` (`string`|`array`) &mdash;
+       The metadata to read from each row and pass to the callback.
+    - `$metadataToAdd` (`string`) &mdash;
+       The name of the metadata to add.
+    - `$functionToApply` (`callable`) &mdash;
+       The callback to execute for each row. The result will be added as metadata with the name `$metadataToAdd`.
+    - `$applyToSummaryRow` (`bool`) &mdash;
+       True if the callback should be applied to the summary row, false if otherwise.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -94,19 +51,8 @@ See [MetadataCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/Metadata
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
@@ -121,19 +67,8 @@ is up to the derived BaseFilter class.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$enable` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$enable` (`bool`) &mdash;
+      
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
@@ -145,18 +80,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The row whose subtable should be filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
 - It does not return anything.
 

@@ -25,19 +25,8 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$charset` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> charset, defaults to utf-8</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$charset` (`string`) &mdash;
+       charset, defaults to utf-8
 
 <a name="setdefaultfrompiwik" id="setdefaultfrompiwik"></a>
 <a name="setDefaultFromPiwik" id="setDefaultFromPiwik"></a>
@@ -56,29 +45,10 @@ Sets the sender.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$email` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Email address of the sender.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`null`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> Name of the sender.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$email` (`string`) &mdash;
+       Email address of the sender.
+    - `$name` (`null`|`string`) &mdash;
+       Name of the sender.
 - It returns a `Zend_Mail` value.
 
 <a name="setreplyto" id="setreplyto"></a>
@@ -90,29 +60,10 @@ Set Reply-To Header
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$email` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$name` (`null`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$email` (`string`) &mdash;
+      
+    - `$name` (`null`|`string`) &mdash;
+      
 - It returns a `Zend_Mail` value.
 
 <a name="send" id="send"></a>
@@ -122,18 +73,7 @@ Set Reply-To Header
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$transport`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$transport`
+      
 - It does not return anything.
 

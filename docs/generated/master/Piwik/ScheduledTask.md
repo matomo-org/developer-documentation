@@ -31,59 +31,16 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$objectInstance` (`mixed`) &mdash;
-
-      <div markdown="1" class="param-desc"> The object or class that contains the method to execute regularly. Usually this will be a [Plugin](/api-reference/Piwik/Plugin) instance.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodName` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The name of the method that will be regularly executed.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$methodParameter` (`mixed`|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> An optional parameter to pass to the method when executed. Must be convertible to string.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$scheduledTime` ([`ScheduledTime`](../Piwik/ScheduledTime.md)|`null`) &mdash;
-
-      <div markdown="1" class="param-desc"> A [ScheduledTime](/api-reference/Piwik/ScheduledTime) instance that describes when the method should be executed and how long before the next execution.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$priority` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The priority of the task. Tasks with a higher priority will be executed first. Tasks with low priority will be executed last.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$objectInstance` (`mixed`) &mdash;
+       The object or class that contains the method to execute regularly. Usually this will be a [Plugin](/api-reference/Piwik/Plugin) instance.
+    - `$methodName` (`string`) &mdash;
+       The name of the method that will be regularly executed.
+    - `$methodParameter` (`mixed`|`null`) &mdash;
+       An optional parameter to pass to the method when executed. Must be convertible to string.
+    - `$scheduledTime` ([`ScheduledTime`](../Piwik/ScheduledTime.md)|`null`) &mdash;
+       A [ScheduledTime](/api-reference/Piwik/ScheduledTime) instance that describes when the method should be executed and how long before the next execution.
+    - `$priority` (`int`) &mdash;
+       The priority of the task. Tasks with a higher priority will be executed first. Tasks with low priority will be executed last.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -129,17 +86,8 @@ Returns the value that will be passed to the method when executed, or `null` if 
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`|`null`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string`|`null` &mdash;
+    
 
 <a name="getscheduledtime" id="getscheduledtime"></a>
 <a name="getScheduledTime" id="getScheduledTime"></a>

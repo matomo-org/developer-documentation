@@ -390,19 +390,8 @@ to learn more.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$propertyNames` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> List of property names, eg, `array('disable_queued_filters', 'filter_column')`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$propertyNames` (`array`) &mdash;
+       List of property names, eg, `array('disable_queued_filters', 'filter_column')`.
 - It does not return anything.
 
 <a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
@@ -417,19 +406,8 @@ learn more.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$propertyNames` (`array`) &mdash;
-
-      <div markdown="1" class="param-desc"> List of property names, eg, `array('disable_queued_filters', 'filter_column')`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$propertyNames` (`array`) &mdash;
+       List of property names, eg, `array('disable_queued_filters', 'filter_column')`.
 - It does not return anything.
 
 <a name="setdefaultsort" id="setdefaultsort"></a>
@@ -439,39 +417,12 @@ learn more.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnsToDisplay`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$hasNbUniqVisitors`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$actualColumns`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$columnsToDisplay`
+      
+    - `$hasNbUniqVisitors`
+      
+    - `$actualColumns`
+      
 - It does not return anything.
 
 <a name="arequeuedfiltersdisabled" id="arequeuedfiltersdisabled"></a>

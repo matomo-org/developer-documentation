@@ -33,59 +33,16 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The DataTable being filtered.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$pastDataTable` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The DataTable containing data for the period in the past.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnToAdd` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The column to add evolution data to, eg, `'visits_evolution'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnToRead` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> The column to use to calculate evolution data, eg, `'nb_visits'`.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$quotientPrecision` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The precision to use when rounding the evolution value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The DataTable being filtered.
+    - `$pastDataTable` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The DataTable containing data for the period in the past.
+    - `$columnToAdd` (`string`) &mdash;
+       The column to add evolution data to, eg, `'visits_evolution'`.
+    - `$columnToRead` (`string`) &mdash;
+       The column to use to calculate evolution data, eg, `'nb_visits'`.
+    - `$quotientPrecision` (`int`) &mdash;
+       The precision to use when rounding the evolution value.
 
 <a name="calculate" id="calculate"></a>
 <a name="calculate" id="calculate"></a>
@@ -96,61 +53,17 @@ Calculates the evolution percentage for two arbitrary values.
 #### Signature
 
 -  It accepts the following parameter(s):
+    - `$currentValue` (`float`|`int`) &mdash;
+       The current metric value.
+    - `$pastValue` (`float`|`int`) &mdash;
+       The value of the metric in the past. We measure the % change from this value to $currentValue.
+    - `$quotientPrecision` (`float`|`int`) &mdash;
+       The quotient precision to round to.
+    - `$appendPercentSign` (`bool`) &mdash;
+       Whether to append a '%' sign to the end of the number or not.
 
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$currentValue` (`float`|`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The current metric value.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$pastValue` (`float`|`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The value of the metric in the past. We measure the % change from this value to $currentValue.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$quotientPrecision` (`float`|`int`) &mdash;
-
-      <div markdown="1" class="param-desc"> The quotient precision to round to.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$appendPercentSign` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> Whether to append a '%' sign to the end of the number or not.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
-
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">The evolution percent, eg `'15%'`.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    The evolution percent, eg `'15%'`.
 
 <a name="appendpercentsign" id="appendpercentsign"></a>
 <a name="appendPercentSign" id="appendPercentSign"></a>
@@ -159,19 +72,8 @@ Calculates the evolution percentage for two arbitrary values.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$number`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$number`
+      
 - It does not return anything.
 
 <a name="prependplussigntonumber" id="prependplussigntonumber"></a>
@@ -181,18 +83,7 @@ Calculates the evolution percentage for two arbitrary values.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$number`
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$number`
+      
 - It does not return anything.
 

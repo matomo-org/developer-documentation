@@ -29,39 +29,12 @@ Constructor for AuthResult
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$code` (`int`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$login` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> identity</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$tokenAuth` (`string`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$code` (`int`) &mdash;
+      
+    - `$login` (`string`) &mdash;
+       identity
+    - `$tokenAuth` (`string`) &mdash;
+      
 
 <a name="getidentity" id="getidentity"></a>
 <a name="getIdentity" id="getIdentity"></a>

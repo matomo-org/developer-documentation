@@ -20,7 +20,7 @@ Constants
 
 This class defines the following constants:
 
-- [`APPEND_TO_COLUMN_NAME_TO_KEEP`](#append_to_column_name_to_keep) &mdash; Hack: when specifying "showColumns", sometimes we'd like to also keep columns that "look" like a given column, without manually specifying all these columns (which may not be possible if column names are generated dynamically)
+- [`APPEND_TO_COLUMN_NAME_TO_KEEP`](#append_to_column_name_to_keep) — Hack: when specifying "showColumns", sometimes we'd like to also keep columns that "look" like a given column, without manually specifying all these columns (which may not be possible if column names are generated dynamically)
 <a name="append_to_column_name_to_keep" id="append_to_column_name_to_keep"></a>
 <a name="APPEND_TO_COLUMN_NAME_TO_KEEP" id="APPEND_TO_COLUMN_NAME_TO_KEEP"></a>
 ### `APPEND_TO_COLUMN_NAME_TO_KEEP`
@@ -46,49 +46,14 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The DataTable instance that will eventually be filtered.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnsToRemove` (`array`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> An array of column names or a comma-separated list of column names. These columns will be removed.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$columnsToKeep` (`array`|`string`) &mdash;
-
-      <div markdown="1" class="param-desc"> An array of column names that should be kept or a comma-separated list of column names. Columns not in this list will be removed.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   <li>
-      <div markdown="1" class="parameter">
-      `$deleteIfZeroOnly` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"> If true, columns will be removed only if their value is 0.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+       The DataTable instance that will eventually be filtered.
+    - `$columnsToRemove` (`array`|`string`) &mdash;
+       An array of column names or a comma-separated list of column names. These columns will be removed.
+    - `$columnsToKeep` (`array`|`string`) &mdash;
+       An array of column names that should be kept or a comma-separated list of column names. Columns not in this list will be removed.
+    - `$deleteIfZeroOnly` (`bool`) &mdash;
+       If true, columns will be removed only if their value is 0.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -99,19 +64,8 @@ See [ColumnDelete](/api-reference/Piwik/DataTable/Filter/ColumnDelete).
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
 - It returns a [`DataTable`](../../../Piwik/DataTable.md) value.
 
 <a name="enablerecursive" id="enablerecursive"></a>
@@ -126,19 +80,8 @@ is up to the derived BaseFilter class.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$enable` (`bool`) &mdash;
-
-      <div markdown="1" class="param-desc"></div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$enable` (`bool`) &mdash;
+      
 - It does not return anything.
 
 <a name="filtersubtable" id="filtersubtable"></a>
@@ -150,18 +93,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 #### Signature
 
 -  It accepts the following parameter(s):
-
-   <ul>
-   <li>
-      <div markdown="1" class="parameter">
-      `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
-
-      <div markdown="1" class="param-desc"> The row whose subtable should be filter.</div>
-
-      <div style="clear:both;"/>
-
-      </div>
-   </li>
-   </ul>
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
 - It does not return anything.
 

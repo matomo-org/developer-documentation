@@ -24,17 +24,8 @@ _Note: This value is a Piwik setting set by each user._
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`bool`|`int`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `bool`|`int` &mdash;
+    
 
 <a name="getdefaultreport" id="getdefaultreport"></a>
 <a name="getDefaultReport" id="getDefaultReport"></a>
@@ -47,17 +38,8 @@ _Note: This value is a Piwik setting set by each user._
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`bool`|`int`) &mdash;
-    <div markdown="1" class="param-desc"></div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `bool`|`int` &mdash;
+    
 
 <a name="getdefaultdate" id="getdefaultdate"></a>
 <a name="getDefaultDate" id="getDefaultDate"></a>
@@ -70,17 +52,8 @@ _Note: This value is a Piwik setting set by each user._
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">`'today'`, `'2010-01-01'`, etc.</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    `'today'`, `'2010-01-01'`, etc.
 
 <a name="getdefaultperiod" id="getdefaultperiod"></a>
 <a name="getDefaultPeriod" id="getDefaultPeriod"></a>
@@ -91,15 +64,6 @@ Returns default period type for Piwik reports.
 #### Signature
 
 
-<ul>
-  <li>
-    <div markdown="1" class="parameter">
-    _Returns:_  (`string`) &mdash;
-    <div markdown="1" class="param-desc">`'day'`, `'week'`, `'month'`, `'year'` or `'range'`</div>
-
-    <div style="clear:both;"/>
-
-    </div>
-  </li>
-</ul>
+- *Returns:*  `string` &mdash;
+    `'day'`, `'week'`, `'month'`, `'year'` or `'range'`
 
