@@ -184,6 +184,15 @@ p {
 #quick-search-typeahead {
     margin-top:15px;
 }
+#quick-search-typeahead input {
+    font-size: 12px;
+    background-color: #131313;
+    color: #999999;
+    height: 24px;
+    border: 0;
+    border-bottom: 1px solid #3f3f3f;
+    padding: 0 10px;
+}
 .typeahead {
     min-width:256px;
     margin-top:-1px;
@@ -260,12 +269,12 @@ footer {
 /* Menu navbar */
 @media (max-width: 1200px) {
     #menu.navbar {
-        font-size: 0.85em;
+        font-size: 0.9em;
     }
 }
 @media (max-width: 992px) {
     #menu.navbar {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
     #menu.navbar .nav>li>a {
         padding-left: 10px;
