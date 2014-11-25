@@ -53,15 +53,15 @@ class Home {
             ],
         ];
 
-        $menu[] = [
-            'title'       => 'Design',
-            'menuTitle'   => 'Design',
-            'url'         => '/design',
-            'description' => 'Discover how Piwik works and get involved in its development with the Core team.',
-            'links'       => [
-                'Writing a theme' => '/guides/theming',
-            ],
-        ];
+//        $menu[] = [
+//            'title'       => 'Design',
+//            'menuTitle'   => 'Design',
+//            'url'         => '/design',
+//            'description' => 'Discover how Piwik works and get involved in its development with the Core team.',
+//            'links'       => [
+//                'Writing a theme' => '/guides/theming',
+//            ],
+//        ];
 
         $menu[] = [
             'title'       => 'API Reference',
