@@ -89,11 +89,13 @@ If you're creating a new plugin that defines new reports or has some complex log
 
 At the moment, you can write unit, integration or system tests for your plugins. This section will explain how.
 
-*Note: All test files must be put in a `Test/` directory located in the root directory of your plugin and every test you write should have the `@group` set to the name of your plugin (for example, `@group MyPlugin`).*
+*Note: All test files must be put in a `Test/` directory located in the root directory of your plugin.*
 
 ### Writing unit tests
 
 To create a simple unit test that doesn't need a MySQL database, create a test case that extends [PHPUnit_Framework_TestCase](http://apidoc.phpunit.de/classes/PHPUnit_Framework_TestCase.html).
+
+You can read [this blogpost](http://piwik.org/blog/2014/11/how-to-write-unit-tests-for-your-plugin-introducing-the-piwik-platform/) to learn in details how to write unit tests for Piwik.
 
 ### Writing integration tests
 
@@ -113,8 +115,6 @@ The first element in the array should be one or more API methods or the `'all'` 
 * **setDateLastN**: Flag describing whether to query for a set of dates or not.
 * **language**: The language to use.
 * **segment**: The segment to use.
-* **visitorId**: Sets the visitorId query parameter to this value.
-* **abandonedCarts**: Sets the abandonedCarts query parameter to this value.
 * **idGoal**: Sets the idGoal query parameter to this value.
 * **apiModule**: The value to use in the apiModule request parameter.
 * **apiAction**: The value to use in the apiAction request parameter.
@@ -142,7 +142,7 @@ public function getApiForTesting()
         // set some custom request parameters
         array('API.getBulkRequest', array('format' => 'xml',
                                           'testSuffix' => '_bulk_xml',
-                                          'otherParameters' => array('urls' => $bulkUrls))),
+                                          'otherRequestParameters' => array('urls' => $bulkUrls))),
 
         // test multiple dates w/ multiple periods and multiple sites
         array('UserSettings.getResolution', array('idSite' => 'all',
@@ -191,7 +191,7 @@ MySystemTest::$fixture = new \Test_Piwik_Fixture_ThreeGoalsOnePageview();
 
 To see the fixtures Piwik defines, see the files in the `tests/PHPUnit/Fixtures` directory.
 
-You can create your own fixture as well, just `Piwik\Tests\Framework\Fixture` and place the file in the `Test/Fixture` directory of your plugin.
+You can create your own fixture as well, just extend `Piwik\Tests\Framework\Fixture` and place the file in the `Test/Fixtures/` directory of your plugin.
 
 #### Expected and processed output
 
@@ -249,7 +249,7 @@ it("should load correctly", function (done) {
         page.load(url);
     }, done);
 });
-`
+```
 
 `"OptionalPrefix"` will default to the name of the test.
 
