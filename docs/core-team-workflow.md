@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # The Core Team Workflow
 
 ## About this guide
