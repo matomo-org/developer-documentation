@@ -184,7 +184,7 @@ _Learn more about these classes in our [All About Analytics](/guides/all-about-a
 
 Plugins can define a **Settings** class (that extends [Piwik\Plugin\Settings](/api-reference/Piwik/Plugin/Settings)) to define their own configuration settings. These classes add sections to the _Settings > Plugins_ admin page.
 
-_Learn more about these classes in our [Piwik Configuration](/guides/piwik-configuration) guide._
+*Learn more about these classes in our [Plugin Settings](/guides/plugin-settings) guide.*
 
 <a name="extendable-classes"></a>
 ## Extendable Classes
@@ -209,6 +209,6 @@ _Learn more about creating new report visualizations in our [Visualizing Report 
 * To learn **more about the Twig filters and functions Piwik defines** read the documentation for the [View](/api-reference/Piwik/View) class.
 * To learn **about API and Controller classes** read our [MVC in Piwik](/guides/mvc-in-piwik) guide.
 * To learn **about Archiver classes** read our [All About Analytics](/guides/all-about-analytics-data) guide.
-* To learn **about plugin Settings** read our [Piwik Configuration](/guides/piwik-configuration) guide.
+* To learn **about plugin settings** read our [Plugin Settings](/guides/plugin-settings) guide.
 <!-- TODO: need new tutorial/guide * To learn **about creating new LocationProviders** read our ??? -->
 * To learn **about creating new report visualizations** read our [Visualizing Report Data](/guides/visualizing-report-data) guide._

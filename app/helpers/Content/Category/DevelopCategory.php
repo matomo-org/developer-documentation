@@ -36,7 +36,6 @@ class DevelopCategory extends Category
             ]),
             new Guide('mvc-in-piwik'),
             new Guide('piwik-configuration'),
-            new Guide('piwiks-ini-configuration'),
             new Guide('persistence-and-the-mysql-backend'),
             new Guide('security-in-piwik'),
             new Guide('internationalization'),
