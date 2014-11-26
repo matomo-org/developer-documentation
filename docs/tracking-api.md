@@ -1,7 +1,7 @@
 ---
 category: API Reference
 ---
-# The Tracking HTTP API
+# Tracking HTTP API
 
 To track page views, events, visits, you have to send a HTTP request to your Tracking HTTP API endpoint, for example, **http://your-piwik-domain.tld/piwik.php** with the correct query parameters set.
 

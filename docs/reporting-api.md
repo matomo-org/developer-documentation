@@ -5,7 +5,7 @@ subGuides:
   - reporting-api-metadata
   - reporting-api-segmentation
 ---
-# Reporting API
+# Reporting HTTP API
 
 This section contains the API reference for the Reporting HTTP API.
 
