@@ -130,10 +130,6 @@ $sql = "SELECT * FROM " . Common::prefixTable('site') . " WHERE idsite = ?";
 $rows = Db::query($sql, array($idSite));
 ```
 
-There is a limit to the number of placeholders you can use. If you need to use more placeholders than the limit allows, you may have to concatenate the parameters directly. Make sure these parameters are obtained from a trusted source (such as from another query).
-
-This is done in `ArchiveSelector::getArchiveData()` with archive IDs. The method could potentially select hundreds or thousands of archive IDs, which is well above the limit of allowed placeholders. Since the IDs are obtained from another query, it safe to just concatenate them.
-
 ## Preventing Remote File Inclusion
 
 [Remote File Inclusion](http://en.wikipedia.org/wiki/File_inclusion_vulnerability) is the inclusion and execution of source code that is not part of the webapp. It happens in PHP with `include` or `require` statements that use a path determined by the user.
@@ -167,18 +163,6 @@ if ($clientToUse == 'mySeoProvider') {
 // ... use $client ...
 ```
 
-## Preventing Direct Access
-
-**Direct access** is the possibility of accessing one of your plugin's PHP files and having them execute. If some code does execute, it will display error messages that reveal valuable information to an attacker.
-
-To prevent this type of vulnerability, put the following at the top of your PHP files that would execute something when run directly:
-
-```php
-<?php
-
-defined('PIWIK_INCLUDE_PATH') or die('Restricted access');
-```
-
 ## Other Coding Guidelines
 
 Here are some other coding guidelines that will help make your code more secure:
@@ -195,11 +179,6 @@ Here are some other coding guidelines that will help make your code more secure:
 
 - **If your plugin has admin functionality (functionality only an administrator or the super user can use) then your plugin's Controller must extend [Piwik\Plugin\ControllerAdmin](/api-reference/Piwik/Plugin/ControllerAdmin).**
 
-- Some servers will disable PHP functions for (undisclosed) security reasons. Replacement functions can sometimes be found in **libs/upgradephp/upgrade.php**, including `_parse_ini_file()`, `_glob()`, `_fnmatch()`, and `_readfile()`. The functions `safe_serialize()` and `safe_unserialize()` are like the built-in functions, but won't serialize & unserialize objects. <!-- TODO: is this useful at all? for security or for something else? -->
-
-<!-- TODO: what about: "Handle user/untrusted input & Handling output" both in plugins.md security section. don't know what it means, maybe already talked about above/elsewhere. -->
-
 ## Learn more
 
-* To learn **more about security in web applications** read this article: [Top 10 Security from The Open Web Application Security Project (OWASP)](http://www.owasp.org/index.php/Top_10_2007).
-* To learn **more about security in PHP applications** read this two part article: [part 1](http://www.onlamp.com/pub/a/php/2003/03/20/php_security.html), [part 2](http://www.onlamp.com/pub/a/php/2003/04/03/php_security.html?CMP=AFC-ak_article&ATT=Ten+Security+Checks+for+PHP%2c+Part+2).
+- To learn **more about security in web applications** read this article: [Top 10 Security from The Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Top_10_2013-Table_of_Contents).
