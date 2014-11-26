@@ -25,8 +25,8 @@
                             <ul class="nav">
                                 {% for subItem in item.subItems %}
                                     {% set menuClass = (guide.title == subItem.menuTitle) ? 'active' : '' %}
-                                    <li class="{{ menuClass }}" title="{{ subItem.title|raw }}">
-                                        <a href="{{ subItem.menuUrl }}"> {{ subItem.menuTitle }}</a>
+                                    <li class="{{ menuClass }}" title="{{ subItem.title|striptags|raw }}">
+                                        <a href="{{ subItem.menuUrl }}"> {{ subItem.menuTitle|raw }}</a>
                                     </li>
                                 {% endfor %}
                             </ul>

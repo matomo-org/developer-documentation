@@ -9,7 +9,7 @@
 namespace helpers\Content\Category;
 
 use helpers\Content\Guide;
-use helpers\Content\RemoteGuide;
+use helpers\Content\RemoteLink;
 
 class DesignCategory extends Category
 {
@@ -27,7 +27,7 @@ class DesignCategory extends Category
     {
         return [
             new Guide('design-introduction'),
-            new RemoteGuide('How to create a custom theme', 'http://piwik.org/blog/2014/08/create-custom-theme-piwik-introducing-piwik-platform/'),
+            new RemoteLink('How to create a custom theme', 'http://piwik.org/blog/2014/08/create-custom-theme-piwik-introducing-piwik-platform/'),
             new Guide('theming'),
         ];
     }

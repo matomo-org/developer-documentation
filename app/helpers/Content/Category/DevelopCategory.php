@@ -10,7 +10,7 @@ namespace helpers\Content\Category;
 
 use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
-use helpers\Content\RemoteGuide;
+use helpers\Content\RemoteLink;
 
 class DevelopCategory extends Category
 {
@@ -47,14 +47,14 @@ class DevelopCategory extends Category
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),
-                new RemoteGuide('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
+                new RemoteLink('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
             ]),
             new Guide('design-introduction'),
             new EmptySubCategory('Blog articles', [
-                new RemoteGuide('Widgets', 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/'),
-                new RemoteGuide('Adding pages and menu items', 'http://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/'),
-                new RemoteGuide('Make your plugin multilingual', 'http://piwik.org/blog/2014/10/how-to-make-your-plugin-multilingual-introducing-the-piwik-platform/'),
-                new RemoteGuide('How to verify user permissions', 'http://piwik.org/blog/2014/11/how-to-verify-user-permissions-introducing-piwik-platform/'),
+                new RemoteLink('Widgets', 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/'),
+                new RemoteLink('Adding pages and menu items', 'http://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/'),
+                new RemoteLink('Make your plugin multilingual', 'http://piwik.org/blog/2014/10/how-to-make-your-plugin-multilingual-introducing-the-piwik-platform/'),
+                new RemoteLink('How to verify user permissions', 'http://piwik.org/blog/2014/11/how-to-verify-user-permissions-introducing-piwik-platform/'),
             ]),
         ];
     }

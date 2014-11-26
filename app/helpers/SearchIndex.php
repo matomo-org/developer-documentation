@@ -9,7 +9,7 @@ use helpers\Content\Category\DevelopCategory;
 use helpers\Content\Category\IntegrateCategory;
 use helpers\Content\EmptySubCategory;
 use helpers\Content\MenuItem;
-use helpers\Content\RemoteGuide;
+use helpers\Content\RemoteLink;
 
 /**
  * Builds the search index: all guides + all API references.
@@ -46,12 +46,12 @@ class SearchIndex
             }
         });
 
-        // Remove from the list the empty categories and remote guides
+        // Remove from the list the empty categories and remote links
         $items = array_filter($items, function (MenuItem $item) {
             if ($item instanceof EmptySubCategory) {
                 return false;
             }
-            if ($item instanceof RemoteGuide) {
+            if ($item instanceof RemoteLink) {
                 return false;
             }
             return true;

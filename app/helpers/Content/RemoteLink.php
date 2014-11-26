@@ -3,9 +3,9 @@
 namespace helpers\Content;
 
 /**
- * Guide on an external URL (e.g. the blog).
+ * Link on an external URL (e.g. the blog).
  */
-class RemoteGuide implements MenuItem
+class RemoteLink implements MenuItem
 {
     /**
      * @var string
@@ -28,7 +28,7 @@ class RemoteGuide implements MenuItem
      */
     public function getMenuTitle()
     {
-        return $this->name;
+        return '<i class="fa fa-external-link"></i> ' . $this->name;
     }
 
     /**
