@@ -199,7 +199,7 @@ The following are a list of guidelines and requirements for contributions to Piw
 
 * **Add new configuration settings for fixed values that may users may change.** Does your code use constants that users may want to change? They should be made configurable.
 
-* **Use automated testing to test your PHP.** If you've written new PHP code, have you created unit and integration tests for them? All code that could benefit from automated tests should have tests written for them. Read our [Automated Testing](/guides/automated-tests) guide to learn about Piwik's test suite.
+* **Use automated testing to test your PHP.** If you've written new PHP code, have you created unit and integration tests for them? All code that could benefit from automated tests should have tests written for them. Read our [Automated Testing](/guides/tests) guide to learn about Piwik's test suite.
 
 * **Internationalize your text.** If your contribution has text, is it loaded from a language file? We want all text in Piwik Core to be available in as many languages as possible. To learn more about i18n in Piwik read our [Internationalization](/guides/internationalization) guide.
 
@@ -270,7 +270,7 @@ Piwik comes with a SQL profiler, which reports the time spent by each query, how
 
 If you are fixing a small bug or simply modifying the UI, there is usually no need to write new tests. But if you are adding a new feature to Piwik, adding a new API method or modifying a core Archiving or Tracking algorithm, generally it is required to also submit new or updated Unit tests or Integration tests.
 
-For more information about running or creating tests, read our [Automated Testing](/guides/automated-tests) guide.
+For more information about running or creating tests, read our [Automated Testing](/guides/tests) guide.
 
 When naming unit/integration tests, it helps to use the **Given**, **When**, **Then** convention for writing tests.
 
@@ -298,4 +298,4 @@ In most cases, it should be enough for your plugin to be available on the [marke
 
 * To **learn the basics of Piwik development** in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.
 * To see a **list of available things you could work on** see our [upcoming milestone](https://github.com/piwik/piwik/issues/milestones)
-* To learn **more about Piwik's test suite** see our [Automated Testing](/guides/automated-tests) guide.
+* To learn **more about Piwik's test suite** see our [Automated Testing](/guides/tests) guide.

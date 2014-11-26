@@ -40,7 +40,7 @@ class DevelopCategory extends Category
             new Guide('persistence-and-the-mysql-backend'),
             new Guide('security-in-piwik'),
             new Guide('internationalization'),
-            new Guide('automated-tests'),
+            new Guide('tests'),
             new Guide('visualizing-report-data'),
             new Guide('working-with-piwiks-ui'),
             new Guide('piwik-on-the-command-line'),

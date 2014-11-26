@@ -13,11 +13,12 @@ class Redirects
     public static function getRedirects()
     {
         return [
-            '/guides'                          => '/',
-            '/contributing'                    => '/guides/contributing-to-piwik-core',
-            '/plugins'                         => '/develop',
-            '/api-reference/metadata'          => '/api-reference/reporting-api-metadata',
-            '/api-reference/segmentation'      => '/api-reference/reporting-api-segmentation',
+            '/guides'                     => '/',
+            '/contributing'               => '/guides/contributing-to-piwik-core',
+            '/plugins'                    => '/develop',
+            '/api-reference/metadata'     => '/api-reference/reporting-api-metadata',
+            '/api-reference/segmentation' => '/api-reference/reporting-api-segmentation',
+            '/guides/automated-tests'     => '/guides/tests',
         ];
     }
 }

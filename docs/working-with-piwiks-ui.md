@@ -197,7 +197,7 @@ Then, when you want to launch a popover, call the **propagateNewPopoverParameter
 
 ### ajaxHelper
 
-The `ajaxHelper` class should be used whenever you need to create an AJAX request. **Plugins should not use `$.ajax` directly.** `ajaxHelper` does some extra things that make it harder to write insecure code. It also keeps track of the current ongoing AJAX requests which is vital to the [UI tests](/guides/automated-tests#ui-tests).
+The `ajaxHelper` class should be used whenever you need to create an AJAX request. **Plugins should not use `$.ajax` directly.** `ajaxHelper` does some extra things that make it harder to write insecure code. It also keeps track of the current ongoing AJAX requests which is vital to the [UI tests](/guides/tests-ui).
 
 To use the `ajaxHelper`, create an instance, configure it, and then call the **send** method. To learn more, read the documentation in the source code (located in **plugins/Morpheus/javascripts/ajaxHelper.js**).
 
