@@ -1,0 +1,58 @@
+.documentation {
+    line-height: 150%;
+}
+
+.documentation h1 {
+    font-weight: 300;
+    padding-bottom: 9px;
+    margin: 0 0 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.documentation a {
+    border-bottom: 1px solid #E8E8E8;
+}
+.documentation a:hover {
+    text-decoration: none;
+}
+.documentation a code {
+    padding-bottom: 1px;
+    border-bottom: 1px solid #337ab7;
+}
+
+.documentation img {
+    max-width: 100%;
+}
+
+.documentation code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.documentation h2 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.documentation h3 {
+    font-size: 22px;
+}
+.documentation h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.documentation h5 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.documentation .guide-navigation {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.documentation .guide-navigation-prev {
+    float:left;
+}
+.documentation .guide-navigation-next {
+    float:right;
+}

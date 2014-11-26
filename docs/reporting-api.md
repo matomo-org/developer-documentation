@@ -1,0 +1,12 @@
+---
+category: API Reference
+subGuides:
+  - reporting-api-listing
+  - reporting-api-metadata
+  - reporting-api-segmentation
+---
+# Reporting API
+
+This section contains the API reference for the Reporting HTTP API.
+
+The Metadata and Segmentation API references are split into dedicated articles in order to keep them shorter and readable.

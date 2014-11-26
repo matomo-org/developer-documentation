@@ -24,7 +24,7 @@ $('#quick-search-typeahead>input').typeahead({
         if (quickSearchData) {
             process(quickSearchData.names);
         } else {
-            $.get('/data/documents.json', {}, function (data) {
+            $.get('/data/documents', {}, function (data) {
                 quickSearchData = JSON.parse(data);
                 process(quickSearchData.names);
             });

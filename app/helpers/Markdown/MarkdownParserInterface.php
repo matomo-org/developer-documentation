@@ -9,7 +9,7 @@ interface MarkdownParserInterface
      *
      * @param string $markdown
      *
-     * @return string HTML
+     * @return Document
      */
     public function parse($markdown);
 }

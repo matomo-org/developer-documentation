@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # Piwik on the Command Line
 
 <!-- Meta (to be deleted)

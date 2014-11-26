@@ -1,4 +1,7 @@
-# How Piwik Works?
+---
+category: Develop
+---
+# How Piwik Works
 
 ## About this guide
 

@@ -1,3 +1,7 @@
+---
+category: Develop
+previous: getting-started-part-2
+---
 # Getting Started Part III: Extras
 
 ## About this guide

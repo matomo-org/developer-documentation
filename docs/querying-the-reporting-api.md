@@ -1,3 +1,6 @@
+---
+category: Integrate
+---
 # Querying the Reporting API
 
 This guide explains how to call the Piwik API to request your web analytics data. There are two methods:

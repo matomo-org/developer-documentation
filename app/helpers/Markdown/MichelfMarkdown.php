@@ -11,6 +11,6 @@ class MichelfMarkdown implements MarkdownParserInterface
 {
     public function parse($markdown)
     {
-        return MarkdownExtra::defaultTransform($markdown);
+        return new Document(MarkdownExtra::defaultTransform($markdown));
     }
 }

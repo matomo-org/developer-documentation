@@ -1,3 +1,6 @@
+---
+category: Develop
+---
 # Theming
 
 <!-- Meta (to be deleted)

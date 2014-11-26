@@ -10,7 +10,8 @@
         "slim/slim": "2.*",
         "slim/extras": "2.*",
         "slim/views": "0.1.*",
-        "michelf/php-markdown": "1.4.1"
+        "michelf/php-markdown": "1.4.1",
+        "mnapoli/front-yaml": "~1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"

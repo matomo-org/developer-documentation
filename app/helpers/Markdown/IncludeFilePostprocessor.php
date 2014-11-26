@@ -44,9 +44,11 @@ class IncludeFilePostprocessor implements MarkdownParserInterface
         // else URLs are turned into <a> tags by the Markdown parser
         $markdown = $this->replaceTagsWithUniqueIds($markdown, $replacements);
 
-        $html = $this->wrapped->parse($markdown);
+        $document = $this->wrapped->parse($markdown);
 
-        return $this->replaceUniqueIdsWithFileContent($html, $replacements);
+        $document->htmlContent = $this->replaceUniqueIdsWithFileContent($document->htmlContent, $replacements);
+
+        return $document;
     }
 
     private function replaceTagsWithUniqueIds($markdown, array &$replacements)
@@ -61,6 +63,10 @@ class IncludeFilePostprocessor implements MarkdownParserInterface
 
     private function getFileContent($url, $escape)
     {
+        if (DISABLE_INCLUDE) {
+            return 'remote file inclusion disabled';
+        }
+
         try {
             $content = mb_convert_encoding(file_get_contents($url), 'HTML-ENTITIES', 'utf-8');
         } catch (\Exception $e) {
