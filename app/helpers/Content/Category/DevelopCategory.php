@@ -51,7 +51,6 @@ class DevelopCategory extends Category
             ]),
             new Guide('design-introduction'),
             new EmptySubCategory('Blog articles', [
-                new RemoteGuide('Make your plugin configurable', 'http://piwik.org/blog/2014/09/make-plugin-configurable-introducing-piwik-platform/'),
                 new RemoteGuide('Widgets', 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/'),
                 new RemoteGuide('Adding pages and menu items', 'http://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/'),
                 new RemoteGuide('Make your plugin multilingual', 'http://piwik.org/blog/2014/10/how-to-make-your-plugin-multilingual-introducing-the-piwik-platform/'),
