@@ -1,6 +1,6 @@
 ---
 category: Develop
-previous: http-requests-handling
+previous: http-request-handling
 next: mvc-views
 ---
 # Piwik APIs (Models)

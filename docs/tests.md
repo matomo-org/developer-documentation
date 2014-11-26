@@ -21,7 +21,7 @@ This guide assumes that you:
 * can code in PHP,
 * can use PHPUnit,
 * have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide),
-* and understand how Piwik handles requests (if not, read our [MVC in Piwik](/guides/mvc-in-piwik) guide).
+* and understand how Piwik handles requests (if not, read our [HTTP Request Handling](/guides/http-request-handling) guide).
 
 ## Piwik's test suite
 
