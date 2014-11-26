@@ -42,9 +42,30 @@ If you're creating a new plugin that defines new reports or has some complex log
 
 ### Writing unit tests
 
-To create a simple unit test that doesn't need a MySQL database, create a test case that extends [PHPUnit_Framework_TestCase](http://apidoc.phpunit.de/classes/PHPUnit_Framework_TestCase.html).
+A unit test tests only a single method or class and does not use dependencies like the filesystem, web, config, database or to any other plugin.
 
-You can read [this blogpost](http://piwik.org/blog/2014/11/how-to-write-unit-tests-for-your-plugin-introducing-the-piwik-platform/) to learn in details how to write unit tests for Piwik.
+To create a new unit test, use the console:
+
+```bash
+$ ./console generate:test --testtype unit
+```
+
+The command will ask you for the name of the plugin and the name of the test (which is usually the name of the class you want to test). It will create a file `plugins/MyPlugin/tests/Unit/WidgetsTest.php` which contains an example to get you started:
+
+```php
+/**
+ * @group MyPlugin
+ * @group WidgetsTest
+ * @group Plugins
+ */
+class WidgetsTest extends \PHPUnit_Framework_TestCase
+{
+    public function testSimpleAddition()
+    {
+        $this->assertEquals(2, 1+1);
+    }
+}
+```
 
 ### Writing integration tests
 
