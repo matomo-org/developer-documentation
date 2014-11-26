@@ -38,56 +38,70 @@ This guide assumes that you:
 
 ## The Basics
 
-Internationalization is accomplished in Piwik by replacing text in the code with string IDs that describe the text. The string IDs are associated with actual text in languages that Piwik supports. These associations are stored in the JSON files in the `lang` directory.
+Internationalization is accomplished in Piwik by replacing text in the code with string IDs. String IDs are associated with text translated in languages that Piwik supports. These translations are stored in the JSON files in the `lang/` directory.
 
-The string IDs are called **translation tokens** and have the following format: `MyPlugin_DescriptionOfThisText`. When Piwik needs to replace a token with translated text, it will look at what language is currently selected and replace the token with the text from that language's JSON file. If no entry can be found, Piwik will default to the english text.
+The string IDs are called **translation tokens** and have the following format: `MyPlugin_DescriptionOfThisText`.
+
+To replace a token with translated text, Piwik will look into the JSON file for the current language. If no entry can be found, Piwik will use the english translation by default.
 
 Translated text entries are allowed to contain `sprintf` parameters, for example, `"This translated text is uses a %s parameter"` or `"This translated text %1$s uses %2$s parameters."`. Every translate function will accept extra parameters that get passed to `sprintf` with the text.
 
 ### Using internationalization in PHP
 
-To translate text in PHP, use the [Piwik::translate](/api-reference/Piwik/Piwik#translate) function. For example,
+To translate text in PHP, use the [Piwik::translate()](/api-reference/Piwik/Piwik#translate) function. For example:
 
-    $translatedText = Piwik::translate('MyPlugin_MyText');
+```php
+$translatedText = Piwik::translate('MyPlugin_MyText');
+```
 
 or
 
-    $translatedText = Piwik::translate('MyPlugin_MyParagraphWithALink', '<a href="http:://piwik.org">', '</a>');
+```php
+$translatedText = Piwik::translate('MyPlugin_MyParagraphWithALink', '<a href="http:://piwik.org">', '</a>');
+```
 
-### Using internationalization in Twig Templates
+### Using internationalization in Twig templates
 
 To translate text in Twig templates, use the `translate` filter. For example,
 
-    {{ 'MyPlugin_MyText'|translate }}
+```twig
+{{ 'MyPlugin_MyText'|translate }}
+```
 
 or
 
-    {{ 'MyPlugin_MyParagraphWithALink'|translate('<a href="http://piwik.org">', '</a>') }}
+```twig
+{{ 'MyPlugin_MyParagraphWithALink'|translate('<a href="http://piwik.org">', '</a>') }}
+```
 
 ### Using internationalization in JavaScript
 
 Translating text in the browser is a bit more complicated than on the server. The browser doesn't have access to the translations and we don't want to send every translation file to every user just so a couple lines of text can be translated.
 
-Piwik solves this problem by allowing plugins to define which translation tokens should be available in the browser and sending only the translations of those keys in the current language to the browser.
+Piwik solves this problem by allowing plugins to define which translation tokens should be available in the browser. It can then send only those translations in the current language to the browser.
 
-To mark a translation token so it will be available client side use the [Translate.getClientSideTranslationKeys](/api-reference/events#translategetclientsidetranslationkeys) event:
+To make a translation token available on the client side, use the [Translate.getClientSideTranslationKeys](/api-reference/events#translategetclientsidetranslationkeys) event:
 
-    // an event handler in MyPlugin.php
-    public function getClientSideTranslationKeys(&$translationKeys)
-    {
-        $translationKeys[] = 'MyPlugin_MyText';
-        $translationKeys[] = 'CorePlugin_SomeCoreText';
-    }
+```php
+// an event handler in MyPlugin.php
+public function getClientSideTranslationKeys(&$translationKeys)
+{
+    $translationKeys[] = 'MyPlugin_MyText';
+    $translationKeys[] = 'CorePlugin_SomeCoreText';
+}
+```
 
-To use these translations in JavaScript, use the global `_pk_translate` JavaScript function:
+To use these translations in JavaScript, use the global `_pk_translate()` JavaScript function:
 
-    var translatedText = _pk_translate('MyPlugin_MyText');
+```javascript
+var translatedText = _pk_translate('MyPlugin_MyText');
+```
 
 ## Adding translation tokens
 
-**If you are developing a plugin or theme** add the translation token to your plugin's language files. The language files should be added to a **lang** subdirectory of your plugin (ie, **plugins/MyPlugin/lang/en.json**).
+**If you are developing a plugin or theme** add the translation token to your plugin's language files. The language files should be added to a `lang/` subdirectory of your plugin (e.g. `plugins/MyPlugin/lang/en.json`).
 
-**If you are developing a contribution for Piwik Core** add the translation token and the english translation to **lang/en.json**.
+**If you are developing a contribution for Piwik Core** add the translation token and the english translation to `lang/en.json`. Do not add translations for other languages as those as managed through a separate tool.
 
 ### Guidelines for new translation tokens
 
