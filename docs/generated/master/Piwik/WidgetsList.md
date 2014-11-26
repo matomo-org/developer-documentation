@@ -15,6 +15,7 @@ The class defines the following methods:
 
 - [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../Piwik/Singleton.md)
 - [`get()`](#get) &mdash; Returns all available widgets.
+- [`getWidgetUniqueId()`](#getwidgetuniqueid) &mdash; Returns the unique id of an widget with the given parameters
 - [`add()`](#add) &mdash; Adds a report to the list of dashboard widgets.
 - [`remove()`](#remove) &mdash; Removes one or more widgets from the widget list.
 - [`isDefined()`](#isdefined) &mdash; Returns `true` if a report exists in the widget list, `false` if otherwise.
@@ -43,6 +44,23 @@ Returns all available widgets.
 
 - *Returns:*  `array` &mdash;
     Array Mapping widget categories with an array of widget information, eg, ``` array( 'Visitors' => array( array(...), // info about first widget in this category array(...) // info about second widget in this category, etc. ), 'Visits' => array( array(...), array(...) ), ) ```
+
+<a name="getwidgetuniqueid" id="getwidgetuniqueid"></a>
+<a name="getWidgetUniqueId" id="getWidgetUniqueId"></a>
+### `getWidgetUniqueId()`
+
+Returns the unique id of an widget with the given parameters
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$controllerName` (`Piwik\$controllerName`) &mdash;
+      
+    - `$controllerAction` (`Piwik\$controllerAction`) &mdash;
+      
+    - `$customParameters` (`array`) &mdash;
+      
+- It returns a `string` value.
 
 <a name="add" id="add"></a>
 <a name="add" id="add"></a>

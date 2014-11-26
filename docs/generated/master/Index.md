@@ -491,6 +491,7 @@ Index
 - [`getClientSideProperties()`](Piwik/View/UIControl.md#getclientsideproperties) &mdash; *Method in class* [`UIControl`](Piwik/View/UIControl.md)
 - [`getClientSideParameters()`](Piwik/View/UIControl.md#getclientsideparameters) &mdash; *Method in class* [`UIControl`](Piwik/View/UIControl.md)
 - [`get()`](Piwik/WidgetsList.md#get) &mdash; *Method in class* [`WidgetsList`](Piwik/WidgetsList.md)
+- [`getWidgetUniqueId()`](Piwik/WidgetsList.md#getwidgetuniqueid) &mdash; *Method in class* [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## H
 
