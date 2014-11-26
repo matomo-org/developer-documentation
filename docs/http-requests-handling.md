@@ -1,5 +1,7 @@
 ---
 category: Develop
+previous: mvc-in-piwik
+next: mvc-models
 ---
 # How Piwik Handles HTTP Requests
 
