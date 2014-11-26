@@ -1623,7 +1623,7 @@ Usages:
 
 ### Settings.$pluginName.settingsUpdated
 
-*Defined in [Piwik/Plugin/Settings](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php) in line [185](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php#L185)*
+*Defined in [Piwik/Plugin/Settings](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php) in line [189](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php#L189)*
 
 Triggered after a plugin settings have been updated. **Example**
 

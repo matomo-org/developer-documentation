@@ -46,6 +46,7 @@ The class defines the following methods:
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
 - [`getDatabaseConfig()`](#getdatabaseconfig)
 - [`createDatabaseObject()`](#createdatabaseobject) &mdash; Connects to the database.
+- [`hasDatabaseObject()`](#hasdatabaseobject) &mdash; Detect whether a database object is initialized / created or not.
 - [`destroyDatabaseObject()`](#destroydatabaseobject) &mdash; Disconnects and destroys the database connection.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
 - [`query()`](#query) &mdash; Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
@@ -105,6 +106,16 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
 -  It accepts the following parameter(s):
     - `$dbConfig` (`array`|`null`) &mdash;
        Connection parameters in an array. Defaults to the `[database]` INI config section.
+- It does not return anything.
+
+<a name="hasdatabaseobject" id="hasdatabaseobject"></a>
+<a name="hasDatabaseObject" id="hasDatabaseObject"></a>
+### `hasDatabaseObject()`
+
+Detect whether a database object is initialized / created or not.
+
+#### Signature
+
 - It does not return anything.
 
 <a name="destroydatabaseobject" id="destroydatabaseobject"></a>
