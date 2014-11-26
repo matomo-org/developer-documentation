@@ -1,3 +1,7 @@
+.panel-group .panel {
+    margin-bottom: 20px;
+}
+
 /* Customize all "primary" panels */
 .panel-primary {
     border: 1px solid #d0d0d0;
