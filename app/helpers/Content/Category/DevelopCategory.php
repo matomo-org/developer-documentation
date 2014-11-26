@@ -48,6 +48,7 @@ class DevelopCategory extends Category
                 new Guide('core-team-workflow'),
                 new RemoteGuide('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
             ]),
+            new Guide('design-introduction'),
             new EmptySubCategory('Blog articles', [
                 new RemoteGuide('Make your plugin configurable', 'http://piwik.org/blog/2014/09/make-plugin-configurable-introducing-piwik-platform/'),
                 new RemoteGuide('Scheduled tasks', 'http://piwik.org/blog/2014/08/create-scheduled-task-introducing-piwik-platform/'),

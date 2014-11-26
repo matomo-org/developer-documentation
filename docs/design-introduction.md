@@ -1,8 +1,9 @@
 ---
-category: Design
-title: Introduction
+category: Develop
+subGuides:
+  - theming
 ---
-# Design
+# Themes
 
 In Piwik, themes are special types of plugins that change the look and feel of Piwik's UI.
 They use CSS and LESS to override the default styles defined by other Piwik plugins.
