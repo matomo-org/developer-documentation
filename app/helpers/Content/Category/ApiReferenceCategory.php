@@ -29,7 +29,7 @@ class ApiReferenceCategory extends Category
         return [
             new ApiReferenceGuide('api-reference-introduction'),
             new ApiReferenceGuide('tracking-api'),
-            new ApiReferenceGuide('reporting-api'),
+            new ApiReferenceGuide('reporting-api-introduction'),
             new EmptySubCategory('Javascript Documentation', [
                 new ApiReferenceGuide('tracking-javascript'),
             ]),
