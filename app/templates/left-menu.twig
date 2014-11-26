@@ -1,0 +1,73 @@
+<div class="bs-side panel-group">
+
+    {% if category.items|length %}
+        <div class="panel panel-primary">
+
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="{{ category.url }}">
+                        {{ category.name }}
+                    </a>
+                </h4>
+            </div>
+
+            <div class="panel-body bs-sidebar">
+                <ul class="nav nav-pills nav-stacked bs-sidenav">
+                    {% for item in category.items %}
+                        {% set menuClass = (guide.title == item.menuTitle) ? 'active' : '' %}
+                        <li class="{{ menuClass }}" title="{{ item.menuTitle|raw }}">
+                            {% if item.menuUrl %}
+                                <a href="{{ item.menuUrl }}">{{ item.menuTitle }}</a>
+                            {% else %}
+                                <span>{{ item.menuTitle }}</span>
+                            {% endif %}
+
+                            <ul class="nav">
+                                {% for subItem in item.subItems %}
+                                    {% set menuClass = (guide.title == subItem.menuTitle) ? 'active' : '' %}
+                                    <li class="{{ menuClass }}" title="{{ subItem.title|raw }}">
+                                        <a href="{{ subItem.menuUrl }}"> {{ subItem.menuTitle }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    {% endif %}
+
+    {% if guide.sections|length %}
+        <div class="guide-sections panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    {{ guide.title|striptags|raw }}
+                </h4>
+            </div>
+
+            <div class="panel-body bs-sidebar">
+                <ul class="nav nav-pills nav-stacked bs-sidenav">
+                    {% for section in guide.sections %}
+                        <li>
+                            <a href="#{{ section.id }}">
+                                {{ section.title|striptags|raw }}
+                            </a>
+
+                            {% if section.children|length %}
+                                <ul class="nav">
+
+                                    {% for subsection in section.children %}
+                                        <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
+                                    {% endfor %}
+
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
