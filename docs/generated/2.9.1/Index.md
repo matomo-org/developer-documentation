@@ -774,7 +774,7 @@ Index
 - [`Settings`](Piwik/Plugin/Settings.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`save()`](Piwik/Plugin/Settings.md#save) &mdash; *Method in class* [`Settings`](Piwik/Plugin/Settings.md)
 - [`setSettingValue()`](Piwik/Plugin/Settings.md#setsettingvalue) &mdash; *Method in class* [`Settings`](Piwik/Plugin/Settings.md)
 - [`setDataTable()`](Piwik/Plugin/ViewDataTable.md#setdatatable) &mdash; *Method in class* [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
-- [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; *Class in namespace* `Piwik\Plugins\Login`- [`setLimit()`](Piwik/RankingQuery.md#setlimit) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
+- [`SystemCheck`](Piwik/Plugins/Installation/SystemCheck.md) &mdash; *Class in namespace* `Piwik\Plugins\Installation`- [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; *Class in namespace* `Piwik\Plugins\Login`- [`setLimit()`](Piwik/RankingQuery.md#setlimit) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setOthersLabel()`](Piwik/RankingQuery.md#setotherslabel) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setColumnToMarkExcludedRows()`](Piwik/RankingQuery.md#setcolumntomarkexcludedrows) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`set()`](Piwik/Registry.md#set) &mdash; *Method in class* [`Registry`](Piwik/Registry.md)

@@ -78,6 +78,7 @@
 ## Plugin\ViewDataTable
 ## Plugin\Visualization
 ## Plugin\Widgets
+## Plugins\Installation\SystemCheck
 ## Plugins\Login\SessionInitializer
 ## Plugins\UsersManager\UserPreferences
 ## RankingQuery
