@@ -78,6 +78,8 @@ forwarded to request array before it is returned.
 -  It accepts the following parameter(s):
     - `$request` (`string`|`array`) &mdash;
        The base request string or array, eg, `'module=UserSettings&action=getWidescreen'`.
+    - `$defaultRequest` (`array`) &mdash;
+       Default query parameters. If a query parameter is absent in `$request`, it will be loaded from this. Defaults to `$_GET + $_POST`.
 - It returns a `array` value.
 
 <a name="__construct" id="__construct"></a>
@@ -91,6 +93,8 @@ Constructor.
 -  It accepts the following parameter(s):
     - `$request` (`string`|`array`) &mdash;
        Query string that defines the API call (must at least contain a **method** parameter), eg, `'method=UserSettings.getWideScreen&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the values in the `$_GET` and `$_POST` superglobals.
+    - `$defaultRequest` (`array`) &mdash;
+       Default query parameters. If a query parameter is absent in `$request`, it will be loaded from this. Defaults to `$_GET + $_POST`.
 
 <a name="process" id="process"></a>
 <a name="process" id="process"></a>
@@ -148,6 +152,8 @@ Helper method that processes an API request in one line using the variables in `
        The API method to call, ie, `'Actions.getPageTitles'`.
     - `$paramOverride` (`array`) &mdash;
        The parameter name-value pairs to use instead of what's in `$_GET` & `$_POST`.
+    - `$defaultRequest` (`array`) &mdash;
+       Default query parameters. If a query parameter is absent in `$request`, it will be loaded from this. Defaults to `$_GET + $_POST`. To avoid using any parameters from $_GET or $_POST, set this to an empty `array()`.
 
 - *Returns:*  `mixed` &mdash;
     The result of the API request. See [process()](/api-reference/Piwik/API/Request#process).

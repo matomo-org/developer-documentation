@@ -54,11 +54,13 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The table that will eventually filtered.
-    - `$enable` (`bool`) &mdash;
-       Always set to true.
-    - `$processOnlyIdGoal` (`string`) &mdash;
-       Defines what metrics to add (don't process metrics when you don't display them). If self::GOALS_FULL_TABLE, all Goal metrics (and per goal metrics) will be processed. If self::GOALS_OVERVIEW, only the main goal metrics will be added. If an int > 0, then will process only metrics for this specific Goal.
+       The table to eventually filter.
+    - `$enable`
+      
+    - `$processOnlyIdGoal`
+      
+    - `$goalsToProcess`
+      
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>

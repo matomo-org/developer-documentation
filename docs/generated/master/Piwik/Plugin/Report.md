@@ -119,9 +119,7 @@ Eg `array('avg_time_on_site', 'nb_actions_per_visit', ...)`
 
 #### Signature
 
-- It can be one of the following types:
-    - `array`
-    - `Piwik\Plugin\false`
+- It is a `array` value.
 
 <a name="$hasgoalmetrics" id="$hasgoalmetrics"></a>
 <a name="hasGoalMetrics" id="hasGoalMetrics"></a>
@@ -220,7 +218,9 @@ The class defines the following methods:
 - [`configureWidget()`](#configurewidget) &mdash; By default a widget will be configured for this report if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
 - [`configureReportingMenu()`](#configurereportingmenu) &mdash; By default a menu item will be added to the reporting menu if a [$menuTitle](/api-reference/Piwik/Plugin/Report#$menutitle) is set.
 - [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
+- [`getMetricsRequiredForReport()`](#getmetricsrequiredforreport) &mdash; Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
 - [`getProcessedMetrics()`](#getprocessedmetrics) &mdash; Returns an array of supported processed metrics and their corresponding translations.
+- [`getAllMetrics()`](#getallmetrics) &mdash; Returns the array of all metrics displayed by this report.
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
 - [`configureReportMetadata()`](#configurereportmetadata) &mdash; If the report is enabled the report metadata for this report will be built and added to the list of available reports.
 - [`getRelatedReports()`](#getrelatedreports) &mdash; Get the list of related reports if there are any.
@@ -230,7 +230,11 @@ The class defines the following methods:
 - [`fetchSubtable()`](#fetchsubtable) &mdash; Fetches a subtable for the report represented by this instance.
 - [`factory()`](#factory) &mdash; Get an instance of a specific report belonging to the given module and having the given action.
 - [`getAllReports()`](#getallreports) &mdash; Returns a list of all available reports.
+- [`getAllReportClasses()`](#getallreportclasses) &mdash; Returns class names of all Report metadata classes.
 - [`getForDimension()`](#getfordimension) &mdash; Finds a top level report that provides stats for a specific Dimension.
+- [`getProcessedMetricsById()`](#getprocessedmetricsbyid) &mdash; Returns an array mapping the ProcessedMetrics served by this report by their string names.
+- [`getMetricsForTable()`](#getmetricsfortable) &mdash; Returns the Metrics that are displayed by a DataTable of a certain Report type.
+- [`getProcessedMetricsForTable()`](#getprocessedmetricsfortable) &mdash; Returns the ProcessedMetrics that should be computed and formatted for a DataTable of a certain report.
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
@@ -377,6 +381,26 @@ custom metric translations.
 
 - It returns a `array` value.
 
+<a name="getmetricsrequiredforreport" id="getmetricsrequiredforreport"></a>
+<a name="getMetricsRequiredForReport" id="getMetricsRequiredForReport"></a>
+### `getMetricsRequiredForReport()`
+
+Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
+
+This will return all the metrics requested (or all the metrics in the report if nothing is requested)
+**plus** the metrics required to calculate the requested processed metrics.
+
+This method should be used in **Plugin.get** API methods.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$allMetrics` (`string[]`|`null`) &mdash;
+       The list of all available unprocessed metrics. Defaults to this report's metrics.
+    - `$restrictToColumns` (`string[]`|`null`) &mdash;
+       The requested columns.
+- It returns a `string[]` value.
+
 <a name="getprocessedmetrics" id="getprocessedmetrics"></a>
 <a name="getProcessedMetrics" id="getProcessedMetrics"></a>
 ### `getProcessedMetrics()`
@@ -389,6 +413,16 @@ corresponding translations are looked up automatically. If a metric is not trans
 default metric translation for this metric using the [Metrics.getDefaultMetricTranslations](/api-reference/events#metricsgetdefaultmetrictranslations) event. If you
 want to overwrite any default metric translation you should overwrite this method, call this parent method to
 get all default translations and overwrite any custom metric translations.
+
+#### Signature
+
+- It returns a `array` value.
+
+<a name="getallmetrics" id="getallmetrics"></a>
+<a name="getAllMetrics" id="getAllMetrics"></a>
+### `getAllMetrics()`
+
+Returns the array of all metrics displayed by this report.
 
 #### Signature
 
@@ -525,6 +559,16 @@ depending on the order and category of the report.
 
 - It returns a [`Report[]`](../../Piwik/Plugin/Report.md) value.
 
+<a name="getallreportclasses" id="getallreportclasses"></a>
+<a name="getAllReportClasses" id="getAllReportClasses"></a>
+### `getAllReportClasses()`
+
+Returns class names of all Report metadata classes.
+
+#### Signature
+
+- It returns a `string[]` value.
+
 <a name="getfordimension" id="getfordimension"></a>
 <a name="getForDimension" id="getForDimension"></a>
 ### `getForDimension()`
@@ -539,4 +583,51 @@ Finds a top level report that provides stats for a specific Dimension.
 
 - *Returns:*  [`Report`](../../Piwik/Plugin/Report.md)|`null` &mdash;
     The
+
+<a name="getprocessedmetricsbyid" id="getprocessedmetricsbyid"></a>
+<a name="getProcessedMetricsById" id="getProcessedMetricsById"></a>
+### `getProcessedMetricsById()`
+
+Returns an array mapping the ProcessedMetrics served by this report by their string names.
+
+#### Signature
+
+- It returns a [`ProcessedMetric[]`](../../Piwik/Plugin/ProcessedMetric.md) value.
+
+<a name="getmetricsfortable" id="getmetricsfortable"></a>
+<a name="getMetricsForTable" id="getMetricsForTable"></a>
+### `getMetricsForTable()`
+
+Returns the Metrics that are displayed by a DataTable of a certain Report type.
+
+Includes ProcessedMetrics and Metrics.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+      
+    - `$report` ([`Report`](../../Piwik/Plugin/Report.md)) &mdash;
+      
+    - `$baseType` (`string`) &mdash;
+       The base type each metric class needs to be of.
+- It returns a [`Metric[]`](../../Piwik/Plugin/Metric.md) value.
+
+<a name="getprocessedmetricsfortable" id="getprocessedmetricsfortable"></a>
+<a name="getProcessedMetricsForTable" id="getProcessedMetricsForTable"></a>
+### `getProcessedMetricsForTable()`
+
+Returns the ProcessedMetrics that should be computed and formatted for a DataTable of a certain report.
+
+The ProcessedMetrics returned are those specified by the Report metadata
+as well as the DataTable metadata.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+      
+    - `$report` ([`Report`](../../Piwik/Plugin/Report.md)) &mdash;
+      
+- It returns a [`ProcessedMetric[]`](../../Piwik/Plugin/ProcessedMetric.md) value.
 

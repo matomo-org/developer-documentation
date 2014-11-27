@@ -17,6 +17,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`filter()`](#filter) &mdash; See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallbackReplace). Inherited from [`ColumnCallbackReplace`](../../../Piwik/DataTable/Filter/ColumnCallbackReplace.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -37,4 +38,17 @@ Constructor.
        deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
     - `$extraColumnParameters` (`array`) &mdash;
        Extra column values that should be passed to the callback, but shouldn't be replaced.
+
+<a name="filter" id="filter"></a>
+<a name="filter" id="filter"></a>
+### `filter()`
+
+See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallbackReplace).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
+- It does not return anything.
 

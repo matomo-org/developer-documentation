@@ -1,9 +1,12 @@
-<small>Piwik\</small>
+<small>Piwik\Metrics\</small>
 
-MetricsFormatter
-================
+Formatter
+=========
 
-Contains helper function that format numerical values in different ways.
+Contains methods to format metric values.
+
+Passed to the [Metric::format()](/api-reference/Piwik/Plugin/Metric#format)
+method when formatting Metrics.
 
 Methods
 -------
@@ -14,9 +17,10 @@ The class defines the following methods:
 - [`getPrettyTimeFromSeconds()`](#getprettytimefromseconds) &mdash; Returns a prettified time value (in seconds).
 - [`getPrettySizeFromBytes()`](#getprettysizefrombytes) &mdash; Returns a prettified memory size value.
 - [`getPrettyMoney()`](#getprettymoney) &mdash; Returns a pretty formated monetary value using the currency associated with a site.
-- [`getPrettyValue()`](#getprettyvalue) &mdash; Prettifies a metric value based on the column name.
+- [`getPrettyPercentFromQuotient()`](#getprettypercentfromquotient) &mdash; Returns a percent string from a quotient value.
 - [`getCurrencySymbol()`](#getcurrencysymbol) &mdash; Returns the currency symbol for a site.
 - [`getCurrencyList()`](#getcurrencylist) &mdash; Returns the list of all known currency symbols.
+- [`formatMetrics()`](#formatmetrics) &mdash; Formats all metrics, including processed metrics, for a DataTable.
 
 <a name="getprettynumber" id="getprettynumber"></a>
 <a name="getPrettyNumber" id="getPrettyNumber"></a>
@@ -31,7 +35,9 @@ thousands separators and a decimal point specific to the current locale, eg,
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$value` (`Piwik\number`) &mdash;
+    - `$value`
+      
+    - `$precision`
       
 - It returns a `string` value.
 
@@ -48,8 +54,6 @@ Returns a prettified time value (in seconds).
        The number of seconds.
     - `$displayTimeAsSentence` (`bool`) &mdash;
        If set to true, will output `"5min 17s"`, if false `"00:05:17"`.
-    - `$isHtml` (`bool`) &mdash;
-       If true, replaces all spaces with `'&nbsp;'`.
     - `$round` (`bool`) &mdash;
        Whether to round to the nearest second or not.
 - It returns a `string` value.
@@ -63,7 +67,7 @@ Returns a prettified memory size value.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$size` (`Piwik\number`) &mdash;
+    - `$size` (`Piwik\Metrics\number`) &mdash;
        The size in bytes.
     - `$unit` (`string`) &mdash;
        The specific unit to use, if any. If null, the unit is determined by $size.
@@ -86,27 +90,22 @@ Returns a pretty formated monetary value using the currency associated with a si
        The monetary value to format.
     - `$idSite` (`int`) &mdash;
        The ID of the site whose currency will be used.
-    - `$isHtml` (`bool`) &mdash;
-       If true, replaces all spaces with `'&nbsp;'`.
 - It returns a `string` value.
 
-<a name="getprettyvalue" id="getprettyvalue"></a>
-<a name="getPrettyValue" id="getPrettyValue"></a>
-### `getPrettyValue()`
+<a name="getprettypercentfromquotient" id="getprettypercentfromquotient"></a>
+<a name="getPrettyPercentFromQuotient" id="getPrettyPercentFromQuotient"></a>
+### `getPrettyPercentFromQuotient()`
 
-Prettifies a metric value based on the column name.
+Returns a percent string from a quotient value.
+
+Forces the use of a '.'
+decimal place.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$idSite` (`int`) &mdash;
-       The ID of the site the metric is for (used if the column value is an amount of money).
-    - `$columnName` (`string`) &mdash;
-       The metric name.
-    - `$value` (`mixed`) &mdash;
-       The metric value.
-    - `$isHtml` (`bool`) &mdash;
-       If true, replaces all spaces with `'&nbsp;'`.
+    - `$value` (`float`) &mdash;
+      
 - It returns a `string` value.
 
 <a name="getcurrencysymbol" id="getcurrencysymbol"></a>
@@ -135,4 +134,24 @@ Returns the list of all known currency symbols.
 
 - *Returns:*  `array` &mdash;
     An array mapping currency codes to their respective currency symbols and a description, eg, `array('USD' => array('$', 'US dollar'))`.
+
+<a name="formatmetrics" id="formatmetrics"></a>
+<a name="formatMetrics" id="formatMetrics"></a>
+### `formatMetrics()`
+
+Formats all metrics, including processed metrics, for a DataTable.
+
+Metrics to format
+are found through report metadata and DataTable metadata.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+       The table to format metrics for.
+    - `$report` ([`Report`](../../Piwik/Plugin/Report.md)) &mdash;
+       The report the table belongs to.
+    - `$metricsToFormat` (`string[]`|`null`) &mdash;
+       Whitelist of names of metrics to format.
+- It does not return anything.
 

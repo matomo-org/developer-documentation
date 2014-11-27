@@ -23,6 +23,7 @@
 ## DataTable\Filter\ColumnCallbackAddColumnQuotient
 ## DataTable\Filter\ColumnCallbackAddMetadata
 ## DataTable\Filter\ColumnCallbackDeleteRow
+## DataTable\Filter\ColumnCallbackReplace
 ## DataTable\Filter\ColumnDelete
 ## DataTable\Filter\ExcludeLowPopulation
 ## DataTable\Filter\GroupBy
@@ -53,7 +54,7 @@
 ## Menu\MenuTop
 ## Menu\MenuUser
 ## Metrics
-## MetricsFormatter
+## Metrics\Formatter
 ## NoAccessException
 ## Nonce
 ## Notification
@@ -71,6 +72,8 @@
 ## Plugin\Dimension\VisitDimension
 ## Plugin\Manager
 ## Plugin\Menu
+## Plugin\Metric
+## Plugin\ProcessedMetric
 ## Plugin\Report
 ## Plugin\Segment
 ## Plugin\Settings
@@ -78,6 +81,8 @@
 ## Plugin\ViewDataTable
 ## Plugin\Visualization
 ## Plugin\Widgets
+## Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite
+## Plugins\CoreHome\Columns\Metrics\EvolutionMetric
 ## Plugins\Installation\SystemCheck
 ## Plugins\Login\SessionInitializer
 ## Plugins\UsersManager\UserPreferences
@@ -93,6 +98,7 @@
 ## SettingsPiwik
 ## SettingsServer
 ## Settings\Setting
+## Settings\Storage
 ## Settings\SystemSetting
 ## Settings\UserSetting
 ## Singleton

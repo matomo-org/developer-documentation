@@ -41,7 +41,8 @@ Methods
 The class defines the following methods:
 
 - [`getVisitsMetricNames()`](#getvisitsmetricnames)
-- [`getMappingFromIdToName()`](#getmappingfromidtoname)
+- [`getMappingFromNameToId()`](#getmappingfromnametoid)
+- [`getMappingFromNameToIdGoal()`](#getmappingfromnametoidgoal)
 - [`getDefaultMetricTranslations()`](#getdefaultmetrictranslations)
 - [`getDefaultMetrics()`](#getdefaultmetrics)
 - [`getDefaultProcessedMetrics()`](#getdefaultprocessedmetrics)
@@ -58,9 +59,17 @@ The class defines the following methods:
 
 - It does not return anything.
 
-<a name="getmappingfromidtoname" id="getmappingfromidtoname"></a>
-<a name="getMappingFromIdToName" id="getMappingFromIdToName"></a>
-### `getMappingFromIdToName()`
+<a name="getmappingfromnametoid" id="getmappingfromnametoid"></a>
+<a name="getMappingFromNameToId" id="getMappingFromNameToId"></a>
+### `getMappingFromNameToId()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="getmappingfromnametoidgoal" id="getmappingfromnametoidgoal"></a>
+<a name="getMappingFromNameToIdGoal" id="getMappingFromNameToIdGoal"></a>
+### `getMappingFromNameToIdGoal()`
 
 #### Signature
 

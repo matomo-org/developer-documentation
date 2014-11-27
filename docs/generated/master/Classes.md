@@ -27,6 +27,7 @@ This is a complete list of available classes:
 - [`DataTable\Filter\ColumnCallbackAddColumnQuotient`](Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md) &mdash; Calculates the quotient of two columns and adds the result as a new column for each row of a DataTable.
 - [`DataTable\Filter\ColumnCallbackAddMetadata`](Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md) &mdash; Executes a callback for each row of a DataTable and adds the result as a new row metadata value.
 - [`DataTable\Filter\ColumnCallbackDeleteRow`](Piwik/DataTable/Filter/ColumnCallbackDeleteRow.md) &mdash; Deletes all rows for which a callback returns true.
+- [`DataTable\Filter\ColumnCallbackReplace`](Piwik/DataTable/Filter/ColumnCallbackReplace.md) &mdash; Replaces one or more column values in each row of a DataTable with the results of a callback.
 - [`DataTable\Filter\ColumnDelete`](Piwik/DataTable/Filter/ColumnDelete.md) &mdash; Filter that will remove columns from a DataTable using either a blacklist, whitelist or both.
 - [`DataTable\Filter\ExcludeLowPopulation`](Piwik/DataTable/Filter/ExcludeLowPopulation.md) &mdash; Deletes all rows for which a specific column has a value that is lower than specified minimum threshold value.
 - [`DataTable\Filter\GroupBy`](Piwik/DataTable/Filter/GroupBy.md) &mdash; DataTable filter that will group DataTable rows together based on the results of a reduce function.
@@ -57,7 +58,7 @@ This is a complete list of available classes:
 - [`Menu\MenuTop`](Piwik/Menu/MenuTop.md) &mdash; Contains menu entries for the Top menu (the menu at the very top of the page).
 - [`Menu\MenuUser`](Piwik/Menu/MenuUser.md) &mdash; Contains menu entries for the User menu (the menu at the very top of the page).
 - [`Metrics`](Piwik/Metrics.md) &mdash; This class contains metadata regarding core metrics and contains several related helper functions.
-- [`MetricsFormatter`](Piwik/MetricsFormatter.md) &mdash; Contains helper function that format numerical values in different ways.
+- [`Metrics\Formatter`](Piwik/Metrics/Formatter.md) &mdash; Contains methods to format metric values.
 - [`NoAccessException`](Piwik/NoAccessException.md) &mdash; Exception thrown when a user doesn't have sufficient access to a resource.
 - [`Nonce`](Piwik/Nonce.md) &mdash; Nonce class.
 - [`Notification`](Piwik/Notification.md) &mdash; Describes a UI notification.
@@ -75,6 +76,8 @@ This is a complete list of available classes:
 - [`Plugin\Dimension\VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md) &mdash; Defines a new visit dimension that records any visit related information during tracking.
 - [`Plugin\Manager`](Piwik/Plugin/Manager.md) &mdash; The singleton that manages plugin loading/unloading and installation/uninstallation.
 - [`Plugin\Menu`](Piwik/Plugin/Menu.md) &mdash; Base class of all plugin menu providers.
+- [`Plugin\Metric`](Piwik/Plugin/Metric.md) &mdash; Base type of metric metadata classes.
+- [`Plugin\ProcessedMetric`](Piwik/Plugin/ProcessedMetric.md) &mdash; Base type for processed metrics.
 - [`Plugin\Report`](Piwik/Plugin/Report.md) &mdash; Defines a new report.
 - [`Plugin\Segment`](Piwik/Plugin/Segment.md) &mdash; Creates a new segment that can be used for instance within the \Piwik\Columns\Dimension::configureSegment() method.
 - [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all plugin settings providers.
@@ -82,6 +85,8 @@ This is a complete list of available classes:
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
 - [`Plugin\Widgets`](Piwik/Plugin/Widgets.md) &mdash; Base class of all plugin widget providers.
+- [`Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md) &mdash; The average number of seconds spent on the site per visit.
+- [`Plugins\CoreHome\Columns\Metrics\EvolutionMetric`](Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md) &mdash; Calculates evolution values for any other metric.
 - [`Plugins\Installation\SystemCheck`](Piwik/Plugins/Installation/SystemCheck.md)
 - [`Plugins\Login\SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; Initializes authenticated sessions using an Auth implementation.
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
@@ -97,6 +102,7 @@ This is a complete list of available classes:
 - [`SettingsPiwik`](Piwik/SettingsPiwik.md) &mdash; Contains helper methods that can be used to get common Piwik settings.
 - [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and currently used PHP settings.
 - [`Settings\Setting`](Piwik/Settings/Setting.md) &mdash; Base setting type class.
+- [`Settings\Storage`](Piwik/Settings/Storage.md) &mdash; Base setting type class.
 - [`Settings\SystemSetting`](Piwik/Settings/SystemSetting.md) &mdash; Describes a system wide setting.
 - [`Settings\UserSetting`](Piwik/Settings/UserSetting.md) &mdash; Describes a per user setting.
 - [`Singleton`](Piwik/Singleton.md) &mdash; The singleton base class restricts the instantiation of derived classes to one object only.
