@@ -13,6 +13,7 @@ git clean -f -d
 git fetch
 git checkout master
 git pull origin master
+php composer.phar install || true
 cd ..
 php generator/generate.php
 GENERATION_SUCCESS=$?
