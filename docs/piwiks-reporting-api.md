@@ -1,5 +1,5 @@
 ---
-category: Integrate
+category: Develop
 ---
 # Piwik's Reporting API
 
