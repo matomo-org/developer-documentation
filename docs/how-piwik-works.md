@@ -83,7 +83,7 @@ AngularJS is a JavaScript front-end framework, which means that the user interfa
 
 A part of Piwik's long-term roadmap is to move more and more parts of Piwik's UI to AngularJS.
 
-Read more about this in the ["Working with Piwik's UI" guide](guides/working-with-piwiks-ui).
+Read more about this in the ["Working with Piwik's UI" guide](/guides/working-with-piwiks-ui).
 
 ### The HTTP Reporting API
 
@@ -113,7 +113,7 @@ Plugins can expose CLI commands that can be invoked like this:
 
 Command classes are located in a `Commands` directory/namespace and are auto-detected by Piwik.
 
-Read more about this in the ["Piwik on the Command Line" guide](guides/piwik-on-the-command-line).
+Read more about this in the ["Piwik on the Command Line" guide](/guides/piwik-on-the-command-line).
 
 ## Data model, processing and storage
 
@@ -133,7 +133,7 @@ Log data is represented in PHP as `Piwik\Tracker\Visit` objects, and is stored i
 
 Those tables are designed and optimized for fast insertions, as the tracking API needs to be as fast as possible to handle website with heavy traffic.
 
-The content of those tables (and their related PHP entities) is explained in more details in the ["Persistence & the MySQL Backend" guide](guides/persistence-and-the-mysql-backend#log-data-persistence).
+The content of those tables (and their related PHP entities) is explained in more details in the ["Persistence & the MySQL Backend" guide](/guides/persistence-and-the-mysql-backend#log-data-persistence).
 
 ### The archiving process
 
@@ -169,7 +169,7 @@ Because Archive data must be fast to query, it is splitted in separate tables pe
 - `archive_blob_2014_11`: reports for November 2014
 - …
 
-The content of those archive tables is explained in more details in the ["Persistence & the MySQL Backend" guide](guides/persistence-and-the-mysql-backend#archive-tables). The archiving process is explained in details in the ["All About Analytics Data" guide](guides/all-about-analytics-data#the-archiving-process).
+The content of those archive tables is explained in more details in the ["Persistence & the MySQL Backend" guide](/guides/persistence-and-the-mysql-backend#archive-tables). The archiving process is explained in details in the ["All About Analytics Data" guide](/guides/all-about-analytics-data#the-archiving-process).
 
 ### From Archive data to reports
 
@@ -179,7 +179,7 @@ Reports are [`DataTable`](api-reference/Piwik/DataTable) objects and are served 
 
 Sometimes, one persisted record can be the source of several API reports.
 
-You can read more details on how reports are created and served in the ["All About Analytics Data" guide](all-about-analytics-data#serving-reports).
+You can read more details on how reports are created and served in the ["All About Analytics Data" guide](/guides/all-about-analytics-data#serving-reports).
 
 ## Piwik's extensibility points
 
@@ -189,4 +189,4 @@ Piwik Core only defines the main processes and behaviors. Plugins can extend and
 - implementing special classes that are recognized by Piwik
 - extending certain abstract base classes
 
-You can read more about this topic in the ["Piwik's Extensibility Points" guide](guides/piwiks-extensibility-points).
+You can read more about this topic in the ["Piwik's Extensibility Points" guide](/guides/piwiks-extensibility-points).
