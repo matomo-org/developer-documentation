@@ -859,6 +859,7 @@ Index
 - [`$show_pagination_control`](Piwik/ViewDataTable/Config.md#$show_pagination_control) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_offset_information`](Piwik/ViewDataTable/Config.md#$show_offset_information) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setDefaultSort()`](Piwik/ViewDataTable/RequestConfig.md#setdefaultsort) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`shouldFormatMetrics()`](Piwik/ViewDataTable/RequestConfig.md#shouldformatmetrics) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## T
 

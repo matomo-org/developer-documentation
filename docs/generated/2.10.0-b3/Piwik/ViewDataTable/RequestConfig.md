@@ -369,6 +369,7 @@ The class defines the following methods:
 - [`areGenericFiltersDisabled()`](#aregenericfiltersdisabled) &mdash; Returns `true` if generic filters have been disabled, `false` if otherwise.
 - [`getApiModuleToRequest()`](#getapimoduletorequest)
 - [`getApiMethodToRequest()`](#getapimethodtorequest)
+- [`shouldFormatMetrics()`](#shouldformatmetrics)
 
 <a name="getproperties" id="getproperties"></a>
 <a name="getProperties" id="getProperties"></a>
@@ -456,6 +457,14 @@ Returns `true` if generic filters have been disabled, `false` if otherwise.
 <a name="getapimethodtorequest" id="getapimethodtorequest"></a>
 <a name="getApiMethodToRequest" id="getApiMethodToRequest"></a>
 ### `getApiMethodToRequest()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="shouldformatmetrics" id="shouldformatmetrics"></a>
+<a name="shouldFormatMetrics" id="shouldFormatMetrics"></a>
+### `shouldFormatMetrics()`
 
 #### Signature
 
