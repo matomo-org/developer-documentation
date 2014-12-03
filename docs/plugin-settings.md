@@ -99,6 +99,6 @@ See also the [ExampleSettingsPlugin](https://github.com/piwik/piwik/tree/master/
 You can access the value of a setting in a widget, in a controller, in a report or anywhere you want. To access the value create an instance of your settings class and get the value like this:
 
 ```php
-$settings = new \Piwik\Plugin\MyPlugin\Settings();
+$settings = new \Piwik\Plugins\MyPlugin\Settings();
 $interval = $settings->refreshInterval->getValue()
 ```
