@@ -99,6 +99,7 @@
 ## SettingsServer
 ## Settings\Setting
 ## Settings\Storage
+## Settings\Storage\StaticStorage
 ## Settings\SystemSetting
 ## Settings\UserSetting
 ## Singleton

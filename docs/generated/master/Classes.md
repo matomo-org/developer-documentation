@@ -103,6 +103,7 @@ This is a complete list of available classes:
 - [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and currently used PHP settings.
 - [`Settings\Setting`](Piwik/Settings/Setting.md) &mdash; Base setting type class.
 - [`Settings\Storage`](Piwik/Settings/Storage.md) &mdash; Base setting type class.
+- [`Settings\Storage\StaticStorage`](Piwik/Settings/Storage/StaticStorage.md) &mdash; Static / temporary storage where a value will never be persisted meaning it will use the default value for each request until configured differently.
 - [`Settings\SystemSetting`](Piwik/Settings/SystemSetting.md) &mdash; Describes a system wide setting.
 - [`Settings\UserSetting`](Piwik/Settings/UserSetting.md) &mdash; Describes a per user setting.
 - [`Singleton`](Piwik/Singleton.md) &mdash; The singleton base class restricts the instantiation of derived classes to one object only.
