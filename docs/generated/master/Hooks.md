@@ -1734,11 +1734,9 @@ Callback Signature:
 - [Tracker.existingVisitInformation](#trackerexistingvisitinformation)
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
 - [Tracker.getVisitFieldsToPersist](#trackergetvisitfieldstopersist)
-- [Tracker.initRequestSet](#trackerinitrequestset)
 - [Tracker.isExcludedVisit](#trackerisexcludedvisit)
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
 - [Tracker.newConversionInformation](#trackernewconversioninformation)
-- [Tracker.newHandler](#trackernewhandler)
 - [Tracker.newVisitorInformation](#trackernewvisitorinformation)
 - [Tracker.recordAction](#trackerrecordaction)
 - [Tracker.recordEcommerceGoal](#trackerrecordecommercegoal)
@@ -1836,20 +1834,6 @@ Callback Signature:
 <pre><code>function(&amp;$fields)</code></pre>
 
 
-### Tracker.initRequestSet
-
-*Defined in [Piwik/Tracker/RequestSet](https://github.com/piwik/piwik/blob/master/core/Tracker/RequestSet.php) in line [95](https://github.com/piwik/piwik/blob/master/core/Tracker/RequestSet.php#L95)*
-
-
-
-Callback Signature:
-<pre><code>function($this)</code></pre>
-
-Usages:
-
-[BulkTracking::initRequestSet](https://github.com/piwik/piwik/blob/master/plugins/BulkTracking/BulkTracking.php#L37)
-
-
 ### Tracker.isExcludedVisit
 
 *Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php) in line [84](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php#L84)*
@@ -1890,24 +1874,6 @@ Callback Signature:
 - array `$visitInformation` The visit entity that we are tracking a conversion for. See what information it contains [here](/guides/persistence-and-the-mysql-backend#visits).
 
 - \Piwik\Tracker\Request `$request` An object describing the tracking request being processed.
-
-
-### Tracker.newHandler
-
-*Defined in [Piwik/Tracker/Handler/Factory](https://github.com/piwik/piwik/blob/master/core/Tracker/Handler/Factory.php) in line [31](https://github.com/piwik/piwik/blob/master/core/Tracker/Handler/Factory.php#L31)*
-
-Triggered before a new **handler tracking object** is created. Subscribers to this
-event can force the use of a custom handler tracking object that extends from
-Piwik\Tracker\Handler and customize any tracking behavior.
-
-Callback Signature:
-<pre><code>function(&amp;$handler)</code></pre>
-
-- \Piwik\Tracker\Handler `&$handler` Initialized to null, but can be set to a new handler object. If it isn't modified Piwik uses the default class.
-
-Usages:
-
-[BulkTracking::setHandlerIfBulkRequest](https://github.com/piwik/piwik/blob/master/plugins/BulkTracking/BulkTracking.php#L57)
 
 
 ### Tracker.newVisitorInformation
