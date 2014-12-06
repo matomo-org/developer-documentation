@@ -42,7 +42,7 @@ The class defines the following methods:
 - [`setColumnToMarkExcludedRows()`](#setcolumntomarkexcludedrows) &mdash; Sets a column that will be used to filter the result into two categories.
 - [`partitionResultIntoMultipleGroups()`](#partitionresultintomultiplegroups) &mdash; This method can be used to parition the result based on the possible values of one table column.
 - [`execute()`](#execute) &mdash; Executes the query.
-- [`generateQuery()`](#generatequery) &mdash; Generate the SQL code that does the magic.
+- [`generateRankingQuery()`](#generaterankingquery) &mdash; Generate the SQL code that does the magic.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -179,9 +179,9 @@ The object has to be configured first using the other methods.
 - *Returns:*  `array` &mdash;
     The format depends on which methods have been used to configure the ranking query.
 
-<a name="generatequery" id="generatequery"></a>
-<a name="generateQuery" id="generateQuery"></a>
-### `generateQuery()`
+<a name="generaterankingquery" id="generaterankingquery"></a>
+<a name="generateRankingQuery" id="generateRankingQuery"></a>
+### `generateRankingQuery()`
 
 Generate the SQL code that does the magic.
 

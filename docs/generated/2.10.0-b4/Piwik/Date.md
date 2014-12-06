@@ -34,6 +34,7 @@ The class defines the following methods:
 - [`getDateEndUTC()`](#getdateendutc) &mdash; Returns the end of the day of the current timestamp in UTC.
 - [`setTimezone()`](#settimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
 - [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp in a from UTC to a timezone.
+- [`getDatetimeFromTimestamp()`](#getdatetimefromtimestamp) &mdash; Returns the date in the "Y-m-d H:i:s" PHP format
 - [`getTimestampUTC()`](#gettimestamputc) &mdash; Returns the Unix timestamp of the date in UTC.
 - [`getTimestamp()`](#gettimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
 - [`isLater()`](#islater) &mdash; Returns `true` if the current date is older than the given `$date`.
@@ -154,6 +155,19 @@ Converts a timestamp in a from UTC to a timezone.
 
 - *Returns:*  `int` &mdash;
     The adjusted time as seconds from EPOCH.
+
+<a name="getdatetimefromtimestamp" id="getdatetimefromtimestamp"></a>
+<a name="getDatetimeFromTimestamp" id="getDatetimeFromTimestamp"></a>
+### `getDatetimeFromTimestamp()`
+
+Returns the date in the "Y-m-d H:i:s" PHP format
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$timestamp` (`int`) &mdash;
+      
+- It returns a `string` value.
 
 <a name="gettimestamputc" id="gettimestamputc"></a>
 <a name="getTimestampUTC" id="getTimestampUTC"></a>

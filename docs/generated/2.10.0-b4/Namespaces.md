@@ -26,5 +26,6 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\UsersManager`](Piwik/Plugins/UsersManager)
 - [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 - [`Piwik\Settings`](Piwik/Settings)
+- [`Piwik\Settings\Storage`](Piwik/Settings/Storage)
 - [`Piwik\View`](Piwik/View)
 - [`Piwik\ViewDataTable`](Piwik/ViewDataTable)
