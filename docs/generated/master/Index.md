@@ -456,7 +456,7 @@ Index
 - [`getDefaultReport()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultreport) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultDate()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultdate) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultPeriod()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultperiod) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
-- [`generateQuery()`](Piwik/RankingQuery.md#generatequery) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
+- [`generateRankingQuery()`](Piwik/RankingQuery.md#generaterankingquery) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`get()`](Piwik/Registry.md#get) &mdash; *Method in class* [`Registry`](Piwik/Registry.md)
 - [`getKey()`](Piwik/Registry.md#getkey) &mdash; *Method in class* [`Registry`](Piwik/Registry.md)
 - [`getObjectInstance()`](Piwik/ScheduledTask.md#getobjectinstance) &mdash; *Method in class* [`ScheduledTask`](Piwik/ScheduledTask.md)
