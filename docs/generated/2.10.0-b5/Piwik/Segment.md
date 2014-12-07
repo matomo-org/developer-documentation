@@ -65,7 +65,7 @@ Constructor.
     - `$segmentCondition` (`string`) &mdash;
        The segment condition, eg, `'browserCode=ff;countryCode=CA'`.
     - `$idSites` (`array`) &mdash;
-       The list of sites the st
+       The list of sites the segment will be used with. Some segments are dependent on the site, such as goal segments.
 
 <a name="isempty" id="isempty"></a>
 <a name="isEmpty" id="isEmpty"></a>
