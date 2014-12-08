@@ -1,15 +1,15 @@
 # Piwik Developer Documentation
 
-* http://piwik.org
-* http://developer.piwik.org
+- http://piwik.org
+- http://developer.piwik.org
 
 ## Documentations
 
-* [Index](docs/generated/master/Index.md)
-* [Classes](docs/generated/master/Classes.md)
-* [Namespaces](docs/generated/master/Namespaces.md)
-* [Hooks](docs/generated/master/Hooks.md)
-* [Guides](docs)
+- [Index](docs/generated/master/Index.md)
+- [Classes](docs/generated/master/Classes.md)
+- [Namespaces](docs/generated/master/Namespaces.md)
+- [Hooks](docs/generated/master/Hooks.md)
+- [Guides](docs)
 
 ## License
 
@@ -41,9 +41,9 @@ define('DISABLE_INCLUDE', true);
 
 ## Automatic documentation generation (API-Reference)
 
-* Execute `./generate.sh`
-* Commit
-* Push
+- Execute `./generate.sh`
+- Commit
+- Push
 
 or just execute `./generateAndPush.sh`.
 
@@ -64,22 +64,27 @@ In addition:
 
 ### Adding a new guide
 
-Edit the file [app/helpers/Guide.php](app/helpers/Guide.php) and add a new entry to the `menu` function. You need to define the following attributes:
+Create a new Markdown file in `docs/` and use YAML Front Matter to configure it:
 
-* `title` The name of the guide that will be displayed on the website
-* `file` The name of the file without the `.md` extension that should be loaded when a user opens the guide. The file has to be placed in the [docs](docs) directory. For instance a value `introduction` matches [docs/introduction.md](docs/introduction.md)
-* `description` The description of the guide. Will be usually displayed below the title on the guides site.
-* `url` The url under which the guide should be available. For instance a value.
-* `callToAction` This is an optional parameter and defines the title of the call to action button.
+```markdown
+---
+category: Develop
+---
+# The title
 
-### Adding a new API reference
+Lorem ipsum…
+```
 
-Works similar as adding a new guide except that you have to make the changes in the file [app/helpers/ApiReference.php](app/helpers/ApiReference.php).
+**YAML Front Matter** is YAML embedded at the top of Markdown files. It is commonly used to define metadata, and we use it to define several items:
 
-### Adding a new teaser to the home page
+- `category`: the name of the category (Develop, Integrate, Design, API Reference)
+- `subGuides`: allows you to define a list of sub-guides (will appear in the left sidebar)
+- `previous`: allows you to define the previous guide (a link will be added at the end of the guide, it does not affect the sidebar)
+- `next`: allows you to define the next guide (a link will be added at the end of the guide, it does not affect the sidebar)
 
-Works similar as adding a new guide except that you have to make the changes in the file [app/helpers/Home.php](app/helpers/Home.php).
-Please note it is currently not possible to define a file name here. So it is more or less only possible to change existing entries or to add new teasers to external links.
+A guide must be either added to a category menu or set as a "sub-guide" of another guide. It cannot be both (else it will appear twice in the left sidebar).
+
+To add a guide to a category (i.e. it will appear in the left sidebar) edit the PHP class for the category (in `app/helpers/Content/Category`).
 
 ## Supported inline tags in PHP comments
 
