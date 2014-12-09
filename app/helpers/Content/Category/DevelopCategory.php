@@ -35,7 +35,7 @@ class DevelopCategory extends Category
                 new Guide('piwiks-extensibility-points'),
             ]),
             new Guide('mvc-in-piwik'),
-            new EmptySubCategory('User interface', [
+            new EmptySubCategory('User Interface', [
                 new Guide('pages'),
                 new Guide('menus'),
                 new Guide('widgets'),
