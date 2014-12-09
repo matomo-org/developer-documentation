@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Security in Piwik
+# Security best practices
 
 ## About this guide
 

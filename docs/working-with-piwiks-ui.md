@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Working with Piwik's UI
+# JavaScript and CSS
 
 <!-- Meta (to be deleted)
 Purpose:

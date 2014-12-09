@@ -35,15 +35,23 @@ class DevelopCategory extends Category
                 new Guide('piwiks-extensibility-points'),
             ]),
             new Guide('mvc-in-piwik'),
+            new EmptySubCategory('User Interface', [
+                new Guide('pages'),
+                new Guide('menus'),
+                new Guide('widgets'),
+                new Guide('working-with-piwiks-ui'),
+                new Guide('visualizing-report-data'),
+            ]),
             new Guide('piwik-configuration'),
             new Guide('persistence-and-the-mysql-backend'),
-            new Guide('security-in-piwik'),
+            new EmptySubCategory('Security', [
+                new Guide('security-in-piwik'),
+                new Guide('permissions'),
+            ]),
             new Guide('internationalization'),
             new Guide('tests'),
-            new Guide('visualizing-report-data'),
             new Guide('piwiks-reporting-api'),
             new Guide('scheduled-tasks'),
-            new Guide('working-with-piwiks-ui'),
             new Guide('piwik-on-the-command-line'),
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
@@ -52,10 +60,7 @@ class DevelopCategory extends Category
             ]),
             new Guide('design-introduction'),
             new EmptySubCategory('Blog articles', [
-                new RemoteLink('Widgets', 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/'),
-                new RemoteLink('Adding pages and menu items', 'http://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/'),
                 new RemoteLink('Make your plugin multilingual', 'http://piwik.org/blog/2014/10/how-to-make-your-plugin-multilingual-introducing-the-piwik-platform/'),
-                new RemoteLink('How to verify user permissions', 'http://piwik.org/blog/2014/11/how-to-verify-user-permissions-introducing-piwik-platform/'),
             ]),
         ];
     }
