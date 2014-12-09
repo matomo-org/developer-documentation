@@ -38,6 +38,7 @@ class DevelopCategory extends Category
             new EmptySubCategory('User interface', [
                 new Guide('pages'),
                 new Guide('menus'),
+                new Guide('widgets'),
                 new Guide('working-with-piwiks-ui'),
                 new Guide('visualizing-report-data'),
             ]),
@@ -56,7 +57,6 @@ class DevelopCategory extends Category
             ]),
             new Guide('design-introduction'),
             new EmptySubCategory('Blog articles', [
-                new RemoteLink('Widgets', 'http://piwik.org/blog/2014/09/create-widget-introducing-piwik-platform/'),
                 new RemoteLink('Make your plugin multilingual', 'http://piwik.org/blog/2014/10/how-to-make-your-plugin-multilingual-introducing-the-piwik-platform/'),
                 new RemoteLink('How to verify user permissions', 'http://piwik.org/blog/2014/11/how-to-verify-user-permissions-introducing-piwik-platform/'),
             ]),
