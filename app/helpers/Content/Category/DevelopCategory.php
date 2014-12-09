@@ -44,7 +44,10 @@ class DevelopCategory extends Category
             ]),
             new Guide('piwik-configuration'),
             new Guide('persistence-and-the-mysql-backend'),
-            new Guide('security-in-piwik'),
+            new EmptySubCategory('Security', [
+                new Guide('security-in-piwik'),
+                new Guide('permissions'),
+            ]),
             new Guide('internationalization'),
             new Guide('tests'),
             new Guide('piwiks-reporting-api'),
@@ -58,7 +61,6 @@ class DevelopCategory extends Category
             new Guide('design-introduction'),
             new EmptySubCategory('Blog articles', [
                 new RemoteLink('Make your plugin multilingual', 'http://piwik.org/blog/2014/10/how-to-make-your-plugin-multilingual-introducing-the-piwik-platform/'),
-                new RemoteLink('How to verify user permissions', 'http://piwik.org/blog/2014/11/how-to-verify-user-permissions-introducing-piwik-platform/'),
             ]),
         ];
     }
