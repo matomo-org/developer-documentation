@@ -85,6 +85,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `ec_sh` &mdash; Shipping cost of the Order
     * `ec_dt` &mdash; Discount offered
     * `ec_items` &mdash; Items in the Ecommerce order. This is a JSON encoded array of items. Each item is an array with the following info in this order: item sku, item name, item category, item price, item quantity.
+    * `_ects`  &mdash; Timestamp of the last order made by this user. This value is used to process the "Days since last order" report.
 
 * Special parameters
 
