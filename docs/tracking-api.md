@@ -76,14 +76,15 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 
 * Ecommerce info
 
-    Use the following values to record a cart and/or an [ecommerce](http://piwik.org/docs/ecommerce-analytics/) order.     * you must set `&idgoal=0` in your request to track an ecommerce interaction: cart update or an ecommerce order.
-    * `ec_id` &mdash; The unique string identifier for the ecommerce order. (required when tracking an ecommerce order)
+    Use the following values to record a cart and/or an [ecommerce](http://piwik.org/docs/ecommerce-analytics/) order.
+    * you must set `&idgoal=0` in your request to track an ecommerce interaction: cart update or an ecommerce order.
+    * `ec_id` &mdash; The unique string identifier for the ecommerce order (required when tracking an ecommerce order)
+    * `ec_items` &mdash; Items in the Ecommerce order. This is a JSON encoded array of items. Each item is an array with the following info in this order: item sku, item name, item category, item price, item quantity.
     * `revenue` &mdash; The grand total for the ecommerce order (required when tracking an ecommerce order)
     * `ec_st` &mdash; The sub total of the order; excludes shipping.
     * `ec_tx` &mdash; Tax Amount of the order
     * `ec_sh` &mdash; Shipping cost of the Order
     * `ec_dt` &mdash; Discount offered
-    * `ec_items` &mdash; Items in the Ecommerce order. This is a JSON encoded array of items. Each item is an array with the following info in this order: item sku, item name, item category, item price, item quantity.
     * `_ects`  &mdash; The UNUX timestamp of this customer's last ecommerce order. This value is used to process the "Days since last order" report.
 
 * Special parameters
