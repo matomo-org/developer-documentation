@@ -15,11 +15,11 @@
                 <ul class="nav nav-pills nav-stacked bs-sidenav">
                     {% for item in category.items %}
                         {% set menuClass = (guide.title == item.menuTitle) ? 'active' : '' %}
-                        <li class="{{ menuClass }}" title="{{ item.menuTitle|raw }}">
+                        <li class="{{ menuClass }}" title="{{ item.menuTitle|striptags|raw }}">
                             {% if item.menuUrl %}
-                                <a href="{{ item.menuUrl }}">{{ item.menuTitle }}</a>
+                                <a href="{{ item.menuUrl }}">{{ item.menuTitle|raw }}</a>
                             {% else %}
-                                <span>{{ item.menuTitle }}</span>
+                                <span>{{ item.menuTitle|raw }}</span>
                             {% endif %}
 
                             <ul class="nav">

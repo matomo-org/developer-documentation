@@ -9,6 +9,7 @@
 namespace helpers\Content\Category;
 
 use helpers\Content\Guide;
+use helpers\Content\RemoteLink;
 
 class IntegrateCategory extends Category
 {
@@ -28,6 +29,7 @@ class IntegrateCategory extends Category
             new Guide('integrate-introduction'),
             new Guide('tracking-introduction'),
             new Guide('reporting-introduction'),
+            new RemoteLink('Integrations', 'http://piwik.org/integrate/'),
         ];
     }
 
