@@ -9,19 +9,6 @@ Scheduled tasks let you execute tasks regularly (hourly, weekly, …), for examp
 - sync users and websites with other systems
 - clear any caches
 
-## About this guide
-
-**Read this guide if**
-
-* you'd like to know **how to add a scheduled task to your plugin**
-
-**Guide assumptions**
-
-This guide assumes that you:
-
-* can code in PHP, JavaScript and SQL,
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
-
 ## Adding a scheduled task to your plugin
 
 You can add a scheduled task to your plugin by using the [console](/guides/piwik-on-the-command-line):
@@ -106,27 +93,25 @@ public function pingSite($siteMainUrl)
 
 ### Testing scheduled tasks
 
-After you have created your task you are surely wondering how to test it. First, you should write [a unit or integration test](/guides/tests-php).
+To manually execute all scheduled tasks, you can run the following command:
 
-To manually execute all scheduled tasks you can execute the API method `CoreAdminHome.runScheduledTasks` by opening the following URL in your browser:
+```bash
+$ ./console core:run-scheduled-tasks --token-auth=YOUR_TOKEN_AUTH
+```
 
-[http://piwik.example.com/index.php?module=API&method=CoreAdminHome.runScheduledTasks&token_auth=YOUR_API_TOKEN](http://piwik.example.com/index.php?module=API&method=CoreAdminHome.runScheduledTasks&token_auth=YOUR_API_TOKEN)
+There is one problem with this though: Piwik makes sure the scheduled tasks are executed only once an hour, a day, etc. This means you can't simply run the command again and again as you would have to wait for the next hour or day.
 
-*(don't forget to replace the domain and the [token_auth](http://piwik.org/faq/general/#faq_114) URL parameter)*
-
-There is one problem with executing the scheduled tasks: Piwik makes sure they will be executed only once an hour, a day, etc. This means you can't simply reload the URL and test the method again and again as you would have to wait for the next hour or day. The proper solution is to set the constant `DEBUG_FORCE_SCHEDULED_TASKS` to `true` within the file `Core/TaskScheduler.php`. Don't forget to set it back to false again once you have finished testing it.
-
-Starting from Piwik 2.6.0 you can alternatively execute the following command:
+To solve this, the `--force` option will force to execute all tasks, even those that are not due to run at this time.
 
 ```bash
 $ ./console core:run-scheduled-tasks --force --token-auth=YOUR_TOKEN_AUTH
 ```
 
-The option `–force` will force to execute all tasks, even those that are not due to run at this time. With this solution you don't need to edit `TaskScheduler.php`.
+Remember that manually testing your scheduled task is just the first step: adding [unit or integration tests](/guides/tests-php) is the best way to avoid regressions.
 
 ## Which tasks are registered and when is the next execution time of my task?
 
-The [TasksTimetable plugin](http://plugins.piwik.org/TasksTimetable) from the Marketplace can answer this question for you. Simply install and activate the plugin with one click by going to *Settings > Marketplace > Get new functionality*. It'll add a new admin menu item under *Settings* named *Scheduled Tasks*.
+The [TasksTimetable plugin](http://plugins.piwik.org/TasksTimetable) from the Marketplace can answer this question for you. Simply install and activate the plugin with one click by going to *Settings > Marketplace > Get new functionality*. It will add a new admin menu item under *Settings* named *Scheduled Tasks*.
 
 ## Read more
 
