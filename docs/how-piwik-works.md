@@ -101,7 +101,7 @@ This API lets the Javascript tracker submit analytics data for a single action (
 
 Its entry point is different from Piwik's web application and HTTP reporting API: it is through the `piwik.php` file.
 
-Read more about this in the ["The Tracking HTTP API" reference](api-reference/tracking-api).
+Read more about this in the ["The Tracking HTTP API" reference](/api-reference/tracking-api).
 
 ### The command line
 
@@ -153,7 +153,7 @@ Archive data can be:
 
     These are stored in the `archive_numeric_*` tables. Values are stored as float.
 
-- **table records**: bidimensional data (can be numeric values as well as anything else), represented as [`Piwik\DataTable`](api-reference/Piwik/DataTable) objects
+- **table records**: bidimensional data (can be numeric values as well as anything else), represented as [`Piwik\DataTable`](/api-reference/Piwik/DataTable) objects
 
     These are stored in the `archive_blob_*` tables. `DataTable` objects are serialized to string and compressed to be stored as `BLOB` in the table.
     
@@ -175,7 +175,7 @@ The content of those archive tables is explained in more details in the ["Persis
 
 As shown above, data is stored either as numeric metrics or table records.
 
-Reports are [`DataTable`](api-reference/Piwik/DataTable) objects and are served by the API classes defined by plugins. API classes access persisted metrics or records and transform them into presentable reports.
+Reports are [`DataTable`](/api-reference/Piwik/DataTable) objects and are served by the API classes defined by plugins. API classes access persisted metrics or records and transform them into presentable reports.
 
 Sometimes, one persisted record can be the source of several API reports.
 
