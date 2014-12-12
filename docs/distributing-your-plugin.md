@@ -9,10 +9,10 @@ Every instance of Piwik running version 2.0 or greater is able to directly downl
 
 It's also a great way for you to:
 
+* get user feedback via email or the Github issue tracker
 * see how many people use your plugin
 * allow people to donate money
 * get exposure for your skills and work
-* get feedback in the form of comments and ratings _(coming soon)_
 
 ## Adding a plugin to the marketplace
 
@@ -20,11 +20,7 @@ Getting your completed plugin on the marketplace takes a couple steps, all liste
 
 ### Make sure your plugin has a unique name
 
-Every plugin on the marketplace has a unique name. If your plugin's name is already taken, you won't be able to put it on the marketplace.
-
-Make sure the name you chose is currently available, and if it's not, pick another one.
-
-<!-- TODO: problem w/ prefixing project names w/ github user names so projects can have the same name? -->
+Every plugin on the marketplace has a unique name. Make sure the name you chose is currently available, and if it's not, pick another one.
 
 ### Prepare your plugin
 
@@ -59,7 +55,7 @@ The `plugin.json` file must contain the following information:
 - `version`: The plugin's version. It must be a valid [semantic version number](http://semver.org/). If [node-semver](https://github.com/isaacs/node-semver) can't parse it, it won't be considered valid.
 - `description`: A short description of your plugin (up to 150 characters). This will be displayed below the plugin's name in search results and below the top-level heading on your plugin's page. It can include any character.
 - `keywords`: An array of words or short phrases that describes your plugins. The keywords are listed on the Marketplace, which helps users discover your plugin. Keywords can only contain letters, numbers, hyphens, and dots.
-- `license`: The name of the license your plugin uses. The license must be compatible with the [GPLv3](http://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html) or later.
+- `license`: The name of the license your plugin uses. The license must be compatible with the [GPLv3](http://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPLv3](http://www.gnu.org/licenses/gpl-2.0.html) or later.
 - `homepage`: The URL to the plugin's homepage.
 - `authors`: An array of objects, each describing someone who helped create this plugin. The objects must contain a **name** field and can optionally contain an email and homepage field. You must define at least one author.
 
@@ -76,7 +72,7 @@ The following fields are not required for publishing a plugin, but you may want 
     }
     ```
 
-    By default the specified version defines the miniumum version but you can define another comparison by prefixing the version with one of the following values: `<>`, `!=`, `>`, `>=`, `<`, `<=`, `==`.
+    By default the specified version defines the minimum version but you can define another comparison by prefixing the version with one of the following values: `<>`, `!=`, `>`, `>=`, `<`, `<=`, `==`.
 
     For example:
 
@@ -109,7 +105,7 @@ The following fields are not required for publishing a plugin, but you may want 
     "donate": {
         "paypal": "supporters@piwik.org",
         "flattr": "https://flattr.com/thing/131552/Piwik-Web-Analytics-Open-Source",
-        "bitcoin": "http://piwik.org"
+        "bitcoin": "1NdftZmgb8V9PgbFDYjC5PRJ2QDLyyzCU9"
     }
     ```
 
@@ -144,15 +140,15 @@ Creating and initializing a [git](http://git-scm.com) repository on Github is ou
 
 ### Activate the Piwik Plugins webhook
 
-Once your plugin is on a have a Github repository, you need to let the marketplace know about it. This is done by activating the Piwik Plugins webhook.
+Once your plugin is on a Github repository, you need to let the marketplace know about it. This is done by activating the Piwik Plugins webhook.
 
 To activate this webhook, follow these steps:
 
 1. Go to your plugin's Github repo in a browser.
 2. Click on **Service Hooks**.
-3. Scroll down until you see the **Piwik Plugins** option and then click on it.
+3. Search for `piwik` and click the option **Piwik Plugins**.
 4. Click the **Active** checkbox.
-5. Click the **Update Settings** button.
+5. Click the **Add service** button.
 
 The marketplace will now be notified every time you push a commit or a tag to your repository.
 
@@ -164,10 +160,9 @@ You can now publish the first version of your plugin. First, make sure the versi
 $ git tag 0.1.0
 $ git push origin --tags
 ```
+Everytime you push a new tag to your Github repository, a new version of your plugin will become available in the marketplace. Alternatively you can also create the tag by [creating a release](https://help.github.com/articles/c reating-releases/) on Github. The name of the tag doesn't matter, the marketplace will always use the version in your `plugin.json` file.
 
-Everytime you push a new tag to your Github repository, a new version of your plugin will become available in the marketplace. The name of the tag doesn't matter, the marketplace will always use the version in your `plugin.json` file.
-
-**Assuming all goes well, your plugin should now be visible on the marketplace!**
+**Assuming all goes well, your plugin should be visible on the marketplace within a couple minutes. Congratulations!**
 
 ### Troubleshooting
 
@@ -213,7 +208,7 @@ Every plugin gets its own page on the marketplace. On the top is the name and a 
 
 The content of the tabs is determined by the headings in your `README.md` file. See this [README.md](https://raw.github.com/tsteur/piwik-livetab-plugin/master/README.md) for an example.
 
-You can customize the content of those tabs by adding the following sections to your `README.md`:
+You can [customize](#prepare-your-plugin) the content of those tabs by adding the following sections to your `README.md`:
 
 - Description
 - FAQ
