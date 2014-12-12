@@ -160,7 +160,8 @@ You can now publish the first version of your plugin. First, make sure the versi
 $ git tag 0.1.0
 $ git push origin --tags
 ```
-Everytime you push a new tag to your Github repository, a new version of your plugin will become available in the marketplace. Alternatively you can also create the tag by [creating a release](https://help.github.com/articles/c reating-releases/) on Github. The name of the tag doesn't matter, the marketplace will always use the version in your `plugin.json` file.
+
+Everytime you push a new tag to your Github repository, a new version of your plugin will become available in the marketplace. Alternatively you can also create the tag by [creating a release](https://help.github.com/articles/creating-releases/) on Github. The name of the tag doesn't matter, the marketplace will always use the version in your `plugin.json` file.
 
 **Assuming all goes well, your plugin should be visible on the marketplace within a couple minutes. Congratulations!**
 
