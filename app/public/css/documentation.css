@@ -41,6 +41,8 @@
     font-size: 28px;
     margin-top: 30px;
     margin-bottom: 20px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #eeeeee;
 }
 .documentation h3 {
     font-size: 22px;
