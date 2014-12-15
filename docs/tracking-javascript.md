@@ -82,7 +82,6 @@ Starting with Piwik 1.2, first party cookies are used. Consideration must be giv
 
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
 *   `setCookieDomain( domain )` - the default is the document domain; if your web site can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
-
 *   `setCookiePath( path )` - the default is '/'.
 *   `setVisitorCookieTimeout( seconds )` - the default is 13 months
 *   `setReferralCookieTimeout( seconds )` - the default is 6 months
@@ -94,7 +93,6 @@ Starting with Piwik 1.2, first party cookies are used. Consideration must be giv
 *   `setRequestMethod( method )` - Set the request method to either "GET" or "POST". (The default is "GET".) To use the POST request method, the Piwik host must be the same as the tracked website host (Piwik installed in the same domain as your tracked website).
 *   `setCustomRequestProcessing( function )` - Set a function that will process the request content. The function will be called once the request (query parameters string) has been prepared, and before the request content is sent.
 *   `setRequestContentType( contentType )` - Set request Content-Type header value. Applicable when "POST" request method is used via `setRequestMethod`.
-
 
 ## Unit Tests Covering piwik.js
 
