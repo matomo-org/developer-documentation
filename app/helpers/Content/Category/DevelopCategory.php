@@ -50,6 +50,7 @@ class DevelopCategory extends Category
             ]),
             new Guide('internationalization'),
             new Guide('tests'),
+            new Guide('logging'),
             new Guide('piwiks-reporting-api'),
             new Guide('scheduled-tasks'),
             new Guide('piwik-on-the-command-line'),
