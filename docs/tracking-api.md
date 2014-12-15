@@ -24,7 +24,9 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 * `rand` **(recommended)** &mdash; Meant to hold a random value that is generated before each request. Using it helps avoid the tracking request being cached by the browser or a proxy.
 * `apiv` **(recommended)** &mdash; The parameter &amp;apiv=1 defines the api version to use (currently always set to 1)
 
-#### Optional User info _(We recommend that these parameters be used if the information is available and relevant to your use case.)_
+#### Optional User info 
+
+_(We recommend that these parameters be used if the information is available and relevant to your use case.)_
 
 * `urlref` &mdash; The full HTTP Referrer URL. This value is used to determine how someone got to your website (ie, through a website, search engine or campaign).
 * `_cvar` &mdash; Visit scope [custom variables](http://piwik.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
