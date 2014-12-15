@@ -46,7 +46,6 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `new_visit` &mdash; If set to 1, will force a new visit to be created for this action. This feature is also [available in Javascript](http://piwik.org/faq/how-to/#faq_187).
 
     
-
 * Optional Action info (measure Page view, Outlink, Download, Site search)
 
     * `cvar` &mdash; Page scope [custom variables](http://piwik.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
@@ -74,9 +73,9 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     
   To track a content impression set `c_n` and optionally `c_p` and `c_t`. To track a content interaction set `c_i` and `c_n` and optionally `c_p` and `c_t`. To map an interaction to an impression make sure to set the same value for `c_n` and `c_p`. It is recommended to set a value for `c_p`.
 
-* Ecommerce info
+* Optional [Ecommerce](http://piwik.org/docs/ecommerce-analytics/) info
 
-    Use the following values to record a cart and/or an [ecommerce](http://piwik.org/docs/ecommerce-analytics/) order.
+    Use the following values to record a cart and/or an ecommerce order.
     * you must set `&idgoal=0` in your request to track an ecommerce interaction: cart update or an ecommerce order.
     * `ec_id` &mdash; The unique string identifier for the ecommerce order (required when tracking an ecommerce order)
     * `ec_items` &mdash; Items in the Ecommerce order. This is a JSON encoded array of items. Each item is an array with the following info in this order: item sku, item name, item category, item price, item quantity.
@@ -87,12 +86,11 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `ec_dt` &mdash; Discount offered
     * `_ects`  &mdash; The UNUX timestamp of this customer's last ecommerce order. This value is used to process the "Days since last order" report.
 
-* Special parameters
+* Special parameters (they require the `token_auth` parameter)
 
     The following parameters require that you set `&token_auth=` to the token\_auth value of the Super User or a user with admin access to the website visits are being tracked for.
 
     * `token_auth` &mdash; 32 character authorization key used to authenticate the API request.
-    * `send_image` &mdash; If set to 0 (`send_image=0`) Piwik will respond with a HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Piwik 2.10.0
     * `cip` &mdash; Override value for the visitor IP (both IPv4 and IPv6 notations supported).
     * `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is: `2011-04-05 00:11:42` (remember to URL encode the value!). The datetime must be sent in UTC timezone.
       _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](http://piwik.org/faq/how-to/#faq_59)._
@@ -103,6 +101,11 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
     * `city` &mdash; An override value for the city. The name of the city the visitor is located in, eg, **Tokyo**.
     * `lat` &mdash; An override value for the visitor's latitude, eg _22.456_.
     * `long` &mdash; An override value for the visitor's longitude, eg _22.456_.
+    
+* Other parameters
+
+    * `send_image` &mdash; If set to 0 (`send_image=0`) Piwik will respond with a HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Piwik 2.10.0
+
 
 ### Tracking Bots
 
