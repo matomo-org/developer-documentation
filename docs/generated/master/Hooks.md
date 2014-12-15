@@ -435,7 +435,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [583](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L583)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [585](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L585)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -451,7 +451,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [600](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L600)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [602](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L602)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -586,7 +586,7 @@ Callback Signature:
 
 ### FrontController.modifyErrorPage
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [653](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L653)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [655](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L655)*
 
 Triggered before a Piwik error page is displayed to the user. This event can be used to modify the content of the error page that is displayed when
 an exception is caught.
@@ -1080,7 +1080,7 @@ Callback Signature:
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [454](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L454)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [456](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L456)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
 
@@ -1178,7 +1178,7 @@ Callback Signature:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [568](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L568)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [570](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L570)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -1199,7 +1199,7 @@ Usages:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [610](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L610)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [612](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L612)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -1264,7 +1264,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [422](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L422)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [424](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L424)*
 
 Triggered before the user is authenticated, when the global authentication object should be created. Plugins that provide their own authentication implementation should use this event
 to set the global authentication object (which must derive from [Auth](/api-reference/Piwik/Auth)).
