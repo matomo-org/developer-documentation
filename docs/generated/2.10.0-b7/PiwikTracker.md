@@ -557,9 +557,9 @@ Tracks an event
        The Event Category (Videos, Music, Games...)
     - `$action` (`string`) &mdash;
        The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
-    - `$name` (`string`) &mdash;
+    - `$name` (`string`|`bool`) &mdash;
        (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)
-    - `$value` (`float`) &mdash;
+    - `$value` (`float`|`bool`) &mdash;
        (optional) The Event's value
 
 - *Returns:*  `mixed` &mdash;
@@ -578,7 +578,7 @@ Tracks a content impression
        The name of the content. For instance 'Ad Foo Bar'
     - `$contentPiece` (`string`) &mdash;
        The actual content. For instance the path to an image, video, audio, any text
-    - `$contentTarget` (`string`|`false`) &mdash;
+    - `$contentTarget` (`string`|`bool`) &mdash;
        (optional) The target of the content. For instance the URL of a landing page.
 
 - *Returns:*  `mixed` &mdash;
@@ -602,7 +602,7 @@ content piece, otherwise it will not count. To do so you should call the method 
        The name of the content. For instance 'Ad Foo Bar'
     - `$contentPiece` (`string`) &mdash;
        The actual content. For instance the path to an image, video, audio, any text
-    - `$contentTarget` (`string`|`false`) &mdash;
+    - `$contentTarget` (`string`|`bool`) &mdash;
        (optional) The target the content leading to when an interaction occurs. For instance the URL of a landing page.
 
 - *Returns:*  `mixed` &mdash;
@@ -810,10 +810,6 @@ Builds URL to track a page view.
 
 Builds URL to track a custom event.
 
-#### See Also
-
-- `doTrackEvent()`
-
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -821,13 +817,11 @@ Builds URL to track a custom event.
        The Event Category (Videos, Music, Games...)
     - `$action` (`string`) &mdash;
        The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
-    - `$name` (`string`) &mdash;
+    - `$name` (`string`|`bool`) &mdash;
        (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)
-    - `$value` (`float`) &mdash;
+    - `$value` (`float`|`bool`) &mdash;
        (optional) The Event's value
-
-- *Returns:*  `string` &mdash;
-    URL to piwik.php with all parameters set to track the pageview
+- It does not return anything.
 
 <a name="geturltrackcontentimpression" id="geturltrackcontentimpression"></a>
 <a name="getUrlTrackContentImpression" id="getUrlTrackContentImpression"></a>

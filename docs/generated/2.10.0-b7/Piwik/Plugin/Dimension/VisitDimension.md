@@ -65,6 +65,7 @@ The abstract class defines the following methods:
 - [`onExistingVisit()`](#onexistingvisit) &mdash; The `onExistingVisit` method is triggered when a visitor was recognized meaning it is not a new visitor.
 - [`onConvertedVisit()`](#onconvertedvisit) &mdash; This event is executed shortly after `onNewVisit` or `onExistingVisit` in case the visitor converted a goal.
 - [`onAnyGoalConversion()`](#onanygoalconversion) &mdash; By implementing this event you can persist a value to the `log_conversion` table in case a conversion happens.
+- [`shouldForceNewVisit()`](#shouldforcenewvisit) &mdash; This hook is executed by the tracker when determining if an action is the start of a new visit or part of an existing one.
 
 <a name="addsegment" id="addsegment"></a>
 <a name="addSegment" id="addSegment"></a>
@@ -317,4 +318,29 @@ created automatically.
 
 - *Returns:*  `mixed`|`Piwik\Plugin\Dimension\false` &mdash;
     
+
+<a name="shouldforcenewvisit" id="shouldforcenewvisit"></a>
+<a name="shouldForceNewVisit" id="shouldForceNewVisit"></a>
+### `shouldForceNewVisit()`
+
+This hook is executed by the tracker when determining if an action is the start of a new visit or part of an existing one.
+
+Derived classes can use it to force new visits based on dimension
+data.
+
+For example, the Campaign dimension in the Referrers plugin will force a new visit if the
+campaign information for the current action is different from the last.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$request` (`Piwik\Tracker\Request`) &mdash;
+       The current tracker request information.
+    - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
+       The information for the currently recognized visitor.
+    - `$action` (`Piwik\Tracker\Action`) &mdash;
+       The current action information (if any).
+
+- *Returns:*  `bool` &mdash;
+    Return true to force a visit, false if otherwise.
 

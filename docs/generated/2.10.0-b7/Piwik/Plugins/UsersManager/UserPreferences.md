@@ -63,6 +63,9 @@ Returns default period type for Piwik reports.
 
 #### Signature
 
+-  It accepts the following parameter(s):
+    - `$defaultDate` (`Piwik\Plugins\UsersManager\$defaultDate`) &mdash;
+       string the default date string from which the default period will be guessed
 
 - *Returns:*  `string` &mdash;
     `'day'`, `'week'`, `'month'`, `'year'` or `'range'`
