@@ -486,7 +486,7 @@ Triggered after Piwik has been updated.
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [341](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L341)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [344](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L344)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -498,7 +498,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [331](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L331)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [334](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L334)*
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -510,7 +510,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [937](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L937)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [974](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L974)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -523,7 +523,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [283](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L283)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [286](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L286)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -2079,7 +2079,7 @@ Usages:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [359](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L359)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [386](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L386)*
 
 Triggered after a new user is created.
 
@@ -2155,7 +2155,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [595](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L595)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [622](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L622)*
 
 
 
@@ -2169,7 +2169,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [471](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L471)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [498](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L498)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
