@@ -277,20 +277,22 @@ To learn more about how aggregation is accomplished with Piwik's MySQL backend, 
 
 Reports and metrics are persisted using the [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) class. Metrics are inserted using the [ArchiveProcessor::insertNumericRecord](/api-reference/Piwik/ArchiveProcessor#insertnumericrecords) method. Reports are first serialized using the [DataTable::getSerialized](/api-reference/Piwik/DataTable#getserialized) method and then inserted using the [ArchiveProcessor::insertBlobRecord](/api-reference/Piwik/ArchiveProcessor#insertblobrecord) method:
 
-    $archiveProcessor = // ...
+```php
+$archiveProcessor = // ...
 
-    // insert a numeric value
-    $myFancyMetric = // ... calculate the metric value ...
-    $archiveProcessor->insertNumericRecord('MyPlugin_myFancyMetric', $myFancyMetric);
-    
-    // insert a record (with all of its subtables)
-    $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
+// insert a numeric value
+$myFancyMetric = // ... calculate the metric value ...
+$archiveProcessor->insertNumericRecord('MyPlugin_myFancyMetric', $myFancyMetric);
 
-    $dataTable = // ... build by aggregating visits ...
-    $serializedData = $dataTable->getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
-                                                $columnToSortBy = Metrics::INDEX_NB_VISITS);
-    
-    $archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
+// insert a record (with all of its subtables)
+$maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
+
+$dataTable = // ... build by aggregating visits ...
+$serializedData = $dataTable->getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
+                                            $columnToSortBy = Metrics::INDEX_NB_VISITS);
+
+$archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
+```
 
 ### Pre-archiving with cron
 
@@ -320,7 +322,9 @@ As stated above, records are not the same as reports. Records are structured pri
 
 Making a report presentable involves undo-ing the [changes that made it more efficient to store](#record-storage-guidelines). Column names can be changed from integer IDs to string metric names via the [ReplaceColumnNames](/api-reference/Piwik/DataTable/Filter/ReplaceColumnNames) [DataTable](/api-reference/Piwik/DataTable) filter:
 
-    $dataTable->filter('ReplaceColumnNames');
+```php
+$dataTable->filter('ReplaceColumnNames');
+```
 
 Metadata and [processed metrics](#processed-metrics) should also be added within API methods. Existing filters (everything in the **core/DataTable/Filter** directory) can be used to perform most of these tasks.
 

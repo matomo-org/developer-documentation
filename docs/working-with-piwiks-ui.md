@@ -65,18 +65,20 @@ JavaScript, CSS and LESS assets only exist in plugins. Piwik's core code (everyt
 
 Plugins tell Piwik about their asset files through the [AssetManager.getStylesheetFiles](/api-reference/events#assetmanagergetstylesheetfiles) and [AssetManager.getJavaScriptFiles](/api-reference/events#assetmanagergetjavascriptfiles) events. Each event passes an array by reference to event handlers. Event handlers should append paths to assets to the incoming array:
 
-    // event handler for AssetManager.getStylesheetFiles
-    public function getStylesheetFiles(&$files)
-    {
-        $files[] = "plugins/MyPlugin/stylesheets/myStylesheet.less";
-        $files[] = "plugins/MyPlugin/stylesheets/myCssStylesheet.css";
-    }
+```php
+// event handler for AssetManager.getStylesheetFiles
+public function getStylesheetFiles(&$files)
+{
+    $files[] = "plugins/MyPlugin/stylesheets/myStylesheet.less";
+    $files[] = "plugins/MyPlugin/stylesheets/myCssStylesheet.css";
+}
 
-    // event handler for AssetManager.getJavaScriptFiles
-    public function getJavaScriptFiles(&$files)
-    {
-        $files[] = "plugins/MyPlugin/javascripts/myJavaScript.js";
-    }
+// event handler for AssetManager.getJavaScriptFiles
+public function getJavaScriptFiles(&$files)
+{
+    $files[] = "plugins/MyPlugin/javascripts/myJavaScript.js";
+}
+```
 
 ### Asset merging and compiling
 
@@ -92,26 +94,28 @@ Piwik attempts to modularize all JavaScript code through the use of Piwik's `req
 
 Here's how it should be used:
 
-    (function (require, $) {
+```javascript
+(function (require, $) {
 
-        // get a class that we're going to extend
-        var classToExtend = require('AnotherPlugin/Widgets').TheirWidget;
+    // get a class that we're going to extend
+    var classToExtend = require('AnotherPlugin/Widgets').TheirWidget;
 
-        // extend it
-        function MySpecialWidget() {
-            classToExtend.call(this);
-        }
+    // extend it
+    function MySpecialWidget() {
+        classToExtend.call(this);
+    }
 
-        $.extend(MySpecialWidget.prototype, classToExtend.prototype, {
-            // ...
-        });
+    $.extend(MySpecialWidget.prototype, classToExtend.prototype, {
+        // ...
+    });
 
-        // export the class so it is available to other JavaScript files
-        var exports = require('MyPlugin/NamespaceForThisFile');
-        exports.MySpecialWidget = MySpecialWidget;
+    // export the class so it is available to other JavaScript files
+    var exports = require('MyPlugin/NamespaceForThisFile');
+    exports.MySpecialWidget = MySpecialWidget;
 
-    })(require, jQuery);
-        
+})(require, jQuery);
+```
+
 **All new JavaScript should modularize their code with the `require` function. The `window` object should be accessed sparingly, if ever.**
 
 ## Special HTML Elements
@@ -157,12 +161,14 @@ To learn more about an individual function, see the method documentation in the 
 
 To load a new page below the main Piwik menu, use the **propagateNewPage** function with a URL to the controller method whose output should be displayed:
 
-    (function (require) {
-        
-        var broadcast = require('broadcast');
-        broadcast.propagateNewPage("index.php?module=MyPlugin&action=mySpecialPage", true);
+```javascript
+(function (require) {
 
-    })(require);
+    var broadcast = require('broadcast');
+    broadcast.propagateNewPage("index.php?module=MyPlugin&action=mySpecialPage", true);
+
+})(require);
+```
 
 #### Loading Persistent Popovers
 
@@ -170,30 +176,34 @@ To load a popover that will be displayed even if the page is reloaded, you'll ne
 
 The first method you need to call is named **addPopoverHandler**. It associates a function with the popover ID. The function will be passed the rest of the popover query parameter. For example:
 
-    (function (require) {
-        
-        var broadcast = require('broadcast');
-        broadcast.addPopoverHandler('myPopoverType', function (arg) {
-            Piwik_Popover.createPopupAndLoadUrl("?module=MyPlugin&action=getPopup&arg=" + arg, _pk_translate('MyPlugin_MyPopoverTitle'));
-        });
+```javascript
+(function (require) {
 
-    })(require);
+    var broadcast = require('broadcast');
+    broadcast.addPopoverHandler('myPopoverType', function (arg) {
+        Piwik_Popover.createPopupAndLoadUrl("?module=MyPlugin&action=getPopup&arg=" + arg, _pk_translate('MyPlugin_MyPopoverTitle'));
+    });
+
+})(require);
+```
 
 Then, when you want to launch a popover, call the **propagateNewPopoverParameter** method:
 
-    (function (require, $) {
+```javascript
+(function (require, $) {
 
-        var broadcast = require('broadcast');
+    var broadcast = require('broadcast');
 
-        $('#myLink').click(function (e) {
-            e.preventDefault();
+    $('#myLink').click(function (e) {
+        e.preventDefault();
 
-            broadcast.propagateNewPopoverParameter('myPopoverType', 'myarg');
+        broadcast.propagateNewPopoverParameter('myPopoverType', 'myarg');
 
-            return false;getPageUrls
-        });
+        return false;getPageUrls
+    });
 
-    })(require, jQuery);
+})(require, jQuery);
+```
 
 ### ajaxHelper
 
@@ -203,20 +213,22 @@ To use the `ajaxHelper`, create an instance, configure it, and then call the **s
 
 An example:
 
-    (function (require, $) {
+```javascript
+(function (require, $) {
 
-        var ajaxHelper = require('ajaxHelper');
+    var ajaxHelper = require('ajaxHelper');
 
-        var ajax = new ajaxHelper();
-        ajax.setUrl("index.php?module=Actions&action=getPageUrls&idSite=1&date=today&period=day");
-        ajax.setCallback(function (response) {
-            $('#myReportContainer').html(response);
-        });
-        ajax.setFormat('html'); // the expected response format
-        ajax.setLoadingElement('#myReportContainerLoading');
-        ajax.send();
+    var ajax = new ajaxHelper();
+    ajax.setUrl("index.php?module=Actions&action=getPageUrls&idSite=1&date=today&period=day");
+    ajax.setCallback(function (response) {
+        $('#myReportContainer').html(response);
+    });
+    ajax.setFormat('html'); // the expected response format
+    ajax.setLoadingElement('#myReportContainerLoading');
+    ajax.send();
 
-    })(require, jQuery);
+})(require, jQuery);
+```
 
 <!-- TODO: change name of ajaxHelper class to AjaxHelper? -->
 
@@ -230,23 +242,25 @@ An example:
 
 The actual extending is straightforward:
 
-    (function (require, $) {
+```javascript
+(function (require, $) {
 
-        var UIControl = require('piwik/UI').UIControl;
+    var UIControl = require('piwik/UI').UIControl;
 
-        var MyControl = function (element) {
-            UIControl.call(this, element);
+    var MyControl = function (element) {
+        UIControl.call(this, element);
 
-            // ... setup control ...
-        };
+        // ... setup control ...
+    };
 
-        $.extend(MyControl.prototype, UIControl.prototype, {
-            // ...
-        });
+    $.extend(MyControl.prototype, UIControl.prototype, {
+        // ...
+    });
 
-        var exports = require('MyPlugin');
-        exports.MyControl = MyControl;
-    })(require, $);
+    var exports = require('MyPlugin');
+    exports.MyControl = MyControl;
+})(require, $);
+```
 
 `UIControl`'s constructor takes one argument, the HTML element that is the root element of the widget.
 
@@ -254,15 +268,19 @@ The actual extending is straightforward:
 
 Control instances should be created through the **initElements** static method:
 
-    MyControl.initMyControlElements = function () {
-        UIControl.initElements(this, '.my-control');
-    };
+```javascript
+MyControl.initMyControlElements = function () {
+    UIControl.initElements(this, '.my-control');
+};
+```
 
 This will find all elements with the **my-control** class, and if they do not already have a **MyControl** instance associated with them, it will create an instance with that element. `MyControl.initMyControlElements` should be called when your control's HTML is added to the DOM. This is often done in Piwik by including a `<script>` element in HTML returned by AJAX, for example:
 
-    <div class="my-control">
-    </div>
-    <script type="text/javascript">require('MyPlugin').MyControl.initMyControlElements();</script>
+```html
+<div class="my-control">
+</div>
+<script type="text/javascript">require('MyPlugin').MyControl.initMyControlElements();</script>
+```
 
 #### Cleaning up after your control
 
@@ -270,15 +288,17 @@ When the selected page changes or when a popover is closed, Piwik will call the 
 
 When creating your own control, if you need to do some extra cleanup, you can override this method:
 
-    $.extend(MyControl.prototype, UIControl.prototype, {
-        
-        _destroy: function () {
-            UIControl.prototype._destroy.call(this);
+```javascript
+$.extend(MyControl.prototype, UIControl.prototype, {
 
-            this.myThirdPartyLibWidget.destroy();
-        }
+    _destroy: function () {
+        UIControl.prototype._destroy.call(this);
 
-    });
+        this.myThirdPartyLibWidget.destroy();
+    }
+
+});
+```
 
 #### Sending information from PHP to UIControl
 
@@ -286,30 +306,36 @@ If you need to pass information from PHP code to `UIControl` instance, you can s
 
 So if you create HTML like the following:
 
-    <div class="my-control" data-props="{&quot;title&quot;: &quot;My Control&quot;}">
-    </div>
-    <script type="text/javascript">require('MyPlugin').MyControl.initMyControlElements();</script>
+```html
+<div class="my-control" data-props="{&quot;title&quot;: &quot;My Control&quot;}">
+</div>
+<script type="text/javascript">require('MyPlugin').MyControl.initMyControlElements();</script>
+```
 
 then `this.props.title` will be set to `'My Control'`:
 
-    var MyControl = function (element) {
-        UIControl.call(this, element);
+```javascript
+var MyControl = function (element) {
+    UIControl.call(this, element);
 
-        alert(this.props.title); // will say 'My Control'
-    };
+    alert(this.props.title); // will say 'My Control'
+};
+```
 
 #### Listening to dashboard widget resize
 
 To redraw or resize elements in your control when a widget is resized, call the **onWidgetResize** method when setting up your control:
 
-    var MyControl = function (element) {
-        UIControl.call(this, element);
+```javascript
+var MyControl = function (element) {
+    UIControl.call(this, element);
 
-        var self = this;
-        this.onWidgetResize(function () {
-            self._resizeControl(); // private method not shown
-        });
-    };
+    var self = this;
+    this.onWidgetResize(function () {
+        self._resizeControl(); // private method not shown
+    });
+};
+```
 
 ### Piwik_Popover
 
@@ -321,12 +347,14 @@ To learn more about the object, see the documentation in the source code (locate
 
 To create a popover, use the **createPopupAndLoadUrl** method:
 
-    (function (require) {
+```javascript
+(function (require) {
 
-        var Piwik_Popover = require('Piwik_Popover');
-        Piwik_Popover.createPopupAndLoadUrl("?module=MyPlugin&action=getMyPopover", "The Popover Title", 'my-custom-dialog-css-class');
+    var Piwik_Popover = require('Piwik_Popover');
+    Piwik_Popover.createPopupAndLoadUrl("?module=MyPlugin&action=getMyPopover", "The Popover Title", 'my-custom-dialog-css-class');
 
-    })(require);
+})(require);
+```
 
 Creating a popover will close any popover that is currently displayed. Only one popover can be displayed at a time.
 
@@ -334,12 +362,14 @@ Creating a popover will close any popover that is currently displayed. Only one 
 
 To close the currently displayed popover, call the **close** method:
 
-    (function (require) {
+```javascript
+(function (require) {
 
-        var Piwik_Popover = require('Piwik_Popover');
-        Piwik_Popover.close();
+    var Piwik_Popover = require('Piwik_Popover');
+    Piwik_Popover.close();
 
-    })(require);
+})(require);
+```
 
 ### ColorManager
 
@@ -347,23 +377,27 @@ If your control uses color values to, for example, draw in canvas elements, and 
 
 JavaScript colors are stored in CSS like this:
 
-    .my-color-namespace[data-name=my-color-name] {
-        color: red;
-    }
+```css
+.my-color-namespace[data-name=my-color-name] {
+    color: red;
+}
+```
 
 In your JavaScript, you can use **ColorManager** to access these colors:
 
-    (function (require) {
+```javascript
+(function (require) {
 
-        var ColorManager = require('piwik').ColorManager;
+    var ColorManager = require('piwik').ColorManager;
 
-        // get one color
-        var myColorToUse = ColorManager.getColor('my-color-namespace', 'my-color-name');
+    // get one color
+    var myColorToUse = ColorManager.getColor('my-color-namespace', 'my-color-name');
 
-        // get multiple colors all at once
-        var myColorsToUse = ColorManager.getColor('my-color-namespace', ['my-first-color', 'my-second-color']);
+    // get multiple colors all at once
+    var myColorsToUse = ColorManager.getColor('my-color-namespace', ['my-first-color', 'my-second-color']);
 
-    })(require);
+})(require);
+```
 
 To learn more about the singleton, read the source code documentation (located in **plugins/CoreHome/javascripts/color_manager.js**).
 
@@ -399,14 +433,16 @@ When writing JavaScript for your contribution or plugin, be sure to follow the f
 
 Every JavaScript file you create should surround its code in a self-executing anonymous function:
 
-    /**
-     * My JS file.
-     */
-    (function (require, $) {
+```javascript
+/**
+ * My JS file.
+ */
+(function (require, $) {
 
-        // ... your code goes here ...
+    // ... your code goes here ...
 
-    })(require, jQuery);
+})(require, jQuery);
+```
 
 If you need to use global objects, they should be passed in to the anonymous function as is done above. Anything that should be made available to other files should be exposed via [require](#javascript-modularization).
 
@@ -414,16 +450,18 @@ If you need to use global objects, they should be passed in to the anonymous fun
 
 Prefix all private and protected methods in classes with an **_**:
 
-    MyClass.prototype = {
-        
-        myPublicFunction: function () {
-            // ...
-        },
+```javascript
+MyClass.prototype = {
 
-        _myPrivateFunction: function () {
-            // ..
-        }
-    };
+    myPublicFunction: function () {
+        // ...
+    },
+
+    _myPrivateFunction: function () {
+        // ..
+    }
+};
+```
 
 ## Learn more
 

@@ -62,32 +62,36 @@ To learn more about the controls that surround a visualization in most report di
 
 There are two ways to output a visualization for a report. The most succinct way is to call the [Controller::renderReport](/api-reference/Piwik/Plugin/Controller#renderreport) method:
 
-    // controller method for the MyPlugin.myReport report
-    public function myReport()
-    {
-        return $this->renderReport(__FUNCTION__);
-    }
+```php
+// controller method for the MyPlugin.myReport report
+public function myReport()
+{
+    return $this->renderReport(__FUNCTION__);
+}
+```
 
 [renderReport](/api-reference/Piwik/Plugin/Controller#renderreport) will create a new [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance and render it. The report can be configured via the [ViewDataTable.configure](/api-reference/events#viewdatatableconfigure) event.
 
 The other way to output the display is to manually create and configure a [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance:
 
-    // controller method for the MyPlugin.myReport report
-    public function myReport()
-    {
-        $view = \Piwik\ViewDataTable\Factory::build(
-            $defaultType = 'table',
-            $apiAction = 'MyPlugin.myReport',
-            $controllerMethod = 'MyPlugin.myReport',
-        );
-        $view->config->show_limit_control = false;
-        $view->config->show_search = false;
-        $view->config->show_goals = true;
+```php
+// controller method for the MyPlugin.myReport report
+public function myReport()
+{
+    $view = \Piwik\ViewDataTable\Factory::build(
+        $defaultType = 'table',
+        $apiAction = 'MyPlugin.myReport',
+        $controllerMethod = 'MyPlugin.myReport',
+    );
+    $view->config->show_limit_control = false;
+    $view->config->show_search = false;
+    $view->config->show_goals = true;
 
-        // ... do some more configuration ...
+    // ... do some more configuration ...
 
-        return $view->render();
-    }
+    return $view->render();
+}
+```
 
 The visualization type is specified in the first argument to [\Piwik\ViewDataTable\Factory::build](/api-reference/Piwik/ViewDataTable/Factory#build).
 
@@ -105,35 +109,41 @@ Properties in the [Config](/api-reference/Piwik/ViewDataTable/Config) object aff
 
 Once there exists a controller method for a report, displaying it on a page in Piwik is straightforward. Assuming you've [exposed a controller method as a menu item](/guides/mvc-controllers#using-controller-methods-in-the-piwik-ui), you can then reuse your report's controller method to include the report in the menu item page:
 
-    // controller method exposed as a menu item
-    public function index()
-    {
-        $view = new View("@MyPlugin/index.twig");
-        $view->myReport = $this->myReport();
-        echo $view->render();
-    }
+```php
+// controller method exposed as a menu item
+public function index()
+{
+    $view = new View("@MyPlugin/index.twig");
+    $view->myReport = $this->myReport();
+    echo $view->render();
+}
 
-    // report method
-    public function myReport()
-    {
-        return $this->renderReport(__FUNCTION__);
-    }
+// report method
+public function myReport()
+{
+    return $this->renderReport(__FUNCTION__);
+}
+```
 
 The **index.twig** template will look like this:
 
-    <h1>My Report</h1>
+```twig
+<h1>My Report</h1>
 
-    {{ myReport }}
+{{ myReport }}
+```
 
 ### Displaying reports in the Dashboard
 
 After a controller method is created for a report, the report can be made available to the dashboard by using the [WidgetsList.addWidgets](/api-reference/events#widgetslistaddwidgets) event:
 
-    // event handler for the WidgetsList.addWidgets event in the MyPlugin/MyPlugin.php file
-    public function addWidgets()
-    {
-        WidgetsList::add('My Category Name', 'My Report Title', 'MyPlugin', 'myReport');
-    }
+```php
+// event handler for the WidgetsList.addWidgets event in the MyPlugin/MyPlugin.php file
+public function addWidgets()
+{
+    WidgetsList::add('My Category Name', 'My Report Title', 'MyPlugin', 'myReport');
+}
+```
 
 Piwik users will then be able to see and select **myReport** in the widget selector.
 
@@ -182,55 +192,59 @@ In your new class that derives from [ViewDataTable](/api-reference/Piwik/Plugin/
 
 An example:
 
-    class MyVisualization extends Visualization
-    {
-        const ID = 'myvisualization';
-        const TEMPLATE_FILE = '@MyPlugin/_myVisualization.twig';
-        const FOOTER_ICON = 'plugins/MyPlugin/images/myvisualization.png';
-        const FOOTER_ICON_TITLE = 'My Visualization';
-    }
+```php
+class MyVisualization extends Visualization
+{
+    const ID = 'myvisualization';
+    const TEMPLATE_FILE = '@MyPlugin/_myVisualization.twig';
+    const FOOTER_ICON = 'plugins/MyPlugin/images/myvisualization.png';
+    const FOOTER_ICON_TITLE = 'My Visualization';
+}
+```
 
 **Adding new display properties**
 
 Visualizations can define their own display properties (in addition to what is available in [Config](/api-reference/Piwik/ViewDataTable/Config)) by creating their own [Config](/api-reference/Piwik/ViewDataTable/Config) class. This new class must derive from [Config](/api-reference/Piwik/ViewDataTable/Config) and the visualization must provide an override for the [ViewDataTable::getDefaultConfig](/api-reference/Piwik/Plugin/ViewDataTable#getdefaultconfig) method that creates an instance of this new class. For example:
 
-    class MyVisualizationConfig extends Config
-    {
-        public $show_magic_widget = true;
+```php
+class MyVisualizationConfig extends Config
+{
+    public $show_magic_widget = true;
 
-        public $show_disclaimer = false;
+    public $show_disclaimer = false;
+}
+
+class MyVisualization extends Visualization
+{
+    // ...
+
+    public static function getDefaultConfig()
+    {
+        return new MyVisualizationConfig();
     }
 
-    class MyVisualization extends Visualization
-    {
-        // ... 
+    // ...
+}
 
-        public static function getDefaultConfig()
-        {
-            return new MyVisualizationConfig();
-        }
+// method in MyPlugin's controller
+public function myReport($fetch = false)
+{
+    $view = \Piwik\ViewDataTable\Factory::build(
+        $defaultType = MyVisualization::ID,
+        $apiAction = 'MyPlugin.myReport',
+        $controllerMethod = 'MyPlugin.myReport',
+    );
 
-        // ... 
-    }
+    // in a controller method somewhere
+    $view = Factory::
+    $view->config->show_limit_control = false;
 
-    // method in MyPlugin's controller
-    public function myReport($fetch = false)
-    {
-        $view = \Piwik\ViewDataTable\Factory::build(
-            $defaultType = MyVisualization::ID,
-            $apiAction = 'MyPlugin.myReport',
-            $controllerMethod = 'MyPlugin.myReport',
-        );
+    // set a new property
+    $view->config->show_magic_widget = false;
 
-        // in a controller method somewhere
-        $view = Factory::
-        $view->config->show_limit_control = false;
-
-        // set a new property
-        $view->config->show_magic_widget = false;
-
-        return $view->render();
-    }
+    return $view->render();
+}
+```
 
 Visualizations can also create their own [RequestConfig](/api-reference/Piwik/ViewDataTable/RequestConfig) class for properties that affect the request. The process is the same as creating a custom [Config](/api-reference/Piwik/ViewDataTable/Config) class.
 
@@ -240,19 +254,21 @@ Visualizations can alter exactly what data is loaded by the base [ViewDataTable]
 
 To change exactly what data is loaded, visualizations should alter the request by setting the [request_parameters_to_modify](/api-reference/Piwik/ViewDataTable/RequestConfig#request_parameters_to_modify) request config property within the [Visualization::beforeLoadDataTable](/api-reference/Piwik/Plugin/Visualization#beforeloaddatatable) method. For example:
 
-    class MyVisualization extends Visualization
+```php
+class MyVisualization extends Visualization
+{
+    // ...
+
+    public function beforeLoadDataTable()
     {
-        // ... 
+        $date = Common::getRequestVar('date');
 
-        public function beforeLoadDataTable()
-        {
-            $date = Common::getRequestVar('date');
-
-            $this->config->request_parameters_to_modify['date'] = Date::factory($date)->subDay(1)->toString();
-        }
-
-        // ... 
+        $this->config->request_parameters_to_modify['date'] = Date::factory($date)->subDay(1)->toString();
     }
+
+    // ...
+}
+```
 
 _Note: If you change what data is loaded, you may also need to override the [Visualization::isThereDataToDisplay](/api-reference/Piwik/Plugin/Visualization#istheredatatodisplay) method. Otherwise the 'no data' message may not appear even if there is no data for the report you are displaying._
 
@@ -278,11 +294,13 @@ _Note: Report data can also be manipulated by setting the [filters](/api-referen
 
 If you want to allow Piwik users to use your visualization on any report (by clicking the appropriate footer icon), add it to the global list of available visualizations in the [ViewDataTable.addViewDataTable](/api-reference/events#viewdatatableaddviewdatatable) event:
 
-    // event handler for ViewDataTable.addViewDataTable in MyPlugin plugin
-    public function addViewDataTable(&$visualizations)
-    {
-        $visualizations[] = 'Piwik\\Plugins\\MyPlugin\\Visualizations\\MyVisualization';
-    }
+```php
+// event handler for ViewDataTable.addViewDataTable in MyPlugin plugin
+public function addViewDataTable(&$visualizations)
+{
+    $visualizations[] = 'Piwik\\Plugins\\MyPlugin\\Visualizations\\MyVisualization';
+}
+```
 
 Visualizations that are exposed this way must have the **FOOTER\_ICON** and **FOOTER\_ICON\_TITLE** [ViewDataTable metadata](#setting-viewdatatable-metadata) set.
 
@@ -292,52 +310,58 @@ Extending [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) is only hal
 
 All of [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)'s client side logic is encapsulated within the **DataTable** JavaScript class (located in the [dataTable.js](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/dataTable.js) file). If you are extending [Visualization](/api-reference/Piwik/Plugin/Visualization) directly, you should extend **DataTable** to add your own client-side logic. If you're extending another visualization, you will have to extend that visualization's JavaScript class. For example:
 
-    (function ($, require) {
+```javascript
+(function ($, require) {
 
-        var exports = require('piwik/UI'),
-            DataTable = exports.DataTable,
-            dataTablePrototype = DataTable.prototype;
+    var exports = require('piwik/UI'),
+        DataTable = exports.DataTable,
+        dataTablePrototype = DataTable.prototype;
 
-        /**
-         * Class that handles UI behavior for the MyVisualization visualization.
-         */
-        exports.MyVisualization = function (element) {
-            DataTable.call(this, element);
-        };
+    /**
+     * Class that handles UI behavior for the MyVisualization visualization.
+     */
+    exports.MyVisualization = function (element) {
+        DataTable.call(this, element);
+    };
 
-        $.extend(exports.MyVisualization.prototype, dataTablePrototype, {
-            // ...
-        });
+    $.extend(exports.MyVisualization.prototype, dataTablePrototype, {
+        // ...
+    });
 
-    }(jQuery, require));
+}(jQuery, require));
+```
 
 When extending **DataTable** the only method you are required to override is the **init** method. Here, you should place your visualization's initialization code:
 
-    $.extend(exports.MyVisualization.prototype, dataTablePrototype, {
+```javascript
+$.extend(exports.MyVisualization.prototype, dataTablePrototype, {
 
-        init: function () {
-            dataTablePrototype.init.call(this);
+    init: function () {
+        dataTablePrototype.init.call(this);
 
-            this._bindEventCallbacks(this.$element);
-            this._addSeriesPicker(this.$element);
+        this._bindEventCallbacks(this.$element);
+        this._addSeriesPicker(this.$element);
 
-            // ... etc. ...
-        }
-    })
+        // ... etc. ...
+    }
+})
+```
 
 After you extend the class, you must notify [Visualization](/api-reference/Piwik/Plugin/Visualization) of the new class by setting the [datatable_js_type](/api-reference/Piwik/ViewDataTable/Config#datatable_js_type) display property in your visualization. For example:
 
-    class MyVisualization extends Visualization
+```php
+class MyVisualization extends Visualization
+{
+    // ...
+
+    public function beforeRender()
     {
-        // ...
-
-        public function beforeRender()
-        {
-            $this->config->datatable_js_type = 'MyVisualization';
-        }
-
-        // ...
+        $this->config->datatable_js_type = 'MyVisualization';
     }
+
+    // ...
+}
+```
 
 **Adding new UI controls**
 

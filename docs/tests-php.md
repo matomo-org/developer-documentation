@@ -144,7 +144,7 @@ Before you can run your tests, you'll have to set the test's fixture. **Fixtures
 
 To set a fixture, add a `public static` field named `$fixture` to your test class and initialize it below the class definition, for example:
 
-```
+```php
 namespace Piwik\Plugins\MyPlugin\Test;
 
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
