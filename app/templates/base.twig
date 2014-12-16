@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
-    <link href="/css/highlightjs/github.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
+    <link href="/css/highlight.zenburn.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/app.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/sidebar.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/documentation.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
@@ -101,9 +101,12 @@
 <script src="/js/bootstrap.min.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/bootstrap2-typeahead.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/app.js?{{ revision|e('html_attr') }}"></script>
-<script src="/js/highlight.pack.js?{{ revision|e('html_attr') }}"></script>
+<script src="/js/highlight.8.2.min.js?{{ revision|e('html_attr') }}"></script>
 <script type="text/javascript">
 $(document).ready(function () {
+    // Disable language auto-detect on code blocks that don't have a language
+    // This prevents a messy highlighting when the block doesn't contain code
+    $('pre code:not([class])').addClass('no-highlight hljs');
     hljs.initHighlightingOnLoad();
 });
 </script>
