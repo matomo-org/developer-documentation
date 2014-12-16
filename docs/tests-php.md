@@ -46,7 +46,7 @@ A unit test tests only a single method or class and does not use dependencies li
 
 To create a new unit test, use the console:
 
-```bash
+```
 $ ./console generate:test --testtype unit
 ```
 
@@ -173,7 +173,7 @@ When you first create a system test, there will be no expected files. You will h
 
 To run the tests for your plugin, run the following command in the root of your Piwik install:
 
-```bash
+```
 $ ./console tests:run MyPlugin
 ```
 
@@ -181,7 +181,7 @@ Where `MyPlugin` should be replaced with the name of your plugin.
 
 For UI tests run:
 
-```bash
+```
 $ ./console tests:run-ui --plugin=MyPlugin
 ```
 

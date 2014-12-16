@@ -156,7 +156,7 @@ The marketplace will now be notified every time you push a commit or a tag to yo
 
 You can now publish the first version of your plugin. First, make sure the version in your `plugin.json` is `0.1.0`. Then, we'll run two git commands to publish a version of your plugin:
 
-```bash
+```
 $ git tag 0.1.0
 $ git push origin --tags
 ```

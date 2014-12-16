@@ -22,7 +22,7 @@ Piwik uses Travis to automatically run its test suite on every commit (for every
 
 Plugins can do the same if they include a `.travis.yml` file in their github repository. You can generate this file using the `generate:travis-yml` console command:
 
-```bash
+```
 $ ./console generate:travis-yml --plugin=MyPlugin
 ```
 

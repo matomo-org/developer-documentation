@@ -11,7 +11,7 @@ Creating a page means creating [a controller](/guides/mvc-controllers) and [a Tw
 
 You can use the console for this:
 
-```bash
+```
 $ ./console generate:controller
 ```
 
