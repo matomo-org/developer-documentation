@@ -35,13 +35,14 @@ class DevelopCategory extends Category
                 new Guide('piwiks-extensibility-points'),
             ]),
             new Guide('mvc-in-piwik'),
-            new EmptySubCategory('User Interface', [
+            new EmptySubCategory('Web Interface', [
                 new Guide('pages'),
                 new Guide('menus'),
                 new Guide('widgets'),
                 new Guide('working-with-piwiks-ui'),
                 new Guide('visualizing-report-data'),
             ]),
+            new Guide('piwik-on-the-command-line'),
             new Guide('piwik-configuration'),
             new Guide('persistence-and-the-mysql-backend'),
             new EmptySubCategory('Security', [
@@ -52,7 +53,6 @@ class DevelopCategory extends Category
             new Guide('tests'),
             new Guide('piwiks-reporting-api'),
             new Guide('scheduled-tasks'),
-            new Guide('piwik-on-the-command-line'),
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),
