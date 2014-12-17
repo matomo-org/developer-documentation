@@ -172,7 +172,7 @@ Plugins can define certain special classes in order to extend Piwik. These class
 
 Plugins can define an **API** class (that extends [Piwik\Plugin\API](/api-reference/Piwik/Plugin/API)) to add more methods to the [Reporting API](/guides/piwiks-reporting-api). They can also define a **Controller** class to handle HTTP requests that are sent by Piwik's UI.
 
-_Learn more about these classes in our [MVC in Piwik](/guides/mvc-in-piwik) guide._
+_Learn more about these classes in our [Controllers](/guides/controllers) or [APIs](/guides/apis) guides._
 
 ### Archiver
 
@@ -207,7 +207,7 @@ _Learn more about creating new report visualizations in our [Visualizing Report 
 
 * To learn **about every event that Piwik posts** [read the event docs](/api-reference/events).
 * To learn **more about the Twig filters and functions Piwik defines** read the documentation for the [View](/api-reference/Piwik/View) class.
-* To learn **about API and Controller classes** read our [MVC in Piwik](/guides/mvc-in-piwik) guide.
+* To learn **about API and Controller classes** read our [Controllers](/guides/controllers) or [APIs](/guides/apis) guides.
 * To learn **about Archiver classes** read our [All About Analytics](/guides/all-about-analytics-data) guide.
 * To learn **about plugin settings** read our [Plugin Settings](/guides/plugin-settings) guide.
 <!-- TODO: need new tutorial/guide * To learn **about creating new LocationProviders** read our ??? -->
