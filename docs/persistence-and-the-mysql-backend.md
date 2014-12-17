@@ -1,19 +1,12 @@
 ---
 category: Develop
 ---
-# Persistence & the MySQL Backend
+# Piwik Data
 
-## About this guide
+Piwik persists two main types of data:
 
-**Read this guide if**
-
-* you'd like to know **how your plugin can persist new non-analytics data**
-* you'd like to know **what information is stored when Piwik stores analytics data, log data and miscellaneous data**
-* you'd like to know **how Piwik uses MySQL to persist data**
-
-## What is persisted
-
-Piwik persists two main types of data: log data and archive data. **Log data** is everything that Piwik tracks and **archive data** is processed analytics data that is cached.
+- **log data**: raw analytics data that Piwik receives in the tracker
+- **archive data**: aggregated analytics data (constructed from log data) that is cached and used to build reports
 
 Piwik also persists other simpler forms of data including:
 
@@ -22,9 +15,9 @@ Piwik also persists other simpler forms of data including:
 - goals
 - options
 
-_Note: Piwik uses PHP arrays to hold data that will be persisted. When we describe what information is in each persisted entity, we list properties by the string name used to store the property in the entity array._
+*Note: Piwik uses PHP arrays to hold persisted data. In the descriptions below we list properties by the name used in the PHP array.*
 
-### Log data
+## Log data
 
 There are four types of log data:
 
@@ -42,7 +35,7 @@ Log data is read when calculating analytics data and old data will sometimes be 
 Backends must ensure that inserting new log data is as fast as possible and aggregating log data is not too slow (though obviously, faster is better).
 
 <a name="log-data-persistence-visits"></a>
-#### Visits
+### Visits
 
 Visits are stored in the `log_visit` table.
 
@@ -71,10 +64,8 @@ Each visit contains the following information:
 - `referer_type`: the type of this visitor's referrer. Can be one of the following values:
   - **Common::REFERRER\_TYPE\_DIRECT\_ENTRY**: If set to this value, other `referer_...` fields have no meaning.
   - **Common::REFERRER\_TYPE\_SEARCH\_ENGINE**: If set to this value, `referer_url` is the url of the search engine and `referer_keyword` is the keyword used (if we can find it).
-  <!-- TODO: for search engine, will referer_name be set? (same for website) -->
   - **Common::REFERRER\_TYPE\_WEBSITE**: If set to this value, `referer_url` is the url of the website.
   - **Common::REFERRER\_TYPE\_CAMPAIGN**: If set to this value, `referer_name` is the name of the campaign.
-  <-- TODO: double check campaign info -->
 - `referer_name`: referrer name; its meaning depends on the specific referrer type
 - `referer_url`: the referrer URL; its meaning depends on the specific referrer type
 - `referer_keyword`: the keyword used if a search engine was the referrer
@@ -113,16 +104,14 @@ Each visit contains the following information:
 
 Some plugins, such as the [Provider](https://github.com/piwik/piwik/tree/master/plugins/Provider) plugin, will add new information to visits.
 
-##### Table details
+#### Table details
 
 The `index_idsite_config_datetime` index is used when trying to recognize returning visitors.
 
 The `index_idsite_datetime` index is used when aggregating visits. Since log aggregation occurs only for individual day periods, this index helps Piwik find the visits for a website and period quickly. Without it, log aggregation would require a table scan through the entire `log_visit` table.
 
-<!-- TODO: what is the index\_idsite\_idvisitor index used for? Live + visitor profile? -->
-
 <a name="log-data-persistence-visit-actions"></a>
-#### Visit Actions
+### Visit Actions
 
 Visits also contain a list of actions, one for each action the visitor makes during the visit. Those are stored in the `log_link_visit_action` table.
 
@@ -146,7 +135,7 @@ Visit actions contain the following information:
 - `custom_var_v5`: the custom variable value of the  slot for page custom variables
 - `custom_float`: an unspecified float field, usually used to hold the time it took the server to serve this action
 
-##### Table details
+#### Table details
 
 The `idsite` and `idvisitor` columns are copied from the visit action's associated visit in order to avoid having to join the log_visit table in some cases.
 
@@ -155,7 +144,7 @@ The `index_idvisit` index allows Piwik to quickly query the visit actions for a 
 The `index_idsite_servertime` index is used when aggregating visit actions. It allows quick access to the visit actions that were tracked for a specific website during a specific period and lets us avoid a table scan through the whole table.
 
 <a name="log-data-persistence-action-types"></a>
-#### Action Types
+### Action Types
 
 Action types, such as a specific URL or page title, are analyzed as well as visits. Such analysis can lead to an understanding of, for example, which pages are more relevant to visitors than others.
 
@@ -180,12 +169,12 @@ Action types are persisted in the `log_action` table and contain the following i
   - `2`: `'https://'`
   - `3`: `'https://www.'`
 
-##### Table details
+#### Table details
 
 The `index_type_hash` index is used during tracking to find existing action types.
 
 <a name="log-data-persistence-conversions"></a>
-#### Conversions
+### Conversions
 
 When a visit action is tracked that matches a goal's conversion parameters, a conversion is created and persisted. A conversion is a tally that counts a desired action that one of your visitors took. Piwik will analyze these tallies in conjunction with the actions that caused them in order to help Piwik users understand how to make their visitors take more desired actions.
 
@@ -208,14 +197,14 @@ Conversions are stored in the `log_conversion` table and consist of the followin
 - `revenue_shipping`: if this conversion is for an ecommerce order or abandoned cart, this is the total cost of shipping
 - `revenue_discount`: if this conversion is for an ecommerce order or abandoned cart, this is the total discount applied to the order
 
-##### Table details
+#### Table details
 
 All extra information stored in the table that is not listed above is replicated from the Visit entity this conversion is for. This allows us to avoid joining the `log_visit` table in certain cases.
 
 The `index_idsite_datetime` index is used when aggregating conversions. It allows quick access to the conversions that were tracked for a specific website during a specific period and lets us avoid a table scan through the entire table.
 
 <a name="log-data-persistence-ecommerce-items"></a>
-#### Ecommerce items (aka conversion items)
+### Ecommerce items (aka conversion items)
 
 An ecommerce item is an item that was sold in an ecommerce order or abandoned in an abandoned cart.
 
@@ -234,13 +223,13 @@ Ecommerce items are stored in the `log_conversion_item` table and consist of the
 - `quantity`: the amount of this item that were present in the associated ecommerce order
 - `deleted`: whether this item was removed from the order or not
 
-##### Table details
+#### Table details
 
 The `idsite`, `idvisitor`, `server_time` and `idvisit` columns are copied from the Conversion entity this Ecommerce Item belongs to. They are copied so we can aggregate Ecommerce Items without having to join other tables.
 
 The `index_idsite_servertime` index is used when aggregating ecommerce items. It allows quick access to the items that were tracked for a specific website and during a specific period and lets us avoid a table scan through the entire table.
 
-### Archive data
+## Archive data
 
 Archive data consists of **metrics** and **reports**. Metrics are numeric values and are stored as such. Reports are stored in [DataTable](/api-reference/Piwik/DataTable) instances and persisted as compressed binary strings.
 
@@ -262,7 +251,7 @@ All archive data will contain the following information:
 - `ts_archived`: The datetime the archive data was cached.
 - `value`: Either a numeric value (for a metric) or a binary string (for a report).
 
-#### Table details
+### Table details
 
 Archive data is stored in tables partitioned by months, and missing tables are created automatically. Reports that aggregate visits from January 2012 will be held in a different table from reports that aggregate visits from February 2012.
 
@@ -278,10 +267,10 @@ In `archive_blob` tables:
 - the `index_period_archived` index is used in the same way as the one in `archive_numeric` tables
 - `archive_blob` tables do not have an index that makes it fast to query for rows by site, period and archived date. This is because they should not be queried this way. Instead, the `archive_numeric` table should be queried and the `idarchive` values saved. These values can be used to query data in the `archive_blob` table.
 
-### Other data
+## Other data
 
 <a name="other-data-site"></a>
-#### Websites (aka sites)
+### Websites (aka sites)
 
 **Site** entities contain information regarding a website whose visits are tracked. There won't be nearly as many of these as there are visits and archive data entries, but they will be queried often.
 
@@ -310,7 +299,7 @@ Site entities also contain a list of extra URLs that can be used to access the w
 Site entity data access occurs primarily through the [Piwik\Site](/api-reference/Piwik/Site) class. Anything that cannot be queried through that class can be queried through the [SitesManager](https://github.com/piwik/piwik/tree/master/plugins/SitesManager) core plugin.
 
 <a name="other-data-goals"></a>
-#### Goals
+### Goals
 
 Each site has an optional list of goals. A goal is a desired action that a website visitor should take.
 
@@ -338,7 +327,7 @@ Goals are stored in the `goal` table and contain the following information:
 _Note: The ecommerce and abandoned cart goals are two special goals with special IDs. Ecommerce websites automatically have these goals._
 
 <a name="other-data-user"></a>
-#### Users
+### Users
 
 User entities describe each Piwik user except the Super User. They are persisted in the `users` table.
 
@@ -356,115 +345,24 @@ User data is read on every UI and [Reporting API](/guides/piwiks-reporting-api) 
 There is some user related information that is not stored directly in user entities. They are descirbed below:
 
 <a name="other-data-user-access"></a>
-#### User permissions
+### User permissions
 
 Users can be allowed and disallowed access to websites. Piwik persists each user's access level for each website they have access to in the `access` table.
 
 To read more about this, read the [Permissions](/guides/permissions) guide.
 
 <a name="other-data-user-language-choice"></a>
-#### User language choice
+### User language choice
 
 Piwik will also persist each user's language of choice. User logins are associated with the name of the language (written in the chosen language as opposed to English).
 
 This association and the persistence logic is implemented by the [LanguagesManager](https://github.com/piwik/piwik/tree/master/plugins/LanguagesManager) plugin.
 
-#### Options
+### Options
 
 [Options](/api-reference/Piwik/Option) are key-value pairs where the key is a string and the value is a another string (possibly bigger and possibly binary). They are queried on every UI and [Reporting API](/guides/piwiks-reporting-api) request. The tracker will [cache](/guides/all-about-tracking#the-tracker-cache) relevant option values and so will only query options when the cache needs updating.
 
 Some options should be loaded on every non-tracking request. These options have a special **autoload** property set to `1`.
-
-## Plugin Persistence
-
-Plugins can provide persistence for new data if they need to. At the moment, since MySQL is the only supported backend, this means directly adding and using new tables.
-
-To add new tables to Piwik's MySQL database, execute a `CREATE TABLE` statement in the plugin descriptor's [install](/api-reference/Piwik/Plugin#install) method. For example:
-
-```php
-use Piwik\Db;
-use Piwik\Common;
-use \Exception;
-
-public class MyPlugin extends \Piwik\Plugin
-{
-    // ...
-
-    public function install()
-    {
-        try {
-            $sql = "CREATE TABLE " . Common::prefixTable('mynewtable') . " (
-                        mykey VARCHAR( 10 ) NOT NULL ,
-                        mydata VARCHAR( 100 ) NOT NULL ,
-                        PRIMARY KEY ( mykey )
-                    )  DEFAULT CHARSET=utf8 ";
-            Db::exec($sql);
-        } catch (Exception $e) {
-            // ignore error if table already exists (1050 code is for 'table already exists')
-            if (!Db::get()->isErrNo($e, '1050')) {
-                throw $e;
-            }
-        }
-    }
-
-    // ...
-}
-```
-
-Plugins should also clean up after themselves by dropping the tables in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method:
-
-```php
-use Piwik\Db;
-use Piwik\Common;
-use \Exception;
-
-public class MyPlugin extends \Piwik\Plugin
-{
-    // ...
-
-    public function uninstall()
-    {
-        Db::dropTables(Common::prefixTable('mynewtable'));
-    }
-
-    // ...
-}
-```
-
-**Note: New tables should be appropriately [prefixed](/api-reference/Piwik/Common#prefixtable).**
-
-### Augmenting existing tables
-
-Plugins can also augment existing tables. If, for example, a plugin wanted to track extra visit information, the plugin could add columns to log data tables and set these columns during tracking.This would also be done in the [install](/api-reference/Piwik/Plugin#install) method:
-
-```php
-use Piwik\Db;
-
-public class MyPlugin extends \Piwik\Plugin
-{
-    // ...
-
-    public function install()
-    {
-        try {
-            $q1 = "ALTER TABLE `" . Common::prefixTable("log_visit") . "`
-                           ADD `mynewdata` VARCHAR( 100 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL AFTER `config_os`,";
-            Db::exec($q1);
-        } catch (Exception $e) {
-            // ignore column already exists error
-            if (!Db::get()->isErrNo($e, '1060')) {
-                throw $e;
-            }
-        }
-    }
-
-    // ...
-}
-```
-
-Plugins should remove the column in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method, **unless doing so take very long time**. Since log tables can have millions and even billions of entries, removing columns from these tables when a plugin is uninstalled would be a bad idea.
-
-<!-- TODO: this seems it will be a problem in the long run. must be some way to clear away unused data, even if the user has to say specifically they want to get rid of it. -->
 
 ## Learn more
 
@@ -473,3 +371,4 @@ Plugins should remove the column in the [uninstall](/api-reference/Piwik/Plugin#
 * To learn **how archive data is cached** see our [All About Analytics](/guides/all-about-analytics-data) guide.
 * To learn **about Piwik's logging utility** see this section in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.
 * To learn **about database backed sessions** read [this FAQ entry](http://piwik.org/faq/how-to-install/faq_133/).
+* To learn **how plugins can persist data** read the [Plugin Data](/guides/plugin-data) guide.
