@@ -96,7 +96,7 @@ Callback Signature:
 
 ### API.getReportMetadata.end
 
-*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [261](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L261)*
+*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [263](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L263)*
 
 Triggered after all available reports are collected. This event can be used to modify the report metadata of reports in other plugins. You
 could, for example, add custom metrics to every report or remove reports from the list
@@ -998,7 +998,7 @@ Callback Signature:
 
 ### Metrics.getDefaultMetricDocumentationTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [411](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L411)*
+*Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [414](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L414)*
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
@@ -1747,7 +1747,7 @@ Callback Signature:
 
 ### Tracker.Cache.getSiteAttributes
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [87](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L87)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [98](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L98)*
 
 Triggered to get the attributes of a site entity that might be used by the Tracker. Plugins add new site attributes for use in other tracking events must
 use this event to put those attributes in the Tracker Cache.
@@ -1950,7 +1950,7 @@ Callback Signature:
 
 ### Tracker.setTrackerCacheGeneral
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [151](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L151)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [160](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L160)*
 
 Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache) is saved to disk. This event can be used to add extra content to the cache.
 
@@ -2259,7 +2259,7 @@ Usages:
 
 ### WidgetsList.addWidgets
 
-*Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [101](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L101)*
+*Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [103](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L103)*
 
 
 
