@@ -1,9 +1,7 @@
 ---
 category: Develop
-previous: http-request-handling
-next: mvc-views
 ---
-# Piwik APIs (Models)
+# Piwik APIs
 
 Piwik APIs serve two purposes: they serve the data used in controller methods and they [automatically expose plugin functionality through an HTTP API](/guides/piwiks-reporting-api).
 

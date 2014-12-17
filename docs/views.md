@@ -1,7 +1,5 @@
 ---
 category: Develop
-previous: mvc-models
-next: mvc-controllers
 ---
 # Views
 

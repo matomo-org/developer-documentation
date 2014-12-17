@@ -34,7 +34,7 @@ This guide assumes that you:
 
 * can code in PHP,
 * have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide),
-* and understand the purpose of [Piwik controllers](/guides/mvc-controllers) and [Piwik APIs](/guides/piwiks-reporting-api).
+* and understand the purpose of [Piwik controllers](/guides/controllers) and [Piwik APIs](/guides/piwiks-reporting-api).
 
 ## Displaying Analytics Reports
 
@@ -107,7 +107,7 @@ Properties in the [Config](/api-reference/Piwik/ViewDataTable/Config) object aff
 
 ### Displaying reports on a page
 
-Once there exists a controller method for a report, displaying it on a page in Piwik is straightforward. Assuming you've [exposed a controller method as a menu item](/guides/mvc-controllers#using-controller-methods-in-the-piwik-ui), you can then reuse your report's controller method to include the report in the menu item page:
+Once there exists a controller method for a report, displaying it on a page in Piwik is straightforward. Assuming you've [exposed a controller method as a menu item](/guides/controllers#using-controller-methods-in-the-piwik-ui), you can then reuse your report's controller method to include the report in the menu item page:
 
 ```php
 // controller method exposed as a menu item
@@ -391,5 +391,5 @@ To make sure your visualization can be themed, make sure any color value you use
 
 * To learn **how reports are stored and created**, read our [All About Analytics](/guides/all-about-analytics-data) guide.
 * To see a **full example of creating a new visualization**, see the source for the [Treemap Visualization](https://github.com/piwik/plugin-TreemapVisualization) plugin.
-* To learn more about **Piwik Controllers and outputting HTML**, read about [Controllers in Piwik](/guides/mvc-controllers).
+* To learn more about **Piwik Controllers and outputting HTML**, read about [Controllers in Piwik](/guides/controllers).
 * To learn more about **interacting with Piwik's client side JavaScript**, read our [Working with Piwik's UI](/guides/working-with-piwiks-ui) guide.

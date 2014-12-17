@@ -175,5 +175,5 @@ This example uses the following API requests:
 
 ## Learn more
 
-* To learn **how API classes are used internally** read our [Piwik APIs](/guides/mvc-models) guide.
+* To learn **how API classes are used internally** read our [Piwik APIs](/guides/apis) guide.
 * To learn **about how to calculate a report** read our guide [All About Analytics Data](/guides/all-about-analytics-data).
