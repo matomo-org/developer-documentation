@@ -96,7 +96,7 @@ Callback Signature:
 
 ### API.getReportMetadata.end
 
-*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [261](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L261)*
+*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php) in line [263](https://github.com/piwik/piwik/blob/master/plugins/API/ProcessedReport.php#L263)*
 
 Triggered after all available reports are collected. This event can be used to modify the report metadata of reports in other plugins. You
 could, for example, add custom metrics to every report or remove reports from the list
@@ -486,7 +486,7 @@ Triggered after Piwik has been updated.
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [341](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L341)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [344](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L344)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -498,7 +498,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [331](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L331)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [334](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L334)*
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -510,7 +510,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [936](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L936)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [974](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L974)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -523,7 +523,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [283](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L283)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [286](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L286)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -998,7 +998,7 @@ Callback Signature:
 
 ### Metrics.getDefaultMetricDocumentationTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [411](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L411)*
+*Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [414](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L414)*
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
@@ -1747,7 +1747,7 @@ Callback Signature:
 
 ### Tracker.Cache.getSiteAttributes
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [87](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L87)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [98](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L98)*
 
 Triggered to get the attributes of a site entity that might be used by the Tracker. Plugins add new site attributes for use in other tracking events must
 use this event to put those attributes in the Tracker Cache.
@@ -1950,7 +1950,7 @@ Callback Signature:
 
 ### Tracker.setTrackerCacheGeneral
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [151](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L151)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [160](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L160)*
 
 Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache) is saved to disk. This event can be used to add extra content to the cache.
 
@@ -2079,7 +2079,7 @@ Usages:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [359](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L359)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [389](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L389)*
 
 Triggered after a new user is created.
 
@@ -2155,7 +2155,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [595](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L595)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [625](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L625)*
 
 
 
@@ -2169,7 +2169,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [471](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L471)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [501](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L501)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
@@ -2259,7 +2259,7 @@ Usages:
 
 ### WidgetsList.addWidgets
 
-*Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [101](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L101)*
+*Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php) in line [103](https://github.com/piwik/piwik/blob/master/core/WidgetsList.php#L103)*
 
 
 

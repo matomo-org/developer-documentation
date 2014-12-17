@@ -11,7 +11,7 @@ Creating a page means creating [a controller](/guides/controllers) and [a Twig t
 
 You can use the console for this:
 
-```bash
+```
 $ ./console generate:controller
 ```
 

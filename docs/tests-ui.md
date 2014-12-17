@@ -11,14 +11,14 @@ next: tests-travis
 
 Unit, integration and system tests are fairly straightforward to run. UI tests, on the other hand, need a bit more work. To run UI tests you'll need to install [phantomjs version 1.9 or higher](http://phantomjs.org/download.html) and make sure `phantomjs` is on your PATH. Then you'll have to get the tests which are located in another repository but are included in Piwik as a submodule:
 
-```bash
+```
 $ git submodule init
 $ git submodule update
 ```
 
 If you're on Ubuntu, you'll also need some extra packages to make sure screenshots will render correctly:
 
-```bash
+```
 $ sudo apt-get install ttf-mscorefonts-installer imagemagick imagemagick-doc
 ```
 
@@ -26,13 +26,13 @@ $ sudo apt-get install ttf-mscorefonts-installer imagemagick imagemagick-doc
 
 To run UI tests, run the `tests:run-ui` command:
 
-```bash
+```
 $ ./console tests:run-ui MyTestSpecName
 ```
 
 or to run every UI test for a plugin:
 
-```bash
+```
 $ ./console tests:run-ui --plugin=MyPlugin
 ```
 

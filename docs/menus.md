@@ -27,7 +27,7 @@ Plugins can add items to these menus by implementing a `Menu` class.
 
 To add a menu class to your plugin, use the console:
 
-```bash
+```
 $ ./console generate:menu
 ```
 
