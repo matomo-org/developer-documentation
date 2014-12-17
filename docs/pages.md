@@ -88,5 +88,5 @@ So far you have created a page but you can still not access it. To add it to one
 You can also read the following guides:
 
 - [Controllers](/guides/controllers.md)
-- [Controllers](/guides/views.md)
+- [Views](/guides/views.md)
 - [Security in Piwik](/guides/security-in-piwik.md)
