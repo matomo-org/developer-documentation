@@ -59,31 +59,35 @@ Events are **handled** or **observed** by associating a callback with an event. 
 
 1. Plugins can map a callback by name in the [Plugin::getListHooksRegistered](/api-reference/Piwik/Plugin#getlisthooksregistered) method of their plugin descriptor class, for example:
 
-       class MyPlugin extends \Piwik\Plugin
-       {
-           public function getListHooksRegistered()
-           {
-               return array(
-                   'API.getSegmentsMetadata' => 'getSegmentsMetadata',
-                   'SomeClass.OtherEvent' => function ($arg1, $arg2) {
-                       // ...
-                   }
-               );
-           }
-     
-           public function getSegmentsMetadata(&$result)
-           {
-               $result[] = array(
-                   // ...
-               );
-           }
-       }
+    ```php
+    class MyPlugin extends \Piwik\Plugin
+    {
+        public function getListHooksRegistered()
+        {
+            return array(
+                'API.getSegmentsMetadata' => 'getSegmentsMetadata',
+                'SomeClass.OtherEvent' => function ($arg1, $arg2) {
+                    // ...
+                }
+            );
+        }
+
+        public function getSegmentsMetadata(&$result)
+        {
+            $result[] = array(
+               // ...
+            );
+        }
+    }
+    ```
 
 2. Or plugins can call the [Piwik::addAction](/api-reference/Piwik/Piwik#addaction) method, for example:
 
-       Piwik::addAction('API.getSegmentsMetadata', function (&$result) {
-           // ...
-       });
+    ```php
+    Piwik::addAction('API.getSegmentsMetadata', function (&$result) {
+        // ...
+    });
+    ```
 
 The preferred way to associate callbacks is #1, since using it will group all event handlers in one place.
 
@@ -93,27 +97,31 @@ Callbacks can be made to run before or after other callbacks. This is accomplish
 
 To make a callback execute before all others, associate the event with an array like the following:
 
-    public function getListHooksRegistered()
-    {
-        return array(
-            'API.getSegmentsMetadata' => array(
-                'before' => true,
-                'function' => 'getSegmentsMetadata'
-            )
-        );
-    }
+```php
+public function getListHooksRegistered()
+{
+    return array(
+        'API.getSegmentsMetadata' => array(
+            'before' => true,
+            'function' => 'getSegmentsMetadata'
+        )
+    );
+}
+```
 
 To make a callback execute after other callbacks, associate the event with an array like the following:
 
-    public function getListHooksRegistered()
-    {
-        return array(
-            'API.getSegmentsMetadata' => array(
-                'after' => true,
-                'function' => 'getSegmentsMetadata'
-            )
-        );
-    }
+```php
+public function getListHooksRegistered()
+{
+    return array(
+        'API.getSegmentsMetadata' => array(
+            'after' => true,
+            'function' => 'getSegmentsMetadata'
+        )
+    );
+}
+```
 
 _Note: You can use arrays like these when calling [Piwik::addAction](/api-reference/Piwik/Piwik#addaction), too._
 
@@ -123,7 +131,9 @@ Plugins can post events themselves if they want to be extendable themselves. The
 
 To post an event, call the [Piwik::postEvent](/api-reference/Piwik/Piwik#postevent) function using the name of your event:
 
-    Piwik::postEvent('MyPluginOrClass.MyEvent', array($myFirstArg, &$myRefArg));
+```php
+Piwik::postEvent('MyPluginOrClass.MyEvent', array($myFirstArg, &$myRefArg));
+```
 
 **Event Naming Conventions**
 
@@ -133,36 +143,44 @@ Event names should follow this format: `"$scopeName.$shortEventDescription"` whe
 
 You can post events within Twig templates by using the **postEvent** function:
 
-    {{ postEvent('MyPlugin.MyEventInATemplate') }}
+```twig
+{{ postEvent('MyPlugin.MyEventInATemplate') }}
+```
 
 The **postEvent** function will pass a string by reference to all event handlers and then insert the string into the template. Event handlers can modify the string, inserting HTML into templates in other plugins:
 
-    class MyOtherPlugin extends \Piwik\Plugin
+```php
+class MyOtherPlugin extends \Piwik\Plugin
+{
+    public function getListHooksRegistered()
     {
-        public function getListHooksRegistered()
-        {
-            return array(
-                'MyPlugin.MyEventInATemplate' => 'handleMyEventInATemplate'
-            );
-        }
-
-        public function handleMyEventInATemplate(&$outString)
-        {
-            $outString .= '<h1>This text was injected!</h1>';
-        }
+        return array(
+            'MyPlugin.MyEventInATemplate' => 'handleMyEventInATemplate'
+        );
     }
+
+    public function handleMyEventInATemplate(&$outString)
+    {
+        $outString .= '<h1>This text was injected!</h1>';
+    }
+}
+```
 
 When posting events, the templates can pass extra parameters:
 
-    {{ postEvent('MyPlugin.MyEventInATemplate', usefulVariable, usefulVariable2) }}
+```twig
+{{ postEvent('MyPlugin.MyEventInATemplate', usefulVariable, usefulVariable2) }}
+```
 
 Event handlers can read these optional values as follows:
 
-    public function handleMyEventInATemplate(&$outString, $usefulVariable, $usefulVariable2)
-    {
-        $outString .= '<h1>This text was injected!</h1>';
-        $outString .= $usefulVariable . " - " . $usefulVariable2;
-    }
+```php
+public function handleMyEventInATemplate(&$outString, $usefulVariable, $usefulVariable2)
+{
+    $outString .= '<h1>This text was injected!</h1>';
+    $outString .= $usefulVariable . " - " . $usefulVariable2;
+}
+```
 
 ## Plugin Classes
 
@@ -172,7 +190,7 @@ Plugins can define certain special classes in order to extend Piwik. These class
 
 Plugins can define an **API** class (that extends [Piwik\Plugin\API](/api-reference/Piwik/Plugin/API)) to add more methods to the [Reporting API](/guides/piwiks-reporting-api). They can also define a **Controller** class to handle HTTP requests that are sent by Piwik's UI.
 
-_Learn more about these classes in our [MVC in Piwik](/guides/mvc-in-piwik) guide._
+_Learn more about these classes in our [Controllers](/guides/controllers) or [APIs](/guides/apis) guides._
 
 ### Archiver
 
@@ -207,7 +225,7 @@ _Learn more about creating new report visualizations in our [Visualizing Report 
 
 * To learn **about every event that Piwik posts** [read the event docs](/api-reference/events).
 * To learn **more about the Twig filters and functions Piwik defines** read the documentation for the [View](/api-reference/Piwik/View) class.
-* To learn **about API and Controller classes** read our [MVC in Piwik](/guides/mvc-in-piwik) guide.
+* To learn **about API and Controller classes** read our [Controllers](/guides/controllers) or [APIs](/guides/apis) guides.
 * To learn **about Archiver classes** read our [All About Analytics](/guides/all-about-analytics-data) guide.
 * To learn **about plugin settings** read our [Plugin Settings](/guides/plugin-settings) guide.
 <!-- TODO: need new tutorial/guide * To learn **about creating new LocationProviders** read our ??? -->

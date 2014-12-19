@@ -13,7 +13,7 @@ Scheduled tasks let you execute tasks regularly (hourly, weekly, …), for examp
 
 You can add a scheduled task to your plugin by using the [console](/guides/piwik-on-the-command-line):
 
-```bash
+```
 $ ./console generate:scheduledtask
 ```
 
@@ -95,7 +95,7 @@ public function pingSite($siteMainUrl)
 
 To manually execute all scheduled tasks, you can run the following command:
 
-```bash
+```
 $ ./console core:run-scheduled-tasks --token-auth=YOUR_TOKEN_AUTH
 ```
 
@@ -103,7 +103,7 @@ There is one problem with this though: Piwik makes sure the scheduled tasks are 
 
 To solve this, the `--force` option will force to execute all tasks, even those that are not due to run at this time.
 
-```bash
+```
 $ ./console core:run-scheduled-tasks --force --token-auth=YOUR_TOKEN_AUTH
 ```
 

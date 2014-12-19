@@ -9,7 +9,7 @@ Widgets can be added to your dashboards or exported via a URL to embed it on any
 
 To add a widget in your plugin, use the console:
 
-```bash
+```
 $ ./console generate:widget
 ```
 

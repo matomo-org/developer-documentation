@@ -28,7 +28,7 @@ $setting->readableByCurrentUser = !Piwik::isUserIsAnonymous();
 
 Piwik can create the `Settings` class for you by using the [console](/guides/piwik-on-the-command-line):
 
-```bash
+```
 $ ./console generate:settings
 ```
 

@@ -214,7 +214,7 @@ Analytics parameters are normally stored in reports as report metadata (that is,
 
 When persisted, reports and metrics are collectively termed **Archive Data**, which simply means that the data has been cached and does not need to be re-calculated.
 
-Persisted reports and metrics are indexed by the website ID, period and segment. The date and time that the data was calculated and cached is also attached to each report and metric. _To learn the specifics of how this is done with MySQL see our reference guide [Persistence and the MySQL Backend](/guides/persistence-and-the-mysql-backend)._
+Persisted reports and metrics are indexed by the website ID, period and segment. The date and time that the data was calculated and cached is also attached to each report and metric. _To learn the specifics of how this is done with MySQL see the [Piwik database schema](/guides/persistence-and-the-mysql-backend)._
 
 ### Metric persistence
 
@@ -269,7 +269,7 @@ For other periods, the reports & metrics for the days within the periods are agg
 
 Log data aggregation is handled by the [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) class. Archive data aggregation is handled by the [ArchiveProcessor::aggregateDataTableRecords](/api-reference/Piwik/ArchiveProcessor#aggregatedatatablerecords) and [ArchiveProcessor::aggregateNumericMetrics](/api-reference/Piwik/ArchiveProcessor#aggregatenumericmetrics) methods. Plugins can access a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance and a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance through the [Piwik\Plugin\Archiver](/api-reference/Piwik/Plugin/Archiver) class.
 
-To learn more about how aggregation is accomplished with Piwik's MySQL backend, read our [Persistence and the MySQL Backend](/guides/persistence-and-the-mysql-backend) reference guide.
+To learn more about how aggregation is accomplished with Piwik's MySQL backend, read the [Piwik database schema](/guides/persistence-and-the-mysql-backend) guide.
 
 <a name="report-metric-aggregation-footnote-1"></a>[1] Because of this technique, we cannot calculate unique visitors for non-day periods without aggregating over all visits within the period.
 
@@ -277,20 +277,22 @@ To learn more about how aggregation is accomplished with Piwik's MySQL backend, 
 
 Reports and metrics are persisted using the [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) class. Metrics are inserted using the [ArchiveProcessor::insertNumericRecord](/api-reference/Piwik/ArchiveProcessor#insertnumericrecords) method. Reports are first serialized using the [DataTable::getSerialized](/api-reference/Piwik/DataTable#getserialized) method and then inserted using the [ArchiveProcessor::insertBlobRecord](/api-reference/Piwik/ArchiveProcessor#insertblobrecord) method:
 
-    $archiveProcessor = // ...
+```php
+$archiveProcessor = // ...
 
-    // insert a numeric value
-    $myFancyMetric = // ... calculate the metric value ...
-    $archiveProcessor->insertNumericRecord('MyPlugin_myFancyMetric', $myFancyMetric);
-    
-    // insert a record (with all of its subtables)
-    $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
+// insert a numeric value
+$myFancyMetric = // ... calculate the metric value ...
+$archiveProcessor->insertNumericRecord('MyPlugin_myFancyMetric', $myFancyMetric);
 
-    $dataTable = // ... build by aggregating visits ...
-    $serializedData = $dataTable->getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
-                                                $columnToSortBy = Metrics::INDEX_NB_VISITS);
-    
-    $archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
+// insert a record (with all of its subtables)
+$maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
+
+$dataTable = // ... build by aggregating visits ...
+$serializedData = $dataTable->getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
+                                            $columnToSortBy = Metrics::INDEX_NB_VISITS);
+
+$archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
+```
 
 ### Pre-archiving with cron
 
@@ -320,7 +322,9 @@ As stated above, records are not the same as reports. Records are structured pri
 
 Making a report presentable involves undo-ing the [changes that made it more efficient to store](#record-storage-guidelines). Column names can be changed from integer IDs to string metric names via the [ReplaceColumnNames](/api-reference/Piwik/DataTable/Filter/ReplaceColumnNames) [DataTable](/api-reference/Piwik/DataTable) filter:
 
-    $dataTable->filter('ReplaceColumnNames');
+```php
+$dataTable->filter('ReplaceColumnNames');
+```
 
 Metadata and [processed metrics](#processed-metrics) should also be added within API methods. Existing filters (everything in the **core/DataTable/Filter** directory) can be used to perform most of these tasks.
 
@@ -330,6 +334,6 @@ When a report is returned from an API method it goes through some extra processi
 
 ## Learn more
 
-* To learn **how log data and archive data are stored and processed in MySQL** read our [Persistence and the MySQL Backend](/guides/persistence-and-the-mysql-backend) guide.
+* To learn **how log data and archive data are stored and processed in MySQL** read about the [Piwik database schema](/guides/persistence-and-the-mysql-backend).
 * To learn more about **how reports are served in the Reporting API** read our [Piwik's Reporting API](/guides/piwiks-reporting-api) guide.
 * To learn more about **how reports are displayed** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.

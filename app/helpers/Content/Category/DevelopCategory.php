@@ -31,19 +31,29 @@ class DevelopCategory extends Category
             ]),
             new EmptySubCategory('Understanding Piwik', [
                 new Guide('how-piwik-works'),
-                new Guide('all-about-analytics-data'),
+                new Guide('http-request-handling'),
                 new Guide('piwiks-extensibility-points'),
             ]),
-            new Guide('mvc-in-piwik'),
-            new EmptySubCategory('User Interface', [
+            new EmptySubCategory('Web Interface', [
+                new Guide('controllers'),
+                new Guide('views'),
                 new Guide('pages'),
                 new Guide('menus'),
                 new Guide('widgets'),
                 new Guide('working-with-piwiks-ui'),
                 new Guide('visualizing-report-data'),
             ]),
+            new EmptySubCategory('HTTP Reporting API', [
+                new Guide('apis'),
+                new Guide('piwiks-reporting-api'),
+            ]),
+            new Guide('piwik-on-the-command-line'),
+            new EmptySubCategory('Archiving and data', [
+                new Guide('all-about-analytics-data'),
+                new Guide('persistence-and-the-mysql-backend'),
+                new Guide('extending-database'),
+            ]),
             new Guide('piwik-configuration'),
-            new Guide('persistence-and-the-mysql-backend'),
             new EmptySubCategory('Security', [
                 new Guide('security-in-piwik'),
                 new Guide('permissions'),
@@ -51,9 +61,7 @@ class DevelopCategory extends Category
             new Guide('internationalization'),
             new Guide('tests'),
             new Guide('logging'),
-            new Guide('piwiks-reporting-api'),
             new Guide('scheduled-tasks'),
-            new Guide('piwik-on-the-command-line'),
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),

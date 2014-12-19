@@ -133,7 +133,7 @@ Log data is represented in PHP as `Piwik\Tracker\Visit` objects, and is stored i
 
 Those tables are designed and optimized for fast insertions, as the tracking API needs to be as fast as possible to handle website with heavy traffic.
 
-The content of those tables (and their related PHP entities) is explained in more details in the ["Persistence & the MySQL Backend" guide](/guides/persistence-and-the-mysql-backend#log-data-persistence).
+The content of those tables (and their related PHP entities) is explained in more details in the ["Piwik database schema" guide](/guides/persistence-and-the-mysql-backend#log-data-persistence).
 
 ### The archiving process
 
@@ -169,7 +169,7 @@ Because Archive data must be fast to query, it is splitted in separate tables pe
 - `archive_blob_2014_11`: reports for November 2014
 - …
 
-The content of those archive tables is explained in more details in the ["Persistence & the MySQL Backend" guide](/guides/persistence-and-the-mysql-backend#archive-tables). The archiving process is explained in details in the ["All About Analytics Data" guide](/guides/all-about-analytics-data#the-archiving-process).
+The content of those archive tables is explained in more details in the ["Piwik database schema" guide](/guides/persistence-and-the-mysql-backend#archive-tables). The archiving process is explained in details in the ["All About Analytics Data" guide](/guides/all-about-analytics-data#the-archiving-process).
 
 ### From Archive data to reports
 

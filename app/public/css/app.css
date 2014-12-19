@@ -18,13 +18,16 @@ code {
     border-radius: 0;
 }
 pre {
-    background-color:transparent;
-    border-width: 0;
-    padding:0;
+    border: none;
+    padding: 0;
+    margin: 15px 0;
 }
 pre > code {
-    border-radius: 4px;
-    padding: 9px;
+    padding: 20px 15px !important;
+    display: block;
+    /* HighlightJS theme shim to avoid flashing when the page is loaded */
+    color: #dcdcdc;
+    background-color: #3f3f3f;
 }
 p {
     margin: 0 0 15px;

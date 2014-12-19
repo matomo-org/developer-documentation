@@ -46,23 +46,31 @@ For simple theming we mean slighty and fast modifications to the CSS using [Lean
 
 Colors that are used in CSS are simple to override. Usually it is enough to just change the value of variables set using LESS. For example to change the background from white to black you can simply define the following variable:
 
-    @theme-color-background-base: #000;
-    
+```css
+@theme-color-background-base: #000;
+```
+
 To change the link color to red you override the link variable:
 
-    @theme-color-link: #f00;
-    
+```css
+@theme-color-link: #f00;
+```
+
 To change the font you override the font variable:
 
-    @theme-fontFamily-base: Verdana, sans-serif;
-    
+```css
+@theme-fontFamily-base: Verdana, sans-serif;
+```
+
 You get the point. It is a common convention among themes to put all color values in a **_colors.less** file. This is already done for you if you have created your theme using the above mentioned console command. Just uncomment the variables you want to change. For a list of available variables have a look at the [Example Theme plugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleTheme/stylesheets). Please note in case you are not using the theme generator: Overwriting a variable will only work if they are defined in a less file that is imported by another less file. 
 
 Although we do not recommend to do so you can change the colors of a specific element directly, for example:
 
-    #login {
-        background-color: red;
-    }
+```css
+#login {
+    background-color: red;
+}
+```
 
 Please use this method only if needed as elements, id's or class names might change in the future and break your theme.
 
@@ -80,12 +88,14 @@ As Piwik users can upload their own logo and favicon using the admin interface a
 
 Every theme has one main file that contains all of your theme's styling overrides. The location of this file is determined by the **stylesheet** property in your theme's **plugin.json** file. The property's value is a path relative to the plugin's root directory:
 
-    {
-        "name": "MyTheme",
-        "description": "A new theme.",
-        "theme": true,
-        "stylesheet": "stylesheets/theme.less"
-    }
+```json
+{
+    "name": "MyTheme",
+    "description": "A new theme.",
+    "theme": true,
+    "stylesheet": "stylesheets/theme.less"
+}
+```
 
 The generated theme will already have a file for your new styles, so you don't need to set this property. The file is called **theme.less** and is located in the **stylesheets** directory of your theme.
 
@@ -97,13 +107,15 @@ Themes can also add new JavaScript files. These files can be used to style thing
 
 To add JavaScript files, add them as an array to to the **javascript** property in your theme's **plugin.json** file:
 
-    {
-        "name": "MyTheme",
-        "description": "A new theme.",
-        "theme": true,
-        "stylesheet": "stylesheets/theme.less",
-        "javascript": ["javascripts/myJavaScriptFile.js", "javascripts/myOtherJavaScriptFile.js"]
-    }
+```json
+{
+    "name": "MyTheme",
+    "description": "A new theme.",
+    "theme": true,
+    "stylesheet": "stylesheets/theme.less",
+    "javascript": ["javascripts/myJavaScriptFile.js", "javascripts/myOtherJavaScriptFile.js"]
+}
+```
     
 #### Theming colors used in JavaScript & PHP
 
@@ -111,19 +123,23 @@ Some colors are only used in JavaScript and in PHP. We've made it possible for t
 
 Each color used in JavaScript is given a name and grouped in a _color namespace_. You can set these colors like this:
 
-    .color-namespace-name[data-name=color-name] {
-        color: red;
-    }
+```css
+.color-namespace-name[data-name=color-name] {
+    color: red;
+}
+```
 
 For example,
 
-    .bar-graph-colors[data-name=grid-background] {
-        color: @background-color-base;
-    }
+```css
+.bar-graph-colors[data-name=grid-background] {
+    color: @background-color-base;
+}
 
-    .bar-graph-colors[data-name=grid-border] {
-        color: @basic-grid-border-color;
-    }
+.bar-graph-colors[data-name=grid-border] {
+    color: @basic-grid-border-color;
+}
+```
 
 **Named colors**
 
@@ -248,48 +264,56 @@ If these new widgets or visualizations use colors in JavaScript or PHP, more wor
 
 To use colors defined in CSS within JavaScript, the [ColorManager](/guides/working-with-piwiks-ui#colormanager) class must be used. Using it is straightforward. After you define some named colors in CSS like this:
 
-    .my-color-namespace[data-name=my-color-name] {
-        color: red;
-    }
+```css
+.my-color-namespace[data-name=my-color-name] {
+    color: red;
+}
 
-    .my-color-namespace[data-name=my-second-color] {
-        color: blue;
-    }
+.my-color-namespace[data-name=my-second-color] {
+    color: blue;
+}
+```
 
 You access them through [ColorManager](/guides/working-with-piwiks-ui#colormanager) like this:
 
-    var ColorManager = require('piwik').ColorManager;
+```javascript
+var ColorManager = require('piwik').ColorManager;
 
-    // get one color
-    var myColorToUse = ColorManager.getColor('my-color-namespace', 'my-color-name');
+// get one color
+var myColorToUse = ColorManager.getColor('my-color-namespace', 'my-color-name');
 
-    // get multiple colors all at once
-    var myColorsToUse = ColorManager.getColor('my-color-namespace', ['my-first-color', 'my-second-color']);
+// get multiple colors all at once
+var myColorsToUse = ColorManager.getColor('my-color-namespace', ['my-first-color', 'my-second-color']);
+```
 
 ### Using CSS colors in PHP
 
 Using CSS colors in PHP is more complicated, in fact, so much so that **using color values in PHP is discouraged**. The only way to use them is to access them in JavaScript, and then pass them to PHP via query parameters:
 
-    // get the colors
-    var ColorManager = require('piwik').ColorManager;
-    var myColorsToUse = ColorManager.getColor('my-color-namespace', ['my-first-color', 'my-second-color']);
+```javascript
+// get the colors
+var ColorManager = require('piwik').ColorManager;
+var myColorsToUse = ColorManager.getColor('my-color-namespace', ['my-first-color', 'my-second-color']);
 
-    // set the source of an <img> to use those colors
-    var jsonColors = JSON.stringify(myColorsToUse);
-    $('img#myImage').attr('src', '?module=MyPlugin&action=generateImage&colors=' + encodeURIComponent(jsonColors))
+// set the source of an <img> to use those colors
+var jsonColors = JSON.stringify(myColorsToUse);
+$('img#myImage').attr('src', '?module=MyPlugin&action=generateImage&colors=' + encodeURIComponent(jsonColors))
+```
 
 Then use those colors in PHP:
 
-    // controller method in MyPlugin
-    public function generateImage()
-    {
-        $colors = Common::getRequestVar('colors', null, $dataType = 'json');
+```php
+// controller method in MyPlugin
+public function generateImage()
+{
+    $colors = Common::getRequestVar('colors', null, $dataType = 'json');
 
-        $myFirstColor = $colors['my-first-color'];
-        $mySecondColor = $colors['my-second-color'];
+    $myFirstColor = $colors['my-first-color'];
+    $mySecondColor = $colors['my-second-color'];
 
-        // ... generate the image ...
-    }
+    // ... generate the image ...
+}
+```
 
 ## Twig, the template engine
 
