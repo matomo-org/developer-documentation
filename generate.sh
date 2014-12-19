@@ -15,6 +15,7 @@ git submodule foreach git clean -f
 git fetch
 git checkout master
 git pull origin master
+git submodule update --recursive --force
 php composer.phar install || true
 cd ..
 php generator/generate.php
