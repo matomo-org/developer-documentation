@@ -51,7 +51,7 @@ class DevelopCategory extends Category
             new EmptySubCategory('Archiving and data', [
                 new Guide('all-about-analytics-data'),
                 new Guide('persistence-and-the-mysql-backend'),
-                new Guide('plugin-data'),
+                new Guide('extending-database'),
             ]),
             new Guide('piwik-configuration'),
             new EmptySubCategory('Security', [

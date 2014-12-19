@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Piwik Data
+# Piwik database schema
 
 Piwik persists two main types of data:
 
@@ -371,4 +371,4 @@ Some options should be loaded on every non-tracking request. These options have 
 * To learn **how archive data is cached** see our [All About Analytics](/guides/all-about-analytics-data) guide.
 * To learn **about Piwik's logging utility** see this section in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.
 * To learn **about database backed sessions** read [this FAQ entry](http://piwik.org/faq/how-to-install/faq_133/).
-* To learn **how plugins can persist data** read the [Plugin Data](/guides/plugin-data) guide.
+* To learn **how plugins can persist data** read the [Extending the Database](/guides/extending-database) guide.

@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Plugin Data
+# Extending the database
 
 ## Adding new tables
 
