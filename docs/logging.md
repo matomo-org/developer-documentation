@@ -35,7 +35,7 @@ $logger->info('This is an info');
 $logger->debug('This is a debug message');
 ```
 
-Each of this message will or will not be logged according to the log level configured by the user. Developers should not log conditionally according to the current log level: they should simply log and let the system figure it all out.
+Each of these messages will or will not be logged according to the log level configured by the user in their `config.php.ini`. Developers should not log conditionally according to the current log level: they should simply log and let the system figure it all out.
 
 ### Parameterized messages
 
@@ -69,7 +69,7 @@ If an exception happens and everything should be stopped and an error page shoul
 
 If an exception happens but the current action should not be interrupted, you should catch the exception. If the exception was an expected case, you probably shouldn't log it. You should only log it if it's an unexpected situation that the user should be aware of.
 
-In a more general rule: **you should only log information that is useful to the user** (either to debug problems to anticipate potential problems).
+A generic rule is: **you should only log information that is useful to the user** (either to debug problems or anticipate potential problems).
 
 If you want to log an exception, you should follow PSR-3's standard **by using the `exception` key in the parameters array**:
 
@@ -81,4 +81,4 @@ try {
 }
 ```
 
-In this example, we log to `error` level but we catched the exception: the current process will not be aborted.
+In this example, we log to `error` level but we caught the exception: the current process will not be aborted.
