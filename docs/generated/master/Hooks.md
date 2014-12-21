@@ -725,7 +725,7 @@ Callback Signature:
 
 ### Live.API.getIdSitesString
 
-*Defined in [Piwik/Plugins/Live/Model](https://github.com/piwik/piwik/blob/master/plugins/Live/Model.php) in line [261](https://github.com/piwik/piwik/blob/master/plugins/Live/Model.php#L261)*
+*Defined in [Piwik/Plugins/Live/Model](https://github.com/piwik/piwik/blob/master/plugins/Live/Model.php) in line [264](https://github.com/piwik/piwik/blob/master/plugins/Live/Model.php#L264)*
 
 
 
