@@ -60,6 +60,7 @@ class DevelopCategory extends Category
             ]),
             new Guide('internationalization'),
             new Guide('tests'),
+            new Guide('logging'),
             new Guide('scheduled-tasks'),
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
