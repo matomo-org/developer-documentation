@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Piwik's Reporting API
+# Reporting HTTP API
 
 <!-- Meta (to be deleted)
 Purpose:

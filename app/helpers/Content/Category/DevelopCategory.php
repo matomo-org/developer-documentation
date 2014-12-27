@@ -43,7 +43,7 @@ class DevelopCategory extends Category
                 new Guide('working-with-piwiks-ui'),
                 new Guide('visualizing-report-data'),
             ]),
-            new EmptySubCategory('HTTP Reporting API', [
+            new EmptySubCategory('Reporting API', [
                 new Guide('apis'),
                 new Guide('piwiks-reporting-api'),
             ]),
