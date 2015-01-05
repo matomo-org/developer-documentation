@@ -416,7 +416,9 @@ get all default translations and overwrite any custom metric translations.
 
 #### Signature
 
-- It returns a `array` value.
+
+- *Returns:*  `array`|`mixed` &mdash;
+    
 
 <a name="getallmetrics" id="getallmetrics"></a>
 <a name="getAllMetrics" id="getAllMetrics"></a>
