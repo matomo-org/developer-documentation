@@ -350,6 +350,8 @@ cannot be found for the toke, the token is returned.
        Translation ID, eg, `'General_Date'`.
     - `$args` (`array`|`string`|`int`) &mdash;
        `sprintf` arguments to be applied to the internationalized string.
+    - `$language` (`string`|`null`) &mdash;
+       Optionally force the language.
 
 - *Returns:*  `string` &mdash;
     The translated string or `$translationId`.

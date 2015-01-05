@@ -27,5 +27,6 @@ This is a complete list of available namespaces:
 - [`Piwik\ScheduledTime`](Piwik/ScheduledTime)
 - [`Piwik\Settings`](Piwik/Settings)
 - [`Piwik\Settings\Storage`](Piwik/Settings/Storage)
+- [`Piwik\Translation`](Piwik/Translation)
 - [`Piwik\View`](Piwik/View)
 - [`Piwik\ViewDataTable`](Piwik/ViewDataTable)

@@ -105,6 +105,7 @@
 ## Singleton
 ## Site
 ## TaskScheduler
+## Translation\Translator
 ## Url
 ## UrlHelper
 ## Version
