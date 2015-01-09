@@ -129,6 +129,10 @@ Returns the currency symbol for a site.
 
 Returns the list of all known currency symbols.
 
+#### See Also
+
+- `\Piwik\Intl\Data\Provider\CurrencyDataProvider::getCurrencyList()`
+
 #### Signature
 
 

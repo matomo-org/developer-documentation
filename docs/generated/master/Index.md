@@ -96,7 +96,7 @@ Index
 - [`createTable()`](Piwik/DbHelper.md#createtable) &mdash; *Method in class* [`DbHelper`](Piwik/DbHelper.md)
 - [`copy()`](Piwik/Filesystem.md#copy) &mdash; *Method in class* [`Filesystem`](Piwik/Filesystem.md)
 - [`copyRecursive()`](Piwik/Filesystem.md#copyrecursive) &mdash; *Method in class* [`Filesystem`](Piwik/Filesystem.md)
-- [`checkNonce()`](Piwik/Nonce.md#checknonce) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
+- [`CurrencyDataProvider`](Piwik/Intl/Data/Provider/CurrencyDataProvider.md) &mdash; *Class in namespace* `Piwik\Intl\Data\Provider`- [`checkNonce()`](Piwik/Nonce.md#checknonce) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
 - [`$context`](Piwik/Notification.md#$context) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
 - [`clearCachedOption()`](Piwik/Option.md#clearcachedoption) &mdash; *Method in class* [`Option`](Piwik/Option.md)
 - [`checkUserHasSuperUserAccessOrIsTheUser()`](Piwik/Piwik.md#checkuserhassuperuseraccessoristheuser) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
@@ -347,6 +347,11 @@ Index
 - [`getNonProxyIpFromHeader()`](Piwik/IP.md#getnonproxyipfromheader) &mdash; *Method in class* [`IP`](Piwik/IP.md)
 - [`getLastIpFromList()`](Piwik/IP.md#getlastipfromlist) &mdash; *Method in class* [`IP`](Piwik/IP.md)
 - [`getHostByAddr()`](Piwik/IP.md#gethostbyaddr) &mdash; *Method in class* [`IP`](Piwik/IP.md)
+- [`getCurrencyList()`](Piwik/Intl/Data/Provider/CurrencyDataProvider.md#getcurrencylist) &mdash; *Method in class* [`CurrencyDataProvider`](Piwik/Intl/Data/Provider/CurrencyDataProvider.md)
+- [`getLanguageList()`](Piwik/Intl/Data/Provider/LanguageDataProvider.md#getlanguagelist) &mdash; *Method in class* [`LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md)
+- [`getLanguageToCountryList()`](Piwik/Intl/Data/Provider/LanguageDataProvider.md#getlanguagetocountrylist) &mdash; *Method in class* [`LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md)
+- [`getContinentList()`](Piwik/Intl/Data/Provider/RegionDataProvider.md#getcontinentlist) &mdash; *Method in class* [`RegionDataProvider`](Piwik/Intl/Data/Provider/RegionDataProvider.md)
+- [`getCountryList()`](Piwik/Intl/Data/Provider/RegionDataProvider.md#getcountrylist) &mdash; *Method in class* [`RegionDataProvider`](Piwik/Intl/Data/Provider/RegionDataProvider.md)
 - [`getMenu()`](Piwik/Menu/MenuReporting.md#getmenu) &mdash; *Method in class* [`MenuReporting`](Piwik/Menu/MenuReporting.md)
 - [`getVisitsMetricNames()`](Piwik/Metrics.md#getvisitsmetricnames) &mdash; *Method in class* [`Metrics`](Piwik/Metrics.md)
 - [`getMappingFromNameToId()`](Piwik/Metrics.md#getmappingfromnametoid) &mdash; *Method in class* [`Metrics`](Piwik/Metrics.md)
@@ -631,7 +636,7 @@ Index
 - [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; *Class in namespace* `Piwik\DataAccess`- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`$lockPrivilegeGranted`](Piwik/Db.md#$lockprivilegegranted) &mdash; *Property in class* [`Db`](Piwik/Db.md)
 - [`lockTables()`](Piwik/Db.md#locktables) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`long2ip()`](Piwik/IP.md#long2ip) &mdash; *Method in class* [`IP`](Piwik/IP.md)
-- [`Log`](Piwik/Log.md) &mdash; *Class in namespace* `Piwik`- [`loadAllPluginsAndGetTheirInfo()`](Piwik/Plugin/Manager.md#loadallpluginsandgettheirinfo) &mdash; *Method in class* [`Manager`](Piwik/Plugin/Manager.md)
+- [`LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md) &mdash; *Class in namespace* `Piwik\Intl\Data\Provider`- [`Log`](Piwik/Log.md) &mdash; *Class in namespace* `Piwik`- [`loadAllPluginsAndGetTheirInfo()`](Piwik/Plugin/Manager.md#loadallpluginsandgettheirinfo) &mdash; *Method in class* [`Manager`](Piwik/Plugin/Manager.md)
 
 ## M
 
@@ -726,7 +731,7 @@ Index
 - [`Row`](Piwik/DataTable/Row.md) &mdash; *Class in namespace* [`Piwik\DataTable`](Piwik/DataTable)- [`renameColumn()`](Piwik/DataTable/Row.md#renamecolumn) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`removeSubtable()`](Piwik/DataTable/Row.md#removesubtable) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`releaseDbLock()`](Piwik/Db.md#releasedblock) &mdash; *Method in class* [`Db`](Piwik/Db.md)
-- [`remove()`](Piwik/Menu/MenuAbstract.md#remove) &mdash; *Method in class* [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
+- [`RegionDataProvider`](Piwik/Intl/Data/Provider/RegionDataProvider.md) &mdash; *Class in namespace* `Piwik\Intl\Data\Provider`- [`remove()`](Piwik/Menu/MenuAbstract.md#remove) &mdash; *Method in class* [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
 - [`rename()`](Piwik/Menu/MenuAbstract.md#rename) &mdash; *Method in class* [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
 - [`$raw`](Piwik/Notification.md#$raw) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
 - [`Range`](Piwik/Period/Range.md) &mdash; *Class in namespace* [`Piwik\Period`](Piwik/Period)- [`redirectToModule()`](Piwik/Piwik.md#redirecttomodule) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)

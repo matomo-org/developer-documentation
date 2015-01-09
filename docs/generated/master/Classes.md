@@ -50,6 +50,9 @@ This is a complete list of available classes:
 - [`FrontController`](Piwik/FrontController.md) &mdash; This singleton dispatches requests to the appropriate plugin Controller.
 - [`Http`](Piwik/Http.md) &mdash; Contains HTTP client related helper methods that can retrieve content from remote servers and optionally save to a local file.
 - [`IP`](Piwik/IP.md) &mdash; Contains IP address helper functions (for both IPv4 and IPv6).
+- [`Intl\Data\Provider\CurrencyDataProvider`](Piwik/Intl/Data/Provider/CurrencyDataProvider.md) &mdash; Provides currency data.
+- [`Intl\Data\Provider\LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md) &mdash; Provides language data.
+- [`Intl\Data\Provider\RegionDataProvider`](Piwik/Intl/Data/Provider/RegionDataProvider.md) &mdash; Provides region related data (continents, countries, etc.).
 - [`Log`](Piwik/Log.md) &mdash; Logging utility class.
 - [`Mail`](Piwik/Mail.md) &mdash; Class for sending mails, for more information see: [http://framework.zend.com/manual/en/zend.mail.html](http://framework.zend.com/manual/en/zend.mail.html)
 - [`Menu\MenuAbstract`](Piwik/Menu/MenuAbstract.md) &mdash; Base class for classes that manage one of Piwik's menus.

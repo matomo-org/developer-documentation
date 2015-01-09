@@ -202,6 +202,10 @@ Returns the list of valid language codes.
 
 See [core/DataFiles/Languages.php](https://github.com/piwik/piwik/blob/master/core/DataFiles/Languages.php).
 
+#### See Also
+
+- `\Piwik\Intl\Data\Provider\LanguageDataProvider::getLanguageList()`
+
 #### Signature
 
 
@@ -215,6 +219,10 @@ See [core/DataFiles/Languages.php](https://github.com/piwik/piwik/blob/master/co
 Returns a list of language to country mappings.
 
 See [core/DataFiles/LanguageToCountry.php](https://github.com/piwik/piwik/blob/master/core/DataFiles/LanguageToCountry.php).
+
+#### See Also
+
+- `\Piwik\Intl\Data\Provider\LanguageDataProvider::getLanguageToCountryList()`
 
 #### Signature
 

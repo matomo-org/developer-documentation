@@ -46,6 +46,9 @@
 ## FrontController
 ## Http
 ## IP
+## Intl\Data\Provider\CurrencyDataProvider
+## Intl\Data\Provider\LanguageDataProvider
+## Intl\Data\Provider\RegionDataProvider
 ## Log
 ## Mail
 ## Menu\MenuAbstract
