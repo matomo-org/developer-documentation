@@ -80,7 +80,7 @@ Open a terminal and `cd` into the directory where you want to install Piwik. The
 
 Then run the following command to install the third party libraries:
 
-    $ composer.phar install
+    $ php composer.phar install
 
 Now that you've got a copy of Piwik, you'll need to point your webserver to it. If you use Apache or Nginx, the specific instructions for configuring your webserver depends on the webserver itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
 
