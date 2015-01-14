@@ -35,7 +35,7 @@ Schedule the given tasks/method to run once every hour.
        Can be null if the task does not need any parameter or a string. It is not possible to specify multiple parameters as an array etc. If you need to pass multiple parameters separate them via any characters such as '###'. For instance '$param1###$param2###$param3'
     - `$priority` (`int`) &mdash;
        Can be any constant such as self::LOW_PRIORITY
-- It returns a [`ScheduledTime`](../../Piwik/ScheduledTime.md) value.
+- It returns a [`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md) value.
 
 <a name="daily" id="daily"></a>
 <a name="daily" id="daily"></a>
@@ -113,11 +113,11 @@ either an instance of a class or a class name. For more information about these 
       
     - `$methodParameter` (`null`|`string`) &mdash;
       
-    - `$time` (`string`|[`ScheduledTime`](../../Piwik/ScheduledTime.md)) &mdash;
+    - `$time` (`string`|[`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md)) &mdash;
       
     - `$priority` (`int`) &mdash;
       
-- It returns a [`ScheduledTime`](../../Piwik/ScheduledTime.md) value.
+- It returns a [`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md) value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If a wrong time format is given. Needs to be either a string such as &#039;daily&#039;, &#039;weekly&#039;, ... or an instance of {@link Piwik\ScheduledTime}
+    - [`Exception`](http://php.net/class.Exception) &mdash; If a wrong time format is given. Needs to be either a string such as &#039;daily&#039;, &#039;weekly&#039;, ... or an instance of {@link Piwik\Scheduler\Schedule\Schedule}
 

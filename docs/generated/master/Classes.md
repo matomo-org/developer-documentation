@@ -96,11 +96,13 @@ This is a complete list of available classes:
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`Registry`](Piwik/Registry.md) &mdash; Registry class.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.
-- [`ScheduledTime`](Piwik/ScheduledTime.md) &mdash; Describes the interval on which a scheduled task is executed.
-- [`ScheduledTime\Daily`](Piwik/ScheduledTime/Daily.md) &mdash; Daily class is used to schedule tasks every day.
-- [`ScheduledTime\Hourly`](Piwik/ScheduledTime/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.
-- [`ScheduledTime\Monthly`](Piwik/ScheduledTime/Monthly.md) &mdash; Monthly class is used to schedule tasks every month.
-- [`ScheduledTime\Weekly`](Piwik/ScheduledTime/Weekly.md) &mdash; Weekly class is used to schedule tasks every week.
+- [`Scheduler\Schedule\Daily`](Piwik/Scheduler/Schedule/Daily.md) &mdash; Daily class is used to schedule tasks every day.
+- [`Scheduler\Schedule\Hourly`](Piwik/Scheduler/Schedule/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.
+- [`Scheduler\Schedule\Monthly`](Piwik/Scheduler/Schedule/Monthly.md) &mdash; Monthly class is used to schedule tasks every month.
+- [`Scheduler\Schedule\Schedule`](Piwik/Scheduler/Schedule/Schedule.md) &mdash; Describes the interval on which a scheduled task is executed.
+- [`Scheduler\Schedule\Weekly`](Piwik/Scheduler/Schedule/Weekly.md) &mdash; Weekly class is used to schedule tasks every week.
+- [`Scheduler\Scheduler`](Piwik/Scheduler/Scheduler.md) &mdash; Schedules task execution.
+- [`Scheduler\Task`](Piwik/Scheduler/Task.md) &mdash; Describes a task that should be executed on a given time.
 - [`Segment`](Piwik/Segment.md) &mdash; Limits the set of visits Piwik uses when aggregating analytics data.
 - [`SettingsPiwik`](Piwik/SettingsPiwik.md) &mdash; Contains helper methods that can be used to get common Piwik settings.
 - [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and currently used PHP settings.

@@ -1,9 +1,9 @@
-<small>Piwik\</small>
+<small>Piwik\Scheduler\</small>
 
-TaskScheduler
-=============
+Scheduler
+=========
 
-Manages scheduled task execution.
+Schedules task execution.
 
 A scheduled task is a callback that should be executed every so often (such as daily,
 weekly, monthly, etc.). They are registered by extending [Tasks](/api-reference/Piwik/Plugin/Tasks).
@@ -28,7 +28,7 @@ Tasks are executed when the `core:archive` command is executed.
 
 **Executing all pending tasks**
 
-    $results = TaskScheduler::runTasks();
+    $results = $scheduler->run();
     $task1Result = $results[0];
     $task1Name = $task1Result['task'];
     $task1Output = $task1Result['output'];
@@ -54,7 +54,7 @@ was changed.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$task` ([`Task`](../Piwik/Scheduler/Task.md)) &mdash;
+    - `$task` ([`Task`](../../Piwik/Scheduler/Task.md)) &mdash;
        Describes the scheduled task being rescheduled.
 - It does not return anything.
 

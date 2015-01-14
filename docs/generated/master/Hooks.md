@@ -477,7 +477,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Plugins/CoreUpdater/CoreUpdater](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php) in line [91](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L91)*
+*Defined in [Piwik/Plugins/CoreUpdater/CoreUpdater](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php) in line [90](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L90)*
 
 Triggered after Piwik has been updated.
 
@@ -961,7 +961,7 @@ Triggered after the platform is initialized and after the user has been authenti
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L154), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L42)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L153), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L42)
 
 ## PluginManager
 
@@ -1097,7 +1097,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L125), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L95)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L124), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L95)
 
 
 ### Request.getRenamedModuleAndAction
@@ -1564,7 +1564,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [568](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L568)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [572](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L572)*
 
 Triggered after a site has been added.
 
@@ -1576,7 +1576,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [612](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L612)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [616](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L616)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -1594,7 +1594,7 @@ Usages:
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [131](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L131)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [132](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L132)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
@@ -1606,19 +1606,6 @@ Callback Signature:
 - string `$piwikHost` The domain and URL path to the Piwik installation, eg, `'examplepiwik.com/path/to/piwik'`.
 
 - array `&$urlParams` The query parameters used in the <img> element's src URL. See Piwik's image tracking docs for more info.
-
-## TaskScheduler
-
-- [TaskScheduler.getScheduledTasks](#taskschedulergetscheduledtasks)
-
-### TaskScheduler.getScheduledTasks
-
-*Defined in [Piwik/TaskScheduler](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php) in line [94](https://github.com/piwik/piwik/blob/master/core/TaskScheduler.php#L94)*
-
-
-
-Callback Signature:
-<pre><code>function(&amp;$tasks)</code></pre>
 
 ## Tracker
 

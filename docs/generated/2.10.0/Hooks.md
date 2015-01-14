@@ -961,7 +961,7 @@ Triggered after the platform is initialized and after the user has been authenti
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.10.0/plugins/CoreUpdater/CoreUpdater.php#L154), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/2.10.0/plugins/UsersManager/UsersManager.php#L42)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.10.0/plugins/CoreUpdater/CoreUpdater.php#L153), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/2.10.0/plugins/UsersManager/UsersManager.php#L42)
 
 ## PluginManager
 
@@ -1097,7 +1097,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.10.0/plugins/CoreUpdater/CoreUpdater.php#L125), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/2.10.0/plugins/LanguagesManager/LanguagesManager.php#L95)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.10.0/plugins/CoreUpdater/CoreUpdater.php#L124), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/2.10.0/plugins/LanguagesManager/LanguagesManager.php#L95)
 
 
 ### Request.getRenamedModuleAndAction
