@@ -69,6 +69,8 @@ The class defines the following methods:
 - [`getDbLock()`](#getdblock) &mdash; Attempts to get a named lock.
 - [`releaseDbLock()`](#releasedblock) &mdash; Releases a named lock.
 - [`isLockPrivilegeGranted()`](#islockprivilegegranted) &mdash; Checks whether the database user is allowed to lock tables.
+- [`enableQueryLog()`](#enablequerylog)
+- [`isQueryLogEnabled()`](#isquerylogenabled)
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
@@ -556,4 +558,23 @@ Checks whether the database user is allowed to lock tables.
 #### Signature
 
 - It returns a `bool` value.
+
+<a name="enablequerylog" id="enablequerylog"></a>
+<a name="enableQueryLog" id="enableQueryLog"></a>
+### `enableQueryLog()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$enable` (`bool`) &mdash;
+      
+- It does not return anything.
+
+<a name="isquerylogenabled" id="isquerylogenabled"></a>
+<a name="isQueryLogEnabled" id="isQueryLogEnabled"></a>
+### `isQueryLogEnabled()`
+
+#### Signature
+
+- It returns a `boolean` value.
 

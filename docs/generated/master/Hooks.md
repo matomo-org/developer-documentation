@@ -575,7 +575,7 @@ Usages:
 
 ### Db.getDatabaseConfig
 
-*Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [82](https://github.com/piwik/piwik/blob/master/core/Db.php#L82)*
+*Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [84](https://github.com/piwik/piwik/blob/master/core/Db.php#L84)*
 
 Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
 
