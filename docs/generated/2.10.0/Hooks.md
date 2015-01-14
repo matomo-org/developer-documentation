@@ -163,7 +163,7 @@ Callback Signature:
 
 Usages:
 
-[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L66)
+[Login::ApiRequestAuthenticate](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L65)
 
 
 ### API.Request.dispatch
@@ -1142,7 +1142,7 @@ Callback Signature:
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L82)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L81)
 
 
 ### Request.initAuthenticationObject
@@ -1153,7 +1153,7 @@ Usages:
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L82)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L81)
 
 
 ### Request.initAuthenticationObject
@@ -1171,7 +1171,7 @@ to set the global authentication object (which must derive from [Auth](/api-refe
 
 Usages:
 
-[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L82)
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L81)
 
 ## ScheduledReports
 
@@ -1955,7 +1955,7 @@ Callback Signature:
 
 Usages:
 
-[Login::noAccess](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L55)
+[Login::noAccess](https://github.com/piwik/piwik/blob/2.10.0/plugins/Login/Login.php#L54)
 
 ## UsersManager
 
