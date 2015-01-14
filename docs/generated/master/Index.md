@@ -623,6 +623,8 @@ Index
 - [`isEcommerceEnabledFor()`](Piwik/Site.md#isecommerceenabledfor) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`isSiteSearchEnabledFor()`](Piwik/Site.md#issitesearchenabledfor) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`isLocalUrl()`](Piwik/Url.md#islocalurl) &mdash; *Method in class* [`Url`](Piwik/Url.md)
+- [`isStableVersion()`](Piwik/Version.md#isstableversion) &mdash; *Method in class* [`Version`](Piwik/Version.md)
+- [`isVersionNumber()`](Piwik/Version.md#isversionnumber) &mdash; *Method in class* [`Version`](Piwik/Version.md)
 - [`$idSubtable`](Piwik/ViewDataTable/RequestConfig.md#$idsubtable) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`isDefined()`](Piwik/WidgetsList.md#isdefined) &mdash; *Method in class* [`WidgetsList`](Piwik/WidgetsList.md)
 
