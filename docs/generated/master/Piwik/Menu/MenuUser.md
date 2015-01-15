@@ -30,6 +30,7 @@ The class defines the following methods:
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`addPersonalItem()`](#addpersonalitem) &mdash; See add().
 - [`addManageItem()`](#addmanageitem) &mdash; See add().
 - [`addPlatformItem()`](#addplatformitem) &mdash; See add().
 
@@ -104,6 +105,29 @@ Edits a URL of an existing menu entry.
     - `$subMenuToEdit` (`Piwik\Menu\$subMenuToEdit`) &mdash;
       
     - `$newUrl` (`Piwik\Menu\$newUrl`) &mdash;
+      
+- It does not return anything.
+
+<a name="addpersonalitem" id="addpersonalitem"></a>
+<a name="addPersonalItem" id="addPersonalItem"></a>
+### `addPersonalItem()`
+
+Since Piwik 2.5.0
+
+See add().
+
+Adds a new menu item to the manage section of the user menu.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$menuName` (`string`) &mdash;
+      
+    - `$url` (`array`) &mdash;
+      
+    - `$order` (`int`) &mdash;
+      
+    - `$tooltip` (`bool`|`string`) &mdash;
       
 - It does not return anything.
 

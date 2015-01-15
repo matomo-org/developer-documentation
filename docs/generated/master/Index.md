@@ -39,6 +39,7 @@ Index
 - [`addActionsItem()`](Piwik/Menu/MenuReporting.md#addactionsitem) &mdash; *Method in class* [`MenuReporting`](Piwik/Menu/MenuReporting.md)
 - [`addReferrersItem()`](Piwik/Menu/MenuReporting.md#addreferrersitem) &mdash; *Method in class* [`MenuReporting`](Piwik/Menu/MenuReporting.md)
 - [`addHtml()`](Piwik/Menu/MenuTop.md#addhtml) &mdash; *Method in class* [`MenuTop`](Piwik/Menu/MenuTop.md)
+- [`addPersonalItem()`](Piwik/Menu/MenuUser.md#addpersonalitem) &mdash; *Method in class* [`MenuUser`](Piwik/Menu/MenuUser.md)
 - [`addManageItem()`](Piwik/Menu/MenuUser.md#addmanageitem) &mdash; *Method in class* [`MenuUser`](Piwik/Menu/MenuUser.md)
 - [`addPlatformItem()`](Piwik/Menu/MenuUser.md#addplatformitem) &mdash; *Method in class* [`MenuUser`](Piwik/Menu/MenuUser.md)
 - [`addAction()`](Piwik/Piwik.md#addaction) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
