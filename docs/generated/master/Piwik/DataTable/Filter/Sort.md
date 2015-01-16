@@ -105,9 +105,9 @@ Sorting method used for sorting numbers
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$a` (`Piwik\DataTable\Filter\number`) &mdash;
+    - `$a` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
       
-    - `$b` (`Piwik\DataTable\Filter\number`) &mdash;
+    - `$b` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
       
 - It returns a `int` value.
 
