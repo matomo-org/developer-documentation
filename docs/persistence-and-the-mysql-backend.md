@@ -117,7 +117,7 @@ Visits also contain a list of actions, one for each action the visitor makes dur
 
 Visit actions contain the following information:
 
-- `server_time`: the datetime the action was tracked in the server's timezone
+- `server_time`: the datetime the action was tracked in the UTC timezone
 - `idaction_url`: the ID of the URL action type for this action
 - `idaction_url_ref`: the ID of the URL action type for the previous action in the visit
 - `idaction_name`: the ID of the page title action type for this action
@@ -183,7 +183,7 @@ Conversions are stored in the `log_conversion` table and consist of the followin
 - `idvisit`: the ID of the visit that caused this conversion
 - `idsite`: the ID of the site this conversion is for
 - `idvisitor`: the ID of the visitor that caused this conversion
-- `server_time`: the datetime of the conversion in the server's timezone
+- `server_time`: the datetime of the conversion in the UTC timezone
 - `idaction_url`: the ID of the URL action type of the visit action that caused this conversion
 - `idlink_va`: the ID of the specific visit action that resulted in this conversion
 - `referer_visit_server_date`: <!-- TODO: what is this? tied to _refts query parameter -->
