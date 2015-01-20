@@ -16,6 +16,19 @@ This is a complete list of available hooks.
 Callback Signature:
 <pre><code>function(&amp;self::$instance)</code></pre>
 
+## Actions
+
+- [Actions.Archiving.addActionMetrics](#actionsarchivingaddactionmetrics)
+
+### Actions.Archiving.addActionMetrics
+
+*Defined in [Piwik/Plugins/Actions/Metrics](https://github.com/piwik/piwik/blob/master/plugins/Actions/Metrics.php) in line [81](https://github.com/piwik/piwik/blob/master/plugins/Actions/Metrics.php#L81)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$metricsConfig)</code></pre>
+
 ## API
 
 - [API.$pluginName.$methodName](#apipluginnamemethodname)
