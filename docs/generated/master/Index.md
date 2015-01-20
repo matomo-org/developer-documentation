@@ -50,6 +50,7 @@ Index
 - [`addSegment()`](Piwik/Plugin/Dimension/ConversionDimension.md#addsegment) &mdash; *Method in class* [`ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md)
 - [`addSegment()`](Piwik/Plugin/Dimension/VisitDimension.md#addsegment) &mdash; *Method in class* [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`$actionToLoadSubTables`](Piwik/Plugin/Report.md#$actiontoloadsubtables) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
+- [`alwaysUseDefaultViewDataTable()`](Piwik/Plugin/Report.md#alwaysusedefaultviewdatatable) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`assignTemplateVar()`](Piwik/Plugin/Visualization.md#assigntemplatevar) &mdash; *Method in class* [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`afterGenericFiltersAreAppliedToLoadedDataTable()`](Piwik/Plugin/Visualization.md#aftergenericfiltersareappliedtoloadeddatatable) &mdash; *Method in class* [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`afterAllFiltersAreApplied()`](Piwik/Plugin/Visualization.md#afterallfiltersareapplied) &mdash; *Method in class* [`Visualization`](Piwik/Plugin/Visualization.md)

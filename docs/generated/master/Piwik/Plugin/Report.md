@@ -213,6 +213,7 @@ The class defines the following methods:
 - [`isEnabled()`](#isenabled) &mdash; Defines whether a report is enabled or not.
 - [`checkIsEnabled()`](#checkisenabled) &mdash; This method checks whether the report is available, see {@isEnabled()}.
 - [`getDefaultTypeViewDataTable()`](#getdefaulttypeviewdatatable) &mdash; Returns the id of the default visualization for this report.
+- [`alwaysUseDefaultViewDataTable()`](#alwaysusedefaultviewdatatable) &mdash; Returns if the default viewDataTable type should always be used.
 - [`configureView()`](#configureview) &mdash; Here you can configure how your report should be displayed and which capabilities your report has.
 - [`render()`](#render) &mdash; Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
 - [`configureWidget()`](#configurewidget) &mdash; By default a widget will be configured for this report if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
@@ -297,6 +298,19 @@ Eg 'table' or 'pie'. Defaults to the HTML table.
 #### Signature
 
 - It returns a `string` value.
+
+<a name="alwaysusedefaultviewdatatable" id="alwaysusedefaultviewdatatable"></a>
+<a name="alwaysUseDefaultViewDataTable" id="alwaysUseDefaultViewDataTable"></a>
+### `alwaysUseDefaultViewDataTable()`
+
+Returns if the default viewDataTable type should always be used.
+
+e.g. the type won't be changeable through config or url params.
+Defaults to false
+
+#### Signature
+
+- It returns a `bool` value.
 
 <a name="configureview" id="configureview"></a>
 <a name="configureView" id="configureView"></a>
