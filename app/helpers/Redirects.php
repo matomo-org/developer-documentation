@@ -14,6 +14,7 @@ class Redirects
     {
         return [
             '/guides'                     => '/',
+            '/guides/'                     => '/',
             '/contributing'               => '/guides/contributing-to-piwik-core',
             '/plugins'                    => '/develop',
             '/api-reference/metadata'     => '/api-reference/reporting-api-metadata',
