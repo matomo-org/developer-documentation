@@ -48,8 +48,10 @@ class DevelopCategory extends Category
                 new Guide('piwiks-reporting-api'),
             ]),
             new Guide('piwik-on-the-command-line'),
-            new EmptySubCategory('Archiving and data', [
+            new EmptySubCategory('Analytics Data', [
                 new Guide('all-about-analytics-data'),
+            ]),
+            new EmptySubCategory('Database', [
                 new Guide('persistence-and-the-mysql-backend'),
                 new Guide('extending-database'),
             ]),
