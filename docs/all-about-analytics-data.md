@@ -3,35 +3,6 @@ category: Develop
 ---
 # All About Analytics Data
 
-<!-- Meta (to be deleted)
-Purpose:
-- describe the archiving process & how it is started,
-- what 'archive data' is and how it is stored (how DataTables are stored)
-- how analytics data is calculated (aggregated)
-- how analytics data is queried, what data structures are used to store analytics data (DataTable, DataTable/Map)
-- analytics parameters (site, period, segment),
-- segments,
-- manipulating analytics data (filters),
-- exposing reports through API,
-- how reports are processed when returned through the API,
-- difference between metrics + reports,
-- how plugins can do their own archiving,
-- archive cron stuff 
-
-Audience: - plugin developers who want to create their own reports
-- developers who want to understand more about how Piwik creates analytics reports
-
-Expected Result: - developers who understand exactly how Piwik analyzes log data and creates reports that are available for viewing
-
-Notes: 
-
-What's missing? (stuff in my list that was not in when I wrote the 1st draft)
-- how plugins should define their own metrics + reports. (new guide? or just tutorial? i think just tutorial.)
-- images that help describe the set stuff
-- period semantics (ie, 5 types of periods, why don't we just use range, etc.)
-- segments (new guide? can't put everything in a tutorial i think)
--->
-
 ## About this guide
 
 **Read this guide if**
@@ -41,130 +12,147 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 * you'd like to know **how analytics data is stored and manipulated in PHP**
 * you'd like to know **what segments are and how you can define your own**
 
-**Guide assumptions**
-
-This guide assumes that you:
-
-* can code in PHP,
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
-
 ## About Analytics
 
-To analyze data is to search for patterns in a set of _**things**_. In Piwik those **_things_** are visits, web actions and goal conversions.
+Analyzing data means searching for patterns in a set of _**things**_. In Piwik those **_things_** are visits, web actions and goal conversions.
 
-We search for patterns by _**[reducing](http://en.wikipedia.org/wiki/Data_reduction)**_ the set of things. Or in other words, we search for patterns by grouping individual things together to create subsets that are both recognizable and meaningful.
+We search for patterns by [**reducing**](http://en.wikipedia.org/wiki/Data_reduction) the set of things. Or in other words, we search for patterns by grouping individual things together to create subsets that are both recognizable and meaningful.
 
-In Piwik the result of that grouping is the analytics data that it stores, displays and serves through an API. Read on to learn exactly what this data contains, how Piwik calculates and stores it, and how it is made available to Piwik users.
+In Piwik the result of that grouping is the **analytics data**. Analytics data is stored, displayed and exposed through an API. Read on to learn what this data contains, how Piwik calculates and stores it, and how it is made available to Piwik users.
 
 ## Analytics Reports & Metrics
 
-Piwik aggregates and persists two types of analytics data: **reports** and **metrics**. The difference between the two is that a **metric** is a single numeric value whereas a **report** is a two-dimensional array of values. **Reports** will normally contain metric values, but they can contain other data (either additionally or in lieu of metric values).
+Piwik aggregates and persists two types of analytics data:
+
+- **metrics**, which are single numeric values
+- **reports**, which are two-dimensional array of values
+
+Reports will normally contain metric values, but they can also contain other data (either additionally or in lieu of metric values).
+
+Reports and metrics are defined by plugins, letting any plugin extend the data analyzed by Piwik. However there are several metrics, called **core metrics**, that are defined by **Piwik Core**.
 
 ### Core metrics
 
-All reports are defined by plugins. Metrics can also be defined by plugins, but there are several, called **core metrics** that are defined and calculated by **Piwik Core**.
+**Core metrics** are metrics that are not defined by plugins but by **Piwik Core**.
 
 New reports that analyze visits, action types or conversions should contain these metrics.
 
-The following is a list of core metrics that relate to a set of visits:
+#### Visit metrics
 
-* **Visits**: Number of tracked visits (a visit is series of events each of which happened no more than 30 minutes apart). _Internally stored with the `'nb_visits'` metric name.
-* **Unique Visitors**: The number of unique sources of visits (a visit source is an entity that causes a visit to be tracked). _Internally stored with the `'nb_uniq_visitors'` metric name.
-* **Actions**: The number of tracked actions (an action is an event tracked by Piwik). _Internally stored with the `'nb_actions'` metric name.
-* **Max Actions**: The maximum number of actions that occurred in one visit. _Internally stored with the `'max_actions'` metric name.
-* **Sum Visit Length**: The sum of each visit's elapsed time. _Internally stored with the `'sum_visit_length'` metric name.
-* **Bounce Count**: The number of visits that consisted of only one action. _Internally stored with the `'bounce_count'` metric name.
-* **Converted Visits**: The number of visits that caused at least one conversion. Includes conversions for every goal of a site. _Internally stored with the `'nb_visits_converted'` metric name.
-* **Conversions**: The number of conversions tracked for this set of visits. Includes conversions for every goal of a site. _Internally stored with the `'nb_conversions'` metric name.
-* **Revenue**: The total revenue generated by these visits. Includes revenue for every goal of a site plus its ecommerce revenue. _Internally stored with the `'revenue'` metric name.
+Core metrics for a set of visits:
 
-The following is a list of core metrics that relate to a single action type:
+Name             | Metric ID             | Description
+-----------------|-----------------------|------------
+Visits           | `nb_visits`           | Number of tracked visits. <br> A visit is series of events each of which happened no more than 30 minutes apart.
+Unique visitors  | `nb_uniq_visitors`    | The number of unique sources of visits. <br> A visit source is an entity that causes a visit to be tracked.
+Actions          | `nb_actions`          | The number of tracked actions. <br> An action is an event tracked by Piwik.
+Max Actions      | `max_actions`         | The maximum number of actions that occurred in one visit.
+Sum Visit Length | `sum_visit_length`    | The sum of each visit's elapsed time.
+Bounce Count     | `bounce_count`        | The number of visits that consisted of only one action.
+Converted Visits | `nb_visits_converted` | The number of visits that caused at least one conversion. <br> Includes conversions for every goal of a site.
+Conversions      | `nb_conversions`      | The number of conversions tracked for this set of visits. <br> Includes conversions for every goal of a site.
+Revenue          | `revenue`             | The total revenue generated by these visits. <br> Includes revenue for every goal of a site plus its ecommerce revenue.
 
-* **Hits**: The number times this action was ever done. _Internally stored with the `'nb_hits'` metric name._
-* **Sum Time Spent**: The total amount of time the user spent doing this action. _Internally stored with the `'sum_time_spent'` metric name._
-* **Sum Page Generation Time**: The total amount of time a server spent serving this action. _Internally stored with the `'sum_time_generation'` metric name._
-* **Hits With Generation Time**: The number of hits that included generation time information. _Internally stored with the `'nb_hits_with_time_generation'` metric name._
-* **Min Page Generation Time**: The minimum amount of time a server spent serving this action. _Internally stored with the `'min_time_generation'` metric name._
-* **Max Page Generation Time**: The maximum amount of time a server spent serving this action. _Internally stored with the `'max_time_generation'` metric name._
-* **Unique Exit Visitors**: The number of unique visitors that ever exited a site after this action. _Internally stored with the `'exit_nb_uniq_visitors'` metric name._
-* **Exit Visits**: The total number of visits that ended with this action. _Internally stored with the `'exit_nb_visits'` metric name._
-* **Unique Entry Visitors**: The total number of unique visitors that started a visit with this action. _Internally stored with the `'entry_nb_uniq_visitors'` metric name._
-* **Entry Visits**: The total number of visits that started with this action. _Internally stored with the `'entry_nb_visits'` metric name._
-* **Entry Actions**: <!-- TODO: isn't this the same as entry visits? --> _Internally stored with the `'entry_nb_actions'` metric name._
-* **Entry Sum Visit Length**: The sum of each entry visit's elapsed time. _Internally stored with the `'entry_sum_visit_length'` metric name._
-* **Entry Bounce Count**: The number of visits that consisted of this action and no other. _Internally stored with the `'entry_bounce_count'` metric name._
-* **Hits From Search**: The number of times this action was done after a site search. _Internally stored with the `'nb_hits_following_search'` metric name._
+#### Action metrics
 
-The following is a list of core metrics that relate to the set of ecommerce conversions (either all orders or all abandoned carts) recorded for a set of visits:
+Core metrics for a single action type:
 
-* **Revenue Subtotal**: The total cost of every item that was a part of these orders or abandoned carts. _Internally stored with the `'revenue_subtotal'` metric name._
-* **Revenue Tax**: The total tax amount applied to these orders/abandoned carts. _Internally stored with the `'revenue_tax'` metric name._
-* **Revenue Shipping**: The total amount of shipping applied to these orders/abandoned carts. _Internally stored with the `'revenue_shipping'` metric name._
-* **Revenue Discount**: The total amount of discounts applied to these orders/abandoned carts. _Internally stored with the `'revenue_discount'` metric name._
-* **Ecommerce Item Count**: The total number of items in these orders/abandoned carts. _Internally stored with the `'items'` metric name._
+Name                      | Metric ID                      | Description
+--------------------------|--------------------------------|------------
+Hits                      | `nb_hits`                      | The number times this action was ever done.
+Sum Time Spent            | `sum_time_spent`               | The total amount of time the user spent doing this action.
+Sum Page Generation Time  | `sum_time_generation`          | The total amount of time a server spent serving this action.
+Hits With Generation Time | `nb_hits_with_time_generation` | The number of hits that included generation time information.
+Min Page Generation Time  | `min_time_generation`          | The minimum amount of time a server spent serving this action.
+Max Page Generation Time  | `max_time_generation`          | The maximum amount of time a server spent serving this action.
+Unique Exit Visitors      | `exit_nb_uniq_visitors`        | The number of unique visitors that ever exited a site after this action.
+Exit Visits               | `exit_nb_visits`               | The total number of visits that ended with this action.
+Unique Entry Visitors     | `entry_nb_uniq_visitors`       | The total number of unique visitors that started a visit with this action.
+Entry Visits              | `entry_nb_visits`              | The total number of visits that started with this action.
+Entry Actions             | `entry_nb_actions`             | <!-- TODO: isn't this the same as entry visits? -->
+Entry Sum Visit Length    | `entry_sum_visit_length`       | The sum of each entry visit's elapsed time.
+Entry Bounce Count        | `entry_bounce_count`           | The number of visits that consisted of this action and no other.
+Hits From Search          | `nb_hits_following_search`     | The number of times this action was done after a site search.
 
-<!-- TODO: necessary to document sum_dialy_nb_uniq_visitors (also sum_daily_exit_nb_uniq_visitors & sum_daily_entry_nb_uniq_visitors)? seems like a useless metric. -->
+#### E-commerce metrics
 
-**Goal specific metrics**
+Core metrics for the set of ecommerce conversions (either all orders or all abandoned carts) recorded for a set of visits:
 
-The following is a list of core metrics that relate to a set of visits and one goal of a site:
+Name                 | Metric ID          | Description
+---------------------|--------------------|------------
+Revenue Subtotal     | `revenue_subtotal` | The total cost of every item that was a part of these orders or abandoned carts.
+Revenue Tax          | `revenue_tax`      | The total tax amount applied to these orders/abandoned carts.
+Revenue Shipping     | `revenue_shipping` | The total amount of shipping applied to these orders/abandoned carts.
+Revenue Discount     | `revenue_discount` | The total amount of discounts applied to these orders/abandoned carts.
+Ecommerce Item Count | `items`            | The total number of items in these orders/abandoned carts.
 
-* **Goal Conversions**: The conversions tracked for a specific goal and this set of visits. _Stored in reports with a metric name of the format `'goal_%idGoal%_nb_conversions'`._
-* **Goal Revenue**: The total revenue generated by the conversions for a specific goal. _Stored in reports with a metric name of the format `'goal_%idGoal%_revenue'`._
+#### Goal metrics
 
-_Note: In the metric names displayed above, `'%idGoal%'` should be replaced with the ID of a goal._
+Core metrics for a set of visits and one goal of a site:
 
-Goal specific metrics are stored in the database in the `'goals'` column of serialized reports. The column contains a PHP array mapping goal IDs with arrays of goal specific metric values. These values are set as normal column values with the metric names described above by the [AddColumnsProcessedMetricsGoal](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal) [DataTable filter](/api-reference/Piwik/DataTable/BaseFilter).
+Name             | Metric ID                      | Description
+-----------------|--------------------------------|------------
+Goal Conversions | `goal_<idGoal>_nb_conversions` | The conversions tracked for a specific goal and this set of visits.
+Goal Revenue     | `goal_<idGoal>_revenue`        | The total revenue generated by the conversions for a specific goal.
 
-<a name="processed-metrics"></a>
+_Note: `<idGoal>` should be replaced with the ID of a goal._
+
+Goal specific metrics are stored in the database in the `goals` column of serialized reports. The column contains a PHP array mapping goal IDs with arrays of goal specific metric values. These values are set as normal column values with the metric names described above by the [AddColumnsProcessedMetricsGoal](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal) DataTable filter.
+
 #### Processed metrics
 
-In the interests of efficiency (in terms of both the speed of the [Archiving Process](/guides/all-about-analytics-data#the-archiving-process) and the size of the database), many metrics are not stored in the database. These metrics can be calculated using other metrics and so can be calculated right before reports are served. These metrics are collectively called **processed metrics**. Below is the list of processed metrics that are calculated using **core metrics**.
+In the interests of [archiving](/guides/all-about-analytics-data#the-archiving-process) and database size efficiency, some metrics are not stored in database. They are instead calculated when needed using other metrics. These metrics are called **processed metrics**.
 
-New reports that analyze visits, action types or conversions should be have these metrics added when possible.
+Below is the list of processed metrics that are calculated using *core metrics*. New reports that analyze visits, action types or conversions should be have these metrics added when possible.
 
 _Note: Some processed metrics will appear multiple times in the lists below. These metrics have different meanings based on the reports they are in._
 
-The following is a list of processed metrics that relate to a set of visits:
+Processed metrics for a set of visits:
 
-* **Conversion Rate**: The percent of visits that had at least one conversion. _Stored in reports with the `'conversion_rate'` metric name._
-* **Actions Per Visit**: The average number of actions for a single visit. _Stored in reports with the `'nb_actions_per_visit'` metric name._
-* **Average Time On Site**: The average number of time spent per visit in seconds. _Stored in reports with the `'avg_time_on_site'` metric name._
-* **Bounce Rate**: The percent of visits that resulted in a bounce. _Stored in reports with the `'bounce_rate'` metric name._
+Name                 | Metric ID              | Description
+---------------------|------------------------|------------
+Conversion Rate      | `conversion_rate`      | The percent of visits that had at least one conversion.
+Actions Per Visit    | `nb_actions_per_visit` | The average number of actions for a single visit.
+Average Time On Site | `avg_time_on_site`     | The average number of time spent per visit in seconds.
+Bounce Rate          | `bounce_rate`          | The percent of visits that resulted in a bounce.
 
-The following is a list of processed metrics that relate to a single action type:
+Processed metrics for a single action type:
 
-* **Average Generation Time**: The average amount of time it took for a server to serve this action. _Stored in reports with the `'avg_time_generation'` metric name._
-* **Average Number of Search Result Pages Viewed**: The average number of search result pages viewed after a site search. Only valid for site search keywords and site search categories. _Stored in reports with the `'nb_pages_per_search'` metric name._
-* **Average Time On Page**: The average amount of time users spent doing this action. _Stored in reports with the `'avg_time_on_page'` metric name._
-* **Entry Bounce Rate**: The percent of all visits that consisted of this action and no other. _Stored in reports with the `'bounce_rate'` metric name._
-* **Exit Rate**: The percent of all visits that ended with this action. _Stored in reports with the `'exit_rate'` metric name._
+Name                                         | Metric ID             | Description
+---------------------------------------------|-----------------------|------------
+Average Generation Time                      | `avg_time_generation` | The average amount of time it took for a server to serve this action.
+Average Number of Search Result Pages Viewed | `nb_pages_per_search` | The average number of search result pages viewed after a site search. <br> Only valid for site search keywords and site search categories.
+Average Time On Page                         | `avg_time_on_page`    | The average amount of time users spent doing this action.
+Entry Bounce Rate                            | `bounce_rate`         | The percent of all visits that consisted of this action and no other.
+Exit Rate                                    | `exit_rate`           | The percent of all visits that ended with this action.
 
-The following is a list of processed metrics that relate to the set of ecommerce orders recorded for a set of visits:
+Processed metrics for the set of ecommerce orders recorded for a set of visits:
 
-* **Average Order Revenue**: The average revenue of each order. _Stored in reports with the `'avg_order_revenue'` metric name._
+Name                  | Metric ID           | Description
+----------------------|---------------------|------------
+Average Order Revenue | `avg_order_revenue` | The average revenue of each order.
 
-The following is a list of processed metrics that relate to the set of ecommerce items in a set of orders or abandoned carts:
+Processed metrics for the set of ecommerce items in a set of orders or abandoned carts:
 
-* **Average Price**: The average price of each item. _Stored in reports with the `'avg_price'` metric name._
-* **Average Quantity**: The average number of each item in an order/abandoned cart. _Stored in reports with the `'avg_quantity'` metric name._
-* **Product Conversion Rate**: The percent of orders/abandoned carts that include this item. _Stored in reports with the `'conversion_rate'` metric name._
+Name                    | Metric ID         | Description
+------------------------|-------------------|------------
+Average Price           | `avg_price`       | The average price of each item.
+Average Quantity        | `avg_quantity`    | The average number of each item in an order/abandoned cart.
+Product Conversion Rate | `conversion_rate` | The percent of orders/abandoned carts that include this item.
 
 **Goal specific metrics**
 
 The following is a list of processed metrics that are also specific to one goal of one site:
 
-* **Average Revenue per Visit**: The average amount of revenue generated per visit for this goal. _Stored in reports with the `'goal_%idGoal%_revenue_per_visit'` metric name._
-
-_Note: In the metric names displayed above, `'%idGoal%'` should be replaced with the ID of the goal in question._
+Name                      | Metric ID                         | Description
+--------------------------|-----------------------------------|------------
+Average Revenue per Visit | `goal_<idGoal>_revenue_per_visit` | The average amount of revenue generated per visit for this goal.
 
 #### Naming metrics
 
-Plugins that want to calculate and persist their own metrics must give them a name with the following format: `"PluginName_metricName"` where **PluginName** is the name of the plugin and **metricName** is the name of the metric. For example: `"MyPlugin_myFancyMetric"`.
+Metrics calculated and persisted by plugins **must** be named with the following format: `PluginName_metricName`. For example: `MyPlugin_myFancyMetric`.
 
-This naming convention is required in order to determine which plugins define which metrics. Not following this convention will result in errors during the [Archiving Process](/guides/all-about-analytics-data#the-archiving-process).
-
-**Core metrics** all have special names and do not follow this convention.
+Core metrics have special names and do not follow this convention.
 
 ### Reports and DataTables
 
