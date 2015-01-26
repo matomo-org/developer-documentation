@@ -1,12 +1,12 @@
 ---
 category: Develop
 ---
-# Piwik database schema
+# Database schema
 
 Piwik persists two main types of data:
 
-- **log data**: raw analytics data that Piwik receives in the tracker
-- **archive data**: aggregated analytics data (constructed from log data) that is cached and used to build reports
+- [**log data**](/guides/log-data): raw analytics data that Piwik receives in the tracker
+- [**archive data**](/guides/archive-data): aggregated analytics data (constructed from log data) that is cached and used to build reports
 
 Piwik also persists other simpler forms of data including:
 
