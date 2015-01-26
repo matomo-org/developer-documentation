@@ -169,7 +169,7 @@ Because Archive data must be fast to query, it is splitted in separate tables pe
 - `archive_blob_2014_11`: reports for November 2014
 - …
 
-The content of those archive tables is explained in more details in the ["Piwik database schema" guide](/guides/persistence-and-the-mysql-backend#archive-tables). The archiving process is explained in details in the ["All About Analytics Data" guide](/guides/all-about-analytics-data#the-archiving-process).
+The content of those archive tables is explained in more details in the ["Piwik database schema" guide](/guides/persistence-and-the-mysql-backend#archive-tables). The archiving process is explained in details in the ["Archiving" guide](/guides/archiving).
 
 ### From Archive data to reports
 
@@ -179,7 +179,7 @@ Reports are [`DataTable`](/api-reference/Piwik/DataTable) objects and are served
 
 Sometimes, one persisted record can be the source of several API reports.
 
-You can read more details on how reports are created and served in the ["All About Analytics Data" guide](/guides/all-about-analytics-data#serving-reports).
+You can read more details on how reports are created and served in the ["Reports" guide](/guides/reports).
 
 ## Piwik's extensibility points
 

@@ -3,7 +3,7 @@ category: Develop
 previous: log-data
 next: archive-data
 ---
-# The Archiving Process
+# The archiving process
 
 **Log data** cannot be used directly for end-user reports because it would require to process an enormous amount of data every time the report is needed.
 

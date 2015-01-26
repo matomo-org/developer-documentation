@@ -12,10 +12,10 @@ subGuides:
 
 Read this guide if
 
-* you'd like to know **how to aggregate, store and serve new analytics data with your plugin**
-* you'd like to know **what the Archiving Process is and how it is used to automatically aggregate and cache analytics data**
-* you'd like to know **how analytics data is stored and manipulated in PHP**
-* you'd like to know **what segments are and how you can define your own**
+- you'd like to know **how to aggregate, store and serve new analytics data with your plugin**
+- you'd like to know **what the Archiving Process is and how it is used to automatically aggregate and cache analytics data**
+- you'd like to know **how analytics data is stored and manipulated in PHP**
+- you'd like to know **what segments are and how you can define your own**
 
 ## About analytics
 

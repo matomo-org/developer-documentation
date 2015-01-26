@@ -104,7 +104,7 @@ Goal specific metrics are stored in the database in the `goals` column of serial
 
 ### Processed metrics
 
-In the interests of [archiving](/guides/all-about-analytics-data#the-archiving-process) and database size efficiency, some metrics are not stored in database. They are instead calculated when needed using other metrics. These metrics are called **processed metrics**.
+In the interests of [archiving](/guides/archiving) and database size efficiency, some metrics are not stored in database. They are instead calculated when needed using other metrics. These metrics are called **processed metrics**.
 
 Below is the list of processed metrics that are calculated using *core metrics*. New reports that analyze visits, action types or conversions should be have these metrics added when possible.
 

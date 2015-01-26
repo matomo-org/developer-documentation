@@ -166,7 +166,7 @@ Ok! You've set up your development environment and created your plugin! Now all 
 
 If you'd like to learn the basics of Piwik plugin development all at once, continue on to the [next part in this series of guides](/guides/getting-started-part-2). If you want to learn how to do just one thing, try reading one of our other guides:
 
-- If you're interested in **creating new analytics reports**, you may want to read our [All About Analytics Data](/guides/all-about-analytics-data) and [Visualizing Report Data](/guides/visualizing-report-data) guides.
+- If you're interested in **creating new analytics reports**, you may want to read about [Reports](/guides/reports) and [Visualizing Report Data](/guides/visualizing-report-data) guides.
 - If you're interested in **changing the look and feel of Piwik**, read our [Theming](/guides/theming) guide.
 - If you're interested in **taking part in core development**, read our [Contributing to Piwik Core](/guides/contributing-to-piwik-core) guide.
 - If you're interested in **integrating Piwik with another technology**, you might want to read our [All About Tracking](/guides/all-about-tracking) guide to learn how to use our Tracking API. You might also want to read our [Piwik's HTTP API](/api-reference/tracking-api) guide to learn about Piwik's Reporting API.

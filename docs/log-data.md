@@ -1,6 +1,6 @@
 ---
 category: Develop
-previous: all-about-analytics-data
+previous: data-model
 next: archiving
 ---
 # Log data

@@ -367,8 +367,8 @@ Some options should be loaded on every non-tracking request. These options have 
 ## Learn more
 
 * To learn **how the tracker inserts log data** see our [All About Tracking](/guides/all-about-tracking) guide.
-* To learn **how log data is aggregated** see our [All About Analytics](/guides/all-about-analytics-data) guide and take a look at the [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) class.
-* To learn **how archive data is cached** see our [All About Analytics](/guides/all-about-analytics-data) guide.
+* To learn **how log data is aggregated** see our [Archiving](/guides/archiving) guide and take a look at the [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) class.
+* To learn **how archive data is cached** see our [Archive Data](/guides/archive-data) guide.
 * To learn **about Piwik's logging utility** see this section in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.
 * To learn **about database backed sessions** read [this FAQ entry](http://piwik.org/faq/how-to-install/faq_133/).
 * To learn **how plugins can persist data** read the [Extending the Database](/guides/extending-database) guide.
