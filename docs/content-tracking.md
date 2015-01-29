@@ -3,38 +3,41 @@ category: Integrate
 ---
 # Content Tracking
 
-We built a way to determine the performance of the pieces of content on any page of the website or app. You would use content tracking for instance when displaying ads on a website. An ad can be an image or a banner. Different ads might be displayed on the same page to different visitors or there could be even no ads sometimes. On the other side the same ad can be displayed on different pages. Use content tracking if you want to know how often a specific ad was displayed on any page and how often it was clicked. 
+**Content tracking** allows you to track interaction with the content of a web page or application.
 
-This feature is not only limited to ads or images. You can basically use it for any kind of content.
+For example, you could use content tracking to measure how often a specific ad was displayed on your website or how often it was clicked.
 
-## Naming
+This feature is not only limited to ads or images, you can use it for any kind of HTML content.
 
-| Name  | Purpose |
-| ------------- | ------------- |
-| Content block | Is a container which consists of a content name, piece and a target. |
-| Content name | A name that represents a content block. The name will be visible in reports. One name can belong to different content pieces. |
-| Content piece | This is the actual content that was displayed, eg a path to a video/image/audio file, a text, ... |
-| Content target | For instance the URL of a landing page where the user was led to after interacting with the content block. In a single page website it could be also the name of an anchor. In a mobile app it could be the name of the screen you are going to open. |
-| Content impression | Any content block that was displayed on a page, such as a banner or an ad. Optionally you can tell Piwik to track only impressions for visible content blocks. |
-| Content interaction | An interaction is happening when a visitor is interacting with a content block. This means usually a 'click' on a banner or ad, but it can be any interaction. |
+## Vocabulary
+
+| Term                     | Purpose                                                              |
+| ------------------------ | -------------------------------------------------------------------- |
+| Content block            | Is a container which consists of a content name, piece and a target. |
+| Content name             | A name that represents a content block. The name will be visible in reports. One name can belong to different content pieces. |
+| Content piece            | This is the actual content that was displayed, eg a path to a video/image/audio file, a text, ... |
+| Content target           | For instance the URL of a landing page where the user was led to after interacting with the content block. In a single page website it could be also the name of an anchor. In a mobile app it could be the name of the screen you are going to open. |
+| Content impression       | Any content block that was displayed on a page, such as a banner or an ad. Optionally you can tell Piwik to track only impressions for visible content blocks. |
+| Content interaction      | An interaction is happening when a visitor is interacting with a content block. This means usually a 'click' on a banner or ad, but it can be any interaction. |
 | Content interaction rate | The ratio of content impressions to interactions. For instance an ad was displayed a 100 times and there were 2 interactions results in a rate of 2%. |
 
-## Tracking the content completely programmatically
+## Manual content tracking
 
-You can track content impressions and interactions completely programmatically. To do so have a look at the methods [`trackContentImpression` and `trackContentInteraction`](http://developer.piwik.org/api-reference/tracking-javascript#tracking-content-impressions-and-interactions-manually) in the JavaScript Tracker API reference.
+You can track content impressions and interactions completely programmatically. To do so have a look at the methods [`trackContentImpression` and `trackContentInteraction`](/guides/tracking-javascript-guide#tracking-content-impressions-and-interactions-manually) in the JavaScript Tracker API reference.
 
-Track content this way if you cannot easily change the markup of your site or if you want to completely control all tracked impressions and interactions.
+Track content this way if you cannot easily change the markup of your site or if you want complete control over all tracked impressions and interactions.
 
-## Tracking the content declarative
+## Declarative content tracking
+
+Instead of programmatically tracking the content with the Javascript API, you can use HTML attributes in your web page.
 
 ### Initializing the tracker
 
-To make things work we need to inizialize the tracker first. You'll have to decide whether you want to track all content blocks within a page or only the ones that are actually visible.
+To make things work we first need to initialize the tracker. You'll have to decide whether you want to track all the content blocks of the page or only the visible ones.
 
-For more details about this have a look at the JavaScript Tracker API reference: [`trackAllContentImpressions`](http://developer.piwik.org/api-reference/tracking-javascript#track-all-content-impressions-within-a-page) and [`trackVisibleContentImpressions`](http://developer.piwik.org/api-reference/tracking-javascript#track-only-visible-content-impressions-within-a-page)
+For more details about this have a look at the JavaScript Tracker API reference: [`trackAllContentImpressions`](/guides/tracking-javascript-guide#track-all-content-impressions-within-a-page) and [`trackVisibleContentImpressions`](/guides/tracking-javascript-guide#track-only-visible-content-impressions-within-a-page)
 
-
-Example for tracking all content blocks
+Example for tracking all content blocks:
 
 ```javascript
 var _paq = _paq || [];
@@ -45,39 +48,44 @@ _paq.push(['trackPageView']);
 _paq.push(['trackAllContentImpressions']);
 ```
 
-Example for tracking only visible content blocks
+Example for tracking only visible content blocks:
 
 ```javascript
 [...]
 _paq.push(['trackPageView']);
 _paq.push(['trackVisibleContentImpressions']);
-[...]
 ```
 
 ### Tagging content
 
-Once you have initialized the tracker you have to tag the actual content blocks in your pages. The following attributes and their corresponding CSS classes are used for this and explained in detail in the next chapters:
+Once you have initialized the tracker you have to tag HTML blocks to declare them **content blocks**.
 
-| Selector  | Description |
-| ------------- | ------------- |
-| `[data-track-content] or .piwikTrackContent` | Defines a content block |
-| `[data-content-name=""]` | Defines the name of the content block |
-| `[data-content-piece=""] or .piwikContentPiece` | Defines the content piece |
-| `[data-content-target=""] or .piwikContentTarget` | Defines the content target |
-| `[data-content-ignoreinteraction] or .piwikContentIgnoreInteraction` | Tells Piwik to not automatically track the interaction |
+The following attributes and their corresponding CSS classes are used for this and explained in detail in the next chapters:
+
+| Selector                                                               | Description                                         |
+| ---------------------------------------------------------------------- | --------------------------------------------------- |
+| `[data-track-content]` or `.piwikTrackContent`                         | Defines a content block                             |
+| `[data-content-name=""]`                                               | Defines the name of the content block               |
+| `[data-content-piece=""]` or `.piwikContentPiece`                      | Defines the content piece                           |
+| `[data-content-target=""]` or `.piwikContentTarget`                    | Defines the content target                          |
+| `[data-content-ignoreinteraction]` or `.piwikContentIgnoreInteraction` | Declares to not automatically track the interaction |
 
 
-You can choose between HTML attributes and CSS classes to tag the content you want to track. Attributes always take precedence over CSS classes. If you set the same attribute or the same class on multiple elements within one block, the first element found will always win. Nested content blocks are currently not supported.
+You can use either **HTML attributes** or **CSS classes** to tag content.
 
-#### Should I use attributes or classes?
+Attributes always take precedence over CSS classes. If you set the same attribute or the same class on multiple elements within one block, the first element found will always win. Nested content blocks are currently not supported.
+
+#### HTML attributes or CSS classes?
 
 HTML attributes are the recommended way to go as they allow you to set specific values for content name, content piece and content target. Otherwise we have to detect the content name, piece and target automatically based on a set of rules which are explained further below. For instance we are trying to read the content target from a `href` attribute of a link, the content piece from a `src` attribute of an image, and the name from a `title` attribute.
 If you let us automatically detect those values it can influence your tracking over time. For instance if you provide the same page in different languages we might end up in many different combinations of content blocks that actually all represent the same. Also if you add a `title` attribute to an element the detected content name could change although you didn't want this. Analyzing the evolution of a content block will no longer work in this case. Therefore it is recommended to use the HTML attributes to tag your content and to specify values that change only if you want them to change.
 
-#### Good example:
+#### Example
 
 ```html
-<a href="http://www.example.org" data-track-content data-content-name="My Product Name" data-content-piece="Buy now">translate('Buy it now')</a>
+<a href="/purchase" data-track-content data-content-name="My Product Name" data-content-piece="Buy now">
+    translate('Buy it now')
+</a>
 ```
 
 Here we are defining a content block having the name "My Product Name". The used content piece will be always "Buy now" even if you use a translated version for different visitors based on their language. This can make it easier to analyze the data. The content target will be detected based on the `href` attribute which is usually considered ok.
@@ -93,9 +101,8 @@ Examples:
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
 // content target = ""
-//
+
 // or
-// 
 <img src="img-en.jpg" class="piwikTrackContent"/>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
@@ -131,9 +138,8 @@ As you can see a specific value for the content piece is defined which can be us
 <a href="http://www.example.com" data-track-content>
     <img src="img-en.jpg" data-content-piece/>
 </a>
-//
+
 // or
-//
 <a href="http://www.example.com" data-track-content>
     <img src="img-en.jpg" class="piwikContentPiece"/>
 </a>
@@ -148,9 +154,8 @@ In these examples we were able to detect the name and the piece of the content a
 <a href="http://www.example.com" data-track-content>
     <p data-content-piece>Lorem ipsum dolor sit amet</p>
 </a>
-//
+
 // or
-//
 <a href="http://www.example.com" data-track-content>
     <p class="piwikContentPiece">Lorem ipsum dolor sit amet</p>
 </a>
@@ -390,7 +395,7 @@ if a user interacts with it.
 
 Call `_paq.push(['trackContentImpressionsWithinNode', domNode]);` to make sure an impression will be tracked for all content blocks contained within this `domNode`. An interaction will be tracked automatically once the user interacts with any content block.
 
-Read more about tracking content impressions programmatically in the [JavaScript Tracking guide](http://developer.piwik.org/api-reference/tracking-javascript#content-tracking).
+Read more about tracking content impressions programmatically in the [JavaScript Tracking guide](/guides/tracking-javascript-guide#content-tracking).
 
 ### What can I do if an impression is tracked automatically but not an interaction?
 
@@ -406,10 +411,13 @@ formElement.addEventListener('submit', function () {
 });
 ```
 
-This will track an interaction named "submittedForm" once the user submits a form. Be aware that it will only work if the passed `domNode` is actually within a content block.
+This will track an interaction named `submittedForm` once the user submits a form. Be aware that it will only work if the passed `domNode` is actually within a content block.
 
-Read more about tracking content interactions manually in the [JavaScript Tracking guide](http://developer.piwik.org/api-reference/tracking-javascript#content-tracking).
-
+Read more about tracking content interactions manually in the [JavaScript Tracking guide](/guides/tracking-javascript-guide#content-tracking).
 
 ## What's next?
-Have a look at the [JavaScript Tracker API reference](http://developer.piwik.org/api-reference/tracking-javascript#content-tracking) if you did not have a look yet. 
+
+You can read more in:
+
+- the [JavaScript Tracking guide](/guides/tracking-javascript-guide#content-tracking)
+- the [JavaScript Tracker API reference](http://developer.piwik.org/api-reference/tracking-javascript)
