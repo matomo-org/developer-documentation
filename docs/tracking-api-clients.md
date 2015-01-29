@@ -25,7 +25,7 @@ Learn more and download Piwik Android SDK on Github at [github.com/piwik/piwik-s
 
 ### PHP client
 
-The default client is the PHP PiwikTracker, learn more at: [developer.piwik.org/api-reference/PHP-Piwik-Tracker](http://developer.piwik.org/api-reference/PHP-Piwik-Tracker).
+The default client is the PHP PiwikTracker, learn more at: [github.com/piwik/piwik-php-tracker](https://github.com/piwik/piwik-php-tracker).
 
 ### Java client
 
