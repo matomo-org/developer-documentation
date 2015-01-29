@@ -420,4 +420,4 @@ Read more about tracking content interactions manually in the [JavaScript Tracki
 You can read more in:
 
 - the [JavaScript Tracking guide](/guides/tracking-javascript-guide#content-tracking)
-- the [JavaScript Tracker API reference](http://developer.piwik.org/api-reference/tracking-javascript)
+- the [JavaScript Tracker API reference](/api-reference/tracking-javascript)
