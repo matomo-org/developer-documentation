@@ -1,41 +1,43 @@
 ---
 category: Integrate
+previous: reporting-introduction
+next: querying-the-reporting-api
 ---
-# Reporting API Tutorial: Get your top 10 keywords
+# Tutorial: Get your top 10 keywords
 
-This tutorial will show you how easy it is to request the **yesterday's top 10 keywords in XML format**.
+This tutorial will show you how easy it is to request the **yesterday's top 10 keywords** in XML format.
 
 ## Build the URL
 
 To build the URL of the API call, you need:
 
-*   your Piwik base URL (replace demo.piwik.org with the URL and path of your Piwik server
+- your Piwik base URL (replace demo.piwik.org with the URL and path of your Piwik server
 
     **http://demo.piwik.org/?module=API**
 
-*   the name of the method you want to call. It has the format _moduleName.methodToCall_ (see the list on [API Methods](/api-reference/reporting-api#api-method-list)). You need to request the last keywords from the plugin Referrers: the method parameter is:
+- the name of the method you want to call. It has the format _moduleName.methodToCall_ (see the list on [API Methods](/api-reference/reporting-api#api-method-list)). You need to request the last keywords from the plugin Referrers:
 
     **method=Referrers.getKeywords**
 
-*   the website id.
+- the website id
 
     **idSite=1**
 
-*   the date parameter. This can be _today_, _yesterday_, or any date with the format _YYYY-MM-DD_
+- the date parameter. This can be _today_, _yesterday_, or any date with the format _YYYY-MM-DD_
 
     **date=yesterday**
 
-*   the period parameter. This can be _day_, _week_, _month_ or _year_
+- the period parameter. This can be _day_, _week_, _month_ or _year_
 
     **period=day**
 
-    Alternatively, if you wanted to request all of the keywords from a given date, you could use a date range parameter. For example, to request all of the keywords since January 1st 2011:`**period=range&date=2011-01-01,yesterday**`
+    Alternatively, if you wanted to request all of the keywords from a given date, you could use a date range parameter. For example, to request all of the keywords since January 1st 2011:`period=range&date=2011-01-01,yesterday`
 
-*   the format parameter. Defines the output format of the data: XML, JSON, CSV, PHP (serialized PHP), HTML (simple html)
+- the format parameter. Defines the output format of the data: XML, JSON, CSV, PHP (serialized PHP), HTML (simple html)
 
     **format=xml**
 
-*   (optional) the filter_limit parameter that defines the number of rows returned
+- (optional) the filter_limit parameter that defines the number of rows returned
 
     **filter_limit=10**
 
@@ -49,7 +51,7 @@ Here is the output of this request:
 {@include escape http://demo.piwik.org/?module=API&method=Referrers.getKeywords&idSite=3&date=yesterday&period=day&format=xml&filter_limit=10}
 ```
 
-## Other useful examples
+## Other examples
 
 *   XML of the visits of the last 10 days, one entry per day
 [http://demo.piwik.org/?module=API&method=VisitsSummary.getVisits&idSite=3&period=day&date=last10&format=xml](http://demo.piwik.org/?module=API&method=VisitsSummary.getVisits&idSite=3&period=day&date=last10&format=xml)
@@ -65,6 +67,3 @@ Here is the output of this request:
 You can get the data in one of these formats: XML, JSON, HTML, CSV, TSV, etc. See the [API Reference](/api-reference/reporting-api) for the documentation.
 
 There are also functions for Websites, Users, Goals, PDF Reports (create, update, delete operations) and a lot more, such as: adding Annotations, creating custom Segments,
-
-Check out the [Piwik API Reference](/api-reference/reporting-api)
-
