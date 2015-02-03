@@ -10,13 +10,9 @@ previous: tests-ui
 
 Piwik uses Travis to automatically run its test suite on every commit (for every branch and pull request):
 
-- PHP tests are run on the [piwik/piwik](https://travis-ci.org/piwik/piwik/builds) build
+- PHP and UI tests are run on the [piwik/piwik](https://travis-ci.org/piwik/piwik/builds) build
 
   Current status for master branch: [![Build Status](https://travis-ci.org/piwik/piwik.svg?branch=master)](https://travis-ci.org/piwik/piwik)
-
-- UI tests are run on the [piwik/piwik-ui-tests](https://travis-ci.org/piwik/piwik-ui-tests) build
-
-  Current status for master branch: [![Build Status](https://travis-ci.org/piwik/piwik-ui-tests.svg?branch=master)](https://travis-ci.org/piwik/piwik-ui-tests)
 
 ## Running your plugins tests on Travis CI
 
