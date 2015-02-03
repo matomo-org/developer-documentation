@@ -40,7 +40,7 @@ $ ./console tests:run-ui --plugin=MyPlugin
 
 UI screenshot tests are run directly by phantomjs and are written using [mocha](http://visionmedia.github.io/mocha/) and [chai](http://chaijs.com).
 
-To create a new test, first decide whether it belongs to Piwik Core or a plugin. If it belongs to Piwik Core, the test should be placed within the [piwik-ui-tests](https://github.com/piwik/piwik-ui-tests) repository. Otherwise, it should be placed within `Test/UI` sub-directory of your plugin.
+To create a new test, first decide whether it belongs to Piwik Core or a plugin. If it belongs to Piwik Core, the test should be placed within the `/tests/UI` directory. Otherwise, it should be placed within `Test/UI` sub-directory of your plugin.
 
 All test files should have \_spec.js file name suffixes (for example, `ActionsDataTable_spec.js`).
 
@@ -162,6 +162,6 @@ public function addTestHooks($testingEnvironment) {
 
 The following are examples of test environment manipulation:
 
- * [Overlay_spec.js](https://github.com/piwik/piwik-ui-tests/blob/master/specs/Overlay_spec.js)
- * [Dashboard_spec.js](https://github.com/piwik/piwik-ui-tests/blob/master/specs/Dashboard_spec.js)
- * [Login_spec.js](https://github.com/piwik/piwik-ui-tests/blob/master/specs/Login_spec.js)
+ * [Overlay_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Overlay_spec.js)
+ * [Dashboard_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Dashboard_spec.js)
+ * [Login_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Login_spec.js)
