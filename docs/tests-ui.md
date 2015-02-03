@@ -22,6 +22,28 @@ If you're on Ubuntu, you'll also need some extra packages to make sure screensho
 $ sudo apt-get install ttf-mscorefonts-installer imagemagick imagemagick-doc
 ```
 
+Removing this font may be useful if your generated screenshots' fonts do not match the expected screenshots:
+
+    $ sudo apt-get remove ttf-bitstream-vera
+
+## Configuring UI tests
+
+The screenshot testing library's configuration resides in the `tests/UI/config.dist.js` file.
+If your development environment's PHP executable isn't named `php`
+or your dev Piwik install isn't at `http://localhost/` you may need to copy that file to 
+`tests/UI/config.js` and edit the contents of this file.
+
+For example if Piwik is setup at `http://localhost/piwik` modify the config.js such as:
+```
+exports.piwikUrl = "http://localhost/piwik/";
+exports.phpServer = {
+    HTTP_HOST: 'localhost',
+    REQUEST_URI: '/piwik/',
+    REMOTE_ADDR: '127.0.0.1'
+};
+
+```
+
 ## Running UI tests
 
 To run UI tests, run the `tests:run-ui` command:
@@ -165,3 +187,8 @@ The following are examples of test environment manipulation:
  * [Overlay_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Overlay_spec.js)
  * [Dashboard_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Dashboard_spec.js)
  * [Login_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Login_spec.js)
+
+## Learn more
+
+Check out this blog post to learn more about Screenshot Tests in Piwik:
+[QA Screenshot Testing blog post](http://piwik.org/blog/2013/10/our-latest-improvement-to-qa-screenshot-testing/)
