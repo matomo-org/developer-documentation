@@ -14,7 +14,7 @@ To use all the features described in this page, you need to use the latest versi
 - log in to Piwik with your admin or Super User account
 - click on your username in the top right menu, and click *Settings* to access the administration area
 - click on *Tracking Code* in the left menu
-- copy and paste the Javascript tracking code into your pages, just before the `<body>` tag
+- copy and paste the Javascript tracking code into your pages, just after the `<body>` tag
 
 The tracking code looks as follows:
 
