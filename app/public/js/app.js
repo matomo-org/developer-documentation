@@ -40,6 +40,9 @@ $('#quick-search-typeahead>input').typeahead({
             displayText = displayText.substring(0, trailingEmLoc);
         }
 
+        // Track the search
+        _paq.push(['trackSiteSearch', displayText, false, false]);
+
         // get URL to go to
         var itemIndex = quickSearchData.names.indexOf(item);
         if (itemIndex != -1) {
