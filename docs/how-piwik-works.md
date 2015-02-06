@@ -5,23 +5,21 @@ category: Develop
 
 ## About this guide
 
-**Read this guide if**
+Read this guide if
 
 - you'd like **to have an overview on how Piwik works**
 - you'd like **to contribute to Piwik and want to understand its architecture**
 
-**Guide assumptions**
-
 This guide assumes that you:
 
-- have a general understanding of web technologies like web applications, servers, HTTP, PHP...
+- have a **general understanding of web technologies** like web applications, servers, HTTP, PHP...
 
 ## Introduction
 
 Piwik is an application that does mainly two things:
 
-- collect and store analytics data
-- provide reports on the stored data
+- **collect and store** analytics data
+- provide **reports** of the stored data
 
 To achieve that result, several parts of Piwik come into play:
 
@@ -34,32 +32,34 @@ To achieve that result, several parts of Piwik come into play:
 
 Piwik's codebase is composed of:
 
-- Piwik Core, which provides the base of the application along with extension points
-- Plugins, which use the extension points to add behavior and content to the application
+- **Piwik Core**, which provides the base of the application along with extension points
+- **Plugins**, which use the extension points to add behavior and content to the application
 
 Plugins are not just targeted at 3rd party developers who want to customize Piwik: most of Piwik is implemented through plugins. Piwik Core is meant to be as small as possible.
 
 As a result, there are two kinds of plugins:
 
-- default plugins provide Piwik's base features: they are included in the repository and in the distribution
-- additional plugins can be installed manually (by copying them in the `plugins/` folder) or through [Piwik's MarketPlace](http://plugins.piwik.org/) in the web interface
+- **default plugins** provide Piwik's base features: they are included in the repository and in the distribution
+- **optional plugins** can be installed manually (by copying them in the `plugins/` folder) or through [Piwik's MarketPlace](http://plugins.piwik.org/) in the web interface
 
 ## The codebase
 
 Here are the main files and folders composing Piwik's codebase:
 
-    config/
-    core/           # Piwik Core classes
-    lang/           # Translations
-    plugins/        # Plugin classes along with their assets
-    tests/
-    vendor/         # Libraries installed by Composer
-    console         # Entry point for the CLI interface
-    index.php       # Entry point for the web application and the HTTP reporting API
-    piwik.php       # Entry point for the HTTP tracking API
-    piwik.js        # Javascript tracker to be included in websites
+```bash
+config/
+core/           # Piwik Core classes
+lang/           # Translations
+plugins/        # Plugin classes along with their assets
+tests/
+vendor/         # Libraries installed by Composer
+console         # Entry point for the CLI interface
+index.php       # Entry point for the web application and the HTTP reporting API
+piwik.php       # Entry point for the HTTP tracking API
+piwik.js        # Javascript tracker to be included in websites
+```
 
-Piwik uses [Composer](https://getcomposer.org/) to manage and install its dependencies into the `vendor/` directory.
+Piwik uses [Composer](https://getcomposer.org/) to install its dependencies (PHP libraries) into the `vendor/` directory.
 
 ## Interfaces
 
@@ -73,7 +73,7 @@ The front controller will route an incoming HTTP request to a plugin **controlle
 
 In this example, the front controller will call the action `index` on the controller of the `CoreHome` plugin.
 
-Plugin controllers return a view (usually HTML content) which is sent in the HTTP response.
+Plugin controllers return a **view** (usually HTML content) which is sent in the HTTP response.
 
 #### User interface
 
@@ -87,7 +87,9 @@ Read more about this in the ["Working with Piwik's UI" guide](/guides/working-wi
 
 ### The HTTP Reporting API
 
-The HTTP reporting API works similarly to the web application. It has the same entry point and is also dispatched by the front controller.
+The HTTP reporting API works similarly to the web application. Its role is to serve **reports** in machine-readable formats (XML, JSON, …).
+
+It has the same entry point and is also dispatched by the front controller.
 
     /index.php?module=API&method=SEO.getRank&…
 
@@ -97,7 +99,7 @@ The `Piwik\Plugin\API\Controller` class will be called, and it will dispatch the
 
 ### The HTTP Tracking API
 
-This API lets the Javascript tracker submit analytics data for a single action (page view, …).
+This HTTP API lets the Javascript tracker **submit analytics data** to be saved in Piwik.
 
 Its entry point is different from Piwik's web application and HTTP reporting API: it is through the `piwik.php` file.
 
@@ -111,7 +113,7 @@ Plugins can expose CLI commands that can be invoked like this:
 
     ./console visitorgenerator:generate-visits
 
-Command classes are located in a `Commands` directory/namespace and are auto-detected by Piwik.
+Command classes are located in `plugins/*/Commands` and are auto-detected by Piwik.
 
 Read more about this in the ["Piwik on the Command Line" guide](/guides/piwik-on-the-command-line).
 
@@ -185,8 +187,8 @@ You can read more details on how reports are created and served in the ["All Abo
 
 Piwik Core only defines the main processes and behaviors. Plugins can extend and customize them through several *extensibility points*:
 
-- registering to events, or triggering events
-- implementing special classes that are recognized by Piwik
-- extending certain abstract base classes
+- registering to **events**, or triggering events
+- implementing **special classes** that are recognized by Piwik
+- extending certain abstract **base classes**
 
 You can read more about this topic in the ["Piwik's Extensibility Points" guide](/guides/piwiks-extensibility-points).
