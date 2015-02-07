@@ -66,7 +66,7 @@ See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the
     - `$defaultType` (`string`|`null`) &mdash;
        A ViewDataTable ID representing the default ViewDataTable type to use. If the **viewDataTable** query parameter is not found, this value is used as the ID of the ViewDataTable to create. If a visualization type is configured for the report being displayed, it is used instead of the default type. (See [ViewDataTable.getDefaultType](/api-reference/events#viewdatatablegetdefaulttype)). If nothing is configured for the report and `null` is supplied for this argument, **table** is used.
     - `$apiAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
-       The API method for the report that will be displayed, eg, `'UserSettings.getBrowser'`.
+       The API method for the report that will be displayed, eg, `'DevicesDetection.getBrowsers'`.
     - `$controllerAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
        The controller name and action dedicated to displaying the report. This action is used when reloading reports or changing the report visualization. Defaulted to `$apiAction` if `false` is supplied.
     - `$forceDefault` (`bool`) &mdash;
