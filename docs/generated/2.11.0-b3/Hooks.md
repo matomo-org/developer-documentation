@@ -913,7 +913,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Actions/Actions.php#L50), [Contents::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Contents/Contents.php#L25), [DevicePlugins::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/DevicePlugins/DevicePlugins.php#L39), [Events::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Events/Events.php#L36), [Goals::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Goals/Goals.php#L102), [MultiSites::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/MultiSites/MultiSites.php#L35), [UserSettings::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/UserSettings/UserSettings.php#L67), [VisitFrequency::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/VisitFrequency/VisitFrequency.php#L26)
+[Actions::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Actions/Actions.php#L50), [Contents::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Contents/Contents.php#L25), [DevicePlugins::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/DevicePlugins/DevicePlugins.php#L39), [Events::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Events/Events.php#L36), [Goals::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Goals/Goals.php#L102), [MultiSites::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/MultiSites/MultiSites.php#L35), [VisitFrequency::addMetricTranslations](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/VisitFrequency/VisitFrequency.php#L26)
 
 ## MobileMessaging
 
@@ -1128,7 +1128,7 @@ Callback Signature:
 
 Usages:
 
-[Referrers::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Referrers/Referrers.php#L37), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/ScheduledReports/ScheduledReports.php#L101), [UserSettings::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/UserSettings/UserSettings.php#L38)
+[Referrers::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/Referrers/Referrers.php#L37), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/ScheduledReports/ScheduledReports.php#L101), [UserSettings::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.11.0-b3/plugins/UserSettings/UserSettings.php#L37)
 
 
 ### Request.initAuthenticationObject
