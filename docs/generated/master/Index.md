@@ -397,6 +397,7 @@ Index
 - [`getLastDate()`](Piwik/Period/Range.md#getlastdate) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getDateXPeriodsAgo()`](Piwik/Period/Range.md#getdatexperiodsago) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getRelativeToEndDate()`](Piwik/Period/Range.md#getrelativetoenddate) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
+- [`getRangeString()`](Piwik/Period/Range.md#getrangestring) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getCurrentUserEmail()`](Piwik/Piwik.md#getcurrentuseremail) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`getCurrentUserLogin()`](Piwik/Piwik.md#getcurrentuserlogin) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`getCurrentUserTokenAuth()`](Piwik/Piwik.md#getcurrentusertokenauth) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)

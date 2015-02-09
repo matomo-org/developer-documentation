@@ -1038,7 +1038,7 @@ Callback Signature:
 
 ### Referrer.addSearchEngineUrls
 
-*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [836](https://github.com/piwik/piwik/blob/master/core/Common.php#L836)*
+*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [842](https://github.com/piwik/piwik/blob/master/core/Common.php#L842)*
 
 
 
@@ -1048,7 +1048,7 @@ Callback Signature:
 
 ### Referrer.addSocialUrls
 
-*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [875](https://github.com/piwik/piwik/blob/master/core/Common.php#L875)*
+*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [898](https://github.com/piwik/piwik/blob/master/core/Common.php#L898)*
 
 
 
@@ -2080,7 +2080,7 @@ Callback Signature:
 
 ### ViewDataTable.addViewDataTable
 
-*Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [88](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L88)*
+*Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [97](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L97)*
 
 Triggered when gathering all available DataTable visualizations. Plugins that want to expose new DataTable visualizations should subscribe to
 this event and add visualization class names to the incoming array.
