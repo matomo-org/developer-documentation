@@ -720,7 +720,7 @@ Usages:
 
 ### LanguageManager.getAvailableLanguages
 
-*Defined in [Piwik/Plugins/LanguagesManager/API](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php) in line [76](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php#L76)*
+*Defined in [Piwik/Plugins/LanguagesManager/API](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php) in line [80](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/API.php#L80)*
 
 Hook called after loading available language files. Use this hook to customise the list of languagesPath available in Piwik.
 
