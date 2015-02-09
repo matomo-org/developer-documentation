@@ -1632,6 +1632,7 @@ Callback Signature:
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
 - [Tracker.newConversionInformation](#trackernewconversioninformation)
 - [Tracker.newVisitorInformation](#trackernewvisitorinformation)
+- [Tracker.PageUrl.getQueryParametersToExclude](#trackerpageurlgetqueryparameterstoexclude)
 - [Tracker.recordAction](#trackerrecordaction)
 - [Tracker.recordEcommerceGoal](#trackerrecordecommercegoal)
 - [Tracker.recordStandardGoals](#trackerrecordstandardgoals)
@@ -1783,6 +1784,18 @@ Callback Signature:
 - array `$visit` The visit entity. Read [this](/guides/persistence-and-the-mysql-backend#visits) to see what information it contains.
 
 - \Piwik\Tracker\Request `$request` An object describing the tracking request being processed.
+
+
+### Tracker.PageUrl.getQueryParametersToExclude
+
+*Defined in [Piwik/Tracker/PageUrl](https://github.com/piwik/piwik/blob/master/core/Tracker/PageUrl.php) in line [100](https://github.com/piwik/piwik/blob/master/core/Tracker/PageUrl.php#L100)*
+
+Triggered before setting the action url in Piwik\Tracker\Action so plugins can register parameters to be excluded from the tracking URL (e.g. campaign parameters).
+
+Callback Signature:
+<pre><code>function(&amp;$parametersToExclude)</code></pre>
+
+- array `&$parametersToExclude` An array of parameters to exclude from the tracking url.
 
 
 ### Tracker.recordAction
