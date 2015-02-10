@@ -62,7 +62,7 @@ In production environments, Piwik will concatenate all JavaScript files into one
 
 JavaScript is merged only when enabling or disabling a plugin or theme. LESS compilation and merging is done whenever a LESS file changes (does not include LESS files that are included by others).
 
-If the `disable_merged_assets` INI config option (in the `[Development]` section) is set to `1`, assets will not be merged. It can be useful to disable merged assets while developing a contribution or plugin since changes to JavaScript will then appear immediately.
+If you are running in Development mode (via the command `./console development:enable` then JavaScript assets will not be merged. It can be useful to disable merged assets while developing a contribution or plugin since changes to JavaScript will then appear immediately.
 
 ## JavaScript modularization
 
@@ -144,41 +144,6 @@ To load a new page below the main Piwik menu, use the `propagateNewPage()` funct
     broadcast.propagateNewPage('index.php?module=MyPlugin&action=mySpecialPage', true);
 
 })(require);
-```
-
-#### Loading Persistent Popovers
-
-To load a popover that will be displayed even if the page is reloaded, you'll need to call two functions. Piwik makes a popover _persistent_ by adding a **popover** query parameter. The parameter value will contain a popover ID and another string (separated by a `':'`). Piwik will see this ID and execute a function that displays the popover.
-
-The first method you need to call is named `addPopoverHandler()`. It associates a function with the popover ID. The function will be passed the rest of the popover query parameter. For example:
-
-```javascript
-(function (require) {
-
-    var broadcast = require('broadcast');
-    broadcast.addPopoverHandler('myPopoverType', function (arg) {
-        Piwik_Popover.createPopupAndLoadUrl("?module=MyPlugin&action=getPopup&arg=" + arg, _pk_translate('MyPlugin_MyPopoverTitle'));
-    });
-
-})(require);
-```
-
-Then, when you want to launch a popover call the `propagateNewPopoverParameter()` method:
-
-```javascript
-(function (require, $) {
-
-    var broadcast = require('broadcast');
-
-    $('#myLink').click(function (e) {
-        e.preventDefault();
-
-        broadcast.propagateNewPopoverParameter('myPopoverType', 'myarg');
-
-        return false;getPageUrls
-    });
-
-})(require, jQuery);
 ```
 
 ### ajaxHelper
@@ -343,6 +308,41 @@ To close the currently displayed popover, call the **close** method:
     Piwik_Popover.close();
 
 })(require);
+```
+
+#### Loading Persistent Popovers
+
+To load a popover that will be displayed even if the page is reloaded, you'll need to call two functions. Piwik makes a popover _persistent_ by adding a **popover** query parameter. The parameter value will contain a popover ID and another string (separated by a `':'`). Piwik will see this ID and execute a function that displays the popover.
+
+The first method you need to call is named `addPopoverHandler()`. It associates a function with the popover ID. The function will be passed the rest of the popover query parameter. For example:
+
+```javascript
+(function (require) {
+
+    var broadcast = require('broadcast');
+    broadcast.addPopoverHandler('myPopoverType', function (arg) {
+        Piwik_Popover.createPopupAndLoadUrl("?module=MyPlugin&action=getPopup&arg=" + arg, _pk_translate('MyPlugin_MyPopoverTitle'));
+    });
+
+})(require);
+```
+
+Then, when you want to launch a popover call the `propagateNewPopoverParameter()` method:
+
+```javascript
+(function (require, $) {
+
+    var broadcast = require('broadcast');
+
+    $('#myLink').click(function (e) {
+        e.preventDefault();
+
+        broadcast.propagateNewPopoverParameter('myPopoverType', 'myarg');
+
+        return false;
+    });
+
+})(require, jQuery);
 ```
 
 ### ColorManager
