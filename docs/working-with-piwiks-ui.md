@@ -278,9 +278,6 @@ var MyControl = function (element) {
 
 ### Piwik_Popover
 
-The **Piwik_Popover** object is stored directly in the `window` object and contains popover creation and management functions. Popovers created directly through this object are not persistent. To create persistent popovers, use the `broadcast` global object.
-
-To learn more about the object, see the documentation in the source code (located in [`plugins/CoreHome/javascripts/popover.js`](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/popover.js)).
 
 #### Creating popovers
 
@@ -309,6 +306,8 @@ To close the currently displayed popover, call the **close** method:
 
 })(require);
 ```
+
+Note that the **Piwik_Popover** object is stored directly in the `window` object and contains popover creation and management functions. Popovers created directly through this object are not persistent. To create persistent popovers, see the next section. 
 
 #### Loading Persistent Popovers
 
@@ -345,6 +344,9 @@ Then, when you want to launch a popover call the `propagateNewPopoverParameter()
 })(require, jQuery);
 ```
 
+
+To learn more about the object, see the documentation in the source code (located in [`plugins/CoreHome/javascripts/popover.js`](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/popover.js)).
+
 ### ColorManager
 
 If your control uses color values to, for example, draw in canvas elements, and you want to make those colors [theme-able](/guides/theming), you must use the **ColorManager** singleton.
@@ -380,7 +382,7 @@ _Learn more about theming in our [Theming](/guides/theming) guide._
 <a name="classes-DataTable"></a>
 ### DataTable
 
-The **DataTable** class is the base of all JavaScript classes that manage [report visualizations](/guides/visualizing-report-data#about-visualizations). If your creating your own report visualization, you may have to extend it.
+The **DataTable** class is the base of all JavaScript classes that manage [report visualizations](/guides/visualizing-report-data#about-visualizations). If you are creating your own report visualization, you may have to extend it.
 
 To learn more about extending the class, see our [Visualizing Report Data](https://github.com/piwik/developer-documentation/blob/master/docs/visualizing-report-data.md) guide.
 
@@ -395,11 +397,10 @@ Piwik defines several global variables (held in `window.piwik`) regarding the cu
 * `piwik.siteName`: The name of the currently selected website.
 * `piwik.siteMainUrl`: The URL of the currently selected website.
 * `piwik.language`: The currently selected language's code (for example, `en`).
-* `piwik.config.action_url_category_delimiter`: The value of the `[General] action_url_category_delimiter` INI config option.
 
 ## Coding conventions
 
-When writing JavaScript for your contribution or plugin, be sure to follow the following coding conventions.
+When writing JavaScript for your contribution or plugin, you would ideally respect the following coding conventions.
 
 ### Self-executing anonymous function wrapper
 
