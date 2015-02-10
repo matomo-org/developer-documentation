@@ -3,6 +3,7 @@ category: Integrate
 subGuides:
   - reporting-api-tutorial
   - querying-the-reporting-api
+  - reporting-api-clients
 ---
 # Accessing Piwik data
 

@@ -1,6 +1,7 @@
 ---
 category: Integrate
 previous: reporting-api-tutorial
+next: reporting-api-clients
 ---
 # Querying the Reporting API
 
@@ -49,4 +50,6 @@ Here is the output of this script:
 
 ## Learn more
 
-To learn more about all the options available when calling the reporting API, read the [Reporting API reference](http://piwik.docs.dev/api-reference/reporting-api).
+To learn more about all the options available when calling the reporting API, read the [Reporting API reference](/api-reference/reporting-api).
+
+You can also have a look at the [list of client libraries](/guides/reporting-api-clients) available to call the reporting API.
