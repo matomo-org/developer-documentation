@@ -3,50 +3,26 @@ category: Develop
 ---
 # JavaScript and CSS
 
-<!-- Meta (to be deleted)
-Purpose:
-- describe how plugin developers should write JavaScript
-- describe surrounding function convention
-- UIControl class
-- require function
-- global variables defined by piwik
-- broadcast object (including popover stuff)
-- javascript libraries used, color_manager class.
-
-Audience: 
-
-Expected Result: 
-
-Notes: 
-TODO: also need to talk about special elements on the page and how to create your own widgets and how to use Piwik's JS code
-
-What's missing? (stuff in my list that was not in when I wrote the 1st draft)
-- DataTableRowAction stuff
--->
-
 ## About this guide
 
 This guide describes how plugins should create JavaScript and describes all of the JavaScript classes provided by Piwik for use by plugins.
 
-**Read this guide if**
+Read this guide if
 
 * you'd like to know **how to write JavaScript for your Piwik plugin**
 * you'd like to know **how to work with Piwik Core's JavaScript code**
 * you'd like to know **how to add popovers to Piwik's UI**
 * you'd like to know **what JavaScript libraries are used by Piwik**
 
-**Guide assumptions**
-
 This guide assumes that you:
 
-* can code in JavaScript,
-* can use [jQuery](http://jquery.com/),
-* know what CSS and [LESS](http://lesscss.org/) is,
+* know about JavaScript and [jQuery](http://jquery.com/),
+* know about CSS and [LESS](http://lesscss.org/),
 * and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
-## JavaScript Libraries Piwik depends on
+## JavaScript libraries
 
-Piwik Core depends on the following JavaScript libraries:
+Piwik uses the following JavaScript libraries:
 
 * [jQuery](http://jquery.com/)
 * [jqPlot](http://www.jqplot.com/)
@@ -55,15 +31,15 @@ Piwik Core depends on the following JavaScript libraries:
 
 We do not like to include new dependencies in Piwik, so if possible do not include new third party libraries in your contribution or plugin.
 
-This suggestion is important for contributions, but doubly important for plugins. Imagine what would happen if almost every plugin decides they need to use a library that Piwik Core does not use. Users might install a couple plugins in the marketplace and end up loading several different new libraries on page load, slowing down the UI.
+This suggestion is especially important for plugins. Imagine what would happen if almost every plugin decides they need to use a library that Piwik Core does not use. Users might install a couple plugins in the marketplace and end up loading several different new libraries on page load, slowing down the UI.
 
 **Include new JS libraries only if they are vital to your plugin.**
 
-## JavaScript, CSS and LESS file inclusion
+## Assets inclusion
 
-JavaScript, CSS and LESS assets only exist in plugins. Piwik's core code (everything in the `core/` subdirectory) does not contain or define any asset files.
+JavaScript, CSS and LESS assets only exist in plugins. Piwik's Core code (everything in the `core/` subdirectory) does not contain or define any asset files.
 
-Plugins tell Piwik about their asset files through the [AssetManager.getStylesheetFiles](/api-reference/events#assetmanagergetstylesheetfiles) and [AssetManager.getJavaScriptFiles](/api-reference/events#assetmanagergetjavascriptfiles) events. Each event passes an array by reference to event handlers. Event handlers should append paths to assets to the incoming array:
+Plugins tell Piwik about their asset files through the [`AssetManager.getStylesheetFiles`](/api-reference/events#assetmanagergetstylesheetfiles) and [`AssetManager.getJavaScriptFiles`](/api-reference/events#assetmanagergetjavascriptfiles) events. Event handlers should append paths to assets to the given array:
 
 ```php
 // event handler for AssetManager.getStylesheetFiles
@@ -82,11 +58,11 @@ public function getJavaScriptFiles(&$files)
 
 ### Asset merging and compiling
 
-In production environments, Piwik will concatenate all JavaScript into one file and minify it before serving it. LESS files will automatically be compiled into CSS and merged into one CSS file. Piwik does this so the UI will load quickly. Learn more about asset merging in [this blog post](http://piwik.org/blog/2010/07/making-piwik-ui-faster/).
+In production environments, Piwik will concatenate all JavaScript files into one and minify it. LESS files will also be compiled into CSS and merged into one CSS file. Piwik does this so the UI loads quickly. Learn more about asset merging in [this blog post](http://piwik.org/blog/2010/07/making-piwik-ui-faster/).
 
 JavaScript is merged only when enabling or disabling a plugin or theme. LESS compilation and merging is done whenever a LESS file changes (does not include LESS files that are included by others).
 
-If the `[Development] disable_merged_assets` INI config option is set to `1`, assets will not be merged. It can be useful to disable merged assets while developing a contribution or plugin since changes to JavaScript will then appear immediately.
+If the `disable_merged_assets` INI config option (in the `[Development]` section) is set to `1`, assets will not be merged. It can be useful to disable merged assets while developing a contribution or plugin since changes to JavaScript will then appear immediately.
 
 ## JavaScript modularization
 
@@ -122,13 +98,13 @@ Here's how it should be used:
 
 The following is a list of special elements that you should be aware of as you develop your plugin or contribution:
 
-* **#root**: The root element of everything that is displayed and visible to the user.
+- `#root`: The root element of everything that is displayed and visible to the user.
 
-* **#content**: The root element that contains everything displayed under the main reporting menu and the row of 'selector' controls (ie, the period selector, the segment selector, etc.).
+- `#content`: The root element that contains everything displayed under the main reporting menu and the row of 'selector' controls (ie, the period selector, the segment selector, etc.).
 
-* **.top_controls**: The element that contains the 'selector' controls. Only one of these elements.
+- `.top_controls`: The element that contains the 'selector' controls. Only one of these elements.
 
-* **.widgetContent**: The root element of each widget. Events are posted to this specific element.
+- `.widgetContent`: The root element of each widget. Events are posted to this specific element.
 
 ## Important JavaScript classes
 
@@ -146,26 +122,26 @@ _Note: Though the object is stored in `window` and not a JS namespace, it can st
 
 `broadcast` provides the following functions:
 
-* **isHashExists**: Returns the hash of the URL if it exists. `false` if otherwise.
-* **getHashFromUrl**: Returns the hash of the URL. Can be an empty string.
-* **getSearchFromUrl**: Returns the query string.
-* **extractKeyValuePairsFromQueryString**: Converts a query string to an object mapping query parameter names with query parameter values.
-* **getValuesFromUrl**: Returns an object mapping query parameter names with query parameter values for the current URL.
-* **getValueFromUrl**: Returns one query parameter value for the current URL by name.
-* **getValueFromHash**: Returns one query parameter value in the hash of the current URL by name.
-* **getHash**: Returns the hash of the URL.
+- `isHashExists()`: Returns the hash of the URL if it exists, `false` if otherwise.
+- `getHashFromUrl()`: Returns the hash of the URL. Can be an empty string.
+- `getSearchFromUrl()`: Returns the query string.
+- `extractKeyValuePairsFromQueryString()`: Converts a query string to an object mapping query parameter names with query parameter values.
+- `getValuesFromUrl()`: Returns an object mapping query parameter names with query parameter values for the current URL.
+- `getValueFromUrl()`: Returns one query parameter value for the current URL by name.
+- `getValueFromHash()`: Returns one query parameter value in the hash of the current URL by name.
+- `getHash()`: Returns the hash of the URL.
 
-To learn more about an individual function, see the method documentation in the **plugins/CoreHome/javascripts/broadcast.js** file.
+To learn more about an individual function, see the method documentation in the `plugins/CoreHome/javascripts/broadcast.js` file.
 
 #### Loading new Piwik pages
 
-To load a new page below the main Piwik menu, use the **propagateNewPage** function with a URL to the controller method whose output should be displayed:
+To load a new page below the main Piwik menu, use the `propagateNewPage()` function with a URL to the controller method whose output should be displayed:
 
 ```javascript
 (function (require) {
 
     var broadcast = require('broadcast');
-    broadcast.propagateNewPage("index.php?module=MyPlugin&action=mySpecialPage", true);
+    broadcast.propagateNewPage('index.php?module=MyPlugin&action=mySpecialPage', true);
 
 })(require);
 ```
@@ -174,7 +150,7 @@ To load a new page below the main Piwik menu, use the **propagateNewPage** funct
 
 To load a popover that will be displayed even if the page is reloaded, you'll need to call two functions. Piwik makes a popover _persistent_ by adding a **popover** query parameter. The parameter value will contain a popover ID and another string (separated by a `':'`). Piwik will see this ID and execute a function that displays the popover.
 
-The first method you need to call is named **addPopoverHandler**. It associates a function with the popover ID. The function will be passed the rest of the popover query parameter. For example:
+The first method you need to call is named `addPopoverHandler()`. It associates a function with the popover ID. The function will be passed the rest of the popover query parameter. For example:
 
 ```javascript
 (function (require) {
@@ -187,7 +163,7 @@ The first method you need to call is named **addPopoverHandler**. It associates 
 })(require);
 ```
 
-Then, when you want to launch a popover, call the **propagateNewPopoverParameter** method:
+Then, when you want to launch a popover call the `propagateNewPopoverParameter()` method:
 
 ```javascript
 (function (require, $) {
@@ -209,9 +185,9 @@ Then, when you want to launch a popover, call the **propagateNewPopoverParameter
 
 The `ajaxHelper` class should be used whenever you need to create an AJAX request. **Plugins should not use `$.ajax` directly.** `ajaxHelper` does some extra things that make it harder to write insecure code. It also keeps track of the current ongoing AJAX requests which is vital to the [UI tests](/guides/tests-ui).
 
-To use the `ajaxHelper`, create an instance, configure it, and then call the **send** method. To learn more, read the documentation in the source code (located in **plugins/Morpheus/javascripts/ajaxHelper.js**).
+To use the `ajaxHelper`, create an instance, configure it, and then call the `send()` method. To learn more, read the documentation in the source code (located in [`plugins/Morpheus/javascripts/ajaxHelper.js`](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/javascripts/ajaxHelper.js)).
 
-An example:
+For example:
 
 ```javascript
 (function (require, $) {
@@ -219,7 +195,7 @@ An example:
     var ajaxHelper = require('ajaxHelper');
 
     var ajax = new ajaxHelper();
-    ajax.setUrl("index.php?module=Actions&action=getPageUrls&idSite=1&date=today&period=day");
+    ajax.setUrl('index.php?module=Actions&action=getPageUrls&idSite=1&date=today&period=day');
     ajax.setCallback(function (response) {
         $('#myReportContainer').html(response);
     });
@@ -229,8 +205,6 @@ An example:
 
 })(require, jQuery);
 ```
-
-<!-- TODO: change name of ajaxHelper class to AjaxHelper? -->
 
 ### UIControl
 
@@ -266,7 +240,7 @@ The actual extending is straightforward:
 
 #### Creating controls that extend UIControl
 
-Control instances should be created through the **initElements** static method:
+Control instances should be created through the `initElements()` static method:
 
 ```javascript
 MyControl.initMyControlElements = function () {
@@ -284,7 +258,7 @@ This will find all elements with the **my-control** class, and if they do not al
 
 #### Cleaning up after your control
 
-When the selected page changes or when a popover is closed, Piwik will call the **UIControl.cleanupUnusedControls** static method. This method will automatically collect all control instances that are attached to elements that are not part of the DOM and call the controls' **_destroy** method.
+When the selected page changes or when a popover is closed, Piwik will call the `UIControl.cleanupUnusedControls()` static method. This method will automatically collect all control instances that are attached to elements that are not part of the DOM and call the controls' `_destroy()` method.
 
 When creating your own control, if you need to do some extra cleanup, you can override this method:
 
@@ -302,7 +276,7 @@ $.extend(MyControl.prototype, UIControl.prototype, {
 
 #### Sending information from PHP to UIControl
 
-If you need to pass information from PHP code to `UIControl` instance, you can set the **data-props** HTML attribute of the root element of your control to a JSON string. This data will automatically be loaded and stored in the **props** attribute of a `UIControl` instance.
+If you need to pass information from PHP code to `UIControl` instance, you can set the `data-props` HTML attribute of the root element of your control to a JSON string. This data will automatically be loaded and stored in the **props** attribute of a `UIControl` instance.
 
 So if you create HTML like the following:
 
@@ -324,7 +298,7 @@ var MyControl = function (element) {
 
 #### Listening to dashboard widget resize
 
-To redraw or resize elements in your control when a widget is resized, call the **onWidgetResize** method when setting up your control:
+To redraw or resize elements in your control when a widget is resized, call the `onWidgetResize()` method when setting up your control:
 
 ```javascript
 var MyControl = function (element) {
@@ -341,11 +315,11 @@ var MyControl = function (element) {
 
 The **Piwik_Popover** object is stored directly in the `window` object and contains popover creation and management functions. Popovers created directly through this object are not persistent. To create persistent popovers, use the `broadcast` global object.
 
-To learn more about the object, see the documentation in the source code (located in **plugins/CoreHome/javascripts/popover.js**).
+To learn more about the object, see the documentation in the source code (located in [`plugins/CoreHome/javascripts/popover.js`](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/popover.js)).
 
 #### Creating popovers
 
-To create a popover, use the **createPopupAndLoadUrl** method:
+To create a popover, use the `createPopupAndLoadUrl()` method:
 
 ```javascript
 (function (require) {
@@ -399,7 +373,7 @@ In your JavaScript, you can use **ColorManager** to access these colors:
 })(require);
 ```
 
-To learn more about the singleton, read the source code documentation (located in **plugins/CoreHome/javascripts/color_manager.js**).
+To learn more about the singleton, read the source code documentation (located in [`plugins/CoreHome/javascripts/color_manager.js`](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/color_manager.js)).
 
 _Learn more about theming in our [Theming](/guides/theming) guide._
 
@@ -409,8 +383,6 @@ _Learn more about theming in our [Theming](/guides/theming) guide._
 The **DataTable** class is the base of all JavaScript classes that manage [report visualizations](/guides/visualizing-report-data#about-visualizations). If your creating your own report visualization, you may have to extend it.
 
 To learn more about extending the class, see our [Visualizing Report Data](https://github.com/piwik/developer-documentation/blob/master/docs/visualizing-report-data.md) guide.
-
-<!-- TODO: should i talk about everything the class does here? guide could get much longer. (note, will probably have to change when angularjs is used anyway...) -->
 
 ## Global variables defined by Piwik
 
@@ -448,7 +420,7 @@ If you need to use global objects, they should be passed in to the anonymous fun
 
 ### Private methods
 
-Prefix all private and protected methods in classes with an **_**:
+Prefix all private and protected methods in classes with a `_`:
 
 ```javascript
 MyClass.prototype = {
