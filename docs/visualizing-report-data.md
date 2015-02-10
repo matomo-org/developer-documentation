@@ -389,7 +389,7 @@ To make sure your visualization can be themed, make sure any color value you use
 
 ## Learn more
 
-* To learn **how reports are stored and created**, read our [All About Analytics](/guides/all-about-analytics-data) guide.
+* To learn **how reports are stored and created**, read our [Data Model](/guides/data-model) guide.
 * To see a **full example of creating a new visualization**, see the source for the [Treemap Visualization](https://github.com/piwik/plugin-TreemapVisualization) plugin.
 * To learn more about **Piwik Controllers and outputting HTML**, read about [Controllers in Piwik](/guides/controllers).
 * To learn more about **interacting with Piwik's client side JavaScript**, read our [Working with Piwik's UI](/guides/working-with-piwiks-ui) guide.

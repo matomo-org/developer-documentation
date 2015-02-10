@@ -17,7 +17,7 @@ category: Develop
 This guide assumes that you:
 
 * can code in PHP,
-* understand how reports are stored in memory (if not, read this section of our [All About Analytics Data](/guides/all-about-analytics-data) guide),
+* understand how reports are stored in memory (if not read the [Reports](/guides/reports) guide),
 * and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
 ## The Reporting API
@@ -178,4 +178,4 @@ This example uses the following API requests:
 ## Learn more
 
 - To learn **how API classes are used internally** read our [Piwik APIs](/guides/apis) guide.
-- To learn **about how to calculate a report** read our guide [All About Analytics Data](/guides/all-about-analytics-data).
+- To learn **about how to calculate a report** read our [Reports](/guides/reports) guide.

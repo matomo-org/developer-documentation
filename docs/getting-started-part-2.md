@@ -189,7 +189,7 @@ If you visit [http://localhost/index.php?module=API&method=MyPlugin.getLastVisit
 
 This new API method directly accesses visit data. That is because the report is a real-time report. Most reports aren't in real-time because the amount of time it would take to process visit data would make the interface unusable.
 
-Archived reports are calculated and **cached** during the [Archiving Process](http://piwik.org/docs/setup-auto-archiving/). To learn more, read our [All About Analytics Data](/guides/all-about-analytics-data) guide.
+Archived reports are calculated and **cached** during the [Archiving Process](/guides/archiving). To learn more, read about Piwik's [Data Model](/guides/data-model) guide.
 </div>
 
 #### Displaying the report
