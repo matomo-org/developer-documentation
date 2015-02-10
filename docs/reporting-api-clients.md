@@ -27,3 +27,15 @@ A complete Python client implementation of the reporting API is available on Git
 ### C# client
 
 A C# client implementation of the reporting API is available on Github at [github.com/piwik/piwik-dotnet-tracker](https://github.com/piwik/piwik-dotnet-api).
+
+### NodeJS client
+
+A NodeJS client is available on Github at [github.com/sandfox/nodejs-piwik](https://github.com/sandfox/nodejs-piwik).
+
+### Laravel
+
+A client library for Laravel (a PHP framework) is available at [laravel-piwik.robbrazier.com](http://laravel-piwik.robbrazier.com/en/latest/).
+
+## Learn more
+
+You can view the complete list of clients and integrations of Piwik at [piwik.org/integrate/](https://piwik.org/integrate/).
