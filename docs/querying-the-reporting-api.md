@@ -1,12 +1,13 @@
 ---
 category: Integrate
+previous: reporting-api-tutorial
 ---
 # Querying the Reporting API
 
 This guide explains how to call the Piwik API to request your web analytics data. There are two methods:
 
-*   using the standard HTTP API
-*   using Piwik's PHP code directly
+- using the standard HTTP API
+- using Piwik's PHP code directly
 
 ## Call the Piwik API using the HTTP API
 
@@ -45,3 +46,7 @@ Here is the output of this script:
 ```xml
 {@include escape http://demo.piwik.org/misc/others/api_internal_call.php}
 ```
+
+## Learn more
+
+To learn more about all the options available when calling the reporting API, read the [Reporting API reference](http://piwik.docs.dev/api-reference/reporting-api).
