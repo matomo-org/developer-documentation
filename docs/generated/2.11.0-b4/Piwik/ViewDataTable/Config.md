@@ -874,7 +874,7 @@ report list.
 
 -  It accepts the following parameter(s):
     - `$relatedReport` (`string`) &mdash;
-       The plugin and method of the report, eg, `'UserSettings.getBrowser'`.
+       The plugin and method of the report, eg, `'DevicesDetection.getBrowsers'`.
     - `$title` (`string`) &mdash;
        The report's display name, eg, `'Browsers'`.
     - `$queryParams` (`array`) &mdash;
@@ -898,7 +898,7 @@ use [addRelatedReport()](/api-reference/Piwik/ViewDataTable/Config#addrelatedrep
 
 -  It accepts the following parameter(s):
     - `$relatedReports` (`array`) &mdash;
-       Array mapping report IDs with their internationalized display titles, eg, ``` array( 'UserSettings.getBrowser' => 'Browsers', 'UserSettings.getConfiguration' => 'Configurations' ) ```
+       Array mapping report IDs with their internationalized display titles, eg, ``` array( 'DevicesDetection.getBrowsers' => 'Browsers', 'Resolution.getConfiguration' => 'Configurations' ) ```
 - It does not return anything.
 
 <a name="addtranslation" id="addtranslation"></a>

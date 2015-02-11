@@ -17,7 +17,7 @@ HTML.
     public function myControllerAction()
     {
         $url = Url::getCurrentQueryStringWithParametersModified(array(
-            'module' => 'UserSettings',
+            'module' => 'DevicesDetection',
             'action' => 'index'
         ));
         Url::redirectToUrl($url);

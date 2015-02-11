@@ -29,7 +29,7 @@ To see the list of supported output formats, read [this](/guides/piwiks-web-api#
 
 **Basic Usage**
 
-    $request = new Request('method=UserSettings.getLanguage&idSite=1&date=yesterday&period=week'
+    $request = new Request('method=UserLanguage.getLanguage&idSite=1&date=yesterday&period=week'
                          . '&format=xml&filter_limit=5&filter_offset=0')
     $result = $request->process();
     echo $result;
@@ -37,7 +37,7 @@ To see the list of supported output formats, read [this](/guides/piwiks-web-api#
 **Getting a unrendered DataTable**
 
     // use the convenience method 'processRequest'
-    $dataTable = Request::processRequest('UserSettings.getLanguage', array(
+    $dataTable = Request::processRequest('UserLanguage.getLanguage', array(
         'idSite' => 1,
         'date' => 'yesterday',
         'period' => 'week',
@@ -77,7 +77,7 @@ forwarded to request array before it is returned.
 
 -  It accepts the following parameter(s):
     - `$request` (`string`|`array`) &mdash;
-       The base request string or array, eg, `'module=UserSettings&action=getLanguage'`.
+       The base request string or array, eg, `'module=UserLanguage&action=getLanguage'`.
     - `$defaultRequest` (`array`) &mdash;
        Default query parameters. If a query parameter is absent in `$request`, it will be loaded from this. Defaults to `$_GET + $_POST`.
 - It returns a `array` value.
@@ -92,7 +92,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$request` (`string`|`array`) &mdash;
-       Query string that defines the API call (must at least contain a **method** parameter), eg, `'method=UserSettings.getLanguage&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the values in the `$_GET` and `$_POST` superglobals.
+       Query string that defines the API call (must at least contain a **method** parameter), eg, `'method=UserLanguage.getLanguage&idSite=1&date=yesterday&period=week&format=xml'` If a request is not provided, then we use the values in the `$_GET` and `$_POST` superglobals.
     - `$defaultRequest` (`array`) &mdash;
        Default query parameters. If a query parameter is absent in `$request`, it will be loaded from this. Defaults to `$_GET + $_POST`.
 
