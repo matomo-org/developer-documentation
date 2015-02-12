@@ -1524,6 +1524,21 @@ Usages:
 
 [SegmentEditor::getKnownSegmentsToArchiveForSite](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/SegmentEditor.php#L66)
 
+## SEO
+
+- [SEO.getMetricsProviders](#seogetmetricsproviders)
+
+### SEO.getMetricsProviders
+
+*Defined in [Piwik/Plugins/SEO/Metric/Aggregator](https://github.com/piwik/piwik/blob/master/plugins/SEO/Metric/Aggregator.php) in line [59](https://github.com/piwik/piwik/blob/master/plugins/SEO/Metric/Aggregator.php#L59)*
+
+Use this event to register new SEO metrics providers.
+
+Callback Signature:
+<pre><code>function(&amp;$providers)</code></pre>
+
+- array `&$providers` Contains an array of Piwik\Plugins\SEO\Metric\MetricsProvider instances.
+
 ## Settings
 
 - [Settings.$this-&gt;pluginName.settingsUpdated](#settingsthispluginnamesettingsupdated)
