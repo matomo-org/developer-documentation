@@ -58,6 +58,7 @@ The class defines the following methods:
 - [`subMonth()`](#submonth) &mdash; Subtracts `$n` months from `$this` date and returns the result as a new Date object.
 - [`subYear()`](#subyear) &mdash; Subtracts `$n` years from `$this` date and returns the result as a new Date object.
 - [`getLocalized()`](#getlocalized) &mdash; Returns a localized date string using the given template.
+- [`getHourInUTC()`](#gethourinutc)
 - [`addDay()`](#addday) &mdash; Adds `$n` days to `$this` date and returns the result in a new Date.
 - [`addHour()`](#addhour) &mdash; Adds `$n` hours to `$this` date and returns the result in a new Date.
 - [`addHourTo()`](#addhourto) &mdash; Adds N number of hours to a UNIX timestamp and returns the result.
@@ -470,6 +471,14 @@ Allowed tags include:
 
 - *Returns:*  `string` &mdash;
     eg. `"Aug 2009"`
+
+<a name="gethourinutc" id="gethourinutc"></a>
+<a name="getHourInUTC" id="getHourInUTC"></a>
+### `getHourInUTC()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="addday" id="addday"></a>
 <a name="addDay" id="addDay"></a>

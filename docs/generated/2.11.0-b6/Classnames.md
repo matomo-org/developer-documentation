@@ -14,6 +14,10 @@
 ## DataTable\BaseFilter
 ## DataTable\Filter\AddColumnsProcessedMetrics
 ## DataTable\Filter\AddColumnsProcessedMetricsGoal
+## DataTable\Filter\AddSegmentFilter
+## DataTable\Filter\AddSegmentFilterByLabelMapping
+## DataTable\Filter\AddSegmentFilterBySegmentValue
+## DataTable\Filter\AddSegmentValue
 ## DataTable\Filter\AddSummaryRow
 ## DataTable\Filter\BeautifyRangeLabels
 ## DataTable\Filter\BeautifyTimeRangeLabels
@@ -22,6 +26,7 @@
 ## DataTable\Filter\ColumnCallbackAddColumnPercentage
 ## DataTable\Filter\ColumnCallbackAddColumnQuotient
 ## DataTable\Filter\ColumnCallbackAddMetadata
+## DataTable\Filter\ColumnCallbackDeleteMetadata
 ## DataTable\Filter\ColumnCallbackDeleteRow
 ## DataTable\Filter\ColumnCallbackReplace
 ## DataTable\Filter\ColumnDelete
@@ -32,6 +37,8 @@
 ## DataTable\Filter\MetadataCallbackReplace
 ## DataTable\Filter\Pattern
 ## DataTable\Filter\PatternRecursive
+## DataTable\Filter\PrependSegmentFilter
+## DataTable\Filter\PrependValueToMetadata
 ## DataTable\Filter\ReplaceColumnNames
 ## DataTable\Filter\ReplaceSummaryRowLabel
 ## DataTable\Filter\Sort
