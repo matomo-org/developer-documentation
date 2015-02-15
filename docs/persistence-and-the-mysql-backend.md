@@ -274,7 +274,7 @@ In `archive_blob` tables:
 
 **Site** entities contain information regarding a website whose visits are tracked. There won't be nearly as many of these as there are visits and archive data entries, but they will be queried often.
 
-Every reporting request (either through the [Reporting API](/guides/piwiks-reporting-api) or through Piwik's UI) will query one or more site entities. The tracker will only query site data if the [tracker cache](/guides/all-about-tracking#the-tracker-cache) needs to be updated. For most tracking requests, site data will not be queried (thus resulting in greater performance for the tracker).
+Every reporting request (either through the [Reporting API](/guides/piwiks-reporting-api) or through Piwik's UI) will query one or more site entities. The tracker will only query site data if the tracker cache needs to be updated. For most tracking requests, site data will not be queried (thus resulting in greater performance for the tracker).
 
 Site entities are stored in the `site` table and contain the following information:
 
@@ -360,13 +360,12 @@ This association and the persistence logic is implemented by the [LanguagesManag
 
 ### Options
 
-[Options](/api-reference/Piwik/Option) are key-value pairs where the key is a string and the value is a another string (possibly bigger and possibly binary). They are queried on every UI and [Reporting API](/guides/piwiks-reporting-api) request. The tracker will [cache](/guides/all-about-tracking#the-tracker-cache) relevant option values and so will only query options when the cache needs updating.
+[Options](/api-reference/Piwik/Option) are key-value pairs where the key is a string and the value is a another string (possibly bigger and possibly binary). They are queried on every UI and [Reporting API](/guides/piwiks-reporting-api) request. The tracker will cache relevant option values and so will only query options when the cache needs updating.
 
 Some options should be loaded on every non-tracking request. These options have a special **autoload** property set to `1`.
 
 ## Learn more
 
-* To learn **how the tracker inserts log data** see our [All About Tracking](/guides/all-about-tracking) guide.
 * To learn **how log data is aggregated** see our [Archiving](/guides/archiving) guide and take a look at the [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) class.
 * To learn **how archive data is cached** see our [Archive Data](/guides/archive-data) guide.
 * To learn **about Piwik's logging utility** see this section in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.

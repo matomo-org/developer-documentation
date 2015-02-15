@@ -25,6 +25,7 @@ class Redirects
             '/guides/mvc-views'                => '/guides/views',
             '/guides/mvc-controllers'          => '/guides/controllers',
             '/guides/all-about-analytics-data' => '/guides/data-model',
+            '/guides/all-about-tracking'       => '/guides/tracking-introduction',
         ];
     }
 }

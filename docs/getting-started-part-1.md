@@ -169,7 +169,7 @@ If you'd like to learn the basics of Piwik plugin development all at once, conti
 - If you're interested in **creating new analytics reports**, you may want to read about [Reports](/guides/reports) and [Visualizing Report Data](/guides/visualizing-report-data) guides.
 - If you're interested in **changing the look and feel of Piwik**, read our [Theming](/guides/theming) guide.
 - If you're interested in **taking part in core development**, read our [Contributing to Piwik Core](/guides/contributing-to-piwik-core) guide.
-- If you're interested in **integrating Piwik with another technology**, you might want to read our [All About Tracking](/guides/all-about-tracking) guide to learn how to use our Tracking API. You might also want to read our [Piwik's HTTP API](/api-reference/tracking-api) guide to learn about Piwik's Reporting API.
+- If you're interested in **integrating Piwik with another technology**, you might want to read our [Tracking guides](/guides/tracking-introduction) to learn how to use our Tracking API.
 - If you'd like to **add new console commands**, read our [Piwik on the command line](/guides/piwik-on-the-command-line) guide.
 - If you want to **use automated testing to ensure your plugin works**, read your [Automated Tests](/guides/tests) guide.
 
