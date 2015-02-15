@@ -2,6 +2,7 @@
 category: Develop
 subGuides:
   - theming
+  - themable-plugins
 ---
 # Themes
 
