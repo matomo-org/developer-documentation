@@ -14,9 +14,9 @@
 ## DataTable\BaseFilter
 ## DataTable\Filter\AddColumnsProcessedMetrics
 ## DataTable\Filter\AddColumnsProcessedMetricsGoal
-## DataTable\Filter\AddSegmentFilter
-## DataTable\Filter\AddSegmentFilterByLabelMapping
-## DataTable\Filter\AddSegmentFilterBySegmentValue
+## DataTable\Filter\AddSegmentByLabel
+## DataTable\Filter\AddSegmentByLabelMapping
+## DataTable\Filter\AddSegmentBySegmentValue
 ## DataTable\Filter\AddSegmentValue
 ## DataTable\Filter\AddSummaryRow
 ## DataTable\Filter\BeautifyRangeLabels
@@ -37,7 +37,7 @@
 ## DataTable\Filter\MetadataCallbackReplace
 ## DataTable\Filter\Pattern
 ## DataTable\Filter\PatternRecursive
-## DataTable\Filter\PrependSegmentFilter
+## DataTable\Filter\PrependSegment
 ## DataTable\Filter\PrependValueToMetadata
 ## DataTable\Filter\ReplaceColumnNames
 ## DataTable\Filter\ReplaceSummaryRowLabel

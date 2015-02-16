@@ -1,7 +1,7 @@
 <small>Piwik\DataTable\Filter\</small>
 
-AddSegmentFilterByLabelMapping
-==============================
+AddSegmentByLabelMapping
+========================
 
 Executes a filter for each row of a DataTable and generates a segment filter for each row.
 
@@ -10,7 +10,7 @@ mapping array.
 
 **Basic usage example**
 
-    $dataTable->filter('AddSegmentFilterByLabelMapping', array('segmentName', array('1' => 'smartphone, '2' => 'desktop')));
+    $dataTable->filter('AddSegmentByLabelMapping', array('segmentName', array('1' => 'smartphone, '2' => 'desktop')));
 
 Methods
 -------
@@ -18,7 +18,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`filter()`](#filter) &mdash; See [AddSegmentFilterByLabelMapping](/api-reference/Piwik/DataTable/Filter/AddSegmentFilterByLabelMapping).
+- [`filter()`](#filter) &mdash; See [AddSegmentByLabelMapping](/api-reference/Piwik/DataTable/Filter/AddSegmentByLabelMapping).
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -40,7 +40,7 @@ The class defines the following methods:
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [AddSegmentFilterByLabelMapping](/api-reference/Piwik/DataTable/Filter/AddSegmentFilterByLabelMapping).
+See [AddSegmentByLabelMapping](/api-reference/Piwik/DataTable/Filter/AddSegmentByLabelMapping).
 
 #### Signature
 

@@ -7,7 +7,7 @@ Executes a callback for each row of a DataTable and prepends the given value to 
 
 **Basic usage example**
 
-    $dataTable->filter('PrependValueToMetadata', array('segmentFilter', 'segmentName==segmentValue'));
+    $dataTable->filter('PrependValueToMetadata', array('segment', 'segmentName==segmentValue'));
 
 Methods
 -------

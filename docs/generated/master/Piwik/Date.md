@@ -30,6 +30,7 @@ The class defines the following methods:
 
 - [`factory()`](#factory) &mdash; Creates a new Date instance using a string datetime value.
 - [`getDatetime()`](#getdatetime) &mdash; Returns the current timestamp as a string with the following format: `'YYYY-MM-DD HH:MM:SS'`.
+- [`getHourUTC()`](#gethourutc) &mdash; Returns the current hour in UTC timezone.
 - [`getDateStartUTC()`](#getdatestartutc) &mdash; Returns the start of the day of the current timestamp in UTC.
 - [`getDateEndUTC()`](#getdateendutc) &mdash; Returns the end of the day of the current timestamp in UTC.
 - [`setTimezone()`](#settimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
@@ -58,7 +59,6 @@ The class defines the following methods:
 - [`subMonth()`](#submonth) &mdash; Subtracts `$n` months from `$this` date and returns the result as a new Date object.
 - [`subYear()`](#subyear) &mdash; Subtracts `$n` years from `$this` date and returns the result as a new Date object.
 - [`getLocalized()`](#getlocalized) &mdash; Returns a localized date string using the given template.
-- [`getHourInUTC()`](#gethourinutc)
 - [`addDay()`](#addday) &mdash; Adds `$n` days to `$this` date and returns the result in a new Date.
 - [`addHour()`](#addhour) &mdash; Adds `$n` hours to `$this` date and returns the result in a new Date.
 - [`addHourTo()`](#addhourto) &mdash; Adds N number of hours to a UNIX timestamp and returns the result.
@@ -96,6 +96,18 @@ Returns the current timestamp as a string with the following format: `'YYYY-MM-D
 #### Signature
 
 - It returns a `string` value.
+
+<a name="gethourutc" id="gethourutc"></a>
+<a name="getHourUTC" id="getHourUTC"></a>
+### `getHourUTC()`
+
+Returns the current hour in UTC timezone.
+
+#### Signature
+
+- It returns a `string` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getdatestartutc" id="getdatestartutc"></a>
 <a name="getDateStartUTC" id="getDateStartUTC"></a>
@@ -471,14 +483,6 @@ Allowed tags include:
 
 - *Returns:*  `string` &mdash;
     eg. `"Aug 2009"`
-
-<a name="gethourinutc" id="gethourinutc"></a>
-<a name="getHourInUTC" id="getHourInUTC"></a>
-### `getHourInUTC()`
-
-#### Signature
-
-- It does not return anything.
 
 <a name="addday" id="addday"></a>
 <a name="addDay" id="addDay"></a>

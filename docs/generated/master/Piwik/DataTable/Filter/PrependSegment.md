@@ -1,13 +1,13 @@
 <small>Piwik\DataTable\Filter\</small>
 
-PrependSegmentFilter
-====================
+PrependSegment
+==============
 
-Executes a callback for each row of a DataTable and prepends each existing segmentFilter with the given segment.
+Executes a callback for each row of a DataTable and prepends each existing segment with the given segment.
 
 **Basic usage example**
 
-    $dataTable->filter('PrependSegmentFilter', array('segmentName==segmentValue;'));
+    $dataTable->filter('PrependSegment', array('segmentName==segmentValue;'));
 
 Methods
 -------
@@ -26,8 +26,8 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-    - `$prependSegmentFilter` (`string`) &mdash;
-       The segment to prepend if a segmentFilter is defined. Make sure to include A condition, eg the segment should end with ';' or ','
+    - `$prependSegment` (`string`) &mdash;
+       The segment to prepend if a segment is already defined. Make sure to include A condition, eg the segment should end with ';' or ','
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
