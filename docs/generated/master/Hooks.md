@@ -1530,7 +1530,7 @@ Usages:
 
 ### SEO.getMetricsProviders
 
-*Defined in [Piwik/Plugins/SEO/Metric/Aggregator](https://github.com/piwik/piwik/blob/master/plugins/SEO/Metric/Aggregator.php) in line [59](https://github.com/piwik/piwik/blob/master/plugins/SEO/Metric/Aggregator.php#L59)*
+*Defined in [Piwik/Plugins/SEO/Metric/Aggregator](https://github.com/piwik/piwik/blob/master/plugins/SEO/Metric/Aggregator.php) in line [62](https://github.com/piwik/piwik/blob/master/plugins/SEO/Metric/Aggregator.php#L62)*
 
 Use this event to register new SEO metrics providers.
 

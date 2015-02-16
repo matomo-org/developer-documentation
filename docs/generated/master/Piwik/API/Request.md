@@ -76,7 +76,7 @@ forwarded to request array before it is returned.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$request` (`string`|`array`) &mdash;
+    - `$request` (`string`|`array`|`null`) &mdash;
        The base request string or array, eg, `'module=UserLanguage&action=getLanguage'`.
     - `$defaultRequest` (`array`) &mdash;
        Default query parameters. If a query parameter is absent in `$request`, it will be loaded from this. Defaults to `$_GET + $_POST`.
