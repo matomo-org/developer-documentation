@@ -1,13 +1,16 @@
 <small>Piwik\DataTable\Filter\</small>
 
-PrependValueToMetadata
-======================
+AddSegmentBySegmentValue
+========================
 
-Executes a callback for each row of a DataTable and prepends the given value to each metadata entry but only if the given metadata entry exists.
+Converts for each row of a DataTable a segmentValue to a segment (expression).
+
+The name of the segment
+is automatically detected based on the given report.
 
 **Basic usage example**
 
-    $dataTable->filter('PrependValueToMetadata', array('segmentFilter', 'segmentName==segmentValue'));
+    $dataTable->filter('AddSegmentBySegmentValue', array($reportInstance));
 
 Methods
 -------
@@ -15,7 +18,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`filter()`](#filter) &mdash; See [PrependValueToMetadata](/api-reference/Piwik/DataTable/Filter/PrependValueToMetadata).
+- [`filter()`](#filter) &mdash; See [AddSegmentBySegmentValue](/api-reference/Piwik/DataTable/Filter/AddSegmentBySegmentValue).
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -28,23 +31,23 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-    - `$metadataName` (`string`) &mdash;
-       The name of the metadata that should be prepended
-    - `$valueToPrepend` (`string`) &mdash;
-       The value to prepend if the metadata entry exists
+    - `$report` (`Piwik\DataTable\Filter\$report`) &mdash;
+      
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [PrependValueToMetadata](/api-reference/Piwik/DataTable/Filter/PrependValueToMetadata).
+See [AddSegmentBySegmentValue](/api-reference/Piwik/DataTable/Filter/AddSegmentBySegmentValue).
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-- It does not return anything.
+
+- *Returns:*  `int` &mdash;
+    The number of deleted rows.
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>

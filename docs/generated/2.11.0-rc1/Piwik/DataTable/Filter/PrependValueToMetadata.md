@@ -1,22 +1,21 @@
 <small>Piwik\DataTable\Filter\</small>
 
-AddSegmentFilter
-================
+PrependValueToMetadata
+======================
 
-Executes a filter for each row of a DataTable and generates a segment filter for each row.
+Executes a callback for each row of a DataTable and prepends the given value to each metadata entry but only if the given metadata entry exists.
 
 **Basic usage example**
 
-    $dataTable->filter('AddSegmentFilter', array('segmentName'));
-    $dataTable->filter('AddSegmentFilter', array(array('segmentName1', 'segment2'), ';');
+    $dataTable->filter('PrependValueToMetadata', array('segment', 'segmentName==segmentValue'));
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Generates a segment filter based on the label column and the given segment names
-- [`filter()`](#filter) &mdash; See [AddSegmentFilter](/api-reference/Piwik/DataTable/Filter/AddSegmentFilter).
+- [`__construct()`](#__construct)
+- [`filter()`](#filter) &mdash; See [PrependValueToMetadata](/api-reference/Piwik/DataTable/Filter/PrependValueToMetadata).
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -24,23 +23,21 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
-Generates a segment filter based on the label column and the given segment names
-
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-    - `$segmentOrSegments` (`string`|`array`) &mdash;
-       Either one segment or an array of segments. If more than one segment is given a delimter has to be defined.
-    - `$delimiter` (`string`) &mdash;
-       The delimiter by which the label should be splitted.
+    - `$metadataName` (`string`) &mdash;
+       The name of the metadata that should be prepended
+    - `$valueToPrepend` (`string`) &mdash;
+       The value to prepend if the metadata entry exists
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [AddSegmentFilter](/api-reference/Piwik/DataTable/Filter/AddSegmentFilter).
+See [PrependValueToMetadata](/api-reference/Piwik/DataTable/Filter/PrependValueToMetadata).
 
 #### Signature
 

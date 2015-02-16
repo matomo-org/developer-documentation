@@ -18,9 +18,9 @@ This is a complete list of available classes:
 - [`DataTable\BaseFilter`](Piwik/DataTable/BaseFilter.md) &mdash; A filter is set of logic that manipulates a DataTable.
 - [`DataTable\Filter\AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md) &mdash; Adds processed metrics columns to a DataTable using metrics that already exist.
 - [`DataTable\Filter\AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; Adds goal related metrics to a DataTable using metrics that already exist.
-- [`DataTable\Filter\AddSegmentFilter`](Piwik/DataTable/Filter/AddSegmentFilter.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
-- [`DataTable\Filter\AddSegmentFilterByLabelMapping`](Piwik/DataTable/Filter/AddSegmentFilterByLabelMapping.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
-- [`DataTable\Filter\AddSegmentFilterBySegmentValue`](Piwik/DataTable/Filter/AddSegmentFilterBySegmentValue.md) &mdash; Converts for each row of a DataTable a segmentValue to a segmentFilter.
+- [`DataTable\Filter\AddSegmentByLabel`](Piwik/DataTable/Filter/AddSegmentByLabel.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
+- [`DataTable\Filter\AddSegmentByLabelMapping`](Piwik/DataTable/Filter/AddSegmentByLabelMapping.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
+- [`DataTable\Filter\AddSegmentBySegmentValue`](Piwik/DataTable/Filter/AddSegmentBySegmentValue.md) &mdash; Converts for each row of a DataTable a segmentValue to a segment (expression).
 - [`DataTable\Filter\AddSegmentValue`](Piwik/DataTable/Filter/AddSegmentValue.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
 - [`DataTable\Filter\AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md) &mdash; Adds a summary row to DataTables that contains the sum of all other table rows.
 - [`DataTable\Filter\BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md) &mdash; A DataTable filter that replaces range label columns with prettier, human-friendlier versions.
@@ -41,7 +41,7 @@ This is a complete list of available classes:
 - [`DataTable\Filter\MetadataCallbackReplace`](Piwik/DataTable/Filter/MetadataCallbackReplace.md) &mdash; Execute a callback for each row of a DataTable passing certain column values and metadata as metadata, and replaces row metadata with the callback result.
 - [`DataTable\Filter\Pattern`](Piwik/DataTable/Filter/Pattern.md) &mdash; Deletes every row for which a specific column does not match a supplied regex pattern.
 - [`DataTable\Filter\PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md) &mdash; Deletes rows that do not contain a column that matches a regex pattern and do not contain a subtable that contains a column that matches a regex pattern.
-- [`DataTable\Filter\PrependSegmentFilter`](Piwik/DataTable/Filter/PrependSegmentFilter.md) &mdash; Executes a callback for each row of a DataTable and prepends each existing segmentFilter with the given segment.
+- [`DataTable\Filter\PrependSegment`](Piwik/DataTable/Filter/PrependSegment.md) &mdash; Executes a callback for each row of a DataTable and prepends each existing segment with the given segment.
 - [`DataTable\Filter\PrependValueToMetadata`](Piwik/DataTable/Filter/PrependValueToMetadata.md) &mdash; Executes a callback for each row of a DataTable and prepends the given value to each metadata entry but only if the given metadata entry exists.
 - [`DataTable\Filter\ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md) &mdash; Replaces column names in each row of a table using an array that maps old column names new ones.
 - [`DataTable\Filter\ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md) &mdash; Replaces the label of the summary row with a supplied label.
