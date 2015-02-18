@@ -1,5 +1,5 @@
 ---
-category: Develop
+category: CoreDevelop
 ---
 # How Piwik Handles HTTP Requests
 

@@ -1,5 +1,5 @@
 ---
-category: Develop
+category: CoreDevelop
 ---
 # Writing themable plugins
 

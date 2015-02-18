@@ -1,8 +1,8 @@
 ---
 category: Develop
 subGuides:
-  - piwiks-ini-configuration
   - plugin-settings
+  - piwiks-ini-configuration
 ---
 # Configuration
 

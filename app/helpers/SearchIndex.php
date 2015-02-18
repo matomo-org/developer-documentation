@@ -4,6 +4,7 @@ namespace helpers;
 
 use helpers\Content\Category\ApiReferenceCategory;
 use helpers\Content\Category\Category;
+use helpers\Content\Category\CoreDevelopCategory;
 use helpers\Content\Category\DesignCategory;
 use helpers\Content\Category\DevelopCategory;
 use helpers\Content\Category\IntegrateCategory;
@@ -28,6 +29,7 @@ class SearchIndex
             new DevelopCategory(),
             new DesignCategory(),
             new ApiReferenceCategory(),
+            new CoreDevelopCategory()
         ];
 
         $items = [];

@@ -1,8 +1,7 @@
 ---
 category: Develop
-next: getting-started-part-2
 ---
-# Getting Started Part I: Setting Up
+# Setting Up
 
 <!-- Meta (to be deleted)
 TODO: (stuff that needs to go in SOME guide)
@@ -164,13 +163,9 @@ The command-line tool will create a new directory for your plugin (in the **plug
 
 Ok! You've set up your development environment and created your plugin! Now all you have to do is make it do what you want. The bad news is that this is the hard part. The good news is that we've written a bunch of other guides to help you shorten the learning curve.
 
-If you'd like to learn the basics of Piwik plugin development all at once, continue on to the [next part in this series of guides](/guides/getting-started-part-2). If you want to learn how to do just one thing, try reading one of our other guides:
-
-- If you're interested in **creating new analytics reports**, you may want to read about [Reports](/guides/reports) and [Visualizing Report Data](/guides/visualizing-report-data) guides.
+- If you're interested in **creating new analytics reports**, you may want to read about [Custom Reports](/guides/custom-reports) and [Visualizing Report Data](/guides/visualizing-report-data) guides.
 - If you're interested in **changing the look and feel of Piwik**, read our [Theming](/guides/theming) guide.
-- If you're interested in **taking part in core development**, read our [Contributing to Piwik Core](/guides/contributing-to-piwik-core) guide.
 - If you're interested in **integrating Piwik with another technology**, you might want to read our [Tracking guides](/guides/tracking-introduction) to learn how to use our Tracking API.
-- If you'd like to **add new console commands**, read our [Piwik on the command line](/guides/piwik-on-the-command-line) guide.
 - If you want to **use automated testing to ensure your plugin works**, read your [Automated Tests](/guides/tests) guide.
 
 And **make sure to read our security guide, [Security in Piwik](/guides/security-in-piwik)**! We have very high security standards that your plugin or contribution **must** respect.
