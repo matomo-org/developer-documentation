@@ -11,6 +11,7 @@ namespace helpers\Content\Category;
 use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
 use helpers\Content\RemoteLink;
+use helpers\Content\SubCategory;
 
 class DevelopCategory extends Category
 {
@@ -58,7 +59,9 @@ class DevelopCategory extends Category
                 new Guide('security-in-piwik'),
                 new Guide('permissions'),
             ]),
-            new Guide('internationalization'),
+            new SubCategory(new Guide('internationalization'), [
+                new RemoteLink('Make your plugin multilingual', 'http://piwik.org/blog/2014/10/how-to-make-your-plugin-multilingual-introducing-the-piwik-platform/'),
+            ]),
             new Guide('tests'),
             new Guide('logging'),
             new Guide('scheduled-tasks'),
@@ -68,9 +71,6 @@ class DevelopCategory extends Category
                 new RemoteLink('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
             ]),
             new Guide('design-introduction'),
-            new EmptySubCategory('Blog articles', [
-                new RemoteLink('Make your plugin multilingual', 'http://piwik.org/blog/2014/10/how-to-make-your-plugin-multilingual-introducing-the-piwik-platform/'),
-            ]),
         ];
     }
 
