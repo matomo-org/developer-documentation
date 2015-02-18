@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Command Line Interface
+# Commands
 
 As explained in the [*How Piwik Works* guide](http://developer.piwik.org/guides/how-piwik-works#interfaces), Piwik can be used through several interfaces, the command line being one of them.
 

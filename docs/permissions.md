@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Permissions
+# User permissions
 
 Permissions define what a user can see or do in Piwik.
 

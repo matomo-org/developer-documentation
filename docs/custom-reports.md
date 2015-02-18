@@ -1,32 +1,16 @@
 ---
 category: Develop
-previous: getting-started-part-1
-next: getting-started-part-3
 ---
-# Getting Started Part II: Tour of Piwik Internals
+# Custom Report
 
-## About this guide
-
-In [Part I](/guides/getting-started-part-1) you set up your development environment and created a new plugin. In this guide, we'll make that plugin do something and in the process, you'll learn about different Piwik concepts.
+In our [Setting up](/guides/getting-started-part-1) guide you set up your development environment and created a new plugin. In this guide, we'll make that plugin do something and in the process, you'll learn about different Piwik concepts.
 
 This guide will show you:
 
-- **how to define controllers to add new pages to Piwik**
 - **how to define new reports and expose them through Piwik's [Reporting API](/api-reference/reporting-api)**
 - **how to use JavaScript in a plugin**
 
-**Guide Assumptions**
-
-This guide assumes that you've completed [Part I](/guides/getting-started-part-1) of this guide.
-
-## Make your plugin do something
-
-For the sake of this guide we don't want to do anything complicated. We will:
-
-- define a new analytics report that uses raw log data
-- add a new page to Piwik that displays the report
-
-### Adding a new report
+## Adding a new report
 
 We're going to create a new report that shows the browsers used for the most recent visits. We'll be using data returned by the [Live!](http://piwik.org/docs/real-time/#the-real-time-live-widget) plugin so we won't have to do much processing ourselves.
 
@@ -47,7 +31,7 @@ To add a new report you should use the CLI tool and execute the following comman
 
 This command will guide you through the creation of a report and ask for several things such as the name of your plugin and the name of the report you want to create. When it asks you for a report name, enter "Last Visits By Browser", choose the category "Visitors" by moving the arrow keys up or down and leave the dimension empty.
 
-#### Adding a menu item
+### Adding a menu item
 
 The CLI tool has created a new file `Reports/GetLastVisitsByBrowser.php` within your plugin folder. We recommend to take the time to have a look at all the methods and comments to get an idea how a report is defined.
 
@@ -69,7 +53,7 @@ If you click on it, the page will be loaded below the period selector:
 
 <img src="/img/myplugin_index_embed.png"/>
 
-#### Making it a widget
+### Making it a widget
 
 A widget allows users to add your report to the dashboard. It also lets them embed the report on other websites, for example using an iframe.
 
@@ -77,7 +61,7 @@ Making a widget is also very easy. Just define a property named `widgetTitle` an
 
     $this->widgetTitle = 'Real-time Reports';
 
-### Adding a API method
+## Adding a API method
 
 Reports and metrics are served by API class methods.
 
@@ -98,7 +82,7 @@ The website is determined by the `$idSite` parameter and the period by both the 
 
 You can see the output of this method if you visit this URL: [http://localhost/index.php?module=API&method=MyPlugin.getLastVisitsByBrowser&idSite=1&date=today&period=week](http://localhost/index.php?module=API&method=MyPlugin.getLastVisitsByBrowser&idSite=1&date=today&period=week).
 
-#### Implementing the API method
+### Implementing the API method
 
 Our new report will use realtime visit data. To get it, our API method will use the `Live.getLastVisitsDetails` method:
 
@@ -192,7 +176,7 @@ This new API method directly accesses visit data. That is because the report is 
 Archived reports are calculated and **cached** during the [Archiving Process](/guides/archiving). To learn more, read about Piwik's [Data Model](/guides/data-model) guide.
 </div>
 
-#### Displaying the report
+### Displaying the report
 
 Now that we've defined a new report, we need to define how the report should be displayed. We'll do this by going back to the `GetLastVisitsByBrowser` class and modify the `configureView()` method:
 
@@ -225,11 +209,11 @@ The [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) class outputs a *
 It is possible for plugins to create their own visualizations. To find out how, read our [Visualizing Report Data](/guides/visualizing-report-data) guide (after you're done with this guide, of course).
 </div>
 
-### Updating the report in realtime
+## Updating the report in realtime
 
 So now there's a page with a report that displays the browsers of the latest visitors. It uses realtime data, but it's not truly realtime since after a couple minutes, the report will be out of date. To make the report more realtime we'll update the report every 10 seconds automatically.
 
-#### Adding JavaScript files to Piwik
+### Adding JavaScript files to Piwik
 
 To make the report reload itself, we'll have to write some JavaScript code. This means we'll need a JavaScript file.
 
@@ -257,7 +241,7 @@ Remember that Piwik will include this file directly only when `disable_merged_as
 
 If this option is disabled, Piwik will merge all Javascript files into one to optimize the page loading time, but that means that any change to `plugin.js` will be ignored.
 
-#### Reloading the report
+### Reloading the report
 
 In your `plugin.js` file, add the following code:
 
@@ -285,7 +269,7 @@ As you can see, all our javascript code is inside the `$(document).ready` callba
 
 Now if you open the report in your browser, you'll see the report being reloaded every 10 seconds.
 
-Well, our simple plugin is done! It defines a new report, displays it and makes sure the data it displays is fresh. But we can do better! [The next guide](/guides/getting-started-part-3) will show you how.
+Well, our simple plugin is done! It defines a new report, displays it and makes sure the data it displays is fresh. 
 
 <div markdown="1" class="alert alert-warning">
 **Security in Piwik**

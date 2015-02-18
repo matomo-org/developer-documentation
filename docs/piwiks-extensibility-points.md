@@ -1,5 +1,5 @@
 ---
-category: Develop
+category: CoreDevelop
 ---
 # Piwik's Extensibility Points
 

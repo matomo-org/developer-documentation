@@ -2,6 +2,7 @@
 category: Develop
 previous: piwik-configuration
 next: plugin-settings
+title: Configuration
 ---
 # INI Configuration
 

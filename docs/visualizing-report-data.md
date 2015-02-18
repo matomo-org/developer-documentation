@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Displaying Reports
+# Report visualizations
 
 In Piwik, an **analytics report** is just a set of two-dimensional data, stored as [DataTable](/api-reference/Piwik/DataTable) objects and returned by API methods.
 
