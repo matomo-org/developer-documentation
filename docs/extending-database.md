@@ -61,7 +61,7 @@ public class MyPlugin extends \Piwik\Plugin
 
 **Note: New tables should be appropriately [prefixed](/api-reference/Piwik/Common#prefixtable).**
 
-## Augmenting existing tables
+## Adding new columns to existing tables
 
 Plugins can also augment existing tables. If, for example, a plugin wanted to track extra visit information, the plugin could add columns to log data tables and set these columns during tracking.This would also be done in the [install](/api-reference/Piwik/Plugin#install) method:
 
@@ -91,3 +91,5 @@ public class MyPlugin extends \Piwik\Plugin
 ```
 
 Plugins should remove the column in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method, **unless doing so take very long time**. Since log tables can have millions and even billions of entries, removing columns from these tables when a plugin is uninstalled would be a bad idea.
+
+If you want to learn more about the structure of existing tables, read the [Database schema reference](/guides/persistence-and-the-mysql-backend).

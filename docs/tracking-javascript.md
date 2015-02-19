@@ -1,7 +1,7 @@
 ---
 category: API Reference
 ---
-# Javascript Tracking Client
+# JavaScript Tracking Client
 
 ## User guide
 

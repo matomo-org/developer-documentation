@@ -31,30 +31,27 @@ class DevelopCategory extends Category
             ]),
             new EmptySubCategory('Plugin Basics', [
                 new Guide('custom-reports'),
-                new Guide('visualizing-report-data'),
                 new Guide('theming'),
                 new Guide('pages'),
                 new Guide('menus'),
                 new Guide('widgets'),
                 new Guide('working-with-piwiks-ui'),
-                new Guide('plugin-settings'),
-                new Guide('piwiks-ini-configuration'),
+                new Guide('visualizing-report-data'),
                 new Guide('scheduled-tasks'),
                 new Guide('piwik-on-the-command-line'),
             ]),
-            new SubCategory(new Guide('internationalization'), [
-                new RemoteLink('Make your plugin multilingual', 'http://piwik.org/blog/2014/10/how-to-make-your-plugin-multilingual-introducing-the-piwik-platform/'),
-            ]),
-            new Guide('tests'),
             new EmptySubCategory('Security', [
                 new Guide('security-in-piwik'),
                 new Guide('permissions'),
             ]),
-            new EmptySubCategory('Database', [
-                new Guide('persistence-and-the-mysql-backend'),
+            new EmptySubCategory('Utils', [
+                new Guide('events'),
+                new Guide('plugin-settings'),
+                new Guide('translations'),
                 new Guide('extending-database'),
+                new Guide('logging'),
             ]),
-            new Guide('logging'),
+            new Guide('tests'),
             new InternalLink('Core development', '/core'),
         ];
     }

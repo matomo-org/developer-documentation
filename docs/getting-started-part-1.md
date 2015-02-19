@@ -154,7 +154,7 @@ To enable it, either do it through the web interface or use the command line:
 
 The command-line tool will create a new directory for your plugin (in the **plugins** sub-directory) and fill it with some files and folders. Here's what these files and folders are for:
 
-- `MyPlugin.php`: Contains your plugin's descriptor class. This class contains metadata about your plugin and a list of event handlers for Piwik events.
+- `MyPlugin.php`: Contains your plugin's descriptor class. This class contains metadata about your plugin and a list of event handlers for [Piwik events](/guides/events).
 - `plugin.json`: Contains plugin metadata such as the name, description, version, etc.
 - `README.md`: A dummy README file for your plugin.
 - `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](http://developer.piwik.org/guides/distributing-your-plugin).

@@ -37,6 +37,18 @@ Below is the list of all supported environment variables:
         - TRAVIS_COMMITTER_EMAIL=my-org@myorg.com
     ```
 
+  * **TEST\_AGAINST\_PIWIK\_BRANCH**
+
+    This variable can be set to a branch, tag or commit hash in order to test your plugin against it.
+
+    This variable should not be set as a global environment variable, instead it should be added as an entry in your .travis.yml file's `matrix:` section, eg:
+
+    ```
+    env:
+      matrix:
+        - TEST_SUITE=PluginTests MYSQL_ADAPTER=PDO_MYSQL TEST_AGAINST_PIWIK_BRANCH=branchname
+    ```
+    
   * **UNPROTECTED\_ARTIFACTS**
 
     **For core or pro developers only.** This variable controls whether build artifacts will be uploaded to a password protected folder on builds-artifacts.piwik.org or not.

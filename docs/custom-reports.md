@@ -217,7 +217,7 @@ So now there's a page with a report that displays the browsers of the latest vis
 
 To make the report reload itself, we'll have to write some JavaScript code. This means we'll need a JavaScript file.
 
-Create an empty `javascripts/plugin.js` file in your plugin directory. Then register to the [AssetManager.getJavaScriptFiles](/api-reference/events#assetmanagergetjavascriptfiles) event to have this javascript file included by Piwik:
+Create an empty `javascripts/plugin.js` file in your plugin directory. Then register to the [AssetManager.getJavaScriptFiles](/api-reference/events#assetmanagergetjavascriptfiles) event ([read more about Events]('/guides/events')) to have this javascript file included by Piwik:
 
     class MyPlugin extends \Piwik\Plugin
     {

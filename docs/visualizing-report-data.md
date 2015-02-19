@@ -41,7 +41,7 @@ class Controller
 }
 ```
 
-This method will create a new `ViewDataTable` instance and render it. The report can be configured via the [`ViewDataTable.configure`](/api-reference/events#viewdatatableconfigure) event.
+This method will create a new `ViewDataTable` instance and render it. The report can be configured via the [`ViewDataTable.configure`](/api-reference/events#viewdatatableconfigure) event ([read more about Events](/guides/events)).
 
 The other way is to manually create and configure a `ViewDataTable` instance:
 
