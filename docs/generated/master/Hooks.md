@@ -452,7 +452,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [581](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L581)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [602](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L602)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -468,7 +468,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [598](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L598)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [619](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L619)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -1067,7 +1067,7 @@ Callback Signature:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [566](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L566)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [587](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L587)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -1088,7 +1088,7 @@ Usages:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [608](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L608)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [629](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L629)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
