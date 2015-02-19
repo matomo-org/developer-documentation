@@ -1,6 +1,5 @@
 ---
 category: Develop
-previous: piwiks-ini-configuration
 ---
 # Plugin Settings
 

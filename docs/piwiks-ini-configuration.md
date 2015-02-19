@@ -1,7 +1,5 @@
 ---
-category: Develop
-previous: piwik-configuration
-next: plugin-settings
+category: CoreDevelop
 title: Configuration
 ---
 # INI Configuration

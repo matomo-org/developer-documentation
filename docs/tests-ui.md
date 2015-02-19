@@ -5,7 +5,11 @@ next: tests-travis
 ---
 # UI Tests
 
-**UI tests** test Piwik's twig templates, JavaScript and CSS by tracking visits, generating screenshots of URLs with [phantomjs](http://phantomjs.org/) and comparing generated screenshots with expected ones.
+Some might know a UI test under the term 'CSS test' or 'screenshot test'. When we speak of UI tests we mean automated tests that capture a screenshot of a URL and then compare the result with an expected image. If the images are not exactly the same the test will fail. For more information read our blog post about [UI Testing](https://piwik.org/blog/2013/10/our-latest-improvement-to-qa-screenshot-testing/).
+
+**What is a UI test good for?**
+
+We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We do usually not write Unit or Integration tests for our controllers. For example we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/piwik/piwik) after each commit and compared with [our expected screenshots](https://github.com/piwik/piwik-ui-tests).
 
 ## Requirements
 
@@ -44,12 +48,61 @@ exports.phpServer = {
 
 ```
 
+## Creating a UI test
+
+We start by using the [Piwik Console](http://developer.piwik.org/guides/piwik-on-the-command-line) to create a new UI test:
+
+```bash
+./console generate:test --testtype ui
+```
+
+The command will ask you to enter the name of the plugin the created test should belong to. For the rest of this guide we assume you're using the plugin name "Widgetize". Next it will ask you for the name of the test. Here you usually enter the name of the page or report you want to test. We will use the name "WidgetizePage" in this example. There should now be a file `plugins/Widgetize/tests/UI/WidgetizePage_spec.js` which contains already an example to get you started easily:
+
+```javascript
+describe("WidgetizePage", function () {
+    var generalParams = 'idSite=1&amp;period=day&amp;date=2010-01-03';
+
+    it('should load a simple page by its module and action', function (done) {
+        var screenshotName = 'simplePage';
+        // will save image in "processed-ui-screenshots/WidgetizePageTest_simplePage.png"
+
+        expect.screenshot(screenshotName).to.be.capture(function (page) {
+            var urlToTest = "?" + generalParams + "&amp;module=Widgetize&amp;action=index";
+            page.load(urlToTest);
+        }, done);
+    });
+});
+```
+
+### What is happening here?
+
+This example declares a new set of [specs](http://en.wikipedia.org/wiki/Behavior-driven_development#Behavioural_specifications) by calling the method `describe(name, callback)` and within that a new spec by calling the method `it(description, func)`. Within the spec we load a URL and once loaded capture a screenshot of the whole page. The captured screenshot will be saved under the defined `screenshotName`. You might have noticed we write our UI tests in [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style. 
+
+### Capturing only a part of the page
+It is good practice to not always capture the full page. For example many pages contain a menu and if you change that menu, all your screenshot tests would fail. To avoid this you would instead have a separate test for your menu. To capture only a part of the page simply specify a [jQuery selector](http://api.jquery.com/category/selectors/) and call the method `captureSelector` instead of `capture`:
+
+```javascript
+var contentSelector = '#selector1, .selector2 .selector3';
+// Only the content of both selectors will be in visible in the captured screenshot
+expect.screenshot('page_partial').to.be.captureSelector(contentSelector, function (page) {
+    page.load(urlToTest);
+}, done);
+```
+
+### Hiding content
+
+There is a known issue with sparklines that can fail tests randomly. Also version numbers or a date that changes from time to time can fail tests without actually having an error. To avoid this you can prevent elements from being visible in the captured screenshot via CSS as we add a CSS class called `uiTest` to the `HTML` element while tests are running.
+
+```css
+.uiTest .version { visibility:hidden }
+```
+
 ## Running UI tests
 
-To run UI tests, run the `tests:run-ui` command:
+To run the previously generated tests, use the command `tests:run-ui`:
 
 ```
-$ ./console tests:run-ui MyTestSpecName
+$ ./console tests:run-ui WidgetizePage
 ```
 
 or to run every UI test for a plugin:
@@ -58,23 +111,17 @@ or to run every UI test for a plugin:
 $ ./console tests:run-ui --plugin=MyPlugin
 ```
 
-## Testing your plugin with UI tests
+After running the tests for the first time you will notice a new folder `plugins/PLUGINNAME/tests/UI/processed-ui-screenshots` in your plugin. If everything worked, there will be an image for every captured screenshot. If you're happy with the result it is time to copy the file over to the `expected-ui-screenshots` folder, otherwise you have to adjust your test until you get the result you want. From now on, the newly captured screenshots will be compared with the expected images whenever you execute the tests.
+
+### Fixing a test
+
+At some point your UI test will fail, for example due to expected CSS changes. To fix a test all you have to do is to copy the captured screenshot from the folder `processed-ui-screenshots` to the folder `expected-ui-screenshots`. 
+
+## Writing a UI test in depth
 
 UI screenshot tests are run directly by phantomjs and are written using [mocha](http://visionmedia.github.io/mocha/) and [chai](http://chaijs.com).
 
-To create a new test, first decide whether it belongs to Piwik Core or a plugin. If it belongs to Piwik Core, the test should be placed within the `/tests/UI` directory. Otherwise, it should be placed within `Test/UI` sub-directory of your plugin.
-
-All test files should have \_spec.js file name suffixes (for example, `ActionsDataTable_spec.js`).
-
-Tests should be written using [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style, for example:
-
-```javascript
-describe("TheControlImTesting", function () {
-    // ...
-});
-```
-
-Since screenshots can take a while to capture, you will want to override mocha's default timeout like this:
+All test files should have \_spec.js file name suffixes (for example, `ActionsDataTable_spec.js`). Since screenshots can take a while to capture, you will want to override mocha's default timeout like this:
 
 ```javascript
 describe("TheControlImTesting", function () {

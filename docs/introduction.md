@@ -109,7 +109,7 @@ The **archiving logic** can be found in the class [Piwik_ArchiveProcessing](http
 *   **day archiving** is [Piwik\_ArchiveProcessing\_Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessing/Day.php)
 *   **period archiving** is [Piwik\_ArchiveProcessing\_Period](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessing/Period.php)
 
-It is important to note that most of the real archiving processing is actually done within plugins that hook on special events (see such hooks in
+It is important to note that most of the real archiving processing is actually done within plugins that hook on special [events](/guides/events) (see such hooks in
 [ArchiveProcessing_Day](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessing/Day.php) search for the call `Piwik::postEvent()`).
 
 Loading an archive (and launching the archive processing, if necessary) is done via [Piwik_Archive](https://github.com/piwik/piwik/blob/master/core/Archive.php).

@@ -1,7 +1,7 @@
 ---
 category: Integrate
 ---
-# The Javascript Tracking Client
+# JavaScript Tracking Client
 
 You can use the Javascript tracking client to track any application that supports Javascript: for example websites!
 

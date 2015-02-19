@@ -32,14 +32,21 @@ class CoreDevelopCategory extends Category
             new EmptySubCategory('Web Interface', [
                 new Guide('controllers'),
                 new Guide('views'),
+                new Guide('javascript-extended'),
+                new Guide('themable-plugins'),
             ]),
             new EmptySubCategory('Reporting API', [
                 new Guide('apis'),
                 new Guide('piwiks-reporting-api'),
             ]),
             new Guide('data-model'),
-            new Guide('themable-plugins'),
-            new Guide('tests-travis-extended'),
+            new EmptySubCategory('Tests', [
+                new Guide('tests-system'),
+                new Guide('tests-travis-extended'),
+            ]),
+            new EmptySubCategory('Utils', [
+                new Guide('piwiks-ini-configuration'),
+            ]),
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),

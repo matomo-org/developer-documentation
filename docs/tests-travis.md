@@ -48,18 +48,6 @@ Below is the list of all supported environment variables:
 
     By default, one build will run the PHP tests against the minimum required Piwik version.
 
-  * **TEST\_AGAINST\_PIWIK\_BRANCH**
-
-    This variable can be set to a branch, tag or commit hash in order to test your plugin against it.
-
-    This variable should not be set as a global environment variable, instead it should be added as an entry in your .travis.yml file's `matrix:` section, eg:
-
-    ```
-    env:
-      matrix:
-        - TEST_SUITE=PluginTests MYSQL_ADAPTER=PDO_MYSQL TEST_AGAINST_CORE=2.10.0
-    ```
-
   * **DEPENDENT\_PLUGINS**
 
     This variable should be set to a space separated list of git repository slugs. Before running tests on travis, these repositories will be cloned. If your plugin depends on other plugins, you can use this variable to make sure your tests pass and/or test as much functionality as possible on travis.
