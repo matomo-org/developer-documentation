@@ -10,15 +10,17 @@ namespace helpers\Content\Category;
 
 use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
-use helpers\Content\InternalLink;
-use helpers\Content\RemoteLink;
-use helpers\Content\SubCategory;
 
 class DevelopCategory extends Category
 {
     public function getName()
     {
         return 'Develop';
+    }
+
+    public function getMenuTitle()
+    {
+        return 'Plugin Development';
     }
 
     public function getItems()
@@ -52,7 +54,7 @@ class DevelopCategory extends Category
                 new Guide('logging'),
             ]),
             new Guide('tests'),
-            new InternalLink('Core development', '/core'),
+            new DevelopInDepthCategory(),
         ];
     }
 

@@ -12,7 +12,6 @@ use helpers\Content\ApiReferenceGuide;
 use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
-use helpers\Content\SubCategory;
 
 class ApiReferenceCategory extends Category
 {
@@ -40,7 +39,7 @@ class ApiReferenceCategory extends Category
                 new ApiReferenceGuide('reporting-api-metadata'),
                 new ApiReferenceGuide('reporting-api-segmentation')
             ]),
-            new EmptySubCategory('PHP Documentation', [
+            new EmptySubCategory('PHP Plugins API', [
                 new PhpDoc('Classes', 'classes'),
                 new PhpDoc('Hooks', 'events'),
                 new PhpDoc('Index', 'index'),

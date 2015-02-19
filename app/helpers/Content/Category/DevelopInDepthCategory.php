@@ -10,20 +10,19 @@ namespace helpers\Content\Category;
 
 use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
-use helpers\Content\InternalLink;
 use helpers\Content\RemoteLink;
 
-class CoreDevelopCategory extends Category
+class DevelopInDepthCategory extends Category
 {
     public function getName()
     {
-        return 'Core Development';
+        return 'Piwik In Depth';
     }
 
     public function getItems()
     {
         return [
-            new Guide('core-develop-introduction'),
+            new Guide('piwik-in-depth-introduction'),
             new EmptySubCategory('Understanding Piwik', [
                 new Guide('how-piwik-works'),
                 new Guide('http-request-handling'),
@@ -35,6 +34,9 @@ class CoreDevelopCategory extends Category
                 new Guide('javascript-extended'),
                 new Guide('themable-plugins'),
             ]),
+            new EmptySubCategory('Utils', [
+                new Guide('piwiks-ini-configuration'),
+            ]),
             new EmptySubCategory('Reporting API', [
                 new Guide('apis'),
                 new Guide('piwiks-reporting-api'),
@@ -44,25 +46,22 @@ class CoreDevelopCategory extends Category
                 new Guide('tests-system'),
                 new Guide('tests-travis-extended'),
             ]),
-            new EmptySubCategory('Utils', [
-                new Guide('piwiks-ini-configuration'),
-            ]),
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),
                 new RemoteLink('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
             ]),
-            new InternalLink('Plugin development', '/develop'),
+            new DevelopCategory(),
         ];
     }
 
     public function getUrl()
     {
-        return '/core';
+        return '/piwik-in-depth';
     }
 
     public function getIntroGuide()
     {
-        return new Guide('core-develop-introduction');
+        return new Guide('piwik-in-depth-introduction');
     }
 }

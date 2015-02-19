@@ -1,10 +1,10 @@
 ---
-category: CoreDevelop
+category: DevelopInDepth
 title: Introduction
 ---
-# Core Development
+# Piwik In Depth
 
-Welcome to the *Core Development* section of the Piwik Developer Zone. 
+Welcome to the *Piwik In Depth* section of the Piwik Developer Zone. 
 If you are interested in contributing to the Piwik core or if you want to get more insight into Piwik, you are at the right place!
 
 This section contains guides that will help you to:
