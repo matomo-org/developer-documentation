@@ -1,5 +1,5 @@
 ---
-category: CoreDevelop
+category: DevelopInDepth
 ---
 # Reporting HTTP API
 

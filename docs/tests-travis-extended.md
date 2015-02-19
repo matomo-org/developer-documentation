@@ -1,5 +1,5 @@
 ---
-category: CoreDevelop
+category: DevelopInDepth
 previous: tests-ui
 ---
 # Travis CI: Extended
