@@ -1010,7 +1010,7 @@ Callback Signature:
 
 ### Provider.getCleanHostname
 
-*Defined in [Piwik/Plugins/Provider/Provider](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php) in line [115](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L115)*
+*Defined in [Piwik/Plugins/Provider/Provider](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php) in line [114](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L114)*
 
 Triggered when prettifying a hostname string. This event can be used to customize the way a hostname is displayed in the
 Providers report.
