@@ -3,20 +3,11 @@ category: Develop
 ---
 # JavaScript and CSS
 
-## About this guide
+Read this guide if you'd like to know
 
-This guide describes how plugins should create JavaScript and describes all of the JavaScript classes provided by Piwik for use by plugins.
-
-Read this guide if
-
-* you'd like to know **how to work with Piwik Core's JavaScript code**
-* you'd like to know **how to add popovers to Piwik's UI**
-
-This guide assumes that you:
-
-* know about JavaScript and [jQuery](http://jquery.com/),
-* know about CSS and [LESS](http://lesscss.org/),
-* and that you have generated a plugin (if not, read our [Setting up Piwik](/guides/getting-started-part-1) guide).
+* **how to load JavaScript and CSS files in the Piwik UI**
+* **how plugins should create JavaScript files**
+* **how to work with Piwik Core's JavaScript code**
 
 ## JavaScript libraries
 

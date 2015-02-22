@@ -20,20 +20,10 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 - plugin developers + otrance
 -->
 
-## About this guide
+Read this guide if you'd like to know
 
-**Read this guide if**
-
-* you'd like to know **how to make your plugin available in other languages**
-* you'd like to know **how to make your contribution to Piwik Core available in other languages**
-
-**Guide assumptions**
-
-This guide assumes that you:
-
-* can code in PHP, JavaScript or can create Twig templates,
-* know what [internationalization](http://en.wikipedia.org/wiki/Internationalization_and_localization) is,
-* and that you have generated a plugin (if not, read our [Setting up Piwik](/guides/getting-started-part-1) guide).
+* **how to make your plugin available in other languages**
+* **how to make your contribution to Piwik Core available in other languages**
 
 ## The Basics
 
