@@ -29,6 +29,7 @@ class DevelopInDepthCategory extends Category
                 new Guide('piwiks-extensibility-points'),
             ]),
             new EmptySubCategory('Web Interface', [
+                new Guide('custom-reports-extended'),
                 new Guide('controllers'),
                 new Guide('views'),
                 new Guide('javascript-extended'),

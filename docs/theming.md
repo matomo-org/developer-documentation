@@ -1,6 +1,6 @@
 ---
 category: Develop
-title: Theming
+title: Themes
 ---
 # Writing a theme
 
