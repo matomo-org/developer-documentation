@@ -64,7 +64,7 @@ Making a widget is also very easy. Just define a property named `widgetTitle` an
 $this->widgetTitle = 'Real-time Reports';
 ```
 
-## Adding a API method
+## Adding an API method
 
 Reports and metrics are served by API class methods.
 
