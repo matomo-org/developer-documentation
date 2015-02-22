@@ -3,7 +3,7 @@ category: Develop
 ---
 # Commands
 
-As explained in the [*How Piwik Works* guide](http://developer.piwik.org/guides/how-piwik-works#interfaces), Piwik can be used through several interfaces, the command line being one of them.
+Piwik can be used through several interfaces, the command line being one of them.
 
 The CLI console lets user run **commands** defined by plugins. Those commands can be used to perform maintenance, to monitor the application, to ease development…
 
