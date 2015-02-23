@@ -62,7 +62,13 @@ In an API method you can return any boolean, number, string or array value. A re
 
 Did you know? You can choose the response format of your API request by appending a parameter <code>&amp;format=JSON|XML|CSV|...</code> to the URL. Check out the [Reporting API Reference](/api-reference/reporting-api) for more information.
 
-<h2>Best practices</h2>
+<div markdown="1" class="alert alert-warning">
+**DataTable vs Array**
+
+You might be wondering why not simply returning the array directly in the `getExampleReport` example? By wrapping it with a DataTable you will be able to use many features like `filter_offset`, `filter_limit`, `filter_sort_column`, `showColumns` and many more.
+</div>
+
+## Best practices
 
 ### Check user permissions
 
