@@ -558,7 +558,7 @@ Index
 - [`hasSuperUserAccess()`](Piwik/AuthResult.md#hassuperuseraccess) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`hasColumn()`](Piwik/DataTable/Row.md#hascolumn) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`hasDatabaseObject()`](Piwik/Db.md#hasdatabaseobject) &mdash; *Method in class* [`Db`](Piwik/Db.md)
-- [`Http`](Piwik/Http.md) &mdash; *Class in namespace* `Piwik`- [`hasNoClear()`](Piwik/Notification.md#hasnoclear) &mdash; *Method in class* [`Notification`](Piwik/Notification.md)
+- [`Http`](Piwik/Http.md) &mdash; *Class in namespace* `Piwik`- [`Html`](Piwik/Metrics/Formatter/Html.md) &mdash; *Class in namespace* [`Piwik\Metrics\Formatter`](Piwik/Metrics/Formatter)- [`hasNoClear()`](Piwik/Notification.md#hasnoclear) &mdash; *Method in class* [`Notification`](Piwik/Notification.md)
 - [`hasUserSuperUserAccessOrIsTheUser()`](Piwik/Piwik.md#hasusersuperuseraccessoristheuser) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`hasTheUserSuperUserAccess()`](Piwik/Piwik.md#hastheusersuperuseraccess) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`hasUserSuperUserAccess()`](Piwik/Piwik.md#hasusersuperuseraccess) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
@@ -679,7 +679,7 @@ Index
 - [`N2P()`](Piwik/IP.md#n2p) &mdash; *Method in class* [`IP`](Piwik/IP.md)
 - [`NoAccessException`](Piwik/NoAccessException.md) &mdash; *Class in namespace* `Piwik`- [`Nonce`](Piwik/Nonce.md) &mdash; *Class in namespace* `Piwik`- [`Notification`](Piwik/Notification.md) &mdash; *Class in namespace* `Piwik`- [`notify()`](Piwik/Notification/Manager.md#notify) &mdash; *Method in class* [`Manager`](Piwik/Notification/Manager.md)
 - [`$name`](Piwik/Plugin/Report.md#$name) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
-
+- [`Numeric`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter/Numeric.md) &mdash; *Class in namespace* `Piwik\Plugins\CoreVisualizations\Metrics\Formatter`
 ## O
 
 - [`offsetExists()`](Piwik/DataTable.md#offsetexists) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)

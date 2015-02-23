@@ -65,6 +65,7 @@
 ## Menu\MenuUser
 ## Metrics
 ## Metrics\Formatter
+## Metrics\Formatter\Html
 ## NoAccessException
 ## Nonce
 ## Notification
@@ -93,6 +94,7 @@
 ## Plugin\Widgets
 ## Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite
 ## Plugins\CoreHome\Columns\Metrics\EvolutionMetric
+## Plugins\CoreVisualizations\Metrics\Formatter\Numeric
 ## Plugins\Installation\SystemCheck
 ## Plugins\Login\SessionInitializer
 ## Plugins\UsersManager\UserPreferences

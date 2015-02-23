@@ -69,6 +69,7 @@ This is a complete list of available classes:
 - [`Menu\MenuUser`](Piwik/Menu/MenuUser.md) &mdash; Contains menu entries for the User menu (the menu at the very top of the page).
 - [`Metrics`](Piwik/Metrics.md) &mdash; This class contains metadata regarding core metrics and contains several related helper functions.
 - [`Metrics\Formatter`](Piwik/Metrics/Formatter.md) &mdash; Contains methods to format metric values.
+- [`Metrics\Formatter\Html`](Piwik/Metrics/Formatter/Html.md) &mdash; Metrics formatter that formats for HTML output.
 - [`NoAccessException`](Piwik/NoAccessException.md) &mdash; Exception thrown when a user doesn't have sufficient access to a resource.
 - [`Nonce`](Piwik/Nonce.md) &mdash; Nonce class.
 - [`Notification`](Piwik/Notification.md) &mdash; Describes a UI notification.
@@ -97,6 +98,7 @@ This is a complete list of available classes:
 - [`Plugin\Widgets`](Piwik/Plugin/Widgets.md) &mdash; Base class of all plugin widget providers.
 - [`Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md) &mdash; The average number of seconds spent on the site per visit.
 - [`Plugins\CoreHome\Columns\Metrics\EvolutionMetric`](Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md) &mdash; Calculates evolution values for any other metric.
+- [`Plugins\CoreVisualizations\Metrics\Formatter\Numeric`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter/Numeric.md) &mdash; A metrics formatter that prettifies metric values without returning string values.
 - [`Plugins\Installation\SystemCheck`](Piwik/Plugins/Installation/SystemCheck.md)
 - [`Plugins\Login\SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; Initializes authenticated sessions using an Auth implementation.
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
