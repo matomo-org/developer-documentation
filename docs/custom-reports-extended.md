@@ -13,16 +13,16 @@ Our new report will use realtime visit data. To get it, our API method will use 
 ```php
 public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
 {
-    $data = \Piwik\Plugins\Live\API::getInstance()->getLastVisitsDetails(
-        $idSite,
-        $period,
-        $date,
-        $segment,
-        $numLastVisitorsToFetch = 100,
-        $minTimestamp = false,
-        $flat = false,
-        $doNotFetchActions = true
-    );
+    $data = \Piwik\API\Request::processRequest('Live.getLastVisitsDetails', array(
+        'idSite' => $idSite,
+        'period' => $period,
+        'date' => $date,
+        'segment' => $segment,
+        'numLastVisitorsToFetch' => 100,
+        'minTimestamp' => false,
+        'flat' => false,
+        'doNotFetchActions' => true
+    ));
     $data->applyQueuedFilters();
 
     // TODO
@@ -56,16 +56,16 @@ Change the method to the following:
 ```php
 public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
 {
-    $data = \Piwik\Plugins\Live\API::getInstance()->getLastVisitsDetails(
-        $idSite,
-        $period,
-        $date,
-        $segment,
-        $numLastVisitorsToFetch = 100,
-        $minTimestamp = false,
-        $flat = false,
-        $doNotFetchActions = true
-    );
+    $data = \Piwik\API\Request::processRequest('Live.getLastVisitsDetails', array(
+        'idSite' => $idSite,
+        'period' => $period,
+        'date' => $date,
+        'segment' => $segment,
+        'numLastVisitorsToFetch' => 100,
+        'minTimestamp' => false,
+        'flat' => false,
+        'doNotFetchActions' => true
+    ));
     $data->applyQueuedFilters();
 
     // we could create a new instance by using new DataTable(),
