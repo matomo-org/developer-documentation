@@ -57,6 +57,7 @@ Before we start extending Piwik, let's make sure you have the tools needed. You 
   _Note: we have published our [customized PSR coding style XML file](https://github.com/piwik/piwik/tree/master/misc/others/phpstorm-codestyles) for PhpStorm that you can use._
 
 - **A webserver,** such as [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/). You can also use [PHP's built-in webserver](http://php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 5.4 or higher installed.
+- **A MySQL database** 
 - **[git](http://git-scm.com/)** so you can work with the latest Piwik source code.
 - **[Composer](http://getcomposer.org/)** so you can install the PHP libraries needed by Piwik.
 - **A browser,** such as [Firefox](http://www.mozilla.org/en-US/firefox/new/) or [Chrome](http://www.google.com/chrome). Ok, you've probably got this.
