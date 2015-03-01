@@ -56,7 +56,7 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
 *   `getVisitorId()` - returns the 16 characters ID for the visitor
 *   `getVisitorInfo()` - returns the visitor cookie contents in an array
 *   `getAttributionInfo()` - returns the visitor attribution array (Referer information and / or Campaign name &amp; keyword).
-    Attribution information is by Piwik to credit the correct referrer ([first or last referrer](http://piwik.org/faq/general/#faq_106)) to any goal conversion.
+    Attribution information is used by Piwik to credit the correct referrer ([first or last referrer](http://piwik.org/faq/general/#faq_106)) used when a user triggers a goal conversion.
 
     You can also use any of the following functions to get specific attributes of data:
 
