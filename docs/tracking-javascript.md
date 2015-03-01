@@ -56,9 +56,6 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
 *   `getVisitorId()` - returns the 16 characters ID for the visitor
 *   `getVisitorInfo()` - returns the visitor cookie contents in an array
 *   `getAttributionInfo()` - returns the visitor attribution array (Referer information and / or Campaign name &amp; keyword).
-*   `getUserId()` - returns the User ID string if it was set.
-*   `setUserId( userId )` -  Sets a [User ID](http://piwik.org/docs/user-id/) to this user (such as an email address or a username).
-
     Attribution information is by Piwik to credit the correct referrer ([first or last referrer](http://piwik.org/faq/general/#faq_106)) to any goal conversion.
 
     You can also use any of the following functions to get specific attributes of data:
@@ -68,6 +65,8 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
     *   `piwikTracker.getAttributionReferrerTimestamp()`
     *   `piwikTracker.getAttributionReferrerUrl()`
 
+*   `getUserId()` - returns the User ID string if it was set.
+*   `setUserId( userId )` -  Sets a [User ID](http://piwik.org/docs/user-id/) to this user (such as an email address or a username).
 *   `setCustomVariable (index, name, value, scope)` - Set a custom variable.
 *   `deleteCustomVariable (index, scope )` - Delete a custom variable.
 *   `getCustomVariable (index, scope )` - Retrieve a custom variable.
