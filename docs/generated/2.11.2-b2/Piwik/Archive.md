@@ -130,8 +130,6 @@ If you want to create an Archive instance with an array of Period instances, use
        Segment definition or false if no segment should be used. [Segment](/api-reference/Piwik/Segment)
     - `$_restrictSitesToLogin` (`bool`|`Piwik\false`|`string`) &mdash;
        Used only when running as a scheduled task.
-    - `$skipAggregationOfSubTables` (`bool`) &mdash;
-       Whether the archive, when it is processed, should also aggregate all sub-tables
 - It returns a [`Archive`](../Piwik/Archive.md) value.
 
 <a name="factory" id="factory"></a>
@@ -159,8 +157,6 @@ use [build()](/api-reference/Piwik/Archive#build).
        Whether `'all'` sites are being queried or not. If true, then the result of querying functions will be indexed by site, regardless of whether `count($idSites) == 1`.
     - `$isMultipleDate` (`bool`) &mdash;
        Whether multiple dates are being queried or not. If true, then the result of querying functions will be indexed by period, regardless of whether `count($periods) == 1`.
-    - `$skipAggregationOfSubTables` (`bool`) &mdash;
-       Whether the archive should skip aggregation of all sub-tables
 - It returns a [`Archive`](../Piwik/Archive.md) value.
 
 <a name="getnumeric" id="getnumeric"></a>
@@ -341,8 +337,6 @@ API methods can use this method to reduce code redundancy.
        If true, loads all subtables. See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
     - `$idSubtable` (`int`|`null`) &mdash;
        See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
-    - `$skipAggregationOfSubTables` (`bool`) &mdash;
-       Whether or not we should skip the aggregation of all sub-tables and only aggregate parent DataTable.
     - `$depth` (`int`|`null`) &mdash;
        See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
 
