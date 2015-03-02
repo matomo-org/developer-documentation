@@ -99,6 +99,12 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
     {
         $ignoreTags = ($reflection->getTags('ignore'));
 
+        if (!empty($ignoreTags)) {
+            return true;
+        }
+        
+        $ignoreTags = ($reflection->getTags('internal'));
+        
         return !empty($ignoreTags);
     }
 
