@@ -250,8 +250,6 @@ metadata can be used to specify a different type of operation.
 -  It accepts the following parameter(s):
     - `$tableToSum` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
       
-    - `$doAggregateSubTables` (`bool`) &mdash;
-      
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -569,12 +567,10 @@ This change is applied recursively to all subtables.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$oldName`
-      
-    - `$newName`
-      
-    - `$doRenameColumnsOfSubTables`
-      
+    - `$oldName` (`string`) &mdash;
+       Old column name.
+    - `$newName` (`string`) &mdash;
+       New column name.
 - It does not return anything.
 
 <a name="deletecolumns" id="deletecolumns"></a>
