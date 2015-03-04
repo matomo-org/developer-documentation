@@ -527,7 +527,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [958](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L958)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [954](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L954)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
