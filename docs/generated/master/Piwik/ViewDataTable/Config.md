@@ -798,6 +798,8 @@ The class defines the following methods:
 - [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks display properties as client side properties.
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable.
 - [`getProperties()`](#getproperties) &mdash; Returns array of all property values in this config object.
+- [`getPriorityFilters()`](#getpriorityfilters)
+- [`getPresentationFilters()`](#getpresentationfilters)
 - [`addRelatedReport()`](#addrelatedreport) &mdash; Adds a related report to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 - [`addRelatedReports()`](#addrelatedreports) &mdash; Adds several related reports to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 - [`addTranslation()`](#addtranslation) &mdash; Associates internationalized text with a metric.
@@ -859,6 +861,22 @@ by name.
 
 - *Returns:*  `array` &mdash;
     eg, `array('show_limit_control' => 0, 'show_goals' => 1, ...)`
+
+<a name="getpriorityfilters" id="getpriorityfilters"></a>
+<a name="getPriorityFilters" id="getPriorityFilters"></a>
+### `getPriorityFilters()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="getpresentationfilters" id="getpresentationfilters"></a>
+<a name="getPresentationFilters" id="getPresentationFilters"></a>
+### `getPresentationFilters()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="addrelatedreport" id="addrelatedreport"></a>
 <a name="addRelatedReport" id="addRelatedReport"></a>

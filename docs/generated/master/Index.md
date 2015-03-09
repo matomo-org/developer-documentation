@@ -69,8 +69,6 @@ Index
 - [`$apiMethodToRequestDataTable`](Piwik/ViewDataTable/RequestConfig.md#$apimethodtorequestdatatable) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`addPropertiesThatShouldBeAvailableClientSide()`](Piwik/ViewDataTable/RequestConfig.md#addpropertiesthatshouldbeavailableclientside) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](Piwik/ViewDataTable/RequestConfig.md#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`areQueuedFiltersDisabled()`](Piwik/ViewDataTable/RequestConfig.md#arequeuedfiltersdisabled) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`areGenericFiltersDisabled()`](Piwik/ViewDataTable/RequestConfig.md#aregenericfiltersdisabled) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`add()`](Piwik/WidgetsList.md#add) &mdash; *Method in class* [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## B
@@ -548,6 +546,8 @@ Index
 - [`getTemplateFile()`](Piwik/View.md#gettemplatefile) &mdash; *Method in class* [`View`](Piwik/View.md)
 - [`getTemplateVars()`](Piwik/View.md#gettemplatevars) &mdash; *Method in class* [`View`](Piwik/View.md)
 - [`getProperties()`](Piwik/ViewDataTable/Config.md#getproperties) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`getPriorityFilters()`](Piwik/ViewDataTable/Config.md#getpriorityfilters) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`getPresentationFilters()`](Piwik/ViewDataTable/Config.md#getpresentationfilters) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`getProperties()`](Piwik/ViewDataTable/RequestConfig.md#getproperties) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiModuleToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimoduletorequest) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiMethodToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimethodtorequest) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
@@ -894,7 +894,6 @@ Index
 - [`$show_pagination_control`](Piwik/ViewDataTable/Config.md#$show_pagination_control) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_offset_information`](Piwik/ViewDataTable/Config.md#$show_offset_information) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setDefaultSort()`](Piwik/ViewDataTable/RequestConfig.md#setdefaultsort) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`shouldFormatMetrics()`](Piwik/ViewDataTable/RequestConfig.md#shouldformatmetrics) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## T
 
