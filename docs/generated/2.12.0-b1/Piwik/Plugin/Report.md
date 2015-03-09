@@ -32,6 +32,7 @@ This class defines the following properties:
 - [`$parameters`](#$parameters) &mdash; Some reports may require additonal URL parameters that need to be sent when a report is requested.
 - [`$actionToLoadSubTables`](#$actiontoloadsubtables) &mdash; The name of the API action to load a subtable if supported.
 - [`$order`](#$order) &mdash; The order of the report.
+- [`$recursiveLabelSeparator`](#$recursivelabelseparator) &mdash; Separator for building recursive labels (or paths)
 - [`$orderOfReports`](#$orderofreports)
 
 <a name="$name" id="$name"></a>
@@ -196,6 +197,16 @@ the menu and the mobile app.
 
 - It is a `int` value.
 
+<a name="$recursivelabelseparator" id="$recursivelabelseparator"></a>
+<a name="recursiveLabelSeparator" id="recursiveLabelSeparator"></a>
+### `$recursiveLabelSeparator`
+
+Separator for building recursive labels (or paths)
+
+#### Signature
+
+- It is a `string` value.
+
 <a name="$orderofreports" id="$orderofreports"></a>
 <a name="orderOfReports" id="orderOfReports"></a>
 ### `$orderOfReports`
@@ -218,6 +229,7 @@ The class defines the following methods:
 - [`render()`](#render) &mdash; Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
 - [`configureWidget()`](#configurewidget) &mdash; By default a widget will be configured for this report if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
 - [`configureReportingMenu()`](#configurereportingmenu) &mdash; By default a menu item will be added to the reporting menu if a [$menuTitle](/api-reference/Piwik/Plugin/Report#$menutitle) is set.
+- [`getRecursiveLabelSeparator()`](#getrecursivelabelseparator)
 - [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
 - [`getMetricsRequiredForReport()`](#getmetricsrequiredforreport) &mdash; Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
 - [`getProcessedMetrics()`](#getprocessedmetrics) &mdash; Returns an array of supported processed metrics and their corresponding translations.
@@ -376,6 +388,14 @@ in case you need to add additional url properties beside module and action which
 -  It accepts the following parameter(s):
     - `$menu` ([`MenuReporting`](../../Piwik/Menu/MenuReporting.md)) &mdash;
       
+- It does not return anything.
+
+<a name="getrecursivelabelseparator" id="getrecursivelabelseparator"></a>
+<a name="getRecursiveLabelSeparator" id="getRecursiveLabelSeparator"></a>
+### `getRecursiveLabelSeparator()`
+
+#### Signature
+
 - It does not return anything.
 
 <a name="getmetrics" id="getmetrics"></a>

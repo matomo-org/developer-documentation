@@ -365,11 +365,8 @@ The class defines the following methods:
 - [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks request properties as client side properties.
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable.
 - [`setDefaultSort()`](#setdefaultsort)
-- [`areQueuedFiltersDisabled()`](#arequeuedfiltersdisabled) &mdash; Returns `true` if queued filters have been disabled, `false` if otherwise.
-- [`areGenericFiltersDisabled()`](#aregenericfiltersdisabled) &mdash; Returns `true` if generic filters have been disabled, `false` if otherwise.
 - [`getApiModuleToRequest()`](#getapimoduletorequest)
 - [`getApiMethodToRequest()`](#getapimethodtorequest)
-- [`shouldFormatMetrics()`](#shouldformatmetrics)
 
 <a name="getproperties" id="getproperties"></a>
 <a name="getProperties" id="getProperties"></a>
@@ -426,26 +423,6 @@ learn more.
       
 - It does not return anything.
 
-<a name="arequeuedfiltersdisabled" id="arequeuedfiltersdisabled"></a>
-<a name="areQueuedFiltersDisabled" id="areQueuedFiltersDisabled"></a>
-### `areQueuedFiltersDisabled()`
-
-Returns `true` if queued filters have been disabled, `false` if otherwise.
-
-#### Signature
-
-- It returns a `bool` value.
-
-<a name="aregenericfiltersdisabled" id="aregenericfiltersdisabled"></a>
-<a name="areGenericFiltersDisabled" id="areGenericFiltersDisabled"></a>
-### `areGenericFiltersDisabled()`
-
-Returns `true` if generic filters have been disabled, `false` if otherwise.
-
-#### Signature
-
-- It returns a `bool` value.
-
 <a name="getapimoduletorequest" id="getapimoduletorequest"></a>
 <a name="getApiModuleToRequest" id="getApiModuleToRequest"></a>
 ### `getApiModuleToRequest()`
@@ -457,14 +434,6 @@ Returns `true` if generic filters have been disabled, `false` if otherwise.
 <a name="getapimethodtorequest" id="getapimethodtorequest"></a>
 <a name="getApiMethodToRequest" id="getApiMethodToRequest"></a>
 ### `getApiMethodToRequest()`
-
-#### Signature
-
-- It does not return anything.
-
-<a name="shouldformatmetrics" id="shouldformatmetrics"></a>
-<a name="shouldFormatMetrics" id="shouldFormatMetrics"></a>
-### `shouldFormatMetrics()`
 
 #### Signature
 

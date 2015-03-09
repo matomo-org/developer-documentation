@@ -69,8 +69,6 @@ Index
 - [`$apiMethodToRequestDataTable`](Piwik/ViewDataTable/RequestConfig.md#$apimethodtorequestdatatable) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`addPropertiesThatShouldBeAvailableClientSide()`](Piwik/ViewDataTable/RequestConfig.md#addpropertiesthatshouldbeavailableclientside) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](Piwik/ViewDataTable/RequestConfig.md#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`areQueuedFiltersDisabled()`](Piwik/ViewDataTable/RequestConfig.md#arequeuedfiltersdisabled) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`areGenericFiltersDisabled()`](Piwik/ViewDataTable/RequestConfig.md#aregenericfiltersdisabled) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`add()`](Piwik/WidgetsList.md#add) &mdash; *Method in class* [`WidgetsList`](Piwik/WidgetsList.md)
 
 ## B
@@ -86,6 +84,7 @@ Index
 
 ## C
 
+- [`createDataTableFromArchive()`](Piwik/Archive.md#createdatatablefromarchive) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`$columnName`](Piwik/Columns/Dimension.md#$columnname) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`$columnType`](Piwik/Columns/Dimension.md#$columntype) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`Common`](Piwik/Common.md) &mdash; *Class in namespace* `Piwik`- [`Config`](Piwik/Config.md) &mdash; *Class in namespace* `Piwik`- [`Console`](Piwik/Console.md) &mdash; *Class in namespace* `Piwik`- [`clearQueuedFilters()`](Piwik/DataTable.md#clearqueuedfilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -199,6 +198,7 @@ Index
 - [`factory()`](Piwik/Columns/Dimension.md#factory) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`forceSave()`](Piwik/Config.md#forcesave) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`filter()`](Piwik/DataTable.md#filter) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`filterSubtables()`](Piwik/DataTable.md#filtersubtables) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`fromSerializedArray()`](Piwik/DataTable.md#fromserializedarray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`filter()`](Piwik/DataTable/BaseFilter.md#filter) &mdash; *Method in class* [`BaseFilter`](Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](Piwik/DataTable/BaseFilter.md#filtersubtable) &mdash; *Method in class* [`BaseFilter`](Piwik/DataTable/BaseFilter.md)
@@ -227,6 +227,7 @@ Index
 - [`filter()`](Piwik/DataTable/Filter/Sort.md#filter) &mdash; *Method in class* [`Sort`](Piwik/DataTable/Filter/Sort.md)
 - [`filter()`](Piwik/DataTable/Filter/Truncate.md#filter) &mdash; *Method in class* [`Truncate`](Piwik/DataTable/Filter/Truncate.md)
 - [`filter()`](Piwik/DataTable/Map.md#filter) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
+- [`filterSubtables()`](Piwik/DataTable/Map.md#filtersubtables) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`factory()`](Piwik/Date.md#factory) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`fetchAll()`](Piwik/Db.md#fetchall) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`fetchRow()`](Piwik/Db.md#fetchrow) &mdash; *Method in class* [`Db`](Piwik/Db.md)
@@ -439,6 +440,7 @@ Index
 - [`getDependentMetrics()`](Piwik/Plugin/ProcessedMetric.md#getdependentmetrics) &mdash; *Method in class* [`ProcessedMetric`](Piwik/Plugin/ProcessedMetric.md)
 - [`getTemporaryMetrics()`](Piwik/Plugin/ProcessedMetric.md#gettemporarymetrics) &mdash; *Method in class* [`ProcessedMetric`](Piwik/Plugin/ProcessedMetric.md)
 - [`getDefaultTypeViewDataTable()`](Piwik/Plugin/Report.md#getdefaulttypeviewdatatable) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
+- [`getRecursiveLabelSeparator()`](Piwik/Plugin/Report.md#getrecursivelabelseparator) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getMetrics()`](Piwik/Plugin/Report.md#getmetrics) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getMetricsRequiredForReport()`](Piwik/Plugin/Report.md#getmetricsrequiredforreport) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getProcessedMetrics()`](Piwik/Plugin/Report.md#getprocessedmetrics) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
@@ -544,6 +546,8 @@ Index
 - [`getTemplateFile()`](Piwik/View.md#gettemplatefile) &mdash; *Method in class* [`View`](Piwik/View.md)
 - [`getTemplateVars()`](Piwik/View.md#gettemplatevars) &mdash; *Method in class* [`View`](Piwik/View.md)
 - [`getProperties()`](Piwik/ViewDataTable/Config.md#getproperties) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`getPriorityFilters()`](Piwik/ViewDataTable/Config.md#getpriorityfilters) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`getPresentationFilters()`](Piwik/ViewDataTable/Config.md#getpresentationfilters) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`getProperties()`](Piwik/ViewDataTable/RequestConfig.md#getproperties) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiModuleToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimoduletorequest) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiMethodToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimethodtorequest) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
@@ -750,7 +754,8 @@ Index
 - [`renderTemplate()`](Piwik/Plugin/Controller.md#rendertemplate) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`renderReport()`](Piwik/Plugin/Controller.md#renderreport) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`redirectToIndex()`](Piwik/Plugin/Controller.md#redirecttoindex) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
-- [`Report`](Piwik/Plugin/Report.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`render()`](Piwik/Plugin/Report.md#render) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
+- [`Report`](Piwik/Plugin/Report.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`$recursiveLabelSeparator`](Piwik/Plugin/Report.md#$recursivelabelseparator) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
+- [`render()`](Piwik/Plugin/Report.md#render) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`removeAllPluginSettings()`](Piwik/Plugin/Settings.md#removeallpluginsettings) &mdash; *Method in class* [`Settings`](Piwik/Plugin/Settings.md)
 - [`$requestConfig`](Piwik/Plugin/ViewDataTable.md#$requestconfig) &mdash; *Property in class* [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`render()`](Piwik/Plugin/ViewDataTable.md#render) &mdash; *Method in class* [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
@@ -779,6 +784,7 @@ Index
 - [`setPassword()`](Piwik/Auth.md#setpassword) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`setPasswordHash()`](Piwik/Auth.md#setpasswordhash) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; *Method in class* [`Common`](Piwik/Common.md)
+- [`setRows()`](Piwik/DataTable.md#setrows) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`sort()`](Piwik/DataTable.md#sort) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](Piwik/DataTable.md#setmaximumdepthlevelallowedatleast) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`setMetadata()`](Piwik/DataTable.md#setmetadata) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -888,7 +894,6 @@ Index
 - [`$show_pagination_control`](Piwik/ViewDataTable/Config.md#$show_pagination_control) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_offset_information`](Piwik/ViewDataTable/Config.md#$show_offset_information) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setDefaultSort()`](Piwik/ViewDataTable/RequestConfig.md#setdefaultsort) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`shouldFormatMetrics()`](Piwik/ViewDataTable/RequestConfig.md#shouldformatmetrics) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## T
 
