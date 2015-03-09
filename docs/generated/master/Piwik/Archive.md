@@ -104,6 +104,7 @@ The class defines the following methods:
 - [`getDataTableExpanded()`](#getdatatableexpanded) &mdash; Queries and returns one report with all of its subtables loaded.
 - [`getParams()`](#getparams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 - [`getDataTableFromArchive()`](#getdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
+- [`createDataTableFromArchive()`](#createdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
 
 <a name="build" id="build"></a>
 <a name="build" id="build"></a>
@@ -344,4 +345,37 @@ API methods can use this method to reduce code redundancy.
     See [getDataTable()](/api-reference/Piwik/Archive#getdatatable) and [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded) for more information
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
+
+<a name="createdatatablefromarchive" id="createdatatablefromarchive"></a>
+<a name="createDataTableFromArchive" id="createDataTableFromArchive"></a>
+### `createDataTableFromArchive()`
+
+Helper function that creates an Archive instance and queries for report data using query parameter data.
+
+API methods can use this method to reduce code redundancy.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$recordName` (`string`) &mdash;
+       The name of the report to return.
+    - `$idSite` (`int`|`string`|`array`) &mdash;
+       @see [build()](/api-reference/Piwik/Archive#build)
+    - `$period` (`string`) &mdash;
+       @see [build()](/api-reference/Piwik/Archive#build)
+    - `$date` (`string`) &mdash;
+       @see [build()](/api-reference/Piwik/Archive#build)
+    - `$segment` (`string`) &mdash;
+       @see [build()](/api-reference/Piwik/Archive#build)
+    - `$expanded` (`bool`) &mdash;
+       If true, loads all subtables. See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
+    - `$flat` (`bool`) &mdash;
+       If true, loads all subtables and disabled all recursive filters.
+    - `$idSubtable` (`int`|`null`) &mdash;
+       See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
+    - `$depth` (`int`|`null`) &mdash;
+       See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
+
+- *Returns:*  [`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md) &mdash;
+    
 

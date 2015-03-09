@@ -40,11 +40,13 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`__destruct()`](#__destruct) &mdash; Destructor. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setRows()`](#setrows) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any). Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`filter()`](#filter) &mdash; Applies a filter to this datatable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`filterSubtables()`](#filtersubtables) &mdash; Applies a filter to all subtables but not to this datatable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`queueFilter()`](#queuefilter) &mdash; Adds a filter and a list of parameters to the list of queued filters. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Applies all filters that were previously queued to the table. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`addDataTable()`](#adddatatable) &mdash; Sums a DataTable to this one. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -122,6 +124,17 @@ Makes sure DataTable memory will be cleaned up.
 
 - It does not return anything.
 
+<a name="setrows" id="setrows"></a>
+<a name="setRows" id="setRows"></a>
+### `setRows()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$rows`
+      
+- It does not return anything.
+
 <a name="sort" id="sort"></a>
 <a name="sort" id="sort"></a>
 ### `sort()`
@@ -185,6 +198,21 @@ Applies a filter to this datatable.
 
 If [enableRecursiveFilters()](/api-reference/Piwik/DataTable/Simple#enablerecursivefilters) was called, the filter will be applied
 to all subtables as well.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+       Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.
+    - `$parameters` (`array`) &mdash;
+       Array of extra parameters to pass to the filter.
+- It does not return anything.
+
+<a name="filtersubtables" id="filtersubtables"></a>
+<a name="filterSubtables" id="filterSubtables"></a>
+### `filterSubtables()`
+
+Applies a filter to all subtables but not to this datatable.
 
 #### Signature
 

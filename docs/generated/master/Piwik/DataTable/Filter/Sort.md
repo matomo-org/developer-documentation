@@ -105,9 +105,9 @@ Sorting method used for sorting numbers
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$a` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+    - `$rowA`
       
-    - `$b` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+    - `$rowB`
       
 - It returns a `int` value.
 
@@ -120,9 +120,9 @@ Sorting method used for sorting values natural
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$a` (`mixed`) &mdash;
+    - `$rowA`
       
-    - `$b` (`mixed`) &mdash;
+    - `$rowB`
       
 - It returns a `int` value.
 
@@ -135,9 +135,9 @@ Sorting method used for sorting values
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$a` (`mixed`) &mdash;
+    - `$rowA`
       
-    - `$b` (`mixed`) &mdash;
+    - `$rowB`
       
 - It returns a `int` value.
 

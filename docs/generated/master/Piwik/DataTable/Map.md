@@ -21,6 +21,7 @@ The class defines the following methods:
 - [`queueFilter()`](#queuefilter) &mdash; Queue a filter to DataTable child of contained by this instance.
 - [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Apply the filters previously queued to each DataTable contained by this DataTable\Map.
 - [`filter()`](#filter) &mdash; Apply a filter to all tables contained by this instance.
+- [`filterSubtables()`](#filtersubtables) &mdash; Apply a filter to all subtables contained by this instance.
 - [`getDataTables()`](#getdatatables) &mdash; Returns the array of DataTables contained by this class.
 - [`getTable()`](#gettable) &mdash; Returns the table with the specific label.
 - [`getFirstRow()`](#getfirstrow) &mdash; Returns the first element in the Map's array.
@@ -111,6 +112,21 @@ Apply the filters previously queued to each DataTable contained by this DataTabl
 ### `filter()`
 
 Apply a filter to all tables contained by this instance.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+       Name of filter class or a Closure.
+    - `$parameters` (`array`) &mdash;
+       Parameters to pass to the filter.
+- It does not return anything.
+
+<a name="filtersubtables" id="filtersubtables"></a>
+<a name="filterSubtables" id="filterSubtables"></a>
+### `filterSubtables()`
+
+Apply a filter to all subtables contained by this instance.
 
 #### Signature
 

@@ -171,11 +171,13 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`__destruct()`](#__destruct) &mdash; Destructor.
+- [`setRows()`](#setrows)
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function.
 - [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any).
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting.
 - [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering.
 - [`filter()`](#filter) &mdash; Applies a filter to this datatable.
+- [`filterSubtables()`](#filtersubtables) &mdash; Applies a filter to all subtables but not to this datatable.
 - [`queueFilter()`](#queuefilter) &mdash; Adds a filter and a list of parameters to the list of queued filters.
 - [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Applies all filters that were previously queued to the table.
 - [`addDataTable()`](#adddatatable) &mdash; Sums a DataTable to this one.
@@ -253,6 +255,17 @@ Makes sure DataTable memory will be cleaned up.
 
 - It does not return anything.
 
+<a name="setrows" id="setrows"></a>
+<a name="setRows" id="setRows"></a>
+### `setRows()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$rows`
+      
+- It does not return anything.
+
 <a name="sort" id="sort"></a>
 <a name="sort" id="sort"></a>
 ### `sort()`
@@ -316,6 +329,21 @@ Applies a filter to this datatable.
 
 If [enableRecursiveFilters()](/api-reference/Piwik/DataTable#enablerecursivefilters) was called, the filter will be applied
 to all subtables as well.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+       Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.
+    - `$parameters` (`array`) &mdash;
+       Array of extra parameters to pass to the filter.
+- It does not return anything.
+
+<a name="filtersubtables" id="filtersubtables"></a>
+<a name="filterSubtables" id="filterSubtables"></a>
+### `filterSubtables()`
+
+Applies a filter to all subtables but not to this datatable.
 
 #### Signature
 
