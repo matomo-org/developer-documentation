@@ -872,7 +872,7 @@ Callback Signature:
 
 ### Menu.Top.addItems
 
-*Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [101](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L101)*
+*Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [70](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L70)*
 
 
 
