@@ -20,7 +20,6 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`factory()`](#factory)
 - [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods.
 - [`getDateStart()`](#getdatestart) &mdash; Returns the first day of the period.
 - [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period.
@@ -34,19 +33,6 @@ The abstract class defines the following methods:
 - [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns a short string description of this period that is localized with the currently used language.
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns a long string description of this period that is localized with the currently used language.
 - [`getRangeString()`](#getrangestring) &mdash; Returns the date range string comprising two dates
-
-<a name="factory" id="factory"></a>
-<a name="factory" id="factory"></a>
-### `factory()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$period` (`Piwik\$period`) &mdash;
-      
-    - `$date` (`Piwik\$date`) &mdash;
-      
-- It returns a [`Period`](../Piwik/Period.md) value.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>

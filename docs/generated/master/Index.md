@@ -236,7 +236,6 @@ Index
 - [`Filesystem`](Piwik/Filesystem.md) &mdash; *Class in namespace* `Piwik`- [`FrontController`](Piwik/FrontController.md) &mdash; *Class in namespace* `Piwik`- [`fetchRemoteFile()`](Piwik/Http.md#fetchremotefile) &mdash; *Method in class* [`Http`](Piwik/Http.md)
 - [`Formatter`](Piwik/Metrics/Formatter.md) &mdash; *Class in namespace* [`Piwik\Metrics`](Piwik/Metrics)- [`formatMetrics()`](Piwik/Metrics/Formatter.md#formatmetrics) &mdash; *Method in class* [`Formatter`](Piwik/Metrics/Formatter.md)
 - [`$flags`](Piwik/Notification.md#$flags) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
-- [`factory()`](Piwik/Period.md#factory) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`findComponent()`](Piwik/Plugin.md#findcomponent) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`findMultipleComponents()`](Piwik/Plugin.md#findmultiplecomponents) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`format()`](Piwik/Plugin/Metric.md#format) &mdash; *Method in class* [`Metric`](Piwik/Plugin/Metric.md)

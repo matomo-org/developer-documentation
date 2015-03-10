@@ -852,7 +852,7 @@ Callback Signature:
 
 ### Menu.Admin.addItems
 
-*Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php) in line [136](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php#L136)*
+*Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php) in line [118](https://github.com/piwik/piwik/blob/master/core/Menu/MenuAdmin.php#L118)*
 
 
 

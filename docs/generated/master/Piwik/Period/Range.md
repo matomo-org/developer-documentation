@@ -18,7 +18,6 @@ Methods
 
 The class defines the following methods:
 
-- [`factory()`](#factory) Inherited from [`Period`](../../Piwik/Period.md)
 - [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period.
 - [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period.
@@ -38,19 +37,6 @@ The class defines the following methods:
 - [`getLastDate()`](#getlastdate) &mdash; Returns the date that is one period before the supplied date.
 - [`getDateXPeriodsAgo()`](#getdatexperiodsago) &mdash; Returns the date that is X periods before the supplied date.
 - [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date range string given a period type, end date and number of periods the range spans over.
-
-<a name="factory" id="factory"></a>
-<a name="factory" id="factory"></a>
-### `factory()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$period` (`Piwik\$period`) &mdash;
-      
-    - `$date` (`Piwik\$date`) &mdash;
-      
-- It returns a [`Period`](../../Piwik/Period.md) value.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
