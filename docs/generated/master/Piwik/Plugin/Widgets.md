@@ -19,6 +19,7 @@ The class defines the following methods:
 - [`addWidgetWithCustomCategory()`](#addwidgetwithcustomcategory) &mdash; Adds a widget with a custom category.
 - [`init()`](#init) &mdash; Here you can add one or multiple widgets.
 - [`configureWidgetsList()`](#configurewidgetslist) &mdash; Allows you to configure previously added widgets.
+- [`factory()`](#factory)
 
 <a name="addwidget" id="addwidget"></a>
 <a name="addWidget" id="addWidget"></a>
@@ -91,6 +92,19 @@ For instance you can remove any widgets defined by any plugin by calling the
 
 -  It accepts the following parameter(s):
     - `$widgetsList` ([`WidgetsList`](../../Piwik/WidgetsList.md)) &mdash;
+      
+- It does not return anything.
+
+<a name="factory" id="factory"></a>
+<a name="factory" id="factory"></a>
+### `factory()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$module`
+      
+    - `$action`
       
 - It does not return anything.
 

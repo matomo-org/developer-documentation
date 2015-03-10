@@ -243,6 +243,7 @@ Index
 - [`fetch()`](Piwik/Plugin/Report.md#fetch) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`fetchSubtable()`](Piwik/Plugin/Report.md#fetchsubtable) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`factory()`](Piwik/Plugin/Report.md#factory) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
+- [`factory()`](Piwik/Plugin/Widgets.md#factory) &mdash; *Method in class* [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`format()`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md#format) &mdash; *Method in class* [`AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md)
 - [`format()`](Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md#format) &mdash; *Method in class* [`EvolutionMetric`](Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`factory()`](Piwik/Scheduler/Schedule/Schedule.md#factory) &mdash; *Method in class* [`Schedule`](Piwik/Scheduler/Schedule/Schedule.md)
