@@ -181,6 +181,26 @@ After each event the page renderer will wait for all AJAX requests to finish and
 
 *Note: phantomjs has its quirks and you may have to hack around to get certain behavior to work. For example, clicking a `<select>` will not open the dropdown, so dropdowns have to be manipulated via JavaScript within the page (ie, the `.evaluate()` method).*
 
+### Adding test data in a UI test
+
+Some of your tests may require specific data to exist in Piwik's DB. To add this data, you can define a [PHP fixture class](/guides/tests-system#fixtures) and set it as the fixture to use in your UI test, like so:
+
+```javascript
+describe("TheControlImTesting", function () {
+    this.timeout(0);
+
+    this.fixture = "Piwik\\Plugins\\MyPlugin\\tests\\Fixtures\\MySpecialFixture";
+
+    // ... rest of the test spec ...
+});
+```
+
+The fixture you use must derive from the `Piwik\Tests\Framework\Fixture` class and must be visible to Piwik's autoloader.
+
+*Note: The test data added by the fixture will not be removed and re-added before each individual test.*
+
+Learn more about defining fixtures [here](/guides/tests-system#fixtures).
+
 #### Page Renderer Object Methods
 
 The page renderer object has the following methods:
