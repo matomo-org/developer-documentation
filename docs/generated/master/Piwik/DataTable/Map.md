@@ -22,11 +22,13 @@ The class defines the following methods:
 - [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Apply the filters previously queued to each DataTable contained by this DataTable\Map.
 - [`filter()`](#filter) &mdash; Apply a filter to all tables contained by this instance.
 - [`filterSubtables()`](#filtersubtables) &mdash; Apply a filter to all subtables contained by this instance.
+- [`queueFilterSubtables()`](#queuefiltersubtables) &mdash; Apply a queued filter to all subtables contained by this instance.
 - [`getDataTables()`](#getdatatables) &mdash; Returns the array of DataTables contained by this class.
 - [`getTable()`](#gettable) &mdash; Returns the table with the specific label.
 - [`getFirstRow()`](#getfirstrow) &mdash; Returns the first element in the Map's array.
 - [`getLastRow()`](#getlastrow) &mdash; Returns the last element in the Map's array.
 - [`addTable()`](#addtable) &mdash; Adds a new DataTable or Map instance to this DataTable\Map.
+- [`getRowFromIdSubDataTable()`](#getrowfromidsubdatatable)
 - [`__toString()`](#__tostring) &mdash; Returns a string output of this DataTable\Map (applying the default renderer to every DataTable of this DataTable\Map).
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; See DataTable::enableRecursiveSort().
 - [`renameColumn()`](#renamecolumn) &mdash; Renames the given column in each contained DataTable.
@@ -137,6 +139,21 @@ Apply a filter to all subtables contained by this instance.
        Parameters to pass to the filter.
 - It does not return anything.
 
+<a name="queuefiltersubtables" id="queuefiltersubtables"></a>
+<a name="queueFilterSubtables" id="queueFilterSubtables"></a>
+### `queueFilterSubtables()`
+
+Apply a queued filter to all subtables contained by this instance.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+       Name of filter class or a Closure.
+    - `$parameters` (`array`) &mdash;
+       Parameters to pass to the filter.
+- It does not return anything.
+
 <a name="getdatatables" id="getdatatables"></a>
 <a name="getDataTables" id="getDataTables"></a>
 ### `getDataTables()`
@@ -201,6 +218,17 @@ Adds a new DataTable or Map instance to this DataTable\Map.
       
     - `$label` (`string`) &mdash;
        Label used to index this table in the array.
+- It does not return anything.
+
+<a name="getrowfromidsubdatatable" id="getrowfromidsubdatatable"></a>
+<a name="getRowFromIdSubDataTable" id="getRowFromIdSubDataTable"></a>
+### `getRowFromIdSubDataTable()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idSubtable`
+      
 - It does not return anything.
 
 <a name="__tostring" id="__tostring"></a>

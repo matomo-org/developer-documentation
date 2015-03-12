@@ -47,6 +47,7 @@ The class defines the following methods:
 - [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`filter()`](#filter) &mdash; Applies a filter to this datatable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`filterSubtables()`](#filtersubtables) &mdash; Applies a filter to all subtables but not to this datatable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`queueFilterSubtables()`](#queuefiltersubtables) &mdash; Adds a filter and a list of parameters to the list of queued filters of all subtables. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`queueFilter()`](#queuefilter) &mdash; Adds a filter and a list of parameters to the list of queued filters. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Applies all filters that were previously queued to the table. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`addDataTable()`](#adddatatable) &mdash; Sums a DataTable to this one. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -221,6 +222,27 @@ Applies a filter to all subtables but not to this datatable.
        Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.
     - `$parameters` (`array`) &mdash;
        Array of extra parameters to pass to the filter.
+- It does not return anything.
+
+<a name="queuefiltersubtables" id="queuefiltersubtables"></a>
+<a name="queueFilterSubtables" id="queueFilterSubtables"></a>
+### `queueFilterSubtables()`
+
+Adds a filter and a list of parameters to the list of queued filters of all subtables.
+
+These filters will be
+executed when [applyQueuedFilters()](/api-reference/Piwik/DataTable/Simple#applyqueuedfilters) is called.
+
+Filters that prettify the column values or don't need the full set of rows should be queued. This
+way they will be run after the table is truncated which will result in better performance.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+       The class name of the filter, eg. `'Limit'`.
+    - `$parameters` (`array`) &mdash;
+       The parameters to give to the filter, eg. `array($offset, $limit)` for the Limit filter.
 - It does not return anything.
 
 <a name="queuefilter" id="queuefilter"></a>
