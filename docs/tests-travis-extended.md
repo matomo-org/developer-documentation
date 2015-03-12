@@ -4,12 +4,8 @@ previous: tests-ui
 ---
 # Travis CI: Extended
 
-### Auto-updating the .travis.yml file
+### Setting up Travis CI for core plugins
 
-The `generate:travis-yml` command will be changed over time as we modify the travis build process. To avoid having to 
-update the travis file manually you can setup auto-updating by using the `--github-token=` option when calling `generate:travis-yml`. You should supply a [GitHub token](https://help.github.com/articles/creating-an-access-token-for-command-line-use) that has read and write access to the repository the build is for. When a .travis.yml file is found to be out of date, the Travis build will update the file and push a commit using the GitHub token.
-
-*Note: you will need the [travis command line tool](http://blog.travis-ci.com/2013-01-14-new-client/) to setup auto-updating.*
 
 ### Varying .travis.yml behavior
 
