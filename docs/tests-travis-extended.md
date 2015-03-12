@@ -6,6 +6,11 @@ previous: tests-ui
 
 ### Setting up Travis CI for core plugins
 
+To add a build on travis you must first enable the build on travis-ci.org or magnum.travis-ci.com (or find someone with sufficient permission to do it for you). Then, you must create the .travis.yml file for your plugin by running the following Piwik console command:
+
+    ./console generate:travis-yml --plugin=MyNewPlugin
+
+After you have executed this and committed to the repository, please send an email to Matthieu A. or Benaka, they will execute the same command with the `--github-token` and `--artifacts-pass` parameter. This will ensure that the `.travis.yml` will automatically update itself when [the template](https://github.com/piwik/piwik/blob/master/plugins/TestRunner/templates/travis.yml.twig) has changed. 
 
 ### Varying .travis.yml behavior
 
@@ -14,24 +19,6 @@ You can control how the generated .travis.yml file behaves, by setting certain e
 These variables let you download other, test your plugin against a specific Piwik version and more.
 
 Below is the list of all supported environment variables:
-
-  * **TRAVIS\_COMMITTER\_NAME**
-  * **TRAVIS\_COMMITTER\_EMAIL**
-
-    These variables control the username and email address used when commiting changes from within a travis build.
-
-    When the .travis.yml file is auto-updated, the travis build will commit the changes and push them to your plugin's git repository. The committer's username and email address are determined by these variable.
-
-    `TRAVIS_COMMITTER_NAME` defaults to `Piwik Automation`. `TRAVIS_COMMITTER_EMAIL` defaults to `hello@piwik.org`.
-
-    Example usage:
-
-    ```
-    env:
-      global:
-        - TRAVIS_COMMITTER_NAME="My Org Automation"
-        - TRAVIS_COMMITTER_EMAIL=my-org@myorg.com
-    ```
 
   * **TEST\_AGAINST\_PIWIK\_BRANCH**
 
@@ -57,6 +44,26 @@ Below is the list of all supported environment variables:
         - UNPROTECTED_ARTIFACTS=1
     ```
 
+  * **TRAVIS\_COMMITTER\_NAME**
+  * **TRAVIS\_COMMITTER\_EMAIL**
+
+    These variables control the username and email address used when commiting changes from within a travis build.
+
+    When the .travis.yml file is auto-updated, the travis build will commit the changes and push them to your plugin's git repository. The committer's username and email address are determined by these variable.
+
+    `TRAVIS_COMMITTER_NAME` defaults to `Piwik Automation`. `TRAVIS_COMMITTER_EMAIL` defaults to `hello@piwik.org`.
+
+    Example usage:
+
+    ```
+    env:
+      global:
+        - TRAVIS_COMMITTER_NAME="My Org Automation"
+        - TRAVIS_COMMITTER_EMAIL=my-org@myorg.com
+    ```
+    
+    
+    
 ### Extending .travis.yml behavior
 
 Plugins that use technologies other than MySQL or PHP may require extra setup and install steps to be executed on travis before running tests.
