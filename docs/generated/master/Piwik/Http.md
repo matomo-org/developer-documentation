@@ -56,6 +56,10 @@ Sends an HTTP request using best available transport method.
        If true returns the status code, headers & response, if false just the response.
     - `$httpMethod` (`string`) &mdash;
        The HTTP method to use. Defaults to `'GET'`.
+    - `$httpUsername` (`string`) &mdash;
+       HTTP Auth username
+    - `$httpPassword` (`string`) &mdash;
+       HTTP Auth password
 
 - *Returns:*  `bool`|`string` &mdash;
     If `$destinationPath` is not specified the HTTP response is returned on success. `false` is returned on failure. If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with the following information is returned on success: - **status**: the HTTP status code - **headers**: the HTTP headers - **data**: the HTTP response data `false` is still returned on failure.
