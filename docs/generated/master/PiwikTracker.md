@@ -100,7 +100,7 @@ The class defines the following methods:
 - [`getUserId()`](#getuserid) &mdash; Returns the User ID string, which may have been set via:     $v->setUserId('username@example.org');
 - [`deleteCookies()`](#deletecookies) &mdash; Deletes all first party cookies from the client
 - [`getAttributionInfo()`](#getattributioninfo) &mdash; Returns the currently assigned Attribution Information stored in a first party cookie.
-- [`setTokenAuth()`](#settokenauth) &mdash; Some Tracking API functionnality requires express authentication, using either the Super User token_auth, or a user with 'admin' access to the website.
+- [`setTokenAuth()`](#settokenauth) &mdash; Some Tracking API functionality requires express authentication, using either the Super User token_auth, or a user with 'admin' access to the website.
 - [`setLocalTime()`](#setlocaltime) &mdash; Sets local visitor time
 - [`setResolution()`](#setresolution) &mdash; Sets user resolution width and height.
 - [`setBrowserHasCookies()`](#setbrowserhascookies) &mdash; Sets if the browser supports cookies This is reported in "List of plugins" report in Piwik.
@@ -1038,7 +1038,7 @@ can be read by PHP from the $_COOKIE array.
 <a name="setTokenAuth" id="setTokenAuth"></a>
 ### `setTokenAuth()`
 
-Some Tracking API functionnality requires express authentication, using either the Super User token_auth, or a user with 'admin' access to the website.
+Some Tracking API functionality requires express authentication, using either the Super User token_auth, or a user with 'admin' access to the website.
 
 The following features require access:
 - force the visitor IP
