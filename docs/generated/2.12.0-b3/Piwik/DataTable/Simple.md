@@ -1,150 +1,19 @@
-<small>Piwik\</small>
+<small>Piwik\DataTable\</small>
 
-DataTable
-=========
+Simple
+======
 
-The primary data structure used to store analytics data in Piwik.
+A [DataTable](/api-reference/Piwik/DataTable) where every row has two columns: **label** and **value**.
 
-<a name="class-desc-the-basics"></a>
-### The Basics
-
-DataTables consist of rows and each row consists of columns. A column value can be
-a numeric, a string or an array.
-
-Every row has an ID. The ID is either the index of the row or `ID_SUMMARY_ROW`.
-
-DataTables are hierarchical data structures. Each row can also contain an additional
-nested sub-DataTable (commonly referred to as a 'subtable').
-
-Both DataTables and DataTable rows can hold **metadata**. _DataTable metadata_ is information
-regarding all the data, such as the site or period that the data is for. _Row metadata_
-is information regarding that row, such as a browser logo or website URL.
-
-Finally, all DataTables contain a special _summary_ row. This row, if it exists, is
-always at the end of the DataTable.
-
-### Populating DataTables
-
-Data can be added to DataTables in three different ways. You can either:
-
-1. create rows one by one and add them through [addRow()](/api-reference/Piwik/DataTable#addrow) then truncate if desired,
-2. create an array of DataTable\Row instances or an array of arrays and add them using
-   [addRowsFromArray()](/api-reference/Piwik/DataTable#addrowsfromarray) or [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable#addrowsfromsimplearray)
-   then truncate if desired,
-3. or set the maximum number of allowed rows (with [setMaximumAllowedRows()](/api-reference/Piwik/DataTable#setmaximumallowedrows))
-   and add rows one by one.
-
-If you want to eventually truncate your data (standard practice for all Piwik plugins),
-the third method is the most memory efficient. It is, unfortunately, not always possible
-to use since it requires that the data be sorted before adding.
-
-### Manipulating DataTables
-
-There are two ways to manipulate a DataTable. You can either:
-
-1. manually iterate through each row and manipulate the data,
-2. or you can use predefined filters.
-
-A filter is a class that has a 'filter' method which will manipulate a DataTable in
-some way. There are several predefined Filters that allow you to do common things,
-such as,
-
-- add a new column to each row,
-- add new metadata to each row,
-- modify an existing column value for each row,
-- sort an entire DataTable,
-- and more.
-
-Using these filters instead of writing your own code will increase code clarity and
-reduce code redundancy. Additionally, filters have the advantage that they can be
-applied to DataTable\Map instances. So you can visit every DataTable in a [Map](/api-reference/Piwik/DataTable/Map)
-without having to write a recursive visiting function.
-
-All predefined filters exist in the **Piwik\DataTable\BaseFilter** namespace.
-
-_Note: For convenience, [anonymous functions](http://www.php.net/manual/en/functions.anonymous.php)
-can be used as DataTable filters._
-
-### Applying Filters
-
-Filters can be applied now (via [filter()](/api-reference/Piwik/DataTable#filter)), or they can be applied later (via
-[queueFilter()](/api-reference/Piwik/DataTable#queuefilter)).
-
-Filters that sort rows or manipulate the number of rows should be applied right away.
-Non-essential, presentation filters should be queued.
-
-### Learn more
-
-- See **[ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor)** to learn how DataTables are persisted.
-
-### Examples
-
-**Populating a DataTable**
-
-    // adding one row at a time
-    $dataTable = new DataTable();
-    $dataTable->addRow(new Row(array(
-        Row::COLUMNS => array('label' => 'thing1', 'nb_visits' => 1, 'nb_actions' => 1),
-        Row::METADATA => array('url' => 'http://thing1.com')
-    )));
-    $dataTable->addRow(new Row(array(
-        Row::COLUMNS => array('label' => 'thing2', 'nb_visits' => 2, 'nb_actions' => 2),
-        Row::METADATA => array('url' => 'http://thing2.com')
-    )));
-
-    // using an array of rows
-    $dataTable = new DataTable();
-    $dataTable->addRowsFromArray(array(
-        array(
-            Row::COLUMNS => array('label' => 'thing1', 'nb_visits' => 1, 'nb_actions' => 1),
-            Row::METADATA => array('url' => 'http://thing1.com')
-        ),
-        array(
-            Row::COLUMNS => array('label' => 'thing2', 'nb_visits' => 2, 'nb_actions' => 2),
-            Row::METADATA => array('url' => 'http://thing2.com')
-        )
-    ));
-
-    // using a "simple" array
-    $dataTable->addRowsFromSimpleArray(array(
-        array('label' => 'thing1', 'nb_visits' => 1, 'nb_actions' => 1),
-        array('label' => 'thing2', 'nb_visits' => 2, 'nb_actions' => 2)
-    ));
-
-**Getting & setting metadata**
-
-    $dataTable = \Piwik\Plugins\Referrers\API::getInstance()->getSearchEngines($idSite = 1, $period = 'day', $date = '2007-07-24');
-    $oldPeriod = $dataTable->metadata['period'];
-    $dataTable->metadata['period'] = Period\Factory::build('week', Date::factory('2013-10-18'));
-
-**Serializing & unserializing**
-
-    $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
-
-    $dataTable = // ... build by aggregating visits ...
-    $serializedData = $dataTable->getSerialized($maxRowsInTable, $maxRowsInSubtable = $maxRowsInTable,
-                                                $columnToSortBy = Metrics::INDEX_NB_VISITS);
-
-    $serializedDataTable = $serializedData[0];
-    $serailizedSubTable = $serializedData[$idSubtable];
-
-**Filtering for an API method**
-
-    public function getMyReport($idSite, $period, $date, $segment = false, $expanded = false)
-    {
-        $dataTable = Archive::getDataTableFromArchive('MyPlugin_MyReport', $idSite, $period, $date, $segment, $expanded);
-        $dataTable->filter('Sort', array(Metrics::INDEX_NB_VISITS, 'desc', $naturalSort = false, $expanded));
-        $dataTable->queueFilter('ReplaceColumnNames');
-        $dataTable->queueFilter('ColumnCallbackAddMetadata', array('label', 'url', __NAMESPACE__ . '\getUrlFromLabelForMyReport'));
-        return $dataTable;
-    }
+Simple DataTables are only used to slightly alter the output of some renderers
+(notably the XML renderer).
 
 Constants
 ---------
 
 This class defines the following constants:
 
-- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) — Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.- [`EXTRA_PROCESSED_METRICS_METADATA_NAME`](#extra_processed_metrics_metadata_name) — Name for metadata that contains extra [ProcessedMetric](/api-reference/Piwik/Plugin/ProcessedMetric)s for a DataTable.
+- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) — Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable/Simple#adddatatable) or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called. Inherited from [`DataTable`](../../Piwik/DataTable.md)- [`EXTRA_PROCESSED_METRICS_METADATA_NAME`](#extra_processed_metrics_metadata_name) — Name for metadata that contains extra [ProcessedMetric](/api-reference/Piwik/Plugin/ProcessedMetric)s for a DataTable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
 ### `COLUMN_AGGREGATION_OPS_METADATA_NAME`
@@ -156,7 +25,7 @@ This metadata value must be an array that maps column names with valid operation
 - `'min'`: does `min($column1, $column2)`
 - `'sum'`: does `$column1 + $column2`
 
-See [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) and [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) for more information.
+See [addDataTable()](/api-reference/Piwik/DataTable/Simple#adddatatable) and DataTable\Row::sumRow() for more information.
 <a name="extra_processed_metrics_metadata_name" id="extra_processed_metrics_metadata_name"></a>
 <a name="EXTRA_PROCESSED_METRICS_METADATA_NAME" id="EXTRA_PROCESSED_METRICS_METADATA_NAME"></a>
 ### `EXTRA_PROCESSED_METRICS_METADATA_NAME`
@@ -169,68 +38,69 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
-- [`__destruct()`](#__destruct) &mdash; Destructor.
-- [`setRows()`](#setrows)
-- [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function.
-- [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any).
-- [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting.
-- [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering.
-- [`filter()`](#filter) &mdash; Applies a filter to this datatable.
-- [`filterSubtables()`](#filtersubtables) &mdash; Applies a filter to all subtables but not to this datatable.
-- [`queueFilter()`](#queuefilter) &mdash; Adds a filter and a list of parameters to the list of queued filters.
-- [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Applies all filters that were previously queued to the table.
-- [`addDataTable()`](#adddatatable) &mdash; Sums a DataTable to this one.
-- [`getRowFromLabel()`](#getrowfromlabel) &mdash; Returns the Row whose `'label'` column is equal to `$label`.
-- [`getRowIdFromLabel()`](#getrowidfromlabel) &mdash; Returns the row id for the row whose `'label'` column is equal to `$label`.
-- [`getEmptyClone()`](#getemptyclone) &mdash; Returns an empty DataTable with the same metadata and queued filters as `$this` one.
-- [`getRowFromId()`](#getrowfromid) &mdash; Returns a row by ID.
-- [`getRowFromIdSubDataTable()`](#getrowfromidsubdatatable) &mdash; Returns the row that has a subtable with ID matching `$idSubtable`.
-- [`addRow()`](#addrow) &mdash; Adds a row to this table.
-- [`addSummaryRow()`](#addsummaryrow) &mdash; Sets the summary row.
-- [`getId()`](#getid) &mdash; Returns the DataTable ID.
-- [`addRowFromArray()`](#addrowfromarray) &mdash; Adds a new row from an array.
-- [`addRowFromSimpleArray()`](#addrowfromsimplearray) &mdash; Adds a new row a from an array of column values.
-- [`getRows()`](#getrows) &mdash; Returns the array of Rows.
-- [`getColumn()`](#getcolumn) &mdash; Returns an array containing all column values for the requested column.
-- [`getColumnsStartingWith()`](#getcolumnsstartingwith) &mdash; Returns an array containing all column values of columns whose name starts with `$name`.
-- [`getColumns()`](#getcolumns) &mdash; Returns the names of every column this DataTable contains.
-- [`getRowsMetadata()`](#getrowsmetadata) &mdash; Returns an array containing the requested metadata value of each row.
-- [`getRowsCount()`](#getrowscount) &mdash; Returns the number of rows in the table including the summary row.
-- [`getFirstRow()`](#getfirstrow) &mdash; Returns the first row of the DataTable.
-- [`getLastRow()`](#getlastrow) &mdash; Returns the last row of the DataTable.
-- [`getRowsCountRecursive()`](#getrowscountrecursive) &mdash; Returns the number of rows in the entire DataTable hierarchy.
-- [`deleteColumn()`](#deletecolumn) &mdash; Delete a column by name in every row.
-- [`__sleep()`](#__sleep)
-- [`renameColumn()`](#renamecolumn) &mdash; Rename a column in every row.
-- [`deleteColumns()`](#deletecolumns) &mdash; Deletes several columns by name in every row.
-- [`deleteRow()`](#deleterow) &mdash; Deletes a row by ID.
-- [`deleteRowsOffset()`](#deleterowsoffset) &mdash; Deletes rows from `$offset` to `$offset + $limit`.
-- [`deleteRows()`](#deleterows) &mdash; Deletes a set of rows by ID.
-- [`__toString()`](#__tostring) &mdash; Returns a string representation of this DataTable for convenient viewing.
-- [`isEqual()`](#isequal) &mdash; Returns true if both DataTable instances are exactly the same.
-- [`getSerialized()`](#getserialized) &mdash; Serializes an entire DataTable hierarchy and returns the array of serialized DataTables.
-- [`addRowsFromSerializedArray()`](#addrowsfromserializedarray) &mdash; Adds a set of rows from a serialized DataTable string.
-- [`addRowsFromArray()`](#addrowsfromarray) &mdash; Adds multiple rows from an array.
-- [`addRowsFromSimpleArray()`](#addrowsfromsimplearray) &mdash; Adds multiple rows from an array containing arrays of column values.
-- [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input `$array`
-- [`setMaximumDepthLevelAllowedAtLeast()`](#setmaximumdepthlevelallowedatleast) &mdash; Sets the maximum depth level to at least a certain value.
-- [`getMetadata()`](#getmetadata) &mdash; Returns metadata by name.
-- [`setMetadata()`](#setmetadata) &mdash; Sets a metadata value by name.
-- [`getAllTableMetadata()`](#getalltablemetadata) &mdash; Returns all table metadata.
-- [`setMetadataValues()`](#setmetadatavalues) &mdash; Sets several metadata values by name.
-- [`setAllTableMetadata()`](#setalltablemetadata) &mdash; Sets metadata, erasing existing values.
-- [`setMaximumAllowedRows()`](#setmaximumallowedrows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row).
-- [`walkPath()`](#walkpath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or `false` if it cannot find one.
-- [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtables.
-- [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array.
-- [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string.
-- [`clearQueuedFilters()`](#clearqueuedfilters) &mdash; Unsets all queued filters.
-- [`getIterator()`](#getiterator)
-- [`offsetExists()`](#offsetexists)
-- [`offsetGet()`](#offsetget)
-- [`offsetSet()`](#offsetset)
-- [`offsetUnset()`](#offsetunset)
+- [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`__destruct()`](#__destruct) &mdash; Destructor. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setRows()`](#setrows) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any). Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`filter()`](#filter) &mdash; Applies a filter to this datatable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`filterSubtables()`](#filtersubtables) &mdash; Applies a filter to all subtables but not to this datatable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`queueFilterSubtables()`](#queuefiltersubtables) &mdash; Adds a filter and a list of parameters to the list of queued filters of all subtables. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`queueFilter()`](#queuefilter) &mdash; Adds a filter and a list of parameters to the list of queued filters. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Applies all filters that were previously queued to the table. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`addDataTable()`](#adddatatable) &mdash; Sums a DataTable to this one. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getRowFromLabel()`](#getrowfromlabel) &mdash; Returns the Row whose `'label'` column is equal to `$label`. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getRowIdFromLabel()`](#getrowidfromlabel) &mdash; Returns the row id for the row whose `'label'` column is equal to `$label`. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getEmptyClone()`](#getemptyclone) &mdash; Returns an empty DataTable with the same metadata and queued filters as `$this` one. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getRowFromId()`](#getrowfromid) &mdash; Returns a row by ID. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getRowFromIdSubDataTable()`](#getrowfromidsubdatatable) &mdash; Returns the row that has a subtable with ID matching `$idSubtable`. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`addRow()`](#addrow) &mdash; Adds a row to this table. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`addSummaryRow()`](#addsummaryrow) &mdash; Sets the summary row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getId()`](#getid) &mdash; Returns the DataTable ID. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`addRowFromArray()`](#addrowfromarray) &mdash; Adds a new row from an array. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`addRowFromSimpleArray()`](#addrowfromsimplearray) &mdash; Adds a new row a from an array of column values. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getRows()`](#getrows) &mdash; Returns the array of Rows. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getColumn()`](#getcolumn) &mdash; Returns an array containing all column values for the requested column. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getColumnsStartingWith()`](#getcolumnsstartingwith) &mdash; Returns an array containing all column values of columns whose name starts with `$name`. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getColumns()`](#getcolumns) &mdash; Returns the names of every column this DataTable contains. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getRowsMetadata()`](#getrowsmetadata) &mdash; Returns an array containing the requested metadata value of each row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getRowsCount()`](#getrowscount) &mdash; Returns the number of rows in the table including the summary row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getFirstRow()`](#getfirstrow) &mdash; Returns the first row of the DataTable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getLastRow()`](#getlastrow) &mdash; Returns the last row of the DataTable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getRowsCountRecursive()`](#getrowscountrecursive) &mdash; Returns the number of rows in the entire DataTable hierarchy. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`deleteColumn()`](#deletecolumn) &mdash; Delete a column by name in every row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`__sleep()`](#__sleep) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`renameColumn()`](#renamecolumn) &mdash; Rename a column in every row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`deleteColumns()`](#deletecolumns) &mdash; Deletes several columns by name in every row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`deleteRow()`](#deleterow) &mdash; Deletes a row by ID. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`deleteRowsOffset()`](#deleterowsoffset) &mdash; Deletes rows from `$offset` to `$offset + $limit`. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`deleteRows()`](#deleterows) &mdash; Deletes a set of rows by ID. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`__toString()`](#__tostring) &mdash; Returns a string representation of this DataTable for convenient viewing. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`isEqual()`](#isequal) &mdash; Returns true if both DataTable instances are exactly the same. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getSerialized()`](#getserialized) &mdash; Serializes an entire DataTable hierarchy and returns the array of serialized DataTables. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`addRowsFromSerializedArray()`](#addrowsfromserializedarray) &mdash; Adds a set of rows from a serialized DataTable string. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`addRowsFromArray()`](#addrowsfromarray) &mdash; Adds rows based on an array mapping label column values to value column values.
+- [`addRowsFromSimpleArray()`](#addrowsfromsimplearray) &mdash; Adds multiple rows from an array containing arrays of column values. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input `$array` Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setMaximumDepthLevelAllowedAtLeast()`](#setmaximumdepthlevelallowedatleast) &mdash; Sets the maximum depth level to at least a certain value. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getMetadata()`](#getmetadata) &mdash; Returns metadata by name. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setMetadata()`](#setmetadata) &mdash; Sets a metadata value by name. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getAllTableMetadata()`](#getalltablemetadata) &mdash; Returns all table metadata. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setMetadataValues()`](#setmetadatavalues) &mdash; Sets several metadata values by name. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setAllTableMetadata()`](#setalltablemetadata) &mdash; Sets metadata, erasing existing values. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setMaximumAllowedRows()`](#setmaximumallowedrows) &mdash; Sets the maximum number of rows allowed in this datatable (including the summary row). Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`walkPath()`](#walkpath) &mdash; Traverses a DataTable tree using an array of labels and returns the row it finds or `false` if it cannot find one. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable in which the rows of this table are replaced with the aggregatated rows of all its subtables. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`clearQueuedFilters()`](#clearqueuedfilters) &mdash; Unsets all queued filters. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getIterator()`](#getiterator) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`offsetExists()`](#offsetexists) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`offsetGet()`](#offsetget) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`offsetSet()`](#offsetset) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`offsetUnset()`](#offsetunset) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -287,7 +157,7 @@ Sorts the DataTable rows using the supplied callback function.
 
 Returns the name of the column this table was sorted by (if any).
 
-See [sort()](/api-reference/Piwik/DataTable#sort).
+See [sort()](/api-reference/Piwik/DataTable/Simple#sort).
 
 #### Signature
 
@@ -301,7 +171,7 @@ See [sort()](/api-reference/Piwik/DataTable#sort).
 
 Enables recursive sorting.
 
-If this method is called [sort()](/api-reference/Piwik/DataTable#sort) will also sort all
+If this method is called [sort()](/api-reference/Piwik/DataTable/Simple#sort) will also sort all
 subtables.
 
 #### Signature
@@ -314,7 +184,7 @@ subtables.
 
 Enables recursive filtering.
 
-If this method is called then the [filter()](/api-reference/Piwik/DataTable#filter) method
+If this method is called then the [filter()](/api-reference/Piwik/DataTable/Simple#filter) method
 will apply filters to every subtable in addition to this instance.
 
 #### Signature
@@ -327,7 +197,7 @@ will apply filters to every subtable in addition to this instance.
 
 Applies a filter to this datatable.
 
-If [enableRecursiveFilters()](/api-reference/Piwik/DataTable#enablerecursivefilters) was called, the filter will be applied
+If [enableRecursiveFilters()](/api-reference/Piwik/DataTable/Simple#enablerecursivefilters) was called, the filter will be applied
 to all subtables as well.
 
 #### Signature
@@ -354,6 +224,27 @@ Applies a filter to all subtables but not to this datatable.
        Array of extra parameters to pass to the filter.
 - It does not return anything.
 
+<a name="queuefiltersubtables" id="queuefiltersubtables"></a>
+<a name="queueFilterSubtables" id="queueFilterSubtables"></a>
+### `queueFilterSubtables()`
+
+Adds a filter and a list of parameters to the list of queued filters of all subtables.
+
+These filters will be
+executed when [applyQueuedFilters()](/api-reference/Piwik/DataTable/Simple#applyqueuedfilters) is called.
+
+Filters that prettify the column values or don't need the full set of rows should be queued. This
+way they will be run after the table is truncated which will result in better performance.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+       The class name of the filter, eg. `'Limit'`.
+    - `$parameters` (`array`) &mdash;
+       The parameters to give to the filter, eg. `array($offset, $limit)` for the Limit filter.
+- It does not return anything.
+
 <a name="queuefilter" id="queuefilter"></a>
 <a name="queueFilter" id="queueFilter"></a>
 ### `queueFilter()`
@@ -361,7 +252,7 @@ Applies a filter to all subtables but not to this datatable.
 Adds a filter and a list of parameters to the list of queued filters.
 
 These filters will be
-executed when [applyQueuedFilters()](/api-reference/Piwik/DataTable#applyqueuedfilters) is called.
+executed when [applyQueuedFilters()](/api-reference/Piwik/DataTable/Simple#applyqueuedfilters) is called.
 
 Filters that prettify the column values or don't need the full set of rows should be queued. This
 way they will be run after the table is truncated which will result in better performance.
@@ -381,7 +272,7 @@ way they will be run after the table is truncated which will result in better pe
 
 Applies all filters that were previously queued to the table.
 
-See [queueFilter()](/api-reference/Piwik/DataTable#queuefilter)
+See [queueFilter()](/api-reference/Piwik/DataTable/Simple#queuefilter)
 for more information.
 
 #### Signature
@@ -401,13 +292,13 @@ If the subtables for this table are loaded, they will be summed as well.
 
 Rows are summed together by summing individual columns. By default columns are summed by
 adding one column value to another. Some columns cannot be aggregated this way. In these
-cases, the `[COLUMN_AGGREGATION_OPS_METADATA_NAME](/api-reference/Piwik/DataTable#piwik\datatable::column_aggregation_ops_metadata_name)`
+cases, the `[COLUMN_AGGREGATION_OPS_METADATA_NAME](/api-reference/Piwik/DataTable/Simple#piwik\datatable::column_aggregation_ops_metadata_name)`
 metadata can be used to specify a different type of operation.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$tableToSum` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
+    - `$tableToSum` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
       
 - It does not return anything.
 - It throws one of the following exceptions:
@@ -428,7 +319,7 @@ label => row ID mappings.
     - `$label` (`string`) &mdash;
        `'label'` column value to look for.
 
-- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
     The row if found, `false` if otherwise.
 
 <a name="getrowidfromlabel" id="getrowidfromlabel"></a>
@@ -460,7 +351,7 @@ Returns an empty DataTable with the same metadata and queued filters as `$this` 
 -  It accepts the following parameter(s):
     - `$keepFilters` (`bool`) &mdash;
        Whether to pass the queued filter list to the new DataTable or not.
-- It returns a [`DataTable`](../Piwik/DataTable.md) value.
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="getrowfromid" id="getrowfromid"></a>
 <a name="getRowFromId" id="getRowFromId"></a>
@@ -476,7 +367,7 @@ The ID is either the index of the row or `ID_SUMMARY_ROW`.
     - `$id` (`int`) &mdash;
        The row ID.
 
-- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
     The Row or false if not found.
 
 <a name="getrowfromidsubdatatable" id="getrowfromidsubdatatable"></a>
@@ -491,7 +382,7 @@ Returns the row that has a subtable with ID matching `$idSubtable`.
     - `$idSubTable` (`int`) &mdash;
        The subtable ID.
 
-- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
     The row or false if not found
 
 <a name="addrow" id="addrow"></a>
@@ -500,17 +391,17 @@ Returns the row that has a subtable with ID matching `$idSubtable`.
 
 Adds a row to this table.
 
-If [setMaximumAllowedRows()](/api-reference/Piwik/DataTable#setmaximumallowedrows) was called and the current row count is
+If [setMaximumAllowedRows()](/api-reference/Piwik/DataTable/Simple#setmaximumallowedrows) was called and the current row count is
 at the maximum, the new row will be summed to the summary row. If there is no summary row,
 this row is set as the summary row.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$row` ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
+    - `$row` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
       
 
-- *Returns:*  [`Row`](../Piwik/DataTable/Row.md) &mdash;
+- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md) &mdash;
     `$row` or the summary row if we're at the maximum number of rows.
 
 <a name="addsummaryrow" id="addsummaryrow"></a>
@@ -524,10 +415,10 @@ _Note: A DataTable can have only one summary row._
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$row` ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
+    - `$row` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
       
 
-- *Returns:*  [`Row`](../Piwik/DataTable/Row.md) &mdash;
+- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md) &mdash;
     Returns `$row`.
 
 <a name="getid" id="getid"></a>
@@ -578,7 +469,7 @@ Returns the array of Rows.
 
 #### Signature
 
-- It returns a [`Row[]`](../Piwik/DataTable/Row.md) value.
+- It returns a [`Row[]`](../../Piwik/DataTable/Row.md) value.
 
 <a name="getcolumn" id="getcolumn"></a>
 <a name="getColumn" id="getColumn"></a>
@@ -660,7 +551,7 @@ Returns the first row of the DataTable.
 #### Signature
 
 
-- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
     The first row or `false` if it cannot be found.
 
 <a name="getlastrow" id="getlastrow"></a>
@@ -675,7 +566,7 @@ will always be considered the last row.
 #### Signature
 
 
-- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
+- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`Piwik\false` &mdash;
     The last row or `false` if it cannot be found.
 
 <a name="getrowscountrecursive" id="getrowscountrecursive"></a>
@@ -820,9 +711,9 @@ of rows is not important.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table1` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
+    - `$table1` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
       
-    - `$table2` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
+    - `$table2` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
       
 - It returns a `bool` value.
 
@@ -839,7 +730,7 @@ This DataTable and subtables can optionally be truncated before being serialized
 cases where DataTables can become quite large, they should be truncated before being persisted
 in an archive.
 
-The result of this method is intended for use with the [ArchiveProcessor::insertBlobRecord()](/api-reference/Piwik/ArchiveProcessor#insertblobrecord) method.
+The result of this method is intended for use with the ArchiveProcessor::insertBlobRecord() method.
 
 #### Signature
 
@@ -879,15 +770,13 @@ _Note: This function will successfully load DataTables serialized by Piwik 1.X._
 <a name="addRowsFromArray" id="addRowsFromArray"></a>
 ### `addRowsFromArray()`
 
-Adds multiple rows from an array.
-
-You can add row metadata with this method.
+Adds rows based on an array mapping label column values to value column values.
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$array` (`array`) &mdash;
-       Array with the following structure array( // row1 array( Row::COLUMNS => array( col1_name => value1, col2_name => value2, ...), Row::METADATA => array( metadata1_name => value1,  ...), // see Row ), // row2 array( ... ), )
+       Array containing the rows, eg, array( 'Label row 1' => $value1, 'Label row 2' => $value2, )
 - It does not return anything.
 
 <a name="addrowsfromsimplearray" id="addrowsfromsimplearray"></a>
@@ -946,7 +835,7 @@ to:
        Indexed array, two formats supported, see above.
     - `$subtablePerLabel` (`array`|`null`) &mdash;
        An array mapping label values with DataTable instances to associate as a subtable.
-- It returns a [`DataTable`](../Piwik/DataTable.md) value.
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="setmaximumdepthlevelallowedatleast" id="setmaximumdepthlevelallowedatleast"></a>
 <a name="setMaximumDepthLevelAllowedAtLeast" id="setMaximumDepthLevelAllowedAtLeast"></a>
@@ -1092,7 +981,7 @@ Returns a new DataTable in which the rows of this table are replaced with the ag
        If supplied the label of the parent row will be added to a new column in each subtable row. If set to, `'label'` each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.
     - `$useMetadataColumn` (`bool`) &mdash;
        If true and if `$labelColumn` is supplied, the parent row's label will be added as metadata and not a new column.
-- It returns a [`DataTable`](../Piwik/DataTable.md) value.
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="makefromsimplearray" id="makefromsimplearray"></a>
 <a name="makeFromSimpleArray" id="makeFromSimpleArray"></a>
@@ -1100,14 +989,14 @@ Returns a new DataTable in which the rows of this table are replaced with the ag
 
 Returns a new DataTable created with data from a 'simple' array.
 
-See [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable#addrowsfromsimplearray).
+See [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable/Simple#addrowsfromsimplearray).
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$array` (`array`) &mdash;
       
-- It returns a [`DataTable`](../Piwik/DataTable.md) value.
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="fromserializedarray" id="fromserializedarray"></a>
 <a name="fromSerializedArray" id="fromSerializedArray"></a>
@@ -1115,7 +1004,7 @@ See [addRowsFromSimpleArray()](/api-reference/Piwik/DataTable#addrowsfromsimplea
 
 Creates a new DataTable instance from a serialized DataTable string.
 
-See [getSerialized()](/api-reference/Piwik/DataTable#getserialized) and [addRowsFromSerializedArray()](/api-reference/Piwik/DataTable#addrowsfromserializedarray)
+See [getSerialized()](/api-reference/Piwik/DataTable/Simple#getserialized) and [addRowsFromSerializedArray()](/api-reference/Piwik/DataTable/Simple#addrowsfromserializedarray)
 for more information on DataTable serialization.
 
 #### Signature
@@ -1123,7 +1012,7 @@ for more information on DataTable serialization.
 -  It accepts the following parameter(s):
     - `$data` (`string`) &mdash;
       
-- It returns a [`DataTable`](../Piwik/DataTable.md) value.
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="clearqueuedfilters" id="clearqueuedfilters"></a>
 <a name="clearQueuedFilters" id="clearQueuedFilters"></a>
@@ -1142,7 +1031,7 @@ Unsets all queued filters.
 #### Signature
 
 
-- *Returns:*  [`ArrayIterator`](http://php.net/class.ArrayIterator)|[`Row[]`](../Piwik/DataTable/Row.md) &mdash;
+- *Returns:*  [`ArrayIterator`](http://php.net/class.ArrayIterator)|[`Row[]`](../../Piwik/DataTable/Row.md) &mdash;
     
 
 <a name="offsetexists" id="offsetexists"></a>

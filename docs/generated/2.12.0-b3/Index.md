@@ -327,6 +327,7 @@ Index
 - [`getTable()`](Piwik/DataTable/Map.md#gettable) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`getFirstRow()`](Piwik/DataTable/Map.md#getfirstrow) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`getLastRow()`](Piwik/DataTable/Map.md#getlastrow) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
+- [`getRowFromIdSubDataTable()`](Piwik/DataTable/Map.md#getrowfromidsubdatatable) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`getColumn()`](Piwik/DataTable/Map.md#getcolumn) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`getEmptyClone()`](Piwik/DataTable/Map.md#getemptyclone) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`getMetadataIntersectArray()`](Piwik/DataTable/Map.md#getmetadataintersectarray) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
@@ -725,8 +726,10 @@ Index
 - [`queryVisitsByDimension()`](Piwik/DataAccess/LogAggregator.md#queryvisitsbydimension) &mdash; *Method in class* [`LogAggregator`](Piwik/DataAccess/LogAggregator.md)
 - [`queryEcommerceItems()`](Piwik/DataAccess/LogAggregator.md#queryecommerceitems) &mdash; *Method in class* [`LogAggregator`](Piwik/DataAccess/LogAggregator.md)
 - [`queryActionsByDimension()`](Piwik/DataAccess/LogAggregator.md#queryactionsbydimension) &mdash; *Method in class* [`LogAggregator`](Piwik/DataAccess/LogAggregator.md)
+- [`queueFilterSubtables()`](Piwik/DataTable.md#queuefiltersubtables) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`queueFilter()`](Piwik/DataTable.md#queuefilter) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`queueFilter()`](Piwik/DataTable/Map.md#queuefilter) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
+- [`queueFilterSubtables()`](Piwik/DataTable/Map.md#queuefiltersubtables) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`query()`](Piwik/Db.md#query) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 
 ## R
