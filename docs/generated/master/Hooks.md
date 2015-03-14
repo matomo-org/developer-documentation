@@ -1971,7 +1971,7 @@ Usages:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [390](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L390)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [404](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L404)*
 
 Triggered after a new user is created.
 
@@ -2047,7 +2047,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [626](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L626)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [640](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L640)*
 
 
 
@@ -2061,7 +2061,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [502](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L502)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php) in line [516](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/API.php#L516)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
