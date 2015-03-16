@@ -223,7 +223,7 @@ All events are real events, not synthetic DOM events.
 
 ### Manipulating the test environment
 
-Sometimes it will be necessary to manipulate Piwik for testing purposes. You may want to remove randomness, manipulate data or simulate certain situations (such as there being no config.ini.php file). This section describes how you can do that.
+Sometimes it will be necessary to manipulate Piwik for testing purposes. You may want to remove randomness, manipulate data or simulate certain situations (such as there being no `config.ini.php` file). This section describes how you can do that.
 
 **In your screenshot tests,** use the global **testEnvironment** object. You can use this object to call Piwik API methods using the `callApi(method, params, callback)` method and to call Piwik Controller methods using the `callController(method, params, callback)` method.
 
@@ -254,6 +254,36 @@ The following are examples of test environment manipulation:
  * [Overlay_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Overlay_spec.js)
  * [Dashboard_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Dashboard_spec.js)
  * [Login_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Login_spec.js)
+
+#### Dependency injection configuration
+
+On top of calling API, controllers, and setting up INI options you can also register dependency injection configuration. This allows to replace a service or a configuration value in order to mock or simulate a behavior.
+
+To do this, you need to implement `provideContainerConfig()` in a fixture class and return [a valid DI configuration](http://php-di.org/doc/definition.html). For example:
+
+```php
+class FailUpdateHttpsFixture extends Fixture
+{
+    public function provideContainerConfig()
+    {
+        return array(
+            'Piwik\Plugins\CoreUpdater\Updater' => \DI\object('Piwik\Plugins\CoreUpdater\Test\Mock\UpdaterMock'),
+        );
+    }
+}
+```
+
+Then by simply setting up this fixture in your test Piwik will load the DI configuration in every PHP request or process:
+
+```javascript
+describe("PiwikUpdater", function () {
+    this.fixture = "Piwik\\Plugins\\CoreUpdater\\Test\\Fixtures\\FailUpdateHttpsFixture";
+
+    it("should ...", function () {
+        // ...
+    });
+});
+```
 
 ## Learn more
 
