@@ -656,7 +656,7 @@ Usages:
 
 ### Insights.addReportToOverview
 
-*Defined in [Piwik/Plugins/Insights/API](https://github.com/piwik/piwik/blob/master/plugins/Insights/API.php) in line [69](https://github.com/piwik/piwik/blob/master/plugins/Insights/API.php#L69)*
+*Defined in [Piwik/Plugins/Insights/API](https://github.com/piwik/piwik/blob/master/plugins/Insights/API.php) in line [67](https://github.com/piwik/piwik/blob/master/plugins/Insights/API.php#L67)*
 
 Triggered to gather all reports to be displayed in the "Insight" and "Movers And Shakers" overview reports. Plugins that want to add new reports to the overview should subscribe to this event and add reports to the
 incoming array. API parameters can be configured as an array optionally.
