@@ -974,7 +974,7 @@ Triggered after the platform is initialized and after the user has been authenti
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/CoreUpdater/CoreUpdater.php#L153), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/LanguagesManager/LanguagesManager.php#L96), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/UsersManager/UsersManager.php#L42)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/CoreUpdater/CoreUpdater.php#L82), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/LanguagesManager/LanguagesManager.php#L96), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/UsersManager/UsersManager.php#L42)
 
 ## PluginManager
 
@@ -1110,7 +1110,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/CoreUpdater/CoreUpdater.php#L124), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/LanguagesManager/LanguagesManager.php#L96)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/CoreUpdater/CoreUpdater.php#L54), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/2.12.0-b5/plugins/LanguagesManager/LanguagesManager.php#L96)
 
 
 ### Request.getRenamedModuleAndAction
