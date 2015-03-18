@@ -8,7 +8,7 @@ Welcome to the *Develop* section of the Piwik Developer Zone. If you are interes
 
 This section contains guides that will help you to create **Plugins** and **Themes** to customize Piwik or add new features to Piwik.
 
-If you want to get more insight into how Piwik works behind the API's check out our [Core development](/core) section.
+If you want to get more insight into how Piwik works behind the API's check out our [Piwik In Depth](/piwik-in-depth) section.
 
 Use the sidebar to navigate through the guides. Here is a list of guides to get you started:
 
