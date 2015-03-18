@@ -105,10 +105,10 @@ Sorting method used for sorting numbers
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$rowA`
-      
-    - `$rowB`
-      
+    - `$rowA` (`array`) &mdash;
+       array[0 => value of column to sort, 1 => label]
+    - `$rowB` (`array`) &mdash;
+       array[0 => value of column to sort, 1 => label]
 - It returns a `int` value.
 
 <a name="naturalsort" id="naturalsort"></a>
@@ -120,10 +120,10 @@ Sorting method used for sorting values natural
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$rowA`
-      
-    - `$rowB`
-      
+    - `$rowA` (`array`) &mdash;
+       array[0 => value of column to sort, 1 => label]
+    - `$rowB` (`array`) &mdash;
+       array[0 => value of column to sort, 1 => label]
 - It returns a `int` value.
 
 <a name="sortstring" id="sortstring"></a>
@@ -135,9 +135,9 @@ Sorting method used for sorting values
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$rowA`
-      
-    - `$rowB`
-      
+    - `$rowA` (`array`) &mdash;
+       array[0 => value of column to sort, 1 => label]
+    - `$rowB` (`array`) &mdash;
+       array[0 => value of column to sort, 1 => label]
 - It returns a `int` value.
 
