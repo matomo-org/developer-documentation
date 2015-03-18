@@ -17,6 +17,7 @@ class Redirects
             '/guides/'                         => '/',
             '/contributing'                    => '/guides/contributing-to-piwik-core',
             '/plugins'                         => '/develop',
+            '/core'                            => '/piwik-in-depth',
             '/api-reference/metadata'          => '/api-reference/reporting-api-metadata',
             '/api-reference/segmentation'      => '/api-reference/reporting-api-segmentation',
             '/guides/automated-tests'          => '/guides/tests',
