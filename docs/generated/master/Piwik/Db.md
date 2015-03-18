@@ -70,6 +70,7 @@ The class defines the following methods:
 - [`isLockPrivilegeGranted()`](#islockprivilegegranted) &mdash; Checks whether the database user is allowed to lock tables.
 - [`enableQueryLog()`](#enablequerylog)
 - [`isQueryLogEnabled()`](#isquerylogenabled)
+- [`isOptimizeInnoDBSupported()`](#isoptimizeinnodbsupported)
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
@@ -566,4 +567,15 @@ Checks whether the database user is allowed to lock tables.
 #### Signature
 
 - It returns a `boolean` value.
+
+<a name="isoptimizeinnodbsupported" id="isoptimizeinnodbsupported"></a>
+<a name="isOptimizeInnoDBSupported" id="isOptimizeInnoDBSupported"></a>
+### `isOptimizeInnoDBSupported()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$version`
+      
+- It does not return anything.
 

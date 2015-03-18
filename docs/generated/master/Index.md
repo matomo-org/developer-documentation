@@ -585,6 +585,7 @@ Index
 - [`isToday()`](Piwik/Date.md#istoday) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`isLockPrivilegeGranted()`](Piwik/Db.md#islockprivilegegranted) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`isQueryLogEnabled()`](Piwik/Db.md#isquerylogenabled) &mdash; *Method in class* [`Db`](Piwik/Db.md)
+- [`isOptimizeInnoDBSupported()`](Piwik/Db.md#isoptimizeinnodbsupported) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`IP`](Piwik/IP.md) &mdash; *Class in namespace* `Piwik`- [`info()`](Piwik/Log.md#info) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`isUrlFound()`](Piwik/Menu/MenuReporting.md#isurlfound) &mdash; *Method in class* [`MenuReporting`](Piwik/Menu/MenuReporting.md)
 - [`isMultiplePeriod()`](Piwik/Period.md#ismultipleperiod) &mdash; *Method in class* [`Period`](Piwik/Period.md)
