@@ -778,6 +778,7 @@ Index
 - [`setPassword()`](Piwik/Auth.md#setpassword) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`setPasswordHash()`](Piwik/Auth.md#setpasswordhash) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; *Method in class* [`Common`](Piwik/Common.md)
+- [`setLabelsHaveChanged()`](Piwik/DataTable.md#setlabelshavechanged) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`setRows()`](Piwik/DataTable.md#setrows) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`sort()`](Piwik/DataTable.md#sort) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](Piwik/DataTable.md#setmaximumdepthlevelallowedatleast) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)

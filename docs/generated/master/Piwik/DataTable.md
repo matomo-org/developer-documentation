@@ -171,6 +171,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`__destruct()`](#__destruct) &mdash; Destructor.
+- [`setLabelsHaveChanged()`](#setlabelshavechanged)
 - [`setRows()`](#setrows)
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function.
 - [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any).
@@ -251,6 +252,14 @@ Creates an empty DataTable.
 Destructor.
 
 Makes sure DataTable memory will be cleaned up.
+
+#### Signature
+
+- It does not return anything.
+
+<a name="setlabelshavechanged" id="setlabelshavechanged"></a>
+<a name="setLabelsHaveChanged" id="setLabelsHaveChanged"></a>
+### `setLabelsHaveChanged()`
 
 #### Signature
 

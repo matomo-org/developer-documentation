@@ -40,6 +40,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`__destruct()`](#__destruct) &mdash; Destructor. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setLabelsHaveChanged()`](#setlabelshavechanged) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setRows()`](#setrows) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any). Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -120,6 +121,14 @@ Creates an empty DataTable.
 Destructor.
 
 Makes sure DataTable memory will be cleaned up.
+
+#### Signature
+
+- It does not return anything.
+
+<a name="setlabelshavechanged" id="setlabelshavechanged"></a>
+<a name="setLabelsHaveChanged" id="setLabelsHaveChanged"></a>
+### `setLabelsHaveChanged()`
 
 #### Signature
 
