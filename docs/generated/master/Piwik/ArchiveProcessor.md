@@ -112,6 +112,8 @@ DataTables are summed recursively so subtables will be summed as well.
        Operations for aggregating columns, see Row::sumRow().
     - `$columnsToRenameAfterAggregation` (`array`) &mdash;
        Columns mapped to new names for columns that must change names when summed because they cannot be summed, eg, `array('nb_uniq_visitors' => 'sum_daily_nb_uniq_visitors')`.
+    - `$countRowsRecursive` (`bool`|`array`) &mdash;
+       if set to true, will calculate the recursive rows count for all record names which makes it slower. If you only need it for some records pass an array of recordNames that defines for which ones you need a recursive row count.
 
 - *Returns:*  `array` &mdash;
     Returns the row counts of each aggregated report before truncation, eg, array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... )
