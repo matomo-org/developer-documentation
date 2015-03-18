@@ -15,11 +15,19 @@ Methods
 
 The class defines the following methods:
 
+- [`__construct()`](#__construct)
 - [`addWidget()`](#addwidget) &mdash; Adds a widget.
 - [`addWidgetWithCustomCategory()`](#addwidgetwithcustomcategory) &mdash; Adds a widget with a custom category.
 - [`init()`](#init) &mdash; Here you can add one or multiple widgets.
 - [`configureWidgetsList()`](#configurewidgetslist) &mdash; Allows you to configure previously added widgets.
 - [`factory()`](#factory)
+
+<a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
+
+#### Signature
+
 
 <a name="addwidget" id="addwidget"></a>
 <a name="addWidget" id="addWidget"></a>
