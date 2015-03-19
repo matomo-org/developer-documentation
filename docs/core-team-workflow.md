@@ -94,10 +94,6 @@ As of 2014, we manage [over fourty repositories at Github](https://github.com/pi
 
 All developers from the Piwik organization can push to all git repositories.
 
-#### Git mailing list
-
-This mailing list notifies all the commits to our [Git repository](https://github.com/piwik/piwik): [Archives](http://lists.piwik.org/pipermail/piwik-git/), [Subscribe](http://lists.piwik.org/cgi-bin/mailman/listinfo/piwik-git), [Search the archives](http://www.google.com/coop/cse?cx=012634963936527368460%3Afzsqvqnvzoi).
-
 #### Git commit process
 
 All code committed to git is reviewed by at least one other developer in the team. Very often, Piwik developers themselves will send bigger changes by pull request for review before committing. All pull requests or patches submitted by external developers are extensively reviewed.
