@@ -1,8 +1,8 @@
 ---
 category: Develop
 subGuides:
-  - piwiks-ini-configuration
   - plugin-settings
+  - piwiks-ini-configuration
 ---
 # Configuration
 
@@ -37,4 +37,4 @@ INI configuration is explained in the [INI configuration](/guides/piwiks-ini-con
 
 Some Piwik configuration settings are stored as **Options**. Options are just key value pairs persisted in the database. To learn more about options, read the documentation of the [Option](/api-reference/Piwik/Option) class.
 
-*To learn about how options are persisted in the MySQL backend Piwik uses, read our [Persistence & the MySQL Backend](/guides/persistence-and-the-mysql-backend) guide.*
+*To learn about how options are persisted in the MySQL backend, read about the [Piwik database schema](/guides/persistence-and-the-mysql-backend).*

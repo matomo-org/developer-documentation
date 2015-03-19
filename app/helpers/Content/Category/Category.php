@@ -8,7 +8,7 @@ use helpers\Content\MenuItem;
 /**
  * A category groups several sections or guides.
  */
-abstract class Category
+abstract class Category implements MenuItem
 {
     /**
      * @return string
@@ -29,6 +29,21 @@ abstract class Category
      * @return Guide
      */
     public abstract function getIntroGuide();
+
+    public function getMenuTitle()
+    {
+        return $this->getName();
+    }
+
+    public function getMenuUrl()
+    {
+        return $this->getUrl();
+    }
+
+    public function getSubItems()
+    {
+        return [];
+    }
 
     protected function guideUrl($name)
     {

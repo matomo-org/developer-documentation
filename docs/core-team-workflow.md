@@ -1,5 +1,5 @@
 ---
-category: Develop
+category: DevelopInDepth
 ---
 # The Core Team Workflow
 

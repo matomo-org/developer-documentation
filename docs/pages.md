@@ -7,11 +7,11 @@ A page can contain any corporate related content, key metrics, news, help pages,
 
 ## Creating a page
 
-Creating a page means creating [a controller](/guides/mvc-controllers) and [a Twig template](/guides/mvc-views).
+Creating a page means creating [a controller](/guides/controllers) and [a Twig template](/guides/views).
 
 You can use the console for this:
 
-```bash
+```
 $ ./console generate:controller
 ```
 
@@ -87,5 +87,6 @@ So far you have created a page but you can still not access it. To add it to one
 
 You can also read the following guides:
 
-- [Controllers](/guides/mvc-controllers.md)
+- [Controllers](/guides/controllers.md)
+- [Views](/guides/views.md)
 - [Security in Piwik](/guides/security-in-piwik.md)

@@ -14,7 +14,7 @@ It's also a great way for you to:
 * allow people to donate money
 * get exposure for your skills and work
 
-## Adding a plugin to the marketplace
+## Preparing your plugin for the marketplace
 
 Getting your completed plugin on the marketplace takes a couple steps, all listed below.
 
@@ -132,6 +132,8 @@ Here is a complete example to get you started:
 }
 ```
 
+## Publishing your plugin on the marketplace
+
 ### Put your plugin on GitHub
 
 The marketplace uses [GitHub](https://github.com) webhooks to learn about your plugin and serve it to Piwik users that want it. This means you don't manually upload any files to the marketplace. Instead, you put your code into a Github repository and let the marketplace know about it.
@@ -156,7 +158,7 @@ The marketplace will now be notified every time you push a commit or a tag to yo
 
 You can now publish the first version of your plugin. First, make sure the version in your `plugin.json` is `0.1.0`. Then, we'll run two git commands to publish a version of your plugin:
 
-```bash
+```
 $ git tag 0.1.0
 $ git push origin --tags
 ```
@@ -183,7 +185,7 @@ If you did not receive an email, then the webhook might not be configured (or yo
 
 If you still encounter trouble while publishing your plugin, please join the IRC channel **#piwik** on [freenode](http://freenode.net/). If you can't find anyone in the IRC channel, please ask for help [on the forums](http://forum.piwik.org/).
 
-### Rules for Plugins
+## Rules for Plugins
 
 There are some restrictions regarding what can be published on the marketplace. Chances are your plugin is fine, but if we find a plugin that violates one of the following rules, it will be immediately removed:
 

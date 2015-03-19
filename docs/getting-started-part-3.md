@@ -1,6 +1,5 @@
 ---
 category: Develop
-previous: getting-started-part-2
 ---
 # Getting Started Part III: Extras
 
@@ -23,17 +22,17 @@ The report we've defined is interesting, but we could easily aggregate on anothe
 
 We'll create a **plugin setting** which will control which visit property the plugin uses to generate our report. For this, we need to create a `Settings` class at the root of your plugin's directory:
 
-    <?php
+```php
+namespace Piwik\Plugins\MyPlugin;
 
-    namespace Piwik\Plugins\MyPlugin;
-
-    class Settings extends \Piwik\Plugin\Settings
+class Settings extends \Piwik\Plugin\Settings
+{
+    protected function init()
     {
-        protected function init()
-        {
-            // ...
-        }
+        // ...
     }
+}
+```
 
 The `Settings` class is a special class that is automatically detected by Piwik. Piwik uses the information it sets to add a new section for your plugin in the _Plugins > Settings_ admin page.
 
@@ -41,24 +40,27 @@ We're going to create one setting that can be set differently by each user. Our 
 
 Let's add an attribute and new method for this setting:
 
-    class Settings extends \Piwik\Plugin\Settings
+```php
+class Settings extends \Piwik\Plugin\Settings
+{
+    public $realtimeReportDimension;
+
+    protected function init()
     {
-        public $realtimeReportDimension;
-
-        protected function init()
-        {
-            $this->realtimeReportDimension = $this->createRealtimeReportDimensionSetting();
-            $this->addSetting($this->realtimeReportDimension);
-        }
-
-        private function createRealtimeReportDimensionSetting()
-        {
-            // ...
-        }
+        $this->realtimeReportDimension = $this->createRealtimeReportDimensionSetting();
+        $this->addSetting($this->realtimeReportDimension);
     }
+
+    private function createRealtimeReportDimensionSetting()
+    {
+        // ...
+    }
+}
+```
 
 Then we'll implement the `createRealtimeReportDimensionSetting()` method:
 
+```php
     private function createRealtimeReportDimensionSetting()
     {
         $setting = new \Piwik\Settings\UserSetting('reportDimension', 'Report Dimension');
@@ -70,11 +72,13 @@ Then we'll implement the `createRealtimeReportDimensionSetting()` method:
         
         return $setting;
     }
+```
 
 Notice how `$settings->availableValues` is set from `MyPlugin::$availableDimensionsForAggregation`. The **availableValues** property should be set to an array mapping column values with their appropriate display text. This array will probably come in handy later so we'll put it in a static class attribute.
 
 In your plugin class add the following code:
 
+```php
     public static $availableDimensionsForAggregation = array(
         'browserName' => 'Browser',
         'visitIp' => 'IP',
@@ -92,6 +96,7 @@ In your plugin class add the following code:
 
         // we could add more, but let's not waste time.
     );
+```
 
 If you go to the _Plugins > Settings_ admin page you should see this new setting:
 
@@ -101,6 +106,7 @@ If you go to the _Plugins > Settings_ admin page you should see this new setting
 
 To use the setting, we first need to get the setting value in our API method and then aggregate using it. Change your API method to this:
 
+```php
     public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false)
     {
         // get realtime visit data
@@ -143,6 +149,7 @@ To use the setting, we first need to get the setting value in our API method and
 
         return $result;
     }
+```
 
 Now we'll want to make sure the column heading in the report display has the correct text. Right now, it will display **Browser** no matter what the setting value is:
 
@@ -150,6 +157,7 @@ Now we'll want to make sure the column heading in the report display has the cor
 
 Change the `configureView()` method in the **getLastVisitsByBrowser** report to the following:
 
+```php
     public function configureView(ViewDataTable $view)
     {
         // The ViewDataTable must be configured so the display is perfect for the report.
@@ -164,6 +172,7 @@ Change the `configureView()` method in the **getLastVisitsByBrowser** report to 
 
         $view->config->columns_to_display = array_merge(array('label'), $this->metrics);
     }
+```
 
 Open the report and you'll now see:
 
@@ -189,11 +198,13 @@ Translation tokens are associated with translated text in multiple JSON files, o
 
 To internationalize our plugin, an english language file to hold our translated text is needed. This file is already created for you by the report generator. It is located in your plugin's `lang/` directory. In that folder, a file named `en.json` should exist containing translations:
 
-    {
-        "MyPlugin": {
-            "LastVisitsByBrowser":"Last Visits By Browser"
-        }
+```json
+{
+    "MyPlugin": {
+        "LastVisitsByBrowser":"Last Visits By Browser"
     }
+}
+```
 
 We're going to move all of the translated text of our plugin into this file.
 
@@ -201,60 +212,72 @@ We're going to move all of the translated text of our plugin into this file.
 
 We use one piece of translated text in our report: `"Real-time reports"`. First, we'll add entries for it in the `en.json` file we just located. We'll use the **RealtimeReports** translation token:
 
-    {
-        "MyPlugin": {
-            "RealtimeReports": "Real-time reports"
-        }
+```json
+{
+    "MyPlugin": {
+        "RealtimeReports": "Real-time reports"
     }
+}
+```
 
 Then replace the text in your report class `GetLastVisitsByDimension` with the following:
 
-    $this->menuTitle   = 'MyPlugin_RealtimeReports';
-    $this->widgetTitle = $this->menuTitle;
+```php
+$this->menuTitle   = 'MyPlugin_RealtimeReports';
+$this->widgetTitle = $this->menuTitle;
+```
 
 #### Internationalizing our setting
 
 Let's internationalize the text we use in our `Settings` class. First, we'll add entries for the text we use:
 
-    {
-        "MyPlugin": {
-            "RealtimeReports": "Real-time reports"
-            "ReportDimensionSettingDescription" : "Choose the dimension to aggregate by"
-        }
+```json
+{
+    "MyPlugin": {
+        "RealtimeReports": "Real-time reports"
+        "ReportDimensionSettingDescription" : "Choose the dimension to aggregate by"
     }
+}
+```
 
 Then we'll use the new translation token in the `createRealtimeReportDimensionSetting()` method:
 
-    $setting->description   = \Piwik::translate('MyPlugin_ReportDimensionSettingDescription');
+```php
+$setting->description = \Piwik::translate('MyPlugin_ReportDimensionSettingDescription');
+```
 
 We also need to internationalize the names of each possible setting value. We'll do this by using translated text in the `MyPlugin::$availableDimensionsForAggregation` static variable. Of course, we can't call [Piwik::translate](/api-reference/Piwik/Piwik#translate) when setting a static field, so we'll have to add a new method that returns the array.
 
 We're not going to add any translation tokens to `en.json` this time because the translations already exist in core plugins. Replace `MyPlugin::$availableDimensionsForAggregation` field with this:
 
-    public static $availableDimensionsForAggregation = array(
-        'browser' => 'UserSettings_ColumnBrowser',
-        'visitIp' => 'General_IP',
-        'visitorId' => 'General_VisitorID',
-        'searches' => 'General_NbSearches',
-        'events' => 'Events_NbEvents',
-        'actions' => 'General_NbActions',
-        'visitDurationPretty' => 'VisitorInterest_ColumnVisitDuration',
-        'country' => 'UserCountry_Country',
-        'region' => 'UserCountry_Region',
-        'city' => 'UserCountry_City',
-        'operatingSystem' => 'UserSettings_ColumnOperatingSystem',
-        'screenType' => 'UserSettings_ColumnTypeOfScreen',
-        'resolution' => 'UserSettings_ColumnResolution'
+```php
+public static $availableDimensionsForAggregation = array(
+    'browser' => 'UserSettings_ColumnBrowser',
+    'visitIp' => 'General_IP',
+    'visitorId' => 'General_VisitorID',
+    'searches' => 'General_NbSearches',
+    'events' => 'Events_NbEvents',
+    'actions' => 'General_NbActions',
+    'visitDurationPretty' => 'VisitorInterest_ColumnVisitDuration',
+    'country' => 'UserCountry_Country',
+    'region' => 'UserCountry_Region',
+    'city' => 'UserCountry_City',
+    'operatingSystem' => 'UserSettings_ColumnOperatingSystem',
+    'screenType' => 'UserSettings_ColumnTypeOfScreen',
+    'resolution' => 'UserSettings_ColumnResolution'
 
-        // we could add more, but let's not waste time.
-    );
+    // we could add more, but let's not waste time.
+);
+```
 
 Then, add this method to your plugin's plugin descriptor class:
 
-    public static function getAvailableDimensionsForAggregation()
-    {
-        return array_map(array('Piwik', 'translate'), self::$availableDimensionsForAggregation);
-    }
+```php
+public static function getAvailableDimensionsForAggregation()
+{
+    return array_map(array('Piwik', 'translate'), self::$availableDimensionsForAggregation);
+}
+```
 
 Finally in the `createRealtimeReportDimensionSetting()` method, replace `MyPlugin::$availableDimensionsForAggregation` by `MyPlugin::getAvailableDimensionsForAggregation()`.
 
@@ -262,8 +285,10 @@ Finally in the `createRealtimeReportDimensionSetting()` method, replace `MyPlugi
 
 Since we already use translation tokens in the `MyPlugin::$availableDimensionsForAggregation` field, and the column headers are set using the same data, all we have to do is use `MyPlugin::getAvailableDimensionsForAggregation` in the `configureView()` report method:
 
-    $columnTranslations = MyPlugin::getAvailableDimensionsForAggregation();
-    $columnLabel = $columnTranslations[$columnToAggregate];
+```php
+$columnTranslations = MyPlugin::getAvailableDimensionsForAggregation();
+$columnLabel = $columnTranslations[$columnToAggregate];
+```
 
 <div markdown="1" class="alert alert-warning">
 **If you believe you're ready to start developing your plugin,** please take the time to read our security guide [Security in Piwik](/guides/security-in-piwik). We have very high security standards that your plugin or contribution **must** respect.

@@ -1,26 +1,25 @@
 ---
 category: Integrate
 ---
-# The Javascript Tracking Client
+# JavaScript Tracking Client
 
 You can use the Javascript tracking client to track any application that supports Javascript: for example websites!
 
 This guide will explain how you can use the Javascript tracking client to customize the way some of the web analytics data is recorded in Piwik.
 
-## Where can I Find the Piwik Tracking Code?
+## Finding the Piwik Tracking Code
 
-To use all the features described in this page, you need to use the latest version of the tracking code. To find the tracking code for your website, please follow the steps below:
+To use all the features described in this page, you need to use the latest version of the tracking code. To find the tracking code for your website, follow the steps below:
 
-*   Log in to Piwik with your admin or Super User account
-*   Click on your username in the top right menu, and click Settings to access the administration area
-*   Click on Tracking Code in the left menu
-*   You can now copy and paste the Javascript Tracking code into your pages, just before the `<body>` tag.
+- log in to Piwik with your admin or Super User account
+- click on your username in the top right menu, and click *Settings* to access the administration area
+- click on *Tracking Code* in the left menu
+- copy and paste the Javascript tracking code into your pages, just after the `<body>` tag
 
-The Piwik Tracking code looks as follows:
+The tracking code looks as follows:
 
 ```html
 <!-- Piwik -->
-
 <script type="text/javascript">
     var _paq = _paq || [];
     (function(){ var u=(("https:" == document.location.protocol) ? "https://{$PIWIK_URL}/" : "http://{$PIWIK_URL}/");
@@ -31,15 +30,14 @@ The Piwik Tracking code looks as follows:
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
     s.parentNode.insertBefore(g,s); })();
 </script>
-
 <!-- End Piwik Code -->
 ```
 
-In your Piwik tracking code, `{$PIWIK_URL}` would be replaced by your Piwik URL and `{$IDSITE}` would be replaced by the idsite of the website you are tracking in Piwik.
+In your tracking code, `{$PIWIK_URL}` would be replaced by your Piwik URL and `{$IDSITE}` would be replaced by the idsite of the website you are tracking in Piwik.
 
-This code might look a bit strange to those of you familiar with JavaScript, but that is because it is made to run asynchronously. In other words, browsers will not wait for the piwik.js file to be downloaded in order to show your page.
+This code might look a bit strange to those of you familiar with JavaScript, but that is because it is made to run asynchronously. In other words, browsers will not wait for the `piwik.js` file to be downloaded in order to show your page.
 
-For asynchronous tracking, configuration and tracking calls are pushed onto the global `_paq` array for execution, independent of the asynchronous loading of piwik.js. The format is:
+For asynchronous tracking, configuration and tracking calls are pushed onto the global `_paq` array for execution, independent of the asynchronous loading of `piwik.js`. The format is:
 
 ```javascript
 _paq.push([ 'API_method_name', parameter_list ]);
@@ -52,57 +50,54 @@ var visitor_id;
 _paq.push([ function() { visitor_id = this.getVisitorId(); }]);
 ```
 
-or for example, to fetch a custom variable (name,value) using the asynchronous code:
+or for example, to fetch a custom variable (name, value) using the asynchronous code:
 
 ```javascript
 _paq.push(['setCustomVariable','1','VisitorType','Member']);
 _paq.push([ function() { var customVariable = this.getCustomVariable(1); }]);
 ```
 
-You can push to the _paq array even after the piwik.js file has been loaded and run.
+You can push to the `_paq` array even after the `piwik.js` file has been loaded and run.
 
 If your Piwik tracking code doesn't look like this one, you may be using the deprecated version.
 Older versions still work as expected and will track your visitors, but we highly recommend that you update your pages to use the most recent tracking code.
 
-## Features of the JavaScript Tracker
+## JavaScript tracker features
 
-### Customize the Page Name Displayed in Piwik
+### Custom page name
 
-By default, Piwik uses the URL of the current page as the page title in the Piwik interface.
+By default, Piwik uses the URL of the current page as the page title in Piwik reports.
 If your URLs are not simple, or if you want to customize the way Piwik tracks your pages,
 you can specify the page title to use in the JavaScript code.
 
-A common use is to set the HTML Title value as the document title:
+A common use case is to set the title of the HTML page as the document title:
 
 ```javascript
 _paq.push(['setDocumentTitle', document.title]);
 _paq.push(['trackPageView']);
 ```
 
-
-If you track **multiple sub-domains in the same website**, you may want your page titles to be prefixed by the sub-domain make it easy for you to see the traffic and data for each sub-domain. You can do so simply in JavaScript:
+If you track **multiple sub-domains in the same website**, you may want your page titles to be prefixed by the sub-domain make it easy for you to see the traffic and data for each sub-domain. You can do so simply:
 
 ```javascript
 _paq.push(['setDocumentTitle', document.domain + "/" + document.title]);
 _paq.push(['trackPageView']);
 ```
 
-Advanced users can also dynamically generate the page name, for example, in PHP:
+Advanced users can also dynamically generate the page name, for example, using PHP:
 
 ```javascript
 _paq.push(['setDocumentTitle', "<?php echo $myPageTitle ?>"]);
 _paq.push(['trackPageView']);
 ```
 
-### Manually Trigger an Event on Click
+### Manually trigger events
 
 By default, Piwik tracks page views when the Javascript tracking code loads and executes on each page view.
-However, on modern websites or web applications, user interactions do not necessarily involve loading a new page.
-For example, when users click on a JavaScript link, or when they click on a tab (which triggers a JS event),
-or when they interact with elements of the user interface, you can still track these interactions with Piwik.
 
-To track any user interaction or click with Piwik, you can manually call the Javascript function `trackEvent()`.
-For example, if you wanted to track a click on a JavaScript menu, you could write:
+However, on modern web applications, user interactions do not necessarily involve loading a new page. For example, when users click on a JavaScript link, or when they click on a tab (which triggers a JS event), or when they interact with elements of the user interface, you can still track these interactions with Piwik.
+
+To track any user interaction or click with Piwik, you can manually call the Javascript function `trackEvent()`. For example, if you wanted to track a click on a JavaScript menu, you could write:
 
 ```html
 <a href="#" onclick="javascript:_paq.push(['trackEvent', 'Menu', 'Freedom']);">Freedom page</a>
@@ -110,7 +105,7 @@ For example, if you wanted to track a click on a JavaScript menu, you could writ
 
 You can learn more about [Tracking Events](http://piwik.org/docs/event-tracking/#tracking-events) in the user guide.
 
-### Manually Trigger a Conversion for a Goal
+### Manually trigger goal conversions
 
 By default, Goals in Piwik are defined as "matching" parts of the URL (starts with, contains, or regular expression matching). You can also track goals for given page views, downloads, or outlink clicks.
 
@@ -121,14 +116,14 @@ In some situations, you may want to register conversions on other types of actio
 - when a user does some interaction in your Flash application
 - when a user has submitted his cart and has done the payment: you can give the Piwik tracking code to the payment website which will then register the conversions in your Piwik database, with the conversion's custom revenue
 
-To trigger a goal using the Piwik JavaScript Tracking, you can simply do:
+To trigger a goal conversion:
 
 ```javascript
 // logs a conversion for goal 1
 _paq.push(['trackGoal', 1]);
 ```
 
-You can also register a conversion for this goal with a custom revenue. For example, you can generate the call to trackGoal dynamically to set the revenue of the transaction:
+You can also register a conversion for this goal with a custom revenue. For example, you can generate the call to `trackGoal()` dynamically to set the revenue of the transaction:
 
 ```javascript
 // logs a conversion for goal 1 with the custom revenue set
@@ -137,11 +132,11 @@ _paq.push(['trackGoal', 1, <?php echo $cart->getCartValue(); ?>]);
 
 Find more information about goal tracking in Piwik in the [**Tracking Goals**](http://piwik.org/docs/tracking-goals-web-analytics/) documentation.
 
-## Tracking Ecommerce Orders, Cart Updates and Product/Category Page Views
+## Ecommerce tracking
 
 Piwik allows for advanced and powerful Ecommerce tracking. Check out the [Ecommerce Analytics](http://piwik.org/docs/ecommerce-analytics/) documentation for more information about Ecommerce reports and how to set up Ecommerce tracking.
 
-## Tracking internal Search Keywords, categories, and No Result Search Keywords
+## Internal search tracking
 
 Piwik offers advanced [Site Search Analytics](http://piwik.org/docs/site-search/) feature, letting you track how your visitors use your internal website search engine. By default, Piwik can read URL parameters that will contain the search keyword. However, you can also record the site search keyword manually using the Javascript function `trackSiteSearch(...)`
 
@@ -163,7 +158,7 @@ _paq.push(['trackSiteSearch',
 
 We also highly recommend to set the searchCount parameter, as Piwik will specifically report "No Result Keywords", ie. Keywords that were searched, but did not return any result. It is usually very interesting to know what users search for but can't find (yet?) on your website. Learn more about [Site Search Analytics in the User Doc](http://piwik.org/docs/site-search/).
 
-## Custom Variables
+## Custom variables
 
 Custom variables are a powerful feature that enable you to track custom values for each visit, and/or each page view. Please see the [Tracking custom variables](http://piwik.org/docs/custom-variables/) documentation page for general information.
 
@@ -176,13 +171,15 @@ There are two "scopes" which you can set your custom variables to. The "scope" i
 
 Custom variable statistics are reported in Piwik under **Visitors &gt; custom variables**. Both custom variables of scope "visit" and "page" are aggregated in this report.
 
-### Set a Custom Variable for the Visit
+### Custom variables for visits
 
-**`setCustomVariable (index, name, value, scope = "visit")`**
+```javascript
+setCustomVariable(index, name, value, scope = "visit")
+```
 
 This function is used to create, or update a custom variable name and value. For example, imagine you want to store in each visit the gender of the user. Yow would store the custom variable with a name = "gender", value = "male" or "female".
 
-**<span style="color: #ff6600;">Important:</span>** a given custom variable name must always be stored in the same "index". For example, if you choose to store the variable **name = "Gender"** in **index = 1** and you record another custom variable in index = 1, then the "Gender" variable will be deleted and replaced with the new custom variable stored in index 1.
+**Important:** a given custom variable name must always be stored in the same "index". For example, if you choose to store the variable **name = "Gender"** in **index = 1** and you record another custom variable in index = 1, then the "Gender" variable will be deleted and replaced with the new custom variable stored in index 1.
 
 ```javascript
 _paq.push(['setCustomVariable',
@@ -201,9 +198,11 @@ _paq.push(['trackPageView']);
 
 You only need to set a variable with scope "visit" once, and the value will be recorded for the whole visit.
 
-### Set a Custom Variable for a Page View
+### Custom variable for page views
 
-**`setCustomVariable (index, name, value, scope = "page")`**
+```javascript
+setCustomVariable(index, name, value, scope = "page")
+```
 
 As well as tracking custom variables for "visits", it is sometimes useful to track custom variables for each page view separately. For example, for a "News" website or blog, a given article may be categorized into one or several categories. In this case, you could set one or several custom variables with `name="category"`, one with `value="Sports"` and another with `value="Europe"` if the article is classified in Sports and Europe Categories. The custom variables report will then report on how many visits and page views were in each of your website's categories. This information can be difficult to obtain with standard Piwik reports because they report on "Best Page URLs" and "Best Page Titles" which might not contain the "category" information.
 
@@ -220,7 +219,7 @@ _paq.push(['setCustomVariable', 2, 'Category', 'Europe', 'page']);
 _paq.push(['trackPageView']);
 ```
 
-**<span style="color: #ff6600;">Important:</span>** It is possible to store a custom variables of scope "visit" in "index" 1, and store a different custom variable of scope "page" in the same "index" 1. Therefore, you can technically **track up to 10 custom variables names and values on every page** of your website (5 with a "page" scope stored in the actual page view, 5 with a "visit" scope stored in the visit).
+**Important:** It is possible to store a custom variables of scope "visit" in "index" 1, and store a different custom variable of scope "page" in the same "index" 1. Therefore, you can technically **track up to 10 custom variables names and values on every page** of your website (5 with a "page" scope stored in the actual page view, 5 with a "visit" scope stored in the visit).
 
 ```javascript
 _paq.push(['setCustomVariable',
@@ -237,10 +236,10 @@ _paq.push(['setCustomVariable',
 _paq.push(['trackPageView']);
 ```
 
-### Delete a Custom Variable
+### Deleting a custom variable
 
 ```javascript
-deleteCustomVariable (index, scope)
+deleteCustomVariable(index, scope)
 ```
 
 If you created a custom variable and then decide to remove this variable from a visit or page view, you can use deleteCustomVariable.
@@ -252,10 +251,10 @@ _paq.push(['deleteCustomVariable', 1, "visit"]); // Delete the variable in index
 _paq.push(['trackPageView']);
 ```
 
-### Get the Name and Value of a Custom Variable
+### Retrieving a custom variable
 
 ```javascript
-getCustomVariable (index, scope)
+getCustomVariable(index, scope)
 ```
 
 This function can be used to get the custom variable name and value. By default, it will only work for custom variables that were set during the same page load.
@@ -274,7 +273,6 @@ _paq.push([ function() {
 
 _paq.push(['trackPageView']);
 ```
-
 
 ## User ID
 
@@ -387,44 +385,39 @@ div.addEventListener('click', function () {
 
 Be aware that each call to those methods will send one request to your Piwik tracker instance. Doing this too many times can cause performance problems.
 
-## Cookie Configuration for Domains and Subdomains
+## Cookie configuration
 
-Piwik uses first-party cookies to keep track some information (number of visits, original referrer, and unique visitor ID). First[party cookies ensure higher user privacy (since cookies are not sent to a third-party server), and are therefore accepted in most browsers by default.
+Piwik uses first-party cookies to keep track some information (number of visits, original referrer, and unique visitor ID). First-party cookies ensure higher user privacy (since cookies are not sent to a third-party server), and are therefore accepted in most browsers by default.
 
-Piwik creates a set of cookies for each domain and subdomain. If you want to track some subdomains and share the same cookie for accurate statistics, it is necessary to customize the Piwik Tracking code. Check out the examples for the various configurations.
+Piwik creates a set of cookies for each domain and subdomain. If you want to track some subdomains and share the same cookie for accurate statistics, it is necessary to customize the Piwik Tracking code.
 
-### If you Track Only One Domain Name or Subdomain for a Single Website in Piwik
+### Tracking one domain
 
 This is the standard use case. Piwik tracks the visits of one domain name with no subdomain, in a single Piwik website.
 
 ```javascript
 // Default Tracking code
-
 _paq.push(['setSiteId', 1]);
-
 _paq.push(['setTrackerUrl', u+'piwik.php']);
-
 _paq.push(['trackPageView']);
 ```
 
-### If you Track One Domain Name and Several Subdomains for a Single Website in Piwik
+### Tracking subdomains in the same website
 
 If you want to record visits for the main domain name as well as its subdomains, you would want to share cookies across all domains. You can do so by calling `setCookieDomain()`, in all subdomains tracking codes.
 
 ```javascript
 _paq.push(['setSiteId', 1]);
-
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 
 // Same cookie as: example.com, www.example.com, subdomain.example.com, ...
 _paq.push(['setCookieDomain', '*.example.com']);
-
-_paq.push(['setDomains', '*.example.com']); // Download &amp; Click tracking alias domains
+_paq.push(['setDomains', '*.example.com']); // Download & Click tracking alias domains
 
 _paq.push(['trackPageView']);
 ```
 
-### If you Track Domain Subdirectories or Pages in Different Websites in Piwik
+### Tracking subdirectories or pages as different websites
 
 By default, Piwik uses only one cookie for a domain name, and all its pages and subdirectories.
 
@@ -437,55 +430,49 @@ For example, if your website has user profiles, you could track each user profil
 _paq.push(['setSiteId', X]);
 
 _paq.push(['setTrackerUrl', u+'piwik.php']);
-
 _paq.push(['trackPageView']);
 ```
 
-In the /user/MyUsername page, you would write:
+In the `/user/myusername` page, you would write:
 
 ```javascript
 // The idSite Y will be different from other user pages
-
 _paq.push(['setSiteId', Y]);
-
-_paq.push(['setTrackerUrl', u+'piwik.php']);
-
 _paq.push(['setCookiePath', '/user/MyUsername']);
 
+_paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
 
 For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](http://piwik.org/faq/new-to-piwik/#faq_104)
 
-## Ignore Specific Domains or Subdomains in the "Outlink" Click Tracking
+## Download & Outlink tracking
 
-By default all links to domains other than the current domain have click tracking enabled, and each click will be counted as an outlink. If you use multiple domains and subdomains, you may see clicks on your subdomains appearing in the Pages &gt; Outlinks report.
+### Outlink tracking exclusions
+
+By default all links to domains other than the current domain have click tracking enabled, and each click will be counted as an outlink. If you use multiple domains and subdomains, you may see clicks on your subdomains appearing in the *Pages > Outlinks* report.
 
 If you only want clicks to external websites to appear in your outlinks report, you can use the function `setDomains()` to specify the list of alias domains or subdomains. Wildcard domains (*.example.org) are supported to let you easily ignore clicks to all subdomains.
 
 ```javascript
 // Don't track Outlinks on all clicks pointing to *.hostname1.com or *.hostname2.com
-
 // Note: the currently tracked website is added to this array automatically
-
-_paq(['setDomains', ["*.hostname1.com", "hostname2.com"]]); </span>
+_paq(['setDomains', ["*.hostname1.com", "hostname2.com"]]);
 
 _paq.push(['trackPageView']);
 ```
 
-## Disable the Download & Outlink Tracking
+### Disabling Download & Outlink tracking
 
 By default, the Piwik tracking code enables clicks and download tracking. To disable all automatic download and outlink tracking, you must remove the call to the `enableLinkTracking()` function:
 
 ```javascript
 // we comment out the function that enables link tracking
-
 // _paq.push(['enableLinkTracking']);
-
 _paq.push(['trackPageView']);
 ```
 
-## Disable the Download & Outlink Tracking for Specific CSS Classes
+#### Disabling for specific CSS classes
 
 You can disable automatic download and outlink tracking for links with specific CSS classes:
 
@@ -497,17 +484,17 @@ _paq.push(['trackPageView']);
 
 This will result in clicks on a link `<a href='http://example.com' class='no-tracking'>Test</a>` not being counted.
 
-## Disable Download or Outlink Tracking on a Specific Link
+#### Disabling for a specific link
 
-If you want to always ignore download or outlink tracking on a specific link, you can add the 'piwik_ignore' css class to it:
+If you want to ignore download or outlink tracking on a specific link, you can add the 'piwik_ignore' css class to it:
 
 ```html
 <a href='http://builds.piwik.org/latest.zip' class='piwik_ignore'>File I don't want to track as a download</a>
 ```
 
-## Force a Click on a Link to be Recorded as a Download in Piwik
+### Recording a click as a download
 
-If you want Piwik to consider a given link as a download, you can add the 'piwik_download' css class to the link:
+If you want to force Piwik to consider a link as a download, you can add the 'piwik_download' css class to the link:
 
 ```html
 <a href='last.php' class='piwik_download'>Link I want to track as a download</a>
@@ -524,9 +511,9 @@ _paq.push(['setDownloadClasses', "download"]);
 _paq.push(['trackPageView']);
 ```
 
-## Force a Click on a Link to be Recorded as an Outlink
+### Recording a click as an outlink
 
-If you want Piwik to consider a given link as an outlink (links to the current domain or to one of the alias domains), you can add the 'piwik_link' css class to the link:
+If you want to force Piwik to consider a link as an outlink (links to the current domain or to one of the alias domains), you can add the 'piwik_link' css class to the link:
 
 ```html
 <a href='http://mysite.com/partner/' class='piwik_link'>Link I want to track as an outlink</a>
@@ -549,7 +536,7 @@ Alternatively, you can use JavaScript to manually trigger a click on an outlink 
 <a href="mailto:namexyz@mydomain.co.uk" target="_blank" onClick="javascript:_paq.push(['trackLink', 'http://mydomain.co.uk/mailto/Agent namexyz', 'link']);">namexyz@mydomain.co.uk </a>
 ```
 
-## Changing the Pause Timer
+### Changing the Pause Timer
 
 When a user clicks to download a file, or clicks on an outbound link, Piwik records it. In order to do so, it adds a small delay before the user is redirected to the requested file or link. The default value is 500ms, but you can set it to a shorter length of time. It should be noted, however, that doing so results in the risk that this period of time is not long enough for the data to be recorded in Piwik.
 
@@ -559,7 +546,7 @@ _paq.push(['setLinkTrackingTimer', 250]); // 250 milliseconds
 _paq.push(['trackPageView']);
 ```
 
-## Changing the List of File Extensions to Track as "Downloads"
+### File extensions for tracking downloads
 
 By default, any file ending with one of these extensions will be considered a 'download' in the Piwik interface:
 
@@ -580,7 +567,7 @@ _paq.push(['setDownloadExtensions', "jpg|png|gif"]);
 _paq.push(['trackPageView']);
 ```
 
-If you want to track a new filetype, you can just add it to the list by using `addDownloadExtensions( filetype )`:
+If you want to track a new file type, you can just add it to the list by using `addDownloadExtensions( filetype )`:
 
 ```javascript
 // clicks on URLs finishing by mp5 or mp6 will be counted as downloads
@@ -588,38 +575,32 @@ _paq.push(['addDownloadExtensions', "mp5|mp6"]);
 _paq.push(['trackPageView']);
 ```
 
-## Multiple Piwik Trackers
+## Multiple Piwik trackers
 
-It is possible to track a page using multiple Piwik trackers that point to the same or different Piwik servers. To improve page loading time, you can load piwik.js once. Each call to `Piwik.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
+It is possible to track a page using multiple Piwik trackers that point to the same or different Piwik servers. To improve page loading time, you can load `piwik.js` once. Each call to `Piwik.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
 
 ```html
 <script type="text/javascript">
-
-window.piwikAsyncInit = function () {
-    try {
-        var piwikTracker = Piwik.getTracker("http://URL_1/piwik.php", 1);
-        piwikTracker.trackPageView();
-        var piwik2 = Piwik.getTracker("http://URL_2/piwik.php", 4);
-        piwik2.trackPageView();
-    } catch( err ) {}
-};
-
+    window.piwikAsyncInit = function () {
+        try {
+            var piwikTracker = Piwik.getTracker("http://URL_1/piwik.php", 1);
+            piwikTracker.trackPageView();
+            var piwik2 = Piwik.getTracker("http://URL_2/piwik.php", 4);
+            piwik2.trackPageView();
+        } catch( err ) {}
+    };
 </script>
 ```
 
-The `piwikAsyncInit` method was introduced in Piwik 2.3 and will be executed once the Piwik tracker is loaded and initialized. In earlier versions you must load Piwik synchronous.
+The `piwikAsyncInit()` method was introduced in Piwik 2.3 and will be executed once the Piwik tracker is loaded and initialized. In earlier versions you must load Piwik synchronous.
 
 Note that you can also set the website ID and the Piwik tracker URL manually, instead of setting them in the getTracker call:
 
 ```javascript
 // we replace Piwik.getTracker("http://example.com/piwik/", 12)
-
 var piwikTracker = Piwik.getTracker();
-
 piwikTracker.setSiteId( 12 );
-
 piwikTracker.setTrackerUrl( "http://example.com/piwik/" );
-
 piwikTracker.trackPageView();
 ```
 
@@ -628,10 +609,10 @@ piwikTracker.trackPageView();
 
 If you have any question about JavaScript Tracking in Piwik, [please search the website](http://piwik.org/search/), or [ask in the forums](http://forum.piwik.org).
 
-* [How do enable tracking for users without Javascript?](http://piwik.org/faq/how-to/#faq_176)
-* [How does Piwik track downloads?](http://piwik.org/faq/new-to-piwik/#faq_47)
-* [How to track error pages and get the list of 404 and referrers urls.](http://piwik.org/faq/how-to/#faq_60)
-* [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](http://piwik.org/faq/how-to/#faq_62)
-* [How do I setup Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](http://piwik.org/faq/how-to/#faq_132)
-* [How do I customise the piwik.js being loaded on all my websites?](http://piwik.org/faq/how-to/faq_19087/)
-* [How do I disable all tracking cookies used by Piwik in the javascript code?](http://piwik.org/faq/general/#faq_157)
+- [How do enable tracking for users without Javascript?](http://piwik.org/faq/how-to/#faq_176)
+- [How does Piwik track downloads?](http://piwik.org/faq/new-to-piwik/#faq_47)
+- [How to track error pages and get the list of 404 and referrers urls.](http://piwik.org/faq/how-to/#faq_60)
+- [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](http://piwik.org/faq/how-to/#faq_62)
+- [How do I setup Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](http://piwik.org/faq/how-to/#faq_132)
+- [How do I customise the piwik.js being loaded on all my websites?](http://piwik.org/faq/how-to/faq_19087/)
+- [How do I disable all tracking cookies used by Piwik in the javascript code?](http://piwik.org/faq/general/#faq_157)

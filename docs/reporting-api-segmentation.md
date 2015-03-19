@@ -61,6 +61,10 @@ will select "Visitors from Search engines AND (Keyword is Piwik OR Keyword is an
 
 {@include http://demo.piwik.org/index.php?module=API&action=listSegments&language=en}
 
+### Segment values must be URL encoded
+
+The segment value (located after the segment operator) must be URL encoded before being sent to Piwik. For example to select all visitors that visited your website via a Search keyword containing `My brand`, you need to URL encode the value such as: `&segment=referrerKeyword!@My%20brand`.
+
 ### Segment where value is empty / is not empty
 
 You may sometimes want to segment your analytics reports, for all visitors where a given dimension is empty (a value was not set). This is similar to the SQL "is null" clause. To do so, you can leave the value blank after the operator `==` in the segment string. For example, to select all visitors that did not have any referrer keyword set, you can write:

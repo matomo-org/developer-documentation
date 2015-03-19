@@ -1,135 +1,138 @@
 ---
 category: Develop
+title: Themes
 ---
-# Theming
+# Writing a theme
 
-<!-- Meta (to be deleted)
-Purpose: describe how themes can change look and feel, how to create a theme, and how colors in JavaScript/server-side are themed.
+**Themes** are special types of plugins that change the look and feel of Piwik's UI. They use CSS and LESS to override the default styles defined by other Piwik plugins.
 
-Audience: 
+This guide will explain how to create a new theme. This guide assumes that you:
 
-Expected Result: 
+- can code in HTML, PHP, CSS and JavaScript,
+- and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
-Notes: 
-
-What's missing? (stuff in my list that was not in when I wrote the 1st draft)
--->
-
-## About this guide
-
-In Piwik, **themes** are special types of plugins that change the look and feel of Piwik's UI. They use CSS and LESS to override the default styles defined by other Piwik plugins. This guide will explain how to create a new theme.
-
-**Read this guide if**
-
-* you'd like to know **how to create your own themes for Piwik**
-
-**Guide assumptions**
-
-This guide assumes that you:
-
-* can code in HTML, PHP, CSS and JavaScript,
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
-
-## Creating a theme
+## Creating a new theme
 
 To create an empty theme, run the following command from Piwik's root directory:
 
     ./console generate:theme
 
-After you enter the appropriate information, a theme will be created for you in the **plugins** directory.
+After you enter the appropriate information, a theme will be created for you in the `plugins/` directory.
 
-### Simple theming
+## Simple theming
 
-For simple theming we mean slighty and fast modifications to the CSS using [Leaner CSS](http://en.wikipedia.org/wiki/LESS_%28stylesheet_language%29). Yes Sir, Piwik uses LESS.
+Piwik uses [LESS (Leaner CSS)](http://lesscss.org/) to compose CSS files, allowing for simple theming very easily.
  
-#### Colors and fonts
+### Colors and fonts
 
-Colors that are used in CSS are simple to override. Usually it is enough to just change the value of variables set using LESS. For example to change the background from white to black you can simply define the following variable:
+Colors used in CSS are simple to override because they are often defined as [Less variables](http://lesscss.org/features/#variables-feature).
 
-    @theme-color-background-base: #000;
-    
+For example to change the background from white to black you can simply define the following variable:
+
+```css
+@theme-color-background-base: #000;
+```
+
 To change the link color to red you override the link variable:
 
-    @theme-color-link: #f00;
-    
+```css
+@theme-color-link: #f00;
+```
+
 To change the font you override the font variable:
 
-    @theme-fontFamily-base: Verdana, sans-serif;
-    
-You get the point. It is a common convention among themes to put all color values in a **_colors.less** file. This is already done for you if you have created your theme using the above mentioned console command. Just uncomment the variables you want to change. For a list of available variables have a look at the [Example Theme plugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleTheme/stylesheets). Please note in case you are not using the theme generator: Overwriting a variable will only work if they are defined in a less file that is imported by another less file. 
+```css
+@theme-fontFamily-base: Verdana, sans-serif;
+```
 
-Although we do not recommend to do so you can change the colors of a specific element directly, for example:
+You get the point. It is a common convention among themes to put all color values in a `_colors.less` file. This is already done for you if you have created your theme using the above mentioned console command. Just uncomment the variables you want to change. For a list of available variables have a look at the [Example Theme plugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleTheme/stylesheets).
 
-    #login {
-        background-color: red;
-    }
+Please note in case you are not using the theme generator: overriding variables will only work if they are defined in a less file that is imported by another less file.
 
-Please use this method only if needed as elements, id's or class names might change in the future and break your theme.
+Although we do not recommend to do so, you can change the colors of a specific element directly, for example:
 
-#### Icons override
+```css
+#login {
+    background-color: red;
+}
+```
 
-Overriding icons is fairly easy. Just create a folder named `images` and place an icon having the same file name as the origin icon. For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/piwik/piwik/tree/master/plugins/Morpheus/images). It is not possible yet to override icons used in reports such as browser or search engine icons.
+Please use this method only if needed. Element ids or classes might change in the future and break your theme.
 
-#### Logo and favicon
+### Icons override
 
-As Piwik users can upload their own logo and favicon using the admin interface a theme is not supposed to change any of those. 
+Overriding icons is fairly easy: create a folder named `images` in your theme's directory and place an icon having the same file name as the icon you want to override.
 
-### Advanced theming 
+For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/piwik/piwik/tree/master/plugins/Morpheus/images). It is not yet possible to override icons used in reports such as browser or search engine icons.
 
-#### Adding styles
+### Logo and favicon
 
-Every theme has one main file that contains all of your theme's styling overrides. The location of this file is determined by the **stylesheet** property in your theme's **plugin.json** file. The property's value is a path relative to the plugin's root directory:
+As Piwik users can upload their own logo and favicon using the admin interface a theme is not supposed to change any of those.
 
-    {
-        "name": "MyTheme",
-        "description": "A new theme.",
-        "theme": true,
-        "stylesheet": "stylesheets/theme.less"
-    }
+## Advanced theming
 
-The generated theme will already have a file for your new styles, so you don't need to set this property. The file is called **theme.less** and is located in the **stylesheets** directory of your theme.
+### Adding styles
 
-You can put your entire theme into this one file if you want, but this will not result in easy to read and easy to maintain code. Instead, you should group your theme's styles based on the part of Piwik they modify and place them in separate LESS files. In **theme.less** you can [@import](/features/#import-directives-feature) them.
+Every theme has one main file that contains all of your theme's styling overrides. The location of this file is determined by the **stylesheet** property in your theme's `plugin.json` file. The property's value is a path relative to the plugin's root directory:
 
-#### Adding JavaScript files
+```json
+{
+    "name": "MyTheme",
+    "description": "A new theme.",
+    "theme": true,
+    "stylesheet": "stylesheets/theme.less"
+}
+```
+
+Generated themes will already have a file configured, so you don't need to set this property. The file is called `theme.less` and is located in the `stylesheets/` directory of your theme.
+
+You can put your entire theme into this one file if you want, but the result might not be easy to read and to maintain. Instead, you should group the styles based on the part of Piwik they modify and place them in separate LESS files. You can then [`@import`](http://lesscss.org/features/#import-directives-feature) them in `theme.less`.
+
+### Adding JavaScript files
 
 Themes can also add new JavaScript files. These files can be used to style things that can't be styled through CSS or LESS.
 
-To add JavaScript files, add them as an array to to the **javascript** property in your theme's **plugin.json** file:
+To add JavaScript files, add them as an array to to the **javascript** property in your theme's `plugin.json` file:
 
-    {
-        "name": "MyTheme",
-        "description": "A new theme.",
-        "theme": true,
-        "stylesheet": "stylesheets/theme.less",
-        "javascript": ["javascripts/myJavaScriptFile.js", "javascripts/myOtherJavaScriptFile.js"]
-    }
+```json
+{
+    "name": "MyTheme",
+    "description": "A new theme.",
+    "theme": true,
+    "stylesheet": "stylesheets/theme.less",
+    "javascript": ["javascripts/myJavaScriptFile.js", "javascripts/myOtherJavaScriptFile.js"]
+}
+```
     
-#### Theming colors used in JavaScript & PHP
+### Theming colors used in JavaScript & PHP
 
 Some colors are only used in JavaScript and in PHP. We've made it possible for those colors to be specified through CSS, but the process is a bit different than setting colors of normal HTML elements.
 
 Each color used in JavaScript is given a name and grouped in a _color namespace_. You can set these colors like this:
 
-    .color-namespace-name[data-name=color-name] {
-        color: red;
-    }
+```css
+.color-namespace-name[data-name=color-name] {
+    color: red;
+}
+```
 
 For example,
 
-    .bar-graph-colors[data-name=grid-background] {
-        color: @background-color-base;
-    }
+```css
+.bar-graph-colors[data-name=grid-background] {
+    color: @background-color-base;
+}
 
-    .bar-graph-colors[data-name=grid-border] {
-        color: @basic-grid-border-color;
-    }
+.bar-graph-colors[data-name=grid-border] {
+    color: @basic-grid-border-color;
+}
+```
 
-**Named colors**
+#### Named colors
 
 Here is a list of all named colors in Piwik:
 
-* _Namespace_: **sparkline-colors** &mdash; contains colors for sparkline images.
+* _Namespace_: **sparkline-colors**: contains colors for sparkline images.
 
   * **backgroundColor**: The background color of sparkline images.
   * **lineColor**: The color of the line in the sparkline.
@@ -205,8 +208,6 @@ Here is a list of all named colors in Piwik:
 
 * _Namespace_: **visitor-map**: contains colors for the [Visitors Map](http://piwik.org/docs/visitors-map/).
 
-<!-- TODO: should probably rename some of these colors -->
-
   * **no-data-color**: The fill color for countries that have no visits.
   * **one-country-color**: The fill color for countries that have visits, if only one country received visits.
   * **color-range-start-choropleth**: The start of the color range used to color countries and regions based on the number of visits.
@@ -236,75 +237,27 @@ Here is a list of all named colors in Piwik:
   * **special-metrics-color-scale-4**: The end of the color scale used to color countries and regions for _special metrics_.
 
 <a name="named-colors-footnote-1"></a>
-[1] Metrics that use the _special metrics_ color scale are the following: **avg\_time\_on\_site**, **nb\_actions\_per\_visit** and **bounce\_rate**
-
-## Making a plugin themable
-
-Plugins that define their own UI widgets or new [report visualizations](/guides/visualizing-report-data) are, for the most part, already themable. As long as they rely entirely on CSS for the look and feel, they can be easily themed.
-
-If these new widgets or visualizations use colors in JavaScript or PHP, more work must be done to make them themable.
-
-### Using CSS colors in JavaScript
-
-To use colors defined in CSS within JavaScript, the [ColorManager](/guides/working-with-piwiks-ui#colormanager) class must be used. Using it is straightforward. After you define some named colors in CSS like this:
-
-    .my-color-namespace[data-name=my-color-name] {
-        color: red;
-    }
-
-    .my-color-namespace[data-name=my-second-color] {
-        color: blue;
-    }
-
-You access them through [ColorManager](/guides/working-with-piwiks-ui#colormanager) like this:
-
-    var ColorManager = require('piwik').ColorManager;
-
-    // get one color
-    var myColorToUse = ColorManager.getColor('my-color-namespace', 'my-color-name');
-
-    // get multiple colors all at once
-    var myColorsToUse = ColorManager.getColor('my-color-namespace', ['my-first-color', 'my-second-color']);
-
-### Using CSS colors in PHP
-
-Using CSS colors in PHP is more complicated, in fact, so much so that **using color values in PHP is discouraged**. The only way to use them is to access them in JavaScript, and then pass them to PHP via query parameters:
-
-    // get the colors
-    var ColorManager = require('piwik').ColorManager;
-    var myColorsToUse = ColorManager.getColor('my-color-namespace', ['my-first-color', 'my-second-color']);
-
-    // set the source of an <img> to use those colors
-    var jsonColors = JSON.stringify(myColorsToUse);
-    $('img#myImage').attr('src', '?module=MyPlugin&action=generateImage&colors=' + encodeURIComponent(jsonColors))
-
-Then use those colors in PHP:
-
-    // controller method in MyPlugin
-    public function generateImage()
-    {
-        $colors = Common::getRequestVar('colors', null, $dataType = 'json');
-
-        $myFirstColor = $colors['my-first-color'];
-        $mySecondColor = $colors['my-second-color'];
-
-        // ... generate the image ...
-    }
+[1] Metrics that use the _special metrics_ color scale are the following: `avg_time_on_site`, `nb_actions_per_visit` and `bounce_rate`.
 
 ## Twig, the template engine
 
-Piwik uses [Twig template language](http://en.wikipedia.org/wiki/Twig_%28template_engine%29).
+Piwik uses the [Twig templating engine](http://twig.sensiolabs.org/) to create HTML pages from PHP.
 
-When creating a theme, you do not need to create or change any template.
-The recommended best way to create a theme for Piwik is to only use LESS (CSS) and Javascript.
+When creating a theme, you do not need to create or change any template as the recommended way is to only use Less (CSS) and Javascript. However, in some rare cases where advanced customisation is necessary, you may need to customise Twig templates.
 
-However in some rare cases where advanced customisation is needed, it may be of interest to customise .twig templates files.
+Please note that this is not recommended, so use at your own risk.
 
-Please note: this is not recommended, use at your own risk!
+To override a twig templates from the default `Morpheus` theme, place a `.twig` template file with the same name in your `templates/` directory as follows:
 
- * To override a twig templates from default `Morpheus` theme: place a .twig template file with the same name in your `templates/` directory as follows: `./plugins/[myThemePlugin]/templates/dashboard.twig`
- * To override twig templates used in a plugin: place a .twig template file with the same name in your plugin's `templates/` directory as follows: `./plugins/[myThemePlugin]/templates/plugins/[overridenPlugin]/[overridenTemplate].twig`
+```
+plugins/[MyThemePlugin]/templates/dashboard.twig
+```
 
+To override twig templates used in a plugin, place a `.twig` template file with the same name in your plugin's `templates/` directory as follows:
+
+```
+plugins/[MyThemePlugin]/templates/plugins/[OverriddenPlugin]/[overriddenTemplate].twig
+```
 
 ## Learn more
 

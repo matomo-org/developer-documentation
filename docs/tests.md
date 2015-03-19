@@ -31,6 +31,6 @@ Piwik Core contains a suite of tests used to make sure that Piwik works properly
 
 - **Integration tests** test several parts working together, e.g. a test using a database.
 
-- **System tests** test Piwik's [Reporting API](/guides/piwiks-reporting-api) and [archiving logic](/guides/all-about-analytics-data#the-archiving-process) by tracking visits and checking that the output of certain API queries matches the expected output.
+- **System tests** test Piwik's [Reporting API](/guides/piwiks-reporting-api) and [archiving logic](/guides/archiving) by tracking visits and checking that the output of certain API queries matches the expected output.
 
 - **UI tests** test Piwik's twig templates, JavaScript and CSS by tracking visits, generating screenshots of URLs with [phantomjs](http://phantomjs.org/) and comparing expected screenshots with generated ones.

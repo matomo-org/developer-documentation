@@ -12,6 +12,7 @@ use helpers\Content\Category\CategoryList;
 use helpers\Content\Category\ChangelogCategory;
 use helpers\Content\Category\DesignCategory;
 use helpers\Content\Category\DevelopCategory;
+use helpers\Content\Category\DevelopInDepthCategory;
 use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
 use helpers\Content\Category\IntegrateCategory;
@@ -83,6 +84,11 @@ $app->get('/design', function () use ($app) {
 
 $app->get('/develop', function () use ($app) {
     $category = new DevelopCategory();
+    renderGuide($app, $category->getIntroGuide(), $category);
+});
+
+$app->get('/piwik-in-depth', function () use ($app) {
+    $category = new DevelopInDepthCategory();
     renderGuide($app, $category->getIntroGuide(), $category);
 });
 

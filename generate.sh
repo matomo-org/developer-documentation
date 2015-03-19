@@ -9,10 +9,13 @@ rm -rf docs/generated
 mkdir docs/generated
 cd piwik
 git reset --hard
+git submodule foreach --recursive git reset --hard
 git clean -f -d
+git submodule foreach git clean -f
 git fetch
 git checkout master
 git pull origin master
+git submodule update --recursive --force
 php composer.phar install || true
 cd ..
 php generator/generate.php

@@ -10,6 +10,7 @@ namespace helpers\Content\Category;
 
 use helpers\Content\ApiReferenceGuide;
 use helpers\Content\EmptySubCategory;
+use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
 
 class ApiReferenceCategory extends Category
@@ -28,16 +29,23 @@ class ApiReferenceCategory extends Category
     {
         return [
             new ApiReferenceGuide('api-reference-introduction'),
-            new ApiReferenceGuide('tracking-api'),
-            new ApiReferenceGuide('reporting-api-introduction'),
-            new EmptySubCategory('Javascript Documentation', [
+            new EmptySubCategory('Tracking', [
+                new ApiReferenceGuide('tracking-api'),
                 new ApiReferenceGuide('tracking-javascript'),
+                new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker', 'PHP Tracking Client'),
             ]),
-            new EmptySubCategory('PHP Documentation', [
+            new EmptySubCategory('Reporting HTTP API', [
+                new ApiReferenceGuide('reporting-api'),
+                new ApiReferenceGuide('reporting-api-metadata'),
+                new ApiReferenceGuide('reporting-api-segmentation')
+            ]),
+            new EmptySubCategory('PHP Plugins API', [
                 new PhpDoc('Classes', 'classes'),
                 new PhpDoc('Hooks', 'events'),
                 new PhpDoc('Index', 'index'),
-                new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker'),
+            ]),
+            new EmptySubCategory('Database', [
+                new Guide('persistence-and-the-mysql-backend'),
             ]),
         ];
     }

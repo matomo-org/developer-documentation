@@ -1,8 +1,7 @@
 ---
 category: Develop
-next: getting-started-part-2
 ---
-# Getting Started Part I: Setting Up
+# Setting Up
 
 <!-- Meta (to be deleted)
 TODO: (stuff that needs to go in SOME guide)
@@ -58,6 +57,7 @@ Before we start extending Piwik, let's make sure you have the tools needed. You 
   _Note: we have published our [customized PSR coding style XML file](https://github.com/piwik/piwik/tree/master/misc/others/phpstorm-codestyles) for PhpStorm that you can use._
 
 - **A webserver,** such as [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/). You can also use [PHP's built-in webserver](http://php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 5.4 or higher installed.
+- **A MySQL database** 
 - **[git](http://git-scm.com/)** so you can work with the latest Piwik source code.
 - **[Composer](http://getcomposer.org/)** so you can install the PHP libraries needed by Piwik.
 - **A browser,** such as [Firefox](http://www.mozilla.org/en-US/firefox/new/) or [Chrome](http://www.google.com/chrome). Ok, you've probably got this.
@@ -80,7 +80,7 @@ Open a terminal and `cd` into the directory where you want to install Piwik. The
 
 Then run the following command to install the third party libraries:
 
-    $ composer.phar install
+    $ php composer.phar install
 
 Now that you've got a copy of Piwik, you'll need to point your webserver to it. If you use Apache or Nginx, the specific instructions for configuring your webserver depends on the webserver itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
 
@@ -109,9 +109,11 @@ After installing Piwik, we're going to change some of Piwik's INI configuration 
 
 If you plan on running automated tests, you'll have to set the following configuration options in `config/config.ini.php`:
 
-    [database_tests]
-    password = ...
-    user = ...
+```ini
+[database_tests]
+password = ...
+user = ...
+```
     
 ### Add some test data
 
@@ -137,41 +139,35 @@ Your development environment is set up, and you are now ready to create a plugin
 
 This will create a new plugin named **MyPlugin**.
 
-<div markdown="1" class="alert alert-warning">
-**Note**
-
+<div markdown="1" class="alert alert-info">
 You can use any name for your plugin, but this guide will assume you've created one named **MyPlugin**. If you use a different name, make sure to change `MyPlugin` to the name you used when copying the code in this guide.
 </div>
 
-In your browser load Piwik and navigate to _Settings > Plugins > Manage_. Look for your plugin in the list of plugins, you should see it disabled:
+In your browser load Piwik and navigate to *Administration > Plugins*. Look for your plugin in the list of plugins, you should see it disabled:
 
 <img src="/img/disabled_my_plugin.png"/>
 
-<a name="plugin-directory-structure"></a>
+To enable it, either do it through the web interface or use the command line:
+
+    ./console plugin:activate MyPlugin
+
 **Plugin directory structure**
 
 The command-line tool will create a new directory for your plugin (in the **plugins** sub-directory) and fill it with some files and folders. Here's what these files and folders are for:
 
-* **MyPlugin.php**: Contains your plugin's Plugin Descriptor class. This class contains metadata about your plugin and a list of event handlers for Piwik events.
-* **plugin.json**: Contains plugin metadata such as the name, description, version, etc.
-* **README.md**: A dummy README file for your plugin.
-* **screenshots**: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](http://developer.piwik.org/guides/distributing-your-plugin).
+- `MyPlugin.php`: Contains your plugin's descriptor class. This class contains metadata about your plugin and a list of event handlers for [Piwik events](/guides/events).
+- `plugin.json`: Contains plugin metadata such as the name, description, version, etc.
+- `README.md`: A dummy README file for your plugin.
+- `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](http://developer.piwik.org/guides/distributing-your-plugin).
 
 ## What to read next
 
 Ok! You've set up your development environment and created your plugin! Now all you have to do is make it do what you want. The bad news is that this is the hard part. The good news is that we've written a bunch of other guides to help you shorten the learning curve.
 
-<!-- TODO: re-add when tutorials are added. or remove if too lazy/unconcerned to write them.
-**_Note: Our guides are great, but if you learn better through examples or just don't want to do a lot of reading, why not check out our [tutorials](/guides)? We've written one for everything we think you might want to do._** -->
-
-If you'd like to learn the basics of Piwik plugin development all at once, continue on to the [next part in this series of guides](/guides/getting-started-part-2). If you want to learn how to do just one thing, try reading one of our other guides:
-
-* If you're interested in **creating new analytics reports**, you may want to read our [All About Analytics Data](/guides/all-about-analytics-data) and [Visualizing Report Data](/guides/visualizing-report-data) guides.
-* If you're interested in **changing the look and feel of Piwik**, read our [Theming](/guides/theming) guide.
-* If you're interested in **taking part in core development**, read our [Contributing to Piwik Core](/guides/contributing-to-piwik-core) guide.
-* If you're interested in **integrating Piwik with another technology**, you might want to read our [All About Tracking](/guides/all-about-tracking) guide to learn how to use our Tracking API. You might also want to read our [Piwik's HTTP API](/api-reference/tracking-api) guide to learn about Piwik's Reporting API.
-* If you'd like to **add new console commands**, read our [Piwik on the command line](/guides/piwik-on-the-command-line) guide.
-* If you want to **use automated testing to ensure your plugin works**, read your [Automated Tests](/guides/tests) guide.
+- If you're interested in **creating new analytics reports**, you may want to read about [Custom Reports](/guides/custom-reports) and [Visualizing Report Data](/guides/visualizing-report-data) guides.
+- If you're interested in **changing the look and feel of Piwik**, read our [Theming](/guides/theming) guide.
+- If you're interested in **integrating Piwik with another technology**, you might want to read our [Tracking guides](/guides/tracking-introduction) to learn how to use our Tracking API.
+- If you want to **use automated testing to ensure your plugin works**, read your [Automated Tests](/guides/tests) guide.
 
 And **make sure to read our security guide, [Security in Piwik](/guides/security-in-piwik)**! We have very high security standards that your plugin or contribution **must** respect.
 

@@ -13,6 +13,8 @@ class CategoryList
         switch ($name) {
             case 'Integrate':
                 return new IntegrateCategory();
+            case 'DevelopInDepth':
+                return new DevelopInDepthCategory();
             case 'Develop':
                 return new DevelopCategory();
             case 'Design':

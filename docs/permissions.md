@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Permissions
+# User permissions
 
 Permissions define what a user can see or do in Piwik.
 
@@ -79,7 +79,7 @@ As a plugin developer you would usually use the latter example to verify the per
 
 A user having an admin permission cannot only view reports but also change website related settings. The methods to check for this role are similar to the ones before, just swap the term `View` with `Admin`.
 
-```
+```php
 Piwik::checkUserHasSomeAdminAccess();
 
 Piwik::checkUserHasAdminAccess($idSites = array(1,2,3));
@@ -89,7 +89,7 @@ Piwik::checkUserHasAdminAccess($idSites = array(1,2,3));
 
 A user having the super user permission is allowed to access all of the data stored in Piwik and change any settings. To check if a user has this role use one of the methods that end with `UserSuperUserAccess`.
 
-```
+```php
 Piwik::checkUserHasSuperUserAccess();
 ```
 

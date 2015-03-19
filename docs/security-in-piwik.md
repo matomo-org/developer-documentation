@@ -3,21 +3,6 @@ category: Develop
 ---
 # Security best practices
 
-## About this guide
-
-**Read this guide if**
-
-* you'd like to know **how to write secure code when extending Piwik or contributing to Piwik**
-
-**Guide assumptions**
-
-This guide assumes that you:
-
-* can code in PHP, JavaScript and SQL,
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
-
-## Introduction
-
 If you plan on developing a plugin or [contributing to Piwik Core](/guides/contributing-to-piwik-core) **your code must be secure**.
 
 This guide contains a list of methods to combat certain vulnerabilities. Follow all of them when working on your plugin or contribution.
