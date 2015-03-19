@@ -90,8 +90,6 @@ The Piwik git repository is hosted at [Github](https://github.com) and is public
 
 As of 2014, we manage [over fourty repositories at Github](https://github.com/piwik). This includes the [main repository for Piwik](https://github.com/piwik/piwik) and several plugins, themes, and toolsets to make the most out of Piwik, such as Piwik clients for software development in Python, Ruby, C#, SDKs for iOS, debian packages and other useful Piwik developer tools.
 
-In case Github goes down, we maintain a backup Git Mirror at: [git.piwik.org](http://git.piwik.org).
-
 #### Git Owners
 
 All developers from the Piwik organization can push to all git repositories.
