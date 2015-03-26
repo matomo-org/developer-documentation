@@ -2021,7 +2021,7 @@ Usages:
 
 ### UsersManager.getDefaultDates
 
-*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [211](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L211)*
+*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php) in line [216](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Controller.php#L216)*
 
 Triggered when the list of available dates is requested, for example for the User Settings > Report date to load by default.
 
