@@ -54,7 +54,7 @@ The abstract class defines the following methods:
 - [`addSegment()`](#addsegment) &mdash; Adds a new segment.
 - [`getName()`](#getname) &mdash; Get the translated name of the dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
-- [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension.
+- [`getAllDimensions()`](#getalldimensions) &mdash; Get all visit dimensions that are defined by all activated plugins.
 - [`getDimensions()`](#getdimensions) Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`factory()`](#factory) &mdash; Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Plugin/Dimension/VisitDimension#getid)). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
@@ -73,7 +73,8 @@ The abstract class defines the following methods:
 
 Adds a new segment.
 
-The segment type will be set to 'dimension' automatically if not already set.
+It automatically sets the SQL segment depending on the column name in case none is set
+already.
 
 #### See Also
 
@@ -119,7 +120,7 @@ of the dimension, but is modified to be more human readable
 <a name="getAllDimensions" id="getAllDimensions"></a>
 ### `getAllDimensions()`
 
-Gets an instance of all available visit, action and conversion dimension.
+Get all visit dimensions that are defined by all activated plugins.
 
 #### Signature
 

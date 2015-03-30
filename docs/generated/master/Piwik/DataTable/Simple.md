@@ -82,7 +82,7 @@ The class defines the following methods:
 - [`isEqual()`](#isequal) &mdash; Returns true if both DataTable instances are exactly the same. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getSerialized()`](#getserialized) &mdash; Serializes an entire DataTable hierarchy and returns the array of serialized DataTables. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`addRowsFromSerializedArray()`](#addrowsfromserializedarray) &mdash; Adds a set of rows from a serialized DataTable string. Inherited from [`DataTable`](../../Piwik/DataTable.md)
-- [`addRowsFromArray()`](#addrowsfromarray) &mdash; Adds multiple rows from an array.
+- [`addRowsFromArray()`](#addrowsfromarray) &mdash; Adds rows based on an array mapping label column values to value column values.
 - [`addRowsFromSimpleArray()`](#addrowsfromsimplearray) &mdash; Adds multiple rows from an array containing arrays of column values. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`makeFromIndexedArray()`](#makefromindexedarray) &mdash; Rewrites the input `$array` Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](#setmaximumdepthlevelallowedatleast) &mdash; Sets the maximum depth level to at least a certain value. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -779,9 +779,7 @@ _Note: This function will successfully load DataTables serialized by Piwik 1.X._
 <a name="addRowsFromArray" id="addRowsFromArray"></a>
 ### `addRowsFromArray()`
 
-Adds multiple rows from an array.
-
-You can add row metadata with this method.
+Adds rows based on an array mapping label column values to value column values.
 
 #### Signature
 

@@ -16,7 +16,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; Manipulates a DataTable in some way.
+- [`filter()`](#filter) &mdash; See [Limit](/api-reference/Piwik/DataTable/Filter/Limit).
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -42,7 +42,7 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Manipulates a DataTable in some way.
+See [Limit](/api-reference/Piwik/DataTable/Filter/Limit).
 
 #### Signature
 
