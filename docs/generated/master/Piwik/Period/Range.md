@@ -19,17 +19,17 @@ Methods
 The class defines the following methods:
 
 - [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods. Inherited from [`Period`](../../Piwik/Period.md)
-- [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period.
-- [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period.
+- [`getDateStart()`](#getdatestart) &mdash; Returns the first day of the period.
+- [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period.
 - [`getId()`](#getid) &mdash; Returns the period ID. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getLabel()`](#getlabel) &mdash; Returns the label for the current period. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period. Inherited from [`Period`](../../Piwik/Period.md)
 - [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period. Inherited from [`Period`](../../Piwik/Period.md)
 - [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Period/Range#tostring). Inherited from [`Period`](../../Piwik/Period.md)
-- [`getPrettyString()`](#getprettystring) &mdash; Returns the current period as a string.
-- [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns the current period as a localized short string.
-- [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns the current period as a localized long string.
+- [`getPrettyString()`](#getprettystring) &mdash; Returns a pretty string describing this period.
+- [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns a short string description of this period that is localized with the currently used language.
+- [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns a long string description of this period that is localized with the currently used language.
 - [`getRangeString()`](#getrangestring) &mdash; Returns the date range string comprising two dates
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setDefaultEndDate()`](#setdefaultenddate) &mdash; Sets the default end date of the period.
@@ -66,19 +66,17 @@ etc.
 <a name="getDateStart" id="getDateStart"></a>
 ### `getDateStart()`
 
-Returns the start date of the period.
+Returns the first day of the period.
 
 #### Signature
 
 - It returns a [`Date`](../../Piwik/Date.md) value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getdateend" id="getdateend"></a>
 <a name="getDateEnd" id="getDateEnd"></a>
 ### `getDateEnd()`
 
-Returns the end date of the period.
+Returns the last day of the period.
 
 #### Signature
 
@@ -162,7 +160,7 @@ See [toString()](/api-reference/Piwik/Period/Range#tostring).
 <a name="getPrettyString" id="getPrettyString"></a>
 ### `getPrettyString()`
 
-Returns the current period as a string.
+Returns a pretty string describing this period.
 
 #### Signature
 
@@ -172,7 +170,7 @@ Returns the current period as a string.
 <a name="getLocalizedShortString" id="getLocalizedShortString"></a>
 ### `getLocalizedShortString()`
 
-Returns the current period as a localized short string.
+Returns a short string description of this period that is localized with the currently used language.
 
 #### Signature
 
@@ -182,7 +180,7 @@ Returns the current period as a localized short string.
 <a name="getLocalizedLongString" id="getLocalizedLongString"></a>
 ### `getLocalizedLongString()`
 
-Returns the current period as a localized long string.
+Returns a long string description of this period that is localized with the currently used language.
 
 #### Signature
 
