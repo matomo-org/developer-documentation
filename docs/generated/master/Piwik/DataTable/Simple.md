@@ -40,6 +40,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`__destruct()`](#__destruct) &mdash; Destructor. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`__clone()`](#__clone) &mdash; Clone. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setLabelsHaveChanged()`](#setlabelshavechanged) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setRows()`](#setrows) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -121,6 +122,19 @@ Creates an empty DataTable.
 Destructor.
 
 Makes sure DataTable memory will be cleaned up.
+
+#### Signature
+
+- It does not return anything.
+
+<a name="__clone" id="__clone"></a>
+<a name="__clone" id="__clone"></a>
+### `__clone()`
+
+Clone.
+
+Called when cloning the datatable. We need to make sure to create a new datatableId.
+If we do not increase tableId it can result in segmentation faults when destructing a datatable.
 
 #### Signature
 
@@ -769,11 +783,11 @@ _Note: This function will successfully load DataTables serialized by Piwik 1.X._
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$stringSerialized` (`string`) &mdash;
+    - `$serialized` (`string`) &mdash;
        A string with the format of a string in the array returned by [serialize()](http://php.net/function.serialize()).
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if `$stringSerialized` is invalid.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if `$serialized` is invalid.
 
 <a name="addrowsfromarray" id="addrowsfromarray"></a>
 <a name="addRowsFromArray" id="addRowsFromArray"></a>
