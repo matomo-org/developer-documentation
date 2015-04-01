@@ -11,6 +11,7 @@ Methods
 The class defines the following methods:
 
 - [`getQueryStringWithExcludedParameters()`](#getquerystringwithexcludedparameters) &mdash; Converts an array of query parameter name/value mappings into a query string.
+- [`isLookLikeUrl()`](#islooklikeurl) &mdash; Returns true if the string passed may be a URL ie.
 - [`getParseUrlReverse()`](#getparseurlreverse) &mdash; Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php) function.
 - [`getArrayFromQueryString()`](#getarrayfromquerystring) &mdash; Returns a URL query string as an array.
 - [`getParameterFromQueryString()`](#getparameterfromquerystring) &mdash; Returns the value of a single query parameter from the supplied query string.
@@ -35,6 +36,23 @@ Parameters that are in `$parametersToExclude` will not appear in the result.
 
 - *Returns:*  `string` &mdash;
     A query string, eg, `"?site=0"`.
+
+<a name="islooklikeurl" id="islooklikeurl"></a>
+<a name="isLookLikeUrl" id="isLookLikeUrl"></a>
+### `isLookLikeUrl()`
+
+Returns true if the string passed may be a URL ie.
+
+it starts with protocol://.
+We don't need a precise test here because the value comes from the website
+tracked source code and the URLs may look very strange.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$url` (`string`) &mdash;
+      
+- It returns a `bool` value.
 
 <a name="getparseurlreverse" id="getparseurlreverse"></a>
 <a name="getParseUrlReverse" id="getParseUrlReverse"></a>

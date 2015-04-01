@@ -120,6 +120,8 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
       
     - `$limit`
       
+    - `$offset`
+      
 
 - *Returns:*  `string` &mdash;
     The entire select query.

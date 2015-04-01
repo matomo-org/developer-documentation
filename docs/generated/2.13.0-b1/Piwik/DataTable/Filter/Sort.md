@@ -120,10 +120,10 @@ Sorting method used for sorting values natural
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$rowA` (`array`) &mdash;
-       array[0 => value of column to sort, 1 => label]
-    - `$rowB` (`array`) &mdash;
-       array[0 => value of column to sort, 1 => label]
+    - `$valA` (`mixed`) &mdash;
+      
+    - `$valB` (`mixed`) &mdash;
+      
 - It returns a `int` value.
 
 <a name="sortstring" id="sortstring"></a>
@@ -135,9 +135,9 @@ Sorting method used for sorting values
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$rowA` (`array`) &mdash;
-       array[0 => value of column to sort, 1 => label]
-    - `$rowB` (`array`) &mdash;
-       array[0 => value of column to sort, 1 => label]
+    - `$valA` (`mixed`) &mdash;
+      
+    - `$valB` (`mixed`) &mdash;
+      
 - It returns a `int` value.
 
