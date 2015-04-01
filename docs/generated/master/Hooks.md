@@ -738,7 +738,7 @@ Callback Signature:
 
 ### Live.API.getIdSitesString
 
-*Defined in [Piwik/Plugins/Live/Model](https://github.com/piwik/piwik/blob/master/plugins/Live/Model.php) in line [307](https://github.com/piwik/piwik/blob/master/plugins/Live/Model.php#L307)*
+*Defined in [Piwik/Plugins/Live/Model](https://github.com/piwik/piwik/blob/master/plugins/Live/Model.php) in line [300](https://github.com/piwik/piwik/blob/master/plugins/Live/Model.php#L300)*
 
 
 
@@ -777,7 +777,7 @@ Usages:
 
 ### Live.getExtraVisitorDetails
 
-*Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [224](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L224)*
+*Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php) in line [240](https://github.com/piwik/piwik/blob/master/plugins/Live/API.php#L240)*
 
 Triggered in the Live.getVisitorProfile API method. Plugins can use this event
 to discover and add extra data to visitor profiles.
