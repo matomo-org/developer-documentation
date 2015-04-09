@@ -31,7 +31,6 @@ We make sure all tickets contain enough information, including:
 We are rather obsessed with keeping our issue tracker an organized place. 
 Tickets are generally prioritized by severity. 
 Tickets are either of the type 'Bug', 'Enhancement' or 'Task'. 
-All Bugs are moved to the current milestone because of our [no-bug policy](http://piwik.org/roadmap/). 
 Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
 We have been using an issue tracker since [the beginning of the project](http://piwik.org/history/). 
 
@@ -41,7 +40,7 @@ We have been using an issue tracker since [the beginning of the project](http://
 All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). 
 The versions milestones are listed at the very top and contains all the most important issues to close in accordance with [our vision for the Piwik analytics platform](http://piwik.org/roadmap/).
 
-Very important issues and all bugs are moved to [Short term milestone](https://github.com/piwik/piwik/milestones/Short%20term). 
+Most important issues and bugs are moved to [Short term milestone](https://github.com/piwik/piwik/milestones/Short%20term). 
 This milestone is our active tickets backlog. From time to time, we move one ticket from `Short term` to the current version milestone (eg. `Piwik 3.0.0`).
 
 Other suggestions, tasks and feature requests which we haven't yet scheduled are moved to the [Mid term](https://github.com/piwik/piwik/milestones/Mid%20term) or [Long term](https://github.com/piwik/piwik/milestones/Long%20term) milestones.
