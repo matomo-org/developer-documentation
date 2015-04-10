@@ -163,7 +163,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [278](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L278)*
+*Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [280](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L280)*
 
 Triggered when authenticating an API request, but only if the **token_auth** query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
 and make sure the global authentication object (the object returned by `StaticContainer::get('Piwik\Auth')`)
