@@ -99,7 +99,9 @@ This is a complete list of available classes:
 - [`Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md) &mdash; The average number of seconds spent on the site per visit.
 - [`Plugins\CoreHome\Columns\Metrics\EvolutionMetric`](Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md) &mdash; Calculates evolution values for any other metric.
 - [`Plugins\CoreVisualizations\Metrics\Formatter\Numeric`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter/Numeric.md) &mdash; A metrics formatter that prettifies metric values without returning string values.
-- [`Plugins\Installation\SystemCheck`](Piwik/Plugins/Installation/SystemCheck.md)
+- [`Plugins\Diagnostics\DiagnosticService`](Piwik/Plugins/Diagnostics/DiagnosticService.md) &mdash; Runs the Piwik diagnostics.
+- [`Plugins\Diagnostics\Diagnostic\DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) &mdash; The result of a diagnostic.
+- [`Plugins\Diagnostics\Diagnostic\DiagnosticResultItem`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md)
 - [`Plugins\Login\SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; Initializes authenticated sessions using an Auth implementation.
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
