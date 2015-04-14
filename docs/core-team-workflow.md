@@ -29,10 +29,8 @@ We make sure all tickets contain enough information, including:
 * if a UI improvement, mockups or a detailed description of the changes.
 
 We are rather obsessed with keeping our issue tracker an organized place. 
-Tickets are generally prioritized by severity. 
 Tickets are either of the type 'Bug', 'Enhancement' or 'Task'. 
-Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on.
-We have been using an issue tracker since [the beginning of the project](http://piwik.org/history/). 
+Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on, with highest priority given to issues in the next version milestone. We have been using an issue tracker since [the beginning of the project](http://piwik.org/history/). 
 
 ## How we organise issues
 
@@ -106,6 +104,12 @@ You can also use simply `#159` and a comment will be automatically added to the 
 
 When applicable, the related [online documentation](http://piwik.org/docs/) and the related [FAQs](http://piwik.org/faq/) should be updated.
 
+
+#### Git repository push access
+
+To gain push access to the Piwik code repositories, one must make positive changes in the project, such as  [contributing pull requests](http://developer.piwik.org/guides/contributing-to-piwik-core), bringing new ideas, code, marketing, product visions. When a certain amount of work has been achieved, when we trust your skills and judgement, we will invite you to [join us in the core team](http://piwik.org/team/).
+
+
 ## Getting in touch with Core Team
 
 ### In the forums
@@ -145,28 +149,18 @@ If you believe you have found a bug in Piwik, please do the following:
 
 ### Submitting a feature request
 
-Another way to contribute is to submit a feature request.
+Anyone can contribute to Piwik by submitting a feature request. You can discuss with other users what can be improved in Piwik in the [Feature Suggestions forum](http://forum.piwik.org/index.php?showforum=3), or search if someone reported your suggestion before in the [Piwik issue tracker](https://github.com/piwik/piwik/issues). If you find an existing issue, leave a comment to make your voice heard. Otherwise create a new issue describing how Piwik can be improved to help you in your daily work.
 
-You can tell us what we can do to improve Piwik in the [Feature Suggestions forum](http://forum.piwik.org/index.php?showforum=3). Please check that it is not already in the [list of Piwik tickets](https://github.com/piwik/piwik/issues).
+## Contributing to Piwik
 
-When submitting a significant new feature, it is recommended to be as descriptive as possible. The ticket should contain:
+### We're hiring!
 
-- a description of the product vision
-- a few use cases to show how useful this feature would be
-- mockups of what the new screens would be and how the existing screens would have to change
-- if applicable, examples of how the feature is implemented in other existing tools
-
-Please put as much information as possible as it will help to estimate the effort needed (by the Piwik core team or by a Piwik consultant). We will help with any technical details and questions outlined in the ticket.
+Are you seeking a new challenge? We are currently looking for a full time Software Developer to join our Product Engineering team. [Learn more in the Job Description](https://piwik.org/blog/2015/01/piwik-expanding-seeking-talented-software-engineer-new-zealand-poland/).
 
 ### Contributing code
 
-And of course if you can code and want to directly help Piwik development, you can contribute changes. To learn about contributing code changes, read our [Contributing to Piwik Core](/guides/contributing-to-piwik-core) guide.
+If you can code and want to directly help Piwik development, you can contribute changes! read our [Contributing to Piwik Core](/guides/contributing-to-piwik-core) guide to learn more.
 
-## How do I become an official Piwik team member?
+### Other ways to contribute!
 
-All [Piwik team members](http://piwik.org/team/) have contributed major improvements to the project. They have contributed their talent towards our common goal of building the best open analytics platform. Some of these achievements were feats of engineering, as documented on our [blog posts](http://piwik.org/blob/) over the last few years.
-
-To gain push access to our git repository, and be an official Piwik team member, one must make positive changes in the project, such as  [contributing pull requests](http://developer.piwik.org/guides/contributing-to-piwik-core), bringing new ideas, code, marketing, product visions. When a certain amount of work has been achieved, when we trust your skills and judgement, we will invite you to [join us in the core team](http://piwik.org/team/). Most of us also meet once a year in a beautiful European city for brainstorming the future of analytics, open source, [privacy](http://piwik.org/blog/2014/01/data-privacy-day-january-28th/) and Piwik.
-
-There are other useful ways to participate to Piwik without joining the team, learn more: [How do I get involved?](http://piwik.org/get-involved/)
-
+There are other useful ways to participate to Piwik and make a positive difference! Learn more: [How do I get involved?](http://piwik.org/get-involved/)
