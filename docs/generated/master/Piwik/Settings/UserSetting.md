@@ -214,8 +214,8 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getName()`](#getname) &mdash; Returns the setting's persisted name, eg, `'refreshInterval'`. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
-- [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting is writable for the current user, `false` if otherwise. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
-- [`isReadableByCurrentUser()`](#isreadablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
+- [`isReadableByCurrentUser()`](#isreadablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 - [`setStorage()`](#setstorage) &mdash; Sets the object used to persist settings. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`getStorage()`](#getstorage) Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`setPluginName()`](#setpluginname) &mdash; Sets th name of the plugin the setting belongs to Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
@@ -257,10 +257,7 @@ Returns the setting's persisted name, eg, `'refreshInterval'`.
 <a name="isWritableByCurrentUser" id="isWritableByCurrentUser"></a>
 ### `isWritableByCurrentUser()`
 
-Returns `true` if this setting is writable for the current user, `false` if otherwise.
-
-In case it returns
-writable for the current user it will be visible in the Plugin settings UI.
+Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 
 #### Signature
 
