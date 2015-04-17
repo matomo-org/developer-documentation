@@ -983,7 +983,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [498](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L498)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [501](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L501)*
 
 Event triggered after a plugin has been activated.
 
@@ -995,7 +995,7 @@ Callback Signature:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [339](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L339)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [341](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L341)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -1038,7 +1038,7 @@ Callback Signature:
 
 ### Referrer.addSearchEngineUrls
 
-*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [822](https://github.com/piwik/piwik/blob/master/core/Common.php#L822)*
+*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [826](https://github.com/piwik/piwik/blob/master/core/Common.php#L826)*
 
 
 
@@ -1048,7 +1048,7 @@ Callback Signature:
 
 ### Referrer.addSocialUrls
 
-*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [878](https://github.com/piwik/piwik/blob/master/core/Common.php#L878)*
+*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [882](https://github.com/piwik/piwik/blob/master/core/Common.php#L882)*
 
 
 
@@ -1160,7 +1160,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [138](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L138)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [159](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L159)*
 
 
 
@@ -1657,7 +1657,7 @@ Callback Signature:
 
 ### Tracker.Cache.getSiteAttributes
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [98](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L98)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [100](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L100)*
 
 Triggered to get the attributes of a site entity that might be used by the Tracker. Plugins add new site attributes for use in other tracking events must
 use this event to put those attributes in the Tracker Cache.
@@ -1684,7 +1684,7 @@ Usages:
 
 ### Tracker.detectReferrerSearchEngine
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php) in line [162](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php#L162)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php) in line [160](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php#L160)*
 
 Triggered when detecting the search engine of a referrer URL. Plugins can use this event to provide custom search engine detection
 logic.
@@ -1706,7 +1706,7 @@ Callback Signature:
 
 ### Tracker.existingVisitInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [266](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L266)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [268](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L268)*
 
 Triggered before a [visit entity](/guides/persistence-and-the-mysql-backend#visits) is updated when tracking an action for an existing visit. This event can be used to modify the visit properties that will be updated before the changes
 are persisted.
@@ -1733,7 +1733,7 @@ Callback Signature:
 
 ### Tracker.getVisitFieldsToPersist
 
-*Defined in [Piwik/Tracker/Visitor](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php) in line [219](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php#L219)*
+*Defined in [Piwik/Tracker/Visitor](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php) in line [222](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php#L222)*
 
 This event collects a list of [visit entity](/guides/persistence-and-the-mysql-backend#visits) properties that should be loaded when reading the existing visit. Properties that appear in this list will be available in other tracking
 events such as 'onExistingVisit'.
@@ -1788,7 +1788,7 @@ Callback Signature:
 
 ### Tracker.newVisitorInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [324](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L324)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [326](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L326)*
 
 Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
 The UserCountry plugin, for example, uses this event to add location information for each visit.
@@ -1815,7 +1815,7 @@ Callback Signature:
 
 ### Tracker.recordAction
 
-*Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [397](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L397)*
+*Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [402](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L402)*
 
 Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions).
 
@@ -1857,7 +1857,7 @@ Callback Signature:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [435](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L435)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [479](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L479)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
@@ -1872,7 +1872,7 @@ Callback Signature:
 
 ### Tracker.setTrackerCacheGeneral
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [160](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L160)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [164](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L164)*
 
 Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache) is saved to disk. This event can be used to add extra content to the cache.
 
@@ -1901,7 +1901,7 @@ Usages:
 
 ### Tracker.setVisitorIp
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [103](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L103)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [105](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L105)*
 
 Triggered after visits are tested for exclusion so plugins can modify the IP address persisted with a visit. This event is primarily used by the **PrivacyManager** plugin to anonymize IP addresses.
 
