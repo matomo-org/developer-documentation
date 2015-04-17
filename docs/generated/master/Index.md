@@ -220,6 +220,7 @@ Index
 - [`filter()`](Piwik/DataTable/Filter/Limit.md#filter) &mdash; *Method in class* [`Limit`](Piwik/DataTable/Filter/Limit.md)
 - [`filter()`](Piwik/DataTable/Filter/MetadataCallbackAddMetadata.md#filter) &mdash; *Method in class* [`MetadataCallbackAddMetadata`](Piwik/DataTable/Filter/MetadataCallbackAddMetadata.md)
 - [`filter()`](Piwik/DataTable/Filter/Pattern.md#filter) &mdash; *Method in class* [`Pattern`](Piwik/DataTable/Filter/Pattern.md)
+- [`filterArray()`](Piwik/DataTable/Filter/Pattern.md#filterarray) &mdash; *Method in class* [`Pattern`](Piwik/DataTable/Filter/Pattern.md)
 - [`filter()`](Piwik/DataTable/Filter/PatternRecursive.md#filter) &mdash; *Method in class* [`PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md)
 - [`filter()`](Piwik/DataTable/Filter/PrependValueToMetadata.md#filter) &mdash; *Method in class* [`PrependValueToMetadata`](Piwik/DataTable/Filter/PrependValueToMetadata.md)
 - [`filter()`](Piwik/DataTable/Filter/ReplaceColumnNames.md#filter) &mdash; *Method in class* [`ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md)
