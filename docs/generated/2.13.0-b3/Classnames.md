@@ -95,7 +95,9 @@
 ## Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite
 ## Plugins\CoreHome\Columns\Metrics\EvolutionMetric
 ## Plugins\CoreVisualizations\Metrics\Formatter\Numeric
-## Plugins\Installation\SystemCheck
+## Plugins\Diagnostics\DiagnosticService
+## Plugins\Diagnostics\Diagnostic\DiagnosticResult
+## Plugins\Diagnostics\Diagnostic\DiagnosticResultItem
 ## Plugins\Login\SessionInitializer
 ## Plugins\UsersManager\UserPreferences
 ## RankingQuery

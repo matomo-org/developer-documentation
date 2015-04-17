@@ -26,8 +26,8 @@ Returns the "best" available transport method for [sendHttpRequest()](/api-refer
 #### Signature
 
 
-- *Returns:*  `string` &mdash;
-    Either `'curl'`, `'fopen'` or `'socket'`.
+- *Returns:*  `string`|`null` &mdash;
+    Either curl, fopen, socket or null if no method is supported.
 
 <a name="sendhttprequest" id="sendhttprequest"></a>
 <a name="sendHttpRequest" id="sendHttpRequest"></a>

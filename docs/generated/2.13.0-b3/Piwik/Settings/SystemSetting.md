@@ -1,12 +1,14 @@
 <small>Piwik\Settings\</small>
 
-UserSetting
-===========
+SystemSetting
+=============
 
-Describes a per user setting.
+Describes a system wide setting.
 
-Each user will be able to change this setting for themselves,
-but not for other users.
+Only the Super User can change this type of setting and
+the value of this setting will affect all users.
+
+See [Settings](/api-reference/Piwik/Plugin/Settings).
 
 Properties
 ----------
@@ -24,6 +26,7 @@ This class defines the following properties:
 - [`$transform`](#$transform) &mdash; A closure that transforms the setting value. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`$defaultValue`](#$defaultvalue) &mdash; Default value of this setting. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`$title`](#$title) &mdash; This setting's display name, for example, `'Refresh Interval'`. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`$readableByCurrentUser`](#$readablebycurrentuser) &mdash; By default the value of the system setting is only readable by SuperUsers but someone the value should be readable by everyone.
 
 <a name="$type" id="$type"></a>
 <a name="type" id="type"></a>
@@ -80,7 +83,7 @@ set the setting to **nb_visits** or **nb_actions** respectively.
 The setting value will be validated if this field is set. If the value is not one of the
 available values, an error will be triggered.
 
-_Note: If a custom validator is supplied (see [$validate](/api-reference/Piwik/Settings/UserSetting#$validate)), the setting value will
+_Note: If a custom validator is supplied (see [$validate](/api-reference/Piwik/Settings/SystemSetting#$validate)), the setting value will
 not be validated._
 
 #### Signature
@@ -164,7 +167,7 @@ A closure that transforms the setting value.
 If supplied, this closure will be executed after
 the setting has been validated.
 
-_Note: If a transform is supplied, the setting's [$type](/api-reference/Piwik/Settings/UserSetting#$type) has no effect. This means the
+_Note: If a transform is supplied, the setting's [$type](/api-reference/Piwik/Settings/SystemSetting#$type) has no effect. This means the
 transformation function will be responsible for casting the setting value to the appropriate
 data type._
 
@@ -207,6 +210,18 @@ This setting's display name, for example, `'Refresh Interval'`.
 
 - It is a `string` value.
 
+<a name="$readablebycurrentuser" id="$readablebycurrentuser"></a>
+<a name="readableByCurrentUser" id="readableByCurrentUser"></a>
+### `$readableByCurrentUser`
+
+Since Piwik 2.4.0
+
+By default the value of the system setting is only readable by SuperUsers but someone the value should be readable by everyone.
+
+#### Signature
+
+- It is a `bool` value.
+
 Methods
 -------
 
@@ -214,8 +229,8 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getName()`](#getname) &mdash; Returns the setting's persisted name, eg, `'refreshInterval'`. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
-- [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting is writable for the current user, `false` if otherwise. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
-- [`isReadableByCurrentUser()`](#isreadablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting is writable for the current user, `false` if otherwise.
+- [`isReadableByCurrentUser()`](#isreadablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 - [`setStorage()`](#setstorage) &mdash; Sets the object used to persist settings. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`getStorage()`](#getstorage) Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`setPluginName()`](#setpluginname) &mdash; Sets th name of the plugin the setting belongs to Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
@@ -224,8 +239,6 @@ The class defines the following methods:
 - [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`getKey()`](#getkey) &mdash; Returns the unique string key used to store this setting. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`getOrder()`](#getorder) &mdash; Returns the display order.
-- [`setUserLogin()`](#setuserlogin) &mdash; Sets the name of the user this setting will be set for.
-- [`removeAllUserSettingsForUser()`](#removeallusersettingsforuser) &mdash; Unsets all settings for a user.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -237,11 +250,9 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
-       The setting's persisted name.
+       The persisted name of the setting.
     - `$title` (`string`) &mdash;
-       The setting's display name.
-    - `$userLogin` (`null`|`string`) &mdash;
-       The user this setting applies to. Will default to the current user login.
+       The display name of the setting.
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
@@ -371,42 +382,9 @@ Returns the unique string key used to store this setting.
 
 Returns the display order.
 
-User settings are displayed after system settings.
+System settings are displayed before user settings.
 
 #### Signature
 
 - It returns a `int` value.
-
-<a name="setuserlogin" id="setuserlogin"></a>
-<a name="setUserLogin" id="setUserLogin"></a>
-### `setUserLogin()`
-
-Sets the name of the user this setting will be set for.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$userLogin` (`Piwik\Settings\$userLogin`) &mdash;
-      
-- It does not return anything.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If the current user does not have permission to set the setting value of `$userLogin`.
-
-<a name="removeallusersettingsforuser" id="removeallusersettingsforuser"></a>
-<a name="removeAllUserSettingsForUser" id="removeAllUserSettingsForUser"></a>
-### `removeAllUserSettingsForUser()`
-
-Unsets all settings for a user.
-
-The settings will be removed from the database. Used when
-a user is deleted.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$userLogin` (`string`) &mdash;
-      
-- It does not return anything.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If the `$userLogin` is empty.
 

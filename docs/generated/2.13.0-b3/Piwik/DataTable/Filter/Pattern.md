@@ -19,6 +19,7 @@ The class defines the following methods:
 - [`filter()`](#filter) &mdash; See [Pattern](/api-reference/Piwik/DataTable/Filter/Pattern).
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+- [`filterArray()`](#filterarray) &mdash; See [Pattern](/api-reference/Piwik/DataTable/Filter/Pattern).
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -79,4 +80,17 @@ Filters a row's subtable, if one exists and is loaded in memory.
     - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
        The row whose subtable should be filter.
 - It does not return anything.
+
+<a name="filterarray" id="filterarray"></a>
+<a name="filterArray" id="filterArray"></a>
+### `filterArray()`
+
+See [Pattern](/api-reference/Piwik/DataTable/Filter/Pattern).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$array` (`array`) &mdash;
+      
+- It returns a `array` value.
 

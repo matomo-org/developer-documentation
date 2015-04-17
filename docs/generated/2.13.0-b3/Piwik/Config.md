@@ -34,6 +34,9 @@ The class defines the following methods:
 
 - [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../Piwik/Singleton.md)
 - [`__get()`](#__get) &mdash; Returns a configuration value or section by name.
+- [`getFromGlobalConfig()`](#getfromglobalconfig)
+- [`getFromCommonConfig()`](#getfromcommonconfig)
+- [`getFromLocalConfig()`](#getfromlocalconfig)
 - [`__set()`](#__set) &mdash; Sets a configuration value or section.
 - [`forceSave()`](#forcesave) &mdash; Writes the current configuration to the **config.ini.php** file.
 
@@ -66,6 +69,39 @@ Returns a configuration value or section by name.
     The requested value requested. Returned by reference.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the value requested not found in either `config.ini.php` or `global.ini.php`.
+
+<a name="getfromglobalconfig" id="getfromglobalconfig"></a>
+<a name="getFromGlobalConfig" id="getFromGlobalConfig"></a>
+### `getFromGlobalConfig()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name`
+      
+- It does not return anything.
+
+<a name="getfromcommonconfig" id="getfromcommonconfig"></a>
+<a name="getFromCommonConfig" id="getFromCommonConfig"></a>
+### `getFromCommonConfig()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name`
+      
+- It does not return anything.
+
+<a name="getfromlocalconfig" id="getfromlocalconfig"></a>
+<a name="getFromLocalConfig" id="getFromLocalConfig"></a>
+### `getFromLocalConfig()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name`
+      
+- It does not return anything.
 
 <a name="__set" id="__set"></a>
 <a name="__set" id="__set"></a>
