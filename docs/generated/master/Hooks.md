@@ -425,7 +425,7 @@ Usages:
 
 ### Console.filterCommands
 
-*Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [110](https://github.com/piwik/piwik/blob/master/core/Console.php#L110)*
+*Defined in [Piwik/Console](https://github.com/piwik/piwik/blob/master/core/Console.php) in line [122](https://github.com/piwik/piwik/blob/master/core/Console.php#L122)*
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
 should subscribe to this event and remove commands from the existing list.
@@ -503,7 +503,7 @@ Triggered after Piwik has been updated.
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [356](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L356)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [351](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L351)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -515,7 +515,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [346](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L346)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [341](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L341)*
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -527,7 +527,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [970](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L970)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [965](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L965)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -540,7 +540,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [298](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L298)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [293](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L293)*
 
 This event is triggered after a CronArchive instance is initialized.
 
