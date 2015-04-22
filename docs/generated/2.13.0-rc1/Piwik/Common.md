@@ -259,7 +259,7 @@ For more information: [https://github.com/piwik/piwik/issues/374](https://github
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$var` (`Piwik\$var`) &mdash;
+    - `$var` (`mixed`) &mdash;
        The object to destroy.
 - It does not return anything.
 

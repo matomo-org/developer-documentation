@@ -174,7 +174,7 @@ Returns true if a template variable has been set or not.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name` (`Piwik\$name`) &mdash;
+    - `$name` (`string`) &mdash;
        The name of the template variable.
 - It returns a `bool` value.
 
