@@ -109,3 +109,15 @@ To add extra steps to your plugin's .travis.yml file, create a `/tests/travis` f
 The contents of the `XXX.before.yml` files will be prepended to the specific section in your .travis.yml file, while the contents of the `XXX.after.yml` files will be appended.
 
 *Note: You cannot simply add these changes by hand to the .travis.yml file since they will be overwritten on the next `generate:travis-yml` execution.*
+
+### Modifying the .travis.yml generation system
+
+The system used to generate .travis.yml files is defined in the TestRunner plugin. Here are some notes to keep in mind if you need to modify it:
+
+**Generating new .travis.yml sections**
+
+This .twig file is used to generate the .travis.yml file: [https://github.com/piwik/piwik/blob/master/plugins/TestRunner/templates/travis.yml.twig](https://github.com/piwik/piwik/blob/master/plugins/TestRunner/templates/travis.yml.twig).
+
+If you want to add a new section to generated .travis.yml output, you have to both add the section to the travis.yml.twig file **AND** add the section's name to this array: [https://github.com/piwik/piwik/blob/master/plugins/TestRunner/TravisYml/TravisYmlView.php#L23](https://github.com/piwik/piwik/blob/master/plugins/TestRunner/TravisYml/TravisYmlView.php#L23)
+
+If you don't add it, the system will consider the section as a section that should be preserved, and will output it again after rendering the twig template.
