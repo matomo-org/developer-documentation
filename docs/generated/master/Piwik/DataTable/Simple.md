@@ -518,7 +518,7 @@ Returns an array containing all column values of columns whose name starts with 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$namePrefix` (`Piwik\$namePrefix`) &mdash;
+    - `$namePrefix` (`string`) &mdash;
        The column name prefix.
 
 - *Returns:*  `array` &mdash;

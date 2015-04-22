@@ -93,7 +93,7 @@ See [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter) for m
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
        Filter name, eg. `'Limit'` or a Closure.
     - `$parameters` (`array`) &mdash;
        Filter parameters, eg. `array(50, 10)`.
@@ -118,7 +118,7 @@ Apply a filter to all tables contained by this instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
        Name of filter class or a Closure.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
@@ -133,7 +133,7 @@ Apply a filter to all subtables contained by this instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
        Name of filter class or a Closure.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
@@ -148,7 +148,7 @@ Apply a queued filter to all subtables contained by this instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|`Piwik\DataTable\Closure`) &mdash;
+    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
        Name of filter class or a Closure.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
