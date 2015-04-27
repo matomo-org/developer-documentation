@@ -39,8 +39,9 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. http://piwik.example.org/ or https://example.org/piwik/. This function is only useful when the 'Overlay' report is not working. By default you do not need to use this function.
 *   `setTrackerUrl( string )` - Specify the Piwik server URL. Redundant: can be specified in `getTracker()` constructor.
 *   `setDownloadClasses( string | array )` - Set classes to be treated as downloads (in addition to piwik_download)
-*   `setDownloadExtensions( string )` - Set list of file extensions to be recognized as downloads. Example: 'doc|pdf|txt'
-*   `addDownloadExtensions( string )` - Specify additional file extensions to be recognized as downloads. Example: 'doc|pdf|txt'
+*   `setDownloadExtensions( string | array )` - Set list of file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
+*   `addDownloadExtensions( string | array )` - Specify additional file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
+*   `removeDownloadExtensions( string | array )` - Specify file extensions to be removed from the list of download file extensions. Example: 'doc' or ['doc', 'xls']
 *   `setIgnoreClasses( string | array )` - Set classes to be ignored if present in link (in addition to piwik_ignore)
 *   `setLinkClasses( string | array )` - Set classes to be treated as outlinks (in addition to piwik_link)
 *   `setLinkTrackingTimer( integer )` - Set delay for link tracking in milliseconds.
