@@ -27,7 +27,7 @@ try {
         $iterator = Finder::create()
             ->files()
             ->name('*.php')
-            ->exclude('tests')
+            ->exclude(array('tests', 'plugins/ScheduledReports/config/tcpdf_config.php'))
             ->in(array(PIWIK_DOCUMENT_ROOT . '/core',
                        PIWIK_DOCUMENT_ROOT . '/plugins',
                        PIWIK_DOCUMENT_ROOT . '/libs/PiwikTracker'))
