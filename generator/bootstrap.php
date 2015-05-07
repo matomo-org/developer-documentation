@@ -11,6 +11,9 @@ require $rootDir . '/generator/vendor/autoload.php';
 require $rootDir . '/generator/vendor/nikic/php-parser/lib/bootstrap.php';
 require_once PIWIK_INCLUDE_PATH . '/libs/upgradephp/upgrade.php';
 
+$environment = new \Piwik\Application\Environment(null);
+$environment->init();
+
 ini_set('xdebug.max_nesting_level', 2000);
 
 spl_autoload_register(function ($class)
