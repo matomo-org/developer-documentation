@@ -5,7 +5,7 @@ category: DevelopInDepth
 
 Plugins can extend Piwik using the following methods:
 
-- using **events** see [Events](/guide/events)
+- using **events** see [Events](/guides/events)
 - implementing **special classes** that are recognized by Piwik see [Plugin Basics under Develop](/develop)
 
 ## Learn More
