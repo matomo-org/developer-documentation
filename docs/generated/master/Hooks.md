@@ -90,7 +90,7 @@ however event handlers for that event will have to do more work._
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
-- mixed `$returnedValue` The API method's return value. Can be an object, such as a DataTable instance. could be a DataTable.
+- mixed `$returnedValue` The API method's return value. Can be an object, such as a [DataTable](/api-reference/Piwik/DataTable) instance. could be a [DataTable](/api-reference/Piwik/DataTable).
 
 - array `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
@@ -240,7 +240,7 @@ Triggered directly after an API request is dispatched. This event can be used to
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
-- mixed `$returnedValue` The API method's return value. Can be an object, such as a DataTable instance.
+- mixed `$returnedValue` The API method's return value. Can be an object, such as a [DataTable](/api-reference/Piwik/DataTable) instance.
 
 - array `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
 
@@ -1147,7 +1147,7 @@ Usages:
 
 Triggered immediately before the user is authenticated. This event can be used by plugins that provide their own authentication mechanism
 to make that mechanism available. Subscribers should set the `'Piwik\Auth'` object in
-the container to an object that implements the Piwik\Auth interface.
+the container to an object that implements the [Auth](/api-reference/Piwik/Auth) interface.
 
 **Example**
 
@@ -1184,7 +1184,7 @@ Usages:
 *Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [311](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L311)*
 
 Triggered before the user is authenticated, when the global authentication object should be created. Plugins that provide their own authentication implementation should use this event
-to set the global authentication object (which must derive from Piwik\Auth).
+to set the global authentication object (which must derive from [Auth](/api-reference/Piwik/Auth)).
 
 **Example**
 
@@ -1405,7 +1405,7 @@ Callback Signature:
 
 - array `$additionalFiles` The list of additional files that should be sent with this report.
 
-- \Piwik\Period `$period` The period for which the report has been generated.
+- [Period](/api-reference/Piwik/Period) `$period` The period for which the report has been generated.
 
 - boolean `$force` A report can only be sent once per period. Setting this to true will force to send the report even if it has already been sent.
 
@@ -1567,7 +1567,7 @@ Triggered after a plugin settings have been updated. **Example**
 Callback Signature:
 <pre><code>function($this)</code></pre>
 
-- Settings `$settings` The plugin settings object.
+- [Settings](/api-reference/Piwik/Plugin/Settings) `$settings` The plugin settings object.
 
 ## SitesManager
 
@@ -1938,7 +1938,7 @@ Triggered when a user with insufficient access permissions tries to view some re
 Callback Signature:
 <pre><code>function($exception)</code></pre>
 
-- \Piwik\NoAccessException `$exception` The exception that was caught.
+- [NoAccessException](/api-reference/Piwik/NoAccessException) `$exception` The exception that was caught.
 
 Usages:
 
@@ -2106,7 +2106,7 @@ Usages:
 
 *Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php) in line [256](https://github.com/piwik/piwik/blob/master/core/Plugin/ViewDataTable.php#L256)*
 
-Triggered during ViewDataTable construction. Subscribers should customize
+Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed.
 
 Plugins that define their own reports must subscribe to this event in order to
@@ -2128,7 +2128,7 @@ specify how the Piwik UI should display the report.
 Callback Signature:
 <pre><code>function($this)</code></pre>
 
-- ViewDataTable `$view` The instance to configure.
+- [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) `$view` The instance to configure.
 
 Usages:
 
