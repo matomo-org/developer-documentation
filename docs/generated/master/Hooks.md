@@ -1139,7 +1139,7 @@ Callback Signature:
 
 Usages:
 
-[Referrers::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L37), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L101), [UserSettings::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/UserSettings/UserSettings.php#L36)
+[Referrers::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L37), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L101)
 
 
 ### Request.initAuthenticationObject
