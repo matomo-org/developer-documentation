@@ -117,6 +117,27 @@ var translatedText = _pk_translate('MyPlugin_BlogPost');
 
 Did you know you can contribute [translations](http://piwik.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](http://translations.piwik.org). 
 
+
+## Getting translations for your plugin ##
+
+As long as you are developing an open source plugin hosted on github, you may get in touch with us (translations@piwik.org) in order to get your plugin translated by the Piwik translators. 
+
+You will need an account on Transifex.com. If you used a social login on Transifex, please ensure to set a password in your account settings. That will be required for fetching new translations.
+
+### Updating source strings of your plugin ###
+While doing the initial setup for your plugin, we will import your en.json available in your githubs plugin repository and configure an autoupdate for that file.
+Source strings on Transifex will so automatically sync with your repo. Changing your en.json will automatically change the source strings within Transifex.
+
+### How to update/fetch your plugins translations
+
+As soon as we have set up your plugin within our Piwik project on Transifex and there are new translations available, you will be able to update your plugin translations using the piwik console. You will need a locally installed Piwik with [development mode enabled](http://developer.piwik.org/guides/getting-started-part-1#enable-development-mode) and your plugin installed.
+To update the translations go to the piwik directory on your development box and execute
+
+```bash
+./console translations:update -u {YourTransifexUserName} -p {YourTransifexPassword} -P {YourPluginName}
+```
+
+
 ## Best practices for new translation keys
 
 Follow these guidelines when creating your own translation keys:
