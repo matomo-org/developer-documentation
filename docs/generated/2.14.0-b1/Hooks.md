@@ -1637,6 +1637,7 @@ Callback Signature:
 - [Tracker.Cache.getSiteAttributes](#trackercachegetsiteattributes)
 - [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
 - [Tracker.end](#trackerend)
+- [Tracker.end](#trackerend)
 - [Tracker.existingVisitInformation](#trackerexistingvisitinformation)
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
 - [Tracker.getVisitFieldsToPersist](#trackergetvisitfieldstopersist)
@@ -1692,6 +1693,13 @@ Callback Signature:
 - array `&$searchEngineInformation` An array with the following information: - **name**: The search engine name. - **keywords**: The search keywords used. This parameter is initialized to the results of Piwik's default search engine detection logic.
 
 - string
+
+
+### Tracker.end
+
+*Defined in [Piwik/Plugins/QueuedTracking/Commands/Process](https://github.com/piwik/piwik/blob/2.14.0-b1/plugins/QueuedTracking/Commands/Process.php) in line [85](https://github.com/piwik/piwik/blob/2.14.0-b1/plugins/QueuedTracking/Commands/Process.php#L85)*
+
+
 
 
 ### Tracker.end
