@@ -1820,7 +1820,7 @@ Callback Signature:
 
 ### Tracker.recordAction
 
-*Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [402](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L402)*
+*Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [409](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L409)*
 
 Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions).
 
