@@ -603,7 +603,7 @@ Callback Signature:
 
 ### Environment.bootstrapped
 
-*Defined in [Piwik/Application/Environment](https://github.com/piwik/piwik/blob/master/core/Application/Environment.php) in line [88](https://github.com/piwik/piwik/blob/master/core/Application/Environment.php#L88)*
+*Defined in [Piwik/Application/Environment](https://github.com/piwik/piwik/blob/master/core/Application/Environment.php) in line [94](https://github.com/piwik/piwik/blob/master/core/Application/Environment.php#L94)*
 
 
 
@@ -613,7 +613,7 @@ Callback Signature:
 
 ### FrontController.modifyErrorPage
 
-*Defined in [Piwik/ExceptionHandler](https://github.com/piwik/piwik/blob/master/core/ExceptionHandler.php) in line [99](https://github.com/piwik/piwik/blob/master/core/ExceptionHandler.php#L99)*
+*Defined in [Piwik/ExceptionHandler](https://github.com/piwik/piwik/blob/master/core/ExceptionHandler.php) in line [101](https://github.com/piwik/piwik/blob/master/core/ExceptionHandler.php#L101)*
 
 Triggered before a Piwik error page is displayed to the user. This event can be used to modify the content of the error page that is displayed when
 an exception is caught.
