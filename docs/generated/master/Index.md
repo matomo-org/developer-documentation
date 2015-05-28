@@ -530,6 +530,8 @@ Index
 - [`getCurrencyFor()`](Piwik/Site.md#getcurrencyfor) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`getExcludedIpsFor()`](Piwik/Site.md#getexcludedipsfor) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`getExcludedQueryParametersFor()`](Piwik/Site.md#getexcludedqueryparametersfor) &mdash; *Method in class* [`Site`](Piwik/Site.md)
+- [`getTranslatedCountry()`](Piwik/Translation/Translator.md#gettranslatedcountry) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
+- [`getTranslatedLanguage()`](Piwik/Translation/Translator.md#gettranslatedlanguage) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`getCurrentLanguage()`](Piwik/Translation/Translator.md#getcurrentlanguage) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`getDefaultLanguage()`](Piwik/Translation/Translator.md#getdefaultlanguage) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`getJavascriptTranslations()`](Piwik/Translation/Translator.md#getjavascripttranslations) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)

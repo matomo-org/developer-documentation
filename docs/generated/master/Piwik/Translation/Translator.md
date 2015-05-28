@@ -12,6 +12,8 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct)
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation ID.
+- [`getTranslatedCountry()`](#gettranslatedcountry) &mdash; Returns the country name for the given country code translated to the given language
+- [`getTranslatedLanguage()`](#gettranslatedlanguage) &mdash; Returns the language name for the given country code translated to the given language
 - [`getCurrentLanguage()`](#getcurrentlanguage)
 - [`setCurrentLanguage()`](#setcurrentlanguage)
 - [`getDefaultLanguage()`](#getdefaultlanguage)
@@ -54,6 +56,40 @@ cannot be found for the ID, the ID is returned.
 
 - *Returns:*  `string` &mdash;
     The translated string or `$translationId`.
+
+<a name="gettranslatedcountry" id="gettranslatedcountry"></a>
+<a name="getTranslatedCountry" id="getTranslatedCountry"></a>
+### `getTranslatedCountry()`
+
+Returns the country name for the given country code translated to the given language
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$countryCode` (`string`) &mdash;
+       ISO 3166-1 alpha-2 country code
+    - `$language` (`null`|`string`) &mdash;
+       ISO 639-1 language code   (defaults to current language)
+
+- *Returns:*  `string` &mdash;
+    translated country name
+
+<a name="gettranslatedlanguage" id="gettranslatedlanguage"></a>
+<a name="getTranslatedLanguage" id="getTranslatedLanguage"></a>
+### `getTranslatedLanguage()`
+
+Returns the language name for the given country code translated to the given language
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$languageCode` (`string`) &mdash;
+       ISO 639-1 language code
+    - `$language` (`null`|`string`) &mdash;
+       ISO 639-1 language code   (defaults to current language)
+
+- *Returns:*  `string` &mdash;
+    translated language name
 
 <a name="getcurrentlanguage" id="getcurrentlanguage"></a>
 <a name="getCurrentLanguage" id="getCurrentLanguage"></a>
