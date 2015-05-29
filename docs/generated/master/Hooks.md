@@ -9,7 +9,7 @@ This is a complete list of available hooks. If you are not familiar with this re
 
 ### Access.createAccessSingleton
 
-*Defined in [Piwik/Access](https://github.com/piwik/piwik/blob/master/core/Access.php) in line [91](https://github.com/piwik/piwik/blob/master/core/Access.php#L91)*
+*Defined in [Piwik/Access](https://github.com/piwik/piwik/blob/master/core/Access.php) in line [90](https://github.com/piwik/piwik/blob/master/core/Access.php#L90)*
 
 
 
@@ -97,7 +97,7 @@ Callback Signature:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [504](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L504)*
+*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php) in line [503](https://github.com/piwik/piwik/blob/master/core/API/Proxy.php#L503)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
 
@@ -163,7 +163,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [320](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L320)*
+*Defined in [Piwik/API/Request](https://github.com/piwik/piwik/blob/master/core/API/Request.php) in line [319](https://github.com/piwik/piwik/blob/master/core/API/Request.php#L319)*
 
 Triggered when authenticating an API request, but only if the **token_auth** query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
 and make sure the global authentication object (the object returned by `StaticContainer::get('Piwik\Auth')`)
@@ -325,7 +325,7 @@ Callback Signature:
 
 ### AssetManager.getJavaScriptFiles
 
-*Defined in [Piwik/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php) in line [46](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php#L46)*
+*Defined in [Piwik/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php) in line [45](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php#L45)*
 
 Triggered when gathering the list of all JavaScript files needed by Piwik and its plugins. Plugins that have their own JavaScript should use this event to make those
 files load in the browser.
@@ -389,7 +389,7 @@ Usages:
 
 ### Config.badConfigurationFile
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [272](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L272)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [269](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L269)*
 
 Triggered when Piwik cannot access database data. This event can be used to start the installation process or to display a custom error
 message.
@@ -406,7 +406,7 @@ Usages:
 
 ### Config.NoConfigurationFile
 
-*Defined in [Piwik/Application/Kernel/EnvironmentValidator](https://github.com/piwik/piwik/blob/master/core/Application/Kernel/EnvironmentValidator.php) in line [76](https://github.com/piwik/piwik/blob/master/core/Application/Kernel/EnvironmentValidator.php#L76)*
+*Defined in [Piwik/Application/Kernel/EnvironmentValidator](https://github.com/piwik/piwik/blob/master/core/Application/Kernel/EnvironmentValidator.php) in line [75](https://github.com/piwik/piwik/blob/master/core/Application/Kernel/EnvironmentValidator.php#L75)*
 
 Triggered when the configuration file cannot be found or read, which usually means Piwik is not installed yet. This event can be used to start the installation process or to display a custom error message.
 
@@ -452,7 +452,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [495](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L495)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [492](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L492)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -468,7 +468,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [512](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L512)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [509](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L509)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -490,7 +490,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/master/core/Updater.php) in line [429](https://github.com/piwik/piwik/blob/master/core/Updater.php#L429)*
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/master/core/Updater.php) in line [428](https://github.com/piwik/piwik/blob/master/core/Updater.php#L428)*
 
 Triggered after Piwik has been updated.
 
@@ -527,7 +527,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [902](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L902)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [899](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L899)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -571,7 +571,7 @@ Callback Signature:
 
 ### Db.cannotConnectToDb
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [249](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L249)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [246](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L246)*
 
 Triggered when Piwik cannot connect to the database. This event can be used to start the installation process or to display a custom error
 message.
@@ -588,7 +588,7 @@ Usages:
 
 ### Db.getDatabaseConfig
 
-*Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [85](https://github.com/piwik/piwik/blob/master/core/Db.php#L85)*
+*Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [84](https://github.com/piwik/piwik/blob/master/core/Db.php#L84)*
 
 Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
 
@@ -872,7 +872,7 @@ Callback Signature:
 
 ### Menu.Reporting.addItems
 
-*Defined in [Piwik/Menu/MenuReporting](https://github.com/piwik/piwik/blob/master/core/Menu/MenuReporting.php) in line [127](https://github.com/piwik/piwik/blob/master/core/Menu/MenuReporting.php#L127)*
+*Defined in [Piwik/Menu/MenuReporting](https://github.com/piwik/piwik/blob/master/core/Menu/MenuReporting.php) in line [128](https://github.com/piwik/piwik/blob/master/core/Menu/MenuReporting.php#L128)*
 
 
 
@@ -882,7 +882,7 @@ Callback Signature:
 
 ### Menu.Top.addItems
 
-*Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [70](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L70)*
+*Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php) in line [71](https://github.com/piwik/piwik/blob/master/core/Menu/MenuTop.php#L71)*
 
 
 
@@ -896,7 +896,7 @@ Callback Signature:
 
 ### Metrics.getDefaultMetricDocumentationTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [418](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L418)*
+*Defined in [Piwik/Metrics](https://github.com/piwik/piwik/blob/master/core/Metrics.php) in line [417](https://github.com/piwik/piwik/blob/master/core/Metrics.php#L417)*
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
@@ -978,7 +978,7 @@ Callback Signature:
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [342](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L342)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [339](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L339)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
 
@@ -993,7 +993,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [516](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L516)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [514](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L514)*
 
 Event triggered after a plugin has been activated.
 
@@ -1005,7 +1005,7 @@ Callback Signature:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [356](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L356)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [354](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L354)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -1048,7 +1048,7 @@ Callback Signature:
 
 ### Referrer.addSearchEngineUrls
 
-*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [826](https://github.com/piwik/piwik/blob/master/core/Common.php#L826)*
+*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [829](https://github.com/piwik/piwik/blob/master/core/Common.php#L829)*
 
 
 
@@ -1058,7 +1058,7 @@ Callback Signature:
 
 ### Referrer.addSocialUrls
 
-*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [882](https://github.com/piwik/piwik/blob/master/core/Common.php#L882)*
+*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [883](https://github.com/piwik/piwik/blob/master/core/Common.php#L883)*
 
 
 
@@ -1078,7 +1078,7 @@ Callback Signature:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [477](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L477)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [474](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L474)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -1099,7 +1099,7 @@ Usages:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [522](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L522)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [519](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L519)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -1113,7 +1113,7 @@ Callback Signature:
 
 ### Request.dispatchCoreAndPluginUpdatesScreen
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [287](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L287)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [284](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L284)*
 
 Triggered just after the platform is initialized and plugins are loaded. This event can be used to do early initialization.
 
@@ -1182,7 +1182,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [159](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L159)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [157](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L157)*
 
 
 
@@ -1193,7 +1193,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [311](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L311)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [308](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L308)*
 
 Triggered before the user is authenticated, when the global authentication object should be created. Plugins that provide their own authentication implementation should use this event
 to set the global authentication object (which must derive from [Auth](/api-reference/Piwik/Auth)).
@@ -1567,7 +1567,7 @@ Callback Signature:
 
 ### Settings.$this-&gt;pluginName.settingsUpdated
 
-*Defined in [Piwik/Plugin/Settings](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php) in line [224](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php#L224)*
+*Defined in [Piwik/Plugin/Settings](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php) in line [223](https://github.com/piwik/piwik/blob/master/core/Plugin/Settings.php#L223)*
 
 Triggered after a plugin settings have been updated. **Example**
 
@@ -1655,7 +1655,7 @@ Callback Signature:
 
 ### Tracker.Cache.getSiteAttributes
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [100](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L100)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [98](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L98)*
 
 Triggered to get the attributes of a site entity that might be used by the Tracker. Plugins add new site attributes for use in other tracking events must
 use this event to put those attributes in the Tracker Cache.
@@ -1711,7 +1711,7 @@ Callback Signature:
 
 ### Tracker.existingVisitInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [268](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L268)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [265](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L265)*
 
 Triggered before a [visit entity](/guides/persistence-and-the-mysql-backend#visits) is updated when tracking an action for an existing visit. This event can be used to modify the visit properties that will be updated before the changes
 are persisted.
@@ -1751,7 +1751,7 @@ Callback Signature:
 
 ### Tracker.isExcludedVisit
 
-*Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php) in line [93](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php#L93)*
+*Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php) in line [92](https://github.com/piwik/piwik/blob/master/core/Tracker/VisitExcluded.php#L92)*
 
 Triggered on every tracking request. This event can be used to tell the Tracker not to record this particular action or visit.
 
@@ -1763,7 +1763,7 @@ Callback Signature:
 
 ### Tracker.makeNewVisitObject
 
-*Defined in [Piwik/Tracker/Visit/Factory](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit/Factory.php) in line [38](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit/Factory.php#L38)*
+*Defined in [Piwik/Tracker/Visit/Factory](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit/Factory.php) in line [39](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit/Factory.php#L39)*
 
 Triggered before a new **visit tracking object** is created. Subscribers to this
 event can force the use of a custom visit tracking object that extends from
@@ -1793,7 +1793,7 @@ Callback Signature:
 
 ### Tracker.newVisitorInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [326](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L326)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [323](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L323)*
 
 Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
 The UserCountry plugin, for example, uses this event to add location information for each visit.
@@ -1808,7 +1808,7 @@ Callback Signature:
 
 ### Tracker.PageUrl.getQueryParametersToExclude
 
-*Defined in [Piwik/Tracker/PageUrl](https://github.com/piwik/piwik/blob/master/core/Tracker/PageUrl.php) in line [100](https://github.com/piwik/piwik/blob/master/core/Tracker/PageUrl.php#L100)*
+*Defined in [Piwik/Tracker/PageUrl](https://github.com/piwik/piwik/blob/master/core/Tracker/PageUrl.php) in line [99](https://github.com/piwik/piwik/blob/master/core/Tracker/PageUrl.php#L99)*
 
 Triggered before setting the action url in Piwik\Tracker\Action so plugins can register parameters to be excluded from the tracking URL (e.g. campaign parameters).
 
@@ -1820,7 +1820,7 @@ Callback Signature:
 
 ### Tracker.recordAction
 
-*Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [409](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L409)*
+*Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [406](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L406)*
 
 Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions).
 
@@ -1862,7 +1862,7 @@ Callback Signature:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [479](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L479)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [477](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L477)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
@@ -1877,7 +1877,7 @@ Callback Signature:
 
 ### Tracker.setTrackerCacheGeneral
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [164](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L164)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php) in line [162](https://github.com/piwik/piwik/blob/master/core/Tracker/Cache.php#L162)*
 
 Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache) is saved to disk. This event can be used to add extra content to the cache.
 
@@ -1950,7 +1950,7 @@ Usages:
 
 ### User.isNotAuthorized
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [110](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L110)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/master/core/FrontController.php) in line [107](https://github.com/piwik/piwik/blob/master/core/FrontController.php#L107)*
 
 Triggered when a user with insufficient access permissions tries to view some resource. This event can be used to customize the error that occurs when a user is denied access
 (for example, displaying an error message, redirecting to a page other than login, etc.).
