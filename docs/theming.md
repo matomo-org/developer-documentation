@@ -50,8 +50,6 @@ You get the point. The list of all variables that you can override is defined in
 - [base theme variables](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/stylesheets/theme.less)
 - [advanced theme variables](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/stylesheets/theme-advanced.less)
 
-Please note in case you are writing Less rules outside of `theme.less`: overriding variables will only work if they are defined in a less file that is imported by the main `theme.less`.
-
 Although we do not recommend to do so, you can change the colors of a specific element directly, for example:
 
 ```css
