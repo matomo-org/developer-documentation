@@ -76,6 +76,16 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](http://piwik.org/faq/how-to/#faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
 
+### Ecommerce
+
+Piwik provides [ecommerce analytics](https://piwik.org/docs/ecommerce-analytics/) that let you measure items added to carts, and learn detailed metrics about abandoned carts and purchased orders.
+
+*   `setEcommerceView( productSKU, productName, categoryName, price )` - Sets the current page view as a product or category page view. When you call `setEcommerceView` it must be followed by a call to `trackPageView` to record the product or category page view.
+*   `addEcommerceItem( productSKU, [productName], [productCategory], [price], [quantity] )` - Adds a product into the ecommerce order. Must be called for each product in the order. 
+*   `trackEcommerceCartUpdate( grandTotal )` - Tracks a shopping cart. Call this javascript function every time a user is adding, updating or deleting a product from the cart.
+*   `trackEcommerceOrder( orderId, grandTotal, [subTotal], [tax], [shipping], [discount] )` - Tracks an Ecommerce order, including any ecommerce item previously added to the order. `orderId` and `grandTotal` (ie. revenue) are required parameters.
+
+
 ### Configuration of Tracking Cookies
 
 Starting with Piwik 1.2, first party cookies are used. Consideration must be given to retention times and avoiding conflicts with other cookies, trackers, and apps.
