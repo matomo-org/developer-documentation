@@ -15,7 +15,7 @@ they cannot be constructed.
 
 You can search for metrics (such as `nb_visits`) using the [getNumeric()](/api-reference/Piwik/Archive#getnumeric) and
 [getDataTableFromNumeric()](/api-reference/Piwik/Archive#getdatatablefromnumeric) methods. You can search for
-reports using the [getBlob()](/api-reference/Piwik/Archive#getblob), [getDataTable()](/api-reference/Piwik/Archive#getdatatable) and [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded) methods.
+reports using the getBlob(), [getDataTable()](/api-reference/Piwik/Archive#getdatatable) and [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded) methods.
 
 If you're creating an API that returns report data, you may want to use the
 [getDataTableFromArchive()](/api-reference/Piwik/Archive#getdatatablefromarchive) helper function.
@@ -98,7 +98,6 @@ The class defines the following methods:
 - [`build()`](#build) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional Segment.
 - [`factory()`](#factory) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
 - [`getNumeric()`](#getnumeric) &mdash; Queries and returns metric data in an array.
-- [`getBlob()`](#getblob) &mdash; Queries and returns blob data in an array.
 - [`getDataTableFromNumeric()`](#getdatatablefromnumeric) &mdash; Queries and returns metric data in a DataTable instance.
 - [`getDataTable()`](#getdatatable) &mdash; Queries and returns one or more reports as DataTable instances.
 - [`getDataTableExpanded()`](#getdatatableexpanded) &mdash; Queries and returns one report with all of its subtables loaded.
@@ -183,36 +182,6 @@ will be indexed by site ID first, then period.
 
 - *Returns:*  `Piwik\false`|`integer`|`array` &mdash;
     `false` if there is no data to return, a single numeric value if we're not querying for multiple sites/periods, or an array if multiple sites, periods or names are queried for.
-
-<a name="getblob" id="getblob"></a>
-<a name="getBlob" id="getBlob"></a>
-### `getBlob()`
-
-Queries and returns blob data in an array.
-
-Reports are stored in blobs as serialized arrays of [Row](/api-reference/Piwik/DataTable/Row) instances, but this
-data can technically be anything. In other words, you can store whatever you want
-as archive data blobs.
-
-If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
-be indexed by site ID.
-
-If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
-be indexed by period.
-
-The site ID index is always first, so if multiple sites & periods were requested, the result
-will be indexed by site ID first, then period.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$names` (`string`|`array`) &mdash;
-       One or more archive names, eg, `'Referrers_keywordBySearchEngine'`.
-    - `$idSubtable` (`null`|`string`) &mdash;
-       If we're returning serialized DataTable data, then this refers to the subtable ID to return. If set to 'all', all subtables of each requested report are returned.
-
-- *Returns:*  `array` &mdash;
-    An array of appropriately indexed blob data.
 
 <a name="getdatatablefromnumeric" id="getdatatablefromnumeric"></a>
 <a name="getDataTableFromNumeric" id="getDataTableFromNumeric"></a>

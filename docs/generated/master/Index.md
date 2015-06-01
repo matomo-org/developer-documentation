@@ -269,7 +269,6 @@ Index
 - [`getCurrentUrlWithoutGenericFilters()`](Piwik/API/Request.md#getcurrenturlwithoutgenericfilters) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`getRawSegmentFromRequest()`](Piwik/API/Request.md#getrawsegmentfromrequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`getNumeric()`](Piwik/Archive.md#getnumeric) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
-- [`getBlob()`](Piwik/Archive.md#getblob) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`getDataTableFromNumeric()`](Piwik/Archive.md#getdatatablefromnumeric) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`getDataTable()`](Piwik/Archive.md#getdatatable) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`getDataTableExpanded()`](Piwik/Archive.md#getdatatableexpanded) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
