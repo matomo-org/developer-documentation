@@ -942,7 +942,7 @@ Index
 - [`urlForDefaultUserParams()`](Piwik/Plugin/Menu.md#urlfordefaultuserparams) &mdash; *Method in class* [`Menu`](Piwik/Plugin/Menu.md)
 - [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md) &mdash; *Class in namespace* `Piwik\Plugins\UsersManager`- [`$uiControlType`](Piwik/Settings/Setting.md#$uicontroltype) &mdash; *Property in class* [`Setting`](Piwik/Settings/Setting.md)
 - [`$uiControlAttributes`](Piwik/Settings/Setting.md#$uicontrolattributes) &mdash; *Property in class* [`Setting`](Piwik/Settings/Setting.md)
-- [`UserSetting`](Piwik/Settings/UserSetting.md) &mdash; *Class in namespace* `Piwik\Settings`- [`Url`](Piwik/Url.md) &mdash; *Class in namespace* `Piwik`- [`UrlHelper`](Piwik/UrlHelper.md) &mdash; *Class in namespace* `Piwik`- [`UIControl`](Piwik/View/UIControl.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)
+- [`UserSetting`](Piwik/Settings/UserSetting.md) &mdash; *Class in namespace* `Piwik\Settings`- [`Updates`](Piwik/Updates.md) &mdash; *Class in namespace* `Piwik`- [`Url`](Piwik/Url.md) &mdash; *Class in namespace* `Piwik`- [`UrlHelper`](Piwik/UrlHelper.md) &mdash; *Class in namespace* `Piwik`- [`UIControl`](Piwik/View/UIControl.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)
 ## V
 
 - [`verbose()`](Piwik/Log.md#verbose) &mdash; *Method in class* [`Log`](Piwik/Log.md)

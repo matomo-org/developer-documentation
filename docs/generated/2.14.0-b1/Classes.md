@@ -126,6 +126,7 @@ This is a complete list of available classes:
 - [`Site`](Piwik/Site.md) &mdash; Provides access to individual [site entity](/guides/persistence-and-the-mysql-backend#websites-aka-sites) data (including name, URL, etc.).
 - [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; Manages scheduled task execution.
 - [`Translation\Translator`](Piwik/Translation/Translator.md) &mdash; Translates messages.
+- [`Updates`](Piwik/Updates.md) &mdash; Abstract class for update scripts
 - [`Url`](Piwik/Url.md) &mdash; Provides URL related helper methods.
 - [`UrlHelper`](Piwik/UrlHelper.md) &mdash; Contains less commonly needed URL helper methods.
 - [`Version`](Piwik/Version.md) &mdash; Piwik version information.

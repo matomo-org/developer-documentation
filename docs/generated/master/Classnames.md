@@ -122,6 +122,7 @@
 ## Site
 ## TaskScheduler
 ## Translation\Translator
+## Updates
 ## Url
 ## UrlHelper
 ## Version

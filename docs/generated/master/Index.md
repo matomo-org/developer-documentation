@@ -169,6 +169,7 @@ Index
 - [`$defaultValue`](Piwik/Settings/Setting.md#$defaultvalue) &mdash; *Property in class* [`Setting`](Piwik/Settings/Setting.md)
 - [`deleteAllValues()`](Piwik/Settings/Storage.md#deleteallvalues) &mdash; *Method in class* [`Storage`](Piwik/Settings/Storage.md)
 - [`deleteValue()`](Piwik/Settings/Storage.md#deletevalue) &mdash; *Method in class* [`Storage`](Piwik/Settings/Storage.md)
+- [`doUpdate()`](Piwik/Updates.md#doupdate) &mdash; *Method in class* [`Updates`](Piwik/Updates.md)
 - [`$documentation`](Piwik/ViewDataTable/Config.md#$documentation) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$datatable_css_class`](Piwik/ViewDataTable/Config.md#$datatable_css_class) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$datatable_js_type`](Piwik/ViewDataTable/Config.md#$datatable_js_type) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
@@ -535,6 +536,7 @@ Index
 - [`getDefaultLanguage()`](Piwik/Translation/Translator.md#getdefaultlanguage) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`getJavascriptTranslations()`](Piwik/Translation/Translator.md#getjavascripttranslations) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`getAllTranslations()`](Piwik/Translation/Translator.md#getalltranslations) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
+- [`getMigrationQueries()`](Piwik/Updates.md#getmigrationqueries) &mdash; *Method in class* [`Updates`](Piwik/Updates.md)
 - [`getCurrentUrl()`](Piwik/Url.md#getcurrenturl) &mdash; *Method in class* [`Url`](Piwik/Url.md)
 - [`getCurrentUrlWithoutQueryString()`](Piwik/Url.md#getcurrenturlwithoutquerystring) &mdash; *Method in class* [`Url`](Piwik/Url.md)
 - [`getCurrentUrlWithoutFileName()`](Piwik/Url.md#getcurrenturlwithoutfilename) &mdash; *Method in class* [`Url`](Piwik/Url.md)
@@ -930,6 +932,7 @@ Index
 ## U
 
 - [`unprefixTable()`](Piwik/Common.md#unprefixtable) &mdash; *Method in class* [`Common`](Piwik/Common.md)
+- [`unsanitizeInputValue()`](Piwik/Common.md#unsanitizeinputvalue) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`unsanitizeInputValues()`](Piwik/Common.md#unsanitizeinputvalues) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`unlockAllTables()`](Piwik/Db.md#unlockalltables) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`unlinkRecursive()`](Piwik/Filesystem.md#unlinkrecursive) &mdash; *Method in class* [`Filesystem`](Piwik/Filesystem.md)
@@ -943,7 +946,7 @@ Index
 - [`urlForDefaultUserParams()`](Piwik/Plugin/Menu.md#urlfordefaultuserparams) &mdash; *Method in class* [`Menu`](Piwik/Plugin/Menu.md)
 - [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md) &mdash; *Class in namespace* `Piwik\Plugins\UsersManager`- [`$uiControlType`](Piwik/Settings/Setting.md#$uicontroltype) &mdash; *Property in class* [`Setting`](Piwik/Settings/Setting.md)
 - [`$uiControlAttributes`](Piwik/Settings/Setting.md#$uicontrolattributes) &mdash; *Property in class* [`Setting`](Piwik/Settings/Setting.md)
-- [`UserSetting`](Piwik/Settings/UserSetting.md) &mdash; *Class in namespace* `Piwik\Settings`- [`Url`](Piwik/Url.md) &mdash; *Class in namespace* `Piwik`- [`UrlHelper`](Piwik/UrlHelper.md) &mdash; *Class in namespace* `Piwik`- [`UIControl`](Piwik/View/UIControl.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)
+- [`UserSetting`](Piwik/Settings/UserSetting.md) &mdash; *Class in namespace* `Piwik\Settings`- [`Updates`](Piwik/Updates.md) &mdash; *Class in namespace* `Piwik`- [`Url`](Piwik/Url.md) &mdash; *Class in namespace* `Piwik`- [`UrlHelper`](Piwik/UrlHelper.md) &mdash; *Class in namespace* `Piwik`- [`UIControl`](Piwik/View/UIControl.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)
 ## V
 
 - [`verbose()`](Piwik/Log.md#verbose) &mdash; *Method in class* [`Log`](Piwik/Log.md)
