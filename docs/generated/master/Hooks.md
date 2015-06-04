@@ -3,19 +3,6 @@ Events
 
 This is a complete list of available hooks. If you are not familiar with this read our [Guide about events](/guides/events).
 
-## Access
-
-- [Access.createAccessSingleton](#accesscreateaccesssingleton)
-
-### Access.createAccessSingleton
-
-*Defined in [Piwik/Access](https://github.com/piwik/piwik/blob/master/core/Access.php) in line [90](https://github.com/piwik/piwik/blob/master/core/Access.php#L90)*
-
-
-
-Callback Signature:
-<pre><code>function(&amp;self::$instance)</code></pre>
-
 ## Actions
 
 - [Actions.Archiving.addActionMetrics](#actionsarchivingaddactionmetrics)
@@ -1862,7 +1849,7 @@ Callback Signature:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [477](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L477)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [479](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L479)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
@@ -2038,7 +2025,7 @@ Callback Signature:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/ScheduledReports/tests/ScheduledReportsTest](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/tests/Integration/ScheduledReportsTest.php) in line [97](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/tests/Integration/ScheduledReportsTest.php#L97)*
+*Defined in [Piwik/Plugins/ScheduledReports/tests/ScheduledReportsTest](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/tests/Integration/ScheduledReportsTest.php) in line [96](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/tests/Integration/ScheduledReportsTest.php#L96)*
 
 
 
