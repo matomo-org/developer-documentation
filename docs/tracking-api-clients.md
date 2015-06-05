@@ -9,7 +9,7 @@ category: Integrate
 
 * you'd like to know **which client libraries are available to use Piwik's Tracking HTTP API from your application**
 
-## Client libraries
+## Mobile SDKs
 
 ### iOS SDK
 
@@ -22,6 +22,12 @@ Learn more and download Piwik iOS SDK on Github at [github.com/piwik/piwik-sdk-i
 If you are building Android apps, you can use the Android Java client to send tracking data to your Piwik server.
 
 Learn more and download Piwik Android SDK on Github at [github.com/piwik/piwik-sdk-android](https://github.com/piwik/piwik-sdk-android).
+
+### Appcelerator Titanium Module
+
+If you are building Mobile apps using Appcelerator Titanium, use the Piwik Analytics Module for Titanium to measure how users are navigating and consuming your apps. Learn more and download the Piwik Module for Titanium at [github.com/manumaticx/ti.piwik](https://github.com/manumaticx/ti.piwik).
+
+## Client libraries
 
 ### PHP client
 
@@ -39,6 +45,3 @@ A complete Python client implementation of the Tracking API is available on Gith
 
 A C# client implementation of the Tracking API is available on Github at [github.com/piwik/piwik-dotnet-tracker](https://github.com/piwik/piwik-dotnet-tracker#piwik-c-tracking-api).
 
-### Appcelerator Titanium Module
-
-If you are building Mobile apps using Appcelerator Titanium, use the Piwik Analytics Module for Titanium to measure how users are navigating and consuming your apps. Learn more and download the Piwik Module for Titanium at [github.com/manumaticx/ti.piwik](https://github.com/manumaticx/ti.piwik).
