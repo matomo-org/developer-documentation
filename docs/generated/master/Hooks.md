@@ -980,7 +980,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [514](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L514)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [515](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L515)*
 
 Event triggered after a plugin has been activated.
 
@@ -992,7 +992,7 @@ Callback Signature:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [354](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L354)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [355](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L355)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -1908,7 +1908,7 @@ Callback Signature:
 
 ### Translate.getClientSideTranslationKeys
 
-*Defined in [Piwik/Translation/Translator](https://github.com/piwik/piwik/blob/master/core/Translation/Translator.php) in line [242](https://github.com/piwik/piwik/blob/master/core/Translation/Translator.php#L242)*
+*Defined in [Piwik/Translation/Translator](https://github.com/piwik/piwik/blob/master/core/Translation/Translator.php) in line [195](https://github.com/piwik/piwik/blob/master/core/Translation/Translator.php#L195)*
 
 Triggered before generating the JavaScript code that allows i18n strings to be used in the browser. Plugins should subscribe to this event to specify which translations
 should be available to JavaScript.
