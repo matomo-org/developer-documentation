@@ -980,7 +980,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [515](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L515)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [516](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L516)*
 
 Event triggered after a plugin has been activated.
 
@@ -992,7 +992,7 @@ Callback Signature:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [355](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L355)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [356](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L356)*
 
 Event triggered after a plugin has been deactivated.
 
