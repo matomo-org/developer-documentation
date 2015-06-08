@@ -18,6 +18,7 @@ The class defines the following methods:
 - [`mb_strlen()`](#mb_strlen) &mdash; Multi-byte strlen() - works with UTF-8
 - [`mb_strtolower()`](#mb_strtolower) &mdash; Multi-byte strtolower() - works with UTF-8.
 - [`sanitizeInputValues()`](#sanitizeinputvalues) &mdash; Sanitizes a string to help avoid XSS vulnerabilities.
+- [`unsanitizeInputValue()`](#unsanitizeinputvalue) &mdash; Unsanitizes a single input value and returns the result.
 - [`unsanitizeInputValues()`](#unsanitizeinputvalues) &mdash; Unsanitizes one or more values and returns the result.
 - [`getRequestVar()`](#getrequestvar) &mdash; Gets a sanitized request parameter by name from the `$_GET` and `$_POST` superglobals.
 - [`getLanguagesList()`](#getlanguageslist) &mdash; Returns the list of valid language codes.
@@ -143,6 +144,21 @@ should still be used._
     The sanitized value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$value` is of an incorrect type.
+
+<a name="unsanitizeinputvalue" id="unsanitizeinputvalue"></a>
+<a name="unsanitizeInputValue" id="unsanitizeInputValue"></a>
+### `unsanitizeInputValue()`
+
+Unsanitizes a single input value and returns the result.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$value` (`string`) &mdash;
+      
+
+- *Returns:*  `string` &mdash;
+    unsanitized input
 
 <a name="unsanitizeinputvalues" id="unsanitizeinputvalues"></a>
 <a name="unsanitizeInputValues" id="unsanitizeInputValues"></a>
