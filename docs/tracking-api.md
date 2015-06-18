@@ -40,6 +40,7 @@ _(We recommend that these parameters be used if the information is available and
 * `m` &mdash; The current minute (local time).
 * `s` &mdash; The current second (local time).
 * plugins used by the visitor can be specified by setting the following parameters to 1: `fla` (Flash), `java` (Java), `dir` (Director), `qt` (Quicktime), `realp` (Real Player), `pdf` (PDF), `wma` (Windows Media), `gears` (Gears), `ag` (Silverlight).
+* `cookie`  &mdash; when set to 1, the visitor's client is known to support cookies.
 
 * `ua` &mdash; An override value for the **User-Agent** HTTP header field. The user agent is used to detect the operating system and browser used.
 * `lang` &mdash; An override value for the **Accept-Language** HTTP header field. This value is used to detect the visitor's country if [GeoIP](http://piwik.org/faq/troubleshooting/#faq_65) is not enabled.
@@ -117,7 +118,7 @@ By default Piwik does not track bots. If you use the Tracking HTTP API directly,
 
 Here is an example of a real tracking request used by the [Piwik Mobile app](http://piwik.org/mobile/) when anonymously tracking Mobile App usage:
 
-    http://piwik-server/piwik.php?_cvar={"1":["OS","iphone 5.0"],"2":["Piwik Mobile Version","1.6.2"],"3":["Locale","en::en"],"4":["Num Accounts","2"]}&action_name=View settings&url=http://mobileapp.piwik.org/window/settings &idsite=8876&rand=351459&h=18&m=13&s=3 &rec=1&apiv=1&cookie= &urlref=http://iphone.mobileapp.piwik.org&_id=af344a398df83874 &_idvc=19&res=320×480&
+    http://piwik-server/piwik.php?_cvar={"1":["OS","iphone 5.0"],"2":["Piwik Mobile Version","1.6.2"],"3":["Locale","en::en"],"4":["Num Accounts","2"]}&action_name=View settings&url=http://mobileapp.piwik.org/window/settings &idsite=8876&rand=351459&h=18&m=13&s=3 &rec=1&apiv=1&cookie=1&urlref=http://iphone.mobileapp.piwik.org&_id=af344a398df83874 &_idvc=19&res=320×480&
 
 _Note: for clarity, parameter values are not URL encoded in this example._
 
