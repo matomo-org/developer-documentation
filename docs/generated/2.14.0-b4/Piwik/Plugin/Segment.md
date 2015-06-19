@@ -148,6 +148,8 @@ maybe has to be mapped to a 2 letter country code. You can do this by specifing 
 or callable: `string $valueToMatch`, `string $segment` (see [setSegment()](/api-reference/Piwik/Plugin/Segment#setsegment)), `string $matchType`
 (eg SegmentExpression::MATCH_EQUAL or any other match constant of this class) and `$segmentName`.
 
+If the closure returns NULL, then Piwik assumes the segment sub-string will not match any visitor.
+
 #### Signature
 
 -  It accepts the following parameter(s):
