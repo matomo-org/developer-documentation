@@ -1732,7 +1732,7 @@ Callback Signature:
 
 ### Tracker.end
 
-*Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [101](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L101)*
+*Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/master/core/Tracker.php) in line [103](https://github.com/piwik/piwik/blob/master/core/Tracker.php#L103)*
 
 
 
