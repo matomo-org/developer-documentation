@@ -1949,7 +1949,7 @@ Callback Signature:
 
 ### Translate.getClientSideTranslationKeys
 
-*Defined in [Piwik/Translation/Translator](https://github.com/piwik/piwik/blob/master/core/Translation/Translator.php) in line [195](https://github.com/piwik/piwik/blob/master/core/Translation/Translator.php#L195)*
+*Defined in [Piwik/Translation/Translator](https://github.com/piwik/piwik/blob/master/core/Translation/Translator.php) in line [167](https://github.com/piwik/piwik/blob/master/core/Translation/Translator.php#L167)*
 
 Triggered before generating the JavaScript code that allows i18n strings to be used in the browser. Plugins should subscribe to this event to specify which translations
 should be available to JavaScript.
