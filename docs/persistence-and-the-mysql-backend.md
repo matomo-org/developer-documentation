@@ -64,11 +64,10 @@ Each visit contains the following information:
 - `visit_goal_converted`: whether this visit converted a goal or not
 - `visit_goal_buyer`: whether the visitor ordered something during this visit or not
 - `referer_type`: the type of this visitor's referrer. Can be one of the following values:
-  - **Common::REFERRER\_TYPE\_DIRECT\_ENTRY**: If set to this value, other `referer_...` fields have no meaning.
-  - **Common::REFERRER\_TYPE\_SEARCH\_ENGINE**: If set to this value, `referer_url` is the url of the search engine and `referer_keyword` is the keyword used (if we can find it).
-  - **Common::REFERRER\_TYPE\_WEBSITE**: If set to this value, `referer_url` is the url of the website.
-  - **Common::REFERRER\_TYPE\_CAMPAIGN**: If set to this value, `referer_name` is the name of the campaign.
-  You can check actual values of these constants [Here](https://github.com/piwik/piwik/blob/master/core/Common.php#L26)
+  - **Common::REFERRER\_TYPE\_DIRECT\_ENTRY = 1**: If set to this value, other `referer_...` fields have no meaning.
+  - **Common::REFERRER\_TYPE\_SEARCH\_ENGINE = 2**: If set to this value, `referer_url` is the url of the search engine and `referer_keyword` is the keyword used (if we can find it).
+  - **Common::REFERRER\_TYPE\_WEBSITE = 3**: If set to this value, `referer_url` is the url of the website.
+  - **Common::REFERRER\_TYPE\_CAMPAIGN = 4**: If set to this value, `referer_name` is the name of the campaign.
 - `referer_name`: referrer name; its meaning depends on the specific referrer type
 - `referer_url`: the referrer URL; its meaning depends on the specific referrer type
 - `referer_keyword`: the keyword used if a search engine was the referrer
@@ -158,14 +157,21 @@ Action types are persisted in the `log_action` table and contain the following i
 - `name`: a string describing the action type. Can be a URL, a page title, campaign name or anything else. The meaning is determined by the `type` field.
 - `hash`: a hash value calculated using the name.
 - `type`: the action type's category. Can be one of the following values:
-  - **Piwik\Tracker\Action::TYPE\_PAGE\_URL**: the action type is a URL to a page on the website being tracked.
-  - **Piwik\Tracker\Action::TYPE\_OUTLINK**: the action type is a URL is of a link on the website being tracked. A visitor clicked it.
-  - **Piwik\Tracker\Action::TYPE\_DOWNLOAD**: the action type is a URL of a file that was downloaded from the website being tracked.
-  - **Piwik\Tracker\Action::TYPE\_PAGE\_TITLE**: the action type is the page title of a page on the website being tracked.
-  - **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_SKU**: the action type is the SKU of an ecommerce item that is sold on the site.
-  - **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_NAME**: the action type is the name of an ecommerce item that is sold on the site.
-  - **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_CATEGORY**: the action type is the name of an ecommerce item category that is used on the site.
-  - **Piwik\Tracker\Action::TYPE_SITE_SEARCH**: the action type is a site search action.
+  - **Piwik\Tracker\Action::TYPE\_PAGE\_URL = 1**: the action is a URL to a page on the website being tracked.
+  - **Piwik\Tracker\Action::TYPE\_OUTLINK = 2**: the action is a URL is of a link on the website being tracked. A visitor clicked it.
+  - **Piwik\Tracker\Action::TYPE\_DOWNLOAD = 3**: the action is a URL of a file that was downloaded from the website being tracked.
+  - **Piwik\Tracker\Action::TYPE\_PAGE\_TITLE = 4**: the action is the page title of a page on the website being tracked.
+  - **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_SKU = 5**: the action is the SKU of an ecommerce item that is sold on the site.
+  - **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_NAME = 6**: the action is the name of an ecommerce item that is sold on the site.
+  - **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_CATEGORY = 7**: the action is the name of an ecommerce item category that is used on the site.
+  - **Piwik\Tracker\Action::TYPE_SITE_SEARCH = 8**: the action type is a site search action.
+  - **Piwik\Tracker\Action::TYPE_EVENT_CATEGORY = 10**: the action is an event category (see [Tracking Events](https://piwik.org/docs/event-tracking/) user guide) 
+  - **Piwik\Tracker\Action::TYPE_EVENT_ACTION = 11**: the action is an event category
+  - **Piwik\Tracker\Action::TYPE_EVENT_NAME = 12**: the action is an event name
+  - **Piwik\Tracker\Action::TYPE_CONTENT_NAME = 13**:  the action is a content name (see [Content Tracking](https://piwik.org/docs/content-tracking/) user guide and [developer guide](http://developer.piwik.org/guides/content-tracking))
+  - **Piwik\Tracker\Action::TYPE_CONTENT_PIECE = 14**: the action is a content piece
+  - **Piwik\Tracker\Action::TYPE_CONTENT_TARGET = 15**: the action is a content target 
+  - **Piwik\Tracker\Action::TYPE_CONTENT_INTERACTION = 16**: the action is a content interaction
 - `url_prefix`: if the name is a URL this refers to the prefix of the URL. The prefix is removed from actual URLs so the protocol and **www.** parts of a URL are ignored during analysis. Can be the following values:
   - `0`: `'http://'`
   - `1`: `'http://www.'`
