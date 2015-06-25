@@ -82,6 +82,7 @@ The class defines the following methods:
 - [`doTrackEcommerceCartUpdate()`](#dotrackecommercecartupdate) &mdash; Tracks a Cart Update (add item, remove item, update item).
 - [`doBulkTrack()`](#dobulktrack) &mdash; Sends all stored tracking actions at once.
 - [`doTrackEcommerceOrder()`](#dotrackecommerceorder) &mdash; Tracks an Ecommerce order.
+- [`doPing()`](#doping) &mdash; Sends a ping request.
 - [`setEcommerceView()`](#setecommerceview) &mdash; Sets the current page view as an item (product) page view, or an Ecommerce Category page view.
 - [`getUrlTrackPageView()`](#geturltrackpageview) &mdash; Builds URL to track a page view.
 - [`getUrlTrackEvent()`](#geturltrackevent) &mdash; Builds URL to track a custom event.
@@ -681,6 +682,22 @@ Only the parameters $orderId and $grandTotal are required.
        (optional) Shipping amount for this order
     - `$discount` (`float`) &mdash;
        (optional) Discounted amount in this order
+
+- *Returns:*  `mixed` &mdash;
+    Response or true if using bulk request
+
+<a name="doping" id="doping"></a>
+<a name="doPing" id="doPing"></a>
+### `doPing()`
+
+Sends a ping request.
+
+Ping requests do not track new actions. If they are sent within the standard visit length (see global.ini.php),
+they will extend the existing visit and the current last action for the visit. If after the standard visit length,
+ping requests will create a new visit using the last action in the last known visit.
+
+#### Signature
+
 
 - *Returns:*  `mixed` &mdash;
     Response or true if using bulk request
