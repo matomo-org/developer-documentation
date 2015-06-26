@@ -1003,6 +1003,18 @@ Callback Signature:
 ## Platform
 
 - [Platform.initialized](#platforminitialized)
+- [Platform.initialized](#platforminitialized)
+
+### Platform.initialized
+
+*Defined in [Piwik/Plugins/Widgetize/tests/Integration/WidgetTest](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/tests/System/WidgetTest.php) in line [51](https://github.com/piwik/piwik/blob/master/plugins/Widgetize/tests/System/WidgetTest.php#L51)*
+
+
+
+Usages:
+
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L82), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L97), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L42)
+
 
 ### Platform.initialized
 
