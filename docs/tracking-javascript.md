@@ -16,7 +16,6 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
 
 ### Using the Tracker Object
 
-*   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use a pseudo-click handler to track browsers (such as Firefox) which don't generate click events for the middle mouse button. By default only "true" mouse click events are handled.
 *   `trackEvent(category, action, [name], [value])` - Logs an event with an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name and optional numeric value.
 *   `trackPageView([customTitle])` - Logs a visit to this page
 *   `trackSiteSearch(keyword, [category], [resultsCount])` - Log an internal site search for a specific keyword, in an optional category, specifying the optional count of search results in the page.
@@ -28,6 +27,7 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
 *   `trackContentInteractionNode( domNode, contentInteraction )` - Tracks an interaction with the given DOM node / content block.
 *   `trackContentImpression( contentName, contentPiece, contentTarget )` - Tracks a content impression using the specified values. 
 *   `trackContentInteraction( contentInteraction, contentName, contentPiece, contentTarget )` - Tracks a content interaction using the specified values.
+*   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use pseudo click-handler (treat middle click and open contextmenu as left click). A right click (or any click that opens the context menu) on a link will be tracked as clicked even if "Open in new tab" is not selected. If "false" (default), nothing will be tracked on open context menu or middle click. 
 
 ### Configuration of the Tracker Object
 
