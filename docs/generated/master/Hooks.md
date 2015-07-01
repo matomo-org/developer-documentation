@@ -2140,7 +2140,7 @@ Callback Signature:
 
 ### ViewDataTable.addViewDataTable
 
-*Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [97](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L97)*
+*Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php) in line [98](https://github.com/piwik/piwik/blob/master/core/ViewDataTable/Manager.php#L98)*
 
 Triggered when gathering all available DataTable visualizations. Plugins that want to expose new DataTable visualizations should subscribe to
 this event and add visualization class names to the incoming array.

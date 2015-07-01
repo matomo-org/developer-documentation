@@ -71,6 +71,8 @@ See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the
        The controller name and action dedicated to displaying the report. This action is used when reloading reports or changing the report visualization. Defaulted to `$apiAction` if `false` is supplied.
     - `$forceDefault` (`bool`) &mdash;
        If true, then the visualization type that was configured for the report will be ignored and `$defaultType` will be used as the default.
+    - `$loadViewDataTableParametersForUser` (`bool`) &mdash;
+       Whether the per-user parameters for this user, this ViewDataTable and this Api action should be loaded from the user preferences and override the default params values.
 - It returns a [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
