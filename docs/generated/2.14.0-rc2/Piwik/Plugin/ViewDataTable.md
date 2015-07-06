@@ -162,6 +162,8 @@ The abstract class defines the following methods:
 - [`render()`](#render) &mdash; Requests all needed data and renders the view.
 - [`isRequestingSingleDataTable()`](#isrequestingsingledatatable) &mdash; Returns `true` if this instance will request a single DataTable, `false` if requesting more than one.
 - [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Returns `true` if this visualization can display some type of data or not.
+- [`throwWhenSettingNonOverridableParameter()`](#throwwhensettingnonoverridableparameter) &mdash; Display a meaningful error message when any invalid parameter is being set.
+- [`getNonOverridableParams()`](#getnonoverridableparams)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -310,4 +312,28 @@ graph footer icon should not be displayed.
     - `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)) &mdash;
        Contains the API request being checked.
 - It returns a `bool` value.
+
+<a name="throwwhensettingnonoverridableparameter" id="throwwhensettingnonoverridableparameter"></a>
+<a name="throwWhenSettingNonOverridableParameter" id="throwWhenSettingNonOverridableParameter"></a>
+### `throwWhenSettingNonOverridableParameter()`
+
+Display a meaningful error message when any invalid parameter is being set.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$overrideParams` (`Piwik\Plugin\$overrideParams`) &mdash;
+      
+- It does not return anything.
+
+<a name="getnonoverridableparams" id="getnonoverridableparams"></a>
+<a name="getNonOverridableParams" id="getNonOverridableParams"></a>
+### `getNonOverridableParams()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$overrideParams` (`Piwik\Plugin\$overrideParams`) &mdash;
+      
+- It returns a `array` value.
 

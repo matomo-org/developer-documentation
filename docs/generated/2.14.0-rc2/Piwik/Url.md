@@ -207,6 +207,8 @@ will be added to the result.
 
 Converts an array of parameters name => value mappings to a query string.
 
+Values must already be URL encoded before you call this function.
+
 #### Signature
 
 -  It accepts the following parameter(s):
