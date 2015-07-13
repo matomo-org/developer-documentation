@@ -1803,7 +1803,7 @@ Callback Signature:
 
 ### Tracker.makeNewVisitObject
 
-*Defined in [Piwik/Tracker/Visit/Factory](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit/Factory.php) in line [39](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit/Factory.php#L39)*
+*Defined in [Piwik/Tracker/Visit/Factory](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit/Factory.php) in line [38](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit/Factory.php#L38)*
 
 Triggered before a new **visit tracking object** is created. Subscribers to this
 event can force the use of a custom visit tracking object that extends from
