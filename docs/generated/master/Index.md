@@ -877,6 +877,7 @@ Index
 - [`StaticStorage`](Piwik/Settings/Storage/StaticStorage.md) &mdash; *Class in namespace* [`Piwik\Settings\Storage`](Piwik/Settings/Storage)- [`save()`](Piwik/Settings/Storage/StaticStorage.md#save) &mdash; *Method in class* [`StaticStorage`](Piwik/Settings/Storage/StaticStorage.md)
 - [`SystemSetting`](Piwik/Settings/SystemSetting.md) &mdash; *Class in namespace* `Piwik\Settings`- [`setUserLogin()`](Piwik/Settings/UserSetting.md#setuserlogin) &mdash; *Method in class* [`UserSetting`](Piwik/Settings/UserSetting.md)
 - [`Singleton`](Piwik/Singleton.md) &mdash; *Class in namespace* `Piwik`- [`Site`](Piwik/Site.md) &mdash; *Class in namespace* `Piwik`- [`setSites()`](Piwik/Site.md#setsites) &mdash; *Method in class* [`Site`](Piwik/Site.md)
+- [`setSiteFromArray()`](Piwik/Site.md#setsitefromarray) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`setSitesFromArray()`](Piwik/Site.md#setsitesfromarray) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`setCurrentLanguage()`](Piwik/Translation/Translator.md#setcurrentlanguage) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`setContentType()`](Piwik/View.md#setcontenttype) &mdash; *Method in class* [`View`](Piwik/View.md)

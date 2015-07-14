@@ -32,6 +32,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setSites()`](#setsites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data.
+- [`setSiteFromArray()`](#setsitefromarray) &mdash; Sets a site information in memory (statically cached).
 - [`setSitesFromArray()`](#setsitesfromarray) &mdash; Sets the cached Site data with a non-associated array of site data.
 - [`__toString()`](#__tostring) &mdash; Returns a string representation of the site this instance references.
 - [`getName()`](#getname) &mdash; Returns the name of the site.
@@ -85,6 +86,26 @@ Sets the cached site data with an array that associates site IDs with individual
     - `$sites` (`array`) &mdash;
        The array of sites data. Indexed by site ID. eg, array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))`
 - It does not return anything.
+
+<a name="setsitefromarray" id="setsitefromarray"></a>
+<a name="setSiteFromArray" id="setSiteFromArray"></a>
+### `setSiteFromArray()`
+
+Sets a site information in memory (statically cached).
+
+Plugins can filter the website attributes before it is cached, eg. to change the website name,
+creation date, etc.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idSite` (`Piwik\$idSite`) &mdash;
+      
+    - `$infoSite` (`Piwik\$infoSite`) &mdash;
+      
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if website or idsite is invalid
 
 <a name="setsitesfromarray" id="setsitesfromarray"></a>
 <a name="setSitesFromArray" id="setSitesFromArray"></a>
