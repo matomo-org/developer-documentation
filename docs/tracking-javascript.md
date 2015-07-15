@@ -19,7 +19,7 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
 *   `trackEvent(category, action, [name], [value])` - Logs an event with an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name and optional numeric value.
 *   `trackPageView([customTitle])` - Logs a visit to this page
 *   `trackSiteSearch(keyword, [category], [resultsCount])` - Log an internal site search for a specific keyword, in an optional category, specifying the optional count of search results in the page.
-*   `trackGoal( idGoal, [customRevenue]);` - Manually log a conversion for the goal idGoal, passing in the custom revenue customRevenue if specified
+*   `trackGoal( idGoal, [customRevenue]);` - Manually log a conversion for the numeric goal ID, with an optional numeric custom revenue customRevenue.
 *   `trackLink( url, linkType )` - Manually log a click from your own code. url is the full URL which is to be tracked as a click. linkType can either be 'link' for an outlink or 'download' for a download.
 *   `trackAllContentImpressions()` - Scans the entire DOM for all content blocks and tracks all impressions once the DOM ready event has been triggered.
 *   `trackVisibleContentImpressions ( checkOnSroll, timeIntervalInMs )` - Scans the entire DOM for all content blocks as soon as the page is loaded. It tracks an impression only if a content block is actually visible.
