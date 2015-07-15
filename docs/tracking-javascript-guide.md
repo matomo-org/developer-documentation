@@ -606,6 +606,9 @@ piwikTracker.setTrackerUrl( "http://example.com/piwik/" );
 piwikTracker.trackPageView();
 ```
 
+## JavaScript Tracker Reference 
+
+View all features of the Tracking client in the [JavaScript Tracker Reference](/guides/tracking-javascript).
 
 ## Frequently Asked Questions
 
