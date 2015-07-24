@@ -106,7 +106,7 @@ Defaults to an empty string.
 Returns a unique string ID for this dimension.
 
 The ID is built using the namespaced class name
-of the dimension, but is modified to be more human readable
+of the dimension, but is modified to be more human readable.
 
 #### Signature
 
