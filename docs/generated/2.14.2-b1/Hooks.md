@@ -1737,7 +1737,7 @@ Callback Signature:
 
 ### Tracker.end
 
-*Defined in [Piwik/Plugins/QueuedTracking/Commands/Process](https://github.com/piwik/piwik/blob/2.14.2-b1/plugins/QueuedTracking/Commands/Process.php) in line [85](https://github.com/piwik/piwik/blob/2.14.2-b1/plugins/QueuedTracking/Commands/Process.php#L85)*
+*Defined in [Piwik/Plugins/QueuedTracking/Commands/Process](https://github.com/piwik/piwik/blob/2.14.2-b1/plugins/QueuedTracking/Commands/Process.php) in line [92](https://github.com/piwik/piwik/blob/2.14.2-b1/plugins/QueuedTracking/Commands/Process.php#L92)*
 
 
 
