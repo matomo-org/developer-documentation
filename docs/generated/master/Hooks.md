@@ -477,7 +477,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/master/core/Updater.php) in line [428](https://github.com/piwik/piwik/blob/master/core/Updater.php#L428)*
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/master/core/Updater.php) in line [443](https://github.com/piwik/piwik/blob/master/core/Updater.php#L443)*
 
 Triggered after Piwik has been updated.
 
