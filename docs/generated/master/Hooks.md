@@ -490,7 +490,7 @@ Triggered after Piwik has been updated.
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [353](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L353)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [360](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L360)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -502,7 +502,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [343](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L343)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [350](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L350)*
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -514,7 +514,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [935](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L935)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [942](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L942)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -527,7 +527,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [304](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L304)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [311](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L311)*
 
 This event is triggered after a CronArchive instance is initialized.
 
