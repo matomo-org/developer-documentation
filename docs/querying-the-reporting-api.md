@@ -36,7 +36,7 @@ Here is the output of this code:
 
 If you want to request data in a PHP script **that is on the same server as Piwik**, you can use this simple technique. This is a more efficient solution as it doesn't require network calls. You directly call the PHP Piwik runtime and get the PHP data structure back.
 
-If you are developing a plugin, you should be using this technique.
+If you are developing a plugin, you should be using this technique. Please note that including index.php will set the default timezone of the calling code to UTC.
 
 ```php
 {@include escape https://raw.github.com/piwik/piwik/master/misc/others/api_internal_call.php}
