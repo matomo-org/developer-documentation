@@ -28,7 +28,11 @@ $ sudo apt-get install ttf-mscorefonts-installer imagemagick imagemagick-doc
 
 Removing this font may be useful if your generated screenshots' fonts do not match the expected screenshots:
 
-    $ sudo apt-get remove ttf-bitstream-vera
+```
+$ sudo apt-get remove ttf-bitstream-vera
+```
+
+If you are running or writing UI tests for [Piwik Core](https://github.com/piwik/piwik), you will need to install the [git-lfs](https://git-lfs.github.com/) extension to be able to download and commit UI screenshots.
 
 ## Configuring UI tests
 
