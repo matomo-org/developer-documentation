@@ -6,8 +6,8 @@ category: Develop
 Dimensions provide the possibility to extend the tracker to easily record any custom data. Before recording any custom data you have to decide what kind of dimension you need:
 
 * A visit dimension let's you record any visitor related data. A typical dimension would be for example the name of the browser or the resolution of the device a visitor is using.
-* An action dimension let's you track additional data with each action. For example a pageview, a download or an event.
-* A conversion dimension let's you record any additional information when a goal is converted.
+* An action dimension let's you track any action related data. For example a pageview, a download or an event.
+* A conversion dimension let's you persist any additional information when a goal is converted.
 
 ## Creating a new dimension
 
@@ -21,7 +21,7 @@ The command will ask for your plugin name and what kind of dimension you'd like 
 
 Once all information is provided, a dimension class will be created in the `Columns` directory of your plugin containing an example on how to define which data should be tracked. The dimension will be automatically installed as soon as you open the Piwik UI.
 
-## Visit dimension example
+## Visit dimensions
 
 Let's assume you want to add a new tracking URL parameter `sport_activity_type` that let's you track the type of sport activity (eg running, cycling, ...). You can do this by implementing the method `onNewVisit`:
 
@@ -51,7 +51,7 @@ public function onExistingVisit(Request $request, Visitor $visitor, $action)
 When a new visitor is being tracked, the value `1` will be stored. On each further tracking request the value for this dimension will be increased.
 
 
-## Action dimension example
+## Action dimensions
 
 Action dimensions work similar, just the method name is differently. Let's say you want to track the current speed of a runner by exposing a new URL parameter `speed`:
 
@@ -73,7 +73,7 @@ public function onNewAction(Request $request, Visitor $visitor, Action $action)
 
 A tracking request could be done like this: `piwik.php?idsite=1&sport_activity_type=running&speed=50`.
 
-Of course you can add any custom behaviour like limiting the mex speed etc.
+Of course you can add any custom behaviour like limiting the max speed etc.
 
 
 ## Segmentation
