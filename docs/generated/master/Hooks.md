@@ -1222,7 +1222,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [157](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L157)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [166](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L166)*
 
 
 
@@ -1680,7 +1680,6 @@ Callback Signature:
 - [Tracker.end](#trackerend)
 - [Tracker.existingVisitInformation](#trackerexistingvisitinformation)
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
-- [Tracker.getVisitFieldsToPersist](#trackergetvisitfieldstopersist)
 - [Tracker.isExcludedVisit](#trackerisexcludedvisit)
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
 - [Tracker.newConversionInformation](#trackernewconversioninformation)
@@ -1691,7 +1690,6 @@ Callback Signature:
 - [Tracker.recordStandardGoals](#trackerrecordstandardgoals)
 - [Tracker.Request.getIdSite](#trackerrequestgetidsite)
 - [Tracker.setTrackerCacheGeneral](#trackersettrackercachegeneral)
-- [Tracker.setVisitorIp](#trackersetvisitorip)
 
 ### Tracker.Cache.getSiteAttributes
 
@@ -1751,13 +1749,13 @@ Callback Signature:
 
 ### Tracker.existingVisitInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [290](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L290)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [211](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L211)*
 
 Triggered before a [visit entity](/guides/persistence-and-the-mysql-backend#visits) is updated when tracking an action for an existing visit. This event can be used to modify the visit properties that will be updated before the changes
 are persisted.
 
 Callback Signature:
-<pre><code>function(&amp;$valuesToUpdate, $this-&gt;visitorInfo)</code></pre>
+<pre><code>function(&amp;$valuesToUpdate, $this-&gt;visitProperties-&gt;getProperties())</code></pre>
 
 - array `&$valuesToUpdate` Visit entity properties that will be updated.
 
@@ -1774,19 +1772,6 @@ Callback Signature:
 <pre><code>function(&amp;$configDb)</code></pre>
 
 - array `$dbInfos` Reference to an array containing database connection info, including: - **host**: The host name or IP address to the MySQL database. - **username**: The username to use when connecting to the database. - **password**: The password to use when connecting to the database. - **dbname**: The name of the Piwik MySQL database. - **port**: The MySQL database port to use. - **adapter**: either `'PDO\MYSQL'` or `'MYSQLI'` - **type**: The MySQL engine to use, for instance 'InnoDB'
-
-
-### Tracker.getVisitFieldsToPersist
-
-*Defined in [Piwik/Tracker/Visitor](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php) in line [222](https://github.com/piwik/piwik/blob/master/core/Tracker/Visitor.php#L222)*
-
-This event collects a list of [visit entity](/guides/persistence-and-the-mysql-backend#visits) properties that should be loaded when reading the existing visit. Properties that appear in this list will be available in other tracking
-events such as 'onExistingVisit'.
-
-Plugins can use this event to load additional visit entity properties for later use during tracking.
-
-Callback Signature:
-<pre><code>function(&amp;$fields)</code></pre>
 
 
 ### Tracker.isExcludedVisit
@@ -1817,12 +1802,12 @@ Callback Signature:
 
 ### Tracker.newConversionInformation
 
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [725](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L725)*
+*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [709](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L709)*
 
 Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
 
 Callback Signature:
-<pre><code>function(&amp;$conversion, $visitInformation, $this-&gt;request)</code></pre>
+<pre><code>function(&amp;$conversion, $visitInformation, $request)</code></pre>
 
 - array `&$conversion` The conversion entity. Read [this](/guides/persistence-and-the-mysql-backend#conversions) to see what it contains.
 
@@ -1833,13 +1818,13 @@ Callback Signature:
 
 ### Tracker.newVisitorInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [348](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L348)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [274](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L274)*
 
 Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
 The UserCountry plugin, for example, uses this event to add location information for each visit.
 
 Callback Signature:
-<pre><code>function(&amp;$this-&gt;visitorInfo, $this-&gt;request)</code></pre>
+<pre><code>function($this-&gt;visitProperties-&gt;getProperties(), $this-&gt;request)</code></pre>
 
 - array `$visit` The visit entity. Read [this](/guides/persistence-and-the-mysql-backend#visits) to see what information it contains.
 
@@ -1874,13 +1859,13 @@ Callback Signature:
 
 ### Tracker.recordEcommerceGoal
 
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [358](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L358)*
+*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [339](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L339)*
 
 Triggered after successfully persisting an ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
 
 Callback Signature:
-<pre><code>function($conversion, $visitInformation)</code></pre>
+<pre><code>function($conversion, $visitProperties-&gt;getProperties())</code></pre>
 
 - array `$conversion` The conversion entity that was just persisted. See what information it contains [here](/guides/persistence-and-the-mysql-backend#conversions).
 
@@ -1889,7 +1874,7 @@ Callback Signature:
 
 ### Tracker.recordStandardGoals
 
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [701](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L701)*
+*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [685](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L685)*
 
 Triggered after successfully recording a non-ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
@@ -1902,7 +1887,7 @@ Callback Signature:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [480](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L480)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [489](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L489)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
@@ -1942,18 +1927,6 @@ Callback Signature:
 Usages:
 
 [PrivacyManager::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/master/plugins/PrivacyManager/PrivacyManager.php#L147), [UserCountry::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L67)
-
-
-### Tracker.setVisitorIp
-
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [105](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L105)*
-
-Triggered after visits are tested for exclusion so plugins can modify the IP address persisted with a visit. This event is primarily used by the **PrivacyManager** plugin to anonymize IP addresses.
-
-Callback Signature:
-<pre><code>function(&amp;$this-&gt;visitorInfo[&#039;location_ip&#039;])</code></pre>
-
-- string `$ip` The visitor's IP address.
 
 ## Translate
 
