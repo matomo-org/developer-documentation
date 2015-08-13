@@ -1,16 +1,17 @@
 <small>Piwik\Plugin\Dimension\</small>
 
-ActionDimension
-===============
+ConversionDimension
+===================
 
 Since Piwik 2.5.0
 
-Defines a new action dimension that records any information during tracking for each action.
+Defines a new conversion dimension that records any visit related information during tracking.
 
-You can record any action information by implementing one of the following events: [onLookupAction()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#onlookupaction) and
-[getActionId()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#getactionid) or [onNewAction()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#onnewaction). By defining a [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and [$columnType](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columntype) a new
-column will be created in the database (table `log_link_visit_action`) automatically and the values you return in
-the previous mentioned events will be saved in this column.
+You can record any visit information by implementing one of the following events:
+[onEcommerceOrderConversion()](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#onecommerceorderconversion), [onEcommerceCartUpdateConversion()](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#onecommercecartupdateconversion) or [onGoalConversion()](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#ongoalconversion).
+By defining a [$columnName](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#$columnname) and [$columnType](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#$columntype) a new column will be created in the database
+(table `log_conversion`) automatically and the values you return in the previous mentioned events will be saved in
+this column.
 
 You can create a new dimension using the console command `./console generate:dimension`.
 
@@ -56,13 +57,13 @@ The abstract class defines the following methods:
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getDimensions()`](#getdimensions) Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
-- [`factory()`](#factory) &mdash; Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#getid)). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`factory()`](#factory) &mdash; Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#getid)). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
-- [`install()`](#install) &mdash; Installs the action dimension in case it is not installed yet.
-- [`uninstall()`](#uninstall) &mdash; Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and columnType is set.
-- [`onLookupAction()`](#onlookupaction) &mdash; If the value you want to save for your dimension is something like a page title or page url, you usually do not want to save the raw value over and over again to save bytes in the database.
-- [`getActionId()`](#getactionid) &mdash; An action id.
-- [`onNewAction()`](#onnewaction) &mdash; This event is triggered before a new action is logged to the `log_link_visit_action` table.
+- [`install()`](#install) &mdash; Installs the conversion dimension in case it is not installed yet.
+- [`uninstall()`](#uninstall) &mdash; Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#$columnname) and columnType is set.
+- [`onEcommerceOrderConversion()`](#onecommerceorderconversion) &mdash; This event is triggered when an ecommerce order is converted.
+- [`onEcommerceCartUpdateConversion()`](#onecommercecartupdateconversion) &mdash; This event is triggered when an ecommerce cart update is converted.
+- [`onGoalConversion()`](#ongoalconversion) &mdash; This event is triggered when an any custom goal is converted.
 
 <a name="addsegment" id="addsegment"></a>
 <a name="addSegment" id="addSegment"></a>
@@ -107,6 +108,7 @@ of the dimension, but is modified to be more human readable.
 
 #### Signature
 
+- It is a **finalized** method.
 
 - *Returns:*  `string` &mdash;
     eg, `"Referrers.Keywords"`
@@ -138,13 +140,13 @@ Gets an instance of all available visit, action and conversion dimension.
 <a name="factory" id="factory"></a>
 ### `factory()`
 
-Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#getid)).
+Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#getid)).
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$dimensionId` (`string`) &mdash;
-       See [getId()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#getid).
+       See [getId()](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#getid).
 
 - *Returns:*  [`Dimension`](../../../Piwik/Columns/Dimension.md)|`null` &mdash;
     The created instance or null if there is no Dimension for $dimensionId or if the plugin that contains the Dimension is not loaded.
@@ -165,25 +167,25 @@ Returns the name of the plugin that contains this Dimension.
 <a name="install" id="install"></a>
 ### `install()`
 
-Installs the action dimension in case it is not installed yet.
+Installs the conversion dimension in case it is not installed yet.
 
-The installation is already implemented based on
-the [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and [$columnType](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columntype). If you want to perform additional actions beside adding the
+The installation is already implemented based
+on the [$columnName](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#$columnname) and [$columnType](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#$columntype). If you want to perform additional actions beside adding the
 column to the database - for instance adding an index - you can overwrite this method. We recommend to call
 this parent method to get the minimum required actions and then add further custom actions since this makes sure
 the column will be installed correctly. We also recommend to change the default install behavior only if really
 needed. FYI: We do not directly execute those alter table statements here as we group them together with several
 other alter table statements do execute those changes in one step which results in a faster installation. The
-column will be added to the `log_link_visit_action` MySQL table.
+column will be added to the `log_conversion` MySQL table.
 
 Example:
 ```
    public function install()
    {
-       $changes = parent::install();
-       $changes['log_link_visit_action'][] = "ADD INDEX index_idsite_servertime ( idsite, server_time )";
+   $changes = parent::install();
+   $changes['log_conversion'][] = "ADD INDEX index_idsite_servertime ( idsite, server_time )";
 
-       return $changes;
+   return $changes;
    }
    ```
 
@@ -191,16 +193,16 @@ Example:
 
 
 - *Returns:*  `array` &mdash;
-    An array containing the table name as key and an array of MySQL alter table statements that should be executed on the given table. Example: ``` array( 'log_link_visit_action' => array("ADD COLUMN `$this->columnName` $this->columnType", "ADD INDEX ...") ); ```
+    An array containing the table name as key and an array of MySQL alter table statements that should be executed on the given table. Example: ``` array( 'log_conversion' => array("ADD COLUMN `$this->columnName` $this->columnType", "ADD INDEX ...") ); ```
 
 <a name="uninstall" id="uninstall"></a>
 <a name="uninstall" id="uninstall"></a>
 ### `uninstall()`
 
-Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ActionDimension#$columnname) and columnType is set.
+Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#$columnname) and columnType is set.
 
 In case you perform any custom
-actions during [install()](/api-reference/Piwik/Plugin/Dimension/ActionDimension#install) - for instance adding an index - you should make sure to undo those actions by
+actions during [install()](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#install) - for instance adding an index - you should make sure to undo those actions by
 overwriting this method. Make sure to call this parent method to make sure the uninstallation of the column
 will be done.
 
@@ -210,53 +212,14 @@ will be done.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
-<a name="onlookupaction" id="onlookupaction"></a>
-<a name="onLookupAction" id="onLookupAction"></a>
-### `onLookupAction()`
+<a name="onecommerceorderconversion" id="onecommerceorderconversion"></a>
+<a name="onEcommerceOrderConversion" id="onEcommerceOrderConversion"></a>
+### `onEcommerceOrderConversion()`
 
-If the value you want to save for your dimension is something like a page title or page url, you usually do not want to save the raw value over and over again to save bytes in the database.
+This event is triggered when an ecommerce order is converted.
 
-Instead you want to save each value
-once in the log_action table and refer to this value by its ID in the log_link_visit_action table. You can do
-this by returning an action id in "getActionId()" and by returning a value here. If a value should be ignored
-or not persisted just return boolean false. Please note if you return a value here and you implement the event
-"onNewAction" the value will be probably overwritten by the other event. So make sure to implement only one of
-those.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$request` (`Piwik\Tracker\Request`) &mdash;
-      
-    - `$action` (`Piwik\Tracker\Action`) &mdash;
-      
-
-- *Returns:*  `Piwik\Plugin\Dimension\false`|`mixed` &mdash;
-    
-
-<a name="getactionid" id="getactionid"></a>
-<a name="getActionId" id="getActionId"></a>
-### `getActionId()`
-
-An action id.
-
-The value returned by the lookup action will be associated with this id in the log_action table.
-
-#### Signature
-
-- It returns a `int` value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; in case not implemented
-
-<a name="onnewaction" id="onnewaction"></a>
-<a name="onNewAction" id="onNewAction"></a>
-### `onNewAction()`
-
-This event is triggered before a new action is logged to the `log_link_visit_action` table.
-
-It overwrites any
-looked up action so it makes usually no sense to implement both methods but it sometimes does. You can assign
-any value to the column or return boolan false in case you do not want to save any value.
+Any returned value will be persist in the database.
+Return boolean `false` if you do not want to change the value in some cases.
 
 #### Signature
 
@@ -265,7 +228,57 @@ any value to the column or return boolan false in case you do not want to save a
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Tracker\Action`) &mdash;
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+      
+    - `$goalManager` (`Piwik\Tracker\GoalManager`) &mdash;
+      
+
+- *Returns:*  `mixed`|`Piwik\Plugin\Dimension\false` &mdash;
+    
+
+<a name="onecommercecartupdateconversion" id="onecommercecartupdateconversion"></a>
+<a name="onEcommerceCartUpdateConversion" id="onEcommerceCartUpdateConversion"></a>
+### `onEcommerceCartUpdateConversion()`
+
+This event is triggered when an ecommerce cart update is converted.
+
+Any returned value will be persist in the
+database. Return boolean `false` if you do not want to change the value in some cases.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$request` (`Piwik\Tracker\Request`) &mdash;
+      
+    - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
+      
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+      
+    - `$goalManager` (`Piwik\Tracker\GoalManager`) &mdash;
+      
+
+- *Returns:*  `mixed`|`Piwik\Plugin\Dimension\false` &mdash;
+    
+
+<a name="ongoalconversion" id="ongoalconversion"></a>
+<a name="onGoalConversion" id="onGoalConversion"></a>
+### `onGoalConversion()`
+
+This event is triggered when an any custom goal is converted.
+
+Any returned value will be persist in the
+database. Return boolean `false` if you do not want to change the value in some cases.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$request` (`Piwik\Tracker\Request`) &mdash;
+      
+    - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
+      
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+      
+    - `$goalManager` (`Piwik\Tracker\GoalManager`) &mdash;
       
 
 - *Returns:*  `mixed`|`Piwik\Plugin\Dimension\false` &mdash;

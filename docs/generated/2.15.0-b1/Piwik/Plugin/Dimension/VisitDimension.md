@@ -110,6 +110,7 @@ of the dimension, but is modified to be more human readable.
 
 #### Signature
 
+- It is a **finalized** method.
 
 - *Returns:*  `string` &mdash;
     eg, `"Referrers.Keywords"`
