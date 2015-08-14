@@ -1013,7 +1013,7 @@ Callback Signature:
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L82), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L98), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L42)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L92), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L98), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L42)
 
 
 ### Platform.initialized
@@ -1024,7 +1024,7 @@ Triggered after the platform is initialized and after the user has been authenti
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L82), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L98), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L42)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L92), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L98), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/UsersManager.php#L42)
 
 ## PluginManager
 
@@ -1161,7 +1161,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L54), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L98)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/master/plugins/CoreUpdater/CoreUpdater.php#L55), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/master/plugins/LanguagesManager/LanguagesManager.php#L98)
 
 
 ### Request.getRenamedModuleAndAction
