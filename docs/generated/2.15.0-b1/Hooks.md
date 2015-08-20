@@ -339,7 +339,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Actions/Actions.php#L105), [Annotations::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Annotations/Annotations.php#L46), [Contents::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Contents/Contents.php#L32), [CoreAdminHome::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreAdminHome/CoreAdminHome.php#L47), [CoreHome::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreHome/CoreHome.php#L80), [CorePluginsAdmin::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L45), [CoreVisualizations::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreVisualizations/CoreVisualizations.php#L65), [CustomAlerts::getJavaScriptFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L73), [Dashboard::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Dashboard/Dashboard.php#L203), [Feedback::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Feedback/Feedback.php#L35), [Goals::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Goals/Goals.php#L249), [Insights::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Insights/Insights.php#L31), [LanguagesManager::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/LanguagesManager/LanguagesManager.php#L52), [Live::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Live/Live.php#L39), [Login::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Login/Login.php#L40), [MobileMessaging::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L87), [MultiSites::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MultiSites/MultiSites.php#L67), [Overlay::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Overlay/Overlay.php#L29), [PrivacyManager::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/PrivacyManager/PrivacyManager.php#L153), [ScheduledReports::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L128), [SegmentEditor::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SegmentEditor/SegmentEditor.php#L69), [SitesManager::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SitesManager/SitesManager.php#L91), [Transitions::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Transitions/Transitions.php#L33), [TreemapVisualization::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/TreemapVisualization/TreemapVisualization.php#L48), [UserCountry::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountry/UserCountry.php#L77), [UserCountryMap::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountryMap/UserCountryMap.php#L54), [UsersManager::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UsersManager/UsersManager.php#L93), [Widgetize::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Widgetize/Widgetize.php#L27), [ZenMode::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ZenMode/ZenMode.php#L39)
+[Actions::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Actions/Actions.php#L105), [Annotations::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Annotations/Annotations.php#L46), [Contents::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Contents/Contents.php#L32), [CoreAdminHome::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreAdminHome/CoreAdminHome.php#L47), [CoreHome::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreHome/CoreHome.php#L80), [CorePluginsAdmin::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L45), [CoreVisualizations::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreVisualizations/CoreVisualizations.php#L65), [CustomAlerts::getJavaScriptFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L73), [Dashboard::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Dashboard/Dashboard.php#L203), [Feedback::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Feedback/Feedback.php#L35), [Goals::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Goals/Goals.php#L249), [Insights::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Insights/Insights.php#L31), [LanguagesManager::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/LanguagesManager/LanguagesManager.php#L52), [Live::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Live/Live.php#L39), [Login::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Login/Login.php#L40), [MobileMessaging::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L87), [MultiSites::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MultiSites/MultiSites.php#L67), [Overlay::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Overlay/Overlay.php#L29), [PrivacyManager::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/PrivacyManager/PrivacyManager.php#L153), [ScheduledReports::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L129), [SegmentEditor::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SegmentEditor/SegmentEditor.php#L69), [SitesManager::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SitesManager/SitesManager.php#L91), [Transitions::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Transitions/Transitions.php#L33), [TreemapVisualization::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/TreemapVisualization/TreemapVisualization.php#L48), [UserCountry::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountry/UserCountry.php#L77), [UserCountryMap::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountryMap/UserCountryMap.php#L54), [UsersManager::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UsersManager/UsersManager.php#L93), [Widgetize::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Widgetize/Widgetize.php#L27), [ZenMode::getJsFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ZenMode/ZenMode.php#L39)
 
 
 ### AssetManager.getStylesheetFiles
@@ -367,7 +367,7 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/API/API.php#L640), [Actions::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Actions/Actions.php#L100), [Annotations::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Annotations/Annotations.php#L38), [Contents::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Contents/Contents.php#L37), [CoreAdminHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreAdminHome/CoreAdminHome.php#L38), [CoreHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreHome/CoreHome.php#L54), [CorePluginsAdmin::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L28), [CoreVisualizations::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreVisualizations/CoreVisualizations.php#L59), [CustomAlerts::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L78), [DBStats::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/DBStats/DBStats.php#L31), [Dashboard::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Dashboard/Dashboard.php#L212), [ExampleRssWidget::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ExampleRssWidget/ExampleRssWidget.php#L26), [Feedback::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Feedback/Feedback.php#L29), [Goals::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Goals/Goals.php#L254), [Insights::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Insights/Insights.php#L26), [Installation::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Installation/Installation.php#L108), [LanguagesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/LanguagesManager/LanguagesManager.php#L47), [Live::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Live/Live.php#L33), [Login::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Login/Login.php#L45), [MobileMessaging::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L92), [MultiSites::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MultiSites/MultiSites.php#L76), [ScheduledReports::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L133), [SegmentEditor::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SegmentEditor/SegmentEditor.php#L74), [SitesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SitesManager/SitesManager.php#L82), [Transitions::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Transitions/Transitions.php#L28), [TreemapVisualization::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/TreemapVisualization/TreemapVisualization.php#L42), [UserCountry::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountry/UserCountry.php#L72), [UserCountryMap::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountryMap/UserCountryMap.php#L65), [UsersManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UsersManager/UsersManager.php#L102), [VisitsSummary::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/VisitsSummary/VisitsSummary.php#L68), [Widgetize::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Widgetize/Widgetize.php#L39), [ZenMode::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ZenMode/ZenMode.php#L46)
+[Plugin::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/API/API.php#L640), [Actions::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Actions/Actions.php#L100), [Annotations::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Annotations/Annotations.php#L38), [Contents::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Contents/Contents.php#L37), [CoreAdminHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreAdminHome/CoreAdminHome.php#L38), [CoreHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreHome/CoreHome.php#L54), [CorePluginsAdmin::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L28), [CoreVisualizations::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreVisualizations/CoreVisualizations.php#L59), [CustomAlerts::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L78), [DBStats::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/DBStats/DBStats.php#L31), [Dashboard::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Dashboard/Dashboard.php#L212), [ExampleRssWidget::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ExampleRssWidget/ExampleRssWidget.php#L26), [Feedback::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Feedback/Feedback.php#L29), [Goals::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Goals/Goals.php#L254), [Insights::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Insights/Insights.php#L26), [Installation::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Installation/Installation.php#L108), [LanguagesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/LanguagesManager/LanguagesManager.php#L47), [Live::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Live/Live.php#L33), [Login::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Login/Login.php#L45), [MobileMessaging::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L92), [MultiSites::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MultiSites/MultiSites.php#L76), [ScheduledReports::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L134), [SegmentEditor::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SegmentEditor/SegmentEditor.php#L74), [SitesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SitesManager/SitesManager.php#L82), [Transitions::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Transitions/Transitions.php#L28), [TreemapVisualization::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/TreemapVisualization/TreemapVisualization.php#L42), [UserCountry::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountry/UserCountry.php#L72), [UserCountryMap::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountryMap/UserCountryMap.php#L65), [UsersManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UsersManager/UsersManager.php#L102), [VisitsSummary::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/VisitsSummary/VisitsSummary.php#L68), [Widgetize::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Widgetize/Widgetize.php#L39), [ZenMode::getStylesheetFiles](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ZenMode/ZenMode.php#L46)
 
 ## Config
 
@@ -979,7 +979,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removePhoneNumberFromAllAlerts](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L114), [ScheduledReports::deletePhoneNumber](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L435)
+[CustomAlerts::removePhoneNumberFromAllAlerts](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L114), [ScheduledReports::deletePhoneNumber](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L445)
 
 ## Piwik
 
@@ -1179,7 +1179,7 @@ Callback Signature:
 
 Usages:
 
-[Referrers::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Referrers/Referrers.php#L37), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L102)
+[Referrers::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Referrers/Referrers.php#L37), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L103)
 
 
 ### Request.initAuthenticationObject
@@ -1278,7 +1278,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::allowMultipleReports](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L166), [ScheduledReports::allowMultipleReports](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L281)
+[MobileMessaging::allowMultipleReports](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L166), [ScheduledReports::allowMultipleReports](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L282)
 
 
 ### ScheduledReports.getRendererInstance
@@ -1301,7 +1301,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getRendererInstance](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L153), [ScheduledReports::getRendererInstance](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L266)
+[MobileMessaging::getRendererInstance](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L153), [ScheduledReports::getRendererInstance](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L267)
 
 
 ### ScheduledReports.getReportFormats
@@ -1320,7 +1320,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportFormats](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L139), [ScheduledReports::getReportFormats](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L211)
+[MobileMessaging::getReportFormats](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L139), [ScheduledReports::getReportFormats](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L212)
 
 
 ### ScheduledReports.getReportMetadata
@@ -1344,7 +1344,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportMetadata](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L116), [ScheduledReports::getReportMetadata](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L182)
+[MobileMessaging::getReportMetadata](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L116), [ScheduledReports::getReportMetadata](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L183)
 
 
 ### ScheduledReports.getReportParameters
@@ -1363,7 +1363,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportParameters](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L146), [ScheduledReports::getReportParameters](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L218)
+[MobileMessaging::getReportParameters](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L146), [ScheduledReports::getReportParameters](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L219)
 
 
 ### ScheduledReports.getReportRecipients
@@ -1385,7 +1385,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportRecipients](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L173), [ScheduledReports::getReportRecipients](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L477)
+[MobileMessaging::getReportRecipients](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L173), [ScheduledReports::getReportRecipients](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L487)
 
 
 ### ScheduledReports.getReportTypes
@@ -1402,7 +1402,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportTypes](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L134), [ScheduledReports::getReportTypes](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L206)
+[MobileMessaging::getReportTypes](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L134), [ScheduledReports::getReportTypes](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L207)
 
 
 ### ScheduledReports.processReports
@@ -1428,7 +1428,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::processReports](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L225)
+[ScheduledReports::processReports](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L226)
 
 
 ### ScheduledReports.sendReport
@@ -1463,7 +1463,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::sendReport](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L180), [ScheduledReports::sendReport](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L288)
+[MobileMessaging::sendReport](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L180), [ScheduledReports::sendReport](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L289)
 
 
 ### ScheduledReports.validateReportParameters
@@ -1482,7 +1482,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::validateReportParameters](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L97), [ScheduledReports::validateReportParameters](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L138)
+[MobileMessaging::validateReportParameters](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MobileMessaging/MobileMessaging.php#L97), [ScheduledReports::validateReportParameters](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L139)
 
 ## SegmentEditor
 
@@ -1503,7 +1503,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentDeactivation](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L546)
+[ScheduledReports::segmentDeactivation](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L556)
 
 
 ### SegmentEditor.update
@@ -1520,7 +1520,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentUpdated](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L513)
+[ScheduledReports::segmentUpdated](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L523)
 
 ## Segments
 
@@ -1654,7 +1654,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::deleteAlertsForSite](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L95), [Goals::deleteSiteGoals](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Goals/Goals.php#L130), [ScheduledReports::deleteSiteReport](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L118), [SitesManager::onSiteDeleted](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SitesManager/SitesManager.php#L67), [UsersManager::deleteSite](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UsersManager/UsersManager.php#L83)
+[CustomAlerts::deleteAlertsForSite](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L95), [Goals::deleteSiteGoals](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Goals/Goals.php#L130), [ScheduledReports::deleteSiteReport](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L119), [SitesManager::onSiteDeleted](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SitesManager/SitesManager.php#L67), [UsersManager::deleteSite](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UsersManager/UsersManager.php#L83)
 
 
 ### SitesManager.getImageTrackingCode
@@ -1955,7 +1955,7 @@ Callback Signature:
 
 Usages:
 
-[Annotations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Annotations/Annotations.php#L30), [CoreHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreHome/CoreHome.php#L168), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L55), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreVisualizations/CoreVisualizations.php#L74), [CustomAlerts::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L163), [Dashboard::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Dashboard/Dashboard.php#L234), [Feedback::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Feedback/Feedback.php#L42), [Goals::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Goals/Goals.php#L265), [Live::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Live/Live.php#L48), [MultiSites::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MultiSites/MultiSites.php#L44), [Overlay::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Overlay/Overlay.php#L35), [ScheduledReports::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L109), [SitesManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SitesManager/SitesManager.php#L265), [Transitions::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Transitions/Transitions.php#L38), [UserCountry::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountry/UserCountry.php#L117), [UserCountryMap::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountryMap/UserCountryMap.php#L71), [UsersManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UsersManager/UsersManager.php#L159), [Widgetize::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Widgetize/Widgetize.php#L48), [ZenMode::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ZenMode/ZenMode.php#L27)
+[Annotations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Annotations/Annotations.php#L30), [CoreHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreHome/CoreHome.php#L168), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L55), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreVisualizations/CoreVisualizations.php#L74), [CustomAlerts::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L163), [Dashboard::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Dashboard/Dashboard.php#L234), [Feedback::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Feedback/Feedback.php#L42), [Goals::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Goals/Goals.php#L265), [Live::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Live/Live.php#L48), [MultiSites::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/MultiSites/MultiSites.php#L44), [Overlay::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Overlay/Overlay.php#L35), [ScheduledReports::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L110), [SitesManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/SitesManager/SitesManager.php#L265), [Transitions::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Transitions/Transitions.php#L38), [UserCountry::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountry/UserCountry.php#L117), [UserCountryMap::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UserCountryMap/UserCountryMap.php#L71), [UsersManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/UsersManager/UsersManager.php#L159), [Widgetize::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Widgetize/Widgetize.php#L48), [ZenMode::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ZenMode/ZenMode.php#L27)
 
 ## User
 
@@ -2034,7 +2034,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreAdminHome/CoreAdminHome.php#L33), [CoreVisualizations::deleteUser](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreVisualizations/CoreVisualizations.php#L37), [CustomAlerts::deleteAlertsForLogin](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L83), [Dashboard::deleteDashboardLayout](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Dashboard/Dashboard.php#L219), [LanguagesManager::deleteUserLanguage](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/LanguagesManager/LanguagesManager.php#L118), [ScheduledReports::deleteUserReport](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L573)
+[CoreAdminHome::cleanupUser](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreAdminHome/CoreAdminHome.php#L33), [CoreVisualizations::deleteUser](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CoreVisualizations/CoreVisualizations.php#L37), [CustomAlerts::deleteAlertsForLogin](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/CustomAlerts/CustomAlerts.php#L83), [Dashboard::deleteDashboardLayout](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/Dashboard/Dashboard.php#L219), [LanguagesManager::deleteUserLanguage](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/LanguagesManager/LanguagesManager.php#L118), [ScheduledReports::deleteUserReport](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L583)
 
 
 ### UsersManager.getDefaultDates
@@ -2060,7 +2060,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::deleteUserReportForSites](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L578)
+[ScheduledReports::deleteUserReportForSites](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L588)
 
 
 ### UsersManager.removeSiteAccess
@@ -2074,7 +2074,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::deleteUserReportForSites](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L578)
+[ScheduledReports::deleteUserReportForSites](https://github.com/piwik/piwik/blob/2.15.0-b1/plugins/ScheduledReports/ScheduledReports.php#L588)
 
 
 ### UsersManager.updateUser.end
