@@ -575,7 +575,7 @@ Usages:
 
 ### Db.getDatabaseConfig
 
-*Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [84](https://github.com/piwik/piwik/blob/master/core/Db.php#L84)*
+*Defined in [Piwik/Db](https://github.com/piwik/piwik/blob/master/core/Db.php) in line [86](https://github.com/piwik/piwik/blob/master/core/Db.php#L86)*
 
 Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
 
@@ -2032,7 +2032,7 @@ Callback Signature:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php) in line [255](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php#L255)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php) in line [268](https://github.com/piwik/piwik/blob/master/plugins/UsersManager/Model.php#L268)*
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
