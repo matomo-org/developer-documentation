@@ -1749,10 +1749,12 @@ Callback Signature:
 
 ### Tracker.existingVisitInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [211](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L211)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [214](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L214)*
 
 Triggered before a [visit entity](/guides/persistence-and-the-mysql-backend#visits) is updated when tracking an action for an existing visit. This event can be used to modify the visit properties that will be updated before the changes
 are persisted.
+
+This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
 
 Callback Signature:
 <pre><code>function(&amp;$valuesToUpdate, $this-&gt;visitProperties-&gt;getProperties())</code></pre>
@@ -1802,9 +1804,11 @@ Callback Signature:
 
 ### Tracker.newConversionInformation
 
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [709](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L709)*
+*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [718](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L718)*
 
 Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
+
+This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
 
 Callback Signature:
 <pre><code>function(&amp;$conversion, $visitInformation, $request)</code></pre>
@@ -1818,10 +1822,12 @@ Callback Signature:
 
 ### Tracker.newVisitorInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [274](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L274)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [281](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L281)*
 
 Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
 The UserCountry plugin, for example, uses this event to add location information for each visit.
+
+This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
 
 Callback Signature:
 <pre><code>function($this-&gt;visitProperties-&gt;getProperties(), $this-&gt;request)</code></pre>
@@ -1845,9 +1851,9 @@ Callback Signature:
 
 ### Tracker.recordAction
 
-*Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [406](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L406)*
+*Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php) in line [409](https://github.com/piwik/piwik/blob/master/core/Tracker/Action.php#L409)*
 
-Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions).
+Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions). This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
 
 Callback Signature:
 <pre><code>function($trackerAction = $this, $visitAction)</code></pre>
@@ -1859,10 +1865,12 @@ Callback Signature:
 
 ### Tracker.recordEcommerceGoal
 
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [339](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L339)*
+*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [342](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L342)*
 
 Triggered after successfully persisting an ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
+
+This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
 
 Callback Signature:
 <pre><code>function($conversion, $visitProperties-&gt;getProperties())</code></pre>
@@ -1874,10 +1882,12 @@ Callback Signature:
 
 ### Tracker.recordStandardGoals
 
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [685](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L685)*
+*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php) in line [691](https://github.com/piwik/piwik/blob/master/core/Tracker/GoalManager.php#L691)*
 
 Triggered after successfully recording a non-ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
 the tracker down._
+
+This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
 
 Callback Signature:
 <pre><code>function($conversion)</code></pre>
