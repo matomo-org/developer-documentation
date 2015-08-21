@@ -34,6 +34,7 @@ class DevelopCategory extends Category
             new EmptySubCategory('Plugin Basics', [
                 new Guide('custom-reports'),
                 new Guide('expose-api-methods'),
+                new Guide('dimensions'),
                 new Guide('theming'),
                 new Guide('pages'),
                 new Guide('menus'),
