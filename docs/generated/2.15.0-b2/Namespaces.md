@@ -37,6 +37,5 @@ This is a complete list of available namespaces:
 - [`Piwik\Settings`](Piwik/Settings)
 - [`Piwik\Settings\Storage`](Piwik/Settings/Storage)
 - [`Piwik\Translation`](Piwik/Translation)
-- [`Piwik\Updates`](Piwik/Updates)
 - [`Piwik\View`](Piwik/View)
 - [`Piwik\ViewDataTable`](Piwik/ViewDataTable)

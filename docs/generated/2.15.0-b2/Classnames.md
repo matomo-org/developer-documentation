@@ -123,7 +123,6 @@
 ## TaskScheduler
 ## Translation\Translator
 ## Updates
-## Updates\Updates_2_10_0_b5
 ## Url
 ## UrlHelper
 ## Version

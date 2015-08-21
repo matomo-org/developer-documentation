@@ -127,7 +127,6 @@ This is a complete list of available classes:
 - [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; Manages scheduled task execution.
 - [`Translation\Translator`](Piwik/Translation/Translator.md) &mdash; Translates messages.
 - [`Updates`](Piwik/Updates.md) &mdash; Base class for update scripts.
-- [`Updates\Updates_2_10_0_b5`](Piwik/Updates/Updates_2_10_0_b5.md) &mdash; This Update script will update all browser and os archives of UserSettings and DevicesDetection plugin
 - [`Url`](Piwik/Url.md) &mdash; Provides URL related helper methods.
 - [`UrlHelper`](Piwik/UrlHelper.md) &mdash; Contains less commonly needed URL helper methods.
 - [`Version`](Piwik/Version.md) &mdash; Piwik version information.
