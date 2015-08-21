@@ -57,6 +57,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`process()`](#process) &mdash; Dispatches the API request to the appropriate API method and returns the result after post-processing.
 - [`getClassNameAPI()`](#getclassnameapi) &mdash; Returns the name of a plugin's API class by plugin name.
+- [`isApiRequest()`](#isapirequest) &mdash; Detect if request is an API request.
 - [`processRequest()`](#processrequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 - [`getRequestParametersGET()`](#getrequestparametersget) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
 - [`getBaseReportUrl()`](#getbasereporturl) &mdash; Returns the URL for the current requested report w/o any filter parameters.
@@ -138,6 +139,24 @@ Returns the name of a plugin's API class by plugin name.
 
 - *Returns:*  `string` &mdash;
     The fully qualified API class name, eg, `'\Piwik\Plugins\Referrers\API'`.
+
+<a name="isapirequest" id="isapirequest"></a>
+<a name="isApiRequest" id="isApiRequest"></a>
+### `isApiRequest()`
+
+Detect if request is an API request.
+
+Meaning the module is 'API' and an API method having a valid format was
+specified.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$request` (`array`) &mdash;
+       eg array('module' => 'API', 'method' => 'Test.getMethod')
+- It returns a `bool` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="processrequest" id="processrequest"></a>
 <a name="processRequest" id="processRequest"></a>
