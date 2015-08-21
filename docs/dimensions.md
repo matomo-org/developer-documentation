@@ -53,7 +53,7 @@ When a new visitor is being tracked, the value `1` will be stored. On each furth
 
 ## Action dimensions
 
-Action dimensions work similar, just the method name is differently. Let's say you want to track the current speed of a runner by exposing a new URL parameter `speed`:
+Action dimensions work similarly, just the method name is different. Let's say you want to track the current speed of a runner by exposing a new URL parameter `speed`:
 
 ```php
 public function onNewAction(Request $request, Visitor $visitor, Action $action)
@@ -80,4 +80,4 @@ Of course you can add any custom behaviour like limiting the max speed etc.
 A new segment is automatically created for a dimension and defined in the method `configureSegments`. All you usually have to do is to adjust the description of the accepted values.
 
 ## Learn more
-Dimensions are quite powerful. For example you can change the behavior of an existing dimension by creating a dimension that has the same column name, you can store action related data very space efficient by using a lookup table and they can force the creation of a new visit in case an existing visitor was recognized. We recommend to have a look at the documentation within a created dimension and at the API-Reference of the classes [VisitDimension](/api-reference/Piwik/Plugin/Dimension/VisitDimension), [ActionDimension](/api-reference/Piwik/Plugin/Dimension/ActionDimension) and [ConversionDimension](/api-reference/Piwik/Plugin/Dimension/ConversionDimension)
+Dimensions are quite powerful. For example you can change the behavior of an existing dimension by creating a dimension that has the same column name, you can store action related data efficiently by using a lookup table. Dimensions can also force the creation of a new visit in case an existing visitor was recognized. We recommend to have a look at the documentation within a created dimension and at the API-Reference of the classes [VisitDimension](/api-reference/Piwik/Plugin/Dimension/VisitDimension), [ActionDimension](/api-reference/Piwik/Plugin/Dimension/ActionDimension) and [ConversionDimension](/api-reference/Piwik/Plugin/Dimension/ConversionDimension)
