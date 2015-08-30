@@ -145,7 +145,7 @@ Callback Signature:
 
 Usages:
 
-[CustomVariables::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L91)
+[CustomVariables::getSegmentsMetadata](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L107)
 
 
 ### API.Request.authenticate
