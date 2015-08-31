@@ -486,11 +486,12 @@ Triggered after Piwik has been updated.
 - [CronArchive.archiveSingleSite.finish](#cronarchivearchivesinglesitefinish)
 - [CronArchive.archiveSingleSite.start](#cronarchivearchivesinglesitestart)
 - [CronArchive.filterWebsiteIds](#cronarchivefilterwebsiteids)
+- [CronArchive.getIdSitesNotUsingTracker](#cronarchivegetidsitesnotusingtracker)
 - [CronArchive.init.finish](#cronarchiveinitfinish)
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [360](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L360)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [390](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L390)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -502,7 +503,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [350](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L350)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [380](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L380)*
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -514,7 +515,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [971](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L971)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1006](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1006)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -525,9 +526,25 @@ Callback Signature:
 - array `&$websiteIds` The list of website IDs to launch the archiving process for.
 
 
+### CronArchive.getIdSitesNotUsingTracker
+
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1389](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1389)*
+
+This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
+However, some plugins do import data from another source instead of using the tracker and therefore
+will never have any visits for this site. To make sure we still archive data for such a site when
+archiving for this site is requested, you can listen to this event and add the idSite to the list of
+sites that do not use the tracker.
+
+Callback Signature:
+<pre><code>function(&amp;$this-&gt;idSitesNotUsingTracker)</code></pre>
+
+- bool `$idSitesNotUsingTracker` The list of idSites that rather import data instead of using the tracker
+
+
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [311](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L311)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [318](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L318)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -1629,7 +1646,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [608](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L608)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [609](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L609)*
 
 Triggered after a site has been added.
 
@@ -1641,7 +1658,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [682](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L682)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [683](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L683)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
