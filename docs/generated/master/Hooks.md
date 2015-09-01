@@ -1839,7 +1839,7 @@ Callback Signature:
 
 ### Tracker.newVisitorInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [281](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L281)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [283](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L283)*
 
 Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
 The UserCountry plugin, for example, uses this event to add location information for each visit.
@@ -1847,7 +1847,7 @@ The UserCountry plugin, for example, uses this event to add location information
 This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
 
 Callback Signature:
-<pre><code>function($this-&gt;visitProperties-&gt;getProperties(), $this-&gt;request)</code></pre>
+<pre><code>function(&amp;$properties, $this-&gt;request)</code></pre>
 
 - array `$visit` The visit entity. Read [this](/guides/persistence-and-the-mysql-backend#visits) to see what information it contains.
 
