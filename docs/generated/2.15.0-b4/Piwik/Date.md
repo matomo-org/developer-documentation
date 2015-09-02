@@ -63,6 +63,7 @@ The class defines the following methods:
 - [`addHour()`](#addhour) &mdash; Adds `$n` hours to `$this` date and returns the result in a new Date.
 - [`addHourTo()`](#addhourto) &mdash; Adds N number of hours to a UNIX timestamp and returns the result.
 - [`subHour()`](#subhour) &mdash; Subtracts `$n` hours from `$this` date and returns the result in a new Date.
+- [`subSeconds()`](#subseconds) &mdash; Subtracts `$n` seconds from `$this` date and returns the result in a new Date.
 - [`addPeriod()`](#addperiod) &mdash; Adds a period to `$this` date and returns the result in a new Date instance.
 - [`subPeriod()`](#subperiod) &mdash; Subtracts a period from `$this` date and returns the result in a new Date instance.
 - [`secondsToDays()`](#secondstodays) &mdash; Returns the number of days represented by a number of seconds.
@@ -544,6 +545,19 @@ Subtracts `$n` hours from `$this` date and returns the result in a new Date.
 -  It accepts the following parameter(s):
     - `$n` (`int`) &mdash;
        Number of hours to subtract. Can be less than 0.
+- It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="subseconds" id="subseconds"></a>
+<a name="subSeconds" id="subSeconds"></a>
+### `subSeconds()`
+
+Subtracts `$n` seconds from `$this` date and returns the result in a new Date.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$n` (`int`) &mdash;
+       Number of seconds to subtract. Can be less than 0.
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="addperiod" id="addperiod"></a>
