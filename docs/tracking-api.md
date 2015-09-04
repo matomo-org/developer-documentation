@@ -155,7 +155,8 @@ This will track **two** actions using only **one** HTTP request to Piwik.
 
 To verify that your data is being tracked properly, you can enable debug logging in the Piwik tracking file, **piwik.php**.
 
-**Tracking requests will then output the tracking log messages rather than displaying a 1*1 transparent GIF beacon.**
+**Tracking requests will then output the tracking log messages rather than displaying a 1*1 transparent GIF beacon. For security reasons, this should not be done in production or only for a very short time frame.** 
+
 
 Follow these steps to enable and view debug logging for the tracker:
 
@@ -168,6 +169,15 @@ Follow these steps to enable and view debug logging for the tracker:
 2. Look at the HTTP requests that are sent to Piwik.
     * If the requests take place in a browser, you can use a tool like the [Firebug](http://getfirebug.com/) to see all requests to **piwik.php**.
     * If the requests are triggered from your app or software directly, you can output or log the output of tracking requests and to view the debug messages.
+    * You can also [log messages to file or database](http://piwik.org/faq/troubleshooting/faq_115/) (requires at least Piwik 2.15.0).
+    
+If you receive too many tracking requests and the log gets spammed by these requests or if you want to only debug some specific requests you can alternatively enable `debug_on_demand` in `config.ini.php`:
+
+    `[Tracker]
+    debug_on_demand = 1`
+
+
+In this case messages will be only logged for Tracker requests that have a URL parameter `&debug=1` set. This is considered more secure but should be still only enabled for a short time frame.
 
 ## Learn more
 
