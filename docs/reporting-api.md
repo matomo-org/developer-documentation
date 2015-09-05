@@ -59,7 +59,7 @@ _referrerName==Google,referrerName==Bing;country==IN_
     *   html
     *   php; when you export in PHP format it is serialized by default (set _serialize=0_ to get the raw php data structure). You can have a visual output of the data by setting _prettyDisplay=1_
     *   rss (when **date** is a range for example date=last10 or date=previous15)
-    *   original; to fetch the original PHP data structure. This is useful when you call the Piwik API [internally using the PHP code](/querying-the-reporting-api)
+    *   original; to fetch the original PHP data structure. This is useful when you call the Piwik API [internally using the PHP code](/guides/querying-the-reporting-api)
 
 ### Optional API parameters
 
