@@ -162,8 +162,8 @@ Follow these steps to enable and view debug logging for the tracker:
 
 1. In your config file `path/to/piwik/config/config.ini.php`, write the following:
 
-    `[Tracker]
-    debug = 1`
+        [Tracker]
+        debug = 1
 
 
 2. Look at the HTTP requests that are sent to Piwik.
@@ -173,8 +173,8 @@ Follow these steps to enable and view debug logging for the tracker:
     
 If you receive too many tracking requests and the log gets spammed by these requests or if you want to only debug some specific requests you can alternatively enable `debug_on_demand` in `config.ini.php`:
 
-    `[Tracker]
-    debug_on_demand = 1`
+    [Tracker]
+    debug_on_demand = 1
 
 
 In this case messages will be only logged for Tracker requests that have a URL parameter `&debug=1` set. This is considered more secure but should be still only enabled for a short time frame.
