@@ -125,11 +125,11 @@ As long as you are [developing an open source plugin](http://developer.piwik.org
 
 You will need an account on [Transifex.com](http://transifex.com/). If you use Transifex with a social login, please ensure to set a password in your account settings. This will be required for fetching new translations into your plugin repository.
 
-## Importing your plugin’s strings in the translation platform
+### Importing your plugin’s strings in the translation platform
 
 While doing the initial setup for your plugin, we will import your english translation file (`en.json`) in your Github plugin repository and we will configure an auto-update for this file. Source strings on Transifex will automatically synchronise with your plugin repository. When you change any string in your `en.json` translation file, the updated English strings will automatically be imported in Transifex.
 
-## How to fetch your plugins translations into your repository
+### How to fetch your plugins translations into your repository
 
 As soon as we have set up your plugin within [our Piwik project on Transifex](https://www.transifex.com/piwik/piwik/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. You will need a locally installed Piwik with [development mode enabled](https://developer.piwik.org/guides/getting-started-part-1#enable-development-mode), and your plugin installed. To update the translations go to the Piwik directory on your development box and execute the following command:
 
