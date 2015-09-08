@@ -1132,6 +1132,7 @@ Callback Signature:
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
+- [Request.initAuthenticationObject](#requestinitauthenticationobject)
 
 ### Request.dispatch
 
@@ -1202,6 +1203,17 @@ Usages:
 ### Request.initAuthenticationObject
 
 *Defined in [Piwik/Plugins/API/tests/Integration/APITest](https://github.com/piwik/piwik/blob/master/plugins/API/tests/Integration/APITest.php) in line [85](https://github.com/piwik/piwik/blob/master/plugins/API/tests/Integration/APITest.php#L85)*
+
+
+
+Usages:
+
+[Login::initAuthenticationObject](https://github.com/piwik/piwik/blob/master/plugins/Login/Login.php#L89)
+
+
+### Request.initAuthenticationObject
+
+*Defined in [Piwik/Plugins/BulkTracking/Tracker/Handler](https://github.com/piwik/piwik/blob/master/plugins/BulkTracking/Tracker/Handler.php) in line [114](https://github.com/piwik/piwik/blob/master/plugins/BulkTracking/Tracker/Handler.php#L114)*
 
 
 
