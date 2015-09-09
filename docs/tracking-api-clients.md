@@ -25,7 +25,9 @@ Learn more and download Piwik Android SDK on Github at [github.com/piwik/piwik-s
 
 ### Appcelerator Titanium Module
 
-If you are building Mobile apps using Appcelerator Titanium, use the Piwik Analytics Module for Titanium to measure how users are navigating and consuming your apps. Learn more and download the Piwik Module for Titanium at [github.com/manumaticx/ti.piwik](https://github.com/manumaticx/ti.piwik).
+If you are building Mobile apps using Appcelerator Titanium, use the Piwik Analytics Module for Titanium to measure how users are navigating and consuming your apps. 
+
+Learn more and download the Piwik Module for Titanium at [github.com/manumaticx/ti.piwik](https://github.com/manumaticx/ti.piwik).
 
 ## Client libraries
 
