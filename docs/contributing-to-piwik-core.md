@@ -249,5 +249,5 @@ In most cases, it should be enough for your plugin to be available on the [Marke
 ## Learn more
 
 - learn **the basics of Piwik development** in [Getting started with plugins](/guides/getting-started-part-1).
-- to see a **list of available things you could work on**, see our [upcoming milestone](https://github.com/piwik/piwik/issues/milestones)
+- to see a **list of available things you could work on**, see our [upcoming milestone](https://github.com/piwik/piwik/milestones)
 - learn **more about Piwik's tests** in our [Testing](/guides/tests) guide.
