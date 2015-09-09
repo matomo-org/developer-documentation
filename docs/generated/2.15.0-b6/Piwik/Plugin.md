@@ -41,7 +41,7 @@ contain the following information:
 
     class MyPlugin extends Plugin
     {
-        public function getListHooksRegistered()
+        public function registerEvents()
         {
             return array(
                 'API.getReportMetadata' => 'getReportMetadata',
@@ -80,7 +80,8 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:
-- [`getListHooksRegistered()`](#getlisthooksregistered) &mdash; Returns a list of hooks with associated event observers.
+- [`registerEvents()`](#registerevents) &mdash; Returns a list of events with associated event observers.
+- [`getListHooksRegistered()`](#getlisthooksregistered)
 - [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered.
 - [`install()`](#install) &mdash; Installs the plugin.
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the plugins.
@@ -129,11 +130,13 @@ Returns plugin information, including:
 
 - It returns a `array` value.
 
-<a name="getlisthooksregistered" id="getlisthooksregistered"></a>
-<a name="getListHooksRegistered" id="getListHooksRegistered"></a>
-### `getListHooksRegistered()`
+<a name="registerevents" id="registerevents"></a>
+<a name="registerEvents" id="registerEvents"></a>
+### `registerEvents()`
 
-Returns a list of hooks with associated event observers.
+Since Piwik 2.15.0
+
+Returns a list of events with associated event observers.
 
 Derived classes should use this method to associate callbacks with events.
 
@@ -142,6 +145,14 @@ Derived classes should use this method to associate callbacks with events.
 
 - *Returns:*  `array` &mdash;
     eg, array( 'API.getReportMetadata' => 'myPluginFunction', 'Another.event'         => array( 'function' => 'myOtherPluginFunction', 'after'    => true // execute after callbacks w/o ordering ) 'Yet.Another.event'     => array( 'function' => 'myOtherPluginFunction', 'before'   => true // execute before callbacks w/o ordering ) )
+
+<a name="getlisthooksregistered" id="getlisthooksregistered"></a>
+<a name="getListHooksRegistered" id="getListHooksRegistered"></a>
+### `getListHooksRegistered()`
+
+#### Signature
+
+- It returns a `array` value.
 
 <a name="postload" id="postload"></a>
 <a name="postLoad" id="postLoad"></a>
