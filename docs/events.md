@@ -14,12 +14,12 @@ Plugins can also post and handle their own custom events (or events of other plu
 
 ## Handling events
 
-Events are **handled** by registering a callback by name in the [`Plugin::getListHooksRegistered()`](/api-reference/Piwik/Plugin#getlisthooksregistered) method of the plugin descriptor class (`YourPluginName.php`), for example:
+Events are **handled** by registering a callback by name in the [`Plugin::registerEvents()`](/api-reference/Piwik/Plugin#getlisthooksregistered) method of the plugin descriptor class (`YourPluginName.php`), for example:
 
 ```php
 class MyPlugin extends \Piwik\Plugin
 {
-    public function getListHooksRegistered()
+    public function registerEvents()
     {
         return array(
             'Referrer.addSearchEngineUrls' => 'addExampleSearchEngine'
@@ -39,7 +39,7 @@ class MyPlugin extends \Piwik\Plugin
 Callbacks can be made to run before or after other callbacks. To make a callback execute before all others, associate the event with an array like the following:
 
 ```php
-public function getListHooksRegistered()
+public function registerEvents()
 {
     return array(
         'Referrer.addSearchEngineUrls' => array(
@@ -53,7 +53,7 @@ public function getListHooksRegistered()
 To make a callback execute after other callbacks, associate the event with an array like the following:
 
 ```php
-public function getListHooksRegistered()
+public function registerEvents()
 {
     return array(
         'Referrer.addSearchEngineUrls' => array(
@@ -108,7 +108,7 @@ This function will pass a string by reference to all event handlers and then ins
 ```php
 class MyOtherPlugin extends \Piwik\Plugin
 {
-    public function getListHooksRegistered()
+    public function registerEvents()
     {
         return array(
             'MyPlugin.MyEventInATemplate' => 'handleMyEventInATemplate',

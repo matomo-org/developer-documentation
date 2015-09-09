@@ -155,7 +155,7 @@ Create an empty `javascripts/plugin.js` file in your plugin directory. Then regi
 ```php
 class MyPlugin extends \Piwik\Plugin
 {
-    public function getListHooksRegistered()
+    public function registerEvents()
     {
         return array(
             'AssetManager.getJavaScriptFiles' => 'getJavaScriptFiles',

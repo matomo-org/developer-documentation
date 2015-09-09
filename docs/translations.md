@@ -94,7 +94,7 @@ To make a translation key available on the client side, use the [Translate.getCl
 
 ```php
 // In MyPlugin.php
-public function getListHooksRegistered()
+public function registerEvents()
 {
     return array(
         'Translate.getClientSideTranslationKeys' => 'getClientSideTranslationKeys'

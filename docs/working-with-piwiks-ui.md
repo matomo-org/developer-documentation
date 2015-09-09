@@ -25,7 +25,7 @@ Piwik uses the following JavaScript libraries:
 Plugins tell Piwik about their asset files through the [`AssetManager.getStylesheetFiles`](/api-reference/events#assetmanagergetstylesheetfiles) and [`AssetManager.getJavaScriptFiles`](/api-reference/events#assetmanagergetjavascriptfiles) events. [Event handlers](/guides/events) are registered in your plugin file (`YourPluginName.php`) and should append paths to assets to the given `$files` array:
 
 ```php
-public function getListHooksRegistered()
+public function registerEvents()
 {
     return array(
         'AssetManager.getStylesheetFiles' => 'getStylesheetFiles',

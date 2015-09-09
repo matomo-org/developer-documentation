@@ -38,11 +38,11 @@ Execute the command `./console generate:plugin` in order to create a new plugin.
 ### Understanding Hooks
 
 #### Register an action for a given hook
-If you want to listen to a specific event, and trigger your own function when this event is posted, you have to define a method `getListHooksRegistered()` in your plugin class, that will return an array containing pair of (hook name, method to call).
+If you want to listen to a specific event, and trigger your own function when this event is posted, you have to define a method `registerEvents()` in your plugin class, that will return an array containing pair of (hook name, method to call).
 
 For example if you want to execute your function `AddCityInformation()` when a new visitor is recorded by Piwik (hook `Tracker.newVisitorInformation`), in your class `MyPlugin` you would define a method:
 
-<pre><code>function getListHooksRegistered()
+<pre><code>function registerEvents()
 {
     return array( 'Tracker.newVisitorInformation' => 'AddCityInformation' );
 }</code></pre>
