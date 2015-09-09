@@ -471,6 +471,34 @@ Callback Signature:
 
 - array `$parameters` The arguments passed to the controller action.
 
+## CoreArchive
+
+- [CoreArchive.run.finish](#corearchiverunfinish)
+- [CoreArchive.run.start](#corearchiverunstart)
+
+### CoreArchive.run.finish
+
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [457](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L457)*
+
+This event is triggered after archiving.
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
+- CronArchive `$this` 
+
+
+### CoreArchive.run.start
+
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [285](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L285)*
+
+This event is triggered during initializing archiving.
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
+- CronArchive `$this` 
+
 ## CoreUpdater
 
 - [CoreUpdater.update.end](#coreupdaterupdateend)
@@ -491,7 +519,7 @@ Triggered after Piwik has been updated.
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [392](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L392)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [399](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L399)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -503,7 +531,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [382](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L382)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [389](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L389)*
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -515,7 +543,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1008](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1008)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1023](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1023)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -528,7 +556,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1391](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1391)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1406](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1406)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
@@ -544,7 +572,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [320](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L320)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [327](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L327)*
 
 This event is triggered after a CronArchive instance is initialized.
 
