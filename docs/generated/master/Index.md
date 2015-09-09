@@ -763,6 +763,7 @@ Index
 - [`rename()`](Piwik/Menu/MenuAbstract.md#rename) &mdash; *Method in class* [`MenuAbstract`](Piwik/Menu/MenuAbstract.md)
 - [`$raw`](Piwik/Notification.md#$raw) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
 - [`Range`](Piwik/Period/Range.md) &mdash; *Class in namespace* [`Piwik\Period`](Piwik/Period)- [`redirectToModule()`](Piwik/Piwik.md#redirecttomodule) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
+- [`registerEvents()`](Piwik/Plugin.md#registerevents) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`renderTemplate()`](Piwik/Plugin/Controller.md#rendertemplate) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`renderReport()`](Piwik/Plugin/Controller.md#renderreport) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`redirectToIndex()`](Piwik/Plugin/Controller.md#redirecttoindex) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
