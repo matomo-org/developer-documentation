@@ -111,7 +111,6 @@ try {
     /** @var $versions GitVersionCollection */
     $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
         ->add('master', 'master branch')
-        ->add($latestStable, 'latest stable')
     ;
 
     $versions->rewind();
