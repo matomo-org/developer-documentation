@@ -72,8 +72,8 @@ Each visit contains the following information:
 - `referer_url`: the referrer URL; its meaning depends on the specific referrer type
 - `referer_keyword`: the keyword used if a search engine was the referrer
 - `config_id`: a hash of all the visit's configuration options, including the OS, browser name, browser version, browser language, IP address and  all browser plugin information
-- `config_os`: a short string identifiying the operating system used to make this visit. See [UserAgentParser](https://github.com/piwik/piwik/blob/master/libs/UserAgentParser/UserAgentParser.php) for more info
-- `config_browser_name`: a short string identifying the browser used to make this visit. See [UserAgentParser](https://github.com/piwik/piwik/blob/master/libs/UserAgentParser/UserAgentParser.php) for more info <!-- (TODO: what about devicesdetection?) -->
+- `config_os`: a short string identifiying the operating system used to make this visit. See [Device Detector](https://github.com/piwik/device-detector) for more info
+- `config_browser_name`: a short string identifying the browser used to make this visit. See [Device Detector](https://github.com/piwik/device-detector) for more info
 - `config_browser_version`: a string identifying the version of the browser used to make this visit
 - `config_resolution`: a string identifying the screen resolution the visitor used to make this visit (eg, `'1024x768'`)
 - `config_pdf`: whether the visitor's browser can view PDF files or not
