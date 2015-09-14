@@ -478,7 +478,7 @@ Callback Signature:
 
 ### CoreArchive.run.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [457](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L457)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [475](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L475)*
 
 This event is triggered after archiving.
 
@@ -490,7 +490,7 @@ Callback Signature:
 
 ### CoreArchive.run.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [285](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L285)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [288](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L288)*
 
 This event is triggered during initializing archiving.
 
@@ -519,7 +519,7 @@ Triggered after Piwik has been updated.
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [399](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L399)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [408](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L408)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -531,7 +531,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [389](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L389)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [398](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L398)*
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -543,7 +543,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1023](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1023)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1050](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1050)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -556,7 +556,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1406](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1406)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [1433](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L1433)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
@@ -572,7 +572,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [327](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L327)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [330](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L330)*
 
 This event is triggered after a CronArchive instance is initialized.
 
