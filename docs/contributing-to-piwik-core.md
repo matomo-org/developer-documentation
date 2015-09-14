@@ -126,6 +126,21 @@ Once you're ready to create the pull request, write a description of the pull re
 
 Once your pull request is public, developers will review it and leave comments regarding what should be changed. You can then make changes, commit them and then push them to your remote repository (**origin**) and they will automatically be shown in the pull request.
 
+## Creating Pull requests: best practises
+
+Here are best practises we aim to follow when creating, reviewing and merging pull requests:
+
+* We try to avoid big pull requests and aim for small PRs that are easier to review
+* When issuing a PR we set a label `Pull Request WIP` and replace this label with `Needs Review` once the PR is done. If a PR references another issue we assign the label `not-in-changelog`
+* A PR should contain a description explaining things if useful. It should contain as much as necessary and as less as possible.
+* Small changes can be merged directly without a review if the developer is 100% certain the change won't have any side effects etc. It is always recommended to still quickly ask another developer that is online to have a look at this PR now as such PRs are quickly reviewed. 
+* If a PR affects the [public API](https://github.com/piwik/piwik/issues/8125) in any way a PR should not be merged without a review
+* PRs that affect the [public API](https://github.com/piwik/piwik/issues/8125) or that affect Security need a thorough review. For other PRs it is always good to keep in mind that we can change later at anytime. Things therefore don't have to be "perfect" as long as the formal requirements are given (eg. an entry in the developer changelog if needed)
+* When reviewing a PR it is important to check things like Security, Performance, Usability, etc. Minor "issues/feedback" such as feedback on code style are less important. If a reviewer notices only such minor things, we can merge the PR directly or the reviewer can make the changes directly and merge afterwards.
+* Before working on a new issue it is recommended to check for pending PRs that have a `Needs Review` label
+* PHP code should use our Piwik code standards (see next section)
+* Pull requests should contain tests
+
 ## Piwik Core code standards
 
 The following are a list of guidelines and requirements for contributions to Piwik Core. Developers and teams interested in contributing should read through them before starting to contribute and before sending a pull request. **Contributions that are not up to these standards will not be accepted**.
