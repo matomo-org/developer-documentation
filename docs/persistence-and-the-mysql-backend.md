@@ -318,7 +318,7 @@ Goals are stored in the `goal` table and contain the following information:
 - `idgoal`: The ID for this goal (unique only among goals for this website).
 - `name`: The name of this goal.
 - `match_attribute`: string describing what part of the request should be matched against when converting a goal. Can be one of the following values:
-  - `manually`: the goal is converted by [manual conversion requests](/api-reference/tracking-javascript#manually-trigger-a-conversion-for-a-goal).
+  - `manually`: the goal is converted by [manual conversion requests](/guides/tracking-javascript-guide#manually-trigger-goal-conversions).
   - `url`: the goal is converted based on what the action URL contains.
   - `title`: the goal is converted based on what the action page title contains.
   - `file`: the goal is converted based on what the filename of a downloaded file contains.
