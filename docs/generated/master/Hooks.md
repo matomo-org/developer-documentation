@@ -1279,7 +1279,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [168](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L168)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [175](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L175)*
 
 
 
@@ -1954,7 +1954,7 @@ Callback Signature:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [491](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L491)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [498](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L498)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
