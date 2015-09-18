@@ -7,7 +7,7 @@ next: reporting-api-clients
 
 This guide explains how to call the Piwik API to request your web analytics data. There are two methods:
 
-- using the standard HTTP API
+- using the standard HTTP API 
 - using Piwik's PHP code directly
 
 ## Call the Piwik API using the HTTP API
