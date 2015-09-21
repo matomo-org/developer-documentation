@@ -27,6 +27,7 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
 *   `trackContentInteractionNode( domNode, contentInteraction )` - Tracks an interaction with the given DOM node / content block.
 *   `trackContentImpression( contentName, contentPiece, contentTarget )` - Tracks a content impression using the specified values. 
 *   `trackContentInteraction( contentInteraction, contentName, contentPiece, contentTarget )` - Tracks a content interaction using the specified values.
+*   `logAllContentBlocksOnPage` - Log all found content blocks within a page to the console. This is useful to debug / test content tracking.
 *   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use pseudo click-handler (treat middle click and open contextmenu as left click). A right click (or any click that opens the context menu) on a link will be tracked as clicked even if "Open in new tab" is not selected. If "false" (default), nothing will be tracked on open context menu or middle click. 
 *   `enableHeartBeatTimer( delayInSeconds )` - Install a Heart beat timer that will regularly send requests to Piwik (every `delayInSeconds` seconds) in order to better measure the time spent on the page. These requests will be sent only when the user is actively viewing the page (when the tab is active and in focus). These requests will not track additional actions or pageviews.
 
