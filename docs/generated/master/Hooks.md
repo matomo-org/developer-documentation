@@ -471,34 +471,6 @@ Callback Signature:
 
 - array `$parameters` The arguments passed to the controller action.
 
-## CoreArchive
-
-- [CoreArchive.end](#corearchiveend)
-- [CoreArchive.init.start](#corearchiveinitstart)
-
-### CoreArchive.end
-
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [460](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L460)*
-
-This event is triggered after archiving.
-
-Callback Signature:
-<pre><code>function($this)</code></pre>
-
-- CronArchive `$this` 
-
-
-### CoreArchive.init.start
-
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [288](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L288)*
-
-This event is triggered during initializing archiving.
-
-Callback Signature:
-<pre><code>function($this)</code></pre>
-
-- CronArchive `$this` 
-
 ## CoreUpdater
 
 - [CoreUpdater.update.end](#coreupdaterupdateend)
@@ -513,9 +485,11 @@ Triggered after Piwik has been updated.
 
 - [CronArchive.archiveSingleSite.finish](#cronarchivearchivesinglesitefinish)
 - [CronArchive.archiveSingleSite.start](#cronarchivearchivesinglesitestart)
+- [CronArchive.end](#cronarchiveend)
 - [CronArchive.filterWebsiteIds](#cronarchivefilterwebsiteids)
 - [CronArchive.getIdSitesNotUsingTracker](#cronarchivegetidsitesnotusingtracker)
 - [CronArchive.init.finish](#cronarchiveinitfinish)
+- [CronArchive.init.start](#cronarchiveinitstart)
 
 ### CronArchive.archiveSingleSite.finish
 
@@ -539,6 +513,18 @@ Callback Signature:
 <pre><code>function($idSite)</code></pre>
 
 - int `$idSite` The ID of the site we're archiving data for.
+
+
+### CronArchive.end
+
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [460](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L460)*
+
+This event is triggered after archiving.
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
+- CronArchive `$this` 
 
 
 ### CronArchive.filterWebsiteIds
@@ -580,6 +566,18 @@ Callback Signature:
 <pre><code>function($this-&gt;websites-&gt;getInitialSiteIds())</code></pre>
 
 - array `$websiteIds` The list of website IDs this CronArchive instance is processing. This will be the entire list of IDs regardless of whether some have already been processed.
+
+
+### CronArchive.init.start
+
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [288](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L288)*
+
+This event is triggered during initializing archiving.
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
+- CronArchive `$this` 
 
 ## Dashboard
 
