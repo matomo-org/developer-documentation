@@ -473,12 +473,12 @@ Callback Signature:
 
 ## CoreArchive
 
-- [CoreArchive.run.finish](#corearchiverunfinish)
-- [CoreArchive.run.start](#corearchiverunstart)
+- [CoreArchive.end](#corearchiveend)
+- [CoreArchive.init.start](#corearchiveinitstart)
 
-### CoreArchive.run.finish
+### CoreArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [475](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L475)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [460](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L460)*
 
 This event is triggered after archiving.
 
@@ -488,7 +488,7 @@ Callback Signature:
 - CronArchive `$this` 
 
 
-### CoreArchive.run.start
+### CoreArchive.init.start
 
 *Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/master/core/CronArchive.php) in line [288](https://github.com/piwik/piwik/blob/master/core/CronArchive.php#L288)*
 
