@@ -342,6 +342,16 @@ A typical example for a content block that displays a text ad.
 
 A typical example for a content block that displays an image - which is the content piece - and a call to action link - which is the content target - below. We would replace the `href=/anylink` with a link to piwik.php of your Piwik installation which will in turn redirect the user to the actual target to actually track the interaction.
 
+#### How to debug / test whether all content blocks will be detected correctly?
+
+In Piwik 2.15 we added a new method `logAllContentBlocksOnPage` to log all found content blocks within a page to the console. It will log an array of all content blocks to the console like this: 
+
+```js
+[{name: '...', target:'...', piece: "..."},...]
+```
+
+To log them simply open the developer tools of the browser you are using and call `_paq.push(['logAllContentBlocksOnPage'])`.
+
 ### Content interactions
 
 #### How do we track an interaction automatically?
