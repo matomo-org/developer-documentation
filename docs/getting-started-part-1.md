@@ -53,11 +53,11 @@ These are only a few of the possibilities. Many of the existing plugins do thing
 Before we start extending Piwik, let's make sure you have the tools needed. You will need the following:
 
 - **A PHP IDE or a text editor.** We recommend to use [PhpStorm](http://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
-  
+
   _Note: we have published our [customized PSR coding style XML file](https://github.com/piwik/piwik/tree/master/misc/others/phpstorm-codestyles) for PhpStorm that you can use._
 
 - **A webserver,** such as [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/). You can also use [PHP's built-in webserver](http://php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 5.4 or higher installed.
-- **A MySQL database** 
+- **A MySQL database**
 - **[git](http://git-scm.com/)** so you can work with the latest Piwik source code.
 - **[Composer](http://getcomposer.org/)** so you can install the PHP libraries needed by Piwik.
 - **A browser,** such as [Firefox](http://www.mozilla.org/en-US/firefox/new/) or [Chrome](http://www.google.com/chrome). Ok, you've probably got this.
@@ -65,7 +65,7 @@ Before we start extending Piwik, let's make sure you have the tools needed. You 
 The following tools aren't required for this guide, but you may find them useful as you create your plugin:
 
 - **[PHPUnit](http://phpunit.de/)** Necessary if you want to write or run automated tests.
-- **[xhprof](https://github.com/facebook/xhprof)** If you'd like to profile your code and debug any inefficiencies. 
+- **[xhprof](https://github.com/facebook/xhprof)** If you'd like to profile your code and debug any inefficiencies.
 - **[python](https://www.python.org/)** If you want to use the log importer.
 
 ### Get & Install Piwik
@@ -114,12 +114,12 @@ If you plan on running automated tests, you'll have to set the following configu
 password = ...
 user = ...
 ```
-    
+
 ### Add some test data
 
 You're now ready to create your first plugin, but before we do that, let's add some test data for you to play with.
 
-In your browser load Piwik and navigate to _Settings > Platform > Plugins_. Look for the _Visitor Generator_ plugin and enable it. Then on the admin menu to the left, click on _Visitor Generator_ (under _Diagnostic_).
+In your browser load Piwik and navigate to _Administration > Plugins_. Look for the _Visitor Generator_ plugin and enable it. Then on the admin menu to the left, click on _Visitor Generator_ (under _Diagnostic_).
 
 On this page you'll see a form where you can select a site and enter a number of days to generate data for:
 
