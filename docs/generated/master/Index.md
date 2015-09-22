@@ -851,6 +851,7 @@ Index
 - [`setHostValidationVariablesView()`](Piwik/Plugin/Controller.md#sethostvalidationvariablesview) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`setPeriodVariablesView()`](Piwik/Plugin/Controller.md#setperiodvariablesview) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`shouldForceNewVisit()`](Piwik/Plugin/Dimension/VisitDimension.md#shouldforcenewvisit) &mdash; *Method in class* [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
+- [`sortDimensions()`](Piwik/Plugin/Dimension/VisitDimension.md#sortdimensions) &mdash; *Method in class* [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`Segment`](Piwik/Plugin/Segment.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`setAcceptedValues()`](Piwik/Plugin/Segment.md#setacceptedvalues) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`setCategory()`](Piwik/Plugin/Segment.md#setcategory) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`setName()`](Piwik/Plugin/Segment.md#setname) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)

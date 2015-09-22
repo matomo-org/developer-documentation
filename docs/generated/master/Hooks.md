@@ -643,7 +643,7 @@ Callback Signature:
 
 ### FrontController.modifyErrorPage
 
-*Defined in [Piwik/ExceptionHandler](https://github.com/piwik/piwik/blob/master/core/ExceptionHandler.php) in line [111](https://github.com/piwik/piwik/blob/master/core/ExceptionHandler.php#L111)*
+*Defined in [Piwik/ExceptionHandler](https://github.com/piwik/piwik/blob/master/core/ExceptionHandler.php) in line [123](https://github.com/piwik/piwik/blob/master/core/ExceptionHandler.php#L123)*
 
 Triggered before a Piwik error page is displayed to the user. This event can be used to modify the content of the error page that is displayed when
 an exception is caught.
