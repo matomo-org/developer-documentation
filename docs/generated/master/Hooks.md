@@ -244,6 +244,19 @@ Callback Signature:
 Callback Signature:
 <pre><code>function(&amp;$idSites, $this-&gt;getPeriod())</code></pre>
 
+## Archiving
+
+- [Archiving.getIdSitesToArchiveWhenNoVisits](#archivinggetidsitestoarchivewhennovisits)
+
+### Archiving.getIdSitesToArchiveWhenNoVisits
+
+*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Loader.php) in line [246](https://github.com/piwik/piwik/blob/master/core/ArchiveProcessor/Loader.php#L246)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$idSites)</code></pre>
+
 ## AssetManager
 
 - [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
