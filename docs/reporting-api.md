@@ -120,6 +120,11 @@ Notice that urls[0] is the url-encoded call to VisitsSummary.get by itself and t
 
 The API Response will be an array containing the formatted result of each individual API method, in this case VisitsSummary.get and VisitorInterest.getNumberOfVisitsPerVisitDuration.
 
+You can also issue the Bulk request as a HTTP POST request to work around any request URI size limitations:
+
+    curl -i -X POST -d 'module=API&method=API.getBulkRequest&format=json&urls[0]=method%3dVisitsSummary.get%26idSite%3d3%26date%3d2012-03-06%26period%3dday&urls[1]=method%3dVisitorInterest.getNumberOfVisitsPerVisitDuration%26idSite%3d3%26date%3d2012-03-06%26period%3dday' http://demo.piwik.org/index.php
+
+
 ## Authenticate to the API via token_auth parameter
 
 In the example above, the request works because the statistics are public (the _anonymous_ user has a _view_ access to the website). By default in Piwik your statistics are private. In the case that you cannot have your statistics to be public:
