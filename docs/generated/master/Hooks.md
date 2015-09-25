@@ -296,7 +296,7 @@ Usages:
 
 ### AssetManager.filterMergedJavaScripts
 
-*Defined in [Piwik/AssetManager/UIAssetMerger/JScriptUIAssetMerger](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/JScriptUIAssetMerger.php) in line [71](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/JScriptUIAssetMerger.php#L71)*
+*Defined in [Piwik/AssetManager/UIAssetMerger/JScriptUIAssetMerger](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/JScriptUIAssetMerger.php) in line [69](https://github.com/piwik/piwik/blob/master/core/AssetManager/UIAssetMerger/JScriptUIAssetMerger.php#L69)*
 
 Triggered after all the JavaScript files Piwik uses are minified and merged into a single file, but before the merged JavaScript is written to disk. Plugins can use this event to modify merged JavaScript or do something else
 with it.
