@@ -1559,7 +1559,7 @@ Usages:
 
 ### SegmentEditor.deactivate
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php) in line [195](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php#L195)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php) in line [206](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php#L206)*
 
 Triggered before a segment is deleted or made invisible. This event can be used by plugins to throw an exception
 or do something else.
@@ -1576,7 +1576,7 @@ Usages:
 
 ### SegmentEditor.update
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php) in line [247](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php#L247)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php) in line [258](https://github.com/piwik/piwik/blob/master/plugins/SegmentEditor/API.php#L258)*
 
 Triggered before a segment is modified. This event can be used by plugins to throw an exception
 or do something else.
