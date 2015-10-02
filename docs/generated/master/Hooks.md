@@ -1252,7 +1252,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Plugins/BulkTracking/Tracker/Handler](https://github.com/piwik/piwik/blob/master/plugins/BulkTracking/Tracker/Handler.php) in line [114](https://github.com/piwik/piwik/blob/master/plugins/BulkTracking/Tracker/Handler.php#L114)*
+*Defined in [Piwik/Plugins/BulkTracking/Tracker/Handler](https://github.com/piwik/piwik/blob/master/plugins/BulkTracking/Tracker/Handler.php) in line [117](https://github.com/piwik/piwik/blob/master/plugins/BulkTracking/Tracker/Handler.php#L117)*
 
 
 
