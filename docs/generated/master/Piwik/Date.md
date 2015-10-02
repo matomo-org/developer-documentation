@@ -21,7 +21,7 @@ say, in a loop.
 
     $date = Date::factory('2007-07-24 14:04:24', 'EST');
     $date->addHour(5);
-    echo $date->getLocalized("%longDay% the %day% of %longMonth% at %time%");
+    echo $date->getLocalized("EEE, d. MMM y 'at' HH:mm:ss");
 
 Methods
 -------
@@ -465,22 +465,11 @@ Returns a localized date string using the given template.
 
 The template should contain tags that will be replaced with localized date strings.
 
-Allowed tags include:
-
-- **%day%**: replaced with the day of the month without leading zeros, eg, **1** or **20**.
-- **%shortMonth%**: the short month in the current language, eg, **Jan**, **Feb**.
-- **%longMonth%**: the whole month name in the current language, eg, **January**, **February**.
-- **%shortDay%**: the short day name in the current language, eg, **Mon**, **Tue**.
-- **%longDay%**: the long day name in the current language, eg, **Monday**, **Tuesday**.
-- **%longYear%**: the four digit year, eg, **2007**, **2013**.
-- **%shortYear%**: the two digit year, eg, **07**, **13**.
-- **%time%**: the time of day, eg, **07:35:00**, or **15:45:00**.
-
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$template` (`string`) &mdash;
-       eg. `"%shortMonth% %longYear%"`
+       eg. `"MMM y"`
 
 - *Returns:*  `string` &mdash;
     eg. `"Aug 2009"`
