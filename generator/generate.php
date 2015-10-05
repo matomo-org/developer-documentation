@@ -100,14 +100,6 @@ try {
         $hooks->generateDocumentation($view, $target);
     }
 
-    $latestStable = file_get_contents('http://builds.piwik.org/LATEST_BETA');
-    $latestStable = trim($latestStable);
-
-    if (empty($latestStable)) {
-        echo 'Unable to fetch latest version';
-        exit(1);
-    }
-
     /** @var $versions GitVersionCollection */
     $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
         ->add('master', 'master branch')
