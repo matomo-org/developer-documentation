@@ -30,7 +30,7 @@ Here is the output of this code:
 
 ```html
 {@include escape http://piwik.org/wp-content/uploads/api_rest_call.php}
-```
+``` 
 
 ## Call the Piwik API in PHP
 
