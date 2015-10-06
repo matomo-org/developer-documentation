@@ -100,6 +100,7 @@ Index
 - [`CurrencyDataProvider`](Piwik/Intl/Data/Provider/CurrencyDataProvider.md) &mdash; *Class in namespace* `Piwik\Intl\Data\Provider`- [`checkNonce()`](Piwik/Nonce.md#checknonce) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
 - [`$context`](Piwik/Notification.md#$context) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
 - [`clearCachedOption()`](Piwik/Option.md#clearcachedoption) &mdash; *Method in class* [`Option`](Piwik/Option.md)
+- [`checkDateFormat()`](Piwik/Period.md#checkdateformat) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`checkUserHasSuperUserAccessOrIsTheUser()`](Piwik/Piwik.md#checkuserhassuperuseraccessoristheuser) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`checkUserIsNotAnonymous()`](Piwik/Piwik.md#checkuserisnotanonymous) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`checkUserHasSuperUserAccess()`](Piwik/Piwik.md#checkuserhassuperuseraccess) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)

@@ -19,6 +19,7 @@ Methods
 The class defines the following methods:
 
 - [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods. Inherited from [`Period`](../../Piwik/Period.md)
+- [`checkDateFormat()`](#checkdateformat) &mdash; Checks the given date format whether it is a correct date format and if not, throw an exception. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period.
 - [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period.
 - [`getId()`](#getid) &mdash; Returns the period ID. Inherited from [`Period`](../../Piwik/Period.md)
@@ -61,6 +62,24 @@ etc.
     - `$period`
       
 - It returns a `boolean` value.
+
+<a name="checkdateformat" id="checkdateformat"></a>
+<a name="checkDateFormat" id="checkDateFormat"></a>
+### `checkDateFormat()`
+
+Checks the given date format whether it is a correct date format and if not, throw an exception.
+
+For valid date formats have a look at the [Date::factory()](/api-reference/Piwik/Date#factory) method and
+[isMultiplePeriod()](/api-reference/Piwik/Period/Range#ismultipleperiod) method.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$dateString` (`string`) &mdash;
+      
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before Tue, 06 Aug 1991.
 
 <a name="getdatestart" id="getdatestart"></a>
 <a name="getDateStart" id="getDateStart"></a>
