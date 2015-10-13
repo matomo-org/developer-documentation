@@ -31,6 +31,7 @@ The class defines the following methods:
 - [`getPrettyString()`](#getprettystring) &mdash; Returns the current period as a string.
 - [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns the current period as a localized short string.
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns the current period as a localized long string.
+- [`getImmediateChildPeriodLabel()`](#getimmediatechildperiodlabel) &mdash; Returns the label of the period type that is one size smaller than this one, or null if it's the smallest.
 - [`getRangeString()`](#getrangestring) &mdash; Returns the date range string comprising two dates
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setDefaultEndDate()`](#setdefaultenddate) &mdash; Sets the default end date of the period.
@@ -38,6 +39,7 @@ The class defines the following methods:
 - [`getLastDate()`](#getlastdate) &mdash; Returns the date that is one period before the supplied date.
 - [`getDateXPeriodsAgo()`](#getdatexperiodsago) &mdash; Returns the date that is X periods before the supplied date.
 - [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date range string given a period type, end date and number of periods the range spans over.
+- [`getParentPeriodLabel()`](#getparentperiodlabel)
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
@@ -207,6 +209,20 @@ Returns the current period as a localized long string.
 
 - It returns a `string` value.
 
+<a name="getimmediatechildperiodlabel" id="getimmediatechildperiodlabel"></a>
+<a name="getImmediateChildPeriodLabel" id="getImmediateChildPeriodLabel"></a>
+### `getImmediateChildPeriodLabel()`
+
+Returns the label of the period type that is one size smaller than this one, or null if it's the smallest.
+
+Range periods and other such 'period collections' are not considered as separate from
+the value type of the collection. So a range period will return the result of the
+subperiod's `getImmediateChildPeriodLabel()` method.
+
+#### Signature
+
+- It does not return anything.
+
 <a name="getrangestring" id="getrangestring"></a>
 <a name="getRangeString" id="getRangeString"></a>
 ### `getRangeString()`
@@ -321,4 +337,12 @@ Returns a date range string given a period type, end date and number of periods 
 
 - *Returns:*  `string` &mdash;
     The date range string, eg, `'2012-01-02,2013-01-02'`.
+
+<a name="getparentperiodlabel" id="getparentperiodlabel"></a>
+<a name="getParentPeriodLabel" id="getParentPeriodLabel"></a>
+### `getParentPeriodLabel()`
+
+#### Signature
+
+- It does not return anything.
 

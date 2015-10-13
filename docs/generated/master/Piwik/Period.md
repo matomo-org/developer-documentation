@@ -33,6 +33,7 @@ The abstract class defines the following methods:
 - [`getPrettyString()`](#getprettystring) &mdash; Returns a pretty string describing this period.
 - [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns a short string description of this period that is localized with the currently used language.
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns a long string description of this period that is localized with the currently used language.
+- [`getImmediateChildPeriodLabel()`](#getimmediatechildperiodlabel) &mdash; Returns the label of the period type that is one size smaller than this one, or null if it's the smallest.
 - [`getRangeString()`](#getrangestring) &mdash; Returns the date range string comprising two dates
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
@@ -198,6 +199,20 @@ Returns a long string description of this period that is localized with the curr
 #### Signature
 
 - It returns a `string` value.
+
+<a name="getimmediatechildperiodlabel" id="getimmediatechildperiodlabel"></a>
+<a name="getImmediateChildPeriodLabel" id="getImmediateChildPeriodLabel"></a>
+### `getImmediateChildPeriodLabel()`
+
+Returns the label of the period type that is one size smaller than this one, or null if it's the smallest.
+
+Range periods and other such 'period collections' are not considered as separate from
+the value type of the collection. So a range period will return the result of the
+subperiod's `getImmediateChildPeriodLabel()` method.
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getrangestring" id="getrangestring"></a>
 <a name="getRangeString" id="getRangeString"></a>
