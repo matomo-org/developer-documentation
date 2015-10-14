@@ -585,6 +585,7 @@ Index
 - [`hourly()`](Piwik/Plugin/Tasks.md#hourly) &mdash; *Method in class* [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`hasKey()`](Piwik/Registry.md#haskey) &mdash; *Method in class* [`Registry`](Piwik/Registry.md)
 - [`Hourly`](Piwik/Scheduler/Schedule/Hourly.md) &mdash; *Class in namespace* `Piwik\Scheduler\Schedule`- [`$hide_annotations_view`](Piwik/ViewDataTable/Config.md#$hide_annotations_view) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$htmlAttributes`](Piwik/View/UIControl.md#$htmlattributes) &mdash; *Property in class* [`UIControl`](Piwik/View/UIControl.md)
 
 ## I
 

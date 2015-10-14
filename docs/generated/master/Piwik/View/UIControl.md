@@ -28,6 +28,7 @@ This class defines the following properties:
 - [`$jsClass`](#$jsclass) &mdash; The name of the JavaScript class that handles the behavior of this control.
 - [`$jsNamespace`](#$jsnamespace) &mdash; The JavaScript module that contains the JavaScript class.
 - [`$cssClass`](#$cssclass) &mdash; Extra CSS class(es) for the root element.
+- [`$htmlAttributes`](#$htmlattributes) &mdash; HTML Attributes for the root element
 
 <a name="$cssidentifier" id="$cssidentifier"></a>
 <a name="cssIdentifier" id="cssIdentifier"></a>
@@ -68,6 +69,16 @@ The JavaScript module that contains the JavaScript class.
 ### `$cssClass`
 
 Extra CSS class(es) for the root element.
+
+#### Signature
+
+- It is a `string` value.
+
+<a name="$htmlattributes" id="$htmlattributes"></a>
+<a name="htmlAttributes" id="htmlAttributes"></a>
+### `$htmlAttributes`
+
+HTML Attributes for the root element
 
 #### Signature
 
