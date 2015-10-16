@@ -14,6 +14,7 @@ This is a complete list of available namespaces:
 - [`Piwik\Intl`](Piwik/Intl)
 - [`Piwik\Intl\Data`](Piwik/Intl/Data)
 - [`Piwik\Intl\Data\Provider`](Piwik/Intl/Data/Provider)
+- [`Piwik\Measurable`](Piwik/Measurable)
 - [`Piwik\Menu`](Piwik/Menu)
 - [`Piwik\Metrics`](Piwik/Metrics)
 - [`Piwik\Metrics\Formatter`](Piwik/Metrics/Formatter)

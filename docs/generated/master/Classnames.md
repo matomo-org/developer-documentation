@@ -58,6 +58,7 @@
 ## Intl\Data\Provider\RegionDataProvider
 ## Log
 ## Mail
+## Measurable\Measurable
 ## Menu\MenuAbstract
 ## Menu\MenuAdmin
 ## Menu\MenuReporting

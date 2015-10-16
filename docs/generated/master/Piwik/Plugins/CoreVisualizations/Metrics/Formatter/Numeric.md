@@ -18,8 +18,6 @@ The class defines the following methods:
 - [`getPrettySizeFromBytes()`](#getprettysizefrombytes) &mdash; Returns a prettified memory size value. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
 - [`getPrettyMoney()`](#getprettymoney) &mdash; Returns a pretty formated monetary value using the currency associated with a site. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
 - [`getPrettyPercentFromQuotient()`](#getprettypercentfromquotient) &mdash; Returns a percent string from a quotient value. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
-- [`getCurrencySymbol()`](#getcurrencysymbol) &mdash; Returns the currency symbol for a site. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
-- [`getCurrencyList()`](#getcurrencylist) &mdash; Returns the list of all known currency symbols. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
 - [`formatMetrics()`](#formatmetrics) &mdash; Formats all metrics, including processed metrics, for a DataTable. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
 
 <a name="getprettynumber" id="getprettynumber"></a>
@@ -107,37 +105,6 @@ decimal place.
     - `$value` (`float`) &mdash;
       
 - It returns a `string` value.
-
-<a name="getcurrencysymbol" id="getcurrencysymbol"></a>
-<a name="getCurrencySymbol" id="getCurrencySymbol"></a>
-### `getCurrencySymbol()`
-
-Returns the currency symbol for a site.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$idSite` (`int`) &mdash;
-       The ID of the site to return the currency symbol for.
-
-- *Returns:*  `string` &mdash;
-    eg, `'$'`.
-
-<a name="getcurrencylist" id="getcurrencylist"></a>
-<a name="getCurrencyList" id="getCurrencyList"></a>
-### `getCurrencyList()`
-
-Returns the list of all known currency symbols.
-
-#### See Also
-
-- `\Piwik\Intl\Data\Provider\CurrencyDataProvider::getCurrencyList()`
-
-#### Signature
-
-
-- *Returns:*  `array` &mdash;
-    An array mapping currency codes to their respective currency symbols and a description, eg, `array('USD' => array('$', 'US dollar'))`.
 
 <a name="formatmetrics" id="formatmetrics"></a>
 <a name="formatMetrics" id="formatMetrics"></a>

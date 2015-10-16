@@ -1,68 +1,48 @@
-<small>Piwik\</small>
+<small>Piwik\Measurable\</small>
 
-Site
-====
+Measurable
+==========
 
-Provides access to individual [site entity](/guides/persistence-and-the-mysql-backend#websites-aka-sites) data (including name, URL, etc.).
-
-**Data Cache**
-
-Site data can be cached in order to avoid performing too many queries.
-If a method needs many site entities, it is more efficient to query all of what
-you need beforehand via the **SitesManager** API, then cache it using [setSites()](/api-reference/Piwik/Site#setsites) or
-[setSitesFromArray()](/api-reference/Piwik/Site#setsitesfromarray).
-
-Subsequent calls to `new Site($id)` will use the data in the cache instead of querying the database.
-
-### Examples
-
-**Basic usage**
-
-    $site = new Site($idSite);
-    $name = $site->getName();
-
-**Without allocation**
-
-    $name = Site::getNameFor($idSite);
+Provides access to individual measurables.
 
 Methods
 -------
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
-- [`setSites()`](#setsites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data.
-- [`setSiteFromArray()`](#setsitefromarray) &mdash; Sets a site information in memory (statically cached).
-- [`setSitesFromArray()`](#setsitesfromarray) &mdash; Sets the cached Site data with a non-associated array of site data.
-- [`__toString()`](#__tostring) &mdash; Returns a string representation of the site this instance references.
-- [`getName()`](#getname) &mdash; Returns the name of the site.
-- [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site.
-- [`getId()`](#getid) &mdash; Returns the id of the site.
-- [`getType()`](#gettype) &mdash; Returns the website type (by default `"website"`, which means it is a single website).
-- [`getCreationDate()`](#getcreationdate) &mdash; Returns the creation date of the site.
-- [`getTimezone()`](#gettimezone) &mdash; Returns the timezone of the size.
-- [`getCurrency()`](#getcurrency) &mdash; Returns the currency of the site.
-- [`getExcludedIps()`](#getexcludedips) &mdash; Returns the excluded ips of the site.
-- [`getExcludedQueryParameters()`](#getexcludedqueryparameters) &mdash; Returns the excluded query parameters of the site.
-- [`isEcommerceEnabled()`](#isecommerceenabled) &mdash; Returns whether ecommerce is enabled for the site.
-- [`getSearchKeywordParameters()`](#getsearchkeywordparameters) &mdash; Returns the site search keyword query parameters for the site.
-- [`getSearchCategoryParameters()`](#getsearchcategoryparameters) &mdash; Returns the site search category query parameters for the site.
-- [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site.
-- [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site IDs and returns them as an array.
-- [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
-- [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
-- [`getGroupFor()`](#getgroupfor) &mdash; Returns the group of the site with the specified ID.
-- [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
-- [`getTypeFor()`](#gettypefor) &mdash; Returns the type of the site with the specified ID.
-- [`getCreationDateFor()`](#getcreationdatefor) &mdash; Returns the creation date of the site with the specified ID.
-- [`getMainUrlFor()`](#getmainurlfor) &mdash; Returns the url for the site with the specified ID.
-- [`isEcommerceEnabledFor()`](#isecommerceenabledfor) &mdash; Returns whether the site with the specified ID is ecommerce enabled or not.
-- [`isSiteSearchEnabledFor()`](#issitesearchenabledfor) &mdash; Returns whether the site with the specified ID is Site Search enabled.
-- [`getCurrencyFor()`](#getcurrencyfor) &mdash; Returns the currency of the site with the specified ID.
-- [`getCurrencySymbolFor()`](#getcurrencysymbolfor) &mdash; Returns the currency of the site with the specified ID.
-- [`getCurrencyList()`](#getcurrencylist) &mdash; Returns the list of all known currency symbols.
-- [`getExcludedIpsFor()`](#getexcludedipsfor) &mdash; Returns the excluded IP addresses of the site with the specified ID.
-- [`getExcludedQueryParametersFor()`](#getexcludedqueryparametersfor) &mdash; Returns the excluded query parameters for the site with the specified ID.
+- [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`Site`](../../Piwik/Site.md)
+- [`setSites()`](#setsites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data. Inherited from [`Site`](../../Piwik/Site.md)
+- [`setSiteFromArray()`](#setsitefromarray) &mdash; Sets a site information in memory (statically cached). Inherited from [`Site`](../../Piwik/Site.md)
+- [`setSitesFromArray()`](#setsitesfromarray) &mdash; Sets the cached Site data with a non-associated array of site data. Inherited from [`Site`](../../Piwik/Site.md)
+- [`__toString()`](#__tostring) &mdash; Returns a string representation of the site this instance references. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getName()`](#getname) &mdash; Returns the name of the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getId()`](#getid) &mdash; Returns the id of the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getType()`](#gettype) &mdash; Returns the website type (by default `"website"`, which means it is a single website). Inherited from [`Site`](../../Piwik/Site.md)
+- [`getCreationDate()`](#getcreationdate) &mdash; Returns the creation date of the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getTimezone()`](#gettimezone) &mdash; Returns the timezone of the size. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getCurrency()`](#getcurrency) &mdash; Returns the currency of the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getExcludedIps()`](#getexcludedips) &mdash; Returns the excluded ips of the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getExcludedQueryParameters()`](#getexcludedqueryparameters) &mdash; Returns the excluded query parameters of the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`isEcommerceEnabled()`](#isecommerceenabled) &mdash; Returns whether ecommerce is enabled for the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getSearchKeywordParameters()`](#getsearchkeywordparameters) &mdash; Returns the site search keyword query parameters for the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getSearchCategoryParameters()`](#getsearchcategoryparameters) &mdash; Returns the site search category query parameters for the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site IDs and returns them as an array. Inherited from [`Site`](../../Piwik/Site.md)
+- [`clearCache()`](#clearcache) &mdash; Clears the site data cache. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getGroupFor()`](#getgroupfor) &mdash; Returns the group of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getTypeFor()`](#gettypefor) &mdash; Returns the type of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getCreationDateFor()`](#getcreationdatefor) &mdash; Returns the creation date of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getMainUrlFor()`](#getmainurlfor) &mdash; Returns the url for the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`isEcommerceEnabledFor()`](#isecommerceenabledfor) &mdash; Returns whether the site with the specified ID is ecommerce enabled or not. Inherited from [`Site`](../../Piwik/Site.md)
+- [`isSiteSearchEnabledFor()`](#issitesearchenabledfor) &mdash; Returns whether the site with the specified ID is Site Search enabled. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getCurrencyFor()`](#getcurrencyfor) &mdash; Returns the currency of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getCurrencySymbolFor()`](#getcurrencysymbolfor) &mdash; Returns the currency of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getCurrencyList()`](#getcurrencylist) &mdash; Returns the list of all known currency symbols. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getExcludedIpsFor()`](#getexcludedipsfor) &mdash; Returns the excluded IP addresses of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getExcludedQueryParametersFor()`](#getexcludedqueryparametersfor) &mdash; Returns the excluded query parameters for the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -188,7 +168,7 @@ Returns the creation date of the site.
 
 #### Signature
 
-- It returns a [`Date`](../Piwik/Date.md) value.
+- It returns a [`Date`](../../Piwik/Date.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
 
@@ -311,7 +291,7 @@ Checks the given string for valid site IDs and returns them as an array.
 
 Clears the site data cache.
 
-See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray()](/api-reference/Piwik/Site#setsitesfromarray).
+See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and [setSitesFromArray()](/api-reference/Piwik/Measurable/Measurable#setsitesfromarray).
 
 #### Signature
 

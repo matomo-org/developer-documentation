@@ -62,6 +62,7 @@ This is a complete list of available classes:
 - [`Intl\Data\Provider\RegionDataProvider`](Piwik/Intl/Data/Provider/RegionDataProvider.md) &mdash; Provides region related data (continents, countries, etc.).
 - [`Log`](Piwik/Log.md) &mdash; Logging utility class.
 - [`Mail`](Piwik/Mail.md) &mdash; Class for sending mails, for more information see: [http://framework.zend.com/manual/en/zend.mail.html](http://framework.zend.com/manual/en/zend.mail.html)
+- [`Measurable\Measurable`](Piwik/Measurable/Measurable.md) &mdash; Provides access to individual measurables.
 - [`Menu\MenuAbstract`](Piwik/Menu/MenuAbstract.md) &mdash; Base class for classes that manage one of Piwik's menus.
 - [`Menu\MenuAdmin`](Piwik/Menu/MenuAdmin.md) &mdash; Contains menu entries for the Admin menu.
 - [`Menu\MenuReporting`](Piwik/Menu/MenuReporting.md) &mdash; Contains menu entries for the Reporting menu (the menu displayed under the Piwik logo).
