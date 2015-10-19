@@ -120,6 +120,8 @@ To do so, visit your fork on GitHub and select the **bugfix** branch in the bran
 
 On this screen you'll be able to see exactly what changes you've made by looking at your commits and at what files have been changed. You can use this as an opportunity to review your changes.
 
+Read [Creating Pull requests: best practises](#creating-pull-requests-best-practises) to maximise your changes to create a great pull request.
+
 Once you're ready to create the pull request, write a description of the pull request and any notes that are important for the person who will review your code, and then click _Send pull request_. This will create a new pull request which you will be able to find and view [here](https://github.com/piwik/piwik/pulls).
 
 #### Updating the pull request
@@ -140,6 +142,7 @@ Here are best practises we aim to follow when creating, reviewing and merging pu
 * Before working on a new issue it is recommended to check for pending PRs that have a `Needs Review` label
 * PHP code should use our Piwik code standards (see next section)
 * Pull requests should contain tests
+* Read the article: [Pull Requests: How to Get and Give Good Feedback](https://www.kickstarter.com/backing-and-hacking/pull-requests-how-to-get-and-give-good-feedback) 
 
 ## Piwik Core code standards
 
