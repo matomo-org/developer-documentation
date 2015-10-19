@@ -1817,7 +1817,7 @@ Callback Signature:
 
 ### Tracker.existingVisitInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [220](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L220)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [226](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L226)*
 
 Triggered before a [visit entity](/guides/persistence-and-the-mysql-backend#visits) is updated when tracking an action for an existing visit. This event can be used to modify the visit properties that will be updated before the changes
 are persisted.
@@ -1890,7 +1890,7 @@ Callback Signature:
 
 ### Tracker.newVisitorInformation
 
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [289](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L289)*
+*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php) in line [295](https://github.com/piwik/piwik/blob/master/core/Tracker/Visit.php#L295)*
 
 Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
 The UserCountry plugin, for example, uses this event to add location information for each visit.
@@ -1965,7 +1965,7 @@ Callback Signature:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [498](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L498)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [504](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L504)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
