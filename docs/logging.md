@@ -82,3 +82,7 @@ try {
 ```
 
 In this example, we log to `error` level but we caught the exception: the current process will not be aborted.
+
+### Viewing logs
+
+To view the logs, we recommend using our [LogViewer plugin](http://plugins.piwik.org/LogViewer): learn more in [How do I view Piwik application logs?](https://piwik.org/faq/how-to/faq_20991/)
