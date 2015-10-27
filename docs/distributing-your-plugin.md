@@ -41,7 +41,7 @@ To make your plugin shine on the Piwik marketplace: include screenshots in your 
 
 Prepare a few screenshots of your plugin in action.
 Place them in a directory `screenshots/` in your plugin folder.
-Give them a descriptive name: filenames will be used as the legend below each screenshot.
+Give them a descriptive name: filenames will be used as the legend below each screenshot. Only alphanumeric characters, underscores and dashes are allowed in the filename. The filename must end with `.png`, `.jpg` or `.jpeg`.
 
 See the result for the [CustomAlerts plugin screenshots](http://plugins.piwik.org/CustomAlerts) (click on the Screenshots link).
 These screenshots are stored [in git: CustomAlerts/screenshots](https://github.com/piwik/plugin-CustomAlerts/tree/master/screenshots).
