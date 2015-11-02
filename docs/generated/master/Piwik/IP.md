@@ -61,5 +61,5 @@ Returns the last IP address in a comma separated list, subject to an optional ex
        Optional list of excluded IP addresses (or IP address ranges).
 
 - *Returns:*  `string` &mdash;
-    Last (non-excluded) IP address in the list.
+    Last (non-excluded) IP address in the list or an empty string if all given IPs are excluded.
 
