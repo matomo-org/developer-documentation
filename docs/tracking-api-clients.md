@@ -37,7 +37,7 @@ The default client is the PHP PiwikTracker, learn more at: [github.com/piwik/piw
 
 ### Java client
 
-A Java client for the Piwik Tracking API is available on Github: [github.com/piwik/piwik-java-tracking](https://github.com/piwik/piwik-java-tracker).
+A Java client for the Piwik Tracking API is available on Github: [github.com/piwik/piwik-java-tracker](https://github.com/piwik/piwik-java-tracker).
 
 ### Python client
 
