@@ -409,6 +409,8 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 -  It accepts the following parameter(s):
     - `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
       
+    - `$aggregationOperations` (`array`) &mdash;
+      
 - It does not return anything.
 
 <a name="issummaryrow" id="issummaryrow"></a>
