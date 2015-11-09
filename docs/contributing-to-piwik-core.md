@@ -143,6 +143,7 @@ Here are best practises we aim to follow when creating, reviewing and merging pu
 * PHP code should use our Piwik code standards (see next section)
 * Pull requests should contain tests
 * Read the article: [Pull Requests: How to Get and Give Good Feedback](https://www.kickstarter.com/backing-and-hacking/pull-requests-how-to-get-and-give-good-feedback) 
+* Sometimes happens that pull requests come loaded with several temporary commits, in this case maybe core developers ask you to [Squash commits](http://eli.thegreenplace.net/2014/02/19/squashing-github-pull-requests-into-a-single-commit) in a "big one". 
 
 ## Piwik Core code standards
 
