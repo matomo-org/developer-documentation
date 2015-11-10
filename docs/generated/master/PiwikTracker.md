@@ -245,7 +245,8 @@ See http://piwik.org/docs/custom-variables/
 
 Returns the currently assigned Custom Variable.
 
-If scope is 'visit', it will attempt to read the value set in the first party cookie created by Piwik Tracker ($_COOKIE array).
+If scope is 'visit', it will attempt to read the value set in the first party cookie created by Piwik Tracker
+ ($_COOKIE array).
 
 #### See Also
 
