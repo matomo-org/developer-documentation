@@ -54,7 +54,7 @@ Before we start extending Piwik, let's make sure you have the tools needed. You 
 
 - **A PHP IDE or a text editor.** We recommend to use [PhpStorm](http://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
 
-  _Note: we have published our [customized PSR coding style XML file](https://github.com/piwik/piwik/tree/master/misc/others/phpstorm-codestyles) for PhpStorm that you can use._
+  _Note: we have published our [customized PSR coding style XML file](https://github.com/piwik/piwik/tree/master/misc/phpstorm-codestyles) for PhpStorm that you can use._
 
 - **A webserver,** such as [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/). You can also use [PHP's built-in webserver](http://php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 5.4 or higher installed.
 - **A MySQL database**
