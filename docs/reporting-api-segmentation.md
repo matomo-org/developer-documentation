@@ -39,6 +39,8 @@ Operator | Behavior           | Example
 >  | Greater than             | `&segment=daysSinceLastVisit>1` Return results where visitors are coming back to the website 2 days or more after their previous visit.
 =@ | Contains                 | `&segment=referrerName=@piwik` Return results where the Referer name (website domain or search engine name) contains the word "piwik".
 !@ | Does not contain         | `&segment=referrerKeyword!@yourBrand` Return results where the keyword used to access the website does not contain word "yourBrand".
+=^ | Starts with         | `&segment=referrerKeyword=^yourBrand` Return results where the keyword used to access the website starts with "yourBrand" (requires at least Piwik 2.15.1).
+=$ | Ends with         | `&segment=referrerKeyword=$yourBrand` Return results where the keyword used to access the website ends with "yourBrand" (requires at least Piwik 2.15.1).
 
 ## Combine Segments with AND and OR expressions
 
