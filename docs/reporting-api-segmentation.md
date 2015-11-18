@@ -21,7 +21,7 @@ For example, you can request the "Best Keywords" report processed for all visits
     &period=week
     &idSite=1
     &module=API&method=Referrers.getKeywords
-    &segment=browserCode==FF;country==DE
+    &segment=browserCode==FF;countryCode==DE
 
 Example URL of top countries used by visits landing on the page: [virtual-drums.com/](http://www.virtual-drums.com/): [demo.piwik.org/?module=API&method=**UserCountry.getCountry**&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en**&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F**](http://demo.piwik.org/?module=API&method=UserCountry.getCountry&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F)
 
@@ -31,7 +31,7 @@ Let's take a look at the segment string.
 
 Operator | Behavior           | Example
 -- | ------------------------ | -------------
-== | Equals                   | `&segment=country==IN` Return results where the country is India
+== | Equals                   | `&segment=countryCode==IN` Return results where the country is India
 != | Not equals               | `&segment=actions!=1` Return results where the number of actions (page views, downloads, etc.) is not 1
 <= | Less than or equal to    | `&segment=actions<=4` Return results where the number of actions (page views, downloads, etc.) is 4 or less
 <  | Less than                | `&segment=visitServerHour<12` Return results where the Server time (hour) is before midday.
@@ -46,11 +46,11 @@ You can combine several segments together with AND and OR logic.
 
 **OR** operator is the `,` (comma) character, for example:
 
-- `&segment=country==US,country==DE` Country is either (United States OR Germany)
+- `&segment=countryCode==US,countryCode==DE` Country is either (United States OR Germany)
 
 **AND** operator is the `;` (semi-colon) character, for example:
 
-- `&segment=visitorType==returning;country==FR` Returning visitors AND Country is France
+- `&segment=visitorType==returning;countryCode==FR` Returning visitors AND Country is France
 - `&segment=referrerType==search;referrerKeyword!=Piwik` Visitors from Search engines AND Keyword is not Piwik
 
 Note that if you combine OR and AND operators, the OR operator will take precedence. For example, the following query
