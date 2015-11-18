@@ -1089,7 +1089,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [495](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L495)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php) in line [489](https://github.com/piwik/piwik/blob/master/core/Plugin/Manager.php#L489)*
 
 Event triggered after a plugin has been activated.
 
