@@ -100,6 +100,7 @@
 ## Plugins\Diagnostics\Diagnostic\DiagnosticResult
 ## Plugins\Diagnostics\Diagnostic\DiagnosticResultItem
 ## Plugins\Login\SessionInitializer
+## Plugins\MobileMessaging\SMSProvider
 ## Plugins\UsersManager\UserPreferences
 ## RankingQuery
 ## Registry

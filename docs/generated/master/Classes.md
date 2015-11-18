@@ -104,6 +104,7 @@ This is a complete list of available classes:
 - [`Plugins\Diagnostics\Diagnostic\DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) &mdash; The result of a diagnostic.
 - [`Plugins\Diagnostics\Diagnostic\DiagnosticResultItem`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md)
 - [`Plugins\Login\SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; Initializes authenticated sessions using an Auth implementation.
+- [`Plugins\MobileMessaging\SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md) &mdash; The SMSProvider abstract class is used as a base class for SMS provider implementations.
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`Registry`](Piwik/Registry.md) &mdash; Registry class.

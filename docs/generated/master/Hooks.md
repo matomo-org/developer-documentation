@@ -1015,7 +1015,7 @@ Usages:
 
 ### MobileMessaging.deletePhoneNumber
 
-*Defined in [Piwik/Plugins/MobileMessaging/API](https://github.com/piwik/piwik/blob/master/plugins/MobileMessaging/API.php) in line [221](https://github.com/piwik/piwik/blob/master/plugins/MobileMessaging/API.php#L221)*
+*Defined in [Piwik/Plugins/MobileMessaging/API](https://github.com/piwik/piwik/blob/master/plugins/MobileMessaging/API.php) in line [211](https://github.com/piwik/piwik/blob/master/plugins/MobileMessaging/API.php#L211)*
 
 Triggered after a phone number has been deleted. This event should be used to clean up any data that is
 related to the now deleted phone number. The ScheduledReports plugin, for example, uses this event to remove

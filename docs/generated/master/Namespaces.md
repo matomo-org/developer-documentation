@@ -32,6 +32,7 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\Diagnostics`](Piwik/Plugins/Diagnostics)
 - [`Piwik\Plugins\Diagnostics\Diagnostic`](Piwik/Plugins/Diagnostics/Diagnostic)
 - [`Piwik\Plugins\Login`](Piwik/Plugins/Login)
+- [`Piwik\Plugins\MobileMessaging`](Piwik/Plugins/MobileMessaging)
 - [`Piwik\Plugins\UsersManager`](Piwik/Plugins/UsersManager)
 - [`Piwik\Scheduler`](Piwik/Scheduler)
 - [`Piwik\Scheduler\Schedule`](Piwik/Scheduler/Schedule)

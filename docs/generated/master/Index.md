@@ -483,6 +483,9 @@ Index
 - [`getStatus()`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md#getstatus) &mdash; *Method in class* [`DiagnosticResultItem`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md)
 - [`getComment()`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md#getcomment) &mdash; *Method in class* [`DiagnosticResultItem`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md)
 - [`getHashTokenAuth()`](Piwik/Plugins/Login/SessionInitializer.md#gethashtokenauth) &mdash; *Method in class* [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md)
+- [`getId()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#getid) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
+- [`getDescription()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#getdescription) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
+- [`getCreditLeft()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#getcreditleft) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
 - [`getDefaultWebsiteId()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultwebsiteid) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultReport()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultreport) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultDate()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultdate) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
@@ -632,6 +635,7 @@ Index
 - [`isThereDataToDisplay()`](Piwik/Plugin/Visualization.md#istheredatatodisplay) &mdash; *Method in class* [`Visualization`](Piwik/Plugin/Visualization.md)
 - [`init()`](Piwik/Plugin/Widgets.md#init) &mdash; *Method in class* [`Widgets`](Piwik/Plugin/Widgets.md)
 - [`initSession()`](Piwik/Plugins/Login/SessionInitializer.md#initsession) &mdash; *Method in class* [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md)
+- [`isAvailable()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#isavailable) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
 - [`isRegistered()`](Piwik/Registry.md#isregistered) &mdash; *Method in class* [`Registry`](Piwik/Registry.md)
 - [`isEmpty()`](Piwik/Segment.md#isempty) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`isSegmentationEnabled()`](Piwik/SettingsPiwik.md#issegmentationenabled) &mdash; *Method in class* [`SettingsPiwik`](Piwik/SettingsPiwik.md)
@@ -872,7 +876,8 @@ Index
 - [`singleResult()`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md#singleresult) &mdash; *Method in class* [`DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md)
 - [`setItems()`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md#setitems) &mdash; *Method in class* [`DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md)
 - [`setLongErrorMessage()`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md#setlongerrormessage) &mdash; *Method in class* [`DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md)
-- [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; *Class in namespace* `Piwik\Plugins\Login`- [`setLimit()`](Piwik/RankingQuery.md#setlimit) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
+- [`SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; *Class in namespace* `Piwik\Plugins\Login`- [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md) &mdash; *Class in namespace* `Piwik\Plugins\MobileMessaging`- [`sendSMS()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#sendsms) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
+- [`setLimit()`](Piwik/RankingQuery.md#setlimit) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setOthersLabel()`](Piwik/RankingQuery.md#setotherslabel) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`setColumnToMarkExcludedRows()`](Piwik/RankingQuery.md#setcolumntomarkexcludedrows) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`set()`](Piwik/Registry.md#set) &mdash; *Method in class* [`Registry`](Piwik/Registry.md)
@@ -961,7 +966,8 @@ Index
 
 - [`verbose()`](Piwik/Log.md#verbose) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`verifyNonce()`](Piwik/Nonce.md#verifynonce) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
-- [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md) &mdash; *Class in namespace* `Piwik\Plugin\Dimension`- [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`Visualization`](Piwik/Plugin/Visualization.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`$validate`](Piwik/Settings/Setting.md#$validate) &mdash; *Property in class* [`Setting`](Piwik/Settings/Setting.md)
+- [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md) &mdash; *Class in namespace* `Piwik\Plugin\Dimension`- [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`Visualization`](Piwik/Plugin/Visualization.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`verifyCredential()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#verifycredential) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
+- [`$validate`](Piwik/Settings/Setting.md#$validate) &mdash; *Property in class* [`Setting`](Piwik/Settings/Setting.md)
 - [`Version`](Piwik/Version.md) &mdash; *Class in namespace* `Piwik`- [`View`](Piwik/View.md) &mdash; *Class in namespace* `Piwik`- [`ViewInterface`](Piwik/View/ViewInterface.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)
 ## W
 
