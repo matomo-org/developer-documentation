@@ -1144,22 +1144,22 @@ Callback Signature:
 
 ### Referrer.addSearchEngineUrls
 
-*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [836](https://github.com/piwik/piwik/blob/master/core/Common.php#L836)*
+*Defined in [Piwik/Plugins/Referrers/SearchEngine](https://github.com/piwik/piwik/blob/master/plugins/Referrers/SearchEngine.php) in line [66](https://github.com/piwik/piwik/blob/master/plugins/Referrers/SearchEngine.php#L66)*
 
 
 
 Callback Signature:
-<pre><code>function(&amp;$searchEngines)</code></pre>
+<pre><code>function(&amp;$this-&gt;definitionList)</code></pre>
 
 
 ### Referrer.addSocialUrls
 
-*Defined in [Piwik/Common](https://github.com/piwik/piwik/blob/master/core/Common.php) in line [890](https://github.com/piwik/piwik/blob/master/core/Common.php#L890)*
+*Defined in [Piwik/Plugins/Referrers/Social](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Social.php) in line [65](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Social.php#L65)*
 
 
 
 Callback Signature:
-<pre><code>function(&amp;$socialUrls)</code></pre>
+<pre><code>function(&amp;$this-&gt;definitionList)</code></pre>
 
 ## Request
 
@@ -1788,7 +1788,7 @@ Usages:
 
 ### Tracker.detectReferrerSearchEngine
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php) in line [160](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php#L160)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php) in line [161](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php#L161)*
 
 Triggered when detecting the search engine of a referrer URL. Plugins can use this event to provide custom search engine detection
 logic.
