@@ -52,6 +52,7 @@ The class defines the following methods:
 - [`setSqlFilter()`](#setsqlfilter) &mdash; Sometimes you want users to set values that differ from the way they are actually stored.
 - [`setSqlFilterValue()`](#setsqlfiltervalue) &mdash; Similar to [setSqlFilter()](/api-reference/Piwik/Plugin/Segment#setsqlfilter) you can map a given segment value to another value.
 - [`setSqlSegment()`](#setsqlsegment) &mdash; Defines to which column in the MySQL database the segment belongs: 'mytablename.mycolumnname'.
+- [`setUnionOfSegments()`](#setunionofsegments) &mdash; Set a list of segments that should be used instead of fetching the values from a single column.
 - [`setType()`](#settype) &mdash; Set (overwrite) the type of this segment which is usually either a 'dimension' or a 'metric'.
 - [`getSegment()`](#getsegment) &mdash; Returns the name of this segment as it should appear in segment expressions.
 - [`setSuggestedValuesCallback()`](#setsuggestedvaluescallback) &mdash; Set callback which will be executed when user will call for suggested values for segment.
@@ -188,6 +189,21 @@ Eg
 
 -  It accepts the following parameter(s):
     - `$sqlSegment` (`string`) &mdash;
+      
+- It does not return anything.
+
+<a name="setunionofsegments" id="setunionofsegments"></a>
+<a name="setUnionOfSegments" id="setUnionOfSegments"></a>
+### `setUnionOfSegments()`
+
+Set a list of segments that should be used instead of fetching the values from a single column.
+
+All set segments will be applied via an OR operator.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$segments` (`array`) &mdash;
       
 - It does not return anything.
 
