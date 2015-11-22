@@ -18,12 +18,10 @@ In most cases, using a Request object to query the API is the correct approach.
 ### Post-processing
 
 The return value of API methods undergo some extra processing before being returned by Request.
-To learn more about what happens to API results, read [this](/guides/piwiks-web-api#extra-report-processing).
 
 ### Output Formats
 
 The value returned by Request will be serialized to a certain format before being returned.
-To see the list of supported output formats, read [this](/guides/piwiks-web-api#output-formats).
 
 ### Examples
 
