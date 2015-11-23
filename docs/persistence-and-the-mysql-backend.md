@@ -15,8 +15,6 @@ Piwik also persists other simpler forms of data including:
 - goals
 - options
 
-*Note: Piwik uses PHP arrays to hold persisted data. In the descriptions below we list properties by the name used in the PHP array.*
-
 Did you know? You can [extend the database](/guides/extending-database) with a plugin.
 
 ## Log data
