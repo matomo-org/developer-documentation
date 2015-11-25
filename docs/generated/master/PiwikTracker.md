@@ -59,6 +59,8 @@ The class defines the following methods:
 - [`setCustomVariable()`](#setcustomvariable) &mdash; Sets Visit Custom Variable.
 - [`getCustomVariable()`](#getcustomvariable) &mdash; Returns the currently assigned Custom Variable.
 - [`clearCustomVariables()`](#clearcustomvariables) &mdash; Clears any Custom Variable that may be have been set.
+- [`setCustomTrackingParameter()`](#setcustomtrackingparameter) &mdash; Sets a custom tracking parameter.
+- [`clearCustomTrackingParameters()`](#clearcustomtrackingparameters) &mdash; Clear / reset all previously set custom tracking parameters.
 - [`setNewVisitorId()`](#setnewvisitorid) &mdash; Sets the current visitor ID to a random new one.
 - [`setIdSite()`](#setidsite) &mdash; Sets the current site ID.
 - [`setBrowserLanguage()`](#setbrowserlanguage) &mdash; Sets the Browser language.
@@ -273,6 +275,37 @@ Clears any Custom Variable that may be have been set.
 
 This can be useful when you have enabled bulk requests,
 and you wish to clear Custom Variables of 'visit' scope.
+
+#### Signature
+
+- It does not return anything.
+
+<a name="setcustomtrackingparameter" id="setcustomtrackingparameter"></a>
+<a name="setCustomTrackingParameter" id="setCustomTrackingParameter"></a>
+### `setCustomTrackingParameter()`
+
+Sets a custom tracking parameter.
+
+This is useful if you need to send any tracking parameters for a 3rd party
+plugin that is not shipped with Piwik itself. Please note that custom parameters are cleared after each
+tracking request.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$trackingApiParameter` (`string`) &mdash;
+       The name of the tracking API parameter, eg 'dimension1'
+    - `$value` (`string`) &mdash;
+       Tracking parameter value that shall be sent for this tracking parameter.
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
+<a name="clearcustomtrackingparameters" id="clearcustomtrackingparameters"></a>
+<a name="clearCustomTrackingParameters" id="clearCustomTrackingParameters"></a>
+### `clearCustomTrackingParameters()`
+
+Clear / reset all previously set custom tracking parameters.
 
 #### Signature
 

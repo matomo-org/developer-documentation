@@ -798,6 +798,7 @@ The class defines the following methods:
 - [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks display properties as client side properties.
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable.
 - [`getProperties()`](#getproperties) &mdash; Returns array of all property values in this config object.
+- [`removeColumnToDisplay()`](#removecolumntodisplay)
 - [`getPriorityFilters()`](#getpriorityfilters)
 - [`getPresentationFilters()`](#getpresentationfilters)
 - [`addRelatedReport()`](#addrelatedreport) &mdash; Adds a related report to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
@@ -861,6 +862,17 @@ by name.
 
 - *Returns:*  `array` &mdash;
     eg, `array('show_limit_control' => 0, 'show_goals' => 1, ...)`
+
+<a name="removecolumntodisplay" id="removecolumntodisplay"></a>
+<a name="removeColumnToDisplay" id="removeColumnToDisplay"></a>
+### `removeColumnToDisplay()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$columnToRemove`
+      
+- It does not return anything.
 
 <a name="getpriorityfilters" id="getpriorityfilters"></a>
 <a name="getPriorityFilters" id="getPriorityFilters"></a>

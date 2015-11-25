@@ -794,6 +794,7 @@ Index
 - [`$related_reports`](Piwik/ViewDataTable/Config.md#$related_reports) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$related_reports_title`](Piwik/ViewDataTable/Config.md#$related_reports_title) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$report_id`](Piwik/ViewDataTable/Config.md#$report_id) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`removeColumnToDisplay()`](Piwik/ViewDataTable/Config.md#removecolumntodisplay) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; *Class in namespace* `Piwik\ViewDataTable`- [`$request_parameters_to_modify`](Piwik/ViewDataTable/RequestConfig.md#$request_parameters_to_modify) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`render()`](Piwik/View/UIControl.md#render) &mdash; *Method in class* [`UIControl`](Piwik/View/UIControl.md)
 - [`render()`](Piwik/View/ViewInterface.md#render) &mdash; *Method in class* [`ViewInterface`](Piwik/View/ViewInterface.md)
