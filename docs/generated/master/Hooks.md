@@ -1965,7 +1965,7 @@ Callback Signature:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [504](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L504)*
+*Defined in [Piwik/Tracker/Request](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php) in line [513](https://github.com/piwik/piwik/blob/master/core/Tracker/Request.php#L513)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
