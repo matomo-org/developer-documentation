@@ -729,7 +729,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::addReportToInsightsOverview](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L93), [Referrers::addReportToInsightsOverview](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L58), [UserCountry::addReportToInsightsOverview](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L62)
+[Actions::addReportToInsightsOverview](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L93), [Referrers::addReportToInsightsOverview](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L68), [UserCountry::addReportToInsightsOverview](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L62)
 
 ## Installation
 
@@ -825,7 +825,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L44), [CoreHome::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L35), [CustomVariables::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L42), [DevicePlugins::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/DevicePlugins/DevicePlugins.php#L32), [DevicesDetection::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L31), [Events::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L31), [Provider::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L45), [Referrers::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L44), [Resolution::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Resolution/Resolution.php#L30), [UserCountry::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L45), [UserLanguage::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/UserLanguage/UserLanguage.php#L30), [VisitTime::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L24), [VisitorInterest::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L41)
+[Actions::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Actions/Actions.php#L44), [CoreHome::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/CoreHome.php#L35), [CustomVariables::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/CustomVariables/CustomVariables.php#L42), [DevicePlugins::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/DevicePlugins/DevicePlugins.php#L32), [DevicesDetection::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L31), [Events::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Events/Events.php#L31), [Provider::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Provider/Provider.php#L45), [Referrers::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L54), [Resolution::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/Resolution/Resolution.php#L30), [UserCountry::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L45), [UserLanguage::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/UserLanguage/UserLanguage.php#L30), [VisitTime::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/VisitTime/VisitTime.php#L24), [VisitorInterest::extendVisitorDetails](https://github.com/piwik/piwik/blob/master/plugins/VisitorInterest/VisitorInterest.php#L41)
 
 
 ### Live.getExtraVisitorDetails
@@ -1236,7 +1236,7 @@ Callback Signature:
 
 Usages:
 
-[DevicePlugins::renameUserSettingsModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/DevicePlugins/DevicePlugins.php#L49), [DevicesDetection::renameUserSettingsModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L53), [Referrers::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L37), [Resolution::renameUserSettingsModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/Resolution/Resolution.php#L37), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L103), [UserLanguage::renameUserSettingsModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/UserLanguage/UserLanguage.php#L49)
+[DevicePlugins::renameUserSettingsModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/DevicePlugins/DevicePlugins.php#L49), [DevicesDetection::renameUserSettingsModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/DevicesDetection/DevicesDetection.php#L53), [Referrers::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L47), [Resolution::renameUserSettingsModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/Resolution/Resolution.php#L37), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/ScheduledReports/ScheduledReports.php#L103), [UserLanguage::renameUserSettingsModuleAndAction](https://github.com/piwik/piwik/blob/master/plugins/UserLanguage/UserLanguage.php#L49)
 
 
 ### Request.initAuthenticationObject
@@ -1709,7 +1709,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [683](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L683)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php) in line [684](https://github.com/piwik/piwik/blob/master/plugins/SitesManager/API.php#L684)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -1788,7 +1788,7 @@ Usages:
 
 ### Tracker.detectReferrerSearchEngine
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php) in line [161](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php#L161)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php) in line [163](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Columns/Base.php#L163)*
 
 Triggered when detecting the search engine of a referrer URL. Plugins can use this event to provide custom search engine detection
 logic.
@@ -2004,7 +2004,7 @@ Callback Signature:
 
 Usages:
 
-[PrivacyManager::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/master/plugins/PrivacyManager/PrivacyManager.php#L147), [UserCountry::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L67)
+[PrivacyManager::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/master/plugins/PrivacyManager/PrivacyManager.php#L147), [Referrers::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/master/plugins/Referrers/Referrers.php#L39), [UserCountry::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/master/plugins/UserCountry/UserCountry.php#L67)
 
 ## Translate
 
