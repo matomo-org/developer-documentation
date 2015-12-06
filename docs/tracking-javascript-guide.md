@@ -466,6 +466,14 @@ _paq(['setDomains', ["*.hostname1.com", "hostname2.com"]]);
 _paq.push(['trackPageView']);
 ```
 
+Since Piwik 2.15.1 you may also append a path to a domain and Piwik will correctly detect links to the same domain but different path as an outlink.
+
+```javascript
+// Don't track Outlinks on all clicks pointing to *.hostname1.com/product1/* or *.hostname2.com/product1/*
+// Track all clicks not pointing to *.hostname1.com/product1/* or *.hostname2.com/product1/* as outlink.
+_paq(['setDomains', ["*.hostname1.com/product1", "hostname2.com/product1"]]);
+```
+
 ### Disabling Download & Outlink tracking
 
 By default, the Piwik tracking code enables clicks and download tracking. To disable all automatic download and outlink tracking, you must remove the call to the `enableLinkTracking()` function:
