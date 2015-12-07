@@ -278,6 +278,50 @@ _paq.push([ function() {
 _paq.push(['trackPageView']);
 ```
 
+## Custom Dimensions
+
+[Custom Dimensions](https://piwik.org/docs/custom-dimensions/) are a powerful feature that enable you to track custom values for each visit, and/or each action (page view, outlink, download). This feature is not shipped with Piwik directly but can be installed as a plugin via the [Piwik Marketplace (CustomDimensions plugin)](https://plugins.piwik.org/CustomDimensions). Before you can use a Custom Dimension you need to install the plugin and configure at least one dimension, see the [Custom Dimensions guide](https://piwik.org/docs/custom-dimensions/). You will get a numeric ID for each configured Custom Dimension which can be used to set a value for it. 
+
+### Tracking a Custom Dimension across tracking requests
+
+To track a value simply specify the ID followed by a value:
+
+```javascript
+_paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = 'Member']);
+```
+
+Please note once a Custom Dimension is set, the value will be used for all following tracking requests and may lead to
+inaccurate results if this is not wanted. For example if you track a page view, the Custom Dimension value will be as well tracked for each following event, outlink, download, etc. within the same page load. To delete a Custom Dimension value after a tracking request call
+`_paq.push(['deleteCustomDimension', customDimensionId]);`
+
+### Tracking a Custom Dimension for one specific action only
+
+It is possible to set a Custom Dimension for one specific action only. If you want to track a Page view, you can send one or more specific Custom Dimension values along with this tracking request as follows:
+
+`_paq.push(['trackPageView', pageTitle, {dimension1: 'DimensionValue'}]);`
+
+To define a dimension value pass an object defining one or multiple properties as the last parameter. The property name for a dimension starts with `dimension` followed by a Custom Dimension ID, for example `dimension1`. The same behaviour applies for several other methods:
+
+```javascript
+_paq.push(['trackEvent', category, action, name, value, {dimension1: 'DimensionValue'}]);
+_paq.push(['trackSiteSearch', keyword, category, resultsCount, {dimension1: 'DimensionValue'}]);
+_paq.push(['trackLink', url, linkType, {dimension1: 'DimensionValue'}]);
+_paq.push(['trackGoal', idGoal, customRevenue, {dimension1: 'DimensionValue'}]);
+```
+
+The advantage is that the set dimension value will be only used for this particular action and you do not have to delete the value after a tracking request. You may set multiple dimension values like this:
+
+`_paq.push(['trackPageView', pageTitle, {dimension1: 'DimensionValue', dimension4: 'Test', dimension7: 'Value'}]);`
+
+### Retrieving a Custom Dimension value
+
+```javascript
+getCustomDimension(customDimensionId)
+```
+
+This function can be used to get the value of a Custom Dimension. It will only work if a Custom Dimension was set during the same page load.
+
+
 ## User ID
 
 [User ID](http://piwik.org/docs/user-id/) is a feature in Piwik that lets you connect together a given user's data collected from multiple devices and multiple browsers. There are two steps to implementing User ID:

@@ -71,9 +71,12 @@ Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)*
 *   `getUserId()` - returns the User ID string if it was set.
 *   `setUserId( userId )` -  Sets a [User ID](http://piwik.org/docs/user-id/) to this user (such as an email address or a username).
 *   `setCustomVariable (index, name, value, scope)` - Set a custom variable.
-*   `deleteCustomVariable (index, scope )` - Delete a custom variable.
-*   `getCustomVariable (index, scope )` - Retrieve a custom variable.
+*   `deleteCustomVariable (index, scope)` - Delete a custom variable.
+*   `getCustomVariable (index, scope)` - Retrieve a custom variable.
 *   `storeCustomVariablesInCookie()` -  When called then the Custom Variables of scope "visit" will be stored (persisted) in a first party cookie for the duration of the visit. This is useful if you want to call `getCustomVariable` later in the visit. (by default custom variables are not stored on the visitor's computer.)
+*   `setCustomDimension (customDimensionId, customDimensionValue)` - Set a custom dimension. (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
+*   `deleteCustomDimension (customDimensionId)` - Delete a custom dimension. (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
+*   `getCustomDimension (customDimensionId)` - Retrieve a custom dimension. (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
 *   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](http://piwik.org/faq/how-to/#faq_120))
 *   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](http://piwik.org/faq/how-to/#faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
