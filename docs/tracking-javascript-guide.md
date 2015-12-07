@@ -431,6 +431,7 @@ For example, if your website has user profiles, you could track each user profil
 
 ```javascript
 // idSite = X for the Homepage
+// for website id=X, Alias URL is set to `example.com/`
 _paq.push(['setSiteId', X]);
 
 _paq.push(['setTrackerUrl', u+'piwik.php']);
@@ -441,6 +442,7 @@ In the `/user/myusername` page, you would write:
 
 ```javascript
 // The idSite Y will be different from other user pages
+// for website id=Y, Alias URL is set to `example.com/user/MyUsername` 
 _paq.push(['setSiteId', Y]);
 _paq.push(['setCookiePath', '/user/MyUsername']);
 
