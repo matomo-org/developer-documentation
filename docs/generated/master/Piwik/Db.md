@@ -45,6 +45,7 @@ The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
 - [`getDatabaseConfig()`](#getdatabaseconfig)
+- [`setDatabaseObject()`](#setdatabaseobject) &mdash; For tests only.
 - [`createDatabaseObject()`](#createdatabaseobject) &mdash; Connects to the database.
 - [`destroyDatabaseObject()`](#destroydatabaseobject) &mdash; Disconnects and destroys the database connection.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
@@ -92,6 +93,19 @@ Returns the database connection and creates it if it hasn't been already.
 
 -  It accepts the following parameter(s):
     - `$dbConfig`
+      
+- It does not return anything.
+
+<a name="setdatabaseobject" id="setdatabaseobject"></a>
+<a name="setDatabaseObject" id="setDatabaseObject"></a>
+### `setDatabaseObject()`
+
+For tests only.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$connection` (`Piwik\$connection`) &mdash;
       
 - It does not return anything.
 
@@ -525,6 +539,8 @@ retry a set number of times.
 
 - *Returns:*  `bool` &mdash;
     `true` if the lock was obtained, `false` if otherwise.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if Lock name is too long
 
 <a name="releasedblock" id="releasedblock"></a>
 <a name="releaseDbLock" id="releaseDbLock"></a>
