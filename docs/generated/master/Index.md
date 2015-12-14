@@ -933,7 +933,6 @@ Index
 
 - [`Truncate`](Piwik/DataTable/Filter/Truncate.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`toString()`](Piwik/Date.md#tostring) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`today()`](Piwik/Date.md#today) &mdash; *Method in class* [`Date`](Piwik/Date.md)
-- [`tableExists()`](Piwik/Db.md#tableexists) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`$title`](Piwik/Notification.md#$title) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
 - [`$type`](Piwik/Notification.md#$type) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
 - [`toString()`](Piwik/Period.md#tostring) &mdash; *Method in class* [`Period`](Piwik/Period.md)
