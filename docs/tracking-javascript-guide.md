@@ -134,6 +134,17 @@ _paq.push(['trackGoal', 1, <?php echo $cart->getCartValue(); ?>]);
 
 Find more information about goal tracking in Piwik in the [**Tracking Goals**](http://piwik.org/docs/tracking-goals-web-analytics/) documentation.
 
+### Accurately measure the time spent on each page
+
+By default, when a user visits only one page view during a visit, Piwik will assume that the visitor has spent 0 second on the website. If the visitor views more than one page, then the last page view of the visit will have a "Time spent on page" of 0 second. It is possible to configure Piwik so that it accurately measures the time spent on the last page of a visit. To better measure time spent on the page, add to your JavaScript code the following:
+
+```javascript
+// accurately measure the time spent on the last pageview of a visit
+_paq.push(['enableHeartBeatTimer']);
+```
+
+Piwik will then send requests to count the actual time spent on the page, when the user is actively viewing the page (ie. when the tab is active and in focus). These heartbeat requests will not track additional actions or pageviews.
+
 ## Ecommerce tracking
 
 Piwik allows for advanced and powerful Ecommerce tracking. Check out the [Ecommerce Analytics](http://piwik.org/docs/ecommerce-analytics/) documentation for more information about Ecommerce reports and how to set up Ecommerce tracking.
