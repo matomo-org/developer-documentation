@@ -136,14 +136,25 @@ Find more information about goal tracking in Piwik in the [**Tracking Goals**](h
 
 ### Accurately measure the time spent on each page
 
-By default, when a user visits only one page view during a visit, Piwik will assume that the visitor has spent 0 second on the website. If the visitor views more than one page, then the last page view of the visit will have a "Time spent on page" of 0 second. It is possible to configure Piwik so that it accurately measures the time spent on the last page of a visit. To better measure time spent on the page, add to your JavaScript code the following:
+By default, when a user visits only one page view during a visit, Piwik will assume that the visitor has spent 0 second on the website. This has a few consequences:
+
+* when the visitor views only one page view, the "Visit duration" will be 0 second.
+* when the visitor views more than one page, then the last page view of the visit will have a "Time spent on page" of 0 second. 
+
+It is possible to configure Piwik so that it accurately measures the time spent on the last page of a visit. To better measure time spent on the page, add to your JavaScript code the following:
 
 ```javascript
 // accurately measure the time spent on the last pageview of a visit
 _paq.push(['enableHeartBeatTimer']);
 ```
 
-Piwik will then send requests to count the actual time spent on the page, when the user is actively viewing the page (ie. when the tab is active and in focus). These heartbeat requests will not track additional actions or pageviews.
+Piwik will then send requests to count the actual time spent on the page, when the user is actively viewing the page (ie. when the tab is active and in focus). These heartbeat requests will not track additional actions or pageviews. By default, Piwik will send a heartbeat request every `15` seconds. You may change the default interval, for example to send a request every `30` seconds:
+
+```javascript
+// accurately measure time spent on the last pageview
+// set the default heart beat interval to 30 seconds
+_paq.push(['enableHeartBeatTimer', 30]);
+```
 
 ## Ecommerce tracking
 
