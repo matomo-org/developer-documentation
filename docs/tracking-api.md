@@ -131,7 +131,8 @@ Some applications such as the [Piwik log importer](http://piwik.org/log-analytic
 
 To send a bulk tracking request, an HTTP POST must be made with a JSON object to the Piwik tracking endpoint. The object must contain the following properties:
 
-* `requests` &mdash; an array of individual tracking requests. Each tracking request should be the query string you'd send if you were going to track that action individually.
+* `requests` &mdash; an array of individual tracking requests. Each tracking request should be the query string you'd send if you were going to track that action individually. 
+  * Note that for Piwik to store your tracking data accurately, your tracking requests should be sent in chronological order (the oldest requests should appear first).
 * `token_auth` &mdash; (optional) token_auth which is found in the API page. Specify this only needed if you use any of the parameters that require `token_auth`
 
 ### Example Requests
