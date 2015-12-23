@@ -97,7 +97,7 @@ The following parameters require that you set `&token_auth=` to the token\_auth 
 
 * `token_auth` &mdash; 32 character authorization key used to authenticate the API request.
 * `cip` &mdash; Override value for the visitor IP (both IPv4 and IPv6 notations supported).
-* `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is: `2011-04-05 00:11:42` (remember to URL encode the value!). The datetime must be sent in UTC timezone.
+* `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is either a datetime such as: `2011-04-05 00:11:42` (remember to URL encode the value!), or a valid UNIX timestamp such as `1301919102`. The datetime must be sent in UTC timezone.
  _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](http://piwik.org/faq/how-to/#faq_59)._
  If you set `cdt` to a datetime older than four hours then `token_auth` must be set. If you set `cdt` with a datetime in the last four hours then you don't need to pass `token_auth`.
 * `country` &mdash; An override value for the country. Should be set to the two letter country code of the visitor (lowercase), eg **fr**, **de**, **us**.
