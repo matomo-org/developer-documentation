@@ -89,7 +89,7 @@ Use the following values to record a cart and/or an ecommerce order.
 * `ec_tx` &mdash; Tax Amount of the order
 * `ec_sh` &mdash; Shipping cost of the Order
 * `ec_dt` &mdash; Discount offered
-* `_ects`  &mdash; The UNUX timestamp of this customer's last ecommerce order. This value is used to process the "Days since last order" report.
+* `_ects`  &mdash; The UNIX timestamp of this customer's last ecommerce order. This value is used to process the "Days since last order" report.
 
 #### Other parameters (require authentication via `token_auth`)
 
