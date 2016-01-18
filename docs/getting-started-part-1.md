@@ -69,7 +69,7 @@ The following tools aren't required for this guide, but you may find them useful
 
 We'll get the latest version of Piwik's source code using git.
 
-Open a terminal and `cd` into the directory where you want to install Piwik. Then run the following commands:
+Open a terminal and `cd` into the directory where you want to install Piwik. Then run the following commands (without the leading `$`):
 
     $ git clone https://github.com/piwik/piwik piwik
     $ cd piwik
