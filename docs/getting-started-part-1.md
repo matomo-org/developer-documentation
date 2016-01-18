@@ -65,6 +65,8 @@ The following tools aren't required for this guide, but you may find them useful
 - **[xhprof](https://github.com/facebook/xhprof)** If you'd like to profile your code and debug any inefficiencies.
 - **[python](https://www.python.org/)** If you want to use the log importer.
 
+If your computer is using Debian based operating system, you may install all required packages with the following command: `sudo apt-get install php5 php5-curl php5-gd php5-cli php5-geoip mysql-server php5-mysql`
+
 ### Get & Install Piwik
 
 We'll get the latest version of Piwik's source code using git.
