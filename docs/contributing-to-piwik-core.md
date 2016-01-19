@@ -110,6 +110,12 @@ If there are conflicts, you can read this guide: [How to resolve Git conflicts](
 
 Now that you've finished the bug fix or new feature (or just part of it), it's time to commit your changes and push them to your fork (the `origin` remote).
 
+```bash
+git add ModifiedFile.php AnotherFile.js
+git commit -m'Added new feature: XYZ (replace this with a descriptive commit message)'
+git push
+```
+
 You can read [this guide](https://www.atlassian.com/git/tutorials/saving-changes/git-add) to learn how to commit changes. You can read [this guide](https://help.github.com/articles/pushing-to-a-remote/) to learn how to push commits.
 
 ### Creating a pull request
