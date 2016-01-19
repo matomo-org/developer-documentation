@@ -28,11 +28,11 @@ Once you've decided on something, continue below.
 
 ### Getting a copy of Piwik to work on
 
-Before you can start contributing you need to get setup with [git](http://git-scm.com/) & [GitHub](https://github.com). If needed, you can [create a GitHub account here](https://github.com/).
+Before you can start contributing you need to get setup with [git](http://git-scm.com/) & [GitHub](https://github.com). If needed, you can [create a GitHub account here](https://github.com/). 
 
 #### Fork the Piwik repository
 
-While logged in GitHub, visit [Piwik's repository](https://github.com/piwik/piwik). In the upper right corner there is a _Fork_ button. Click it. Github will copy the repository into your account. This copy (or fork) is the one you will work on.
+While logged in GitHub, visit [Piwik's repository](https://github.com/piwik/piwik). In the upper right corner there is a _Fork_ button. Click it. Github will copy the repository into your account. This copy (or fork) is the one you will work on. If you don't know forks, read more about [forks on GitHub](https://help.github.com/articles/fork-a-repo/).
 
 #### Setup git
 
