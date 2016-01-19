@@ -8,7 +8,7 @@ category: DevelopInDepth
 **Read this guide if**
 
 * you've **found a bug, fixed it and want to know how to get your fix accepted upstream**
-* you're **interested in contributing changes to Piwik and _want to know where to start_ or _want what the process is like_**
+* you're **interested in contributing changes to Piwik and _want to know where to start_ or _want to know what the process is like_**
 * you'd like to know **what Piwik developers consider to be good code**
 
 **Guide assumptions**
