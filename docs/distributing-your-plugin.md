@@ -147,10 +147,12 @@ Once your plugin is on a Github repository, you need to let the marketplace know
 To activate this webhook, follow these steps:
 
 1. Go to your plugin's Github repo in a browser.
-2. Click on **Service Hooks**.
-3. Search for `piwik` and click the option **Piwik Plugins**.
-4. Click the **Active** checkbox.
-5. Click the **Add service** button.
+2. Click on **Settings**
+3. Click on **Webhooks & services**
+4. Click on **Add service**
+5. Search for `piwik` and click the option **Piwik Plugins**.
+6. Click the **Active** checkbox.
+7. Click the **Add service** button.
 
 The marketplace will now be notified every time you push a commit or a tag to your repository.
 
