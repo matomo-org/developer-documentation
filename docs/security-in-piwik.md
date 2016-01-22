@@ -43,6 +43,14 @@ var ajaxData = getDataFromAjax();
 $('#someLabel').text(ajaxData.labelToUse);
 ```
 
+To escape strings in JavaScript you may use the helper method `piwikHelper.escape` for example:
+
+```javascript
+var safeString = piwikHelper.escape( userInputUnsafeString );
+$('#someLabel').text( safeString );
+```
+
+
 ## Preventing CSRF
 
 [CSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks is where an attacker make a Piwik user perform an action unwillingly. To achieve that, the attacker sends a link to the user. The link could, for example, point to a Piwik controller method that changes the user's password, or delete a site.
