@@ -47,6 +47,20 @@ Below is the list of all supported environment variables:
     ```
 
     By default, one build will run the PHP tests against the minimum required Piwik version.
+    
+  * **PIWIK\_TEST\_TARGET**
+  
+   This variable can be used to specify an exact Piwik version number / branch or the `maximum_supported_piwik` the test should run against. By specifying `maximum_supported_piwik` your tests will automatically run against the highest supported Piwik version number in your `plugin.json`. If no maximum Piwik version is specified, the tests will automatically run against the latest beta. To specify a max version in `plugin.json` you can eg specify `"require": {"piwik": ">=2.15.0-rc1,<=2.15.1-b11"}`. In this case max supported version is `2.15.1-b11`. For more information on how to specify supported Piwik versions in your plugin have a look at the [distributing your Piwik plugin](http://developer.piwik.org/guides/distributing-your-plugin#prepare-your-plugin) guide.
+  
+    This variable should be set as a global environment variable, eg:
+
+    ```
+    env:
+      global:
+        - PIWIK_TEST_TARGET="maximum_supported_piwik"  // run test against max supported version... 
+        - PIWIK_TEST_TARGET="2.15.0"  // ... or against a specific version
+    ```
+
 
   * **DEPENDENT\_PLUGINS**
 
