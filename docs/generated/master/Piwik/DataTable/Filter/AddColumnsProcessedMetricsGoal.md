@@ -42,7 +42,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; Manipulates a DataTable in some way.
+- [`filter()`](#filter) &mdash; Adds the processed metrics.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -66,7 +66,10 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Manipulates a DataTable in some way.
+Adds the processed metrics.
+
+See [AddColumnsProcessedMetrics](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetrics) for
+more information.
 
 #### Signature
 

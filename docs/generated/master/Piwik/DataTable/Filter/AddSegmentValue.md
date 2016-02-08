@@ -19,7 +19,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; Manipulates a DataTable in some way. Inherited from [`ColumnCallbackAddMetadata`](../../../Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md)
+- [`filter()`](#filter) &mdash; See [ColumnCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddMetadata). Inherited from [`ColumnCallbackAddMetadata`](../../../Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -39,7 +39,7 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Manipulates a DataTable in some way.
+See [ColumnCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddMetadata).
 
 #### Signature
 
