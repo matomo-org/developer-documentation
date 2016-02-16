@@ -22,7 +22,7 @@ The PSR-3 implementation that Piwik has chosen is [Monolog](https://github.com/S
 To log messages, you need to get an instance of the logger. To do this, you can use dependency injection by injecting `Psr\Log\LoggerInterface` or you can retrieve the logger from the container:
 
 ```php
-$logger = StaticContainer::getInstance()->get('Psr\Log\LoggerInterface');
+$logger = StaticContainer::getContainer()->get('Psr\Log\LoggerInterface');
 ```
 
 You can then log messages using any severity level:
