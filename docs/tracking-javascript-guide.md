@@ -470,7 +470,7 @@ _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
 
-This default tracking code also works if you are tracking one specific subdomain.
+If you are tracking one specific subdomain, this default tracking code also works.
 
 ### Tracking one domain and its subdomains in the same website
 
@@ -491,10 +491,11 @@ _paq.push(['trackPageView']);
 
 ### Tracking subdirectories of a domain in separate websites
 
-When tracking many subdirectories in separate websites, with the default tracking code, the number of cookies can quickly increase and some cookies could be deleted by the browser. To prevent this issue and also generally improve performance for your users, we use the function `setCookiePath` so that cookies are created and only used for pages in this path. 
+When tracking subdirectories of a domain in their own separate Piwik website, it is recommended to customise the tracking code to ensure optimal data accuracy and performance. 
 
-Also you can configure Piwik to correctly track clicks to your other websites (in separate subdirectories) as 'Outlinks'. The function `setDomains` is used.
+When tracking many subdirectories in separate websites, with the default tracking code, the number of cookies can quickly increase and some cookies could be deleted by the browser. To prevent this issue and also generally improve performance for your users, use the function `setCookiePath` so that cookies are created and only used for pages in this path. 
 
+Also, correctly measure clicks to your other websites (click on separate subdirectories) as 'Outlinks' with `setDomains`.
 
 For example, if your website offers a 'User profile' functionality, you may wish to track each user profile pages in a separate website in Piwik. In the main domain homepage, you would use the default tracking code:
 
@@ -502,12 +503,11 @@ For example, if your website offers a 'User profile' functionality, you may wish
 // idSite = X for the Homepage
 // In Administration > Websites for idSite=X, the URL is set to `example.com/`
 _paq.push(['setSiteId', X]);
-
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
 
-In the `/user/MyUsername` page, you would use `setCookiePath` and `setDomains`:
+In the `/user/MyUsername` page (and all other user profiles), you would use their custom `setSiteId`, `setCookiePath` and `setDomains`:
 
 ```javascript
 // The idSite Y will be different from other user pages
