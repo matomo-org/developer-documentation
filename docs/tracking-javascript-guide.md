@@ -522,7 +522,8 @@ _paq.push(['trackPageView']);
 
 When tracking many subdirectories in separate websites, the function `setCookiePath` prevents the number of cookies to quickly increase and prevent browser from deleting some of the cookies. This ensures optimal data accuracy and improves performance for your users (less cookies are sent with each request).
 
-Also, the function`setDomains` ensures that clicks going outside of your website (to a separate subdirectories) are tracked as 'Outlinks'.
+The function`setDomains` ensures that clicks of users leaving your website (subdirectory `example.com/user/MyUsername`) are correctly tracked as 'Outlinks'.
+
 
 For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](http://piwik.org/faq/new-to-piwik/#faq_104)
 
