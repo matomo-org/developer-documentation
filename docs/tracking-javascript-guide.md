@@ -457,13 +457,7 @@ Be aware that each call to those methods will send one request to your Piwik tra
 
 ## Measuring domains and/or sub-domains
 
-### What to look out for
-
-#### Cookie configuration
-
-Piwik uses first-party cookies to keep track some information (number of visits, original referrer, and unique visitor ID). First-party cookies ensure higher user privacy (since cookies are not sent from a third-party server), and are therefore accepted in most browsers by default.
-
-Piwik creates a set of cookies for each domain and subdomain. When you want to accurately track users across several subdomains, it is necessary to customize the Piwik Tracking code to ensure the cookies are shared.
+Whether you are tracking one domain, or a subdomain, or both at the same time, etc. you may need to configure the Piwik JavaScript tracking code. There are two things that may need to be configured: 1) how tracking cookies are created and shared, and 2) which clicks should be tracked as 'Outlinks'.
 
 ### Tracking one domain
 
@@ -475,6 +469,8 @@ _paq.push(['setSiteId', 1]);
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
+
+This default tracking code also works if you are tracking one specific subdomain.
 
 ### Tracking one domain and its subdomains in the same website
 
