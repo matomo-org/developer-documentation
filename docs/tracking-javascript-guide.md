@@ -524,7 +524,7 @@ When tracking many subdirectories in separate websites, the function `setCookieP
 
 The function`setDomains` ensures that clicks of users leaving your website (subdirectory `example.com/user/MyUsername`) are correctly tracked as 'Outlinks'.
 
-### Tracking a group of pages in a separate websites
+### Tracking a group of pages in a separate website
 
 In some rare cases, you may want to track all pages matching a wildcard in a particular website, and track clicks on other pages (not matching the wildcard) as 'Outlinks'.
 
