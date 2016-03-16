@@ -535,17 +535,18 @@ In the pages `/index_fr.htm` or `/index_en.htm` write:
 // Tell Piwik that any click to links not starting with 'example.com/index' will be tracked as 'Outlinks'
 _paq.push(['setDomains', 'example.com/index*']); 
 
-// When tracking multiple pages/paths with a * wildcard (line above),  we set the cookie domain to 
-// the main domain name to ensure that any page matching wildcard will be able to use this cookie
-_paq.push(['setCookieDomain', 'example.com']);
-
+// When using a wildcard *, we do not call `setCookieDomain` or `setCookiePath` 
+// as cookies will be by default created in the main domain (correctly)
 
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
 
-Note: the wildcard `*` is supported only when specified at the end of the string.
+Notes: 
+* the wildcard `*` is supported only when specified at the end of the string.
+* since the wildcard can match several paths, calls to `setCookieDomain` or `setCookiePath` are omitted to ensure tracking cookie is correctly shared for all pages matching the wildcard.
 
+### Tracking a group of pages in a separate website
 
 For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](http://piwik.org/faq/new-to-piwik/#faq_104)
 
