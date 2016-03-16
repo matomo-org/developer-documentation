@@ -532,10 +532,6 @@ In the pages `/index_fr.htm` or `/index_en.htm` write:
 
 
 ```javascript
-// The idSite Y will be different from other user pages
-// In Administration > Websites for idSite=Y, the URL is set to `example.com/user/MyUsername`
-_paq.push(['setSiteId', Y]);
-
 // When tracking multiple pages/paths (
 _paq.push(['setCookieDomain', 'example.com']);
 
