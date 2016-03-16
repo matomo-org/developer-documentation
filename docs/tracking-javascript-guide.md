@@ -455,15 +455,13 @@ div.addEventListener('click', function () {
 
 Be aware that each call to those methods will send one request to your Piwik tracker instance. Doing this too many times can cause performance problems.
 
-## Cookie configuration
+## Measuring domains and/or sub-domains
 
-Piwik uses first-party cookies to keep track some information (number of visits, original referrer, and unique visitor ID). First-party cookies ensure higher user privacy (since cookies are not sent to a third-party server), and are therefore accepted in most browsers by default.
-
-Piwik creates a set of cookies for each domain and subdomain. If you want to track some subdomains and share the same cookie for accurate statistics, it is necessary to customize the Piwik Tracking code.
+Whether you are tracking one domain, or a subdomain, or both at the same time, etc. you may need to configure the Piwik JavaScript tracking code. There are two things that may need to be configured: 1) how tracking cookies are created and shared, and 2) which clicks should be tracked as 'Outlinks'.
 
 ### Tracking one domain
 
-This is the standard use case. Piwik tracks the visits of one domain name with no subdomain, in a single Piwik website.
+This is the standard use case. Piwik tracks the visits of one domain name with no subdomain, in a single Piwik website. 
 
 ```javascript
 // Default Tracking code
@@ -472,45 +470,54 @@ _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
 
-### Tracking subdomains in the same website
+This default tracking code also works if you are tracking one specific subdomain.
 
-If you want to record visits for the main domain name as well as its subdomains, you would want to share cookies across all domains. You can do so by calling `setCookieDomain()`, in all subdomains tracking codes.
+### Tracking one domain and its subdomains in the same website
+
+To record users across the main domain name and any of its subdomains, we tell Piwik to share the cookies across all subdomains. `setCookieDomain()` is called in the Piwik tracking code in example.com/* and all subdomains.
 
 ```javascript
 _paq.push(['setSiteId', 1]);
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 
-// Same cookie as: example.com, www.example.com, subdomain.example.com, ...
+// Share the tracking cookie across example.com, www.example.com, subdomain.example.com, ...
 _paq.push(['setCookieDomain', '*.example.com']);
-_paq.push(['setDomains', '*.example.com']); // Download & Click tracking alias domains
+
+// Tell Piwik the website domain so that clicks on these domains are not tracked as 'Outlinks'
+_paq.push(['setDomains', '*.example.com']); 
 
 _paq.push(['trackPageView']);
 ```
 
-### Tracking subdirectories or pages as different websites
+### Tracking subdirectories of a domain in separate websites
 
-By default, Piwik uses only one cookie for a domain name, and all its pages and subdirectories.
+There may be cases where you track a subdirectory as a separate website in Piwik. If a visitor visits more than a few subdirectories, by default it would cause some inaccuracy in your reports: time on site, number of visits, conversion referrer, returning and new visitors. These data issues are a result of the default behavior of Piwik which is to re-use the same tracking cookie for all subdirectories (which are actually separate websites). Also, another issue is that clicks on other pages would not be tracked as Outlinks but you would likely like to measure clicks from one subdirectory to another, and see how many users move across your separate websites.
 
-There may be cases where you track a subdirectory as a separate website in Piwik. If a visitor visits more than a few subdirectories, this will cause some inaccuracy in your reports: time on site, number of visits, conversion referrer, returning and new visitors. In this use case, you can ensure your reports stay accurate by creating a different cookie for each subpath you are tracking in different Piwik websites. The function `setCookiePath()` is used to set the Cookie path.
+To ensure your reports stay accurate, we make two modifications to the tracking code. First we tell Piwik to create a different cookie for each subdirectory, as they are measured in a separate Piwik website. We use the function `setCookiePath`. Then we use `setDomains` to correctly track clicks to other websites (subdirectories) as 'Outlinks'.
 
-For example, if your website has user profiles, you could track each user profile page analytics as a unique website in Piwik. In the main domain homepage, you would use the default tracking code.
+For example, if your website has User profiles, you could track each user profile page analytics in a separate website in Piwik. In the main domain homepage, you would use the default tracking code.
 
 ```javascript
 // idSite = X for the Homepage
-// for website id=X, Alias URL is set to `example.com/`
+// In Administration > Websites for idSite=X, the URL is set to `example.com/`
 _paq.push(['setSiteId', X]);
 
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
 
-In the `/user/myusername` page, you would write:
+In the `/user/MyUsername` page, you would write:
 
 ```javascript
 // The idSite Y will be different from other user pages
-// for website id=Y, Alias URL is set to `example.com/user/MyUsername` 
+// In Administration > Websites for idSite=Y, the URL is set to `example.com/user/MyUsername`
 _paq.push(['setSiteId', Y]);
+
+// Create the tracking cookie specifically in `example.com/user/MyUsername`
 _paq.push(['setCookiePath', '/user/MyUsername']);
+
+// Tell Piwik the website domain so that clicks on other pages (eg. /user/AnotherUsername) will be tracked as 'Outlinks'
+_paq.push(['setDomains', 'example.com/user/MyUsername']); 
 
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
@@ -541,6 +548,8 @@ Since Piwik 2.15.1 you may also append a path to a domain and Piwik will correct
 // Track all clicks not pointing to *.hostname1.com/product1/* or *.hostname2.com/product1/* as outlink.
 _paq(['setDomains', ["*.hostname1.com/product1", "hostname2.com/product1"]]);
 ```
+
+Learn more about this use case [Tracking subdirectories in separate websites](#tracking-subdirectories-in-separate-websites).
 
 ### Disabling Download & Outlink tracking
 
