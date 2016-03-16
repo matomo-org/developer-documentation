@@ -532,11 +532,13 @@ In the pages `/index_fr.htm` or `/index_en.htm` write:
 
 
 ```javascript
-// When tracking multiple pages/paths (
-_paq.push(['setCookieDomain', 'example.com']);
-
 // Tell Piwik that any click to links not starting with 'example.com/index' will be tracked as 'Outlinks'
 _paq.push(['setDomains', 'example.com/index*']); 
+
+// When tracking multiple pages/paths with a * wildcard (line above),  we set the cookie domain to 
+// the main domain name to ensure that any page matching wildcard will be able to use this cookie
+_paq.push(['setCookieDomain', 'example.com']);
+
 
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
