@@ -493,10 +493,6 @@ _paq.push(['trackPageView']);
 
 When tracking subdirectories of a domain in their own separate Piwik website, it is recommended to customise the tracking code to ensure optimal data accuracy and performance. 
 
-When tracking many subdirectories in separate websites, with the default tracking code, the number of cookies can quickly increase and some cookies could be deleted by the browser. To prevent this issue and also generally improve performance for your users, use the function `setCookiePath` so that cookies are created and only used for pages in this path. 
-
-Also, correctly measure clicks to your other websites (click on separate subdirectories) as 'Outlinks' with `setDomains`.
-
 For example, if your website offers a 'User profile' functionality, you may wish to track each user profile pages in a separate website in Piwik. In the main domain homepage, you would use the default tracking code:
 
 ```javascript
@@ -524,6 +520,10 @@ _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
 
+When tracking many subdirectories in separate websites, the function `setCookiePath` prevents the number of cookies to quickly increase and prevent browser from deleting some of the cookies. This ensures optimal data accuracy and improves performance for your users (less cookies are sent with each request).
+
+Also, the function`setDomains` ensures that clicks going outside of your website (to a separate subdirectories) are tracked as 'Outlinks'.
+
 For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](http://piwik.org/faq/new-to-piwik/#faq_104)
 
 ## Download & Outlink tracking
@@ -550,7 +550,7 @@ Since Piwik 2.15.1 you may also append a path to a domain and Piwik will correct
 _paq(['setDomains', ["*.hostname1.com/product1", "hostname2.com/product1"]]);
 ```
 
-Learn more about this use case [Tracking subdirectories in separate websites](#tracking-subdirectories-in-separate-websites).
+Learn more about this use case [Tracking subdirectories of a domain in separate websites](#tracking-subdirectories-of-a-domain-in-separate-websites).
 
 ### Disabling Download & Outlink tracking
 
