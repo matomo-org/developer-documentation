@@ -546,7 +546,6 @@ Notes:
 * the wildcard `*` is supported only when specified at the end of the string.
 * since the wildcard can match several paths, calls to `setCookieDomain` or `setCookiePath` are omitted to ensure tracking cookie is correctly shared for all pages matching the wildcard.
 
-### Tracking a group of pages in a separate website
 
 For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](http://piwik.org/faq/new-to-piwik/#faq_104)
 
