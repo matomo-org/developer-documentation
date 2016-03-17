@@ -534,17 +534,18 @@ In the pages `/index_fr.htm` or `/index_en.htm` write:
 
 
 ```javascript
-// Tell Piwik that any click to links not starting with 'example.com/index' will be tracked as 'Outlinks'
+// clicks on links not starting with example.com/index will be tracked as 'Outlinks'
 _paq.push(['setDomains', 'example.com/index*']); 
 
-// When using a wildcard *, we do not need to configure cookies with `setCookieDomain` or `setCookiePath` 
-// as by default cookies are correctly created in the main domain
+// when using a wildcard *, we do not need to configure cookies with `setCookieDomain` 
+// or `setCookiePath` as cookies are correctly created in the main domain by default
 
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
 
 Notes: 
+
 * the wildcard `*` is supported only when specified at the end of the string.
 * since the wildcard can match several paths, calls to `setCookieDomain` or `setCookiePath` are omitted to ensure tracking cookie is correctly shared for all pages matching the wildcard.
 
