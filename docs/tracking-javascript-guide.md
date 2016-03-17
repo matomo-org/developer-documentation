@@ -503,7 +503,7 @@ _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
 ```
 
-In the `/user/MyUsername` page (and all other user profiles), you would use their custom `setSiteId`, `setCookiePath` and `setDomains`:
+In the `example.com/user/MyUsername` page (and in every other user profile), you would construct calls to custom `setSiteId`, `setCookiePath` and `setDomains`:
 
 ```javascript
 // The idSite Y will be different from other user pages
@@ -522,7 +522,32 @@ _paq.push(['trackPageView']);
 
 When tracking many subdirectories in separate websites, the function `setCookiePath` prevents the number of cookies to quickly increase and prevent browser from deleting some of the cookies. This ensures optimal data accuracy and improves performance for your users (less cookies are sent with each request).
 
-Also, the function`setDomains` ensures that clicks going outside of your website (to a separate subdirectories) are tracked as 'Outlinks'.
+The function`setDomains` ensures that clicks of users leaving your website (subdirectory `example.com/user/MyUsername`) are correctly tracked as 'Outlinks'.
+
+### Tracking a group of pages in a separate website
+
+*(available since Piwik 2.16.1)*
+
+In some rare cases, you may want to track all pages matching a wildcard in a particular website, and track clicks on other pages (not matching the wildcard) as 'Outlinks'.
+
+In the pages `/index_fr.htm` or `/index_en.htm` write: 
+
+
+```javascript
+// Tell Piwik that any click to links not starting with 'example.com/index' will be tracked as 'Outlinks'
+_paq.push(['setDomains', 'example.com/index*']); 
+
+// When using a wildcard *, we do not need to configure cookies with `setCookieDomain` or `setCookiePath` 
+// as by default cookies are correctly created in the main domain
+
+_paq.push(['setTrackerUrl', u+'piwik.php']);
+_paq.push(['trackPageView']);
+```
+
+Notes: 
+* the wildcard `*` is supported only when specified at the end of the string.
+* since the wildcard can match several paths, calls to `setCookieDomain` or `setCookiePath` are omitted to ensure tracking cookie is correctly shared for all pages matching the wildcard.
+
 
 For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](http://piwik.org/faq/new-to-piwik/#faq_104)
 
