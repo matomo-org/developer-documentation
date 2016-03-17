@@ -526,6 +526,8 @@ The function`setDomains` ensures that clicks of users leaving your website (subd
 
 ### Tracking a group of pages in a separate website
 
+*(available since Piwik 2.16.1)*
+
 In some rare cases, you may want to track all pages matching a wildcard in a particular website, and track clicks on other pages (not matching the wildcard) as 'Outlinks'.
 
 In the pages `/index_fr.htm` or `/index_en.htm` write: 
@@ -535,8 +537,8 @@ In the pages `/index_fr.htm` or `/index_en.htm` write:
 // Tell Piwik that any click to links not starting with 'example.com/index' will be tracked as 'Outlinks'
 _paq.push(['setDomains', 'example.com/index*']); 
 
-// When using a wildcard *, we do not call `setCookieDomain` or `setCookiePath` 
-// as cookies will be by default created in the main domain (correctly)
+// When using a wildcard *, we do not need to configure cookies with `setCookieDomain` or `setCookiePath` 
+// as by default cookies are correctly created in the main domain
 
 _paq.push(['setTrackerUrl', u+'piwik.php']);
 _paq.push(['trackPageView']);
