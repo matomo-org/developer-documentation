@@ -133,7 +133,7 @@ Log data is represented in PHP as `Piwik\Tracker\Visit` objects, and is stored i
 - `log_conversion` contains conversions (actions that match goals) that happen during a visit
 - `log_conversion_item` contains e-commerce conversion items
 
-Those tables are designed and optimized for fast insertions, as the tracking API needs to be as fast as possible to handle website with heavy traffic.
+Those tables are designed and optimized for fast insertions, as the tracking API needs to be as fast as possible in order to handle websites with heavy traffic.
 
 The content of those tables (and their related PHP entities) is explained in more details in the ["Piwik database schema" guide](/guides/persistence-and-the-mysql-backend#log-data-persistence).
 
@@ -159,7 +159,7 @@ Archive data can be:
 
     These are stored in the `archive_blob_*` tables. `DataTable` objects are serialized to string and compressed to be stored as `BLOB` in the table.
     
-    `DataTable` objects stored in database are named *records* to differentiate them from `DataTable` objects manipulated and returned by Piwik's API that we name *reports*.
+    `DataTable` objects stored in the database are named *records* to differentiate them from `DataTable` objects manipulated and returned by Piwik's API that we name *reports*.
 
 Every numeric metric or table record is processed and stored at each aggregation level: day, week and month. For example, that means that the "Entry pages" report is processed and stored for every day of the month as well as for every week, month, year and custom date range. Such data is redundant, but that is essential to guarantee fast performances.
 
@@ -171,7 +171,7 @@ Because Archive data must be fast to query, it is splitted in separate tables pe
 - `archive_blob_2014_11`: reports for November 2014
 - …
 
-The content of those archive tables is explained in more details in the ["Piwik database schema" guide](/guides/persistence-and-the-mysql-backend#archive-tables). The archiving process is explained in details in the ["Archiving" guide](/guides/archiving).
+The contents of the archive tables are explained in detail in the ["Piwik database schema" guide](/guides/persistence-and-the-mysql-backend#archive-tables). The archiving process is explained in detail in the ["Archiving" guide](/guides/archiving).
 
 ### From Archive data to reports
 
