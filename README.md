@@ -47,7 +47,7 @@ define('DISABLE_INCLUDE', true);
 
 or just execute `./generateAndPush.sh`.
 
-The documents will be generated into the [docs/generated](docs/generated) directory. It will always generated the documentations for the master as well as for the latest stable version.
+The documents will be generated into the [docs/generated](docs/generated) directory. It will always generate the documentation for the master as well as for the latest stable version.
 
 ## Writing guides
 
@@ -88,7 +88,7 @@ To add a guide to a category (i.e. it will appear in the left sidebar) edit the 
 
 ## Supported inline tags in PHP comments
 
-The following tags can be used in PHP docblocks so that they can be turned to links in the API referenceIm.
+The following tags can be used in PHP docblocks so that they can be turned to links in the API reference.
 
 ```
 {@hook Request.dispatch}                    // link to Request.dispatch hook
