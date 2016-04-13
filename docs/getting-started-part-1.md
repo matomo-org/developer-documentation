@@ -11,7 +11,7 @@ TODO: (stuff that needs to go in SOME guide)
 
 ## About this guide
 
-You're a Piwik user and you need Piwik to do something it doesn't do. Or maybe you're a user of another web app and you want to integrate it with this amazing analytics software you've heard so much about (Piwik, naturally). Well, you've come to the right place!
+If you're a Piwik user and need Piwik to do something it doesn't do; or maybe you use another web app and want to integrate it with this amazing analytics software you've heard so much about (Piwik, naturally) — well, you've come to the right place!
 
 This guide will show you:
 
@@ -21,15 +21,15 @@ This guide will show you:
 
 **Guide assumptions**
 
-This guide assumes that you can code in PHP and can setup your own local webserver. If you do not have these skills, you will not be able to understand this guide.
+This guide assumes that you can code in PHP and can setup your own local webserver. If you do not have these skills, you won't be able to understand this guide.
 
-There are many resources on the internet to learn PHP. We recommend reading [these tutorials](http://devzone.zend.com/6/). To learn how to setup a webserver read the documentation for your preferred webserver software (for example [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/)).
+There are many resources on the internet to help you learn PHP. We recommend reading [these tutorials](http://devzone.zend.com/6/). To learn how to setup a web server read the documentation for your preferred web server software (for example [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/)).
 
 ## Piwik Plugins and Piwik Core
 
 All the functionality you see when you use Piwik is provided by **_Piwik Plugins_**. The core of Piwik (termed _**Piwik Core**_) only contains tools for those plugins.
 
-If you want to add more functionality to Piwik, create your own plugin then distribute it on the [Piwik Marketplace](http://plugins.piwik.org) so others can use it.
+If you want to add more functionality to Piwik, create your own plugin then distribute it on the [Piwik Marketplace](http://plugins.piwik.org) so that others can use it.
 
 _Note: If you want to integrate another piece of software with Piwik and you only need to know how to track visits or how to retrieve reports, read more about [Integrating Piwik in your application](/integration)._
 
@@ -52,7 +52,7 @@ These are only a few of the possibilities. Many of the existing plugins do thing
 
 Before we start extending Piwik, let's make sure you have the tools needed. You will need the following:
 
-- **A PHP IDE or a text editor.** We recommend to use [PhpStorm](http://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
+- **A PHP IDE or a text editor.** We recommend using [PhpStorm](http://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
 - **A webserver,** such as [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/). You can also use [PHP's built-in webserver](http://php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 5.4 or higher installed.
 - **A MySQL database**
 - **[git](http://git-scm.com/)** so you can work with the latest Piwik source code.
@@ -65,31 +65,31 @@ The following tools aren't required for this guide, but you may find them useful
 - **[xhprof](https://github.com/facebook/xhprof)** If you'd like to profile your code and debug any inefficiencies.
 - **[python](https://www.python.org/)** If you want to use the log importer.
 
-If your computer is using Debian based operating system, you may install all required packages with the following command: `sudo apt-get install php5 php5-curl php5-gd php5-cli php5-geoip mysql-server php5-mysql`
+If your computer is using a Debian based operating system, you can install all the required packages with the following command: `sudo apt-get install php5 php5-curl php5-gd php5-cli php5-geoip mysql-server php5-mysql`
 
 ### Get & Install Piwik
 
 We'll get the latest version of Piwik's source code using git.
 
-Open a terminal and `cd` into the directory where you want to install Piwik. Then run the following commands (without the leading `$`):
+Open a terminal, `cd` into the directory where you want to install Piwik, and then run the following commands (without the leading `$`):
 
     $ git clone https://github.com/piwik/piwik piwik
     $ cd piwik
     $ git submodule update --init
 
-Then run the following command to install the third party libraries:
+Run the following command to install third party libraries:
 
     $ php composer.phar install
     
-If this command fails, follow the [instructions to install Composer](https://getcomposer.org/doc/00-intro.md).
+If this command fails, follow the [installation instructions for Composer](https://getcomposer.org/doc/00-intro.md).
 
-Now that you've got a copy of Piwik, you'll need to point your webserver to it. If you use Apache or Nginx, the specific instructions for configuring your webserver depends on the webserver itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
+Now that you've got a copy of Piwik, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
 
-If your PHP version is greater than 5.4, you can also use [PHP's built-in webserver](http://php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
+If your PHP version is greater than 5.4, you can also use [PHP's built-in web server](http://php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
 
     $ php -S 0.0.0.0:8000
 
-Piwik should now be available at [http://localhost:8000/](http://localhost:8000/). To stop the webserver, just hit `Ctrl+C`. Remember that PHP's built in webserver is only suitable for development. It should **never** be used in production.
+Piwik should now be available at [http://localhost:8000/](http://localhost:8000/). To stop the web server, just hit `Ctrl+C`. Remember that PHP's built in web server is only suitable for development. It should **never** be used in production.
 
 Once Piwik is running, open it in your browser and follow the instructions to complete the installation.
 
@@ -104,7 +104,7 @@ This will make it possible to view raw report data without having to supply a **
 
 ### Enable Development mode
 
-After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier and to make sure all changes take affect immediately. Piwik comes with a handy command-line tool that will do this work for you. In the root directory of your Piwik install, run the following command to enable the development mode:
+After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier and to make sure all changes take affect immediately. Piwik comes with a handy command-line tool that will do this work for you. In the root directory of your Piwik install, run the following command to enable development mode:
 
     ./console development:enable
 
@@ -120,7 +120,7 @@ user = ...
 
 You're now ready to create your first plugin, but before we do that, let's add some test data for you to play with.
 
-In your browser load Piwik and navigate to _Administration > Plugins_. Look for the _Visitor Generator_ plugin and enable it. Then on the admin menu to the left, click on _Visitor Generator_ (under _Diagnostic_).
+In your browser, load Piwik and navigate to _Administration > Plugins_. Look for the _Visitor Generator_ plugin and enable it. Then on the admin menu to the left, click on _Visitor Generator_ (under _Diagnostic_).
 
 On this page you'll see a form where you can select a site and enter a number of days to generate data for:
 
@@ -128,7 +128,7 @@ On this page you'll see a form where you can select a site and enter a number of
 
 Let's generate data for three days. Enter **3** in the **Days to compute** field, check the **Yes, I am sure!** checkbox and click **Submit**.
 
-Once the visits have been added, click on the **Dashboard** link at the top of the screen. You should see that reports that were previously empty now display some statistics:
+Once the visits have been added, click on the **Dashboard** link at the top of the screen. You should see that reports which were previously empty now display some statistics:
 
 <img src="/img/dashboard_after_test_data.png"/>
 
@@ -166,10 +166,10 @@ The command-line tool will create a new directory for your plugin (in the **plug
 Ok! You've set up your development environment and created your plugin! Now all you have to do is make it do what you want. The bad news is that this is the hard part. The good news is that we've written a bunch of other guides to help you shorten the learning curve.
 
 - If you're interested in **creating new analytics reports**, you may want to read about [Custom Reports](/guides/custom-reports) and [Visualizing Report Data](/guides/visualizing-report-data) guides.
-- If you're interested in **changing the look and feel of Piwik**, read our [Theming](/guides/theming) guide.
-- If you're interested in **integrating Piwik with another technology**, you might want to read our [Tracking guides](/guides/tracking-introduction) to learn how to use our Tracking API.
-- If you want to **use automated testing to ensure your plugin works**, read your [Automated Tests](/guides/tests) guide.
+- If you're interested in **changing the look and feel of Piwik**, read the [Theming](/guides/theming) guide.
+- If you're interested in **integrating Piwik with another technology**, you might want to read the [Tracking guides](/guides/tracking-introduction) to learn how to use the Tracking API.
+- If you want to **use automated testing to ensure your plugin works**, read the [Automated Tests](/guides/tests) guide.
 
 And **make sure to read our security guide, [Security in Piwik](/guides/security-in-piwik)**! We have very high security standards that your plugin or contribution **must** respect.
 
-When you've completed your plugin, you can read our [Distributing your plugin](/guides/distributing-your-plugin) guide to learn how to **share your plugin with other Piwik users**.
+When you've completed your plugin, you can read the [Distributing your plugin](/guides/distributing-your-plugin) guide to learn how to **share your plugin with other Piwik users**.
