@@ -11,7 +11,7 @@ If you're creating a new plugin, you may find it beneficial to engage in [Test D
 
 ## Writing unit tests
 
-A unit test tests only a single method or class and does not use dependencies like the filesystem, web, config, database or to any other plugin.
+A unit test tests only a single method or class and does not use dependencies like the filesystem, web, config, database or any other plugin.
 
 To create a new unit test, use the console:
 
@@ -36,11 +36,11 @@ class WidgetsTest extends UnitTestCase
 }
 ```
 
-We don’t want to cover how you should write your unit test. This is totally up to you. If you have no experience in writing unit tests yet, we recommend to read articles on the topic, or a book, or to watch videos or anything else that will help you learn best.
+We don’t want to cover how you should write your unit test. This is totally up to you. If you have no experience writing unit tests we recommend reading articles or a book on the topic, watching videos or anything else that will help you learn best.
 
 ## Writing integration tests
 
-If your test needs access to a test Piwik database, filesystem, or any other dependency, create an integration test:
+If your test needs access to a test Piwik database, filesystem, or any other dependency — create an integration test:
 
 ```
 $ ./console generate:test --testtype integration
