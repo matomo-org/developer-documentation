@@ -24,8 +24,8 @@ Piwik is an application that does mainly two things:
 To achieve that result, several parts of Piwik come into play:
 
 - the [Javascript tracker](/api-reference/tracking-javascript) is served by Piwik via HTTP so that websites can include it in their pages
-- the tracker collects data on the web page its included in and sends it to Piwik by calling the [HTTP tracking API](/api-reference/tracking-api)
-- the **archiving** task runs and pre-process data (either on the fly or via a cron task)
+- the tracker collects data on the web page it's included in and sends it to Piwik by calling the [HTTP tracking API](/api-reference/tracking-api)
+- the **archiving** task runs and pre-processes data (either on the fly or via a cron task)
 - data is exposed in **reports**, which are accessible through the web interface or the [HTTP reporting API](/api-reference/reporting-api)
 
 ## The plugin architecture
@@ -56,7 +56,7 @@ vendor/         # Libraries installed by Composer
 console         # Entry point for the CLI interface
 index.php       # Entry point for the web application and the HTTP reporting API
 piwik.php       # Entry point for the HTTP tracking API
-piwik.js        # Javascript tracker to be included in websites
+piwik.js        # JavaScript tracker to be included in websites
 ```
 
 Piwik uses [Composer](https://getcomposer.org/) to install its dependencies (PHP libraries) into the `vendor/` directory.
@@ -77,9 +77,9 @@ Plugin controllers return a **view** (usually HTML content) which is sent in the
 
 #### User interface
 
-Piwik's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers (built using the [Twig templating engine](http://twig.sensiolabs.org/)), some parts of the Piwik UI are written using AngularJS.
+Piwik's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers (built using the [Twig templating engine](http://twig.sensiolabs.org/)), some parts of the Piwik UI are built with AngularJS.
 
-AngularJS is a JavaScript front-end framework, which means that the user interface is built on the client side and the data is fetched from the HTTP Reporting API (described in the next section) as JSON. That also means a better user experience as it lets Piwik developers build a more dynamic and reactive application.
+AngularJS is a front-end JavaScript framework, which means that the user interface is built on the client side and the data is fetched from the HTTP Reporting API (described in the next section) as JSON. That also means a better user experience as it lets Piwik developers build a more dynamic and reactive application.
 
 A part of Piwik's long-term roadmap is to move more and more parts of Piwik's UI to AngularJS.
 
@@ -99,7 +99,7 @@ The `Piwik\Plugin\API\Controller` class will be called, and it will dispatch the
 
 ### The HTTP Tracking API
 
-This HTTP API lets the Javascript tracker **submit analytics data** to be saved in Piwik.
+This HTTP API lets the JavaScript tracker **submit analytics data** to be saved in Piwik.
 
 Its entry point is different from Piwik's web application and HTTP reporting API: it is through the `piwik.php` file.
 
@@ -119,7 +119,7 @@ Read more about this in the ["Piwik on the Command Line" guide](/guides/piwik-on
 
 ## Data model, processing and storage
 
-Piwik lets you collect analytics data to retrieve it later as reports. Lets see what happens between these parts and how Piwik models, processes and stores data.
+Piwik lets you collect analytics data to then later retrieve as reports. Let's see what happens in-between and how Piwik models, processes and stores data.
 
 ### Log data: raw analytics data
 
