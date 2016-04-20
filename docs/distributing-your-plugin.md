@@ -31,19 +31,18 @@ Two files are required to be present in your plugin before you can publish: the 
 The `README.md` file should contain a description of your plugin and some documentation.
 Sections in this file are used to build the plugin page on the Marketplace.
 
-Let's take a look at the CustomAlerts plugin [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
-This file is written in Markdown format. It includes the following sections: `Description`, `FAQ`, `Changelog` and `Support`.
-The sections in your README are then directly displayed on your plugin page in the Marketplace! Checkout the [CustomAlerts plugin](http://plugins.piwik.org/CustomAlerts) page created from the README file.
+Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
+The file is written in Markdown format and has, among others, the following sections: `Description`, `FAQ`, `Changelog` and `Support`.
+The sections in your README are then directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](http://plugins.piwik.org/CustomAlerts) page created from the README file.
 
 #### Screenshots
 
-To make your plugin shine on the Piwik marketplace: include screenshots in your Git repository!
+To make your plugin shine on the Piwik marketplace, include screenshots in your Git repository!
 
-Prepare a few screenshots of your plugin in action.
-Place them in a directory `screenshots/` in your plugin folder.
-Give them a descriptive name: filenames will be used as the legend below each screenshot. Only alphanumeric characters, underscores and dashes are allowed in the filename. The filename must end with `.png`, `.jpg` or `.jpeg`.
+Prepare a few screenshots of your plugin in action and place them in a `screenshots/` directory in your plugin's folder.
+Give them descriptive names because the file names will be used as the legends shown below each screenshot. Only alphanumeric characters, underscores and dashes are allowed in the file name. The file name must end with `.png`, `.jpg` or `.jpeg`.
 
-See the result for the [CustomAlerts plugin screenshots](http://plugins.piwik.org/CustomAlerts) (click on the Screenshots link).
+See the result for the [CustomAlerts plugin's screenshots](http://plugins.piwik.org/CustomAlerts) (click on the Screenshots link).
 These screenshots are stored [in git: CustomAlerts/screenshots](https://github.com/piwik/plugin-CustomAlerts/tree/master/screenshots).
 
 #### plugin.json file
@@ -51,13 +50,13 @@ These screenshots are stored [in git: CustomAlerts/screenshots](https://github.c
 <a name="plugin-json-required-fields"></a>
 The `plugin.json` file must contain the following information:
 
-- `name`: The plugin's name. It can only contain letters (a-z) and numbers (0-9) and must start with an initial letter. The name cannot contain the words `"Piwik"`, `"Core"` or `"Analytics"`. Only up to 40 characters are allowed.
+- `name`: The plugin's name. It can only contain letters (a-z), numbers (0-9) and must start with a capital letter. The name cannot contain the words `"Piwik"`, `"Core"` or `"Analytics"`. A maximum of 40 characters are allowed.
 - `version`: The plugin's version. It must be a valid [semantic version number](http://semver.org/). If [node-semver](https://github.com/isaacs/node-semver) can't parse it, it won't be considered valid.
 - `description`: A short description of your plugin (up to 150 characters). This will be displayed below the plugin's name in search results and below the top-level heading on your plugin's page. It can include any character.
-- `keywords`: An array of words or short phrases that describes your plugins. The keywords are listed on the Marketplace, which helps users discover your plugin. Keywords can only contain letters, numbers, hyphens, and dots.
+- `keywords`: An array of words or short phrases that describe your plugin. The keywords are listed on the Marketplace, which helps users discover your plugin. Keywords can only contain letters, numbers, hyphens, and dots.
 - `license`: The name of the license your plugin uses. The license must be compatible with the [GPLv3](http://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPLv3](http://www.gnu.org/licenses/gpl-2.0.html) or later.
 - `homepage`: The URL to the plugin's homepage.
-- `authors`: An array of objects, each describing someone who helped create this plugin. The objects must contain a **name** field and can optionally contain an email and homepage field. You must define at least one author.
+- `authors`: An array of objects, each describing someone who helped create the plugin. The objects must contain a **name** field and can optionally contain an email and homepage field. You must define at least one author.
 
 The following fields are not required for publishing a plugin, but you may want to add them:
 
@@ -138,11 +137,11 @@ Here is a complete example to get you started:
 
 The marketplace uses [GitHub](https://github.com) webhooks to learn about your plugin and serve it to Piwik users that want it. This means you don't manually upload any files to the marketplace. Instead, you put your code into a Github repository and let the marketplace know about it.
 
-Creating and initializing a [git](http://git-scm.com) repository on Github is out of scope for this guide. If you need to learn how to create a Github repository, [read this article](https://help.github.com/articles/create-a-repo).
+Creating and initializing a [git](http://git-scm.com) repository on Github is out of the scope of this guide. If you need to learn how to create a Github repository, [read this article](https://help.github.com/articles/create-a-repo).
 
 ### Activate the Piwik Plugins webhook
 
-Once your plugin is on a Github repository, you need to let the marketplace know about it. This is done by activating the Piwik Plugins webhook.
+Once your plugin is in a Github repository, you need to let the marketplace know about it. This is done by activating the Piwik Plugins webhook.
 
 To activate this webhook, follow these steps:
 
@@ -195,10 +194,10 @@ There are some restrictions regarding what can be published on the marketplace. 
 - Your plugin's license must be compatible with the [GNU General Public License v3](https://www.gnu.org/copyleft/gpl.html) or any later version. We strongly recommend using the same license as Piwik (*GPLv3 or later*).
   - **Note:** If you don't specify a license anywhere in your plugin, it is assumed your plugin uses *GPLv3 or later*.
 - Your plugin must not contain obfuscated code. We believe that obfuscated code violates the spirit, if not the letter, of the GPL license under which we operate.
-- No **[phoning home](http://en.wikipedia.org/wiki/Phoning_home)** without user's informed consent. For the purposes of a Piwik plugin, **phoning home** includes:
-  - No unauthorized collection of user data. For example, sending the admin's email address back to your own servers without the user'a permission is not allowed; but asking the user for an email address and collecting if they choose to submit it is fine. All actions taken in this respect MUST be of the user's doing, not automatically done by the plugin.
-  - All images and scripts shown should be part of the plugin. These should be loaded locally. If the plugin requires data that is loaded from an external website (such as [blocklists](http://en.wikipedia.org/wiki/Blacklist_%28computing%29)) this should be made clear in the plugin's admin screens or it's description. The user must be informed of what information is being sent where.
-- The plugin page, contents of the `README.md` file and all translation files may not have "sponsored" links on it. This applies to all content that will be displayed on [plugins.piwik.org](http://plugins.piwik.org) and [themes.piwik.org](http://themes.piwik.org)
+- No **[phoning home](http://en.wikipedia.org/wiki/Phoning_home)** without the user's informed consent. For the purposes of a Piwik plugin, **phoning home** includes:
+  - Unauthorized collection of user data. For example, sending the admin's email address back to your own servers without the user's permission is not allowed; but asking the user for an email address and collecting if they choose to submit it is fine. All actions taken in this respect MUST be of the user's doing, not automatically done by the plugin.
+  - All images and scripts shown should be part of the plugin. These should be loaded locally. If the plugin requires data that is loaded from an external website (such as [blocklists](http://en.wikipedia.org/wiki/Blacklist_%28computing%29)) this should be made clear in the plugin's admin screens or its description. The user must be informed of what information is being sent where.
+- The plugin page, contents of the `README.md` file and all translation files may not have "sponsored" links in them. This applies to all content that will be displayed on [plugins.piwik.org](http://plugins.piwik.org) and [themes.piwik.org](http://themes.piwik.org).
 - The plugin cannot violate our [trademarks](http://piwik.org/trademark/). Do not use **piwik** in your domain name, instead come up with your own original branding! People remember names.
 
 ## Using the marketplace
@@ -211,9 +210,9 @@ Every plugin gets its own page on the marketplace. On the top is the name and a 
 
 ![](/img/marketplace-plugin.png)
 
-The content of the tabs is determined by the headings in your `README.md` file. See this [README.md](https://raw.github.com/tsteur/piwik-livetab-plugin/master/README.md) for an example.
+The contents of the tabs are determined by the headings in your `README.md` file. See this [README.md](https://raw.github.com/tsteur/piwik-livetab-plugin/master/README.md) for an example.
 
-You can [customize](#prepare-your-plugin) the content of those tabs by adding the following sections to your `README.md`:
+You can [customize](#prepare-your-plugin) the contents of those tabs by adding the following sections to your `README.md`:
 
 - Description
 - FAQ
