@@ -69,7 +69,7 @@ public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false
     $data->applyQueuedFilters();
 
     // we could create a new instance by using new DataTable(),
-    // but we would loose DataTable metadata, which can be useful.
+    // but we would lose DataTable metadata, which can be useful.
     $result = $data->getEmptyClone($keepFilters = false);
 
     foreach ($data->getRows() as $visitRow) {
