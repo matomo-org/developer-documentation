@@ -5,7 +5,7 @@ category: Develop
 
 Piwik can be used through several interfaces, the command line being one of them.
 
-The CLI console lets user run **commands** defined by plugins. Those commands can be used to perform maintenance, to monitor the application, to ease development…
+The CLI console enables users to run **commands** defined by plugins. The commands can be used to perform maintenance, to monitor the application, to ease development, and so on.
 
 ## The `console` tool
 
@@ -31,7 +31,7 @@ The console can be used to run Piwik commands like so:
 ./console <command>
 ```
 
-The console contains commands that generate empty plugins and plugin files, run git commands, watch Piwik's log output, run tests, deal with Piwik translations, …
+The console comes with many commands, for example to generate empty plugins and plugin files with, run git commands, watch Piwik's log output, run tests, and deal with Piwik translations.
 
 You can view the entire list of commands by running the following command:
 
@@ -39,7 +39,7 @@ You can view the entire list of commands by running the following command:
 ./console list
 ```
 
-To get more information about a single command (such as what arguments it takes), run the following command:
+To get more information about a single command (such as its arguments), run the following command:
 
 ```bash
 ./console help <command>
@@ -57,4 +57,4 @@ Plugins can extend the command line tool by creating their own commands. To do s
 
 This will create a folder named `Commands` within your plugin along with a PHP file which represents the actual command. You can add an unlimited number of commands to a plugin.
 
-To learn how you can write your command, read the [Symfony Console documentation](http://symfony.com/doc/current/components/console/index.html).
+To learn how to flesh out your command, you can read the [Symfony Console documentation](http://symfony.com/doc/current/components/console/index.html).
