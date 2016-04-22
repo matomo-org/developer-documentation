@@ -24,7 +24,7 @@ To create a new API, use the [Piwik Console](/guides/piwik-on-the-command-line):
 ./console generate:api
 ```
 
-The command will ask you to enter the name of the plugin the created API should belong to. There should now be a file <code>plugins/MyPlugin/API.php</code> which contains already an example to get you started easily:
+The command will ask you to enter the name of the plugin the created API should belong to. There should now be a file <code>plugins/MyPlugin/API.php</code> with simple examples to get you started:
 
 ```php
 class API extends \Piwik\Plugin\API
