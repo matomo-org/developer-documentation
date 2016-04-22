@@ -23,18 +23,18 @@ Piwik defines 3 types of permissions:
 
 ## Checking permissions
 
-Usually plugins should check permissions before:
+Usually, plugins should check permissions before:
 
 - executing an action, such as deleting or fetching data
 - rendering any sensitive information that should not be accessible to everyone
 
 Sometimes you may also need to verify permissions before registering menu items or widgets.
 
-To check for permissions, you need to use the [`Piwik\Piwik`](http://developer.piwik.org/api-reference/Piwik/Piwik) class:
+To check a user's permissions, you need to `use` the [`Piwik\Piwik`](http://developer.piwik.org/api-reference/Piwik/Piwik) class:
 
-- methods starting with `check` throw an exception in case a condition is not met
+- methods starting with `check` throw an exception when the expected condition is not met
 
-    Use methods that throw an exception if you want to stop any further execution in case a user does not have an appropriate role. The platform will catch the exception and display an error message or ask the user to log in.
+    Use methods which throw exceptions if you want to stop any further execution when the user does not have an appropriate role. The platform will catch the exception and display an error message or ask the user to log in.
 
     ```php
     public function deleteAllMessages()
@@ -60,12 +60,12 @@ To check for permissions, you need to use the [`Piwik\Piwik`](http://developer.p
     ```
 
 <div markdown="1" class="alert alert-warning">
-**Warning:** It is important to be aware that just because the menu item won’t be displayed in the UI a user can still open the registered URL manually. Therefore you have to check for permissions in the actual controller action as well.
+**Warning:** It is important to be aware that just because the menu item won’t be displayed in the UI doesn't mean the user cannot open the registered URL manually. Therefore you have to check for permissions in the actual controller action as well.
 </div>
 
 ### View permission
 
-A user having a view permission should be only able to view reports but not make any changes apart from his personal settings. The methods that end with `UserHasSomeViewAccess` make sure a user has at least view permission for one website whereas the methods `*UserHasViewAccess($idSites = array(1,2,3))` check whether a user has view access for all of the given websites.
+A user having a view permission should be only able to view reports but not make any changes apart from their personal settings. Method names ending with `UserHasSomeViewAccess` make sure a user has at least view permissions for one website whereas the methods `*UserHasViewAccess($idSites = array(1,2,3))` check whether a user has view access for all of the given websites.
 
 ```php
 Piwik::checkUserHasSomeViewAccess();
@@ -87,10 +87,10 @@ Piwik::checkUserHasAdminAccess($idSites = array(1,2,3));
 
 ### Super user permission
 
-A user having the super user permission is allowed to access all of the data stored in Piwik and change any settings. To check if a user has this role use one of the methods that end with `UserSuperUserAccess`.
+A user having the super user permission is allowed to access all of the data stored in Piwik and change any settings. To check if a user has this role use any of the methods that end with `UserSuperUserAccess`.
 
 ```php
 Piwik::checkUserHasSuperUserAccess();
 ```
 
-As a plugin developer you would check for this permission for instance in places where your plugin shows an activity log over all users or where it offers the possibility to change any system wide settings.
+As a plugin developer you would check for this permission for instance in places where your plugin shows an activity log for all users or where it offers the possibility to change any system-wide settings.
