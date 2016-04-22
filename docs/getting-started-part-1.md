@@ -120,7 +120,7 @@ user = ...
 
 You're now ready to create your first plugin, but before we do that, let's add some test data for you to play with.
 
-In your browser, load Piwik and navigate to _Administration > Marketplace_. Search for the _Visitor Generator_ plugin and install and enable it. Then on the admin menu to the left, click on _Visitor Generator_ (under _Development_).
+In your browser, load Piwik and navigate to _Administration > Plugins_. Look for the _Visitor Generator_ plugin and enable it. Then on the admin menu to the left, click on _Visitor Generator_ (under _Development_).
 
 On this page you'll see a form where you can select a site and enter a number of days to generate data for:
 
