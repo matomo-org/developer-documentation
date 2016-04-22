@@ -3,7 +3,7 @@ category: DevelopInDepth
 ---
 # Controllers
 
-Controllers are the objects in Piwik that output HTML. Every plugin that wants to output HTML should define its own Controller that extends [Piwik\Plugin\Controller](/api-reference/Piwik/Plugin/Controller).
+In Piwik, Controllers are the objects responsible for outputting HTML. Every plugin that wants to output HTML should define its own Controller that extends [Piwik\Plugin\Controller](/api-reference/Piwik/Plugin/Controller).
 
 Every public method in a controller is exposed and can be called through an HTTP request. **When creating your controller, care should be taken to avoid exposing methods that don't need to be. It may be possible for an attacker to use these methods.**
 
