@@ -35,14 +35,14 @@ _Note: If you want to integrate another piece of software with Piwik and you onl
 
 ### What is possible with Piwik plugins?
 
-Here are some of the things you can accomplish by creating a plugin:
+You can accomplish the following by creating a plugin:
 
 - track new visitor data and create new reports to aggregate it
 - track third party data and display it in new reports
 - show existing reports in a new way
 - send scheduled reports through new mediums or in new formats
 
-These are only a few of the possibilities. Many of the existing plugins do things that cannot be categorized in such a way. For example, the [Annotations](http://piwik.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](http://piwik.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
+These are only a few of the possibilities — it is not possible to categorize all of the existing plugins' functionality simply because of the vast differences in their use cases. For example, the [Annotations](http://piwik.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](http://piwik.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
 
 **Whatever ideas your imagination cooks up, we think you can implement them with Piwik.**
 
@@ -104,7 +104,7 @@ This will make it possible to view raw report data without having to supply a **
 
 ### Enable Development mode
 
-After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier and to make sure all changes take affect immediately. Piwik comes with a handy command-line tool that will do this work for you. In the root directory of your Piwik install, run the following command to enable development mode:
+After installing Piwik, we're going to change some of Piwik's INI configuration to make development easier and to make sure all changes take effect immediately. Piwik comes with a handy command-line tool that will do this work for you. In the root directory of your Piwik install, run the following command to enable development mode:
 
     ./console development:enable
 
@@ -120,7 +120,7 @@ user = ...
 
 You're now ready to create your first plugin, but before we do that, let's add some test data for you to play with.
 
-In your browser, load Piwik and navigate to _Administration > Plugins_. Look for the _Visitor Generator_ plugin and enable it. Then on the admin menu to the left, click on _Visitor Generator_ (under _Diagnostic_).
+In your browser, load Piwik and navigate to _Administration > Plugins_. Look for the _Visitor Generator_ plugin and enable it. Then on the admin menu to the left, click on _Visitor Generator_ (under _Development_).
 
 On this page you'll see a form where you can select a site and enter a number of days to generate data for:
 

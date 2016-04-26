@@ -5,7 +5,7 @@ category: DevelopInDepth
 
 Views are classes that implement `ViewInterface`. The main view class [Piwik\View](/api-reference/Piwik/View) will use a [Twig](http://twig.sensiolabs.org) template that is specified upon construction to generate output. There is also another class called [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) that is used specifically to visualize analytics data.
 
-Using a view is straightforward. First, it is configured. The meaning of this is different based on the View type. For [Piwik\View](/api-reference/Piwik/View) instances, it simply means setting properties, for example:
+Using a view is straightforward. First, it is configured. The meaning of this is different based on the View type. For [Piwik\View](/api-reference/Piwik/View) instances, it simply means setting properties. For example:
 
 ```php
 $view = new View("@MyPlugin/myTemplate.twig");

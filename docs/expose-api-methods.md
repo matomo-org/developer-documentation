@@ -24,7 +24,7 @@ To create a new API, use the [Piwik Console](/guides/piwik-on-the-command-line):
 ./console generate:api
 ```
 
-The command will ask you to enter the name of the plugin the created API should belong to. There should now be a file <code>plugins/MyPlugin/API.php</code> which contains already an example to get you started easily:
+The command will ask you to enter the name of the plugin the created API should belong to. There should now be a file <code>plugins/MyPlugin/API.php</code> with simple examples to get you started:
 
 ```php
 class API extends \Piwik\Plugin\API
@@ -72,7 +72,7 @@ You might be wondering why not simply returning the array directly in the `getEx
 
 ### Check user permissions
 
-Do not forget to check whether a user actually has permissions to access data or to perform an action. If you're not familiar with Piwik's permissions and how to check them read our [User Permission](/guides/permissions) guide.
+Do not forget to check whether a user actually has permissions to access data or to perform an action. If you're not familiar with Piwik's permissions and how to check them read our [User Permissions](/guides/permissions) guide.
 
 ### Keep API methods small
 
@@ -94,9 +94,9 @@ public function createLdapUser($idSite, $login, $password)
 
 This is not only easy to read, it will also allow you to create simple tests for <code>LdapModel</code> (without having to bootstrap the whole Piwik layer) and you will be able to reuse it in other places if needed.
 
-### Calling APIs of other plugins
+### Calling other plugins' APIs
 
-For example if you want to fetch an existing report from another plugin, say a list of all Page URLs, do not request this report by calling that method directly: <code class="php">\Piwik\Plugins\Actions\API::getInstance()->getPageUrls($idSite, $period, $date);</code>. Instead, issue a new API request:
+For example you want to fetch an existing report from another plugin - say a list of all Page URLs, do not request this report by calling that method directly: <code class="php">\Piwik\Plugins\Actions\API::getInstance()->getPageUrls($idSite, $period, $date);</code>. Instead, issue a new API request:
 
 ```php
 $report = \Piwik\API\Request::processRequest('Actions.getPageUrls', array(
@@ -110,4 +110,4 @@ This has several advantages:
 
 * It avoids a fatal error if the requested plugin is not available on a Piwik installation
 * Other plugins can extend the called API method via [events](/guides/events) (adding additional report data to a report, doing additional permission checks) but those events will be only triggered when requesting the report as suggested
-* If the method parameters change, your request will most likely still work
+* If the method signature changes, your request will most likely still work

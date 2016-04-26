@@ -7,9 +7,9 @@ category: DevelopInDepth
 
 ### UIControl
 
-`UIControl` is meant to be the base type of all JavaScript widget classes. These classes manage and attach behavior to an element. Examples of classes that extend from UIControl include **[DataTable](#classes-DataTable)** (the base of all [report visualization](/guides/visualizing-report-data) JavaScript classes) and **VisitorProfileControl** (used to manage the [visitor profile](http://piwik.org/docs/user-profile/)).
+`UIControl` is meant to be the base type for all JavaScript widget classes. These classes manage and attach behavior to an element. Examples of classes that extend from UIControl include **[DataTable](#classes-DataTable)** (the base of all [report visualization](/guides/visualizing-report-data) JavaScript classes) and **VisitorProfileControl** (used to manage the [visitor profile](http://piwik.org/docs/user-profile/)).
 
-`UIControl` allows descendants to clean up resources, provides a mechanism for server side code to send information to the UI and provides a method of listening to dashboard widget resize events.
+`UIControl` allows descendants to clean up resources, provides a mechanism for server side code to send information to the UI and provides a method for listening to dashboard widget resize events.
 
 #### Extending UIControl
 
@@ -35,7 +35,7 @@ The actual extending is straightforward:
 })(require, $);
 ```
 
-`UIControl`'s constructor takes one argument, the HTML element that is the root element of the widget.
+`UIControl`'s constructor takes one argument: the HTML element that is the root element of the widget.
 
 #### Creating controls that extend UIControl
 

@@ -69,7 +69,7 @@ public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false
     $data->applyQueuedFilters();
 
     // we could create a new instance by using new DataTable(),
-    // but we would loose DataTable metadata, which can be useful.
+    // but we would lose DataTable metadata, which can be useful.
     $result = $data->getEmptyClone($keepFilters = false);
 
     foreach ($data->getRows() as $visitRow) {
@@ -107,13 +107,13 @@ Archived reports are calculated and **cached** during the [Archiving Process](/g
 
 ### Displaying the report
 
-Now that we've defined a new report, we need to define how the report should be displayed. We'll do this by going back to the `GetLastVisitsByBrowser` class and modify the `configureView()` method:
+Now that we've defined a new report, we need to define how the report should be displayed. We'll do this by going back to the `GetLastVisitsByBrowser` class and modifying the `configureView()` method:
 
 ```php
 public function configureView(ViewDataTable $view)
 {
     // The ViewDataTable must be configured so the display is perfect for the report.
-    // This is done by setting properties of the ViewDataTable::$config object.
+    // We do this by modifying properties on the ViewDataTable::$config object.
 
     // Disable the 'Show All Columns' footer icon
     $view->config->show_table_all_columns = false;
@@ -124,7 +124,7 @@ public function configureView(ViewDataTable $view)
 }
 ```
 
-As we will only display the number of visitors and not the number of unique visitors or actions which Piwik assumes by default we need to modify the supported metrics in the `init()` method of the report as follows:
+As we will only display the number of visitors, and not the number of unique visitors or actions which Piwik assumes by default, we need to modify the supported metrics in the `init()` method of the report as follows:
 
 ```php
 $this->metrics = array('nb_visits');
@@ -144,7 +144,7 @@ It is possible for plugins to create their own visualizations. To find out how, 
 
 ## Updating the report in realtime
 
-So now there's a page with a report that displays the browsers of the latest visitors. It uses realtime data, but it's not truly realtime since after a couple minutes, the report will be out of date. To make the report more realtime we'll update the report every 10 seconds automatically.
+So now there's a page with a report that shows the browsers used by the latest visitors. It uses realtime data - but it's not truly realtime since after a couple minutes, the report will be out of date. To make the report more realtime we'll update the report every 10 seconds automatically.
 
 ### Adding JavaScript files to Piwik
 
