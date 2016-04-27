@@ -158,4 +158,21 @@ class Guide implements MenuItem
 
         return file_get_contents($path);
     }
+
+    /**
+     * @return string
+     */
+    public function getSEOTitle()
+    {
+        try {
+
+            //Some guides may not have the category set
+            return $this->getTitle().': '.$this->getCategory();
+
+        } catch (\RuntimeException $e) {
+
+            return $this->getTitle();
+
+        }
+    }
 }
