@@ -313,7 +313,7 @@ _paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = '
 ```
 
 Please note once a Custom Dimension is set, the value will be used for all following tracking requests and may lead to
-inaccurate results if this is not wanted. For example if you track a page view, the Custom Dimension value will be as well tracked for each following event, outlink, download, etc. within the same page load. To delete a Custom Dimension value after a tracking request call
+inaccurate results if this is not wanted. For example if you track a page view, the Custom Dimension value will be as well tracked for each following event, outlink, download, etc. within the same page load. Calling this method will not actually trigger a tracking request, instead the values will be sent along with the following tracking requests. To delete a Custom Dimension value after a tracking request call
 `_paq.push(['deleteCustomDimension', customDimensionId]);`
 
 ### Tracking a Custom Dimension for one specific action only
