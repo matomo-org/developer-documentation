@@ -15,7 +15,7 @@ Create a bug report on [our bug tracking system](https://github.com/piwik/piwik/
 
 Speak to us and the community in IRC: `irc.freenode.net/#piwik`.
 
-## [Piwik Pro](http://piwik.org/consulting/)
+## [Piwik Professional Services](http://piwik.org/consulting/)
 
 If you are looking for someone to create a plugin for you, or if you want someone to fix a bug for you ASAP, then [get in touch with a professional consultant](http://piwik.org/consulting/).
 
