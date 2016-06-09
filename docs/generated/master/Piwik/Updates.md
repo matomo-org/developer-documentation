@@ -54,7 +54,7 @@ queries directly in `doUpdate()`, they won't be displayed to the user.
 
 Perform the incremental version update.
 
-This method should preform all updating logic. If you define queries in an overridden `getMigrationQueries()`
+This method should perform all updating logic. If you define queries in an overridden `getMigrationQueries()`
 method, you must call Updater::executeMigrationQueries() here.
 
 See [Updates](/api-reference/Piwik/Updates) for an example.

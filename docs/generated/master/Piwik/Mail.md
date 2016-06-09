@@ -15,6 +15,9 @@ The class defines the following methods:
 - [`setFrom()`](#setfrom) &mdash; Sets the sender.
 - [`setReplyTo()`](#setreplyto) &mdash; Set Reply-To Header
 - [`send()`](#send)
+- [`createAttachment()`](#createattachment)
+- [`setSubject()`](#setsubject)
+- [`sanitiseString()`](#sanitisestring) &mdash; Replaces characters known to appear incorrectly in some email clients
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -76,4 +79,47 @@ Set Reply-To Header
     - `$transport`
       
 - It does not return anything.
+
+<a name="createattachment" id="createattachment"></a>
+<a name="createAttachment" id="createAttachment"></a>
+### `createAttachment()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$body`
+      
+    - `$mimeType`
+      
+    - `$disposition`
+      
+    - `$encoding`
+      
+    - `$filename`
+      
+- It does not return anything.
+
+<a name="setsubject" id="setsubject"></a>
+<a name="setSubject" id="setSubject"></a>
+### `setSubject()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$subject`
+      
+- It does not return anything.
+
+<a name="sanitisestring" id="sanitisestring"></a>
+<a name="sanitiseString" id="sanitiseString"></a>
+### `sanitiseString()`
+
+Replaces characters known to appear incorrectly in some email clients
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$string` (`Piwik\$string`) &mdash;
+      
+- It returns a `mixed` value.
 

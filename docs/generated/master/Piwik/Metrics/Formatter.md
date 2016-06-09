@@ -16,7 +16,7 @@ The class defines the following methods:
 - [`getPrettyNumber()`](#getprettynumber) &mdash; Returns a prettified string representation of a number.
 - [`getPrettyTimeFromSeconds()`](#getprettytimefromseconds) &mdash; Returns a prettified time value (in seconds).
 - [`getPrettySizeFromBytes()`](#getprettysizefrombytes) &mdash; Returns a prettified memory size value.
-- [`getPrettyMoney()`](#getprettymoney) &mdash; Returns a pretty formated monetary value using the currency associated with a site.
+- [`getPrettyMoney()`](#getprettymoney) &mdash; Returns a pretty formatted monetary value using the currency associated with a site.
 - [`getPrettyPercentFromQuotient()`](#getprettypercentfromquotient) &mdash; Returns a percent string from a quotient value.
 - [`formatMetrics()`](#formatmetrics) &mdash; Formats all metrics, including processed metrics, for a DataTable.
 
@@ -79,7 +79,7 @@ Returns a prettified memory size value.
 <a name="getPrettyMoney" id="getPrettyMoney"></a>
 ### `getPrettyMoney()`
 
-Returns a pretty formated monetary value using the currency associated with a site.
+Returns a pretty formatted monetary value using the currency associated with a site.
 
 #### Signature
 

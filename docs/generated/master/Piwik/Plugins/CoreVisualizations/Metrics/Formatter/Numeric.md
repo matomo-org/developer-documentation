@@ -16,7 +16,7 @@ The class defines the following methods:
 - [`getPrettyNumber()`](#getprettynumber) &mdash; Returns a prettified string representation of a number. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
 - [`getPrettyTimeFromSeconds()`](#getprettytimefromseconds) &mdash; Returns a prettified time value (in seconds). Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
 - [`getPrettySizeFromBytes()`](#getprettysizefrombytes) &mdash; Returns a prettified memory size value. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
-- [`getPrettyMoney()`](#getprettymoney) &mdash; Returns a pretty formated monetary value using the currency associated with a site. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
+- [`getPrettyMoney()`](#getprettymoney) &mdash; Returns a pretty formatted monetary value using the currency associated with a site. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
 - [`getPrettyPercentFromQuotient()`](#getprettypercentfromquotient) &mdash; Returns a percent string from a quotient value. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
 - [`formatMetrics()`](#formatmetrics) &mdash; Formats all metrics, including processed metrics, for a DataTable. Inherited from [`Formatter`](../../../../../Piwik/Metrics/Formatter.md)
 
@@ -79,7 +79,7 @@ Returns a prettified memory size value.
 <a name="getPrettyMoney" id="getPrettyMoney"></a>
 ### `getPrettyMoney()`
 
-Returns a pretty formated monetary value using the currency associated with a site.
+Returns a pretty formatted monetary value using the currency associated with a site.
 
 #### Signature
 

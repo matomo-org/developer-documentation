@@ -234,11 +234,12 @@ The class defines the following methods:
 - [`setStorage()`](#setstorage) &mdash; Sets the object used to persist settings. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`getStorage()`](#getstorage) Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`setPluginName()`](#setpluginname) &mdash; Sets th name of the plugin the setting belongs to Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
-- [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
+- [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value.
 - [`removeValue()`](#removevalue) &mdash; Returns the previously persisted setting value. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`getKey()`](#getkey) &mdash; Returns the unique string key used to store this setting. Inherited from [`Setting`](../../Piwik/Settings/Setting.md)
 - [`getOrder()`](#getorder) &mdash; Returns the display order.
+- [`setIsWritableByCurrentUser()`](#setiswritablebycurrentuser) &mdash; Set whether setting is writable or not.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -387,4 +388,19 @@ System settings are displayed before user settings.
 #### Signature
 
 - It returns a `int` value.
+
+<a name="setiswritablebycurrentuser" id="setiswritablebycurrentuser"></a>
+<a name="setIsWritableByCurrentUser" id="setIsWritableByCurrentUser"></a>
+### `setIsWritableByCurrentUser()`
+
+Set whether setting is writable or not.
+
+For example to hide setting from the UI set it to false.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$isWritable` (`bool`) &mdash;
+      
+- It does not return anything.
 
