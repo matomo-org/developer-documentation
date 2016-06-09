@@ -31,7 +31,7 @@ try {
             ->exclude(array('tests', 'config', 'ScheduledReports/config'))
             ->in(array(PIWIK_DOCUMENT_ROOT . '/core',
                        PIWIK_DOCUMENT_ROOT . '/plugins',
-                       PIWIK_DOCUMENT_ROOT . '/libs/PiwikTracker'))
+                       PIWIK_DOCUMENT_ROOT . '/vendor/piwik/piwik-php-tracker'))
         ;
 
         $sami = new Sami($iterator, array(
