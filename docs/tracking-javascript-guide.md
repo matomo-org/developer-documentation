@@ -733,6 +733,8 @@ By default, the data will be tracked in both Piwik servers using the same websit
 
 ```
 
+Note: by default any tracker added via `addTracker` are configured the same as the main default tracker object. It is possible to get an instance of any tracker via the method `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)`. This allows you to get the tracker instance object, so you may configure it differently than the other tracker instance, or decide to send different tracking requests to this Piwik tracker.
+
 ### If you use Piwik 2.16.1 or earlier
 
 **Please upgrade as soon as possible to the latest Piwik version! The following documentation applies to Piwik older than 2.16.2. **
@@ -763,8 +765,6 @@ piwikTracker.setSiteId( 12 );
 piwikTracker.setTrackerUrl( "http://example.com/piwik/" );
 piwikTracker.trackPageView();
 ```
-
-By default tracker that are added are configured the same as the main tracker object. It is possible to get an asynchronously created tracker instance via the method `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)`. This allows you to get the tracker instance object, and to configure it differently than the other tracker instance, or to send different tracking requests to this Piwik.
 
 ## JavaScript Tracker Reference 
 
