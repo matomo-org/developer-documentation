@@ -693,6 +693,50 @@ _paq.push(['trackPageView']);
 
 ## Multiple Piwik trackers
 
+### If you use Piwik 2.16.2 or later
+
+It is possible to track your analytics data into multiple separate Piwik trackers. You may record your data either in the same Piwik server (into a different website ID) or you may record a duplicate of your data into another Piwik server altogether. 
+
+The following example shows how to use `addTracker` to store all of your data in another Piwik server hosted at `analytics.example.com`:
+
+```html
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="//{$PIWIK_URL}/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', {$IDSITE}]);
+    
+    // Also send all of the tracking data to this other Piwik server
+    // By default, the data will be stored into the same website ID as the main tracker (see `setSiteId` call above)
+    _paq.push(['addTracker', 'https://analytics.example.com']);
+    
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+```
+
+By default, the data will be tracked in both Piwik servers using the same website ID. If your Piwik servers use a different website ID, you may specify it for each Piwik tracker server:
+
+```js
+    // Add this code within the Piwik JavaScript tracker code
+    var secondaryWebsiteId = 77;
+    var secondaryTracker = 'https://analytics.example.com';
+
+    // Also send all of the tracking data to this other Piwik server, in website ID 77
+    _paq.push(['addTracker', secondaryTracker, secondaryWebsiteId]);
+
+```
+
+### If you use Piwik 2.16.1 or earlier
+
+**Please upgrade as soon as possible to the latest Piwik version! The following documentation applies to Piwik older than 2.16.2. **
+
 It is possible to track a page using multiple Piwik trackers that point to the same or different Piwik servers. To improve page loading time, you can load `piwik.js` once. Each call to `Piwik.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
 
 ```html
@@ -719,6 +763,8 @@ piwikTracker.setSiteId( 12 );
 piwikTracker.setTrackerUrl( "http://example.com/piwik/" );
 piwikTracker.trackPageView();
 ```
+
+By default tracker that are added are configured the same as the main tracker object. It is possible to get an asynchronously created tracker instance via the method `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)`. This allows you to get the tracker instance object, and to configure it differently than the other tracker instance, or to send different tracking requests to this Piwik.
 
 ## JavaScript Tracker Reference 
 
