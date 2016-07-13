@@ -747,9 +747,9 @@ Alternatively, you may need to collect a duplicate of your web analytics data in
 
 Note: by default any tracker added via `addTracker` are configured the same as the main default tracker object (with regards to cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Piwik tracker object instance that were added via `addTracker`, you may call the `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance. 
 
-#### If you use Piwik 2.16.1 or earlier
+#### Instructions if you use Piwik 2.16.1 or earlier
 
-**Please upgrade as soon as possible to the latest Piwik version!**
+*Please upgrade as soon as possible to the latest Piwik version!*
 
 It is possible to track your analytics data into either a different website ID on the same server or you may record a copy of your data into another Piwik server altogether. Each call to `Piwik.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
 
