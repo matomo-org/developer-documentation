@@ -737,7 +737,7 @@ Note: by default any tracker added via `addTracker` are configured the same as t
 
 ### If you use Piwik 2.16.1 or earlier
 
-**Please upgrade as soon as possible to the latest Piwik version! The following documentation applies to Piwik older than 2.16.2. **
+**Please upgrade as soon as possible to the latest Piwik version! The following documentation applies to Piwik older than 2.16.2.**
 
 It is possible to track a page using multiple Piwik trackers that point to the same or different Piwik servers. To improve page loading time, you can load `piwik.js` once. Each call to `Piwik.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
 
