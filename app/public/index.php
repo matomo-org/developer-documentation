@@ -17,6 +17,8 @@ use Slim\Views\Twig as Twig;
 use helpers\Log;
 use helpers\CacheMiddleware;
 
+date_default_timezone_set("UTC");
+
 // New Slim App
 $app = new Slim(array(
     'view' => new Twig(),
