@@ -693,9 +693,7 @@ _paq.push(['trackPageView']);
 
 ## Multiple Piwik trackers
 
-By default, the Piwik JavaScript Tracking code collects your analytics data into one Piwik server. The Piwik service URL is specified in your JavaScript Tracking code (for example: `var u="//piwik.example.org";`). In some cases, you may want to track your analytics data into more than just one Piwik server. 
-
-In this section, we explain how you can configure the JavaScript tracking code in order to collect all of your website analytics data into two or more different Piwik servers. It is possible to track your analytics data either into a different website ID on the same server, or record a copy of your data into another Piwik server altogether. 
+By default, the Piwik JavaScript Tracking code collects your analytics data into one Piwik server. The Piwik service URL is specified in your JavaScript Tracking code (for example: `var u="//piwik.example.org";`). In some cases, you may want to track your analytics data into more than just one Piwik server or into multiple websites on the same Piwik server.
 
 *If you haven't upgraded yet to Piwik 2.16.2 or later, please upgrade now! (Instructions for 2.16.1 or older versions are found below.)*
 
