@@ -699,7 +699,7 @@ By default, the Piwik JavaScript Tracking code collects your analytics data into
 
 #### Collect your analytics data into two or more Piwik servers
 
-The example below shows how to use `addTracker`  method to track the same analytics data into a second Piwik server. The main Piwik server is `piwik.example.org` where the data is stored into website ID `1`. The second Piwik server is `analytics.example.com` where the data is stored into website ID `77`.
+The example below shows how to use `addTracker`  method to track the same analytics data into a second Piwik server. The main Piwik server is `piwik.example.org/piwik.php` where the data is stored into website ID `1`. The second Piwik server is `analytics.example.com/piwik.php` where the data is stored into website ID `77`. 
 
 ```html
 <script type="text/javascript">
@@ -713,7 +713,8 @@ The example below shows how to use `addTracker`  method to track the same analyt
     _paq.push(['setSiteId', '1']);
     
     // Add this code below within the Piwik JavaScript tracker code
-    var secondaryTracker = 'https://analytics.example.com';
+    // Important: the tracker url includes the /piwik.php
+    var secondaryTracker = 'https://analytics.example.com/piwik.php';
     var secondaryWebsiteId = 77;
     // Also send all of the tracking data to this other Piwik server, in website ID 77
     _paq.push(['addTracker', secondaryTracker, secondaryWebsiteId]);
@@ -736,7 +737,8 @@ Alternatively, you may need to collect a duplicate of your web analytics data in
   
   // We will also collect the website data into Website ID = 7
   var websiteIdDuplicate = 7;
-  // The data will be duplicated into `piwik.example.org` (the Piwik URL being 'null' means the existing Piwik URL is used)
+  // The data will be duplicated into `piwik.example.org/piwik.php`
+  // (the Piwik URL being 'null' means the pre-configured Piwik URL is used)
   _paq.push(['addTracker', piwikUrl = null, websiteIdDuplicate]);
   // Your data is now tracked in both website ID 1 and website 7 into your piwik.example.org server!
 ```
