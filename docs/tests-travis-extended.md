@@ -32,16 +32,16 @@ Below is the list of all supported environment variables:
         - TEST_SUITE=PluginTests MYSQL_ADAPTER=PDO_MYSQL TEST_AGAINST_PIWIK_BRANCH=branchname
     ```
     
-  * **UNPROTECTED\_ARTIFACTS**
+  * **PROTECTED\_ARTIFACTS**
 
-    **For core or pro developers only.** This variable controls whether build artifacts will be uploaded to a password protected folder on builds-artifacts.piwik.org or not.
+    **For pro developers only.** This variable controls whether build artifacts will be uploaded to a password protected folder on builds-artifacts.piwik.org.
 
-    By default, artifacts for plugins are stored in a protected folder. To change this behavior, set `UNPROTECTED_ARTIFACTS=1` as a global environment variable, eg:
+    By default, artifacts for plugins are stored in a public folder. To change this behavior, set `PROTECTED_ARTIFACTS=1` as a global environment variable, eg:
 
     ```
     env:
       global:
-        - UNPROTECTED_ARTIFACTS=1
+        - PROTECTED_ARTIFACTS=1
     ```
   * **SKIP\_COMPOSER\_INSTALL**
 
