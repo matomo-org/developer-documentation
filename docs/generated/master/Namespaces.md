@@ -20,7 +20,6 @@ This is a complete list of available namespaces:
 - [`Piwik\Metrics\Formatter`](Piwik/Metrics/Formatter)
 - [`Piwik\Notification`](Piwik/Notification)
 - [`Piwik\Period`](Piwik/Period)
-- [`Piwik\PiwikPro`](Piwik/PiwikPro)
 - [`Piwik\Plugin`](Piwik/Plugin)
 - [`Piwik\Plugin\Dimension`](Piwik/Plugin/Dimension)
 - [`Piwik\Plugins`](Piwik/Plugins)

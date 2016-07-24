@@ -66,7 +66,7 @@ The following functions are available to twig templates:
                  which is outputted in the template, eg, `{{ postEvent('MyPlugin.event') }}`
 - **isPluginLoaded**: Returns true if the supplied plugin is loaded, false if otherwise.
                       `{% if isPluginLoaded('Goals') %}...{% endif %}`
-- **arePiwikProAdsEnabled**: Returns true if it is ok to show some Piwik PRO advertising in the UI (from Piwik 2.16.0)
+- **areAdsForProfessionalServicesEnabled**: Returns true if it is ok to show some advertising in the UI for providers of Professional Support for Piwik (from Piwik 2.16.0)
 
 ### Examples
 
