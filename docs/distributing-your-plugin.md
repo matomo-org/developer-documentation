@@ -12,6 +12,7 @@ It's also a great way for you to:
 * get user feedback via email or the Github issue tracker
 * see how many people use your plugin
 * allow people to donate money
+* allow people to get in touch with you to get help or to report bugs and features
 * get exposure for your skills and work
 
 ## Preparing your plugin for the marketplace
@@ -32,7 +33,7 @@ The `README.md` file should contain a description of your plugin and some docume
 Sections in this file are used to build the plugin page on the Marketplace.
 
 Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
-The file is written in Markdown format and has, among others, the following sections: `Description`, `FAQ`, `Changelog` and `Support`.
+The file is written in Markdown format and has, among others, the following sections: `Description`, `FAQ`, `Changelog`.
 The sections in your README are then directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](http://plugins.piwik.org/CustomAlerts) page created from the README file.
 
 #### Screenshots
@@ -107,6 +108,32 @@ The following fields are not required for publishing a plugin, but you may want 
         "bitcoin": "1NdftZmgb8V9PgbFDYjC5PRJ2QDLyyzCU9"
     }
     ```
+  
+  
+- `support` - An object containing information on how to get in touch with you. Any specified resource will be visible in a "Support" tab on the plugin page. The object can contain any of the following fields:
+    - `email` - A contact or support email address.
+    - `issues` - An URL to the issue / bug / feature tracker for this plugin.
+    - `forum` - An URL to a forum.
+    - `docs` - An URL to docs or guides for this plugin.
+    - `irc` - IRC information.
+    - `wiki` - An URL to a wiki.
+    - `source` - An URL to the source code.
+    - `rss` - An URL where they can subscribe to news or updates.
+
+    For example:
+
+    ```json
+    "support": {
+	    "email": "support@example.com",
+	    "issues": "https://github.com/piwik/piwik/issues",
+	    "forum": "https://forum.piwik.org",
+	    "irc": "irc://freenode/piwik",
+	    "source": "https://github.com/piwik/piwik/",
+	    "wiki": "https://github.com/piwik/piwik/wiki",
+	    "docs": "https://piwik.org/docs/",
+	    "rss": "https://piwik.org/feed/"
+    }
+    ```
 
 Here is a complete example to get you started:
 
@@ -125,6 +152,16 @@ Here is a complete example to get you started:
             "homepage": "http://piwik.org"
         }
     ],
+    "support": {
+	    "email": "support@example.com",
+	    "issues": "https://github.com/piwik/piwik/issues",
+	    "forum": "https://forum.piwik.org",
+	    "irc": "irc://freenode/piwik",
+	    "source": "https://github.com/piwik/piwik/",
+	    "wiki": "https://github.com/piwik/piwik/wiki",
+	    "docs": "https://piwik.org/docs/",
+	    "rss": "https://piwik.org/feed/"
+    },
     "require": {
         "piwik": ">=2.9.0"
     }
