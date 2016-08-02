@@ -153,9 +153,6 @@ Anyone can contribute to Piwik by submitting a feature request. You can discuss 
 
 ## Contributing to Piwik
 
-### We're hiring!
-
-Are you seeking a new challenge? We are currently looking for a full time Software Developer to join our Product Engineering team. [Learn more in the Job Description](https://piwik.org/blog/2015/01/piwik-expanding-seeking-talented-software-engineer-new-zealand-poland/).
 
 ### Contributing code
 
