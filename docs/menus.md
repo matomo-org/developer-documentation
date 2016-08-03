@@ -3,15 +3,11 @@ category: Develop
 ---
 # Menus
 
-Piwik contains 4 menus:
+Piwik contains 3 menus:
 
 - the **top menu** (top-right of the page)
 
     ![](/img/menu-top.png)
-
-- the **user menu** (which is accessible when clicking on the username in the top menu)
-
-    ![](/img/menu-user.png)
 
 - the **reporting menu** (which includes all the reports like "Actions" and "Visitors")
 
@@ -42,11 +38,6 @@ class Menu extends \Piwik\Plugin\Menu
         // ...
     }
 
-    public function configureUserMenu(MenuUser $menu)
-    {
-        // ...
-    }
-
     public function configureAdminMenu(MenuAdmin $menu)
     {
         // ...
@@ -65,20 +56,6 @@ Note: URLs can be built using the controller methods:
     public function configureTopMenu(MenuTop $menu)
     {
         $menu->addItem('My top item', null, $this->urlForDefaultAction());
-    }
-```
-
-### User menu item
-
-```php
-    public function configureUserMenu(MenuUser $menu)
-    {
-        // add items to an existing category
-        $menu->addManageItem('My item', $this->urlForDefaultAction());
-        $menu->addPlatformItem('My item', $this->urlForDefaultAction());
-
-        // or create a custom category
-        $menu->addItem('My category', 'My item', $this->urlForDefaultAction());
     }
 ```
 
