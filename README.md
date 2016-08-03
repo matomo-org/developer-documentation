@@ -49,6 +49,11 @@ or just execute `./generateAndPush.sh`.
 
 The documents will be generated into the [docs/generated](docs/generated) directory. It will always generate the documentation for the master as well as for the latest stable version.
 
+## How to add docs for a new Piwik version
+
+* Increase version number for `LATEST_PIWIK_DOCS_VERSION` in `config/app.php`
+* Add a new line to `generate.sh` eg `php generator/generate.php --branch=3.x-dev --targetname=3.x` similar to the other ones. You might also want to copy the generation success detection.
+
 ## Writing guides
 
 Just edit the `docs/*.md` files. Any change you make there should be available on the developer website within a minute.

@@ -11,7 +11,6 @@ namespace helpers;
 class Environment
 {
     private static $piwikVersion = LATEST_PIWIK_DOCS_VERSION;
-    private static $urlPrefix = '';
 
     public static function isLatestPiwikVersion()
     {
@@ -56,6 +55,10 @@ class Environment
 
     public static function getPiwikVersion()
     {
+        if (!isset(self::$piwikVersion)) {
+            self::$piwikVersion = LATEST_PIWIK_DOCS_VERSION;
+        }
+        
         return self::$piwikVersion;
     }
 
