@@ -81,7 +81,7 @@ Run the following command to install third party libraries:
 
     $ php composer.phar install
     
-If this command fails, follow the [installation instructions for Composer](https://getcomposer.org/doc/00-intro.md). On Windows you will likely need to add another parameter:
+If this command fails, follow the [installation instructions for Composer](https://getcomposer.org/doc/00-intro.md). On Windows you will likely need to add an option `--no-script`:
 
     $ php composer.phar install --no-script
     
