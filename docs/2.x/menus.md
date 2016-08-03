@@ -21,8 +21,7 @@ Piwik contains 4 menus:
 
     ![](/img/menu-admin.png)
 
-Plugins can add items to these menus by implementing a `Menu` class. To add new items to the reporting menu you need
-to create a new [Widget](/guides/widgets).
+Plugins can add items to these menus by implementing a `Menu` class.
 
 ## Adding a menu item
 
@@ -43,6 +42,11 @@ class Menu extends \Piwik\Plugin\Menu
     }
 
     public function configureUserMenu(MenuUser $menu)
+    {
+        // ...
+    }
+
+    public function configureReportingMenu(MenuReporting $menu)
     {
         // ...
     }
@@ -82,6 +86,21 @@ Note: URLs can be built using the controller methods:
     }
 ```
 
+### Reporting menu item
+
+```php
+    public function configureReportingMenu(MenuReporting $menu)
+    {
+        // add items to an existing category
+        $menu->addVisitorsItem('Coffee report', $this->urlForAction('showReport'));
+        $menu->addActionsItem('Coffee report', $this->urlForAction('showReport'));
+
+        // or create a custom category named 'Coffee'
+        $menu->addItem('Coffee', '', $this->urlForDefaultAction());
+        $menu->addItem('Coffee', 'Coffee report', $this->urlForAction('showReport'));
+    }
+```
+
 ### Admin menu item
 
 ```php
@@ -95,7 +114,3 @@ Note: URLs can be built using the controller methods:
         $menu->addItem('MyPlugin admin settings', 'My admin item', $this->urlForDefaultAction());
     }
 ```
-
-### Reporting menu item
-
-To add or change items in the reporting menu you need to create a new [Widget](/guides/widgets).
