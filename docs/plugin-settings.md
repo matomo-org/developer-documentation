@@ -3,25 +3,20 @@ category: Develop
 ---
 # Plugin Settings
 
-Plugins can define their own configuration options by using the Settings generator.
-
 ## Type of settings
 
- The Piwik platform differentiate between "System Settings", "User Settings" and "Measurable Settings":
+The Piwik platform differentiate between "System Settings", "User Settings" and "Measurable Settings":
 
-
-**User settings** can be configured by any logged in user and each user can configure the setting independently.
+**User Settings** can be configured by any logged in user and each user can configure the setting independently.
 The Piwik platform makes sure that settings are stored per user and that a user cannot see another users configuration.
 A user will be able to change the settings on the "Personal Settings" page.
 
-**System settings** applies to all of your users. It can be configured only by a user who has super user access.
-By default, the value can be read only by a super user as well but often you want to have it readable by anyone or at
-least by logged in users. If you set a setting readable the value will still be only displayed to super users but you
-will always be able to access the value in the background. System Settings will appear on the "General Settings" page.
+**System Settings** applies to all of your users. It can be configured only by a user who has super user access.
+System Settings will appear on the "General Settings" page.
 
 **Measurable Settings** add new fields when creating or editing a website or another measurable such as a mobile app.
 The values for these settings can be changed by any user having admin access for a specific website and the settings
-are saved along with each site. All fields shown in the websites manager are actually Measurable Settings and these
+are saved separately for each site. All fields shown in the websites manager are actually Measurable Settings and these
 can be used to create whole new types such as "Mobile Apps", "Cars", "Embedded device", etc.
 
 All these classes extend the [Settings](/api-reference/Piwik/Settings/Settings) class.
@@ -36,19 +31,18 @@ Piwik can create the `Settings` class for you by using the [console](/guides/piw
 $ ./console generate:settings
 ```
 
-The command will ask you to enter the name of your plugin and ask you for the type of settings you want to create.
+The command will ask you to enter the name of your plugin and for the type of settings you want to create.
  Depending on the chosen type it will create a file named `UserSettings.php`, `SystemSettings.php` or
- `MeasurableSettings.php`, for example `plugins/MyPlugin/UserSettings.php`. This created file contains some examples to
- get you started. In the following example we create "System Settings". The creation of settings works the same across
- the different types.
+ `MeasurableSettings.php`, for example `plugins/MyPlugin/SystemSettings.php`. This created file contains some examples to
+ get you started. The creation and definition of settings works the same across the different types.
 
 To see the settings in action go to *Administration > General Settings* in your Piwik installation.
 
 ### Adding one or more settings
 
 Settings are added in the `init()` method of the settings class. To do this, call the `makeSetting()` and pass in the
-rthe internal name of the setting, the default value when no value is configured yet, which PHP type the setting should
-return and a callback to configure the UI representation of the field.
+internal name of the setting, the default value, which PHP type the setting should return and a callback to configure
+the UI representation of the form field.
 
 For example:
 
@@ -96,18 +90,17 @@ class SystemSettings extends \Piwik\Settings\Plugin\SystemSettings
 ```
 
 For a list of possible properties for each setting have a look at the [Setting](/api-reference/Piwik/Settings/Setting)
-and [FieldConfig](/api-reference/Piwik/Settings/FieldConfig) API reference.
-
-See also the [ExampleSettingsPlugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleSettingsPlugin) to see what else is possible.
+and [FieldConfig](/api-reference/Piwik/Settings/FieldConfig) API reference. See also the
+[ExampleSettingsPlugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleSettingsPlugin) to see what else is possible.
 
 ### Field configuration
 
-The field config let's you configure which form field should be shown to the user, which PHP value type you expect, etc.
-You might be wondering why some properties are configured when making the setting and some properties in the callback method.
-The reason for this is basically speed because we usually create all settings on each request. Everything that is configured
-within the callback to configure the `FieldConfig $field` is actually only needed when the setting is going to be displayed
-in the UI. All other times the field config is irrelevant and we save some time by not performing these actions. Especially since
-some settings might perform API requests to get a list of available values etc.
+You might be wondering why some properties are configured as parameters when making the setting and some properties in
+the callback method. The reason for this is performance because we usually create all settings on each request.
+Everything that is configured within the callback to configure the `FieldConfig $field` is only needed when the setting
+is going to be displayed in the UI. All other times the field config is irrelevant and we save time by not executing
+these actions. Especially since some settings might perform API requests to get a list of available values etc. within
+ this callback.
 
 ### Configuring the value for a system setting in the config file
 
@@ -119,13 +112,13 @@ the plugin `MyPlugin` it is possible to configure the value for a setting `refre
 refreshInterval = 15
 ```
 
-As soon as a value in the config file is configured for a setting, it won't be possible to change the value for that
-setting anymore in the UI and the setting will not be even shown.
+As soon as a value in the config file is configured, it won't be possible to change the value for that setting anymore
+in the UI and the setting will not be even displayed.
 
 ### Limiting who can configure a setting in the UI
 
-By default for example a system setting can be only configured by a user with super user access. However, you can customize
-this default behaviour by using the `setIsWritableByCurrentUser` method. For example you can define to let only a user
+For example a system setting can be only configured by a user with super user access by default. However, you can
+customize this behaviour by using the `setIsWritableByCurrentUser` method. For example you can define to let only a user
 named "MyRootUser" change the setting. All other users would not be able to see the value for that setting and neither
 would they be able to change it.
 
@@ -149,14 +142,13 @@ $this->autoRefresh->setIsWritableByCurrentUser(false);
 
 ### Showing or hiding a setting in the UI dynamically
 
-Sometimes you might have a bit more complicated form and a setting should be only visible when another setting
-was configured in a certain way. Piwik can show or hide settings dynamically without a reload based on a certain
+Sometimes you might have a bit more complicated form where a setting should be only visible when another setting
+is configured in a certain way. Piwik can show or hide settings dynamically without a reload based on a certain
 condition. Say we wanted to have the setting `refreshInterval` only visible if `autoRefresh` is enabled, then
 we can do this as follows:
 
 ```php
 $this->makeSetting('refreshInterval', $default = '3', FieldConfig::TYPE_INT, function (FieldConfig $field) {
-    // some other field config
     $field->condition = 'autoRefresh';
     // instead it was also possible to write eg 'autoRefresh == 1' or 'autoRefresh == true'
     // multiple conditions can be combined such as 'autoRefresh == 1 && anotherSetting == "foobar"'
