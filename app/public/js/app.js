@@ -8,6 +8,11 @@ $('a').each(function (index, a) {
     }
 });
 
+$('.piwik-version-select').on('change', function () {
+    document.cookie = "piwikVersion=" + parseInt($(this).val(), 10) + ';path=/;';
+    location.reload();
+});
+
 $('.documentation img').each(function (index, img) {
     var imageSrc = $(img).attr('src');
 

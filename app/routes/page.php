@@ -30,6 +30,13 @@ function send404NotFound(Slim $app) {
 
 function initView($app)
 {
+    if (!empty($_COOKIE['piwikVersion'])) {
+        $piwikVersion = (int)$_COOKIE['piwikVersion'];
+        $app->view->setData('selectedPiwikVersion', $piwikVersion);
+    } else {
+        $app->view->setData('selectedPiwikVersion', PIWIK_DEFAULT_VERSION);
+    }
+
     $app->view->setData('revision', Git::getCurrentShortRevision());
 }
 
@@ -157,7 +164,8 @@ $app->get('/changelog', function () use ($app) {
         file_put_contents($targetFile, $markdown);
     }
 
-    renderGuide($app, new Guide('changelog'), new ChangelogCategory());
+    $category = new ChangelogCategory();
+    renderGuide($app, $category->getIntroGuide(), $category);
 });
 
 $app->get('/data/documents', function () use ($app) {

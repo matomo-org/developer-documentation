@@ -9,3 +9,4 @@
 /app/tmp/logs/*
 /docs/changelog.md
 /docs/cache/
+/docs/*/cache/

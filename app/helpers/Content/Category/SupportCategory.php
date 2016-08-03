@@ -8,6 +8,7 @@
 
 namespace helpers\Content\Category;
 
+use helpers\Content\GlobalGuide;
 use helpers\Content\Guide;
 
 class SupportCategory extends Category
@@ -29,6 +30,6 @@ class SupportCategory extends Category
 
     public function getIntroGuide()
     {
-        return new Guide('support');
+        return new GlobalGuide('support');
     }
 }

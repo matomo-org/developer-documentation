@@ -107,40 +107,50 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         
         return !empty($ignoreTags);
     }
+    
+    private function isSubclassOf(\ReflectionClass $rc, $subclass)
+    {
+        if (!class_exists($subclass)) {
+            return false;
+        }
+
+        return $rc->isSubclassOf($subclass);
+    }
 
     private function inheritsFromBlacklistedClass(ClassReflection $class)
     {
         $rc = new \ReflectionClass($class->getName());
 
-        if ($rc->isSubclassOf('Symfony\Component\Console\Command\Command')) {
+        if ($this->isSubclassOf($rc, 'Symfony\Component\Console\Command\Command')) {
             return true;
         }
         
-        if ($rc->isSubclassOf('Piwik\Plugin\Tasks')) {
+        if ($this->isSubclassOf($rc, 'Piwik\Plugin\Tasks')) {
             return true;
         }
 
-        if ($rc->isSubclassOf('Piwik\Plugin\Widgets')) {
+        if ($this->isSubclassOf($rc, 'Piwik\Plugin\Widgets')
+           || $this->isSubclassOf($rc, 'Piwik\Widget\Widget')) {
             return true;
         }
         
-        if ($rc->isSubclassOf('Piwik\Plugin\Archiver')) {
+        if ($this->isSubclassOf($rc, 'Piwik\Plugin\Archiver')) {
             return true;
         }
 
-        if ($rc->isSubclassOf('Piwik\Plugin\Menu')) {
+        if ($this->isSubclassOf($rc, 'Piwik\Plugin\Menu')) {
             return true;
         }
 
-        if ($rc->isSubclassOf('Piwik\Plugin\Segment')) {
+        if ($this->isSubclassOf($rc, 'Piwik\Plugin\Segment')) {
             return true;
         }
 
-        if ($rc->isSubclassOf('Piwik\Plugin\Report')) {
+        if ($this->isSubclassOf($rc, 'Piwik\Plugin\Report')) {
             return true;
         }
 
-        if ($rc->isSubclassOf('Piwik\Plugin\Visualization')) {
+        if ($this->isSubclassOf($rc, 'Piwik\Plugin\Visualization')) {
             return true;
         }
 
@@ -154,17 +164,16 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
             return false;
         }
 
-        if ($rc->isSubclassOf('Piwik\Columns\Dimension') ||
-            $rc->isSubclassOf('Piwik\Plugin\Dimension\ActionDimension') ||
-            $rc->isSubclassOf('Piwik\Plugin\Dimension\ConversionDimension') ||
-            $rc->isSubclassOf('Piwik\Plugin\Dimension\VisitDimension')) {
+        if ($this->isSubclassOf($rc, 'Piwik\Columns\Dimension') ||
+            $this->isSubclassOf($rc, 'Piwik\Plugin\Dimension\ActionDimension') ||
+            $this->isSubclassOf($rc, 'Piwik\Plugin\Dimension\ConversionDimension') ||
+            $this->isSubclassOf($rc, 'Piwik\Plugin\Dimension\VisitDimension')) {
 
             return true;
         }
 
-        return $rc->isSubclassOf('Piwik\Plugin\Controller');
+        return $this->isSubclassOf($rc, 'Piwik\Plugin\Controller');
     }
-
 
     private function hasApiTag(\Sami\Reflection\Reflection $reflection)
     {

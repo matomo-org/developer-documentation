@@ -3,6 +3,7 @@
 namespace helpers\Content;
 
 use helpers\DocumentNotExistException;
+use helpers\Environment;
 use helpers\Markdown\Document;
 use helpers\Markdown\MarkdownParserFactory;
 
@@ -102,7 +103,9 @@ class Guide implements MenuItem
 
     public function linkToEdit()
     {
-        return 'https://github.com/piwik/developer-documentation/tree/master/docs/' . $this->name . '.md';
+        $piwikVersion = Environment::getPiwikVersionDirectory();
+
+        return 'https://github.com/piwik/developer-documentation/tree/master/docs/' . $piwikVersion . '/' . $this->name . '.md';
     }
 
     public function getPrevious()
@@ -130,7 +133,8 @@ class Guide implements MenuItem
 
     protected function getFilePath()
     {
-        return __DIR__ . '/../../../docs/' . $this->name . '.md';
+        // TODO get current version
+        return Environment::getPathToDocs() . '/' . $this->name . '.md';
     }
 
     private function validateName()

@@ -71,7 +71,7 @@ class SearchIndex
 
     private function getPhpDocReferences()
     {
-        $indexPath = __DIR__ . '/../../docs/generated/master/Index.md';
+        $indexPath = Environment::getPathToGeneratedDocs() . '/Index.md';
         $indexMarkdown = file_get_contents($indexPath);
 
         $count = preg_match_all("/^- \[`?([a-zA-Z0-9_\(\)\$]+)`?\]\(([\$a-zA-Z0-9_.\/\#]+)\)/m", $indexMarkdown, $documentMatches);

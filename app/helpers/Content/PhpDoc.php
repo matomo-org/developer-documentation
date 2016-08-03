@@ -1,6 +1,7 @@
 <?php
 
 namespace helpers\Content;
+use helpers\Environment;
 
 /**
  * Generated PhpDoc.
@@ -34,6 +35,6 @@ class PhpDoc extends Guide
 
     protected function getFilePath()
     {
-        return __DIR__ . '/../../../docs/generated/master/' . $this->name . '.md';
+        return Environment::getPathToGeneratedDocs() . '/' . $this->name . '.md';
     }
 }

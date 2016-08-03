@@ -51,6 +51,17 @@
                 <li>
                     <div id="quick-search-typeahead">
                         <input type="text" placeholder="Quick search..."/>
+
+                        <select title="Select your Piwik version to show documentation for that version"
+                                class="piwik-version-select"
+                                name="piwik">
+                            <option value="2"
+                                    {% if selectedPiwikVersion is defined and selectedPiwikVersion == '2' %}selected{% endif %}
+                                    >Piwik 2.X</option>
+                            <option value="3"
+                                    {% if selectedPiwikVersion is defined and selectedPiwikVersion == '3' %}selected{% endif %}
+                                    >Piwik 3.X</option>
+                        </select>
                     </div>
                 </li>
             </ul>
