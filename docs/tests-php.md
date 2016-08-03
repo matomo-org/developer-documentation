@@ -9,6 +9,13 @@ As explained in the previous guide, Piwik's test suite contains PHP tests and [U
 
 If you're creating a new plugin, you may find it beneficial to engage in [Test Driven Development](http://en.wikipedia.org/wiki/Test-driven_development) or at least to verify your code is correct with tests. With tests you'll be able to ensure that your code works and you'll be able to ensure the changes you make don't cause regressions.
 
+Before you start make sure you have enabled development mode:
+
+```
+$ ./console development:enable
+```
+
+
 ## Writing unit tests
 
 A unit test tests only a single method or class and does not use dependencies like the filesystem, web, config, database or any other plugin.
