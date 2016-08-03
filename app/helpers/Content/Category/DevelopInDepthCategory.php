@@ -27,7 +27,6 @@ class DevelopInDepthCategory extends Category
             new UnlinkedCategory('in-depth-understanding-piwik'),
             new UnlinkedCategory('in-depth-web-interface'),
             new UnlinkedCategory('in-depth-utils'),
-            new UnlinkedCategory('in-depth-utils'),
             new UnlinkedCategory('in-depth-reporting-api'),
             new Guide('data-model'),
             new UnlinkedCategory('in-depth-tests'),
