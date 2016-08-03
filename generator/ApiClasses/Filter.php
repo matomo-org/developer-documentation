@@ -133,8 +133,12 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
            || $this->isSubclassOf($rc, 'Piwik\Widget\Widget')) {
             return true;
         }
-        
+
         if ($this->isSubclassOf($rc, 'Piwik\Plugin\Archiver')) {
+            return true;
+        }
+
+        if ($this->isSubclassOf($rc, 'Piwik\Settings\Settings')) {
             return true;
         }
 
