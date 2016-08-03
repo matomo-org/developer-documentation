@@ -60,7 +60,7 @@ class SearchIndex
         });
 
         $urls = array_map(function (MenuItem $item) {
-            return $item->getMenuUrl();
+            return Environment::completeUrl($item->getMenuUrl());
         }, $items);
         $titles = array_map(function (MenuItem $item) {
             return $item->getMenuTitle();

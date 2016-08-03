@@ -10,16 +10,43 @@ namespace helpers;
 
 class Environment
 {
+    private static $piwikVersion = LATEST_PIWIK_DOCS_VERSION;
+    private static $urlPrefix = '';
+
+    public static function getUrlPrefix()
+    {
+        return self::$urlPrefix;
+    }
+
+    // this prefix will be used for internal links in Piwik, this way we keep the piwik version in the URL
+    public static function setUrlPrefix($urlPrefix)
+    {
+        self::$urlPrefix = $urlPrefix;
+    }
+
+    public static function setPiwikVersion($piwikVersion)
+    {
+        self::$piwikVersion = (int) $piwikVersion;
+    }
+    
+    public static function completeUrl($path)
+    {
+        if (strpos($path, '://') !== false) {
+            return $path; // we only rewrite internal links
+        }
+
+        $urlPrefix = self::getUrlPrefix();
+
+        if ($urlPrefix) {
+            return $urlPrefix . $path;
+        }
+
+        return $path;
+    }
 
     public static function getPiwikVersion()
     {
-        if (!empty($_COOKIE['piwikVersion'])) {
-            $piwikVersion = (int)$_COOKIE['piwikVersion'];
-        } else {
-            $piwikVersion = PIWIK_DEFAULT_VERSION;
-        }
-
-        return $piwikVersion;
+        return self::$piwikVersion;
     }
 
     public static function getPiwikVersionDirectory()

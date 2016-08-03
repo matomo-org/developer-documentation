@@ -28,6 +28,11 @@ class PhpDoc extends Guide
         return parent::getMenuTitle();
     }
 
+    public function linkToEdit()
+    {
+        return null;
+    }
+
     public function getMenuUrl()
     {
         return '/api-reference/' . $this->url;

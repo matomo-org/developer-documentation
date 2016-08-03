@@ -4,6 +4,9 @@
     <title>{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Piwik Analytics - Developer Docs</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if isDuplicatedContent %}
+        <meta name="robots" content="noindex, follow" />
+    {% endif %}
     <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/highlight.zenburn.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
@@ -26,41 +29,42 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand hidden-sm" href="/"><img height="20" width="74" src="/img/logo.png"/></a>
+            <a class="navbar-brand hidden-sm" href="{{ '/'|completeUrl }}"><img height="20" width="74" src="/img/logo.png"/></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li {% if isHome %}class="active"{% endif %}><a href="/">Home</a></li>
+                <li {% if isHome %}class="active"{% endif %}><a href="{{ '/'|completeUrl }}">Home</a></li>
                 <li {% if activeMenu == 'Integrate' %}class="active"{% endif %}>
-                    <a href="/integration">Integrate</a>
+                    <a href="{{ '/integration'|completeUrl }}">Integrate</a>
                 </li>
                 <li {% if activeMenu == 'Develop' %}class="active"{% endif %}>
-                    <a href="/develop">Develop</a>
+                    <a href="{{ '/develop'|completeUrl }}">Develop</a>
                 </li>
                 <li {% if activeMenu == 'API Reference' %}class="active"{% endif %}>
-                    <a href="/api-reference">API Reference</a>
+                    <a href="{{ '/api-reference'|completeUrl }}">API Reference</a>
                 </li>
                 <li {% if activeMenu == 'Changelog' %}class="active"{% endif %}>
-                    <a href="/changelog">Changelog</a>
+                    <a href="{{ '/changelog'|completeUrl }}">Changelog</a>
                 </li>
                 <li {% if activeMenu == 'Support' %}class="active"{% endif %}>
-                    <a href="/support">Support</a>
+                    <a href="{{ '/support'|completeUrl }}">Support</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav pull-right">
                 <li>
                     <div id="quick-search-typeahead">
-                        <input type="text" placeholder="Quick search..."/>
+                        <input type="text"
+                               data-action="{{ '/data/documents'|completeUrl }}"
+                               placeholder="Quick search..."/>
 
-                        <select title="Select your Piwik version to show documentation for that version"
+                        <select title="Select your Piwik version"
                                 class="piwik-version-select"
                                 name="piwik">
-                            <option value="2"
-                                    {% if selectedPiwikVersion is defined and selectedPiwikVersion == '2' %}selected{% endif %}
-                                    >Piwik 2.X</option>
-                            <option value="3"
-                                    {% if selectedPiwikVersion is defined and selectedPiwikVersion == '3' %}selected{% endif %}
-                                    >Piwik 3.X</option>
+                            {% for i in 2..latestPiwikDocsVersion %}
+                                <option value="{% if i == latestPiwikDocsVersion %}/{% else %}{{ i }}.x{% endif %}"
+                                        {% if selectedPiwikVersion is defined and selectedPiwikVersion == i %}selected{% endif %}
+                                >Piwik {{ i }}.X</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </li>

@@ -71,6 +71,8 @@ class CacheMiddleware extends \Slim\Middleware
 
     private function getCacheKey($req)
     {
-        return $this->pathToCacheKey($req->getPath());
+        $piwikVersion = Environment::getPiwikVersion();
+
+        return $piwikVersion . '_' . $this->pathToCacheKey($req->getPath());
     }
 }

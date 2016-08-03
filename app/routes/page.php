@@ -22,6 +22,7 @@ use helpers\SearchIndex;
 use helpers\Content\Category\SupportCategory;
 use helpers\DocumentNotExistException;
 use helpers\Git;
+use helpers\Environment;
 use Slim\Slim;
 
 function send404NotFound(Slim $app) {
@@ -30,13 +31,9 @@ function send404NotFound(Slim $app) {
 
 function initView($app)
 {
-    if (!empty($_COOKIE['piwikVersion'])) {
-        $piwikVersion = (int)$_COOKIE['piwikVersion'];
-        $app->view->setData('selectedPiwikVersion', $piwikVersion);
-    } else {
-        $app->view->setData('selectedPiwikVersion', PIWIK_DEFAULT_VERSION);
-    }
-
+    $app->view->setData('isDuplicatedContent', (bool) Environment::getUrlPrefix());
+    $app->view->setData('selectedPiwikVersion', Environment::getPiwikVersion());
+    $app->view->setData('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
     $app->view->setData('revision', Git::getCurrentShortRevision());
 }
 
@@ -63,7 +60,7 @@ foreach (Redirects::getRedirects() as $url => $redirect) {
     });
 }
 
-$app->get('/', function () use ($app) {
+$app->get('(/)', function () use ($app) {
     $app->render('home.twig', ['isHome' => true]);
 });
 
