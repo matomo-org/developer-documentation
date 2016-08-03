@@ -81,8 +81,10 @@ Run the following command to install third party libraries:
 
     $ php composer.phar install
     
-If this command fails, follow the [installation instructions for Composer](https://getcomposer.org/doc/00-intro.md).
+If this command fails, follow the [installation instructions for Composer](https://getcomposer.org/doc/00-intro.md). On Windows you will likely need to add another parameter:
 
+    $ php composer.phar install --no-script
+    
 Now that you've got a copy of Piwik, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
 
 If your PHP version is greater than 5.4, you can also use [PHP's built-in web server](http://php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
