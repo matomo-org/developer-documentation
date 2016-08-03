@@ -64,10 +64,10 @@ names etc. For a list of all options have a look at the [WidgetConfig class refe
 The widget defined above will be rendered by calling the `render()` method on the class. This method could look like as simple as this:
 
 ```php
-    public function myExampleWidget()
-    {
-        return 'Hello world!';
-    }
+public function render()
+{
+    return 'Hello world!';
+}
 ```
 
 As you can see, **just like in controllers**, the `render` method should return a string.
@@ -83,20 +83,20 @@ To do this, you can use all the methods starting with `\Piwik\Piwik::checkUser*`
 `\Piwik\Piwik::isUser*`, for example:
 
 ```php
-    public static function configure(WidgetConfig $config)
-    {
-        // only show widget if current user has super user access
-        $config->setIsEnabled(\Piwik\Piwik::hasUserSuperUserAccess());
-        // or $config->disable();
-    }
+public static function configure(WidgetConfig $config)
+{
+    // only show widget if current user has super user access
+    $config->setIsEnabled(\Piwik\Piwik::hasUserSuperUserAccess());
+    // or $config->disable();
+}
 
-    public function render()
-    {
-        // make sure current user has super user access
-        \Piwik\Piwik::checkUserHasSuperUserAccess();
+public function render()
+{
+    // make sure current user has super user access
+    \Piwik\Piwik::checkUserHasSuperUserAccess();
 
-        return 'Hello world!';
-    }
+    return 'Hello world!';
+}
 ```
 
 ## Adding content to an existing reporting page
@@ -107,12 +107,12 @@ If you want to add your widget's content to an existing page in the reporting me
  widget to the existing "Visitors => Software" page, then you can do this as follows:
 
 ```php
-    public static function configure(WidgetConfig $config)
-    {
-        $config->setCategoryId('General_Visitors');
-        $config->setSubcategoryId('DevicesDetection_Software');
-        $config->setOrder(10);
-    }
+public static function configure(WidgetConfig $config)
+{
+    $config->setCategoryId('General_Visitors');
+    $config->setSubcategoryId('DevicesDetection_Software');
+    $config->setOrder(10);
+}
 ```
 
 The order will define at which position of the page the widget will be shown. The lower the number, the higher up in the
@@ -134,13 +134,13 @@ new main menu category like this:
 
 
 ```php
-    public static function configure(WidgetConfig $config)
-    {
-        $config->setCategoryId('Campaigns');
-        // this will be a new menu category in the reporting menu
-        $config->setSubcategoryId('AdWords');
-        // this will be a submenu item of the 'Campaigns' menu
-    }
+public static function configure(WidgetConfig $config)
+{
+    $config->setCategoryId('Campaigns');
+    // this will be a new menu category in the reporting menu
+    $config->setSubcategoryId('AdWords');
+    // this will be a submenu item of the 'Campaigns' menu
+}
 ```
 
 Now other plugins can enrich the "Campaigns" menu category, they can enrich your "Adwords" page, and you can define
@@ -155,10 +155,10 @@ manage something. The widget to "Manage Goals" should be available in the report
   to the author. You can do this as follows:
 
 ```php
-    public static function configure(WidgetConfig $config)
-    {
-        $config->setIsNotWidgetizable();
-    }
+public static function configure(WidgetConfig $config)
+{
+    $config->setIsNotWidgetizable();
+}
 ```
 
 ### Removing widgets and content from reporting pages.
