@@ -7,12 +7,8 @@ Plugins can define their own configuration options by using the Settings generat
 
 ## Type of settings
 
- The Piwik platform differentiate between
-"System Settings", "User Settings" and "Measurable Settings". "System Settings" add new sections to the
-"General Settings" page, "User Settings" add new sections to the "Personal Settings" page and "Measurable Settings"
+ The Piwik platform differentiate between "System Settings", "User Settings" and "Measurable Settings":
 
-
-The Piwik platform differentiates between  and [UserSetting](/api-reference/Piwik/Settings/UserSetting).
 
 **User settings** can be configured by any logged in user and each user can configure the setting independently.
 The Piwik platform makes sure that settings are stored per user and that a user cannot see another users configuration.
@@ -50,7 +46,9 @@ To see the settings in action go to *Administration > General Settings* in your 
 
 ### Adding one or more settings
 
-Settings are added in the `init()` method of the settings class. To do this, call the `addSetting()` and pass it a `UserSetting` or `SystemSetting` object.
+Settings are added in the `init()` method of the settings class. To do this, call the `makeSetting()` and pass in the
+rthe internal name of the setting, the default value when no value is configured yet, which PHP type the setting should
+return and a callback to configure the UI representation of the field.
 
 For example:
 
@@ -110,6 +108,60 @@ The reason for this is basically speed because we usually create all settings on
 within the callback to configure the `FieldConfig $field` is actually only needed when the setting is going to be displayed
 in the UI. All other times the field config is irrelevant and we save some time by not performing these actions. Especially since
 some settings might perform API requests to get a list of available values etc.
+
+### Configuring the value for a system setting in the config file
+
+System settings cannot be only configured via the UI but also via the `config/config.ini.php` file. For example for
+the plugin `MyPlugin` it is possible to configure the value for a setting `refreshInterval` like this:
+
+```ini
+[MyPlugin]
+refreshInterval = 15
+```
+
+As soon as a value in the config file is configured for a setting, it won't be possible to change the value for that
+setting anymore in the UI and the setting will not be even shown.
+
+### Limiting who can configure a setting in the UI
+
+By default for example a system setting can be only configured by a user with super user access. However, you can customize
+this default behaviour by using the `setIsWritableByCurrentUser` method. For example you can define to let only a user
+named "MyRootUser" change the setting. All other users would not be able to see the value for that setting and neither
+would they be able to change it.
+
+```php
+$this->autoRefresh = $this->createAutoRefreshSetting();
+$login = \Piwik\Piwik::getCurrentUserLogin();
+$this->autoRefresh->setIsWritableByCurrentUser($login == 'MyRootUser');
+```
+
+### Removing a setting from the UI
+
+Sometimes you might want to create a setting but not have it visible in the UI at all. This is for example useful if you
+make the visibility of a setting dependent on another setting or you only want users to configure it via the
+`config/config.ini.php`. To make sure a setting cannot be changed via the UI call `setIsWritableByCurrentUser(false)`.
+
+```php
+$this->autoRefresh = $this->createAutoRefreshSetting();
+$login = \Piwik\Piwik::getCurrentUserLogin();
+$this->autoRefresh->setIsWritableByCurrentUser(false);
+```
+
+### Showing or hiding a setting in the UI dynamically
+
+Sometimes you might have a bit more complicated form and a setting should be only visible when another setting
+was configured in a certain way. Piwik can show or hide settings dynamically without a reload based on a certain
+condition. Say we wanted to have the setting `refreshInterval` only visible if `autoRefresh` is enabled, then
+we can do this as follows:
+
+```php
+$this->makeSetting('refreshInterval', $default = '3', FieldConfig::TYPE_INT, function (FieldConfig $field) {
+    // some other field config
+    $field->condition = 'autoRefresh';
+    // instead it was also possible to write eg 'autoRefresh == 1' or 'autoRefresh == true'
+    // multiple conditions can be combined such as 'autoRefresh == 1 && anotherSetting == "foobar"'
+});
+```
 
 ## Reading settings values
 

@@ -3,7 +3,9 @@ category: Develop
 ---
 # Widgets
 
-Widgets can be added to your dashboards or exported via a URL to embed it on any page. Most widgets in Piwik represent a report but a widget can display anything, for example a RSS feed of your corporate news.
+All widgets can be added to your dashboards or exported via a URL to embed it on any page. Most widgets in Piwik
+represent a report but a widget can display anything, for example a RSS feed of your corporate news. You can also use
+widgets to add new content to an existing page in the reporting menu or to add a new menu item to the reporting menu.
 
 ## Creating a widget
 
@@ -13,22 +15,51 @@ To add a widget in your plugin, use the console:
 $ ./console generate:widget
 ```
 
-The command will ask for your plugin name and for a widget category. You can select any existing category, for example "Visitors", "Live!" or "Actions", but you can also give a new category (for example your company name). The command will create a `Widgets` class in `plugins/MyPlugin/Widgets.php`.
-
-The widget category should be set in the `$category` property:
-
-```php
-    protected $category = 'ExampleCompany';
-```
-
-The `init()` method lets you add as many widgets as you want:
+The command will ask for your plugin name, for a widget category and for the name of the widget you want to create.
+You can select any existing category, for example "Visitors", "Live!" or "Actions", but you can also define a new category
+(for example your company name). The command will create a file in the `plugins/MyPlugin/Widgets/` directory,
+for example MyExampleWidget.php`.
 
 ```php
-    protected function init()
+class MyExampleWidget extends Widget
+{
+     /**
+      * @var Translator
+      */
+     private $translator;
+
+     public function __construct(Translator $translator)
+     {
+         $this->translator = $translator;
+     }
+
+    public static function configure(WidgetConfig $config)
     {
-        $this->addWidget('My widget name', $method = 'myExampleWidget');
+        $config->setCategoryId('About Piwik');
+        $config->setName('My Example Widget');
+        $config->setOrder(5);
     }
+
+    public function render()
+    {
+        $view = new View('@CoreHome/getDonateForm');
+        $view->footerMessage = $this->translator->translate('CoreHome_OnlyForSuperUserAccess');
+        return $view->render();
+    }
+}
 ```
+
+### The constructor
+
+In the constructor you can request any dependencies such as a translator or any other class.
+
+### Configuration
+
+The widget can be configured in the `configure` method. The method is `static` because the Piwik platform would otherwise
+need to resolve all dependencies defined in the constructor for all widgets just to get a list of all existing widget
+names etc. For a list of all options have a look at the The [WidgetConfig class reference](/api-reference/Piwik/Widget/WidgetConfig).
+
+### Rendering the widget
 
 The widget defined above will be rendered by calling the `myExampleWidget()` method on the class. This method could look like this:
 
