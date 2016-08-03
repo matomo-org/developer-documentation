@@ -60,9 +60,9 @@
                         <select title="Select your Piwik version"
                                 class="piwik-version-select"
                                 name="piwik">
-                            {% for i in 2..latestPiwikDocsVersion %}
+                            {% for i in availablePiwikVersions %}
                                 <option value="{% if i == latestPiwikDocsVersion %}/{% else %}{{ i }}.x{% endif %}"
-                                        {% if selectedPiwikVersion is defined and selectedPiwikVersion == i %}selected{% endif %}
+                                        {% if selectedPiwikVersion == i %}selected{% endif %}
                                 >Piwik {{ i }}.X</option>
                             {% endfor %}
                         </select>
@@ -131,6 +131,7 @@ $(document).ready(function () {
     var _paq = _paq || [];
     _paq.push(["setCookieDomain", "*.piwik.org"]);
     {% block piwik_customization %}{% endblock %}
+    _paq.push(["setCustomVariable", 1, 'PiwikVersion', '{{ selectedPiwikVersion }}', 'page']);
     _paq.push(["trackPageView"]);
     _paq.push(["enableLinkTracking"]);
 

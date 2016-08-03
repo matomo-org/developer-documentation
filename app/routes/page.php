@@ -31,7 +31,8 @@ function send404NotFound(Slim $app) {
 
 function initView($app)
 {
-    $app->view->setData('isDuplicatedContent', (bool) Environment::getUrlPrefix());
+    $app->view->setData('isDuplicatedContent', !Environment::isLatestPiwikVersion());
+    $app->view->setData('availablePiwikVersions', Environment::getAvailablePiwikVersions());
     $app->view->setData('selectedPiwikVersion', Environment::getPiwikVersion());
     $app->view->setData('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
     $app->view->setData('revision', Git::getCurrentShortRevision());
@@ -50,6 +51,38 @@ function renderGuide(Slim $app, Guide $guide, Category $category)
 initView($app);
 
 $app->notFound(function () use ($app) {
+    $alternativeUrls = array();
+    $path = $app->request->getPath();
+    $currentPiwikVersion = Environment::getPiwikVersion();
+    foreach (Environment::getAvailablePiwikVersions() as $piwikVersion) {
+        if ($piwikVersion != $currentPiwikVersion) {
+
+            Environment::setPiwikVersion($piwikVersion);
+
+            if (strpos($path, '/guides/') !== false) {
+                try {
+                    // we check if the requested resource maybe exists for another Piwik version
+                    $guide = new Guide(str_replace('/guides/', '', $path));
+                    $alternativeUrls[] = Environment::completeUrl($guide->getMenuUrl());
+                } catch (DocumentNotExistException $e) {}
+            }
+
+            if (strpos($path, '/api-reference/') !== false) {
+                try {
+                    $replaced = str_replace('/api-reference/', '', $path);
+                    // we check if the requested resource maybe exists for another Piwik version
+                    $phpdoc = new PhpDoc($replaced, $replaced);
+                    $alternativeUrls[] = Environment::completeUrl($phpdoc->getMenuUrl());
+                } catch (DocumentNotExistException $e) {
+                }
+            }
+        }
+
+    }
+    Environment::setPiwikVersion($currentPiwikVersion);
+
+    $app->view->setData('alternativeUrls', $alternativeUrls);
+
     $app->render('404.twig');
 });
 

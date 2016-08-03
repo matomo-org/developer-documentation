@@ -13,15 +13,19 @@ class Environment
     private static $piwikVersion = LATEST_PIWIK_DOCS_VERSION;
     private static $urlPrefix = '';
 
-    public static function getUrlPrefix()
+    public static function isLatestPiwikVersion()
     {
-        return self::$urlPrefix;
+        return self::getPiwikVersion() == LATEST_PIWIK_DOCS_VERSION;
     }
 
     // this prefix will be used for internal links in Piwik, this way we keep the piwik version in the URL
-    public static function setUrlPrefix($urlPrefix)
+    public static function getUrlPrefix()
     {
-        self::$urlPrefix = $urlPrefix;
+        if (self::isLatestPiwikVersion()) {
+            return '';
+        }
+
+        return '/' . self::getPiwikVersion() . '.x';
     }
 
     public static function setPiwikVersion($piwikVersion)
@@ -42,6 +46,12 @@ class Environment
         }
 
         return $path;
+    }
+
+    // returns the piwik versions that can be chosen via the selector
+    public static function getAvailablePiwikVersions()
+    {
+        return range(2, LATEST_PIWIK_DOCS_VERSION);
     }
 
     public static function getPiwikVersion()
