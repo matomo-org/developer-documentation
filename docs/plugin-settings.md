@@ -3,11 +3,14 @@ category: Develop
 ---
 # Plugin Settings
 
-Plugins can define their own configuration options by creating a class named **Settings** that extends [Piwik\Plugin\Settings](/api-reference/Piwik/Plugin/Settings).
-
-Plugins that do this will cause new sections to appear in the *Settings > Plugins* admin page.
+Plugins can define their own configuration options by using the Settings generator.
 
 ## Type of settings
+
+ The Piwik platform differentiate between
+"System Settings", "User Settings" and "Measurable Settings". "System Settings" add new sections to the
+"General Settings" page, "User Settings" add new sections to the "Personal Settings" page and "Measurable Settings"
+add new fields when creating or editing a website or measurable (eg mobile app etc).
 
 The Piwik platform differentiates between [SystemSetting](/api-reference/Piwik/Settings/SystemSetting) and [UserSetting](/api-reference/Piwik/Settings/UserSetting).
 

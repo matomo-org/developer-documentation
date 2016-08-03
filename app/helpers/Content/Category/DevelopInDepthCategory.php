@@ -11,6 +11,7 @@ namespace helpers\Content\Category;
 use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
 use helpers\Content\RemoteLink;
+use helpers\Content\UnlinkedCategory;
 
 class DevelopInDepthCategory extends Category
 {
@@ -23,30 +24,13 @@ class DevelopInDepthCategory extends Category
     {
         return [
             new Guide('piwik-in-depth-introduction'),
-            new EmptySubCategory('Understanding Piwik', [
-                new Guide('how-piwik-works'),
-                new Guide('http-request-handling'),
-                new Guide('piwiks-extensibility-points'),
-            ]),
-            new EmptySubCategory('Web Interface', [
-                new Guide('custom-reports-extended'),
-                new Guide('controllers'),
-                new Guide('views'),
-                new Guide('javascript-extended'),
-                new Guide('themable-plugins'),
-            ]),
-            new EmptySubCategory('Utils', [
-                new Guide('piwiks-ini-configuration'),
-            ]),
-            new EmptySubCategory('Reporting API', [
-                new Guide('apis'),
-                new Guide('piwiks-reporting-api'),
-            ]),
+            new UnlinkedCategory('in-depth-understanding-piwik'),
+            new UnlinkedCategory('in-depth-web-interface'),
+            new UnlinkedCategory('in-depth-utils'),
+            new UnlinkedCategory('in-depth-utils'),
+            new UnlinkedCategory('in-depth-reporting-api'),
             new Guide('data-model'),
-            new EmptySubCategory('Tests', [
-                new Guide('tests-system'),
-                new Guide('tests-travis-extended'),
-            ]),
+            new UnlinkedCategory('in-depth-tests'),
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),

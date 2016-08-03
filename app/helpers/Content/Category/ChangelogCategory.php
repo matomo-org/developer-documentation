@@ -8,7 +8,6 @@
 
 namespace helpers\Content\Category;
 
-use helpers\Content\GlobalGuide;
 use helpers\Content\Guide;
 
 class ChangelogCategory extends Category
@@ -30,6 +29,6 @@ class ChangelogCategory extends Category
 
     public function getIntroGuide()
     {
-        return new GlobalGuide('changelog');
+        return new Guide('changelog');
     }
 }

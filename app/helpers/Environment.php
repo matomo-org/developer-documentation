@@ -29,22 +29,22 @@ class Environment
         return $piwikVersion . '.x';
     }
 
-    public static function getDocsBasePath()
+    public static function getBaseDocsPath()
     {
         return __DIR__ . '/../../docs/';
     }
 
-    public static function getPathToDocs()
+    public static function getVersionedDocsPath()
     {
         $piwikVersion = self::getPiwikVersionDirectory();
-        $path = self::getDocsBasePath();
+        $path = self::getBaseDocsPath();
 
         return $path . $piwikVersion;
     }
 
     public static function getPathToGeneratedDocs()
     {
-        $path = self::getPathToDocs();
+        $path = self::getVersionedDocsPath();
 
         return $path . '/generated';
     }

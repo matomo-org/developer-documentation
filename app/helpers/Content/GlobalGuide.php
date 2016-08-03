@@ -18,7 +18,7 @@ class GlobalGuide extends Guide
     protected function getFilePath()
     {
         // TODO get current version
-        return Environment::getDocsBasePath() . '/' . $this->name . '.md';
+        return Environment::getBaseDocsPath() . '/' . $this->name . '.md';
     }
 
 }
