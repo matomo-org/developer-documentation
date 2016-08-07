@@ -139,4 +139,4 @@ add new tables, and you can even perform custom SQL during a migration. For a li
 [DB Migration Factory API-Reference](/api-reference/Piwik/Updater/Migration/Db/Factory).
 
 If you want to perform any other operations unrelated to the MySQL database when your plugin is updated you can do this within
-the `doUpdate` method. 
+the `doUpdate` method.

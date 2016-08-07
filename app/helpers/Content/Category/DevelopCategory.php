@@ -32,6 +32,7 @@ class DevelopCategory extends Category
             new UnlinkedCategory('develop-security'),
             new UnlinkedCategory('develop-utils'),
             new Guide('tests'),
+            new UnlinkedCategory('develop-migration'),
             new DevelopInDepthCategory(),
         ];
     }
