@@ -6,6 +6,47 @@ category: Develop
 This migration guide covers explains how to do some migrations to make a plugin compatible with Piwik 3. A list of
 all changes in Piwik 3 can be found in the [Changelog](http://developer.piwik/changelog#piwik-300).
 
+## Marking your plugin as compatible with Piwik 3
+
+If you have a plugin that is compatible with Piwik 2 and 3 we recommend to specify this explicitly in your `plugin.json`
+as we otherwise assume your plugin will be only compatible with Piwik 2, for example convert this:
+
+```json
+   "require": {
+        "piwik": ">=2.16.0"
+    },
+```
+
+to:
+
+```json
+   "require": {
+        "piwik": ">=2.16.0,<4.0.0-b1"
+    },
+```
+
+Often it won't be possible to still only maintain one version for both Piwik versions and we even recommend to make a cut
+ for newer Piwik versions as it will be almost impossible to make System and UI tests work for both Piwik versions.
+ We recommend to release one more version for your current plugin which specifically tells the Marketplace the plugin is
+ not compatible with Piwik 3 like this:
+
+```json
+   "require": {
+        "piwik": ">=2.16.0,<3.0.0-b1"
+    },
+```
+
+Next we recommend to increase the version number eg from `1.2.3` to `2.0.0` and specifically require Piwik 3 like
+this:
+
+
+```json
+   "version": "2.0.0",
+   "require": {
+        "piwik": ">=3.0.0-b1,<4.0.0-b1"
+    },
+```
+
 ## Events
 
 If your plugin is listening to events you should rename the method `getListHooksRegistered` to `registerEvents`
