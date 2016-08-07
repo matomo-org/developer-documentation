@@ -69,6 +69,10 @@ actually change for Piwik 3. This way, when changing a document under `docs/` it
 As soon as something on a guide changes for Piwik 3, we should copy that article into docs/2.x and afterwards make
 adjustments on the content for Piwik 3.
 
+If a guide will be removed for a newer Piwik version and does not exist in the latest Piwik version anymore we should setup
+a redirect in `app/helpers/Redirects.php` eg to redirect `/guides/pages` to `/2.x/guides/pages`. This can be optional as
+the 404 Error page would suggest to open that page.
+
 ### When does an article need to be copied into a versioned docs folder?
 
 * When an article references a resource / URL that is not available for another Piwik version. For example an article links

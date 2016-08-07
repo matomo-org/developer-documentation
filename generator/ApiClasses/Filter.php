@@ -183,7 +183,18 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
     {
         $apiTags = ($reflection->getTags('api'));
 
-        return !empty($apiTags);
+        if (!empty($apiTags)) {
+            return true;
+        }
+
+        // fixes when using eg `@api since Piwik 3.0.0` the API tag is not recognized
+        $docComment = $reflection->getDocComment();
+
+        if (false !== strpos($docComment, ' @api ')) {
+            return true;
+        }
+
+        return false;
     }
 
     private function isAnyMethodAnApi(ClassReflection $class)
