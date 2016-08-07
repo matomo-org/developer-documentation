@@ -93,9 +93,7 @@ public static function configure(WidgetConfig $config)
 
 public function render()
 {
-    // make sure current user has super user access
-    \Piwik\Piwik::checkUserHasSuperUserAccess();
-
+    // it is not needed to check for permissions here again
     return 'Hello world!';
 }
 ```
