@@ -42,9 +42,10 @@ class MyExampleWidget extends Widget
 
     public function render()
     {
-        $view = new View('@CoreHome/getDonateForm');
-        $view->footerMessage = $this->translator->translate('CoreHome_OnlyForSuperUserAccess');
-        return $view->render();
+        // will render template "plugins/MyPlugin/templates/getDonateForm.twig"
+        return $this->renderTemplate('getDonateForm', array(
+            'footerMessage' => $this->translator->translate('CoreHome_OnlyForSuperUserAccess')
+        ));
     }
 }
 ```
