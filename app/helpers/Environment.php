@@ -18,13 +18,18 @@ class Environment
     }
 
     // this prefix will be used for internal links in Piwik, this way we keep the piwik version in the URL
-    public static function getUrlPrefix()
+    public static function getCurrentUrlPrefix()
     {
         if (self::isLatestPiwikVersion()) {
             return '';
         }
 
-        return '/' . self::getPiwikVersion() . '.x';
+        return self::buildUrlPrefix(self::getPiwikVersion());
+    }
+
+    public static function buildUrlPrefix($piwikVersion)
+    {
+        return '/' . $piwikVersion . '.x';
     }
 
     public static function setPiwikVersion($piwikVersion)
@@ -38,9 +43,11 @@ class Environment
             return $path; // we only rewrite internal links
         }
 
-        $urlPrefix = self::getUrlPrefix();
+        $urlPrefix = self::getCurrentUrlPrefix();
 
-        if ($urlPrefix) {
+        if ($urlPrefix && strpos($path, $urlPrefix) === 0) {
+            return $path;
+        } elseif ($urlPrefix) {
             return $urlPrefix . $path;
         }
 

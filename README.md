@@ -52,7 +52,48 @@ The documents will be generated into the [docs/generated](docs/generated) direct
 ## How to add docs for a new Piwik version
 
 * Increase version number for `LATEST_PIWIK_DOCS_VERSION` in `config/app.php`
-* Add a new line to `generate.sh` eg `php generator/generate.php --branch=3.x-dev --targetname=3.x` similar to the other ones. You might also want to copy the generation success detection.
+* Add a new line to `generate.sh` eg `php generator/generate.php --branch=4.x-dev --targetname=4.x` similar to the other ones. You might also want to copy the generation success detection.
+* Copy pictures from the previous version into latest version eg from `public/img/3.x` to `public/img/4.x` and update all needed pictures.
+* In `app/routes/page.php` we might need to update the branch for the latest `CHANGELOG` version in the `/changelog` route
+  see eg https://github.com/piwik/developer-documentation/blob/0.1.0/app/routes/page.php#L156  . It will be important that
+  we merge all changes to the changelog for different Piwik versions into the changelog of the latest Piwik version as we currently
+  want to show one changelog across all versions.
+
+## How to manage docs for different Piwik versions
+
+So far, docs can be put into `docs/2.x`, `docs/3.x` and directly under `docs/`. If eg a guide is requested for Piwik 2,
+we first look for docs in `docs/2.x` and if not found for docs in `docs/`. This allows us to have some pages always the
+same, eg "Support" page, "Piwik Core Development", etc. So far I have left all guides under `docs/` as not many docs will
+actually change for Piwik 3. This way, when changing a document under `docs/` it will be updated for Piwik 2 and 3.
+
+As soon as something on a guide changes for Piwik 3, we should copy that article into docs/2.x and afterwards make
+adjustments on the content for Piwik 3.
+
+### When does an article need to be copied into a versioned docs folder?
+
+* When an article references a resource / URL that is not available for another Piwik version. For example an article links
+to the API reference guide to a class that is not available in another Piwik version
+* When links for some reason are not the same for 2 different Piwik versions in general
+* When an article references eg menu items or something else but it is not the same across Piwik versions. For example
+there is no user menu in Piwik 3 anymore, or Plugin Settings are now split into "Personal Settings" and "General Settings". In such
+a case we need to make a copy of that article as the guide would be wrong otherwise.
+* When a submenu is different across Piwik versions. Submenus are usually defined in markdown files, for example under
+"Develop => Plugin Basics" submenu items are defined in `develop-plugin-basics.md`. If we eg add a new Import API into Piwik X we
+would need to create that new guide under `/docs` so it will be also available for Piwik 4 etc and then copy
+ `/docs/develop-plugin-basics.md` into `/docs/2.x/develop-plugin-basics.md` and next add the menu item to
+ `/docs/develop-plugin-basics.md`.
+* There can be many more reasons. In general if articles are different between 2 versions for various reasons because they mention
+eg outdated classes, outdated configs etc or when links break between 2 Piwik versions etc we need to created a copy of that
+guide, put it into eg `docs/2.x` and then update the existing article under `/docs`.
+
+### How do we handle images for different Piwik versions?
+
+Images are always stored in a versioned directory. Eg `public/img/2.x/*` and `public/img/3.x/*`. When there is a new Piwik version
+ we need to copy all the images from the previous version and put them into a new Piwik directory. In guides you would still
+ reference an image via `/img/myimage.jpg` and the Markdown parser will add the path for the currently selected Piwik version and
+ turn it into either eg `/img/2.x/myimage.jpg` or `/img/3.x/myimage.jpg`. With a new Piwik version often the UI changes and this way
+ it keeps things simple by having always different images and by not using the same image across different Piwik versions.
+
 
 ## Writing guides
 

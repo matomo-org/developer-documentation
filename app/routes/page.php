@@ -209,7 +209,7 @@ $app->get('/changelog', function () use ($app) {
     }
 
     if ($fetchContent) {
-        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/master/CHANGELOG.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/3.x-dev/CHANGELOG.md');
         file_put_contents($targetFile, $markdown);
     }
 
