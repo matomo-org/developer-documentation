@@ -4,8 +4,8 @@
     <title>{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Piwik Analytics - Developer Docs - v{{ selectedPiwikVersion }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if isDuplicatedContent %}
-        <meta name="robots" content="noindex, follow" />
+    {% if urlIfAvailableInNewerVersion %}
+        <link rel="canonical" href="https://{{ constant('DOCS_DOMAIN') }}{{ urlIfAvailableInNewerVersion }}">
     {% endif %}
     <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">

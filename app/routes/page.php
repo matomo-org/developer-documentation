@@ -37,7 +37,6 @@ function initView($app)
             $app->view->setData('urlIfAvailableInNewerVersion', getUrlIfDocumentIsAvailableInPiwikVersion($app, LATEST_PIWIK_DOCS_VERSION));
         }
 
-        $app->view->setData('isDuplicatedContent', !Environment::isLatestPiwikVersion());
         $app->view->setData('availablePiwikVersions', Environment::getAvailablePiwikVersions());
         $app->view->setData('selectedPiwikVersion', Environment::getPiwikVersion());
         $app->view->setData('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
@@ -67,24 +66,50 @@ function getUrlIfDocumentIsAvailableInPiwikVersion($app, $piwikVersion)
     $path = $app->request->getPath();
     $url = '';
 
-    if (strpos($path, '/guides/') !== false) {
-        try {
-            // we check if the requested resource maybe exists for another Piwik version
-            $guide = new Guide(str_replace('/guides/', '', $path));
-            $url = Environment::completeUrl($guide->getMenuUrl());
-        } catch (DocumentNotExistException $e) {}
+    if ($path === '/' || $path === '') {
+        $url = '/';
     }
 
-    if (strpos($path, '/api-reference/') !== false) {
-        try {
-            $replaced = str_replace('/api-reference/', '', $path);
-            // we check if the requested resource maybe exists for another Piwik version
-            $phpdoc = new PhpDoc($replaced, $replaced);
-            $url = Environment::completeUrl($phpdoc->getMenuUrl());
-        } catch (DocumentNotExistException $e) {
+    if (empty($url)) {
+        if (strpos($path, '/guides/') !== false) {
+            try {
+                // we check if the requested resource maybe exists for another Piwik version
+                $guide = new Guide(str_replace('/guides/', '', $path));
+                $url = Environment::completeUrl($guide->getMenuUrl());
+            } catch (DocumentNotExistException $e) {}
         }
     }
 
+    if (empty($url)) {
+        if (strpos($path, '/api-reference/') !== false) {
+            try {
+                $replaced = str_replace('/api-reference/', '', $path);
+                // we check if the requested resource maybe exists for another Piwik version
+                $phpdoc = new PhpDoc($replaced, $replaced);
+                $url = Environment::completeUrl($phpdoc->getMenuUrl());
+            } catch (DocumentNotExistException $e) {
+            }
+        }
+    }
+
+    if (empty($url)) {
+        /** @var \helpers\Content\MenuItem[] $categories */
+        $categories = [
+            new IntegrateCategory(),
+            new DevelopCategory(),
+            new DesignCategory(),
+            new ApiReferenceCategory(),
+            new DevelopInDepthCategory()
+        ];
+
+        foreach ($categories as $category) {
+            if ($path === $category->getMenuUrl() ) {
+                $url = $path;
+                break;
+            }
+        }
+    }
+    
     Environment::setPiwikVersion($currentPiwikVersion);
 
     return $url;
