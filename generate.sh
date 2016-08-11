@@ -1,35 +1,37 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+function generateDocs {
+    echo "generating $1 - $2"
+    git checkout docs/$2/generated
+    rm -rf docs/$2/cache
+    mkdir docs/$2/cache
+    rm -rf docs/$2/generated
+    mkdir docs/$2/generated
+
+    cd piwik
+    git reset --hard
+    git submodule foreach --recursive git reset --hard
+    git clean -f -d
+    git submodule foreach git clean -f
+    git fetch
+    git checkout $1
+    git pull origin $1
+    git submodule update --recursive --force
+    php composer.phar install || true
+    cd ..
+    php generator/generate.php --branch=$1 --targetname=$2
+
+    GENERATION_SUCCESS=$?
+
+    if [ $GENERATION_SUCCESS -ne 0 ]; then
+      exit 1;
+    fi
+}
+
 cd $DIR
-git checkout docs/*/generated
-rm -rf docs/*/cache
-mkdir docs/*/cache
-rm -rf docs/*/generated
-mkdir docs/*/generated
-cd piwik
-git reset --hard
-git submodule foreach --recursive git reset --hard
-git clean -f -d
-git submodule foreach git clean -f
-git fetch
-git checkout master
-git pull origin master
-git submodule update --recursive --force
-php composer.phar install || true
-cd ..
-php generator/generate.php --branch=master --targetname=2.x
-GENERATION_SUCCESS=$?
-
-if [ $GENERATION_SUCCESS -ne 0 ]; then
-  exit 1;
-fi
-
-php generator/generate.php --branch=3.x-dev --targetname=3.x
-
-GENERATION_SUCCESS=$?
+generateDocs "master" "2.x"
+generateDocs "3.x-dev" "3.x"
 rm -rf app/tmp/cache/*
 
-if [ $GENERATION_SUCCESS -ne 0 ]; then
-  exit 1;
-fi
