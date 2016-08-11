@@ -130,7 +130,9 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         }
 
         if ($this->isSubclassOf($rc, 'Piwik\Plugin\Widgets')
-           || $this->isSubclassOf($rc, 'Piwik\Widget\Widget')) {
+           || $this->isSubclassOf($rc, 'Piwik\Widget\Widget')
+           || $this->isSubclassOf($rc, 'Piwik\Widget\WidgetContainerConfig')
+           || $this->isSubclassOf($rc, 'Piwik\Widget\ReportWidgetConfig')) {
             return true;
         }
 
