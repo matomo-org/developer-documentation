@@ -1,7 +1,6 @@
 ---
-category: Develop
-title: Migrations
+category: 
+title: 
 subGuides:
-  - migrate-piwik-2-to-3
 ---
 
