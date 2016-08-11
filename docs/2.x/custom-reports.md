@@ -39,13 +39,13 @@ Links to Piwik's reporting pages are displayed on the main page under the logo:
 Making your report visible in the menu is as easy as opening the report class and defining a menu title in the `init()` method:
 
 ```php
-$this->menuTitle = 'Real-time Reports';
+$this->subcategoryId = 'Real-time Reports';
 ```
 
 Sometimes the title of the menu item is the same as the report name. In this case you can simplify the menu title definition as follows:
 
 ```php
-$this->menuTitle = $this->name;
+$this->subcategoryId = $this->name;
 ```
 
 <img src="/img/myplugin_visitors_menu_item.png"/>
@@ -58,10 +58,51 @@ If you click on it, the page will be loaded below the period selector:
 
 A widget allows users to add your report to the dashboard. It also lets them embed the report on other websites, for example using an iframe.
 
-Making a widget is also very easy. Just define a property named `widgetTitle` and you are done.
+Making a widget is quite easy. Only define this `configureWidgets` method in the report class and you are done.
 
 ```php
-$this->widgetTitle = 'Real-time Reports';
+public function configureWidgets(WidgetsList $widgetsList, ReportWidgetFactory $factory)
+{
+    // we have to do it manually since it's only done automatically if a subcategoryId is specified,
+    // we do not set a subcategoryId since this report is not supposed to be shown in the UI
+    $widgetsList->addWidgetConfig($factory->createWidget());
+}
+```
+
+#### Changing the widget name
+
+By default the widget name will be the same as the report name. If you want to have a different widget name you can define
+a name as follows:
+
+
+```php
+public function configureWidgets(WidgetsList $widgetsList, ReportWidgetFactory $factory)
+{
+    $widget = $factory->createWidget()->setName('Live_RealTimeVisitorCount');
+    $widgetsList->addWidgetConfig($widget);
+}
+```
+
+#### Creating multiple widgets from one report
+
+You can create as many widgets from one report as you want. In Piwik there are several reports that actually create 3 or
+even more widgets out of one report. For example one widget with a default visualization that let's the user change the
+visualization, one widget with an "Evolution" visualization and one widget with a set of "Sparklines" visualization.
+
+```php
+public function configureWidgets(WidgetsList $widgetsList, ReportWidgetFactory $factory)
+{
+    // in this case it will render the configured default visualization
+    $widgetsList->addWidgetConfig($factory->createWidget());
+
+    $widgetsList->addWidgetConfig(
+        $factory->createWidget()
+            ->setName('Simple tag cloud')
+            ->setSubcategoryId('Tag clouds')
+            ->forceViewDataTable(Cloud::ID)
+            ->setOrder(5)
+    );
+}
 ```
 
 ## Adding an API method
