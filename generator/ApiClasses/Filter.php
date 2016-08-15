@@ -178,6 +178,11 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
             return true;
         }
 
+        if ($rc->getName() === 'Piwik\Plugin\ControllerAdmin') {
+            // controller admin extends controller but is an api itself. should not be blacklisted
+            return false;
+        }
+
         return $this->isSubclassOf($rc, 'Piwik\Plugin\Controller');
     }
 
