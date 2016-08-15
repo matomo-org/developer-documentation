@@ -22,6 +22,7 @@ use helpers\SearchIndex;
 use helpers\Content\Category\SupportCategory;
 use helpers\DocumentNotExistException;
 use helpers\Git;
+use helpers\Environment;
 use Slim\Slim;
 
 function send404NotFound(Slim $app) {
@@ -30,7 +31,17 @@ function send404NotFound(Slim $app) {
 
 function initView($app)
 {
-    $app->view->setData('revision', Git::getCurrentShortRevision());
+    $app->hook('slim.before.dispatch', function () use ($app) {
+        $app->view->setData('urlIfAvailableInNewerVersion', false);
+        if (!Environment::isLatestPiwikVersion()) {
+            $app->view->setData('urlIfAvailableInNewerVersion', getUrlIfDocumentIsAvailableInPiwikVersion($app, LATEST_PIWIK_DOCS_VERSION));
+        }
+
+        $app->view->setData('availablePiwikVersions', Environment::getAvailablePiwikVersions());
+        $app->view->setData('selectedPiwikVersion', Environment::getPiwikVersion());
+        $app->view->setData('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
+        $app->view->setData('revision', Git::getCurrentShortRevision());
+    });
 }
 
 function renderGuide(Slim $app, Guide $guide, Category $category)
@@ -45,7 +56,77 @@ function renderGuide(Slim $app, Guide $guide, Category $category)
 
 initView($app);
 
+function getUrlIfDocumentIsAvailableInPiwikVersion($app, $piwikVersion)
+{
+    $currentPiwikVersion = Environment::getPiwikVersion();
+
+    // we now work in context of that piwik version
+    Environment::setPiwikVersion($piwikVersion);
+
+    $path = $app->request->getPath();
+    $url = '';
+
+    if ($path === '/' || $path === '') {
+        $url = '/';
+    }
+
+    if (empty($url)) {
+        if (strpos($path, '/guides/') !== false) {
+            try {
+                // we check if the requested resource maybe exists for another Piwik version
+                $guide = new Guide(str_replace('/guides/', '', $path));
+                $url = Environment::completeUrl($guide->getMenuUrl());
+            } catch (DocumentNotExistException $e) {}
+        }
+    }
+
+    if (empty($url)) {
+        if (strpos($path, '/api-reference/') !== false) {
+            try {
+                $replaced = str_replace('/api-reference/', '', $path);
+                // we check if the requested resource maybe exists for another Piwik version
+                $phpdoc = new PhpDoc($replaced, $replaced);
+                $url = Environment::completeUrl($phpdoc->getMenuUrl());
+            } catch (DocumentNotExistException $e) {
+            }
+        }
+    }
+
+    if (empty($url)) {
+        /** @var \helpers\Content\MenuItem[] $categories */
+        $categories = [
+            new IntegrateCategory(),
+            new DevelopCategory(),
+            new DesignCategory(),
+            new ApiReferenceCategory(),
+            new DevelopInDepthCategory()
+        ];
+
+        foreach ($categories as $category) {
+            if ($path === $category->getMenuUrl() ) {
+                $url = $path;
+                break;
+            }
+        }
+    }
+    
+    Environment::setPiwikVersion($currentPiwikVersion);
+
+    return $url;
+}
+
 $app->notFound(function () use ($app) {
+    $alternativeUrls = array();
+    foreach (Environment::getAvailablePiwikVersions() as $piwikVersion) {
+        if ($piwikVersion != Environment::getPiwikVersion()) {
+            $url = getUrlIfDocumentIsAvailableInPiwikVersion($app, $piwikVersion);
+            if (!empty($url)) {
+                $alternativeUrls[] = $url;
+            }
+        }
+    }
+    $app->view->setData('alternativeUrls', $alternativeUrls);
+
     $app->render('404.twig');
 });
 
@@ -56,7 +137,7 @@ foreach (Redirects::getRedirects() as $url => $redirect) {
     });
 }
 
-$app->get('/', function () use ($app) {
+$app->get('(/)', function () use ($app) {
     $app->render('home.twig', ['isHome' => true]);
 });
 
@@ -153,11 +234,12 @@ $app->get('/changelog', function () use ($app) {
     }
 
     if ($fetchContent) {
-        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/master/CHANGELOG.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/3.x-dev/CHANGELOG.md');
         file_put_contents($targetFile, $markdown);
     }
 
-    renderGuide($app, new Guide('changelog'), new ChangelogCategory());
+    $category = new ChangelogCategory();
+    renderGuide($app, $category->getIntroGuide(), $category);
 });
 
 $app->get('/data/documents', function () use ($app) {

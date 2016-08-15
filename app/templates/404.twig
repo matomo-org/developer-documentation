@@ -18,8 +18,23 @@
 {% endblock %}
 
 {% block content %}
+    {% if alternativeUrls|length %}
+        <p>
+            <br />
+            Maybe you are looking for one of these resources:
+        </p>
+
+        <ul>
+            {% for alternativeUrl in alternativeUrls %}
+                <li><a href="{{ alternativeUrl }}">{{ alternativeUrl }}</a></li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
     <p>
-        <a href="/">Get back to the home page</a>
+        <br />
+        <a href="{{ '/'|completeUrl }}">Get back to the home page</a>
     </p>
 {% endblock %}
 

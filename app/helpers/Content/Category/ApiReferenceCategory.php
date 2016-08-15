@@ -12,6 +12,7 @@ use helpers\Content\ApiReferenceGuide;
 use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
+use helpers\Environment;
 
 class ApiReferenceCategory extends Category
 {
@@ -21,6 +22,11 @@ class ApiReferenceCategory extends Category
     }
 
     public function getUrl()
+    {
+        return self::getTheUrl();
+    }
+
+    public static function getTheUrl()
     {
         return '/api-reference';
     }
@@ -57,7 +63,7 @@ class ApiReferenceCategory extends Category
 
     public static function getAllApiReference()
     {
-        $indexPath = '../../docs/generated/master/Index.md';
+        $indexPath = Environment::getPathToGeneratedDocs() . '/Index.md';
         $indexMarkdown = file_get_contents($indexPath);
 
         $count = preg_match_all("/^- \[`?([a-zA-Z0-9_\(\)\$]+)`?\]\(([\$a-zA-Z0-9_.\/\#]+)\)/m", $indexMarkdown,
@@ -67,7 +73,7 @@ class ApiReferenceCategory extends Category
         for ($i = 0; $i < $count; ++$i) {
             $url = $documentMatches[2][$i];
             $url = str_replace('.md', '', $url);
-            $url = self::getUrl($url);
+            $url = self::getTheUrl();
 
             $parts = explode('/', $url);
             $parts = explode('#', end($parts));

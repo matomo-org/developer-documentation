@@ -3,6 +3,7 @@
 namespace helpers\Content;
 
 use helpers\DocumentNotExistException;
+use helpers\Environment;
 use helpers\Markdown\Document;
 use helpers\Markdown\MarkdownParserFactory;
 
@@ -84,7 +85,7 @@ class Guide implements MenuItem
         $subGuides = $this->document->metadata['subGuides'];
 
         return array_map(function ($guideName) {
-            return new static($guideName);
+            return new Guide($guideName);
         }, $subGuides);
     }
 
@@ -102,7 +103,13 @@ class Guide implements MenuItem
 
     public function linkToEdit()
     {
-        return 'https://github.com/piwik/developer-documentation/tree/master/docs/' . $this->name . '.md';
+        $path = '';
+        if ($this->isVersionedGuide()) {
+            $piwikVersion = Environment::getPiwikVersionDirectory();
+            $path = $piwikVersion . '/';
+        }
+
+        return 'https://github.com/piwik/developer-documentation/tree/master/docs/' . $path . $this->name . '.md';
     }
 
     public function getPrevious()
@@ -130,7 +137,22 @@ class Guide implements MenuItem
 
     protected function getFilePath()
     {
-        return __DIR__ . '/../../../docs/' . $this->name . '.md';
+        $file = '/' . $this->name . '.md';
+
+        if ($this->isVersionedGuide()) {
+            return Environment::getVersionedDocsPath() . $file;
+        }
+
+        return Environment::getBaseDocsPath() . $file;
+    }
+
+    private function isVersionedGuide()
+    {
+        $file = '/' . $this->name . '.md';
+
+        $path = Environment::getVersionedDocsPath() . $file;
+
+        return file_exists($path);
     }
 
     private function validateName()
@@ -172,7 +194,6 @@ class Guide implements MenuItem
         } catch (\RuntimeException $e) {
 
             return $this->getTitle();
-
         }
     }
 }

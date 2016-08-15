@@ -11,6 +11,11 @@
         </div>
 
         <div class="col-sm-8 col-md-9 documentation">
+            {% if urlIfAvailableInNewerVersion %}
+                <a href="{{ urlIfAvailableInNewerVersion }}">Click here if you want to read this article for the latest Piwik version</a>
+                <br />
+                <br />
+            {% endif %}
 
             {{ guide.renderedContent|raw }}
 
@@ -20,7 +25,7 @@
                 <ul>
                     {% for subItem in guide.subItems %}
                         <li>
-                            <a href="{{ subItem.menuUrl }}"> {{ subItem.menuTitle }}</a>
+                            <a href="{{ subItem.menuUrl|completeUrl }}"> {{ subItem.menuTitle }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -29,13 +34,13 @@
             {% if guide.previous or guide.next %}
                 <div class="clearfix guide-navigation">
                     {% if guide.previous %}
-                        <a class="guide-navigation-prev" href="{{ guide.previous.menuUrl }}">
+                        <a class="guide-navigation-prev" href="{{ guide.previous.menuUrl|completeUrl }}">
                             <i class="fa fa-long-arrow-left"></i>
                             {{ guide.previous.menuTitle }}
                         </a>
                     {% endif %}
                     {% if guide.next %}
-                        <a class="guide-navigation-next" href="{{ guide.next.menuUrl }}">
+                        <a class="guide-navigation-next" href="{{ guide.next.menuUrl|completeUrl }}">
                             {{ guide.next.menuTitle }}
                             <i class="fa fa-long-arrow-right"></i>
                         </a>

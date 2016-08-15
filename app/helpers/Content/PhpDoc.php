@@ -1,6 +1,7 @@
 <?php
 
 namespace helpers\Content;
+use helpers\Environment;
 
 /**
  * Generated PhpDoc.
@@ -27,6 +28,11 @@ class PhpDoc extends Guide
         return parent::getMenuTitle();
     }
 
+    public function linkToEdit()
+    {
+        return null;
+    }
+
     public function getMenuUrl()
     {
         return '/api-reference/' . $this->url;
@@ -34,6 +40,6 @@ class PhpDoc extends Guide
 
     protected function getFilePath()
     {
-        return __DIR__ . '/../../../docs/generated/master/' . $this->name . '.md';
+        return Environment::getPathToGeneratedDocs() . '/' . $this->name . '.md';
     }
 }

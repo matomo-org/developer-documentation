@@ -16,12 +16,14 @@ use Slim\Slim;
 use Slim\Views\Twig as Twig;
 use helpers\Log;
 use helpers\CacheMiddleware;
+use helpers\PiwikVersionMiddleware;
 
 date_default_timezone_set("UTC");
+$twig = new Twig();
 
 // New Slim App
 $app = new Slim(array(
-    'view' => new Twig(),
+    'view' => $twig,
     'log.enabled' => true,
     'debug'       => DEBUG,
     'templates.path' => '../templates',
@@ -33,7 +35,7 @@ $app = new Slim(array(
         array('path' => realpath('../tmp/logs'), 'name_format' => 'Y-m-d')
     )
 ));
-
+$app->add(new PiwikVersionMiddleware());
 $app->add(new CacheMiddleware());
 
 $app->error(function (\Exception $e) use ($app) {
@@ -45,6 +47,8 @@ $app->error(function (\Exception $e) use ($app) {
 $app->setName('developer.piwik.org');
 $log = $app->getLog();
 $log->setEnabled(true);
+
+helpers\Twig::registerFilter($app->view->getInstance());
 
 require '../routes/page.php';
 

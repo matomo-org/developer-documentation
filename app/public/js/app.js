@@ -8,6 +8,10 @@ $('a').each(function (index, a) {
     }
 });
 
+$('.piwik-version-select').on('change', function () {
+    location.assign($(this).val());
+});
+
 $('.documentation img').each(function (index, img) {
     var imageSrc = $(img).attr('src');
 
@@ -19,12 +23,16 @@ $('.documentation img').each(function (index, img) {
 $('.documentation table').addClass('table table-striped table-bordered');
 
 var quickSearchData = null;
-$('#quick-search-typeahead>input').typeahead({
+
+var $quickSearchTypeahead = $('#quick-search-typeahead>input');
+$quickSearchTypeahead.typeahead({
     source: function (query, process) {
         if (quickSearchData) {
             process(quickSearchData.names);
         } else {
-            $.get('/data/documents', {}, function (data) {
+            var url = $quickSearchTypeahead.attr('data-action');
+
+            $.get(url, {}, function (data) {
                 quickSearchData = JSON.parse(data);
                 process(quickSearchData.names);
             });
