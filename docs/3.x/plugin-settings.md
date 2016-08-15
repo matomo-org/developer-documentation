@@ -8,7 +8,7 @@ category: Develop
 The Piwik platform differentiate between "System Settings", "User Settings" and "Measurable Settings":
 
 **User Settings** can be configured by any logged in user and each user can configure the setting independently.
-The Piwik platform makes sure that settings are stored per user and that a user cannot see another users configuration.
+The Piwik platform makes sure that settings are stored per user and that a user cannot see another user's configuration.
 A user will be able to change the settings on the "Personal Settings" page.
 
 **System Settings** applies to all of your users. It can be configured only by a user who has super user access.
@@ -41,7 +41,7 @@ To see the settings in action go to *Administration > General Settings* in your 
 ### Adding one or more settings
 
 Settings are added in the `init()` method of the settings class. To do this, call the `makeSetting()` and pass in the
-internal name of the setting, the default value, which PHP type the setting should return and a callback to configure
+following parameters: internal name of the setting, the default value, which PHP type the setting should return and a callback to configure
 the UI representation of the form field.
 
 For example:

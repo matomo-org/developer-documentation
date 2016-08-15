@@ -6,10 +6,17 @@ category: Develop
 This migration guide covers explains how to do some migrations to make a plugin compatible with Piwik 3. A list of
 all changes in Piwik 3 can be found in the [Changelog](http://developer.piwik/changelog#piwik-300).
 
-## Marking your plugin as compatible with Piwik 3
+## Making your plugin compatible with Piwik 3
 
-If you have a plugin that is compatible with Piwik 2 and 3 we recommend to specify this explicitly in your `plugin.json`
-as we otherwise assume your plugin will be only compatible with Piwik 2, for example convert this:
+After you test your Piwik plugin on Piwik 3, there are a few possible cases:
+* your plugin works for both Piwik 2 and Piwik 3 at the same time,
+* or: your plugin does not work for Piwik 3 yet,
+* or: your plugin only works for Piwik 3.
+
+### if your plugin is compatible with Piwik 2 and Piwik 3...
+
+If you have a plugin that is compatible with both Piwik 2 and 3 we recommend to specify this explicitly in your `plugin.json`
+as we otherwise assume your plugin will only be compatible with Piwik 2. In the `plugin.json`, change this:
 
 ```json
    "require": {
@@ -25,10 +32,10 @@ to:
     },
 ```
 
-Often it won't be possible to still only maintain one version for both Piwik versions and we even recommend to make a cut
- for newer Piwik versions as it will be almost impossible to make System and UI tests work for both Piwik versions.
- We recommend to release one more version for your current plugin which specifically tells the Marketplace the plugin is
- not compatible with Piwik 3 like this:
+### if your plugin is not compatible with Piwik 3 yet...
+
+If your plugin is not compatible with Piwik 3 yet, we recommend to release one more version for your current plugin which specifically tells the Marketplace the plugin is
+ not compatible with Piwik 3. The `plugin.json` would look like this:
 
 ```json
    "require": {
@@ -36,9 +43,16 @@ Often it won't be possible to still only maintain one version for both Piwik ver
     },
 ```
 
-Next we recommend to increase the version number eg from `1.2.3` to `2.0.0` and specifically require Piwik 3 like
-this:
+The next step is for you to make your plugin compatible with Piwik 3: this guide  will help you locate the changes to make to your plugin. 
+  
 
+### once your plugin is compatible with Piwik 3, release a new major version of your plugin 
+
+Once your plugin is compatible with Piwik 3:
+* specify that your plugin requires Piwik 3.
+* we recommend to also increase your plugin's major version number eg from `1.2.3` to `2.0.0`.
+
+The `plugin.json` would look like this:
 
 ```json
    "version": "2.0.0",
@@ -47,11 +61,12 @@ this:
     },
 ```
 
+
 ## Events
 
 If your plugin is listening to events you should rename the method `getListHooksRegistered` to `registerEvents`
 
-## Updates
+## Updates and SQL schema migrations
 
 If your plugin defines SQL updates like this:
 
@@ -141,12 +156,14 @@ As you can see the API hasn't changed too much. [Learn more about the new plugin
 
 ## Reports
 
-First you should rename the property `$category` to `$categoryId`. If you have defined a widget or if you have added your
-report to a reporting page you need to follow the next steps:
+If your plugin creates a custom [Report](http://developer.piwik.org/guides/custom-reports), you should rename the property `$category` to `$categoryId`. 
+(In your code, replace `$this->category` by `$this->categoryId`).
+
+If you have defined a widget or if you have added your report to a reporting page you need to follow the next steps:
 
 ### Creating a widget
 
-In the past it was possible to create a widget like this:
+In the past it was possible to [create a widget](http://developer.piwik.org/guides/widgets) like this:
 
 ```php
 $this->widgetTitle = 'Live_RealTimeVisitorCount';
@@ -170,17 +187,17 @@ by calling one of the [ReportWidgetConfig's](/api-reference/Piwik/Report/ReportW
 
 In the past all you needed to do was to define a `$menuTitle` property. This got a bit more complex. First you need to
 define a widget as explained in the previous step. Then you need to remove the `$menuTitle` property and add a new property
-`$subcategoryId`. The subcategory is the name of the page the report should be added to. This allows you to now add any
-report any existing reporting page or to create a new reporting page by defining a new subcategoryId that has not been
+`$subcategoryId`. The subcategory is the name of the page the report should be added to. This allows you to either add any
+report to any existing reporting page, or to create a new reporting page by defining a new subcategoryId that has not been
 used by any other page yet.
 
 [Learn more about the new API in the Reports guide.](/guides/custom-reports#making-it-a-widget).
 
 ## Widgets
 
-All plugin's widgets used to be define in just one class. This had it's limitation and a couple of drawbacks just as having
-to require dependencies for all widgets even when just one widget was executed and the list of dependencies got quite long sometimes.
-Also sometimes many different widgets were created in one file and it wasn't really clean. Now each widget is defined in it's
+All of a plugin's widgets used to be defined in just one class. This simple architecture had a couple of drawbacks such as having
+to require dependencies for all widgets even when just one widget was executed (the list of dependencies got quite long sometimes).
+Also sometimes many different widgets were created in one class and it wasn't really clean. Now each widget is defined in its
 own file and can be configured in several ways.
 
 We recommend to first create a new Widget via the console:
@@ -189,7 +206,7 @@ We recommend to first create a new Widget via the console:
 $ ./console generate:widget
 ```
 
-In the next step it's time to migrate this structure:
+In the next step it's time to migrate this old Piwik 2 widget structure:
 
 ```php
 protected $category = 'ExampleCompany';
@@ -228,8 +245,12 @@ category, the name, the order of the widget and more. [Learn more about the new 
 
 ## User menu
 
-The user menu has been removed and such links should be now defined in the Admin menu. To do this move the code from
- the method `configureUserMenu(MenuUser $menu)` in your `Menu.php` plugin file to the method `configureAdminMenu(MenuAdmin $menu)`.
+The user menu has been removed and such links should be now defined in the Admin menu. To do this, in your `Menu.php` plugin file,  move the code from the method `configureUserMenu(MenuUser $menu)`  to the method `configureAdminMenu(MenuAdmin $menu)`.
 
- Next you should update the related Twig template file (if there is any) and replace `{% extends 'user.twig' %}`
- with `{% extends 'admin.twig' %}`.
+Next you should update the related Twig template file (if there is any) and replace `{% extends 'user.twig' %}` with `{% extends 'admin.twig' %}`.
+
+## Summary
+
+In this guide we have seen which steps to take to migrate your Piwik plugin to be compatible with our newest Piwik 3. 
+If you need further help for converting your plugin to Piwik 3, head over to the [Piwik developers community forums](https://forum.piwik.org/c/plugins-platform). 
+ 

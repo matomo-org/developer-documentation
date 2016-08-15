@@ -3,9 +3,11 @@ category: Develop
 ---
 # Extending the database
 
-## Adding new tables
+Plugins can provide persistence for new data if they need to. 
+As Piwik is currently storing all data in a MySQL database, we learn how to add new tables in the database and how to add a new data column to an existing table.
 
-Plugins can provide persistence for new data if they need to. At the moment, since MySQL is the only supported backend, this means directly adding and using new tables.
+
+## Adding new tables
 
 To add new tables to Piwik's MySQL database, execute a `CREATE TABLE` statement in the plugin descriptor's [install](/api-reference/Piwik/Plugin#install) method. For example:
 
@@ -39,6 +41,8 @@ public class MyPlugin extends \Piwik\Plugin
 }
 ```
 
+### Removing the table when plugin is uninstalled 
+
 Plugins should also clean up after themselves by dropping the tables in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method:
 
 ```php
@@ -63,7 +67,8 @@ public class MyPlugin extends \Piwik\Plugin
 
 ## Adding new columns to existing tables
 
-Plugins can also augment existing tables. If, for example, a plugin wanted to track extra visit information, the plugin could add columns to log data tables and set these columns during tracking.This would also be done in the [install](/api-reference/Piwik/Plugin#install) method:
+Plugins can also augment existing tables. For example, if a plugin wanted to track extra visit information, the plugin could add columns to log data tables and set a value for these columns during tracking.
+This would also be done in the [install](/api-reference/Piwik/Plugin#install) method:
 
 ```php
 use Piwik\Db;
@@ -89,10 +94,11 @@ public class MyPlugin extends \Piwik\Plugin
     // ...
 }
 ```
+ 
+### Removing the column when plugin is uninstalled 
 
-Plugins should remove the column in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method, **unless doing so take very long time**. Since log tables can have millions and even billions of entries, removing columns from these tables when a plugin is uninstalled would be a bad idea.
-
-If you want to learn more about the structure of existing tables, read the [Database schema reference](/guides/persistence-and-the-mysql-backend).
+Since log tables can have millions and even billions of entries, removing columns from these tables when a plugin is uninstalled would be a bad idea. 
+Plugins should remove the column in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method only when the table's name is not starting with `log_*`.   
 
 ## Defining database updates
 
@@ -138,5 +144,9 @@ and does all the complicated work for you. For example you can add columns, remo
 add new tables, and you can even perform custom SQL during a migration. For a list of all available migrations have a look at the
 [DB Migration Factory API-Reference](/api-reference/Piwik/Updater/Migration/Db/Factory).
 
-If you want to perform any other operations unrelated to the MySQL database when your plugin is updated you can do this within
+If you want to perform any other operations unrelated to the MySQL database when your plugin is updated, you can do this within
 the `doUpdate` method.
+
+## Learn more 
+
+Learn more about the Piwik Analytics database structure and tables in the [Database schema reference](/guides/persistence-and-the-mysql-backend).
