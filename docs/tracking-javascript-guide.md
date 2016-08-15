@@ -322,7 +322,7 @@ It is possible to set a Custom Dimension for one specific action only. If you wa
 
 `_paq.push(['trackPageView', pageTitle, {dimension1: 'DimensionValue'}]);`
 
-To define a dimension value pass an object defining one or multiple properties as the last parameter. The property name for a dimension starts with `dimension` followed by a Custom Dimension ID, for example `dimension1`. The same behaviour applies for several other methods:
+To define a dimension value pass an object defining one or multiple properties as the last parameter (make sure to specify all parameters as defined in the method, we do not automatically assume the last parameter is customData but instead all parameters a method defines need to be past to each method). The property name for a dimension starts with `dimension` followed by a Custom Dimension ID, for example `dimension1`. The same behaviour applies for several other methods:
 
 ```javascript
 _paq.push(['trackEvent', category, action, name, value, {dimension1: 'DimensionValue'}]);
