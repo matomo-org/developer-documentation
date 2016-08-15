@@ -5,6 +5,7 @@
 ## ArchiveProcessor
 ## ArchiveProcessor\Parameters
 ## AuthResult
+## Category\Subcategory
 ## Columns\Dimension
 ## Columns\Updater
 ## Common
@@ -109,6 +110,7 @@
 ## RankingQuery
 ## Registry
 ## Report\ReportWidgetConfig
+## Report\ReportWidgetFactory
 ## ScheduledTask
 ## Scheduler\Schedule\Daily
 ## Scheduler\Schedule\Hourly
@@ -121,10 +123,7 @@
 ## SettingsPiwik
 ## SettingsServer
 ## Settings\FieldConfig
-## Settings\Measurable\MeasurableSettings
 ## Settings\Plugin\SystemSetting
-## Settings\Plugin\SystemSettings
-## Settings\Plugin\UserSettings
 ## Settings\Setting
 ## Settings\Settings
 ## Singleton
@@ -149,3 +148,4 @@
 ## Widget\Widget
 ## Widget\WidgetConfig
 ## Widget\WidgetContainerConfig
+## Widget\WidgetsList

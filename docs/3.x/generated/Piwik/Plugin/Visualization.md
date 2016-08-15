@@ -161,7 +161,7 @@ The class defines the following methods:
 - [`isViewDataTableId()`](#isviewdatatableid) &mdash; Returns `true` if this instance's or any of its ancestors' viewDataTable IDs equals the supplied ID, `false` if otherwise. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`getDataTable()`](#getdatatable) &mdash; Returns the DataTable loaded from the API. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`setDataTable()`](#setdatatable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`render()`](#render) &mdash; Returns data. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`render()`](#render) &mdash; Requests all needed data and renders the view. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`isRequestingSingleDataTable()`](#isrequestingsingledatatable) &mdash; Returns `true` if this instance will request a single DataTable, `false` if requesting more than one. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Returns `true` if this visualization can display some type of data or not. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`throwWhenSettingNonOverridableParameter()`](#throwwhensettingnonoverridableparameter) &mdash; Display a meaningful error message when any invalid parameter is being set. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
@@ -286,7 +286,7 @@ It won't be loaded from the API in this case.
 <a name="render" id="render"></a>
 ### `render()`
 
-Returns data.
+Requests all needed data and renders the view.
 
 #### Signature
 

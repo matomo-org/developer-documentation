@@ -65,8 +65,8 @@ See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLab
 
 Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
 
-This function can be overridden in derived types to customize beautifcation
-behavior based on the range values.
+If the lower bound of the range is less than 60 the pretty range label
+will be in seconds. Otherwise, it will be in minutes.
 
 #### Signature
 
@@ -85,8 +85,8 @@ behavior based on the range values.
 
 Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
 
-This function can be overridden in derived types to customize beautifcation
-behavior based on the range values.
+If the lower bound of the range is less than 60 the pretty range label
+will be in seconds. Otherwise, it will be in minutes.
 
 #### Signature
 
@@ -107,8 +107,8 @@ behavior based on the range values.
 
 Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
 
-This function can be overridden in derived types to customize beautifcation
-behavior based on the range values.
+If the lower bound of the range is less than 60 the pretty range label
+will be in seconds. Otherwise, it will be in minutes.
 
 #### Signature
 

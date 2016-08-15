@@ -340,9 +340,9 @@ $widgetsList->addToContainerWidget($containerId = 'Products', $factory->createWi
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$widgetsList` (`Piwik\Widget\WidgetsList`) &mdash;
+    - `$widgetsList` ([`WidgetsList`](../../Piwik/Widget/WidgetsList.md)) &mdash;
       
-    - `$factory` (`Piwik\Report\ReportWidgetFactory`) &mdash;
+    - `$factory` ([`ReportWidgetFactory`](../../Piwik/Report/ReportWidgetFactory.md)) &mdash;
       
 - It does not return anything.
 

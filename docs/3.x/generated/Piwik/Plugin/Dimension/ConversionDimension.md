@@ -71,7 +71,8 @@ The abstract class defines the following methods:
 
 Adds a new segment.
 
-The segment type will be set to 'dimension' automatically if not already set.
+It automatically sets the SQL segment depending on the column name in case none is set
+already.
 
 #### See Also
 

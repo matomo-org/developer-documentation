@@ -9,6 +9,7 @@ This is a complete list of available classes:
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.
 - [`AuthResult`](Piwik/AuthResult.md) &mdash; Authentication result.
+- [`Category\Subcategory`](Piwik/Category/Subcategory.md) &mdash; Base type for subcategories.
 - [`Columns\Dimension`](Piwik/Columns/Dimension.md)
 - [`Columns\Updater`](Piwik/Columns/Updater.md) &mdash; Class that handles dimension updates
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
@@ -113,6 +114,7 @@ This is a complete list of available classes:
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`Registry`](Piwik/Registry.md) &mdash; Registry class.
 - [`Report\ReportWidgetConfig`](Piwik/Report/ReportWidgetConfig.md) &mdash; Defines a widget config that is used to render a report.
+- [`Report\ReportWidgetFactory`](Piwik/Report/ReportWidgetFactory.md) &mdash; Report widget factory.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.
 - [`Scheduler\Schedule\Daily`](Piwik/Scheduler/Schedule/Daily.md) &mdash; Daily class is used to schedule tasks every day.
 - [`Scheduler\Schedule\Hourly`](Piwik/Scheduler/Schedule/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.
@@ -125,10 +127,7 @@ This is a complete list of available classes:
 - [`SettingsPiwik`](Piwik/SettingsPiwik.md) &mdash; Contains helper methods that can be used to get common Piwik settings.
 - [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and currently used PHP settings.
 - [`Settings\FieldConfig`](Piwik/Settings/FieldConfig.md) &mdash; Lets you configure a form field.
-- [`Settings\Measurable\MeasurableSettings`](Piwik/Settings/Measurable/MeasurableSettings.md) &mdash; Base class of all measurable settings providers.
 - [`Settings\Plugin\SystemSetting`](Piwik/Settings/Plugin/SystemSetting.md) &mdash; Describes a system wide setting.
-- [`Settings\Plugin\SystemSettings`](Piwik/Settings/Plugin/SystemSettings.md) &mdash; Base class of all system settings providers.
-- [`Settings\Plugin\UserSettings`](Piwik/Settings/Plugin/UserSettings.md) &mdash; Base class of all plugin settings providers.
 - [`Settings\Setting`](Piwik/Settings/Setting.md) &mdash; Base setting type class.
 - [`Settings\Settings`](Piwik/Settings/Settings.md) &mdash; Base class of all settings providers.
 - [`Singleton`](Piwik/Singleton.md) &mdash; The singleton base class restricts the instantiation of derived classes to one object only.
@@ -153,3 +152,4 @@ This is a complete list of available classes:
 - [`Widget\Widget`](Piwik/Widget/Widget.md) &mdash; Defines a new widget.
 - [`Widget\WidgetConfig`](Piwik/Widget/WidgetConfig.md) &mdash; Configures a widget.
 - [`Widget\WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md) &mdash; Defines a new widget container.
+- [`Widget\WidgetsList`](Piwik/Widget/WidgetsList.md) &mdash; Manages the global list of reports that can be displayed as dashboard widgets.

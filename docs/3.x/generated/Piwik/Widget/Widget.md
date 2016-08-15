@@ -16,6 +16,7 @@ Methods
 The class defines the following methods:
 
 - [`configure()`](#configure)
+- [`render()`](#render)
 
 <a name="configure" id="configure"></a>
 <a name="configure" id="configure"></a>
@@ -27,4 +28,12 @@ The class defines the following methods:
     - `$config` ([`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
       
 - It does not return anything.
+
+<a name="render" id="render"></a>
+<a name="render" id="render"></a>
+### `render()`
+
+#### Signature
+
+- It returns a `string` value.
 

@@ -91,11 +91,11 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename. Inherited from [`View`](../../Piwik/View.md)
-- [`getTemplateVars()`](#gettemplatevars) &mdash; Returns the variables to bind to the template when rendering.
-- [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
-- [`__get()`](#__get) &mdash; Retrieves an assigned variable.
+- [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
+- [`__set()`](#__set) &mdash; Sets a variable.
+- [`__get()`](#__get) &mdash; Gets a view variable.
 - [`__isset()`](#__isset) &mdash; Returns true if a template variable has been set or not.
-- [`render()`](#render) &mdash; Returns data.
+- [`render()`](#render) &mdash; Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field. Inherited from [`View`](../../Piwik/View.md)
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response. Inherited from [`View`](../../Piwik/View.md)
 - [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template. Inherited from [`View`](../../Piwik/View.md)
@@ -125,7 +125,7 @@ Returns the template filename.
 <a name="getTemplateVars" id="getTemplateVars"></a>
 ### `getTemplateVars()`
 
-Returns the variables to bind to the template when rendering.
+See View::getTemplateVars().
 
 #### Signature
 
@@ -138,9 +138,9 @@ Returns the variables to bind to the template when rendering.
 <a name="__set" id="__set"></a>
 ### `__set()`
 
-Directly assigns a variable to the view script.
+Sets a variable.
 
-Variable names may not be prefixed with '_'.
+See View::\_\_set().
 
 #### Signature
 
@@ -155,9 +155,9 @@ Variable names may not be prefixed with '_'.
 <a name="__get" id="__get"></a>
 ### `__get()`
 
-Retrieves an assigned variable.
+Gets a view variable.
 
-Variable names may not be prefixed with '_'.
+See View::\_\_get().
 
 #### Signature
 
@@ -185,7 +185,7 @@ Returns true if a template variable has been set or not.
 <a name="render" id="render"></a>
 ### `render()`
 
-Returns data.
+Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
 
 #### Signature
 

@@ -15,8 +15,8 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; Manipulates a DataTable in some way.
+- [`__construct()`](#__construct) &mdash; Generates a segment filter based on the label column and the given segment names
+- [`filter()`](#filter) &mdash; See [AddSegmentByLabel](/api-reference/Piwik/DataTable/Filter/AddSegmentByLabel).
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -24,7 +24,7 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
-Constructor.
+Generates a segment filter based on the label column and the given segment names
 
 #### Signature
 
@@ -40,7 +40,7 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Manipulates a DataTable in some way.
+See [AddSegmentByLabel](/api-reference/Piwik/DataTable/Filter/AddSegmentByLabel).
 
 #### Signature
 
