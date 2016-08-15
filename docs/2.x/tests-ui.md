@@ -123,7 +123,7 @@ At some point your UI test will fail, for example due to expected CSS changes. T
 
 ## Writing a UI test in depth
 
-UI screenshot tests are run directly by phantomjs and are written using [mocha](http://visionmedia.github.io/mocha/) and [chai](http://chaijs.com).
+UI screenshot tests are run directly by phantomjs and are written using [mocha](https://github.com/mochajs/mocha) and [chai](http://chaijs.com).
 
 All test files should have \_spec.js file name suffixes (for example, `ActionsDataTable_spec.js`). Since screenshots can take a while to capture, you will want to override mocha's default timeout like this:
 

@@ -131,7 +131,7 @@ While doing the initial setup for your plugin, we will import your english trans
 
 ### How to fetch your plugins translations into your repository
 
-As soon as we have set up your plugin within [our Piwik project on Transifex](https://www.transifex.com/piwik/piwik/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. You will need a locally installed Piwik with [development mode enabled](https://developer.piwik.org/guides/getting-started-part-1#enable-development-mode), and your plugin installed. To update the translations go to the Piwik directory on your development box and execute the following command:
+As soon as we have set up your plugin within [our Piwik project on Transifex](https://www.transifex.com/projects/p/piwik/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. You will need a locally installed Piwik with [development mode enabled](https://developer.piwik.org/guides/getting-started-part-1#enable-development-mode), and your plugin installed. To update the translations go to the Piwik directory on your development box and execute the following command:
 
 ```bash
 ./console translations:update -u {YourTransifexUserName} -p {YourTransifexPassword} -P {YourPluginName}

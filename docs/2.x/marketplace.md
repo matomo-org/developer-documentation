@@ -69,7 +69,7 @@ Each plugin should have a readme file named README.md that adheres to the Piwik 
 View a [README.md sample here](https://raw.github.com/tsteur/piwik-livetab-plugin/master/README.md)
 
 The Readme file is written in Markdown format.
-You may define the sections "Description", "FAQ", "Changelog" and "Support", which will appear as category links on your Plugin page.
+You may define the sections "Description", "FAQ" and "Changelog", which will appear as category links on your Plugin page.
 
 
 ### Hosting your plugin code on GitHub

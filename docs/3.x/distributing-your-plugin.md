@@ -254,4 +254,3 @@ You can [customize](#prepare-your-plugin) the contents of those tabs by adding t
 - Description
 - FAQ
 - Changelog
-- Support
