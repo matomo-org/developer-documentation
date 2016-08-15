@@ -80,6 +80,7 @@
 ## Plugin\API
 ## Plugin\Archiver
 ## Plugin\Controller
+## Plugin\ControllerAdmin
 ## Plugin\Dimension\ActionDimension
 ## Plugin\Dimension\ConversionDimension
 ## Plugin\Dimension\VisitDimension

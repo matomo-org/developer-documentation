@@ -1,45 +1,22 @@
 <small>Piwik\Plugin\</small>
 
-Controller
-==========
+ControllerAdmin
+===============
 
-Base class of all plugin Controllers.
+Base class of plugin controllers that provide administrative functionality.
 
-Plugins that wish to add display HTML should create a Controller that either
-extends from this class or from [ControllerAdmin](/api-reference/Piwik/Plugin/ControllerAdmin). Every public method in
-the controller will be exposed as a controller method and can be invoked via
-an HTTP request.
-
-Learn more about Piwik's MVC system [here](/guides/mvc-in-piwik).
-
-### Examples
-
-**Defining a controller**
-
-    class Controller extends \Piwik\Plugin\Controller
-    {
-        public function index()
-        {
-            $view = new View("@MyPlugin/index.twig");
-            // ... setup view ...
-            return $view->render();
-        }
-    }
-
-**Linking to a controller action**
-
-    <a href="?module=MyPlugin&action=index&idSite=1&period=day&date=2013-10-10">Link</a>
+See [Controller](/api-reference/Piwik/Plugin/Controller) to learn more about Piwik controllers.
 
 Properties
 ----------
 
 This abstract class defines the following properties:
 
-- [`$pluginName`](#$pluginname) &mdash; The plugin name, eg.
-- [`$strDate`](#$strdate) &mdash; The value of the **date** query parameter.
-- [`$date`](#$date) &mdash; The Date object created with ($strDate)[#strDate] or null if the requested date is a range.
-- [`$idSite`](#$idsite) &mdash; The value of the **idSite** query parameter.
-- [`$site`](#$site) &mdash; The Site object created with [$idSite](/api-reference/Piwik/Plugin/Controller#$idsite).
+- [`$pluginName`](#$pluginname) &mdash; The plugin name, eg. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`$strDate`](#$strdate) &mdash; The value of the **date** query parameter. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`$date`](#$date) &mdash; The Date object created with ($strDate)[#strDate] or null if the requested date is a range. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`$idSite`](#$idsite) &mdash; The value of the **idSite** query parameter. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`$site`](#$site) &mdash; The Site object created with [$idSite](/api-reference/Piwik/Plugin/ControllerAdmin#$idsite). Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
 
 <a name="$pluginname" id="$pluginname"></a>
 <a name="pluginName" id="pluginName"></a>
@@ -89,7 +66,7 @@ The value of the **idSite** query parameter.
 <a name="site" id="site"></a>
 ### `$site`
 
-The Site object created with [$idSite](/api-reference/Piwik/Plugin/Controller#$idsite).
+The Site object created with [$idSite](/api-reference/Piwik/Plugin/ControllerAdmin#$idsite).
 
 #### Signature
 
@@ -100,25 +77,25 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
-- [`getDateParameterInTimezone()`](#getdateparameterintimezone) &mdash; Helper method that converts `"today"` or `"yesterday"` to the specified timezone.
-- [`setDate()`](#setdate) &mdash; Sets the date to be used by all other methods in the controller.
-- [`getDefaultAction()`](#getdefaultaction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
-- [`renderTemplate()`](#rendertemplate) &mdash; Assigns the given variables to the template and renders it.
-- [`renderReport()`](#renderreport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method.
-- [`getLastUnitGraph()`](#getlastunitgraph) &mdash; Returns a ViewDataTable object that will render a jqPlot evolution graph for the last30 days/weeks/etc.
-- [`getLastUnitGraphAcrossPlugins()`](#getlastunitgraphacrossplugins) &mdash; Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
-- [`getUrlSparkline()`](#geturlsparkline) &mdash; Returns a URL to a sparkline image for a report served by the current plugin.
-- [`setMinDateView()`](#setmindateview) &mdash; Sets the first date available in the period selector's calendar.
-- [`setMaxDateView()`](#setmaxdateview) &mdash; Sets the last date available in the period selector's calendar.
-- [`setGeneralVariablesView()`](#setgeneralvariablesview) &mdash; Assigns variables to [View](/api-reference/Piwik/View) instances that display an entire page.
-- [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance.
-- [`setHostValidationVariablesView()`](#sethostvalidationvariablesview) &mdash; Checks if the current host is valid and sets variables on the given view, including:
-- [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including:
-- [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current HTTP request to another module/action.
-- [`checkTokenInUrl()`](#checktokeninurl) &mdash; Checks that the token_auth in the URL matches the currently logged-in user's token_auth.
-- [`getCalendarPrettyDate()`](#getcalendarprettydate) &mdash; Returns a prettified date string for use in period selector widget.
-- [`getEvolutionHtml()`](#getevolutionhtml) &mdash; Calculates the evolution from one value to another and returns HTML displaying the evolution percent.
+- [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`getDateParameterInTimezone()`](#getdateparameterintimezone) &mdash; Helper method that converts `"today"` or `"yesterday"` to the specified timezone. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`setDate()`](#setdate) &mdash; Sets the date to be used by all other methods in the controller. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`getDefaultAction()`](#getdefaultaction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`renderTemplate()`](#rendertemplate) &mdash; Assigns the given variables to the template and renders it. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`renderReport()`](#renderreport) &mdash; Convenience method that creates and renders a ViewDataTable for a API method. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`getLastUnitGraph()`](#getlastunitgraph) &mdash; Returns a ViewDataTable object that will render a jqPlot evolution graph for the last30 days/weeks/etc. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`getLastUnitGraphAcrossPlugins()`](#getlastunitgraphacrossplugins) &mdash; Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/ControllerAdmin#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`getUrlSparkline()`](#geturlsparkline) &mdash; Returns a URL to a sparkline image for a report served by the current plugin. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`setMinDateView()`](#setmindateview) &mdash; Sets the first date available in the period selector's calendar. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`setMaxDateView()`](#setmaxdateview) &mdash; Sets the last date available in the period selector's calendar. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`setGeneralVariablesView()`](#setgeneralvariablesview) &mdash; Assigns variables to [View](/api-reference/Piwik/View) instances that display an entire page. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Calls [setBasicVariablesView()](/api-reference/Piwik/Plugin/ControllerAdmin#setbasicvariablesview) and [setBasicVariablesAdminView()](/api-reference/Piwik/Plugin/ControllerAdmin#setbasicvariablesadminview) using the supplied view.
+- [`setHostValidationVariablesView()`](#sethostvalidationvariablesview) &mdash; Checks if the current host is valid and sets variables on the given view, including: Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including: Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current HTTP request to another module/action. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`checkTokenInUrl()`](#checktokeninurl) &mdash; Checks that the token_auth in the URL matches the currently logged-in user's token_auth. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`getCalendarPrettyDate()`](#getcalendarprettydate) &mdash; Returns a prettified date string for use in period selector widget. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`setBasicVariablesAdminView()`](#setbasicvariablesadminview) &mdash; Assigns view properties that would be useful to views that render admin pages.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -242,7 +219,7 @@ of the current period, relative to the current date.
 <a name="getLastUnitGraphAcrossPlugins" id="getLastUnitGraphAcrossPlugins"></a>
 ### `getLastUnitGraphAcrossPlugins()`
 
-Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/Controller#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
+Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/ControllerAdmin#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
 
 #### Signature
 
@@ -336,7 +313,7 @@ The following variables assigned:
                                            INI config option.
 **topMenu** - The result of `MenuTop::getInstance()->getMenu()`.
 
-As well as the variables set by [setPeriodVariablesView()](/api-reference/Piwik/Plugin/Controller#setperiodvariablesview).
+As well as the variables set by [setPeriodVariablesView()](/api-reference/Piwik/Plugin/ControllerAdmin#setperiodvariablesview).
 
 Will exit on error.
 
@@ -351,22 +328,7 @@ Will exit on error.
 <a name="setBasicVariablesView" id="setBasicVariablesView"></a>
 ### `setBasicVariablesView()`
 
-Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance.
-
-The following variables assigned:
-
-**isSuperUser** - True if the current user is the Super User, false if otherwise.
-**hasSomeAdminAccess** - True if the current user has admin access to at least one site,
-                         false if otherwise.
-**isCustomLogo** - The value of the `branding_use_custom_logo` option.
-**logoHeader** - The header logo URL to use.
-**logoLarge** - The large logo URL to use.
-**logoSVG** - The SVG logo URL to use.
-**hasSVGLogo** - True if there is a SVG logo, false if otherwise.
-**enableFrames** - The value of the `[General] enable_framed_pages` INI config option. If
-                   true, [View::setXFrameOptions()](/api-reference/Piwik/View#setxframeoptions) is called on the view.
-
-Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/Controller#sethostvalidationvariablesview).
+Calls [setBasicVariablesView()](/api-reference/Piwik/Plugin/ControllerAdmin#setbasicvariablesview) and [setBasicVariablesAdminView()](/api-reference/Piwik/Plugin/ControllerAdmin#setbasicvariablesadminview) using the supplied view.
 
 #### Signature
 
@@ -449,6 +411,9 @@ Checks that the token_auth in the URL matches the currently logged-in user's tok
 This is a protection against CSRF and should be used in all controller
 methods that modify Piwik or any user settings.
 
+If called from JavaScript by using the `ajaxHelper` you have to call `ajaxHelper.withTokenInUrl();` before
+`ajaxHandler.send();` to send the token along with the request.
+
 **The token_auth should never appear in the browser's address bar.**
 
 #### Signature
@@ -470,29 +435,32 @@ Returns a prettified date string for use in period selector widget.
        The period to return a pretty string for.
 - It returns a `string` value.
 
-<a name="getevolutionhtml" id="getevolutionhtml"></a>
-<a name="getEvolutionHtml" id="getEvolutionHtml"></a>
-### `getEvolutionHtml()`
+<a name="setbasicvariablesadminview" id="setbasicvariablesadminview"></a>
+<a name="setBasicVariablesAdminView" id="setBasicVariablesAdminView"></a>
+### `setBasicVariablesAdminView()`
 
-Calculates the evolution from one value to another and returns HTML displaying the evolution percent.
+Assigns view properties that would be useful to views that render admin pages.
 
-The HTML includes an up/down arrow and is colored red, black or
-green depending on whether the evolution is negative, 0 or positive.
+Assigns the following variables:
 
-No HTML is returned if the current value and evolution percent are both 0.
+- **statisticsNotRecorded** - Set to true if the `[Tracker] record_statistics` INI
+                              config is `0`. If not `0`, this variable will not be defined.
+- **topMenu** - The result of `MenuTop::getInstance()->getMenu()`.
+- **enableFrames** - The value of the `[General] enable_framed_pages` INI config option. If
+                   true, [View::setXFrameOptions()](/api-reference/Piwik/View#setxframeoptions) is called on the view.
+- **isSuperUser** - Whether the current user is a superuser or not.
+- **usingOldGeoIPPlugin** - Whether this Piwik install is currently using the old GeoIP
+                            plugin or not.
+- **invalidPluginsWarning** - Set if some of the plugins to load (determined by INI configuration)
+                              are invalid or missing.
+- **phpVersion** - The current PHP version.
+- **phpIsNewEnough** - Whether the current PHP version is new enough to run Piwik.
+- **adminMenu** - The result of `MenuAdmin::getInstance()->getMenu()`.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$date` (`string`) &mdash;
-       The date of the current value.
-    - `$currentValue` (`int`) &mdash;
-       The value to calculate evolution to.
-    - `$pastDate` (`string`) &mdash;
-       The date of past value.
-    - `$pastValue` (`int`) &mdash;
-       The value in the past to calculate evolution from.
-
-- *Returns:*  `string`|`Piwik\Plugin\false` &mdash;
-    The HTML or `false` if the evolution is 0 and the current value is 0.
+    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
+      
+- It does not return anything.
 

@@ -6,7 +6,7 @@ Controller
 Base class of all plugin Controllers.
 
 Plugins that wish to add display HTML should create a Controller that either
-extends from this class or from ControllerAdmin. Every public method in
+extends from this class or from [ControllerAdmin](/api-reference/Piwik/Plugin/ControllerAdmin). Every public method in
 the controller will be exposed as a controller method and can be invoked via
 an HTTP request.
 

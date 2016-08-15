@@ -84,6 +84,7 @@ This is a complete list of available classes:
 - [`Plugin\API`](Piwik/Plugin/API.md) &mdash; The base class of all API singletons.
 - [`Plugin\Archiver`](Piwik/Plugin/Archiver.md) &mdash; The base class that should be extended by plugins that compute their own analytics data.
 - [`Plugin\Controller`](Piwik/Plugin/Controller.md) &mdash; Base class of all plugin Controllers.
+- [`Plugin\ControllerAdmin`](Piwik/Plugin/ControllerAdmin.md) &mdash; Base class of plugin controllers that provide administrative functionality.
 - [`Plugin\Dimension\ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md) &mdash; Defines a new action dimension that records any information during tracking for each action.
 - [`Plugin\Dimension\ConversionDimension`](Piwik/Plugin/Dimension/ConversionDimension.md) &mdash; Defines a new conversion dimension that records any visit related information during tracking.
 - [`Plugin\Dimension\VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md) &mdash; Defines a new visit dimension that records any visit related information during tracking.
