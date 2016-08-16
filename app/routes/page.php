@@ -51,6 +51,7 @@ function renderGuide(Slim $app, Guide $guide, Category $category)
         'guide'              => $guide,
         'linkToEditDocument' => $guide->linkToEdit(),
         'activeMenu'         => $category->getName(),
+        'currentPath'        => $app->environment['PATH_INFO']
     ]);
 }
 
