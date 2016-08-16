@@ -41,6 +41,22 @@ define('DISABLE_INCLUDE', true);
 
 ## Automatic documentation generation (API-Reference)
 
+### The first time
+```
+# Clone Piwik repository the first time
+git clone git@github.com:piwik/piwik.git piwik
+# Download the dependencies for our generator 
+cd generator/
+composer install
+cd ../piwik/
+# Now we download composer  https://getcomposer.org/download/
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
+
+### Generate the API reference docs
 - Execute `./generate.sh`
 - Commit
 - Push
