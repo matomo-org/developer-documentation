@@ -41,6 +41,7 @@ function initView($app)
         $app->view->setData('selectedPiwikVersion', Environment::getPiwikVersion());
         $app->view->setData('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
         $app->view->setData('revision', Git::getCurrentShortRevision());
+        $app->view->setData('currentPath', $app->request->getPathInfo());
     });
 }
 
@@ -51,7 +52,6 @@ function renderGuide(Slim $app, Guide $guide, Category $category)
         'guide'              => $guide,
         'linkToEditDocument' => $guide->linkToEdit(),
         'activeMenu'         => $category->getName(),
-        'currentPath'        => $app->environment['PATH_INFO']
     ]);
 }
 
