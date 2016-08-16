@@ -12,7 +12,12 @@ require $rootDir . '/generator/vendor/nikic/php-parser/lib/bootstrap.php';
 require_once PIWIK_INCLUDE_PATH . '/libs/upgradephp/upgrade.php';
 
 $environment = new \Piwik\Application\Environment(null);
-$environment->init();
+
+try {
+    $environment->init();
+} catch(\Exception $e) {
+    echo sprintf("There was an error during the initialisation but we try to proceed anyway. FYI: error was %s \n\n", $e->getMessage());
+}
 
 ini_set('xdebug.max_nesting_level', 2000);
 
