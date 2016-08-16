@@ -69,7 +69,6 @@ function getUrlIfDocumentIsAvailableInPiwikVersion($app, $piwikVersion)
     if ($path === '/' || $path === '') {
         $url = '/';
     }
-
     if (empty($url)) {
         if (strpos($path, '/guides/') !== false) {
             try {
@@ -82,6 +81,15 @@ function getUrlIfDocumentIsAvailableInPiwikVersion($app, $piwikVersion)
 
     if (empty($url)) {
         if (strpos($path, '/api-reference/') !== false) {
+
+            try {
+                $replaced = str_replace('/api-reference/', '', $path);
+                // we check if the requested resource maybe exists for another Piwik version
+                $guide = new ApiReferenceGuide( $replaced );
+                $url = Environment::completeUrl($guide->getMenuUrl());
+            } catch (DocumentNotExistException $e) {
+            }
+
             try {
                 $replaced = str_replace('/api-reference/', '', $path);
                 // we check if the requested resource maybe exists for another Piwik version
