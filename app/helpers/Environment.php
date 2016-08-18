@@ -43,6 +43,10 @@ class Environment
             return $path; // we only rewrite internal links
         }
 
+        if(empty($path)) {
+            $path = '/';
+        }
+
         $urlPrefix = self::getCurrentUrlPrefix();
 
         if ($urlPrefix && strpos($path, $urlPrefix) === 0) {

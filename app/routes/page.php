@@ -41,6 +41,7 @@ function initView($app)
         $app->view->setData('selectedPiwikVersion', Environment::getPiwikVersion());
         $app->view->setData('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
         $app->view->setData('revision', Git::getCurrentShortRevision());
+        $app->view->setData('currentPath', $app->request->getPathInfo());
     });
 }
 
@@ -214,7 +215,16 @@ $app->get('/api-reference/PHP-Piwik-Tracker', function () use ($app) {
 });
 
 $app->get('/api-reference/:reference', function ($reference) use ($app) {
-    renderGuide($app, new ApiReferenceGuide($reference), new ApiReferenceCategory());
+
+    try {
+        $guide = new ApiReferenceGuide($reference);
+    } catch (DocumentNotExistException $e) {
+        send404NotFound($app);
+        return;
+    }
+
+    renderGuide($app, $guide, new ApiReferenceCategory());
+
 });
 
 $app->get('/api-reference', function () use ($app) {

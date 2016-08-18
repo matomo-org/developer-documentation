@@ -61,7 +61,8 @@
                                 class="piwik-version-select"
                                 name="piwik">
                             {% for i in availablePiwikVersions %}
-                                <option value="{% if i == latestPiwikDocsVersion %}/{% else %}/{{ i }}.x{% endif %}"
+
+                                <option value="{{ currentPath|completeUrlForPiwikVersion(i ~ '.x') }}"
                                         {% if selectedPiwikVersion == i %}selected{% endif %}
                                 >Piwik {{ i }}.X</option>
                             {% endfor %}
