@@ -43,10 +43,6 @@ Learn more about our Piwik Tracking API PHP client on Github: [github.com/piwik/
 
 A Java client for the Piwik Tracking API is available on Github: [github.com/piwik/piwik-java-tracker](https://github.com/piwik/piwik-java-tracker#readme).
 
-### Python client
-
-A complete Python client implementation of the Tracking API is available on Github at [github.com/piwik/piwik-python-api](https://github.com/piwik/piwik-python-api#readme).
-
 ### C# client
 
 A C# client implementation of the Tracking API is available on Github at [github.com/piwik/piwik-dotnet-tracker](https://github.com/piwik/piwik-dotnet-tracker#piwik-c-tracking-api).
