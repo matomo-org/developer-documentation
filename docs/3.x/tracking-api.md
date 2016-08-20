@@ -183,6 +183,6 @@ In this case messages will be only logged for Tracker requests that have a URL p
 
 ## Learn more
 
-* For **a list of tracking clients** see this [page](http://developer.piwik.org/guides/tracking-api-clients).
+* For **a list of tracking clients** see this [page](/guides/tracking-api-clients).
 * To learn more **about geolocation** read the [GeoIP user docs](http://piwik.org/docs/geo-locate/).
 * To learn **about Piwik's JavaScript tracker** read our [documentation for the tracker](http://piwik.org/docs/javascript-tracking/).
