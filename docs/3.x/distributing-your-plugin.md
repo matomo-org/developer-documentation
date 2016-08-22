@@ -126,27 +126,27 @@ The following fields are not required for publishing a plugin, but you may want 
 
     ```json
     "support": {
-	    "email": "support@example.com",
-	    "issues": "https://github.com/piwik/piwik/issues",
-	    "forum": "https://forum.piwik.org",
-	    "irc": "irc://freenode/piwik",
-	    "source": "https://github.com/piwik/piwik/",
-	    "wiki": "https://github.com/piwik/piwik/wiki",
-	    "docs": "https://piwik.org/docs/",
-	    "rss": "https://piwik.org/feed/"
+            "email": "support@example.com",
+            "issues": "https://github.com/piwik/piwik/issues",
+            "forum": "https://forum.piwik.org",
+            "irc": "irc://freenode/piwik",
+            "source": "https://github.com/piwik/piwik/",
+            "wiki": "https://github.com/piwik/piwik/wiki",
+            "docs": "https://piwik.org/docs/",
+            "rss": "https://piwik.org/feed/"
     }
     ```
     
     
 - `preview` - Preview let's you define a demo link and a video. If defined, they will be visible in the "Preview" tab of your plugin. The object can contain any of the following fields:
     - `demo_url` - A URL to a demo of your plugin
-    - `video_url` - A Vimeo or YouTube URL to showcase your plugin. The URL has to be as in the example above. This means a Vimeo URL has to start with `https://player.vimeo.com/video/` and a YouTube URL has to start with `https://www.youtube.com/embed/`.
+    - `video_url` - A Vimeo or YouTube URL to showcase your plugin. The URL has to be as in the example below. This means a Vimeo URL has to start with `https://player.vimeo.com/video/` and a YouTube URL has to start with `https://www.youtube.com/embed/`.
     
     
     ```json
     "preview": {
-	"demo_url": "https://demo.piwik.org"
-	"video_url": "https://player.vimeo.com/video/1223232323 or https://www.youtube.com/embed/Aaa_111HHH"
+        "demo_url": "https://demo.piwik.org"
+        "video_url": "https://player.vimeo.com/video/1223232323 or https://www.youtube.com/embed/Aaa_111HHH"
     }
     ```
     
@@ -168,18 +168,18 @@ Here is a complete example to get you started:
         }
     ],
     "preview": {
-	"demo_url": "https://demo.piwik.org"
-	"video_url": "https://www.youtube.com/embed/Aaa_111HHH"
+        "demo_url": "https://demo.piwik.org"
+        "video_url": "https://www.youtube.com/embed/Aaa_111HHH"
     },
     "support": {
-	"email": "support@example.com",
-	"issues": "https://github.com/piwik/piwik/issues",
-	"forum": "https://forum.piwik.org",
-	"irc": "irc://freenode/piwik",
-	"source": "https://github.com/piwik/piwik/",
-	"wiki": "https://github.com/piwik/piwik/wiki",
-	"docs": "https://piwik.org/docs/",
-	"rss": "https://piwik.org/feed/"
+        "email": "support@example.com",
+        "issues": "https://github.com/piwik/piwik/issues",
+        "forum": "https://forum.piwik.org",
+        "irc": "irc://freenode/piwik",
+        "source": "https://github.com/piwik/piwik/",
+        "wiki": "https://github.com/piwik/piwik/wiki",
+        "docs": "https://piwik.org/docs/",
+        "rss": "https://piwik.org/feed/"
     },
     "require": {
         "piwik": ">=2.9.0"
