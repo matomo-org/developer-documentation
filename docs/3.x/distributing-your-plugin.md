@@ -145,7 +145,7 @@ The following fields are not required for publishing a plugin, but you may want 
     
     ```json
     "preview": {
-        "demo_url": "https://demo.piwik.org"
+        "demo_url": "https://demo.piwik.org",
         "video_url": "https://player.vimeo.com/video/1223232323 or https://www.youtube.com/embed/Aaa_111HHH"
     }
     ```
@@ -168,7 +168,7 @@ Here is a complete example to get you started:
         }
     ],
     "preview": {
-        "demo_url": "https://demo.piwik.org"
+        "demo_url": "https://demo.piwik.org",
         "video_url": "https://www.youtube.com/embed/Aaa_111HHH"
     },
     "support": {
