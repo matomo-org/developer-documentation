@@ -31,6 +31,7 @@ The class defines the following methods:
 - [`getRowFromIdSubDataTable()`](#getrowfromidsubdatatable)
 - [`__toString()`](#__tostring) &mdash; Returns a string output of this DataTable\Map (applying the default renderer to every DataTable of this DataTable\Map).
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; See DataTable::enableRecursiveSort().
+- [`disableFilter()`](#disablefilter) &mdash; See DataTable::disableFilter().
 - [`renameColumn()`](#renamecolumn) &mdash; Renames the given column in each contained DataTable.
 - [`deleteColumns()`](#deletecolumns) &mdash; Deletes the specified columns in each contained DataTable.
 - [`deleteRow()`](#deleterow) &mdash; Deletes a table from the array of DataTables.
@@ -249,6 +250,19 @@ See DataTable::enableRecursiveSort().
 
 #### Signature
 
+- It does not return anything.
+
+<a name="disablefilter" id="disablefilter"></a>
+<a name="disableFilter" id="disableFilter"></a>
+### `disableFilter()`
+
+See DataTable::disableFilter().
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$className`
+      
 - It does not return anything.
 
 <a name="renamecolumn" id="renamecolumn"></a>

@@ -494,6 +494,10 @@ Callback Signature:
 
 Triggered after Piwik has been updated.
 
+Usages:
+
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/master/plugins/CustomPiwikJs/CustomPiwikJs.php#L26)
+
 ## CronArchive
 
 - [CronArchive.archiveSingleSite.finish](#cronarchivearchivesinglesitefinish)
@@ -538,6 +542,10 @@ Callback Signature:
 <pre><code>function($this)</code></pre>
 
 - CronArchive `$this` 
+
+Usages:
+
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/master/plugins/CustomPiwikJs/CustomPiwikJs.php#L26)
 
 
 ### CronArchive.filterWebsiteIds
@@ -1098,6 +1106,10 @@ Callback Signature:
 
 - string `$pluginName` The plugin that has been activated.
 
+Usages:
+
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/master/plugins/CustomPiwikJs/CustomPiwikJs.php#L26)
+
 
 ### PluginManager.pluginDeactivated
 
@@ -1109,6 +1121,10 @@ Callback Signature:
 <pre><code>function($pluginName)</code></pre>
 
 - string `$pluginName` The plugin that has been deactivated.
+
+Usages:
+
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/master/plugins/CustomPiwikJs/CustomPiwikJs.php#L26)
 
 ## Provider
 

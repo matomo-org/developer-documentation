@@ -236,6 +236,7 @@ The class defines the following methods:
 - [`getAllMetrics()`](#getallmetrics) &mdash; Returns the array of all metrics displayed by this report.
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
 - [`configureReportMetadata()`](#configurereportmetadata) &mdash; If the report is enabled the report metadata for this report will be built and added to the list of available reports.
+- [`getDocumentation()`](#getdocumentation) &mdash; Get report documentation.
 - [`getRelatedReports()`](#getrelatedreports) &mdash; Get the list of related reports if there are any.
 - [`getSubtableDimension()`](#getsubtabledimension) &mdash; Returns the Dimension instance of this report's subtable report.
 - [`isSubtableReport()`](#issubtablereport) &mdash; Returns true if the report is for another report's subtable, false if otherwise.
@@ -501,6 +502,16 @@ the current requested date, period and site.
     - `$infos` (`Piwik\Plugin\$infos`) &mdash;
       
 - It does not return anything.
+
+<a name="getdocumentation" id="getdocumentation"></a>
+<a name="getDocumentation" id="getDocumentation"></a>
+### `getDocumentation()`
+
+Get report documentation.
+
+#### Signature
+
+- It returns a `string` value.
 
 <a name="getrelatedreports" id="getrelatedreports"></a>
 <a name="getRelatedReports" id="getRelatedReports"></a>
