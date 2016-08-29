@@ -121,23 +121,8 @@ try {
         $hooks->generateDocumentation($view, $target);
     }
 
-    /** @var $versions GitVersionCollection */
-    $versions = GitVersionCollection::create(PIWIK_DOCUMENT_ROOT)
-        ->add($branch, $targetName);
-    // we cannot add multiple versions here. Why? Because we load all Piwik classes when generating docs for the
-    // first version. In the next step we would checkout another branch and load several files again but because some
-    // files were already included once it would not redefine some classes. Eg it would use an old "ViewDataTable"
-    // class from Piwik 2 and use it for a plugin from Piwik 3 (class from previous branch would be used in current
-    // branch). Instead we force to parse arguments to generate docs.
-
-    $versions->rewind();
-    while ($versions->valid()) {
-        $version = $versions->current();
-        passthru(PHP_BINARY . ' ' . $rootDir . '/generator/composer.phar install --working-dir "' . $rootDir . '/piwik" || true');
-        $sami    = generateApiClassesReference($rootDir, $version->getName(), $version->getLongName());
-        generateHooksReference($rootDir, $version->getName(), $version->getLongName(), $sami);
-        $versions->next();
-    }
+    $sami = generateApiClassesReference($rootDir, $branch, $targetName);
+    generateHooksReference($rootDir, $branch, $targetName, $sami);
 
 } catch (Exception $e) {
     echo 'Parse Error: ', $e->getMessage() . PHP_EOL;
