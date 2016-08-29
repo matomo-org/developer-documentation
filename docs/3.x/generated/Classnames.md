@@ -120,6 +120,7 @@
 ## SettingsPiwik
 ## SettingsServer
 ## Settings\FieldConfig
+## Settings\Plugin\SystemConfigSetting
 ## Settings\Plugin\SystemSetting
 ## Settings\Setting
 ## Settings\Settings

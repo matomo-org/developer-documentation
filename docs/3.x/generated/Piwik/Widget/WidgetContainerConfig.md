@@ -22,11 +22,11 @@ The class defines the following methods:
 - [`setCategoryId()`](#setcategoryid) &mdash; Set the id of the category the widget belongs to. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`getCategoryId()`](#getcategoryid) &mdash; Get the id of the category the widget belongs to. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setSubcategoryId()`](#setsubcategoryid) &mdash; Set the id of the subcategory the widget belongs to. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
-- [`getSubcategoryId()`](#getsubcategoryid) Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
+- [`getSubcategoryId()`](#getsubcategoryid) &mdash; Get the currently set category ID. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setModule()`](#setmodule) &mdash; Set the module (aka plugin name) of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`getModule()`](#getmodule) Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setAction()`](#setaction) &mdash; Set the action of the widget that shall be used in the URL to render the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
-- [`getAction()`](#getaction) Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
+- [`getAction()`](#getaction) &mdash; Get the currently set action. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setParameters()`](#setparameters) &mdash; Sets (overwrites) the parameters of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`addParameters()`](#addparameters) &mdash; Add new parameters and only overwrite parameters that have the same name. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`getParameters()`](#getparameters)
@@ -96,9 +96,11 @@ the submenu item.
 <a name="getSubcategoryId" id="getSubcategoryId"></a>
 ### `getSubcategoryId()`
 
+Get the currently set category ID.
+
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="setmodule" id="setmodule"></a>
 <a name="setModule" id="setModule"></a>
@@ -143,9 +145,11 @@ The correct action is usually detected automatically and not needed to be config
 <a name="getAction" id="getAction"></a>
 ### `getAction()`
 
+Get the currently set action.
+
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="setparameters" id="setparameters"></a>
 <a name="setParameters" id="setParameters"></a>

@@ -11,6 +11,7 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct)
+- [`getTitle()`](#gettitle)
 - [`getSetting()`](#getsetting)
 - [`getSettingsWritableByCurrentUser()`](#getsettingswritablebycurrentuser) &mdash; Returns the settings that can be displayed for the current user.
 - [`save()`](#save) &mdash; Saves (persists) the current setting values in the database.
@@ -21,6 +22,14 @@ The abstract class defines the following methods:
 
 #### Signature
 
+
+<a name="gettitle" id="gettitle"></a>
+<a name="getTitle" id="getTitle"></a>
+### `getTitle()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getsetting" id="getsetting"></a>
 <a name="getSetting" id="getSetting"></a>

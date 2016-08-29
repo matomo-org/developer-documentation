@@ -34,7 +34,8 @@ The class defines the following methods:
 - [`addDevelopmentItem()`](#adddevelopmentitem) &mdash; See add().
 - [`addDiagnosticItem()`](#adddiagnosticitem) &mdash; See add().
 - [`addPlatformItem()`](#addplatformitem) &mdash; See add().
-- [`addManageItem()`](#addmanageitem) &mdash; See add().
+- [`addMeasurableItem()`](#addmeasurableitem) &mdash; See add().
+- [`addSystemItem()`](#addsystemitem) &mdash; See add().
 
 <a name="additem" id="additem"></a>
 <a name="addItem" id="addItem"></a>
@@ -202,11 +203,34 @@ Adds a new menu item to the platform section of the admin menu.
       
 - It does not return anything.
 
-<a name="addmanageitem" id="addmanageitem"></a>
-<a name="addManageItem" id="addManageItem"></a>
-### `addManageItem()`
+<a name="addmeasurableitem" id="addmeasurableitem"></a>
+<a name="addMeasurableItem" id="addMeasurableItem"></a>
+### `addMeasurableItem()`
 
-Since Piwik 2.5.0
+Since Piwik 3.0.0
+
+See add().
+
+Adds a new menu item to the measurable section of the admin menu.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$menuName` (`string`) &mdash;
+      
+    - `$url` (`array`) &mdash;
+      
+    - `$order` (`int`) &mdash;
+      
+    - `$tooltip` (`bool`|`string`) &mdash;
+      
+- It does not return anything.
+
+<a name="addsystemitem" id="addsystemitem"></a>
+<a name="addSystemItem" id="addSystemItem"></a>
+### `addSystemItem()`
+
+Since Piwik 3.0.0
 
 See add().
 

@@ -10,12 +10,67 @@ Constants
 
 This class defines the following constants:
 
-- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values.
+- [`UI_CONTROL_RADIO`](#ui_control_radio) — Shows a radio field.- [`UI_CONTROL_TEXT`](#ui_control_text) — Shows a text field.- [`UI_CONTROL_TEXTAREA`](#ui_control_textarea) — Shows a text area.- [`UI_CONTROL_CHECKBOX`](#ui_control_checkbox) — Shows a checkbox.- [`UI_CONTROL_PASSWORD`](#ui_control_password) — Shows a password field.- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values.- [`UI_CONTROL_SINGLE_SELECT`](#ui_control_single_select) — Shows a select field.- [`UI_CONTROL_HIDDEN`](#ui_control_hidden) — Generates a hidden form field.- [`TYPE_INT`](#type_int) — Expects an integer value.- [`TYPE_FLOAT`](#type_float) — Expects a float value.- [`TYPE_STRING`](#type_string) — Expects a string.- [`TYPE_BOOL`](#type_bool) — Expects a boolean.
+<a name="ui_control_radio" id="ui_control_radio"></a>
+<a name="UI_CONTROL_RADIO" id="UI_CONTROL_RADIO"></a>
+### `UI_CONTROL_RADIO`
+
+To use this field assign it to the `$uiControl` property.
+<a name="ui_control_text" id="ui_control_text"></a>
+<a name="UI_CONTROL_TEXT" id="UI_CONTROL_TEXT"></a>
+### `UI_CONTROL_TEXT`
+
+To use this field assign it to the `$uiControl` property.
+<a name="ui_control_textarea" id="ui_control_textarea"></a>
+<a name="UI_CONTROL_TEXTAREA" id="UI_CONTROL_TEXTAREA"></a>
+### `UI_CONTROL_TEXTAREA`
+
+To use this field assign it to the `$uiControl` property.
+<a name="ui_control_checkbox" id="ui_control_checkbox"></a>
+<a name="UI_CONTROL_CHECKBOX" id="UI_CONTROL_CHECKBOX"></a>
+### `UI_CONTROL_CHECKBOX`
+
+To use this field assign it to the `$uiControl` property.
+<a name="ui_control_password" id="ui_control_password"></a>
+<a name="UI_CONTROL_PASSWORD" id="UI_CONTROL_PASSWORD"></a>
+### `UI_CONTROL_PASSWORD`
+
+To use this field assign it to the `$uiControl` property.
 <a name="ui_control_multi_select" id="ui_control_multi_select"></a>
 <a name="UI_CONTROL_MULTI_SELECT" id="UI_CONTROL_MULTI_SELECT"></a>
 ### `UI_CONTROL_MULTI_SELECT`
 
-The type "Array" is required for this ui control.
+The type "Array" is required for this ui control. To use this field assign it to the `$uiControl` property.
+<a name="ui_control_single_select" id="ui_control_single_select"></a>
+<a name="UI_CONTROL_SINGLE_SELECT" id="UI_CONTROL_SINGLE_SELECT"></a>
+### `UI_CONTROL_SINGLE_SELECT`
+
+To use this field assign it to the `$uiControl` property.
+<a name="ui_control_hidden" id="ui_control_hidden"></a>
+<a name="UI_CONTROL_HIDDEN" id="UI_CONTROL_HIDDEN"></a>
+### `UI_CONTROL_HIDDEN`
+
+To use this field assign it to the `$uiControl` property.
+<a name="type_int" id="type_int"></a>
+<a name="TYPE_INT" id="TYPE_INT"></a>
+### `TYPE_INT`
+
+Is usually used when creating a setting.
+<a name="type_float" id="type_float"></a>
+<a name="TYPE_FLOAT" id="TYPE_FLOAT"></a>
+### `TYPE_FLOAT`
+
+Is usually used when creating a setting.
+<a name="type_string" id="type_string"></a>
+<a name="TYPE_STRING" id="TYPE_STRING"></a>
+### `TYPE_STRING`
+
+Is usually used when creating a setting.
+<a name="type_bool" id="type_bool"></a>
+<a name="TYPE_BOOL" id="TYPE_BOOL"></a>
+### `TYPE_BOOL`
+
+Is usually used when creating a setting.
 
 Properties
 ----------

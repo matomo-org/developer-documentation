@@ -16,11 +16,11 @@ The class defines the following methods:
 - [`setCategoryId()`](#setcategoryid) &mdash; Set the id of the category the widget belongs to.
 - [`getCategoryId()`](#getcategoryid) &mdash; Get the id of the category the widget belongs to.
 - [`setSubcategoryId()`](#setsubcategoryid) &mdash; Set the id of the subcategory the widget belongs to.
-- [`getSubcategoryId()`](#getsubcategoryid)
+- [`getSubcategoryId()`](#getsubcategoryid) &mdash; Get the currently set category ID.
 - [`setModule()`](#setmodule) &mdash; Set the module (aka plugin name) of the widget.
 - [`getModule()`](#getmodule)
 - [`setAction()`](#setaction) &mdash; Set the action of the widget that shall be used in the URL to render the widget.
-- [`getAction()`](#getaction)
+- [`getAction()`](#getaction) &mdash; Get the currently set action.
 - [`setParameters()`](#setparameters) &mdash; Sets (overwrites) the parameters of the widget.
 - [`addParameters()`](#addparameters) &mdash; Add new parameters and only overwrite parameters that have the same name.
 - [`getParameters()`](#getparameters) &mdash; Get all URL parameters needed to render this widget.
@@ -84,9 +84,11 @@ the submenu item.
 <a name="getSubcategoryId" id="getSubcategoryId"></a>
 ### `getSubcategoryId()`
 
+Get the currently set category ID.
+
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="setmodule" id="setmodule"></a>
 <a name="setModule" id="setModule"></a>
@@ -131,9 +133,11 @@ The correct action is usually detected automatically and not needed to be config
 <a name="getAction" id="getAction"></a>
 ### `getAction()`
 
+Get the currently set action.
+
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="setparameters" id="setparameters"></a>
 <a name="setParameters" id="setParameters"></a>
