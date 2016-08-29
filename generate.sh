@@ -11,6 +11,7 @@ function generateDocs {
     mkdir docs/$2/generated
 
     cd piwik
+    git rm --cached -r .
     git reset --hard
     git submodule foreach --recursive git reset --hard
     git clean -f -d
