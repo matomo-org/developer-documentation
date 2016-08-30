@@ -341,7 +341,7 @@ need to use this function._**
 Returns an internationalized string using a translation token.
 
 If a translation
-cannot be found for the toke, the token is returned.
+cannot be found for the token, the token is returned.
 
 #### Signature
 

@@ -44,7 +44,7 @@ Methods
 The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
-- [`getDatabaseConfig()`](#getdatabaseconfig)
+- [`getDatabaseConfig()`](#getdatabaseconfig) &mdash; Returns an array with the Database connection information.
 - [`setDatabaseObject()`](#setdatabaseobject) &mdash; For tests only.
 - [`createDatabaseObject()`](#createdatabaseobject) &mdash; Connects to the database.
 - [`destroyDatabaseObject()`](#destroydatabaseobject) &mdash; Disconnects and destroys the database connection.
@@ -88,12 +88,14 @@ Returns the database connection and creates it if it hasn't been already.
 <a name="getDatabaseConfig" id="getDatabaseConfig"></a>
 ### `getDatabaseConfig()`
 
+Returns an array with the Database connection information.
+
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$dbConfig`
+    - `$dbConfig` (`array`|`null`) &mdash;
       
-- It does not return anything.
+- It returns a `array` value.
 
 <a name="setdatabaseobject" id="setdatabaseobject"></a>
 <a name="setDatabaseObject" id="setDatabaseObject"></a>

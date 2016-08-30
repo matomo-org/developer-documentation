@@ -45,7 +45,7 @@ Constructor.
     - `$minimumValue` (`Piwik\DataTable\Filter\number`|`Piwik\DataTable\Filter\false`) &mdash;
        The minimum column value. Rows with column values < this number will be deleted. If false, `$minimumPercentageThreshold` is used.
     - `$minimumPercentageThreshold` (`bool`|`float`) &mdash;
-       If supplied, column values must be a greater percentage of the sum of all column values than this precentage.
+       If supplied, column values must be a greater percentage of the sum of all column values than this percentage.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>

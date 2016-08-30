@@ -75,7 +75,6 @@
 ## Period
 ## Period\Range
 ## Piwik
-## PiwikPro\Advertising
 ## Plugin
 ## Plugin\API
 ## Plugin\Archiver

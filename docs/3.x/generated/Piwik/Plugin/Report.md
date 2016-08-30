@@ -27,7 +27,7 @@ This class defines the following properties:
 - [`$hasGoalMetrics`](#$hasgoalmetrics) &mdash; Set this property to true in case your report supports goal metrics.
 - [`$constantRowsCount`](#$constantrowscount) &mdash; Set it to boolean `true` if your report always returns a constant count of rows, for instance always 24 rows for 1-24 hours.
 - [`$isSubtableReport`](#$issubtablereport) &mdash; Set it to boolean `true` if this report is a subtable report and won't be used as a standalone report.
-- [`$parameters`](#$parameters) &mdash; Some reports may require additonal URL parameters that need to be sent when a report is requested.
+- [`$parameters`](#$parameters) &mdash; Some reports may require additional URL parameters that need to be sent when a report is requested.
 - [`$actionToLoadSubTables`](#$actiontoloadsubtables) &mdash; The name of the API action to load a subtable if supported.
 - [`$order`](#$order) &mdash; The order of the report.
 - [`$recursiveLabelSeparator`](#$recursivelabelseparator) &mdash; Separator for building recursive labels (or paths)
@@ -130,7 +130,7 @@ Set it to boolean `true` if this report is a subtable report and won't be used a
 <a name="parameters" id="parameters"></a>
 ### `$parameters`
 
-Some reports may require additonal URL parameters that need to be sent when a report is requested.
+Some reports may require additional URL parameters that need to be sent when a report is requested.
 
 For instance
 a "goal" report might need a "goalId": `array('idgoal' => 5)`.
@@ -198,6 +198,7 @@ The class defines the following methods:
 - [`getAllMetrics()`](#getallmetrics) &mdash; Returns the array of all metrics displayed by this report.
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
 - [`configureReportMetadata()`](#configurereportmetadata) &mdash; If the report is enabled the report metadata for this report will be built and added to the list of available reports.
+- [`getDocumentation()`](#getdocumentation) &mdash; Get report documentation.
 - [`getRelatedReports()`](#getrelatedreports) &mdash; Get the list of related reports if there are any.
 - [`getParameters()`](#getparameters)
 - [`getSubtableDimension()`](#getsubtabledimension) &mdash; Returns the Dimension instance of this report's subtable report.
@@ -457,6 +458,16 @@ the current requested date, period and site.
     - `$infos` (`Piwik\Plugin\$infos`) &mdash;
       
 - It does not return anything.
+
+<a name="getdocumentation" id="getdocumentation"></a>
+<a name="getDocumentation" id="getDocumentation"></a>
+### `getDocumentation()`
+
+Get report documentation.
+
+#### Signature
+
+- It returns a `string` value.
 
 <a name="getrelatedreports" id="getrelatedreports"></a>
 <a name="getRelatedReports" id="getRelatedReports"></a>

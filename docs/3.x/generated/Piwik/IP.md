@@ -13,7 +13,7 @@ Methods
 
 The class defines the following methods:
 
-- [`getIpFromHeader()`](#getipfromheader) &mdash; Returns the most accurate IP address availble for the current user, in IPv4 format.
+- [`getIpFromHeader()`](#getipfromheader) &mdash; Returns the most accurate IP address available for the current user, in IPv4 format.
 - [`getNonProxyIpFromHeader()`](#getnonproxyipfromheader) &mdash; Returns a non-proxy IP address from header.
 - [`getLastIpFromList()`](#getlastipfromlist) &mdash; Returns the last IP address in a comma separated list, subject to an optional exclusion list.
 
@@ -21,7 +21,7 @@ The class defines the following methods:
 <a name="getIpFromHeader" id="getIpFromHeader"></a>
 ### `getIpFromHeader()`
 
-Returns the most accurate IP address availble for the current user, in IPv4 format.
+Returns the most accurate IP address available for the current user, in IPv4 format.
 
 This could be the proxy client's IP address.
 
