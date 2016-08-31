@@ -18,10 +18,6 @@ function generateDocs {
     git submodule foreach git clean -f
     git fetch
     git checkout $1
-    CHECKOUT_SUCCESS=$?
-    if [ $CHECKOUT_SUCCESS -ne 0 ]; then
-      exit 1;
-    fi
     git pull origin $1
     git submodule update --recursive --force
     php composer.phar install || true
