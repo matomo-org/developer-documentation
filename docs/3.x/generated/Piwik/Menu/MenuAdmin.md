@@ -30,11 +30,12 @@ The class defines the following methods:
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
+- [`addPersonalItem()`](#addpersonalitem) &mdash; See add().
 - [`addDevelopmentItem()`](#adddevelopmentitem) &mdash; See add().
 - [`addDiagnosticItem()`](#adddiagnosticitem) &mdash; See add().
 - [`addPlatformItem()`](#addplatformitem) &mdash; See add().
-- [`addSettingsItem()`](#addsettingsitem) &mdash; See add().
-- [`addManageItem()`](#addmanageitem) &mdash; See add().
+- [`addMeasurableItem()`](#addmeasurableitem) &mdash; See add().
+- [`addSystemItem()`](#addsystemitem) &mdash; See add().
 
 <a name="additem" id="additem"></a>
 <a name="addItem" id="addItem"></a>
@@ -110,6 +111,29 @@ Edits a URL of an existing menu entry.
       
 - It does not return anything.
 
+<a name="addpersonalitem" id="addpersonalitem"></a>
+<a name="addPersonalItem" id="addPersonalItem"></a>
+### `addPersonalItem()`
+
+Since Piwik 2.5.0
+
+See add().
+
+Adds a new menu item to the manage section of the user menu.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$menuName` (`string`) &mdash;
+      
+    - `$url` (`array`) &mdash;
+      
+    - `$order` (`int`) &mdash;
+      
+    - `$tooltip` (`bool`|`string`) &mdash;
+      
+- It does not return anything.
+
 <a name="adddevelopmentitem" id="adddevelopmentitem"></a>
 <a name="addDevelopmentItem" id="addDevelopmentItem"></a>
 ### `addDevelopmentItem()`
@@ -179,15 +203,15 @@ Adds a new menu item to the platform section of the admin menu.
       
 - It does not return anything.
 
-<a name="addsettingsitem" id="addsettingsitem"></a>
-<a name="addSettingsItem" id="addSettingsItem"></a>
-### `addSettingsItem()`
+<a name="addmeasurableitem" id="addmeasurableitem"></a>
+<a name="addMeasurableItem" id="addMeasurableItem"></a>
+### `addMeasurableItem()`
 
-Since Piwik 2.5.0
+Since Piwik 3.0.0
 
 See add().
 
-Adds a new menu item to the settings section of the admin menu.
+Adds a new menu item to the measurable section of the admin menu.
 
 #### Signature
 
@@ -202,11 +226,11 @@ Adds a new menu item to the settings section of the admin menu.
       
 - It does not return anything.
 
-<a name="addmanageitem" id="addmanageitem"></a>
-<a name="addManageItem" id="addManageItem"></a>
-### `addManageItem()`
+<a name="addsystemitem" id="addsystemitem"></a>
+<a name="addSystemItem" id="addSystemItem"></a>
+### `addSystemItem()`
 
-Since Piwik 2.5.0
+Since Piwik 3.0.0
 
 See add().
 
