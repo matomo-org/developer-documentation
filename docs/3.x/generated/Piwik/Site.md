@@ -50,6 +50,7 @@ The class defines the following methods:
 - [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site.
 - [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site IDs and returns them as an array.
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache.
+- [`clearCacheForSite()`](#clearcacheforsite) &mdash; Clears the site data cache.
 - [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID.
 - [`getGroupFor()`](#getgroupfor) &mdash; Returns the group of the site with the specified ID.
 - [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID.
@@ -315,6 +316,21 @@ See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray
 
 #### Signature
 
+- It does not return anything.
+
+<a name="clearcacheforsite" id="clearcacheforsite"></a>
+<a name="clearCacheForSite" id="clearCacheForSite"></a>
+### `clearCacheForSite()`
+
+Clears the site data cache.
+
+See also [setSites()](/api-reference/Piwik/Site#setsites) and [setSitesFromArray()](/api-reference/Piwik/Site#setsitesfromarray).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idSite`
+      
 - It does not return anything.
 
 <a name="getnamefor" id="getnamefor"></a>
