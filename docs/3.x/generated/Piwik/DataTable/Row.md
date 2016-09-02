@@ -64,6 +64,11 @@ The class defines the following methods:
 - [`sumRowMetadata()`](#sumrowmetadata) &mdash; Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 - [`isSummaryRow()`](#issummaryrow) &mdash; Returns `true` if this row is the summary row, `false` if otherwise.
 - [`isEqual()`](#isequal) &mdash; Helper function that tests if two rows are equal.
+- [`offsetExists()`](#offsetexists)
+- [`offsetGet()`](#offsetget)
+- [`offsetSet()`](#offsetset)
+- [`offsetUnset()`](#offsetunset)
+- [`getIterator()`](#getiterator)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -442,4 +447,58 @@ Column order is not important.
     - `$row2` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
        second to compare
 - It returns a `bool` value.
+
+<a name="offsetexists" id="offsetexists"></a>
+<a name="offsetExists" id="offsetExists"></a>
+### `offsetExists()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$offset`
+      
+- It does not return anything.
+
+<a name="offsetget" id="offsetget"></a>
+<a name="offsetGet" id="offsetGet"></a>
+### `offsetGet()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$offset`
+      
+- It does not return anything.
+
+<a name="offsetset" id="offsetset"></a>
+<a name="offsetSet" id="offsetSet"></a>
+### `offsetSet()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$offset`
+      
+    - `$value`
+      
+- It does not return anything.
+
+<a name="offsetunset" id="offsetunset"></a>
+<a name="offsetUnset" id="offsetUnset"></a>
+### `offsetUnset()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$offset`
+      
+- It does not return anything.
+
+<a name="getiterator" id="getiterator"></a>
+<a name="getIterator" id="getIterator"></a>
+### `getIterator()`
+
+#### Signature
+
+- It does not return anything.
 
