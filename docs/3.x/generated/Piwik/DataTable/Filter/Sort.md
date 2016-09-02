@@ -16,10 +16,6 @@ The class defines the following methods:
 - [`filter()`](#filter) &mdash; See [Sort](/api-reference/Piwik/DataTable/Filter/Sort).
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
-- [`setOrder()`](#setorder) &mdash; Updates the order
-- [`numberSort()`](#numbersort) &mdash; Sorting method used for sorting numbers
-- [`naturalSort()`](#naturalsort) &mdash; Sorting method used for sorting values natural
-- [`sortString()`](#sortstring) &mdash; Sorting method used for sorting values
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -40,6 +36,8 @@ Constructor.
        Whether to use a natural sort or not (see [http://php.net/natsort](http://php.net/natsort)).
     - `$recursiveSort` (`bool`) &mdash;
        Whether to sort all subtables or not.
+    - `$doSortBySecondaryColumn` (`bool`) &mdash;
+       If true will sort by a secondary column. The column is automatically detected and will be either nb_visits or label, if possible.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -82,62 +80,4 @@ Filters a row's subtable, if one exists and is loaded in memory.
     - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
        The row whose subtable should be filter.
 - It does not return anything.
-
-<a name="setorder" id="setorder"></a>
-<a name="setOrder" id="setOrder"></a>
-### `setOrder()`
-
-Updates the order
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$order` (`string`) &mdash;
-       asc|desc
-- It does not return anything.
-
-<a name="numbersort" id="numbersort"></a>
-<a name="numberSort" id="numberSort"></a>
-### `numberSort()`
-
-Sorting method used for sorting numbers
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$rowA` (`array`) &mdash;
-       array[0 => value of column to sort, 1 => label]
-    - `$rowB` (`array`) &mdash;
-       array[0 => value of column to sort, 1 => label]
-- It returns a `int` value.
-
-<a name="naturalsort" id="naturalsort"></a>
-<a name="naturalSort" id="naturalSort"></a>
-### `naturalSort()`
-
-Sorting method used for sorting values natural
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$valA` (`mixed`) &mdash;
-      
-    - `$valB` (`mixed`) &mdash;
-      
-- It returns a `int` value.
-
-<a name="sortstring" id="sortstring"></a>
-<a name="sortString" id="sortString"></a>
-### `sortString()`
-
-Sorting method used for sorting values
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$valA` (`mixed`) &mdash;
-      
-    - `$valB` (`mixed`) &mdash;
-      
-- It returns a `int` value.
 
