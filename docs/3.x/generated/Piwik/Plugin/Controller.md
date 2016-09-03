@@ -118,6 +118,7 @@ The abstract class defines the following methods:
 - [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current HTTP request to another module/action.
 - [`checkTokenInUrl()`](#checktokeninurl) &mdash; Checks that the token_auth in the URL matches the currently logged-in user's token_auth.
 - [`getCalendarPrettyDate()`](#getcalendarprettydate) &mdash; Returns a prettified date string for use in period selector widget.
+- [`getEvolutionHtml()`](#getevolutionhtml) &mdash; Calculates the evolution from one value to another and returns HTML displaying the evolution percent.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -448,9 +449,6 @@ Checks that the token_auth in the URL matches the currently logged-in user's tok
 This is a protection against CSRF and should be used in all controller
 methods that modify Piwik or any user settings.
 
-If called from JavaScript by using the `ajaxHelper` you have to call `ajaxHelper.withTokenInUrl();` before
-`ajaxHandler.send();` to send the token along with the request.
-
 **The token_auth should never appear in the browser's address bar.**
 
 #### Signature
@@ -471,4 +469,30 @@ Returns a prettified date string for use in period selector widget.
     - `$period` ([`Period`](../../Piwik/Period.md)) &mdash;
        The period to return a pretty string for.
 - It returns a `string` value.
+
+<a name="getevolutionhtml" id="getevolutionhtml"></a>
+<a name="getEvolutionHtml" id="getEvolutionHtml"></a>
+### `getEvolutionHtml()`
+
+Calculates the evolution from one value to another and returns HTML displaying the evolution percent.
+
+The HTML includes an up/down arrow and is colored red, black or
+green depending on whether the evolution is negative, 0 or positive.
+
+No HTML is returned if the current value and evolution percent are both 0.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$date` (`string`) &mdash;
+       The date of the current value.
+    - `$currentValue` (`int`) &mdash;
+       The value to calculate evolution to.
+    - `$pastDate` (`string`) &mdash;
+       The date of past value.
+    - `$pastValue` (`int`) &mdash;
+       The value in the past to calculate evolution from.
+
+- *Returns:*  `string`|`Piwik\Plugin\false` &mdash;
+    The HTML or `false` if the evolution is 0 and the current value is 0.
 
