@@ -33,7 +33,7 @@ The `README.md` file should contain a description of your plugin and some docume
 Sections in this file are used to build the plugin page on the Marketplace.
 
 Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
-The file is written in Markdown format and has, among others, the following sections: `Description`, `FAQ`, `Changelog`.
+The file is written in Markdown format and has, among others, the following sections: `Description`, `FAQ`, `Documentation`, `Changelog`.
 The sections in your README are then directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](http://plugins.piwik.org/CustomAlerts) page created from the README file.
 
 #### Screenshots
@@ -93,7 +93,7 @@ The following fields are not required for publishing a plugin, but you may want 
     }
     ```
     
-    For more information read the [Composer Versions documentation](https://getcomposer.org/doc/articles/versions.md).
+    For plugins that target Piwik 3 or newer read the [Composer Versions documentation](https://getcomposer.org/doc/articles/versions.md) for more information.
   
   
 - `donate` - An object containing information on how to donate to the plugin author (you!). The object can contain any of the following fields:
@@ -138,7 +138,7 @@ The following fields are not required for publishing a plugin, but you may want 
     ```
     
     
-- `preview` - Preview let's you define a demo link and a video. If defined, they will be visible in the "Preview" tab of your plugin. The object can contain any of the following fields:
+- `preview` - Preview lets you define a demo link and a video. If defined, they will be visible in the "Preview" tab of your plugin. The object can contain any of the following fields:
     - `demo_url` - A URL to a demo of your plugin
     - `video_url` - A Vimeo or YouTube URL to showcase your plugin. The URL has to be as in the example below. This means a Vimeo URL has to start with `https://player.vimeo.com/video/` and a YouTube URL has to start with `https://www.youtube.com/embed/`.
     
@@ -147,6 +147,17 @@ The following fields are not required for publishing a plugin, but you may want 
     "preview": {
         "demo_url": "https://demo.piwik.org",
         "video_url": "https://player.vimeo.com/video/1223232323 or https://www.youtube.com/embed/Aaa_111HHH"
+    }
+    ```
+    
+    
+- `archive` - Lets you define some options for creating Piwik Plugin archives.
+    - `exclude` - Allows you to configure while files or directories should be removed from the ZIP file when a user downloads or installs a plugin. It is not possible to use any wildcards and the path must start with a leading slash `/`. By default we always remove the directories `tests`, `Test` and `screenshots` as well as the files `.travis.yml` and `.gitignore` within your plugin root directory.
+    
+    
+    ```json
+    "archive": {
+        "exclude": ["/builds", "/test.log"]
     }
     ```
     
@@ -170,6 +181,9 @@ Here is a complete example to get you started:
     "preview": {
         "demo_url": "https://demo.piwik.org",
         "video_url": "https://www.youtube.com/embed/Aaa_111HHH"
+    },
+    "archive": {
+        "exclude": ["/builds", "/test.log"]
     },
     "support": {
         "email": "support@example.com",
@@ -273,3 +287,4 @@ You can [customize](#prepare-your-plugin) the contents of those tabs by adding t
 - Description
 - FAQ
 - Changelog
+- Documentation
