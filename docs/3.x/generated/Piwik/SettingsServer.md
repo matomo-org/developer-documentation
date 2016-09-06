@@ -12,6 +12,7 @@ The class defines the following methods:
 
 - [`isArchivePhpTriggered()`](#isarchivephptriggered) &mdash; Returns true if the current script execution was triggered by the cron archiving script.
 - [`isIIS()`](#isiis) &mdash; Returns `true` if running on Microsoft IIS 7 (or above), `false` if otherwise.
+- [`isApache()`](#isapache) &mdash; Returns `true` if running on an Apache web server, `false` if otherwise.
 - [`isWindows()`](#iswindows) &mdash; Returns `true` if running on a Windows operating system, `false` if otherwise.
 - [`isTimezoneSupportEnabled()`](#istimezonesupportenabled) &mdash; Returns `true` if this PHP version/build supports timezone manipulation (e.g., php >= 5.2, or compiled with **EXPERIMENTAL_DATE_SUPPORT=1** for php < 5.2).
 - [`isGdExtensionEnabled()`](#isgdextensionenabled) &mdash; Returns `true` if the GD PHP extension is available, `false` if otherwise.
@@ -33,6 +34,16 @@ Helpful for error handling: directly throw error without HTML (eg. when DB is do
 ### `isIIS()`
 
 Returns `true` if running on Microsoft IIS 7 (or above), `false` if otherwise.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="isapache" id="isapache"></a>
+<a name="isApache" id="isApache"></a>
+### `isApache()`
+
+Returns `true` if running on an Apache web server, `false` if otherwise.
 
 #### Signature
 
