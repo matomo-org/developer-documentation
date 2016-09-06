@@ -30,7 +30,6 @@ The class defines the following methods:
 - [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site IDs and returns them as an array. Inherited from [`Site`](../../Piwik/Site.md)
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache. Inherited from [`Site`](../../Piwik/Site.md)
-- [`clearCacheForSite()`](#clearcacheforsite) &mdash; Clears the site data cache. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getNameFor()`](#getnamefor) &mdash; Returns the name of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getGroupFor()`](#getgroupfor) &mdash; Returns the group of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getTimezoneFor()`](#gettimezonefor) &mdash; Returns the timezone of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
@@ -296,21 +295,6 @@ See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and [
 
 #### Signature
 
-- It does not return anything.
-
-<a name="clearcacheforsite" id="clearcacheforsite"></a>
-<a name="clearCacheForSite" id="clearCacheForSite"></a>
-### `clearCacheForSite()`
-
-Clears the site data cache.
-
-See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and [setSitesFromArray()](/api-reference/Piwik/Measurable/Measurable#setsitesfromarray).
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$idSite`
-      
 - It does not return anything.
 
 <a name="getnamefor" id="getnamefor"></a>
