@@ -33,7 +33,7 @@ The `README.md` file should contain a description of your plugin and some docume
 Sections in this file are used to build the plugin page on the Marketplace.
 
 Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
-The file is written in Markdown format and has, among others, the following sections: `Description`, `FAQ`, `Documentation`, `Changelog`.
+The file is written in Markdown format and has, among others, the following sections: `Description`, `FAQ`, `Documentation`.
 The sections in your README are then directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](http://plugins.piwik.org/CustomAlerts) page created from the README file.
 
 #### Screenshots
@@ -201,6 +201,18 @@ Here is a complete example to get you started:
 }
 ```
 
+#### License
+
+In the `plugin.json` file you can define the name of your license. On top you can put a `LICENSE`, `LICENSE.txt` 
+or `LICENSE.md` file within the root directory of your plugin. If present, the license name on your plugin page will be 
+clickable and users will be able to see the full license text. 
+
+#### Changelog
+
+It is recommended to create and maintain a `CHANGELOG`, `CHANGELOG.txt` or `CHANGELOG.md` file within the root 
+directory of your plugin. If present, a tab "Changelog" will appear on your plugin page showing the content of that
+file.
+
 ## Publishing your plugin on the marketplace
 
 ### Put your plugin on GitHub
@@ -286,5 +298,4 @@ You can [customize](#prepare-your-plugin) the contents of those tabs by adding t
 
 - Description
 - FAQ
-- Changelog
 - Documentation
