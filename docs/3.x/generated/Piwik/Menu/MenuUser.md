@@ -1,20 +1,20 @@
 <small>Piwik\Menu\</small>
 
-MenuAdmin
-=========
+MenuUser
+========
 
-Contains menu entries for the Admin menu.
+Contains menu entries for the User menu (the menu at the very top of the page).
 
-Plugins can implement the `configureAdminMenu()` method of the `Menu` plugin class to add, rename of remove
+Plugins can implement the `configureUserMenu()` method of the `Menu` plugin class to add, rename of remove
 items. If your plugin does not have a `Menu` class yet you can create one using `./console generate:menu`.
 
 **Example**
 
-    public function configureAdminMenu(MenuAdmin $menu)
+    public function configureUserMenu(MenuUser $menu)
     {
         $menu->add(
-            'MyPlugin_MyTranslatedAdminMenuCategory',
-            'MyPlugin_MyTranslatedAdminPageName',
+            'MyPlugin_MyTranslatedMenuCategory',
+            'MyPlugin_MyTranslatedMenuName',
             array('module' => 'MyPlugin', 'action' => 'index'),
             Piwik::isUserHasSomeAdminAccess(),
             $order = 2
@@ -30,11 +30,9 @@ The class defines the following methods:
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
-- [`addDevelopmentItem()`](#adddevelopmentitem) &mdash; See add().
-- [`addDiagnosticItem()`](#adddiagnosticitem) &mdash; See add().
-- [`addPlatformItem()`](#addplatformitem) &mdash; See add().
-- [`addSettingsItem()`](#addsettingsitem) &mdash; See add().
+- [`addPersonalItem()`](#addpersonalitem) &mdash; See add().
 - [`addManageItem()`](#addmanageitem) &mdash; See add().
+- [`addPlatformItem()`](#addplatformitem) &mdash; See add().
 
 <a name="additem" id="additem"></a>
 <a name="addItem" id="addItem"></a>
@@ -110,84 +108,15 @@ Edits a URL of an existing menu entry.
       
 - It does not return anything.
 
-<a name="adddevelopmentitem" id="adddevelopmentitem"></a>
-<a name="addDevelopmentItem" id="addDevelopmentItem"></a>
-### `addDevelopmentItem()`
+<a name="addpersonalitem" id="addpersonalitem"></a>
+<a name="addPersonalItem" id="addPersonalItem"></a>
+### `addPersonalItem()`
 
 Since Piwik 2.5.0
 
 See add().
 
-Adds a new menu item to the development section of the admin menu.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$menuName` (`string`) &mdash;
-      
-    - `$url` (`array`) &mdash;
-      
-    - `$order` (`int`) &mdash;
-      
-    - `$tooltip` (`bool`|`string`) &mdash;
-      
-- It does not return anything.
-
-<a name="adddiagnosticitem" id="adddiagnosticitem"></a>
-<a name="addDiagnosticItem" id="addDiagnosticItem"></a>
-### `addDiagnosticItem()`
-
-Since Piwik 2.5.0
-
-See add().
-
-Adds a new menu item to the diagnostic section of the admin menu.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$menuName` (`string`) &mdash;
-      
-    - `$url` (`array`) &mdash;
-      
-    - `$order` (`int`) &mdash;
-      
-    - `$tooltip` (`bool`|`string`) &mdash;
-      
-- It does not return anything.
-
-<a name="addplatformitem" id="addplatformitem"></a>
-<a name="addPlatformItem" id="addPlatformItem"></a>
-### `addPlatformItem()`
-
-Since Piwik 2.5.0
-
-See add().
-
-Adds a new menu item to the platform section of the admin menu.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$menuName` (`string`) &mdash;
-      
-    - `$url` (`array`) &mdash;
-      
-    - `$order` (`int`) &mdash;
-      
-    - `$tooltip` (`bool`|`string`) &mdash;
-      
-- It does not return anything.
-
-<a name="addsettingsitem" id="addsettingsitem"></a>
-<a name="addSettingsItem" id="addSettingsItem"></a>
-### `addSettingsItem()`
-
-Since Piwik 2.5.0
-
-See add().
-
-Adds a new menu item to the settings section of the admin menu.
+Adds a new menu item to the manage section of the user menu.
 
 #### Signature
 
@@ -210,7 +139,30 @@ Since Piwik 2.5.0
 
 See add().
 
-Adds a new menu item to the manage section of the admin menu.
+Adds a new menu item to the manage section of the user menu.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$menuName` (`string`) &mdash;
+      
+    - `$url` (`array`) &mdash;
+      
+    - `$order` (`int`) &mdash;
+      
+    - `$tooltip` (`bool`|`string`) &mdash;
+      
+- It does not return anything.
+
+<a name="addplatformitem" id="addplatformitem"></a>
+<a name="addPlatformItem" id="addPlatformItem"></a>
+### `addPlatformItem()`
+
+Since Piwik 2.5.0
+
+See add().
+
+Adds a new menu item to the platform section of the user menu.
 
 #### Signature
 
