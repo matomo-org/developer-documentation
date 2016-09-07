@@ -29,12 +29,10 @@ Two files are required to be present in your plugin before you can publish: the 
 
 #### README.md file
 
-The `README.md` file should contain a description of your plugin and some documentation.
-Sections in this file are used to build the plugin page on the Marketplace.
-
+The `README.md` file should contain a description of your plugin. 
 Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
-The file is written in Markdown format and has, among others, the following sections: `Description`, `FAQ`, `Documentation`.
-The sections in your README are then directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](http://plugins.piwik.org/CustomAlerts) page created from the README file.
+The file is written in Markdown format and has the following section: `Description`.
+The content between `## Description` and the next `## ...` headline will be directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](http://plugins.piwik.org/CustomAlerts) page created from the README file.
 
 #### Screenshots
 
@@ -213,6 +211,16 @@ It is recommended to create and maintain a `CHANGELOG`, `CHANGELOG.txt` or `CHAN
 directory of your plugin. If present, a tab "Changelog" will appear on your plugin page showing the content of that
 file.
 
+#### Documentation
+
+It is recommended to put documentation for your plugin directly into a `/docs/index.md` file. If the file is present,
+we will show its content within a "Documentation" tab on your plugin page.
+
+#### FAQ
+
+It is recommended to put an FAQ for your plugin directly into a `/docs/faq.md` file. If the file is present,
+we will show its content within a "FAQ" tab on your plugin page.
+
 ## Publishing your plugin on the marketplace
 
 ### Put your plugin on GitHub
@@ -292,10 +300,4 @@ Every plugin gets its own page on the marketplace. On the top is the name and a 
 
 ![](/img/marketplace-plugin.png)
 
-The contents of the tabs are determined by the headings in your `README.md` file. See this [README.md](https://raw.github.com/tsteur/piwik-livetab-plugin/master/README.md) for an example.
-
-You can [customize](#prepare-your-plugin) the contents of those tabs by adding the following sections to your `README.md`:
-
-- Description
-- FAQ
-- Documentation
+The contents of the tabs are determined by the description section in the `README.md` file, the `CHANGELOG.md`, `docs/index.md` and `docs/faq.md` file. See this [plugin](https://raw.github.com/tsteur/piwik-livetab-plugin/master) for an example.

@@ -67,10 +67,12 @@ It is still possible to release updates for the branch that is compatible with P
 
 In the past the changelog used to be defined in the `README.md` file by specifying a `## Changelog` headline. This is 
 now deprecated and we recommend to maintain the changelog in a `CHANGELOG`, `CHANGELOG.txt` or `CHANGELOG.md` file 
-instead.
+instead. The same applies to the FAQ which used to be defined in a `## FAQ` section within the readme and should now
+be specified in a `docs/faq.md` file.
 
 The Marketplace now also supports to show a license text if a `LICENSE`, `LICENSE.txt` or `LICENSE.md` is 
-specified in the root directory of your plugin.
+specified in the root directory of your plugin and it is possible to show documentation for your plugin by specifying
+a `docs/index.md` file.
 
 
 ## Events
