@@ -1,9 +1,14 @@
-<small>Piwik\Settings\</small>
+<small>Piwik\Settings\Plugin\</small>
 
-Setting
-=======
+SystemConfigSetting
+===================
 
-Base setting type class.
+Describes a system wide setting.
+
+Only the Super User can change this type of setting by d efault and
+the value of this setting will affect all users.
+
+See [Setting](/api-reference/Piwik/Settings/Setting).
 
 Methods
 -------
@@ -11,18 +16,18 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getName()`](#getname) &mdash; Get the name of the setting.
-- [`getType()`](#gettype) &mdash; Get the PHP type of the setting.
-- [`setConfigureCallback()`](#setconfigurecallback)
-- [`getDefaultValue()`](#getdefaultvalue)
-- [`setDefaultValue()`](#setdefaultvalue) &mdash; Sets/overwrites the current default value
-- [`setStorage()`](#setstorage)
-- [`configureField()`](#configurefield)
-- [`setIsWritableByCurrentUser()`](#setiswritablebycurrentuser) &mdash; Set whether setting is writable or not.
+- [`getName()`](#getname) &mdash; Get the name of the setting. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`getType()`](#gettype) &mdash; Get the PHP type of the setting. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`setConfigureCallback()`](#setconfigurecallback) Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`getDefaultValue()`](#getdefaultvalue) Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`setDefaultValue()`](#setdefaultvalue) &mdash; Sets/overwrites the current default value Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`setStorage()`](#setstorage) Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`configureField()`](#configurefield) Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`setIsWritableByCurrentUser()`](#setiswritablebycurrentuser) &mdash; Set whether setting is writable or not. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting is writable for the current user, `false` if otherwise.
-- [`save()`](#save) &mdash; Saves (persists) the value for this setting in the database if a value has been actually set.
-- [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value.
-- [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value.
+- [`save()`](#save) &mdash; Saves (persists) the value for this setting in the database if a value has been actually set. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -41,8 +46,8 @@ Constructor.
        Eg an array, int, ... see SettingConfig::TYPE_* constants
     - `$pluginName` (`string`) &mdash;
        The name of the plugin the setting belongs to
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `$configSectionName`
+      
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
@@ -113,7 +118,7 @@ Sets/overwrites the current default value
 
 #### Signature
 
-- It returns a [`FieldConfig`](../../Piwik/Settings/FieldConfig.md) value.
+- It returns a [`FieldConfig`](../../../Piwik/Settings/FieldConfig.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -175,8 +180,8 @@ is returned.
 Sets and persists this setting's value overwriting any existing value.
 
 Before a value is actually set it will be made sure the current user is allowed to change the value. The value
-will be first validated either via a system built-in validate method or via a set [FieldConfig::$validate](/api-reference/Piwik/Settings/FieldConfig#$validate)
-custom method. Afterwards the value will be transformed via a possibly specified [FieldConfig::$transform](/api-reference/Piwik/Settings/FieldConfig#$transform)
+will be first validated either via a system built-in validate method or via a set FieldConfig::$validate
+custom method. Afterwards the value will be transformed via a possibly specified FieldConfig::$transform
 method. Before storing the actual value, the value will be converted to the actually specified $type.
 
 #### Signature
