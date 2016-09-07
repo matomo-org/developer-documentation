@@ -30,7 +30,7 @@ Two files are required to be present in your plugin before you can publish: the 
 #### README.md file
 
 The `README.md` file should contain a description of your plugin. 
-Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
+Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/3.x-dev/README.md).
 The file is written in Markdown format and has the following section: `Description`.
 The content between `## Description` and the next `## ...` headline will be directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](http://plugins.piwik.org/CustomAlerts) page created from the README file.
 
