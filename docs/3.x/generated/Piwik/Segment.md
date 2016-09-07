@@ -9,6 +9,10 @@ A segment is a condition used to filter visits. They can, for example,
 select visits that have a specific browser or come from a specific
 country, or both.
 
+Individual segment dimensions (such as `browserCode` and `countryCode`)
+are defined by plugins. Read about the [API.getSegmentDimensionMetadata](/api-reference/events#apigetsegmentdimensionmetadata)
+event to learn more.
+
 Plugins that aggregate data stored in Piwik can support segments by
 using this class when generating aggregation SQL queries.
 
