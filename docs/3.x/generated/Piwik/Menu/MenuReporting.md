@@ -1,20 +1,20 @@
 <small>Piwik\Menu\</small>
 
-MenuAdmin
-=========
+MenuReporting
+=============
 
-Contains menu entries for the Admin menu.
+Contains menu entries for the Reporting menu (the menu displayed under the Piwik logo).
 
-Plugins can implement the `configureAdminMenu()` method of the `Menu` plugin class to add, rename of remove
+Plugins can implement the `configureReportingMenu()` method of the `Menu` plugin class to add, rename of remove
 items. If your plugin does not have a `Menu` class yet you can create one using `./console generate:menu`.
 
 **Example**
 
-    public function configureAdminMenu(MenuAdmin $menu)
+    public function configureReportingMenu(MenuReporting $menu)
     {
         $menu->add(
-            'MyPlugin_MyTranslatedAdminMenuCategory',
-            'MyPlugin_MyTranslatedAdminPageName',
+            'MyPlugin_MyTranslatedMenuCategory',
+            'MyPlugin_MyTranslatedMenuName',
             array('module' => 'MyPlugin', 'action' => 'index'),
             Piwik::isUserHasSomeAdminAccess(),
             $order = 2
@@ -30,11 +30,11 @@ The class defines the following methods:
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
-- [`addDevelopmentItem()`](#adddevelopmentitem) &mdash; See add().
-- [`addDiagnosticItem()`](#adddiagnosticitem) &mdash; See add().
-- [`addPlatformItem()`](#addplatformitem) &mdash; See add().
-- [`addSettingsItem()`](#addsettingsitem) &mdash; See add().
-- [`addManageItem()`](#addmanageitem) &mdash; See add().
+- [`addVisitorsItem()`](#addvisitorsitem) &mdash; See add().
+- [`addActionsItem()`](#addactionsitem) &mdash; See add().
+- [`addReferrersItem()`](#addreferrersitem) &mdash; See add().
+- [`isUrlFound()`](#isurlfound) &mdash; Returns if the URL was found in the menu.
+- [`getMenu()`](#getmenu) &mdash; Triggers the Menu.Reporting.addItems hook and returns the menu.
 
 <a name="additem" id="additem"></a>
 <a name="addItem" id="addItem"></a>
@@ -110,15 +110,15 @@ Edits a URL of an existing menu entry.
       
 - It does not return anything.
 
-<a name="adddevelopmentitem" id="adddevelopmentitem"></a>
-<a name="addDevelopmentItem" id="addDevelopmentItem"></a>
-### `addDevelopmentItem()`
+<a name="addvisitorsitem" id="addvisitorsitem"></a>
+<a name="addVisitorsItem" id="addVisitorsItem"></a>
+### `addVisitorsItem()`
 
 Since Piwik 2.5.0
 
 See add().
 
-Adds a new menu item to the development section of the admin menu.
+Adds a new menu item to the visitors section of the reporting menu.
 
 #### Signature
 
@@ -133,15 +133,15 @@ Adds a new menu item to the development section of the admin menu.
       
 - It does not return anything.
 
-<a name="adddiagnosticitem" id="adddiagnosticitem"></a>
-<a name="addDiagnosticItem" id="addDiagnosticItem"></a>
-### `addDiagnosticItem()`
+<a name="addactionsitem" id="addactionsitem"></a>
+<a name="addActionsItem" id="addActionsItem"></a>
+### `addActionsItem()`
 
 Since Piwik 2.5.0
 
 See add().
 
-Adds a new menu item to the diagnostic section of the admin menu.
+Adds a new menu item to the actions section of the reporting menu.
 
 #### Signature
 
@@ -156,15 +156,15 @@ Adds a new menu item to the diagnostic section of the admin menu.
       
 - It does not return anything.
 
-<a name="addplatformitem" id="addplatformitem"></a>
-<a name="addPlatformItem" id="addPlatformItem"></a>
-### `addPlatformItem()`
+<a name="addreferrersitem" id="addreferrersitem"></a>
+<a name="addReferrersItem" id="addReferrersItem"></a>
+### `addReferrersItem()`
 
 Since Piwik 2.5.0
 
 See add().
 
-Adds a new menu item to the platform section of the admin menu.
+Adds a new menu item to the referrers section of the reporting menu.
 
 #### Signature
 
@@ -179,49 +179,26 @@ Adds a new menu item to the platform section of the admin menu.
       
 - It does not return anything.
 
-<a name="addsettingsitem" id="addsettingsitem"></a>
-<a name="addSettingsItem" id="addSettingsItem"></a>
-### `addSettingsItem()`
+<a name="isurlfound" id="isurlfound"></a>
+<a name="isUrlFound" id="isUrlFound"></a>
+### `isUrlFound()`
 
-Since Piwik 2.5.0
-
-See add().
-
-Adds a new menu item to the settings section of the admin menu.
+Returns if the URL was found in the menu.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$menuName` (`string`) &mdash;
+    - `$url` (`string`) &mdash;
       
-    - `$url` (`array`) &mdash;
-      
-    - `$order` (`int`) &mdash;
-      
-    - `$tooltip` (`bool`|`string`) &mdash;
-      
-- It does not return anything.
+- It returns a `boolean` value.
 
-<a name="addmanageitem" id="addmanageitem"></a>
-<a name="addManageItem" id="addManageItem"></a>
-### `addManageItem()`
+<a name="getmenu" id="getmenu"></a>
+<a name="getMenu" id="getMenu"></a>
+### `getMenu()`
 
-Since Piwik 2.5.0
-
-See add().
-
-Adds a new menu item to the manage section of the admin menu.
+Triggers the Menu.Reporting.addItems hook and returns the menu.
 
 #### Signature
 
--  It accepts the following parameter(s):
-    - `$menuName` (`string`) &mdash;
-      
-    - `$url` (`array`) &mdash;
-      
-    - `$order` (`int`) &mdash;
-      
-    - `$tooltip` (`bool`|`string`) &mdash;
-      
-- It does not return anything.
+- It returns a `Array` value.
 
