@@ -269,7 +269,7 @@ Tries to find a component such as a Menu or Tasks within this plugin.
     - `$expectedSubclass` (`string`) &mdash;
        If not empty, a check will be performed whether a found file extends the given subclass. If the requested file exists but does not extend this class a warning will be shown to advice a developer to extend this certain class.
 
-- *Returns:*  [`stdClass`](http://php.net/class.stdClass)|`null` &mdash;
+- *Returns:*  `string`|`null` &mdash;
     Null if the requested component does not exist or an instance of the found component.
 
 <a name="findmultiplecomponents" id="findmultiplecomponents"></a>
