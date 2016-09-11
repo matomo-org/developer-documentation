@@ -91,7 +91,6 @@ This class defines the following properties:
 - [`$show_footer_icons`](#$show_footer_icons) &mdash; Controls whether the row that contains all footer icons & the limit selector is shown.
 - [`$columns_to_display`](#$columns_to_display) &mdash; Array property that determines which columns will be shown.
 - [`$show_all_views_icons`](#$show_all_views_icons) &mdash; Controls whether graph and non core viewDataTable footer icons are shown or not.
-- [`$show_active_view_icon`](#$show_active_view_icon) &mdash; Controls whether to display a tiny upside-down caret over the currently active view icon.
 - [`$related_reports`](#$related_reports) &mdash; Related reports are listed below a datatable view.
 - [`$related_reports_title`](#$related_reports_title) &mdash; "Related Reports" is displayed by default before listing the Related reports, The string can be changed.
 - [`$title`](#$title) &mdash; The report title.
@@ -104,6 +103,8 @@ This class defines the following properties:
 - [`$show_bar_chart`](#$show_bar_chart) &mdash; Controls whether the footer icon that allows users to view data as a bar chart is shown.
 - [`$show_pie_chart`](#$show_pie_chart) &mdash; Controls whether the footer icon that allows users to view data as a pie chart is shown.
 - [`$show_tag_cloud`](#$show_tag_cloud) &mdash; Controls whether the footer icon that allows users to view data as a tag cloud is shown.
+- [`$show_as_content_block`](#$show_as_content_block) &mdash; If enabled, shows the visualization as a content block.
+- [`$show_title`](#$show_title) &mdash; If enabled shows the title of the report.
 - [`$show_export_as_rss_feed`](#$show_export_as_rss_feed) &mdash; Controls whether the user is allowed to export data as an RSS feed or not.
 - [`$show_ecommerce`](#$show_ecommerce) &mdash; Controls whether the 'Ecoommerce Orders'/'Abandoned Cart' footer icons are shown or not.
 - [`$show_footer_message`](#$show_footer_message) &mdash; Stores an HTML message (if any) to display under the datatable view.
@@ -379,17 +380,6 @@ Controls whether graph and non core viewDataTable footer icons are shown or not.
 - Its type is not specified.
 
 
-<a name="$show_active_view_icon" id="$show_active_view_icon"></a>
-<a name="show_active_view_icon" id="show_active_view_icon"></a>
-### `$show_active_view_icon`
-
-Controls whether to display a tiny upside-down caret over the currently active view icon.
-
-#### Signature
-
-- Its type is not specified.
-
-
 <a name="$related_reports" id="$related_reports"></a>
 <a name="related_reports" id="related_reports"></a>
 ### `$related_reports`
@@ -538,6 +528,29 @@ Controls whether the footer icon that allows users to view data as a tag cloud i
 
 - Its type is not specified.
 
+
+<a name="$show_as_content_block" id="$show_as_content_block"></a>
+<a name="show_as_content_block" id="show_as_content_block"></a>
+### `$show_as_content_block`
+
+If enabled, shows the visualization as a content block.
+
+This is similar to wrapping your visualization
+with a `<div piwik-content-block></div>`
+
+#### Signature
+
+- It is a `bool` value.
+
+<a name="$show_title" id="$show_title"></a>
+<a name="show_title" id="show_title"></a>
+### `$show_title`
+
+If enabled shows the title of the report.
+
+#### Signature
+
+- It is a `bool` value.
 
 <a name="$show_export_as_rss_feed" id="$show_export_as_rss_feed"></a>
 <a name="show_export_as_rss_feed" id="show_export_as_rss_feed"></a>
