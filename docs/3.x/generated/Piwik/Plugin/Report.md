@@ -20,10 +20,8 @@ Properties
 This class defines the following properties:
 
 - [`$name`](#$name) &mdash; The translated name of the report.
-- [`$category`](#$category) &mdash; The translation key of the category the report belongs to.
-- [`$widgetTitle`](#$widgettitle) &mdash; The translation key of the widget title.
-- [`$widgetParams`](#$widgetparams) &mdash; Optional widget params that will be appended to the widget URL if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
-- [`$menuTitle`](#$menutitle) &mdash; The translation key of the menu title.
+- [`$categoryId`](#$categoryid) &mdash; The translation key of the category the report belongs to.
+- [`$subcategoryId`](#$subcategoryid) &mdash; The translation key of the subcategory the report belongs to.
 - [`$metrics`](#$metrics) &mdash; An array of supported metrics.
 - [`$processedMetrics`](#$processedmetrics) &mdash; The processed metrics this report supports, eg `avg_time_on_site` or `nb_actions_per_visit`.
 - [`$hasGoalMetrics`](#$hasgoalmetrics) &mdash; Set this property to true in case your report supports goal metrics.
@@ -33,7 +31,6 @@ This class defines the following properties:
 - [`$actionToLoadSubTables`](#$actiontoloadsubtables) &mdash; The name of the API action to load a subtable if supported.
 - [`$order`](#$order) &mdash; The order of the report.
 - [`$recursiveLabelSeparator`](#$recursivelabelseparator) &mdash; Separator for building recursive labels (or paths)
-- [`$orderOfReports`](#$orderofreports)
 
 <a name="$name" id="$name"></a>
 <a name="name" id="name"></a>
@@ -48,9 +45,9 @@ defines this report as a related report.
 
 - It is a `string` value.
 
-<a name="$category" id="$category"></a>
-<a name="category" id="category"></a>
-### `$category`
+<a name="$categoryid" id="$categoryid"></a>
+<a name="categoryId" id="categoryId"></a>
+### `$categoryId`
 
 The translation key of the category the report belongs to.
 
@@ -58,37 +55,11 @@ The translation key of the category the report belongs to.
 
 - It is a `string` value.
 
-<a name="$widgettitle" id="$widgettitle"></a>
-<a name="widgetTitle" id="widgetTitle"></a>
-### `$widgetTitle`
+<a name="$subcategoryid" id="$subcategoryid"></a>
+<a name="subcategoryId" id="subcategoryId"></a>
+### `$subcategoryId`
 
-The translation key of the widget title.
-
-If a widget title is set, the platform will automatically configure/add
-a widget for this report. Alternatively, this behavior can be overwritten in [configureWidget()](/api-reference/Piwik/Plugin/Report#configurewidget).
-
-#### Signature
-
-- It is a `string` value.
-
-<a name="$widgetparams" id="$widgetparams"></a>
-<a name="widgetParams" id="widgetParams"></a>
-### `$widgetParams`
-
-Optional widget params that will be appended to the widget URL if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
-
-#### Signature
-
-- It is a `array` value.
-
-<a name="$menutitle" id="$menutitle"></a>
-<a name="menuTitle" id="menuTitle"></a>
-### `$menuTitle`
-
-The translation key of the menu title.
-
-If a menu title is set, the platform will automatically add a menu item
-to the reporting menu. Alternatively, this behavior can be overwritten in [configureReportingMenu()](/api-reference/Piwik/Plugin/Report#configurereportingmenu).
+The translation key of the subcategory the report belongs to.
 
 #### Signature
 
@@ -207,14 +178,6 @@ Separator for building recursive labels (or paths)
 
 - It is a `string` value.
 
-<a name="$orderofreports" id="$orderofreports"></a>
-<a name="orderOfReports" id="orderOfReports"></a>
-### `$orderOfReports`
-
-#### Signature
-
-- It is a `array` value.
-
 Methods
 -------
 
@@ -227,8 +190,7 @@ The class defines the following methods:
 - [`alwaysUseDefaultViewDataTable()`](#alwaysusedefaultviewdatatable) &mdash; Returns if the default viewDataTable type should always be used.
 - [`configureView()`](#configureview) &mdash; Here you can configure how your report should be displayed and which capabilities your report has.
 - [`render()`](#render) &mdash; Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
-- [`configureWidget()`](#configurewidget) &mdash; By default a widget will be configured for this report if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
-- [`configureReportingMenu()`](#configurereportingmenu) &mdash; By default a menu item will be added to the reporting menu if a [$menuTitle](/api-reference/Piwik/Plugin/Report#$menutitle) is set.
+- [`configureWidgets()`](#configurewidgets) &mdash; Let's you add any amount of widgets for this report.
 - [`getRecursiveLabelSeparator()`](#getrecursivelabelseparator)
 - [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
 - [`getMetricsRequiredForReport()`](#getmetricsrequiredforreport) &mdash; Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
@@ -238,13 +200,11 @@ The class defines the following methods:
 - [`configureReportMetadata()`](#configurereportmetadata) &mdash; If the report is enabled the report metadata for this report will be built and added to the list of available reports.
 - [`getDocumentation()`](#getdocumentation) &mdash; Get report documentation.
 - [`getRelatedReports()`](#getrelatedreports) &mdash; Get the list of related reports if there are any.
+- [`getParameters()`](#getparameters)
 - [`getSubtableDimension()`](#getsubtabledimension) &mdash; Returns the Dimension instance of this report's subtable report.
 - [`isSubtableReport()`](#issubtablereport) &mdash; Returns true if the report is for another report's subtable, false if otherwise.
 - [`fetch()`](#fetch) &mdash; Fetches the report represented by this instance.
 - [`fetchSubtable()`](#fetchsubtable) &mdash; Fetches a subtable for the report represented by this instance.
-- [`factory()`](#factory) &mdash; Get an instance of a specific report belonging to the given module and having the given action.
-- [`getAllReports()`](#getallreports) &mdash; Returns a list of all available reports.
-- [`getAllReportClasses()`](#getallreportclasses) &mdash; Returns class names of all Report metadata classes.
 - [`getForDimension()`](#getfordimension) &mdash; Finds a top level report that provides stats for a specific Dimension.
 - [`getProcessedMetricsById()`](#getprocessedmetricsbyid) &mdash; Returns an array mapping the ProcessedMetrics served by this report by their string names.
 - [`getMetricsForTable()`](#getmetricsfortable) &mdash; Returns the Metrics that are displayed by a DataTable of a certain Report type.
@@ -289,9 +249,9 @@ If not, it triggers an exception
 containing a message that will be displayed to the user. You can overwrite this message in case you want to
 customize the error message. Eg.
 ```
-    if (!$this->isEnabled()) {
-        throw new Exception('Setting XYZ is not enabled or the user has not enough permission');
-    }
+if (!$this->isEnabled()) {
+throw new Exception('Setting XYZ is not enabled or the user has not enough permission');
+}
 ```
 
 #### Signature
@@ -358,36 +318,32 @@ you can overwrite this method.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the given API action does not exist yet.
 
-<a name="configurewidget" id="configurewidget"></a>
-<a name="configureWidget" id="configureWidget"></a>
-### `configureWidget()`
+<a name="configurewidgets" id="configurewidgets"></a>
+<a name="configureWidgets" id="configureWidgets"></a>
+### `configureWidgets()`
 
-By default a widget will be configured for this report if a [$widgetTitle](/api-reference/Piwik/Plugin/Report#$widgettitle) is set.
+Let's you add any amount of widgets for this report.
 
-If you want to customize
-the way the widget is added or modify any other behavior you can overwrite this method.
+If a report defines a [$categoryId](/api-reference/Piwik/Plugin/Report#$categoryid) and a
+[$subcategoryId](/api-reference/Piwik/Plugin/Report#$subcategoryid) a widget will be generated automatically.
+
+Example to add a widget manually by overwriting this method in your report:
+$widgetsList->addWidgetConfig($factory->createWidget());
+
+If you want to have the name and the order of the widget differently to the name and order of the report you can
+do the following:
+$widgetsList->addWidgetConfig($factory->createWidget()->setName('Custom')->setOrder(5));
+
+If you want to add a widget to any container defined by your plugin or by another plugin you can do
+this:
+$widgetsList->addToContainerWidget($containerId = 'Products', $factory->createWidget());
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$widget` ([`WidgetsList`](../../Piwik/WidgetsList.md)) &mdash;
+    - `$widgetsList` ([`WidgetsList`](../../Piwik/Widget/WidgetsList.md)) &mdash;
       
-- It does not return anything.
-
-<a name="configurereportingmenu" id="configurereportingmenu"></a>
-<a name="configureReportingMenu" id="configureReportingMenu"></a>
-### `configureReportingMenu()`
-
-By default a menu item will be added to the reporting menu if a [$menuTitle](/api-reference/Piwik/Plugin/Report#$menutitle) is set.
-
-If you want to
-customize the way the item is added or modify any other behavior you can overwrite this method. For instance
-in case you need to add additional url properties beside module and action which are added by default.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$menu` ([`MenuReporting`](../../Piwik/Menu/MenuReporting.md)) &mdash;
+    - `$factory` ([`ReportWidgetFactory`](../../Piwik/Report/ReportWidgetFactory.md)) &mdash;
       
 - It does not return anything.
 
@@ -526,6 +482,14 @@ recommended related report.
 
 - It returns a [`Report[]`](../../Piwik/Plugin/Report.md) value.
 
+<a name="getparameters" id="getparameters"></a>
+<a name="getParameters" id="getParameters"></a>
+### `getParameters()`
+
+#### Signature
+
+- It does not return anything.
+
 <a name="getsubtabledimension" id="getsubtabledimension"></a>
 <a name="getSubtableDimension" id="getSubtableDimension"></a>
 ### `getSubtableDimension()`
@@ -575,46 +539,6 @@ Fetches a subtable for the report represented by this instance.
     - `$paramOverride` (`array`) &mdash;
        Query parameter overrides.
 - It returns a [`DataTable`](../../Piwik/DataTable.md) value.
-
-<a name="factory" id="factory"></a>
-<a name="factory" id="factory"></a>
-### `factory()`
-
-Get an instance of a specific report belonging to the given module and having the given action.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$module` (`string`) &mdash;
-      
-    - `$action` (`string`) &mdash;
-      
-
-- *Returns:*  `null`|[`Report`](../../Piwik/Plugin/Report.md) &mdash;
-    
-
-<a name="getallreports" id="getallreports"></a>
-<a name="getAllReports" id="getAllReports"></a>
-### `getAllReports()`
-
-Returns a list of all available reports.
-
-Even not enabled reports will be returned. They will be already sorted
-depending on the order and category of the report.
-
-#### Signature
-
-- It returns a [`Report[]`](../../Piwik/Plugin/Report.md) value.
-
-<a name="getallreportclasses" id="getallreportclasses"></a>
-<a name="getAllReportClasses" id="getAllReportClasses"></a>
-### `getAllReportClasses()`
-
-Returns class names of all Report metadata classes.
-
-#### Signature
-
-- It returns a `string[]` value.
 
 <a name="getfordimension" id="getfordimension"></a>
 <a name="getForDimension" id="getForDimension"></a>
