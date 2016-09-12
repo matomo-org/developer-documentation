@@ -9,9 +9,7 @@ This is a complete list of available classes:
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.
 - [`AuthResult`](Piwik/AuthResult.md) &mdash; Authentication result.
-- [`Category\Subcategory`](Piwik/Category/Subcategory.md) &mdash; Base type for subcategories.
 - [`Columns\Dimension`](Piwik/Columns/Dimension.md)
-- [`Columns\Updater`](Piwik/Columns/Updater.md) &mdash; Class that handles dimension updates
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
 - [`Console`](Piwik/Console.md)
@@ -67,7 +65,9 @@ This is a complete list of available classes:
 - [`Measurable\Measurable`](Piwik/Measurable/Measurable.md) &mdash; Provides access to individual measurables.
 - [`Menu\MenuAbstract`](Piwik/Menu/MenuAbstract.md) &mdash; Base class for classes that manage one of Piwik's menus.
 - [`Menu\MenuAdmin`](Piwik/Menu/MenuAdmin.md) &mdash; Contains menu entries for the Admin menu.
+- [`Menu\MenuReporting`](Piwik/Menu/MenuReporting.md) &mdash; Contains menu entries for the Reporting menu (the menu displayed under the Piwik logo).
 - [`Menu\MenuTop`](Piwik/Menu/MenuTop.md) &mdash; Contains menu entries for the Top menu (the menu at the very top of the page).
+- [`Menu\MenuUser`](Piwik/Menu/MenuUser.md) &mdash; Contains menu entries for the User menu (the menu at the very top of the page).
 - [`Metrics`](Piwik/Metrics.md) &mdash; This class contains metadata regarding core metrics and contains several related helper functions.
 - [`Metrics\Formatter`](Piwik/Metrics/Formatter.md) &mdash; Contains methods to format metric values.
 - [`Metrics\Formatter\Html`](Piwik/Metrics/Formatter/Html.md) &mdash; Metrics formatter that formats for HTML output.
@@ -92,12 +92,12 @@ This is a complete list of available classes:
 - [`Plugin\Metric`](Piwik/Plugin/Metric.md) &mdash; Base type of metric metadata classes.
 - [`Plugin\ProcessedMetric`](Piwik/Plugin/ProcessedMetric.md) &mdash; Base type for processed metrics.
 - [`Plugin\Report`](Piwik/Plugin/Report.md) &mdash; Defines a new report.
-- [`Plugin\ReportsProvider`](Piwik/Plugin/ReportsProvider.md) &mdash; Get reports that are defined by plugins.
 - [`Plugin\Segment`](Piwik/Plugin/Segment.md) &mdash; Creates a new segment that can be used for instance within the \Piwik\Columns\Dimension::configureSegment() method.
-- [`Plugin\SettingsProvider`](Piwik/Plugin/SettingsProvider.md) &mdash; Base class of all plugin settings providers.
+- [`Plugin\Settings`](Piwik/Plugin/Settings.md) &mdash; Base class of all plugin settings providers.
 - [`Plugin\Tasks`](Piwik/Plugin/Tasks.md) &mdash; Base class for all Tasks declarations.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
+- [`Plugin\Widgets`](Piwik/Plugin/Widgets.md) &mdash; Base class of all plugin widget providers.
 - [`Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md) &mdash; The average number of seconds spent on the site per visit.
 - [`Plugins\CoreHome\Columns\Metrics\EvolutionMetric`](Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md) &mdash; Calculates evolution values for any other metric.
 - [`Plugins\CoreVisualizations\Metrics\Formatter\Numeric`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter/Numeric.md) &mdash; A metrics formatter that prettifies metric values without returning string values.
@@ -109,8 +109,6 @@ This is a complete list of available classes:
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`Registry`](Piwik/Registry.md) &mdash; Registry class.
-- [`Report\ReportWidgetConfig`](Piwik/Report/ReportWidgetConfig.md) &mdash; Defines a widget config that is used to render a report.
-- [`Report\ReportWidgetFactory`](Piwik/Report/ReportWidgetFactory.md) &mdash; Report widget factory.
 - [`ScheduledTask`](Piwik/ScheduledTask.md) &mdash; Contains metadata referencing PHP code that should be executed at regular intervals.
 - [`Scheduler\Schedule\Daily`](Piwik/Scheduler/Schedule/Daily.md) &mdash; Daily class is used to schedule tasks every day.
 - [`Scheduler\Schedule\Hourly`](Piwik/Scheduler/Schedule/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.
@@ -122,21 +120,15 @@ This is a complete list of available classes:
 - [`Segment`](Piwik/Segment.md) &mdash; Limits the set of visits Piwik uses when aggregating analytics data.
 - [`SettingsPiwik`](Piwik/SettingsPiwik.md) &mdash; Contains helper methods that can be used to get common Piwik settings.
 - [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and currently used PHP settings.
-- [`Settings\FieldConfig`](Piwik/Settings/FieldConfig.md) &mdash; Lets you configure a form field.
-- [`Settings\Plugin\SystemConfigSetting`](Piwik/Settings/Plugin/SystemConfigSetting.md) &mdash; Describes a system wide setting.
-- [`Settings\Plugin\SystemSetting`](Piwik/Settings/Plugin/SystemSetting.md) &mdash; Describes a system wide setting.
 - [`Settings\Setting`](Piwik/Settings/Setting.md) &mdash; Base setting type class.
-- [`Settings\Settings`](Piwik/Settings/Settings.md) &mdash; Base class of all settings providers.
+- [`Settings\Storage`](Piwik/Settings/Storage.md) &mdash; Base setting type class.
+- [`Settings\Storage\StaticStorage`](Piwik/Settings/Storage/StaticStorage.md) &mdash; Static / temporary storage where a value will never be persisted meaning it will use the default value for each request until configured differently.
+- [`Settings\SystemSetting`](Piwik/Settings/SystemSetting.md) &mdash; Describes a system wide setting.
+- [`Settings\UserSetting`](Piwik/Settings/UserSetting.md) &mdash; Describes a per user setting.
 - [`Singleton`](Piwik/Singleton.md) &mdash; The singleton base class restricts the instantiation of derived classes to one object only.
 - [`Site`](Piwik/Site.md) &mdash; Provides access to individual [site entity](/guides/persistence-and-the-mysql-backend#websites-aka-sites) data (including name, URL, etc.).
 - [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; Manages scheduled task execution.
 - [`Translation\Translator`](Piwik/Translation/Translator.md) &mdash; Translates messages.
-- [`Updater`](Piwik/Updater.md) &mdash; Load and execute all relevant, incremental update scripts for Piwik core and plugins, and bump the component version numbers for completed updates.
-- [`Updater\Migration`](Piwik/Updater/Migration.md) &mdash; Base class for migrations.
-- [`Updater\Migration\Db`](Piwik/Updater/Migration/Db.md) &mdash; Base class for a single database migration.
-- [`Updater\Migration\Db\Factory`](Piwik/Updater/Migration/Db/Factory.md) &mdash; Provides database migrations.
-- [`Updater\Migration\Factory`](Piwik/Updater/Migration/Factory.md) &mdash; Migration factory to create various migrations that implement the Migration interface.
-- [`Updater\Migration\Plugin\Factory`](Piwik/Updater/Migration/Plugin/Factory.md) &mdash; Provides plugin migrations.
 - [`Updates`](Piwik/Updates.md) &mdash; Base class for update scripts.
 - [`Url`](Piwik/Url.md) &mdash; Provides URL related helper methods.
 - [`UrlHelper`](Piwik/UrlHelper.md) &mdash; Contains less commonly needed URL helper methods.
@@ -146,7 +138,4 @@ This is a complete list of available classes:
 - [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
 - [`ViewDataTable\RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; Contains base request properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances.
 - [`View\UIControl`](Piwik/View/UIControl.md) &mdash; Base type of UI controls.
-- [`Widget\Widget`](Piwik/Widget/Widget.md) &mdash; Defines a new widget.
-- [`Widget\WidgetConfig`](Piwik/Widget/WidgetConfig.md) &mdash; Configures a widget.
-- [`Widget\WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md) &mdash; Defines a new widget container.
-- [`Widget\WidgetsList`](Piwik/Widget/WidgetsList.md) &mdash; Manages the global list of reports that can be displayed as dashboard widgets.
+- [`WidgetsList`](Piwik/WidgetsList.md) &mdash; Manages the global list of reports that can be displayed as dashboard widgets.
