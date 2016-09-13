@@ -150,8 +150,7 @@ The following fields are not required for publishing a plugin, but you may want 
     
     
 - `archive` - Lets you define some options for creating Piwik Plugin archives.
-    - `exclude` - Allows you to configure which files or directories should be removed from the ZIP file when a user downloads or installs a plugin. It is not possible to use any wildcards and the path must start with a leading slash `/`. By default we always remove the directories `tests`, `Test` and `screenshots` as well as the files `.travis.yml` and `.gitignore` within your plugin root directory.
-    
+    - `exclude` - Allows you to configure which files or directories should be removed from the ZIP file when a user downloads or installs a plugin. It is not possible to use any wildcards and the path must start with a leading slash `/`. By default a few directories and files are always removed from the ZIP archive: the directories `tests`, `Test` and `screenshots` as well as the files `.travis.yml` and `.gitignore` found in your plugin's root directory.
     
     ```json
     "archive": {
@@ -201,25 +200,21 @@ Here is a complete example to get you started:
 
 #### License
 
-In the `plugin.json` file you can define the name of your license. On top you can put a `LICENSE`, `LICENSE.txt` 
-or `LICENSE.md` file within the root directory of your plugin. If present, the license name on your plugin page will be 
-clickable and users will be able to see the full license text. 
+In the `plugin.json` file you can define the name of your license. 
+
+You can also put a `LICENSE`, `LICENSE.txt` or `LICENSE.md` file within the root directory of your plugin. If present, the license name on your plugin page will be clickable and users will be able to see the full license text. 
 
 #### Changelog
 
-It is recommended to create and maintain a `CHANGELOG`, `CHANGELOG.txt` or `CHANGELOG.md` file within the root 
-directory of your plugin. If present, a tab "Changelog" will appear on your plugin page showing the content of that
-file.
+It is recommended to create and maintain a `CHANGELOG`, `CHANGELOG.txt` or `CHANGELOG.md` file within the root directory of your plugin. If present, a tab "Changelog" will appear on your plugin page showing the content of this file.
 
 #### Documentation
 
-It is recommended to put documentation for your plugin directly into a `/docs/index.md` file. If the file is present,
-we will show its content within a "Documentation" tab on your plugin page.
+It is recommended to put documentation for your plugin directly into a `/docs/index.md` file. If the file is present, its content will be displayed within a "Documentation" tab on your plugin page.
 
 #### FAQ
 
-It is recommended to put an FAQ for your plugin directly into a `/docs/faq.md` file. If the file is present,
-we will show its content within a "FAQ" tab on your plugin page.
+It is recommended to put an FAQ for your plugin directly into a `/docs/faq.md` file. If the file is present, its content will be displayed within a "FAQ" tab on your plugin page.
 
 ## Publishing your plugin on the marketplace
 
@@ -300,4 +295,4 @@ Every plugin gets its own page on the marketplace. On the top is the name and a 
 
 ![](/img/marketplace-plugin.png)
 
-The contents of the tabs are determined by the description section in the `README.md` file, the `CHANGELOG.md`, `docs/index.md` and `docs/faq.md` file. See this [plugin](https://raw.github.com/tsteur/piwik-livetab-plugin/master) for an example.
+The contents of the tabs are determined by the description section in the `README.md` file, the `CHANGELOG.md`, `docs/index.md` and `docs/faq.md` file. See this [plugin](https://github.com/tsteur/piwik-livetab-plugin for an example.
