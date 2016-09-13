@@ -295,4 +295,4 @@ Every plugin gets its own page on the marketplace. On the top is the name and a 
 
 ![](/img/marketplace-plugin.png)
 
-The contents of the tabs are determined by the description section in the `README.md` file, the `CHANGELOG.md`, `docs/index.md` and `docs/faq.md` file. See this [plugin](https://github.com/tsteur/piwik-livetab-plugin for an example.
+The contents of the tabs are determined by the description section in the `README.md` file, the `CHANGELOG.md`, `docs/index.md` and `docs/faq.md` file. See this [plugin](https://github.com/tsteur/piwik-livetab-plugin) for an example.
