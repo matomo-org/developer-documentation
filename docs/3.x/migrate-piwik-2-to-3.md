@@ -43,7 +43,7 @@ If your plugin is not compatible with Piwik 3 yet, we recommend to release one m
     },
 ```
 
-The next step is for you to make your plugin compatible with Piwik 3: this guide  will help you locate the changes to make to your plugin. 
+The next step is for you to make your plugin compatible with Piwik 3: this guide will help you locate the changes to make to your plugin. 
   
 
 ### once your plugin is compatible with Piwik 3, release a new major version of your plugin 
@@ -60,6 +60,28 @@ The `plugin.json` would look like this:
         "piwik": ">=3.0.0-b1,<4.0.0-b1"
     },
 ```
+
+It is still possible to release updates for the branch that is compatible with Piwik 2. 
+
+## Marketplace
+
+### Your plugin's Changelog
+
+In the past the changelog used to be defined in the `README.md` file by specifying a `## Changelog` headline. This is now deprecated and we recommend to maintain the changelog in a `CHANGELOG`, `CHANGELOG.txt` or `CHANGELOG.md` file instead. 
+
+### Your plugin's FAQ
+
+The same applies to the FAQ which used to be defined in a `## FAQ` section within the readme and should now be specified in a `docs/faq.md` file.
+
+
+### Your plugin's Support options
+
+The support tab is no longer managed in the readme file either. Instead the support tab on your plugin page is now generated from the ["support" section in your plugin.json](http://developer.piwik.org/guides/distributing-your-plugin#pluginjson-file).
+
+
+### Your plugin's license
+
+The Marketplace now also supports to show a license text if a `LICENSE`, `LICENSE.txt` or `LICENSE.md` is specified in the root directory of your plugin and it is possible to show documentation for your plugin by specifying a `docs/index.md` file.
 
 
 ## Events

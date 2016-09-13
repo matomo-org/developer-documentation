@@ -29,12 +29,10 @@ Two files are required to be present in your plugin before you can publish: the 
 
 #### README.md file
 
-The `README.md` file should contain a description of your plugin and some documentation.
-Sections in this file are used to build the plugin page on the Marketplace.
-
-Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
-The file is written in Markdown format and has, among others, the following sections: `Description`, `FAQ`, `Changelog`.
-The sections in your README are then directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](http://plugins.piwik.org/CustomAlerts) page created from the README file.
+The `README.md` file should contain a description of your plugin. 
+Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/3.x-dev/README.md).
+The file is written in Markdown format and has the following section: `Description`.
+The content between `## Description` and the next `## ...` headline will be directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](http://plugins.piwik.org/CustomAlerts) page created from the README file.
 
 #### Screenshots
 
@@ -93,7 +91,7 @@ The following fields are not required for publishing a plugin, but you may want 
     }
     ```
     
-    For more information read the [Composer Versions documentation](https://getcomposer.org/doc/articles/versions.md).
+    For plugins that target Piwik 3 or newer read the [Composer Versions documentation](https://getcomposer.org/doc/articles/versions.md) for more information.
   
   
 - `donate` - An object containing information on how to donate to the plugin author (you!). The object can contain any of the following fields:
@@ -138,7 +136,7 @@ The following fields are not required for publishing a plugin, but you may want 
     ```
     
     
-- `preview` - Preview let's you define a demo link and a video. If defined, they will be visible in the "Preview" tab of your plugin. The object can contain any of the following fields:
+- `preview` - Preview lets you define a demo link and a video. If defined, they will be visible in the "Preview" tab of your plugin. The object can contain any of the following fields:
     - `demo_url` - A URL to a demo of your plugin
     - `video_url` - A Vimeo or YouTube URL to showcase your plugin. The URL has to be as in the example below. This means a Vimeo URL has to start with `https://player.vimeo.com/video/` and a YouTube URL has to start with `https://www.youtube.com/embed/`.
     
@@ -147,6 +145,16 @@ The following fields are not required for publishing a plugin, but you may want 
     "preview": {
         "demo_url": "https://demo.piwik.org",
         "video_url": "https://player.vimeo.com/video/1223232323 or https://www.youtube.com/embed/Aaa_111HHH"
+    }
+    ```
+    
+    
+- `archive` - Lets you define some options for creating Piwik Plugin archives.
+    - `exclude` - Allows you to configure which files or directories should be removed from the ZIP file when a user downloads or installs a plugin. It is not possible to use any wildcards and the path must start with a leading slash `/`. By default a few directories and files are always removed from the ZIP archive: the directories `tests`, `Test` and `screenshots` as well as the files `.travis.yml` and `.gitignore` found in your plugin's root directory.
+    
+    ```json
+    "archive": {
+        "exclude": ["/builds", "/test.log"]
     }
     ```
     
@@ -171,6 +179,9 @@ Here is a complete example to get you started:
         "demo_url": "https://demo.piwik.org",
         "video_url": "https://www.youtube.com/embed/Aaa_111HHH"
     },
+    "archive": {
+        "exclude": ["/builds", "/test.log"]
+    },
     "support": {
         "email": "support@example.com",
         "issues": "https://github.com/piwik/piwik/issues",
@@ -186,6 +197,24 @@ Here is a complete example to get you started:
     }
 }
 ```
+
+#### License
+
+In the `plugin.json` file you can define the name of your license. 
+
+You can also put a `LICENSE`, `LICENSE.txt` or `LICENSE.md` file within the root directory of your plugin. If present, the license name on your plugin page will be clickable and users will be able to see the full license text. 
+
+#### Changelog
+
+It is recommended to create and maintain a `CHANGELOG`, `CHANGELOG.txt` or `CHANGELOG.md` file within the root directory of your plugin. If present, a tab "Changelog" will appear on your plugin page showing the content of this file.
+
+#### Documentation
+
+It is recommended to put documentation for your plugin directly into a `/docs/index.md` file. If the file is present, its content will be displayed within a "Documentation" tab on your plugin page.
+
+#### FAQ
+
+It is recommended to put an FAQ for your plugin directly into a `/docs/faq.md` file. If the file is present, its content will be displayed within a "FAQ" tab on your plugin page.
 
 ## Publishing your plugin on the marketplace
 
@@ -266,10 +295,4 @@ Every plugin gets its own page on the marketplace. On the top is the name and a 
 
 ![](/img/marketplace-plugin.png)
 
-The contents of the tabs are determined by the headings in your `README.md` file. See this [README.md](https://raw.github.com/tsteur/piwik-livetab-plugin/master/README.md) for an example.
-
-You can [customize](#prepare-your-plugin) the contents of those tabs by adding the following sections to your `README.md`:
-
-- Description
-- FAQ
-- Changelog
+The contents of the tabs are determined by the description section in the `README.md` file, the `CHANGELOG.md`, `docs/index.md` and `docs/faq.md` file. See this [plugin](https://github.com/tsteur/piwik-livetab-plugin) for an example.
