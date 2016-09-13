@@ -9,6 +9,7 @@ all changes in Piwik 3 can be found in the [Changelog](/changelog#piwik-300).
 ## Making your plugin compatible with Piwik 3
 
 After you test your Piwik plugin on Piwik 3, there are a few possible cases:
+
 * your plugin works for both Piwik 2 and Piwik 3 at the same time,
 * or: your plugin does not work for Piwik 3 yet,
 * or: your plugin only works for Piwik 3.
