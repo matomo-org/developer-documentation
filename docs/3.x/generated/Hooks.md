@@ -22,7 +22,6 @@ Callback Signature:
 - [API.$pluginName.$methodName.end](#apipluginnamemethodnameend)
 - [API.DocumentationGenerator.$token](#apidocumentationgeneratortoken)
 - [API.getReportMetadata.end](#apigetreportmetadataend)
-- [API.getSegmentDimensionMetadata](#apigetsegmentdimensionmetadata)
 - [API.Request.authenticate](#apirequestauthenticate)
 - [API.Request.dispatch](#apirequestdispatch)
 - [API.Request.dispatch.end](#apirequestdispatchend)
@@ -96,7 +95,7 @@ Callback Signature:
 
 ### API.getReportMetadata.end
 
-*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/ProcessedReport.php) in line [263](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/ProcessedReport.php#L263)*
+*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/ProcessedReport.php) in line [206](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/ProcessedReport.php#L206)*
 
 Triggered after all available reports are collected. This event can be used to modify the report metadata of reports in other plugins. You
 could, for example, add custom metrics to every report or remove reports from the list
@@ -111,41 +110,7 @@ Callback Signature:
 
 Usages:
 
-[Goals::getReportMetadataEnd](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L141)
-
-
-### API.getSegmentDimensionMetadata
-
-*Defined in [Piwik/Plugins/API/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/API.php) in line [191](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/API.php#L191)*
-
-Triggered when gathering all available segment dimensions. This event can be used to make new segment dimensions available.
-
-**Example**
-
-    public function getSegmentsMetadata(&$segments, $idSites)
-    {
-        $segments[] = array(
-            'type'           => 'dimension',
-            'category'       => Piwik::translate('General_Visit'),
-            'name'           => 'General_VisitorIP',
-            'segment'        => 'visitIp',
-            'acceptedValues' => '13.54.122.1, etc.',
-            'sqlSegment'     => 'log_visit.location_ip',
-            'sqlFilter'      => array('Piwik\IP', 'P2N'),
-            'permission'     => $isAuthenticatedWithViewAccess,
-        );
-    }
-
-Callback Signature:
-<pre><code>function(&amp;$segments, $idSites)</code></pre>
-
-- array `$dimensions` The list of available segment dimensions. Append to this list to add new segments. Each element in this list must contain the following information: - **type**: Either `'metric'` or `'dimension'`. `'metric'` means the value is a numeric and `'dimension'` means it is a string. Also, `'metric'` values will be displayed under **Visit (metrics)** in the Segment Editor. - **category**: The segment category name. This can be an existing segment category visible in the segment editor. - **name**: The pretty name of the segment. Can be a translation token. - **segment**: The segment name, eg, `'visitIp'` or `'searches'`. - **acceptedValues**: A string describing one or two exacmple values, eg `'13.54.122.1, etc.'`. - **sqlSegment**: The table column this segment will segment by. For example, `'log_visit.location_ip'` for the **visitIp** segment. - **sqlFilter**: A PHP callback to apply to segment values before they are used in SQL. - **permission**: True if the current user has view access to this segment, false if otherwise.
-
-- array `$idSites` The list of site IDs we're getting the available segments for. Some segments (such as Goal segments) depend on the site.
-
-Usages:
-
-[CustomVariables::getSegmentsMetadata](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L110)
+[Goals::getReportMetadataEnd](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L149)
 
 
 ### API.Request.authenticate
@@ -277,7 +242,7 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::filterMergedJavaScripts](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L30)
+[CoreHome::filterMergedJavaScripts](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L37)
 
 
 ### AssetManager.filterMergedJavaScripts
@@ -291,7 +256,7 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::filterMergedJavaScripts](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L30)
+[CoreHome::filterMergedJavaScripts](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L37)
 
 
 ### AssetManager.filterMergedJavaScripts
@@ -308,12 +273,12 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::filterMergedJavaScripts](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L30)
+[CoreHome::filterMergedJavaScripts](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L37)
 
 
 ### AssetManager.filterMergedStylesheets
 
-*Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/piwik/piwik/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [74](https://github.com/piwik/piwik/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L74)*
+*Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/piwik/piwik/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [125](https://github.com/piwik/piwik/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L125)*
 
 Triggered after all less stylesheets are compiled to CSS, minified and merged into one file, but before the generated CSS is written to disk. This event can be used to modify merged CSS.
 
@@ -352,12 +317,12 @@ Callback Signature:
 
 Usages:
 
-[Actions::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L104), [Annotations::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Annotations/Annotations.php#L46), [Contents::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Contents/Contents.php#L35), [CoreAdminHome::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L49), [CoreHome::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L82), [CorePluginsAdmin::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L45), [CoreVisualizations::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L47), [CustomAlerts::getJavaScriptFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L73), [CustomVariables::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L174), [Dashboard::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L213), [Feedback::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Feedback/Feedback.php#L35), [Goals::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L247), [Insights::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Insights/Insights.php#L31), [LanguagesManager::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L53), [Live::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Live.php#L37), [Login::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/Login.php#L40), [MobileMessaging::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L87), [MultiSites::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L71), [Overlay::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Overlay/Overlay.php#L29), [PrivacyManager::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L153), [ScheduledReports::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L129), [SegmentEditor::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L68), [SitesManager::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L92), [Transitions::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Transitions/Transitions.php#L33), [TreemapVisualization::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L61), [UserCountry::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L76), [UserCountryMap::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L53), [UserId::getJavaScriptFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserId/UserId.php#L39), [UsersManager::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L92), [Widgetize::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L27)
+[Actions::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L99), [Annotations::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Annotations/Annotations.php#L46), [Contents::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Contents/Contents.php#L34), [CoreAdminHome::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L50), [CoreHome::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L95), [CorePluginsAdmin::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L47), [CoreVisualizations::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L46), [CustomAlerts::getJavaScriptFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L73), [CustomVariables::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L132), [Dashboard::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L267), [Feedback::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Feedback/Feedback.php#L35), [Goals::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L247), [Insights::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Insights/Insights.php#L31), [LanguagesManager::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L47), [Live::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Live.php#L37), [Login::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/Login.php#L40), [MobileMessaging::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L88), [MultiSites::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L71), [Overlay::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Overlay/Overlay.php#L29), [PrivacyManager::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L159), [ScheduledReports::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L129), [SegmentEditor::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L68), [SitesManager::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L91), [Transitions::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Transitions/Transitions.php#L33), [TreemapVisualization::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L61), [UserCountry::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L76), [UserCountryMap::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L39), [UserId::getJavaScriptFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserId/UserId.php#L39), [UsersManager::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L92), [Widgetize::getJsFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L27)
 
 
 ### AssetManager.getStylesheetFiles
 
-*Defined in [Piwik/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher](https://github.com/piwik/piwik/blob/3.x-dev/core/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher.php) in line [66](https://github.com/piwik/piwik/blob/3.x-dev/core/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher.php#L66)*
+*Defined in [Piwik/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher](https://github.com/piwik/piwik/blob/3.x-dev/core/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher.php) in line [68](https://github.com/piwik/piwik/blob/3.x-dev/core/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher.php#L68)*
 
 Triggered when gathering the list of all stylesheets (CSS and LESS) needed by Piwik and its plugins. Plugins that have stylesheets should use this event to make those stylesheets
 load.
@@ -380,7 +345,35 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/API.php#L750), [Actions::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L99), [Annotations::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Annotations/Annotations.php#L38), [Contents::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Contents/Contents.php#L40), [CoreAdminHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L41), [CoreHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L54), [CorePluginsAdmin::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L28), [CoreVisualizations::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L41), [CustomAlerts::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L78), [CustomVariables::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L169), [DBStats::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/DBStats/DBStats.php#L31), [Dashboard::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L222), [Diagnostics::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Diagnostics/Diagnostics.php#L25), [Events::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L263), [ExampleRssWidget::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ExampleRssWidget/ExampleRssWidget.php#L26), [Feedback::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Feedback/Feedback.php#L29), [Goals::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L252), [Insights::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Insights/Insights.php#L26), [Installation::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Installation.php#L117), [LanguagesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L48), [Live::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Live.php#L31), [Login::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/Login.php#L45), [MobileMessaging::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L92), [MultiSites::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L80), [ProfessionalServices::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L24), [ScheduledReports::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L134), [SegmentEditor::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L73), [SitesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L83), [Transitions::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Transitions/Transitions.php#L28), [TreemapVisualization::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L55), [UserCountry::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L71), [UserCountryMap::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L64), [UsersManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L102), [VisitsSummary::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/VisitsSummary/VisitsSummary.php#L68), [Widgetize::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L39)
+[Plugin::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/API.php#L730), [Annotations::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Annotations/Annotations.php#L38), [CoreAdminHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L42), [CoreHome::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L61), [CorePluginsAdmin::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L28), [CoreVisualizations::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L40), [CustomAlerts::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L78), [CustomVariables::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L127), [Dashboard::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L278), [Diagnostics::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Diagnostics/Diagnostics.php#L25), [Events::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L264), [ExampleRssWidget::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ExampleRssWidget/ExampleRssWidget.php#L26), [Feedback::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Feedback/Feedback.php#L29), [Goals::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L253), [Insights::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Insights/Insights.php#L26), [Installation::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Installation.php#L117), [Live::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Live.php#L31), [Login::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/Login.php#L45), [MobileMessaging::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L95), [MultiSites::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L80), [ProfessionalServices::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L24), [ScheduledReports::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L135), [SecurityInfo::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SecurityInfo/SecurityInfo.php#L28), [SegmentEditor::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L73), [SitesManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L83), [Transitions::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Transitions/Transitions.php#L28), [TreemapVisualization::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L55), [UserCountry::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L71), [UserCountryMap::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L50), [UsersManager::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L105), [VisitsSummary::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/VisitsSummary/VisitsSummary.php#L68), [Widgetize::getStylesheetFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L38)
+
+## Category
+
+- [Category.addSubcategories](#categoryaddsubcategories)
+
+### Category.addSubcategories
+
+*Defined in [Piwik/Plugin/Categories](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Categories.php) in line [61](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Categories.php#L61)*
+
+Triggered to add custom subcategories. **Example**
+
+    public function addSubcategories(&$subcategories)
+    {
+        $subcategory = new Subcategory();
+        $subcategory->setId('General_Overview');
+        $subcategory->setCategoryId('General_Visits');
+        $subcategory->setOrder(5);
+        $subcategories[] = $subcategory;
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$subcategories)</code></pre>
+
+- array `&$subcategories` An array containing a list of subcategories.
+
+Usages:
+
+[Dashboard::addSubcategories](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L74), [Goals::addSubcategories](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L85)
 
 ## Config
 
@@ -417,7 +410,7 @@ Callback Signature:
 
 Usages:
 
-[Installation::dispatch](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Installation.php#L95), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L99)
+[Installation::dispatch](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Installation.php#L95), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L93)
 
 ## Console
 
@@ -452,7 +445,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [510](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L510)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [515](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L515)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -468,7 +461,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [527](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L527)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [532](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L532)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -490,7 +483,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [443](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L443)*
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [450](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L450)*
 
 Triggered after Piwik has been updated.
 
@@ -606,7 +599,7 @@ Callback Signature:
 
 ### Dashboard.changeDefaultDashboardLayout
 
-*Defined in [Piwik/Plugins/Dashboard/Dashboard](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php) in line [111](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L111)*
+*Defined in [Piwik/Plugins/Dashboard/Dashboard](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php) in line [183](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L183)*
 
 Allows other plugins to modify the default dashboard layout.
 
@@ -648,6 +641,53 @@ Callback Signature:
 
 - array
 
+## Dimension
+
+- [Dimension.addDimensions](#dimensionadddimensions)
+- [Dimension.filterDimensions](#dimensionfilterdimensions)
+
+### Dimension.addDimensions
+
+*Defined in [Piwik/Columns/Dimension](https://github.com/piwik/piwik/blob/3.x-dev/core/Columns/Dimension.php) in line [201](https://github.com/piwik/piwik/blob/3.x-dev/core/Columns/Dimension.php#L201)*
+
+Triggered to add new dimensions that cannot be picked up automatically by the platform. This is useful if the plugin allows a user to create reports / dimensions dynamically. For example
+CustomDimensions or CustomVariables. There are a variable number of dimensions in this case and it
+wouldn't be really possible to create a report file for one of these dimensions as it is not known
+how many Custom Dimensions will exist.
+
+**Example**
+
+    public function addDimension(&$dimensions)
+    {
+        $dimensions[] = new MyCustomDimension();
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- [Dimension](/api-reference/Piwik/Columns/Dimension) `$reports` An array of dimensions
+
+
+### Dimension.filterDimensions
+
+*Defined in [Piwik/Columns/Dimension](https://github.com/piwik/piwik/blob/3.x-dev/core/Columns/Dimension.php) in line [225](https://github.com/piwik/piwik/blob/3.x-dev/core/Columns/Dimension.php#L225)*
+
+Triggered to filter / restrict dimensions. **Example**
+
+    public function filterDimensions(&$dimensions)
+    {
+        foreach ($dimensions as $index => $dimension) {
+             if ($dimension->getName() === 'Page URL') {}
+                 unset($dimensions[$index]); // remove this dimension
+             }
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- [Dimension](/api-reference/Piwik/Columns/Dimension) `$dimensions` An array of dimensions
+
 ## Environment
 
 - [Environment.bootstrapped](#environmentbootstrapped)
@@ -682,7 +722,7 @@ Callback Signature:
 
 ### Goals.getReportsWithGoalMetrics
 
-*Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php) in line [218](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L218)*
+*Defined in [Piwik/Plugins/Goals/Goals](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php) in line [242](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L242)*
 
 Triggered when gathering all reports that contain Goal metrics. The list of reports
 will be displayed on the left column of the bottom of every _Goals_ page.
@@ -706,10 +746,6 @@ Callback Signature:
 <pre><code>function(&amp;$reportsWithGoals)</code></pre>
 
 - array `&$reportsWithGoals` The list of arrays describing reports that have Goal metrics. Each element of this array must be an array with the following properties: - **category**: The report category. This should be a translated string. - **name**: The report's translated name. - **module**: The plugin the report is in, eg, `'UserCountry'`. - **action**: The API method of the report, eg, `'getCountry'`.
-
-Usages:
-
-[Goals::getActualReportsWithGoalMetrics](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L228)
 
 ## Insights
 
@@ -746,7 +782,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php) in line [406](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php#L406)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php) in line [407](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php#L407)*
 
 Triggered on initialization of the form to customize default Piwik settings (at the end of the installation process).
 
@@ -757,12 +793,12 @@ Callback Signature:
 
 Usages:
 
-[PrivacyManager::installationFormInit](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L163)
+[PrivacyManager::installationFormInit](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L174)
 
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php) in line [417](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php#L417)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php) in line [418](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php#L418)*
 
 Triggered on submission of the form to customize default Piwik settings (at the end of the installation process).
 
@@ -773,7 +809,7 @@ Callback Signature:
 
 Usages:
 
-[PrivacyManager::installationFormSubmit](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L186)
+[PrivacyManager::installationFormSubmit](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L197)
 
 ## LanguageManager
 
@@ -833,7 +869,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L43), [CoreHome::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L35), [CustomVariables::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L42), [DevicePlugins::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/DevicePlugins/DevicePlugins.php#L32), [DevicesDetection::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/DevicesDetection/DevicesDetection.php#L30), [Events::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L34), [Provider::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Provider/Provider.php#L45), [Referrers::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Referrers/Referrers.php#L54), [Resolution::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Resolution/Resolution.php#L30), [UserCountry::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L44), [UserLanguage::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserLanguage/UserLanguage.php#L30), [VisitTime::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/VisitTime/VisitTime.php#L24), [VisitorInterest::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/VisitorInterest/VisitorInterest.php#L41)
+[Actions::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L43), [CoreHome::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L42), [CustomVariables::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L40), [DevicePlugins::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/DevicePlugins/DevicePlugins.php#L32), [DevicesDetection::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/DevicesDetection/DevicesDetection.php#L30), [Events::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L35), [Provider::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Provider/Provider.php#L45), [Referrers::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Referrers/Referrers.php#L54), [Resolution::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Resolution/Resolution.php#L30), [UserCountry::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L44), [UserLanguage::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserLanguage/UserLanguage.php#L30), [VisitTime::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/VisitTime/VisitTime.php#L24), [VisitorInterest::extendVisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/VisitorInterest/VisitorInterest.php#L41)
 
 
 ### Live.getExtraVisitorDetails
@@ -873,113 +909,25 @@ Callback Signature:
 
 - array `$visitorRawData` Raw data using in Visitor object constructor.
 
-## Login
+## MeasurableSettings
 
-- [Login.authenticate](#loginauthenticate)
-- [Login.authenticate.successful](#loginauthenticatesuccessful)
-- [Login.initSession.end](#logininitsessionend)
+- [MeasurableSettings.updated](#measurablesettingsupdated)
 
-### Login.authenticate
+### MeasurableSettings.updated
 
-*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php) in line [154](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php#L154)*
+*Defined in [Piwik/Settings/Measurable/MeasurableSettings](https://github.com/piwik/piwik/blob/3.x-dev/core/Settings/Measurable/MeasurableSettings.php) in line [139](https://github.com/piwik/piwik/blob/3.x-dev/core/Settings/Measurable/MeasurableSettings.php#L139)*
 
+Triggered after a plugin settings have been updated. **Example**
 
-
-Callback Signature:
-<pre><code>function($auth-&gt;getLogin(), $tokenAuth)</code></pre>
-
-
-### Login.authenticate.successful
-
-*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php) in line [207](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php#L207)*
-
-
+    Piwik::addAction('MeasurableSettings.updated', function (MeasurableSettings $settings) {
+        $value = $settings->someSetting->getValue();
+        // Do something with the new setting value
+    });
 
 Callback Signature:
-<pre><code>function($authResult-&gt;getIdentity(), $authResult-&gt;getTokenAuth())</code></pre>
+<pre><code>function($this, $this-&gt;idSite)</code></pre>
 
-
-### Login.initSession.end
-
-*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php) in line [125](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php#L125)*
-
-
-
-## Measurable
-
-- [Measurable.beforeSaveSettings](#measurablebeforesavesettings)
-- [Measurable.initMeasurableSettings](#measurableinitmeasurablesettings)
-
-### Measurable.beforeSaveSettings
-
-*Defined in [Piwik/Measurable/MeasurableSettings](https://github.com/piwik/piwik/blob/3.x-dev/core/Measurable/MeasurableSettings.php) in line [97](https://github.com/piwik/piwik/blob/3.x-dev/core/Measurable/MeasurableSettings.php#L97)*
-
-Triggered just before Measurable settings are about to be saved. You can use this event for example
-to validate not only one setting but multiple ssetting. For example whether username
-and password matches.
-
-Callback Signature:
-<pre><code>function($this, $type, $this-&gt;idSite)</code></pre>
-
-- MeasurableSettings `$this` 
-
-- \Piwik\Measurable\Type `$type` 
-
-- int `$idSite` 
-
-
-### Measurable.initMeasurableSettings
-
-*Defined in [Piwik/Measurable/MeasurableSettings](https://github.com/piwik/piwik/blob/3.x-dev/core/Measurable/MeasurableSettings.php) in line [66](https://github.com/piwik/piwik/blob/3.x-dev/core/Measurable/MeasurableSettings.php#L66)*
-
-This event is posted when generating settings for a Measurable (website). You can add any Measurable settings
-that you wish to be shown in the Measurable manager (websites manager). If you need to add settings only for
-eg MobileApp measurables you can use eg `$type->getId() === Piwik\Plugins\MobileAppMeasurable\Type::ID` and
-add only settings if the condition is true.
-
-Callback Signature:
-<pre><code>function($this, $type, $this-&gt;idSite)</code></pre>
-
-- MeasurableSettings `$this` 
-
-- \Piwik\Measurable\Type `$type` 
-
-- int `$idSite` 
-
-## Menu
-
-- [Menu.Admin.addItems](#menuadminadditems)
-- [Menu.Reporting.addItems](#menureportingadditems)
-- [Menu.Top.addItems](#menutopadditems)
-
-### Menu.Admin.addItems
-
-*Defined in [Piwik/Menu/MenuAdmin](https://github.com/piwik/piwik/blob/3.x-dev/core/Menu/MenuAdmin.php) in line [118](https://github.com/piwik/piwik/blob/3.x-dev/core/Menu/MenuAdmin.php#L118)*
-
-
-
-Callback Signature:
-<pre><code>function()</code></pre>
-
-
-### Menu.Reporting.addItems
-
-*Defined in [Piwik/Menu/MenuReporting](https://github.com/piwik/piwik/blob/3.x-dev/core/Menu/MenuReporting.php) in line [128](https://github.com/piwik/piwik/blob/3.x-dev/core/Menu/MenuReporting.php#L128)*
-
-
-
-Callback Signature:
-<pre><code>function()</code></pre>
-
-
-### Menu.Top.addItems
-
-*Defined in [Piwik/Menu/MenuTop](https://github.com/piwik/piwik/blob/3.x-dev/core/Menu/MenuTop.php) in line [71](https://github.com/piwik/piwik/blob/3.x-dev/core/Menu/MenuTop.php#L71)*
-
-
-
-Callback Signature:
-<pre><code>function()</code></pre>
+- Settings `$settings` The plugin settings object.
 
 ## Metrics
 
@@ -999,7 +947,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L72), [Contents::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Contents/Contents.php#L45), [Events::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L44)
+[Actions::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L72), [Contents::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Contents/Contents.php#L39), [Events::addMetricDocumentationTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L45)
 
 
 ### Metrics.getDefaultMetricTranslations
@@ -1015,7 +963,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L49), [Contents::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Contents/Contents.php#L28), [DevicePlugins::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/DevicePlugins/DevicePlugins.php#L40), [Events::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L39), [Goals::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L104), [MultiSites::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L28), [VisitFrequency::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/VisitFrequency/VisitFrequency.php#L26)
+[Actions::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L49), [Contents::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Contents/Contents.php#L27), [DevicePlugins::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/DevicePlugins/DevicePlugins.php#L40), [Events::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L40), [Goals::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L112), [MultiSites::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L28), [VisitFrequency::addMetricTranslations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/VisitFrequency/VisitFrequency.php#L26)
 
 ## MobileMessaging
 
@@ -1043,7 +991,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removePhoneNumberFromAllAlerts](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L114), [ScheduledReports::deletePhoneNumber](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L445)
+[CustomAlerts::removePhoneNumberFromAllAlerts](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L114), [ScheduledReports::deletePhoneNumber](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L446)
 
 ## Piwik
 
@@ -1071,24 +1019,24 @@ Callback Signature:
 
 ### Platform.initialized
 
-*Defined in [Piwik/Plugins/Widgetize/tests/Integration/WidgetTest](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/tests/System/WidgetTest.php) in line [51](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/tests/System/WidgetTest.php#L51)*
+*Defined in [Piwik/Plugins/Widgetize/tests/Integration/WidgetTest](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/tests/System/WidgetTest.php) in line [64](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/tests/System/WidgetTest.php#L64)*
 
 
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreUpdater/CoreUpdater.php#L90), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L99), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L41)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreUpdater/CoreUpdater.php#L93), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L93), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L41)
 
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [361](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L361)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [366](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L366)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
 
 Usages:
 
-[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreUpdater/CoreUpdater.php#L90), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L99), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L41)
+[CoreUpdater::updateCheck](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreUpdater/CoreUpdater.php#L93), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L93), [UsersManager::onPlatformInitialized](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L41)
 
 ## PluginManager
 
@@ -1097,7 +1045,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [490](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L490)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [494](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L494)*
 
 Event triggered after a plugin has been activated.
 
@@ -1113,7 +1061,7 @@ Usages:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [336](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L336)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [339](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L339)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -1177,6 +1125,53 @@ Callback Signature:
 Callback Signature:
 <pre><code>function(&amp;$this-&gt;definitionList)</code></pre>
 
+## Report
+
+- [Report.addReports](#reportaddreports)
+- [Report.filterReports](#reportfilterreports)
+
+### Report.addReports
+
+*Defined in [Piwik/Plugin/ReportsProvider](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php) in line [106](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php#L106)*
+
+Triggered to add new reports that cannot be picked up automatically by the platform. This is useful if the plugin allows a user to create reports / dimensions dynamically. For example
+CustomDimensions or CustomVariables. There are a variable number of dimensions in this case and it
+wouldn't be really possible to create a report file for one of these dimensions as it is not known
+how many Custom Dimensions will exist.
+
+**Example**
+
+    public function addReport(&$reports)
+    {
+        $reports[] = new MyCustomReport();
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- [Report](/api-reference/Piwik/Plugin/Report) `$reports` An array of reports
+
+
+### Report.filterReports
+
+*Defined in [Piwik/Plugin/ReportsProvider](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php) in line [128](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php#L128)*
+
+Triggered to filter / restrict reports. **Example**
+
+    public function filterReports(&$reports)
+    {
+        foreach ($reports as $index => $report) {
+             if ($report->getCategory() === 'Actions') {}
+                 unset($reports[$index]); // remove all reports having this action
+             }
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- [Report](/api-reference/Piwik/Plugin/Report) `$reports` An array of reports
+
 ## Request
 
 - [Request.dispatch](#requestdispatch)
@@ -1191,7 +1186,7 @@ Callback Signature:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [492](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L492)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [497](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L497)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -1207,12 +1202,12 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::checkControllerPermission](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L45), [Installation::dispatchIfNotInstalledYet](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Installation.php#L61), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L99), [SitesManager::redirectDashboardToWelcomePage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L44)
+[CustomAlerts::checkControllerPermission](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L45), [Installation::dispatchIfNotInstalledYet](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Installation.php#L61), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L93), [SitesManager::redirectDashboardToWelcomePage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L45)
 
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [537](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L537)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [542](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L542)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -1234,7 +1229,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreUpdater/CoreUpdater.php#L53), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L99)
+[CoreUpdater::dispatch](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreUpdater/CoreUpdater.php#L53), [LanguagesManager::initLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L93)
 
 
 ### Request.getRenamedModuleAndAction
@@ -1317,7 +1312,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [330](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L330)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [335](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L335)*
 
 Triggered before the user is authenticated, when the global authentication object should be created. Plugins that provide their own authentication implementation should use this event
 to set the global authentication object (which must derive from [Auth](/api-reference/Piwik/Auth)).
@@ -1347,7 +1342,7 @@ Usages:
 
 ### ScheduledReports.allowMultipleReports
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [828](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L828)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [829](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L829)*
 
 Triggered when we're determining if a scheduled report transport medium can handle sending multiple Piwik reports in one scheduled report or not. Plugins that provide their own transport mediums should use this
 event to specify whether their backend can send more than one Piwik report
@@ -1362,7 +1357,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::allowMultipleReports](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L166), [ScheduledReports::allowMultipleReports](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L282)
+[MobileMessaging::allowMultipleReports](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L176), [ScheduledReports::allowMultipleReports](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L283)
 
 
 ### ScheduledReports.getRendererInstance
@@ -1385,12 +1380,12 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getRendererInstance](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L153), [ScheduledReports::getRendererInstance](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L267)
+[MobileMessaging::getRendererInstance](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L163), [ScheduledReports::getRendererInstance](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L268)
 
 
 ### ScheduledReports.getReportFormats
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [875](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L875)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [876](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L876)*
 
 Triggered when gathering all available scheduled report formats. Plugins that provide their own scheduled report format should use
 this event to make their format available.
@@ -1404,12 +1399,12 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportFormats](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L139), [ScheduledReports::getReportFormats](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L212)
+[MobileMessaging::getReportFormats](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L149), [ScheduledReports::getReportFormats](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L213)
 
 
 ### ScheduledReports.getReportMetadata
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [800](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L800)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [801](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L801)*
 
 TODO: change this event so it returns a list of API methods instead of report metadata arrays. Triggered when gathering the list of Piwik reports that can be used with a certain
 transport medium.
@@ -1428,12 +1423,12 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportMetadata](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L116), [ScheduledReports::getReportMetadata](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L183)
+[MobileMessaging::getReportMetadata](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L126), [ScheduledReports::getReportMetadata](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L184)
 
 
 ### ScheduledReports.getReportParameters
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [654](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L654)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [655](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L655)*
 
 Triggered when gathering the available parameters for a scheduled report type. Plugins that provide their own scheduled report transport mediums should use this
 event to list the available report parameters for their transport medium.
@@ -1447,12 +1442,12 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L146), [ScheduledReports::getReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L219)
+[MobileMessaging::getReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L156), [ScheduledReports::getReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L220)
 
 
 ### ScheduledReports.getReportRecipients
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [906](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L906)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [907](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L907)*
 
 Triggered when getting the list of recipients of a scheduled report. Plugins that provide their own scheduled report transport medium should use this event
 to extract the list of recipients their backend's specific scheduled report
@@ -1469,12 +1464,12 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportRecipients](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L173), [ScheduledReports::getReportRecipients](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L487)
+[MobileMessaging::getReportRecipients](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L183), [ScheduledReports::getReportRecipients](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L488)
 
 
 ### ScheduledReports.getReportTypes
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [851](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L851)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [852](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L852)*
 
 Triggered when gathering all available transport mediums. Plugins that provide their own transport mediums should use this
 event to make their medium available.
@@ -1486,7 +1481,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportTypes](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L134), [ScheduledReports::getReportTypes](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L207)
+[MobileMessaging::getReportTypes](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L144), [ScheduledReports::getReportTypes](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L208)
 
 
 ### ScheduledReports.processReports
@@ -1512,12 +1507,12 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::processReports](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L226)
+[ScheduledReports::processReports](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L227)
 
 
 ### ScheduledReports.sendReport
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [590](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L590)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [591](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L591)*
 
 Triggered when sending scheduled reports. Plugins that provide new scheduled report transport mediums should use this event to
 send the scheduled report.
@@ -1547,12 +1542,12 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::sendReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L180), [ScheduledReports::sendReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L289)
+[MobileMessaging::sendReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L190), [ScheduledReports::sendReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L290)
 
 
 ### ScheduledReports.validateReportParameters
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [681](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L681)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [682](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L682)*
 
 Triggered when validating the parameters for a scheduled report. Plugins that provide their own scheduled reports backend should use this
 event to validate the custom parameters defined with ScheduledReports::getReportParameters().
@@ -1566,7 +1561,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::validateReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L97), [ScheduledReports::validateReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L139)
+[MobileMessaging::validateReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L107), [ScheduledReports::validateReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L140)
 
 ## SegmentEditor
 
@@ -1587,7 +1582,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentDeactivation](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L556)
+[ScheduledReports::segmentDeactivation](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L557)
 
 
 ### SegmentEditor.update
@@ -1604,7 +1599,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentUpdated](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L523)
+[ScheduledReports::segmentUpdated](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L524)
 
 ## Segments
 
@@ -1685,26 +1680,6 @@ Callback Signature:
 
 - array `&$providers` Contains an array of Piwik\Plugins\SEO\Metric\MetricsProvider instances.
 
-## Settings
-
-- [Settings.$this-&gt;pluginName.settingsUpdated](#settingsthispluginnamesettingsupdated)
-
-### Settings.$this-&gt;pluginName.settingsUpdated
-
-*Defined in [Piwik/Plugin/Settings](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Settings.php) in line [223](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Settings.php#L223)*
-
-Triggered after a plugin settings have been updated. **Example**
-
-    Piwik::addAction('Settings.MyPlugin.settingsUpdated', function (Settings $settings) {
-        $value = $settings->someSetting->getValue();
-        // Do something with the new setting value
-    });
-
-Callback Signature:
-<pre><code>function($this)</code></pre>
-
-- [Settings](/api-reference/Piwik/Plugin/Settings) `$settings` The plugin settings object.
-
 ## SitesManager
 
 - [SitesManager.addSite.end](#sitesmanageraddsiteend)
@@ -1713,7 +1688,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [610](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L610)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [654](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L654)*
 
 Triggered after a site has been added.
 
@@ -1725,7 +1700,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [687](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L687)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [754](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L754)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -1738,12 +1713,12 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::deleteAlertsForSite](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L95), [Goals::deleteSiteGoals](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L128), [ScheduledReports::deleteSiteReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L119), [SitesManager::onSiteDeleted](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L68), [UsersManager::deleteSite](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L82)
+[CustomAlerts::deleteAlertsForSite](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L95), [Goals::deleteSiteGoals](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L136), [ScheduledReports::deleteSiteReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L119), [SitesManager::onSiteDeleted](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L69), [UsersManager::deleteSite](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L82)
 
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [142](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L142)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [162](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L162)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
@@ -1756,22 +1731,39 @@ Callback Signature:
 
 - array `&$urlParams` The query parameters used in the <img> element's src URL. See Piwik's image tracking docs for more info.
 
+## SystemSettings
+
+- [SystemSettings.updated](#systemsettingsupdated)
+
+### SystemSettings.updated
+
+*Defined in [Piwik/Settings/Plugin/SystemSettings](https://github.com/piwik/piwik/blob/3.x-dev/core/Settings/Plugin/SystemSettings.php) in line [108](https://github.com/piwik/piwik/blob/3.x-dev/core/Settings/Plugin/SystemSettings.php#L108)*
+
+Triggered after system settings have been updated. **Example**
+
+    Piwik::addAction('SystemSettings.updated', function (SystemSettings $settings) {
+        if ($settings->getPluginName() === 'PluginName') {
+            $value = $settings->someSetting->getValue();
+            // Do something with the new setting value
+        }
+    });
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
+- Settings `$settings` The plugin settings object.
+
 ## Tracker
 
 - [Tracker.Cache.getSiteAttributes](#trackercachegetsiteattributes)
 - [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
 - [Tracker.end](#trackerend)
 - [Tracker.end](#trackerend)
-- [Tracker.existingVisitInformation](#trackerexistingvisitinformation)
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
 - [Tracker.isExcludedVisit](#trackerisexcludedvisit)
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
 - [Tracker.newConversionInformation](#trackernewconversioninformation)
-- [Tracker.newVisitorInformation](#trackernewvisitorinformation)
 - [Tracker.PageUrl.getQueryParametersToExclude](#trackerpageurlgetqueryparameterstoexclude)
-- [Tracker.recordAction](#trackerrecordaction)
-- [Tracker.recordEcommerceGoal](#trackerrecordecommercegoal)
-- [Tracker.recordStandardGoals](#trackerrecordstandardgoals)
 - [Tracker.Request.getIdSite](#trackerrequestgetidsite)
 - [Tracker.setTrackerCacheGeneral](#trackersettrackercachegeneral)
 
@@ -1799,7 +1791,7 @@ Callback Signature:
 
 Usages:
 
-[Goals::fetchGoalsFromDb](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L257), [SitesManager::recordWebsiteDataInCache](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L113), [UsersManager::recordAdminUsersInCache](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L56)
+[Goals::fetchGoalsFromDb](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L258), [SitesManager::recordWebsiteDataInCache](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L112), [UsersManager::recordAdminUsersInCache](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L56)
 
 
 ### Tracker.detectReferrerSearchEngine
@@ -1829,23 +1821,6 @@ Callback Signature:
 *Defined in [Piwik/Tracker](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker.php) in line [102](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker.php#L102)*
 
 
-
-
-### Tracker.existingVisitInformation
-
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/Visit.php) in line [228](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/Visit.php#L228)*
-
-Triggered before a [visit entity](/guides/persistence-and-the-mysql-backend#visits) is updated when tracking an action for an existing visit. This event can be used to modify the visit properties that will be updated before the changes
-are persisted.
-
-This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
-
-Callback Signature:
-<pre><code>function(&amp;$valuesToUpdate, $this-&gt;visitProperties-&gt;getProperties())</code></pre>
-
-- array `&$valuesToUpdate` Visit entity properties that will be updated.
-
-- array `$visit` The entire visit entity. Read [this](/guides/persistence-and-the-mysql-backend#visits) to see what it contains.
 
 
 ### Tracker.getDatabaseConfig
@@ -1888,7 +1863,7 @@ Callback Signature:
 
 ### Tracker.newConversionInformation
 
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php) in line [736](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php#L736)*
+*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php) in line [707](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php#L707)*
 
 Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
 
@@ -1904,23 +1879,6 @@ Callback Signature:
 - \Piwik\Tracker\Request `$request` An object describing the tracking request being processed.
 
 
-### Tracker.newVisitorInformation
-
-*Defined in [Piwik/Tracker/Visit](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/Visit.php) in line [297](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/Visit.php#L297)*
-
-Triggered before a new [visit entity](/guides/persistence-and-the-mysql-backend#visits) is persisted. This event can be used to modify the visit entity or add new information to it before it is persisted.
-The UserCountry plugin, for example, uses this event to add location information for each visit.
-
-This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
-
-Callback Signature:
-<pre><code>function(&amp;$properties, $this-&gt;request)</code></pre>
-
-- array `$visit` The visit entity. Read [this](/guides/persistence-and-the-mysql-backend#visits) to see what information it contains.
-
-- \Piwik\Tracker\Request `$request` An object describing the tracking request being processed.
-
-
 ### Tracker.PageUrl.getQueryParametersToExclude
 
 *Defined in [Piwik/Tracker/PageUrl](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/PageUrl.php) in line [95](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/PageUrl.php#L95)*
@@ -1931,52 +1889,6 @@ Callback Signature:
 <pre><code>function(&amp;$parametersToExclude)</code></pre>
 
 - array `&$parametersToExclude` An array of parameters to exclude from the tracking url.
-
-
-### Tracker.recordAction
-
-*Defined in [Piwik/Tracker/Action](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/Action.php) in line [414](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/Action.php#L414)*
-
-Triggered after successfully persisting a [visit action entity](/guides/persistence-and-the-mysql-backend#visit-actions). This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
-
-Callback Signature:
-<pre><code>function($trackerAction = $this, $visitAction)</code></pre>
-
-- Action `$tracker` Action The Action tracker instance.
-
-- array `$visitAction` The visit action entity that was persisted. Read [this](/guides/persistence-and-the-mysql-backend#visit-actions) to see what it contains.
-
-
-### Tracker.recordEcommerceGoal
-
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php) in line [360](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php#L360)*
-
-Triggered after successfully persisting an ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
-the tracker down._
-
-This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
-
-Callback Signature:
-<pre><code>function($conversion, $visitProperties-&gt;getProperties())</code></pre>
-
-- array `$conversion` The conversion entity that was just persisted. See what information it contains [here](/guides/persistence-and-the-mysql-backend#conversions).
-
-- array `$visitInformation` The visit entity that we are tracking a conversion for. See what information it contains [here](/guides/persistence-and-the-mysql-backend#visits).
-
-
-### Tracker.recordStandardGoals
-
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php) in line [709](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php#L709)*
-
-Triggered after successfully recording a non-ecommerce conversion. _Note: Subscribers should be wary of doing any expensive computation here as it may slow
-the tracker down._
-
-This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
-
-Callback Signature:
-<pre><code>function($conversion)</code></pre>
-
-- array `$conversion` The conversion entity that was just persisted. See what information it contains [here](/guides/persistence-and-the-mysql-backend#conversions).
 
 
 ### Tracker.Request.getIdSite
@@ -2020,7 +1932,7 @@ Callback Signature:
 
 Usages:
 
-[PrivacyManager::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L147), [Referrers::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Referrers/Referrers.php#L39), [UserCountry::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L66)
+[PrivacyManager::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L153), [Referrers::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Referrers/Referrers.php#L39), [UserCountry::setTrackerCacheGeneral](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L66)
 
 ## Translate
 
@@ -2049,7 +1961,7 @@ Callback Signature:
 
 Usages:
 
-[Annotations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Annotations/Annotations.php#L30), [CoreAdminHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L82), [CoreHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L179), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L55), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L56), [CustomAlerts::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L163), [CustomVariables::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L150), [Dashboard::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L244), [Feedback::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Feedback/Feedback.php#L42), [Goals::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L263), [Live::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Live.php#L47), [MultiSites::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L44), [Overlay::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Overlay/Overlay.php#L35), [ScheduledReports::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L110), [SegmentEditor::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L88), [SitesManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L270), [Transitions::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Transitions/Transitions.php#L38), [UserCountry::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L116), [UserCountryMap::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L70), [UserId::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserId/UserId.php#L49), [UsersManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L173), [Widgetize::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L48)
+[Annotations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Annotations/Annotations.php#L30), [CoreAdminHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L79), [CoreHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L250), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L53), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L55), [CustomAlerts::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L163), [CustomVariables::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L108), [Dashboard::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L300), [Feedback::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Feedback/Feedback.php#L42), [Goals::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L264), [Live::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Live.php#L47), [MobileMessaging::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L100), [MultiSites::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L44), [Overlay::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Overlay/Overlay.php#L35), [PrivacyManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L148), [ScheduledReports::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L110), [SegmentEditor::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L88), [SitesManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L269), [Transitions::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Transitions/Transitions.php#L38), [UserCountry::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L120), [UserCountryMap::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L56), [UserId::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserId/UserId.php#L49), [UsersManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L176), [Widgetize::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L47)
 
 ## User
 
@@ -2070,6 +1982,28 @@ Callback Signature:
 Usages:
 
 [Login::noAccess](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/Login.php#L55)
+
+## UserSettings
+
+- [UserSettings.updated](#usersettingsupdated)
+
+### UserSettings.updated
+
+*Defined in [Piwik/Settings/Plugin/UserSettings](https://github.com/piwik/piwik/blob/3.x-dev/core/Settings/Plugin/UserSettings.php) in line [91](https://github.com/piwik/piwik/blob/3.x-dev/core/Settings/Plugin/UserSettings.php#L91)*
+
+Triggered after user settings have been updated. **Example**
+
+    Piwik::addAction('UserSettings.updated', function (UserSettings $settings) {
+        if ($settings->getPluginName() === 'PluginName') {
+            $value = $settings->someSetting->getValue();
+            // Do something with the new setting value
+        }
+    });
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
+- Settings `$settings` The plugin settings object.
 
 ## UsersManager
 
@@ -2095,7 +2029,7 @@ Callback Signature:
 
 ### UsersManager.checkPassword
 
-*Defined in [Piwik/Plugins/UsersManager/UsersManager](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php) in line [144](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L144)*
+*Defined in [Piwik/Plugins/UsersManager/UsersManager](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php) in line [147](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L147)*
 
 Triggered before core password validator check password. This event exists for enable option to create custom password validation rules.
 It can be used to validate password (length, used chars etc) and to notify about checking password.
@@ -2128,7 +2062,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L36), [CoreVisualizations::deleteUser](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L36), [CustomAlerts::deleteAlertsForLogin](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L83), [Dashboard::deleteDashboardLayout](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L229), [LanguagesManager::deleteUserLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L119), [ScheduledReports::deleteUserReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L583)
+[CoreAdminHome::cleanupUser](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L37), [CoreVisualizations::deleteUser](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L83), [Dashboard::deleteDashboardLayout](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L285), [LanguagesManager::deleteUserLanguage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L113), [ScheduledReports::deleteUserReport](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L584)
 
 
 ### UsersManager.getDefaultDates
@@ -2154,7 +2088,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::deleteUserReportForSites](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L588)
+[ScheduledReports::deleteUserReportForSites](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L589)
 
 
 ### UsersManager.removeSiteAccess
@@ -2168,7 +2102,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::deleteUserReportForSites](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L588)
+[ScheduledReports::deleteUserReportForSites](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L589)
 
 
 ### UsersManager.updateUser.end
@@ -2184,54 +2118,14 @@ Callback Signature:
 
 - boolean `$passwordHasBeenUpdated` Flag containing information about password change.
 
-## View
-
-- [View.ReportsByDimension.render](#viewreportsbydimensionrender)
-
-### View.ReportsByDimension.render
-
-*Defined in [Piwik/View/ReportsByDimension](https://github.com/piwik/piwik/blob/3.x-dev/core/View/ReportsByDimension.php) in line [99](https://github.com/piwik/piwik/blob/3.x-dev/core/View/ReportsByDimension.php#L99)*
-
-Triggered before rendering ReportsByDimension views. Plugins can use this event to configure ReportsByDimension instances by
-adding or removing reports to display.
-
-Callback Signature:
-<pre><code>function($this)</code></pre>
-
-- ReportsByDimension `$this` The view instance.
-
 ## ViewDataTable
 
-- [ViewDataTable.addViewDataTable](#viewdatatableaddviewdatatable)
 - [ViewDataTable.configure](#viewdatatableconfigure)
-
-### ViewDataTable.addViewDataTable
-
-*Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/ViewDataTable/Manager.php) in line [98](https://github.com/piwik/piwik/blob/3.x-dev/core/ViewDataTable/Manager.php#L98)*
-
-Triggered when gathering all available DataTable visualizations. Plugins that want to expose new DataTable visualizations should subscribe to
-this event and add visualization class names to the incoming array.
-
-**Example**
-
-    public function addViewDataTable(&$visualizations)
-    {
-        $visualizations[] = 'Piwik\\Plugins\\MyPlugin\\MyVisualization';
-    }
-
-Callback Signature:
-<pre><code>function(&amp;$visualizations)</code></pre>
-
-- array `&$visualizations` The array of all available visualizations.
-
-Usages:
-
-[TreemapVisualization::getAvailableVisualizations](https://github.com/piwik/piwik/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L36)
-
+- [ViewDataTable.filterViewDataTable](#viewdatatablefilterviewdatatable)
 
 ### ViewDataTable.configure
 
-*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [256](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ViewDataTable.php#L256)*
+*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [258](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ViewDataTable.php#L258)*
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed.
@@ -2259,15 +2153,79 @@ Callback Signature:
 
 Usages:
 
-[Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L143), [Events::configureViewDataTable](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L134)
-
-## WidgetsList
-
-- [WidgetsList.addWidgets](#widgetslistaddwidgets)
-
-### WidgetsList.addWidgets
-
-*Defined in [Piwik/WidgetsList](https://github.com/piwik/piwik/blob/3.x-dev/core/WidgetsList.php) in line [107](https://github.com/piwik/piwik/blob/3.x-dev/core/WidgetsList.php#L107)*
+[Actions::configureViewDataTable](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/Actions.php#L138), [Events::configureViewDataTable](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Events/Events.php#L135)
 
 
+### ViewDataTable.filterViewDataTable
+
+*Defined in [Piwik/ViewDataTable/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/ViewDataTable/Manager.php) in line [117](https://github.com/piwik/piwik/blob/3.x-dev/core/ViewDataTable/Manager.php#L117)*
+
+Triggered to filter available DataTable visualizations. Plugins that want to disable certain visualizations should subscribe to
+this event and remove visualizations from the incoming array.
+
+**Example**
+
+    public function filterViewDataTable(&$visualizations)
+    {
+        unset($visualizations[HtmlTable::ID]);
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$result)</code></pre>
+
+- array `$visualizations` An array of all available visualizations indexed by visualization ID.
+
+Usages:
+
+[TreemapVisualization::removeTreemapVisualizationIfFlattenIsUsed](https://github.com/piwik/piwik/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L47)
+
+## Widget
+
+- [Widget.addWidgetConfigs](#widgetaddwidgetconfigs)
+- [Widget.filterWidgets](#widgetfilterwidgets)
+
+### Widget.addWidgetConfigs
+
+*Defined in [Piwik/Plugin/WidgetsProvider](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/WidgetsProvider.php) in line [63](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/WidgetsProvider.php#L63)*
+
+Triggered to add custom widget configs. To filder widgets have a look at the [Widget.filterWidgets](/api-reference/events#widgetfilterwidgets)
+event.
+
+**Example**
+
+    public function addWidgetConfigs(&$configs)
+    {
+        $config = new WidgetConfig();
+        $config->setModule('PluginName');
+        $config->setAction('renderDashboard');
+        $config->setCategoryId('Dashboard_Dashboard');
+        $config->setSubcategoryId('dashboardId');
+        $configs[] = $config;
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$configs)</code></pre>
+
+- array `&$configs` An array containing a list of widget config entries.
+
+Usages:
+
+[Dashboard::addWidgetConfigs](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L38)
+
+
+### Widget.filterWidgets
+
+*Defined in [Piwik/Widget/WidgetsList](https://github.com/piwik/piwik/blob/3.x-dev/core/Widget/WidgetsList.php) in line [215](https://github.com/piwik/piwik/blob/3.x-dev/core/Widget/WidgetsList.php#L215)*
+
+Triggered to filter widgets. **Example**
+
+    public function removeWidgetConfigs(Piwik\Widget\WidgetsList $list)
+    {
+        $list->remove($category='General_Visits'); // remove all widgets having this category
+    }
+
+Callback Signature:
+<pre><code>function($list)</code></pre>
+
+- [WidgetsList](/api-reference/Piwik/Widget/WidgetsList) `$list` An instance of the WidgetsList. You can change the list of widgets this way.
 
