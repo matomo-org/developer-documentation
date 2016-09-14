@@ -483,13 +483,13 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [450](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L450)*
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [479](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L479)*
 
 Triggered after Piwik has been updated.
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L26)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
 
 ## CronArchive
 
@@ -538,7 +538,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L26)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
 
 
 ### CronArchive.filterWebsiteIds
@@ -1042,10 +1042,12 @@ Usages:
 
 - [PluginManager.pluginActivated](#pluginmanagerpluginactivated)
 - [PluginManager.pluginDeactivated](#pluginmanagerplugindeactivated)
+- [PluginManager.pluginInstalled](#pluginmanagerplugininstalled)
+- [PluginManager.pluginUninstalled](#pluginmanagerpluginuninstalled)
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [494](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L494)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [502](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L502)*
 
 Event triggered after a plugin has been activated.
 
@@ -1056,7 +1058,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L26)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
 
 
 ### PluginManager.pluginDeactivated
@@ -1072,7 +1074,39 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L26)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
+
+
+### PluginManager.pluginInstalled
+
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [1099](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L1099)*
+
+Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
+
+Callback Signature:
+<pre><code>function($pluginName)</code></pre>
+
+- string `$pluginName` The plugin that has been installed.
+
+Usages:
+
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
+
+
+### PluginManager.pluginUninstalled
+
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [428](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L428)*
+
+Event triggered after a plugin has been uninstalled.
+
+Callback Signature:
+<pre><code>function($pluginName)</code></pre>
+
+- string `$pluginName` The plugin that has been uninstalled.
+
+Usages:
+
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
 
 ## Provider
 
@@ -1962,6 +1996,47 @@ Callback Signature:
 Usages:
 
 [Annotations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Annotations/Annotations.php#L30), [CoreAdminHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L79), [CoreHome::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L250), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L53), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L55), [CustomAlerts::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L163), [CustomVariables::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L108), [Dashboard::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L300), [Feedback::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Feedback/Feedback.php#L42), [Goals::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Goals/Goals.php#L264), [Live::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Live.php#L47), [MobileMessaging::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L100), [MultiSites::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L44), [Overlay::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Overlay/Overlay.php#L35), [PrivacyManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L148), [ScheduledReports::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L110), [SegmentEditor::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L88), [SitesManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L269), [Transitions::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Transitions/Transitions.php#L38), [UserCountry::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L120), [UserCountryMap::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L56), [UserId::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UserId/UserId.php#L49), [UsersManager::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L176), [Widgetize::getClientSideTranslationKeys](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L47)
+
+## Updater
+
+- [Updater.componentUpdated](#updatercomponentupdated)
+
+### Updater.componentUpdated
+
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [309](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L309)*
+
+Event triggered after a component has been updated. Can be used to handle stuff that should be done after a component was updated
+
+**Example**
+
+    Piwik::addAction('Updater.componentUpdated', function ($componentName, $updatedVersion, $warningMessages) {
+         $mail = new Mail();
+         $mail->setDefaultFromPiwik();
+         $mail->addTo('test@example.org');
+         $mail->setSubject('Component was updated);
+         $message = sprintf(
+             'Component %1$s has been updated to version %2$s',
+             $componentName, $updatedVersion
+         );
+         if (!empty($warningMessages)) {
+             $message .= "Some warnings occured:\n" . implode("\n", $warningMessages);
+         }
+         $mail->setBodyText($message);
+         $mail->send();
+    });
+
+Callback Signature:
+<pre><code>function($componentName, $updatedVersion, $warningMessages)</code></pre>
+
+- string `$componentName` 'core', or plugin name
+
+- string `$updatedVersion` version updated to
+
+- array `$warningMessages` warnings occurred during update
+
+Usages:
+
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
 
 ## User
 
