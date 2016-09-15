@@ -18,10 +18,14 @@ function generateDocs {
     git submodule foreach git clean -f
     git fetch
     git checkout $1
+    sleep 2
+    git rev-parse --abbrev-ref HEAD
     git pull origin $1
+    sleep 1
     git submodule update --recursive --force
     php composer.phar install || true
     cd ..
+    sleep 2
     php generator/generate.php --branch=$1 --targetname=$2
 
     GENERATION_SUCCESS=$?
