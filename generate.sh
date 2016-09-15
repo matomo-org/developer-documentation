@@ -18,14 +18,19 @@ function generateDocs {
     git submodule foreach git clean -f
     git fetch
     git checkout $1
-    sleep 2
+    branchname=$(git rev-parse --abbrev-ref HEAD)
+    if [ "$branchname" != "$1" ]; then
+       echo "Not on correct branch"
+      return
+    fi
+    sleep 4
     git rev-parse --abbrev-ref HEAD
     git pull origin $1
-    sleep 1
+    sleep 3
     git submodule update --recursive --force
     php composer.phar install || true
     cd ..
-    sleep 2
+    sleep 4
     php generator/generate.php --branch=$1 --targetname=$2
 
     GENERATION_SUCCESS=$?
