@@ -15,7 +15,7 @@ The class defines the following methods:
 
 - [`getIpFromHeader()`](#getipfromheader) &mdash; Returns the most accurate IP address available for the current user, in IPv4 format.
 - [`getNonProxyIpFromHeader()`](#getnonproxyipfromheader) &mdash; Returns a non-proxy IP address from header.
-- [`getLastIpFromList()`](#getlastipfromlist) &mdash; Returns the last IP address in a comma separated list, subject to an optional exclusion list.
+- [`getFirstIpFromList()`](#getfirstipfromlist) &mdash; Returns the last IP address in a comma separated list, subject to an optional exclusion list.
 
 <a name="getipfromheader" id="getipfromheader"></a>
 <a name="getIpFromHeader" id="getIpFromHeader"></a>
@@ -46,9 +46,9 @@ Returns a non-proxy IP address from header.
        List of proxy headers.
 - It returns a `string` value.
 
-<a name="getlastipfromlist" id="getlastipfromlist"></a>
-<a name="getLastIpFromList" id="getLastIpFromList"></a>
-### `getLastIpFromList()`
+<a name="getfirstipfromlist" id="getfirstipfromlist"></a>
+<a name="getFirstIpFromList" id="getFirstIpFromList"></a>
+### `getFirstIpFromList()`
 
 Returns the last IP address in a comma separated list, subject to an optional exclusion list.
 
