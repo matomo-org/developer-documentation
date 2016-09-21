@@ -166,6 +166,7 @@ Index
 - [`deleteLike()`](Piwik/Option.md#deletelike) &mdash; *Method in class* [`Option`](Piwik/Option.md)
 - [`doAsSuperUser()`](Piwik/Piwik.md#doassuperuser) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`deactivate()`](Piwik/Plugin.md#deactivate) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
+- [`disable()`](Piwik/Plugin/Archiver.md#disable) &mdash; *Method in class* [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`$date`](Piwik/Plugin/Controller.md#$date) &mdash; *Property in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`daily()`](Piwik/Plugin/Tasks.md#daily) &mdash; *Method in class* [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`DiagnosticService`](Piwik/Plugins/Diagnostics/DiagnosticService.md) &mdash; *Class in namespace* `Piwik\Plugins\Diagnostics`- [`Diagnostic`](Piwik/Plugins/Diagnostics/Diagnostic/Diagnostic.md) &mdash; *Class in namespace* `Piwik\Plugins\Diagnostics\Diagnostic`- [`DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) &mdash; *Class in namespace* `Piwik\Plugins\Diagnostics\Diagnostic`- [`DiagnosticResultItem`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md) &mdash; *Class in namespace* `Piwik\Plugins\Diagnostics\Diagnostic`- [`Daily`](Piwik/Scheduler/Schedule/Daily.md) &mdash; *Class in namespace* `Piwik\Scheduler\Schedule`- [`$description`](Piwik/Settings/Setting.md#$description) &mdash; *Property in class* [`Setting`](Piwik/Settings/Setting.md)

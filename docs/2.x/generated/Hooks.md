@@ -247,6 +247,7 @@ Callback Signature:
 ## Archiving
 
 - [Archiving.getIdSitesToArchiveWhenNoVisits](#archivinggetidsitestoarchivewhennovisits)
+- [Archiving.makeNewArchiverObject](#archivingmakenewarchiverobject)
 
 ### Archiving.getIdSitesToArchiveWhenNoVisits
 
@@ -256,6 +257,25 @@ Callback Signature:
 
 Callback Signature:
 <pre><code>function(&amp;$idSites)</code></pre>
+
+
+### Archiving.makeNewArchiverObject
+
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/piwik/piwik/blob/2.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [261](https://github.com/piwik/piwik/blob/2.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L261)*
+
+Triggered right after a new **plugin archiver instance** is created. Subscribers to this event can configure the plugin archiver, for example prevent the archiving of a plugin's data
+by calling `$archiver->disable()` method.
+
+Callback Signature:
+<pre><code>function($archiver, $pluginName, $this-&gt;params, $this-&gt;isTemporaryArchive)</code></pre>
+
+- [Archiver](/api-reference/Piwik/Plugin/Archiver) `$archiver` The newly created plugin archiver instance.
+
+- string `$pluginName` The name of plugin of which archiver instance was created.
+
+- array `$this-&gt;params` Array containing archive parameters (Site, Period, Date and Segment)
+
+- bool `$this-&gt;isTemporaryArchive` Flag indicating whether the archive being processed is temporary (ie. the period isn't finished yet) or final (the period is already finished and in the past).
 
 ## AssetManager
 
