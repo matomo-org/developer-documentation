@@ -94,6 +94,7 @@ The class defines the following methods:
 - [`findMultipleComponents()`](#findmultiplecomponents)
 - [`hasMissingDependencies()`](#hasmissingdependencies) &mdash; Detect whether there are any missing dependencies.
 - [`getMissingDependencies()`](#getmissingdependencies)
+- [`getMissingDependenciesAsString()`](#getmissingdependenciesasstring) &mdash; Returns a string (translated) describing the missing requirements for this plugin and the given Piwik version
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
 - [`getPluginNameFromNamespace()`](#getpluginnamefromnamespace) &mdash; Extracts the plugin name from a namespace name or a fully qualified class name.
 
@@ -308,6 +309,21 @@ Detect whether there are any missing dependencies.
     - `$piwikVersion`
       
 - It does not return anything.
+
+<a name="getmissingdependenciesasstring" id="getmissingdependenciesasstring"></a>
+<a name="getMissingDependenciesAsString" id="getMissingDependenciesAsString"></a>
+### `getMissingDependenciesAsString()`
+
+Returns a string (translated) describing the missing requirements for this plugin and the given Piwik version
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$piwikVersion` (`string`) &mdash;
+      
+
+- *Returns:*  `string` &mdash;
+    "AnonymousPiwikUsageMeasurement requires PIWIK >=3.0.0"
 
 <a name="getpluginnamefrombacktrace" id="getpluginnamefrombacktrace"></a>
 <a name="getPluginNameFromBacktrace" id="getPluginNameFromBacktrace"></a>

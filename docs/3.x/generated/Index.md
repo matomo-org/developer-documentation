@@ -441,6 +441,7 @@ Index
 - [`getVersion()`](Piwik/Plugin.md#getversion) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getPluginName()`](Piwik/Plugin.md#getpluginname) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getMissingDependencies()`](Piwik/Plugin.md#getmissingdependencies) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
+- [`getMissingDependenciesAsString()`](Piwik/Plugin.md#getmissingdependenciesasstring) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getPluginNameFromBacktrace()`](Piwik/Plugin.md#getpluginnamefrombacktrace) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getPluginNameFromNamespace()`](Piwik/Plugin.md#getpluginnamefromnamespace) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getInstance()`](Piwik/Plugin/API.md#getinstance) &mdash; *Method in class* [`API`](Piwik/Plugin/API.md)

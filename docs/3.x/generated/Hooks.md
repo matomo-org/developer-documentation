@@ -1047,7 +1047,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [502](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L502)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [501](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L501)*
 
 Event triggered after a plugin has been activated.
 
@@ -1063,7 +1063,7 @@ Usages:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [339](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L339)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [338](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L338)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -1095,7 +1095,7 @@ Usages:
 
 ### PluginManager.pluginUninstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [428](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L428)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [427](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L427)*
 
 Event triggered after a plugin has been uninstalled.
 
