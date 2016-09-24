@@ -23,7 +23,7 @@ Piwik is an application that does mainly two things:
 
 To achieve that result, several parts of Piwik come into play:
 
-- the [Javascript tracker](/api-reference/tracking-javascript) is served by Piwik via HTTP so that websites can include it in their pages
+- the [JavaScript tracker](/api-reference/tracking-javascript) is served by Piwik via HTTP so that websites can include it in their pages
 - the tracker collects data on the web page it's included in and sends it to Piwik by calling the [HTTP tracking API](/api-reference/tracking-api)
 - the **archiving** task runs and pre-processes data (either on the fly or via a cron task)
 - data is exposed in **reports**, which are accessible through the web interface or the [HTTP reporting API](/api-reference/reporting-api)

@@ -5,7 +5,7 @@ category: API Reference
 
 ## User guide
 
-Read also the **[Javascript Tracking Client](/guides/tracking-javascript-guide)** user guide to get familiar with the Javascript tracking client.
+Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)** user guide to get familiar with the JavaScript tracking client.
 
 ## List of all Methods Available in the Tracking API
 

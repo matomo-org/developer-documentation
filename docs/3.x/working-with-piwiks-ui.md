@@ -55,7 +55,7 @@ To make sure your changes will be actually visible and executed you need to enab
 ./console development:enable
 ```
   
-This way Javascript files won't be merged and you can debug the original JavaScript source code.
+This way JavaScript files won't be merged and you can debug the original JavaScript source code.
 
 ## Special HTML Elements
 
