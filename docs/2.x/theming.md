@@ -244,7 +244,7 @@ Here is a list of all named colors in Piwik:
 
 Piwik uses the [Twig templating engine](http://twig.sensiolabs.org/) to create HTML pages from PHP.
 
-When creating a theme, you do not need to create or change any template as the recommended way is to only use Less (CSS) and Javascript. However, in some rare cases where advanced customisation is necessary, you may need to customise Twig templates.
+When creating a theme, you do not need to create or change any template as the recommended way is to only use Less (CSS) and JavaScript. However, in some rare cases where advanced customisation is necessary, you may need to customise Twig templates.
 
 Please note that this is not recommended, so use at your own risk.
 

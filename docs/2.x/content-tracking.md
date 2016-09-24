@@ -29,7 +29,7 @@ Track content this way if you cannot easily change the markup of your site or if
 
 ## Declarative content tracking
 
-Instead of programmatically tracking the content with the Javascript API, you can use HTML attributes in your web page.
+Instead of programmatically tracking the content with the JavaScript API, you can use HTML attributes in your web page.
 
 ### Initializing the tracker
 

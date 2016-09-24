@@ -174,7 +174,7 @@ Remember that Piwik will include this file directly only when `disable_merged_as
     [Development]
     disable_merged_assets = 1
 
-If this option is disabled, Piwik will merge all Javascript files into one to optimize the page loading time, but that means that any change to `plugin.js` will be ignored.
+If this option is disabled, Piwik will merge all JavaScript files into one to optimize the page loading time, but that means that any change to `plugin.js` will be ignored.
 
 ### Reloading the report
 
@@ -203,6 +203,6 @@ $(document).ready(function () {
 ```
 
 
-As you can see, all our javascript code is inside the `$(document).ready` callback. This is because we want the Javascript code to be executed when the page is fully loaded.
+As you can see, all our javascript code is inside the `$(document).ready` callback. This is because we want the JavaScript code to be executed when the page is fully loaded.
 
 Now if you open the report in your browser, you'll see the report being reloaded every 10 seconds.

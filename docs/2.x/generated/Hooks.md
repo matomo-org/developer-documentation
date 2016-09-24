@@ -1080,7 +1080,7 @@ user.
 Callback Signature:
 <pre><code>function(&amp;$codeImpl, $parameters)</code></pre>
 
-- array `&$codeImpl` An array containing snippets of code that the event handler can modify. Will contain the following elements: - **idSite**: The ID of the site being tracked. - **piwikUrl**: The tracker URL to use. - **options**: A string of JavaScript code that customises the JavaScript tracker. - **optionsBeforeTrackerUrl**: A string of Javascript code that customises the JavaScript tracker inside of anonymous function before adding setTrackerUrl into paq. - **protocol**: Piwik url protocol. - **loadAsync**: boolean whether piwik.js should be loaded syncronous or asynchronous The **httpsPiwikUrl** element can be set if the HTTPS domain is different from the normal domain.
+- array `&$codeImpl` An array containing snippets of code that the event handler can modify. Will contain the following elements: - **idSite**: The ID of the site being tracked. - **piwikUrl**: The tracker URL to use. - **options**: A string of JavaScript code that customises the JavaScript tracker. - **optionsBeforeTrackerUrl**: A string of JavaScript code that customises the JavaScript tracker inside of anonymous function before adding setTrackerUrl into paq. - **protocol**: Piwik url protocol. - **loadAsync**: boolean whether piwik.js should be loaded syncronous or asynchronous The **httpsPiwikUrl** element can be set if the HTTPS domain is different from the normal domain.
 
 - array `$parameters` The parameters supplied to `TrackerCodeGenerator::generate()`.
 

@@ -13,5 +13,5 @@ This section contains guides that will help you track your application using Piw
 
 If you are looking for more low-level and detailed information, have a look at the following API references:
 
-- [The Javascript tracking client](/api-reference/tracking-javascript)
+- [The JavaScript tracking client](/api-reference/tracking-javascript)
 - [The Tracking HTTP API](/api-reference/tracking-api)

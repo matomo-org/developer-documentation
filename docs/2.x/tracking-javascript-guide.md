@@ -3,9 +3,9 @@ category: Integrate
 ---
 # JavaScript Tracking Client
 
-You can use the Javascript tracking client to track any application that supports Javascript: for example websites!
+You can use the JavaScript tracking client to track any application that supports JavaScript: for example websites!
 
-This guide will explain how you can use the Javascript tracking client to customize the way some of the web analytics data is recorded in Piwik.
+This guide will explain how you can use the JavaScript tracking client to customize the way some of the web analytics data is recorded in Piwik.
 
 ## Finding the Piwik Tracking Code
 
@@ -14,7 +14,7 @@ To use all the features described in this page, you need to use the latest versi
 - log in to Piwik with your admin or Super User account
 - click on your username in the top right menu, and click *Settings* to access the administration area
 - click on *Tracking Code* in the left menu
-- copy and paste the Javascript tracking code into your pages, just after the opening `<body>` tag (or within the `<head>` section)
+- copy and paste the JavaScript tracking code into your pages, just after the opening `<body>` tag (or within the `<head>` section)
 
 The tracking code looks as follows:
 
@@ -95,11 +95,11 @@ _paq.push(['trackPageView']);
 
 ### Manually trigger events
 
-By default, Piwik tracks page views when the Javascript tracking code loads and executes on each page view.
+By default, Piwik tracks page views when the JavaScript tracking code loads and executes on each page view.
 
 However, on modern web applications, user interactions do not necessarily involve loading a new page. For example, when users click on a JavaScript link, or when they click on a tab (which triggers a JS event), or when they interact with elements of the user interface, you can still track these interactions with Piwik.
 
-To track any user interaction or click with Piwik, you can manually call the Javascript function `trackEvent()`. For example, if you wanted to track a click on a JavaScript menu, you could write:
+To track any user interaction or click with Piwik, you can manually call the JavaScript function `trackEvent()`. For example, if you wanted to track a click on a JavaScript menu, you could write:
 
 ```html
 <a href="#" onclick="javascript:_paq.push(['trackEvent', 'Menu', 'Freedom']);">Freedom page</a>
@@ -162,7 +162,7 @@ Piwik allows for advanced and powerful Ecommerce tracking. Check out the [Ecomme
 
 ## Internal search tracking
 
-Piwik offers advanced [Site Search Analytics](http://piwik.org/docs/site-search/) feature, letting you track how your visitors use your internal website search engine. By default, Piwik can read URL parameters that will contain the search keyword. However, you can also record the site search keyword manually using the Javascript function `trackSiteSearch(...)`
+Piwik offers advanced [Site Search Analytics](http://piwik.org/docs/site-search/) feature, letting you track how your visitors use your internal website search engine. By default, Piwik can read URL parameters that will contain the search keyword. However, you can also record the site search keyword manually using the JavaScript function `trackSiteSearch(...)`
 
 In your website, in standard pages, you would typically have a call to record Page views via `piwikTracker.trackPageView()`. On your search result page, you would call **instead** `piwikTracker.trackSiteSearch(keyword, category, searchCount)` function to record the internal search request. Note: the 'keyword' parameter is required, but category and searchCount are optional.
 
@@ -285,7 +285,7 @@ getCustomVariable(index, scope)
 
 This function can be used to get the custom variable name and value. By default, it will only work for custom variables that were set during the same page load.
 
-Note: it is possible to configure Piwik so that `getCustomVariable` will also return the name and value of a custom variable of scope "visit", even when it was set in a previous pageview in the same visit. To enable this behavior, call the Javascript function `storeCustomVariablesInCookie` before the call to `trackPageView`. This will enable the storage of Custom Variables of scope "visit" in a first party cookie. The custom variables cookie will be valid for the duration of the visit (30 minutes after the last action). You can then retrieve the custom variable names and values using `getCustomVariable`. If there is no custom variable in the requested index, it will return false.
+Note: it is possible to configure Piwik so that `getCustomVariable` will also return the name and value of a custom variable of scope "visit", even when it was set in a previous pageview in the same visit. To enable this behavior, call the JavaScript function `storeCustomVariablesInCookie` before the call to `trackPageView`. This will enable the storage of Custom Variables of scope "visit" in a first party cookie. The custom variables cookie will be valid for the duration of the visit (30 minutes after the last action). You can then retrieve the custom variable names and values using `getCustomVariable`. If there is no custom variable in the requested index, it will return false.
 
 ```javascript
 _paq.push([ function() {
@@ -786,7 +786,7 @@ View all features of the Tracking client in the [JavaScript Tracker Reference](/
 
 If you have any question about JavaScript Tracking in Piwik, [please search the website](http://piwik.org/), or [ask in the forums](http://forum.piwik.org).
 
-- [How do enable tracking for users without Javascript?](http://piwik.org/faq/how-to/#faq_176)
+- [How do enable tracking for users without JavaScript?](http://piwik.org/faq/how-to/#faq_176)
 - [How does Piwik track downloads?](http://piwik.org/faq/new-to-piwik/#faq_47)
 - [How to track error pages and get the list of 404 and referrers urls.](http://piwik.org/faq/how-to/#faq_60)
 - [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](http://piwik.org/faq/how-to/#faq_62)
