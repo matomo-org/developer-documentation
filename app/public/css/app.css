@@ -5,12 +5,12 @@ html {
 body {
     padding-top: 80px;
     margin-bottom: 80px;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
     font-size: 15px;
     color: #404040;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
 }
 code {
     color: #A93552;
