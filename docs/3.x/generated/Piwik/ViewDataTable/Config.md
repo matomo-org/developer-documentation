@@ -94,6 +94,7 @@ This class defines the following properties:
 - [`$related_reports`](#$related_reports) &mdash; Related reports are listed below a datatable view.
 - [`$related_reports_title`](#$related_reports_title) &mdash; "Related Reports" is displayed by default before listing the Related reports, The string can be changed.
 - [`$title`](#$title) &mdash; The report title.
+- [`$description`](#$description) &mdash; The report description.
 - [`$show_related_reports`](#$show_related_reports) &mdash; Controls whether a report's related reports are listed with the view or not.
 - [`$documentation`](#$documentation) &mdash; Contains the documentation for a report.
 - [`$custom_parameters`](#$custom_parameters) &mdash; Array property containing custom data to be saved in JSON in the data-params HTML attribute of a data table div.
@@ -416,6 +417,19 @@ Used with related reports so report headings can be changed when switching
 reports.
 
 This must be set if related reports are added.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$description" id="$description"></a>
+<a name="description" id="description"></a>
+### `$description`
+
+The report description.
+
+eg like a goal description
 
 #### Signature
 

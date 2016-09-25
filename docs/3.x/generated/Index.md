@@ -187,6 +187,7 @@ Index
 - [`dropIndex()`](Piwik/Updater/Migration/Db/Factory.md#dropindex) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
 - [`$db`](Piwik/Updater/Migration/Factory.md#$db) &mdash; *Property in class* [`Factory`](Piwik/Updater/Migration/Factory.md)
 - [`doUpdate()`](Piwik/Updates.md#doupdate) &mdash; *Method in class* [`Updates`](Piwik/Updates.md)
+- [`$description`](Piwik/ViewDataTable/Config.md#$description) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$documentation`](Piwik/ViewDataTable/Config.md#$documentation) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$datatable_css_class`](Piwik/ViewDataTable/Config.md#$datatable_css_class) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$datatable_js_type`](Piwik/ViewDataTable/Config.md#$datatable_js_type) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
