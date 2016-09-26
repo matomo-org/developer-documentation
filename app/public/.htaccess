@@ -31,3 +31,6 @@ ExpiresDefault "access 8 days"
 ## EXPIRES CACHING ##
 
 AddType application/font-woff .woff
+
+# Prevent directory listing
+Options -Indexes 
