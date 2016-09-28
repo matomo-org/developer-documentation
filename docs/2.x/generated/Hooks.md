@@ -1916,14 +1916,16 @@ Callback Signature:
 
 ### Tracker.isExcludedVisit
 
-*Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/2.x-dev/core/Tracker/VisitExcluded.php) in line [93](https://github.com/piwik/piwik/blob/2.x-dev/core/Tracker/VisitExcluded.php#L93)*
+*Defined in [Piwik/Tracker/VisitExcluded](https://github.com/piwik/piwik/blob/2.x-dev/core/Tracker/VisitExcluded.php) in line [86](https://github.com/piwik/piwik/blob/2.x-dev/core/Tracker/VisitExcluded.php#L86)*
 
 Triggered on every tracking request. This event can be used to tell the Tracker not to record this particular action or visit.
 
 Callback Signature:
-<pre><code>function(&amp;$excluded)</code></pre>
+<pre><code>function(&amp;$excluded, $this-&gt;request)</code></pre>
 
 - bool `&$excluded` Whether the request should be excluded or not. Initialized to `false`. Event subscribers should set it to `true` in order to exclude the request.
+
+- Request `$request` The request object which contains all of the request's information
 
 
 ### Tracker.makeNewVisitObject
