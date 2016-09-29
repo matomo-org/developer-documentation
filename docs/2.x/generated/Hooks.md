@@ -510,7 +510,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/2.x-dev/core/Updater.php) in line [472](https://github.com/piwik/piwik/blob/2.x-dev/core/Updater.php#L472)*
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/2.x-dev/core/Updater.php) in line [473](https://github.com/piwik/piwik/blob/2.x-dev/core/Updater.php#L473)*
 
 Triggered after Piwik has been updated.
 
@@ -2113,7 +2113,7 @@ Usages:
 
 ### Updater.componentUpdated
 
-*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/2.x-dev/core/Updater.php) in line [302](https://github.com/piwik/piwik/blob/2.x-dev/core/Updater.php#L302)*
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/2.x-dev/core/Updater.php) in line [303](https://github.com/piwik/piwik/blob/2.x-dev/core/Updater.php#L303)*
 
 Event triggered after a component has been updated. Can be used to handle stuff that should be done after a component was updated
 
