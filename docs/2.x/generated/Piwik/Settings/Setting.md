@@ -214,7 +214,6 @@ The abstract class defines the following methods:
 - [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting is writable for the current user, `false` if otherwise.
 - [`isReadableByCurrentUser()`](#isreadablebycurrentuser) &mdash; Returns `true` if this setting can be displayed for the current user, `false` if otherwise.
 - [`setStorage()`](#setstorage) &mdash; Sets the object used to persist settings.
-- [`getStorage()`](#getstorage)
 - [`setPluginName()`](#setpluginname) &mdash; Sets th name of the plugin the setting belongs to
 - [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value.
 - [`removeValue()`](#removevalue) &mdash; Returns the previously persisted setting value.
@@ -281,14 +280,6 @@ Sets the object used to persist settings.
     - `$storage` (`Piwik\Settings\StorageInterface`) &mdash;
       
 - It does not return anything.
-
-<a name="getstorage" id="getstorage"></a>
-<a name="getStorage" id="getStorage"></a>
-### `getStorage()`
-
-#### Signature
-
-- It returns a `Piwik\Settings\StorageInterface` value.
 
 <a name="setpluginname" id="setpluginname"></a>
 <a name="setPluginName" id="setPluginName"></a>

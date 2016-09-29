@@ -19,7 +19,6 @@ Methods
 The abstract class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`getSetting()`](#getsetting)
 - [`getIntroduction()`](#getintroduction) &mdash; Returns the introduction text for this plugin's settings.
 - [`getSettingsForCurrentUser()`](#getsettingsforcurrentuser) &mdash; Returns the settings that can be displayed for the current user.
 - [`getSettings()`](#getsettings) &mdash; Returns all available settings.
@@ -37,17 +36,6 @@ Constructor.
 -  It accepts the following parameter(s):
     - `$pluginName`
       
-
-<a name="getsetting" id="getsetting"></a>
-<a name="getSetting" id="getSetting"></a>
-### `getSetting()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$name`
-      
-- It does not return anything.
 
 <a name="getintroduction" id="getintroduction"></a>
 <a name="getIntroduction" id="getIntroduction"></a>

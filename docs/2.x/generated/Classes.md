@@ -80,7 +80,6 @@ This is a complete list of available classes:
 - [`Period\Range`](Piwik/Period/Range.md) &mdash; Arbitrary date range representation.
 - [`Piwik`](Piwik/Piwik.md) &mdash; Main piwik helper class.
 - [`Plugin`](Piwik/Plugin.md) &mdash; Base class of all Plugin Descriptor classes.
-- [`Plugin\API`](Piwik/Plugin/API.md) &mdash; The base class of all API singletons.
 - [`Plugin\Archiver`](Piwik/Plugin/Archiver.md) &mdash; The base class that should be extended by plugins that compute their own analytics data.
 - [`Plugin\Controller`](Piwik/Plugin/Controller.md) &mdash; Base class of all plugin Controllers.
 - [`Plugin\ControllerAdmin`](Piwik/Plugin/ControllerAdmin.md) &mdash; Base class of plugin controllers that provide administrative functionality.

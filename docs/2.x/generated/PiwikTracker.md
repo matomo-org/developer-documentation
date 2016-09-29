@@ -54,7 +54,6 @@ The class defines the following methods:
 - [`setUrl()`](#seturl) &mdash; Sets the current URL being tracked
 - [`setUrlReferrer()`](#seturlreferrer) &mdash; Sets the URL referrer used to track Referrers details for new visits.
 - [`setGenerationTime()`](#setgenerationtime) &mdash; Sets the time that generating the document on the server side took.
-- [`setUrlReferer()`](#seturlreferer)
 - [`setAttributionInfo()`](#setattributioninfo) &mdash; Sets the attribution information to the visit, so that subsequent Goal conversions are properly attributed to the right Referrer URL, timestamp, Campaign Name & Keyword.
 - [`setCustomVariable()`](#setcustomvariable) &mdash; Sets Visit Custom Variable.
 - [`getCustomVariable()`](#getcustomvariable) &mdash; Returns the currently assigned Custom Variable.
@@ -180,17 +179,6 @@ Sets the time that generating the document on the server side took.
 -  It accepts the following parameter(s):
     - `$timeMs` (`int`) &mdash;
        Generation time in ms
-- It does not return anything.
-
-<a name="seturlreferer" id="seturlreferer"></a>
-<a name="setUrlReferer" id="setUrlReferer"></a>
-### `setUrlReferer()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$url`
-      
 - It does not return anything.
 
 <a name="setattributioninfo" id="setattributioninfo"></a>
