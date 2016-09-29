@@ -76,6 +76,7 @@
 ## Period\Range
 ## Piwik
 ## Plugin
+## Plugin\API
 ## Plugin\Archiver
 ## Plugin\Controller
 ## Plugin\ControllerAdmin
