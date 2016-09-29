@@ -174,6 +174,7 @@ Index
 - [`deleteAllValues()`](Piwik/Settings/Storage.md#deleteallvalues) &mdash; *Method in class* [`Storage`](Piwik/Settings/Storage.md)
 - [`deleteValue()`](Piwik/Settings/Storage.md#deletevalue) &mdash; *Method in class* [`Storage`](Piwik/Settings/Storage.md)
 - [`doUpdate()`](Piwik/Updates.md#doupdate) &mdash; *Method in class* [`Updates`](Piwik/Updates.md)
+- [`disableCacheBuster()`](Piwik/View.md#disablecachebuster) &mdash; *Method in class* [`View`](Piwik/View.md)
 - [`$documentation`](Piwik/ViewDataTable/Config.md#$documentation) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$datatable_css_class`](Piwik/ViewDataTable/Config.md#$datatable_css_class) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$datatable_js_type`](Piwik/ViewDataTable/Config.md#$datatable_js_type) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
