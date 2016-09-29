@@ -104,8 +104,23 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         }
         
         $ignoreTags = ($reflection->getTags('internal'));
-        
-        return !empty($ignoreTags);
+                
+        if (!empty($ignoreTags)) {
+            return true;
+        }
+
+        // fixes in some cases the tags are not recognoized
+        $docComment = $reflection->getDocComment();
+
+        if (false !== strpos($docComment, ' @internal')) {
+            return true;
+        }
+
+        if (false !== strpos($docComment, ' @ignore')) {
+            return true;
+        }
+
+        return false;
     }
     
     private function isSubclassOf(\ReflectionClass $rc, $subclass)
