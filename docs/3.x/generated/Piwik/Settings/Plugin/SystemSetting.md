@@ -18,11 +18,8 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getName()`](#getname) &mdash; Get the name of the setting. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`getType()`](#gettype) &mdash; Get the PHP type of the setting. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
-- [`setConfigureCallback()`](#setconfigurecallback) Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`getDefaultValue()`](#getdefaultvalue) Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`setDefaultValue()`](#setdefaultvalue) &mdash; Sets/overwrites the current default value Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
-- [`setStorage()`](#setstorage) Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
-- [`configureField()`](#configurefield) Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`setIsWritableByCurrentUser()`](#setiswritablebycurrentuser) &mdash; Set whether setting is writable or not. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting is writable for the current user, `false` if otherwise.
 - [`save()`](#save) &mdash; Saves (persists) the value for this setting in the database if a value has been actually set. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
@@ -67,17 +64,6 @@ Get the PHP type of the setting.
 
 - It returns a `string` value.
 
-<a name="setconfigurecallback" id="setconfigurecallback"></a>
-<a name="setConfigureCallback" id="setConfigureCallback"></a>
-### `setConfigureCallback()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$callback` (`Piwik\Settings\$callback`) &mdash;
-      
-- It does not return anything.
-
 <a name="getdefaultvalue" id="getdefaultvalue"></a>
 <a name="getDefaultValue" id="getDefaultValue"></a>
 ### `getDefaultValue()`
@@ -98,27 +84,6 @@ Sets/overwrites the current default value
     - `$defaultValue` (`string`) &mdash;
       
 - It does not return anything.
-
-<a name="setstorage" id="setstorage"></a>
-<a name="setStorage" id="setStorage"></a>
-### `setStorage()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$storage` (`Piwik\Settings\Storage\Storage`) &mdash;
-      
-- It does not return anything.
-
-<a name="configurefield" id="configurefield"></a>
-<a name="configureField" id="configureField"></a>
-### `configureField()`
-
-#### Signature
-
-- It returns a [`FieldConfig`](../../../Piwik/Settings/FieldConfig.md) value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
 
 <a name="setiswritablebycurrentuser" id="setiswritablebycurrentuser"></a>
 <a name="setIsWritableByCurrentUser" id="setIsWritableByCurrentUser"></a>

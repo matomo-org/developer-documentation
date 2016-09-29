@@ -81,7 +81,6 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:
 - [`registerEvents()`](#registerevents) &mdash; Returns a list of events with associated event observers.
-- [`getListHooksRegistered()`](#getlisthooksregistered)
 - [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered.
 - [`install()`](#install) &mdash; Installs the plugin.
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the plugins.
@@ -146,14 +145,6 @@ Derived classes should use this method to associate callbacks with events.
 
 - *Returns:*  `array` &mdash;
     eg, array( 'API.getReportMetadata' => 'myPluginFunction', 'Another.event'         => array( 'function' => 'myOtherPluginFunction', 'after'    => true // execute after callbacks w/o ordering ) 'Yet.Another.event'     => array( 'function' => 'myOtherPluginFunction', 'before'   => true // execute before callbacks w/o ordering ) )
-
-<a name="getlisthooksregistered" id="getlisthooksregistered"></a>
-<a name="getListHooksRegistered" id="getListHooksRegistered"></a>
-### `getListHooksRegistered()`
-
-#### Signature
-
-- It returns a `array` value.
 
 <a name="postload" id="postload"></a>
 <a name="postLoad" id="postLoad"></a>

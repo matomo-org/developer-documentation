@@ -173,7 +173,6 @@ The class defines the following methods:
 - [`__destruct()`](#__destruct) &mdash; Destructor.
 - [`__clone()`](#__clone) &mdash; Clone.
 - [`setLabelsHaveChanged()`](#setlabelshavechanged)
-- [`setRows()`](#setrows)
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function.
 - [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any).
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting.
@@ -277,17 +276,6 @@ If we do not increase tableId it can result in segmentation faults when destruct
 
 #### Signature
 
-- It does not return anything.
-
-<a name="setrows" id="setrows"></a>
-<a name="setRows" id="setRows"></a>
-### `setRows()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$rows`
-      
 - It does not return anything.
 
 <a name="sort" id="sort"></a>

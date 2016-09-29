@@ -45,7 +45,6 @@ The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
 - [`getDatabaseConfig()`](#getdatabaseconfig) &mdash; Returns an array with the Database connection information.
-- [`setDatabaseObject()`](#setdatabaseobject) &mdash; For tests only.
 - [`createDatabaseObject()`](#createdatabaseobject) &mdash; Connects to the database.
 - [`destroyDatabaseObject()`](#destroydatabaseobject) &mdash; Disconnects and destroys the database connection.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
@@ -96,19 +95,6 @@ Returns an array with the Database connection information.
     - `$dbConfig` (`array`|`null`) &mdash;
       
 - It returns a `array` value.
-
-<a name="setdatabaseobject" id="setdatabaseobject"></a>
-<a name="setDatabaseObject" id="setDatabaseObject"></a>
-### `setDatabaseObject()`
-
-For tests only.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$connection` (`Piwik\$connection`) &mdash;
-      
-- It does not return anything.
 
 <a name="createdatabaseobject" id="createdatabaseobject"></a>
 <a name="createDatabaseObject" id="createDatabaseObject"></a>

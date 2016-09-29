@@ -20,7 +20,6 @@ The class defines the following methods:
 - [`addToContainerWidget()`](#addtocontainerwidget) &mdash; Add a widget to a widget container.
 - [`remove()`](#remove) &mdash; Removes one or more widgets from the widget list.
 - [`isDefined()`](#isdefined) &mdash; Returns `true` if a widget exists in the widget list, `false` if otherwise.
-- [`get()`](#get) &mdash; Get all widgets defined in the Piwik platform.
 - [`getWidgetUniqueId()`](#getwidgetuniqueid) &mdash; CAUTION! If you ever change this method, existing updates will fail as they currently use that method! If you change the output the uniqueId for existing widgets would not be found anymore
 
 <a name="addwidgetconfig" id="addwidgetconfig"></a>
@@ -113,16 +112,6 @@ Returns `true` if a widget exists in the widget list, `false` if otherwise.
     - `$action` (`string`) &mdash;
        The controller action of the widget.
 - It returns a `bool` value.
-
-<a name="get" id="get"></a>
-<a name="get" id="get"></a>
-### `get()`
-
-Get all widgets defined in the Piwik platform.
-
-#### Signature
-
-- It does not return anything.
 
 <a name="getwidgetuniqueid" id="getwidgetuniqueid"></a>
 <a name="getWidgetUniqueId" id="getWidgetUniqueId"></a>

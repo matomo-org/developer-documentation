@@ -191,7 +191,6 @@ The class defines the following methods:
 - [`configureView()`](#configureview) &mdash; Here you can configure how your report should be displayed and which capabilities your report has.
 - [`render()`](#render) &mdash; Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
 - [`configureWidgets()`](#configurewidgets) &mdash; Let's you add any amount of widgets for this report.
-- [`getRecursiveLabelSeparator()`](#getrecursivelabelseparator)
 - [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
 - [`getMetricsRequiredForReport()`](#getmetricsrequiredforreport) &mdash; Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
 - [`getProcessedMetrics()`](#getprocessedmetrics) &mdash; Returns an array of supported processed metrics and their corresponding translations.
@@ -345,14 +344,6 @@ $widgetsList->addToContainerWidget($containerId = 'Products', $factory->createWi
       
     - `$factory` ([`ReportWidgetFactory`](../../Piwik/Report/ReportWidgetFactory.md)) &mdash;
       
-- It does not return anything.
-
-<a name="getrecursivelabelseparator" id="getrecursivelabelseparator"></a>
-<a name="getRecursiveLabelSeparator" id="getRecursiveLabelSeparator"></a>
-### `getRecursiveLabelSeparator()`
-
-#### Signature
-
 - It does not return anything.
 
 <a name="getmetrics" id="getmetrics"></a>
