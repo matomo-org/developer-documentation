@@ -981,6 +981,7 @@ Index
 - [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; *Class in namespace* `Piwik`- [`Translator`](Piwik/Translation/Translator.md) &mdash; *Class in namespace* `Piwik\Translation`- [`translate()`](Piwik/Translation/Translator.md#translate) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`$translations`](Piwik/ViewDataTable/Config.md#$translations) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$title`](Piwik/ViewDataTable/Config.md#$title) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$title_edit_entity_url`](Piwik/ViewDataTable/Config.md#$title_edit_entity_url) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$tooltip_metadata_name`](Piwik/ViewDataTable/Config.md#$tooltip_metadata_name) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 
 ## U

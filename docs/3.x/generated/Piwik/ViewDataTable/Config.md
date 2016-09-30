@@ -94,6 +94,7 @@ This class defines the following properties:
 - [`$related_reports`](#$related_reports) &mdash; Related reports are listed below a datatable view.
 - [`$related_reports_title`](#$related_reports_title) &mdash; "Related Reports" is displayed by default before listing the Related reports, The string can be changed.
 - [`$title`](#$title) &mdash; The report title.
+- [`$title_edit_entity_url`](#$title_edit_entity_url) &mdash; If a URL is set, the title of the report will be clickable.
 - [`$description`](#$description) &mdash; The report description.
 - [`$show_related_reports`](#$show_related_reports) &mdash; Controls whether a report's related reports are listed with the view or not.
 - [`$documentation`](#$documentation) &mdash; Contains the documentation for a report.
@@ -422,6 +423,20 @@ This must be set if related reports are added.
 
 - Its type is not specified.
 
+
+<a name="$title_edit_entity_url" id="$title_edit_entity_url"></a>
+<a name="title_edit_entity_url" id="title_edit_entity_url"></a>
+### `$title_edit_entity_url`
+
+If a URL is set, the title of the report will be clickable.
+
+Is supposed to be set for entities that can be
+configured (edited) such as goal. Eg when there is a goal report, and someone is allowed to edit the goal entity,
+a link is supposed to be with a URL to the edit goal form.
+
+#### Signature
+
+- It is a `string` value.
 
 <a name="$description" id="$description"></a>
 <a name="description" id="description"></a>
