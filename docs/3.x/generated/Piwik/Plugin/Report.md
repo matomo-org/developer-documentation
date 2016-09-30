@@ -190,7 +190,7 @@ The class defines the following methods:
 - [`alwaysUseDefaultViewDataTable()`](#alwaysusedefaultviewdatatable) &mdash; Returns if the default viewDataTable type should always be used.
 - [`configureView()`](#configureview) &mdash; Here you can configure how your report should be displayed and which capabilities your report has.
 - [`render()`](#render) &mdash; Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
-- [`configureWidgets()`](#configurewidgets) &mdash; Let's you add any amount of widgets for this report.
+- [`configureWidgets()`](#configurewidgets) &mdash; lets you add any amount of widgets for this report.
 - [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
 - [`getMetricsRequiredForReport()`](#getmetricsrequiredforreport) &mdash; Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
 - [`getProcessedMetrics()`](#getprocessedmetrics) &mdash; Returns an array of supported processed metrics and their corresponding translations.
@@ -321,7 +321,7 @@ you can overwrite this method.
 <a name="configureWidgets" id="configureWidgets"></a>
 ### `configureWidgets()`
 
-Let's you add any amount of widgets for this report.
+lets you add any amount of widgets for this report.
 
 If a report defines a [$categoryId](/api-reference/Piwik/Plugin/Report#$categoryid) and a
 [$subcategoryId](/api-reference/Piwik/Plugin/Report#$subcategoryid) a widget will be generated automatically.
