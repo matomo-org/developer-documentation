@@ -35,6 +35,7 @@
 .documentation code {
     white-space: pre-wrap;
     word-wrap: break-word;
+    font-weight:bold;
 }
 
 .documentation h2 {
