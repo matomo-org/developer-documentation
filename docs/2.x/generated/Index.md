@@ -350,6 +350,7 @@ Index
 - [`getHourUTC()`](Piwik/Date.md#gethourutc) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`getDateStartUTC()`](Piwik/Date.md#getdatestartutc) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`getDateEndUTC()`](Piwik/Date.md#getdateendutc) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`getUtcOffset()`](Piwik/Date.md#getutcoffset) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`getDatetimeFromTimestamp()`](Piwik/Date.md#getdatetimefromtimestamp) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`getTimestampUTC()`](Piwik/Date.md#gettimestamputc) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`getTimestamp()`](Piwik/Date.md#gettimestamp) &mdash; *Method in class* [`Date`](Piwik/Date.md)
