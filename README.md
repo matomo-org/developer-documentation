@@ -13,7 +13,7 @@
 
 ## License
 
-GPLv3 or later
+Copyright Piwik team. Do not republish, or copy, or distribute this code or content. Thank you!
 
 ## Run locally
 
