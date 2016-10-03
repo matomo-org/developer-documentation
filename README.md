@@ -11,10 +11,6 @@
 - [Hooks](docs/generated/master/Hooks.md)
 - [Guides](docs)
 
-## License
-
-GPLv3 or later
-
 ## Run locally
 
 ```bash
