@@ -90,6 +90,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files Inherited from [`View`](../../Piwik/View.md)
 - [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename. Inherited from [`View`](../../Piwik/View.md)
 - [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
 - [`__set()`](#__set) &mdash; Sets a variable.
@@ -110,6 +111,16 @@ Constructor.
 
 #### Signature
 
+
+<a name="disablecachebuster" id="disablecachebuster"></a>
+<a name="disableCacheBuster" id="disableCacheBuster"></a>
+### `disableCacheBuster()`
+
+Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files
+
+#### Signature
+
+- It does not return anything.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>

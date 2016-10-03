@@ -34,6 +34,7 @@ The class defines the following methods:
 - [`getDateStartUTC()`](#getdatestartutc) &mdash; Returns the start of the day of the current timestamp in UTC.
 - [`getDateEndUTC()`](#getdateendutc) &mdash; Returns the end of the day of the current timestamp in UTC.
 - [`setTimezone()`](#settimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
+- [`getUtcOffset()`](#getutcoffset) &mdash; Returns the offset to UTC time for the given timezone
 - [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp in a from UTC to a timezone.
 - [`getDatetimeFromTimestamp()`](#getdatetimefromtimestamp) &mdash; Returns the date in the "Y-m-d H:i:s" PHP format
 - [`getTimestampUTC()`](#gettimestamputc) &mdash; Returns the Unix timestamp of the date in UTC.
@@ -152,6 +153,21 @@ See [getTimestamp()](/api-reference/Piwik/Date#gettimestamp) to see how the time
     - `$timezone` (`string`) &mdash;
        eg, `'UTC'`, `'Europe/London'`, etc.
 - It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="getutcoffset" id="getutcoffset"></a>
+<a name="getUtcOffset" id="getUtcOffset"></a>
+### `getUtcOffset()`
+
+Returns the offset to UTC time for the given timezone
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$timezone` (`Piwik\$timezone`) &mdash;
+      
+
+- *Returns:*  `int` &mdash;
+    offest in minutes
 
 <a name="adjustfortimezone" id="adjustfortimezone"></a>
 <a name="adjustForTimezone" id="adjustForTimezone"></a>

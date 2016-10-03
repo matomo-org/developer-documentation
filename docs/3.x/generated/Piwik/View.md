@@ -87,6 +87,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files
 - [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename.
 - [`getTemplateVars()`](#gettemplatevars) &mdash; Returns the variables to bind to the template when rendering.
 - [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
@@ -108,6 +109,16 @@ Constructor.
 -  It accepts the following parameter(s):
     - `$templateFile` (`string`) &mdash;
        The template file to load. Must be in the following format: `"@MyPlugin/templateFileName"`. Note the absence of .twig from the end of the name.
+
+<a name="disablecachebuster" id="disablecachebuster"></a>
+<a name="disableCacheBuster" id="disableCacheBuster"></a>
+### `disableCacheBuster()`
+
+Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files
+
+#### Signature
+
+- It does not return anything.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>

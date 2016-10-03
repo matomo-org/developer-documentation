@@ -79,6 +79,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`reloadPluginInformation()`](#reloadplugininformation)
 - [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:
 - [`registerEvents()`](#registerevents) &mdash; Returns a list of events with associated event observers.
 - [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered.
@@ -110,6 +111,14 @@ Constructor.
        A plugin name to force. If not supplied, it is set to the last part of the class name.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If plugin metadata is defined in both the getInformation() method and the **plugin.json** file.
+
+<a name="reloadplugininformation" id="reloadplugininformation"></a>
+<a name="reloadPluginInformation" id="reloadPluginInformation"></a>
+### `reloadPluginInformation()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getinformation" id="getinformation"></a>
 <a name="getInformation" id="getInformation"></a>
