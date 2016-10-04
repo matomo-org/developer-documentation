@@ -35,7 +35,7 @@ The class defines the following methods:
 - [`getDateEndUTC()`](#getdateendutc) &mdash; Returns the end of the day of the current timestamp in UTC.
 - [`setTimezone()`](#settimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
 - [`getUtcOffset()`](#getutcoffset) &mdash; Returns the offset to UTC time for the given timezone
-- [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp in a from UTC to a timezone.
+- [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp from UTC to a timezone.
 - [`getDatetimeFromTimestamp()`](#getdatetimefromtimestamp) &mdash; Returns the date in the "Y-m-d H:i:s" PHP format
 - [`getTimestampUTC()`](#gettimestamputc) &mdash; Returns the Unix timestamp of the date in UTC.
 - [`getTimestamp()`](#gettimestamp) &mdash; Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
@@ -173,7 +173,7 @@ Returns the offset to UTC time for the given timezone
 <a name="adjustForTimezone" id="adjustForTimezone"></a>
 ### `adjustForTimezone()`
 
-Converts a timestamp in a from UTC to a timezone.
+Converts a timestamp from UTC to a timezone.
 
 #### Signature
 
