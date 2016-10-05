@@ -696,6 +696,7 @@ Index
 - [`$idSubtable`](Piwik/ViewDataTable/RequestConfig.md#$idsubtable) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`isEnabled()`](Piwik/Widget/WidgetConfig.md#isenabled) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`isWidgetizeable()`](Piwik/Widget/WidgetConfig.md#iswidgetizeable) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
+- [`isWide()`](Piwik/Widget/WidgetConfig.md#iswide) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`isDefined()`](Piwik/Widget/WidgetsList.md#isdefined) &mdash; *Method in class* [`WidgetsList`](Piwik/Widget/WidgetsList.md)
 
 ## J
@@ -968,6 +969,7 @@ Index
 - [`setIsNotWidgetizable()`](Piwik/Widget/WidgetConfig.md#setisnotwidgetizable) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`setIsWidgetizable()`](Piwik/Widget/WidgetConfig.md#setiswidgetizable) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`setMiddlewareParameters()`](Piwik/Widget/WidgetConfig.md#setmiddlewareparameters) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
+- [`setIsWide()`](Piwik/Widget/WidgetConfig.md#setiswide) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`setId()`](Piwik/Widget/WidgetContainerConfig.md#setid) &mdash; *Method in class* [`WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md)
 - [`setLayout()`](Piwik/Widget/WidgetContainerConfig.md#setlayout) &mdash; *Method in class* [`WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md)
 

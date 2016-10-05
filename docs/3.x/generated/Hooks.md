@@ -1617,6 +1617,31 @@ Usages:
 
 [MobileMessaging::validateReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L107), [ScheduledReports::validateReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L141)
 
+## Segment
+
+- [Segment.addSegments](#segmentaddsegments)
+
+### Segment.addSegments
+
+*Defined in [Piwik/Plugins/API/SegmentMetadata](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/SegmentMetadata.php) in line [38](https://github.com/piwik/piwik/blob/3.x-dev/plugins/API/SegmentMetadata.php#L38)*
+
+Triggered to add custom segment definitions. **Example**
+
+    public function addSegments(&$segments)
+    {
+        $segment = new Segment();
+        $segment->setSegment('my_segment_name');
+        $segment->setType(Segment::TYPE_DIMENSION);
+        $segment->setName('My Segment Name');
+        $segment->setSqlSegment('log_table.my_segment_name');
+        $segments[] = $segment;
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$segments)</code></pre>
+
+- array `&$segments` An array containing a list of segment entries.
+
 ## SegmentEditor
 
 - [SegmentEditor.deactivate](#segmenteditordeactivate)

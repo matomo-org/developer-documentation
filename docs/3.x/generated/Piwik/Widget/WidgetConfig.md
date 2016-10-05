@@ -39,6 +39,8 @@ The class defines the following methods:
 - [`isWidgetizeable()`](#iswidgetizeable) &mdash; Detect whether the widget is widgetizable meaning it won't be able to add it to the dashboard and it won't be possible to export the widget via an iframe if it is not widgetizable.
 - [`setMiddlewareParameters()`](#setmiddlewareparameters) &mdash; If middleware parameters are specified, the corresponding action will be executed before showing the actual widget in the UI.
 - [`getMiddlewareParameters()`](#getmiddlewareparameters) &mdash; Get defined middleware parameters (if any).
+- [`setIsWide()`](#setiswide) &mdash; Marks this widget as a "wide" widget that requires the full width.
+- [`isWide()`](#iswide) &mdash; Detect whether the widget should be shown wide or not.
 
 <a name="setcategoryid" id="setcategoryid"></a>
 <a name="setCategoryId" id="setCategoryId"></a>
@@ -383,4 +385,24 @@ Get defined middleware parameters (if any).
 #### Signature
 
 - It returns a `array` value.
+
+<a name="setiswide" id="setiswide"></a>
+<a name="setIsWide" id="setIsWide"></a>
+### `setIsWide()`
+
+Marks this widget as a "wide" widget that requires the full width.
+
+#### Signature
+
+- It returns a `Piwik\Widget\$this` value.
+
+<a name="iswide" id="iswide"></a>
+<a name="isWide" id="isWide"></a>
+### `isWide()`
+
+Detect whether the widget should be shown wide or not.
+
+#### Signature
+
+- It returns a `bool` value.
 

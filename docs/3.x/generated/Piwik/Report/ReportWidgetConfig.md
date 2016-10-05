@@ -36,6 +36,8 @@ The class defines the following methods:
 - [`isWidgetizeable()`](#iswidgetizeable) &mdash; Detect whether the widget is widgetizable meaning it won't be able to add it to the dashboard and it won't be possible to export the widget via an iframe if it is not widgetizable. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setMiddlewareParameters()`](#setmiddlewareparameters) &mdash; If middleware parameters are specified, the corresponding action will be executed before showing the actual widget in the UI. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`getMiddlewareParameters()`](#getmiddlewareparameters) &mdash; Get defined middleware parameters (if any). Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
+- [`setIsWide()`](#setiswide) &mdash; Marks this widget as a "wide" widget that requires the full width. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
+- [`isWide()`](#iswide) &mdash; Detect whether the widget should be shown wide or not. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setDefaultViewDataTable()`](#setdefaultviewdatatable) &mdash; Sets a default viewDataTable that should be used to render the report.
 - [`forceViewDataTable()`](#forceviewdatatable) &mdash; Forces the usage of the given viewDataTable in order to render the report.
 - [`isViewDataTableForced()`](#isviewdatatableforced) &mdash; Detect whether a defined viewDataTable should be forced in order to render a report.
@@ -382,6 +384,26 @@ Get defined middleware parameters (if any).
 #### Signature
 
 - It returns a `array` value.
+
+<a name="setiswide" id="setiswide"></a>
+<a name="setIsWide" id="setIsWide"></a>
+### `setIsWide()`
+
+Marks this widget as a "wide" widget that requires the full width.
+
+#### Signature
+
+- It returns a `Piwik\Widget\$this` value.
+
+<a name="iswide" id="iswide"></a>
+<a name="isWide" id="isWide"></a>
+### `isWide()`
+
+Detect whether the widget should be shown wide or not.
+
+#### Signature
+
+- It returns a `bool` value.
 
 <a name="setdefaultviewdatatable" id="setdefaultviewdatatable"></a>
 <a name="setDefaultViewDataTable" id="setDefaultViewDataTable"></a>
