@@ -231,7 +231,7 @@ To activate this webhook, follow these steps:
 
 1. Go to your plugin's Github repo in a browser.
 2. Click on **Settings**
-3. Click on **Webhooks & services**
+3. Click on **Integrations & services**
 4. Click on **Add service**
 5. Search for `piwik` and click the option **Piwik Plugins**.
 6. Click the **Active** checkbox.
