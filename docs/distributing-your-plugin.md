@@ -56,9 +56,6 @@ The `plugin.json` file must contain the following information:
 - `license`: The name of the license your plugin uses. The license must be compatible with the [GPLv3](http://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPLv3](http://www.gnu.org/licenses/gpl-2.0.html) or later.
 - `homepage`: The URL to the plugin's homepage.
 - `authors`: An array of objects, each describing someone who helped create the plugin. The objects must contain a **name** field and can optionally contain an email and homepage field. You must define at least one author.
-
-The following fields are not required for publishing a plugin, but you may want to add them:
-
 - `require` - Defines packages required by this plugin. The plugin will not be installed unless those requirements can be met. Two packages are supported at the moment: `piwik` and `php`.
 
     For example:
@@ -93,6 +90,8 @@ The following fields are not required for publishing a plugin, but you may want 
     
     For plugins that target Piwik 3 or newer read the [Composer Versions documentation](https://getcomposer.org/doc/articles/versions.md) for more information.
   
+
+The following fields are not required for publishing a plugin, but you may want to add them:
   
 - `donate` - An object containing information on how to donate to the plugin author (you!). The object can contain any of the following fields:
     - `paypal` - Your paypal email address.
