@@ -896,12 +896,14 @@ Callback Signature:
 ## Login
 
 - [Login.authenticate](#loginauthenticate)
+- [Login.authenticate.failed](#loginauthenticatefailed)
 - [Login.authenticate.successful](#loginauthenticatesuccessful)
 - [Login.initSession.end](#logininitsessionend)
+- [Login.logout](#loginlogout)
 
 ### Login.authenticate
 
-*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php) in line [154](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php#L154)*
+*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php) in line [157](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php#L157)*
 
 
 
@@ -909,9 +911,19 @@ Callback Signature:
 <pre><code>function($auth-&gt;getLogin(), $tokenAuth)</code></pre>
 
 
+### Login.authenticate.failed
+
+*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php) in line [118](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php#L118)*
+
+
+
+Callback Signature:
+<pre><code>function($auth-&gt;getLogin())</code></pre>
+
+
 ### Login.authenticate.successful
 
-*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php) in line [207](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php#L207)*
+*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php) in line [210](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php#L210)*
 
 
 
@@ -921,9 +933,19 @@ Callback Signature:
 
 ### Login.initSession.end
 
-*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php) in line [125](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php#L125)*
+*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php) in line [128](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/SessionInitializer.php#L128)*
 
 
+
+
+### Login.logout
+
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/Controller.php) in line [364](https://github.com/piwik/piwik/blob/2.x-dev/plugins/Login/Controller.php#L364)*
+
+
+
+Callback Signature:
+<pre><code>function(Piwik::getCurrentUserLogin())</code></pre>
 
 ## Measurable
 
