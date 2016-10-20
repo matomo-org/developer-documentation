@@ -28,7 +28,7 @@ Callback Signature:
 
 ### API.$pluginName.$methodName
 
-*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [210](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L210)*
+*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [208](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L208)*
 
 Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/events#apirequestdispatch)
 event is triggered. It can be used to modify the arguments passed to a **single** API method.
@@ -51,7 +51,7 @@ Callback Signature:
 
 ### API.$pluginName.$methodName.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [260](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L260)*
+*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [258](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L258)*
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
 [API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event. It can be used to modify the output of a **single**
@@ -83,7 +83,7 @@ Callback Signature:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [505](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L505)*
+*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [503](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L503)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
 
@@ -133,7 +133,7 @@ Usages:
 
 ### API.Request.dispatch
 
-*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [190](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L190)*
+*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [188](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L188)*
 
 Triggered before an API request is dispatched. This event can be used to modify the arguments passed to one or more API methods.
 
@@ -165,7 +165,7 @@ Usages:
 
 ### API.Request.dispatch.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [300](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L300)*
+*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [298](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L298)*
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
 
