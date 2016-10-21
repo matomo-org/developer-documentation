@@ -114,9 +114,16 @@ If you plan on running automated tests, you'll have to set the following configu
 
 ```ini
 [database_tests]
-password = ...
+host = "127.0.0.1"
 user = ...
+password = ...
 ```
+
+You also may have to create the `piwik_tests` database:
+```
+mysql -u'db_username_here' -p -e 'CREATE DATABASE piwik_tests'
+```
+
 
 ### Add some test data
 
