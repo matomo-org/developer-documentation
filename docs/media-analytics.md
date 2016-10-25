@@ -1,0 +1,20 @@
+---
+category: Integrate
+subGuides:
+  - media-analytics/setup
+  - media-analytics/options
+  - media-analytics/custom-player
+  - media-analytics/faq
+  - media-analytics/reference
+---
+# Media Analytics
+
+This section contains guides that will help you track your video and audio using Piwik. 
+
+[Media Analytics](https://plugins.piwik.org/MediaAnalytics) is a plugin for Piwik that can be purchased 
+on the [Piwik Marketplace](https://plugins.piwik.org/MediaAnalytics).
+It is developed by [InnoCraft](https://www.innocraft.com), the makers of Piwik. 
+If you want to learn more about this plugin we recommend to have a look at the developer guides, 
+the [Media Analytics User Guide](https://piwik.org/docs/media-analytics/), the [Media Analytics FAQs](https://piwik.org/faq/media-analytics/) and the [Media Analytics website](http://www.media-analytics.net).
+
+We recommend to start with the [setting up Media Analytics guide](/media-analytics/setup).

@@ -150,7 +150,19 @@ $app->get('(/)', function () use ($app) {
     $app->render('home.twig', ['isHome' => true]);
 });
 
-$app->get('/guides/:name', function ($name) use ($app) {
+$app->get('/guides/:name1/:name2(/)', function ($name1, $name2) use ($app) {
+    try {
+        $guide = new Guide($name1 . '/' . $name2);
+    } catch (DocumentNotExistException $e) {
+        send404NotFound($app);
+        return;
+    }
+    $category = CategoryList::getCategory($guide->getCategory());
+
+    renderGuide($app, $guide, $category);
+});
+
+$app->get('/guides/:name(/)', function ($name) use ($app) {
     try {
         $guide = new Guide($name);
     } catch (DocumentNotExistException $e) {

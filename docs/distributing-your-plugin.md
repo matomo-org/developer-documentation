@@ -248,7 +248,7 @@ $ git tag 0.1.0
 $ git push origin --tags
 ```
 
-Everytime you push a new tag to your Github repository, a new version of your plugin will become available in the marketplace. Alternatively you can also create the tag by [creating a release](https://help.github.com/articles/creating-releases/) on Github. The name of the tag doesn't matter, the marketplace will always use the version in your `plugin.json` file.
+Every time you push a new tag to your Github repository, a new version of your plugin will become available in the marketplace. Alternatively you can also create the tag by [creating a release](https://help.github.com/articles/creating-releases/) on Github. The name of the tag doesn't matter, the marketplace will always use the version in your `plugin.json` file.
 
 **Assuming all goes well, your plugin should be visible on the marketplace within a couple minutes. Congratulations!**
 
@@ -275,9 +275,9 @@ If you still encounter trouble while publishing your plugin, please join the IRC
 There are some restrictions regarding what can be published on the marketplace. Chances are your plugin is fine, but if we find a plugin that violates one of the following rules, it will be immediately removed:
 
 - Your plugin must not do anything illegal, or be morally offensive.
-- Your plugin's license must be compatible with the [GNU General Public License v3](https://www.gnu.org/copyleft/gpl.html) or any later version. We strongly recommend using the same license as Piwik (*GPLv3 or later*).
+- Free plugins must have their license compatible with the [GNU General Public License v3](https://www.gnu.org/copyleft/gpl.html) or any later version. We strongly recommend using the same license as Piwik (*GPLv3 or later*).
   - **Note:** If you don't specify a license anywhere in your plugin, it is assumed your plugin uses *GPLv3 or later*.
-- Your plugin must not contain obfuscated code. We believe that obfuscated code violates the spirit, if not the letter, of the GPL license under which we operate.
+- Your plugin should not contain obfuscated code. We believe that obfuscated code violates the spirit, if not the letter, of the GPL license under which we operate.
 - No **[phoning home](http://en.wikipedia.org/wiki/Phoning_home)** without the user's informed consent. For the purposes of a Piwik plugin, **phoning home** includes:
   - Unauthorized collection of user data. For example, sending the admin's email address back to your own servers without the user's permission is not allowed; but asking the user for an email address and collecting if they choose to submit it is fine. All actions taken in this respect MUST be of the user's doing, not automatically done by the plugin.
   - All images and scripts shown should be part of the plugin. These should be loaded locally. If the plugin requires data that is loaded from an external website (such as [blocklists](http://en.wikipedia.org/wiki/Blacklist_%28computing%29)) this should be made clear in the plugin's admin screens or its description. The user must be informed of what information is being sent where.

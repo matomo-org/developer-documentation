@@ -11,20 +11,20 @@ This section lists the various query parameters that are supported by the Tracki
 
 _Note: all parameters values that are strings (such as 'url', 'action\_name', etc.) must be URL encoded._
 
-#### Required parameters
+### Required parameters
 
 * `idsite` **(required)** &mdash; The ID of the website we're tracking a visit/action for.
 * `rec` **(required)** &mdash; Required for tracking, must be set to one, eg, `&rec=1`.
 * `url` **(required)** &mdash; The full URL for the current action.
 
-#### Recommended parameters
+### Recommended parameters
 
 * `action_name` **(recommended)** &mdash; The title of the action being tracked. It is possible to [use slashes / to set one or several](http://piwik.org/faq/how-to/#faq_62) [categories for this action](http://piwik.org/faq/how-to/#faq_62). For example, **Help / Feedback** will create the Action **Feedback** in the category **Help**.
 * `_id` **(recommended)** &mdash; The unique visitor ID, must be a 16 characters hexadecimal string. Every unique visitor must be assigned a different ID and this ID must not change after it is assigned. If this value is not set Piwik will still track visits, but the unique visitors metric might be less accurate.
 * `rand` **(recommended)** &mdash; Meant to hold a random value that is generated before each request. Using it helps avoid the tracking request being cached by the browser or a proxy.
 * `apiv` **(recommended)** &mdash; The parameter &amp;apiv=1 defines the api version to use (currently always set to 1)
 
-#### Optional User info 
+### Optional User info 
 
 _(We recommend that these parameters be used if the information is available and relevant to your use case.)_
 
@@ -49,7 +49,7 @@ _(We recommend that these parameters be used if the information is available and
 * `new_visit` &mdash; If set to 1, will force a new visit to be created for this action. This feature is also [available in JavaScript](http://piwik.org/faq/how-to/#faq_187).
 * `dimension[0-999]` &mdash; A Custom Dimension value for a specific Custom Dimension ID (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions) see the [Custom Dimensions guide](https://piwik.org/docs/custom-dimensions/)). If Custom Dimension ID is `2` use `dimension2=dimensionValue` to send a value for this dimension. The configured Custom Dimension has to be in scope "Visit".
    
-#### Optional Action info (measure Page view, Outlink, Download, Site search)
+### Optional Action info (measure Page view, Outlink, Download, Site search)
 
 * `cvar` &mdash; Page scope [custom variables](http://piwik.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
 * `link` &mdash; An external URL the user has opened. Used for tracking outlink clicks. We recommend to also set the **url** parameter to this same value.
@@ -64,13 +64,13 @@ _(We recommend that these parameters be used if the information is available and
 * `cs` &mdash; The charset of the page being tracked. Specify the charset if the data you send to Piwik is encoded in a different character set than the default `utf-8`.
 * `dimension[0-999]` &mdash; A Custom Dimension value for a specific Custom Dimension ID (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions) see the [Custom Dimensions guide](https://piwik.org/docs/custom-dimensions/)). If Custom Dimension ID is `2` use `dimension2=dimensionValue` to send a value for this dimension. The configured Custom Dimension has to be in scope "Action".
 
-#### Optional [Event Tracking](http://piwik.org/docs/event-tracking/) info
+### Optional [Event Tracking](http://piwik.org/docs/event-tracking/) info
 * `e_c` &mdash; The event category. Must not be empty. (eg. Videos, Music, Games...)
 * `e_a` &mdash; The event action. Must not be empty. (eg. Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
 * `e_n` &mdash; The event name.  (eg. a Movie name, or Song name, or File name...)
 * `e_v` &mdash; The event value. Must be a float or integer value (numeric), not a string.
 
-#### Optional [Content Tracking](http://piwik.org/docs/content-tracking/) info
+### Optional [Content Tracking](http://piwik.org/docs/content-tracking/) info
 * `c_n` &mdash; The name of the content. For instance 'Ad Foo Bar'
 * `c_p` &mdash; The actual content piece. For instance the path to an image, video, audio, any text
 * `c_t` &mdash; The target of the content. For instance the URL of a landing page
@@ -78,7 +78,7 @@ _(We recommend that these parameters be used if the information is available and
 
 To track a content impression set `c_n` and optionally `c_p` and `c_t`. To track a content interaction set `c_i` and `c_n` and optionally `c_p` and `c_t`. To map an interaction to an impression make sure to set the same value for `c_n` and `c_p`. It is recommended to set a value for `c_p`.
 
-#### Optional [Ecommerce](http://piwik.org/docs/ecommerce-analytics/) info
+### Optional [Ecommerce](http://piwik.org/docs/ecommerce-analytics/) info
 
 Use the following values to record a cart and/or an ecommerce order.
 
@@ -92,7 +92,7 @@ Use the following values to record a cart and/or an ecommerce order.
 * `ec_dt` &mdash; Discount offered
 * `_ects`  &mdash; The UNIX timestamp of this customer's last ecommerce order. This value is used to process the "Days since last order" report.
 
-#### Other parameters (require authentication via `token_auth`)
+### Other parameters (require authentication via `token_auth`)
 
 The following parameters require that you set `&token_auth=` to the token\_auth value of the Super User or a user with admin access to the website visits are being tracked for.
 
@@ -107,16 +107,26 @@ The following parameters require that you set `&token_auth=` to the token\_auth 
 * `lat` &mdash; An override value for the visitor's latitude, eg _22.456_.
 * `long` &mdash; An override value for the visitor's longitude, eg _22.456_.
 
-#### Other parameters
+### Media Analytics parameters
+
+Analytics for your Media content (video players and audio players) can be recorded 
+using the premium [Media Analytics](https://plugins.piwik.org/MediaAnalytics) plugin's HTTP Tracking API parameters. 
+    
+Activity and consumption of your videos and audios can be measured via the parameters `ma_id`, `ma_ti`, `ma_re`, 
+`ma_mt` , `ma_pn`, `ma_st`, `ma_le`, `ma_ps`, `ma_ttp`, `ma_w`, `ma_h`, `ma_fs`.
+
+Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference).
+
+
+### Other parameters
 
 * `send_image` &mdash; If set to 0 (`send_image=0`) Piwik will respond with a HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Piwik 2.10.0
 
+## Tracking Bots
 
-### Tracking Bots
+By default Piwik does not track bots. If you use the Tracking HTTP API directly, you may be interested in tracking bot requests. To enable Bot Tracking in Piwik, set the parameter `&bots=1` in your requests to piwik.php.
 
-By default Piwik does not track bots. If you use the Tracking HTTP API directly, you may be interested in tracking bot requests. To enable Bot Tracking in Piwik, set the parameter &**bots**=1 in your requests to piwik.php.
-
-### Example Tracking Request
+## Example Tracking Request
 
 Here is an example of a real tracking request used by the [Piwik Mobile app](http://piwik.org/mobile/) when anonymously tracking Mobile App usage:
 
@@ -126,7 +136,7 @@ _Note: for clarity, parameter values are not URL encoded in this example._
 
 **Explanation:** this URL has custom variables for the OS, Piwik version, number of accounts created. It tracks an event named **View settings** with a fake URL, records the screen resolution and also includes a custom unique ID generated to ensure all requests for the same Mobile App user will be recorded for the same visit in Piwik.
 
-### Bulk Tracking
+## Bulk Tracking
 
 Some applications such as the [Piwik log importer](http://piwik.org/log-analytics/), have to track many visits, sometimes tens, hundreds, thousands or even more all at once. Tracking these requests with one HTTP request per visit or action can result in _enormous_ delays due to the amount of time it takes to send an HTTP request, Using the bulk tracking feature, however, these requests can be sent all at once making the application far more efficient.
 
@@ -136,7 +146,7 @@ To send a bulk tracking request, an HTTP POST must be made with a JSON object to
   * Note that for Piwik to store your tracking data accurately, your tracking requests should be sent in chronological order (the oldest requests should appear first).
 * `token_auth` &mdash; (optional) token_auth which is found in the API page. Specify this only needed if you use any of the parameters that require `token_auth`
 
-### Example Requests
+### Example Bulk Requests
 
 This is an example of the payload of a bulk tracking request:
 
