@@ -5,20 +5,20 @@ category: Integrate
 
 This page is the Developer FAQ for [Media Analytics](http://www.media-analytics.net/). You may also be interested in the [Media Analytics User FAQs](https://piwik.org/faq/media-analytics/).
 
-## How do I enable video analytics for Youtube videos?__
+## How do I enable video analytics for Youtube videos? 
 
 You need to add `&enablejsapi=1` to the Youtube URLs: [read more about setting up Youtube Analytics](/guides/media-analytics/setup#tracking-youtube-videos).
 
-## How do I enable video analytics for Vimeo videos?__
+## How do I enable video analytics for Vimeo videos? 
 
 Vimeo videos will be tracked by default if you use `<iframe>` embed code: [learn more about setting up Vimeo Analytics](/guides/media-analytics/setup#tracking-vimeo-videos).
 
-## How do I enable HTML5 video analytics, and/or HTML5 audio analytics?__
+## How do I enable HTML5 video analytics, and/or HTML5 audio analytics? 
 
 HTML5 videos and audio will be tracked by default, giving you a wide range of analytics reports for your HTML5 `<video>` and `<audio>` elements.
 Learn more about [HTML5 video analytics](/guides/media-analytics/setup#tracking-html5-videos) and [HTML5 Audio analytics](/guides/media-analytics/setup#tracking-html5-audios).  
 
-## I have a single page website or a web application, how can I re-scan the DOM to find new media that was added after the initial page load for example via Ajax / XHR?__
+## I have a single page website or a web application, how can I re-scan the DOM to find new media that was added after the initial page load for example via Ajax / XHR? 
 
 You can re-scan the entire document for new media like this:
 
@@ -34,7 +34,7 @@ var updatedElement = document.getElementById('justUpdatedElement');
 _paq.push(['MediaAnalytics::scanForMedia', updatedElement]);
 ```
  
-## As a developer I want to see more details about the logged data, is it possible?__
+## As a developer I want to see more details about the logged data, is it possible? 
 
 Yes, you can enable the debug mode by calling the following method:
 
@@ -45,7 +45,7 @@ _paq.push(['MediaAnalytics::enableDebugMode']);
 Calling this method will start logging all tracking requests and some more information to the developer 
 console of your browser. 
 
-## Is it possible to change the ping interval when a media is played?__ 
+## Is it possible to change the ping interval when a media is played?  
 
 Yes, it is possible by calling the method `setPingInterval`. By default, an update is sent every 5 seconds. 
 Sending the ping more frequently can be useful to get a bit more accurate statistics, sending it less frequently can
@@ -58,7 +58,7 @@ _paq.push(['MediaAnalytics::setPingInterval', intervalInSeconds]);
 
 Make sure to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X'])`.
 
-## Using MediaAnalytics when using multiple Piwik JavaScript trackers
+## How do I setup media analytics when using multiple Piwik JavaScript trackers?
 
 Piwik lets you track a website into different Piwik installations or into different Piwik websites. Learn more about 
 using [Multiple Piwik trackers on the JavaScript Tracking guide](/guides/tracking-javascript-guide#multiple-piwik-trackers).
