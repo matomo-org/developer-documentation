@@ -106,6 +106,16 @@ The following parameters require that you set `&token_auth=` to the token\_auth 
 * `lat` &mdash; An override value for the visitor's latitude, eg _22.456_.
 * `long` &mdash; An override value for the visitor's longitude, eg _22.456_.
 
+### Media Analytics parameters
+
+Analytics for your Media content (video players and audio players) can be recorded 
+using the premium [Media Analytics](https://plugins.piwik.org/MediaAnalytics) plugin's HTTP Tracking API parameters. 
+    
+Activity and consumption of your videos and audios can be measured via the parameters `ma_id`, `ma_ti`, `ma_re`, 
+`ma_mt` , `ma_pn`, `ma_st`, `ma_le`, `ma_ps`, `ma_ttp`, `ma_w`, `ma_h`, `ma_fs`.
+
+Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference).
+
 #### Other parameters
 
 * `send_image` &mdash; If set to 0 (`send_image=0`) Piwik will respond with a HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Piwik 2.10.0

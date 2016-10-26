@@ -29,7 +29,9 @@ class IntegrateCategory extends Category
             new Guide('integrate-introduction'),
             new Guide('tracking-introduction'),
             new Guide('reporting-introduction'),
-            new RemoteLink('Integrations', 'http://piwik.org/integrate/'),
+            new RemoteLink('Integrations', 'https://piwik.org/integrate/'),
+            new Guide('ab-tests'),
+            new Guide('media-analytics'),
         ];
     }
 
