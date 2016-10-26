@@ -10,11 +10,10 @@ subGuides:
 
 This section contains guides that will help you run experiments (A/B tests) on your websites and apps using Piwik.
 
-[A/B Testing](https://plugins.piwik.org/AbTesting) is a plugin for Piwik that can be purchased on 
+[A/B Testing](http://www.ab-tests.net/) is a plugin for Piwik that can be purchased on 
 the [Piwik Marketplace](https://plugins.piwik.org/AbTesting). It is developed by [InnoCraft](https://www.innocraft.com), 
 the makers of Piwik. If you want to learn more about this plugin we recommend to have a look at the developer guides, 
-the [A/B Testing User Guide](https://piwik.org/docs/ab-testing/), the [A/B Testing FAQs](https://piwik.org/faq/ab-testing/)
-and the [A/B testing website](http://www.ab-tests.net/).
+the [A/B Testing User Guide](https://piwik.org/docs/ab-testing/) and the [A/B Testing FAQs](https://piwik.org/faq/ab-testing/).
 
 An A/B test lets you compare different versions and see which variation makes you more successful. 
 A/B tests are also known as experiments or split tests. In an A/B test you show two or more different variations to your 
