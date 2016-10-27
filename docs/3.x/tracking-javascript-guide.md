@@ -316,6 +316,17 @@ Please note once a Custom Dimension is set, the value will be used for all follo
 inaccurate results if this is not wanted. For example if you track a page view, the Custom Dimension value will be as well tracked for each following event, outlink, download, etc. within the same page load. Calling this method will not actually trigger a tracking request, instead the values will be sent along with the following tracking requests. To delete a Custom Dimension value after a tracking request call
 `_paq.push(['deleteCustomDimension', customDimensionId]);`
 
+#### Setting a custom dimension for the initial page view
+
+To set a custom dimension for the initial page view, make sure to position the method call `setCustomDimension` before `trackPageView`:
+
+```javascript
+_paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = 'Member']);
+_paq.push(['trackPageview']);
+// _paq.push(['enableLinkTracking']);
+// rest of tracking code
+```
+
 ### Tracking a Custom Dimension for one specific action only
 
 It is possible to set a Custom Dimension for one specific action only. If you want to track a Page view, you can send one or more specific Custom Dimension values along with this tracking request as follows:
