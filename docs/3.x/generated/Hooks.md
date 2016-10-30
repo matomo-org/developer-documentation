@@ -929,6 +929,41 @@ Callback Signature:
 
 - array `$visitorRawData` Raw data using in Visitor object constructor.
 
+## Login
+
+- [Login.authenticate](#loginauthenticate)
+- [Login.authenticate.failed](#loginauthenticatefailed)
+- [Login.logout](#loginlogout)
+
+### Login.authenticate
+
+*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php) in line [137](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php#L137)*
+
+
+
+Callback Signature:
+<pre><code>function($auth-&gt;getLogin())</code></pre>
+
+
+### Login.authenticate.failed
+
+*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php) in line [118](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php#L118)*
+
+
+
+Callback Signature:
+<pre><code>function($auth-&gt;getLogin())</code></pre>
+
+
+### Login.logout
+
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/Controller.php) in line [364](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/Controller.php#L364)*
+
+
+
+Callback Signature:
+<pre><code>function(Piwik::getCurrentUserLogin())</code></pre>
+
 ## MeasurableSettings
 
 - [MeasurableSettings.updated](#measurablesettingsupdated)
