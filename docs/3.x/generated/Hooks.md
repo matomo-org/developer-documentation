@@ -51,7 +51,7 @@ Callback Signature:
 
 ### API.$pluginName.$methodName.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [258](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L258)*
+*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [266](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L266)*
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
 [API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event. It can be used to modify the output of a **single**
@@ -83,7 +83,7 @@ Callback Signature:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [503](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L503)*
+*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [511](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L511)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
 
@@ -165,7 +165,7 @@ Usages:
 
 ### API.Request.dispatch.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [298](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L298)*
+*Defined in [Piwik/API/Proxy](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php) in line [306](https://github.com/piwik/piwik/blob/3.x-dev/core/API/Proxy.php#L306)*
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
 
