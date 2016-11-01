@@ -503,7 +503,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [480](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L480)*
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [496](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L496)*
 
 Triggered after Piwik has been updated.
 
@@ -2081,17 +2081,43 @@ Usages:
 
 ## Updater
 
+- [Updater.componentInstalled](#updatercomponentinstalled)
+- [Updater.componentUninstalled](#updatercomponentuninstalled)
 - [Updater.componentUpdated](#updatercomponentupdated)
+
+### Updater.componentInstalled
+
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [103](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L103)*
+
+Event triggered after a new component has been installed.
+
+Callback Signature:
+<pre><code>function($name)</code></pre>
+
+- string `$name` The component that has been installed.
+
+
+### Updater.componentUninstalled
+
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [153](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L153)*
+
+Event triggered after a component has been uninstalled.
+
+Callback Signature:
+<pre><code>function($name)</code></pre>
+
+- string `$name` The component that has been uninstalled.
+
 
 ### Updater.componentUpdated
 
-*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [310](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L310)*
+*Defined in [Piwik/Updater](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php) in line [131](https://github.com/piwik/piwik/blob/3.x-dev/core/Updater.php#L131)*
 
-Event triggered after a component has been updated. Can be used to handle stuff that should be done after a component was updated
+Event triggered after a component has been updated. Can be used to handle logic that should be done after a component was updated
 
 **Example**
 
-    Piwik::addAction('Updater.componentUpdated', function ($componentName, $updatedVersion, $warningMessages) {
+    Piwik::addAction('Updater.componentUpdated', function ($componentName, $updatedVersion) {
          $mail = new Mail();
          $mail->setDefaultFromPiwik();
          $mail->addTo('test@example.org');
@@ -2100,21 +2126,16 @@ Event triggered after a component has been updated. Can be used to handle stuff 
              'Component %1$s has been updated to version %2$s',
              $componentName, $updatedVersion
          );
-         if (!empty($warningMessages)) {
-             $message .= "Some warnings occured:\n" . implode("\n", $warningMessages);
-         }
          $mail->setBodyText($message);
          $mail->send();
     });
 
 Callback Signature:
-<pre><code>function($componentName, $updatedVersion, $warningMessages)</code></pre>
+<pre><code>function($name, $version)</code></pre>
 
-- string `$componentName` 'core', or plugin name
+- string `$componentName` 'core', plugin name or dimension name
 
 - string `$updatedVersion` version updated to
-
-- array `$warningMessages` warnings occurred during update
 
 Usages:
 
