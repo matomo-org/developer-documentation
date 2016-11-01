@@ -25,7 +25,7 @@ the YouTube or Vimeo video title. A `data-piwik-title` always has the highest pr
 received from a media player.
 
 ```html
-<video data-piwik-name="My custom Video title" title="A different title"></video>
+<video data-piwik-title="My custom Video title" title="A different title"></video>
 ```
 
 In the above example your video analytics reports in Piwik will show "My custom Video title" as the media title. 
