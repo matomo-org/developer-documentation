@@ -63,6 +63,41 @@ Make sure to call this method as early as possible, for example just after `_paq
 Piwik lets you track a website into different Piwik installations or into different Piwik websites. Learn more about 
 using [Multiple Piwik trackers on the JavaScript Tracking guide](/guides/tracking-javascript-guide#multiple-piwik-trackers).
 
+If you are using the regular `_paq.push` tracking method, everything will work out of the box when you create more trackers 
+via `_paq.push(['addTracker', url, idsite]);`. Using `_paq.push` for multiple trackers is a good and simple way when you want
+ to track the same data into different Piwik installations or into different Piwik websites.
+
+```js
+// configuration of first tracker
+_paq.push(['setTrackerUrl', 'http://example.com/piwik.php']);
+_paq.push(['setSiteId', 1]);
+// configuration of second tracker
+_paq.push(['addTracker', 'http://example.com/piwik.php', 2]);
+```
+
+If you are working with Piwik tracker instances because you want to configure each tracker instance differently and track
+different data into each Piwik, you need to set the tracker instances manually:
+
+```js
+window.piwikAsyncInit = function () {
+    // This works from Piwik 2.17.1. Before 2.17.1 you need to define a method
+    // `window.piwikMediaAnalyticsAsyncInit` instead of `window.piwikAsyncInit`.
+    
+    var piwikTracker1 = Piwik.getTracker('http://example.com/piwik.php', 1);
+    var piwikTracker2 = Piwik.getTracker('http://example.com/piwik.php', 2);
+    var piwikTracker3 = Piwik.getTracker('http://example.com/piwik.php', 3);
+
+    Piwik.MediaAnalytics.setPiwikTrackers([piwikTracker1, piwikTracker2, piwikTracker3]);
+
+    // Media Analytics tracking is enabled by default, you can customize the tracking like this:
+    piwikTracker2.MediaAnalytics.disableTrackProgress();
+    piwikTracker3.MediaAnalytics.disableTrackEvents();
+}
+```
+
+It is important to define these methods before the Piwik tracker file is loaded. Otherwise your `piwikAsyncInit` 
+or `piwikMediaAnalyticsAsyncInit` method will be never called.
+
 ## Is it possible to not use the "paq.push" methods and instead call the MediaAnalytics tracker methods directly?
 
 Yes. To initialize the Media tracker you need to define a callback method `window.piwikMediaAnalyticsAsyncInit`
