@@ -298,7 +298,6 @@ Index
 - [`getDataTable()`](Piwik/Archive.md#getdatatable) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`getDataTableExpanded()`](Piwik/Archive.md#getdatatableexpanded) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`getParams()`](Piwik/Archive.md#getparams) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
-- [`getDataTableFromArchive()`](Piwik/Archive.md#getdatatablefromarchive) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`getParams()`](Piwik/ArchiveProcessor.md#getparams) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getLogAggregator()`](Piwik/ArchiveProcessor.md#getlogaggregator) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)

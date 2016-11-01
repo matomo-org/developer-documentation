@@ -16,7 +16,7 @@ class. (See [Metrics](/api-reference/Piwik/Metrics) for more information about i
     // filter use in a plugin's API method
     public function getMyReport($idSite, $period, $date, $segment = false, $expanded = false)
     {
-        $dataTable = Archive::getDataTableFromArchive('MyPlugin_MyReport', $idSite, $period, $date, $segment, $expanded);
+        $dataTable = Archive::createDataTableFromArchive('MyPlugin_MyReport', $idSite, $period, $date, $segment, $expanded);
         $dataTable->queueFilter('ReplaceColumnNames');
         return $dataTable;
     }
