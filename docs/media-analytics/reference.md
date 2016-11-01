@@ -88,6 +88,18 @@ Allows you to detect whether the tracking of media is currently enabled. Returns
 Enables the debug mode that logs debug information to the developer console of your browser. This should **not** be 
 enabled in production.
 
+### `setPiwikTrackers()`
+
+Allows you to set the tracker instances the tracker should use when tracking the progress and events of Media. Can be either
+ a single tracker instance, or an array of Piwik tracker instances. This is useful when you are working with multiple Piwik
+ tracker instances using `Piwik.getTracker` instead of `Piwik.addTracker`. 
+ 
+### `getPiwikTrackers()`
+
+Returns an array of Piwik tracker instances that are used by the Media Analytics plugin. By default, this will return the same
+as `Piwik.getAsyncTrackers()` and will return all tracker instances that were created eg via `Piwik.addTracker` or 
+`_paq.push(['addTracker'])` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
+
 ### `mediaType`
 
 The `mediaType` property defines constants that are useful when you track the usage of a [custom media player](/guides/media-analytics/custom-player)
