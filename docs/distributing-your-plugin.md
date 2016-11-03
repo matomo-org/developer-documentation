@@ -5,13 +5,14 @@ category: Develop
 
 [**Piwik's Plugin Marketplace**](http://plugins.piwik.org) is the main way to download and install third-party plugins.
 
-Every instance of Piwik running version 2.0 or greater is able to directly download and install plugins from the marketplace. **Making your plugin available on the marketplace is the best way for you to get your plugin out into the hands of Piwik users.**
+Every instance of Piwik running version 2.0 or greater is able to directly download and install plugins from the marketplace. **Making your plugin available on the marketplace is the best way for you to get your plugin out into the hands of Piwik users.** 
 
 It's also a great way for you to:
 
 * get user feedback via email or the Github issue tracker
 * see how many people use your plugin
 * allow people to donate money
+* allow people to buy your plugin ([get in touch](https://piwik.org/contact/marketplace/))
 * allow people to get in touch with you to get help or to report bugs and features
 * get exposure for your skills and work
 
