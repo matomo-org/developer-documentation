@@ -322,7 +322,7 @@ To set a custom dimension for the initial page view, make sure to position the m
 
 ```javascript
 _paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = 'Member']);
-_paq.push(['trackPageview']);
+_paq.push(['trackPageView']);
 // _paq.push(['enableLinkTracking']);
 // rest of tracking code
 ```
