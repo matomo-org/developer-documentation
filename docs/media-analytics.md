@@ -17,4 +17,4 @@ It is developed by [InnoCraft](https://www.innocraft.com), the makers of Piwik.
 If you want to learn more about this plugin we recommend to have a look at the developer guides, 
 the [Media Analytics User Guide](https://piwik.org/docs/media-analytics/) and the [Media Analytics FAQs](https://piwik.org/faq/media-analytics/).
 
-We recommend to start with the [setting up Media Analytics guide](/media-analytics/setup).
+We recommend to start with the [setting up Media Analytics guide](/guides/media-analytics/setup).
