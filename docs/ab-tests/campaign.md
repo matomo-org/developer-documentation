@@ -9,7 +9,7 @@ affect the browsing behaviour and conversion rates on your website.
 
 For example you could run three different ad campaigns and not only see which campaign gets clicked more often 
 but also which campaigns actually converts better once the visitors are on your website. Or maybe you want to send 
-different newsletters to your users and compare how they affect the browsing behaviour on your website?
+different newsletters to your users and compare how they affect the browsing behaviour on your website. We will learn how to create an experiment and implement it in your marketing email campaign in order to compare your ad campaigns and detect the winning versions.
  
 ## Creating an experiment
 
