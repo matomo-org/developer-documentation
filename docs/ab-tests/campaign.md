@@ -4,12 +4,10 @@ title: Campaigns & Email Marketing
 ---
 # Running an A/B test experiment in a Marketing campaign eg. banner ad campaign or email marketing
 
-This guide covers how to run A/B tests in Marketing campaigns to analyze how different email and ad campaigns
-affect the browsing behaviour and conversion rates on your website. 
+Learn how to run A/B tests in your Marketing campaigns to analyze how different email and ad campaigns
+affect the browsing behaviour and conversion rates on your website. For example you could run three different ad campaigns and not only see which campaign gets clicked more often but also which campaigns actually converts better once the visitors are on your website. Or maybe you want to send different newsletters to your users and compare how they affect the browsing behaviour on your website. 
 
-For example you could run three different ad campaigns and not only see which campaign gets clicked more often 
-but also which campaigns actually converts better once the visitors are on your website. Or maybe you want to send 
-different newsletters to your users and compare how they affect the browsing behaviour on your website. We will learn how to create an experiment and implement it in your marketing email campaign in order to compare your ad campaigns and detect the winning versions.
+In this guide you will learn how to create an experiment and implement it in your marketing email campaign, to let A/B Testing compare your campaigns and detect the better performing and winning variation.
  
 ## Creating an experiment
 
