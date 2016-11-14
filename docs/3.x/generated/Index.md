@@ -1019,7 +1019,8 @@ Index
 - [`walkPath()`](Piwik/DataTable.md#walkpath) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`warning()`](Piwik/Log.md#warning) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`weekly()`](Piwik/Plugin/Tasks.md#weekly) &mdash; *Method in class* [`Tasks`](Piwik/Plugin/Tasks.md)
-- [`Weekly`](Piwik/Scheduler/Schedule/Weekly.md) &mdash; *Class in namespace* `Piwik\Scheduler\Schedule`- [`Widget`](Piwik/Widget/Widget.md) &mdash; *Class in namespace* `Piwik\Widget`- [`WidgetConfig`](Piwik/Widget/WidgetConfig.md) &mdash; *Class in namespace* `Piwik\Widget`- [`WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md) &mdash; *Class in namespace* `Piwik\Widget`- [`WidgetsList`](Piwik/Widget/WidgetsList.md) &mdash; *Class in namespace* `Piwik\Widget`
+- [`Weekly`](Piwik/Scheduler/Schedule/Weekly.md) &mdash; *Class in namespace* `Piwik\Scheduler\Schedule`- [`willBeArchived()`](Piwik/Segment.md#willbearchived) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
+- [`Widget`](Piwik/Widget/Widget.md) &mdash; *Class in namespace* `Piwik\Widget`- [`WidgetConfig`](Piwik/Widget/WidgetConfig.md) &mdash; *Class in namespace* `Piwik\Widget`- [`WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md) &mdash; *Class in namespace* `Piwik\Widget`- [`WidgetsList`](Piwik/Widget/WidgetsList.md) &mdash; *Class in namespace* `Piwik\Widget`
 ## Y
 
 - [`yesterday()`](Piwik/Date.md#yesterday) &mdash; *Method in class* [`Date`](Piwik/Date.md)

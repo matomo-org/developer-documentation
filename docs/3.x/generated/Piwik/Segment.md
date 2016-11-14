@@ -44,6 +44,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`isEmpty()`](#isempty) &mdash; Returns `true` if the segment is empty, `false` if otherwise.
+- [`willBeArchived()`](#willbearchived) &mdash; Detects whether the Piwik instance is configured to be able to archive this segment.
 - [`getString()`](#getstring) &mdash; Returns the segment condition.
 - [`getHash()`](#gethash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
 - [`getSelectQuery()`](#getselectquery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
@@ -72,6 +73,23 @@ Returns `true` if the segment is empty, `false` if otherwise.
 #### Signature
 
 - It does not return anything.
+
+<a name="willbearchived" id="willbearchived"></a>
+<a name="willBeArchived" id="willBeArchived"></a>
+### `willBeArchived()`
+
+Detects whether the Piwik instance is configured to be able to archive this segment.
+
+It checks whether the segment
+will be either archived via browser or cli archiving. It does not check if the segment has been archived. If you
+want to know whether the segment has been archived, the actual report data needs to be requested.
+
+This method does not take any date/period into consideration. Meaning a Piwik instance might be able to archive
+this segment in general, but not for a certain period if eg the archiving of range dates is disabled.
+
+#### Signature
+
+- It returns a `bool` value.
 
 <a name="getstring" id="getstring"></a>
 <a name="getString" id="getString"></a>
