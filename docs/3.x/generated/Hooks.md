@@ -1054,7 +1054,7 @@ Usages:
 
 ### Piwik.getJavascriptCode
 
-*Defined in [Piwik/Tracker/TrackerCodeGenerator](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php) in line [151](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php#L151)*
+*Defined in [Piwik/Tracker/TrackerCodeGenerator](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php) in line [154](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php#L154)*
 
 Triggered when generating JavaScript tracking code server side. Plugins can use
 this event to customise the JavaScript tracking code that is displayed to the
@@ -1802,7 +1802,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [654](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L654)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [655](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L655)*
 
 Triggered after a site has been added.
 
@@ -1814,7 +1814,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [754](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L754)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [755](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L755)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -1832,7 +1832,7 @@ Usages:
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [162](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L162)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [163](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L163)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
