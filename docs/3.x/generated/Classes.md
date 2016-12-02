@@ -9,6 +9,7 @@ This is a complete list of available classes:
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.
 - [`AuthResult`](Piwik/AuthResult.md) &mdash; Authentication result.
+- [`Auth\Password`](Piwik/Auth/Password.md) &mdash; Main class to handle actions related to password hashing and verification.
 - [`Category\Subcategory`](Piwik/Category/Subcategory.md) &mdash; Base type for subcategories.
 - [`Columns\Dimension`](Piwik/Columns/Dimension.md)
 - [`Columns\Updater`](Piwik/Columns/Updater.md) &mdash; Class that handles dimension updates

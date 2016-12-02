@@ -7,6 +7,7 @@ This is a complete list of available namespaces:
 - [`Piwik`](Piwik)
 - [`Piwik\API`](Piwik/API)
 - [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor)
+- [`Piwik\Auth`](Piwik/Auth)
 - [`Piwik\Category`](Piwik/Category)
 - [`Piwik\Columns`](Piwik/Columns)
 - [`Piwik\DataAccess`](Piwik/DataAccess)

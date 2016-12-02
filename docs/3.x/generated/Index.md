@@ -612,6 +612,7 @@ Index
 ## H
 
 - [`hasSuperUserAccess()`](Piwik/AuthResult.md#hassuperuseraccess) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
+- [`hash()`](Piwik/Auth/Password.md#hash) &mdash; *Method in class* [`Password`](Piwik/Auth/Password.md)
 - [`hasColumn()`](Piwik/DataTable/Row.md#hascolumn) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`Http`](Piwik/Http.md) &mdash; *Class in namespace* `Piwik`- [`Html`](Piwik/Metrics/Formatter/Html.md) &mdash; *Class in namespace* [`Piwik\Metrics\Formatter`](Piwik/Metrics/Formatter)- [`hasNoClear()`](Piwik/Notification.md#hasnoclear) &mdash; *Method in class* [`Notification`](Piwik/Notification.md)
 - [`hasUserSuperUserAccessOrIsTheUser()`](Piwik/Piwik.md#hasusersuperuseraccessoristheuser) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
@@ -630,6 +631,7 @@ Index
 - [`insertNumericRecords()`](Piwik/ArchiveProcessor.md#insertnumericrecords) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertNumericRecord()`](Piwik/ArchiveProcessor.md#insertnumericrecord) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertBlobRecord()`](Piwik/ArchiveProcessor.md#insertblobrecord) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
+- [`info()`](Piwik/Auth/Password.md#info) &mdash; *Method in class* [`Password`](Piwik/Auth/Password.md)
 - [`isEqual()`](Piwik/DataTable.md#isequal) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`isSubtableLoaded()`](Piwik/DataTable/Row.md#issubtableloaded) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`isSummaryRow()`](Piwik/DataTable/Row.md#issummaryrow) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
@@ -730,6 +732,7 @@ Index
 
 ## N
 
+- [`needsRehash()`](Piwik/Auth/Password.md#needsrehash) &mdash; *Method in class* [`Password`](Piwik/Auth/Password.md)
 - [`now()`](Piwik/Date.md#now) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`NoAccessException`](Piwik/NoAccessException.md) &mdash; *Class in namespace* `Piwik`- [`Nonce`](Piwik/Nonce.md) &mdash; *Class in namespace* `Piwik`- [`Notification`](Piwik/Notification.md) &mdash; *Class in namespace* `Piwik`- [`notify()`](Piwik/Notification/Manager.md#notify) &mdash; *Method in class* [`Manager`](Piwik/Notification/Manager.md)
 - [`$name`](Piwik/Plugin/Report.md#$name) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
@@ -758,7 +761,7 @@ Index
 
 - [`process()`](Piwik/API/Request.md#process) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`processRequest()`](Piwik/API/Request.md#processrequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
-- [`Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; *Class in namespace* [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor)- [`prefixTable()`](Piwik/Common.md#prefixtable) &mdash; *Method in class* [`Common`](Piwik/Common.md)
+- [`Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; *Class in namespace* [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor)- [`Password`](Piwik/Auth/Password.md) &mdash; *Class in namespace* [`Piwik\Auth`](Piwik/Auth)- [`prefixTable()`](Piwik/Common.md#prefixtable) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`prependPlusSignToNumber()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#prependplussigntonumber) &mdash; *Method in class* [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
 - [`Pattern`](Piwik/DataTable/Filter/Pattern.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`PrependSegment`](Piwik/DataTable/Filter/PrependSegment.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`PrependValueToMetadata`](Piwik/DataTable/Filter/PrependValueToMetadata.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`$priority`](Piwik/Notification.md#$priority) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
 - [`Period`](Piwik/Period.md) &mdash; *Class in namespace* `Piwik`- [`parseDateRange()`](Piwik/Period/Range.md#parsedaterange) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
@@ -1008,6 +1011,7 @@ Index
 - [`Updater`](Piwik/Updater.md) &mdash; *Class in namespace* `Piwik`- [`Updates`](Piwik/Updates.md) &mdash; *Class in namespace* `Piwik`- [`Url`](Piwik/Url.md) &mdash; *Class in namespace* `Piwik`- [`UrlHelper`](Piwik/UrlHelper.md) &mdash; *Class in namespace* `Piwik`- [`UIControl`](Piwik/View/UIControl.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)
 ## V
 
+- [`verify()`](Piwik/Auth/Password.md#verify) &mdash; *Method in class* [`Password`](Piwik/Auth/Password.md)
 - [`verbose()`](Piwik/Log.md#verbose) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`verifyNonce()`](Piwik/Nonce.md#verifynonce) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
 - [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md) &mdash; *Class in namespace* `Piwik\Plugin\Dimension`- [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`Visualization`](Piwik/Plugin/Visualization.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`verifyCredential()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#verifycredential) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)

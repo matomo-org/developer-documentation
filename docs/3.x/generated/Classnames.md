@@ -5,6 +5,7 @@
 ## ArchiveProcessor
 ## ArchiveProcessor\Parameters
 ## AuthResult
+## Auth\Password
 ## Category\Subcategory
 ## Columns\Dimension
 ## Columns\Updater
