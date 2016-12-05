@@ -509,7 +509,7 @@ Triggered after Piwik has been updated.
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 ## CronArchive
 
@@ -558,7 +558,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 
 ### CronArchive.filterWebsiteIds
@@ -1113,7 +1113,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 
 ### PluginManager.pluginDeactivated
@@ -1129,7 +1129,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 
 ### PluginManager.pluginInstalled
@@ -1145,7 +1145,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 
 ### PluginManager.pluginUninstalled
@@ -1161,7 +1161,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 ## Provider
 
@@ -2139,7 +2139,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L29)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 ## User
 
