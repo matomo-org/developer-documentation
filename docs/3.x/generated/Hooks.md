@@ -1074,7 +1074,7 @@ Callback Signature:
 
 ### Platform.initialized
 
-*Defined in [Piwik/Plugins/Widgetize/tests/Integration/WidgetTest](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/tests/System/WidgetTest.php) in line [64](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/tests/System/WidgetTest.php#L64)*
+*Defined in [Piwik/Plugins/Widgetize/tests/Integration/WidgetTest](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/tests/System/WidgetTest.php) in line [63](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/tests/System/WidgetTest.php#L63)*
 
 
 
