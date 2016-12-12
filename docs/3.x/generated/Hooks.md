@@ -1802,7 +1802,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [655](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L655)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [651](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L651)*
 
 Triggered after a site has been added.
 
@@ -1814,7 +1814,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [755](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L755)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [758](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L758)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -1832,7 +1832,7 @@ Usages:
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [163](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L163)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php) in line [167](https://github.com/piwik/piwik/blob/3.x-dev/plugins/SitesManager/API.php#L167)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
