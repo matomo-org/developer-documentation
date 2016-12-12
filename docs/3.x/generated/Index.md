@@ -53,6 +53,7 @@ Index
 - [`addLabelColumn()`](Piwik/RankingQuery.md#addlabelcolumn) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`addColumn()`](Piwik/RankingQuery.md#addcolumn) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`$availableValues`](Piwik/Settings/FieldConfig.md#$availablevalues) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
+- [`addSetting()`](Piwik/Settings/Settings.md#addsetting) &mdash; *Method in class* [`Settings`](Piwik/Settings/Settings.md)
 - [`addDirectory()`](Piwik/Translation/Translator.md#adddirectory) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`addColumn()`](Piwik/Updater/Migration/Db/Factory.md#addcolumn) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
 - [`addColumns()`](Piwik/Updater/Migration/Db/Factory.md#addcolumns) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
