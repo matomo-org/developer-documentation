@@ -133,6 +133,7 @@ Index
 - [`createWidget()`](Piwik/Report/ReportWidgetFactory.md#createwidget) &mdash; *Method in class* [`ReportWidgetFactory`](Piwik/Report/ReportWidgetFactory.md)
 - [`createContainerWidget()`](Piwik/Report/ReportWidgetFactory.md#createcontainerwidget) &mdash; *Method in class* [`ReportWidgetFactory`](Piwik/Report/ReportWidgetFactory.md)
 - [`createCustomWidget()`](Piwik/Report/ReportWidgetFactory.md#createcustomwidget) &mdash; *Method in class* [`ReportWidgetFactory`](Piwik/Report/ReportWidgetFactory.md)
+- [`$customUiControlTemplateFile`](Piwik/Settings/FieldConfig.md#$customuicontroltemplatefile) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$condition`](Piwik/Settings/FieldConfig.md#$condition) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`clearCache()`](Piwik/Site.md#clearcache) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`clearCacheForSite()`](Piwik/Site.md#clearcacheforsite) &mdash; *Method in class* [`Site`](Piwik/Site.md)

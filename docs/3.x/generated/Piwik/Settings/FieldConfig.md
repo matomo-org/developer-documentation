@@ -78,6 +78,7 @@ Properties
 This class defines the following properties:
 
 - [`$uiControl`](#$uicontrol) &mdash; Describes what HTML element should be used to manipulate the setting through Piwik's UI.
+- [`$customUiControlTemplateFile`](#$customuicontroltemplatefile) &mdash; Defines a custom template file for a UI control.
 - [`$uiControlAttributes`](#$uicontrolattributes) &mdash; Name-value mapping of HTML attributes that will be added HTML form control, eg, `array('size' => 3)`.
 - [`$availableValues`](#$availablevalues) &mdash; The list of all available values for this setting.
 - [`$introduction`](#$introduction) &mdash; Text that will appear above this setting's section in the _Plugin Settings_ admin page.
@@ -95,6 +96,19 @@ This class defines the following properties:
 Describes what HTML element should be used to manipulate the setting through Piwik's UI.
 
 See Piwik\Plugin\Settings for a list of supported control types.
+
+#### Signature
+
+- It is a `string` value.
+
+<a name="$customuicontroltemplatefile" id="$customuicontroltemplatefile"></a>
+<a name="customUiControlTemplateFile" id="customUiControlTemplateFile"></a>
+### `$customUiControlTemplateFile`
+
+Defines a custom template file for a UI control.
+
+This file should render a UI control and expose the value in a
+"formField.value" angular model. For an example see "plugins/CorePluginsAdmin/angularjs/form-field/field-text.html"
 
 #### Signature
 
