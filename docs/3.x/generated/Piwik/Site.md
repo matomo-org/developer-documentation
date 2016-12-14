@@ -76,6 +76,8 @@ Constructor.
 -  It accepts the following parameter(s):
     - `$idsite` (`int`) &mdash;
        The ID of the site we want data for.
+- It throws one of the following exceptions:
+    - `UnexpectedWebsiteFoundException`
 
 <a name="setsites" id="setsites"></a>
 <a name="setSites" id="setSites"></a>
