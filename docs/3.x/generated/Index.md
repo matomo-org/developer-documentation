@@ -976,6 +976,7 @@ Index
 - [`setIsWide()`](Piwik/Widget/WidgetConfig.md#setiswide) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`setId()`](Piwik/Widget/WidgetContainerConfig.md#setid) &mdash; *Method in class* [`WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md)
 - [`setLayout()`](Piwik/Widget/WidgetContainerConfig.md#setlayout) &mdash; *Method in class* [`WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md)
+- [`setWidgetConfigs()`](Piwik/Widget/WidgetContainerConfig.md#setwidgetconfigs) &mdash; *Method in class* [`WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md)
 
 ## T
 

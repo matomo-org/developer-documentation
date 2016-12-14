@@ -52,6 +52,7 @@ The class defines the following methods:
 - [`setLayout()`](#setlayout) &mdash; Sets the layout of the container widget.
 - [`getLayout()`](#getlayout) &mdash; Gets the currently set layout.
 - [`addWidgetConfig()`](#addwidgetconfig) &mdash; Adds a new widget to the container widget.
+- [`setWidgetConfigs()`](#setwidgetconfigs) &mdash; Set (overwrite) widget configs.
 - [`getWidgetConfigs()`](#getwidgetconfigs) &mdash; Get all added widget configs.
 
 <a name="setcategoryid" id="setcategoryid"></a>
@@ -479,6 +480,19 @@ Adds a new widget to the container widget.
     - `$widget` ([`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
       
 - It returns a [`WidgetContainerConfig`](../../Piwik/Widget/WidgetContainerConfig.md) value.
+
+<a name="setwidgetconfigs" id="setwidgetconfigs"></a>
+<a name="setWidgetConfigs" id="setWidgetConfigs"></a>
+### `setWidgetConfigs()`
+
+Set (overwrite) widget configs.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$configs` ([`WidgetConfig[]`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
+      
+- It does not return anything.
 
 <a name="getwidgetconfigs" id="getwidgetconfigs"></a>
 <a name="getWidgetConfigs" id="getWidgetConfigs"></a>
