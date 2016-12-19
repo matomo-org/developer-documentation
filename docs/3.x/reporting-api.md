@@ -3,7 +3,7 @@ category: API Reference
 ---
 # Reporting API Reference
 
-This is the Piwik API Reference. It lists all functions that can be called, documents the parameters, and links to examples for every call in the various formats.
+This is the Piwik API Reference. It lists all functions that can be called, documents the parameters, and links to examples for every call in the various formats. 
 
 ## API Request
 
