@@ -20,19 +20,19 @@ If the System Check displays a warning for "Writable Piwik.js" then [learn below
 ## Tracking HTML5 videos
 
 The tracking of HTML5 video works automatically. However you may not be tracking accurate titles for your video by default. 
-We do recommend to [set a `data-media-title` attribute](/guides/media-analytics/options) on your `<video>` elements:
+We do recommend to [set a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<video>` elements:
 
 ```html
-<video data-media-title="My Video Title">...</video>
+<video data-piwik-title="My Video Title">...</video>
 ```
 
 ## Tracking HTML5 audios
 
 The tracking of HTML5 audio works automatically. However you may not be tracking accurate titles for your audio by default. 
-We do recommend to [set a `data-media-title` attribute](/guides/media-analytics/options) on your `<audio>` elements:
+We do recommend to [set a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<audio>` elements:
 
 ```html
-<audio data-media-title="My Audio Title">...</audio>
+<audio data-piwik-title="My Audio Title">...</audio>
 ```
 
 ## Tracking Vimeo videos
