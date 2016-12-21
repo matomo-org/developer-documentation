@@ -43,7 +43,7 @@ if ($activated->getName() == 'variation1') {
 }
 
 // Important: let Piwik know that you have entered the current visitor into an experiment
-Experiment::trackVariationActivation($piwikPhpTracker, $experiment->getExperimentName(), $activated->getName());
+$experiment->trackVariationActivation($piwikPhpTracker);
 // executes $piwikPhpTracker->trackEvent('abtesting', 'theExperimentName', 'nameOfActivatedVariation');
 ```
 
