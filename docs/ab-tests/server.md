@@ -45,8 +45,9 @@ if ($activated->getName() == 'variation1') {
     /* do something variation2 */
 }
 
-// Important: let Piwik know that you have entered the current visitor into an experiment
-$script = Experiment::getTrackingScript($experiment->getExperimentName(), $activated->getName());
+// Important: let Piwik know that you have entered the current visitor into an experiment. 
+// We recommend to escape the experiment name and variation name if needed to prevent possible XSS.
+$script = $experiment->getTrackingScript($experiment->getExperimentName(), $activated->getName());
 echo $script; // prints eg "<script ...>_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'variation1'});"
 ```
 
@@ -101,7 +102,7 @@ $activated->run();
 
 // if user was not redirected because the original version was chosen, we need to let Piwik know that 
 // the original version was activated.
-$script = Experiment::getTrackingScript($experiment->getExperimentName(), $activated->getName());
+$script = $experiment->getTrackingScript($experiment->getExperimentName(), $activated->getName());
 echo $script; // prints eg "<script ...>_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'});"
 ```
 
