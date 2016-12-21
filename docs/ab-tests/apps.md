@@ -22,26 +22,29 @@ When you are asked on which target pages the experiment should be activated, we 
 ## Implementing an experiment
 
 To implement the actual experiment, you can use any A/B testing framework of your choice.
- For example [PlanOut by Facebook](https://facebook.github.io/planout/) (Java, PHP, JavaScript, Go, Ruby), [phpab](https://github.com/phpab/phpab) (PHP)
-or [Vanity](https://github.com/assaf/vanity) (Ruby). 
+ For example [PlanOut by Facebook](https://facebook.github.io/planout/) (Java, PHP, JavaScript, Go, Ruby) or [Vanity](https://github.com/assaf/vanity) (Ruby). For PHP we provide our own [InnoCraft PHP Experiments framework](https://github.com/innocraft/php-experiments).
 
 When you choose an A/B testing framework, it is important that the framework lets you know which variation was chosen for a user. 
 This will be important for the next step when you have to track which variation's name was used when a user entered
 into an experiment. 
 
-Using an A/B testing framework could look as follows (the following example is in PHP):
+Using an A/B testing framework could look as follows (the following example is using our InnoCraft PHP Experiments framework):
 
 ```php
-$experiment = new \ExperimentFramework\Experiment();
-$selected = $experiment->activate('theExperimentName', array('original', 'variation1', 'variation2'));
-if ($selected == 'variation1') {
+use InnoCraft\Experiments\Experiment;
+
+$variations = [['name' => 'variation1'], ['name' => 'variation2']];
+$experiment = new Experiment('theExperimentName', $variations);
+$activated = $experiment->getActivatedVariation();
+if ($activated->getName() == 'variation1') {
     /* do something variation1 */
-} elseif ($selected == 'variation2') {
+} elseif ($activated->getName() == 'variation2') {
     /* do something variation2 */
 }
 
-// Important: Let Piwik know which variation was activated by tracking an 'abtesting' event
-$phpTracker->trackEvent('abtesting', 'buynowfoobar', 'nameOfVariation');
+// Important: let Piwik know that you have entered the current visitor into an experiment
+Experiment::trackVariationActivation($piwikPhpTracker, $experiment->getExperimentName(), $activated->getName());
+// executes $piwikPhpTracker->trackEvent('abtesting', 'theExperimentName', 'nameOfActivatedVariation');
 ```
 
 ### Sending the name of the activated variation to Piwik
