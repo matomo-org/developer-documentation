@@ -24,26 +24,30 @@ The generated experiment code (`_paq.push(['AbTesting::create', {...`) does not 
 ## Implementing an experiment
 
 To implement the actual experiment, you can use any A/B testing framework of your choice.
- For example [PlanOut by Facebook](https://facebook.github.io/planout/) (Java, PHP, JavaScript, Go, Ruby), [phpab](https://github.com/phpab/phpab) (PHP)
-or [Vanity](https://github.com/assaf/vanity) (Ruby). 
+ For example [PlanOut by Facebook](https://facebook.github.io/planout/) (Java, PHP, JavaScript, Go, Ruby),
+or [Vanity](https://github.com/assaf/vanity) (Ruby). For PHP we provide our own [PHP Experiments framework](https://github.com/innocraft/php-experiments).
 
 When you choose an A/B testing framework, it is important that the framework lets you know which variation was chosen for a user. 
 This will be important for the next step when you have to track in Piwik which variation's name was used when a user entered
 into an experiment. 
 
-Using an A/B testing framework could look as follows (the following example is in PHP):
+Using an A/B testing framework could look as follows (the following example is in PHP using our InnoCraft PHP Experiments framework):
 
 ```php
-$experiment = new \ExperimentFramework\Experiment();
-$selected = $experiment->activate('theExperimentName', array('original', 'variation1', 'variation2'));
-if ($selected == 'variation1') {
+use InnoCraft\Experiments\Experiment;
+
+$variations = [['name' => 'variation1'], ['name' => 'variation2']];
+$experiment = new Experiment('theExperimentName', $variations);
+$activated = $experiment->getActivatedVariation();
+if ($activated->getName() == 'variation1') {
     /* do something variation1 */
-} elseif ($selected == 'variation2') {
+} elseif ($activated->getName() == 'variation2') {
     /* do something variation2 */
 }
 
 // Important: let Piwik know that you have entered the current visitor into an experiment
-echo "_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: '$selected'});"
+$script = Experiment::getTrackingScript($experiment->getExperimentName(), $activated->getName());
+echo $script; // prints eg "<script ...>_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'variation1'});"
 ```
 
 ### Sending the name of the activated variation to Piwik
@@ -83,11 +87,37 @@ An example looks as follows:
 
 ```php
 /**
+ * Example using InnoCraft PHP Experiments framework
+ */
+use InnoCraft\Experiments\Experiment;
+ 
+$variations = [['name' => 'newDesign', 'url' => '/newDesign.php']];
+$experiment = new Experiment('theExperimentName', $variations);
+$activated = $experiment->getActivatedVariation();
+
+// automatically redirects to newDesign.php if the "newDesign" version gets chosen for a user and makes
+// sure to track the chosen variation on the next request.
+$activated->run();
+
+// if user was not redirected because the original version was chosen, we need to let Piwik know that 
+// the original version was activated.
+$script = Experiment::getTrackingScript($experiment->getExperimentName(), $activated->getName());
+echo $script; // prints eg "<script ...>_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'});"
+```
+
+Alternative version performing the redirect manually:
+
+```php
+/**
  * in index.php:
  */
-$experiment = new \ExperimentFramework\Experiment();
-$selected = $experiment->activate('theExperimentName', array('original', 'newDesign'));
-if ($selected === 'newDesign') {
+echo "_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'});"
+
+$variations = [['name' => 'newDesign']];
+$experiment = new Experiment('theExperimentName', $variations);
+$activated = $experiment->getActivatedVariation();
+
+if ($activated->getName() === 'newDesign') {
     // make sure to persist the selected variation so when newDesign.php is loaded you can
     // let Piwik know which variation was activated
     header("Location: /newDesign.php", true, 302);
