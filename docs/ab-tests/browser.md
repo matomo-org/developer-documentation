@@ -172,6 +172,10 @@ An `event` is passed to the `activate` method which lets you for example:
 
 If you access the DOM using jQuery or another library, make sure that this library was already loaded when the experiment gets activated.
 
+#### Testing variations
+
+Testing variations can be cumbersome because variations are activated randomly and you always get to see the same variation. To test a specific variation you can append a URL parameter `?pk_ab_test=$variationName`. This will make sure to activate the given variation even if the experiment should not trigger yet because of a defined filter. It will also not track any experiment activation to your Piwik so your data is kept clean.
+
 ### Tracking a goal manually
 
 When comparing different variations it is often needed to [track goals](http://piwik.org/docs/tracking-goals-web-analytics/) 
@@ -328,6 +332,10 @@ trigger: function (event) {
 ```
 
 In this example the experiment was configured (in your Piwik) to be activated on all pages, and will be actually activated for your visitors when the `trigger` method returns `true`.
+
+### How do I activate a specific variation via URL parameter?
+
+You can add a URL parameter `?pk_ab_test=$variationName` to force the activation of a specific variation. This is useful when you are integrating an experiment and you want to test each variation or when you need to share a URL for each variation with your colleagues to get an approval before running an experiment.
 
 ### Where does Piwik store which variation gets activated?
 
