@@ -1048,6 +1048,30 @@ Usages:
 
 [CustomAlerts::removePhoneNumberFromAllAlerts](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L114), [ScheduledReports::deletePhoneNumber](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L447)
 
+## MultiSites
+
+- [MultiSites.filterRowsForTotalsCalculation](#multisitesfilterrowsfortotalscalculation)
+
+### MultiSites.filterRowsForTotalsCalculation
+
+*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/API.php) in line [503](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MultiSites/API.php#L503)*
+
+Triggered to filter / restrict which rows should be included in the MultiSites (All Websites Dashboard) totals calculation **Example**
+
+    public function filterMultiSitesRows(&$rows)
+    {
+        foreach ($rows as $index => $row) {
+            if ($row->getColumn('label') === 5) {
+                unset($rows[$index]); // remove idSite 5 from totals
+            }
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$rows)</code></pre>
+
+- Row `&$rows` An array containing rows, one row for each site. The label columns equals the idSite.
+
 ## Piwik
 
 - [Piwik.getJavascriptCode](#piwikgetjavascriptcode)
