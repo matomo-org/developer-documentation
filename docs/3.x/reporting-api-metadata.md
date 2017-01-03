@@ -83,9 +83,9 @@ URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummar
 
 *   Example: Horizontal Bar Graph Plotting Browsers for the Current Month
 
-    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getBrowser&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
+    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
-URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getBrowser&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250`
+URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Horizontal Bar Graph Plotting Countries for the Current Week
 
@@ -95,15 +95,15 @@ URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&
 
 *   Example: Graph Plotting User Screen Resolutions for the Current Month
 
-    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250)
+    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=Resolution&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250)
 
-URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserSettings&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250`
+URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=Resolution&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Pie Chart with Custom Colors
 
-    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=UserSettings&apiAction=getOS&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D)
+    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D)
 
-URL: `index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=UserSettings&apiAction=getOS&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D`
+URL: `index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D`
 
 *   Example: Line chart of Custom Variables names and values, filtered to show only custom variable containing the string "logged"
 
