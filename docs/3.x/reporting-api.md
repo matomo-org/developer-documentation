@@ -203,4 +203,4 @@ All the commonly used terms in Piwik Analytics are documented in the [Glossary](
 
 ## API Method List
 
-{@include http://demo.piwik.org/?module=API&action=listAllMethods&prefixUrl=http://demo.piwik.org/&idSite=7}
+{@include http://demo2.piwik.org/?module=API&action=listAllMethods&prefixUrl=http://demo.piwik.org/&idSite=7}
