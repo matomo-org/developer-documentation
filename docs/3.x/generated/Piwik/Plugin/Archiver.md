@@ -51,6 +51,7 @@ The abstract class defines the following methods:
 - [`getLogAggregator()`](#getlogaggregator) &mdash; Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
 - [`disable()`](#disable)
 - [`isEnabled()`](#isenabled) &mdash; Whether this Archiver should be used or not.
+- [`shouldRunEvenWhenNoVisits()`](#shouldrunevenwhennovisits) &mdash; By overwriting this method and returning true, a plugin archiver can force the archiving to run even when there was no visit for the website/date/period/segment combination (by default, archivers are skipped when there is no visit).
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -133,6 +134,16 @@ Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instanc
 ### `isEnabled()`
 
 Whether this Archiver should be used or not.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="shouldrunevenwhennovisits" id="shouldrunevenwhennovisits"></a>
+<a name="shouldRunEvenWhenNoVisits" id="shouldRunEvenWhenNoVisits"></a>
+### `shouldRunEvenWhenNoVisits()`
+
+By overwriting this method and returning true, a plugin archiver can force the archiving to run even when there was no visit for the website/date/period/segment combination (by default, archivers are skipped when there is no visit).
 
 #### Signature
 

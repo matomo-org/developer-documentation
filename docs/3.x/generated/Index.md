@@ -883,6 +883,7 @@ Index
 - [`sanitiseString()`](Piwik/Mail.md#sanitisestring) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`set()`](Piwik/Option.md#set) &mdash; *Method in class* [`Option`](Piwik/Option.md)
 - [`setDefaultEndDate()`](Piwik/Period/Range.md#setdefaultenddate) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
+- [`shouldRunEvenWhenNoVisits()`](Piwik/Plugin/Archiver.md#shouldrunevenwhennovisits) &mdash; *Method in class* [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`$strDate`](Piwik/Plugin/Controller.md#$strdate) &mdash; *Property in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`$site`](Piwik/Plugin/Controller.md#$site) &mdash; *Property in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`setDate()`](Piwik/Plugin/Controller.md#setdate) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
