@@ -8,7 +8,7 @@ In this guide we will learn how you can implement [Media Analytics](http://www.m
  
 ## Tracking a new media player in the browser
 
-The Media Analytics plugin currently supports  out of the box the HTML5, Vimeo and YouTube media players. If you are using
+The Media Analytics plugin currently supports out of the box the HTML5, Vimeo and YouTube media players. If you are using
  a different media player for your videos and audio, you can measure them by registering your own player. 
 
 If you need help implementing Media Analytics for your media player or if you wish to share your implementation with us, [please contact us](http://piwik.org/support/).

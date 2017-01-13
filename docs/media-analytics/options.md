@@ -73,7 +73,8 @@ For example if you don't want to track any Vimeo videos, you can remove that pla
 _paq.push(['MediaAnalytics::removePlayer', 'vimeo']);
 ```
  
-Make sure to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`. 
+Make sure to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`. If you want
+to disable any HTML5 based media player like JW Player or VideoJS, use `html5` to ignore such media.
 
 ### Disabling media tracker features
 

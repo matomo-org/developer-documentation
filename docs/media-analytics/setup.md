@@ -5,7 +5,7 @@ title: Setting up
 # Setting up Media Analytics
 
 In this guide we will learn how to get [Media Analytics](http://www.media-analytics.net/) to automatically track your website's video and audio media, 
-in particular: HTML5 videos and audios, Youtube videos and Vimeo videos.  
+in particular: HTML5 videos and audios, Youtube videos and Vimeo videos. Supported players are for example JW Player, VideoJS and also many other HTML5 based video players.
 
 ## Embedding the Media Analytics JavaScript Tracker
 
@@ -19,20 +19,34 @@ If the System Check displays a warning for "Writable Piwik.js" then [learn below
 
 ## Tracking HTML5 videos
 
-The tracking of HTML5 video works automatically. However you may not be tracking accurate titles for your video by default. 
+The tracking of HTML5 video works automatically. However, you may not be tracking accurate titles for your video by default. 
 We do recommend to [set a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<video>` elements:
 
 ```html
 <video data-piwik-title="My Video Title">...</video>
 ```
 
+This also works when you are using an HTML5 based video player like VideoJS.
+
 ## Tracking HTML5 audios
 
-The tracking of HTML5 audio works automatically. However you may not be tracking accurate titles for your audio by default. 
+The tracking of HTML5 audio works automatically. However, you may not be tracking accurate titles for your audio by default. 
 We do recommend to [set a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<audio>` elements:
 
 ```html
 <audio data-piwik-title="My Audio Title">...</audio>
+```
+
+## Tracking JW Player videos
+
+The tracking of JW Player works automatically. However, you may not be tracking accurate titles for your video by default. 
+We do recommend to specify a title in the `setup` method of your video:
+
+```js
+jwplayer("myDiv").setup({
+    "file": "...",
+    "title": "My Video Title"
+});
 ```
 
 ## Tracking Vimeo videos
