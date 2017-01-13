@@ -452,7 +452,7 @@ formElement.addEventListener('submit', function () {
 We call this kind of tracking semi-automatic as you triggered the interaction manually but the content name, piece and target is detected automatically. Detecting the content name and piece automatically makes sure we can map the interaction with a previously tracked impression.
 
 ### Tracking content impressions and interactions manually
-You should use the methods `trackContentImpression(contentName, contentPiece, contentTarget)` and `trackContentInteraction(contentName, contentPiece, contentInteraction)` only in conjunction together. It is not recommended to use `trackContentInteraction()` after an impression was tracked automatically as we can map an interaction to an impression only if you do set the same content name and piece that was used to track the related impression.
+You should use the methods `trackContentImpression(contentName, contentPiece, contentTarget)` and `trackContentInteraction( contentInteraction, contentName, contentPiece, contentInteraction)` only in conjunction together. It is not recommended to use `trackContentInteraction()` after an impression was tracked automatically as we can map an interaction to an impression only if you do set the same content name and piece that was used to track the related impression.
 
 Example
 
