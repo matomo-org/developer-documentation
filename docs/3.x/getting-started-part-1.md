@@ -131,22 +131,8 @@ After installing Piwik, we're going to change some of Piwik's INI configuration 
 
     ./console development:enable
 
-If you plan on running automated tests, you'll have to set the following configuration options in `config/config.ini.php`:
 
-```ini
-[database_tests]
-host = "127.0.0.1"
-user = ...
-password = ...
-```
-
-You also may have to create the `piwik_tests` database:
-```
-mysql -u'db_username_here' -p -e 'CREATE DATABASE piwik_tests'
-```
-
-
-### Add some test data
+### Add some test tracking data in your Piwik
 
 You're now ready to create your first plugin, but before we do that, let's add some test data for you to play with.
 
@@ -161,6 +147,22 @@ Let's generate data for three days. Enter **3** in the **Days to compute** field
 Once the visits have been added, click on the **Dashboard** link at the top of the screen. You should see that reports which were previously empty now display some statistics:
 
 <img src="/img/dashboard_after_test_data.png"/>
+
+### If you want to execute the automated test suite
+
+If you plan on running automated tests, you'll have to set the following configuration options in `config/config.ini.php`:
+
+```ini
+[database_tests]
+host = "127.0.0.1"
+user = ...
+password = ...
+```
+
+You also may have to create the `piwik_tests` database:
+```
+mysql -u'db_username_here' -p -e 'CREATE DATABASE piwik_tests'
+```
 
 ## Create a plugin
 
