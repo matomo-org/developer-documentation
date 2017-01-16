@@ -65,9 +65,16 @@ The following tools aren't required for this guide, but you may find them useful
 - **[xhprof](https://github.com/facebook/xhprof)** If you'd like to profile your code and debug any inefficiencies.
 - **[python](https://www.python.org/)** If you want to use the log importer.
 
+### Command to get the tools on Linux
+
 If your computer is using a Debian based operating system, you can install all the required packages with the following command: 
 
+<!-- NOTE TO YOU see below -->
+
     $ sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml php7.0-mbstring
+    
+<!-- NOTE TO YOU :-) Please also update the instructions here: https://piwik.org/docs/requirements/ -->
+
 
 ### Get & Install Piwik
 
@@ -78,6 +85,8 @@ Open a terminal, `cd` into the directory where you want to install Piwik, and th
     $ git clone https://github.com/piwik/piwik piwik
     $ cd piwik
     $ git submodule update --init
+
+### Get & install Composer 
 
 Next, we will install all the libraries that Piwik needs using Composer. 
 
@@ -90,16 +99,22 @@ Next, we will install all the libraries that Piwik needs using Composer.
  On Windows you will likely need to add an option `--no-script`:
 
         $ php composer.phar install --no-script
-    
-Now that you've got a copy of Piwik, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
+
+### Get a web server
+
+Now that you've got a copy of Piwik, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself. 
 
 If your PHP version is greater than 5.4, you can also use [PHP's built-in web server](http://php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
 
     $ php -S 0.0.0.0:8000
 
 Piwik should now be available at [http://localhost:8000/](http://localhost:8000/). To stop the web server, just hit `Ctrl+C`. Remember that PHP's built in web server is only suitable for development. It should **never** be used in production.
+    
+### Install Piwik
 
 Once Piwik is running, open it in your browser and follow the instructions to complete the installation.
+
+When you install Piwik, at the database creation, you will need to specify your database user. [Click here to see how to create a new user in MySQL]().
 
 #### Adding anonymous access to your reports
 
