@@ -65,7 +65,9 @@ The following tools aren't required for this guide, but you may find them useful
 - **[xhprof](https://github.com/facebook/xhprof)** If you'd like to profile your code and debug any inefficiencies.
 - **[python](https://www.python.org/)** If you want to use the log importer.
 
-If your computer is using a Debian based operating system, you can install all the required packages with the following command: `sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml`
+If your computer is using a Debian based operating system, you can install all the required packages with the following command: 
+
+    $ sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml
 
 ### Get & Install Piwik
 
