@@ -89,7 +89,7 @@ Next, we will install all the libraries that Piwik needs using Composer.
     
  On Windows you will likely need to add an option `--no-script`:
 
-      $ php composer.phar install --no-script
+        $ php composer.phar install --no-script
     
 Now that you've got a copy of Piwik, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
 
