@@ -67,7 +67,7 @@ The following tools aren't required for this guide, but you may find them useful
 
 If your computer is using a Debian based operating system, you can install all the required packages with the following command: 
 
-    $ sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml
+    $ sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml php7.0-mbstring
 
 ### Get & Install Piwik
 
