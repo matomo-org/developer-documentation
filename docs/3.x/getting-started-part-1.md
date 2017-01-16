@@ -114,7 +114,7 @@ Piwik should now be available at [http://localhost:8000/](http://localhost:8000/
 
 Once Piwik is running, open it in your browser and follow the instructions to complete the installation.
 
-When you install Piwik, at the database creation, you will need to specify your database user. [Click here to see how to create a new user in MySQL]().
+When you install Piwik, at the database creation, you will need to specify your database user. [Click here to see how to create a new user in MySQL](https://piwik.org/faq/how-to-install/faq_23484/).
 
 #### Adding anonymous access to your reports
 
