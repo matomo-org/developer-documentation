@@ -81,7 +81,7 @@ Next, we will install all the libraries that Piwik needs using Composer.
 
  * If you already have composer installed, run the command:
     
-    $ composer install
+        $ composer install
     
  * Or if you don't yet have composer, first 1) you need to follow the [download instructions for Composer](https://getcomposer.org/download/) in order to get composer on your machine, and then 2) run this command:
 
