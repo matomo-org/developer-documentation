@@ -77,11 +77,17 @@ Open a terminal, `cd` into the directory where you want to install Piwik, and th
     $ cd piwik
     $ git submodule update --init
 
-Run the following command to install third party libraries:
+Next, we will install all the libraries that Piwik needs using Composer. 
+
+ * If you already have composer installed, run the command:
+    
+    $ composer install
+    
+ * Or if you don't yet have composer, first 1) you need to follow the [download instructions for Composer](https://getcomposer.org/download/) in order to get composer on your machine, and then 2) run this command:
 
     $ php composer.phar install
     
-If this command fails, follow the [installation instructions for Composer](https://getcomposer.org/doc/00-intro.md). On Windows you will likely need to add an option `--no-script`:
+  On Windows you will likely need to add an option `--no-script`:
 
     $ php composer.phar install --no-script
     
