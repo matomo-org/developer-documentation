@@ -226,7 +226,7 @@ Callback Signature:
 
 ### Archiving.makeNewArchiverObject
 
-*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/piwik/piwik/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [282](https://github.com/piwik/piwik/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L282)*
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/piwik/piwik/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [283](https://github.com/piwik/piwik/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L283)*
 
 Triggered right after a new **plugin archiver instance** is created. Subscribers to this event can configure the plugin archiver, for example prevent the archiving of a plugin's data
 by calling `$archiver->disable()` method.
