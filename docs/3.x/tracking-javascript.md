@@ -22,7 +22,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `trackGoal( idGoal, [customRevenue]);` - Manually log a conversion for the numeric goal ID, with an optional numeric custom revenue customRevenue.
 *   `trackLink( url, linkType )` - Manually log a click from your own code. url is the full URL which is to be tracked as a click. linkType can either be 'link' for an outlink or 'download' for a download.
 *   `trackAllContentImpressions()` - Scans the entire DOM for all content blocks and tracks all impressions once the DOM ready event has been triggered.
-*   `trackVisibleContentImpressions ( checkOnSroll, timeIntervalInMs )` - Scans the entire DOM for all content blocks as soon as the page is loaded. It tracks an impression only if a content block is actually visible.
+*   `trackVisibleContentImpressions ( checkOnScroll, timeIntervalInMs )` - Scans the entire DOM for all content blocks as soon as the page is loaded. It tracks an impression only if a content block is actually visible.
 *   `trackContentImpressionsWithinNode( domNode )` - Scans the given DOM node and its children for content blocks and tracks an impression for them if no impression was already tracked for it.
 *   `trackContentInteractionNode( domNode, contentInteraction )` - Tracks an interaction with the given DOM node / content block.
 *   `trackContentImpression( contentName, contentPiece, contentTarget )` - Tracks a content impression using the specified values. 
