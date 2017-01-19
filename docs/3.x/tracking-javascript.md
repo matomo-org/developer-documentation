@@ -12,7 +12,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 ### Requesting the Tracker Instance from the Piwik Class
 
 *   `Piwik.getTracker( trackerUrl, siteId )` - get a new instance of the Tracker
-*   `Piwik.getAsyncTracker()` - get the internal instance of the Tracker used for asynchronous tracking
+*   `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)` - get the internal instance of the Tracker used for asynchronous tracking
 
 ### Using the Tracker Object
 
