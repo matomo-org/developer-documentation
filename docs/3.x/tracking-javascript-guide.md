@@ -708,6 +708,33 @@ By default, the Piwik JavaScript Tracking code collects your analytics data into
 
 *If you haven't upgraded yet to Piwik 2.16.2 or later, please upgrade now! (Instructions for 2.16.1 or older versions are found below.)*
 
+#### Duplicate your data into different websites in one Piwik server
+
+You may need to collect a duplicate of your web analytics data into the same Piwik server, but in another website. 
+
+##### Recommended solution: use RollUp Reporting plugin
+
+When you need to duplicate data into another website, or consolidate several websites into one or more groups (called RollUps) the recommended solution is to use the [RollUp Reporting premium plugin](https://plugins.piwik.org/RollUpReporting). Using this plugin has several advantages over the other solution as you can easily group one or more websites together, and the RollUps do not cause the tracking data to be duplicated which improves overall performance.
+
+##### Alternative solution: duplicate the tracking data
+
+Alternatively to using the RollUp Reporting plugin you can duplicate the tracking data. To duplicate the data you can call `addTracker` with a `null` value Piwik URL and your website ID where to duplicate the data:
+
+```js
+  var u="//piwik.example.org/";
+  _paq.push(['setTrackerUrl', u+'piwik.php']);
+  _paq.push(['setSiteId', '1']);
+  
+  // We will also collect the website data into Website ID = 7
+  var websiteIdDuplicate = 7;
+  // The data will be duplicated into `piwik.example.org/piwik.php`
+  // (the Piwik URL being 'null' means the pre-configured Piwik URL is used)
+  _paq.push(['addTracker', piwikUrl = null, websiteIdDuplicate]);
+  // Your data is now tracked in both website ID 1 and website 7 into your piwik.example.org server!
+```
+
+As this solution causes every visitor's event, pageview, etc. to be tracked twice in your Piwik server, we generally do not recommend it.
+
 #### Collect your analytics data into two or more Piwik servers
 
 The example below shows how to use `addTracker`  method to track the same analytics data into a second Piwik server. The main Piwik server is `piwik.example.org/piwik.php` where the data is stored into website ID `1`. The second Piwik server is `analytics.example.com/piwik.php` where the data is stored into website ID `77`. 
@@ -737,30 +764,11 @@ The example below shows how to use `addTracker`  method to track the same analyt
 </script>
 ```
 
-#### Duplicate your data into different websites in one Piwik server
-
-Alternatively, you may need to collect a duplicate of your web analytics data into the same Piwik server, but in another website. This can be done by calling `addTracker` with a `null` value Piwik URL and your website ID where to duplicate the data:
-
-```js
-  var u="//piwik.example.org/";
-  _paq.push(['setTrackerUrl', u+'piwik.php']);
-  _paq.push(['setSiteId', '1']);
-  
-  // We will also collect the website data into Website ID = 7
-  var websiteIdDuplicate = 7;
-  // The data will be duplicated into `piwik.example.org/piwik.php`
-  // (the Piwik URL being 'null' means the pre-configured Piwik URL is used)
-  _paq.push(['addTracker', piwikUrl = null, websiteIdDuplicate]);
-  // Your data is now tracked in both website ID 1 and website 7 into your piwik.example.org server!
-```
-
 #### Customise one of the tracker object instances 
 
 Note: by default any tracker added via `addTracker` are configured the same as the main default tracker object (with regards to cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Piwik tracker object instance that were added via `addTracker`, you may call the `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance. 
 
-#### Instructions if you use Piwik 2.16.1 or earlier
-
-*Please upgrade as soon as possible to the latest Piwik version!*
+#### Duplicate the tracking data when calling the JavaScript API directly (not via `_paq.push`)
 
 It is possible to track your analytics data into either a different website ID on the same server or you may record a copy of your data into another Piwik server altogether. Each call to `Piwik.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
 
@@ -777,7 +785,7 @@ It is possible to track your analytics data into either a different website ID o
 </script>
 ```
 
-The `piwikAsyncInit()` method was introduced in Piwik 2.3 and will be executed once the Piwik tracker is loaded and initialized. In earlier versions you must load Piwik synchronous.
+The `piwikAsyncInit()` method will be executed once the Piwik tracker is loaded and initialized. In earlier versions you must load Piwik synchronous.
 
 Note that you can also set the website ID and the Piwik tracker URL manually, instead of setting them in the getTracker call:
 
