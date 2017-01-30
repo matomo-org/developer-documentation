@@ -195,6 +195,7 @@ The class defines the following methods:
 - [`getMetricsRequiredForReport()`](#getmetricsrequiredforreport) &mdash; Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
 - [`getProcessedMetrics()`](#getprocessedmetrics) &mdash; Returns an array of supported processed metrics and their corresponding translations.
 - [`getAllMetrics()`](#getallmetrics) &mdash; Returns the array of all metrics displayed by this report.
+- [`getMetricNamesToProcessReportTotals()`](#getmetricnamestoprocessreporttotals) &mdash; Use this method to register metrics to process report totals.
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
 - [`configureReportMetadata()`](#configurereportmetadata) &mdash; If the report is enabled the report metadata for this report will be built and added to the list of available reports.
 - [`getDocumentation()`](#getdocumentation) &mdash; Get report documentation.
@@ -411,6 +412,21 @@ Returns the array of all metrics displayed by this report.
 #### Signature
 
 - It returns a `array` value.
+
+<a name="getmetricnamestoprocessreporttotals" id="getmetricnamestoprocessreporttotals"></a>
+<a name="getMetricNamesToProcessReportTotals" id="getMetricNamesToProcessReportTotals"></a>
+### `getMetricNamesToProcessReportTotals()`
+
+Use this method to register metrics to process report totals.
+
+When a metric is registered, it will process the report total values and as a result show percentage values
+in the HTML Table reporting visualization.
+
+#### Signature
+
+
+- *Returns:*  `string[]` &mdash;
+    metricId => metricColumn, if the report has only column names and no IDs, it should return metricColumn => metricColumn, eg array('13' => 'nb_pageviews') or array('mymetric' => 'mymetric')
 
 <a name="getmetricsdocumentation" id="getmetricsdocumentation"></a>
 <a name="getMetricsDocumentation" id="getMetricsDocumentation"></a>

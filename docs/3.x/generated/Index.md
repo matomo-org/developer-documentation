@@ -474,6 +474,7 @@ Index
 - [`getMetricsRequiredForReport()`](Piwik/Plugin/Report.md#getmetricsrequiredforreport) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getProcessedMetrics()`](Piwik/Plugin/Report.md#getprocessedmetrics) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getAllMetrics()`](Piwik/Plugin/Report.md#getallmetrics) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
+- [`getMetricNamesToProcessReportTotals()`](Piwik/Plugin/Report.md#getmetricnamestoprocessreporttotals) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getMetricsDocumentation()`](Piwik/Plugin/Report.md#getmetricsdocumentation) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getDocumentation()`](Piwik/Plugin/Report.md#getdocumentation) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getRelatedReports()`](Piwik/Plugin/Report.md#getrelatedreports) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)

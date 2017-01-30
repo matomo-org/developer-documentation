@@ -1158,7 +1158,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [1105](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L1105)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [1104](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L1104)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
