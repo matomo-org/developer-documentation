@@ -59,7 +59,7 @@ If you want to send this update more or less frequently, you can set a different
 ### `removePlayer(playerName)`
 
 If you do not want to track any media of a certain player, you can disable that player by calling this method.
-`playerName` should be either `'html5'`, `'vimeo'` or `'youtube'`.
+`playerName` should be either `'html5'`, `'vimeo'`, `'youtube'` or `'jwplayer'`.
 
 ### `addPlayer(playerName, player)`
 
@@ -164,4 +164,4 @@ Detect if the tracking of progress is currently enabled or disabled. Returns a b
 
 You may be interested in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference),
  or the [Reporting HTTP API Reference](http://developer.piwik.org/api-reference/reporting-api#MediaAnalytics).
- If you use a player other than Youtube/Vimeo/HTML5, learn about [implementing analytics for your Custom Video Player](/guides/media-analytics/custom-player).
+ If you use a player other than Youtube/Vimeo/HTML5/JwPlayer, learn about [implementing analytics for your Custom Video Player](/guides/media-analytics/custom-player).
