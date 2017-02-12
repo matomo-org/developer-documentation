@@ -1,7 +1,8 @@
 ---
 category: Integrate
+title: JavaScript Tracker API Reference
 ---
-# JavaScript Tracker API Reference
+# Media Analytics JavaScript Tracker API Reference
 
 This guide is the JavaScript Tracker API Reference for [Media Analytics](http://www.media-analytics.net/).
 
