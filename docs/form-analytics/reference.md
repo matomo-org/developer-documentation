@@ -38,7 +38,7 @@ window.piwikFormAnalyticsAsyncInit = function () {
 
 ### `scanForForms(documentOrHTMLElementToScanForForms)`.
 By default, Piwik detects all forms on your website automatically. If you modify the DOM after the page was loaded (for 
-example in a one-page web application), you may need to call this method to make sure Piwik finds all your forms. 
+example in a single-page web application), you may need to call this method to make sure Piwik finds all your forms. 
 When you call this method, the Form Analytics tracker will search the DOM for new forms and start the tracking 
 of those forms. As a parameter, you can optionally pass an `HTMLElement` if only a part of the DOM should be searched for 
 new form. This is especially useful for one page web applications. If no such parameter is given, the entire DOM will 
