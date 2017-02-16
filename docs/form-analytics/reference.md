@@ -4,9 +4,9 @@ title: JavaScript Tracker API Reference
 ---
 # Form Analytics JavaScript Tracker API Reference
 
-This guide is the JavaScript Tracker API Reference for [Form Analytics](https://www.form-analytics.net/).
+This guide is the JavaScript Tracker API Reference for [Form Analytics](http://www.form-analytics.net/).
 
-You may also be interested in the Form Analytics [Reporting HTTP API Reference](http://developer.piwik.org/api-reference/reporting-api#FormAnalytics). 
+You may also be interested in the Form Analytics [Reporting HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#FormAnalytics). 
 
 ## Calling Form Analytics tracker methods
 
@@ -67,7 +67,7 @@ By default, Piwik will automatically listen to the form submit event. If you are
  
 ```html
 <div data-piwik-form id="login"></div>
-<a href="#" onclick="_paq.push(['trackFormSubmit', document.getElementById('login')])">Submit</a>
+<a href="#" onclick="_paq.push(['FormAnalytics::trackFormSubmit', document.getElementById('login')])">Submit</a>
 ```
 
 ### `trackFormConversion(nodeOrFormName, formId)`
@@ -80,9 +80,9 @@ as a visitor may have to correct form validation errors. To track a form convers
 ```html
 <div data-piwik-form name="cloudlogin" id="login"></div>
 // when the form is still shown on the same page you can pass the form element
-<a href="#" onclick="_paq.push(['trackFormConversion', document.getElementById('login')])">Submit</a>
+<a href="#" onclick="_paq.push(['FormAnalytics::trackFormConversion', document.getElementById('login')])">Submit</a>
 // when the form is not displayed anymore, you can pass the name and / or the id of the form to track a conversion 
-<a href="#" onclick="_paq.push(['trackFormConversion', 'cloudlogin', 'login'])">Submit</a>
+_paq.push(['FormAnalytics::trackFormConversion', 'cloudlogin', 'login'])
 ```
 
 ### `disableFormAnalytics()`
@@ -149,4 +149,4 @@ Detects if the tracking of forms is currently enabled or disabled for this track
 
 ## What to read next
 
-You may be interested in the [Form Analytics HTTP API Reference](http://developer.piwik.org/api-reference/reporting-api#FormAnalytics).
+You may be interested in the [Form Analytics HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#FormAnalytics).

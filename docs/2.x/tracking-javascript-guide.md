@@ -105,7 +105,7 @@ To track any user interaction or click with Piwik, you can manually call the Jav
 <a href="#" onclick="javascript:_paq.push(['trackEvent', 'Menu', 'Freedom']);">Freedom page</a>
 ```
 
-You can learn more about [Tracking Events](http://piwik.org/docs/event-tracking/#tracking-events) in the user guide.
+You can learn more about [Tracking Events](https://piwik.org/docs/event-tracking/#tracking-events) in the user guide.
 
 ### Manually trigger goal conversions
 
@@ -132,7 +132,7 @@ You can also register a conversion for this goal with a custom revenue. For exam
 _paq.push(['trackGoal', 1, <?php echo $cart->getCartValue(); ?>]);
 ```
 
-Find more information about goal tracking in Piwik in the [**Tracking Goals**](http://piwik.org/docs/tracking-goals-web-analytics/) documentation.
+Find more information about goal tracking in Piwik in the [**Tracking Goals**](https://piwik.org/docs/tracking-goals-web-analytics/) documentation.
 
 ### Accurately measure the time spent on each page
 
@@ -158,11 +158,11 @@ _paq.push(['enableHeartBeatTimer', 30]);
 
 ## Ecommerce tracking
 
-Piwik allows for advanced and powerful Ecommerce tracking. Check out the [Ecommerce Analytics](http://piwik.org/docs/ecommerce-analytics/) documentation for more information about Ecommerce reports and how to set up Ecommerce tracking.
+Piwik allows for advanced and powerful Ecommerce tracking. Check out the [Ecommerce Analytics](https://piwik.org/docs/ecommerce-analytics/) documentation for more information about Ecommerce reports and how to set up Ecommerce tracking.
 
 ## Internal search tracking
 
-Piwik offers advanced [Site Search Analytics](http://piwik.org/docs/site-search/) feature, letting you track how your visitors use your internal website search engine. By default, Piwik can read URL parameters that will contain the search keyword. However, you can also record the site search keyword manually using the JavaScript function `trackSiteSearch(...)`
+Piwik offers advanced [Site Search Analytics](https://piwik.org/docs/site-search/) feature, letting you track how your visitors use your internal website search engine. By default, Piwik can read URL parameters that will contain the search keyword. However, you can also record the site search keyword manually using the JavaScript function `trackSiteSearch(...)`
 
 In your website, in standard pages, you would typically have a call to record Page views via `piwikTracker.trackPageView()`. On your search result page, you would call **instead** `piwikTracker.trackSiteSearch(keyword, category, searchCount)` function to record the internal search request. Note: the 'keyword' parameter is required, but category and searchCount are optional.
 
@@ -180,11 +180,11 @@ _paq.push(['trackSiteSearch',
 // _paq.push(['trackPageView']);
 ```
 
-We also highly recommend to set the searchCount parameter, as Piwik will specifically report "No Result Keywords", ie. Keywords that were searched, but did not return any result. It is usually very interesting to know what users search for but can't find (yet?) on your website. Learn more about [Site Search Analytics in the User Doc](http://piwik.org/docs/site-search/).
+We also highly recommend to set the searchCount parameter, as Piwik will specifically report "No Result Keywords", ie. Keywords that were searched, but did not return any result. It is usually very interesting to know what users search for but can't find (yet?) on your website. Learn more about [Site Search Analytics in the User Doc](https://piwik.org/docs/site-search/).
 
 ## Custom variables
 
-Custom variables are a powerful feature that enable you to track custom values for each visit, and/or each page view. Please see the [Tracking custom variables](http://piwik.org/docs/custom-variables/) documentation page for general information.
+Custom variables are a powerful feature that enable you to track custom values for each visit, and/or each page view. Please see the [Tracking custom variables](https://piwik.org/docs/custom-variables/) documentation page for general information.
 
 You can setup up to 5 custom variables (name and value) for each visit to your website, and/or up to 5 custom variables for each page view. If you set a custom variable to a visitor, when he comes back one hour or two days later, it will be a new visit and his/her custom variables will be empty. 
 
@@ -346,7 +346,7 @@ This function can be used to get the value of a Custom Dimension. It will only w
 
 ## User ID
 
-[User ID](http://piwik.org/docs/user-id/) is a feature in Piwik that lets you connect together a given user's data collected from multiple devices and multiple browsers. There are two steps to implementing User ID:
+[User ID](https://piwik.org/docs/user-id/) is a feature in Piwik that lets you connect together a given user's data collected from multiple devices and multiple browsers. There are two steps to implementing User ID:
 
 - You must assign a unique and persistent non empty string that represents each logged-in user. Typically this ID will be an email address or a username provided by your authentication system.
 - You must then pass this User ID string to Piwik via the `setUserId` method call just before calling track* function, for example:
@@ -378,7 +378,7 @@ _paq.push(['enableLinkTracking']);
 
 ## Content Tracking
 
-There are several ways to track content impressions and interactions manually, semi-automatically and automatically. Please be aware that content impressions will be tracked using bulk tracking which will always send a `POST` request, even if `GET` is configured which is the default. For more details have a look at the [in-depth guide to Content Tracking](http://developer.piwik.org/guides/content-tracking).
+There are several ways to track content impressions and interactions manually, semi-automatically and automatically. Please be aware that content impressions will be tracked using bulk tracking which will always send a `POST` request, even if `GET` is configured which is the default. For more details have a look at the [in-depth guide to Content Tracking](https://developer.piwik.org/guides/content-tracking).
 
 ### Track all content impressions within a page
 
@@ -550,7 +550,7 @@ Notes:
 * since the wildcard can match several paths, calls to `setCookieDomain` or `setCookiePath` are omitted to ensure tracking cookie is correctly shared for all pages matching the wildcard.
 
 
-For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](http://piwik.org/faq/new-to-piwik/#faq_104)
+For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](https://piwik.org/faq/new-to-piwik/#faq_104)
 
 ## Download & Outlink tracking
 
@@ -784,12 +784,12 @@ View all features of the Tracking client in the [JavaScript Tracker Reference](/
 
 ## Frequently Asked Questions
 
-If you have any question about JavaScript Tracking in Piwik, [please search the website](http://piwik.org/), or [ask in the forums](http://forum.piwik.org).
+If you have any question about JavaScript Tracking in Piwik, [please search the website](https://piwik.org/), or [ask in the forums](http://forum.piwik.org).
 
-- [How do enable tracking for users without JavaScript?](http://piwik.org/faq/how-to/#faq_176)
-- [How does Piwik track downloads?](http://piwik.org/faq/new-to-piwik/#faq_47)
-- [How to track error pages and get the list of 404 and referrers urls.](http://piwik.org/faq/how-to/#faq_60)
-- [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](http://piwik.org/faq/how-to/#faq_62)
-- [How do I setup Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](http://piwik.org/faq/how-to/#faq_132)
-- [How do I customise the piwik.js being loaded on all my websites?](http://piwik.org/faq/how-to/faq_19087/)
-- [How do I disable all tracking cookies used by Piwik in the javascript code?](http://piwik.org/faq/general/#faq_157)
+- [How do enable tracking for users without JavaScript?](https://piwik.org/faq/how-to/#faq_176)
+- [How does Piwik track downloads?](https://piwik.org/faq/new-to-piwik/#faq_47)
+- [How to track error pages and get the list of 404 and referrers urls.](https://piwik.org/faq/how-to/#faq_60)
+- [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](https://piwik.org/faq/how-to/#faq_62)
+- [How do I setup Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](https://piwik.org/faq/how-to/#faq_132)
+- [How do I customise the piwik.js being loaded on all my websites?](https://piwik.org/faq/how-to/faq_19087/)
+- [How do I disable all tracking cookies used by Piwik in the javascript code?](https://piwik.org/faq/general/#faq_157)

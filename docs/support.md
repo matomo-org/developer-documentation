@@ -11,9 +11,9 @@ Ask other developers for help in [the forums](http://forum.piwik.org/list.php?9)
 
 Create a bug report on [our bug tracking system](https://github.com/piwik/piwik/issues) or check on the status of an existing bug.
 
-## [Developer Blog](http://piwik.org/blog/category/development/)
+## [Developer Blog](https://piwik.org/blog/category/development/)
 
-Check out the [Piwik developer blog](http://piwik.org/blog/category/development/) for technical news.
+Check out the [Piwik developer blog](https://piwik.org/blog/category/development/) for technical news.
 
 ## [Development Services](https://piwik.org/development/)
 

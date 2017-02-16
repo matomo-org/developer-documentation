@@ -30,7 +30,7 @@ All log data is persisted in a similar way: new data is constantly added to the 
 
 **Visit** data is updated while visits are active. So until a visit ends it is possible that Piwik will try and update it.
 
-Log data is read when calculating analytics data and old data will sometimes be deleted (via the [data purging feature](http://piwik.org/docs/managing-your-databases-size/)).
+Log data is read when calculating analytics data and old data will sometimes be deleted (via the [data purging feature](https://piwik.org/docs/managing-your-databases-size/)).
 
 Backends must ensure that inserting new log data is as fast as possible and aggregating log data is not too slow (though obviously, faster is better).
 
@@ -84,7 +84,7 @@ Each visit contains the following information:
 - `config_gears`: <!-- TODO what is this? -->
 - `config_silverlight`: whether the visitor's browser can run silverlight programs or not
 - `config_cookie`: whether the visitor's browser has cookies enabled or not
-- `location_ip`: the IP address of the computer that the visit was made from. Can be [anonymized](http://piwik.org/docs/privacy/#step-1-automatically-anonymize-visitor-ips)
+- `location_ip`: the IP address of the computer that the visit was made from. Can be [anonymized](https://piwik.org/docs/privacy/#step-1-automatically-anonymize-visitor-ips)
 - `location_browser_lang`: a string describing the language used in the visitor's browser
 - `location_country`: a two character string describing the country the visitor was located in while visiting the site. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
 - `location_region`: a two character string describing the region of the country the visitor was in. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
@@ -166,7 +166,7 @@ Action types are persisted in the `log_action` table and contain the following i
   - **Piwik\Tracker\Action::TYPE_EVENT_CATEGORY = 10**: the action is an event category (see [Tracking Events](https://piwik.org/docs/event-tracking/) user guide) 
   - **Piwik\Tracker\Action::TYPE_EVENT_ACTION = 11**: the action is an event category
   - **Piwik\Tracker\Action::TYPE_EVENT_NAME = 12**: the action is an event name
-  - **Piwik\Tracker\Action::TYPE_CONTENT_NAME = 13**:  the action is a content name (see [Content Tracking](https://piwik.org/docs/content-tracking/) user guide and [developer guide](http://developer.piwik.org/guides/content-tracking))
+  - **Piwik\Tracker\Action::TYPE_CONTENT_NAME = 13**:  the action is a content name (see [Content Tracking](https://piwik.org/docs/content-tracking/) user guide and [developer guide](https://developer.piwik.org/guides/content-tracking))
   - **Piwik\Tracker\Action::TYPE_CONTENT_PIECE = 14**: the action is a content piece
   - **Piwik\Tracker\Action::TYPE_CONTENT_TARGET = 15**: the action is a content target 
   - **Piwik\Tracker\Action::TYPE_CONTENT_INTERACTION = 16**: the action is a content interaction
@@ -267,7 +267,7 @@ Piwik creates two types of archive tables, one for each type of archive data. Th
 In `archive_numeric` tables:
 
 - the `index_idsite_dates_period` index is used when querying archive data. It lets Piwik quickly query archive data for any site and period, and for data that was archived past a certain date-time.
-- the `index_period_archived` index is used when [purging archive data](http://piwik.org/docs/managing-your-databases-size/). It allows Piwik to quickly find archive data for a specific period that is old enough to be purged.
+- the `index_period_archived` index is used when [purging archive data](https://piwik.org/docs/managing-your-databases-size/). It allows Piwik to quickly find archive data for a specific period that is old enough to be purged.
 
 In `archive_blob` tables:
 
@@ -376,5 +376,5 @@ Some options should be loaded on every non-tracking request. These options have 
 * To learn **how log data is aggregated** see our [Archiving](/guides/archiving) guide and take a look at the [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) class.
 * To learn **how archive data is cached** see our [Archive Data](/guides/archive-data) guide.
 * To learn **about Piwik's logging utility** see this section in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.
-* To learn **about database backed sessions** read [this FAQ entry](http://piwik.org/faq/how-to-install/faq_133/).
+* To learn **about database backed sessions** read [this FAQ entry](https://piwik.org/faq/how-to-install/faq_133/).
 * To learn **how plugins can persist data** read the [Extending the Database](/guides/extending-database) guide.

@@ -11,7 +11,7 @@ In this guide you will learn how to create an experiment and implement it in you
  
 ## Creating an experiment
 
-First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](http://piwik.org/docs/ab-testing/) to learn more.
+First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://piwik.org/docs/ab-testing/) to learn more.
 
 When you are asked on which target pages the experiment should be activated, we recommend to select "Visitors enter this experiment on any page".
 

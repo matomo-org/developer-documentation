@@ -29,7 +29,7 @@ There are many resources on the internet to help you learn PHP. We recommend rea
 
 All the functionality you see when you use Piwik is provided by **_Piwik Plugins_**. The core of Piwik (termed _**Piwik Core**_) only contains tools for those plugins.
 
-If you want to add more functionality to Piwik, create your own plugin then distribute it on the [Piwik Marketplace](http://plugins.piwik.org) so that others can use it.
+If you want to add more functionality to Piwik, create your own plugin then distribute it on the [Piwik Marketplace](https://plugins.piwik.org) so that others can use it.
 
 _Note: If you want to integrate another piece of software with Piwik and you only need to know how to track visits or how to retrieve reports, read more about [Integrating Piwik in your application](/integration)._
 
@@ -42,7 +42,7 @@ You can accomplish the following by creating a plugin:
 - show existing reports in a new way
 - send scheduled reports through new mediums or in new formats
 
-These are only a few of the possibilities — it is not possible to categorize all of the existing plugins' functionality simply because of the vast differences in their use cases. For example, the [Annotations](http://piwik.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](http://piwik.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
+These are only a few of the possibilities — it is not possible to categorize all of the existing plugins' functionality simply because of the vast differences in their use cases. For example, the [Annotations](https://piwik.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](https://piwik.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
 
 **Whatever ideas your imagination cooks up, we think you can implement them with Piwik.**
 
@@ -191,7 +191,7 @@ The command-line tool will create a new directory for your plugin (in the **plug
 - `MyPlugin.php`: Contains your plugin's descriptor class. This class contains metadata about your plugin and a list of event handlers for [Piwik events](/guides/events).
 - `plugin.json`: Contains plugin metadata such as the name, description, version, etc.
 - `README.md`: A dummy README file for your plugin.
-- `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](http://developer.piwik.org/guides/distributing-your-plugin).
+- `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](https://developer.piwik.org/guides/distributing-your-plugin).
 
 ## What to read next
 

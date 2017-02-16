@@ -2,6 +2,7 @@
 category: Integrate
 subGuides:
   - form-analytics/setup
+  - form-analytics/faq
   - form-analytics/reference
 ---
 # Form Analytics

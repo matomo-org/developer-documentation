@@ -4,14 +4,14 @@ title: Custom media player
 ---
 # Media Analytics for your custom video players 
 
-In this guide we will learn how you can implement [Media Analytics](http://www.media-analytics.net/) for your custom video players or audio players. 
+In this guide we will learn how you can implement [Media Analytics](https://www.media-analytics.net/) for your custom video players or audio players. 
  
 ## Tracking a new media player in the browser
 
 The Media Analytics plugin currently supports out of the box the HTML5, Vimeo and YouTube media players. If you are using
  a different media player for your videos and audio, you can measure them by registering your own player. 
 
-If you need help implementing Media Analytics for your media player or if you wish to share your implementation with us, [please contact us](http://piwik.org/support/).
+If you need help implementing Media Analytics for your media player or if you wish to share your implementation with us, [please contact us](https://piwik.org/support/).
 If you work with us. we will be able to maintain it and ensure it always work in the future.
 
 ### The raw skeleton
@@ -192,7 +192,7 @@ function MyPlayer (node, mediaType) {
 
 For more information about all the available methods have a look at the [Media Analytics JavaScript Tracker API reference](/guides/media-analytics/reference).
 
-Once you have added support for your custom player analytics, please [contact us](http://piwik.org/support/) and we will try to help you maintain it in the future.
+Once you have added support for your custom player analytics, please [contact us](https://piwik.org/support/) and we will try to help you maintain it in the future.
 
 ## Tracking a new player in mobile apps and desktop apps
 

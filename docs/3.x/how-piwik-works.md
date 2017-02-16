@@ -40,7 +40,7 @@ Plugins are not just targeted at 3rd party developers who want to customize Piwi
 As a result, there are two kinds of plugins:
 
 - **default plugins** provide Piwik's base features: they are included in the repository and in the distribution
-- **optional plugins** can be installed manually (by copying them in the `plugins/` folder) or through [Piwik's MarketPlace](http://plugins.piwik.org/) in the web interface
+- **optional plugins** can be installed manually (by copying them in the `plugins/` folder) or through [Piwik's MarketPlace](https://plugins.piwik.org/) in the web interface
 
 ## The codebase
 

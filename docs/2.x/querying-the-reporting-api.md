@@ -29,7 +29,7 @@ You can, for example, get the top 100 search engine keywords used to find your w
 Here is the output of this code:
 
 ```html
-{@include escape http://piwik.org/api_rest_call.php}
+{@include escape https://piwik.org/api_rest_call.php}
 ``` 
 
 ## Call the Piwik API in PHP

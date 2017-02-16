@@ -9,15 +9,15 @@ Permissions define what a user can see or do in Piwik.
 
 Piwik defines 3 types of permissions:
 
-- [**view permission**](http://piwik.org/faq/general/faq_70/#faq_70): applies to a specific site
+- [**view permission**](https://piwik.org/faq/general/faq_70/#faq_70): applies to a specific site
 
     With that permission, a user can view the reports for a given site.
 
-- [**admin permission**](http://piwik.org/faq/general/faq_69/#faq_69): applies to a specific site
+- [**admin permission**](https://piwik.org/faq/general/faq_69/#faq_69): applies to a specific site
 
     With that permission, a user can view and configure a given site (name, URLs, timezone, etc.). They can also grant other users the "view" or "admin" permission.
 
-- [**super user permission**](http://piwik.org/faq/general/faq_35/#faq_35): applies to **whole Piwik** (all sites)
+- [**super user permission**](https://piwik.org/faq/general/faq_35/#faq_35): applies to **whole Piwik** (all sites)
 
     With that permission, a user can view and configure all sites. They can also perform all administrative tasks such as add new sites, add users, change user permissions, activate and deactivate plugins or install new ones from the Marketplace.
 
@@ -30,7 +30,7 @@ Usually, plugins should check permissions before:
 
 Sometimes you may also need to verify permissions before registering menu items or widgets.
 
-To check a user's permissions, you need to `use` the [`Piwik\Piwik`](http://developer.piwik.org/api-reference/Piwik/Piwik) class:
+To check a user's permissions, you need to `use` the [`Piwik\Piwik`](https://developer.piwik.org/api-reference/Piwik/Piwik) class:
 
 - methods starting with `check` throw an exception when the expected condition is not met
 

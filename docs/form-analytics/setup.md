@@ -4,7 +4,7 @@ title: Setting up
 ---
 # Setting up Form Analytics
 
-In this guide you will learn how to get [Form Analytics](https://www.form-analytics.net/) to automatically track your website's online forms.
+In this guide you will learn how to get [Form Analytics](http://www.form-analytics.net/) to automatically track your website's online forms.
 
 ## Embedding the Form Analytics JavaScript Tracker
 

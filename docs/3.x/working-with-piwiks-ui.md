@@ -201,5 +201,5 @@ For example:
 ## Learn more
 
 * To learn **about creating new report visualizations** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.
-* To learn **more about the asset merging system** read this [blog post](http://piwik.org/blog/2010/07/making-piwik-ui-faster/) by the system's author.
+* To learn **more about the asset merging system** read this [blog post](https://piwik.org/blog/2010/07/making-piwik-ui-faster/) by the system's author.
 * To learn **more about theming** read our [Theming](/guides/theming) guide.

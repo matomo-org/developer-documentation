@@ -54,7 +54,7 @@ exports.phpServer = {
 
 ## Creating a UI test
 
-We start by using the [Piwik Console](http://developer.piwik.org/guides/piwik-on-the-command-line) to create a new UI test:
+We start by using the [Piwik Console](https://developer.piwik.org/guides/piwik-on-the-command-line) to create a new UI test:
 
 ```bash
 ./console generate:test --testtype ui
@@ -292,4 +292,4 @@ describe("PiwikUpdater", function () {
 ## Learn more
 
 Check out this blog post to learn more about Screenshot Tests in Piwik:
-[QA Screenshot Testing blog post](http://piwik.org/blog/2013/10/our-latest-improvement-to-qa-screenshot-testing/)
+[QA Screenshot Testing blog post](https://piwik.org/blog/2013/10/our-latest-improvement-to-qa-screenshot-testing/)

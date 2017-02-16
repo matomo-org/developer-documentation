@@ -26,7 +26,7 @@ For example, if you want to display the top five countries that visitors come fr
 *   User countries report: `&apiModule=UserCountry&apiAction=getCountry`
 *   Truncated to 5 rows: `&filter_truncate=5`
 *   Labels can be translated into a specific language. As with other API calls, you can use the parameter `&language=xx` (replacing xx with the translation code).
-The URL would be [http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&language=en&format=xml&token_auth=anonymous&filter_truncate=5](http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en)
+The URL would be [https://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&language=en&format=xml&token_auth=anonymous&filter_truncate=5](http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en)
 
 The returned XML is:
 
@@ -47,13 +47,13 @@ The returned XML is:
 
 ## Listing all the Metadata API Functions
 
-The API method **API.getReportMetadata** can be called to request the full list of API functions returning web analytics reports - [see the example output on the Piwik demo](http://demo.piwik.org/?module=API&method=API.getReportMetadata&format=xml&token_auth=anonymous).
+The API method **API.getReportMetadata** can be called to request the full list of API functions returning web analytics reports - [see the example output on the Piwik demo](https://demo.piwik.org/?module=API&method=API.getReportMetadata&format=xml&token_auth=anonymous).
 
 There are two types of reports in Piwik, and each have a slightly different format.
 
 *   **Simple metrics reports**
 
-    Simple Metrics reports simply contain a list of metrics and their values. For example, VisitsSummary.get returns the main metrics (visits, pages, unique visitors) for the specified website ([example URL](http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous)).
+    Simple Metrics reports simply contain a list of metrics and their values. For example, VisitsSummary.get returns the main metrics (visits, pages, unique visitors) for the specified website ([example URL](https://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous)).
 
     ```xml
     {@include escape http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous}
@@ -71,7 +71,7 @@ There are two types of reports in Piwik, and each have a slightly different form
 
 ## Static Image Graphs
 
-In the metadata output, the field &lt;imageGraphUrl&gt; is a URL that will generate a static PNG graph plotting data for the requested report. Static PNG graphs are used, for example, in the [Piwik mobile app](http://piwik.org/mobile/) and in [email reports](http://piwik.org/docs/email-reports/). These static image graphs can also be used in any custom dashboard, web page, monitoring page, email, etc. As opposed to the [Piwik Widgets](http://piwik.org/docs/embed-piwik-report/), static image graphs do not require JavaScript or HTML, since the URL returns a PNG image.
+In the metadata output, the field &lt;imageGraphUrl&gt; is a URL that will generate a static PNG graph plotting data for the requested report. Static PNG graphs are used, for example, in the [Piwik mobile app](https://piwik.org/mobile/) and in [email reports](https://piwik.org/docs/email-reports/). These static image graphs can also be used in any custom dashboard, web page, monitoring page, email, etc. As opposed to the [Piwik Widgets](https://piwik.org/docs/embed-piwik-report/), static image graphs do not require JavaScript or HTML, since the URL returns a PNG image.
 
 In the following examples, to see the URL used to generate the image, right-click on the image and select "view image" to see the full URL.
 

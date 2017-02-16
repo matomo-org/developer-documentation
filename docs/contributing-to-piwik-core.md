@@ -201,7 +201,7 @@ require_once PIWIK_INCLUDE_PATH . '/folder/script.php';
 
 About classes:
 
-* Classes should follow the [Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle).
+* Classes should follow the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle).
 * Refactor classes and aim for files/classes that are at most 400 lines.
 * Avoid classes with both public attributes and getters/setters. Choose to use getters and setters only when they make code easier to read.
 * Add `private` keywords to class attributes when forgotten.
@@ -236,9 +236,9 @@ Despite their importance, comments can sometimes cause information overload - or
 
 In Piwik you can easily log debug messages to files, the database or the screen by enabling logging in your config/config.ini.php file. In your code, you can then call one of the [Log](/api-reference/Piwik/Log) singleton's logging methods to log new messages.
 
-You can also show the debug output on screen by appending &debug=1 to the URL: this allows you to test and view debug messages only when needed, but still leave debug logging enabled. **See the FAQ to [enable logging output in Piwik](http://piwik.org/faq/troubleshooting/#faq_115) and the various options.**
+You can also show the debug output on screen by appending &debug=1 to the URL: this allows you to test and view debug messages only when needed, but still leave debug logging enabled. **See the FAQ to [enable logging output in Piwik](https://piwik.org/faq/troubleshooting/#faq_115) and the various options.**
 
-Piwik comes with a SQL profiler, which reports the time spent by each query, how many times they were called, the total time spent in MySQL vs PHP, etc. It makes it easier to check the performance and overhead of your new code. See the FAQ to learn how to enable [SQL profiling](http://piwik.org/faq/troubleshooting/#faq_115).
+Piwik comes with a SQL profiler, which reports the time spent by each query, how many times they were called, the total time spent in MySQL vs PHP, etc. It makes it easier to check the performance and overhead of your new code. See the FAQ to learn how to enable [SQL profiling](https://piwik.org/faq/troubleshooting/#faq_115).
 
 ### Automated tests
 
@@ -269,7 +269,7 @@ The adoption of a plugin into Piwik Core requires that we consider such criteria
 - dependencies: does it depend on closed source and/or paid subscription services?
 - licensing: license compatibility with GPLv3
 
-In most cases, it should be enough for your plugin to be available on the [Marketplace](http://plugins.piwik.org).
+In most cases, it should be enough for your plugin to be available on the [Marketplace](https://plugins.piwik.org).
 
 ## Learn more
 
