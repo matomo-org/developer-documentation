@@ -88,4 +88,4 @@ If possible, we recommend to make the `piwik.js` file writable.
 
 ## What to read next
 
-Now that you've setup Form Analytics, you may want to have a look at the [Form Analytics API reference](/guides/form-analytics/reference).
+Now that you've setup Form Analytics, you may want to have a look at the [Form Analytics FAQ](/guides/form-analytics/faq) or the [Form Analytics API reference](/guides/form-analytics/reference).
