@@ -509,6 +509,7 @@ Index
 - [`getId()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#getid) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
 - [`getDescription()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#getdescription) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
 - [`getCreditLeft()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#getcreditleft) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
+- [`getCredentialFields()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#getcredentialfields) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
 - [`getDefaultWebsiteId()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultwebsiteid) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultReport()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultreport) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultDate()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultdate) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)

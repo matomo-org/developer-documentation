@@ -19,6 +19,7 @@ The abstract class defines the following methods:
 - [`verifyCredential()`](#verifycredential) &mdash; Verify the SMS API credential.
 - [`getCreditLeft()`](#getcreditleft) &mdash; Get the amount of remaining credits.
 - [`sendSMS()`](#sendsms) &mdash; Actually send the given text message.
+- [`getCredentialFields()`](#getcredentialfields) &mdash; Defines the fields that needs to be filled up to provide credentials
 - [`isAvailable()`](#isavailable) &mdash; Defines whether the SMS Provider is available.
 
 <a name="getid" id="getid"></a>
@@ -55,11 +56,11 @@ Verify the SMS API credential.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$apiKey` (`string`) &mdash;
-       API Key
+    - `$credentials` (`array`) &mdash;
+       contains credentials (eg. like API key, user name, ...)
 
 - *Returns:*  `bool` &mdash;
-    true if SMS API Key is valid, false otherwise
+    true if credentials are valid, false otherwise
 
 <a name="getcreditleft" id="getcreditleft"></a>
 <a name="getCreditLeft" id="getCreditLeft"></a>
@@ -70,8 +71,8 @@ Get the amount of remaining credits.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$apiKey` (`string`) &mdash;
-       API Key
+    - `$credentials` (`array`) &mdash;
+       contains credentials (eg. like API key, user name, ...)
 
 - *Returns:*  `string` &mdash;
     remaining credits
@@ -88,8 +89,8 @@ any notifications etc.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$apiKey` (`string`) &mdash;
-      
+    - `$credentials` (`array`) &mdash;
+       contains credentials (eg. like API key, user name, ...)
     - `$smsText` (`string`) &mdash;
       
     - `$phoneNumber` (`string`) &mdash;
@@ -99,6 +100,25 @@ any notifications etc.
 
 - *Returns:*  `bool` &mdash;
     true
+
+<a name="getcredentialfields" id="getcredentialfields"></a>
+<a name="getCredentialFields" id="getCredentialFields"></a>
+### `getCredentialFields()`
+
+Defines the fields that needs to be filled up to provide credentials
+
+Example:
+array (
+  array(
+    'type' => 'text',
+    'name' => 'apiKey',
+    'title' => 'Translation_Key_To_Use'
+  )
+)
+
+#### Signature
+
+- It returns a `array` value.
 
 <a name="isavailable" id="isavailable"></a>
 <a name="isAvailable" id="isAvailable"></a>
