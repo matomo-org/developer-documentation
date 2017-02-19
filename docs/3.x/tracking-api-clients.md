@@ -11,7 +11,7 @@ category: Integrate
 
 ## JavaScript SDK
 
-If you are building websites, you can use our powerful JavaScript SDK to measure all aspects of your website experience. Learn more: [JavaScript tracking client.](http://developer.piwik.org/guides/tracking-javascript-guide)
+If you are building websites, you can use our powerful JavaScript SDK to measure all aspects of your website experience. Learn more: [JavaScript tracking client.](https://developer.piwik.org/guides/tracking-javascript-guide)
 
 ## Mobile SDKs
 

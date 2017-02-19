@@ -52,14 +52,14 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `appendToTrackingUrl(appendToUrl)` - Appends a custom string to the end of the HTTP request to piwik.php?
 *   `setDoNotTrack( bool )` - Set to true to not track users who opt out of tracking using Mozilla's (proposed) Do Not Track setting.
 *   `disableCookies()` - Disables all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view.
-*   `deleteCookies()` - Deletes the tracking cookies currently currently set (this is useful when [creating new visits](http://piwik.org/faq/how-to/#faq_187))
+*   `deleteCookies()` - Deletes the tracking cookies currently currently set (this is useful when [creating new visits](https://piwik.org/faq/how-to/#faq_187))
 *   `killFrame()` - Enables a frame-buster to prevent the tracked web page from being framed/iframed.
 *   `redirectFile( url )` - Forces the browser load the live URL if the tracked web page is loaded from a local file (e.g., saved to someone's desktop).
 *   `setHeartBeatTimer( minimumVisitLength, heartBeatDelay )` - records how long the page has been viewed if the minimumVisitLength (in seconds) is attained; the heartBeatDelay determines how frequently to update the server
 *   `getVisitorId()` - returns the 16 characters ID for the visitor
 *   `getVisitorInfo()` - returns the visitor cookie contents in an array
 *   `getAttributionInfo()` - returns the visitor attribution array (Referer information and / or Campaign name &amp; keyword).
-    Attribution information is used by Piwik to credit the correct referrer ([first or last referrer](http://piwik.org/faq/general/#faq_106)) used when a user triggers a goal conversion.
+    Attribution information is used by Piwik to credit the correct referrer ([first or last referrer](https://piwik.org/faq/general/#faq_106)) used when a user triggers a goal conversion.
 
     You can also use any of the following functions to get specific attributes of data:
 
@@ -69,7 +69,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
     *   `piwikTracker.getAttributionReferrerUrl()`
 
 *   `getUserId()` - returns the User ID string if it was set.
-*   `setUserId( userId )` -  Sets a [User ID](http://piwik.org/docs/user-id/) to this user (such as an email address or a username).
+*   `setUserId( userId )` -  Sets a [User ID](https://piwik.org/docs/user-id/) to this user (such as an email address or a username).
 *   `setCustomVariable (index, name, value, scope)` - Set a custom variable.
 *   `deleteCustomVariable (index, scope)` - Delete a custom variable.
 *   `getCustomVariable (index, scope)` - Retrieve a custom variable.
@@ -77,8 +77,8 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setCustomDimension (customDimensionId, customDimensionValue)` - Set a custom dimension. (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
 *   `deleteCustomDimension (customDimensionId)` - Delete a custom dimension. (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
 *   `getCustomDimension (customDimensionId)` - Retrieve a custom dimension. (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
-*   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](http://piwik.org/faq/how-to/#faq_120))
-*   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](http://piwik.org/faq/how-to/#faq_120))
+*   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](https://piwik.org/faq/how-to/#faq_120))
+*   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](https://piwik.org/faq/how-to/#faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
 
 ### Ecommerce
@@ -111,7 +111,7 @@ Starting with Piwik 1.2, first party cookies are used. Consideration must be giv
 
 ## Unit Tests Covering piwik.js
 
-The Piwik JavaScript Tracking API is covered by an extensive JavaScript unit test suite to ensure that the code quality is as high as possible, and that we never break this functionality. Tests are written using QUnit. To run the tests, simply checkout the [Piwik Git repository](http://piwik.org/participate/contributing-with-git/) and go to `/path/to/piwik/tests/javascript/`. Tests are run inside your browser.
+The Piwik JavaScript Tracking API is covered by an extensive JavaScript unit test suite to ensure that the code quality is as high as possible, and that we never break this functionality. Tests are written using QUnit. To run the tests, simply checkout the [Piwik Git repository](https://piwik.org/participate/contributing-with-git/) and go to `/path/to/piwik/tests/javascript/`. Tests are run inside your browser.
 
 The Piwik JavaScript API has been tested with numerous web browsers. To maximize coverage, we use services like [crossbrowsertesting.com](http://crossbrowsertesting.com/) and [browsershots.org](http://browsershots.org/).
 

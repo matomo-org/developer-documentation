@@ -28,7 +28,7 @@ The database has been designed with emphasis on simplicity, efficiency and data 
 
 Piwik tracks visitors, page views (ie 'actions'), conversions and Ecommerce products. Tracking is implemented in the most efficient way possible, each SQL query should use an INDEX or do minimal work on the DB. However, tracking in Piwik issues many UPDATE and INSERT statements.
 
-Some of the tracking data comes from the [Piwik JavaScript snippet](http://piwik.org/?page_id=17) (screen resolution, plugin support) and some data points from PHP (IP address, user agent). Each unique visitor is assigned a unique id that is saved in a first party cookie. Each new visit creates a row in *log_visit*. If the visitor visits the website twice in the day with more than 30 minutes in between the two visits, there will be two rows in the table *log_visit* for this visitor. On each page view, the table log_visit is updated (since it keeps a count of page views, last page view, etc.).
+Some of the tracking data comes from the [Piwik JavaScript snippet](https://piwik.org/?page_id=17) (screen resolution, plugin support) and some data points from PHP (IP address, user agent). Each unique visitor is assigned a unique id that is saved in a first party cookie. Each new visit creates a row in *log_visit*. If the visitor visits the website twice in the day with more than 30 minutes in between the two visits, there will be two rows in the table *log_visit* for this visitor. On each page view, the table log_visit is updated (since it keeps a count of page views, last page view, etc.).
 
 ###### Actions
 
@@ -42,11 +42,11 @@ URLs are recorded in a "lookup table" piwik_action. Using a hash matching algori
 
 ###### Goals
 
-When [tracking Goals](http://piwik.org/?page_id=2023), each conversion is recorded in the table piwik_log_conversion.
+When [tracking Goals](https://piwik.org/?page_id=2023), each conversion is recorded in the table piwik_log_conversion.
 
 ###### Ecommerce
 
-When [tracking Ecommerce orders and abandoned carts](http://piwik.org/?page_id=6393), the visitor cart is kept as a row in piwik_log_conversion.
+When [tracking Ecommerce orders and abandoned carts](https://piwik.org/?page_id=6393), the visitor cart is kept as a row in piwik_log_conversion.
 
 Individual items (products) are recorded in piwik_log_conversion_items. When a cart is updated, the actual row for this visit's cart in piwik_log_conversion is updated. Items in piwik_log_conversion_items can be set to deleted=1
 

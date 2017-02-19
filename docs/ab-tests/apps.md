@@ -15,7 +15,7 @@ via the [Tracking HTTP API](/api-reference/tracking-api) or any other [Piwik Tra
  
 ## Creating an experiment
 
-First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](http://piwik.org/docs/ab-testing/) to learn more.
+First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://piwik.org/docs/ab-testing/) to learn more.
 
 When you are asked on which target pages the experiment should be activated, we recommend to select "Visitors enter this experiment on any page".
 
@@ -50,7 +50,7 @@ $experiment->trackVariationActivation($piwikPhpTracker);
 ### Sending the name of the activated variation to Piwik
 
 So far you have created and implemented the experiment, so users get to see different versions of your app. 
-Now you need to let Piwik know which variation was activated for your current user by tracking a [Piwik event](http://piwik.org/docs/event-tracking/):
+Now you need to let Piwik know which variation was activated for your current user by tracking a [Piwik event](https://piwik.org/docs/event-tracking/):
 
 ```php
 // example tracking request via PHP Piwik Tracker

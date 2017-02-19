@@ -1,11 +1,12 @@
 ---
 category: Integrate
+title: JavaScript Tracker API Reference
 ---
-# JavaScript Tracker API Reference
+# Media Analytics JavaScript Tracker API Reference
 
-This guide is the JavaScript Tracker API Reference for [Media Analytics](http://www.media-analytics.net/).
+This guide is the JavaScript Tracker API Reference for [Media Analytics](https://www.media-analytics.net/).
 
-You may also be interested in the Media Analytics [Reporting HTTP API Reference](http://developer.piwik.org/api-reference/reporting-api#MediaAnalytics). 
+You may also be interested in the Media Analytics [Reporting HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#MediaAnalytics). 
 
 ## Calling MediaAnalytics tracker methods
 
@@ -163,5 +164,5 @@ Detect if the tracking of progress is currently enabled or disabled. Returns a b
 ## What to read next
 
 You may be interested in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference),
- or the [Reporting HTTP API Reference](http://developer.piwik.org/api-reference/reporting-api#MediaAnalytics).
+ or the [Reporting HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#MediaAnalytics).
  If you use a player other than Youtube/Vimeo/HTML5/JwPlayer, learn about [implementing analytics for your Custom Video Player](/guides/media-analytics/custom-player).

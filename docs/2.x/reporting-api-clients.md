@@ -8,7 +8,7 @@ previous: querying-the-reporting-api
 
 **Read this guide if**
 
-* you'd like to know **which client libraries are available to use [Piwik's Reporting HTTP API](http://developer.piwik.org/guides/reporting-introduction) from your application**
+* you'd like to know **which client libraries are available to use [Piwik's Reporting HTTP API](https://developer.piwik.org/guides/reporting-introduction) from your application**
 
 ## Client libraries
 

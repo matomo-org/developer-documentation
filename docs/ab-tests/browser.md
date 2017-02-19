@@ -12,11 +12,11 @@ and what to do when an experiment is finished.
 
 ## Creating an experiment
 
-Read the [A/B testing user guide](http://piwik.org/docs/ab-testing/) to learn more about creating an A/B test experiment.
+Read the [A/B testing user guide](https://piwik.org/docs/ab-testing/) to learn more about creating an A/B test experiment.
 
 ## Embedding the A/B Testing JavaScript framework
 
-The [A/B Testing plugin](http://www.ab-tests.net) directly adds the JavaScript A/B testing framework to your Piwik JavaScript tracker file `/piwik.js` 
+The [A/B Testing plugin](https://www.ab-tests.net) directly adds the JavaScript A/B testing framework to your Piwik JavaScript tracker file `/piwik.js` 
 and is therefore loaded automatically with the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide).
 
 This will work by default as long as the file `piwik.js` in your Piwik directory is writable by the webserver/PHP.
@@ -178,7 +178,7 @@ Testing variations can be cumbersome because variations are activated randomly a
 
 ### Tracking a goal manually
 
-When comparing different variations it is often needed to [track goals](http://piwik.org/docs/tracking-goals-web-analytics/) 
+When comparing different variations it is often needed to [track goals](https://piwik.org/docs/tracking-goals-web-analytics/) 
 in order to decide which of the variations is the most successful. When you configure your experiment, you can assign 
 multiple goals as a "success metric". These goals are usually converted automatically without having to do anything, but 
 you can also track a goal conversion manually like this: 
@@ -532,5 +532,5 @@ your browser. It is recommended to call this method as early as possible to capt
 ## What to read next
 
 Learn more about running experiments in the [A/B Testing User Guide](https://piwik.org/docs/ab-testing/), the [A/B Testing FAQs](https://piwik.org/faq/ab-testing/)
-and the [A/B testing website](http://www.ab-tests.net/).
+and the [A/B testing website](https://www.ab-tests.net/).
 

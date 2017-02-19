@@ -71,9 +71,9 @@ Here is an overview of the parameters you can add to any API request, where appl
 
 *   **idSubtable** is used to request a subtable of a given row. In Piwik, some rows are linked to a sub-table. For example, each row in the Referrers.getSearchEngines response have an "idsubdatatable" field. This integer idsubdatatable is the idSubtable of the table that contains all keywords for this search engine. You can then request the keywords for this search engine by calling Referrers.getKeywordsFromSearchEngineId with the parameter idSubtable=X (replace X with the idsubdatatable value found in the Referrers.getSearchEngines response, for the search engine you are interested in).
 
-*   **expanded**; some API functions have a parameter 'expanded'. If 'expanded' is set to 1, the returned data will contain the first level results, as well as all sub-tables. See, for example, the [returned dataset for the Actions.getDownloads API function](http://demo.piwik.org/?module=API&method=Actions.getDownloads&idSite=7&period=month&date=today&format=xml&token_auth=anonymous&expanded=1).
+*   **expanded**; some API functions have a parameter 'expanded'. If 'expanded' is set to 1, the returned data will contain the first level results, as well as all sub-tables. See, for example, the [returned dataset for the Actions.getDownloads API function](https://demo.piwik.org/?module=API&method=Actions.getDownloads&idSite=7&period=month&date=today&format=xml&token_auth=anonymous&expanded=1).
 
-*   **flat**; some API functions have a parameter 'expanded', which means that the data is hierarchical. For such API function, if 'flat' is set to 1, the returned data will contain the flattened view of the table data set. The children of all first level rows will be aggregated under one row. This is useful for example to see all Custom Variables names and values at once, for example, [Piwik forum user status](http://demo.piwik.org/index.php?module=API&method=CustomVariables.getCustomVariables&idSite=7&period=month&date=yesterday&format=xml&token_auth=anonymous&flat=1), or to see the full URLs not broken down by directory or structure.
+*   **flat**; some API functions have a parameter 'expanded', which means that the data is hierarchical. For such API function, if 'flat' is set to 1, the returned data will contain the flattened view of the table data set. The children of all first level rows will be aggregated under one row. This is useful for example to see all Custom Variables names and values at once, for example, [Piwik forum user status](https://demo.piwik.org/index.php?module=API&method=CustomVariables.getCustomVariables&idSite=7&period=month&date=yesterday&format=xml&token_auth=anonymous&flat=1), or to see the full URLs not broken down by directory or structure.
 
 *   **label**; this parameter can be used to search only for the row matching a given label. When specified, the report data will be filtered and return only the row where the row label matches the specified parameter. For example you can set &label=Nice%20Keyword to keep only the row with a label "Nice Keyword".
 There are also generic filters you can choose to apply on all APIs that return web analytics reports. For example, there is a filter for sorting by column, define start and number of rows to return, a filter to only return rows matching a given string,
@@ -107,7 +107,7 @@ There are also generic filters you can choose to apply on all APIs that return w
 
 Some parameters can optionally accept arrays. For example, the urls parameter of SitesManager.addSite, SitesManager.addSiteAliasUrls, and SitesManager.updateSite allows for an array of urls to be passed. To pass an array add the bracket operators and an index to the parameter name in the get request. So, to call SitesManager.addSite with two urls you would use the following array:
 
-[http://demo.piwik.org/?module=API&method=SitesManager.addSite&siteName=new%20example%20website&urls[0]=http://example.org&urls[1]=http://example-alias.org](http://demo.piwik.org/?module=API&method=SitesManager.addSite&siteName=new%20example%20website&urls[0]=http://example.org&urls[1]=http://example-alias.org)
+[https://demo.piwik.org/?module=API&method=SitesManager.addSite&siteName=new%20example%20website&urls[0]=http://example.org&urls[1]=http://example-alias.org](https://demo.piwik.org/?module=API&method=SitesManager.addSite&siteName=new%20example%20website&urls[0]=http://example.org&urls[1]=http://example-alias.org)
 
 ### Advanced Users: Send multiple API Requests at once
 
@@ -115,7 +115,7 @@ Sometimes it is necessary to call the Piwik API a few times to get the data need
 
 To issue a bulk request, call the API.getBulkRequest method and pass the API methods & parameters (each request must be [URL Encoded](http://php.net/manual/en/function.urlencode.php)) you wish to call in the 'urls' query parameter. For example, to call VisitsSummary.get & VisitorInterest.getNumberOfVisitsPerVisitDuration at the same time, you can use:
 
-    http://demo.piwik.org/?module=API&method=API.getBulkRequest&format=json&urls[0]=method%3dVisitsSummary.get%26idSite%3d3%26date%3d2012-03-06%26period%3dday&urls[1]=method%3dVisitorInterest.getNumberOfVisitsPerVisitDuration%26idSite%3d3%26date%3d2012-03-06%26period%3dday
+    https://demo.piwik.org/?module=API&method=API.getBulkRequest&format=json&urls[0]=method%3dVisitsSummary.get%26idSite%3d3%26date%3d2012-03-06%26period%3dday&urls[1]=method%3dVisitorInterest.getNumberOfVisitsPerVisitDuration%26idSite%3d3%26date%3d2012-03-06%26period%3dday
 
 Notice that urls[0] is the url-encoded call to VisitsSummary.get by itself and that urls[1] is what you would use to call VisitorInterest.getNumberOfVisitsPerVisitDuration by itself. The &format is specified only once (format=xml and format=json are supported for bulk requests).
 
@@ -146,7 +146,7 @@ Here is a list of metrics returned by the API and their definition.
 
 *   `nb_uniq_visitors` - Number of unique visitors
 *   `nb_visits` - Number of Visits (30 min of inactivity considered a new visit)
-*   `nb_users` - Number of unique active users (visitors with a known [User ID](http://piwik.org/docs/user-id/)). If you are not using User ID then this metric will be set to zero.
+*   `nb_users` - Number of unique active users (visitors with a known [User ID](https://piwik.org/docs/user-id/)). If you are not using User ID then this metric will be set to zero.
 *   `nb_actions` - Number of actions (page views, outlinks and downloads)
 *   `sum_visit_length` - Total time spent, in seconds
 *   `bounce_count` - Number of visits that bounced (viewed only one page)
@@ -185,8 +185,8 @@ Here is a list of metrics returned by the API and their definition.
 *   `abandoned_carts` - This value is only set if the request contains '&abandonedCarts=1'. In this case, "orders" metrics will not be returned. It is the total number of abandoned carts which contained this Product SKU/Name/Category at least once.
 *   `avg_price` - The average revenue for this Product/Category.
 *   `avg_quantity` - The average quantity for this Product/Category.
-*   `nb_visits` - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](http://piwik.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The number of visits on the Product/Category page.
-*   `conversion_rate` - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](http://piwik.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The conversion rate is the number of orders (or abandoned_carts if the request contains '&abandonedCarts=1') containing this product/category divided by number of visits on the product/category page.
+*   `nb_visits` - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](https://piwik.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The number of visits on the Product/Category page.
+*   `conversion_rate` - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](https://piwik.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The conversion rate is the number of orders (or abandoned_carts if the request contains '&abandonedCarts=1') containing this product/category divided by number of visits on the product/category page.
 
 #### Event tracking metrics, appearing in Events API calls
 

@@ -113,12 +113,12 @@ There are some other special query parameters that affect the way reports are pr
 
 The output of a Reporting API request is a serialized string of the API method's return value. The format of this string is determined by the value of the **format** query parameter. Currently Piwik supports the following output formats:
 
-- **[xml](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=xml&idSite=7&period=day&date=yesterday&expanded=1)**
-- **[json](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=json&idSite=7&period=day&date=yesterday&expanded=1)**
-- **[csv](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=csv&idSite=7&period=day&date=yesterday&expanded=1)**
-- **[tsv](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=tsv&idSite=7&period=day&date=yesterday&expanded=1)** _(Excel)_
-- **[html](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=html&idSite=7&period=day&date=yesterday&expanded=1)** _(simple HTML representation, does not use [report visualizations](/guides/visualizing-report-data))_
-- **[php](http://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=php&idSite=7&period=day&date=yesterday&expanded=1)** _(serialized PHP array)_
+- **[xml](https://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=xml&idSite=7&period=day&date=yesterday&expanded=1)**
+- **[json](https://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=json&idSite=7&period=day&date=yesterday&expanded=1)**
+- **[csv](https://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=csv&idSite=7&period=day&date=yesterday&expanded=1)**
+- **[tsv](https://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=tsv&idSite=7&period=day&date=yesterday&expanded=1)** _(Excel)_
+- **[html](https://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=html&idSite=7&period=day&date=yesterday&expanded=1)** _(simple HTML representation, does not use [report visualizations](/guides/visualizing-report-data))_
+- **[php](https://demo.piwik.org/index.php?module=API&method=UserCountry.getCity&format=php&idSite=7&period=day&date=yesterday&expanded=1)** _(serialized PHP array)_
 
 There is a special output format value, **original**, that can be used when requesting data from within Piwik using [`Piwik\API\Request`](/api-reference/Piwik/API/Request). This format will force the result to be returned as unprocessed and unserialized data. It should only be used when calling the API within Piwik in PHP.
 
@@ -130,7 +130,7 @@ Some of the API methods in the API plugin have special meaning and uses:
 
 ### Report Metadata
 
-The **API.getMetadata**, **API.getReportMetadata** and **API.getProcessedReport** API methods can be used to get information about one or all reports. The information includes the metrics contained in the report, documentation for those metrics and [more](http://demo.piwik.org/index.php?module=API&method=API.getMetadata&apiModule=UserCountry&apiAction=getCountry&format=xml&idSite=7&period=day&date=yesterday&expanded=1).
+The **API.getMetadata**, **API.getReportMetadata** and **API.getProcessedReport** API methods can be used to get information about one or all reports. The information includes the metrics contained in the report, documentation for those metrics and [more](https://demo.piwik.org/index.php?module=API&method=API.getMetadata&apiModule=UserCountry&apiAction=getCountry&format=xml&idSite=7&period=day&date=yesterday&expanded=1).
 
 These methods can be used by third party applications that provide an interface to the analytics stored by Piwik:
 
@@ -142,7 +142,7 @@ Report metadata can also be used within Piwik for features that operate on repor
 
 ### Row Evolution
 
-Piwik's [row evolution feature](http://demo.piwik.org/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#module=UserSettings&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3AUserSettings.getConfiguration$3A0$3AWindows$25207$2520$252F$2520Chrome$2520$252F$25201920x1080) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](http://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS&label=Windows+7) or [multi-row evolution data](http://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS).
+Piwik's [row evolution feature](https://demo.piwik.org/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#module=UserSettings&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3AUserSettings.getConfiguration$3A0$3AWindows$25207$2520$252F$2520Chrome$2520$252F$25201920x1080) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](http://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS&label=Windows+7) or [multi-row evolution data](http://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS).
 
 ### Bulk API Requests
 
@@ -150,7 +150,7 @@ Piwik's [row evolution feature](http://demo.piwik.org/index.php?module=CoreHome&
 
 To send a bulk request, send an HTTP request to the **API.getBulkRequest** API method. The only required query parameter is named `urls`. It should be an array of individual API request URLs. For example:
 
-    http://demo.piwik.org/?module=API&method=API.getBulkRequest&format=xml&urls[]=module%3DAPI%26method%3DVisitorInterest.getNumberOfVisitsPerVisitDuration%26format%3DXML%26idSite%3D7%26period%3Dday%26date%3D2013-11-24%26expanded%3D1&urls[]=module%3DAPI%26method%3DUserSettings.getBrowser%26format%3DXML%26idSite%3D7%26period%3Dday%26date%3D2013-11-24%26expanded%3D1
+    https://demo.piwik.org/?module=API&method=API.getBulkRequest&format=xml&urls[]=module%3DAPI%26method%3DVisitorInterest.getNumberOfVisitsPerVisitDuration%26format%3DXML%26idSite%3D7%26period%3Dday%26date%3D2013-11-24%26expanded%3D1&urls[]=module%3DAPI%26method%3DUserSettings.getBrowser%26format%3DXML%26idSite%3D7%26period%3Dday%26date%3D2013-11-24%26expanded%3D1
 
 This example uses the following API requests:
 

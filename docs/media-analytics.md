@@ -11,7 +11,7 @@ subGuides:
 
 This section contains guides that will help you track your video and audio using Piwik. 
 
-[Media Analytics](http://www.media-analytics.net) is a plugin for Piwik that can be purchased 
+[Media Analytics](https://www.media-analytics.net) is a plugin for Piwik that can be purchased 
 on the [Piwik Marketplace](https://plugins.piwik.org/MediaAnalytics).
 It is developed by [InnoCraft](https://www.innocraft.com), the makers of Piwik. 
 If you want to learn more about this plugin we recommend to have a look at the developer guides, 

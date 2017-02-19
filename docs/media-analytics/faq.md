@@ -3,7 +3,7 @@ category: Integrate
 ---
 # Developer FAQ
 
-This page is the Developer FAQ for [Media Analytics](http://www.media-analytics.net/). You may also be interested in the [Media Analytics User FAQs](https://piwik.org/faq/media-analytics/).
+This page is the Developer FAQ for [Media Analytics](https://www.media-analytics.net/). You may also be interested in the [Media Analytics User FAQs](https://piwik.org/faq/media-analytics/).
 
 ## How do I enable video analytics for Youtube videos? 
 
