@@ -806,6 +806,7 @@ If you have any question about JavaScript Tracking in Piwik, [please search the 
 
 - [How do enable tracking for users without JavaScript?](https://piwik.org/faq/how-to/#faq_176)
 - [How does Piwik track downloads?](https://piwik.org/faq/new-to-piwik/#faq_47)
+- [How to track single-page websites and web applications](https://piwik.org/blog/2017/02/how-to-track-single-page-websites-using-piwik-analytics/)
 - [How to track error pages and get the list of 404 and referrers urls.](https://piwik.org/faq/how-to/#faq_60)
 - [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](https://piwik.org/faq/how-to/#faq_62)
 - [How do I setup Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](https://piwik.org/faq/how-to/#faq_132)
