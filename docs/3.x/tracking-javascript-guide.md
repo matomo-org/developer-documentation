@@ -718,7 +718,7 @@ When you need to duplicate data into another website, or consolidate several web
 
 ##### Alternative solution: duplicate the tracking data
 
-Alternatively to using the RollUp Reporting plugin you can duplicate the tracking data. To duplicate the data you can call `addTracker` with a `null` value Piwik URL and your website ID where to duplicate the data:
+Alternatively to using the RollUp Reporting plugin you can duplicate the tracking data. To duplicate the data you can call `addTracker` with a Piwik URL and your website ID where to duplicate the data:
 
 ```js
   var u="//piwik.example.org/";
@@ -728,8 +728,7 @@ Alternatively to using the RollUp Reporting plugin you can duplicate the trackin
   // We will also collect the website data into Website ID = 7
   var websiteIdDuplicate = 7;
   // The data will be duplicated into `piwik.example.org/piwik.php`
-  // (the Piwik URL being 'null' means the pre-configured Piwik URL is used)
-  _paq.push(['addTracker', piwikUrl = null, websiteIdDuplicate]);
+  _paq.push(['addTracker', piwikUrl = u+'piwik.php', websiteIdDuplicate]);
   // Your data is now tracked in both website ID 1 and website 7 into your piwik.example.org server!
 ```
 
