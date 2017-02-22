@@ -79,10 +79,14 @@ as a visitor may have to correct form validation errors. To track a form convers
  
 ```html
 <div data-piwik-form name="cloudlogin" id="login"></div>
-// when the form is still shown on the same page you can pass the form element
+
+<!-- when the form is still shown on the same page you can pass the form element -->
 <a href="#" onclick="_paq.push(['FormAnalytics::trackFormConversion', document.getElementById('login')])">Submit</a>
+
+<script>
 // when the form is not displayed anymore, you can pass the name and / or the id of the form to track a conversion 
 _paq.push(['FormAnalytics::trackFormConversion', 'cloudlogin', 'login'])
+</script>
 ```
 
 ### `disableFormAnalytics()`
