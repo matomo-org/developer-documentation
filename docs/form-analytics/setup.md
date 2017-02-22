@@ -9,9 +9,9 @@ In this guide you will learn how to get [Form Analytics](http://www.form-analyti
 ## Embedding the Form Analytics JavaScript Tracker
 
 If you have already embedded the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
-the Form Analytics will automatically start tracking the usage of your web forms as it adds the tracking code 
-directly to the Piwik JavaScript tracker file `/piwik.js`.  
-This will work by default as long as the file `piwik.js` in your Piwik directory is writable by the webserver/PHP.
+the Form Analytics will automatically start tracking the usage of your web forms. 
+
+The tracker code for forms is automatically added into your Piwik JavaScript tracker file `/piwik.js` as long as the file `piwik.js` in your Piwik directory is writable by the webserver/PHP.
  
 To check whether this works by default for you, login into Piwik as a Super User, go to Administration, and open the "System Check" report. 
 If the System Check displays a warning for "Writable Piwik.js" then [learn below how to solve this](#when-the-piwikjs-in-your-piwik-directory-file-is-not-writable).
@@ -25,8 +25,8 @@ Piwik detects and starts the tracking of your forms automatically if they have s
 <form id="cloud_login">...</form>
 ```
 
-If your form does not have any of these attributes, we recommend setting such an attribute. If you you can neither set a form `name`
-nor a form `id`, you will be still able to track the form if there is only one form on your page. To track such a form go to
+If your form does not have any of these attributes, we recommend setting such an attribute. If you can neither set a form `name`
+nor a form `id`, you will still be able to track the form if there is only one form on your page. To track such a form go to
 "Administration => Forms" and create a new form. There you can define one or multiple pages that you want to track into this
 newly created form.
 
@@ -36,11 +36,17 @@ If your form or field names change randomly, can also define a form name by usin
 
 ```html
 <form data-piwik-name="cloud_login">...</form>
+```
+
+Similarly you can define a readable name for your fields like this:
+
+```html
 <input data-piwik-name="username" type="text">
 ```
 
-By the way: In Piwik itself you can give any form or field a readable name. If your form has for example a field named "input_4",
-you can map this field name to a human readable name like "Username". You don't need to set a `data-piwik-name` in this case.
+Note that in Piwik Form Analytics itself you can give a readable name to any form or any field. If your form has for example a field named "input_4",
+you can map this field name to a human readable name like "Username" directly in the Piwik user interface. 
+You don't need to set a `data-piwik-name` in this case.
 
 ## Custom form elements
 
@@ -58,14 +64,14 @@ Alternatively, you can add a form manually using the JavaScript tracker code `_p
 
 ## Ignoring forms
 
-If you do not want a form to be tracked, you can specify a `data-piwik-ignore` attribute like this:
+If you do not want a form to be tracked, you can specify a `data-piwik-ignore` attribute on your form like this:
 
 ```html
 <form name="cloud_signup" data-piwik-ignore></form>
 ```
 
 If set, it will not even send any tracking requests for this form to your Piwik. This is useful if you want to exclude
-for example forms that are shown on each page like a search or a newsletter sign up.
+for example forms that are shown on each page like a search or a newsletter sign up form.
 
 ## When the `piwik.js` in your Piwik directory file is not writable
  

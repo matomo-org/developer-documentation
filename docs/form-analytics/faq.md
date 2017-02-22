@@ -4,7 +4,7 @@ title: Developer FAQ
 ---
 # Form Analytics Developer FAQ
 
-This page is the Developer FAQ for [Form Analytics](http://www.form-analytics.net/). You may also be interested in the [Media Analytics User FAQs](https://piwik.org/faq/media-analytics/).
+This page is the Developer FAQ for [Form Analytics](http://www.form-analytics.net/). You may also be interested in the [Form Analytics User FAQs](https://piwik.org/faq/form-analytics/).
 
 ## I have a single page website or a web application, how can I re-scan the DOM to find new forms or form fields that were added after the initial page load, for example via Ajax / XHR? 
 
@@ -31,8 +31,8 @@ When Piwik finds a form on your page, it reads the `name` and `id` attribute of 
 <input name="username" id="username_field">
 ```
 
-For forms, Piwik will read both the form `name` and form `id` to match any configured form in Piwik. For form fields, Piwik will first
-check if there is a `name` attribute, and if no value is set, use the `id` attribute as a fallback. 
+For forms, Piwik will read both the form `name` and form `id` to match against any of your configured forms in Piwik. For form fields, Piwik will first
+check if there is a `name` attribute, and if no value is set, use the field `id` attribute as a fallback. 
 
 Some websites or apps use randomized names that always change, for example:
 
@@ -53,7 +53,7 @@ In this case, you should set a fixed name that always remains the same using the
 <input name="349391ac34f" data-piwik-name="username">
 ```
 
-Please note that you do not have to set a custom name if the name is always the same as you can map in Piwik itself a
+Please note that you do not have to set a custom name if the name is always the same: in Piwik itself you can map a
 cryptic name like `input_4` to a human readable name like "Username" without having to change your website.
  
 ## How do I prevent a form or form field from being tracked?
@@ -105,10 +105,10 @@ The second parameter should reference either the form element that was submitted
  
 ## How do I track a form conversion manually?
 
-Piwik can automatically track a form conversion when it is configured under "Administration => Forms". If your website
+Piwik can automatically track a form conversion when the form is configured under "Administration => Forms". If your website
  does not forward the user to another page after submitting a form successfully, you may need to track a form conversion
- manually. A form conversion should be only tracked when the form was submitted without any validation errors. This means
- there might be several forms submits before a form is actually converted.
+ manually. When you implement a form conversion manually, make sure to track the conversion only when the form was submitted without any validation errors.
+  This means there might be several forms submits before a form is actually converted.
  
 If you don't redirect a user to another page when the form is converted and the form is still shown on the same page when
 the conversion happens, you can track a form conversion like this: 
@@ -124,8 +124,8 @@ if (noValidationErrors) {
 
 The second parameter should reference either the form element that was converted, or any element within that form. 
 
-Often you might reload the page, or redirect a user to another page when a form submit happens. In this case, you can
-track a form conversion by specifying the forms' `name` and `id` manually like this:
+Often when a form submit occurs you might reload the page or redirect a user to another page. 
+In this case, you can manually track a form conversion by specifying the forms' `name` and `id` like this:
 
 ```js
 _paq.push(['FormAnalytics::trackFormConversion', 'cloudloginName', 'loginId']);
@@ -138,10 +138,10 @@ attribute, simply set an empty string like this:
 _paq.push(['FormAnalytics::trackFormConversion', '', 'loginId'])
 ```
 
-It is recommended, to call this method as early as possible in your Piwik tracking code.
+It is recommended to call this `FormAnalytics::trackFormConversion` method as early as possible in your Piwik tracking code.
 
-Please note that a form conversion does not automatically track a form submit and you may have to call both methods if 
-your form does not have a submit button:
+Please note that if your form does not have a submit button, you may have to call both methods `FormAnalytics::trackFormSubmit` and `FormAnalytics::trackFormConversion`. 
+This is because  a form conversion does not automatically track a form submit.
 
 ```js
 _paq.push(['FormAnalytics::trackFormSubmit', document.getElementById('loginId')]);
@@ -151,7 +151,7 @@ if (noValidationErrors) {
 ```
 
  
-## As a developer I want to see more details about the logged data, is it possible? 
+## As a developer I want to see more details about the form analytics data being logged in my website, is it possible? 
 
 Yes, you can enable the debug mode by calling the following method:
 
@@ -159,5 +159,4 @@ Yes, you can enable the debug mode by calling the following method:
 _paq.push(['FormAnalytics::enableDebugMode']);
 ```
  
-Calling this method will start logging all tracking requests and some more information to the developer 
-console of your browser. 
+Calling this method will start logging all tracking requests and some more information to the developer console of your browser. 

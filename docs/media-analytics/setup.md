@@ -10,9 +10,8 @@ in particular: HTML5 videos and audios, Youtube videos and Vimeo videos. Support
 ## Embedding the Media Analytics JavaScript Tracker
 
 If you have already embedded the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
-the Media Analytics will automatically start tracking the usage of video and audio by adding the video player tracking code 
-directly within the Piwik JavaScript tracker file `/piwik.js`.  
-This will work by default as long as the file `piwik.js` in your Piwik directory is writable by the webserver/PHP.
+the Media Analytics will automatically start tracking the usage of video and audio. 
+The video player tracking code is directly added in your Piwik JavaScript tracker file `/piwik.js` as long as the file `piwik.js` in your Piwik directory is writable by the webserver/PHP.
  
 To check whether this works by default for you, login into Piwik as a Super User, go to Administration, and open the "System Check" report. 
 If the System Check displays a warning for "Writable Piwik.js" then [learn below how to solve this](#when-the-piwikjs-in-your-piwik-directory-file-is-not-writable).
