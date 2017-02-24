@@ -499,6 +499,11 @@ _paq.push(['setDomains', '*.example.com']);
 
 _paq.push(['trackPageView']);
 ```
+### Tracking multiple domain names in the same website
+
+To record users across multiple domain names in the same Piwik website, we need to setup what is called Cross Domain linking. Cross domain tracking in Piwik makes sure that when the visitor visits multiple websites and domain names, the visitor data will be stored in the same visit and that the visitor ID is reused across domain names. A typical use case where cross domain is needed is for example when an ecommerce online store is on `www.awesome-shop.com` and the ecommerce shopping cart technology is on another domain such as `secure.cart.com`.
+
+Learn about setting up cross-domain tracking in our guide: [How do I accurately measure a same visitor across multiple domain names (cross domain linking)?](https://piwik.org/faq/how-to/faq_23654/)
 
 ### Tracking subdirectories of a domain in separate websites
 
