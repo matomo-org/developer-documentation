@@ -5,7 +5,7 @@ title: Setting up
 # Setting up Media Analytics
 
 In this guide we will learn how to get [Media Analytics](https://www.media-analytics.net/) to automatically track your website's video and audio media, 
-in particular: HTML5 videos and audios, Youtube videos and Vimeo videos. Supported players are for example JW Player, VideoJS and also many other HTML5 based video players.
+in particular: HTML5 videos and audios, Youtube videos and Vimeo videos. Supported players are for example JW Player, VideoJS, MediaElement.js, and also many other HTML5 based video players.
 
 ## Embedding the Media Analytics JavaScript Tracker
 
