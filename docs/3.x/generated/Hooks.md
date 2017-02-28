@@ -2003,20 +2003,22 @@ Callback Signature:
 
 ### Tracker.newConversionInformation
 
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php) in line [707](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php#L707)*
+*Defined in [Piwik/Tracker/GoalManager](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php) in line [711](https://github.com/piwik/piwik/blob/3.x-dev/core/Tracker/GoalManager.php#L711)*
 
 Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
 
 This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
 
 Callback Signature:
-<pre><code>function(&amp;$conversion, $visitInformation, $request)</code></pre>
+<pre><code>function(&amp;$conversion, $visitInformation, $request, $action)</code></pre>
 
 - array `&$conversion` The conversion entity. Read [this](/guides/persistence-and-the-mysql-backend#conversions) to see what it contains.
 
 - array `$visitInformation` The visit entity that we are tracking a conversion for. See what information it contains [here](/guides/persistence-and-the-mysql-backend#visits).
 
 - \Piwik\Tracker\Request `$request` An object describing the tracking request being processed.
+
+- Action `$action` An action object like ActionPageView or ActionDownload, or null if no action is supposed to be processed.
 
 
 ### Tracker.PageUrl.getQueryParametersToExclude
