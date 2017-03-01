@@ -48,6 +48,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setIgnoreClasses( string | array )` - Set classes to be ignored if present in link (in addition to piwik_ignore)
 *   `setLinkClasses( string | array )` - Set classes to be treated as outlinks (in addition to piwik_link)
 *   `setLinkTrackingTimer( integer )` - Set delay for link tracking in milliseconds.
+*  `getLinkTrackingTimer` - Get delay for link tracking (in milliseconds).
 *   `discardHashTag( bool )` - Set to true to not record the hash tag (anchor) portion of URLs
 *   `setGenerationTimeMs(generationTime)` - By default Piwik uses the browser DOM Timing API to accurately determine the time it takes to generate and download the page. You may overwrite the value by specifying a milliseconds value here.
 *   `appendToTrackingUrl(appendToUrl)` - Appends a custom string to the end of the HTTP request to piwik.php?
