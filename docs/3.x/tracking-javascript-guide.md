@@ -569,7 +569,7 @@ Notes:
 
 For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](https://piwik.org/faq/new-to-piwik/#faq_104)
 
-## Download & Outlink tracking
+## Download and Outlink tracking
 
 ### Outlink tracking exclusions
 
