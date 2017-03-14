@@ -16,7 +16,7 @@ This is the Piwik API Reference. It lists all functions that can be called, docu
     *   if you want to get data for all websites, set _idSite=all_
 
 *   **period** &mdash; the period you request the statistics for. Can be any of: _day_, _week_, _month_, _year_ or _range_. All reports are returned for the dates based on the website's time zone.
-
+ 
     *   **day** returns data for a given day.
     *   **week** returns data for the week that contains the specified 'date'
     *   **month** returns data for the month that contains the specified 'date'
