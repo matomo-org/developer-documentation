@@ -462,6 +462,7 @@ Callback Signature:
 
 - [Controller.$module.$action](#controllermoduleaction)
 - [Controller.$module.$action.end](#controllermoduleactionend)
+- [Controller.triggerAdminNotifications](#controllertriggeradminnotifications)
 
 ### Controller.$module.$action
 
@@ -496,6 +497,26 @@ Callback Signature:
 - mixed `&$result` The result of the controller action.
 
 - array `$parameters` The arguments passed to the controller action.
+
+
+### Controller.triggerAdminNotifications
+
+*Defined in [Piwik/Plugin/ControllerAdmin](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ControllerAdmin.php) in line [346](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ControllerAdmin.php#L346)*
+
+Posted when rendering an admin page and notifications about any warnings or errors should be triggered. You can use it for example when you have a plugin that needs to be configured in order to work and the
+plugin has not been configured yet. It can be also used to cancel / remove other notifications by calling 
+eg `Notification\Manager::cancel($notificationId)`.
+
+**Example**
+
+    public function onTriggerAdminNotifications(Piwik\Widget\WidgetsList $list)
+    {
+        if ($pluginFooIsNotConfigured) {
+             $notification = new Notification('The plugin foo has not been configured yet');
+             $notification->context = Notification::CONTEXT_WARNING;
+             Notification\Manager::notify('fooNotConfigured', $notification);
+        }
+    }
 
 ## CoreUpdater
 
