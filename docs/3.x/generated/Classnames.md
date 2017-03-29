@@ -42,6 +42,7 @@
 ## DataTable\Filter\PatternRecursive
 ## DataTable\Filter\PrependSegment
 ## DataTable\Filter\PrependValueToMetadata
+## DataTable\Filter\RemoveSubtables
 ## DataTable\Filter\ReplaceColumnNames
 ## DataTable\Filter\ReplaceSummaryRowLabel
 ## DataTable\Filter\Sort

@@ -25,6 +25,7 @@ This class defines the following properties:
 - [`$metrics`](#$metrics) &mdash; An array of supported metrics.
 - [`$processedMetrics`](#$processedmetrics) &mdash; The processed metrics this report supports, eg `avg_time_on_site` or `nb_actions_per_visit`.
 - [`$hasGoalMetrics`](#$hasgoalmetrics) &mdash; Set this property to true in case your report supports goal metrics.
+- [`$supportsFlatten`](#$supportsflatten) &mdash; Set this property to false in case your report can't/shouldn't be flattened.
 - [`$constantRowsCount`](#$constantrowscount) &mdash; Set it to boolean `true` if your report always returns a constant count of rows, for instance always 24 rows for 1-24 hours.
 - [`$isSubtableReport`](#$issubtablereport) &mdash; Set it to boolean `true` if this report is a subtable report and won't be used as a standalone report.
 - [`$parameters`](#$parameters) &mdash; Some reports may require additional URL parameters that need to be sent when a report is requested.
@@ -101,6 +102,18 @@ Set this property to true in case your report supports goal metrics.
 
 In this case, the goal metrics will be
 automatically added to the report metadata and the report will be displayed in the Goals UI.
+
+#### Signature
+
+- It is a `bool` value.
+
+<a name="$supportsflatten" id="$supportsflatten"></a>
+<a name="supportsFlatten" id="supportsFlatten"></a>
+### `$supportsFlatten`
+
+Set this property to false in case your report can't/shouldn't be flattened.
+
+In this case, flattener won't be applied even if parameter is provided in a request
 
 #### Signature
 

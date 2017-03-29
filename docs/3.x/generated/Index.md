@@ -250,6 +250,7 @@ Index
 - [`filterArray()`](Piwik/DataTable/Filter/Pattern.md#filterarray) &mdash; *Method in class* [`Pattern`](Piwik/DataTable/Filter/Pattern.md)
 - [`filter()`](Piwik/DataTable/Filter/PatternRecursive.md#filter) &mdash; *Method in class* [`PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md)
 - [`filter()`](Piwik/DataTable/Filter/PrependValueToMetadata.md#filter) &mdash; *Method in class* [`PrependValueToMetadata`](Piwik/DataTable/Filter/PrependValueToMetadata.md)
+- [`filter()`](Piwik/DataTable/Filter/RemoveSubtables.md#filter) &mdash; *Method in class* [`RemoveSubtables`](Piwik/DataTable/Filter/RemoveSubtables.md)
 - [`filter()`](Piwik/DataTable/Filter/ReplaceColumnNames.md#filter) &mdash; *Method in class* [`ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md)
 - [`filter()`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md#filter) &mdash; *Method in class* [`ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md)
 - [`filter()`](Piwik/DataTable/Filter/Sort.md#filter) &mdash; *Method in class* [`Sort`](Piwik/DataTable/Filter/Sort.md)
@@ -797,7 +798,7 @@ Index
 ## R
 
 - [`Request`](Piwik/API/Request.md) &mdash; *Class in namespace* `Piwik\API`- [`renameColumn()`](Piwik/DataTable.md#renamecolumn) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
-- [`ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`renameColumn()`](Piwik/DataTable/Map.md#renamecolumn) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
+- [`RemoveSubtables`](Piwik/DataTable/Filter/RemoveSubtables.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`renameColumn()`](Piwik/DataTable/Map.md#renamecolumn) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`Row`](Piwik/DataTable/Row.md) &mdash; *Class in namespace* [`Piwik\DataTable`](Piwik/DataTable)- [`renameColumn()`](Piwik/DataTable/Row.md#renamecolumn) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`removeSubtable()`](Piwik/DataTable/Row.md#removesubtable) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`releaseDbLock()`](Piwik/Db.md#releasedblock) &mdash; *Method in class* [`Db`](Piwik/Db.md)
@@ -899,6 +900,7 @@ Index
 - [`setBasicVariablesAdminView()`](Piwik/Plugin/ControllerAdmin.md#setbasicvariablesadminview) &mdash; *Method in class* [`ControllerAdmin`](Piwik/Plugin/ControllerAdmin.md)
 - [`shouldForceNewVisit()`](Piwik/Plugin/Dimension/VisitDimension.md#shouldforcenewvisit) &mdash; *Method in class* [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`$subcategoryId`](Piwik/Plugin/Report.md#$subcategoryid) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
+- [`$supportsFlatten`](Piwik/Plugin/Report.md#$supportsflatten) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
 - [`Segment`](Piwik/Plugin/Segment.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`setAcceptedValues()`](Piwik/Plugin/Segment.md#setacceptedvalues) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`setCategory()`](Piwik/Plugin/Segment.md#setcategory) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`setName()`](Piwik/Plugin/Segment.md#setname) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
@@ -1075,6 +1077,7 @@ Index
 - [`__construct()`](Piwik/DataTable/Filter/PatternRecursive.md#__construct) &mdash; *Method in class* [`PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md)
 - [`__construct()`](Piwik/DataTable/Filter/PrependSegment.md#__construct) &mdash; *Method in class* [`PrependSegment`](Piwik/DataTable/Filter/PrependSegment.md)
 - [`__construct()`](Piwik/DataTable/Filter/PrependValueToMetadata.md#__construct) &mdash; *Method in class* [`PrependValueToMetadata`](Piwik/DataTable/Filter/PrependValueToMetadata.md)
+- [`__construct()`](Piwik/DataTable/Filter/RemoveSubtables.md#__construct) &mdash; *Method in class* [`RemoveSubtables`](Piwik/DataTable/Filter/RemoveSubtables.md)
 - [`__construct()`](Piwik/DataTable/Filter/ReplaceColumnNames.md#__construct) &mdash; *Method in class* [`ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md)
 - [`__construct()`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md#__construct) &mdash; *Method in class* [`ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md)
 - [`__construct()`](Piwik/DataTable/Filter/Sort.md#__construct) &mdash; *Method in class* [`Sort`](Piwik/DataTable/Filter/Sort.md)

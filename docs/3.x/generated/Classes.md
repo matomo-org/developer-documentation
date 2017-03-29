@@ -46,6 +46,7 @@ This is a complete list of available classes:
 - [`DataTable\Filter\PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md) &mdash; Deletes rows that do not contain a column that matches a regex pattern and do not contain a subtable that contains a column that matches a regex pattern.
 - [`DataTable\Filter\PrependSegment`](Piwik/DataTable/Filter/PrependSegment.md) &mdash; Executes a callback for each row of a DataTable and prepends each existing segment with the given segment.
 - [`DataTable\Filter\PrependValueToMetadata`](Piwik/DataTable/Filter/PrependValueToMetadata.md) &mdash; Executes a callback for each row of a DataTable and prepends the given value to each metadata entry but only if the given metadata entry exists.
+- [`DataTable\Filter\RemoveSubtables`](Piwik/DataTable/Filter/RemoveSubtables.md) &mdash; Delete all existing subtables from rows.
 - [`DataTable\Filter\ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md) &mdash; Replaces column names in each row of a table using an array that maps old column names new ones.
 - [`DataTable\Filter\ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md) &mdash; Replaces the label of the summary row with a supplied label.
 - [`DataTable\Filter\Sort`](Piwik/DataTable/Filter/Sort.md) &mdash; Sorts a DataTable based on the value of a specific column.
