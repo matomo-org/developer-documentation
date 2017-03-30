@@ -466,7 +466,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [540](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L540)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [542](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L542)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -482,7 +482,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [557](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L557)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [559](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L559)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -745,7 +745,7 @@ Callback Signature:
 
 ### FrontController.modifyErrorPage
 
-*Defined in [Piwik/ExceptionHandler](https://github.com/piwik/piwik/blob/3.x-dev/core/ExceptionHandler.php) in line [123](https://github.com/piwik/piwik/blob/3.x-dev/core/ExceptionHandler.php#L123)*
+*Defined in [Piwik/ExceptionHandler](https://github.com/piwik/piwik/blob/3.x-dev/core/ExceptionHandler.php) in line [127](https://github.com/piwik/piwik/blob/3.x-dev/core/ExceptionHandler.php#L127)*
 
 Triggered before a Piwik error page is displayed to the user. This event can be used to modify the content of the error page that is displayed when
 an exception is caught.
@@ -1320,7 +1320,7 @@ Callback Signature:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [522](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L522)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [524](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L524)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -1341,7 +1341,7 @@ Usages:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [567](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L567)*
+*Defined in [Piwik/FrontController](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php) in line [569](https://github.com/piwik/piwik/blob/3.x-dev/core/FrontController.php#L569)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
