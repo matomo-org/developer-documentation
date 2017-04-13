@@ -652,6 +652,7 @@ Callback Signature:
 ## Db
 
 - [Db.cannotConnectToDb](#dbcannotconnecttodb)
+- [Db.getActionReferenceColumnsByTable](#dbgetactionreferencecolumnsbytable)
 - [Db.getDatabaseConfig](#dbgetdatabaseconfig)
 
 ### Db.cannotConnectToDb
@@ -669,6 +670,28 @@ Callback Signature:
 Usages:
 
 [Installation::displayDbConnectionMessage](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Installation.php#L41)
+
+
+### Db.getActionReferenceColumnsByTable
+
+*Defined in [Piwik/Plugin/Dimension/DimensionMetadataProvider](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Dimension/DimensionMetadataProvider.php) in line [91](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Dimension/DimensionMetadataProvider.php#L91)*
+
+Triggered when detecting which log_action entries to keep. Any log tables that use the log_action
+table to reference text via an ID should add their table info so no actions that are still in use
+will be accidentally deleted.
+
+**Example**
+
+    Piwik::addAction('Db.getActionReferenceColumnsByTable', function(&$result) {
+        $tableNameUnprefixed = 'log_example';
+        $columnNameThatReferencesIdActionInLogActionTable = 'idaction_example';
+        $result[$tableNameUnprefixed] = array($columnNameThatReferencesIdActionInLogActionTable);
+    });
+
+Callback Signature:
+<pre><code>function(&amp;$result)</code></pre>
+
+- array `&$result` 
 
 
 ### Db.getDatabaseConfig
