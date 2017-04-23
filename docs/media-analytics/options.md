@@ -44,6 +44,41 @@ To do this you can define a custom resource via the `data-piwik-resource` HTML a
        data-piwik-resource="http://example.org/trackedUrl.mp4"></video>
 ```
 
+### JW Player
+
+If your resource URL is for example user dependent, and you always want to track the same resource, you can provide a 
+ custom resource by specifying a playlist item in the setup method like this:
+ 
+```js 
+playerInstance.setup({
+    playlist: [{
+        file: "http://example.org/actualUrl.mp4",
+        title: "M20 LU Vs LQ - Sixes",
+        piwikResource: "http://example.org/trackedUrl.mp4"
+    }
+});
+```
+
+### Flowplayer
+
+You can provide a custom resource URL when you use flowplayer:
+ 
+```js 
+flowplayer("#player", {
+    clip: {
+        sources: [
+            {type: "application/x-mpegurl", src: "http://example.org/actualUrl.m3u8"},
+            {type: "video/mp4", src: "http://example.org/actualUrl.mp4" }
+        ],
+        title: "Javascript setup",
+        piwikResource: "http://example.org/trackedUrl"
+    }
+});
+```
+
+If you embed flowplayer using the `video` element, you can set the `data-piwik-resource` attribute on the video element
+directly as described above.
+
 ## Restricting which media data is tracked
 
 ### Excluding specific media from being tracked
@@ -140,7 +175,7 @@ It is recommended to call this method as early as possible, for example just aft
 
 ## What to read next
 
-If you use a player other than Youtube/Vimeo/HTML5/JwPlayer, learn about [tracking your Custom Video Players](/guides/media-analytics/custom-player). 
+If you use a player other than Youtube / Vimeo / HTML5 / JwPlayer / Flowplayer / Video.js, learn about [tracking your Custom Video Players](/guides/media-analytics/custom-player). 
 Or you may want to learn more about the [Media Analytics JavaScript API](/guides/media-analytics/reference), 
  read the [Media Analytics User Guide](https://piwik.org/docs/media-analytics/), 
  the Media Analytics [User FAQs](https://piwik.org/faq/media-analytics/) or the [Developer FAQs](/guides/media-analytics/faq).

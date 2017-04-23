@@ -48,6 +48,29 @@ jwplayer("myDiv").setup({
 });
 ```
 
+## Tracking Flowplayer videos
+
+The tracking of Flowplayer works automatically. However, you may not be tracking accurate titles for your video by default. 
+If you use the JavaScript embed method, we recommend to specify a title in the `flowplayer` method of your video:
+
+```js
+flowplayer("#player", {
+    clip: {
+        sources: [
+            {type: "video/mp4", src: "http://example.org/actualUrl.mp4"}
+        ],
+        title: "My Video Title"
+    }
+});
+```
+
+If you embed Flowplayer using the video element, please read the instructions for setting titles using HTML5 above. You can 
+set a title using the `data-piwik-title` or `title` attribute.
+
+Please note that we are currently only supporting HTML5 videos for Flowplayer. If you are tracking flash videos using flowplayer,
+please get in touch with us and we add support for it for you. If you are using flash because of HLS streams, you might want
+to consider using the hlsjs plugin so HTML5 will be used instead of flash.
+
 ## Tracking Vimeo videos
 
 The tracking of Vimeo videos works automatically if the video is embedded as an `<iframe>`.
