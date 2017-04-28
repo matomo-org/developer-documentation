@@ -32,6 +32,42 @@ In the above example your video analytics reports in Piwik will show "My custom 
 If the video title cannot be detected (depending on your media player) and there is none of these HTML attributes set, 
 then the title will be shown as "Unknown".
 
+### JW Player
+
+If you want to track a custom title that is different to your video title, you can provide a 
+ custom title that will be only used for tracking purposes by specifying a playlist item in the setup method like this:
+ 
+```js 
+playerInstance.setup({
+    playlist: [{
+        file: "http://example.org/actualUrl.mp4",
+        title: "My Video",
+        piwikTitle: "My custom Video title"
+    }
+});
+```
+
+### Flowplayer
+
+You can provide a custom title when you use flowplayer for tracking purposes:
+ 
+```js 
+flowplayer("#player", {
+    clip: {
+        sources: [
+            {type: "application/x-mpegurl", src: "http://example.org/actualUrl.m3u8"},
+            {type: "video/mp4", src: "http://example.org/actualUrl.mp4" }
+        ],
+        title: "Javascript setup",
+        piwikTitle: "My custom Video title"
+    }
+});
+```
+
+If you embed flowplayer using the `video` element, you can set the `data-piwik-title` attribute on the video element
+directly as described above.
+
+
 ## Overwriting the video/audio resource URL being tracked
 
 By default, the HTTP URL of a media is fetched from the player API or read in the DOM. There can be use cases
@@ -53,7 +89,7 @@ If your resource URL is for example user dependent, and you always want to track
 playerInstance.setup({
     playlist: [{
         file: "http://example.org/actualUrl.mp4",
-        title: "M20 LU Vs LQ - Sixes",
+        title: "My Video",
         piwikResource: "http://example.org/trackedUrl.mp4"
     }
 });
