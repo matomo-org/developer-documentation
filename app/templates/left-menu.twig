@@ -14,6 +14,7 @@
             <div class="panel-body bs-sidebar">
                 <ul class="nav nav-pills nav-stacked bs-sidenav">
                     {% for item in category.items %}
+
                         {% if item.menuTitle %}
                             {% set menuClass = (guide.title == item.menuTitle) ? 'active' : '' %}
                             <li class="{{ menuClass }}" title="{{ item.menuTitle|striptags|raw }}">
@@ -27,7 +28,7 @@
 
                                 <ul class="nav">
                                     {% for subItem in item.subItems %}
-                                        {% set menuClass = (guide.title == subItem.menuTitle) ? 'active' : '' %}
+                                        {% set menuClass = (subItem.getMenuUrl in currentPath) ? 'active' : '' %}
                                         <li class="{{ menuClass }}" title="{{ subItem.title|striptags|raw }}">
                                             <a href="{{ subItem.menuUrl|completeUrl }}"> {{ subItem.menuTitle|raw }}</a>
                                         </li>

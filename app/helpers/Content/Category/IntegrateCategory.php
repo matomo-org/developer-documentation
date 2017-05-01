@@ -31,6 +31,7 @@ class IntegrateCategory extends Category
             new Guide('reporting-introduction'),
             new RemoteLink('Integrations', 'https://piwik.org/integrate/'),
             new Guide('ab-tests'),
+            new Guide('heatmap-session-recording'),
             new Guide('media-analytics'),
             new Guide('form-analytics'),
         ];
