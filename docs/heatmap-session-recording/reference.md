@@ -20,9 +20,9 @@ In the `piwik.js` tracker we differentiate between two methods:
 
 In most cases only one Piwik tracker will be used so the only difference is how you call that method:
 
-* Tracker methods are called via `_paq.push(['HeatmapSessionRecording.$methodName'])` or on a tracker instance directly eg. 
-  `Piwik.getAsyncTracker().HeatmapSessionRecording.$methodName()`.
-* Static methods are called via `_paq.push(['HeatmapSessionRecording::$methodName'])` or directly on the `Piwik.HeatmapSessionRecording` object,
+* Tracker methods are called via `_paq.push(['HeatmapSessionRecording.$methodName']);` or on a tracker instance directly eg. 
+  `Piwik.getAsyncTracker().HeatmapSessionRecording.$methodName();`
+* Static methods are called via `_paq.push(['HeatmapSessionRecording::$methodName']);` or directly on the `Piwik.HeatmapSessionRecording` object,
   eg. `Piwik.HeatmapSessionRecording.$methodName()`.
 
 If you do not want to use the `_paq.push` methods, you need to define a `window.piwikHeatmapSessionRecordingAsyncInit` method 
@@ -110,7 +110,9 @@ If you track custom URLs using the `setCustomUrl()` tracker method and want to a
 custom URL, call this method.
 
 This is useful if you have for example URLs like `www.example.com#page1` and you track a custom URL like 
-`_paq.push(['setCustomUrl', 'www.example.com/page1'])`. By default, the target page rules you configure will be matched against 
+`_paq.push(['setCustomUrl', 'www.example.com/page1']);`
+
+By default, the target page rules you configure will be matched against 
 `www.example.com#page1`. When you call this method, the target page rules will be matched against `www.example.com/page1`.
 
 ### `disable()`
@@ -143,7 +145,7 @@ Allows you to set the tracker instances to be used when tracking heatmap and ses
 
 Returns an array of Piwik tracker instances that are used by the Heatmap and Session Recording plugin. By default, 
 this will return the same as `Piwik.getAsyncTrackers()` and will return all tracker instances that were created eg 
-via `Piwik.addTracker` or `_paq.push(['addTracker'])` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
+via `Piwik.addTracker` or `_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
 
 ## Tracker methods
 

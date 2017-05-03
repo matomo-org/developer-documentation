@@ -59,8 +59,9 @@ to let Piwik know that this element contains a form. Piwik will then discover th
 </div>
 ```
 
-Alternatively, you can add a form manually using the JavaScript tracker code `_paq.push(['FormAnalytics::trackForm', formNode]);`.
- Read more about this in the [Form Analytics API Reference](/guides/form-analytics/reference).
+Alternatively, you can add a form manually using the JavaScript tracker code `_paq.push(['FormAnalytics::trackForm', formNode]);`
+
+Read more about this in the [Form Analytics API Reference](/guides/form-analytics/reference).
 
 ## Ignoring forms
 

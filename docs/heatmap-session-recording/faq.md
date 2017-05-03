@@ -9,31 +9,35 @@ This page is the Developer FAQ for [Heatmap & Session Recording](https://www.hea
 
 There are two ways to do this: 
 
-* Disable the capturing of keystrokes each time you configure a session recording in Piwik
-* Add the following code to your Piwik tracking code to make sure to never record any entered keystrokes: `_paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes'])`
+* Disable the capturing of keystrokes each time you configure a session recording in Piwik > Session Recordings > Manage.
+* Add the following code to your Piwik tracking code to make sure to never record any entered keystrokes: ` _paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes']);`
 
 If you want to capture keystrokes but mask the keystrokes a user entered, have a look at [masking keystrokes](/guides/heatmap-session-recording/setup#masking-keystrokes-in-form-fields).
 
 ## How do I use Heatmap & Session Recording on a single-page website or web application? 
 
-Single-page websites and web applications are supported out of the box and a new page view is detected automatically when you call the `trackPageView` method.
+Single-page websites and web applications are supported out of the box: Heatmaps and Sessions will be recorded as expected.
+When you call the `trackPageView` method in your single-page website or web app, a new page view is detected automatically.
  
 To learn more about the detection of page views, have a look at the [disableAutoDetectNewPageView() API reference](/guides/heatmap-session-recording/reference#disableautodetectnewpageview)
 
 ## I am tracking "virtual" page views, how do I make sure to record all activities within a page view?
 
-If you use the `trackPageView` method to track for example an event, a download, or errors, the recording of session or heatmap activities
-will be stopped as soon as you call this method because Piwik assumes the user is actually viewing a new page. 
+If you use the `trackPageView` method to track for example an event, a download, or to track errors, then
+ Piwik assumes the user is actually viewing a new page and as a result any ongoing recording of session or heatmap activities
+will be stopped. 
 
-To solve this issue it is recommended to either [track events](https://piwik.org/docs/event-tracking/) instead of page views or to disable
- the automatic detection of new page views by calling the following method: `_paq.push(['HeatmapSessionRecording::disableAutoDetectNewPageView'])`.
- 
-To learn more about the detection of page views, have a look at the [disableAutoDetectNewPageView() API reference](/guides/heatmap-session-recording/reference#disableautodetectnewpageview())
+To solve this issue it is recommended to either:
+
+* [track events](https://piwik.org/docs/event-tracking/) instead of tracking page views,
+* or to disable the automatic detection of new page views by calling the following method: `_paq.push(['HeatmapSessionRecording::disableAutoDetectNewPageView']);`
+
+To learn more about the detection of page views, have a look at the [disableAutoDetectNewPageView() API reference](/guides/heatmap-session-recording/reference#disableautodetectnewpageview).
 
 ## How do I capture heatmap and session activities for longer than 10 minutes per page view?  
 
-By default, Piwik will stop the recording of new activities after 10 minutes since the last page view. You can increase this limit by 
-calling the `setMaxCaptureTime` method. We recommend to not set this value to longer than 29 minutes. Piwik creates a new visit 
+By default, Piwik will stop the recording of new activities after 10 minutes after the last page view. You can increase this time limit by 
+calling the `setMaxCaptureTime` method. We recommend to set this value to less than 29 minutes. Piwik creates a new visit 
 after an inactivity of 30 minutes and there may be a risk of creating a new visit without the user being actually "active".
 
 ```js
@@ -44,13 +48,15 @@ _paq.push(['HeatmapSessionRecording::setMaxCaptureTime', maxTimeInSeconds]);
 ## How do I force or prevent the recording of my own activities?  
 
 When you configure a heatmap or a session, you define a "sample limit" and a so called "sample rate" (also known as "traffic"). 
-The sample limit defines how many page views will be recorded, for example 5000. The sample rate defines how 
-likely a certain page view will be recorded when it is viewed. For example a sample rate of 10% means that approx. every 10th
-page view will be recorded. To get to the sample limit of 5000 page views, you would actually need about 50.000 page views. 
+
+* The sample limit defines how many page views will be recorded in total, for example 5000. 
+
+* The sample rate defines how likely a certain page view will be recorded when it is viewed. For example a sample rate of 10% means that approximately every 10th
+page view will be recorded. To reach a sample limit of 5000 page views being recorded, you would actually need about 50.000 page views. 
 
 When your sample rate is lower than 100%, your activities may not be actually recorded. To make sure to be included in the 
-sample group, you can append a URL parameter `&pk_hsr_forcesample=1` to the currently viewed page. On the contrary, you 
-can add a URL parameter `&pk_hsr_forcesample=0` to prevent your activities from being tracked. 
+sample group, you can append a URL parameter `&pk_hsr_forcesample=1` to the currently viewed page. 
+On the contrary,  to prevent your activities from being tracked you can add a URL parameter `&pk_hsr_forcesample=0`. 
 
 ## How do I record activities only for specific visitors? 
 
@@ -76,8 +82,9 @@ Piwik lets you track a website into different Piwik installations or into differ
 using [Multiple Piwik trackers on the JavaScript Tracking guide](/guides/tracking-javascript-guide#multiple-piwik-trackers).
 
 If you are using the regular `_paq.push` tracking method, everything will work out of the box when you create more trackers 
-via `_paq.push(['addTracker', url, idsite]);`. Using `_paq.push` for multiple trackers is a good and simple way when you want
- to track the same data into different Piwik websites.
+via `_paq.push(['addTracker', url, idsite]);`
+
+Using `_paq.push` for multiple trackers is a good and simple way when you want to track the same data into different Piwik websites.
 
 ```js
 // configuration of first tracker
@@ -118,36 +125,37 @@ method `HeatmapSessionRecording.addConfig()` or disable the tracking completely 
  
 Learn more about this in the [addConfig() API reference](/guides/heatmap-session-recording/reference#addconfig).
 
-If you track your analytics data to multiple Piwik installations, and the Heatmap & Session Recording plugin is only installed
-on one of the Piwiks, you may want to disable Heatmap & Session Recording for the Piwik instances that do not support this 
-feature like this: 
+When you track your analytics data into multiple Piwik installations, the Heatmap & Session Recording plugin may be installed
+only in one of the Piwik installation. To disable Heatmap & Session Recording for the Piwik instance that do not support this 
+feature, call `tracker.HeatmapSessionRecording.disable();` as follows: 
 
 ```js
 // configuration of first tracker which has the plugin installed
 _paq.push(['setTrackerUrl', 'https://example.com/piwik.php']);
 _paq.push(['setSiteId', 1]);
 // configuration of second tracker which does not have the plugin installed
-_paq.push(['addTracker', 'https://notsupportedpiwik.com/piwik.php', 2]);
+_paq.push(['addTracker', 'https://not-supported-piwik.com/piwik.php', 2]);
 
 window.piwikAsyncInit = function () {
     // will never issue an HTTP request to configs.php for this Piwik instance
-    var tracker = Piwik.getAsyncTracker('https://notsupportedpiwik.com/piwik.php', 2);
+    var tracker = Piwik.getAsyncTracker('https://not-supported-piwik.com/piwik.php', 2);
     tracker.HeatmapSessionRecording.disable();
 }
 ```
 
-## How do I take a screenshot for a heatmap when I configure a heatmap manually?  
+## How do I take a screenshot for a heatmap when the heatmap is configured manually via `addConfig()`?  
 
 By default, Piwik will automatically take a screenshot of your web page when the first visitor takes part in your heatmap.
-If you target multiple page URLs for a heatmap, there may be a reason to only generate a screenshot on a specific page URL. 
+If you target multiple page URLs for a heatmap, you may want to force generate a screenshot for a specific page URL. 
 When you configure a heatmap, you can therefore define a specific screenshot URL so Piwik will only take a screenshot when 
 this URL is being viewed. 
 
 If you configure a heatmap manually using the [addConfig()](/guides/heatmap-session-recording/reference#addconfig) method,
 no screenshot will be taken automatically as the JavaScript client cannot know whether a screenshot has been taken yet.
+
 To take a screenshot from a certain page, you need to open the page in your browser and append the URL parameter `&pk_hsr_capturescreen=1`. 
 
-## Is it possible to not use the "paq.push" methods and instead call the HeatmapSessionRecording tracker methods directly?
+## Is it possible to not use the `paq.push` methods and instead call the `HeatmapSessionRecording` tracker methods directly?
 
 Yes, you can be sure that the `Piwik.HeatmapSessionRecording` object is available as soon as the callback method 
 `window.piwikHeatmapSessionRecordingAsyncInit` is called.

@@ -56,7 +56,7 @@ var intervalInSeconds = 2;
 _paq.push(['MediaAnalytics::setPingInterval', intervalInSeconds]);
 ```
 
-Make sure to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X'])`.
+Make sure to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`
 
 ## How do I setup media analytics when using multiple Piwik JavaScript trackers?
 
@@ -64,8 +64,9 @@ Piwik lets you track a website into different Piwik installations or into differ
 using [Multiple Piwik trackers on the JavaScript Tracking guide](/guides/tracking-javascript-guide#multiple-piwik-trackers).
 
 If you are using the regular `_paq.push` tracking method, everything will work out of the box when you create more trackers 
-via `_paq.push(['addTracker', url, idsite]);`. Using `_paq.push` for multiple trackers is a good and simple way when you want
- to track the same data into different Piwik installations or into different Piwik websites.
+via `_paq.push(['addTracker', url, idsite]);`
+
+Using `_paq.push` for multiple trackers is a good and simple way when you want to track the same data into different Piwik installations or into different Piwik websites.
 
 ```js
 // configuration of first tracker

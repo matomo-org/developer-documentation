@@ -20,9 +20,10 @@ In the `piwik.js` tracker we differentiate between two kind of methods:
 
 In most cases only one Piwik tracker will be used so the only difference is how you call that method:
 
-* Tracker methods are called via `_paq.push(['MediaAnalytics.$methodName'])` or on a tracker instance directly eg. 
-  `Piwik.getAsyncTracker().MediaAnalytics.$methodName()`.
-* Static methods are called via `_paq.push(['MediaAnalytics::$methodName'])` or directly on the `Piwik.MediaAnalytics` object,
+* Tracker methods are called via `_paq.push(['MediaAnalytics.$methodName']);` or on a tracker instance directly eg. 
+  `Piwik.getAsyncTracker().MediaAnalytics.$methodName();`
+  
+* Static methods are called via `_paq.push(['MediaAnalytics::$methodName']);` or directly on the `Piwik.MediaAnalytics` object,
   eg. `Piwik.MediaAnalytics.$methodName()`.
 
 If you do not want to use the `_paq.push` methods, you need to define a `window.piwikMediaAnalyticsAsyncInit` method 
@@ -99,7 +100,7 @@ Allows you to set the tracker instances the tracker should use when tracking the
 
 Returns an array of Piwik tracker instances that are used by the Media Analytics plugin. By default, this will return the same
 as `Piwik.getAsyncTrackers()` and will return all tracker instances that were created eg via `Piwik.addTracker` or 
-`_paq.push(['addTracker'])` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
+`_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
 
 ### `mediaType`
 

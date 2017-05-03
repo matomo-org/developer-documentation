@@ -5,16 +5,16 @@ title: Setting up
 # Setting up Heatmap & Session Recording
 
 In this guide you will learn how to customize the tracking of [Heatmaps & Session Recordings](https://www.heatmap-analytics.com/).
-By default, no changes to your tracking code are needed and Piwik takes care of everything. However, you can adjust the tracking
+By default, you do not need change your tracking code and Piwik takes care of everything. However, you can adjust the tracking
 in various ways.
 
 ## Embedding the Heatmap & Session Recording JavaScript Tracker
 
 If you have already embedded the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
-the Heatmap & Session Recording will automatically start the tracking of activities. The tracking code is directly added 
+the Heatmap & Session Recording will automatically start tracking user activities. The tracking code is directly added 
 in your Piwik JavaScript tracker file `/piwik.js` as long as the file `piwik.js` in your Piwik directory is writable 
 by the webserver/PHP.
- 
+
 To check whether this works by default for you, login into Piwik as a Super User, go to Administration, and open the "System Check" report. 
 If the System Check displays a warning for "Writable Piwik.js" then [learn below how to solve this](#when-the-piwikjs-in-your-piwik-directory-file-is-not-writable).
 
@@ -22,9 +22,9 @@ If the System Check displays a warning for "Writable Piwik.js" then [learn below
 
 To configure the recording of a session or a heatmap, log in to your Piwik and click on "Heatmaps => Manage" or "Session Recordings => Manage".
 
-There you will be able to configure on which pages you want to record activities and how many. Piwik will automatically
-detect any configured heatmap or session recording and start recording activities when needed. You don't need to change 
-your tracking code and neither your website to make this work.
+There you will be able to configure on which pages you want to record activities and how many sessions should be recorded. 
+Piwik will automatically detect any configured heatmap or session recording and start recording activities when needed. 
+You don't need to change your tracking code or your website to configure .
 
 To detect if any activities need to be recorded, an HTTP request will be issued on each page view to your Piwik. While this request is 
 fast and does for example not connect to your database, it may still add a bit of load to your server. If you want to avoid such 
@@ -57,7 +57,7 @@ Alternatively, you can mask a set of form fields within within your web page lik
 </div>
 ```
 
-To disable the recording of any keystrokes, call `_paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes'])`.
+To disable the recording of any keystrokes, call `_paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes']);`
 If disabled, no text entered into any form field will be sent to Piwik, not even masked form fields.
 
 ## When the `piwik.js` in your Piwik directory file is not writable

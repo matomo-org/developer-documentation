@@ -20,9 +20,9 @@ In the `piwik.js` tracker we differentiate between two kind of methods:
 
 In most cases only one Piwik tracker will be used so the only difference is how you call that method:
 
-* Tracker methods are called via `_paq.push(['FormAnalytics.$methodName'])` or on a tracker instance directly eg. 
+* Tracker methods are called via `_paq.push(['FormAnalytics.$methodName']);` or on a tracker instance directly eg. 
   `Piwik.getAsyncTracker().FormAnalytics.$methodName()`.
-* Static methods are called via `_paq.push(['FormAnalytics::$methodName'])` or directly on the `Piwik.FormAnalytics` object,
+* Static methods are called via `_paq.push(['FormAnalytics::$methodName']);` or directly on the `Piwik.FormAnalytics` object,
   eg. `Piwik.FormAnalytics.$methodName()`.
 
 If you do not want to use the `_paq.push` methods, you may define a `window.piwikFormAnalyticsAsyncInit` method 
@@ -85,7 +85,7 @@ as a visitor may have to correct form validation errors. To track a form convers
 
 <script>
 // when the form is not displayed anymore, you can pass the name and / or the id of the form to track a conversion 
-_paq.push(['FormAnalytics::trackFormConversion', 'cloudlogin', 'login'])
+_paq.push(['FormAnalytics::trackFormConversion', 'cloudlogin', 'login']);
 </script>
 ```
 
