@@ -109,11 +109,11 @@ When you configure a Heatmap or a Session Recording in Piwik, you can define pag
 If you track custom URLs using the `setCustomUrl()` tracker method and want to apply the configured rules against a possibly set 
 custom URL, call this method.
 
-This is useful if you have for example URLs like `www.example.com#page1` and you track a custom URL like 
+This is useful if you have for example URLs like `www.example.com/#page1` and you track a custom URL like 
 `_paq.push(['setCustomUrl', 'www.example.com/page1']);`
 
 By default, the target page rules you configure will be matched against 
-`www.example.com#page1`. When you call this method, the target page rules will be matched against `www.example.com/page1`.
+`www.example.com/#page1`. When you call this method, the target page rules will be matched against `www.example.com/page1`.
 
 ### `disable()`
 
