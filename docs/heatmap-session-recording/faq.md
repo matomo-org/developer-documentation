@@ -14,6 +14,14 @@ There are two ways to do this:
 
 If you want to capture keystrokes but mask the keystrokes a user entered, have a look at [masking keystrokes](/guides/heatmap-session-recording/setup#masking-keystrokes-in-form-fields).
 
+## Which form fields (credit card) are masked automatically when recording a session? 
+
+Any input field with the type `password` will be masked automatically. We also mask form fields if the field name is `password`.
+
+Additionally, we mask a form field when the name equals any of `credit-card-number, cvv, cvc, ccname, cc-name, cc-number, cardnumber`, or when the autocomplete is set to any of `cc-csc, cc-name, cc-number`. We also ignore any form element with an id of `cvv`. If a user enters between 12 and 21 digits in sequence, we assume it is a credit card number and mask it automatically. Form fields within iframes won't be recorded at all.
+
+Want to mask the keystrokes of additional form fields? Have a look at [masking keystrokes](/guides/heatmap-session-recording/setup#masking-keystrokes-in-form-fields).
+
 ## How do I use Heatmap & Session Recording on a single-page website or web application? 
 
 Single-page websites and web applications are supported out of the box: Heatmaps and Sessions will be recorded as expected.
