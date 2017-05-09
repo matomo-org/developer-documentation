@@ -1170,7 +1170,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [502](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L502)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [499](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L499)*
 
 Event triggered after a plugin has been activated.
 
@@ -1186,7 +1186,7 @@ Usages:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [338](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L338)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [335](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L335)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -1202,7 +1202,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [1105](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L1105)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [1121](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L1121)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
@@ -1218,7 +1218,7 @@ Usages:
 
 ### PluginManager.pluginUninstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [427](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L427)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php) in line [424](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/Manager.php#L424)*
 
 Event triggered after a plugin has been uninstalled.
 
