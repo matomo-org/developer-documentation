@@ -102,6 +102,7 @@ This is a complete list of available classes:
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
 - [`Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md) &mdash; The average number of seconds spent on the site per visit.
 - [`Plugins\CoreHome\Columns\Metrics\EvolutionMetric`](Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md) &mdash; Calculates evolution values for any other metric.
+- [`Plugins\CoreHome\SystemSummary\Item`](Piwik/Plugins/CoreHome/SystemSummary/Item.md) &mdash; This class can be used to add a new entry / item to the system summary widget.
 - [`Plugins\CoreVisualizations\Metrics\Formatter\Numeric`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter/Numeric.md) &mdash; A metrics formatter that prettifies metric values without returning string values.
 - [`Plugins\Diagnostics\DiagnosticService`](Piwik/Plugins/Diagnostics/DiagnosticService.md) &mdash; Runs the Piwik diagnostics.
 - [`Plugins\Diagnostics\Diagnostic\DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) &mdash; The result of a diagnostic.

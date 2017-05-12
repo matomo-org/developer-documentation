@@ -98,6 +98,7 @@
 ## Plugin\Visualization
 ## Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite
 ## Plugins\CoreHome\Columns\Metrics\EvolutionMetric
+## Plugins\CoreHome\SystemSummary\Item
 ## Plugins\CoreVisualizations\Metrics\Formatter\Numeric
 ## Plugins\Diagnostics\DiagnosticService
 ## Plugins\Diagnostics\Diagnostic\DiagnosticResult

@@ -28,6 +28,7 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\CoreHome`](Piwik/Plugins/CoreHome)
 - [`Piwik\Plugins\CoreHome\Columns`](Piwik/Plugins/CoreHome/Columns)
 - [`Piwik\Plugins\CoreHome\Columns\Metrics`](Piwik/Plugins/CoreHome/Columns/Metrics)
+- [`Piwik\Plugins\CoreHome\SystemSummary`](Piwik/Plugins/CoreHome/SystemSummary)
 - [`Piwik\Plugins\CoreVisualizations`](Piwik/Plugins/CoreVisualizations)
 - [`Piwik\Plugins\CoreVisualizations\Metrics`](Piwik/Plugins/CoreVisualizations/Metrics)
 - [`Piwik\Plugins\CoreVisualizations\Metrics\Formatter`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter)
