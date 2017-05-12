@@ -741,7 +741,8 @@ Index
 - [`now()`](Piwik/Date.md#now) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`NoAccessException`](Piwik/NoAccessException.md) &mdash; *Class in namespace* `Piwik`- [`Nonce`](Piwik/Nonce.md) &mdash; *Class in namespace* `Piwik`- [`Notification`](Piwik/Notification.md) &mdash; *Class in namespace* `Piwik`- [`notify()`](Piwik/Notification/Manager.md#notify) &mdash; *Method in class* [`Manager`](Piwik/Notification/Manager.md)
 - [`$name`](Piwik/Plugin/Report.md#$name) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
-- [`Numeric`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter/Numeric.md) &mdash; *Class in namespace* `Piwik\Plugins\CoreVisualizations\Metrics\Formatter`
+- [`Numeric`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter/Numeric.md) &mdash; *Class in namespace* `Piwik\Plugins\CoreVisualizations\Metrics\Formatter`- [`$no_data_message`](Piwik/ViewDataTable/Config.md#$no_data_message) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+
 ## O
 
 - [`offsetExists()`](Piwik/DataTable.md#offsetexists) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)

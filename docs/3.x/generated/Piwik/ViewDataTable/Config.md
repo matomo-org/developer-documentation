@@ -124,6 +124,7 @@ This class defines the following properties:
 - [`$show_offset_information`](#$show_offset_information) &mdash; Controls whether offset information (ie, '5-10 of 20') is shown under the datatable.
 - [`$hide_annotations_view`](#$hide_annotations_view) &mdash; Controls whether annotations are shown or not.
 - [`$export_limit`](#$export_limit) &mdash; The filter_limit query parameter value to use in export links.
+- [`$no_data_message`](#$no_data_message) &mdash; Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set
 - [`$report_id`](#$report_id)
 - [`$controllerName`](#$controllername)
 - [`$controllerAction`](#$controlleraction)
@@ -803,6 +804,16 @@ Defaulted to the value of the `[General] API_datatable_default_limit` INI config
 
 - Its type is not specified.
 
+
+<a name="$no_data_message" id="$no_data_message"></a>
+<a name="no_data_message" id="no_data_message"></a>
+### `$no_data_message`
+
+Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set
+
+#### Signature
+
+- It is a `string` value.
 
 <a name="$report_id" id="$report_id"></a>
 <a name="report_id" id="report_id"></a>
