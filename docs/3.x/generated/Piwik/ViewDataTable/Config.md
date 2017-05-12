@@ -811,6 +811,8 @@ Defaulted to the value of the `[General] API_datatable_default_limit` INI config
 
 Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set
 
+Attention: Message will be printed raw. Don't forget to escape where needed!
+
 #### Signature
 
 - It is a `string` value.
