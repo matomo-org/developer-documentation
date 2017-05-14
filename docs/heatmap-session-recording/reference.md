@@ -82,6 +82,17 @@ _paq.push(['HeatmapSessionRecording::setMaxCaptureTime', 60 * 30]);
 Piwik.HeatmapSessionRecording.setMaxCaptureTime(60 * 30);
 ```
 
+### `setMaxTextInputLength(maxLengthCharacters)`
+
+By default, when a user enters text into a form field, we truncate any entered text after 500 characters. If you wanted to record more characters, you can define another limit using this method.
+
+Example:
+```js
+_paq.push(['HeatmapSessionRecording::setMaxTextInputLength', 100000]);
+// or 
+Piwik.HeatmapSessionRecording.setMaxTextInputLength(100000);
+```
+
 ### `disableCaptureKeystrokes()`
 
 When you configure a new session recording in Piwik, you can choose whether keystrokes should be recorded or not. If enabled,
