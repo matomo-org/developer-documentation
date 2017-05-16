@@ -10,7 +10,7 @@ Constants
 
 This class defines the following constants:
 
-- [`UI_CONTROL_RADIO`](#ui_control_radio) — Shows a radio field.- [`UI_CONTROL_TEXT`](#ui_control_text) — Shows a text field.- [`UI_CONTROL_TEXTAREA`](#ui_control_textarea) — Shows a text area.- [`UI_CONTROL_CHECKBOX`](#ui_control_checkbox) — Shows a checkbox.- [`UI_CONTROL_PASSWORD`](#ui_control_password) — Shows a password field.- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values.- [`UI_CONTROL_SINGLE_SELECT`](#ui_control_single_select) — Shows a select field.- [`UI_CONTROL_HIDDEN`](#ui_control_hidden) — Generates a hidden form field.- [`TYPE_INT`](#type_int) — Expects an integer value.- [`TYPE_FLOAT`](#type_float) — Expects a float value.- [`TYPE_STRING`](#type_string) — Expects a string.- [`TYPE_BOOL`](#type_bool) — Expects a boolean.
+- [`UI_CONTROL_RADIO`](#ui_control_radio) — Shows a radio field.- [`UI_CONTROL_TEXT`](#ui_control_text) — Shows a text field.- [`UI_CONTROL_EMAIL`](#ui_control_email) — Shows an email text field.- [`UI_CONTROL_URL`](#ui_control_url) — Shows a URL text field.- [`UI_CONTROL_TEXTAREA`](#ui_control_textarea) — Shows a text area.- [`UI_CONTROL_CHECKBOX`](#ui_control_checkbox) — Shows a checkbox.- [`UI_CONTROL_PASSWORD`](#ui_control_password) — Shows a password field.- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values.- [`UI_CONTROL_SINGLE_SELECT`](#ui_control_single_select) — Shows a select field.- [`UI_CONTROL_HIDDEN`](#ui_control_hidden) — Generates a hidden form field.- [`TYPE_INT`](#type_int) — Expects an integer value.- [`TYPE_FLOAT`](#type_float) — Expects a float value.- [`TYPE_STRING`](#type_string) — Expects a string.- [`TYPE_BOOL`](#type_bool) — Expects a boolean.
 <a name="ui_control_radio" id="ui_control_radio"></a>
 <a name="UI_CONTROL_RADIO" id="UI_CONTROL_RADIO"></a>
 ### `UI_CONTROL_RADIO`
@@ -19,6 +19,16 @@ To use this field assign it to the `$uiControl` property.
 <a name="ui_control_text" id="ui_control_text"></a>
 <a name="UI_CONTROL_TEXT" id="UI_CONTROL_TEXT"></a>
 ### `UI_CONTROL_TEXT`
+
+To use this field assign it to the `$uiControl` property.
+<a name="ui_control_email" id="ui_control_email"></a>
+<a name="UI_CONTROL_EMAIL" id="UI_CONTROL_EMAIL"></a>
+### `UI_CONTROL_EMAIL`
+
+To use this field assign it to the `$uiControl` property.
+<a name="ui_control_url" id="ui_control_url"></a>
+<a name="UI_CONTROL_URL" id="UI_CONTROL_URL"></a>
+### `UI_CONTROL_URL`
 
 To use this field assign it to the `$uiControl` property.
 <a name="ui_control_textarea" id="ui_control_textarea"></a>
