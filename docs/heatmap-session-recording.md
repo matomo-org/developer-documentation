@@ -18,6 +18,6 @@ Session recordings let you view all activities such as clicks, mouse movements, 
 on the [Piwik Marketplace](https://plugins.piwik.org/HeatmapSessionRecording).
 It is developed by [InnoCraft](https://www.innocraft.com), the makers of Piwik. 
 If you want to learn more about this plugin we recommend having a look at the developer guides, 
-the [Heatmap & Session Recording User Guide](https://piwik.org/docs/heatmap-session-recording/) and the [Heatmap & Session Recording FAQs](https://piwik.org/faq/heatmap-session-recording/).
+the [Heatmap User Guide](https://piwik.org/docs/heatmaps/), [Session Recording User Guide](https://piwik.org/docs/session-recording/), and the [Heatmap & Session Recording FAQs](https://piwik.org/faq/heatmap-session-recording/).
 
 We recommend to start with the [setting up Heatmap & Session Recording guide](/guides/heatmap-session-recording/setup).
