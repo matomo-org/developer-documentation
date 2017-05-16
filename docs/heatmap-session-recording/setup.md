@@ -34,7 +34,7 @@ a request on each page view, have a look at the API reference for [`addConfig()`
 
 When you record a session, Piwik may record keystrokes / text that a visitor enters into a form field depending on your session recording 
 configuration in Piwik. If enabled, Piwik will record text entered into text and textarea form fields and replay them later
-in the session recording video. Passwords and common credit card fields will be automatically masked. This means any text
+in the session recording video. Passwords and [common credit card fields](/guides/heatmap-session-recording/faq#which-form-fields-credit-card-are-masked-automatically-when-recording-a-session) will be automatically masked. This means any text
 entered into such a masked field will be replaced with asterisks, for example `secure` may be tracked as `******`.
 
 If you want to capture keystrokes but mask specific form fields that may hold sensitive data, you can set a `data-piwik-mask` 
