@@ -117,7 +117,7 @@ the conversion happens, you can track a form conversion like this:
 <form name="cloudloginName" id="loginId"></form>
 <script>
 if (noValidationErrors) {
-    _paq.push(['FormAnalytics::trackFormConversion', document.getElementById('loginId')])
+    _paq.push(['FormAnalytics::trackFormConversion', document.getElementById('loginId')]);
 }
 </script>
 ```
@@ -135,7 +135,7 @@ It is required to pass the same values as the form has in its HTML markup. If th
 attribute, simply set an empty string like this:
 
 ```js
-_paq.push(['FormAnalytics::trackFormConversion', '', 'loginId'])
+_paq.push(['FormAnalytics::trackFormConversion', '', 'loginId']);
 ```
 
 It is recommended to call this `FormAnalytics::trackFormConversion` method as early as possible in your Piwik tracking code.

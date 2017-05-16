@@ -144,8 +144,9 @@ For example if you don't want to track any Vimeo videos, you can remove that pla
 _paq.push(['MediaAnalytics::removePlayer', 'vimeo']);
 ```
  
-Make sure to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`. If you want
-to disable any HTML5 based media player like JW Player or VideoJS, use `html5` to ignore such media.
+Make sure to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`
+
+If you want to disable any HTML5 based media player like JW Player or VideoJS, use `html5` to ignore such media.
 
 ### Disabling media tracker features
 
@@ -193,7 +194,7 @@ This will stop the tracking of any action events, while still tracking the usage
 you will still get all media reports that are listed under the menu category "Media" but won't get to see any media events in the 
 Visitor Log or in the "Action => Events" report.
  
-It is recommended to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`.
+It is recommended to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`
 
 #### Is it possible to disable the tracking of media data like how often or how long a media was played, while still tracking events like 'play' and 'pause'?
 
@@ -206,7 +207,7 @@ _paq.push(['MediaAnalytics.disableTrackProgress']);
 This will stop tracking any media progress. Under the menu category "Media", most reports will not show any data. 
 The Visitor Log and the "Actions => Events" report will still show data unless you disable the tracking of events as well (see above).
  
-It is recommended to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`.
+It is recommended to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`
 
 
 ## What to read next
