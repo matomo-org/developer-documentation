@@ -571,9 +571,23 @@ For more information about tracking websites and subdomains in Piwik, see the FA
 
 ## Download and Outlink tracking
 
-### Outlink tracking exclusions
+### Enabling Download & Outlink tracking
+
+The default Piwik JavaScript tracker code automatically enables the download & outlink tracking automatically, which is done by calling the `enableLinkTracking` function: 
+
+```javascript
+
+// Enable Download & Outlink tracking
+_paq.push(['enableLinkTracking']);
+
+```
+It is recommended to add this line just after the first call to `trackPageView` or `trackEvent`. 
+
+### Outlinks are tracked automatically 
 
 By default all links to domains other than the current domain have click tracking enabled, and each click will be counted as an outlink. If you use multiple domains and subdomains, you may see clicks on your subdomains appearing in the *Pages > Outlinks* report.
+
+### Tracking outlinks and ignore alias domains
 
 If you only want clicks to external websites to appear in your outlinks report, you can use the function `setDomains()` to specify the list of alias domains or subdomains. Wildcard domains (*.example.org) are supported to let you easily ignore clicks to all subdomains.
 
@@ -595,56 +609,7 @@ _paq(['setDomains', ["*.hostname1.com/product1", "hostname2.com/product1"]]);
 
 Learn more about this use case [Tracking subdirectories of a domain in separate websites](#tracking-subdirectories-of-a-domain-in-separate-websites).
 
-### Disabling Download & Outlink tracking
-
-By default, the Piwik tracking code enables clicks and download tracking. To disable all automatic download and outlink tracking, you must remove the call to the `enableLinkTracking()` function:
-
-```javascript
-// we comment out the function that enables link tracking
-// _paq.push(['enableLinkTracking']);
-_paq.push(['trackPageView']);
-```
-
-#### Disabling for specific CSS classes
-
-You can disable automatic download and outlink tracking for links with specific CSS classes:
-
-```javascript
- // you can also pass an array of strings
-_paq.push(['setIgnoreClasses', "no-tracking"]);
-_paq.push(['trackPageView']);
-```
-
-This will result in clicks on a link `<a href='http://example.com' class='no-tracking'>Test</a>` not being counted.
-
-#### Disabling for a specific link
-
-If you want to ignore download or outlink tracking on a specific link, you can add the 'piwik_ignore' css class to it:
-
-```html
-<a href='http://builds.piwik.org/latest.zip' class='piwik_ignore'>File I don't want to track as a download</a>
-```
-
-### Recording a click as a download
-
-If you want to force Piwik to consider a link as a download, you can add the 'piwik_download' css class to the link:
-
-```html
-<a href='last.php' class='piwik_download'>Link I want to track as a download</a>
-```
-
-Note: you can customize and rename the CSS class used to force a click to be recorded as a download:
-
-```javascript
-// now all clicks on links with the css class "download" will be counted as downloads
-
-// you can also pass an array of strings
-_paq.push(['setDownloadClasses', "download"]);
-
-_paq.push(['trackPageView']);
-```
-
-### Recording a click as an outlink
+### Tracking a click as an outlink via CSS or JavaScript
 
 If you want to force Piwik to consider a link as an outlink (links to the current domain or to one of the alias domains), you can add the 'piwik_link' css class to the link:
 
@@ -669,17 +634,7 @@ Alternatively, you can use JavaScript to manually trigger a click on an outlink 
 <a href="mailto:namexyz@mydomain.co.uk" target="_blank" onClick="javascript:_paq.push(['trackLink', 'http://mydomain.co.uk/mailto/Agent namexyz', 'link']);">namexyz@mydomain.co.uk </a>
 ```
 
-### Changing the Pause Timer
-
-When a user clicks to download a file, or clicks on an outbound link, Piwik records it. In order to do so, it adds a small delay before the user is redirected to the requested file or link. The default value is 500ms, but you can set it to a shorter length of time. It should be noted, however, that doing so results in the risk that this period of time is not long enough for the data to be recorded in Piwik.
-
-```javascript
-_paq.push(['setLinkTrackingTimer', 250]); // 250 milliseconds
-
-_paq.push(['trackPageView']);
-```
-
-### File extensions for tracking downloads
+### Tracking file downloads 
 
 By default, any file ending with one of these extensions will be considered a 'download' in the Piwik interface:
 
@@ -690,6 +645,8 @@ mpeg|mov|movie|msi|msp|odb|odf|odg|odp|ods|odt|ogg|ogv|
 pdf|phps|png|ppt|qt|qtm|ra|ram|rar|rpm|sea|sit|tar|
 tbz|tbz2|tgz|torrent|txt|wav|wma|wmv|wpd||xls|xml|z|zip
 ```
+
+### Customise the type of files tracked as downloaded
 
 To replace the list of extensions you want to track as file downloads, you can use `setDownloadExtensions( string )`:
 
@@ -707,6 +664,69 @@ If you want to track a new file type, you can just add it to the list by using `
 _paq.push(['addDownloadExtensions', "mp5|mp6"]);
 _paq.push(['trackPageView']);
 ```
+
+
+### Recording a click as a download
+
+If you want to force Piwik to consider a link as a download, you can add the 'piwik_download' css class to the link:
+
+```html
+<a href='last.php' class='piwik_download'>Link I want to track as a download</a>
+```
+
+Note: you can customize and rename the CSS class used to force a click to be recorded as a download:
+
+```javascript
+// now all clicks on links with the css class "download" will be counted as downloads
+
+// you can also pass an array of strings
+_paq.push(['setDownloadClasses', "download"]);
+
+_paq.push(['trackPageView']);
+```
+
+### Changing the Pause Timer
+
+When a user clicks to download a file, or clicks on an outbound link, Piwik records it. In order to do so, it adds a small delay before the user is redirected to the requested file or link. The default value is 500ms, but you can set it to a shorter length of time. It should be noted, however, that doing so results in the risk that this period of time is not long enough for the data to be recorded in Piwik.
+
+```javascript
+_paq.push(['setLinkTrackingTimer', 250]); // 250 milliseconds
+
+_paq.push(['trackPageView']);
+```
+
+
+### Disabling Download & Outlink tracking
+
+By default, the Piwik tracking code enables clicks and download tracking. To disable all automatic download and outlink tracking, you must remove the call to the `enableLinkTracking()` function:
+
+```javascript
+_paq.push(['trackPageView']);
+
+// we comment out the function that enables link tracking
+// _paq.push(['enableLinkTracking']);
+```
+
+#### Disabling for specific CSS classes
+
+You can disable automatic download and outlink tracking for links with specific CSS classes:
+
+```javascript
+ // you can also pass an array of strings
+_paq.push(['setIgnoreClasses', "no-tracking"]);
+_paq.push(['trackPageView']);
+```
+
+This will result in clicks on a link `<a href='http://example.com' class='no-tracking'>Test</a>` not being counted.
+
+#### Disabling for a specific link
+
+If you want to ignore download or outlink tracking on a specific link, you can add the 'piwik_ignore' css class to it:
+
+```html
+<a href='http://builds.piwik.org/latest.zip' class='piwik_ignore'>File I don't want to track as a download</a>
+```
+
 
 ## Multiple Piwik trackers
 
