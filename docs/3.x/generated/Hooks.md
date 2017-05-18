@@ -530,7 +530,7 @@ Triggered after Piwik has been updated.
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
 
 ## CronArchive
 
@@ -579,7 +579,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
 
 
 ### CronArchive.filterWebsiteIds
@@ -633,6 +633,23 @@ Callback Signature:
 <pre><code>function($this)</code></pre>
 
 - CronArchive `$this` 
+
+## CustomPiwikJs
+
+- [CustomPiwikJs.shouldAddTrackerFile](#custompiwikjsshouldaddtrackerfile)
+
+### CustomPiwikJs.shouldAddTrackerFile
+
+*Defined in [Piwik/Plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php) in line [95](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php#L95)*
+
+Detect if a custom tracker file should be added to the piwik.js tracker or not. This is useful for example if a plugin only wants to add its tracker file when the plugin is configured.
+
+Callback Signature:
+<pre><code>function(&amp;$shouldAddFile, $pluginName)</code></pre>
+
+- bool `&$shouldAddFile` Decides whether the tracker file belonging to the given plugin should be added or not.
+
+- string `$pluginName` The name of the plugin this file belongs to
 
 ## Dashboard
 
@@ -1181,7 +1198,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
 
 
 ### PluginManager.pluginDeactivated
@@ -1197,7 +1214,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
 
 
 ### PluginManager.pluginInstalled
@@ -1213,7 +1230,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
 
 
 ### PluginManager.pluginUninstalled
@@ -1229,7 +1246,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
 
 ## Provider
 
@@ -2304,7 +2321,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
+[CustomPiwikJs::updateTracker](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
 
 ## User
 
