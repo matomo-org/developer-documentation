@@ -1720,6 +1720,51 @@ Usages:
 
 [MobileMessaging::validateReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L108), [ScheduledReports::validateReportParameters](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L141)
 
+## ScheduledTasks
+
+- [ScheduledTasks.execute](#scheduledtasksexecute)
+- [ScheduledTasks.execute.end](#scheduledtasksexecuteend)
+- [ScheduledTasks.shouldExecuteTask](#scheduledtasksshouldexecutetask)
+
+### ScheduledTasks.execute
+
+*Defined in [Piwik/Scheduler/Scheduler](https://github.com/piwik/piwik/blob/3.x-dev/core/Scheduler/Scheduler.php) in line [242](https://github.com/piwik/piwik/blob/3.x-dev/core/Scheduler/Scheduler.php#L242)*
+
+Triggered directly before a scheduled task is executed
+
+Callback Signature:
+<pre><code>function(&amp;$task)</code></pre>
+
+- [Task](/api-reference/Piwik/Scheduler/Task) `&$task` The task that is about to be executed
+
+
+### ScheduledTasks.execute.end
+
+*Defined in [Piwik/Scheduler/Scheduler](https://github.com/piwik/piwik/blob/3.x-dev/core/Scheduler/Scheduler.php) in line [262](https://github.com/piwik/piwik/blob/3.x-dev/core/Scheduler/Scheduler.php#L262)*
+
+Triggered after a scheduled task is successfully executed. You can use the event to execute for example another task whenever a specific task is executed or to clean up
+certain resources.
+
+Callback Signature:
+<pre><code>function(&amp;$task)</code></pre>
+
+- [Task](/api-reference/Piwik/Scheduler/Task) `&$task` The task that was just executed
+
+
+### ScheduledTasks.shouldExecuteTask
+
+*Defined in [Piwik/Scheduler/Scheduler](https://github.com/piwik/piwik/blob/3.x-dev/core/Scheduler/Scheduler.php) in line [133](https://github.com/piwik/piwik/blob/3.x-dev/core/Scheduler/Scheduler.php#L133)*
+
+Triggered before a task is executed. A plugin can listen to it and modify whether a specific task should be executed or not. This way
+you can force certain tasks to be executed more often or for example to be never executed.
+
+Callback Signature:
+<pre><code>function(&amp;$shouldExecuteTask, $task)</code></pre>
+
+- bool `&$shouldExecuteTask` Decides whether the task will be executed.
+
+- [Task](/api-reference/Piwik/Scheduler/Task) `$task` The task that is about to be executed.
+
 ## Segment
 
 - [Segment.addSegments](#segmentaddsegments)
