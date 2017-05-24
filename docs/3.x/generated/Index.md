@@ -215,7 +215,6 @@ Index
 - [`executeMigration()`](Piwik/Updater.md#executemigration) &mdash; *Method in class* [`Updater`](Piwik/Updater.md)
 - [`exec()`](Piwik/Updater/Migration.md#exec) &mdash; *Method in class* [`Migration`](Piwik/Updater/Migration.md)
 - [`$enable_sort`](Piwik/ViewDataTable/Config.md#$enable_sort) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
-- [`$export_limit`](Piwik/ViewDataTable/Config.md#$export_limit) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$expanded`](Piwik/ViewDataTable/RequestConfig.md#$expanded) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`enable()`](Piwik/Widget/WidgetConfig.md#enable) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 
