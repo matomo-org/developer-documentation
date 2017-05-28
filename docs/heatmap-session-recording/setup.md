@@ -74,7 +74,7 @@ We recommend running the [Piwik console](/guides/piwik-on-the-command-line) comm
 
 Yes, there are:
 
-* An additional HTTP request is needed to load your website which decreases your page load time
+* An additional HTTP request is needed to load your website which increases your page load time
 * If your `piwik.js` ever becomes writable, the HeatmapSessionRecording tracker would be loaded twice (in such a case the tracker notices it was already initialized and won't track everything twice)
 
 If possible, we recommend making the `piwik.js` file writable.
