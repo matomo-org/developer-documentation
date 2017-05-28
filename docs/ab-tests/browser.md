@@ -512,7 +512,7 @@ We recommend to run the [Piwik console](/guides/piwik-on-the-command-line) comma
    
 Please note there are a few disadvantages to include the A/B testing framework file manually:
 
-* An additional HTTP request is needed to load your website which decreases your page load time
+* An additional HTTP request is needed to load your website which increases your page load time
 * If your `piwik.js` ever becomes writable, the A/B Testing framework would be loaded twice (in such a case the tracker notices it was already initialized and won't initialize again)
 
 If possible, we recommend to make the `piwik.js` file writable.
