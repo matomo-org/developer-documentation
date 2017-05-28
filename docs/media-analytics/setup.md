@@ -127,7 +127,7 @@ We recommend to run the [Piwik console](/guides/piwik-on-the-command-line) comma
 
 Yes, there are:
 
-* An additional HTTP request is needed to load your website which decreases your page load time
+* An additional HTTP request is needed to load your website which increases your page load time
 * If your `piwik.js` ever becomes writable, the MediaAnalytics tracker would be loaded twice (in such a case the tracker notices it was already initialized and won't track everything twice)
 
 If possible, we recommend to make the `piwik.js` file writable.
