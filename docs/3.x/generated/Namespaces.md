@@ -33,6 +33,7 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\CoreVisualizations\Metrics`](Piwik/Plugins/CoreVisualizations/Metrics)
 - [`Piwik\Plugins\CoreVisualizations\Metrics\Formatter`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter)
 - [`Piwik\Plugins\CustomPiwikJs`](Piwik/Plugins/CustomPiwikJs)
+- [`Piwik\Plugins\DevicePlugins`](Piwik/Plugins/DevicePlugins)
 - [`Piwik\Plugins\Diagnostics`](Piwik/Plugins/Diagnostics)
 - [`Piwik\Plugins\Diagnostics\Diagnostic`](Piwik/Plugins/Diagnostics/Diagnostic)
 - [`Piwik\Plugins\Login`](Piwik/Plugins/Login)

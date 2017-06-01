@@ -101,6 +101,7 @@
 ## Plugins\CoreHome\SystemSummary\Item
 ## Plugins\CoreVisualizations\Metrics\Formatter\Numeric
 ## Plugins\CustomPiwikJs\TrackerUpdater
+## Plugins\DevicePlugins\DevicePlugins
 ## Plugins\Diagnostics\DiagnosticService
 ## Plugins\Diagnostics\Diagnostic\DiagnosticResult
 ## Plugins\Diagnostics\Diagnostic\DiagnosticResultItem
