@@ -994,11 +994,12 @@ Callback Signature:
 
 - [Login.authenticate](#loginauthenticate)
 - [Login.authenticate.failed](#loginauthenticatefailed)
+- [Login.authenticate.successful](#loginauthenticatesuccessful)
 - [Login.logout](#loginlogout)
 
 ### Login.authenticate
 
-*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php) in line [137](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php#L137)*
+*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php) in line [140](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php#L140)*
 
 
 
@@ -1009,6 +1010,16 @@ Callback Signature:
 ### Login.authenticate.failed
 
 *Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php) in line [118](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php#L118)*
+
+
+
+Callback Signature:
+<pre><code>function($auth-&gt;getLogin())</code></pre>
+
+
+### Login.authenticate.successful
+
+*Defined in [Piwik/Plugins/Login/SessionInitializer](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php) in line [123](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Login/SessionInitializer.php#L123)*
 
 
 
