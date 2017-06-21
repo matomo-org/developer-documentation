@@ -111,11 +111,13 @@ window.piwikAsyncInit = function () {
     var piwikTracker2 = Piwik.getTracker('https://example.com/piwik.php', 2);
     var piwikTracker3 = Piwik.getTracker('https://example.com/piwik.php', 3);
 
-    Piwik.HeatmapSessionRecording.setPiwikTrackers([piwikTracker1, piwikTracker2, piwikTracker3]);
+    if (Piwik.HeatmapSessionRecording) {
+        Piwik.HeatmapSessionRecording.setPiwikTrackers([piwikTracker1, piwikTracker2, piwikTracker3]);
 
-    // You can customize the tracking like this:
-    piwikTracker2.HeatmapSessionRecording.disable();
-    piwikTracker3.HeatmapSessionRecording.addConfig({heatmap: {id:5}});
+        // You can customize the tracking like this:
+        piwikTracker2.HeatmapSessionRecording.disable();
+        piwikTracker3.HeatmapSessionRecording.addConfig({heatmap: {id:5}});
+    }
 }
 ```
 
@@ -127,8 +129,10 @@ It is important to define these methods in your website before the Piwik tracker
 Piwik needs to detect on each page whether a heatmap or a session recording is supposed to be tracked. To do this, Piwik
 issues an HTTP request to a file named `plugins/HeatmapSessionRecording/configs.php` on each page view. This request
 should be very fast as no database connection will be needed and the script is optimized for performance.
+
+Starting from Piwik 3.0.5, if your `piwik.js` is writable, it will execute this request on each page view only when actually a heatmap or session recording is configured to reduce server load. Find out if your `piwik.js` is writable by going to Administration, and open the "System Check" report. If the System Check displays a warning for "Writable Piwik.js" then [learn how to solve this](/guides/heatmap-session-recording/setup#when-the-piwikjs-in-your-piwik-directory-file-is-not-writable).
  
-If you want to prevent such a request to your server, for example to reduce the load on your server, you need to call a 
+If you always want to prevent such a request to your server, for example to reduce the load on your server, you need to call a 
 method `HeatmapSessionRecording.addConfig()` or disable the tracking completely using `HeatmapSessionRecording.disable()`.
  
 Learn more about this in the [addConfig() API reference](/guides/heatmap-session-recording/reference#addconfig).
@@ -147,7 +151,9 @@ _paq.push(['addTracker', 'https://not-supported-piwik.com/piwik.php', 2]);
 window.piwikAsyncInit = function () {
     // will never issue an HTTP request to configs.php for this Piwik instance
     var tracker = Piwik.getAsyncTracker('https://not-supported-piwik.com/piwik.php', 2);
-    tracker.HeatmapSessionRecording.disable();
+    if (tracker.HeatmapSessionRecording) {
+        tracker.HeatmapSessionRecording.disable();
+    }
 }
 ```
 

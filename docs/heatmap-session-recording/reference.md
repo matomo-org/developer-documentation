@@ -34,6 +34,21 @@ window.piwikHeatmapSessionRecordingAsyncInit = function () {
 };
 ```
 
+If you access a `HeatmapSessionRecording` property directly without using `_paq`, we recommend to check if the variable actually exists. Sometimes the Heatmap & Session Recording tracking code may not be available when currently no heatmaps and no session recordings are configured:
+
+```js
+window.piwikAsyncInit = function () {
+    var tracker = Piwik.getAsyncTracker('piwik.php', 2);		     
+    if (tracker.HeatmapSessionRecording) {
+        tracker.HeatmapSessionRecording.disable();
+    }
+    
+    if (Piwik.HeatmapSessionRecording) {
+        Piwik.HeatmapSessionRecording.disable();
+    }
+}
+```
+
 ## Static methods
 
 ### `disableAutoDetectNewPageView()`
