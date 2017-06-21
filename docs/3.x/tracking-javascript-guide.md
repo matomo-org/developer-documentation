@@ -404,9 +404,9 @@ We won't send an impression of the same content block twice if you call this met
 
 ### Track only visible content impressions within a page.
 
-Enable to track only visible content impressions via `trackVisibleContentImpressions(checkOnSroll, timeIntervalInMs)`. With visible we mean the content block has been in the view port and is not hidden (opacity, visibility, display, ...).
+Enable to track only visible content impressions via `trackVisibleContentImpressions(checkOnScroll, timeIntervalInMs)`. With visible we mean the content block has been in the view port and is not hidden (opacity, visibility, display, ...).
 
-- Optionally you can tell us to not rescan the DOM after each scroll by passing `checkOnSroll=false`. Otherwise we will check whether the previously hidden content blocks became visible meanwhile after a scroll and if so track the impression.
+- Optionally you can tell us to not rescan the DOM after each scroll by passing `checkOnScroll=false`. Otherwise we will check whether the previously hidden content blocks became visible meanwhile after a scroll and if so track the impression.
   * Limitation: If a content block is placed within a scrollable element (`overflow: scroll`), we do currently not detect when such an element becomes visible.
 - Optionally you can tell us to rescan the entire DOM for new content impressions every X milliseconds by passing `timeIntervalInMs=500`. By default we will rescan the DOM every 750ms. To disable it pass `timeIntervalInMs=0`.
   * Rescanning the entire DOM and detecting the visible state of content blocks can take a while depending on the browser, hardware and amount of content. In case your frames per second goes down you might want to increase the interval or disable it completely. In case you disable it you can still rescan the DOM manually at any time by calling this method again or `trackContentImpressionsWithinNode()`.
