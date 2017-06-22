@@ -156,6 +156,8 @@ Piwik will then send requests to count the actual time spent on the page, when t
 _paq.push(['enableHeartBeatTimer', 30]);
 ```
 
+Note: When testing the heart beat timer, remember to make sure the browser tab has focus and not eg. the developer tools or another panel.
+
 ## Ecommerce tracking
 
 Piwik allows for advanced and powerful Ecommerce tracking. Check out the [Ecommerce Analytics](https://piwik.org/docs/ecommerce-analytics/) documentation for more information about Ecommerce reports and how to set up Ecommerce tracking.
