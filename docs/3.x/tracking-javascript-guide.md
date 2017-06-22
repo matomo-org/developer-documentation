@@ -156,7 +156,7 @@ Piwik will then send requests to count the actual time spent on the page, when t
 _paq.push(['enableHeartBeatTimer', 30]);
 ```
 
-Note: When testing the heart beat timer, remember to make sure the browser tab has focus and not e.g. dev tools.
+Note: When testing the heart beat timer, remember to make sure the browser tab has focus and not eg. the developer tools or another panel.
 
 ## Ecommerce tracking
 
