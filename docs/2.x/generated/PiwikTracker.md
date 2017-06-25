@@ -140,7 +140,7 @@ If required though, you can also specify another charset using this function.
 -  It accepts the following parameter(s):
     - `$charset` (`string`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="seturl" id="seturl"></a>
 <a name="setUrl" id="setUrl"></a>
@@ -153,7 +153,7 @@ Sets the current URL being tracked
 -  It accepts the following parameter(s):
     - `$url` (`string`) &mdash;
        Raw URL (not URL encoded)
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="seturlreferrer" id="seturlreferrer"></a>
 <a name="setUrlReferrer" id="setUrlReferrer"></a>
@@ -166,7 +166,7 @@ Sets the URL referrer used to track Referrers details for new visits.
 -  It accepts the following parameter(s):
     - `$url` (`string`) &mdash;
        Raw URL (not URL encoded)
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setgenerationtime" id="setgenerationtime"></a>
 <a name="setGenerationTime" id="setGenerationTime"></a>
@@ -179,7 +179,7 @@ Sets the time that generating the document on the server side took.
 -  It accepts the following parameter(s):
     - `$timeMs` (`int`) &mdash;
        Generation time in ms
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setattributioninfo" id="setattributioninfo"></a>
 <a name="setAttributionInfo" id="setAttributionInfo"></a>
@@ -202,7 +202,7 @@ to the 'ref' first party cookie storing referral information.
 -  It accepts the following parameter(s):
     - `$jsonEncoded` (`string`) &mdash;
        JSON encoded array containing Attribution info
-- It does not return anything.
+- It returns a `$this` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -225,7 +225,7 @@ See http://piwik.org/docs/custom-variables/
        Custom variable value
     - `$scope` (`string`) &mdash;
        Custom variable scope. Possible values: visit, page, event
-- It does not return anything.
+- It returns a `$this` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -285,7 +285,7 @@ tracking request.
        The name of the tracking API parameter, eg 'dimension1'
     - `$value` (`string`) &mdash;
        Tracking parameter value that shall be sent for this tracking parameter.
-- It does not return anything.
+- It returns a `$this` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -307,7 +307,7 @@ Sets the current visitor ID to a random new one.
 
 #### Signature
 
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setidsite" id="setidsite"></a>
 <a name="setIdSite" id="setIdSite"></a>
@@ -320,7 +320,7 @@ Sets the current site ID.
 -  It accepts the following parameter(s):
     - `$idSite` (`int`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setbrowserlanguage" id="setbrowserlanguage"></a>
 <a name="setBrowserLanguage" id="setBrowserLanguage"></a>
@@ -335,7 +335,7 @@ Used to guess visitor countries when GeoIP is not enabled
 -  It accepts the following parameter(s):
     - `$acceptLanguage` (`string`) &mdash;
        For example "fr-fr"
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setuseragent" id="setuseragent"></a>
 <a name="setUserAgent" id="setUserAgent"></a>
@@ -350,7 +350,7 @@ If this function is not called, the User Agent will default to the current user 
 -  It accepts the following parameter(s):
     - `$userAgent` (`string`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setcountry" id="setcountry"></a>
 <a name="setCountry" id="setCountry"></a>
@@ -368,7 +368,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$country` (`string`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setregion" id="setregion"></a>
 <a name="setRegion" id="setRegion"></a>
@@ -386,7 +386,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$region` (`string`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setcity" id="setcity"></a>
 <a name="setCity" id="setCity"></a>
@@ -404,7 +404,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$city` (`string`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setlatitude" id="setlatitude"></a>
 <a name="setLatitude" id="setLatitude"></a>
@@ -422,7 +422,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$lat` (`float`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setlongitude" id="setlongitude"></a>
 <a name="setLongitude" id="setLongitude"></a>
@@ -440,7 +440,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$long` (`float`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="enablebulktracking" id="enablebulktracking"></a>
 <a name="enableBulkTracking" id="enableBulkTracking"></a>
@@ -750,7 +750,7 @@ conversion rates (Conversion rate = Ecommerce orders containing this product or 
        Category being viewed. On a Product page, this is the product's category. You can also specify an array of up to 5 categories for a given page view.
     - `$price` (`float`) &mdash;
        Specify the price at which the item was displayed
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="geturltrackpageview" id="geturltrackpageview"></a>
 <a name="getUrlTrackPageView" id="getUrlTrackPageView"></a>
@@ -925,7 +925,7 @@ Allowed only for Super User, must be used along with setTokenAuth()
 -  It accepts the following parameter(s):
     - `$dateTime` (`string`) &mdash;
        Date with the format 'Y-m-d H:i:s', or a UNIX timestamp
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setforcenewvisit" id="setforcenewvisit"></a>
 <a name="setForceNewVisit" id="setForceNewVisit"></a>
@@ -938,7 +938,7 @@ If you call setForceNewVisit() before calling doTrack*, then a new visit will be
 
 #### Signature
 
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setip" id="setip"></a>
 <a name="setIp" id="setIp"></a>
@@ -957,7 +957,7 @@ Allowed only for Super User, must be used along with setTokenAuth()
 -  It accepts the following parameter(s):
     - `$ip` (`string`) &mdash;
        IP string, eg. 130.54.2.1
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setuserid" id="setuserid"></a>
 <a name="setUserId" id="setUserId"></a>
@@ -974,7 +974,7 @@ A User ID can be a username, UUID or an email address, or any number or string t
 -  It accepts the following parameter(s):
     - `$userId` (`string`) &mdash;
        Any user ID string (eg. email address, ID, username). Must be non empty. Set to false to de-assign a user id previously set.
-- It does not return anything.
+- It returns a `$this` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -1012,7 +1012,7 @@ If not set, the visitor ID will be fetched from the 1st party cookie, or will be
 -  It accepts the following parameter(s):
     - `$visitorId` (`string`) &mdash;
        16 hexadecimal characters visitor ID, eg. "33c31e01394bdc63"
-- It does not return anything.
+- It returns a `$this` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -1081,14 +1081,14 @@ Some Tracking API functionality requires express authentication, using either th
 
 The following features require access:
 - force the visitor IP
-- force the date & time of the tracking requests rather than track for the current datetime
+- force the date &  time of the tracking requests rather than track for the current datetime
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$token_auth` (`string`) &mdash;
        token_auth 32 chars token_auth string
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setlocaltime" id="setlocaltime"></a>
 <a name="setLocalTime" id="setLocalTime"></a>
@@ -1101,7 +1101,7 @@ Sets local visitor time
 -  It accepts the following parameter(s):
     - `$time` (`string`) &mdash;
        HH:MM:SS format
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setresolution" id="setresolution"></a>
 <a name="setResolution" id="setResolution"></a>
@@ -1116,7 +1116,7 @@ Sets user resolution width and height.
       
     - `$height` (`int`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setbrowserhascookies" id="setbrowserhascookies"></a>
 <a name="setBrowserHasCookies" id="setBrowserHasCookies"></a>
@@ -1129,7 +1129,7 @@ Sets if the browser supports cookies This is reported in "List of plugins" repor
 -  It accepts the following parameter(s):
     - `$bool` (`bool`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setdebugstringappend" id="setdebugstringappend"></a>
 <a name="setDebugStringAppend" id="setDebugStringAppend"></a>
@@ -1142,7 +1142,7 @@ Will append a custom string at the end of the Tracking request.
 -  It accepts the following parameter(s):
     - `$string` (`string`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="setplugins" id="setplugins"></a>
 <a name="setPlugins" id="setPlugins"></a>
@@ -1171,7 +1171,7 @@ Sets visitor browser supported plugins
       
     - `$silverlight` (`bool`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 
 <a name="disablecookiesupport" id="disablecookiesupport"></a>
 <a name="disableCookieSupport" id="disableCookieSupport"></a>
@@ -1208,7 +1208,7 @@ Sets the maximum number of seconds that the tracker will spend waiting for a res
 -  It accepts the following parameter(s):
     - `$timeout` (`int`) &mdash;
       
-- It does not return anything.
+- It returns a `$this` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
