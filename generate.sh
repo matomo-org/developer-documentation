@@ -28,6 +28,7 @@ function generateDocs {
     git pull origin $1
     sleep 3
     git submodule update --recursive --force
+    php composer.phar self-update
     php composer.phar install || true
     cd ..
     sleep 4
