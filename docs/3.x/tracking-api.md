@@ -70,6 +70,8 @@ _(We recommend that these parameters be used if the information is available and
 * `e_n` &mdash; The event name.  (eg. a Movie name, or Song name, or File name...)
 * `e_v` &mdash; The event value. Must be a float or integer value (numeric), not a string.
 
+Note: Trailing and leading whitespaces will be trimmed from parameter values for `e_c`, `e_a` and `e_n`. Strings filled with whitespaces will be considered as (invalid) empty values.
+
 ### Optional [Content Tracking](https://piwik.org/docs/content-tracking/) info
 * `c_n` &mdash; The name of the content. For instance 'Ad Foo Bar'
 * `c_p` &mdash; The actual content piece. For instance the path to an image, video, audio, any text
