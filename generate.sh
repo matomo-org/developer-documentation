@@ -28,8 +28,8 @@ function generateDocs {
     git pull origin $1
     sleep 3
     git submodule update --recursive --force
-    php composer.phar self-update
-    php composer.phar install || true
+    php ../app/composer.phar self-update
+    php ../app/composer.phar install || true
     cd ..
     sleep 4
     php generator/generate.php --branch=$1 --targetname=$2
