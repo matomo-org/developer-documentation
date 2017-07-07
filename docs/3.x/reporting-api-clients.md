@@ -34,7 +34,7 @@ A NodeJS client is available on Github at [github.com/sandfox/nodejs-piwik](http
 
 ### Laravel
 
-A client library for Laravel (a PHP framework) is available at [laravel-piwik.robbrazier.com](http://laravel-piwik.robbrazier.com/en/latest/).
+A client library for Laravel (a PHP framework) is available at [github.com/RobBrazier/Laravel_Piwik](https://github.com/RobBrazier/Laravel_Piwik).
 
 ## Learn more
 
