@@ -205,7 +205,7 @@ Custom variable statistics are reported in Piwik under **Visitors &gt; custom va
 setCustomVariable(index, name, value, scope = "visit")
 ```
 
-This function is used to create, or update a custom variable name and value. For example, imagine you want to store in each visit the gender of the user. Yow would store the custom variable with a name = "gender", value = "male" or "female".
+This function is used to create, or update a custom variable name and value. For example, imagine you want to store in each visit the gender of the user. You would store the custom variable with a name = "gender", value = "male" or "female".
 
 **Important:** a given custom variable name must always be stored in the same "index". For example, if you choose to store the variable **name = "Gender"** in **index = 1** and you record another custom variable in index = 1, then the "Gender" variable will be deleted and replaced with the new custom variable stored in index 1.
 
