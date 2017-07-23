@@ -54,7 +54,7 @@ The `plugin.json` file must contain the following information:
 - `version`: The plugin's version. It must be a valid [semantic version number](http://semver.org/). If [node-semver](https://github.com/isaacs/node-semver) can't parse it, it won't be considered valid.
 - `description`: A short description of your plugin (up to 150 characters). This will be displayed below the plugin's name in search results and below the top-level heading on your plugin's page. It can include any character.
 - `keywords`: An array of words or short phrases that describe your plugin. The keywords are listed on the Marketplace, which helps users discover your plugin. Keywords can only contain letters, numbers, hyphens, and dots.
-- `license`: The name of the license your plugin uses. The license must be compatible with the [GPLv3](http://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPLv3](http://www.gnu.org/licenses/gpl-2.0.html) or later.
+- `license`: The name of the license your plugin uses. The license must be compatible with the [GPLv3](https://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPLv3](https://www.gnu.org/licenses/gpl-2.0.html) or later.
 - `homepage`: The URL to the plugin's homepage.
 - `authors`: An array of objects, each describing someone who helped create the plugin. The objects must contain a **name** field and can optionally contain an email and homepage field. You must define at least one author.
 - `require` - Defines packages required by this plugin. The plugin will not be installed unless those requirements can be met. Two packages are supported at the moment: `piwik` and `php`.
@@ -222,7 +222,7 @@ It is recommended to put an FAQ for your plugin directly into a `/docs/faq.md` f
 
 The marketplace uses [GitHub](https://github.com) webhooks to learn about your plugin and serve it to Piwik users that want it. This means you don't manually upload any files to the marketplace. Instead, you put your code into a Github repository and let the marketplace know about it.
 
-Creating and initializing a [git](http://git-scm.com) repository on Github is out of the scope of this guide. If you need to learn how to create a Github repository, [read this article](https://help.github.com/articles/create-a-repo).
+Creating and initializing a [git](https://git-scm.com) repository on Github is out of the scope of this guide. If you need to learn how to create a Github repository, [read this article](https://help.github.com/articles/create-a-repo).
 
 ### Activate the Piwik Plugins webhook
 
@@ -269,7 +269,7 @@ Here are some common errors:
 
 If you did not receive an email, then the webhook might not be configured (or you may have created the tag before setting up the webhook).
 
-If you still encounter trouble while publishing your plugin, please join the IRC channel **#piwik** on [freenode](http://freenode.net/). If you can't find anyone in the IRC channel, please ask for help [on the forums](http://forum.piwik.org/).
+If you still encounter trouble while publishing your plugin, please join the IRC channel **#piwik** on [freenode](https://freenode.net/). If you can't find anyone in the IRC channel, please ask for help [on the forums](http://forum.piwik.org/).
 
 ## Rules for Plugins
 
@@ -281,8 +281,8 @@ There are some restrictions regarding what can be published on the marketplace. 
  - Paid premium plugins are usually released under a commercial license. [Contact the Marketplace team](https://piwik.org/contact/marketplace/) about building and selling your premium plugin on the Marketplace, or read [the announcement](https://piwik.org/blog/2016/11/premium-plugins-now-available-marketplace/) to learn more. 
 - No **[phoning home](https://en.wikipedia.org/wiki/Phoning_home)** without the user's informed consent. For the purposes of a Piwik plugin, **phoning home** includes:
   - Unauthorized collection of user data. For example, sending the admin's email address back to your own servers without the user's permission is not allowed; but asking the user for an email address and collecting if they choose to submit it is fine. All actions taken in this respect MUST be of the user's doing, not automatically done by the plugin.
-  - All images and scripts shown should be part of the plugin. These should be loaded locally. If the plugin requires data that is loaded from an external website (such as [blocklists](http://en.wikipedia.org/wiki/Blacklist_%28computing%29)) this should be made clear in the plugin's admin screens or its description. The user must be informed of what information is being sent where.
-- The plugin page, contents of the `README.md` file and all translation files may not have "sponsored" links in them. This applies to all content that will be displayed on [plugins.piwik.org](https://plugins.piwik.org) and [themes.piwik.org](http://themes.piwik.org).
+  - All images and scripts shown should be part of the plugin. These should be loaded locally. If the plugin requires data that is loaded from an external website (such as [blocklists](https://en.wikipedia.org/wiki/Blacklist_%28computing%29)) this should be made clear in the plugin's admin screens or its description. The user must be informed of what information is being sent where.
+- The plugin page, contents of the `README.md` file and all translation files may not have "sponsored" links in them. This applies to all content that will be displayed on [plugins.piwik.org](https://plugins.piwik.org) and [themes.piwik.org](https://themes.piwik.org).
 - The plugin cannot violate our [trademarks](https://piwik.org/trademark/). Do not use **piwik** in your domain name, instead come up with your own original branding! People remember names.
 
 ## Using the marketplace
