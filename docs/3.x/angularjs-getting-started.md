@@ -134,7 +134,7 @@ They make use of different components
 We are currently not using AngularJS Routing. The goal is to use it in long term to get rid of piwikBroadcast and many other classes.
 
 ## Testing
-We use [Karma](https://karma-runner.github.io) + [Chai](http://chaijs.com) + [Mocha] (http://visionmedia.github.io/mocha/) to write unit tests. Read more about it here: [https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md](https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md)
+We use [Karma](https://karma-runner.github.io) + [Chai](http://chaijs.com) + [Mocha] (https://mochajs.org/) to write unit tests. Read more about it here: [https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md](https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md)
 
 ## How to document
 TBD
