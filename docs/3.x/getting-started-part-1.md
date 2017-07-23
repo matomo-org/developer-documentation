@@ -23,7 +23,7 @@ This guide will show you:
 
 This guide assumes that you can code in PHP and can setup your own local webserver. If you do not have these skills, you won't be able to understand this guide.
 
-There are many resources on the internet to help you learn PHP. We recommend reading [these tutorials](http://devzone.zend.com/6/). To learn how to setup a web server read the documentation for your preferred web server software (for example [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/)).
+There are many resources on the internet to help you learn PHP. We recommend reading [these tutorials](https://devzone.zend.com/6/). To learn how to setup a web server read the documentation for your preferred web server software (for example [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/)).
 
 ## Piwik Plugins and Piwik Core
 
@@ -52,16 +52,16 @@ These are only a few of the possibilities — it is not possible to categorize a
 
 Before we start extending Piwik, let's make sure you have the tools needed. You will need the following:
 
-- **A PHP IDE or a text editor.** We recommend using [PhpStorm](http://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
-- **A webserver,** such as [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/). You can also use [PHP's built-in webserver](http://php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 5.4 or higher installed.
+- **A PHP IDE or a text editor.** We recommend using [PhpStorm](https://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
+- **A webserver,** such as [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/). You can also use [PHP's built-in webserver](https://secure.php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 5.4 or higher installed.
 - **A MySQL database**
-- **[git](http://git-scm.com/)** so you can work with the latest Piwik source code.
-- **[Composer](http://getcomposer.org/)** so you can install the PHP libraries needed by Piwik.
-- **A browser,** such as [Firefox](http://www.mozilla.org/en-US/firefox/new/) or [Chrome](http://www.google.com/chrome). Ok, you've probably got this.
+- **[git](httpd://git-scm.com/)** so you can work with the latest Piwik source code.
+- **[Composer](https://getcomposer.org/)** so you can install the PHP libraries needed by Piwik.
+- **A browser,** such as [Firefox](https://www.mozilla.org/en-US/firefox/new/) or [Chrome](https://www.google.com/chrome). Ok, you've probably got this.
 
 The following tools aren't required for this guide, but you may find them useful as you create your plugin:
 
-- **[PHPUnit](http://phpunit.de/)** Necessary if you want to write or run automated tests.
+- **[PHPUnit](https://phpunit.de/)** Necessary if you want to write or run automated tests.
 - **[xhprof](https://github.com/facebook/xhprof)** If you'd like to profile your code and debug any inefficiencies.
 - **[python](https://www.python.org/)** If you want to use the log importer.
 
@@ -104,7 +104,7 @@ Next, we will install all the libraries that Piwik needs using Composer.
 
 Now that you've got a copy of Piwik, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself. 
 
-If your PHP version is greater than 5.4, you can also use [PHP's built-in web server](http://php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
+If your PHP version is greater than 5.4, you can also use [PHP's built-in web server](https://secure.php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
 
     $ php -S 0.0.0.0:8000
 

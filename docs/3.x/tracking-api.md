@@ -3,7 +3,7 @@ category: API Reference
 ---
 # Tracking HTTP API
 
-To track page views, events, visits, you have to send a HTTP request (GET or POST) to your Tracking HTTP API endpoint, for example, **http://your-piwik-domain.tld/piwik.php** with the correct query parameters set.
+To track page views, events, visits, you have to send a HTTP request (GET or POST) to your Tracking HTTP API endpoint, for example, **http://your-piwik-domain.example/piwik.php** with the correct query parameters set.
 
 ## Supported Query Parameters
 
@@ -104,7 +104,7 @@ The following parameters require that you set `&token_auth=` to the token\_auth 
  _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](https://piwik.org/faq/how-to/#faq_59)._
  If you set `cdt` to a datetime older than 24 hours then `token_auth` must be set. If you set `cdt` with a datetime in the last 24 hours then you don't need to pass `token_auth`.
 * `country` &mdash; An override value for the country. Should be set to the two letter country code of the visitor (lowercase), eg **fr**, **de**, **us**.
-* `region` &mdash; An override value for the region. Should be set to the two letter region code as defined by [MaxMind's](https://www.maxmind.com?rId=piwik) GeoIP databases. See [here](http://dev.maxmind.com/static/maxmind-region-codes.csv) for a list of them for every country (the region codes are located in the second column, to the left of the region name and to the right of the country code).
+* `region` &mdash; An override value for the region. Should be set to the two letter region code as defined by [MaxMind's](https://www.maxmind.com?rId=piwik) GeoIP databases. See [here](https://www.maxmind.com/download/geoip/misc/region_codes.csv) for a list of them for every country (the region codes are located in the second column, to the left of the region name and to the right of the country code).
 * `city` &mdash; An override value for the city. The name of the city the visitor is located in, eg, **Tokyo**.
 * `lat` &mdash; An override value for the visitor's latitude, eg _22.456_.
 * `long` &mdash; An override value for the visitor's longitude, eg _22.456_.
@@ -182,7 +182,7 @@ Follow these steps to enable and view debug logging for the tracker:
 
 
 2. Look at the HTTP requests that are sent to Piwik.
-    * If the requests take place in a browser, you can use a tool like the [Firebug](http://getfirebug.com/) to see all requests to **piwik.php**.
+    * If the requests take place in a browser, you can use a tool like the [Firebug](https://getfirebug.com/) to see all requests to **piwik.php**.
     * If the requests are triggered from your app or software directly, you can output or log the output of tracking requests and to view the debug messages.
     * You can also [log messages to file or database](https://piwik.org/faq/troubleshooting/faq_115/) (requires at least Piwik 2.15.0).
     

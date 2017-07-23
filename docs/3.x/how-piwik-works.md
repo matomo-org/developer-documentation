@@ -77,7 +77,7 @@ Plugin controllers return a **view** (usually HTML content) which is sent in the
 
 #### User interface
 
-Piwik's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers (built using the [Twig templating engine](http://twig.sensiolabs.org/)), some parts of the Piwik UI are built with AngularJS.
+Piwik's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers (built using the [Twig templating engine](https://twig.sensiolabs.org/)), some parts of the Piwik UI are built with AngularJS.
 
 AngularJS is a front-end JavaScript framework, which means that the user interface is built on the client side and the data is fetched from the HTTP Reporting API (described in the next section) as JSON. That also means a better user experience as it lets Piwik developers build a more dynamic and reactive application.
 
@@ -107,7 +107,7 @@ Read more about this in the ["The Tracking HTTP API" reference](/api-reference/t
 
 ### The command line
 
-Piwik offers a command line API through the `./console` script. This script uses the [Symfony Console component](http://symfony.com/doc/current/components/console/introduction.html).
+Piwik offers a command line API through the `./console` script. This script uses the [Symfony Console component](https://symfony.com/doc/current/components/console/introduction.html).
 
 Plugins can expose CLI commands that can be invoked like this:
 

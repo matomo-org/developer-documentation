@@ -4,7 +4,7 @@ previous: tests-ui
 ---
 # Running tests on Travis CI
 
-[Travis-CI](http://travis-ci.org) is a continuous integration tool that will run tests for a GitHub repository every time commits are pushed.
+[Travis-CI](https://travis-ci.org) is a continuous integration tool that will run tests for a GitHub repository every time commits are pushed.
 
 ## Piwik's tests on Travis CI
 

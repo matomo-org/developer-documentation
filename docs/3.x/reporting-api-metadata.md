@@ -26,7 +26,7 @@ For example, if you want to display the top five countries that visitors come fr
 *   User countries report: `&apiModule=UserCountry&apiAction=getCountry`
 *   Truncated to 5 rows: `&filter_truncate=5`
 *   Labels can be translated into a specific language. As with other API calls, you can use the parameter `&language=xx` (replacing xx with the translation code).
-The URL would be [https://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&language=en&format=xml&token_auth=anonymous&filter_truncate=5](http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en)
+The URL would be [https://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&language=en&format=xml&token_auth=anonymous&filter_truncate=5](https://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en)
 
 The returned XML is:
 
@@ -77,37 +77,37 @@ In the following examples, to see the URL used to generate the image, right-clic
 
 *   Example: Graph Plotting Visits over the Last 30 Days
 
-    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummary&apiAction=get&token_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250)
+    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummary&apiAction=get&token_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummary&apiAction=get&token_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250`
 
 *   Example: Horizontal Bar Graph Plotting Browsers for the Current Month
 
-    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
+    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Horizontal Bar Graph Plotting Countries for the Current Week
 
-    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
+    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Graph Plotting User Screen Resolutions for the Current Month
 
-    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=Resolution&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250)
+    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=Resolution&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=Resolution&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Pie Chart with Custom Colors
 
-    ![](http://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D)
+    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D`
 
 *   Example: Line chart of Custom Variables names and values, filtered to show only custom variable containing the string "logged"
 
-    ![](http://demo.piwik.org/?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*)
+    ![](https://demo.piwik.org/?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*`
 

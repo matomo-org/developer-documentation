@@ -7,7 +7,7 @@ next: tests-ui
 
 As explained in the previous guide, Piwik's test suite contains PHP tests and [UI tests](/guides/tests-ui). The PHP test suite is written and run using [PHPUnit](https://phpunit.de). 
 
-If you're creating a new plugin, you may find it beneficial to engage in [Test Driven Development](http://en.wikipedia.org/wiki/Test-driven_development) or at least to verify your code is correct with tests. With tests you'll be able to ensure that your code works and you'll be able to ensure the changes you make don't cause regressions.
+If you're creating a new plugin, you may find it beneficial to engage in [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) or at least to verify your code is correct with tests. With tests you'll be able to ensure that your code works and you'll be able to ensure the changes you make don't cause regressions.
 
 Before you start make sure you have enabled development mode:
 
@@ -102,4 +102,4 @@ $ ./console tests:run system
 
 ## Learn more
 
-* To learn more about **what you can do with PHPUnit** read PHPUnit's [user documentation](http://phpunit.de/documentation.html).
+* To learn more about **what you can do with PHPUnit** read PHPUnit's [user documentation](https://phpunit.de/documentation.html).

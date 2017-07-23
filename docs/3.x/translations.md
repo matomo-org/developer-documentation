@@ -115,7 +115,7 @@ var translatedText = _pk_translate('MyPlugin_BlogPost');
 
 ## Contributing translations to Piwik
 
-Did you know you can contribute [translations](https://piwik.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](http://translations.piwik.org). 
+Did you know you can contribute [translations](https://piwik.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](https://www.transifex.com/piwik/piwik/). 
 
 
 ## Getting translations for your plugin 

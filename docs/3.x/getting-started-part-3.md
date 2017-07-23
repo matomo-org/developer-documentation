@@ -188,7 +188,7 @@ Finally, we'll rename the report. After all, it can do more than just aggregate 
 
 ### Internationalizing your plugin
 
-The other improvement we'll make to our plugin is to use Piwik's [internationalization](http://en.wikipedia.org/wiki/Internationalization) system so our plugin can be made available in multiple languages.
+The other improvement we'll make to our plugin is to use Piwik's [internationalization](https://en.wikipedia.org/wiki/Internationalization) system so our plugin can be made available in multiple languages.
 
 Internationalization is achieved in Piwik by replacing translated text, like `"Realtime Analytics"`, with unique identifiers, like `"MyPlugin_RealtimeAnalytics"` called **translation tokens**.
 

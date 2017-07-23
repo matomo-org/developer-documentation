@@ -80,10 +80,10 @@ describe("WidgetizePage", function () {
 
 ### What is happening here?
 
-This example declares a new set of [specs](http://en.wikipedia.org/wiki/Behavior-driven_development#Behavioural_specifications) by calling the method `describe(name, callback)` and within that a new spec by calling the method `it(description, func)`. Within the spec we load a URL and once loaded capture a screenshot of the whole page. The captured screenshot will be saved under the defined `screenshotName`. You might have noticed we write our UI tests in [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style. 
+This example declares a new set of [specs](https://en.wikipedia.org/wiki/Behavior-driven_development#Behavioural_specifications) by calling the method `describe(name, callback)` and within that a new spec by calling the method `it(description, func)`. Within the spec we load a URL and once loaded capture a screenshot of the whole page. The captured screenshot will be saved under the defined `screenshotName`. You might have noticed we write our UI tests in [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style. 
 
 ### Capturing only a part of the page
-It is good practice to not always capture the full page. For example many pages contain a menu and if you change that menu, all your screenshot tests would fail. To avoid this you would instead have a separate test for your menu. To capture only a part of the page simply specify a [jQuery selector](http://api.jquery.com/category/selectors/) and call the method `captureSelector` instead of `capture`:
+It is good practice to not always capture the full page. For example many pages contain a menu and if you change that menu, all your screenshot tests would fail. To avoid this you would instead have a separate test for your menu. To capture only a part of the page simply specify a [jQuery selector](https://api.jquery.com/category/selectors/) and call the method `captureSelector` instead of `capture`:
 
 ```javascript
 var contentSelector = '#selector1, .selector2 .selector3';
@@ -123,7 +123,7 @@ At some point your UI test will fail, for example due to expected CSS changes. T
 
 ## Writing a UI test in depth
 
-UI screenshot tests are run directly by phantomjs and are written using [mocha](http://visionmedia.github.io/mocha/) and [chai](http://chaijs.com).
+UI screenshot tests are run directly by phantomjs and are written using [mocha](https://mochajs.org/) and [chai](http://chaijs.com).
 
 All test files should have \_spec.js file name suffixes (for example, `ActionsDataTable_spec.js`). Since screenshots can take a while to capture, you will want to override mocha's default timeout like this:
 
