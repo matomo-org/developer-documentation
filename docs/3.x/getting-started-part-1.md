@@ -55,7 +55,7 @@ Before we start extending Piwik, let's make sure you have the tools needed. You 
 - **A PHP IDE or a text editor.** We recommend using [PhpStorm](https://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
 - **A webserver,** such as [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/). You can also use [PHP's built-in webserver](https://secure.php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 5.4 or higher installed.
 - **A MySQL database**
-- **[git](httpd://git-scm.com/)** so you can work with the latest Piwik source code.
+- **[git](https://git-scm.com/)** so you can work with the latest Piwik source code.
 - **[Composer](https://getcomposer.org/)** so you can install the PHP libraries needed by Piwik.
 - **A browser,** such as [Firefox](https://www.mozilla.org/en-US/firefox/new/) or [Chrome](https://www.google.com/chrome). Ok, you've probably got this.
 
