@@ -1,7 +1,7 @@
 # Piwik Developer Documentation
 
-- http://piwik.org
-- http://developer.piwik.org
+- https://piwik.org
+- https://developer.piwik.org
 
 ## Documentations
 
@@ -119,7 +119,7 @@ Images are always stored in a versioned directory. Eg `public/img/2.x/*` and `pu
 
 Just edit the `docs/*.md` files. Any change you make there should be available on the developer website within a minute.
 
-Guides are written using Markdown. [CommonMark](http://commonmark.org/) and [Markdown Extra](http://en.wikipedia.org/wiki/Markdown_Extra) are supported.
+Guides are written using Markdown. [CommonMark](http://commonmark.org/) and [Markdown Extra](https://en.wikipedia.org/wiki/Markdown_Extra) are supported.
 
 In addition:
 
