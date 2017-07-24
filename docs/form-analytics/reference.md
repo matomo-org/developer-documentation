@@ -4,7 +4,7 @@ title: JavaScript Tracker API Reference
 ---
 # Form Analytics JavaScript Tracker API Reference
 
-This guide is the JavaScript Tracker API Reference for [Form Analytics](http://www.form-analytics.net/).
+This guide is the JavaScript Tracker API Reference for [Form Analytics](https://www.form-analytics.net/).
 
 You may also be interested in the Form Analytics [Reporting HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#FormAnalytics). 
 

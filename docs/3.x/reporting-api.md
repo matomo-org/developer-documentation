@@ -113,7 +113,7 @@ Some parameters can optionally accept arrays. For example, the urls parameter of
 
 Sometimes it is necessary to call the Piwik API a few times to get the data needed for a report or custom application. When you need to call many API functions simultaneously or if you just don't want to issue a lot of HTTP requests, you may want to consider using a **Bulk API Request**. This feature allows you to call several API methods with one HTTP request (either a GET or POST).
 
-To issue a bulk request, call the API.getBulkRequest method and pass the API methods & parameters (each request must be [URL Encoded](http://php.net/manual/en/function.urlencode.php)) you wish to call in the 'urls' query parameter. For example, to call VisitsSummary.get & VisitorInterest.getNumberOfVisitsPerVisitDuration at the same time, you can use:
+To issue a bulk request, call the API.getBulkRequest method and pass the API methods & parameters (each request must be [URL Encoded](https://secure.php.net/manual/en/function.urlencode.php)) you wish to call in the 'urls' query parameter. For example, to call VisitsSummary.get & VisitorInterest.getNumberOfVisitsPerVisitDuration at the same time, you can use:
 
     https://demo.piwik.org/?module=API&method=API.getBulkRequest&format=json&urls[0]=method%3dVisitsSummary.get%26idSite%3d3%26date%3d2012-03-06%26period%3dday&urls[1]=method%3dVisitorInterest.getNumberOfVisitsPerVisitDuration%26idSite%3d3%26date%3d2012-03-06%26period%3dday
 

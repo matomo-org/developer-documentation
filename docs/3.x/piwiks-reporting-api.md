@@ -56,7 +56,7 @@ Methods are only allowed to return the following values:
 
 If a method throws an exception its message will appear in the output. The stack trace can be displayed during debugging by changing `ResponseBuilder::DISPLAY_BACKTRACE_DEBUG` to `true`.
 
-**You can see the list of all API methods your Piwik install exposes: click the _API_ link in the top menu. See the demo's list [here](http://demo.piwik.org/index.php?module=API&action=listAllAPI&idSite=7&period=day&date=yesterday).**
+**You can see the list of all API methods your Piwik install exposes: click the _API_ link in the top menu. See the demo's list [here](https://demo.piwik.org/index.php?module=API&action=listAllAPI&idSite=7&period=day&date=yesterday).**
 
 ## Extra report processing
 
@@ -142,7 +142,7 @@ Report metadata can also be used within Piwik for features that operate on repor
 
 ### Row Evolution
 
-Piwik's [row evolution feature](https://demo.piwik.org/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#module=UserSettings&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3AUserSettings.getConfiguration$3A0$3AWindows$25207$2520$252F$2520Chrome$2520$252F$25201920x1080) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](http://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS&label=Windows+7) or [multi-row evolution data](http://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS).
+Piwik's [row evolution feature](https://demo.piwik.org/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#module=UserSettings&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3AUserSettings.getConfiguration$3A0$3AWindows$25207$2520$252F$2520Chrome$2520$252F$25201920x1080) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](https://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS&label=Windows+7) or [multi-row evolution data](https://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS).
 
 ### Bulk API Requests
 

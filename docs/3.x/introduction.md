@@ -9,7 +9,7 @@
 
 **The DB schema changes regularly due to added functionality and performance improvements. We havent got an up to date DB schema, if you generate one please let us know so we can include it here**
 
-The image was generated using [DBDesigner](http://fabforce.net/dbdesigner4/) and the XML source schema can be found in the [Piwik repository](https://github.com/piwik/piwik/blob/master/misc/others/db-schema.xml)
+The image was generated using [DBDesigner](http://fabforce.eu/dbdesigner4/) and the XML source schema can be found in the [Piwik repository](https://github.com/piwik/piwik/blob/master/misc/others/db-schema.xml)
 
 #### Introduction
 
@@ -87,7 +87,7 @@ The table **archive\_numeric_** is used to store plain numbers. The **value** fi
 
 The table **archive\_blob_** stores anything that is not a number. A BLOB is a binary data type that can contain anything from strings and compressed strings to serialized arrays and serialized objects. For example, it is used to store the search engine keywords that the visitors used over a given period and the visitors' browsers.
 
-Both tables have exactly the same structure except the type of the **value** field ([BLOB](http://dev.mysql.com/doc/refman/5.0/en/blob.html) in one case, [FLOAT](http://dev.mysql.com/doc/refman/5.0/en/numeric-types.html) in the other). The structure has the following fields:
+Both tables have exactly the same structure except the type of the **value** field ([BLOB](https://dev.mysql.com/doc/refman/5.7/en/blob.html) in one case, [FLOAT](https://dev.mysql.com/doc/refman/5.7/en/numeric-types.html) in the other). The structure has the following fields:
 
 *   **idarchive** defines a unique archive. All data for a specific website over a specific period (day/week/etc.) for a specific date will have the same **idarchive**. In other words this **idarchive** is the same as if (**idsite**,**period**,**date1**,**date2**) was the primary key.
 *   **name** is the description of the **value** of the record. For example, if you store the number of distinct keywords used a pertinent **name** could be 'Referrers_distinctKeywords'

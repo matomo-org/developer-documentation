@@ -115,7 +115,7 @@ Starting with Piwik 1.2, first party cookies are used. Consideration must be giv
 
 The Piwik JavaScript Tracking API is covered by an extensive JavaScript unit test suite to ensure that the code quality is as high as possible, and that we never break this functionality. Tests are written using QUnit. To run the tests, simply checkout the [Piwik Git repository](https://piwik.org/participate/contributing-with-git/) and go to `/path/to/piwik/tests/javascript/`. Tests are run inside your browser.
 
-The Piwik JavaScript API has been tested with numerous web browsers. To maximize coverage, we use services like [crossbrowsertesting.com](http://crossbrowsertesting.com/) and [browsershots.org](http://browsershots.org/).
+The Piwik JavaScript API has been tested with numerous web browsers. To maximize coverage, we use services like [crossbrowsertesting.com](https://crossbrowsertesting.com/) and [browsershots.org](http://browsershots.org/).
 
 ## Minify piwik.js
 

@@ -9,7 +9,7 @@ This guide contains a list of methods to combat certain vulnerabilities. Follow 
 
 ## Preventing XSS
 
-[XSS](http://en.wikipedia.org/wiki/Cross-site_scripting) is the injection of malicious scripts (e.g. JavaScript) into the user interface. It can allow attackers to gain control of the application or steal information.
+[XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) is the injection of malicious scripts (e.g. JavaScript) into the user interface. It can allow attackers to gain control of the application or steal information.
 
 Attackers can achieve that either by:
 
@@ -28,7 +28,7 @@ For text you know may contain special characters or if you need to output text i
 
 ### Use `|raw` sparingly in Twig templates
 
-When writing [Twig](http://twig.sensiolabs.org/) templates, try to avoid using the `|raw` filter when possible. As an alternative, put the HTML you want to reuse in a separate template and `{% include %}` it.
+When writing [Twig](https://twig.sensiolabs.org/) templates, try to avoid using the `|raw` filter when possible. As an alternative, put the HTML you want to reuse in a separate template and `{% include %}` it.
 
 If you do use `|raw`, make sure what you're inserting has been properly escaped.
 
@@ -53,7 +53,7 @@ $('#someLabel').text( safeString );
 
 ## Preventing CSRF
 
-[CSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks is where an attacker make a Piwik user perform an action unwillingly. To achieve that, the attacker sends a link to the user. The link could, for example, point to a Piwik controller method that changes the user's password, or delete a site.
+[CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks is where an attacker make a Piwik user perform an action unwillingly. To achieve that, the attacker sends a link to the user. The link could, for example, point to a Piwik controller method that changes the user's password, or delete a site.
 
 This attack can be prevented with the following technique:
 
@@ -91,7 +91,7 @@ To keep the **token_auth** out of a browser cache, you can use POST requests.
 
 ## Preventing SQL Injection
 
-[SQL Injection](http://en.wikipedia.org/wiki/SQL_Injection) is the manipulation of the application's SQL queries by injecting malicious SQL statements. Attackers can inject malicious SQL through inputs of the application: form fields, request parameters, …
+[SQL Injection](https://en.wikipedia.org/wiki/SQL_Injection) is the manipulation of the application's SQL queries by injecting malicious SQL statements. Attackers can inject malicious SQL through inputs of the application: form fields, request parameters, …
 
 For example, if an application builds an SQL query like this:
 
@@ -128,7 +128,7 @@ $rows = Db::query($sql, array($idSite));
 
 ## Preventing Remote File Inclusion
 
-[Remote File Inclusion](http://en.wikipedia.org/wiki/File_inclusion_vulnerability) is the inclusion and execution of source code that is not part of the webapp. It happens in PHP with `include` or `require` statements that use a path determined by the user.
+[Remote File Inclusion](https://en.wikipedia.org/wiki/File_inclusion_vulnerability) is the inclusion and execution of source code that is not part of the webapp. It happens in PHP with `include` or `require` statements that use a path determined by the user.
 
 In Piwik, the best way to prevent remote file inclusion attacks is to just never `require`/`include` files using data from the user. Instead, **put logic in classes that can be loaded by Piwik's autoloader** and instantiate/use different classes based on data obtained from the user. In other words, **don't do this**:
 
@@ -167,7 +167,7 @@ Here are some other coding guidelines that will help make your code more secure:
 
 - **Use the `.php` extension for all your PHP scripts.**
 
-- **Avoid executing php code using one of the following functions: [eval](http://www.php.net/manual/en/function.eval.php), [exec](http://uk1.php.net/manual/en/function.exec.php), [passthru](http://uk1.php.net/manual/en/function.passthru.php), [system](http://uk1.php.net/manual/en/function.system.php), [popen](http://uk1.php.net/manual/en/function.popen.php) or [preg_replace](http://uk1.php.net/manual/en/function.preg-replace.php) (with the `"e"` modifier).**
+- **Avoid executing php code using one of the following functions: [eval](https://secure.php.net/manual/en/function.eval.php), [exec](https://secure.php.net/manual/en/function.exec.php), [passthru](https://secure.php.net/manual/en/function.passthru.php), [system](https://secure.php.net/manual/en/function.system.php), [popen](https://secure.php.net/manual/en/function.popen.php) or [preg_replace](https://secure.php.net/manual/en/function.preg-replace.php) (with the `"e"` modifier).**
 
 - **Make sure that accessing your files directly doesn't execute any code that could have an impact on your Piwik install.**
 

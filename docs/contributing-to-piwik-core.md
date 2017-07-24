@@ -16,8 +16,8 @@ category: DevelopInDepth
 This guide assumes that you:
 
 * can code in PHP and JavaScript,
-* can use the [git](http://git-scm.com/) source code management tool
-* are familiar with [GitHub](http://github.com),
+* can use the [git](https://git-scm.com/) source code management tool
+* are familiar with [GitHub](https://github.com),
 * and have the necessary tools to contribute to Piwik (if not, see this section of our [Getting started extending Piwik](/guides/getting-started-part-1) guide).
 
 ## Contribution process
@@ -28,7 +28,7 @@ Once you've decided on something, continue below.
 
 ### Getting a copy of Piwik to work on
 
-Before you can start contributing you need to get setup with [git](http://git-scm.com/) & [GitHub](https://github.com). If needed, you can [create a GitHub account here](https://github.com/). 
+Before you can start contributing you need to get setup with [git](https://git-scm.com/) & [GitHub](https://github.com). If needed, you can [create a GitHub account here](https://github.com/). 
 
 #### Fork the Piwik repository
 
@@ -104,7 +104,7 @@ Then, on your new branch (**bugfix** for this tutorial), merge with **master**:
 git merge master
 ```
 
-If there are conflicts, you can read this guide: [How to resolve Git conflicts](http://githowto.com/resolving_conflicts).
+If there are conflicts, you can read this guide: [How to resolve Git conflicts](https://githowto.com/resolving_conflicts).
 
 #### Save your changes
 

@@ -3,9 +3,9 @@ category: Support
 ---
 # Community & Support
 
-## [Forums](http://forum.piwik.org/list.php?9)
+## [Forums](https://forum.piwik.org/)
 
-Ask other developers for help in [the forums](http://forum.piwik.org/list.php?9). Someone might have encountered your problem before.
+Ask other developers for help in [the forums](https://forum.piwik.org). Someone might have encountered your problem before.
 
 ## [Issue tracker](https://github.com/piwik/piwik/issues)
 

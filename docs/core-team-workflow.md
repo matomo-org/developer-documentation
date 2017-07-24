@@ -64,16 +64,16 @@ We try to publish a new Piwik release [about once a month](https://piwik.org/faq
 
 - Our [continuous integration tests](https://piwik.org/qa/) must be green.
 - All critical tickets [to the corresponding milestone](https://github.com/piwik/piwik/issues/milestones) must be closed. 
-- All [officially supported plugins](https://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](http://plugins.piwik.org/) must be compatible.
+- All [officially supported plugins](https://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](https://plugins.piwik.org/) must be compatible.
 
 Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik.
 
 To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)). 
-A shell script is then run to generate the archives (zip and tar.gz) which are [cryptographically signed](https://piwik.org/blog/2014/11/verify-signatures-piwik-packages/) and then copied to the build server [builds.piwik.org](http://builds.piwik.org/) and [builds.piwik.org/LATEST](http://builds.piwik.org/LATEST) is updated with the latest stable release number. 
+A shell script is then run to generate the archives (zip and tar.gz) which are [cryptographically signed](https://piwik.org/blog/2014/11/verify-signatures-piwik-packages/) and then copied to the build server [builds.piwik.org](https://builds.piwik.org/) and [builds.piwik.org/LATEST](https://builds.piwik.org/LATEST) is updated with the latest stable release number. 
 Within hours, Piwik installations will be updated by users via the one click [upgrade mechanism](https://piwik.org/docs/update/) &ndash; or by manual upgrades.
 
 Releases that contain the string "alpha", "beta", "rc", are built for testing purposes and are not advertised on [piwik.org](https://piwik.org).
-They are however made available on the build server and the [builds.piwik.org/LATEST_BETA](http://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string. 
+They are however made available on the build server and the [builds.piwik.org/LATEST_BETA](https://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string. 
 You can enable Piwik to use the latest Beta release automatically if you want to test the latest features ([see this faq to learn how](https://piwik.org/faq/how-to-update/#faq_159)).
 
 ### Changelog
@@ -114,7 +114,7 @@ To gain push access to the Piwik code repositories, one must make positive chang
 
 ### In the forums
 
-Join us in the forums at [forum.piwik.org](http://forum.piwik.org)
+Join us in the forums at [forum.piwik.org](https://forum.piwik.org)
 
 Discover our vibrant community where analytics tips are shared, suggestions on how to make the most out of Piwik, or general questions. Several team members visit the forums regularly, as well as active members of the community.
 
@@ -124,7 +124,7 @@ You can contact the team by email: <a href='mailto:hello@piwik.org?subject=Conta
 
 ### Using IRC
 
-Some team members may be available in IRC at [irc.freenode.net/#piwik](irc://irc.freenode.net#piwik) ([webchat](http://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a)).
+Some team members may be available in IRC at [irc.freenode.net/#piwik](irc://irc.freenode.net#piwik) ([webchat](https://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a)).
 
 ## Influencing Piwik development
 
@@ -141,7 +141,7 @@ One way to help core development is to submit a report when you find a bug.
 If you believe you have found a bug in Piwik, please do the following:
 
 * make sure you are using the latest [Piwik release](https://piwik.org/download/)
-* search in the [forum](http://forum.piwik.org/), [FAQ](https://piwik.org/faq/) and the [issue tracker](https://github.com/piwik/piwik/issues) if a similar or the same bug has already been reported.
+* search in the [forum](https://forum.piwik.org/), [FAQ](https://piwik.org/faq/) and the [issue tracker](https://github.com/piwik/piwik/issues) if a similar or the same bug has already been reported.
 * if your bug seems new, try to identify the steps to reproduce it.
 * if you are ready to report a bug, register an account [in the issue tracker](https://github.com/piwik/piwik/issues), login and [create a new ticket](https://github.com/piwik/piwik/issues/new)
 * make sure the title and description are as descriptive and clear as possible. Is the issue new to you, or has it always failed? If you give a clear description, you will help developers trying to reproduce and fix the issue.

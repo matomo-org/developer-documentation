@@ -1,4 +1,4 @@
-Website [developer.piwik.org](http://developer.piwik.org). Based on [Slim](http://www.slimframework.com/), [Markdown](http://daringfireball.net/projects/markdown/), [jQuery](http://jquery.com/) & [Bootstrap](http://getbootstrap.com).
+Website [developer.piwik.org](https://developer.piwik.org). Based on [Slim](https://www.slimframework.com/), [Markdown](https://daringfireball.net/projects/markdown/), [jQuery](https://jquery.com/) & [Bootstrap](https://getbootstrap.com).
 
 ## Install
 

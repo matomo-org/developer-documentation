@@ -830,7 +830,7 @@ View all features of the Tracking client in the [JavaScript Tracker Reference](/
 
 ## Frequently Asked Questions
 
-If you have any question about JavaScript Tracking in Piwik, [please search the website](https://piwik.org/), or [ask in the forums](http://forum.piwik.org).
+If you have any question about JavaScript Tracking in Piwik, [please search the website](https://piwik.org/), or [ask in the forums](https://forum.piwik.org).
 
 - [How do enable tracking for users without JavaScript?](https://piwik.org/faq/how-to/#faq_176)
 - [How does Piwik track downloads?](https://piwik.org/faq/new-to-piwik/#faq_47)

@@ -345,7 +345,7 @@ is stored in a cookie for up to 365 days.
 
 ### Can I use redirects in A/B tests to test entirely different pages or layouts?
 
-Yes, you can. We recommend to do this by running an experiment on your [server](/guides/a-b-testing/server#redirects).
+Yes, you can. We recommend to do this by running an experiment on your [server](https://developer.piwik.org/guides/ab-tests/server#redirects).
 Server side redirects have the advantage that they are more SEO friendly and faster to load for your users.
 It is highly recommended to send your users to a different page URL via an HTTP 302 redirect (temporary) and not via a 301 (permanent). 
 This way search engines know the redirect is temporary and that they should keep the original URL in their search index. 

@@ -21,7 +21,7 @@ or
 php ./console help
 ```
 
-The Piwik console is built using the [Symfony Console component](http://symfony.com/doc/current/components/console/introduction.html). If you are familiar with Symfony, you should immediately find your way in the Piwik console.
+The Piwik console is built using the [Symfony Console component](https://symfony.com/doc/current/components/console.html). If you are familiar with Symfony, you should immediately find your way in the Piwik console.
 
 ### Commands
 

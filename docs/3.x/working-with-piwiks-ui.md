@@ -13,7 +13,7 @@ Read this guide if you'd like to know
 
 Piwik uses the following JavaScript libraries:
 
-* [jQuery](http://jquery.com/) and [jQuery UI](http://jqueryui.com/)
+* [jQuery](https://jquery.com/) and [jQuery UI](https://jqueryui.com/)
 * [AngularJS](https://angularjs.org/)
 * [jqPlot](http://www.jqplot.com/)
 * A couple of other libraries are used see our [bower dependencies](https://github.com/piwik/piwik/blob/master/bower.json)
@@ -104,7 +104,7 @@ If you need to use global objects, they should be passed in to the anonymous fun
 
 ### JavaScript modularization
 
-Piwik attempts to modularize all JavaScript code through the use of Piwik's `require` function. This function (inspired by [node.js' require function](http://nodejs.org/api/modules.html)) will create nested objects in the `window` object based on a namespace string (for example, `'MyPlugin/Widgets/FancySchmancyThing'`).
+Piwik attempts to modularize all JavaScript code through the use of Piwik's `require` function. This function (inspired by [node.js' require function](https://nodejs.org/api/modules.html)) will create nested objects in the `window` object based on a namespace string (for example, `'MyPlugin/Widgets/FancySchmancyThing'`).
 
 Here's how it should be used:
 

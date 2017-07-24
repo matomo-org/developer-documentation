@@ -95,7 +95,7 @@ We recommend to use the CLI tool to create a command:
 
 This will create a command for you and place it in the `Commands` directory of your plugin. Afterwards you have to register the command by subscribing to a hook. Read more about this in the [Hooks reference](/api-reference/hooks#consoleaddcommands).
 
-If you are interested in learning more about writing commands, read the [Symfony Commands documentation](http://symfony.com/doc/current/components/console/introduction.html).
+If you are interested in learning more about writing commands, read the [Symfony Commands documentation](https://symfony.com/doc/current/components/console.html).
 
 ### Writing tests for your plugin
 We are sure you love tests as much as we do. That's why we want to make it as easy as possible for you to write tests. 
@@ -220,7 +220,7 @@ or worse still:
 include($page);
 </code></pre>
 
-The user could set the `$lib_dir` or `$page` variables and include files such as `/etc/passwd` or remote files such as [http://www.example-hacker-website.com/whatever.php](http://www.example-hacker-website.com/whatever.php) with malicious code. This malicious code could potentially delete files, corrupt databases, or change the values of variables used to track authentication status.
+The user could set the `$lib_dir` or `$page` variables and include files such as `/etc/passwd` or remote files such as [http://www.example-hacker-website.example/whatever.php](http://www.example-hacker-website.example/whatever.php) with malicious code. This malicious code could potentially delete files, corrupt databases, or change the values of variables used to track authentication status.
 
 When using functions such as `readfile, fopen, file, include, require` using user data, you must be careful!
 
@@ -297,7 +297,7 @@ This is a recommendation for any PHP file that allows for direct execution. If i
 
 ### References
 
-* [Top 10 Security from The Open Web Application Security Project (OWASP)](http://www.owasp.org/index.php/Top_10_2007)
+* [Top 10 Security from The Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Top_10_2007)
 * Top 10 php security list [part 1](http://www.onlamp.com/pub/a/php/2003/03/20/php_security.html), [part 2](http://www.onlamp.com/pub/a/php/2003/04/03/php_security.html?CMP=AFC-ak_article&ATT=Ten+Security+Checks+for+PHP%2c+Part+2)
 
 #### Handle user/untrusted input
