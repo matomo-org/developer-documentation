@@ -134,7 +134,7 @@ In the example above, the request works because the statistics are public (the _
 *   when you call the API over http you need to authenticate yourself
 This is done by adding a secret parameter in the URL. This parameter is as secret as your login and password!
 
-You can get this token in the _Manage Users_ admin area.
+You can get this token admin area under _Management_ => _Platform_ => _API_ or under _Personal_ => _Settings_.
 
 Then you simply have to add the parameter **&token\_auth=YOUR\_TOKEN** at the end of your API call URL.
 
