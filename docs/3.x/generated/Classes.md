@@ -104,8 +104,6 @@ This is a complete list of available classes:
 - [`Plugins\CoreHome\Columns\Metrics\EvolutionMetric`](Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md) &mdash; Calculates evolution values for any other metric.
 - [`Plugins\CoreHome\SystemSummary\Item`](Piwik/Plugins/CoreHome/SystemSummary/Item.md) &mdash; This class can be used to add a new entry / item to the system summary widget.
 - [`Plugins\CoreVisualizations\Metrics\Formatter\Numeric`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter/Numeric.md) &mdash; A metrics formatter that prettifies metric values without returning string values.
-- [`Plugins\CustomPiwikJs\TrackerUpdater`](Piwik/Plugins/CustomPiwikJs/TrackerUpdater.md) &mdash; Updates the Piwik JavaScript Tracker "piwik.js" in case plugins extend the tracker.
-- [`Plugins\DevicePlugins\DevicePlugins`](Piwik/Plugins/DevicePlugins/DevicePlugins.md)
 - [`Plugins\Diagnostics\DiagnosticService`](Piwik/Plugins/Diagnostics/DiagnosticService.md) &mdash; Runs the Piwik diagnostics.
 - [`Plugins\Diagnostics\Diagnostic\DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) &mdash; The result of a diagnostic.
 - [`Plugins\Diagnostics\Diagnostic\DiagnosticResultItem`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md)

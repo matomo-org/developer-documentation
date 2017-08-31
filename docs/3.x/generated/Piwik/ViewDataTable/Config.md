@@ -123,6 +123,7 @@ This class defines the following properties:
 - [`$show_pagination_control`](#$show_pagination_control) &mdash; Controls whether the 'prev'/'next' links are shown in the DataTable footer.
 - [`$show_offset_information`](#$show_offset_information) &mdash; Controls whether offset information (ie, '5-10 of 20') is shown under the datatable.
 - [`$hide_annotations_view`](#$hide_annotations_view) &mdash; Controls whether annotations are shown or not.
+- [`$export_limit`](#$export_limit) &mdash; The filter_limit query parameter value to use in export links.
 - [`$no_data_message`](#$no_data_message) &mdash; Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set
 - [`$report_id`](#$report_id)
 - [`$controllerName`](#$controllername)
@@ -785,6 +786,19 @@ Controls whether offset information (ie, '5-10 of 20') is shown under the datata
 ### `$hide_annotations_view`
 
 Controls whether annotations are shown or not.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$export_limit" id="$export_limit"></a>
+<a name="export_limit" id="export_limit"></a>
+### `$export_limit`
+
+The filter_limit query parameter value to use in export links.
+
+Defaulted to the value of the `[General] API_datatable_default_limit` INI config option.
 
 #### Signature
 
