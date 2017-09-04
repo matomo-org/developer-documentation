@@ -612,7 +612,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [1466](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L1466)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [1476](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L1476)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
