@@ -82,6 +82,21 @@ The following functions are available to twig templates:
         return $view->render();
     }
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$twigCached`](#$twigcached)
+
+<a name="$twigcached" id="$twigcached"></a>
+<a name="twigCached" id="twigCached"></a>
+### `$twigCached`
+
+#### Signature
+
+- It is a `Piwik\Twig` value.
+
 Methods
 -------
 

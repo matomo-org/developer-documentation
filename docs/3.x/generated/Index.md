@@ -1041,6 +1041,7 @@ Index
 - [`TrackerUpdater`](Piwik/Plugins/CustomPiwikJs/TrackerUpdater.md) &mdash; *Class in namespace* `Piwik\Plugins\CustomPiwikJs`- [`Task`](Piwik/Scheduler/Task.md) &mdash; *Class in namespace* `Piwik\Scheduler`- [`$transform`](Piwik/Settings/FieldConfig.md#$transform) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$title`](Piwik/Settings/FieldConfig.md#$title) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; *Class in namespace* `Piwik`- [`Translator`](Piwik/Translation/Translator.md) &mdash; *Class in namespace* `Piwik\Translation`- [`translate()`](Piwik/Translation/Translator.md#translate) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
+- [`$twigCached`](Piwik/View.md#$twigcached) &mdash; *Property in class* [`View`](Piwik/View.md)
 - [`$translations`](Piwik/ViewDataTable/Config.md#$translations) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$title`](Piwik/ViewDataTable/Config.md#$title) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$title_edit_entity_url`](Piwik/ViewDataTable/Config.md#$title_edit_entity_url) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
