@@ -21,6 +21,8 @@ The class defines the following methods:
 - [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods. Inherited from [`Period`](../../Piwik/Period.md)
 - [`checkDateFormat()`](#checkdateformat) &mdash; Checks the given date format whether it is a correct date format and if not, throw an exception. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period.
+- [`getDateTimeStart()`](#getdatetimestart) &mdash; Returns the start date & time of this period. Inherited from [`Period`](../../Piwik/Period.md)
+- [`getDateTimeEnd()`](#getdatetimeend) &mdash; Returns the end date & time of this period. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getDateEnd()`](#getdateend) &mdash; Returns the end date of the period.
 - [`getId()`](#getid) &mdash; Returns the period ID. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getLabel()`](#getlabel) &mdash; Returns the label for the current period. Inherited from [`Period`](../../Piwik/Period.md)
@@ -94,6 +96,26 @@ Returns the start date of the period.
 - It returns a [`Date`](../../Piwik/Date.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
+
+<a name="getdatetimestart" id="getdatetimestart"></a>
+<a name="getDateTimeStart" id="getDateTimeStart"></a>
+### `getDateTimeStart()`
+
+Returns the start date & time of this period.
+
+#### Signature
+
+- It returns a [`Date`](../../Piwik/Date.md) value.
+
+<a name="getdatetimeend" id="getdatetimeend"></a>
+<a name="getDateTimeEnd" id="getDateTimeEnd"></a>
+### `getDateTimeEnd()`
+
+Returns the end date & time of this period.
+
+#### Signature
+
+- It returns a [`Date`](../../Piwik/Date.md) value.
 
 <a name="getdateend" id="getdateend"></a>
 <a name="getDateEnd" id="getDateEnd"></a>

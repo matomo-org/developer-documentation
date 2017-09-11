@@ -31,8 +31,10 @@ The class defines the following methods:
 - [`factory()`](#factory) &mdash; Creates a new Date instance using a string datetime value.
 - [`getDatetime()`](#getdatetime) &mdash; Returns the current timestamp as a string with the following format: `'YYYY-MM-DD HH:MM:SS'`.
 - [`getHourUTC()`](#gethourutc) &mdash; Returns the current hour in UTC timezone.
-- [`getDateStartUTC()`](#getdatestartutc) &mdash; Returns the start of the day of the current timestamp in UTC.
-- [`getDateEndUTC()`](#getdateendutc) &mdash; Returns the end of the day of the current timestamp in UTC.
+- [`getDateStartUTC()`](#getdatestartutc)
+- [`getStartOfDay()`](#getstartofday) &mdash; Returns the start of the day of the current timestamp in UTC.
+- [`getDateEndUTC()`](#getdateendutc)
+- [`getEndOfDay()`](#getendofday) &mdash; Returns the end of the day of the current timestamp in UTC.
 - [`setTimezone()`](#settimezone) &mdash; Returns a new date object with the same timestamp as `$this` but with a new timezone.
 - [`getUtcOffset()`](#getutcoffset) &mdash; Returns the offset to UTC time for the given timezone
 - [`adjustForTimezone()`](#adjustfortimezone) &mdash; Converts a timestamp from UTC to a timezone.
@@ -115,19 +117,35 @@ Returns the current hour in UTC timezone.
 <a name="getDateStartUTC" id="getDateStartUTC"></a>
 ### `getDateStartUTC()`
 
+#### Signature
+
+- It returns a `string` value.
+
+<a name="getstartofday" id="getstartofday"></a>
+<a name="getStartOfDay" id="getStartOfDay"></a>
+### `getStartOfDay()`
+
 Returns the start of the day of the current timestamp in UTC.
 
 For example,
 if the current timestamp is `'2007-07-24 14:04:24'` in UTC, the result will
-be `'2007-07-24'`.
+be `'2007-07-24'` as a Date.
+
+#### Signature
+
+- It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="getdateendutc" id="getdateendutc"></a>
+<a name="getDateEndUTC" id="getDateEndUTC"></a>
+### `getDateEndUTC()`
 
 #### Signature
 
 - It returns a `string` value.
 
-<a name="getdateendutc" id="getdateendutc"></a>
-<a name="getDateEndUTC" id="getDateEndUTC"></a>
-### `getDateEndUTC()`
+<a name="getendofday" id="getendofday"></a>
+<a name="getEndOfDay" id="getEndOfDay"></a>
+### `getEndOfDay()`
 
 Returns the end of the day of the current timestamp in UTC.
 
@@ -137,7 +155,7 @@ be `'2007-07-24 23:59:59'`.
 
 #### Signature
 
-- It returns a `string` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="settimezone" id="settimezone"></a>
 <a name="setTimezone" id="setTimezone"></a>

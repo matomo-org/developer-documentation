@@ -23,6 +23,8 @@ The abstract class defines the following methods:
 - [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods.
 - [`checkDateFormat()`](#checkdateformat) &mdash; Checks the given date format whether it is a correct date format and if not, throw an exception.
 - [`getDateStart()`](#getdatestart) &mdash; Returns the first day of the period.
+- [`getDateTimeStart()`](#getdatetimestart) &mdash; Returns the start date & time of this period.
+- [`getDateTimeEnd()`](#getdatetimeend) &mdash; Returns the end date & time of this period.
 - [`getDateEnd()`](#getdateend) &mdash; Returns the last day of the period.
 - [`getId()`](#getid) &mdash; Returns the period ID.
 - [`getLabel()`](#getlabel) &mdash; Returns the label for the current period.
@@ -82,6 +84,26 @@ For valid date formats have a look at the [Date::factory()](/api-reference/Piwik
 ### `getDateStart()`
 
 Returns the first day of the period.
+
+#### Signature
+
+- It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="getdatetimestart" id="getdatetimestart"></a>
+<a name="getDateTimeStart" id="getDateTimeStart"></a>
+### `getDateTimeStart()`
+
+Returns the start date & time of this period.
+
+#### Signature
+
+- It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="getdatetimeend" id="getdatetimeend"></a>
+<a name="getDateTimeEnd" id="getDateTimeEnd"></a>
+### `getDateTimeEnd()`
+
+Returns the end date & time of this period.
 
 #### Signature
 

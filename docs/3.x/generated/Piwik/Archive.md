@@ -94,6 +94,7 @@ Methods
 
 The class defines the following methods:
 
+- [`__construct()`](#__construct)
 - [`build()`](#build) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional Segment.
 - [`factory()`](#factory) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
 - [`getNumeric()`](#getnumeric) &mdash; Queries and returns metric data in an array.
@@ -102,6 +103,21 @@ The class defines the following methods:
 - [`getDataTableExpanded()`](#getdatatableexpanded) &mdash; Queries and returns one report with all of its subtables loaded.
 - [`getParams()`](#getparams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 - [`createDataTableFromArchive()`](#createdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
+- [`getPluginForReport()`](#getpluginforreport) &mdash; Returns the name of the plugin that archives a given report.
+
+<a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$params` (`Piwik\Archive\Parameters`) &mdash;
+      
+    - `$forceIndexedBySite` (`bool`) &mdash;
+       Whether to force index the result of a query by site ID.
+    - `$forceIndexedByDate` (`bool`) &mdash;
+       Whether to force index the result of a query by period.
 
 <a name="build" id="build"></a>
 <a name="build" id="build"></a>
@@ -128,7 +144,7 @@ If you want to create an Archive instance with an array of Period instances, use
        Segment definition or false if no segment should be used. [Segment](/api-reference/Piwik/Segment)
     - `$_restrictSitesToLogin` (`bool`|`Piwik\false`|`string`) &mdash;
        Used only when running as a scheduled task.
-- It returns a [`Archive`](../Piwik/Archive.md) value.
+- It returns a `Piwik\Archive\ArchiveQuery` value.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
@@ -155,7 +171,7 @@ use [build()](/api-reference/Piwik/Archive#build).
        Whether `'all'` sites are being queried or not. If true, then the result of querying functions will be indexed by site, regardless of whether `count($idSites) == 1`.
     - `$isMultipleDate` (`bool`) &mdash;
        Whether multiple dates are being queried or not. If true, then the result of querying functions will be indexed by period, regardless of whether `count($periods) == 1`.
-- It returns a [`Archive`](../Piwik/Archive.md) value.
+- It returns a `Piwik\Archive\ArchiveQuery` value.
 
 <a name="getnumeric" id="getnumeric"></a>
 <a name="getNumeric" id="getNumeric"></a>
@@ -312,4 +328,21 @@ API methods can use this method to reduce code redundancy.
 
 - *Returns:*  [`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md) &mdash;
     
+
+<a name="getpluginforreport" id="getpluginforreport"></a>
+<a name="getPluginForReport" id="getPluginForReport"></a>
+### `getPluginForReport()`
+
+Returns the name of the plugin that archives a given report.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$report` (`string`) &mdash;
+       Archive data name, eg, `'nb_visits'`, `'DevicesDetection_...'`, etc.
+
+- *Returns:*  `string` &mdash;
+    Plugin name.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; If a plugin cannot be found or if the plugin for the report isn&#039;t activated.
 
