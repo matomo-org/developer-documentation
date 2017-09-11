@@ -55,8 +55,6 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setGenerationTimeMs(generationTime)` - By default Piwik uses the browser DOM Timing API to accurately determine the time it takes to generate and download the page. You may overwrite the value by specifying a milliseconds value here.
 *   `appendToTrackingUrl(appendToUrl)` - Appends a custom string to the end of the HTTP request to piwik.php?
 *   `setDoNotTrack( bool )` - Set to true to not track users who opt out of tracking using Mozilla's (proposed) Do Not Track setting.
-*   `disableCookies()` - Disables all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view.
-*   `deleteCookies()` - Deletes the tracking cookies currently currently set (this is useful when [creating new visits](https://piwik.org/faq/how-to/#faq_187))
 *   `killFrame()` - Enables a frame-buster to prevent the tracked web page from being framed/iframed.
 *   `redirectFile( url )` - Forces the browser load the live URL if the tracked web page is loaded from a local file (e.g., saved to someone's desktop).
 *   `setHeartBeatTimer( minimumVisitLength, heartBeatDelay )` - records how long the page has been viewed if the minimumVisitLength (in seconds) is attained; the heartBeatDelay determines how frequently to update the server
@@ -97,8 +95,11 @@ Piwik provides [ecommerce analytics](https://piwik.org/docs/ecommerce-analytics/
 
 ### Configuration of Tracking Cookies
 
-Starting with Piwik 1.2, first party cookies are used. Consideration must be given to retention times and avoiding conflicts with other cookies, trackers, and apps.
+Piwik uses first party cookies to keep track of some user information over time. Consideration must be given to retention times and avoiding conflicts with other cookies, trackers, and apps.
 
+*   `disableCookies()` - Disables all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view.
+*   `deleteCookies()` - Deletes the tracking cookies currently currently set (this is useful when [creating new visits](https://piwik.org/faq/how-to/#faq_187))
+*   `hasCookies()` - Returns whether cookies are enabled and supported by this browser.
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
 *   `setCookieDomain( domain )` - the default is the document domain; if your web site can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
 *   `setCookiePath( path )` - the default is '/'.
@@ -106,7 +107,6 @@ Starting with Piwik 1.2, first party cookies are used. Consideration must be giv
 *   `setVisitorCookieTimeout( seconds )` - the default is 13 months
 *   `setReferralCookieTimeout( seconds )` - the default is 6 months
 *   `setSessionCookieTimeout( seconds )` - the default is 30 minutes
-
 
 ### Advanced uses
 
