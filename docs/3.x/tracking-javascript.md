@@ -41,6 +41,8 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setSiteId( integer )` - Specify the website ID. Redundant: can be specified in `getTracker()` constructor.
 *   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. http://piwik.example.org/ or https://example.org/piwik/. This function is only useful when the 'Overlay' report is not working. By default you do not need to use this function.
 *   `setTrackerUrl( string )` - Specify the Piwik server URL. Redundant: can be specified in `getTracker()` constructor.
+* `getPiwikUrl` - Returns the Piwik server URL.
+* `getCurrentUrl` - Returns the current url of the page that is currently being visited. If a custom URL was set before calling this method, the custom URL will be returned.
 *   `setDownloadClasses( string | array )` - Set classes to be treated as downloads (in addition to piwik_download)
 *   `setDownloadExtensions( string | array )` - Set list of file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
 *   `addDownloadExtensions( string | array )` - Specify additional file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
