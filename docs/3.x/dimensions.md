@@ -75,9 +75,8 @@ A tracking request could be done like this: `piwik.php?idsite=1&sport_activity_t
 
 Of course you can add any custom behaviour like limiting the max speed etc.
 
-
 ## Segmentation
-A new segment is automatically created for a dimension and defined in the method `configureSegments`. All you usually have to do is to adjust the description of the accepted values.
+Since Piwik 3.2.0 A new segment is automatically created for a dimension when you define a `$segmentName` property. It is also recommended to adjust the description of the accepted values.
 
 ## Learn more
 Dimensions are quite powerful. For example you can change the behavior of an existing dimension by creating a dimension that has the same column name, you can store action related data efficiently by using a lookup table. Dimensions can also force the creation of a new visit in case an existing visitor was recognized. We recommend to have a look at the documentation within a created dimension and at the API-Reference of the classes [VisitDimension](/api-reference/Piwik/Plugin/Dimension/VisitDimension), [ActionDimension](/api-reference/Piwik/Plugin/Dimension/ActionDimension) and [ConversionDimension](/api-reference/Piwik/Plugin/Dimension/ConversionDimension)
