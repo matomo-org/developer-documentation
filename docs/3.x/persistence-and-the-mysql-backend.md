@@ -133,7 +133,7 @@ Visit actions contain the following information:
 - `custom_var_v4`: the custom variable value of the fourth slot for page custom variables
 - `custom_var_k5`: the custom variable name of the  slot for page custom variables
 - `custom_var_v5`: the custom variable value of the  slot for page custom variables
-- `custom_float`: an unspecified float field, usually used to hold the time it took the server to serve this action
+- `custom_float`: an unspecified float field, mainly used to store the [Custom Event](http://piwik.org/docs/event-tracking/) value, as well as store the [time it took the server](https://piwik.org/docs/page-speed/) to serve this action
 
 #### Table details
 
