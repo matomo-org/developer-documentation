@@ -756,6 +756,7 @@ Index
 - [`mb_substr()`](Piwik/Common.md#mb_substr) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`mb_strlen()`](Piwik/Common.md#mb_strlen) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`mb_strtolower()`](Piwik/Common.md#mb_strtolower) &mdash; *Method in class* [`Common`](Piwik/Common.md)
+- [`mb_strtoupper()`](Piwik/Common.md#mb_strtoupper) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`makeFromIndexedArray()`](Piwik/DataTable.md#makefromindexedarray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`mergeSubtables()`](Piwik/DataTable.md#mergesubtables) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`makeFromSimpleArray()`](Piwik/DataTable.md#makefromsimplearray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)

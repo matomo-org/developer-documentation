@@ -533,6 +533,37 @@ eg `Notification\Manager::cancel($notificationId)`.
         }
     }
 
+## Core
+
+- [Core.configFileChanged](#coreconfigfilechanged)
+
+### Core.configFileChanged
+
+*Defined in [Piwik/Config](https://github.com/piwik/piwik/blob/3.x-dev/core/Config.php) in line [402](https://github.com/piwik/piwik/blob/3.x-dev/core/Config.php#L402)*
+
+Triggered when a INI config file is changed on disk.
+
+Callback Signature:
+<pre><code>function($localPath)</code></pre>
+
+- string `$localPath` Absolute path to the changed file on the server.
+
+## CoreAdminHome
+
+- [CoreAdminHome.customLogoChanged](#coreadminhomecustomlogochanged)
+
+### CoreAdminHome.customLogoChanged
+
+*Defined in [Piwik/Plugins/CoreAdminHome/CustomLogo](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CustomLogo.php) in line [213](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CoreAdminHome/CustomLogo.php#L213)*
+
+Triggered when a user uploads a custom logo. This event is triggered for
+the large logo, for the smaller logo-header.png file, and for the favicon.
+
+Callback Signature:
+<pre><code>function($absolutePath)</code></pre>
+
+- string `$absolutePath` The absolute path to the logo file on the Piwik server.
+
 ## CoreUpdater
 
 - [CoreUpdater.update.end](#coreupdaterupdateend)
@@ -651,7 +682,20 @@ Callback Signature:
 
 ## CustomPiwikJs
 
+- [CustomPiwikJs.piwikJsChanged](#custompiwikjspiwikjschanged)
 - [CustomPiwikJs.shouldAddTrackerFile](#custompiwikjsshouldaddtrackerfile)
+
+### CustomPiwikJs.piwikJsChanged
+
+*Defined in [Piwik/Plugins/CustomPiwikJs/TrackerUpdater](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php) in line [140](https://github.com/piwik/piwik/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php#L140)*
+
+Triggered after the tracker JavaScript content (the content of the piwik.js file) is changed.
+
+Callback Signature:
+<pre><code>function($this-&gt;toFile-&gt;getPath())</code></pre>
+
+- string `$absolutePath` The path to the new piwik.js file.
+
 
 ### CustomPiwikJs.shouldAddTrackerFile
 
