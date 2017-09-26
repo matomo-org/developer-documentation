@@ -174,8 +174,8 @@ Here is a list of metrics returned by the API and their definition.
 #### Processed metrics, appearing in the Metadata API response
 
 *   `avg_time_on_page` - Average time spent, in seconds, on this page
-*   `bounce_rate` - Ratio of visitors leaving the website after landing on this page
-*   `exit_rate` - Ratio of visitors that do not view any other page after this page
+*   `bounce_rate` - Ratio of visits leaving the website after landing on this page
+*   `exit_rate` - Ratio of visits that do not view any other page after this page
 
 #### Ecommerce metrics, appearing in the Ecommerce Goals.getItems* API calls only
 
