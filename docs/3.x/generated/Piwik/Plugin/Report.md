@@ -203,6 +203,7 @@ The class defines the following methods:
 - [`alwaysUseDefaultViewDataTable()`](#alwaysusedefaultviewdatatable) &mdash; Returns if the default viewDataTable type should always be used.
 - [`configureView()`](#configureview) &mdash; Here you can configure how your report should be displayed and which capabilities your report has.
 - [`render()`](#render) &mdash; Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
+- [`getId()`](#getid) &mdash; Processing a uniqueId for each report, can be used by UIs as a key to match a given report
 - [`configureWidgets()`](#configurewidgets) &mdash; lets you add any amount of widgets for this report.
 - [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
 - [`getMetricsRequiredForReport()`](#getmetricsrequiredforreport) &mdash; Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
@@ -330,6 +331,16 @@ you can overwrite this method.
 - It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the given API action does not exist yet.
+
+<a name="getid" id="getid"></a>
+<a name="getId" id="getId"></a>
+### `getId()`
+
+Processing a uniqueId for each report, can be used by UIs as a key to match a given report
+
+#### Signature
+
+- It returns a `string` value.
 
 <a name="configurewidgets" id="configurewidgets"></a>
 <a name="configureWidgets" id="configureWidgets"></a>

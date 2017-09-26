@@ -480,6 +480,7 @@ Index
 - [`getDependentMetrics()`](Piwik/Plugin/ProcessedMetric.md#getdependentmetrics) &mdash; *Method in class* [`ProcessedMetric`](Piwik/Plugin/ProcessedMetric.md)
 - [`getTemporaryMetrics()`](Piwik/Plugin/ProcessedMetric.md#gettemporarymetrics) &mdash; *Method in class* [`ProcessedMetric`](Piwik/Plugin/ProcessedMetric.md)
 - [`getDefaultTypeViewDataTable()`](Piwik/Plugin/Report.md#getdefaulttypeviewdatatable) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
+- [`getId()`](Piwik/Plugin/Report.md#getid) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getMetrics()`](Piwik/Plugin/Report.md#getmetrics) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getMetricsRequiredForReport()`](Piwik/Plugin/Report.md#getmetricsrequiredforreport) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getProcessedMetrics()`](Piwik/Plugin/Report.md#getprocessedmetrics) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
