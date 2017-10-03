@@ -11,7 +11,15 @@ This is a complete list of available classes:
 - [`AuthResult`](Piwik/AuthResult.md) &mdash; Authentication result.
 - [`Auth\Password`](Piwik/Auth/Password.md) &mdash; Main class to handle actions related to password hashing and verification.
 - [`Category\Subcategory`](Piwik/Category/Subcategory.md) &mdash; Base type for subcategories.
+- [`Columns\ComputedMetricFactory`](Piwik/Columns/ComputedMetricFactory.md) &mdash; A factory to create computed metrics.
 - [`Columns\Dimension`](Piwik/Columns/Dimension.md)
+- [`Columns\DimensionMetricFactory`](Piwik/Columns/DimensionMetricFactory.md) &mdash; A factory to create metrics from a dimension.
+- [`Columns\Discriminator`](Piwik/Columns/Discriminator.md)
+- [`Columns\Join`](Piwik/Columns/Join.md)
+- [`Columns\Join\ActionNameJoin`](Piwik/Columns/Join/ActionNameJoin.md)
+- [`Columns\Join\GoalNameJoin`](Piwik/Columns/Join/GoalNameJoin.md)
+- [`Columns\Join\SiteNameJoin`](Piwik/Columns/Join/SiteNameJoin.md)
+- [`Columns\MetricsList`](Piwik/Columns/MetricsList.md) &mdash; Manages the global list of metrics that can be used in reports.
 - [`Columns\Updater`](Piwik/Columns/Updater.md) &mdash; Class that handles dimension updates
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
@@ -83,6 +91,7 @@ This is a complete list of available classes:
 - [`Piwik`](Piwik/Piwik.md) &mdash; Main piwik helper class.
 - [`Plugin`](Piwik/Plugin.md) &mdash; Base class of all Plugin Descriptor classes.
 - [`Plugin\API`](Piwik/Plugin/API.md) &mdash; The base class of all API singletons.
+- [`Plugin\AggregatedMetric`](Piwik/Plugin/AggregatedMetric.md) &mdash; Base type for metric metadata classes that describe aggregated metrics.
 - [`Plugin\Archiver`](Piwik/Plugin/Archiver.md) &mdash; The base class that should be extended by plugins that compute their own analytics data.
 - [`Plugin\Controller`](Piwik/Plugin/Controller.md) &mdash; Base class of all plugin Controllers.
 - [`Plugin\ControllerAdmin`](Piwik/Plugin/ControllerAdmin.md) &mdash; Base class of plugin controllers that provide administrative functionality.
@@ -100,10 +109,26 @@ This is a complete list of available classes:
 - [`Plugin\Tasks`](Piwik/Plugin/Tasks.md) &mdash; Base class for all Tasks declarations.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
+- [`Plugins\Actions\Columns\Metrics\AveragePageGenerationTime`](Piwik/Plugins/Actions/Columns/Metrics/AveragePageGenerationTime.md) &mdash; The average amount of time it takes to generate a page.
+- [`Plugins\Actions\Columns\Metrics\AverageTimeOnPage`](Piwik/Plugins/Actions/Columns/Metrics/AverageTimeOnPage.md) &mdash; The average amount of time spent on a page.
+- [`Plugins\Actions\Columns\Metrics\BounceRate`](Piwik/Plugins/Actions/Columns/Metrics/BounceRate.md) &mdash; The bounce rate for individual pages.
+- [`Plugins\Actions\Columns\Metrics\ExitRate`](Piwik/Plugins/Actions/Columns/Metrics/ExitRate.md) &mdash; Percent of visits that finished on this page.
+- [`Plugins\Contents\Columns\Metrics\InteractionRate`](Piwik/Plugins/Contents/Columns/Metrics/InteractionRate.md) &mdash; The content interaction rate.
+- [`Plugins\CoreHome\Columns\Metrics\ActionsPerVisit`](Piwik/Plugins/CoreHome/Columns/Metrics/ActionsPerVisit.md) &mdash; The average number of actions per visit.
 - [`Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md) &mdash; The average number of seconds spent on the site per visit.
+- [`Plugins\CoreHome\Columns\Metrics\BounceRate`](Piwik/Plugins/CoreHome/Columns/Metrics/BounceRate.md) &mdash; The percentage of visits that leave the site without visiting another page.
+- [`Plugins\CoreHome\Columns\Metrics\CallableProcessedMetric`](Piwik/Plugins/CoreHome/Columns/Metrics/CallableProcessedMetric.md)
+- [`Plugins\CoreHome\Columns\Metrics\ConversionRate`](Piwik/Plugins/CoreHome/Columns/Metrics/ConversionRate.md) &mdash; The percent of visits that result in a conversion.
 - [`Plugins\CoreHome\Columns\Metrics\EvolutionMetric`](Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md) &mdash; Calculates evolution values for any other metric.
+- [`Plugins\CoreHome\Columns\Metrics\VisitsPercent`](Piwik/Plugins/CoreHome/Columns/Metrics/VisitsPercent.md) &mdash; Percent of visits in the whole table.
 - [`Plugins\CoreHome\SystemSummary\Item`](Piwik/Plugins/CoreHome/SystemSummary/Item.md) &mdash; This class can be used to add a new entry / item to the system summary widget.
 - [`Plugins\CoreVisualizations\Metrics\Formatter\Numeric`](Piwik/Plugins/CoreVisualizations/Metrics/Formatter/Numeric.md) &mdash; A metrics formatter that prettifies metric values without returning string values.
+- [`Plugins\CoreVisualizations\Visualizations\Cloud\Config`](Piwik/Plugins/CoreVisualizations/Visualizations/Cloud/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\CoreVisualizations\Visualizations\Graph\Config`](Piwik/Plugins/CoreVisualizations/Visualizations/Graph/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\CoreVisualizations\Visualizations\HtmlTable\Config`](Piwik/Plugins/CoreVisualizations/Visualizations/HtmlTable/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution\Config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\CoreVisualizations\Visualizations\Sparklines\Config`](Piwik/Plugins/CoreVisualizations/Visualizations/Sparklines/Config.md) &mdash; DataTable Visualization that derives from Sparklines.
 - [`Plugins\CustomPiwikJs\TrackerUpdater`](Piwik/Plugins/CustomPiwikJs/TrackerUpdater.md) &mdash; Updates the Piwik JavaScript Tracker "piwik.js" in case plugins extend the tracker.
 - [`Plugins\CustomVariables\ProfileSummary\VisitScopeSummary`](Piwik/Plugins/CustomVariables/ProfileSummary/VisitScopeSummary.md) &mdash; Class VisitScopeSummary
 - [`Plugins\DevicePlugins\DevicePlugins`](Piwik/Plugins/DevicePlugins/DevicePlugins.md)
@@ -112,15 +137,32 @@ This is a complete list of available classes:
 - [`Plugins\Diagnostics\Diagnostic\DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) &mdash; The result of a diagnostic.
 - [`Plugins\Diagnostics\Diagnostic\DiagnosticResultItem`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md)
 - [`Plugins\Ecommerce\ProfileSummary\EcommerceSummary`](Piwik/Plugins/Ecommerce/ProfileSummary/EcommerceSummary.md) &mdash; Class EcommerceSummary
+- [`Plugins\Events\Columns\Metrics\AverageEventValue`](Piwik/Plugins/Events/Columns/Metrics/AverageEventValue.md) &mdash; The average value for a triggered event.
+- [`Plugins\Goals\Columns\Metrics\AverageOrderRevenue`](Piwik/Plugins/Goals/Columns/Metrics/AverageOrderRevenue.md) &mdash; The average value for each order.
+- [`Plugins\Goals\Columns\Metrics\AveragePrice`](Piwik/Plugins/Goals/Columns/Metrics/AveragePrice.md) &mdash; The average price for each ecommerce order or abandoned cart.
+- [`Plugins\Goals\Columns\Metrics\AverageQuantity`](Piwik/Plugins/Goals/Columns/Metrics/AverageQuantity.md) &mdash; The average amount of products in each order or abandoned cart.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecificProcessedMetric`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecificProcessedMetric.md) &mdash; Base class for processed metrics that are calculated using metrics that are specific to certain goals.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\AverageOrderRevenue`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/AverageOrderRevenue.md) &mdash; The average order revenue for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/ConversionRate.md) &mdash; The conversion rate for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\Conversions`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/Conversions.md) &mdash; The conversions for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\ItemsCount`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/ItemsCount.md) &mdash; The number of ecommerce order items for conversions of a goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\Revenue`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/Revenue.md) &mdash; Revenue for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\RevenuePerVisit`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/RevenuePerVisit.md) &mdash; Revenue per visit for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\ProductConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/ProductConversionRate.md) &mdash; The conversion rate for ecommerce orders.
+- [`Plugins\Goals\Columns\Metrics\RevenuePerVisit`](Piwik/Plugins/Goals/Columns/Metrics/RevenuePerVisit.md) &mdash; The amount of revenue per visit (or per conversion if there are no visits).
 - [`Plugins\Live\ProfileSummary\ImportantVisits`](Piwik/Plugins/Live/ProfileSummary/ImportantVisits.md) &mdash; Class ImportantVisits
 - [`Plugins\Live\ProfileSummary\ProfileSummaryAbstract`](Piwik/Plugins/Live/ProfileSummary/ProfileSummaryAbstract.md) &mdash; Class ProfileSummaryAbstract
 - [`Plugins\Live\ProfileSummary\Summary`](Piwik/Plugins/Live/ProfileSummary/Summary.md) &mdash; Class ProfileSummaryAbstract
 - [`Plugins\Live\Visitor`](Piwik/Plugins/Live/Visitor.md)
 - [`Plugins\Live\VisitorDetailsAbstract`](Piwik/Plugins/Live/VisitorDetailsAbstract.md) &mdash; Class VisitorDetailsAbstract
+- [`Plugins\Live\Visualizations\VisitorLog\Config`](Piwik/Plugins/Live/Visualizations/VisitorLog/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
 - [`Plugins\Login\SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; Initializes authenticated sessions using an Auth implementation.
 - [`Plugins\MobileMessaging\SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md) &mdash; The SMSProvider abstract class is used as a base class for SMS provider implementations.
+- [`Plugins\MultiSites\Columns\Metrics\EcommerceOnlyEvolutionMetric`](Piwik/Plugins/MultiSites/Columns/Metrics/EcommerceOnlyEvolutionMetric.md) &mdash; Ecommerce evolution metric adapter.
+- [`Plugins\TreemapVisualization\TreemapConfig`](Piwik/Plugins/TreemapVisualization/TreemapConfig.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
 - [`Plugins\UserCountry\ProfileSummary\LocationSummary`](Piwik/Plugins/UserCountry/ProfileSummary/LocationSummary.md) &mdash; Class LocationSummary
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
+- [`Plugins\VisitFrequency\Columns\Metrics\ReturningMetric`](Piwik/Plugins/VisitFrequency/Columns/Metrics/ReturningMetric.md) &mdash; Processed metric for VisitFrequency.get API method which just copies VisitsSummary.get metrics as differently named metrics.
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 - [`Registry`](Piwik/Registry.md) &mdash; Registry class.
 - [`Report\ReportWidgetConfig`](Piwik/Report/ReportWidgetConfig.md) &mdash; Defines a widget config that is used to render a report.

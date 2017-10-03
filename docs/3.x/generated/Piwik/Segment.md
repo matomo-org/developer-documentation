@@ -43,6 +43,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`getSegmentExpression()`](#getsegmentexpression) &mdash; Returns the segment expression.
 - [`isEmpty()`](#isempty) &mdash; Returns `true` if the segment is empty, `false` if otherwise.
 - [`willBeArchived()`](#willbearchived) &mdash; Detects whether the Piwik instance is configured to be able to archive this segment.
 - [`getString()`](#getstring) &mdash; Returns the segment condition.
@@ -63,6 +64,16 @@ Constructor.
        The segment condition, eg, `'browserCode=ff;countryCode=CA'`.
     - `$idSites` (`array`) &mdash;
        The list of sites the segment will be used with. Some segments are dependent on the site, such as goal segments.
+
+<a name="getsegmentexpression" id="getsegmentexpression"></a>
+<a name="getSegmentExpression" id="getSegmentExpression"></a>
+### `getSegmentExpression()`
+
+Returns the segment expression.
+
+#### Signature
+
+- It does not return anything.
 
 <a name="isempty" id="isempty"></a>
 <a name="isEmpty" id="isEmpty"></a>

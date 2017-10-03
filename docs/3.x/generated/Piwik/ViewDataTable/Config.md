@@ -101,6 +101,7 @@ This class defines the following properties:
 - [`$custom_parameters`](#$custom_parameters) &mdash; Array property containing custom data to be saved in JSON in the data-params HTML attribute of a data table div.
 - [`$show_limit_control`](#$show_limit_control) &mdash; Controls whether the limit dropdown (which allows users to change the number of data shown) is always shown or not.
 - [`$show_search`](#$show_search) &mdash; Controls whether the search box under the datatable is shown.
+- [`$show_export`](#$show_export) &mdash; Controls whether the export feature under the datatable is shown.
 - [`$enable_sort`](#$enable_sort) &mdash; Controls whether the user can sort DataTables by clicking on table column headings.
 - [`$show_bar_chart`](#$show_bar_chart) &mdash; Controls whether the footer icon that allows users to view data as a bar chart is shown.
 - [`$show_pie_chart`](#$show_pie_chart) &mdash; Controls whether the footer icon that allows users to view data as a pie chart is shown.
@@ -508,6 +509,17 @@ Normally shown only if pagination is enabled.
 ### `$show_search`
 
 Controls whether the search box under the datatable is shown.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$show_export" id="$show_export"></a>
+<a name="show_export" id="show_export"></a>
+### `$show_export`
+
+Controls whether the export feature under the datatable is shown.
 
 #### Signature
 

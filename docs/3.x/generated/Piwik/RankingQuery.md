@@ -38,6 +38,7 @@ The class defines the following methods:
 - [`setLimit()`](#setlimit) &mdash; Set the limit after which everything is grouped to "Others".
 - [`setOthersLabel()`](#setotherslabel) &mdash; Set the value to use for the label in the 'Others' row.
 - [`addLabelColumn()`](#addlabelcolumn) &mdash; Add a label column.
+- [`getLabelColumns()`](#getlabelcolumns)
 - [`addColumn()`](#addcolumn) &mdash; Add a column that has be added to the outer queries.
 - [`setColumnToMarkExcludedRows()`](#setcolumntomarkexcludedrows) &mdash; Sets a column that will be used to filter the result into two categories.
 - [`partitionResultIntoMultipleGroups()`](#partitionresultintomultiplegroups) &mdash; This method can be used to parition the result based on the possible values of one table column.
@@ -96,6 +97,14 @@ Labels are the columns that are replaced with "Others" after the limit.
     - `$labelColumn` (`string`|`array`) &mdash;
       
 - It does not return anything.
+
+<a name="getlabelcolumns" id="getlabelcolumns"></a>
+<a name="getLabelColumns" id="getLabelColumns"></a>
+### `getLabelColumns()`
+
+#### Signature
+
+- It returns a `array` value.
 
 <a name="addcolumn" id="addcolumn"></a>
 <a name="addColumn" id="addColumn"></a>

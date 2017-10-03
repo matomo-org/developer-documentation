@@ -10,7 +10,7 @@ Constants
 
 This class defines the following constants:
 
-- [`UI_CONTROL_RADIO`](#ui_control_radio) — Shows a radio field.- [`UI_CONTROL_TEXT`](#ui_control_text) — Shows a text field.- [`UI_CONTROL_EMAIL`](#ui_control_email) — Shows an email text field.- [`UI_CONTROL_URL`](#ui_control_url) — Shows a URL text field.- [`UI_CONTROL_TEXTAREA`](#ui_control_textarea) — Shows a text area.- [`UI_CONTROL_CHECKBOX`](#ui_control_checkbox) — Shows a checkbox.- [`UI_CONTROL_PASSWORD`](#ui_control_password) — Shows a password field.- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values.- [`UI_CONTROL_SINGLE_SELECT`](#ui_control_single_select) — Shows a select field.- [`UI_CONTROL_HIDDEN`](#ui_control_hidden) — Generates a hidden form field.- [`TYPE_INT`](#type_int) — Expects an integer value.- [`TYPE_FLOAT`](#type_float) — Expects a float value.- [`TYPE_STRING`](#type_string) — Expects a string.- [`TYPE_BOOL`](#type_bool) — Expects a boolean.
+- [`UI_CONTROL_RADIO`](#ui_control_radio) — Shows a radio field.- [`UI_CONTROL_TEXT`](#ui_control_text) — Shows a text field.- [`UI_CONTROL_EMAIL`](#ui_control_email) — Shows an email text field.- [`UI_CONTROL_URL`](#ui_control_url) — Shows a URL text field.- [`UI_CONTROL_TEXTAREA`](#ui_control_textarea) — Shows a text area.- [`UI_CONTROL_CHECKBOX`](#ui_control_checkbox) — Shows a checkbox.- [`UI_CONTROL_PASSWORD`](#ui_control_password) — Shows a password field.- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values.- [`UI_CONTROL_SINGLE_SELECT`](#ui_control_single_select) — Shows a select field.- [`UI_CONTROL_SINGLE_EXPANDABLE_SELECT`](#ui_control_single_expandable_select) — Shows an expandable select field which is useful when each selectable value belongs to a group.- [`UI_CONTROL_HIDDEN`](#ui_control_hidden) — Generates a hidden form field.- [`TYPE_INT`](#type_int) — Expects an integer value.- [`TYPE_FLOAT`](#type_float) — Expects a float value.- [`TYPE_STRING`](#type_string) — Expects a string.- [`TYPE_BOOL`](#type_bool) — Expects a boolean.
 <a name="ui_control_radio" id="ui_control_radio"></a>
 <a name="UI_CONTROL_RADIO" id="UI_CONTROL_RADIO"></a>
 ### `UI_CONTROL_RADIO`
@@ -54,6 +54,11 @@ The type "Array" is required for this ui control. To use this field assign it to
 <a name="ui_control_single_select" id="ui_control_single_select"></a>
 <a name="UI_CONTROL_SINGLE_SELECT" id="UI_CONTROL_SINGLE_SELECT"></a>
 ### `UI_CONTROL_SINGLE_SELECT`
+
+To use this field assign it to the `$uiControl` property.
+<a name="ui_control_single_expandable_select" id="ui_control_single_expandable_select"></a>
+<a name="UI_CONTROL_SINGLE_EXPANDABLE_SELECT" id="UI_CONTROL_SINGLE_EXPANDABLE_SELECT"></a>
+### `UI_CONTROL_SINGLE_EXPANDABLE_SELECT`
 
 To use this field assign it to the `$uiControl` property.
 <a name="ui_control_hidden" id="ui_control_hidden"></a>

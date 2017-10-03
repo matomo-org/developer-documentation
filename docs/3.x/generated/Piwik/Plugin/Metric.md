@@ -23,6 +23,7 @@ The abstract class defines the following methods:
 
 - [`getName()`](#getname) &mdash; Returns the column name of this metric, eg, `"nb_visits"` or `"avg_time_on_site"`.
 - [`getTranslatedName()`](#gettranslatedname) &mdash; Returns the human readable translated name of this metric, eg, `"Visits"` or `"Avg.
+- [`getCategoryId()`](#getcategoryid) &mdash; Returns the category that this metric belongs to.
 - [`getDocumentation()`](#getdocumentation) &mdash; Returns a string describing what the metric represents.
 - [`format()`](#format) &mdash; Returns a formatted metric value.
 - [`beforeFormat()`](#beforeformat) &mdash; Executed before formatting all metrics for a report.
@@ -55,6 +56,16 @@ This string is what appears in the UI.
 #### Signature
 
 - It returns a `string` value.
+
+<a name="getcategoryid" id="getcategoryid"></a>
+<a name="getCategoryId" id="getCategoryId"></a>
+### `getCategoryId()`
+
+Returns the category that this metric belongs to.
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getdocumentation" id="getdocumentation"></a>
 <a name="getDocumentation" id="getDocumentation"></a>
