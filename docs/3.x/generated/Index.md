@@ -1053,6 +1053,7 @@ Index
 - [`$show_title`](Piwik/ViewDataTable/Config.md#$show_title) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_export_as_rss_feed`](Piwik/ViewDataTable/Config.md#$show_export_as_rss_feed) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_ecommerce`](Piwik/ViewDataTable/Config.md#$show_ecommerce) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$show_header_message`](Piwik/ViewDataTable/Config.md#$show_header_message) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_footer_message`](Piwik/ViewDataTable/Config.md#$show_footer_message) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$self_url`](Piwik/ViewDataTable/Config.md#$self_url) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$search_recursive`](Piwik/ViewDataTable/Config.md#$search_recursive) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)

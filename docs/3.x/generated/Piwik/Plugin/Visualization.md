@@ -10,6 +10,7 @@ the Piwik UI. The following extra UI controls will be displayed around the visua
 itself:
 
 - report documentation,
+- a header message (if [Config::$show_header_message](/api-reference/Piwik/ViewDataTable/Config#$show_header_message) is set),
 - a footer message (if [Config::$show_footer_message](/api-reference/Piwik/ViewDataTable/Config#$show_footer_message) is set),
 - a list of links to related reports (if [Config::$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) is set),
 - a button that allows users to switch visualizations,

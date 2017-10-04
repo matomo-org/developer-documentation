@@ -48,6 +48,7 @@ This class defines the following properties:
 - [`$show_title`](#$show_title) &mdash; If enabled shows the title of the report. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
 - [`$show_export_as_rss_feed`](#$show_export_as_rss_feed) &mdash; Controls whether the user is allowed to export data as an RSS feed or not. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
 - [`$show_ecommerce`](#$show_ecommerce) &mdash; Controls whether the 'Ecoommerce Orders'/'Abandoned Cart' footer icons are shown or not. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`$show_header_message`](#$show_header_message) &mdash; Stores an HTML message (if any) to display above the datatable view. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
 - [`$show_footer_message`](#$show_footer_message) &mdash; Stores an HTML message (if any) to display under the datatable view. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
 - [`$metrics_documentation`](#$metrics_documentation) &mdash; Array property that stores documentation for individual metrics. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
 - [`$tooltip_metadata_name`](#$tooltip_metadata_name) &mdash; Row metadata name that contains the tooltip for the specific row. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
@@ -553,11 +554,26 @@ Controls whether the 'Ecoommerce Orders'/'Abandoned Cart' footer icons are shown
 - Its type is not specified.
 
 
+<a name="$show_header_message" id="$show_header_message"></a>
+<a name="show_header_message" id="show_header_message"></a>
+### `$show_header_message`
+
+Stores an HTML message (if any) to display above the datatable view.
+
+Attention: Message will be printed raw. Don't forget to escape where needed!
+
+#### Signature
+
+- Its type is not specified.
+
+
 <a name="$show_footer_message" id="$show_footer_message"></a>
 <a name="show_footer_message" id="show_footer_message"></a>
 ### `$show_footer_message`
 
 Stores an HTML message (if any) to display under the datatable view.
+
+Attention: Message will be printed raw. Don't forget to escape where needed!
 
 #### Signature
 
