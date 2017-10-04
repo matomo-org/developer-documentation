@@ -1448,7 +1448,7 @@ Callback Signature:
 
 ### Report.addReports
 
-*Defined in [Piwik/Plugin/ReportsProvider](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php) in line [106](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php#L106)*
+*Defined in [Piwik/Plugin/ReportsProvider](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php) in line [142](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php#L142)*
 
 Triggered to add new reports that cannot be picked up automatically by the platform. This is useful if the plugin allows a user to create reports / dimensions dynamically. For example
 CustomDimensions or CustomVariables. There are a variable number of dimensions in this case and it
@@ -1470,7 +1470,7 @@ Callback Signature:
 
 ### Report.filterReports
 
-*Defined in [Piwik/Plugin/ReportsProvider](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php) in line [128](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php#L128)*
+*Defined in [Piwik/Plugin/ReportsProvider](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php) in line [164](https://github.com/piwik/piwik/blob/3.x-dev/core/Plugin/ReportsProvider.php#L164)*
 
 Triggered to filter / restrict reports. **Example**
 
