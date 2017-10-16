@@ -116,6 +116,18 @@ $archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
 
 Persisted reports and metrics are indexed by the website ID, period and segment. The date and time of archiving is also attached to the data. To learn the specifics of how this is done with MySQL see the [database schema](/guides/persistence-and-the-mysql-backend).
 
+### How reports are stored as blob records in the `archive_blob_*` tables
+
+When inserting blob records, one row in a `archive_blob_$year_$month` MySQL table for the root `DataTable` is created. Subtables of this `DataTable` are stored in different rows whereas 100 tables are combined into one chunk. For example the record `MyPlugin_myFancyReport_chunk_100_199` contains subtables having the ID 100-199. The `value` column of the `archive` table contains in this case a serialized array of blobs where `array([subtableId] => [subtableBlob])`. For example:
+
+
+idarchive             | name             | value             | Description
+-----------------|-----------------------|-----------------------|------------
+1           | Actions_actions_url           | gzcompress(<br />$serializedRootTableBlob<br />)  | Contains the blob of the root table
+1           | Actions_actions_url_chunk_0_99 | gzcompress(serialize(<br />array([subtableId]=>[serializedSubtableBlob])<br />)) | Contains the blobs of the subtables 0-99 (subtableId 0 is always unused as it is the id of the root table)
+1           | Actions_actions_url_chunk_100_199 | ... | Contains the blobs of the subtables 100-199
+1           | Actions_actions_url_chunk_200_299 | ... | Contains the blobs of the subtables 200-299
+
 ### Reports vs Records
 
 When a report is archived, it is called a **record** not a report. We make a distinction because multiple reports can sometimes be generated from one **record**.
