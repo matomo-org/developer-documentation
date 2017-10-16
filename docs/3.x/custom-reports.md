@@ -5,6 +5,8 @@ category: Develop
 
 In our [Setting up](/guides/getting-started-part-1) guide you set up your development environment and created a new plugin. In this guide, we'll make that plugin show a custom report.
 
+**Did you know?** You can create new custom reports in only seconds without any developer knowledge with the [Custom Reports premium feature](https://plugins.piwik.org/CustomReports).
+
 ## Adding a new report
 
 We're going to create a new report that shows the browsers used for the most recent visits. We'll be using data returned by the [Live!](https://piwik.org/docs/real-time/#the-real-time-live-widget) plugin so we won't have to do much processing ourselves.
