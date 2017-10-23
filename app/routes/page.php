@@ -275,6 +275,7 @@ $app->get('/changelog', function () use ($app) {
 $app->get('/data/documents', function () use ($app) {
     $searchIndex = new SearchIndex();
     $index = $searchIndex->buildIndex();
+    $app->response->headers->set('Content-Type', 'application/json');
     echo json_encode([
         'urls' => array_keys($index),
         'names' => array_values($index)
