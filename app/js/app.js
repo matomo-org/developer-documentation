@@ -30,7 +30,7 @@ var $quickSearchTypeahead = $('#quick-search-typeahead').find('>input');
         $.get(url, {}, function (quickSearchData) {
             $quickSearchTypeahead.typeahead({
                 source: quickSearchData.names,
-                items: -1,
+                items: 'all',
                 updater: function (item) {
                     // get text to display in quick search box
                     var displayText = item;
