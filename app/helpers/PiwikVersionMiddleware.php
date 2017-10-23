@@ -8,6 +8,9 @@
 
 namespace helpers;
 
+use Slim\Http\Request;
+use Slim\Http\Response;
+
 /**
  * Class CacheMiddleware.
  *
@@ -16,45 +19,39 @@ namespace helpers;
  *
  * @package helpers
  */
-class PiwikVersionMiddleware extends \Slim\Middleware
+class PiwikVersionMiddleware
 {
-    public function call()
-    {
-        /** @var $environment \Slim\Environment */
-
-        $environment = $this->app->environment;
-
+    public function __invoke(Request $req, Response $res, callable $next) {
+        $uri = $req->getUri();
+        $path = $uri->getPath();
         // we match eg /2.x or /3.x /19.x and remove it from the path so our routes in routes/page.php still match.
         // Instead of changing the path I wanted to add a group around all routes in page but slim 2 doesn't allow us to define
         // a condition on a group route unfortunately
         $matches = array();
 
-        if ($this->hasPiwikVersionInUrl($environment['PATH_INFO'], $matches)) {
+        if ($this->hasPiwikVersionInUrl($path, $matches)) {
             if ($this->isValidPiwikVersionAndAllowedToBeInPath($matches[1])) {
                 // we only allow usage of 2.x or 3.x for outdated Piwik versions. Latest will be always
                 // available only under "/" whereas older versions will be /2.x . Once Piwik 4 is available,
                 // it will automatically work for '/2.x' and '/3.x', we only need to increase LATEST_PIWIK_DOCS_VERSION
                 // in the config
                 Environment::setPiwikVersion($matches[1]);
-                $environment['PATH_INFO'] = $this->removePiwikVersionFromCurrentPath($environment['PATH_INFO'], $matches[1]);
+                $uri = $uri->withPath($this->removePiwikVersionFromCurrentPath($path, $matches[1]));
+                $req = $req->withUri($uri);
             }
         }
-
-        $this->next->call();
+        return $next($req, $res);
     }
 
-    private function removePiwikVersionFromCurrentPath($path, $piwikVersion)
-    {
+    private function removePiwikVersionFromCurrentPath($path, $piwikVersion) {
         return substr($path, strlen('/' . $piwikVersion . '.x'));
     }
 
-    private function hasPiwikVersionInUrl($path, &$matches)
-    {
+    private function hasPiwikVersionInUrl($path, &$matches) {
         return preg_match('/\/(\d)+\.x(\/)?/', $path, $matches);
     }
 
-    private function isValidPiwikVersionAndAllowedToBeInPath($piwikVersion)
-    {
+    private function isValidPiwikVersionAndAllowedToBeInPath($piwikVersion) {
         return $piwikVersion < LATEST_PIWIK_DOCS_VERSION;
     }
 }
