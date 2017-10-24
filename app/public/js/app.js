@@ -38,7 +38,7 @@ $quickSearchTypeahead.typeahead({
             });
         }
     },
-    items: -1,
+    items: "all",
     updater: function (item) {
         // get text to display in quick search box
         var displayText = item;
