@@ -68,7 +68,7 @@ p {
 }
 
 .alert {
-    margin-top:15px 1.5em 0 1.5em;
+    margin:15px 1.5em 0 1.5em;
 }
 
 .parameter > *:first-child {

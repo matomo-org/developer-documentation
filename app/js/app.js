@@ -22,8 +22,6 @@ $('.documentation img').each(function (index, img) {
 
 $('.documentation table').addClass('table table-striped table-bordered');
 
-var quickSearchData = null;
-
 var $quickSearchTypeahead = $('#quick-search-typeahead').find('>input');
     $quickSearchTypeahead.on("focus", function () {
         var url = $quickSearchTypeahead.attr('data-action');
