@@ -8,6 +8,9 @@
 
 namespace helpers;
 
+use Slim\Http\Response;
+use Slim\Http\Request;
+
 /**
  * Class CacheMiddleware.
  *
@@ -16,30 +19,27 @@ namespace helpers;
  *
  * @package helpers
  */
-class CacheMiddleware extends \Slim\Middleware
+class CacheMiddleware
 {
-    public function call()
-    {
-        /** @var $req \Slim\Http\Request */
-        $req = $this->app->request;
-        /** @var $res \Slim\Http\Response */
-        $res = $this->app->response;
+    public function __invoke(Request $req, Response $res, callable $next) {
 
         if ($this->shouldCache($req)) {
             $content = Cache::get($this->getCacheKey($req));
 
             if (!empty($content)) {
-                $res->setBody($content);
-
-                return;
+                $res->getBody()->write($content . "\n<!-- Cached respones -->");
+                return $res;
             }
         }
+        $next($req, $res);
 
-        $this->next->call();
-
-        if ($this->shouldCache($req) && 200 == $res->getStatus()) {
-            Cache::set($this->getCacheKey($req), $res->getBody());
+        if ($this->shouldCache($req) && 200 == $res->getStatusCode()) {
+            $res->getBody()->rewind();
+//            var_dump($res->getBody()->getContents());
+            Cache::set($this->getCacheKey($req), $res->getBody()->getContents());
         }
+
+        return $res;
     }
 
     /**
@@ -48,8 +48,7 @@ class CacheMiddleware extends \Slim\Middleware
      * @param $path
      * @return mixed|string
      */
-    private function pathToCacheKey($path)
-    {
+    private function pathToCacheKey($path) {
         if ('/' == $path || empty($path)) {
             return 'index';
         }
@@ -64,15 +63,13 @@ class CacheMiddleware extends \Slim\Middleware
         return $path;
     }
 
-    private function shouldCache($req)
-    {
+    private function shouldCache(Request $req) {
         return $req->isGet();
     }
 
-    private function getCacheKey($req)
-    {
+    private function getCacheKey(Request $req) {
         $piwikVersion = Environment::getPiwikVersion();
 
-        return $piwikVersion . '_' . $this->pathToCacheKey($req->getPath());
+        return $piwikVersion . '_' . $this->pathToCacheKey($req->getUri()->getPath()) . ".html";
     }
 }

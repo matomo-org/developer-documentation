@@ -42,7 +42,6 @@ foreach (Redirects::getRedirects() as $url => $redirect) {
 }
 
 $app->get('/', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
-    $this->logger->addInfo("Something interesting happened");
     return $this->view->render($response, 'home.twig', ['isHome' => true]);
 });
 

@@ -84,14 +84,16 @@ $container['view'] = function ($container) {
 
 $container['logger'] = function ($c) {
     $logger = new \Monolog\Logger('site-logger');
-    $file_handler = new \Monolog\Handler\StreamHandler('../tmp/logs/app.log');
+    $file_handler = new \Monolog\Handler\StreamHandler('../tmp/logs/app.log', \Monolog\Logger::DEBUG);
     $logger->pushHandler($file_handler);
     ErrorHandler::register($logger);
     return $logger;
 };
-$c['errorHandler'] = function ($c) {
+$container['errorHandler'] = function ($c) {
     return function (Slim\Http\Request $request, Slim\Http\Response $response, Slim\Exception\SlimException $exception) use ($c) {
-        $this->logger->addInfo('An unhandled exception occurred: ' . $exception->getMessage() . $exception->getTraceAsString());
+        /** @var \Monolog\Logger $logger */
+        $logger = $c->logger;
+        $logger->addError('An unhandled exception occurred: ' . $exception->getMessage(), $exception->getTraceAsString());
 
         return $response->withStatus(500)
             ->withHeader('Content-Type', 'text/html')
@@ -102,6 +104,12 @@ $c['errorHandler'] = function ($c) {
 //Override the default Not Found Handler
 $container['notFoundHandler'] = function ($c) {
     return function (Slim\Http\Request $request, Slim\Http\Response $response) use ($c) {
+        /** @var \Monolog\Logger $logger */
+        $logger = $c->logger;
+        $logger->addInfo('Site not found', [
+            "path" => (string)$request->getUri()
+        ]);
+
         $alternativeUrls = array();
         foreach (Environment::getAvailablePiwikVersions() as $piwikVersion) {
             if ($piwikVersion != Environment::getPiwikVersion()) {
@@ -116,6 +124,7 @@ $container['notFoundHandler'] = function ($c) {
         ]);
     };
 };
+$app->add(new \helpers\CacheMiddleware());
 $app->add(new \helpers\PiwikVersionMiddleware());
 
 require '../routes/page.php';
