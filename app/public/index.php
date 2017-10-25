@@ -90,13 +90,14 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 $container['errorHandler'] = function ($c) {
-    return function (Slim\Http\Request $request, Slim\Http\Response $response, Slim\Exception\SlimException $exception) use ($c) {
+    return function (Slim\Http\Request $request, Slim\Http\Response $response, Exception $exception) use ($c) {
         /** @var \Monolog\Logger $logger */
         $logger = $c->logger;
-        $logger->addError('An unhandled exception occurred: ' . $exception->getMessage(), $exception->getTraceAsString());
+        $logger->addError('An unhandled exception occurred: ' . $exception->getMessage(), [
+            "trace" => $exception->getTraceAsString()
+        ]);
 
         return $response->withStatus(500)
-            ->withHeader('Content-Type', 'text/html')
             ->write('Something went wrong!');
     };
 };
