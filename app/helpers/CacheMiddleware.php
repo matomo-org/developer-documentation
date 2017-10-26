@@ -31,7 +31,8 @@ class CacheMiddleware
                 return $res;
             }
         }
-        $next($req, $res);
+        /** @var Response $res */
+        $res = $next($req, $res);
 
         if ($this->shouldCache($req) && 200 == $res->getStatusCode()) {
             $res->getBody()->rewind();
@@ -64,7 +65,7 @@ class CacheMiddleware
     }
 
     private function shouldCache(Request $req) {
-        return $req->isGet();
+        return $req->isGet() && strpos($req->getUri()->getPath(), 'data/') === false;
     }
 
     private function getCacheKey(Request $req) {

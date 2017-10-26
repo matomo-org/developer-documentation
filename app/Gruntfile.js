@@ -9,8 +9,8 @@ module.exports = function (grunt) {
             options: {
                 atBegin: true
             },
-            less: {
-                files: ['less/*.less'],
+            sass: {
+                files: ['scss/*.scss'],
                 tasks: ['css']
             },
             js: {
@@ -21,13 +21,14 @@ module.exports = function (grunt) {
         clean: {
             dist: 'public/dist/'
         },
-        less: {
+        sass: {
             options: {
+                style: 'expanded',
                 sourceMap: true
             },
             style: {
                 files: {
-                    'public/dist/css/style.css': 'less/style.less'
+                    'public/dist/css/style.css': 'scss/style.scss'
                 }
             }
         },
@@ -69,6 +70,7 @@ module.exports = function (grunt) {
             libraries: {
                 src: [
                     'node_modules/jquery/dist/jquery.min.js',
+                    'node_modules/popper.js/dist/umd/popper.min.js',
                     'node_modules/bootstrap/dist/js/bootstrap.min.js',
                     'node_modules/bootstrap-3-typeahead/bootstrap3-typeahead.min.js',
                     'js/highlight.pack.js'
@@ -104,6 +106,6 @@ module.exports = function (grunt) {
     ;
     grunt.registerTask('default', 'dist');
     grunt.registerTask('dist', ['clean:dist', 'css', 'js', 'copy']);
-    grunt.registerTask('css', ['less', 'postcss', 'cssmin']);
+    grunt.registerTask('css', ['sass', 'postcss', 'cssmin']);
     grunt.registerTask('js', ['jshint', 'concat', 'uglify']);
 };

@@ -22,36 +22,40 @@ $('.documentation img').each(function (index, img) {
 
 $('.documentation table').addClass('table table-striped table-bordered');
 
-var $quickSearchTypeahead = $('#quick-search-typeahead').find('>input');
+    var $quickSearchTypeahead = $('#quick-search-typeahead');
+    var initialized = false;
     $quickSearchTypeahead.on("focus", function () {
-        var url = $quickSearchTypeahead.attr('data-action');
-        $.get(url, {}, function (quickSearchData) {
-            $quickSearchTypeahead.typeahead({
-                source: quickSearchData.names,
-                items: 'all',
-                updater: function (item) {
-                    // get text to display in quick search box
-                    var displayText = item;
-                    console.log(item);
+        if (!initialized) {
+            initialized = true;
+            var url = $quickSearchTypeahead.attr('data-action');
+            $.get(url, {}, function (quickSearchData) {
+                $quickSearchTypeahead.typeahead({
+                    source: quickSearchData.names,
+                    items: 'all',
+                    updater: function (item) {
+                        // get text to display in quick search box
+                        var displayText = item;
+                        console.log(item);
 
-                    var trailingEmLoc = displayText.indexOf('<em>');
-                    if (trailingEmLoc !== -1) {
-                        displayText = displayText.substring(0, trailingEmLoc);
+                        var trailingEmLoc = displayText.indexOf('<em>');
+                        if (trailingEmLoc !== -1) {
+                            displayText = displayText.substring(0, trailingEmLoc);
+                        }
+
+                        // Track the search
+                        _paq.push(['trackSiteSearch', displayText, false, false]);
+
+                        // get URL to go to
+                        var itemIndex = quickSearchData.names.indexOf(item);
+                        if (itemIndex !== -1) {
+                            window.location.href = quickSearchData.urls[itemIndex];
+                        }
+
+                        // return display text
+                        return $.trim(displayText);
                     }
-
-                    // Track the search
-                    _paq.push(['trackSiteSearch', displayText, false, false]);
-
-                    // get URL to go to
-                    var itemIndex = quickSearchData.names.indexOf(item);
-                    if (itemIndex !== -1) {
-                        window.location.href = quickSearchData.urls[itemIndex];
-                    }
-
-                    // return display text
-                    return $.trim(displayText);
-                }
+                });
             });
-        });
+        }
     });
 });

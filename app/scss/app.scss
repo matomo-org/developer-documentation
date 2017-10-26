@@ -37,27 +37,6 @@ p {
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
     color: #2faadd;
 }
-
-/* Search bar */
-#quick-search-typeahead {
-    margin-top:15px;
-}
-#quick-search-typeahead input {
-    font-size: 12px;
-    background-color: #131313;
-    color: #999999;
-    height: 24px;
-    border: 0;
-    border-bottom: 1px solid #3f3f3f;
-    padding: 0 10px;
-}
-.typeahead {
-    min-width:256px;
-    margin-top:-1px;
-    border-top-left-radius:0;
-    border-top-right-radius:0;
-    font-size:.8em;
-}
 .dropdown-menu > li > a {
     white-space: normal;
 }
@@ -113,6 +92,14 @@ footer {
 }
 
 /* Menu navbar */
+nav {
+    .navbar-brand {
+        display: flex;
+        svg {
+            align-self: center;
+        }
+    }
+}
 @media (max-width: 1200px) {
     #menu.navbar {
         font-size: 0.9em;
