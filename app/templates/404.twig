@@ -1,21 +1,14 @@
 {% extends 'base.twig' %}
 
 {% block headline %}
-    <style type="text/css">
-        body {
-            padding-top: 40px;
-        }
-    </style>
-
     <div class="jumbotron">
         <div class="container">
-            <h1>
+            <h1 class="display-4">
                 404
             </h1>
-            <p>We did not find that page!</p>
+            <p class="lead">We did not find that page!</p>
             {% if alternativeUrls|length %}
                 <p>
-                    <br />
                     Maybe you are looking for one of these resources:
                 </p>
 
@@ -28,8 +21,7 @@
             {% endif %}
 
             <p>
-                <br />
-                <a href="{{ '/'|completeUrl }}">Get back to the home page</a>
+                <a class="btn btn-primary" href="{{ '/'|completeUrl }}">Get back to the home page</a>
             </p>
         </div>
     </div>
