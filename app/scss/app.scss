@@ -96,21 +96,6 @@ nav {
         }
     }
 }
-@media (max-width: 1200px) {
-    #menu.navbar {
-        font-size: 0.9em;
-    }
-}
-@media (max-width: 992px) {
-    #menu.navbar {
-        font-size: 0.9em;
-    }
-    #menu.navbar .nav>li>a {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-
 
 /* Home page */
 .jumbotron {

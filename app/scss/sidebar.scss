@@ -6,8 +6,14 @@
     > .nav.flex-column {
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+    .nav.flex-column {
         overflow: hidden;
         text-overflow: ellipsis;
+        word-wrap: normal;
+        .nav-item, .nav-link {
+            width: 100%;
+        }
     }
     .card-title {
         font-size: 16px;

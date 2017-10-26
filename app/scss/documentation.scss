@@ -9,7 +9,7 @@
         border-bottom: 1px solid $lightgrey;
     }
 
-    a {
+    a:not(.alert-link) {
         border-bottom: 1px solid $lightgrey;
         &:hover {
             text-decoration: none;
