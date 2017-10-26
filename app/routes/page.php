@@ -25,12 +25,12 @@ use helpers\Url;
 
 function renderGuide(Slim\Views\Twig $view, Slim\Http\Response $response, Psr\Http\Message\UriInterface $uri, Guide $guide, Category $category) {
     return $view->render($response, 'guide.twig', [
-        'category'           => $category,
-        'guide'              => $guide,
+        'category' => $category,
+        'guide' => $guide,
         'linkToEditDocument' => $guide->linkToEdit(),
-        'activeMenu'         => $category->getName(),
+        'activeMenu' => $category->getName(),
         'currentPath' => $uri->getPath(),
-        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false: Url::getUrlIfDocumentIsAvailableInPiwikVersion($uri->getPath(), LATEST_PIWIK_DOCS_VERSION))
+        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($uri->getPath(), LATEST_PIWIK_DOCS_VERSION))
     ]);
 }
 
@@ -134,7 +134,7 @@ $app->get('/support', function (Slim\Http\Request $request, Slim\Http\Response $
 
 $app->get('/changelog', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
     $fetchContent = false;
-    $targetFile   = '../../docs/changelog.md';
+    $targetFile = '../../docs/changelog.md';
 
     if (!file_exists($targetFile)) {
         $fetchContent = true;
@@ -166,6 +166,7 @@ $app->get('/data/documents', function (Slim\Http\Request $request, Slim\Http\Res
 
 $app->post('/receive-commit-hook', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
     system('git pull');
+    system('grunt dist');
     \helpers\Cache::invalidate();
 
     echo 'Here is a cookie!';
