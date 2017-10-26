@@ -27,11 +27,17 @@ class CacheMiddleware
             $content = Cache::get($this->getCacheKey($req));
 
             if (!empty($content)) {
-                $res->getBody()->write($content . "\n<!-- Cached respones -->");
+                if ($this->isJsonData($req)) {
+                    $res = $res->withHeader('Content-Type', 'application/json');
+                    $res->getBody()->write($content);
+                } else{
+                    $res->getBody()->write($content . "\n<!-- Cached response -->");
+                }
                 return $res;
             }
         }
-        $next($req, $res);
+        /** @var Response $res */
+        $res = $next($req, $res);
 
         if ($this->shouldCache($req) && 200 == $res->getStatusCode()) {
             $res->getBody()->rewind();
@@ -67,9 +73,18 @@ class CacheMiddleware
         return $req->isGet();
     }
 
+    private function isJsonData(Request $req) {
+        return strpos($req->getUri()->getPath(), 'data/') !== false;
+    }
+
     private function getCacheKey(Request $req) {
         $piwikVersion = Environment::getPiwikVersion();
+        if ($this->isJsonData($req)) {
+            $type = "json";
+        } else {
+            $type = "html";
+        }
 
-        return $piwikVersion . '_' . $this->pathToCacheKey($req->getUri()->getPath()) . ".html";
+        return $piwikVersion . '_' . $this->pathToCacheKey($req->getUri()->getPath()) . "." . $type;
     }
 }
