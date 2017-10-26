@@ -1,0 +1,64 @@
+.card {
+    margin-bottom: 20px;
+    a, a:hover, a:focus {
+        color: #2c3e50;
+    }
+    > .nav.flex-column {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .card-title {
+        font-size: 16px;
+        margin: 0;
+    }
+    a.active, a:hover, a:focus {
+        color: $secondary;
+    }
+    a.active {
+        font-weight: bold !important;
+    }
+}
+
+// Main (Top) Sidebar
+.card.bs-mainsidebar {
+    border: 1px solid $darkgrey;
+    box-shadow: 0 0 5px $darkgrey;
+    background-color: $lightgrey;
+    .card-header {
+        background-color: $darkgrey;
+        text-align: center;
+        text-transform: uppercase;
+        .card-title {
+            font-size: 14px;
+            letter-spacing: 2px;
+            a {
+                color: $grey;
+            }
+        }
+    }
+}
+
+.bs-sidebar .nav {
+    // All levels
+    .nav-link {
+        display: block;
+        padding: 5px 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: bold;
+        border-radius: 0;
+    }
+    // Second level
+    .nav {
+        margin-bottom: 10px;
+        .nav-link {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 25px;
+            font-size: 90%;
+            font-weight: normal;
+        }
+    }
+}
