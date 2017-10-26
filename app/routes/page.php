@@ -87,8 +87,7 @@ $app->get('/api-reference/Piwik/[{params:.*}]', function (Slim\Http\Request $req
         throw new \Slim\Exception\NotFoundException($request, $response);
     }
 
-    $names = array_filter($request->getAttribute('params'));
-    $file = 'Piwik/' . $names;
+    $file = 'Piwik/' . $request->getAttribute('params');
 
     try {
         $doc = new PhpDoc($file, $file);
