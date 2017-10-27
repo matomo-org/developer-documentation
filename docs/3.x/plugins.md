@@ -24,7 +24,7 @@ Some of the commands require further arguments or options. Use `help` to see whi
 Some of the arguments and options are required, whereas other are optional. If you do not specify a value, the command line tool will ask you to enter the missing values. So you do not have to care much about arguments and options. Easy!
 
 ### Creating a plugin
-Execute the command `./console generate:plugin` in order to create a new plugin. The CLI tool will ask you to enter a name, a description and a version number. This creates a very basic plugin for you including all the necessary files. If you already know that you need a Controller and an API, the console tool can create those for you as well.
+Execute the command `./console generate:plugin` in order to create a new plugin. The CLI tool will ask you to enter a name, a description and a version number. This creates a very basic plugin for you, which includes all the necessary files. If you already know that you need a Controller and an API, the console tool can create those for you as well.
 
 ## Building the plugin
 ### Namespaces
