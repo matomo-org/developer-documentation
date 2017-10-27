@@ -31,7 +31,7 @@ To build the URL of the API call, you need:
 
     **period=day**
 
-    Alternatively, if you wanted to request all of the keywords from a given date, you could use a date range parameter. For example, to request all of the keywords since January 1st 2011:`period=range&date=2011-01-01,yesterday`
+    Alternatively, if you wanted to request all keywords from a given date, you could use a date range parameter. For example, to request all keywords since January 1st 2011:`period=range&date=2011-01-01,yesterday`
 
 - the format parameter. Defines the output format of the data: XML, JSON, CSV, PHP (serialized PHP), HTML (simple html)
 

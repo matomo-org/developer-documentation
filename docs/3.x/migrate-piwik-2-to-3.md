@@ -16,7 +16,7 @@ After you test your Piwik plugin on Piwik 3, there are a few possible cases:
 
 ### if your plugin is compatible with Piwik 2 and Piwik 3...
 
-If you have a plugin that is compatible with both Piwik 2 and 3 we recommend to specify this explicitly in your `plugin.json`
+If you have a plugin that is compatible with both Piwik 2 and 3 we recommend specifying this explicitly in your `plugin.json`
 as we otherwise assume your plugin will only be compatible with Piwik 2. In the `plugin.json`, change this:
 
 ```json
@@ -35,7 +35,7 @@ to:
 
 ### if your plugin is not compatible with Piwik 3 yet...
 
-If your plugin is not compatible with Piwik 3 yet, we recommend to release one more version for your current plugin which specifically tells the Marketplace the plugin is
+If your plugin is not compatible with Piwik 3 yet, we recommend releasing one more version for your current plugin which specifically tells the Marketplace the plugin is
  not compatible with Piwik 3. The `plugin.json` would look like this:
 
 ```json
@@ -44,10 +44,10 @@ If your plugin is not compatible with Piwik 3 yet, we recommend to release one m
     },
 ```
 
-The next step is for you to make your plugin compatible with Piwik 3: this guide will help you locate the changes to make to your plugin. 
-  
+The next step is for you to make your plugin compatible with Piwik 3: this guide will help you locate the changes to make to your plugin.
 
-### once your plugin is compatible with Piwik 3, release a new major version of your plugin 
+
+### once your plugin is compatible with Piwik 3, release a new major version of your plugin
 
 Once your plugin is compatible with Piwik 3:
 
@@ -63,13 +63,13 @@ The `plugin.json` would look like this:
     },
 ```
 
-It is still possible to release updates for the branch that is compatible with Piwik 2. 
+It is still possible to release updates for the branch that is compatible with Piwik 2.
 
 ## Marketplace
 
 ### Your plugin's Changelog
 
-In the past the changelog used to be defined in the `README.md` file by specifying a `## Changelog` headline. This is now deprecated and we recommend to maintain the changelog in a `CHANGELOG`, `CHANGELOG.txt` or `CHANGELOG.md` file instead. 
+In the past the changelog used to be defined in the `README.md` file by specifying a `## Changelog` headline. This is now deprecated, and we recommend maintaining the changelog in a `CHANGELOG`, `CHANGELOG.txt` or `CHANGELOG.md` file instead.
 
 ### Your plugin's FAQ
 
@@ -78,7 +78,7 @@ The same applies to the FAQ which used to be defined in a `## FAQ` section withi
 
 ### Your plugin's Support options
 
-The support tab is no longer managed in the readme file either. Instead the support tab on your plugin page is now generated from the ["support" section in your plugin.json](https://developer.piwik.org/guides/distributing-your-plugin#pluginjson-file).
+The support tab is no longer managed in the readme file either. Instead, the support tab on your plugin page is now generated from the ["support" section in your plugin.json](https://developer.piwik.org/guides/distributing-your-plugin#pluginjson-file).
 
 
 ### Your plugin's license
@@ -180,7 +180,7 @@ As you can see the API hasn't changed too much. [Learn more about the new plugin
 
 ## Reports
 
-If your plugin creates a custom [Report](https://developer.piwik.org/guides/custom-reports), you should rename the property `$category` to `$categoryId`. 
+If your plugin creates a custom [Report](https://developer.piwik.org/guides/custom-reports), you should rename the property `$category` to `$categoryId`.
 (In your code, replace `$this->category` by `$this->categoryId`).
 
 If you have defined a widget or if you have added your report to a reporting page you need to follow the next steps:
@@ -264,7 +264,7 @@ class MyExampleWidget extends Widget
 ```
 
 As you might see the method to render the widget is now always called `render` and it used to be the name specified
-when creating the widget. The configuration is now done in a static configure method that let's you eg configure the
+when creating the widget. The configuration is now done in a static configure method that lets you eg configure the
 category, the name, the order of the widget and more. [Learn more about the new API in the Widgets guide.](/guides/widgets).
 
 ## User menu
@@ -275,6 +275,5 @@ Next you should update the related Twig template file (if there is any) and repl
 
 ## Summary
 
-In this guide we have seen which steps to take to migrate your Piwik plugin to be compatible with our newest Piwik 3. 
-If you need further help for converting your plugin to Piwik 3, head over to the [Piwik developers community forums](https://forum.piwik.org/c/plugins-platform). 
- 
+In this guide we have seen which steps to take to migrate your Piwik plugin to be compatible with our newest Piwik 3.
+If you need further help for converting your plugin to Piwik 3, head over to the [Piwik developers community forums](https://forum.piwik.org/c/plugins-platform).

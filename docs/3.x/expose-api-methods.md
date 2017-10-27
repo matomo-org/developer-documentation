@@ -4,11 +4,11 @@ title: API Methods
 ---
 # Exposing API Methods
 
-This guide explains how to expose new API methods in the [HTTP Reporting API](https://developer.piwik.org/api-reference/reporting-api) by creating an API module. The Reporting API allows third party applications to access analytics data and manipulate miscellaneous data (such as users or websites) through HTTP requests. 
+This guide explains how to expose new API methods in the [HTTP Reporting API](https://developer.piwik.org/api-reference/reporting-api) by creating an API module. The Reporting API allows third party applications to access analytics data and manipulate miscellaneous data (such as users or websites) through HTTP requests.
 
 ### What is it good for?
 
-The Reporting API is used by the Piwik UI to render reports, to manage users, and more. If you want to add a feature to the Piwik UI, you might have to expose a method in the API to access this data. As the API is called via HTTP it allows you to fetch or manipulate any Piwik related data from anywhere. In these exposed API methods you can do pretty much anything you want, for example:
+The Reporting API is used by the Piwik UI to render reports, to manage users, and more. If you want to add a feature to the Piwik UI, you might have to expose a method in the API to access this data. As the API is called via HTTP it allows you to fetch or manipulate any Piwik related data from anywhere. In these exposed API methods you can do basically anything you want, for example:
 
 * Enhance existing reports with additional data
 * Filter existing reports based on custom rules
@@ -48,13 +48,13 @@ class API extends \Piwik\Plugin\API
         return $table;
     }
 }
-``` 
+```
 
 Any public method in that file will be available via the Reporting API. For example the method <code>getAnswerToLife</code> can be called via this URL: <code>index.php?module=API&amp;method=MyApiPlugin.getAnswerToLife</code>. The URL parameter <code>method</code> is a combination of your plugin name and the method name within this class.
 
 ### Passing parameters to your method
 
-Both example methods define some parameters. To pass any value to a parameter of your method simply specify them by name in the URL. For example <code>...&amp;method=MyApiPlugin.getExampleReport&amp;idSite=1&amp;period=week&amp;date=today&amp;wonderful=1</code> to pass values to the parameters of the method <code>getExampleReport</code>. 
+Both example methods define some parameters. To pass any value to a parameter of your method simply specify them by name in the URL. For example <code>...&amp;method=MyApiPlugin.getExampleReport&amp;idSite=1&amp;period=week&amp;date=today&amp;wonderful=1</code> to pass values to the parameters of the method <code>getExampleReport</code>.
 
 ### Returning a value
 
@@ -76,7 +76,7 @@ Do not forget to check whether a user actually has permissions to access data or
 
 ### Keep API methods small
 
-At Piwik we aim to write clean code. Therefore, we recommend to keep API methods small (separation of concerns). An API pretty much acts like a Controller: 
+At Piwik we aim to write clean code. Therefore, we recommend to keep API methods small (separation of concerns). An API basically acts like a Controller:
 
 ```php
 public function createLdapUser($idSite, $login, $password)
@@ -84,10 +84,10 @@ public function createLdapUser($idSite, $login, $password)
     Piwik::checkUserHasAdminAccess($idSite);
     $this->checkLogin($login);
     $this->checkPassword($password);
-    
+
     $myModel = new LdapModel();
     $success = $myModel->createUser($idSite, $login, $password);
-    
+
     return $success;
 }
 ```

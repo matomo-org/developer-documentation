@@ -3,7 +3,7 @@ category: Develop
 ---
 # Extending the database
 
-Plugins can provide persistence for new data if they need to. 
+Plugins can provide persistence for new data if they need to.
 As Piwik is currently storing all data in a MySQL database, we learn how to add new tables in the database and how to add a new data column to an existing table.
 
 
@@ -41,7 +41,7 @@ public class MyPlugin extends \Piwik\Plugin
 }
 ```
 
-### Removing the table when plugin is uninstalled 
+### Removing the table when plugin is uninstalled
 
 Plugins should also clean up after themselves by dropping the tables in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method:
 
@@ -94,11 +94,11 @@ public class MyPlugin extends \Piwik\Plugin
     // ...
 }
 ```
- 
-### Removing the column when plugin is uninstalled 
 
-Since log tables can have millions and even billions of entries, removing columns from these tables when a plugin is uninstalled would be a bad idea. 
-Plugins should remove the column in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method only when the table's name is not starting with `log_*`.   
+### Removing the column when plugin is uninstalled
+
+Since log tables can have millions and even billions of entries, removing columns from these tables when a plugin is uninstalled would be a bad idea.
+Plugins should remove the column in the [uninstall](/api-reference/Piwik/Plugin#uninstall) method only when the table's name is not starting with `log_*`.
 
 ## Defining database updates
 
@@ -140,13 +140,13 @@ class Updates_3_0_0_b1 extends PiwikUpdates
 ```
 
 The database migration factory (`$this->migration->db`) gives you lots of different option for performing a database migration
-and does all the complicated work for you. For example you can add columns, remove columns, change columns, change keys,
+and does all the complicated work for you. For example, you can add columns, remove columns, change columns, change keys,
 add new tables, and you can even perform custom SQL during a migration. For a list of all available migrations have a look at the
 [DB Migration Factory API-Reference](/api-reference/Piwik/Updater/Migration/Db/Factory).
 
 If you want to perform any other operations unrelated to the MySQL database when your plugin is updated, you can do this within
 the `doUpdate` method.
 
-## Learn more 
+## Learn more
 
 Learn more about the Piwik Analytics database structure and tables in the [Database schema reference](/guides/persistence-and-the-mysql-backend).

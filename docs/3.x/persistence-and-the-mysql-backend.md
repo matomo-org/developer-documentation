@@ -28,7 +28,7 @@ There are four types of log data:
 
 All log data is persisted in a similar way: new data is constantly added to the set at high volume and updates are non-existent, except for **visits**.
 
-**Visit** data is updated while visits are active. So until a visit ends it is possible that Piwik will try and update it.
+**Visit** data is updated while visits are active. So until a visit ends it is possible that Piwik will try to update it.
 
 Log data is read when calculating analytics data and old data will sometimes be deleted (via the [data purging feature](https://piwik.org/docs/managing-your-databases-size/)).
 
@@ -41,14 +41,14 @@ Visits are stored in the `log_visit` table.
 
 Each visit contains the following information:
 
-- `idsite`: the ID of the the website it was tracked for
+- `idsite`: the ID of the website it was tracked for
 - `idvisitor`: a visitor ID (an 8 byte binary string)
 - `visitor_localtime`: the visit datetime in the  visitor's time of day
 - `visitor_returning`: whether the visit is the first visit for this visitor or not
 - `visitor_count_visits`: the number of visits the visitor has made up to this one
 - `visitor_days_since_last`: the number of days since this visitor's last visit (if any)
 - `visitor_days_since_order`: the number of days since this visitor's last order (if any)
-- `visitor_days_since_first`: the number of days since this visitors' first visit
+- `visitor_days_since_first`: the number of days since this visitor's first visit
 - `visit_first_action_time`: the datetime of the visit's first action
 - `visit_last_action_time`: the datetime of the visit's last action
 - `visit_exit_idaction_url`: the ID of the URL action type of the visit's last action
@@ -163,12 +163,12 @@ Action types are persisted in the `log_action` table and contain the following i
   - **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_NAME = 6**: the action is the name of an ecommerce item that is sold on the site.
   - **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_CATEGORY = 7**: the action is the name of an ecommerce item category that is used on the site.
   - **Piwik\Tracker\Action::TYPE_SITE_SEARCH = 8**: the action type is a site search action.
-  - **Piwik\Tracker\Action::TYPE_EVENT_CATEGORY = 10**: the action is an event category (see [Tracking Events](https://piwik.org/docs/event-tracking/) user guide) 
+  - **Piwik\Tracker\Action::TYPE_EVENT_CATEGORY = 10**: the action is an event category (see [Tracking Events](https://piwik.org/docs/event-tracking/) user guide)
   - **Piwik\Tracker\Action::TYPE_EVENT_ACTION = 11**: the action is an event category
   - **Piwik\Tracker\Action::TYPE_EVENT_NAME = 12**: the action is an event name
   - **Piwik\Tracker\Action::TYPE_CONTENT_NAME = 13**:  the action is a content name (see [Content Tracking](https://piwik.org/docs/content-tracking/) user guide and [developer guide](https://developer.piwik.org/guides/content-tracking))
   - **Piwik\Tracker\Action::TYPE_CONTENT_PIECE = 14**: the action is a content piece
-  - **Piwik\Tracker\Action::TYPE_CONTENT_TARGET = 15**: the action is a content target 
+  - **Piwik\Tracker\Action::TYPE_CONTENT_TARGET = 15**: the action is a content target
   - **Piwik\Tracker\Action::TYPE_CONTENT_INTERACTION = 16**: the action is a content interaction
 - `url_prefix`: if the name is a URL this refers to the prefix of the URL. The prefix is removed from actual URLs so the protocol and **www.** parts of a URL are ignored during analysis. Can be the following values:
   - `0`: `'http://'`
@@ -232,7 +232,7 @@ Ecommerce items are stored in the `log_conversion_item` table and consist of the
 
 #### Table details
 
-The `idsite`, `idvisitor`, `server_time` and `idvisit` columns are copied from the Conversion entity this Ecommerce Item belongs to. They are copied so we can aggregate Ecommerce Items without having to join other tables.
+The `idsite`, `idvisitor`, `server_time` and `idvisit` columns are copied from the Conversion entity this Ecommerce Item belongs to. They are copied, so we can aggregate Ecommerce Items without having to join other tables.
 
 The `index_idsite_servertime` index is used when aggregating ecommerce items. It allows quick access to the items that were tracked for a specific website and during a specific period and lets us avoid a table scan through the entire table.
 
@@ -326,7 +326,7 @@ Goals are stored in the `goal` table and contain the following information:
   - `contains`: the goal is converted if the match attribute contains the pattern.
   - `exact`: the goal is converted if the match attribute equals the pattern exactly.
   - `regex`: the goal is converted if the match attribute is a regex match with the pattern.
-- `case_sensitive`: `1` if the matching should be case sensitive, `0` if otherwise.
+- `case_sensitive`: `1` if the matching should be case-sensitive, `0` if otherwise.
 - `allow_multiple`: `1` if multiple conversions are allowed per visit, `0` if otherwise.
 - `revenue`: the amount of revenue a conversion generates (if any).
 - `deleted`: `1` if this goal was deleted by a Piwik user, `0` if not.
@@ -340,7 +340,7 @@ User entities describe each Piwik user except the Super User. They are persisted
 
 The following information is stored in a user entity:
 
-- `login`: he user's login handle.
+- `login`: the user's login handle.
 - `password'`: a hash of the user's password.
 - `alias`: the user's alias if any. This value is displayed instead of the login handle when addressing the user in the UI.
 - `email`: the user's email address.
@@ -367,7 +367,7 @@ This association and the persistence logic is implemented by the [LanguagesManag
 
 ### Options
 
-[Options](/api-reference/Piwik/Option) are key-value pairs where the key is a string and the value is a another string (possibly bigger and possibly binary). They are queried on every UI and [Reporting API](/guides/piwiks-reporting-api) request. The tracker will cache relevant option values and so will only query options when the cache needs updating.
+[Options](/api-reference/Piwik/Option) are key-value pairs where the key is a string and the value is another string (possibly bigger and possibly binary). They are queried on every UI and [Reporting API](/guides/piwiks-reporting-api) request. The tracker will cache relevant option values and so will only query options when the cache needs updating.
 
 Some options should be loaded on every non-tracking request. These options have a special **autoload** property set to `1`.
 

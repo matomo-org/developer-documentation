@@ -22,7 +22,7 @@ After you enter the appropriate information, a theme will be created for you in 
 ## Simple theming
 
 Piwik uses [LESS (Leaner CSS)](http://lesscss.org/) to compose CSS files, allowing for simple theming very easily.
- 
+
 ### Colors and fonts
 
 Colors used in CSS are simple to override because they are often defined as [Less variables](http://lesscss.org/features/#variables-feature).
@@ -50,7 +50,7 @@ You get the point. The list of all variables that you can override is defined in
 - [base theme variables](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/stylesheets/theme.less)
 - [advanced theme variables](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/stylesheets/theme-advanced.less)
 
-Although we do not recommend to do so, you can change the colors of a specific element directly, for example:
+Although we do not recommend doing so, you can change the colors of a specific element directly, for example:
 
 ```css
 #login {
@@ -93,7 +93,7 @@ You can put your entire theme into this one file if you want, but the result mig
 
 Themes can also add new JavaScript files. These files can be used to style things that can't be styled through CSS or LESS.
 
-To add JavaScript files, add them as an array to to the **javascript** property in your theme's `plugin.json` file:
+To add JavaScript files, add them as an array to the **javascript** property in your theme's `plugin.json` file:
 
 ```json
 {
@@ -104,10 +104,10 @@ To add JavaScript files, add them as an array to to the **javascript** property 
     "javascript": ["javascripts/myJavaScriptFile.js", "javascripts/myOtherJavaScriptFile.js"]
 }
 ```
-    
+
 ### Theming colors used in JavaScript & PHP
 
-Some colors are only used in JavaScript and in PHP. We've made it possible for those colors to be specified through CSS, but the process is a bit different than setting colors of normal HTML elements.
+Some colors are only used in JavaScript and in PHP. We've made it possible for those colors to be specified through CSS, but the process is a bit different from setting colors of normal HTML elements.
 
 Each color used in JavaScript is given a name and grouped in a _color namespace_. You can set these colors like this:
 
@@ -193,7 +193,7 @@ Here is a list of all named colors in Piwik:
 
 * _Namespace_: **realtime-map**: contains colors for the [Realtime Visitors Map](https://piwik.org/docs/real-time-visitor-world-map/).
 
-  * **white-bg**: The background color for the map when using the _light theme_. 
+  * **white-bg**: The background color for the map when using the _light theme_.
   * **white-fill**: The country/region fill color for the map when using the _light theme_.
   * **black-bg**: The background color for the map when using the _dark theme_.
   * **black-fill**: The country/region fill color for the map when using the _dark theme_.

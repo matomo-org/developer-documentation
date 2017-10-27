@@ -18,7 +18,7 @@ This guide describes how we, the team of developers that makes changes to Piwik 
 
 **This guide makes no assumptions.** You do not need to know how to code or know how Piwik works in order to understand this guide.
 
-## How we manage our work 
+## How we manage our work
 
 We use **[Github](https://github.com/piwik/piwik/issues)** to keep track of all bugs, feature requests and tasks that concern Piwik, the website and Piwik's documentation.
 
@@ -28,57 +28,57 @@ We make sure all tickets contain enough information, including:
 * if a new feature, explain the use case with suggestions or a specification,
 * if a UI improvement, mockups or a detailed description of the changes.
 
-We are rather obsessed with keeping our issue tracker an organized place. 
-Tickets are either of the type 'Bug', 'Enhancement' or 'Task'. 
-Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on, with highest priority given to issues in the next version milestone. We have been using an issue tracker since [the beginning of the project](https://piwik.org/history/). 
+We are rather obsessed with keeping our issue tracker an organized place.
+Tickets are either of the type 'Bug', 'Enhancement' or 'Task'.
+Developers (Piwik team members or external contributors) decide for themselves which features they would like to work on, with the highest priority given to issues in the next version milestone. We have been using an issue tracker since [the beginning of the project](https://piwik.org/history/). 
 
 ## How we organise issues
 
-### Milestones 
-All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues). 
+### Milestones
+All opened tickets are grouped in [Milestones](https://github.com/piwik/piwik/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/piwik/piwik/issues).
 The versions milestones are listed at the very top and contains all the most important issues to close in accordance with [our vision for the Piwik analytics platform](https://piwik.org/roadmap/).
 
-Most important issues and bugs are moved to [Short term milestone](https://github.com/piwik/piwik/milestones/Short%20term). 
+Most important issues and bugs are moved to [Short term milestone](https://github.com/piwik/piwik/milestones/Short%20term).
 This milestone is our active tickets backlog. From time to time, we move one ticket from `Short term` to the current version milestone (eg. `Piwik 3.0.0`).
 
 Other suggestions, tasks and feature requests which we haven't yet scheduled are moved to the [Mid term](https://github.com/piwik/piwik/milestones/Mid%20term) or [Long term](https://github.com/piwik/piwik/milestones/Long%20term) milestones.
 
 ### Labels
-Most important labels are tagged to issues: 
-[Privacy](https://github.com/piwik/piwik/labels/c:%20Privacy), 
-[Security](https://github.com/piwik/piwik/labels/c:%20Security), 
-[Performance](https://github.com/piwik/piwik/labels/c:%20Performance), 
-[Tests & QA](https://github.com/piwik/piwik/labels/c:%20Tests%20&%20QA), 
-[Usability](https://github.com/piwik/piwik/labels/c:%20Usability), 
+Most important labels are tagged to issues:
+[Privacy](https://github.com/piwik/piwik/labels/c:%20Privacy),
+[Security](https://github.com/piwik/piwik/labels/c:%20Security),
+[Performance](https://github.com/piwik/piwik/labels/c:%20Performance),
+[Tests & QA](https://github.com/piwik/piwik/labels/c:%20Tests%20&%20QA),
+[Usability](https://github.com/piwik/piwik/labels/c:%20Usability),
 [Platform](https://github.com/piwik/piwik/labels/c:%20Platform),
 [Marketplace](https://github.com/piwik/piwik/labels/c:%20Marketplace) and
-[Website piwik.org](https://github.com/piwik/piwik/labels/c:%20Website%20piwik.org). 
+[Website piwik.org](https://github.com/piwik/piwik/labels/c:%20Website%20piwik.org).
 
-Other important labels used are for [Critical](https://github.com/piwik/piwik/labels/Critical) and [Major](https://github.com/piwik/piwik/labels/Major) issues. 
+Other important labels used are for [Critical](https://github.com/piwik/piwik/labels/Critical) and [Major](https://github.com/piwik/piwik/labels/Major) issues.
 New developers can quickly make an impact by hacking on an [Easy pick](https://github.com/piwik/piwik/labels/Easy%20pick) issues.
 
 ## How we release new versions
 
 ### Frequent releases
-We try to publish a new Piwik release [about once a month](https://piwik.org/faq/new-to-piwik/faq_18926/). A release is ready when the following release conditions are met: 
+We try to publish a new Piwik release [about once a month](https://piwik.org/faq/new-to-piwik/faq_18926/). A release is ready when the following release conditions are met:
 
 - Our [continuous integration tests](https://piwik.org/qa/) must be green.
-- All critical tickets [to the corresponding milestone](https://github.com/piwik/piwik/issues/milestones) must be closed. 
+- All critical tickets [to the corresponding milestone](https://github.com/piwik/piwik/issues/milestones) must be closed.
 - All [officially supported plugins](https://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](https://plugins.piwik.org/) must be compatible.
 
 Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik.
 
-To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)). 
-A shell script is then run to generate the archives (zip and tar.gz) which are [cryptographically signed](https://piwik.org/blog/2014/11/verify-signatures-piwik-packages/) and then copied to the build server [builds.piwik.org](https://builds.piwik.org/) and [builds.piwik.org/LATEST](https://builds.piwik.org/LATEST) is updated with the latest stable release number. 
+To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/piwik/piwik/tags)).
+A shell script is then run to generate the archives (zip and tar.gz) which are [cryptographically signed](https://piwik.org/blog/2014/11/verify-signatures-piwik-packages/) and then copied to the build server [builds.piwik.org](https://builds.piwik.org/) and [builds.piwik.org/LATEST](https://builds.piwik.org/LATEST) is updated with the latest stable release number.
 Within hours, Piwik installations will be updated by users via the one click [upgrade mechanism](https://piwik.org/docs/update/) &ndash; or by manual upgrades.
 
 Releases that contain the string "alpha", "beta", "rc", are built for testing purposes and are not advertised on [piwik.org](https://piwik.org).
-They are however made available on the build server and the [builds.piwik.org/LATEST_BETA](https://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string. 
+They are however made available on the build server and the [builds.piwik.org/LATEST_BETA](https://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string.
 You can enable Piwik to use the latest Beta release automatically if you want to test the latest features ([see this faq to learn how](https://piwik.org/faq/how-to-update/#faq_159)).
 
 ### Changelog
 
-The [Changelog](https://piwik.org/changelog/) is then updated with a new entry for this release. 
+The [Changelog](https://piwik.org/changelog/) is then updated with a new entry for this release.
 The changelog typically lists all tickets closed in this release, and point people to the newest [FAQs](https://piwik.org/faq/) and [User guides](https://piwik.org/faq/).
 
 ## How we manage source code
@@ -99,7 +99,7 @@ It is highly recommended that code committed in the [master branch](https://gith
 
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 
-This message will automatically close the ticket [#472](https://github.com/piwik/piwik/issues/472). 
+This message will automatically close the ticket [#472](https://github.com/piwik/piwik/issues/472).
 You can also use simply `#159` and a comment will be automatically added to the ticket #159 with a link to the commit on Github.
 
 When applicable, the related [online documentation](https://piwik.org/docs/) and the related [FAQs](https://piwik.org/faq/) should be updated.

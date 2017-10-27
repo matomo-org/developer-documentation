@@ -84,7 +84,7 @@ Well done, your plugin is hosted on GitHub!
 
 Soon you will be able to publish the very first version of your Plugin or Theme.
 
-Follow the steps below to setup the WebHook for your repository:
+Follow the steps below to set up the WebHook for your repository:
 
  * Open your repository on GitHub and go to its settings page
  * Click 'Service Hooks'
@@ -112,7 +112,7 @@ If there was an error during the validation, you will receive an email with help
 
 ## Publish an updated version of your plugin
 
-To publish an update of your plugin on the Marketplace, simply update the version number tag in the plugin.json, commit, and create a new tag to trigger the release. 
+To publish an update of your plugin on the Marketplace, simply update the version number tag in the plugin.json, commit, and create a new tag to trigger the release.
 
 ## Troubleshooting
 

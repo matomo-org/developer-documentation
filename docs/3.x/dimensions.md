@@ -5,9 +5,9 @@ category: Develop
 
 Dimensions provide the possibility to extend the tracker to easily record any custom data. Before recording any custom data you have to decide what kind of dimension you need:
 
-* A visit dimension let's you record any visitor related data. A typical dimension would be for example the name of the browser or the resolution of the device a visitor is using.
-* An action dimension let's you track any action related data. For example a pageview, a download or an event.
-* A conversion dimension let's you persist any additional information when a goal is converted.
+* A visit dimension lets you record any visitor related data. A typical dimension would be for example the name of the browser or the resolution of the device a visitor is using.
+* An action dimension lets you track any action related data. For example a pageview, a download or an event.
+* A conversion dimension lets you persist any additional information when a goal is converted.
 
 ## Creating a new dimension
 
@@ -23,7 +23,7 @@ Once all information is provided, a dimension class will be created in the `Colu
 
 ## Visit dimensions
 
-Let's assume you want to add a new tracking URL parameter `sport_activity_type` that let's you track the type of sport activity (eg running, cycling, ...). You can do this by implementing the method `onNewVisit`:
+Let's assume you want to add a new tracking URL parameter `sport_activity_type` that lets you track the type of sport activity (eg running, cycling, ...). You can do this by implementing the method `onNewVisit`:
 
 ```php
 public function onNewVisit(Request $request, Visitor $visitor, $action)
@@ -73,10 +73,10 @@ public function onNewAction(Request $request, Visitor $visitor, Action $action)
 
 A tracking request could be done like this: `piwik.php?idsite=1&sport_activity_type=running&speed=50`.
 
-Of course you can add any custom behaviour like limiting the max speed etc.
+Of course, you can add any custom behaviour like limiting the max speed etc.
 
 ## Segmentation
-Since Piwik 3.2.0 A new segment is automatically created for a dimension when you define a `$segmentName` property. It is also recommended to adjust the description of the accepted values.
+Since Piwik 3.2.0 A new segment is automatically created for a dimension when you define a `$segmentName` property. It is also recommended adjusting the description of the accepted values.
 
 ## Learn more
-Dimensions are quite powerful. For example you can change the behavior of an existing dimension by creating a dimension that has the same column name, you can store action related data efficiently by using a lookup table. Dimensions can also force the creation of a new visit in case an existing visitor was recognized. We recommend to have a look at the documentation within a created dimension and at the API-Reference of the classes [VisitDimension](/api-reference/Piwik/Plugin/Dimension/VisitDimension), [ActionDimension](/api-reference/Piwik/Plugin/Dimension/ActionDimension) and [ConversionDimension](/api-reference/Piwik/Plugin/Dimension/ConversionDimension)
+Dimensions are quite powerful. For example, you can change the behavior of an existing dimension by creating a dimension that has the same column name, you can store action related data efficiently by using a lookup table. Dimensions can also force the creation of a new visit in case an existing visitor was recognized. We recommend having a look at the documentation within a created dimension and at the API-Reference of the classes [VisitDimension](/api-reference/Piwik/Plugin/Dimension/VisitDimension), [ActionDimension](/api-reference/Piwik/Plugin/Dimension/ActionDimension) and [ConversionDimension](/api-reference/Piwik/Plugin/Dimension/ConversionDimension)

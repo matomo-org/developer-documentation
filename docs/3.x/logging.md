@@ -81,7 +81,7 @@ try {
 }
 ```
 
-In this example, we log to `error` level but we caught the exception: the current process will not be aborted.
+In this example, we log to `error` level, but we caught the exception: the current process will not be aborted.
 
 ### Viewing logs
 

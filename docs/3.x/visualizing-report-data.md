@@ -7,7 +7,7 @@ In Piwik, an **analytics report** is just a set of two-dimensional data, stored 
 
 Controllers can display these reports using the [**ViewDataTable**](/api-reference/Piwik/Plugin/ViewDataTable) class: this is called a **report visualization**.
 
-Report visualizations can be in any format. For example, the *sparkline* visualization outputs an image. However most visualizations will output an HTML widget that allows users to switch between different visualizations.
+Report visualizations can be in any format. For example, the *sparkline* visualization outputs an image. However, most visualizations will output an HTML widget that allows users to switch between different visualizations.
 
 ## Report visualizations
 
@@ -236,7 +236,7 @@ class MyVisualization extends Visualization
 }
 ```
 
-*Note: If you change what data is loaded, you may also need to override the [`Visualization::isThereDataToDisplay()`](/api-reference/Piwik/Plugin/Visualization#istheredatatodisplay) method. Otherwise the 'no data' message may not appear even if there is no data for the report you are displaying.*
+*Note: If you change what data is loaded, you may also need to override the [`Visualization::isThereDataToDisplay()`](/api-reference/Piwik/Plugin/Visualization#istheredatatodisplay) method. Otherwise, the 'no data' message may not appear even if there is no data for the report you are displaying.*
 
 #### Manipulating report data before displaying
 

@@ -1,7 +1,7 @@
 # Implementing a plugin
 ## CLI tool
-Piwik comes with a powerful command line tool to help you generating a plugin easily. The command line tool is called "console" and is located in the Piwik root directory.
-To get familiar with the command line tool enter either `./console` or `php console`. As you haven't specified any command yet, it will list you all available commands along with their descriptions. 
+Piwik comes with a powerful command line tool to help you generate a plugin easily. The command line tool is called "console" and is located in the Piwik root directory.
+To get familiar with the command line tool enter either `./console` or `php console`. As you haven't specified any command yet, it will list you all available commands along with their descriptions.
 The most interesting commands for developers are:
 
 * `generate:plugin`
@@ -24,7 +24,7 @@ Some of the commands require further arguments or options. Use `help` to see whi
 Some of the arguments and options are required, whereas other are optional. If you do not specify a value, the command line tool will ask you to enter the missing values. So you do not have to care much about arguments and options. Easy!
 
 ### Creating a plugin
-Execute the command `./console generate:plugin` in order to create a new plugin. The CLI tool will ask you to enter a name, a description and a version number. This creates a very basic plugin for you including all the necessary files. If you already know that you need a Controller and an API, the console tool can create those for you as well. 
+Execute the command `./console generate:plugin` in order to create a new plugin. The CLI tool will ask you to enter a name, a description and a version number. This creates a very basic plugin for you including all the necessary files. If you already know that you need a Controller and an API, the console tool can create those for you as well.
 
 ## Building the plugin
 ### Namespaces
@@ -87,9 +87,9 @@ Each public method within this class will be accessible over the API. Adding new
 
 ### Creating a console command
 
-In order to enrich the [Piwik CLI tool](#cli-tool) your plugin can create an unlimited number of console commands. For example a particular plugin could provide long running administrative tasks via the console.
+In order to enrich the [Piwik CLI tool](#cli-tool) your plugin can create an unlimited number of console commands. For example a particular plugin could provide long-running administrative tasks via the console.
 
-We recommend to use the CLI tool to create a command:
+We recommend using the CLI tool to create a command:
 
 `./console generate:command`
 
@@ -98,11 +98,11 @@ This will create a command for you and place it in the `Commands` directory of y
 If you are interested in learning more about writing commands, read the [Symfony Commands documentation](https://symfony.com/doc/current/components/console.html).
 
 ### Writing tests for your plugin
-We are sure you love tests as much as we do. That's why we want to make it as easy as possible for you to write tests. 
+We are sure you love tests as much as we do. That's why we want to make it as easy as possible for you to write tests.
 
 #### Generating a test class
 
-To create a test we highly recommend to use our [cli tool](#cli-tool). You can create a new test to executing the following command:
+To create a test we highly recommend using our [cli tool](#cli-tool). You can create a new test to executing the following command:
 
 `./console generate:test`
 
@@ -110,13 +110,13 @@ Enter your plugin name as well as a test name and you can already start writing 
 
 #### Creating different kind of tests
 
-You can write three different types of tests for your plugin: 
+You can write three different types of tests for your plugin:
 
  * Unit test
  * Integration test
  * Integration test that needs a database
 
-By default we create a unit test for you. But there is an optional option to directly create a different kind of test:
+By default, we create a unit test for you. But there is an optional option to directly create a different kind of test:
 
  * `./console generate:test -t "unit"`
  * `./console generate:test -t "integration"`
@@ -128,13 +128,13 @@ To execute all your plugin tests simply run the following command:
 
 `./console tests:run PluginName`
 
-Do not forget to replace `PluginName` with your plugin name. Note: The plugin name is case sensitive. 
+Do not forget to replace `PluginName` with your plugin name. Note: The plugin name is case-sensitive.
 
 You can run a single test file as well by executing the following command:
 
 `./console tests:run Testname`
 
-The testname is case sensitive as well. 
+The testname is case-sensitive as well.
 
 ### How to create a Controller
 
@@ -142,8 +142,8 @@ Start by using the CLI tool to create the needed files: `./console generate:cont
 
 Each public method within the controller will be accessible over the Piwik UI.
 
-MVC intro, uses of a controller 
-#### Useful helpers 
+MVC intro, uses of a controller
+#### Useful helpers
 parent:: methods, checkUser* auth helpers, ...
 ### How to add settings to the plugin
 ### How to use other APIs

@@ -36,7 +36,7 @@ If you do use `|raw`, make sure what you're inserting has been properly escaped.
 
 In your JavaScript, be careful when using the `$.html` method to insert HTML into the DOM. Make sure the string you are inserting came from Piwik and has been escaped.
 
-If you know that the text your inserting shouldn't be HTML, then **do not use `$.html()`**, instead use `$.text()` or `$.val()`. For example:
+If you know that the text you're inserting shouldn't be HTML, then **do not use `$.html()`**, instead use `$.text()` or `$.val()`. For example:
 
 ```javascript
 var ajaxData = getDataFromAjax();

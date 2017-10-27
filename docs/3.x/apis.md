@@ -3,7 +3,7 @@ category: DevelopInDepth
 ---
 # Piwik APIs
 
-Piwik APIs serve two purposes: they serve the data used in controller methods and they [automatically expose plugin functionality through an HTTP API](/guides/piwiks-reporting-api).
+Piwik APIs serve two purposes: they serve the data used in controller methods, and they [automatically expose plugin functionality through an HTTP API](/guides/piwiks-reporting-api).
 
 In this guide, we discuss the first purpose.
 

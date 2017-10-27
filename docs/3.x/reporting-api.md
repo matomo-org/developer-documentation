@@ -3,7 +3,7 @@ category: API Reference
 ---
 # Reporting API Reference
 
-This is the Piwik API Reference. It lists all functions that can be called, documents the parameters, and links to examples for every call in the various formats. 
+This is the Piwik API Reference. It lists all functions that can be called, documents the parameters, and links to examples for every call in the various formats.
 
 ## API Request
 
@@ -16,7 +16,7 @@ This is the Piwik API Reference. It lists all functions that can be called, docu
     *   if you want to get data for all websites, set _idSite=all_
 
 *   **period** &mdash; the period you request the statistics for. Can be any of: _day_, _week_, _month_, _year_ or _range_. All reports are returned for the dates based on the website's time zone.
- 
+
     *   **day** returns data for a given day.
     *   **week** returns data for the week that contains the specified 'date'
     *   **month** returns data for the month that contains the specified 'date'
@@ -75,7 +75,7 @@ Here is an overview of the parameters you can add to any API request, where appl
 
 *   **flat**; some API functions have a parameter 'expanded', which means that the data is hierarchical. For such API function, if 'flat' is set to 1, the returned data will contain the flattened view of the table data set. The children of all first level rows will be aggregated under one row. This is useful for example to see all Custom Variables names and values at once, for example, [Piwik forum user status](https://demo.piwik.org/index.php?module=API&method=CustomVariables.getCustomVariables&idSite=7&period=month&date=yesterday&format=xml&token_auth=anonymous&flat=1), or to see the full URLs not broken down by directory or structure.
 
-*   **label**; this parameter can be used to search only for the row matching a given label. When specified, the report data will be filtered and return only the row where the row label matches the specified parameter. For example you can set &label=Nice%20Keyword to keep only the row with a label "Nice Keyword".
+*   **label**; this parameter can be used to search only for the row matching a given label. When specified, the report data will be filtered and return only the row where the row label matches the specified parameter. For example, you can set &label=Nice%20Keyword to keep only the row with a label "Nice Keyword".
 There are also generic filters you can choose to apply on all APIs that return web analytics reports. For example, there is a filter for sorting by column, define start and number of rows to return, a filter to only return rows matching a given string,
 
 *   **pivotBy**; this parameter can be used to create a pivot table of a report using a specified dimension. Pivoting a report will intersect a report with another report and display a single metric for values along two dimensions. To pivot a report, this query parameter must be set to the ID of the dimension to pivot by. For example, **queryParam=Referrers.Keyword** would pivot against the Keyword dimension.
@@ -128,7 +128,7 @@ You can also issue the Bulk request as a HTTP POST request to work around any re
 
 ## Authenticate to the API via token_auth parameter
 
-In the example above, the request works because the statistics are public (the _anonymous_ user has a _view_ access to the website). By default in Piwik your statistics are private. In the case that you cannot have your statistics to be public:
+In the example above, the request works because the statistics are public (the _anonymous_ user has a _view_ access to the website). By default, in Piwik your statistics are private. In the case that you cannot have your statistics to be public:
 
 *   when you access your Piwik installation you are requested to log in
 *   when you call the API over http you need to authenticate yourself
@@ -140,7 +140,7 @@ Then you simply have to add the parameter **&token\_auth=YOUR\_TOKEN** at the en
 
 ## API Response: Metric Definitions
 
-Here is a list of metrics returned by the API and their definition. 
+Here is a list of metrics returned by the API and their definition.
 
 #### General Metrics
 

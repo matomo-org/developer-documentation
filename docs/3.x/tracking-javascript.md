@@ -25,12 +25,12 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `trackVisibleContentImpressions ( checkOnScroll, timeIntervalInMs )` - Scans the entire DOM for all content blocks as soon as the page is loaded. It tracks an impression only if a content block is actually visible.
 *   `trackContentImpressionsWithinNode( domNode )` - Scans the given DOM node and its children for content blocks and tracks an impression for them if no impression was already tracked for it.
 *   `trackContentInteractionNode( domNode, contentInteraction )` - Tracks an interaction with the given DOM node / content block.
-*   `trackContentImpression( contentName, contentPiece, contentTarget )` - Tracks a content impression using the specified values. 
+*   `trackContentImpression( contentName, contentPiece, contentTarget )` - Tracks a content impression using the specified values.
 *   `trackContentInteraction( contentInteraction, contentName, contentPiece, contentTarget )` - Tracks a content interaction using the specified values.
 *   `logAllContentBlocksOnPage` - Log all found content blocks within a page to the console. This is useful to debug / test content tracking.
-*   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use pseudo click-handler (treat middle click and open contextmenu as left click). A right click (or any click that opens the context menu) on a link will be tracked as clicked even if "Open in new tab" is not selected. If "false" (default), nothing will be tracked on open context menu or middle click. 
-*   `enableHeartBeatTimer( delayInSeconds )` - Install a Heart beat timer that will regularly send requests to Piwik in order to better measure the time spent on the page. These requests will be sent only when the user is actively viewing the page (when the tab is active and in focus). These requests will not track additional actions or pageviews. By default, `delayInSeconds` is set to 15 seconds. 
-* `enableCrossDomainLinking()` - Enables cross domain linking. By default, the visitor ID that identifies a unique visitor is stored in the browser's first party cookies. This means the cookie can only be accessed by pages on the same domain. If you own multiple domains and would like to track all the actions and pageviews of a specific visitor into the same visit, you may enable [cross domain linking (learn more)](https://piwik.org/faq/how-to/faq_23654/) . Whenever a user clicks on a link it will append a URL parameter `pk_vid` to the clicked URL which forwards the current visitor ID value to the page of the different domain. 
+*   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use pseudo click-handler (treat middle click and open contextmenu as left click). A right click (or any click that opens the context menu) on a link will be tracked as clicked even if "Open in new tab" is not selected. If "false" (default), nothing will be tracked on open context menu or middle click.
+*   `enableHeartBeatTimer( delayInSeconds )` - Install a Heart beat timer that will regularly send requests to Piwik in order to better measure the time spent on the page. These requests will be sent only when the user is actively viewing the page (when the tab is active and in focus). These requests will not track additional actions or pageviews. By default, `delayInSeconds` is set to 15 seconds.
+* `enableCrossDomainLinking()` - Enables cross domain linking. By default, the visitor ID that identifies a unique visitor is stored in the browser's first party cookies. This means the cookie can only be accessed by pages on the same domain. If you own multiple domains and would like to track all the actions and pageviews of a specific visitor into the same visit, you may enable [cross domain linking (learn more)](https://piwik.org/faq/how-to/faq_23654/) . Whenever a user clicks on a link it will append a URL parameter `pk_vid` to the clicked URL which forwards the current visitor ID value to the page of the different domain.
 * `setCrossDomainLinkingTimeout( timeout )` - By default, the two visits across domains will be linked together when the link is clicked and the page is loaded within a 180 seconds timeout window.`
 
 ### Configuration of the Tracker Object
@@ -40,7 +40,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setCustomUrl( string )` - Override the page's reported URL
 *   `setReferrerUrl( string )` - Override the detected Http-Referer
 *   `setSiteId( integer )` - Specify the website ID. Redundant: can be specified in `getTracker()` constructor.
-*   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. http://piwik.example.org/ or https://example.org/piwik/. This function is only useful when the 'Overlay' report is not working. By default you do not need to use this function.
+*   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. http://piwik.example.org/ or https://example.org/piwik/. This function is only useful when the 'Overlay' report is not working. By default, you do not need to use this function.
 *   `setTrackerUrl( string )` - Specify the Piwik server URL. Redundant: can be specified in `getTracker()` constructor.
 * `getPiwikUrl` - Returns the Piwik server URL.
 * `getCurrentUrl` - Returns the current url of the page that is currently being visited. If a custom URL was set before calling this method, the custom URL will be returned.
@@ -89,7 +89,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 Piwik provides [ecommerce analytics](https://piwik.org/docs/ecommerce-analytics/) that let you measure items added to carts, and learn detailed metrics about abandoned carts and purchased orders.
 
 *   `setEcommerceView( productSKU, productName, categoryName, price )` - Sets the current page view as a product or category page view. When you call `setEcommerceView` it must be followed by a call to `trackPageView` to record the product or category page view.
-*   `addEcommerceItem( productSKU, [productName], [productCategory], [price], [quantity] )` - Adds a product into the ecommerce order. Must be called for each product in the order. 
+*   `addEcommerceItem( productSKU, [productName], [productCategory], [price], [quantity] )` - Adds a product into the ecommerce order. Must be called for each product in the order.
 *   `trackEcommerceCartUpdate( grandTotal )` - Tracks a shopping cart. Call this javascript function every time a user is adding, updating or deleting a product from the cart.
 *   `trackEcommerceOrder( orderId, grandTotal, [subTotal], [tax], [shipping], [discount] )` - Tracks an Ecommerce order, including any ecommerce item previously added to the order. `orderId` and `grandTotal` (ie. revenue) are required parameters.
 
@@ -102,7 +102,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 *   `deleteCookies()` - Deletes the tracking cookies currently currently set (this is useful when [creating new visits](https://piwik.org/faq/how-to/#faq_187))
 *   `hasCookies()` - Returns whether cookies are enabled and supported by this browser.
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
-*   `setCookieDomain( domain )` - the default is the document domain; if your web site can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
+*   `setCookieDomain( domain )` - the default is the document domain; if your website can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
 *   `setCookiePath( path )` - the default is '/'.
 *   `setSecureCookies( book )` - set to true to enable the Secure cookie flag on all first party cookies. This should be used when your website is only available under HTTPS so that all tracking cookies are always sent over secure connection.
 *   `setVisitorCookieTimeout( seconds )` - the default is 13 months
