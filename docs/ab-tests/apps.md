@@ -17,7 +17,7 @@ via the [Tracking HTTP API](/api-reference/tracking-api) or any other [Piwik Tra
 
 First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://piwik.org/docs/ab-testing/) to learn more.
 
-When you are asked on which target pages the experiment should be activated, we recommend to select "Visitors enter this experiment on any page".
+When you are asked on which target pages the experiment should be activated, we recommend selecting "Visitors enter this experiment on any page".
 
 ## Implementing an experiment
 

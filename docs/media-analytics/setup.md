@@ -19,7 +19,7 @@ If the System Check displays a warning for "Writable Piwik.js" then [learn below
 ## Tracking HTML5 videos
 
 The tracking of HTML5 video works automatically. However, you may not be tracking accurate titles for your video by default. 
-We do recommend to [set a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<video>` elements:
+We do recommend [setting a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<video>` elements:
 
 ```html
 <video data-piwik-title="My Video Title">...</video>
@@ -30,7 +30,7 @@ This also works when you are using an HTML5 based video player like VideoJS.
 ## Tracking HTML5 audios
 
 The tracking of HTML5 audio works automatically. However, you may not be tracking accurate titles for your audio by default. 
-We do recommend to [set a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<audio>` elements:
+We do recommend [setting a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<audio>` elements:
 
 ```html
 <audio data-piwik-title="My Audio Title">...</audio>
@@ -39,7 +39,7 @@ We do recommend to [set a `data-piwik-title` attribute](/guides/media-analytics/
 ## Tracking JW Player videos
 
 The tracking of JW Player works automatically. However, you may not be tracking accurate titles for your video by default. 
-We do recommend to specify a title in the `setup` method of your video:
+We do recommend specifying a title in the `setup` method of your video:
 
 ```js
 jwplayer("myDiv").setup({
@@ -51,7 +51,7 @@ jwplayer("myDiv").setup({
 ## Tracking Flowplayer videos
 
 The tracking of Flowplayer works automatically. However, you may not be tracking accurate titles for your video by default. 
-If you use the JavaScript embed method, we recommend to specify a title in the `flowplayer` method of your video:
+If you use the JavaScript embed method, we recommend specifying a title in the `flowplayer` method of your video:
 
 ```js
 flowplayer("#player", {
@@ -68,7 +68,7 @@ If you embed Flowplayer using the video element, please read the instructions fo
 set a title using the `data-piwik-title` or `title` attribute.
 
 Please note that we are currently only supporting HTML5 videos for Flowplayer. If you are tracking flash videos using flowplayer,
-please get in touch with us and we add support for it for you. If you are using flash because of HLS streams, you might want
+please get in touch with us, and we add support for it for you. If you are using flash because of HLS streams, you might want
 to consider using the hlsjs plugin so HTML5 will be used instead of flash.
 
 ## Tracking Vimeo videos
@@ -119,7 +119,7 @@ When your Settings > System Check reports that "The Piwik JavaScript tracker fil
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
 1. Make the `piwik.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
-We recommend to run the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
+We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
 2. or Load the MediaAnalytics tracker file manually in your website by adding in all your pages ideally in the `<head>`: 
    `<script src="https://your-piwik-domain/plugins/MediaAnalytics/tracker.min.js">`
 
@@ -130,7 +130,7 @@ Yes, there are:
 * An additional HTTP request is needed to load your website which increases your page load time
 * If your `piwik.js` ever becomes writable, the MediaAnalytics tracker would be loaded twice (in such a case the tracker notices it was already initialized and won't track everything twice)
 
-If possible, we recommend to make the `piwik.js` file writable.
+If possible, we recommend making the `piwik.js` file writable.
 
 ## What to read next
 

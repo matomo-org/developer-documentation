@@ -5,7 +5,7 @@ title: Setting up
 # Setting up Heatmap & Session Recording
 
 In this guide you will learn how to customize the tracking of [Heatmaps & Session Recordings](https://www.heatmap-analytics.com/).
-By default, you do not need change your tracking code and Piwik takes care of everything. However, you can adjust the tracking
+By default, you do not need to change your tracking code and Piwik takes care of everything. However, you can adjust the tracking
 in various ways.
 
 ## Embedding the Heatmap & Session Recording JavaScript Tracker
@@ -46,7 +46,7 @@ You can mask an individual form field like this:
 <input type="text" name="sensitivedata" data-piwik-mask>
 ```
 
-Alternatively, you can mask a set of form fields within within your web page like this:
+Alternatively, you can mask a set of form fields within your web page like this:
 
 ```html
 <div data-piwik-mask>

@@ -12,7 +12,7 @@ The Media Analytics plugin currently supports out of the box the HTML5, Vimeo an
  a different media player for your videos and audio, you can measure them by registering your own player. 
 
 If you need help implementing Media Analytics for your media player or if you wish to share your implementation with us, [please contact us](https://piwik.org/support/).
-If you work with us. we will be able to maintain it and ensure it always work in the future.
+If you work with us. we will be able to maintain it and ensure it always works in the future.
 
 ### The raw skeleton
 
@@ -192,7 +192,7 @@ function MyPlayer (node, mediaType) {
 
 For more information about all the available methods have a look at the [Media Analytics JavaScript Tracker API reference](/guides/media-analytics/reference).
 
-Once you have added support for your custom player analytics, please [contact us](https://piwik.org/support/) and we will try to help you maintain it in the future.
+Once you have added support for your custom player analytics, please [contact us](https://piwik.org/support/), and we will try to help you maintain it in the future.
 
 ## Tracking a new player in mobile apps and desktop apps
 
@@ -212,9 +212,9 @@ These HTTP Tracking API parameters can be used to track the usage of media:
 * `ma_le` - The duration (the length) of the media in seconds. For example if a video is 90 seconds long, the value should be `90`.  
 * `ma_ps` - The progress / current position within the media. Defines basically at which position within the total length the user is currently playing.
 * `ma_ttp` - Defines after how many seconds the user has started playing this media. For example a user might have seen the poster of the video for 30 seconds before a user actually pressed the play button.
-* `ma_w`  - The resolution width of the media in pixels. Only recommended to be set for videos.
-* `ma_h`  - The resolution height of the media in pixels. Only recommended to be set for videos.
-* `ma_fs` - Should be `0` or `1` and defines whether the media is currently viewed in full screen. Only recommended to be set for videos.
+* `ma_w`  - The resolution width of the media in pixels. Only recommended being set for videos.
+* `ma_h`  - The resolution height of the media in pixels. Only recommended being for videos.
+* `ma_fs` - Should be `0` or `1` and defines whether the media is currently viewed in full screen. Only recommended being set for videos.
 
 ### Example request to track a media impression 
 
@@ -233,7 +233,7 @@ As soon as a new video or audio is playing you need to reset all parameters and 
 https://yourpiwikdomain/piwik.php?ma_st=5&ma_ttp=12&ma_fs=1&ma_w=500&ma_h=300&ma_ps=34&ma_le=100ma_id=8C1gOQ9CPOiQfzft&ma_ti=MediaName&ma_pn=playerName&ma_mt=video&ma_re=https%3A%2F%2Fplayer.example.org%2Fvideo%2F1111111&idsite=1&rec=1&r=077275&h=15&m=33&s=48&url=http%3A%2F%2Fexample.piwik&...
 ```
 
-While a media is playing we recommend to send an update regularly, for example every 5 seconds. Most of the parameters
+While a media is playing we recommend sending an update regularly, for example every 5 seconds. Most of the parameters
 usually remain the same when sending updated media progress requests, but the current media position (`ma_ps`) and the played
 media time (`ma_st`) should change with every request.
 
