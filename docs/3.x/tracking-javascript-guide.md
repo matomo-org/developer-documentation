@@ -793,7 +793,7 @@ The example below shows how to use `addTracker`  method to track the same analyt
 
 ### Customise one of the tracker object instances
 
-Note: by default any tracker added via `addTracker` are configured the same as the main default tracker object (regarding cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Piwik tracker object instance that were added via `addTracker`, you may call the `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance.
+Note: by default any tracker added via `addTracker` is configured the same as the main default tracker object (regarding cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Piwik tracker object instances that was added via `addTracker`, you may call the `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance.
 
 ### Duplicate the tracking data when calling the JavaScript API directly (not via `_paq.push`)
 
