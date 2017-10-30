@@ -48,13 +48,13 @@ public function getJavaScriptFiles(&$files)
 ### Asset merging and compiling
 
 In production environments, Piwik will concatenate all JavaScript files into one and minify it. [LESS](http://lesscss.org/) files will be compiled into CSS and merged into one CSS file. Piwik does not merge and minify JavaScript and CSS files on every request as it takes a long time to do this. They are only merged on certain events, such as when enabling a new plugin.
-  
+
 To make sure your changes will be actually visible and executed you need to enable the development mode in case you have not done yet:
 
 ```
 ./console development:enable
 ```
-  
+
 This way JavaScript files won't be merged and you can debug the original JavaScript source code.
 
 ## Special HTML Elements
@@ -203,3 +203,4 @@ For example:
 * To learn **about creating new report visualizations** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.
 * To learn **more about the asset merging system** read this [blog post](https://piwik.org/blog/2010/07/making-piwik-ui-faster/) by the system's author.
 * To learn **more about theming** read our [Theming](/guides/theming) guide.
+* To learn **more about UI components and styles** read our [Views](/guides/views) guide.
