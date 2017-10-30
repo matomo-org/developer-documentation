@@ -213,7 +213,7 @@ These HTTP Tracking API parameters can be used to track the usage of media:
 * `ma_ps` - The progress / current position within the media. Defines basically at which position within the total length the user is currently playing.
 * `ma_ttp` - Defines after how many seconds the user has started playing this media. For example a user might have seen the poster of the video for 30 seconds before a user actually pressed the play button.
 * `ma_w`  - The resolution width of the media in pixels. Only recommended being set for videos.
-* `ma_h`  - The resolution height of the media in pixels. Only recommended being for videos.
+* `ma_h`  - The resolution height of the media in pixels. Only recommended being set for videos.
 * `ma_fs` - Should be `0` or `1` and defines whether the media is currently viewed in full screen. Only recommended being set for videos.
 
 ### Example request to track a media impression 
