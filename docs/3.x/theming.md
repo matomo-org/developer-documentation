@@ -22,7 +22,7 @@ After you enter the appropriate information, a theme will be created for you in 
 ## Simple theming
 
 Piwik uses [LESS (Leaner CSS)](http://lesscss.org/) to compose CSS files, allowing for simple theming very easily.
- 
+
 ### Colors and fonts
 
 Colors used in CSS are simple to override because they are often defined as [Less variables](http://lesscss.org/features/#variables-feature).
@@ -104,7 +104,7 @@ To add JavaScript files, add them as an array to to the **javascript** property 
     "javascript": ["javascripts/myJavaScriptFile.js", "javascripts/myOtherJavaScriptFile.js"]
 }
 ```
-    
+
 ### Theming colors used in JavaScript & PHP
 
 Some colors are only used in JavaScript and in PHP. We've made it possible for those colors to be specified through CSS, but the process is a bit different than setting colors of normal HTML elements.
@@ -193,7 +193,7 @@ Here is a list of all named colors in Piwik:
 
 * _Namespace_: **realtime-map**: contains colors for the [Realtime Visitors Map](https://piwik.org/docs/real-time-visitor-world-map/).
 
-  * **white-bg**: The background color for the map when using the _light theme_. 
+  * **white-bg**: The background color for the map when using the _light theme_.
   * **white-fill**: The country/region fill color for the map when using the _light theme_.
   * **black-bg**: The background color for the map when using the _dark theme_.
   * **black-fill**: The country/region fill color for the map when using the _dark theme_.
@@ -264,3 +264,4 @@ plugins/[MyThemePlugin]/templates/plugins/[OverriddenPlugin]/[overriddenTemplate
 
 * To learn **more about creating new report visualizations** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.
 * To learn **more about writing JavaScript for Piwik plugins and themes** read our [Working with Piwik's UI](/guides/working-with-piwiks-ui) guide.
+* To learn **more about UI components and styles** read our [Views](/guides/views) guide.

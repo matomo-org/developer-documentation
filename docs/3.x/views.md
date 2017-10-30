@@ -40,3 +40,10 @@ Template files in Piwik have a very specific naming convention. If the file cont
 ### Twig functions and filters
 
 The [View](/api-reference/Piwik/View) class adds several filters and functions before rendering a template. It will also define properties that the template can use. To learn exactly what's defined, read the [View class docs](/api-reference/Piwik/View).
+
+## UI Components and Styles
+
+Piwik has a UI demo page available. This page is intended to show all the UI components and styles available to use in Piwik. To view the demo page:
+
+1. Go to the Administration page (gear icon)
+2. In the navigation menu, under _Development_, select  _UI Demo_
