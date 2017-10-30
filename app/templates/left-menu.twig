@@ -28,7 +28,7 @@
 
                             <ul class="nav flex-column">
                                 {% for subItem in item.subItems %}
-                                    {% set menuClass = (subItem.getMenuUrl in currentPath) ? 'nav-link active' : 'nav-link' %}
+                                    {% set menuClass = (subItem.getMenuUrl == currentPath) ? 'nav-link active' : 'nav-link' %}
                                     <li class="nav-item" title="{{ subItem.title|striptags|raw }}">
                                         <a class="{{ menuClass }}" href="{{ subItem.menuUrl|completeUrl }}">
                                             {{ subItem.menuTitle|raw }}
