@@ -7,6 +7,12 @@
     {% if urlIfAvailableInNewerVersion %}
         <link rel="canonical" href="https://{{ constant('DOCS_DOMAIN') }}{{ urlIfAvailableInNewerVersion }}">
     {% endif %}
+    <meta property="og:title" content="{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Piwik Analytics - Developer Docs - v{{ selectedPiwikVersion }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://{{ constant('DOCS_DOMAIN') }}{{ currentPath }}" />
+    <meta property="og:image" content="https://piwik.org/wp-content/themes/piwik/assets/img/media/piwik.png" />
+    <meta property="og:site_name" content="Piwik Analytics - Developer Docs" />
+
     <link href="/dist/css/style.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

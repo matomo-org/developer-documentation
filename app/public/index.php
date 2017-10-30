@@ -72,7 +72,6 @@ $container['view'] = function ($container) {
     $twig = $view->getEnvironment();
     helpers\Twig::registerFilter($twig);
 
-    $view->getEnvironment()->addGlobal('urlIfAvailableInNewerVersion', false);
     $view->getEnvironment()->addGlobal('availablePiwikVersions', Environment::getAvailablePiwikVersions());
     $view->getEnvironment()->addGlobal('selectedPiwikVersion', Environment::getPiwikVersion());
     $view->getEnvironment()->addGlobal('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
