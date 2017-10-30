@@ -38,7 +38,7 @@ API requests are processed in the following way:
 
 ### API methods
 
-The Reporting API invokes methods that are found in each plugin's **API** class. However the following methods cannot be called from the HTTP API:
+The Reporting API invokes methods that are found in each plugin's **API** class. However, the following methods cannot be called from the HTTP API:
 
 - private and protected methods
 - methods whose documentation contain a `@ignore` tag
@@ -97,7 +97,7 @@ This is the list of filters in the order in which they are applied:
 10. **SafeDecodeLabel**: Urldecodes and then sanitizes `label` column values. This filter is always applied.
 11. **Queued Filters**: All of a `DataTable`'s queued filters are applied at this point.
     - `disable_queued_filters`: if set to `1`, queued filters will not be applied
-12. **[ColumnDelete](/api-reference/Piwik/DataTable/Filter/ColumnDelete)**: Removes columns based an a exclusion or inclusion list.
+12. **[ColumnDelete](/api-reference/Piwik/DataTable/Filter/ColumnDelete)**: Removes columns based on an exclusion or inclusion list.
     - `hideColumns` or `showColumns`: comma separated list of column names to hide or keep (the filter is applied if one is set)
 13. **LabelFilter**: This filter will remove all rows except the one (or ones) specified by the `label` query parameter. Only applied if the `label` query parameter is set.
     - `label`: can be a single value or a path to a row in a subtable. To descend into subtables, the value should contain the `>` character, for example, `urldir>urlsubdir>index`. Can also be an array of values, for example, `label[]=arg1&label[]=arg2`.
@@ -138,7 +138,7 @@ These methods can be used by third party applications that provide an interface 
 - `API.getMetadata` can be used to get more information about a single report
 - `API.getProcessedReport` can be used to get the metadata of a single report along with the report's data.
 
-Report metadata can also be used within Piwik for features that operate on report(s) specified by the user. For example, the **ImageGraph** plugin, which outputs an image of a graph using report data, uses report metadata values as hints for how to draw the output graph. The **ScheduledReports** plugin also uses report metadata in a similar way. 
+Report metadata can also be used within Piwik for features that operate on report(s) specified by the user. For example, the **ImageGraph** plugin, which outputs an image of a graph using report data, uses report metadata values as hints for how to draw the output graph. The **ScheduledReports** plugin also uses report metadata in a similar way.
 
 ### Row Evolution
 
@@ -157,7 +157,7 @@ This example uses the following API requests:
 - module=API&method=UserSettings.getBrowser&format=XML&idSite=7&period=day&date=2013-11-24&expanded=1
 - module=API&method=VisitorInterest.getNumberOfVisitsPerVisitDuration&format=XML&idSite=7&period=day&date=2013-11-24&expanded=1
 
-**_Note: The separate API methods are executed synchronously, so for long running API methods, using a bulk request may be a bad idea._**
+**_Note: The separate API methods are executed synchronously, so for long-running API methods, using a bulk request may be a bad idea._**
 
 ### Other Methods
 

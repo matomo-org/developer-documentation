@@ -5,9 +5,9 @@ next: tests-ui
 ---
 # PHP Tests
 
-As explained in the previous guide, Piwik's test suite contains PHP tests and [UI tests](/guides/tests-ui). The PHP test suite is written and run using [PHPUnit](https://phpunit.de). 
+As explained in the previous guide, Piwik's test suite contains PHP tests and [UI tests](/guides/tests-ui). The PHP test suite is written and run using [PHPUnit](https://phpunit.de).
 
-If you're creating a new plugin, you may find it beneficial to engage in [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) or at least to verify your code is correct with tests. With tests you'll be able to ensure that your code works and you'll be able to ensure the changes you make don't cause regressions.
+If you're creating a new plugin, you may find it beneficial to engage in [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) or at least to verify your code is correct with tests. With tests, you'll be able to ensure that your code works and you'll be able to ensure the changes you make don't cause regressions.
 
 Before you start make sure you have enabled development mode:
 
@@ -60,9 +60,9 @@ tests all plugins will be loaded allowing you to write actual integration tests.
 
 ## Running tests
 
-To run a test, use the command `tests:run` which allows you to execute a test suite, a specific file, all files within a folder or a group of tests. 
+To run a test, use the command `tests:run` which allows you to execute a test suite, a specific file, all files within a folder or a group of tests.
 
-To verify whether the created test works we will run it as follows: 
+To verify whether the created test works we will run it as follows:
 
 ```bash
 $ ./console tests:run WidgetsTest
@@ -74,13 +74,13 @@ This will run all tests having the group `WidgetsTest`. As other tests can use t
 $ ./console tests:run plugins/Insights/tests/Unit/Widgets.php
 ```
 
-If you want to run all tests within your plugin pass the name of your plugin as an argument: 
+If you want to run all tests within your plugin pass the name of your plugin as an argument:
 
 ```bash
 $ ./console tests:run insights
 ```
 
-Of course you can also define multiple arguments:
+Of course, you can also define multiple arguments:
 
 ```bash
 $ ./console tests:run insights WidgetsTest

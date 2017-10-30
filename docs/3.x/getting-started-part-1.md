@@ -15,15 +15,15 @@ If you're a Piwik user and need Piwik to do something it doesn't do; or maybe yo
 
 This guide will show you:
 
-- **how to get your development environment setup,**
+- **how to get your development environment set up,**
 - **how to create a new Piwik Plugin,**
 - **and where to go next to continue building your extension.**
 
 **Guide assumptions**
 
-This guide assumes that you can code in PHP and can setup your own local webserver. If you do not have these skills, you won't be able to understand this guide.
+This guide assumes that you can code in PHP and can set up your own local webserver. If you do not have these skills, you won't be able to understand this guide.
 
-There are many resources on the internet to help you learn PHP. We recommend reading [these tutorials](https://devzone.zend.com/6/). To learn how to setup a web server read the documentation for your preferred web server software (for example [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/)).
+There are many resources on the internet to help you learn PHP. We recommend reading [these tutorials](https://devzone.zend.com/6/). To learn how to set up a web server read the documentation for your preferred web server software (for example [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/)).
 
 ## Piwik Plugins and Piwik Core
 
@@ -42,7 +42,7 @@ You can accomplish the following by creating a plugin:
 - show existing reports in a new way
 - send scheduled reports through new mediums or in new formats
 
-These are only a few of the possibilities — it is not possible to categorize all of the existing plugins' functionality simply because of the vast differences in their use cases. For example, the [Annotations](https://piwik.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](https://piwik.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
+These are only a few of the possibilities — it is not possible to categorize all the existing plugins' functionality simply because of the vast differences in their use cases. For example, the [Annotations](https://piwik.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](https://piwik.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
 
 **Whatever ideas your imagination cooks up, we think you can implement them with Piwik.**
 
@@ -67,12 +67,12 @@ The following tools aren't required for this guide, but you may find them useful
 
 ### Command to get the tools on Linux
 
-If your computer is using a Debian based operating system, you can install all the required packages with the following command: 
+If your computer is using a Debian based operating system, you can install all the required packages with the following command:
 
 <!-- NOTE TO YOU see below -->
 
     $ sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml php7.0-mbstring
-    
+
 <!-- NOTE TO YOU :-) Please also update the instructions here: https://piwik.org/docs/requirements/ -->
 
 
@@ -86,30 +86,30 @@ Open a terminal, `cd` into the directory where you want to install Piwik, and th
     $ cd piwik
     $ git submodule update --init
 
-### Get & install Composer 
+### Get & install Composer
 
-Next, we will install all the libraries that Piwik needs using Composer. 
+Next, we will install all the libraries that Piwik needs using Composer.
 
  * Follow the [download instructions for Composer](https://getcomposer.org/download/) in order to get composer on your machine
- 
+
  * Then run this command to download all PHP packages that Piwik requires:
 
         $ php composer.phar install
-    
- On Windows you will likely need to add an option `--no-script`:
+
+ On Windows, you will likely need to add an option `--no-script`:
 
         $ php composer.phar install --no-script
 
 ### Get a web server
 
-Now that you've got a copy of Piwik, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself. 
+Now that you've got a copy of Piwik, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself.
 
 If your PHP version is greater than 5.4, you can also use [PHP's built-in web server](https://secure.php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
 
     $ php -S 0.0.0.0:8000
 
 Piwik should now be available at [http://localhost:8000/](http://localhost:8000/). To stop the web server, just hit `Ctrl+C`. Remember that PHP's built in web server is only suitable for development. It should **never** be used in production.
-    
+
 ### Install Piwik
 
 Once Piwik is running, open it in your browser and follow the instructions to complete the installation.

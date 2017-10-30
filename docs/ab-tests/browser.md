@@ -212,7 +212,7 @@ As already mentioned earlier in this guide: it is highly recommended to load the
 
 #### Deciding where to place the experiment code
 
-We recommend to paste the experiment JavaScript code directly after the HTML element you want to change.
+We recommend pasting the experiment JavaScript code directly after the HTML element you want to change.
 
 If you can't put the JavaScript code into the middle of your HTML, you can also put the code directly into the HTML 
 `<head>` element, and perform the actual change as soon as the DOM is ready:
@@ -259,12 +259,12 @@ Alternatively you can use CSS classes to change multiple CSS styles at once:
 #### Use Vanilla JavaScript instead of jQuery or other libraries
 
 If possible, try to use native JavaScript code in your variations. Using `document.getElementById('btn')` will be faster 
-than `jQuery('#btn')`. If you need to support old browsers, we recommend to test that variations get activated
+than `jQuery('#btn')`. If you need to support old browsers, we recommend testing that variations get activated
 correctly in these browsers.
 
 #### Move your experiment code out of a tag manager
 
-We recommend to move the tracking code out of a tag manager if you use one at all, and instead paste the experiment code directly 
+We recommend moving the tracking code out of a tag manager if you use one at all, and instead paste the experiment code directly 
 into your website. If you cannot move it out of your tag manager, make sure that your experiment is set to load synchronously in the tag manager.
 
 #### Match the order of your experiments
@@ -306,7 +306,7 @@ In the Piwik Admin UI, when you edit an experiment you can configure on which pa
 However, you might have many different pages on which the experiment should be activated and these pages do not follow a specific 
 rule. In this case, you can use the `trigger` method to activate the experiment only on a certain set of pages. 
 
-First, we recommend to make sure that the experiment is configured to be activated on all pages. This can be done when 
+First, we recommend making sure that the experiment is configured to be activated on all pages. This can be done when 
 creating or when editing an experiment under "Target Pages". It should say "Activate experiment on any page / URL".
 
 Next, you might need to set a JavaScript variable that lets you identify a certain type of page. For example if you
@@ -345,7 +345,7 @@ is stored in a cookie for up to 365 days.
 
 ### Can I use redirects in A/B tests to test entirely different pages or layouts?
 
-Yes, you can. We recommend to do this by running an experiment on your [server](https://developer.piwik.org/guides/ab-tests/server#redirects).
+Yes, you can. We recommend doing this by running an experiment on your [server](https://developer.piwik.org/guides/ab-tests/server#redirects).
 Server side redirects have the advantage that they are more SEO friendly and faster to load for your users.
 It is highly recommended to send your users to a different page URL via an HTTP 302 redirect (temporary) and not via a 301 (permanent). 
 This way search engines know the redirect is temporary and that they should keep the original URL in their search index. 
@@ -421,7 +421,7 @@ file synchronously as recommended, you can be sure that `Piwik.AbTesting` will b
 ### Can I integrate the A/B Tests when I use a framework like Angular, Ember, ReactJS?
 
 Yes, you can run your A/B tests in any popular JavaScript framework. 
-We recommend to [create your experiment without _paq.push](#how-do-i-implement-an-experiment-without-using-_paqpush) as follows:
+We recommend [creating your experiment without _paq.push](#how-do-i-implement-an-experiment-without-using-_paqpush) as follows:
  
 ```js
 var Experiment = Piwik.AbTesting.Experiment;
@@ -506,7 +506,7 @@ When your Settings > System Check reports that "The Piwik JavaScript tracker fil
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
 1. Make the `piwik.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
-We recommend to run the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
+We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
 2. or Load the A/B Testing framework manually in your website by adding in all your pages in the `<head>`: 
    `<script src="//$yourPiwikDomain/plugins/AbTesting/tracker.min.js">`
    
@@ -515,7 +515,7 @@ Please note there are a few disadvantages to include the A/B testing framework f
 * An additional HTTP request is needed to load your website which increases your page load time
 * If your `piwik.js` ever becomes writable, the A/B Testing framework would be loaded twice (in such a case the tracker notices it was already initialized and won't initialize again)
 
-If possible, we recommend to make the `piwik.js` file writable.
+If possible, we recommend making the `piwik.js` file writable.
 
 
 ### My A/B test experiment is not working, how do I debug it?

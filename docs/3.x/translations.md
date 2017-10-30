@@ -12,9 +12,9 @@ Purpose:
 
 Audience: plugin developers
 
-Expected Result: 
+Expected Result:
 
-Notes: 
+Notes:
 
 What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 - plugin developers + otrance
@@ -40,21 +40,21 @@ Piwik is available in over 50 languages and comes with many translations. The co
 }
 ```
 
-A group usually represents the name of a plugin, in this case "MyPlugin". Within this group, all the tokens are listed on the left side and the related translations on the right side. 
+A group usually represents the name of a plugin, in this case "MyPlugin". Within this group, all the tokens are listed on the left side and the related translations on the right side.
 
 Translated text entries are allowed to contain `sprintf` parameters, for example, `"This translated text is uses a %s parameter"` or `"This translated text %1$s uses %2$s parameters."`. Every translate function will accept extra parameters that get passed to `sprintf` with the text.
 
 ### Building a translation key
 
-As you will later see to actually translate a word or a sentence you'll need to know the corresponding translation key. This key is built by combining a group and a token separated by an underscore. You can for instance use the key `MyPlugin_BlogPost` to get a translation of "Blog post". Defining a new key is as easy as adding a new entry to the "MyPlugin" group. 
+As you will later see to actually translate a word or a sentence you'll need to know the corresponding translation key. This key is built by combining a group and a token separated by an underscore. You can for instance use the key `MyPlugin_BlogPost` to get a translation of "Blog post". Defining a new key is as easy as adding a new entry to the "MyPlugin" group.
 
 ### Providing default translations
 
-To replace a key with translated text, Piwik will look into the JSON file for the current language. If no entry can be found, Piwik will use the english translation by default. Therefore, you should always provide a default translation in English for all keys in the file `en.json` (ie, `/plugins/MyPlugin/lang/en.json`). 
+To replace a key with translated text, Piwik will look into the JSON file for the current language. If no entry can be found, Piwik will use the english translation by default. Therefore, you should always provide a default translation in English for all keys in the file `en.json` (ie, `/plugins/MyPlugin/lang/en.json`).
 
 ### Reusing translations
 
-As mentioned Piwik comes with quite a lot of translations. You can and should reuse them but you are supposed to be aware that a translation key might be removed or renamed in the future. It is also possible that a translation key was added in a recent version and therefore is not available in older versions of Piwik. We do not currently announce any of such changes. Still, 99% of the translation keys do not change and it is therefore usually a good idea to reuse existing translations. Especially when you or your company would otherwise not be able to provide them. To find any existing translation keys go to <span style="font-variant: small-caps">Settings =&gt; Translation search</span> in your Piwik installation. The menu item will only appear if the [development mode](https://developer.piwik.org/guides/getting-started-part-1#enable-development-mode) is enabled. 
+As mentioned Piwik comes with quite a lot of translations. You can and should reuse them but you are supposed to be aware that a translation key might be removed or renamed in the future. It is also possible that a translation key was added in a recent version and therefore is not available in older versions of Piwik. We do not currently announce any of such changes. Still, 99% of the translation keys do not change and it is therefore usually a good idea to reuse existing translations. Especially when you or your company would otherwise not be able to provide them. To find any existing translation keys go to <span style="font-variant: small-caps">Settings =&gt; Translation search</span> in your Piwik installation. The menu item will only appear if the [development mode](https://developer.piwik.org/guides/getting-started-part-1#enable-development-mode) is enabled.
 
 ## Translations in PHP
 
@@ -86,7 +86,7 @@ or
 
 ## Translation in JavaScript
 
-Translating text in the browser is a bit more complicated than on the server. The browser doesn't have access to the translations and we don't want to send every translation file to every user just so a couple lines of text can be translated.
+Translating text in the browser is a bit more complicated than on the server. The browser doesn't have access to the translations, and we don't want to send every translation file to every user just so a couple lines of text can be translated.
 
 Piwik solves this problem by allowing plugins to define which translation keys should be available in the browser. It can then send only those translations in the current language to the browser.
 
@@ -115,10 +115,10 @@ var translatedText = _pk_translate('MyPlugin_BlogPost');
 
 ## Contributing translations to Piwik
 
-Did you know you can contribute [translations](https://piwik.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](https://www.transifex.com/piwik/piwik/). 
+Did you know you can contribute [translations](https://piwik.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](https://www.transifex.com/piwik/piwik/).
 
 
-## Getting translations for your plugin 
+## Getting translations for your plugin
 
 
 As long as you are [developing an open source plugin](https://developer.piwik.org/develop) hosted on Github, you may get in touch with us ([translations@piwik.org](mailto:translations@piwik.org?subject=Getting my Piwik plugin translated in other languages)) in order to get your plugin translated by the Piwik translators community.
@@ -127,7 +127,7 @@ You will need an account on [Transifex.com](http://transifex.com/). If you use T
 
 ### Importing your plugin’s strings in the translation platform
 
-While doing the initial setup for your plugin, we will import your english translation file (`en.json`) in your Github plugin repository and we will configure an auto-update for this file. Source strings on Transifex will automatically synchronise with your plugin repository. When you change any string in your `en.json` translation file, the updated English strings will automatically be imported in Transifex.
+While doing the initial setup for your plugin, we will import your english translation file (`en.json`) in your Github plugin repository, and we will configure an auto-update for this file. Source strings on Transifex will automatically synchronise with your plugin repository. When you change any string in your `en.json` translation file, the updated English strings will automatically be imported in Transifex.
 
 ### How to fetch your plugins translations into your repository
 

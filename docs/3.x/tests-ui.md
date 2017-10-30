@@ -9,7 +9,7 @@ Some might know a UI test under the term 'CSS test' or 'screenshot test'. When w
 
 **What is a UI test good for?**
 
-We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We do usually not write Unit or Integration tests for our controllers. For example we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/piwik/piwik) after each commit and compared with [our expected screenshots](https://github.com/piwik/piwik-ui-tests).
+We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/piwik/piwik) after each commit and compared with [our expected screenshots](https://github.com/piwik/piwik-ui-tests).
 
 ## Requirements
 
@@ -38,10 +38,10 @@ If you are running or writing UI tests for [Piwik Core](https://github.com/piwik
 
 The screenshot testing library's configuration resides in the `tests/UI/config.dist.js` file.
 If your development environment's PHP executable isn't named `php`
-or your dev Piwik install isn't at `http://localhost/` you may need to copy that file to 
+or your dev Piwik install isn't at `http://localhost/` you may need to copy that file to
 `tests/UI/config.js` and edit the contents of this file.
 
-For example if Piwik is setup at `http://localhost/piwik` modify the config.js such as:
+For example if Piwik is set up at `http://localhost/piwik` modify the config.js such as:
 ```
 exports.piwikUrl = "http://localhost/piwik/";
 exports.phpServer = {
@@ -80,7 +80,7 @@ describe("WidgetizePage", function () {
 
 ### What is happening here?
 
-This example declares a new set of [specs](https://en.wikipedia.org/wiki/Behavior-driven_development#Behavioural_specifications) by calling the method `describe(name, callback)` and within that a new spec by calling the method `it(description, func)`. Within the spec we load a URL and once loaded capture a screenshot of the whole page. The captured screenshot will be saved under the defined `screenshotName`. You might have noticed we write our UI tests in [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style. 
+This example declares a new set of [specs](https://en.wikipedia.org/wiki/Behavior-driven_development#Behavioural_specifications) by calling the method `describe(name, callback)` and within that a new spec by calling the method `it(description, func)`. Within the spec we load a URL and once loaded capture a screenshot of the whole page. The captured screenshot will be saved under the defined `screenshotName`. You might have noticed we write our UI tests in [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style.
 
 ### Capturing only a part of the page
 It is good practice to not always capture the full page. For example many pages contain a menu and if you change that menu, all your screenshot tests would fail. To avoid this you would instead have a separate test for your menu. To capture only a part of the page simply specify a [jQuery selector](https://api.jquery.com/category/selectors/) and call the method `captureSelector` instead of `capture`:
@@ -119,7 +119,7 @@ After running the tests for the first time you will notice a new folder `plugins
 
 ### Fixing a test
 
-At some point your UI test will fail, for example due to expected CSS changes. To fix a test all you have to do is to copy the captured screenshot from the folder `processed-ui-screenshots` to the folder `expected-ui-screenshots`. 
+At some point your UI test will fail, for example due to expected CSS changes. To fix a test all you have to do is to copy the captured screenshot from the folder `processed-ui-screenshots` to the folder `expected-ui-screenshots`.
 
 ## Writing a UI test in depth
 

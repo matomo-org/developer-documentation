@@ -24,7 +24,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 * `rand` **(recommended)** &mdash; Meant to hold a random value that is generated before each request. Using it helps avoid the tracking request being cached by the browser or a proxy.
 * `apiv` **(recommended)** &mdash; The parameter &amp;apiv=1 defines the api version to use (currently always set to 1)
 
-### Optional User info 
+### Optional User info
 
 _(We recommend that these parameters be used if the information is available and relevant to your use case.)_
 
@@ -44,11 +44,11 @@ _(We recommend that these parameters be used if the information is available and
 
 * `ua` &mdash; An override value for the **User-Agent** HTTP header field. The user agent is used to detect the operating system and browser used.
 * `lang` &mdash; An override value for the **Accept-Language** HTTP header field. This value is used to detect the visitor's country if [GeoIP](https://piwik.org/faq/troubleshooting/#faq_65) is not enabled.
-* `uid` &mdash; defines the [User ID](https://piwik.org/docs/user-id/) for this request. User ID is any non empty unique string identifying the user (such as an email address or a username). To access this value, users must be logged-in in your system so you can fetch this user ID from your system, and pass it to Piwik. The User ID appears in the visitor log, the Visitor profile, and you can [Segment](https://developer.piwik.org/api-reference/segmentation) reports for one or several User ID (`userId` segment). When specified, the User ID will be "enforced". This means that if there is no recent visit with this User ID, a new one will be created. If a visit is found in the last 30 minutes with your specified User ID, then the new action will be recorded to this existing visit. 
-* `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). We recommended to set the User ID via `uid` rather than use this `cid`.  
+* `uid` &mdash; defines the [User ID](https://piwik.org/docs/user-id/) for this request. User ID is any non-empty unique string identifying the user (such as an email address or an username). To access this value, users must be logged-in in your system so you can fetch this user ID from your system, and pass it to Piwik. The User ID appears in the visitor log, the Visitor profile, and you can [Segment](https://developer.piwik.org/api-reference/segmentation) reports for one or several User ID (`userId` segment). When specified, the User ID will be "enforced". This means that if there is no recent visit with this User ID, a new one will be created. If a visit is found in the last 30 minutes with your specified User ID, then the new action will be recorded to this existing visit.
+* `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). We recommended setting the User ID via `uid` rather than use this `cid`.
 * `new_visit` &mdash; If set to 1, will force a new visit to be created for this action. This feature is also [available in JavaScript](https://piwik.org/faq/how-to/#faq_187).
 * `dimension[0-999]` &mdash; A Custom Dimension value for a specific Custom Dimension ID (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions) see the [Custom Dimensions guide](https://piwik.org/docs/custom-dimensions/)). If Custom Dimension ID is `2` use `dimension2=dimensionValue` to send a value for this dimension. The configured Custom Dimension has to be in scope "Visit".
-   
+
 ### Optional Action info (measure Page view, Outlink, Download, Site search)
 
 * `cvar` &mdash; Page scope [custom variables](https://piwik.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
@@ -56,7 +56,7 @@ _(We recommend that these parameters be used if the information is available and
 * `download` &mdash; URL of a file the user has downloaded. Used for tracking downloads. We recommend to also set the **url** parameter to this same value.
 * `search` &mdash; The Site Search keyword. When specified, the request will not be tracked as a normal pageview but will instead be tracked as a [Site Search](https://piwik.org/docs/site-search/) request.
 * `search_cat` &mdash; when **search** is specified, you can optionally specify a search category with this parameter.
-* `search_count` &mdash; when **search** is specified, we also recommend to set the search\_count to the number of search results displayed on the results page. When keywords are tracked with &search_count=0 they will appear in the "No Result Search Keyword" report.
+* `search_count` &mdash; when **search** is specified, we also recommend setting the search\_count to the number of search results displayed on the results page. When keywords are tracked with &search_count=0 they will appear in the "No Result Search Keyword" report.
 * `pv_id` &mdash; Accepts a six character unique ID that identifies which actions were performed on a specific page view. When a page was viewed, all following tracking requests (such as events) during that page view should use the same pageview ID. Once another page was viewed a new unique ID should be generated. Use `[0-9a-Z]` as possible characters for the unique ID.
 * `idgoal` &mdash; If specified, the tracking request will trigger a conversion for the [goal](https://piwik.org/docs/tracking-goals-web-analytics/) of the website being tracked with this ID.
 * `revenue` &mdash; A monetary value that was generated as revenue by this goal conversion. Only used if **idgoal** is specified in the request.
@@ -111,10 +111,10 @@ The following parameters require that you set `&token_auth=` to the token\_auth 
 
 ### Media Analytics parameters
 
-Analytics for your Media content (video players and audio players) can be recorded 
-using the premium [Media Analytics](https://plugins.piwik.org/MediaAnalytics) plugin's HTTP Tracking API parameters. 
-    
-Activity and consumption of your videos and audios can be measured via the parameters `ma_id`, `ma_ti`, `ma_re`, 
+Analytics for your Media content (video players and audio players) can be recorded
+using the premium [Media Analytics](https://plugins.piwik.org/MediaAnalytics) plugin's HTTP Tracking API parameters.
+
+Activity and consumption of your videos and audios can be measured via the parameters `ma_id`, `ma_ti`, `ma_re`,
 `ma_mt` , `ma_pn`, `ma_st`, `ma_le`, `ma_ps`, `ma_ttp`, `ma_w`, `ma_h`, `ma_fs`.
 
 Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference).
@@ -144,7 +144,7 @@ Some applications such as the [Piwik log importer](https://piwik.org/log-analyti
 
 To send a bulk tracking request, an HTTP POST must be made with a JSON object to the Piwik tracking endpoint. The object must contain the following properties:
 
-* `requests` &mdash; an array of individual tracking requests. Each tracking request should be the query string you'd send if you were going to track that action individually. 
+* `requests` &mdash; an array of individual tracking requests. Each tracking request should be the query string you'd send if you were going to track that action individually.
   * Note that for Piwik to store your tracking data accurately, your tracking requests should be sent in chronological order (the oldest requests should appear first).
 * `token_auth` &mdash; (optional) token_auth which is found in the API page. Specify this only needed if you use any of the parameters that require `token_auth`
 
@@ -170,7 +170,7 @@ This will track **two** actions using only **one** HTTP request to Piwik.
 
 To verify that your data is being tracked properly, you can enable debug logging in the Piwik tracking file, **piwik.php**.
 
-**Tracking requests will then output the tracking log messages rather than displaying a 1*1 transparent GIF beacon. For security reasons, this should not be done in production or only for a very short time frame.** 
+**Tracking requests will then output the tracking log messages rather than displaying a 1*1 transparent GIF beacon. For security reasons, this should not be done in production or only for a very short time frame.**
 
 
 Follow these steps to enable and view debug logging for the tracker:
@@ -185,7 +185,7 @@ Follow these steps to enable and view debug logging for the tracker:
     * If the requests take place in a browser, you can use a tool like the [Firebug](https://getfirebug.com/) to see all requests to **piwik.php**.
     * If the requests are triggered from your app or software directly, you can output or log the output of tracking requests and to view the debug messages.
     * You can also [log messages to file or database](https://piwik.org/faq/troubleshooting/faq_115/) (requires at least Piwik 2.15.0).
-    
+
 If you receive too many tracking requests and the log gets spammed by these requests or if you want to only debug some specific requests you can alternatively enable `debug_on_demand` in `config.ini.php`:
 
     [Tracker]

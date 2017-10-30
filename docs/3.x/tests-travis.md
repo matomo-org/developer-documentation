@@ -24,7 +24,7 @@ The command will automatically detect if you have PHP and/or UI tests in your pl
 
 ### Updating the .travis.yml file
 
-The `generate:travis-yml` command will be changed over time as we modify the travis build process. The generated `.travis.yml` file will check if it is out of date from within travis and let you know by failing the build. In such a case you will have to re-run the command and commit the changes to get the build to run again.
+The `generate:travis-yml` command will be changed over time as we modify the travis build process. The generated `.travis.yml` file will check if it is out-of-date from within travis and let you know by failing the build. In such a case you will have to re-run the command and commit the changes to get the build to run again.
 
 ### Varying .travis.yml behavior
 
@@ -47,17 +47,17 @@ Below is the list of all supported environment variables:
     ```
 
     By default, one build will run the PHP tests against the minimum required Piwik version.
-    
+
   * **PIWIK\_TEST\_TARGET**
-  
+
    This variable can be used to specify an exact Piwik version number / branch or the `maximum_supported_piwik` the test should run against. By specifying `maximum_supported_piwik` your tests will automatically run against the highest supported Piwik version number in your `plugin.json`. If no maximum Piwik version is specified, the tests will automatically run against the latest beta. To specify a max version in `plugin.json` you can eg specify `"require": {"piwik": ">=2.15.0-rc1,<=2.15.1-b11"}`. In this case max supported version is `2.15.1-b11`. For more information on how to specify supported Piwik versions in your plugin have a look at the [distributing your Piwik plugin](https://developer.piwik.org/guides/distributing-your-plugin#prepare-your-plugin) guide.
-  
+
     This variable should be set as a global environment variable, eg:
 
     ```
     env:
       global:
-        - PIWIK_TEST_TARGET="maximum_supported_piwik"  // run test against max supported version... 
+        - PIWIK_TEST_TARGET="maximum_supported_piwik"  // run test against max supported version...
         - PIWIK_TEST_TARGET="2.15.0"  // ... or against a specific version
     ```
 

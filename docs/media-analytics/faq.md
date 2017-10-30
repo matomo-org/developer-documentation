@@ -96,8 +96,8 @@ window.piwikAsyncInit = function () {
 }
 ```
 
-It is important to define these methods before the Piwik tracker file is loaded. Otherwise your `piwikAsyncInit` 
-or `piwikMediaAnalyticsAsyncInit` method will be never called.
+It is important to define these methods before the Piwik tracker file is loaded. Otherwise, your `piwikAsyncInit` 
+or `piwikMediaAnalyticsAsyncInit` method will never be called.
 
 ## Is it possible to not use the "paq.push" methods and instead call the MediaAnalytics tracker methods directly?
 

@@ -8,7 +8,7 @@ category: Develop
 The Piwik platform differentiate between "System Settings", "User Settings" and "Measurable Settings":
 
 **User Settings** can be configured by any logged in user and each user can configure the setting independently.
-The Piwik platform makes sure that settings are stored per user and that a user cannot see another users configuration.
+The Piwik platform makes sure that settings are stored per user and that a user cannot see another user's configuration.
 A user will be able to change the settings on the "Personal Settings" page.
 
 **System Settings** applies to all of your users. It can be configured only by a user who has super user access.
@@ -98,7 +98,7 @@ and [FieldConfig](/api-reference/Piwik/Settings/FieldConfig) API reference. See 
 You might be wondering why some properties are configured as parameters when making the setting and some properties in
 the callback method. The reason for this is performance because we usually create all settings on each request.
 Everything that is configured within the callback to configure the `FieldConfig $field` is only needed when the setting
-is going to be displayed in the UI. All other times the field config is irrelevant and we save time by not executing
+is going to be displayed in the UI. All other times the field config is irrelevant, and we save time by not executing
 these actions. Especially since some settings might perform API requests to get a list of available values etc. within
  this callback.
 
@@ -118,7 +118,7 @@ in the UI and the setting will not be even displayed.
 ### Limiting who can configure a setting in the UI
 
 For example a system setting can be only configured by a user with super user access by default. However, you can
-customize this behaviour by using the `setIsWritableByCurrentUser` method. For example you can define to let only a user
+customize this behaviour by using the `setIsWritableByCurrentUser` method. For example, you can define to let only a user
 named "MyRootUser" change the setting. All other users would not be able to see the value for that setting and neither
 would they be able to change it.
 
@@ -143,7 +143,7 @@ $this->autoRefresh->setIsWritableByCurrentUser(false);
 ### Showing or hiding a setting in the UI dynamically
 
 Sometimes you might have a bit more complicated form where a setting should be only visible when another setting
-is configured in a certain way. Piwik can show or hide settings dynamically without a reload based on a certain
+is configured in a certain way. Piwik can show or hide settings dynamically without reloading based on a certain
 condition. Say we wanted to have the setting `refreshInterval` only visible if `autoRefresh` is enabled, then
 we can do this as follows:
 

@@ -60,12 +60,12 @@ To check a user's permissions, you need to `use` the [`Piwik\Piwik`](https://dev
     ```
 
 <div markdown="1" class="alert alert-warning">
-**Warning:** It is important to be aware that just because the menu item won’t be displayed in the UI doesn't mean the user cannot open the registered URL manually. Therefore you have to check for permissions in the actual controller action as well.
+**Warning:** It is important to be aware that just because the menu item won’t be displayed in the UI doesn't mean the user cannot open the registered URL manually. Therefore, you have to check for permissions in the actual controller action as well.
 </div>
 
 ### View permission
 
-A user having a view permission should be only able to view reports but not make any changes apart from their personal settings. Method names ending with `UserHasSomeViewAccess` make sure a user has at least view permissions for one website whereas the methods `*UserHasViewAccess($idSites = array(1,2,3))` check whether a user has view access for all of the given websites.
+A user having a view permission should be only able to view reports but not make any changes apart from their personal settings. Method names ending with `UserHasSomeViewAccess` make sure a user has at least view permissions for one website whereas the methods `*UserHasViewAccess($idSites = array(1,2,3))` check whether a user has view access for all given websites.
 
 ```php
 Piwik::checkUserHasSomeViewAccess();
@@ -87,7 +87,7 @@ Piwik::checkUserHasAdminAccess($idSites = array(1,2,3));
 
 ### Super user permission
 
-A user having the super user permission is allowed to access all of the data stored in Piwik and change any settings. To check if a user has this role use any of the methods that end with `UserSuperUserAccess`.
+A user having the super user permission is allowed to access all data stored in Piwik and change any settings. To check if a user has this role use any of the methods that end with `UserSuperUserAccess`.
 
 ```php
 Piwik::checkUserHasSuperUserAccess();

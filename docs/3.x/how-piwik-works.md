@@ -65,7 +65,7 @@ Piwik uses [Composer](https://getcomposer.org/) to install its dependencies (PHP
 
 ### The web application
 
-The entry point for the web application is `index.php` in the root. This files initializes everything and calls the `FrontController` class.
+The entry point for the web application is `index.php` in the root. This file initializes everything and calls the `FrontController` class.
 
 The front controller will route an incoming HTTP request to a plugin **controller** based on URL parameters:
 
@@ -158,7 +158,7 @@ Archive data can be:
 - **table records**: bidimensional data (can be numeric values as well as anything else), represented as [`Piwik\DataTable`](/api-reference/Piwik/DataTable) objects
 
     These are stored in the `archive_blob_*` tables. `DataTable` objects are serialized to string and compressed to be stored as `BLOB` in the table.
-    
+
     `DataTable` objects stored in the database are named *records* to differentiate them from `DataTable` objects manipulated and returned by Piwik's API that we name *reports*.
 
 Every numeric metric or table record is processed and stored at each aggregation level: day, week and month. For example, that means that the "Entry pages" report is processed and stored for every day of the month as well as for every week, month, year and custom date range. Such data is redundant, but that is essential to guarantee fast performances.

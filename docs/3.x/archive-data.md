@@ -14,7 +14,7 @@ Piwik aggregates and persists two types of archive data:
 
 Reports will normally contain metric values, but they can also contain other data (either additionally or in lieu of metric values).
 
-Reports and metrics are defined by plugins, letting any plugin extend the data analyzed by Piwik. However there are several metrics, called **core metrics**, that are defined by Piwik Core.
+Reports and metrics are defined by plugins, letting any plugin extend the data analyzed by Piwik. However, there are several metrics, called **core metrics**, that are defined by Piwik Core.
 
 ## Subset parameters
 
@@ -106,7 +106,7 @@ Goal specific metrics are stored in the database in the `goals` column of serial
 
 In the interests of [archiving](/guides/archiving) and database size efficiency, some metrics are not stored in database. They are instead calculated when needed using other metrics. These metrics are called **processed metrics**.
 
-Below is the list of processed metrics that are calculated using *core metrics*. New reports that analyze visits, action types or conversions should be have these metrics added when possible.
+Below is the list of processed metrics that are calculated using *core metrics*. New reports that analyze visits, action types or conversions should have these metrics added when possible.
 
 _Note: Some processed metrics will appear multiple times in the lists below. These metrics have different meanings based on the reports they are in._
 

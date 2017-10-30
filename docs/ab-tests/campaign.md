@@ -5,7 +5,7 @@ title: Campaigns & Email Marketing
 # Running an A/B test experiment in a Marketing campaign eg. banner ad campaign or email marketing
 
 Learn how to run A/B tests in your Marketing campaigns to analyze how different email and ad campaigns
-affect the browsing behaviour and conversion rates on your website. For example you could run three different ad campaigns and not only see which campaign gets clicked more often but also which campaigns actually converts better once the visitors are on your website. Or maybe you want to send different newsletters to your users and compare how they affect the browsing behaviour on your website. 
+affect the browsing behaviour and conversion rates on your website. For example, you could run three different ad campaigns and not only see which campaign gets clicked more often but also which campaigns actually converts better once the visitors are on your website. Or maybe you want to send different newsletters to your users and compare how they affect the browsing behaviour on your website.
 
 In this guide you will learn how to create an experiment and implement it in your marketing email campaign, to let A/B Testing compare your campaigns and detect the better performing and winning variation.
  
@@ -13,7 +13,7 @@ In this guide you will learn how to create an experiment and implement it in you
 
 First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://piwik.org/docs/ab-testing/) to learn more.
 
-When you are asked on which target pages the experiment should be activated, we recommend to select "Visitors enter this experiment on any page".
+When you are asked on which target pages the experiment should be activated, we recommend selecting "Visitors enter this experiment on any page".
 
 ## Embedding an experiment
 
@@ -81,7 +81,7 @@ The IDs are also shown in the "Embed code" area when you edit an experiment in t
 
 Measuring the impact of your campaigns using experiments complements the existing built-in Piwik [Campaign Tracking](https://piwik.org/docs/tracking-campaigns/).
 
-We recommend to create experiments to measure your marketing campaigns as it will provide you additional value such as: 
+We recommend creating experiments to measure your marketing campaigns as it will provide you additional value such as:
 
 * a clear and result-focused reporting, 
 * a statistical significance indicator of how your campaign variations perform, 
@@ -93,7 +93,7 @@ We recommend to create experiments to measure your marketing campaigns as it wil
 
 ### Tagging Marketing campaign URL with both the A/B test experiment and the standard Campaign parameters
  
-We recommend to tag your campaign URLs with both the standard Campaign Tracking parameters and your A/B test experiment.
+We recommend tagging your campaign URLs with both the standard Campaign Tracking parameters and your A/B test experiment.
  
 The standard campaign parameters are:
 

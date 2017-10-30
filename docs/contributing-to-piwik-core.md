@@ -1,3 +1,4 @@
+
 ---
 category: DevelopInDepth
 ---
@@ -28,7 +29,7 @@ Once you've decided on something, continue below.
 
 ### Getting a copy of Piwik to work on
 
-Before you can start contributing you need to get setup with [git](https://git-scm.com/) & [GitHub](https://github.com). If needed, you can [create a GitHub account here](https://github.com/). 
+Before you can start contributing you need to get setup with [git](https://git-scm.com/) & [GitHub](https://github.com). If needed, you can [create a GitHub account here](https://github.com/).
 
 #### Fork the Piwik repository
 
@@ -78,19 +79,19 @@ Now that you have a copy of the latest Piwik source code, you can start modifyin
 
 Before you start coding, you should make sure to keep your changes separate from the master branch. This will make it much easier to track the changes specific to your feature since your changes won't be mixed with any new commits to the master branch from other developers.
 
-We'll give our new branch a name, _bugfix_, that describes what we're doing so we can recognize it later. To add a new branch, run the following command:
+We'll give our new branch a name, _bugfix_, that describes what we're doing, so we can recognize it later. To add a new branch, run the following command:
 
 ```bash
 git checkout -b bugfix
 ```
 
-The checkout command will create a new branch if the `-b` option is supplied, otherwise it will try and load an existing branch.
+The checkout command will create a new branch if the `-b` option is supplied, otherwise it will try to load an existing branch.
 
 #### Work on the code
 
 Once you've created a branch, you have a place to start working on the feature. There's nothing special about this part of the process, just fix the bug or finish the feature you're working on.
 
-If you're working on something more complex than a bugfix, you may have the need to keep your new branch updated with changes from the main repository. Keeping your branch up to date is a two step process.
+If you're working on something more complex than a bugfix, you may have the need to keep your new branch updated with changes from the main repository. Keeping your branch up to date is a two-step process.
 
 First, on your **master** branch, pull changes from the main Piwik repository, nicknamed _upstream_:
 
@@ -140,16 +141,16 @@ Here are best practises we aim to follow when creating, reviewing and merging pu
 
 * We try to avoid big pull requests and aim for small PRs that are easier to review
 * When issuing a PR we set a label `Pull Request WIP` and replace this label with `Needs Review` once the PR is done. If a PR references another issue we assign the label `not-in-changelog`
-* A PR should contain a description explaining things if useful. It should contain as much as necessary and as less as possible.
-* Small changes can be merged directly without a review if the developer is 100% certain the change won't have any side effects etc. It is always recommended to still quickly ask another developer that is online to have a look at this PR now as such PRs are quickly reviewed. 
+* A PR should contain a description explaining things if useful. It should contain as much as necessary and as little as possible.
+* Small changes can be merged directly without a review if the developer is 100% certain the change won't have any side effects etc. It is still always recommended to quickly ask another developer that is online to have a look at this PR now as such PRs are quickly reviewed.
 * If a PR affects the [public API](https://github.com/piwik/piwik/issues/8125) in any way a PR should not be merged without a review
 * PRs that affect the [public API](https://github.com/piwik/piwik/issues/8125) or that affect Security need a thorough review. For other PRs it is always good to keep in mind that we can change later at anytime. Things therefore don't have to be "perfect" as long as the formal requirements are given (eg. an entry in the developer changelog if needed)
 * When reviewing a PR it is important to check things like Security, Performance, Usability, etc. Minor "issues/feedback" such as feedback on code style are less important. If a reviewer notices only such minor things, we can merge the PR directly or the reviewer can make the changes directly and merge afterwards.
 * Before working on a new issue it is recommended to check for pending PRs that have a `Needs Review` label
 * PHP code should use our Piwik code standards (see next section)
 * Pull requests should contain tests
-* Read the article: [Pull Requests: How to Get and Give Good Feedback](https://www.kickstarter.com/backing-and-hacking/pull-requests-how-to-get-and-give-good-feedback) 
-* When a pull request has many small commits, it is recommended to [Squash commits](http://eli.thegreenplace.net/2014/02/19/squashing-github-pull-requests-into-a-single-commit) so that there is only one (bigger) commit. 
+* Read the article: [Pull Requests: How to Get and Give Good Feedback](https://www.kickstarter.com/backing-and-hacking/pull-requests-how-to-get-and-give-good-feedback)
+* When a pull request has many small commits, it is recommended to [Squash commits](http://eli.thegreenplace.net/2014/02/19/squashing-github-pull-requests-into-a-single-commit) so that there is only one (bigger) commit.
 
 ## Piwik Core code standards
 
@@ -226,7 +227,7 @@ In order for new developers to get up to speed quickly and in order to lessen th
 
 For an example of a well commented Piwik class, see [Piwik\Cookie](https://github.com/piwik/piwik/blob/master/core/Cookie.php).
 
-Despite their importance, comments can sometimes cause information overload - or worse for out of date comments. Useless or inaccurate comments and autogenerated comments that add no value should be avoided. Rather than writing comments inside a function, it is better to write shorter functions that do only one thing and are named thoughtfully. A well refactored class made of small methods will be easy to read and will not need many comments.
+Despite their importance, comments can sometimes cause information overload - or worse for out-of-date comments. Useless or inaccurate comments and autogenerated comments that add no value should be avoided. Rather than writing comments inside a function, it is better to write shorter functions that do only one thing and are named thoughtfully. A well refactored class made of small methods will be easy to read and will not need many comments.
 
 #### No duplication
 

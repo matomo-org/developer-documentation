@@ -80,7 +80,7 @@ When your Settings > System Check reports that "The Piwik JavaScript tracker fil
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
 1. Make the `piwik.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
-We recommend to run the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
+We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
 2. or Load the FormAnalytics tracker file manually in your website by adding in all your pages ideally in the `<head>`: 
    `<script src="https://your-piwik-domain/plugins/FormAnalytics/tracker.min.js">`
 
@@ -91,7 +91,7 @@ Yes, there are:
 * An additional HTTP request is needed to load your website which increases your page load time
 * If your `piwik.js` ever becomes writable, the FormAnalytics tracker would be loaded twice (in such a case the tracker notices it was already initialized and won't track everything twice)
 
-If possible, we recommend to make the `piwik.js` file writable.
+If possible, we recommend making the `piwik.js` file writable.
 
 ## What to read next
 

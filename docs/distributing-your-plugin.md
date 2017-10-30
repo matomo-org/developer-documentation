@@ -5,7 +5,7 @@ category: Develop
 
 [**Piwik's Plugin Marketplace**](https://plugins.piwik.org) is the main way to download and install third-party plugins.
 
-Every instance of Piwik running version 2.0 or greater is able to directly download and install plugins from the marketplace. **Making your plugin available on the marketplace is the best way for you to get your plugin out into the hands of Piwik users.** 
+Every instance of Piwik running version 2.0 or greater is able to directly download and install plugins from the marketplace. **Making your plugin available on the marketplace is the best way for you to get your plugin out into the hands of Piwik users.**
 
 It's also a great way for you to:
 
@@ -30,7 +30,7 @@ Two files are required to be present in your plugin before you can publish: the 
 
 #### README.md file
 
-The `README.md` file should contain a description of your plugin. 
+The `README.md` file should contain a description of your plugin.
 Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
 The file is written in Markdown format and has the following section: `Description`.
 The content between `## Description` and the next `## ...` headline will be directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](https://plugins.piwik.org/CustomAlerts) page created from the README file.
@@ -78,9 +78,9 @@ The `plugin.json` file must contain the following information:
         "php": ">5.4.0" // requires at least PHP 5.4.1
     }
     ```
-  
+
     You can define multiple ranges, separated by a comma, which will be treated as a logical `AND`. This can be useful in case you know your plugin is only compatible with a limited number of Piwik versions.
-  
+
     For example:
 
     ```json
@@ -88,12 +88,12 @@ The `plugin.json` file must contain the following information:
         "piwik": ">=2.0.0,<=2.2.0", // requires a Piwik version 2.0.0 up to 2.2.0
     }
     ```
-    
+
     For plugins that target Piwik 3 or newer read the [Composer Versions documentation](https://getcomposer.org/doc/articles/versions.md) for more information.
-  
+
 
 The following fields are not required for publishing a plugin, but you may want to add them:
-  
+
 - `donate` - An object containing information on how to donate to the plugin author (you!). The object can contain any of the following fields:
     - `paypal` - Your paypal email address.
     - `flattr` - The URL to your [Flattr](https://flattr.com/) page.
@@ -108,8 +108,8 @@ The following fields are not required for publishing a plugin, but you may want 
         "bitcoin": "1NdftZmgb8V9PgbFDYjC5PRJ2QDLyyzCU9"
     }
     ```
-  
-  
+
+
 - `support` - An object containing information on how to get in touch with you. Any specified resource will be visible in a "Support" tab on the plugin page. The object can contain any of the following fields:
     - `email` - A contact or support email address.
     - `issues` - An URL to the issue / bug / feature tracker for this plugin.
@@ -134,30 +134,30 @@ The following fields are not required for publishing a plugin, but you may want 
             "rss": "https://piwik.org/feed/"
     }
     ```
-    
-    
+
+
 - `preview` - Preview lets you define a demo link and a video. If defined, they will be visible in the "Preview" tab of your plugin. The object can contain any of the following fields:
     - `demo_url` - A URL to a demo of your plugin
     - `video_url` - A Vimeo or YouTube URL to showcase your plugin. The URL has to be as in the example below. This means a Vimeo URL has to start with `https://player.vimeo.com/video/` and a YouTube URL has to start with `https://www.youtube.com/embed/`.
-    
-    
+
+
     ```json
     "preview": {
         "demo_url": "https://demo.piwik.org",
         "video_url": "https://player.vimeo.com/video/1223232323 or https://www.youtube.com/embed/Aaa_111HHH"
     }
     ```
-    
-    
+
+
 - `archive` - Lets you define some options for creating Piwik Plugin archives.
-    - `exclude` - Allows you to configure which files or directories should be removed from the ZIP file when a user downloads or installs a plugin. It is not possible to use any wildcards and the path must start with a leading slash `/`. By default a few directories and files are always removed from the ZIP archive: the directories `tests`, `Test` and `screenshots` as well as the files `.travis.yml` and `.gitignore` found in your plugin's root directory.
-    
+    - `exclude` - Allows you to configure which files or directories should be removed from the ZIP file when a user downloads or installs a plugin. It is not possible to use any wildcards and the path must start with a leading slash `/`. By default, a few directories and files are always removed from the ZIP archive: the directories `tests`, `Test` and `screenshots` as well as the files `.travis.yml` and `.gitignore` found in your plugin's root directory.
+
     ```json
     "archive": {
         "exclude": ["/builds", "/test.log"]
     }
     ```
-    
+
 Here is a complete example to get you started:
 
 ```json
@@ -200,9 +200,9 @@ Here is a complete example to get you started:
 
 #### License
 
-In the `plugin.json` file you can define the name of your license. 
+In the `plugin.json` file you can define the name of your license.
 
-You can also put a `LICENSE`, `LICENSE.txt` or `LICENSE.md` file within the root directory of your plugin. If present, the license name on your plugin page will be clickable and users will be able to see the full license text. 
+You can also put a `LICENSE`, `LICENSE.txt` or `LICENSE.md` file within the root directory of your plugin. If present, the license name on your plugin page will be clickable and users will be able to see the full license text.
 
 #### Changelog
 
@@ -278,7 +278,7 @@ There are some restrictions regarding what can be published on the marketplace. 
 - Your plugin must not do anything illegal, or be morally offensive.
 - Plugins are either [Free plugins](https://piwik.org/free-software/) (GNU GPL compatible license), or [Premium paid plugins](https://plugins.piwik.org/premium).
  - Free plugins must have their license compatible with the [GNU General Public License v3](https://www.gnu.org/copyleft/gpl.html) or any later version. We strongly recommend using the same license as Piwik (*GPLv3 or later*). Your free plugin should not contain obfuscated code. We believe that obfuscated code violates the spirit, if not the letter, of the GPL license under which we operate. If you don't specify a license anywhere in your plugin, it is assumed your plugin uses *GPLv3 or later*.
- - Paid premium plugins are usually released under a commercial license. [Contact the Marketplace team](https://piwik.org/contact/marketplace/) about building and selling your premium plugin on the Marketplace, or read [the announcement](https://piwik.org/blog/2016/11/premium-plugins-now-available-marketplace/) to learn more. 
+ - Paid premium plugins are usually released under a commercial license. [Contact the Marketplace team](https://piwik.org/contact/marketplace/) about building and selling your premium plugin on the Marketplace, or read [the announcement](https://piwik.org/blog/2016/11/premium-plugins-now-available-marketplace/) to learn more.
 - No **[phoning home](https://en.wikipedia.org/wiki/Phoning_home)** without the user's informed consent. For the purposes of a Piwik plugin, **phoning home** includes:
   - Unauthorized collection of user data. For example, sending the admin's email address back to your own servers without the user's permission is not allowed; but asking the user for an email address and collecting if they choose to submit it is fine. All actions taken in this respect MUST be of the user's doing, not automatically done by the plugin.
   - All images and scripts shown should be part of the plugin. These should be loaded locally. If the plugin requires data that is loaded from an external website (such as [blocklists](https://en.wikipedia.org/wiki/Blacklist_%28computing%29)) this should be made clear in the plugin's admin screens or its description. The user must be informed of what information is being sent where.

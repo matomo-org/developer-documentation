@@ -4,7 +4,7 @@ category: DevelopInDepth
 
 # Custom Reports: Extended
 
-This is the follow up to our [Custom Reports](/guides/custom-reports) guide.
+This is the follow-up to our [Custom Reports](/guides/custom-reports) guide.
 
 ### Implementing the API method
 
@@ -144,7 +144,7 @@ It is possible for plugins to create their own visualizations. To find out how, 
 
 ## Updating the report in realtime
 
-So now there's a page with a report that shows the browsers used by the latest visitors. It uses realtime data - but it's not truly realtime since after a couple minutes, the report will be out of date. To make the report more realtime we'll update the report every 10 seconds automatically.
+So now there's a page with a report that shows the browsers used by the latest visitors. It uses realtime data - but it's not truly realtime since after a couple minutes, the report will be out-of-date. To make the report more realtime we'll update the report every 10 seconds automatically.
 
 ### Adding JavaScript files to Piwik
 
@@ -198,7 +198,7 @@ $(document).ready(function () {
         dataTableInstance.reloadAjaxDataTable();
 
     }, 10 * 1000);
-    
+
 });
 ```
 

@@ -5,7 +5,7 @@ Upfront: This document is working draft and far from being perfect. We will impr
 With using AngularJS we are trying to achieve different goals:
 * Decouple the Piwik UI from the backend. Ideally, in a few years, we have a completely separated UI based on HTML, JavaScript and CSS (no PHP) which uses all the Piwik Reporting API's. This brings lots of advantages:
   * Reducing complexity in frontend and backend
-  * Reducing complexity brings faster development, less bugs, ...
+  * Reducing complexity brings faster development, fewer bugs, ...
   * The project gets attractive for non PHP developers
   * Providing an offline version (one day in the future)
   * ...
@@ -16,7 +16,7 @@ With using AngularJS we are trying to achieve different goals:
 * Faster response (especially once we can use AngularJS routing and [AMD](http://requirejs.org/docs/whyamd.html)). If you are not familiar with AMD -> please ignore for now
 
 ## Before you start using AngularJS
-I recommend to watch some videos and read a few resources about the benefits and best practices of AngularJS. It is important to understand how AngularJS works and especially to be aware of pitfalls and best practices.
+I recommend watching some videos and read a few resources about the benefits and best practices of AngularJS. It is important to understand how AngularJS works and especially to be aware of pitfalls and best practices.
 * [Video AngularJS introduction](https://www.youtube.com/watch?v=i9MHigUZKEM)
 * [Video Best Practices](https://www.youtube.com/watch?v=ZhfUv0spHCY)
 * [Great AngularJS style guide that we should follow](https://github.com/johnpapa/angularjs-styleguide)
@@ -47,7 +47,7 @@ I recommend to watch some videos and read a few resources about the benefits and
 * When Angular detects the presence of a jQuery version in your page, it uses the full jQuery implementation in lieu of jqLite.
 * "Here are two rules for filters: firstly, if the same effect can be simply achieved by decorating the underlying data, such as by adding a 'formattedValue' property, then do it that way. It will always be faster because it only happens once, not multiple times per digest cycle. Secondly, when you do have good reasons to write a filter make sure that it is blindingly fast." --> No DOM access if possible as filters are called many many times. [Read more](https://www.exratione.com/2013/12/considering-speed-and-slowness-in-angularjs/)
 * Do not access the DOM within a Controller, only from directives and only if needed
-* AngularJS is unique as it does not force you to use a model but it is definitely recommend. There is no class to extend to create a model, still you should always use a model and keep the controller as short as possible.
+* AngularJS is unique as it does not force you to use a model but it is definitely recommended. There is no class to extend to create a model, still you should always use a model and keep the controller as short as possible.
 * Difference between Services, Factories, Provider:
    * A `Service` is a Singleton and whenever you request a service the same instance will be returned
    * A new instance will be created whenever you request a `Factory`
@@ -60,7 +60,7 @@ I recommend to watch some videos and read a few resources about the benefits and
 
 ## Code organization / file structure
 There are lots of discussions about the best file structure. In the past we divided a feature into multiple folders called `javascripts`, `stylesheets`, ... From now on we want to
-organize files per feature which is [recommended](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub) by the Angular Team and also works best in large projects. 
+organize files per feature which is [recommended](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub) by the Angular Team and also works best in large projects.
 
 Basically we create a folder for each feature within the plugin folder. Say we want to create a "site selector" than we create the following files:
 + CoreHome
@@ -101,13 +101,13 @@ If a component, say a filter, can be reused in different plugins and is not plug
         + focusif.js
         + focus-anywhere-but-here.js
 
-Filenames are always lower case and words are separated by dashes. In general we have one file per type. The type - eg filter, directive or service - does not have to appear in the filename in this case as it is already placed in the related folder.
+Filenames are always lower case and words are separated by dashes. In general, we have one file per type. The type - eg filter, directive or service - does not have to appear in the filename in this case as it is already placed in the related folder.
 
 **Important**: Our directives always start with `piwik-` for instance `<div piwik-onenter="close()">`
 
 ### Coding style guide
 
-* In AngularJS there are many ways to define attributes for a directive (Class, HTML Attributes, Elementname, ...). We are using HTML attributes and as we do not really aim to be W3C compliant we chose not to prefix attributes with "data-" to keep templates clean. 
+* In AngularJS there are many ways to define attributes for a directive (Class, HTML Attributes, Elementname, ...). We are using HTML attributes and as we do not really aim to be W3C compliant we chose not to prefix attributes with "data-" to keep templates clean.
 * See here for a complete style guide: https://github.com/johnpapa/angularjs-styleguide . We are using this style guide for any type as long as not mentioned differently in this document.
 
 

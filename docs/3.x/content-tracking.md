@@ -77,8 +77,8 @@ Attributes always take precedence over CSS classes. If you set the same attribut
 
 #### HTML attributes or CSS classes?
 
-HTML attributes are the recommended way to go as they allow you to set specific values for content name, content piece and content target. Otherwise we have to detect the content name, piece and target automatically based on a set of rules which are explained further below. For instance we are trying to read the content target from a `href` attribute of a link, the content piece from a `src` attribute of an image, and the name from a `title` attribute.
-If you let us automatically detect those values it can influence your tracking over time. For instance if you provide the same page in different languages we might end up in many different combinations of content blocks that actually all represent the same. Also if you add a `title` attribute to an element the detected content name could change although you didn't want this. Analyzing the evolution of a content block will no longer work in this case. Therefore it is recommended to use the HTML attributes to tag your content and to specify values that change only if you want them to change.
+HTML attributes are the recommended way to go as they allow you to set specific values for content name, content piece and content target. Otherwise, we have to detect the content name, piece and target automatically based on a set of rules which are explained further below. For instance, we are trying to read the content target from a `href` attribute of a link, the content piece from a `src` attribute of an image, and the name from a `title` attribute.
+If you let us automatically detect those values it can influence your tracking over time. For instance if you provide the same page in different languages we might end up in many different combinations of content blocks that actually all represent the same. Also, if you add a `title` attribute to an element the detected content name could change although you didn't want this. Analyzing the evolution of a content block will no longer work in this case. Therefore, it is recommended to use the HTML attributes to tag your content and to specify values that change only if you want them to change.
 
 #### Example
 
@@ -92,7 +92,7 @@ Here we are defining a content block having the name "My Product Name". The used
 
 #### How to define a block of content?
 
-Defining a content block is mandatory in order to track any content. For each ad, banner or any other content you want to track you will have to create a content block. You can use either the attribute `data-track-content` or the CSS class `piwikTrackContent`. The attribute does not require any value. 
+Defining a content block is mandatory in order to track any content. For each ad, banner or any other content you want to track you will have to create a content block. You can use either the attribute `data-track-content` or the CSS class `piwikTrackContent`. The attribute does not require any value.
 
 Examples:
 
@@ -114,7 +114,7 @@ As you can see in these examples we do detect the content piece and name automat
 #### How do we detect the content piece?
 
 * The simplest scenario is to provide an HTML attribute `data-content-piece="foo"` including a value anywhere within the content block or in the content block element itself.
-* If there is no such attribute we will check whether the content piece element is a media (audio, video, image, pdf, ...) and we will try to find the URL of the media automatically. 
+* If there is no such attribute we will check whether the content piece element is media (audio, video, image, pdf, ...) and we will try to find the URL of the media automatically.
  * To find the content piece element we will search for an element having the attribute `data-content-piece` or the CSS class `piwikContentPiece`. This attribute/class can be specified anywhere within a content block. If we do not find any specific content piece element we will use the content block element.
  * In case of video or audio elements, when there are multiple sources defined, we will choose the URL of the first source.
  * We will automatically build a fully qualified URL of the source in case we find one. This allows you to see a preview in the UI and to know exactly which media was displayed in case relative paths are used.
@@ -164,7 +164,7 @@ In these examples we were able to detect the name and the piece of the content a
 // content target = http://www.example.com
 ```
 
-As the content piece element is not a media we cannot detect the content automatically. In such a case you have to define the `data-content-piece` attribute and set a value to it. We do not use the text of this element because
+As the content piece element is not media we cannot detect the content automatically. In such a case you have to define the `data-content-piece` attribute and set a value to it. We do not use the text of this element because
 
 * the text might change often resulting in many different content pieces
 * the text could be very long and cutting the text automatically could be inaccurate
@@ -194,7 +194,7 @@ The content name represents a content block which will help you in the Piwik UI 
 * If we do not find a name we will look for a `title` attribute in the content target element.
 * If we do not find a name we will fall back to "Unknown"
 
-Detecting the name automatically based on a title or a content piece can result in many different content names. Once more we recommend to specify a name via the `data-content-name` attribute.
+Detecting the name automatically based on a title or a content piece can result in many different content names. Once more we recommend specifying a name via the `data-content-name` attribute.
 
 Examples:
 
@@ -214,7 +214,7 @@ This example is the way to go by defining a `data-content-name` attribute anywhe
 // content target = ""
 ```
 
-If no content name is set, it will default to the content piece in case there is one. As the image has the same domain as the current page only the absolute path of the image will be used as a name. 
+If no content name is set, it will default to the content piece in case there is one. As the image has the same domain as the current page only the absolute path of the image will be used as a name.
 
 ```html
 <img src="http://www.example.com/path/img-en.jpg" data-track-content/>
@@ -273,7 +273,7 @@ As no specific target element is set, we will read the `href` attribute of the c
 // content target = "http://www.example.com"
 ```
 
-No `href` attribute is set as the link will be executed via JavaScript. Therefore a `data-content-target` attribute with a value has to be specified.
+No `href` attribute is set as the link will be executed via JavaScript. Therefore, a `data-content-target` attribute with a value has to be specified.
 
 ```html
 <div data-track-content><input type="submit"/></div>
@@ -344,7 +344,7 @@ A typical example for a content block that displays an image - which is the cont
 
 #### How to debug / test whether all content blocks will be detected correctly?
 
-In Piwik 2.15 we added a new method `logAllContentBlocksOnPage` to log all found content blocks within a page to the console. It will log an array of all content blocks to the console like this: 
+In Piwik 2.15 we added a new method `logAllContentBlocksOnPage` to log all found content blocks within a page to the console. It will log an array of all content blocks to the console like this:
 
 ```js
 [{name: '...', target:'...', piece: "..."},...]
@@ -364,19 +364,19 @@ The way we track interactions varies based on the type of the link.
 
 In case we detect a link element having an `href` attribute to the same domain as the current page we will replace the `href` attribute with a link to the `piwik.php` tracker URL. Whenever a user clicks on such a link we will first send the user to the `piwik.php` of your Piwik installation and then redirect the user from there to the actual page. This makes sure to track an interaction even if someone opens the URL with a right click.
 
-If the URL of the replaced `href` attribute changes meanwhile by your code we will respect the new link. 
+If the URL of the replaced `href` attribute changes meanwhile by your code we will respect the new link.
 
 Note: The referrer information will get lost when redirecting from piwik.php to your page. If you depend on this you need to disable automatic tracking of an interaction see below.
 
 ##### Outlinks and downloads
 
-Outlinks and downloads are handled as before via XHR. If a user clicks on a download or outlink we will track this action as usual along with some information related to the content interaction. If link tracking is not enabled we will track downloads having the same domain via `piwik.php` and all others via XHR. 
+Outlinks and downloads are handled as before via XHR. If a user clicks on a download or outlink we will track this action as usual along with some information related to the content interaction. If link tracking is not enabled we will track downloads having the same domain via `piwik.php` and all others via XHR.
 
 Tracking via XHR can delay loading a new page by a few hundred ms as we have to track the outlink before moving the user to the new page.
 
 ##### Anchor links
 
-Anchor and all other kind of links will be tracked using an XHR. 
+Anchor and all other kind of links will be tracked using an XHR.
 
 #### How to prevent the automatic tracking of an interaction?
 
@@ -401,7 +401,7 @@ In all examples we would track the impression automatically but not the interact
 
 You have initialized all content blocks on page load via `trackContentImpression` or `trackVisibleContentImpressions`. Now you are adding
 more HTML elements to the DOM, for instance a new banner, and you want to make sure to track an impression for it as well as an interaction
-if a user interacts with it. 
+if a user interacts with it.
 
 Call `_paq.push(['trackContentImpressionsWithinNode', domNode]);` to make sure an impression will be tracked for all content blocks contained within this `domNode`. An interaction will be tracked automatically once the user interacts with any content block.
 
@@ -409,11 +409,11 @@ Read more about tracking content impressions programmatically in the [JavaScript
 
 ### What can I do if an impression is tracked automatically but not an interaction?
 
-Surely you are wondering why the interaction is not tracked automatically. There can be many reasons for it. For example if the target node is not actually clickable or if there is already a click listener on this element that stops the event. 
+Surely you are wondering why the interaction is not tracked automatically. There can be many reasons for it. For example if the target node is not actually clickable or if there is already a click listener on this element that stops the event.
 
 If, for some reason, the interaction won't be tracked automatically you can trigger it manually by calling `_paq.push(['trackContentInteractionNode', domNode, typeOfInteraction])`.
 
-Example: 
+Example:
 
 ```javascript
 formElement.addEventListener('submit', function () {

@@ -148,7 +148,7 @@ yourself more widgets to add either more menu items and pages under "Campaigns" 
 ## Removing the ability to add the widget to the dashboard or to export it
 
 In some rare cases you might want to add content to a reporting page but not want users to export the widget as an iframe
-and neither want them to add the content of this widget to a dashboard. A use case is for example a widget that let's you
+and neither want them to add the content of this widget to a dashboard. A use case is for example a widget that lets you
 manage something. The widget to "Manage Goals" should be available in the reporting menu but it should not be
  possible to add it to a dashboard. For example the widget might not work in such a context or it doesn't make much sense
   to the author. You can do this as follows:
@@ -163,7 +163,7 @@ public static function configure(WidgetConfig $config)
 ### Removing widgets and content from reporting pages.
 
 By listening to the [Widget.filterWidgets event](/api-reference/events#widgetfilterwidgets) you can remove or change
-existing widgets. If you haven't worked with events before, read the [Events guide](/guides/events). For example
+existing widgets. If you haven't worked with events before, read the [Events guide](/guides/events). For example,
 you can remove all widgets having the category `General_Actions` in the event callback like this:
 
 ```php

@@ -122,7 +122,7 @@ window.piwikAsyncInit = function () {
 ```
 
 It is important to define these methods in your website before the Piwik tracker file is loaded. Otherwise, the 
-`piwikAsyncInit` method will be never called.
+`piwikAsyncInit` method will never be called.
 
 ## How do I prevent the HTTP request to a configs.php on each page view?  
 

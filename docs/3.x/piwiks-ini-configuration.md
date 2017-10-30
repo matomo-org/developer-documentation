@@ -35,7 +35,7 @@ myarray[] = 3
 
 ## Reading INI configuration
 
-The [Config](/api-reference/Piwik/Config) singleton allows PHP code to access whole configuration sections. They are accessed as if they were named public fields of the [Config](/api-reference/Piwik/Config) singleton. 
+The [Config](/api-reference/Piwik/Config) singleton allows PHP code to access whole configuration sections. They are accessed as if they were named public fields of the [Config](/api-reference/Piwik/Config) singleton.
 
 For example, the following code will output every config option in the `[General]` section:
 
@@ -53,7 +53,7 @@ Configuration options can be modified in memory through the [Config](/api-refere
 Config::getInstance()->Development['disable_merged_assets'] = 1;
 ```
 
-To persist these changes so they will appear in the INI files, call the [`forceSave()`](/api-reference/Piwik/Config#forcesave) method:
+To persist these changes, so they will appear in the INI files, call the [`forceSave()`](/api-reference/Piwik/Config#forcesave) method:
 
 ```php
 Config::getInstance()->forceSave();
