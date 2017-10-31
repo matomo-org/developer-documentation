@@ -336,7 +336,7 @@ _Note: The ecommerce and abandoned cart goals are two special goals with special
 <a name="other-data-user"></a>
 ### Users
 
-User entities describe each Piwik user except the Super User. They are persisted in the `user` table.
+User entities describe each Piwik user. They are persisted in the `user` table.
 
 The following information is stored in a user entity:
 
