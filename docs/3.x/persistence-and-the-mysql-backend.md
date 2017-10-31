@@ -364,6 +364,7 @@ Piwik defines 3 types of permissions:
 - [**super user permission**](https://piwik.org/faq/general/faq_35/#faq_35): applies to **whole Piwik** (all sites)
 
 The following information is stored in the `access` table:
+
 - `login`: the user's login handle.
 - `access`: the user's permission on this website (`view` or `admin`)
 - `idsite`: the website ID for which the user's `login` will have the specified `access`.
