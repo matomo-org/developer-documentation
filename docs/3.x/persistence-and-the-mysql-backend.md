@@ -346,6 +346,7 @@ The following information is stored in a user entity:
 - `email`: the user's email address.
 - `token_auth`: a user's token auth.
 - `date_registered`: the date the user data was persisted.
+- `superuser_access`: whether the user has Super User permission.
 
 User data is read on every UI and [Reporting API](/guides/piwiks-reporting-api) request.
 
@@ -356,7 +357,19 @@ There is some user related information that is not stored directly in user entit
 
 Users can be allowed and disallowed access to websites. Piwik persists each user's access level for each website they have access to in the `access` table.
 
-To read more about this, read the [Permissions](/guides/permissions) guide.
+Piwik defines 3 types of permissions:
+- [**view permission**](https://piwik.org/faq/general/faq_70/#faq_70): applies to a specific site
+- [**admin permission**](https://piwik.org/faq/general/faq_69/#faq_69): applies to a specific site
+- [**super user permission**](https://piwik.org/faq/general/faq_35/#faq_35): applies to **whole Piwik** (all sites)
+
+The following information is stored in the `access` table:
+- `login`: the user's login handle.
+- `access`: the user's permission on this website (`view` or `admin`)
+- `idsite`: the website ID for which the user's `login` will have the specified `access`.
+
+Note that the Super User permissions are stored in the `user` table in the column `superuser_access`.
+
+To read more about users access, read the [Permissions](/guides/permissions) guide.
 
 <a name="other-data-user-language-choice"></a>
 ### User language choice
