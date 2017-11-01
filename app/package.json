@@ -5,7 +5,6 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
-    "bootstrap-3-typeahead": "^4.0.2",
     "corejs-typeahead": "^1.2.1",
     "font-awesome": "^4.7.0",
     "highlight.js": "^9.12.0",

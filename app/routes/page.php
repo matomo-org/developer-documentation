@@ -168,7 +168,7 @@ $app->get('/data/search', function (Slim\Http\Request $request, Slim\Http\Respon
     return $response->withJson($results);
 });
 
-$app->get('/receive-commit-hook', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
+$app->post('/receive-commit-hook', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
     system('git pull');
     system('grunt dist');
     \helpers\Cache::invalidate();
