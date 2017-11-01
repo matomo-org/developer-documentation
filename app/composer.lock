@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "22afe3f8ae84e2973bb303ee1ab95022",
+    "content-hash": "e30d42ed836b5b07b3cddeda47544d11",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -718,16 +718,16 @@
         },
         {
             "name": "teamtnt/tntsearch",
-            "version": "v1.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/teamtnt/tntsearch.git",
-                "reference": "db18bd9ef35ad775008410cd5ec64fcde632ff88"
+                "reference": "e4aa719c97415374fb893f0a93226816ef16ef8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/teamtnt/tntsearch/zipball/db18bd9ef35ad775008410cd5ec64fcde632ff88",
-                "reference": "db18bd9ef35ad775008410cd5ec64fcde632ff88",
+                "url": "https://api.github.com/repos/teamtnt/tntsearch/zipball/e4aa719c97415374fb893f0a93226816ef16ef8a",
+                "reference": "e4aa719c97415374fb893f0a93226816ef16ef8a",
                 "shasum": ""
             },
             "require": {
@@ -770,7 +770,7 @@
                 "teamtnt",
                 "tntsearch"
             ],
-            "time": "2017-09-18T14:42:51+00:00"
+            "time": "2017-10-28T14:00:15+00:00"
         },
         {
             "name": "twig/twig",
@@ -1904,7 +1904,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "teamtnt/tntsearch": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -11,7 +11,7 @@
         "michelf/php-markdown": "^1.7",
         "mnapoli/front-yaml": "~1.2",
         "monolog/monolog": "^1.23",
-        "teamtnt/tntsearch": "^1.1"
+        "teamtnt/tntsearch": "dev-master#e4aa719c97415374fb893f0a93226816ef16ef8a"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
