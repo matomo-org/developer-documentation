@@ -30,7 +30,7 @@ class CacheMiddleware
                 if ($this->isJsonData($req)) {
                     $res = $res->withHeader('Content-Type', 'application/json');
                     $res->getBody()->write($content);
-                } else{
+                } else {
                     $res->getBody()->write($content . "\n<!-- Cached response -->");
                 }
                 return $res;
@@ -70,7 +70,7 @@ class CacheMiddleware
     }
 
     private function shouldCache(Request $req) {
-        return $req->isGet();
+        return $req->isGet() && $req->getUri()->getPath() !== "/data/search";
     }
 
     private function isJsonData(Request $req) {

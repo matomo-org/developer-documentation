@@ -72,7 +72,7 @@ module.exports = function (grunt) {
                     'node_modules/jquery/dist/jquery.min.js',
                     'node_modules/popper.js/dist/umd/popper.min.js',
                     'node_modules/bootstrap/dist/js/bootstrap.min.js',
-                    'node_modules/bootstrap-3-typeahead/bootstrap3-typeahead.min.js',
+                    'node_modules/corejs-typeahead/dist/typeahead.bundle.min.js',
                     'js/highlight.pack.js'
                 ],
                 dest: 'public/dist/js/libraries.min.js'

@@ -1,60 +1,55 @@
 $(function () {
+    $('a').each(function (index, a) {
+        var link = $(a).attr('href');
 
-$('a').each(function (index, a) {
-    var link = $(a).attr('href');
-
-    if (link && 0 === link.indexOf('http')) {
-        $(a).attr('target', '_blank');
-    }
-});
-
-$('.piwik-version-select').on('change', function () {
-    location.assign($(this).val());
-});
-
-$('.documentation img').each(function (index, img) {
-    var imageSrc = $(img).attr('src');
-
-    if (imageSrc) {
-        $(img).wrap('<a href="' + imageSrc + '" target="_blank"></a>');
-    }
-});
-
-$('.documentation table').addClass('table table-striped table-bordered');
-
-    var $quickSearchTypeahead = $('#quick-search-typeahead');
-    var initialized = false;
-    $quickSearchTypeahead.on("focus", function () {
-        if (!initialized) {
-            initialized = true;
-            var url = $quickSearchTypeahead.attr('data-action');
-            $.get(url, {}, function (quickSearchData) {
-                $quickSearchTypeahead.typeahead({
-                    source: quickSearchData.names,
-                    items: 'all',
-                    updater: function (item) {
-                        // get text to display in quick search box
-                        var displayText = item;
-
-                        var trailingEmLoc = displayText.indexOf('<em>');
-                        if (trailingEmLoc !== -1) {
-                            displayText = displayText.substring(0, trailingEmLoc);
-                        }
-
-                        // Track the search
-                        _paq.push(['trackSiteSearch', displayText, false, false]);
-
-                        // get URL to go to
-                        var itemIndex = quickSearchData.names.indexOf(item);
-                        if (itemIndex !== -1) {
-                            window.location.href = quickSearchData.urls[itemIndex];
-                        }
-
-                        // return display text
-                        return $.trim(displayText);
-                    }
-                });
-            });
+        if (link && 0 === link.indexOf('http')) {
+            $(a).attr('target', '_blank');
         }
+    });
+
+    $('.piwik-version-select').on('change', function () {
+        location.assign($(this).val());
+    });
+
+    $('.documentation img').each(function (index, img) {
+        var imageSrc = $(img).attr('src');
+
+        if (imageSrc) {
+            $(img).wrap('<a href="' + imageSrc + '" target="_blank"></a>');
+        }
+    });
+
+    $('.documentation table').addClass('table table-striped table-bordered');
+
+    var search = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: '/data/search?q=%QUERY',
+            wildcard: '%QUERY'
+        }
+    });
+    var $quickSearchTypeahead = $('#quick-search-typeahead');
+    $quickSearchTypeahead.typeahead({
+        highlight: true
+    }, {
+        name: 'search',
+        display: 'title',
+        source: search,
+        limit: 25,
+        templates: {
+            empty: function (context) {
+                //TODO: Maybe track in Piwik
+                var div = document.createElement("div");
+                div.classList.add("tt-suggestion");
+                div.innerText = 'No Results Found';
+                $(".tt-dataset").append(div);
+            }
+        }
+    });
+    $quickSearchTypeahead.bind('typeahead:select', function (ev, suggestion) {
+        console.warn(suggestion.url);
+        _paq.push(['trackSiteSearch', suggestion.title, false, false]);
+        window.location.href = suggestion.url;
     });
 });

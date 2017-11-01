@@ -20,6 +20,7 @@ use helpers\Content\PhpDoc;
 use helpers\DocumentNotExistException;
 use helpers\Environment;
 use helpers\Redirects;
+use helpers\SearchHelper;
 use helpers\SearchIndex;
 use helpers\Url;
 
@@ -158,17 +159,21 @@ $app->get('/changelog', function (Slim\Http\Request $request, Slim\Http\Response
 $app->get('/data/documents', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
     $searchIndex = new SearchIndex();
     $index = $searchIndex->buildIndex();
-    return $response->withJson([
-        'urls' => array_keys($index),
-        'names' => array_values($index)
-    ]);
+    return $response->withJson($index);
 });
 
-$app->post('/receive-commit-hook', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
+$app->get('/data/search', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
+    $query = $request->getParam('q');
+    $results = SearchHelper::search($query, true, $this->logger);
+    return $response->withJson($results);
+});
+
+$app->get('/receive-commit-hook', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
     system('git pull');
     system('grunt dist');
     \helpers\Cache::invalidate();
+    \helpers\SearchHelper::index();
 
-    echo 'Here is a cookie!';
+    echo 'Here is a cookie: 🍪';
     return $request->withHeader('Content-Type', 'text/plain');
 });

@@ -1,0 +1,27 @@
+// original from https://github.com/elpescador-nl/typeahead.js-bootstrap4-css/blob/7f3b4471302cedd3250a78bff0784bcc39d03ede/typeaheadjs.scss
+span.twitter-typeahead {
+
+    .tt-menu {
+        @extend .dropdown-menu;
+    }
+
+    .tt-suggestion {
+        @extend .dropdown-item;
+    }
+
+    .tt-suggestion.tt-cursor {
+        @extend .dropdown-item.active;
+    }
+
+    .input-group & {
+        display: flex !important;
+        align-items: center;
+        position: relative;
+        flex: 1 1 auto;
+        width: 1%;
+
+        .tt-menu, .tt-hint, .tt-input {
+            width: 100%;
+        }
+    }
+}
