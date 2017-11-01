@@ -13,6 +13,7 @@ class SearchHelper
     private static $maxResultsPerCategory = 10;
 
     public static function searchTitles($array, $query) {
+        $query = strtolower($query);
         $results = [];
         $i = 0;
         foreach ($array as $site) {
