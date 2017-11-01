@@ -10,16 +10,21 @@ class SearchHelper
 
     private static $storagePath = "../tmp/index/";
     private static $docsPath = '../../docs/';
+    private static $maxResultsPerCategory = 10;
 
     public static function searchTitles($array, $query) {
         $results = [];
+        $i = 0;
         foreach ($array as $site) {
+            if ($i >= static::$maxResultsPerCategory) {
+                break;
+            }
             if (strpos(strtolower($site["title"]), $query) !== false) {
                 $results[] = $site;
+                $i++;
             }
         }
         return $results;
-
     }
 
     public static function index() {
@@ -64,7 +69,7 @@ class SearchHelper
 
         $tnt->selectIndex("docs");
         $tnt->asYouType = $asYouType;
-        $results = $tnt->search($query, 10);
+        $results = $tnt->search($query, static::$maxResultsPerCategory);
         $rootdir = realpath(Environment::getBaseDocsPath());
         $formatedResults = [];
 

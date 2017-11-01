@@ -26,7 +26,8 @@ $(function () {
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         remote: {
             url: '/data/search?q=%QUERY',
-            wildcard: '%QUERY'
+            wildcard: '%QUERY',
+            rateLimitWait:0
         }
     });
     var $quickSearchTypeahead = $('#quick-search-typeahead');
