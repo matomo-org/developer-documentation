@@ -9,6 +9,7 @@
 /app/config/local.php
 /app/tmp/cache/*
 /app/tmp/logs/*
+/app/tmp/index/*
 /docs/changelog.md
 /docs/cache/
 /docs/*/cache/
