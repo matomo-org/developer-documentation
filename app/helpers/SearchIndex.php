@@ -72,7 +72,7 @@ class SearchIndex
         }, $items);
         $value = array_map(function (MenuItem $item) {
             return [
-                "title" => $item->getMenuTitle(),
+                "title" => html_entity_decode($item->getMenuTitle()),
                 "url" => Environment::completeUrl($item->getMenuUrl())
             ];
         }, $items);
