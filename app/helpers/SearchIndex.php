@@ -4,10 +4,12 @@ namespace helpers;
 
 use helpers\Content\Category\ApiReferenceCategory;
 use helpers\Content\Category\Category;
+use helpers\Content\Category\ChangelogCategory;
 use helpers\Content\Category\DevelopInDepthCategory;
 use helpers\Content\Category\DesignCategory;
 use helpers\Content\Category\DevelopCategory;
 use helpers\Content\Category\IntegrateCategory;
+use helpers\Content\Category\SupportCategory;
 use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
 use helpers\Content\MenuItem;
@@ -37,7 +39,9 @@ class SearchIndex
             new DevelopCategory(),
             new DesignCategory(),
             new ApiReferenceCategory(),
-            new DevelopInDepthCategory()
+            new DevelopInDepthCategory(),
+            new ChangelogCategory(),
+            new SupportCategory()
         ];
 
         $items = [];
@@ -61,9 +65,6 @@ class SearchIndex
             if ($item instanceof EmptySubCategory) {
                 return false;
             }
-            if ($item instanceof RemoteLink) {
-                return false;
-            }
             return true;
         });
 
@@ -72,7 +73,7 @@ class SearchIndex
         }, $items);
         $value = array_map(function (MenuItem $item) {
             return [
-                "title" => html_entity_decode($item->getMenuTitle()),
+                "title" => strip_tags(html_entity_decode($item->getMenuTitle())),
                 "url" => Environment::completeUrl($item->getMenuUrl())
             ];
         }, $items);
