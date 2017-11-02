@@ -51,10 +51,12 @@ p {
     overflow: hidden;
 }
 
-h2[id]:before, h3[id]:before {
+h2[id]:before, h3[id]:before, a[name] {
     content: "";
     display: block;
-    padding-top: 60px;
+    position: relative;
+    width: 0;
+    height: 60px;
     margin-top: -60px;
 }
 
