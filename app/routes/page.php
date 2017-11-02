@@ -169,6 +169,10 @@ $app->get('/data/search', function (Slim\Http\Request $request, Slim\Http\Respon
 });
 
 $app->post('/receive-commit-hook', function (Slim\Http\Request $request, Slim\Http\Response $response, $args) {
+    $token = $request->getParam('token');
+    if (empty($token) || !password_verify($token, WEBHOOK_TOKEN)) {
+        return $response->withStatus(403)->write("parameter 'token' missing or incorrect");
+    }
     system('git pull');
     system('grunt dist');
     \helpers\Cache::invalidate();
