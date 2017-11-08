@@ -102,6 +102,12 @@ Returns an array of Piwik tracker instances that are used by the Media Analytics
 as `Piwik.getAsyncTrackers()` and will return all tracker instances that were created eg via `Piwik.addTracker` or 
 `_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
 
+### `setMediaTitleFallback()`
+
+Piwik will automatically detect the title of a video or audio in most cases. In case you are using an old version
+of a media player, or an exotic media player which does not allow us to detect the title automatically, you can define a callback
+method to detect the title of a video or audio manually based on your own custom logic. You can find an example in the FAQ.
+
 ### `mediaType`
 
 The `mediaType` property defines constants that are useful when you track the usage of a [custom media player](/guides/media-analytics/custom-player)
