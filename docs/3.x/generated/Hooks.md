@@ -972,10 +972,29 @@ Callback Signature:
 
 ## Live
 
+- [Live.addVisitorDetails](#liveaddvisitordetails)
 - [Live.API.getIdSitesString](#liveapigetidsitesstring)
+- [Live.filterVisitorDetails](#livefiltervisitordetails)
 - [Live.getAllVisitorDetails](#livegetallvisitordetails)
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 - [Live.makeNewVisitorObject](#livemakenewvisitorobject)
+
+### Live.addVisitorDetails
+
+*Defined in [Piwik/Plugins/Live/Visitor](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Visitor.php) in line [93](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Visitor.php#L93)*
+
+Triggered to add new visitor details that cannot be picked up by the platform automatically. **Example**
+
+    public function addVisitorDetails(&$visitorDetails)
+    {
+        $visitorDetails[] = new CustomVisitorDetails();
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- [VisitorDetailsAbstract](/api-reference/Piwik/Plugins/Live/VisitorDetailsAbstract) `$visitorDetails` An array of visitorDetails
+
 
 ### Live.API.getIdSitesString
 
@@ -985,6 +1004,27 @@ Callback Signature:
 
 Callback Signature:
 <pre><code>function(&amp;$idSites)</code></pre>
+
+
+### Live.filterVisitorDetails
+
+*Defined in [Piwik/Plugins/Live/Visitor](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Visitor.php) in line [121](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Visitor.php#L121)*
+
+Triggered to filter / restrict vistor details. **Example**
+
+    public function filterVisitorDetails(&$visitorDetails)
+    {
+        foreach ($visitorDetails as $index => $visitorDetail) {
+             if (strpos(get_class($visitorDetail), 'MyPluginName') !== false) {}
+                 unset($visitorDetails[$index]); // remove all visitor details for a specific plugin
+             }
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- [VisitorDetailsAbstract](/api-reference/Piwik/Plugins/Live/VisitorDetailsAbstract) `$visitorDetails` An array of visitorDetails
 
 
 ### Live.getAllVisitorDetails
