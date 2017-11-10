@@ -34,7 +34,6 @@ var $quickSearchTypeahead = $('#quick-search-typeahead').find('>input');
                 updater: function (item) {
                     // get text to display in quick search box
                     var displayText = item;
-                    console.log(item);
 
                     var trailingEmLoc = displayText.indexOf('<em>');
                     if (trailingEmLoc !== -1) {
