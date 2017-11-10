@@ -106,7 +106,7 @@ as `Piwik.getAsyncTrackers()` and will return all tracker instances that were cr
 
 Piwik will automatically detect the title of a video or audio in most cases. In case you are using an old version
 of a media player, or an exotic media player which does not allow us to detect the title automatically, you can define a callback
-method to detect the title of a video or audio manually based on your own custom logic. You can find an example in the FAQ.
+method to detect the title of a video or audio manually based on your own custom logic. You can find an example [in the FAQ](/guides/media-analytics/faq).
 
 ### `mediaType`
 
