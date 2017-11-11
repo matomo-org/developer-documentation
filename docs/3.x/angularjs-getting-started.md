@@ -44,7 +44,7 @@ I recommend watching some videos and read a few resources about the benefits and
   * Some directives such as ng-if and ng-repeat create their own scope
   * All bound data should be dotted when using ng-model otherwise you are doing it wrong. You would be wondering why a value is not updated and it will take you hours to figure this out.
     Example:
-    `&lt;div ng-model="model.searchfield">` instead of `&lt;div ng-model="searchfield">`
+    `<div ng-model="model.searchfield">` instead of `<div ng-model="searchfield">`
 * The second most important thing to understand are probably [directives](https://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/).
 * Try to keep the number of data-bound elements low (< 200)
 * The ng-repeat directive of AngularJS is getting slow above 2500 two-way data bindings.
