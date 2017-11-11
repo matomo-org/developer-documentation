@@ -117,18 +117,20 @@ Filenames are always lower case and words are separated by dashes. In general, w
 
 
 ### Related links
-* https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub
-* http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript
-* http://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/
-* https://gocardless.com/blog/building-a-large-angular-application/
-* https://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/
+* [https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub)
+* [http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript](http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript)
+* [http://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/](http://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/)
+* [https://gocardless.com/blog/building-a-large-angular-application/](https://gocardless.com/blog/building-a-large-angular-application/)
+* [https://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/](https://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/)
 
 ## Examples
 Some features in Piwik are already realized by using AngularJS.
+
 * [SiteSelector](https://github.com/piwik/piwik/tree/master/plugins/CoreHome/javascripts/siteselector)
 * [All Websites Dashboard](https://github.com/piwik/piwik/tree/master/plugins/MultiSites/javascripts)
 
 They make use of different components
+
 * [Controller](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-controller.js)
 * [Directive](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-directive.js)
 * [Model](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-model.js)
@@ -149,7 +151,7 @@ Might be interesting link: [Docular](http://grunt-docular.com/)
 ## Plugin architecture
 AngularJS dependency injection allows plugins to overwrite or extend whatever whey want, for instance a directive. A plugin architecture comes therefore more or less out of the box.
 
-For instance a plugin can "hook" on to a certain directive, extend/change controller behaviour etc. This video might give you some ideas: https://www.youtube.com/watch?v=rzMrBIVuxgM
+For instance a plugin can "hook" on to a certain directive, extend/change controller behaviour etc. This video might give you some ideas: [https://www.youtube.com/watch?v=rzMrBIVuxgM](https://www.youtube.com/watch?v=rzMrBIVuxgM)
 
 More to come!
 
