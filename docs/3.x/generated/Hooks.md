@@ -2034,7 +2034,7 @@ Usages:
 
 ### Segments.getKnownSegmentsToArchiveAllSites
 
-*Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php) in line [91](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php#L91)*
+*Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php) in line [101](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php#L101)*
 
 Triggered during the cron archiving process to collect segments that should be pre-processed for all websites. The archiving process will be launched
 for each of these segments when archiving data.
@@ -2064,7 +2064,7 @@ Usages:
 
 ### Segments.getKnownSegmentsToArchiveForSite
 
-*Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php) in line [141](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php#L141)*
+*Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php) in line [151](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php#L151)*
 
 Triggered during the cron archiving process to collect segments that should be pre-processed for one specific site. The archiving process will be launched
 for each of these segments when archiving data for that one site.
