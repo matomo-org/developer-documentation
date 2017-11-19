@@ -181,11 +181,11 @@ Returns the offset to UTC time for the given timezone
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$timezone` (`string`) &mdash;
+    - `$timezone` (`Piwik\$timezone`) &mdash;
       
 
 - *Returns:*  `int` &mdash;
-    offset in seconds
+    offest in minutes
 
 <a name="adjustfortimezone" id="adjustfortimezone"></a>
 <a name="adjustForTimezone" id="adjustForTimezone"></a>
