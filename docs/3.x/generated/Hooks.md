@@ -20,7 +20,7 @@ Callback Signature:
 
 ### Actions.getCustomActionDimensionFieldsAndJoins
 
-*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/VisitorDetails.php) in line [193](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/VisitorDetails.php#L193)*
+*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/VisitorDetails.php) in line [195](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/VisitorDetails.php#L195)*
 
 
 
