@@ -114,6 +114,8 @@ The class defines the following methods:
 - [`getRequestTimeout()`](#getrequesttimeout) &mdash; Returns the maximum number of seconds the tracker will spend waiting for a response from Piwik.
 - [`setRequestTimeout()`](#setrequesttimeout) &mdash; Sets the maximum number of seconds that the tracker will spend waiting for a response from Piwik.
 - [`setProxy()`](#setproxy) &mdash; If a proxy is needed to look up the address of the Piwik site, set it with this
+- [`setOutgoingTrackerCookie()`](#setoutgoingtrackercookie) &mdash; Sets a cookie to be sent to the tracking server.
+- [`getIncomingTrackerCookie()`](#getincomingtrackercookie) &mdash; Gets a cookie which was set by the tracking server.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -1249,4 +1251,34 @@ If a proxy is needed to look up the address of the Piwik site, set it with this
     - `$proxyPort` (`int`) &mdash;
       
 - It does not return anything.
+
+<a name="setoutgoingtrackercookie" id="setoutgoingtrackercookie"></a>
+<a name="setOutgoingTrackerCookie" id="setOutgoingTrackerCookie"></a>
+### `setOutgoingTrackerCookie()`
+
+Sets a cookie to be sent to the tracking server.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name` (`$name`) &mdash;
+      
+    - `$value` (`$value`) &mdash;
+      
+- It does not return anything.
+
+<a name="getincomingtrackercookie" id="getincomingtrackercookie"></a>
+<a name="getIncomingTrackerCookie" id="getIncomingTrackerCookie"></a>
+### `getIncomingTrackerCookie()`
+
+Gets a cookie which was set by the tracking server.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name` (`$name`) &mdash;
+      
+
+- *Returns:*  `bool`|`string` &mdash;
+    
 
