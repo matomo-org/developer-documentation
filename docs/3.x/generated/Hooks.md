@@ -20,7 +20,7 @@ Callback Signature:
 
 ### Actions.getCustomActionDimensionFieldsAndJoins
 
-*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/VisitorDetails.php) in line [193](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/VisitorDetails.php#L193)*
+*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/VisitorDetails.php) in line [195](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Actions/VisitorDetails.php#L195)*
 
 
 
@@ -716,7 +716,7 @@ Callback Signature:
 
 ### Dashboard.changeDefaultDashboardLayout
 
-*Defined in [Piwik/Plugins/Dashboard/Dashboard](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php) in line [174](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L174)*
+*Defined in [Piwik/Plugins/Dashboard/Dashboard](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php) in line [182](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L182)*
 
 Allows other plugins to modify the default dashboard layout.
 
@@ -972,10 +972,29 @@ Callback Signature:
 
 ## Live
 
+- [Live.addVisitorDetails](#liveaddvisitordetails)
 - [Live.API.getIdSitesString](#liveapigetidsitesstring)
+- [Live.filterVisitorDetails](#livefiltervisitordetails)
 - [Live.getAllVisitorDetails](#livegetallvisitordetails)
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 - [Live.makeNewVisitorObject](#livemakenewvisitorobject)
+
+### Live.addVisitorDetails
+
+*Defined in [Piwik/Plugins/Live/Visitor](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Visitor.php) in line [93](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Visitor.php#L93)*
+
+Triggered to add new visitor details that cannot be picked up by the platform automatically. **Example**
+
+    public function addVisitorDetails(&$visitorDetails)
+    {
+        $visitorDetails[] = new CustomVisitorDetails();
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- [VisitorDetailsAbstract](/api-reference/Piwik/Plugins/Live/VisitorDetailsAbstract) `$visitorDetails` An array of visitorDetails
+
 
 ### Live.API.getIdSitesString
 
@@ -985,6 +1004,27 @@ Callback Signature:
 
 Callback Signature:
 <pre><code>function(&amp;$idSites)</code></pre>
+
+
+### Live.filterVisitorDetails
+
+*Defined in [Piwik/Plugins/Live/Visitor](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Visitor.php) in line [121](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Visitor.php#L121)*
+
+Triggered to filter / restrict vistor details. **Example**
+
+    public function filterVisitorDetails(&$visitorDetails)
+    {
+        foreach ($visitorDetails as $index => $visitorDetail) {
+             if (strpos(get_class($visitorDetail), 'MyPluginName') !== false) {}
+                 unset($visitorDetails[$index]); // remove all visitor details for a specific plugin
+             }
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- [VisitorDetailsAbstract](/api-reference/Piwik/Plugins/Live/VisitorDetailsAbstract) `$visitorDetails` An array of visitorDetails
 
 
 ### Live.getAllVisitorDetails
@@ -1014,7 +1054,7 @@ Callback Signature:
 
 ### Live.getExtraVisitorDetails
 
-*Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/API.php) in line [244](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/API.php#L244)*
+*Defined in [Piwik/Plugins/Live/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/API.php) in line [243](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/API.php#L243)*
 
 Triggered in the Live.getVisitorProfile API method. Plugins can use this event
 to discover and add extra data to visitor profiles.
@@ -1658,7 +1698,7 @@ Usages:
 
 ### ScheduledReports.allowMultipleReports
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [833](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L833)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [831](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L831)*
 
 Triggered when we're determining if a scheduled report transport medium can handle sending multiple Piwik reports in one scheduled report or not. Plugins that provide their own transport mediums should use this
 event to specify whether their backend can send more than one Piwik report
@@ -1678,7 +1718,7 @@ Usages:
 
 ### ScheduledReports.getRendererInstance
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [466](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L466)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [464](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L464)*
 
 Triggered when obtaining a renderer instance based on the scheduled report output format. Plugins that provide new scheduled report output formats should use this event to
 handle their new report formats.
@@ -1701,7 +1741,7 @@ Usages:
 
 ### ScheduledReports.getReportFormats
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [880](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L880)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [878](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L878)*
 
 Triggered when gathering all available scheduled report formats. Plugins that provide their own scheduled report format should use
 this event to make their format available.
@@ -1720,7 +1760,7 @@ Usages:
 
 ### ScheduledReports.getReportMetadata
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [805](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L805)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [803](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L803)*
 
 TODO: change this event so it returns a list of API methods instead of report metadata arrays. Triggered when gathering the list of Piwik reports that can be used with a certain
 transport medium.
@@ -1744,7 +1784,7 @@ Usages:
 
 ### ScheduledReports.getReportParameters
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [659](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L659)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [657](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L657)*
 
 Triggered when gathering the available parameters for a scheduled report type. Plugins that provide their own scheduled report transport mediums should use this
 event to list the available report parameters for their transport medium.
@@ -1763,7 +1803,7 @@ Usages:
 
 ### ScheduledReports.getReportRecipients
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [911](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L911)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [909](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L909)*
 
 Triggered when getting the list of recipients of a scheduled report. Plugins that provide their own scheduled report transport medium should use this event
 to extract the list of recipients their backend's specific scheduled report
@@ -1785,7 +1825,7 @@ Usages:
 
 ### ScheduledReports.getReportTypes
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [856](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L856)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [854](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L854)*
 
 Triggered when gathering all available transport mediums. Plugins that provide their own transport mediums should use this
 event to make their medium available.
@@ -1802,7 +1842,7 @@ Usages:
 
 ### ScheduledReports.processReports
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [444](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L444)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [442](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L442)*
 
 Triggered when generating the content of scheduled reports. This event can be used to modify the report data or report metadata of one or more reports
 in a scheduled report, before the scheduled report is rendered and delivered.
@@ -1828,7 +1868,7 @@ Usages:
 
 ### ScheduledReports.sendReport
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [596](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L596)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [594](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L594)*
 
 Triggered when sending scheduled reports. Plugins that provide new scheduled report transport mediums should use this event to
 send the scheduled report.
@@ -1863,7 +1903,7 @@ Usages:
 
 ### ScheduledReports.validateReportParameters
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [686](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L686)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [684](https://github.com/piwik/piwik/blob/3.x-dev/plugins/ScheduledReports/API.php#L684)*
 
 Triggered when validating the parameters for a scheduled report. Plugins that provide their own scheduled reports backend should use this
 event to validate the custom parameters defined with ScheduledReports::getReportParameters().
@@ -1994,7 +2034,7 @@ Usages:
 
 ### Segments.getKnownSegmentsToArchiveAllSites
 
-*Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php) in line [91](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php#L91)*
+*Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php) in line [101](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php#L101)*
 
 Triggered during the cron archiving process to collect segments that should be pre-processed for all websites. The archiving process will be launched
 for each of these segments when archiving data.
@@ -2024,7 +2064,7 @@ Usages:
 
 ### Segments.getKnownSegmentsToArchiveForSite
 
-*Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php) in line [141](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php#L141)*
+*Defined in [Piwik/SettingsPiwik](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php) in line [151](https://github.com/piwik/piwik/blob/3.x-dev/core/SettingsPiwik.php#L151)*
 
 Triggered during the cron archiving process to collect segments that should be pre-processed for one specific site. The archiving process will be launched
 for each of these segments when archiving data for that one site.
@@ -2730,4 +2770,37 @@ Callback Signature:
 <pre><code>function($list)</code></pre>
 
 - [WidgetsList](/api-reference/Piwik/Widget/WidgetsList) `$list` An instance of the WidgetsList. You can change the list of widgets this way.
+
+## Widgetize
+
+- [Widgetize.shouldEmbedIframeEmpty](#widgetizeshouldembediframeempty)
+
+### Widgetize.shouldEmbedIframeEmpty
+
+*Defined in [Piwik/Plugins/Widgetize/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/Controller.php) in line [59](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Widgetize/Controller.php#L59)*
+
+Triggered to detect whether a widgetized report should be wrapped in the widgetized HTML or whether only the rendered output of the controller/action should be printed. Set `$shouldEmbedEmpty` to `true` if
+your widget renders the full HTML itself.
+
+**Example**
+
+    public function embedIframeEmpty(&$shouldEmbedEmpty, $controllerName, $actionName)
+    {
+        if ($controllerName == 'Dashboard' && $actionName == 'index') {
+            $shouldEmbedEmpty = true;
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$shouldEmbedEmpty, $controllerName, $actionName)</code></pre>
+
+- string `&$shouldEmbedEmpty` Defines whether the iframe should be embedded empty or wrapped within the widgetized html.
+
+- string `$controllerName` The name of the controller that will be executed.
+
+- string `$actionName` The name of the action within the controller that will be executed.
+
+Usages:
+
+[Dashboard::shouldEmbedIframeEmpty](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L38)
 
