@@ -972,12 +972,31 @@ Callback Signature:
 
 ## Live
 
+- [Live.addProfileSummaries](#liveaddprofilesummaries)
 - [Live.addVisitorDetails](#liveaddvisitordetails)
 - [Live.API.getIdSitesString](#liveapigetidsitesstring)
+- [Live.filterProfileSummaries](#livefilterprofilesummaries)
 - [Live.filterVisitorDetails](#livefiltervisitordetails)
 - [Live.getAllVisitorDetails](#livegetallvisitordetails)
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 - [Live.makeNewVisitorObject](#livemakenewvisitorobject)
+
+### Live.addProfileSummaries
+
+*Defined in [Piwik/Plugins/Live/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php) in line [243](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php#L243)*
+
+Triggered to add new live profile summaries. **Example**
+
+    public function addProfileSummary(&$profileSummaries)
+    {
+        $profileSummaries[] = new MyCustomProfileSummary();
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- ProfileSummaryAbstract `$profileSummaries` An array of profile summaries
+
 
 ### Live.addVisitorDetails
 
@@ -1004,6 +1023,27 @@ Callback Signature:
 
 Callback Signature:
 <pre><code>function(&amp;$idSites)</code></pre>
+
+
+### Live.filterProfileSummaries
+
+*Defined in [Piwik/Plugins/Live/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php) in line [265](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php#L265)*
+
+Triggered to filter / restrict profile summaries. **Example**
+
+    public function filterProfileSummary(&$profileSummaries)
+    {
+        foreach ($profileSummaries as $index => $profileSummary) {
+             if ($profileSummary->getId() === 'myid') {}
+                 unset($profileSummaries[$index]); // remove all summaries having this ID
+             }
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$instances)</code></pre>
+
+- ProfileSummaryAbstract `$profileSummaries` An array of profile summaries
 
 
 ### Live.filterVisitorDetails
