@@ -61,7 +61,7 @@ $container = $app->getContainer();
 // Register component on container
 $container['view'] = function ($container) {
     $view = new \Slim\Views\Twig(realpath("../templates/"), [
-        'cache' => realpath('../tmp/templates'),
+        'cache' => '../tmp/templates',
         'debug' => DEBUG
     ]);
 
