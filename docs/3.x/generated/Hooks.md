@@ -590,7 +590,7 @@ Usages:
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [423](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L423)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [439](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L439)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -602,7 +602,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [413](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L413)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [429](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L429)*
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -614,7 +614,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [475](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L475)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [491](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L491)*
 
 This event is triggered after archiving.
 
@@ -630,7 +630,7 @@ Usages:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [1078](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L1078)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [1094](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L1094)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -643,7 +643,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [1476](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L1476)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [1492](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L1492)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
@@ -659,7 +659,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [345](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L345)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [355](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L355)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -671,7 +671,7 @@ Callback Signature:
 
 ### CronArchive.init.start
 
-*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [303](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L303)*
+*Defined in [Piwik/CronArchive](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php) in line [313](https://github.com/piwik/piwik/blob/3.x-dev/core/CronArchive.php#L313)*
 
 This event is triggered during initializing archiving.
 
