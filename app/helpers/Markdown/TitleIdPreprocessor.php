@@ -45,6 +45,7 @@ class TitleIdPreprocessor implements MarkdownParserInterface
     {
         $headlineText = strip_tags($headlineText);
         $headlineText = trim($headlineText);
+        $headlineText = preg_replace("/&#?[a-z0-9]{2,8}; /i","",$headlineText); // remove "&amp; " from string
         $headlineText = preg_replace('/\s/', '-', $headlineText);
         $headlineText = preg_replace('/[^a-zA-Z0-9\-\_]/', '', $headlineText);
         $headlineText = preg_replace('/(\-)+/', '-', $headlineText);
