@@ -159,7 +159,7 @@ The abstract class defines the following methods:
 - [`isViewDataTableId()`](#isviewdatatableid) &mdash; Returns `true` if this instance's or any of its ancestors' viewDataTable IDs equals the supplied ID, `false` if otherwise.
 - [`getDataTable()`](#getdatatable) &mdash; Returns the DataTable loaded from the API.
 - [`setDataTable()`](#setdatatable) &mdash; To prevent calling an API multiple times, the DataTable can be set directly.
-- [`render()`](#render) &mdash; Requests all needed data and renders the view.
+- [`render()`](#render) &mdash; Returns data.
 - [`isRequestingSingleDataTable()`](#isrequestingsingledatatable) &mdash; Returns `true` if this instance will request a single DataTable, `false` if requesting more than one.
 - [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Returns `true` if this visualization can display some type of data or not.
 - [`throwWhenSettingNonOverridableParameter()`](#throwwhensettingnonoverridableparameter) &mdash; Display a meaningful error message when any invalid parameter is being set.
@@ -277,7 +277,7 @@ It won't be loaded from the API in this case.
 <a name="render" id="render"></a>
 ### `render()`
 
-Requests all needed data and renders the view.
+Returns data.
 
 #### Signature
 

@@ -29,7 +29,7 @@ The class defines the following methods:
 - [`getAction()`](#getaction) &mdash; Get the currently set action. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setParameters()`](#setparameters) &mdash; Sets (overwrites) the parameters of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`addParameters()`](#addparameters) &mdash; Add new parameters and only overwrite parameters that have the same name. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
-- [`getParameters()`](#getparameters)
+- [`getParameters()`](#getparameters) &mdash; Get all URL parameters needed to render this widget.
 - [`setName()`](#setname) &mdash; Set the name of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`getName()`](#getname) &mdash; Get the name of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setOrder()`](#setorder) &mdash; Set the order of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
@@ -39,7 +39,7 @@ The class defines the following methods:
 - [`enable()`](#enable) &mdash; Enables the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`disable()`](#disable) &mdash; Disables the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`checkIsEnabled()`](#checkisenabled) &mdash; This method checks whether the widget is available, see [isEnabled()](/api-reference/Piwik/Widget/WidgetContainerConfig#isenabled). Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
-- [`getUniqueId()`](#getuniqueid)
+- [`getUniqueId()`](#getuniqueid) &mdash; Returns the unique id of an widget based on module, action and the set parameters.
 - [`setIsNotWidgetizable()`](#setisnotwidgetizable) &mdash; Sets the widget as not widgetizable [isWidgetizeable()](/api-reference/Piwik/Widget/WidgetContainerConfig#iswidgetizeable). Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setIsWidgetizable()`](#setiswidgetizable) &mdash; Sets the widget as widgetizable [isWidgetizeable()](/api-reference/Piwik/Widget/WidgetContainerConfig#iswidgetizeable). Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`isWidgetizeable()`](#iswidgetizeable) &mdash; Detect whether the widget is widgetizable meaning it won't be able to add it to the dashboard and it won't be possible to export the widget via an iframe if it is not widgetizable. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
@@ -189,6 +189,8 @@ See [setParameters()](/api-reference/Piwik/Widget/WidgetContainerConfig#setparam
 <a name="getParameters" id="getParameters"></a>
 ### `getParameters()`
 
+Get all URL parameters needed to render this widget.
+
 #### Signature
 
 
@@ -319,6 +321,8 @@ if (!$this->isEnabled()) {
 <a name="getuniqueid" id="getuniqueid"></a>
 <a name="getUniqueId" id="getUniqueId"></a>
 ### `getUniqueId()`
+
+Returns the unique id of an widget based on module, action and the set parameters.
 
 #### Signature
 

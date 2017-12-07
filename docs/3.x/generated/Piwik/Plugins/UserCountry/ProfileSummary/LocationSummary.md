@@ -12,9 +12,9 @@ The class defines the following methods:
 
 - [`setProfile()`](#setprofile) &mdash; Set profile information Inherited from [`ProfileSummaryAbstract`](../../../../Piwik/Plugins/Live/ProfileSummary/ProfileSummaryAbstract.md)
 - [`getId()`](#getid) &mdash; Returns the unique ID Inherited from [`ProfileSummaryAbstract`](../../../../Piwik/Plugins/Live/ProfileSummary/ProfileSummaryAbstract.md)
-- [`getName()`](#getname)
-- [`render()`](#render)
-- [`getOrder()`](#getorder)
+- [`getName()`](#getname) &mdash; Returns the descriptive name
+- [`render()`](#render) &mdash; Renders and returns the summary
+- [`getOrder()`](#getorder) &mdash; Returns order indicator used to sort all summaries before displaying them
 
 <a name="setprofile" id="setprofile"></a>
 <a name="setProfile" id="setProfile"></a>
@@ -43,6 +43,8 @@ Returns the unique ID
 <a name="getName" id="getName"></a>
 ### `getName()`
 
+Returns the descriptive name
+
 #### Signature
 
 - It returns a `string` value.
@@ -51,6 +53,8 @@ Returns the unique ID
 <a name="render" id="render"></a>
 ### `render()`
 
+Renders and returns the summary
+
 #### Signature
 
 - It returns a `string` value.
@@ -58,6 +62,8 @@ Returns the unique ID
 <a name="getorder" id="getorder"></a>
 <a name="getOrder" id="getOrder"></a>
 ### `getOrder()`
+
+Returns order indicator used to sort all summaries before displaying them
 
 #### Signature
 

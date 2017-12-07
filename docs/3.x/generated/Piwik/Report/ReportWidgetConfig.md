@@ -20,7 +20,7 @@ The class defines the following methods:
 - [`getAction()`](#getaction) &mdash; Get the currently set action. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setParameters()`](#setparameters) &mdash; Sets (overwrites) the parameters of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`addParameters()`](#addparameters) &mdash; Add new parameters and only overwrite parameters that have the same name. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
-- [`getParameters()`](#getparameters)
+- [`getParameters()`](#getparameters) &mdash; Get all URL parameters needed to render this widget.
 - [`setName()`](#setname) &mdash; Set the name of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`getName()`](#getname) &mdash; Get the name of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
 - [`setOrder()`](#setorder) &mdash; Set the order of the widget. Inherited from [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)
@@ -176,6 +176,8 @@ See [setParameters()](/api-reference/Piwik/Report/ReportWidgetConfig#setparamete
 <a name="getparameters" id="getparameters"></a>
 <a name="getParameters" id="getParameters"></a>
 ### `getParameters()`
+
+Get all URL parameters needed to render this widget.
 
 #### Signature
 

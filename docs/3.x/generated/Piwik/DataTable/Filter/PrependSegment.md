@@ -14,12 +14,14 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct)
-- [`filter()`](#filter) &mdash; See [PrependValueToMetadata](/api-reference/Piwik/DataTable/Filter/PrependValueToMetadata). Inherited from [`PrependValueToMetadata`](../../../Piwik/DataTable/Filter/PrependValueToMetadata.md)
+- [`__construct()`](#__construct) &mdash; Constructor.
+- [`filter()`](#filter) &mdash; Manipulates a DataTable in some way. Inherited from [`PrependValueToMetadata`](../../../Piwik/DataTable/Filter/PrependValueToMetadata.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
+
+Constructor.
 
 #### Signature
 
@@ -33,7 +35,7 @@ The class defines the following methods:
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [PrependValueToMetadata](/api-reference/Piwik/DataTable/Filter/PrependValueToMetadata).
+Manipulates a DataTable in some way.
 
 #### Signature
 

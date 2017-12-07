@@ -109,7 +109,7 @@ The class defines the following methods:
 - [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
 - [`__get()`](#__get) &mdash; Retrieves an assigned variable.
 - [`__isset()`](#__isset) &mdash; Returns true if a template variable has been set or not.
-- [`render()`](#render) &mdash; Renders the current view.
+- [`render()`](#render) &mdash; Returns data.
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field.
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response.
 - [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template.
@@ -210,10 +210,7 @@ Returns true if a template variable has been set or not.
 <a name="render" id="render"></a>
 ### `render()`
 
-Renders the current view.
-
-Also sends the stored 'Content-Type' HTML header.
-See [setContentType()](/api-reference/Piwik/View#setcontenttype).
+Returns data.
 
 #### Signature
 

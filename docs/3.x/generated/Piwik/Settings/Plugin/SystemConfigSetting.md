@@ -45,6 +45,8 @@ Constructor.
        The name of the plugin the setting belongs to
     - `$configSectionName`
       
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>

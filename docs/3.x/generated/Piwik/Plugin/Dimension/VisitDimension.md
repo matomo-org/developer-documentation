@@ -246,7 +246,7 @@ The abstract class defines the following methods:
 - [`getSqlSegment()`](#getsqlsegment) &mdash; Returns a sql segment expression for this dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getDbTableName()`](#getdbtablename) &mdash; Returns the name of the database table this dimension belongs to. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
-- [`getAllDimensions()`](#getalldimensions) &mdash; Get all visit dimensions that are defined by all activated plugins.
+- [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension.
 - [`getDimensions()`](#getdimensions) Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`factory()`](#factory) &mdash; Creates a Dimension instance from a string ID (see [getId()](/api-reference/Piwik/Plugin/Dimension/VisitDimension#getid)). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
@@ -535,7 +535,7 @@ of the dimension, but is modified to be more human readable.
 <a name="getAllDimensions" id="getAllDimensions"></a>
 ### `getAllDimensions()`
 
-Get all visit dimensions that are defined by all activated plugins.
+Gets an instance of all available visit, action and conversion dimension.
 
 #### Signature
 

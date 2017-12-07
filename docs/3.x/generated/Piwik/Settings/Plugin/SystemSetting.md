@@ -23,7 +23,7 @@ The class defines the following methods:
 - [`setIsWritableByCurrentUser()`](#setiswritablebycurrentuser) &mdash; Set whether setting is writable or not. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`isWritableByCurrentUser()`](#iswritablebycurrentuser) &mdash; Returns `true` if this setting is writable for the current user, `false` if otherwise.
 - [`save()`](#save) &mdash; Saves (persists) the value for this setting in the database if a value has been actually set. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
-- [`getValue()`](#getvalue)
+- [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value.
 - [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 
 <a name="__construct" id="__construct"></a>
@@ -43,6 +43,8 @@ Constructor.
        Eg an array, int, ... see TYPE_* constants
     - `$pluginName` (`string`) &mdash;
        The name of the plugin the system setting belongs to.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
@@ -126,6 +128,11 @@ Saves (persists) the value for this setting in the database if a value has been 
 <a name="getvalue" id="getvalue"></a>
 <a name="getValue" id="getValue"></a>
 ### `getValue()`
+
+Returns the previously persisted setting value.
+
+If no value was set, the default value
+is returned.
 
 #### Signature
 
