@@ -30,7 +30,7 @@ function renderGuide(Slim\Views\Twig $view, Slim\Http\Response $response, Psr\Ht
         'linkToEditDocument' => $guide->linkToEdit(),
         'activeMenu'         => $category->getName(),
         'currentPath' => $uri->getPath(),
-        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? Url::getUrlIfDocumentIsAvailableInPiwikVersion($uri->getPath(), LATEST_PIWIK_DOCS_VERSION) : false)
+        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false: Url::getUrlIfDocumentIsAvailableInPiwikVersion($uri->getPath(), LATEST_PIWIK_DOCS_VERSION))
     ]);
 }
 
@@ -88,8 +88,8 @@ $app->get('/api-reference/Piwik/[{params:.*}]', function (Slim\Http\Request $req
         throw new \Slim\Exception\NotFoundException($request, $response);
     }
 
-    $names = array_filter($paramArray);
-    $file = 'Piwik/' . $request->getAttribute('params');
+    $names = array_filter($request->getAttribute('params'));
+    $file = 'Piwik/' . $names;
 
     try {
         $doc = new PhpDoc($file, $file);

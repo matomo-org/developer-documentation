@@ -14,7 +14,6 @@ require '../config/app.php';
 
 use helpers\Environment;
 use helpers\Git;
-use helpers\Log;
 
 //use helpers\CacheMiddleware;
 //use helpers\PiwikVersionMiddleware;
@@ -91,7 +90,7 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 $c['errorHandler'] = function ($c) {
-    return function (Slim\Http\Request $request, Slim\Http\Response $response, $exception) use ($c) {
+    return function (Slim\Http\Request $request, Slim\Http\Response $response, Slim\Exception\SlimException $exception) use ($c) {
         $this->logger->addInfo('An unhandled exception occurred: ' . $exception->getMessage() . $exception->getTraceAsString());
 
         return $response->withStatus(500)
