@@ -28,7 +28,7 @@
 
                                 <ul class="nav">
                                     {% for subItem in item.subItems %}
-                                        {% set menuClass = (subItem.getMenuUrl in currentPath) ? 'active' : '' %}
+                                        {% set menuClass = (subItem.getMenuUrl == currentPath) ? 'active' : '' %}
                                         <li class="{{ menuClass }}" title="{{ subItem.title|striptags|raw }}">
                                             <a href="{{ subItem.menuUrl|completeUrl }}"> {{ subItem.menuTitle|raw }}</a>
                                         </li>
