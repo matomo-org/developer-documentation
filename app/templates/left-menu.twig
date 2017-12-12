@@ -1,69 +1,71 @@
 <div class="bs-side panel-group">
 
     {% if category.items|length %}
-        <div class="panel panel-primary">
+        <div class="card bs-sidebar bs-mainsidebar">
 
-            <div class="panel-heading">
-                <h4 class="panel-title">
+            <div class="card-header">
+                <h4 class="card-title">
                     <a href="{{ category.url|completeUrl }}">
                         {{ category.name }}
                     </a>
                 </h4>
             </div>
 
-            <div class="panel-body bs-sidebar">
-                <ul class="nav nav-pills nav-stacked bs-sidenav">
-                    {% for item in category.items %}
+            <ul class="nav flex-column bs-sidenav">
+                {% for item in category.items %}
 
-                        {% if item.menuTitle %}
-                            {% set menuClass = (guide.title == item.menuTitle) ? 'active' : '' %}
-                            <li class="{{ menuClass }}" title="{{ item.menuTitle|striptags|raw }}">
-                                {% if item.menuUrl %}
-                                    <a href="{{ item.menuUrl|completeUrl }}">{{ item.menuTitle|raw }}</a>
-                                {% else %}
-                                    <span>{{ item.menuTitle|raw }}</span>
-                                {% endif %}
+                    {% if item.menuTitle %}
+                        {% set menuClass = (guide.title == item.menuTitle) ? 'nav-link active' : 'nav-link' %}
+                        <li class="nav-item" title="{{ item.menuTitle|striptags|raw }}">
+                            {% if item.menuUrl %}
+                                <a class="{{ menuClass }}"
+                                   href="{{ item.menuUrl|completeUrl }}">{{ item.menuTitle|raw }}</a>
+                            {% else %}
+                                <span class="{{ menuClass }}">{{ item.menuTitle|raw }}</span>
+                            {% endif %}
 
-                                {% set subItems = item.subItems %}
+                            {% set subItems = item.subItems %}
 
-                                <ul class="nav">
-                                    {% for subItem in item.subItems %}
-                                        {% set menuClass = (subItem.getMenuUrl in currentPath) ? 'active' : '' %}
-                                        <li class="{{ menuClass }}" title="{{ subItem.title|striptags|raw }}">
-                                            <a href="{{ subItem.menuUrl|completeUrl }}"> {{ subItem.menuTitle|raw }}</a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-
+                            <ul class="nav flex-column">
+                                {% for subItem in item.subItems %}
+                                    {% set menuClass = (subItem.getMenuUrl == currentPath) ? 'nav-link active' : 'nav-link' %}
+                                    <li class="nav-item" title="{{ subItem.title|striptags|raw }}">
+                                        <a class="{{ menuClass }}" href="{{ subItem.menuUrl|completeUrl }}">
+                                            {{ subItem.menuTitle|raw }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         </div>
     {% endif %}
 
     {% if guide.sections|length %}
-        <div class="guide-sections panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
+        <div class="guide-sections card">
+            <div class="card-header">
+                <h4 class="card-title">
                     {{ guide.title|striptags|raw }}
                 </h4>
             </div>
 
-            <div class="panel-body bs-sidebar">
-                <ul class="nav nav-pills nav-stacked bs-sidenav">
+            <div class="bs-sidebar">
+                <ul class="nav flex-column">
                     {% for section in guide.sections %}
-                        <li>
-                            <a href="#{{ section.id }}">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#{{ section.id }}">
                                 {{ section.title|striptags|raw }}
                             </a>
 
                             {% if section.children|length %}
-                                <ul class="nav">
-
+                                <ul class="nav flex-column">
                                     {% for subsection in section.children %}
-                                        <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" title="{{ subsection.title }}"
+                                               href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a>
+                                        </li>
                                     {% endfor %}
 
                                 </ul>
@@ -74,5 +76,4 @@
             </div>
         </div>
     {% endif %}
-
 </div>

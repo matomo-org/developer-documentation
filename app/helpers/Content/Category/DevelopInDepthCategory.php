@@ -33,7 +33,7 @@ class DevelopInDepthCategory extends Category
             new EmptySubCategory('Piwik Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),
-                new RemoteLink('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
+                new RemoteLink('Piwik\'s Roadmap', 'https://piwik.org/roadmap/'),
             ]),
             new DevelopCategory(),
         ];

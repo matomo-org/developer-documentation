@@ -1,0 +1,68 @@
+.documentation {
+    line-height: 150%;
+    margin-bottom: 50px;
+
+    h1 {
+        font-weight: 300;
+        padding-bottom: 9px;
+        margin: 0 0 20px;
+        border-bottom: 1px solid $lightgrey;
+    }
+
+    a:not(.alert-link) {
+        border-bottom: 1px solid $lightgrey;
+        &:hover {
+            text-decoration: none;
+        }
+        code {
+            padding-bottom: 1px;
+            border-bottom: 1px solid $secondary;
+        }
+    }
+    img {
+        max-width: 100%;
+        border: 1px solid $darkgrey;
+        border-radius: 4px;
+        padding: 5px;
+        background-color: $lightergrey;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    code {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid $lightgrey;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    h4 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    h5 {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .guide-navigation {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .guide-navigation-prev {
+        float: left;
+    }
+    .guide-navigation-next {
+        float: right;
+    }
+}

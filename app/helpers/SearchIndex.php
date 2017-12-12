@@ -4,11 +4,14 @@ namespace helpers;
 
 use helpers\Content\Category\ApiReferenceCategory;
 use helpers\Content\Category\Category;
+use helpers\Content\Category\ChangelogCategory;
 use helpers\Content\Category\DevelopInDepthCategory;
 use helpers\Content\Category\DesignCategory;
 use helpers\Content\Category\DevelopCategory;
 use helpers\Content\Category\IntegrateCategory;
+use helpers\Content\Category\SupportCategory;
 use helpers\Content\EmptySubCategory;
+use helpers\Content\Guide;
 use helpers\Content\MenuItem;
 use helpers\Content\RemoteLink;
 
@@ -17,19 +20,28 @@ use helpers\Content\RemoteLink;
  */
 class SearchIndex
 {
-    public function buildIndex()
-    {
-        return array_merge($this->getGuides(), $this->getPhpDocReferences());
+    public function buildIndex() {
+        return [
+            "guides" => $this->getGuides(),
+            "phpDoc" => $this->getPhpDocReferences()
+        ];
     }
 
-    private function getGuides()
-    {
+    private function pathToMarkdownFile($path) {
+        $filename = str_replace("guides/", "", substr($path, 1));
+        $filename = str_replace("api-reference/", "", $filename);
+        return $filename;
+    }
+
+    private function getGuides() {
         $categories = [
             new IntegrateCategory(),
             new DevelopCategory(),
             new DesignCategory(),
             new ApiReferenceCategory(),
-            new DevelopInDepthCategory()
+            new DevelopInDepthCategory(),
+            new ChangelogCategory(),
+            new SupportCategory()
         ];
 
         $items = [];
@@ -53,24 +65,23 @@ class SearchIndex
             if ($item instanceof EmptySubCategory) {
                 return false;
             }
-            if ($item instanceof RemoteLink) {
-                return false;
-            }
             return true;
         });
 
-        $urls = array_map(function (MenuItem $item) {
-            return Environment::completeUrl($item->getMenuUrl());
+        $key = array_map(function (MenuItem $item) {
+            return $this->pathToMarkdownFile($item->getMenuUrl());
         }, $items);
-        $titles = array_map(function (MenuItem $item) {
-            return $item->getMenuTitle();
+        $value = array_map(function (MenuItem $item) {
+            return [
+                "title" => strip_tags(html_entity_decode($item->getMenuTitle())),
+                "url" => Environment::completeUrl($item->getMenuUrl())
+            ];
         }, $items);
 
-        return array_combine($urls, $titles);
+        return array_combine($key, $value);
     }
 
-    private function getPhpDocReferences()
-    {
+    private function getPhpDocReferences() {
         $indexPath = Environment::getPathToGeneratedDocs() . '/Index.md';
         $indexMarkdown = file_get_contents($indexPath);
 
@@ -94,8 +105,11 @@ class SearchIndex
                     $title = $className . '::' . $title;
                 }
             }
-
-            $result[$url] = $title;
+            $key = $this->pathToMarkdownFile($url);
+            $result[$title] = [
+                "title" => $title,
+                "url" => $url
+            ];
         }
 
         return $result;

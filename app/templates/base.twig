@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Piwik Analytics - Developer Docs - v{{ selectedPiwikVersion }}</title>
     <meta charset="utf-8">
@@ -7,71 +7,74 @@
     {% if urlIfAvailableInNewerVersion %}
         <link rel="canonical" href="https://{{ constant('DOCS_DOMAIN') }}{{ urlIfAvailableInNewerVersion }}">
     {% endif %}
-    <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
-    <link href="/css/highlight.zenburn.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
-    <link href="/css/app.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
-    <link href="/css/sidebar.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
-    <link href="/css/documentation.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
+    <meta property="og:title" content="{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Piwik Analytics - Developer Docs - v{{ selectedPiwikVersion }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://{{ constant('DOCS_DOMAIN') }}{{ currentPath }}" />
+    <meta property="og:image" content="https://piwik.org/wp-content/themes/piwik/assets/img/media/piwik.png" />
+    <meta property="og:site_name" content="Piwik Analytics - Developer Docs" />
+
+    <link href="/dist/css/style.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="/js/html5shiv.3.7.0.js?{{ revision|e('html_attr') }}"></script>
-    <script src="/js/respond.min.1.3.0.js?{{ revision|e('html_attr') }}"></script>
-    <![endif]-->
-</head>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--></head>
 <body>
-
-<div id="menu" class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand hidden-sm" href="{{ '/'|completeUrl }}"><img height="20" width="74" src="/img/logo.png"/></a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li {% if isHome %}class="active"{% endif %}><a href="{{ '/'|completeUrl }}">Home</a></li>
-                <li {% if activeMenu == 'Integrate' %}class="active"{% endif %}>
-                    <a href="{{ '/integration'|completeUrl }}">Integrate</a>
+        <a class="navbar-brand" href="{{ '/'|completeUrl }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 926.3 244" width="74px" height="19.5">
+                <path fill="#fff"
+                      d="M580.7 1c-14-4-28.5 4-32.5 18l-30 105-30-105C485 8 475 .7 464 0H460.5c-11 .6-21 8-24.3 19l-30 104.7L376.6 19C372.5 5 358-3 344 1c-14 4-22 18.6-18 32.6L380.5 225c3.2 11 13 18.2 23.8 18.8h4c10.7-.6 20.5-7.8 23.7-19l30.2-105.3 30 105.4c3.3 11 13.3 18.3 24.2 18.8h3.6c11-.5 21-7.7 24-19l54.7-191.2c4-14-4-28.6-18-32.6M632.3 215c0 16 12.8 29 29 29 16 0 28.8-13 28.8-29V29c0-16.2-12.7-29-28.8-29-16 0-29 12.8-29 29v186M235.2 215c0 16.2 12.8 29 29 29 16 0 28.8-12.8 28.8-29V29c0-16.2-12.8-29-29-29-16 0-28.8 12.8-28.8 29v186M843.5 121.2l74.8-74.8C929 35.7 929 18.7 918.3 8S890.6-2.7 880 8l-89.4 89.3V29c0-16.2-12.7-29-29-29-16 0-28.8 12.8-28.8 29v186c0 16 12.8 29 29 29 16 0 28.8-13 28.8-29v-41l14.5-14.4 74 75.2c10.6 10.8 27.6 11 38.4.3 10.8-10.5 11-27.4.3-38.3l-74.2-75.5M110.2 122H57.8V52.4H109c19.3 0 35 15.5 35 34.7 0 18.8-15 34.2-33.8 34.7zm92.2-35.2c0-46.6-36.8-84.4-83-86.3V.3H29C12.7.3 0 13 0 29.3v185.4c0 16 12.8 29 29 29 16 0 28.8-13 28.8-29v-41.4h61.7v-.2c46-1.8 83-39.6 83-86.2"></path>
+            </svg>
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item{% if isHome %} active{% endif %}">
+                    <a class="nav-link" href="{{ '/'|completeUrl }}">Home</a>
                 </li>
-                <li {% if activeMenu == 'Develop' %}class="active"{% endif %}>
-                    <a href="{{ '/develop'|completeUrl }}">Develop</a>
+                <li class="nav-item{% if activeMenu == 'Integrate' %} active{% endif %}">
+                    <a class="nav-link" href="{{ '/integration'|completeUrl }}">Integrate</a>
                 </li>
-                <li {% if activeMenu == 'API Reference' %}class="active"{% endif %}>
-                    <a href="{{ '/api-reference'|completeUrl }}">API Reference</a>
+                <li class="nav-item{% if activeMenu == 'Develop' %} active{% endif %}">
+                    <a class="nav-link" href="{{ '/develop'|completeUrl }}">Develop</a>
                 </li>
-                <li {% if activeMenu == 'Changelog' %}class="active"{% endif %}>
-                    <a href="{{ '/changelog'|completeUrl }}">Changelog</a>
+                <li class="nav-item{% if activeMenu == 'API Reference' %} active{% endif %}">
+                    <a class="nav-link" href="{{ '/api-reference'|completeUrl }}">API Reference</a>
                 </li>
-                <li {% if activeMenu == 'Support' %}class="active"{% endif %}>
-                    <a href="{{ '/support'|completeUrl }}">Support</a>
+                <li class="nav-item{% if activeMenu == 'Changelog' %} active{% endif %}">
+                    <a class="nav-link" href="{{ '/changelog'|completeUrl }}">Changelog</a>
+                </li>
+                <li class="nav-item{% if activeMenu == 'Support' %} active{% endif %}">
+                    <a class="nav-link" href="{{ '/support'|completeUrl }}">Support</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav pull-right">
-                <li>
-                    <div id="quick-search-typeahead">
-                        <input type="text"
-                               data-action="{{ '/data/documents'|completeUrl }}"
-                               placeholder="Quick search..."/>
+            <form class="form-inline my-2 my-lg-0">
+                <input id="quick-search-typeahead" class="form-control mr-sm-2" type="text"
+                       placeholder="Quick search..."
+                       aria-label="Search"
+                       data-action="{{ '/data/documents'|completeUrl }}"
+                       autocomplete="off">
+                <select title="Select your Piwik version"
+                        class="piwik-version-select custom-select"
+                        name="piwik">
+                    {% for i in availablePiwikVersions %}
 
-                        <select title="Select your Piwik version"
-                                class="piwik-version-select"
-                                name="piwik">
-                            {% for i in availablePiwikVersions %}
-
-                                <option value="{{ currentPath|completeUrlForPiwikVersion(i ~ '.x') }}"
-                                        {% if selectedPiwikVersion == i %}selected{% endif %}
-                                >Piwik {{ i }}.X</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </li>
-            </ul>
+                        <option value="{{ currentPath|completeUrlForPiwikVersion(i ~ '.x') }}"
+                                {% if selectedPiwikVersion == i %}selected{% endif %}
+                        >Piwik {{ i }}.X
+                        </option>
+                    {% endfor %}
+                </select>
+            </form>
         </div>
     </div>
-</div>
+</nav>
 
 {% block headline %}
     {% if title is defined and title and (setPageHeader is not defined or setPageHeader) %}
@@ -111,17 +114,14 @@
     </footer>
 {% endblock %}
 
-<script src="/js/jquery.js?{{ revision|e('html_attr') }}"></script>
-<script src="/js/bootstrap.min.js?{{ revision|e('html_attr') }}"></script>
-<script src="/js/bootstrap2-typeahead.js?{{ revision|e('html_attr') }}"></script>
-<script src="/js/app.js?{{ revision|e('html_attr') }}"></script>
-<script src="/js/highlight.8.2.min.js?{{ revision|e('html_attr') }}"></script>
+<script src="/dist/js/libraries.min.js?{{ revision|e('html_attr') }}"></script>
+<script src="/dist/js/app.min.js?{{ revision|e('html_attr') }}"></script>
 <script type="text/javascript">
 $(document).ready(function () {
     // Disable language auto-detect on code blocks that don't have a language
     // This prevents a messy highlighting when the block doesn't contain code
     $('pre code:not([class])').addClass('no-highlight hljs');
-    hljs.initHighlightingOnLoad();
+    hljs.initHighlighting();
 });
 </script>
 
@@ -141,7 +141,7 @@ $(document).ready(function () {
             var u=(("https:" == document.location.protocol) ? "https" : "http") + "://demo.piwik.org/";
             _paq.push(["setTrackerUrl", u+"piwik.php"]);
             _paq.push(["setSiteId", "36"]);
-            _paq.push(["addTracker", 'https://demo3.piwik.org/piwik.php', '2'])
+            _paq.push(["addTracker", 'https://demo3.piwik.org/piwik.php', '2']);
 
             var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
             g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);

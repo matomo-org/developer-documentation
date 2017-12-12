@@ -2,11 +2,14 @@
 /generator/vendor
 /generator/composer.phar
 /app/vendor
+/app/node_modules
 /app/composer.phar
+/app/public/dist/
 /.idea
 /app/config/local.php
 /app/tmp/cache/*
 /app/tmp/logs/*
+/app/tmp/index/*
 /docs/changelog.md
 /docs/cache/
 /docs/*/cache/
