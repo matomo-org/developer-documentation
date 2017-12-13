@@ -74,7 +74,7 @@ class CacheMiddleware
     }
 
     private function isJsonData(Request $req) {
-        return strpos($req->getUri()->getPath(), 'data/') !== false;
+        return substr($req->getUri()->getPath(), 0, 6) === '/data/';
     }
 
     private function getCacheKey(Request $req) {
