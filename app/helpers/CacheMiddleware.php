@@ -41,7 +41,6 @@ class CacheMiddleware
 
         if ($this->shouldCache($req) && 200 == $res->getStatusCode()) {
             $res->getBody()->rewind();
-//            var_dump($res->getBody()->getContents());
             Cache::set($this->getCacheKey($req), $res->getBody()->getContents());
         }
 
