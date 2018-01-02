@@ -983,7 +983,7 @@ Callback Signature:
 
 ### Live.addProfileSummaries
 
-*Defined in [Piwik/Plugins/Live/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php) in line [243](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php#L243)*
+*Defined in [Piwik/Plugins/Live/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php) in line [248](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php#L248)*
 
 Triggered to add new live profile summaries. **Example**
 
@@ -1027,7 +1027,7 @@ Callback Signature:
 
 ### Live.filterProfileSummaries
 
-*Defined in [Piwik/Plugins/Live/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php) in line [265](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php#L265)*
+*Defined in [Piwik/Plugins/Live/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php) in line [270](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Live/Controller.php#L270)*
 
 Triggered to filter / restrict profile summaries. **Example**
 
