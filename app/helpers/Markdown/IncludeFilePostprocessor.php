@@ -2,8 +2,6 @@
 
 namespace helpers\Markdown;
 
-use helpers\Log;
-
 /**
  * Addition to Markdown to allow including remote files.
  *
