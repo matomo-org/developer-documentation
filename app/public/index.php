@@ -30,32 +30,6 @@ $config = [
 
 $app = new \Slim\App($config);
 
-//// New Slim App
-//$app = new Slim(array(
-//    'view' => $twig,
-//    'log.enabled' => true,
-//    'debug'       => DEBUG,
-//    'templates.path' => '../templates',
-//    'templates.cache' => realpath('../tmp/templates'),
-//    'templates.charset' => 'utf-8',
-//    'templates.auto_reload' => true,
-//    'templates.autoescape' => true,
-//    'log.writer'  => new \Slim\Extras\Log\DateTimeFileWriter(
-//        array('path' => realpath('../tmp/logs'), 'name_format' => 'Y-m-d')
-//    )
-//));
-//$app->add(new PiwikVersionMiddleware());
-//$app->add(new CacheMiddleware());
-
-//$app->error(function (\Exception $e) use ($app) {
-//    Log::error('An unhandled exception occurred: ' . $e->getMessage() . $e->getTraceAsString());
-//
-//    $app->response()->status(500);
-//});
-
-//$log = $app->getLog();
-//$log->setEnabled(true);
-
 // Get container
 $container = $app->getContainer();
 // Register component on container
