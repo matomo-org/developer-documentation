@@ -6,7 +6,9 @@
 /.idea
 /app/config/local.php
 /app/tmp/cache/*
+/app/tmp/templates/*
 /app/tmp/logs/*
 /docs/changelog.md
 /docs/cache/
 /docs/*/cache/
+!.gitkeep
