@@ -148,6 +148,12 @@ $app->get('/changelog', function (Slim\Http\Request $request, Slim\Http\Response
 
     if ($fetchContent) {
         $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/3.x-dev/CHANGELOG.md');
+        if ($markdown === false) {
+            /** @var \Monolog\Logger $monolog */
+            $monolog = $this->logger;
+            $monolog->error("Could not fetch changelog");
+            throw new \Exception("Could not fetch changelog");
+        }
         file_put_contents($targetFile, $markdown);
     }
 
