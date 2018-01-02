@@ -8,8 +8,8 @@
 
 namespace helpers;
 
-use Slim\Http\Response;
 use Slim\Http\Request;
+use Slim\Http\Response;
 
 /**
  * Class CacheMiddleware.
@@ -38,10 +38,10 @@ class CacheMiddleware
         }
         /** @var Response $res */
         $res = $next($req, $res);
-
-        if ($this->shouldCache($req) && 200 == $res->getStatusCode()) {
-            $res->getBody()->rewind();
-            Cache::set($this->getCacheKey($req), $res->getBody()->getContents());
+        $res->getBody()->rewind();
+        $content = $res->getBody()->getContents();
+        if ($this->shouldCache($req) && 200 == $res->getStatusCode() && !$this->hadIncludeFileError($content)) {
+            Cache::set($this->getCacheKey($req), $content);
         }
 
         return $res;
@@ -70,6 +70,10 @@ class CacheMiddleware
 
     private function shouldCache(Request $req) {
         return $req->isGet();
+    }
+
+    private function hadIncludeFileError($content) {
+        return (strpos($content, "Error while retrieving") !== false);
     }
 
     private function isJsonData(Request $req) {

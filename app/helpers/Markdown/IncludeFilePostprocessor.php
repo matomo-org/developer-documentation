@@ -68,9 +68,14 @@ class IncludeFilePostprocessor implements MarkdownParserInterface
         }
 
         try {
+            $response = file_get_contents($url);
+            print_r($response);
+            if ($response === false) {
+                throw new \Exception;
+            }
             $content = mb_convert_encoding(file_get_contents($url), 'HTML-ENTITIES', 'utf-8');
         } catch (\Exception $e) {
-            Log::error(sprintf("Error while retrieving %s\n%s", $url, $e->getMessage()));
+//            Log::error(sprintf("Error while retrieving %s\n%s", $url, $e->getMessage()));
 
             return 'Error while retrieving ' . htmlentities($url);
         }
