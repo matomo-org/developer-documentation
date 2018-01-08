@@ -34,6 +34,7 @@ class DevelopInDepthCategory extends Category
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),
                 new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
+                new RemoteLink('Piwik\'s Roadmap', 'https://piwik.org/roadmap/'),
             ]),
             new DevelopCategory(),
         ];

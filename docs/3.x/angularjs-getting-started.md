@@ -1,8 +1,12 @@
+---
+category: DevelopInDepth
+---
 # Getting started with AngularJS
 
 Upfront: This document is working draft and far from being perfect. We will improve this over time as we do more work with AngularJS.
 
 With using AngularJS we are trying to achieve different goals:
+
 * Decouple the Piwik UI from the backend. Ideally, in a few years, we have a completely separated UI based on HTML, JavaScript and CSS (no PHP) which uses all the Piwik Reporting API's. This brings lots of advantages:
   * Reducing complexity in frontend and backend
   * Reducing complexity brings faster development, fewer bugs, ...
@@ -17,6 +21,7 @@ With using AngularJS we are trying to achieve different goals:
 
 ## Before you start using AngularJS
 I recommend watching some videos and read a few resources about the benefits and best practices of AngularJS. It is important to understand how AngularJS works and especially to be aware of pitfalls and best practices.
+
 * [Video AngularJS introduction](https://www.youtube.com/watch?v=i9MHigUZKEM)
 * [Video Best Practices](https://www.youtube.com/watch?v=ZhfUv0spHCY)
 * [Great AngularJS style guide that we should follow](https://github.com/johnpapa/angularjs-styleguide)
@@ -39,11 +44,11 @@ I recommend watching some videos and read a few resources about the benefits and
   * Some directives such as ng-if and ng-repeat create their own scope
   * All bound data should be dotted when using ng-model otherwise you are doing it wrong. You would be wondering why a value is not updated and it will take you hours to figure this out.
     Example:
-    ```<div ng-model="model.searchfield">``` instead of ```<div ng-model="searchfield">```
+    `<div ng-model="model.searchfield">` instead of `<div ng-model="searchfield">`
 * The second most important thing to understand are probably [directives](https://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/).
 * Try to keep the number of data-bound elements low (< 200)
 * The ng-repeat directive of AngularJS is getting slow above 2500 two-way data bindings.
-* Sometimes you need some properties only in the view (HTML template). Try to prefix them with `view`. For instance ```<div ng-show='view.showPaginator'>```
+* Sometimes you need some properties only in the view (HTML template). Try to prefix them with `view`. For instance `<div ng-show='view.showPaginator'>`
 * When Angular detects the presence of a jQuery version in your page, it uses the full jQuery implementation in lieu of jqLite.
 * "Here are two rules for filters: firstly, if the same effect can be simply achieved by decorating the underlying data, such as by adding a 'formattedValue' property, then do it that way. It will always be faster because it only happens once, not multiple times per digest cycle. Secondly, when you do have good reasons to write a filter make sure that it is blindingly fast." --> No DOM access if possible as filters are called many many times. [Read more](https://www.exratione.com/2013/12/considering-speed-and-slowness-in-angularjs/)
 * Do not access the DOM within a Controller, only from directives and only if needed
@@ -112,18 +117,20 @@ Filenames are always lower case and words are separated by dashes. In general, w
 
 
 ### Related links
-* https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub
-* http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript
-* http://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/
-* https://gocardless.com/blog/building-a-large-angular-application/
-* https://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/
+* [https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub)
+* [http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript](http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript)
+* [http://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/](http://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/)
+* [https://gocardless.com/blog/building-a-large-angular-application/](https://gocardless.com/blog/building-a-large-angular-application/)
+* [https://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/](https://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/)
 
 ## Examples
 Some features in Piwik are already realized by using AngularJS.
+
 * [SiteSelector](https://github.com/piwik/piwik/tree/master/plugins/CoreHome/javascripts/siteselector)
 * [All Websites Dashboard](https://github.com/piwik/piwik/tree/master/plugins/MultiSites/javascripts)
 
 They make use of different components
+
 * [Controller](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-controller.js)
 * [Directive](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-directive.js)
 * [Model](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-model.js)
@@ -144,7 +151,7 @@ Might be interesting link: [Docular](http://grunt-docular.com/)
 ## Plugin architecture
 AngularJS dependency injection allows plugins to overwrite or extend whatever whey want, for instance a directive. A plugin architecture comes therefore more or less out of the box.
 
-For instance a plugin can "hook" on to a certain directive, extend/change controller behaviour etc. This video might give you some ideas: https://www.youtube.com/watch?v=rzMrBIVuxgM
+For instance a plugin can "hook" on to a certain directive, extend/change controller behaviour etc. This video might give you some ideas: [https://www.youtube.com/watch?v=rzMrBIVuxgM](https://www.youtube.com/watch?v=rzMrBIVuxgM)
 
 More to come!
 

@@ -142,3 +142,26 @@ window.piwikMediaAnalyticsAsyncInit = function () {
     tracker.MediaAnalytics.disableTrackProgress();
 };
 ```
+
+## How do I define a media title in case the title cannot be detected automatically?
+
+Piwik will automatically detect the title of a video or audio in most cases. In case you are using an old version
+of a media player, or an exotic media player which does not allow us to detect the title automatically, you can optionally 
+define a callback method to detect the title of a video or audio manually based on your own custom logic. 
+
+For example if you always have only on video on a page, you could fallback to use the page title as video title: 
+
+```js
+_paq.push(['MediaAnalytics::setMediaTitleFallback', function (mediaElement) {
+    return document.title;
+}]);
+```
+
+In case you have multiple videos on a page, or you want to detect the title relative to the video or audio element, 
+you can do this based on the `mediaElement` argument:
+
+```js
+_paq.push(['MediaAnalytics::setMediaTitleFallback', function (mediaElement) {
+    return $(mediaElement).parent().find('h2').text();
+}]);
+```

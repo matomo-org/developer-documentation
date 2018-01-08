@@ -882,6 +882,8 @@ The result of this method is intended for use with the [ArchiveProcessor::insert
        If not null, defines the maximum number of rows allowed in serialized subtables.
     - `$columnToSortByBeforeTruncation` (`string`) &mdash;
        The column to sort by before truncating, eg, `Metrics::INDEX_NB_VISITS`.
+    - `$aSerializedDataTable` (`array`) &mdash;
+       Will contain all the output arrays
 
 - *Returns:*  `array` &mdash;
     The array of serialized DataTables: array( // this DataTable (the root) 0 => 'eghuighahgaueytae78yaet7yaetae', // a subtable 1 => 'gaegae gh gwrh guiwh uigwhuige', // another subtable 2 => 'gqegJHUIGHEQjkgneqjgnqeugUGEQHGUHQE', // etc. );
