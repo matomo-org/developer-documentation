@@ -4,7 +4,7 @@ title: Introduction
 ---
 # Integrate Piwik
 
-Welcome to the *Integrate* section of the Piwik Developer Zone. If you are interested in integrating Piwik with your application, you are at the right place!
+Welcome to the *Integrate* section of the Piwik Developer Zone. If you are interested in integrating Matomo with your application, you are at the right place!
 
 This section contains guides that will help you to:
 

@@ -120,7 +120,7 @@ Discover our vibrant community where analytics tips are shared, suggestions on h
 
 ### By email
 
-You can contact the team by email: <a href='mailto:hello@piwik.org?subject=Contact the Piwik team'>hello (at) piwik.org</a>, or using [the contact form](https://piwik.org/contact/).
+You can contact the team by email: <a href='mailto:hello@matomo.org?subject=Contact the Piwik team'>hello (at) piwik.org</a>, or using [the contact form](https://piwik.org/contact/).
 
 ### Using IRC
 

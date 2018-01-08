@@ -103,7 +103,7 @@ The following fields are not required for publishing a plugin, but you may want 
 
     ```json
     "donate": {
-        "paypal": "supporters@piwik.org",
+        "paypal": "supporters@matomo.org",
         "flattr": "https://flattr.com/thing/131552/Piwik-Web-Analytics-Open-Source",
         "bitcoin": "1NdftZmgb8V9PgbFDYjC5PRJ2QDLyyzCU9"
     }
@@ -171,7 +171,7 @@ Here is a complete example to get you started:
     "authors": [
         {
             "name": "Piwik",
-            "email": "hello@piwik.org",
+            "email": "hello@matomo.org",
             "homepage": "https://piwik.org"
         }
     ],

@@ -36,7 +36,43 @@ class Environment
     {
         self::$piwikVersion = (int) $piwikVersion;
     }
-    
+
+    public static function renamePiwikToMatomo($content)
+    {
+        $oldBrand = 'Piwik';
+        $newBrandFirst = 'Matomo (formerly Piwik)';
+        $newBrandOthers = 'Matomo';
+        $replaceOld = array($oldBrand . ' ', ' ' . $oldBrand);
+        $replaceNew = array($newBrandOthers . ' ', ' ' . $newBrandOthers);
+
+        // eg makes sure Piwik won't be replaced again
+        $keepWording = array('Matomo Developer Zone (formerly Piwik)', 'Piwik Developer Zone', 'Matomo (Piwik)', $newBrandFirst);
+        $keepWordingReplace = array('#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMOPIWIK#_#', '#_#saveReplace#_#');
+
+        $content = str_replace($keepWording, $keepWordingReplace, $content);
+
+        $patternsToTest = array(' Piwik', 'Piwik ');
+        $lowestPos = false;
+        $patternToReplace = false;
+        foreach ($patternsToTest as $patternToTest) {
+            $pos = strpos($content, $patternToTest);
+            if ($pos !== false && ($lowestPos === false || $pos < $lowestPos)) {
+                $lowestPos = $pos;
+                $patternToReplace = $patternToTest;
+            }
+        }
+        if ($lowestPos !== false) {
+            $saveDoNotReplaceThisTerm = str_replace('Piwik', $newBrandFirst, $patternToReplace);
+            $content = substr_replace($content, $saveDoNotReplaceThisTerm, $lowestPos, strlen($patternToReplace));
+        }
+
+        $content = str_replace($newBrandFirst, '#_#saveReplace#_#', $content);
+        $content = str_replace($replaceOld, $replaceNew, $content);
+        $content = str_replace($keepWordingReplace, $keepWording, $content);
+
+        return str_replace('#_#saveReplace#_#', $newBrandFirst, $content);
+    }
+
     public static function completeUrl($path)
     {
         if (strpos($path, '://') !== false) {

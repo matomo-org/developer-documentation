@@ -17,7 +17,7 @@ class DevelopInDepthCategory extends Category
 {
     public function getName()
     {
-        return 'Piwik In Depth';
+        return 'Matomo In Depth';
     }
 
     public function getItems()
@@ -30,10 +30,10 @@ class DevelopInDepthCategory extends Category
             new UnlinkedCategory('in-depth-reporting-api'),
             new Guide('data-model'),
             new UnlinkedCategory('in-depth-tests'),
-            new EmptySubCategory('Piwik Core development', [
+            new EmptySubCategory('Matomo Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),
-                new RemoteLink('Piwik\'s Roadmap', 'http://piwik.org/roadmap/'),
+                new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
             ]),
             new DevelopCategory(),
         ];

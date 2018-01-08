@@ -32,8 +32,8 @@ The following fields are required:
     "authors": [
       {
         "name": "Hacker",
-        "email": "marketplace@piwik.org",
-        "homepage": "https://piwik.org"
+        "email": "marketplace@matomo.org",
+        "homepage": "https://matomo.org"
       }
     ]
 
@@ -52,9 +52,9 @@ The following fields are optional:
 
   "donate":
     {
-      "paypal": "supporters@piwik.org",
+      "paypal": "supporters@matomo.org",
       "flattr": "https://flattr.com/thing/131552/Piwik-Web-Analytics-Open-Source",
-      "bitcoin": "https://piwik.org"
+      "bitcoin": "https://matomo.org"
     }
 
 ##### Sample plugin.json
@@ -128,7 +128,7 @@ Some common validation errors are:
  * a plugin with this name already exists
  * there is a PHP syntax error in your plugin
 
-If you still encounter trouble getting this process to work with your plugin, please join the IRC channel #piwik on freenode. If you can't seem to connect with someone in the IRC channel, please feel free to email us at hello@piwik.org.
+If you still encounter trouble getting this process to work with your plugin, please join the IRC channel #piwik on freenode. If you can't seem to connect with someone in the IRC channel, please feel free to email us at hello@matomo.org.
 
 ### There are only a few restrictions
  * The plugin must not do anything illegal, or be morally offensive.
