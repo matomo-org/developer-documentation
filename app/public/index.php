@@ -44,7 +44,7 @@ $app->error(function (\Exception $e) use ($app) {
     $app->response()->status(500);
 });
 
-$app->setName('developer.piwik.org');
+$app->setName('developer.matomo.org');
 $log = $app->getLog();
 $log->setEnabled(true);
 

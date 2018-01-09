@@ -4,8 +4,8 @@ title: Introduction
 ---
 # Piwik In Depth
 
-Welcome to the *Piwik In Depth* section of the Piwik Developer Zone. 
-If you are interested in contributing to the Piwik core or if you want to get more insight into Piwik, you are at the right place!
+Welcome to the *Matomo In Depth* section of the Piwik Developer Zone. 
+If you are interested in contributing to the Matomo core or if you want to get more insight into Piwik, you are at the right place!
 
 This section contains guides that will help you to:
 

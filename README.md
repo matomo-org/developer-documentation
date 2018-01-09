@@ -1,7 +1,7 @@
 # Piwik Developer Documentation
 
-- https://piwik.org
-- https://developer.piwik.org
+- https://matomo.org
+- https://developer.matomo.org
 
 ## Documentations
 
@@ -175,8 +175,8 @@ Note: In constrast to @link we do not check whether a hook with the given name e
 {@link Map::getKeyName()}    // method from any class
 {@link Map::$myproperty}     // property from any class
 {@link Piwik\Metrics::INDEX_NB_UNIQ_VISITORS}  // constant from any class, note: a link will be only generated if the constant has a long description
-{@link http://piwik.org}     // http link
-{@link https://piwik.org}    // https link
+{@link http://matomo.org}    // http link
+{@link https://matomo.org}   // https link
 {@link mailto:test}          // mailto link
 
 
@@ -187,7 +187,7 @@ Note: In constrast to @link we do not check whether a hook with the given name e
 {@link $myproperty Description Text}          // property within this class
 {@link Map::getKeyName() Description Text}    // method from any class
 {@link Map::$myproperty Description Text}     // property from any class
-{@link http://piwik.org Description Text}     // http link
-{@link https://piwik.org Description Text}    // https link
+{@link http://matomo.org Description Text}    // http link
+{@link https://matomo.org Description Text}   // https link
 {@link mailto:test Description Text}          // mailto link
 ```

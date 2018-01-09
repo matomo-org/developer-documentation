@@ -27,7 +27,7 @@ class DesignCategory extends Category
     {
         return [
             new Guide('design-introduction'),
-            new RemoteLink('How to create a custom theme', 'https://piwik.org/blog/2014/08/create-custom-theme-piwik-introducing-piwik-platform/'),
+            new RemoteLink('How to create a custom theme', 'https://matomo.org/blog/2014/08/create-custom-theme-piwik-introducing-piwik-platform/'),
             new Guide('theming'),
         ];
     }

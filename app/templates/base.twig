@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Piwik Analytics - Developer Docs - v{{ selectedPiwikVersion }}</title>
+    <title>{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Matomo Analytics (formerly Piwik Analytics) - Developer Docs - v{{ selectedPiwikVersion }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if urlIfAvailableInNewerVersion %}
@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand hidden-sm" href="{{ '/'|completeUrl }}"><img height="20" width="74" src="/img/logo.png"/></a>
+            <a class="navbar-brand hidden-sm" href="{{ '/'|completeUrl }}"><img height="20" width="109" src="/img/logo.png"/></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -63,7 +63,7 @@
 
                                 <option value="{{ currentPath|completeUrlForPiwikVersion(i ~ '.x') }}"
                                         {% if selectedPiwikVersion == i %}selected{% endif %}
-                                >Piwik {{ i }}.X</option>
+                                >{% if i < 3 %}Piwik{% else %}Matomo{% endif %} {{ i }}.X</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -95,17 +95,17 @@
     <footer>
         <div class="container">
             <p class="pull-left">
-                Copyright &copy; <a href="https://piwik.org">Piwik.org</a>
+                Copyright &copy; <a href="https://matomo.org">Matomo.org</a>
                 |
-                <a href="https://twitter.com/piwik"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="https://twitter.com/matomo_org"><i class="fa fa-twitter"></i> Twitter</a>
                 |
-                <a href="https://github.com/piwik"><i class="fa fa-github"></i> GitHub</a>
+                <a href="https://github.com/matomo-org"><i class="fa fa-github"></i> GitHub</a>
             </p>
             <p class="pull-right">{% if linkToEditDocument is defined and linkToEditDocument %}
             <a href="{{ linkToEditDocument }}" target="_blank">Edit on GitHub</a>
                 {% endif %}</p>
             <p class="pull-right">
-                <a href="mailto:developer@piwik.org?subject=Feedback%20Developer%20Guides">Give Feedback</a>{% if linkToEditDocument is defined and linkToEditDocument %}&nbsp;|&nbsp;{% endif %}
+                <a href="mailto:developer@matomo.org?subject=Feedback%20Developer%20Guides">Give Feedback</a>{% if linkToEditDocument is defined and linkToEditDocument %}&nbsp;|&nbsp;{% endif %}
             </p>
         </div>
     </footer>
@@ -129,7 +129,7 @@ $(document).ready(function () {
 <script type="text/javascript">
 
     var _paq = _paq || [];
-    _paq.push(["setCookieDomain", "*.piwik.org"]);
+    _paq.push(["setCookieDomain", "*.matomo.org"]);
     {% block piwik_customization %}{% endblock %}
     _paq.push(["setCustomVariable", 1, 'PiwikVersion', '{{ selectedPiwikVersion }}', 'page']);
     _paq.push(["trackPageView"]);
@@ -138,10 +138,10 @@ $(document).ready(function () {
     function track() {
 
         (function() {
-            var u=(("https:" == document.location.protocol) ? "https" : "http") + "://demo.piwik.org/";
+            var u=(("https:" == document.location.protocol) ? "https" : "http") + "://demo.matomo.org/";
             _paq.push(["setTrackerUrl", u+"piwik.php"]);
             _paq.push(["setSiteId", "36"]);
-            _paq.push(["addTracker", 'https://demo3.piwik.org/piwik.php', '2'])
+            _paq.push(["addTracker", 'https://demo3.matomo.org/piwik.php', '2'])
 
             var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
             g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);

@@ -1,7 +1,7 @@
 ---
 category: Develop
 ---
-# Migrate Plugin from Piwik 2.X to Piwik 3
+# Migrate Plugin from Piwik 2.X to Matomo 3 (Piwik 3)
 
 This migration guide covers explains how to do some migrations to make a plugin compatible with Piwik 3. A list of
 all changes in Piwik 3 can be found in the [Changelog](/changelog#piwik-300).
