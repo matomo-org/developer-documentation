@@ -928,7 +928,7 @@ Usages:
 
 *Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php) in line [410](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php#L410)*
 
-Triggered on initialization of the form to customize default Piwik settings (at the end of the installation process).
+Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
 Callback Signature:
 <pre><code>function($form)</code></pre>
@@ -944,7 +944,7 @@ Usages:
 
 *Defined in [Piwik/Plugins/Installation/Controller](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php) in line [421](https://github.com/piwik/piwik/blob/3.x-dev/plugins/Installation/Controller.php#L421)*
 
-Triggered on submission of the form to customize default Piwik settings (at the end of the installation process).
+Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
 Callback Signature:
 <pre><code>function($form)</code></pre>
