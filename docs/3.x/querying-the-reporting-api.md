@@ -23,7 +23,7 @@ If the API call requires the token_auth and the HTTP request is sent over untrus
 You can, for example, get the top 100 search engine keywords used to find your website during the current week. Here is an example in PHP:
 
 ```php
-{@include escape https://raw.github.com/piwik/piwik/master/misc/others/api_rest_call.php}
+{@include escape https://raw.github.com/matomo-org/matomo/master/misc/others/api_rest_call.php}
 ```
 
 Here is the output of this code:
@@ -39,7 +39,7 @@ If you want to request data in a PHP script **that is on the same server as Piwi
 If you are developing a plugin, you should be using this technique. Please note that including index.php will set the default timezone of the calling code to UTC.
 
 ```php
-{@include escape https://raw.github.com/piwik/piwik/master/misc/others/api_internal_call.php}
+{@include escape https://raw.github.com/matomo-org/matomo/master/misc/others/api_internal_call.php}
 ```
 
 Here is the output of this script:

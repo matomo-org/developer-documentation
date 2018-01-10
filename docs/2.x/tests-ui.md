@@ -9,7 +9,7 @@ Some might know a UI test under the term 'CSS test' or 'screenshot test'. When w
 
 **What is a UI test good for?**
 
-We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We do usually not write Unit or Integration tests for our controllers. For example we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/piwik/piwik) after each commit and compared with [our expected screenshots](https://github.com/piwik/piwik-ui-tests).
+We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We do usually not write Unit or Integration tests for our controllers. For example we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/piwik/piwik) after each commit and compared with [our expected screenshots](https://github.com/matomo-org/piwik-ui-tests).
 
 ## Requirements
 
@@ -32,7 +32,7 @@ Removing this font may be useful if your generated screenshots' fonts do not mat
 $ sudo apt-get remove ttf-bitstream-vera
 ```
 
-If you are running or writing UI tests for [Piwik Core](https://github.com/piwik/piwik), you will need to install the [git-lfs](https://git-lfs.github.com/) extension to be able to download and commit UI screenshots.
+If you are running or writing UI tests for [Piwik Core](https://github.com/matomo-org/piwik), you will need to install the [git-lfs](https://git-lfs.github.com/) extension to be able to download and commit UI screenshots.
 
 ## Configuring UI tests
 
@@ -255,9 +255,9 @@ public function addTestHooks($testingEnvironment) {
 
 The following are examples of test environment manipulation:
 
- * [Overlay_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Overlay_spec.js)
- * [Dashboard_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Dashboard_spec.js)
- * [Login_spec.js](https://github.com/piwik/piwik/blob/master/tests/UI/specs/Login_spec.js)
+ * [Overlay_spec.js](https://github.com/matomo-org/matomo/blob/master/tests/UI/specs/Overlay_spec.js)
+ * [Dashboard_spec.js](https://github.com/matomo-org/matomo/blob/master/tests/UI/specs/Dashboard_spec.js)
+ * [Login_spec.js](https://github.com/matomo-org/matomo/blob/master/tests/UI/specs/Login_spec.js)
 
 #### Dependency injection configuration
 

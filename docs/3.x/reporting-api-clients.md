@@ -18,15 +18,15 @@ You can use directly Piwik's codebase to call the reporting API. Learn more in [
 
 ### Ruby client
 
-A Ruby client for the reporting API is available on Github: [github.com/piwik/piwik-ruby-api](https://github.com/piwik/piwik-ruby-api).
+A Ruby client for the reporting API is available on Github: [github.com/matomo-org/piwik-ruby-api](https://github.com/matomo-org/piwik-ruby-api).
 
 ### Python client
 
-A complete Python client implementation of the reporting API is available on Github at [github.com/piwik/piwik-python-api](https://github.com/piwik/piwik-python-api).
+A complete Python client implementation of the reporting API is available on Github at [github.com/matomo-org/piwik-python-api](https://github.com/matomo-org/piwik-python-api).
 
 ### C# client
 
-A C# client implementation of the reporting API is available on Github at [github.com/piwik/piwik-dotnet-api](https://github.com/piwik/piwik-dotnet-api).
+A C# client implementation of the reporting API is available on Github at [github.com/matomo-org/piwik-dotnet-api](https://github.com/matomo-org/piwik-dotnet-api).
 
 ### NodeJS client
 

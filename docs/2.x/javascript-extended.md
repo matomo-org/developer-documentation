@@ -179,7 +179,7 @@ Then, when you want to launch a popover call the `propagateNewPopoverParameter()
 ```
 
 
-To learn more about the object, see the documentation in the source code (located in [`plugins/CoreHome/javascripts/popover.js`](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/popover.js)).
+To learn more about the object, see the documentation in the source code (located in [`plugins/CoreHome/javascripts/popover.js`](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/javascripts/popover.js)).
 
 ### ColorManager
 
@@ -209,7 +209,7 @@ In your JavaScript, you can use **ColorManager** to access these colors:
 })(require);
 ```
 
-To learn more about the singleton, read the source code documentation (located in [`plugins/CoreHome/javascripts/color_manager.js`](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/color_manager.js)).
+To learn more about the singleton, read the source code documentation (located in [`plugins/CoreHome/javascripts/color_manager.js`](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/javascripts/color_manager.js)).
 
 _Learn more about theming in our [Theming](/guides/theming) guide._
 
@@ -218,7 +218,7 @@ _Learn more about theming in our [Theming](/guides/theming) guide._
 
 The **DataTable** class is the base of all JavaScript classes that manage [report visualizations](/guides/visualizing-report-data#about-visualizations). If you are creating your own report visualization, you may have to extend it.
 
-To learn more about extending the class, see our [Visualizing Report Data](https://github.com/piwik/developer-documentation/blob/master/docs/visualizing-report-data.md) guide.
+To learn more about extending the class, see our [Visualizing Report Data](https://github.com/matomo-org/developer-documentation/blob/master/docs/visualizing-report-data.md) guide.
 
 ## Learn more
 

@@ -7,9 +7,9 @@ category: Support
 
 Ask other developers for help in [the forums](https://forum.matomo.org). Someone might have encountered your problem before.
 
-## [Issue tracker](https://github.com/piwik/piwik/issues)
+## [Issue tracker](https://github.com/matomo-org/matomo/issues)
 
-Create a bug report on [our bug tracking system](https://github.com/piwik/piwik/issues) or check on the status of an existing bug.
+Create a bug report on [our bug tracking system](https://github.com/matomo-org/matomo/issues) or check on the status of an existing bug.
 
 ## [Developer Blog](https://matomo.org/blog/category/development/)
 

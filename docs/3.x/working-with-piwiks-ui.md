@@ -16,7 +16,7 @@ Piwik uses the following JavaScript libraries:
 * [jQuery](https://jquery.com/) and [jQuery UI](https://jqueryui.com/)
 * [AngularJS](https://angularjs.org/)
 * [jqPlot](http://www.jqplot.com/)
-* A couple of other libraries are used see our [bower dependencies](https://github.com/piwik/piwik/blob/master/bower.json)
+* A couple of other libraries are used see our [bower dependencies](https://github.com/matomo-org/matomo/blob/master/bower.json)
 
 **Include new JS libraries only if they are vital to your plugin.** If many plugins decide to use a custom library, the UI will slow down and plugins might get problems when different plugins load different versions of those libraries.
 
@@ -177,7 +177,7 @@ To load a new page below the main Piwik menu, use the `propagateNewPage()` funct
 
 The `ajaxHelper` class should be used whenever you need to create an AJAX request. **Plugins should not use `$.ajax` directly.** `ajaxHelper` does some extra things that make it harder to write insecure code. It also keeps track of the current ongoing AJAX requests which is vital to the [UI tests](/guides/tests-ui).
 
-To use the `ajaxHelper`, create an instance, configure it, and then call the `send()` method. To learn more, read the documentation in the source code (located in [`plugins/Morpheus/javascripts/ajaxHelper.js`](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/javascripts/ajaxHelper.js)).
+To use the `ajaxHelper`, create an instance, configure it, and then call the `send()` method. To learn more, read the documentation in the source code (located in [`plugins/Morpheus/javascripts/ajaxHelper.js`](https://github.com/matomo-org/matomo/blob/master/plugins/Morpheus/javascripts/ajaxHelper.js)).
 
 For example:
 

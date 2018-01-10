@@ -82,7 +82,7 @@ We'll get the latest version of Piwik's source code using git.
 
 Open a terminal, `cd` into the directory where you want to install Piwik, and then run the following commands (without the leading `$`):
 
-    $ git clone https://github.com/piwik/piwik piwik
+    $ git clone https://github.com/matomo-org/piwik piwik
     $ cd piwik
     $ git submodule update --init
 

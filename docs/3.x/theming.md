@@ -47,8 +47,8 @@ To change the font you override the font variable:
 
 You get the point. The list of all variables that you can override is defined in the Morpheus plugin:
 
-- [base theme variables](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/stylesheets/theme.less)
-- [advanced theme variables](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/stylesheets/theme-advanced.less)
+- [base theme variables](https://github.com/matomo-org/matomo/blob/master/plugins/Morpheus/stylesheets/theme.less)
+- [advanced theme variables](https://github.com/matomo-org/matomo/blob/master/plugins/Morpheus/stylesheets/theme-advanced.less)
 
 Although we do not recommend doing so, you can change the colors of a specific element directly, for example:
 
@@ -64,7 +64,7 @@ Please use this method only if needed. Element ids or classes might change in th
 
 Overriding icons is fairly easy: create a folder named `images` in your theme's directory and place an icon having the same file name as the icon you want to override.
 
-For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/piwik/piwik/tree/master/plugins/Morpheus/images). It is not yet possible to override icons used in reports such as browser or search engine icons, but if you have suggestions, you can [open an issue in the piwik-icon repository](https://github.com/piwik/piwik-icons).
+For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/matomo-org/matomo/tree/master/plugins/Morpheus/images). It is not yet possible to override icons used in reports such as browser or search engine icons, but if you have suggestions, you can [open an issue in the piwik-icon repository](https://github.com/matomo-org/piwik-icons).
 
 ### Logo and favicon
 
