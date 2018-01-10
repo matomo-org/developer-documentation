@@ -3,7 +3,7 @@
 Version
 =======
 
-Piwik version information.
+Matomo version information.
 
 Methods
 -------

@@ -196,7 +196,7 @@ This is a complete list of available classes:
 - [`Updates`](Piwik/Updates.md) &mdash; Base class for update scripts.
 - [`Url`](Piwik/Url.md) &mdash; Provides URL related helper methods.
 - [`UrlHelper`](Piwik/UrlHelper.md) &mdash; Contains less commonly needed URL helper methods.
-- [`Version`](Piwik/Version.md) &mdash; Piwik version information.
+- [`Version`](Piwik/Version.md) &mdash; Matomo version information.
 - [`View`](Piwik/View.md) &mdash; Encapsulates and manages a [Twig](http://twig.sensiolabs.org/) template.
 - [`ViewDataTable\Config`](Piwik/ViewDataTable/Config.md) &mdash; Contains base display properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)s.
 - [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
