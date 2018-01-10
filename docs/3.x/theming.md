@@ -64,7 +64,7 @@ Please use this method only if needed. Element ids or classes might change in th
 
 Overriding icons is fairly easy: create a folder named `images` in your theme's directory and place an icon having the same file name as the icon you want to override.
 
-For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/matomo-org/matomo/tree/master/plugins/Morpheus/images). It is not yet possible to override icons used in reports such as browser or search engine icons, but if you have suggestions, you can [open an issue in the piwik-icon repository](https://github.com/matomo-org/piwik-icons).
+For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/matomo-org/matomo/tree/master/plugins/Morpheus/images). It is not yet possible to override icons used in reports such as browser or search engine icons, but if you have suggestions, you can [open an issue in the piwik-icon repository](https://github.com/matomo-org/matomo-icons).
 
 ### Logo and favicon
 

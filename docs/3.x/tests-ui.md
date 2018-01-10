@@ -32,7 +32,7 @@ Removing this font may be useful if your generated screenshots' fonts do not mat
 $ sudo apt-get remove ttf-bitstream-vera
 ```
 
-If you are running or writing UI tests for [Piwik Core](https://github.com/matomo-org/piwik), you will need to install the [git-lfs](https://git-lfs.github.com/) extension to be able to download and commit UI screenshots.
+If you are running or writing UI tests for [Piwik Core](https://github.com/matomo-org/matomo), you will need to install the [git-lfs](https://git-lfs.github.com/) extension to be able to download and commit UI screenshots.
 
 ## Configuring UI tests
 
