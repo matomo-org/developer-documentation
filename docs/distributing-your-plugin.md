@@ -26,7 +26,7 @@ Every plugin on the marketplace has a unique name. Make sure the name you chose 
 
 ### Prepare your plugin
 
-Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/piwik/piwik/blob/master/plugins/ExamplePlugin/plugin.json)** file.
+Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/matomo-org/matomo/blob/master/plugins/ExamplePlugin/plugin.json)** file.
 
 #### README.md file
 
@@ -43,7 +43,7 @@ Prepare a few screenshots of your plugin in action and place them in a `screensh
 Give them descriptive names because the file names will be used as the legends shown below each screenshot. Only alphanumeric characters, underscores and dashes are allowed in the file name. The file name must end with `.png`, `.jpg` or `.jpeg`.
 
 See the result for the [CustomAlerts plugin's screenshots](https://plugins.piwik.org/CustomAlerts) (click on the Screenshots link).
-These screenshots are stored [in git: CustomAlerts/screenshots](https://github.com/piwik/plugin-CustomAlerts/tree/master/screenshots).
+These screenshots are stored [in git: CustomAlerts/screenshots](https://github.com/matomo-org/plugin-CustomAlerts/tree/master/screenshots).
 
 #### plugin.json file
 
@@ -125,11 +125,11 @@ The following fields are not required for publishing a plugin, but you may want 
     ```json
     "support": {
             "email": "support@example.com",
-            "issues": "https://github.com/piwik/piwik/issues",
+            "issues": "https://github.com/matomo-org/matomo/issues",
             "forum": "https://forum.piwik.org",
             "irc": "irc://freenode/piwik",
-            "source": "https://github.com/piwik/piwik/",
-            "wiki": "https://github.com/piwik/piwik/wiki",
+            "source": "https://github.com/matomo-org/matomo/",
+            "wiki": "https://github.com/matomo-org/matomo/wiki",
             "docs": "https://piwik.org/docs/",
             "rss": "https://piwik.org/feed/"
     }
@@ -184,11 +184,11 @@ Here is a complete example to get you started:
     },
     "support": {
         "email": "support@example.com",
-        "issues": "https://github.com/piwik/piwik/issues",
+        "issues": "https://github.com/matomo-org/matomo/issues",
         "forum": "https://forum.piwik.org",
         "irc": "irc://freenode/piwik",
-        "source": "https://github.com/piwik/piwik/",
-        "wiki": "https://github.com/piwik/piwik/wiki",
+        "source": "https://github.com/matomo-org/matomo/",
+        "wiki": "https://github.com/matomo-org/matomo/wiki",
         "docs": "https://piwik.org/docs/",
         "rss": "https://piwik.org/feed/"
     },

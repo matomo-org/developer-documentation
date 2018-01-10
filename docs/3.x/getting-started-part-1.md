@@ -42,7 +42,7 @@ You can accomplish the following by creating a plugin:
 - show existing reports in a new way
 - send scheduled reports through new mediums or in new formats
 
-These are only a few of the possibilities — it is not possible to categorize all the existing plugins' functionality simply because of the vast differences in their use cases. For example, the [Annotations](https://piwik.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](https://piwik.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
+These are only a few of the possibilities — it is not possible to categorize all the existing plugins' functionality simply because of the vast differences in their use cases. For example, the [Annotations](https://matomo.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](https://matomo.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
 
 **Whatever ideas your imagination cooks up, we think you can implement them with Piwik.**
 
@@ -73,17 +73,17 @@ If your computer is using a Debian based operating system, you can install all t
 
     $ sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml php7.0-mbstring
 
-<!-- NOTE TO YOU :-) Please also update the instructions here: https://piwik.org/docs/requirements/ -->
+<!-- NOTE TO YOU :-) Please also update the instructions here: https://matomo.org/docs/requirements/ -->
 
 
-### Get & Install Piwik
+### Get & Install Matomo
 
-We'll get the latest version of Piwik's source code using git.
+We'll get the latest version of Matomo's source code using git.
 
-Open a terminal, `cd` into the directory where you want to install Piwik, and then run the following commands (without the leading `$`):
+Open a terminal, `cd` into the directory where you want to install Matomo, and then run the following commands (without the leading `$`):
 
-    $ git clone https://github.com/piwik/piwik piwik
-    $ cd piwik
+    $ git clone https://github.com/matomo-org/matomo matomo
+    $ cd matomo
     $ git submodule update --init
 
 ### Get & install Composer
@@ -110,11 +110,11 @@ If your PHP version is greater than 5.4, you can also use [PHP's built-in web se
 
 Piwik should now be available at [http://localhost:8000/](http://localhost:8000/). To stop the web server, just hit `Ctrl+C`. Remember that PHP's built in web server is only suitable for development. It should **never** be used in production.
 
-### Install Piwik
+### Install Matomo
 
 Once Piwik is running, open it in your browser and follow the instructions to complete the installation.
 
-When you install Piwik, at the database creation, you will need to specify your database user. [Click here to see how to create a new user in MySQL](https://piwik.org/faq/how-to-install/faq_23484/).
+When you install Piwik, at the database creation, you will need to specify your database user. [Click here to see how to create a new user in MySQL](https://matomo.org/faq/how-to-install/faq_23484/).
 
 #### Adding anonymous access to your reports
 
@@ -191,7 +191,7 @@ The command-line tool will create a new directory for your plugin (in the **plug
 - `MyPlugin.php`: Contains your plugin's descriptor class. This class contains metadata about your plugin and a list of event handlers for [Piwik events](/guides/events).
 - `plugin.json`: Contains plugin metadata such as the name, description, version, etc.
 - `README.md`: A dummy README file for your plugin.
-- `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](https://developer.piwik.org/guides/distributing-your-plugin).
+- `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](https://developer.matomo.org/guides/distributing-your-plugin).
 
 ## What to read next
 

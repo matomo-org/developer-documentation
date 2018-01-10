@@ -10,7 +10,7 @@ To add a build on travis you must first enable the build on travis-ci.org or mag
 
     ./console generate:travis-yml --plugin=MyNewPlugin
 
-After you have executed this and committed to the repository, please send an email to Matthieu A. or Benaka, they will execute the same command with the `--github-token` and `--artifacts-pass` parameter. This will ensure that the `.travis.yml` will automatically update itself when [the template](https://github.com/piwik/piwik/blob/master/plugins/TestRunner/templates/travis.yml.twig) has changed. 
+After you have executed this and committed to the repository, please send an email to Matthieu A. or Benaka, they will execute the same command with the `--github-token` and `--artifacts-pass` parameter. This will ensure that the `.travis.yml` will automatically update itself when [the template](https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/templates/travis.yml.twig) has changed. 
 
 ### Varying .travis.yml behavior
 
@@ -91,7 +91,7 @@ Below is the list of all supported environment variables:
 
 Plugins that use technologies other than MySQL or PHP may require extra setup and install steps to be executed on travis before running tests.
 
-[LoginLdap](https://github.com/piwik/plugin-LoginLdap), for example, tests itself against a live LDAP server and thus needs to install and setup OpenLDAP on travis. To accomplish this, [LoginLdap](https://github.com/piwik/plugin-LoginLdap) adds extra steps to its generated .travis.yml file.
+[LoginLdap](https://github.com/matomo-org/plugin-LoginLdap), for example, tests itself against a live LDAP server and thus needs to install and setup OpenLDAP on travis. To accomplish this, [LoginLdap](https://github.com/matomo-org/plugin-LoginLdap) adds extra steps to its generated .travis.yml file.
 
 To add extra steps to your plugin's .travis.yml file, create a `/tests/travis` folder inside your plugin and add one or more of the following special .yml files:
 
@@ -116,8 +116,8 @@ The system used to generate .travis.yml files is defined in the TestRunner plugi
 
 **Generating new .travis.yml sections**
 
-This .twig file is used to generate the .travis.yml file: [https://github.com/piwik/piwik/blob/master/plugins/TestRunner/templates/travis.yml.twig](https://github.com/piwik/piwik/blob/master/plugins/TestRunner/templates/travis.yml.twig).
+This .twig file is used to generate the .travis.yml file: [https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/templates/travis.yml.twig](https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/templates/travis.yml.twig).
 
-If you want to add a new section to generated .travis.yml output, you have to both add the section to the travis.yml.twig file **AND** add the section's name to this array: [https://github.com/piwik/piwik/blob/master/plugins/TestRunner/TravisYml/TravisYmlView.php#L23](https://github.com/piwik/piwik/blob/master/plugins/TestRunner/TravisYml/TravisYmlView.php#L23)
+If you want to add a new section to generated .travis.yml output, you have to both add the section to the travis.yml.twig file **AND** add the section's name to this array: [https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/TravisYml/TravisYmlView.php#L23](https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/TravisYml/TravisYmlView.php#L23)
 
 If you don't add it, the system will consider the section as a section that should be preserved, and will output it again after rendering the twig template.

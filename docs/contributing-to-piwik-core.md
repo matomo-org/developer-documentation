@@ -23,7 +23,7 @@ This guide assumes that you:
 
 ## Contribution process
 
-The contribution process starts with a bug you want to fix or an idea that you want to implement. _If you don't have one, feel free to pick an open ticket on [github.com/piwik/piwik/milestones](https://github.com/piwik/piwik/milestones)._
+The contribution process starts with a bug you want to fix or an idea that you want to implement. _If you don't have one, feel free to pick an open ticket on [github.com/matomo-org/matomo/milestones](https://github.com/matomo-org/matomo/milestones)._
 
 Once you've decided on something, continue below.
 
@@ -33,7 +33,7 @@ Before you can start contributing you need to get setup with [git](https://git-s
 
 #### Fork the Piwik repository
 
-While logged in GitHub, visit [Piwik's repository](https://github.com/piwik/piwik). In the upper right corner there is a _Fork_ button. Click it. Github will copy the repository into your account. This copy (or fork) is the one you will work on. If you don't know forks, read more about [forks on GitHub](https://help.github.com/articles/fork-a-repo/).
+While logged in GitHub, visit [Piwik's repository](https://github.com/matomo-org/matomo). In the upper right corner there is a _Fork_ button. Click it. Github will copy the repository into your account. This copy (or fork) is the one you will work on. If you don't know forks, read more about [forks on GitHub](https://help.github.com/articles/fork-a-repo/).
 
 #### Setup git
 
@@ -57,10 +57,10 @@ This will copy the entire forked repository (including all history) to the _piwi
 Now, we'll run one more command so git remembers the original Piwik repository in addition to your fork:
 
 ```bash
-git remote add upstream https://github.com/piwik/piwik
+git remote add upstream https://github.com/matomo-org/matomo
 ```
 
-This will save _https://github.com/piwik/piwik_ as a remote and name it _upstream_.
+This will save _https://github.com/matomo-org/matomo_ as a remote and name it _upstream_.
 
 #### Configure PHP
 
@@ -129,7 +129,7 @@ On this screen you'll be able to see exactly what changes you've made by looking
 
 Read [Creating Pull requests: best practises](#creating-pull-requests-best-practises) to maximise your changes to create a great pull request.
 
-Once you're ready to create the pull request, write a description of the pull request and any notes that are important for the person who will review your code, and then click _Send pull request_. This will create a new pull request which you will be able to find and view [here](https://github.com/piwik/piwik/pulls).
+Once you're ready to create the pull request, write a description of the pull request and any notes that are important for the person who will review your code, and then click _Send pull request_. This will create a new pull request which you will be able to find and view [here](https://github.com/matomo-org/matomo/pulls).
 
 #### Updating the pull request
 
@@ -143,8 +143,8 @@ Here are best practises we aim to follow when creating, reviewing and merging pu
 * When issuing a PR we set a label `Pull Request WIP` and replace this label with `Needs Review` once the PR is done. If a PR references another issue we assign the label `not-in-changelog`
 * A PR should contain a description explaining things if useful. It should contain as much as necessary and as little as possible.
 * Small changes can be merged directly without a review if the developer is 100% certain the change won't have any side effects etc. It is still always recommended to quickly ask another developer that is online to have a look at this PR now as such PRs are quickly reviewed.
-* If a PR affects the [public API](https://github.com/piwik/piwik/issues/8125) in any way a PR should not be merged without a review
-* PRs that affect the [public API](https://github.com/piwik/piwik/issues/8125) or that affect Security need a thorough review. For other PRs it is always good to keep in mind that we can change later at anytime. Things therefore don't have to be "perfect" as long as the formal requirements are given (eg. an entry in the developer changelog if needed)
+* If a PR affects the [public API](https://github.com/matomo-org/matomo/issues/8125) in any way a PR should not be merged without a review
+* PRs that affect the [public API](https://github.com/matomo-org/matomo/issues/8125) or that affect Security need a thorough review. For other PRs it is always good to keep in mind that we can change later at anytime. Things therefore don't have to be "perfect" as long as the formal requirements are given (eg. an entry in the developer changelog if needed)
 * When reviewing a PR it is important to check things like Security, Performance, Usability, etc. Minor "issues/feedback" such as feedback on code style are less important. If a reviewer notices only such minor things, we can merge the PR directly or the reviewer can make the changes directly and merge afterwards.
 * Before working on a new issue it is recommended to check for pending PRs that have a `Needs Review` label
 * PHP code should use our Piwik code standards (see next section)
@@ -225,7 +225,7 @@ In order for new developers to get up to speed quickly and in order to lessen th
 
 > &mdash; [The fine Art of Commenting](http://www.icsharpcode.net/TechNotes/Commenting20020413.pdf)
 
-For an example of a well commented Piwik class, see [Piwik\Cookie](https://github.com/piwik/piwik/blob/master/core/Cookie.php).
+For an example of a well commented Piwik class, see [Piwik\Cookie](https://github.com/matomo-org/matomo/blob/master/core/Cookie.php).
 
 Despite their importance, comments can sometimes cause information overload - or worse for out-of-date comments. Useless or inaccurate comments and autogenerated comments that add no value should be avoided. Rather than writing comments inside a function, it is better to write shorter functions that do only one thing and are named thoughtfully. A well refactored class made of small methods will be easy to read and will not need many comments.
 
@@ -275,5 +275,5 @@ In most cases, it should be enough for your plugin to be available on the [Marke
 ## Learn more
 
 - learn **the basics of Piwik development** in [Getting started with plugins](/guides/getting-started-part-1).
-- to see a **list of available things you could work on**, see our [upcoming milestone](https://github.com/piwik/piwik/milestones)
+- to see a **list of available things you could work on**, see our [upcoming milestone](https://github.com/matomo-org/matomo/milestones)
 - learn **more about Piwik's tests** in our [Testing](/guides/tests) guide.

@@ -13,7 +13,7 @@ INI configuration options are stored in both the `config/config.ini.php` and `co
 
 Plugins and other code can access and modify INI config options using the [Piwik\Config](/api-reference/Piwik/Config) singleton.
 
-*To learn more about individual configuration options, read the documentation in [global.ini.php](#https://github.com/piwik/piwik/blob/master/config/global.ini.php).*
+*To learn more about individual configuration options, read the documentation in [global.ini.php](#https://github.com/matomo-org/matomo/blob/master/config/global.ini.php).*
 
 ### INI file structure
 

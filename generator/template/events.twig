@@ -15,7 +15,7 @@ This is a complete list of available hooks. If you are not familiar with this re
 
 ### {{ hook.name }}
 
-*Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/piwik/piwik/blob/{{ versionName }}{{ hook.file }}) in line [{{ hook.line }}](https://github.com/piwik/piwik/blob/{{ versionName }}{{ hook.file }}#L{{ hook.line }})*
+*Defined in [{{ hook.namespace }}/{{ hook.class }}](https://github.com/matomo-org/matomo/blob/{{ versionName }}{{ hook.file }}) in line [{{ hook.line }}](https://github.com/matomo-org/matomo/blob/{{ versionName }}{{ hook.file }}#L{{ hook.line }})*
 
 {% if hook.comment %}
 {{ hook.comment.shortDesc|inlinelinkparser(hook)|raw }}{% if hook.comment.longDesc %} {{ hook.comment.longDesc|inlinelinkparser(hook)|raw }}{% endif %}
@@ -38,7 +38,7 @@ Callback Signature:
 Usages:
 
 {% for usage in hook.usages -%}
-[{{ usage.className }}::{{ usage.methodName }}](https://github.com/piwik/piwik/blob/{{ versionName }}{{ usage.file }}#L{{ usage.startLine }}){% if not loop.last%}, {% endif %}
+[{{ usage.className }}::{{ usage.methodName }}](https://github.com/matomo-org/matomo/blob/{{ versionName }}{{ usage.file }}#L{{ usage.startLine }}){% if not loop.last%}, {% endif %}
 {% endfor %}
 
 {% endif %}

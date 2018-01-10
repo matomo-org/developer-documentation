@@ -91,7 +91,7 @@ class Settings extends \Piwik\Plugin\Settings
 
 For a list of possible properties have a look at the [SystemSetting](/api-reference/Piwik/Settings/SystemSetting) and [UserSetting](/api-reference/Piwik/Settings/UserSetting) API reference.
 
-See also the [ExampleSettingsPlugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleSettingsPlugin) to see what else is possible.
+See also the [ExampleSettingsPlugin](https://github.com/matomo-org/matomo/tree/master/plugins/ExampleSettingsPlugin) to see what else is possible.
 
 ## Reading settings values
 

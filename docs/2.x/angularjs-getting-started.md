@@ -126,22 +126,22 @@ Filenames are always lower case and words are separated by dashes. In general, w
 ## Examples
 Some features in Piwik are already realized by using AngularJS.
 
-* [SiteSelector](https://github.com/piwik/piwik/tree/master/plugins/CoreHome/javascripts/siteselector)
-* [All Websites Dashboard](https://github.com/piwik/piwik/tree/master/plugins/MultiSites/javascripts)
+* [SiteSelector](https://github.com/matomo-org/matomo/tree/master/plugins/CoreHome/javascripts/siteselector)
+* [All Websites Dashboard](https://github.com/matomo-org/matomo/tree/master/plugins/MultiSites/javascripts)
 
 They make use of different components
 
-* [Controller](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-controller.js)
-* [Directive](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-directive.js)
-* [Model](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-model.js)
-* [Template](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector.html)
-* [Factory](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/services/piwik-api-service.js)
-* [Filter](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/filters/translate-filter.js)
+* [Controller](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-controller.js)
+* [Directive](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-directive.js)
+* [Model](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector-model.js)
+* [Template](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/javascripts/siteselector/siteselector.html)
+* [Factory](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/javascripts/services/piwik-api-service.js)
+* [Filter](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/javascripts/filters/translate-filter.js)
 
 We are currently not using AngularJS Routing. The goal is to use it in long term to get rid of piwikBroadcast and many other classes.
 
 ## Testing
-We use [Karma](https://karma-runner.github.io) + [Chai](http://chaijs.com) + [Mocha] (https://mochajs.org/) to write unit tests. Read more about it here: [https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md](https://github.com/piwik/piwik/blob/master/tests/angularjs/README.md)
+We use [Karma](https://karma-runner.github.io) + [Chai](http://chaijs.com) + [Mocha] (https://mochajs.org/) to write unit tests. Read more about it here: [https://github.com/matomo-org/matomo/blob/master/tests/angularjs/README.md](https://github.com/matomo-org/matomo/blob/master/tests/angularjs/README.md)
 
 ## How to document
 TBD
