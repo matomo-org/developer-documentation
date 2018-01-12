@@ -26,7 +26,7 @@ Every plugin on the marketplace has a unique name. Make sure the name you chose 
 
 ### Prepare your plugin
 
-Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/piwik/piwik/blob/master/plugins/ExamplePlugin/plugin.json)** file.
+Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/matomo-org/matomo/blob/master/plugins/ExamplePlugin/plugin.json)** file.
 
 #### README.md file
 
@@ -43,7 +43,7 @@ Prepare a few screenshots of your plugin in action and place them in a `screensh
 Give them descriptive names because the file names will be used as the legends shown below each screenshot. Only alphanumeric characters, underscores and dashes are allowed in the file name. The file name must end with `.png`, `.jpg` or `.jpeg`.
 
 See the result for the [CustomAlerts plugin's screenshots](https://plugins.piwik.org/CustomAlerts) (click on the Screenshots link).
-These screenshots are stored [in git: CustomAlerts/screenshots](https://github.com/piwik/plugin-CustomAlerts/tree/master/screenshots).
+These screenshots are stored [in git: CustomAlerts/screenshots](https://github.com/matomo-org/plugin-CustomAlerts/tree/master/screenshots).
 
 #### plugin.json file
 
@@ -54,7 +54,7 @@ The `plugin.json` file must contain the following information:
 - `version`: The plugin's version. It must be a valid [semantic version number](http://semver.org/). If [node-semver](https://github.com/isaacs/node-semver) can't parse it, it won't be considered valid.
 - `description`: A short description of your plugin (up to 150 characters). This will be displayed below the plugin's name in search results and below the top-level heading on your plugin's page. It can include any character.
 - `keywords`: An array of words or short phrases that describe your plugin. The keywords are listed on the Marketplace, which helps users discover your plugin. Keywords can only contain letters, numbers, hyphens, and dots.
-- `license`: The name of the license your plugin uses. The license must be compatible with the [GPLv3](https://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPLv3](https://www.gnu.org/licenses/gpl-2.0.html) or later.
+- `license`: The name of the license your plugin uses. The license must be compatible with the [GPL-3.0](https://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPL-3.0+](https://www.gnu.org/licenses/gpl-3.0.html) or later. Supported values are currently: "GPL-3.0+","GPL-3.0", "BSD AND GPL-3.0+", "GPL-2.0-only", "GPL-2.0+", "MIT". Please get in touch with us in case you want to release a plugin under a different license.
 - `homepage`: The URL to the plugin's homepage.
 - `authors`: An array of objects, each describing someone who helped create the plugin. The objects must contain a **name** field and can optionally contain an email and homepage field. You must define at least one author.
 - `require` - Defines packages required by this plugin. The plugin will not be installed unless those requirements can be met. Two packages are supported at the moment: `piwik` and `php`.
@@ -103,7 +103,7 @@ The following fields are not required for publishing a plugin, but you may want 
 
     ```json
     "donate": {
-        "paypal": "supporters@piwik.org",
+        "paypal": "supporters@matomo.org",
         "flattr": "https://flattr.com/thing/131552/Piwik-Web-Analytics-Open-Source",
         "bitcoin": "1NdftZmgb8V9PgbFDYjC5PRJ2QDLyyzCU9"
     }
@@ -125,11 +125,11 @@ The following fields are not required for publishing a plugin, but you may want 
     ```json
     "support": {
             "email": "support@example.com",
-            "issues": "https://github.com/piwik/piwik/issues",
+            "issues": "https://github.com/matomo-org/matomo/issues",
             "forum": "https://forum.piwik.org",
             "irc": "irc://freenode/piwik",
-            "source": "https://github.com/piwik/piwik/",
-            "wiki": "https://github.com/piwik/piwik/wiki",
+            "source": "https://github.com/matomo-org/matomo/",
+            "wiki": "https://github.com/matomo-org/matomo/wiki",
             "docs": "https://piwik.org/docs/",
             "rss": "https://piwik.org/feed/"
     }
@@ -165,13 +165,13 @@ Here is a complete example to get you started:
     "name": "MyPlugin",
     "description": "This is a short description that will be displayed on the Marketplace.",
     "version": "0.1.0",
-    "license": "GPL v3+",
+    "license": "GPL-3.0+",
     "keywords": ["myplugin"],
     "homepage": "https://piwik.org",
     "authors": [
         {
             "name": "Piwik",
-            "email": "hello@piwik.org",
+            "email": "hello@matomo.org",
             "homepage": "https://piwik.org"
         }
     ],
@@ -184,11 +184,11 @@ Here is a complete example to get you started:
     },
     "support": {
         "email": "support@example.com",
-        "issues": "https://github.com/piwik/piwik/issues",
+        "issues": "https://github.com/matomo-org/matomo/issues",
         "forum": "https://forum.piwik.org",
         "irc": "irc://freenode/piwik",
-        "source": "https://github.com/piwik/piwik/",
-        "wiki": "https://github.com/piwik/piwik/wiki",
+        "source": "https://github.com/matomo-org/matomo/",
+        "wiki": "https://github.com/matomo-org/matomo/wiki",
         "docs": "https://piwik.org/docs/",
         "rss": "https://piwik.org/feed/"
     },
@@ -277,13 +277,14 @@ There are some restrictions regarding what can be published on the marketplace. 
 
 - Your plugin must not do anything illegal, or be morally offensive.
 - Plugins are either [Free plugins](https://piwik.org/free-software/) (GNU GPL compatible license), or [Premium paid plugins](https://plugins.piwik.org/premium).
- - Free plugins must have their license compatible with the [GNU General Public License v3](https://www.gnu.org/copyleft/gpl.html) or any later version. We strongly recommend using the same license as Piwik (*GPLv3 or later*). Your free plugin should not contain obfuscated code. We believe that obfuscated code violates the spirit, if not the letter, of the GPL license under which we operate. If you don't specify a license anywhere in your plugin, it is assumed your plugin uses *GPLv3 or later*.
+ - Free plugins must have their license compatible with the [GNU General Public License v3](https://www.gnu.org/copyleft/gpl.html) or any later version. We strongly recommend using the same license as Piwik (*GPL-v3.0 or later*). Your free plugin should not contain obfuscated code. We believe that obfuscated code violates the spirit, if not the letter, of the GPL license under which we operate. If you don't specify a license anywhere in your plugin, it is assumed your plugin uses *GPL-3.0+ or later*.
  - Paid premium plugins are usually released under a commercial license. [Contact the Marketplace team](https://piwik.org/contact/marketplace/) about building and selling your premium plugin on the Marketplace, or read [the announcement](https://piwik.org/blog/2016/11/premium-plugins-now-available-marketplace/) to learn more.
 - No **[phoning home](https://en.wikipedia.org/wiki/Phoning_home)** without the user's informed consent. For the purposes of a Piwik plugin, **phoning home** includes:
   - Unauthorized collection of user data. For example, sending the admin's email address back to your own servers without the user's permission is not allowed; but asking the user for an email address and collecting if they choose to submit it is fine. All actions taken in this respect MUST be of the user's doing, not automatically done by the plugin.
   - All images and scripts shown should be part of the plugin. These should be loaded locally. If the plugin requires data that is loaded from an external website (such as [blocklists](https://en.wikipedia.org/wiki/Blacklist_%28computing%29)) this should be made clear in the plugin's admin screens or its description. The user must be informed of what information is being sent where.
 - The plugin page, contents of the `README.md` file and all translation files may not have "sponsored" links in them. This applies to all content that will be displayed on [plugins.piwik.org](https://plugins.piwik.org) and [themes.piwik.org](https://themes.piwik.org).
 - The plugin cannot violate our [trademarks](https://piwik.org/trademark/). Do not use **piwik** in your domain name, instead come up with your own original branding! People remember names.
+- 6 months after a major Matomo version is no longer supported, we will remove any plugin version from the Marketplace that supports only this no longer supported Matomo version. For example when Matomo 2.X reaches its end of life in December 2017 (receives no longer any updates nor security fixes), we will remove all plugin versions that target only Matomo 2.X in June 2018. This may cause a plugin to disappear from the Marketplace when there is no longer any up to date version. Please note it is always recommended to update to a supported Matomo version in order to still receive updates and security fixes.
 
 ## Using the marketplace
 

@@ -13,13 +13,15 @@ class MarkdownParserFactory
     public static function build()
     {
         // Welcome to the decorators party!
-        return new ProcessImages(
-            new ProcessLinks(
-                new ExtractSectionsPostprocessor(
-                    new IncludeFilePostprocessor(
-                        new TitleIdPreprocessor(
-                            new FrontYamlParser(
-                                new MichelfMarkdown()
+        return new ReplaceBrand(
+            new ProcessImages(
+                new ProcessLinks(
+                    new ExtractSectionsPostprocessor(
+                        new IncludeFilePostprocessor(
+                            new TitleIdPreprocessor(
+                                new FrontYamlParser(
+                                    new MichelfMarkdown()
+                                )
                             )
                         )
                     )

@@ -75,7 +75,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$row` (`array`) &mdash;
-       An array with the following structure: array( Row::COLUMNS => array('label' => 'Piwik', 'column1' => 42, 'visits' => 657, 'time_spent' => 155744), Row::METADATA => array('logo' => 'test.png'), Row::DATATABLE_ASSOCIATED => $subtable // DataTable object // (but in the row only the ID will be stored) )
+       An array with the following structure: array( Row::COLUMNS => array('label' => 'Matomo', 'column1' => 42, 'visits' => 657, 'time_spent' => 155744), Row::METADATA => array('logo' => 'test.png'), Row::DATATABLE_ASSOCIATED => $subtable // DataTable object // (but in the row only the ID will be stored) )
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>

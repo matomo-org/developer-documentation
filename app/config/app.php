@@ -14,5 +14,5 @@ if (! defined('LATEST_PIWIK_DOCS_VERSION')) {
 }
 
 if (! defined('DOCS_DOMAIN')) {
-    define('DOCS_DOMAIN', 'developer.piwik.org');
+    define('DOCS_DOMAIN', 'developer.matomo.org');
 }

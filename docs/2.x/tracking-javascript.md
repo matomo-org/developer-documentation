@@ -117,4 +117,4 @@ The Piwik JavaScript API has been tested with numerous web browsers. To maximize
 
 ## Minify piwik.js
 
-The piwik.js is minified to reduce the size that your website visitors will have to download. The YUI Compressor is used to minify the JavaScript ([more information](https://github.com/piwik/piwik/blob/master/js/README.md#introduction)). You can find the original non minified version in [/js/piwik.js](https://github.com/piwik/piwik/blob/master/js/piwik.js#L1).
+The piwik.js is minified to reduce the size that your website visitors will have to download. The YUI Compressor is used to minify the JavaScript ([more information](https://github.com/matomo-org/matomo/blob/master/js/README.md#introduction)). You can find the original non minified version in [/js/piwik.js](https://github.com/matomo-org/matomo/blob/master/js/piwik.js#L1).

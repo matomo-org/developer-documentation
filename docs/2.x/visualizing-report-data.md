@@ -274,7 +274,7 @@ Visualizations that are exposed this way must have the `FOOTER_ICON` and `FOOTER
 
 Unless your visualization is very simple or builds on another visualization (such as the "table" visualization) you will probably need to extend ViewDataTable's client-side logic.
 
-All of `ViewDataTable` client side logic is encapsulated within the **`DataTable` JavaScript class** (located in the [dataTable.js](https://github.com/piwik/piwik/blob/master/plugins/CoreHome/javascripts/dataTable.js) file). If you are extending `Visualization` directly, you should extend **DataTable** to add your own client-side logic. If you're extending another visualization, you will have to extend that visualization's JavaScript class. For example:
+All of `ViewDataTable` client side logic is encapsulated within the **`DataTable` JavaScript class** (located in the [dataTable.js](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/javascripts/dataTable.js) file). If you are extending `Visualization` directly, you should extend **DataTable** to add your own client-side logic. If you're extending another visualization, you will have to extend that visualization's JavaScript class. For example:
 
 ```javascript
 (function ($, require) {
@@ -333,11 +333,11 @@ New controls can be added one of two ways:
 
 - they can be added entirely through JavaScript (as is done with the *series picker*)
 
-    To achieve this, create HTML elements dynamically within your visualization's JavaScript class' `init()` method. See [the series picker source code](https://github.com/piwik/piwik/blob/master/plugins/CoreVisualizations/javascripts/seriesPicker.js) for an example.
+    To achieve this, create HTML elements dynamically within your visualization's JavaScript class' `init()` method. See [the series picker source code](https://github.com/matomo-org/matomo/blob/master/plugins/CoreVisualizations/javascripts/seriesPicker.js) for an example.
 
 - or the HTML for a control can be rendered with a visualization and the visualization's JavaScript class can attach some logic to the HTML
 
-    To achieve this, add HTML to your visualization's twig template then bind logic to the HTML in your visualization's JavaScript. See [the treemap plugin](https://github.com/piwik/plugin-TreemapVisualization/blob/master/javascripts/treemapViz.js) for an example (the zoom-out button is an extra control).
+    To achieve this, add HTML to your visualization's twig template then bind logic to the HTML in your visualization's JavaScript. See [the treemap plugin](https://github.com/matomo-org/plugin-TreemapVisualization/blob/master/javascripts/treemapViz.js) for an example (the zoom-out button is an extra control).
 
 ### Styling your visualization
 
@@ -350,6 +350,6 @@ You can also use the [`$datatable_css_class`](/api-reference/Piwik/ViewDataTable
 ## Learn more
 
 * To learn **how reports are stored and created**, read our [Data Model](/guides/data-model) guide.
-* To see a **full example of creating a new visualization**, see the source for the [Treemap Visualization](https://github.com/piwik/plugin-TreemapVisualization) plugin.
+* To see a **full example of creating a new visualization**, see the source for the [Treemap Visualization](https://github.com/matomo-org/plugin-TreemapVisualization) plugin.
 * To learn more about **Piwik Controllers and outputting HTML**, read about [Controllers in Piwik](/guides/controllers).
 * To learn more about **interacting with Piwik's client side JavaScript**, read our [Working with Piwik's UI](/guides/working-with-piwiks-ui) guide.

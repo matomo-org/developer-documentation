@@ -66,7 +66,7 @@ public function registerEvents()
 
 ## Posting events
 
-Plugins can post events themselves if they want to provide extension points to other plugins. For example, the [ScheduledReports](https://github.com/piwik/piwik/tree/master/plugins/ScheduledReports) plugin post events to allow plugins to define new transport mediums and report formats.
+Plugins can post events themselves if they want to provide extension points to other plugins. For example, the [ScheduledReports](https://github.com/matomo-org/matomo/tree/master/plugins/ScheduledReports) plugin post events to allow plugins to define new transport mediums and report formats.
 
 To post an event, call [`Piwik::postEvent()`](/api-reference/Piwik/Piwik#postevent) using the name of your event:
 

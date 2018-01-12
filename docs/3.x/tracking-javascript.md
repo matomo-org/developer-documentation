@@ -104,7 +104,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
 *   `setCookieDomain( domain )` - the default is the document domain; if your website can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
 *   `setCookiePath( path )` - the default is '/'.
-*   `setSecureCookies( book )` - set to true to enable the Secure cookie flag on all first party cookies. This should be used when your website is only available under HTTPS so that all tracking cookies are always sent over secure connection.
+*   `setSecureCookie( bool )` - set to true to enable the Secure cookie flag on all first party cookies. This should be used when your website is only available under HTTPS so that all tracking cookies are always sent over secure connection.
 *   `setVisitorCookieTimeout( seconds )` - the default is 13 months
 *   `setReferralCookieTimeout( seconds )` - the default is 6 months
 *   `setSessionCookieTimeout( seconds )` - the default is 30 minutes
@@ -124,4 +124,4 @@ The Piwik JavaScript API has been tested with numerous web browsers. To maximize
 
 ## Minify piwik.js
 
-The piwik.js is minified to reduce the size that your website visitors will have to download. The YUI Compressor is used to minify the JavaScript ([more information](https://github.com/piwik/piwik/blob/master/js/README.md#introduction)). You can find the original non minified version in [/js/piwik.js](https://github.com/piwik/piwik/blob/master/js/piwik.js#L1).
+The piwik.js is minified to reduce the size that your website visitors will have to download. The YUI Compressor is used to minify the JavaScript ([more information](https://github.com/matomo-org/matomo/blob/master/js/README.md#introduction)). You can find the original non minified version in [/js/piwik.js](https://github.com/matomo-org/matomo/blob/master/js/piwik.js#L1).

@@ -30,6 +30,7 @@ class ProcessLinks implements MarkdownParserInterface
         $urlPrefix = Environment::getCurrentUrlPrefix();
         if ($urlPrefix) {
             $html = preg_replace('/href="\/(.+?)"/', 'href="' . $urlPrefix . '/${1}"', $html);
+            $html = preg_replace('/href="(.+?)developer.matomo.org\/(.+?)"/i', 'href="${1}' . DOCS_DOMAIN . $urlPrefix . '/${2}"', $html);
             $html = preg_replace('/href="(.+?)developer.piwik.org\/(.+?)"/i', 'href="${1}' . DOCS_DOMAIN . $urlPrefix . '/${2}"', $html);
         }
 

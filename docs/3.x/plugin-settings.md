@@ -91,7 +91,7 @@ class SystemSettings extends \Piwik\Settings\Plugin\SystemSettings
 
 For a list of possible properties for each setting have a look at the [Setting](/api-reference/Piwik/Settings/Setting)
 and [FieldConfig](/api-reference/Piwik/Settings/FieldConfig) API reference. See also the
-[ExampleSettingsPlugin](https://github.com/piwik/piwik/tree/master/plugins/ExampleSettingsPlugin) to see what else is possible.
+[ExampleSettingsPlugin](https://github.com/matomo-org/matomo/tree/master/plugins/ExampleSettingsPlugin) to see what else is possible.
 
 ### Field configuration
 

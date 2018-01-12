@@ -26,6 +26,7 @@ class ProcessImages implements MarkdownParserInterface
 
         $urlPrefix = Environment::buildUrlPrefix(Environment::getPiwikVersion());
         $html = preg_replace('/src="\/img\/(.+?)"/', 'src="/img' . $urlPrefix . '/${1}"', $html);
+        $html = preg_replace('/src="(.+?)developer.matomo.org\/img\/(.+?)"/i', 'src="${1}' . DOCS_DOMAIN . '/img' . $urlPrefix . '/${2}"', $html);
         $html = preg_replace('/src="(.+?)developer.piwik.org\/img\/(.+?)"/i', 'src="${1}' . DOCS_DOMAIN . '/img' . $urlPrefix . '/${2}"', $html);
 
         $document->htmlContent = $html;

@@ -29,7 +29,7 @@ There are many resources on the internet to help you learn PHP. We recommend rea
 
 All the functionality you see when you use Piwik is provided by **_Piwik Plugins_**. The core of Piwik (termed _**Piwik Core**_) only contains tools for those plugins.
 
-If you want to add more functionality to Piwik, create your own plugin then distribute it on the [Piwik Marketplace](https://plugins.piwik.org) so that others can use it.
+If you want to add more functionality to Piwik, create your own plugin then distribute it on the [Piwik Marketplace](https://plugins.matomo.org) so that others can use it.
 
 _Note: If you want to integrate another piece of software with Piwik and you only need to know how to track visits or how to retrieve reports, read more about [Integrating Piwik in your application](/integration)._
 
@@ -42,7 +42,7 @@ You can accomplish the following by creating a plugin:
 - show existing reports in a new way
 - send scheduled reports through new mediums or in new formats
 
-These are only a few of the possibilities — it is not possible to categorize all of the existing plugins' functionality simply because of the vast differences in their use cases. For example, the [Annotations](https://piwik.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](https://piwik.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
+These are only a few of the possibilities — it is not possible to categorize all of the existing plugins' functionality simply because of the vast differences in their use cases. For example, the [Annotations](https://matomo.org/docs/annotations/) plugin lets users add notes for dates without requiring modifications to **Piwik Core**. The DBStats plugin will show users statistics about their MySQL database. The [Dashboard](https://matomo.org/docs/piwik-tour/#dashboard-widgets) plugin provides a configurable way to view multiple reports at once.
 
 **Whatever ideas your imagination cooks up, we think you can implement them with Piwik.**
 
@@ -55,8 +55,8 @@ Before we start extending Piwik, let's make sure you have the tools needed. You 
 - **A PHP IDE or a text editor.** We recommend using [PhpStorm](http://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
 - **A webserver,** such as [Apache](http://www.apache.org/) or [Nginx](http://nginx.org/). You can also use [PHP's built-in webserver](http://php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 5.4 or higher installed.
 - **A MySQL database**
-- **[git](http://git-scm.com/)** so you can work with the latest Piwik source code.
-- **[Composer](http://getcomposer.org/)** so you can install the PHP libraries needed by Piwik.
+- **[git](http://git-scm.com/)** so you can work with the latest Matomo source code.
+- **[Composer](http://getcomposer.org/)** so you can install the PHP libraries needed by Matomo.
 - **A browser,** such as [Firefox](http://www.mozilla.org/en-US/firefox/new/) or [Chrome](http://www.google.com/chrome). Ok, you've probably got this.
 
 The following tools aren't required for this guide, but you may find them useful as you create your plugin:
@@ -67,14 +67,14 @@ The following tools aren't required for this guide, but you may find them useful
 
 If your computer is using a Debian based operating system, you can install all the required packages with the following command: `sudo apt-get install php5 php5-curl php5-gd php5-cli php5-geoip mysql-server php5-mysql`
 
-### Get & Install Piwik
+### Get & Install Matomo
 
-We'll get the latest version of Piwik's source code using git.
+We'll get the latest version of Matomo's source code using git.
 
-Open a terminal, `cd` into the directory where you want to install Piwik, and then run the following commands (without the leading `$`):
+Open a terminal, `cd` into the directory where you want to install Matomo, and then run the following commands (without the leading `$`):
 
-    $ git clone https://github.com/piwik/piwik piwik
-    $ cd piwik
+    $ git clone https://github.com/matomo-org/matomo matomo
+    $ cd matomo
     $ git submodule update --init
 
 Run the following command to install third party libraries:
@@ -85,15 +85,15 @@ If this command fails, follow the [installation instructions for Composer](https
 
     $ php composer.phar install --no-script
     
-Now that you've got a copy of Piwik, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
+Now that you've got a copy of Matomo, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself. <!-- TODO: are there instructions for setting up Piwik w/ Apache/nginx? can't find any. (text was: You can see instructions for Apache [here](#) and instructions for Nginx [here](#).)-->
 
 If your PHP version is greater than 5.4, you can also use [PHP's built-in web server](http://php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
 
     $ php -S 0.0.0.0:8000
 
-Piwik should now be available at [http://localhost:8000/](http://localhost:8000/). To stop the web server, just hit `Ctrl+C`. Remember that PHP's built in web server is only suitable for development. It should **never** be used in production.
+Matomo should now be available at [http://localhost:8000/](http://localhost:8000/). To stop the web server, just hit `Ctrl+C`. Remember that PHP's built in web server is only suitable for development. It should **never** be used in production.
 
-Once Piwik is running, open it in your browser and follow the instructions to complete the installation.
+Once Matomo is running, open it in your browser and follow the instructions to complete the installation.
 
 #### Adding anonymous access to your reports
 
@@ -161,7 +161,7 @@ The command-line tool will create a new directory for your plugin (in the **plug
 - `MyPlugin.php`: Contains your plugin's descriptor class. This class contains metadata about your plugin and a list of event handlers for [Piwik events](/guides/events).
 - `plugin.json`: Contains plugin metadata such as the name, description, version, etc.
 - `README.md`: A dummy README file for your plugin.
-- `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](https://developer.piwik.org/guides/distributing-your-plugin).
+- `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Matomo Marketplace](https://developer.matomo.org/guides/distributing-your-plugin).
 
 ## What to read next
 

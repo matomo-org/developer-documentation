@@ -47,7 +47,7 @@ The returned XML is:
 
 ## Listing all the Metadata API Functions
 
-The API method **API.getReportMetadata** can be called to request the full list of API functions returning web analytics reports - [see the example output on the Piwik demo](https://demo.piwik.org/?module=API&method=API.getReportMetadata&format=xml&token_auth=anonymous).
+The API method **API.getReportMetadata** can be called to request the full list of API functions returning web analytics reports - [see the example output on the Piwik demo](https://demo.piwik.org/?module=API&method=API.getReportMetadata&format=xml&idSite=3&token_auth=anonymous).
 
 There are two types of reports in Piwik, and each have a slightly different format.
 

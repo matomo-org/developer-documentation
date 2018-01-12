@@ -121,7 +121,7 @@ Did you know you can contribute [translations](https://piwik.org/translations/) 
 ## Getting translations for your plugin 
 
 
-As long as you are [developing an open source plugin](https://developer.piwik.org/develop) hosted on Github, you may get in touch with us ([translations@piwik.org](mailto:translations@piwik.org?subject=Getting my Piwik plugin translated in other languages)) in order to get your plugin translated by the Piwik translators community.
+As long as you are [developing an open source plugin](https://developer.piwik.org/develop) hosted on Github, you may get in touch with us ([translations@matomo.org](mailto:translations@matomo.org?subject=Getting my Piwik plugin translated in other languages)) in order to get your plugin translated by the Piwik translators community.
 
 You will need an account on [Transifex.com](http://transifex.com/). If you use Transifex with a social login, please ensure to set a password in your account settings. This will be required for fetching new translations into your plugin repository.
 

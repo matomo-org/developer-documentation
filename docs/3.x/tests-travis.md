@@ -78,7 +78,7 @@ Below is the list of all supported environment variables:
 
 Plugins that use technologies other than MySQL or PHP may require extra setup and install steps to be executed on travis before running tests.
 
-[LoginLdap](https://github.com/piwik/plugin-LoginLdap), for example, tests itself against a live LDAP server and thus needs to install and setup OpenLDAP on travis. To accomplish this, [LoginLdap](https://github.com/piwik/plugin-LoginLdap) adds extra steps to its generated .travis.yml file.
+[LoginLdap](https://github.com/matomo-org/plugin-LoginLdap), for example, tests itself against a live LDAP server and thus needs to install and setup OpenLDAP on travis. To accomplish this, [LoginLdap](https://github.com/matomo-org/plugin-LoginLdap) adds extra steps to its generated .travis.yml file.
 
 To add extra steps to your plugin's .travis.yml file, create a `/tests/travis` folder inside your plugin and add one or more of the following special .yml files:
 

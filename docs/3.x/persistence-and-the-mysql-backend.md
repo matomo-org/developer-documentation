@@ -70,8 +70,8 @@ Each visit contains the following information:
 - `referer_url`: the referrer URL; its meaning depends on the specific referrer type
 - `referer_keyword`: the keyword used if a search engine was the referrer
 - `config_id`: a hash of all the visit's configuration options, including the OS, browser name, browser version, browser language, IP address and  all browser plugin information
-- `config_os`: a short string identifiying the operating system used to make this visit. See [Device Detector](https://github.com/piwik/device-detector) for more info
-- `config_browser_name`: a short string identifying the browser used to make this visit. See [Device Detector](https://github.com/piwik/device-detector) for more info
+- `config_os`: a short string identifiying the operating system used to make this visit. See [Device Detector](https://github.com/matomo-org/device-detector) for more info
+- `config_browser_name`: a short string identifying the browser used to make this visit. See [Device Detector](https://github.com/matomo-org/device-detector) for more info
 - `config_browser_version`: a string identifying the version of the browser used to make this visit
 - `config_resolution`: a string identifying the screen resolution the visitor used to make this visit (eg, `'1024x768'`)
 - `config_pdf`: whether the visitor's browser can view PDF files or not
@@ -86,11 +86,11 @@ Each visit contains the following information:
 - `config_cookie`: whether the visitor's browser has cookies enabled or not
 - `location_ip`: the IP address of the computer that the visit was made from. Can be [anonymized](https://piwik.org/docs/privacy/#step-1-automatically-anonymize-visitor-ips)
 - `location_browser_lang`: a string describing the language used in the visitor's browser
-- `location_country`: a two character string describing the country the visitor was located in while visiting the site. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
-- `location_region`: a two character string describing the region of the country the visitor was in. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
-- `location_city`: a string naming the city the visitor was in while visiting the site. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
-- `location_latitude`: the latitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
-- `location_longitude`: the longitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/piwik/piwik/tree/master/plugins/UserCountry) plugin.
+- `location_country`: a two character string describing the country the visitor was located in while visiting the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/master/plugins/UserCountry) plugin.
+- `location_region`: a two character string describing the region of the country the visitor was in. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/master/plugins/UserCountry) plugin.
+- `location_city`: a string naming the city the visitor was in while visiting the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/master/plugins/UserCountry) plugin.
+- `location_latitude`: the latitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/master/plugins/UserCountry) plugin.
+- `location_longitude`: the longitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/master/plugins/UserCountry) plugin.
 - `custom_var_k1`: the custom variable name of the visit in the first slot for visit custom variables.
 - `custom_var_v1`: the custom variable value of the visit in the first slot for visit custom variables.
 - `custom_var_k2`: the custom variable name of the visit in the second slot for visit custom variables.
@@ -102,7 +102,7 @@ Each visit contains the following information:
 - `custom_var_k5`: the custom variable name of the visit in the fifth slot for visit custom variables.
 - `custom_var_v5`: the custom variable value of the visit in the fifth slot for visit custom variables.
 
-Some plugins, such as the [Provider](https://github.com/piwik/piwik/tree/master/plugins/Provider) plugin, will add new information to visits.
+Some plugins, such as the [Provider](https://github.com/matomo-org/matomo/tree/master/plugins/Provider) plugin, will add new information to visits.
 
 #### Table details
 
@@ -303,7 +303,7 @@ Site entities are stored in the `site` table and contain the following informati
 
 Site entities also contain a list of extra URLs that can be used to access the website. These are not stored within site entities themselves: they are stored in the `site_url` table.
 
-Site entity data access occurs primarily through the [Piwik\Site](/api-reference/Piwik/Site) class. Anything that cannot be queried through that class can be queried through the [SitesManager](https://github.com/piwik/piwik/tree/master/plugins/SitesManager) core plugin.
+Site entity data access occurs primarily through the [Piwik\Site](/api-reference/Piwik/Site) class. Anything that cannot be queried through that class can be queried through the [SitesManager](https://github.com/matomo-org/matomo/tree/master/plugins/SitesManager) core plugin.
 
 <a name="other-data-goals"></a>
 ### Goals
@@ -378,7 +378,7 @@ To read more about users access, read the [Permissions](/guides/permissions) gui
 
 Piwik will also persist each user's language of choice. User logins are associated with the name of the language (written in the chosen language as opposed to English).
 
-This association and the persistence logic is implemented by the [LanguagesManager](https://github.com/piwik/piwik/tree/master/plugins/LanguagesManager) plugin.
+This association and the persistence logic is implemented by the [LanguagesManager](https://github.com/matomo-org/matomo/tree/master/plugins/LanguagesManager) plugin.
 
 ### Options
 
