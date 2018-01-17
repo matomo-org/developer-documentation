@@ -17,7 +17,7 @@ To create an empty theme, run the following command from Piwik's root directory:
 
     ./console generate:theme
 
-After you enter the appropriate information, a theme will be created for you in the `plugins/` directory.
+After you enter the appropriate information, a theme will be created for you in the `plugins/` directory. Now you need to activate this theme by going to "Administration => Plugins => Manage Themes" and activate your created theme.
 
 ## Simple theming
 
