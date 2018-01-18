@@ -68,6 +68,8 @@ or
 
 ```php
 $translatedText = Piwik::translate('MyPlugin_MyParagraphWithALink', '<a href="http:://piwik.org">', '</a>');
+// where the key "MyPlugin_MyParagraphWithALink" could look like this:
+// "My paragraph has a %1$slink%2$s."
 ```
 
 ## Translation in Twig templates
