@@ -983,7 +983,7 @@ Callback Signature:
 
 ### Live.addProfileSummaries
 
-*Defined in [Piwik/Plugins/Live/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Controller.php) in line [248](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Controller.php#L248)*
+*Defined in [Piwik/Plugins/Live/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Controller.php) in line [261](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Controller.php#L261)*
 
 Triggered to add new live profile summaries. **Example**
 
@@ -1027,7 +1027,7 @@ Callback Signature:
 
 ### Live.filterProfileSummaries
 
-*Defined in [Piwik/Plugins/Live/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Controller.php) in line [270](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Controller.php#L270)*
+*Defined in [Piwik/Plugins/Live/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Controller.php) in line [283](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Controller.php#L283)*
 
 Triggered to filter / restrict profile summaries. **Example**
 
