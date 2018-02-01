@@ -371,6 +371,8 @@ _paq.push(['trackPageView']);
 
 Note: `USER_ID_HERE` must be a unique and persistent non-empty string that represents a user across devices.
 
+### When user is logged in, set the User ID
+
 Let's take an example. Imagine that your website authenticate your users via a login form using a PHP script. Here is what your Piwik JavaScript snippet may look like:
 
 ```javascript
@@ -387,6 +389,23 @@ if (isset($userId)) {
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 ```
+
+### When user logs out, reset User ID
+
+*(resetUserId is available since Matomo 3.3.1)*
+
+When the user has logged out and a User ID is not available anymore, it is recommended to notify Matomo by calling the `resetUserId` method before `trackPageView`:
+
+
+```javascript
+
+// User has just logged out, we reset the User ID which also generates a new Visitor ID
+_paq.push(['resetUserId']);
+
+_paq.push(['trackPageView']);
+```
+
+Using `resetUserId` after a user logout ensures that a new visitor ID and a new visit will be created right after logout. is especially important in [single page applications](https://piwik.org/blog/2017/02/how-to-track-single-page-websites-using-piwik-analytics/). 
 
 
 ## Content Tracking
