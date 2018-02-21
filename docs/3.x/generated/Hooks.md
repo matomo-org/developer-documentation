@@ -870,6 +870,16 @@ Callback Signature:
 
 
 
+## Filesystem
+
+- [Filesystem.allCachesCleared](#filesystemallcachescleared)
+
+### Filesystem.allCachesCleared
+
+*Defined in [Piwik/Filesystem](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Filesystem.php) in line [45](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Filesystem.php#L45)*
+
+Triggered after all non-memory caches are cleared (eg, via the cache:clear command).
+
 ## FrontController
 
 - [FrontController.modifyErrorPage](#frontcontrollermodifyerrorpage)
