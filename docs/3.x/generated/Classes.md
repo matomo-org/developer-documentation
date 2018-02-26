@@ -150,6 +150,7 @@ This is a complete list of available classes:
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\RevenuePerVisit`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/RevenuePerVisit.md) &mdash; Revenue per visit for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\ProductConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/ProductConversionRate.md) &mdash; The conversion rate for ecommerce orders.
 - [`Plugins\Goals\Columns\Metrics\RevenuePerVisit`](Piwik/Plugins/Goals/Columns/Metrics/RevenuePerVisit.md) &mdash; The amount of revenue per visit (or per conversion if there are no visits).
+- [`Plugins\Live\ProfileSummaryProvider`](Piwik/Plugins/Live/ProfileSummaryProvider.md)
 - [`Plugins\Live\ProfileSummary\ImportantVisits`](Piwik/Plugins/Live/ProfileSummary/ImportantVisits.md) &mdash; Class ImportantVisits
 - [`Plugins\Live\ProfileSummary\ProfileSummaryAbstract`](Piwik/Plugins/Live/ProfileSummary/ProfileSummaryAbstract.md) &mdash; Class ProfileSummaryAbstract
 - [`Plugins\Live\ProfileSummary\Summary`](Piwik/Plugins/Live/ProfileSummary/Summary.md) &mdash; Class ProfileSummaryAbstract

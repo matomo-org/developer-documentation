@@ -146,6 +146,7 @@
 ## Plugins\Goals\Columns\Metrics\GoalSpecific\RevenuePerVisit
 ## Plugins\Goals\Columns\Metrics\ProductConversionRate
 ## Plugins\Goals\Columns\Metrics\RevenuePerVisit
+## Plugins\Live\ProfileSummaryProvider
 ## Plugins\Live\ProfileSummary\ImportantVisits
 ## Plugins\Live\ProfileSummary\ProfileSummaryAbstract
 ## Plugins\Live\ProfileSummary\Summary
