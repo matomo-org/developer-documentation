@@ -37,28 +37,50 @@ configuration in Piwik. If enabled, Piwik will record text entered into text and
 in the session recording video. Passwords and [common credit card fields](/guides/heatmap-session-recording/faq#which-form-fields-credit-card-are-masked-automatically-when-recording-a-session) will be automatically masked. This means any text
 entered into such a masked field will be replaced with asterisks, for example `secure` may be tracked as `******`.
 
-If you want to capture keystrokes but mask specific form fields that may hold sensitive data, you can set a `data-piwik-mask` 
-HTML attribute.
+If you want to capture keystrokes but mask specific form fields that may hold sensitive data, you can set a `data-matomo-mask` (or `data-piwik-mask`) HTML attribute.
 
 You can mask an individual form field like this:
  
 ```html
-<input type="text" name="sensitivedata" data-piwik-mask>
+<input type="text" name="sensitivedata" data-matomo-mask>
 ```
 
-Alternatively, you can mask a set of form fields within your web page like this:
+Alternatively, you can mask a set of form fields within your web page by specifying the `data-matomo-mask` attribute on a `form` element like this:
 
 ```html
-<div data-piwik-mask>
+<form data-piwik-mask>
   <div>
     <input type="text" name="tax_number">
     <input type="text" name="passport_id">
   </div>
-</div>
+</form>
 ```
 
 To disable the recording of any keystrokes, call `_paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes']);`
 If disabled, no text entered into any form field will be sent to Piwik, not even masked form fields.
+
+## Masking content on your website
+
+When you record a session or generate a heatmap, Matomo may record user sensitive data which is displayed on your website. To mask such content which is not displayed as part of a form element (see above) but any other element (such as a `<p>` or `<div>`), you can use the `data-matomo-mask` attribute as well. The `data-matomo-mask` attribute works from version 3.1.9 of Heatmap & Session Recording.
+
+You can mask an individual element like this:
+ 
+```html
+<span data-matomo-mask>Firstname lastname</span>
+```
+
+Alternatively, you can mask a set of elements within your web page by specifying the `data-matomo-mask` attribute on an element that is higher in the hierarchy:
+
+```html
+<div data-matomo-mask>
+  <p>
+  <span>Firstname</span>
+  <span>Lastname</span>
+  </p>
+</div>
+```
+
+When the content is masked, each character will be replaced by an asterisk (`*`) before sending the data to Matomo. It will also mask any content that is shown in a `title`, `alt`, `label` or `placeholder` attribute.
 
 ## When the `piwik.js` in your Piwik directory file is not writable
  
