@@ -115,7 +115,7 @@ keystrokes that are entered by a user into text form elements will be recorded a
 you want to make sure to never record any keystrokes entered by your users, call this method.
 
 Password fields and some common credit card fields will be automatically masked before sending the data to your Piwik.
-For privacy reasons you can mask the keystrokes of form fields by setting a `data-piwik-mask` attribute on any element. 
+For privacy reasons you can mask the keystrokes of form fields by setting a `data-matomo-mask` (or `data-piwik-mask`) attribute on any element. 
 Learn more about this in [masking keystrokes](/guides/heatmap-session-recording/setup#masking-keystrokes-in-form-fields).
 
 ### `enableCaptureKeystrokes()`
