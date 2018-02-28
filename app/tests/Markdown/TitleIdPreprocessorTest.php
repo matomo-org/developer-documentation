@@ -3,8 +3,9 @@
 namespace tests\Markdown;
 
 use helpers\Markdown\TitleIdPreprocessor;
+use PHPUnit\Framework\TestCase;
 
-class TitleIdPreprocessorTest extends \PHPUnit_Framework_TestCase
+class TitleIdPreprocessorTest extends TestCase
 {
     /**
      * @test
