@@ -23,7 +23,7 @@ For example, you can request the "Best Keywords" report processed for all visits
     &module=API&method=Referrers.getKeywords
     &segment=browserCode==FF;countryCode==DE
 
-Example URL of top countries used by visits landing on the page: [virtual-drums.com/](http://www.virtual-drums.com/): [demo.piwik.org/?module=API&method=**UserCountry.getCountry**&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en**&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F**](https://demo.piwik.org/?module=API&method=UserCountry.getCountry&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F)
+Example URL of top countries used by visits landing on the page: [virtual-drums.com/](http://www.virtual-drums.com/): [demo.piwik.org/?module=API&method=**UserCountry.getCountry**&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en**&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F**](https://demo.matomo.org/?module=API&method=UserCountry.getCountry&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F)
 
 Let's take a look at the segment string.
 
@@ -61,7 +61,7 @@ will select "Visitors from Search engines AND (Keyword is Piwik OR Keyword is an
 
 ## List of segments
 
-{@include http://demo.piwik.org/index.php?module=API&action=listSegments&language=en}
+{@include https://demo2.piwik.org/index.php?module=API&action=listSegments&language=en}
 
 ### Segment values must be URL encoded
 
