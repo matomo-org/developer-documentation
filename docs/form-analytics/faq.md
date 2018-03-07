@@ -46,11 +46,11 @@ Some websites or apps use randomized names that always change, for example:
 <input name="23493493ca2">
 ```
 
-In this case, you should set a fixed name that always remains the same using the `data-piwik-name` attribute:
+In this case, you should set a fixed name that always remains the same using the `data-matomo-name` (recommended) or `data-piwik-name` attribute:
 
 ```html
-<form name="349391ac34f" data-piwik-name="cloud_login">...</form>
-<input name="349391ac34f" data-piwik-name="username">
+<form name="349391ac34f" data-matomo-name="cloud_login">...</form>
+<input name="349391ac34f" data-matomo-name="username">
 ```
 
 Please note that you do not have to set a custom name if the name is always the same: in Piwik itself you can map a
@@ -58,21 +58,21 @@ cryptic name like `input_4` to a human readable name like "Username" without hav
  
 ## How do I prevent a form or form field from being tracked?
 
-When you don't want a form or form field to be tracked, simply add a `data-piwik-ignore` attribute to the form or the
+When you don't want a form or form field to be tracked, simply add a `data-matomo-ignore` (recommended) or a `data-piwik-ignore` attribute to the form or the
 field you want to ignore. If you ignore the whole form, Piwik will not even send any tracking request for this form.
 
 ```html
-<form data-piwik-ignore>...</form>
-<input data-piwik-ignore type="text">
+<form data-matomo-ignore>...</form>
+<input data-matomo-ignore type="text">
 ```
  
 ## How do we track a form with Piwik when our website does not use a form element?
 
 Usually, forms are wrapped within a `form` element. However, this might not always be the case. You can still track such
-forms automatically by adding a `data-piwik-form` attribute to an element that contains all the form fields:
+forms automatically by adding a `data-matomo-form` (recommended) or a `data-piwik-form` attribute to an element that contains all the form fields:
 
 ```html
-<div data-piwik-form data-piwik-name="myformname">
+<div data-matomo-form data-matomo-name="myformname">
     <input name="username" type="text">
     <input name="password" type="text">
 </div>
@@ -97,7 +97,7 @@ Piwik automatically tracks a form submit by listening to the form `submit` event
 submitted by calling this method:
  
 ```html
-<div data-piwik-form id="login"></div>
+<div data-matomo-form id="login"></div>
 <a href="#" onclick="_paq.push(['FormAnalytics::trackFormSubmit', document.getElementById('login')])">Submit</a>
 ```
 

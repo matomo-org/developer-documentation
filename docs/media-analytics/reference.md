@@ -122,9 +122,9 @@ You can access this property as follows: `Piwik.MediaAnalytics.mediaType.VIDEO`.
 
 * `element.getAttribute(htmlElement, attributeName)` Lets you read the value of an HTML attribute. If the attribute is not set, it will return `null`.
 * `element.setAttribute(htmlElement, attributeName, attributeValue)` Lets you set a value of an HTML attribute on an HTML element.
-* `element.isMediaIgnored(htmlElement)` Detects whether the given element is supposed to be ignored when tracking media (has a `data-piwik-ignore` attribute).
-* `element.getMediaTitle(htmlElement)` Tries to detect a media title from one of the HTML attributes `data-piwik-title`, `title` or `alt`. Returns `null` if no title can be found.
-* `element.getMediaResource(htmlElement, actualResource)` If the element has set a value for the `data-piwik-resource` attribute, it will return that value and `actualResource` otherwise. 
+* `element.isMediaIgnored(htmlElement)` Detects whether the given element is supposed to be ignored when tracking media (has a `data-matomo-ignore` or a `data-piwik-ignore` attribute).
+* `element.getMediaTitle(htmlElement)` Tries to detect a media title from one of the HTML attributes `data-matomo-title`, `data-piwik-title`, `title` or `alt`. Returns `null` if no title can be found.
+* `element.getMediaResource(htmlElement, actualResource)` If the element has set a value for the `data-matomo-resource` or the `data-piwik-resource` attribute, it will return that value and `actualResource` otherwise. 
 * `element.isFullscreeen(htmlElement)` Detects whether the given element (video) is currently viewed in full screen.
 
 ## Tracker methods

@@ -56,9 +56,9 @@ Piwik.FormAnalytics.scanForForms(document.getElementById('test'));
 ### `trackForm(formElement)`
 
 This method is almost the same as `scanForForms`. However, `scanForForms` will detect only forms that are either a
-`form` element or have a `data-piwik-form` attribute. If neither of this is the case for one of your forms, you can use 
+`form` element, a `data-matomo-form` attribute, or a `data-piwik-form` attribute. If neither of this is the case for one of your forms, you can use 
 this method to make sure Piwik will track data for all form fields within this element. It is recommended to set a 
-`data-piwik-name` attribute to let Piwik know the name of your form.
+`data-matomo-name` or a `data-piwik-name` attribute to let Piwik know the name of your form.
 
 ### `trackFormSubmit(formElement)`
 
@@ -66,7 +66,7 @@ By default, Piwik will automatically listen to the form submit event. If you are
  need to let Piwik know when the form was submitted by calling this method:
  
 ```html
-<div data-piwik-form id="login"></div>
+<div data-matomo-form id="login"></div>
 <a href="#" onclick="_paq.push(['FormAnalytics::trackFormSubmit', document.getElementById('login')])">Submit</a>
 ```
 
@@ -78,7 +78,7 @@ as a visitor may have to correct form validation errors. To track a form convers
  form successfully, you can trigger a form conversion manually by calling this method.
  
 ```html
-<div data-piwik-form name="cloudlogin" id="login"></div>
+<div data-matomo-form name="cloudlogin" id="login"></div>
 
 <!-- when the form is still shown on the same page you can pass the form element -->
 <a href="#" onclick="_paq.push(['FormAnalytics::trackFormConversion', document.getElementById('login')])">Submit</a>
