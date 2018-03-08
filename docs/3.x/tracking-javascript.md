@@ -32,6 +32,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `enableHeartBeatTimer( delayInSeconds )` - Install a Heart beat timer that will regularly send requests to Piwik in order to better measure the time spent on the page. These requests will be sent only when the user is actively viewing the page (when the tab is active and in focus). These requests will not track additional actions or pageviews. By default, `delayInSeconds` is set to 15 seconds.
 * `enableCrossDomainLinking()` - Enables cross domain linking. By default, the visitor ID that identifies a unique visitor is stored in the browser's first party cookies. This means the cookie can only be accessed by pages on the same domain. If you own multiple domains and would like to track all the actions and pageviews of a specific visitor into the same visit, you may enable [cross domain linking (learn more)](https://piwik.org/faq/how-to/faq_23654/) . Whenever a user clicks on a link it will append a URL parameter `pk_vid` to the clicked URL which forwards the current visitor ID value to the page of the different domain.
 * `setCrossDomainLinkingTimeout( timeout )` - By default, the two visits across domains will be linked together when the link is clicked and the page is loaded within a 180 seconds timeout window.`
+* `getCrossDomainLinkingUrlParameter()` - Gets the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links that are added to the DOM dynamically.
 
 ### Configuration of the Tracker Object
 
@@ -83,7 +84,6 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](https://piwik.org/faq/how-to/#faq_120))
 *   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](https://piwik.org/faq/how-to/#faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
-*   `getCrossDomainLinkingUrlParameter()` - Gets the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links you add to the DOM through JavaScript.
 
 ### Ecommerce
 
