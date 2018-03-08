@@ -15,17 +15,18 @@ so your video reports directly show the original video titles.
 If you use HTML5 videos or audios, or if you wish to customise the video titles in your analytics reports, read on. 
 Media Analytics will detect the media title by searching for the following pieces of information:
 
-* firstly, the `data-piwik-title` HTML attribute.
+* firstly, the `data-matomo-title` HTML attribute.
+* next, the `data-piwik-title` HTML attribute.
 * Media title from YouTube / Vimeo player.
 * `title` HTML attribute.
 * finally, the `alt` HTML attribute.
 
-Titles are detected in this priority, meaning that you can set a `data-piwik-title` attribute to overwrite
-the YouTube or Vimeo video title. A `data-piwik-title` always has the highest priority and overwrites any title 
+Titles are detected in this priority, meaning that you can set a `data-matomo-title` (recommended) or a `data-piwik-title` attribute to overwrite
+the YouTube or Vimeo video title. A `data-matomo-title` always has the highest priority and overwrites any title 
 received from a media player.
 
 ```html
-<video data-piwik-title="My custom Video title" title="A different title"></video>
+<video data-matomo-title="My custom Video title" title="A different title"></video>
 ```
 
 In the above example your video analytics reports in Piwik will show "My custom Video title" as the media title. 
@@ -42,14 +43,16 @@ playerInstance.setup({
     playlist: [{
         file: "http://example.org/actualUrl.mp4",
         title: "My Video",
-        piwikTitle: "My custom Video title"
+        matomoTitle: "My custom Video title"
     }
 });
 ```
 
+Instead of the `matomoTitle` property (recommended) you can also use `piwikTitle`.
+
 ### Flowplayer
 
-You can provide a custom title when you use flowplayer for tracking purposes:
+You can provide a custom title when you use flowplayer for tracking purposes by specifying a `matomoTitle` or `piwikTitle` property:
  
 ```js 
 flowplayer("#player", {
@@ -59,12 +62,12 @@ flowplayer("#player", {
             {type: "video/mp4", src: "http://example.org/actualUrl.mp4" }
         ],
         title: "Javascript setup",
-        piwikTitle: "My custom Video title"
+        matomoTitle: "My custom Video title"
     }
 });
 ```
 
-If you embed flowplayer using the `video` element, you can set the `data-piwik-title` attribute on the video element
+If you embed flowplayer using the `video` element, you can set the `data-matomo-title` attribute on the video element
 directly as described above.
 
 
@@ -73,11 +76,11 @@ directly as described above.
 By default, the HTTP URL of a media is fetched from the player API or read in the DOM. There can be use cases
  where you might want to track a custom resource URL instead of the actual resource. For example when your media
   URLs contain unique ids and you prefer to have more readable  URLs when analyzing your Piwik reports.
-To do this you can define a custom resource via the `data-piwik-resource` HTML attribute. For example:
+To do this you can define a custom resource via the `data-matomo-resource` (recommended) or the `data-piwik-resource` HTML attribute. For example:
 
 ```html
 <video src="http://example.org/actualUrl.mp4"
-       data-piwik-resource="http://example.org/trackedUrl.mp4"></video>
+       data-matomo-resource="http://example.org/trackedUrl.mp4"></video>
 ```
 
 ### JW Player
@@ -90,14 +93,16 @@ playerInstance.setup({
     playlist: [{
         file: "http://example.org/actualUrl.mp4",
         title: "My Video",
-        piwikResource: "http://example.org/trackedUrl.mp4"
+        matomoResource: "http://example.org/trackedUrl.mp4"
     }
 });
 ```
 
+Instead of the `matomoResource` property (recommended) you can also use `piwikResource`.
+
 ### Flowplayer
 
-You can provide a custom resource URL when you use flowplayer:
+You can provide a custom resource URL when you use flowplayer by specifying a `matomoResource` or a `piwikResource` property:
  
 ```js 
 flowplayer("#player", {
@@ -107,12 +112,12 @@ flowplayer("#player", {
             {type: "video/mp4", src: "http://example.org/actualUrl.mp4" }
         ],
         title: "Javascript setup",
-        piwikResource: "http://example.org/trackedUrl"
+        matomoResource: "http://example.org/trackedUrl"
     }
 });
 ```
 
-If you embed flowplayer using the `video` element, you can set the `data-piwik-resource` attribute on the video element
+If you embed flowplayer using the `video` element, you can set the `data-matomo-resource` (recommended) or the `data-piwik-resource` attribute on the video element
 directly as described above.
 
 ## Restricting which media data is tracked
@@ -120,12 +125,12 @@ directly as described above.
 ### Excluding specific media from being tracked
 
 By default, all detected videos and audio will be tracked. To prevent the tracking of a specific media while still tracking 
-other media you can set a `data-piwik-ignore` attribute on a `<video>` or `<audio>` element to ignore it. For example:
+other media you can set a `data-matomo-ignore` (recommended) or a `data-piwik-ignore` attribute on a `<video>` or `<audio>` element to ignore it. For example:
 
 ```html
-<video data-piwik-ignore>...</video>
-<audio data-piwik-ignore>...</audio>
-<iframe data-piwik-ignore src="..."></iframe>
+<video data-matomo-ignore>...</video>
+<audio data-matomo-ignore>...</audio>
+<iframe data-matomo-ignore src="..."></iframe>
 ```
 
 ### Ignoring all medias that use a certain media player

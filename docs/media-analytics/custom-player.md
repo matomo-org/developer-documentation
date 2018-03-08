@@ -57,7 +57,7 @@ MyPlayer.scanForMedia = function (documentOrHTMLElement) {
     
     for (var i = 0; i < html5Videos.length; i++) {
         // for each of the medias found, create an instance of your player as long as the media is 
-        // not supposed to be ignored via a "data-piwik-ignore" attribute
+        // not supposed to be ignored via a "data-matomo-ignore" attribute
         if (!MA.element.isMediaIgnored(html5Videos[i])) {
             new MyPlayer(html5Videos[i], MA.mediaType.VIDEO); 
             // there is also a MA.mediaType.AUDIO constant if you want to track audio
@@ -85,7 +85,7 @@ function MyPlayer (node, mediaType) {
 
     // find the actual resource / URL of the video
     var actualResource = MA.element.getAttribute(node, 'src');
-    // a user can overwrite the actual resource by defining a "data-piwik-resource" attribute. 
+    // a user can overwrite the actual resource by defining a "data-matomo-resource" attribute. 
     // the method `getMediaResource` will detect whether such an attribute was set 
     var resource = MA.element.getMediaResource(node, actualResource);
     
@@ -99,7 +99,7 @@ function MyPlayer (node, mediaType) {
     tracker.setFullscreen(MA.element.isFullscreen(node));
 
     // the method `getMediaTitle` will try to get a media title from a
-    // "data-piwik-title", "title" or "alt" HTML attribute. Sometimes it might be possible
+    // "data-matomo-title", "title" or "alt" HTML attribute. Sometimes it might be possible
     // to retrieve the media title directly from the video or audio player
     var title = MA.element.getMediaTitle(node);
     tracker.setMediaName(title);

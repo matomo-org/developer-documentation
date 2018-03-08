@@ -32,29 +32,29 @@ newly created form.
 
 ## Custom form and field names
 
-If your form or field names change randomly, can also define a form name by using the `data-piwik-name` attribute like this:
+If your form or field names change randomly, can also define a form name by using the `data-matomo-name` (recommended) or the `data-piwik-name` attribute like this:
 
 ```html
-<form data-piwik-name="cloud_login">...</form>
+<form data-matomo-name="cloud_login">...</form>
 ```
 
 Similarly you can define a readable name for your fields like this:
 
 ```html
-<input data-piwik-name="username" type="text">
+<input data-matomo-name="username" type="text">
 ```
 
 Note that in Piwik Form Analytics itself you can give a readable name to any form or any field. If your form has for example a field named "input_4",
 you can map this field name to a human readable name like "Username" directly in the Piwik user interface. 
-You don't need to set a `data-piwik-name` in this case.
+You don't need to set a `data-matomo-name` or a `data-piwik-name` in this case.
 
 ## Custom form elements
 
-If you do not use a `<form>` element to mark your forms, you can specify a `data-piwik-form` attribute on any element 
+If you do not use a `<form>` element to mark your forms, you can specify a `data-matomo-form` (recommended) or a `data-piwik-form` attribute on any element 
 to let Piwik know that this element contains a form. Piwik will then discover this form and all fields automatically.
 
 ```html
-<div data-piwik-form data-piwik-name="cloud_login">
+<div data-matomo-form data-matomo-name="cloud_login">
     <input name="username" type="text">
 </div>
 ```
@@ -65,10 +65,10 @@ Read more about this in the [Form Analytics API Reference](/guides/form-analytic
 
 ## Ignoring forms
 
-If you do not want a form to be tracked, you can specify a `data-piwik-ignore` attribute on your form like this:
+If you do not want a form to be tracked, you can specify a `data-matomo-ignore` or a `data-piwik-ignore` attribute on your form like this:
 
 ```html
-<form name="cloud_signup" data-piwik-ignore></form>
+<form name="cloud_signup" data-matomo-ignore></form>
 ```
 
 If set, it will not even send any tracking requests for this form to your Piwik. This is useful if you want to exclude

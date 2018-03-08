@@ -19,10 +19,10 @@ If the System Check displays a warning for "Writable Piwik.js" then [learn below
 ## Tracking HTML5 videos
 
 The tracking of HTML5 video works automatically. However, you may not be tracking accurate titles for your video by default. 
-We do recommend [setting a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<video>` elements:
+We do recommend [setting a `data-matomo-title` attribute](/guides/media-analytics/options) on your `<video>` elements:
 
 ```html
-<video data-piwik-title="My Video Title">...</video>
+<video data-matomo-title="My Video Title">...</video>
 ```
 
 This also works when you are using an HTML5 based video player like VideoJS.
@@ -30,10 +30,10 @@ This also works when you are using an HTML5 based video player like VideoJS.
 ## Tracking HTML5 audios
 
 The tracking of HTML5 audio works automatically. However, you may not be tracking accurate titles for your audio by default. 
-We do recommend [setting a `data-piwik-title` attribute](/guides/media-analytics/options) on your `<audio>` elements:
+We do recommend [setting a `data-matomo-title` attribute](/guides/media-analytics/options) on your `<audio>` elements:
 
 ```html
-<audio data-piwik-title="My Audio Title">...</audio>
+<audio data-matomo-title="My Audio Title">...</audio>
 ```
 
 ## Tracking JW Player videos
@@ -65,7 +65,7 @@ flowplayer("#player", {
 ```
 
 If you embed Flowplayer using the video element, please read the instructions for setting titles using HTML5 above. You can 
-set a title using the `data-piwik-title` or `title` attribute.
+set a title using the `data-matomo-title`, `data-piwik-title` or `title` attribute.
 
 Please note that we are currently only supporting HTML5 videos for Flowplayer. If you are tracking flash videos using flowplayer,
 please get in touch with us, and we add support for it for you. If you are using flash because of HLS streams, you might want
