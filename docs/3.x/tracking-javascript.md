@@ -83,6 +83,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](https://piwik.org/faq/how-to/#faq_120))
 *   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](https://piwik.org/faq/how-to/#faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
+*   `getCrossDomainLinkingUrlParameter()` - Gets the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links you add to the DOM through JavaScript.
 
 ### Ecommerce
 
