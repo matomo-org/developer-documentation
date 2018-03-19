@@ -478,6 +478,10 @@ Row metadata cannot be added with this method.
 
 Returns the array of Rows.
 
+Internal logic in Matomo core should avoid using this method as it is time and memory consuming when being
+executed thousands of times. The alternative is to use getRowsWithoutSummaryRow() + get the summary
+row manually.
+
 #### Signature
 
 - It returns a [`Row[]`](../../Piwik/DataTable/Row.md) value.
