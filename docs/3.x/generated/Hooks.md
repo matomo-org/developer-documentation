@@ -1153,7 +1153,7 @@ Callback Signature:
 
 ### Live.getExtraVisitorDetails
 
-*Defined in [Piwik/Plugins/Live/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/API.php) in line [243](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/API.php#L243)*
+*Defined in [Piwik/Plugins/Live/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/API.php) in line [249](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/API.php#L249)*
 
 Triggered in the Live.getVisitorProfile API method. Plugins can use this event
 to discover and add extra data to visitor profiles.
