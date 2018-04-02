@@ -1730,7 +1730,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Plugins/Overlay/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Overlay/API.php) in line [126](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Overlay/API.php#L126)*
+*Defined in [Piwik/Plugins/Overlay/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Overlay/API.php) in line [130](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Overlay/API.php#L130)*
 
 Triggered immediately before the user is authenticated. This event can be used by plugins that provide their own authentication mechanism
 to make that mechanism available. Subscribers should set the `'Piwik\Auth'` object in
