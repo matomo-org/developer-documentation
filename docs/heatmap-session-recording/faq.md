@@ -217,3 +217,7 @@ _paq.push(['HeatmapSessionRecording::enableDebugMode']);
  
 Calling this method will start logging all tracking requests and some more information to the developer 
 console of your browser. 
+
+## How do I solve the issue of a partially rendered page with pictures or content missing?
+
+The screenshot for a Heatmap is taken when the page is officially loaded according to the browser. In some cases, the browser may consider the page fully loaded and rendered before all components are actually loaded.  Learn how to enable heatmaps once the page is fully loaded [in this FAQ](https://matomo.org/faq/heatmap-session-recording/faq_25413/).
