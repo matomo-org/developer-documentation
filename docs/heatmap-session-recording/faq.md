@@ -7,20 +7,27 @@ This page is the Developer FAQ for [Heatmap & Session Recording](https://www.hea
 
 ## How do I prevent the capturing of keystrokes when recording a session? 
 
-There are two ways to do this: 
+Heatmap & Session Recording has disabled the capturing of keystrokes by default since version 3.2.0 and you need to specifically enable the capturing of keystrokes for each recording. 
 
-* Disable the capturing of keystrokes each time you configure a session recording in Piwik > Session Recordings > Manage.
+You can prevent the recording of keystrokes in two ways: 
+
+* Disable the capturing of keystrokes each time you configure a session recording in Piwik > Session Recordings > Manage (default since 3.2.0).
 * Add the following code to your Piwik tracking code to make sure to never record any entered keystrokes: ` _paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes']);`
 
-If you want to capture keystrokes but mask the keystrokes a user entered, have a look at [masking keystrokes](/guides/heatmap-session-recording/setup#masking-keystrokes-in-form-fields).
+Please note that some fields that could potentially include personal information such as an email, credit card, or phone number will always be masked if detected by our tracker as such a field.
+ 
+If you want to whitelist some specific fields to be captured, have a look at [unmasking keystrokes](/guides/heatmap-session-recording/setup#unmasking-keystrokes-in-form-fields).
 
-## Which form fields (credit card) are masked automatically when recording a session? 
+## Which form fields (credit card) are always masked when recording a session? 
 
-Any input field with the type `password` will be masked automatically. We also mask form fields if the field name is `password`.
+By default, all fields will be masked. However, there are some fields that will be always masked even if you add a `data-matomo-unmask` attribute as these fields could potentially include personal or sensitive information. This is especially useful for privacy compliance such as GDPR, RGPD, or DS-GVO.
 
-Additionally, we mask a form field when the name equals any of `credit-card-number, cvv, cvc, ccname, cc-name, cc-number, cardnumber`, or when the autocomplete is set to any of `cc-csc, cc-name, cc-number`. We also ignore any form element with an id of `cvv`. If a user enters between 12 and 21 digits in sequence, we assume it is a credit card number and mask it automatically. Form fields within iframes won't be recorded at all.
-
-Want to mask the keystrokes of additional form fields? Have a look at [masking keystrokes](/guides/heatmap-session-recording/setup#masking-keystrokes-in-form-fields).
+* Any input field with the type `password`, `tel`, or `email`.
+* No value is recorded for `hidden` form elements.
+* We also ignore any form field when it has an `id`, `name`, or `autocomplete` with one of these values (any dashes, underscores, or whitespace in the name is ignored): `'creditcardnumber', 'off', 'kreditkarte', 'debitcard', 'kreditkort', 'kredietkaart', ' kartakredytowa', 'cvv', 'cc', 'ccc', 'cccsc', 'cccvc', 'ccexpiry', 'ccexpyear', 'ccexpmonth', 'cccvv', 'cctype', 'cvc', 'exp', 'ccname', 'cardnumber', 'ccnumber', 'username', 'creditcard', 'name', 'fullname', 'familyname', 'firstname', 'vorname', 'nachname', 'lastname', 'nickname', 'surname', 'login', 'formlogin', 'konto', 'user', 'website', 'domain', 'gender', 'company', 'firma', 'geschlecht', 'email', 'emailaddress', 'emailadresse', 'mail', 'epos', 'ebost', 'epost', 'eposta', 'authpw', 'token_auth', 'tokenauth', 'token', 'pin', 'ibanaccountnum', 'ibanaccountnumber', 'account', 'accountnum', 'auth', 'age', 'alter', 'tel', 'city', 'cell', 'cellphone', 'bic', 'iban', 'swift', 'kontonummer', 'konto', 'kontonr', 'phone', 'mobile', 'mobiili', 'mobilne', 'handynummer', 'téléphone', 'telefono', 'ssn', 'socialsecuritynumber', 'socialsec', 'socsec', 'address', 'addressline1', 'addressline2','billingaddress', 'billingaddress1', 'billingaddress2','shippingaddress', 'shippingaddress1', 'shippingaddress2', 'vat', 'vatnumber', 'gst', 'gstnumber', 'tax', 'taxnumber', 'steuernummer', 'adresse', 'indirizzo', 'adres', 'dirección', 'osoite', 'address1', 'address2', 'address3', 'street', 'strasse', 'rue', 'via', 'ulica', 'calle', 'sokak', 'zip', 'zipcode', 'plz', 'postleitzahl', 'postalcode', 'postcode', 'dateofbirth', 'dob', 'telephone', 'telefon', 'telefonnr', 'telefonnummer', 'password', 'passwort', 'kennwort', 'wachtwoord', 'contraseña', 'passord', 'hasło', 'heslo', 'wagwoord', 'parole', 'contrasenya', 'heslo', 'clientid', 'identifier', 'id', 'consumersecret', 'webhooksecret', 'consumerkey', 'keyconsumersecret', 'keyconsumerkey', 'clientsecret', 'secret', 'secretq', 'secretquestion', 'privatekey', 'publickey', 'pw', 'pwd', 'pwrd', 'pword', 'paword', 'pasword', 'paswort', 'pass']`  
+* When a user enters between 7 and 21 digits in sequence, we assume it is a credit card number or similar and mask it. 
+* When a user enters an `@` symbol we assume it is an email address and don't record it.
+* Form fields within iframes won't be recorded at all.
 
 ## How do I use Heatmap & Session Recording on a single-page website or web application? 
 

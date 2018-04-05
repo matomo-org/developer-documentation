@@ -30,33 +30,37 @@ To detect if any activities need to be recorded, an HTTP request will be issued 
 fast and does for example not connect to your database, it may still add a bit of load to your server. If you want to avoid such 
 a request on each page view, have a look at the API reference for [`addConfig()`](/guides/heatmap-session-recording/reference#addconfig).
 
-## Masking keystrokes in form fields
+## Unmasking keystrokes in form fields
 
-When you record a session, Piwik may record keystrokes / text that a visitor enters into a form field depending on your session recording 
-configuration in Piwik. If enabled, Piwik will record text entered into text and textarea form fields and replay them later
-in the session recording video. Passwords and [common credit card fields](/guides/heatmap-session-recording/faq#which-form-fields-credit-card-are-masked-automatically-when-recording-a-session) will be automatically masked. This means any text
-entered into such a masked field will be replaced with asterisks, for example `secure` may be tracked as `******`.
+When you record a session, Matomo may record keystrokes that a visitor enters into a form field depending on your session recording 
+configuration. By default, no keystrokes are captured. If the feature to record keystrokes is enabled, Matomo will record any text entered into form fields and replay them later
+in the session recording video but any entered text will be "masked". This means any text entered into such a masked field will be replaced with asterisks, for example `secure` may be tracked as `******`.
 
-If you want to capture keystrokes but mask specific form fields that may hold sensitive data, you can set a `data-matomo-mask` (or `data-piwik-mask`) HTML attribute.
+If you wanted to record keystrokes for some form fields in plain text, you need to enable the capturing of keystrokes in the session recording and specifically whitelist
+in the HTML of your website or app which form fields are OK to be recorded by specifying a `data-matomo-unmask` attribute. There is also a `data-matomo-mask`
+attribute to prevent the recording of sensitive information if a parent was whitelisted.
 
-You can mask an individual form field like this:
+Please note that some fields, such as passwords, common credit card fields, and [some other fields](/guides/heatmap-session-recording/faq#which-form-fields-credit-card-are-always-masked-when-recording-a-session) will be always masked to prevent the recording of potential personal or sensitive information in plain text. 
+
+You can unmask an individual form field like this:
  
 ```html
-<input type="text" name="sensitivedata" data-matomo-mask>
+<input type="text" name="example_field_record_plain_text" data-matomo-unmask>
 ```
 
-Alternatively, you can mask a set of form fields within your web page by specifying the `data-matomo-mask` attribute on a `form` element like this:
+Alternatively, you can mask a set of form fields within your web page by specifying the `data-matomo-unmask` or `data-matomo-mask` attribute on a `form` element like this:
 
 ```html
-<form data-piwik-mask>
+<form data-piwik-unmask>
   <div>
-    <input type="text" name="tax_number">
-    <input type="text" name="passport_id">
+    <input type="text" name="example_field_record_plain_text">
+    <input type="text" name="tax_number" data-matomo-mask>
+    <input type="text" name="passport_id" data-matomo-mask>
   </div>
 </form>
 ```
 
-To disable the recording of any keystrokes, call `_paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes']);`
+To force that no keystrokes will be recorded even when enabled in the UI, call `_paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes']);`
 If disabled, no text entered into any form field will be sent to Piwik, not even masked form fields.
 
 ## Masking content on your website
