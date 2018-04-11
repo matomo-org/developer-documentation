@@ -29,6 +29,7 @@ class IntegrateCategory extends Category
             new Guide('integrate-introduction'),
             new Guide('tracking-introduction'),
             new Guide('reporting-introduction'),
+            new Guide('custom-reports-plugin'),
             new RemoteLink('Integrations', 'https://matomo.org/integrate/'),
             new Guide('ab-tests'),
             new Guide('heatmap-session-recording'),
