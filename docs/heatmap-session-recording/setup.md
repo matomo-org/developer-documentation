@@ -30,6 +30,29 @@ To detect if any activities need to be recorded, an HTTP request will be issued 
 fast and does for example not connect to your database, it may still add a bit of load to your server. If you want to avoid such 
 a request on each page view, have a look at the API reference for [`addConfig()`](/guides/heatmap-session-recording/reference#addconfig).
 
+## Masking content on your website
+
+When you record a session or generate a heatmap, Matomo may record user sensitive data which is displayed on your website. To mask such content which is not displayed as part of a form element (see above) but any other element (such as a `<p>` or `<div>`), you can use the `data-matomo-mask` attribute as well. The `data-matomo-mask` attribute works from version 3.1.9 of Heatmap & Session Recording.
+
+You can mask an individual element like this:
+ 
+```html
+<span data-matomo-mask>Firstname lastname</span>
+```
+
+Alternatively, you can mask a set of elements within your web page by specifying the `data-matomo-mask` attribute on an element that is higher in the hierarchy:
+
+```html
+<div data-matomo-mask>
+  <p>
+  <span>Firstname</span>
+  <span>Lastname</span>
+  </p>
+</div>
+```
+
+When the content is masked, each character will be replaced by an asterisk (`*`) before sending the data to Matomo. It will also mask any content that is shown in a `title`, `alt`, `label` or `placeholder` attribute.
+
 ## Unmasking keystrokes in form fields
 
 When you record a session, Matomo may record keystrokes that a visitor enters into a form field depending on your session recording 
@@ -62,29 +85,6 @@ Alternatively, you can mask a set of form fields within your web page by specify
 
 To force that no keystrokes will be recorded even when enabled in the UI, call `_paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes']);`
 If disabled, no text entered into any form field will be sent to Piwik, not even masked form fields.
-
-## Masking content on your website
-
-When you record a session or generate a heatmap, Matomo may record user sensitive data which is displayed on your website. To mask such content which is not displayed as part of a form element (see above) but any other element (such as a `<p>` or `<div>`), you can use the `data-matomo-mask` attribute as well. The `data-matomo-mask` attribute works from version 3.1.9 of Heatmap & Session Recording.
-
-You can mask an individual element like this:
- 
-```html
-<span data-matomo-mask>Firstname lastname</span>
-```
-
-Alternatively, you can mask a set of elements within your web page by specifying the `data-matomo-mask` attribute on an element that is higher in the hierarchy:
-
-```html
-<div data-matomo-mask>
-  <p>
-  <span>Firstname</span>
-  <span>Lastname</span>
-  </p>
-</div>
-```
-
-When the content is masked, each character will be replaced by an asterisk (`*`) before sending the data to Matomo. It will also mask any content that is shown in a `title`, `alt`, `label` or `placeholder` attribute.
 
 ## When the `piwik.js` in your Piwik directory file is not writable
  
