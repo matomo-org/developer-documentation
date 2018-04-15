@@ -13,5 +13,6 @@ subGuides:
   - visualizing-report-data
   - scheduled-tasks
   - piwik-on-the-command-line
+  - gdpr
 ---
 
