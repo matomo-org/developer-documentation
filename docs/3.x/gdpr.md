@@ -19,7 +19,7 @@ We recommend mentioning in your plugin’s README whether you store any personal
 it will be worth mentioning that the plugin is not storing any such information.
 
 ## Storing data in one of the existing log tables
-If your plugin stores any extra data into an existing log DB table, such as `log_visit`, or `log_link_visit_action`, your plugin will support Matomo’s GDPR features such as the export and deletion of personal information out of the box. Also 
+If your plugin stores any extra data into an existing log DB table, such as `log_visit`, or `log_link_visit_action`, your plugin will support Matomo’s GDPR features such as the export and deletion of personal information out of the box. Also, 
 the deletion of previously tracked data and the regular deletion of log data should all work out of the box.
 
 ## Storing data in custom database tables
