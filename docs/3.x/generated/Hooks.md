@@ -276,6 +276,7 @@ Callback Signature:
 ## Archiving
 
 - [Archiving.getIdSitesToArchiveWhenNoVisits](#archivinggetidsitestoarchivewhennovisits)
+- [Archiving.getIdSitesToMarkArchivesAsInvalidated](#archivinggetidsitestomarkarchivesasinvalidated)
 - [Archiving.makeNewArchiverObject](#archivingmakenewarchiverobject)
 
 ### Archiving.getIdSitesToArchiveWhenNoVisits
@@ -286,6 +287,30 @@ Callback Signature:
 
 Callback Signature:
 <pre><code>function(&amp;$idSites)</code></pre>
+
+
+### Archiving.getIdSitesToMarkArchivesAsInvalidated
+
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php) in line [156](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php#L156)*
+
+Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
+developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
+remove an idSite from the list of sites that should be invalidated to prevent it from ever being
+invalidated.
+
+**Example**
+
+    public function getIdSitesToMarkArchivesAsInvalidates(&$idSites)
+    {
+        if (in_array(1, $idSites)) {
+            $idSites[] = 5; // when idSite 1 is being invalidated, also invalidate idSite 5
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$idSites)</code></pre>
+
+- array `&$idSites` An array containing a list of site IDs which are requested to be invalidated.
 
 
 ### Archiving.makeNewArchiverObject
