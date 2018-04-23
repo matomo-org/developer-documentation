@@ -291,7 +291,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php) in line [156](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php#L156)*
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php) in line [177](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php#L177)*
 
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
@@ -730,7 +730,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1526](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1526)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1527](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1527)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
