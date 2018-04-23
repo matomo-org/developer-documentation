@@ -333,12 +333,25 @@ Callback Signature:
 
 ## AssetManager
 
+- [AssetManager.addStylesheets](#assetmanageraddstylesheets)
 - [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
 - [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
 - [AssetManager.filterMergedJavaScripts](#assetmanagerfiltermergedjavascripts)
 - [AssetManager.filterMergedStylesheets](#assetmanagerfiltermergedstylesheets)
 - [AssetManager.getJavaScriptFiles](#assetmanagergetjavascriptfiles)
 - [AssetManager.getStylesheetFiles](#assetmanagergetstylesheetfiles)
+
+### AssetManager.addStylesheets
+
+*Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [100](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L100)*
+
+Triggered after all less stylesheets are concatenated into one long string but before it is minified and merged into one file. This event can be used to add less stylesheets that are not located in a file on the disc.
+
+Callback Signature:
+<pre><code>function(&amp;$concatenatedContent)</code></pre>
+
+- string `&$concatenatedContent` The content of all concatenated less files.
+
 
 ### AssetManager.filterMergedJavaScripts
 
@@ -387,7 +400,7 @@ Usages:
 
 ### AssetManager.filterMergedStylesheets
 
-*Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [130](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L130)*
+*Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [140](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L140)*
 
 Triggered after all less stylesheets are compiled to CSS, minified and merged into one file, but before the generated CSS is written to disk. This event can be used to modify merged CSS.
 
