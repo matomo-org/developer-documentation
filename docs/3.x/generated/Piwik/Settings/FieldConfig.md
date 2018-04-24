@@ -103,6 +103,7 @@ This class defines the following properties:
 - [`$transform`](#$transform) &mdash; A closure that transforms the setting value.
 - [`$title`](#$title) &mdash; This setting's display name, for example, `'Refresh Interval'`.
 - [`$condition`](#$condition) &mdash; Here you can define conditions so that certain form fields will be only shown when a certain condition is true.
+- [`$validators`](#$validators) &mdash; Here you can add one or multiple instances of `Piwik\Validators\BaseValidator` to avoid having to write the same validators over and over again in [$validate](/api-reference/Piwik/Settings/FieldConfig#$validate).
 
 <a name="$uicontrol" id="$uicontrol"></a>
 <a name="uiControl" id="uiControl"></a>
@@ -291,3 +292,23 @@ are both values of fields.
 #### Signature
 
 - It is a `string` value.
+
+<a name="$validators" id="$validators"></a>
+<a name="validators" id="validators"></a>
+### `$validators`
+
+Here you can add one or multiple instances of `Piwik\Validators\BaseValidator` to avoid having to write the same validators over and over again in [$validate](/api-reference/Piwik/Settings/FieldConfig#$validate).
+
+Examples
+Want to require a value to be set?
+$fieldConfig->validators[] = new Piwik\Validators\NotEmpty();
+
+Want to require an email?
+$fieldConfig->validators[] = new Piwik\Validators\NotEmpty();
+$fieldConfig->validators[] = new Piwik\Validators\Email();
+
+The core comes with a set of various validators that can be used.
+
+#### Signature
+
+- It is a `Piwik\Validators\BaseValidator` value.
