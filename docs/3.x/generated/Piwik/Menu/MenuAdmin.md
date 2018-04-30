@@ -45,6 +45,10 @@ Adds a new entry to the menu.
        The order hint.
     - `$tooltip` (`bool`|`string`) &mdash;
        An optional tooltip to display or false to display the tooltip.
+    - `$icon` (`bool`|`string`) &mdash;
+       An icon classname, such as "icon-add". Only supported by admin menu
+    - `$onclick` (`bool`|`string`) &mdash;
+       Will execute the on click handler instead of executing the link. Only supported by admin menu.
 - It does not return anything.
 
 <a name="remove" id="remove"></a>
