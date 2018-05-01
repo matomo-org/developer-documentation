@@ -2616,7 +2616,7 @@ Callback Signature:
 
 ### Tracker.newConversionInformation
 
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/GoalManager.php) in line [711](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/GoalManager.php#L711)*
+*Defined in [Piwik/Tracker/GoalManager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/GoalManager.php) in line [712](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/GoalManager.php#L712)*
 
 Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
 
