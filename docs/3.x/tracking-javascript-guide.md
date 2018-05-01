@@ -102,7 +102,7 @@ However, on modern web applications, user interactions do not necessarily involv
 To track any user interaction or click with Piwik, you can manually call the JavaScript function `trackEvent()`. For example, if you wanted to track a click on a JavaScript menu, you could write:
 
 ```html
-<a href="#" onclick="javascript:_paq.push(['trackEvent', 'Menu', 'Freedom']);">Freedom page</a>
+<a href="#" onclick="_paq.push(['trackEvent', 'Menu', 'Freedom']);">Freedom page</a>
 ```
 
 You can learn more about [Tracking Events](https://piwik.org/docs/event-tracking/#tracking-events) in the user guide.
@@ -652,7 +652,7 @@ _paq.push(['trackPageView']);
 Alternatively, you can use JavaScript to manually trigger a click on an outlink (it will work the same for page views or file downloads). In this example, custom outlink is trigged when the email address is clicked:
 
 ```html
-<a href="mailto:namexyz@mydomain.co.uk" target="_blank" onClick="javascript:_paq.push(['trackLink', 'http://mydomain.co.uk/mailto/Agent namexyz', 'link']);">namexyz@mydomain.co.uk </a>
+<a href="mailto:namexyz@mydomain.co.uk" target="_blank" onClick="_paq.push(['trackLink', 'http://mydomain.co.uk/mailto/Agent namexyz', 'link']);">namexyz@mydomain.co.uk </a>
 ```
 
 ### Tracking file downloads
