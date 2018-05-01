@@ -1458,7 +1458,7 @@ Callback Signature:
 
 ### Piwik.getJavascriptCode
 
-*Defined in [Piwik/Tracker/TrackerCodeGenerator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php) in line [164](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php#L164)*
+*Defined in [Piwik/Tracker/TrackerCodeGenerator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php) in line [170](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php#L170)*
 
 Triggered when generating JavaScript tracking code server side. Plugins can use
 this event to customise the JavaScript tracking code that is displayed to the
