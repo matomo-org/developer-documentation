@@ -10,7 +10,7 @@ This is the Piwik API Reference. It lists all functions that can be called, docu
 ### Standard API parameters
 
 *   **idSite**
-
+ 
     *   the integer id of your website, eg. _idSite=1_
     *   you can also specify a list of idSites comma separated, eg. _idSite=1,4,5,6_
     *   if you want to get data for all websites, set _idSite=all_
