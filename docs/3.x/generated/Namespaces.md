@@ -83,6 +83,7 @@ This is a complete list of available namespaces:
 - [`Piwik\Scheduler`](Piwik/Scheduler)
 - [`Piwik\Scheduler\Schedule`](Piwik/Scheduler/Schedule)
 - [`Piwik\Settings`](Piwik/Settings)
+- [`Piwik\Settings\FieldConfig`](Piwik/Settings/FieldConfig)
 - [`Piwik\Settings\Plugin`](Piwik/Settings/Plugin)
 - [`Piwik\Translation`](Piwik/Translation)
 - [`Piwik\Updater`](Piwik/Updater)

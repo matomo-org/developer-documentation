@@ -53,6 +53,7 @@ Index
 - [`AverageEventValue`](Piwik/Plugins/Events/Columns/Metrics/AverageEventValue.md) &mdash; *Class in namespace* `Piwik\Plugins\Events\Columns\Metrics`- [`AverageOrderRevenue`](Piwik/Plugins/Goals/Columns/Metrics/AverageOrderRevenue.md) &mdash; *Class in namespace* `Piwik\Plugins\Goals\Columns\Metrics`- [`AveragePrice`](Piwik/Plugins/Goals/Columns/Metrics/AveragePrice.md) &mdash; *Class in namespace* `Piwik\Plugins\Goals\Columns\Metrics`- [`AverageQuantity`](Piwik/Plugins/Goals/Columns/Metrics/AverageQuantity.md) &mdash; *Class in namespace* `Piwik\Plugins\Goals\Columns\Metrics`- [`AverageOrderRevenue`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/AverageOrderRevenue.md) &mdash; *Class in namespace* `Piwik\Plugins\Goals\Columns\Metrics\GoalSpecific`- [`addLabelColumn()`](Piwik/RankingQuery.md#addlabelcolumn) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`addColumn()`](Piwik/RankingQuery.md#addcolumn) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
 - [`$availableValues`](Piwik/Settings/FieldConfig.md#$availablevalues) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
+- [`$availableValues`](Piwik/Settings/FieldConfig/MultiPair.md#$availablevalues) &mdash; *Property in class* [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md)
 - [`addSetting()`](Piwik/Settings/Settings.md#addsetting) &mdash; *Method in class* [`Settings`](Piwik/Settings/Settings.md)
 - [`addDirectory()`](Piwik/Translation/Translator.md#adddirectory) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`addColumn()`](Piwik/Updater/Migration/Db/Factory.md#addcolumn) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
@@ -141,6 +142,7 @@ Index
 - [`createCustomWidget()`](Piwik/Report/ReportWidgetFactory.md#createcustomwidget) &mdash; *Method in class* [`ReportWidgetFactory`](Piwik/Report/ReportWidgetFactory.md)
 - [`$customUiControlTemplateFile`](Piwik/Settings/FieldConfig.md#$customuicontroltemplatefile) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$condition`](Piwik/Settings/FieldConfig.md#$condition) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
+- [`$customUiControlTemplateFile`](Piwik/Settings/FieldConfig/MultiPair.md#$customuicontroltemplatefile) &mdash; *Property in class* [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md)
 - [`clearCache()`](Piwik/Site.md#clearcache) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`clearCacheForSite()`](Piwik/Site.md#clearcacheforsite) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`createTable()`](Piwik/Updater/Migration/Db/Factory.md#createtable) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
@@ -777,6 +779,10 @@ Index
 - [`Join`](Piwik/Columns/Join.md) &mdash; *Class in namespace* `Piwik\Columns`- [`$jsClass`](Piwik/View/UIControl.md#$jsclass) &mdash; *Property in class* [`UIControl`](Piwik/View/UIControl.md)
 - [`$jsNamespace`](Piwik/View/UIControl.md#$jsnamespace) &mdash; *Property in class* [`UIControl`](Piwik/View/UIControl.md)
 
+## K
+
+- [`$key`](Piwik/Settings/FieldConfig/MultiPair.md#$key) &mdash; *Property in class* [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md)
+
 ## L
 
 - [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; *Class in namespace* `Piwik\DataAccess`- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`$lockPrivilegeGranted`](Piwik/Db.md#$lockprivilegegranted) &mdash; *Property in class* [`Db`](Piwik/Db.md)
@@ -802,7 +808,7 @@ Index
 - [`$message`](Piwik/Notification.md#$message) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
 - [`Manager`](Piwik/Notification/Manager.md) &mdash; *Class in namespace* [`Piwik\Notification`](Piwik/Notification)- [`Manager`](Piwik/Plugin/Manager.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`Menu`](Piwik/Plugin/Menu.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`Metric`](Piwik/Plugin/Metric.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`$metrics`](Piwik/Plugin/Report.md#$metrics) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
 - [`monthly()`](Piwik/Plugin/Tasks.md#monthly) &mdash; *Method in class* [`Tasks`](Piwik/Plugin/Tasks.md)
-- [`Monthly`](Piwik/Scheduler/Schedule/Monthly.md) &mdash; *Class in namespace* `Piwik\Scheduler\Schedule`- [`Migration`](Piwik/Updater/Migration.md) &mdash; *Class in namespace* [`Piwik\Updater`](Piwik/Updater)- [`$metrics_documentation`](Piwik/ViewDataTable/Config.md#$metrics_documentation) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`Monthly`](Piwik/Scheduler/Schedule/Monthly.md) &mdash; *Class in namespace* `Piwik\Scheduler\Schedule`- [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md) &mdash; *Class in namespace* [`Piwik\Settings\FieldConfig`](Piwik/Settings/FieldConfig)- [`Migration`](Piwik/Updater/Migration.md) &mdash; *Class in namespace* [`Piwik\Updater`](Piwik/Updater)- [`$metrics_documentation`](Piwik/ViewDataTable/Config.md#$metrics_documentation) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 
 ## N
 
@@ -1091,6 +1097,8 @@ Index
 - [`Tasks`](Piwik/Plugin/Tasks.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`throwWhenSettingNonOverridableParameter()`](Piwik/Plugin/ViewDataTable.md#throwwhensettingnonoverridableparameter) &mdash; *Method in class* [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`TrackerUpdater`](Piwik/Plugins/CustomPiwikJs/TrackerUpdater.md) &mdash; *Class in namespace* `Piwik\Plugins\CustomPiwikJs`- [`TreemapConfig`](Piwik/Plugins/TreemapVisualization/TreemapConfig.md) &mdash; *Class in namespace* `Piwik\Plugins\TreemapVisualization`- [`Task`](Piwik/Scheduler/Task.md) &mdash; *Class in namespace* `Piwik\Scheduler`- [`$transform`](Piwik/Settings/FieldConfig.md#$transform) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$title`](Piwik/Settings/FieldConfig.md#$title) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
+- [`$title`](Piwik/Settings/FieldConfig/MultiPair.md#$title) &mdash; *Property in class* [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md)
+- [`toArray()`](Piwik/Settings/FieldConfig/MultiPair.md#toarray) &mdash; *Method in class* [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md)
 - [`TaskScheduler`](Piwik/TaskScheduler.md) &mdash; *Class in namespace* `Piwik`- [`Translator`](Piwik/Translation/Translator.md) &mdash; *Class in namespace* `Piwik\Translation`- [`translate()`](Piwik/Translation/Translator.md#translate) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`$twigCached`](Piwik/View.md#$twigcached) &mdash; *Property in class* [`View`](Piwik/View.md)
 - [`$translations`](Piwik/ViewDataTable/Config.md#$translations) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
@@ -1114,6 +1122,7 @@ Index
 - [`update()`](Piwik/Plugins/CustomPiwikJs/TrackerUpdater.md#update) &mdash; *Method in class* [`TrackerUpdater`](Piwik/Plugins/CustomPiwikJs/TrackerUpdater.md)
 - [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md) &mdash; *Class in namespace* `Piwik\Plugins\UsersManager`- [`$uiControl`](Piwik/Settings/FieldConfig.md#$uicontrol) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$uiControlAttributes`](Piwik/Settings/FieldConfig.md#$uicontrolattributes) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
+- [`$uiControl`](Piwik/Settings/FieldConfig/MultiPair.md#$uicontrol) &mdash; *Property in class* [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md)
 - [`Updater`](Piwik/Updater.md) &mdash; *Class in namespace* `Piwik`- [`Updates`](Piwik/Updates.md) &mdash; *Class in namespace* `Piwik`- [`Url`](Piwik/Url.md) &mdash; *Class in namespace* `Piwik`- [`UrlHelper`](Piwik/UrlHelper.md) &mdash; *Class in namespace* `Piwik`- [`UIControl`](Piwik/View/UIControl.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)
 ## V
 
@@ -1212,6 +1221,7 @@ Index
 - [`__construct()`](Piwik/Scheduler/Task.md#__construct) &mdash; *Method in class* [`Task`](Piwik/Scheduler/Task.md)
 - [`__construct()`](Piwik/Segment.md#__construct) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`__toString()`](Piwik/Segment.md#__tostring) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
+- [`__construct()`](Piwik/Settings/FieldConfig/MultiPair.md#__construct) &mdash; *Method in class* [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md)
 - [`__construct()`](Piwik/Settings/Plugin/SystemConfigSetting.md#__construct) &mdash; *Method in class* [`SystemConfigSetting`](Piwik/Settings/Plugin/SystemConfigSetting.md)
 - [`__construct()`](Piwik/Settings/Plugin/SystemSetting.md#__construct) &mdash; *Method in class* [`SystemSetting`](Piwik/Settings/Plugin/SystemSetting.md)
 - [`__construct()`](Piwik/Settings/Setting.md#__construct) &mdash; *Method in class* [`Setting`](Piwik/Settings/Setting.md)

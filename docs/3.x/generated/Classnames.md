@@ -176,6 +176,7 @@
 ## SettingsPiwik
 ## SettingsServer
 ## Settings\FieldConfig
+## Settings\FieldConfig\MultiPair
 ## Settings\Plugin\SystemConfigSetting
 ## Settings\Plugin\SystemSetting
 ## Settings\Setting
