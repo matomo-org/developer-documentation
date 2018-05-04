@@ -63,6 +63,7 @@ This class defines the following properties:
 - [`$show_pagination_control`](#$show_pagination_control) &mdash; Controls whether the 'prev'/'next' links are shown in the DataTable footer. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$show_offset_information`](#$show_offset_information) &mdash; Controls whether offset information (ie, '5-10 of 20') is shown under the datatable. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$hide_annotations_view`](#$hide_annotations_view) &mdash; Controls whether annotations are shown or not. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
+- [`$disable_all_rows_filter_limit`](#$disable_all_rows_filter_limit) &mdash; Controls whether the 'all' row limit option is shown for the limit selector. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$no_data_message`](#$no_data_message) &mdash; Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$report_id`](#$report_id) Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$controllerName`](#$controllername) Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
@@ -756,6 +757,16 @@ Controls whether annotations are shown or not.
 
 - Its type is not specified.
 
+
+<a name="$disable_all_rows_filter_limit" id="$disable_all_rows_filter_limit"></a>
+<a name="disable_all_rows_filter_limit" id="disable_all_rows_filter_limit"></a>
+### `$disable_all_rows_filter_limit`
+
+Controls whether the 'all' row limit option is shown for the limit selector.
+
+#### Signature
+
+- It is a `bool` value.
 
 <a name="$no_data_message" id="$no_data_message"></a>
 <a name="no_data_message" id="no_data_message"></a>
