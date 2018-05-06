@@ -748,6 +748,90 @@ If you want to ignore download or outlink tracking on a specific link, you can a
 <a href='http://builds.piwik.org/latest.zip' class='piwik_ignore'>File I don't want to track as a download</a>
 ```
 
+## Asking for consent
+
+In the context of the [GDPR privacy regulations](https://matomo.org/docs/gdpr/), when you are processing personal data, in some cases you will need to ask for your users' consent. To identify whether you need to ask for consent, you need to determine whether your lawful basis for processing personal data is "Consent" or "Legitimate interest", or whether you can avoid collecting personal data altogether. We recommend to learn more about the lawful basis under the GDPR for Matomo.
+           
+Follow the steps below to ask your user for their consents before their data is processed within Matomo.
+
+### Step 1: require consent
+
+To require consent, insert the following line at top of your existing Matomo Tracking code on all your pages:
+
+```js
+// require user consent before processing data
+_paq.push(['requireConsent']);
+_paq.push(['trackPageview']);
+[...]
+```
+
+Once this function `requireConsent` is executed then no tracking request will be sent to Matomo. Note that some [tracking cookies](https://matomo.org/faq/general/faq_146/) will be set during this page view but will be deleted as soon as the user navigates to a different page or closes the browser.
+
+### Step 2: asking for consent through your privacy notice
+
+Now you can ask the user for consent for example by displaying a clear privacy notice on your pages. Learn more about privacy notices and asking for user consent. Note that Matomo does not yet offer the feature to display a privacy notice, but may implement such a feature in the future to easily let you display the notice and gather user consent.
+
+### Step 3: user gives consent
+
+Once a user gives consent, you can either A) let Matomo remember the consent, or B) use your own consent tool to remember the consent. We present the two solutions below:
+
+**A) if you want to let Matomo remember the consent**
+
+Once a user gives their consent, you can let Matomo remember that the user has given consent by simply calling the following method once the user has given her or his consent:
+
+```js
+_paq.push(['rememberConsentGiven']);
+```
+
+Matomo will then remember on subsequent requests that the user has given her or his consent by setting a cookie named "consent". As long as this cookie exists, Matomo will know that consent has been given and will automatically process the data. This means that you only need to call `_paq.push(['rememberConsentGiven'])` once, and it is not needed to call `_paq.push(['setConsentGiven'])` on any page view.
+
+Notes:
+
+* By default, the cookie and consent will be remembered forever. It is possible to define an optional expiry period for your user consent by calling: `_paq.push(['rememberConsentGiven', optionallyExpireConsentInHours])`.
+* When you're tracking multiple sub-domains into the same website in Matomo, you want to ensure that when you ask for Consent, the user gives consent for all the sub-domains on which you are collecting data. If the user only gives consent for a particular domain or sub-domain(s), you may need to restrict or widen the scope of the consent cookie domain and path by using 'setCookieDomain' and ‘setCookiePath' (learn more in the JavaScript tracking guide). 
+* It is required that you do not disable cookies.
+
+**B) if you use your own consent tool to remember the consent**
+            
+In some cases, you record the information that the user has given consent to be tracked directly in your own system or CMS (for example when you use your own a cookie to remember user consent). Once you have the consent by the user to process their data, you need to call the `setConsentGiven` method:
+  
+```js
+// require user consent before processing data
+_paq.push(['requireConsent']);
+_paq.push(['trackPageview']);
+[...]
+
+// user has given consent to process their data
+_paq.push(['setConsentGiven']);
+```
+       
+This lets the JavaScript tracker know that the user has given consent and ensures the tracking is working as expected. This function needs to be called anytime after `_paq.push(['requireConsent'])`.
+     
+Notes:
+* when you call `_paq.push(['setConsentGiven'])`, Matomo will not remember on subsequent requests that this user has given consent: it is important that you call setConsentGiven on every page.
+* when the user has given consent, you could also avoid calling `_paq.push(['requireConsent'])` in the first place. 
+
+### Step 4: user removes consent
+
+In order to remove his consent the user needs to perform a specific action, for example: clicking on a button "I do not want to be tracked anymore".
+
+**A) if you want to let Matomo remember the consent**
+      
+When the user has expressed she or he no longer gives consent, you need to call the following method once:
+
+```js
+_paq.push(['forgetConsentGiven']);
+```
+
+This makes sure the cookie that remembered the given consent is deleted.
+
+**B) if you use your own consent tool to remember the consent**
+When the user has expressed she or he no longer gives consent, you shall not call the following method anymore:
+
+```js
+// do not call this once user has removed their consent
+_paq.push(['setConsentGiven']);
+```
 
 ## Multiple Piwik trackers
 
