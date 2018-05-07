@@ -808,6 +808,7 @@ _paq.push(['setConsentGiven']);
 This lets the JavaScript tracker know that the user has given consent and ensures the tracking is working as expected. This function needs to be called anytime after `_paq.push(['requireConsent'])`.
      
 Notes:
+
 * when you call `_paq.push(['setConsentGiven'])`, Matomo will not remember on subsequent requests that this user has given consent: it is important that you call setConsentGiven on every page.
 * when the user has given consent, you could also avoid calling `_paq.push(['requireConsent'])` in the first place. 
 
