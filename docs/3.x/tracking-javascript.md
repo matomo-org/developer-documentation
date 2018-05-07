@@ -99,11 +99,11 @@ Piwik provides [ecommerce analytics](https://piwik.org/docs/ecommerce-analytics/
 Matomo provides a mechanism to manage your user's consent. You can require that users consent before you track any of their actions, disable tracking for users that do not consent, and re-enable tracking for those that consent later.
 
 *   `requireConsent()` - By default the Matomo tracker assumes consent to tracking. To change this behavior so nothing is tracked until a user consents, you must call `requireConsent`.
-*   `setConsentGiven()` - Marks that the current user has consented. The consent is one-time only, so in a subsequent browser session, the user will have to consent again. To remember consent, see the below method.
-*   `rememberConsentGiven(hoursToExpire)` - Marks that the current user has consented, and remembers this consent through a browser cookie. The next time the user visits the site, Matomo will remember that they consented, and track them. If you call this method, you do not need to all `setConsentGiven`.
+*   `setConsentGiven()` - Marks that the current user has consented. The consent is one-time only, so in a subsequent browser session, the user will have to consent again. To remember consent, see the method below: `rememberConsentGiven`.
+*   `rememberConsentGiven( hoursToExpire )` - Marks that the current user has consented, and remembers this consent through a browser cookie. The next time the user visits the site, Matomo will remember that they consented, and track them. If you call this method, you do not need to call `setConsentGiven`.
 *   `forgetConsentGiven()` - Removes a user's consent, both if the consent was one-time only and if the consent was remembered. After calling this method, the user will have to consent again in order to be tracked.
 
-You can use these methods to build your own consent form/pages.
+You can use these methods to build your own consent form/pages. [Learn more about asking for consent.](https://developer.matomo.org/guides/tracking-javascript-guide#asking-for-consent)
 
 ### Configuration of Tracking Cookies
 
