@@ -750,7 +750,7 @@ If you want to ignore download or outlink tracking on a specific link, you can a
 
 ## Asking for consent
 
-In the context of the [GDPR privacy regulations](https://matomo.org/docs/gdpr/), when you are processing personal data, in some cases you will need to ask for your users' consent. To identify whether you need to ask for consent, you need to determine whether your lawful basis for processing personal data is "Consent" or "Legitimate interest", or whether you can avoid collecting personal data altogether. We recommend to learn more about the lawful basis under the GDPR for Matomo.
+In the context of the [GDPR privacy regulations](https://matomo.org/docs/gdpr/), when you are processing personal data, in some cases you will need to ask for your users' consent. To identify whether you need to ask for consent, you need to determine whether your lawful basis for processing personal data is "Consent" or "Legitimate interest", or whether you can avoid collecting personal data altogether. We recommend to learn more about the [lawful basis under the GDPR for Matomo](https://matomo.org/blog/2018/04/lawful-basis-for-processing-personal-data-under-gdpr-with-matomo/).
            
 Follow the steps below to ask your user for their consents before their data is processed within Matomo.
 
@@ -769,7 +769,7 @@ Once this function `requireConsent` is executed then no tracking request will be
 
 ### Step 2: asking for consent through your privacy notice
 
-Now you can ask the user for consent for example by displaying a clear privacy notice on your pages. Learn more about privacy notices and asking for user consent. Note that Matomo does not yet offer the feature to display a privacy notice, but may implement such a feature in the future to easily let you display the notice and gather user consent.
+Now you can ask the user for consent for example by displaying a clear privacy notice on your pages. Learn more about [privacy notices and asking for user consent](https://matomo.org/blog/2018/04/how-should-i-write-my-privacy-notice-for-matomo-analytics-under-gdpr/). Note that Matomo does not yet offer the feature to display a privacy notice, but may implement such a feature in the future to easily let you display the notice and gather user consent.
 
 ### Step 3: user gives consent
 
@@ -788,8 +788,8 @@ Matomo will then remember on subsequent requests that the user has given her or 
 Notes:
 
 * By default, the cookie and consent will be remembered forever. It is possible to define an optional expiry period for your user consent by calling: `_paq.push(['rememberConsentGiven', optionallyExpireConsentInHours])`.
-* When you're tracking multiple sub-domains into the same website in Matomo, you want to ensure that when you ask for Consent, the user gives consent for all the sub-domains on which you are collecting data. If the user only gives consent for a particular domain or sub-domain(s), you may need to restrict or widen the scope of the consent cookie domain and path by using 'setCookieDomain' and ‘setCookiePath' (learn more in the JavaScript tracking guide). 
-* It is required that you do not disable cookies.
+* When you're tracking multiple sub-domains into the same website in Matomo, you want to ensure that when you ask for Consent, the user gives consent for all the sub-domains on which you are collecting data. If the user only gives consent for a particular domain or sub-domain(s), you may need to restrict or widen the scope of the consent cookie domain and path by using 'setCookieDomain' and ‘setCookiePath'. 
+* For the consent to work, it is required that user does not disable first party cookies.
 
 **B) if you use your own consent tool to remember the consent**
             
