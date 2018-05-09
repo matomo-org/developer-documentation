@@ -32,7 +32,7 @@ This is the Piwik API Reference. It lists all functions that can be called, docu
     *   range of dates
 
         *   _lastX_ for the last X periods including today (eg &date=last10&period=day would return an entry for each of the last 10 days including today). This is relative to the website timezone.
-        *   _previousX_ returns the last X periods before today (eg. &date=last52&period=week will return an entry for each of the 52 weeks before this week). This is relative to the website timezone.
+        *   _previousX_ returns the last X periods before today (eg. &date=previous52&period=week will return an entry for each of the 52 weeks before this week). This is relative to the website timezone.
         *   _YYYY-MM-DD,YYYY-MM-DD_ for every period (day, week, month or year) in the date range
 
         *   Note: if you set 'period=range' to request data for a custom date range, the API will return the sum of data for the specified date range.
