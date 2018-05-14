@@ -844,7 +844,7 @@ cookies so the opt-out form wouldn't work for them. You may also want to display
 want to allow users to opt-out of your sites individually instead of altogether.
 
 In such a case, you may want to consider creating a custom opt-out form. The specifics of creating an HTML/JS form are out of scope for
-this document, but there are somethings every custom opt-out form will have to do: **check if the user is currently opted out**,
+this document, but there are some things every custom opt-out form will have to do: **check if the user is currently opted out**,
 **opt a user out** and **opt a user in**. Here is how to do those things:
 
 **check if the user is currently opted out**
@@ -877,7 +877,7 @@ Use the `forgetUserOptOut()` method:
 _paq.push(['forgetUserOptOut']);
 ```
 
-Below is an example opt-out form that replicates the built in Matomo opt-out form:
+Below is a jQuery-based example opt-out form that replicates the built in Matomo opt-out form:
 
 ```html
 <div id="optout-form">
