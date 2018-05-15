@@ -700,6 +700,7 @@ Index
 
 ## I
 
+- [`isRootRequestApiRequest()`](Piwik/API/Request.md#isrootrequestapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`isApiRequest()`](Piwik/API/Request.md#isapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`insertNumericRecords()`](Piwik/ArchiveProcessor.md#insertnumericrecords) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertNumericRecord()`](Piwik/ArchiveProcessor.md#insertnumericrecord) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)

@@ -55,6 +55,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`process()`](#process) &mdash; Dispatches the API request to the appropriate API method and returns the result after post-processing.
 - [`getClassNameAPI()`](#getclassnameapi) &mdash; Returns the name of a plugin's API class by plugin name.
+- [`isRootRequestApiRequest()`](#isrootrequestapirequest) &mdash; Detect if the root request (the actual request) is an API request or not.
 - [`isApiRequest()`](#isapirequest) &mdash; Detect if request is an API request.
 - [`processRequest()`](#processrequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 - [`getRequestParametersGET()`](#getrequestparametersget) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
@@ -138,6 +139,21 @@ Returns the name of a plugin's API class by plugin name.
 - *Returns:*  `string` &mdash;
     The fully qualified API class name, eg, `'\Piwik\Plugins\Referrers\API'`.
 
+<a name="isrootrequestapirequest" id="isrootrequestapirequest"></a>
+<a name="isRootRequestApiRequest" id="isRootRequestApiRequest"></a>
+### `isRootRequestApiRequest()`
+
+Detect if the root request (the actual request) is an API request or not.
+
+To detect whether an API is currently
+request within any request, have a look at [isApiRequest()](/api-reference/Piwik/API/Request#isapirequest).
+
+#### Signature
+
+- It returns a `bool` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
 <a name="isapirequest" id="isapirequest"></a>
 <a name="isApiRequest" id="isApiRequest"></a>
 ### `isApiRequest()`
@@ -145,7 +161,10 @@ Returns the name of a plugin's API class by plugin name.
 Detect if request is an API request.
 
 Meaning the module is 'API' and an API method having a valid format was
-specified.
+specified. Note that this method will return true even if the actual request is for example a regular UI
+reporting page request but within this request we are currently processing an API request (eg a
+controller calls Request::processRequest('API.getMatomoVersion')). To find out if the root request is an API
+request or not, call [isRootRequestApiRequest()](/api-reference/Piwik/API/Request#isrootrequestapirequest)
 
 #### Signature
 
