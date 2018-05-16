@@ -834,6 +834,86 @@ When the user has expressed she or he no longer gives consent, you shall not cal
 _paq.push(['setConsentGiven']);
 ```
 
+## Optional: creating a custom opt-out form
+
+If you'd like to provide your users with the ability to opt-out entirely from tracking, you can use an opt-out form. Matomo ships with an
+opt-out form implementation that uses third-party cookies (which you can configure within Matomo on the _Matomo > Administration > Privacy_ page).
+
+This form is simple to embed since it only requires that you add an iframe to your website, but it is not always ideal. Some users block third-party
+cookies so the opt-out form wouldn't work for them. You may also want to display custom text or graphics in the opt-out form, or you may
+want to allow users to opt-out of your sites individually instead of altogether.
+
+In such a case, you may want to consider creating a custom opt-out form. The specifics of creating an HTML/JS form are out of scope for
+this document, but there are some things every custom opt-out form will have to do: **check if the user is currently opted out**,
+**opt a user out** and **opt a user in**. Here is how to do those things:
+
+**check if the user is currently opted out**
+
+Use the `isUserOptedOut()` method like so:
+
+```js
+_paq.push([function () {
+  if (this.isUserOptedOut()) {
+    // ... change form to say user is currently opted out ...
+  } else {
+    // ... change form to say user is currently opted in ...
+  }
+}])
+```
+
+**opt a user out**
+
+Use the `optUserOut()` method:
+
+```js
+_paq.push(['optUserOut']);
+```
+
+**opt a user in**
+
+Use the `forgetUserOptOut()` method:
+
+```js
+_paq.push(['forgetUserOptOut']);
+```
+
+Below is a jQuery-based example opt-out form that replicates the built in Matomo opt-out form:
+
+```html
+<div id="optout-form">
+  <p>You may choose not to have a unique web analytics cookie identification number assigned to your computer to avoid the aggregation and analysis of data collected on this website.</p>
+  <p>To make that choice, please click below to receive an opt-out cookie.</p>
+
+  <p>
+    <input type="checkbox" id="optout" />
+    <label for="optout"><strong></strong></label>
+  </p>
+</div>
+<script>
+jQuery(function ($) {
+  function setOptOutText() {
+    _paq.push([function () {
+      $('#optout').attr('checked', this.isUserOptedOut() ? undefined : 'checked');
+      $('label[for=optout] strong').text(this.isUserOptedOut()
+        ? 'You are currently opted out. Click here to opt in.'
+        : 'You are currently opted in. Click here to opt out.');
+    }]);
+  }
+
+  $('#optout').click(function (e) {
+    if ($(this).is(':checked')) {
+      _paq.push(['forgetUserOptOut']);
+    } else {
+      _paq.push(['optUserOut']);
+    }
+    setOptOutText();
+  });
+
+  setOptOutText();
+});
+</script>
+```
+
 ## Multiple Piwik trackers
 
 By default, the Piwik JavaScript Tracking code collects your analytics data into one Piwik server. The Piwik service URL is specified in your JavaScript Tracking code (for example: `var u="//piwik.example.org";`). In some cases, you may want to track your analytics data into more than just one Piwik server or into multiple websites on the same Piwik server.
