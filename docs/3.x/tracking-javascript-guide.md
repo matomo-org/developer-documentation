@@ -852,7 +852,7 @@ this document, but there are some things every custom opt-out form will have to 
 Use the `isUserOptedOut()` method like so:
 
 ```js
-_paq.push([function (tracker) {
+_paq.push([function () {
   if (this.isUserOptedOut()) {
     // ... change form to say user is currently opted out ...
   } else {
@@ -892,7 +892,7 @@ Below is a jQuery-based example opt-out form that replicates the built in Matomo
 <script>
 jQuery(function ($) {
   function setOptOutText() {
-    _paq.push([function (tracker) {
+    _paq.push([function () {
       $('#optout').attr('checked', this.isUserOptedOut() ? undefined : 'checked');
       $('label[for=optout] strong').text(this.isUserOptedOut()
         ? 'You are currently opted out. Click here to opt in.'
