@@ -24,15 +24,18 @@ window.addEventListener('hashchange', function() {
 ```
 ### Resetting previously set custom variables
 
-If you have set any [Custom Variables](https://matomo.org/docs/custom-variables/) in scope “page”, you need to make sure to delete these custom variables again as they would be attributed to the new page view as well otherwise. The following code requires Piwik 3.0.2:
+If you have set any [Custom Variables](https://matomo.org/docs/custom-variables/) in scope “page”, you need to make sure to delete these custom variables again as they would be attributed to the new page view as well otherwise:
 
 ```javascript
 _paq.push(['deleteCustomVariables', 'page']);
 _paq.push(['trackPageView']);
 ```
+
+Note: we recommend you use [Custom Dimensions](https://matomo.org/docs/custom-dimensions/) instead of Custom Variables as they will be deprecated in the future.
+
 ### Updating the generation time
 
-Next you need to update the generation time before tracking a new page view. Otherwise, the initial page generation time will be attributed to all of your subsequent pageviews. If you don’t load new content from the server when the page changes, simply set the value to zero:
+Next you need to update the [generation time](https://matomo.org/docs/page-speed/) before tracking a new page view. Otherwise, the initial page generation time will be attributed to all of your subsequent pageviews. If you don’t load new content from the server when the page changes, simply set the value to zero:
 
 ```javascript
 _paq.push(['setGenerationTimeMs', 0]);
@@ -59,7 +62,7 @@ When you show a new page, your single-page DOM might change as well. For example
 
 ### Video and Audio tracking
 
-If you use the [Media Analytics](https://plugins.matomo.org/MediaAnalytics) feature to track your videos and audios, whenever a new page is displayed you need to call the following method:
+If you use the [Media Analytics](https://matomo.org/docs/media-analytics/) feature to track your videos and audios, whenever a new page is displayed you need to call the following method:
 
 ```javascript
 _paq.push(['MediaAnalytics::scanForMedia', documentOrElement]);
@@ -68,9 +71,7 @@ When you don’t pass any parameter, it will scan the entire DOM for new media. 
 
 ### Form tracking
 
-If you use the [Form Analytics](https://www.form-analytics.net) feature to measure the performance of your online forms, whenever a new page is displayed
-you need to call the following method:
-
+If you use the [Form Analytics](https://matomo.org/docs/form-analytics/) feature to measure the performance of your online forms, whenever a new page is displayed you need to call the following method:
 
 ```javascript
 _paq.push(['FormAnalytics::scanForForms', documentOrElement]);
@@ -130,4 +131,4 @@ window.addEventListener('hashchange', function() {
 ```
 ## Questions?
 
-If you have any questions or need help, please [get in touch with us](https://www.innocraft.com/#contact) or [ask on the forum](https://forum.matomo.org).
+If you have any questions or need help, please [get in touch with our support team](https://matomo.org/support/) or for free support: [ask on the forum](https://forum.matomo.org).
