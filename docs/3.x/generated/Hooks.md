@@ -63,6 +63,7 @@ Usages:
 
 - [API.$pluginName.$methodName](#apipluginnamemethodname)
 - [API.$pluginName.$methodName.end](#apipluginnamemethodnameend)
+- [API.addGlossaryItems](#apiaddglossaryitems)
 - [API.DocumentationGenerator.$token](#apidocumentationgeneratortoken)
 - [API.getReportMetadata.end](#apigetreportmetadataend)
 - [API.Request.authenticate](#apirequestauthenticate)
@@ -123,6 +124,30 @@ Callback Signature:
 - mixed `$returnedValue` The API method's return value. Can be an object, such as a [DataTable](/api-reference/Piwik/DataTable) instance. could be a [DataTable](/api-reference/Piwik/DataTable).
 
 - array `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
+
+
+### API.addGlossaryItems
+
+*Defined in [Piwik/Plugins/API/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/API/Controller.php) in line [180](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/API/Controller.php#L180)*
+
+Triggered to add or modify glossary items. You can either modify one of the existing core categories
+'reports' and 'metrics' or add your own category.
+
+**Example**
+
+    public function addGlossaryItems(&$glossaryItems)
+    {
+         $glossaryItems['users'] = array('title' => 'Users', 'entries' => array(
+             array('name' => 'User1', 'documentation' => 'This user has ...'),
+             array('name' => 'User2', 'documentation' => 'This user has ...'),
+         ));
+         $glossaryItems['reports']['entries'][] = array('name' => 'My Report', 'documentation' => 'This report has ...');
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$glossaryItems)</code></pre>
+
+- array `&$glossaryItems` An array containing all glossary items.
 
 
 ### API.DocumentationGenerator.$token
