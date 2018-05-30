@@ -877,7 +877,7 @@ Use the `forgetUserOptOut()` method:
 _paq.push(['forgetUserOptOut']);
 ```
 
-Below is a jQuery-based example opt-out form that replicates the built in Matomo opt-out form:
+Below is an example opt-out form that replicates the built in Matomo opt-out form:
 
 ```html
 <div id="optout-form">
@@ -911,7 +911,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
   setOptOutText(optOut);
 });
-</script>```
+</script>
+```
 
 ## Multiple Piwik trackers
 
