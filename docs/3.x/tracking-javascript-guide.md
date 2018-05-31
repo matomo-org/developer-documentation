@@ -877,7 +877,7 @@ Use the `forgetUserOptOut()` method:
 _paq.push(['forgetUserOptOut']);
 ```
 
-Below is a jQuery-based example opt-out form that replicates the built in Matomo opt-out form:
+Below is an example opt-out form that replicates the built in Matomo opt-out form:
 
 ```html
 <div id="optout-form">
@@ -890,26 +890,26 @@ Below is a jQuery-based example opt-out form that replicates the built in Matomo
   </p>
 </div>
 <script>
-jQuery(function ($) {
-  function setOptOutText() {
-    _paq.push([function () {
-      $('#optout').attr('checked', this.isUserOptedOut() ? undefined : 'checked');
-      $('label[for=optout] strong').text(this.isUserOptedOut()
+document.addEventListener("DOMContentLoaded", function(event) {
+  function setOptOutText(element) {
+    _paq.push([function() {
+      element.checked = !this.isUserOptedOut();
+      document.querySelector('label[for=optout] strong').innerText = this.isUserOptedOut()
         ? 'You are currently opted out. Click here to opt in.'
-        : 'You are currently opted in. Click here to opt out.');
+        : 'You are currently opted in. Click here to opt out.';
     }]);
   }
 
-  $('#optout').click(function (e) {
-    if ($(this).is(':checked')) {
+  var optOut = document.getElementById("optout");
+  optOut.addEventListener("click", function() {
+    if (this.checked) {
       _paq.push(['forgetUserOptOut']);
     } else {
       _paq.push(['optUserOut']);
     }
-    setOptOutText();
+    setOptOutText(optOut);
   });
-
-  setOptOutText();
+  setOptOutText(optOut);
 });
 </script>
 ```
