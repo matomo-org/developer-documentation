@@ -5,7 +5,7 @@ category: Develop
 
 A variable in the context of a tag manager is a snippet of code which lets you retrieve data to use it by tags and triggers.
 
-Matomo lets you easily create a new variable. When you create a new variable, please consider contributing this new variable to the [official Tag Manager plugin]() by creating a pull request.
+Matomo lets you easily create a new variable. When you create a new variable, please consider contributing this new variable to the [official Tag Manager plugin](https://github.com/matomo-org/tag-manager) by creating a pull request.
 
 <div markdown="1" class="alert alert-info">
 Tags, triggers, and variables are all implemented in the same way except for a minor difference in the JavaScript part. Once you know how to develop a variable, you will also be able to develop a tag and a trigger.
