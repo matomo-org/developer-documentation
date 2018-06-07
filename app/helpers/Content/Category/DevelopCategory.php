@@ -28,6 +28,8 @@ class DevelopCategory extends Category
         return [
             new Guide('develop-introduction'),
             new UnlinkedCategory('develop-getting-started'),
+            new UnlinkedCategory('develop-plugin-analytics'),
+            new UnlinkedCategory('develop-plugin-tagmanager'),
             new UnlinkedCategory('develop-plugin-basics'),
             new UnlinkedCategory('develop-security'),
             new UnlinkedCategory('develop-utils'),

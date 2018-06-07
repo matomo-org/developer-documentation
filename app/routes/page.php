@@ -226,6 +226,18 @@ $app->get('/api-reference/PHP-Piwik-Tracker', function () use ($app) {
     renderGuide($app, new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker'), new ApiReferenceCategory());
 });
 
+$app->get('/api-reference/:reference1/:reference2', function ($reference1, $reference2) use ($app) {
+
+    try {
+        $guide = new ApiReferenceGuide($reference1 . '/' . $reference2);
+    } catch (DocumentNotExistException $e) {
+        send404NotFound($app);
+        return;
+    }
+
+    renderGuide($app, $guide, new ApiReferenceCategory());
+});
+
 $app->get('/api-reference/:reference', function ($reference) use ($app) {
 
     try {

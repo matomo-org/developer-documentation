@@ -40,6 +40,9 @@ class ApiReferenceCategory extends Category
                 new ApiReferenceGuide('tracking-javascript'),
                 new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker', 'PHP Tracking Client'),
             ]),
+            new EmptySubCategory('Tag Manager', [
+                new ApiReferenceGuide('tagmanager/javascript-api-reference'),
+            ]),
             new EmptySubCategory('Reporting HTTP API', [
                 new ApiReferenceGuide('reporting-api'),
                 new ApiReferenceGuide('reporting-api-metadata'),
