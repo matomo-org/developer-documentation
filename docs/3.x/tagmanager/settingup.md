@@ -3,7 +3,7 @@ category: Develop
 ---
 # Setting Up
 
-Matomo lets you easily create new [tags](/guides/tagmanager/custom-tag), [triggers](/guides/tagmanager/custom-trigger) and [variables](/guides/tagmanager/custom-variables).
+Matomo lets you easily create new [tags](/guides/tagmanager/custom-tag), [triggers](/guides/tagmanager/custom-trigger) and [variables](/guides/tagmanager/custom-variable).
 
 To start developing such custom tags, triggers, and variables, make sure to set up your development environment and to create a new plugin as explained in the [general setting up](/guides/getting-started-part-1) guide.
 

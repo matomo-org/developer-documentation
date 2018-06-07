@@ -5,7 +5,7 @@ category: Develop
 
 A trigger in the context of a tag manager lets you define on which event a certain tag should be fired or blocked. For example when a specific element was clicked, or when a visitor reached a certain scroll position.
 
-Matomo lets you easily create a new trigger. When you create a new trigger, please consider contributing this new trigger to the [official Tag Manager plugin]() by creating a pull request.
+Matomo lets you easily create a new trigger. When you create a new trigger, please consider contributing this new trigger to the [official Tag Manager plugin](https://github.com/matomo-org/tag-manager) by creating a pull request.
 
 <div markdown="1" class="alert alert-info">
 Tags, triggers, and variables are all implemented in the same way except for a minor difference in the JavaScript part. Once you know how to develop a trigger, you will also be able to develop a tag and a variable.
