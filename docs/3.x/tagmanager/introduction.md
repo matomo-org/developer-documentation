@@ -4,6 +4,7 @@ subGuides:
   - tagmanager/embedding
   - tagmanager/datalayer
   - tagmanager/debugging
+  - tagmanager/integration-plugin
 ---
 # Tag Manager
 
