@@ -35,7 +35,7 @@ _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
 <script type="text/javascript" src="${MATOMOURL}/js/container_${CONTAINERID}.js" async="true" defer="true"></script>
 ```
 
-If possible, we recommend to offer this simple way as users won't need to configure an API token which increases the security. Also, it is an easy way for an integration developer to implement it.
+If possible, we recommend offering this simple way as users won't need to configure an API token which increases the security. Also, it is an easy way for an integration developer to implement it.
 
 ### Supporting environments
 
@@ -43,7 +43,7 @@ However, this method will only work for the "live" environment since all other e
 
 `/js/container_aaacont1_dev_898b2d94bd74e27ee3d2f672.js`
 
-Where `dev` is the environment and the part next to it is a random generated key so it cannot be guessed by anyone. The random key is different for each container and for each environment. This key prevents for example leaking upcoming changes and announcementson a website. If needed, you could ask a user to instead enter the full path to the container file.
+Where `dev` is the environment and the part next to it is a random generated key so it cannot be guessed by anyone. The random key is different for each container and for each environment. This key prevents for example leaking upcoming changes and announcements on a website. If needed, you could ask a user to instead enter the full path to the container file.
 
 ## A more advanced way through the API
 
@@ -87,7 +87,7 @@ print $scriptEmbedTag; // be eg <script type="">...</script>
 ```
 
 <div markdown="1" class="alert alert-info">
-It is highly recommend to cache the response of the embed code for a couple of hours or a day for improved page load performance.
+It is highly recommend caching the response of the embed code for a couple of hours or a day for improved page load performance.
 </div>
 
 ## Supporting the Data Layer
@@ -96,7 +96,7 @@ The [data layer](https://developer.matomo.org/guides/tagmanager/datalayer) part 
 
 Simply said, the data layer feeds additional values into the container letting users reference these values in tags, triggers or variables.
 
-For example if you are developing an integration for an ecommerce shop, you may want to push values like these to the dataLayer: username, items in the cart, number of items in the cart, currently viewed product name, currently viewed product price, etc:
+For example if you are developing an integration for an ecommerce shop, you may want to push values like these to the data layer: username, items in the cart, number of items in the cart, currently viewed product name, currently viewed product price, etc:
 
 ```js
 // for example when viewing a product
@@ -125,7 +125,7 @@ _mtm.push({'myforum.username': 'Myusername', 'myforum.forumCategory': 'Developer
 
 ### Prefixing data layer variables
 
-We recommend to prefix data layer variable names with the name of your integration so it does not cause any trouble with any other integrations.
+We recommend prefixing data layer variable names with the name of your integration so it does not cause any trouble with any other integrations.
 
 ### Why supporting the data layer?
 
