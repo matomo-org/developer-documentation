@@ -87,7 +87,7 @@ print $scriptEmbedTag; // be eg <script type="">...</script>
 ```
 
 <div markdown="1" class="alert alert-info">
-It is highly recommend caching the response of the embed code for a couple of hours or a day for improved page load performance.
+It is highly recommended to cache the response of the embed code for a couple of hours or a day for improved page load performance.
 </div>
 
 ## Supporting the Data Layer
@@ -131,9 +131,9 @@ We recommend prefixing data layer variable names with the name of your integrati
 
 The data layer allows users to access these values in an easy way within the Tag Manager and react to events that you trigger. The possibilities are endless!
 
-For example, if you push a `myintegration.username:"username"`, users could read this value as part of the container and track the username as a custom dimension or `userId`. The events you push allows users to react to it through a trigger. For example, users may want to track an event whenever a product is being viewed containing the price and the currency. Or they could show a popover offering a discount whenever a certain product is being added to the cart.
+For example, if you push a `myintegration.username:"username"`, users could read this value as part of the container and track the username as a [custom dimension](https://matomo.org/docs/custom-dimensions/) or [`userId`](https://matomo.org/docs/user-id/). The events you push allow users to react to it through a trigger. For example, users may want to track an event whenever a product is being viewed (the event containing the product name, price and the currency). Or they could show a popover offering a discount whenever a certain product is being added to the cart.
 
-If you support the data layer, we highly recommend that you document all available events and variables so users can accces these values and listen to these events.
+If you support the data layer, we highly recommend that you document all available events and variables so users can access these values and listen to these events.
 
 ## Embedding multiple containers
 
