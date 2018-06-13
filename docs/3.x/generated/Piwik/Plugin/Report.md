@@ -213,6 +213,7 @@ The class defines the following methods:
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
 - [`configureReportMetadata()`](#configurereportmetadata) &mdash; If the report is enabled the report metadata for this report will be built and added to the list of available reports.
 - [`getDocumentation()`](#getdocumentation) &mdash; Get report documentation.
+- [`getSecondarySortColumnCallback()`](#getsecondarysortcolumncallback) &mdash; Allows to define a callback that will be used to determine the secondary column to sort by
 - [`getRelatedReports()`](#getrelatedreports) &mdash; Get the list of related reports if there are any.
 - [`getParameters()`](#getparameters)
 - [`getSubtableDimension()`](#getsubtabledimension) &mdash; Returns the Dimension instance of this report's subtable report.
@@ -499,6 +500,33 @@ Get report documentation.
 #### Signature
 
 - It returns a `string` value.
+
+<a name="getsecondarysortcolumncallback" id="getsecondarysortcolumncallback"></a>
+<a name="getSecondarySortColumnCallback" id="getSecondarySortColumnCallback"></a>
+### `getSecondarySortColumnCallback()`
+
+Allows to define a callback that will be used to determine the secondary column to sort by
+
+```
+public function getSecondarySortColumnCallback()
+{
+    return function ($primaryColumn) {
+        switch ($primaryColumn) {
+            case Metrics::NB_CLICKS:
+                return Metrics::NB_IMPRESSIONS;
+            case 'label':
+            default:
+                return Metrics::NB_CLICKS;
+        }
+    };
+}
+```
+
+#### Signature
+
+
+- *Returns:*  `null`|`callable` &mdash;
+    
 
 <a name="getrelatedreports" id="getrelatedreports"></a>
 <a name="getRelatedReports" id="getRelatedReports"></a>

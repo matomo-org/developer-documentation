@@ -518,6 +518,7 @@ Index
 - [`getMetricNamesToProcessReportTotals()`](Piwik/Plugin/Report.md#getmetricnamestoprocessreporttotals) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getMetricsDocumentation()`](Piwik/Plugin/Report.md#getmetricsdocumentation) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getDocumentation()`](Piwik/Plugin/Report.md#getdocumentation) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
+- [`getSecondarySortColumnCallback()`](Piwik/Plugin/Report.md#getsecondarysortcolumncallback) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getRelatedReports()`](Piwik/Plugin/Report.md#getrelatedreports) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getParameters()`](Piwik/Plugin/Report.md#getparameters) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getSubtableDimension()`](Piwik/Plugin/Report.md#getsubtabledimension) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
