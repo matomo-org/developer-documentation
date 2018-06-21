@@ -80,6 +80,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`reloadPluginInformation()`](#reloadplugininformation)
 - [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:
+- [`isPremiumFeature()`](#ispremiumfeature)
 - [`registerEvents()`](#registerevents) &mdash; Returns a list of events with associated event observers.
 - [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered.
 - [`install()`](#install) &mdash; Installs the plugin.
@@ -136,6 +137,15 @@ Returns plugin information, including:
 #### Signature
 
 - It returns a `array` value.
+
+<a name="ispremiumfeature" id="ispremiumfeature"></a>
+<a name="isPremiumFeature" id="isPremiumFeature"></a>
+### `isPremiumFeature()`
+
+#### Signature
+
+- It is a **finalized** method.
+- It does not return anything.
 
 <a name="registerevents" id="registerevents"></a>
 <a name="registerEvents" id="registerEvents"></a>

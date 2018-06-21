@@ -729,6 +729,7 @@ Index
 - [`isUserHasViewAccess()`](Piwik/Piwik.md#isuserhasviewaccess) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`isUserHasSomeViewAccess()`](Piwik/Piwik.md#isuserhassomeviewaccess) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`isValidEmailString()`](Piwik/Piwik.md#isvalidemailstring) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
+- [`isPremiumFeature()`](Piwik/Plugin.md#ispremiumfeature) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`install()`](Piwik/Plugin.md#install) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`isTheme()`](Piwik/Plugin.md#istheme) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`isEnabled()`](Piwik/Plugin/Archiver.md#isenabled) &mdash; *Method in class* [`Archiver`](Piwik/Plugin/Archiver.md)
