@@ -78,6 +78,23 @@ Piwik.HeatmapSessionRecording.disableAutoDetectNewPageView();
 The automatic detection of new page views is enabled by default, see above. If you disable the auto detection, you can enable 
 it again at a later point using this method.
 
+### `disableRecordMovements()`
+
+By default, mouse and touch movements will be recorded as they are needed for the "Move Heatmap" and to show mouse movements
+when replaying a recorded session. You can disable the recording of any movements by calling this method.
+
+Example:
+```js
+_paq.push(['HeatmapSessionRecording::disableRecordMovements']);
+// or
+Piwik.HeatmapSessionRecording.disableRecordMovements();
+```
+
+### `enableRecordMovements()`
+
+The recording of mouse and touch movements is enabled by default, see above. If you disable mouse movements, you can enable
+them again at a later point by using this method.
+
 ### `setNewPageView(fetchConfig)`
 
 If you have disabled the automatic detection of new page views, this method lets you define manually when a visitor
