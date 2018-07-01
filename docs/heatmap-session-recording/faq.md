@@ -131,6 +131,22 @@ window.piwikAsyncInit = function () {
 It is important to define these methods in your website before the Piwik tracker file is loaded. Otherwise, the 
 `piwikAsyncInit` method will never be called.
 
+## How do I disable the recording of mouse and touch movements?
+
+You can optionally disable the recording/tracking of any movements. As a result, the "Move Heatmap" won't show any movements and
+the movements will also not be visible within the replay of a recorded session. To disable this feature, call the following
+method as part of your tracking code:
+
+```js
+_paq.push(['HeatmapSessionRecording::disableRecordMovements']);
+```
+
+You can also enable the recording of movements again at any time during a page view:
+
+```js
+_paq.push(['HeatmapSessionRecording::enableRecordMovements']);
+```
+
 ## How do I prevent the HTTP request to a configs.php on each page view?  
 
 Piwik needs to detect on each page whether a heatmap or a session recording is supposed to be tracked. To do this, Piwik
