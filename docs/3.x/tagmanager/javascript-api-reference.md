@@ -25,7 +25,6 @@ When you develop a custom template, the second argument will always be `TagManag
 * `TagManager.THROW_ERRORS` - A boolean which defines whether errors should be thrown or only logged.
 * `TagManager.throwError(message)` - A function which will log an error to the console and throw an error if `TagManager.THROW_ERRORS` is enabled. Throwing an error may stop the execution of the container so it should be only thrown when really needed. Most of the times, you may instead want to call `Debug.error()` which only logs an error to the console.
 * `TagManager.addContainer(container)` - Adds an entire new container and runs it. This is usually only needed by the core platform itself.
-* `TagManager.addContainer(container)` - Adds an entire new container and runs it. This is usually only needed by the core platform itself.
 
 ### `TagManager.dataLayer`
 
