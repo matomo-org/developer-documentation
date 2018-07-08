@@ -73,6 +73,7 @@ enabled. It will not throw an error. An error will be only thrown if `TagManager
 * `TagManager.dom.bySelector(selectors)` - Returns an array of the elements that match the specified CSS selector (if `document.querySelectorAll()` is supported by the browser, if not returns an empty array).
 * `TagManager.dom.onLoad(callback)` - Triggers the callback function as soon as the page is fully loaded, including all stylesheets, images, JavaScript, etc.
 * `TagManager.dom.onReady(callback)` - Triggers the callback function as soon as the DOM is ready. This means the HTML is loaded but doesn't mean that any JavaScript, images or stylesheets have been loaded or executed.
+* `TagManager.dom.loadScriptUrl(url, options)` - Loads a JavaScript remote file by inserting a script element into the DOM. Possible options with its defaults are `{async:true,defer:true,type:'text/javascript',id:null,charset:null,onload:null,onerror:null}`.
 
 ### `TagManager.window`
 
