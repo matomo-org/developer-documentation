@@ -892,6 +892,7 @@ Index
 - [`Range`](Piwik/Period/Range.md) &mdash; *Class in namespace* [`Piwik\Period`](Piwik/Period)- [`redirectToModule()`](Piwik/Piwik.md#redirecttomodule) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`reloadPluginInformation()`](Piwik/Plugin.md#reloadplugininformation) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`registerEvents()`](Piwik/Plugin.md#registerevents) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
+- [`requiresInternetConnection()`](Piwik/Plugin.md#requiresinternetconnection) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`renderTemplate()`](Piwik/Plugin/Controller.md#rendertemplate) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`renderReport()`](Piwik/Plugin/Controller.md#renderreport) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`redirectToIndex()`](Piwik/Plugin/Controller.md#redirecttoindex) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)

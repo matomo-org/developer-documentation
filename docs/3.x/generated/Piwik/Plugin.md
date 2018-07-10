@@ -83,6 +83,7 @@ The class defines the following methods:
 - [`isPremiumFeature()`](#ispremiumfeature)
 - [`registerEvents()`](#registerevents) &mdash; Returns a list of events with associated event observers.
 - [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered.
+- [`requiresInternetConnection()`](#requiresinternetconnection) &mdash; Defines whether the whole plugin requires a working internet connection If set to true, the plugin will be automatically unloaded if `enable_internet_features` is 0, even if the plugin is activated
 - [`install()`](#install) &mdash; Installs the plugin.
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the plugins.
 - [`activate()`](#activate) &mdash; Executed every time the plugin is enabled.
@@ -174,6 +175,16 @@ Useful for initialization code that uses translated strings.
 #### Signature
 
 - It does not return anything.
+
+<a name="requiresinternetconnection" id="requiresinternetconnection"></a>
+<a name="requiresInternetConnection" id="requiresInternetConnection"></a>
+### `requiresInternetConnection()`
+
+Defines whether the whole plugin requires a working internet connection If set to true, the plugin will be automatically unloaded if `enable_internet_features` is 0, even if the plugin is activated
+
+#### Signature
+
+- It returns a `bool` value.
 
 <a name="install" id="install"></a>
 <a name="install" id="install"></a>

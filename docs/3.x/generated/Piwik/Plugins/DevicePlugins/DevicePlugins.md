@@ -14,6 +14,7 @@ The class defines the following methods:
 - [`isPremiumFeature()`](#ispremiumfeature) Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`registerEvents()`](#registerevents) &mdash; Returns a list of events with associated event observers. Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`postLoad()`](#postload) &mdash; This method is executed after a plugin is loaded and translations are registered. Inherited from [`Plugin`](../../../Piwik/Plugin.md)
+- [`requiresInternetConnection()`](#requiresinternetconnection) &mdash; Defines whether the whole plugin requires a working internet connection If set to true, the plugin will be automatically unloaded if `enable_internet_features` is 0, even if the plugin is activated Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`install()`](#install) &mdash; Installs the plugin. Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`uninstall()`](#uninstall) &mdash; Uninstalls the plugins. Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`activate()`](#activate) &mdash; Executed every time the plugin is enabled. Inherited from [`Plugin`](../../../Piwik/Plugin.md)
@@ -106,6 +107,16 @@ Useful for initialization code that uses translated strings.
 #### Signature
 
 - It does not return anything.
+
+<a name="requiresinternetconnection" id="requiresinternetconnection"></a>
+<a name="requiresInternetConnection" id="requiresInternetConnection"></a>
+### `requiresInternetConnection()`
+
+Defines whether the whole plugin requires a working internet connection If set to true, the plugin will be automatically unloaded if `enable_internet_features` is 0, even if the plugin is activated
+
+#### Signature
+
+- It returns a `bool` value.
 
 <a name="install" id="install"></a>
 <a name="install" id="install"></a>
