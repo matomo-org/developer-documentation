@@ -702,7 +702,7 @@ Usages:
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [456](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L456)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [487](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L487)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single site.
 
@@ -714,7 +714,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [446](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L446)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [477](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L477)*
 
 This event is triggered before the cron archiving process starts archiving data for a single site.
 
@@ -726,7 +726,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [508](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L508)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [539](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L539)*
 
 This event is triggered after archiving.
 
@@ -742,7 +742,7 @@ Usages:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1128](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1128)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1159](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1159)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -755,7 +755,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1527](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1527)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1558](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1558)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
@@ -771,7 +771,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [355](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L355)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [363](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L363)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -783,7 +783,7 @@ Callback Signature:
 
 ### CronArchive.init.start
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [313](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L313)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [321](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L321)*
 
 This event is triggered during initializing archiving.
 
