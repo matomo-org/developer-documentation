@@ -288,6 +288,7 @@ Callback Signature:
 ## ArchiveProcessor
 
 - [ArchiveProcessor.Parameters.getIdSites](#archiveprocessorparametersgetidsites)
+- [ArchiveProcessor.shouldAggregateFromRawData](#archiveprocessorshouldaggregatefromrawdata)
 
 ### ArchiveProcessor.Parameters.getIdSites
 
@@ -297,6 +298,21 @@ Callback Signature:
 
 Callback Signature:
 <pre><code>function(&amp;$idSites, $this-&gt;getPeriod())</code></pre>
+
+
+### ArchiveProcessor.shouldAggregateFromRawData
+
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [84](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L84)*
+
+Triggered to detect if the archiver should aggregate from raw data by using MySQL queries (when true) or by aggregate archives (when false). Typically, data is aggregated from raw data for "day" period, and
+aggregregated from archives for all other periods.
+
+Callback Signature:
+<pre><code>function(&amp;$shouldAggregateFromRawData, $this-&gt;params)</code></pre>
+
+- bool `&$shouldAggregateFromRawData` Set to true, to aggregate from raw data, or false to aggregate multiple reports.
+
+- [Parameters](/api-reference/Piwik/ArchiveProcessor/Parameters) `$params` 
 
 ## Archiving
 
@@ -340,7 +356,7 @@ Callback Signature:
 
 ### Archiving.makeNewArchiverObject
 
-*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [293](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L293)*
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [316](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L316)*
 
 Triggered right after a new **plugin archiver instance** is created. Subscribers to this event can configure the plugin archiver, for example prevent the archiving of a plugin's data
 by calling `$archiver->disable()` method.
