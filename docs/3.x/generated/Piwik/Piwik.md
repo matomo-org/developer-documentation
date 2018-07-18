@@ -26,9 +26,14 @@ The class defines the following methods:
 - [`isUserHasAdminAccess()`](#isuserhasadminaccess) &mdash; Returns `true` if the user has admin access to the requested sites, `false` if otherwise.
 - [`checkUserHasAdminAccess()`](#checkuserhasadminaccess) &mdash; Checks that the current user has admin access to the requested list of sites.
 - [`isUserHasSomeAdminAccess()`](#isuserhassomeadminaccess) &mdash; Returns `true` if the current user has admin access to at least one site.
+- [`checkUserHasSomeWriteAccess()`](#checkuserhassomewriteaccess) &mdash; Checks that the current user has write access to at least one site.
+- [`isUserHasSomeWriteAccess()`](#isuserhassomewriteaccess) &mdash; Returns `true` if the current user has write access to at least one site.
+- [`isUserHasCapability()`](#isuserhascapability) &mdash; Returns `true` if the current user has the given capability for the given sites.
 - [`checkUserHasSomeAdminAccess()`](#checkuserhassomeadminaccess) &mdash; Checks that the current user has admin access to at least one site.
 - [`isUserHasViewAccess()`](#isuserhasviewaccess) &mdash; Returns `true` if the user has view access to the requested list of sites.
+- [`isUserHasWriteAccess()`](#isuserhaswriteaccess) &mdash; Returns `true` if the user has write access to the requested list of sites.
 - [`checkUserHasViewAccess()`](#checkuserhasviewaccess) &mdash; Checks that the current user has view access to the requested list of sites
+- [`checkUserHasWriteAccess()`](#checkuserhaswriteaccess) &mdash; Checks that the current user has write access to the requested list of sites
 - [`isUserHasSomeViewAccess()`](#isuserhassomeviewaccess) &mdash; Returns `true` if the current user has view access to at least one site.
 - [`checkUserHasSomeViewAccess()`](#checkuserhassomeviewaccess) &mdash; Checks that the current user has view access to at least one site.
 - [`getLoginPluginName()`](#getloginpluginname) &mdash; Returns the name of the Login plugin currently being used.
@@ -192,6 +197,43 @@ Returns `true` if the current user has admin access to at least one site.
 
 - It returns a `bool` value.
 
+<a name="checkuserhassomewriteaccess" id="checkuserhassomewriteaccess"></a>
+<a name="checkUserHasSomeWriteAccess" id="checkUserHasSomeWriteAccess"></a>
+### `checkUserHasSomeWriteAccess()`
+
+Checks that the current user has write access to at least one site.
+
+#### Signature
+
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have write access to any site.
+
+<a name="isuserhassomewriteaccess" id="isuserhassomewriteaccess"></a>
+<a name="isUserHasSomeWriteAccess" id="isUserHasSomeWriteAccess"></a>
+### `isUserHasSomeWriteAccess()`
+
+Returns `true` if the current user has write access to at least one site.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="isuserhascapability" id="isuserhascapability"></a>
+<a name="isUserHasCapability" id="isUserHasCapability"></a>
+### `isUserHasCapability()`
+
+Returns `true` if the current user has the given capability for the given sites.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idSites`
+      
+    - `$capability`
+      
+- It returns a `bool` value.
+
 <a name="checkuserhassomeadminaccess" id="checkuserhassomeadminaccess"></a>
 <a name="checkUserHasSomeAdminAccess" id="checkUserHasSomeAdminAccess"></a>
 ### `checkUserHasSomeAdminAccess()`
@@ -217,6 +259,19 @@ Returns `true` if the user has view access to the requested list of sites.
        One or more site IDs to check access for.
 - It returns a `bool` value.
 
+<a name="isuserhaswriteaccess" id="isuserhaswriteaccess"></a>
+<a name="isUserHasWriteAccess" id="isUserHasWriteAccess"></a>
+### `isUserHasWriteAccess()`
+
+Returns `true` if the user has write access to the requested list of sites.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idSites` (`int`|`array`) &mdash;
+       One or more site IDs to check access for.
+- It returns a `bool` value.
+
 <a name="checkuserhasviewaccess" id="checkuserhasviewaccess"></a>
 <a name="checkUserHasViewAccess" id="checkUserHasViewAccess"></a>
 ### `checkUserHasViewAccess()`
@@ -231,6 +286,21 @@ Checks that the current user has view access to the requested list of sites
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have view access to every site in the list.
+
+<a name="checkuserhaswriteaccess" id="checkuserhaswriteaccess"></a>
+<a name="checkUserHasWriteAccess" id="checkUserHasWriteAccess"></a>
+### `checkUserHasWriteAccess()`
+
+Checks that the current user has write access to the requested list of sites
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idSites` (`int`|`array`) &mdash;
+       The list of site IDs to check access for.
+- It does not return anything.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have write access to every site in the list.
 
 <a name="isuserhassomeviewaccess" id="isuserhassomeviewaccess"></a>
 <a name="isUserHasSomeViewAccess" id="isUserHasSomeViewAccess"></a>

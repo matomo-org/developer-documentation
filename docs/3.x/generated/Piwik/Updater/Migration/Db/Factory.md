@@ -23,6 +23,7 @@ The class defines the following methods:
 - [`addIndex()`](#addindex) &mdash; Adds an index to an existing database table.
 - [`addUniqueKey()`](#adduniquekey) &mdash; Adds a unique key to an existing database table.
 - [`dropIndex()`](#dropindex) &mdash; Drops an existing index from a database table.
+- [`dropPrimaryKey()`](#dropprimarykey) &mdash; Drops an existing index from a database table.
 - [`addPrimaryKey()`](#addprimarykey) &mdash; Adds a primary key to an existing database table.
 - [`insert()`](#insert) &mdash; Inserts a new record / row into an existing database table.
 - [`batchInsert()`](#batchinsert) &mdash; Performs a batch insert into a specific table using either LOAD DATA INFILE or plain INSERTs, as a fallback.
@@ -267,6 +268,19 @@ Drops an existing index from a database table.
        Unprefixed database table name, eg 'log_visit'.
     - `$indexName` (`string`) &mdash;
        The name of the index that shall be dropped.
+- It returns a `Piwik\Updater\Migration\Db\DropIndex` value.
+
+<a name="dropprimarykey" id="dropprimarykey"></a>
+<a name="dropPrimaryKey" id="dropPrimaryKey"></a>
+### `dropPrimaryKey()`
+
+Drops an existing index from a database table.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$table` (`string`) &mdash;
+       Unprefixed database table name, eg 'log_visit'.
 - It returns a `Piwik\Updater\Migration\Db\DropIndex` value.
 
 <a name="addprimarykey" id="addprimarykey"></a>
