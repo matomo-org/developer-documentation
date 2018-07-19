@@ -50,6 +50,7 @@ The class defines the following methods:
 - [`getHash()`](#gethash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
 - [`getSelectQuery()`](#getselectquery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
 - [`__toString()`](#__tostring) &mdash; Returns the segment string.
+- [`combine()`](#combine) &mdash; Combines this segment with another segment condition, if the segment condition is not already in the segment.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -160,4 +161,25 @@ Returns the segment string.
 #### Signature
 
 - It returns a `string` value.
+
+<a name="combine" id="combine"></a>
+<a name="combine" id="combine"></a>
+### `combine()`
+
+Combines this segment with another segment condition, if the segment condition is not already in the segment.
+
+The combination is naive in that it does not take order of operations into account.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$segment` (`string`) &mdash;
+      
+    - `$operator` (`string`) &mdash;
+       The operator to use. Should be either SegmentExpression::AND_DELIMITER or SegmentExpression::OR_DELIMITER.
+    - `$segmentCondition` (`string`) &mdash;
+       The segment condition to add.
+- It returns a `string` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 

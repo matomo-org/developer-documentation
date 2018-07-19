@@ -334,7 +334,7 @@ Callback Signature:
 
 ### ArchiveProcessor.Parameters.getIdSites
 
-*Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Parameters.php) in line [127](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Parameters.php#L127)*
+*Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Parameters.php) in line [132](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Parameters.php#L132)*
 
 
 
