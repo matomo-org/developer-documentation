@@ -2576,7 +2576,7 @@ Usages:
 
 ### Template.afterReferrerTypeReport
 
-*Defined in [Piwik/Plugins/Referrers/Reports/GetReferrerType](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Reports/GetReferrerType.php) in line [123](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Reports/GetReferrerType.php#L123)*
+*Defined in [Piwik/Plugins/Referrers/Reports/GetReferrerType](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Reports/GetReferrerType.php) in line [126](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Reports/GetReferrerType.php#L126)*
 
 
 
@@ -2591,6 +2591,7 @@ Usages:
 
 - [Tracker.Cache.getSiteAttributes](#trackercachegetsiteattributes)
 - [Tracker.detectReferrerSearchEngine](#trackerdetectreferrersearchengine)
+- [Tracker.detectReferrerSocialNetwork](#trackerdetectreferrersocialnetwork)
 - [Tracker.end](#trackerend)
 - [Tracker.end](#trackerend)
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
@@ -2630,7 +2631,7 @@ Usages:
 
 ### Tracker.detectReferrerSearchEngine
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php) in line [166](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php#L166)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php) in line [173](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php#L173)*
 
 Triggered when detecting the search engine of a referrer URL. Plugins can use this event to provide custom search engine detection
 logic.
@@ -2639,6 +2640,21 @@ Callback Signature:
 <pre><code>function(&amp;$searchEngineInformation, $this-&gt;referrerUrl)</code></pre>
 
 - array `&$searchEngineInformation` An array with the following information: - **name**: The search engine name. - **keywords**: The search keywords used. This parameter is initialized to the results of Piwik's default search engine detection logic.
+
+- string
+
+
+### Tracker.detectReferrerSocialNetwork
+
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php) in line [224](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php#L224)*
+
+Triggered when detecting the social network of a referrer URL. Plugins can use this event to provide custom social network detection
+logic.
+
+Callback Signature:
+<pre><code>function(&amp;$socialNetworkName, $this-&gt;referrerUrl)</code></pre>
+
+- string `&$socialNetworkName` Name of the social network, or false if none detected This parameter is initialized to the results of Matomo's default social network detection logic.
 
 - string
 
