@@ -800,7 +800,7 @@ Usages:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1159](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1159)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1157](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1157)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -813,7 +813,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1558](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1558)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1556](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1556)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
