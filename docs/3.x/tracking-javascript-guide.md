@@ -706,6 +706,12 @@ _paq.push(['setDownloadClasses', "download"]);
 _paq.push(['trackPageView']);
 ```
 
+Alternatively, you can use JavaScript to manually trigger a click on a download. In this example, custom download is trigged when the link is clicked:
+
+```html
+<a href="https://secure.example.com/this-is-a-file-url" target="_blank" onClick="_paq.push(['trackLink', 'http://mydomain.co.uk/mailto/Agent namexyz', 'download']);">Download</a>
+```
+
 ### Changing the Pause Timer
 
 When a user clicks to download a file, or clicks on an outbound link, Piwik records it. In order to do so, it adds a small delay before the user is redirected to the requested file or link. The default value is 500ms, but you can set it to a shorter length of time. It should be noted, however, that doing so results in the risk that this period of time is not long enough for the data to be recorded in Piwik.
