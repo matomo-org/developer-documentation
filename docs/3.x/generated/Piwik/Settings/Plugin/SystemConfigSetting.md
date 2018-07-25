@@ -25,6 +25,7 @@ The class defines the following methods:
 - [`save()`](#save) &mdash; Saves (persists) the value for this setting in the database if a value has been actually set. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`getValue()`](#getvalue) &mdash; Returns the previously persisted setting value. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`setValue()`](#setvalue) &mdash; Sets and persists this setting's value overwriting any existing value. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
+- [`getConfigSectionName()`](#getconfigsectionname) &mdash; Returns the config section the setting is for
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -157,4 +158,14 @@ method. Before storing the actual value, the value will be converted to the actu
 - It does not return anything.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the current user is not allowed to change the value of this setting.
+
+<a name="getconfigsectionname" id="getconfigsectionname"></a>
+<a name="getConfigSectionName" id="getConfigSectionName"></a>
+### `getConfigSectionName()`
+
+Returns the config section the setting is for
+
+#### Signature
+
+- It returns a `string` value.
 

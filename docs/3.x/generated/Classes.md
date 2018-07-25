@@ -180,6 +180,7 @@ This is a complete list of available classes:
 - [`SettingsPiwik`](Piwik/SettingsPiwik.md) &mdash; Contains helper methods that can be used to get common Piwik settings.
 - [`SettingsServer`](Piwik/SettingsServer.md) &mdash; Contains helper methods that can be used to get information regarding the server, its settings and currently used PHP settings.
 - [`Settings\FieldConfig`](Piwik/Settings/FieldConfig.md) &mdash; Lets you configure a form field.
+- [`Settings\FieldConfig\ArrayField`](Piwik/Settings/FieldConfig/ArrayField.md) &mdash; Lets you configure a field for a field array.
 - [`Settings\FieldConfig\MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md) &mdash; Lets you configure a multi pair field.
 - [`Settings\Plugin\SystemConfigSetting`](Piwik/Settings/Plugin/SystemConfigSetting.md) &mdash; Describes a system wide setting.
 - [`Settings\Plugin\SystemSetting`](Piwik/Settings/Plugin/SystemSetting.md) &mdash; Describes a system wide setting.
