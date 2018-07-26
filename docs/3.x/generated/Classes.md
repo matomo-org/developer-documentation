@@ -157,7 +157,6 @@ This is a complete list of available classes:
 - [`Plugins\Live\Visitor`](Piwik/Plugins/Live/Visitor.md)
 - [`Plugins\Live\VisitorDetailsAbstract`](Piwik/Plugins/Live/VisitorDetailsAbstract.md) &mdash; Class VisitorDetailsAbstract
 - [`Plugins\Live\Visualizations\VisitorLog\Config`](Piwik/Plugins/Live/Visualizations/VisitorLog/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
-- [`Plugins\Login\SessionInitializer`](Piwik/Plugins/Login/SessionInitializer.md) &mdash; Initializes authenticated sessions using an Auth implementation.
 - [`Plugins\MobileMessaging\SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md) &mdash; The SMSProvider abstract class is used as a base class for SMS provider implementations.
 - [`Plugins\MultiSites\Columns\Metrics\EcommerceOnlyEvolutionMetric`](Piwik/Plugins/MultiSites/Columns/Metrics/EcommerceOnlyEvolutionMetric.md) &mdash; Ecommerce evolution metric adapter.
 - [`Plugins\TreemapVisualization\TreemapConfig`](Piwik/Plugins/TreemapVisualization/TreemapConfig.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.

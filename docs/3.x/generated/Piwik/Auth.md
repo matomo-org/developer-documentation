@@ -154,7 +154,7 @@ via token auth if one is set and no password is set.
 Note: this method must successfully authenticate if the token auth supplied is a special hash
 of the user's real token auth. This is because the SessionInitializer class stores a
 hash of the token auth in the session cookie. You can calculate the token auth hash using the
-[SessionInitializer::getHashTokenAuth()](/api-reference/Piwik/Plugins/Login/SessionInitializer#gethashtokenauth) method.
+Piwik\Plugins\Login\SessionInitializer::getHashTokenAuth() method.
 
 #### Signature
 

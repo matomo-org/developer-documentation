@@ -153,7 +153,6 @@
 ## Plugins\Live\Visitor
 ## Plugins\Live\VisitorDetailsAbstract
 ## Plugins\Live\Visualizations\VisitorLog\Config
-## Plugins\Login\SessionInitializer
 ## Plugins\MobileMessaging\SMSProvider
 ## Plugins\MultiSites\Columns\Metrics\EcommerceOnlyEvolutionMetric
 ## Plugins\TreemapVisualization\TreemapConfig
