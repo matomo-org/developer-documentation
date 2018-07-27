@@ -154,19 +154,28 @@ Once the visits have been added, click on the **Dashboard** link at the top of t
 
 ### If you want to execute the automated test suite
 
-If you plan on running automated tests, you'll have to set the following configuration options in `config/config.ini.php`:
+If you plan on running automated tests, you'll have to set the following configuration options in `config/config.ini.php` (assuming your Matomo instance is setup on `http://localhost/matomo`):
 
 ```ini
 [database_tests]
 host = "127.0.0.1"
-user = ...
+username = ...
 password = ...
+
+[tests]
+http_host   = "localhost"
+request_uri = "/matomo/"
+remote_addr = "127.0.0.1"
 ```
+
+Keep in mind that running tests is only possible when setting up Matomo from git as shown above.
 
 You also may have to create the `piwik_tests` database:
 ```
 mysql -u'db_username_here' -p -e 'CREATE DATABASE piwik_tests'
 ```
+
+The database structure will be created on the test run.
 
 ## Create a plugin
 
