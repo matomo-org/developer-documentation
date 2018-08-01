@@ -24,6 +24,8 @@ templates, including:
 - **show_autocompleter**: Whether the site selector should be shown or not.
 - **loginModule**: The name of the currently used authentication module.
 - **userAlias**: The alias of the current user.
+- **isInternetEnabled**: Whether the matomo server is allowed to connect to
+                         external networks.
 
 ### Template Naming Convention
 
