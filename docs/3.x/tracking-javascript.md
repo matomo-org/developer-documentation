@@ -91,6 +91,8 @@ Piwik provides [ecommerce analytics](https://piwik.org/docs/ecommerce-analytics/
 
 *   `setEcommerceView( productSKU, productName, categoryName, price )` - Sets the current page view as a product or category page view. When you call `setEcommerceView` it must be followed by a call to `trackPageView` to record the product or category page view.
 *   `addEcommerceItem( productSKU, [productName], [productCategory], [price], [quantity] )` - Adds a product into the ecommerce order. Must be called for each product in the order.
+*   `removeEcommerceItem( productSKU )` - Removes the specified product from the untracked ecommerce order.
+*   `clearEcommerceCart()` - Removes all products in the untracked ecommerce order. _Note: this is done automatically after `trackEcommerceOrder()` is called.
 *   `trackEcommerceCartUpdate( grandTotal )` - Tracks a shopping cart. Call this javascript function every time a user is adding, updating or deleting a product from the cart.
 *   `trackEcommerceOrder( orderId, grandTotal, [subTotal], [tax], [shipping], [discount] )` - Tracks an Ecommerce order, including any ecommerce item previously added to the order. `orderId` and `grandTotal` (ie. revenue) are required parameters.
 
