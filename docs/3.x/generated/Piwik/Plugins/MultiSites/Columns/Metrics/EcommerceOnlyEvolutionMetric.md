@@ -20,6 +20,8 @@ The class defines the following methods:
 - [`compute()`](#compute) &mdash; Computes the metric using the values in a [Row](/api-reference/Piwik/DataTable/Row). Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`format()`](#format) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`getDependentMetrics()`](#getdependentmetrics) &mdash; Returns the array of metrics that are necessary for computing this metric. Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
+- [`beforeComputeSubtable()`](#beforecomputesubtable) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
+- [`afterComputeSubtable()`](#aftercomputesubtable) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`getPastRowFromCurrent()`](#getpastrowfromcurrent) &mdash; public for Insights use. Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 
 <a name="__construct" id="__construct"></a>
@@ -97,6 +99,28 @@ of the array are metric names.
 #### Signature
 
 - It returns a `string[]` value.
+
+<a name="beforecomputesubtable" id="beforecomputesubtable"></a>
+<a name="beforeComputeSubtable" id="beforeComputeSubtable"></a>
+### `beforeComputeSubtable()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)) &mdash;
+      
+- It does not return anything.
+
+<a name="aftercomputesubtable" id="aftercomputesubtable"></a>
+<a name="afterComputeSubtable" id="afterComputeSubtable"></a>
+### `afterComputeSubtable()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)) &mdash;
+      
+- It does not return anything.
 
 <a name="getpastrowfromcurrent" id="getpastrowfromcurrent"></a>
 <a name="getPastRowFromCurrent" id="getPastRowFromCurrent"></a>

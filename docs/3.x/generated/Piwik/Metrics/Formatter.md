@@ -124,5 +124,7 @@ are found through report metadata and DataTable metadata.
        The report the table belongs to.
     - `$metricsToFormat` (`string[]`|`null`) &mdash;
        Whitelist of names of metrics to format.
+    - `$formatAll` (`boolean`) &mdash;
+       If true, will also apply formatting to non-processed metrics like revenue. This parameter is not currently supported and subject to change.
 - It does not return anything.
 

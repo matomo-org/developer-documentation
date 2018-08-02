@@ -23,6 +23,8 @@ The class defines the following methods:
 - [`getName()`](#getname)
 - [`getTranslatedName()`](#gettranslatedname)
 - [`format()`](#format)
+- [`beforeComputeSubtable()`](#beforecomputesubtable)
+- [`afterComputeSubtable()`](#aftercomputesubtable)
 - [`getPastRowFromCurrent()`](#getpastrowfromcurrent) &mdash; public for Insights use.
 
 <a name="compute" id="compute"></a>
@@ -132,6 +134,28 @@ Constructor.
     - `$value`
       
     - `$formatter` ([`Formatter`](../../../../../Piwik/Metrics/Formatter.md)) &mdash;
+      
+- It does not return anything.
+
+<a name="beforecomputesubtable" id="beforecomputesubtable"></a>
+<a name="beforeComputeSubtable" id="beforeComputeSubtable"></a>
+### `beforeComputeSubtable()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)) &mdash;
+      
+- It does not return anything.
+
+<a name="aftercomputesubtable" id="aftercomputesubtable"></a>
+<a name="afterComputeSubtable" id="afterComputeSubtable"></a>
+### `afterComputeSubtable()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)) &mdash;
       
 - It does not return anything.
 
