@@ -154,7 +154,9 @@ Once the visits have been added, click on the **Dashboard** link at the top of t
 
 ### If you want to execute the automated test suite
 
-If you plan on running automated tests, you'll have to set the following configuration options in `config/config.ini.php`:
+Make sure you have pulled Matomo's source code using git, an installation from an archive does not support running automated tests.
+
+Set the following configuration options in `config/config.ini.php`:
 
 ```ini
 [database_tests]
