@@ -22,6 +22,7 @@ This guide assumes that you:
 * can use PHPUnit,
 * have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide),
 * and understand how Piwik handles requests (if not, read our [HTTP Request Handling](/guides/http-request-handling) guide).
+* have pulled Matomo's source code using git (an installation from an archive does not support running automated tests)
 
 ## Piwik's test suite
 

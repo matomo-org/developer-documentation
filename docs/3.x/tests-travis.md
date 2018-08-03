@@ -6,11 +6,11 @@ previous: tests-ui
 
 [Travis-CI](https://travis-ci.org) is a continuous integration tool that will run tests for a GitHub repository every time commits are pushed.
 
-## Piwik's tests on Travis CI
+## Matomo's tests on Travis CI
 
-Piwik uses Travis to automatically run its test suite on every commit (for every branch and pull request). PHP and UI tests are run on the [piwik/piwik](https://travis-ci.org/piwik/piwik/builds) build
+Piwik uses Travis to automatically run its test suite on every commit (for every branch and pull request). PHP and UI tests are run on the [matomo-org/matomo](https://travis-ci.org/matomo-org/matomo/builds) build
 
-Current status for master branch: [![Build Status](https://travis-ci.org/piwik/piwik.svg?branch=master)](https://travis-ci.org/piwik/piwik)
+Current status for master branch: [![Build Status](https://travis-ci.org/matomo-org/matomo.svg?branch=master)](https://travis-ci.org/matomo-org/matomo)
 
 ## Running your plugins tests on Travis CI
 
