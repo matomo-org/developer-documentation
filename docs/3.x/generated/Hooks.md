@@ -1002,40 +1002,6 @@ Callback Signature:
 
 - [Dimension](/api-reference/Piwik/Columns/Dimension) `$dimensions` An array of dimensions
 
-## Emails
-
-- [Emails.setThemeVariables](#emailssetthemevariables)
-
-### Emails.setThemeVariables
-
-*Defined in [Piwik/View/HtmlReportEmailHeaderView](https://github.com/matomo-org/matomo/blob/3.x-dev/core/View/HtmlReportEmailHeaderView.php) in line [109](https://github.com/matomo-org/matomo/blob/3.x-dev/core/View/HtmlReportEmailHeaderView.php#L109)*
-
-Use this event to change the colors and fonts used in HTML email reports by setting properties in $vars. The following properties are supported:
-- **themeFontFamilyBase**
-- **themeColorBrand**
-- **themeColorBrandContrast**
-- **themeColorText**
-- **themeColorTextLight**
-- **themeColorTextLighter**
-- **themeColorTextContrast**
-- **themeColorLink**
-- **themeColorBaseSeries**
-- **themeColorHeadlineAlternative**
-- **themeColorHeaderBackground**
-- **themeColorHeaderText**
-- **brandNameLong**
-
-These variables have the same meaning as their LESS variable counterparts (the LESS variables in a theme w/ the "@theme-...-..." format).
-
-Callback Signature:
-<pre><code>function(&amp;$vars)</code></pre>
-
-- string `&$vars` 
-
-Usages:
-
-[ExampleTheme::setEmailThemeVariables](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ExampleTheme/ExampleTheme.php#L24)
-
 ## Environment
 
 - [Environment.bootstrapped](#environmentbootstrapped)
