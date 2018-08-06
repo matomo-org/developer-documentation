@@ -1923,7 +1923,7 @@ _Note: At this point the user is not authenticated yet._
 
 Usages:
 
-[CoreUpdater::dispatch](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreUpdater/CoreUpdater.php#L53), [LanguagesManager::initLanguage](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L94)
+[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L45), [CoreUpdater::dispatch](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreUpdater/CoreUpdater.php#L53), [LanguagesManager::initLanguage](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L94)
 
 
 ### Request.getRenamedModuleAndAction
@@ -1950,10 +1950,6 @@ Usages:
 
 
 
-Usages:
-
-[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L45)
-
 
 ### Request.initAuthenticationObject
 
@@ -1961,20 +1957,12 @@ Usages:
 
 
 
-Usages:
-
-[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L45)
-
 
 ### Request.initAuthenticationObject
 
 *Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [177](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L177)*
 
 
-
-Usages:
-
-[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L45)
 
 
 ### Request.initAuthenticationObject
@@ -1989,10 +1977,6 @@ to set the global authentication object (which must derive from [Auth](/api-refe
     Piwik::addAction('Request.initAuthenticationObject', function() {
         StaticContainer::getContainer()->set('Piwik\Auth', new MyAuthImplementation());
     });
-
-Usages:
-
-[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L45)
 
 
 ### Request.shouldDisablePostProcessing
