@@ -102,7 +102,7 @@ function MyPlayer (node, mediaType) {
     // "data-matomo-title", "title" or "alt" HTML attribute. Sometimes it might be possible
     // to retrieve the media title directly from the video or audio player
     var title = MA.element.getMediaTitle(node);
-    tracker.setMediaName(title);
+    tracker.setMediaTitle(title);
 
     // some media players let you already detect the total length of the video 
     tracker.setMediaTotalLengthInSeconds(node.duration);
