@@ -15,6 +15,7 @@ This is the Piwik API Reference. It lists all functions that can be called, docu
     *   you can also specify a list of idSites comma separated, eg. _idSite=1,4,5,6_
     *   if you want to get data for all websites, set _idSite=all_
 
+
 *   **period** &mdash; the period you request the statistics for. Can be any of: _day_, _week_, _month_, _year_ or _range_. All reports are returned for the dates based on the website's time zone.
 
     *   **day** returns data for a given day.
@@ -24,6 +25,7 @@ This is the Piwik API Reference. It lists all functions that can be called, docu
     *   **range** returns data for the specified 'date' range.
 
     For example to request a report for the range Jan 1st to Feb 15th you would write _&period=range&date=2011-01-01,2011-02-15_
+
 
 *   **date**
 
@@ -42,6 +44,7 @@ When 'period=range', the following keywords are supported for the parameter 'dat
         *   _previousX_
         *   _YYYY-MM-DD,YYYY-MM-DD_, or _YYYY-MM-DD,today_ or _YYYY-MM-DD,yesterday_
 
+
 *   **segment** &mdash; defines the Custom Segment you wish to filter your reports to.
 
     *   for example, 'referrerName==twitter.com' will return the requested API report, processed for the subset of users coming from twitter.com
@@ -49,6 +52,7 @@ When 'period=range', the following keywords are supported for the parameter 'dat
 _referrerName==Google,referrerName==Bing;country==IN_
 
         *   see [segmentation documentation](/api-reference/segmentation) for the list of available dimensions & metrics, example values for each, and more information about the custom segment parameter
+
 
 *   **format**; defines the format of the output
 
