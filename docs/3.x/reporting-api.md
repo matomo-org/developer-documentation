@@ -60,6 +60,12 @@ _referrerName==Google,referrerName==Bing;country==IN_
     *   php; when you export in PHP format it is serialized by default (set _serialize=0_ to get the raw php data structure). You can have a visual output of the data by setting _prettyDisplay=1_
     *   rss (when **date** is a range for example date=last10 or date=previous15)
     *   original; to fetch the original PHP data structure. This is useful when you call the Piwik API [internally using the PHP code](/guides/querying-the-reporting-api)
+    
+    
+*   **filter\_limit**; defines the number of rows to be returned. 
+    * By default, only the top **100 rows** are returned.
+    * Set to -1 to return all rows. 
+
 
 ### Optional API parameters
 
@@ -85,7 +91,6 @@ There are also generic filters you can choose to apply on all APIs that return w
 *   **pivotByColumnLimit**; The maximum number of columns that should be displayed in a pivot table. All other columns are aggregated into an 'Others' column.
 
 *   **filter\_offset**; defines the offset of the starting row being returned
-*   **filter\_limit**; defines the number of rows to be returned. Set to -1 to return all rows. By default, only the top 100 rows are returned.
 *   **filter\_truncate**; if set, will truncate the table after $filter\_truncate rows. The last row will be named 'Others' (localized in the requested language) and the columns will be an aggregate of statistics of all truncated rows.
 *   **filter\_pattern**; defines the text you want to search for in the **filter\_column**. Only the row with the given column matching the pattern will be returned. The pattern will be interpreted as regular expression. Example: `(en|de)\.mydomain`.
 *   **filter\_column** ; defines the column that we want to search for a text (see **filter\_pattern**). If not specified, defaults to 'label'
