@@ -56,7 +56,9 @@ The class defines the following methods:
 - [`process()`](#process) &mdash; Dispatches the API request to the appropriate API method and returns the result after post-processing.
 - [`getClassNameAPI()`](#getclassnameapi) &mdash; Returns the name of a plugin's API class by plugin name.
 - [`isRootRequestApiRequest()`](#isrootrequestapirequest) &mdash; Detect if the root request (the actual request) is an API request or not.
+- [`isCurrentApiRequestTheRootApiRequest()`](#iscurrentapirequesttherootapirequest) &mdash; Checks if the currently executing API request is the root API request or not.
 - [`isApiRequest()`](#isapirequest) &mdash; Detect if request is an API request.
+- [`getMethodIfApiRequest()`](#getmethodifapirequest) &mdash; Returns the current API method being executed, if the current request is an API request.
 - [`processRequest()`](#processrequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 - [`getRequestParametersGET()`](#getrequestparametersget) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
 - [`getBaseReportUrl()`](#getbasereporturl) &mdash; Returns the URL for the current requested report w/o any filter parameters.
@@ -154,6 +156,21 @@ request within any request, have a look at [isApiRequest()](/api-reference/Piwik
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
+<a name="iscurrentapirequesttherootapirequest" id="iscurrentapirequesttherootapirequest"></a>
+<a name="isCurrentApiRequestTheRootApiRequest" id="isCurrentApiRequestTheRootApiRequest"></a>
+### `isCurrentApiRequestTheRootApiRequest()`
+
+Checks if the currently executing API request is the root API request or not.
+
+Note: the "root" API request is the first request made. Within that request, further API methods
+can be called programmatically. These requests are considered "child" API requests.
+
+#### Signature
+
+- It returns a `bool` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
 <a name="isapirequest" id="isapirequest"></a>
 <a name="isApiRequest" id="isApiRequest"></a>
 ### `isApiRequest()`
@@ -172,6 +189,23 @@ request or not, call [isRootRequestApiRequest()](/api-reference/Piwik/API/Reques
     - `$request` (`array`) &mdash;
        eg array('module' => 'API', 'method' => 'Test.getMethod')
 - It returns a `bool` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
+<a name="getmethodifapirequest" id="getmethodifapirequest"></a>
+<a name="getMethodIfApiRequest" id="getMethodIfApiRequest"></a>
+### `getMethodIfApiRequest()`
+
+Returns the current API method being executed, if the current request is an API request.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$request` (`array`) &mdash;
+       eg array('module' => 'API', 'method' => 'Test.getMethod')
+
+- *Returns:*  `string`|`null` &mdash;
+    
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 

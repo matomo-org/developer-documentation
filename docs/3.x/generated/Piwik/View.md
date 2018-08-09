@@ -111,6 +111,7 @@ The class defines the following methods:
 - [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
 - [`__get()`](#__get) &mdash; Retrieves an assigned variable.
 - [`__isset()`](#__isset) &mdash; Returns true if a template variable has been set or not.
+- [`__unset()`](#__unset) &mdash; Unsets a template variable.
 - [`render()`](#render) &mdash; Renders the current view.
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field.
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response.
@@ -207,6 +208,19 @@ Returns true if a template variable has been set or not.
     - `$name` (`string`) &mdash;
        The name of the template variable.
 - It returns a `bool` value.
+
+<a name="__unset" id="__unset"></a>
+<a name="__unset" id="__unset"></a>
+### `__unset()`
+
+Unsets a template variable.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name` (`string`) &mdash;
+       The name of the template variable.
+- It does not return anything.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>

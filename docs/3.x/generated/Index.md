@@ -314,6 +314,7 @@ Index
 
 - [`getRequestArrayFromString()`](Piwik/API/Request.md#getrequestarrayfromstring) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`getClassNameAPI()`](Piwik/API/Request.md#getclassnameapi) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
+- [`getMethodIfApiRequest()`](Piwik/API/Request.md#getmethodifapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`getRequestParametersGET()`](Piwik/API/Request.md#getrequestparametersget) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`getBaseReportUrl()`](Piwik/API/Request.md#getbasereporturl) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`getCurrentUrlWithoutGenericFilters()`](Piwik/API/Request.md#getcurrenturlwithoutgenericfilters) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
@@ -710,6 +711,7 @@ Index
 ## I
 
 - [`isRootRequestApiRequest()`](Piwik/API/Request.md#isrootrequestapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
+- [`isCurrentApiRequestTheRootApiRequest()`](Piwik/API/Request.md#iscurrentapirequesttherootapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`isApiRequest()`](Piwik/API/Request.md#isapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`insertNumericRecords()`](Piwik/ArchiveProcessor.md#insertnumericrecords) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertNumericRecord()`](Piwik/ArchiveProcessor.md#insertnumericrecord) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
@@ -1252,6 +1254,7 @@ Index
 - [`__set()`](Piwik/View.md#__set) &mdash; *Method in class* [`View`](Piwik/View.md)
 - [`__get()`](Piwik/View.md#__get) &mdash; *Method in class* [`View`](Piwik/View.md)
 - [`__isset()`](Piwik/View.md#__isset) &mdash; *Method in class* [`View`](Piwik/View.md)
+- [`__unset()`](Piwik/View.md#__unset) &mdash; *Method in class* [`View`](Piwik/View.md)
 - [`__construct()`](Piwik/ViewDataTable/Config.md#__construct) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`__construct()`](Piwik/View/UIControl.md#__construct) &mdash; *Method in class* [`UIControl`](Piwik/View/UIControl.md)
 - [`__set()`](Piwik/View/UIControl.md#__set) &mdash; *Method in class* [`UIControl`](Piwik/View/UIControl.md)

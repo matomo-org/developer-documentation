@@ -105,6 +105,7 @@ The class defines the following methods:
 - [`__set()`](#__set) &mdash; Sets a variable.
 - [`__get()`](#__get) &mdash; Gets a view variable.
 - [`__isset()`](#__isset) &mdash; Returns true if a template variable has been set or not.
+- [`__unset()`](#__unset) &mdash; Unsets a template variable. Inherited from [`View`](../../Piwik/View.md)
 - [`render()`](#render) &mdash; Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field. Inherited from [`View`](../../Piwik/View.md)
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response. Inherited from [`View`](../../Piwik/View.md)
@@ -200,6 +201,19 @@ Returns true if a template variable has been set or not.
     - `$key`
       
 - It returns a `bool` value.
+
+<a name="__unset" id="__unset"></a>
+<a name="__unset" id="__unset"></a>
+### `__unset()`
+
+Unsets a template variable.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name` (`string`) &mdash;
+       The name of the template variable.
+- It does not return anything.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
