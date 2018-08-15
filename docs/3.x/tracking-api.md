@@ -96,9 +96,9 @@ Use the following values to record a cart and/or an ecommerce order.
 
 ### Other parameters (require authentication via `token_auth`)
 
-The following parameters require that you set `&token_auth=` to the token\_auth value of the Super User or a user with admin access to the website visits are being tracked for.
+The following parameters require that you set `&token_auth=` to the token\_auth value of the Super User, or a user with *write* or *admin* permission to the website visits are being tracked for.
 
-* `token_auth` &mdash; 32 character authorization key used to authenticate the API request.
+* `token_auth` &mdash; 32 character authorization key used to authenticate the API request. We recommend to create a user specifically for accessing the Tracking API, and give the user only *write* permission on the website(s).
 * `cip` &mdash; Override value for the visitor IP (both IPv4 and IPv6 notations supported).
 * `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is either a datetime such as: `2011-04-05 00:11:42` (remember to URL encode the value!), or a valid UNIX timestamp such as `1301919102`. The datetime must be sent in UTC timezone.
  _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](https://piwik.org/faq/how-to/#faq_59)._
