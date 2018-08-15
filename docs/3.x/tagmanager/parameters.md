@@ -94,7 +94,7 @@ $field->validators[] = new Piwik\Validators\CharacterLength($min = 1, $max = 500
 $field->validators[] = new Piwik\Validators\NumberRange($min = 1, $max = 500);
 ```
 
-* Define a custom `validator` callable like this:
+* Define a custom `validate` callable like this:
 
 ```php
 $field->validate = function ($value, Setting $setting) {
