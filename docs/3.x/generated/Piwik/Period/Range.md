@@ -18,6 +18,8 @@ Methods
 
 The class defines the following methods:
 
+- [`__sleep()`](#__sleep)
+- [`__wakeup()`](#__wakeup)
 - [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods. Inherited from [`Period`](../../Piwik/Period.md)
 - [`checkDateFormat()`](#checkdateformat) &mdash; Checks the given date format whether it is a correct date format and if not, throw an exception. Inherited from [`Period`](../../Piwik/Period.md)
 - [`getDateStart()`](#getdatestart) &mdash; Returns the start date of the period.
@@ -42,6 +44,22 @@ The class defines the following methods:
 - [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date range string given a period type, end date and number of periods the range spans over.
 - [`getImmediateChildPeriodLabel()`](#getimmediatechildperiodlabel)
 - [`getParentPeriodLabel()`](#getparentperiodlabel)
+
+<a name="__sleep" id="__sleep"></a>
+<a name="__sleep" id="__sleep"></a>
+### `__sleep()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="__wakeup" id="__wakeup"></a>
+<a name="__wakeup" id="__wakeup"></a>
+### `__wakeup()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>

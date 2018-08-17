@@ -20,6 +20,8 @@ Methods
 
 The abstract class defines the following methods:
 
+- [`__sleep()`](#__sleep)
+- [`__wakeup()`](#__wakeup)
 - [`isMultiplePeriod()`](#ismultipleperiod) &mdash; Returns true if `$dateString` and `$period` represent multiple periods.
 - [`checkDateFormat()`](#checkdateformat) &mdash; Checks the given date format whether it is a correct date format and if not, throw an exception.
 - [`getDateStart()`](#getdatestart) &mdash; Returns the first day of the period.
@@ -36,6 +38,22 @@ The abstract class defines the following methods:
 - [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns a short string description of this period that is localized with the currently used language.
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns a long string description of this period that is localized with the currently used language.
 - [`getRangeString()`](#getrangestring) &mdash; Returns the date range string comprising two dates
+
+<a name="__sleep" id="__sleep"></a>
+<a name="__sleep" id="__sleep"></a>
+### `__sleep()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="__wakeup" id="__wakeup"></a>
+<a name="__wakeup" id="__wakeup"></a>
+### `__wakeup()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
