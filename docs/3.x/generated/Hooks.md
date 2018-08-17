@@ -655,7 +655,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [556](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L556)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [558](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L558)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -671,7 +671,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [573](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L573)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [575](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L575)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -1609,7 +1609,7 @@ Usages:
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [393](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L393)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [395](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L395)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
 
@@ -1884,7 +1884,7 @@ Callback Signature:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [538](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L538)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [540](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L540)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -1905,7 +1905,7 @@ Usages:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [583](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L583)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [585](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L585)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -1983,7 +1983,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [650](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L650)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [652](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L652)*
 
 Triggered before the user is authenticated, when the global authentication object should be created. Plugins that provide their own authentication implementation should use this event
 to set the global authentication object (which must derive from [Auth](/api-reference/Piwik/Auth)).
