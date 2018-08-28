@@ -357,7 +357,7 @@ There is some user related information that is not stored directly in user entit
 
 Users can be allowed and disallowed access to websites. Piwik persists each user's access level for each website they have access to in the `access` table.
 
-Piwik defines 3 types of permissions:
+Piwik defines 4 types of permissions:
 
 - [**view permission**](https://piwik.org/faq/general/faq_70/#faq_70): applies to a specific site
 - [**write permission**](https://piwik.org/faq/general/faq_26910/#faq_70): applies to a specific site
