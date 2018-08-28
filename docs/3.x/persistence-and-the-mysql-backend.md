@@ -360,6 +360,7 @@ Users can be allowed and disallowed access to websites. Piwik persists each user
 Piwik defines 3 types of permissions:
 
 - [**view permission**](https://piwik.org/faq/general/faq_70/#faq_70): applies to a specific site
+- [**write permission**](https://piwik.org/faq/general/faq_26910/#faq_70): applies to a specific site
 - [**admin permission**](https://piwik.org/faq/general/faq_69/#faq_69): applies to a specific site
 - [**super user permission**](https://piwik.org/faq/general/faq_35/#faq_35): applies to **whole Piwik** (all sites)
 
