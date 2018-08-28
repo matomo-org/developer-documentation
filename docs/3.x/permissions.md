@@ -7,7 +7,7 @@ Permissions define what a user can see or do in Piwik.
 
 ## Users and permissions
 
-Piwik defines 3 types of permissions:
+Piwik defines 4 types of permissions:
 
 - [**view permission**](https://piwik.org/faq/general/faq_70/): applies to a specific site
 
@@ -78,6 +78,16 @@ Piwik::checkUserHasViewAccess($idSites = array(1,2,3));
 ```
 
 As a plugin developer you would usually use the latter example to verify the permissions for specific websites. Use the first example in case you develop something like an *All Websites Dashboard* where you only want to make sure the user has a view permission for at least one website.
+
+### Write permission
+
+A user having a write permission cannot only view reports but also manage entities attached to the website such as Goals, Funnels, Heatmaps, Session Recordings, A/B Tests, Forms, and more. The methods to check for this role are similar to the ones before, just swap the term `View` with `Write`.
+
+```php
+Piwik::checkUserHasSomeWriteAccess();
+
+Piwik::checkUserHasWriteAccess($idSites = array(1,2,3));
+```
 
 ### Admin permission
 
