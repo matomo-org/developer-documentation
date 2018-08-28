@@ -34,7 +34,7 @@ If an API method encounters an error, it should throw an exception. Piwik will b
 
 ### API method security
 
-All API methods should check whether the current user is allowed to invoke the method. If the API method is read-only, this means checking that the user has view access to the resources the method returns. If the API method performs an action, this normally means checking that the user has admin access to the functionality (or alternatively checking that the user is the super user). For example,
+All API methods should check whether the current user is allowed to invoke the method. If the API method is read-only, this means checking that the user has view access to the resources the method returns. If the API method performs an action, this normally means checking that the user has either 'write' or 'admin' access to the functionality (or alternatively checking that the user is the super user). For example,
 
 ```php
 public function getAllForSite($idSite)
@@ -45,7 +45,7 @@ public function getAllForSite($idSite)
 }
 ```
 
-Look at the `check...` methods in the [Piwik](/api-reference/Piwik/Piwik) class to see what types of checks can be made.
+Look at the `check...` methods in the [Piwik](/api-reference/Piwik/Piwik) class to see what types of checks can be made. Or [learn more about permissions](https://developer.matomo.org/guides/permissions).
 
 ### Calling API methods
 
