@@ -42,6 +42,7 @@ The class defines the following methods:
 - [`getCurrencyList()`](#getcurrencylist) &mdash; Returns the list of all known currency symbols. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getExcludedIpsFor()`](#getexcludedipsfor) &mdash; Returns the excluded IP addresses of the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getExcludedQueryParametersFor()`](#getexcludedqueryparametersfor) &mdash; Returns the excluded query parameters for the site with the specified ID. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getCreatorLoginFor()`](#getcreatorloginfor) &mdash; Returns the user that created this site. Inherited from [`Site`](../../Piwik/Site.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -451,4 +452,19 @@ Returns the excluded query parameters for the site with the specified ID.
     - `$idsite` (`int`) &mdash;
        The site ID.
 - It returns a `string` value.
+
+<a name="getcreatorloginfor" id="getcreatorloginfor"></a>
+<a name="getCreatorLoginFor" id="getCreatorLoginFor"></a>
+### `getCreatorLoginFor()`
+
+Returns the user that created this site.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idsite` (`int`) &mdash;
+       The site ID.
+
+- *Returns:*  `string`|`null` &mdash;
+    If null, the site was created before the creation user was tracked.
 

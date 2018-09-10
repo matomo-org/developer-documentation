@@ -639,6 +639,7 @@ Index
 - [`getCurrencyList()`](Piwik/Site.md#getcurrencylist) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`getExcludedIpsFor()`](Piwik/Site.md#getexcludedipsfor) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`getExcludedQueryParametersFor()`](Piwik/Site.md#getexcludedqueryparametersfor) &mdash; *Method in class* [`Site`](Piwik/Site.md)
+- [`getCreatorLoginFor()`](Piwik/Site.md#getcreatorloginfor) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`getCurrentLanguage()`](Piwik/Translation/Translator.md#getcurrentlanguage) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`getDefaultLanguage()`](Piwik/Translation/Translator.md#getdefaultlanguage) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`getJavascriptTranslations()`](Piwik/Translation/Translator.md#getjavascripttranslations) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
