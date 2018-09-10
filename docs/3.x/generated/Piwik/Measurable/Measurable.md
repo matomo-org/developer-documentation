@@ -12,8 +12,6 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`Site`](../../Piwik/Site.md)
 - [`setSites()`](#setsites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data. Inherited from [`Site`](../../Piwik/Site.md)
-- [`setSiteFromArray()`](#setsitefromarray) &mdash; Sets a site information in memory (statically cached). Inherited from [`Site`](../../Piwik/Site.md)
-- [`setSitesFromArray()`](#setsitesfromarray) &mdash; Sets the cached Site data with a non-associated array of site data. Inherited from [`Site`](../../Piwik/Site.md)
 - [`__toString()`](#__tostring) &mdash; Returns a string representation of the site this instance references. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getName()`](#getname) &mdash; Returns the name of the site. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getMainUrl()`](#getmainurl) &mdash; Returns the main url of the site. Inherited from [`Site`](../../Piwik/Site.md)
@@ -70,39 +68,6 @@ Sets the cached site data with an array that associates site IDs with individual
 -  It accepts the following parameter(s):
     - `$sites` (`array`) &mdash;
        The array of sites data. Indexed by site ID. eg, array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))`
-- It does not return anything.
-
-<a name="setsitefromarray" id="setsitefromarray"></a>
-<a name="setSiteFromArray" id="setSiteFromArray"></a>
-### `setSiteFromArray()`
-
-Sets a site information in memory (statically cached).
-
-Plugins can filter the website attributes before it is cached, eg. to change the website name,
-creation date, etc.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$idSite` (`Piwik\$idSite`) &mdash;
-      
-    - `$infoSite` (`Piwik\$infoSite`) &mdash;
-      
-- It does not return anything.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if website or idsite is invalid
-
-<a name="setsitesfromarray" id="setsitesfromarray"></a>
-<a name="setSitesFromArray" id="setSitesFromArray"></a>
-### `setSitesFromArray()`
-
-Sets the cached Site data with a non-associated array of site data.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$sites` (`array`) &mdash;
-       The array of sites data. eg, array( array('idsite' => '1', 'name' => 'Site 1', ...), array('idsite' => '2', 'name' => 'Site 2', ...), )
 - It does not return anything.
 
 <a name="__tostring" id="__tostring"></a>
@@ -294,7 +259,7 @@ Checks the given string for valid site IDs and returns them as an array.
 
 Clears the site data cache.
 
-See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and [setSitesFromArray()](/api-reference/Piwik/Measurable/Measurable#setsitesfromarray).
+See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and setSitesFromArray().
 
 #### Signature
 
@@ -306,7 +271,7 @@ See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and [
 
 Clears the site data cache.
 
-See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and [setSitesFromArray()](/api-reference/Piwik/Measurable/Measurable#setsitesfromarray).
+See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and setSitesFromArray().
 
 #### Signature
 

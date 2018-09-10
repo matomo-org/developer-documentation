@@ -1047,8 +1047,6 @@ Index
 - [`setValue()`](Piwik/Settings/Setting.md#setvalue) &mdash; *Method in class* [`Setting`](Piwik/Settings/Setting.md)
 - [`Settings`](Piwik/Settings/Settings.md) &mdash; *Class in namespace* `Piwik\Settings`- [`save()`](Piwik/Settings/Settings.md#save) &mdash; *Method in class* [`Settings`](Piwik/Settings/Settings.md)
 - [`Singleton`](Piwik/Singleton.md) &mdash; *Class in namespace* `Piwik`- [`Site`](Piwik/Site.md) &mdash; *Class in namespace* `Piwik`- [`setSites()`](Piwik/Site.md#setsites) &mdash; *Method in class* [`Site`](Piwik/Site.md)
-- [`setSiteFromArray()`](Piwik/Site.md#setsitefromarray) &mdash; *Method in class* [`Site`](Piwik/Site.md)
-- [`setSitesFromArray()`](Piwik/Site.md#setsitesfromarray) &mdash; *Method in class* [`Site`](Piwik/Site.md)
 - [`setCurrentLanguage()`](Piwik/Translation/Translator.md#setcurrentlanguage) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`shouldIgnoreError()`](Piwik/Updater/Migration.md#shouldignoreerror) &mdash; *Method in class* [`Migration`](Piwik/Updater/Migration.md)
 - [`sql()`](Piwik/Updater/Migration/Db/Factory.md#sql) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
