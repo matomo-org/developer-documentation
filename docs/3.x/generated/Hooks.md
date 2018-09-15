@@ -3088,7 +3088,7 @@ Callback Signature:
 
 ### ViewDataTable.configure
 
-*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [258](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php#L258)*
+*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [262](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php#L262)*
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed.
