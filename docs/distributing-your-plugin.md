@@ -232,13 +232,16 @@ To activate this webhook, follow these steps:
 
 1. Go to your plugin's Github repo in a browser.
 2. Click on **Settings**
-3. Click on **Integrations & services**
-4. Click on **Add service**
-5. Search for `piwik` and click the option **Piwik Plugins**.
-6. Click the **Active** checkbox.
-7. Click the **Add service** button.
+3. Click on **Webhooks**
+4. Click on **Add webhook**
+5. Enter "https://plugins.matomo.org/postreceive-hook" as Payload URL.
+6. Any content type will work (JSON or URL encoded)
+7. Ensure "Just the push event" and the "active" checkbox is selected (default)
+8. Click the **Add webhook** button.
 
 The marketplace will now be notified every time you push a commit or a tag to your repository.
+
+![](/img/github_webhook.png)
 
 ### Publish the first version of your plugin
 
