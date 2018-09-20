@@ -172,6 +172,7 @@ This is a complete list of available classes:
 - [`Scheduler\Schedule\Hourly`](Piwik/Scheduler/Schedule/Hourly.md) &mdash; Hourly class is used to schedule tasks every hour.
 - [`Scheduler\Schedule\Monthly`](Piwik/Scheduler/Schedule/Monthly.md) &mdash; Monthly class is used to schedule tasks every month.
 - [`Scheduler\Schedule\Schedule`](Piwik/Scheduler/Schedule/Schedule.md) &mdash; Describes the interval on which a scheduled task is executed.
+- [`Scheduler\Schedule\SpecificTime`](Piwik/Scheduler/Schedule/SpecificTime.md)
 - [`Scheduler\Schedule\Weekly`](Piwik/Scheduler/Schedule/Weekly.md) &mdash; Weekly class is used to schedule tasks every week.
 - [`Scheduler\Scheduler`](Piwik/Scheduler/Scheduler.md) &mdash; Schedules task execution.
 - [`Scheduler\Task`](Piwik/Scheduler/Task.md) &mdash; Describes a task that should be executed on a given time.

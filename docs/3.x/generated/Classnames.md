@@ -168,6 +168,7 @@
 ## Scheduler\Schedule\Hourly
 ## Scheduler\Schedule\Monthly
 ## Scheduler\Schedule\Schedule
+## Scheduler\Schedule\SpecificTime
 ## Scheduler\Schedule\Weekly
 ## Scheduler\Scheduler
 ## Scheduler\Task

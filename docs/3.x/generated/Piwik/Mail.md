@@ -12,6 +12,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`setDefaultFromPiwik()`](#setdefaultfrompiwik)
+- [`setWrappedHtmlBody()`](#setwrappedhtmlbody)
 - [`setFrom()`](#setfrom) &mdash; Sets the sender.
 - [`setReplyTo()`](#setreplyto) &mdash; Set Reply-To Header
 - [`send()`](#send)
@@ -37,6 +38,17 @@ Constructor.
 
 #### Signature
 
+- It does not return anything.
+
+<a name="setwrappedhtmlbody" id="setwrappedhtmlbody"></a>
+<a name="setWrappedHtmlBody" id="setWrappedHtmlBody"></a>
+### `setWrappedHtmlBody()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$body` ([`View`](../Piwik/View.md)) &mdash;
+      
 - It does not return anything.
 
 <a name="setfrom" id="setfrom"></a>

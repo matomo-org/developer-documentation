@@ -26,6 +26,7 @@ The class defines the following methods:
 - [`getSearchKeywordParameters()`](#getsearchkeywordparameters) &mdash; Returns the site search keyword query parameters for the site. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getSearchCategoryParameters()`](#getsearchcategoryparameters) &mdash; Returns the site search category query parameters for the site. Inherited from [`Site`](../../Piwik/Site.md)
 - [`isSiteSearchEnabled()`](#issitesearchenabled) &mdash; Returns whether Site Search Tracking is enabled for the site. Inherited from [`Site`](../../Piwik/Site.md)
+- [`getCreatorLogin()`](#getcreatorlogin) &mdash; Returns the user that created this site. Inherited from [`Site`](../../Piwik/Site.md)
 - [`getIdSitesFromIdSitesString()`](#getidsitesfromidsitesstring) &mdash; Checks the given string for valid site IDs and returns them as an array. Inherited from [`Site`](../../Piwik/Site.md)
 - [`clearCache()`](#clearcache) &mdash; Clears the site data cache. Inherited from [`Site`](../../Piwik/Site.md)
 - [`clearCacheForSite()`](#clearcacheforsite) &mdash; Clears the site data cache. Inherited from [`Site`](../../Piwik/Site.md)
@@ -236,6 +237,18 @@ Returns whether Site Search Tracking is enabled for the site.
 - It returns a `bool` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if data for the site cannot be found.
+
+<a name="getcreatorlogin" id="getcreatorlogin"></a>
+<a name="getCreatorLogin" id="getCreatorLogin"></a>
+### `getCreatorLogin()`
+
+Returns the user that created this site.
+
+#### Signature
+
+
+- *Returns:*  `string`|`null` &mdash;
+    If null, the site was created before the creation user was tracked.
 
 <a name="getidsitesfromidsitesstring" id="getidsitesfromidsitesstring"></a>
 <a name="getIdSitesFromIdSitesString" id="getIdSitesFromIdSitesString"></a>
