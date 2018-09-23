@@ -64,7 +64,7 @@ We try to publish a new Piwik release [about once a month](https://piwik.org/faq
 
 - Our [continuous integration tests](https://piwik.org/qa/) must be green.
 - All critical tickets [to the corresponding milestone](https://github.com/matomo-org/matomo/issues/milestones) must be closed.
-- All [officially supported plugins](https://plugins.piwik.org/developer/piwik) (built by Piwik) available on the [Marketplace](https://plugins.piwik.org/) must be compatible.
+- All [officially supported plugins](https://plugins.matomo.org/developer/matomo-org) (built by Matomo) available on the [Marketplace](https://plugins.matomo.org/) must be compatible.
 
 Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik.
 
