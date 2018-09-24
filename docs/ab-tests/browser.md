@@ -176,6 +176,8 @@ If you access the DOM using jQuery or another library, make sure that this libra
 
 Testing variations can be cumbersome because variations are activated randomly and you always get to see the same variation. To test a specific variation you can append a URL parameter `?pk_ab_test=$variationName`. This will make sure to activate the given variation even if the experiment should not trigger yet because of a defined filter. It will also not track any experiment activation to your Piwik so your data is kept clean.
 
+If you are running multiple tests on the same page, you can activate multiple variations by specifying the variation names comma separated: `?pk_ab_test=$variationName1,$variationName2`.
+
 ### Tracking a goal manually
 
 When comparing different variations it is often needed to [track goals](https://piwik.org/docs/tracking-goals-web-analytics/) 
