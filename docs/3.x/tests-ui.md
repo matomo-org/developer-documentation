@@ -13,11 +13,11 @@ We use them to test our PHP Controllers, Twig templates, CSS, and indirectly tes
 
 ## Requirements
 
-Unit, integration and system tests are fairly straightforward to run. UI tests, on the other hand, need a bit more work. To run UI tests you'll need to install [phantomjs version 1.9 or higher](http://phantomjs.org/download.html) and make sure `phantomjs` is on your PATH. Then you'll have to get the tests which are located in another repository but are included in Piwik as a submodule:
+Unit, integration and system tests are fairly straightforward to run. UI tests, on the other hand, need a bit more work. To run UI tests you'll need to install [phantomjs version 1.9 or higher](http://phantomjs.org/download.html) and make sure `phantomjs` is on your PATH. Then you'll have to get the tests which are stored in git LFS:
 
 ```
-$ git submodule init
-$ git submodule update
+$ git lfs pull --exclude=
+// NOTE: the --exclude= is important, because by default Matomo tells git not to pull these files (to save on bandwidth)
 ```
 
 If you're on Ubuntu, you'll also need some extra packages to make sure screenshots will render correctly:
