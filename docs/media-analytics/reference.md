@@ -108,6 +108,13 @@ Piwik will automatically detect the title of a video or audio in most cases. In 
 of a media player, or an exotic media player which does not allow us to detect the title automatically, you can define a callback
 method to detect the title of a video or audio manually based on your own custom logic. You can find an example [in the FAQ](/guides/media-analytics/faq).
 
+### `setMaxTrackingTime(stopTrackingAfterXSeconds)`
+
+By default, Matomo will stop tracking a particular video once it has been tracked for 3 hours since the first tracking request
+of the video or audio. To record media longer or than this or stop tracking earlier, call this method. Recording videos longer
+than 3 hours may be useful if your users actually are engaging with your media for that long. Setting a lower value may be
+useful if you are seeing many viewed media in the visitor log for example if your media player is playing a playlist.
+
 ### `mediaType`
 
 The `mediaType` property defines constants that are useful when you track the usage of a [custom media player](/guides/media-analytics/custom-player)
