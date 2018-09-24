@@ -174,6 +174,21 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         if ($this->isSubclassOf($rc, 'Piwik\Plugin\Visualization')) {
             return true;
         }
+        
+        if (class_exists('Piwik\Plugins\TagManager\Template\Tag\BaseTag') 
+            && $this->isSubclassOf($rc, 'Piwik\Plugins\TagManager\Template\Tag\BaseTag')) {
+            return true;
+        }
+
+        if (class_exists('Piwik\Plugins\TagManager\Template\Trigger\BaseTrigger') 
+            && $this->isSubclassOf($rc, 'Piwik\Plugins\TagManager\Template\Trigger\BaseTrigger')) {
+            return true;
+        }
+
+        if (class_exists('Piwik\Plugins\TagManager\Template\Variable\BaseVariable') 
+            && $this->isSubclassOf($rc, 'Piwik\Plugins\TagManager\Template\Variable\BaseVariable')) {
+            return true;
+        }
 
         $trackingDimensions = array(
             'Piwik\Plugin\Dimension\ActionDimension',
