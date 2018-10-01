@@ -142,7 +142,7 @@ Usages:
 
 ### API.$pluginName.$methodName
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [210](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L210)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [205](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L205)*
 
 Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/events#apirequestdispatch)
 event is triggered. It can be used to modify the arguments passed to a **single** API method.
@@ -165,7 +165,7 @@ Callback Signature:
 
 ### API.$pluginName.$methodName.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [284](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L284)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [279](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L279)*
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
 [API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event. It can be used to modify the output of a **single**
@@ -221,7 +221,7 @@ Callback Signature:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [529](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L529)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [517](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L517)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
 
@@ -253,7 +253,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [415](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L415)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [421](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L421)*
 
 Triggered when authenticating an API request, but only if the **token_auth** query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
 and make sure the global authentication object (the object returned by `StaticContainer::get('Piwik\Auth')`)
@@ -271,7 +271,7 @@ Usages:
 
 ### API.Request.dispatch
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [190](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L190)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [185](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L185)*
 
 Triggered before an API request is dispatched. This event can be used to modify the arguments passed to one or more API methods.
 
@@ -303,7 +303,7 @@ Usages:
 
 ### API.Request.dispatch.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [324](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L324)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [319](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L319)*
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
 
@@ -337,7 +337,7 @@ Callback Signature:
 
 ### API.Request.intercept
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [224](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L224)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [219](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L219)*
 
 Triggered before an API request is dispatched. Use this event to intercept an API request and execute your own code instead. If you set
 `$returnedValue` in a handler for this event, the original API method will not be executed,
@@ -1992,7 +1992,7 @@ Usages:
 
 ### Request.getRenamedModuleAndAction
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [169](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L169)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [170](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L170)*
 
 This event is posted in the Request dispatcher and can be used to overwrite the Module and Action to dispatch. This is useful when some Controller methods or API methods have been renamed or moved to another plugin.
 
@@ -2061,7 +2061,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [612](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L612)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [618](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L618)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted based on the `filter_sort_column` query parameter, rows are truncated based on the `filter_limit`/`filter_offset` parameters, amongst other things). If you're creating a plugin that needs to disable post processing entirely for
 certain requests, use this event.
