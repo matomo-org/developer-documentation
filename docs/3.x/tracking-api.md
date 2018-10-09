@@ -86,7 +86,14 @@ Use the following values to record a cart and/or an ecommerce order.
 
 * you must set `&idgoal=0` in the request to track an ecommerce interaction: cart update or an ecommerce order.
 * `ec_id` &mdash; The unique string identifier for the ecommerce order (required when tracking an ecommerce order)
-* `ec_items` &mdash; Items in the Ecommerce order. This is a JSON encoded array of items. Each item is an array with the following info in this order: item sku, item name, item category, item price, item quantity.
+* `ec_items` &mdash; Items in the Ecommerce order. This is a JSON encoded array of items. Each item is an array with the following info in this order: 
+  * item sku (required), 
+  * item name (or if not applicable, set it to an empty string), 
+  * item category (or if not applicable, set it to an empty string), 
+  * item price (or if not applicable, set it to 0), 
+  * item quantity (or if not applicable, set it to 1). 
+
+ An example value of `ec_items` would be: `%5B%5B%22item1%20SKU%22%2C%22item1%20name%22%2C%22item1%20category%22%2C11.1111%2C2%5D%2C%5B%22item2%20SKU%22%2C%22item2%20name%22%2C%22%22%2C0%2C1%5D%5D` (URL decoded version is: `[["item1 SKU","item1 name","item1 category",11.1111,2],["item2 SKU","item2 name","",0,1]]`).
 * `revenue` &mdash; The grand total for the ecommerce order (required when tracking an ecommerce order)
 * `ec_st` &mdash; The sub total of the order; excludes shipping.
 * `ec_tx` &mdash; Tax Amount of the order
