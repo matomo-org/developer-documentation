@@ -73,9 +73,9 @@ When your sample rate is lower than 100%, your activities may not be actually re
 sample group, you can append a URL parameter `&pk_hsr_forcesample=1` to the currently viewed page. 
 On the contrary,  to prevent your activities from being tracked you can add a URL parameter `&pk_hsr_forcesample=0`. 
 
-## How do I record activities only for specific visitors? 
+## How do I record activities only for specific visitors and/or pages? 
 
-If you want to record sessions or generate heatmaps only for a certain type of visitors, you can define a trigger method that
+If you want to record sessions or generate heatmaps only for a certain type of visitors, or for certain pages, you can define a trigger method that
 customizes whether activities will be recorded or not. For example, you could include only users with a certain age, only users that are logged in,
  only visitors from a certain country, or only record activities during the day.
 
