@@ -2711,7 +2711,7 @@ Usages:
 
 ### Tracker.detectReferrerSearchEngine
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php) in line [173](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php#L173)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php) in line [181](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php#L181)*
 
 Triggered when detecting the search engine of a referrer URL. Plugins can use this event to provide custom search engine detection
 logic.
@@ -2726,7 +2726,7 @@ Callback Signature:
 
 ### Tracker.detectReferrerSocialNetwork
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php) in line [224](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php#L224)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php) in line [232](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Columns/Base.php#L232)*
 
 Triggered when detecting the social network of a referrer URL. Plugins can use this event to provide custom social network detection
 logic.
