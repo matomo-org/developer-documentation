@@ -1865,7 +1865,7 @@ Callback Signature:
 
 ### Referrer.addSocialUrls
 
-*Defined in [Piwik/Plugins/Referrers/Social](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Social.php) in line [63](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Social.php#L63)*
+*Defined in [Piwik/Plugins/Referrers/Social](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Social.php) in line [64](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Social.php#L64)*
 
 
 
