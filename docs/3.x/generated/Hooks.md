@@ -881,6 +881,28 @@ Callback Signature:
 
 - CronArchive `$this` 
 
+## CustomMatomoJs
+
+- [CustomMatomoJs.manipulateJsTracker](#custommatomojsmanipulatejstracker)
+
+### CustomMatomoJs.manipulateJsTracker
+
+*Defined in [Piwik/Plugins/CustomPiwikJs/TrackingCode/PiwikJsManipulator](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PiwikJsManipulator.php) in line [56](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PiwikJsManipulator.php#L56)*
+
+Triggered after the Matomo JavaScript tracker has been generated and shortly before the tracker file is written to disk. You can listen to this event to for example automatically append some code to the JS
+tracker file.
+
+**Example**
+
+    function onManipulateJsTracker (&$content) {
+        $content .= "\nPiwik.DOM.onLoad(function () { console.log('loaded'); });";
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$content)</code></pre>
+
+- string `&$content` the generated JavaScript tracker code
+
 ## CustomPiwikJs
 
 - [CustomPiwikJs.piwikJsChanged](#custompiwikjspiwikjschanged)
