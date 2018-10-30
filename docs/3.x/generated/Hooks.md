@@ -771,7 +771,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [496](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L496)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [498](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L498)*
 
 Triggered after Piwik has been updated.
 
@@ -2927,7 +2927,7 @@ Usages:
 
 ### Updater.componentInstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [103](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L103)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [104](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L104)*
 
 Event triggered after a new component has been installed.
 
@@ -2939,7 +2939,7 @@ Callback Signature:
 
 ### Updater.componentUninstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [153](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L153)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [154](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L154)*
 
 Event triggered after a component has been uninstalled.
 
@@ -2951,7 +2951,7 @@ Callback Signature:
 
 ### Updater.componentUpdated
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [131](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L131)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [132](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L132)*
 
 Event triggered after a component has been updated. Can be used to handle logic that should be done after a component was updated
 
