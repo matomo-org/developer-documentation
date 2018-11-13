@@ -50,6 +50,7 @@
                     <a href="{{ '/support'|completeUrl }}">Support</a>
                 </li>
             </ul>
+            {% if availablePiwikVersions|length > 1 %}
             <ul class="nav navbar-nav pull-right">
                 <li>
                     <div id="quick-search-typeahead">
@@ -70,6 +71,7 @@
                     </div>
                 </li>
             </ul>
+            {% endif %}
         </div>
     </div>
 </div>
