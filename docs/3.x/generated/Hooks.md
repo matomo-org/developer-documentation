@@ -165,7 +165,7 @@ Callback Signature:
 
 ### API.$pluginName.$methodName.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [279](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L279)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [280](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L280)*
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
 [API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event. It can be used to modify the output of a **single**
@@ -221,7 +221,7 @@ Callback Signature:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [517](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L517)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [518](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L518)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
 
@@ -303,7 +303,7 @@ Usages:
 
 ### API.Request.dispatch.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [319](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L319)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [320](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L320)*
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
 
@@ -337,14 +337,14 @@ Callback Signature:
 
 ### API.Request.intercept
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [219](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L219)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [220](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L220)*
 
 Triggered before an API request is dispatched. Use this event to intercept an API request and execute your own code instead. If you set
 `$returnedValue` in a handler for this event, the original API method will not be executed,
 and the result will be what you set in the event handler.
 
 Callback Signature:
-<pre><code>function(&amp;$returnedValue, $finalParameters, $pluginName, $methodName)</code></pre>
+<pre><code>function(&amp;$returnedValue, $finalParameters, $pluginName, $methodName, $parametersRequest)</code></pre>
 
 - mixed `&$returnedValue` Set this to set the result and preempt normal API invocation.
 
@@ -353,6 +353,8 @@ Callback Signature:
 - string `$pluginName` The name of the plugin the API method belongs to.
 
 - string `$methodName` The name of the API method that will be called.
+
+- array `$parametersRequest` The query parameters for this request.
 
 ## ArchiveProcessor
 
