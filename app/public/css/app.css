@@ -15,6 +15,9 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: #1976D2;
 }
+.panel-primary li.active > a, .panel-primary li.active > a:hover, .panel-primary li.active > a:focus {
+    color: #1976D2 !important;
+}
 .btn-primary {
     background: #1976D2;
     border:0 !important;
