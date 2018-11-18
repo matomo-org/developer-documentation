@@ -5,12 +5,31 @@ html {
 body {
     padding-top: 80px;
     margin-bottom: 80px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
     font-size: 15px;
-    color: #404040;
+    color: #333333;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
+}
+a {
+    color: #1976D2;
+}
+.panel-primary li.active > a, .panel-primary li.active > a:hover, .panel-primary li.active > a:focus {
+    color: #1976D2 !important;
+}
+.btn-primary {
+    background: #1976D2;
+    border:0 !important;
+}
+.btn-primary:hover {
+    background: #2c96ff;
+}
+.text-success {
+    color: #0ea600;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+    color: #f77b00 !important;
 }
 code {
     color: #A93552;
@@ -128,16 +147,16 @@ footer {
     }
 }
 
-
 /* Home page */
 .jumbotron {
     padding-top: 48px;
     padding-bottom: 48px;
     margin-top: -40px;
     margin-bottom: 0;
+    background-color: #f7f7f7;
 }
 .jumbotron-categories {
-    background: #0F3D57;
+    background: #223d77;
     padding: 50px 0;
     color: white;
     text-align: center;
