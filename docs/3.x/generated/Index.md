@@ -696,6 +696,7 @@ Index
 
 - [`hasSuperUserAccess()`](Piwik/AuthResult.md#hassuperuseraccess) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`hash()`](Piwik/Auth/Password.md#hash) &mdash; *Method in class* [`Password`](Piwik/Auth/Password.md)
+- [`hasTable()`](Piwik/DataTable/Map.md#hastable) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`hasColumn()`](Piwik/DataTable/Row.md#hascolumn) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`Http`](Piwik/Http.md) &mdash; *Class in namespace* `Piwik`- [`Html`](Piwik/Metrics/Formatter/Html.md) &mdash; *Class in namespace* [`Piwik\Metrics\Formatter`](Piwik/Metrics/Formatter)- [`hasNoClear()`](Piwik/Notification.md#hasnoclear) &mdash; *Method in class* [`Notification`](Piwik/Notification.md)
 - [`hasUserSuperUserAccessOrIsTheUser()`](Piwik/Piwik.md#hasusersuperuseraccessoristheuser) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)

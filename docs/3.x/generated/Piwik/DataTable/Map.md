@@ -25,6 +25,7 @@ The class defines the following methods:
 - [`queueFilterSubtables()`](#queuefiltersubtables) &mdash; Apply a queued filter to all subtables contained by this instance.
 - [`getDataTables()`](#getdatatables) &mdash; Returns the array of DataTables contained by this class.
 - [`getTable()`](#gettable) &mdash; Returns the table with the specific label.
+- [`hasTable()`](#hastable)
 - [`getFirstRow()`](#getfirstrow) &mdash; Returns the first element in the Map's array.
 - [`getLastRow()`](#getlastrow) &mdash; Returns the last element in the Map's array.
 - [`addTable()`](#addtable) &mdash; Adds a new DataTable or Map instance to this DataTable\Map.
@@ -181,6 +182,17 @@ Returns the table with the specific label.
 
 - *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md) &mdash;
     
+
+<a name="hastable" id="hastable"></a>
+<a name="hasTable" id="hasTable"></a>
+### `hasTable()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$label` (`string`) &mdash;
+      
+- It returns a `bool` value.
 
 <a name="getfirstrow" id="getfirstrow"></a>
 <a name="getFirstRow" id="getFirstRow"></a>
