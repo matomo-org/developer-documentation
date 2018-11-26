@@ -1071,6 +1071,8 @@ Index
 - [`$show_related_reports`](Piwik/ViewDataTable/Config.md#$show_related_reports) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_limit_control`](Piwik/ViewDataTable/Config.md#$show_limit_control) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_search`](Piwik/ViewDataTable/Config.md#$show_search) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$show_periods`](Piwik/ViewDataTable/Config.md#$show_periods) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$selectable_periods`](Piwik/ViewDataTable/Config.md#$selectable_periods) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_export`](Piwik/ViewDataTable/Config.md#$show_export) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_bar_chart`](Piwik/ViewDataTable/Config.md#$show_bar_chart) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_pie_chart`](Piwik/ViewDataTable/Config.md#$show_pie_chart) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)

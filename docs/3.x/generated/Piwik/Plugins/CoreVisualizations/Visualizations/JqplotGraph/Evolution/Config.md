@@ -39,6 +39,8 @@ This class defines the following properties:
 - [`$custom_parameters`](#$custom_parameters) &mdash; Array property containing custom data to be saved in JSON in the data-params HTML attribute of a data table div. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$show_limit_control`](#$show_limit_control) &mdash; Controls whether the limit dropdown (which allows users to change the number of data shown) is always shown or not. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$show_search`](#$show_search) &mdash; Controls whether the search box under the datatable is shown. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
+- [`$show_periods`](#$show_periods) &mdash; Controls whether the period selector under the datatable is shown. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
+- [`$selectable_periods`](#$selectable_periods) &mdash; Controls which periods can be selected when the period selector is enabled Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$show_export`](#$show_export) &mdash; Controls whether the export feature under the datatable is shown. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$enable_sort`](#$enable_sort) &mdash; Controls whether the user can sort DataTables by clicking on table column headings. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$show_bar_chart`](#$show_bar_chart) &mdash; Controls whether the footer icon that allows users to view data as a bar chart is shown. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
@@ -449,6 +451,28 @@ Normally shown only if pagination is enabled.
 ### `$show_search`
 
 Controls whether the search box under the datatable is shown.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$show_periods" id="$show_periods"></a>
+<a name="show_periods" id="show_periods"></a>
+### `$show_periods`
+
+Controls whether the period selector under the datatable is shown.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$selectable_periods" id="$selectable_periods"></a>
+<a name="selectable_periods" id="selectable_periods"></a>
+### `$selectable_periods`
+
+Controls which periods can be selected when the period selector is enabled
 
 #### Signature
 
