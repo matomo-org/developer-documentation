@@ -38,7 +38,6 @@ _mtm.push({'event': 'purchase', 'orderTotal': 4545.45});
 Keep in mind that this does not send an event to Matomo, but allows you to create a tag in Matomo Tag Manager that reacts based on this event.
 </div>
 
-
 ### Configuration in Matomo Tag Manager
 
 To create a trigger that is listening to this event in Matomo Tag Manager, create a new trigger of type `Custom Event and configure as `Event Name` the value `purchase`. You can now assign this trigger to a tag to ensure a tag will be fired or blocked whenever this event is being triggered from your website or app.
