@@ -34,6 +34,10 @@ Triggering an event within the container works similar as setting a variable. Si
 var _mtm = _mtm || [];
 _mtm.push({'event': 'purchase', 'orderTotal': 4545.45});
 ```
+<div markdown="1" class="alert alert-info">
+Keep in mind that this does not send an event to Matomo, but allows you to create a tag in Matomo Tag Manager that reacts based on this event.
+</div>
+
 
 ### Configuration in Matomo Tag Manager
 
