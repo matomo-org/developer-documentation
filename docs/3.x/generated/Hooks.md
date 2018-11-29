@@ -908,11 +908,12 @@ Callback Signature:
 ## CustomPiwikJs
 
 - [CustomPiwikJs.piwikJsChanged](#custompiwikjspiwikjschanged)
+- [CustomPiwikJs.piwikJsChanged](#custompiwikjspiwikjschanged)
 - [CustomPiwikJs.shouldAddTrackerFile](#custompiwikjsshouldaddtrackerfile)
 
 ### CustomPiwikJs.piwikJsChanged
 
-*Defined in [Piwik/Plugins/CustomPiwikJs/TrackerUpdater](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php) in line [140](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php#L140)*
+*Defined in [Piwik/Plugins/CustomPiwikJs/TrackerUpdater](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php) in line [141](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php#L141)*
 
 Triggered after the tracker JavaScript content (the content of the piwik.js file) is changed.
 
@@ -920,6 +921,16 @@ Callback Signature:
 <pre><code>function($this-&gt;toFile-&gt;getPath())</code></pre>
 
 - string `$absolutePath` The path to the new piwik.js file.
+
+
+### CustomPiwikJs.piwikJsChanged
+
+*Defined in [Piwik/Plugins/CustomPiwikJs/TrackerUpdater](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php) in line [156](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php#L156)*
+
+
+
+Callback Signature:
+<pre><code>function($file-&gt;getPath())</code></pre>
 
 
 ### CustomPiwikJs.shouldAddTrackerFile
@@ -1161,7 +1172,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [410](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L410)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [408](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L408)*
 
 Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1177,7 +1188,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [421](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L421)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [419](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L419)*
 
 Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1662,7 +1673,7 @@ Callback Signature:
 
 ### Piwik.getJavascriptCode
 
-*Defined in [Piwik/Tracker/TrackerCodeGenerator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php) in line [170](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php#L170)*
+*Defined in [Piwik/Tracker/TrackerCodeGenerator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php) in line [185](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/TrackerCodeGenerator.php#L185)*
 
 Triggered when generating JavaScript tracking code server side. Plugins can use
 this event to customise the JavaScript tracking code that is displayed to the
@@ -2529,7 +2540,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php) in line [700](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php#L700)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php) in line [712](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php#L712)*
 
 Triggered after a site has been added.
 
@@ -2541,7 +2552,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php) in line [807](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php#L807)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php) in line [819](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php#L819)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -2559,7 +2570,7 @@ Usages:
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php) in line [169](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php#L169)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php) in line [175](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/API.php#L175)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
