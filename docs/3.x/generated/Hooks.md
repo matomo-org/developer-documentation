@@ -656,7 +656,7 @@ Usages:
 
 ### Console.filterCommands
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [147](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L147)*
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [156](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L156)*
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
 should subscribe to this event and remove commands from the existing list.

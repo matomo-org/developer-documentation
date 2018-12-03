@@ -24,20 +24,11 @@ Properties
 
 This class defines the following properties:
 
-- [`$twigCached`](#$twigcached) Inherited from [`View`](../../Piwik/View.md)
 - [`$cssIdentifier`](#$cssidentifier) &mdash; The CSS class that is used to map the root element of this control with the JavaScript class.
 - [`$jsClass`](#$jsclass) &mdash; The name of the JavaScript class that handles the behavior of this control.
 - [`$jsNamespace`](#$jsnamespace) &mdash; The JavaScript module that contains the JavaScript class.
 - [`$cssClass`](#$cssclass) &mdash; Extra CSS class(es) for the root element.
 - [`$htmlAttributes`](#$htmlattributes) &mdash; HTML Attributes for the root element
-
-<a name="$twigcached" id="$twigcached"></a>
-<a name="twigCached" id="twigCached"></a>
-### `$twigCached`
-
-#### Signature
-
-- It is a `Piwik\Twig` value.
 
 <a name="$cssidentifier" id="$cssidentifier"></a>
 <a name="cssIdentifier" id="cssIdentifier"></a>
