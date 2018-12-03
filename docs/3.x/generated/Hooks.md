@@ -117,7 +117,7 @@ Callback Signature:
 
 ### Actions.getCustomActionDimensionFieldsAndJoins
 
-*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Actions/VisitorDetails.php) in line [195](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Actions/VisitorDetails.php#L195)*
+*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Actions/VisitorDetails.php) in line [233](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Actions/VisitorDetails.php#L233)*
 
 
 
