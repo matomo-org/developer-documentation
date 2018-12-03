@@ -205,6 +205,7 @@ Index
 - [`dropIndex()`](Piwik/Updater/Migration/Db/Factory.md#dropindex) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
 - [`dropPrimaryKey()`](Piwik/Updater/Migration/Db/Factory.md#dropprimarykey) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
 - [`$db`](Piwik/Updater/Migration/Factory.md#$db) &mdash; *Property in class* [`Factory`](Piwik/Updater/Migration/Factory.md)
+- [`deactivate()`](Piwik/Updater/Migration/Plugin/Factory.md#deactivate) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Plugin/Factory.md)
 - [`doUpdate()`](Piwik/Updates.md#doupdate) &mdash; *Method in class* [`Updates`](Piwik/Updates.md)
 - [`disableCacheBuster()`](Piwik/View.md#disablecachebuster) &mdash; *Method in class* [`View`](Piwik/View.md)
 - [`$description`](Piwik/ViewDataTable/Config.md#$description) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
