@@ -1449,7 +1449,7 @@ Callback Signature:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php) in line [432](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php#L432)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php) in line [445](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php#L445)*
 
 
 
