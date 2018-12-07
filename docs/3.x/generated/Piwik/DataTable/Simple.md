@@ -43,6 +43,8 @@ The class defines the following methods:
 - [`__clone()`](#__clone) &mdash; Clone. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setLabelsHaveChanged()`](#setlabelshavechanged) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setTotalsRow()`](#settotalsrow) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getTotalsRow()`](#gettotalsrow) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any). Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -97,6 +99,7 @@ The class defines the following methods:
 - [`makeFromSimpleArray()`](#makefromsimplearray) &mdash; Returns a new DataTable created with data from a 'simple' array. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`fromSerializedArray()`](#fromserializedarray) &mdash; Creates a new DataTable instance from a serialized DataTable string. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`clearQueuedFilters()`](#clearqueuedfilters) &mdash; Unsets all queued filters. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getQueuedFilters()`](#getqueuedfilters) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getIterator()`](#getiterator) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`offsetExists()`](#offsetexists) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`offsetGet()`](#offsetget) Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -160,6 +163,25 @@ Sorts the DataTable rows using the supplied callback function.
        A comparison callback compatible with usort.
     - `$columnSortedBy` (`string`) &mdash;
        The column name `$functionCallback` sorts by. This is stored so we can determine how the DataTable was sorted in the future.
+- It does not return anything.
+
+<a name="settotalsrow" id="settotalsrow"></a>
+<a name="setTotalsRow" id="setTotalsRow"></a>
+### `setTotalsRow()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$totalsRow` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
+      
+- It does not return anything.
+
+<a name="gettotalsrow" id="gettotalsrow"></a>
+<a name="getTotalsRow" id="getTotalsRow"></a>
+### `getTotalsRow()`
+
+#### Signature
+
 - It does not return anything.
 
 <a name="getsortedbycolumnname" id="getsortedbycolumnname"></a>
@@ -1036,6 +1058,14 @@ for more information on DataTable serialization.
 ### `clearQueuedFilters()`
 
 Unsets all queued filters.
+
+#### Signature
+
+- It does not return anything.
+
+<a name="getqueuedfilters" id="getqueuedfilters"></a>
+<a name="getQueuedFilters" id="getQueuedFilters"></a>
+### `getQueuedFilters()`
 
 #### Signature
 

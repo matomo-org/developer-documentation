@@ -373,6 +373,7 @@ Index
 - [`getFromCommonConfig()`](Piwik/Config.md#getfromcommonconfig) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`getFromLocalConfig()`](Piwik/Config.md#getfromlocalconfig) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`getSelectsFromRangedColumn()`](Piwik/DataAccess/LogAggregator.md#getselectsfromrangedcolumn) &mdash; *Method in class* [`LogAggregator`](Piwik/DataAccess/LogAggregator.md)
+- [`getTotalsRow()`](Piwik/DataTable.md#gettotalsrow) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getSortedByColumnName()`](Piwik/DataTable.md#getsortedbycolumnname) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getRowFromLabel()`](Piwik/DataTable.md#getrowfromlabel) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getRowIdFromLabel()`](Piwik/DataTable.md#getrowidfromlabel) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -392,6 +393,7 @@ Index
 - [`getSerialized()`](Piwik/DataTable.md#getserialized) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getMetadata()`](Piwik/DataTable.md#getmetadata) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getAllTableMetadata()`](Piwik/DataTable.md#getalltablemetadata) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`getQueuedFilters()`](Piwik/DataTable.md#getqueuedfilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getIterator()`](Piwik/DataTable.md#getiterator) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getSingleUnitLabel()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#getsingleunitlabel) &mdash; *Method in class* [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
 - [`getRangeLabel()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#getrangelabel) &mdash; *Method in class* [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
@@ -966,6 +968,7 @@ Index
 - [`SiteNameJoin`](Piwik/Columns/Join/SiteNameJoin.md) &mdash; *Class in namespace* [`Piwik\Columns\Join`](Piwik/Columns/Join)- [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`setLabelsHaveChanged()`](Piwik/DataTable.md#setlabelshavechanged) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`sort()`](Piwik/DataTable.md#sort) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`setTotalsRow()`](Piwik/DataTable.md#settotalsrow) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumDepthLevelAllowedAtLeast()`](Piwik/DataTable.md#setmaximumdepthlevelallowedatleast) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`setMetadata()`](Piwik/DataTable.md#setmetadata) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`setMetadataValues()`](Piwik/DataTable.md#setmetadatavalues) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -1128,6 +1131,7 @@ Index
 - [`$title`](Piwik/ViewDataTable/Config.md#$title) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$title_edit_entity_url`](Piwik/ViewDataTable/Config.md#$title_edit_entity_url) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$tooltip_metadata_name`](Piwik/ViewDataTable/Config.md#$tooltip_metadata_name) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$totals`](Piwik/ViewDataTable/RequestConfig.md#$totals) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## U
 
