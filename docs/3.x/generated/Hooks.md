@@ -1586,7 +1586,7 @@ Callback Signature:
 
 ### Metrics.getDefaultMetricDocumentationTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [417](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L417)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [416](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L416)*
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
@@ -1602,7 +1602,7 @@ Usages:
 
 ### Metrics.getDefaultMetricTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [305](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L305)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [304](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L304)*
 
 Use this event to register translations for metrics processed by your plugin.
 
