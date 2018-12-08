@@ -2067,7 +2067,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [192](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L192)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [193](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L193)*
 
 
 
@@ -2862,7 +2862,7 @@ Callback Signature:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [538](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L538)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [539](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L539)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
