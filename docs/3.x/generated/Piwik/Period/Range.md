@@ -206,7 +206,7 @@ Returns a list of strings representing the current period.
     - `$format` (`string`) &mdash;
        The format of each individual day.
 
-- *Returns:*  `array` &mdash;
+- *Returns:*  `array`|`string` &mdash;
     An array of string dates that this period consists of.
 
 <a name="__tostring" id="__tostring"></a>
