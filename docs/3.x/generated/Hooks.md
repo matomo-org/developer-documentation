@@ -3146,7 +3146,7 @@ Usages:
 
 ### UsersManager.getDefaultDates
 
-*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php) in line [156](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php#L156)*
+*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php) in line [157](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php#L157)*
 
 Triggered when the list of available dates is requested, for example for the User Settings > Report date to load by default.
 
