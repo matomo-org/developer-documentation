@@ -136,6 +136,7 @@ Usages:
 - [API.DocumentationGenerator.$token](#apidocumentationgeneratortoken)
 - [API.getReportMetadata.end](#apigetreportmetadataend)
 - [API.Request.authenticate](#apirequestauthenticate)
+- [API.Request.authenticate.failed](#apirequestauthenticatefailed)
 - [API.Request.dispatch](#apirequestdispatch)
 - [API.Request.dispatch.end](#apirequestdispatchend)
 - [API.Request.intercept](#apirequestintercept)
@@ -266,7 +267,18 @@ Callback Signature:
 
 Usages:
 
-[Login::ApiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L94)
+[Login::ApiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L175)
+
+
+### API.Request.authenticate.failed
+
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [437](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L437)*
+
+
+
+Usages:
+
+[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L94)
 
 
 ### API.Request.dispatch
@@ -555,7 +567,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Actions/Actions.php#L90), [Annotations::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Annotations/Annotations.php#L46), [Contents::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Contents/Contents.php#L36), [CoreAdminHome::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L65), [CoreHome::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L135), [CorePluginsAdmin::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L65), [CoreVisualizations::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L49), [CustomAlerts::getJavaScriptFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L73), [CustomVariables::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L133), [Dashboard::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L275), [Feedback::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Feedback/Feedback.php#L35), [Goals::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L325), [Insights::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Insights/Insights.php#L31), [LanguagesManager::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L48), [Live::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Live.php#L44), [Login::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L43), [Marketplace::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Marketplace/Marketplace.php#L58), [MobileMessaging::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L93), [MultiSites::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L71), [Overlay::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Overlay/Overlay.php#L29), [PrivacyManager::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L205), [Referrers::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Referrers.php#L65), [ScheduledReports::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L131), [SegmentEditor::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L218), [SitesManager::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L126), [Transitions::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Transitions/Transitions.php#L33), [TreemapVisualization::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L61), [TwoFactorAuth::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L47), [UserCountry::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L58), [UserCountryMap::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L39), [UserId::getJavaScriptFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserId/UserId.php#L39), [UsersManager::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L125), [Widgetize::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L27)
+[Actions::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Actions/Actions.php#L90), [Annotations::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Annotations/Annotations.php#L46), [Contents::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Contents/Contents.php#L36), [CoreAdminHome::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L65), [CoreHome::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L135), [CorePluginsAdmin::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L65), [CoreVisualizations::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L49), [CustomAlerts::getJavaScriptFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L73), [CustomVariables::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L133), [Dashboard::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L275), [Feedback::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Feedback/Feedback.php#L35), [Goals::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L325), [Insights::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Insights/Insights.php#L31), [LanguagesManager::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L48), [Live::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Live.php#L44), [Login::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L123), [Marketplace::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Marketplace/Marketplace.php#L58), [MobileMessaging::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L93), [MultiSites::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L71), [Overlay::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Overlay/Overlay.php#L29), [PrivacyManager::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L205), [Referrers::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Referrers.php#L65), [ScheduledReports::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L131), [SegmentEditor::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L218), [SitesManager::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L126), [Transitions::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Transitions/Transitions.php#L33), [TreemapVisualization::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L61), [TwoFactorAuth::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L47), [UserCountry::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L58), [UserCountryMap::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L39), [UserId::getJavaScriptFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserId/UserId.php#L39), [UsersManager::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L125), [Widgetize::getJsFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L27)
 
 
 ### AssetManager.getStylesheetFiles
@@ -583,7 +595,7 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/API/API.php#L799), [Annotations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Annotations/Annotations.php#L38), [CoreAdminHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L56), [CoreHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L93), [CorePluginsAdmin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L48), [CoreVisualizations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L40), [CustomAlerts::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L78), [CustomVariables::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L128), [Dashboard::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L286), [Diagnostics::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Diagnostics/Diagnostics.php#L25), [Events::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Events/Events.php#L259), [Feedback::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Feedback/Feedback.php#L29), [Goals::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L332), [Insights::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Insights/Insights.php#L26), [Installation::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Installation.php#L122), [Live::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Live.php#L38), [Login::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L48), [Marketplace::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Marketplace/Marketplace.php#L51), [MobileMessaging::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L101), [MultiSites::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L80), [PrivacyManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L221), [ProfessionalServices::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L38), [Referrers::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Referrers.php#L39), [RssWidget::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/RssWidget/RssWidget.php#L32), [ScheduledReports::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L137), [SecurityInfo::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SecurityInfo/SecurityInfo.php#L28), [SegmentEditor::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L226), [SitesManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L118), [Transitions::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Transitions/Transitions.php#L28), [TreemapVisualization::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L55), [TwoFactorAuth::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L42), [UserCountry::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L53), [UserCountryMap::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L50), [UsersManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L138), [VisitsSummary::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/VisitsSummary/VisitsSummary.php#L68), [Widgetize::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L38)
+[Plugin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/API/API.php#L799), [Annotations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Annotations/Annotations.php#L38), [CoreAdminHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L56), [CoreHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L93), [CorePluginsAdmin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L48), [CoreVisualizations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L40), [CustomAlerts::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L78), [CustomVariables::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L128), [Dashboard::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L286), [Diagnostics::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Diagnostics/Diagnostics.php#L25), [Events::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Events/Events.php#L259), [Feedback::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Feedback/Feedback.php#L29), [Goals::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L332), [Insights::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Insights/Insights.php#L26), [Installation::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Installation.php#L122), [Live::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Live.php#L38), [Login::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L129), [Marketplace::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Marketplace/Marketplace.php#L51), [MobileMessaging::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L101), [MultiSites::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L80), [PrivacyManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L221), [ProfessionalServices::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L38), [Referrers::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Referrers.php#L39), [RssWidget::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/RssWidget/RssWidget.php#L32), [ScheduledReports::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L137), [SecurityInfo::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SecurityInfo/SecurityInfo.php#L28), [SegmentEditor::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L226), [SitesManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L118), [Transitions::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Transitions/Transitions.php#L28), [TreemapVisualization::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L55), [TwoFactorAuth::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L42), [UserCountry::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L53), [UserCountryMap::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L50), [UsersManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L138), [VisitsSummary::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/VisitsSummary/VisitsSummary.php#L68), [Widgetize::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L38)
 
 ## Category
 
@@ -1383,9 +1395,12 @@ Callback Signature:
 - [Login.authenticate](#loginauthenticate)
 - [Login.authenticate.failed](#loginauthenticatefailed)
 - [Login.authenticate.failed](#loginauthenticatefailed)
+- [Login.authenticate.failed](#loginauthenticatefailed)
 - [Login.authenticate.successful](#loginauthenticatesuccessful)
 - [Login.authenticate.successful](#loginauthenticatesuccessful)
+- [Login.beforeLoginCheckAllowed](#loginbeforelogincheckallowed)
 - [Login.logout](#loginlogout)
+- [Login.recordFailedLoginAttempt](#loginrecordfailedloginattempt)
 
 ### Login.authenticate
 
@@ -1416,6 +1431,10 @@ Callback Signature:
 Callback Signature:
 <pre><code>function($auth-&gt;getLogin())</code></pre>
 
+Usages:
+
+[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L94)
+
 
 ### Login.authenticate.failed
 
@@ -1425,6 +1444,24 @@ Callback Signature:
 
 Callback Signature:
 <pre><code>function($auth-&gt;getLogin())</code></pre>
+
+Usages:
+
+[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L94)
+
+
+### Login.authenticate.failed
+
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1329](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1329)*
+
+
+
+Callback Signature:
+<pre><code>function($userLogin)</code></pre>
+
+Usages:
+
+[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L94)
 
 
 ### Login.authenticate.successful
@@ -1436,6 +1473,10 @@ Callback Signature:
 Callback Signature:
 <pre><code>function($auth-&gt;getLogin())</code></pre>
 
+Usages:
+
+[Login::beforeLoginCheckBruteForce](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L113)
+
 
 ### Login.authenticate.successful
 
@@ -1446,15 +1487,41 @@ Callback Signature:
 Callback Signature:
 <pre><code>function($auth-&gt;getLogin())</code></pre>
 
+Usages:
+
+[Login::beforeLoginCheckBruteForce](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L113)
+
+
+### Login.beforeLoginCheckAllowed
+
+*Defined in [Piwik/Plugins/Login/PasswordVerifier](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/PasswordVerifier.php) in line [47](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/PasswordVerifier.php#L47)*
+
+
+
+Usages:
+
+[Login::beforeLoginCheckBruteForce](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L113)
+
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php) in line [445](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php#L445)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php) in line [468](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php#L468)*
 
 
 
 Callback Signature:
 <pre><code>function(Piwik::getCurrentUserLogin())</code></pre>
+
+
+### Login.recordFailedLoginAttempt
+
+*Defined in [Piwik/Plugins/Login/PasswordVerifier](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/PasswordVerifier.php) in line [65](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/PasswordVerifier.php#L65)*
+
+
+
+Usages:
+
+[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L94)
 
 ## Mail
 
@@ -2051,7 +2118,7 @@ Usages:
 
 Usages:
 
-[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L55)
+[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L55), [Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L82)
 
 
 ### Request.initAuthenticationObject
@@ -2062,7 +2129,7 @@ Usages:
 
 Usages:
 
-[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L55)
+[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L55), [Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L82)
 
 
 ### Request.initAuthenticationObject
@@ -2073,7 +2140,7 @@ Usages:
 
 Usages:
 
-[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L55)
+[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L55), [Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L82)
 
 
 ### Request.initAuthenticationObject
@@ -2091,12 +2158,12 @@ to set the global authentication object (which must derive from [Auth](/api-refe
 
 Usages:
 
-[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L55)
+[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L55), [Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L82)
 
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [628](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L628)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [634](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L634)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted based on the `filter_sort_column` query parameter, rows are truncated based on the `filter_limit`/`filter_offset` parameters, amongst other things). If you're creating a plugin that needs to disable post processing entirely for
 certain requests, use this event.
@@ -2714,6 +2781,7 @@ Usages:
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
 - [Tracker.newConversionInformation](#trackernewconversioninformation)
 - [Tracker.PageUrl.getQueryParametersToExclude](#trackerpageurlgetqueryparameterstoexclude)
+- [Tracker.Request.authenticate.failed](#trackerrequestauthenticatefailed)
 - [Tracker.Request.getIdSite](#trackerrequestgetidsite)
 - [Tracker.setTrackerCacheGeneral](#trackersettrackercachegeneral)
 
@@ -2860,9 +2928,20 @@ Callback Signature:
 - array `&$parametersToExclude` An array of parameters to exclude from the tracking url.
 
 
+### Tracker.Request.authenticate.failed
+
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [224](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L224)*
+
+
+
+Usages:
+
+[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L94)
+
+
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [539](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L539)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [545](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L545)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
@@ -3060,7 +3139,7 @@ Callback Signature:
 
 Usages:
 
-[Login::noAccess](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L78)
+[Login::noAccess](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L159)
 
 ## UserSettings
 
@@ -3096,7 +3175,7 @@ Callback Signature:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [679](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L679)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [686](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L686)*
 
 Triggered after a new user is created.
 
@@ -3172,7 +3251,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1078](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1078)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1073](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1073)*
 
 
 
@@ -3186,7 +3265,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [915](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L915)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [922](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L922)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
