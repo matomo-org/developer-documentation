@@ -138,13 +138,13 @@ The following fields are not required for publishing a plugin, but you may want 
 
 - `preview` - Preview lets you define a demo link and a video. If defined, they will be visible in the "Preview" tab of your plugin. The object can contain any of the following fields:
     - `demo_url` - A URL to a demo of your plugin
-    - `video_url` - A Vimeo or YouTube URL to showcase your plugin. The URL has to be as in the example below. This means a Vimeo URL has to start with `https://player.vimeo.com/video/` and a YouTube URL has to start with `https://www.youtube-nocookie.com/embed/`.
+    - `video_url` - A YouTube URL to showcase your plugin. The URL has to be as in the example below. This means a YouTube URL has to start with `https://www.youtube-nocookie.com/embed/`.
 
 
     ```json
     "preview": {
         "demo_url": "https://demo.piwik.org",
-        "video_url": "https://player.vimeo.com/video/1223232323 or https://www.youtube-nocookie.com/embed/Aaa_111HHH"
+        "video_url": "https://www.youtube-nocookie.com/embed/Aaa_111HHH"
     }
     ```
 
