@@ -1650,10 +1650,11 @@ Callback Signature:
 
 - [Metrics.getDefaultMetricDocumentationTranslations](#metricsgetdefaultmetricdocumentationtranslations)
 - [Metrics.getDefaultMetricTranslations](#metricsgetdefaultmetrictranslations)
+- [Metrics.getEvolutionUnit](#metricsgetevolutionunit)
 
 ### Metrics.getDefaultMetricDocumentationTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [416](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L416)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [431](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L431)*
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
@@ -1669,7 +1670,7 @@ Usages:
 
 ### Metrics.getDefaultMetricTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [304](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L304)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [319](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L319)*
 
 Use this event to register translations for metrics processed by your plugin.
 
@@ -1681,6 +1682,22 @@ Callback Signature:
 Usages:
 
 [Actions::addMetricTranslations](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Actions/Actions.php#L40), [Contents::addMetricTranslations](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Contents/Contents.php#L29), [DevicePlugins::addMetricTranslations](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/DevicePlugins/DevicePlugins.php#L31), [Events::addMetricTranslations](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Events/Events.php#L35), [Goals::addMetricTranslations](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L190), [MultiSites::addMetricTranslations](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L28), [VisitFrequency::addMetricTranslations](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/VisitFrequency/VisitFrequency.php#L26)
+
+
+### Metrics.getEvolutionUnit
+
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [253](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L253)*
+
+Use this event to define units for custom metrics used in evolution graphs and row evolution only.
+
+Callback Signature:
+<pre><code>function(&amp;$unit, $column, $idSite)</code></pre>
+
+- string `&$unit` should hold the unit (e.g. %, €, s or empty string)
+
+- string `$column` name of the column to determine
+
+- string `$idSite` id of the current site
 
 ## MobileMessaging
 
