@@ -1534,7 +1534,6 @@ Usages:
 
 This event is posted right before an email is sent. You can use it to customize the email by, for example, replacing
 the subject/body, changing the from address, etc.
-TODO: changelog
 
 Callback Signature:
 <pre><code>function($mail)</code></pre>
@@ -1547,7 +1546,6 @@ Callback Signature:
 *Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Mail.php) in line [226](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Mail.php#L226)*
 
 This event is posted before sending an email. You can use it to abort sending a specific email, if you want.
-TODO: changelog
 
 Callback Signature:
 <pre><code>function(&amp;$shouldSendMail, $mail)</code></pre>
