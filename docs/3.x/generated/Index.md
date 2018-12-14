@@ -837,6 +837,7 @@ Index
 
 - [`needsRehash()`](Piwik/Auth/Password.md#needsrehash) &mdash; *Method in class* [`Password`](Piwik/Auth/Password.md)
 - [`$namePlural`](Piwik/Columns/Dimension.md#$nameplural) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
+- [`$now`](Piwik/Date.md#$now) &mdash; *Property in class* [`Date`](Piwik/Date.md)
 - [`now()`](Piwik/Date.md#now) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`NoAccessException`](Piwik/NoAccessException.md) &mdash; *Class in namespace* `Piwik`- [`Nonce`](Piwik/Nonce.md) &mdash; *Class in namespace* `Piwik`- [`Notification`](Piwik/Notification.md) &mdash; *Class in namespace* `Piwik`- [`notify()`](Piwik/Notification/Manager.md#notify) &mdash; *Method in class* [`Manager`](Piwik/Notification/Manager.md)
 - [`$name`](Piwik/Plugin/Report.md#$name) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)

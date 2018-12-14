@@ -23,6 +23,22 @@ say, in a loop.
     $date->addHour(5);
     echo $date->getLocalized("EEE, d. MMM y 'at' HH:mm:ss");
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$now`](#$now)
+
+<a name="$now" id="$now"></a>
+<a name="now" id="now"></a>
+### `$now`
+
+#### Signature
+
+- Its type is not specified.
+
+
 Methods
 -------
 
