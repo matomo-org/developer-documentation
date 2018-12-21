@@ -3057,7 +3057,7 @@ Callback Signature:
 
 ### TwoFactorAuth.enabled
 
-*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/Controller.php) in line [212](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/Controller.php#L212)*
+*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/Controller.php) in line [209](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/Controller.php#L209)*
 
 
 
@@ -3067,7 +3067,7 @@ Callback Signature:
 
 ### TwoFactorAuth.requiresTwoFactorAuthentication
 
-*Defined in [Piwik/Plugins/TwoFactorAuth/TwoFactorAuth](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php) in line [172](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L172)*
+*Defined in [Piwik/Plugins/TwoFactorAuth/TwoFactorAuth](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php) in line [173](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L173)*
 
 
 
