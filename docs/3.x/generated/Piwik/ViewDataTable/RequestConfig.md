@@ -81,7 +81,7 @@ This class defines the following properties:
 - [`$filter_sort_order`](#$filter_sort_order) &mdash; Controls the sort order.
 - [`$filter_limit`](#$filter_limit) &mdash; The number of items to truncate the data set to before rendering the DataTable view.
 - [`$flat`](#$flat) &mdash; If set to true, the returned data will contain the flattened view of the table data set.
-- [`$totals`](#$totals) &mdash; If set to true, the report may calculate totals information and show percentage values for each row in relative to the total value.
+- [`$totals`](#$totals) &mdash; If set to true or "1", the report may calculate totals information and show percentage values for each row in relative to the total value.
 - [`$expanded`](#$expanded) &mdash; If set to true, the returned data will contain the first level results, as well as all sub-tables.
 - [`$filter_offset`](#$filter_offset) &mdash; The number of items from the start of the data set that should be ignored.
 - [`$filter_pattern`](#$filter_pattern) &mdash; A regex pattern to use to filter the DataTable before it is shown.
@@ -181,9 +181,9 @@ Default value: false
 <a name="totals" id="totals"></a>
 ### `$totals`
 
-If set to true, the report may calculate totals information and show percentage values for each row in relative to the total value.
+If set to true or "1", the report may calculate totals information and show percentage values for each row in relative to the total value.
 
-Default value: false
+Default value: 0
 
 #### Signature
 
