@@ -47,3 +47,6 @@ A Java client for the Piwik Tracking API is available on Github: [github.com/mat
 
 A C# client implementation of the Tracking API is available on Github at [github.com/matomo-org/piwik-dotnet-tracker](https://github.com/matomo-org/piwik-dotnet-tracker#piwik-c-tracking-api).
 
+### Other clients
+
+Other community contributed clients are available in C++, Python, Node.js, and more languages, or JavaScript Frameworks such as AngularJS, Vue.js, React, React native. [See all integrations with Matomo](https://matomo.org/integrate/#programming-language-platforms-and-frameworks) and let us know if you hear (or create) a new one!
