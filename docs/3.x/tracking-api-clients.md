@@ -49,4 +49,4 @@ A C# client implementation of the Tracking API is available on Github at [github
 
 ### Other clients
 
-Other community contributed clients are available in C++, Python, Node.js, and more languages, or JavaScript Frameworks such as AngularJS, Vue.js, React, React native. [See all integrations with Matomo](https://matomo.org/integrate/#programming-language-platforms-and-frameworks) and let us know if you hear (or create) a new one!
+Other community contributed clients are also available in C++, Python, Node.js, JavaScript Frameworks (AngularJS, Vue.js, React, React native...). [See all integrations with Matomo](https://matomo.org/integrate/#programming-language-platforms-and-frameworks). Please let us know if you hear about (or create!) a new SDK in your favorite technology!
