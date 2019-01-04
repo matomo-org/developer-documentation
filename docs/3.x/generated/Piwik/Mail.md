@@ -47,9 +47,11 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$body` ([`View`](../Piwik/View.md)) &mdash;
+    - `$body` ([`View`](../Piwik/View.md)|`string`) &mdash;
       
 - It does not return anything.
+- It throws one of the following exceptions:
+    - `DI\NotFoundException`
 
 <a name="setfrom" id="setfrom"></a>
 <a name="setFrom" id="setFrom"></a>
