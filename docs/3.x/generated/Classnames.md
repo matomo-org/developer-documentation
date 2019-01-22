@@ -138,6 +138,7 @@
 ## Plugins\Goals\Columns\Metrics\AverageOrderRevenue
 ## Plugins\Goals\Columns\Metrics\AveragePrice
 ## Plugins\Goals\Columns\Metrics\AverageQuantity
+## Plugins\Goals\Columns\Metrics\GoalConversionRate
 ## Plugins\Goals\Columns\Metrics\GoalSpecificProcessedMetric
 ## Plugins\Goals\Columns\Metrics\GoalSpecific\AverageOrderRevenue
 ## Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionRate

@@ -142,6 +142,7 @@ This is a complete list of available classes:
 - [`Plugins\Goals\Columns\Metrics\AverageOrderRevenue`](Piwik/Plugins/Goals/Columns/Metrics/AverageOrderRevenue.md) &mdash; The average value for each order.
 - [`Plugins\Goals\Columns\Metrics\AveragePrice`](Piwik/Plugins/Goals/Columns/Metrics/AveragePrice.md) &mdash; The average price for each ecommerce order or abandoned cart.
 - [`Plugins\Goals\Columns\Metrics\AverageQuantity`](Piwik/Plugins/Goals/Columns/Metrics/AverageQuantity.md) &mdash; The average amount of products in each order or abandoned cart.
+- [`Plugins\Goals\Columns\Metrics\GoalConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/GoalConversionRate.md) &mdash; The conversion rate for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecificProcessedMetric`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecificProcessedMetric.md) &mdash; Base class for processed metrics that are calculated using metrics that are specific to certain goals.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\AverageOrderRevenue`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/AverageOrderRevenue.md) &mdash; The average order revenue for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/ConversionRate.md) &mdash; The conversion rate for a specific goal.
