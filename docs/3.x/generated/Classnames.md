@@ -27,6 +27,7 @@
 ## DataTable\Filter\AddColumnsProcessedMetricsGoal
 ## DataTable\Filter\AddSegmentByLabel
 ## DataTable\Filter\AddSegmentByLabelMapping
+## DataTable\Filter\AddSegmentByRangeLabel
 ## DataTable\Filter\AddSegmentBySegmentValue
 ## DataTable\Filter\AddSegmentValue
 ## DataTable\Filter\AddSummaryRow

@@ -31,6 +31,7 @@ This is a complete list of available classes:
 - [`DataTable\Filter\AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; Adds goal related metrics to a DataTable using metrics that already exist.
 - [`DataTable\Filter\AddSegmentByLabel`](Piwik/DataTable/Filter/AddSegmentByLabel.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
 - [`DataTable\Filter\AddSegmentByLabelMapping`](Piwik/DataTable/Filter/AddSegmentByLabelMapping.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
+- [`DataTable\Filter\AddSegmentByRangeLabel`](Piwik/DataTable/Filter/AddSegmentByRangeLabel.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
 - [`DataTable\Filter\AddSegmentBySegmentValue`](Piwik/DataTable/Filter/AddSegmentBySegmentValue.md) &mdash; Converts for each row of a DataTable a segmentValue to a segment (expression).
 - [`DataTable\Filter\AddSegmentValue`](Piwik/DataTable/Filter/AddSegmentValue.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
 - [`DataTable\Filter\AddSummaryRow`](Piwik/DataTable/Filter/AddSummaryRow.md) &mdash; Adds a summary row to DataTables that contains the sum of all other table rows.
