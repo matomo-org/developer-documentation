@@ -1452,7 +1452,7 @@ Usages:
 
 ### Login.authenticate.failed
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1330](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1330)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1332](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1332)*
 
 
 
@@ -1505,7 +1505,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php) in line [468](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php#L468)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php) in line [471](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php#L471)*
 
 
 
@@ -3266,7 +3266,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1074](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1074)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1076](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1076)*
 
 
 
@@ -3280,7 +3280,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [923](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L923)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [925](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L925)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
