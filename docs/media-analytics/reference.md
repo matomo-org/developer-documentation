@@ -61,7 +61,7 @@ If you want to send this update more or less frequently, you can set a different
 ### `removePlayer(playerName)`
 
 If you do not want to track any media of a certain player, you can disable that player by calling this method.
-`playerName` should be either `'html5'`, `'vimeo'`, `'youtube'` or `'jwplayer'`.
+`playerName` should be either `'html5'`, `'vimeo'`, `'youtube'`, `'soundcloud'` or `'jwplayer'`.
 
 ### `addPlayer(playerName, player)`
 
