@@ -21,34 +21,40 @@ After you enter the appropriate information, a theme will be created for you in 
 
 ## Simple theming
 
-Piwik uses [LESS (Leaner CSS)](http://lesscss.org/) to compose CSS files, allowing for simple theming very easily.
-
 ### Colors and fonts
 
-Colors used in CSS are simple to override because they are often defined as [Less variables](http://lesscss.org/features/#variables-feature).
+Colors used in CSS are simple to override because they are defined as variables. These variables are defined in PHP because we also need to apply them to emails, PDF reports, exported images, etc.
 
-For example to change the background from white to black you can simply define the following variable:
+For example to change the background from white to black you can simply change the following variable in your `$YourPluginName.php` file. 
 
-```css
-@theme-color-background-base: #000;
+```php
+public function configureThemeVariables(Plugin\ThemeStyles $vars)
+{
+    $vars->colorBackgroundBase = '#000';
+}
 ```
 
 To change the link color to red you override the link variable:
 
-```css
-@theme-color-link: #f00;
+```php
+public function configureThemeVariables(Plugin\ThemeStyles $vars)
+{
+    $vars->colorLink = '#f00';
+}
 ```
 
 To change the font you override the font variable:
 
-```css
-@theme-fontFamily-base: Verdana, sans-serif;
+```php
+public function configureThemeVariables(Plugin\ThemeStyles $vars)
+{
+    $vars->fontFamilyBase = 'Verdana, sans-serif';
+}
 ```
 
 You get the point. The list of all variables that you can override is defined in the Morpheus plugin:
 
-- [base theme variables](https://github.com/matomo-org/matomo/blob/master/plugins/Morpheus/stylesheets/theme.less)
-- [advanced theme variables](https://github.com/matomo-org/matomo/blob/master/plugins/Morpheus/stylesheets/theme-advanced.less)
+- [ThemeStyles](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ThemeStyles.php)
 
 Although we do not recommend doing so, you can change the colors of a specific element directly, for example:
 
