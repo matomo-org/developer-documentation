@@ -75,6 +75,10 @@ to consider using the hlsjs plugin so HTML5 will be used instead of flash.
 
 The tracking of Vimeo videos works automatically if the video is embedded as an `<iframe>`.
 
+## Tracking SoundCloud audio
+
+The tracking of SoundCloud audio works automatically if the audio is embedded as an `<iframe>`.
+
 ## Tracking YouTube videos
 
 MediaAnalytics uses the [YouTube iFrame API](https://developers.google.com/youtube/iframe_api_reference).
