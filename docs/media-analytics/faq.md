@@ -13,6 +13,10 @@ You need to add `&enablejsapi=1` to the Youtube URLs: [read more about setting u
 
 Vimeo videos will be tracked by default if you use `<iframe>` embed code: [learn more about setting up Vimeo Analytics](/guides/media-analytics/setup#tracking-vimeo-videos).
 
+## How do I enable audio analytics for SoundCloud? 
+
+SoundCloud will be tracked by default if you use the `<iframe>` embed code.
+
 ## How do I enable HTML5 video analytics, and/or HTML5 audio analytics? 
 
 HTML5 videos and audio will be tracked by default, giving you a wide range of analytics reports for your HTML5 `<video>` and `<audio>` elements.
