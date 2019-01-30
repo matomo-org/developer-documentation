@@ -143,7 +143,7 @@ Usages:
 
 ### API.$pluginName.$methodName
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [205](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L205)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [206](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L206)*
 
 Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/events#apirequestdispatch)
 event is triggered. It can be used to modify the arguments passed to a **single** API method.
@@ -166,7 +166,7 @@ Callback Signature:
 
 ### API.$pluginName.$methodName.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [280](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L280)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [281](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L281)*
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
 [API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event. It can be used to modify the output of a **single**
@@ -222,7 +222,7 @@ Callback Signature:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [518](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L518)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [519](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L519)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
 
@@ -283,7 +283,7 @@ Usages:
 
 ### API.Request.dispatch
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [185](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L185)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [186](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L186)*
 
 Triggered before an API request is dispatched. This event can be used to modify the arguments passed to one or more API methods.
 
@@ -315,7 +315,7 @@ Usages:
 
 ### API.Request.dispatch.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [320](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L320)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [321](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L321)*
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
 
@@ -349,7 +349,7 @@ Callback Signature:
 
 ### API.Request.intercept
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [220](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L220)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [221](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L221)*
 
 Triggered before an API request is dispatched. Use this event to intercept an API request and execute your own code instead. If you set
 `$returnedValue` in a handler for this event, the original API method will not be executed,
@@ -785,7 +785,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [498](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L498)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [499](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L499)*
 
 Triggered after Piwik has been updated.
 
@@ -1803,7 +1803,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [521](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L521)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [522](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L522)*
 
 Event triggered after a plugin has been activated.
 
@@ -1835,7 +1835,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [1180](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L1180)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [1181](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L1181)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
@@ -3082,7 +3082,7 @@ Callback Signature:
 
 ### Updater.componentInstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [104](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L104)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [105](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L105)*
 
 Event triggered after a new component has been installed.
 
@@ -3094,7 +3094,7 @@ Callback Signature:
 
 ### Updater.componentUninstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [154](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L154)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [155](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L155)*
 
 Event triggered after a component has been uninstalled.
 
@@ -3106,7 +3106,7 @@ Callback Signature:
 
 ### Updater.componentUpdated
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [132](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L132)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [133](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L133)*
 
 Event triggered after a component has been updated. Can be used to handle logic that should be done after a component was updated
 
