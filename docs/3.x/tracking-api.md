@@ -126,6 +126,11 @@ Activity and consumption of your videos and audios can be measured via the param
 
 Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference).
 
+### Queued Tracking parameters
+
+[Queued Tracking](https://plugins.matomo.org/QueuedTracking) can scale your large traffic Matomo (Piwik) service by queuing tracking requests in Redis or Mysql for better performance and reliability when you experience peaks.
+
+* `queuedtracking` &mdash; When set to `0` (zero), the queued tracking handler won't be used and instead the tracking request will be executed directly. This can be useful when you need to debug a tracking problem or want to test that the tracking works in general.
 
 ### Other parameters
 
