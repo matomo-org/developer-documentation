@@ -1543,7 +1543,7 @@ Callback Signature:
 
 ### Mail.shouldSend
 
-*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Mail.php) in line [208](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Mail.php#L208)*
+*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Mail.php) in line [210](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Mail.php#L210)*
 
 This event is posted before sending an email. You can use it to abort sending a specific email, if you want.
 
