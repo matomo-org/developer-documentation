@@ -93,6 +93,7 @@ Piwik provides [ecommerce analytics](https://piwik.org/docs/ecommerce-analytics/
 *   `addEcommerceItem( productSKU, [productName], [productCategory], [price], [quantity] )` - Adds a product into the ecommerce order. Must be called for each product in the order.
 *   `removeEcommerceItem( productSKU )` - Removes the specified product from the untracked ecommerce order.
 *   `clearEcommerceCart()` - Removes all products in the untracked ecommerce order. _Note: this is done automatically after `trackEcommerceOrder()` is called.
+*   `getEcommerceItems()` - Returns all ecommerce items currently in the untracked ecommerce order. The returned array will be a copy, so changing it won't affect the ecommerce order. To affect what gets tracked, use the `addEcommerceItem()`/`removeEcommerceItem()`/`clearEcommerceCart()` methods. Use this method to see what will be tracked before you track an order or cart update.
 *   `trackEcommerceCartUpdate( grandTotal )` - Tracks a shopping cart. Call this javascript function every time a user is adding, updating or deleting a product from the cart.
 *   `trackEcommerceOrder( orderId, grandTotal, [subTotal], [tax], [shipping], [discount] )` - Tracks an Ecommerce order, including any ecommerce item previously added to the order. `orderId` and `grandTotal` (ie. revenue) are required parameters.
 
