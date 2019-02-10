@@ -754,7 +754,7 @@ eg `Notification\Manager::cancel($notificationId)`.
 
 ### Core.configFileChanged
 
-*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config.php) in line [402](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config.php#L402)*
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config.php) in line [412](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config.php#L412)*
 
 Triggered when a INI config file is changed on disk.
 
@@ -785,7 +785,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [499](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L499)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [496](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L496)*
 
 Triggered after Piwik has been updated.
 
