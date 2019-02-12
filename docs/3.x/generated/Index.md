@@ -1096,6 +1096,7 @@ Index
 - [`$subtable_controller_action`](Piwik/ViewDataTable/Config.md#$subtable_controller_action) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_pagination_control`](Piwik/ViewDataTable/Config.md#$show_pagination_control) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_offset_information`](Piwik/ViewDataTable/Config.md#$show_offset_information) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$segmented_visitor_log_segment_suffix`](Piwik/ViewDataTable/Config.md#$segmented_visitor_log_segment_suffix) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setDefaultSort()`](Piwik/ViewDataTable/RequestConfig.md#setdefaultsort) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`setCategoryId()`](Piwik/Widget/WidgetConfig.md#setcategoryid) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`setSubcategoryId()`](Piwik/Widget/WidgetConfig.md#setsubcategoryid) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)

@@ -129,6 +129,7 @@ This class defines the following properties:
 - [`$hide_annotations_view`](#$hide_annotations_view) &mdash; Controls whether annotations are shown or not.
 - [`$disable_all_rows_filter_limit`](#$disable_all_rows_filter_limit) &mdash; Controls whether the 'all' row limit option is shown for the limit selector.
 - [`$no_data_message`](#$no_data_message) &mdash; Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set
+- [`$segmented_visitor_log_segment_suffix`](#$segmented_visitor_log_segment_suffix) &mdash; Can be used to add a segment condition to the segment used to launch the segmented visitor log.
 - [`$report_id`](#$report_id)
 - [`$controllerName`](#$controllername)
 - [`$controllerAction`](#$controlleraction)
@@ -861,6 +862,22 @@ Controls whether the 'all' row limit option is shown for the limit selector.
 Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set
 
 Attention: Message will be printed raw. Don't forget to escape where needed!
+
+#### Signature
+
+- It is a `string` value.
+
+<a name="$segmented_visitor_log_segment_suffix" id="$segmented_visitor_log_segment_suffix"></a>
+<a name="segmented_visitor_log_segment_suffix" id="segmented_visitor_log_segment_suffix"></a>
+### `$segmented_visitor_log_segment_suffix`
+
+Can be used to add a segment condition to the segment used to launch the segmented visitor log.
+
+This can be useful if you'd like to have this segment condition applied ONLY to the segmented visitor
+log, and not to the report itself.
+
+Contrast with just setting the 'segment', if done this way, the segment will be applied to the report
+data as well, which may not be desired.
 
 #### Signature
 
