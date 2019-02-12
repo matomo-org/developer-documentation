@@ -1505,7 +1505,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php) in line [471](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php#L471)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php) in line [476](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php#L476)*
 
 
 
