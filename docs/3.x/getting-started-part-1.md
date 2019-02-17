@@ -75,7 +75,7 @@ If your computer is using a Debian based operating system, you can install all t
 
 <!-- NOTE TO YOU see below -->
 
-    $ sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml php7.0-mbstring
+    $ sudo apt-get install php7.2 php7.2-curl php7.2-gd php7.2-cli mysql-server php7.2-mysql php-xml php7.2-mbstring
 
 <!-- NOTE TO YOU :-) Please also update the instructions here: https://matomo.org/docs/requirements/ -->
 
