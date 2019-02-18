@@ -17,7 +17,7 @@ If you are building websites, you can use our powerful JavaScript SDK to measure
 
 ### iOS SDK
 
-If you are building iOS apps, you can use the Objective-C PiwikTracker client to send tracking data to your Piwik server.
+If you are building iOS apps, you can use the Swift PiwikTracker client (or the older Objective-C PiwikTracker) to send tracking data to your Piwik server.
 
 Learn more and download Piwik iOS SDK on Github at [github.com/matomo-org/piwik-sdk-ios](https://github.com/matomo-org/piwik-sdk-ios).
 
