@@ -143,7 +143,7 @@ Usages:
 
 ### API.$pluginName.$methodName
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [206](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L206)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [210](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L210)*
 
 Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/events#apirequestdispatch)
 event is triggered. It can be used to modify the arguments passed to a **single** API method.
@@ -166,7 +166,7 @@ Callback Signature:
 
 ### API.$pluginName.$methodName.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [281](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L281)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [285](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L285)*
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
 [API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event. It can be used to modify the output of a **single**
@@ -222,7 +222,7 @@ Callback Signature:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [519](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L519)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [523](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L523)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
 
@@ -254,7 +254,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [431](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L431)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [436](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L436)*
 
 Triggered when authenticating an API request, but only if the **token_auth** query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
 and make sure the global authentication object (the object returned by `StaticContainer::get('Piwik\Auth')`)
@@ -272,7 +272,7 @@ Usages:
 
 ### API.Request.authenticate.failed
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [437](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L437)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [442](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L442)*
 
 
 
@@ -283,7 +283,7 @@ Usages:
 
 ### API.Request.dispatch
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [186](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L186)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [190](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L190)*
 
 Triggered before an API request is dispatched. This event can be used to modify the arguments passed to one or more API methods.
 
@@ -315,7 +315,7 @@ Usages:
 
 ### API.Request.dispatch.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [321](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L321)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [325](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L325)*
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
 
@@ -349,7 +349,7 @@ Callback Signature:
 
 ### API.Request.intercept
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [221](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L221)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [225](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L225)*
 
 Triggered before an API request is dispatched. Use this event to intercept an API request and execute your own code instead. If you set
 `$returnedValue` in a handler for this event, the original API method will not be executed,
@@ -385,7 +385,7 @@ Callback Signature:
 
 ### ArchiveProcessor.shouldAggregateFromRawData
 
-*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [87](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L87)*
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [85](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L85)*
 
 Triggered to detect if the archiver should aggregate from raw data by using MySQL queries (when true) or by aggregate archives (when false). Typically, data is aggregated from raw data for "day" period, and
 aggregregated from archives for all other periods.
@@ -439,7 +439,7 @@ Callback Signature:
 
 ### Archiving.makeNewArchiverObject
 
-*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [316](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L316)*
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [314](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L314)*
 
 Triggered right after a new **plugin archiver instance** is created. Subscribers to this event can configure the plugin archiver, for example prevent the archiving of a plugin's data
 by calling `$archiver->disable()` method.
@@ -632,7 +632,7 @@ Usages:
 
 ### Config.badConfigurationFile
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [348](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L348)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [359](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L359)*
 
 Triggered when Piwik cannot access database data. This event can be used to start the installation process or to display a custom error
 message.
@@ -696,7 +696,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [576](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L576)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [587](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L587)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -712,7 +712,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [593](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L593)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [604](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L604)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -981,7 +981,7 @@ Callback Signature:
 
 ### Db.cannotConnectToDb
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [325](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L325)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [336](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L336)*
 
 Triggered when Piwik cannot connect to the database. This event can be used to start the installation process or to display a custom error
 message.
@@ -1106,7 +1106,7 @@ Triggered after all non-memory caches are cleared (eg, via the cache:clear comma
 
 ### FrontController.modifyErrorPage
 
-*Defined in [Piwik/ExceptionHandler](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ExceptionHandler.php) in line [133](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ExceptionHandler.php#L133)*
+*Defined in [Piwik/ExceptionHandler](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ExceptionHandler.php) in line [140](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ExceptionHandler.php#L140)*
 
 Triggered before a Piwik error page is displayed to the user. This event can be used to modify the content of the error page that is displayed when
 an exception is caught.
@@ -1786,7 +1786,7 @@ Usages:
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [413](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L413)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [424](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L424)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
 
@@ -2061,7 +2061,7 @@ Callback Signature:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [558](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L558)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [569](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L569)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -2082,7 +2082,7 @@ Usages:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [603](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L603)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [614](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L614)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -2096,7 +2096,7 @@ Callback Signature:
 
 ### Request.dispatchCoreAndPluginUpdatesScreen
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [363](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L363)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [374](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L374)*
 
 Triggered just after the platform is initialized and plugins are loaded. This event can be used to do early initialization.
 
@@ -2109,7 +2109,7 @@ Usages:
 
 ### Request.getRenamedModuleAndAction
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [170](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L170)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [172](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L172)*
 
 This event is posted in the Request dispatcher and can be used to overwrite the Module and Action to dispatch. This is useful when some Controller methods or API methods have been renamed or moved to another plugin.
 
@@ -2160,7 +2160,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [670](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L670)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [681](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L681)*
 
 Triggered before the user is authenticated, when the global authentication object should be created. Plugins that provide their own authentication implementation should use this event
 to set the global authentication object (which must derive from [Auth](/api-reference/Piwik/Auth)).
@@ -2178,7 +2178,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [634](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L634)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [639](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L639)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted based on the `filter_sort_column` query parameter, rows are truncated based on the `filter_limit`/`filter_offset` parameters, amongst other things). If you're creating a plugin that needs to disable post processing entirely for
 certain requests, use this event.
@@ -3142,7 +3142,7 @@ Usages:
 
 ### User.isNotAuthorized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [172](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L172)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [178](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L178)*
 
 Triggered when a user with insufficient access permissions tries to view some resource. This event can be used to customize the error that occurs when a user is denied access
 (for example, displaying an error message, redirecting to a page other than login, etc.).
@@ -3298,7 +3298,7 @@ Callback Signature:
 
 ### ViewDataTable.configure
 
-*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [262](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php#L262)*
+*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [260](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php#L260)*
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed.
