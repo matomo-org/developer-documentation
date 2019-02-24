@@ -67,7 +67,8 @@ This class defines the following properties:
 - [`$hide_annotations_view`](#$hide_annotations_view) &mdash; Controls whether annotations are shown or not. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$disable_all_rows_filter_limit`](#$disable_all_rows_filter_limit) &mdash; Controls whether the 'all' row limit option is shown for the limit selector. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$no_data_message`](#$no_data_message) &mdash; Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
-- [`$segmented_visitor_log_segment_suffix`](#$segmented_visitor_log_segment_suffix) &mdash; Can be used to add a segment condition to the segment used to launch the segmented visitor log. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
+- [`$datatable_actions`](#$datatable_actions) &mdash; List of extra actions to display as icons in the datatable footer. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
+- [`$segmented_visitor_log_segment_suffix`](#$segmented_visitor_log_segment_suffix) Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$report_id`](#$report_id) Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$controllerName`](#$controllername) Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$controllerAction`](#$controlleraction) Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
@@ -805,21 +806,26 @@ Attention: Message will be printed raw. Don't forget to escape where needed!
 
 - It is a `string` value.
 
+<a name="$datatable_actions" id="$datatable_actions"></a>
+<a name="datatable_actions" id="datatable_actions"></a>
+### `$datatable_actions`
+
+List of extra actions to display as icons in the datatable footer.
+
+Not API yet.
+
+#### Signature
+
+- It is a `array` value.
+
 <a name="$segmented_visitor_log_segment_suffix" id="$segmented_visitor_log_segment_suffix"></a>
 <a name="segmented_visitor_log_segment_suffix" id="segmented_visitor_log_segment_suffix"></a>
 ### `$segmented_visitor_log_segment_suffix`
 
-Can be used to add a segment condition to the segment used to launch the segmented visitor log.
-
-This can be useful if you'd like to have this segment condition applied ONLY to the segmented visitor
-log, and not to the report itself.
-
-Contrast with just setting the 'segment', if done this way, the segment will be applied to the report
-data as well, which may not be desired.
-
 #### Signature
 
-- It is a `string` value.
+- Its type is not specified.
+
 
 <a name="$report_id" id="$report_id"></a>
 <a name="report_id" id="report_id"></a>

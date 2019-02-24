@@ -213,6 +213,7 @@ Index
 - [`$datatable_css_class`](Piwik/ViewDataTable/Config.md#$datatable_css_class) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$datatable_js_type`](Piwik/ViewDataTable/Config.md#$datatable_js_type) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$disable_all_rows_filter_limit`](Piwik/ViewDataTable/Config.md#$disable_all_rows_filter_limit) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$datatable_actions`](Piwik/ViewDataTable/Config.md#$datatable_actions) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`disablePivotBySubtableIfTableHasNoSubtables()`](Piwik/ViewDataTable/Config.md#disablepivotbysubtableiftablehasnosubtables) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$disable_generic_filters`](Piwik/ViewDataTable/RequestConfig.md#$disable_generic_filters) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`$disable_queued_filters`](Piwik/ViewDataTable/RequestConfig.md#$disable_queued_filters) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
