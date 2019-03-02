@@ -520,6 +520,8 @@ The template should contain tags that will be replaced with localized date strin
 -  It accepts the following parameter(s):
     - `$template` (`string`) &mdash;
        eg. `"MMM y"`
+    - `$ucfirst` (`bool`) &mdash;
+       whether the first letter should be upper-cased
 
 - *Returns:*  `string` &mdash;
     eg. `"Aug 2009"`
