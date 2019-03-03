@@ -1219,6 +1219,21 @@ Usages:
 
 ### LanguageManager.getAvailableLanguages
 
+*Defined in [Piwik/Plugins/LanguagesManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/API.php) in line [90](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/API.php#L90)*
+
+Hook called after loading available language files.
+
+Callback Signature:
+<pre><code>function(&amp;$languages)</code></pre>
+
+- array
+
+## LanguagesManager
+
+- [LanguagesManager.getAvailableLanguages](#languagesmanagergetavailablelanguages)
+
+### LanguagesManager.getAvailableLanguages
+
 *Defined in [Piwik/Plugins/LanguagesManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/API.php) in line [81](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/API.php#L81)*
 
 Hook called after loading available language files. Use this hook to customise the list of languagesPath available in Matomo.
