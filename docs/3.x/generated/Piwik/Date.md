@@ -68,6 +68,7 @@ The class defines the following methods:
 - [`isToday()`](#istoday) &mdash; Returns `true` if current date is today.
 - [`now()`](#now) &mdash; Returns a date object set to now in UTC (same as [today()](/api-reference/Piwik/Date#today), except that the time is also set).
 - [`today()`](#today) &mdash; Returns a date object set to today at midnight in UTC.
+- [`tomorrow()`](#tomorrow) &mdash; Returns a date object set to tomorrow at midnight in UTC.
 - [`yesterday()`](#yesterday) &mdash; Returns a date object set to yesterday at midnight in UTC.
 - [`yesterdaySameTime()`](#yesterdaysametime) &mdash; Returns a date object set to yesterday with the current time of day in UTC.
 - [`setTime()`](#settime) &mdash; Returns a new Date instance with `$this` date's day and the specified new time of day.
@@ -387,6 +388,16 @@ Returns a date object set to now in UTC (same as [today()](/api-reference/Piwik/
 ### `today()`
 
 Returns a date object set to today at midnight in UTC.
+
+#### Signature
+
+- It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="tomorrow" id="tomorrow"></a>
+<a name="tomorrow" id="tomorrow"></a>
+### `tomorrow()`
+
+Returns a date object set to tomorrow at midnight in UTC.
 
 #### Signature
 

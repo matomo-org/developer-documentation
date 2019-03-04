@@ -41,6 +41,7 @@ Methods
 The class defines the following methods:
 
 - [`rescheduleTask()`](#rescheduletask) &mdash; Determines a task's scheduled time and persists it, overwriting the previous scheduled time.
+- [`rescheduleTaskAndRunTomorrow()`](#rescheduletaskandruntomorrow) &mdash; Determines a task's scheduled time and persists it, overwriting the previous scheduled time.
 
 <a name="rescheduletask" id="rescheduletask"></a>
 <a name="rescheduleTask" id="rescheduleTask"></a>
@@ -50,6 +51,24 @@ Determines a task's scheduled time and persists it, overwriting the previous sch
 
 Call this method if your task's scheduled time has changed due to, for example, an option that
 was changed.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$task` ([`Task`](../../Piwik/Scheduler/Task.md)) &mdash;
+       Describes the scheduled task being rescheduled.
+- It does not return anything.
+
+<a name="rescheduletaskandruntomorrow" id="rescheduletaskandruntomorrow"></a>
+<a name="rescheduleTaskAndRunTomorrow" id="rescheduleTaskAndRunTomorrow"></a>
+### `rescheduleTaskAndRunTomorrow()`
+
+Determines a task's scheduled time and persists it, overwriting the previous scheduled time.
+
+Call this method if your task's scheduled time has changed due to, for example, an option that
+was changed.
+
+The task will be run the first time tomorrow.
 
 #### Signature
 
