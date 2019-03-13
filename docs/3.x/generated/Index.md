@@ -678,6 +678,7 @@ Index
 - [`getProperties()`](Piwik/ViewDataTable/RequestConfig.md#getproperties) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiModuleToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimoduletorequest) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getApiMethodToRequest()`](Piwik/ViewDataTable/RequestConfig.md#getapimethodtorequest) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`getExtraParametersToSet()`](Piwik/ViewDataTable/RequestConfig.md#getextraparameterstoset) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`getTemplateVars()`](Piwik/View/UIControl.md#gettemplatevars) &mdash; *Method in class* [`UIControl`](Piwik/View/UIControl.md)
 - [`getClientSideProperties()`](Piwik/View/UIControl.md#getclientsideproperties) &mdash; *Method in class* [`UIControl`](Piwik/View/UIControl.md)
 - [`getClientSideParameters()`](Piwik/View/UIControl.md#getclientsideparameters) &mdash; *Method in class* [`UIControl`](Piwik/View/UIControl.md)
