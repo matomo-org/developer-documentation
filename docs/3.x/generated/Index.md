@@ -511,6 +511,8 @@ Index
 - [`getActionId()`](Piwik/Plugin/Dimension/ActionDimension.md#getactionid) &mdash; *Method in class* [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
 - [`getRequiredVisitFields()`](Piwik/Plugin/Dimension/VisitDimension.md#getrequiredvisitfields) &mdash; *Method in class* [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`getAllDimensions()`](Piwik/Plugin/Dimension/VisitDimension.md#getalldimensions) &mdash; *Method in class* [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
+- [`getPluginsDirectories()`](Piwik/Plugin/Manager.md#getpluginsdirectories) &mdash; *Method in class* [`Manager`](Piwik/Plugin/Manager.md)
+- [`getPluginDirectory()`](Piwik/Plugin/Manager.md#getplugindirectory) &mdash; *Method in class* [`Manager`](Piwik/Plugin/Manager.md)
 - [`getThemeEnabled()`](Piwik/Plugin/Manager.md#getthemeenabled) &mdash; *Method in class* [`Manager`](Piwik/Plugin/Manager.md)
 - [`getInstalledPluginsName()`](Piwik/Plugin/Manager.md#getinstalledpluginsname) &mdash; *Method in class* [`Manager`](Piwik/Plugin/Manager.md)
 - [`getMissingPlugins()`](Piwik/Plugin/Manager.md#getmissingplugins) &mdash; *Method in class* [`Manager`](Piwik/Plugin/Manager.md)

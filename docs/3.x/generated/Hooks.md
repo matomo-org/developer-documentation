@@ -467,7 +467,7 @@ Callback Signature:
 
 ### AssetManager.addStylesheets
 
-*Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [100](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L100)*
+*Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [101](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L101)*
 
 Triggered after all less stylesheets are concatenated into one long string but before it is minified and merged into one file. This event can be used to add less stylesheets that are not located in a file on the disc.
 
@@ -528,7 +528,7 @@ Usages:
 
 ### AssetManager.filterMergedStylesheets
 
-*Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [140](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L140)*
+*Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [141](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L141)*
 
 Triggered after all less stylesheets are compiled to CSS, minified and merged into one file, but before the generated CSS is written to disk. This event can be used to modify merged CSS.
 
@@ -785,7 +785,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [496](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L496)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [506](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L506)*
 
 Triggered after Piwik has been updated.
 
@@ -1818,7 +1818,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [522](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L522)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [671](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L671)*
 
 Event triggered after a plugin has been activated.
 
@@ -1834,7 +1834,7 @@ Usages:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [357](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L357)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [503](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L503)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -1850,7 +1850,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [1181](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L1181)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [1331](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L1331)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
@@ -1866,7 +1866,7 @@ Usages:
 
 ### PluginManager.pluginUninstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [446](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L446)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [592](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L592)*
 
 Event triggered after a plugin has been uninstalled.
 
@@ -3097,7 +3097,7 @@ Callback Signature:
 
 ### Updater.componentInstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [105](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L105)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [111](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L111)*
 
 Event triggered after a new component has been installed.
 
@@ -3109,7 +3109,7 @@ Callback Signature:
 
 ### Updater.componentUninstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [155](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L155)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [161](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L161)*
 
 Event triggered after a component has been uninstalled.
 
@@ -3121,7 +3121,7 @@ Callback Signature:
 
 ### Updater.componentUpdated
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [133](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L133)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [139](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L139)*
 
 Event triggered after a component has been updated. Can be used to handle logic that should be done after a component was updated
 

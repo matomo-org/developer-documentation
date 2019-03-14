@@ -12,6 +12,8 @@ The class defines the following methods:
 
 - [`isPluginActivated()`](#ispluginactivated) &mdash; Returns `true` if a plugin has been activated.
 - [`isPluginLoaded()`](#ispluginloaded) &mdash; Returns `true` if plugin is loaded (in memory).
+- [`getPluginsDirectories()`](#getpluginsdirectories) &mdash; Returns the path to all plugins directories.
+- [`getPluginDirectory()`](#getplugindirectory) &mdash; Gets the path to a specific plugin.
 - [`getThemeEnabled()`](#getthemeenabled) &mdash; Returns the currently enabled theme.
 - [`loadAllPluginsAndGetTheirInfo()`](#loadallpluginsandgettheirinfo) &mdash; Returns info regarding all plugins.
 - [`getInstalledPluginsName()`](#getinstalledpluginsname) &mdash; Return names of all installed plugins.
@@ -42,6 +44,37 @@ Returns `true` if plugin is loaded (in memory).
     - `$name` (`string`) &mdash;
        Name of plugin, eg, `'Acions'`.
 - It returns a `bool` value.
+
+<a name="getpluginsdirectories" id="getpluginsdirectories"></a>
+<a name="getPluginsDirectories" id="getPluginsDirectories"></a>
+### `getPluginsDirectories()`
+
+Returns the path to all plugins directories.
+
+Each plugins directory may contain several plugins.
+All paths have a trailing slash '/'.
+
+#### Signature
+
+- It returns a `string[]` value.
+
+<a name="getplugindirectory" id="getplugindirectory"></a>
+<a name="getPluginDirectory" id="getPluginDirectory"></a>
+### `getPluginDirectory()`
+
+Gets the path to a specific plugin.
+
+If the plugin does not exist in any plugins folder, the default plugins
+folder will be assumed.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$pluginName` (`Piwik\Plugin\$pluginName`) &mdash;
+      
+
+- *Returns:*  `mixed`|`string` &mdash;
+    
 
 <a name="getthemeenabled" id="getthemeenabled"></a>
 <a name="getThemeEnabled" id="getThemeEnabled"></a>
