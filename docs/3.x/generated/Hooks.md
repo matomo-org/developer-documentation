@@ -1467,7 +1467,7 @@ Usages:
 
 ### Login.authenticate.failed
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1343](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1343)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1345](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1345)*
 
 
 
@@ -3281,7 +3281,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1087](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1087)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1089](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1089)*
 
 
 
@@ -3295,7 +3295,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [936](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L936)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [938](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L938)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
