@@ -215,6 +215,7 @@ These HTTP Tracking API parameters can be used to track the usage of media:
 * `ma_w`  - The resolution width of the media in pixels. Only recommended being set for videos.
 * `ma_h`  - The resolution height of the media in pixels. Only recommended being set for videos.
 * `ma_fs` - Should be `0` or `1` and defines whether the media is currently viewed in full screen. Only recommended being set for videos.
+* `ma_se` - An optional comma separated list of which positions within a media a user has played. For example if the user has viewed position 5s, 10s, 15s and 35s, then you would need to send `5,10,15,35`. We recommend to round to the next 5 seconds and not send a value for each second. Internally, Matomo may round to the next 15 or 30 seconds. For performance optimisation we recommend not sending the same position twice. Meaning if you have sent `ma_se=10`  there is no need to send later `ma_se=10,20` but instead only `ma_se=20`.
 
 ### Example request to track a media impression 
 
