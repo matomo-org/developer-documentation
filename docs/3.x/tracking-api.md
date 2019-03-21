@@ -122,7 +122,7 @@ Analytics for your Media content (video players and audio players) can be record
 using the premium [Media Analytics](https://plugins.piwik.org/MediaAnalytics) plugin's HTTP Tracking API parameters.
 
 Activity and consumption of your videos and audios can be measured via the parameters `ma_id`, `ma_ti`, `ma_re`,
-`ma_mt` , `ma_pn`, `ma_st`, `ma_le`, `ma_ps`, `ma_ttp`, `ma_w`, `ma_h`, `ma_fs`.
+`ma_mt` , `ma_pn`, `ma_st`, `ma_le`, `ma_ps`, `ma_ttp`, `ma_w`, `ma_h`, `ma_fs`, `ma_se`.
 
 Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference).
 
