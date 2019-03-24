@@ -26,7 +26,7 @@ You can, for example, get the list of countries where most of your visitors in t
 // You can get the token on the API page inside your Matomo interface
 $token_auth = 'anonymous';
 
-// we call the REST API and request the 100 first keywords for the last month for the idsite=7
+// we call the REST API and request the 100 first keywords for the last month for the idsite=62
 $url = "https://demo.matomo.org/";
 $url .= "?module=API&method=UserCountry.getCountry";
 $url .= "&idSite=62&period=month&date=today";
