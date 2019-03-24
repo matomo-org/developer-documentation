@@ -14,10 +14,10 @@ If you want to request data in any language (PHP, Python, Ruby, ASP, C++, Java, 
 <div markdown="1" class="alert alert-warning">
 **Security Notice**
 
-If the API call requires the token_auth and the HTTP request is sent over untrusted networks, we highly advise that you use an encrypted request. Otherwise, your token\_auth is exposed to eavesdroppers. This can be done using https instead of http. In the following example, replace the string "http" by "https".
+If the API call requires the token_auth and the HTTP request is sent over untrusted networks, we highly advise that you use an encrypted request. Otherwise, your token\_auth is exposed to eavesdroppers. This can be done by using https instead of http.
 </div>
 
-You can, for example, get the top 100 search engine keywords used to find your website during the current week. Here is an example in PHP:
+You can, for example, get the list of countries where most of your visitors in the current month are from. Here is an example in PHP:
 
 ```php
 <?php
