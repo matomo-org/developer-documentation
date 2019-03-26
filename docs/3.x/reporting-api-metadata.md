@@ -101,15 +101,15 @@ URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=Resolution&a
 
 *   Example: Pie Chart with Custom Colors
 
-    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&columns=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D)
+    ![](https://demo.matomo.org/index.php?module=API&method=ImageGraph.get&idSite=62&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&columns=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D)
 
-URL: `index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&columns=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D`
+URL: `index.php?module=API&method=ImageGraph.get&idSite=62&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=500&height=250&columns=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D`
 
 *   Example: Line chart of Custom Variables names and values, filtered to show only custom variable containing the string "logged"
 
-    ![](https://demo.piwik.org/?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*)
+    ![](https://demo.matomo.org/?module=API&method=ImageGraph.get&idSite=62&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*)
 
-URL: `index.php?module=API&method=ImageGraph.get&idSite=7&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*`
+URL: `index.php?module=API&method=ImageGraph.get&idSite=62&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*`
 
 
 The static Graphs API requires the standard Piwik parameters (idSite, date, period, etc.) but also accepts the following parameters:
