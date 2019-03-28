@@ -107,6 +107,12 @@ To solve this, the `--force` option will force to execute all tasks, even those 
 $ ./console core:run-scheduled-tasks --force --token-auth=YOUR_TOKEN_AUTH
 ```
 
+It is also possible to force a single task to execute, by passing the task name as an argument.
+
+```
+$ ./console core:run-scheduled-tasks Namespace\To\Your\Tasks.yourTaskName --token-auth=YOUR_TOKEN_AUTH
+```
+
 Remember that manually testing your scheduled task is just the first step: adding [unit or integration tests](/guides/tests-php) is the best way to avoid regressions.
 
 ## Which tasks are registered and when is the next execution time of my task?
