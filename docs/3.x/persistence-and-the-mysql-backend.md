@@ -122,7 +122,7 @@ Visit actions contain the following information:
 - `idaction_url_ref`: the ID of the URL action type for the previous action in the visit
 - `idaction_name`: the ID of the page title action type for this action
 - `idaction_name_ref`: the ID of the page title action type for the previous action in the visit
-- `time_spent_ref_action`: the amount of time spent doing the previous action
+- `time_spent_ref_action`: the amount of time spent doing the previous action (in seconds)
 - `custom_var_k1`: the custom variable name of the first slot for page custom variables
 - `custom_var_v1`: the custom variable value of the first slot for page custom variables
 - `custom_var_k2`: the custom variable name of the second slot for page custom variables
@@ -142,6 +142,8 @@ The `idsite` and `idvisitor` columns are copied from the visit action's associat
 The `index_idvisit` index allows Piwik to quickly query the visit actions for a visit.
 
 The `index_idsite_servertime` index is used when aggregating visit actions. It allows quick access to the visit actions that were tracked for a specific website during a specific period and lets us avoid a table scan through the whole table.
+
+The `time_spent_ref_action` column contains the time spent by the visitor on her previous pageview. The previous pageview's Page URL as defined by `idaction_url_ref`  and previous pageview's Page Title as defined by `idaction_name_ref`. So to get the Time spent on a particular Page URL: first get the corresponding `idaction_url` value for this Page URL, then query eg. `SELECT count(*) as page_hits, sum(time_spent_ref_action) as total_time_spent_in_seconds FROM log_link_visit_action WHERE idaction_url_ref = IDACTION_URL_ID_HERE`
 
 <a name="log-data-persistence-action-types"></a>
 ### Action Types
