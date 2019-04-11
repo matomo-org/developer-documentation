@@ -192,8 +192,12 @@ Follow these steps to enable and view debug logging for the tracker:
 
         [Tracker]
         debug = 1
+        
+Since Matomo 3.10 to enable the profiling of SQL queries you additionally need to enable:
 
-
+        [Tracker]
+        enable_sql_profiler = 1
+        
 2. Look at the HTTP requests that are sent to Piwik.
     * If the requests take place in a browser, you can use a tool like the [Firebug](https://getfirebug.com/) to see all requests to **piwik.php**.
     * If the requests are triggered from your app or software directly, you can output or log the output of tracking requests and to view the debug messages.
