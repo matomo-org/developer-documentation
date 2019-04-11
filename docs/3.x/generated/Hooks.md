@@ -1884,6 +1884,7 @@ Usages:
 - [PrivacyManager.deleteDataSubjects](#privacymanagerdeletedatasubjects)
 - [PrivacyManager.deleteLogsOlderThan](#privacymanagerdeletelogsolderthan)
 - [PrivacyManager.exportDataSubjects](#privacymanagerexportdatasubjects)
+- [PrivacyManager.shouldIgnoreDnt](#privacymanagershouldignorednt)
 
 ### PrivacyManager.deleteDataSubjects
 
@@ -1952,6 +1953,16 @@ Callback Signature:
 - array `&$results` An array containing the exported data subjects.
 
 - array `$visits` An array with multiple visit entries containing an idvisit and idsite each. The data for these visits is requested to be exported.
+
+
+### PrivacyManager.shouldIgnoreDnt
+
+*Defined in [Piwik/Plugins/PrivacyManager/DoNotTrackHeaderChecker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/DoNotTrackHeaderChecker.php) in line [74](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/DoNotTrackHeaderChecker.php#L74)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$shouldIgnore)</code></pre>
 
 ## Provider
 
