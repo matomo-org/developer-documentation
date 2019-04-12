@@ -113,7 +113,7 @@ method to detect the title of a video or audio manually based on your own custom
 By default, Matomo will stop tracking a particular video once it has been tracked for 3 hours since the first tracking request
 of the video or audio. To record media longer or than this or stop tracking earlier, call this method. Recording videos longer
 than 3 hours may be useful if your users actually are engaging with your media for that long. Setting a lower value may be
-useful if you are seeing many viewed media in the visitor log for example if your media player is playing a playlist.
+useful if you are seeing many viewed media in the visits log for example if your media player is playing a playlist.
 
 ### `mediaType`
 
@@ -139,7 +139,7 @@ You can access this property as follows: `Piwik.MediaAnalytics.mediaType.VIDEO`.
 ### `disableTrackEvents()`
 
 Disables the tracking of events like `play`, `pause` or `resume` while still tracking the media usage. When calling 
-this method no events for your media will be shown in "Actions => Events" and neither in the [Visitor log](https://piwik.org/docs/user-profile/).
+this method no events for your media will be shown in "Actions => Events" and neither in the [Visits log](https://piwik.org/docs/user-profile/).
 
 Example:
 
