@@ -197,7 +197,7 @@ _paq.push(['MediaAnalytics.disableTrackEvents']);
 
 This will stop the tracking of any action events, while still tracking the usage of the videos and audio itself. This means
 you will still get all media reports that are listed under the menu category "Media" but won't get to see any media events in the 
-Visitor Log or in the "Action => Events" report.
+Visits Log or in the "Action => Events" report.
  
 It is recommended to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`
 
@@ -210,7 +210,7 @@ _paq.push(['MediaAnalytics.disableTrackProgress']);
 ```
 
 This will stop tracking any media progress. Under the menu category "Media", most reports will not show any data. 
-The Visitor Log and the "Actions => Events" report will still show data unless you disable the tracking of events as well (see above).
+The Visits Log and the "Actions => Events" report will still show data unless you disable the tracking of events as well (see above).
  
 It is recommended to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`
 
