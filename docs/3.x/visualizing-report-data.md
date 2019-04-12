@@ -21,7 +21,7 @@ Users can switch visualizations by clicking on one of the icons displayed below 
 
 ![](/img/report-visualizations.png)
 
-These icons are called **footer icons**. Not all visualizations have to be available in this manner. For example, the [Visitor Log](https://piwik.org/docs/real-time/) uses its own visualization, but since it can only use data from one report (`Live.getLastVisitsDetails`) it is not available in the footer of other reports.
+These icons are called **footer icons**. Not all visualizations have to be available in this manner. For example, the [Visit Log](https://piwik.org/docs/real-time/) uses its own visualization, but since it can only use data from one report (`Live.getLastVisitsDetails`) it is not available in the footer of other reports.
 
 To learn more about the controls that surround a visualization in most report displays, [read the user documentation for report visualizations](https://piwik.org/docs/piwik-tour/#a-look-at-a-piwik-report).
 
