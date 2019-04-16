@@ -1818,7 +1818,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [671](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L671)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [670](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L670)*
 
 Event triggered after a plugin has been activated.
 
@@ -1834,7 +1834,7 @@ Usages:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [503](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L503)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [502](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L502)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -1850,7 +1850,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [1331](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L1331)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [1330](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L1330)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
@@ -1866,7 +1866,7 @@ Usages:
 
 ### PluginManager.pluginUninstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [592](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L592)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php) in line [591](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Manager.php#L591)*
 
 Event triggered after a plugin has been uninstalled.
 
