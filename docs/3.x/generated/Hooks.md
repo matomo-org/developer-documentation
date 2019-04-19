@@ -3320,14 +3320,18 @@ Callback Signature:
 ## ViewDataTable
 
 - [ViewDataTable.configure](#viewdatatableconfigure)
+- [ViewDataTable.configure.end](#viewdatatableconfigureend)
 - [ViewDataTable.filterViewDataTable](#viewdatatablefilterviewdatatable)
 
 ### ViewDataTable.configure
 
-*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [260](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php#L260)*
+*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [263](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php#L263)*
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed.
+
+This event is triggered before view configuration properties are overwritten by saved settings or request
+parameters. Use this to define default values.
 
 Plugins that define their own reports must subscribe to this event in order to
 specify how the Piwik UI should display the report.
@@ -3353,6 +3357,36 @@ Callback Signature:
 Usages:
 
 [Actions::configureViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Actions/Actions.php#L157), [Events::configureViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Events/Events.php#L130)
+
+
+### ViewDataTable.configure.end
+
+*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [305](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php#L305)*
+
+Triggered after [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
+the view based on the report that is being displayed.
+
+This event is triggered after all view configuration values have been overwritten by saved settings or
+request parameters. Use this if you need to work with the final configuration values.
+
+Plugins that define their own reports can subscribe to this event in order to
+specify how the Piwik UI should display the report.
+
+**Example**
+
+    // event handler
+    public function configureViewDataTableEnd(ViewDataTable $view)
+    {
+        if ($view->requestConfig->apiMethodToRequestDataTable == 'VisitTime.getVisitInformationPerServerTime'
+            && $view->requestConfig->flat == 1) {
+                $view->config->show_header_message = 'You are viewing this report flattened';
+        }
+    }
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
+- [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) `$view` The instance to configure.
 
 
 ### ViewDataTable.filterViewDataTable
