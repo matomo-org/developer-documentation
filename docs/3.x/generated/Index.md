@@ -613,6 +613,7 @@ Index
 - [`getSegmentExpression()`](Piwik/Segment.md#getsegmentexpression) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getString()`](Piwik/Segment.md#getstring) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getHash()`](Piwik/Segment.md#gethash) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
+- [`getSegmentHash()`](Piwik/Segment.md#getsegmenthash) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getSelectQuery()`](Piwik/Segment.md#getselectquery) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getPiwikUrl()`](Piwik/SettingsPiwik.md#getpiwikurl) &mdash; *Method in class* [`SettingsPiwik`](Piwik/SettingsPiwik.md)
 - [`getConfigSectionName()`](Piwik/Settings/Plugin/SystemConfigSetting.md#getconfigsectionname) &mdash; *Method in class* [`SystemConfigSetting`](Piwik/Settings/Plugin/SystemConfigSetting.md)

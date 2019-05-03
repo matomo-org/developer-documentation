@@ -48,6 +48,7 @@ The class defines the following methods:
 - [`willBeArchived()`](#willbearchived) &mdash; Detects whether the Piwik instance is configured to be able to archive this segment.
 - [`getString()`](#getstring) &mdash; Returns the segment condition.
 - [`getHash()`](#gethash) &mdash; Returns a hash of the segment condition, or the empty string if the segment condition is empty.
+- [`getSegmentHash()`](#getsegmenthash)
 - [`getSelectQuery()`](#getselectquery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
 - [`__toString()`](#__tostring) &mdash; Returns the segment string.
 - [`combine()`](#combine) &mdash; Combines this segment with another segment condition, if the segment condition is not already in the segment.
@@ -122,6 +123,17 @@ Returns a hash of the segment condition, or the empty string if the segment cond
 #### Signature
 
 - It returns a `string` value.
+
+<a name="getsegmenthash" id="getsegmenthash"></a>
+<a name="getSegmentHash" id="getSegmentHash"></a>
+### `getSegmentHash()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$definition`
+      
+- It does not return anything.
 
 <a name="getselectquery" id="getselectquery"></a>
 <a name="getSelectQuery" id="getSelectQuery"></a>
