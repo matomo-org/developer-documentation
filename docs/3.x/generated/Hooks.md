@@ -1888,7 +1888,7 @@ Usages:
 
 ### PrivacyManager.deleteDataSubjects
 
-*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [105](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L105)*
+*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [108](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L108)*
 
 Lets you delete data subjects to make your plugin GDPR compliant. This can be useful if you have developed a plugin which stores any data for visits but doesn't
 use any core logic to store this data. If core API's are used, for example log tables, then the data may
@@ -1931,7 +1931,7 @@ Callback Signature:
 
 ### PrivacyManager.exportDataSubjects
 
-*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [367](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L367)*
+*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [416](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L416)*
 
 Lets you enrich the data export for one or multiple data subjects to make your plugin GDPR compliant. This can be useful if you have developed a plugin which stores any data for visits but doesn't
 use any core logic to store this data. If core API's are used, for example log tables, then the data may
