@@ -2077,6 +2077,7 @@ Callback Signature:
 
 - [Request.dispatch](#requestdispatch)
 - [Request.dispatch.end](#requestdispatchend)
+- [Request.dispatch.end](#requestdispatchend)
 - [Request.dispatchCoreAndPluginUpdatesScreen](#requestdispatchcoreandpluginupdatesscreen)
 - [Request.getRenamedModuleAndAction](#requestgetrenamedmoduleandaction)
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
@@ -2104,6 +2105,16 @@ Callback Signature:
 Usages:
 
 [CustomAlerts::checkControllerPermission](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L45), [Installation::dispatchIfNotInstalledYet](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Installation.php#L62), [LanguagesManager::initLanguage](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L94), [SitesManager::redirectDashboardToWelcomePage](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L57)
+
+
+### Request.dispatch.end
+
+*Defined in [Piwik/Plugins/TwoFactorAuth/tests/System/TwoFactorAuthTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/tests/System/TwoFactorAuthTest.php) in line [67](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/tests/System/TwoFactorAuthTest.php#L67)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$html, &#039;module&#039;, &#039;action&#039;, function())</code></pre>
 
 
 ### Request.dispatch.end
