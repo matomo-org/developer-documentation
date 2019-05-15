@@ -381,6 +381,7 @@ The class defines the following methods:
 - [`setDefaultSort()`](#setdefaultsort)
 - [`getApiModuleToRequest()`](#getapimoduletorequest)
 - [`getApiMethodToRequest()`](#getapimethodtorequest)
+- [`getRequestParam()`](#getrequestparam)
 - [`getExtraParametersToSet()`](#getextraparameterstoset) &mdash; Override this method if you want to add custom request parameters to the API request based on ViewDataTable parameters.
 
 <a name="getproperties" id="getproperties"></a>
@@ -452,6 +453,17 @@ learn more.
 
 #### Signature
 
+- It does not return anything.
+
+<a name="getrequestparam" id="getrequestparam"></a>
+<a name="getRequestParam" id="getRequestParam"></a>
+### `getRequestParam()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$paramName`
+      
 - It does not return anything.
 
 <a name="getextraparameterstoset" id="getextraparameterstoset"></a>
