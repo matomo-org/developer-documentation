@@ -1184,7 +1184,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [408](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L408)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [409](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L409)*
 
 Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1200,7 +1200,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [419](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L419)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [420](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L420)*
 
 Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1467,7 +1467,7 @@ Usages:
 
 ### Login.authenticate.failed
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1344](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1344)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1348](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1348)*
 
 
 
@@ -3227,7 +3227,7 @@ Callback Signature:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [690](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L690)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [691](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L691)*
 
 Triggered after a new user is created.
 
@@ -3303,7 +3303,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1088](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1088)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1092](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1092)*
 
 
 
@@ -3317,7 +3317,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [937](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L937)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [941](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L941)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
