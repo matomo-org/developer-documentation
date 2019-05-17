@@ -1029,7 +1029,6 @@ Index
 - [`setBasicVariablesView()`](Piwik/Plugin/Controller.md#setbasicvariablesview) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`setHostValidationVariablesView()`](Piwik/Plugin/Controller.md#sethostvalidationvariablesview) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`setPeriodVariablesView()`](Piwik/Plugin/Controller.md#setperiodvariablesview) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
-- [`setBasicVariablesView()`](Piwik/Plugin/ControllerAdmin.md#setbasicvariablesview) &mdash; *Method in class* [`ControllerAdmin`](Piwik/Plugin/ControllerAdmin.md)
 - [`setBasicVariablesAdminView()`](Piwik/Plugin/ControllerAdmin.md#setbasicvariablesadminview) &mdash; *Method in class* [`ControllerAdmin`](Piwik/Plugin/ControllerAdmin.md)
 - [`shouldForceNewVisit()`](Piwik/Plugin/Dimension/VisitDimension.md#shouldforcenewvisit) &mdash; *Method in class* [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`$subcategoryId`](Piwik/Plugin/Report.md#$subcategoryid) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)

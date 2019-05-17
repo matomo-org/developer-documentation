@@ -94,8 +94,8 @@ Returns the &idSite=X&period=Y&date=Z query string fragment, fetched from curren
     - `$defaultDate` (`bool`) &mdash;
       
 
-- *Returns:*  `string` &mdash;
-    eg '&idSite=1&period=week&date=today'
+- *Returns:*  `array` &mdash;
+    eg ['idSite' => 1, 'period' => 'day', 'date' => '2012-02-03']
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; in case a website was not specified and a default website id could not be found
 

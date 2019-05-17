@@ -89,7 +89,7 @@ The abstract class defines the following methods:
 - [`setMinDateView()`](#setmindateview) &mdash; Sets the first date available in the period selector's calendar. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
 - [`setMaxDateView()`](#setmaxdateview) &mdash; Sets the last date available in the period selector's calendar. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
 - [`setGeneralVariablesView()`](#setgeneralvariablesview) &mdash; Assigns variables to [View](/api-reference/Piwik/View) instances that display an entire page. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
-- [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Calls [setBasicVariablesView()](/api-reference/Piwik/Plugin/ControllerAdmin#setbasicvariablesview) and [setBasicVariablesAdminView()](/api-reference/Piwik/Plugin/ControllerAdmin#setbasicvariablesadminview) using the supplied view.
+- [`setBasicVariablesView()`](#setbasicvariablesview) &mdash; Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
 - [`setHostValidationVariablesView()`](#sethostvalidationvariablesview) &mdash; Checks if the current host is valid and sets variables on the given view, including: Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
 - [`setPeriodVariablesView()`](#setperiodvariablesview) &mdash; Sets general period variables on a view, including: Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
 - [`redirectToIndex()`](#redirecttoindex) &mdash; Helper method used to redirect the current HTTP request to another module/action. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
@@ -320,7 +320,7 @@ Will exit on error.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
+    - `$view`
       
 - It returns a `void` value.
 
@@ -328,12 +328,27 @@ Will exit on error.
 <a name="setBasicVariablesView" id="setBasicVariablesView"></a>
 ### `setBasicVariablesView()`
 
-Calls [setBasicVariablesView()](/api-reference/Piwik/Plugin/ControllerAdmin#setbasicvariablesview) and [setBasicVariablesAdminView()](/api-reference/Piwik/Plugin/ControllerAdmin#setbasicvariablesadminview) using the supplied view.
+Assigns a set of generally useful variables to a [View](/api-reference/Piwik/View) instance.
+
+The following variables assigned:
+
+**isSuperUser** - True if the current user is the Super User, false if otherwise.
+**hasSomeAdminAccess** - True if the current user has admin access to at least one site,
+                         false if otherwise.
+**isCustomLogo** - The value of the `branding_use_custom_logo` option.
+**logoHeader** - The header logo URL to use.
+**logoLarge** - The large logo URL to use.
+**logoSVG** - The SVG logo URL to use.
+**hasSVGLogo** - True if there is a SVG logo, false if otherwise.
+**enableFrames** - The value of the `[General] enable_framed_pages` INI config option. If
+                   true, [View::setXFrameOptions()](/api-reference/Piwik/View#setxframeoptions) is called on the view.
+
+Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/ControllerAdmin#sethostvalidationvariablesview).
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
+    - `$view`
       
 - It does not return anything.
 

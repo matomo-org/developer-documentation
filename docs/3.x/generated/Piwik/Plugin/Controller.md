@@ -342,7 +342,7 @@ Will exit on error.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
+    - `$view`
       
 - It returns a `void` value.
 
@@ -370,7 +370,7 @@ Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/Contro
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
+    - `$view`
       
 - It does not return anything.
 
