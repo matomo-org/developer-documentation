@@ -13,14 +13,24 @@ We use them to test our PHP Controllers, Twig templates, CSS, and indirectly tes
 
 ## Requirements
 
-Unit, integration and system tests are fairly straightforward to run. UI tests, on the other hand, need a bit more work. To run UI tests you'll need to install [phantomjs version 1.9 or higher](http://phantomjs.org/download.html) and make sure `phantomjs` is on your PATH. Then you'll have to get the tests which are stored in git LFS:
+Unit, integration and system tests are fairly straightforward to run. UI tests, on the other hand, need a bit more work.
+
+You'll need to install [nodejs and npm](https://nodejs.org/en/download/) first. Once you've done this, you can run npm to install the JavaScript dependencies for the UI tests:
+
+```
+// Starting from the root directory of your Matomo install
+cd tests/lib/screenshot-testing
+$ npm install
+```
+
+If you are running or writing UI tests for [Matomo Core](https://github.com/matomo-org/matomo), you will need to install the [git-lfs](https://git-lfs.github.com/) extension to be able to download and commit UI screenshots. Then you can pull the example screenshots for the tests:
 
 ```
 $ git lfs pull --exclude=
 // NOTE: the --exclude= is important, because by default Matomo tells git not to pull these files (to save on bandwidth)
 ```
 
-If you're on Ubuntu, you'll also need some extra packages to make sure screenshots will render correctly:
+If you're on Ubuntu, you'll need some extra packages to make sure screenshots will render correctly:
 
 ```
 $ sudo apt-get install ttf-mscorefonts-installer imagemagick imagemagick-doc
@@ -32,7 +42,7 @@ Removing this font may be useful if your generated screenshots' fonts do not mat
 $ sudo apt-get remove ttf-bitstream-vera
 ```
 
-If you are running or writing UI tests for [Piwik Core](https://github.com/matomo-org/matomo), you will need to install the [git-lfs](https://git-lfs.github.com/) extension to be able to download and commit UI screenshots.
+On Ubuntu 18.04, you may also need to download and install [libpng12](https://packages.ubuntu.com/xenial/amd64/libpng12-0/download).
 
 ## Configuring UI tests
 
@@ -123,7 +133,7 @@ At some point your UI test will fail, for example due to expected CSS changes. T
 
 ## Writing a UI test in depth
 
-UI screenshot tests are run directly by phantomjs and are written using [mocha](https://mochajs.org/) and [chai](http://chaijs.com).
+UI screenshot tests are run directly by Puppeteer and are written using [mocha](https://mochajs.org/) and [chai](http://chaijs.com).
 
 All test files should have \_spec.js file name suffixes (for example, `ActionsDataTable_spec.js`). Since screenshots can take a while to capture, you will want to override mocha's default timeout like this:
 
@@ -183,8 +193,6 @@ After each event the page renderer will wait for all AJAX requests to finish and
 }, done);
 ```
 
-*Note: phantomjs has its quirks and you may have to hack around to get certain behavior to work. For example, clicking a `<select>` will not open the dropdown, so dropdowns have to be manipulated via JavaScript within the page (ie, the `.evaluate()` method).*
-
 ### Adding test data in a UI test
 
 Some of your tests may require specific data to exist in Piwik's DB. To add this data, you can define a [PHP fixture class](/guides/tests-system#fixtures) and set it as the fixture to use in your UI test, like so:
@@ -214,7 +222,7 @@ The page renderer object has the following methods:
 - **mousedown(selector, [waitTime])**: Sends a mouse down event to the element referenced by `selector`.
 - **mouseup(selector, [waitTime])**: Sends a mouse up event to the element referenced by `selector`.
 - **sendKeys(selector, keyString, [waitTime])**: Clicks an element to bring it into focus and then simulates typing a string of keys.
-- **sendMouseEvent(type, pos. [waitTime])**: Sends a mouse event by name to a specific position. `type` is the name of an event that phantomjs will recognize. `pos` is a point, eg, `{x: 0, y: 0}`.
+- **sendMouseEvent(type, pos. [waitTime])**: Sends a mouse event by name to a specific position. `type` is the name of an event. `pos` is a point, eg, `{x: 0, y: 0}`.
 - **dragDrop(selectorStart, selectorEnd, waitTime)**: Performs a drag/drop of an element (mousedown, mousemove, mouseup) from the element referenced by `selectorStart` and the element referenced by `selectorEnd`.
 - **wait([waitTime])**: Waits without doing anything.
 - **load(url, [waitTime])**: Loads a URL.
