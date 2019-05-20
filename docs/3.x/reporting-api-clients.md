@@ -10,7 +10,7 @@ previous: querying-the-reporting-api
 
 * you'd like to know **which client libraries are available to use [Piwik's Reporting HTTP API](https://developer.piwik.org/guides/reporting-introduction) from your application**
 
-## Client libraries
+## Client libraries for Reporting API
 
 ### PHP client
 
@@ -35,6 +35,11 @@ A NodeJS client is available on Github at [github.com/sandfox/nodejs-piwik](http
 ### Laravel
 
 A client library for Laravel (a PHP framework) is available at [github.com/RobBrazier/Laravel_Piwik](https://github.com/RobBrazier/Laravel_Piwik).
+
+## Client libraries for Tracking API
+
+If you're looking instead for client libraries to use Matomo Tracking HTTP API and track your application or API usage, please see our [Matomo Tracking API Clients guide.](https://developer.matomo.org/guides/tracking-api-clients)
+
 
 ## Learn more
 
