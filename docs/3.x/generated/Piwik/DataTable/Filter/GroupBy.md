@@ -40,7 +40,7 @@ Constructor.
     - `$groupByColumn` (`string`) &mdash;
        The column name to reduce.
     - `$reduceFunction` (`callable`) &mdash;
-       The reduce function. This must alter the `$groupByColumn` columng in some way. If not set then the filter will group by the raw column value.
+       The reduce function. This must alter the `$groupByColumn` column in some way. If not set then the filter will group by the raw column value.
     - `$parameters` (`array`) &mdash;
        deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
 
