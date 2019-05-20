@@ -33,11 +33,23 @@ function initView($app)
 {
     $app->hook('slim.before.dispatch', function () use ($app) {
         $app->view->setData('urlIfAvailableInNewerVersion', false);
+        $availableVersions = Environment::getAvailablePiwikVersions();
+
         if (!Environment::isLatestPiwikVersion()) {
-            $app->view->setData('urlIfAvailableInNewerVersion', getUrlIfDocumentIsAvailableInPiwikVersion($app, LATEST_PIWIK_DOCS_VERSION));
+            $matomoVersion = Environment::getPiwikVersion();
+            $alternativeUrl = getUrlIfDocumentIsAvailableInPiwikVersion($app, LATEST_PIWIK_DOCS_VERSION);
+
+            if (in_array($matomoVersion, $availableVersions)) {
+                $app->view->setData('urlIfAvailableInNewerVersion', $alternativeUrl);
+            } else {
+                // redirect to newest version
+                //$app->response->redirect($alternativeUrl, 301);
+                // exit;
+                $app->view->setData('urlIfAvailableInNewerVersion', $alternativeUrl);
+            }
         }
 
-        $app->view->setData('availablePiwikVersions', Environment::getAvailablePiwikVersions());
+        $app->view->setData('availablePiwikVersions', $availableVersions);
         $app->view->setData('selectedPiwikVersion', Environment::getPiwikVersion());
         $app->view->setData('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
         $app->view->setData('revision', Git::getCurrentShortRevision());
