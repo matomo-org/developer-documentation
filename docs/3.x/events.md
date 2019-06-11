@@ -8,9 +8,13 @@ Piwik's event system works like any other event system:
 - **events can be posted**
 - **events can be handled** by registering code to be executed when it is posted
 
-Piwik Core will post events all along the code execution so that plugins can register to them. The complete list of events posted by Piwik Core is [here](/api-reference/events).
-
+Piwik Core will post events all along the code execution so that plugins can register to them. 
 Plugins can also post and handle their own custom events (or events of other plugins).
+
+## Complete list of events
+
+The complete list of events posted by Piwik Core is [here](/api-reference/events).
+
 
 ## Handling events
 
