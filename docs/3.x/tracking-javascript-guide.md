@@ -26,7 +26,7 @@ The tracking code looks as follows:
   _paq.push(['enableLinkTracking']);
   (function() {
     var u="//{$PIWIK_URL}/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', {$IDSITE}]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
@@ -499,7 +499,7 @@ This is the standard use case. Piwik tracks the visits of one domain name with n
 ```javascript
 // Default Tracking code
 _paq.push(['setSiteId', 1]);
-_paq.push(['setTrackerUrl', u+'piwik.php']);
+_paq.push(['setTrackerUrl', u+'matomo.php']);
 _paq.push(['trackPageView']);
 ```
 
@@ -511,7 +511,7 @@ To record users across the main domain name and any of its subdomains, we tell P
 
 ```javascript
 _paq.push(['setSiteId', 1]);
-_paq.push(['setTrackerUrl', u+'piwik.php']);
+_paq.push(['setTrackerUrl', u+'matomo.php']);
 
 // Share the tracking cookie across example.com, www.example.com, subdomain.example.com, ...
 _paq.push(['setCookieDomain', '*.example.com']);
@@ -538,7 +538,7 @@ For example, if your website offers a 'User profile' functionality, you may wish
 // idSite = X for the Homepage
 // In Administration > Websites for idSite=X, the URL is set to `example.com/`
 _paq.push(['setSiteId', X]);
-_paq.push(['setTrackerUrl', u+'piwik.php']);
+_paq.push(['setTrackerUrl', u+'matomo.php']);
 _paq.push(['trackPageView']);
 ```
 
@@ -555,7 +555,7 @@ _paq.push(['setCookiePath', '/user/MyUsername']);
 // Tell Piwik the website domain so that clicks on other pages (eg. /user/AnotherUsername) will be tracked as 'Outlinks'
 _paq.push(['setDomains', 'example.com/user/MyUsername']);
 
-_paq.push(['setTrackerUrl', u+'piwik.php']);
+_paq.push(['setTrackerUrl', u+'matomo.php']);
 _paq.push(['trackPageView']);
 ```
 
@@ -579,7 +579,7 @@ _paq.push(['setDomains', 'example.com/index*']);
 // when using a wildcard *, we do not need to configure cookies with `setCookieDomain`
 // or `setCookiePath` as cookies are correctly created in the main domain by default
 
-_paq.push(['setTrackerUrl', u+'piwik.php']);
+_paq.push(['setTrackerUrl', u+'matomo.php']);
 _paq.push(['trackPageView']);
 ```
 
@@ -941,13 +941,13 @@ Alternatively to using the RollUp Reporting plugin you can duplicate the trackin
 
 ```js
   var u="//piwik.example.org/";
-  _paq.push(['setTrackerUrl', u+'piwik.php']);
+  _paq.push(['setTrackerUrl', u+'matomo.php']);
   _paq.push(['setSiteId', '1']);
 
   // We will also collect the website data into Website ID = 7
   var websiteIdDuplicate = 7;
-  // The data will be duplicated into `piwik.example.org/piwik.php`
-  _paq.push(['addTracker', piwikUrl = u+'piwik.php', websiteIdDuplicate]);
+  // The data will be duplicated into `piwik.example.org/matomo.php`
+  _paq.push(['addTracker', piwikUrl = u+'matomo.php', websiteIdDuplicate]);
   // Your data is now tracked in both website ID 1 and website 7 into your piwik.example.org server!
 ```
 
@@ -955,7 +955,7 @@ As this solution causes every visitor's event, pageview, etc. to be tracked twic
 
 ### Collect your analytics data into two or more Piwik servers
 
-The example below shows how to use `addTracker`  method to track the same analytics data into a second Piwik server. The main Piwik server is `piwik.example.org/piwik.php` where the data is stored into website ID `1`. The second Piwik server is `analytics.example.com/piwik.php` where the data is stored into website ID `77`.
+The example below shows how to use `addTracker`  method to track the same analytics data into a second Piwik server. The main Piwik server is `piwik.example.org/matomo.php` where the data is stored into website ID `1`. The second Piwik server is `analytics.example.com/matomo.php` where the data is stored into website ID `77`. When you implement this in your website, please replace these two Matomo URLs and Matomo website IDs with your own Matomo URLs and website IDs.
 
 ```html
 <script type="text/javascript">
@@ -965,15 +965,15 @@ The example below shows how to use `addTracker`  method to track the same analyt
 
   (function() {
     var u="//piwik.example.org/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '1']);
 
     // Add this code below within the Piwik JavaScript tracker code
-    // Important: the tracker url includes the /piwik.php
-    var secondaryTracker = 'https://analytics.example.com/piwik.php';
+    // Important: the tracker url includes the /matomo.php
+    var secondaryTrackerUrl = 'https://analytics.example.com/matomo.php';
     var secondaryWebsiteId = 77;
     // Also send all of the tracking data to this other Piwik server, in website ID 77
-    _paq.push(['addTracker', secondaryTracker, secondaryWebsiteId]);
+    _paq.push(['addTracker', secondaryTrackerUrl, secondaryWebsiteId]);
     // That's it!
 
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
@@ -994,9 +994,9 @@ It is possible to track your analytics data into either a different website ID o
 <script type="text/javascript">
     window.piwikAsyncInit = function () {
         try {
-            var piwikTracker = Piwik.getTracker("http://URL_1/piwik.php", 1);
+            var piwikTracker = Piwik.getTracker("http://URL_1/matomo.php", 1);
             piwikTracker.trackPageView();
-            var piwik2 = Piwik.getTracker("http://URL_2/piwik.php", 4);
+            var piwik2 = Piwik.getTracker("http://URL_2/matomo.php", 4);
             piwik2.trackPageView();
         } catch( err ) {}
     };
