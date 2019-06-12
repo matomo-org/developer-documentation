@@ -162,7 +162,7 @@ The following tags can be used in PHP docblocks so that they can be turned to li
 {@hook # description}                       // link to hooks page
 ```
 
-Note: In constrast to @link we do not check whether a hook with the given name exists.
+Note: In contrast to @link we do not check whether a hook with the given name exists.
 
 ```
 {@link Map}                  // class within this namespace
