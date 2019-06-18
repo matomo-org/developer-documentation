@@ -157,6 +157,7 @@
 ## Plugins\Live\Visualizations\VisitorLog\Config
 ## Plugins\MobileMessaging\SMSProvider
 ## Plugins\MultiSites\Columns\Metrics\EcommerceOnlyEvolutionMetric
+## Plugins\Tour\Engagement\Challenge
 ## Plugins\TreemapVisualization\TreemapConfig
 ## Plugins\UserCountry\ProfileSummary\LocationSummary
 ## Plugins\UsersManager\UserPreferences

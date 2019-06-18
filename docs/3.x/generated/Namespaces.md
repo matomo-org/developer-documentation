@@ -71,6 +71,8 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\MultiSites`](Piwik/Plugins/MultiSites)
 - [`Piwik\Plugins\MultiSites\Columns`](Piwik/Plugins/MultiSites/Columns)
 - [`Piwik\Plugins\MultiSites\Columns\Metrics`](Piwik/Plugins/MultiSites/Columns/Metrics)
+- [`Piwik\Plugins\Tour`](Piwik/Plugins/Tour)
+- [`Piwik\Plugins\Tour\Engagement`](Piwik/Plugins/Tour/Engagement)
 - [`Piwik\Plugins\TreemapVisualization`](Piwik/Plugins/TreemapVisualization)
 - [`Piwik\Plugins\UserCountry`](Piwik/Plugins/UserCountry)
 - [`Piwik\Plugins\UserCountry\ProfileSummary`](Piwik/Plugins/UserCountry/ProfileSummary)

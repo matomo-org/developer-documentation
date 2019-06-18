@@ -161,6 +161,7 @@ This is a complete list of available classes:
 - [`Plugins\Live\Visualizations\VisitorLog\Config`](Piwik/Plugins/Live/Visualizations/VisitorLog/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
 - [`Plugins\MobileMessaging\SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md) &mdash; The SMSProvider abstract class is used as a base class for SMS provider implementations.
 - [`Plugins\MultiSites\Columns\Metrics\EcommerceOnlyEvolutionMetric`](Piwik/Plugins/MultiSites/Columns/Metrics/EcommerceOnlyEvolutionMetric.md) &mdash; Ecommerce evolution metric adapter.
+- [`Plugins\Tour\Engagement\Challenge`](Piwik/Plugins/Tour/Engagement/Challenge.md) &mdash; Defines a new challenge which a super user needs to complete in order to become a "Matomo expert".
 - [`Plugins\TreemapVisualization\TreemapConfig`](Piwik/Plugins/TreemapVisualization/TreemapConfig.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
 - [`Plugins\UserCountry\ProfileSummary\LocationSummary`](Piwik/Plugins/UserCountry/ProfileSummary/LocationSummary.md) &mdash; Class LocationSummary
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
