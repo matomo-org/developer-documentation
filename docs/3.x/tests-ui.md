@@ -77,13 +77,12 @@ describe("WidgetizePage", function () {
     var generalParams = 'idSite=1&amp;period=day&amp;date=2010-01-03';
 
     it('should load a simple page by its module and action', function (done) {
+        var urlToTest = "?" + generalParams + "&amp;module=Widgetize&amp;action=index";
+        page.load(urlToTest);
+
         var screenshotName = 'simplePage';
         // will save image in "processed-ui-screenshots/WidgetizePageTest_simplePage.png"
-
-        expect.screenshot(screenshotName).to.be.capture(function (page) {
-            var urlToTest = "?" + generalParams + "&amp;module=Widgetize&amp;action=index";
-            page.load(urlToTest);
-        }, done);
+        expect(await page.screenshot()).to.matchImage(screenshotName);
     });
 });
 ```
@@ -93,14 +92,18 @@ describe("WidgetizePage", function () {
 This example declares a new set of [specs](https://en.wikipedia.org/wiki/Behavior-driven_development#Behavioural_specifications) by calling the method `describe(name, callback)` and within that a new spec by calling the method `it(description, func)`. Within the spec we load a URL and once loaded capture a screenshot of the whole page. The captured screenshot will be saved under the defined `screenshotName`. You might have noticed we write our UI tests in [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style.
 
 ### Capturing only a part of the page
-It is good practice to not always capture the full page. For example many pages contain a menu and if you change that menu, all your screenshot tests would fail. To avoid this you would instead have a separate test for your menu. To capture only a part of the page simply specify a [jQuery selector](https://api.jquery.com/category/selectors/) and call the method `captureSelector` instead of `capture`:
+It is good practice to not always capture the full page. For example many pages contain a menu and if you change that menu, all your screenshot tests would fail. To avoid this you would instead have a separate test for your menu. To capture only a part of the page simply specify a [jQuery selector](https://api.jquery.com/category/selectors/) and use `page.$` to get the element to capture, or call `page.screenshotSelector`:
+
+```javascript
+var myElement = page.$('#myElement');
+// Only the content of the selected element will be in visible in the captured screenshot
+expect (await myElement.screenshot()).to.matchImage("screenshot_name");
+```
 
 ```javascript
 var contentSelector = '#selector1, .selector2 .selector3';
 // Only the content of both selectors will be in visible in the captured screenshot
-expect.screenshot('page_partial').to.be.captureSelector(contentSelector, function (page) {
-    page.load(urlToTest);
-}, done);
+expect (await page.screenshotSelector(contentSelector)).to.matchImage("screenshot_name");
 ```
 
 ### Hiding content
@@ -126,6 +129,12 @@ $ ./console tests:run-ui --plugin=MyPlugin
 ```
 
 After running the tests for the first time you will notice a new folder `plugins/PLUGINNAME/tests/UI/processed-ui-screenshots` in your plugin. If everything worked, there will be an image for every captured screenshot. If you're happy with the result it is time to copy the file over to the `expected-ui-screenshots` folder, otherwise you have to adjust your test until you get the result you want. From now on, the newly captured screenshots will be compared with the expected images whenever you execute the tests.
+
+Some fixtures can take a long while to set up. You can save time by using the `persist-fixture-data` flag, which means the fixture teardown and setup will be skipped and the test database from the previous execution will be used:
+
+```
+$ ./console tests:run-ui WidgetizePage --persist-fixutre-data
+```
 
 ### Fixing a test
 
@@ -154,44 +163,19 @@ describe("TheControlImTesting", function () {
     var url = // ...
 
     it("should load correctly", function (done) {
-        expect.screenshot("screenshot_name").to.be.capture(function (page) {
-            page.load(url);
-        }, done);
+        await page.goto(url);
+        var myElement = await page.$('#myElement');
+        expect(await myElement.screenshot()).to.matchImage("screenshot_name");
     });
 });
 ```
 
-If you want to compare a screenshot against an already existing expected screenshot you can do the following:
-
-```javascript
-it("should load correctly", function (done) {
-    expect.screenshot("screenshot_to_compare_against", "OptionalPrefix").to.be.capture("processed_screenshot_name", function (page) {
-        page.load(url);
-    }, done);
-});
-```
-
-`"OptionalPrefix"` will default to the name of the test.
-
 ### Manipulating pages before capture
 
-The callback supplied to the `capture()` function accepts one argument: the page renderer. You can use this object to queue events to be sent to the page before taking a screenshot. For example:
+You can use any method from the <a href="https://pptr.dev/#?product=Puppeteer&version=v1.18.0&show=api-class-page">Puppeteer library</a> to manipulate the page before you take a screenshot. Matomo also provides a couple of extra methods:
 
-```javascript
-.capture(function (page) {
-    page.click('.myDropDown');
-    page.mouseMove('.someOtherElement');
-}, done);
-```
-
-After each event the page renderer will wait for all AJAX requests to finish and for all images to load and then will wait an additional second for any JavaScript to finish running. If you want to wait longer, you can supply an extra wait time (in milliseconds) to the event queuing call:
-
-```javascript
-.capture(function (page) {
-    page.click('.something');
-    page.click('.myReallyLongRunningJavaScriptFunctionButton', 10000); // will wait for 10s
-}, done);
-```
+- **waitForNetworkIdle()**: Wait for all requests to finish. Automatically called on functions that load a page.
+- **screenshotSelector(selector)**: An alternative to `element.screenshot()`.
 
 ### Adding test data in a UI test
 
@@ -212,26 +196,6 @@ The fixture you use must derive from the `Piwik\Tests\Framework\Fixture` class a
 *Note: The test data added by the fixture will not be removed and re-added before each individual test.*
 
 Learn more about defining fixtures [here](/guides/tests-system#fixtures).
-
-#### Page Renderer Object Methods
-
-The page renderer object has the following methods:
-
-- **click(selector, [modifiers], [waitTime])**: Sends a click to the element referenced by `selector`. Modifiers is an array of strings that can be used to specify keys that are pressed at the same time. Currently only `'shift'` is supported.
-- **mouseMove(selector, [waitTime])**: Sends a mouse move event to the element referenced by `selector`.
-- **mousedown(selector, [waitTime])**: Sends a mouse down event to the element referenced by `selector`.
-- **mouseup(selector, [waitTime])**: Sends a mouse up event to the element referenced by `selector`.
-- **sendKeys(selector, keyString, [waitTime])**: Clicks an element to bring it into focus and then simulates typing a string of keys.
-- **sendMouseEvent(type, pos. [waitTime])**: Sends a mouse event by name to a specific position. `type` is the name of an event. `pos` is a point, eg, `{x: 0, y: 0}`.
-- **dragDrop(selectorStart, selectorEnd, waitTime)**: Performs a drag/drop of an element (mousedown, mousemove, mouseup) from the element referenced by `selectorStart` and the element referenced by `selectorEnd`.
-- **wait([waitTime])**: Waits without doing anything.
-- **load(url, [waitTime])**: Loads a URL.
-- **reload([waitTime])**: Reloads the current URL.
-- **evaluate(impl, [waitTime])**: Evaluates a function (`impl`) within a webpage. `impl` is an actual function, not a string and must take no arguments.
-
-All **selector**s are jQuery selectors, so you can use jQuery only filters such as `:eq`.
-
-All events are real events, not synthetic DOM events.
 
 ### Manipulating the test environment
 
