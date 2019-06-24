@@ -114,11 +114,23 @@ If your PHP version is greater than 5.4, you can also use [PHP's built-in web se
 
 Piwik should now be available at [http://localhost:8000/](http://localhost:8000/). To stop the web server, just hit `Ctrl+C`. Remember that PHP's built in web server is only suitable for development. It should **never** be used in production.
 
+### Install MySQL and create a database
+
+When you install Piwik, at the database creation step, you will need to specify your database user. 
+
+[-> Click here to see how to create a new user in MySQL](https://matomo.org/faq/how-to-install/faq_23484/).
+
+
+In Ubuntu systems running MySQL 5.7 (and later versions), the root MySQL user is set to authenticate using the `auth_socket` plugin by default rather than with a password. To use a password to connect to MySQL as root, you will need to switch its authentication method to `mysql_native_password`. To configure the root account to authenticate with a password, run the following ALTER USER command, and replace `my secure password` by a secure password:
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my secure password';
+```
+
 ### Install Matomo
 
 Once Piwik is running, open it in your browser and follow the instructions to complete the installation.
 
-When you install Piwik, at the database creation, you will need to specify your database user. [Click here to see how to create a new user in MySQL](https://matomo.org/faq/how-to-install/faq_23484/).
 
 #### Adding anonymous access to your reports
 
