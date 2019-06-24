@@ -8,6 +8,7 @@ next: tests-ui
 As explained in the previous guide, Piwik's test suite contains PHP tests and [UI tests](/guides/tests-ui). The PHP test suite is written and run using [PHPUnit](https://phpunit.de).
 
 If you're creating a new plugin, you may find it beneficial to engage in [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) or at least to verify your code is correct with tests. With tests, you'll be able to ensure that your code works and you'll be able to ensure the changes you make don't cause regressions.
+## Requirements
 
 Before you start make sure you have enabled development mode:
 
@@ -15,7 +16,22 @@ Before you start make sure you have enabled development mode:
 $ ./console development:enable
 ```
 
+If your development Matomo is not using `localhost` as a hostname (or if your webserver is using a custom port number), then edit your `config/config.ini.php` file and under `[tests]` section, add the `http_host` and/or `port` settings:
 
+```
+[tests]
+http_host   = localhost
+port = 8777
+```
+
+If your development Matomo is setup in a sub-directory for example at http://localhost/dev/matomo, then edit your `config/config.ini.php` file and under `[tests]` section:, add the `request_uri` setting:
+```
+[tests]
+request_uri = "/dev/matomo"
+
+```
+
+  
 ## Writing unit tests
 
 A unit test tests only a single method or class and does not use dependencies like the filesystem, web, config, database or any other plugin.
