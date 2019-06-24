@@ -1742,7 +1742,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removePhoneNumberFromAllAlerts](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L114), [ScheduledReports::deletePhoneNumber](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L397)
+[CustomAlerts::removePhoneNumberFromAllAlerts](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L114), [ScheduledReports::deletePhoneNumber](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L398)
 
 ## MultiSites
 
@@ -2443,7 +2443,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportRecipients](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L189), [ScheduledReports::getReportRecipients](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L439)
+[MobileMessaging::getReportRecipients](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L189), [ScheduledReports::getReportRecipients](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L440)
 
 
 ### ScheduledReports.getReportTypes
@@ -2631,7 +2631,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentDeactivation](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L508)
+[ScheduledReports::segmentDeactivation](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L509)
 
 
 ### SegmentEditor.update
@@ -2648,7 +2648,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentUpdated](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L475)
+[ScheduledReports::segmentUpdated](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L476)
 
 ## Segments
 
@@ -3371,7 +3371,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L51), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L83), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L293), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L114), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L535)
+[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L51), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L83), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L293), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/LanguagesManager/LanguagesManager.php#L114), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L536)
 
 
 ### UsersManager.getDefaultDates
@@ -3397,7 +3397,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L540)
+[ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L541)
 
 
 ### UsersManager.removeSiteAccess
@@ -3411,7 +3411,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L540)
+[ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L541)
 
 
 ### UsersManager.updateUser.end
