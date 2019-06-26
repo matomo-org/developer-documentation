@@ -124,15 +124,17 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 
 -  It accepts the following parameter(s):
     - `$dimensions` (`array`) &mdash;
-       `SELECT` fields (or just one field) that will be grouped by, eg, `'referrer_name'` or `array('referrer_name', 'referrer_keyword')`. The metrics retrieved from the query will be specific to combinations of these fields. So if `array('referrer_name', 'referrer_keyword')` is supplied, the query will aggregate visits for each referrer/keyword combination.
-    - `$where` (`bool`|`string`) &mdash;
-       Additional condition for the `WHERE` clause. Can be used to filter the set of visits that are considered for aggregation.
+      
+    - `$where`
+      
     - `$additionalSelects` (`array`) &mdash;
-       Additional `SELECT` fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
-    - `$metrics` (`bool`|`array`) &mdash;
-       The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS` - `Metrics::INDEX_MAX_ACTIONS` - `Metrics::INDEX_SUM_VISIT_LENGTH` - `Metrics::INDEX_BOUNCE_COUNT` - `Metrics::INDEX_NB_VISITS_CONVERTED`
-    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash;
-       A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
+      
+    - `$metrics`
+      
+    - `$rankingQuery`
+      
+    - `$orderBy`
+      
 
 - *Returns:*  `mixed` &mdash;
     A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension) to see what aggregate data is calculated by the query.
