@@ -11,28 +11,29 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 
 ### Requesting the Tracker Instance from the Piwik Class
 
-*   `Piwik.getTracker( trackerUrl, siteId )` - get a new instance of the Tracker
-*   `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)` - get the internal instance of the Tracker used for asynchronous tracking
+*   `Piwik.getTracker( trackerUrl, siteId )` - Get a new instance of the Tracker
+*   `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)` - Get the internal instance of the Tracker used for asynchronous tracking
 
 ### Using the Tracker Object
 
-*   `trackPageView([customTitle])` - Logs a page view 
-*   `trackEvent(category, action, [name], [value])` - Logs an event with an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name and optional numeric value.
+*   `trackPageView([customTitle])` - Log a page view 
+*   `trackEvent(category, action, [name], [value])` - Log an event with an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name and optional numeric value.
 *   `trackSiteSearch(keyword, [category], [resultsCount])` - Log an internal site search for a specific keyword, in an optional category, specifying the optional count of search results in the page.
-*   `trackGoal( idGoal, [customRevenue]);` - Manually log a conversion for the numeric goal ID, with an optional numeric custom revenue customRevenue.
-*   `trackLink( url, linkType )` - Manually log a click from your own code. url is the full URL which is to be tracked as a click. linkType can either be 'link' for an outlink or 'download' for a download.
-*   `trackAllContentImpressions()` - Scans the entire DOM for all content blocks and tracks all impressions once the DOM ready event has been triggered.
-*   `trackVisibleContentImpressions ( checkOnScroll, timeIntervalInMs )` - Scans the entire DOM for all content blocks as soon as the page is loaded. It tracks an impression only if a content block is actually visible.
-*   `trackContentImpressionsWithinNode( domNode )` - Scans the given DOM node and its children for content blocks and tracks an impression for them if no impression was already tracked for it.
-*   `trackContentInteractionNode( domNode, contentInteraction )` - Tracks an interaction with the given DOM node / content block.
-*   `trackContentImpression( contentName, contentPiece, contentTarget )` - Tracks a content impression using the specified values.
-*   `trackContentInteraction( contentInteraction, contentName, contentPiece, contentTarget )` - Tracks a content interaction using the specified values.
+*   `trackGoal( idGoal, [customRevenue]);` - Log a conversion for the numeric goal ID, with an optional numeric custom revenue customRevenue.
+*   `trackLink( url, linkType )` - Log a click from your own code. url is the full URL which is to be tracked as a click. linkType can either be 'link' for an outlink or 'download' for a download.
+*   `trackAllContentImpressions()` - Scan the entire DOM for all content blocks and tracks all impressions once the DOM ready event has been triggered.
+*   `trackVisibleContentImpressions ( checkOnScroll, timeIntervalInMs )` - Scan the entire DOM for all content blocks as soon as the page is loaded. It tracks an impression only if a content block is actually visible.
+*   `trackContentImpressionsWithinNode( domNode )` - Scan the given DOM node and its children for content blocks and tracks an impression for them if no impression was already tracked for it.
+*   `trackContentInteractionNode( domNode, contentInteraction )` - Track an interaction with the given DOM node / content block.
+*   `trackContentImpression( contentName, contentPiece, contentTarget )` - Track a content impression using the specified values.
+*   `trackContentInteraction( contentInteraction, contentName, contentPiece, contentTarget )` - Track a content interaction using the specified values.
 *   `logAllContentBlocksOnPage` - Log all found content blocks within a page to the console. This is useful to debug / test content tracking.
+*    `ping` - Send a ping request. Ping requests do not track new actions. If they are sent within the standard visit length, they will extend the existing visit and the current last action for the visit. If sent after the standard visit length, ping requests will create a new visit using the last action in the last known visit. See also `enableHeartBeatTimer`.
 *   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use pseudo click-handler (treat middle click and open contextmenu as left click). A right click (or any click that opens the context menu) on a link will be tracked as clicked even if "Open in new tab" is not selected. If "false" (default), nothing will be tracked on open context menu or middle click.
-*   `enableHeartBeatTimer( delayInSeconds )` - Install a Heart beat timer that will regularly send requests to Piwik in order to better measure the time spent on the page. These requests will be sent only when the user is actively viewing the page (when the tab is active and in focus). These requests will not track additional actions or pageviews. By default, `delayInSeconds` is set to 15 seconds.
-* `enableCrossDomainLinking()` - Enables cross domain linking. By default, the visitor ID that identifies a unique visitor is stored in the browser's first party cookies. This means the cookie can only be accessed by pages on the same domain. If you own multiple domains and would like to track all the actions and pageviews of a specific visitor into the same visit, you may enable [cross domain linking (learn more)](https://piwik.org/faq/how-to/faq_23654/) . Whenever a user clicks on a link it will append a URL parameter `pk_vid` to the clicked URL which forwards the current visitor ID value to the page of the different domain.
-* `setCrossDomainLinkingTimeout( timeout )` - By default, the two visits across domains will be linked together when the link is clicked and the page is loaded within a 180 seconds timeout window.`
-* `getCrossDomainLinkingUrlParameter()` - Gets the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links that are added to the DOM dynamically.  [Learn more about cross domain linking](https://piwik.org/faq/how-to/faq_23654/).  (requires Matomo 3.3.1)
+*   `enableHeartBeatTimer( delayInSeconds )` - Install a Heart beat timer that will regularly send requests to Piwik in order to better measure the time spent on the page. These requests will be sent only when the user is actively viewing the page (when the tab is active and in focus). These requests will not track additional actions or pageviews. By default, `delayInSeconds` is set to 15 seconds. See also `ping` and the [developer guide](https://developer.matomo.org/guides/tracking-javascript-guide#accurately-measure-the-time-spent-on-each-page).
+* `enableCrossDomainLinking()` - Enable cross domain linking. By default, the visitor ID that identifies a unique visitor is stored in the browser's first party cookies. This means the cookie can only be accessed by pages on the same domain. If you own multiple domains and would like to track all the actions and pageviews of a specific visitor into the same visit, you may enable [cross domain linking (learn more)](https://piwik.org/faq/how-to/faq_23654/) . Whenever a user clicks on a link it will append a URL parameter `pk_vid` to the clicked URL which forwards the current visitor ID value to the page of the different domain.
+* `setCrossDomainLinkingTimeout( timeout )` - Set the cross domain linking timeout (in seconds). By default, the two visits across domains will be linked together when the link is clicked and the page is loaded within a 180 seconds timeout window.`
+* `getCrossDomainLinkingUrlParameter()` - Get the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links that are added to the DOM dynamically.  [Learn more about cross domain linking](https://piwik.org/faq/how-to/faq_23654/).  (requires Matomo 3.3.1)
 
 ### Configuration of the Tracker Object
 
@@ -43,8 +44,8 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setSiteId( integer )` - Specify the website ID. Redundant: can be specified in `getTracker()` constructor.
 *   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. http://piwik.example.org/ or https://example.org/piwik/. This function is only useful when the 'Overlay' report is not working. By default, you do not need to use this function.
 *   `setTrackerUrl( string )` - Specify the Piwik server URL. Redundant: can be specified in `getTracker()` constructor.
-* `getPiwikUrl` - Returns the Piwik server URL.
-* `getCurrentUrl` - Returns the current url of the page that is currently being visited. If a custom URL was set before calling this method, the custom URL will be returned.
+* `getPiwikUrl` - Return the Piwik server URL.
+* `getCurrentUrl` - Return the current url of the page that is currently being visited. If a custom URL was set before calling this method, the custom URL will be returned.
 *   `setDownloadClasses( string | array )` - Set classes to be treated as downloads (in addition to piwik_download)
 *   `setDownloadExtensions( string | array )` - Set list of file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
 *   `addDownloadExtensions( string | array )` - Specify additional file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
@@ -55,14 +56,14 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *  `getLinkTrackingTimer` - Get delay for link tracking (in milliseconds).
 *   `discardHashTag( bool )` - Set to true to not record the hash tag (anchor) portion of URLs
 *   `setGenerationTimeMs(generationTime)` - By default Piwik uses the browser DOM Timing API to accurately determine the time it takes to generate and download the page. You may overwrite the value by specifying a milliseconds value here.
-*   `appendToTrackingUrl(appendToUrl)` - Appends a custom string to the end of the HTTP request to piwik.php?
+*   `appendToTrackingUrl(appendToUrl)` - Append a custom string to the end of the HTTP request to piwik.php?
 *   `setDoNotTrack( bool )` - Set to true to not track users who opt out of tracking using Mozilla's (proposed) Do Not Track setting.
-*   `killFrame()` - Enables a frame-buster to prevent the tracked web page from being framed/iframed.
-*   `redirectFile( url )` - Forces the browser load the live URL if the tracked web page is loaded from a local file (e.g., saved to someone's desktop).
-*   `setHeartBeatTimer( minimumVisitLength, heartBeatDelay )` - records how long the page has been viewed if the minimumVisitLength (in seconds) is attained; the heartBeatDelay determines how frequently to update the server
-*   `getVisitorId()` - returns the 16 characters ID for the visitor
-*   `getVisitorInfo()` - returns the visitor cookie contents in an array
-*   `getAttributionInfo()` - returns the visitor attribution array (Referer information and / or Campaign name &amp; keyword).
+*   `killFrame()` - Enable a frame-buster to prevent the tracked web page from being framed/iframed.
+*   `redirectFile( url )` - Force the browser load the live URL if the tracked web page is loaded from a local file (e.g., saved to someone's desktop).
+*   `setHeartBeatTimer( minimumVisitLength, heartBeatDelay )` - Record how long the page has been viewed if the minimumVisitLength (in seconds) is attained; the heartBeatDelay determines how frequently to update the server
+*   `getVisitorId()` - Return the 16 characters ID for the visitor
+*   `getVisitorInfo()` - Return the visitor cookie contents in an array
+*   `getAttributionInfo()` - Return the visitor attribution array (Referer information and / or Campaign name &amp; keyword).
     Attribution information is used by Piwik to credit the correct referrer ([first or last referrer](https://piwik.org/faq/general/#faq_106)) used when a user triggers a goal conversion.
 
     You can also use any of the following functions to get specific attributes of data:
@@ -72,7 +73,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
     *   `piwikTracker.getAttributionReferrerTimestamp()`
     *   `piwikTracker.getAttributionReferrerUrl()`
 
-*   `getUserId()` - returns the User ID string if it was set.
+*   `getUserId()` - Return the User ID string if it was set.
 *   `setUserId( userId )` -  Sets a [User ID](https://piwik.org/docs/user-id/) to this user (such as an email address or a username).
 *   `setCustomVariable (index, name, value, scope)` - Set a custom variable.
 *   `deleteCustomVariable (index, scope)` - Delete a custom variable.
@@ -89,22 +90,22 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 
 Piwik provides [ecommerce analytics](https://piwik.org/docs/ecommerce-analytics/) that let you measure items added to carts, and learn detailed metrics about abandoned carts and purchased orders.
 
-*   `setEcommerceView( productSKU, productName, categoryName, price )` - Sets the current page view as a product or category page view. When you call `setEcommerceView` it must be followed by a call to `trackPageView` to record the product or category page view.
-*   `addEcommerceItem( productSKU, [productName], [productCategory], [price], [quantity] )` - Adds a product into the ecommerce order. Must be called for each product in the order.
-*   `removeEcommerceItem( productSKU )` - Removes the specified product from the untracked ecommerce order.
-*   `clearEcommerceCart()` - Removes all products in the untracked ecommerce order. _Note: this is done automatically after `trackEcommerceOrder()` is called.
-*   `getEcommerceItems()` - Returns all ecommerce items currently in the untracked ecommerce order. The returned array will be a copy, so changing it won't affect the ecommerce order. To affect what gets tracked, use the `addEcommerceItem()`/`removeEcommerceItem()`/`clearEcommerceCart()` methods. Use this method to see what will be tracked before you track an order or cart update.
-*   `trackEcommerceCartUpdate( grandTotal )` - Tracks a shopping cart. Call this javascript function every time a user is adding, updating or deleting a product from the cart.
-*   `trackEcommerceOrder( orderId, grandTotal, [subTotal], [tax], [shipping], [discount] )` - Tracks an Ecommerce order, including any ecommerce item previously added to the order. `orderId` and `grandTotal` (ie. revenue) are required parameters.
+*   `setEcommerceView( productSKU, productName, categoryName, price )` - Set the current page view as a product or category page view. When you call `setEcommerceView` it must be followed by a call to `trackPageView` to record the product or category page view.
+*   `addEcommerceItem( productSKU, [productName], [productCategory], [price], [quantity] )` - Add a product into the ecommerce order. Must be called for each product in the order.
+*   `removeEcommerceItem( productSKU )` - Remove the specified product from the untracked ecommerce order.
+*   `clearEcommerceCart()` - Remove all products in the untracked ecommerce order. _Note: this is done automatically after `trackEcommerceOrder()` is called.
+*   `getEcommerceItems()` - Return all ecommerce items currently in the untracked ecommerce order. The returned array will be a copy, so changing it won't affect the ecommerce order. To affect what gets tracked, use the `addEcommerceItem()`/`removeEcommerceItem()`/`clearEcommerceCart()` methods. Use this method to see what will be tracked before you track an order or cart update.
+*   `trackEcommerceCartUpdate( grandTotal )` - Track a shopping cart. Call this javascript function every time a user is adding, updating or deleting a product from the cart.
+*   `trackEcommerceOrder( orderId, grandTotal, [subTotal], [tax], [shipping], [discount] )` - Track an Ecommerce order, including any ecommerce item previously added to the order. `orderId` and `grandTotal` (ie. revenue) are required parameters.
 
 ### Managing Consent
 
 Matomo provides a mechanism to manage your user's consent. You can require that users consent before you track any of their actions, disable tracking for users that do not consent, and re-enable tracking for those that consent later.
 
 *   `requireConsent()` - By default the Matomo tracker assumes consent to tracking. To change this behavior so nothing is tracked until a user consents, you must call `requireConsent`.
-*   `setConsentGiven()` - Marks that the current user has consented. The consent is one-time only, so in a subsequent browser session, the user will have to consent again. To remember consent, see the method below: `rememberConsentGiven`.
-*   `rememberConsentGiven( hoursToExpire )` - Marks that the current user has consented, and remembers this consent through a browser cookie. The next time the user visits the site, Matomo will remember that they consented, and track them. If you call this method, you do not need to call `setConsentGiven`.
-*   `forgetConsentGiven()` - Removes a user's consent, both if the consent was one-time only and if the consent was remembered. After calling this method, the user will have to consent again in order to be tracked.
+*   `setConsentGiven()` - Mark that the current user has consented. The consent is one-time only, so in a subsequent browser session, the user will have to consent again. To remember consent, see the method below: `rememberConsentGiven`.
+*   `rememberConsentGiven( hoursToExpire )` - Mark that the current user has consented, and remembers this consent through a browser cookie. The next time the user visits the site, Matomo will remember that they consented, and track them. If you call this method, you do not need to call `setConsentGiven`.
+*   `forgetConsentGiven()` - Remove a user's consent, both if the consent was one-time only and if the consent was remembered. After calling this method, the user will have to consent again in order to be tracked.
 
 You can use these methods to build your own consent form/pages. [Learn more about asking for consent.](https://developer.matomo.org/guides/tracking-javascript-guide#asking-for-consent)
 
@@ -112,9 +113,9 @@ You can use these methods to build your own consent form/pages. [Learn more abou
 
 Piwik uses first party cookies to keep track of some user information over time. Consideration must be given to retention times and avoiding conflicts with other cookies, trackers, and apps.
 
-*   `disableCookies()` - Disables all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view.
-*   `deleteCookies()` - Deletes the tracking cookies currently currently set (this is useful when [creating new visits](https://piwik.org/faq/how-to/#faq_187))
-*   `hasCookies()` - Returns whether cookies are enabled and supported by this browser.
+*   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view.
+*   `deleteCookies()` - Delete the tracking cookies currently currently set (this is useful when [creating new visits](https://piwik.org/faq/how-to/#faq_187))
+*   `hasCookies()` - Return whether cookies are enabled and supported by this browser.
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
 *   `setCookieDomain( domain )` - the default is the document domain; if your website can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
 *   `setCookiePath( path )` - the default is '/'.
