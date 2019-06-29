@@ -12,7 +12,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 ### Requesting the Tracker Instance from the Piwik Class
 
 *   `Piwik.getTracker( trackerUrl, siteId )` - Get a new instance of the Tracker
-*   `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)` - Get the internal instance of the Tracker used for asynchronous tracking
+*   `Piwik.getAsyncTracker( optionalPiwikUrl, optionalPiwikSiteId )` - Get the internal instance of the Tracker used for asynchronous tracking
 
 ### Using the Tracker Object
 
@@ -27,10 +27,10 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `trackContentInteractionNode( domNode, contentInteraction )` - Track an interaction with the given DOM node / content block.
 *   `trackContentImpression( contentName, contentPiece, contentTarget )` - Track a content impression using the specified values.
 *   `trackContentInteraction( contentInteraction, contentName, contentPiece, contentTarget )` - Track a content interaction using the specified values.
-*   `logAllContentBlocksOnPage` - Log all found content blocks within a page to the console. This is useful to debug / test content tracking.
-*    `ping` - Send a ping request. Ping requests do not track new actions. If they are sent within the standard visit length, they will extend the existing visit and the current last action for the visit. If sent after the standard visit length, ping requests will create a new visit using the last action in the last known visit. See also `enableHeartBeatTimer`.
-*   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use pseudo click-handler (treat middle click and open contextmenu as left click). A right click (or any click that opens the context menu) on a link will be tracked as clicked even if "Open in new tab" is not selected. If "false" (default), nothing will be tracked on open context menu or middle click.
+*   `logAllContentBlocksOnPage()` - Log all found content blocks within a page to the console. This is useful to debug / test content tracking.
+*    `ping()` - Send a ping request. Ping requests do not track new actions. If they are sent within the standard visit length, they will extend the existing visit and the current last action for the visit. If sent after the standard visit length, ping requests will create a new visit using the last action in the last known visit. See also `enableHeartBeatTimer`.
 *   `enableHeartBeatTimer( delayInSeconds )` - Install a Heart beat timer that will regularly send requests to Piwik in order to better measure the time spent on the page. These requests will be sent only when the user is actively viewing the page (when the tab is active and in focus). These requests will not track additional actions or pageviews. By default, `delayInSeconds` is set to 15 seconds. See also `ping` and the [developer guide](https://developer.matomo.org/guides/tracking-javascript-guide#accurately-measure-the-time-spent-on-each-page).
+*   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use pseudo click-handler (treat middle click and open contextmenu as left click). A right click (or any click that opens the context menu) on a link will be tracked as clicked even if "Open in new tab" is not selected. If "false" (default), nothing will be tracked on open context menu or middle click.
 * `enableCrossDomainLinking()` - Enable cross domain linking. By default, the visitor ID that identifies a unique visitor is stored in the browser's first party cookies. This means the cookie can only be accessed by pages on the same domain. If you own multiple domains and would like to track all the actions and pageviews of a specific visitor into the same visit, you may enable [cross domain linking (learn more)](https://piwik.org/faq/how-to/faq_23654/) . Whenever a user clicks on a link it will append a URL parameter `pk_vid` to the clicked URL which forwards the current visitor ID value to the page of the different domain.
 * `setCrossDomainLinkingTimeout( timeout )` - Set the cross domain linking timeout (in seconds). By default, the two visits across domains will be linked together when the link is clicked and the page is loaded within a 180 seconds timeout window.`
 * `getCrossDomainLinkingUrlParameter()` - Get the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links that are added to the DOM dynamically.  [Learn more about cross domain linking](https://piwik.org/faq/how-to/faq_23654/).  (requires Matomo 3.3.1)
@@ -38,14 +38,14 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 ### Configuration of the Tracker Object
 
 *   `setDocumentTitle( string )` - Override document.title
-*   `setDomains( array)` - Set array of hostnames or domains to be treated as local. For wildcard subdomains, you can use: `setDomains('.example.com');` or `setDomains('*.example.com');`. You can also specify a path along a domain: `setDomains('*.example.com/subsite1');`
+*   `setDomains( array )` - Set array of hostnames or domains to be treated as local. For wildcard subdomains, you can use: `setDomains('.example.com');` or `setDomains('*.example.com');`. You can also specify a path along a domain: `setDomains('*.example.com/subsite1');`
 *   `setCustomUrl( string )` - Override the page's reported URL
 *   `setReferrerUrl( string )` - Override the detected Http-Referer
 *   `setSiteId( integer )` - Specify the website ID. Redundant: can be specified in `getTracker()` constructor.
 *   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. http://piwik.example.org/ or https://example.org/piwik/. This function is only useful when the 'Overlay' report is not working. By default, you do not need to use this function.
 *   `setTrackerUrl( string )` - Specify the Piwik server URL. Redundant: can be specified in `getTracker()` constructor.
-* `getPiwikUrl` - Return the Piwik server URL.
-* `getCurrentUrl` - Return the current url of the page that is currently being visited. If a custom URL was set before calling this method, the custom URL will be returned.
+* `getPiwikUrl()` - Return the Piwik server URL.
+* `getCurrentUrl()` - Return the current url of the page that is currently being visited. If a custom URL was set before calling this method, the custom URL will be returned.
 *   `setDownloadClasses( string | array )` - Set classes to be treated as downloads (in addition to piwik_download)
 *   `setDownloadExtensions( string | array )` - Set list of file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
 *   `addDownloadExtensions( string | array )` - Specify additional file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
@@ -53,7 +53,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setIgnoreClasses( string | array )` - Set classes to be ignored if present in link (in addition to piwik_ignore)
 *   `setLinkClasses( string | array )` - Set classes to be treated as outlinks (in addition to piwik_link)
 *   `setLinkTrackingTimer( integer )` - Set delay for link tracking in milliseconds.
-*  `getLinkTrackingTimer` - Get delay for link tracking (in milliseconds).
+*  `getLinkTrackingTimer()` - Get delay for link tracking (in milliseconds).
 *   `discardHashTag( bool )` - Set to true to not record the hash tag (anchor) portion of URLs
 *   `setGenerationTimeMs(generationTime)` - By default Piwik uses the browser DOM Timing API to accurately determine the time it takes to generate and download the page. You may overwrite the value by specifying a milliseconds value here.
 *   `appendToTrackingUrl(appendToUrl)` - Append a custom string to the end of the HTTP request to piwik.php?
@@ -130,7 +130,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 *   `setRequestMethod( method )` - Set the request method to either "GET" or "POST". (The default is "GET".) To use the POST request method, either 1) the Piwik host is the same as the tracked website host (Piwik installed in the same domain as your tracked website), or 2) if Piwik is not installed on the same host as your website, you need to [enable CORS (Cross domain requests) as explained in this FAQ](https://piwik.org/faq/how-to/faq_18694/).
 *   `setCustomRequestProcessing( function )` - Set a function that will process the request content. The function will be called once the request (query parameters string) has been prepared, and before the request content is sent.
 *   `setRequestContentType( contentType )` - Set request Content-Type header value. Applicable when "POST" request method is used via `setRequestMethod`.
-* `disableQueueRequest` - Disable the feature which groups together multiple tracking requests and send them as a bulk POST request. Disabling this feature is useful when you want to be able to [replay all logs](https://matomo.org/faq/log-analytics-tool/faq_19221/): one must use `disableQueueRequest` to disable this behaviour to later be able to replay logged Matomo logs (otherwise a subset of the requests wouldn't be able to be replayed).
+* `disableQueueRequest()` - Disable the feature which groups together multiple tracking requests and send them as a bulk POST request. Disabling this feature is useful when you want to be able to [replay all logs](https://matomo.org/faq/log-analytics-tool/faq_19221/): one must use `disableQueueRequest` to disable this behaviour to later be able to replay logged Matomo logs (otherwise a subset of the requests wouldn't be able to be replayed).
 
 ## Unit Tests Covering piwik.js
 
