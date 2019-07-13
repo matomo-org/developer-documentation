@@ -112,7 +112,7 @@ In this example we show how everything works together assuming you want to track
 var currentUrl = location.href;
 window.addEventListener('hashchange', function() {
     _paq.push(['setReferrerUrl', currentUrl]);
-     currentUrl = '' + window.location.hash.substr(1);
+     currentUrl = '/' + window.location.hash.substr(1);
     _paq.push(['setCustomUrl', currentUrl]);
     _paq.push(['setDocumentTitle', 'My New Title']);
 
