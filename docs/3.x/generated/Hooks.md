@@ -649,7 +649,7 @@ Usages:
 
 ### Config.NoConfigurationFile
 
-*Defined in [Piwik/Application/Kernel/EnvironmentValidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Kernel/EnvironmentValidator.php) in line [102](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Kernel/EnvironmentValidator.php#L102)*
+*Defined in [Piwik/Application/Kernel/EnvironmentValidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Kernel/EnvironmentValidator.php) in line [109](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Kernel/EnvironmentValidator.php#L109)*
 
 Triggered when the configuration file cannot be found or read, which usually means Piwik is not installed yet. This event can be used to start the installation process or to display a custom error message.
 
