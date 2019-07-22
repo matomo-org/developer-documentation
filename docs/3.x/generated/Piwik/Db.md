@@ -44,8 +44,10 @@ Methods
 The class defines the following methods:
 
 - [`get()`](#get) &mdash; Returns the database connection and creates it if it hasn't been already.
+- [`getReader()`](#getreader) &mdash; Returns the database connection and creates it if it hasn't been already.
 - [`getDatabaseConfig()`](#getdatabaseconfig) &mdash; Returns an array with the Database connection information.
 - [`createDatabaseObject()`](#createdatabaseobject) &mdash; Connects to the database.
+- [`createReaderDatabaseObject()`](#createreaderdatabaseobject) &mdash; Connects to the reader database.
 - [`destroyDatabaseObject()`](#destroydatabaseobject) &mdash; Disconnects and destroys the database connection.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
 - [`query()`](#query) &mdash; Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
@@ -83,6 +85,23 @@ Returns the database connection and creates it if it hasn't been already.
 - *Returns:*  `Piwik\Tracker\Db`|`Piwik\Db\AdapterInterface`|[`Db`](../Piwik/Db.md) &mdash;
     
 
+<a name="getreader" id="getreader"></a>
+<a name="getReader" id="getReader"></a>
+### `getReader()`
+
+Since Piwik Matomo
+
+Returns the database connection and creates it if it hasn't been already.
+
+Make sure to not write any data on
+the reader and only use the connection to read data.
+
+#### Signature
+
+
+- *Returns:*  `Piwik\Tracker\Db`|`Piwik\Db\AdapterInterface`|[`Db`](../Piwik/Db.md) &mdash;
+    
+
 <a name="getdatabaseconfig" id="getdatabaseconfig"></a>
 <a name="getDatabaseConfig" id="getDatabaseConfig"></a>
 ### `getDatabaseConfig()`
@@ -101,6 +120,23 @@ Returns an array with the Database connection information.
 ### `createDatabaseObject()`
 
 Connects to the database.
+
+Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$dbConfig` (`array`|`null`) &mdash;
+       Connection parameters in an array. Defaults to the `[database]` INI config section.
+- It does not return anything.
+
+<a name="createreaderdatabaseobject" id="createreaderdatabaseobject"></a>
+<a name="createReaderDatabaseObject" id="createReaderDatabaseObject"></a>
+### `createReaderDatabaseObject()`
+
+Since Piwik Matomo
+
+Connects to the reader database.
 
 Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
 

@@ -925,24 +925,24 @@ Callback Signature:
 
 ### CustomPiwikJs.piwikJsChanged
 
-*Defined in [Piwik/Plugins/CustomPiwikJs/TrackerUpdater](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php) in line [141](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php#L141)*
+*Defined in [Piwik/Plugins/CustomPiwikJs/TrackerUpdater](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php) in line [142](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php#L142)*
 
 Triggered after the tracker JavaScript content (the content of the piwik.js file) is changed.
 
 Callback Signature:
-<pre><code>function($this-&gt;toFile-&gt;getPath())</code></pre>
+<pre><code>function($savedFile)</code></pre>
 
 - string `$absolutePath` The path to the new piwik.js file.
 
 
 ### CustomPiwikJs.piwikJsChanged
 
-*Defined in [Piwik/Plugins/CustomPiwikJs/TrackerUpdater](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php) in line [156](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php#L156)*
+*Defined in [Piwik/Plugins/CustomPiwikJs/TrackerUpdater](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php) in line [160](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackerUpdater.php#L160)*
 
 
 
 Callback Signature:
-<pre><code>function($file-&gt;getPath())</code></pre>
+<pre><code>function($savedFile)</code></pre>
 
 
 ### CustomPiwikJs.shouldAddTrackerFile
@@ -1024,7 +1024,7 @@ Callback Signature:
 
 ### Db.getDatabaseConfig
 
-*Defined in [Piwik/Db](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Db.php) in line [92](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Db.php#L92)*
+*Defined in [Piwik/Db](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Db.php) in line [126](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Db.php#L126)*
 
 Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
 

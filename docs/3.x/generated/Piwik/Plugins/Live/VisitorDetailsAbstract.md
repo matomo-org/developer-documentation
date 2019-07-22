@@ -26,6 +26,7 @@ The abstract class defines the following methods:
 - [`handleProfileVisit()`](#handleprofilevisit) &mdash; Allows manipulating the visitor profile properties based on included visits Will be called for every action within the profile
 - [`handleProfileAction()`](#handleprofileaction) &mdash; Allows manipulating the visitor profile properties based on included actions Will be called for every action within the profile
 - [`finalizeProfile()`](#finalizeprofile) &mdash; Will be called after iterating over all actions Can be used to set profile information that requires data that was set while iterating over visits & actions
+- [`getDb()`](#getdb)
 
 <a name="setdetails" id="setdetails"></a>
 <a name="setDetails" id="setDetails"></a>
@@ -319,4 +320,16 @@ Will be called after iterating over all actions Can be used to set profile infor
     - `$profile` (`array`) &mdash;
       
 - It returns a `void` value.
+
+<a name="getdb" id="getdb"></a>
+<a name="getDb" id="getDb"></a>
+### `getDb()`
+
+Since Piwik Matomo
+
+#### Signature
+
+
+- *Returns:*  [`Db`](../../../Piwik/Db.md)|`Piwik\Plugins\Live\Db\AdapterInterface` &mdash;
+    
 
