@@ -143,7 +143,7 @@ Constants
 
 This class defines the following constants:
 
-- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) — Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.- [`EXTRA_PROCESSED_METRICS_METADATA_NAME`](#extra_processed_metrics_metadata_name) — Name for metadata that contains extra [ProcessedMetric](/api-reference/Piwik/Plugin/ProcessedMetric)s for a DataTable.
+- [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) — Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.- [`ID_ARCHIVED_METADATA_ROW`](#id_archived_metadata_row) — The ID of the special metadata row.- [`EXTRA_PROCESSED_METRICS_METADATA_NAME`](#extra_processed_metrics_metadata_name) — Name for metadata that contains extra [ProcessedMetric](/api-reference/Piwik/Plugin/ProcessedMetric)s for a DataTable.
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
 ### `COLUMN_AGGREGATION_OPS_METADATA_NAME`
@@ -156,6 +156,13 @@ This metadata value must be an array that maps column names with valid operation
 - `'sum'`: does `$column1 + $column2`
 
 See [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) and [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) for more information.
+<a name="id_archived_metadata_row" id="id_archived_metadata_row"></a>
+<a name="ID_ARCHIVED_METADATA_ROW" id="ID_ARCHIVED_METADATA_ROW"></a>
+### `ID_ARCHIVED_METADATA_ROW`
+
+This row only exists in the serialized row data and stores the datatable metadata.
+
+This allows us to save datatable metadata in archive data.
 <a name="extra_processed_metrics_metadata_name" id="extra_processed_metrics_metadata_name"></a>
 <a name="EXTRA_PROCESSED_METRICS_METADATA_NAME" id="EXTRA_PROCESSED_METRICS_METADATA_NAME"></a>
 ### `EXTRA_PROCESSED_METRICS_METADATA_NAME`
