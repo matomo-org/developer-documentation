@@ -3522,6 +3522,22 @@ Usages:
 
 [TreemapVisualization::removeTreemapVisualizationIfFlattenIsUsed](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L47)
 
+## Visualization
+
+- [Visualization.beforeRender](#visualizationbeforerender)
+
+### Visualization.beforeRender
+
+*Defined in [Piwik/Plugin/Visualization](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Visualization.php) in line [736](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Visualization.php#L736)*
+
+Posted immediately before rendering the view. Plugins can use this event to perform last minute
+configuration of the view based on it's data or the report being viewed.
+
+Callback Signature:
+<pre><code>function($this)</code></pre>
+
+- [Visualization](/api-reference/Piwik/Plugin/Visualization) `$view` The instance to configure.
+
 ## Widget
 
 - [Widget.addWidgetConfigs](#widgetaddwidgetconfigs)
