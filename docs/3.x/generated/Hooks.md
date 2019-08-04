@@ -751,6 +751,7 @@ eg `Notification\Manager::cancel($notificationId)`.
 ## Core
 
 - [Core.configFileChanged](#coreconfigfilechanged)
+- [Core.configFileDeleted](#coreconfigfiledeleted)
 
 ### Core.configFileChanged
 
@@ -762,6 +763,16 @@ Callback Signature:
 <pre><code>function($localPath)</code></pre>
 
 - string `$localPath` Absolute path to the changed file on the server.
+
+
+### Core.configFileDeleted
+
+*Defined in [Piwik/Config/Cache](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config/Cache.php) in line [81](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config/Cache.php#L81)*
+
+
+
+Callback Signature:
+<pre><code>function($this-&gt;getFilename($id))</code></pre>
 
 ## CoreAdminHome
 
