@@ -101,6 +101,8 @@ The class defines the following methods:
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field. Inherited from [`View`](../../Piwik/View.md)
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response. Inherited from [`View`](../../Piwik/View.md)
 - [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template. Inherited from [`View`](../../Piwik/View.md)
+- [`getUseStrictReferrerPolicy()`](#getusestrictreferrerpolicy) &mdash; Returns whether a strict Referrer-Policy header will be sent. Inherited from [`View`](../../Piwik/View.md)
+- [`setUseStrictReferrerPolicy()`](#setusestrictreferrerpolicy) &mdash; Sets whether a strict Referrer-Policy header will be sent (if not, nothing is sent). Inherited from [`View`](../../Piwik/View.md)
 - [`getClientSideProperties()`](#getclientsideproperties) &mdash; Returns the array of property names whose values are passed to the UIControl JavaScript class.
 - [`getClientSideParameters()`](#getclientsideparameters) &mdash; Returns an array of property names whose values are passed to the UIControl JavaScript class.
 
@@ -272,6 +274,31 @@ a new template.
 
 - *Returns:*  `string`|`void` &mdash;
     The report contents if `$fetch` is true.
+
+<a name="getusestrictreferrerpolicy" id="getusestrictreferrerpolicy"></a>
+<a name="getUseStrictReferrerPolicy" id="getUseStrictReferrerPolicy"></a>
+### `getUseStrictReferrerPolicy()`
+
+Returns whether a strict Referrer-Policy header will be sent.
+
+Generally this should be set to 'true'.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="setusestrictreferrerpolicy" id="setusestrictreferrerpolicy"></a>
+<a name="setUseStrictReferrerPolicy" id="setUseStrictReferrerPolicy"></a>
+### `setUseStrictReferrerPolicy()`
+
+Sets whether a strict Referrer-Policy header will be sent (if not, nothing is sent).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$useStrictReferrerPolicy` (`bool`) &mdash;
+      
+- It does not return anything.
 
 <a name="getclientsideproperties" id="getclientsideproperties"></a>
 <a name="getClientSideProperties" id="getClientSideProperties"></a>

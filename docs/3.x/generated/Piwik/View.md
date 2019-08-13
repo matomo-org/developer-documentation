@@ -101,6 +101,8 @@ The class defines the following methods:
 - [`setContentType()`](#setcontenttype) &mdash; Set stored value used in the Content-Type HTTP header field.
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response.
 - [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template.
+- [`getUseStrictReferrerPolicy()`](#getusestrictreferrerpolicy) &mdash; Returns whether a strict Referrer-Policy header will be sent.
+- [`setUseStrictReferrerPolicy()`](#setusestrictreferrerpolicy) &mdash; Sets whether a strict Referrer-Policy header will be sent (if not, nothing is sent).
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -276,4 +278,29 @@ a new template.
 
 - *Returns:*  `string`|`void` &mdash;
     The report contents if `$fetch` is true.
+
+<a name="getusestrictreferrerpolicy" id="getusestrictreferrerpolicy"></a>
+<a name="getUseStrictReferrerPolicy" id="getUseStrictReferrerPolicy"></a>
+### `getUseStrictReferrerPolicy()`
+
+Returns whether a strict Referrer-Policy header will be sent.
+
+Generally this should be set to 'true'.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="setusestrictreferrerpolicy" id="setusestrictreferrerpolicy"></a>
+<a name="setUseStrictReferrerPolicy" id="setUseStrictReferrerPolicy"></a>
+### `setUseStrictReferrerPolicy()`
+
+Sets whether a strict Referrer-Policy header will be sent (if not, nothing is sent).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$useStrictReferrerPolicy` (`bool`) &mdash;
+      
+- It does not return anything.
 
