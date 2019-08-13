@@ -1199,7 +1199,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [409](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L409)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [417](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L417)*
 
 Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1215,7 +1215,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [420](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L420)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [428](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L428)*
 
 Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1482,7 +1482,7 @@ Usages:
 
 ### Login.authenticate.failed
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1352](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1352)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1353](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1353)*
 
 
 
@@ -3370,7 +3370,7 @@ Callback Signature:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Model.php) in line [392](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Model.php#L392)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Model.php) in line [393](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Model.php#L393)*
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
@@ -3387,7 +3387,7 @@ Usages:
 
 ### UsersManager.getDefaultDates
 
-*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php) in line [166](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php#L166)*
+*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php) in line [167](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php#L167)*
 
 Triggered when the list of available dates is requested, for example for the User Settings > Report date to load by default.
 
@@ -3413,7 +3413,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1096](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1096)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1097](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1097)*
 
 
 
