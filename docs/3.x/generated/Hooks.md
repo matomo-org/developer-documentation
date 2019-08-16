@@ -755,7 +755,7 @@ eg `Notification\Manager::cancel($notificationId)`.
 
 ### Core.configFileChanged
 
-*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config.php) in line [439](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config.php#L439)*
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config.php) in line [443](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config.php#L443)*
 
 Triggered when a INI config file is changed on disk.
 
