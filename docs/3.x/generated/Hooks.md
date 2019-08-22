@@ -668,7 +668,7 @@ Usages:
 
 ### Console.filterCommands
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [156](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L156)*
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [161](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L161)*
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
 should subscribe to this event and remove commands from the existing list.
@@ -2104,6 +2104,7 @@ Callback Signature:
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
+- [Request.initAuthenticationObject](#requestinitauthenticationobject)
 - [Request.shouldDisablePostProcessing](#requestshoulddisablepostprocessing)
 
 ### Request.dispatch
@@ -2277,6 +2278,17 @@ Usages:
 ### Request.initAuthenticationObject
 
 *Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [193](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L193)*
+
+
+
+Usages:
+
+[CoreHome::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L55), [Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L82)
+
+
+### Request.initAuthenticationObject
+
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [271](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L271)*
 
 
 
