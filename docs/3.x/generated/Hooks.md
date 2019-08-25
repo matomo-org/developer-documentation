@@ -1199,7 +1199,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [417](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L417)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [433](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L433)*
 
 Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1215,7 +1215,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [428](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L428)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [444](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L444)*
 
 Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -2758,6 +2758,7 @@ Callback Signature:
 - [SitesManager.deleteSite.end](#sitesmanagerdeletesiteend)
 - [SitesManager.getImageTrackingCode](#sitesmanagergetimagetrackingcode)
 - [SitesManager.shouldPerformEmptySiteCheck](#sitesmanagershouldperformemptysitecheck)
+- [SitesManager.showMatomoLinksInTrackingCodeEmail](#sitesmanagershowmatomolinksintrackingcodeemail)
 
 ### SitesManager.addSite.end
 
@@ -2818,6 +2819,16 @@ Callback Signature:
 - bool `&$shouldPerformEmptySiteCheck` Set this value to true to perform the check, false if otherwise.
 
 - int `$siteId` The ID of the site we would perform a check for.
+
+
+### SitesManager.showMatomoLinksInTrackingCodeEmail
+
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [384](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L384)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$showMatomoLinks)</code></pre>
 
 ## System
 
@@ -3044,7 +3055,7 @@ Callback Signature:
 
 ### Tracker.isExcludedVisit
 
-*Defined in [Piwik/Tracker/VisitExcluded](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/VisitExcluded.php) in line [95](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/VisitExcluded.php#L95)*
+*Defined in [Piwik/Tracker/VisitExcluded](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/VisitExcluded.php) in line [96](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/VisitExcluded.php#L96)*
 
 Triggered on every tracking request. This event can be used to tell the Tracker not to record this particular action or visit.
 
