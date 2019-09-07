@@ -802,7 +802,7 @@ Triggered after Piwik has been updated.
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
+[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 ## CronArchive
 
@@ -848,10 +848,6 @@ Callback Signature:
 <pre><code>function($this)</code></pre>
 
 - CronArchive `$this` 
-
-Usages:
-
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
 
 
 ### CronArchive.filterWebsiteIds
@@ -1844,7 +1840,7 @@ Callback Signature:
 
 Usages:
 
-[CorePluginsAdmin::onPluginActivated](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L33), [CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
+[CorePluginsAdmin::onPluginActivated](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L33), [CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 
 ### PluginManager.pluginDeactivated
@@ -1860,7 +1856,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
+[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 
 ### PluginManager.pluginInstalled
@@ -1876,7 +1872,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
+[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 
 ### PluginManager.pluginUninstalled
@@ -1892,7 +1888,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
+[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 ## PrivacyManager
 
@@ -3304,7 +3300,7 @@ Callback Signature:
 
 Usages:
 
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L31)
+[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 ## User
 
