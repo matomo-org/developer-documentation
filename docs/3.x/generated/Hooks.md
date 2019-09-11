@@ -1264,6 +1264,7 @@ Callback Signature:
 - [Live.getAllVisitorDetails](#livegetallvisitordetails)
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 - [Live.makeNewVisitorObject](#livemakenewvisitorobject)
+- [Live.queryMaxExecutionTimeExceeded](#livequerymaxexecutiontimeexceeded)
 
 ### Live.addProfileSummaries
 
@@ -1301,7 +1302,7 @@ Callback Signature:
 
 ### Live.API.getIdSitesString
 
-*Defined in [Piwik/Plugins/Live/Model](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Model.php) in line [286](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Model.php#L286)*
+*Defined in [Piwik/Plugins/Live/Model](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Model.php) in line [385](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Model.php#L385)*
 
 
 
@@ -1414,6 +1415,16 @@ Callback Signature:
 - \Piwik\Plugins\Live\VisitorInterface `&$visitor` Initialized to null, but can be set to a new visitor object. If it isn't modified Piwik uses the default class.
 
 - array `$visitorRawData` Raw data using in Visitor object constructor.
+
+
+### Live.queryMaxExecutionTimeExceeded
+
+*Defined in [Piwik/Plugins/Live/Model](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Model.php) in line [181](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Model.php#L181)*
+
+
+
+Callback Signature:
+<pre><code>function($params)</code></pre>
 
 ## Login
 
