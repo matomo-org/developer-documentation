@@ -1181,6 +1181,52 @@ Callback Signature:
 
 - array `&$reportsWithGoals` The list of arrays describing reports that have Goal metrics. Each element of this array must be an array with the following properties: - **category**: The report category. This should be a translated string. - **name**: The report's translated name. - **module**: The plugin the report is in, eg, `'UserCountry'`. - **action**: The API method of the report, eg, `'getCountry'`.
 
+## Http
+
+- [Http.sendHttpRequest](#httpsendhttprequest)
+- [Http.sendHttpRequest.end](#httpsendhttprequestend)
+
+### Http.sendHttpRequest
+
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Http.php) in line [239](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Http.php#L239)*
+
+Triggered to send an HTTP request. Allows plugins to resolve the HTTP request themselves or to find out
+when an HTTP request is triggered to log this information for example to a monitoring tool.
+
+Callback Signature:
+<pre><code>function($aUrl, $httpEventParams, &amp;$response, &amp;$status, &amp;$headers)</code></pre>
+
+- string `$url` The URL that needs to be requested
+
+- array `$params` HTTP params like - 'httpMethod' (eg GET, POST, ...), - 'body' the request body if the HTTP method needs to be posted - 'userAgent' - 'timeout' After how many seconds a request should time out - 'headers' An array of header strings like array('Accept-Language: en', '...') - 'verifySsl' A boolean whether SSL certificate should be verified - 'destinationPath' If set, the response of the HTTP request should be saved to this file
+
+- string `&$response` A plugin listening to this event should assign the HTTP response it received to this variable, for example "{value: true}"
+
+- string `&$status` A plugin listening to this event should assign the HTTP status code it received to this variable, for example "200"
+
+- array `&$headers` A plugin listening to this event should assign the HTTP headers it received to this variable, eg array('Content-Length' => '5')
+
+
+### Http.sendHttpRequest.end
+
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Http.php) in line [701](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Http.php#L701)*
+
+Triggered when an HTTP request finished. A plugin can for example listen to this and alter the response,
+status code, or finish a timer in case the plugin is measuring how long it took to execute the request
+
+Callback Signature:
+<pre><code>function($aUrl, $httpEventParams, &amp;$response, &amp;$status, &amp;$headers)</code></pre>
+
+- string `$url` The URL that needs to be requested
+
+- array `$params` HTTP params like - 'httpMethod' (eg GET, POST, ...), - 'body' the request body if the HTTP method needs to be posted - 'userAgent' - 'timeout' After how many seconds a request should time out - 'headers' An array of header strings like array('Accept-Language: en', '...') - 'verifySsl' A boolean whether SSL certificate should be verified - 'destinationPath' If set, the response of the HTTP request should be saved to this file
+
+- string `&$response` The response of the HTTP request, for example "{value: true}"
+
+- string `&$status` The returned HTTP status code, for example "200"
+
+- array `&$headers` The returned headers, eg array('Content-Length' => '5')
+
 ## Insights
 
 - [Insights.addReportToOverview](#insightsaddreporttooverview)
