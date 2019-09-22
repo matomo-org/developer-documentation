@@ -48,7 +48,7 @@ if ($activated->getName() == 'variation1') {
 // Important: let Piwik know that you have entered the current visitor into an experiment. 
 // We recommend escaping the experiment name and variation name if needed to prevent possible XSS.
 $script = $experiment->getTrackingScript($experiment->getExperimentName(), $activated->getName());
-echo $script; // prints eg "<script ...>_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'variation1'});"
+echo $script; // prints eg "<script ...>_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'variation1'}]);"
 ```
 
 ### Sending the name of the activated variation to Piwik
@@ -58,7 +58,7 @@ Now you need to let Piwik know which variation was activated for your current us
 HTML:
 
 ```js
-_paq.push('AbTesting::enter', {experiment: 'theExperimentNameOrId', variation: 'myVariation'});
+_paq.push(['AbTesting::enter', {experiment: 'theExperimentNameOrId', variation: 'myVariation'}];
 ```
 
 This tracking code lets Piwik know that you have entered the current visitor into an experiment. 
@@ -103,7 +103,7 @@ $activated->run();
 // if user was not redirected because the original version was chosen, we need to let Piwik know that 
 // the original version was activated.
 $script = $experiment->getTrackingScript($experiment->getExperimentName(), $activated->getName());
-echo $script; // prints eg "<script ...>_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'});"
+echo $script; // prints eg "<script ...>_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'}]);"
 ```
 
 Alternative version performing the redirect manually:
@@ -112,7 +112,7 @@ Alternative version performing the redirect manually:
 /**
  * in index.php:
  */
-echo "_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'});"
+echo "_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'}]);"
 
 $variations = [['name' => 'newDesign']];
 $experiment = new Experiment('theExperimentName', $variations);
@@ -125,13 +125,13 @@ if ($activated->getName() === 'newDesign') {
     exit;
 } else {
     // do nothing and show original variation
-    echo "_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'});"
+    echo "_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'}]);"
 }
 
 /**
  * in newDesign.php:
  */
-echo "_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'newDesign'});"
+echo "_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'newDesign'}]);"
 ```
 
 ### Custom A/B testing framework
@@ -147,7 +147,7 @@ You can also implement a simple A/B testing framework yourself. An A/B test fram
 * Execute the server-side code for the randomly chosen, or previously activated variation: 
   * this is the code which implements the changes needed to display this variation in your website, for example displaying a different design.  
 * Output in your website the one-line JavaScript code that lets Piwik know which variation was activated:
-  * `_paq.push('AbTesting::enter', {experiment: 'theExperimentName', variation: 'variationNameOrIdActivatedForCurrentVisitor'});`
+  * `_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'variationNameOrIdActivatedForCurrentVisitor'}];`
 
 ## Finishing an experiment
 
