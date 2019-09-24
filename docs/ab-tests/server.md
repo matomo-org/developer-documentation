@@ -58,7 +58,7 @@ Now you need to let Piwik know which variation was activated for your current us
 HTML:
 
 ```js
-_paq.push(['AbTesting::enter', {experiment: 'theExperimentNameOrId', variation: 'myVariation'}];
+_paq.push(['AbTesting::enter', {experiment: 'theExperimentNameOrId', variation: 'myVariation'}]);
 ```
 
 This tracking code lets Piwik know that you have entered the current visitor into an experiment. 
@@ -147,7 +147,7 @@ You can also implement a simple A/B testing framework yourself. An A/B test fram
 * Execute the server-side code for the randomly chosen, or previously activated variation: 
   * this is the code which implements the changes needed to display this variation in your website, for example displaying a different design.  
 * Output in your website the one-line JavaScript code that lets Piwik know which variation was activated:
-  * `_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'variationNameOrIdActivatedForCurrentVisitor'}];`
+  * `_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'variationNameOrIdActivatedForCurrentVisitor'}]);`
 
 ## Finishing an experiment
 
