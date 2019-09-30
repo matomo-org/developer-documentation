@@ -858,6 +858,7 @@ Index
 - [`Manager`](Piwik/Notification/Manager.md) &mdash; *Class in namespace* [`Piwik\Notification`](Piwik/Notification)- [`Manager`](Piwik/Plugin/Manager.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`Menu`](Piwik/Plugin/Menu.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`Metric`](Piwik/Plugin/Metric.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`$metrics`](Piwik/Plugin/Report.md#$metrics) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
 - [`monthly()`](Piwik/Plugin/Tasks.md#monthly) &mdash; *Method in class* [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`Monthly`](Piwik/Scheduler/Schedule/Monthly.md) &mdash; *Class in namespace* `Piwik\Scheduler\Schedule`- [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md) &mdash; *Class in namespace* [`Piwik\Settings\FieldConfig`](Piwik/Settings/FieldConfig)- [`Migration`](Piwik/Updater/Migration.md) &mdash; *Class in namespace* [`Piwik\Updater`](Piwik/Updater)- [`$metrics_documentation`](Piwik/ViewDataTable/Config.md#$metrics_documentation) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$max_export_filter_limit`](Piwik/ViewDataTable/Config.md#$max_export_filter_limit) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 
 ## N
 
