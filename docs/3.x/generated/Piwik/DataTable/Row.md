@@ -63,6 +63,8 @@ The class defines the following methods:
 - [`sumRow()`](#sumrow) &mdash; Sums the given `$rowToSum` columns values to the existing row column values.
 - [`sumRowMetadata()`](#sumrowmetadata) &mdash; Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 - [`isSummaryRow()`](#issummaryrow) &mdash; Returns `true` if this row is the summary row, `false` if otherwise.
+- [`getComparisons()`](#getcomparisons) &mdash; Returns the associated comparisons DataTable, if any.
+- [`setComparisons()`](#setcomparisons) &mdash; Associates the supplied table with this row as the comparisons table.
 - [`isEqual()`](#isequal) &mdash; Helper function that tests if two rows are equal.
 
 <a name="__construct" id="__construct"></a>
@@ -420,6 +422,31 @@ depends on the label of the row, and so, is not 100% accurate.
 #### Signature
 
 - It returns a `bool` value.
+
+<a name="getcomparisons" id="getcomparisons"></a>
+<a name="getComparisons" id="getComparisons"></a>
+### `getComparisons()`
+
+Returns the associated comparisons DataTable, if any.
+
+#### Signature
+
+
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|`null` &mdash;
+    
+
+<a name="setcomparisons" id="setcomparisons"></a>
+<a name="setComparisons" id="setComparisons"></a>
+### `setComparisons()`
+
+Associates the supplied table with this row as the comparisons table.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$table` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+      
+- It does not return anything.
 
 <a name="isequal" id="isequal"></a>
 <a name="isEqual" id="isEqual"></a>

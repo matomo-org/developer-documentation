@@ -164,6 +164,9 @@ The abstract class defines the following methods:
 - [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Returns `true` if this visualization can display some type of data or not.
 - [`throwWhenSettingNonOverridableParameter()`](#throwwhensettingnonoverridableparameter) &mdash; Display a meaningful error message when any invalid parameter is being set.
 - [`getNonOverridableParams()`](#getnonoverridableparams)
+- [`isComparing()`](#iscomparing) &mdash; Returns true if both this current visualization supports comparison, and if comparison query parameters are present in the URL.
+- [`supportsComparison()`](#supportscomparison) &mdash; Implementations should override this method if they support a special comparison view.
+- [`getRequestArray()`](#getrequestarray)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -336,4 +339,35 @@ Display a meaningful error message when any invalid parameter is being set.
     - `$overrideParams` (`Piwik\Plugin\$overrideParams`) &mdash;
       
 - It returns a `array` value.
+
+<a name="iscomparing" id="iscomparing"></a>
+<a name="isComparing" id="isComparing"></a>
+### `isComparing()`
+
+Returns true if both this current visualization supports comparison, and if comparison query parameters are present in the URL.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="supportscomparison" id="supportscomparison"></a>
+<a name="supportsComparison" id="supportsComparison"></a>
+### `supportsComparison()`
+
+Implementations should override this method if they support a special comparison view.
+
+By
+default, it is assumed visualizations do not support comparison.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="getrequestarray" id="getrequestarray"></a>
+<a name="getRequestArray" id="getRequestArray"></a>
+### `getRequestArray()`
+
+#### Signature
+
+- It does not return anything.
 

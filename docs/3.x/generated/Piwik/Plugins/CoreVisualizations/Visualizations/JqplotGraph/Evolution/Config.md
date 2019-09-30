@@ -69,6 +69,7 @@ This class defines the following properties:
 - [`$no_data_message`](#$no_data_message) &mdash; Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$datatable_actions`](#$datatable_actions) &mdash; List of extra actions to display as icons in the datatable footer. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$segmented_visitor_log_segment_suffix`](#$segmented_visitor_log_segment_suffix) Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
+- [`$disable_comparison`](#$disable_comparison) &mdash; Disable comparison support for this specific usage of a ViewDataTable. Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$report_id`](#$report_id) Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$controllerName`](#$controllername) Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
 - [`$controllerAction`](#$controlleraction) Inherited from [`Config`](../../../../../../Piwik/ViewDataTable/Config.md)
@@ -826,6 +827,16 @@ Not API yet.
 
 - Its type is not specified.
 
+
+<a name="$disable_comparison" id="$disable_comparison"></a>
+<a name="disable_comparison" id="disable_comparison"></a>
+### `$disable_comparison`
+
+Disable comparison support for this specific usage of a ViewDataTable.
+
+#### Signature
+
+- It is a `bool` value.
 
 <a name="$report_id" id="$report_id"></a>
 <a name="report_id" id="report_id"></a>

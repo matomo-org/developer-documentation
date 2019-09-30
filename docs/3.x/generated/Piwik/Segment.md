@@ -52,6 +52,7 @@ The class defines the following methods:
 - [`getSelectQuery()`](#getselectquery) &mdash; Extend an SQL query that aggregates data over one of the 'log_' tables with segment expressions.
 - [`__toString()`](#__tostring) &mdash; Returns the segment string.
 - [`combine()`](#combine) &mdash; Combines this segment with another segment condition, if the segment condition is not already in the segment.
+- [`getStoredSegmentName()`](#getstoredsegmentname)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -194,4 +195,15 @@ The combination is naive in that it does not take order of operations into accou
 - It returns a `string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
+
+<a name="getstoredsegmentname" id="getstoredsegmentname"></a>
+<a name="getStoredSegmentName" id="getStoredSegmentName"></a>
+### `getStoredSegmentName()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idSite`
+      
+- It does not return anything.
 

@@ -167,6 +167,9 @@ The class defines the following methods:
 - [`canDisplayViewDataTable()`](#candisplayviewdatatable) &mdash; Returns `true` if this visualization can display some type of data or not. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`throwWhenSettingNonOverridableParameter()`](#throwwhensettingnonoverridableparameter) &mdash; Display a meaningful error message when any invalid parameter is being set. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`getNonOverridableParams()`](#getnonoverridableparams) Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`isComparing()`](#iscomparing) &mdash; Returns true if both this current visualization supports comparison, and if comparison query parameters are present in the URL. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`supportsComparison()`](#supportscomparison) &mdash; Implementations should override this method if they support a special comparison view. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
+- [`getRequestArray()`](#getrequestarray) Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable making it available in the Twig template specified by `[TEMPLATE_FILE](/api-reference/Piwik/Plugin/Visualization#piwik\plugin\visualization::template_file)`.
 - [`isThereDataToDisplay()`](#istheredatatodisplay) &mdash; Returns `true` if there is data to display, `false` if otherwise.
 - [`beforeLoadDataTable()`](#beforeloaddatatable) &mdash; Hook that is called before loading report data from the API.
@@ -346,6 +349,37 @@ Display a meaningful error message when any invalid parameter is being set.
     - `$overrideParams` (`Piwik\Plugin\$overrideParams`) &mdash;
       
 - It returns a `array` value.
+
+<a name="iscomparing" id="iscomparing"></a>
+<a name="isComparing" id="isComparing"></a>
+### `isComparing()`
+
+Returns true if both this current visualization supports comparison, and if comparison query parameters are present in the URL.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="supportscomparison" id="supportscomparison"></a>
+<a name="supportsComparison" id="supportsComparison"></a>
+### `supportsComparison()`
+
+Implementations should override this method if they support a special comparison view.
+
+By
+default, it is assumed visualizations do not support comparison.
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="getrequestarray" id="getrequestarray"></a>
+<a name="getRequestArray" id="getRequestArray"></a>
+### `getRequestArray()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="assigntemplatevar" id="assigntemplatevar"></a>
 <a name="assignTemplateVar" id="assignTemplateVar"></a>

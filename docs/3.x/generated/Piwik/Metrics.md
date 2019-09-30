@@ -40,6 +40,7 @@ Methods
 
 The class defines the following methods:
 
+- [`getMappingFromIdToName()`](#getmappingfromidtoname)
 - [`getVisitsMetricNames()`](#getvisitsmetricnames)
 - [`getMappingFromNameToId()`](#getmappingfromnametoid)
 - [`getMappingFromNameToIdGoal()`](#getmappingfromnametoidgoal)
@@ -50,6 +51,14 @@ The class defines the following methods:
 - [`getMetricIdsToProcessReportTotal()`](#getmetricidstoprocessreporttotal)
 - [`getDefaultMetricsDocumentation()`](#getdefaultmetricsdocumentation)
 - [`getPercentVisitColumn()`](#getpercentvisitcolumn)
+
+<a name="getmappingfromidtoname" id="getmappingfromidtoname"></a>
+<a name="getMappingFromIdToName" id="getMappingFromIdToName"></a>
+### `getMappingFromIdToName()`
+
+#### Signature
+
+- It does not return anything.
 
 <a name="getvisitsmetricnames" id="getvisitsmetricnames"></a>
 <a name="getVisitsMetricNames" id="getVisitsMetricNames"></a>

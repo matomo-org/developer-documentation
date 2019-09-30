@@ -131,6 +131,7 @@ This class defines the following properties:
 - [`$no_data_message`](#$no_data_message) &mdash; Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set
 - [`$datatable_actions`](#$datatable_actions) &mdash; List of extra actions to display as icons in the datatable footer.
 - [`$segmented_visitor_log_segment_suffix`](#$segmented_visitor_log_segment_suffix)
+- [`$disable_comparison`](#$disable_comparison) &mdash; Disable comparison support for this specific usage of a ViewDataTable.
 - [`$report_id`](#$report_id)
 - [`$controllerName`](#$controllername)
 - [`$controllerAction`](#$controlleraction)
@@ -888,6 +889,16 @@ Not API yet.
 
 - Its type is not specified.
 
+
+<a name="$disable_comparison" id="$disable_comparison"></a>
+<a name="disable_comparison" id="disable_comparison"></a>
+### `$disable_comparison`
+
+Disable comparison support for this specific usage of a ViewDataTable.
+
+#### Signature
+
+- It is a `bool` value.
 
 <a name="$report_id" id="$report_id"></a>
 <a name="report_id" id="report_id"></a>

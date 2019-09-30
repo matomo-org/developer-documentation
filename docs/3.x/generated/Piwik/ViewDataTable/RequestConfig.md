@@ -96,6 +96,9 @@ This class defines the following properties:
 - [`$pivotBy`](#$pivotby) &mdash; Dimension ID to pivot by.
 - [`$pivotByColumn`](#$pivotbycolumn) &mdash; The column to display in a pivot table, eg, `'nb_visits'`.
 - [`$pivotByColumnLimit`](#$pivotbycolumnlimit) &mdash; The maximum number of columns to display in a pivot table.
+- [`$compareSegments`](#$comparesegments) &mdash; List of segments to compare with.
+- [`$comparePeriods`](#$compareperiods) &mdash; List of period labels to compare with.
+- [`$compareDates`](#$comparedates) &mdash; List of period dates to compare with.
 
 <a name="$clientsideparameters" id="$clientsideparameters"></a>
 <a name="clientSideParameters" id="clientSideParameters"></a>
@@ -369,6 +372,42 @@ for more info.
 #### Signature
 
 - It is a `int` value.
+
+<a name="$comparesegments" id="$comparesegments"></a>
+<a name="compareSegments" id="compareSegments"></a>
+### `$compareSegments`
+
+List of segments to compare with.
+
+Defaults to segments used in `compareSegments[]` query parameter.
+
+#### Signature
+
+- It is a `array` value.
+
+<a name="$compareperiods" id="$compareperiods"></a>
+<a name="comparePeriods" id="comparePeriods"></a>
+### `$comparePeriods`
+
+List of period labels to compare with.
+
+Defaults to values used in `comparePeriods[]` query parameter.
+
+#### Signature
+
+- It is a `array` value.
+
+<a name="$comparedates" id="$comparedates"></a>
+<a name="compareDates" id="compareDates"></a>
+### `$compareDates`
+
+List of period dates to compare with.
+
+Defaults to values used in `compareDates[]` query parameter.
+
+#### Signature
+
+- It is a `array` value.
 
 Methods
 -------
