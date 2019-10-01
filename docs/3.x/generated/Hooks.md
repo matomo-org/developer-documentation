@@ -2367,7 +2367,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Plugins/BulkTracking/Tracker/Handler](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/BulkTracking/Tracker/Handler.php) in line [116](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/BulkTracking/Tracker/Handler.php#L116)*
+*Defined in [Piwik/Plugins/BulkTracking/Tracker/Handler](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/BulkTracking/Tracker/Handler.php) in line [118](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/BulkTracking/Tracker/Handler.php#L118)*
 
 
 
@@ -3073,7 +3073,7 @@ Callback Signature:
 
 ### Tracker.Cache.getSiteAttributes
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php) in line [118](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php#L118)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php) in line [120](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php#L120)*
 
 Triggered to get the attributes of a site entity that might be used by the Tracker. Plugins add new site attributes for use in other tracking events must
 use this event to put those attributes in the Tracker Cache.
@@ -3137,7 +3137,7 @@ Callback Signature:
 
 ### Tracker.end
 
-*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker.php) in line [102](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker.php#L102)*
+*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker.php) in line [115](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker.php#L115)*
 
 
 
@@ -3242,7 +3242,7 @@ Callback Signature:
 
 ### Tracker.setTrackerCacheGeneral
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php) in line [192](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php#L192)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php) in line [196](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php#L196)*
 
 Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache) is saved to disk. This event can be used to add extra content to the cache.
 
