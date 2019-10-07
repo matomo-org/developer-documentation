@@ -2182,7 +2182,7 @@ Callback Signature:
 
 ### Report.unsubscribe
 
-*Defined in [Piwik/Plugins/ScheduledReports/SubscriptionModel](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/SubscriptionModel.php) in line [98](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/SubscriptionModel.php#L98)*
+*Defined in [Piwik/Plugins/ScheduledReports/SubscriptionModel](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/SubscriptionModel.php) in line [91](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/SubscriptionModel.php#L91)*
 
 
 
