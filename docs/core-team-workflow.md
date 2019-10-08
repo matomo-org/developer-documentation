@@ -149,7 +149,7 @@ If you believe you have found a bug in Piwik, please do the following:
 
 ### Submitting a feature request
 
-Anyone can contribute to Piwik by submitting a feature request. You can discuss with other users what can be improved in Piwik in the [Feature Suggestions forum](https://forum.piwik.org/c/feature-suggestions), or search if someone reported your suggestion before in the [Piwik issue tracker](https://github.com/matomo-org/matomo/issues). If you find an existing issue, leave a comment to make your voice heard. Otherwise create a new issue describing how Piwik can be improved to help you in your daily work.
+Anyone can contribute to Piwik by submitting a feature request. You can discuss with other users what can be improved in Piwik in the [Feature Suggestions forum](https://forum.piwik.org/c/feature-suggestions), or search if someone reported your suggestion before in the [Piwik issue tracker](https://github.com/matomo-org/matomo/issues). If you find an existing issue, leave a comment to make your voice heard. Otherwise [create a new issue](https://github.com/matomo-org/matomo/issues/new) describing how Piwik can be improved to help you in your daily work (ideally explain why this is important, what problem it would solve for you, and maybe some suggestion on how it could be done). 
 
 ## Contributing to Piwik
 
