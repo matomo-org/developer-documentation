@@ -211,6 +211,8 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
        A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
     - `$joinLogActionOnColumn` (`bool`|`string`) &mdash;
        One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed (since there is only one column).
+    - `$secondaryOrderBy` (`string`) &mdash;
+       A secondary order by clause for the ranking query
 
 - *Returns:*  `mixed` &mdash;
     A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
