@@ -18,6 +18,7 @@ The class defines the following methods:
 - [`send()`](#send)
 - [`createAttachment()`](#createattachment)
 - [`setSubject()`](#setsubject)
+- [`getMailHost()`](#getmailhost)
 - [`sanitiseString()`](#sanitisestring) &mdash; Replaces characters known to appear incorrectly in some email clients
 
 <a name="__construct" id="__construct"></a>
@@ -122,6 +123,14 @@ Set Reply-To Header
 -  It accepts the following parameter(s):
     - `$subject`
       
+- It does not return anything.
+
+<a name="getmailhost" id="getmailhost"></a>
+<a name="getMailHost" id="getMailHost"></a>
+### `getMailHost()`
+
+#### Signature
+
 - It does not return anything.
 
 <a name="sanitisestring" id="sanitisestring"></a>

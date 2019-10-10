@@ -452,6 +452,7 @@ Index
 - [`getLanguageToCountryList()`](Piwik/Intl/Data/Provider/LanguageDataProvider.md#getlanguagetocountrylist) &mdash; *Method in class* [`LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md)
 - [`getContinentList()`](Piwik/Intl/Data/Provider/RegionDataProvider.md#getcontinentlist) &mdash; *Method in class* [`RegionDataProvider`](Piwik/Intl/Data/Provider/RegionDataProvider.md)
 - [`getCountryList()`](Piwik/Intl/Data/Provider/RegionDataProvider.md#getcountrylist) &mdash; *Method in class* [`RegionDataProvider`](Piwik/Intl/Data/Provider/RegionDataProvider.md)
+- [`getMailHost()`](Piwik/Mail.md#getmailhost) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`getMappingFromIdToName()`](Piwik/Metrics.md#getmappingfromidtoname) &mdash; *Method in class* [`Metrics`](Piwik/Metrics.md)
 - [`getVisitsMetricNames()`](Piwik/Metrics.md#getvisitsmetricnames) &mdash; *Method in class* [`Metrics`](Piwik/Metrics.md)
 - [`getMappingFromNameToId()`](Piwik/Metrics.md#getmappingfromnametoid) &mdash; *Method in class* [`Metrics`](Piwik/Metrics.md)
