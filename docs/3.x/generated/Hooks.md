@@ -652,6 +652,26 @@ Usages:
 
 [Dashboard::addSubcategories](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L90), [Goals::addSubcategories](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L181)
 
+## CliMulti
+
+- [CliMulti.supportsAsync](#climultisupportsasync)
+
+### CliMulti.supportsAsync
+
+*Defined in [Piwik/CliMulti](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CliMulti.php) in line [256](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CliMulti.php#L256)*
+
+Triggered to allow plugins to force the usage of async cli multi execution or to disable it. **Example**
+
+    public function supportsAsync(&$supportsAsync)
+    {
+        $supportsAsync = false; // do not allow async climulti execution
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$supportsAsync)</code></pre>
+
+- bool `&$supportsAsync` Whether async is supported or not.
+
 ## Config
 
 - [Config.badConfigurationFile](#configbadconfigurationfile)
