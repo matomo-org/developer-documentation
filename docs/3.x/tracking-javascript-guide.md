@@ -380,7 +380,7 @@ Let's take an example. Imagine that your website authenticate your users via a l
 var _paq = window._paq || [];
 
 <?php
-// If used is logged-in then call 'setUserId'
+// If user is logged-in then call 'setUserId'
 // $userId variable must be set by the server when the user has successfully authenticated to your app.
 if (isset($userId)) {
      echo sprintf("_paq.push(['setUserId', '%s']);", $userId);
