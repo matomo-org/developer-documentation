@@ -848,7 +848,7 @@ Callback Signature:
 
 ### CoreAdminHome.customLogoChanged
 
-*Defined in [Piwik/Plugins/CoreAdminHome/CustomLogo](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CustomLogo.php) in line [230](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CustomLogo.php#L230)*
+*Defined in [Piwik/Plugins/CoreAdminHome/CustomLogo](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CustomLogo.php) in line [235](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CustomLogo.php#L235)*
 
 Triggered when a user uploads a custom logo. This event is triggered for
 the large logo, for the smaller logo-header.png file, and for the favicon.
