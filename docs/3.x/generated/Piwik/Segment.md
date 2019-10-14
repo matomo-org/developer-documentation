@@ -161,6 +161,8 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
       
     - `$offset`
       
+    - `$forceGroupBy`
+      
 
 - *Returns:*  `string` &mdash;
     The entire select query.
