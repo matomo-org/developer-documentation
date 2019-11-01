@@ -49,6 +49,10 @@ if (current_user_can(\WpMatomo\Capabilities::KEY_SUPERUSER) {
 * `make_matomo_reporting_link( $category, $subcategory, $params = array() )` - Generate a URL to a specific report in the standalone Matomo reporting UI
 * `make_matomo_action_link( $module, $action, $params = array() )` - Generate a URL to a specific controller action in the standalone Matomo UI
 
+## `\WpMatomo\Db\Settings`
+
+* `prefix_table_name( $table_name )` - Prefix a Matomo table name. Applies the WordPress and the Matomo table prefix.
+
 
 ## Need additional APIs?
 
