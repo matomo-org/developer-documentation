@@ -5,7 +5,7 @@ category: API Reference
 
 This is the API Reference for developers who want to create a custom [tag](/guides/tagmanager/custom-tag), [trigger](/guides/tagmanager/custom-trigger), or [variable](/guides/tagmanager/custom-variable). Please note that sometimes we may mention the word `template` which refers to either a tag, a trigger, or a variable.
 
-In case you are new to the tag manager, you may also read the **[Tag Manager user guide]()** to get familiar with the tag manager itself and the [Tag Manager developer guides](/guides/tagmanager/settingup) to get familiar on how to extend the tag manager.
+In case you are new to the tag manager, you may also read the **[Tag Manager user guide](/guides/tagmanager/settingup)** to get familiar with the tag manager itself and the [Tag Manager developer guides](/guides/tagmanager/settingup) to get familiar on how to extend the tag manager.
 
 ## `TemplateParameters`
 

@@ -30,6 +30,7 @@ class DevelopCategory extends Category
             new UnlinkedCategory('develop-getting-started'),
             new UnlinkedCategory('develop-plugin-analytics'),
             new UnlinkedCategory('develop-plugin-tagmanager'),
+            new UnlinkedCategory('develop-plugin-wordpress'),
             new UnlinkedCategory('develop-plugin-basics'),
             new UnlinkedCategory('develop-security'),
             new UnlinkedCategory('develop-utils'),
