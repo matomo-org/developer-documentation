@@ -1,7 +1,7 @@
 ---
 category: Develop
 title: Getting Started
-next: wordpress/best-practices
+next: wordpress/basics
 ---
 # Matomo for WordPress
 

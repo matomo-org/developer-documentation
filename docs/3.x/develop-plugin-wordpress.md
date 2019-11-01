@@ -3,7 +3,7 @@ category: Develop
 title: WordPress
 subGuides:
   - wordpress/getting-started
-  - wordpress/best-practices
+  - wordpress/basics
   - wordpress/data-access
   - wordpress/matomo-plugin
 ---
