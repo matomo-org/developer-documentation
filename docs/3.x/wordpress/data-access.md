@@ -8,16 +8,16 @@ next: wordpress/matomo-plugin
 Within your WordPress plugin, you can access any data that Matomo has stored. There are two ways to do this:
 
 * Without bootstrapping Matomo
-* By bootstrapping Matomo
+* With bootstrapping Matomo
 
 When possible, it is recommended to not bootstrap Matomo for performance and stability reason. It possibly takes 50-250ms
 to bootstrap Matomo depending on the server and it can slow down the WordPress experience. Matomo is very powerful and
-therefore comes with a few dependencies. Not bootstrapping Matomo therefore reduces the chances of WordPress breaking
+therefore comes with a few dependencies. Not bootstrapping Matomo reduces the chances of WordPress breaking
 because some other plugin requires a dependency we require as well.
 
-Especially in the WordPress frontend we do not recommend to bootstrap Matomo but instead query the database directly when possible.
+Especially in the WordPress frontend we do not recommend bootstraping Matomo but instead query the database directly when possible.
 
-## Accessing data without bootstrapping Matomo
+## Direct data access without bootstrapping Matomo
 
 You can fetch any data by fetching data directly from the WordPress database. This is not always recommended or practical but in
 some cases this can be much faster and more reliable.
@@ -42,18 +42,21 @@ With just one method call you can bootstrap Matomo and afterwards access all it'
 Example on how to do an API call to request the list of goals and report data:
 
 ```php
-\WpMatomo\Bootstrap::do_bootstrap();
-$all_goals_configured_in_matomo = \Piwik\API\Request::processRequest('Goals.getGoals');
-
 $site = new \WpMatomo\Site();
 $idsite = $site->get_current_matomo_site_id();
-$country_report = \Piwik\API\Request::processRequest('UserCountry.getCountry', array(
-    'idSite' => $idsite,
-    'period' => 'day',
-    'date' => 'today'
-);
+
+if ($idsite) {
+    \WpMatomo\Bootstrap::do_bootstrap();
+
+    $all_goals_configured_in_matomo = \Piwik\API\Request::processRequest('Goals.getGoals', array(
+        'idSite' => $idsite
+    );
+
+    $country_report = \Piwik\API\Request::processRequest('UserCountry.getCountry', array(
+        'idSite' => $idsite,
+        'period' => 'day',
+        'date' => 'today'
+    );
+}
+
 ```
-
-## API reference
-
-View the list of all available [API methods](/api-reference/wordpress/classes-reference) and [hooks](/api-reference/wordpress/hooks-reference).
