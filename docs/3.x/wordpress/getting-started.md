@@ -20,7 +20,7 @@ As a developer, you can create WordPress plugins that hook into our WordPress pl
 
 * [You have installed WordPress](https://wordpress.org/support/article/how-to-install-wordpress/)
 * You have installed our Matomo Anayltics for WordPress plugin
-* [You have created a WordPress plugin](https://codex.wordpress.org/Writing_a_Plugin)
+* [You have created a WordPress plugin](https://codex.wordpress.org/Writing_a_Plugin) or a [Matomo plugin](/guides/getting-started-part-1)
 
 ## Next step:
 
