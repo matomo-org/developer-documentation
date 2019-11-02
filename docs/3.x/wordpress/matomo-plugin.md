@@ -71,7 +71,7 @@ if (defined( 'ABSPATH') && function_exists('add_action')) {
 }
 ```
 
-## Adding a Matomo plugin to a WordPress plugin
+## Adding one or multiple Matomo plugins to a WordPress plugin
 
 If you want to add, customise, or remove behaviour within Matomo, you may want to create a Matomo plugin within your WordPress plugin.
 
@@ -79,60 +79,15 @@ You can do this by editing your WordPress plugin file. If the name of your WordP
 then you need to add below code to the `matomo_custom_exclude_visits.php` file.
 
 ```php
-namespace \Piwik\Plugins\matomo_custom_exclude_visits;
-
-$path = '/matomo/app/core/Plugin.php';
-$is_matomo_installed = false;
-if (defined('WP_PLUGIN_DIR') && WP_PLUGIN_DIR && file_exists(WP_PLUGIN_DIR . $path)) {
-    require_once WP_PLUGIN_DIR . $path;
-    $is_matomo_installed = true;
-} elseif (defined('WPMU_PLUGIN_DIR') && WPMU_PLUGIN_DIR && file_exists(WPMU_PLUGIN_DIR . $path)) {
-    require_once WPMU_PLUGIN_DIR . $path;
-    $is_matomo_installed = true;
-}
-
-if ($is_matomo_installed) {
-
-    add_action('plugins_loaded', function () {
-        $is_matomo_activated = function_exists('add_matomo_plugin');
-        if ($is_matomo_activated) {
-            add_matomo_plugin(__DIR__, __FILE__);
-        }
-    });
-
-    class matomo_custom_exclude_visits extends \Piwik\Plugin
-    {
-
-        /**
-         * @see \Piwik\Plugin::registerEvents
-         */
-        public function registerEvents()
-        {
-            return array(
-                'Tracker.isExcludedVisit' => 'is_excluded_visit',
-            );
-        }
-
-        public function is_excluded_visit (&$excluded, $tracking_request) {
-            if ($tracking_request.getParam('foobar') == 1) {
-                $excluded = true; // exclude visits when foobar tracking parameter is present
-            }
-        }
-    }
-}
+add_action('plugins_loaded', function () {
+	$is_matomo_plugin_activated = function_exists('add_matomo_plugin');
+	if ($is_matomo_plugin_activated) {
+		// you can add one more multiple Matomo plugins here
+		add_matomo_plugin( __DIR__ . '/plugins/MyCustomPlugin', __FILE__ );
+	}
+});
 ```
 
-You will also need to define a file named `plugin.json` in your WordPress plugin folder. This file lets Matomo know that
-it should load your plugin within Matomo.
+Next, you need to create a directory named `plugins` within your WordPress plugin. There you can now put one or multiple Matomo plugins.
 
-```json
-{
-    "name": "matomo_custom_exclude_visits",
-    "description": "Exclude specific visits from being tracked",
-    "version": "",
-    "require": {}
-}
-```
-
-[See the documentation for all available configuration options](/guides/distributing-your-plugin#pluginjson-file)
-
+[View a WordPress plugin example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/wordpress-plugin-adding-matomo-plugin)
