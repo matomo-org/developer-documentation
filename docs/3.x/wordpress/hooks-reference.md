@@ -1,7 +1,8 @@
 ---
 category: API Reference
+title: Hooks
 ---
-# WordPress Hooks
+# Matomo for WordPress - Hooks
 
 ## Filters
 
@@ -15,7 +16,7 @@ category: API Reference
 
 * `matomo_tracking_user_id ($user_id_to_track)`
 
-    Plugins can customise which [UserID](https://matomo.org/docs/user-id/) is tracked if the userId feature is enabled in tracking settings. For example you can anonymise the userId, or you can choose to only track specific users, etc.
+    Plugins can customise which [User ID](https://matomo.org/docs/user-id/) is tracked if the User ID feature is enabled in tracking settings. For example you can anonymise the userId, or you can choose to only track specific users, etc.
 
 * `matomo_report_summary_filter_limit ($limit)`
 
@@ -23,11 +24,11 @@ category: API Reference
 
 * `matomo_report_summary_report_ids ($reports_to_show)`
 
-    Defines which report_ids are shown on the Matomo Summary page. Plugins can remove or add additional reports by modifying `$reports_to_show`. For example `$reports_to_show[] = 'UserCountry_getRegion';`
+    Defines which reports are shown on the Matomo Summary page. Plugins can remove or add additional reports by modifying `$reports_to_show`. For example `$reports_to_show[] = 'UserCountry_getRegion';`
 
 * `matomo_setting_tabs ( $setting_tabs, \WpMatomo\Settings $settings )`
 
-    Lets you add a new tab to the Matomo Settings page. A tab needs to implement the `WpMatomo\Admin\AdminSettingsInterface` and add the tab like this: `$settings_tabs[] = new MyTab();`. You can also use it to remove setting tabs.
+    Lets you remove or add a new tab to the Matomo Settings page. A tab needs to implement the `WpMatomo\Admin\AdminSettingsInterface` and add the tab like this: `$settings_tabs[] = new MyTab();`.
 
 * `matomo_install_tables ( $table_names )`
 

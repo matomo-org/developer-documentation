@@ -45,6 +45,8 @@ if (defined( 'ABSPATH') && function_exists('add_action')) {
 
 You can now simply copy your Matomo plugin within the `wp-content/plugins` folder of your WordPress and use it.
 
+[View a plugin Example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/MatomoPluginAddingWordpressSupport)
+
 ### Example 1
 Now you can for example add below code to hook into WordPress and it will only be executed if the plugin runs within WordPress.
 
@@ -125,9 +127,7 @@ it should load your plugin within Matomo.
 {
     "name": "matomo_custom_exclude_visits",
     "description": "Exclude specific visits from being tracked",
-    "require": {
-        "piwik": ">=3.12.0"
-    }
+    "require": {}
 }
 ```
 

@@ -24,9 +24,10 @@ As a developer, you can create WordPress plugins that hook into our WordPress pl
 
 ## Next step:
 
-[View the Matomo for WordPress Development Best Practices](/guides/wordpress/best-practices)
+[View the Matomo for WordPress Development Basics](/guides/wordpress/basics)
 
 ## Related links
 
 * [WordPress PHP API reference](/api-reference/wordpress/classes-reference)
 * [WordPress Hooks Reference](/api-reference/wordpress/hooks-reference)
+* [Matomo for WordPress plugin examples](https://github.com/matomo-org/matomo-wordpress-plugin-examples)

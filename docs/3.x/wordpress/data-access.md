@@ -10,7 +10,7 @@ Within your WordPress plugin, you can access any data that Matomo has stored. Th
 * Without bootstrapping Matomo
 * With bootstrapping Matomo
 
-When possible, it is recommended to not bootstrap Matomo for performance and stability reason. It possibly takes 50-250ms
+When possible, it is recommended not bootstrapping Matomo for performance and stability reason. It possibly takes 50-250ms
 to bootstrap Matomo depending on the server and it can slow down the WordPress experience. Matomo is very powerful and
 therefore comes with a few dependencies. Not bootstrapping Matomo reduces the chances of WordPress breaking
 because some other plugin requires a dependency we require as well.
@@ -31,6 +31,9 @@ $goal_table_name = $db_settings->prefix_table_name('goal');
 global $wpdb;
 $all_goals_configured_in_matomo = $wpdb->get_results('select * from ' . $goal_table_name);
 ```
+
+[Learn more about Matomo database schema](/guides/persistence-and-the-mysql-backend)
+[View a plugin example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/data-access)
 
 ## Accessing data by bootstrapping Matomo
 
@@ -58,5 +61,6 @@ if ($idsite) {
         'date' => 'today'
     );
 }
-
 ```
+
+[View a plugin example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/api-access)

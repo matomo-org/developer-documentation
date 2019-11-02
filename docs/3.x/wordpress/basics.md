@@ -5,20 +5,22 @@ next: wordpress/data-access
 ---
 # Matomo for WordPress - Basics
 
+Looking for some plugin examples? [Check out our Matomo for WordPress examples repository.](https://github.com/matomo-org/matomo-wordpress-plugin-examples)
+
 ## Checking if Matomo plugin is enabled
 
-Before accessing any of our WordPerss PHP APIs it is recommended you check if Matomo for WordPress plugin is actually
-installed and activated to prevent fatal errors:
+It is recommended to check if Matomo for WordPress plugin is actually installed and activated before accessing any of our
+WordPerss PHP APIs to prevent fatal errors:
 
 ```php
 if ( is_plugin_active('matomo/matomo.php') ) {
-    // enrich the plugin
+    // access one of our APIs
 }
 ```
 
 ## Checking for permissions
 
-You can use WordPress capabilities to check if a user has a certain capability within WordPress:
+You can use WordPress capabilities to check if a user has a certain Matomo capability within WordPress:
 
 ```php
 if (current_user_can('superuser_matomo') {
@@ -29,13 +31,13 @@ current_user_can('write_matomo');
 current_user_can('view_matomo');
 ```
 
-Capabilities are inherited meaning a super user will automatically have view permission and an admin will also have write and view permission.
+Capabilities are inherited. This means a super user automatically also has admin, write and view permission.
 
 [Learn more about user permissions](https://developer.matomo/guides/permissions)
 
 ## Generating links to Matomo app
 
-Sometimes you might want to add links within WordPress that point to the Matomo standalone app within WordPress. For example,
+Sometimes you might want to show links that point to the Matomo standalone app within WordPress. For example,
 you might want to show a link to view a heatmap for the currently viewed page. This way, a user will be only one click away to see
 related information within Matomo.
 
@@ -44,7 +46,7 @@ related information within Matomo.
 Example:
 
 ```php
-\WpMatomo\Admin\Menu::make_matomo_reporting_link( $category = 'General_Visitors', $subcategory = 'General_Overview', $additional_url_params = array() );
+\WpMatomo\Admin\Menu::get_matomo_reporting_url( $category = 'General_Visitors', $subcategory = 'General_Overview', $additional_url_params = array() );
 // This will generate a link like this:
 // https://example.com/wp-content/plugins/matomo/app/index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday#?idSite=1&period=day&date=yesterday&category=General_Visitors&subcategory=General_Overview
 // You can add additional url parameters if needed, for example array('idGoal' = 1)
@@ -57,7 +59,7 @@ The above example would send a user right to the Visitors => Overview reporting 
 Example:
 
 ```php
-\WpMatomo\Admin\Menu::make_matomo_action_link( $module = 'PrivacyManager', $action = 'privacySettings', $additional_url_params = array() );
+\WpMatomo\Admin\Menu::get_matomo_action_url( $module = 'PrivacyManager', $action = 'privacySettings', $additional_url_params = array() );
 // This will generate a link like this:
 // https://example.com/wp-content/plugins/matomo/app/index.php?module=PrivacyManager&action=privacySettings&idSite=1&period=day&date=yesterday
 // You can add additional url parameters if needed, for example array('idGoal' = 1)
