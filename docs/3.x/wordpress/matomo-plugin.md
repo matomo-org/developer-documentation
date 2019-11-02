@@ -79,6 +79,8 @@ You can do this by editing your WordPress plugin file. If the name of your WordP
 then you need to add below code to the `matomo_custom_exclude_visits.php` file.
 
 ```php
+namespace \Piwik\Plugins\matomo_custom_exclude_visits;
+
 $path = '/matomo/app/core/Plugin.php';
 $is_matomo_installed = false;
 if (defined('WP_PLUGIN_DIR') && WP_PLUGIN_DIR && file_exists(WP_PLUGIN_DIR . $path)) {
@@ -127,6 +129,7 @@ it should load your plugin within Matomo.
 {
     "name": "matomo_custom_exclude_visits",
     "description": "Exclude specific visits from being tracked",
+    "version": "",
     "require": {}
 }
 ```
