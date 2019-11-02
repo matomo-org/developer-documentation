@@ -33,7 +33,7 @@ $all_goals_configured_in_matomo = $wpdb->get_results('select * from ' . $goal_ta
 ```
 
 [Learn more about Matomo database schema](/guides/persistence-and-the-mysql-backend)
-[View a plugin example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/data-access)
+[View a plugin example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/direct-data-access)
 
 ## Accessing data by bootstrapping Matomo
 
@@ -63,4 +63,4 @@ if ($idsite) {
 }
 ```
 
-[View a plugin example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/api-access)
+[View a plugin example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/bootstrap-matomo-data-access)
