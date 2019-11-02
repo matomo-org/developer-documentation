@@ -12,6 +12,7 @@ use helpers\Content\ApiReferenceGuide;
 use helpers\Content\EmptySubCategory;
 use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
+use helpers\Content\UnlinkedCategory;
 use helpers\Environment;
 
 class ApiReferenceCategory extends Category
@@ -53,6 +54,11 @@ class ApiReferenceCategory extends Category
                 new PhpDoc('Hooks', 'events'),
                 new PhpDoc('Index', 'index'),
             ]),
+	        new EmptySubCategory('WordPress', [
+		        new ApiReferenceGuide('wordpress/classes-reference'),
+		        new ApiReferenceGuide('wordpress/hooks-reference'),
+		        new ApiReferenceGuide('wordpress/restapi-reference')
+	        ]),
             new EmptySubCategory('Database', [
                 new Guide('persistence-and-the-mysql-backend'),
             ]),
