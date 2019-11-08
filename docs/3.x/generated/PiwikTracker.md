@@ -1,9 +1,9 @@
 PiwikTracker
 ============
 
-PiwikTracker implements the Piwik Tracking Web API.
+PiwikTracker implements the Matomo Tracking Web API.
 
-For more information, see README.md
+For more information, see: https://github.com/matomo-org/matomo-php-tracker/
 
 Properties
 ----------
@@ -643,7 +643,7 @@ Ecommerce items added via this function are automatically cleared when doTrackEc
        (optional) Individual product price (supports integer and decimal prices)
     - `$quantity` (`int`) &mdash;
        (optional) Product quantity. If not specified, will default to 1 in the Reports
-- It does not return anything.
+- It returns a `$this` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -1004,12 +1004,9 @@ Note: matches implementation of Tracker\Request->getUserIdHashed()
 
 Forces the requests to be recorded for the specified Visitor ID.
 
-Note: it is recommended to use ->setUserId($userId); instead.
-
 Rather than letting Piwik attribute the user with a heuristic based on IP and other user fingeprinting attributes,
 force the action to be recorded for a particular visitor.
 
-If you use both setVisitorId and setUserId, setUserId will take precedence.
 If not set, the visitor ID will be fetched from the 1st party cookie, or will be set to a random UUID.
 
 #### Signature
