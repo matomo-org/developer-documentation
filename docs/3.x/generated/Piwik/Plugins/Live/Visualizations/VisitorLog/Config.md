@@ -36,6 +36,7 @@ This class defines the following properties:
 - [`$description`](#$description) &mdash; The report description. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$show_related_reports`](#$show_related_reports) &mdash; Controls whether a report's related reports are listed with the view or not. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$documentation`](#$documentation) &mdash; Contains the documentation for a report. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
+- [`$onlineGuideUrl`](#$onlineguideurl) &mdash; URL linking to an online guide for this report (or plugin). Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$custom_parameters`](#$custom_parameters) &mdash; Array property containing custom data to be saved in JSON in the data-params HTML attribute of a data table div. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$show_limit_control`](#$show_limit_control) &mdash; Controls whether the limit dropdown (which allows users to change the number of data shown) is always shown or not. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$show_search`](#$show_search) &mdash; Controls whether the search box under the datatable is shown. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
@@ -419,6 +420,16 @@ Contains the documentation for a report.
 
 - Its type is not specified.
 
+
+<a name="$onlineguideurl" id="$onlineguideurl"></a>
+<a name="onlineGuideUrl" id="onlineGuideUrl"></a>
+### `$onlineGuideUrl`
+
+URL linking to an online guide for this report (or plugin).
+
+#### Signature
+
+- It is a `string` value.
 
 <a name="$custom_parameters" id="$custom_parameters"></a>
 <a name="custom_parameters" id="custom_parameters"></a>

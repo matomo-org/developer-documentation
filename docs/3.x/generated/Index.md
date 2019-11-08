@@ -889,6 +889,7 @@ Index
 - [`onAnyGoalConversion()`](Piwik/Plugin/Dimension/VisitDimension.md#onanygoalconversion) &mdash; *Method in class* [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md)
 - [`$order`](Piwik/Plugin/Report.md#$order) &mdash; *Property in class* [`Report`](Piwik/Plugin/Report.md)
 - [`$overridableProperties`](Piwik/ViewDataTable/Config.md#$overridableproperties) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$onlineGuideUrl`](Piwik/ViewDataTable/Config.md#$onlineguideurl) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$overridableProperties`](Piwik/ViewDataTable/RequestConfig.md#$overridableproperties) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 
 ## P
