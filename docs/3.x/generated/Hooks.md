@@ -1814,10 +1814,11 @@ Callback Signature:
 - [Metrics.getDefaultMetricDocumentationTranslations](#metricsgetdefaultmetricdocumentationtranslations)
 - [Metrics.getDefaultMetricTranslations](#metricsgetdefaultmetrictranslations)
 - [Metrics.getEvolutionUnit](#metricsgetevolutionunit)
+- [Metrics.isLowerValueBetter](#metricsislowervaluebetter)
 
 ### Metrics.getDefaultMetricDocumentationTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [463](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L463)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [486](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L486)*
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
@@ -1833,7 +1834,7 @@ Usages:
 
 ### Metrics.getDefaultMetricTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [351](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L351)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [374](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L374)*
 
 Use this event to register translations for metrics processed by your plugin.
 
@@ -1849,7 +1850,7 @@ Usages:
 
 ### Metrics.getEvolutionUnit
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [285](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L285)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [308](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L308)*
 
 Use this event to define units for custom metrics used in evolution graphs and row evolution only.
 
@@ -1861,6 +1862,20 @@ Callback Signature:
 - string `$column` name of the column to determine
 
 - string `$idSite` id of the current site
+
+
+### Metrics.isLowerValueBetter
+
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php) in line [265](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Metrics.php#L265)*
+
+Use this event to define if a lower value of a metric is better.
+
+Callback Signature:
+<pre><code>function(&amp;$isLowerBetter, $column)</code></pre>
+
+- string `&$isLowerBetter` should be set to a boolean indicating if lower is better
+
+- string `$column` name of the column to determine **Example** public function checkIsLowerMetricValueBetter(&$isLowerBetter, $metric) { if ($metric === 'position') { $isLowerBetter = true; } }
 
 ## MobileMessaging
 
