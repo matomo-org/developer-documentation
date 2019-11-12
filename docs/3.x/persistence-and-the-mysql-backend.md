@@ -393,7 +393,7 @@ Piwik defines 4 types of permissions:
 The following information is stored in the `access` table:
 
 - `login`: the user's login handle.
-- `access`: the user's permission on this website (`view` or `admin`)
+- `access`: the user's permission on this website (`view` or `admin`).
 - `idsite`: the website ID for which the user's `login` will have the specified `access`.
 
 Note that the Super User permissions are stored in the `user` table in the column `superuser_access`.
@@ -405,9 +405,9 @@ To read more about users access, read the [Permissions](/guides/permissions) gui
 
 Piwik will also persist each user's language of choice in the table `user_language` which stores the following information:
 
-- `login`: the username
-- `language`: a language code string representing the preferred user's language 
-- `use_12_hour_clock`: whether the user prefers a 12 hour clock VS 24 hours
+- `login`: the username.
+- `language`: a language code string representing the preferred user's language. 
+- `use_12_hour_clock`: whether the user prefers a 12 hour clock VS 24 hours.
 
 _This association and the persistence logic is implemented by the [LanguagesManager](https://github.com/matomo-org/matomo/tree/master/plugins/LanguagesManager) plugin._
 
@@ -415,10 +415,10 @@ _This association and the persistence logic is implemented by the [LanguagesMana
 
 Matomo's custom dashboards and widgets layout are stored in the `user_dashboard` table:
 
-- `login`: the username to which this dashboard belongs
-- `iddashboard`: the dashboard id
-- `name`: the custom dashboard name
-- `layout`: a JSON string describing the dashboard layout and widgets
+- `login`: the username to which this dashboard belongs.
+- `iddashboard`: the dashboard id.
+- `name`: the custom dashboard name.
+- `layout`: a JSON string describing the dashboard layout and widgets.
 
 
 ### Options
