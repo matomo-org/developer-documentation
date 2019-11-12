@@ -300,8 +300,10 @@ Site entities are stored in the `site` table and contain the following informati
 - `excluded_ips`: a comma separated list of IP addresses or IP address ranges. Visits that come from one of these IP addresses will not be tracked for this website.
 - `excluded_parameters`: a comma separated list of query parameter names. These query parameters will be removed from page URLs before visits and actions are tracked.
 - `excluded_user_agents`: a comma separated list of strings. Visits with a user agent that contains one of these strings will not be tracked for this website.
-- `group`: <!-- TODO: is this implemented yet? -->
+- `group`: a string to define the website group. This feature is hidden from the UI but can be used to fetch websites with APIs like `SitesManager.getSitesFromGroup`.
+- `type`: a string set to `website` by default. Can be also set to `intranet` ([faq](https://matomo.org/faq/how-to/faq_19/)), `mobileapp`, `rollup` ([docs](https://matomo.org/docs/roll-up-reporting/)), etc.
 - `keep_url_fragment`: `1` if the URL fragment (everything after the `#`) should be kept in the URL when tracking actions, `0` if not.
+- `creator_login`: the username who added this website
 
 Site entities also contain a list of extra URLs that can be used to access the website. These are not stored within site entities themselves: they are stored in the `site_url` table.
 
@@ -317,6 +319,7 @@ Goals are stored in the `goal` table and contain the following information:
 - `idsite`: The ID of the website this goal belongs to.
 - `idgoal`: The ID for this goal (unique only among goals for this website).
 - `name`: The name of this goal.
+- `description`: the description of this goal.
 - `match_attribute`: string describing what part of the request should be matched against when converting a goal. Can be one of the following values:
   - `manually`: the goal is converted by [manual conversion requests](/guides/tracking-javascript-guide#manually-trigger-goal-conversions).
   - `url`: the goal is converted based on what the action URL contains.
@@ -332,8 +335,27 @@ Goals are stored in the `goal` table and contain the following information:
 - `allow_multiple`: `1` if multiple conversions are allowed per visit, `0` if otherwise.
 - `revenue`: the amount of revenue a conversion generates (if any).
 - `deleted`: `1` if this goal was deleted by a Piwik user, `0` if not.
+- `event_value_as_revenue`: set to `1` to activate the feature where the Goal conversion revenue is set to the Event value of Event that triggered the goal.
 
 _Note: The ecommerce and abandoned cart goals are two special goals with special IDs. Ecommerce websites automatically have these goals._
+
+
+### Segments
+
+[Segments](https://matomo.org/docs/segmentation/) are an easy and flexible way to filter visits based on a combination of dimension and metrics. 
+
+The following information is stored in a segment entity:
+
+- `idsegment`: the segment id.
+- `name`: the segment name.
+- `definition`: the segment definition, see [Segment API reference](https://developer.matomo.org/api-reference/reporting-api-segmentation).
+- `login`: the username who created this segment.
+- `enable_all_users`: if set to `1`, the segment is visible by all users.
+- `enable_only_idsite`: if set to a website ID, the segment is only visible to this website. If set to `0`, the segment is visible to all websites.
+- `auto_archive`: set to `1` to have the segment pre-processed by the [core:archive console crontab](https://matomo.org/docs/setup-auto-archiving/) .
+- `ts_created`: the date when the segment was created.
+- `ts_last_edit`: the date when the segment was last edited.
+- `deleted`: set to `1` when a segment is deleted.
 
 <a name="other-data-user"></a>
 ### Users
@@ -346,9 +368,11 @@ The following information is stored in a user entity:
 - `password'`: a hash of the user's password.
 - `alias`: the user's alias if any. This value is displayed instead of the login handle when addressing the user in the UI.
 - `email`: the user's email address.
+- `twofactor_secret`: the 2FA secret
 - `token_auth`: a user's token auth.
-- `date_registered`: the date the user data was persisted.
 - `superuser_access`: whether the user has Super User permission.
+- `date_registered`: the date the user data was persisted.
+- `ts_password_modified`: the date the user password was last changed.
 
 User data is read on every UI and [Reporting API](/guides/piwiks-reporting-api) request.
 
@@ -379,9 +403,23 @@ To read more about users access, read the [Permissions](/guides/permissions) gui
 <a name="other-data-user-language-choice"></a>
 ### User language choice
 
-Piwik will also persist each user's language of choice. User logins are associated with the name of the language (written in the chosen language as opposed to English).
+Piwik will also persist each user's language of choice in the table `user_language` which stores the following information:
 
-This association and the persistence logic is implemented by the [LanguagesManager](https://github.com/matomo-org/matomo/tree/master/plugins/LanguagesManager) plugin.
+- `login`: the username
+- `language`: a language code string representing the preferred user's language 
+- `use_12_hour_clock`: whether the user prefers a 12 hour clock VS 24 hours
+
+_This association and the persistence logic is implemented by the [LanguagesManager](https://github.com/matomo-org/matomo/tree/master/plugins/LanguagesManager) plugin._
+
+### User dashboards
+
+Matomo's custom dashboards and widgets layout are stored in the `user_dashboard` table:
+
+- `login`: the username to which this dashboard belongs
+- `iddashboard`: the dashboard id
+- `name`: the custom dashboard name
+- `layout`: a JSON string describing the dashboard layout and widgets
+
 
 ### Options
 
