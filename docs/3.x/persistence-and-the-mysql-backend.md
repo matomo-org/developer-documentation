@@ -344,7 +344,7 @@ _Note: The ecommerce and abandoned cart goals are two special goals with special
 
 [Segments](https://matomo.org/docs/segmentation/) are an easy and flexible way to filter visits based on a combination of dimension and metrics. 
 
-The following information is stored in a segment entity:
+The following information is stored in the `segment` table in a segment entity:
 
 - `idsegment`: the segment id.
 - `name`: the segment name.
@@ -352,7 +352,7 @@ The following information is stored in a segment entity:
 - `login`: the username who created this segment.
 - `enable_all_users`: if set to `1`, the segment is visible by all users.
 - `enable_only_idsite`: if set to a website ID, the segment is only visible to this website. If set to `0`, the segment is visible to all websites.
-- `auto_archive`: set to `1` to have the segment pre-processed by the [core:archive console crontab](https://matomo.org/docs/setup-auto-archiving/) .
+- `auto_archive`: set to `1` to have the segment pre-processed by the [core:archive console crontab](https://matomo.org/docs/setup-auto-archiving/).
 - `ts_created`: the date when the segment was created.
 - `ts_last_edit`: the date when the segment was last edited.
 - `deleted`: set to `1` when a segment is deleted.
