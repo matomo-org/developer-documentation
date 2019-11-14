@@ -6,6 +6,9 @@ title: Classes
 
 This is the API Reference for developers who want to enrich the [Matomo for WordPress plugin](/guides/wordpress/getting-started).
 
+* `matomo_add_plugin($matomo_plugin_directory_path, $wp_plugin_filename)` - Registers a Matomo plugin.
+* `matomo_has_tag_manager()` - Detects if the Tag Manager feature is enabled/available.
+
 ## `\WpMatomo\Bootstrap`
 
 * `::doBootstap()` - Lets you bootstrap Matomo application within WordPress. Once Matomo is bootstrapped, you can access all [Matomo PHP API's](https://developer.matomo.org/api-reference/classes).

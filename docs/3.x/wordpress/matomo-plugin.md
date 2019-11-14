@@ -80,10 +80,10 @@ then you need to add below code to the `matomo_custom_exclude_visits.php` file.
 
 ```php
 add_action('plugins_loaded', function () {
-	$is_matomo_plugin_activated = function_exists('add_matomo_plugin');
+	$is_matomo_plugin_activated = function_exists('matomo_add_plugin');
 	if ($is_matomo_plugin_activated) {
 		// you can add one more multiple Matomo plugins here
-		add_matomo_plugin( __DIR__ . '/plugins/MyCustomPlugin', __FILE__ );
+		matomo_add_plugin( __DIR__ . '/plugins/MyCustomPlugin', __FILE__ );
 	}
 });
 ```
