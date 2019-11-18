@@ -6,7 +6,7 @@ title: Classes
 
 This is the API Reference for developers who want to enrich the [Matomo for WordPress plugin](/guides/wordpress/getting-started).
 
-* `matomo_add_plugin($matomo_plugin_directory_path, $wp_plugin_filename)` - Registers a Matomo plugin.
+* `matomo_add_plugin($matomo_plugin_directory_path, $wp_plugin_filename, $is_marketplace_plugin = false)` - Registers a Matomo plugin. Set `$is_marketplace_plugin` to `true` if you have a Matomo plugin that you are putting on the Matomo Marketplace.
 * `matomo_has_tag_manager()` - Detects if the Tag Manager feature is enabled/available.
 
 ## `\WpMatomo\Bootstrap`
