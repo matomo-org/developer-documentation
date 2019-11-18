@@ -57,6 +57,8 @@ The class defines the following methods:
 - [`getSegment()`](#getsegment) &mdash; Returns the name of this segment as it should appear in segment expressions.
 - [`setSuggestedValuesCallback()`](#setsuggestedvaluescallback) &mdash; Set callback which will be executed when user will call for suggested values for segment.
 - [`setPermission()`](#setpermission) &mdash; You can restrict the access to this segment by passing a boolean `false`.
+- [`setIsInternal()`](#setisinternal) &mdash; Sets whether the segment is for internal use only and should not be visible in the UI or in API metadata output.
+- [`isInternal()`](#isinternal) &mdash; Gets whether the segment is for internal use only and should not be visible in the UI or in API metadata output.
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
@@ -259,4 +261,31 @@ a certain segment only available to users having super user access you could do 
     - `$permission` (`bool`) &mdash;
       
 - It does not return anything.
+
+<a name="setisinternal" id="setisinternal"></a>
+<a name="setIsInternal" id="setIsInternal"></a>
+### `setIsInternal()`
+
+Sets whether the segment is for internal use only and should not be visible in the UI or in API metadata output.
+
+These types of segments are, for example, used in unions for other segments, but have no value to users.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$value` (`bool`) &mdash;
+      
+- It does not return anything.
+
+<a name="isinternal" id="isinternal"></a>
+<a name="isInternal" id="isInternal"></a>
+### `isInternal()`
+
+Gets whether the segment is for internal use only and should not be visible in the UI or in API metadata output.
+
+These types of segments are, for example, used in unions for other segments, but have no value to users.
+
+#### Signature
+
+- It returns a `bool` value.
 
