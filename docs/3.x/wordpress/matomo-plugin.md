@@ -47,6 +47,17 @@ You can now simply copy your Matomo plugin within the `wp-content/plugins` folde
 
 [View a plugin Example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/MatomoPluginAddingWordpressSupport)
 
+#### Avoiding duplicate work
+
+Because you need to duplicate the description and version information that you have already provided in `plugin.json`
+in the above comment, you can instead use variables which the Matomo Marketplace will automatically replace with your
+current plugin description and plugin version. For example:
+
+```
+ * Description: WP_DESCRIPTION_REPLACE
+ * Version: WP_VERSION_REPLACE
+```
+
 ### Example 1
 Now you can for example add below code to hook into WordPress and it will only be executed if the plugin runs within WordPress.
 
