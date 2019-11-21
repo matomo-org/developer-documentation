@@ -6,9 +6,11 @@ title: REST API
 
 The regular [Matomo HTTP Reporting API](https://developer.matomo.org/api-reference/reporting-api) is not available within WordPress. Instead we utilise the WordPress REST API.
 
-For more details about each method and all the available parameters please view the [HTTP Reporting API reference](https://developer.matomo.org/api-reference/reporting-api).
+For more details about each method and all the available parameters please view the [HTTP Reporting API reference](https://developer.matomo.org/api-reference/reporting-api). The `idSite` parameter is automatically set within WordPress and you don't need to provide this value. The `token_auth` is never needed as well since the authentication is done through WordPress.
 
-Example request: https://example.com/index.php?rest_route=/matomo/v1
+Example endpoint: https://example.com/index.php?rest_route=/matomo/v1
+
+Example request: https://example.com/index.php?rest_route=/matomo/v1/api/processed_report&period=date&date=year&filter_limit=10&apiModule=Actions&apiActions=getPageUrls
 
 Namespace: `matomo/v1`
 
