@@ -158,6 +158,9 @@ The following fields are not required for publishing a plugin, but you may want 
     }
     ```
 
+- `wordpress-compatible`: A boolean value defining whether this plugin works in Matomo for WordPress. By default it is enabled and the Marketplace makes your plugin automatically compatible with WordPress.
+- `onpremise-compatible`: A boolean value defining whether this plugin works in Matomo On-Premise. It should usually not be needed to set this flag to disable it. If the plugin works only with WordPress, we recommend publishing it on the WordPress Marketplace instead.
+
 Here is a complete example to get you started:
 
 ```json
