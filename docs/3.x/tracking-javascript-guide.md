@@ -19,23 +19,23 @@ To use all the features described in this page, you need to use the latest versi
 The tracking code looks as follows:
 
 ```html
-<!-- Piwik -->
+<!-- Matomo -->
 <script type="text/javascript">
   var _paq = window._paq || [];
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="//{$PIWIK_URL}/";
+    var u="//{$MATOMO_URL}/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', {$IDSITE}]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<!-- End Piwik Code -->
+<!-- End Matomo Code -->
 ```
 
-In your tracking code, `{$PIWIK_URL}` would be replaced by your Piwik URL and `{$IDSITE}` would be replaced by the idsite of the website you are tracking in Piwik.
+In your tracking code, `{$MATOMO_URL}` would be replaced by your Piwik URL and `{$IDSITE}` would be replaced by the idsite of the website you are tracking in Piwik.
 
 This code might look a bit strange to those of you familiar with JavaScript, but that is because it is made to run asynchronously. In other words, browsers will not wait for the `piwik.js` file to be downloaded in order to show your page.
 
