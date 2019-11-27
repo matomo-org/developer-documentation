@@ -58,6 +58,14 @@ current plugin description and plugin version. For example:
  * Version: WP_VERSION_REPLACE
 ```
 
+#### Requiring a specific WordPress version
+
+You may require a specific PHP or WordPress version by adding a comment like this:
+
+```
+ * RequiresWP: 5.3.0
+```
+
 ### Example 1
 Now you can for example add below code to hook into WordPress and it will only be executed if the plugin runs within WordPress.
 
