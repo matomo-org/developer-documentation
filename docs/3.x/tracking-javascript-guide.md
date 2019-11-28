@@ -363,7 +363,7 @@ This function can be used to get the value of a Custom Dimension. It will only w
 
 - You must assign a unique and persistent non-empty string that represents each logged-in user. Typically, this ID will be an email address or a username provided by your authentication system.
 - You must set the user ID for each pageview, otherwise the pageview will be tracked without the user ID set.  
-- You must then pass this User ID string to Piwik via the `setUserId` method call just before calling track* function, for example:
+- You must then pass this User ID string to Piwik via the `setUserId` method call just before calling any of the `track*` functions (`trackPageview`, `trackEvent`, `trackGoal`, `trackSiteSearch`, etc.) for example:
 
 ```javascript
 _paq.push(['setUserId', 'USER_ID_HERE']);
