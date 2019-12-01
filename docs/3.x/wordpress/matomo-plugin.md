@@ -110,3 +110,12 @@ add_action('plugins_loaded', function () {
 Next, you need to create a directory named `plugins` within your WordPress plugin. There you can now put one or multiple Matomo plugins.
 
 [View a WordPress plugin example](https://github.com/matomo-org/matomo-wordpress-plugin-examples/tree/master/wordpress-plugin-adding-matomo-plugin)
+
+## Changing plugin behaviour for WordPress / On-Premise
+
+Within you Matomo plugin, you can use below code to check if the plugin is running wihin Matomo for WordPress or Matomo On-Premise and behave differently if needed. Because this method was only added in Matomo 3.13.1, we recommend checking if the method exists so your plugin stays compatible with older versions of Matomo:
+
+```php
+$isOnPremise = !method_exists('\Piwik\SettingsServer', 'isMatomoForWordPress') || !\Piwik\SettingsServer::isMatomoForWordPress();
+$isWordPress = method_exists('\Piwik\SettingsServer', 'isMatomoForWordPress') && \Piwik\SettingsServer::isMatomoForWordPress();
+```
