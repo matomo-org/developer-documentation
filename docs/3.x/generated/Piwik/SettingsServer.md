@@ -11,6 +11,7 @@ Methods
 The class defines the following methods:
 
 - [`isArchivePhpTriggered()`](#isarchivephptriggered) &mdash; Returns true if the current script execution was triggered by the cron archiving script.
+- [`isMatomoForWordPress()`](#ismatomoforwordpress) &mdash; Returns true if Matomo is running within Matomo for WordPress.
 - [`isIIS()`](#isiis) &mdash; Returns `true` if running on Microsoft IIS 7 (or above), `false` if otherwise.
 - [`isWindows()`](#iswindows) &mdash; Returns `true` if running on a Windows operating system, `false` if otherwise.
 - [`isTimezoneSupportEnabled()`](#istimezonesupportenabled) &mdash; Returns `true` if this PHP version/build supports timezone manipulation (e.g., php >= 5.2, or compiled with **EXPERIMENTAL_DATE_SUPPORT=1** for php < 5.2).
@@ -27,6 +28,18 @@ Helpful for error handling: directly throw error without HTML (eg. when DB is do
 #### Signature
 
 - It returns a `bool` value.
+
+<a name="ismatomoforwordpress" id="ismatomoforwordpress"></a>
+<a name="isMatomoForWordPress" id="isMatomoForWordPress"></a>
+### `isMatomoForWordPress()`
+
+Returns true if Matomo is running within Matomo for WordPress.
+
+#### Signature
+
+
+- *Returns:*  `bool` &mdash;
+    true if Matomo is running in WordPress, false if Matomo is running as part of On-Premise
 
 <a name="isiis" id="isiis"></a>
 <a name="isIIS" id="isIIS"></a>

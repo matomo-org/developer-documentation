@@ -801,6 +801,7 @@ Index
 - [`isSegmentationEnabled()`](Piwik/SettingsPiwik.md#issegmentationenabled) &mdash; *Method in class* [`SettingsPiwik`](Piwik/SettingsPiwik.md)
 - [`isUniqueVisitorsEnabled()`](Piwik/SettingsPiwik.md#isuniquevisitorsenabled) &mdash; *Method in class* [`SettingsPiwik`](Piwik/SettingsPiwik.md)
 - [`isArchivePhpTriggered()`](Piwik/SettingsServer.md#isarchivephptriggered) &mdash; *Method in class* [`SettingsServer`](Piwik/SettingsServer.md)
+- [`isMatomoForWordPress()`](Piwik/SettingsServer.md#ismatomoforwordpress) &mdash; *Method in class* [`SettingsServer`](Piwik/SettingsServer.md)
 - [`isIIS()`](Piwik/SettingsServer.md#isiis) &mdash; *Method in class* [`SettingsServer`](Piwik/SettingsServer.md)
 - [`isWindows()`](Piwik/SettingsServer.md#iswindows) &mdash; *Method in class* [`SettingsServer`](Piwik/SettingsServer.md)
 - [`isTimezoneSupportEnabled()`](Piwik/SettingsServer.md#istimezonesupportenabled) &mdash; *Method in class* [`SettingsServer`](Piwik/SettingsServer.md)
