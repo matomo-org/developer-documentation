@@ -136,7 +136,8 @@ If you're using [Tag Manager](https://matomo.org/tag-manager/) to implement your
 
 To trigger your Matomo tag (which calls `trackPageView`), you can either:
 1. use the "History change" [trigger](https://matomo.org/docs/tag-manager/#triggers) which would work in most cases,
-2. or in your Single Page App, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `_mtm.push({'event': 'mtm.PageView'});`
+2. or in your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `_mtm.push({'event': 'mtm.PageView'});`. 
+   - This would also work similarly when you use instead the 'DOM Ready Trigger' (call `_mtm.push({'event': 'mtm.DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'mtm.WindowLoad'});`
 
 
 
