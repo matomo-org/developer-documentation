@@ -135,6 +135,7 @@ window.addEventListener('hashchange', function() {
 If you're using [Tag Manager](https://matomo.org/tag-manager/) to implement your Matomo Analytics Tracking, then in your Single Page Application,  whenever there is a new page loaded in your app you will need your [Matomo Tag](https://matomo.org/docs/tag-manager/#configuring-a-tag) to be triggered for the Page view to be tracked. 
 
 To trigger your Matomo tag (which calls `trackPageView`), you can either:
+
 1. use the "History change" [trigger](https://matomo.org/docs/tag-manager/#triggers) which would work in most cases,
 2. or in your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `_mtm.push({'event': 'mtm.PageView'});`. 
    - This would also work similarly when you use instead the 'DOM Ready Trigger' (call `_mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`
