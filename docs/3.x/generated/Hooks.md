@@ -3179,14 +3179,14 @@ Callback Signature:
 
 ### Tracker.end
 
-*Defined in [Piwik/Plugins/QueuedTracking/Commands/Process](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/QueuedTracking/Commands/Process.php) in line [86](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/QueuedTracking/Commands/Process.php#L86)*
+*Defined in [Piwik/Plugins/QueuedTracking/Commands/Process](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/QueuedTracking/Commands/Process.php) in line [83](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/QueuedTracking/Commands/Process.php#L83)*
 
 
 
 
 ### Tracker.end
 
-*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker.php) in line [115](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker.php#L115)*
+*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker.php) in line [117](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker.php#L117)*
 
 
 
