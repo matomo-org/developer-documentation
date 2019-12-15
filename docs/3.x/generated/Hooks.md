@@ -49,7 +49,7 @@ Callback Signature:
 
 ### Access.modifyUserAccess
 
-*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Access.php) in line [275](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Access.php#L275)*
+*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Access.php) in line [276](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Access.php#L276)*
 
 Triggered after the initial access levels and permissions for the current user are loaded. Use this
 event to modify the current user's permissions (for example, making sure every user has view access
@@ -922,7 +922,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [567](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L567)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [572](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L572)*
 
 This event is triggered after archiving.
 
@@ -934,7 +934,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1191](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1191)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1196](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1196)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -947,7 +947,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1595](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1595)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1600](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1600)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
