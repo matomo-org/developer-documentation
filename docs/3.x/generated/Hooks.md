@@ -1179,7 +1179,7 @@ Callback Signature:
 
 ### Environment.bootstrapped
 
-*Defined in [Piwik/Application/Environment](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Environment.php) in line [98](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Environment.php#L98)*
+*Defined in [Piwik/Application/Environment](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Environment.php) in line [104](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Environment.php#L104)*
 
 
 
