@@ -34,6 +34,10 @@ title: Hooks
 
     This may be needed if your WordPress plugin implements a Matomo plugin which creates a database table and you have automated PHPUnit tests. Say your plugin tracks custom data into a `log_weather` table. Then you would add `$table_names[] = 'log_weather'`. This will make sure to uninstall the table `wp_matomo_log_weather` table when the Matomo plugin is being uninstalled.
 
+* `matomo_systemreport_tables ( $tables )`
+
+    Let's plugin enrich or filter the Matmo system report. Each table is an array containing keys like `title` and `rows`. Each row contains array keys like `name`, `value`, `comment`, `is_warning`, and `is_error`.
+
 ## Actions
 
 * `matomo_tracking_settings_changed ( \WpMatomo\Settings $settings )`
