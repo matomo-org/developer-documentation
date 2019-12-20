@@ -406,8 +406,6 @@ _paq.push(['resetUserId']);
 _paq.push(['trackPageView']);
 ```
 
-Using `resetUserId` after a user logout ensures that a new visitor ID and a new visit will be created right after logout. is especially important in [single page applications](https://piwik.org/blog/2017/02/how-to-track-single-page-websites-using-piwik-analytics/). 
-
 
 ## Content Tracking
 
