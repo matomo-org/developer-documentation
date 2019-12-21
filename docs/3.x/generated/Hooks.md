@@ -3712,7 +3712,7 @@ Usages:
 
 ### Visualization.beforeRender
 
-*Defined in [Piwik/Plugin/Visualization](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Visualization.php) in line [765](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Visualization.php#L765)*
+*Defined in [Piwik/Plugin/Visualization](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Visualization.php) in line [774](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/Visualization.php#L774)*
 
 Posted immediately before rendering the view. Plugins can use this event to perform last minute
 configuration of the view based on it's data or the report being viewed.
