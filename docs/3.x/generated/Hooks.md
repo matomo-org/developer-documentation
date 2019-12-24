@@ -432,7 +432,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToArchiveWhenNoVisits
 
-*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Loader.php) in line [209](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Loader.php#L209)*
+*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Loader.php) in line [238](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Loader.php#L238)*
 
 
 
@@ -442,7 +442,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php) in line [193](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php#L193)*
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php) in line [200](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php#L200)*
 
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
