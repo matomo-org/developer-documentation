@@ -33,7 +33,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use pseudo click-handler (treat middle click and open contextmenu as left click). A right click (or any click that opens the context menu) on a link will be tracked as clicked even if "Open in new tab" is not selected. If "false" (default), nothing will be tracked on open context menu or middle click.
 * `enableCrossDomainLinking()` - Enable cross domain linking. By default, the visitor ID that identifies a unique visitor is stored in the browser's first party cookies. This means the cookie can only be accessed by pages on the same domain. If you own multiple domains and would like to track all the actions and pageviews of a specific visitor into the same visit, you may enable [cross domain linking (learn more)](https://piwik.org/faq/how-to/faq_23654/) . Whenever a user clicks on a link it will append a URL parameter `pk_vid` to the clicked URL which forwards the current visitor ID value to the page of the different domain.
 * `setCrossDomainLinkingTimeout( timeout )` - Set the cross domain linking timeout (in seconds). By default, the two visits across domains will be linked together when the link is clicked and the page is loaded within a 180 seconds timeout window.`
-* `getCrossDomainLinkingUrlParameter()` - Get the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links that are added to the DOM dynamically.  [Learn more about cross domain linking](https://piwik.org/faq/how-to/faq_23654/).  (requires Matomo 3.3.1)
+* `getCrossDomainLinkingUrlParameter()` - Get the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links that are added to the DOM dynamically.  [Learn more about cross domain linking](https://piwik.org/faq/how-to/faq_23654/). 
 
 ### Configuration of the Tracker Object
 
@@ -75,13 +75,14 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 
 *   `getUserId()` - Return the User ID string if it was set.
 *   `setUserId( userId )` -  Sets a [User ID](https://piwik.org/docs/user-id/) to this user (such as an email address or a username).
+*   `resetUserId` - Clears (un-set) the User ID.
 *   `setCustomVariable (index, name, value, scope)` - Set a custom variable.
 *   `deleteCustomVariable (index, scope)` - Delete a custom variable.
 *   `getCustomVariable (index, scope)` - Retrieve a custom variable.
 *   `storeCustomVariablesInCookie()` -  When called then the Custom Variables of scope "visit" will be stored (persisted) in a first party cookie for the duration of the visit. This is useful if you want to call `getCustomVariable` later in the visit. (by default custom variables are not stored on the visitor's computer.)
-*   `setCustomDimension (customDimensionId, customDimensionValue)` - Set a custom dimension. (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
-*   `deleteCustomDimension (customDimensionId)` - Delete a custom dimension. (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
-*   `getCustomDimension (customDimensionId)` - Retrieve a custom dimension. (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
+*   `setCustomDimension (customDimensionId, customDimensionValue)` - Set a custom dimension. (requires [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
+*   `deleteCustomDimension (customDimensionId)` - Delete a custom dimension. (requires [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
+*   `getCustomDimension (customDimensionId)` - Retrieve a custom dimension. (requires [Custom Dimensions plugin](https://plugins.piwik.org/CustomDimensions))
 *   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](https://piwik.org/faq/how-to/#faq_120))
 *   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](https://piwik.org/faq/how-to/#faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
