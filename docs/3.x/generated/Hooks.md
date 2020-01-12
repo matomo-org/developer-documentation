@@ -1617,7 +1617,7 @@ Usages:
 
 ### Login.authenticate.failed
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1369](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1369)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1377](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1377)*
 
 
 
