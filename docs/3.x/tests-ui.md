@@ -133,7 +133,7 @@ After running the tests for the first time you will notice a new folder `plugins
 Some fixtures can take a long while to set up. You can save time by using the `persist-fixture-data` flag, which means the fixture teardown and setup will be skipped and the test database from the previous execution will be used:
 
 ```
-$ ./console tests:run-ui WidgetizePage --persist-fixutre-data
+$ ./console tests:run-ui WidgetizePage --persist-fixture-data
 ```
 
 ### Fixing a test
