@@ -768,7 +768,7 @@ To require consent, insert the following line at top of your existing Matomo Tra
 ```js
 // require user consent before processing data
 _paq.push(['requireConsent']);
-_paq.push(['trackPageview']);
+_paq.push(['trackPageView']);
 [...]
 ```
 
