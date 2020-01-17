@@ -69,6 +69,12 @@ Each visit contains the following information:
 - `referer_name`: referrer name; its meaning depends on the specific referrer type
 - `referer_url`: the referrer URL; its meaning depends on the specific referrer type
 - `referer_keyword`: the keyword used if a search engine was the referrer
+- `campaign_keyword`: the campaign keyword (requires the [MarketingCampaignsReporting plugin](https://plugins.matomo.org/MarketingCampaignsReporting))
+- `campaign_medium`: the campaign medium (requires the [MarketingCampaignsReporting plugin](https://plugins.matomo.org/MarketingCampaignsReporting))
+- `campaign_name`: the campaign name (requires the [MarketingCampaignsReporting plugin](https://plugins.matomo.org/MarketingCampaignsReporting))
+- `campaign_source`: the campaign source (requires the [MarketingCampaignsReporting plugin](https://plugins.matomo.org/MarketingCampaignsReporting))
+- `campaign_content`: the campaign content (requires the [MarketingCampaignsReporting plugin](https://plugins.matomo.org/MarketingCampaignsReporting))
+- `campaign_id`: the campaign ID (requires the [MarketingCampaignsReporting plugin](https://plugins.matomo.org/MarketingCampaignsReporting))
 - `config_id`: a hash of all the visit's configuration options, including the OS, browser name, browser version, browser language, IP address and  all browser plugin information
 - `config_os`: a short string identifiying the operating system used to make this visit. See [Device Detector](https://github.com/matomo-org/device-detector) for more info
 - `config_browser_name`: a short string identifying the browser used to make this visit. See [Device Detector](https://github.com/matomo-org/device-detector) for more info
