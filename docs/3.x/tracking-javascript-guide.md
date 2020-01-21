@@ -406,6 +406,10 @@ _paq.push(['resetUserId']);
 _paq.push(['appendToTrackingUrl', 'new_visit=1']); 
 
 _paq.push(['trackPageView']);
+
+// we make sure to not again create a new visit afterwards (important for Single Page Applications)
+_paq.push(['appendToTrackingUrl', '']); 
+
 ```
 
 
