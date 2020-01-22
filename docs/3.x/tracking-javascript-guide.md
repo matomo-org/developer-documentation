@@ -391,22 +391,26 @@ _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 ```
 
-### When user logs out, reset User ID
+### When user logs out, reset User ID 
 
-*(resetUserId is available since Matomo 3.3.1)*
+When the user has logged out and a User ID is not available anymore, it is recommended to notify Matomo by calling the `resetUserId` method before `trackPageView`. 
 
-When the user has logged out and a User ID is not available anymore, it is recommended to notify Matomo by calling the `resetUserId` method before `trackPageView`:
+If you want to create a new visit when your users logout, then you can also force Matomo to create a new Visit:
 
 
 ```javascript
 
-// User has just logged out, we reset the User ID which also generates a new Visitor ID
+// User has just logged out, we reset the User ID
 _paq.push(['resetUserId']);
+// we also force a new visit to be created for the pageviews after logout
+_paq.push(['appendToTrackingUrl', 'new_visit=1']); 
 
 _paq.push(['trackPageView']);
-```
 
-Using `resetUserId` after a user logout ensures that a new visitor ID and a new visit will be created right after logout. is especially important in [single page applications](https://piwik.org/blog/2017/02/how-to-track-single-page-websites-using-piwik-analytics/). 
+// we make sure to not again create a new visit afterwards (important for Single Page Applications)
+_paq.push(['appendToTrackingUrl', '']); 
+
+```
 
 
 ## Content Tracking
