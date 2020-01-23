@@ -402,12 +402,14 @@ If you want to create a new visit when your users logout, then you can also forc
 
 // User has just logged out, we reset the User ID
 _paq.push(['resetUserId']);
+// we also delete cookies to make sure that a new Visitor ID is generated
+_paq.push(['deleteCookies']); 
 // we also force a new visit to be created for the pageviews after logout
 _paq.push(['appendToTrackingUrl', 'new_visit=1']); 
 
 _paq.push(['trackPageView']);
 
-// we make sure to not again create a new visit afterwards (important for Single Page Applications)
+// we finally make sure to not again create a new visit afterwards (important for Single Page Applications)
 _paq.push(['appendToTrackingUrl', '']); 
 
 ```
