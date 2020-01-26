@@ -428,6 +428,7 @@ Callback Signature:
 
 - [Archiving.getIdSitesToArchiveWhenNoVisits](#archivinggetidsitestoarchivewhennovisits)
 - [Archiving.getIdSitesToMarkArchivesAsInvalidated](#archivinggetidsitestomarkarchivesasinvalidated)
+- [Archiving.isRequestAuthorizedToArchive](#archivingisrequestauthorizedtoarchive)
 - [Archiving.makeNewArchiverObject](#archivingmakenewarchiverobject)
 
 ### Archiving.getIdSitesToArchiveWhenNoVisits
@@ -462,6 +463,16 @@ Callback Signature:
 <pre><code>function(&amp;$idSites)</code></pre>
 
 - array `&$idSites` An array containing a list of site IDs which are requested to be invalidated.
+
+
+### Archiving.isRequestAuthorizedToArchive
+
+*Defined in [Piwik/ArchiveProcessor/Rules](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Rules.php) in line [240](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Rules.php#L240)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$isRequestAuthorizedToArchive, $params)</code></pre>
 
 
 ### Archiving.makeNewArchiverObject
