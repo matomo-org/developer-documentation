@@ -477,7 +477,7 @@ Callback Signature:
 
 ### Archiving.makeNewArchiverObject
 
-*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [328](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L328)*
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [330](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L330)*
 
 Triggered right after a new **plugin archiver instance** is created. Subscribers to this event can configure the plugin archiver, for example prevent the archiving of a plugin's data
 by calling `$archiver->disable()` method.
@@ -945,7 +945,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1299](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1299)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1308](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1308)*
 
 Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
@@ -958,7 +958,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1703](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1703)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1712](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1712)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
