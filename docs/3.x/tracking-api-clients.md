@@ -33,7 +33,7 @@ If you are building Mobile apps using Appcelerator Titanium, use the Piwik Analy
 
 Learn more and download the Piwik Module for Titanium at [github.com/manumaticx/ti.piwik](https://github.com/manumaticx/ti.piwik).
 
-## Client libraries
+## Client libraries for Server-Side tracking
 
 ### PHP client
 
