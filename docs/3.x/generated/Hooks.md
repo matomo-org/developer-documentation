@@ -761,7 +761,7 @@ Usages:
 
 ### Console.filterCommands
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [183](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L183)*
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [198](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L198)*
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
 should subscribe to this event and remove commands from the existing list.
@@ -2449,7 +2449,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [293](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L293)*
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [308](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L308)*
 
 
 
