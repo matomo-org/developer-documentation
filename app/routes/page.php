@@ -6,276 +6,152 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
+use helpers\Cache;
 use helpers\Content\ApiReferenceGuide;
+use helpers\Content\Category\ApiReferenceCategory;
 use helpers\Content\Category\Category;
 use helpers\Content\Category\CategoryList;
 use helpers\Content\Category\ChangelogCategory;
 use helpers\Content\Category\DesignCategory;
 use helpers\Content\Category\DevelopCategory;
 use helpers\Content\Category\DevelopInDepthCategory;
+use helpers\Content\Category\IntegrateCategory;
+use helpers\Content\Category\SupportCategory;
 use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
-use helpers\Content\Category\IntegrateCategory;
-use helpers\Content\Category\ApiReferenceCategory;
+use helpers\DocumentNotExistException;
+use helpers\Environment;
 use helpers\Redirects;
 use helpers\SearchIndex;
-use helpers\Content\Category\SupportCategory;
-use helpers\DocumentNotExistException;
-use helpers\Git;
-use helpers\Environment;
-use Slim\Slim;
+use helpers\Url;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
-function send404NotFound(Slim $app) {
-    $app->pass();
-}
 
-function initView($app)
+function renderGuide(Slim\Views\Twig $view, Response $response, Psr\Http\Message\UriInterface $uri, Guide $guide, Category $category)
 {
-    $app->hook('slim.before.dispatch', function () use ($app) {
-        $app->view->setData('urlIfAvailableInNewerVersion', false);
-        $availableVersions = Environment::getAvailablePiwikVersions();
-
-        if (!Environment::isLatestPiwikVersion()) {
-            $matomoVersion = Environment::getPiwikVersion();
-            $alternativeUrl = getUrlIfDocumentIsAvailableInPiwikVersion($app, LATEST_PIWIK_DOCS_VERSION);
-
-            if (in_array($matomoVersion, $availableVersions)) {
-                $app->view->setData('urlIfAvailableInNewerVersion', $alternativeUrl);
-            } else {
-                // redirect to newest version
-                //$app->response->redirect($alternativeUrl, 301);
-                // exit;
-                $app->view->setData('urlIfAvailableInNewerVersion', $alternativeUrl);
-            }
-        }
-
-        $app->view->setData('availablePiwikVersions', $availableVersions);
-        $app->view->setData('selectedPiwikVersion', Environment::getPiwikVersion());
-        $app->view->setData('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
-        $app->view->setData('revision', Git::getCurrentShortRevision());
-        $app->view->setData('currentPath', $app->request->getPathInfo());
-    });
-}
-
-function renderGuide(Slim $app, Guide $guide, Category $category)
-{
-    $app->render('guide.twig', [
-        'category'           => $category,
-        'guide'              => $guide,
+    return $view->render($response, 'guide.twig', [
+        'category' => $category,
+        'guide' => $guide,
         'linkToEditDocument' => $guide->linkToEdit(),
-        'activeMenu'         => $category->getName(),
+        'activeMenu' => $category->getName(),
+        'currentPath' => $uri->getPath(),
+        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($uri->getPath(), LATEST_PIWIK_DOCS_VERSION))
     ]);
 }
 
-initView($app);
 
-function getUrlIfDocumentIsAvailableInPiwikVersion($app, $piwikVersion)
-{
-    $currentPiwikVersion = Environment::getPiwikVersion();
-
-    // we now work in context of that piwik version
-    Environment::setPiwikVersion($piwikVersion);
-
-    $path = $app->request->getPath();
-    $url = '';
-
-    if ($path === '/' || $path === '') {
-        $url = '/';
-    }
-    if (empty($url)) {
-        if (strpos($path, '/guides/') !== false) {
-            try {
-                // we check if the requested resource maybe exists for another Piwik version
-                $guide = new Guide(str_replace('/guides/', '', $path));
-                $url = Environment::completeUrl($guide->getMenuUrl());
-            } catch (DocumentNotExistException $e) {}
-        }
-    }
-
-    if (empty($url)) {
-        if (strpos($path, '/api-reference/') !== false) {
-
-            try {
-                $replaced = str_replace('/api-reference/', '', $path);
-                // we check if the requested resource maybe exists for another Piwik version
-                $guide = new ApiReferenceGuide( $replaced );
-                $url = Environment::completeUrl($guide->getMenuUrl());
-            } catch (DocumentNotExistException $e) {
-            }
-
-            try {
-                $replaced = str_replace('/api-reference/', '', $path);
-                // we check if the requested resource maybe exists for another Piwik version
-                $phpdoc = new PhpDoc($replaced, $replaced);
-                $url = Environment::completeUrl($phpdoc->getMenuUrl());
-            } catch (DocumentNotExistException $e) {
-            }
-        }
-    }
-
-    if (empty($url)) {
-        /** @var \helpers\Content\MenuItem[] $categories */
-        $categories = [
-            new IntegrateCategory(),
-            new DevelopCategory(),
-            new DesignCategory(),
-            new ApiReferenceCategory(),
-            new DevelopInDepthCategory()
-        ];
-
-        foreach ($categories as $category) {
-            if ($path === $category->getMenuUrl() ) {
-                $url = $path;
-                break;
-            }
-        }
-    }
-    
-    Environment::setPiwikVersion($currentPiwikVersion);
-
-    return $url;
-}
-
-$app->notFound(function () use ($app) {
-    $alternativeUrls = array();
-    foreach (Environment::getAvailablePiwikVersions() as $piwikVersion) {
-        if ($piwikVersion != Environment::getPiwikVersion()) {
-            $url = getUrlIfDocumentIsAvailableInPiwikVersion($app, $piwikVersion);
-            if (!empty($url)) {
-                $alternativeUrls[] = $url;
-            }
-        }
-    }
-    $app->view->setData('alternativeUrls', $alternativeUrls);
-
-    $app->render('404.twig');
-});
 
 // Redirects
 foreach (Redirects::getRedirects() as $url => $redirect) {
-    $app->get($url, function () use ($app, $redirect) {
-        $app->redirect($redirect, 301);
+    $app->get($url, function (Request $request, Response $response, $args) use ($redirect) {
+        return $response->withStatus(301)->withHeader('Location', $redirect);
     });
 }
 
-$app->get('(/)', function () use ($app) {
-    $app->render('home.twig', ['isHome' => true]);
+
+$app->get('/', function (Request $request, Response $response, $args) {
+    return $this->get("view")->render($response, 'home.twig', ['isHome' => true]);
 });
 
-$app->get('/guides/:name1/:name2(/)', function ($name1, $name2) use ($app) {
+$app->get('/guides/{name1}/{name2}', function (Request $request, Response $response, $args) {
     try {
-        $guide = new Guide($name1 . '/' . $name2);
+        $guide = new Guide($args["name1"] . '/' . $args["name2"]);
     } catch (DocumentNotExistException $e) {
-        send404NotFound($app);
-        return;
+        throw new \Slim\Exception\HttpNotFoundException($request, $response);
     }
     $category = CategoryList::getCategory($guide->getCategory());
 
-    renderGuide($app, $guide, $category);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $guide, $category);
 });
 
-$app->get('/guides/:name(/)', function ($name) use ($app) {
+$app->get('/guides/{name}', function (Request $request, Response $response, $args) {
     try {
-        $guide = new Guide($name);
+        $guide = new Guide($args["name"]);
     } catch (DocumentNotExistException $e) {
-        send404NotFound($app);
-        return;
+        throw new \Slim\Exception\HttpNotFoundException($request, $response);
     }
     $category = CategoryList::getCategory($guide->getCategory());
 
-    renderGuide($app, $guide, $category);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $guide, $category);
 });
 
-$app->get('/integration', function () use ($app) {
+
+$app->get('/integration', function (Request $request, Response $response, $args) {
     $category = new IntegrateCategory();
-    renderGuide($app, $category->getIntroGuide(), $category);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/design', function () use ($app) {
+$app->get('/design', function (Request $request, Response $response, $args) {
     $category = new DesignCategory();
-    renderGuide($app, $category->getIntroGuide(), $category);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/develop', function () use ($app) {
+$app->get('/develop', function (Request $request, Response $response, $args) {
     $category = new DevelopCategory();
-    renderGuide($app, $category->getIntroGuide(), $category);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/piwik-in-depth', function () use ($app) {
+$app->get('/piwik-in-depth', function (Request $request, Response $response, $args) {
     $category = new DevelopInDepthCategory();
-    renderGuide($app, $category->getIntroGuide(), $category);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/api-reference/Piwik/:names+', function ($names) use ($app) {
-    if (! ctype_alnum(implode('', $names))) {
-        send404NotFound($app);
-        return;
+
+$app->get('/api-reference/Piwik/[{params:.*}]', function (Request $request, Response $response, $args) {
+    $paramArray = explode("/", $request->getAttribute('params'));
+    if (!ctype_alnum(implode('', $paramArray))) {
+        throw new \Slim\Exception\HttpNotFoundException($request, $response);
     }
 
-    $names = array_filter($names);
-    $file = 'Piwik/' . implode('/', $names);
+    $file = 'Piwik/' . $request->getAttribute('params');
 
     try {
         $doc = new PhpDoc($file, $file);
     } catch (DocumentNotExistException $e) {
-        send404NotFound($app);
-        return;
+        throw new \Slim\Exception\HttpNotFoundException($request, $response);
     }
-
-    renderGuide($app, $doc, new ApiReferenceCategory());
+    return renderGuide($this->get("view"), $response, $request->getUri(), $doc, new ApiReferenceCategory());
 });
 
-$app->get('/api-reference/classes', function () use ($app) {
-    renderGuide($app, new PhpDoc('Classes', 'classes'), new ApiReferenceCategory());
+$app->get('/api-reference/classes', function (Request $request, Response $response, $args) {
+    return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc('Classes', 'classes'), new ApiReferenceCategory());
 });
-$app->get('/api-reference/events', function () use ($app) {
-    renderGuide($app, new PhpDoc('Hooks', 'events'), new ApiReferenceCategory());
-});
-$app->get('/api-reference/index', function () use ($app) {
-    renderGuide($app, new PhpDoc('Index', 'index'), new ApiReferenceCategory());
-});
-$app->get('/api-reference/PHP-Piwik-Tracker', function () use ($app) {
-    renderGuide($app, new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker'), new ApiReferenceCategory());
+$app->get('/api-reference/events', function (Request $request, Response $response, $args) {
+    return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc('Hooks', 'events'), new ApiReferenceCategory());
 });
 
-$app->get('/api-reference/:reference1/:reference2', function ($reference1, $reference2) use ($app) {
+$app->get('/api-reference/index', function (Request $request, Response $response, $args) {
+    return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc('Index', 'index'), new ApiReferenceCategory());
+});
+
+$app->get('/api-reference/PHP-Piwik-Tracker', function (Request $request, Response $response, $args) {
+    return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker'), new ApiReferenceCategory());
+});
+
+$app->get('/api-reference/{reference}', function (Request $request, Response $response, $args) {
 
     try {
-        $guide = new ApiReferenceGuide($reference1 . '/' . $reference2);
+        $guide = new ApiReferenceGuide($args["reference"]);
     } catch (DocumentNotExistException $e) {
-        send404NotFound($app);
-        return;
+        throw new \Slim\Exception\HttpNotFoundException($request, $response);
     }
-
-    renderGuide($app, $guide, new ApiReferenceCategory());
+    return renderGuide($this->get("view"), $response, $request->getUri(), $guide, new ApiReferenceCategory());
 });
-
-$app->get('/api-reference/:reference', function ($reference) use ($app) {
-
-    try {
-        $guide = new ApiReferenceGuide($reference);
-    } catch (DocumentNotExistException $e) {
-        send404NotFound($app);
-        return;
-    }
-
-    renderGuide($app, $guide, new ApiReferenceCategory());
-
-});
-
-$app->get('/api-reference', function () use ($app) {
+$app->get('/api-reference', function (Request $request, Response $response, $args) {
     $category = new ApiReferenceCategory();
-    renderGuide($app, $category->getIntroGuide(), $category);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/support', function () use ($app) {
+$app->get('/support', function (Request $request, Response $response, $args) {
     $category = new SupportCategory();
-    renderGuide($app, $category->getIntroGuide(), $category);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/changelog', function () use ($app) {
+
+$app->get('/changelog', function (Request $request, Response $response, $args) {
     $fetchContent = false;
-    $targetFile   = '../../docs/changelog.md';
+    $targetFile = '../../docs/changelog.md';
 
     if (!file_exists($targetFile)) {
         $fetchContent = true;
@@ -289,26 +165,31 @@ $app->get('/changelog', function () use ($app) {
 
     if ($fetchContent) {
         $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/3.x-dev/CHANGELOG.md');
+        if ($markdown === false) {
+            throw new \Exception("Could not fetch changelog");
+        }
         file_put_contents($targetFile, $markdown);
     }
 
     $category = new ChangelogCategory();
-    renderGuide($app, $category->getIntroGuide(), $category);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/data/documents', function () use ($app) {
+$app->get('/data/documents', function (Request $request, Response $response, $args) {
     $searchIndex = new SearchIndex();
     $index = $searchIndex->buildIndex();
-    echo json_encode([
+    $response->getBody()->write(json_encode([
         'urls' => array_keys($index),
         'names' => array_values($index)
-    ], JSON_PRETTY_PRINT);
+    ]));
+    return $response->withHeader('Content-Type', 'application/json')
+        ->withStatus(200);
 });
 
-$app->post('/receive-commit-hook', function () use ($app) {
+$app->post('/receive-commit-hook', function (Request $request, Response $response, $args) {
     system('git pull');
-    \helpers\Cache::invalidate();
+    Cache::invalidate();
 
-    echo 'Here is a cookie!';
-    exit;
+    $response->getBody()->write("Here is a cookie!");
+    return $response->withHeader('Content-Type', 'text/plain');
 });

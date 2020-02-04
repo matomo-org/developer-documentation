@@ -7,9 +7,11 @@
  */
 namespace helpers;
 
+use Twig\TwigFilter;
+
 class Twig {
 
-    public static function registerFilter(\Twig_Environment $environment)
+    public static function registerFilter(\Twig\Environment $environment)
     {
         $environment->addFilter(static::getCompleteUrlFilter());
         $environment->addFilter(static::getCompleteUrlForPiwikVersionFilter());
@@ -17,14 +19,14 @@ class Twig {
 
     private static function getCompleteUrlFilter()
     {
-        return new \Twig_SimpleFilter('completeUrl', function ($value) {
+        return new TwigFilter('completeUrl', function ($value) {
             return Environment::completeUrl($value);
         });
     }
 
     private static function getCompleteUrlForPiwikVersionFilter()
     {
-        return new \Twig_SimpleFilter('completeUrlForPiwikVersion', function ($value, $piwikVersion) {
+        return new TwigFilter('completeUrlForPiwikVersion', function ($value, $piwikVersion) {
 
             $currentPiwikVersion = Environment::getPiwikVersion();
 

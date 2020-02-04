@@ -33,7 +33,7 @@ $quickSearchTypeahead.typeahead({
             var url = $quickSearchTypeahead.attr('data-action');
 
             $.get(url, {}, function (data) {
-                quickSearchData = JSON.parse(data);
+                quickSearchData = data;
                 process(quickSearchData.names);
             });
         }

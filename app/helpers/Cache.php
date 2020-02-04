@@ -15,17 +15,17 @@ class Cache
     public static function get($key)
     {
         if (!static::isEnabled()) {
-            return;
+            return false;
         }
 
         if (empty($key)) {
-            return;
+            return false;
         }
 
         $file = static::getPathToCacheFile($key);
 
         if (!file_exists($file)) {
-            return;
+            return false;
         }
 
         $content = file_get_contents($file);
@@ -34,6 +34,7 @@ class Cache
 
             return $content;
         }
+        return false;
     }
 
     public static function set($key, $content)

@@ -8,6 +8,10 @@
 
 namespace helpers;
 
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
+use Slim\Psr7\Response;
+
 /**
  * Class CacheMiddleware.
  *
@@ -16,30 +20,31 @@ namespace helpers;
  *
  * @package helpers
  */
-class CacheMiddleware extends \Slim\Middleware
+class CacheMiddleware
 {
-    public function call()
+    public function __invoke(Request $request, RequestHandler $handler): Response
     {
-        /** @var $req \Slim\Http\Request */
-        $req = $this->app->request;
-        /** @var $res \Slim\Http\Response */
-        $res = $this->app->response;
 
-        if ($this->shouldCache($req)) {
-            $content = Cache::get($this->getCacheKey($req));
-
+        if ($this->shouldCache($request)) {
+            $content = Cache::get($this->getCacheKey($request));
+            $response = new Response();
             if (!empty($content)) {
-                $res->setBody($content);
-
-                return;
+                if ($this->isJsonData($request)) {
+                    $response = $response->withHeader('Content-Type', 'application/json');
+                    $response->getBody()->write($content);
+                } else {
+                    $response->getBody()->write($content . "\n<!-- Cached response -->");
+                }
+                return $response;
             }
         }
 
-        $this->next->call();
-
-        if ($this->shouldCache($req) && 200 == $res->getStatus()) {
-            Cache::set($this->getCacheKey($req), $res->getBody());
+        $response = $handler->handle($request);
+        $content = $response->getBody();
+        if ($this->shouldCache($request) && 200 == $response->getStatusCode() && !$this->hadIncludeFileError($content)) {
+            Cache::set($this->getCacheKey($request), $content);
         }
+        return $response;
     }
 
     /**
@@ -64,15 +69,33 @@ class CacheMiddleware extends \Slim\Middleware
         return $path;
     }
 
-    private function shouldCache($req)
+    private function hadIncludeFileError($content)
     {
-        return $req->isGet();
+        return strpos($content, "Error while retrieving") !== false;
     }
 
-    private function getCacheKey($req)
+    private function isJsonData(Request $req)
+    {
+        return substr($req->getUri()->getPath(), 0, 6) === '/data/';
+    }
+
+
+    private function shouldCache(Request $req)
+    {
+        return $req->getMethod() == "GET";
+    }
+
+    private function getCacheKey(Request $req)
     {
         $piwikVersion = Environment::getPiwikVersion();
 
-        return $piwikVersion . '_' . $this->pathToCacheKey($req->getPath());
+
+        if ($this->isJsonData($req)) {
+            $type = "json";
+        } else {
+            $type = "html";
+        }
+
+        return $piwikVersion . '_' . $this->pathToCacheKey($req->getUri()->getPath()) . "." . $type;
     }
 }
