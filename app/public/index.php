@@ -9,6 +9,7 @@
 use DI\Container;
 use helpers\CacheMiddleware;
 use helpers\Environment;
+use helpers\Git;
 use helpers\MatomoVersionMiddleware;
 use helpers\Url;
 use Psr\Http\Message\ServerRequestInterface;
@@ -33,29 +34,18 @@ AppFactory::setContainer($container);
 
 // Set view in Container
 $container->set('view', function () {
-    return Twig::create('../templates', ['cache' => '../tmp/templates']);
+    $view = Twig::create('../templates', ['cache' => '../tmp/templates']);
+    $view->getEnvironment()->addGlobal('urlIfAvailableInNewerVersion', false);
+    $view->getEnvironment()->addGlobal('availablePiwikVersions', Environment::getAvailablePiwikVersions());
+    $view->getEnvironment()->addGlobal('selectedPiwikVersion', Environment::getPiwikVersion());
+    $view->getEnvironment()->addGlobal('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
+    $view->getEnvironment()->addGlobal('revision', Git::getCurrentShortRevision());
+    return $view;
 });
-
 
 $app = AppFactory::create();
 
 helpers\Twig::registerFilter($container->get("view")->getEnvironment());
-
-
-//$app->add(new PiwikVersionMiddleware());
-//$app->add(new CacheMiddleware());
-
-//$app->error(function (\Exception $e) use ($app) {
-//    Log::error('An unhandled exception occurred: ' . $e->getMessage() . $e->getTraceAsString());
-//
-//    $app->response()->status(500);
-//});
-//
-//$app->setName('developer.matomo.org');
-//$log = $app->getLog();
-//$log->setEnabled(true);
-//
-//helpers\Twig::registerFilter($app->view->getInstance());
 
 $app->add(new MatomoVersionMiddleware());
 $app->add(new CacheMiddleware());
@@ -65,7 +55,6 @@ $routeCollector->setCacheFile('../tmp/cache/route_cache.php');
 
 $contentLengthMiddleware = new ContentLengthMiddleware();
 $app->add($contentLengthMiddleware);
-
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 $errorMiddleware->setErrorHandler(
@@ -87,6 +76,7 @@ $errorMiddleware->setErrorHandler(
             "alternativeUrls" => $alternativeUrls
         ]);
     });
+
 require '../routes/page.php';
 
 $app->run();
