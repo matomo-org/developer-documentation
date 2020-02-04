@@ -11,6 +11,7 @@ namespace helpers;
 class Cache
 {
     private static $folder = '../tmp/cache';
+    private static $TwigCacheFolder = '../tmp/templates';
 
     public static function get($key)
     {
@@ -69,6 +70,11 @@ class Cache
     public static function invalidate()
     {
         static::unlinkRecursive(static::$folder);
+    }
+
+    public static function invalidate_Twig_Cache()
+    {
+        static::unlinkRecursive(static::$TwigCacheFolder);
     }
 
     private static function unlinkRecursive($dir)

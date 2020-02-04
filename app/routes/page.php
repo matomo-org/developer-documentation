@@ -41,7 +41,6 @@ function renderGuide(Slim\Views\Twig $view, Response $response, Psr\Http\Message
 }
 
 
-
 // Redirects
 foreach (Redirects::getRedirects() as $url => $redirect) {
     $app->get($url, function (Request $request, Response $response, $args) use ($redirect) {
@@ -188,10 +187,9 @@ $app->get('/data/documents', function (Request $request, Response $response, $ar
 
 $app->post('/receive-commit-hook', function (Request $request, Response $response, $args) {
     system('git pull');
-    system('rm -r tmp/cache/*');
-    system('rm -r tmp/templates/*');
 
     Cache::invalidate();
+    Cache::invalidate_Twig_Cache();
 
     $response->getBody()->write("Here is a cookie!");
     return $response->withHeader('Content-Type', 'text/plain');
