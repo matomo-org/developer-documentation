@@ -56,7 +56,7 @@ $routeCollector->setCacheFile('../tmp/cache/route_cache.php');
 $contentLengthMiddleware = new ContentLengthMiddleware();
 $app->add($contentLengthMiddleware);
 
-$errorMiddleware = $app->addErrorMiddleware(true, true, true);
+$errorMiddleware = $app->addErrorMiddleware(DEBUG, true, true);
 $errorMiddleware->setErrorHandler(
     HttpNotFoundException::class,
     function (ServerRequestInterface $request, Throwable $exception, bool $displayErrorDetails) {
