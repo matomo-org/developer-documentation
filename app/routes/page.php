@@ -188,6 +188,9 @@ $app->get('/data/documents', function (Request $request, Response $response, $ar
 
 $app->post('/receive-commit-hook', function (Request $request, Response $response, $args) {
     system('git pull');
+    system('rm -r tmp/cache/*');
+    system('rm -r tmp/templates/*');
+
     Cache::invalidate();
 
     $response->getBody()->write("Here is a cookie!");
