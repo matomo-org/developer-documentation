@@ -7,6 +7,13 @@
     {% if urlIfAvailableInNewerVersion %}
         <link rel="canonical" href="https://{{ constant('DOCS_DOMAIN') }}{{ urlIfAvailableInNewerVersion }}">
     {% endif %}
+
+    <meta property="og:title" content="{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Matomo Analytics - Developer Docs - v{{ selectedPiwikVersion }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://{{ constant('DOCS_DOMAIN') }}{{ currentPath }}" />
+    <meta property="og:image" content="https://demo.matomo.org/plugins/CoreHome/images/applogo_256.png" />
+    <meta property="og:site_name" content="Matomo Analytics - Developer Docs" />
+
     <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/highlight.obsidian.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
