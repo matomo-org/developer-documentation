@@ -28,4 +28,4 @@ Log data is represented in PHP as `Piwik\Tracker\Visit` objects, and is stored i
 - `log_conversion` contains conversions (actions that match goals) that happen during a visit
 - `log_conversion_item` contains e-commerce conversion items
 
-The content of those tables (and their related PHP entities) is explained in more details in the [Database schema guide](/guides/persistence-and-the-mysql-backend#log-data-persistence).
+The content of those tables (and their related PHP entities) is explained in more details in the [Database schema guide](/guides/database-schema#log-data-persistence).

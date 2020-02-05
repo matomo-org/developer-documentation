@@ -29,6 +29,7 @@ class Redirects
             '/guides/all-about-tracking'       => '/guides/tracking-introduction',
             '/guides/getting-started-part-2'   => '/guides/report',
             '/guides/internationalization'     => '/guides/translations',
+            '/guides/persistence-and-the-mysql-backend' => '/guides/database-schema',
         ];
     }
 }

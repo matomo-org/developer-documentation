@@ -60,7 +60,7 @@ class ApiReferenceCategory extends Category
 		        new ApiReferenceGuide('wordpress/restapi-reference')
 	        ]),
             new EmptySubCategory('Database', [
-                new Guide('persistence-and-the-mysql-backend'),
+                new Guide('database-schema'),
             ]),
         ];
     }

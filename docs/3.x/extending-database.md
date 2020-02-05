@@ -149,4 +149,4 @@ the `doUpdate` method.
 
 ## Learn more
 
-Learn more about the Piwik Analytics database structure and tables in the [Database schema reference](/guides/persistence-and-the-mysql-backend).
+Learn more about the Piwik Analytics database structure and tables in the [Database schema reference](/guides/database-schema).
