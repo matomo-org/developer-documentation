@@ -16,3 +16,7 @@ if (! defined('LATEST_PIWIK_DOCS_VERSION')) {
 if (! defined('DOCS_DOMAIN')) {
     define('DOCS_DOMAIN', 'developer.matomo.org');
 }
+
+if (! defined('WEBHOOK_TOKEN')) {
+    define('WEBHOOK_TOKEN', '$2y$10$7StRWWP4gYyuhLIOAWD1Cuw.jOsMWuTwi9DTENPUVakrNN4/H31Gq'); // "changeme"
+}
