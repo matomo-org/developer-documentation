@@ -50,14 +50,13 @@
                     <a href="{{ '/support'|completeUrl }}">Support</a>
                 </li>
             </ul>
-            {% if availablePiwikVersions|length > 1 %}
             <ul class="nav navbar-nav pull-right">
                 <li>
                     <div id="quick-search-typeahead">
                         <input type="text"
                                data-action="{{ '/data/documents'|completeUrl }}"
                                placeholder="Quick search..."/>
-
+                        {% if availablePiwikVersions|length > 1 %}
                         <select title="Select your Piwik version"
                                 class="piwik-version-select"
                                 name="piwik">
@@ -68,10 +67,10 @@
                                 >{% if i < 3 %}Piwik{% else %}Matomo{% endif %} {{ i }}.X</option>
                             {% endfor %}
                         </select>
+                        {% endif %}
                     </div>
                 </li>
             </ul>
-            {% endif %}
         </div>
     </div>
 </div>

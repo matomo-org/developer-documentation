@@ -6,49 +6,76 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
+use DI\Container;
+use helpers\CacheMiddleware;
+use helpers\Environment;
+use helpers\Git;
+use helpers\MatomoVersionMiddleware;
+use helpers\Url;
+use Psr\Http\Message\ServerRequestInterface;
+use Slim\Exception\HttpNotFoundException;
+use Slim\Factory\AppFactory;
+use Slim\Middleware\ContentLengthMiddleware;
+use Slim\Psr7\Response;
+use Slim\Views\Twig;
+
 require '../vendor/autoload.php';
 if (file_exists('../config/local.php')) {
     require '../config/local.php';
 }
 require '../config/app.php';
 
-use Slim\Slim;
-use Slim\Views\Twig as Twig;
-use helpers\Log;
-use helpers\CacheMiddleware;
-use helpers\PiwikVersionMiddleware;
 
 date_default_timezone_set("UTC");
-$twig = new Twig();
 
-// New Slim App
-$app = new Slim(array(
-    'view' => $twig,
-    'log.enabled' => true,
-    'debug'       => DEBUG,
-    'templates.path' => '../templates',
-    'templates.cache' => realpath('../tmp/templates'),
-    'templates.charset' => 'utf-8',
-    'templates.auto_reload' => true,
-    'templates.autoescape' => true,
-    'log.writer'  => new \Slim\Extras\Log\DateTimeFileWriter(
-        array('path' => realpath('../tmp/logs'), 'name_format' => 'Y-m-d')
-    )
-));
-$app->add(new PiwikVersionMiddleware());
-$app->add(new CacheMiddleware());
+// Create Container
+$container = new Container();
+AppFactory::setContainer($container);
 
-$app->error(function (\Exception $e) use ($app) {
-    Log::error('An unhandled exception occurred: ' . $e->getMessage() . $e->getTraceAsString());
-
-    $app->response()->status(500);
+// Set view in Container
+$container->set('view', function () {
+    $view = Twig::create('../templates', ['cache' => '../tmp/templates']);
+    $view->getEnvironment()->addGlobal('urlIfAvailableInNewerVersion', false);
+    $view->getEnvironment()->addGlobal('availablePiwikVersions', Environment::getAvailablePiwikVersions());
+    $view->getEnvironment()->addGlobal('selectedPiwikVersion', Environment::getPiwikVersion());
+    $view->getEnvironment()->addGlobal('latestPiwikDocsVersion', LATEST_PIWIK_DOCS_VERSION);
+    $view->getEnvironment()->addGlobal('revision', Git::getCurrentShortRevision());
+    return $view;
 });
 
-$app->setName('developer.matomo.org');
-$log = $app->getLog();
-$log->setEnabled(true);
+$app = AppFactory::create();
 
-helpers\Twig::registerFilter($app->view->getInstance());
+helpers\Twig::registerFilter($container->get("view")->getEnvironment());
+
+$app->add(new MatomoVersionMiddleware());
+$app->add(new CacheMiddleware());
+
+$routeCollector = $app->getRouteCollector();
+$routeCollector->setCacheFile('../tmp/cache/route_cache.php');
+
+$contentLengthMiddleware = new ContentLengthMiddleware();
+$app->add($contentLengthMiddleware);
+
+$errorMiddleware = $app->addErrorMiddleware(DEBUG, true, true);
+$errorMiddleware->setErrorHandler(
+    HttpNotFoundException::class,
+    function (ServerRequestInterface $request, Throwable $exception, bool $displayErrorDetails) {
+        $response = new Response();
+
+
+        $alternativeUrls = array();
+        foreach (Environment::getAvailablePiwikVersions() as $piwikVersion) {
+            if ($piwikVersion != Environment::getPiwikVersion()) {
+                $url = Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), $piwikVersion);
+                if (!empty($url)) {
+                    $alternativeUrls[] = $url;
+                }
+            }
+        }
+        return $this->get("view")->render($response->withStatus(404), '404.twig', [
+            "alternativeUrls" => $alternativeUrls
+        ]);
+    });
 
 require '../routes/page.php';
 

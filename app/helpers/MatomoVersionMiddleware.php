@@ -8,39 +8,36 @@
 
 namespace helpers;
 
-/**
- * Class CacheMiddleware.
- *
- * Only GET requests are cached so far and only by path. So if you request a URL like "/foo" and URL like "/foo?bar=1"
- * the same cache key is used.
- *
- * @package helpers
- */
-class PiwikVersionMiddleware extends \Slim\Middleware
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
+
+class MatomoVersionMiddleware
 {
-    public function call()
+
+    public function __invoke(Request $request, RequestHandler $handler): Response
     {
-        /** @var $environment \Slim\Environment */
-
-        $environment = $this->app->environment;
-
+        $uri = $request->getUri();
+        $path = $uri->getPath();
         // we match eg /2.x or /3.x /19.x and remove it from the path so our routes in routes/page.php still match.
         // Instead of changing the path I wanted to add a group around all routes in page but slim 2 doesn't allow us to define
         // a condition on a group route unfortunately
         $matches = array();
 
-        if ($this->hasPiwikVersionInUrl($environment['PATH_INFO'], $matches)) {
+        if ($this->hasPiwikVersionInUrl($path, $matches)) {
             if ($this->isValidPiwikVersionAndAllowedToBeInPath($matches[1])) {
                 // we only allow usage of 2.x or 3.x for outdated Piwik versions. Latest will be always
                 // available only under "/" whereas older versions will be /2.x . Once Piwik 4 is available,
                 // it will automatically work for '/2.x' and '/3.x', we only need to increase LATEST_PIWIK_DOCS_VERSION
                 // in the config
                 Environment::setPiwikVersion($matches[1]);
-                $environment['PATH_INFO'] = $this->removePiwikVersionFromCurrentPath($environment['PATH_INFO'], $matches[1]);
+                $uri = $uri->withPath($this->removePiwikVersionFromCurrentPath($path, $matches[1]));
+                $request = $request->withUri($uri);
             }
         }
+        $response = $handler->handle($request);
 
-        $this->next->call();
+        return $response;
     }
 
     private function removePiwikVersionFromCurrentPath($path, $piwikVersion)

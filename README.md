@@ -20,6 +20,8 @@ Copyright Matomo team. Do not republish, or copy, or distribute this code or con
 ```bash
 $ cd app/
 $ composer install
+$ mkdir tmp/cache
+$ mkdir tmp/templates
 $ cd public/
 $ php -S 0.0.0.0:8000
 ```
