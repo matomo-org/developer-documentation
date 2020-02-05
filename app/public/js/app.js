@@ -22,44 +22,35 @@ $('.documentation img').each(function (index, img) {
 
 $('.documentation table').addClass('table table-striped table-bordered');
 
-var quickSearchData = null;
+    var $quickSearchTypeahead = $('#quick-search-typeahead').find('>input');
+    $quickSearchTypeahead.on("focus", function () {
+        var url = $quickSearchTypeahead.attr('data-action');
+        $.get(url, {}, function (quickSearchData) {
+            $quickSearchTypeahead.typeahead({
+                source: quickSearchData.names,
+                items: 'all',
+                displayText: function (item) {
+                    // get text to display in quick search box
 
-var $quickSearchTypeahead = $('#quick-search-typeahead>input');
-$quickSearchTypeahead.typeahead({
-    source: function (query, process) {
-        if (quickSearchData) {
-            process(quickSearchData.names);
-        } else {
-            var url = $quickSearchTypeahead.attr('data-action');
+                    var trailingEmLoc = item.indexOf('<em>');
+                    if (trailingEmLoc !== -1) {
+                        item = item.substring(0, trailingEmLoc);
+                    }
+                    // return display text
+                    return $.trim(item)
+                },
+                afterSelect: function (item) {
+                    // Track the search
+                    _paq.push(['trackSiteSearch', item, false, false]);
 
-            $.get(url, {}, function (data) {
-                quickSearchData = data;
-                process(quickSearchData.names);
+                    // get URL to go to
+                    var itemIndex = quickSearchData.names.indexOf(item);
+                    if (itemIndex !== -1) {
+                        window.location.href = quickSearchData.urls[itemIndex];
+                    }
+
+                }
             });
-        }
-    },
-    items: -1,
-    updater: function (item) {
-        // get text to display in quick search box
-        var displayText = item;
-
-        var trailingEmLoc = displayText.indexOf('<em>');
-        if (trailingEmLoc != -1) {
-            displayText = displayText.substring(0, trailingEmLoc);
-        }
-
-        // Track the search
-        _paq.push(['trackSiteSearch', displayText, false, false]);
-
-        // get URL to go to
-        var itemIndex = quickSearchData.names.indexOf(item);
-        if (itemIndex != -1) {
-            window.location.href = quickSearchData.urls[itemIndex];
-        }
-
-        // return display text
-        return $.trim(displayText);
-    }
-});
-
+        });
+    });
 });
