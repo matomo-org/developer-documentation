@@ -129,6 +129,15 @@ $app->get('/api-reference/PHP-Piwik-Tracker', function (Request $request, Respon
     return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker'), new ApiReferenceCategory());
 });
 
+$app->get('/api-reference/{reference1}/{reference2}', function (Request $request, Response $response, $args) {
+    try {
+        $guide = new ApiReferenceGuide($args["reference1"] . '/' . $args["reference2"]);
+    } catch (DocumentNotExistException $e) {
+        throw new \Slim\Exception\HttpNotFoundException($request);
+    }
+    return renderGuide($this->get("view"), $response, $request->getUri(), $guide, new ApiReferenceCategory());
+});
+
 $app->get('/api-reference/{reference}', function (Request $request, Response $response, $args) {
 
     try {
