@@ -26,6 +26,7 @@ use helpers\SearchIndex;
 use helpers\Url;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Exception\HttpNotFoundException;
 
 
 function renderGuide(Slim\Views\Twig $view, Response $response, Psr\Http\Message\UriInterface $uri, Guide $guide, Category $category)
@@ -57,7 +58,7 @@ $app->get('/guides/{name1}/{name2}', function (Request $request, Response $respo
     try {
         $guide = new Guide($args["name1"] . '/' . $args["name2"]);
     } catch (DocumentNotExistException $e) {
-        throw new \Slim\Exception\HttpNotFoundException($request, $response);
+        throw new HttpNotFoundException($request);
     }
     $category = CategoryList::getCategory($guide->getCategory());
 
@@ -68,7 +69,7 @@ $app->get('/guides/{name}', function (Request $request, Response $response, $arg
     try {
         $guide = new Guide($args["name"]);
     } catch (DocumentNotExistException $e) {
-        throw new \Slim\Exception\HttpNotFoundException($request, $response);
+        throw new HttpNotFoundException($request);
     }
     $category = CategoryList::getCategory($guide->getCategory());
 
@@ -100,7 +101,7 @@ $app->get('/piwik-in-depth', function (Request $request, Response $response, $ar
 $app->get('/api-reference/Piwik/[{params:.*}]', function (Request $request, Response $response, $args) {
     $paramArray = explode("/", $request->getAttribute('params'));
     if (!ctype_alnum(implode('', $paramArray))) {
-        throw new \Slim\Exception\HttpNotFoundException($request, $response);
+        throw new HttpNotFoundException($request);
     }
 
     $file = 'Piwik/' . $request->getAttribute('params');
@@ -108,7 +109,7 @@ $app->get('/api-reference/Piwik/[{params:.*}]', function (Request $request, Resp
     try {
         $doc = new PhpDoc($file, $file);
     } catch (DocumentNotExistException $e) {
-        throw new \Slim\Exception\HttpNotFoundException($request, $response);
+        throw new HttpNotFoundException($request);
     }
     return renderGuide($this->get("view"), $response, $request->getUri(), $doc, new ApiReferenceCategory());
 });
@@ -133,7 +134,7 @@ $app->get('/api-reference/{reference}', function (Request $request, Response $re
     try {
         $guide = new ApiReferenceGuide($args["reference"]);
     } catch (DocumentNotExistException $e) {
-        throw new \Slim\Exception\HttpNotFoundException($request, $response);
+        throw new HttpNotFoundException($request);
     }
     return renderGuide($this->get("view"), $response, $request->getUri(), $guide, new ApiReferenceCategory());
 });
