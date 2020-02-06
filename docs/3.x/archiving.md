@@ -86,7 +86,7 @@ Log data aggregation is handled by the [`LogAggregator`](/api-reference/Piwik/Da
 
 Plugins can access a [`LogAggregator`](/api-reference/Piwik/DataAccess/LogAggregator) and [`ArchiveProcessor`](/api-reference/Piwik/ArchiveProcessor) instance with [`Piwik\Plugin\Archiver`](/api-reference/Piwik/Plugin/Archiver).
 
-To learn more about how aggregation is accomplished with Piwik's MySQL backend, read about the [database schema](/guides/persistence-and-the-mysql-backend).
+To learn more about how aggregation is accomplished with Piwik's MySQL backend, read about the [database schema](/guides/database-schema).
 
 ## Persisting archive data
 
@@ -114,7 +114,7 @@ $serializedData = $dataTable->getSerialized(
 $archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
 ```
 
-Persisted reports and metrics are indexed by the website ID, period and segment. The date and time of archiving is also attached to the data. To learn the specifics of how this is done with MySQL see the [database schema](/guides/persistence-and-the-mysql-backend).
+Persisted reports and metrics are indexed by the website ID, period and segment. The date and time of archiving is also attached to the data. To learn the specifics of how this is done with MySQL see the [database schema](/guides/database-schema).
 
 ### How reports are stored as blob records in the `archive_blob_*` tables
 
