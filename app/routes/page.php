@@ -196,6 +196,12 @@ $app->get('/data/documents', function (Request $request, Response $response, $ar
 });
 
 $app->post('/receive-commit-hook', function (Request $request, Response $response, $args) {
+    $params = $request->getQueryParams();
+    if (empty($params["token"]) || !password_verify($params["token"], WEBHOOK_TOKEN)) {
+        $response->getBody()->write("parameter 'token' missing or incorrect");
+        return $response->withStatus(403);
+    }
+
     system('git pull');
 
     Cache::invalidate();
