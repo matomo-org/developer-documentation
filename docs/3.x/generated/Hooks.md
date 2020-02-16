@@ -1047,7 +1047,7 @@ Callback Signature:
 
 ### CustomPiwikJs.shouldAddTrackerFile
 
-*Defined in [Piwik/Plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php) in line [95](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php#L95)*
+*Defined in [Piwik/Plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php) in line [87](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php#L87)*
 
 Detect if a custom tracker file should be added to the piwik.js tracker or not. This is useful for example if a plugin only wants to add its tracker file when the plugin is configured.
 
