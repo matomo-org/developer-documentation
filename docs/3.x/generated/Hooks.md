@@ -281,7 +281,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [436](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L436)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [441](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L441)*
 
 Triggered when authenticating an API request, but only if the **token_auth** query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
 and make sure the global authentication object (the object returned by `StaticContainer::get('Piwik\Auth')`)
@@ -299,7 +299,7 @@ Usages:
 
 ### API.Request.authenticate.failed
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [442](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L442)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [447](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L447)*
 
 
 
@@ -2478,7 +2478,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [644](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L644)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [649](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L649)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted based on the `filter_sort_column` query parameter, rows are truncated based on the `filter_limit`/`filter_offset` parameters, amongst other things). If you're creating a plugin that needs to disable post processing entirely for
 certain requests, use this event.
