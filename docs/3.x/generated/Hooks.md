@@ -1515,6 +1515,10 @@ Callback Signature:
 
 - array `$details` The details array contains all visit dimensions (columns of log_visit table)
 
+Usages:
+
+[ExampleTracker::getAllVisitorDetails](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ExampleTracker/ExampleTracker.php#L28)
+
 
 ### Live.getExtraVisitorDetails
 
