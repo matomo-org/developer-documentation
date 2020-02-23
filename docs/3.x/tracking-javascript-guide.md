@@ -148,11 +148,13 @@ It is possible to configure Piwik so that it accurately measures the time spent 
 _paq.push(['enableHeartBeatTimer']);
 ```
 
-Piwik will then send requests to count the actual time spent on the page, when the user is actively viewing the page (ie. when the tab is active and in focus). These heartbeat requests will not track additional actions or pageviews. By default, Piwik will send a heartbeat request every `15` seconds. You may change the default interval, for example to send a request every `30` seconds:
+Piwik will then send requests to count the actual time spent on the page, when the user is actively viewing the page (i.e. when the tab is active and in focus). The heart beat request is executed when:
+ * switching to another browser tab after the current tab was active for at least 15 seconds (can be configured see below)
+ * navigating to another page within the same tab. 
 
 ```javascript
-// accurately measure time spent on the last pageview
-// set the default heart beat interval to 30 seconds
+// Change how long a tab needs to be active to be counted as viewed in seconds/
+// Requires a page to be actively viewed for 30 seconds for any heart beat request to be sent.
 _paq.push(['enableHeartBeatTimer', 30]);
 ```
 
