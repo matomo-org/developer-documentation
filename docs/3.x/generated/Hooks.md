@@ -443,7 +443,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php) in line [263](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php#L263)*
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php) in line [268](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Archive/ArchiveInvalidator.php#L268)*
 
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
@@ -2274,7 +2274,7 @@ Callback Signature:
 
 ### Request.dispatch
 
-*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [90](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L90)*
+*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [92](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L92)*
 
 
 
@@ -2288,7 +2288,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [110](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L110)*
+*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [112](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L112)*
 
 
 
@@ -2302,7 +2302,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [130](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L130)*
+*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [132](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L132)*
 
 
 
@@ -2316,7 +2316,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [150](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L150)*
+*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [152](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L152)*
 
 
 
@@ -2330,7 +2330,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [169](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L169)*
+*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [171](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L171)*
 
 
 
