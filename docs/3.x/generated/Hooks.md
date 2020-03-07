@@ -824,7 +824,7 @@ Callback Signature:
 
 ### Controller.triggerAdminNotifications
 
-*Defined in [Piwik/Plugin/ControllerAdmin](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ControllerAdmin.php) in line [356](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ControllerAdmin.php#L356)*
+*Defined in [Piwik/Plugin/ControllerAdmin](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ControllerAdmin.php) in line [354](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ControllerAdmin.php#L354)*
 
 Posted when rendering an admin page and notifications about any warnings or errors should be triggered. You can use it for example when you have a plugin that needs to be configured in order to work and the
 plugin has not been configured yet. It can be also used to cancel / remove other notifications by calling 
