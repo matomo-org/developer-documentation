@@ -765,6 +765,7 @@ Index
 - [`isOptimizeInnoDBSupported()`](Piwik/Db.md#isoptimizeinnodbsupported) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`IP`](Piwik/IP.md) &mdash; *Class in namespace* `Piwik`- [`info()`](Piwik/Log.md#info) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`isMultiplePeriod()`](Piwik/Period.md#ismultipleperiod) &mdash; *Method in class* [`Period`](Piwik/Period.md)
+- [`isDateInPeriod()`](Piwik/Period.md#isdateinperiod) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`isUserIsAnonymous()`](Piwik/Piwik.md#isuserisanonymous) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`isUserHasAdminAccess()`](Piwik/Piwik.md#isuserhasadminaccess) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`isUserHasSomeAdminAccess()`](Piwik/Piwik.md#isuserhassomeadminaccess) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)

@@ -32,6 +32,7 @@ The abstract class defines the following methods:
 - [`getLabel()`](#getlabel) &mdash; Returns the label for the current period.
 - [`getNumberOfSubperiods()`](#getnumberofsubperiods) &mdash; Returns the number of available subperiods.
 - [`getSubperiods()`](#getsubperiods) &mdash; Returns the set of Period instances that together make up this period.
+- [`isDateInPeriod()`](#isdateinperiod) &mdash; Returns whether the date `$date` is within the current period or not.
 - [`toString()`](#tostring) &mdash; Returns a list of strings representing the current period.
 - [`__toString()`](#__tostring) &mdash; See [toString()](/api-reference/Piwik/Period#tostring).
 - [`getPrettyString()`](#getprettystring) &mdash; Returns a pretty string describing this period.
@@ -183,6 +184,21 @@ this would be 12 months. For a month this would be 28-31 days. Etc.
 #### Signature
 
 - It returns a [`Period[]`](../Piwik/Period.md) value.
+
+<a name="isdateinperiod" id="isdateinperiod"></a>
+<a name="isDateInPeriod" id="isDateInPeriod"></a>
+### `isDateInPeriod()`
+
+Returns whether the date `$date` is within the current period or not.
+
+Note: the time component of the period's dates and `$date` is ignored.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$date` ([`Date`](../Piwik/Date.md)) &mdash;
+      
+- It returns a `bool` value.
 
 <a name="tostring" id="tostring"></a>
 <a name="toString" id="toString"></a>
