@@ -2442,7 +2442,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [193](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L193)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [194](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L194)*
 
 
 
@@ -3280,7 +3280,7 @@ Callback Signature:
 
 ### Tracker.Request.authenticate.failed
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [224](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L224)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [225](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L225)*
 
 
 
@@ -3291,7 +3291,7 @@ Usages:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [557](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L557)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [558](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L558)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
