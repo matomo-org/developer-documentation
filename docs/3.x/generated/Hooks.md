@@ -722,7 +722,7 @@ Usages:
 
 ### Config.beforeSave
 
-*Defined in [Piwik/Config/IniFileChain](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config/IniFileChain.php) in line [533](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config/IniFileChain.php#L533)*
+*Defined in [Piwik/Config/IniFileChain](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config/IniFileChain.php) in line [535](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Config/IniFileChain.php#L535)*
 
 Triggered before a config is being written / saved on the local file system. A plugin can listen to it and modify which settings will be saved on the file system. This allows you
 to prevent saving config values that a plugin sets on demand. Say you configure the database password in the
