@@ -124,17 +124,19 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
 
 -  It accepts the following parameter(s):
     - `$dimensions` (`array`) &mdash;
-      
-    - `$where`
-      
+       `SELECT` fields (or just one field) that will be grouped by, eg, `'referrer_name'` or `array('referrer_name', 'referrer_keyword')`. The metrics retrieved from the query will be specific to combinations of these fields. So if `array('referrer_name', 'referrer_keyword')` is supplied, the query will aggregate visits for each referrer/keyword combination.
+    - `$where` (`bool`|`string`) &mdash;
+       Additional condition for the `WHERE` clause. Can be used to filter the set of visits that are considered for aggregation.
     - `$additionalSelects` (`array`) &mdash;
-      
-    - `$metrics`
-      
-    - `$rankingQuery`
-      
-    - `$orderBy`
-      
+       Additional `SELECT` fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
+    - `$metrics` (`bool`|`array`) &mdash;
+       The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS` - `Metrics::INDEX_MAX_ACTIONS` - `Metrics::INDEX_SUM_VISIT_LENGTH` - `Metrics::INDEX_BOUNCE_COUNT` - `Metrics::INDEX_NB_VISITS_CONVERTED`
+    - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash;
+       A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
+    - `$orderBy` (`bool`|`string`) &mdash;
+       Order By clause to add (e.g. user_id ASC)
+    - `$timeLimitInMs` (`int`) &mdash;
+       Adds a MAX_EXECUTION_TIME query hint to the query if $timeLimitInMs > 0
 
 - *Returns:*  `mixed` &mdash;
     A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension) to see what aggregate data is calculated by the query.
@@ -213,6 +215,8 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
        One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed (since there is only one column).
     - `$secondaryOrderBy` (`string`) &mdash;
        A secondary order by clause for the ranking query
+    - `$timeLimitInMs` (`int`) &mdash;
+       Adds a MAX_EXECUTION_TIME hint to the query if $timeLimitInMs > 0
 
 - *Returns:*  `mixed` &mdash;
     A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.

@@ -184,6 +184,8 @@ The object has to be configured first using the other methods.
        string  The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
     - `$bind` (`Piwik\$bind`) &mdash;
        array         Bindings for the inner query.
+    - `$timeLimitInMs` (`int`) &mdash;
+       Adds a MAX_EXECUTION_TIME query hint to the query if $timeLimitInMs > 0
 
 - *Returns:*  `array` &mdash;
     The format depends on which methods have been used to configure the ranking query.
