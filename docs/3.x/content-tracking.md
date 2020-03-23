@@ -3,11 +3,11 @@ category: Integrate
 ---
 # Content Tracking
 
-**Content tracking** allows you to track interaction with the content of a web page or application.
+**Content tracking** ([see user guide](https://matomo.org/docs/content-tracking/)) allows you to track interaction with the content of a web page or application.
 
 For example, you could use content tracking to measure how often a specific ad was displayed on your website or how often it was clicked.
 
-This feature is not only limited to ads or images, you can use it for any kind of HTML content.
+This feature is not only limited to ads or images, you can use it for any kind of HTML content. 
 
 ## Vocabulary
 
