@@ -804,6 +804,7 @@ Notes:
 * By default, the cookie and consent will be remembered forever. It is possible to define an optional expiry period for your user consent by calling: `_paq.push(['rememberConsentGiven', optionallyExpireConsentInHours])`.
 * When you're tracking multiple sub-domains into the same website in Matomo, you want to ensure that when you ask for Consent, the user gives consent for all the sub-domains on which you are collecting data. If the user only gives consent for a particular domain or sub-domain(s), you may need to restrict or widen the scope of the consent cookie domain and path by using 'setCookieDomain' and ‘setCookiePath'. 
 * For the consent to work, it is required that user does not disable first party cookies.
+* When a user gives consent and is using the Safari browser, due to Safari ITP feature (Intelligent Tracking Prevention), the consent will be remembered for 7 days only for these Safari users. 
 
 **B) if you use your own consent tool to remember the consent**
             
