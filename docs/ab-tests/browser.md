@@ -199,6 +199,37 @@ variations: [{
 }] 
 ```
 
+### Impact of ITP (Intelligent Tracking Protection)
+
+Matomo stores the selected variation in the local storage to remember which variation was activated for a specific visitor. 
+Since Safari 13.1, Safari deletes all locally stored data after seven days. This means if a visitor is not visiting your 
+site for seven days, the activated variation is no longer remembered and the next time your visitor visits your website, 
+a new variation will be randomly selected. Should the visitor visit your website again within seven days, we try to extend
+the lifetime for another seven days. We don't expect this behaviour to bias or invalidate the results.
+
+Should you want to exclude Safari when running A/B tests, you can add the following code to your tracking code:
+
+```js
+// works from A/B testing 3.2.18
+_paq.push(['AbTesting::disableWhenItp']);
+// or 
+Piwik.AbTesting.disableWhenItp();
+```
+
+Make sure to call this method before you define any experiment.
+
+### Disabling A/B testing feature
+
+Should you not want to run any A/B test for a while without needing to remove all the already embedded experiments
+from your website you can run execute the following code:
+
+```js
+// works from A/B testing 3.2.18
+_paq.push(['AbTesting::disable']);
+```
+
+Make sure to call this method before you define any experiment.
+
 ### Preventing flickering / flashing of content
 
 When you compare for example different button colors to see which of the colors converts the best, you could run into
