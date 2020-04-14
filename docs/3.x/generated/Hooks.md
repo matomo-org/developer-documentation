@@ -403,14 +403,18 @@ Callback Signature:
 
 ### ArchiveProcessor.ComputeNbUniques.getIdSites
 
-*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor.php) in line [492](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor.php#L492)*
+*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor.php) in line [495](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor.php#L495)*
 
 Triggered to change which site ids should be looked at when processing unique visitors and users.
 
 Callback Signature:
-<pre><code>function(&amp;$sites)</code></pre>
+<pre><code>function(&amp;$sites, $params-&gt;getPeriod(), $params-&gt;getSegment())</code></pre>
 
 - array `$idSites` An array with one idSite. This site is being archived currently. To cancel the query you can change this value to an empty array. To include other sites in the query you can add more idSites to this list of idSites.
+
+- [Period](/api-reference/Piwik/Period) `$period` The period that is being requested to be archived.
+
+- [Segment](/api-reference/Piwik/Segment) `$segment` The segment that is request to be archived.
 
 
 ### ArchiveProcessor.Parameters.getIdSites
