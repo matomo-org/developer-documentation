@@ -1069,6 +1069,7 @@ Index
 - [`setUnionOfSegments()`](Piwik/Plugin/Segment.md#setunionofsegments) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`setType()`](Piwik/Plugin/Segment.md#settype) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`setSuggestedValuesCallback()`](Piwik/Plugin/Segment.md#setsuggestedvaluescallback) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
+- [`setSuggestedValuesApi()`](Piwik/Plugin/Segment.md#setsuggestedvaluesapi) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`setPermission()`](Piwik/Plugin/Segment.md#setpermission) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`setIsInternal()`](Piwik/Plugin/Segment.md#setisinternal) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`SettingsProvider`](Piwik/Plugin/SettingsProvider.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`setDataTable()`](Piwik/Plugin/ViewDataTable.md#setdatatable) &mdash; *Method in class* [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)

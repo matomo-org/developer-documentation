@@ -56,6 +56,7 @@ The class defines the following methods:
 - [`setType()`](#settype) &mdash; Set (overwrite) the type of this segment which is usually either a 'dimension' or a 'metric'.
 - [`getSegment()`](#getsegment) &mdash; Returns the name of this segment as it should appear in segment expressions.
 - [`setSuggestedValuesCallback()`](#setsuggestedvaluescallback) &mdash; Set callback which will be executed when user will call for suggested values for segment.
+- [`setSuggestedValuesApi()`](#setsuggestedvaluesapi) &mdash; Set callback which will be executed when user will call for suggested values for segment.
 - [`setPermission()`](#setpermission) &mdash; You can restrict the access to this segment by passing a boolean `false`.
 - [`setIsInternal()`](#setisinternal) &mdash; Sets whether the segment is for internal use only and should not be visible in the UI or in API metadata output.
 - [`isInternal()`](#isinternal) &mdash; Gets whether the segment is for internal use only and should not be visible in the UI or in API metadata output.
@@ -242,6 +243,19 @@ Set callback which will be executed when user will call for suggested values for
 
 -  It accepts the following parameter(s):
     - `$suggestedValuesCallback` (`callable`) &mdash;
+      
+- It does not return anything.
+
+<a name="setsuggestedvaluesapi" id="setsuggestedvaluesapi"></a>
+<a name="setSuggestedValuesApi" id="setSuggestedValuesApi"></a>
+### `setSuggestedValuesApi()`
+
+Set callback which will be executed when user will call for suggested values for segment.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$suggestedValuesApi` (`string`) &mdash;
       
 - It does not return anything.
 
