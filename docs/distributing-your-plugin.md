@@ -57,14 +57,14 @@ The `plugin.json` file must contain the following information:
 - `license`: The name of the license your plugin uses. The license must be compatible with the [GPL-3.0](https://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPL-3.0+](https://www.gnu.org/licenses/gpl-3.0.html) or later. Supported values are currently: "GPL-3.0+","GPL-3.0", "BSD AND GPL-3.0+", "GPL-2.0-only", "GPL-2.0+", "MIT". Please get in touch with us in case you want to release a plugin under a different license.
 - `homepage`: The URL to the plugin's homepage.
 - `authors`: An array of objects, each describing someone who helped create the plugin. The objects must contain a **name** field and can optionally contain an email and homepage field. You must define at least one author.
-- `require` - Defines packages required by this plugin. The plugin will not be installed unless those requirements can be met. Two packages are supported at the moment: `piwik` and `php`.
+- `require` - Defines packages required by this plugin. The plugin will not be installed unless those requirements can be met. Two packages are supported at the moment: `matomo` and `php`. Plugins that support Matomo 3.X or older, should use `piwik` instead of `matomo`.
 
     For example:
 
     ```json
     "require": {
-        "piwik": ">=2.0.3", // requires at least Piwik 2.0.3
-        "php": ">=5.3.20" // requires at least PHP 5.3.20
+        "matomo": ">=4.0.3,<5.0.0-b1", // requires at least Matomo 4.0.3 but lower than Matomo 5.0.0
+        "php": ">=7.3.5" // requires at least PHP 7.3.5
     }
     ```
 
@@ -74,22 +74,13 @@ The `plugin.json` file must contain the following information:
 
     ```json
     "require": {
-        "piwik": "<=2.2.0", // requires Piwik 2.2.0 or lower but at least Piwik 2.0.0
-        "php": ">5.4.0" // requires at least PHP 5.4.1
+        "matomo": ">=4.0.3,<5.0.0-b1", // requires at least Matomo 4.0.3 but lower than Matomo 5.0.0
+        "php": ">7.3.5" // requires at least PHP 7.3.6
     }
     ```
 
-    You can define multiple ranges, separated by a comma, which will be treated as a logical `AND`. This can be useful in case you know your plugin is only compatible with a limited number of Piwik versions.
-
-    For example:
-
-    ```json
-    "require": {
-        "piwik": ">=2.0.0,<=2.2.0", // requires a Piwik version 2.0.0 up to 2.2.0
-    }
-    ```
-
-    For plugins that target Piwik 3 or newer read the [Composer Versions documentation](https://getcomposer.org/doc/articles/versions.md) for more information.
+    For `matomo` requirement it is required to define a lower and upper limit. For example would it be recommended to use `>=4.0.0-b1,<5.0.0-b1` for a plugin that is compatible with Matomo 4.
+    For plugins that target Matomo 3 or newer read the [Composer Versions documentation](https://getcomposer.org/doc/articles/versions.md) for more information.
 
 
 The following fields are not required for publishing a plugin, but you may want to add them:
