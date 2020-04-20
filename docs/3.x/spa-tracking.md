@@ -6,6 +6,10 @@ category: Integrate
 
 Single-page websites and web applications have become a standard over the last years. Getting the tracking of such websites and apps right is crucial to your success as you need to ensure the measured data is meaningful and correct.
 
+## If available, consider using an existing integration for your framework
+
+If you're using a popular framework such as Angular, Angular JS, Vue.js, React Native, etc. then we recommend to first check if an integration may be available for your framework: [see all available integrations for Matomo](https://matomo.org/integrate/#programming-language-platforms-and-frameworks).
+
 ## Embedding the Tracking Code
 
 First you need to embed your JavaScript tracking code into your single-page website or web application as usual. To do this go to “Administration” in the top right in your Matomo instance, click on “Tracking Code” and adjust the tracking code to your needs.
