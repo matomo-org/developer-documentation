@@ -111,7 +111,7 @@ The following parameters require that you set `&token_auth=` to the token\_auth 
  _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](https://piwik.org/faq/how-to/#faq_59)._
  If you set `cdt` to a datetime older than 24 hours then `token_auth` must be set. If you set `cdt` with a datetime in the last 24 hours then you don't need to pass `token_auth`.
 * `country` &mdash; An override value for the country. Should be set to the two letter country code of the visitor (lowercase), eg **fr**, **de**, **us**.
-* `region` &mdash; An override value for the region. Should be set to the two letter region code as defined by [MaxMind's](https://www.maxmind.com?rId=piwik) GeoIP databases. See [here](https://www.maxmind.com/download/geoip/misc/region_codes.csv) for a list of them for every country (the region codes are located in the second column, to the left of the region name and to the right of the country code).
+* `region` &mdash; An override value for the region. Should be set to a ISO 3166-2 region code, which are used by [MaxMind's](https://www.maxmind.com?rId=piwik) and [DB-IP's](https://db-ip.com/db/?refid=mtm) GeoIP2 databases. See [here](https://www.iso.org/obp/ui/#search/code/) for a list of them for every country.
 * `city` &mdash; An override value for the city. The name of the city the visitor is located in, eg, **Tokyo**.
 * `lat` &mdash; An override value for the visitor's latitude, eg _22.456_.
 * `long` &mdash; An override value for the visitor's longitude, eg _22.456_.
