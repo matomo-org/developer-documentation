@@ -37,6 +37,7 @@ function renderGuide(Slim\Views\Twig $view, Response $response, Psr\Http\Message
         'linkToEditDocument' => $guide->linkToEdit(),
         'activeMenu' => $category->getName(),
         'currentPath' => $uri->getPath(),
+        'selectedPiwikVersion' => Environment::getPiwikVersion(),
         'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($uri->getPath(), LATEST_PIWIK_DOCS_VERSION))
     ]);
 }

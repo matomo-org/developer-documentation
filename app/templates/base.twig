@@ -7,6 +7,9 @@
     {% if urlIfAvailableInNewerVersion %}
         <link rel="canonical" href="https://{{ constant('DOCS_DOMAIN') }}{{ urlIfAvailableInNewerVersion }}">
     {% endif %}
+    {% if selectedPiwikVersion == 2 %}
+    <meta name="robots" content="noindex">
+    {% endif %}
     <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/highlight.obsidian.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
@@ -143,7 +146,7 @@ $(document).ready(function () {
     function track() {
 
         (function() {
-            var u=(("https:" == document.location.protocol) ? "https" : "http") + "://demo.matomo.org/";
+            var u="https://demo.matomo.org/";
             _paq.push(["setTrackerUrl", u+"piwik.php"]);
             _paq.push(["setSiteId", "36"]);
 
