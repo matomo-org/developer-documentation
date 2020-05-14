@@ -6,5 +6,6 @@ subGuides:
   - dimensions
   - widgets
   - visualizing-report-data
+  - enrich-js-tracker
 ---
 
