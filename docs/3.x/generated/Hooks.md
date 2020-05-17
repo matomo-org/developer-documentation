@@ -1064,7 +1064,7 @@ Callback Signature:
 
 ### CustomPiwikJs.shouldAddTrackerFile
 
-*Defined in [Piwik/Plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php) in line [87](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php#L87)*
+*Defined in [Piwik/Plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php) in line [85](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php#L85)*
 
 Detect if a custom tracker file should be added to the piwik.js tracker or not. This is useful for example if a plugin only wants to add its tracker file when the plugin is configured.
 
@@ -1351,7 +1351,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [433](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L433)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [434](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L434)*
 
 Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1367,7 +1367,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [444](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L444)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [445](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L445)*
 
 Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -3005,7 +3005,7 @@ Callback Signature:
 
 ### SitesManager.showMatomoLinksInTrackingCodeEmail
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [384](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L384)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php) in line [385](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Controller.php#L385)*
 
 
 
