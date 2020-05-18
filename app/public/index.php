@@ -51,7 +51,9 @@ $app->add(new MatomoVersionMiddleware());
 $app->add(new CacheMiddleware());
 
 $routeCollector = $app->getRouteCollector();
-$routeCollector->setCacheFile('../tmp/cache/route_cache.php');
+if (!CACHING_ENABLED) {
+    $routeCollector->setCacheFile('../tmp/cache/route_cache.php');
+}
 
 $contentLengthMiddleware = new ContentLengthMiddleware();
 $app->add($contentLengthMiddleware);
