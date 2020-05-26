@@ -15,6 +15,8 @@ If you are building websites, you can use our powerful JavaScript SDK to measure
 
 ## Mobile SDKs
 
+Use the SDKs below for mobile app and product analytics with Matomo.
+
 ### iOS SDK
 
 If you are building iOS apps, you can use the Swift PiwikTracker client (or the older Objective-C PiwikTracker) to send tracking data to your Piwik server.
@@ -34,6 +36,8 @@ If you are building Mobile apps using Appcelerator Titanium, use the Piwik Analy
 Learn more and download the Piwik Module for Titanium at [github.com/manumaticx/ti.piwik](https://github.com/manumaticx/ti.piwik).
 
 ## Client libraries for Apps or Server-Side tracking
+
+Use the clients below for server-side analytics and app tracking with Matomo.
 
 ### PHP client
 
