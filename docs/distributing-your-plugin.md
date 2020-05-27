@@ -22,7 +22,7 @@ Getting your completed plugin on the marketplace takes a couple steps, all liste
 
 ### Make sure your plugin has a unique name
 
-Every plugin on the marketplace has a unique name. Make sure the name you chose is currently available, and if it's not, pick another one.
+Every plugin on the marketplace has a unique name. Make sure the name you chose is currently available, and if it's not, pick another one. Also your plugin name must start with a letter, only contains letters and numbers, and not contain the words "Matomo" or "Piwik", "Analytics", "Core" or "Plugin".
 
 ### Prepare your plugin
 
