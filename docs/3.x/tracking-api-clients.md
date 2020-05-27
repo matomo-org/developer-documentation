@@ -25,7 +25,7 @@ Learn more and download Piwik iOS SDK on Github at [github.com/matomo-org/piwik-
 
 ### Android SDK
 
-If you are building Android apps, you can use the Android Java client to send tracking data to your Piwik server.
+If you are building Android apps (for Android smartphones, tablets, Fire TVs, etc.), you can use the Android Java client to send tracking data to your Piwik server.
 
 Learn more and download Piwik Android SDK on Github at [github.com/matomo-org/piwik-sdk-android](https://github.com/matomo-org/piwik-sdk-android).
 
