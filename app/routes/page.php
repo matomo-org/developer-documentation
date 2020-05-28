@@ -174,7 +174,7 @@ $app->get('/changelog', function (Request $request, Response $response, $args) {
     }
 
     if ($fetchContent) {
-        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/3.x-dev/CHANGELOG.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/4.x-dev/CHANGELOG.md');
         if ($markdown === false) {
             throw new \Exception("Could not fetch changelog");
         }

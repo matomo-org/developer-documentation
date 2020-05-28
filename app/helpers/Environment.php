@@ -97,7 +97,7 @@ class Environment
     // returns the piwik versions that can be chosen via the selector
     public static function getAvailablePiwikVersions()
     {
-        return range(3, LATEST_PIWIK_DOCS_VERSION);
+        return range(MIN_PIWIK_DOCS_VERSION, LATEST_PIWIK_DOCS_VERSION);
     }
 
     public static function getPiwikVersion()
