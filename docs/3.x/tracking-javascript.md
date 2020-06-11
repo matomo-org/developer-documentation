@@ -76,6 +76,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `getUserId()` - Return the User ID string if it was set.
 *   `setUserId( userId )` -  Sets a [User ID](https://piwik.org/docs/user-id/) to this user (such as an email address or a username).
 *   `resetUserId` - Clears (un-set) the User ID.
+*   `setVisitorId( visitorId )` -  `visitorId` needs to be a 16 digit hex string. The visitorId won't be persisted in a cookie and needs to be set on every new page load. Since Matomo 3.13.7
 *   `setCustomVariable (index, name, value, scope)` - Set a custom variable.
 *   `deleteCustomVariable (index, scope)` - Delete a custom variable.
 *   `getCustomVariable (index, scope)` - Retrieve a custom variable.
