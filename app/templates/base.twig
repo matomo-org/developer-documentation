@@ -137,7 +137,7 @@ $(document).ready(function () {
 <script type="text/javascript">
 
     var _paq = _paq || [];
-    _paq.push(["setCookieDomain", "*.matomo.org"]);
+    _paq.push(["disableCookies"]);
     {% block piwik_customization %}{% endblock %}
     _paq.push(["setCustomVariable", 1, 'PiwikVersion', '{{ selectedPiwikVersion }}', 'page']);
     _paq.push(["trackPageView"]);
