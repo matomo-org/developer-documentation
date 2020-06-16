@@ -10,7 +10,7 @@
 
 namespace Hooks;
 
-class MyConstantVisitor extends \PHPParser_NodeVisitorAbstract
+class MyConstantVisitor extends \PHPParser\NodeVisitorAbstract
 {
     public static $constants = array();
 
@@ -19,11 +19,11 @@ class MyConstantVisitor extends \PHPParser_NodeVisitorAbstract
         self::$constants = array();
     }
 
-    public function leaveNode(\PHPParser_Node $node) {
+    public function leaveNode(\PHPParser\Node $node) {
 
-        if ($node instanceof \PHPParser_Node_Const) {
+        if ($node instanceof \PHPParser\Node\Const_) {
 
-            $prettyPrinter = new \PHPParser_PrettyPrinter_Default();
+            $prettyPrinter = new \PHPParser\PrettyPrinter\Standard();
 
             static::$constants[$node->name] = $prettyPrinter->prettyPrintExpr($node->value);
         }

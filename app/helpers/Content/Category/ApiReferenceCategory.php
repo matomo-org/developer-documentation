@@ -34,12 +34,17 @@ class ApiReferenceCategory extends Category
 
     public function getItems()
     {
+        $matomoTracker = 'MatomoTracker';
+        if (Environment::getPiwikVersion() <= 3) {
+            $matomoTracker = 'PiwikTracker';
+        }
+
         return [
             new ApiReferenceGuide('api-reference-introduction'),
             new EmptySubCategory('Tracking', [
                 new ApiReferenceGuide('tracking-api'),
                 new ApiReferenceGuide('tracking-javascript'),
-                new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker', 'PHP Tracking Client'),
+                new PhpDoc($matomoTracker, 'PHP-Matomo-Tracker', 'PHP Tracking Client'),
             ]),
             new EmptySubCategory('Tag Manager', [
                 new ApiReferenceGuide('tagmanager/javascript-api-reference'),

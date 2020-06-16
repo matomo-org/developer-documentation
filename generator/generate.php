@@ -106,7 +106,9 @@ try {
         $files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(PIWIK_DOCUMENT_ROOT));
         $phpFiles = new RegexIterator($files, '/piwik\/(core|plugins)(.*)\.php$/');
 
-        $hooks = new HooksParser($sami);
+        $matomoMajorVersion = (int) $versionLongName;
+
+        $hooks = new HooksParser($sami, $matomoMajorVersion);
         $view  = array('hooks' => array(), 'versionName' => $versionName);
 
         foreach ($phpFiles as $phpFile) {

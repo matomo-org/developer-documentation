@@ -3,6 +3,8 @@
 namespace Hooks;
 
 use Linkparser\LinkParser;
+use PhpParser\Parser\Php5;
+use PhpParser\Parser\Php7;
 use Sami\Sami;
 use Linkparser\InlineLinkParser;
 use Linkparser\Scope;
@@ -10,7 +12,7 @@ use Linkparser\Scope;
 class Parser {
 
     /**
-     * @var \PHPParser_Parser
+     * @var \PHPParser\Parser
      */
     private $parser;
 
@@ -19,10 +21,14 @@ class Parser {
      */
     private $sami;
 
-    public function __construct($sami)
+    public function __construct($sami, $matomoMajorVersion)
     {
         $this->sami    = $sami;
-        $this->parser  = new \PHPParser_Parser(new \PHPParser_Lexer);
+        if ($matomoMajorVersion <= 3) {
+            $this->parser  = new Php5(new \PHPParser\Lexer);
+        } else {
+            $this->parser  = new Php7(new \PHPParser\Lexer);
+        }
     }
 
     public function searchForHooksInFile($filename, $phpFile)
@@ -35,7 +41,7 @@ class Parser {
 
         $stmts = $this->parser->parse($code);
 
-        $traverser = new \PHPParser_NodeTraverser();
+        $traverser = new \PHPParser\NodeTraverser();
         $traverser->addVisitor(new MyConstantVisitor());
         $traverser->addVisitor(new MyHookVisitor($filename));
         $hooks = $traverser->traverse($stmts);
