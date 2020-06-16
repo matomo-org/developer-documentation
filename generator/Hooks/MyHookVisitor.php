@@ -10,16 +10,23 @@
 
 namespace Hooks;
 
+use Sami\Sami;
+
 class MyHookVisitor extends \PHPParser\NodeVisitorAbstract
 {
     private $events     = array();
     private $classes    = array();
     private $namespaces = array();
     private $piwikFile  = '';
+    /**
+     * @var Sami
+     */
+    private $sami;
 
-    public function __construct($piwikFile)
+    public function __construct($piwikFile, $sami)
     {
         $this->piwikFile = $piwikFile;
+        $this->sami = $sami;
     }
 
     private function getCurrentClass()
@@ -138,7 +145,7 @@ class MyHookVisitor extends \PHPParser\NodeVisitorAbstract
         }
 
         $docParser = new \Sami\Parser\DocBlockParser();
-        $parsedDoc = $docParser->parse($docComment->getText());
+        $parsedDoc = $docParser->parse($docComment->getText(), $this->sami->offsetGet('parser_context'));
 
         $ignore = $parsedDoc->getTag('ignore');
 

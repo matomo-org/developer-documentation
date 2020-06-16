@@ -43,7 +43,7 @@ class Parser {
 
         $traverser = new \PHPParser\NodeTraverser();
         $traverser->addVisitor(new MyConstantVisitor());
-        $traverser->addVisitor(new MyHookVisitor($filename));
+        $traverser->addVisitor(new MyHookVisitor($filename, $this->sami));
         $hooks = $traverser->traverse($stmts);
 
         return $hooks;
