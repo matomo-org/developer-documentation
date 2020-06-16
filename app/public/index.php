@@ -34,7 +34,19 @@ AppFactory::setContainer($container);
 
 // Set view in Container
 $container->set('view', function () {
-    $view = Twig::create('../templates', ['cache' => '../tmp/templates']);
+    if (!empty($_SERVER['PATH_INFO'])) {
+        $matomoVersionFromUrl = MatomoVersionMiddleware::getMatmoVersionFromUrl($_SERVER['PATH_INFO']);
+        if (!empty($matomoVersionFromUrl)) {
+            Environment::setPiwikVersion($matomoVersionFromUrl);
+        }
+    }
+
+    $params = [];
+    if (CACHING_ENABLED) {
+        $params['cache'] = '../tmp/templates';
+    }
+
+    $view = Twig::create('../templates', $params);
     $view->getEnvironment()->addGlobal('urlIfAvailableInNewerVersion', false);
     $view->getEnvironment()->addGlobal('availablePiwikVersions', Environment::getAvailablePiwikVersions());
     $view->getEnvironment()->addGlobal('selectedPiwikVersion', Environment::getPiwikVersion());

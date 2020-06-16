@@ -161,7 +161,8 @@ $app->get('/support', function (Request $request, Response $response, $args) {
 
 $app->get('/changelog', function (Request $request, Response $response, $args) {
     $fetchContent = false;
-    $targetFile = '../../docs/changelog.md';
+    $piwikVersion = Environment::getPiwikVersion();
+    $targetFile = '../../docs/changelog-'.$piwikVersion.'x.md';
 
     if (!file_exists($targetFile)) {
         $fetchContent = true;
@@ -172,9 +173,8 @@ $app->get('/changelog', function (Request $request, Response $response, $args) {
             $fetchContent = true;
         }
     }
-
     if ($fetchContent) {
-        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/4.x-dev/CHANGELOG.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/'.$piwikVersion.'.x-dev/CHANGELOG.md');
         if ($markdown === false) {
             throw new \Exception("Could not fetch changelog");
         }

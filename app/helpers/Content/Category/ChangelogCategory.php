@@ -9,6 +9,7 @@
 namespace helpers\Content\Category;
 
 use helpers\Content\Guide;
+use helpers\Environment;
 
 class ChangelogCategory extends Category
 {
@@ -29,6 +30,6 @@ class ChangelogCategory extends Category
 
     public function getIntroGuide()
     {
-        return new Guide('changelog');
+        return new Guide('changelog-' . Environment::getPiwikVersion() . 'x');
     }
 }

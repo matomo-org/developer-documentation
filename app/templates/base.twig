@@ -7,7 +7,7 @@
     {% if urlIfAvailableInNewerVersion %}
         <link rel="canonical" href="https://{{ constant('DOCS_DOMAIN') }}{{ urlIfAvailableInNewerVersion }}">
     {% endif %}
-    {% if selectedPiwikVersion == 2 %}
+    {% if selectedPiwikVersion < latestPiwikDocsVersion %}
     <meta name="robots" content="noindex">
     {% endif %}
     <link href="/css/bootstrap.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
@@ -60,14 +60,14 @@
                                data-action="{{ '/data/documents'|completeUrl }}"
                                placeholder="Quick search..."/>
                         {% if availablePiwikVersions|length > 1 %}
-                        <select title="Select your Piwik version"
+                        <select title="Select your Matomo version"
                                 class="piwik-version-select"
                                 name="piwik">
                             {% for i in availablePiwikVersions %}
 
                                 <option value="{{ currentPath|completeUrlForPiwikVersion(i ~ '.x') }}"
                                         {% if selectedPiwikVersion == i %}selected{% endif %}
-                                >{% if i < 3 %}Piwik{% else %}Matomo{% endif %} {{ i }}.X</option>
+                                >Matomo {{ i }}.X</option>
                             {% endfor %}
                         </select>
                         {% endif %}
