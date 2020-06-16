@@ -82,7 +82,11 @@ class Parser {
 
         foreach ($pluginNames as $pluginName) {
             $plugin = \Piwik\Plugin\Manager::getInstance()->loadPlugin($pluginName);
-            $registeredHooks = $plugin->getListHooksRegistered();
+            if (method_exists($plugin, 'registerEvents')) {
+                $registeredHooks = $plugin->registerEvents();
+            } else {
+                $registeredHooks = $plugin->getListHooksRegistered();
+            }
 
             if (!array_key_exists($hookName, $registeredHooks)) {
                 continue;
