@@ -45,6 +45,11 @@ try {
 
     function generateApiClassesReference($rootDir, $versionName, $longVersionName)
     {
+        $trackerPath = '/vendor/matomo/matomo-php-tracker';
+        if ($longVersionName === '3.x') {
+            $trackerPath = '/vendor/piwik/piwik-php-tracker';
+        }
+
         $iterator = Finder::create()
             ->files()
             ->name('*.php')
@@ -52,7 +57,7 @@ try {
             ->exclude(array('tests', 'config', 'ScheduledReports/config'))
             ->in(array(PIWIK_DOCUMENT_ROOT . '/core',
                        PIWIK_DOCUMENT_ROOT . '/plugins',
-                       PIWIK_DOCUMENT_ROOT . '/vendor/piwik/piwik-php-tracker'))
+                       PIWIK_DOCUMENT_ROOT . $trackerPath))
         ;
 
         $sami = new Sami($iterator, array(
