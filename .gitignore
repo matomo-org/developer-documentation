@@ -9,5 +9,6 @@
 /app/tmp/logs/*
 /app/tmp/templates/*
 /docs/changelog.md
+/docs/changelog-*.md
 /docs/cache/
 /docs/*/cache/

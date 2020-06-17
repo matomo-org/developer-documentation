@@ -126,8 +126,13 @@ $app->get('/api-reference/index', function (Request $request, Response $response
     return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc('Index', 'index'), new ApiReferenceCategory());
 });
 
-$app->get('/api-reference/PHP-Piwik-Tracker', function (Request $request, Response $response, $args) {
-    return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc('PiwikTracker', 'PHP-Piwik-Tracker'), new ApiReferenceCategory());
+$app->get('/api-reference/PHP-Matomo-Tracker', function (Request $request, Response $response, $args) {
+
+    $matomoTracker = 'MatomoTracker';
+    if (Environment::getPiwikVersion() <= 3) {
+        $matomoTracker = 'PiwikTracker';
+    }
+    return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc($matomoTracker, 'PHP-Matomo-Tracker'), new ApiReferenceCategory());
 });
 
 $app->get('/api-reference/{reference1}/{reference2}', function (Request $request, Response $response, $args) {
@@ -161,7 +166,8 @@ $app->get('/support', function (Request $request, Response $response, $args) {
 
 $app->get('/changelog', function (Request $request, Response $response, $args) {
     $fetchContent = false;
-    $targetFile = '../../docs/changelog.md';
+    $piwikVersion = Environment::getPiwikVersion();
+    $targetFile = '../../docs/changelog-'.$piwikVersion.'x.md';
 
     if (!file_exists($targetFile)) {
         $fetchContent = true;
@@ -172,9 +178,8 @@ $app->get('/changelog', function (Request $request, Response $response, $args) {
             $fetchContent = true;
         }
     }
-
     if ($fetchContent) {
-        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/3.x-dev/CHANGELOG.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/piwik/piwik/'.$piwikVersion.'.x-dev/CHANGELOG.md');
         if ($markdown === false) {
             throw new \Exception("Could not fetch changelog");
         }

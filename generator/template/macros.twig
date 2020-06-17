@@ -1,5 +1,5 @@
 {% macro class_item(class, short = false, indent = "", replacePiwik = false) -%}
-{{ indent }}- {{ _self.class_name(class, short, "", replacePiwik) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc|inlinelinkparser(class)|raw }}{% endif %}
+{{ indent }}- {{ _self.class_name(class, short, "", replacePiwik) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc|removeNewLine|shortDescription|inlinelinkparser(class)|raw }}{% endif %}
 {%- endmacro -%}
 
 {% macro class_name(class, short = false, suffix = "", replacePiwik = false) -%}
@@ -63,7 +63,7 @@ class
 {% for parameter in member.getParameters %}
     - `${{ parameter.name }}`{% if parameter.hint %} ({% for hint in parameter.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}) &mdash;{% endif %}
 
-      {% if parameter.shortDesc is defined and parameter.shortDesc %} {{ parameter.shortDesc|inlinelinkparser(class)|raw }}{% endif %}{% if parameter.shortDesc is defined and parameter.longDesc %} {{ parameter.longDesc|inlinelinkparser(class)|raw }}{% endif %}
+      {% if parameter.shortDesc is defined and parameter.shortDesc %} {{ parameter.shortDesc|removeNewLine|inlinelinkparser(class)|raw }}{% endif %}{% if parameter.shortDesc is defined and parameter.longDesc %} {{ parameter.longDesc|inlinelinkparser(class)|raw }}{% endif %}
 
 {% endfor %}
 {% endif %}

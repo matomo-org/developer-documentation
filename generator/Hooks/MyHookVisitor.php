@@ -10,16 +10,23 @@
 
 namespace Hooks;
 
-class MyHookVisitor extends \PHPParser_NodeVisitorAbstract
+use Sami\Sami;
+
+class MyHookVisitor extends \PHPParser\NodeVisitorAbstract
 {
     private $events     = array();
     private $classes    = array();
     private $namespaces = array();
     private $piwikFile  = '';
+    /**
+     * @var Sami
+     */
+    private $sami;
 
-    public function __construct($piwikFile)
+    public function __construct($piwikFile, $sami)
     {
         $this->piwikFile = $piwikFile;
+        $this->sami = $sami;
     }
 
     private function getCurrentClass()
@@ -44,24 +51,24 @@ class MyHookVisitor extends \PHPParser_NodeVisitorAbstract
         return $this->namespaces[$len - 1];
     }
 
-    public function enterNode(\PHPParser_Node $node)
+    public function enterNode(\PHPParser\Node $node)
     {
-        if ($node instanceof \PHPParser_Node_Stmt_Namespace) {
+        if ($node instanceof \PHPParser\Node\Stmt\Namespace_) {
 
             if (!empty($node->name->parts[0])) {
                 $this->namespaces[] = implode('/', $node->name->parts);
             }
 
-        } elseif ($node instanceof \PHPParser_Node_Stmt_Class) {
+        } elseif ($node instanceof \PHPParser\Node\Stmt\Class_) {
 
             $this->classes[] = $node->name;
 
         }
     }
 
-    public function leaveNode(\PHPParser_Node $node) {
+    public function leaveNode(\PHPParser\Node $node) {
 
-        if ($node instanceof \PHPParser_Node_Expr_StaticCall) {
+        if ($node instanceof \PHPParser\Node\Expr\StaticCall) {
             if (!$node->name || 'postEvent' !== $node->name) {
                 return;
             }
@@ -85,7 +92,7 @@ class MyHookVisitor extends \PHPParser_NodeVisitorAbstract
             if (!empty($args)) {
                 $eventArg = array_shift($args);
 
-                $event['name']     = $this->getEventName($eventArg, $event);
+                $event['name']     = $this->getEventName($eventArg);
                 $event['category'] = $this->getCategoryFromEventName($event['name']);
             }
 
@@ -113,9 +120,9 @@ class MyHookVisitor extends \PHPParser_NodeVisitorAbstract
         return $this->events;
     }
 
-    public function getArg(\PHPParser_Node_Arg $arg)
+    public function getArg(\PHPParser\Node\Arg $arg)
     {
-        if ($arg->value instanceof \PHPParser_Node_Expr_ClassConstFetch) {
+        if ($arg->value instanceof \PHPParser\Node\Expr\ClassConstFetch) {
 
             $constant  = $arg->value;
             $rightPart = $constant->name;
@@ -125,12 +132,12 @@ class MyHookVisitor extends \PHPParser_NodeVisitorAbstract
             }
         }
 
-        $prettyPrinter = new \PHPParser_PrettyPrinter_Default();
+        $prettyPrinter = new \PHPParser\PrettyPrinter\Standard();
 
         return $prettyPrinter->prettyPrintExpr($arg->value);
     }
 
-    private function getDocComment(\PHPParser_Node $node)
+    private function getDocComment(\PHPParser\Node $node)
     {
         $docComment = $node->getDocComment();
         if (empty($docComment)) {
@@ -138,7 +145,7 @@ class MyHookVisitor extends \PHPParser_NodeVisitorAbstract
         }
 
         $docParser = new \Sami\Parser\DocBlockParser();
-        $parsedDoc = $docParser->parse($docComment->getText());
+        $parsedDoc = $docParser->parse($docComment->getText(), $this->sami->offsetGet('parser_context'));
 
         $ignore = $parsedDoc->getTag('ignore');
 

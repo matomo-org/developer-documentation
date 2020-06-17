@@ -15,6 +15,10 @@ class Redirects
         return [
             '/guides'                          => '/',
             '/guides/'                         => '/',
+            '/api-reference/PHP-Piwik-Tracker' => '/api-reference/PHP-Matomo-Tracker',
+            '/api-reference/PHP-Piwik-Tracker/' => '/api-reference/PHP-Matomo-Tracker/',
+            '/api-reference/php-piwik-tracker/' => '/api-reference/PHP-Matomo-Tracker/',
+            '/api-reference/php-piwik-tracker' => '/api-reference/PHP-Matomo-Tracker/',
             '/contributing'                    => '/guides/contributing-to-piwik-core',
             '/plugins'                         => '/develop',
             '/core'                            => '/piwik-in-depth',

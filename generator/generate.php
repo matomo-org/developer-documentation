@@ -45,6 +45,11 @@ try {
 
     function generateApiClassesReference($rootDir, $versionName, $longVersionName)
     {
+        $trackerPath = '/vendor/matomo/matomo-php-tracker';
+        if ($longVersionName === '3.x') {
+            $trackerPath = '/vendor/piwik/piwik-php-tracker';
+        }
+
         $iterator = Finder::create()
             ->files()
             ->name('*.php')
@@ -52,7 +57,7 @@ try {
             ->exclude(array('tests', 'config', 'ScheduledReports/config'))
             ->in(array(PIWIK_DOCUMENT_ROOT . '/core',
                        PIWIK_DOCUMENT_ROOT . '/plugins',
-                       PIWIK_DOCUMENT_ROOT . '/vendor/piwik/piwik-php-tracker'))
+                       PIWIK_DOCUMENT_ROOT . $trackerPath))
         ;
 
         $sami = new Sami($iterator, array(
@@ -89,6 +94,19 @@ try {
             $linkConverter = new LinkParser($scope);
             return $linkConverter->parse($description);
         }));
+        $twig->addFilter(new Twig_SimpleFilter('removeNewLine', function ($content) {
+            $content = preg_replace("/(\n)+/", ' ', $content);
+            $content = preg_replace("/(\s)+/", ' ', $content);
+            return $content;
+        }));
+        $twig->addFilter(new Twig_SimpleFilter('shortDescription', function ($content) {
+
+            $pos = strpos($content, '. ');
+            if ($pos > 1) {
+                return substr($content, 0, $pos+1);
+            }
+            return $content;
+        }));
 
         $sami['project']->update();
 
@@ -101,7 +119,9 @@ try {
         $files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(PIWIK_DOCUMENT_ROOT));
         $phpFiles = new RegexIterator($files, '/piwik\/(core|plugins)(.*)\.php$/');
 
-        $hooks = new HooksParser($sami);
+        $matomoMajorVersion = (int) $versionLongName;
+
+        $hooks = new HooksParser($sami, $matomoMajorVersion);
         $view  = array('hooks' => array(), 'versionName' => $versionName);
 
         foreach ($phpFiles as $phpFile) {
