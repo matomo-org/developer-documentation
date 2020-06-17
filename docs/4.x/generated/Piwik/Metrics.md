@@ -58,7 +58,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getvisitsmetricnames" id="getvisitsmetricnames"></a>
 <a name="getVisitsMetricNames" id="getVisitsMetricNames"></a>
@@ -66,7 +66,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getmappingfromnametoid" id="getmappingfromnametoid"></a>
 <a name="getMappingFromNameToId" id="getMappingFromNameToId"></a>
@@ -74,7 +74,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getmappingfromnametoidgoal" id="getmappingfromnametoidgoal"></a>
 <a name="getMappingFromNameToIdGoal" id="getMappingFromNameToIdGoal"></a>
@@ -82,7 +82,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getdefaultmetrictranslations" id="getdefaultmetrictranslations"></a>
 <a name="getDefaultMetricTranslations" id="getDefaultMetricTranslations"></a>
@@ -90,7 +90,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getdefaultmetrics" id="getdefaultmetrics"></a>
 <a name="getDefaultMetrics" id="getDefaultMetrics"></a>
@@ -98,7 +98,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getdefaultprocessedmetrics" id="getdefaultprocessedmetrics"></a>
 <a name="getDefaultProcessedMetrics" id="getDefaultProcessedMetrics"></a>
@@ -106,7 +106,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getreadablecolumnname" id="getreadablecolumnname"></a>
 <a name="getReadableColumnName" id="getReadableColumnName"></a>
@@ -117,7 +117,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$columnIdRaw`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getmetricidstoprocessreporttotal" id="getmetricidstoprocessreporttotal"></a>
 <a name="getMetricIdsToProcessReportTotal" id="getMetricIdsToProcessReportTotal"></a>
@@ -125,7 +125,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getdefaultmetricsdocumentation" id="getdefaultmetricsdocumentation"></a>
 <a name="getDefaultMetricsDocumentation" id="getDefaultMetricsDocumentation"></a>
@@ -133,7 +133,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getpercentvisitcolumn" id="getpercentvisitcolumn"></a>
 <a name="getPercentVisitColumn" id="getPercentVisitColumn"></a>
@@ -141,5 +141,5 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 

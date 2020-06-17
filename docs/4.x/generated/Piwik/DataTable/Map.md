@@ -70,7 +70,7 @@ Set the name of they metadata used to index DataTables. See [getKeyName()](/api-
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getrowscount" id="getrowscount"></a>
 <a name="getRowsCount" id="getRowsCount"></a>
@@ -97,7 +97,7 @@ See [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter) for m
        Filter name, eg. `'Limit'` or a Closure.
     - `$parameters` (`array`) &mdash;
        Filter parameters, eg. `array(50, 10)`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="applyqueuedfilters" id="applyqueuedfilters"></a>
 <a name="applyQueuedFilters" id="applyQueuedFilters"></a>
@@ -107,7 +107,7 @@ Apply the filters previously queued to each DataTable contained by this DataTabl
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -122,7 +122,7 @@ Apply a filter to all tables contained by this instance.
        Name of filter class or a Closure.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="filtersubtables" id="filtersubtables"></a>
 <a name="filterSubtables" id="filterSubtables"></a>
@@ -137,7 +137,7 @@ Apply a filter to all subtables contained by this instance.
        Name of filter class or a Closure.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="queuefiltersubtables" id="queuefiltersubtables"></a>
 <a name="queueFilterSubtables" id="queueFilterSubtables"></a>
@@ -152,7 +152,7 @@ Apply a queued filter to all subtables contained by this instance.
        Name of filter class or a Closure.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getdatatables" id="getdatatables"></a>
 <a name="getDataTables" id="getDataTables"></a>
@@ -229,7 +229,7 @@ Adds a new DataTable or Map instance to this DataTable\Map.
       
     - `$label` (`string`) &mdash;
        Label used to index this table in the array.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getrowfromidsubdatatable" id="getrowfromidsubdatatable"></a>
 <a name="getRowFromIdSubDataTable" id="getRowFromIdSubDataTable"></a>
@@ -240,7 +240,7 @@ Adds a new DataTable or Map instance to this DataTable\Map.
 -  It accepts the following parameter(s):
     - `$idSubtable`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -261,7 +261,7 @@ See DataTable::enableRecursiveSort().
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="disablefilter" id="disablefilter"></a>
 <a name="disableFilter" id="disableFilter"></a>
@@ -274,7 +274,7 @@ See DataTable::disableFilter().
 -  It accepts the following parameter(s):
     - `$className`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="renamecolumn" id="renamecolumn"></a>
 <a name="renameColumn" id="renameColumn"></a>
@@ -291,7 +291,7 @@ See DataTable::renameColumn().
       
     - `$newName` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="deletecolumns" id="deletecolumns"></a>
 <a name="deleteColumns" id="deleteColumns"></a>
@@ -308,7 +308,7 @@ See DataTable::deleteColumns().
        The columns to delete.
     - `$deleteRecursiveInSubtables` (`bool`) &mdash;
        This param is currently not used.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="deleterow" id="deleterow"></a>
 <a name="deleteRow" id="deleteRow"></a>
@@ -321,7 +321,7 @@ Deletes a table from the array of DataTables.
 -  It accepts the following parameter(s):
     - `$id` (`string`) &mdash;
        The label associated with DataTable.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="deletecolumn" id="deletecolumn"></a>
 <a name="deleteColumn" id="deleteColumn"></a>
@@ -338,7 +338,7 @@ Deletes the given column in every contained DataTable.
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getcolumn" id="getcolumn"></a>
 <a name="getColumn" id="getColumn"></a>
@@ -426,7 +426,7 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable).
 -  It accepts the following parameter(s):
     - `$tableToSum` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="mergesubtables" id="mergesubtables"></a>
 <a name="mergeSubtables" id="mergeSubtables"></a>

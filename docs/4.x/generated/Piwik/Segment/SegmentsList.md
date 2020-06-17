@@ -28,7 +28,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$segment` ([`Segment`](../../Piwik/Plugin/Segment.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getsegments" id="getsegments"></a>
 <a name="getSegments" id="getSegments"></a>
@@ -53,7 +53,7 @@ Removes one or more segments from the segments list.
        The segment category id. Can be a translation token eg 'General_Visits' see Segment::getCategoryId().
     - `$segmentExpression` (`string`|`false`) &mdash;
        The segment expression name to remove eg 'pageUrl'. If not supplied, all segments within that category will be removed.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getsegment" id="getsegment"></a>
 <a name="getSegment" id="getSegment"></a>

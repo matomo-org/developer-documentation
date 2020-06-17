@@ -39,7 +39,7 @@ Set details of current visit
 -  It accepts the following parameter(s):
     - `$details` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="extendvisitordetails" id="extendvisitordetails"></a>
 <a name="extendVisitorDetails" id="extendVisitorDetails"></a>
@@ -116,7 +116,7 @@ $actions = array (
        action set to enrich
     - `$visitIds` (`array`) &mdash;
        list of visit ids
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="filteractions" id="filteractions"></a>
 <a name="filterActions" id="filterActions"></a>
@@ -142,7 +142,7 @@ Allows filtering the provided actions
       
     - `$visitorDetailsArray` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="extendactiondetails" id="extendactiondetails"></a>
 <a name="extendActionDetails" id="extendActionDetails"></a>
@@ -159,7 +159,7 @@ Allows extended each action with additional information
       
     - `$visitorDetails` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="renderaction" id="renderaction"></a>
 <a name="renderAction" id="renderAction"></a>

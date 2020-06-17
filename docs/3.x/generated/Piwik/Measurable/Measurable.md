@@ -71,7 +71,7 @@ individual site data.
 -  It accepts the following parameter(s):
     - `$sites` (`array`) &mdash;
        The array of sites data. Indexed by site ID. eg, array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))`
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -278,7 +278,7 @@ See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and s
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="clearcacheforsite" id="clearcacheforsite"></a>
 <a name="clearCacheForSite" id="clearCacheForSite"></a>
@@ -293,7 +293,7 @@ See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and s
 -  It accepts the following parameter(s):
     - `$idSite`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getnamefor" id="getnamefor"></a>
 <a name="getNameFor" id="getNameFor"></a>

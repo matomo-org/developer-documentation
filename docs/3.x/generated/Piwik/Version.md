@@ -22,7 +22,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$version`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="isversionnumber" id="isversionnumber"></a>
 <a name="isVersionNumber" id="isVersionNumber"></a>
@@ -33,5 +33,5 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$version`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

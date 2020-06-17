@@ -29,7 +29,7 @@ The abstract class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getsettingswritablebycurrentuser" id="getsettingswritablebycurrentuser"></a>
 <a name="getSettingsWritableByCurrentUser" id="getSettingsWritableByCurrentUser"></a>
@@ -52,7 +52,7 @@ Adds a new setting to the settings container.
 -  It accepts the following parameter(s):
     - `$setting` ([`Setting`](../../Piwik/Settings/Setting.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a setting with the same name that already exists.
                          If the name contains non-alphanumeric characters.
@@ -65,5 +65,5 @@ Saves (persists) the current setting values in the database.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 

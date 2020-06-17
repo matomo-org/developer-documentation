@@ -34,7 +34,7 @@ no such checks will be performed.
 -  It accepts the following parameter(s):
     - `$widget` ([`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addwidgetconfigs" id="addwidgetconfigs"></a>
 <a name="addWidgetConfigs" id="addWidgetConfigs"></a>
@@ -47,7 +47,7 @@ Add multiple widget configs at once. See [addWidgetConfig()](/api-reference/Piwi
 -  It accepts the following parameter(s):
     - `$widgets` ([`WidgetConfig[]`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getwidgetconfigs" id="getwidgetconfigs"></a>
 <a name="getWidgetConfigs" id="getWidgetConfigs"></a>
@@ -75,7 +75,7 @@ will not be recognized.
        eg 'Products' or 'Contents'. See WidgetContainerConfig::setId
     - `$widget` ([`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
@@ -90,7 +90,7 @@ Removes one or more widgets from the widget list.
        The widget category id. Can be a translation token eg 'General_Visits' see [WidgetConfig::setCategoryId()](/api-reference/Piwik/Widget/WidgetConfig#setcategoryid).
     - `$widgetName` (`string`|`false`) &mdash;
        The name of the widget to remove eg 'VisitTime_ByServerTimeWidgetName'. If not supplied, all widgets within that category will be removed.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="isdefined" id="isdefined"></a>
 <a name="isDefined" id="isDefined"></a>

@@ -86,7 +86,7 @@ complete a challenge. For example "add_user" challenge could directly link to th
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setcompleted" id="setcompleted"></a>
 <a name="setCompleted" id="setCompleted"></a>

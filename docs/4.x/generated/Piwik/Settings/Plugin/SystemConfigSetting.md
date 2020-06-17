@@ -83,7 +83,7 @@ Sets/overwrites the current default value
 -  It accepts the following parameter(s):
     - `$defaultValue` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setiswritablebycurrentuser" id="setiswritablebycurrentuser"></a>
 <a name="setIsWritableByCurrentUser" id="setIsWritableByCurrentUser"></a>
@@ -96,7 +96,7 @@ Set whether setting is writable or not. For example to hide setting from the UI 
 -  It accepts the following parameter(s):
     - `$isWritable` (`bool`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="iswritablebycurrentuser" id="iswritablebycurrentuser"></a>
 <a name="isWritableByCurrentUser" id="isWritableByCurrentUser"></a>
@@ -117,7 +117,7 @@ Saves (persists) the value for this setting in the database if a value has been 
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getvalue" id="getvalue"></a>
 <a name="getValue" id="getValue"></a>
@@ -146,7 +146,7 @@ method. Before storing the actual value, the value will be converted to the actu
 -  It accepts the following parameter(s):
     - `$value` (`mixed`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the current user is not allowed to change the value of this setting.
 

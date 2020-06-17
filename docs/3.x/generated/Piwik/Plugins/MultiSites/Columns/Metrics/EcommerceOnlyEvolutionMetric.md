@@ -256,7 +256,7 @@ Constructor.
 -  It accepts the following parameter(s):
     - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="aftercomputesubtable" id="aftercomputesubtable"></a>
 <a name="afterComputeSubtable" id="afterComputeSubtable"></a>
@@ -267,7 +267,7 @@ Constructor.
 -  It accepts the following parameter(s):
     - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getpastrowfromcurrent" id="getpastrowfromcurrent"></a>
 <a name="getPastRowFromCurrent" id="getPastRowFromCurrent"></a>
@@ -280,5 +280,5 @@ public for Insights use.
 -  It accepts the following parameter(s):
     - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

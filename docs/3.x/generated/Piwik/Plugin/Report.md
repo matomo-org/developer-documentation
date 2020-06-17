@@ -222,7 +222,7 @@ created in most page requests.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="isenabled" id="isenabled"></a>
 <a name="isEnabled" id="isEnabled"></a>
@@ -253,7 +253,7 @@ throw new Exception('Setting XYZ is not enabled or the user has not enough permi
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -293,7 +293,7 @@ default request config. For instance you can change how many rows are displayed 
 -  It accepts the following parameter(s):
     - `$view` ([`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
@@ -344,7 +344,7 @@ $widgetsList->addToContainerWidget($containerId = 'Products', $factory->createWi
       
     - `$factory` ([`ReportWidgetFactory`](../../Piwik/Report/ReportWidgetFactory.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getmetrics" id="getmetrics"></a>
 <a name="getMetrics" id="getMetrics"></a>
@@ -461,7 +461,7 @@ the current requested date, period and site.
       
     - `$infos`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getdocumentation" id="getdocumentation"></a>
 <a name="getDocumentation" id="getDocumentation"></a>
@@ -517,7 +517,7 @@ recommended related report.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getsubtabledimension" id="getsubtabledimension"></a>
 <a name="getSubtableDimension" id="getSubtableDimension"></a>

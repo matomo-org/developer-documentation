@@ -276,7 +276,7 @@ and you wish to clear Custom Variables of 'visit' scope.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setcustomtrackingparameter" id="setcustomtrackingparameter"></a>
 <a name="setCustomTrackingParameter" id="setCustomTrackingParameter"></a>
@@ -305,7 +305,7 @@ Clear / reset all previously set custom tracking parameters.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setnewvisitorid" id="setnewvisitorid"></a>
 <a name="setNewVisitorId" id="setNewVisitorId"></a>
@@ -447,7 +447,7 @@ doBulkTrack method is called. This method will send all tracking data at once.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="enablecookies" id="enablecookies"></a>
 <a name="enableCookies" id="enableCookies"></a>
@@ -462,7 +462,7 @@ Enable Cookie Creation - this will cause a first party VisitorId cookie to be se
        (optional) Set first-party cookie domain. Accepted values: example.com, *.example.com (same as .example.com) or subdomain.example.com
     - `$path` (`string`) &mdash;
        (optional) Set first-party cookie path
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="disablesendimageresponse" id="disablesendimageresponse"></a>
 <a name="disableSendImageResponse" id="disableSendImageResponse"></a>
@@ -472,7 +472,7 @@ If image response is disabled Piwik will respond with a HTTP 204 header instead 
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="dotrackpageview" id="dotrackpageview"></a>
 <a name="doTrackPageView" id="doTrackPageView"></a>
@@ -1067,7 +1067,7 @@ Deletes all first party cookies from the client
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getattributioninfo" id="getattributioninfo"></a>
 <a name="getAttributionInfo" id="getAttributionInfo"></a>
@@ -1202,7 +1202,7 @@ This can be disabled by calling this function.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getrequesttimeout" id="getrequesttimeout"></a>
 <a name="getRequestTimeout" id="getRequestTimeout"></a>
@@ -1213,7 +1213,7 @@ from Piwik. Defaults to 600 seconds.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setrequesttimeout" id="setrequesttimeout"></a>
 <a name="setRequestTimeout" id="setRequestTimeout"></a>
@@ -1244,7 +1244,7 @@ If a proxy is needed to look up the address of the Piwik site, set it with this
        IP as string, for example "173.234.92.107"
     - `$proxyPort` (`int`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setoutgoingtrackercookie" id="setoutgoingtrackercookie"></a>
 <a name="setOutgoingTrackerCookie" id="setOutgoingTrackerCookie"></a>
@@ -1259,7 +1259,7 @@ Sets a cookie to be sent to the tracking server.
       
     - `$value`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getincomingtrackercookie" id="getincomingtrackercookie"></a>
 <a name="getIncomingTrackerCookie" id="getIncomingTrackerCookie"></a>

@@ -38,7 +38,7 @@ has not been created, this method will create it.
 -  It accepts the following parameter(s):
     - `$key`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
@@ -49,7 +49,7 @@ has not been created, this method will create it.
 -  It accepts the following parameter(s):
     - `$key`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="set" id="set"></a>
 <a name="set" id="set"></a>
@@ -62,7 +62,7 @@ has not been created, this method will create it.
       
     - `$value`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setkey" id="setkey"></a>
 <a name="setKey" id="setKey"></a>
@@ -75,7 +75,7 @@ has not been created, this method will create it.
       
     - `$value`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getkey" id="getkey"></a>
 <a name="getKey" id="getKey"></a>
@@ -86,7 +86,7 @@ has not been created, this method will create it.
 -  It accepts the following parameter(s):
     - `$key`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="haskey" id="haskey"></a>
 <a name="hasKey" id="hasKey"></a>
@@ -97,5 +97,5 @@ has not been created, this method will create it.
 -  It accepts the following parameter(s):
     - `$key`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

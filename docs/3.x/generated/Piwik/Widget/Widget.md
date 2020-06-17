@@ -27,7 +27,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$config` ([`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>

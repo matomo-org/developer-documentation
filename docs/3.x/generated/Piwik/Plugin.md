@@ -120,7 +120,7 @@ Constructor.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getinformation" id="getinformation"></a>
 <a name="getInformation" id="getInformation"></a>
@@ -147,7 +147,7 @@ Returns plugin information, including:
 #### Signature
 
 - It is a **finalized** method.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="registerevents" id="registerevents"></a>
 <a name="registerEvents" id="registerEvents"></a>
@@ -187,7 +187,7 @@ Useful for initialization code that uses translated strings.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="requiresinternetconnection" id="requiresinternetconnection"></a>
 <a name="requiresInternetConnection" id="requiresInternetConnection"></a>
@@ -214,7 +214,7 @@ needs to:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if installation of fails for some reason.
 
@@ -230,7 +230,7 @@ an [uninstall()](/api-reference/Piwik/Plugin#uninstall) method.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if uninstallation of fails for some reason.
 
@@ -242,7 +242,7 @@ Executed every time the plugin is enabled.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="deactivate" id="deactivate"></a>
 <a name="deactivate" id="deactivate"></a>
@@ -252,7 +252,7 @@ Executed every time the plugin is disabled.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getversion" id="getversion"></a>
 <a name="getVersion" id="getVersion"></a>
@@ -316,7 +316,7 @@ Tries to find a component such as a Menu or Tasks within this plugin.
       
     - `$expectedSubclass`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="hasmissingdependencies" id="hasmissingdependencies"></a>
 <a name="hasMissingDependencies" id="hasMissingDependencies"></a>
@@ -340,7 +340,7 @@ Detect whether there are any missing dependencies.
 -  It accepts the following parameter(s):
     - `$piwikVersion`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getmissingdependenciesasstring" id="getmissingdependenciesasstring"></a>
 <a name="getMissingDependenciesAsString" id="getMissingDependenciesAsString"></a>

@@ -71,7 +71,7 @@ Sets the authentication token to authenticate with.
 -  It accepts the following parameter(s):
     - `$token_auth` (`string`) &mdash;
        authentication token
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getlogin" id="getlogin"></a>
 <a name="getLogin" id="getLogin"></a>
@@ -110,7 +110,7 @@ Sets the login name to authenticate with.
 -  It accepts the following parameter(s):
     - `$login` (`string`) &mdash;
        The username.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setpassword" id="setpassword"></a>
 <a name="setPassword" id="setPassword"></a>
@@ -123,7 +123,7 @@ Sets the password to authenticate with.
 -  It accepts the following parameter(s):
     - `$password` (`string`) &mdash;
        Password (not hashed).
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setpasswordhash" id="setpasswordhash"></a>
 <a name="setPasswordHash" id="setPasswordHash"></a>
@@ -136,7 +136,7 @@ Sets the hash of the password to authenticate with. The hash will be an MD5 hash
 -  It accepts the following parameter(s):
     - `$passwordHash` (`string`) &mdash;
        The hashed password.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if authentication by hashed password is not supported.
 

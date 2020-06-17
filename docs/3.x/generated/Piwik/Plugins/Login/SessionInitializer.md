@@ -47,7 +47,7 @@ Authenticates the user and, if successful, initializes an authenticated session.
        The Auth implementation to use.
     - `$rememberMe` (`bool`) &mdash;
        Whether the authenticated session should be remembered after the browser is closed or not.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If authentication fails or the user is not allowed to login for some reason.
 

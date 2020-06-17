@@ -81,7 +81,7 @@ Aggregate log table rows using a [LogAggregator](/api-reference/Piwik/DataAccess
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="aggregatemultiplereports" id="aggregatemultiplereports"></a>
 <a name="aggregateMultipleReports" id="aggregateMultipleReports"></a>
@@ -99,7 +99,7 @@ method.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getprocessor" id="getprocessor"></a>
 <a name="getProcessor" id="getProcessor"></a>
@@ -129,7 +129,7 @@ for this period, segment and site.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="isenabled" id="isenabled"></a>
 <a name="isEnabled" id="isEnabled"></a>

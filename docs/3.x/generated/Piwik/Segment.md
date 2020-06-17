@@ -88,7 +88,7 @@ Returns `true` if the segment is empty, `false` if otherwise.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="willbearchived" id="willbearchived"></a>
 <a name="willBeArchived" id="willBeArchived"></a>
@@ -135,7 +135,7 @@ condition is empty.
 -  It accepts the following parameter(s):
     - `$definition`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getselectquery" id="getselectquery"></a>
 <a name="getSelectQuery" id="getSelectQuery"></a>
@@ -209,5 +209,5 @@ The combination is naive in that it does not take order of operations into accou
 -  It accepts the following parameter(s):
     - `$idSite`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

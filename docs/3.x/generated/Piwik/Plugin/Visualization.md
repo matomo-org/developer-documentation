@@ -338,7 +338,7 @@ Display a meaningful error message when any invalid parameter is being set.
 -  It accepts the following parameter(s):
     - `$overrideParams`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - ``
 
@@ -381,7 +381,7 @@ default, it is assumed visualizations do not support comparison.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="assigntemplatevar" id="assigntemplatevar"></a>
 <a name="assignTemplateVar" id="assignTemplateVar"></a>
@@ -397,7 +397,7 @@ Assigns a template variable making it available in the Twig template specified b
        One or more variable names to set.
     - `$value` (`mixed`) &mdash;
        The value to set each variable to.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="istheredatatodisplay" id="istheredatatodisplay"></a>
 <a name="isThereDataToDisplay" id="isThereDataToDisplay"></a>
@@ -409,7 +409,7 @@ Derived classes should override this method if they change the amount of data th
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="beforeloaddatatable" id="beforeloaddatatable"></a>
 <a name="beforeLoadDataTable" id="beforeLoadDataTable"></a>
@@ -422,7 +422,7 @@ data.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="beforegenericfiltersareappliedtoloadeddatatable" id="beforegenericfiltersareappliedtoloadeddatatable"></a>
 <a name="beforeGenericFiltersAreAppliedToLoadedDataTable" id="beforeGenericFiltersAreAppliedToLoadedDataTable"></a>
@@ -435,7 +435,7 @@ limit and truncate reports).
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="aftergenericfiltersareappliedtoloadeddatatable" id="aftergenericfiltersareappliedtoloadeddatatable"></a>
 <a name="afterGenericFiltersAreAppliedToLoadedDataTable" id="afterGenericFiltersAreAppliedToLoadedDataTable"></a>
@@ -445,7 +445,7 @@ Hook that is executed after generic filters are applied.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="afterallfiltersareapplied" id="afterallfiltersareapplied"></a>
 <a name="afterAllFiltersAreApplied" id="afterAllFiltersAreApplied"></a>
@@ -457,7 +457,7 @@ Use this method to format the report data before the view is rendered.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="beforerender" id="beforerender"></a>
 <a name="beforeRender" id="beforeRender"></a>
@@ -468,5 +468,5 @@ be a certain value, despite changes from plugins and query parameters.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 

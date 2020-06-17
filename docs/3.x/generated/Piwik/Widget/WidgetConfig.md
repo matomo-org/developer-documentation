@@ -107,7 +107,7 @@ not needed to be configured manually.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setaction" id="setaction"></a>
 <a name="setAction" id="setAction"></a>
@@ -255,7 +255,7 @@ Enables the widget. See [isEnabled()](/api-reference/Piwik/Widget/WidgetConfig#i
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="disable" id="disable"></a>
 <a name="disable" id="disable"></a>
@@ -265,7 +265,7 @@ Disables the widget. See [isEnabled()](/api-reference/Piwik/Widget/WidgetConfig#
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="checkisenabled" id="checkisenabled"></a>
 <a name="checkIsEnabled" id="checkIsEnabled"></a>
@@ -283,7 +283,7 @@ if (!$this->isEnabled()) {
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 

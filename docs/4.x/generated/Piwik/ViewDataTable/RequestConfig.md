@@ -411,7 +411,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addpropertiesthatshouldbeavailableclientside" id="addpropertiesthatshouldbeavailableclientside"></a>
 <a name="addPropertiesThatShouldBeAvailableClientSide" id="addPropertiesThatShouldBeAvailableClientSide"></a>
@@ -425,7 +425,7 @@ to learn more.
 -  It accepts the following parameter(s):
     - `$propertyNames` (`array`) &mdash;
        List of property names, eg, `array('disable_queued_filters', 'filter_column')`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
 <a name="addPropertiesThatCanBeOverwrittenByQueryParams" id="addPropertiesThatCanBeOverwrittenByQueryParams"></a>
@@ -439,7 +439,7 @@ learn more.
 -  It accepts the following parameter(s):
     - `$propertyNames` (`array`) &mdash;
        List of property names, eg, `array('disable_queued_filters', 'filter_column')`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setdefaultsort" id="setdefaultsort"></a>
 <a name="setDefaultSort" id="setDefaultSort"></a>
@@ -454,7 +454,7 @@ learn more.
       
     - `$actualColumns`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getapimoduletorequest" id="getapimoduletorequest"></a>
 <a name="getApiModuleToRequest" id="getApiModuleToRequest"></a>
@@ -462,7 +462,7 @@ learn more.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getapimethodtorequest" id="getapimethodtorequest"></a>
 <a name="getApiMethodToRequest" id="getApiMethodToRequest"></a>
@@ -470,7 +470,7 @@ learn more.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getrequestparam" id="getrequestparam"></a>
 <a name="getRequestParam" id="getRequestParam"></a>
@@ -481,7 +481,7 @@ learn more.
 -  It accepts the following parameter(s):
     - `$paramName`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getextraparameterstoset" id="getextraparameterstoset"></a>
 <a name="getExtraParametersToSet" id="getExtraParametersToSet"></a>

@@ -81,7 +81,7 @@ Sets an option value by name.
       
     - `$autoload`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="delete" id="delete"></a>
 <a name="delete" id="delete"></a>
@@ -96,7 +96,7 @@ Deletes an option.
        Option name to match exactly.
     - `$value` (`string`) &mdash;
        If supplied the option will be deleted only if its value matches this value.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="deletelike" id="deletelike"></a>
 <a name="deleteLike" id="deleteLike"></a>
@@ -111,7 +111,7 @@ Deletes all options that match the supplied pattern.
        Pattern of key to match. `'%'` characters should be used as wildcards, and literal `'_'` characters should be escaped.
     - `$value` (`string`) &mdash;
        If supplied, options will be deleted only if their value matches this value.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="clearcachedoption" id="clearcachedoption"></a>
 <a name="clearCachedOption" id="clearCachedOption"></a>
@@ -122,5 +122,5 @@ Deletes all options that match the supplied pattern.
 -  It accepts the following parameter(s):
     - `$name`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

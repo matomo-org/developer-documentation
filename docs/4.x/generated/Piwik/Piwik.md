@@ -98,7 +98,7 @@ Check that the current user is either the specified user or the superuser.
 -  It accepts the following parameter(s):
     - `$theUser` (`string`) &mdash;
        A username.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Piwik\NoAccessException`](../Piwik/NoAccessException.md) &mdash; If the user is neither the Super User nor the user `$theUser`.
 
@@ -143,7 +143,7 @@ Checks that the user is not the anonymous user.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Piwik\NoAccessException`](../Piwik/NoAccessException.md) &mdash; if the current user is the anonymous user.
 
@@ -155,7 +155,7 @@ Check that the current user has superuser access.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user is not the superuser.
 
@@ -183,7 +183,7 @@ Checks that the current user has admin access to the requested list of sites.
 -  It accepts the following parameter(s):
     - `$idSites` (`int`|`array`) &mdash;
        One or more site IDs to check access for.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If user doesn&#039;t have admin access.
 
@@ -205,7 +205,7 @@ Checks that the current user has write access to at least one site.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have write access to any site.
 
@@ -242,7 +242,7 @@ Checks that the current user has admin access to at least one site.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have admin access to any site.
 
@@ -283,7 +283,7 @@ Checks that the current user has view access to the requested list of sites
 -  It accepts the following parameter(s):
     - `$idSites` (`int`|`array`) &mdash;
        The list of site IDs to check access for.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have view access to every site in the list.
 
@@ -298,7 +298,7 @@ Checks that the current user has write access to the requested list of sites
 -  It accepts the following parameter(s):
     - `$idSites` (`int`|`array`) &mdash;
        The list of site IDs to check access for.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have write access to every site in the list.
 
@@ -320,7 +320,7 @@ Checks that the current user has view access to at least one site.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have view access to any site.
 
@@ -352,7 +352,7 @@ Redirects the current request to a new module and action.
        The target controller action, eg, `'index'`.
     - `$parameters` (`array`) &mdash;
        The query parameter values to modify before redirecting.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="isvalidemailstring" id="isvalidemailstring"></a>
 <a name="isValidEmailString" id="isValidEmailString"></a>
@@ -384,7 +384,7 @@ Post an event to Piwik's event dispatcher which will execute the event's observe
        If true, plugins that are loaded after this event is fired will have their observers for this event executed.
     - `$plugins` (`array`|`null`) &mdash;
        The list of plugins to execute observers for. If null, all plugin observers will be executed.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addaction" id="addaction"></a>
 <a name="addAction" id="addAction"></a>
@@ -402,7 +402,7 @@ need to use this function._**
        The event name.
     - `$function` (`callable`|`array`) &mdash;
        The observer.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="translate" id="translate"></a>
 <a name="translate" id="translate"></a>

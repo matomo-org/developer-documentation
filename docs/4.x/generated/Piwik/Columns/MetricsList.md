@@ -29,7 +29,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$metric` ([`Metric`](../../Piwik/Plugin/Metric.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getmetrics" id="getmetrics"></a>
 <a name="getMetrics" id="getMetrics"></a>
@@ -54,7 +54,7 @@ Removes one or more metrics from the metrics list.
        The metric category id. Can be a translation token eg 'General_Visits' see Metric::getCategory().
     - `$metricName` (`string`|`false`) &mdash;
        The name of the metric to remove eg 'nb_visits'. If not supplied, all metrics within that category will be removed.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getmetric" id="getmetric"></a>
 <a name="getMetric" id="getMetric"></a>
