@@ -34,10 +34,13 @@ AppFactory::setContainer($container);
 
 // Set view in Container
 $container->set('view', function () {
-    if (!empty($_SERVER['PATH_INFO'])) {
-        $matomoVersionFromUrl = MatomoVersionMiddleware::getMatmoVersionFromUrl($_SERVER['PATH_INFO']);
-        if (!empty($matomoVersionFromUrl)) {
-            Environment::setPiwikVersion($matomoVersionFromUrl);
+    foreach (['ORIG_PATH_INFO', 'PATH_INFO'] as $pathServer) {
+        if (!empty($_SERVER[$pathServer])) {
+            $matomoVersionFromUrl = MatomoVersionMiddleware::getMatmoVersionFromUrl($_SERVER[$pathServer]);
+            if (!empty($matomoVersionFromUrl)) {
+                Environment::setPiwikVersion($matomoVersionFromUrl);
+                break;
+            }
         }
     }
 
