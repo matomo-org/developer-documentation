@@ -76,6 +76,7 @@ The documents will be generated into the [docs/generated](docs/generated) direct
   see eg https://github.com/matomo-org/developer-documentation/blob/0.1.0/app/routes/page.php#L156  . It will be important that
   we merge all changes to the changelog for different Matomo versions into the changelog of the latest Matomo version as we currently
   want to show one changelog across all versions.
+* You will likely need to update [our Sami](https://github.com/matomo-org/Sami) to ensure it supports the latest PHP syntax. The PHP parser library is responsible for this.
 
 ## How to manage docs for different Matomo versions
 
