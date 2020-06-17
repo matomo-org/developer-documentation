@@ -12,12 +12,12 @@
 {% if class.tags("since")|length %}
 {% for since in class.tags("since") %}
 
-Since Piwik {{ since[0] }}
+Since Matomo {{ since[0] }}
 {% endfor %}
 {% endif %}
 {% if class.shortdesc %}
 
-{{ class.shortdesc|inlinelinkparser(class)|raw }}
+{{ class.shortdesc|removeNewLine|shortDescription|inlinelinkparser(class)|raw }}
 {% endif %}
 {% if class.longdesc %}
 
@@ -47,7 +47,7 @@ This {{ class_type(class) }} defines the following constants:
 {% if constant.tags("since")|length %}
 {% for since in constant.tags("since") %}
 
-Since Piwik {{ since[0] }}
+Since Matomo {{ since[0] }}
 {% endfor %}
 {% endif %}
 {% endfor %}
@@ -60,7 +60,7 @@ Properties
 This {{ class_type(class) }} defines the following properties:
 
 {% for property in properties %}
-- [`${{ property.name }}`](#${{ property.name|lower }}){% if property.shortdesc %} &mdash; {{ property.shortdesc|inlinelinkparser(class)|raw }}{% endif %}{% if class.properties[property.name] is not defined %} Inherited from {{ class_name(property.getClass, true, "", true) }}{%endif%}
+- [`${{ property.name }}`](#${{ property.name|lower }}){% if property.shortdesc %} &mdash; {{ property.shortdesc|removeNewLine|shortDescription|inlinelinkparser(class)|raw }}{% endif %}{% if class.properties[property.name] is not defined %} Inherited from {{ class_name(property.getClass, true, "", true) }}{%endif%}
 
 {% endfor %}
 {% for property in properties %}
@@ -71,7 +71,7 @@ This {{ class_type(class) }} defines the following properties:
 {% if property.tags("since")|length %}
 {% for since in property.tags("since") %}
 
-Since Piwik {{ since[0] }}
+Since Matomo {{ since[0] }}
 {% endfor %}
 {% endif %}
 {% if property.shortdesc %}
@@ -96,7 +96,7 @@ Methods
 The {{ class_type(class) }} defines the following methods:
 
 {% for method in methods %}
-- [`{{ method.name }}()`](#{{ method.name|lower }}){% if method.shortdesc %} &mdash; {{ method.shortdesc|inlinelinkparser(class)|raw }}{% endif %}{% if class.methods[method.name] is not defined %} Inherited from {{ class_name(method.getClass, true, "", true) }}{%endif%}
+- [`{{ method.name }}()`](#{{ method.name|lower }}){% if method.shortdesc %} &mdash; {{ method.shortdesc|removeNewLine|shortDescription|inlinelinkparser(class)|raw }}{% endif %}{% if class.methods[method.name] is not defined %} Inherited from {{ class_name(method.getClass, true, "", true) }}{%endif%}
 
 {% endfor %}
 
@@ -107,7 +107,7 @@ The {{ class_type(class) }} defines the following methods:
 {% if method.tags("since")|length %}
 {% for since in method.tags("since") %}
 
-Since Piwik {{ since[0] }}
+Since Matomo {{ since[0] }}
 {% endfor %}
 {% endif %}
 {% if method.shortdesc %}

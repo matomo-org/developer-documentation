@@ -94,6 +94,19 @@ try {
             $linkConverter = new LinkParser($scope);
             return $linkConverter->parse($description);
         }));
+        $twig->addFilter(new Twig_SimpleFilter('removeNewLine', function ($content) {
+            $content = preg_replace("/(\n)+/", ' ', $content);
+            $content = preg_replace("/(\s)+/", ' ', $content);
+            return $content;
+        }));
+        $twig->addFilter(new Twig_SimpleFilter('shortDescription', function ($content) {
+
+            $pos = strpos($content, '. ');
+            if ($pos > 1) {
+                return substr($content, 0, $pos+1);
+            }
+            return $content;
+        }));
 
         $sami['project']->update();
 
