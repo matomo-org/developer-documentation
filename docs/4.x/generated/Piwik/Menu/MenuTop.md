@@ -13,17 +13,29 @@ Methods
 
 The class defines the following methods:
 
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../../Piwik/Singleton.md)
 - [`addItem()`](#additem) &mdash; Adds a new entry to the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`editUrl()`](#editurl) &mdash; Edits a URL of an existing menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`addHtml()`](#addhtml) &mdash; Directly adds a menu entry containing html.
 
+<a name="getinstance" id="getinstance"></a>
+<a name="getInstance" id="getInstance"></a>
+### `getInstance()`
+
+Returns the singleton instance for the derived class. If the singleton instance
+has not been created, this method will create it.
+
+#### Signature
+
+- It returns a [`Singleton`](../../Piwik/Singleton.md) value.
+
 <a name="additem" id="additem"></a>
 <a name="addItem" id="addItem"></a>
 ### `addItem()`
 
-Since Piwik 2.7.0
+Since Matomo 2.7.0
 
 Adds a new entry to the menu.
 
@@ -70,13 +82,13 @@ Renames a single menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuOriginal` (`Piwik\Menu\$mainMenuOriginal`) &mdash;
+    - `$mainMenuOriginal`
       
-    - `$subMenuOriginal` (`Piwik\Menu\$subMenuOriginal`) &mdash;
+    - `$subMenuOriginal`
       
-    - `$mainMenuRenamed` (`Piwik\Menu\$mainMenuRenamed`) &mdash;
+    - `$mainMenuRenamed`
       
-    - `$subMenuRenamed` (`Piwik\Menu\$subMenuRenamed`) &mdash;
+    - `$subMenuRenamed`
       
 - It does not return anything.
 
@@ -89,11 +101,11 @@ Edits a URL of an existing menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuToEdit` (`Piwik\Menu\$mainMenuToEdit`) &mdash;
+    - `$mainMenuToEdit`
       
-    - `$subMenuToEdit` (`Piwik\Menu\$subMenuToEdit`) &mdash;
+    - `$subMenuToEdit`
       
-    - `$newUrl` (`Piwik\Menu\$newUrl`) &mdash;
+    - `$newUrl`
       
 - It does not return anything.
 

@@ -89,11 +89,9 @@ Returns the database connection and creates it if it hasn't been already.
 <a name="getReader" id="getReader"></a>
 ### `getReader()`
 
-Since Piwik Matomo
+Since Matomo Matomo
 
-Returns the database connection and creates it if it hasn't been already.
-
-Make sure to not write any data on
+Returns the database connection and creates it if it hasn't been already. Make sure to not write any data on
 the reader and only use the connection to read data.
 
 #### Signature
@@ -134,7 +132,7 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
 <a name="createReaderDatabaseObject" id="createReaderDatabaseObject"></a>
 ### `createReaderDatabaseObject()`
 
-Since Piwik Matomo
+Since Matomo Matomo
 
 Connects to the reader database.
 
@@ -163,9 +161,7 @@ For tests.
 <a name="exec" id="exec"></a>
 ### `exec()`
 
-Executes an unprepared SQL query.
-
-Recommended for DDL statements like `CREATE`,
+Executes an unprepared SQL query. Recommended for DDL statements like `CREATE`,
 `DROP` and `ALTER`. The return value is DBMS-specific. For MySQLI, it returns the
 number of rows affected. For PDO, it returns a
 [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) object.
@@ -185,7 +181,8 @@ number of rows affected. For PDO, it returns a
 <a name="query" id="query"></a>
 ### `query()`
 
-Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
+Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html)
+for the query.
 
 This method is meant for non-query SQL statements like `INSERT` and `UPDATE. If you want to fetch
 data from the DB you should use one of the fetch... functions.
@@ -216,7 +213,8 @@ Executes an SQL `SELECT` statement and returns all fetched rows from the result 
        Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 
 - *Returns:*  `array` &mdash;
-    The fetched rows, each element is an associative array mapping column names with column values.
+    The fetched rows, each element is an associative array mapping column names
+              with column values.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -235,7 +233,8 @@ Executes an SQL `SELECT` statement and returns the first row of the result set.
        Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 
 - *Returns:*  `array` &mdash;
-    The fetched row, each element is an associative array mapping column names with column values.
+    The fetched row, each element is an associative array mapping column names
+              with column values.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -243,7 +242,8 @@ Executes an SQL `SELECT` statement and returns the first row of the result set.
 <a name="fetchOne" id="fetchOne"></a>
 ### `fetchOne()`
 
-Executes an SQL `SELECT` statement and returns the first column value of the first row in the result set.
+Executes an SQL `SELECT` statement and returns the first column value of the first
+row in the result set.
 
 #### Signature
 
@@ -260,7 +260,8 @@ Executes an SQL `SELECT` statement and returns the first column value of the fir
 <a name="fetchAssoc" id="fetchAssoc"></a>
 ### `fetchAssoc()`
 
-Executes an SQL `SELECT` statement and returns the entire result set indexed by the first selected field.
+Executes an SQL `SELECT` statement and returns the entire result set indexed by the first
+selected field.
 
 #### Signature
 
@@ -271,7 +272,11 @@ Executes an SQL `SELECT` statement and returns the entire result set indexed by 
        Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 
 - *Returns:*  `array` &mdash;
-    eg, ``` array('col1value1' => array('col2' => '...', 'col3' => ...), 'col1value2' => array('col2' => '...', 'col3' => ...)) ```
+    eg,
+              ```
+              array('col1value1' => array('col2' => '...', 'col3' => ...),
+                    'col1value2' => array('col2' => '...', 'col3' => ...))
+              ```
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -279,9 +284,7 @@ Executes an SQL `SELECT` statement and returns the entire result set indexed by 
 <a name="deleteAllRows" id="deleteAllRows"></a>
 ### `deleteAllRows()`
 
-Deletes all desired rows in a table, while using a limit.
-
-This function will execute many
+Deletes all desired rows in a table, while using a limit. This function will execute many
 DELETE queries until there are no more rows to delete.
 
 Use this function when you need to delete many thousands of rows from a table without
@@ -399,7 +402,8 @@ should still work if it has not been granted.
 <a name="segmentedFetchFirst" id="segmentedFetchFirst"></a>
 ### `segmentedFetchFirst()`
 
-Performs a `SELECT` statement on a table one chunk at a time and returns the first successfully fetched value.
+Performs a `SELECT` statement on a table one chunk at a time and returns the first
+successfully fetched value.
 
 This function will execute a query on one set of rows in a table. If nothing
 is fetched, it will execute the query on the next set of rows and so on until
@@ -444,7 +448,8 @@ for too long.
 <a name="segmentedFetchOne" id="segmentedFetchOne"></a>
 ### `segmentedFetchOne()`
 
-Performs a `SELECT` on a table one chunk at a time and returns an array of every fetched value.
+Performs a `SELECT` on a table one chunk at a time and returns an array
+of every fetched value.
 
 This function will break up a `SELECT` query into several smaller queries by
 using only a limited number of rows at a time. It will accumulate the results
@@ -475,7 +480,8 @@ the table will not be locked for too long.
 <a name="segmentedFetchAll" id="segmentedFetchAll"></a>
 ### `segmentedFetchAll()`
 
-Performs a SELECT on a table one chunk at a time and returns an array of every fetched row.
+Performs a SELECT on a table one chunk at a time and returns an array
+of every fetched row.
 
 This function will break up a `SELECT` query into several smaller queries by
 using only a limited number of rows at a time. It will accumulate the results
@@ -500,7 +506,8 @@ the table will not be locked for too long.
        Parameters to bind in the query, array( param1 => value1, param2 => value2)
 
 - *Returns:*  `array` &mdash;
-    An array of rows that includes the result set of every smaller query.
+    An array of rows that includes the result set of every smaller
+              query.
 
 <a name="segmentedquery" id="segmentedquery"></a>
 <a name="segmentedQuery" id="segmentedQuery"></a>
@@ -534,9 +541,7 @@ the table will not be locked for too long.
 <a name="getDbLock" id="getDbLock"></a>
 ### `getDbLock()`
 
-Attempts to get a named lock.
-
-This function uses a timeout of 1s, but will
+Attempts to get a named lock. This function uses a timeout of 1s, but will
 retry a set number of times.
 
 #### Signature

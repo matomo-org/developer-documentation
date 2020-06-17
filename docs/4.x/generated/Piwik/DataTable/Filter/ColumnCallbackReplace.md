@@ -38,7 +38,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable to filter.
+      
     - `$columnsToFilter` (`array`|`string`) &mdash;
        The columns whose values should be passed to the callback and then replaced with the callback's result.
     - `$functionToApply` (`callable`) &mdash;
@@ -65,9 +65,7 @@ See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallback
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

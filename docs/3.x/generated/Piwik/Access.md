@@ -33,9 +33,8 @@ The class defines the following methods:
 <a name="doAsSuperUser" id="doAsSuperUser"></a>
 ### `doAsSuperUser()`
 
-Executes a callback with superuser privileges, making sure those privileges are rescinded before this method exits.
-
-Privileges will be rescinded even if an exception is thrown.
+Executes a callback with superuser privileges, making sure those privileges are rescinded
+before this method exits. Privileges will be rescinded even if an exception is thrown.
 
 #### Signature
 

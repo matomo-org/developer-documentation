@@ -1,5 +1,4 @@
 
-## MatomoTracker
 ## API\Request
 ## Access
 ## Archive
@@ -21,7 +20,6 @@
 ## Columns\Updater
 ## Common
 ## Config
-## Console
 ## DataAccess\LogAggregator
 ## DataTable
 ## DataTable\BaseFilter

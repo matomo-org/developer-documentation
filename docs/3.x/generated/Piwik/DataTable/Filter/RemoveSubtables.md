@@ -29,7 +29,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable that will be filtered eventually.
+      
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -48,9 +48,7 @@ See [Limit](/api-reference/Piwik/DataTable/Filter/Limit).
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

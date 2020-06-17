@@ -48,9 +48,7 @@ Generates a segment filter based on the label column and the given segment name
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

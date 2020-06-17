@@ -85,7 +85,7 @@ Methods
 The class defines the following methods:
 
 - [`queryVisitsByDimension()`](#queryvisitsbydimension) &mdash; Executes and returns a query aggregating visit logs, optionally grouping by some dimension.
-- [`queryEcommerceItems()`](#queryecommerceitems) &mdash; Executes and returns a query aggregating ecommerce item data (everything stored in the **log\_conversion\_item** table)  and returns a DB statement that can be used to iterate over the result
+- [`queryEcommerceItems()`](#queryecommerceitems) &mdash; Executes and returns a query aggregating ecommerce item data (everything stored in the **log\_conversion\_item** table) and returns a DB statement that can be used to iterate over the result
 - [`queryActionsByDimension()`](#queryactionsbydimension) &mdash; Executes and returns a query aggregating action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the result
 - [`getSelectsFromRangedColumn()`](#getselectsfromrangedcolumn) &mdash; Creates and returns an array of SQL `SELECT` expressions that will each count how many rows have a column whose value is within a certain range.
 
@@ -93,9 +93,7 @@ The class defines the following methods:
 <a name="queryVisitsByDimension" id="queryVisitsByDimension"></a>
 ### `queryVisitsByDimension()`
 
-Executes and returns a query aggregating visit logs, optionally grouping by some dimension.
-
-Returns
+Executes and returns a query aggregating visit logs, optionally grouping by some dimension. Returns
 a DB statement that can be used to iterate over the result
 
 **Result Set**
@@ -139,13 +137,16 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
        Adds a MAX_EXECUTION_TIME query hint to the query if $timeLimitInMs > 0
 
 - *Returns:*  `mixed` &mdash;
-    A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension) to see what aggregate data is calculated by the query.
+    A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of
+              [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension)
+              to see what aggregate data is calculated by the query.
 
 <a name="queryecommerceitems" id="queryecommerceitems"></a>
 <a name="queryEcommerceItems" id="queryEcommerceItems"></a>
 ### `queryEcommerceItems()`
 
-Executes and returns a query aggregating ecommerce item data (everything stored in the **log\_conversion\_item** table)  and returns a DB statement that can be used to iterate over the result
+Executes and returns a query aggregating ecommerce item data (everything stored in the
+**log\_conversion\_item** table)  and returns a DB statement that can be used to iterate over the result
 
 <a name="queryEcommerceItems-result-set"></a>
 **Result Set**
@@ -175,13 +176,16 @@ Segmentation is not yet supported for this aggregation method.
        One or more **log\_conversion\_item** columns to group aggregated data by. Eg, `'idaction_sku'` or `'idaction_sku, idaction_category'`.
 
 - *Returns:*  `Zend_Db_Statement` &mdash;
-    A statement object that can be used to iterate through the query's result set. See [above](#queryEcommerceItems-result-set) to learn more about what this query selects.
+    A statement object that can be used to iterate through the query's
+                          result set. See [above](#queryEcommerceItems-result-set) to learn more
+                          about what this query selects.
 
 <a name="queryactionsbydimension" id="queryactionsbydimension"></a>
 <a name="queryActionsByDimension" id="queryActionsByDimension"></a>
 ### `queryActionsByDimension()`
 
-Executes and returns a query aggregating action data (everything in the log_action table) and returns a DB statement that can be used to iterate over the result
+Executes and returns a query aggregating action data (everything in the log_action table) and returns
+a DB statement that can be used to iterate over the result
 
 <a name="queryActionsByDimension-result-set"></a>
 **Result Set**
@@ -219,13 +223,16 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
        Adds a MAX_EXECUTION_TIME hint to the query if $timeLimitInMs > 0
 
 - *Returns:*  `mixed` &mdash;
-    A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](#queryEcommerceItems-result-set) to see what aggregate data is calculated by the query.
+    A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of
+              [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute). Read [this](#queryEcommerceItems-result-set)
+              to see what aggregate data is calculated by the query.
 
 <a name="getselectsfromrangedcolumn" id="getselectsfromrangedcolumn"></a>
 <a name="getSelectsFromRangedColumn" id="getSelectsFromRangedColumn"></a>
 ### `getSelectsFromRangedColumn()`
 
-Creates and returns an array of SQL `SELECT` expressions that will each count how many rows have a column whose value is within a certain range.
+Creates and returns an array of SQL `SELECT` expressions that will each count how
+many rows have a column whose value is within a certain range.
 
 **Note:** The result of this function is meant for use in the `$additionalSelects` parameter
 in one of the query... methods (for example [queryVisitsByDimension()](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension)).
@@ -276,5 +283,11 @@ in one of the query... methods (for example [queryVisitsByDimension()](/api-refe
        Whether to only summarize rows that belong to visits of returning visitors or not. If this argument is true, then the SELECT expressions returned can only be used with the [queryVisitsByDimension()](/api-reference/Piwik/DataAccess/LogAggregator#queryvisitsbydimension) method.
 
 - *Returns:*  `array` &mdash;
-    An array of SQL SELECT expressions, for example, ``` array( 'sum(case when log_visit.visit_total_actions between 0 and 2 then 1 else 0 end) as vta0', 'sum(case when log_visit.visit_total_actions > 2 then 1 else 0 end) as vta1' ) ```
+    An array of SQL SELECT expressions, for example,
+              ```
+              array(
+                  'sum(case when log_visit.visit_total_actions between 0 and 2 then 1 else 0 end) as vta0',
+                  'sum(case when log_visit.visit_total_actions > 2 then 1 else 0 end) as vta1'
+              )
+              ```
 

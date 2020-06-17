@@ -3,7 +3,7 @@
 Challenge
 =========
 
-Since Piwik 3.10.0
+Since Matomo 3.10.0
 
 Defines a new challenge which a super user needs to complete in order to become a "Matomo expert".
 
@@ -26,9 +26,7 @@ The abstract class defines the following methods:
 <a name="getName" id="getName"></a>
 ### `getName()`
 
-The human readable name that will be shown in the onboarding widget.
-
-Should be max 3 or 4 words and represent an
+The human readable name that will be shown in the onboarding widget. Should be max 3 or 4 words and represent an
 action, like "Add a report"
 
 #### Signature
@@ -64,9 +62,8 @@ way.
 <a name="getDescription" id="getDescription"></a>
 ### `getDescription()`
 
-A detailed description that describes the value of the action the user needs to complete, or some tips on how to complete this challenge.
-
-Will be shown when hovering a challenge name.
+A detailed description that describes the value of the action the user needs to complete, or some tips on how
+to complete this challenge. Will be shown when hovering a challenge name.
 
 #### Signature
 
@@ -76,9 +73,8 @@ Will be shown when hovering a challenge name.
 <a name="getUrl" id="getUrl"></a>
 ### `getUrl()`
 
-A URL that has more information about how to complete the given event or a URL within the Matomo app to directly complete a challenge.
-
-For example "add_user" challenge could directly link to the user management.
+A URL that has more information about how to complete the given event or a URL within the Matomo app to directly
+complete a challenge. For example "add_user" challenge could directly link to the user management.
 
 #### Signature
 
@@ -96,9 +92,7 @@ For example "add_user" challenge could directly link to the user management.
 <a name="setCompleted" id="setCompleted"></a>
 ### `setCompleted()`
 
-Set this challenge was completed successfully by the current user.
-
-Only works for a super user.
+Set this challenge was completed successfully by the current user. Only works for a super user.
 
 #### Signature
 

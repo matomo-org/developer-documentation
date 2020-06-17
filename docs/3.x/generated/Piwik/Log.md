@@ -55,9 +55,7 @@ The class defines the following methods:
 <a name="getInstance" id="getInstance"></a>
 ### `getInstance()`
 
-Returns the singleton instance for the derived class.
-
-If the singleton instance
+Returns the singleton instance for the derived class. If the singleton instance
 has not been created, this method will create it.
 
 #### Signature

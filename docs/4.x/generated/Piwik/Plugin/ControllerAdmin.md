@@ -22,9 +22,7 @@ This abstract class defines the following properties:
 <a name="pluginName" id="pluginName"></a>
 ### `$pluginName`
 
-The plugin name, eg.
-
-`'Referrers'`.
+The plugin name, eg. `'Referrers'`.
 
 #### Signature
 
@@ -143,7 +141,8 @@ construction.
 <a name="getDefaultAction" id="getDefaultAction"></a>
 ### `getDefaultAction()`
 
-Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
+Returns the name of the default method that will be called
+when visiting: index.php?module=PluginName without the action parameter.
 
 #### Signature
 
@@ -153,7 +152,7 @@ Returns the name of the default method that will be called when visiting: index.
 <a name="renderTemplate" id="renderTemplate"></a>
 ### `renderTemplate()`
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
 Assigns the given variables to the template and renders it.
 
@@ -194,15 +193,15 @@ Convenience method that creates and renders a ViewDataTable for a API method.
 - *Returns:*  `string`|`void` &mdash;
     See `$fetch`.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if `$pluginName` is not an existing plugin or if `$apiAction` is not an existing method of the plugin&#039;s API.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if `$pluginName` is not an existing plugin or if `$apiAction` is not an
+                   existing method of the plugin&#039;s API.
 
 <a name="getlastunitgraph" id="getlastunitgraph"></a>
 <a name="getLastUnitGraph" id="getLastUnitGraph"></a>
 ### `getLastUnitGraph()`
 
-Returns a ViewDataTable object that will render a jqPlot evolution graph for the last30 days/weeks/etc.
-
-of the current period, relative to the current date.
+Returns a ViewDataTable object that will render a jqPlot evolution graph
+for the last30 days/weeks/etc. of the current period, relative to the current date.
 
 #### Signature
 
@@ -219,7 +218,8 @@ of the current period, relative to the current date.
 <a name="getLastUnitGraphAcrossPlugins" id="getLastUnitGraphAcrossPlugins"></a>
 ### `getLastUnitGraphAcrossPlugins()`
 
-Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/ControllerAdmin#getlastunitgraph), but will set some properties of the ViewDataTable object based on the arguments supplied.
+Same as [getLastUnitGraph()](/api-reference/Piwik/Plugin/ControllerAdmin#getlastunitgraph), but will set some properties of the ViewDataTable
+object based on the arguments supplied.
 
 #### Signature
 
@@ -278,9 +278,7 @@ Sets the first date available in the period selector's calendar.
 <a name="setMaxDateView" id="setMaxDateView"></a>
 ### `setMaxDateView()`
 
-Sets the last date available in the period selector's calendar.
-
-Usually this is just the "today" date
+Sets the last date available in the period selector's calendar. Usually this is just the "today" date
 for a site (which varies based on the timezone of a site).
 
 #### Signature

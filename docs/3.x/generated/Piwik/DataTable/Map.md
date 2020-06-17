@@ -63,9 +63,7 @@ This label is used by DataTable Renderers (it becomes a column name or the XML d
 <a name="setKeyName" id="setKeyName"></a>
 ### `setKeyName()`
 
-Set the name of they metadata used to index DataTables.
-
-See [getKeyName()](/api-reference/Piwik/DataTable/Map#getkeyname).
+Set the name of they metadata used to index DataTables. See [getKeyName()](/api-reference/Piwik/DataTable/Map#getkeyname).
 
 #### Signature
 
@@ -203,7 +201,7 @@ Returns the first element in the Map's array.
 #### Signature
 
 
-- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`Piwik\DataTable\false` &mdash;
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`false` &mdash;
     
 
 <a name="getlastrow" id="getlastrow"></a>
@@ -215,7 +213,7 @@ Returns the last element in the Map's array.
 #### Signature
 
 
-- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`Piwik\DataTable\false` &mdash;
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`false` &mdash;
     
 
 <a name="addtable" id="addtable"></a>
@@ -248,7 +246,8 @@ Adds a new DataTable or Map instance to this DataTable\Map.
 <a name="__toString" id="__toString"></a>
 ### `__toString()`
 
-Returns a string output of this DataTable\Map (applying the default renderer to every DataTable of this DataTable\Map).
+Returns a string output of this DataTable\Map (applying the default renderer to every DataTable
+of this DataTable\Map).
 
 #### Signature
 
@@ -358,9 +357,8 @@ Returns the array containing all column values in all contained DataTables for t
 <a name="mergeChildren" id="mergeChildren"></a>
 ### `mergeChildren()`
 
-Merges the rows of every child DataTable into a new one and returns it.
-
-This function will also set the label of the merged rows
+Merges the rows of every child DataTable into a new one and
+returns it. This function will also set the label of the merged rows
 to the label of the DataTable they were originally from.
 
 The result of this function is determined by the type of DataTable
@@ -434,7 +432,8 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable).
 <a name="mergeSubtables" id="mergeSubtables"></a>
 ### `mergeSubtables()`
 
-Returns a new DataTable\Map w/ child tables that have had their subtables merged.
+Returns a new DataTable\Map w/ child tables that have had their
+subtables merged.
 
 See DataTable::mergeSubtables().
 
@@ -446,7 +445,8 @@ See DataTable::mergeSubtables().
 <a name="getEmptyClone" id="getEmptyClone"></a>
 ### `getEmptyClone()`
 
-Returns a new DataTable\Map w/o any child DataTables, but with the same key name as this instance.
+Returns a new DataTable\Map w/o any child DataTables, but with
+the same key name as this instance.
 
 #### Signature
 

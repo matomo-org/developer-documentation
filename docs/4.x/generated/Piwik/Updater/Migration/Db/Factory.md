@@ -322,9 +322,8 @@ be for example columns that are not nullable and therefore need a value.
 <a name="batchInsert" id="batchInsert"></a>
 ### `batchInsert()`
 
-Performs a batch insert into a specific table using either LOAD DATA INFILE or plain INSERTs, as a fallback.
-
-On MySQL, LOAD DATA INFILE is 20x faster than a series of plain INSERTs.
+Performs a batch insert into a specific table using either LOAD DATA INFILE or plain INSERTs,
+as a fallback. On MySQL, LOAD DATA INFILE is 20x faster than a series of plain INSERTs.
 
 Please note that queries for batch inserts are currently not shown to an end user and should therefore not be
 returned in an `Updates::getMigrations` method. Instead it needs to be execute directly in `Updates::doUpdate`

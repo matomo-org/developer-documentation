@@ -22,5 +22,6 @@ Returns the list of all known currency symbols.
 
 
 - *Returns:*  `array` &mdash;
-    An array mapping currency codes to their respective currency symbols and a description, eg, `array('USD' => array('$', 'US dollar'))`.
+    An array mapping currency codes to their respective currency symbols
+              and a description, eg, `array('USD' => array('$', 'US dollar'))`.
 

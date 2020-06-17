@@ -26,9 +26,7 @@ The class defines the following methods:
 <a name="addWidgetConfig" id="addWidgetConfig"></a>
 ### `addWidgetConfig()`
 
-Adds a new widget to the widget config.
-
-Please make sure the widget is enabled before adding a widget as
+Adds a new widget to the widget config. Please make sure the widget is enabled before adding a widget as
 no such checks will be performed.
 
 #### Signature
@@ -42,9 +40,7 @@ no such checks will be performed.
 <a name="addWidgetConfigs" id="addWidgetConfigs"></a>
 ### `addWidgetConfigs()`
 
-Add multiple widget configs at once.
-
-See [addWidgetConfig()](/api-reference/Piwik/Widget/WidgetsList#addwidgetconfig).
+Add multiple widget configs at once. See [addWidgetConfig()](/api-reference/Piwik/Widget/WidgetsList#addwidgetconfig).
 
 #### Signature
 
@@ -67,9 +63,7 @@ Get all added widget configs.
 <a name="addToContainerWidget" id="addToContainerWidget"></a>
 ### `addToContainerWidget()`
 
-Add a widget to a widget container.
-
-It doesn't matter whether the container was added to this list already
+Add a widget to a widget container. It doesn't matter whether the container was added to this list already
 or whether the container is added later. As long as a container having the same containerId is added at
 some point the widget will be added to that container. If no container having this id is added the widget
 will not be recognized.
@@ -94,7 +88,7 @@ Removes one or more widgets from the widget list.
 -  It accepts the following parameter(s):
     - `$widgetCategoryId` (`string`) &mdash;
        The widget category id. Can be a translation token eg 'General_Visits' see [WidgetConfig::setCategoryId()](/api-reference/Piwik/Widget/WidgetConfig#setcategoryid).
-    - `$widgetName` (`string`|`Piwik\Widget\false`) &mdash;
+    - `$widgetName` (`string`|`false`) &mdash;
        The name of the widget to remove eg 'VisitTime_ByServerTimeWidgetName'. If not supplied, all widgets within that category will be removed.
 - It does not return anything.
 
@@ -117,16 +111,17 @@ Returns `true` if a widget exists in the widget list, `false` if otherwise.
 <a name="getWidgetUniqueId" id="getWidgetUniqueId"></a>
 ### `getWidgetUniqueId()`
 
-CAUTION! If you ever change this method, existing updates will fail as they currently use that method! If you change the output the uniqueId for existing widgets would not be found anymore
+CAUTION! If you ever change this method, existing updates will fail as they currently use that method!
+If you change the output the uniqueId for existing widgets would not be found anymore
 
 Returns the unique id of an widget with the given parameters
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$controllerName` (`Piwik\Widget\$controllerName`) &mdash;
+    - `$controllerName`
       
-    - `$controllerAction` (`Piwik\Widget\$controllerAction`) &mdash;
+    - `$controllerAction`
       
     - `$customParameters` (`array`) &mdash;
       

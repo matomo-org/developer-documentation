@@ -35,7 +35,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The table that will eventually be filtered.
+      
     - `$newLabel` (`string`|`null`) &mdash;
        The new label for summary row. If null, defaults to `Piwik::translate('General_Others')`.
 
@@ -56,9 +56,7 @@ See [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummar
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

@@ -1,4 +1,0 @@
-<small>Piwik\</small>
-
-Console
-=======

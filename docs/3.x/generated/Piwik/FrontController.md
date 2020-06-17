@@ -48,9 +48,7 @@ The class defines the following methods:
 <a name="getInstance" id="getInstance"></a>
 ### `getInstance()`
 
-Returns the singleton instance for the derived class.
-
-If the singleton instance
+Returns the singleton instance for the derived class. If the singleton instance
 has not been created, this method will create it.
 
 #### Signature
@@ -76,5 +74,6 @@ Executes the requested plugin controller method.
 - *Returns:*  `void`|`mixed` &mdash;
     The returned value of the call. This is the output of the controller method.
 - It throws one of the following exceptions:
-    - `Exception|\Piwik\Exception\PluginDeactivatedException` &mdash; in case the plugin doesn&#039;t exist, the action doesn&#039;t exist, there is not enough permission, etc.
+    - `Exception|\Piwik\Exception\PluginDeactivatedException` &mdash; in case the plugin doesn&#039;t exist, the action doesn&#039;t exist,
+                                                    there is not enough permission, etc.
 

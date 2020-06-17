@@ -18,7 +18,7 @@ Properties
 
 This class defines the following properties:
 
-- [`$key`](#$key) &mdash; The name of the key the index should have eg "dimension" will make an index array(array('dimension' => '...'))
+- [`$key`](#$key) &mdash; The name of the key the index should have eg "dimension" will make an index array(array('dimension' => '.
 - [`$uiControl`](#$uicontrol) &mdash; Describes what HTML element should be used to manipulate the setting through Piwik's UI.
 - [`$customUiControlTemplateFile`](#$customuicontroltemplatefile) &mdash; Defines a custom template file for a UI control.
 - [`$title`](#$title) &mdash; This setting's display name, for example, `'Refresh Interval'`.
@@ -28,7 +28,9 @@ This class defines the following properties:
 <a name="key" id="key"></a>
 ### `$key`
 
-The name of the key the index should have eg "dimension" will make an index array(array('dimension' => '...'))
+The name of the key the index should have eg "dimension" will make an index array(array('dimension' => '.
+
+..'))
 
 #### Signature
 
@@ -50,9 +52,7 @@ See Piwik\Plugin\Settings for a list of supported control types.
 <a name="customUiControlTemplateFile" id="customUiControlTemplateFile"></a>
 ### `$customUiControlTemplateFile`
 
-Defines a custom template file for a UI control.
-
-This file should render a UI control and expose the value in a
+Defines a custom template file for a UI control. This file should render a UI control and expose the value in a
 "formField.value" angular model. For an example see "plugins/CorePluginsAdmin/angularjs/form-field/field-text.html"
 
 #### Signature
@@ -75,9 +75,7 @@ Be sure to escape any user input as HTML can be used here.
 <a name="availableValues" id="availableValues"></a>
 ### `$availableValues`
 
-The list of all available values for this setting.
-
-If null, the setting can have any value.
+The list of all available values for this setting. If null, the setting can have any value.
 
 If supplied, this field should be an array mapping available values with their prettified
 display value. Eg, if set to `array('nb_visits' => 'Visits', 'nb_actions' => 'Actions')`,

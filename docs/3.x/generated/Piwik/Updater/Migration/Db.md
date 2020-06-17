@@ -5,8 +5,6 @@ Db
 
 Base class for a single database migration.
 
-Any database migration must extend this class.
-
 Methods
 -------
 
@@ -30,9 +28,7 @@ Executes the migration.
 <a name="__toString" id="__toString"></a>
 ### `__toString()`
 
-Get a description of what the migration actually does.
-
-For example "Activate plugin $plugin" or
+Get a description of what the migration actually does. For example "Activate plugin $plugin" or
 "SELECT * FROM table".
 
 #### Signature

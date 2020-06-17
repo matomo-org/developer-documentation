@@ -20,7 +20,8 @@ Constants
 
 This class defines the following constants:
 
-- [`APPEND_TO_COLUMN_NAME_TO_KEEP`](#append_to_column_name_to_keep) — Hack: when specifying "showColumns", sometimes we'd like to also keep columns that "look" like a given column, without manually specifying all these columns (which may not be possible if column names are generated dynamically)
+- [`APPEND_TO_COLUMN_NAME_TO_KEEP`](#append_to_column_name_to_keep) — Hack: when specifying "showColumns", sometimes we'd like to also keep columns that "look" like a given column,
+without manually specifying all these columns (which may not be possible if column names are generated dynamically)
 <a name="append_to_column_name_to_keep" id="append_to_column_name_to_keep"></a>
 <a name="APPEND_TO_COLUMN_NAME_TO_KEEP" id="APPEND_TO_COLUMN_NAME_TO_KEEP"></a>
 ### `APPEND_TO_COLUMN_NAME_TO_KEEP`
@@ -47,7 +48,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable instance that will eventually be filtered.
+      
     - `$columnsToRemove` (`array`|`string`) &mdash;
        An array of column names or a comma-separated list of column names. These columns will be removed.
     - `$columnsToKeep` (`array`|`string`) &mdash;
@@ -66,15 +67,13 @@ See [ColumnDelete](/api-reference/Piwik/DataTable/Filter/ColumnDelete).
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-- It returns a [`DataTable`](../../../Piwik/DataTable.md) value.
+- It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

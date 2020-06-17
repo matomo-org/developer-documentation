@@ -3,12 +3,9 @@
 Menu
 ====
 
-Since Piwik 2.4.0
+Since Matomo 2.4.0
 
 Base class of all plugin menu providers.
-
-Plugins that define their own menu items can extend this class to easily
-add new items, to remove or to rename existing items.
 
 Descendants of this class can overwrite any of these methods. Each method will be executed only once per request
 and cached for any further menu requests.
@@ -38,7 +35,7 @@ The class defines the following methods:
 <a name="urlForDefaultAction" id="urlForDefaultAction"></a>
 ### `urlForDefaultAction()`
 
-Since Piwik 2.7.0
+Since Matomo 2.7.0
 
 Generates a URL for the default action of the plugin controller.
 
@@ -61,11 +58,9 @@ $menu->addItem('MyPlugin_MyPlugin', '', $this->urlForDefaultAction(), $orderId =
 <a name="urlForAction" id="urlForAction"></a>
 ### `urlForAction()`
 
-Since Piwik 2.7.0
+Since Matomo 2.7.0
 
-Generates a URL for the given action.
-
-In your plugin controller you have to create a method with the same name
+Generates a URL for the given action. In your plugin controller you have to create a method with the same name
 as this method will be executed when a user clicks on the menu item. If you want to generate a URL for the
 action of another module, meaning not your plugin, you should use the method urlForModuleAction().
 
@@ -82,7 +77,8 @@ action of another module, meaning not your plugin, you should use the method url
 <a name="urlForDefaultUserParams" id="urlForDefaultUserParams"></a>
 ### `urlForDefaultUserParams()`
 
-Returns the &idSite=X&period=Y&date=Z query string fragment, fetched from current logged-in user's preferences.
+Returns the &idSite=X&period=Y&date=Z query string fragment,
+fetched from current logged-in user's preferences.
 
 #### Signature
 
@@ -103,7 +99,8 @@ Returns the &idSite=X&period=Y&date=Z query string fragment, fetched from curren
 <a name="configureTopMenu" id="configureTopMenu"></a>
 ### `configureTopMenu()`
 
-Configures the top menu which is supposed to contain analytics related items such as the "All Websites Dashboard".
+Configures the top menu which is supposed to contain analytics related items such as the
+"All Websites Dashboard".
 
 #### Signature
 
@@ -116,7 +113,8 @@ Configures the top menu which is supposed to contain analytics related items suc
 <a name="configureAdminMenu" id="configureAdminMenu"></a>
 ### `configureAdminMenu()`
 
-Configures the admin menu which is supposed to contain only administration related items such as "Websites", "Users" or "Settings".
+Configures the admin menu which is supposed to contain only administration related items such as
+"Websites", "Users" or "Settings".
 
 #### Signature
 

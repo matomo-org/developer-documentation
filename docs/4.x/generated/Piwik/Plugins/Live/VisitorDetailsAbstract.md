@@ -20,7 +20,7 @@ The abstract class defines the following methods:
 - [`renderAction()`](#renderaction) &mdash; Called when rendering a single Action
 - [`renderActionTooltip()`](#renderactiontooltip) &mdash; Called for rendering the tooltip on actions returned array needs to look like this:
 - [`renderIcons()`](#rendericons) &mdash; Called when rendering the Icons in visit log
-- [`renderVisitorDetails()`](#rendervisitordetails) &mdash; Called when rendering the visitor details in visit log returned array needs to look like this: array (          20,   // order id          'rendered html content' )
+- [`renderVisitorDetails()`](#rendervisitordetails) &mdash; Called when rendering the visitor details in visit log returned array needs to look like this: array ( 20, // order id 'rendered html content' )
 - [`initProfile()`](#initprofile) &mdash; Allows manipulating the visitor profile properties Will be called when visitor profile is initialized
 - [`handleProfileVisit()`](#handleprofilevisit) &mdash; Allows manipulating the visitor profile properties based on included visits Will be called for every action within the profile
 - [`handleProfileAction()`](#handleprofileaction) &mdash; Allows manipulating the visitor profile properties based on included actions Will be called for every action within the profile
@@ -193,7 +193,8 @@ Called when rendering a single Action
 <a name="renderActionTooltip" id="renderActionTooltip"></a>
 ### `renderActionTooltip()`
 
-Called for rendering the tooltip on actions returned array needs to look like this:
+Called for rendering the tooltip on actions
+returned array needs to look like this:
 
 ```
 array (
@@ -249,7 +250,12 @@ Called when rendering the Icons in visit log
 <a name="renderVisitorDetails" id="renderVisitorDetails"></a>
 ### `renderVisitorDetails()`
 
-Called when rendering the visitor details in visit log returned array needs to look like this: array (          20,   // order id          'rendered html content' )
+Called when rendering the visitor details in visit log
+returned array needs to look like this:
+array (
+         20,   // order id
+         'rendered html content'
+)
 
 **Example:**
 
@@ -270,7 +276,8 @@ Called when rendering the visitor details in visit log returned array needs to l
 <a name="initProfile" id="initProfile"></a>
 ### `initProfile()`
 
-Allows manipulating the visitor profile properties Will be called when visitor profile is initialized
+Allows manipulating the visitor profile properties
+Will be called when visitor profile is initialized
 
 **Example:**
 
@@ -293,7 +300,8 @@ Allows manipulating the visitor profile properties Will be called when visitor p
 <a name="handleProfileVisit" id="handleProfileVisit"></a>
 ### `handleProfileVisit()`
 
-Allows manipulating the visitor profile properties based on included visits Will be called for every action within the profile
+Allows manipulating the visitor profile properties based on included visits
+Will be called for every action within the profile
 
 **Example:**
 
@@ -304,7 +312,7 @@ Allows manipulating the visitor profile properties based on included visits Will
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$visit` (`Piwik\Plugins\Live\DataTable\Row`) &mdash;
+    - `$visit` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
       
     - `$profile` (`array`) &mdash;
       
@@ -314,7 +322,8 @@ Allows manipulating the visitor profile properties based on included visits Will
 <a name="handleProfileAction" id="handleProfileAction"></a>
 ### `handleProfileAction()`
 
-Allows manipulating the visitor profile properties based on included actions Will be called for every action within the profile
+Allows manipulating the visitor profile properties based on included actions
+Will be called for every action within the profile
 
 **Example:**
 
@@ -340,7 +349,8 @@ Allows manipulating the visitor profile properties based on included actions Wil
 <a name="finalizeProfile" id="finalizeProfile"></a>
 ### `finalizeProfile()`
 
-Will be called after iterating over all actions Can be used to set profile information that requires data that was set while iterating over visits & actions
+Will be called after iterating over all actions
+Can be used to set profile information that requires data that was set while iterating over visits & actions
 
 **Example:**
 
@@ -365,11 +375,11 @@ Will be called after iterating over all actions Can be used to set profile infor
 <a name="getDb" id="getDb"></a>
 ### `getDb()`
 
-Since Piwik Matomo
+Since Matomo Matomo
 
 #### Signature
 
 
-- *Returns:*  [`Db`](../../../Piwik/Db.md)|`Piwik\Plugins\Live\Db\AdapterInterface` &mdash;
+- *Returns:*  [`Db`](../../../Piwik/Db.md)|`Piwik\Db\AdapterInterface` &mdash;
     
 

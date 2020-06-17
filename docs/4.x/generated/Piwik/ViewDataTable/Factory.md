@@ -53,9 +53,7 @@ The class defines the following methods:
 <a name="build" id="build"></a>
 ### `build()`
 
-Creates a [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance by ID.
-
-If the **viewDataTable** query parameter is set,
+Creates a [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instance by ID. If the **viewDataTable** query parameter is set,
 this parameter's value is used as the ID.
 
 See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the visualizations that are packaged with Piwik.
@@ -65,9 +63,9 @@ See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) to read about the
 -  It accepts the following parameter(s):
     - `$defaultType` (`string`|`null`) &mdash;
        A ViewDataTable ID representing the default ViewDataTable type to use. If the **viewDataTable** query parameter is not found, this value is used as the ID of the ViewDataTable to create. If a visualization type is configured for the report being displayed, it is used instead of the default type. (See [ViewDataTable.getDefaultType](/api-reference/events#viewdatatablegetdefaulttype)). If nothing is configured for the report and `null` is supplied for this argument, **table** is used.
-    - `$apiAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
+    - `$apiAction` (`bool`|`false`|`string`) &mdash;
        The API method for the report that will be displayed, eg, `'DevicesDetection.getBrowsers'`.
-    - `$controllerAction` (`bool`|`Piwik\ViewDataTable\false`|`string`) &mdash;
+    - `$controllerAction` (`bool`|`false`|`string`) &mdash;
        The controller name and action dedicated to displaying the report. This action is used when reloading reports or changing the report visualization. Defaulted to `$apiAction` if `false` is supplied.
     - `$forceDefault` (`bool`) &mdash;
        If true, then the visualization type that was configured for the report will be ignored and `$defaultType` will be used as the default.

@@ -29,9 +29,7 @@ The class defines the following methods:
 <a name="getNonce" id="getNonce"></a>
 ### `getNonce()`
 
-Returns an existing nonce by ID.
-
-If none exists, a new nonce will be generated.
+Returns an existing nonce by ID. If none exists, a new nonce will be generated.
 
 #### Signature
 

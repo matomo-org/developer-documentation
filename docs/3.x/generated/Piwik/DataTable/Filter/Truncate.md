@@ -5,8 +5,6 @@ Truncate
 
 Truncates a DataTable by merging all rows after a certain index into a new summary row.
 
-If the count of rows is less than the index, nothing happens.
-
 The [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummaryRowLabel) filter will be queued after the table is truncated.
 
 ### Examples
@@ -39,7 +37,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The table that will be filtered eventually.
+      
     - `$truncateAfter` (`int`) &mdash;
        The row index to truncate at. All rows passed this index will be removed.
     - `$labelSummaryRow` (`string`) &mdash;
@@ -66,9 +64,7 @@ Executes the filter, see [Truncate](/api-reference/Piwik/DataTable/Filter/Trunca
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

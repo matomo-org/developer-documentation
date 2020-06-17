@@ -5,8 +5,6 @@ BaseFilter
 
 A filter is set of logic that manipulates a DataTable.
 
-Existing filters do things like,
-
 - add/remove rows
 - change column values (change string to lowercase, truncate, etc.)
 - add/remove columns or metadata (compute percentage values, add an 'icon' metadata based on the label, etc.)
@@ -58,9 +56,7 @@ Manipulates a DataTable in some way.
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

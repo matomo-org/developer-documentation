@@ -52,7 +52,7 @@ Removes one or more metrics from the metrics list.
 -  It accepts the following parameter(s):
     - `$metricCategory` (`string`) &mdash;
        The metric category id. Can be a translation token eg 'General_Visits' see Metric::getCategory().
-    - `$metricName` (`string`|`Piwik\Columns\false`) &mdash;
+    - `$metricName` (`string`|`false`) &mdash;
        The name of the metric to remove eg 'nb_visits'. If not supplied, all metrics within that category will be removed.
 - It does not return anything.
 

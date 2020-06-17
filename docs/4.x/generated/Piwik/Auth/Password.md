@@ -11,7 +11,7 @@ Methods
 The class defines the following methods:
 
 - [`hash()`](#hash) &mdash; Hashes a password with the configured algorithm.
-- [`info()`](#info) &mdash; Returns information about a hashed password (algo, options, ...).
+- [`info()`](#info) &mdash; Returns information about a hashed password (algo, options, .
 - [`needsRehash()`](#needsrehash) &mdash; Rehashes a user's password if necessary.
 - [`verify()`](#verify) &mdash; Verifies a user's password against the provided hash.
 
@@ -32,7 +32,9 @@ Hashes a password with the configured algorithm.
 <a name="info" id="info"></a>
 ### `info()`
 
-Returns information about a hashed password (algo, options, ...).
+Returns information about a hashed password (algo, options, .
+
+..).
 
 Can be used to verify whether a string is compatible with password_hash().
 

@@ -5,9 +5,6 @@ AddSegmentBySegmentValue
 
 Converts for each row of a DataTable a segmentValue to a segment (expression).
 
-The name of the segment
-is automatically detected based on the given report.
-
 **Basic usage example**
 
     $dataTable->filter('AddSegmentBySegmentValue', array($reportInstance));
@@ -31,7 +28,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-    - `$report` (`Piwik\DataTable\Filter\$report`) &mdash;
+    - `$report`
       
 
 <a name="filter" id="filter"></a>
@@ -45,17 +42,13 @@ See [AddSegmentBySegmentValue](/api-reference/Piwik/DataTable/Filter/AddSegmentB
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-
-- *Returns:*  `int` &mdash;
-    The number of deleted rows.
+- It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

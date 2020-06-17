@@ -73,7 +73,8 @@ The class defines the following methods:
 <a name="getParams" id="getParams"></a>
 ### `getParams()`
 
-Returns the Parameters object containing the site, period and segment we're archiving data for.
+Returns the Parameters object containing the site, period and segment we're archiving
+data for.
 
 #### Signature
 
@@ -83,7 +84,8 @@ Returns the Parameters object containing the site, period and segment we're arch
 <a name="getLogAggregator" id="getLogAggregator"></a>
 ### `getLogAggregator()`
 
-Returns a `[LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` instance for the site, period and segment this ArchiveProcessor will insert archive data for.
+Returns a `[LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` instance for the site, period and segment this
+ArchiveProcessor will insert archive data for.
 
 #### Signature
 
@@ -93,7 +95,8 @@ Returns a `[LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator)` insta
 <a name="aggregateDataTableRecords" id="aggregateDataTableRecords"></a>
 ### `aggregateDataTableRecords()`
 
-Sums records for every subperiod of the current period and inserts the result as the record for this period.
+Sums records for every subperiod of the current period and inserts the result as the record
+for this period.
 
 DataTables are summed recursively so subtables will be summed as well.
 
@@ -116,13 +119,22 @@ DataTables are summed recursively so subtables will be summed as well.
        if set to true, will calculate the recursive rows count for all record names which makes it slower. If you only need it for some records pass an array of recordNames that defines for which ones you need a recursive row count.
 
 - *Returns:*  `array` &mdash;
-    Returns the row counts of each aggregated report before truncation, eg, array( 'report1' => array('level0' => $report1->getRowsCount, 'recursive' => $report1->getRowsCountRecursive()), 'report2' => array('level0' => $report2->getRowsCount, 'recursive' => $report2->getRowsCountRecursive()), ... )
+    Returns the row counts of each aggregated report before truncation, eg,
+
+                  array(
+                      'report1' => array('level0' => $report1->getRowsCount,
+                                         'recursive' => $report1->getRowsCountRecursive()),
+                      'report2' => array('level0' => $report2->getRowsCount,
+                                         'recursive' => $report2->getRowsCountRecursive()),
+                      ...
+                  )
 
 <a name="aggregatenumericmetrics" id="aggregatenumericmetrics"></a>
 <a name="aggregateNumericMetrics" id="aggregateNumericMetrics"></a>
 ### `aggregateNumericMetrics()`
 
-Aggregates one or more metrics for every subperiod of the current period and inserts the results as metrics for the current period.
+Aggregates one or more metrics for every subperiod of the current period and inserts the results
+as metrics for the current period.
 
 #### Signature
 
@@ -133,13 +145,24 @@ Aggregates one or more metrics for every subperiod of the current period and ins
        The operation to apply to the metric. Either `'sum'`, `'max'` or `'min'`.
 
 - *Returns:*  `array`|`int` &mdash;
-    Returns the array of aggregate values. If only one metric was aggregated, the aggregate value will be returned as is, not in an array. For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`, array( 'nb_visits' => 3040, 'nb_hits' => 405 ) could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`, then `3040` would be returned.
+    Returns the array of aggregate values. If only one metric was aggregated,
+                  the aggregate value will be returned as is, not in an array.
+                  For example, if `array('nb_visits', 'nb_hits')` is supplied for `$columns`,
+
+                      array(
+                          'nb_visits' => 3040,
+                          'nb_hits' => 405
+                      )
+
+                  could be returned. If `array('nb_visits')` or `'nb_visits'` is used for `$columns`,
+                  then `3040` would be returned.
 
 <a name="insertnumericrecords" id="insertnumericrecords"></a>
 <a name="insertNumericRecords" id="insertNumericRecords"></a>
 ### `insertNumericRecords()`
 
-Caches multiple numeric records in the archive for this processor's site, period and segment.
+Caches multiple numeric records in the archive for this processor's site, period
+and segment.
 
 #### Signature
 
@@ -152,7 +175,8 @@ Caches multiple numeric records in the archive for this processor's site, period
 <a name="insertNumericRecord" id="insertNumericRecord"></a>
 ### `insertNumericRecord()`
 
-Caches a single numeric record in the archive for this processor's site, period and segment.
+Caches a single numeric record in the archive for this processor's site, period and
+segment.
 
 Numeric values are not inserted if they equal `0`.
 
@@ -169,7 +193,8 @@ Numeric values are not inserted if they equal `0`.
 <a name="insertBlobRecord" id="insertBlobRecord"></a>
 ### `insertBlobRecord()`
 
-Caches one or more blob records in the archive for this processor's site, period and segment.
+Caches one or more blob records in the archive for this processor's site, period
+and segment.
 
 #### Signature
 

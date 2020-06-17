@@ -3,13 +3,9 @@
 Report
 ======
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
 Defines a new report.
-
-This class contains all information a report defines except the corresponding API method which
-needs to be defined in the 'API.php'. You can define the name of the report, a documentation, the supported metrics,
-how the report should be displayed, which features the report has (eg search) and much more.
 
 You can create a new report using the console command `./console generate:report`. The generated report will guide
 you through the creation of a report.
@@ -37,9 +33,7 @@ This class defines the following properties:
 <a name="name" id="name"></a>
 ### `$name`
 
-The translated name of the report.
-
-The name will be used for instance in the mobile app or if another report
+The translated name of the report. The name will be used for instance in the mobile app or if another report
 defines this report as a related report.
 
 #### Signature
@@ -70,9 +64,9 @@ The translation key of the subcategory the report belongs to.
 <a name="metrics" id="metrics"></a>
 ### `$metrics`
 
-An array of supported metrics.
+An array of supported metrics. Eg `array('nb_visits', 'nb_actions', .
 
-Eg `array('nb_visits', 'nb_actions', ...)`. Defaults to the platform default
+..)`. Defaults to the platform default
 metrics see Metrics::getDefaultProcessedMetrics().
 
 #### Signature
@@ -83,11 +77,10 @@ metrics see Metrics::getDefaultProcessedMetrics().
 <a name="processedMetrics" id="processedMetrics"></a>
 ### `$processedMetrics`
 
-The processed metrics this report supports, eg `avg_time_on_site` or `nb_actions_per_visit`.
-
-Defaults to the
+The processed metrics this report supports, eg `avg_time_on_site` or `nb_actions_per_visit`. Defaults to the
 platform default processed metrics, see Metrics::getDefaultProcessedMetrics(). Set it to boolean `false`
 if your report does not support any processed metrics at all. Otherwise an array of metric names.
+
 Eg `array('avg_time_on_site', 'nb_actions_per_visit', ...)`
 
 #### Signature
@@ -98,9 +91,7 @@ Eg `array('avg_time_on_site', 'nb_actions_per_visit', ...)`
 <a name="hasGoalMetrics" id="hasGoalMetrics"></a>
 ### `$hasGoalMetrics`
 
-Set this property to true in case your report supports goal metrics.
-
-In this case, the goal metrics will be
+Set this property to true in case your report supports goal metrics. In this case, the goal metrics will be
 automatically added to the report metadata and the report will be displayed in the Goals UI.
 
 #### Signature
@@ -123,7 +114,8 @@ In this case, flattener won't be applied even if parameter is provided in a requ
 <a name="constantRowsCount" id="constantRowsCount"></a>
 ### `$constantRowsCount`
 
-Set it to boolean `true` if your report always returns a constant count of rows, for instance always 24 rows for 1-24 hours.
+Set it to boolean `true` if your report always returns a constant count of rows, for instance always 24 rows
+for 1-24 hours.
 
 #### Signature
 
@@ -143,9 +135,7 @@ Set it to boolean `true` if this report is a subtable report and won't be used a
 <a name="parameters" id="parameters"></a>
 ### `$parameters`
 
-Some reports may require additional URL parameters that need to be sent when a report is requested.
-
-For instance
+Some reports may require additional URL parameters that need to be sent when a report is requested. For instance
 a "goal" report might need a "goalId": `array('idgoal' => 5)`.
 
 #### Signature
@@ -158,9 +148,7 @@ a "goal" report might need a "goalId": `array('idgoal' => 5)`.
 <a name="actionToLoadSubTables" id="actionToLoadSubTables"></a>
 ### `$actionToLoadSubTables`
 
-The name of the API action to load a subtable if supported.
-
-The action has to be of the same module. For instance
+The name of the API action to load a subtable if supported. The action has to be of the same module. For instance
 a report "getKeywords" might support a subtable "getSearchEngines" which shows how often a keyword was searched
 via a specific search engine.
 
@@ -172,9 +160,7 @@ via a specific search engine.
 <a name="order" id="order"></a>
 ### `$order`
 
-The order of the report.
-
-Depending on the order the report gets a different position in the list of widgets,
+The order of the report. Depending on the order the report gets a different position in the list of widgets,
 the menu and the mobile app.
 
 #### Signature
@@ -230,9 +216,7 @@ The class defines the following methods:
 <a name="init" id="init"></a>
 ### `init()`
 
-Here you can do any instance initialization and overwrite any default values.
-
-You should avoid doing time
+Here you can do any instance initialization and overwrite any default values. You should avoid doing time
 consuming initialization here and if possible delay as long as possible. An instance of this report will be
 created in most page requests.
 
@@ -244,9 +228,7 @@ created in most page requests.
 <a name="isEnabled" id="isEnabled"></a>
 ### `isEnabled()`
 
-Defines whether a report is enabled or not.
-
-For instance some reports might not be available to every user or
+Defines whether a report is enabled or not. For instance some reports might not be available to every user or
 might depend on a setting (such as Ecommerce) of a site. In such a case you can perform any checks and then
 return `true` or `false`. If your report is only available to users having super user access you can do the
 following: `return Piwik::hasUserSuperUserAccess();`
@@ -259,11 +241,10 @@ following: `return Piwik::hasUserSuperUserAccess();`
 <a name="checkIsEnabled" id="checkIsEnabled"></a>
 ### `checkIsEnabled()`
 
-This method checks whether the report is available, see {@isEnabled()}.
-
-If not, it triggers an exception
+This method checks whether the report is available, see {@isEnabled()}. If not, it triggers an exception
 containing a message that will be displayed to the user. You can overwrite this message in case you want to
 customize the error message. Eg.
+
 ```
 if (!$this->isEnabled()) {
 throw new Exception('Setting XYZ is not enabled or the user has not enough permission');
@@ -280,9 +261,7 @@ throw new Exception('Setting XYZ is not enabled or the user has not enough permi
 <a name="getDefaultTypeViewDataTable" id="getDefaultTypeViewDataTable"></a>
 ### `getDefaultTypeViewDataTable()`
 
-Returns the id of the default visualization for this report.
-
-Eg 'table' or 'pie'. Defaults to the HTML table.
+Returns the id of the default visualization for this report. Eg 'table' or 'pie'. Defaults to the HTML table.
 
 #### Signature
 
@@ -292,9 +271,8 @@ Eg 'table' or 'pie'. Defaults to the HTML table.
 <a name="alwaysUseDefaultViewDataTable" id="alwaysUseDefaultViewDataTable"></a>
 ### `alwaysUseDefaultViewDataTable()`
 
-Returns if the default viewDataTable type should always be used.
+Returns if the default viewDataTable type should always be used. e.g. the type won't be changeable through config or url params.
 
-e.g. the type won't be changeable through config or url params.
 Defaults to false
 
 #### Signature
@@ -305,9 +283,7 @@ Defaults to false
 <a name="configureView" id="configureView"></a>
 ### `configureView()`
 
-Here you can configure how your report should be displayed and which capabilities your report has.
-
-For instance
+Here you can configure how your report should be displayed and which capabilities your report has. For instance
 whether your report supports a "search" or not. EG `$view->config->show_search = false`. You can also change the
 default request config. For instance you can change how many rows are displayed by default:
 `$view->requestConfig->filter_limit = 10;`. See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) for more information.
@@ -323,9 +299,8 @@ default request config. For instance you can change how many rows are displayed 
 <a name="render" id="render"></a>
 ### `render()`
 
-Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and [getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable).
-
-If you want to customize the render process or just render any custom view
+Renders a report depending on the configured ViewDataTable see [configureView()](/api-reference/Piwik/Plugin/Report#configureview) and
+[getDefaultTypeViewDataTable()](/api-reference/Piwik/Plugin/Report#getdefaulttypeviewdatatable). If you want to customize the render process or just render any custom view
 you can overwrite this method.
 
 #### Signature
@@ -348,9 +323,7 @@ Processing a uniqueId for each report, can be used by UIs as a key to match a gi
 <a name="configureWidgets" id="configureWidgets"></a>
 ### `configureWidgets()`
 
-lets you add any amount of widgets for this report.
-
-If a report defines a [$categoryId](/api-reference/Piwik/Plugin/Report#$categoryid) and a
+lets you add any amount of widgets for this report. If a report defines a [$categoryId](/api-reference/Piwik/Plugin/Report#$categoryid) and a
 [$subcategoryId](/api-reference/Piwik/Plugin/Report#$subcategoryid) a widget will be generated automatically.
 
 Example to add a widget manually by overwriting this method in your report:
@@ -377,9 +350,8 @@ $widgetsList->addToContainerWidget($containerId = 'Products', $factory->createWi
 <a name="getMetrics" id="getMetrics"></a>
 ### `getMetrics()`
 
-Returns an array of supported metrics and their corresponding translations.
+Returns an array of supported metrics and their corresponding translations. Eg `array('nb_visits' => 'Visits')`.
 
-Eg `array('nb_visits' => 'Visits')`.
 By default the given [$metrics](/api-reference/Piwik/Plugin/Report#$metrics) are used and their corresponding translations are looked up automatically.
 If a metric is not translated, you should add the default metric translation for this metric using
 the [Metrics.getDefaultMetricTranslations](/api-reference/events#metricsgetdefaultmetrictranslations) event. If you want to overwrite any default metric translation
@@ -394,7 +366,8 @@ custom metric translations.
 <a name="getMetricsRequiredForReport" id="getMetricsRequiredForReport"></a>
 ### `getMetricsRequiredForReport()`
 
-Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
+Returns the list of metrics required at minimum for a report factoring in the columns requested by
+the report requester.
 
 This will return all the metrics requested (or all the metrics in the report if nothing is requested)
 **plus** the metrics required to calculate the requested processed metrics.
@@ -414,9 +387,7 @@ This method should be used in **Plugin.get** API methods.
 <a name="getProcessedMetrics" id="getProcessedMetrics"></a>
 ### `getProcessedMetrics()`
 
-Returns an array of supported processed metrics and their corresponding translations.
-
-Eg
+Returns an array of supported processed metrics and their corresponding translations. Eg
 `array('nb_visits' => 'Visits')`. By default the given [$processedMetrics](/api-reference/Piwik/Plugin/Report#$processedmetrics) are used and their
 corresponding translations are looked up automatically. If a metric is not translated, you should add the
 default metric translation for this metric using the [Metrics.getDefaultMetricTranslations](/api-reference/events#metricsgetdefaultmetrictranslations) event. If you
@@ -452,16 +423,17 @@ in the HTML Table reporting visualization.
 
 
 - *Returns:*  `string[]` &mdash;
-    metricId => metricColumn, if the report has only column names and no IDs, it should return metricColumn => metricColumn, eg array('13' => 'nb_pageviews') or array('mymetric' => 'mymetric')
+    metricId => metricColumn, if the report has only column names and no IDs, it should return
+                  metricColumn => metricColumn, eg array('13' => 'nb_pageviews') or array('mymetric' => 'mymetric')
 
 <a name="getmetricsdocumentation" id="getmetricsdocumentation"></a>
 <a name="getMetricsDocumentation" id="getMetricsDocumentation"></a>
 ### `getMetricsDocumentation()`
 
-Returns an array of metric documentations and their corresponding translations.
+Returns an array of metric documentations and their corresponding translations. Eg
+`array('nb_visits' => 'If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after.
 
-Eg
-`array('nb_visits' => 'If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after...')`.
+..')`.
 By default the given [$metrics](/api-reference/Piwik/Plugin/Report#$metrics) are used and their corresponding translations are looked up automatically.
 If there is a metric documentation not found, you should add the default metric documentation translation for
 this metric using the [Metrics.getDefaultMetricDocumentationTranslations](/api-reference/events#metricsgetdefaultmetricdocumentationtranslations) event. If you want to overwrite
@@ -476,9 +448,8 @@ translations and overwrite any custom metric translations.
 <a name="configureReportMetadata" id="configureReportMetadata"></a>
 ### `configureReportMetadata()`
 
-If the report is enabled the report metadata for this report will be built and added to the list of available reports.
-
-Overwrite this method and leave it empty in case you do not want your report to be added to the report
+If the report is enabled the report metadata for this report will be built and added to the list of available
+reports. Overwrite this method and leave it empty in case you do not want your report to be added to the report
 metadata. In this case your report won't be visible for instance in the mobile app and scheduled reports
 generator. We recommend to change this behavior only if you are familiar with the Piwik core. `$infos` contains
 the current requested date, period and site.
@@ -486,9 +457,9 @@ the current requested date, period and site.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$availableReports` (`Piwik\Plugin\$availableReports`) &mdash;
+    - `$availableReports`
       
-    - `$infos` (`Piwik\Plugin\$infos`) &mdash;
+    - `$infos`
       
 - It does not return anything.
 
@@ -533,9 +504,7 @@ public function getSecondarySortColumnCallback()
 <a name="getRelatedReports" id="getRelatedReports"></a>
 ### `getRelatedReports()`
 
-Get the list of related reports if there are any.
-
-They will be displayed for instance below a report as a
+Get the list of related reports if there are any. They will be displayed for instance below a report as a
 recommended related report.
 
 #### Signature
@@ -560,7 +529,8 @@ Returns the Dimension instance of this report's subtable report.
 
 
 - *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
-    The subtable report's dimension or null if there is subtable report or no dimension for the subtable report.
+    The subtable report's dimension or null if there is subtable report or
+                       no dimension for the subtable report.
 
 <a name="getthirdleveltabledimension" id="getthirdleveltabledimension"></a>
 <a name="getThirdLeveltableDimension" id="getThirdLeveltableDimension"></a>
@@ -572,7 +542,8 @@ Returns the Dimension instance of the subtable report of this report's subtable 
 
 
 - *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
-    The subtable report's dimension or null if there is no subtable report or no dimension for the subtable report.
+    The subtable report's dimension or null if there is no subtable report or
+                       no dimension for the subtable report.
 
 <a name="issubtablereport" id="issubtablereport"></a>
 <a name="isSubtableReport" id="isSubtableReport"></a>
@@ -660,9 +631,8 @@ Includes ProcessedMetrics and Metrics.
 <a name="getProcessedMetricsForTable" id="getProcessedMetricsForTable"></a>
 ### `getProcessedMetricsForTable()`
 
-Returns the ProcessedMetrics that should be computed and formatted for a DataTable of a certain report.
-
-The ProcessedMetrics returned are those specified by the Report metadata
+Returns the ProcessedMetrics that should be computed and formatted for a DataTable of a
+certain report. The ProcessedMetrics returned are those specified by the Report metadata
 as well as the DataTable metadata.
 
 #### Signature

@@ -105,7 +105,8 @@ method.
 <a name="getProcessor" id="getProcessor"></a>
 ### `getProcessor()`
 
-Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance that can be used to insert archive data for the period, segment and site we are archiving data for.
+Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance that can be used to insert archive data for
+the period, segment and site we are archiving data for.
 
 #### Signature
 
@@ -115,7 +116,8 @@ Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance tha
 <a name="getLogAggregator" id="getLogAggregator"></a>
 ### `getLogAggregator()`
 
-Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows for this period, segment and site.
+Returns a [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) instance that can be used to aggregate log table rows
+for this period, segment and site.
 
 #### Signature
 
@@ -143,7 +145,9 @@ Whether this Archiver should be used or not.
 <a name="shouldRunEvenWhenNoVisits" id="shouldRunEvenWhenNoVisits"></a>
 ### `shouldRunEvenWhenNoVisits()`
 
-By overwriting this method and returning true, a plugin archiver can force the archiving to run even when there was no visit for the website/date/period/segment combination (by default, archivers are skipped when there is no visit).
+By overwriting this method and returning true, a plugin archiver can force the archiving to run even when there
+was no visit for the website/date/period/segment combination
+(by default, archivers are skipped when there is no visit).
 
 #### Signature
 

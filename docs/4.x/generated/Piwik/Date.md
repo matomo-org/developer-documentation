@@ -5,9 +5,6 @@ Date
 
 Utility class that wraps date/time related PHP functions.
 
-Using this class can
-be easier than using `date`, `time`, `date_default_timezone_set`, etc.
-
 ### Performance concerns
 
 The helper methods in this class are instance methods and thus `Date` instances
@@ -92,9 +89,7 @@ The class defines the following methods:
 <a name="factory" id="factory"></a>
 ### `factory()`
 
-Creates a new Date instance using a string datetime value.
-
-The timezone of the Date
+Creates a new Date instance using a string datetime value. The timezone of the Date
 result will be in UTC.
 
 #### Signature
@@ -106,7 +101,8 @@ result will be in UTC.
        The timezone of the result. If specified, `$dateString` will be converted from UTC to this timezone before being used in the Date return value.
 - It returns a [`Date`](../Piwik/Date.md) value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before Tue, 06 Aug 1991.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before
+                  Tue, 06 Aug 1991.
 
 <a name="getdatetime" id="getdatetime"></a>
 <a name="getDatetime" id="getDatetime"></a>
@@ -142,9 +138,7 @@ Returns the current hour in UTC timezone.
 <a name="getStartOfDay" id="getStartOfDay"></a>
 ### `getStartOfDay()`
 
-Returns the start of the day of the current timestamp in UTC.
-
-For example,
+Returns the start of the day of the current timestamp in UTC. For example,
 if the current timestamp is `'2007-07-24 14:04:24'` in UTC, the result will
 be `'2007-07-24'` as a Date.
 
@@ -164,9 +158,7 @@ be `'2007-07-24'` as a Date.
 <a name="getEndOfDay" id="getEndOfDay"></a>
 ### `getEndOfDay()`
 
-Returns the end of the day of the current timestamp in UTC.
-
-For example,
+Returns the end of the day of the current timestamp in UTC. For example,
 if the current timestamp is `'2007-07-24 14:03:24'` in UTC, the result will
 be `'2007-07-24 23:59:59'`.
 
@@ -178,7 +170,8 @@ be `'2007-07-24 23:59:59'`.
 <a name="setTimezone" id="setTimezone"></a>
 ### `setTimezone()`
 
-Returns a new date object with the same timestamp as `$this` but with a new timezone.
+Returns a new date object with the same timestamp as `$this` but with a new
+timezone.
 
 See [getTimestamp()](/api-reference/Piwik/Date#gettimestamp) to see how the timezone is used.
 
@@ -248,7 +241,8 @@ Returns the Unix timestamp of the date in UTC.
 <a name="getTimestamp" id="getTimestamp"></a>
 ### `getTimestamp()`
 
-Returns the unix timestamp of the date in UTC, converted from the current timestamp timezone.
+Returns the unix timestamp of the date in UTC, converted from the current
+timestamp timezone.
 
 #### Signature
 
@@ -294,9 +288,7 @@ Returns `true` if the current year is a leap year, false otherwise.
 <a name="toString" id="toString"></a>
 ### `toString()`
 
-Converts this date to the requested string format.
-
-See [http://php.net/date](http://php.net/date)
+Converts this date to the requested string format. See [http://php.net/date](http://php.net/date)
 for the list of format strings.
 
 #### Signature
@@ -331,7 +323,8 @@ Performs three-way comparison of the week of the current date against the given 
       
 
 - *Returns:*  `int` &mdash;
-    Returns `0` if the current week is equal to `$date`'s, `-1` if the current week is earlier or `1` if the current week is later.
+    Returns `0` if the current week is equal to `$date`'s, `-1` if the current week is
+            earlier or `1` if the current week is later.
 
 <a name="comparemonth" id="comparemonth"></a>
 <a name="compareMonth" id="compareMonth"></a>
@@ -346,7 +339,8 @@ Performs three-way comparison of the month of the current date against the given
        Month to compare
 
 - *Returns:*  `int` &mdash;
-    Returns `0` if the current month is equal to `$date`'s, `-1` if the current month is earlier or `1` if the current month is later.
+    Returns `0` if the current month is equal to `$date`'s, `-1` if the current month is
+            earlier or `1` if the current month is later.
 
 <a name="compareyear" id="compareyear"></a>
 <a name="compareYear" id="compareYear"></a>
@@ -361,7 +355,8 @@ Performs three-way comparison of the month of the current date against the given
        Year to compare
 
 - *Returns:*  `int` &mdash;
-    Returns `0` if the current year is equal to `$date`'s, `-1` if the current year is earlier or `1` if the current year is later.
+    Returns `0` if the current year is equal to `$date`'s, `-1` if the current year is
+            earlier or `1` if the current year is later.
 
 <a name="istoday" id="istoday"></a>
 <a name="isToday" id="isToday"></a>
@@ -427,7 +422,8 @@ Returns a date object set to yesterday with the current time of day in UTC.
 <a name="setTime" id="setTime"></a>
 ### `setTime()`
 
-Returns a new Date instance with `$this` date's day and the specified new time of day.
+Returns a new Date instance with `$this` date's day and the specified new
+time of day.
 
 #### Signature
 
@@ -442,7 +438,8 @@ Returns a new Date instance with `$this` date's day and the specified new time o
 <a name="setDay" id="setDay"></a>
 ### `setDay()`
 
-Returns a new Date instance with `$this` date's time of day and the day specified by `$day`.
+Returns a new Date instance with `$this` date's time of day and the day specified
+by `$day`.
 
 #### Signature
 
@@ -455,7 +452,8 @@ Returns a new Date instance with `$this` date's time of day and the day specifie
 <a name="setYear" id="setYear"></a>
 ### `setYear()`
 
-Returns a new Date instance with `$this` date's time of day, month and day, but with a new year (specified by `$year`).
+Returns a new Date instance with `$this` date's time of day, month and day, but with
+a new year (specified by `$year`).
 
 #### Signature
 
@@ -569,9 +567,7 @@ Adds `$n` hours to `$this` date and returns the result in a new Date.
 <a name="addHourTo" id="addHourTo"></a>
 ### `addHourTo()`
 
-Adds N number of hours to a UNIX timestamp and returns the result.
-
-Using
+Adds N number of hours to a UNIX timestamp and returns the result. Using
 this static function instead of [addHour()](/api-reference/Piwik/Date#addhour) will be faster since a
 Date instance does not have to be created.
 

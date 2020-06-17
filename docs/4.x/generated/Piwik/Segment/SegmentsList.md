@@ -51,7 +51,7 @@ Removes one or more segments from the segments list.
 -  It accepts the following parameter(s):
     - `$segmentCategory` (`string`) &mdash;
        The segment category id. Can be a translation token eg 'General_Visits' see Segment::getCategoryId().
-    - `$segmentExpression` (`string`|`Piwik\Segment\false`) &mdash;
+    - `$segmentExpression` (`string`|`false`) &mdash;
        The segment expression name to remove eg 'pageUrl'. If not supplied, all segments within that category will be removed.
 - It does not return anything.
 

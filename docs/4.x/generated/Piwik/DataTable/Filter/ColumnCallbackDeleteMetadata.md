@@ -29,7 +29,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable instance that will be filtered.
+      
     - `$metadataToRemove` (`string`) &mdash;
        The name of the metadata field that will be removed from each row.
 
@@ -50,9 +50,7 @@ See [ColumnCallbackDeleteMetadata](/api-reference/Piwik/DataTable/Filter/ColumnC
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

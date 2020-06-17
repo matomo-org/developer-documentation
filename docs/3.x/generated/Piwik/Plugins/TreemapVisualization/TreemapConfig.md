@@ -141,7 +141,8 @@ unless other properties tell the view to exclude them.
 <a name="show_visualization_only" id="show_visualization_only"></a>
 ### `$show_visualization_only`
 
-Controls whether the buttons and UI controls around the visualization or shown or if just the visualization alone is shown.
+Controls whether the buttons and UI controls around the visualization or shown or
+if just the visualization alone is shown.
 
 #### Signature
 
@@ -188,7 +189,8 @@ of common metrics.
 <a name="show_exclude_low_population" id="show_exclude_low_population"></a>
 ### `$show_exclude_low_population`
 
-Controls whether the 'Exclude Low Population' option (visible in the popup that displays after clicking the 'cog' icon) is shown.
+Controls whether the 'Exclude Low Population' option (visible in the popup that displays after
+clicking the 'cog' icon) is shown.
 
 #### Signature
 
@@ -199,7 +201,8 @@ Controls whether the 'Exclude Low Population' option (visible in the popup that 
 <a name="show_flatten_table" id="show_flatten_table"></a>
 ### `$show_flatten_table`
 
-Whether to show the 'Flatten' option (visible in the popup that displays after clicking the 'cog' icon).
+Whether to show the 'Flatten' option (visible in the popup that displays after clicking the
+'cog' icon).
 
 #### Signature
 
@@ -210,7 +213,8 @@ Whether to show the 'Flatten' option (visible in the popup that displays after c
 <a name="show_pivot_by_subtable" id="show_pivot_by_subtable"></a>
 ### `$show_pivot_by_subtable`
 
-Whether to show the 'Pivot by subtable' option (visible in the popup that displays after clicking the 'cog' icon).
+Whether to show the 'Pivot by subtable' option (visible in the popup that displays after clicking
+the 'cog' icon).
 
 #### Signature
 
@@ -221,9 +225,7 @@ Whether to show the 'Pivot by subtable' option (visible in the popup that displa
 <a name="pivot_by_dimension" id="pivot_by_dimension"></a>
 ### `$pivot_by_dimension`
 
-The ID of the dimension to pivot by when the 'pivot by subtable' option is clicked.
-
-Defaults
+The ID of the dimension to pivot by when the 'pivot by subtable' option is clicked. Defaults
 to the subtable dimension of the report being displayed.
 
 #### Signature
@@ -235,9 +237,7 @@ to the subtable dimension of the report being displayed.
 <a name="pivot_by_column" id="pivot_by_column"></a>
 ### `$pivot_by_column`
 
-The column to display in pivot tables.
-
-Defaults to the first non-label column if not specified.
+The column to display in pivot tables. Defaults to the first non-label column if not specified.
 
 #### Signature
 
@@ -259,7 +259,8 @@ The human readable name of the pivot dimension.
 <a name="show_table" id="show_table"></a>
 ### `$show_table`
 
-Controls whether the footer icon that allows users to switch to the 'normal' DataTable view is shown.
+Controls whether the footer icon that allows users to switch to the 'normal' DataTable view
+is shown.
 
 #### Signature
 
@@ -303,9 +304,7 @@ Controls whether the row that contains all footer icons & the limit selector is 
 <a name="columns_to_display" id="columns_to_display"></a>
 ### `$columns_to_display`
 
-Array property that determines which columns will be shown.
-
-Columns not in this array
+Array property that determines which columns will be shown. Columns not in this array
 should not appear in ViewDataTable visualizations.
 
 Example: `array('label', 'nb_visits', 'nb_uniq_visitors')`
@@ -334,9 +333,7 @@ Controls whether graph and non core viewDataTable footer icons are shown or not.
 <a name="related_reports" id="related_reports"></a>
 ### `$related_reports`
 
-Related reports are listed below a datatable view.
-
-When clicked, the original report will
+Related reports are listed below a datatable view. When clicked, the original report will
 change to the clicked report and the list will change so the original report can be
 navigated back to.
 
@@ -349,7 +346,8 @@ navigated back to.
 <a name="related_reports_title" id="related_reports_title"></a>
 ### `$related_reports_title`
 
-"Related Reports" is displayed by default before listing the Related reports, The string can be changed.
+"Related Reports" is displayed by default before listing the Related reports,
+The string can be changed.
 
 #### Signature
 
@@ -360,9 +358,7 @@ navigated back to.
 <a name="title" id="title"></a>
 ### `$title`
 
-The report title.
-
-Used with related reports so report headings can be changed when switching
+The report title. Used with related reports so report headings can be changed when switching
 reports.
 
 This must be set if related reports are added.
@@ -376,9 +372,7 @@ This must be set if related reports are added.
 <a name="title_edit_entity_url" id="title_edit_entity_url"></a>
 ### `$title_edit_entity_url`
 
-If a URL is set, the title of the report will be clickable.
-
-Is supposed to be set for entities that can be
+If a URL is set, the title of the report will be clickable. Is supposed to be set for entities that can be
 configured (edited) such as goal. Eg when there is a goal report, and someone is allowed to edit the goal entity,
 a link is supposed to be with a URL to the edit goal form.
 
@@ -390,9 +384,7 @@ a link is supposed to be with a URL to the edit goal form.
 <a name="description" id="description"></a>
 ### `$description`
 
-The report description.
-
-eg like a goal description
+The report description. eg like a goal description
 
 #### Signature
 
@@ -435,9 +427,8 @@ URL linking to an online guide for this report (or plugin).
 <a name="custom_parameters" id="custom_parameters"></a>
 ### `$custom_parameters`
 
-Array property containing custom data to be saved in JSON in the data-params HTML attribute of a data table div.
-
-This data can be used by JavaScript DataTable classes.
+Array property containing custom data to be saved in JSON in the data-params HTML attribute
+of a data table div. This data can be used by JavaScript DataTable classes.
 
 e.g. array('typeReferrer' => ...)
 
@@ -452,7 +443,8 @@ It can then be accessed in the twig templates by clientSideParameters.typeReferr
 <a name="show_limit_control" id="show_limit_control"></a>
 ### `$show_limit_control`
 
-Controls whether the limit dropdown (which allows users to change the number of data shown) is always shown or not.
+Controls whether the limit dropdown (which allows users to change the number of data shown)
+is always shown or not.
 
 Normally shown only if pagination is enabled.
 
@@ -553,9 +545,7 @@ Controls whether the footer icon that allows users to view data as a tag cloud i
 <a name="show_as_content_block" id="show_as_content_block"></a>
 ### `$show_as_content_block`
 
-If enabled, shows the visualization as a content block.
-
-This is similar to wrapping your visualization
+If enabled, shows the visualization as a content block. This is similar to wrapping your visualization
 with a `<div piwik-content-block></div>`
 
 #### Signature
@@ -650,9 +640,7 @@ Row metadata name that contains the tooltip for the specific row.
 <a name="self_url" id="self_url"></a>
 ### `$self_url`
 
-The URL to the report the view is displaying.
-
-Modifying this means clicking back to this report
+The URL to the report the view is displaying. Modifying this means clicking back to this report
 from a Related Report will go to a different URL. Can be used to load an entire page instead
 of a single report when going back to the original report.
 
@@ -667,9 +655,7 @@ The URL used to request the report without generic filters.
 <a name="datatable_css_class" id="datatable_css_class"></a>
 ### `$datatable_css_class`
 
-CSS class to use in the output HTML div.
-
-This is added in addition to the visualization CSS
+CSS class to use in the output HTML div. This is added in addition to the visualization CSS
 class.
 
 #### Signature
@@ -681,9 +667,7 @@ class.
 <a name="datatable_js_type" id="datatable_js_type"></a>
 ### `$datatable_js_type`
 
-The JavaScript class to instantiate after the result HTML is obtained.
-
-This class handles all
+The JavaScript class to instantiate after the result HTML is obtained. This class handles all
 interactive behavior for the DataTable view.
 
 #### Signature
@@ -706,9 +690,7 @@ If true, searching through the DataTable will search through all subtables.
 <a name="y_axis_unit" id="y_axis_unit"></a>
 ### `$y_axis_unit`
 
-The unit of the displayed column.
-
-Valid if only one non-label column is displayed.
+The unit of the displayed column. Valid if only one non-label column is displayed.
 
 #### Signature
 
@@ -730,9 +712,7 @@ Controls whether to show the 'Export as Image' footer icon.
 <a name="filters" id="filters"></a>
 ### `$filters`
 
-Array of DataTable filters that should be run before displaying a DataTable.
-
-Elements
+Array of DataTable filters that should be run before displaying a DataTable. Elements
 of this array can either be a closure or an array with at most three elements, including:
 - the filter name (or a closure)
 - an array of filter parameters
@@ -765,9 +745,7 @@ By default, this is set to the controller action used to request the report.
 <a name="show_pagination_control" id="show_pagination_control"></a>
 ### `$show_pagination_control`
 
-Controls whether the 'prev'/'next' links are shown in the DataTable footer.
-
-These links
+Controls whether the 'prev'/'next' links are shown in the DataTable footer. These links
 change the 'filter_offset' query parameter, thus allowing pagination.
 
 #### Signature
@@ -821,7 +799,8 @@ Sets a limit for the maximum number of rows that can be exported.
 <a name="no_data_message" id="no_data_message"></a>
 ### `$no_data_message`
 
-Message to show if not data is available for the report Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set
+Message to show if not data is available for the report
+Defaults to `CoreHome_ThereIsNoDataForThisReport` if not set
 
 Attention: Message will be printed raw. Don't forget to escape where needed!
 
@@ -885,4 +864,180 @@ Disable comparison support for this specific usage of a ViewDataTable.
 #### Signature
 
 - Its type is not specified.
+
+
+Methods
+-------
+
+The class defines the following methods:
+
+- [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks display properties as client side properties. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`getProperties()`](#getproperties) &mdash; Returns array of all property values in this config object. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`removeColumnToDisplay()`](#removecolumntodisplay) Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`getPriorityFilters()`](#getpriorityfilters) Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`getPresentationFilters()`](#getpresentationfilters) Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`addRelatedReport()`](#addrelatedreport) &mdash; Adds a related report to the [$related_reports](/api-reference/Piwik/Plugins/TreemapVisualization/TreemapConfig#$related_reports) property. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`addRelatedReports()`](#addrelatedreports) &mdash; Adds several related reports to the [$related_reports](/api-reference/Piwik/Plugins/TreemapVisualization/TreemapConfig#$related_reports) property. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`addTranslation()`](#addtranslation) &mdash; Associates internationalized text with a metric. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`addTranslations()`](#addtranslations) &mdash; Associates multiple translations with metrics. Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+- [`disablePivotBySubtableIfTableHasNoSubtables()`](#disablepivotbysubtableiftablehasnosubtables) Inherited from [`Config`](../../../Piwik/ViewDataTable/Config.md)
+
+<a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
+
+Constructor.
+
+#### Signature
+
+
+<a name="addpropertiesthatshouldbeavailableclientside" id="addpropertiesthatshouldbeavailableclientside"></a>
+<a name="addPropertiesThatShouldBeAvailableClientSide" id="addPropertiesThatShouldBeAvailableClientSide"></a>
+### `addPropertiesThatShouldBeAvailableClientSide()`
+
+Marks display properties as client side properties. [Read this](#client-side-properties-desc)
+to learn more.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$propertyNames` (`array`) &mdash;
+       List of property names, eg, `array('show_limit_control', 'show_goals')`.
+- It does not return anything.
+
+<a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
+<a name="addPropertiesThatCanBeOverwrittenByQueryParams" id="addPropertiesThatCanBeOverwrittenByQueryParams"></a>
+### `addPropertiesThatCanBeOverwrittenByQueryParams()`
+
+Marks display properties as overridable. [Read this](#overridable-properties-desc) to
+learn more.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$propertyNames` (`array`) &mdash;
+       List of property names, eg, `array('show_limit_control', 'show_goals')`.
+- It does not return anything.
+
+<a name="getproperties" id="getproperties"></a>
+<a name="getProperties" id="getProperties"></a>
+### `getProperties()`
+
+Returns array of all property values in this config object. Property values are mapped
+by name.
+
+#### Signature
+
+
+- *Returns:*  `array` &mdash;
+    eg, `array('show_limit_control' => 0, 'show_goals' => 1, ...)`
+
+<a name="removecolumntodisplay" id="removecolumntodisplay"></a>
+<a name="removeColumnToDisplay" id="removeColumnToDisplay"></a>
+### `removeColumnToDisplay()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$columnToRemove`
+      
+- It does not return anything.
+
+<a name="getpriorityfilters" id="getpriorityfilters"></a>
+<a name="getPriorityFilters" id="getPriorityFilters"></a>
+### `getPriorityFilters()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="getpresentationfilters" id="getpresentationfilters"></a>
+<a name="getPresentationFilters" id="getPresentationFilters"></a>
+### `getPresentationFilters()`
+
+#### Signature
+
+- It does not return anything.
+
+<a name="addrelatedreport" id="addrelatedreport"></a>
+<a name="addRelatedReport" id="addRelatedReport"></a>
+### `addRelatedReport()`
+
+Adds a related report to the [$related_reports](/api-reference/Piwik/Plugins/TreemapVisualization/TreemapConfig#$related_reports) property. If the report
+references the one that is currently being displayed, it will not be added to the related
+report list.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$relatedReport` (`string`) &mdash;
+       The plugin and method of the report, eg, `'DevicesDetection.getBrowsers'`.
+    - `$title` (`string`) &mdash;
+       The report's display name, eg, `'Browsers'`.
+    - `$queryParams` (`array`) &mdash;
+       Any extra query parameters to set in releated report's URL, eg, `array('idGoal' => 'ecommerceOrder')`.
+- It does not return anything.
+
+<a name="addrelatedreports" id="addrelatedreports"></a>
+<a name="addRelatedReports" id="addRelatedReports"></a>
+### `addRelatedReports()`
+
+Adds several related reports to the [$related_reports](/api-reference/Piwik/Plugins/TreemapVisualization/TreemapConfig#$related_reports) property. If
+any of the reports references the report that is currently being displayed, it will not
+be added to the list. All other reports will still be added though.
+
+If you need to make sure the related report URL has some extra query parameters,
+use [addRelatedReport()](/api-reference/Piwik/Plugins/TreemapVisualization/TreemapConfig#addrelatedreport).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$relatedReports` (`array`) &mdash;
+       Array mapping report IDs with their internationalized display titles, eg, ``` array( 'DevicesDetection.getBrowsers' => 'Browsers', 'Resolution.getConfiguration' => 'Configurations' ) ```
+- It does not return anything.
+
+<a name="addtranslation" id="addtranslation"></a>
+<a name="addTranslation" id="addTranslation"></a>
+### `addTranslation()`
+
+Associates internationalized text with a metric. Overwrites existing mappings.
+
+See [$translations](/api-reference/Piwik/Plugins/TreemapVisualization/TreemapConfig#$translations).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$columnName` (`string`) &mdash;
+       The name of a column in the report data, eg, `'nb_visits'` or `'goal_1_nb_conversions'`.
+    - `$translation` (`string`) &mdash;
+       The internationalized text, eg, `'Visits'` or `"Conversions for 'My Goal'"`.
+- It does not return anything.
+
+<a name="addtranslations" id="addtranslations"></a>
+<a name="addTranslations" id="addTranslations"></a>
+### `addTranslations()`
+
+Associates multiple translations with metrics.
+
+See [$translations](/api-reference/Piwik/Plugins/TreemapVisualization/TreemapConfig#$translations) and [addTranslation()](/api-reference/Piwik/Plugins/TreemapVisualization/TreemapConfig#addtranslation).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$translations` (`array`) &mdash;
+       An array of column name => text mappings, eg, ``` array( 'nb_visits' => 'Visits', 'goal_1_nb_conversions' => "Conversions for 'My Goal'" ) ```
+- It does not return anything.
+
+<a name="disablepivotbysubtableiftablehasnosubtables" id="disablepivotbysubtableiftablehasnosubtables"></a>
+<a name="disablePivotBySubtableIfTableHasNoSubtables" id="disablePivotBySubtableIfTableHasNoSubtables"></a>
+### `disablePivotBySubtableIfTableHasNoSubtables()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
+- It does not return anything.
 

@@ -41,7 +41,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The table that will be eventually filtered.
+      
     - `$mappingToApply` (`array`|`null`) &mdash;
        The name mapping to apply. Must map old column names with new ones, eg, array('OLD_COLUMN_NAME' => 'NEW_COLUMN NAME', 'OLD_COLUMN_NAME2' => 'NEW_COLUMN NAME2') If null, [Metrics::$mappingFromIdToName](/api-reference/Piwik/Metrics#$mappingfromidtoname) is used.
 
@@ -62,9 +62,7 @@ See [ReplaceColumnNames](/api-reference/Piwik/DataTable/Filter/ReplaceColumnName
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

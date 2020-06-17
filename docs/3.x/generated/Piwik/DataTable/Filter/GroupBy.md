@@ -5,8 +5,6 @@ GroupBy
 
 DataTable filter that will group DataTable rows together based on the results of a reduce function.
 
-Rows with the same reduce result will be summed and merged.
-
 _NOTE: This filter should never be queued, it must be applied directly on a DataTable._
 
 **Basic usage example**
@@ -36,7 +34,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable to filter.
+      
     - `$groupByColumn` (`string`) &mdash;
        The column name to reduce.
     - `$reduceFunction` (`callable`) &mdash;
@@ -61,9 +59,7 @@ See [GroupBy](/api-reference/Piwik/DataTable/Filter/GroupBy).
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

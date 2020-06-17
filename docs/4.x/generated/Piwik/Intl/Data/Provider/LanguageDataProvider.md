@@ -23,7 +23,8 @@ Returns the list of valid language codes.
 
 
 - *Returns:*  `string[]` &mdash;
-    Array of 2 letter ISO code => language name (in english). E.g. `array('en' => 'English', 'ja' => 'Japanese')`.
+    Array of 2 letter ISO code => language name (in english).
+                 E.g. `array('en' => 'English', 'ja' => 'Japanese')`.
 
 <a name="getlanguagetocountrylist" id="getlanguagetocountrylist"></a>
 <a name="getLanguageToCountryList" id="getLanguageToCountryList"></a>
@@ -35,5 +36,6 @@ Returns the list of language to country mappings.
 
 
 - *Returns:*  `string[]` &mdash;
-    Array of 2 letter ISO language code => 2 letter ISO country code. E.g. `array('fr' => 'fr') // French => France`.
+    Array of 2 letter ISO language code => 2 letter ISO country code.
+                 E.g. `array('fr' => 'fr') // French => France`.
 

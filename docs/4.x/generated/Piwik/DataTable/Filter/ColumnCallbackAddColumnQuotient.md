@@ -32,7 +32,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable that will eventually be filtered.
+      
     - `$columnNameToAdd` (`string`) &mdash;
        The name of the column to add the quotient value to.
     - `$columnValueToRead` (`string`) &mdash;
@@ -63,9 +63,7 @@ See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/Colu
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

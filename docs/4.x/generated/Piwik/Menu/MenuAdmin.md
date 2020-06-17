@@ -13,6 +13,7 @@ Methods
 
 The class defines the following methods:
 
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../../Piwik/Singleton.md)
 - [`addItem()`](#additem) &mdash; Adds a new entry to the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
@@ -24,11 +25,22 @@ The class defines the following methods:
 - [`addMeasurableItem()`](#addmeasurableitem) &mdash; See add().
 - [`addSystemItem()`](#addsystemitem) &mdash; See add().
 
+<a name="getinstance" id="getinstance"></a>
+<a name="getInstance" id="getInstance"></a>
+### `getInstance()`
+
+Returns the singleton instance for the derived class. If the singleton instance
+has not been created, this method will create it.
+
+#### Signature
+
+- It returns a [`Singleton`](../../Piwik/Singleton.md) value.
+
 <a name="additem" id="additem"></a>
 <a name="addItem" id="addItem"></a>
 ### `addItem()`
 
-Since Piwik 2.7.0
+Since Matomo 2.7.0
 
 Adds a new entry to the menu.
 
@@ -75,13 +87,13 @@ Renames a single menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuOriginal` (`Piwik\Menu\$mainMenuOriginal`) &mdash;
+    - `$mainMenuOriginal`
       
-    - `$subMenuOriginal` (`Piwik\Menu\$subMenuOriginal`) &mdash;
+    - `$subMenuOriginal`
       
-    - `$mainMenuRenamed` (`Piwik\Menu\$mainMenuRenamed`) &mdash;
+    - `$mainMenuRenamed`
       
-    - `$subMenuRenamed` (`Piwik\Menu\$subMenuRenamed`) &mdash;
+    - `$subMenuRenamed`
       
 - It does not return anything.
 
@@ -94,11 +106,11 @@ Edits a URL of an existing menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuToEdit` (`Piwik\Menu\$mainMenuToEdit`) &mdash;
+    - `$mainMenuToEdit`
       
-    - `$subMenuToEdit` (`Piwik\Menu\$subMenuToEdit`) &mdash;
+    - `$subMenuToEdit`
       
-    - `$newUrl` (`Piwik\Menu\$newUrl`) &mdash;
+    - `$newUrl`
       
 - It does not return anything.
 
@@ -106,11 +118,9 @@ Edits a URL of an existing menu entry.
 <a name="addPersonalItem" id="addPersonalItem"></a>
 ### `addPersonalItem()`
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
-See add().
-
-Adds a new menu item to the manage section of the user menu.
+See add(). Adds a new menu item to the manage section of the user menu.
 
 #### Signature
 
@@ -129,11 +139,9 @@ Adds a new menu item to the manage section of the user menu.
 <a name="addDevelopmentItem" id="addDevelopmentItem"></a>
 ### `addDevelopmentItem()`
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
-See add().
-
-Adds a new menu item to the development section of the admin menu.
+See add(). Adds a new menu item to the development section of the admin menu.
 
 #### Signature
 
@@ -152,11 +160,9 @@ Adds a new menu item to the development section of the admin menu.
 <a name="addDiagnosticItem" id="addDiagnosticItem"></a>
 ### `addDiagnosticItem()`
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
-See add().
-
-Adds a new menu item to the diagnostic section of the admin menu.
+See add(). Adds a new menu item to the diagnostic section of the admin menu.
 
 #### Signature
 
@@ -175,11 +181,9 @@ Adds a new menu item to the diagnostic section of the admin menu.
 <a name="addPlatformItem" id="addPlatformItem"></a>
 ### `addPlatformItem()`
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
-See add().
-
-Adds a new menu item to the platform section of the admin menu.
+See add(). Adds a new menu item to the platform section of the admin menu.
 
 #### Signature
 
@@ -198,11 +202,9 @@ Adds a new menu item to the platform section of the admin menu.
 <a name="addMeasurableItem" id="addMeasurableItem"></a>
 ### `addMeasurableItem()`
 
-Since Piwik 3.0.0
+Since Matomo 3.0.0
 
-See add().
-
-Adds a new menu item to the measurable section of the admin menu.
+See add(). Adds a new menu item to the measurable section of the admin menu.
 
 #### Signature
 
@@ -221,11 +223,9 @@ Adds a new menu item to the measurable section of the admin menu.
 <a name="addSystemItem" id="addSystemItem"></a>
 ### `addSystemItem()`
 
-Since Piwik 3.0.0
+Since Matomo 3.0.0
 
-See add().
-
-Adds a new menu item to the manage section of the admin menu.
+See add(). Adds a new menu item to the manage section of the admin menu.
 
 #### Signature
 

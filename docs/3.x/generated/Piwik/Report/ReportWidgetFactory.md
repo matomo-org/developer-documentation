@@ -5,8 +5,7 @@ ReportWidgetFactory
 
 Report widget factory.
 
-This factory allows you to create widgets for a given report without having to re-specify
-redundant information like module, action, category, subcategory, order, ... When creating a widget from a report
+.. When creating a widget from a report
 these values will be automatically specified so that ideally `$factory->createWidget()` is all one has to do in
 order to create a new widget.
 
@@ -65,9 +64,8 @@ create the container.
 <a name="createCustomWidget" id="createCustomWidget"></a>
 ### `createCustomWidget()`
 
-Creates a custom widget that doesn't use a viewDataTable to render the report but instead a custom controller action.
-
-Make sure the specified `$action` exists in the plugin's controller. Otherwise
+Creates a custom widget that doesn't use a viewDataTable to render the report but instead a custom
+controller action. Make sure the specified `$action` exists in the plugin's controller. Otherwise
 behaves as [createWidget()](/api-reference/Piwik/Report/ReportWidgetFactory#createwidget).
 
 #### Signature

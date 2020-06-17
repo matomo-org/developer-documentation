@@ -81,9 +81,9 @@ etc.
 
 -  It accepts the following parameter(s):
     - `$dateString`
-      
+       string The **date** query parameter value.
     - `$period`
-      
+       string The **period** query parameter value.
 - It returns a `boolean` value.
 
 <a name="checkdateformat" id="checkdateformat"></a>
@@ -102,7 +102,8 @@ For valid date formats have a look at the [Date::factory()](/api-reference/Piwik
       
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before Tue, 06 Aug 1991.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before
+                  Tue, 06 Aug 1991.
 
 <a name="getdatestart" id="getdatestart"></a>
 <a name="getDateStart" id="getDateStart"></a>
@@ -144,9 +145,7 @@ Returns the end date of the period.
 
 #### Signature
 
-
-- *Returns:*  `null`|[`Date`](../../Piwik/Date.md) &mdash;
-    
+- It returns a [`Date`](../../Piwik/Date.md) value.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
@@ -186,9 +185,7 @@ Returns the number of available subperiods.
 <a name="getSubperiods" id="getSubperiods"></a>
 ### `getSubperiods()`
 
-Returns the set of Period instances that together make up this period.
-
-For a year,
+Returns the set of Period instances that together make up this period. For a year,
 this would be 12 months. For a month this would be 28-31 days. Etc.
 
 #### Signature
@@ -312,7 +309,8 @@ Sets the default end date of the period.
 <a name="parseDateRange" id="parseDateRange"></a>
 ### `parseDateRange()`
 
-Given a date string, returns `false` if not a date range, or returns the array containing start and end dates.
+Given a date string, returns `false` if not a date range,
+or returns the array containing start and end dates.
 
 #### Signature
 
@@ -338,7 +336,8 @@ Returns the date that is one period before the supplied date.
        The period to use (either 'day', 'week', 'month', 'year');
 
 - *Returns:*  `array` &mdash;
-    An array with two elements, a string for the date before $date and a Period instance for the period before $date.
+    An array with two elements, a string for the date before $date and
+              a Period instance for the period before $date.
 
 <a name="getdatexperiodsago" id="getdatexperiodsago"></a>
 <a name="getDateXPeriodsAgo" id="getDateXPeriodsAgo"></a>
@@ -357,13 +356,15 @@ Returns the date that is X periods before the supplied date.
       
 
 - *Returns:*  `array` &mdash;
-    An array with two elements, a string for the date before $date and a Period instance for the period before $date.
+    An array with two elements, a string for the date before $date and
+              a Period instance for the period before $date.
 
 <a name="getrelativetoenddate" id="getrelativetoenddate"></a>
 <a name="getRelativeToEndDate" id="getRelativeToEndDate"></a>
 ### `getRelativeToEndDate()`
 
-Returns a date range string given a period type, end date and number of periods the range spans over.
+Returns a date range string given a period type, end date and number of periods
+the range spans over.
 
 #### Signature
 

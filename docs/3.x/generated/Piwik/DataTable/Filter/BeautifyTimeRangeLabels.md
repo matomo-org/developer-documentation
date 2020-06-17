@@ -19,6 +19,9 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`filter()`](#filter) &mdash; See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallbackReplace). Inherited from [`ColumnCallbackReplace`](../../../Piwik/DataTable/Filter/ColumnCallbackReplace.md)
+- [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+- [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`beautify()`](#beautify) &mdash; Beautifies a range label and returns the pretty result. Inherited from [`BeautifyRangeLabels`](../../../Piwik/DataTable/Filter/BeautifyRangeLabels.md)
 - [`getSingleUnitLabel()`](#getsingleunitlabel) &mdash; Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
 - [`getRangeLabel()`](#getrangelabel) &mdash; Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
@@ -34,7 +37,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable this filter will run over.
+      
     - `$labelSecondsPlural` (`string`) &mdash;
        A string to use when beautifying range labels whose lower bound is between 0 and 60. Must be a format string that takes two numeric params.
     - `$labelMinutesSingular` (`string`) &mdash;
@@ -42,13 +45,51 @@ Constructor.
     - `$labelMinutesPlural` (`string`) &mdash;
        A string to use when replacing a range that spans multiple minutes. This must be a format string that takes one string parameter.
 
+<a name="filter" id="filter"></a>
+<a name="filter" id="filter"></a>
+### `filter()`
+
+See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallbackReplace).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
+- It does not return anything.
+
+<a name="enablerecursive" id="enablerecursive"></a>
+<a name="enableRecursive" id="enableRecursive"></a>
+### `enableRecursive()`
+
+Enables/Disables recursive filtering. Whether this property is actually used
+is up to the derived BaseFilter class.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$enable` (`bool`) &mdash;
+      
+- It does not return anything.
+
+<a name="filtersubtable" id="filtersubtable"></a>
+<a name="filterSubTable" id="filterSubTable"></a>
+### `filterSubTable()`
+
+Filters a row's subtable, if one exists and is loaded in memory.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
+- It does not return anything.
+
 <a name="beautify" id="beautify"></a>
 <a name="beautify" id="beautify"></a>
 ### `beautify()`
 
-Beautifies a range label and returns the pretty result.
-
-See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels).
+Beautifies a range label and returns the pretty result. See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels).
 
 #### Signature
 
@@ -63,7 +104,8 @@ See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLab
 <a name="getSingleUnitLabel" id="getSingleUnitLabel"></a>
 ### `getSingleUnitLabel()`
 
-Beautifies and returns a range label whose range spans over one unit, ie 1-1, 2-2 or 3-3.
+Beautifies and returns a range label whose range spans over one unit, ie
+1-1, 2-2 or 3-3.
 
 If the lower bound of the range is less than 60 the pretty range label
 will be in seconds. Otherwise, it will be in minutes.
@@ -83,7 +125,8 @@ will be in seconds. Otherwise, it will be in minutes.
 <a name="getRangeLabel" id="getRangeLabel"></a>
 ### `getRangeLabel()`
 
-Beautifies and returns a range label whose range is bounded and spans over more than one unit, ie 1-5, 5-10 but NOT 11+.
+Beautifies and returns a range label whose range is bounded and spans over
+more than one unit, ie 1-5, 5-10 but NOT 11+.
 
 If the lower bound of the range is less than 60 the pretty range label
 will be in seconds. Otherwise, it will be in minutes.
@@ -105,7 +148,8 @@ will be in seconds. Otherwise, it will be in minutes.
 <a name="getUnboundedLabel" id="getUnboundedLabel"></a>
 ### `getUnboundedLabel()`
 
-Beautifies and returns a range label whose range is unbounded, ie 5+, 10+, etc.
+Beautifies and returns a range label whose range is unbounded, ie
+5+, 10+, etc.
 
 If the lower bound of the range is less than 60 the pretty range label
 will be in seconds. Otherwise, it will be in minutes.

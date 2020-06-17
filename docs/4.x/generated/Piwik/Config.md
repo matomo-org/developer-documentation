@@ -54,7 +54,8 @@ Returns a configuration value or section by name.
 - *Returns:*  `string`|`array` &mdash;
     The requested value requested. Returned by reference.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If the value requested not found in either `config.ini.php` or `global.ini.php`.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the value requested not found in either `config.ini.php` or
+                  `global.ini.php`.
 
 <a name="getfromglobalconfig" id="getfromglobalconfig"></a>
 <a name="getFromGlobalConfig" id="getFromGlobalConfig"></a>
@@ -108,9 +109,7 @@ Sets a configuration value or section.
 <a name="forceSave" id="forceSave"></a>
 ### `forceSave()`
 
-Writes the current configuration to the **config.ini.php** file.
-
-Only writes options whose
+Writes the current configuration to the **config.ini.php** file. Only writes options whose
 values are different from the default.
 
 #### Signature

@@ -3,7 +3,6 @@ Index
 
 ## A
 
-- [`addEcommerceItem()`](MatomoTracker.md#addecommerceitem) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
 - [`Access`](Piwik/Access.md) &mdash; *Class in namespace* `Piwik`- [`Archive`](Piwik/Archive.md) &mdash; *Class in namespace* `Piwik`- [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; *Class in namespace* `Piwik`- [`aggregateDataTableRecords()`](Piwik/ArchiveProcessor.md#aggregatedatatablerecords) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`aggregateNumericMetrics()`](Piwik/ArchiveProcessor.md#aggregatenumericmetrics) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`Auth`](Piwik/Auth.md) &mdash; *Class in namespace* `Piwik`- [`authenticate()`](Piwik/Auth.md#authenticate) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
@@ -100,9 +99,6 @@ Index
 
 ## C
 
-- [`clearPerformanceTimings()`](MatomoTracker.md#clearperformancetimings) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`clearCustomVariables()`](MatomoTracker.md#clearcustomvariables) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`clearCustomTrackingParameters()`](MatomoTracker.md#clearcustomtrackingparameters) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
 - [`createDataTableFromArchive()`](Piwik/Archive.md#createdatatablefromarchive) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`ComputedMetricFactory`](Piwik/Columns/ComputedMetricFactory.md) &mdash; *Class in namespace* `Piwik\Columns`- [`createComputedMetric()`](Piwik/Columns/ComputedMetricFactory.md#createcomputedmetric) &mdash; *Method in class* [`ComputedMetricFactory`](Piwik/Columns/ComputedMetricFactory.md)
 - [`$columnName`](Piwik/Columns/Dimension.md#$columnname) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
@@ -113,7 +109,7 @@ Index
 - [`createComputedMetric()`](Piwik/Columns/DimensionMetricFactory.md#createcomputedmetric) &mdash; *Method in class* [`DimensionMetricFactory`](Piwik/Columns/DimensionMetricFactory.md)
 - [`createMetric()`](Piwik/Columns/DimensionMetricFactory.md#createmetric) &mdash; *Method in class* [`DimensionMetricFactory`](Piwik/Columns/DimensionMetricFactory.md)
 - [`createSegment()`](Piwik/Columns/DimensionSegmentFactory.md#createsegment) &mdash; *Method in class* [`DimensionSegmentFactory`](Piwik/Columns/DimensionSegmentFactory.md)
-- [`Common`](Piwik/Common.md) &mdash; *Class in namespace* `Piwik`- [`Config`](Piwik/Config.md) &mdash; *Class in namespace* `Piwik`- [`Console`](Piwik/Console.md) &mdash; *Class in namespace* `Piwik`- [`clearQueuedFilters()`](Piwik/DataTable.md#clearqueuedfilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`Common`](Piwik/Common.md) &mdash; *Class in namespace* `Piwik`- [`Config`](Piwik/Config.md) &mdash; *Class in namespace* `Piwik`- [`clearQueuedFilters()`](Piwik/DataTable.md#clearqueuedfilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`calculate()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#calculate) &mdash; *Method in class* [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
 - [`ColumnCallbackAddColumn`](Piwik/DataTable/Filter/ColumnCallbackAddColumn.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackAddColumnPercentage`](Piwik/DataTable/Filter/ColumnCallbackAddColumnPercentage.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackAddColumnQuotient`](Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackAddMetadata`](Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackDeleteMetadata`](Piwik/DataTable/Filter/ColumnCallbackDeleteMetadata.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackDeleteRow`](Piwik/DataTable/Filter/ColumnCallbackDeleteRow.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackReplace`](Piwik/DataTable/Filter/ColumnCallbackReplace.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnDelete`](Piwik/DataTable/Filter/ColumnDelete.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`compareWeek()`](Piwik/Date.md#compareweek) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`compareMonth()`](Piwik/Date.md#comparemonth) &mdash; *Method in class* [`Date`](Piwik/Date.md)
@@ -186,22 +182,6 @@ Index
 
 ## D
 
-- [`$DEBUG_APPEND_URL`](MatomoTracker.md#$debug_append_url) &mdash; *Property in class* [`MatomoTracker`](MatomoTracker.md)
-- [`$DEBUG_LAST_REQUESTED_URL`](MatomoTracker.md#$debug_last_requested_url) &mdash; *Property in class* [`MatomoTracker`](MatomoTracker.md)
-- [`disableSendImageResponse()`](MatomoTracker.md#disablesendimageresponse) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doTrackPageView()`](MatomoTracker.md#dotrackpageview) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doTrackEvent()`](MatomoTracker.md#dotrackevent) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doTrackContentImpression()`](MatomoTracker.md#dotrackcontentimpression) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doTrackContentInteraction()`](MatomoTracker.md#dotrackcontentinteraction) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doTrackSiteSearch()`](MatomoTracker.md#dotracksitesearch) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doTrackGoal()`](MatomoTracker.md#dotrackgoal) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doTrackAction()`](MatomoTracker.md#dotrackaction) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doTrackEcommerceCartUpdate()`](MatomoTracker.md#dotrackecommercecartupdate) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doBulkTrack()`](MatomoTracker.md#dobulktrack) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doTrackEcommerceOrder()`](MatomoTracker.md#dotrackecommerceorder) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`doPing()`](MatomoTracker.md#doping) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`deleteCookies()`](MatomoTracker.md#deletecookies) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`disableCookieSupport()`](MatomoTracker.md#disablecookiesupport) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
 - [`doAsSuperUser()`](Piwik/Access.md#doassuperuser) &mdash; *Method in class* [`Access`](Piwik/Access.md)
 - [`Dimension`](Piwik/Columns/Dimension.md) &mdash; *Class in namespace* `Piwik\Columns`- [`$dbTableName`](Piwik/Columns/Dimension.md#$dbtablename) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`DimensionMetricFactory`](Piwik/Columns/DimensionMetricFactory.md) &mdash; *Class in namespace* `Piwik\Columns`- [`DimensionSegmentFactory`](Piwik/Columns/DimensionSegmentFactory.md) &mdash; *Class in namespace* `Piwik\Columns`- [`Discriminator`](Piwik/Columns/Discriminator.md) &mdash; *Class in namespace* `Piwik\Columns`- [`destroy()`](Piwik/Common.md#destroy) &mdash; *Method in class* [`Common`](Piwik/Common.md)
@@ -254,8 +234,6 @@ Index
 
 ## E
 
-- [`enableBulkTracking()`](MatomoTracker.md#enablebulktracking) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`enableCookies()`](MatomoTracker.md#enablecookies) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
 - [`enableRecursiveSort()`](Piwik/DataTable.md#enablerecursivesort) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`enableRecursiveFilters()`](Piwik/DataTable.md#enablerecursivefilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`enableRecursive()`](Piwik/DataTable/BaseFilter.md#enablerecursive) &mdash; *Method in class* [`BaseFilter`](Piwik/DataTable/BaseFilter.md)
@@ -349,22 +327,6 @@ Index
 
 ## G
 
-- [`getCustomVariable()`](MatomoTracker.md#getcustomvariable) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUrlTrackPageView()`](MatomoTracker.md#geturltrackpageview) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUrlTrackEvent()`](MatomoTracker.md#geturltrackevent) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUrlTrackContentImpression()`](MatomoTracker.md#geturltrackcontentimpression) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUrlTrackContentInteraction()`](MatomoTracker.md#geturltrackcontentinteraction) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUrlTrackSiteSearch()`](MatomoTracker.md#geturltracksitesearch) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUrlTrackGoal()`](MatomoTracker.md#geturltrackgoal) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUrlTrackAction()`](MatomoTracker.md#geturltrackaction) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUserIdHashed()`](MatomoTracker.md#getuseridhashed) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getVisitorId()`](MatomoTracker.md#getvisitorid) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUserAgent()`](MatomoTracker.md#getuseragent) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getIp()`](MatomoTracker.md#getip) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getUserId()`](MatomoTracker.md#getuserid) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getAttributionInfo()`](MatomoTracker.md#getattributioninfo) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getRequestTimeout()`](MatomoTracker.md#getrequesttimeout) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`getIncomingTrackerCookie()`](MatomoTracker.md#getincomingtrackercookie) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
 - [`getRequestArrayFromString()`](Piwik/API/Request.md#getrequestarrayfromstring) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`getClassNameAPI()`](Piwik/API/Request.md#getclassnameapi) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`getMethodIfApiRequest()`](Piwik/API/Request.md#getmethodifapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
@@ -607,6 +569,8 @@ Index
 - [`getAllReports()`](Piwik/Plugin/ReportsProvider.md#getallreports) &mdash; *Method in class* [`ReportsProvider`](Piwik/Plugin/ReportsProvider.md)
 - [`getAllReportClasses()`](Piwik/Plugin/ReportsProvider.md#getallreportclasses) &mdash; *Method in class* [`ReportsProvider`](Piwik/Plugin/ReportsProvider.md)
 - [`getSegment()`](Piwik/Plugin/Segment.md#getsegment) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
+- [`getMeasurableSettings()`](Piwik/Plugin/SettingsProvider.md#getmeasurablesettings) &mdash; *Method in class* [`SettingsProvider`](Piwik/Plugin/SettingsProvider.md)
+- [`getAllMeasurableSettings()`](Piwik/Plugin/SettingsProvider.md#getallmeasurablesettings) &mdash; *Method in class* [`SettingsProvider`](Piwik/Plugin/SettingsProvider.md)
 - [`getDefaultConfig()`](Piwik/Plugin/ViewDataTable.md#getdefaultconfig) &mdash; *Method in class* [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`getDefaultRequestConfig()`](Piwik/Plugin/ViewDataTable.md#getdefaultrequestconfig) &mdash; *Method in class* [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
 - [`getViewDataTableId()`](Piwik/Plugin/ViewDataTable.md#getviewdatatableid) &mdash; *Method in class* [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
@@ -882,7 +846,7 @@ Index
 
 ## M
 
-- [`MatomoTracker`](MatomoTracker.md) &mdash; *Class in namespace* ``- [`$metricId`](Piwik/Columns/Dimension.md#$metricid) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
+- [`$metricId`](Piwik/Columns/Dimension.md#$metricid) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`MetricsList`](Piwik/Columns/MetricsList.md) &mdash; *Class in namespace* `Piwik\Columns`- [`mb_substr()`](Piwik/Common.md#mb_substr) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`mb_strlen()`](Piwik/Common.md#mb_strlen) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`mb_strtolower()`](Piwik/Common.md#mb_strtolower) &mdash; *Method in class* [`Common`](Piwik/Common.md)
@@ -1016,38 +980,6 @@ Index
 
 ## S
 
-- [`setPageCharset()`](MatomoTracker.md#setpagecharset) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setUrl()`](MatomoTracker.md#seturl) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setUrlReferrer()`](MatomoTracker.md#seturlreferrer) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setGenerationTime()`](MatomoTracker.md#setgenerationtime) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setPerformanceTimings()`](MatomoTracker.md#setperformancetimings) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setAttributionInfo()`](MatomoTracker.md#setattributioninfo) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setCustomVariable()`](MatomoTracker.md#setcustomvariable) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setCustomTrackingParameter()`](MatomoTracker.md#setcustomtrackingparameter) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setNewVisitorId()`](MatomoTracker.md#setnewvisitorid) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setIdSite()`](MatomoTracker.md#setidsite) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setBrowserLanguage()`](MatomoTracker.md#setbrowserlanguage) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setUserAgent()`](MatomoTracker.md#setuseragent) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setCountry()`](MatomoTracker.md#setcountry) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setRegion()`](MatomoTracker.md#setregion) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setCity()`](MatomoTracker.md#setcity) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setLatitude()`](MatomoTracker.md#setlatitude) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setLongitude()`](MatomoTracker.md#setlongitude) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setEcommerceView()`](MatomoTracker.md#setecommerceview) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setForceVisitDateTime()`](MatomoTracker.md#setforcevisitdatetime) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setForceNewVisit()`](MatomoTracker.md#setforcenewvisit) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setIp()`](MatomoTracker.md#setip) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setUserId()`](MatomoTracker.md#setuserid) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setVisitorId()`](MatomoTracker.md#setvisitorid) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setTokenAuth()`](MatomoTracker.md#settokenauth) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setLocalTime()`](MatomoTracker.md#setlocaltime) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setResolution()`](MatomoTracker.md#setresolution) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setBrowserHasCookies()`](MatomoTracker.md#setbrowserhascookies) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setDebugStringAppend()`](MatomoTracker.md#setdebugstringappend) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setPlugins()`](MatomoTracker.md#setplugins) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setRequestTimeout()`](MatomoTracker.md#setrequesttimeout) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setProxy()`](MatomoTracker.md#setproxy) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
-- [`setOutgoingTrackerCookie()`](MatomoTracker.md#setoutgoingtrackercookie) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
 - [`shouldLoadFlatten()`](Piwik/API/Request.md#shouldloadflatten) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`setTokenAuth()`](Piwik/Auth.md#settokenauth) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`setLogin()`](Piwik/Auth.md#setlogin) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
@@ -1243,7 +1175,6 @@ Index
 
 ## U
 
-- [`$URL`](MatomoTracker.md#$url) &mdash; *Property in class* [`MatomoTracker`](MatomoTracker.md)
 - [`uninstall()`](Piwik/Columns/Dimension.md#uninstall) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`Updater`](Piwik/Columns/Updater.md) &mdash; *Class in namespace* `Piwik\Columns`- [`unprefixTable()`](Piwik/Common.md#unprefixtable) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`unsanitizeInputValue()`](Piwik/Common.md#unsanitizeinputvalue) &mdash; *Method in class* [`Common`](Piwik/Common.md)
@@ -1287,7 +1218,6 @@ Index
 
 ## _
 
-- [`__construct()`](MatomoTracker.md#__construct) &mdash; *Method in class* [`MatomoTracker`](MatomoTracker.md)
 - [`__construct()`](Piwik/API/Request.md#__construct) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`__construct()`](Piwik/Archive.md#__construct) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`__construct()`](Piwik/AuthResult.md#__construct) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)

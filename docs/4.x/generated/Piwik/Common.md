@@ -222,16 +222,17 @@ _See [sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues) to
 - *Returns:*  `mixed` &mdash;
     The sanitized request parameter.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If the request parameter doesn&#039;t exist and there is no default value, or if the request parameter exists but has an incorrect type.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the request parameter doesn&#039;t exist and there is no default value, or if the request parameter
+                  exists but has an incorrect type.
 
 <a name="getsqlstringfieldsarray" id="getsqlstringfieldsarray"></a>
 <a name="getSqlStringFieldsArray" id="getSqlStringFieldsArray"></a>
 ### `getSqlStringFieldsArray()`
 
-Returns a string with a comma separated list of placeholders for use in an SQL query.
+Returns a string with a comma separated list of placeholders for use in an SQL query. Used mainly
+to fill the `IN (.
 
-Used mainly
-to fill the `IN (...)` part of a query.
+..)` part of a query.
 
 #### Signature
 

@@ -3,7 +3,7 @@
 Discriminator
 =============
 
-Since Piwik 3.1.0
+Since Matomo 3.1.0
 
 Methods
 -------

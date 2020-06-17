@@ -55,7 +55,7 @@ Returns `true` if running on Microsoft IIS 7 (or above), `false` if otherwise.
 <a name="isWindows" id="isWindows"></a>
 ### `isWindows()`
 
-Since Piwik 0.6.5
+Since Matomo 0.6.5
 
 Returns `true` if running on a Windows operating system, `false` if otherwise.
 
@@ -67,7 +67,9 @@ Returns `true` if running on a Windows operating system, `false` if otherwise.
 <a name="isTimezoneSupportEnabled" id="isTimezoneSupportEnabled"></a>
 ### `isTimezoneSupportEnabled()`
 
-Returns `true` if this PHP version/build supports timezone manipulation (e.g., php >= 5.2, or compiled with **EXPERIMENTAL_DATE_SUPPORT=1** for php < 5.2).
+Returns `true` if this PHP version/build supports timezone manipulation
+(e.g., php >= 5.2, or compiled with **EXPERIMENTAL_DATE_SUPPORT=1** for
+php < 5.2).
 
 #### Signature
 

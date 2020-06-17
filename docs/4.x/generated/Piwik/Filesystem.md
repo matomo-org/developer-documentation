@@ -21,9 +21,7 @@ The class defines the following methods:
 <a name="mkdir" id="mkdir"></a>
 ### `mkdir()`
 
-Attempts to create a new directory.
-
-All errors are silenced.
+Attempts to create a new directory. All errors are silenced.
 
 _Note: This function does **not** create directories recursively._
 
@@ -68,7 +66,7 @@ Recursively deletes a directory.
        Path of the directory to delete.
     - `$deleteRootToo` (`boolean`) &mdash;
        If true, `$dir` is deleted, otherwise just its contents.
-    - `$beforeUnlink` (`Piwik\Closure`) &mdash;
+    - `$beforeUnlink` ([`Closure`](http://php.net/class.Closure)) &mdash;
        An optional closure to execute on a file path before unlinking.
 - It does not return anything.
 
@@ -87,9 +85,9 @@ Copies a file from `$source` to `$dest`.
        A path to a file, eg. './index.php'. The file does not have to exist.
     - `$excludePhp` (`bool`) &mdash;
        Whether to avoid copying files if the file is related to PHP (includes .php, .tpl, .twig files).
-- It returns a `Piwik\true` value.
+- It returns a `true` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If the file cannot be copied.
+    - `Piwik\Exception\Exception` &mdash; If the file cannot be copied.
 
 <a name="copyrecursive" id="copyrecursive"></a>
 <a name="copyRecursive" id="copyRecursive"></a>
@@ -108,7 +106,7 @@ Copies the contents of a directory recursively from `$source` to `$target`.
        Whether to avoid copying files if the file is related to PHP (includes .php, .tpl, .twig files).
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If a file cannot be copied.
+    - `Piwik\Exception\Exception` &mdash; If a file cannot be copied.
 
 <a name="deletefileifexists" id="deletefileifexists"></a>
 <a name="deleteFileIfExists" id="deleteFileIfExists"></a>
@@ -123,5 +121,6 @@ Deletes the given file if it exists.
       
 
 - *Returns:*  `bool` &mdash;
-    true in case of success or if file does not exist, false otherwise. It might fail in case the file is not writeable.
+    true in case of success or if file does not exist, false otherwise. It might fail in case the
+               file is not writeable.
 

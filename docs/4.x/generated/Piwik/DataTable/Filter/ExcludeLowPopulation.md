@@ -39,10 +39,10 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable that will be filtered eventually.
+      
     - `$columnToFilter` (`string`) &mdash;
        The name of the column whose value will determine whether a row is deleted or not.
-    - `$minimumValue` (`Piwik\DataTable\Filter\number`|`Piwik\DataTable\Filter\false`) &mdash;
+    - `$minimumValue` (`Piwik\DataTable\Filter\number`|`false`) &mdash;
        The minimum column value. Rows with column values < this number will be deleted. If false, `$minimumPercentageThreshold` is used.
     - `$minimumPercentageThreshold` (`bool`|`float`) &mdash;
        If supplied, column values must be a greater percentage of the sum of all column values than this percentage.
@@ -64,9 +64,7 @@ See [ExcludeLowPopulation](/api-reference/Piwik/DataTable/Filter/ExcludeLowPopul
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

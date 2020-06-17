@@ -48,7 +48,7 @@ Returns the option value for the requested option `$name`.
     - `$name` (`string`) &mdash;
        The option name.
 
-- *Returns:*  `string`|`Piwik\false` &mdash;
+- *Returns:*  `string`|`false` &mdash;
     The value or `false`, if not found.
 
 <a name="getlike" id="getlike"></a>

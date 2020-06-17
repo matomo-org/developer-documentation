@@ -35,9 +35,7 @@ Get an instance of a specific report belonging to the given module and having th
 <a name="getAllReports" id="getAllReports"></a>
 ### `getAllReports()`
 
-Returns a list of all available reports.
-
-Even not enabled reports will be returned. They will be already sorted
+Returns a list of all available reports. Even not enabled reports will be returned. They will be already sorted
 depending on the order and category of the report.
 
 #### Signature

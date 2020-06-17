@@ -5,9 +5,6 @@ SystemSetting
 
 Describes a system wide setting.
 
-Only the Super User can change this type of setting by default and
-the value of this setting will affect all users.
-
 See [Setting](/api-reference/Piwik/Settings/Setting).
 
 Methods
@@ -36,13 +33,13 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
-       The setting's persisted name.
+       The setting's persisted name. Only alphanumeric characters are allowed, eg, `'refreshInterval'`.
     - `$defaultValue` (`mixed`) &mdash;
        Default value for this setting if no value was specified.
     - `$type` (`string`) &mdash;
-       Eg an array, int, ... see TYPE_* constants
+       Eg an array, int, ... see SettingConfig::TYPE_* constants
     - `$pluginName` (`string`) &mdash;
-       The name of the plugin the system setting belongs to.
+       The name of the plugin the setting belongs to
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
@@ -89,9 +86,7 @@ Sets/overwrites the current default value
 <a name="setIsWritableByCurrentUser" id="setIsWritableByCurrentUser"></a>
 ### `setIsWritableByCurrentUser()`
 
-Set whether setting is writable or not.
-
-For example to hide setting from the UI set it to false.
+Set whether setting is writable or not. For example to hide setting from the UI set it to false.
 
 #### Signature
 
@@ -104,9 +99,7 @@ For example to hide setting from the UI set it to false.
 <a name="isWritableByCurrentUser" id="isWritableByCurrentUser"></a>
 ### `isWritableByCurrentUser()`
 
-Returns `true` if this setting is writable for the current user, `false` if otherwise.
-
-In case it returns
+Returns `true` if this setting is writable for the current user, `false` if otherwise. In case it returns
 writable for the current user it will be visible in the Plugin settings UI.
 
 #### Signature

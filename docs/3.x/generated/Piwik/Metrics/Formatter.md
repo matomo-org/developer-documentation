@@ -5,9 +5,6 @@ Formatter
 
 Contains methods to format metric values.
 
-Passed to the [Metric::format()](/api-reference/Piwik/Plugin/Metric#format)
-method when formatting Metrics.
-
 Methods
 -------
 
@@ -24,9 +21,7 @@ The class defines the following methods:
 <a name="getPrettyNumber" id="getPrettyNumber"></a>
 ### `getPrettyNumber()`
 
-Returns a prettified string representation of a number.
-
-The result will have
+Returns a prettified string representation of a number. The result will have
 thousands separators and a decimal point specific to the current locale, eg,
 `'1,000,000.05'` or `'1.000.000,05'`.
 
@@ -94,9 +89,7 @@ Returns a pretty formatted monetary value using the currency associated with a s
 <a name="getPrettyPercentFromQuotient" id="getPrettyPercentFromQuotient"></a>
 ### `getPrettyPercentFromQuotient()`
 
-Returns a percent string from a quotient value.
-
-Forces the use of a '.'
+Returns a percent string from a quotient value. Forces the use of a '.'
 decimal place.
 
 #### Signature
@@ -110,9 +103,7 @@ decimal place.
 <a name="formatMetrics" id="formatMetrics"></a>
 ### `formatMetrics()`
 
-Formats all metrics, including processed metrics, for a DataTable.
-
-Metrics to format
+Formats all metrics, including processed metrics, for a DataTable. Metrics to format
 are found through report metadata and DataTable metadata.
 
 #### Signature

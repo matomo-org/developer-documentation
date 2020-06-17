@@ -35,11 +35,11 @@ Execute multiple migration queries from a single Update file.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$file` (`Piwik\$file`) &mdash;
+    - `$file`
       
     - `$migration` ([`Migration`](../Piwik/Updater/Migration.md)) &mdash;
       
 - It does not return anything.
 - It throws one of the following exceptions:
-    - `UpdaterErrorException`
+    - `Piwik\UpdaterErrorException`
 

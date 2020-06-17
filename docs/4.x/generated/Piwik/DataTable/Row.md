@@ -89,7 +89,8 @@ Applies a basic rendering to the Row and returns the output.
 
 
 - *Returns:*  `string` &mdash;
-    describing the row. Example: "- 1 ['label' => 'piwik', 'nb_uniq_visitors' => 1685, 'nb_visits' => 1861] [] [idsubtable = 1375]"
+    describing the row. Example:
+               "- 1 ['label' => 'piwik', 'nb_uniq_visitors' => 1685, 'nb_visits' => 1861] [] [idsubtable = 1375]"
 
 <a name="deletecolumn" id="deletecolumn"></a>
 <a name="deleteColumn" id="deleteColumn"></a>
@@ -133,7 +134,7 @@ Returns a column by name.
     - `$name` (`string`) &mdash;
        The column name.
 
-- *Returns:*  `mixed`|`Piwik\DataTable\false` &mdash;
+- *Returns:*  `mixed`|`false` &mdash;
     The column value or false if it doesn't exist.
 
 <a name="getmetadata" id="getmetadata"></a>
@@ -153,9 +154,7 @@ Returns the array of all metadata, or one requested metadata value.
 <a name="hasColumn" id="hasColumn"></a>
 ### `hasColumn()`
 
-Returns true if a column having the given name is already registered.
-
-The value will not be evaluated, it will
+Returns true if a column having the given name is already registered. The value will not be evaluated, it will
 just check whether a column exists independent of its value.
 
 #### Signature
@@ -175,7 +174,13 @@ Returns the array containing all the columns.
 
 
 - *Returns:*  `array` &mdash;
-    Example: array( 'column1'   => VALUE, 'label'     => 'www.php.net' 'nb_visits' => 15894, )
+    Example:
+
+                   array(
+                       'column1'   => VALUE,
+                       'label'     => 'www.php.net'
+                       'nb_visits' => 15894,
+                   )
 
 <a name="getidsubdatatable" id="getidsubdatatable"></a>
 <a name="getIdSubDataTable" id="getIdSubDataTable"></a>
@@ -195,9 +200,7 @@ If there is no such a table, returns null.
 <a name="getSubtable" id="getSubtable"></a>
 ### `getSubtable()`
 
-Returns the associated subtable, if one exists.
-
-Returns `false` if none exists.
+Returns the associated subtable, if one exists. Returns `false` if none exists.
 
 #### Signature
 
@@ -209,9 +212,7 @@ Returns `false` if none exists.
 <a name="sumSubtable" id="sumSubtable"></a>
 ### `sumSubtable()`
 
-Sums a DataTable to this row's subtable.
-
-If this row has no subtable a new
+Sums a DataTable to this row's subtable. If this row has no subtable a new
 one is created.
 
 See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to learn how DataTables are summed.
@@ -227,7 +228,8 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to 
 <a name="setSubtable" id="setSubtable"></a>
 ### `setSubtable()`
 
-Attaches a subtable to this row, overwriting the existing subtable, if any.
+Attaches a subtable to this row, overwriting the existing subtable,
+if any.
 
 #### Signature
 
@@ -262,9 +264,7 @@ Removes the subtable reference.
 <a name="setColumns" id="setColumns"></a>
 ### `setColumns()`
 
-Set all the columns at once.
-
-Overwrites **all** previously set columns.
+Set all the columns at once. Overwrites **all** previously set columns.
 
 #### Signature
 
@@ -322,9 +322,7 @@ Deletes one metadata value or all metadata values.
 <a name="addColumn" id="addColumn"></a>
 ### `addColumn()`
 
-Add a new column to the row.
-
-If the column already exists, throws an exception.
+Add a new column to the row. If the column already exists, throws an exception.
 
 #### Signature
 
@@ -356,9 +354,7 @@ Add many columns to this row.
 <a name="addMetadata" id="addMetadata"></a>
 ### `addMetadata()`
 
-Add a new metadata to the row.
-
-If the metadata already exists, throws an exception.
+Add a new metadata to the row. If the metadata already exists, throws an exception.
 
 #### Signature
 
@@ -414,9 +410,7 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 <a name="isSummaryRow" id="isSummaryRow"></a>
 ### `isSummaryRow()`
 
-Returns `true` if this row is the summary row, `false` if otherwise.
-
-This function
+Returns `true` if this row is the summary row, `false` if otherwise. This function
 depends on the label of the row, and so, is not 100% accurate.
 
 #### Signature

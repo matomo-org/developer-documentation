@@ -67,6 +67,8 @@ Constructor.
        The segment condition, eg, `'browserCode=ff;countryCode=CA'`.
     - `$idSites` (`array`) &mdash;
        The list of sites the segment will be used with. Some segments are dependent on the site, such as goal segments.
+- It throws one of the following exceptions:
+    - ``
 
 <a name="getsegmentexpression" id="getsegmentexpression"></a>
 <a name="getSegmentExpression" id="getSegmentExpression"></a>
@@ -76,7 +78,7 @@ Returns the segment expression.
 
 #### Signature
 
-- It does not return anything.
+- It returns a `Piwik\Segment\SegmentExpression` value.
 
 <a name="isempty" id="isempty"></a>
 <a name="isEmpty" id="isEmpty"></a>
@@ -92,9 +94,7 @@ Returns `true` if the segment is empty, `false` if otherwise.
 <a name="willBeArchived" id="willBeArchived"></a>
 ### `willBeArchived()`
 
-Detects whether the Piwik instance is configured to be able to archive this segment.
-
-It checks whether the segment
+Detects whether the Piwik instance is configured to be able to archive this segment. It checks whether the segment
 will be either archived via browser or cli archiving. It does not check if the segment has been archived. If you
 want to know whether the segment has been archived, the actual report data needs to be requested.
 
@@ -119,7 +119,8 @@ Returns the segment condition.
 <a name="getHash" id="getHash"></a>
 ### `getHash()`
 
-Returns a hash of the segment condition, or the empty string if the segment condition is empty.
+Returns a hash of the segment condition, or the empty string if the segment
+condition is empty.
 
 #### Signature
 
@@ -181,7 +182,8 @@ Returns the segment string.
 <a name="combine" id="combine"></a>
 ### `combine()`
 
-Combines this segment with another segment condition, if the segment condition is not already in the segment.
+Combines this segment with another segment condition, if the segment condition is not already
+in the segment.
 
 The combination is naive in that it does not take order of operations into account.
 

@@ -114,7 +114,7 @@ Sets the HTML part of the mail
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$html` (`Piwik\$html`) &mdash;
+    - `$html`
       
 - It does not return anything.
 
@@ -129,7 +129,7 @@ If bodyHtml is set, this will be used as alternative text part
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$txt` (`Piwik\$txt`) &mdash;
+    - `$txt`
       
 - It does not return anything.
 
@@ -162,7 +162,7 @@ Sets the subject of the mail
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$subject` (`Piwik\$subject`) &mdash;
+    - `$subject`
       
 - It does not return anything.
 
@@ -355,7 +355,7 @@ Replaces characters known to appear incorrectly in some email clients
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$string` (`Piwik\$string`) &mdash;
+    - `$string`
       
 - It returns a `mixed` value.
 

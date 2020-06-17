@@ -42,7 +42,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The table to eventually filter.
+      
     - `$deleteRowsWithNoVisit` (`bool`) &mdash;
        Whether to delete rows with no visits or not.
 
@@ -50,9 +50,7 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Adds the processed metrics.
-
-See [AddColumnsProcessedMetrics](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetrics) for
+Adds the processed metrics. See [AddColumnsProcessedMetrics](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetrics) for
 more information.
 
 #### Signature
@@ -66,9 +64,7 @@ more information.
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

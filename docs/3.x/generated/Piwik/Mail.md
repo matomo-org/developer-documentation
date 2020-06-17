@@ -142,7 +142,7 @@ Replaces characters known to appear incorrectly in some email clients
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$string` (`Piwik\$string`) &mdash;
+    - `$string`
       
 - It returns a `mixed` value.
 

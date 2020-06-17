@@ -98,9 +98,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 <a name="custom" id="custom"></a>
 ### `custom()`
 
-Schedules the given tasks/method to run depending at the given scheduled time.
-
-Unlike the convenient methods
+Schedules the given tasks/method to run depending at the given scheduled time. Unlike the convenient methods
 such as [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly) you need to specify the object on which the given method should be called. This can be
 either an instance of a class or a class name. For more information about these parameters see [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 
@@ -119,5 +117,6 @@ either an instance of a class or a class name. For more information about these 
       
 - It returns a [`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md) value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If a wrong time format is given. Needs to be either a string such as &#039;daily&#039;, &#039;weekly&#039;, ... or an instance of {@link Piwik\Scheduler\Schedule\Schedule}
+    - [`Exception`](http://php.net/class.Exception) &mdash; If a wrong time format is given. Needs to be either a string such as &#039;daily&#039;, &#039;weekly&#039;, ...
+                   or an instance of {@link Piwik\Scheduler\Schedule\Schedule}
 

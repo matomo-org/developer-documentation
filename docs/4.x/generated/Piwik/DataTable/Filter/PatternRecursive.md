@@ -30,7 +30,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The table to eventually filter.
+      
     - `$columnToFilter` (`string`) &mdash;
        The column to match with the `$patternToSearch` pattern.
     - `$patternToSearch` (`string`) &mdash;
@@ -47,17 +47,13 @@ See [PatternRecursive](/api-reference/Piwik/DataTable/Filter/PatternRecursive).
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-
-- *Returns:*  `int` &mdash;
-    The number of deleted rows.
+- It does not return anything.
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

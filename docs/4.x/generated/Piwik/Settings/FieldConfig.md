@@ -10,82 +10,17 @@ Constants
 
 This class defines the following constants:
 
-- [`UI_CONTROL_RADIO`](#ui_control_radio) — Shows a radio field.- [`UI_CONTROL_TEXT`](#ui_control_text) — Shows a text field.- [`UI_CONTROL_EMAIL`](#ui_control_email) — Shows an email text field.- [`UI_CONTROL_URL`](#ui_control_url) — Shows a URL text field.- [`UI_CONTROL_TEXTAREA`](#ui_control_textarea) — Shows a text area.- [`UI_CONTROL_CHECKBOX`](#ui_control_checkbox) — Shows a checkbox.- [`UI_CONTROL_PASSWORD`](#ui_control_password) — Shows a password field.- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values.- [`UI_CONTROL_SINGLE_SELECT`](#ui_control_single_select) — Shows a select field.- [`UI_CONTROL_SINGLE_EXPANDABLE_SELECT`](#ui_control_single_expandable_select) — Shows an expandable select field which is useful when each selectable value belongs to a group.- [`UI_CONTROL_HIDDEN`](#ui_control_hidden) — Generates a hidden form field.- [`TYPE_INT`](#type_int) — Expects an integer value.- [`TYPE_FLOAT`](#type_float) — Expects a float value.- [`TYPE_STRING`](#type_string) — Expects a string.- [`TYPE_BOOL`](#type_bool) — Expects a boolean.
-<a name="ui_control_radio" id="ui_control_radio"></a>
-<a name="UI_CONTROL_RADIO" id="UI_CONTROL_RADIO"></a>
-### `UI_CONTROL_RADIO`
-
-To use this field assign it to the `$uiControl` property.
-<a name="ui_control_text" id="ui_control_text"></a>
-<a name="UI_CONTROL_TEXT" id="UI_CONTROL_TEXT"></a>
-### `UI_CONTROL_TEXT`
-
-To use this field assign it to the `$uiControl` property.
-<a name="ui_control_email" id="ui_control_email"></a>
-<a name="UI_CONTROL_EMAIL" id="UI_CONTROL_EMAIL"></a>
-### `UI_CONTROL_EMAIL`
-
-To use this field assign it to the `$uiControl` property.
-<a name="ui_control_url" id="ui_control_url"></a>
-<a name="UI_CONTROL_URL" id="UI_CONTROL_URL"></a>
-### `UI_CONTROL_URL`
-
-To use this field assign it to the `$uiControl` property.
-<a name="ui_control_textarea" id="ui_control_textarea"></a>
-<a name="UI_CONTROL_TEXTAREA" id="UI_CONTROL_TEXTAREA"></a>
-### `UI_CONTROL_TEXTAREA`
-
-To use this field assign it to the `$uiControl` property.
-<a name="ui_control_checkbox" id="ui_control_checkbox"></a>
-<a name="UI_CONTROL_CHECKBOX" id="UI_CONTROL_CHECKBOX"></a>
-### `UI_CONTROL_CHECKBOX`
-
-To use this field assign it to the `$uiControl` property.
-<a name="ui_control_password" id="ui_control_password"></a>
-<a name="UI_CONTROL_PASSWORD" id="UI_CONTROL_PASSWORD"></a>
-### `UI_CONTROL_PASSWORD`
-
-To use this field assign it to the `$uiControl` property.
+- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values.- [`UI_CONTROL_SINGLE_EXPANDABLE_SELECT`](#ui_control_single_expandable_select) — Shows an expandable select field which is useful when each selectable value belongs to a group.
 <a name="ui_control_multi_select" id="ui_control_multi_select"></a>
 <a name="UI_CONTROL_MULTI_SELECT" id="UI_CONTROL_MULTI_SELECT"></a>
 ### `UI_CONTROL_MULTI_SELECT`
 
 The type "Array" is required for this ui control. To use this field assign it to the `$uiControl` property.
-<a name="ui_control_single_select" id="ui_control_single_select"></a>
-<a name="UI_CONTROL_SINGLE_SELECT" id="UI_CONTROL_SINGLE_SELECT"></a>
-### `UI_CONTROL_SINGLE_SELECT`
-
-To use this field assign it to the `$uiControl` property.
 <a name="ui_control_single_expandable_select" id="ui_control_single_expandable_select"></a>
 <a name="UI_CONTROL_SINGLE_EXPANDABLE_SELECT" id="UI_CONTROL_SINGLE_EXPANDABLE_SELECT"></a>
 ### `UI_CONTROL_SINGLE_EXPANDABLE_SELECT`
 
 To use this field assign it to the `$uiControl` property.
-<a name="ui_control_hidden" id="ui_control_hidden"></a>
-<a name="UI_CONTROL_HIDDEN" id="UI_CONTROL_HIDDEN"></a>
-### `UI_CONTROL_HIDDEN`
-
-To use this field assign it to the `$uiControl` property.
-<a name="type_int" id="type_int"></a>
-<a name="TYPE_INT" id="TYPE_INT"></a>
-### `TYPE_INT`
-
-Is usually used when creating a setting.
-<a name="type_float" id="type_float"></a>
-<a name="TYPE_FLOAT" id="TYPE_FLOAT"></a>
-### `TYPE_FLOAT`
-
-Is usually used when creating a setting.
-<a name="type_string" id="type_string"></a>
-<a name="TYPE_STRING" id="TYPE_STRING"></a>
-### `TYPE_STRING`
-
-Is usually used when creating a setting.
-<a name="type_bool" id="type_bool"></a>
-<a name="TYPE_BOOL" id="TYPE_BOOL"></a>
-### `TYPE_BOOL`
-
-Is usually used when creating a setting.
 
 Properties
 ----------
@@ -121,9 +56,7 @@ See Piwik\Plugin\Settings for a list of supported control types.
 <a name="customUiControlTemplateFile" id="customUiControlTemplateFile"></a>
 ### `$customUiControlTemplateFile`
 
-Defines a custom template file for a UI control.
-
-This file should render a UI control and expose the value in a
+Defines a custom template file for a UI control. This file should render a UI control and expose the value in a
 "formField.value" angular model. For an example see "plugins/CorePluginsAdmin/angularjs/form-field/field-text.html"
 
 #### Signature
@@ -134,9 +67,8 @@ This file should render a UI control and expose the value in a
 <a name="uiControlAttributes" id="uiControlAttributes"></a>
 ### `$uiControlAttributes`
 
-Name-value mapping of HTML attributes that will be added HTML form control, eg, `array('size' => 3)`.
-
-Attributes will be escaped before outputting.
+Name-value mapping of HTML attributes that will be added HTML form control, eg,
+`array('size' => 3)`. Attributes will be escaped before outputting.
 
 #### Signature
 
@@ -146,9 +78,7 @@ Attributes will be escaped before outputting.
 <a name="availableValues" id="availableValues"></a>
 ### `$availableValues`
 
-The list of all available values for this setting.
-
-If null, the setting can have any value.
+The list of all available values for this setting. If null, the setting can have any value.
 
 If supplied, this field should be an array mapping available values with their prettified
 display value. Eg, if set to `array('nb_visits' => 'Visits', 'nb_actions' => 'Actions')`,
@@ -183,9 +113,8 @@ Text that will appear above this setting's section in the _Plugin Settings_ admi
 <a name="description" id="description"></a>
 ### `$description`
 
-Text that will appear directly underneath the setting title in the _Plugin Settings_ admin page.
-
-If set, should be a short description of the setting.
+Text that will appear directly underneath the setting title in the _Plugin Settings_ admin
+page. If set, should be a short description of the setting.
 
 #### Signature
 
@@ -197,9 +126,7 @@ If set, should be a short description of the setting.
 <a name="inlineHelp" id="inlineHelp"></a>
 ### `$inlineHelp`
 
-Text that will appear next to the setting's section in the _Plugin Settings_ admin page.
-
-If set,
+Text that will appear next to the setting's section in the _Plugin Settings_ admin page. If set,
 it should contain information about the setting that is more specific than a general description,
 such as the format of the setting value if it has a special format.
 
@@ -239,9 +166,7 @@ a message that describes the error.
 <a name="transform" id="transform"></a>
 ### `$transform`
 
-A closure that transforms the setting value.
-
-If supplied, this closure will be executed after
+A closure that transforms the setting value. If supplied, this closure will be executed after
 the setting has been validated.
 
 _Note: If a transform is supplied, the setting's $type has no effect. This means the
@@ -280,9 +205,8 @@ Be sure to escape any user input as HTML can be used here.
 <a name="condition" id="condition"></a>
 ### `$condition`
 
-Here you can define conditions so that certain form fields will be only shown when a certain condition is true.
-
-This condition is supposed to be evaluated on the client side dynamically. This way you can hide
+Here you can define conditions so that certain form fields will be only shown when a certain condition
+is true. This condition is supposed to be evaluated on the client side dynamically. This way you can hide
 for example some fields depending on another field. For example if SiteSearch is disabled, fields to enter
 site search keywords is not needed anymore and can be disabled.
 
@@ -297,7 +221,8 @@ are both values of fields.
 <a name="validators" id="validators"></a>
 ### `$validators`
 
-Here you can add one or multiple instances of `Piwik\Validators\BaseValidator` to avoid having to write the same validators over and over again in [$validate](/api-reference/Piwik/Settings/FieldConfig#$validate).
+Here you can add one or multiple instances of `Piwik\Validators\BaseValidator` to avoid having to
+write the same validators over and over again in [$validate](/api-reference/Piwik/Settings/FieldConfig#$validate).
 
 Examples
 Want to require a value to be set?

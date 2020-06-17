@@ -18,7 +18,9 @@ This class defines the following properties:
 <a name="URL" id="URL"></a>
 ### `$URL`
 
-Matomo base URL, for example http://example.org/matomo/ Must be set before using the class by calling MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
+Matomo base URL, for example http://example.org/matomo/
+Must be set before using the class by calling
+MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
@@ -103,7 +105,7 @@ The class defines the following methods:
 - [`getVisitorId()`](#getvisitorid) &mdash; If the user initiating the request has the Matomo first party cookie, this function will try and return the ID parsed from this first party cookie (found in $_COOKIE).
 - [`getUserAgent()`](#getuseragent) &mdash; Returns the currently set user agent.
 - [`getIp()`](#getip) &mdash; Returns the currently set IP address.
-- [`getUserId()`](#getuserid) &mdash; Returns the User ID string, which may have been set via:     $v->setUserId('username@example.org');
+- [`getUserId()`](#getuserid) &mdash; Returns the User ID string, which may have been set via: $v->setUserId('username@example.org');
 - [`deleteCookies()`](#deletecookies) &mdash; Deletes all first party cookies from the client
 - [`getAttributionInfo()`](#getattributioninfo) &mdash; Returns the currently assigned Attribution Information stored in a first party cookie.
 - [`setTokenAuth()`](#settokenauth) &mdash; Some Tracking API functionality requires express authentication, using either the Super User token_auth, or a user with 'admin' access to the website.
@@ -123,7 +125,8 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
-Builds a MatomoTracker object, used to track visits, pages and Goal conversions for a specific website, by using the Matomo Tracking API.
+Builds a MatomoTracker object, used to track visits, pages and Goal conversions
+for a specific website, by using the Matomo Tracking API.
 
 #### Signature
 
@@ -137,7 +140,8 @@ Builds a MatomoTracker object, used to track visits, pages and Goal conversions 
 <a name="setPageCharset" id="setPageCharset"></a>
 ### `setPageCharset()`
 
-By default, Matomo expects utf-8 encoded values, for example for the page URL parameter values, Page Title, etc.
+By default, Matomo expects utf-8 encoded values, for example
+for the page URL parameter values, Page Title, etc.
 
 It is recommended to only send UTF-8 data to Matomo.
 If required though, you can also specify another charset using this function.
@@ -233,7 +237,8 @@ Clear / reset all previously set performance metrics.
 <a name="setAttributionInfo" id="setAttributionInfo"></a>
 ### `setAttributionInfo()`
 
-Sets the attribution information to the visit, so that subsequent Goal conversions are properly attributed to the right Referrer URL, timestamp, Campaign Name & Keyword.
+Sets the attribution information to the visit, so that subsequent Goal conversions are
+properly attributed to the right Referrer URL, timestamp, Campaign Name & Keyword.
 
 This must be a JSON encoded string that would typically be fetched from the JS API:
 matomoTracker.getAttributionInfo() and that you have JSON encoded via JSON2.stringify()
@@ -320,9 +325,7 @@ and you wish to clear Custom Variables of 'visit' scope.
 <a name="setCustomTrackingParameter" id="setCustomTrackingParameter"></a>
 ### `setCustomTrackingParameter()`
 
-Sets a custom tracking parameter.
-
-This is useful if you need to send any tracking parameters for a 3rd party
+Sets a custom tracking parameter. This is useful if you need to send any tracking parameters for a 3rd party
 plugin that is not shipped with Matomo itself. Please note that custom parameters are cleared after each
 tracking request.
 
@@ -374,9 +377,7 @@ Sets the current site ID.
 <a name="setBrowserLanguage" id="setBrowserLanguage"></a>
 ### `setBrowserLanguage()`
 
-Sets the Browser language.
-
-Used to guess visitor countries when GeoIP is not enabled
+Sets the Browser language. Used to guess visitor countries when GeoIP is not enabled
 
 #### Signature
 
@@ -404,9 +405,7 @@ If this function is not called, the User Agent will default to the current user 
 <a name="setCountry" id="setCountry"></a>
 ### `setCountry()`
 
-Sets the country of the visitor.
-
-If not used, Matomo will try to find the country
+Sets the country of the visitor. If not used, Matomo will try to find the country
 using either the visitor's IP address or language.
 
 Allowed only for Admin/Super User, must be used along with setTokenAuth().
@@ -422,9 +421,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 <a name="setRegion" id="setRegion"></a>
 ### `setRegion()`
 
-Sets the region of the visitor.
-
-If not used, Matomo may try to find the region
+Sets the region of the visitor. If not used, Matomo may try to find the region
 using the visitor's IP address (if configured to do so).
 
 Allowed only for Admin/Super User, must be used along with setTokenAuth().
@@ -440,9 +437,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 <a name="setCity" id="setCity"></a>
 ### `setCity()`
 
-Sets the city of the visitor.
-
-If not used, Matomo may try to find the city
+Sets the city of the visitor. If not used, Matomo may try to find the city
 using the visitor's IP address (if configured to do so).
 
 Allowed only for Admin/Super User, must be used along with setTokenAuth().
@@ -458,9 +453,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 <a name="setLatitude" id="setLatitude"></a>
 ### `setLatitude()`
 
-Sets the latitude of the visitor.
-
-If not used, Matomo may try to find the visitor's
+Sets the latitude of the visitor. If not used, Matomo may try to find the visitor's
 latitude using the visitor's IP address (if configured to do so).
 
 Allowed only for Admin/Super User, must be used along with setTokenAuth().
@@ -476,9 +469,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 <a name="setLongitude" id="setLongitude"></a>
 ### `setLongitude()`
 
-Sets the longitude of the visitor.
-
-If not used, Matomo may try to find the visitor's
+Sets the longitude of the visitor. If not used, Matomo may try to find the visitor's
 longitude using the visitor's IP address (if configured to do so).
 
 Allowed only for Admin/Super User, must be used along with setTokenAuth().
@@ -494,9 +485,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 <a name="enableBulkTracking" id="enableBulkTracking"></a>
 ### `enableBulkTracking()`
 
-Enables the bulk request feature.
-
-When used, each tracking action is stored until the
+Enables the bulk request feature. When used, each tracking action is stored until the
 doBulkTrack method is called. This method will send all tracking data at once.
 
 #### Signature
@@ -587,9 +576,7 @@ Tracks a content impression
 <a name="doTrackContentInteraction" id="doTrackContentInteraction"></a>
 ### `doTrackContentInteraction()`
 
-Tracks a content interaction.
-
-Make sure you have tracked a content impression using the same content name and
+Tracks a content interaction. Make sure you have tracked a content impression using the same content name and
 content piece, otherwise it will not count. To do so you should call the method doTrackContentImpression();
 
 #### Signature
@@ -713,9 +700,7 @@ Items which were in the previous cart and are not sent in later Cart updates wil
 <a name="doBulkTrack" id="doBulkTrack"></a>
 ### `doBulkTrack()`
 
-Sends all stored tracking actions at once.
-
-Only has an effect if bulk tracking is enabled.
+Sends all stored tracking actions at once. Only has an effect if bulk tracking is enabled.
 
 To enable bulk tracking, call enableBulkTracking().
 
@@ -823,6 +808,10 @@ Builds URL to track a page view.
 
 Builds URL to track a custom event.
 
+#### See Also
+
+- `doTrackEvent()`
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -834,7 +823,11 @@ Builds URL to track a custom event.
        (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)
     - `$value` (`float`|`bool`) &mdash;
        (optional) The Event's value
-- It does not return anything.
+
+- *Returns:*  `string` &mdash;
+    URL to matomo.php with all parameters set to track the pageview
+- It throws one of the following exceptions:
+    - ``
 
 <a name="geturltrackcontentimpression" id="geturltrackcontentimpression"></a>
 <a name="getUrlTrackContentImpression" id="getUrlTrackContentImpression"></a>
@@ -1009,9 +1002,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth()
 <a name="setUserId" id="setUserId"></a>
 ### `setUserId()`
 
-Force the action to be recorded for a specific User.
-
-The User ID is a string representing a given user in your system.
+Force the action to be recorded for a specific User. The User ID is a string representing a given user in your system.
 
 A User ID can be a username, UUID or an email address, or any number or string that uniquely identifies a user or client.
 
@@ -1035,7 +1026,7 @@ Note: matches implementation of Tracker\Request->getUserIdHashed()
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$id` (`$id`) &mdash;
+    - `$id`
       
 - It returns a `string` value.
 
@@ -1063,7 +1054,8 @@ If not set, the visitor ID will be fetched from the 1st party cookie, or will be
 <a name="getVisitorId" id="getVisitorId"></a>
 ### `getVisitorId()`
 
-If the user initiating the request has the Matomo first party cookie, this function will try and return the ID parsed from this first party cookie (found in $_COOKIE).
+If the user initiating the request has the Matomo first party cookie,
+this function will try and return the ID parsed from this first party cookie (found in $_COOKIE).
 
 If you call this function from a server, where the call is triggered by a cron or script
 not initiated by the actual visitor being tracked, then it will return
@@ -1101,7 +1093,8 @@ Returns the currently set IP address.
 <a name="getUserId" id="getUserId"></a>
 ### `getUserId()`
 
-Returns the User ID string, which may have been set via:     $v->setUserId('username@example.org');
+Returns the User ID string, which may have been set via:
+    $v->setUserId('username@example.org');
 
 #### Signature
 
@@ -1134,13 +1127,15 @@ can be read by PHP from the $_COOKIE array.
 
 
 - *Returns:*  `string` &mdash;
-    JSON Encoded string containing the Referrer information for Goal conversion attribution. Will return false if the cookie could not be found
+    JSON Encoded string containing the Referrer information for Goal conversion attribution.
+               Will return false if the cookie could not be found
 
 <a name="settokenauth" id="settokenauth"></a>
 <a name="setTokenAuth" id="setTokenAuth"></a>
 ### `setTokenAuth()`
 
-Some Tracking API functionality requires express authentication, using either the Super User token_auth, or a user with 'admin' access to the website.
+Some Tracking API functionality requires express authentication, using either the
+Super User token_auth, or a user with 'admin' access to the website.
 
 The following features require access:
 - force the visitor IP
@@ -1185,7 +1180,8 @@ Sets user resolution width and height.
 <a name="setBrowserHasCookies" id="setBrowserHasCookies"></a>
 ### `setBrowserHasCookies()`
 
-Sets if the browser supports cookies This is reported in "List of plugins" report in Matomo.
+Sets if the browser supports cookies
+This is reported in "List of plugins" report in Matomo.
 
 #### Signature
 
@@ -1236,7 +1232,8 @@ Sets visitor browser supported plugins
 <a name="disableCookieSupport" id="disableCookieSupport"></a>
 ### `disableCookieSupport()`
 
-By default, MatomoTracker will read first party cookies from the request and write updated cookies in the response (using setrawcookie).
+By default, MatomoTracker will read first party cookies
+from the request and write updated cookies in the response (using setrawcookie).
 
 This can be disabled by calling this function.
 
@@ -1248,9 +1245,8 @@ This can be disabled by calling this function.
 <a name="getRequestTimeout" id="getRequestTimeout"></a>
 ### `getRequestTimeout()`
 
-Returns the maximum number of seconds the tracker will spend waiting for a response from Matomo.
-
-Defaults to 600 seconds.
+Returns the maximum number of seconds the tracker will spend waiting for a response
+from Matomo. Defaults to 600 seconds.
 
 #### Signature
 
@@ -1260,7 +1256,8 @@ Defaults to 600 seconds.
 <a name="setRequestTimeout" id="setRequestTimeout"></a>
 ### `setRequestTimeout()`
 
-Sets the maximum number of seconds that the tracker will spend waiting for a response from Matomo.
+Sets the maximum number of seconds that the tracker will spend waiting for a response
+from Matomo.
 
 #### Signature
 
@@ -1295,9 +1292,9 @@ Sets a cookie to be sent to the tracking server.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name` (`$name`) &mdash;
+    - `$name`
       
-    - `$value` (`$value`) &mdash;
+    - `$value`
       
 - It does not return anything.
 
@@ -1310,7 +1307,7 @@ Gets a cookie which was set by the tracking server.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name` (`$name`) &mdash;
+    - `$name`
       
 
 - *Returns:*  `bool`|`string` &mdash;

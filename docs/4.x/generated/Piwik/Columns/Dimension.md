@@ -3,19 +3,7 @@
 Dimension
 =========
 
-Since Piwik 3.1.0
-
-Constants
----------
-
-This abstract class defines the following constants:
-
-- [`TYPE_DIMENSION`](#type_dimension) — Segment type 'dimension'.
-<a name="type_dimension" id="type_dimension"></a>
-<a name="TYPE_DIMENSION" id="TYPE_DIMENSION"></a>
-### `TYPE_DIMENSION`
-
-Can be used along with [setType()](/api-reference/Piwik/Columns/Dimension#settype).
+Since Matomo 3.1.0
 
 Properties
 ----------
@@ -50,9 +38,7 @@ This will be the name of the column in the database table if a $columnType is sp
 <a name="columnType" id="columnType"></a>
 ### `$columnType`
 
-If a columnType is defined, we will create a column in the MySQL table having this type.
-
-Please make sure
+If a columnType is defined, we will create a column in the MySQL table having this type. Please make sure
 MySQL understands this type. Once you change the column type the Piwik platform will notify the user to
 perform an update which can sometimes take a long time so be careful when choosing the correct column type.
 
@@ -64,16 +50,13 @@ perform an update which can sometimes take a long time so be careful when choosi
 <a name="type" id="type"></a>
 ### `$type`
 
-Defines what kind of data type this dimension holds.
-
-By default the type is auto-detected based on
+Defines what kind of data type this dimension holds. By default the type is auto-detected based on
 `$columnType` but sometimes it may be needed to correct this value. Depending on this type, a dimension will be
 formatted differently for example.
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `string` value.
 
 <a name="$nameplural" id="$nameplural"></a>
 <a name="namePlural" id="namePlural"></a>
@@ -83,16 +66,13 @@ Translation key for name plural
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `string` value.
 
 <a name="$segmentname" id="$segmentname"></a>
 <a name="segmentName" id="segmentName"></a>
 ### `$segmentName`
 
-By defining a segment name a user will be able to filter their visitors by this column.
-
-If you do not want to
+By defining a segment name a user will be able to filter their visitors by this column. If you do not want to
 define a segment for this dimension, simply leave the name empty.
 
 #### Signature
@@ -108,30 +88,25 @@ Sets a callback which will be executed when user will call for suggested values 
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `callable` value.
 
 <a name="$acceptvalues" id="$acceptvalues"></a>
 <a name="acceptValues" id="acceptValues"></a>
 ### `$acceptValues`
 
-Here you should explain which values are accepted/useful for your segment, for example: "1, 2, 3, etc." or "comcast.net, proxad.net, etc.".
-
-If the value needs any special encoding you should mention
+Here you should explain which values are accepted/useful for your segment, for example:
+"1, 2, 3, etc." or "comcast.net, proxad.net, etc.". If the value needs any special encoding you should mention
 this as well. For example "Any URL including protocol. The URL must be URL encoded."
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `string` value.
 
 <a name="$sqlsegment" id="$sqlsegment"></a>
 <a name="sqlSegment" id="sqlSegment"></a>
 ### `$sqlSegment`
 
-Defines to which column in the MySQL database the segment belongs (if one is conifugred).
-
-Defaults to
+Defines to which column in the MySQL database the segment belongs (if one is conifugred). Defaults to
 `$this.dbTableName . '.'. $this.columnName` but you can customize it eg like `HOUR(log_visit.visit_last_action_time)`.
 
 #### Signature
@@ -143,12 +118,11 @@ Defaults to
 <a name="sqlFilter" id="sqlFilter"></a>
 ### `$sqlFilter`
 
-Interesting when specifying a segment.
-
-Sometimes you want users to set segment values that differ from the way
+Interesting when specifying a segment. Sometimes you want users to set segment values that differ from the way
 they are actually stored. For instance if you want to allow to filter by any URL than you might have to resolve
 this URL to an action id. Or a country name maybe has to be mapped to a 2 letter country code. You can do this by
 specifying either a callable such as `array('Classname', 'methodName')` or by passing a closure.
+
 There will be four values passed to the given closure or callable: `string $valueToMatch`, `string $segment`
 (see setSegment()), `string $matchType` (eg SegmentExpression::MATCH_EQUAL or any other match constant
 of this class) and `$segmentName`.
@@ -157,24 +131,24 @@ If the closure returns NULL, then Piwik assumes the segment sub-string will not 
 
 #### Signature
 
-- Its type is not specified.
-
+- It can be one of the following types:
+    - `string`
+    - [`Closure`](http://php.net/class.Closure)
 
 <a name="$sqlfiltervalue" id="$sqlfiltervalue"></a>
 <a name="sqlFilterValue" id="sqlFilterValue"></a>
 ### `$sqlFilterValue`
 
-Similar to [$sqlFilter](/api-reference/Piwik/Columns/Dimension#$sqlfilter) you can map a given segment value to another value.
-
-For instance you could map
+Similar to [$sqlFilter](/api-reference/Piwik/Columns/Dimension#$sqlfilter) you can map a given segment value to another value. For instance you could map
 "new" to 0, 'returning' to 1 and any other value to '2'. You can either define a callable or a closure. There
 will be only one value passed to the closure or callable which contains the value a user has set for this
 segment.
 
 #### Signature
 
-- Its type is not specified.
-
+- It can be one of the following types:
+    - `string`
+    - `array`
 
 <a name="$allowanonymous" id="$allowanonymous"></a>
 <a name="allowAnonymous" id="allowAnonymous"></a>
@@ -184,8 +158,7 @@ Defines whether this dimension (and segment based on this dimension) is availabl
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `bool` value.
 
 <a name="$dbtablename" id="$dbtablename"></a>
 <a name="dbTableName" id="dbTableName"></a>
@@ -201,16 +174,13 @@ The name of the database table this dimension refers to
 <a name="metricId" id="metricId"></a>
 ### `$metricId`
 
-By default the metricId is automatically generated based on the dimensionId.
-
-This might sometimes not be as
+By default the metricId is automatically generated based on the dimensionId. This might sometimes not be as
 readable and quite long. If you want more expressive metric names like `nb_visits` compared to
 `nb_corehomevisitid`, you can eg set a metricId `visit`.
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `string` value.
 
 Methods
 -------
@@ -250,7 +220,9 @@ To be implemented when a column references another column
 
 #### Signature
 
-- It does not return anything.
+
+- *Returns:*  [`Join`](../../Piwik/Columns/Join.md)|`null` &mdash;
+    
 
 <a name="getdbdiscriminator" id="getdbdiscriminator"></a>
 <a name="getDbDiscriminator" id="getDbDiscriminator"></a>
@@ -258,7 +230,9 @@ To be implemented when a column references another column
 
 #### Signature
 
-- It does not return anything.
+
+- *Returns:*  [`Discriminator`](../../Piwik/Columns/Discriminator.md)|`null` &mdash;
+    
 
 <a name="getenumcolumnvalues" id="getenumcolumnvalues"></a>
 <a name="getEnumColumnValues" id="getEnumColumnValues"></a>
@@ -268,7 +242,7 @@ To be implemented when a column represents an enum.
 
 #### Signature
 
-- It does not return anything.
+- It returns a `array` value.
 
 <a name="getmetricid" id="getmetricid"></a>
 <a name="getMetricId" id="getMetricId"></a>
@@ -284,9 +258,7 @@ Get the metricId which is used to generate metric names based on this dimension.
 <a name="install" id="install"></a>
 ### `install()`
 
-Installs the action dimension in case it is not installed yet.
-
-The installation is already implemented based on
+Installs the action dimension in case it is not installed yet. The installation is already implemented based on
 the [$columnName](/api-reference/Piwik/Columns/Dimension#$columnname) and [$columnType](/api-reference/Piwik/Columns/Dimension#$columntype). If you want to perform additional actions beside adding the
 column to the database - for instance adding an index - you can overwrite this method. We recommend to call
 this parent method to get the minimum required actions and then add further custom actions since this makes sure
@@ -297,28 +269,32 @@ column will be added to the `log_link_visit_action` MySQL table.
 
 Example:
 ```
-   public function install()
-   {
-   $changes = parent::install();
-   $changes['log_link_visit_action'][] = "ADD INDEX index_idsite_servertime ( idsite, server_time )";
+public function install()
+{
+$changes = parent::install();
+$changes['log_link_visit_action'][] = "ADD INDEX index_idsite_servertime ( idsite, server_time )";
 
-   return $changes;
-   }
-   ```
+return $changes;
+}
+```
 
 #### Signature
 
 
 - *Returns:*  `array` &mdash;
-    An array containing the table name as key and an array of MySQL alter table statements that should be executed on the given table. Example: ``` array( 'log_link_visit_action' => array("ADD COLUMN `$this->columnName` $this->columnType", "ADD INDEX ...") ); ```
+    An array containing the table name as key and an array of MySQL alter table statements that should
+              be executed on the given table. Example:
+```
+array(
+'log_link_visit_action' => array("ADD COLUMN `$this->columnName` $this->columnType", "ADD INDEX ...")
+);
+```
 
 <a name="uninstall" id="uninstall"></a>
 <a name="uninstall" id="uninstall"></a>
 ### `uninstall()`
 
-Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Columns/Dimension#$columnname) and columnType is set.
-
-In case you perform any custom
+Uninstalls the dimension if a [$columnName](/api-reference/Piwik/Columns/Dimension#$columnname) and columnType is set. In case you perform any custom
 actions during [install()](/api-reference/Piwik/Columns/Dimension#install) - for instance adding an index - you should make sure to undo those actions by
 overwriting this method. Make sure to call this parent method to make sure the uninstallation of the column
 will be done.
@@ -357,7 +333,7 @@ Returns a translated name in plural for this dimension.
 
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="isanonymousallowed" id="isanonymousallowed"></a>
 <a name="isAnonymousAllowed" id="isAnonymousAllowed"></a>
@@ -367,7 +343,7 @@ Defines whether an anonymous user is allowed to view this dimension
 
 #### Signature
 
-- It does not return anything.
+- It returns a `bool` value.
 
 <a name="setsqlsegment" id="setsqlsegment"></a>
 <a name="setSqlSegment" id="setSqlSegment"></a>
@@ -378,7 +354,7 @@ Sets (overwrites) the SQL segment
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$segment` (`Piwik\Columns\$segment`) &mdash;
+    - `$segment`
       
 - It does not return anything.
 
@@ -391,7 +367,7 @@ Sets (overwrites the dimension type)
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$type` (`Piwik\Columns\$type`) &mdash;
+    - `$type`
       
 - It does not return anything.
 
@@ -399,9 +375,7 @@ Sets (overwrites the dimension type)
 <a name="groupValue" id="groupValue"></a>
 ### `groupValue()`
 
-A dimension should group values by using this method.
-
-Otherwise the same row may appear several times.
+A dimension should group values by using this method. Otherwise the same row may appear several times.
 
 #### Signature
 
@@ -410,15 +384,13 @@ Otherwise the same row may appear several times.
       
     - `$idSite` (`int`) &mdash;
       
-- It does not return anything.
+- It returns a `mixed` value.
 
 <a name="formatvalue" id="formatvalue"></a>
 <a name="formatValue" id="formatValue"></a>
 ### `formatValue()`
 
-Formats the dimension value.
-
-By default, the dimension is formatted based on the set dimension type.
+Formats the dimension value. By default, the dimension is formatted based on the set dimension type.
 
 #### Signature
 
@@ -429,15 +401,13 @@ By default, the dimension is formatted based on the set dimension type.
       
     - `$formatter` ([`Formatter`](../../Piwik/Metrics/Formatter.md)) &mdash;
       
-- It does not return anything.
+- It returns a `mixed` value.
 
 <a name="configuresegments" id="configuresegments"></a>
 <a name="configureSegments" id="configureSegments"></a>
 ### `configureSegments()`
 
-Overwrite this method to configure segments.
-
-To do so just create an instance of a [Segment](/api-reference/Piwik/Plugin/Segment)
+Overwrite this method to configure segments. To do so just create an instance of a [Segment](/api-reference/Piwik/Plugin/Segment)
 class, configure it and call the addSegment() method. You can add one or more segments for this
 dimension. Example:
 
@@ -485,7 +455,7 @@ Returns the name of the segment that this dimension defines
 
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="getsqlsegment" id="getsqlsegment"></a>
 <a name="getSqlSegment" id="getSqlSegment"></a>
@@ -495,7 +465,7 @@ Returns a sql segment expression for this dimension.
 
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="getdbtablename" id="getdbtablename"></a>
 <a name="getDbTableName" id="getDbTableName"></a>
@@ -505,15 +475,13 @@ Returns the name of the database table this dimension belongs to.
 
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
 ### `getId()`
 
-Returns a unique string ID for this dimension.
-
-The ID is built using the namespaced class name
+Returns a unique string ID for this dimension. The ID is built using the namespaced class name
 of the dimension, but is modified to be more human readable.
 
 #### Signature
@@ -522,7 +490,8 @@ of the dimension, but is modified to be more human readable.
 - *Returns:*  `string` &mdash;
     eg, `"Referrers.Keywords"`
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the plugin and simple class name of this instance cannot be determined. This would only happen if the dimension is located in the wrong directory.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the plugin and simple class name of this instance cannot be determined.
+                  This would only happen if the dimension is located in the wrong directory.
 
 <a name="getalldimensions" id="getalldimensions"></a>
 <a name="getAllDimensions" id="getAllDimensions"></a>
@@ -565,5 +534,5 @@ Returns the type of the dimension which defines what kind of value this dimensio
 
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 

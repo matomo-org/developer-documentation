@@ -43,7 +43,8 @@ Constructor.
     - `$pluginName` (`string`|`bool`) &mdash;
        A plugin name to force. If not supplied, it is set to the last part of the class name.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If plugin metadata is defined in both the getInformation() method and the **plugin.json** file.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If plugin metadata is defined in both the getInformation() method
+                   and the **plugin.json** file.
 
 <a name="reloadplugininformation" id="reloadplugininformation"></a>
 <a name="reloadPluginInformation" id="reloadPluginInformation"></a>
@@ -84,7 +85,7 @@ Returns plugin information, including:
 <a name="registerEvents" id="registerEvents"></a>
 ### `registerEvents()`
 
-Since Piwik 2.15.0
+Since Matomo 2.15.0
 
 Returns a list of events with associated event observers.
 
@@ -94,7 +95,19 @@ Derived classes should use this method to associate callbacks with events.
 
 
 - *Returns:*  `array` &mdash;
-    eg, array( 'API.getReportMetadata' => 'myPluginFunction', 'Another.event'         => array( 'function' => 'myOtherPluginFunction', 'after'    => true // execute after callbacks w/o ordering ) 'Yet.Another.event'     => array( 'function' => 'myOtherPluginFunction', 'before'   => true // execute before callbacks w/o ordering ) )
+    eg,
+
+                  array(
+                      'API.getReportMetadata' => 'myPluginFunction',
+                      'Another.event'         => array(
+                                                     'function' => 'myOtherPluginFunction',
+                                                     'after'    => true // execute after callbacks w/o ordering
+                                                 )
+                      'Yet.Another.event'     => array(
+                                                     'function' => 'myOtherPluginFunction',
+                                                     'before'   => true // execute before callbacks w/o ordering
+                                                 )
+                  )
 
 <a name="postload" id="postload"></a>
 <a name="postLoad" id="postLoad"></a>
@@ -112,7 +125,9 @@ Useful for initialization code that uses translated strings.
 <a name="requiresInternetConnection" id="requiresInternetConnection"></a>
 ### `requiresInternetConnection()`
 
-Defines whether the whole plugin requires a working internet connection If set to true, the plugin will be automatically unloaded if `enable_internet_features` is 0, even if the plugin is activated
+Defines whether the whole plugin requires a working internet connection
+If set to true, the plugin will be automatically unloaded if `enable_internet_features` is 0,
+even if the plugin is activated
 
 #### Signature
 
@@ -122,9 +137,7 @@ Defines whether the whole plugin requires a working internet connection If set t
 <a name="install" id="install"></a>
 ### `install()`
 
-Installs the plugin.
-
-Derived classes should implement this class if the plugin
+Installs the plugin. Derived classes should implement this class if the plugin
 needs to:
 
 - create tables
@@ -141,9 +154,7 @@ needs to:
 <a name="uninstall" id="uninstall"></a>
 ### `uninstall()`
 
-Uninstalls the plugins.
-
-Derived classes should implement this method if the changes
+Uninstalls the plugins. Derived classes should implement this method if the changes
 made in [install()](/api-reference/Piwik/Plugins/DevicePlugins/DevicePlugins#install) need to be undone during uninstallation.
 
 In most cases, if you have an [install()](/api-reference/Piwik/Plugins/DevicePlugins/DevicePlugins#install) method, you should provide
@@ -200,7 +211,8 @@ Returns `true` if this plugin is a theme, `false` if otherwise.
 <a name="getPluginName" id="getPluginName"></a>
 ### `getPluginName()`
 
-Returns the plugin's base class name without the namespace, e.g., `"UserCountry"` when the plugin class is `"Piwik\Plugins\UserCountry\UserCountry"`.
+Returns the plugin's base class name without the namespace,
+e.g., `"UserCountry"` when the plugin class is `"Piwik\Plugins\UserCountry\UserCountry"`.
 
 #### Signature
 
@@ -222,7 +234,8 @@ Tries to find a component such as a Menu or Tasks within this plugin.
        If not empty, a check will be performed whether a found file extends the given subclass. If the requested file exists but does not extend this class a warning will be shown to advice a developer to extend this certain class.
 
 - *Returns:*  `string`|`null` &mdash;
-    Null if the requested component does not exist or an instance of the found component.
+    Null if the requested component does not exist or an instance of the found
+                        component.
 
 <a name="findmultiplecomponents" id="findmultiplecomponents"></a>
 <a name="findMultipleComponents" id="findMultipleComponents"></a>
@@ -280,9 +293,7 @@ Returns a string (translated) describing the missing requirements for this plugi
 <a name="getPluginNameFromBacktrace" id="getPluginNameFromBacktrace"></a>
 ### `getPluginNameFromBacktrace()`
 
-Extracts the plugin name from a backtrace array.
-
-Returns `false` if we can't find one.
+Extracts the plugin name from a backtrace array. Returns `false` if we can't find one.
 
 #### Signature
 
@@ -290,16 +301,14 @@ Returns `false` if we can't find one.
     - `$backtrace` (`array`) &mdash;
        The result of [debug_backtrace()](http://php.net/function.debug_backtrace()) or [Exception::getTrace()](http://www.php.net/manual/en/exception.gettrace.php).
 
-- *Returns:*  `string`|`Piwik\false` &mdash;
+- *Returns:*  `string`|`false` &mdash;
     
 
 <a name="getpluginnamefromnamespace" id="getpluginnamefromnamespace"></a>
 <a name="getPluginNameFromNamespace" id="getPluginNameFromNamespace"></a>
 ### `getPluginNameFromNamespace()`
 
-Extracts the plugin name from a namespace name or a fully qualified class name.
-
-Returns `false`
+Extracts the plugin name from a namespace name or a fully qualified class name. Returns `false`
 if we can't find one.
 
 #### Signature
@@ -308,7 +317,7 @@ if we can't find one.
     - `$namespaceOrClassName` (`string`) &mdash;
        The namespace or class string.
 
-- *Returns:*  `string`|`Piwik\false` &mdash;
+- *Returns:*  `string`|`false` &mdash;
     
 
 <a name="getalldevicepluginscolumnclasses" id="getalldevicepluginscolumnclasses"></a>

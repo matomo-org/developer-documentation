@@ -3,6 +3,26 @@ Events
 
 This is a complete list of available hooks. If you are not familiar with this read our [Guide about events](/guides/events).
 
+## &quot;Dashboard
+
+- [&quot;Dashboard.changeDefaultDashboardLayout&quot;](#dashboardchangedefaultdashboardlayout)
+
+### &quot;Dashboard.changeDefaultDashboardLayout&quot;
+
+*Defined in [Piwik/Plugins/Dashboard/Dashboard](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php) in line [187](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L187)*
+
+Allows other plugins to modify the default dashboard layout.
+
+Callback Signature:
+<pre><code>function(&amp;$defaultLayout)</code></pre>
+
+- string &$defaultLayout JSON encoded string of the default dashboard layout. Contains an
+                              array of columns where each column is an array of widgets. Each
+                              widget is an associative array w/ the following elements:
+
+                              * **uniqueId**: The widget's unique ID.
+                              * **parameters**: The array of query parameters that should be used to get this widget's report.
+
 ## Access
 
 - [Access.Capability.addCapabilities](#accesscapabilityaddcapabilities)
@@ -23,7 +43,7 @@ Triggered to add new capabilities. **Example**
 Callback Signature:
 <pre><code>function(&amp;$capabilities)</code></pre>
 
-- Capability `$reports` An array of reports
+- \Capability `$reports` An array of reports
 
 
 ### Access.Capability.filterCapabilities
@@ -44,7 +64,7 @@ Triggered to filter / restrict capabilities. **Example**
 Callback Signature:
 <pre><code>function(&amp;$capabilities)</code></pre>
 
-- Capability `$reports` An array of reports
+- \Capability `$reports` An array of reports
 
 
 ### Access.modifyUserAccess
@@ -53,9 +73,7 @@ Callback Signature:
 
 Triggered after the initial access levels and permissions for the current user are loaded. Use this
 event to modify the current user's permissions (for example, making sure every user has view access
-to a specific site).
-
-**Example**
+to a specific site). **Example**
 
     function (&$idsitesByAccess, $login) {
         if ($login == 'somespecialuser') {
@@ -66,9 +84,18 @@ to a specific site).
     }
 
 Callback Signature:
-<pre><code>function(&amp;$this-&gt;idsitesByAccess, $this-&gt;login)</code></pre>
+<pre><code>function(&amp;$this-&gt;idsitesByAccess, $this-&gt;login]</code></pre>
 
-- array `$idsitesByAccess` The current user's access levels for individual sites. Maps role and capability IDs to list of site IDs, eg: ``` [ 'view' => [1, 2, 3], 'write' => [4, 5], 'admin' => [], ] ```
+- array &$idsitesByAccess The current user's access levels for individual sites. Maps role and
+                                 capability IDs to list of site IDs, eg:
+
+                                 ```
+                                 [
+                                     'view' => [1, 2, 3],
+                                     'write' => [4, 5],
+                                     'admin' => [],
+                                 ]
+                                 ```
 
 - string `$login` The current user's login.
 
@@ -96,9 +123,9 @@ public function addActionTypes(&$availableTypes)
 }
 
 Callback Signature:
-<pre><code>function(&amp;$availableTypes)</code></pre>
+<pre><code>function(&amp;$availableTypes]</code></pre>
 
-- array `&$availableTypes` 
+- array `&$availableTypes`
 
 Usages:
 
@@ -137,7 +164,6 @@ Usages:
 - [API.getPagesComparisonsDisabledFor](#apigetpagescomparisonsdisabledfor)
 - [API.getReportMetadata.end](#apigetreportmetadataend)
 - [API.Request.authenticate](#apirequestauthenticate)
-- [API.Request.authenticate.failed](#apirequestauthenticatefailed)
 - [API.Request.dispatch](#apirequestdispatch)
 - [API.Request.dispatch.end](#apirequestdispatchend)
 - [API.Request.intercept](#apirequestintercept)
@@ -162,7 +188,7 @@ event handlers for that event will have to do more work._
 Callback Signature:
 <pre><code>function(&amp;$finalParameters)</code></pre>
 
-- array `&$finalParameters` List of parameters that will be passed to the API method.
+- array &$finalParameters List of parameters that will be passed to the API method.
 
 
 ### API.$pluginName.$methodName.end
@@ -192,9 +218,20 @@ however event handlers for that event will have to do more work._
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
-- mixed `$returnedValue` The API method's return value. Can be an object, such as a [DataTable](/api-reference/Piwik/DataTable) instance. could be a [DataTable](/api-reference/Piwik/DataTable).
+- mixed &$returnedValue The API method's return value. Can be an object, such as a
+                             [DataTable](/api-reference/Piwik/DataTable) instance.
+                             could be a [DataTable](/api-reference/Piwik/DataTable).
 
-- array `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
+- array `$extraInfo` An array holding information regarding the API request. Will
+                        contain the following data:
+
+                        - **className**: The namespace-d class name of the API instance
+                                         that's being called.
+                        - **module**: The name of the plugin the API request was
+                                      dispatched to.
+                        - **action**: The name of the API method that was executed.
+                        - **parameters**: The array of parameters passed to the API
+                                          method.
 
 
 ### API.addGlossaryItems
@@ -202,9 +239,7 @@ Callback Signature:
 *Defined in [Piwik/Plugins/API/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/API/Controller.php) in line [180](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/API/Controller.php#L180)*
 
 Triggered to add or modify glossary items. You can either modify one of the existing core categories
-'reports' and 'metrics' or add your own category.
-
-**Example**
+'reports' and 'metrics' or add your own category. **Example**
 
     public function addGlossaryItems(&$glossaryItems)
     {
@@ -218,28 +253,28 @@ Triggered to add or modify glossary items. You can either modify one of the exis
 Callback Signature:
 <pre><code>function(&amp;$glossaryItems)</code></pre>
 
-- array `&$glossaryItems` An array containing all glossary items.
+- array &$glossaryItems An array containing all glossary items.
 
 
 ### API.DocumentationGenerator.$token
 
 *Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php) in line [523](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Proxy.php#L523)*
 
-This event exists for checking whether a Plugin API class or a Plugin API method tagged with a `@hideXYZ` should be hidden in the API listing.
+This event exists for checking whether a Plugin API class or a Plugin API method tagged
+with a `@hideXYZ` should be hidden in the API listing.
 
 Callback Signature:
 <pre><code>function(&amp;$hide)</code></pre>
 
-- bool `&$hide` whether to hide APIs tagged with $token should be displayed.
+- bool &$hide whether to hide APIs tagged with $token should be displayed.
 
 
 ### API.getPagesComparisonsDisabledFor
 
 *Defined in [Piwik/Plugins/API/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/API/API.php) in line [710](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/API/API.php#L710)*
 
-If your plugin has pages where you'd like comparison features to be disabled, you can add them via this event. Add the pages as "CategoryId.SubcategoryId".
-
-**Example**
+If your plugin has pages where you'd like comparison features to be disabled, you can add them
+via this event. Add the pages as "CategoryId.SubcategoryId". **Example**
 
 ```
 public function getPagesComparisonsDisabledFor(&$pages)
@@ -250,9 +285,9 @@ public function getPagesComparisonsDisabledFor(&$pages)
 ```
 
 Callback Signature:
-<pre><code>function(&amp;$pages)</code></pre>
+<pre><code>function(&amp;$pages]</code></pre>
 
-- string `&$pages` 
+- string &$pages
 
 Usages:
 
@@ -270,9 +305,19 @@ of available reports.
 Callback Signature:
 <pre><code>function(&amp;$availableReports, $parameters)</code></pre>
 
-- array `&$availableReports` List of all report metadata. Read the [API.getReportMetadata](/api-reference/events#apigetreportmetadata) docs to see what this array contains.
+- array &$availableReports List of all report metadata. Read the [API.getReportMetadata](/api-reference/events#apigetreportmetadata)
+                                docs to see what this array contains.
 
-- array `$parameters` Contains the values of the sites and period we are getting reports for. Some report depend on this data. For example, Goals reports depend on the site IDs being request. Contains the following information: - **idSite**: The site ID we are getting reports for. - **period**: The period type, eg, `'day'`, `'week'`, `'month'`, `'year'`, `'range'`. - **date**: A string date within the period or a date range, eg, `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
+- array `$parameters` Contains the values of the sites and period we are
+                         getting reports for. Some report depend on this data.
+                         For example, Goals reports depend on the site IDs being
+                         request. Contains the following information:
+
+                         - **idSite**: The site ID we are getting reports for.
+                         - **period**: The period type, eg, `'day'`, `'week'`, `'month'`,
+                                       `'year'`, `'range'`.
+                         - **date**: A string date within the period or a date range, eg,
+                                     `'2013-01-01'` or `'2012-01-01,2013-01-01'`.
 
 Usages:
 
@@ -283,7 +328,8 @@ Usages:
 
 *Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [441](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L441)*
 
-Triggered when authenticating an API request, but only if the **token_auth** query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
+Triggered when authenticating an API request, but only if the **token_auth**
+query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
 and make sure the global authentication object (the object returned by `StaticContainer::get('Piwik\Auth')`)
 is setup to use `$token_auth` when its `authenticate()` method is executed.
 
@@ -295,17 +341,6 @@ Callback Signature:
 Usages:
 
 [Login::ApiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L176)
-
-
-### API.Request.authenticate.failed
-
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [447](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L447)*
-
-
-
-Usages:
-
-[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L95)
 
 
 ### API.Request.dispatch
@@ -329,7 +364,7 @@ Triggered before an API request is dispatched. This event can be used to modify 
 Callback Signature:
 <pre><code>function(&amp;$finalParameters, $pluginName, $methodName)</code></pre>
 
-- array `&$finalParameters` List of parameters that will be passed to the API method.
+- array &$finalParameters List of parameters that will be passed to the API method.
 
 - string `$pluginName` The name of the plugin the API method belongs to.
 
@@ -369,9 +404,19 @@ Triggered directly after an API request is dispatched. This event can be used to
 Callback Signature:
 <pre><code>$endHookParams</code></pre>
 
-- mixed `$returnedValue` The API method's return value. Can be an object, such as a [DataTable](/api-reference/Piwik/DataTable) instance.
+- mixed &$returnedValue The API method's return value. Can be an object, such as a
+                             [DataTable](/api-reference/Piwik/DataTable) instance.
 
-- array `$extraInfo` An array holding information regarding the API request. Will contain the following data: - **className**: The namespace-d class name of the API instance that's being called. - **module**: The name of the plugin the API request was dispatched to. - **action**: The name of the API method that was executed. - **parameters**: The array of parameters passed to the API method.
+- array `$extraInfo` An array holding information regarding the API request. Will
+                        contain the following data:
+
+                        - **className**: The namespace-d class name of the API instance
+                                         that's being called.
+                        - **module**: The name of the plugin the API request was
+                                      dispatched to.
+                        - **action**: The name of the API method that was executed.
+                        - **parameters**: The array of parameters passed to the API
+                                          method.
 
 
 ### API.Request.intercept
@@ -383,11 +428,11 @@ Triggered before an API request is dispatched. Use this event to intercept an AP
 and the result will be what you set in the event handler.
 
 Callback Signature:
-<pre><code>function(&amp;$returnedValue, $finalParameters, $pluginName, $methodName, $parametersRequest)</code></pre>
+<pre><code>function(&amp;$returnedValue, $finalParameters, $pluginName, $methodName, $parametersRequest]</code></pre>
 
-- mixed `&$returnedValue` Set this to set the result and preempt normal API invocation.
+- mixed &$returnedValue Set this to set the result and preempt normal API invocation.
 
-- array `$finalParameters` List of parameters that will be passed to the API method.
+- array &$finalParameters List of parameters that will be passed to the API method.
 
 - string `$pluginName` The name of the plugin the API method belongs to.
 
@@ -399,7 +444,6 @@ Callback Signature:
 
 - [ArchiveProcessor.ComputeNbUniques.getIdSites](#archiveprocessorcomputenbuniquesgetidsites)
 - [ArchiveProcessor.Parameters.getIdSites](#archiveprocessorparametersgetidsites)
-- [ArchiveProcessor.shouldAggregateFromRawData](#archiveprocessorshouldaggregatefromrawdata)
 
 ### ArchiveProcessor.ComputeNbUniques.getIdSites
 
@@ -410,7 +454,9 @@ Triggered to change which site ids should be looked at when processing unique vi
 Callback Signature:
 <pre><code>function(&amp;$sites, $params-&gt;getPeriod(), $params-&gt;getSegment())</code></pre>
 
-- array `$idSites` An array with one idSite. This site is being archived currently. To cancel the query you can change this value to an empty array. To include other sites in the query you can add more idSites to this list of idSites.
+- array &$idSites An array with one idSite. This site is being archived currently. To cancel the query
+                       you can change this value to an empty array. To include other sites in the query you
+                       can add more idSites to this list of idSites.
 
 - [Period](/api-reference/Piwik/Period) `$period` The period that is being requested to be archived.
 
@@ -426,26 +472,10 @@ Callback Signature:
 Callback Signature:
 <pre><code>function(&amp;$idSites, $this-&gt;getPeriod())</code></pre>
 
-
-### ArchiveProcessor.shouldAggregateFromRawData
-
-*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [90](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L90)*
-
-Triggered to detect if the archiver should aggregate from raw data by using MySQL queries (when true) or by aggregate archives (when false). Typically, data is aggregated from raw data for "day" period, and
-aggregregated from archives for all other periods.
-
-Callback Signature:
-<pre><code>function(&amp;$shouldAggregateFromRawData, $this-&gt;params)</code></pre>
-
-- bool `&$shouldAggregateFromRawData` Set to true, to aggregate from raw data, or false to aggregate multiple reports.
-
-- [Parameters](/api-reference/Piwik/ArchiveProcessor/Parameters) `$params` 
-
 ## Archiving
 
 - [Archiving.getIdSitesToArchiveWhenNoVisits](#archivinggetidsitestoarchivewhennovisits)
 - [Archiving.getIdSitesToMarkArchivesAsInvalidated](#archivinggetidsitestomarkarchivesasinvalidated)
-- [Archiving.isRequestAuthorizedToArchive](#archivingisrequestauthorizedtoarchive)
 - [Archiving.makeNewArchiverObject](#archivingmakenewarchiverobject)
 
 ### Archiving.getIdSitesToArchiveWhenNoVisits
@@ -465,9 +495,7 @@ Callback Signature:
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
 remove an idSite from the list of sites that should be invalidated to prevent it from ever being
-invalidated.
-
-**Example**
+invalidated. **Example**
 
     public function getIdSitesToMarkArchivesAsInvalidates(&$idSites)
     {
@@ -479,17 +507,7 @@ invalidated.
 Callback Signature:
 <pre><code>function(&amp;$idSites)</code></pre>
 
-- array `&$idSites` An array containing a list of site IDs which are requested to be invalidated.
-
-
-### Archiving.isRequestAuthorizedToArchive
-
-*Defined in [Piwik/ArchiveProcessor/Rules](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Rules.php) in line [240](https://github.com/matomo-org/matomo/blob/3.x-dev/core/ArchiveProcessor/Rules.php#L240)*
-
-
-
-Callback Signature:
-<pre><code>function(&amp;$isRequestAuthorizedToArchive, $params)</code></pre>
+- array &$idSites An array containing a list of site IDs which are requested to be invalidated.
 
 
 ### Archiving.makeNewArchiverObject
@@ -502,13 +520,13 @@ by calling `$archiver->disable()` method.
 Callback Signature:
 <pre><code>function($archiver, $pluginName, $this-&gt;params, false)</code></pre>
 
-- [Archiver](/api-reference/Piwik/Plugin/Archiver) `$archiver` The newly created plugin archiver instance.
+- [Archiver](/api-reference/Piwik/Plugin/Archiver) &$archiver The newly created plugin archiver instance.
 
 - string `$pluginName` The name of plugin of which archiver instance was created.
 
 - array `$this-&gt;params` Array containing archive parameters (Site, Period, Date and Segment)
 
-- bool
+- bool false This parameter is deprecated and will be removed.
 
 ## AssetManager
 
@@ -519,13 +537,13 @@ Callback Signature:
 - [AssetManager.filterMergedStylesheets](#assetmanagerfiltermergedstylesheets)
 - [AssetManager.getJavaScriptFiles](#assetmanagergetjavascriptfiles)
 - [AssetManager.getStylesheetFiles](#assetmanagergetstylesheetfiles)
-- [AssetManager.makeNewAssetManagerObject](#assetmanagermakenewassetmanagerobject)
 
 ### AssetManager.addStylesheets
 
 *Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [101](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L101)*
 
-Triggered after all less stylesheets are concatenated into one long string but before it is minified and merged into one file. This event can be used to add less stylesheets that are not located in a file on the disc.
+Triggered after all less stylesheets are concatenated into one long string but before it is
+minified and merged into one file. This event can be used to add less stylesheets that are not located in a file on the disc.
 
 Callback Signature:
 <pre><code>function(&amp;$concatenatedContent)</code></pre>
@@ -569,7 +587,8 @@ Usages:
 
 *Defined in [Piwik/AssetManager/UIAssetMerger/JScriptUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/JScriptUIAssetMerger.php) in line [69](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/JScriptUIAssetMerger.php#L69)*
 
-Triggered after all the JavaScript files Piwik uses are minified and merged into a single file, but before the merged JavaScript is written to disk. Plugins can use this event to modify merged JavaScript or do something else
+Triggered after all the JavaScript files Piwik uses are minified and merged into a
+single file, but before the merged JavaScript is written to disk. Plugins can use this event to modify merged JavaScript or do something else
 with it.
 
 Callback Signature:
@@ -586,7 +605,8 @@ Usages:
 
 *Defined in [Piwik/AssetManager/UIAssetMerger/StylesheetUIAssetMerger](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php) in line [141](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php#L141)*
 
-Triggered after all less stylesheets are compiled to CSS, minified and merged into one file, but before the generated CSS is written to disk. This event can be used to modify merged CSS.
+Triggered after all less stylesheets are compiled to CSS, minified and merged into
+one file, but before the generated CSS is written to disk. This event can be used to modify merged CSS.
 
 Callback Signature:
 <pre><code>function(&amp;$mergedContent)</code></pre>
@@ -598,7 +618,8 @@ Callback Signature:
 
 *Defined in [Piwik/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php) in line [45](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php#L45)*
 
-Triggered when gathering the list of all JavaScript files needed by Piwik and its plugins. Plugins that have their own JavaScript should use this event to make those
+Triggered when gathering the list of all JavaScript files needed by Piwik
+and its plugins. Plugins that have their own JavaScript should use this event to make those
 files load in the browser.
 
 JavaScript files should be placed within a **javascripts** subdirectory in your
@@ -630,7 +651,8 @@ Usages:
 
 *Defined in [Piwik/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher.php) in line [68](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager/UIAssetFetcher/StylesheetUIAssetFetcher.php#L68)*
 
-Triggered when gathering the list of all stylesheets (CSS and LESS) needed by Piwik and its plugins. Plugins that have stylesheets should use this event to make those stylesheets
+Triggered when gathering the list of all stylesheets (CSS and LESS) needed by
+Piwik and its plugins. Plugins that have stylesheets should use this event to make those stylesheets
 load.
 
 Stylesheets should be placed within a **stylesheets** subdirectory in your plugin's
@@ -647,24 +669,11 @@ root directory.
 Callback Signature:
 <pre><code>function(&amp;$this-&gt;fileLocations)</code></pre>
 
-- string `$stylesheets` The list of stylesheet paths.
+- string &$stylesheets The list of stylesheet paths.
 
 Usages:
 
 [Plugin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/API/API.php#L903), [Annotations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Annotations/Annotations.php#L38), [CoreAdminHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L56), [CoreHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L114), [CorePluginsAdmin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L48), [CoreVisualizations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L40), [CustomAlerts::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L78), [CustomVariables::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L137), [DBStats::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/DBStats/DBStats.php#L31), [Dashboard::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L281), [Diagnostics::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Diagnostics/Diagnostics.php#L33), [Events::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Events/Events.php#L259), [Feedback::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Feedback/Feedback.php#L38), [Goals::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L349), [Insights::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Insights/Insights.php#L26), [Installation::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Installation/Installation.php#L128), [Live::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Live.php#L55), [Login::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L130), [Marketplace::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Marketplace/Marketplace.php#L51), [MobileMessaging::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L101), [MultiSites::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L86), [PrivacyManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L229), [ProfessionalServices::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L38), [Referrers::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Referrers.php#L71), [RssWidget::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/RssWidget/RssWidget.php#L32), [ScheduledReports::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L137), [SecurityInfo::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SecurityInfo/SecurityInfo.php#L28), [SegmentEditor::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L246), [SitesManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L151), [Tour::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Tour/Tour.php#L135), [Transitions::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Transitions/Transitions.php#L34), [TreemapVisualization::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L55), [TwoFactorAuth::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L42), [UserCountry::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L53), [UserCountryMap::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L56), [UsersManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L160), [VisitsSummary::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/VisitsSummary/VisitsSummary.php#L68), [Widgetize::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L38)
-
-
-### AssetManager.makeNewAssetManagerObject
-
-*Defined in [Piwik/AssetManager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager.php) in line [96](https://github.com/matomo-org/matomo/blob/3.x-dev/core/AssetManager.php#L96)*
-
-Triggered when creating an instance of the asset manager. Lets you overwite the
-asset manager behavior.
-
-Callback Signature:
-<pre><code>function(&amp;$assetManager)</code></pre>
-
-- AssetManager `&$assetManager` 
 
 ## Category
 
@@ -688,7 +697,7 @@ Triggered to add custom subcategories. **Example**
 Callback Signature:
 <pre><code>function(&amp;$subcategories)</code></pre>
 
-- array `&$subcategories` An array containing a list of subcategories.
+- array &$subcategories An array containing a list of subcategories.
 
 Usages:
 
@@ -712,7 +721,7 @@ Triggered to allow plugins to force the usage of async cli multi execution or to
 Callback Signature:
 <pre><code>function(&amp;$supportsAsync)</code></pre>
 
-- bool `&$supportsAsync` Whether async is supported or not.
+- bool &$supportsAsync Whether async is supported or not.
 
 ## Config
 
@@ -730,7 +739,7 @@ message.
 Callback Signature:
 <pre><code>function($exception)</code></pre>
 
-- [Exception](http://php.net/class.Exception) `$exception` The exception thrown from trying to get an option value.
+- [\Exception](http://php.net/class.\Exception) `$exception` The exception thrown from trying to get an option value.
 
 Usages:
 
@@ -754,14 +763,15 @@ by listening to this event like this:
 Callback Signature:
 <pre><code>function(&amp;$values)</code></pre>
 
-- array `&$values` Config values that will be saved
+- array &$values Config values that will be saved
 
 
 ### Config.NoConfigurationFile
 
 *Defined in [Piwik/Application/Kernel/EnvironmentValidator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Kernel/EnvironmentValidator.php) in line [112](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Application/Kernel/EnvironmentValidator.php#L112)*
 
-Triggered when the configuration file cannot be found or read, which usually means Piwik is not installed yet. This event can be used to start the installation process or to display a custom error message.
+Triggered when the configuration file cannot be found or read, which usually
+means Piwik is not installed yet. This event can be used to start the installation process or to display a custom error message.
 
 Callback Signature:
 <pre><code>function($exception)</code></pre>
@@ -781,9 +791,7 @@ Usages:
 *Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php) in line [198](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Console.php#L198)*
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
-should subscribe to this event and remove commands from the existing list.
-
-**Example**
+should subscribe to this event and remove commands from the existing list. **Example**
 
     public function filterConsoleCommands(&$commands)
     {
@@ -796,7 +804,7 @@ should subscribe to this event and remove commands from the existing list.
 Callback Signature:
 <pre><code>function(&amp;$commands)</code></pre>
 
-- array `&$commands` An array containing a list of command class names.
+- array &$commands An array containing a list of command class names.
 
 ## Controller
 
@@ -817,7 +825,7 @@ action only. Using this event will result in a little less code than [Request.di
 Callback Signature:
 <pre><code>function(&amp;$parameters)</code></pre>
 
-- array `&$parameters` The arguments passed to the controller action.
+- array &$parameters The arguments passed to the controller action.
 
 
 ### Controller.$module.$action.end
@@ -834,7 +842,7 @@ controller action only. Using this event will result in a little less code than
 Callback Signature:
 <pre><code>function(&amp;$result, $parameters)</code></pre>
 
-- mixed `&$result` The result of the controller action.
+- mixed &$result The result of the controller action.
 
 - array `$parameters` The arguments passed to the controller action.
 
@@ -844,7 +852,7 @@ Callback Signature:
 *Defined in [Piwik/Plugin/ControllerAdmin](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ControllerAdmin.php) in line [354](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ControllerAdmin.php#L354)*
 
 Posted when rendering an admin page and notifications about any warnings or errors should be triggered. You can use it for example when you have a plugin that needs to be configured in order to work and the
-plugin has not been configured yet. It can be also used to cancel / remove other notifications by calling 
+plugin has not been configured yet. It can be also used to cancel / remove other notifications by calling
 eg `Notification\Manager::cancel($notificationId)`.
 
 **Example**
@@ -870,7 +878,7 @@ eg `Notification\Manager::cancel($notificationId)`.
 Triggered when a INI config file is changed on disk.
 
 Callback Signature:
-<pre><code>function($localPath)</code></pre>
+<pre><code>function($localPath]</code></pre>
 
 - string `$localPath` Absolute path to the changed file on the server.
 
@@ -896,7 +904,7 @@ Triggered when a user uploads a custom logo. This event is triggered for
 the large logo, for the smaller logo-header.png file, and for the favicon.
 
 Callback Signature:
-<pre><code>function($absolutePath)</code></pre>
+<pre><code>function($absolutePath]</code></pre>
 
 - string `$absolutePath` The absolute path to the logo file on the Piwik server.
 
@@ -909,10 +917,6 @@ Callback Signature:
 *Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php) in line [506](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Updater.php#L506)*
 
 Triggered after Piwik has been updated.
-
-Usages:
-
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 ## CronArchive
 
@@ -928,7 +932,8 @@ Usages:
 
 *Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [527](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L527)*
 
-This event is triggered immediately after the cron archiving process starts archiving data for a single site.
+This event is triggered immediately after the cron archiving process starts archiving data for a single
+site.
 
 Callback Signature:
 <pre><code>function($idSite, $completed)</code></pre>
@@ -940,7 +945,8 @@ Callback Signature:
 
 *Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [517](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L517)*
 
-This event is triggered before the cron archiving process starts archiving data for a single site.
+This event is triggered before the cron archiving process starts archiving data for a single
+site.
 
 Callback Signature:
 <pre><code>function($idSite)</code></pre>
@@ -957,14 +963,15 @@ This event is triggered after archiving.
 Callback Signature:
 <pre><code>function($this)</code></pre>
 
-- CronArchive `$this` 
+- \CronArchive `$this`
 
 
 ### CronArchive.filterWebsiteIds
 
 *Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php) in line [1353](https://github.com/matomo-org/matomo/blob/3.x-dev/core/CronArchive.php#L1353)*
 
-Triggered by the **core:archive** console command so plugins can modify the list of websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
+Triggered by the **core:archive** console command so plugins can modify the list of
+websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
 
 Callback Signature:
@@ -998,7 +1005,9 @@ This event is triggered after a CronArchive instance is initialized.
 Callback Signature:
 <pre><code>function($this-&gt;websites-&gt;getInitialSiteIds())</code></pre>
 
-- array `$websiteIds` The list of website IDs this CronArchive instance is processing. This will be the entire list of IDs regardless of whether some have already been processed.
+- array `$websiteIds` The list of website IDs this CronArchive instance is processing.
+                         This will be the entire list of IDs regardless of whether some have
+                         already been processed.
 
 
 ### CronArchive.init.start
@@ -1010,7 +1019,7 @@ This event is triggered during initializing archiving.
 Callback Signature:
 <pre><code>function($this)</code></pre>
 
-- CronArchive `$this` 
+- \CronArchive `$this`
 
 ## CustomMatomoJs
 
@@ -1020,10 +1029,9 @@ Callback Signature:
 
 *Defined in [Piwik/Plugins/CustomPiwikJs/TrackingCode/PiwikJsManipulator](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PiwikJsManipulator.php) in line [56](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/TrackingCode/PiwikJsManipulator.php#L56)*
 
-Triggered after the Matomo JavaScript tracker has been generated and shortly before the tracker file is written to disk. You can listen to this event to for example automatically append some code to the JS
-tracker file.
-
-**Example**
+Triggered after the Matomo JavaScript tracker has been generated and shortly before the tracker file
+is written to disk. You can listen to this event to for example automatically append some code to the JS
+tracker file. **Example**
 
     function onManipulateJsTracker (&$content) {
         $content .= "\nPiwik.DOM.onLoad(function () { console.log('loaded'); });";
@@ -1047,7 +1055,7 @@ Callback Signature:
 Triggered after the tracker JavaScript content (the content of the piwik.js file) is changed.
 
 Callback Signature:
-<pre><code>function($savedFile)</code></pre>
+<pre><code>function($savedFile]</code></pre>
 
 - string `$absolutePath` The path to the new piwik.js file.
 
@@ -1059,7 +1067,7 @@ Callback Signature:
 
 
 Callback Signature:
-<pre><code>function($savedFile)</code></pre>
+<pre><code>function($savedFile]</code></pre>
 
 
 ### CustomPiwikJs.shouldAddTrackerFile
@@ -1071,28 +1079,9 @@ Detect if a custom tracker file should be added to the piwik.js tracker or not. 
 Callback Signature:
 <pre><code>function(&amp;$shouldAddFile, $pluginName)</code></pre>
 
-- bool `&$shouldAddFile` Decides whether the tracker file belonging to the given plugin should be added or not.
+- bool &$shouldAddFile Decides whether the tracker file belonging to the given plugin should be added or not.
 
 - string `$pluginName` The name of the plugin this file belongs to
-
-## Dashboard
-
-- [Dashboard.changeDefaultDashboardLayout](#dashboardchangedefaultdashboardlayout)
-
-### Dashboard.changeDefaultDashboardLayout
-
-*Defined in [Piwik/Plugins/Dashboard/Dashboard](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php) in line [187](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L187)*
-
-Allows other plugins to modify the default dashboard layout.
-
-Callback Signature:
-<pre><code>function(&amp;$defaultLayout)</code></pre>
-
-- string `&$defaultLayout` JSON encoded string of the default dashboard layout. Contains an array of columns where each column is an array of widgets. Each widget is an associative array w/ the following elements: * **uniqueId**: The widget's unique ID. * **parameters**: The array of query parameters that should be used to get this widget's report.
-
-Usages:
-
-[Tour::changeDefaultDashboardLayout](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Tour/Tour.php#L123)
 
 ## Db
 
@@ -1110,7 +1099,8 @@ message.
 Callback Signature:
 <pre><code>function($exception)</code></pre>
 
-- [Exception](http://php.net/class.Exception) `$exception` The exception thrown from creating and testing the database connection.
+- [\Exception](http://php.net/class.\Exception) `$exception` The exception thrown from creating and testing the database
+                            connection.
 
 Usages:
 
@@ -1123,9 +1113,7 @@ Usages:
 
 Triggered when detecting which log_action entries to keep. Any log tables that use the log_action
 table to reference text via an ID should add their table info so no actions that are still in use
-will be accidentally deleted.
-
-**Example**
+will be accidentally deleted. **Example**
 
     Piwik::addAction('Db.getActionReferenceColumnsByTable', function(&$result) {
         $tableNameUnprefixed = 'log_example';
@@ -1136,7 +1124,7 @@ will be accidentally deleted.
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
 
-- array `&$result` 
+- array `&$result`
 
 
 ### Db.getDatabaseConfig
@@ -1148,7 +1136,18 @@ Triggered before a database connection is established. This event can be used to
 Callback Signature:
 <pre><code>function(&amp;$dbConfig)</code></pre>
 
-- array
+- array *$dbInfos Reference to an array containing database connection info,
+                       including:
+
+                       - **host**: The host name or IP address to the MySQL database.
+                       - **username**: The username to use when connecting to the
+                                       database.
+                       - **password**: The password to use when connecting to the
+                                      database.
+                       - **dbname**: The name of the Piwik MySQL database.
+                       - **port**: The MySQL database port to use.
+                       - **adapter**: either `'PDO\MYSQL'` or `'MYSQLI'`
+                       - **type**: The MySQL engine to use, for instance 'InnoDB'
 
 ## Dimension
 
@@ -1219,7 +1218,8 @@ Callback Signature:
 
 *Defined in [Piwik/Filesystem](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Filesystem.php) in line [47](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Filesystem.php#L47)*
 
-Triggered after all non-memory caches are cleared (eg, via the cache:clear command).
+Triggered after all non-memory caches are cleared (eg, via the cache:clear
+command).
 
 ## FrontController
 
@@ -1235,40 +1235,9 @@ an exception is caught.
 Callback Signature:
 <pre><code>function(&amp;$result, $ex)</code></pre>
 
-- string `&$result` The HTML of the error page.
+- string &$result The HTML of the error page.
 
-- [Exception](http://php.net/class.Exception) `$ex` The Exception displayed in the error page.
-
-## Goals
-
-- [Goals.getReportsWithGoalMetrics](#goalsgetreportswithgoalmetrics)
-
-### Goals.getReportsWithGoalMetrics
-
-*Defined in [Piwik/Plugins/Goals/Goals](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php) in line [337](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L337)*
-
-Triggered when gathering all reports that contain Goal metrics. The list of reports
-will be displayed on the left column of the bottom of every _Goals_ page.
-
-If plugins define reports that contain goal metrics (such as **conversions** or **revenue**),
-they can use this event to make sure their reports can be viewed on Goals pages.
-
-**Example**
-
-    public function getReportsWithGoalMetrics(&$reports)
-    {
-        $reports[] = array(
-            'category' => Piwik::translate('MyPlugin_myReportCategory'),
-            'name' => Piwik::translate('MyPlugin_myReportDimension'),
-            'module' => 'MyPlugin',
-            'action' => 'getMyReport'
-        );
-    }
-
-Callback Signature:
-<pre><code>function(&amp;$reportsWithGoals)</code></pre>
-
-- array `&$reportsWithGoals` The list of arrays describing reports that have Goal metrics. Each element of this array must be an array with the following properties: - **category**: The report category. This should be a translated string. - **name**: The report's translated name. - **module**: The plugin the report is in, eg, `'UserCountry'`. - **action**: The API method of the report, eg, `'getCountry'`.
+- [\Exception](http://php.net/class.\Exception) `$ex` The Exception displayed in the error page.
 
 ## Http
 
@@ -1287,13 +1256,20 @@ Callback Signature:
 
 - string `$url` The URL that needs to be requested
 
-- array `$params` HTTP params like - 'httpMethod' (eg GET, POST, ...), - 'body' the request body if the HTTP method needs to be posted - 'userAgent' - 'timeout' After how many seconds a request should time out - 'headers' An array of header strings like array('Accept-Language: en', '...') - 'verifySsl' A boolean whether SSL certificate should be verified - 'destinationPath' If set, the response of the HTTP request should be saved to this file
+- array `$params` HTTP params like
+                     - 'httpMethod' (eg GET, POST, ...),
+                     - 'body' the request body if the HTTP method needs to be posted
+                     - 'userAgent'
+                     - 'timeout' After how many seconds a request should time out
+                     - 'headers' An array of header strings like array('Accept-Language: en', '...')
+                     - 'verifySsl' A boolean whether SSL certificate should be verified
+                     - 'destinationPath' If set, the response of the HTTP request should be saved to this file
 
-- string `&$response` A plugin listening to this event should assign the HTTP response it received to this variable, for example "{value: true}"
+- string &$response A plugin listening to this event should assign the HTTP response it received to this variable, for example "{value: true}"
 
-- string `&$status` A plugin listening to this event should assign the HTTP status code it received to this variable, for example "200"
+- string &$status A plugin listening to this event should assign the HTTP status code it received to this variable, for example "200"
 
-- array `&$headers` A plugin listening to this event should assign the HTTP headers it received to this variable, eg array('Content-Length' => '5')
+- array &$headers A plugin listening to this event should assign the HTTP headers it received to this variable, eg array('Content-Length' => '5')
 
 
 ### Http.sendHttpRequest.end
@@ -1308,13 +1284,20 @@ Callback Signature:
 
 - string `$url` The URL that needs to be requested
 
-- array `$params` HTTP params like - 'httpMethod' (eg GET, POST, ...), - 'body' the request body if the HTTP method needs to be posted - 'userAgent' - 'timeout' After how many seconds a request should time out - 'headers' An array of header strings like array('Accept-Language: en', '...') - 'verifySsl' A boolean whether SSL certificate should be verified - 'destinationPath' If set, the response of the HTTP request should be saved to this file
+- array `$params` HTTP params like
+                     - 'httpMethod' (eg GET, POST, ...),
+                     - 'body' the request body if the HTTP method needs to be posted
+                     - 'userAgent'
+                     - 'timeout' After how many seconds a request should time out
+                     - 'headers' An array of header strings like array('Accept-Language: en', '...')
+                     - 'verifySsl' A boolean whether SSL certificate should be verified
+                     - 'destinationPath' If set, the response of the HTTP request should be saved to this file
 
-- string `&$response` The response of the HTTP request, for example "{value: true}"
+- string &$response The response of the HTTP request, for example "{value: true}"
 
-- string `&$status` The returned HTTP status code, for example "200"
+- string &$status The returned HTTP status code, for example "200"
 
-- array `&$headers` The returned headers, eg array('Content-Length' => '5')
+- array &$headers The returned headers, eg array('Content-Length' => '5')
 
 ## Insights
 
@@ -1338,7 +1321,8 @@ incoming array. API parameters can be configured as an array optionally.
 Callback Signature:
 <pre><code>function(&amp;$reports)</code></pre>
 
-- array `&$reports` An array containing a report unique id as key and an array of API parameters as values.
+- array &$reports An array containing a report unique id as key and an array of API parameters as
+                       values.
 
 Usages:
 
@@ -1358,7 +1342,7 @@ Triggered on initialization of the form to customize default Matomo settings (at
 Callback Signature:
 <pre><code>function($form)</code></pre>
 
-- \Piwik\Plugins\Installation\FormDefaultSettings `$form` 
+- \Piwik\Plugins\Installation\FormDefaultSettings `$form`
 
 Usages:
 
@@ -1374,7 +1358,7 @@ Triggered on submission of the form to customize default Matomo settings (at the
 Callback Signature:
 <pre><code>function($form)</code></pre>
 
-- \Piwik\Plugins\Installation\FormDefaultSettings `$form` 
+- \Piwik\Plugins\Installation\FormDefaultSettings `$form`
 
 Usages:
 
@@ -1420,7 +1404,6 @@ Callback Signature:
 - [Live.getAllVisitorDetails](#livegetallvisitordetails)
 - [Live.getExtraVisitorDetails](#livegetextravisitordetails)
 - [Live.makeNewVisitorObject](#livemakenewvisitorobject)
-- [Live.queryMaxExecutionTimeExceeded](#livequerymaxexecutiontimeexceeded)
 
 ### Live.addProfileSummaries
 
@@ -1436,7 +1419,7 @@ Triggered to add new live profile summaries. **Example**
 Callback Signature:
 <pre><code>function(&amp;$instances)</code></pre>
 
-- ProfileSummaryAbstract `$profileSummaries` An array of profile summaries
+- \ProfileSummaryAbstract `$profileSummaries` An array of profile summaries
 
 
 ### Live.addVisitorDetails
@@ -1484,7 +1467,7 @@ Triggered to filter / restrict profile summaries. **Example**
 Callback Signature:
 <pre><code>function(&amp;$instances)</code></pre>
 
-- ProfileSummaryAbstract `$profileSummaries` An array of profile summaries
+- \ProfileSummaryAbstract `$profileSummaries` An array of profile summaries
 
 
 ### Live.filterVisitorDetails
@@ -1514,8 +1497,7 @@ Callback Signature:
 
 This event can be used to add any details to a visitor. The visitor's details are for instance used in
 API requests like 'Live.getVisitorProfile' and 'Live.getLastVisitDetails'. This can be useful for instance
-in case your plugin defines any visit dimensions and you want to add the value of your dimension to a user.
-It can be also useful if you want to enrich a visitor with custom fields based on other fields or if you
+in case your plugin defines any visit dimensions and you want to add the value of your dimension to a user. It can be also useful if you want to enrich a visitor with custom fields based on other fields or if you
 want to change or remove any fields from the user.
 
 **Example**
@@ -1528,13 +1510,9 @@ want to change or remove any fields from the user.
 Callback Signature:
 <pre><code>function(&amp;$visitor, $this-&gt;details)</code></pre>
 
-- array
+- array &visitor You can add or remove fields to the visitor array and it will reflected in the API output
 
 - array `$details` The details array contains all visit dimensions (columns of log_visit table)
-
-Usages:
-
-[ExampleTracker::getAllVisitorDetails](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ExampleTracker/ExampleTracker.php#L28)
 
 
 ### Live.getExtraVisitorDetails
@@ -1542,9 +1520,7 @@ Usages:
 *Defined in [Piwik/Plugins/Live/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/API.php) in line [255](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/API.php#L255)*
 
 Triggered in the Live.getVisitorProfile API method. Plugins can use this event
-to discover and add extra data to visitor profiles.
-
-This event is deprecated, use [VisitorDetails](/api-reference/Piwik/Plugins/Live/VisitorDetailsAbstract#extendVisitorDetails) classes instead.
+to discover and add extra data to visitor profiles. This event is deprecated, use [VisitorDetails](/api-reference/Piwik/Plugins/Live/VisitorDetailsAbstract#extendVisitorDetails) classes instead.
 
 For example, if an email address is found in a custom variable, a plugin could load the
 gravatar for the email and add it to the visitor profile, causing it to display in the
@@ -1558,7 +1534,7 @@ The following visitor profile elements can be set to augment the visitor profile
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
 
-- array `$visitorProfile` The unaugmented visitor profile info.
+- array &$visitorProfile The unaugmented visitor profile info.
 
 
 ### Live.makeNewVisitorObject
@@ -1572,19 +1548,11 @@ Piwik\Plugins\Live\VisitorInterface.
 Callback Signature:
 <pre><code>function(&amp;$visitor, $visitorRawData)</code></pre>
 
-- \Piwik\Plugins\Live\VisitorInterface `&$visitor` Initialized to null, but can be set to a new visitor object. If it isn't modified Piwik uses the default class.
+- \Piwik\Plugins\Live\VisitorInterface &$visitor Initialized to null, but can be set to
+                                             a new visitor object. If it isn't modified
+                                             Piwik uses the default class.
 
 - array `$visitorRawData` Raw data using in Visitor object constructor.
-
-
-### Live.queryMaxExecutionTimeExceeded
-
-*Defined in [Piwik/Plugins/Live/Model](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Model.php) in line [184](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Model.php#L184)*
-
-
-
-Callback Signature:
-<pre><code>function($params)</code></pre>
 
 ## Login
 
@@ -1592,12 +1560,9 @@ Callback Signature:
 - [Login.authenticate](#loginauthenticate)
 - [Login.authenticate.failed](#loginauthenticatefailed)
 - [Login.authenticate.failed](#loginauthenticatefailed)
-- [Login.authenticate.failed](#loginauthenticatefailed)
 - [Login.authenticate.successful](#loginauthenticatesuccessful)
 - [Login.authenticate.successful](#loginauthenticatesuccessful)
-- [Login.beforeLoginCheckAllowed](#loginbeforelogincheckallowed)
 - [Login.logout](#loginlogout)
-- [Login.recordFailedLoginAttempt](#loginrecordfailedloginattempt)
 
 ### Login.authenticate
 
@@ -1647,20 +1612,6 @@ Usages:
 [Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L95)
 
 
-### Login.authenticate.failed
-
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php) in line [1383](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/API.php#L1383)*
-
-
-
-Callback Signature:
-<pre><code>function($userLogin)</code></pre>
-
-Usages:
-
-[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L95)
-
-
 ### Login.authenticate.successful
 
 *Defined in [Piwik/Session/SessionInitializer](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Session/SessionInitializer.php) in line [41](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Session/SessionInitializer.php#L41)*
@@ -1689,17 +1640,6 @@ Usages:
 [Login::beforeLoginCheckBruteForce](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L114)
 
 
-### Login.beforeLoginCheckAllowed
-
-*Defined in [Piwik/Plugins/Login/PasswordVerifier](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/PasswordVerifier.php) in line [47](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/PasswordVerifier.php#L47)*
-
-
-
-Usages:
-
-[Login::beforeLoginCheckBruteForce](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L114)
-
-
 ### Login.logout
 
 *Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php) in line [480](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Controller.php#L480)*
@@ -1708,17 +1648,6 @@ Usages:
 
 Callback Signature:
 <pre><code>function(Piwik::getCurrentUserLogin())</code></pre>
-
-
-### Login.recordFailedLoginAttempt
-
-*Defined in [Piwik/Plugins/Login/PasswordVerifier](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/PasswordVerifier.php) in line [65](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/PasswordVerifier.php#L65)*
-
-
-
-Usages:
-
-[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L95)
 
 ## Mail
 
@@ -1733,7 +1662,7 @@ This event is posted right before an email is sent. You can use it to customize 
 the subject/body, changing the from address, etc.
 
 Callback Signature:
-<pre><code>function($mail)</code></pre>
+<pre><code>function($mail]</code></pre>
 
 - [Mail](/api-reference/Piwik/Mail) `$this` The Mail instance that is about to be sent.
 
@@ -1745,9 +1674,9 @@ Callback Signature:
 This event is posted before sending an email. You can use it to abort sending a specific email, if you want.
 
 Callback Signature:
-<pre><code>function(&amp;$shouldSendMail, $mail)</code></pre>
+<pre><code>function(&amp;$shouldSendMail, $mail]</code></pre>
 
-- bool `&$shouldSendMail` Whether to send this email or not. Set to false to skip sending.
+- bool &$shouldSendMail Whether to send this email or not. Set to false to skip sending.
 
 - [Mail](/api-reference/Piwik/Mail) `$mail` The Mail instance that will be sent.
 
@@ -1769,7 +1698,7 @@ Triggered after a plugin settings have been updated. **Example**
 Callback Signature:
 <pre><code>function($this, $this-&gt;idSite)</code></pre>
 
-- Settings `$settings` The plugin settings object.
+- \Settings `$settings` The plugin settings object.
 
 ## Metric
 
@@ -1887,7 +1816,7 @@ Usages:
 Use this event to define units for custom metrics used in evolution graphs and row evolution only.
 
 Callback Signature:
-<pre><code>function(&amp;$unit, $column, $idSite)</code></pre>
+<pre><code>function(&amp;$unit, $column, $idSite]</code></pre>
 
 - string `&$unit` should hold the unit (e.g. %, €, s or empty string)
 
@@ -1903,11 +1832,20 @@ Callback Signature:
 Use this event to define if a lower value of a metric is better.
 
 Callback Signature:
-<pre><code>function(&amp;$isLowerBetter, $column)</code></pre>
+<pre><code>function(&amp;$isLowerBetter, $column]</code></pre>
 
 - string `&$isLowerBetter` should be set to a boolean indicating if lower is better
 
-- string `$column` name of the column to determine **Example** public function checkIsLowerMetricValueBetter(&$isLowerBetter, $metric) { if ($metric === 'position') { $isLowerBetter = true; } }
+- string `$column` name of the column to determine
+
+**Example**
+
+public function checkIsLowerMetricValueBetter(&$isLowerBetter, $metric)
+{
+    if ($metric === 'position') {
+        $isLowerBetter = true;
+    }
+}
 
 ## MobileMessaging
 
@@ -1919,9 +1857,7 @@ Callback Signature:
 
 Triggered after a phone number has been deleted. This event should be used to clean up any data that is
 related to the now deleted phone number. The ScheduledReports plugin, for example, uses this event to remove
-the phone number from all reports to make sure no text message will be sent to this phone number.
-
-**Example**
+the phone number from all reports to make sure no text message will be sent to this phone number. **Example**
 
     public function deletePhoneNumber($phoneNumber)
     {
@@ -1945,7 +1881,8 @@ Usages:
 
 *Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/API.php) in line [503](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/API.php#L503)*
 
-Triggered to filter / restrict which rows should be included in the MultiSites (All Websites Dashboard) totals calculation **Example**
+Triggered to filter / restrict which rows should be included in the MultiSites (All Websites Dashboard)
+totals calculation **Example**
 
     public function filterMultiSitesRows(&$rows)
     {
@@ -1959,7 +1896,7 @@ Triggered to filter / restrict which rows should be included in the MultiSites (
 Callback Signature:
 <pre><code>function(&amp;$rows)</code></pre>
 
-- Row `&$rows` An array containing rows, one row for each site. The label columns equals the idSite.
+- \Row &$rows An array containing rows, one row for each site. The label columns equals the idSite.
 
 ## Piwik
 
@@ -1976,7 +1913,21 @@ user.
 Callback Signature:
 <pre><code>function(&amp;$codeImpl, $parameters)</code></pre>
 
-- array `&$codeImpl` An array containing snippets of code that the event handler can modify. Will contain the following elements: - **idSite**: The ID of the site being tracked. - **piwikUrl**: The tracker URL to use. - **options**: A string of JavaScript code that customises the JavaScript tracker. - **optionsBeforeTrackerUrl**: A string of Javascript code that customises the JavaScript tracker inside of anonymous function before adding setTrackerUrl into paq. - **protocol**: Piwik url protocol. - **loadAsync**: boolean whether piwik.js should be loaded syncronous or asynchronous The **httpsPiwikUrl** element can be set if the HTTPS domain is different from the normal domain.
+- array &$codeImpl An array containing snippets of code that the event handler
+                        can modify. Will contain the following elements:
+
+                        - **idSite**: The ID of the site being tracked.
+                        - **piwikUrl**: The tracker URL to use.
+                        - **options**: A string of JavaScript code that customises
+                                       the JavaScript tracker.
+                        - **optionsBeforeTrackerUrl**: A string of Javascript code that customises
+                                       the JavaScript tracker inside of anonymous function before
+                                       adding setTrackerUrl into paq.
+                        - **protocol**: Piwik url protocol.
+                        - **loadAsync**: boolean whether piwik.js should be loaded syncronous or asynchronous
+
+                        The **httpsPiwikUrl** element can be set if the HTTPS
+                        domain is different from the normal domain.
 
 - array `$parameters` The parameters supplied to `TrackerCodeGenerator::generate()`.
 
@@ -2000,7 +1951,8 @@ Usages:
 
 *Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [425](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L425)*
 
-Triggered after the platform is initialized and after the user has been authenticated, but before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
+Triggered after the platform is initialized and after the user has been authenticated, but
+before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
 
 Usages:
 
@@ -2026,7 +1978,7 @@ Callback Signature:
 
 Usages:
 
-[CorePluginsAdmin::onPluginActivated](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L33), [CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
+[CorePluginsAdmin::onPluginActivated](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L33)
 
 
 ### PluginManager.pluginDeactivated
@@ -2040,10 +1992,6 @@ Callback Signature:
 
 - string `$pluginName` The plugin that has been deactivated.
 
-Usages:
-
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
-
 
 ### PluginManager.pluginInstalled
 
@@ -2056,10 +2004,6 @@ Callback Signature:
 
 - string `$pluginName` The plugin that has been installed.
 
-Usages:
-
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
-
 
 ### PluginManager.pluginUninstalled
 
@@ -2071,10 +2015,6 @@ Callback Signature:
 <pre><code>function($pluginName)</code></pre>
 
 - string `$pluginName` The plugin that has been uninstalled.
-
-Usages:
-
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
 
 ## PrivacyManager
 
@@ -2089,7 +2029,7 @@ Usages:
 
 Lets you delete data subjects to make your plugin GDPR compliant. This can be useful if you have developed a plugin which stores any data for visits but doesn't
 use any core logic to store this data. If core API's are used, for example log tables, then the data may
-be deleted automatically. 
+be deleted automatically.
 
 **Example**
 
@@ -2102,9 +2042,10 @@ be deleted automatically.
 Callback Signature:
 <pre><code>function(&amp;$results, $visits)</code></pre>
 
-- array `&$results` An array storing the result of how much data was deleted for .
+- array &$results An array storing the result of how much data was deleted for .
 
-- array `$visits` An array with multiple visit entries containing an idvisit and idsite each. The data for these visits is requested to be deleted.
+- array &$visits An array with multiple visit entries containing an idvisit and idsite each. The data
+                      for these visits is requested to be deleted.
 
 
 ### PrivacyManager.deleteLogsOlderThan
@@ -2123,7 +2064,8 @@ Callback Signature:
 
 - [Date](/api-reference/Piwik/Date) `$dateUpperLimit` A date where visits that occur before this time should be deleted.
 
-- int `$deleteLogsOlderThan` The number of days after which log entires are considered old. Visits and related data whose age is greater than this number will be purged.
+- int `$deleteLogsOlderThan` The number of days after which log entires are considered old.
+                                Visits and related data whose age is greater than this number will be purged.
 
 
 ### PrivacyManager.exportDataSubjects
@@ -2147,9 +2089,10 @@ be exported automatically.
 Callback Signature:
 <pre><code>function(&amp;$results, $visits)</code></pre>
 
-- array `&$results` An array containing the exported data subjects.
+- array &$results An array containing the exported data subjects.
 
-- array `$visits` An array with multiple visit entries containing an idvisit and idsite each. The data for these visits is requested to be exported.
+- array &$visits An array with multiple visit entries containing an idvisit and idsite each. The data
+                      for these visits is requested to be exported.
 
 
 ### PrivacyManager.shouldIgnoreDnt
@@ -2184,7 +2127,8 @@ Providers report.
 Callback Signature:
 <pre><code>function(&amp;$cleanHostname, $hostname)</code></pre>
 
-- string `&$cleanHostname` The hostname string to display. Set by the event handler.
+- string &$cleanHostname The hostname string to display. Set by the event
+                              handler.
 
 - string `$hostname` The full hostname.
 
@@ -2268,7 +2212,7 @@ Callback Signature:
 
 
 Callback Signature:
-<pre><code>function($report[&#039;idreport&#039;], $email)</code></pre>
+<pre><code>function($reportfunction(&#039;idreport&#039;], $email]</code></pre>
 
 ## Request
 
@@ -2296,7 +2240,7 @@ Callback Signature:
 
 
 Callback Signature:
-<pre><code>function(&amp;$module, &amp;$action, &amp;$params)</code></pre>
+<pre><code>function(&amp;$module, &amp;$action, &amp;$params]</code></pre>
 
 Usages:
 
@@ -2310,7 +2254,7 @@ Usages:
 
 
 Callback Signature:
-<pre><code>function(&amp;$module, &amp;$action, &amp;$params)</code></pre>
+<pre><code>function(&amp;$module, &amp;$action, &amp;$params]</code></pre>
 
 Usages:
 
@@ -2324,7 +2268,7 @@ Usages:
 
 
 Callback Signature:
-<pre><code>function(&amp;$module, &amp;$action, &amp;$params)</code></pre>
+<pre><code>function(&amp;$module, &amp;$action, &amp;$params]</code></pre>
 
 Usages:
 
@@ -2338,7 +2282,7 @@ Usages:
 
 
 Callback Signature:
-<pre><code>function(&amp;$module, &amp;$action, &amp;$params)</code></pre>
+<pre><code>function(&amp;$module, &amp;$action, &amp;$params]</code></pre>
 
 Usages:
 
@@ -2352,7 +2296,7 @@ Usages:
 
 
 Callback Signature:
-<pre><code>function(&amp;$module, &amp;$action, &amp;$params)</code></pre>
+<pre><code>function(&amp;$module, &amp;$action, &amp;$params]</code></pre>
 
 Usages:
 
@@ -2369,11 +2313,11 @@ and can be used to change the controller action being dispatched to.
 Callback Signature:
 <pre><code>function(&amp;$module, &amp;$action, &amp;$parameters)</code></pre>
 
-- string `&$module` The name of the plugin being dispatched to.
+- string &$module The name of the plugin being dispatched to.
 
-- string `&$action` The name of the controller method being dispatched to.
+- string &$action The name of the controller method being dispatched to.
 
-- array `&$parameters` The arguments passed to the controller action.
+- array &$parameters The arguments passed to the controller action.
 
 Usages:
 
@@ -2399,7 +2343,7 @@ Triggered after a controller action is successfully called. This event can be us
 Callback Signature:
 <pre><code>function(&amp;$result, $module, $action, $parameters)</code></pre>
 
-- mixed `&$result` The controller action result.
+- mixed &$result The controller action result.
 
 - array `$parameters` The arguments passed to the controller action.
 
@@ -2421,14 +2365,15 @@ Usages:
 
 *Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [172](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L172)*
 
-This event is posted in the Request dispatcher and can be used to overwrite the Module and Action to dispatch. This is useful when some Controller methods or API methods have been renamed or moved to another plugin.
+This event is posted in the Request dispatcher and can be used
+to overwrite the Module and Action to dispatch. This is useful when some Controller methods or API methods have been renamed or moved to another plugin.
 
 Callback Signature:
 <pre><code>function(&amp;$module, &amp;$action)</code></pre>
 
-- $module
+-  `&$module` string
 
-- $action
+-  `&$action` string
 
 Usages:
 
@@ -2483,7 +2428,8 @@ Usages:
 
 *Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php) in line [692](https://github.com/matomo-org/matomo/blob/3.x-dev/core/FrontController.php#L692)*
 
-Triggered before the user is authenticated, when the global authentication object should be created. Plugins that provide their own authentication implementation should use this event
+Triggered before the user is authenticated, when the global authentication object
+should be created. Plugins that provide their own authentication implementation should use this event
 to set the global authentication object (which must derive from [Auth](/api-reference/Piwik/Auth)).
 
 **Example**
@@ -2501,13 +2447,15 @@ Usages:
 
 *Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php) in line [649](https://github.com/matomo-org/matomo/blob/3.x-dev/core/API/Request.php#L649)*
 
-After an API method returns a value, the value is post processed (eg, rows are sorted based on the `filter_sort_column` query parameter, rows are truncated based on the `filter_limit`/`filter_offset` parameters, amongst other things). If you're creating a plugin that needs to disable post processing entirely for
+After an API method returns a value, the value is post processed (eg, rows are sorted
+based on the `filter_sort_column` query parameter, rows are truncated based on the
+`filter_limit`/`filter_offset` parameters, amongst other things). If you're creating a plugin that needs to disable post processing entirely for
 certain requests, use this event.
 
 Callback Signature:
-<pre><code>function(&amp;$shouldDisable, $this-&gt;request)</code></pre>
+<pre><code>function(&amp;$shouldDisable, $this-&gt;request]</code></pre>
 
-- bool `&$shouldDisable` Set this to true to disable datatable post processing for a request.
+- bool &$shouldDisable Set this to true to disable datatable post processing for a request.
 
 - array `$request` The request parameters.
 
@@ -2528,16 +2476,19 @@ Callback Signature:
 
 *Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/API.php) in line [911](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/API.php#L911)*
 
-Triggered when we're determining if a scheduled report transport medium can handle sending multiple Matomo reports in one scheduled report or not. Plugins that provide their own transport mediums should use this
+Triggered when we're determining if a scheduled report transport medium can
+handle sending multiple Matomo reports in one scheduled report or not. Plugins that provide their own transport mediums should use this
 event to specify whether their backend can send more than one Matomo report
 at a time.
 
 Callback Signature:
 <pre><code>function(&amp;$allowMultipleReports, $reportType)</code></pre>
 
-- bool `&$allowMultipleReports` Whether the backend type can handle multiple Matomo reports or not.
+- bool &$allowMultipleReports Whether the backend type can handle multiple
+                                   Matomo reports or not.
 
-- string `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+- string `$reportType` A string ID describing how the report is sent, eg,
+                          `'sms'` or `'email'`.
 
 Usages:
 
@@ -2554,13 +2505,17 @@ handle their new report formats.
 Callback Signature:
 <pre><code>function(&amp;$reportRenderer, $reportType, $outputType, $report)</code></pre>
 
-- ReportRenderer `&$reportRenderer` This variable should be set to an instance that extends Piwik\ReportRenderer by one of the event subscribers.
+- \ReportRenderer &$reportRenderer This variable should be set to an instance that
+                                       extends Piwik\ReportRenderer by one of the event
+                                       subscribers.
 
-- string `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+- string `$reportType` A string ID describing how the report is sent, eg,
+                          `'sms'` or `'email'`.
 
 - string `$outputType` The output format of the report, eg, `'html'`, `'pdf'`, etc.
 
-- array `&$report` An array describing the scheduled report that is being generated.
+- array `&$report` An array describing the scheduled report that is being
+                     generated.
 
 Usages:
 
@@ -2577,9 +2532,12 @@ this event to make their format available.
 Callback Signature:
 <pre><code>function(&amp;$reportFormats, $reportType)</code></pre>
 
-- array `&$reportFormats` An array mapping string IDs for each available scheduled report format with icon paths for those formats. Add your new format's ID to this array.
+- array &$reportFormats An array mapping string IDs for each available
+                             scheduled report format with icon paths for those
+                             formats. Add your new format's ID to this array.
 
-- string `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+- string `$reportType` A string ID describing how the report is sent, eg,
+                          `'sms'` or `'email'`.
 
 Usages:
 
@@ -2599,9 +2557,11 @@ event to list the Matomo reports that their backend supports.
 Callback Signature:
 <pre><code>function(&amp;$availableReportMetadata, $reportType, $idSite)</code></pre>
 
-- array `&$availableReportMetadata` An array containing report metadata for each supported report.
+- array &$availableReportMetadata An array containing report metadata for each supported
+                                       report.
 
-- string `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+- string `$reportType` A string ID describing how the report is sent, eg,
+                          `'sms'` or `'email'`.
 
 - int `$idSite` The ID of the site we're getting available reports for.
 
@@ -2620,9 +2580,12 @@ event to list the available report parameters for their transport medium.
 Callback Signature:
 <pre><code>function(&amp;$availableParameters, $reportType)</code></pre>
 
-- array `&$availableParameters` The list of available parameters for this report type. This is an array that maps paramater IDs with a boolean that indicates whether the parameter is mandatory or not.
+- array `&$availableParameters` The list of available parameters for this report type.
+                                  This is an array that maps paramater IDs with a boolean
+                                  that indicates whether the parameter is mandatory or not.
 
-- string `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+- string `$reportType` A string ID describing how the report is sent, eg,
+                          `'sms'` or `'email'`.
 
 Usages:
 
@@ -2638,13 +2601,18 @@ to extract the list of recipients their backend's specific scheduled report
 format.
 
 Callback Signature:
-<pre><code>function(&amp;$recipients, $report[&#039;type&#039;], $report)</code></pre>
+<pre><code>function(&amp;$recipients, $reportfunction(&#039;type&#039;], $report)</code></pre>
 
-- array `&$recipients` An array of strings describing each of the scheduled reports recipients. Can be, for example, a list of email addresses or phone numbers or whatever else your plugin uses.
+- array &$recipients An array of strings describing each of the scheduled
+                          reports recipients. Can be, for example, a list of email
+                          addresses or phone numbers or whatever else your plugin
+                          uses.
 
-- string `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+- string `$reportType` A string ID describing how the report is sent, eg,
+                          `'sms'` or `'email'`.
 
-- array `$report` An array describing the scheduled report that is being generated.
+- array `$report` An array describing the scheduled report that is being
+                     generated.
 
 Usages:
 
@@ -2661,7 +2629,8 @@ event to make their medium available.
 Callback Signature:
 <pre><code>function(&amp;$reportTypes)</code></pre>
 
-- array `&$reportTypes` An array mapping transport medium IDs with the paths to those mediums' icons. Add your new backend's ID to this array.
+- array &$reportTypes An array mapping transport medium IDs with the paths to those
+                           mediums' icons. Add your new backend's ID to this array.
 
 Usages:
 
@@ -2681,13 +2650,16 @@ TODO: list data available in $report or make it a new class that can be document
 Callback Signature:
 <pre><code>function(&amp;$processedReports, $reportType, $outputType, $report)</code></pre>
 
-- array `&$processedReports` The list of processed reports in the scheduled report. Entries includes report data and metadata for each report.
+- array &$processedReports The list of processed reports in the scheduled
+                                report. Entries includes report data and metadata for each report.
 
-- string `$reportType` A string ID describing how the scheduled report will be sent, eg, `'sms'` or `'email'`.
+- string `$reportType` A string ID describing how the scheduled report will be sent, eg,
+                          `'sms'` or `'email'`.
 
 - string `$outputType` The output format of the report, eg, `'html'`, `'pdf'`, etc.
 
-- array `$report` An array describing the scheduled report that is being generated.
+- array `$report` An array describing the scheduled report that is being
+                     generated.
 
 Usages:
 
@@ -2702,27 +2674,35 @@ Triggered when sending scheduled reports. Plugins that provide new scheduled rep
 send the scheduled report.
 
 Callback Signature:
-<pre><code>function(&amp;$reportType, $report, $contents, $filename = basename($outputFilename), $prettyDate, $reportSubject, $reportTitle, $additionalFiles, \Piwik\Period\Factory::build($report[&#039;period&#039;], $date), $force)</code></pre>
+<pre><code>function(&amp;$reportType, $report, $contents, $filename = basename($outputFilename), $prettyDate, $reportSubject, $reportTitle, $additionalFiles, \Piwik\Period\Factory::build($reportfunction(&#039;period&#039;], $date), $force)</code></pre>
 
-- string `&$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+- string `&$reportType` A string ID describing how the report is sent, eg,
+                          `'sms'` or `'email'`.
 
-- array `&$report` An array describing the scheduled report that is being generated.
+- array `&$report` An array describing the scheduled report that is being
+                     generated.
 
-- string `$contents` The contents of the scheduled report that was generated and now should be sent.
+- string `$contents` The contents of the scheduled report that was generated
+                        and now should be sent.
 
-- string `$filename` The path to the file where the scheduled report has been saved.
+- string `$filename` The path to the file where the scheduled report has
+                        been saved.
 
-- string `$prettyDate` A prettified date string for the data within the scheduled report.
+- string `$prettyDate` A prettified date string for the data within the
+                          scheduled report.
 
-- string `$reportSubject` A string describing what's in the scheduled report.
+- string `$reportSubject` A string describing what's in the scheduled
+                             report.
 
 - string `$reportTitle` The scheduled report's given title (given by a Matomo user).
 
-- array `$additionalFiles` The list of additional files that should be sent with this report.
+- array `$additionalFiles` The list of additional files that should be
+                              sent with this report.
 
 - [Period](/api-reference/Piwik/Period) `$period` The period for which the report has been generated.
 
-- boolean `$force` A report can only be sent once per period. Setting this to true will force to send the report even if it has already been sent.
+- boolean `$force` A report can only be sent once per period. Setting this to true
+                      will force to send the report even if it has already been sent.
 
 Usages:
 
@@ -2741,7 +2721,8 @@ Callback Signature:
 
 - array `&$parameters` The list of parameters for the scheduled report.
 
-- string `$reportType` A string ID describing how the report is sent, eg, `'sms'` or `'email'`.
+- string `$reportType` A string ID describing how the report is sent, eg,
+                          `'sms'` or `'email'`.
 
 Usages:
 
@@ -2788,7 +2769,7 @@ you can force certain tasks to be executed more often or for example to be never
 Callback Signature:
 <pre><code>function(&amp;$shouldExecuteTask, $task)</code></pre>
 
-- bool `&$shouldExecuteTask` Decides whether the task will be executed.
+- bool &$shouldExecuteTask Decides whether the task will be executed.
 
 - [Task](/api-reference/Piwik/Scheduler/Task) `$task` The task that is about to be executed.
 
@@ -2815,7 +2796,7 @@ Triggered to add custom segment definitions. **Example**
 Callback Signature:
 <pre><code>function(&amp;$segments)</code></pre>
 
-- array `&$segments` An array containing a list of segment entries.
+- array &$segments An array containing a list of segment entries.
 
 ## SegmentEditor
 
@@ -2864,10 +2845,9 @@ Usages:
 
 *Defined in [Piwik/SettingsPiwik](https://github.com/matomo-org/matomo/blob/3.x-dev/core/SettingsPiwik.php) in line [102](https://github.com/matomo-org/matomo/blob/3.x-dev/core/SettingsPiwik.php#L102)*
 
-Triggered during the cron archiving process to collect segments that should be pre-processed for all websites. The archiving process will be launched
-for each of these segments when archiving data.
-
-This event can be used to add segments to be pre-processed. If your plugin depends
+Triggered during the cron archiving process to collect segments that
+should be pre-processed for all websites. The archiving process will be launched
+for each of these segments when archiving data. This event can be used to add segments to be pre-processed. If your plugin depends
 on data from a specific segment, this event could be used to provide enhanced
 performance.
 
@@ -2883,7 +2863,14 @@ SegmentEditor API._
 Callback Signature:
 <pre><code>function(&amp;$segmentsToProcess)</code></pre>
 
-- array `&$segmentsToProcess` List of segment definitions, eg, array( 'browserCode=ff;resolution=800x600', 'country=jp;city=Tokyo' ) Add segments to this array in your event handler.
+- array &$segmentsToProcess List of segment definitions, eg,
+
+                                     array(
+                                         'browserCode=ff;resolution=800x600',
+                                         'country=jp;city=Tokyo'
+                                     )
+
+                                 Add segments to this array in your event handler.
 
 Usages:
 
@@ -2894,10 +2881,9 @@ Usages:
 
 *Defined in [Piwik/SettingsPiwik](https://github.com/matomo-org/matomo/blob/3.x-dev/core/SettingsPiwik.php) in line [152](https://github.com/matomo-org/matomo/blob/3.x-dev/core/SettingsPiwik.php#L152)*
 
-Triggered during the cron archiving process to collect segments that should be pre-processed for one specific site. The archiving process will be launched
-for each of these segments when archiving data for that one site.
-
-This event can be used to add segments to be pre-processed for one site.
+Triggered during the cron archiving process to collect segments that
+should be pre-processed for one specific site. The archiving process will be launched
+for each of these segments when archiving data for that one site. This event can be used to add segments to be pre-processed for one site.
 
 _Note: If you just want to add a segment that is managed by the user, you should use the
 SegmentEditor API._
@@ -2911,7 +2897,14 @@ SegmentEditor API._
 Callback Signature:
 <pre><code>function(&amp;$segments, $idSite)</code></pre>
 
-- array `$segmentsToProcess` List of segment definitions, eg, array( 'browserCode=ff;resolution=800x600', 'country=JP;city=Tokyo' ) Add segments to this array in your event handler.
+- array &$segmentsToProcess List of segment definitions, eg,
+
+                                     array(
+                                         'browserCode=ff;resolution=800x600',
+                                         'country=JP;city=Tokyo'
+                                     )
+
+                                 Add segments to this array in your event handler.
 
 - int `$idSite` The ID of the site to get segments for.
 
@@ -2983,9 +2976,11 @@ user.
 Callback Signature:
 <pre><code>function(&amp;$piwikUrl, &amp;$urlParams)</code></pre>
 
-- string `$piwikHost` The domain and URL path to the Matomo installation, eg, `'examplepiwik.com/path/to/piwik'`.
+- string &$piwikHost The domain and URL path to the Matomo installation, eg,
+                          `'examplepiwik.com/path/to/piwik'`.
 
-- array `&$urlParams` The query parameters used in the <img> element's src URL. See Matomo's image tracking docs for more info.
+- array &$urlParams The query parameters used in the <img> element's src
+                         URL. See Matomo's image tracking docs for more info.
 
 
 ### SitesManager.shouldPerformEmptySiteCheck
@@ -2996,9 +2991,10 @@ Posted before checking to display the "No data has been recorded yet" message. I
 sure that message is never displayed.
 
 Callback Signature:
-<pre><code>function(&amp;$shouldPerformEmptySiteCheck, $siteId)</code></pre>
+<pre><code>function(&amp;$shouldPerformEmptySiteCheck, $siteId]</code></pre>
 
-- bool `&$shouldPerformEmptySiteCheck` Set this value to true to perform the check, false if otherwise.
+- bool &$shouldPerformEmptySiteCheck Set this value to true to perform the
+                                          check, false if otherwise.
 
 - int `$siteId` The ID of the site we would perform a check for.
 
@@ -3032,7 +3028,7 @@ Triggered to add system summary items that are shown in the System Summary widge
 Callback Signature:
 <pre><code>function(&amp;$systemSummary)</code></pre>
 
-- Item `&$systemSummary` An array containing system summary items.
+- \Item &$systemSummary An array containing system summary items.
 
 Usages:
 
@@ -3044,9 +3040,7 @@ Usages:
 *Defined in [Piwik/Plugins/CoreHome/Widgets/GetSystemSummary](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php) in line [100](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php#L100)*
 
 Triggered to filter system summary items that are shown in the System Summary widget. A plugin might also
-sort the system summary items differently.
-
-**Example**
+sort the system summary items differently. **Example**
 
     public function filterSystemSummaryItems(&$systemSummary)
     {
@@ -3060,7 +3054,7 @@ sort the system summary items differently.
 Callback Signature:
 <pre><code>function(&amp;$systemSummary)</code></pre>
 
-- Item `&$systemSummary` An array containing system summary items.
+- \Item &$systemSummary An array containing system summary items.
 
 ## SystemSettings
 
@@ -3082,7 +3076,7 @@ Triggered after system settings have been updated. **Example**
 Callback Signature:
 <pre><code>function($this)</code></pre>
 
-- Settings `$settings` The plugin settings object.
+- \Settings `$settings` The plugin settings object.
 
 ## Template
 
@@ -3146,9 +3140,7 @@ Callback Signature:
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
 - [Tracker.isExcludedVisit](#trackerisexcludedvisit)
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
-- [Tracker.newConversionInformation](#trackernewconversioninformation)
 - [Tracker.PageUrl.getQueryParametersToExclude](#trackerpageurlgetqueryparameterstoexclude)
-- [Tracker.Request.authenticate.failed](#trackerrequestauthenticatefailed)
 - [Tracker.Request.getIdSite](#trackerrequestgetidsite)
 - [Tracker.setTrackerCacheGeneral](#trackersettrackercachegeneral)
 
@@ -3156,7 +3148,8 @@ Callback Signature:
 
 *Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php) in line [120](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php#L120)*
 
-Triggered to get the attributes of a site entity that might be used by the Tracker. Plugins add new site attributes for use in other tracking events must
+Triggered to get the attributes of a site entity that might be used by the
+Tracker. Plugins add new site attributes for use in other tracking events must
 use this event to put those attributes in the Tracker Cache.
 
 **Example**
@@ -3170,7 +3163,7 @@ use this event to put those attributes in the Tracker Cache.
 Callback Signature:
 <pre><code>function(&amp;$content, $idSite)</code></pre>
 
-- array `&$content` Array mapping of site attribute names with values.
+- array &$content Array mapping of site attribute names with values.
 
 - int `$idSite` The site ID to get attributes for.
 
@@ -3189,9 +3182,16 @@ logic.
 Callback Signature:
 <pre><code>function(&amp;$searchEngineInformation, $this-&gt;referrerUrl)</code></pre>
 
-- array `&$searchEngineInformation` An array with the following information: - **name**: The search engine name. - **keywords**: The search keywords used. This parameter is initialized to the results of Piwik's default search engine detection logic.
+- array &$searchEngineInformation An array with the following information:
 
-- string
+                                       - **name**: The search engine name.
+                                       - **keywords**: The search keywords used.
+
+                                       This parameter is initialized to the results
+                                       of Piwik's default search engine detection
+                                       logic.
+
+- string referrerUrl The referrer URL from the tracking request.
 
 
 ### Tracker.detectReferrerSocialNetwork
@@ -3204,9 +3204,13 @@ logic.
 Callback Signature:
 <pre><code>function(&amp;$socialNetworkName, $this-&gt;referrerUrl)</code></pre>
 
-- string `&$socialNetworkName` Name of the social network, or false if none detected This parameter is initialized to the results of Matomo's default social network detection logic.
+- string &$socialNetworkName Name of the social network, or false if none detected
 
-- string
+                                       This parameter is initialized to the results
+                                       of Matomo's default social network detection
+                                       logic.
+
+- string referrerUrl The referrer URL from the tracking request.
 
 
 ### Tracker.end
@@ -3232,7 +3236,18 @@ Triggered before a connection to the database is established by the Tracker. Thi
 Callback Signature:
 <pre><code>function(&amp;$configDb)</code></pre>
 
-- array `$dbInfos` Reference to an array containing database connection info, including: - **host**: The host name or IP address to the MySQL database. - **username**: The username to use when connecting to the database. - **password**: The password to use when connecting to the database. - **dbname**: The name of the Piwik MySQL database. - **port**: The MySQL database port to use. - **adapter**: either `'PDO\MYSQL'` or `'MYSQLI'` - **type**: The MySQL engine to use, for instance 'InnoDB'
+- array `$dbInfos` Reference to an array containing database connection info,
+                      including:
+
+                      - **host**: The host name or IP address to the MySQL database.
+                      - **username**: The username to use when connecting to the
+                                      database.
+                      - **password**: The password to use when connecting to the
+                                      database.
+                      - **dbname**: The name of the Piwik MySQL database.
+                      - **port**: The MySQL database port to use.
+                      - **adapter**: either `'PDO\MYSQL'` or `'MYSQLI'`
+                      - **type**: The MySQL engine to use, for instance 'InnoDB'
 
 
 ### Tracker.isExcludedVisit
@@ -3244,9 +3259,11 @@ Triggered on every tracking request. This event can be used to tell the Tracker 
 Callback Signature:
 <pre><code>function(&amp;$excluded, $this-&gt;request)</code></pre>
 
-- bool `&$excluded` Whether the request should be excluded or not. Initialized to `false`. Event subscribers should set it to `true` in order to exclude the request.
+- bool &$excluded Whether the request should be excluded or not. Initialized
+                       to `false`. Event subscribers should set it to `true` in
+                       order to exclude the request.
 
-- Request `$request` The request object which contains all of the request's information
+- \Request `$request` The request object which contains all of the request's information
 
 
 ### Tracker.makeNewVisitObject
@@ -3260,50 +3277,22 @@ Piwik\Tracker\VisitInterface.
 Callback Signature:
 <pre><code>function(&amp;$visit)</code></pre>
 
-- \Piwik\Tracker\VisitInterface `&$visit` Initialized to null, but can be set to a new visit object. If it isn't modified Piwik uses the default class.
-
-
-### Tracker.newConversionInformation
-
-*Defined in [Piwik/Tracker/GoalManager](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/GoalManager.php) in line [777](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/GoalManager.php#L777)*
-
-Triggered before persisting a new [conversion entity](/guides/persistence-and-the-mysql-backend#conversions). This event can be used to modify conversion information or to add new information to be persisted.
-
-This event is deprecated, use [Dimensions](http://developer.piwik.org/guides/dimensions) instead.
-
-Callback Signature:
-<pre><code>function(&amp;$conversion, $visitInformation, $request, $action)</code></pre>
-
-- array `&$conversion` The conversion entity. Read [this](/guides/persistence-and-the-mysql-backend#conversions) to see what it contains.
-
-- array `$visitInformation` The visit entity that we are tracking a conversion for. See what information it contains [here](/guides/persistence-and-the-mysql-backend#visits).
-
-- \Piwik\Tracker\Request `$request` An object describing the tracking request being processed.
-
-- Action `$action` An action object like ActionPageView or ActionDownload, or null if no action is supposed to be processed.
+- \Piwik\Tracker\VisitInterface &$visit Initialized to null, but can be set to
+                                             a new visit object. If it isn't modified
+                                             Piwik uses the default class.
 
 
 ### Tracker.PageUrl.getQueryParametersToExclude
 
 *Defined in [Piwik/Tracker/PageUrl](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/PageUrl.php) in line [96](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/PageUrl.php#L96)*
 
-Triggered before setting the action url in Piwik\Tracker\Action so plugins can register parameters to be excluded from the tracking URL (e.g. campaign parameters).
+Triggered before setting the action url in Piwik\Tracker\Action so plugins can register
+parameters to be excluded from the tracking URL (e.g. campaign parameters).
 
 Callback Signature:
 <pre><code>function(&amp;$parametersToExclude)</code></pre>
 
-- array `&$parametersToExclude` An array of parameters to exclude from the tracking url.
-
-
-### Tracker.Request.authenticate.failed
-
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php) in line [225](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Request.php#L225)*
-
-
-
-Usages:
-
-[Login::onFailedLoginRecordAttempt](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Login/Login.php#L95)
+- array &$parametersToExclude An array of parameters to exclude from the tracking url.
 
 
 ### Tracker.Request.getIdSite
@@ -3316,18 +3305,20 @@ website.
 Callback Signature:
 <pre><code>function(&amp;$idSite, $this-&gt;params)</code></pre>
 
-- int `&$idSite` Initialized to the value of the **idsite** query parameter. If a subscriber sets this variable, the value it uses must be greater than 0.
+- int &$idSite Initialized to the value of the **idsite** query parameter. If a
+                    subscriber sets this variable, the value it uses must be greater
+                    than 0.
 
-- array `$params` The entire array of request parameters in the current tracking request.
+- array `$params` The entire array of request parameters in the current tracking
+                     request.
 
 
 ### Tracker.setTrackerCacheGeneral
 
 *Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php) in line [196](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Cache.php#L196)*
 
-Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache) is saved to disk. This event can be used to add extra content to the cache.
-
-Data that is used during tracking but is expensive to compute/query should be
+Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache)
+is saved to disk. This event can be used to add extra content to the cache. Data that is used during tracking but is expensive to compute/query should be
 cached to keep tracking efficient. One example of such data are options
 that are stored in the option table. Querying data for each tracking
 request means an extra unnecessary database query for each visitor action. Using
@@ -3343,24 +3334,12 @@ a cache solves this problem.
 Callback Signature:
 <pre><code>function(&amp;$cacheContent)</code></pre>
 
-- array `&$cacheContent` Array of cached data. Each piece of data must be mapped by name.
+- array &$cacheContent Array of cached data. Each piece of data must be
+                            mapped by name.
 
 Usages:
 
 [CoreHome::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L60), [CustomVariables::getCacheGeneral](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L89), [PrivacyManager::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L201), [Referrers::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Referrers.php#L103), [SitesManager::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L214), [UserCountry::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L48)
-
-## Tracking
-
-- [Tracking.makeFailuresHumanReadable](#trackingmakefailureshumanreadable)
-
-### Tracking.makeFailuresHumanReadable
-
-*Defined in [Piwik/Tracker/Failures](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Failures.php) in line [193](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Tracker/Failures.php#L193)*
-
-
-
-Callback Signature:
-<pre><code>function(&amp;$failures)</code></pre>
 
 ## Translate
 
@@ -3370,7 +3349,8 @@ Callback Signature:
 
 *Defined in [Piwik/Translation/Translator](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Translation/Translator.php) in line [167](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Translation/Translator.php#L167)*
 
-Triggered before generating the JavaScript code that allows i18n strings to be used in the browser. Plugins should subscribe to this event to specify which translations
+Triggered before generating the JavaScript code that allows i18n strings to be used
+in the browser. Plugins should subscribe to this event to specify which translations
 should be available to JavaScript.
 
 Event handlers should add whole translation keys, ie, keys that include the plugin name.
@@ -3385,11 +3365,11 @@ Event handlers should add whole translation keys, ie, keys that include the plug
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
 
-- array `&$result` The whole list of client side translation keys.
+- array &$result The whole list of client side translation keys.
 
 Usages:
 
-[Annotations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Annotations/Annotations.php#L30), [CoreAdminHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L94), [CoreHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L333), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L71), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L61), [CustomAlerts::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L163), [CustomVariables::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L118), [Dashboard::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L303), [Feedback::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Feedback/Feedback.php#L54), [Goals::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L360), [Intl::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Intl/Intl.php#L20), [Live::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Live.php#L73), [Marketplace::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Marketplace/Marketplace.php#L68), [MobileMessaging::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L106), [MultiSites::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L50), [Overlay::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Overlay/Overlay.php#L35), [PrivacyManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L194), [Referrers::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Referrers.php#L76), [ScheduledReports::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L109), [SegmentEditor::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L262), [SitesManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L354), [Transitions::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Transitions/Transitions.php#L45), [UserCountry::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L101), [UserCountryMap::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L62), [UserId::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserId/UserId.php#L49), [UsersManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L256), [Widgetize::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L47)
+[Annotations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Annotations/Annotations.php#L30), [CoreAdminHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L94), [CoreHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreHome/CoreHome.php#L333), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L71), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L61), [CustomAlerts::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomAlerts/CustomAlerts.php#L163), [CustomVariables::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomVariables/CustomVariables.php#L118), [Dashboard::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Dashboard/Dashboard.php#L303), [Feedback::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Feedback/Feedback.php#L54), [Goals::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Goals/Goals.php#L360), [Live::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/Live.php#L73), [Marketplace::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Marketplace/Marketplace.php#L68), [MobileMessaging::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MobileMessaging/MobileMessaging.php#L106), [MultiSites::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/MultiSites/MultiSites.php#L50), [Overlay::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Overlay/Overlay.php#L35), [PrivacyManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/PrivacyManager/PrivacyManager.php#L194), [Referrers::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Referrers/Referrers.php#L76), [ScheduledReports::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/ScheduledReports/ScheduledReports.php#L109), [SegmentEditor::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SegmentEditor/SegmentEditor.php#L262), [SitesManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/SitesManager/SitesManager.php#L354), [Transitions::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Transitions/Transitions.php#L45), [UserCountry::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountry/UserCountry.php#L101), [UserCountryMap::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserCountryMap/UserCountryMap.php#L62), [UserId::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UserId/UserId.php#L49), [UsersManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/UsersManager.php#L256), [Widgetize::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Widgetize/Widgetize.php#L47)
 
 ## TwoFactorAuth
 
@@ -3484,10 +3464,6 @@ Callback Signature:
 
 - string `$updatedVersion` version updated to
 
-Usages:
-
-[CustomPiwikJs::updateTracker](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/CustomPiwikJs/CustomPiwikJs.php#L30)
-
 ## User
 
 - [User.isNotAuthorized](#userisnotauthorized)
@@ -3528,7 +3504,7 @@ Triggered after user settings have been updated. **Example**
 Callback Signature:
 <pre><code>function($this)</code></pre>
 
-- Settings `$settings` The plugin settings object.
+- \Settings `$settings` The plugin settings object.
 
 ## UsersManager
 
@@ -3594,12 +3570,13 @@ Usages:
 
 *Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php) in line [169](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/UsersManager/Controller.php#L169)*
 
-Triggered when the list of available dates is requested, for example for the User Settings > Report date to load by default.
+Triggered when the list of available dates is requested, for example for the
+User Settings > Report date to load by default.
 
 Callback Signature:
 <pre><code>function(&amp;$dates)</code></pre>
 
-- array `&$dates` Array of (date => translation)
+- array &$dates Array of (date => translation)
 
 
 ### UsersManager.removeSiteAccess
@@ -3654,9 +3631,7 @@ Callback Signature:
 *Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [267](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php#L267)*
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
-the view based on the report that is being displayed.
-
-This event is triggered before view configuration properties are overwritten by saved settings or request
+the view based on the report that is being displayed. This event is triggered before view configuration properties are overwritten by saved settings or request
 parameters. Use this to define default values.
 
 Plugins that define their own reports must subscribe to this event in order to
@@ -3690,9 +3665,7 @@ Usages:
 *Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php) in line [309](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/ViewDataTable.php#L309)*
 
 Triggered after [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
-the view based on the report that is being displayed.
-
-This event is triggered after all view configuration values have been overwritten by saved settings or
+the view based on the report that is being displayed. This event is triggered after all view configuration values have been overwritten by saved settings or
 request parameters. Use this if you need to work with the final configuration values.
 
 Plugins that define their own reports can subscribe to this event in order to
@@ -3732,7 +3705,7 @@ this event and remove visualizations from the incoming array.
 Callback Signature:
 <pre><code>function(&amp;$result)</code></pre>
 
-- array `$visualizations` An array of all available visualizations indexed by visualization ID.
+- array &$visualizations An array of all available visualizations indexed by visualization ID.
 
 Usages:
 
@@ -3750,7 +3723,7 @@ Posted immediately before rendering the view. Plugins can use this event to perf
 configuration of the view based on it's data or the report being viewed.
 
 Callback Signature:
-<pre><code>function($this)</code></pre>
+<pre><code>function($this]</code></pre>
 
 - [Visualization](/api-reference/Piwik/Plugin/Visualization) `$view` The instance to configure.
 
@@ -3764,9 +3737,7 @@ Callback Signature:
 *Defined in [Piwik/Plugin/WidgetsProvider](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/WidgetsProvider.php) in line [63](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Plugin/WidgetsProvider.php#L63)*
 
 Triggered to add custom widget configs. To filder widgets have a look at the [Widget.filterWidgets](/api-reference/events#widgetfilterwidgets)
-event.
-
-**Example**
+event. **Example**
 
     public function addWidgetConfigs(&$configs)
     {
@@ -3781,7 +3752,7 @@ event.
 Callback Signature:
 <pre><code>function(&amp;$configs)</code></pre>
 
-- array `&$configs` An array containing a list of widget config entries.
+- array &$configs An array containing a list of widget config entries.
 
 Usages:
 
@@ -3816,10 +3787,9 @@ Usages:
 
 *Defined in [Piwik/Plugins/Widgetize/Controller](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Widgetize/Controller.php) in line [71](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Widgetize/Controller.php#L71)*
 
-Triggered to detect whether a widgetized report should be wrapped in the widgetized HTML or whether only the rendered output of the controller/action should be printed. Set `$shouldEmbedEmpty` to `true` if
-your widget renders the full HTML itself.
-
-**Example**
+Triggered to detect whether a widgetized report should be wrapped in the widgetized HTML or whether only
+the rendered output of the controller/action should be printed. Set `$shouldEmbedEmpty` to `true` if
+your widget renders the full HTML itself. **Example**
 
     public function embedIframeEmpty(&$shouldEmbedEmpty, $controllerName, $actionName)
     {
@@ -3831,7 +3801,7 @@ your widget renders the full HTML itself.
 Callback Signature:
 <pre><code>function(&amp;$shouldEmbedEmpty, $controllerName, $actionName)</code></pre>
 
-- string `&$shouldEmbedEmpty` Defines whether the iframe should be embedded empty or wrapped within the widgetized html.
+- string &$shouldEmbedEmpty Defines whether the iframe should be embedded empty or wrapped within the widgetized html.
 
 - string `$controllerName` The name of the controller that will be executed.
 

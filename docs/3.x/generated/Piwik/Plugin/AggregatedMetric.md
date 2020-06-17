@@ -5,9 +5,6 @@ AggregatedMetric
 
 Base type for metric metadata classes that describe aggregated metrics.
 
-These metrics are
-computed in the backend data store and are aggregated in PHP when Piwik archives period reports.
-
 Note: This class is a placeholder. It will be filled out at a later date. Right now, only
 processed metrics can be defined this way.
 
@@ -42,9 +39,7 @@ This string is what appears in API output.
 <a name="getTranslatedName" id="getTranslatedName"></a>
 ### `getTranslatedName()`
 
-Returns the human readable translated name of this metric, eg, `"Visits"` or `"Avg.
-
-time on site"`.
+Returns the human readable translated name of this metric, eg, `"Visits"` or `"Avg. time on site"`.
 
 This string is what appears in the UI.
 
@@ -60,15 +55,13 @@ Returns the category that this metric belongs to.
 
 #### Signature
 
-- It does not return anything.
+- It returns a `string` value.
 
 <a name="getdocumentation" id="getdocumentation"></a>
 <a name="getDocumentation" id="getDocumentation"></a>
 ### `getDocumentation()`
 
-Returns a string describing what the metric represents.
-
-The result will be included in report metadata
+Returns a string describing what the metric represents. The result will be included in report metadata
 API output, including processed reports.
 
 Implementing this method is optional.
@@ -81,9 +74,7 @@ Implementing this method is optional.
 <a name="format" id="format"></a>
 ### `format()`
 
-Returns a formatted metric value.
-
-This value is what appears in API output. From within Piwik,
+Returns a formatted metric value. This value is what appears in API output. From within Piwik,
 (core & plugins) the computed value is used. Only when outputting to the API does a metric
 get formatted.
 
@@ -104,9 +95,7 @@ By default, just returns the value.
 <a name="beforeFormat" id="beforeFormat"></a>
 ### `beforeFormat()`
 
-Executed before formatting all metrics for a report.
-
-Implementers can return `false`
+Executed before formatting all metrics for a report. Implementers can return `false`
 to skip formatting this metric and can use this method to access information needed for
 formatting (for example, the site ID).
 
@@ -125,7 +114,8 @@ formatting (for example, the site ID).
 <a name="getMetric" id="getMetric"></a>
 ### `getMetric()`
 
-Helper method that will access a metric in a [Row](/api-reference/Piwik/DataTable/Row) or array either by its name or by its special numerical index value.
+Helper method that will access a metric in a [Row](/api-reference/Piwik/DataTable/Row) or array either by
+its name or by its special numerical index value.
 
 #### Signature
 
@@ -144,7 +134,8 @@ Helper method that will access a metric in a [Row](/api-reference/Piwik/DataTabl
 <a name="getMetricValues" id="getMetricValues"></a>
 ### `getMetricValues()`
 
-Helper method that will determine the actual column name for a metric in a [DataTable](/api-reference/Piwik/DataTable) and return every column value for this name.
+Helper method that will determine the actual column name for a metric in a
+[DataTable](/api-reference/Piwik/DataTable) and return every column value for this name.
 
 #### Signature
 

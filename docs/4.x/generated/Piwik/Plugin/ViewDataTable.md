@@ -172,9 +172,8 @@ The abstract class defines the following methods:
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
-Constructor.
+Constructor. Initializes display and request properties to their default values.
 
-Initializes display and request properties to their default values.
 Posts the [ViewDataTable.configure](/api-reference/events#viewdatatableconfigure) event which plugins can use to configure the
 way reports are displayed.
 
@@ -237,7 +236,8 @@ with the viewDataTable ID.
 <a name="isViewDataTableId" id="isViewDataTableId"></a>
 ### `isViewDataTableId()`
 
-Returns `true` if this instance's or any of its ancestors' viewDataTable IDs equals the supplied ID, `false` if otherwise.
+Returns `true` if this instance's or any of its ancestors' viewDataTable IDs equals the supplied ID,
+`false` if otherwise.
 
 Can be used to test whether a ViewDataTable object is an instance of a certain visualization or not,
 without having to know where that visualization is.
@@ -286,13 +286,14 @@ Requests all needed data and renders the view.
 
 
 - *Returns:*  `string` &mdash;
-    The result of rendering.
+    Serialized data, eg, (image, array, html...).
 
 <a name="isrequestingsingledatatable" id="isrequestingsingledatatable"></a>
 <a name="isRequestingSingleDataTable" id="isRequestingSingleDataTable"></a>
 ### `isRequestingSingleDataTable()`
 
-Returns `true` if this instance will request a single DataTable, `false` if requesting more than one.
+Returns `true` if this instance will request a single DataTable, `false` if requesting
+more than one.
 
 #### Signature
 
@@ -325,9 +326,11 @@ Display a meaningful error message when any invalid parameter is being set.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$overrideParams` (`Piwik\Plugin\$overrideParams`) &mdash;
+    - `$overrideParams`
       
 - It does not return anything.
+- It throws one of the following exceptions:
+    - ``
 
 <a name="getnonoverridableparams" id="getnonoverridableparams"></a>
 <a name="getNonOverridableParams" id="getNonOverridableParams"></a>
@@ -336,7 +339,7 @@ Display a meaningful error message when any invalid parameter is being set.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$overrideParams` (`Piwik\Plugin\$overrideParams`) &mdash;
+    - `$overrideParams`
       
 - It returns a `array` value.
 
@@ -344,7 +347,8 @@ Display a meaningful error message when any invalid parameter is being set.
 <a name="isComparing" id="isComparing"></a>
 ### `isComparing()`
 
-Returns true if both this current visualization supports comparison, and if comparison query parameters are present in the URL.
+Returns true if both this current visualization supports comparison, and if comparison query parameters
+are present in the URL.
 
 #### Signature
 
@@ -354,9 +358,7 @@ Returns true if both this current visualization supports comparison, and if comp
 <a name="supportsComparison" id="supportsComparison"></a>
 ### `supportsComparison()`
 
-Implementations should override this method if they support a special comparison view.
-
-By
+Implementations should override this method if they support a special comparison view. By
 default, it is assumed visualizations do not support comparison.
 
 #### Signature

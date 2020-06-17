@@ -84,41 +84,41 @@ Returns the current URL without the query string.
        Whether to do trusted host check. Should ALWAYS be true, except in [Controller](/api-reference/Piwik/Plugin/Controller).
 
 - *Returns:*  `string` &mdash;
-    eg, `"http://example.org/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
+    eg, `"http://example.org/dir1/dir2/index.php"` if the current URL is
+               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
 
 <a name="getcurrenturlwithoutfilename" id="getcurrenturlwithoutfilename"></a>
 <a name="getCurrentUrlWithoutFileName" id="getCurrentUrlWithoutFileName"></a>
 ### `getCurrentUrlWithoutFileName()`
 
-Returns the current URL without the query string and without the name of the file being executed.
+Returns the current URL without the query string and without the name of the file
+being executed.
 
 #### Signature
 
 
 - *Returns:*  `string` &mdash;
-    eg, `"http://example.org/dir1/dir2/"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
+    eg, `"http://example.org/dir1/dir2/"` if the current URL is
+               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
 
 <a name="getcurrentscriptpath" id="getcurrentscriptpath"></a>
 <a name="getCurrentScriptPath" id="getCurrentScriptPath"></a>
 ### `getCurrentScriptPath()`
 
-Returns the path to the script being executed.
-
-The script file name is not included.
+Returns the path to the script being executed. The script file name is not included.
 
 #### Signature
 
 
 - *Returns:*  `string` &mdash;
-    eg, `"/dir1/dir2/"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+    eg, `"/dir1/dir2/"` if the current URL is
+               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
 
 <a name="getcurrentscriptname" id="getcurrentscriptname"></a>
 <a name="getCurrentScriptName" id="getCurrentScriptName"></a>
 ### `getCurrentScriptName()`
 
-Returns the path to the script being executed.
-
-Includes the script file name.
+Returns the path to the script being executed. Includes the script file name.
 
 #### Signature
 
@@ -127,7 +127,8 @@ Includes the script file name.
        If true (default value) then the PATH_INFO will be stripped.
 
 - *Returns:*  `string` &mdash;
-    eg, `"/dir1/dir2/index.php"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+    eg, `"/dir1/dir2/index.php"` if the current URL is
+               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
 
 <a name="getcurrentscheme" id="getcurrentscheme"></a>
 <a name="getCurrentScheme" id="getCurrentScheme"></a>
@@ -156,7 +157,8 @@ Returns the current host.
        Whether to do trusted host check. Should ALWAYS be true, except in Controller.
 
 - *Returns:*  `string` &mdash;
-    eg, `"example.org"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+    eg, `"example.org"` if the current URL is
+               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
 
 <a name="getcurrentquerystring" id="getcurrentquerystring"></a>
 <a name="getCurrentQueryString" id="getCurrentQueryString"></a>
@@ -168,27 +170,34 @@ Returns the query string of the current URL.
 
 
 - *Returns:*  `string` &mdash;
-    eg, `"?param1=value1&param2=value2"` if the current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+    eg, `"?param1=value1&param2=value2"` if the current URL is
+               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
 
 <a name="getarrayfromcurrentquerystring" id="getarrayfromcurrentquerystring"></a>
 <a name="getArrayFromCurrentQueryString" id="getArrayFromCurrentQueryString"></a>
 ### `getArrayFromCurrentQueryString()`
 
-Returns an array mapping query paramater names with query parameter values for the current URL.
+Returns an array mapping query paramater names with query parameter values for
+the current URL.
 
 #### Signature
 
 
 - *Returns:*  `array` &mdash;
-    If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"` this will return: array( 'param1' => string 'value1', 'param2' => string 'value2' )
+    If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+              this will return:
+
+                  array(
+                      'param1' => string 'value1',
+                      'param2' => string 'value2'
+                  )
 
 <a name="getcurrentquerystringwithparametersmodified" id="getcurrentquerystringwithparametersmodified"></a>
 <a name="getCurrentQueryStringWithParametersModified" id="getCurrentQueryStringWithParametersModified"></a>
 ### `getCurrentQueryStringWithParametersModified()`
 
-Modifies the current query string with the supplied parameters and returns the result.
-
-Parameters in the current URL will be overwritten with values
+Modifies the current query string with the supplied parameters and returns
+the result. Parameters in the current URL will be overwritten with values
 in `$params` and parameters absent from the current URL but present in `$params`
 will be added to the result.
 
@@ -205,9 +214,8 @@ will be added to the result.
 <a name="getQueryStringFromParameters" id="getQueryStringFromParameters"></a>
 ### `getQueryStringFromParameters()`
 
-Converts an array of parameters name => value mappings to a query string.
-
-Values must already be URL encoded before you call this function.
+Converts an array of parameters name => value mappings to a query
+string. Values must already be URL encoded before you call this function.
 
 #### Signature
 
@@ -222,9 +230,7 @@ Values must already be URL encoded before you call this function.
 <a name="redirectToReferrer" id="redirectToReferrer"></a>
 ### `redirectToReferrer()`
 
-Redirects the user to the referrer.
-
-If no referrer exists, the user is redirected
+Redirects the user to the referrer. If no referrer exists, the user is redirected
 to the current URL without query string.
 
 #### Signature
@@ -255,7 +261,7 @@ Returns the **HTTP_REFERER** `$_SERVER` variable, or `false` if not found.
 #### Signature
 
 
-- *Returns:*  `string`|`Piwik\false` &mdash;
+- *Returns:*  `string`|`false` &mdash;
     
 
 <a name="islocalurl" id="islocalurl"></a>

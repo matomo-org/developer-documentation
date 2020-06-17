@@ -70,9 +70,8 @@ The class defines the following methods:
 <a name="getRequestArrayFromString" id="getRequestArrayFromString"></a>
 ### `getRequestArrayFromString()`
 
-Converts the supplied request string into an array of query parameter name/value mappings.
-
-The current query parameters (everything in `$_GET` and `$_POST`) are
+Converts the supplied request string into an array of query parameter name/value
+mappings. The current query parameters (everything in `$_GET` and `$_POST`) are
 forwarded to request array before it is returned.
 
 #### Signature
@@ -102,7 +101,8 @@ Constructor.
 <a name="process" id="process"></a>
 ### `process()`
 
-Dispatches the API request to the appropriate API method and returns the result after post-processing.
+Dispatches the API request to the appropriate API method and returns the result
+after post-processing.
 
 Post-processing includes:
 
@@ -123,8 +123,10 @@ object.
 - *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|`Piwik\API\Map`|`string` &mdash;
     The data resulting from the API call.
 - It throws one of the following exceptions:
-    - `PluginDeactivatedException` &mdash; if the module plugin is not activated.
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the requested API method cannot be called, if required parameters for the API method are missing or if the API method throws an exception and the **format** query parameter is **original**.
+    - `Piwik\Exception\PluginDeactivatedException` &mdash; if the module plugin is not activated.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the requested API method cannot be called, if required parameters for the
+                  API method are missing or if the API method throws an exception and the **format**
+                  query parameter is **original**.
 
 <a name="getclassnameapi" id="getclassnameapi"></a>
 <a name="getClassNameAPI" id="getClassNameAPI"></a>
@@ -145,9 +147,7 @@ Returns the name of a plugin's API class by plugin name.
 <a name="isRootRequestApiRequest" id="isRootRequestApiRequest"></a>
 ### `isRootRequestApiRequest()`
 
-Detect if the root request (the actual request) is an API request or not.
-
-To detect whether an API is currently
+Detect if the root request (the actual request) is an API request or not. To detect whether an API is currently
 request within any request, have a look at [isApiRequest()](/api-reference/Piwik/API/Request#isapirequest).
 
 #### Signature
@@ -175,9 +175,7 @@ can be called programmatically. These requests are considered "child" API reques
 <a name="isApiRequest" id="isApiRequest"></a>
 ### `isApiRequest()`
 
-Detect if request is an API request.
-
-Meaning the module is 'API' and an API method having a valid format was
+Detect if request is an API request. Meaning the module is 'API' and an API method having a valid format was
 specified. Note that this method will return true even if the actual request is for example a regular UI
 reporting page request but within this request we are currently processing an API request (eg a
 controller calls Request::processRequest('API.getMatomoVersion')). To find out if the root request is an API
@@ -213,7 +211,8 @@ Returns the current API method being executed, if the current request is an API 
 <a name="processRequest" id="processRequest"></a>
 ### `processRequest()`
 
-Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
+Helper method that processes an API request in one line using the variables in `$_GET`
+and `$_POST`.
 
 #### Signature
 
@@ -232,9 +231,8 @@ Helper method that processes an API request in one line using the variables in `
 <a name="getRequestParametersGET" id="getRequestParametersGET"></a>
 ### `getRequestParametersGET()`
 
-Returns the original request parameters in the current query string as an array mapping query parameter names with values.
-
-The result of this function will not be affected
+Returns the original request parameters in the current query string as an array mapping
+query parameter names with values. The result of this function will not be affected
 by any modifications to `$_GET` and will not include parameters in `$_POST`.
 
 #### Signature

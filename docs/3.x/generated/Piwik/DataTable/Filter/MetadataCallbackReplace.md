@@ -18,6 +18,8 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`filter()`](#filter) &mdash; See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallbackReplace). Inherited from [`ColumnCallbackReplace`](../../../Piwik/DataTable/Filter/ColumnCallbackReplace.md)
+- [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+- [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -29,11 +31,11 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable that will eventually be filtered.
+      
     - `$metadataToFilter` (`array`|`string`) &mdash;
        The metadata whose values should be passed to the callback and then replaced with the callback's result.
     - `$functionToApply` (`callable`) &mdash;
-       The function to execute. Must take the metadata value as a parameter and return a value that will be used to replace the original.
+       The function to execute. Must take the column value as a parameter and return a value that will be used to replace the original.
     - `$functionParameters` (`array`|`null`) &mdash;
        deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
     - `$extraColumnParameters` (`array`) &mdash;
@@ -50,5 +52,32 @@ See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallback
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
+- It does not return anything.
+
+<a name="enablerecursive" id="enablerecursive"></a>
+<a name="enableRecursive" id="enableRecursive"></a>
+### `enableRecursive()`
+
+Enables/Disables recursive filtering. Whether this property is actually used
+is up to the derived BaseFilter class.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$enable` (`bool`) &mdash;
+      
+- It does not return anything.
+
+<a name="filtersubtable" id="filtersubtable"></a>
+<a name="filterSubTable" id="filterSubTable"></a>
+### `filterSubTable()`
+
+Filters a row's subtable, if one exists and is loaded in memory.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
 - It does not return anything.
 

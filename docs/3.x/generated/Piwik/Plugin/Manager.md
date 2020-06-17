@@ -49,9 +49,8 @@ Returns `true` if plugin is loaded (in memory).
 <a name="getPluginsDirectories" id="getPluginsDirectories"></a>
 ### `getPluginsDirectories()`
 
-Returns the path to all plugins directories.
+Returns the path to all plugins directories. Each plugins directory may contain several plugins.
 
-Each plugins directory may contain several plugins.
 All paths have a trailing slash '/'.
 
 #### Signature
@@ -62,15 +61,13 @@ All paths have a trailing slash '/'.
 <a name="getPluginDirectory" id="getPluginDirectory"></a>
 ### `getPluginDirectory()`
 
-Gets the path to a specific plugin.
-
-If the plugin does not exist in any plugins folder, the default plugins
+Gets the path to a specific plugin. If the plugin does not exist in any plugins folder, the default plugins
 folder will be assumed.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$pluginName` (`Piwik\Plugin\$pluginName`) &mdash;
+    - `$pluginName`
       
 
 - *Returns:*  `mixed`|`string` &mdash;
@@ -92,15 +89,23 @@ If no theme is enabled, the **Morpheus** plugin is returned (this is the base an
 <a name="loadAllPluginsAndGetTheirInfo" id="loadAllPluginsAndGetTheirInfo"></a>
 ### `loadAllPluginsAndGetTheirInfo()`
 
-Returns info regarding all plugins.
-
-Loads plugins that can be loaded.
+Returns info regarding all plugins. Loads plugins that can be loaded.
 
 #### Signature
 
 
 - *Returns:*  `array` &mdash;
-    An array that maps plugin names with arrays of plugin information. Plugin information consists of the following entries: - **activated**: Whether the plugin is activated. - **alwaysActivated**: Whether the plugin should always be activated, or not. - **uninstallable**: Whether the plugin is uninstallable or not. - **invalid**: If the plugin is invalid, this property will be set to true. If the plugin is not invalid, this property will not exist. - **info**: If the plugin was loaded, will hold the plugin information. See [Plugin::getInformation()](/api-reference/Piwik/Plugin#getinformation).
+    An array that maps plugin names with arrays of plugin information. Plugin
+              information consists of the following entries:
+
+              - **activated**: Whether the plugin is activated.
+              - **alwaysActivated**: Whether the plugin should always be activated,
+                                     or not.
+              - **uninstallable**: Whether the plugin is uninstallable or not.
+              - **invalid**: If the plugin is invalid, this property will be set to true.
+                             If the plugin is not invalid, this property will not exist.
+              - **info**: If the plugin was loaded, will hold the plugin information.
+                          See [Plugin::getInformation()](/api-reference/Piwik/Plugin#getinformation).
 
 <a name="getinstalledpluginsname" id="getinstalledpluginsname"></a>
 <a name="getInstalledPluginsName" id="getInstalledPluginsName"></a>
@@ -116,7 +121,8 @@ Return names of all installed plugins.
 <a name="getMissingPlugins" id="getMissingPlugins"></a>
 ### `getMissingPlugins()`
 
-Returns names of plugins that should be loaded, but cannot be since their files cannot be found.
+Returns names of plugins that should be loaded, but cannot be since their
+files cannot be found.
 
 #### Signature
 

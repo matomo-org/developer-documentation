@@ -30,7 +30,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable that will be filtered eventually.
+      
     - `$offset` (`int`) &mdash;
        The starting row index to keep.
     - `$limit` (`int`) &mdash;
@@ -55,9 +55,7 @@ See [Limit](/api-reference/Piwik/DataTable/Filter/Limit).
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

@@ -70,9 +70,7 @@ Get the id of the category the widget belongs to.
 <a name="setSubcategoryId" id="setSubcategoryId"></a>
 ### `setSubcategoryId()`
 
-Set the id of the subcategory the widget belongs to.
-
-If a subcategory is specified, the widget
+Set the id of the subcategory the widget belongs to. If a subcategory is specified, the widget
 will be shown in the Piwik reporting UI. The subcategoryId will be used as a translation key for
 the submenu item.
 
@@ -97,9 +95,7 @@ Get the currently set category ID.
 <a name="setModule" id="setModule"></a>
 ### `setModule()`
 
-Set the module (aka plugin name) of the widget.
-
-The correct module is usually detected automatically and
+Set the module (aka plugin name) of the widget. The correct module is usually detected automatically and
 not needed to be configured manually.
 
 #### Signature
@@ -146,10 +142,10 @@ Get the currently set action.
 <a name="setParameters" id="setParameters"></a>
 ### `setParameters()`
 
-Sets (overwrites) the parameters of the widget.
+Sets (overwrites) the parameters of the widget. These parameters will be added to the URL when rendering the
+widget. You can access these parameters via `Piwik\Common::getRequestVar(.
 
-These parameters will be added to the URL when rendering the
-widget. You can access these parameters via `Piwik\Common::getRequestVar(...)`.
+..)`.
 
 #### Signature
 
@@ -162,9 +158,7 @@ widget. You can access these parameters via `Piwik\Common::getRequestVar(...)`.
 <a name="addParameters" id="addParameters"></a>
 ### `addParameters()`
 
-Add new parameters and only overwrite parameters that have the same name.
-
-See [setParameters()](/api-reference/Piwik/Report/ReportWidgetConfig#setparameters)
+Add new parameters and only overwrite parameters that have the same name. See [setParameters()](/api-reference/Piwik/Report/ReportWidgetConfig#setparameters)
 
 #### Signature
 
@@ -233,9 +227,7 @@ Returns the order of the widget.
 <a name="isEnabled" id="isEnabled"></a>
 ### `isEnabled()`
 
-Defines whether a widget is enabled or not.
-
-For instance some widgets might not be available to every user or
+Defines whether a widget is enabled or not. For instance some widgets might not be available to every user or
 might depend on a setting (such as Ecommerce) of a site. In such a case you can perform any checks and then
 return `true` or `false`. If your report is only available to users having super user access you can do the
 following: `return Piwik::hasUserSuperUserAccess();`
@@ -248,9 +240,7 @@ following: `return Piwik::hasUserSuperUserAccess();`
 <a name="setIsEnabled" id="setIsEnabled"></a>
 ### `setIsEnabled()`
 
-Enable / disable the widget.
-
-See [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled)
+Enable / disable the widget. See [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled)
 
 #### Signature
 
@@ -263,9 +253,7 @@ See [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled)
 <a name="enable" id="enable"></a>
 ### `enable()`
 
-Enables the widget.
-
-See [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled)
+Enables the widget. See [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled)
 
 #### Signature
 
@@ -275,9 +263,7 @@ See [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled)
 <a name="disable" id="disable"></a>
 ### `disable()`
 
-Disables the widget.
-
-See [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled)
+Disables the widget. See [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled)
 
 #### Signature
 
@@ -287,11 +273,10 @@ See [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled)
 <a name="checkIsEnabled" id="checkIsEnabled"></a>
 ### `checkIsEnabled()`
 
-This method checks whether the widget is available, see [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled).
-
-If not, it triggers an exception
+This method checks whether the widget is available, see [isEnabled()](/api-reference/Piwik/Report/ReportWidgetConfig#isenabled). If not, it triggers an exception
 containing a message that will be displayed to the user. You can overwrite this message in case you want to
 customize the error message. Eg.
+
 ```
 if (!$this->isEnabled()) {
     throw new Exception('Setting XYZ is not enabled or the user has not enough permission');
@@ -338,9 +323,8 @@ Sets the widget as widgetizable [isWidgetizeable()](/api-reference/Piwik/Report/
 <a name="isWidgetizeable" id="isWidgetizeable"></a>
 ### `isWidgetizeable()`
 
-Detect whether the widget is widgetizable meaning it won't be able to add it to the dashboard and it won't be possible to export the widget via an iframe if it is not widgetizable.
-
-This is usually not needed but useful
+Detect whether the widget is widgetizable meaning it won't be able to add it to the dashboard and it won't
+be possible to export the widget via an iframe if it is not widgetizable. This is usually not needed but useful
 when you eg want to display a widget within the Piwik UI but not want to have it widgetizable.
 
 #### Signature
@@ -351,9 +335,8 @@ when you eg want to display a widget within the Piwik UI but not want to have it
 <a name="setMiddlewareParameters" id="setMiddlewareParameters"></a>
 ### `setMiddlewareParameters()`
 
-If middleware parameters are specified, the corresponding action will be executed before showing the actual widget in the UI.
-
-Only if this action (can be a controller method or API method) returns JSON `true`
+If middleware parameters are specified, the corresponding action will be executed before showing the
+actual widget in the UI. Only if this action (can be a controller method or API method) returns JSON `true`
 the widget will be actually shown. It is similar to `isEnabled()` but the specified action is performed each
 time the widget is requested in the UI whereas `isEnabled` is only checked once on the initial page load when
 we load the initial list of widgets. So if your widget's visibility depends on archived data
@@ -393,7 +376,7 @@ Marks this widget as a "wide" widget that requires the full width.
 
 #### Signature
 
-- It returns a `Piwik\Widget\$this` value.
+- It returns a `$this` value.
 
 <a name="iswide" id="iswide"></a>
 <a name="isWide" id="isWide"></a>
@@ -409,9 +392,7 @@ Detect whether the widget should be shown wide or not.
 <a name="setDefaultViewDataTable" id="setDefaultViewDataTable"></a>
 ### `setDefaultViewDataTable()`
 
-Sets a default viewDataTable that should be used to render the report.
-
-This is not necessarily the
+Sets a default viewDataTable that should be used to render the report. This is not necessarily the
 view that will be actually used to render the report. Eg if a user switched manually to another viewDataTable
 Piwik will re-use the viewDataTable that was used the last time. If you want to force the usage of a
 viewDataTable use [forceViewDataTable()](/api-reference/Piwik/Report/ReportWidgetConfig#forceviewdatatable).
@@ -434,7 +415,7 @@ Forces the usage of the given viewDataTable in order to render the report.
 -  It accepts the following parameter(s):
     - `$viewDataTableId` (`string`) &mdash;
        eg 'table' or 'graph'
-- It returns a `Piwik\Report\$this` value.
+- It returns a `$this` value.
 
 <a name="isviewdatatableforced" id="isviewdatatableforced"></a>
 <a name="isViewDataTableForced" id="isViewDataTableForced"></a>

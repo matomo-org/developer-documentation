@@ -77,7 +77,8 @@ Returns the current user's token auth.
 <a name="hasUserSuperUserAccessOrIsTheUser" id="hasUserSuperUserAccessOrIsTheUser"></a>
 ### `hasUserSuperUserAccessOrIsTheUser()`
 
-Returns `true` if the current user is either the Super User or the user specified by `$theUser`.
+Returns `true` if the current user is either the Super User or the user specified by
+`$theUser`.
 
 #### Signature
 
@@ -99,7 +100,7 @@ Check that the current user is either the specified user or the superuser.
        A username.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - `NoAccessException` &mdash; If the user is neither the Super User nor the user `$theUser`.
+    - [`Piwik\NoAccessException`](../Piwik/NoAccessException.md) &mdash; If the user is neither the Super User nor the user `$theUser`.
 
 <a name="hastheusersuperuseraccess" id="hastheusersuperuseraccess"></a>
 <a name="hasTheUserSuperUserAccess" id="hasTheUserSuperUserAccess"></a>
@@ -144,7 +145,7 @@ Checks that the user is not the anonymous user.
 
 - It does not return anything.
 - It throws one of the following exceptions:
-    - `NoAccessException` &mdash; if the current user is the anonymous user.
+    - [`Piwik\NoAccessException`](../Piwik/NoAccessException.md) &mdash; if the current user is the anonymous user.
 
 <a name="checkuserhassuperuseraccess" id="checkuserhassuperuseraccess"></a>
 <a name="checkUserHasSuperUserAccess" id="checkUserHasSuperUserAccess"></a>
@@ -407,9 +408,7 @@ need to use this function._**
 <a name="translate" id="translate"></a>
 ### `translate()`
 
-Returns an internationalized string using a translation token.
-
-If a translation
+Returns an internationalized string using a translation token. If a translation
 cannot be found for the token, the token is returned.
 
 #### Signature

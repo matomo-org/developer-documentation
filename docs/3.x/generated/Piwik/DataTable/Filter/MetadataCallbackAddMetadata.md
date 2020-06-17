@@ -5,8 +5,6 @@ MetadataCallbackAddMetadata
 
 Executes a callback for each row of a DataTable and adds the result to the row as a metadata value.
 
-Only metadata values are passed to the callback.
-
 **Basic usage example**
 
     // add a logo metadata based on the url metadata
@@ -32,7 +30,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable that will eventually be filtered.
+      
     - `$metadataToRead` (`string`|`array`) &mdash;
        The metadata to read from each row and pass to the callback.
     - `$metadataToAdd` (`string`) &mdash;
@@ -59,9 +57,7 @@ See [MetadataCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/Metadata
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

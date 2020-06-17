@@ -5,9 +5,6 @@ SystemConfigSetting
 
 Describes a system wide setting.
 
-Only the Super User can change this type of setting by d efault and
-the value of this setting will affect all users.
-
 See [Setting](/api-reference/Piwik/Settings/Setting).
 
 Methods
@@ -92,9 +89,7 @@ Sets/overwrites the current default value
 <a name="setIsWritableByCurrentUser" id="setIsWritableByCurrentUser"></a>
 ### `setIsWritableByCurrentUser()`
 
-Set whether setting is writable or not.
-
-For example to hide setting from the UI set it to false.
+Set whether setting is writable or not. For example to hide setting from the UI set it to false.
 
 #### Signature
 
@@ -107,9 +102,7 @@ For example to hide setting from the UI set it to false.
 <a name="isWritableByCurrentUser" id="isWritableByCurrentUser"></a>
 ### `isWritableByCurrentUser()`
 
-Returns `true` if this setting is writable for the current user, `false` if otherwise.
-
-In case it returns
+Returns `true` if this setting is writable for the current user, `false` if otherwise. In case it returns
 writable for the current user it will be visible in the Plugin settings UI.
 
 #### Signature
@@ -130,9 +123,7 @@ Saves (persists) the value for this setting in the database if a value has been 
 <a name="getValue" id="getValue"></a>
 ### `getValue()`
 
-Returns the previously persisted setting value.
-
-If no value was set, the default value
+Returns the previously persisted setting value. If no value was set, the default value
 is returned.
 
 #### Signature

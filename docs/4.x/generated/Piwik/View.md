@@ -94,9 +94,7 @@ This class defines the following properties:
 <a name="sendHeadersWhenRendering" id="sendHeadersWhenRendering"></a>
 ### `$sendHeadersWhenRendering`
 
-Can be disabled to not send headers when rendering a view.
-
-This can be useful if heaps of views are being
+Can be disabled to not send headers when rendering a view. This can be useful if heaps of views are being
 rendered during one request to possibly prevent a segmentation fault see eg #15307 . It should not be disabled
 for a main view, but could be disabled for views that are being rendered eg during a twig event as a "subview" which
 is part of the "main view".
@@ -111,7 +109,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files
+- [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=.
 - [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename.
 - [`getTemplateVars()`](#gettemplatevars) &mdash; Returns the variables to bind to the template when rendering.
 - [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
@@ -141,7 +139,9 @@ Constructor.
 <a name="disableCacheBuster" id="disableCacheBuster"></a>
 ### `disableCacheBuster()`
 
-Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files
+Disables the cache buster (adding of ?cb=.
+
+..) to JavaScript and stylesheet files
 
 #### Signature
 
@@ -234,24 +234,21 @@ Unsets a template variable.
 <a name="render" id="render"></a>
 ### `render()`
 
-Renders the current view.
+Renders the current view. Also sends the stored 'Content-Type' HTML header.
 
-Also sends the stored 'Content-Type' HTML header.
 See [setContentType()](/api-reference/Piwik/View#setcontenttype).
 
 #### Signature
 
 
 - *Returns:*  `string` &mdash;
-    Generated template.
+    Serialized data, eg, (image, array, html...).
 
 <a name="setcontenttype" id="setcontenttype"></a>
 <a name="setContentType" id="setContentType"></a>
 ### `setContentType()`
 
-Set stored value used in the Content-Type HTTP header field.
-
-The header is
+Set stored value used in the Content-Type HTTP header field. The header is
 set just before rendering.
 
 #### Signature
@@ -265,9 +262,7 @@ set just before rendering.
 <a name="setXFrameOptions" id="setXFrameOptions"></a>
 ### `setXFrameOptions()`
 
-Set X-Frame-Options field in the HTTP response.
-
-The header is set just
+Set X-Frame-Options field in the HTTP response. The header is set just
 before rendering.
 
 _Note: setting this allows you to make sure the View **cannot** be
@@ -304,9 +299,7 @@ a new template.
 <a name="getUseStrictReferrerPolicy" id="getUseStrictReferrerPolicy"></a>
 ### `getUseStrictReferrerPolicy()`
 
-Returns whether a strict Referrer-Policy header will be sent.
-
-Generally this should be set to 'true'.
+Returns whether a strict Referrer-Policy header will be sent. Generally this should be set to 'true'.
 
 #### Signature
 

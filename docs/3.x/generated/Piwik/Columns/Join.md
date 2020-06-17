@@ -3,7 +3,7 @@
 Join
 ====
 
-Since Piwik 3.1.0
+Since Matomo 3.1.0
 
 Methods
 -------
@@ -24,11 +24,11 @@ Join constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Piwik\Columns\$table`) &mdash;
+    - `$table`
       
-    - `$column` (`Piwik\Columns\$column`) &mdash;
+    - `$column`
       
-    - `$targetColumn` (`Piwik\Columns\$targetColumn`) &mdash;
+    - `$targetColumn`
       
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)

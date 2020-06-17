@@ -32,7 +32,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The table that will be filtered.
+      
     - `$labelSummaryRow` (`int`) &mdash;
        The value of the label column for the new row.
 
@@ -40,9 +40,7 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Executes the filter.
-
-See [AddSummaryRow](/api-reference/Piwik/DataTable/Filter/AddSummaryRow).
+Executes the filter. See [AddSummaryRow](/api-reference/Piwik/DataTable/Filter/AddSummaryRow).
 
 #### Signature
 
@@ -55,9 +53,7 @@ See [AddSummaryRow](/api-reference/Piwik/DataTable/Filter/AddSummaryRow).
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature

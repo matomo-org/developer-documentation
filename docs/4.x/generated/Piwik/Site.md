@@ -76,13 +76,14 @@ Constructor.
     - `$idsite` (`int`) &mdash;
        The ID of the site we want data for.
 - It throws one of the following exceptions:
-    - `UnexpectedWebsiteFoundException`
+    - `Piwik\Exception\UnexpectedWebsiteFoundException`
 
 <a name="setsites" id="setsites"></a>
 <a name="setSites" id="setSites"></a>
 ### `setSites()`
 
-Sets the cached site data with an array that associates site IDs with individual site data.
+Sets the cached site data with an array that associates site IDs with
+individual site data.
 
 #### Signature
 
@@ -361,7 +362,7 @@ Returns the type of the site with the specified ID.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$idsite` (`Piwik\$idsite`) &mdash;
+    - `$idsite`
       
 - It returns a `string` value.
 

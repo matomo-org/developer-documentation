@@ -54,7 +54,8 @@ Adds a new setting to the settings container.
       
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If there is a setting with the same name that already exists. If the name contains non-alphanumeric characters.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If there is a setting with the same name that already exists.
+                         If the name contains non-alphanumeric characters.
 
 <a name="save" id="save"></a>
 <a name="save" id="save"></a>

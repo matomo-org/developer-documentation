@@ -75,9 +75,9 @@ etc.
 
 -  It accepts the following parameter(s):
     - `$dateString`
-      
+       string The **date** query parameter value.
     - `$period`
-      
+       string The **period** query parameter value.
 - It returns a `boolean` value.
 
 <a name="checkdateformat" id="checkdateformat"></a>
@@ -96,7 +96,8 @@ For valid date formats have a look at the [Date::factory()](/api-reference/Piwik
       
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before Tue, 06 Aug 1991.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before
+                  Tue, 06 Aug 1991.
 
 <a name="getdatestart" id="getdatestart"></a>
 <a name="getDateStart" id="getDateStart"></a>
@@ -176,9 +177,7 @@ Returns the number of available subperiods.
 <a name="getSubperiods" id="getSubperiods"></a>
 ### `getSubperiods()`
 
-Returns the set of Period instances that together make up this period.
-
-For a year,
+Returns the set of Period instances that together make up this period. For a year,
 this would be 12 months. For a month this would be 28-31 days. Etc.
 
 #### Signature
@@ -239,7 +238,8 @@ Returns a pretty string describing this period.
 <a name="getLocalizedShortString" id="getLocalizedShortString"></a>
 ### `getLocalizedShortString()`
 
-Returns a short string description of this period that is localized with the currently used language.
+Returns a short string description of this period that is localized with the currently used
+language.
 
 #### Signature
 
@@ -249,7 +249,8 @@ Returns a short string description of this period that is localized with the cur
 <a name="getLocalizedLongString" id="getLocalizedLongString"></a>
 ### `getLocalizedLongString()`
 
-Returns a long string description of this period that is localized with the currently used language.
+Returns a long string description of this period that is localized with the currently used
+language.
 
 #### Signature
 

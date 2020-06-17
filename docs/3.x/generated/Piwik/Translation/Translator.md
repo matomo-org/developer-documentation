@@ -37,9 +37,7 @@ The class defines the following methods:
 <a name="translate" id="translate"></a>
 ### `translate()`
 
-Returns an internationalized string using a translation ID.
-
-If a translation
+Returns an internationalized string using a translation ID. If a translation
 cannot be found for the ID, the ID is returned.
 
 #### Signature

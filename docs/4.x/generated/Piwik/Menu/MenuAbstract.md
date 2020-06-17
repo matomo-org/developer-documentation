@@ -24,9 +24,7 @@ The abstract class defines the following methods:
 <a name="getInstance" id="getInstance"></a>
 ### `getInstance()`
 
-Returns the singleton instance for the derived class.
-
-If the singleton instance
+Returns the singleton instance for the derived class. If the singleton instance
 has not been created, this method will create it.
 
 #### Signature
@@ -37,7 +35,7 @@ has not been created, this method will create it.
 <a name="addItem" id="addItem"></a>
 ### `addItem()`
 
-Since Piwik 2.7.0
+Since Matomo 2.7.0
 
 Adds a new entry to the menu.
 
@@ -84,13 +82,13 @@ Renames a single menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuOriginal` (`Piwik\Menu\$mainMenuOriginal`) &mdash;
+    - `$mainMenuOriginal`
       
-    - `$subMenuOriginal` (`Piwik\Menu\$subMenuOriginal`) &mdash;
+    - `$subMenuOriginal`
       
-    - `$mainMenuRenamed` (`Piwik\Menu\$mainMenuRenamed`) &mdash;
+    - `$mainMenuRenamed`
       
-    - `$subMenuRenamed` (`Piwik\Menu\$subMenuRenamed`) &mdash;
+    - `$subMenuRenamed`
       
 - It does not return anything.
 
@@ -103,11 +101,11 @@ Edits a URL of an existing menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuToEdit` (`Piwik\Menu\$mainMenuToEdit`) &mdash;
+    - `$mainMenuToEdit`
       
-    - `$subMenuToEdit` (`Piwik\Menu\$subMenuToEdit`) &mdash;
+    - `$subMenuToEdit`
       
-    - `$newUrl` (`Piwik\Menu\$newUrl`) &mdash;
+    - `$newUrl`
       
 - It does not return anything.
 

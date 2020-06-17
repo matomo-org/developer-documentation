@@ -129,9 +129,7 @@ Sets the password to authenticate with.
 <a name="setPasswordHash" id="setPasswordHash"></a>
 ### `setPasswordHash()`
 
-Sets the hash of the password to authenticate with.
-
-The hash will be an MD5 hash.
+Sets the hash of the password to authenticate with. The hash will be an MD5 hash.
 
 #### Signature
 
@@ -146,19 +144,19 @@ The hash will be an MD5 hash.
 <a name="authenticate" id="authenticate"></a>
 ### `authenticate()`
 
-Authenticates a user using the login and password set using the setters.
-
-Can also authenticate
+Authenticates a user using the login and password set using the setters. Can also authenticate
 via token auth if one is set and no password is set.
 
 Note: this method must successfully authenticate if the token auth supplied is a special hash
 of the user's real token auth. This is because the SessionInitializer class stores a
 hash of the token auth in the session cookie. You can calculate the token auth hash using the
-Piwik\Plugins\Login\SessionInitializer::getHashTokenAuth() method.
+[SessionInitializer::getHashTokenAuth()](/api-reference/Piwik/Plugins/Login/SessionInitializer#gethashtokenauth) method.
 
 #### Signature
 
 - It returns a [`AuthResult`](../Piwik/AuthResult.md) value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the Auth implementation has an invalid state (ie, no login was specified). Note: implementations are not **required** to throw exceptions for invalid state, but they are allowed to.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the Auth implementation has an invalid state (ie, no login
+                  was specified). Note: implementations are not **required** to throw
+                  exceptions for invalid state, but they are allowed to.
 

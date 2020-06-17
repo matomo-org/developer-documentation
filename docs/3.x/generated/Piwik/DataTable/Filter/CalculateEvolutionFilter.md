@@ -20,6 +20,9 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`filter()`](#filter) &mdash; See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient). Inherited from [`ColumnCallbackAddColumnQuotient`](../../../Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md)
+- [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+- [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`calculate()`](#calculate) &mdash; Calculates the evolution percentage for two arbitrary values.
 - [`appendPercentSign()`](#appendpercentsign)
 - [`prependPlusSignToNumber()`](#prependplussigntonumber)
@@ -34,7 +37,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The DataTable being filtered.
+      
     - `$pastDataTable` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
        The DataTable containing data for the period in the past.
     - `$columnToAdd` (`string`) &mdash;
@@ -42,7 +45,47 @@ Constructor.
     - `$columnToRead` (`string`) &mdash;
        The column to use to calculate evolution data, eg, `'nb_visits'`.
     - `$quotientPrecision` (`int`) &mdash;
-       The precision to use when rounding the evolution value.
+       The precision to use when rounding the quotient.
+
+<a name="filter" id="filter"></a>
+<a name="filter" id="filter"></a>
+### `filter()`
+
+See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+      
+- It does not return anything.
+
+<a name="enablerecursive" id="enablerecursive"></a>
+<a name="enableRecursive" id="enableRecursive"></a>
+### `enableRecursive()`
+
+Enables/Disables recursive filtering. Whether this property is actually used
+is up to the derived BaseFilter class.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$enable` (`bool`) &mdash;
+      
+- It does not return anything.
+
+<a name="filtersubtable" id="filtersubtable"></a>
+<a name="filterSubTable" id="filterSubTable"></a>
+### `filterSubTable()`
+
+Filters a row's subtable, if one exists and is loaded in memory.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+       The row whose subtable should be filter.
+- It does not return anything.
 
 <a name="calculate" id="calculate"></a>
 <a name="calculate" id="calculate"></a>

@@ -18,9 +18,7 @@ The class defines the following methods:
 <a name="getPiwikUrl" id="getPiwikUrl"></a>
 ### `getPiwikUrl()`
 
-Returns the URL to this Piwik instance, eg.
-
-**http://demo.piwik.org/** or **http://example.org/piwik/**.
+Returns the URL to this Piwik instance, eg. **http://demo.piwik.org/** or **http://example.org/piwik/**.
 
 #### Signature
 

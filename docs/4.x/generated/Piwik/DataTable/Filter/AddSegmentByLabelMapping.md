@@ -53,9 +53,7 @@ See [AddSegmentByLabelMapping](/api-reference/Piwik/DataTable/Filter/AddSegmentB
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature
