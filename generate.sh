@@ -42,7 +42,6 @@ function generateDocs {
 }
 
 cd $DIR
-generateDocs "3.x-dev" "3.x"
 generateDocs "4.x-dev" "4.x"
 rm -rf app/tmp/cache/*
 
