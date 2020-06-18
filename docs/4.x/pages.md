@@ -54,7 +54,7 @@ Using a Twig template to generate your page is optional: you can also generate a
 
 Now that your page is created, you can access it at the following URL: [/index.php?module=MyPlugin&action=index&…](http://localhost:8000/index.php?module=MyPlugin&action=index&idSite=1&period=day&date=yesterday). It should look like this:
 
-![](https://piwik.org/wp-content/uploads/2014/09/action_example.png)
+![](https://matomo.org/wp-content/uploads/2014/09/action_example.png)
 
 ## Creating an admin page
 
@@ -77,7 +77,7 @@ If you would like to add the admin menu on the left you have to modify the follo
 
 The result should look like this:
 
-![](https://piwik.org/wp-content/uploads/2014/09/action_admin_example.png)
+![](https://matomo.org/wp-content/uploads/2014/09/action_admin_example.png)
 
 Note: if you just want **to make your plugin configurable** you should [use the Plugin Settings instead](/guides/plugin-settings).
 

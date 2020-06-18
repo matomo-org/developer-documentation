@@ -26,12 +26,12 @@ For example, if you want to display the top five countries that visitors come fr
 *   User countries report: `&apiModule=UserCountry&apiAction=getCountry`
 *   Truncated to 5 rows: `&filter_truncate=5`
 *   Labels can be translated into a specific language. As with other API calls, you can use the parameter `&language=xx` (replacing xx with the translation code).
-The URL would be [https://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&language=en&format=xml&token_auth=anonymous&filter_truncate=5](https://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en)
+The URL would be [https://demo.matomo.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&language=en&format=xml&token_auth=anonymous&filter_truncate=5](https://demo.matomo.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en)
 
 The returned XML is:
 
 ```xml
-{@include escape http://demo.piwik.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en}
+{@include escape https://demo.matomo.org/?module=API&method=API.getProcessedReport&idSite=3&date=yesterday&period=day&apiModule=UserCountry&apiAction=getCountry&format=xml&token_auth=anonymous&filter_truncate=5&language=en}
 ```
 
 ## List and Definition of 'metadata' Response Attributes
@@ -47,55 +47,55 @@ The returned XML is:
 
 ## Listing all the Metadata API Functions
 
-The API method **API.getReportMetadata** can be called to request the full list of API functions returning web analytics reports - [see the example output on the Piwik demo](https://demo.piwik.org/?module=API&method=API.getReportMetadata&format=xml&idSite=3&token_auth=anonymous).
+The API method **API.getReportMetadata** can be called to request the full list of API functions returning web analytics reports - [see the example output on the Piwik demo](https://demo.matomo.org/?module=API&method=API.getReportMetadata&format=xml&idSite=3&token_auth=anonymous).
 
 There are two types of reports in Piwik, and each have a slightly different format.
 
 *   **Simple metrics reports**
 
-    Simple Metrics reports simply contain a list of metrics and their values. For example, VisitsSummary.get returns the main metrics (visits, pages, unique visitors) for the specified website ([example URL](https://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous)).
+    Simple Metrics reports simply contain a list of metrics and their values. For example, VisitsSummary.get returns the main metrics (visits, pages, unique visitors) for the specified website ([example URL](https://demo.matomo.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous)).
 
     ```xml
-    {@include escape http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous}
+    {@include escape https://demo.matomo.org/?module=API&method=API.getMetadata&idSite=3&apiModule=VisitsSummary&apiAction=get&format=xml&token_auth=anonymous}
     ```
 
 *   **Reports with dimensions**
 
     Most reports, however, will have a 'dimension' entry in the returned array. Reports with dimensions will display a list of metrics for each 'dimension'. For example, the list of visits, pages, time on site will be output for each keyword.
 
-    Example of a report with dimensions metadata ([example URL](https://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referrers&apiAction=getKeywords&format=xml&token_auth=anonymous)):
+    Example of a report with dimensions metadata ([example URL](https://demo.matomo.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referrers&apiAction=getKeywords&format=xml&token_auth=anonymous)):
 
     ```xml
-    {@include escape http://demo.piwik.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referrers&apiAction=getKeywords&format=xml&token_auth=anonymous}
+    {@include escape https://demo.matomo.org/?module=API&method=API.getMetadata&idSite=3&apiModule=Referrers&apiAction=getKeywords&format=xml&token_auth=anonymous}
     ```
 
 ## Static Image Graphs
 
-In the metadata output, the field &lt;imageGraphUrl&gt; is a URL that will generate a static PNG graph plotting data for the requested report. Static PNG graphs are used, for example, in the [Piwik mobile app](https://piwik.org/mobile/) and in [email reports](https://piwik.org/docs/email-reports/). These static image graphs can also be used in any custom dashboard, web page, monitoring page, email, etc. As opposed to the [Piwik Widgets](https://piwik.org/docs/embed-piwik-report/), static image graphs do not require JavaScript or HTML, since the URL returns a PNG image.
+In the metadata output, the field &lt;imageGraphUrl&gt; is a URL that will generate a static PNG graph plotting data for the requested report. Static PNG graphs are used, for example, in the [Piwik mobile app](https://matomo.org/mobile/) and in [email reports](https://matomo.org/docs/email-reports/). These static image graphs can also be used in any custom dashboard, web page, monitoring page, email, etc. As opposed to the [Piwik Widgets](https://matomo.org/docs/embed-piwik-report/), static image graphs do not require JavaScript or HTML, since the URL returns a PNG image.
 
 In the following examples, to see the URL used to generate the image, right-click on the image and select "view image" to see the full URL.
 
 *   Example: Graph Plotting Visits over the Last 30 Days
 
-    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummary&apiAction=get&token_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250)
+    ![](https://demo.matomo.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummary&apiAction=get&token_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=VisitsSummary&apiAction=get&token_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250`
 
 *   Example: Horizontal Bar Graph Plotting Browsers for the Current Month
 
-    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
+    ![](https://demo.matomo.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Horizontal Bar Graph Plotting Countries for the Current Week
 
-    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
+    ![](https://demo.matomo.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250`
 
 *   Example: Graph Plotting User Screen Resolutions for the Current Month
 
-    ![](https://demo.piwik.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=Resolution&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250)
+    ![](https://demo.matomo.org/index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=Resolution&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250)
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=3&apiModule=Resolution&apiAction=getResolution&token_auth=anonymous&graphType=verticalBar&period=month&date=today&width=500&height=250`
 

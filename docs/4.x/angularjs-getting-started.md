@@ -17,7 +17,7 @@ With using AngularJS we are trying to achieve different goals:
 * Getting rid of jQuery soup [[0]](http://programming.oreilly.com/2014/01/keeping-jquery-in-check.html) [[1]](https://martinfowler.com/bliki/SegregatedDOM.html) and reducing complexity in our frontend
 * More reusable code (models, services, filters, directives, ...)
 * Shift some work from the server side into client side
-* Faster response (especially once we can use AngularJS routing and [AMD](http://requirejs.org/docs/whyamd.html)). If you are not familiar with AMD -> please ignore for now
+* Faster response (especially once we can use AngularJS routing and [AMD](https://requirejs.org/docs/whyamd.html)). If you are not familiar with AMD -> please ignore for now
 
 ## Before you start using AngularJS
 I recommend watching some videos and read a few resources about the benefits and best practices of AngularJS. It is important to understand how AngularJS works and especially to be aware of pitfalls and best practices.
@@ -29,13 +29,11 @@ I recommend watching some videos and read a few resources about the benefits and
 * [Common Pitfalls](https://docs.angularjs.org/misc/faq#common-pitfalls)
 * [Considering Speed and Slowness in AngularJS](https://www.exratione.com/2013/12/considering-speed-and-slowness-in-angularjs/)
 * [The Hitchhiker’s Guide to the Directive](https://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/)
-* [Build custom directives with AngularJS](http://www.ng-newsletter.com/posts/directives.html)
-* [When to use directives, controllers or services in AngularJS](http://kirkbushell.me/when-to-use-directives-controllers-or-services-in-angular/)
 
 
 ## Some random notes and tips
 * It is very important to understand AngularJS Scopes.
-  * [Nested Scopes in AngularJS](http://jimhoskins.com/2012/12/14/nested-scopes-in-angularjs.html)
+  * [Nested Scopes in AngularJS](https://jimhoskins.com/2012/12/14/nested-scopes-in-angularjs.html)
   * [Scope Hierarchies](https://docs.angularjs.org/guide/scope#scope-hierarchies)
   * [The Hitchhiker’s Guide to the Directive](https://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/)
 
@@ -118,8 +116,8 @@ Filenames are always lower case and words are separated by dashes. In general, w
 
 ### Related links
 * [https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub)
-* [http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript](http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript)
-* [http://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/](http://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/)
+* [https://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript](https://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript)
+* [https://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/](https://joelhooks.com/blog/2013/05/22/lessons-learned-kicking-off-an-angularjs-project/)
 * [https://gocardless.com/blog/building-a-large-angular-application/](https://gocardless.com/blog/building-a-large-angular-application/)
 * [https://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/](https://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/)
 
@@ -141,12 +139,12 @@ They make use of different components
 We are currently not using AngularJS Routing. The goal is to use it in long term to get rid of piwikBroadcast and many other classes.
 
 ## Testing
-We use [Karma](https://karma-runner.github.io) + [Chai](http://chaijs.com) + [Mocha] (https://mochajs.org/) to write unit tests. Read more about it here: [https://github.com/matomo-org/matomo/blob/master/tests/angularjs/README.md](https://github.com/matomo-org/matomo/blob/master/tests/angularjs/README.md)
+We use [Karma](https://karma-runner.github.io) + [Chai](https://chaijs.com) + [Mocha] (https://mochajs.org/) to write unit tests. Read more about it here: [https://github.com/matomo-org/matomo/blob/master/tests/angularjs/README.md](https://github.com/matomo-org/matomo/blob/master/tests/angularjs/README.md)
 
 ## How to document
 TBD
 
-Might be interesting link: [Docular](http://grunt-docular.com/)
+Might be interesting link: [Docular](https://grunt-docular.com/)
 
 ## Plugin architecture
 AngularJS dependency injection allows plugins to overwrite or extend whatever whey want, for instance a directive. A plugin architecture comes therefore more or less out of the box.
@@ -159,13 +157,13 @@ More to come!
 
 ### Further Learning AngularJS Links
 * [Recipes with Angular.js](https://leanpub.com/recipes-with-angular-js/read)
-* [Angular Basics Guide](http://www.angularbasics.co.uk/)
+* [Angular Basics Guide](https://www.angularbasics.co.uk/)
 * [Huge AngularJS related link collection](https://github.com/jmcunningham/AngularJS-Learning)
 * [Google Chrome extension for AngularJS](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en). It helps you for instance to get insights into scopes
 * [PHPStorm extension for AngularJS](https://plugins.jetbrains.com/plugin/6971-angularjs)
-* [Improving ng-repeat Performance with track by](http://www.codelord.net/2014/04/15/improving-ng-repeat-performance-with-track-by/)
-* [Debugging AngularJS Apps from the Console](http://ionicframework.com/blog/angularjs-console/)
+* [Improving ng-repeat Performance with track by](https://www.codelord.net/2014/04/15/improving-ng-repeat-performance-with-track-by/)
+* [Debugging AngularJS Apps from the Console](https://ionicframework.com/blog/angularjs-console/)
 
 ### AngularJS modules
 * https://bower.io/search/?q=angularjs#!%2Fsearch%2Fangular
-* http://ngmodules.org/
+* https://ngmodules.org/

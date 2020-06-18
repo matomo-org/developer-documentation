@@ -10,7 +10,7 @@ or test different fonts or different features that need to run a different code 
 
 ## Creating an experiment
 
-First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://piwik.org/docs/ab-testing/) to learn more.
+First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more.
 
 When you are asked on which target pages the experiment should be activated, we recommend selecting "Visitors enter this experiment on any page".
 

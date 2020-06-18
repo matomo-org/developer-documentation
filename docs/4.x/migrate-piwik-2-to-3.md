@@ -78,7 +78,7 @@ The same applies to the FAQ which used to be defined in a `## FAQ` section withi
 
 ### Your plugin's Support options
 
-The support tab is no longer managed in the readme file either. Instead, the support tab on your plugin page is now generated from the ["support" section in your plugin.json](https://developer.piwik.org/guides/distributing-your-plugin#pluginjson-file).
+The support tab is no longer managed in the readme file either. Instead, the support tab on your plugin page is now generated from the ["support" section in your plugin.json](https://developer.matomo.org/guides/distributing-your-plugin#pluginjson-file).
 
 
 ### Your plugin's license
@@ -180,14 +180,14 @@ As you can see the API hasn't changed too much. [Learn more about the new plugin
 
 ## Reports
 
-If your plugin creates a custom [Report](https://developer.piwik.org/guides/custom-reports), you should rename the property `$category` to `$categoryId`.
+If your plugin creates a custom [Report](https://developer.matomo.org/guides/custom-reports), you should rename the property `$category` to `$categoryId`.
 (In your code, replace `$this->category` by `$this->categoryId`).
 
 If you have defined a widget or if you have added your report to a reporting page you need to follow the next steps:
 
 ### Creating a widget
 
-In the past it was possible to [create a widget](https://developer.piwik.org/guides/widgets) like this:
+In the past it was possible to [create a widget](https://developer.matomo.org/guides/widgets) like this:
 
 ```php
 $this->widgetTitle = 'Live_RealTimeVisitorCount';
@@ -276,4 +276,4 @@ Next you should update the related Twig template file (if there is any) and repl
 ## Summary
 
 In this guide we have seen which steps to take to migrate your Piwik plugin to be compatible with our newest Piwik 3.
-If you need further help for converting your plugin to Piwik 3, head over to the [Piwik developers community forums](https://forum.piwik.org/c/plugins-platform).
+If you need further help for converting your plugin to Piwik 3, head over to the [Piwik developers community forums](https://forum.matomo.org/c/plugins-platform).

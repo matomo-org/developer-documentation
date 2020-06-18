@@ -12,28 +12,28 @@ and what to do when an experiment is finished.
 
 ## Creating an experiment
 
-Read the [A/B testing user guide](https://piwik.org/docs/ab-testing/) to learn more about creating an A/B test experiment.
+Read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more about creating an A/B test experiment.
 
 ## Embedding the A/B Testing JavaScript framework
 
-The [A/B Testing plugin](https://www.ab-tests.net) directly adds the JavaScript A/B testing framework to your Piwik JavaScript tracker file `/piwik.js` 
+The [A/B Testing plugin](https://www.ab-tests.net) directly adds the JavaScript A/B testing framework to your Matomo JavaScript tracker file `/matomo.js` 
 and is therefore loaded automatically with the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide).
 
-This will work by default as long as the file `piwik.js` in your Piwik directory is writable by the webserver/PHP.
+This will work by default as long as the file `matomo.js` in your Piwik directory is writable by the webserver/PHP.
  
 To check whether this works by default for you, login into Piwik as a Super User, go to Administration, and open the "System Check" report. 
-If the System Check displays a warning for "Writable Piwik.js" then [learn below in the FAQ how to solve this](#how-do-i-include-the-ab-testing-framework-when-my-piwikjs-file-is-not-writable).
+If the System Check displays a warning for "Writable Matomo.js" then [learn below in the FAQ how to solve this](#how-do-i-include-the-ab-testing-framework-when-my-matomojs-file-is-not-writable).
 
 
-### Loading piwik.js synchronously as early as possible
+### Loading matomo.js synchronously as early as possible
 
 To prevent any flickering / flashing of content when you run your experiments, you need to make sure to load the 
-`piwik.js` tracker file as early as possible. Edit your JavaScript tracking code as follows:
+`matomo.js` tracker file as early as possible. Edit your JavaScript tracking code as follows:
 
-* Move the Piwik Tracking Code that loads the `piwik.js` file into the HTML `<head>`
+* Move the Piwik Tracking Code that loads the `matomo.js` file into the HTML `<head>`
 * Load the file synchronously instead of asynchronously by:
-  1. Removing the two lines containing: `var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);`
-  2. Adding the following line after the closing `</script>` element: `<script type="text/javascript" src="//$yourPiwikDomain/piwik.js"></script>`
+  1. Removing the two lines containing: `var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);`
+  2. Adding the following line after the closing `</script>` element: `<script type="text/javascript" src="//$yourPiwikDomain/matomo.js"></script>`
   3. Your JavaScript tracker code should look like this:
     
     ```html
@@ -43,11 +43,11 @@ To prevent any flickering / flashing of content when you run your experiments, y
       // [...]
       (function() {
         var u = "//$yourPiwikDomain/";
-        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
         _paq.push(['setSiteId', 'X']);
       })();
     </script>
-    <script type="text/javascript" src="//$yourPiwikDomain/piwik.js">
+    <script type="text/javascript" src="//$yourMatomoDomain/matomo.js">
     ```
     
 In the case where you are using the [`SitesManager.getJavascriptTag` API](/api-reference/reporting-api#SitesManager) to embed the tracking code automatically into your website, 
@@ -107,7 +107,7 @@ _paq.push(['AbTesting::create', {
       }
       return false;
   },
-  piwikTracker: Piwik.getAsyncTracker(piwikUrl, piwikSiteId),
+  matomoTracker: Matomo.getAsyncTracker(piwikUrl, piwikSiteId),
   variations: [
         // [...]
         {
@@ -135,7 +135,7 @@ _paq.push(['AbTesting::create', {
 
 To summarize what we've learnt so far:
 
-* To prevent flickering/flashing of the content, the `piwik.js` file is loaded synchronously as early as possible.
+* To prevent flickering/flashing of the content, the `matomo.js` file is loaded synchronously as early as possible.
 * the Piwik generated experiment's code is copied and paste into the website.
 
 Now you need to actually implement what is supposed to happen when a variation of your experiment gets activated. 
@@ -180,7 +180,7 @@ If you are running multiple tests on the same page, you can activate multiple va
 
 ### Tracking a goal manually
 
-When comparing different variations it is often needed to [track goals](https://piwik.org/docs/tracking-goals-web-analytics/) 
+When comparing different variations it is often needed to [track goals](https://matomo.org/docs/tracking-goals-web-analytics/) 
 in order to decide which of the variations is the most successful. When you configure your experiment, you can assign 
 multiple goals as a "success metric". These goals are usually converted automatically without having to do anything, but 
 you can also track a goal conversion manually like this: 
@@ -213,7 +213,7 @@ Should you want to exclude Safari when running A/B tests, you can add the follow
 // works from A/B testing 3.2.18
 _paq.push(['AbTesting::disableWhenItp']);
 // or 
-Piwik.AbTesting.disableWhenItp();
+Matomo.AbTesting.disableWhenItp();
 ```
 
 Make sure to call this method before you define any experiment.
@@ -238,10 +238,10 @@ variation. This is known as flickering or flashing of content.
 
 To prevent this flickering, it is important to place the experiment tracking code at the right position in your website source code. 
 
-#### Load piwik.js synchronously
+#### Load matomo.js synchronously
 
-As already mentioned earlier in this guide: it is highly recommended to load the `piwik.js` file 
-[synchronously](#loading-piwikjs-synchronously-as-early-as-possible) in the HTML `<head>`.
+As already mentioned earlier in this guide: it is highly recommended to load the `matomo.js` file 
+[synchronously](#loading-matomojs-synchronously-as-early-as-possible) in the HTML `<head>`.
 
 #### Deciding where to place the experiment code
 
@@ -381,7 +381,7 @@ is stored in a cookie for up to 365 days.
 Yes, please see below the different ways this can be achieved:
 
 1. When you create your experiment in the UI, under the section “Redirects”, for each variation (including the “Original” variation) you can can enter the Page URL to redirect to and test. ([learn more in this FAQ](https://matomo.org/faq/ab-testing/faq_22493/)). This is the easiest way to compare the performance of different page URLs. Note that a page redirect will be triggered in JavaScript, which will cause a small delay before the page is reloaded and showing the variation, therefore for optimal performance we recommend to use server side redirects (see below).
-2. Alternatively, you can compare different pages URLs by running an experiment on your [server](https://developer.piwik.org/guides/ab-tests/server#redirects). 
+2. Alternatively, you can compare different pages URLs by running an experiment on your [server](https://developer.matomo.org/guides/ab-tests/server#redirects). 
 **Server side redirects** are recommended for performance reasons: they have the advantage that they are more SEO friendly and faster to load for your users.
 It is highly recommended to send your users to a different page URL via an HTTP 302 redirect (temporary) and not via a 301 (permanent). 
 This way search engines know the redirect is temporary and that they should keep the original URL in their search index. 
@@ -411,7 +411,7 @@ has been created, you can force a custom variation like this:
 ```html
 <script>
 function forceExperiment() {
-  var Experiment = Piwik.AbTesting.Experiment;
+  var Experiment = Matomo.AbTesting.Experiment;
   
   var myExperiment = new Experiment({
     // [...]
@@ -432,11 +432,11 @@ function forceExperiment() {
   myExperiment.forceVariation('blueVariation');
   // this will call the activate method for the blue variation.
 }
-if ('object' === typeof Piwik && 'object' === typeof Piwik.AbTesting) {
-    // if piwik.js was embedded before this code
+if ('object' === typeof Piwik && 'object' === typeof Matomo.AbTesting) {
+    // if matomo.js was embedded before this code
     forceExperiment();
 } else {
-    // if piwik.js is loaded after this code
+    // if matomo.js is loaded after this code
     window.piwikAbTestingAsyncInit = forceExperiment;   
 }
 </script>
@@ -449,9 +449,9 @@ server and afterwards force the same variation in the client.
 ### How do I know when the A/B Testing framework has been loaded and initialized?
 
 The A/B Testing framework executes a method `window.piwikAbTestingAsyncInit` as soon as it has been loaded. When you 
-specify such a method, you can be sure that variables like `Piwik.AbTesting` are available. If you load the `piwik.js`
-file synchronously as recommended, you can be sure that `Piwik.AbTesting` will be defined just after the include of 
-`piwik.js`
+specify such a method, you can be sure that variables like `Matomo.AbTesting` are available. If you load the `matomo.js`
+file synchronously as recommended, you can be sure that `Matomo.AbTesting` will be defined just after the include of 
+`matomo.js`
 
 ### Can I integrate the A/B Tests when I use a framework like Angular, Ember, ReactJS?
 
@@ -459,7 +459,7 @@ Yes, you can run your A/B tests in any popular JavaScript framework.
 We recommend [creating your experiment without _paq.push](#how-do-i-implement-an-experiment-without-using-_paqpush) as follows:
  
 ```js
-var Experiment = Piwik.AbTesting.Experiment;
+var Experiment = Matomo.AbTesting.Experiment;
 
 var myExperiment = new Experiment({
   // [...]
@@ -492,7 +492,7 @@ experiment as follows:
 ```html
 <script>
 function createExperiment() {
-  var Experiment = Piwik.AbTesting.Experiment;
+  var Experiment = Matomo.AbTesting.Experiment;
     
   var myExperiment = new Experiment({
     name: 'theExperimentName',
@@ -520,11 +520,11 @@ function createExperiment() {
   }
 }
 
-if ('object' === typeof Piwik && 'object' === typeof Piwik.AbTesting) {
-    // if piwik.js was embedded before this code
+if ('object' === typeof Piwik && 'object' === typeof Matomo.AbTesting) {
+    // if matomo.js was embedded before this code
     createExperiment();
 } else {
-    // if piwik.js is loaded after this code
+    // if matomo.js is loaded after this code
     window.piwikAbTestingAsyncInit = createExperiment;   
 }
   
@@ -535,12 +535,12 @@ The method `getActivatedVariationName` will either return the name of the activa
 if the original version is supposed to be shown or null if the visitor is not supposed to participate in the experiment 
 at all.
 
-### How do I include the A/B testing framework when my `piwik.js` file is not writable?
+### How do I include the A/B testing framework when my `matomo.js` file is not writable?
  
-When your Settings > System Check reports that "The Piwik JavaScript tracker file `piwik.js` is not writable 
+When your Settings > System Check reports that "The Piwik JavaScript tracker file `matomo.js` is not writable 
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
-1. Make the `piwik.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
+1. Make the `matomo.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
 We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
 2. or Load the A/B Testing framework manually in your website by adding in all your pages in the `<head>`: 
    `<script src="//$yourPiwikDomain/plugins/AbTesting/tracker.min.js">`
@@ -548,9 +548,9 @@ We recommend running the [Piwik console](/guides/piwik-on-the-command-line) comm
 Please note there are a few disadvantages to include the A/B testing framework file manually:
 
 * An additional HTTP request is needed to load your website which increases your page load time
-* If your `piwik.js` ever becomes writable, the A/B Testing framework would be loaded twice (in such a case the tracker notices it was already initialized and won't initialize again)
+* If your `matomo.js` ever becomes writable, the A/B Testing framework would be loaded twice (in such a case the tracker notices it was already initialized and won't initialize again)
 
-If possible, we recommend making the `piwik.js` file writable.
+If possible, we recommend making the `matomo.js` file writable.
 
 
 ### My A/B test experiment is not working, how do I debug it?
@@ -566,6 +566,6 @@ your browser. It is recommended to call this method as early as possible to capt
 
 ## What to read next
 
-Learn more about running experiments in the [A/B Testing User Guide](https://piwik.org/docs/ab-testing/), the [A/B Testing FAQs](https://piwik.org/faq/ab-testing/)
+Learn more about running experiments in the [A/B Testing User Guide](https://matomo.org/docs/ab-testing/), the [A/B Testing FAQs](https://matomo.org/faq/ab-testing/)
 and the [A/B testing website](https://www.ab-tests.net/).
 

@@ -6,11 +6,11 @@ title: JavaScript Tracker API Reference
 
 This guide is the JavaScript Tracker API Reference for [Heatmap & Session Recording](https://www.heatmap-analytics.com/).
 
-You may also be interested in the Heatmap & Session Recording [Reporting HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#HeatmapSessionRecording). 
+You may also be interested in the Heatmap & Session Recording [Reporting HTTP API Reference](https://developer.matomo.org/api-reference/reporting-api#HeatmapSessionRecording). 
 
 ## Calling Heatmap & Session Recording tracker methods
 
-In the `piwik.js` tracker we differentiate between two methods:
+In the `matomo.js` tracker we differentiate between two methods:
 
 * Calling a **tracker instance method** affects only a specific Piwik tracker instance. In the docs you can 
   identify a tracker method when the method name contains a single dot (`.`), for example 
@@ -21,30 +21,30 @@ In the `piwik.js` tracker we differentiate between two methods:
 In most cases only one Piwik tracker will be used so the only difference is how you call that method:
 
 * Tracker methods are called via `_paq.push(['HeatmapSessionRecording.$methodName']);` or on a tracker instance directly eg. 
-  `Piwik.getAsyncTracker().HeatmapSessionRecording.$methodName();`
-* Static methods are called via `_paq.push(['HeatmapSessionRecording::$methodName']);` or directly on the `Piwik.HeatmapSessionRecording` object,
-  eg. `Piwik.HeatmapSessionRecording.$methodName()`.
+  `Matomo.getAsyncTracker().HeatmapSessionRecording.$methodName();`
+* Static methods are called via `_paq.push(['HeatmapSessionRecording::$methodName']);` or directly on the `Matomo.HeatmapSessionRecording` object,
+  eg. `Matomo.HeatmapSessionRecording.$methodName()`.
 
 If you do not want to use the `_paq.push` methods, you need to define a `window.piwikHeatmapSessionRecordingAsyncInit` method 
 that is called as soon as the media tracker has been initialized:
 
 ```js
 window.piwikHeatmapSessionRecordingAsyncInit = function () {
-    Piwik.HeatmapSessionRecording.disable();
+    Matomo.HeatmapSessionRecording.disable();
 };
 ```
 
 If you access a `HeatmapSessionRecording` property directly without using `_paq`, we recommend to check if the variable actually exists. Sometimes the Heatmap & Session Recording tracking code may not be available when currently no heatmaps and no session recordings are configured:
 
 ```js
-window.piwikAsyncInit = function () {
-    var tracker = Piwik.getAsyncTracker('piwik.php', 2);		     
+window.matomoAsyncInit = function () {
+    var tracker = Matomo.getAsyncTracker('matomo.php', 2);		     
     if (tracker.HeatmapSessionRecording) {
         tracker.HeatmapSessionRecording.disable();
     }
     
-    if (Piwik.HeatmapSessionRecording) {
-        Piwik.HeatmapSessionRecording.disable();
+    if (Matomo.HeatmapSessionRecording) {
+        Matomo.HeatmapSessionRecording.disable();
     }
 }
 ```
@@ -70,7 +70,7 @@ Example:
 ```js
 _paq.push(['HeatmapSessionRecording::disableAutoDetectNewPageView']);
 // or 
-Piwik.HeatmapSessionRecording.disableAutoDetectNewPageView();
+Matomo.HeatmapSessionRecording.disableAutoDetectNewPageView();
 ```
 
 ### `enableAutoDetectNewPageView()`
@@ -87,7 +87,7 @@ Example:
 ```js
 _paq.push(['HeatmapSessionRecording::disableRecordMovements']);
 // or
-Piwik.HeatmapSessionRecording.disableRecordMovements();
+Matomo.HeatmapSessionRecording.disableRecordMovements();
 ```
 
 ### `enableRecordMovements()`
@@ -111,7 +111,7 @@ Example:
 ```js
 _paq.push(['HeatmapSessionRecording::setMaxCaptureTime', 60 * 30]);
 // or 
-Piwik.HeatmapSessionRecording.setMaxCaptureTime(60 * 30);
+Matomo.HeatmapSessionRecording.setMaxCaptureTime(60 * 30);
 ```
 
 ### `setMaxTextInputLength(maxLengthCharacters)`
@@ -122,7 +122,7 @@ Example:
 ```js
 _paq.push(['HeatmapSessionRecording::setMaxTextInputLength', 100000]);
 // or 
-Piwik.HeatmapSessionRecording.setMaxTextInputLength(100000);
+Matomo.HeatmapSessionRecording.setMaxTextInputLength(100000);
 ```
 
 ### `disableCaptureKeystrokes()`
@@ -182,13 +182,13 @@ enabled in production.
 
 Allows you to set the tracker instances to be used when tracking heatmap and session activities. Can be either
  a single tracker instance, or an array of Piwik tracker instances. This is useful when you are working with multiple Piwik
- tracker instances using `Piwik.getTracker` instead of `Piwik.addTracker`. 
+ tracker instances using `Matomo.getTracker` instead of `Matomo.addTracker`. 
  
 ### `getPiwikTrackers()`
 
 Returns an array of Piwik tracker instances that are used by the Heatmap and Session Recording plugin. By default, 
-this will return the same as `Piwik.getAsyncTrackers()` and will return all tracker instances that were created eg 
-via `Piwik.addTracker` or `_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
+this will return the same as `Matomo.getAsyncTrackers()` and will return all tracker instances that were created eg 
+via `Matomo.addTracker` or `_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
 
 ## Tracker methods
 
@@ -207,7 +207,7 @@ Example:
 _paq.push(['HeatmapSessionRecording.disable']); 
 
 // or if you are using multiple Piwik trackers and only want to disable it for a specific tracker:
-var tracker = Piwik.getAsyncTracker(piwikUrl, piwikSiteId);
+var tracker = Matomo.getAsyncTracker(piwikUrl, piwikSiteId);
 tracker.HeatmapSessionRecording.disable();
 ```
 
@@ -230,7 +230,7 @@ By default, Heatmap & Session Recording configures itself by issuing an HTTP req
  based on its URL. As a benefit of this, it saves you an HTTP request on each page view. 
  
 Please note that if you generate heatmaps and record sessions regularly, it will add quite an effort on your side to manage the manual tracking using `addConfig()`.
-Another possibility would be to call the [Heatmap & Session Recording Reporting API](https://developer.piwik.org/api-reference/reporting-api#HeatmapSessionRecording)
+Another possibility would be to call the [Heatmap & Session Recording Reporting API](https://developer.matomo.org/api-reference/reporting-api#HeatmapSessionRecording)
 via HTTP to receive all configured heatmaps and session recordings and embed a config automatically into your website based
 on this. You could cache this information on your server for a fast performance and not having to do anything manually.
  
@@ -270,4 +270,4 @@ reached the number of page views you want.
 
 ## What to read next
 
-You may be interested in the [Heatmap & Session Recording HTTP Reporting API Reference](https://developer.piwik.org/api-reference/reporting-api#HeatmapSessionRecording).
+You may be interested in the [Heatmap & Session Recording HTTP Reporting API Reference](https://developer.matomo.org/api-reference/reporting-api#HeatmapSessionRecording).

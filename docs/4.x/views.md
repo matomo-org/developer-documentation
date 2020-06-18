@@ -48,4 +48,4 @@ Piwik has a UI demo page available. This page is intended to show all the UI com
 1. Go to the Administration page (gear icon)
 2. In the navigation menu, under _Development_, select  _UI Demo_
 
-Note: The _Development_ menu section will only appear if the [development mode](https://developer.piwik.org/guides/getting-started-part-1#enable-development-mode) is enabled.
+Note: The _Development_ menu section will only appear if the [development mode](https://developer.matomo.org/guides/getting-started-part-1#enable-development-mode) is enabled.

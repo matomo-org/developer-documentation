@@ -8,7 +8,7 @@ previous: querying-the-reporting-api
 
 **Read this guide if**
 
-* you'd like to know **which client libraries are available to use [Piwik's Reporting HTTP API](https://developer.piwik.org/guides/reporting-introduction) from your application**
+* you'd like to know **which client libraries are available to use [Piwik's Reporting HTTP API](https://developer.matomo.org/guides/reporting-introduction) from your application**
 
 ## Client libraries for Reporting API
 
@@ -18,15 +18,15 @@ You can use directly Piwik's codebase to call the reporting API. Learn more in [
 
 ### Ruby client
 
-A Ruby client for the reporting API is available on Github: [github.com/matomo-org/piwik-ruby-api](https://github.com/matomo-org/piwik-ruby-api).
+A Ruby client for the reporting API is available on Github: [github.com/matomo-org/matomo-ruby-api](https://github.com/matomo-org/piwik-ruby-api).
 
 ### Python client
 
-A complete Python client implementation of the reporting API is available on Github at [github.com/matomo-org/piwik-python-api](https://github.com/matomo-org/piwik-python-api).
+A complete Python client implementation of the reporting API is available on Github at [github.com/matomo-org/matomo-python-api](https://github.com/matomo-org/piwik-python-api).
 
 ### C# client
 
-A C# client implementation of the reporting API is available on Github at [github.com/matomo-org/piwik-dotnet-api](https://github.com/matomo-org/piwik-dotnet-api).
+A C# client implementation of the reporting API is available on Github at [github.com/matomo-org/matomo-dotnet-api](https://github.com/matomo-org/piwik-dotnet-api).
 
 ### NodeJS client
 
@@ -43,4 +43,4 @@ If you're looking instead for client libraries to use Matomo Tracking HTTP API a
 
 ## Learn more
 
-You can view the complete list of clients and integrations of Piwik at [piwik.org/integrate/](https://piwik.org/integrate/).
+You can view the complete list of clients and integrations of Piwik at [matomo.org/integrate/](https://matomo.org/integrate/).

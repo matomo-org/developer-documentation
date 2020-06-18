@@ -15,7 +15,7 @@ Piwik uses the following JavaScript libraries:
 
 * [jQuery](https://jquery.com/) and [jQuery UI](https://jqueryui.com/)
 * [AngularJS](https://angularjs.org/)
-* [jqPlot](http://www.jqplot.com/)
+* [jqPlot](https://www.jqplot.com/)
 * A couple of other libraries are used see our [bower dependencies](https://github.com/matomo-org/matomo/blob/master/bower.json)
 
 **Include new JS libraries only if they are vital to your plugin.** If many plugins decide to use a custom library, the UI will slow down and plugins might get problems when different plugins load different versions of those libraries.
@@ -47,7 +47,7 @@ public function getJavaScriptFiles(&$files)
 
 ### Asset merging and compiling
 
-In production environments, Piwik will concatenate all JavaScript files into one and minify it. [LESS](http://lesscss.org/) files will be compiled into CSS and merged into one CSS file. Piwik does not merge and minify JavaScript and CSS files on every request as it takes a long time to do this. They are only merged on certain events, such as when enabling a new plugin.
+In production environments, Piwik will concatenate all JavaScript files into one and minify it. [LESS](https://lesscss.org/) files will be compiled into CSS and merged into one CSS file. Piwik does not merge and minify JavaScript and CSS files on every request as it takes a long time to do this. They are only merged on certain events, such as when enabling a new plugin.
 
 To make sure your changes will be actually visible and executed you need to enable the development mode in case you have not done yet:
 
@@ -201,6 +201,6 @@ For example:
 ## Learn more
 
 * To learn **about creating new report visualizations** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.
-* To learn **more about the asset merging system** read this [blog post](https://piwik.org/blog/2010/07/making-piwik-ui-faster/) by the system's author.
+* To learn **more about the asset merging system** read this [blog post](https://matomo.org/blog/2010/07/making-piwik-ui-faster/) by the system's author.
 * To learn **more about theming** read our [Theming](/guides/theming) guide.
 * To learn **more about UI components and styles** read our [Views](/guides/views) guide.

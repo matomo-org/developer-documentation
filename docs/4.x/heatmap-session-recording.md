@@ -15,9 +15,9 @@ Heatmaps let you view visually all clicks, mouse moves, and scroll activities of
 Session recordings let you view all activities such as clicks, mouse movements, scrolls, window resizes, page changes, and form interactions of a real visitor on a certain page. You can replay these interactions in a video to see exactly how a visitor interacted with your website. This way you understand their expectations, problems they may have, usage patterns, and more.
 
 [Heatmap & Session Recording](https://www.heatmap-analytics.com) is a plugin for Piwik that can be purchased 
-on the [Piwik Marketplace](https://plugins.piwik.org/HeatmapSessionRecording).
+on the [Piwik Marketplace](https://plugins.matomo.org/HeatmapSessionRecording).
 It is developed by [InnoCraft](https://www.innocraft.com), the makers of Piwik. 
 If you want to learn more about this plugin we recommend having a look at the developer guides, 
-the [Heatmap User Guide](https://piwik.org/docs/heatmaps/), [Session Recording User Guide](https://piwik.org/docs/session-recording/), and the [Heatmap & Session Recording FAQs](https://piwik.org/faq/heatmap-session-recording/).
+the [Heatmap User Guide](https://matomo.org/docs/heatmaps/), [Session Recording User Guide](https://matomo.org/docs/session-recording/), and the [Heatmap & Session Recording FAQs](https://matomo.org/faq/heatmap-session-recording/).
 
 We recommend to start with the [setting up Heatmap & Session Recording guide](/guides/heatmap-session-recording/setup).

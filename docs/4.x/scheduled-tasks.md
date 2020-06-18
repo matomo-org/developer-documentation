@@ -111,7 +111,7 @@ Remember that manually testing your scheduled task is just the first step: addin
 
 ## Which tasks are registered and when is the next execution time of my task?
 
-The [TasksTimetable plugin](https://plugins.piwik.org/TasksTimetable) from the Marketplace can answer this question for you. Simply install and activate the plugin with one click by going to *Settings > Marketplace > Get new functionality*. It will add a new admin menu item under *Settings* named *Scheduled Tasks*.
+The [TasksTimetable plugin](https://plugins.matomo.org/TasksTimetable) from the Marketplace can answer this question for you. Simply install and activate the plugin with one click by going to *Settings > Marketplace > Get new functionality*. It will add a new admin menu item under *Settings* named *Scheduled Tasks*.
 
 ## Read more
 

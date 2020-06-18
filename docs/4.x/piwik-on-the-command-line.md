@@ -57,4 +57,4 @@ Plugins can extend the command line tool by creating their own commands. To do s
 
 This will create a folder named `Commands` within your plugin along with a PHP file which represents the actual command. You can add an unlimited number of commands to a plugin.
 
-To learn how to flesh out your command, you can read the [Symfony Console documentation](http://symfony.com/doc/current/components/console/index.html).
+To learn how to flesh out your command, you can read the [Symfony Console documentation](https://symfony.com/doc/current/components/console/index.html).

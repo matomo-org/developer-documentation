@@ -3,7 +3,7 @@ category: Develop
 ---
 # Menus
 
-Piwik contains 3 menus:
+Matomo contains 3 menus:
 
 - the **top menu** (top-right of the page)
 

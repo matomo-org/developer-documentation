@@ -26,7 +26,7 @@ Here's how you do both:
 
 ### Adding controller methods as menu items
 
-To add menu items in Piwik, read [the following guide](https://piwik.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/).
+To add menu items in Piwik, read [the following guide](https://matomo.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/).
 
 ### Invoking controller methods via AJAX
 

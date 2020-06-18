@@ -18,7 +18,7 @@ The complete list of events posted by Piwik Core is [here](/api-reference/events
 
 ## Handling events
 
-Events are **handled** by registering a callback by name in the [`Plugin::registerEvents()`](/api-reference/Piwik/Plugin#getlisthooksregistered) method of the plugin descriptor class (`YourPluginName.php`), for example:
+Events are **handled** by registering a callback by name in the [`Plugin::registerEvents()`](/api-reference/Piwik/Plugin#registerevents) method of the plugin descriptor class (`YourPluginName.php`), for example:
 
 ```php
 class MyPlugin extends \Piwik\Plugin

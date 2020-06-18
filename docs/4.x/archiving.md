@@ -45,7 +45,7 @@ By default, archive data is calculated and cached **on-demand**. When a specific
 
 ### Pre-archiving
 
-When tracking a website with a lot of traffic, the archiving on-demand might take too much time. In those situations, archiving on demand must be disabled and [pre-archiving needs to run in background at a scheduled time](https://piwik.org/docs/setup-auto-archiving/).
+When tracking a website with a lot of traffic, the archiving on-demand might take too much time. In those situations, archiving on demand must be disabled and [pre-archiving needs to run in background at a scheduled time](https://matomo.org/docs/setup-auto-archiving/).
 
 Pre-archiving can be run for every site and period (except custom date ranges) using the `core:archive` console command:
 
@@ -63,7 +63,7 @@ Log data is aggregated into archive data for each:
 
 - site
 - period: day, week, month, year or custom date range (custom date ranges cannot be pre-archived)
-- [segment](https://piwik.org/docs/segmentation/)
+- [segment](https://matomo.org/docs/segmentation/)
 
 Archiving logic (i.e. the way of aggregating log data) is defined by plugins. All reports defined by a plugin are archived together rather than individually.
 
