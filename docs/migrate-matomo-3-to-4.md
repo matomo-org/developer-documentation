@@ -76,4 +76,4 @@ e.g. `divisibleby(2)` becomes `divisible by(2)`
 In this guide we have seen which steps to take to migrate your Matomo plugin to be compatible with our latest Matomo 4.
 If you need further help for converting your plugin to Matomo 3, head over to the [Piwik developers community forums](https://forum.matomo.org/c/plugins-platform).
 
-Once you've adjusted your plugin don't forget to release a new version.
+Once you've adjusted your plugin, don't forget to release a new version.
