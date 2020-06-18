@@ -22,6 +22,18 @@ The `plugin.json` would look like this:
     },
 ```
 
+## Required PHP version
+
+We now require PHP 7.2.5 instead of PHP 5.5. This means you can use more PHP language features:
+
+* [New features in PHP 5.6](https://www.php.net/manual/en/migration56.new-features.php)
+* [New features in PHP 7.0](https://www.php.net/manual/en/migration70.new-features.php)
+* [New features in PHP 7.1](https://www.php.net/manual/en/migration71.new-features.php)
+* [New features in PHP 7.2](https://www.php.net/manual/en/migration72.new-features.php)
+
+## Browser support
+
+We no longer support IE 10 in the Matomo user interface.
 
 ## Events
 
