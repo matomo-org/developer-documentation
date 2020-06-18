@@ -3,7 +3,7 @@ category: Integrate
 ---
 # Developer FAQ
 
-This page is the Developer FAQ for [Heatmap & Session Recording](https://www.heatmap-analytics.com/). You may also be interested in the [Heatmap & Session Recording User FAQs](https://piwik.org/faq/heatmap-session-recording/).
+This page is the Developer FAQ for [Heatmap & Session Recording](https://www.heatmap-analytics.com/). You may also be interested in the [Heatmap & Session Recording User FAQs](https://matomo.org/faq/heatmap-session-recording/).
 
 ## How do I prevent the capturing of keystrokes when recording a session? 
 
@@ -44,7 +44,7 @@ will be stopped.
 
 To solve this issue it is recommended to either:
 
-* [track events](https://piwik.org/docs/event-tracking/) instead of tracking page views,
+* [track events](https://matomo.org/docs/event-tracking/) instead of tracking page views,
 * or to disable the automatic detection of new page views by calling the following method: `_paq.push(['HeatmapSessionRecording::disableAutoDetectNewPageView']);`
 
 To learn more about the detection of page views, have a look at the [disableAutoDetectNewPageView() API reference](/guides/heatmap-session-recording/reference#disableautodetectnewpageview).
@@ -103,33 +103,33 @@ Using `_paq.push` for multiple trackers is a good and simple way when you want t
 
 ```js
 // configuration of first tracker
-_paq.push(['setTrackerUrl', 'https://example.com/piwik.php']);
+_paq.push(['setTrackerUrl', 'https://example.com/matomo.php']);
 _paq.push(['setSiteId', 1]);
 // configuration of second tracker
-_paq.push(['addTracker', 'https://example.com/piwik.php', 2]);
+_paq.push(['addTracker', 'https://example.com/matomo.php', 2]);
 ```
 
 If you are working with Piwik tracker instances because you want to configure each tracker instance differently and track
 different data into each Piwik, you may need to set the tracker instances manually:
 
 ```js
-window.piwikAsyncInit = function () {
-    var piwikTracker1 = Piwik.getTracker('https://example.com/piwik.php', 1);
-    var piwikTracker2 = Piwik.getTracker('https://example.com/piwik.php', 2);
-    var piwikTracker3 = Piwik.getTracker('https://example.com/piwik.php', 3);
+window.matomoAsyncInit = function () {
+    var matomoTracker1 = Matomo.getTracker('https://example.com/matomo.php', 1);
+    var matomoTracker2 = Matomo.getTracker('https://example.com/matomo.php', 2);
+    var matomoTracker3 = Matomo.getTracker('https://example.com/matomo.php', 3);
 
-    if (Piwik.HeatmapSessionRecording) {
-        Piwik.HeatmapSessionRecording.setPiwikTrackers([piwikTracker1, piwikTracker2, piwikTracker3]);
+    if (Matomo.HeatmapSessionRecording) {
+        Matomo.HeatmapSessionRecording.setPiwikTrackers([matomoTracker1, matomoTracker2, matomoTracker3]);
 
         // You can customize the tracking like this:
-        piwikTracker2.HeatmapSessionRecording.disable();
-        piwikTracker3.HeatmapSessionRecording.addConfig({heatmap: {id:5}});
+        matomoTracker2.HeatmapSessionRecording.disable();
+        matomoTracker3.HeatmapSessionRecording.addConfig({heatmap: {id:5}});
     }
 }
 ```
 
 It is important to define these methods in your website before the Piwik tracker file is loaded. Otherwise, the 
-`piwikAsyncInit` method will never be called.
+`matomoAsyncInit` method will never be called.
 
 ## How do I disable the recording of mouse and touch movements?
 
@@ -153,7 +153,7 @@ Piwik needs to detect on each page whether a heatmap or a session recording is s
 issues an HTTP request to a file named `plugins/HeatmapSessionRecording/configs.php` on each page view. This request
 should be very fast as no database connection will be needed and the script is optimized for performance.
 
-Starting from Piwik 3.0.5, if your `piwik.js` is writable, it will execute this request on each page view only when actually a heatmap or session recording is configured to reduce server load. Find out if your `piwik.js` is writable by going to Administration, and open the "System Check" report. If the System Check displays a warning for "Writable Piwik.js" then [learn how to solve this](/guides/heatmap-session-recording/setup#when-the-piwikjs-in-your-piwik-directory-file-is-not-writable).
+Starting from Piwik 3.0.5, if your `matomo.js` is writable, it will execute this request on each page view only when actually a heatmap or session recording is configured to reduce server load. Find out if your `piwik.js` is writable by going to Administration, and open the "System Check" report. If the System Check displays a warning for "Writable Matomo.js" then [learn how to solve this](/guides/heatmap-session-recording/setup#when-the-matomojs-in-your-piwik-directory-file-is-not-writable).
  
 If you always want to prevent such a request to your server, for example to reduce the load on your server, you need to call a 
 method `HeatmapSessionRecording.addConfig()` or disable the tracking completely using `HeatmapSessionRecording.disable()`.
@@ -166,14 +166,14 @@ feature, call `tracker.HeatmapSessionRecording.disable();` as follows:
 
 ```js
 // configuration of first tracker which has the plugin installed
-_paq.push(['setTrackerUrl', 'https://example.com/piwik.php']);
+_paq.push(['setTrackerUrl', 'https://example.com/matomo.php']);
 _paq.push(['setSiteId', 1]);
 // configuration of second tracker which does not have the plugin installed
-_paq.push(['addTracker', 'https://not-supported-piwik.com/piwik.php', 2]);
+_paq.push(['addTracker', 'https://not-supported-piwik.com/matomo.php', 2]);
 
-window.piwikAsyncInit = function () {
+window.matomoAsyncInit = function () {
     // will never issue an HTTP request to configs.php for this Piwik instance
-    var tracker = Piwik.getAsyncTracker('https://not-supported-piwik.com/piwik.php', 2);
+    var tracker = Matomo.getAsyncTracker('https://not-supported-piwik.com/matomo.php', 2);
     if (tracker.HeatmapSessionRecording) {
         tracker.HeatmapSessionRecording.disable();
     }
@@ -194,25 +194,25 @@ To take a screenshot from a certain page, you need to open the page in your brow
 
 ## Is it possible to not use the `paq.push` methods and instead call the `HeatmapSessionRecording` tracker methods directly?
 
-Yes, you can be sure that the `Piwik.HeatmapSessionRecording` object is available as soon as the callback method 
+Yes, you can be sure that the `Matomo.HeatmapSessionRecording` object is available as soon as the callback method 
 `window.piwikHeatmapSessionRecordingAsyncInit` is called.
 
-In the `piwik.js` tracker we differentiate between two kind of methods:
+In the `matomo.js` tracker we differentiate between two kind of methods:
 
 * Calling a **tracker instance method** affects only a specific tracker instance. In the docs you can 
   identify a tracker method when the method name contains a single dot (`.`). For example `HeatmapSessionRecording.disable` 
   refers to a tracker method tracker that can be called like `tracker.HeatmapSessionRecording.disable()`.
 * Calling a **static method** affects all created tracker instances. In the docs you can identify a static method when 
   the method name contains `::`. For example `HeatmapSessionRecording::disableCaptureKeystrokes` refers to a static method 
-  `Piwik.HeatmapSessionRecording.disableCaptureKeystrokes()`.
+  `Matomo.HeatmapSessionRecording.disableCaptureKeystrokes()`.
 
 ```js
 window.piwikHeatmapSessionRecordingAsyncInit = function () {
     // static method
-    Piwik.HeatmapSessionRecording.disableCaptureKeystrokes();
+    Matomo.HeatmapSessionRecording.disableCaptureKeystrokes();
      
     // tracker method
-    var tracker = Piwik.getAsyncTracker(); 
+    var tracker = Matomo.getAsyncTracker(); 
     tracker.HeatmapSessionRecording.disable();
 };
 ```
@@ -225,7 +225,7 @@ The tracker method `disable` can be used to disable the tracking only for a spec
 ```js
 window.piwikHeatmapSessionRecordingAsyncInit = function () {
     // get tracker instance if you do not have a reference to the tracker instance yet
-    var tracker = Piwik.getAsyncTracker(piwikSiteUrl, piwikSiteId); 
+    var tracker = Matomo.getAsyncTracker(piwikSiteUrl, piwikSiteId); 
     tracker.HeatmapSessionRecording.disable();
 };
 ```

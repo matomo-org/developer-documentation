@@ -5,11 +5,11 @@ category: Develop
 
 In our [Setting up](/guides/getting-started-part-1) guide you set up your development environment and created a new plugin. In this guide, we'll make that plugin show a custom report.
 
-**Did you know?** You can create new custom reports in only seconds without any developer knowledge with the [Custom Reports premium feature](https://plugins.piwik.org/CustomReports).
+**Did you know?** You can create new custom reports in only seconds without any developer knowledge with the [Custom Reports premium feature](https://plugins.matomo.org/CustomReports).
 
 ## Adding a new report
 
-We're going to create a new report that shows the browsers used for the most recent visits. We'll be using data returned by the [Live!](https://piwik.org/docs/real-time/#the-real-time-live-widget) plugin so we won't have to do much processing ourselves.
+We're going to create a new report that shows the browsers used for the most recent visits. We'll be using data returned by the [Live!](https://matomo.org/docs/real-time/#the-real-time-live-widget) plugin so we won't have to do much processing ourselves.
 
 <div markdown="1" class="alert alert-warning">
 **On reports and metrics**
@@ -123,7 +123,7 @@ public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false
 <div markdown="1" class="alert alert-warning">
 **API parameters**
 
-Every API method that serves a report or a metric will have the parameters listed above. This is because all analytics data describes log data that is tracked for a certain website and during a certain period. A [segment](https://piwik.org/docs/segmentation/) can be provided to further reduce the data that is analyzed, but it's optional (which is why the parameter defaults to `false`).
+Every API method that serves a report or a metric will have the parameters listed above. This is because all analytics data describes log data that is tracked for a certain website and during a certain period. A [segment](https://matomo.org/docs/segmentation/) can be provided to further reduce the data that is analyzed, but it's optional (which is why the parameter defaults to `false`).
 
 The website is determined by the `$idSite` parameter and the period by both the `$period` and `$date` parameters. The segment is determined by the value in the `$segment` parameter.
 </div>

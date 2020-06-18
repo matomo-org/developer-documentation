@@ -8,10 +8,10 @@ In this guide we will learn how you can implement [Media Analytics](https://www.
  
 ## Tracking a new media player in the browser
 
-The Media Analytics plugin currently supports out of the box the HTML5, Vimeo and YouTube media players (more details: [list of all supported media players](https://piwik.org/faq/media-analytics/faq_22380/)). If you are using
+The Media Analytics plugin currently supports out of the box the HTML5, Vimeo and YouTube media players (more details: [list of all supported media players](https://matomo.org/faq/media-analytics/faq_22380/)). If you are using
  a different media player for your videos and audio, you can measure them by registering your own player. 
 
-If you need help implementing Media Analytics for your media player or if you wish to share your implementation with us, [please contact us](https://piwik.org/support/).
+If you need help implementing Media Analytics for your media player or if you wish to share your implementation with us, [please contact us](https://matomo.org/support/).
 If you work with us. we will be able to maintain it and ensure it always works in the future.
 
 ### The raw skeleton
@@ -23,7 +23,7 @@ Let's start by adding the raw skeleton for a media player to your website tracki
  
 ```js
 window.piwikMediaAnalyticsAsyncInit = function () {
-    var MA = Piwik.MediaAnalytics;
+    var MA = Matomo.MediaAnalytics;
     
     function MyPlayer(node, mediaType) {
         // in this class we track interactions with the player
@@ -69,7 +69,7 @@ MyPlayer.scanForMedia = function (documentOrHTMLElement) {
 ### Tracking the media data
 
 Now that we detect media within a web page we need to implement the actual tracking. The basic concept behind this is 
-to create a `Piwik.MediaAnalytics.MediaTracker` instance that lets you call methods like `play`, `pause` or `seek` which 
+to create a `Matomo.MediaAnalytics.MediaTracker` instance that lets you call methods like `play`, `pause` or `seek` which 
 reflect what is currently happening in the player.
 
 ```js
@@ -192,7 +192,7 @@ function MyPlayer (node, mediaType) {
 
 For more information about all the available methods have a look at the [Media Analytics JavaScript Tracker API reference](/guides/media-analytics/reference).
 
-Once you have added support for your custom player analytics, please [contact us](https://piwik.org/support/), and we will try to help you maintain it in the future.
+Once you have added support for your custom player analytics, please [contact us](https://matomo.org/support/), and we will try to help you maintain it in the future.
 
 ## Tracking a new player in mobile apps and desktop apps
 
@@ -222,7 +222,7 @@ These HTTP Tracking API parameters can be used to track the usage of media:
 When tracking a media impression it is important to set the parameter `ma_st` to `0`:
 
 ```
-https://yourpiwikdomain/piwik.php?ma_st=0ma_id=8C1gOQ9CPOiQfzft&ma_ti=MediaName&ma_pn=playerName&ma_mt=video&ma_re=https%3A%2F%2Fplayer.example.org%2Fvideo%2F1111111&idsite=1&rec=1&r=077275&h=15&m=33&s=48&url=http%3A%2F%2Fexample.piwik&...
+https://yourpiwikdomain/matomo.php?ma_st=0ma_id=8C1gOQ9CPOiQfzft&ma_ti=MediaName&ma_pn=playerName&ma_mt=video&ma_re=https%3A%2F%2Fplayer.example.org%2Fvideo%2F1111111&idsite=1&rec=1&r=077275&h=15&m=33&s=48&url=http%3A%2F%2Fexample.piwik&...
 ```
 
 ### Example request to track a media progress 
@@ -231,7 +231,7 @@ When tracking a media progress it is important to send the same media unique id 
 As soon as a new video or audio is playing you need to reset all parameters and generate a new `ma_id`.
 
 ```
-https://yourpiwikdomain/piwik.php?ma_st=5&ma_ttp=12&ma_fs=1&ma_w=500&ma_h=300&ma_ps=34&ma_le=100ma_id=8C1gOQ9CPOiQfzft&ma_ti=MediaName&ma_pn=playerName&ma_mt=video&ma_re=https%3A%2F%2Fplayer.example.org%2Fvideo%2F1111111&idsite=1&rec=1&r=077275&h=15&m=33&s=48&url=http%3A%2F%2Fexample.piwik&...
+https://yourpiwikdomain/matomo.php?ma_st=5&ma_ttp=12&ma_fs=1&ma_w=500&ma_h=300&ma_ps=34&ma_le=100ma_id=8C1gOQ9CPOiQfzft&ma_ti=MediaName&ma_pn=playerName&ma_mt=video&ma_re=https%3A%2F%2Fplayer.example.org%2Fvideo%2F1111111&idsite=1&rec=1&r=077275&h=15&m=33&s=48&url=http%3A%2F%2Fexample.piwik&...
 ```
 
 While a media is playing we recommend sending an update regularly, for example every 5 seconds. Most of the parameters
@@ -246,7 +246,7 @@ and more. They usually allow you to set custom tracking parameters like this:
 
 ```php
 $phpTracker->setCustomTrackingParameter('ma_st', 0);
-$phpTracker->setCustomTrackingParameter('ma_re', 'http://example.org/media.mp4');
+$phpTracker->setCustomTrackingParameter('ma_re', 'https://example.org/media.mp4');
 $phpTracker->setCustomTrackingParameter('ma_ti', 'Media title');
 ...
 ```
@@ -256,5 +256,5 @@ $phpTracker->setCustomTrackingParameter('ma_ti', 'Media title');
 
 Now that you've learnt how to implement analytics tracking of your custom Media player, you may want 
 to learn more about the [Media Analytics JavaScript API](/guides/media-analytics/reference), 
-or read the Media Analytics [User FAQs](https://piwik.org/faq/media-analytics/) 
+or read the Media Analytics [User FAQs](https://matomo.org/faq/media-analytics/) 
  or the [Developer FAQs](/guides/media-analytics/faq).

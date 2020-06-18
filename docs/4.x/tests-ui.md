@@ -5,11 +5,11 @@ next: tests-travis
 ---
 # UI Tests
 
-Some might know a UI test under the term 'CSS test' or 'screenshot test'. When we speak of UI tests we mean automated tests that capture a screenshot of a URL and then compare the result with an expected image. If the images are not exactly the same the test will fail. For more information read our blog post about [UI Testing](https://piwik.org/blog/2013/10/our-latest-improvement-to-qa-screenshot-testing/).
+Some might know a UI test under the term 'CSS test' or 'screenshot test'. When we speak of UI tests we mean automated tests that capture a screenshot of a URL and then compare the result with an expected image. If the images are not exactly the same the test will fail. For more information read our blog post about [UI Testing](https://matomo.org/blog/2013/10/our-latest-improvement-to-qa-screenshot-testing/).
 
 **What is a UI test good for?**
 
-We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/matomo-org/matomo) after each commit and compared with [our expected screenshots](https://github.com/matomo-org/piwik-ui-tests).
+We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/matomo-org/matomo) after each commit and compared with [our expected screenshots](https://github.com/matomo-org/matomo-ui-tests).
 
 ## Requirements
 
@@ -51,12 +51,12 @@ If your development environment's PHP executable isn't named `php`
 or your dev Piwik install isn't at `http://localhost/` you may need to copy that file to
 `tests/UI/config.js` and edit the contents of this file.
 
-For example if Piwik is set up at `http://localhost/piwik` modify the config.js such as:
+For example if Piwik is set up at `http://localhost/matomo` modify the config.js such as:
 ```
-exports.piwikUrl = "http://localhost/piwik/";
+exports.piwikUrl = "http://localhost/matomo/";
 exports.phpServer = {
     HTTP_HOST: 'localhost',
-    REQUEST_URI: '/piwik/',
+    REQUEST_URI: '/matomo/',
     REMOTE_ADDR: '127.0.0.1'
 };
 
@@ -64,7 +64,7 @@ exports.phpServer = {
 
 ## Creating a UI test
 
-We start by using the [Piwik Console](https://developer.piwik.org/guides/piwik-on-the-command-line) to create a new UI test:
+We start by using the [Piwik Console](https://developer.matomo.org/guides/piwik-on-the-command-line) to create a new UI test:
 
 ```bash
 ./console generate:test --testtype ui
@@ -89,7 +89,7 @@ describe("WidgetizePage", function () {
 
 ### What is happening here?
 
-This example declares a new set of [specs](https://en.wikipedia.org/wiki/Behavior-driven_development#Behavioural_specifications) by calling the method `describe(name, callback)` and within that a new spec by calling the method `it(description, func)`. Within the spec we load a URL and once loaded capture a screenshot of the whole page. The captured screenshot will be saved under the defined `screenshotName`. You might have noticed we write our UI tests in [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style.
+This example declares a new set of [specs](https://en.wikipedia.org/wiki/Behavior-driven_development#Behavioural_specifications) by calling the method `describe(name, callback)` and within that a new spec by calling the method `it(description, func)`. Within the spec we load a URL and once loaded capture a screenshot of the whole page. The captured screenshot will be saved under the defined `screenshotName`. You might have noticed we write our UI tests in [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development) style.
 
 ### Capturing only a part of the page
 It is good practice to not always capture the full page. For example many pages contain a menu and if you change that menu, all your screenshot tests would fail. To avoid this you would instead have a separate test for your menu. To capture only a part of the page simply specify a [jQuery selector](https://api.jquery.com/category/selectors/) and use `page.$` to get the element to capture, or call `page.screenshotSelector`:
@@ -142,7 +142,7 @@ At some point your UI test will fail, for example due to expected CSS changes. T
 
 ## Writing a UI test in depth
 
-UI screenshot tests are run directly by Puppeteer and are written using [mocha](https://mochajs.org/) and [chai](http://chaijs.com).
+UI screenshot tests are run directly by Puppeteer and are written using [mocha](https://mochajs.org/) and [chai](https://chaijs.com).
 
 All test files should have \_spec.js file name suffixes (for example, `ActionsDataTable_spec.js`). Since screenshots can take a while to capture, you will want to override mocha's default timeout like this:
 
@@ -235,7 +235,7 @@ The following are examples of test environment manipulation:
 
 On top of calling API, controllers, and setting up INI options you can also register dependency injection configuration. This allows to replace a service or a configuration value in order to mock or simulate a behavior.
 
-To do this, you need to implement `provideContainerConfig()` in a fixture class and return [a valid DI configuration](http://php-di.org/doc/definition.html). For example:
+To do this, you need to implement `provideContainerConfig()` in a fixture class and return [a valid DI configuration](https://php-di.org/doc/definition.html). For example:
 
 ```php
 class FailUpdateHttpsFixture extends Fixture
@@ -264,4 +264,4 @@ describe("PiwikUpdater", function () {
 ## Learn more
 
 Check out this blog post to learn more about Screenshot Tests in Piwik:
-[QA Screenshot Testing blog post](https://piwik.org/blog/2013/10/our-latest-improvement-to-qa-screenshot-testing/)
+[QA Screenshot Testing blog post](https://matomo.org/blog/2013/10/our-latest-improvement-to-qa-screenshot-testing/)

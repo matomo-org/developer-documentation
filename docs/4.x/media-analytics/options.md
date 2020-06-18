@@ -41,7 +41,7 @@ If you want to track a custom title that is different to your video title, you c
 ```js 
 playerInstance.setup({
     playlist: [{
-        file: "http://example.org/actualUrl.mp4",
+        file: "https://example.org/actualUrl.mp4",
         title: "My Video",
         matomoTitle: "My custom Video title"
     }
@@ -58,8 +58,8 @@ You can provide a custom title when you use flowplayer for tracking purposes by 
 flowplayer("#player", {
     clip: {
         sources: [
-            {type: "application/x-mpegurl", src: "http://example.org/actualUrl.m3u8"},
-            {type: "video/mp4", src: "http://example.org/actualUrl.mp4" }
+            {type: "application/x-mpegurl", src: "https://example.org/actualUrl.m3u8"},
+            {type: "video/mp4", src: "https://example.org/actualUrl.mp4" }
         ],
         title: "Javascript setup",
         matomoTitle: "My custom Video title"
@@ -79,8 +79,8 @@ By default, the HTTP URL of a media is fetched from the player API or read in th
 To do this you can define a custom resource via the `data-matomo-resource` (recommended) or the `data-piwik-resource` HTML attribute. For example:
 
 ```html
-<video src="http://example.org/actualUrl.mp4"
-       data-matomo-resource="http://example.org/trackedUrl.mp4"></video>
+<video src="https://example.org/actualUrl.mp4"
+       data-matomo-resource="https://example.org/trackedUrl.mp4"></video>
 ```
 
 ### JW Player
@@ -91,9 +91,9 @@ If your resource URL is for example user dependent, and you always want to track
 ```js 
 playerInstance.setup({
     playlist: [{
-        file: "http://example.org/actualUrl.mp4",
+        file: "https://example.org/actualUrl.mp4",
         title: "My Video",
-        matomoResource: "http://example.org/trackedUrl.mp4"
+        matomoResource: "https://example.org/trackedUrl.mp4"
     }
 });
 ```
@@ -108,11 +108,11 @@ You can provide a custom resource URL when you use flowplayer by specifying a `m
 flowplayer("#player", {
     clip: {
         sources: [
-            {type: "application/x-mpegurl", src: "http://example.org/actualUrl.m3u8"},
-            {type: "video/mp4", src: "http://example.org/actualUrl.mp4" }
+            {type: "application/x-mpegurl", src: "https://example.org/actualUrl.m3u8"},
+            {type: "video/mp4", src: "https://example.org/actualUrl.mp4" }
         ],
         title: "Javascript setup",
-        matomoResource: "http://example.org/trackedUrl"
+        matomoResource: "https://example.org/trackedUrl"
     }
 });
 ```
@@ -169,7 +169,7 @@ method. If you do not use the `_paq` variable, you can disable the media tracker
  
 ```js
 window.piwikMediaAnalyticsAsyncInit = function () {
-    Piwik.MediaAnalytics.disableMediaAnalytics();
+    Matomo.MediaAnalytics.disableMediaAnalytics();
 };
 ```
 
@@ -219,5 +219,5 @@ It is recommended to call this method as early as possible, for example just aft
 
 If you use a player other than Youtube / Vimeo / HTML5 / JwPlayer / Flowplayer / Video.js, learn about [tracking your Custom Video Players](/guides/media-analytics/custom-player). 
 Or you may want to learn more about the [Media Analytics JavaScript API](/guides/media-analytics/reference), 
- read the [Media Analytics User Guide](https://piwik.org/docs/media-analytics/), 
- the Media Analytics [User FAQs](https://piwik.org/faq/media-analytics/) or the [Developer FAQs](/guides/media-analytics/faq).
+ read the [Media Analytics User Guide](https://matomo.org/docs/media-analytics/), 
+ the Media Analytics [User FAQs](https://matomo.org/faq/media-analytics/) or the [Developer FAQs](/guides/media-analytics/faq).

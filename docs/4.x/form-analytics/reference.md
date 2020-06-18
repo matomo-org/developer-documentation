@@ -6,11 +6,11 @@ title: JavaScript Tracker API Reference
 
 This guide is the JavaScript Tracker API Reference for [Form Analytics](https://www.form-analytics.net/).
 
-You may also be interested in the Form Analytics [Reporting HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#FormAnalytics). 
+You may also be interested in the Form Analytics [Reporting HTTP API Reference](https://developer.matomo.org/api-reference/reporting-api#FormAnalytics). 
 
 ## Calling Form Analytics tracker methods
 
-In the `piwik.js` tracker we differentiate between two kind of methods:
+In the `matomo.js` tracker we differentiate between two kind of methods:
 
 * Calling a **tracker instance method** affects only a specific Piwik tracker instance. In the docs you can 
   identify a tracker method when the method name contains a single dot (`.`), for example 
@@ -21,16 +21,16 @@ In the `piwik.js` tracker we differentiate between two kind of methods:
 In most cases only one Piwik tracker will be used so the only difference is how you call that method:
 
 * Tracker methods are called via `_paq.push(['FormAnalytics.$methodName']);` or on a tracker instance directly eg. 
-  `Piwik.getAsyncTracker().FormAnalytics.$methodName()`.
-* Static methods are called via `_paq.push(['FormAnalytics::$methodName']);` or directly on the `Piwik.FormAnalytics` object,
-  eg. `Piwik.FormAnalytics.$methodName()`.
+  `Matomo.getAsyncTracker().FormAnalytics.$methodName()`.
+* Static methods are called via `_paq.push(['FormAnalytics::$methodName']);` or directly on the `Matomo.FormAnalytics` object,
+  eg. `Matomo.FormAnalytics.$methodName()`.
 
 If you do not want to use the `_paq.push` methods, you may define a `window.piwikFormAnalyticsAsyncInit` method 
 that is called as soon as the form tracker has been initialized:
 
 ```js
 window.piwikFormAnalyticsAsyncInit = function () {
-    Piwik.FormAnalytics.disableFormAnalytics();
+    Matomo.FormAnalytics.disableFormAnalytics();
 };
 ```
 
@@ -49,8 +49,8 @@ Example:
 _paq.push(['FormAnalytics::scanForForms']);
 _paq.push(['FormAnalytics::scanForForms', document.getElementById('test')]);
 // or 
-Piwik.FormAnalytics.scanForForms();
-Piwik.FormAnalytics.scanForForms(document.getElementById('test'));
+Matomo.FormAnalytics.scanForForms();
+Matomo.FormAnalytics.scanForForms(document.getElementById('test'));
 ```
 
 ### `trackForm(formElement)`
@@ -114,7 +114,7 @@ enabled in production.
 
 Allows you to set the tracker instances the tracker should use when tracking your forms. Can be either
  a single tracker instance, or an array of Piwik tracker instances. This is useful when you are working with multiple Piwik
- tracker instances using `Piwik.getTracker` instead of `Piwik.addTracker`. 
+ tracker instances using `Matomo.getTracker` instead of `Matomo.addTracker`. 
  
 ### `setTrackingTimer(delayInMilliSeconds)`
 
@@ -138,7 +138,7 @@ Example:
 _paq.push(['FormAnalytics.disable']); 
 
 // or if you are using multiple Piwik trackers and only want to disable it for a specific tracker:
-var tracker = Piwik.getTracker(piwikUrl, piwikSiteId);
+var tracker = Matomo.getTracker(matomoUrl, matomoSiteId);
 tracker.FormAnalytics.disable();
 ```
 
@@ -153,4 +153,4 @@ Detects if the tracking of forms is currently enabled or disabled for this track
 
 ## What to read next
 
-You may be interested in the [Form Analytics HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#FormAnalytics).
+You may be interested in the [Form Analytics HTTP API Reference](https://developer.matomo.org/api-reference/reporting-api#FormAnalytics).

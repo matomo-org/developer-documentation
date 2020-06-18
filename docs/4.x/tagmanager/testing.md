@@ -14,7 +14,7 @@ The tests will create a database named `tracker_tests` and store various trackin
 
 ## Running PHP tests
 
-To run a test, either open `http://matomo.example.com/tests/javascript/` in a browser or execute `phantomjs testrunner.js` on the command line. You can download PhantomJS here: [http://phantomjs.org/](http://phantomjs.org/)
+To run a test, either open `https://matomo.example.com/tests/javascript/` in a browser or execute `phantomjs testrunner.js` on the command line. You can download PhantomJS here: [http://phantomjs.org/](http://phantomjs.org/)
 
 ## Creating a test
 
@@ -52,7 +52,7 @@ The main methods you will need to create tests are:
 * `strictEqual(expected, actual, message)` strict comparison of a value
 * `deepEqual(expected, actual, message)` expecting an object (or array)
 
-You can find more information in the [QUnit API Documentation](http://api.qunitjs.com/)
+You can find more information in the [QUnit API Documentation](https://api.qunitjs.com/)
 
 ## Testing a tag
 

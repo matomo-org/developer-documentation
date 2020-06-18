@@ -34,7 +34,7 @@ Below is the list of all supported environment variables:
     
   * **PROTECTED\_ARTIFACTS**
 
-    This variable controls whether build artifacts will be uploaded to a password protected folder on builds-artifacts.piwik.org. If you are building a plugin and need your artifacts protected, please [contact the Piwik team](https://piwik.org/contact/) to learn more.
+    This variable controls whether build artifacts will be uploaded to a password protected folder on builds-artifacts.matomo.org. If you are building a plugin and need your artifacts protected, please [contact the Piwik team](https://matomo.org/contact/) to learn more.
 
     By default, artifacts for plugins are stored in a public folder. To change this behavior, set `PROTECTED_ARTIFACTS=1` as a global environment variable, eg:
 

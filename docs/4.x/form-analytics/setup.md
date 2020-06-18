@@ -11,10 +11,10 @@ In this guide you will learn how to get [Form Analytics](https://www.form-analyt
 If you have already embedded the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
 the Form Analytics will automatically start tracking the usage of your web forms. 
 
-The tracker code for forms is automatically added into your Piwik JavaScript tracker file `/piwik.js` as long as the file `piwik.js` in your Piwik directory is writable by the webserver/PHP.
+The tracker code for forms is automatically added into your Matomo JavaScript tracker file `/matomo.js` as long as the file `matomo.js` in your Piwik directory is writable by the webserver/PHP.
  
-To check whether this works by default for you, login into Piwik as a Super User, go to Administration, and open the "System Check" report. 
-If the System Check displays a warning for "Writable Piwik.js" then [learn below how to solve this](#when-the-piwikjs-in-your-piwik-directory-file-is-not-writable).
+To check whether this works by default for you, login into Matomo as a Super User, go to Administration, and open the "System Check" report. 
+If the System Check displays a warning for "Writable Matomo.js" then [learn below how to solve this](#when-the-matomojs-in-your-piwik-directory-file-is-not-writable).
 
 ## Tracking Forms
 
@@ -74,24 +74,24 @@ If you do not want a form to be tracked, you can specify a `data-matomo-ignore` 
 If set, it will not even send any tracking requests for this form to your Piwik. This is useful if you want to exclude
 for example forms that are shown on each page like a search or a newsletter sign up form.
 
-## When the `piwik.js` in your Piwik directory file is not writable
+## When the `matomo.js` in your Piwik directory file is not writable
  
-When your Settings > System Check reports that "The Piwik JavaScript tracker file `piwik.js` is not writable 
+When your Settings > System Check reports that "The Piwik JavaScript tracker file `matomo.js` is not writable 
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
-1. Make the `piwik.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
+1. Make the `matomo.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
 We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
 2. or Load the FormAnalytics tracker file manually in your website by adding in all your pages ideally in the `<head>`: 
-   `<script src="https://your-piwik-domain/plugins/FormAnalytics/tracker.min.js">`
+   `<script src="https://your-matomo-domain/plugins/FormAnalytics/tracker.min.js">`
 
 #### Are there any disadvantages of including the file manually?
 
 Yes, there are:
 
 * An additional HTTP request is needed to load your website which increases your page load time
-* If your `piwik.js` ever becomes writable, the FormAnalytics tracker would be loaded twice (in such a case the tracker notices it was already initialized and won't track everything twice)
+* If your `matomo.js` ever becomes writable, the FormAnalytics tracker would be loaded twice (in such a case the tracker notices it was already initialized and won't track everything twice)
 
-If possible, we recommend making the `piwik.js` file writable.
+If possible, we recommend making the `matomo.js` file writable.
 
 ## What to read next
 

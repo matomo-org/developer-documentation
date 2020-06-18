@@ -7,7 +7,7 @@ category: DevelopInDepth
 
 ### UIControl
 
-`UIControl` is meant to be the base type for all JavaScript widget classes. These classes manage and attach behavior to an element. Examples of classes that extend from UIControl include **[DataTable](#classes-DataTable)** (the base of all [report visualization](/guides/visualizing-report-data) JavaScript classes) and **VisitorProfileControl** (used to manage the [visitor profile](https://piwik.org/docs/user-profile/)).
+`UIControl` is meant to be the base type for all JavaScript widget classes. These classes manage and attach behavior to an element. Examples of classes that extend from UIControl include **[DataTable](#classes-DataTable)** (the base of all [report visualization](/guides/visualizing-report-data) JavaScript classes) and **VisitorProfileControl** (used to manage the [visitor profile](https://matomo.org/docs/user-profile/)).
 
 `UIControl` allows descendants to clean up resources, provides a mechanism for server side code to send information to the UI and provides a method for listening to dashboard widget resize events.
 
@@ -223,5 +223,5 @@ To learn more about extending the class, see our [Visualizing Report Data](https
 ## Learn more
 
 * To learn **about creating new report visualizations** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.
-* To learn **more about the asset merging system** read this [blog post](https://piwik.org/blog/2010/07/making-piwik-ui-faster/) by the system's author.
+* To learn **more about the asset merging system** read this [blog post](https://matomo.org/blog/2010/07/making-piwik-ui-faster/) by the system's author.
 * To learn **more about theming** read our [Theming](/guides/theming) guide.

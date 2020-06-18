@@ -54,7 +54,7 @@ To replace a key with translated text, Piwik will look into the JSON file for th
 
 ### Reusing translations
 
-As mentioned Piwik comes with quite a lot of translations. You can and should reuse them but you are supposed to be aware that a translation key might be removed or renamed in the future. It is also possible that a translation key was added in a recent version and therefore is not available in older versions of Piwik. We do not currently announce any of such changes. Still, 99% of the translation keys do not change and it is therefore usually a good idea to reuse existing translations. Especially when you or your company would otherwise not be able to provide them. To find any existing translation keys go to <span style="font-variant: small-caps">Settings =&gt; Translation search</span> in your Piwik installation. The menu item will only appear if the [development mode](https://developer.piwik.org/guides/getting-started-part-1#enable-development-mode) is enabled.
+As mentioned Piwik comes with quite a lot of translations. You can and should reuse them but you are supposed to be aware that a translation key might be removed or renamed in the future. It is also possible that a translation key was added in a recent version and therefore is not available in older versions of Piwik. We do not currently announce any of such changes. Still, 99% of the translation keys do not change and it is therefore usually a good idea to reuse existing translations. Especially when you or your company would otherwise not be able to provide them. To find any existing translation keys go to <span style="font-variant: small-caps">Settings =&gt; Translation search</span> in your Piwik installation. The menu item will only appear if the [development mode](https://developer.matomo.org/guides/getting-started-part-1#enable-development-mode) is enabled.
 
 ## Translations in PHP
 
@@ -67,7 +67,7 @@ $translatedText = Piwik::translate('MyPlugin_BlogPost');
 or
 
 ```php
-$translatedText = Piwik::translate('MyPlugin_MyParagraphWithALink', '<a href="http:://piwik.org">', '</a>');
+$translatedText = Piwik::translate('MyPlugin_MyParagraphWithALink', '<a href="https://matomo.org">', '</a>');
 // where the key "MyPlugin_MyParagraphWithALink" could look like this:
 // "My paragraph has a %1$slink%2$s."
 ```
@@ -83,7 +83,7 @@ To translate text in Twig templates, use the `translate` filter. For example,
 or
 
 ```twig
-{{ 'MyPlugin_MyParagraphWithALink'|translate('<a href="https://piwik.org">', '</a>') }}
+{{ 'MyPlugin_MyParagraphWithALink'|translate('<a href="https://matomo.org">', '</a>') }}
 ```
 
 ## Translation in JavaScript
@@ -117,15 +117,15 @@ var translatedText = _pk_translate('MyPlugin_BlogPost');
 
 ## Contributing translations to Piwik
 
-Did you know you can contribute [translations](https://piwik.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](https://www.transifex.com/piwik/piwik/).
+Did you know you can contribute [translations](https://matomo.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](https://www.transifex.com/matomo-org/matomo/).
 
 
 ## Getting translations for your plugin
 
 
-As long as you are [developing an open source plugin](https://developer.piwik.org/develop) hosted on Github, you may get in touch with us ([translations@matomo.org](mailto:translations@matomo.org?subject=Getting my Piwik plugin translated in other languages)) in order to get your plugin translated by the Piwik translators community.
+As long as you are [developing an open source plugin](https://developer.matomo.org/develop) hosted on Github, you may get in touch with us ([translations@matomo.org](mailto:translations@matomo.org?subject=Getting my Piwik plugin translated in other languages)) in order to get your plugin translated by the Piwik translators community.
 
-You will need an account on [Transifex.com](http://transifex.com/). If you use Transifex with a social login, please ensure to set a password in your account settings. This will be required for fetching new translations into your plugin repository.
+You will need an account on [Transifex.com](https://transifex.com/). If you use Transifex with a social login, please ensure to set a password in your account settings. This will be required for fetching new translations into your plugin repository.
 
 ### Importing your plugin’s strings in the translation platform
 
@@ -133,7 +133,7 @@ While doing the initial setup for your plugin, we will import your english trans
 
 ### How to fetch your plugins translations into your repository
 
-As soon as we have set up your plugin within [our Piwik project on Transifex](https://www.transifex.com/projects/p/piwik/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. You will need a locally installed Piwik with [development mode enabled](https://developer.piwik.org/guides/getting-started-part-1#enable-development-mode), and your plugin installed. To update the translations go to the Piwik directory on your development box and execute the following command:
+As soon as we have set up your plugin within [our Piwik project on Transifex](https://www.transifex.com/projects/p/matomo-org/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. You will need a locally installed Piwik with [development mode enabled](https://developer.matomo.org/guides/getting-started-part-1#enable-development-mode), and your plugin installed. To update the translations go to the Piwik directory on your development box and execute the following command:
 
 ```bash
 ./console translations:update -u {YourTransifexUserName} -p {YourTransifexPassword} -P {YourPluginName}

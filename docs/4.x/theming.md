@@ -93,7 +93,7 @@ Every theme has one main file that contains all of your theme's styling override
 
 Generated themes will already have a file configured, so you don't need to set this property. The file is called `theme.less` and is located in the `stylesheets/` directory of your theme.
 
-You can put your entire theme into this one file if you want, but the result might not be easy to read and to maintain. Instead, you should group the styles based on the part of Piwik they modify and place them in separate LESS files. You can then [`@import`](http://lesscss.org/features/#import-directives-feature) them in `theme.less`.
+You can put your entire theme into this one file if you want, but the result might not be easy to read and to maintain. Instead, you should group the styles based on the part of Piwik they modify and place them in separate LESS files. You can then [`@import`](https://lesscss.org/features/#import-directives-feature) them in `theme.less`.
 
 ### Adding JavaScript files
 
@@ -197,7 +197,7 @@ Here is a list of all named colors in Piwik:
   * **ticks**: The color of x-axis gridlines and x-axis ticks.
   * **single-metric-label**: The color of the series name label if only **one** series is displayed. If you don't care about whether there's one series displayed or not, set this color to the one you used in **series1**.
 
-* _Namespace_: **realtime-map**: contains colors for the [Realtime Visitors Map](https://piwik.org/docs/real-time-visitor-world-map/).
+* _Namespace_: **realtime-map**: contains colors for the [Realtime Visitors Map](https://matomo.org/docs/real-time-visitor-world-map/).
 
   * **white-bg**: The background color for the map when using the _light theme_.
   * **white-fill**: The country/region fill color for the map when using the _light theme_.
@@ -213,7 +213,7 @@ Here is a list of all named colors in Piwik:
   * **symbol-animate-fill**: The starting fill color to use when animating the appearance of a new visit. The ending fill color is always the visit's normal color.
   <!-- TODO: hue of visit color is not themable still -->
 
-* _Namespace_: **visitor-map**: contains colors for the [Visitors Map](https://piwik.org/docs/visitors-map/).
+* _Namespace_: **visitor-map**: contains colors for the [Visitors Map](https://matomo.org/docs/visitors-map/).
 
   * **no-data-color**: The fill color for countries that have no visits.
   * **one-country-color**: The fill color for countries that have visits, if only one country received visits.

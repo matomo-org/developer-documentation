@@ -6,11 +6,11 @@ title: JavaScript Tracker API Reference
 
 This guide is the JavaScript Tracker API Reference for [Media Analytics](https://www.media-analytics.net/).
 
-You may also be interested in the Media Analytics [Reporting HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#MediaAnalytics). 
+You may also be interested in the Media Analytics [Reporting HTTP API Reference](https://developer.matomo.org/api-reference/reporting-api#MediaAnalytics). 
 
 ## Calling MediaAnalytics tracker methods
 
-In the `piwik.js` tracker we differentiate between two kind of methods:
+In the `matomo.js` tracker we differentiate between two kind of methods:
 
 * Calling a **tracker instance method** affects only a specific Piwik tracker instance. In the docs you can 
   identify a tracker method when the method name contains a single dot (`.`), for example 
@@ -21,17 +21,17 @@ In the `piwik.js` tracker we differentiate between two kind of methods:
 In most cases only one Piwik tracker will be used so the only difference is how you call that method:
 
 * Tracker methods are called via `_paq.push(['MediaAnalytics.$methodName']);` or on a tracker instance directly eg. 
-  `Piwik.getAsyncTracker().MediaAnalytics.$methodName();`
+  `Matomo.getAsyncTracker().MediaAnalytics.$methodName();`
   
-* Static methods are called via `_paq.push(['MediaAnalytics::$methodName']);` or directly on the `Piwik.MediaAnalytics` object,
-  eg. `Piwik.MediaAnalytics.$methodName()`.
+* Static methods are called via `_paq.push(['MediaAnalytics::$methodName']);` or directly on the `Matomo.MediaAnalytics` object,
+  eg. `Matomo.MediaAnalytics.$methodName()`.
 
 If you do not want to use the `_paq.push` methods, you need to define a `window.piwikMediaAnalyticsAsyncInit` method 
 that is called as soon as the media tracker has been initialized:
 
 ```js
 window.piwikMediaAnalyticsAsyncInit = function () {
-    Piwik.MediaAnalytics.removePlayer('youtube'); 
+    Matomo.MediaAnalytics.removePlayer('youtube'); 
 };
 ```
 
@@ -48,8 +48,8 @@ Example:
 _paq.push(['MediaAnalytics::scanForMedia']);
 _paq.push(['MediaAnalytics::scanForMedia', document.getElementById('test')]);
 // or 
-Piwik.MediaAnalytics.scanForMedia();
-Piwik.MediaAnalytics.scanForMedia(document.getElementById('test'));
+Matomo.MediaAnalytics.scanForMedia();
+Matomo.MediaAnalytics.scanForMedia(document.getElementById('test'));
 ```
 
 ### `setPingInterval(pingIntervalInSeconds)`
@@ -67,7 +67,7 @@ If you do not want to track any media of a certain player, you can disable that 
 
 Allows you to track a [custom media player](/guides/media-analytics/custom-player). This is useful if you are using a 
 media player that is not yet supported by the MediaAnalytics plugin. We might also be able to support new players within 
-this plugin, [let us know which media player you use](https://piwik.org/support).
+this plugin, [let us know which media player you use](https://matomo.org/support).
 
 ### `disableMediaAnalytics()`
 
@@ -94,12 +94,12 @@ enabled in production.
 
 Allows you to set the tracker instances the tracker should use when tracking the progress and events of Media. Can be either
  a single tracker instance, or an array of Piwik tracker instances. This is useful when you are working with multiple Piwik
- tracker instances using `Piwik.getTracker` instead of `Piwik.addTracker`. 
+ tracker instances using `Matomo.getTracker` instead of `Piwik.addTracker`. 
  
 ### `getPiwikTrackers()`
 
 Returns an array of Piwik tracker instances that are used by the Media Analytics plugin. By default, this will return the same
-as `Piwik.getAsyncTrackers()` and will return all tracker instances that were created eg via `Piwik.addTracker` or 
+as `Matomo.getAsyncTrackers()` and will return all tracker instances that were created eg via `Piwik.addTracker` or 
 `_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
 
 ### `setMediaTitleFallback()`
@@ -123,7 +123,7 @@ via the `addPlayer()` method.
 * `mediaType.VIDEO` -  Defines the current media is a video
 * `mediaType.AUDIO` -  Defines the current media is an audio
 
-You can access this property as follows: `Piwik.MediaAnalytics.mediaType.VIDEO`.
+You can access this property as follows: `Matomo.MediaAnalytics.mediaType.VIDEO`.
 
 ### `element`
 
@@ -139,7 +139,7 @@ You can access this property as follows: `Piwik.MediaAnalytics.mediaType.VIDEO`.
 ### `disableTrackEvents()`
 
 Disables the tracking of events like `play`, `pause` or `resume` while still tracking the media usage. When calling 
-this method no events for your media will be shown in "Actions => Events" and neither in the [Visits log](https://piwik.org/docs/user-profile/).
+this method no events for your media will be shown in "Actions => Events" and neither in the [Visits log](https://matomo.org/docs/user-profile/).
 
 Example:
 
@@ -148,7 +148,7 @@ Example:
 _paq.push(['MediaAnalytics.disableTrackEvents']); 
 
 // or if you are using multiple Piwik trackers and only want to disable it for a specific tracker:
-var tracker = Piwik.getAsyncTracker(piwikUrl, piwikSiteId);
+var tracker = Matomo.getAsyncTracker(matomoUrl, matomoSiteId);
 tracker.MediaAnalytics.disableTrackEvents();
 ```
 
@@ -178,5 +178,5 @@ Detect if the tracking of progress is currently enabled or disabled. Returns a b
 ## What to read next
 
 You may be interested in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference),
- or the [Reporting HTTP API Reference](https://developer.piwik.org/api-reference/reporting-api#MediaAnalytics).
+ or the [Reporting HTTP API Reference](https://developer.matomo.org/api-reference/reporting-api#MediaAnalytics).
  If you use a player other than Youtube / Vimeo / HTML5 / JwPlayer / Flowplayer / Video.js, learn about [implementing analytics for your Custom Video Player](/guides/media-analytics/custom-player).

@@ -4,7 +4,7 @@ title: API Methods
 ---
 # Exposing API Methods
 
-This guide explains how to expose new API methods in the [HTTP Reporting API](https://developer.piwik.org/api-reference/reporting-api) by creating an API module. The Reporting API allows third party applications to access analytics data and manipulate miscellaneous data (such as users or websites) through HTTP requests.
+This guide explains how to expose new API methods in the [HTTP Reporting API](https://developer.matomo.org/api-reference/reporting-api) by creating an API module. The Reporting API allows third party applications to access analytics data and manipulate miscellaneous data (such as users or websites) through HTTP requests.
 
 ### What is it good for?
 

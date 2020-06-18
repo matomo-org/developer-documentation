@@ -5,17 +5,17 @@ title: Mobile & Desktop Apps
 # Running an A/B test experiment in an app eg. Android, iOS, desktop app or games 
 
 You can run experiments in apps by using any A/B testing framework of your choice if you are tracking your users 
-via one of the Piwik SDKs (eg [Android SDK](https://github.com/matomo-org/piwik-sdk-android), 
-[iOS SDK](https://github.com/matomo-org/piwik-sdk-ios), [C#](https://github.com/matomo-org/piwik-dotnet-tracker), 
-[PHP](https://github.com/matomo-org/piwik-php-tracker), [Java](https://github.com/matomo-org/piwik-java-tracker), 
-[Python](https://github.com/matomo-org/piwik-python-tracker/tree/dev)). 
+via one of the Piwik SDKs (eg [Android SDK](https://github.com/matomo-org/matomo-sdk-android), 
+[iOS SDK](https://github.com/matomo-org/matomo-sdk-ios), [C#](https://github.com/matomo-org/piwik-dotnet-tracker), 
+[PHP](https://github.com/matomo-org/matomo-php-tracker), [Java](https://github.com/matomo-org/piwik-java-tracker), 
+[Python](https://github.com/matomo-org/matomo-python-tracker/tree/dev)). 
 
 This guide requires that you track your application via a [Piwik Tracking SDK](/guides/tracking-api-clients), 
-via the [Tracking HTTP API](/api-reference/tracking-api) or any other [Piwik Tracking Integration](https://piwik.org/integrate).
+via the [Tracking HTTP API](/api-reference/tracking-api) or any other [Piwik Tracking Integration](https://matomo.org/integrate).
  
 ## Creating an experiment
 
-First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://piwik.org/docs/ab-testing/) to learn more.
+First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more.
 
 When you are asked on which target pages the experiment should be activated, we recommend selecting "Visitors enter this experiment on any page".
 
@@ -50,7 +50,7 @@ $experiment->trackVariationActivation($piwikPhpTracker);
 ### Sending the name of the activated variation to Piwik
 
 So far you have created and implemented the experiment, so users get to see different versions of your app. 
-Now you need to let Piwik know which variation was activated for your current user by tracking a [Piwik event](https://piwik.org/docs/event-tracking/):
+Now you need to let Piwik know which variation was activated for your current user by tracking a [Piwik event](https://matomo.org/docs/event-tracking/):
 
 ```php
 // example tracking request via PHP Piwik Tracker
