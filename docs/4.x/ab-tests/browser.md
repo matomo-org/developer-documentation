@@ -107,7 +107,7 @@ _paq.push(['AbTesting::create', {
       }
       return false;
   },
-  matomoTracker: Matomo.getAsyncTracker(piwikUrl, piwikSiteId),
+  piwikTracker: Matomo.getAsyncTracker(matomoUrl, matomoSiteId),
   variations: [
         // [...]
         {

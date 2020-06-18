@@ -698,10 +698,10 @@ _paq.push(['trackPageView']);
 
 ### Recording a click as a download
 
-If you want to force Piwik to consider a link as a download, you can add the 'piwik_download' css class to the link:
+If you want to force Piwik to consider a link as a download, you can add the `matomo_download` or `piwik_download` css class to the link:
 
 ```html
-<a href='last.php' class='piwik_download'>Link I want to track as a download</a>
+<a href='last.php' class='matomo_download'>Link I want to track as a download</a>
 ```
 
 Note: you can customize and rename the CSS class used to force a click to be recorded as a download:
@@ -757,10 +757,10 @@ This will result in clicks on a link `<a href='https://example.com' class='no-tr
 
 #### Disabling for a specific link
 
-If you want to ignore download or outlink tracking on a specific link, you can add the 'piwik_ignore' css class to it:
+If you want to ignore download or outlink tracking on a specific link, you can add the `matomo_ignore` or 'piwik_ignore' css class to it:
 
 ```html
-<a href='https://builds.matomo.org/latest.zip' class='piwik_ignore'>File I don't want to track as a download</a>
+<a href='https://builds.matomo.org/latest.zip' class='matomo_ignore'>File I don't want to track as a download</a>
 ```
 
 ## Asking for consent
@@ -955,7 +955,7 @@ Alternatively to using the RollUp Reporting plugin you can duplicate the trackin
   // We will also collect the website data into Website ID = 7
   var websiteIdDuplicate = 7;
   // The data will be duplicated into `piwik.example.org/matomo.php`
-  _paq.push(['addTracker', piwikUrl = u+'matomo.php', websiteIdDuplicate]);
+  _paq.push(['addTracker', u+'matomo.php', websiteIdDuplicate]);
   // Your data is now tracked in both website ID 1 and website 7 into your piwik.example.org server!
 ```
 
@@ -992,7 +992,7 @@ The example below shows how to use `addTracker`  method to track the same analyt
 
 ### Customise one of the tracker object instances
 
-Note: by default any tracker added via `addTracker` is configured the same as the main default tracker object (regarding cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Piwik tracker object instances that was added via `addTracker`, you may call the `Piwik.getAsyncTracker(optionalPiwikUrl, optionalPiwikSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance.
+Note: by default any tracker added via `addTracker` is configured the same as the main default tracker object (regarding cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Piwik tracker object instances that was added via `addTracker`, you may call the `Matomo.getAsyncTracker(optionalMatomoUrl, optionalPiwikSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance.
 
 ### Duplicate the tracking data when calling the JavaScript API directly (not via `_paq.push`)
 

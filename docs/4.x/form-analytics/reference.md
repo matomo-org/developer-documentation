@@ -138,7 +138,7 @@ Example:
 _paq.push(['FormAnalytics.disable']); 
 
 // or if you are using multiple Piwik trackers and only want to disable it for a specific tracker:
-var tracker = Matomo.getTracker(piwikUrl, piwikSiteId);
+var tracker = Matomo.getTracker(matomoUrl, matomoSiteId);
 tracker.FormAnalytics.disable();
 ```
 

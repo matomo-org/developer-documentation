@@ -62,13 +62,13 @@ Once you have initialized the tracker you have to tag HTML blocks to declare the
 
 The following attributes and their corresponding CSS classes are used for this and explained in detail in the next chapters:
 
-| Selector                                                               | Description                                         |
-| ---------------------------------------------------------------------- | --------------------------------------------------- |
-| `[data-track-content]` or `.piwikTrackContent`                         | Defines a content block                             |
-| `[data-content-name=""]`                                               | Defines the name of the content block               |
-| `[data-content-piece=""]` or `.piwikContentPiece`                      | Defines the content piece                           |
-| `[data-content-target=""]` or `.piwikContentTarget`                    | Defines the content target                          |
-| `[data-content-ignoreinteraction]` or `.piwikContentIgnoreInteraction` | Declares to not automatically track the interaction |
+| Selector                                                                | Description                                         |
+| ----------------------------------------------------------------------- | --------------------------------------------------- |
+| `[data-track-content]` or `.matomoTrackContent`                         | Defines a content block                             |
+| `[data-content-name=""]`                                                | Defines the name of the content block               |
+| `[data-content-piece=""]` or `.matomoContentPiece`                      | Defines the content piece                           |
+| `[data-content-target=""]` or `.matomoContentTarget`                    | Defines the content target                          |
+| `[data-content-ignoreinteraction]` or `.matomoContentIgnoreInteraction` | Declares to not automatically track the interaction |
 
 
 You can use either **HTML attributes** or **CSS classes** to tag content.
@@ -92,7 +92,7 @@ Here we are defining a content block having the name "My Product Name". The used
 
 #### How to define a block of content?
 
-Defining a content block is mandatory in order to track any content. For each ad, banner or any other content you want to track you will have to create a content block. You can use either the attribute `data-track-content` or the CSS class `piwikTrackContent`. The attribute does not require any value.
+Defining a content block is mandatory in order to track any content. For each ad, banner or any other content you want to track you will have to create a content block. You can use either the attribute `data-track-content` or the CSS class `matomoTrackContent`. The attribute does not require any value.
 
 Examples:
 
@@ -103,7 +103,7 @@ Examples:
 // content target = ""
 
 // or
-<img src="img-en.jpg" class="piwikTrackContent"/>
+<img src="img-en.jpg" class="matomoTrackContent"/>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
 // content target = ""
@@ -115,7 +115,7 @@ As you can see in these examples we do detect the content piece and name automat
 
 * The simplest scenario is to provide an HTML attribute `data-content-piece="foo"` including a value anywhere within the content block or in the content block element itself.
 * If there is no such attribute we will check whether the content piece element is media (audio, video, image, pdf, ...) and we will try to find the URL of the media automatically.
- * To find the content piece element we will search for an element having the attribute `data-content-piece` or the CSS class `piwikContentPiece`. This attribute/class can be specified anywhere within a content block. If we do not find any specific content piece element we will use the content block element.
+ * To find the content piece element we will search for an element having the attribute `data-content-piece` or the CSS class `matomoContentPiece`. This attribute/class can be specified anywhere within a content block. If we do not find any specific content piece element we will use the content block element.
  * In case of video or audio elements, when there are multiple sources defined, we will choose the URL of the first source.
  * We will automatically build a fully qualified URL of the source in case we find one. This allows you to see a preview in the UI and to know exactly which media was displayed in case relative paths are used.
 * If we haven't found anything we will fall back to use the value "Unknown". In such a case you should set the attribute `data-content-piece` telling us explicitly what the content is.
@@ -141,7 +141,7 @@ As you can see a specific value for the content piece is defined which can be us
 
 // or
 <a href="https://www.example.com" data-track-content>
-    <img src="img-en.jpg" class="piwikContentPiece"/>
+    <img src="img-en.jpg" class="matomoContentPiece"/>
 </a>
 // content name   = absolutePath(img-en.jpg)
 // content piece  = absoluteUrl(img-en.jpg)
@@ -157,7 +157,7 @@ In these examples we were able to detect the name and the piece of the content a
 
 // or
 <a href="https://www.example.com" data-track-content>
-    <p class="piwikContentPiece">Lorem ipsum dolor sit amet</p>
+    <p class="matomoContentPiece">Lorem ipsum dolor sit amet</p>
 </a>
 // content name   = Unknown
 // content piece  = Unknown
@@ -247,7 +247,7 @@ In case there is no content name and no content piece we will fall back to the `
 
 #### How do we detect the content target element?
 
-The content target element will be used to find a URL as this element is usually a link or a button. We detect the target element either by the attribute `data-content-target` or by the class `.piwikContentTarget`. If no such element can be found we will fall back to the content block element.
+The content target element will be used to find a URL as this element is usually a link or a button. We detect the target element either by the attribute `data-content-target` or by the class `.matomoContentTarget`. If no such element can be found we will fall back to the content block element.
 
 #### How do we detect the content target?
 
@@ -297,7 +297,7 @@ As the `data-content-target` attribute is set with a value, we can detect the co
 
 ```html
 <div data-track-content>
-    <a href="https://www.example.com" class="piwikContentTarget">Click me</a>
+    <a href="https://www.example.com" class="matomoContentTarget">Click me</a>
 </div>
 // content name   = Unknown
 // content piece  = Unknown
@@ -380,12 +380,12 @@ Anchor and all other kind of links will be tracked using an XHR.
 
 #### How to prevent the automatic tracking of an interaction?
 
-Maybe you do not want us to track any interaction automatically as explained before. To do so you can either set the attribute `data-content-ignoreinteraction` or the CSS class `piwikContentIgnoreInteraction` on the content target element. In single page application you might have to disable automatic tracking of an interaction as otherwise a page reload and a redirect would occur.
+Maybe you do not want us to track any interaction automatically as explained before. To do so you can either set the attribute `data-content-ignoreinteraction` or the CSS class `matomoContentIgnoreInteraction` on the content target element. In single page application you might have to disable automatic tracking of an interaction as otherwise a page reload and a redirect would occur.
 
 Examples
 
 ```html
-<a href="https://outlink.example.com" class="piwikTrackContent piwikContentIgnoreInteraction">Add to shopping cart</a>
+<a href="https://outlink.example.com" class="matomoTrackContent matomoContentIgnoreInteraction">Add to shopping cart</a>
 //
 <div data-track-content>
     <a href="https://outlink.example.com" data-content-target data-content-ignoreinteraction>Add to shopping cart</a>

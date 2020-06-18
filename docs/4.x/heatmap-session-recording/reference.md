@@ -207,7 +207,7 @@ Example:
 _paq.push(['HeatmapSessionRecording.disable']); 
 
 // or if you are using multiple Piwik trackers and only want to disable it for a specific tracker:
-var tracker = Matomo.getAsyncTracker(piwikUrl, piwikSiteId);
+var tracker = Matomo.getAsyncTracker(matomoUrl, matomoSiteId);
 tracker.HeatmapSessionRecording.disable();
 ```
 

@@ -12,7 +12,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 ### Requesting the Tracker Instance from the Piwik Class
 
 *   `Matomo.getTracker( trackerUrl, siteId )` - Get a new instance of the Tracker
-*   `Matomo.getAsyncTracker( optionalPiwikUrl, optionalPiwikSiteId )` - Get the internal instance of the Tracker used for asynchronous tracking
+*   `Matomo.getAsyncTracker( optionalMatomoUrl, optionalMatomoSiteId )` - Get the internal instance of the Tracker used for asynchronous tracking
 
 ### Using the Tracker Object
 
@@ -47,11 +47,11 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `getMatomoUrl()` - Return the Matomo server URL.
 *   `getPiwikUrl()` - Deprecated, use `getMatomoUrl()` instead. 
 *   `getCurrentUrl()` - Return the current url of the page that is currently being visited. If a custom URL was set before calling this method, the custom URL will be returned.
-*   `setDownloadClasses( string | array )` - Set classes to be treated as downloads (in addition to piwik_download)
+*   `setDownloadClasses( string | array )` - Set classes to be treated as downloads (in addition to matomo_download)
 *   `setDownloadExtensions( string | array )` - Set list of file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
 *   `addDownloadExtensions( string | array )` - Specify additional file extensions to be recognized as downloads. Example: 'doc' or ['doc', 'xls']
 *   `removeDownloadExtensions( string | array )` - Specify file extensions to be removed from the list of download file extensions. Example: 'doc' or ['doc', 'xls']
-*   `setIgnoreClasses( string | array )` - Set classes to be ignored if present in link (in addition to piwik_ignore)
+*   `setIgnoreClasses( string | array )` - Set classes to be ignored if present in link (in addition to matomo_ignore and piwik_ignore)
 *   `setLinkClasses( string | array )` - Set classes to be treated as outlinks (in addition to piwik_link)
 *   `setLinkTrackingTimer( integer )` - Set delay for link tracking in milliseconds.
 *   `getLinkTrackingTimer()` - Get delay for link tracking (in milliseconds).
