@@ -4,6 +4,7 @@ subGuides:
   - tests-php
   - tests-ui
   - tests-travis
+  - dependency-injection
 ---
 # Tests
 
