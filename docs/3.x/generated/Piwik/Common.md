@@ -296,5 +296,5 @@ For more information: [https://github.com/piwik/piwik/issues/374](https://github
 -  It accepts the following parameter(s):
     - `$var` (`mixed`) &mdash;
        The object to destroy.
-- It does not return anything.
+- It does not return anything or a mixed result.
 

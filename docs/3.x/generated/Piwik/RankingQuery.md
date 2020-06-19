@@ -64,7 +64,7 @@ Set the limit after which everything is grouped to "Others".
 -  It accepts the following parameter(s):
     - `$limit` (`int`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setotherslabel" id="setotherslabel"></a>
 <a name="setOthersLabel" id="setOthersLabel"></a>
@@ -77,7 +77,7 @@ Set the value to use for the label in the 'Others' row.
 -  It accepts the following parameter(s):
     - `$value` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addlabelcolumn" id="addlabelcolumn"></a>
 <a name="addLabelColumn" id="addLabelColumn"></a>
@@ -92,7 +92,7 @@ Labels are the columns that are replaced with "Others" after the limit.
 -  It accepts the following parameter(s):
     - `$labelColumn` (`string`|`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getlabelcolumns" id="getlabelcolumns"></a>
 <a name="getLabelColumns" id="getLabelColumns"></a>
@@ -115,7 +115,7 @@ Add a column that has be added to the outer queries.
       
     - `$aggregationFunction` (`string`|`bool`) &mdash;
        If set, this function is used to aggregate the values of "Others", eg, `'min'`, `'max'` or `'sum'`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setcolumntomarkexcludedrows" id="setcolumntomarkexcludedrows"></a>
 <a name="setColumnToMarkExcludedRows" id="setColumnToMarkExcludedRows"></a>
@@ -132,7 +132,7 @@ by [execute()](/api-reference/Piwik/RankingQuery#execute).
 -  It accepts the following parameter(s):
     - `$column`
        string Name of the column.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 
@@ -160,7 +160,7 @@ rows `log_action.type = TYPE_DOWNLOAD`.
        string The column name to partion by.
     - `$possibleValues`
        Array of possible column values.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 

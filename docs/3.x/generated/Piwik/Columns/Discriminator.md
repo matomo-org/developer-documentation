@@ -40,7 +40,7 @@ Join constructor.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="gettable" id="gettable"></a>
 <a name="getTable" id="getTable"></a>

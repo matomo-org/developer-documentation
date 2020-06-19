@@ -169,7 +169,7 @@ and segment.
 -  It accepts the following parameter(s):
     - `$numericRecords` (`array`) &mdash;
        A name-value mapping of numeric values that should be archived, eg, array('Referrers_distinctKeywords' => 23, 'Referrers_distinctCampaigns' => 234)
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="insertnumericrecord" id="insertnumericrecord"></a>
 <a name="insertNumericRecord" id="insertNumericRecord"></a>
@@ -187,7 +187,7 @@ Numeric values are not inserted if they equal `0`.
        The name of the numeric value, eg, `'Referrers_distinctKeywords'`.
     - `$value` (`float`) &mdash;
        The numeric value.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="insertblobrecord" id="insertblobrecord"></a>
 <a name="insertBlobRecord" id="insertBlobRecord"></a>
@@ -203,5 +203,5 @@ and segment.
        The name of the record, eg, 'Referrers_type'.
     - `$values` (`string`|`array`) &mdash;
        A blob string or an array of blob strings. If an array is used, the first element in the array will be inserted with the `$name` name. The others will be inserted with `$name . '_' . $index` as the record name (where $index is the index of the blob record in `$values`).
-- It does not return anything.
+- It does not return anything or a mixed result.
 

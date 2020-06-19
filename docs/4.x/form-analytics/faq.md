@@ -4,7 +4,7 @@ title: Developer FAQ
 ---
 # Form Analytics Developer FAQ
 
-This page is the Developer FAQ for [Form Analytics](https://www.form-analytics.net/). You may also be interested in the [Form Analytics User FAQs](https://piwik.org/faq/form-analytics/).
+This page is the Developer FAQ for [Form Analytics](https://www.form-analytics.net/). You may also be interested in the [Form Analytics User FAQs](https://matomo.org/faq/form-analytics/).
 
 ## I have a single page website or a web application, how can I re-scan the DOM to find new forms or form fields that were added after the initial page load, for example via Ajax / XHR? 
 

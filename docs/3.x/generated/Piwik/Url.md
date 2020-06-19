@@ -235,7 +235,7 @@ to the current URL without query string.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="redirecttourl" id="redirecttourl"></a>
 <a name="redirectToUrl" id="redirectToUrl"></a>
@@ -248,7 +248,7 @@ Redirects the user to the specified URL.
 -  It accepts the following parameter(s):
     - `$url` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 

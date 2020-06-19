@@ -30,7 +30,7 @@ _Note: This function does **not** create directories recursively._
 -  It accepts the following parameter(s):
     - `$path` (`string`) &mdash;
        The path of the directory to create.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="globr" id="globr"></a>
 <a name="globr" id="globr"></a>
@@ -68,7 +68,7 @@ Recursively deletes a directory.
        If true, `$dir` is deleted, otherwise just its contents.
     - `$beforeUnlink` ([`Closure`](http://php.net/class.Closure)) &mdash;
        An optional closure to execute on a file path before unlinking.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="copy" id="copy"></a>
 <a name="copy" id="copy"></a>
@@ -104,7 +104,7 @@ Copies the contents of a directory recursively from `$source` to `$target`.
        A directory to copy to, eg. '.'.
     - `$excludePhp` (`bool`) &mdash;
        Whether to avoid copying files if the file is related to PHP (includes .php, .tpl, .twig files).
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - `Piwik\Exception\Exception` &mdash; If a file cannot be copied.
 

@@ -52,7 +52,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="__wakeup" id="__wakeup"></a>
 <a name="__wakeup" id="__wakeup"></a>
@@ -60,7 +60,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
@@ -100,7 +100,7 @@ For valid date formats have a look at the [Date::factory()](/api-reference/Piwik
 -  It accepts the following parameter(s):
     - `$dateString` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before
                   Tue, 06 Aug 1991.
@@ -303,7 +303,7 @@ Sets the default end date of the period.
 -  It accepts the following parameter(s):
     - `$oDate` ([`Date`](../../Piwik/Date.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="parsedaterange" id="parsedaterange"></a>
 <a name="parseDateRange" id="parseDateRange"></a>
@@ -387,7 +387,7 @@ the range spans over.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getparentperiodlabel" id="getparentperiodlabel"></a>
 <a name="getParentPeriodLabel" id="getParentPeriodLabel"></a>
@@ -395,5 +395,5 @@ the range spans over.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 

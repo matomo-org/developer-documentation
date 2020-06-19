@@ -42,7 +42,7 @@ See [PrependValueToMetadata](/api-reference/Piwik/DataTable/Filter/PrependValueT
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>
@@ -56,7 +56,7 @@ is up to the derived BaseFilter class.
 -  It accepts the following parameter(s):
     - `$enable` (`bool`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="filtersubtable" id="filtersubtable"></a>
 <a name="filterSubTable" id="filterSubTable"></a>
@@ -69,5 +69,5 @@ Filters a row's subtable, if one exists and is loaded in memory.
 -  It accepts the following parameter(s):
     - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
        The row whose subtable should be filter.
-- It does not return anything.
+- It does not return anything or a mixed result.
 

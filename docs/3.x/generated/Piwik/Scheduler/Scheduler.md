@@ -57,7 +57,7 @@ was changed.
 -  It accepts the following parameter(s):
     - `$task` ([`Task`](../../Piwik/Scheduler/Task.md)) &mdash;
        Describes the scheduled task being rescheduled.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="rescheduletaskandruntomorrow" id="rescheduletaskandruntomorrow"></a>
 <a name="rescheduleTaskAndRunTomorrow" id="rescheduleTaskAndRunTomorrow"></a>
@@ -75,5 +75,5 @@ The task will be run the first time tomorrow.
 -  It accepts the following parameter(s):
     - `$task` ([`Task`](../../Piwik/Scheduler/Task.md)) &mdash;
        Describes the scheduled task being rescheduled.
-- It does not return anything.
+- It does not return anything or a mixed result.
 

@@ -328,7 +328,7 @@ Display a meaningful error message when any invalid parameter is being set.
 -  It accepts the following parameter(s):
     - `$overrideParams`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - ``
 
@@ -371,5 +371,5 @@ default, it is assumed visualizations do not support comparison.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 

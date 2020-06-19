@@ -59,7 +59,7 @@ _referrerName==Google,referrerName==Bing;country==IN_
 *   **format**; defines the format of the output
 
     *   xml
-    *   json (if you want to do [cross domain request in ajax](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/) and get json data, you can wrap the json data around a function call by using the **jsoncallback** parameter)
+    *   json (if you want to do [cross domain request in ajax](https://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/) and get json data, you can wrap the json data around a function call by using the **jsoncallback** parameter)
     *   csv (comma-separated values)
     *   tsv (tab-separated values, similar to CSV but loads properly in Excel)
     *   html
@@ -118,7 +118,7 @@ There are also generic filters you can choose to apply on all APIs that return w
 
 Some parameters can optionally accept arrays. For example, the urls parameter of SitesManager.addSite, SitesManager.addSiteAliasUrls, and SitesManager.updateSite allows for an array of urls to be passed. To pass an array add the bracket operators and an index to the parameter name in the get request. So, to call SitesManager.addSite with two urls you would use the following array:
 
-[https://demo.piwik.org/?module=API&method=SitesManager.addSite&siteName=new%20example%20website&urls[0]=http://example.org&urls[1]=http://example-alias.org](http://demo.piwik.org/?module=API&method=SitesManager.addSite&siteName=new%20example%20website&urls[0]=http://example.org&urls[1]=http://example-alias.org)
+[https://demo.matomo.org/?module=API&method=SitesManager.addSite&siteName=new%20example%20website&urls[0]=https://example.org&urls[1]=https://example-alias.org](https://demo.matomo.org/?module=API&method=SitesManager.addSite&siteName=new%20example%20website&urls[0]=https://example.org&urls[1]=https://example-alias.org)
 
 ### Advanced Users: Send multiple API Requests at once
 
@@ -126,7 +126,7 @@ Sometimes it is necessary to call the Piwik API a few times to get the data need
 
 To issue a bulk request, call the API.getBulkRequest method and pass the API methods & parameters (each request must be [URL Encoded](https://secure.php.net/manual/en/function.urlencode.php)) you wish to call in the 'urls' query parameter. For example, to call VisitsSummary.get & VisitorInterest.getNumberOfVisitsPerVisitDuration at the same time, you can use:
 
-    https://demo.piwik.org/?module=API&method=API.getBulkRequest&format=json&urls[0]=method%3dVisitsSummary.get%26idSite%3d3%26date%3d2012-03-06%26period%3dday&urls[1]=method%3dVisitorInterest.getNumberOfVisitsPerVisitDuration%26idSite%3d3%26date%3d2012-03-06%26period%3dday
+    https://demo.matomo.org/?module=API&method=API.getBulkRequest&format=json&urls[0]=method%3dVisitsSummary.get%26idSite%3d3%26date%3d2012-03-06%26period%3dday&urls[1]=method%3dVisitorInterest.getNumberOfVisitsPerVisitDuration%26idSite%3d3%26date%3d2012-03-06%26period%3dday
 
 Notice that urls[0] is the url-encoded call to VisitsSummary.get by itself and that urls[1] is what you would use to call VisitorInterest.getNumberOfVisitsPerVisitDuration by itself. The &format is specified only once (format=xml and format=json are supported for bulk requests).
 
@@ -134,7 +134,7 @@ The API Response will be an array containing the formatted result of each indivi
 
 You can also issue the Bulk request as a HTTP POST request to work around any request URI size limitations:
 
-    curl -i -X POST -d 'module=API&method=API.getBulkRequest&format=json&urls[0]=method%3dVisitsSummary.get%26idSite%3d3%26date%3d2012-03-06%26period%3dday&urls[1]=method%3dVisitorInterest.getNumberOfVisitsPerVisitDuration%26idSite%3d3%26date%3d2012-03-06%26period%3dday' https://demo.piwik.org/index.php
+    curl -i -X POST -d 'module=API&method=API.getBulkRequest&format=json&urls[0]=method%3dVisitsSummary.get%26idSite%3d3%26date%3d2012-03-06%26period%3dday&urls[1]=method%3dVisitorInterest.getNumberOfVisitsPerVisitDuration%26idSite%3d3%26date%3d2012-03-06%26period%3dday' https://demo.matomo.org/index.php
 
 
 ## Authenticate to the API via token_auth parameter
@@ -157,7 +157,7 @@ Here is a list of metrics returned by the API and their definition.
 
 *   `nb_uniq_visitors` - Number of unique visitors
 *   `nb_visits` - Number of Visits (30 min of inactivity considered a new visit)
-*   `nb_users` - Number of unique active users (visitors with a known [User ID](https://piwik.org/docs/user-id/)). If you are not using User ID then this metric will be set to zero.
+*   `nb_users` - Number of unique active users (visitors with a known [User ID](https://matomo.org/docs/user-id/)). If you are not using User ID then this metric will be set to zero.
 *   `nb_actions` - Number of actions (page views, outlinks and downloads)
 *   `sum_visit_length` - Total time spent, in seconds
 *   `bounce_count` - Number of visits that bounced (viewed only one page)
@@ -196,8 +196,8 @@ Here is a list of metrics returned by the API and their definition.
 *   `abandoned_carts` - This value is only set if the request contains '&abandonedCarts=1'. In this case, "orders" metrics will not be returned. It is the total number of abandoned carts which contained this Product SKU/Name/Category at least once.
 *   `avg_price` - The average revenue for this Product/Category.
 *   `avg_quantity` - The average quantity for this Product/Category.
-*   `nb_visits` - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](https://piwik.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The number of visits on the Product/Category page.
-*   `conversion_rate` - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](https://piwik.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The conversion rate is the number of orders (or abandoned_carts if the request contains '&abandonedCarts=1') containing this product/category divided by number of visits on the product/category page.
+*   `nb_visits` - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](https://matomo.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The number of visits on the Product/Category page.
+*   `conversion_rate` - This value appears only if you have set up ['Ecommerce Product/Category page tracking'](https://matomo.org/docs/ecommerce-analytics/#toc-tracking-product-page-views-category-page-views-optional). The conversion rate is the number of orders (or abandoned_carts if the request contains '&abandonedCarts=1') containing this product/category divided by number of visits on the product/category page.
 
 #### Event tracking metrics, appearing in Events API calls
 
@@ -210,7 +210,7 @@ Here is a list of metrics returned by the API and their definition.
 
 #### Glossary
 
-All the commonly used terms in Piwik Analytics are documented in the [Glossary](https://glossary.piwik.org) including all metrics and reports.
+All the commonly used terms in Piwik Analytics are documented in the [Glossary](https://glossary.matomo.org) including all metrics and reports.
 
 ## API Method List
 

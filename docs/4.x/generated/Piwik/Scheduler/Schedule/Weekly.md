@@ -24,7 +24,7 @@ Sets the hour of the day on which the task should be executed.
 -  It accepts the following parameter(s):
     - `$hour` (`int`) &mdash;
        Must be `>= 0` and `< 24`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the current scheduled period is **hourly** or if `$hour` is invalid.
 

@@ -21,9 +21,9 @@ Users can switch visualizations by clicking on one of the icons displayed below 
 
 ![](/img/report-visualizations.png)
 
-These icons are called **footer icons**. Not all visualizations have to be available in this manner. For example, the [Visit Log](https://piwik.org/docs/real-time/) uses its own visualization, but since it can only use data from one report (`Live.getLastVisitsDetails`) it is not available in the footer of other reports.
+These icons are called **footer icons**. Not all visualizations have to be available in this manner. For example, the [Visit Log](https://matomo.org/docs/real-time/) uses its own visualization, but since it can only use data from one report (`Live.getLastVisitsDetails`) it is not available in the footer of other reports.
 
-To learn more about the controls that surround a visualization in most report displays, [read the user documentation for report visualizations](https://piwik.org/docs/piwik-tour/#a-look-at-a-piwik-report).
+To learn more about the controls that surround a visualization in most report displays, [read the user documentation for report visualizations](https://matomo.org/docs/matomo-tour/#a-look-at-a-piwik-report).
 
 ### Using ViewDataTable
 
@@ -123,7 +123,7 @@ public function addWidgets()
 
 Piwik users will then be able to see and select **myReport** in the widget selector.
 
-*Note: Any controller method can be embedded in the dashboard, not just reports. So if you have a popup that you'd like to make available as a dashboard widget, you can use [WidgetsList.addWidgets](/api-reference/events#widgetslistaddwidgets) to do so. This is exactly how we made the [Visitor Profile](https://piwik.org/docs/user-profile/) available in the dashboard.*
+*Note: Any controller method can be embedded in the dashboard, not just reports. So if you have a popup that you'd like to make available as a dashboard widget, you can use [WidgetsList.addWidgets](/api-reference/events#widgetslistaddwidgets) to do so. This is exactly how we made the [Visitor Profile](https://matomo.org/docs/user-profile/) available in the dashboard.*
 
 ## Core report visualizations
 
@@ -144,7 +144,7 @@ You can use these visualizations when creating [ViewDataTable](/api-reference/Pi
 
 Plugins can provide their own visualizations, either for use within the plugin or as a new visualization that can be applied to any report.
 
-The [Treemap Visualization](https://plugins.piwik.org/TreemapVisualization) plugin is an example of a plugin providing a visualization that can be used for any report.
+The [Treemap Visualization](https://plugins.matomo.org/TreemapVisualization) plugin is an example of a plugin providing a visualization that can be used for any report.
 
 ### Extending ViewDataTable
 
@@ -217,7 +217,7 @@ Visualizations can also create their own [RequestConfig](/api-reference/Piwik/Vi
 
 If needed, custom visualizations can alter what data is loaded by the base `ViewDataTable` class.
 
-The evolution graph visualization does this to get reports for the last N periods so it can display data over time. The [treemap visualization](https://plugins.piwik.org/TreemapVisualization) does this to get data for last period so the percent change of each row can be displayed.
+The evolution graph visualization does this to get reports for the last N periods so it can display data over time. The [treemap visualization](https://plugins.matomo.org/TreemapVisualization) does this to get data for last period so the percent change of each row can be displayed.
 
 To change what data is loaded, visualizations can alter the request using the [`$request_parameters_to_modify`](/api-reference/Piwik/ViewDataTable/RequestConfig#request_parameters_to_modify) property. This can be done in the [`Visualization::beforeLoadDataTable()`](/api-reference/Piwik/Plugin/Visualization#beforeloaddatatable) method. For example:
 

@@ -48,7 +48,7 @@ The abstract class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="__wakeup" id="__wakeup"></a>
 <a name="__wakeup" id="__wakeup"></a>
@@ -56,7 +56,7 @@ The abstract class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="ismultipleperiod" id="ismultipleperiod"></a>
 <a name="isMultiplePeriod" id="isMultiplePeriod"></a>
@@ -96,7 +96,7 @@ For valid date formats have a look at the [Date::factory()](/api-reference/Piwik
 -  It accepts the following parameter(s):
     - `$dateString` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before
                   Tue, 06 Aug 1991.
@@ -225,7 +225,7 @@ Returns the start day and day after the end day for this period in the given tim
 -  It accepts the following parameter(s):
     - `$timezone` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="tostring" id="tostring"></a>
 <a name="toString" id="toString"></a>

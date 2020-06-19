@@ -70,7 +70,7 @@ cannot be found for the ID, the ID is returned.
 -  It accepts the following parameter(s):
     - `$language` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getdefaultlanguage" id="getdefaultlanguage"></a>
 <a name="getDefaultLanguage" id="getDefaultLanguage"></a>
@@ -90,7 +90,7 @@ Generate javascript translations array
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="adddirectory" id="adddirectory"></a>
 <a name="addDirectory" id="addDirectory"></a>
@@ -103,7 +103,7 @@ Add a directory containing translations.
 -  It accepts the following parameter(s):
     - `$directory` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="reset" id="reset"></a>
 <a name="reset" id="reset"></a>
@@ -113,7 +113,7 @@ Should be used by tests only, and this method should eventually be removed.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="findtranslationkeyfortranslation" id="findtranslationkeyfortranslation"></a>
 <a name="findTranslationKeyForTranslation" id="findTranslationKeyForTranslation"></a>

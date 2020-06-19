@@ -11,6 +11,7 @@ subGuides:
   - scheduled-tasks
   - visitor-log-and-profile
   - piwik-on-the-command-line
+  - dependency-injection
   - gdpr
 ---
 

@@ -40,7 +40,7 @@ Plugins are not just targeted at 3rd party developers who want to customize Piwi
 As a result, there are two kinds of plugins:
 
 - **default plugins** provide Piwik's base features: they are included in the repository and in the distribution
-- **optional plugins** can be installed manually (by copying them in the `plugins/` folder) or through [Piwik's MarketPlace](https://plugins.piwik.org/) in the web interface
+- **optional plugins** can be installed manually (by copying them in the `plugins/` folder) or through [Matomo's MarketPlace](https://plugins.matomo.org/) in the web interface
 
 ## The codebase
 
@@ -55,8 +55,10 @@ tests/
 vendor/         # Libraries installed by Composer
 console         # Entry point for the CLI interface
 index.php       # Entry point for the web application and the HTTP reporting API
+matomo.php      # Entry point for the HTTP tracking API
 piwik.php       # Entry point for the HTTP tracking API
 piwik.js        # JavaScript tracker to be included in websites
+matomo.js       # JavaScript tracker to be included in websites
 ```
 
 Piwik uses [Composer](https://getcomposer.org/) to install its dependencies (PHP libraries) into the `vendor/` directory.
@@ -101,7 +103,7 @@ The `Piwik\Plugin\API\Controller` class will be called, and it will dispatch the
 
 This HTTP API lets the JavaScript tracker **submit analytics data** to be saved in Piwik.
 
-Its entry point is different from Piwik's web application and HTTP reporting API: it is through the `piwik.php` file.
+Its entry point is different from Piwik's web application and HTTP reporting API: it is through the `matomo.php` file.
 
 Read more about this in the ["The Tracking HTTP API" reference](/api-reference/tracking-api).
 

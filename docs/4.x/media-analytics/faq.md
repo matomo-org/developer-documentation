@@ -3,7 +3,7 @@ category: Integrate
 ---
 # Developer FAQ
 
-This page is the Developer FAQ for [Media Analytics](https://www.media-analytics.net/). You may also be interested in the [Media Analytics User FAQs](https://piwik.org/faq/media-analytics/).
+This page is the Developer FAQ for [Media Analytics](https://www.media-analytics.net/). You may also be interested in the [Media Analytics User FAQs](https://matomo.org/faq/media-analytics/).
 
 ## How do I enable video analytics for Youtube videos? 
 
@@ -74,59 +74,59 @@ Using `_paq.push` for multiple trackers is a good and simple way when you want t
 
 ```js
 // configuration of first tracker
-_paq.push(['setTrackerUrl', 'http://example.com/piwik.php']);
+_paq.push(['setTrackerUrl', 'https://example.com/matomo.php']);
 _paq.push(['setSiteId', 1]);
 // configuration of second tracker
-_paq.push(['addTracker', 'http://example.com/piwik.php', 2]);
+_paq.push(['addTracker', 'https://example.com/matomo.php', 2]);
 ```
 
 If you are working with Piwik tracker instances because you want to configure each tracker instance differently and track
 different data into each Piwik, you need to set the tracker instances manually:
 
 ```js
-window.piwikAsyncInit = function () {
+window.matomoAsyncInit = function () {
     // This works from Piwik 2.17.1. Before 2.17.1 you need to define a method
-    // `window.piwikMediaAnalyticsAsyncInit` instead of `window.piwikAsyncInit`.
+    // `window.piwikMediaAnalyticsAsyncInit` instead of `window.matomoAsyncInit`.
     
-    var piwikTracker1 = Piwik.getTracker('http://example.com/piwik.php', 1);
-    var piwikTracker2 = Piwik.getTracker('http://example.com/piwik.php', 2);
-    var piwikTracker3 = Piwik.getTracker('http://example.com/piwik.php', 3);
+    var matomoTracker1 = Matomo.getTracker('https://example.com/matomo.php', 1);
+    var matomoTracker2 = Matomo.getTracker('https://example.com/matomo.php', 2);
+    var matomoTracker3 = Matomo.getTracker('https://example.com/matomo.php', 3);
 
-    Piwik.MediaAnalytics.setPiwikTrackers([piwikTracker1, piwikTracker2, piwikTracker3]);
+    Matomo.MediaAnalytics.setPiwikTrackers([matomoTracker1, matomoTracker2, matomoTracker3]);
 
     // Media Analytics tracking is enabled by default, you can customize the tracking like this:
-    piwikTracker2.MediaAnalytics.disableTrackProgress();
-    piwikTracker3.MediaAnalytics.disableTrackEvents();
+    matomoTracker2.MediaAnalytics.disableTrackProgress();
+    matomoTracker3.MediaAnalytics.disableTrackEvents();
 }
 ```
 
-It is important to define these methods before the Piwik tracker file is loaded. Otherwise, your `piwikAsyncInit` 
+It is important to define these methods before the Piwik tracker file is loaded. Otherwise, your `matomoAsyncInit` 
 or `piwikMediaAnalyticsAsyncInit` method will never be called.
 
 ## Is it possible to not use the "paq.push" methods and instead call the MediaAnalytics tracker methods directly?
 
 Yes. To initialize the Media tracker you need to define a callback method `window.piwikMediaAnalyticsAsyncInit`
 which will be executed as soon as the media tracker is initialized. As soon as this callback is called, you can be sure
-that the `Piwik.MediaAnalytics` object is defined.
+that the `Matomo.MediaAnalytics` object is defined.
 
-In the `piwik.js` tracker we differentiate between two kind of methods:
+In the `matomo.js` tracker we differentiate between two kind of methods:
 
 * Calling a **tracker instance method** affects only a specific tracker instance. In the docs you can 
   identify a tracker method when the method name contains a single dot (`.`). For example `MediaAnalytics.disableTrackEvents` 
   refers to a tracker method tracker that can be called like `tracker.MediaAnalytics.disableTrackEvents()`.
 * Calling a **static method** affects all created tracker instances. In the docs you can identify a static method when 
   the method name contains `::`. For example `MediaAnalytics::removePlayer` refers to a static method 
-  `Piwik.MediaAnalytics.removePlayer()`.
+  `Matomo.MediaAnalytics.removePlayer()`.
 
 ```js
 window.piwikMediaAnalyticsAsyncInit = function () {
     // static methods
     var intervalInSeconds = 2;
-    Piwik.MediaAnalytics.removePlayer('youtube'); 
-    Piwik.MediaAnalytics.setPingInterval(intervalInSeconds);
+    Matomo.MediaAnalytics.removePlayer('youtube'); 
+    Matomo.MediaAnalytics.setPingInterval(intervalInSeconds);
      
     // tracker methods
-    var tracker = Piwik.getAsyncTracker(); 
+    var tracker = Matomo.getAsyncTracker(); 
     // get tracker instance if you do not have a reference to the tracker instance yet
     tracker.MediaAnalytics.disableTrackEvents();
 };
@@ -141,7 +141,7 @@ for a specific tracker instance like this:
 ```js
 window.piwikMediaAnalyticsAsyncInit = function () {
     // get tracker instance if you do not have a reference to the tracker instance yet
-    var tracker = Piwik.getAsyncTracker(piwikSiteUrl, piwikSiteId); 
+    var tracker = Matomo.getAsyncTracker(matomoSiteUrl, piwikSiteId); 
     tracker.MediaAnalytics.disableTrackEvents();
     tracker.MediaAnalytics.disableTrackProgress();
 };

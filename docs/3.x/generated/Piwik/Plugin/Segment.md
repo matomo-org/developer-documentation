@@ -49,7 +49,7 @@ created.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setacceptedvalues" id="setacceptedvalues"></a>
 <a name="setAcceptedValues" id="setAcceptedValues"></a>
@@ -64,7 +64,7 @@ this as well. For example "Any URL including protocol. The URL must be URL encod
 -  It accepts the following parameter(s):
     - `$acceptedValues` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setcategory" id="setcategory"></a>
 <a name="setCategory" id="setCategory"></a>
@@ -78,7 +78,7 @@ or 'General_Visit'.
 -  It accepts the following parameter(s):
     - `$category` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setname" id="setname"></a>
 <a name="setName" id="setName"></a>
@@ -92,7 +92,7 @@ translation key such as 'Actions_ColumnEntryPageTitle' or 'Resolution_ColumnReso
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setsegment" id="setsegment"></a>
 <a name="setSegment" id="setSegment"></a>
@@ -107,7 +107,7 @@ you need to set "&segment=searches>0" in the UI.
 -  It accepts the following parameter(s):
     - `$segment` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setsqlfilter" id="setsqlfilter"></a>
 <a name="setSqlFilter" id="setSqlFilter"></a>
@@ -127,7 +127,7 @@ If the closure returns NULL, then Piwik assumes the segment sub-string will not 
 -  It accepts the following parameter(s):
     - `$sqlFilter` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setsqlfiltervalue" id="setsqlfiltervalue"></a>
 <a name="setSqlFilterValue" id="setSqlFilterValue"></a>
@@ -143,7 +143,7 @@ segment. This callback is called shortly before [setSqlFilter()](/api-reference/
 -  It accepts the following parameter(s):
     - `$sqlFilterValue` (`string`|`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setsqlsegment" id="setsqlsegment"></a>
 <a name="setSqlSegment" id="setSqlSegment"></a>
@@ -157,7 +157,7 @@ Defines to which column in the MySQL database the segment belongs: 'mytablename.
 -  It accepts the following parameter(s):
     - `$sqlSegment` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setunionofsegments" id="setunionofsegments"></a>
 <a name="setUnionOfSegments" id="setUnionOfSegments"></a>
@@ -172,7 +172,7 @@ All set segments will be applied via an OR operator.
 -  It accepts the following parameter(s):
     - `$segments` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="settype" id="settype"></a>
 <a name="setType" id="setType"></a>
@@ -185,7 +185,7 @@ Set (overwrite) the type of this segment which is usually either a 'dimension' o
 -  It accepts the following parameter(s):
     - `$type` (`string`) &mdash;
        See constansts TYPE_*
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getsegment" id="getsegment"></a>
 <a name="getSegment" id="getSegment"></a>
@@ -208,7 +208,7 @@ Set callback which will be executed when user will call for suggested values for
 -  It accepts the following parameter(s):
     - `$suggestedValuesCallback` (`callable`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setsuggestedvaluesapi" id="setsuggestedvaluesapi"></a>
 <a name="setSuggestedValuesApi" id="setSuggestedValuesApi"></a>
@@ -221,7 +221,7 @@ Set callback which will be executed when user will call for suggested values for
 -  It accepts the following parameter(s):
     - `$suggestedValuesApi` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setpermission" id="setpermission"></a>
 <a name="setPermission" id="setPermission"></a>
@@ -236,7 +236,7 @@ a certain segment only available to users having super user access you could do 
 -  It accepts the following parameter(s):
     - `$permission` (`bool`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setisinternal" id="setisinternal"></a>
 <a name="setIsInternal" id="setIsInternal"></a>
@@ -251,7 +251,7 @@ These types of segments are, for example, used in unions for other segments, but
 -  It accepts the following parameter(s):
     - `$value` (`bool`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="isinternal" id="isinternal"></a>
 <a name="isInternal" id="isInternal"></a>

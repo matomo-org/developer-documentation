@@ -11,7 +11,7 @@ In this guide you will learn how to create an experiment and implement it in you
  
 ## Creating an experiment
 
-First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://piwik.org/docs/ab-testing/) to learn more.
+First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more.
 
 When you are asked on which target pages the experiment should be activated, we recommend selecting "Visitors enter this experiment on any page".
 
@@ -79,7 +79,7 @@ The IDs are also shown in the "Embed code" area when you edit an experiment in t
 
 ## Using A/B tests along with the standard Piwik campaign tracking
 
-Measuring the impact of your campaigns using experiments complements the existing built-in Piwik [Campaign Tracking](https://piwik.org/docs/tracking-campaigns/).
+Measuring the impact of your campaigns using experiments complements the existing built-in Piwik [Campaign Tracking](https://matomo.org/docs/tracking-campaigns/).
 
 We recommend creating experiments to measure your marketing campaigns as it will provide you additional value such as:
 
@@ -97,14 +97,14 @@ We recommend tagging your campaign URLs with both the standard Campaign Tracking
  
 The standard campaign parameters are:
 
-* `pk_campaign` - The campaign name
-* `pk_kwd` - The campaign keyword. This parameter is optional.
+* `matomo_campaign` - The campaign name
+* `matomo_kwd` - The campaign keyword. This parameter is optional.
 
 For example, when the `original` version for experiment `buyNowColor` was shown, and you are sending an Email marketing 
 campaign `SummerDeals`, the URL you link in your emails will be:
 
 ```
-https://example.org/landingpage?pk_abe=buyNowColor&pk_abv=original&pk_campaign=SummerDeals
+https://example.org/landingpage?pk_abe=buyNowColor&pk_abv=original&matomo_campaign=SummerDeals
 ```
 
 

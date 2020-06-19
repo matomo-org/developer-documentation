@@ -56,7 +56,7 @@ Adds a new entry to the menu.
        An icon classname, such as "icon-add". Only supported by admin menu
     - `$onclick` (`bool`|`string`) &mdash;
        Will execute the on click handler instead of executing the link. Only supported by admin menu.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
@@ -71,7 +71,7 @@ Removes an existing entry from the menu.
        The menu's category name. Can be a translation token.
     - `$subMenuName` (`bool`|`string`) &mdash;
        The menu item's name. Can be a translation token.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
@@ -90,7 +90,7 @@ Renames a single menu entry.
       
     - `$subMenuRenamed`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
@@ -107,7 +107,7 @@ Edits a URL of an existing menu entry.
       
     - `$newUrl`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addhtml" id="addhtml"></a>
 <a name="addHtml" id="addHtml"></a>
@@ -128,5 +128,5 @@ Directly adds a menu entry containing html.
       
     - `$tooltip` (`string`) &mdash;
        Tooltip to display.
-- It does not return anything.
+- It does not return anything or a mixed result.
 

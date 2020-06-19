@@ -74,7 +74,7 @@ Force expiration of the current nonce.
 -  It accepts the following parameter(s):
     - `$id` (`string`) &mdash;
        The unique nonce ID.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getorigin" id="getorigin"></a>
 <a name="getOrigin" id="getOrigin"></a>
@@ -111,7 +111,7 @@ Verifies and discards a nonce.
        The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).
     - `$nonce` (`string`|`null`) &mdash;
        The nonce from the client. If `null`, the value from the **nonce** query parameter is used.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the nonce is invalid. See {@link verifyNonce()}.
 

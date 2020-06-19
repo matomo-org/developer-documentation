@@ -126,7 +126,7 @@ Disables the cache buster (adding of ?cb=.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>
@@ -166,7 +166,7 @@ Variable names may not be prefixed with '_'.
        The variable name.
     - `$val` (`mixed`) &mdash;
        The variable value.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="__get" id="__get"></a>
 <a name="__get" id="__get"></a>
@@ -209,7 +209,7 @@ Unsets a template variable.
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
        The name of the template variable.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
@@ -237,7 +237,7 @@ set just before rendering.
 -  It accepts the following parameter(s):
     - `$contentType` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
 <a name="setXFrameOptions" id="setXFrameOptions"></a>
@@ -254,7 +254,7 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 -  It accepts the following parameter(s):
     - `$option` (`string`) &mdash;
        ('deny' or 'sameorigin')
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="singlereport" id="singlereport"></a>
 <a name="singleReport" id="singleReport"></a>
@@ -297,5 +297,5 @@ Sets whether a strict Referrer-Policy header will be sent (if not, nothing is se
 -  It accepts the following parameter(s):
     - `$useStrictReferrerPolicy` (`bool`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

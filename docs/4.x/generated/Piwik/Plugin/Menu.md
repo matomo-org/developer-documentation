@@ -107,7 +107,7 @@ Configures the top menu which is supposed to contain analytics related items suc
 -  It accepts the following parameter(s):
     - `$menu` ([`MenuTop`](../../Piwik/Menu/MenuTop.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="configureadminmenu" id="configureadminmenu"></a>
 <a name="configureAdminMenu" id="configureAdminMenu"></a>
@@ -121,5 +121,5 @@ Configures the admin menu which is supposed to contain only administration relat
 -  It accepts the following parameter(s):
     - `$menu` ([`MenuAdmin`](../../Piwik/Menu/MenuAdmin.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

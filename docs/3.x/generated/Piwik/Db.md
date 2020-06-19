@@ -126,7 +126,7 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
 -  It accepts the following parameter(s):
     - `$dbConfig` (`array`|`null`) &mdash;
        Connection parameters in an array. Defaults to the `[database]` INI config section.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="createreaderdatabaseobject" id="createreaderdatabaseobject"></a>
 <a name="createReaderDatabaseObject" id="createReaderDatabaseObject"></a>
@@ -143,7 +143,7 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
 -  It accepts the following parameter(s):
     - `$dbConfig` (`array`|`null`) &mdash;
        Connection parameters in an array. Defaults to the `[database]` INI config section.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="destroydatabaseobject" id="destroydatabaseobject"></a>
 <a name="destroyDatabaseObject" id="destroyDatabaseObject"></a>
@@ -155,7 +155,7 @@ For tests.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="exec" id="exec"></a>
 <a name="exec" id="exec"></a>
@@ -352,7 +352,7 @@ Drops all tables
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getcolumnnamesfromtable" id="getcolumnnamesfromtable"></a>
 <a name="getColumnNamesFromTable" id="getColumnNamesFromTable"></a>
@@ -535,7 +535,7 @@ the table will not be locked for too long.
        The maximum number of rows to scan in one query.
     - `$params` (`array`) &mdash;
        Parameters to bind in the query, `array(param1 => value1, param2 => value2)`
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getdblock" id="getdblock"></a>
 <a name="getDbLock" id="getDbLock"></a>
@@ -591,7 +591,7 @@ Checks whether the database user is allowed to lock tables.
 -  It accepts the following parameter(s):
     - `$enable` (`bool`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="isquerylogenabled" id="isquerylogenabled"></a>
 <a name="isQueryLogEnabled" id="isQueryLogEnabled"></a>
@@ -610,5 +610,5 @@ Checks whether the database user is allowed to lock tables.
 -  It accepts the following parameter(s):
     - `$version`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

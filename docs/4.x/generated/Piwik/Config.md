@@ -66,7 +66,7 @@ Returns a configuration value or section by name.
 -  It accepts the following parameter(s):
     - `$name`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getfromcommonconfig" id="getfromcommonconfig"></a>
 <a name="getFromCommonConfig" id="getFromCommonConfig"></a>
@@ -77,7 +77,7 @@ Returns a configuration value or section by name.
 -  It accepts the following parameter(s):
     - `$name`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getfromlocalconfig" id="getfromlocalconfig"></a>
 <a name="getFromLocalConfig" id="getFromLocalConfig"></a>
@@ -88,7 +88,7 @@ Returns a configuration value or section by name.
 -  It accepts the following parameter(s):
     - `$name`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="__set" id="__set"></a>
 <a name="__set" id="__set"></a>
@@ -103,7 +103,7 @@ Sets a configuration value or section.
        This section name or value name to set.
     - `$value` (`mixed`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="forcesave" id="forcesave"></a>
 <a name="forceSave" id="forceSave"></a>
@@ -114,5 +114,5 @@ values are different from the default.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 

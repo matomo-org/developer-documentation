@@ -23,15 +23,15 @@ To enrich the tracker create a file named `tracker.js` in your Matomo plugin dir
         winodw._paq.push(['disableCookies']);
     }
 
-    if ('object' === typeof window.Piwik) {
+    if ('object' === typeof window.Matomo) {
         init();
     } else {
         // tracker might not be loaded yet
-        if ('object' !== typeof window.piwikPluginAsyncInit) {
-            window.piwikPluginAsyncInit = [];
+        if ('object' !== typeof window.matomoPluginAsyncInit) {
+            window.matomoPluginAsyncInit = [];
         }
 
-        window.piwikPluginAsyncInit.push(init);
+        window.matomoPluginAsyncInit.push(init);
     }
 
 })(); 
@@ -42,7 +42,7 @@ To enrich the tracker create a file named `tracker.js` in your Matomo plugin dir
 In order to test your tracker integration, execute the following console command within your root Matomo directory.
 
 ```bash
-./console custom-piwik-js:update --ignore-minified
+./console custom-matomo-js:update --ignore-minified
 ```
 
 This will merge the content of your `tracker.js` file with the JS tracker template from `$matomoRootDir/js/piwik.min.js` and save the
@@ -58,13 +58,13 @@ You can add additional tracking methods for example to disable your feature, to 
 ```js
 function init() {
     var enableTracker = true;
-    Piwik.MyPlugin = {
+    Matomo.MyPlugin = {
         disableTracking: function () {
             enableTracker = false;
         }
     };
     
-    Piwik.on('TrackerSetup', function (tracker) {
+    Matomo.on('TrackerSetup', function (tracker) {
         tracker.MyPlugin = {
             trackme: function () {
                 if (enableTracker) {
@@ -100,7 +100,7 @@ parameters server side, store the value in a dimension and provide new reports b
 
 ```js
 function init() {
-    Piwik.addPlugin('MyPlugin', {
+    Matomo.addPlugin('MyPlugin', {
         log: function () {
             // add additional tracking parameters to a page view tracking request
             var canvas = document.createElement('canvas');
@@ -119,7 +119,7 @@ function init() {
         unload: function() {
             // executed when the user is leaving the page
             // can be useful to send for example any not yet sent tracking request
-            var trackers = Piwik.getAsyncTrackers();
+            var trackers = Matomo.getAsyncTrackers();
             for (var i = 0; i < trackers.length; i++) {
                 trackers[i].trackRequest('ping=1');
             }
@@ -132,16 +132,16 @@ Other event names are `ecommerce`, `sitesearch`, `link`, `contentInteraction`, `
 
 ### Useful methods:
 
-* `Piwik.JSON` get access to the JSON object
-* `Piwik.DOM.onReady(callback)` calls the `callback` method when the DOM is ready but not yet loaded
-* `Piwik.DOM.onLoad(callback)` calls the `callback` method when the DOM is fully loaded
-* `Piwik.DOM.isNodeVisible(htmlNode)` checks if the given HTML element is visible within the viewport right now
-* `Piwik.DOM.addEventListener(element, eventType, callback, useCapture)` listen to an event without needing to worry about cross browser support
-* `Piwik.on(eventName, callback)` listen to a Matomo JS tracker event
-* `Piwik.off(eventName, callback)` stop listening to a Matomo JS tracker event
-* `Piwik.trigger(eventName, params, context)` Triggers the given event and passes the parameters to all handlers. If no context is given, the callback will be executed in the `window` context.
-* `Piwik.addPlugin(pluginName, pluginObject)` listen to tracker plugin events see example above
-* `Piwik.getAsyncTrackers()` get an array of all created async tracker instances
+* `Matomo.JSON` get access to the JSON object
+* `Matomo.DOM.onReady(callback)` calls the `callback` method when the DOM is ready but not yet loaded
+* `Matomo.DOM.onLoad(callback)` calls the `callback` method when the DOM is fully loaded
+* `Matomo.DOM.isNodeVisible(htmlNode)` checks if the given HTML element is visible within the viewport right now
+* `Matomo.DOM.addEventListener(element, eventType, callback, useCapture)` listen to an event without needing to worry about cross browser support
+* `Matomo.on(eventName, callback)` listen to a Matomo JS tracker event
+* `Matomo.off(eventName, callback)` stop listening to a Matomo JS tracker event
+* `Matomo.trigger(eventName, params, context)` Triggers the given event and passes the parameters to all handlers. If no context is given, the callback will be executed in the `window` context.
+* `Matomo.addPlugin(pluginName, pluginObject)` listen to tracker plugin events see example above
+* `Matomo.getAsyncTrackers()` get an array of all created async tracker instances
 * For a [list of all tracker specific methods click here](/api-reference/tracking-javascript)
 
 ### Minifying the tracker
@@ -165,16 +165,16 @@ creating a file `tests/javascript/index.php` within your plugin directory. A tes
 test("Matomo MyPlugin", function() {
     expect(2);
 
-    equal( typeof Piwik.MyPlugin, 'object', 'MyPlugin' );
+    equal( typeof Matomo.MyPlugin, 'object', 'MyPlugin' );
 
-    var MyPlugin = Piwik.MyPlugin;
+    var MyPlugin = Matomo.MyPlugin;
     equal( typeof MyPlugin.disableTracking, 'object', 'MyPlugin.disableTracking' );
 });
 
 test("Matomo MyPlugin enriches tracker", function() {
     expect(2);
 
-    var tracker = Piwik.getAsyncTracker();
+    var tracker = Matomo.getAsyncTracker();
 
     equal( typeof tracker.MyPlugin, 'object', 'MyPlugin' );
     equal( typeof tracker.MyPlugin.trackme, 'function', 'Tracker MyPlugin.trackme');

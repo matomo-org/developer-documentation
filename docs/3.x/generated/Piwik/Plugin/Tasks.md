@@ -54,7 +54,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
       
     - `$priority`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="weekly" id="weekly"></a>
 <a name="weekly" id="weekly"></a>
@@ -73,7 +73,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
       
     - `$priority`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="monthly" id="monthly"></a>
 <a name="monthly" id="monthly"></a>
@@ -92,7 +92,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
       
     - `$priority`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="custom" id="custom"></a>
 <a name="custom" id="custom"></a>

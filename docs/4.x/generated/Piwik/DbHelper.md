@@ -33,5 +33,5 @@ DbHelper::createTable('tablename', $tableDefinition);
        The name of the table without any piwik prefix.
     - `$createDefinition` (`string`) &mdash;
        The table create definition
-- It does not return anything.
+- It does not return anything or a mixed result.
 

@@ -61,7 +61,7 @@ Adds a new entry to the menu.
        An icon classname, such as "icon-add". Only supported by admin menu
     - `$onclick` (`bool`|`string`) &mdash;
        Will execute the on click handler instead of executing the link. Only supported by admin menu.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
@@ -76,7 +76,7 @@ Removes an existing entry from the menu.
        The menu's category name. Can be a translation token.
     - `$subMenuName` (`bool`|`string`) &mdash;
        The menu item's name. Can be a translation token.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
@@ -95,7 +95,7 @@ Renames a single menu entry.
       
     - `$subMenuRenamed`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
@@ -112,7 +112,7 @@ Edits a URL of an existing menu entry.
       
     - `$newUrl`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addpersonalitem" id="addpersonalitem"></a>
 <a name="addPersonalItem" id="addPersonalItem"></a>
@@ -133,7 +133,7 @@ See add(). Adds a new menu item to the manage section of the user menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="adddevelopmentitem" id="adddevelopmentitem"></a>
 <a name="addDevelopmentItem" id="addDevelopmentItem"></a>
@@ -154,7 +154,7 @@ See add(). Adds a new menu item to the development section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="adddiagnosticitem" id="adddiagnosticitem"></a>
 <a name="addDiagnosticItem" id="addDiagnosticItem"></a>
@@ -175,7 +175,7 @@ See add(). Adds a new menu item to the diagnostic section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addplatformitem" id="addplatformitem"></a>
 <a name="addPlatformItem" id="addPlatformItem"></a>
@@ -196,7 +196,7 @@ See add(). Adds a new menu item to the platform section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addmeasurableitem" id="addmeasurableitem"></a>
 <a name="addMeasurableItem" id="addMeasurableItem"></a>
@@ -217,7 +217,7 @@ See add(). Adds a new menu item to the measurable section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addsystemitem" id="addsystemitem"></a>
 <a name="addSystemItem" id="addSystemItem"></a>
@@ -238,5 +238,5 @@ See add(). Adds a new menu item to the manage section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

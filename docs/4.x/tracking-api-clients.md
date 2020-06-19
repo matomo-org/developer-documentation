@@ -11,7 +11,7 @@ category: Integrate
 
 ## JavaScript SDK
 
-If you are building websites, you can use our powerful JavaScript SDK to measure all aspects of your website experience. Learn more: [JavaScript tracking client.](https://developer.piwik.org/guides/tracking-javascript-guide)
+If you are building websites, you can use our powerful JavaScript SDK to measure all aspects of your website experience. Learn more: [JavaScript tracking client.](https://developer.matomo.org/guides/tracking-javascript-guide)
 
 ## Mobile SDKs
 
@@ -21,13 +21,13 @@ Use the SDKs below for mobile app and product analytics with Matomo.
 
 If you are building iOS apps, Apple tvOs or macOS apps, you can use the Swift PiwikTracker client (or the older Objective-C PiwikTracker) to send tracking data to your Piwik server.
 
-Learn more and download Piwik iOS SDK on Github at [github.com/matomo-org/piwik-sdk-ios](https://github.com/matomo-org/piwik-sdk-ios).
+Learn more and download Piwik iOS SDK on Github at [github.com/matomo-org/matomo-sdk-ios](https://github.com/matomo-org/piwik-sdk-ios).
 
 ### Android SDK
 
 If you are building Android apps (for Android smartphones, tablets, Fire TVs, etc.), you can use the Android Java client to send tracking data to your Piwik server.
 
-Learn more and download Piwik Android SDK on Github at [github.com/matomo-org/piwik-sdk-android](https://github.com/matomo-org/piwik-sdk-android).
+Learn more and download Piwik Android SDK on Github at [github.com/matomo-org/matomo-sdk-android](https://github.com/matomo-org/piwik-sdk-android).
 
 ### Appcelerator Titanium Module
 
@@ -41,15 +41,15 @@ Use the clients below for server-side analytics and app tracking with Matomo.
 
 ### PHP client
 
-Learn more about our Piwik Tracking API PHP client on Github: [github.com/matomo-org/piwik-php-tracker](https://github.com/matomo-org/piwik-php-tracker).
+Learn more about our Piwik Tracking API PHP client on Github: [github.com/matomo-org/matomo-php-tracker](https://github.com/matomo-org/piwik-php-tracker).
 
 ### Java client
 
-A Java client for the Piwik Tracking API is available on Github: [github.com/matomo-org/piwik-java-tracker](https://github.com/matomo-org/piwik-java-tracker#readme).
+A Java client for the Piwik Tracking API is available on Github: [github.com/matomo-org/matomo-java-tracker](https://github.com/matomo-org/piwik-java-tracker#readme).
 
 ### C# client
 
-A C# client implementation of the Tracking API is available on Github at [github.com/matomo-org/piwik-dotnet-tracker](https://github.com/matomo-org/piwik-dotnet-tracker#piwik-c-tracking-api).
+A C# client implementation of the Tracking API is available on Github at [github.com/matomo-org/matomo-dotnet-tracker](https://github.com/matomo-org/piwik-dotnet-tracker#piwik-c-tracking-api).
 
 ### Other clients
 

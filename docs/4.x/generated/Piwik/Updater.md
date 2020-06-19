@@ -26,7 +26,7 @@ Execute multiple migration queries from a single Update file.
        The path to the Updates file.
     - `$migrations` ([`Migration[]`](../Piwik/Updater/Migration.md)) &mdash;
        An array of migrations
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="executemigration" id="executemigration"></a>
 <a name="executeMigration" id="executeMigration"></a>
@@ -39,7 +39,7 @@ Execute multiple migration queries from a single Update file.
       
     - `$migration` ([`Migration`](../Piwik/Updater/Migration.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - `Piwik\UpdaterErrorException`
 

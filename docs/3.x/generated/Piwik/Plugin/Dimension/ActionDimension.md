@@ -314,7 +314,7 @@ will be done.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -369,7 +369,7 @@ Sets (overwrites) the SQL segment
 -  It accepts the following parameter(s):
     - `$segment`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="settype" id="settype"></a>
 <a name="setType" id="setType"></a>
@@ -382,7 +382,7 @@ Sets (overwrites the dimension type)
 -  It accepts the following parameter(s):
     - `$type`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="groupvalue" id="groupvalue"></a>
 <a name="groupValue" id="groupValue"></a>
@@ -431,7 +431,7 @@ For certain dimension types, some metrics will be added automatically.
       
     - `$dimensionMetricFactory` ([`DimensionMetricFactory`](../../../Piwik/Columns/DimensionMetricFactory.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addsegment" id="addsegment"></a>
 <a name="addSegment" id="addSegment"></a>
@@ -449,7 +449,7 @@ already.
 -  It accepts the following parameter(s):
     - `$segment` ([`Segment`](../../../Piwik/Plugin/Segment.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getsegmentname" id="getsegmentname"></a>
 <a name="getSegmentName" id="getSegmentName"></a>
@@ -516,7 +516,7 @@ Gets an instance of all available visit, action and conversion dimension.
 -  It accepts the following parameter(s):
     - `$plugin` ([`Plugin`](../../../Piwik/Plugin.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>

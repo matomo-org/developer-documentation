@@ -905,7 +905,7 @@ to learn more.
 -  It accepts the following parameter(s):
     - `$propertyNames` (`array`) &mdash;
        List of property names, eg, `array('show_limit_control', 'show_goals')`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
 <a name="addPropertiesThatCanBeOverwrittenByQueryParams" id="addPropertiesThatCanBeOverwrittenByQueryParams"></a>
@@ -919,7 +919,7 @@ learn more.
 -  It accepts the following parameter(s):
     - `$propertyNames` (`array`) &mdash;
        List of property names, eg, `array('show_limit_control', 'show_goals')`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getproperties" id="getproperties"></a>
 <a name="getProperties" id="getProperties"></a>
@@ -943,7 +943,7 @@ by name.
 -  It accepts the following parameter(s):
     - `$columnToRemove`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getpriorityfilters" id="getpriorityfilters"></a>
 <a name="getPriorityFilters" id="getPriorityFilters"></a>
@@ -951,7 +951,7 @@ by name.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getpresentationfilters" id="getpresentationfilters"></a>
 <a name="getPresentationFilters" id="getPresentationFilters"></a>
@@ -959,7 +959,7 @@ by name.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addrelatedreport" id="addrelatedreport"></a>
 <a name="addRelatedReport" id="addRelatedReport"></a>
@@ -978,7 +978,7 @@ report list.
        The report's display name, eg, `'Browsers'`.
     - `$queryParams` (`array`) &mdash;
        Any extra query parameters to set in releated report's URL, eg, `array('idGoal' => 'ecommerceOrder')`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addrelatedreports" id="addrelatedreports"></a>
 <a name="addRelatedReports" id="addRelatedReports"></a>
@@ -996,7 +996,7 @@ use [addRelatedReport()](/api-reference/Piwik/Plugins/CoreVisualizations/Visuali
 -  It accepts the following parameter(s):
     - `$relatedReports` (`array`) &mdash;
        Array mapping report IDs with their internationalized display titles, eg, ``` array( 'DevicesDetection.getBrowsers' => 'Browsers', 'Resolution.getConfiguration' => 'Configurations' ) ```
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addtranslation" id="addtranslation"></a>
 <a name="addTranslation" id="addTranslation"></a>
@@ -1013,7 +1013,7 @@ See [$translations](/api-reference/Piwik/Plugins/CoreVisualizations/Visualizatio
        The name of a column in the report data, eg, `'nb_visits'` or `'goal_1_nb_conversions'`.
     - `$translation` (`string`) &mdash;
        The internationalized text, eg, `'Visits'` or `"Conversions for 'My Goal'"`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addtranslations" id="addtranslations"></a>
 <a name="addTranslations" id="addTranslations"></a>
@@ -1028,7 +1028,7 @@ See [$translations](/api-reference/Piwik/Plugins/CoreVisualizations/Visualizatio
 -  It accepts the following parameter(s):
     - `$translations` (`array`) &mdash;
        An array of column name => text mappings, eg, ``` array( 'nb_visits' => 'Visits', 'goal_1_nb_conversions' => "Conversions for 'My Goal'" ) ```
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="disablepivotbysubtableiftablehasnosubtables" id="disablepivotbysubtableiftablehasnosubtables"></a>
 <a name="disablePivotBySubtableIfTableHasNoSubtables" id="disablePivotBySubtableIfTableHasNoSubtables"></a>
@@ -1039,5 +1039,5 @@ See [$translations](/api-reference/Piwik/Plugins/CoreVisualizations/Visualizatio
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../../../../Piwik/DataTable.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

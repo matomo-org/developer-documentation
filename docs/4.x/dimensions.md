@@ -32,7 +32,7 @@ public function onNewVisit(Request $request, Visitor $visitor, $action)
 }
 ```
 
-Whenever you send a `sport_activity_type` parameter with any tracking request and the tracker detected a new visitor, this information will be recorded in the database and can be used to create new reports or to extend existing reports and API methods. An example tracking URL could look like this `piwik.php?idsite=1&sport_activity_type=running`
+Whenever you send a `sport_activity_type` parameter with any tracking request and the tracker detected a new visitor, this information will be recorded in the database and can be used to create new reports or to extend existing reports and API methods. An example tracking URL could look like this `matomo.php?idsite=1&sport_activity_type=running`
 
 Optionally, you can overwrite any initial value that was written when a new visit was detected by implementing the method `onExistingVisit`. You can use this for example for counters, to store the time of the last action etc:
 
@@ -71,7 +71,7 @@ public function onNewAction(Request $request, Visitor $visitor, Action $action)
 }
 ```
 
-A tracking request could be done like this: `piwik.php?idsite=1&sport_activity_type=running&speed=50`.
+A tracking request could be done like this: `matomo.php?idsite=1&sport_activity_type=running&speed=50`.
 
 Of course, you can add any custom behaviour like limiting the max speed etc.
 

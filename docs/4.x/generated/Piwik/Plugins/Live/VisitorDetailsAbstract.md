@@ -48,7 +48,7 @@ Makes it possible to extend the visitor details returned from API
 -  It accepts the following parameter(s):
     - `$visitor` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="provideactionsforvisit" id="provideactionsforvisit"></a>
 <a name="provideActionsForVisit" id="provideActionsForVisit"></a>
@@ -70,7 +70,7 @@ Makes it possible to enrich the action set for a single visit
        List of action to manipulate
     - `$visitorDetails` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="provideactionsforvisitids" id="provideactionsforvisitids"></a>
 <a name="provideActionsForVisitIds" id="provideActionsForVisitIds"></a>
@@ -104,7 +104,7 @@ $actions = array (
        action set to enrich
     - `$visitIds` (`array`) &mdash;
        list of visit ids
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="filteractions" id="filteractions"></a>
 <a name="filterActions" id="filterActions"></a>
@@ -130,7 +130,7 @@ Allows filtering the provided actions
       
     - `$visitorDetailsArray` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="extendactiondetails" id="extendactiondetails"></a>
 <a name="extendActionDetails" id="extendActionDetails"></a>
@@ -155,7 +155,7 @@ Allows extending each action with additional information
       
     - `$visitorDetails` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="renderaction" id="renderaction"></a>
 <a name="renderAction" id="renderAction"></a>
@@ -294,7 +294,7 @@ Will be called when visitor profile is initialized
       
     - `$profile` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="handleprofilevisit" id="handleprofilevisit"></a>
 <a name="handleProfileVisit" id="handleProfileVisit"></a>
@@ -316,7 +316,7 @@ Will be called for every action within the profile
       
     - `$profile` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="handleprofileaction" id="handleprofileaction"></a>
 <a name="handleProfileAction" id="handleProfileAction"></a>
@@ -343,7 +343,7 @@ Will be called for every action within the profile
       
     - `$profile` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="finalizeprofile" id="finalizeprofile"></a>
 <a name="finalizeProfile" id="finalizeProfile"></a>
@@ -369,7 +369,7 @@ Can be used to set profile information that requires data that was set while ite
       
     - `$profile` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getdb" id="getdb"></a>
 <a name="getDb" id="getDb"></a>

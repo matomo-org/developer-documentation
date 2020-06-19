@@ -58,7 +58,7 @@ Sets the sender.
        Email address of the sender.
     - `$name` (`null`|`string`) &mdash;
        Name of the sender.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setdefaultfrompiwik" id="setdefaultfrompiwik"></a>
 <a name="setDefaultFromPiwik" id="setDefaultFromPiwik"></a>
@@ -68,7 +68,7 @@ Sets the default sender
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - `DI\NotFoundException`
 
@@ -101,7 +101,7 @@ Returns the address the mail will be sent from
 -  It accepts the following parameter(s):
     - `$body` ([`View`](../Piwik/View.md)|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - `DI\NotFoundException`
 
@@ -116,7 +116,7 @@ Sets the HTML part of the mail
 -  It accepts the following parameter(s):
     - `$html`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setbodytext" id="setbodytext"></a>
 <a name="setBodyText" id="setBodyText"></a>
@@ -131,7 +131,7 @@ If bodyHtml is set, this will be used as alternative text part
 -  It accepts the following parameter(s):
     - `$txt`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getbodyhtml" id="getbodyhtml"></a>
 <a name="getBodyHtml" id="getBodyHtml"></a>
@@ -164,7 +164,7 @@ Sets the subject of the mail
 -  It accepts the following parameter(s):
     - `$subject`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getsubject" id="getsubject"></a>
 <a name="getSubject" id="getSubject"></a>
@@ -189,7 +189,7 @@ Adds a recipient
       
     - `$name` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getrecipients" id="getrecipients"></a>
 <a name="getRecipients" id="getRecipients"></a>
@@ -214,7 +214,7 @@ Add Bcc address
       
     - `$name` (`null`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getbccs" id="getbccs"></a>
 <a name="getBccs" id="getBccs"></a>
@@ -234,7 +234,7 @@ Removes all recipients and bccs from the list
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addreplyto" id="addreplyto"></a>
 <a name="addReplyTo" id="addReplyTo"></a>
@@ -249,7 +249,7 @@ Add Reply-To address
       
     - `$name` (`null`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setreplyto" id="setreplyto"></a>
 <a name="setReplyTo" id="setReplyTo"></a>
@@ -264,7 +264,7 @@ Sets the reply to address (all previously added addresses will be removed)
       
     - `$name` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getreplytos" id="getreplytos"></a>
 <a name="getReplyTos" id="getReplyTos"></a>
@@ -291,7 +291,7 @@ Returns the list of reply to addresses
       
     - `$cid`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getattachments" id="getattachments"></a>
 <a name="getAttachments" id="getAttachments"></a>
@@ -299,7 +299,7 @@ Returns the list of reply to addresses
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="send" id="send"></a>
 <a name="send" id="send"></a>
@@ -324,7 +324,7 @@ Enables SMTP debugging
 -  It accepts the following parameter(s):
     - `$smtpDebug` (`bool`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="issmtpdebugenabled" id="issmtpdebugenabled"></a>
 <a name="isSmtpDebugEnabled" id="isSmtpDebugEnabled"></a>

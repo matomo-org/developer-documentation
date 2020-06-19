@@ -69,10 +69,10 @@ This is the list of filters in the order in which they are applied:
 1. **Flattener**: Merges an entire `DataTable` hierarchy into one `DataTable`, adding rows of subtables to their parent rows.
     - `flat`: set to `1` to apply the filter
 2. **[Pattern](/api-reference/Piwik/DataTable/Filter/Pattern)**: Removes rows of a `DataTable` that do not match a regex pattern.
-    - `filter_pattern`: [regular expression](http://www.phpliveregex.com) (the filter is applied if set)
+    - `filter_pattern`: [regular expression](https://www.phpliveregex.com) (the filter is applied if set)
     - `filter_column`: column to apply the regex pattern to (`label` column by default)
 3. **[PatternRecursive](/api-reference/Piwik/DataTable/Filter/PatternRecursive)**: Removes rows of a `DataTable` for which the row and all subtables of the row do not match a regex pattern.
-    - `filter_pattern_recursive`: [regular expression](http://www.phpliveregex.com) (the filter is applied if set)
+    - `filter_pattern_recursive`: [regular expression](https://www.phpliveregex.com) (the filter is applied if set)
     - `filter_column_recursive`: column to apply the regex pattern to (`label` column by default)
 4. **[ExcludeLowPopulation](/api-reference/Piwik/DataTable/Filter/ExcludeLowPopulation)**: Removes all rows that contain a specific column whose value is lower than a minimum threshold value.
     - `filter_excludelowpop`: column to filter (the filter is applied if set)
@@ -142,7 +142,7 @@ Report metadata can also be used within Piwik for features that operate on repor
 
 ### Row Evolution
 
-Matomo's [row evolution feature](https://demo.matomo.org/index.php?module=CoreHome&action=index&idSite=62&period=day&date=yesterday#module=UserSettings&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3AUserSettings.getConfiguration$3A0$3AWindows$25207$2520$252F$2520Chrome$2520$252F$25201920x1080) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](https://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS&label=Windows+7) or [multi-row evolution data](https://demo.piwik.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS).
+Matomo's [row evolution feature](https://demo.matomo.org/index.php?module=CoreHome&action=index&idSite=62&period=day&date=yesterday#module=UserSettings&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3AUserSettings.getConfiguration$3A0$3AWindows$25207$2520$252F$2520Chrome$2520$252F$25201920x1080) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS&label=Windows+7) or [multi-row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS).
 
 ### Bulk API Requests
 

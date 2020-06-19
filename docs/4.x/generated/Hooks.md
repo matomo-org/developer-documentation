@@ -69,7 +69,7 @@ Callback Signature:
 
 ### Access.modifyUserAccess
 
-*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Access.php) in line [300](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Access.php#L300)*
+*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Access.php) in line [307](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Access.php#L307)*
 
 Triggered after the initial access levels and permissions for the current user are loaded. Use this
 event to modify the current user's permissions (for example, making sure every user has view access

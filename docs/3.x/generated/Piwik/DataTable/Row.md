@@ -120,7 +120,7 @@ Renames a column.
        The current name of the column.
     - `$newName` (`string`) &mdash;
        The new name of the column.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getcolumn" id="getcolumn"></a>
 <a name="getColumn" id="getColumn"></a>
@@ -222,7 +222,7 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to 
 -  It accepts the following parameter(s):
     - `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
        Table to sum to this row's subtable.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setsubtable" id="setsubtable"></a>
 <a name="setSubtable" id="setSubtable"></a>
@@ -258,7 +258,7 @@ Removes the subtable reference.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setcolumns" id="setcolumns"></a>
 <a name="setColumns" id="setColumns"></a>
@@ -271,7 +271,7 @@ Set all the columns at once. Overwrites **all** previously set columns.
 -  It accepts the following parameter(s):
     - `$columns` (`array`) &mdash;
        eg, `array('label' => 'www.php.net', 'nb_visits' => 15894)`
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setcolumn" id="setcolumn"></a>
 <a name="setColumn" id="setColumn"></a>
@@ -286,7 +286,7 @@ Set the value `$value` to the column called `$name`.
        name of the column to set.
     - `$value` (`mixed`) &mdash;
        value of the column to set.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setmetadata" id="setmetadata"></a>
 <a name="setMetadata" id="setMetadata"></a>
@@ -301,7 +301,7 @@ Set the value `$value` to the metadata called `$name`.
        name of the metadata to set.
     - `$value` (`mixed`) &mdash;
        value of the metadata to set.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="deletemetadata" id="deletemetadata"></a>
 <a name="deleteMetadata" id="deleteMetadata"></a>
@@ -331,7 +331,7 @@ Add a new column to the row. If the column already exists, throws an exception.
        name of the column to add.
     - `$value` (`mixed`) &mdash;
        value of the column to set or a PHP callable.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the column already exists.
 
@@ -363,7 +363,7 @@ Add a new metadata to the row. If the metadata already exists, throws an excepti
        name of the metadata to add.
     - `$value` (`mixed`) &mdash;
        value of the metadata to set.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the metadata already exists.
 
@@ -387,7 +387,7 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
        Whether metadata should be copied or not.
     - `$aggregationOperations` (`array`|`bool`) &mdash;
        for columns that should not be summed, determine which aggregation should be used (min, max). format: `array('column name' => 'function name')`
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -404,7 +404,7 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
       
     - `$aggregationOperations` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="issummaryrow" id="issummaryrow"></a>
 <a name="isSummaryRow" id="isSummaryRow"></a>
@@ -440,7 +440,7 @@ Associates the supplied table with this row as the comparisons table.
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="isequal" id="isequal"></a>
 <a name="isEqual" id="isEqual"></a>

@@ -13,26 +13,34 @@ Logging is the action of recording events which happen while Piwik is running. I
 - let users monitor the health of their Piwik installation by being able to know when minor or major errors happen
 - help users debug problems by having a detailed account of events leading to an error
 
-To log messages, Piwik uses the standardized `Psr\Log\LoggerInterface` ([PSR-3 standard](http://www.php-fig.org/psr/psr-3/)). This PHP standard lets Piwik developers use the standard interface, leaving the possibility to switch from and to *any* compatible PHP logger.
+To log messages, Piwik uses the standardized `Psr\Log\LoggerInterface` ([PSR-3 standard](https://www.php-fig.org/psr/psr-3/)). This PHP standard lets Piwik developers use the standard interface, leaving the possibility to switch from and to *any* compatible PHP logger.
 
 The PSR-3 implementation that Piwik has chosen is [Monolog](https://github.com/Seldaek/monolog). Monolog is a robust and very customizable logger used by Symfony, Silex, Laravel…
 
 ## How to log messages
 
-To log messages, you need to get an instance of the logger. To do this, you can use dependency injection by injecting `Psr\Log\LoggerInterface` or you can retrieve the logger from the container:
+To log messages, you need to get an instance of the logger. To do this, you can use dependency injection by injecting `Psr\Log\LoggerInterface`:
 
 ```php
-$logger = StaticContainer::getContainer()->get('Psr\Log\LoggerInterface');
+private $logger;
+
+public function __construct(\Psr\Log\LoggerInterface $logger) {
+    $this->logger = $logger;
+}
+public function myMethod() {
+    $this->logger->info('This is an info');
+}
+
 ```
 
 You can then log messages using any severity level:
 
 ```php
-$logger->error('This is an error');
-$logger->warning('This is a warning');
-$logger->notice('This is a notice');
-$logger->info('This is an info');
-$logger->debug('This is a debug message');
+$this->logger->error('This is an error');
+$this->logger->warning('This is a warning');
+$this->logger->notice('This is a notice');
+$this->logger->info('This is an info');
+$this->logger->debug('This is a debug message');
 ```
 
 Each of these messages will or will not be logged according to the log level configured by the user in their `config.php.ini`. Developers should not log conditionally according to the current log level: they should simply log and let the system figure it all out.
@@ -45,7 +53,7 @@ If your error message is a string constructed dynamically, you should **not** lo
 $logger->info('The configuration option ' . $name . ' has an invalid value ' . $value);
 ```
 
-Instead, you should use the standardized log format (described in the [PSR-3 standard](http://www.php-fig.org/psr/psr-3/)):
+Instead, you should use the standardized log format (described in the [PSR-3 standard](https://www.php-fig.org/psr/psr-3/)):
 
 ```php
 $logger->info('The configuration option {name} has an invalid value {value}', array(
@@ -75,7 +83,7 @@ If you want to log an exception, you should follow PSR-3's standard **by using t
 
 ```php
 try {
-    $httpClient->post('http://example.com/_abc_123', $data);
+    $httpClient->post('https://example.com/_abc_123', $data);
 } catch (RequestException $e) {
     $logger->error('Cannot backup data, will try again later', array('exception' => $e));
 }
@@ -85,4 +93,4 @@ In this example, we log to `error` level, but we caught the exception: the curre
 
 ### Viewing logs
 
-To view the logs, we recommend using our [LogViewer plugin](https://plugins.piwik.org/LogViewer): learn more in [How do I view Piwik application logs?](https://piwik.org/faq/how-to/faq_20991/)
+To view the logs, we recommend using our [LogViewer plugin](https://plugins.matomo.org/LogViewer): learn more in [How do I view Piwik application logs?](https://matomo.org/faq/how-to/faq_20991/)

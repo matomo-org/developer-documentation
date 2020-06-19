@@ -272,7 +272,7 @@ Sets the first date available in the period selector's calendar.
        The min date.
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
        The view that contains the period selector.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setmaxdateview" id="setmaxdateview"></a>
 <a name="setMaxDateView" id="setMaxDateView"></a>
@@ -288,7 +288,7 @@ for a site (which varies based on the timezone of a site).
        The max date.
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
        The view that contains the period selector.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setgeneralvariablesview" id="setgeneralvariablesview"></a>
 <a name="setGeneralVariablesView" id="setGeneralVariablesView"></a>
@@ -348,7 +348,7 @@ Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/Contro
 -  It accepts the following parameter(s):
     - `$view`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="sethostvalidationvariablesview" id="sethostvalidationvariablesview"></a>
 <a name="setHostValidationVariablesView" id="setHostValidationVariablesView"></a>
@@ -367,7 +367,7 @@ Checks if the current host is valid and sets variables on the given view, includ
 -  It accepts the following parameter(s):
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setperiodvariablesview" id="setperiodvariablesview"></a>
 <a name="setPeriodVariablesView" id="setPeriodVariablesView"></a>
@@ -386,7 +386,7 @@ Sets general period variables on a view, including:
 -  It accepts the following parameter(s):
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the current period is invalid.
 
@@ -413,7 +413,7 @@ This function will exit immediately after executing.
        The new date query parameter, eg, `'today'`.
     - `$parameters` (`array`) &mdash;
        Other query parameters to append to the URL.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="checktokeninurl" id="checktokeninurl"></a>
 <a name="checkTokenInUrl" id="checkTokenInUrl"></a>
@@ -431,7 +431,7 @@ If called from JavaScript by using the `ajaxHelper` you have to call `ajaxHelper
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Piwik\NoAccessException`](../../Piwik/NoAccessException.md) &mdash; If the token doesn&#039;t match.
 
@@ -475,5 +475,5 @@ Assigns the following variables:
 -  It accepts the following parameter(s):
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

@@ -9,19 +9,19 @@ Permissions define what a user can see or do in Piwik.
 
 Piwik defines 4 types of permissions:
 
-- [**view permission**](https://piwik.org/faq/general/faq_70/): applies to a specific site
+- [**view permission**](https://matomo.org/faq/general/faq_70/): applies to a specific site
 
     With that permission, a user can view the reports for a given site.
 
-- [**write permission**](https://piwik.org/faq/general/faq_26910/): applies to a specific site
+- [**write permission**](https://matomo.org/faq/general/faq_26910/): applies to a specific site
 
     With that permission, a user can view the reports for a given site, and create, update and delete entities for the website, such as [Goals](https://matomo.org/docs/tracking-goals-web-analytics/), [Funnels](https://matomo.org/docs/funnels/), [Forms](https://matomo.org/docs/form-analytics/), [A/B Tests](https://matomo.org/docs/ab-testing/), [Heatmaps](https://matomo.org/docs/heatmaps/?), [Session Recordings](https://matomo.org/docs/session-recording/), etc. 
 
-- [**admin permission**](https://piwik.org/faq/general/faq_69/): applies to a specific site
+- [**admin permission**](https://matomo.org/faq/general/faq_69/): applies to a specific site
 
     With that permission, a user can view and configure a given site (name, URLs, timezone, etc.). They can also grant other users the "view" or "admin" permission.
 
-- [**super user permission**](https://piwik.org/faq/general/faq_35/): applies to **whole Piwik** (all sites)
+- [**super user permission**](https://matomo.org/faq/general/faq_35/): applies to **whole Piwik** (all sites)
 
     With that permission, a user can view and configure all sites. They can also perform all administrative tasks such as add new sites, add users, change user permissions, activate and deactivate plugins or install new ones from the Marketplace.
 
@@ -34,7 +34,7 @@ Usually, plugins should check permissions before:
 
 Sometimes you may also need to verify permissions before registering menu items or widgets.
 
-To check a user's permissions, you need to `use` the [`Piwik\Piwik`](https://developer.piwik.org/api-reference/Piwik/Piwik) class:
+To check a user's permissions, you need to `use` the [`Piwik\Piwik`](https://developer.matomo.org/api-reference/Piwik/Piwik) class:
 
 - methods starting with `check` throw an exception when the expected condition is not met
 
