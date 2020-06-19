@@ -8,9 +8,9 @@ all changes in Matomo 4 can be found in the [Changelog](/changelog).
 
 ## Adjust the required Matomo version
 
-For your plugin to be executed in Matomo 4 you first need to configure it as compatible with Matomo 4:
+For your plugin to be executed in Matomo 4 you first need to show it is compatible with Matomo 4 in your `plugin.json` file:
 
-* specify that your plugin requires Matomo 4 (thr require for Piwik 3 used to be eg `"piwik": ">=3.0.0-b1,<4.0.0-b1"`). 
+* specify that your plugin requires Matomo 4 (the require for Piwik 3 used to be eg `"piwik": ">=3.0.0-b1,<4.0.0-b1"`). 
 * we recommend to also increase your plugin's major version number eg from `3.2.3` to `4.0.0`.
 
 The `plugin.json` would look like this:
@@ -76,4 +76,4 @@ e.g. `divisibleby(2)` becomes `divisible by(2)`
 In this guide we have seen which steps to take to migrate your Matomo plugin to be compatible with our latest Matomo 4.
 If you need further help for converting your plugin to Matomo 3, head over to the [Piwik developers community forums](https://forum.matomo.org/c/plugins-platform).
 
-Once you've adjusted your plugin don't forget to release a new version.
+Once you've adjusted your plugin, don't forget to release a new version.
