@@ -5,10 +5,10 @@
 
 ## Documentations
 
-- [Index](docs/generated/master/Index.md)
-- [Classes](docs/generated/master/Classes.md)
-- [Namespaces](docs/generated/master/Namespaces.md)
-- [Hooks](docs/generated/master/Hooks.md)
+- [Index](docs/generated/4.x-dev/Index.md)
+- [Classes](docs/generated/4.x-dev/Classes.md)
+- [Namespaces](docs/generated/4.x-dev/Namespaces.md)
+- [Hooks](docs/generated/4.x-dev/Hooks.md)
 - [Guides](docs)
 
 ## License
@@ -65,7 +65,7 @@ php -r "unlink('composer-setup.php');"
 
 or just execute `./generateAndPush.sh`.
 
-The documents will be generated into the [docs/generated](docs/generated) directory. It will always generate the documentation for the master as well as for the latest stable version.
+The documents will be generated into the [docs/generated](docs/generated) directory. It will always generate the documentation for the latest stable version.
 
 ## How to add docs for a new Matomo version
 

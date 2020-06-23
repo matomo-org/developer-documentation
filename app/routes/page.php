@@ -208,7 +208,7 @@ $app->post('/receive-commit-hook', function (Request $request, Response $respons
         return $response->withStatus(403);
     }
 
-    system('git pull');
+    system('git pull origin live');
 
     Cache::invalidate();
     Cache::invalidate_Twig_Cache();

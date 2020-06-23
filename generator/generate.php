@@ -36,7 +36,7 @@ if (!empty($argv)) {
 }
 
 if (empty($branch) || empty($targetName)) {
-    echo "Missing branch or targetname. Make sure to specify eg '--branch=master --targetname=2.x'\n";
+    echo "Missing branch or targetname. Make sure to specify eg '--branch=4.x-dev --targetname=4.x'\n";
     echo "Branch defines which branch to check out, targetname defines the directory in docs the generated files should go to\n";
     exit(1);
 }

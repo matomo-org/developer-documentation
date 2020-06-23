@@ -109,7 +109,7 @@ class Guide implements MenuItem
             $path = $piwikVersion . '/';
         }
 
-        return 'https://github.com/matomo-org/developer-documentation/tree/master/docs/' . $path . $this->name . '.md';
+        return 'https://github.com/matomo-org/developer-documentation/tree/live/docs/' . $path . $this->name . '.md';
     }
 
     public function getPrevious()
