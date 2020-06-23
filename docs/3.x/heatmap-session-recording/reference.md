@@ -245,13 +245,13 @@ _paq.push(['HeatmapSessionRecording.addConfig', {}]);
 To start recording activities for a heatmap, define a `heatmap` property like this:
 
 ```js
-_paq.push(['HeatmapSessionRecording.addConfig', {heatmap: {id: 5, sample_rate: 1000}}]); 
+_paq.push(['HeatmapSessionRecording.addConfig', {heatmap: {id: 5, sample_rate: "100.0"}}]); 
 ```
 
 To start recording activities for a session, set a `session` property:
 
 ```js
-_paq.push(['HeatmapSessionRecording.addConfig', {session: {id: 6, sample_rate: 1000, min_time: 30, keystrokes: true, activity: true}}]); 
+_paq.push(['HeatmapSessionRecording.addConfig', {session: {id: 6, sample_rate: "100.0", min_time: 30, keystrokes: true, activity: true}}]); 
 ```
 
 The config properties have the following meaning:
