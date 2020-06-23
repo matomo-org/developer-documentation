@@ -3,8 +3,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 cd piwik
-git checkout master
-git pull origin master
+git checkout live
+git pull origin live
 cd ..
 git checkout docs/*/generated
 git pull
@@ -17,4 +17,4 @@ fi
 git add docs/*/generated
 git rm $(git ls-files --deleted docs/*/generated)
 git commit -m 'updated plugins API documentation'
-git push
+git push origin live
