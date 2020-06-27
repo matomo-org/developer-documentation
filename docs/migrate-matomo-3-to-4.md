@@ -6,6 +6,10 @@ category: Develop
 This migration guide covers explains how to do some migrations to make a plugin compatible with Matomo 4. A list of
 all changes in Matomo 4 can be found in the [Changelog](/changelog).
 
+## Create a new branch
+
+We recommend you create a new branch for your plugin that supports Matomo 4. For example `4.x-dev`. This way you will be able to make changes to your plugin for Matomo 3 and Matomo 4 and release independent versions for each of them. You can still publish updates to your plugin that supports Matomo 3 once you have published an update for a version that supports Matomo 4.
+
 ## Adjust the required Matomo version
 
 For your plugin to be executed in Matomo 4 you first need to show it is compatible with Matomo 4 in your `plugin.json` file:
@@ -21,6 +25,8 @@ The `plugin.json` would look like this:
         "matomo": ">=4.0.0-b1,<5.0.0-b1"
     },
 ```
+
+We no longer support plugins that support multiple major Matomo versions such as Matomo 3 and Matomo 4: `"matomo": ">=3.0.0-b1,<5.0.0-b1"`. You would in this case receive an error email and the release would not be published.
 
 ## Required PHP version
 
