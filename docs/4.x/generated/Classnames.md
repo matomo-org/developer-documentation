@@ -125,6 +125,8 @@
 ## Plugins\CoreVisualizations\Visualizations\JqplotGraph\Config
 ## Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution\Config
 ## Plugins\CoreVisualizations\Visualizations\Sparklines\Config
+## Plugins\CustomDimensions\Columns\Metrics\AverageTimeOnDimension
+## Plugins\CustomDimensions\Dimension\Name
 ## Plugins\CustomJsTracker\TrackerUpdater
 ## Plugins\DevicePlugins\DevicePlugins
 ## Plugins\Diagnostics\DiagnosticService

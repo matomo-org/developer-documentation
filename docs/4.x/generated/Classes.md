@@ -129,6 +129,8 @@ This is a complete list of available classes:
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
 - [`Plugins\CoreVisualizations\Visualizations\JqplotGraph\Evolution\Config`](Piwik/Plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
 - [`Plugins\CoreVisualizations\Visualizations\Sparklines\Config`](Piwik/Plugins/CoreVisualizations/Visualizations/Sparklines/Config.md) &mdash; DataTable Visualization that derives from Sparklines.
+- [`Plugins\CustomDimensions\Columns\Metrics\AverageTimeOnDimension`](Piwik/Plugins/CustomDimensions/Columns/Metrics/AverageTimeOnDimension.md) &mdash; The average amount of time spent on a dimension.
+- [`Plugins\CustomDimensions\Dimension\Name`](Piwik/Plugins/CustomDimensions/Dimension/Name.md)
 - [`Plugins\CustomJsTracker\TrackerUpdater`](Piwik/Plugins/CustomJsTracker/TrackerUpdater.md) &mdash; Updates the Piwik JavaScript Tracker "piwik.js" in case plugins extend the tracker.
 - [`Plugins\DevicePlugins\DevicePlugins`](Piwik/Plugins/DevicePlugins/DevicePlugins.md)
 - [`Plugins\Diagnostics\DiagnosticService`](Piwik/Plugins/Diagnostics/DiagnosticService.md) &mdash; Runs the Piwik diagnostics.
