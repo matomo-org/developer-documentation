@@ -63,6 +63,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `redirectFile( url )` - Force the browser load the live URL if the tracked web page is loaded from a local file (e.g., saved to someone's desktop).
 *   `setHeartBeatTimer( minimumVisitLength, heartBeatDelay )` - Record how long the page has been viewed if the minimumVisitLength (in seconds) is attained; the heartBeatDelay determines how frequently to update the server
 *   `getVisitorId()` - Return the 16 characters ID for the visitor
+*   `setVisitorId( visitorId )` -  `visitorId` needs to be a 16 digit hex string. The visitorId won't be persisted in a cookie and needs to be set on every new page load. Since Matomo 3.13.7
 *   `getVisitorInfo()` - Return the visitor cookie contents in an array
 *   `getAttributionInfo()` - Return the visitor attribution array (Referer information and / or Campaign name &amp; keyword).
     Attribution information is used by Piwik to credit the correct referrer ([first or last referrer](https://matomo.org/faq/general/#faq_106)) used when a user triggers a goal conversion.
