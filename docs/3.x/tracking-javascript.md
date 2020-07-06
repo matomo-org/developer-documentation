@@ -102,12 +102,19 @@ Piwik provides [ecommerce analytics](https://piwik.org/docs/ecommerce-analytics/
 
 ### Managing Consent
 
-Matomo provides a mechanism to manage your user's consent. You can require that users consent before you track any of their actions, disable tracking for users that do not consent, and re-enable tracking for those that consent later.
+Matomo provides a mechanism to manage your user's tracking consent. You can require that users consent before you track any of their actions, disable tracking for users that do not consent, and re-enable tracking for those that consent later. No cookies will be used when no consent is given. Once consent is given, cookies will be used.
 
 *   `requireConsent()` - By default the Matomo tracker assumes consent to tracking. To change this behavior so nothing is tracked until a user consents, you must call `requireConsent`.
 *   `setConsentGiven()` - Mark that the current user has consented. The consent is one-time only, so in a subsequent browser session, the user will have to consent again. To remember consent, see the method below: `rememberConsentGiven`.
 *   `rememberConsentGiven( hoursToExpire )` - Mark that the current user has consented, and remembers this consent through a browser cookie. The next time the user visits the site, Matomo will remember that they consented, and track them. If you call this method, you do not need to call `setConsentGiven`.
 *   `forgetConsentGiven()` - Remove a user's consent, both if the consent was one-time only and if the consent was remembered. After calling this method, the user will have to consent again in order to be tracked.
+
+Matomo also provides a mechanism to manage your user's cookie consent. You can require that users consent to using cookies. Tracking requests will be always sent but depending on the consent cookies will be used or not used. This requires Matomo 3.14.0.
+
+*   `requireCookieConsent()` - By default the Matomo tracker assumes consent to using cookies. To change this behavior so no cookies are used by default, you must call `requireCookieConsent`.
+*   `setCookieConsentGiven()` - Mark that the current user has consented to using cookies. The consent is one-time only, so in a subsequent browser session, the user will have to consent again. To remember cookie consent, see the method below: `rememberCookieConsentGiven`.
+*   `rememberCookieConsentGiven( hoursToExpire )` - Mark that the current user has consented to using cookies, and remembers this consent through a browser cookie. The next time the user visits the site, Matomo will remember that they consented, and use cookies. If you call this method, you do not need to call `setCookieConsentGiven`.
+*   `forgetCookieConsentGiven()` - Remove a user's cookie consent, both if the consent was one-time only and if the consent was remembered. After calling this method, the user will have to consent again in order for cookies to be used.
 
 You can use these methods to build your own consent form/pages. [Learn more about asking for consent.](https://developer.matomo.org/guides/tracking-javascript-guide#asking-for-consent)
 
@@ -115,7 +122,7 @@ You can use these methods to build your own consent form/pages. [Learn more abou
 
 Piwik uses first party cookies to keep track of some user information over time. Consideration must be given to retention times and avoiding conflicts with other cookies, trackers, and apps.
 
-*   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view.
+*   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view. Cookies will be even disabled if the user has given cookie consent using the method `rememberCookieConsentGiven()`.
 *   `deleteCookies()` - Delete the tracking cookies currently currently set (this is useful when [creating new visits](https://piwik.org/faq/how-to/#faq_187))
 *   `hasCookies()` - Return whether cookies are enabled and supported by this browser.
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.

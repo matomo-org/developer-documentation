@@ -769,7 +769,7 @@ In the context of the [GDPR privacy regulations](https://matomo.org/docs/gdpr/),
 
 Matomo differentiates between cookie and tracking consent:
 * In the context of tracking consent no cookies will be used and no tracking request will be sent unless consent was given. As soon as consent was given, tracking requests will be sent and cookies will be used. 
-* In the context of cookie consent tracking requests will be always sent. However, cookies will be only used if consent for storing and using cookies was given by the user. [Learn how cookies impact reports accuracy](https://matomo.org/faq/general/faq_156/). This requires Matomo 3.14.0
+* In the context of cookie consent tracking requests will be always sent. However, cookies will be only used if consent for storing and using cookies was given by the user. [Learn how cookies impact reports accuracy](https://matomo.org/faq/general/faq_156/). 
            
 Follow the steps below to ask your user for either tracking or cookie consent before their data is processed within Matomo.
 
