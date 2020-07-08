@@ -15,10 +15,10 @@ The easiest way to embed a container without needing any authentication is to as
 ```html
 <!-- Matomo Tag Manager -->
 <script type="text/javascript">
-var _mtm = _mtm || [];
+var _mtm = window._mtm = window._mtm || [];
 _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-g.type='text/javascript'; g.async=true; g.defer=true; g.src='${MATOMOURL}/js/container_${CONTAINERID}.js'; s.parentNode.insertBefore(g,s);
+g.type='text/javascript'; g.async=true; g.src='${MATOMOURL}/js/container_${CONTAINERID}.js'; s.parentNode.insertBefore(g,s);
 </script>
 <!-- End Matomo Tag Manager -->
 ```

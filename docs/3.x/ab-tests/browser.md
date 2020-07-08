@@ -32,7 +32,7 @@ To prevent any flickering / flashing of content when you run your experiments, y
 
 * Move the Piwik Tracking Code that loads the `piwik.js` file into the HTML `<head>`
 * Load the file synchronously instead of asynchronously by:
-  1. Removing the two lines containing: `var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);`
+  1. Removing the two lines containing: `var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);`
   2. Adding the following line after the closing `</script>` element: `<script type="text/javascript" src="//$yourPiwikDomain/piwik.js"></script>`
   3. Your JavaScript tracker code should look like this:
     
