@@ -39,7 +39,7 @@ To prevent any flickering / flashing of content when you run your experiments, y
     ```html
     <head>
     <script type="text/javascript">
-      var _paq = window._paq || [];
+      var _paq = window._paq = window._paq || [];
       // [...]
       (function() {
         var u = "//$yourPiwikDomain/";
