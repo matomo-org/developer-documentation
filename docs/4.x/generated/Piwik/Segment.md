@@ -60,6 +60,12 @@ The class defines the following methods:
 
 Constructor.
 
+When using segments that contain a != or !@ condition on a non visit dimension (e.g. action, conversion, ...) it
+is needed to use a subquery to get correct results. To avoid subqueries that fetch too many data it's required to
+set a startDate in this case. That date will be used to limit the subquery (along with possibly given idSites or
+endDate). If no startDate is given for such a segment it will generate a query that directly joins the according
+tables, but trigger a php warning as results might be incorrect.
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -67,6 +73,10 @@ Constructor.
        The segment condition, eg, `'browserCode=ff;countryCode=CA'`.
     - `$idSites` (`array`) &mdash;
        The list of sites the segment will be used with. Some segments are dependent on the site, such as goal segments.
+    - `$startDate` ([`Date`](../Piwik/Date.md)) &mdash;
+       start date used to limit subqueries
+    - `$endDate` ([`Date`](../Piwik/Date.md)) &mdash;
+       end date used to limit subqueries
 - It throws one of the following exceptions:
     - ``
 
