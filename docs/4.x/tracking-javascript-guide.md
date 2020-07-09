@@ -21,7 +21,7 @@ The tracking code looks as follows:
 ```html
 <!-- Matomo -->
 <script type="text/javascript">
-  var _paq = window._paq || [];
+  var _paq = window._paq = window._paq || [];
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
@@ -29,7 +29,7 @@ The tracking code looks as follows:
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', {$IDSITE}]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 <!-- End Matomo Code -->
@@ -380,7 +380,7 @@ Note: `USER_ID_HERE` must be a unique and persistent non-empty string that repre
 Let's take an example. Imagine that your website authenticate your users via a login form using a PHP script. Here is what your Piwik JavaScript snippet may look like:
 
 ```javascript
-var _paq = window._paq || [];
+var _paq = window._paq = window._paq || [];
 
 <?php
 // If user is logged-in then call 'setUserId'
@@ -885,7 +885,7 @@ The example below shows how to use `addTracker`  method to track the same analyt
 
 ```html
 <script type="text/javascript">
-  var _paq = window._paq || [];
+  var _paq = window._paq = window._paq || [];
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
 
@@ -903,7 +903,7 @@ The example below shows how to use `addTracker`  method to track the same analyt
     // That's it!
 
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 ```

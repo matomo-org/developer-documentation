@@ -40,7 +40,7 @@ For more details about this have a look at the JavaScript Tracker API reference:
 Example for tracking all content blocks:
 
 ```javascript
-var _paq = window._paq || [];
+var _paq = window._paq = window._paq || [];
 _paq.push(['setTrackerUrl', 'matomo.php']);
 _paq.push(['setSiteId', 1]);
 _paq.push(['enableLinkTracking']);
