@@ -62,9 +62,9 @@ Constructor.
 
 When using segments that contain a != or !@ condition on a non visit dimension (e.g. action, conversion, ...) it
 is needed to use a subquery to get correct results. To avoid subqueries that fetch too many data it's required to
-set a startDate in this case. That date will be used to limit the subquery (along with possibly given idSites or
-endDate). If no startDate is given for such a segment it will generate a query that directly joins the according
-tables, but trigger a php warning as results might be incorrect.
+set a startDate and/or an endDate in this case. That date will be used to limit the subquery (along with possibly
+given idSites). If no startDate and endDate is given for such a segment it will generate a query that directly
+joins the according tables, but trigger a php warning as results might be incorrect.
 
 #### Signature
 
