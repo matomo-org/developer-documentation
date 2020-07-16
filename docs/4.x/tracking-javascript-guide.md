@@ -931,15 +931,6 @@ It is possible to track your analytics data into either a different website ID o
 
 The `matomoAsyncInit()` method will be executed once the Piwik tracker is loaded and initialized. In earlier versions you must load Piwik synchronous.
 
-Note that you can also set the website ID and the Piwik tracker URL manually, instead of setting them in the getTracker call:
-
-```javascript
-// we replace Matomo.getTracker("https://example.com/matomo/", 12)
-var matomoTracker = Matomo.getTracker();
-matomoTracker.setSiteId( 12 );
-matomoTracker.setTrackerUrl( "https://example.com/matomo/" );
-matomoTracker.trackPageView();
-```
 
 ## JavaScript Tracker Reference
 
