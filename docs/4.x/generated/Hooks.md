@@ -1623,7 +1623,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [478](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L478)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [508](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L508)*
 
 
 
@@ -3474,7 +3474,7 @@ Callback Signature:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [694](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L694)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [722](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L722)*
 
 Triggered after a new user is created.
 
@@ -3551,7 +3551,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1075](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1075)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1103](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1103)*
 
 
 
@@ -3565,7 +3565,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [920](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L920)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [948](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L948)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 

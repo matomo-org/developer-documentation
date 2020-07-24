@@ -55,13 +55,14 @@ Returns the option value for the requested option `$name`.
 <a name="getLike" id="getLike"></a>
 ### `getLike()`
 
-Returns option values for options whose names are like a given pattern.
+Returns option values for options whose names are like a given pattern. Only `%` is supported as part of the
+pattern.
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$namePattern` (`string`) &mdash;
-       The pattern used in the SQL `LIKE` expression used to SELECT options.
+       The pattern used in the SQL `LIKE` expression used to SELECT options.`'%'` characters should be used as wildcard. Underscore match is not supported.
 
 - *Returns:*  `array` &mdash;
     Array mapping option names with option values.
@@ -102,13 +103,14 @@ Deletes an option.
 <a name="deleteLike" id="deleteLike"></a>
 ### `deleteLike()`
 
-Deletes all options that match the supplied pattern.
+Deletes all options that match the supplied pattern. Only `%` is supported as part of the
+pattern.
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$namePattern` (`string`) &mdash;
-       Pattern of key to match. `'%'` characters should be used as wildcards, and literal `'_'` characters should be escaped.
+       Pattern of key to match. `'%'` characters should be used as wildcard. Underscore match is not supported.
     - `$value` (`string`) &mdash;
        If supplied, options will be deleted only if their value matches this value.
 - It does not return anything or a mixed result.
