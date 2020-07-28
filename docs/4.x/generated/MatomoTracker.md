@@ -62,6 +62,9 @@ The class defines the following methods:
 - [`setCustomVariable()`](#setcustomvariable) &mdash; Sets Visit Custom Variable.
 - [`getCustomVariable()`](#getcustomvariable) &mdash; Returns the currently assigned Custom Variable.
 - [`clearCustomVariables()`](#clearcustomvariables) &mdash; Clears any Custom Variable that may be have been set.
+- [`setCustomDimension()`](#setcustomdimension) &mdash; Sets a specific custom dimension
+- [`clearCustomDimensions()`](#clearcustomdimensions) &mdash; Clears all previously set custom dimensions
+- [`getCustomDimension()`](#getcustomdimension) &mdash; Returns the value of the custom dimension with the given id
 - [`setCustomTrackingParameter()`](#setcustomtrackingparameter) &mdash; Sets a custom tracking parameter.
 - [`clearCustomTrackingParameters()`](#clearcustomtrackingparameters) &mdash; Clear / reset all previously set custom tracking parameters.
 - [`setNewVisitorId()`](#setnewvisitorid) &mdash; Sets the current visitor ID to a random new one.
@@ -117,6 +120,7 @@ The class defines the following methods:
 - [`disableCookieSupport()`](#disablecookiesupport) &mdash; By default, MatomoTracker will read first party cookies from the request and write updated cookies in the response (using setrawcookie).
 - [`getRequestTimeout()`](#getrequesttimeout) &mdash; Returns the maximum number of seconds the tracker will spend waiting for a response from Matomo.
 - [`setRequestTimeout()`](#setrequesttimeout) &mdash; Sets the maximum number of seconds that the tracker will spend waiting for a response from Matomo.
+- [`setRequestMethodNonBulk()`](#setrequestmethodnonbulk) &mdash; Sets the request method to POST, which is recommended when using setTokenAuth() to prevent the token from being recorded in server logs.
 - [`setProxy()`](#setproxy) &mdash; If a proxy is needed to look up the address of the Matomo site, set it with this
 - [`setOutgoingTrackerCookie()`](#setoutgoingtrackercookie) &mdash; Sets a cookie to be sent to the tracking server.
 - [`getIncomingTrackerCookie()`](#getincomingtrackercookie) &mdash; Gets a cookie which was set by the tracking server.
@@ -321,6 +325,46 @@ and you wish to clear Custom Variables of 'visit' scope.
 
 - It does not return anything or a mixed result.
 
+<a name="setcustomdimension" id="setcustomdimension"></a>
+<a name="setCustomDimension" id="setCustomDimension"></a>
+### `setCustomDimension()`
+
+Sets a specific custom dimension
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$id` (`int`) &mdash;
+       id of custom dimension
+    - `$value` (`string`) &mdash;
+       value for custom dimension
+- It returns a `$this` value.
+
+<a name="clearcustomdimensions" id="clearcustomdimensions"></a>
+<a name="clearCustomDimensions" id="clearCustomDimensions"></a>
+### `clearCustomDimensions()`
+
+Clears all previously set custom dimensions
+
+#### Signature
+
+- It does not return anything or a mixed result.
+
+<a name="getcustomdimension" id="getcustomdimension"></a>
+<a name="getCustomDimension" id="getCustomDimension"></a>
+### `getCustomDimension()`
+
+Returns the value of the custom dimension with the given id
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$id` (`int`) &mdash;
+       id of custom dimension
+
+- *Returns:*  `string`|`null` &mdash;
+    
+
 <a name="setcustomtrackingparameter" id="setcustomtrackingparameter"></a>
 <a name="setCustomTrackingParameter" id="setCustomTrackingParameter"></a>
 ### `setCustomTrackingParameter()`
@@ -333,7 +377,7 @@ tracking request.
 
 -  It accepts the following parameter(s):
     - `$trackingApiParameter` (`string`) &mdash;
-       The name of the tracking API parameter, eg 'dimension1'
+       The name of the tracking API parameter, eg 'bw_bytes'
     - `$value` (`string`) &mdash;
        Tracking parameter value that shall be sent for this tracking parameter.
 - It returns a `$this` value.
@@ -1267,6 +1311,22 @@ from Matomo.
 - It returns a `$this` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
+
+<a name="setrequestmethodnonbulk" id="setrequestmethodnonbulk"></a>
+<a name="setRequestMethodNonBulk" id="setRequestMethodNonBulk"></a>
+### `setRequestMethodNonBulk()`
+
+Sets the request method to POST, which is recommended when using setTokenAuth()
+to prevent the token from being recorded in server logs. Avoid using redirects
+when using POST to prevent the loss of POST values. When using Log Analytics,
+be aware that POST requests are not parseable/replayable.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$method` (`string`) &mdash;
+       Either 'POST' or 'GET'
+- It returns a `$this` value.
 
 <a name="setproxy" id="setproxy"></a>
 <a name="setProxy" id="setProxy"></a>
