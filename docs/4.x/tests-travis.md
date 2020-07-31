@@ -73,6 +73,8 @@ Below is the list of all supported environment variables:
       global:
         - DEPENDENT_PLUGINS="myGithubAccount/myDependentPlugin myGithubAccount/myOtherDependentPlugin"
     ```
+    
+    Should a dependent plugin be from a private repository, then you need to go Travis and select the build for your plugin (the plugin you are wanting to run the tests for, not the dependent plugin). Next go to "Settings". In the "Environment Variables" section add a new variable named "GITHUB_USER_TOKEN" and specify the token. Make sure to have the setting "DISPLAY VALUE IN BUILD LOG" disabled so the token value won't be visible to others. You can generate this github user token by going to https://github.com/settings/tokens and generating a new token. Make sure to select all checkboxes in the "repo" scope.
 
 ### Extending .travis.yml behavior
 
