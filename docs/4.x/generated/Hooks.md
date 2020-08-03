@@ -1056,9 +1056,28 @@ Callback Signature:
 
 ## CustomJsTracker
 
+- [CustomJsTracker.manipulateJsTracker](#customjstrackermanipulatejstracker)
 - [CustomJsTracker.shouldAddTrackerFile](#customjstrackershouldaddtrackerfile)
 - [CustomJsTracker.trackerJsChanged](#customjstrackertrackerjschanged)
 - [CustomJsTracker.trackerJsChanged](#customjstrackertrackerjschanged)
+
+### CustomJsTracker.manipulateJsTracker
+
+*Defined in [Piwik/Plugins/CustomJsTracker/TrackingCode/PiwikJsManipulator](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomJsTracker/TrackingCode/PiwikJsManipulator.php) in line [56](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomJsTracker/TrackingCode/PiwikJsManipulator.php#L56)*
+
+Triggered after the Matomo JavaScript tracker has been generated and shortly before the tracker file
+is written to disk. You can listen to this event to for example automatically append some code to the JS
+tracker file. **Example**
+
+    function onManipulateJsTracker (&$content) {
+        $content .= "\nPiwik.DOM.onLoad(function () { console.log('loaded'); });";
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$content)</code></pre>
+
+- string `&$content` the generated JavaScript tracker code
+
 
 ### CustomJsTracker.shouldAddTrackerFile
 
@@ -1094,27 +1113,6 @@ Callback Signature:
 
 Callback Signature:
 <pre><code>function($savedFile]</code></pre>
-
-## CustomMatomoJs
-
-- [CustomMatomoJs.manipulateJsTracker](#custommatomojsmanipulatejstracker)
-
-### CustomMatomoJs.manipulateJsTracker
-
-*Defined in [Piwik/Plugins/CustomJsTracker/TrackingCode/PiwikJsManipulator](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomJsTracker/TrackingCode/PiwikJsManipulator.php) in line [56](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomJsTracker/TrackingCode/PiwikJsManipulator.php#L56)*
-
-Triggered after the Matomo JavaScript tracker has been generated and shortly before the tracker file
-is written to disk. You can listen to this event to for example automatically append some code to the JS
-tracker file. **Example**
-
-    function onManipulateJsTracker (&$content) {
-        $content .= "\nPiwik.DOM.onLoad(function () { console.log('loaded'); });";
-    }
-
-Callback Signature:
-<pre><code>function(&amp;$content)</code></pre>
-
-- string `&$content` the generated JavaScript tracker code
 
 ## Db
 
