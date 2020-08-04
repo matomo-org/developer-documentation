@@ -240,7 +240,7 @@ Callback Signature:
 
 ### API.addGlossaryItems
 
-*Defined in [Piwik/Plugins/API/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/API/Controller.php) in line [182](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/API/Controller.php#L182)*
+*Defined in [Piwik/Plugins/API/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/API/Controller.php) in line [191](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/API/Controller.php#L191)*
 
 Triggered to add or modify glossary items. You can either modify one of the existing core categories
 'reports' and 'metrics' or add your own category. **Example**
@@ -456,7 +456,7 @@ Callback Signature:
 
 ### ArchiveProcessor.ComputeNbUniques.getIdSites
 
-*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php) in line [495](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php#L495)*
+*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php) in line [494](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php#L494)*
 
 Triggered to change which site ids should be looked at when processing unique visitors and users.
 
@@ -474,7 +474,7 @@ Callback Signature:
 
 ### ArchiveProcessor.Parameters.getIdSites
 
-*Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Parameters.php) in line [135](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Parameters.php#L135)*
+*Defined in [Piwik/ArchiveProcessor/Parameters](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Parameters.php) in line [168](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Parameters.php#L168)*
 
 
 
@@ -484,7 +484,7 @@ Callback Signature:
 
 ### ArchiveProcessor.shouldAggregateFromRawData
 
-*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [85](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L85)*
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [86](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L86)*
 
 Triggered to detect if the archiver should aggregate from raw data by using MySQL queries (when true)
 or by aggregate archives (when false). Typically, data is aggregated from raw data for "day" period, and
@@ -505,7 +505,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToArchiveWhenNoVisits
 
-*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php) in line [289](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php#L289)*
+*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php) in line [307](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php#L307)*
 
 
 
@@ -515,7 +515,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php) in line [275](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php#L275)*
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php) in line [306](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php#L306)*
 
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
@@ -537,7 +537,7 @@ Callback Signature:
 
 ### Archiving.makeNewArchiverObject
 
-*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [325](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L325)*
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [329](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L329)*
 
 Triggered right after a new **plugin archiver instance** is created. Subscribers to this event can configure the plugin archiver, for example prevent the archiving of a plugin's data
 by calling `$archiver->disable()` method.
@@ -734,7 +734,7 @@ Usages:
 
 ### CliMulti.supportsAsync
 
-*Defined in [Piwik/CliMulti](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CliMulti.php) in line [273](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CliMulti.php#L273)*
+*Defined in [Piwik/CliMulti](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CliMulti.php) in line [281](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CliMulti.php#L281)*
 
 Triggered to allow plugins to force the usage of async cli multi execution or to disable it. **Example**
 
@@ -959,13 +959,13 @@ Usages:
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [487](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L487)*
+*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php) in line [267](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php#L267)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single
 site. Note: multiple archiving processes can post this event.
 
 Callback Signature:
-<pre><code>function($idSite, $pid)</code></pre>
+<pre><code>function($this-&gt;idSite, $this-&gt;pid)</code></pre>
 
 - int `$idSite` The ID of the site we're archiving data for.
 
@@ -974,13 +974,13 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [382](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L382)*
+*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php) in line [141](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php#L141)*
 
 This event is triggered before the cron archiving process starts archiving data for a single
 site. Note: multiple archiving processes can post this event.
 
 Callback Signature:
-<pre><code>function($idSite, $pid)</code></pre>
+<pre><code>function($this-&gt;idSite, $this-&gt;pid)</code></pre>
 
 - int `$idSite` The ID of the site we're archiving data for.
 
@@ -989,7 +989,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [734](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L734)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [544](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L544)*
 
 This event is triggered after archiving.
 
@@ -1001,7 +1001,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [884](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L884)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [697](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L697)*
 
 Triggered by the **core:archive** console command so plugins can modify the priority of
 websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
@@ -1015,7 +1015,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php) in line [383](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php#L383)*
+*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php) in line [403](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php#L403)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
@@ -1031,7 +1031,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [321](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L321)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [318](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L318)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -1045,7 +1045,7 @@ Callback Signature:
 
 ### CronArchive.init.start
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [280](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L280)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [277](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L277)*
 
 This event is triggered during initializing archiving.
 
@@ -1184,7 +1184,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php) in line [452](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php#L452)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php) in line [453](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php#L453)*
 
 
 
@@ -1288,7 +1288,7 @@ Callback Signature:
 
 ### Http.sendHttpRequest
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php) in line [239](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php#L239)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php) in line [240](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php#L240)*
 
 Triggered to send an HTTP request. Allows plugins to resolve the HTTP request themselves or to find out
 when an HTTP request is triggered to log this information for example to a monitoring tool.
@@ -1316,7 +1316,7 @@ Callback Signature:
 
 ### Http.sendHttpRequest.end
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php) in line [704](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php#L704)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php) in line [708](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php#L708)*
 
 Triggered when an HTTP request finished. A plugin can for example listen to this and alter the response,
 status code, or finish a timer in case the plugin is measuring how long it took to execute the request
@@ -3739,7 +3739,7 @@ Usages:
 
 ### Widgetize.shouldEmbedIframeEmpty
 
-*Defined in [Piwik/Plugins/Widgetize/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php) in line [71](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php#L71)*
+*Defined in [Piwik/Plugins/Widgetize/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php) in line [81](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php#L81)*
 
 Triggered to detect whether a widgetized report should be wrapped in the widgetized HTML or whether only
 the rendered output of the controller/action should be printed. Set `$shouldEmbedEmpty` to `true` if

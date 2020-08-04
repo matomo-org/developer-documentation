@@ -8,6 +8,7 @@ This is a complete list of available classes:
 - [`Archive`](Piwik/Archive.md) &mdash; The **Archive** class is used to query cached analytics statistics (termed "archive data").
 - [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; Used by [Archiver](/api-reference/Piwik/Plugin/Archiver) instances to insert and aggregate archive data.
 - [`ArchiveProcessor\Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; Contains the analytics parameters for the reports that are currently being archived.
+- [`Archive\ArchiveInvalidator`](Piwik/Archive/ArchiveInvalidator.md) &mdash; Service that can be used to invalidate archives or add archive references to a list so they will be invalidated later.
 - [`AuthResult`](Piwik/AuthResult.md) &mdash; Authentication result.
 - [`Auth\Password`](Piwik/Auth/Password.md) &mdash; Main class to handle actions related to password hashing and verification.
 - [`Category\Subcategory`](Piwik/Category/Subcategory.md) &mdash; Base type for subcategories.

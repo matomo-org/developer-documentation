@@ -5,7 +5,7 @@ Index
 
 - [`Access`](Piwik/Access.md) &mdash; *Class in namespace* `Piwik`- [`Archive`](Piwik/Archive.md) &mdash; *Class in namespace* `Piwik`- [`ArchiveProcessor`](Piwik/ArchiveProcessor.md) &mdash; *Class in namespace* `Piwik`- [`aggregateDataTableRecords()`](Piwik/ArchiveProcessor.md#aggregatedatatablerecords) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`aggregateNumericMetrics()`](Piwik/ArchiveProcessor.md#aggregatenumericmetrics) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
-- [`Auth`](Piwik/Auth.md) &mdash; *Class in namespace* `Piwik`- [`authenticate()`](Piwik/Auth.md#authenticate) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
+- [`ArchiveInvalidator`](Piwik/Archive/ArchiveInvalidator.md) &mdash; *Class in namespace* [`Piwik\Archive`](Piwik/Archive)- [`Auth`](Piwik/Auth.md) &mdash; *Class in namespace* `Piwik`- [`authenticate()`](Piwik/Auth.md#authenticate) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`AuthResult`](Piwik/AuthResult.md) &mdash; *Class in namespace* `Piwik`- [`$acceptValues`](Piwik/Columns/Dimension.md#$acceptvalues) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`$allowAnonymous`](Piwik/Columns/Dimension.md#$allowanonymous) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`ActionNameJoin`](Piwik/Columns/Join/ActionNameJoin.md) &mdash; *Class in namespace* [`Piwik\Columns\Join`](Piwik/Columns/Join)- [`addMetric()`](Piwik/Columns/MetricsList.md#addmetric) &mdash; *Method in class* [`MetricsList`](Piwik/Columns/MetricsList.md)
@@ -342,6 +342,7 @@ Index
 - [`getPluginForReport()`](Piwik/Archive.md#getpluginforreport) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`getParams()`](Piwik/ArchiveProcessor.md#getparams) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`getLogAggregator()`](Piwik/ArchiveProcessor.md#getlogaggregator) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
+- [`getArchiveOnlyReport()`](Piwik/ArchiveProcessor/Parameters.md#getarchiveonlyreport) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSite()`](Piwik/ArchiveProcessor/Parameters.md#getsite) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSegment()`](Piwik/ArchiveProcessor/Parameters.md#getsegment) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
@@ -935,7 +936,8 @@ Index
 
 ## R
 
-- [`Request`](Piwik/API/Request.md) &mdash; *Class in namespace* `Piwik\API`- [`remove()`](Piwik/Columns/MetricsList.md#remove) &mdash; *Method in class* [`MetricsList`](Piwik/Columns/MetricsList.md)
+- [`Request`](Piwik/API/Request.md) &mdash; *Class in namespace* `Piwik\API`- [`reArchiveReport()`](Piwik/Archive/ArchiveInvalidator.md#rearchivereport) &mdash; *Method in class* [`ArchiveInvalidator`](Piwik/Archive/ArchiveInvalidator.md)
+- [`remove()`](Piwik/Columns/MetricsList.md#remove) &mdash; *Method in class* [`MetricsList`](Piwik/Columns/MetricsList.md)
 - [`renameColumn()`](Piwik/DataTable.md#renamecolumn) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`RemoveSubtables`](Piwik/DataTable/Filter/RemoveSubtables.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`renameColumn()`](Piwik/DataTable/Map.md#renamecolumn) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`Row`](Piwik/DataTable/Row.md) &mdash; *Class in namespace* [`Piwik\DataTable`](Piwik/DataTable)- [`renameColumn()`](Piwik/DataTable/Row.md#renamecolumn) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
@@ -982,6 +984,7 @@ Index
 ## S
 
 - [`shouldLoadFlatten()`](Piwik/API/Request.md#shouldloadflatten) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
+- [`setArchiveOnlyReport()`](Piwik/ArchiveProcessor/Parameters.md#setarchiveonlyreport) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`setTokenAuth()`](Piwik/Auth.md#settokenauth) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`setLogin()`](Piwik/Auth.md#setlogin) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`setPassword()`](Piwik/Auth.md#setpassword) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)

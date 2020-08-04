@@ -4,6 +4,7 @@
 ## Archive
 ## ArchiveProcessor
 ## ArchiveProcessor\Parameters
+## Archive\ArchiveInvalidator
 ## AuthResult
 ## Auth\Password
 ## Category\Subcategory
