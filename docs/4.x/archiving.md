@@ -161,13 +161,6 @@ Care must be taken to store as little as possible when persisting records. Make 
 * **Metadata that can be added using existing data should not be stored with reports.** Instead they should be added in API methods when turning records into reports.
 </div>
 
-/*
-    archive invalidation: how are existing archives invalidated, what makes an archive invalidated, how is this done in code and handled by browser vs pre-archiving
-    archive purging: how are old archives deleted? at what other times are archives deleted?
-    partial archives: what are they, how do they fit into initiation/invalidation/purging workflow, how do archivers handle this, how do plugins initiate it, + a note that it doesn't work for browser archiving
-
-*/
-
 ## Archive Invalidation
 
 When an archive is known to no longer be valid, it is marked as invalid. This is done in the following situations:
@@ -213,26 +206,28 @@ If a plugin needs to process reports in the past, for instance, because the plug
 that affects report data was created/changed, there is an API for it:
 
 ```
-TODO: code example
+$archiveInvalidator = StaticContainer::get(ArchiveInvalidator::class);
+$archiveInvalidator->reArchiveReport([$idSite], 'MyPlugin', 'mySpecificReport');
 ```
 
 Here we use the `ArchiveInvalidator::reArchiveReport` method to invalidate archive data in the past, but only for the specific
 plugin or report we care about. On the next `core:archive` run, they will be re-processed into [partial-archives](#partial-archives).
 
+By default, N months in the past are invalidated, where N is determined by `[General] rearchive_reports_in_past_last_n_months`.
+
 **NOTE: This API only works for pre-archiving. For on-demand archiving, there is no need since the reports in the past will be generated
 if the user requests them.**
-
-TODO: how to handle in Archivers.
 
 ## Specifics of archive querying
 
 Archive data is queried through the `Archive` class:
 
 ```
-TODO: code example
+$archive = Archive::build($idSite, $period, $date, $segment);
+$dataTable = $archive->getDataTableFromNumeric(['nb_visits', 'nb_visits_converted']);
 ```
 
-The class looks for usable archives for the given `idSite`, `period` and `segment`. This will include:
+When a query is made, the class looks for usable archives for the given `idSite`, `period` and `segment`. This will include:
 
 * the latest "all plugins" archive (where the done flag is like `done`) that we are allowed to query OR
   the latest plugin specific archives (where the done flag is like `done.MyPlugin`) that would have the specific reports/metrics we are looking for
@@ -261,8 +256,57 @@ Plugins can delete archives themselves by using the `ArchivePurger` class.
 ## Partial Archives
 
 Partial archives are a special type of archive that only contain one or a few reports of one plugin, rather than every report
-for one plugin (or every report for all plugins).
+for one plugin (or every report for all plugins). These archives have done flag value of `ArchiveWriter::DONE_PARTIAL`.
 
 Currently, they are only created when plugins want to archive a single report in the past.
 
- TODO
+### For plugins: supporting partial archives
+
+Partial archives are not automatically created when a single report is requested for archiving. Plugin `Archiver`s have to
+specifically support this workflow like so:
+
+```
+class Archiver extends \Piwik\Plugin\Archiver
+{
+    // ...
+
+    public function __construct(ArchiveProcessor $processor)
+    {
+        parent::__construct($processor);
+
+        // if a single report is requested, mark the archive we're creating as partial
+        $this->requestedReport = $processor->getParams()->getArchiveOnlyReport();
+        if ($this->requestedReport) {
+            $processor->getParams()->setIsPartialArchive(true);
+        }
+    }
+
+    public function aggregateDayReport()
+    {
+        if ($this->isArchiving('MyPlugin_mySpecificReport')) {
+            $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
+
+            $dataTable = // ... build by aggregating visits ...
+            $serializedData = $dataTable->getSerialized(
+                $maxRowsInTable,
+                $maxRowsInSubtable = $maxRowsInTable,
+                $columnToSortBy = Metrics::INDEX_NB_VISITS
+            );
+
+            $archiveProcessor->insertBlobRecords('MyPlugin_mySpecificReport', $serializedData);
+        }
+    }
+
+    public function aggregateMultipleReports()
+    {
+        if ($this->isArchiving('MyPlugin_mySpecificReport')) {
+            $this->getProcessor()->aggregateDataTableRecords(['MyPlugin_mySpecificReport']);
+        }
+    }
+
+    private function isArchiving(string $reportName)
+    {
+        return empty($this->requestedReport) || $this->requestedReport == $reportName;
+    }
+}
+```
