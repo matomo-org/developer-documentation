@@ -129,6 +129,7 @@ Visit actions contain the following information:
 - `idaction_name`: the ID of the page title action type for this action
 - `idaction_name_ref`: the ID of the page title action type for the previous action in the visit
 - `time_spent_ref_action`: the amount of time spent doing the previous action in seconds (see below for details)
+- `time_spent`: the amount of time spent on this action (set by the CustomDimensions plugin)
 - `custom_var_k1`: the custom variable name of the first slot for page custom variables
 - `custom_var_v1`: the custom variable value of the first slot for page custom variables
 - `custom_var_k2`: the custom variable name of the second slot for page custom variables
