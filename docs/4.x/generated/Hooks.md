@@ -3739,7 +3739,7 @@ Usages:
 
 ### Widgetize.shouldEmbedIframeEmpty
 
-*Defined in [Piwik/Plugins/Widgetize/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php) in line [81](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php#L81)*
+*Defined in [Piwik/Plugins/Widgetize/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php) in line [83](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php#L83)*
 
 Triggered to detect whether a widgetized report should be wrapped in the widgetized HTML or whether only
 the rendered output of the controller/action should be printed. Set `$shouldEmbedEmpty` to `true` if
