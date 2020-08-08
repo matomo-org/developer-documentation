@@ -79,7 +79,7 @@ Archive data is calculated differently based on the period type:
 - "day" periods are aggregation of log data
 - "week", "month", "year" and custom date ranges are aggregation of "day" reports
 
-For example archive data for a week is created by aggregating archive data of the 7 days of the week. This is much faster than aggregating log data.
+For example archive data for a week is created by aggregating archive data of the 7 days of the week. This is much faster than aggregating seven days of log data.
 
 ### Plugin Archivers
 
@@ -124,7 +124,7 @@ Persisted reports and metrics are indexed by the website ID, period and segment.
 The status of each archive is stored as a row in the `archive_numeric_*` tables. The archive status row has `name` value of
 `done*`, where the suffix can contain a specific plugin name and/or segment hash.
 
-In the code, these rows are called the "done flag"s of an archive, and the value of this row (called the "done flag value")
+In the code, this row is called the **done flag** of an archive, and the value of this row (called the **done flag value**)
 is the status of the archive. This row can have the following values:
 
 * `ArchiveWriter::DONE_OK` - the archive was successfully processed and can be read.
@@ -134,7 +134,7 @@ is the status of the archive. This row can have the following values:
 
 ### How reports are stored as blob records in the `archive_blob_*` tables
 
-When inserting blob records, one row in a `archive_blob_$year_$month` MySQL table for the root `DataTable` is created. Subtables of this `DataTable` are stored in different rows whereas 100 tables are combined into one chunk. For example the record `MyPlugin_myFancyReport_chunk_100_199` contains subtables having the ID 100-199. The `value` column of the `archive` table contains in this case a serialized array of blobs where `array([subtableId] => [subtableBlob])`. For example:
+When inserting blob records, one row in a `archive_blob_$year_$month` MySQL table for the root `DataTable` is created. Subtables of this `DataTable` are stored in different rows where tables are combined into one chunk (each chunk contains a max of 100 tables). For example the record `MyPlugin_myFancyReport_chunk_100_199` contains subtables having the ID 100-199. The `value` column of the `archive` table contains in this case a serialized array of blobs where `array([subtableId] => [subtableBlob])`. For example:
 
 
 idarchive             | name             | value             | Description
@@ -153,6 +153,7 @@ For example, the *UserSettings* plugin uses one record to hold browser details o
 <a name="record-storage-guidelines"></a>
 
 <div markdown="1" class="alert alert-warning">
+
 **Record storage guidelines**
 
 Care must be taken to store as little as possible when persisting records. Make sure to follow the guidelines below before inserting records as archive data:
@@ -163,7 +164,7 @@ Care must be taken to store as little as possible when persisting records. Make 
 
 ## Archive Invalidation
 
-When an archive is known to no longer be valid, it is marked as invalid. This is done in the following situations:
+When an archive is known to no longer have correct data, it is marked as invalid. This is done in the following situations:
 
 * automatically by Matomo when a new visit is recorded in the past
 * sometimes by plugins when they want to re-process an archive
@@ -181,7 +182,7 @@ pre-archiving is used.
 ### Invalidation with on-demand archiving
 
 When on-demand archiving is used, Matomo will re-process invalidated archives before they are requested. The archive
-querying system will simply ignore archives with DONE_INVALIDATED, treating them like they are not there.
+querying system will simply ignore archives with `DONE_INVALIDATED`, treating them like they are not there.
 
 So when a query comes in for an invalidated archive, Matomo will find nothing and assume the archive needs to be processed.
 
@@ -191,13 +192,17 @@ When pre-archiving is used, the entry that is added to `archive_invalidations` i
 completes, we remove the entry.
 
 <div markdown="1" class="alert alert-info">
+
 It should be noted that for pre-archiving, archive invalidating is the primary mechanism by which archiving is initiated.
 In the `core:archive` command, we invalidate archives we know have had new visits (including periods for today and yesterday).
-Then we go through each entry in `archive_invalidations` processing them until the table is empty.
+Then we go through each entry in the `archive_invalidations` table processing them until the table is empty.
 
 The `archive_invalidations` table is very much like a queue, except unlike a LIFO queue, there is a specific order to
 how archives are handled. For example, we want to archive days before weeks and weeks before months, etc. And we also
 want to process the normal archives before handling segment archives to avoid any errors in the report data.
+
+We also only archive data for one site at a time. To archive different sites in parallel, multiple `core:archive` processes are required.
+
 </div>
 
 ### For plugins: archiving data in the past
@@ -211,9 +216,9 @@ $archiveInvalidator->reArchiveReport([$idSite], 'MyPlugin', 'mySpecificReport');
 ```
 
 Here we use the `ArchiveInvalidator::reArchiveReport` method to invalidate archive data in the past, but only for the specific
-plugin or report we care about. On the next `core:archive` run, they will be re-processed into [partial-archives](#partial-archives).
+plugin or report we care about. On the next `core:archive` run, they will be re-processed into [partial archives](#partial-archives).
 
-By default, N months in the past are invalidated, where N is determined by `[General] rearchive_reports_in_past_last_n_months`.
+By default, N months in the past are invalidated, where N is determined by the `[General] rearchive_reports_in_past_last_n_months` INI config option.
 
 **NOTE: This API only works for pre-archiving. For on-demand archiving, there is no need since the reports in the past will be generated
 if the user requests them.**
