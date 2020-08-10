@@ -839,7 +839,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [587](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L587)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [592](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L592)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -855,7 +855,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [604](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L604)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [609](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L609)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -1899,7 +1899,7 @@ Usages:
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [424](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L424)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [429](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L429)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but
 before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
@@ -2239,7 +2239,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [569](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L569)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [574](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L574)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -2270,7 +2270,7 @@ Callback Signature:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [614](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L614)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [619](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L619)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -2360,7 +2360,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [691](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L691)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [696](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L696)*
 
 Triggered before the user is authenticated, when the global authentication object
 should be created. Plugins that provide their own authentication implementation should use this event
@@ -2379,7 +2379,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [648](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L648)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [680](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L680)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted
 based on the `filter_sort_column` query parameter, rows are truncated based on the
@@ -3739,7 +3739,7 @@ Usages:
 
 ### Widgetize.shouldEmbedIframeEmpty
 
-*Defined in [Piwik/Plugins/Widgetize/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php) in line [83](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php#L83)*
+*Defined in [Piwik/Plugins/Widgetize/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php) in line [82](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Controller.php#L82)*
 
 Triggered to detect whether a widgetized report should be wrapped in the widgetized HTML or whether only
 the rendered output of the controller/action should be printed. Set `$shouldEmbedEmpty` to `true` if
