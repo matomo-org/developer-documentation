@@ -1621,7 +1621,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [508](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L508)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [509](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L509)*
 
 
 
