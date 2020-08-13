@@ -14,7 +14,7 @@ previous: querying-the-reporting-api
 
 ### PHP client
 
-You can use directly Piwik's codebase to call the reporting API. Learn more in [Querying the reporting API](querying-the-reporting-api).
+There is currently no official Reporting API Client in PHP, but you can easily call the reporting API over HTTPS in a few lines of code. Learn more in [Querying the reporting API](querying-the-reporting-api).
 
 ### Ruby client
 
