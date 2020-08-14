@@ -12,9 +12,14 @@ previous: querying-the-reporting-api
 
 ## Client libraries for Reporting API
 
-### PHP client
+### PHP without library
 
-You can use directly Piwik's codebase to call the reporting API. Learn more in [Querying the reporting API](querying-the-reporting-api).
+You can use `file_get_contents()` to call the reporting API directly. Learn more in [Querying the reporting API](querying-the-reporting-api).
+
+### PHP clients (unofficial)
+
+- [Matomo-PHP-API](https://github.com/VisualAppeal/Matomo-PHP-API)
+- [matomo-reporting-api](https://github.com/pfrenssen/matomo-reporting-api)
 
 ### Ruby client
 
