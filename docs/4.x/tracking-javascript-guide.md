@@ -940,11 +940,11 @@ View all features of the Tracking client in the [JavaScript Tracker Reference](/
 
 If you have any question about JavaScript Tracking in Piwik, [please search the website](https://matomo.org/), or [ask in the forums](https://forum.matomo.org).
 
-- [How do enable tracking for users without JavaScript?](https://matomo.org/faq/how-to/#faq_176)
-- [How does Piwik track downloads?](https://matomo.org/faq/new-to-piwik/#faq_47)
+- [How do I enable tracking for users without JavaScript?](https://matomo.org/faq/how-to/faq_176/)
+- [How does Piwik track downloads?](https://matomo.org/faq/new-to-piwik/faq_47/)
 - [How to track single-page websites and web applications](https://matomo.org/blog/2017/02/how-to-track-single-page-websites-using-piwik-analytics/)
-- [How to track error pages and get the list of 404 and referrers urls.](https://matomo.org/faq/how-to/#faq_60)
-- [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](https://matomo.org/faq/how-to/#faq_62)
-- [How do I set up Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](https://matomo.org/faq/how-to/#faq_132)
+- [How to track error pages and get the list of 404 and referrers urls.](https://matomo.org/faq/how-to/faq_60/)
+- [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](https://matomo.org/faq/how-to/faq_62/)
+- [How do I set up Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](https://matomo.org/faq/how-to/faq_132/)
 - [How do I customise the matomo.js being loaded on all my websites?](https://matomo.org/faq/how-to/faq_19087/)
-- [How do I disable all tracking cookies used by Piwik in the javascript code?](https://matomo.org/faq/general/#faq_157)
+- [How do I disable all tracking cookies used by Piwik in the javascript code?](https://matomo.org/faq/general/faq_157/)
