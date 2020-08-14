@@ -17,6 +17,7 @@ The class defines the following methods:
 - [`addColumn()`](#addcolumn) &mdash; Adds a new database table column to an existing table.
 - [`addColumns()`](#addcolumns) &mdash; Adds multiple new database table columns to an existing table at once.
 - [`dropColumn()`](#dropcolumn) &mdash; Drops an existing database table column.
+- [`dropColumns()`](#dropcolumns) &mdash; Drops an existing database table column.
 - [`changeColumn()`](#changecolumn) &mdash; Changes the column name and column type of an existing database table column.
 - [`changeColumnType()`](#changecolumntype) &mdash; Changes the type of an existing database table column.
 - [`changeColumnTypes()`](#changecolumntypes) &mdash; Changes the type of multiple existing database table columns at the same time.
@@ -151,6 +152,21 @@ Drops an existing database table column.
     - `$columnName` (`string`) &mdash;
        The name of the column that shall be dropped, eg 'my_column_name'.
 - It returns a `Piwik\Updater\Migration\Db\DropColumn` value.
+
+<a name="dropcolumns" id="dropcolumns"></a>
+<a name="dropColumns" id="dropColumns"></a>
+### `dropColumns()`
+
+Drops an existing database table column.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$table`
+      
+    - `$columnNames`
+      
+- It returns a `Piwik\Updater\Migration\Db\DropColumns` value.
 
 <a name="changecolumn" id="changecolumn"></a>
 <a name="changeColumn" id="changeColumn"></a>
