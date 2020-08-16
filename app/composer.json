@@ -10,7 +10,7 @@
         "michelf/php-markdown": "1.9.0",
         "mnapoli/front-yaml": "~1.2",
         "slim/psr7": "^1.0",
-        "slim/twig-view": "3.0.0",
+        "slim/twig-view": "^3.0.0",
         "php-di/php-di": "^6.0",
         "ext-json": "*"
     },
