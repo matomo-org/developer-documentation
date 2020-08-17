@@ -106,7 +106,7 @@ There are also generic filters you can choose to apply on all APIs that return w
 *   **filter\_excludelowpop\_value**; defines the minimum value for the **filter_excludelowpop** column
 *   **hideColumns**; a comma separated list of columns. If set, removes those columns from the result. This can be used to reduce the amount of data transferred.
 *   **showColumns**; a comma separated list of columns. If set, removes all columns in the result that are not found in this list. This can be used to reduce the amount of data transferred.
-*   **convertToUnicode**; this parameter only applies when `format` is `csv` or `tsv`. By default (when set to 1), the output is sent in `UTF-16LE`. If set to 0, then the output will be encoded in `UTF-8`.
+*   **convertToUnicode**; this parameter only applies when the **format** is csv or tsv. By default (when set to 1), the output is sent in UTF-16LE encoding. If set to 0, then the output will be sent encoded in UTF-8.
 
 *   **filter\_column\_recursive**; defines the column to be searched for when recursively searching for a pattern _filter\_pattern\_recursive_
 *   **filter\_pattern\_recursive**; defines the text you are searching for. Only the matching rows are returned. This filter is applied to recursive tables (Actions/Downloads/Outlinks tables)
