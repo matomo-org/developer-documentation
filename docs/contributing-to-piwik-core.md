@@ -179,7 +179,7 @@ The following are a list of guidelines and requirements for contributions to Piw
 
 * **If your contribution includes third-party components & libraries, make sure they include GPL compatible licenses.** Third-party components/libraries must be compatible with GPL v3 since this is the license used by Piwik.
 
-* **Make sure your code follows the [PSR 1](http://www.php-fig.org/psr/psr-1/), [PSR 2](http://www.php-fig.org/psr/psr-2/) and [PSR-4](http://www.php-fig.org/psr/psr-4/) coding standards.**
+* **Make sure your code follows the [PSR 1](http://www.php-fig.org/psr/psr-1/), [PSR 12](https://www.php-fig.org/psr/psr-12/) and [PSR-4](http://www.php-fig.org/psr/psr-4/) coding standards.**
 
 * **Make sure your source code files are encoded in UTF8.**
 
