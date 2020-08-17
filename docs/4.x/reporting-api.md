@@ -106,10 +106,10 @@ There are also generic filters you can choose to apply on all APIs that return w
 *   **filter\_excludelowpop\_value**; defines the minimum value for the **filter_excludelowpop** column
 *   **hideColumns**; a comma separated list of columns. If set, removes those columns from the result. This can be used to reduce the amount of data transferred.
 *   **showColumns**; a comma separated list of columns. If set, removes all columns in the result that are not found in this list. This can be used to reduce the amount of data transferred.
+*   **convertToUnicode**; by default (when set to 1), the output is sent in `UTF-16LE`. If set to 0, then the output will be encoded in `UTF-8`.
 
 *   **filter\_column\_recursive**; defines the column to be searched for when recursively searching for a pattern _filter\_pattern\_recursive_
 *   **filter\_pattern\_recursive**; defines the text you are searching for. Only the matching rows are returned. This filter is applied to recursive tables (Actions/Downloads/Outlinks tables)
-
 
 *   **disable\_generic\_filters**; if set to 1, all the generic filters above will not be applied. This can be useful to disable the filters above which are otherwise applied with default values. Mostly used internally or when developing plugins for Piwik.
 *   **disable\_queued\_filters**; if set to 1, all the filters that are mostly presentation filters (replace a column name, apply callbacks on the column to add new information such as the browser icon URL, etc.) will not be applied. Mostly used internally or when developing plugins for Piwik.
