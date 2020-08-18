@@ -55,6 +55,8 @@ Constructor.
        An array of column names that should be kept or a comma-separated list of column names. Columns not in this list will be removed.
     - `$deleteIfZeroOnly` (`bool`) &mdash;
        If true, columns will be removed only if their value is 0.
+    - `$deleteRecursive` (`bool`) &mdash;
+       If true, columns will be removed in nested arrays.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
