@@ -77,6 +77,14 @@ e.g. `{% spaceless %}` becomes `{% apply spaceless %}`
 
 e.g. `divisibleby(2)` becomes `divisible by(2)`
 
+## Running tests on Travis
+
+If you are [running tests for your plugin on Travis](https://developer.matomo.org/guides/tests-travis) you should regenerate the `.travis.yml` file by executing the following command within your Matomo directory:
+
+```
+$ ./console generate:travis-yml --plugin=MyPlugin --php-versions="7.2,7.4" --distribution="bionic" --sudo-false --verbose
+```
+
 ## Summary
 
 In this guide we have seen which steps to take to migrate your Matomo plugin to be compatible with our latest Matomo 4.
