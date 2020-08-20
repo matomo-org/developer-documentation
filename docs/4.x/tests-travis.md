@@ -17,7 +17,7 @@ Current status for master branch: [![Build Status](https://travis-ci.org/matomo-
 Plugins can do the same if they include a `.travis.yml` file in their github repository. You can generate this file using the `generate:travis-yml` console command:
 
 ```
-$ ./console generate:travis-yml --plugin=MyPlugin
+$ ./console generate:travis-yml --plugin=MyPlugin --php-versions="7.2,7.4" --distribution="bionic" --sudo-false --verbose
 ```
 
 The command will automatically detect if you have PHP and/or UI tests in your plugin's `Test/` directory and create a `.travis.yml` file that will run them. The tests will be run against both Piwik `master` branch and against the latest stable version.
