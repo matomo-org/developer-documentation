@@ -1202,7 +1202,7 @@ Usages:
 
 ### Dimension.addDimensions
 
-*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Columns/Dimension.php) in line [720](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Columns/Dimension.php#L720)*
+*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Columns/Dimension.php) in line [724](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Columns/Dimension.php#L724)*
 
 Triggered to add new dimensions that cannot be picked up automatically by the platform. This is useful if the plugin allows a user to create reports / dimensions dynamically. For example
 CustomDimensions or CustomVariables. There are a variable number of dimensions in this case and it
@@ -1224,7 +1224,7 @@ Callback Signature:
 
 ### Dimension.filterDimensions
 
-*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Columns/Dimension.php) in line [744](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Columns/Dimension.php#L744)*
+*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Columns/Dimension.php) in line [748](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Columns/Dimension.php#L748)*
 
 Triggered to filter / restrict dimensions. **Example**
 
