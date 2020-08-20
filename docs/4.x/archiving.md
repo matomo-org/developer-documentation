@@ -44,11 +44,14 @@ While pre-computing archive data seems of course superfluous for 1000 page views
 ### On-demand Archiving
 
 By default, archive data is calculated and cached **on-demand**. When a specific report is requested, Piwik will check if the required archive data exists and generate it if it does not.
+If the report was archived recently (within the configured amount of seconds in the `time_before_today_archive_considered_outdated` INI config option), then no new archive is generated.
 
 ### Pre-archiving
 
 When tracking a website with a lot of traffic, on-demand archiving will take too much time and resources, causing users to wait a long time before a report becomes visible.
 In those situations, archiving on demand must be disabled and [pre-archiving needs to run in background at a scheduled time](https://matomo.org/docs/setup-auto-archiving/).
+
+(In fact, if you have more than 500 page views a day, or are on a slow server, or generally find Matomo slow, then we recommend you disable browser archiving and [set up CLI archiving](https://matomo.org/docs/setup-auto-archiving/).)
 
 Pre-archiving can be run for every site and period (except custom date ranges) using the `core:archive` console command:
 
@@ -280,15 +283,15 @@ class Archiver extends \Piwik\Plugin\Archiver
         parent::__construct($processor);
 
         // if a single report is requested, mark the archive we're creating as partial
-        $this->requestedReport = $processor->getParams()->getArchiveOnlyReport();
-        if ($this->requestedReport) {
+        $requestedReport = $processor->getParams()->getArchiveOnlyReport();
+        if ($requestedReport) {
             $processor->getParams()->setIsPartialArchive(true);
         }
     }
 
     public function aggregateDayReport()
     {
-        if ($this->isArchiving('MyPlugin_mySpecificReport')) {
+        if ($this->isRequestedReport('MyPlugin_mySpecificReport')) {
             $maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
 
             $dataTable = // ... build by aggregating visits ...
@@ -304,14 +307,9 @@ class Archiver extends \Piwik\Plugin\Archiver
 
     public function aggregateMultipleReports()
     {
-        if ($this->isArchiving('MyPlugin_mySpecificReport')) {
+        if ($this->isRequestedReport('MyPlugin_mySpecificReport')) {
             $this->getProcessor()->aggregateDataTableRecords(['MyPlugin_mySpecificReport']);
         }
-    }
-
-    private function isArchiving(string $reportName)
-    {
-        return empty($this->requestedReport) || $this->requestedReport == $reportName;
     }
 }
 ```
