@@ -85,6 +85,8 @@ If you are [running tests for your plugin on Travis](https://developer.matomo.or
 $ ./console generate:travis-yml --plugin=MyPlugin --php-versions="7.2,7.4" --distribution="bionic" --sudo-false --verbose
 ```
 
+You may need to update the "exclude" matrix as this isn't done automatically should you not want certain jobs to run. It would otherwise only exclude runs for PHP versions that don't run anymore anyway.
+
 ## Summary
 
 In this guide we have seen which steps to take to migrate your Matomo plugin to be compatible with our latest Matomo 4.
