@@ -437,7 +437,7 @@ if ('object' === typeof Piwik && 'object' === typeof Matomo.AbTesting) {
     forceExperiment();
 } else {
     // if matomo.js is loaded after this code
-    window.piwikAbTestingAsyncInit = forceExperiment;   
+    window.matomoAbTestingAsyncInit = forceExperiment;   
 }
 </script>
 ```
@@ -448,7 +448,7 @@ server and afterwards force the same variation in the client.
 
 ### How do I know when the A/B Testing framework has been loaded and initialized?
 
-The A/B Testing framework executes a method `window.piwikAbTestingAsyncInit` as soon as it has been loaded. When you 
+The A/B Testing framework executes a method `window.matomoAbTestingAsyncInit` as soon as it has been loaded. When you 
 specify such a method, you can be sure that variables like `Matomo.AbTesting` are available. If you load the `matomo.js`
 file synchronously as recommended, you can be sure that `Matomo.AbTesting` will be defined just after the include of 
 `matomo.js`
@@ -525,7 +525,7 @@ if ('object' === typeof Piwik && 'object' === typeof Matomo.AbTesting) {
     createExperiment();
 } else {
     // if matomo.js is loaded after this code
-    window.piwikAbTestingAsyncInit = createExperiment;   
+    window.matomoAbTestingAsyncInit = createExperiment;   
 }
   
 </script>

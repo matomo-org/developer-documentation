@@ -119,7 +119,7 @@ window.matomoAsyncInit = function () {
     var matomoTracker3 = Matomo.getTracker('https://example.com/matomo.php', 3);
 
     if (Matomo.HeatmapSessionRecording) {
-        Matomo.HeatmapSessionRecording.setPiwikTrackers([matomoTracker1, matomoTracker2, matomoTracker3]);
+        Matomo.HeatmapSessionRecording.setMatomoTrackers([matomoTracker1, matomoTracker2, matomoTracker3]);
 
         // You can customize the tracking like this:
         matomoTracker2.HeatmapSessionRecording.disable();
@@ -195,7 +195,7 @@ To take a screenshot from a certain page, you need to open the page in your brow
 ## Is it possible to not use the `paq.push` methods and instead call the `HeatmapSessionRecording` tracker methods directly?
 
 Yes, you can be sure that the `Matomo.HeatmapSessionRecording` object is available as soon as the callback method 
-`window.piwikHeatmapSessionRecordingAsyncInit` is called.
+`window.matomoHeatmapSessionRecordingAsyncInit` is called.
 
 In the `matomo.js` tracker we differentiate between two kind of methods:
 
@@ -207,7 +207,7 @@ In the `matomo.js` tracker we differentiate between two kind of methods:
   `Matomo.HeatmapSessionRecording.disableCaptureKeystrokes()`.
 
 ```js
-window.piwikHeatmapSessionRecordingAsyncInit = function () {
+window.matomoHeatmapSessionRecordingAsyncInit = function () {
     // static method
     Matomo.HeatmapSessionRecording.disableCaptureKeystrokes();
      
@@ -223,7 +223,7 @@ The static method `HeatmapSessionRecording::disable` disables the tracking for a
 The tracker method `disable` can be used to disable the tracking only for a specific tracker instance like this:
 
 ```js
-window.piwikHeatmapSessionRecordingAsyncInit = function () {
+window.matomoHeatmapSessionRecordingAsyncInit = function () {
     // get tracker instance if you do not have a reference to the tracker instance yet
     var tracker = Matomo.getAsyncTracker(piwikSiteUrl, piwikSiteId); 
     tracker.HeatmapSessionRecording.disable();

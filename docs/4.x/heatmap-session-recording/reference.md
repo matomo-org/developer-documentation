@@ -25,11 +25,11 @@ In most cases only one Piwik tracker will be used so the only difference is how 
 * Static methods are called via `_paq.push(['HeatmapSessionRecording::$methodName']);` or directly on the `Matomo.HeatmapSessionRecording` object,
   eg. `Matomo.HeatmapSessionRecording.$methodName()`.
 
-If you do not want to use the `_paq.push` methods, you need to define a `window.piwikHeatmapSessionRecordingAsyncInit` method 
+If you do not want to use the `_paq.push` methods, you need to define a `window.matomoHeatmapSessionRecordingAsyncInit` method 
 that is called as soon as the media tracker has been initialized:
 
 ```js
-window.piwikHeatmapSessionRecordingAsyncInit = function () {
+window.matomoHeatmapSessionRecordingAsyncInit = function () {
     Matomo.HeatmapSessionRecording.disable();
 };
 ```
@@ -162,7 +162,7 @@ By default, the target page rules you configure will be matched against
 
 Allows you to completely disable the tracking of any Heatmap or Session Recording data. This is useful if you for example 
 manage multiple websites in your Piwik and there are some websites where you do not want to track any such activities. It is recommended
-to call this method as early in your tracking code as possible or during the `piwikHeatmapSessionRecordingAsyncInit` method.
+to call this method as early in your tracking code as possible or during the `matomoHeatmapSessionRecordingAsyncInit` method.
 
 ### `enable()`
 
@@ -178,7 +178,7 @@ Allows you to detect whether the tracking of Heatmaps or Session Recordings is c
 Enables the debug mode that logs debug information to the developer console of your browser. This should **not** be 
 enabled in production.
 
-### `setPiwikTrackers()`
+### `setMatomoTrackers()`
 
 Allows you to set the tracker instances to be used when tracking heatmap and session activities. Can be either
  a single tracker instance, or an array of Piwik tracker instances. This is useful when you are working with multiple Piwik
@@ -188,7 +188,7 @@ Allows you to set the tracker instances to be used when tracking heatmap and ses
 
 Returns an array of Piwik tracker instances that are used by the Heatmap and Session Recording plugin. By default, 
 this will return the same as `Matomo.getAsyncTrackers()` and will return all tracker instances that were created eg 
-via `Matomo.addTracker` or `_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
+via `Matomo.addTracker` or `_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setMatomoTrackers()`.
 
 ## Tracker methods
 

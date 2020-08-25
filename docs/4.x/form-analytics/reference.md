@@ -110,7 +110,7 @@ Allows you to detect whether the tracking of forms is currently enabled. Returns
 Enables the debug mode that logs debug information to the developer console of your browser. This should **not** be 
 enabled in production.
 
-### `setPiwikTrackers()`
+### `setMatomoTrackers()`
 
 Allows you to set the tracker instances the tracker should use when tracking your forms. Can be either
  a single tracker instance, or an array of Piwik tracker instances. This is useful when you are working with multiple Piwik
