@@ -144,7 +144,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 
 ## Unit Tests Covering matomo.js
 
-The Piwik JavaScript Tracking API is covered by an extensive JavaScript unit test suite to ensure that the code quality is as high as possible, and that we never break this functionality. Tests are written using QUnit. To run the tests, simply checkout the [Piwik Git repository](https://matomo.org/participate/contributing-with-git/) and go to `/path/to/matomo/tests/javascript/`. Tests are run inside your browser.
+The Piwik JavaScript Tracking API is covered by an extensive JavaScript unit test suite to ensure that the code quality is as high as possible, and that we never break this functionality. Tests are written using QUnit. To run the tests, simply checkout the [Piwik Git repository](/guides/contributing-to-piwik-core) and go to `/path/to/matomo/tests/javascript/`. Tests are run inside your browser.
 
 The Piwik JavaScript API has been tested with numerous web browsers. To maximize coverage, we use services like [crossbrowsertesting.com](https://crossbrowsertesting.com/) and [browsershots.org](https://browsershots.org/).
 
