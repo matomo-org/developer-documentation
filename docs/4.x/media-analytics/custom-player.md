@@ -22,7 +22,7 @@ Let's start by adding the raw skeleton for a media player to your website tracki
  * A class that tracks the interaction with the player
  
 ```js
-window.piwikMediaAnalyticsAsyncInit = function () {
+window.matomoMediaAnalyticsAsyncInit = function () {
     var MA = Matomo.MediaAnalytics;
     
     function MyPlayer(node, mediaType) {

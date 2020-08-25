@@ -26,11 +26,11 @@ In most cases only one Piwik tracker will be used so the only difference is how 
 * Static methods are called via `_paq.push(['MediaAnalytics::$methodName']);` or directly on the `Matomo.MediaAnalytics` object,
   eg. `Matomo.MediaAnalytics.$methodName()`.
 
-If you do not want to use the `_paq.push` methods, you need to define a `window.piwikMediaAnalyticsAsyncInit` method 
+If you do not want to use the `_paq.push` methods, you need to define a `window.matomoMediaAnalyticsAsyncInit` method 
 that is called as soon as the media tracker has been initialized:
 
 ```js
-window.piwikMediaAnalyticsAsyncInit = function () {
+window.matomoMediaAnalyticsAsyncInit = function () {
     Matomo.MediaAnalytics.removePlayer('youtube'); 
 };
 ```
@@ -73,7 +73,7 @@ this plugin, [let us know which media player you use](https://matomo.org/support
 
 Allows you to completely disable the tracking of any media. This is useful if you for example manage multiple websites
 in your Piwik and there are some sites where you do not want to track any media. If called early in your tracking code
- or via the `piwikMediaAnalyticsAsyncInit` method, it will not even search for media on your web page.
+ or via the `matomoMediaAnalyticsAsyncInit` method, it will not even search for media on your web page.
 
 ### `enableMediaAnalytics()`
 
@@ -90,17 +90,17 @@ Allows you to detect whether the tracking of media is currently enabled. Returns
 Enables the debug mode that logs debug information to the developer console of your browser. This should **not** be 
 enabled in production.
 
-### `setPiwikTrackers()`
+### `setMatomoTrackers()`
 
 Allows you to set the tracker instances the tracker should use when tracking the progress and events of Media. Can be either
  a single tracker instance, or an array of Piwik tracker instances. This is useful when you are working with multiple Piwik
  tracker instances using `Matomo.getTracker` instead of `Piwik.addTracker`. 
  
-### `getPiwikTrackers()`
+### `getMatomoTrackers()`
 
 Returns an array of Piwik tracker instances that are used by the Media Analytics plugin. By default, this will return the same
 as `Matomo.getAsyncTrackers()` and will return all tracker instances that were created eg via `Piwik.addTracker` or 
-`_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setPiwikTrackers()`.
+`_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setMatomoTrackers()`.
 
 ### `setMediaTitleFallback()`
 

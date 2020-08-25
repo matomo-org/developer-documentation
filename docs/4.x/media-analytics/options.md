@@ -168,7 +168,7 @@ only for some of your websites. For the websites you want to disable the media t
 method. If you do not use the `_paq` variable, you can disable the media tracker as follows:
  
 ```js
-window.piwikMediaAnalyticsAsyncInit = function () {
+window.matomoMediaAnalyticsAsyncInit = function () {
     Matomo.MediaAnalytics.disableMediaAnalytics();
 };
 ```

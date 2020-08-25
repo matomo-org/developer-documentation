@@ -86,13 +86,13 @@ different data into each Piwik, you need to set the tracker instances manually:
 ```js
 window.matomoAsyncInit = function () {
     // This works from Piwik 2.17.1. Before 2.17.1 you need to define a method
-    // `window.piwikMediaAnalyticsAsyncInit` instead of `window.matomoAsyncInit`.
+    // `window.matomoMediaAnalyticsAsyncInit` instead of `window.matomoAsyncInit`.
     
     var matomoTracker1 = Matomo.getTracker('https://example.com/matomo.php', 1);
     var matomoTracker2 = Matomo.getTracker('https://example.com/matomo.php', 2);
     var matomoTracker3 = Matomo.getTracker('https://example.com/matomo.php', 3);
 
-    Matomo.MediaAnalytics.setPiwikTrackers([matomoTracker1, matomoTracker2, matomoTracker3]);
+    Matomo.MediaAnalytics.setMatomoTrackers([matomoTracker1, matomoTracker2, matomoTracker3]);
 
     // Media Analytics tracking is enabled by default, you can customize the tracking like this:
     matomoTracker2.MediaAnalytics.disableTrackProgress();
@@ -101,11 +101,11 @@ window.matomoAsyncInit = function () {
 ```
 
 It is important to define these methods before the Piwik tracker file is loaded. Otherwise, your `matomoAsyncInit` 
-or `piwikMediaAnalyticsAsyncInit` method will never be called.
+or `matomoMediaAnalyticsAsyncInit` method will never be called.
 
 ## Is it possible to not use the "paq.push" methods and instead call the MediaAnalytics tracker methods directly?
 
-Yes. To initialize the Media tracker you need to define a callback method `window.piwikMediaAnalyticsAsyncInit`
+Yes. To initialize the Media tracker you need to define a callback method `window.matomoMediaAnalyticsAsyncInit`
 which will be executed as soon as the media tracker is initialized. As soon as this callback is called, you can be sure
 that the `Matomo.MediaAnalytics` object is defined.
 
@@ -119,7 +119,7 @@ In the `matomo.js` tracker we differentiate between two kind of methods:
   `Matomo.MediaAnalytics.removePlayer()`.
 
 ```js
-window.piwikMediaAnalyticsAsyncInit = function () {
+window.matomoMediaAnalyticsAsyncInit = function () {
     // static methods
     var intervalInSeconds = 2;
     Matomo.MediaAnalytics.removePlayer('youtube'); 
@@ -139,7 +139,7 @@ However, the tracker methods `disableTrackEvents` and `disableTrackProgress` can
 for a specific tracker instance like this:
 
 ```js
-window.piwikMediaAnalyticsAsyncInit = function () {
+window.matomoMediaAnalyticsAsyncInit = function () {
     // get tracker instance if you do not have a reference to the tracker instance yet
     var tracker = Matomo.getAsyncTracker(matomoSiteUrl, piwikSiteId); 
     tracker.MediaAnalytics.disableTrackEvents();
