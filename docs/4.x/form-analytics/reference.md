@@ -25,11 +25,11 @@ In most cases only one Piwik tracker will be used so the only difference is how 
 * Static methods are called via `_paq.push(['FormAnalytics::$methodName']);` or directly on the `Matomo.FormAnalytics` object,
   eg. `Matomo.FormAnalytics.$methodName()`.
 
-If you do not want to use the `_paq.push` methods, you may define a `window.piwikFormAnalyticsAsyncInit` method 
+If you do not want to use the `_paq.push` methods, you may define a `window.matomoFormAnalyticsAsyncInit` method 
 that is called as soon as the form tracker has been initialized:
 
 ```js
-window.piwikFormAnalyticsAsyncInit = function () {
+window.matomoFormAnalyticsAsyncInit = function () {
     Matomo.FormAnalytics.disableFormAnalytics();
 };
 ```
@@ -93,7 +93,7 @@ _paq.push(['FormAnalytics::trackFormConversion', 'cloudlogin', 'login']);
 
 Allows you to completely disable the tracking of any forms. This is useful if you for example manage multiple websites
 in your Piwik and there are some sites where you do not want to track any forms. If called early in your tracking code
- or via the `piwikFormAnalyticsAsyncInit` method, it will not even search for forms on your web page.
+ or via the `matomoFormAnalyticsAsyncInit` method, it will not even search for forms on your web page.
 
 ### `enableFormAnalytics()`
 
