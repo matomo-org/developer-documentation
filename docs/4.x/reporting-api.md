@@ -15,7 +15,7 @@ The APIs let you programmatically request any analytics reports from Matomo, for
  
     *   the integer id of your website, eg. _idSite=1_
     *   you can also specify a list of idSites comma separated, eg. _idSite=1,4,5,6_
-    *   if you want to get data for all websites, set _idSite=all_ (this is only supported by some API methods and it might not work should eg dimensions, goals, or segments only be available for specific sites)
+    *   if you want to get data for all websites, set _idSite=all_ (this is only supported by some API methods and there might be issues should eg dimensions, goals, or segments only be available for specific sites)
 
 
 *   **period** &mdash; the period you request the statistics for. Can be any of: _day_, _week_, _month_, _year_ or _range_. All reports are returned for the dates based on the website's time zone.
