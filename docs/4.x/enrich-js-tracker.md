@@ -162,6 +162,8 @@ creating a file `tests/javascript/index.php` within your plugin directory. A tes
 </div>
 
 <script type="text/javascript">
+module('MyPlugin');
+    
 test("Matomo MyPlugin", function() {
     expect(2);
 
