@@ -107,7 +107,7 @@ _paq.push(['AbTesting::create', {
       }
       return false;
   },
-  piwikTracker: Matomo.getAsyncTracker(matomoUrl, matomoSiteId),
+  matomoTracker: Matomo.getAsyncTracker(matomoUrl, matomoSiteId),
   variations: [
         // [...]
         {
@@ -123,7 +123,7 @@ _paq.push(['AbTesting::create', {
 * `startDateTime` - If configured, the experiment will not be activated until the specified start time. 
 * `endDateTime` - If configured, the experiment will no longer be activated after the specified end time. 
 * `trigger` - The `trigger` function allows you to further restrict which of your visitors will participate in your experiment. For example if you want to run the experiment only for visitors from a specific country or only want to activate the experiment on a certain type of pages, you can use this method to customize who will participate in this experiment. 
-* `piwikTracker` - Lets you set a Piwik tracker instance if you track your data [into multiple Piwik instances](/guides/tracking-javascript-guide#multiple-piwik-trackers) and wish your experiments to be only tracked into one specific Piwik instance.
+* `matomoTracker` - Lets you set a Piwik tracker instance if you track your data [into multiple Piwik instances](/guides/tracking-javascript-guide#multiple-piwik-trackers) and wish your experiments to be only tracked into one specific Piwik instance.
 * `variation.percentage` - By default, each variation gets the same amount of traffic but you can allocate more or less
                            traffic to individual variations. You don't have to configure a percentage on all variations. 
                            If a percentage is only specified for a few variations, all other variations will share the 
