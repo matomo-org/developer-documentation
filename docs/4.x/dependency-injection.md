@@ -115,7 +115,7 @@ The syntax used in those files is described in [PHP-DI's documentation](http://p
 
 ```php
 return array(
-    'Piwik\Translation\Loader\LoaderInterface' => DI\object('Piwik\Translation\Loader\LoaderCache')
+    'Piwik\Translation\Loader\LoaderInterface' => DI\autowire('Piwik\Translation\Loader\LoaderCache')
 );
 ```
 
@@ -149,7 +149,7 @@ We configure to inject the `log.format` entry in the constructor:
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => DI\object()
+    'Piwik\Log\Formatter\LineMessageFormatter' => DI\autowire()
         ->constructor(DI\link('log.format')),
 );
 ```
@@ -158,7 +158,7 @@ or
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => DI\object()
+    'Piwik\Log\Formatter\LineMessageFormatter' => DI\autowire()
         ->constructorParameter('logFormat', DI\link('log.format')),
 );
 ```
@@ -183,7 +183,7 @@ When writing integration or system tests you can inject your own classes (such a
   ```php
   <?php
   return array(
-      'Piwik\Plugins\MyPlugin\MyRESTClient' => DI\object('Piwik\Plugins\MyPlugin\Test\MockRESTClient'),
+      'Piwik\Plugins\MyPlugin\MyRESTClient' => DI\autowire('Piwik\Plugins\MyPlugin\Test\MockRESTClient'),
   );
   ```
 
@@ -199,7 +199,7 @@ When writing integration or system tests you can inject your own classes (such a
       public function provideContainerConfig()
       {
           return array(
-              'Piwik\Plugins\MyPlugin\Dao\MyEntityDao' => DI\object('Piwik\Plugins\MyPlugin\Test\Mock\MockMyEntityDao')
+              'Piwik\Plugins\MyPlugin\Dao\MyEntityDao' => DI\autowire('Piwik\Plugins\MyPlugin\Test\Mock\MockMyEntityDao')
                   ->constructorParameter('tmpPath', '/my/test/tmp/path'),
           );
       }
