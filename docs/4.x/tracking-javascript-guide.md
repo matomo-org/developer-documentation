@@ -697,7 +697,7 @@ _paq.push(['trackPageView']);
 
 If you want to ignore a special file type, you can just remove it from the list by using `removeDownloadExtensions( filetype )`:
 
-``javascript
+```javascript
 // clicks on URLs ending in png or mp4 will not be counted as downloads
 _paq.push(['removeDownloadExtensions', "png|mp4"]);
 _paq.push(['trackPageView']);
