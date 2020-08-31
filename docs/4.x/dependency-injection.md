@@ -61,7 +61,7 @@ also works for your own classes. For example:
   }
 ```
 
-When you incject your own classes, Matomo will also automatically resolve the dependencies for these classes using the
+When you inject your own classes, Matomo will also automatically resolve the dependencies for these classes using the
 constructor. Say for the above `MyEntityDao` example you can take advantage of having dependencies automatically resolved like this
 
 ```php
@@ -173,6 +173,22 @@ return array(
     }),
 );
 ```
+
+### Adding new event listeners
+
+It's also possible to add additional event listeners for any Matomo event using Dependency Injection. As most events are
+using references to make manipulation possible it's required to wrap the event listener functions into `DI\value`.
+
+```php
+return [
+    'observers.global' => [
+        ['AssetManager.getStylesheetFiles', DI\value(function (&$stylesheets) {
+            $stylesheets[] = 'my\custom.css';
+        })],
+    ],
+];
+```
+
 
 ### Configuring containers in tests
 
