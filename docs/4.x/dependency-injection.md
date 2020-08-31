@@ -61,7 +61,7 @@ also works for your own classes. For example:
   }
 ```
 
-When you incject your own classes, Matomo will also automatically resolve the dependencies for these classes using the
+When you inject your own classes, Matomo will also automatically resolve the dependencies for these classes using the
 constructor. Say for the above `MyEntityDao` example you can take advantage of having dependencies automatically resolved like this
 
 ```php
@@ -115,7 +115,7 @@ The syntax used in those files is described in [PHP-DI's documentation](http://p
 
 ```php
 return array(
-    'Piwik\Translation\Loader\LoaderInterface' => DI\object('Piwik\Translation\Loader\LoaderCache')
+    'Piwik\Translation\Loader\LoaderInterface' => DI\autowire('Piwik\Translation\Loader\LoaderCache')
 );
 ```
 
@@ -149,7 +149,7 @@ We configure to inject the `log.format` entry in the constructor:
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => DI\object()
+    'Piwik\Log\Formatter\LineMessageFormatter' => DI\autowire()
         ->constructor(DI\link('log.format')),
 );
 ```
@@ -158,7 +158,7 @@ or
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => DI\object()
+    'Piwik\Log\Formatter\LineMessageFormatter' => DI\autowire()
         ->constructorParameter('logFormat', DI\link('log.format')),
 );
 ```
@@ -174,6 +174,22 @@ return array(
 );
 ```
 
+### Adding new event listeners
+
+It's also possible to add additional event listeners for any Matomo event using Dependency Injection. As most events are
+using references to make manipulation possible it's required to wrap the event listener functions into `DI\value`.
+
+```php
+return [
+    'observers.global' => [
+        ['AssetManager.getStylesheetFiles', DI\value(function (&$stylesheets) {
+            $stylesheets[] = 'my\custom.css';
+        })],
+    ],
+];
+```
+
+
 ### Configuring containers in tests
 
 When writing integration or system tests you can inject your own classes (such as mocks) into the Matomo environment one of two ways:
@@ -183,7 +199,7 @@ When writing integration or system tests you can inject your own classes (such a
   ```php
   <?php
   return array(
-      'Piwik\Plugins\MyPlugin\MyRESTClient' => DI\object('Piwik\Plugins\MyPlugin\Test\MockRESTClient'),
+      'Piwik\Plugins\MyPlugin\MyRESTClient' => DI\autowire('Piwik\Plugins\MyPlugin\Test\MockRESTClient'),
   );
   ```
 
@@ -199,7 +215,7 @@ When writing integration or system tests you can inject your own classes (such a
       public function provideContainerConfig()
       {
           return array(
-              'Piwik\Plugins\MyPlugin\Dao\MyEntityDao' => DI\object('Piwik\Plugins\MyPlugin\Test\Mock\MockMyEntityDao')
+              'Piwik\Plugins\MyPlugin\Dao\MyEntityDao' => DI\autowire('Piwik\Plugins\MyPlugin\Test\Mock\MockMyEntityDao')
                   ->constructorParameter('tmpPath', '/my/test/tmp/path'),
           );
       }

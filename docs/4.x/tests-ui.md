@@ -243,7 +243,7 @@ class FailUpdateHttpsFixture extends Fixture
     public function provideContainerConfig()
     {
         return array(
-            'Piwik\Plugins\CoreUpdater\Updater' => \DI\object('Piwik\Plugins\CoreUpdater\Test\Mock\UpdaterMock'),
+            'Piwik\Plugins\CoreUpdater\Updater' => \DI\autowire('Piwik\Plugins\CoreUpdater\Test\Mock\UpdaterMock'),
         );
     }
 }
