@@ -87,6 +87,10 @@ $ ./console generate:travis-yml --plugin=MyPlugin --php-versions="7.2,7.4" --dis
 
 You may need to update the "exclude" matrix as this isn't done automatically should you not want certain jobs to run. It would otherwise only exclude runs for PHP versions that don't run anymore anyway.
 
+## Marketplace distribution
+
+Updates used to be published from the GitHub repository to the Matomo Marketplace using a GitHub service. GitHub deprecated this feature a while ago. To send updates to the marketplace you need to make sure you have a [Matomo Webhook](https://developer.matomo.org/guides/distributing-your-plugin#activate-the-piwik-plugins-webhook) configured in your repository. Otherwise the Marketplace won't notice there has been an update for your plugin.
+
 ## Summary
 
 In this guide we have seen which steps to take to migrate your Matomo plugin to be compatible with our latest Matomo 4.
