@@ -24,6 +24,8 @@ The class defines the following methods:
       
     - `$optionalDiagnostics` (`array`) &mdash;
       
+    - `$informationDiagnostics` (`array`) &mdash;
+      
     - `$disabledDiagnostics` (`array`) &mdash;
       
 

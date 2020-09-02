@@ -12,6 +12,7 @@ The class defines the following methods:
 
 - [`__construct()`](#__construct)
 - [`singleResult()`](#singleresult)
+- [`informationalResult()`](#informationalresult)
 - [`getLabel()`](#getlabel)
 - [`getItems()`](#getitems)
 - [`addItem()`](#additem)
@@ -42,6 +43,19 @@ The class defines the following methods:
     - `$status` (`string`) &mdash;
       
     - `$comment` (`string`) &mdash;
+      
+- It returns a [`DiagnosticResult`](../../../../Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) value.
+
+<a name="informationalresult" id="informationalresult"></a>
+<a name="informationalResult" id="informationalResult"></a>
+### `informationalResult()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$label`
+      
+    - `$comment`
       
 - It returns a [`DiagnosticResult`](../../../../Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) value.
 
