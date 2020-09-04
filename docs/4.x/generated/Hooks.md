@@ -939,7 +939,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [507](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L507)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [524](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L524)*
 
 Triggered after Piwik has been updated.
 
@@ -3364,7 +3364,7 @@ Callback Signature:
 
 ### Updater.componentInstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [110](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L110)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [111](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L111)*
 
 Event triggered after a new component has been installed.
 
@@ -3376,7 +3376,7 @@ Callback Signature:
 
 ### Updater.componentUninstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [160](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L160)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [161](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L161)*
 
 Event triggered after a component has been uninstalled.
 
@@ -3388,7 +3388,7 @@ Callback Signature:
 
 ### Updater.componentUpdated
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [138](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L138)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [139](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L139)*
 
 Event triggered after a component has been updated. Can be used to handle logic that should be done after a component was updated
 
