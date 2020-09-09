@@ -141,17 +141,18 @@ By default, when a user visits only one page view during a visit, Piwik will ass
 * when the visitor views only one page view, the "Visit duration" will be 0 second.
 * when the visitor views more than one page, then the last page view of the visit will have a "Time spent on page" of 0 second.
 
-It is possible to configure Piwik so that it accurately measures the time spent on the last page of a visit. To better measure time spent on the page, add to your JavaScript code the following:
+It is possible to configure Piwik so that it accurately measures the time spent in the visit. To better measure time spent in the visit, add to your JavaScript code the following:
 
 ```javascript
-// accurately measure the time spent on the last pageview of a visit
+// accurately measure the time spent in the visit
 _paq.push(['enableHeartBeatTimer']);
 ```
 
-Piwik will then send requests to count the actual time spent on the page, when the user is actively viewing the page (i.e. when the tab is active and in focus). The heart beat request is executed when:
+Piwik will then send requests to count the actual time spent in the visit, as long as the user is actively viewing the page (i.e. when the tab is active and in focus). The heart beat request is executed when:
 
- * switching to another browser tab after the current tab was active for at least 15 seconds (can be configured see below)
+ * switching to another browser tab after the current tab was active for at least 15 seconds (can be configured see below).
  * navigating to another page within the same tab. 
+ * closing the tab.
 
 ```javascript
 // Change how long a tab needs to be active to be counted as viewed in seconds/
