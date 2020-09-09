@@ -245,6 +245,10 @@ The `idsite`, `idvisitor`, `server_time` and `idvisit` columns are copied from t
 
 The `index_idsite_servertime` index is used when aggregating ecommerce items. It allows quick access to the items that were tracked for a specific website and during a specific period and lets us avoid a table scan through the entire table.
 
+### Selecting & exporting Log data (visits, actions, conversions) using SQL queries
+
+A list of SQL queries (which select data across the tables above) is provided [in the FAQ "SQL queries to select visitors, list of pageviews, searches, events in the Matomo database"](https://matomo.org/faq/how-to/how-do-i-write-sql-queries-to-select-visitors-list-of-pageviews-searches-events-in-the-matomo-database/).
+
 ## Archive data
 
 Archive data consists of **metrics** and **reports**. Metrics are numeric values and are stored as such. Reports are stored in [DataTable](/api-reference/Piwik/DataTable) instances and persisted as compressed binary strings.
