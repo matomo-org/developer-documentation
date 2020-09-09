@@ -247,7 +247,7 @@ The `index_idsite_servertime` index is used when aggregating ecommerce items. It
 
 ### Selecting & exporting Log data (visits, actions, conversions) using SQL queries
 
-A list of SQL queries (which select data across the tables above) is provided [in the FAQ "SQL queries to select visitors, list of pageviews, searches, events in the Matomo database"](https://matomo.org/faq/how-to/how-do-i-write-sql-queries-to-select-visitors-list-of-pageviews-searches-events-in-the-matomo-database/).
+SQL queries that read the Log data across the tables above are provided [in the FAQ: SQL queries to select visitors, list of pageviews, searches, events in the Matomo database](https://matomo.org/faq/how-to/how-do-i-write-sql-queries-to-select-visitors-list-of-pageviews-searches-events-in-the-matomo-database/).
 
 ## Archive data
 
