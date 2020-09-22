@@ -96,6 +96,9 @@ We recommend running the [Piwik console](/guides/piwik-on-the-command-line) comm
 2. or Load the HeatmapSessionRecording tracker file manually in your website by adding in all your pages ideally in the `<head>`: 
    `<script src="https://your-matomo-domain/plugins/HeatmapSessionRecording/tracker.min.js">`
 
+Note: Loading the tracker file manually won't work if you are using [Matomo for WordPress](https://matomo.org/installing-matomo-for-wordpress/). The Matomo JS tracker will automatically include the tracking code so loading it manually won't be needed. To find the correct path for the Matomo JS Tracker file see the Matomo Endpoints section in the [Matomo for WordPress System Report](https://matomo.org/faq/wordpress/how-do-i-find-and-copy-the-system-report-in-matomo-for-wordpress/). In most cases the path looks like this: `//your-matomo-domain/wp-content/uploads/matomo/matomo.js`. Matomo for WordPress will automatically use the correct path unless you configure the tracking code manually.
+
+
 #### Are there any disadvantages of including the file manually?
 
 Yes, there are:
