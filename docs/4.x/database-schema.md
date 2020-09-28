@@ -43,6 +43,7 @@ Each visit contains the following information:
 
 - `idsite`: the ID of the website it was tracked for
 - `idvisitor`: a visitor ID (an 8 byte binary string)
+- `user_id`: the [User ID](https://matomo.org/docs/user-id/) (if set)
 - `visitor_localtime`: the visit datetime in the  visitor's time of day
 - `visitor_returning`: whether the visit is the first visit for this visitor or not
 - `visitor_count_visits`: the number of visits the visitor has made up to this one
