@@ -177,10 +177,12 @@ username = ...
 password = ...
 ```
 
-You also may have to create the `piwik_tests` database:
+You also may have to create the `matomo_tests` database:
 ```
-mysql -u'db_username_here' -p -e 'CREATE DATABASE piwik_tests'
+mysql -u'db_username_here' -p -e 'CREATE DATABASE matomo_tests'
 ```
+
+The configured DB user for the tests should also have privileges to create and drop databases.
 
 ## Create a plugin
 
