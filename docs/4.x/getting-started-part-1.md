@@ -182,6 +182,8 @@ You also may have to create the `matomo_tests` database:
 mysql -u'db_username_here' -p -e 'CREATE DATABASE matomo_tests'
 ```
 
+The configured DB user for the tests should also have privileges to create and drop databases.
+
 ## Create a plugin
 
 Your development environment is set up, and you are now ready to create a plugin! Creating a plugin consists primarily of creating a couple of files which can be done by running the following command:
