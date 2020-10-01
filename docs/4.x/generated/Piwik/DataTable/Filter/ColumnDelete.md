@@ -3,7 +3,7 @@
 ColumnDelete
 ============
 
-Filter that will remove columns from a DataTable using either a blacklist, whitelist or both.
+Filter that will remove columns from a DataTable using either a blacklist, allowlist or both.
 
 This filter is used to handle the **hideColumn** and **showColumn** query parameters.
 

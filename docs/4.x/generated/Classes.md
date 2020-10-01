@@ -46,7 +46,7 @@ This is a complete list of available classes:
 - [`DataTable\Filter\ColumnCallbackDeleteMetadata`](Piwik/DataTable/Filter/ColumnCallbackDeleteMetadata.md) &mdash; Executes a callback for each row of a DataTable and removes the defined metadata column from each row.
 - [`DataTable\Filter\ColumnCallbackDeleteRow`](Piwik/DataTable/Filter/ColumnCallbackDeleteRow.md) &mdash; Deletes all rows for which a callback returns true.
 - [`DataTable\Filter\ColumnCallbackReplace`](Piwik/DataTable/Filter/ColumnCallbackReplace.md) &mdash; Replaces one or more column values in each row of a DataTable with the results of a callback.
-- [`DataTable\Filter\ColumnDelete`](Piwik/DataTable/Filter/ColumnDelete.md) &mdash; Filter that will remove columns from a DataTable using either a blacklist, whitelist or both.
+- [`DataTable\Filter\ColumnDelete`](Piwik/DataTable/Filter/ColumnDelete.md) &mdash; Filter that will remove columns from a DataTable using either a blacklist, allowlist or both.
 - [`DataTable\Filter\ExcludeLowPopulation`](Piwik/DataTable/Filter/ExcludeLowPopulation.md) &mdash; Deletes all rows for which a specific column has a value that is lower than specified minimum threshold value.
 - [`DataTable\Filter\GroupBy`](Piwik/DataTable/Filter/GroupBy.md) &mdash; DataTable filter that will group DataTable rows together based on the results of a reduce function.
 - [`DataTable\Filter\Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; Delete all rows from the table that are not in the given [offset, offset+limit) range.
