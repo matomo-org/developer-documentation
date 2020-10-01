@@ -381,6 +381,7 @@ Index
 - [`getTargetColumn()`](Piwik/Columns/Join.md#gettargetcolumn) &mdash; *Method in class* [`Join`](Piwik/Columns/Join.md)
 - [`GoalNameJoin`](Piwik/Columns/Join/GoalNameJoin.md) &mdash; *Class in namespace* [`Piwik\Columns\Join`](Piwik/Columns/Join)- [`getMetrics()`](Piwik/Columns/MetricsList.md#getmetrics) &mdash; *Method in class* [`MetricsList`](Piwik/Columns/MetricsList.md)
 - [`getMetric()`](Piwik/Columns/MetricsList.md#getmetric) &mdash; *Method in class* [`MetricsList`](Piwik/Columns/MetricsList.md)
+- [`getMigrations()`](Piwik/Columns/Updater.md#getmigrations) &mdash; *Method in class* [`Updater`](Piwik/Columns/Updater.md)
 - [`getRequestVar()`](Piwik/Common.md#getrequestvar) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`getSqlStringFieldsArray()`](Piwik/Common.md#getsqlstringfieldsarray) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`getFromGlobalConfig()`](Piwik/Config.md#getfromglobalconfig) &mdash; *Method in class* [`Config`](Piwik/Config.md)

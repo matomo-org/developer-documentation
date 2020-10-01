@@ -1184,7 +1184,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php) in line [453](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php#L453)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php) in line [454](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php#L454)*
 
 
 

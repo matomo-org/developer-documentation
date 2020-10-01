@@ -10,18 +10,12 @@ Methods
 
 The class defines the following methods:
 
-- [`getMigrations()`](#getmigrations) &mdash; Return migrations to be executed in this update. Inherited from [`Updates`](../../Piwik/Updates.md)
+- [`getMigrations()`](#getmigrations)
 - [`doUpdate()`](#doupdate) &mdash; Perform the incremental version update. Inherited from [`Updates`](../../Piwik/Updates.md)
 
 <a name="getmigrations" id="getmigrations"></a>
 <a name="getMigrations" id="getMigrations"></a>
 ### `getMigrations()`
-
-Return migrations to be executed in this update.
-
-Migrations should be defined here, instead of in `doUpdate()`, since this method is used to display a preview
-of which migrations and database queries an update will run. If you execute migrations directly in `doUpdate()`,
-they won't be displayed to the user.
 
 #### Signature
 
