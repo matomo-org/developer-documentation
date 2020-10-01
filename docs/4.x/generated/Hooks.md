@@ -148,7 +148,7 @@ Usages:
 
 ### Actions.getCustomActionDimensionFieldsAndJoins
 
-*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Actions/VisitorDetails.php) in line [264](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Actions/VisitorDetails.php#L264)*
+*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Actions/VisitorDetails.php) in line [265](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Actions/VisitorDetails.php#L265)*
 
 
 
@@ -3135,7 +3135,7 @@ Callback Signature:
 
 ### Tracker.end
 
-*Defined in [Piwik/Plugins/QueuedTracking/Commands/Process](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/QueuedTracking/Commands/Process.php) in line [83](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/QueuedTracking/Commands/Process.php#L83)*
+*Defined in [Piwik/Plugins/QueuedTracking/Commands/Process](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/QueuedTracking/Commands/Process.php) in line [92](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/QueuedTracking/Commands/Process.php#L92)*
 
 
 
