@@ -3247,7 +3247,7 @@ Callback Signature:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Request.php) in line [571](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Request.php#L571)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Request.php) in line [581](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Request.php#L581)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
