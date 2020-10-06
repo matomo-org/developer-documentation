@@ -3142,7 +3142,7 @@ Callback Signature:
 
 ### Tracker.end
 
-*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker.php) in line [119](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker.php#L119)*
+*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker.php) in line [122](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker.php#L122)*
 
 
 
