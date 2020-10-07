@@ -41,7 +41,7 @@ core:archive is run, they will be processed.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$idSites` (`array`) &mdash;
+    - `$idSites`
       
     - `$plugin` (`string`) &mdash;
       
