@@ -22,7 +22,9 @@ Returns the URL to this Piwik instance, eg. **http://demo.piwik.org/** or **http
 
 #### Signature
 
-- It returns a `string` value.
+
+- *Returns:*  `string`|`false` &mdash;
+    return false if no value is configured and we are in PHP CLI mode
 
 <a name="issegmentationenabled" id="issegmentationenabled"></a>
 <a name="isSegmentationEnabled" id="isSegmentationEnabled"></a>
