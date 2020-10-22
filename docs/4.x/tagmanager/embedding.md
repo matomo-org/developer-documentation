@@ -35,11 +35,15 @@ In your code, `{$MATOMO_URL}` will be replaced by your Matomo URL, and `{$CONTAI
 
 We recommend to embed this HTML block as early as possible within the `<head>` element of your website.
 
-## Multiple Containers
+## Multiple containers
 
 Matomo Tag Manager lets you embed multiple containers at once. This may be useful when for example different people manage different containers and you need to embed all of them. For example, one team manages all ad related containers, and another team manages all other tags.
 
 To use both tags, simply copy both embed codes inside your website, ideally one directly followed by the other.
+
+## Using the same container on multiple websites
+
+Matomo Tag Managers supports using the same container in multiple websites. The container will still be stored under one website in the Tag Manager interface. To use the same container on multiple websites, simply embed the code inside your websites.
 
 ## Loading a container from your website
 
