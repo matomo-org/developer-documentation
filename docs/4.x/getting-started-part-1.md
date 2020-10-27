@@ -188,7 +188,7 @@ The configured DB user for the tests should also have privileges to create and d
 
 Your development environment is set up, and you are now ready to create a plugin! 
 
-First of all, you need to choose the plugin's name. Remember, if you're going to publish on [Matomo's marketplace](https://plugins.matomo.org/), CamelCase will be splitted into words. So, the name «MyPlugin» will be published as «My Plugin».
+First of all, you need to choose the plugin's name. Remember, if you're going to publish on [Matomo's marketplace](https://plugins.matomo.org/), CamelCase will be splitted into words. So, for example "MyPlugin" will be published as "My Plugin".
 
 Creating a plugin consists primarily of creating a couple of files which can be done by running the following command:
 
