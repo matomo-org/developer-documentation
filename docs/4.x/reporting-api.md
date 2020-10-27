@@ -4,7 +4,7 @@ category: API Reference
 # Reporting API Reference 
 
 This is the Matomo API Reference. It lists all functions that can be called, documents the parameters, and links to examples for every call in the various formats.
- 
+
 The APIs let you programmatically request any analytics reports from Matomo, for one or several websites and for any given date and period and in any format (CSV, JSON, XML, etc.). Matomo also provides Management APIs to create, update and delete websites, users, user privileges, custom dashboards, email reports, goals, funnels, custom dimensions, alerts, videos, heatmaps, session recordings, custom segments, and more. 
 
 ## API Request
@@ -63,7 +63,6 @@ _referrerName==Google,referrerName==Bing;country==IN_
     *   csv (comma-separated values)
     *   tsv (tab-separated values, similar to CSV but loads properly in Excel)
     *   html
-    *   php; when you export in PHP format it is serialized by default (set _serialize=0_ to get the raw php data structure). You can have a visual output of the data by setting _prettyDisplay=1_
     *   rss (when **date** is a range for example date=last10 or date=previous15)
     *   original; to fetch the original PHP data structure. This is useful when you call the Piwik API [internally using the PHP code](/guides/querying-the-reporting-api)
     
