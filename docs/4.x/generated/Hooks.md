@@ -330,7 +330,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [440](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L440)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [441](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L441)*
 
 Triggered when authenticating an API request, but only if the **token_auth**
 query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
@@ -839,7 +839,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [604](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L604)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [603](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L603)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -855,7 +855,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [621](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L621)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [620](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L620)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -1915,7 +1915,7 @@ Usages:
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [441](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L441)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [440](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L440)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but
 before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
@@ -2255,7 +2255,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [586](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L586)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [585](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L585)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -2286,7 +2286,7 @@ Callback Signature:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [631](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L631)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [630](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L630)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -2313,7 +2313,7 @@ Usages:
 
 ### Request.getRenamedModuleAndAction
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [171](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L171)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [172](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L172)*
 
 This event is posted in the Request dispatcher and can be used
 to overwrite the Module and Action to dispatch. This is useful when some Controller methods or API methods have been renamed or moved to another plugin.
@@ -2376,7 +2376,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [708](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L708)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [707](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L707)*
 
 Triggered before the user is authenticated, when the global authentication object
 should be created. Plugins that provide their own authentication implementation should use this event
@@ -2395,7 +2395,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [680](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L680)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [695](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L695)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted
 based on the `filter_sort_column` query parameter, rows are truncated based on the
