@@ -77,6 +77,7 @@ Each visit contains the following information:
 - `campaign_content`: the campaign content (requires the [MarketingCampaignsReporting plugin](https://plugins.matomo.org/MarketingCampaignsReporting))
 - `campaign_id`: the campaign ID (requires the [MarketingCampaignsReporting plugin](https://plugins.matomo.org/MarketingCampaignsReporting))
 - `config_id`: a hash of all the visit's configuration options, including the OS, browser name, browser version, browser language, IP address and  all browser plugin information
+- `profilable`: either 0 or 1. If no visitorId or userId was used, then the value is `0`. This means no profile can be created for this specific visitor meaning visitor profile would in most cases only show one visit, features like new/returning visit won't work for this visitor etc.
 - `config_os`: a short string identifiying the operating system used to make this visit. See [Device Detector](https://github.com/matomo-org/device-detector) for more info
 - `config_browser_name`: a short string identifying the browser used to make this visit. See [Device Detector](https://github.com/matomo-org/device-detector) for more info
 - `config_browser_version`: a string identifying the version of the browser used to make this visit
