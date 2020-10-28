@@ -1,6 +1,7 @@
 ---
 category: Develop
 ---
+
 # Translations
 
 <!-- Meta (to be deleted)
@@ -22,21 +23,21 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 
 Read this guide if you'd like to know
 
-* **how to make your plugin available in other languages**
-* **how to make your contribution to Piwik Core available in other languages**
+- **how to make your plugin available in other languages**
+- **how to make your contribution to Piwik Core available in other languages**
 
 ## The Basics
 
-Piwik is available in over 50 languages and comes with many translations. The core itself provides some basic translations for words like "Visitor" and "Help". They are stored in the directory <code>/lang</code>. In addition, each plugin can provide its own translations for wordings that are used in this plugin. They are located in <code>/plugins/*/lang</code>. In those directories you'll find one JSON file for each language. Each language file consists in turn of tokens that belong to a group.
+Piwik is available in over 50 languages and comes with many translations. The core itself provides some basic translations for words like "Visitor" and "Help". They are stored in the directory <code>/lang</code>. In addition, each plugin can provide its own translations for wordings that are used in this plugin. They are located in <code>/plugins/\*/lang</code>. In those directories you'll find one JSON file for each language. Each language file consists in turn of tokens that belong to a group.
 
 ```json
 {
-    "MyPlugin":{
-        "BlogPost": "Blog post",
-        "MyToken": "My translation",
-        "InteractionRate": "Interaction Rate",
-        "MyParagraphWithALink": "This translated text %1$s uses %2$s parameters."
-    }
+  "MyPlugin": {
+    "BlogPost": "Blog post",
+    "MyToken": "My translation",
+    "InteractionRate": "Interaction Rate",
+    "MyParagraphWithALink": "This translated text %1$s uses %2$s parameters."
+  }
 }
 ```
 
@@ -112,16 +113,14 @@ public function getClientSideTranslationKeys(&$translationKeys)
 To use these translations in JavaScript, use the global `_pk_translate()` JavaScript function:
 
 ```javascript
-var translatedText = _pk_translate('MyPlugin_BlogPost');
+var translatedText = _pk_translate("MyPlugin_BlogPost");
 ```
 
 ## Contributing translations to Piwik
 
-Did you know you can contribute [translations](https://matomo.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](https://www.transifex.com/matomo-org/matomo/).
-
+Did you know you can contribute [translations](https://matomo.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](https://www.transifex.com/matomo/).
 
 ## Getting translations for your plugin
-
 
 As long as you are [developing an open source plugin](https://developer.matomo.org/develop) hosted on Github, you may get in touch with us ([translations@matomo.org](mailto:translations@matomo.org?subject=Getting my Piwik plugin translated in other languages)) in order to get your plugin translated by the Piwik translators community.
 
@@ -133,12 +132,11 @@ While doing the initial setup for your plugin, we will import your english trans
 
 ### How to fetch your plugins translations into your repository
 
-As soon as we have set up your plugin within [our Piwik project on Transifex](https://www.transifex.com/projects/p/matomo-org/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. You will need a locally installed Piwik with [development mode enabled](https://developer.matomo.org/guides/getting-started-part-1#enable-development-mode), and your plugin installed. To update the translations go to the Piwik directory on your development box and execute the following command:
+As soon as we have set up your plugin within [our Piwik project on Transifex](https://www.transifex.com/matomo/matomo/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. You will need a locally installed Piwik with [development mode enabled](https://developer.matomo.org/guides/getting-started-part-1#enable-development-mode), and your plugin installed. To update the translations go to the Piwik directory on your development box and execute the following command:
 
 ```bash
 ./console translations:update -u {YourTransifexUserName} -p {YourTransifexPassword} -P {YourPluginName}
 ```
-
 
 ## Best practices for new translation keys
 
@@ -147,17 +145,17 @@ Follow these guidelines when creating your own translation keys:
 1. **Reuse!** If a core plugin contains a translation you can use, use that instead. If there's a translation you want to use but can't because it's in the wrong case, try using functions like `lcfirst` and `ucfirst`.
 2. **Use numbered placeholders** if more than one is required in your text.
 
-  Using numbered placeholders, such as `%1$s`, `%2$s`, etc. instead of `%s` makes it possible for translators to switch the order. That might be necessary to translate it to certain languages properly.
+Using numbered placeholders, such as `%1$s`, `%2$s`, etc. instead of `%s` makes it possible for translators to switch the order. That might be necessary to translate it to certain languages properly.
 
 3. **Reduce redundancy in your translated text.** If the same text appears in multiple translated text entries, try to move the translated text out by using sprintf parameters. For example, if you have text entries like:
 
-  `"You cannot use commas."`
-  and `"You cannot use underscores."`
+`"You cannot use commas."`
+and `"You cannot use underscores."`
 
-  Try to split them up into something like:
+Try to split them up into something like:
 
-  `"You cannot use %s."`
-  `"commas"`
-  and `"underscores"`.
+`"You cannot use %s."`
+`"commas"`
+and `"underscores"`.
 
-  This guideline is more important for contributions to Piwik Core than for new plugins.
+This guideline is more important for contributions to Piwik Core than for new plugins.
