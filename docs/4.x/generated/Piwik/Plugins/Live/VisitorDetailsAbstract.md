@@ -5,7 +5,7 @@ VisitorDetailsAbstract
 
 Class VisitorDetailsAbstract
 
-This class can be implemented in a plugin to extend the Live reports, visit log and profile
+This class can be implemented in a plugin to extend the Live reports, visits log and profile
 
 Methods
 -------
@@ -19,8 +19,8 @@ The abstract class defines the following methods:
 - [`extendActionDetails()`](#extendactiondetails) &mdash; Allows extending each action with additional information
 - [`renderAction()`](#renderaction) &mdash; Called when rendering a single Action
 - [`renderActionTooltip()`](#renderactiontooltip) &mdash; Called for rendering the tooltip on actions returned array needs to look like this:
-- [`renderIcons()`](#rendericons) &mdash; Called when rendering the Icons in visit log
-- [`renderVisitorDetails()`](#rendervisitordetails) &mdash; Called when rendering the visitor details in visit log returned array needs to look like this: array ( 20, // order id 'rendered html content' )
+- [`renderIcons()`](#rendericons) &mdash; Called when rendering the Icons in visits log
+- [`renderVisitorDetails()`](#rendervisitordetails) &mdash; Called when rendering the visitor details in visits log returned array needs to look like this: array ( 20, // order id 'rendered html content' )
 - [`initProfile()`](#initprofile) &mdash; Allows manipulating the visitor profile properties Will be called when visitor profile is initialized
 - [`handleProfileVisit()`](#handleprofilevisit) &mdash; Allows manipulating the visitor profile properties based on included visits Will be called for every action within the profile
 - [`handleProfileAction()`](#handleprofileaction) &mdash; Allows manipulating the visitor profile properties based on included actions Will be called for every action within the profile
@@ -228,7 +228,7 @@ array (
 <a name="renderIcons" id="renderIcons"></a>
 ### `renderIcons()`
 
-Called when rendering the Icons in visit log
+Called when rendering the Icons in visits log
 
 **Example:**
 
@@ -250,7 +250,7 @@ Called when rendering the Icons in visit log
 <a name="renderVisitorDetails" id="renderVisitorDetails"></a>
 ### `renderVisitorDetails()`
 
-Called when rendering the visitor details in visit log
+Called when rendering the visitor details in visits log
 returned array needs to look like this:
 array (
          20,   // order id
