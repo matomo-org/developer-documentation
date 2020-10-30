@@ -47,8 +47,8 @@ core:archive is run, they will be processed.
       
     - `$report` (`string`) &mdash;
       
-    - `$lastNMonthsToInvalidate` (`string`) &mdash;
-       eg, last12
+    - `$startDate` ([`Date`](../../Piwik/Date.md)) &mdash;
+      
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
