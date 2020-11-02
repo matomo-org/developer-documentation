@@ -72,7 +72,7 @@ The JavaScript tracker runs on all browsers that support the `JSON` API. This in
 
 ### Known incompatiblilty issues
 
-* prototype js library overwrites the browser's JSON API and causes issues for example with custom variables resulting in errors like `core/Tracker/Request.php(635): Warning - count(): Parameter must be an array or an object that implements Countable` (see [#16596](https://github.com/matomo-org/matomo/issues/16596))
+* prototype js library overwrites the browser's JSON API and causes issues for example with custom variables resulting in errors (see [#16596](https://github.com/matomo-org/matomo/issues/16596)). Workarounds are to either remove the prototype JS library or to overwrite the JSON object manually (see above eg using JSON3).
 
 ## JavaScript tracker features
 
