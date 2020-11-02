@@ -64,6 +64,16 @@ You can push to the `_paq` array even after the `matomo.js` file has been loaded
 If your Piwik tracking code doesn't look like this one, you may be using the deprecated version.
 Older versions still work as expected and will track your visitors, but we highly recommend that you update your pages to use the most recent tracking code.
 
+## Requirements
+
+### Supported browsers
+
+The JavaScript tracker runs on all browsers that support the `JSON` API. This includes IE8 and higher. [Click here to see a full list of supported browsers.](https://caniuse.com/?search=json). If you need to support IE7 and older then you could load a polyfill that makes `window.JSON` available such as [JSON3](https://github.com/bestiejs/json3). This polyfill would need to be loaded before the Matomo JS tracker is loaded.
+
+### Known incompatiblilty issues
+
+* prototype js library overwrites the browser's JSON API and causes issues for example with custom variables resulting in errors like `core/Tracker/Request.php(635): Warning - count(): Parameter must be an array or an object that implements Countable` (see [#16596](https://github.com/matomo-org/matomo/issues/16596))
+
 ## JavaScript tracker features
 
 ### Custom page name
