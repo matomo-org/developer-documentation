@@ -159,7 +159,7 @@ Piwik will then send requests to count the actual time spent in the visit, as lo
 // Requires a page to be actively viewed for 30 seconds for any heart beat request to be sent.
 _paq.push(['enableHeartBeatTimer', 30]);
 ```
-Testing the hearbeat timer can be done by right clicking anywhere on the web page and clicking "Inspect Element" and then switching to the "Network" tab so see any requests being sent to Matomo
+You can test if the heartbeat timer is working correctly by checking the network tab of your browser developer tools (Opened by pressing the F12 key on your keyboard) and switching to the "Network" tab in the developer tools to see if the requests to matomo.php are sent correctly."
 Note: When testing the heart beat timer, remember to make sure the browser tab has focus and not eg. the developer tools or another panel.
 
 ## Ecommerce tracking
