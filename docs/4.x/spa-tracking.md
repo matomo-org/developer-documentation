@@ -37,20 +37,6 @@ _paq.push(['trackPageView']);
 
 Note: we recommend you use [Custom Dimensions](https://matomo.org/docs/custom-dimensions/) instead of Custom Variables as they will be deprecated in the future.
 
-### Updating the generation time
-
-Next you need to update the [generation time](https://matomo.org/docs/page-speed/) before tracking a new page view. Otherwise, the initial page generation time will be attributed to all of your subsequent pageviews. If you don’t load new content from the server when the page changes, simply set the value to zero:
-
-```javascript
-_paq.push(['setGenerationTimeMs', 0]);
-_paq.push(['trackPageView']);
-```
-In case you load new content from the server, we recommend measuring the time it took to load this content (in milliseconds) and set the needed time:
-
-```javascript
-_paq.push(['setGenerationTimeMs', timeItTookToLoadPage]);
-_paq.push(['trackPageView']);
-```
 ### Updating the referrer
 
 Depending on whether you want to track the previous page as a referrer for the new page view, you should update the referrer URL by setting it to the previous page URL:
