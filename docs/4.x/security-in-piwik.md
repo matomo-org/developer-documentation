@@ -177,4 +177,4 @@ Here are some other coding guidelines that will help make your code more secure:
 
 ## Learn more
 
-- To learn **more about security in web applications** read this article: [Top 10 Security from The Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Top_10_2013-Table_of_Contents).
+- To learn **more about security in web applications** read this article: [Top 10 Security from The Open Web Application Security Project (OWASP)](https://owasp.org/www-project-top-ten/).
