@@ -98,6 +98,8 @@ The class defines the following methods:
 - [`getMissingDependenciesAsString()`](#getmissingdependenciesasstring) &mdash; Returns a string (translated) describing the missing requirements for this plugin and the given Piwik version
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
 - [`getPluginNameFromNamespace()`](#getpluginnamefromnamespace) &mdash; Extracts the plugin name from a namespace name or a fully qualified class name.
+- [`getPluginLastActivationTime()`](#getpluginlastactivationtime)
+- [`getPluginLastDeactivationTime()`](#getpluginlastdeactivationtime)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -387,4 +389,28 @@ if we can't find one.
 
 - *Returns:*  `string`|`false` &mdash;
     
+
+<a name="getpluginlastactivationtime" id="getpluginlastactivationtime"></a>
+<a name="getPluginLastActivationTime" id="getPluginLastActivationTime"></a>
+### `getPluginLastActivationTime()`
+
+#### Signature
+
+
+- *Returns:*  [`Date`](../Piwik/Date.md)|`null` &mdash;
+    
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
+<a name="getpluginlastdeactivationtime" id="getpluginlastdeactivationtime"></a>
+<a name="getPluginLastDeactivationTime" id="getPluginLastDeactivationTime"></a>
+### `getPluginLastDeactivationTime()`
+
+#### Signature
+
+
+- *Returns:*  [`Date`](../Piwik/Date.md)|`null` &mdash;
+    
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 

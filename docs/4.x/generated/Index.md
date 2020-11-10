@@ -525,6 +525,8 @@ Index
 - [`getMissingDependenciesAsString()`](Piwik/Plugin.md#getmissingdependenciesasstring) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getPluginNameFromBacktrace()`](Piwik/Plugin.md#getpluginnamefrombacktrace) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getPluginNameFromNamespace()`](Piwik/Plugin.md#getpluginnamefromnamespace) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
+- [`getPluginLastActivationTime()`](Piwik/Plugin.md#getpluginlastactivationtime) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
+- [`getPluginLastDeactivationTime()`](Piwik/Plugin.md#getpluginlastdeactivationtime) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getInstance()`](Piwik/Plugin/API.md#getinstance) &mdash; *Method in class* [`API`](Piwik/Plugin/API.md)
 - [`getProcessor()`](Piwik/Plugin/Archiver.md#getprocessor) &mdash; *Method in class* [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`getLogAggregator()`](Piwik/Plugin/Archiver.md#getlogaggregator) &mdash; *Method in class* [`Archiver`](Piwik/Plugin/Archiver.md)

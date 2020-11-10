@@ -29,6 +29,8 @@ The class defines the following methods:
 - [`getMissingDependenciesAsString()`](#getmissingdependenciesasstring) &mdash; Returns a string (translated) describing the missing requirements for this plugin and the given Piwik version Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array. Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`getPluginNameFromNamespace()`](#getpluginnamefromnamespace) &mdash; Extracts the plugin name from a namespace name or a fully qualified class name. Inherited from [`Plugin`](../../../Piwik/Plugin.md)
+- [`getPluginLastActivationTime()`](#getpluginlastactivationtime) Inherited from [`Plugin`](../../../Piwik/Plugin.md)
+- [`getPluginLastDeactivationTime()`](#getpluginlastdeactivationtime) Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`getAllDevicePluginsColumnClasses()`](#getalldevicepluginscolumnclasses) &mdash; Returns class names of all DevicePlugins Column classes.
 
 <a name="__construct" id="__construct"></a>
@@ -319,6 +321,30 @@ if we can't find one.
 
 - *Returns:*  `string`|`false` &mdash;
     
+
+<a name="getpluginlastactivationtime" id="getpluginlastactivationtime"></a>
+<a name="getPluginLastActivationTime" id="getPluginLastActivationTime"></a>
+### `getPluginLastActivationTime()`
+
+#### Signature
+
+
+- *Returns:*  [`Date`](../../../Piwik/Date.md)|`null` &mdash;
+    
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
+<a name="getpluginlastdeactivationtime" id="getpluginlastdeactivationtime"></a>
+<a name="getPluginLastDeactivationTime" id="getPluginLastDeactivationTime"></a>
+### `getPluginLastDeactivationTime()`
+
+#### Signature
+
+
+- *Returns:*  [`Date`](../../../Piwik/Date.md)|`null` &mdash;
+    
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getalldevicepluginscolumnclasses" id="getalldevicepluginscolumnclasses"></a>
 <a name="getAllDevicePluginsColumnClasses" id="getAllDevicePluginsColumnClasses"></a>
