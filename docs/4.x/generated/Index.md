@@ -1114,6 +1114,7 @@ Index
 - [`$show_pivot_by_subtable`](Piwik/ViewDataTable/Config.md#$show_pivot_by_subtable) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_table`](Piwik/ViewDataTable/Config.md#$show_table) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_table_all_columns`](Piwik/ViewDataTable/Config.md#$show_table_all_columns) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$show_table_performance`](Piwik/ViewDataTable/Config.md#$show_table_performance) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_footer`](Piwik/ViewDataTable/Config.md#$show_footer) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_footer_icons`](Piwik/ViewDataTable/Config.md#$show_footer_icons) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_all_views_icons`](Piwik/ViewDataTable/Config.md#$show_all_views_icons) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)

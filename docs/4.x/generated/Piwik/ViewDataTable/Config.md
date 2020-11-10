@@ -84,6 +84,7 @@ This class defines the following properties:
 - [`$pivot_dimension_name`](#$pivot_dimension_name) &mdash; The human readable name of the pivot dimension.
 - [`$show_table`](#$show_table) &mdash; Controls whether the footer icon that allows users to switch to the 'normal' DataTable view is shown.
 - [`$show_table_all_columns`](#$show_table_all_columns) &mdash; Controls whether the 'All Columns' footer icon is shown.
+- [`$show_table_performance`](#$show_table_performance) &mdash; Controls whether the 'Performance columns' footer icon is shown (if available).
 - [`$show_footer`](#$show_footer) &mdash; Controls whether the entire view footer is shown.
 - [`$show_footer_icons`](#$show_footer_icons) &mdash; Controls whether the row that contains all footer icons & the limit selector is shown.
 - [`$columns_to_display`](#$columns_to_display) &mdash; Array property that determines which columns will be shown.
@@ -331,6 +332,17 @@ is shown.
 ### `$show_table_all_columns`
 
 Controls whether the 'All Columns' footer icon is shown.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$show_table_performance" id="$show_table_performance"></a>
+<a name="show_table_performance" id="show_table_performance"></a>
+### `$show_table_performance`
+
+Controls whether the 'Performance columns' footer icon is shown (if available).
 
 #### Signature
 
