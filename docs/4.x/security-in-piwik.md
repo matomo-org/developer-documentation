@@ -175,6 +175,26 @@ Here are some other coding guidelines that will help make your code more secure:
 
 - **If your plugin has admin functionality (functionality only an administrator or the super user can use) then your plugin's Controller must extend [Piwik\Plugin\ControllerAdmin](/api-reference/Piwik/Plugin/ControllerAdmin).**
 
+## Checklist
+
+By no means is below a complete checklist. You'll always be required to still think of any other case something can be used in a way we don't want it to be used. It's only a list for the most common checks.
+
+* **Authorisation checks**: Any controller action or api method has an access/permission check
+* **CSRF checks**: Any form or action or api that changes data has a CSRF nonce or token check
+* **SQL injection checks**: Database parameters use bound parameters or cast values to int
+* **XSS checks**: User input is escaped (also in JavaScript) see XSS section in this guide
+* **Timing attack checks**: For sensitive equal comparisons `Common::hashEquals` is used
+* **Exposing of data**: No sensitive data is exposed (any tokens or passwords eg in the HTML as part of a system check or logs or so)
+* **Secure data storing**: Passwords or similar data like a sessionId is stored securely hashed
+* **Unsafe methods**: Methods to watch out for: 
+  * Insecure deserialization: `unserialize` is unsafe for user input. Consider using `Common::safe_unserialize` or for user input possibly `JSON` instead
+  * `file_get_contents` can be unsafe when eg a protocol `phar://` can be passed to it
+  * require|include(_once) should not use any user input unless it's whitelisted
+  * Also see eg https://gist.github.com/mccabe615/b0907514d34b2de088c4996933ea1720
+* Think of other ways such as RCE etc
+* Sensitive actions may require password confirmation
+
+
 ## Learn more
 
 - To learn **more about security in web applications** read this article: [Top 10 Security from The Open Web Application Security Project (OWASP)](https://owasp.org/www-project-top-ten/).
