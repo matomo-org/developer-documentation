@@ -989,7 +989,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [559](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L559)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [566](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L566)*
 
 This event is triggered after archiving.
 
@@ -1001,7 +1001,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [726](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L726)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [733](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L733)*
 
 Triggered by the **core:archive** console command so plugins can modify the priority of
 websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
@@ -1200,7 +1200,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php) in line [454](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php#L454)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php) in line [455](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php#L455)*
 
 
 
