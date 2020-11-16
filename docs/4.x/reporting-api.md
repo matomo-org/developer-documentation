@@ -213,4 +213,4 @@ All the commonly used terms in Piwik Analytics are documented in the [Glossary](
 
 ## API Method List
 
-{@include https://demo2.matomo.org/?module=API&action=listAllMethods&prefixUrl=https://demo.matomo.cloud/&idSite=1}
+{@include https://demo2.matomo.org/?module=API&action=listAllMethods&prefixUrl=https://demo.matomo.cloud/&idSite=1&date=yesterday}
