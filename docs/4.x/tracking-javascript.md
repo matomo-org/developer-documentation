@@ -130,6 +130,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 *   `setCookieDomain( domain )` - the default is the document domain; if your website can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
 *   `setCookiePath( path )` - the default is '/'.
 *   `setSecureCookie( bool )` - set to true to enable the Secure cookie flag on all first party cookies. This should be used when your website is only available under HTTPS so that all tracking cookies are always sent over secure connection.
+*   `setCookieSameSite( string )` - defaults to `Lax`. Can be set to `None` or `Strict`. `None` requires all traffic to be on HTTPS and will also automatically set the secure cookie. It can be useful for example if the tracked website is an iframe. `Strict` only works if your Matomo and the website runs on the very same domain. 
 *   `setVisitorCookieTimeout( seconds )` - the default is 13 months
 *   `setReferralCookieTimeout( seconds )` - the default is 6 months
 *   `setSessionCookieTimeout( seconds )` - the default is 30 minutes
