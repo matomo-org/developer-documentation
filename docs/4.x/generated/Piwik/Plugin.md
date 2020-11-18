@@ -96,6 +96,7 @@ The class defines the following methods:
 - [`hasMissingDependencies()`](#hasmissingdependencies) &mdash; Detect whether there are any missing dependencies.
 - [`getMissingDependencies()`](#getmissingdependencies)
 - [`getMissingDependenciesAsString()`](#getmissingdependenciesasstring) &mdash; Returns a string (translated) describing the missing requirements for this plugin and the given Piwik version
+- [`schedulePluginReArchiving()`](#schedulepluginrearchiving) &mdash; Schedules re-archiving of this plugin's reports from when this plugin was last deactivated to now.
 - [`getPluginNameFromBacktrace()`](#getpluginnamefrombacktrace) &mdash; Extracts the plugin name from a backtrace array.
 - [`getPluginNameFromNamespace()`](#getpluginnamefromnamespace) &mdash; Extracts the plugin name from a namespace name or a fully qualified class name.
 - [`getPluginLastActivationTime()`](#getpluginlastactivationtime)
@@ -358,6 +359,26 @@ Returns a string (translated) describing the missing requirements for this plugi
 
 - *Returns:*  `string` &mdash;
     "AnonymousPiwikUsageMeasurement requires PIWIK >=3.0.0"
+
+<a name="schedulepluginrearchiving" id="schedulepluginrearchiving"></a>
+<a name="schedulePluginReArchiving" id="schedulePluginReArchiving"></a>
+### `schedulePluginReArchiving()`
+
+Schedules re-archiving of this plugin's reports from when this plugin was last
+deactivated to now. If the last time core:archive was run is earlier than the
+plugin's last deactivation time, then we use that time instead.
+
+Note: this only works for CLI archiving setups.
+
+Note: the time frame is limited by the `[General] rearchive_reports_in_past_last_n_months`
+INI config value.
+
+#### Signature
+
+- It does not return anything or a mixed result.
+- It throws one of the following exceptions:
+    - `DI\DependencyException`
+    - `DI\NotFoundException`
 
 <a name="getpluginnamefrombacktrace" id="getpluginnamefrombacktrace"></a>
 <a name="getPluginNameFromBacktrace" id="getPluginNameFromBacktrace"></a>
