@@ -56,7 +56,6 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setLinkTrackingTimer( integer )` - Set delay for link tracking in milliseconds.
 *   `getLinkTrackingTimer()` - Get delay for link tracking (in milliseconds).
 *   `discardHashTag( bool )` - Set to true to not record the hash tag (anchor) portion of URLs
-*   `setGenerationTimeMs(generationTime)` - By default Piwik uses the browser DOM Timing API to accurately determine the time it takes to generate and download the page. You may overwrite the value by specifying a milliseconds value here.
 *   `appendToTrackingUrl(appendToUrl)` - Append a custom string to the end of the HTTP request to matomo.php?
 *   `setDoNotTrack( bool )` - Set to true to not track users who opt out of tracking using Mozilla's (proposed) Do Not Track setting.
 *   `killFrame()` - Enable a frame-buster to prevent the tracked web page from being framed/iframed.
