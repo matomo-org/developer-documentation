@@ -549,6 +549,12 @@ Enable Cookie Creation - this will cause a first party VisitorId cookie to be se
        (optional) Set first-party cookie domain. Accepted values: example.com, *.example.com (same as .example.com) or subdomain.example.com
     - `$path` (`string`) &mdash;
        (optional) Set first-party cookie path
+    - `$secure` (`bool`) &mdash;
+       (optional) Set secure flag for cookies
+    - `$httpOnly` (`bool`) &mdash;
+       (optional) Set HTTPOnly flag for cookies
+    - `$sameSite` (`string`) &mdash;
+       (optional) Set SameSite flag for cookies
 - It does not return anything or a mixed result.
 
 <a name="disablesendimageresponse" id="disablesendimageresponse"></a>
