@@ -169,7 +169,7 @@ This is an example of the payload of a bulk tracking request:
     {
        "requests": [
           "?idsite=1&url=https://example.org&action_name=Test bulk log Pageview&rec=1",
-          "?idsite=1&url=https://example.net/test.htm&action_name=Another bul k page view&rec=1"
+          "?idsite=1&url=https://example.net/test.htm&action_name=Another bulk page view&rec=1"
        ],
        "token_auth": "33dc3f2536d3025974cccb4b4d2d98f4"
     }
