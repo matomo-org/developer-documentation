@@ -198,6 +198,7 @@ This is a complete list of available classes:
 - [`Updater`](Piwik/Updater.md) &mdash; Load and execute all relevant, incremental update scripts for Piwik core and plugins, and bump the component version numbers for completed updates.
 - [`Updater\Migration`](Piwik/Updater/Migration.md) &mdash; Base class for migrations.
 - [`Updater\Migration\Config\Factory`](Piwik/Updater/Migration/Config/Factory.md) &mdash; Provides config migrations.
+- [`Updater\Migration\Custom`](Piwik/Updater/Migration/Custom.md) &mdash; Create a custom migration that can execute any callback.
 - [`Updater\Migration\Db`](Piwik/Updater/Migration/Db.md) &mdash; Base class for a single database migration.
 - [`Updater\Migration\Db\Factory`](Piwik/Updater/Migration/Db/Factory.md) &mdash; Provides database migrations.
 - [`Updater\Migration\Factory`](Piwik/Updater/Migration/Factory.md) &mdash; Migration factory to create various migrations that implement the Migration interface.

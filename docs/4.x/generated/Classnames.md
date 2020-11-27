@@ -194,6 +194,7 @@
 ## Updater
 ## Updater\Migration
 ## Updater\Migration\Config\Factory
+## Updater\Migration\Custom
 ## Updater\Migration\Db
 ## Updater\Migration\Db\Factory
 ## Updater\Migration\Factory
