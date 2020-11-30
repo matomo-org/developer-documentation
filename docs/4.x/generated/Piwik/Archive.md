@@ -97,6 +97,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct)
 - [`build()`](#build) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional Segment.
 - [`factory()`](#factory) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
+- [`shouldSkipArchiveIfSkippingSegmentArchiveForToday()`](#shouldskiparchiveifskippingsegmentarchivefortoday)
 - [`getNumeric()`](#getnumeric) &mdash; Queries and returns metric data in an array.
 - [`getDataTableFromNumeric()`](#getdatatablefromnumeric) &mdash; Queries and returns metric data in a DataTable instance.
 - [`getDataTable()`](#getdatatable) &mdash; Queries and returns one or more reports as DataTable instances.
@@ -174,6 +175,21 @@ use [build()](/api-reference/Piwik/Archive#build).
     - `$isMultipleDate` (`bool`) &mdash;
        Whether multiple dates are being queried or not. If true, then the result of querying functions will be indexed by period, regardless of whether `count($periods) == 1`.
 - It returns a `Piwik\Archive\ArchiveQuery` value.
+
+<a name="shouldskiparchiveifskippingsegmentarchivefortoday" id="shouldskiparchiveifskippingsegmentarchivefortoday"></a>
+<a name="shouldSkipArchiveIfSkippingSegmentArchiveForToday" id="shouldSkipArchiveIfSkippingSegmentArchiveForToday"></a>
+### `shouldSkipArchiveIfSkippingSegmentArchiveForToday()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$site` ([`Site`](../Piwik/Site.md)) &mdash;
+      
+    - `$period` ([`Period`](../Piwik/Period.md)) &mdash;
+      
+    - `$segment` ([`Segment`](../Piwik/Segment.md)) &mdash;
+      
+- It does not return anything or a mixed result.
 
 <a name="getnumeric" id="getnumeric"></a>
 <a name="getNumeric" id="getNumeric"></a>

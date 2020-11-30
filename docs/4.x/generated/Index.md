@@ -990,6 +990,7 @@ Index
 ## S
 
 - [`shouldLoadFlatten()`](Piwik/API/Request.md#shouldloadflatten) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
+- [`shouldSkipArchiveIfSkippingSegmentArchiveForToday()`](Piwik/Archive.md#shouldskiparchiveifskippingsegmentarchivefortoday) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`setArchiveOnlyReport()`](Piwik/ArchiveProcessor/Parameters.md#setarchiveonlyreport) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`setTokenAuth()`](Piwik/Auth.md#settokenauth) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`setLogin()`](Piwik/Auth.md#setlogin) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
