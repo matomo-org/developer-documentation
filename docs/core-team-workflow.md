@@ -35,7 +35,7 @@ Developers (Piwik team members or external contributors) decide for themselves w
 ## How we organise issues
 
 ### Milestones
-All opened tickets are grouped in [Milestones](https://github.com/matomo-org/matomo/issues/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/matomo-org/matomo/issues).
+All opened tickets are grouped in [Milestones](https://github.com/matomo-org/matomo/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/matomo-org/matomo/issues).
 The versions milestones are listed at the very top and contains all the most important issues to close in accordance with [our vision for the Piwik analytics platform](https://piwik.org/roadmap/).
 
 Most important issues and bugs are moved to [Short term milestone](https://github.com/matomo-org/matomo/milestones/Short%20term).
