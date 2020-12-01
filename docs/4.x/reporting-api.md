@@ -32,7 +32,7 @@ The APIs let you programmatically request any analytics reports from Matomo, for
 *   **date**
 
     *   standard format = _YYYY-MM-DD_
-    *   magic keywords = _today_ or _yesterday_. These are relative the website timezone. For example, for a website with UTC+12 timezone, "date=today" for an API request at 5PM UTC on 2010-01-01 will return the reports for 2010-01-02.
+    *   magic keywords = _today_, _yesterday_, _lastWeek_, _lastMonth_ or _lastYear_. These are relative the website timezone. For example, for a website with UTC+12 timezone, "date=today" for an API request at 5PM UTC on 2010-01-01 will return the reports for 2010-01-02.
     *   range of dates
 
         *   _lastX_ for the last X periods including today (eg &date=last10&period=day would return an entry for each of the last 10 days including today). This is relative to the website timezone.
@@ -44,7 +44,7 @@ When 'period=range', the following keywords are supported for the parameter 'dat
 
         *   _lastX_
         *   _previousX_
-        *   _YYYY-MM-DD,YYYY-MM-DD_, or _YYYY-MM-DD,today_ or _YYYY-MM-DD,yesterday_
+        *   _YYYY-MM-DD,YYYY-MM-DD_, both dates can be replaced with magic keywords (the first one does not support _today_ and _yesterday_). eg. _YYYY-MM-DD,today_, _lastMonth,YYYY-MM-DD_ or _lastYear,lastWeek_
 
 
 *   **segment** &mdash; defines the Custom Segment you wish to filter your reports to.
