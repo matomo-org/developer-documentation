@@ -37,6 +37,7 @@ Namespace: `matomo/v1`
 * `GET live/last_visit_details`
 * `GET live/visitor_profile`
 * `GET live/most_recent_visitor_id`
+* `GET visits_summary/visits` (requires version 4.0.2 or newer)
 * `DELETE privacy_manager/data_subjects`
 * `GET privacy_manager/export_data_subjects`
 * `POST privacy_manager/anonymize_some_raw_data`
