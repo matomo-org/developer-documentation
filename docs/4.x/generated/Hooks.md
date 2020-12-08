@@ -959,7 +959,7 @@ Usages:
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php) in line [296](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php#L296)*
+*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php) in line [298](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php#L298)*
 
 This event is triggered immediately after the cron archiving process starts archiving data for a single
 site. Note: multiple archiving processes can post this event.
@@ -974,7 +974,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php) in line [148](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php#L148)*
+*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php) in line [150](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive/QueueConsumer.php#L150)*
 
 This event is triggered before the cron archiving process starts archiving data for a single
 site. Note: multiple archiving processes can post this event.
@@ -989,7 +989,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [577](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L577)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [578](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L578)*
 
 This event is triggered after archiving.
 
@@ -1001,7 +1001,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [744](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L744)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [745](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L745)*
 
 Triggered by the **core:archive** console command so plugins can modify the priority of
 websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
