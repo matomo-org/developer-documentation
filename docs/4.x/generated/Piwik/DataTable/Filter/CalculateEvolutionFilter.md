@@ -104,6 +104,8 @@ Calculates the evolution percentage for two arbitrary values.
        The quotient precision to round to.
     - `$appendPercentSign` (`bool`) &mdash;
        Whether to append a '%' sign to the end of the number or not.
+    - `$prependPlusSignWhenPositive` (`bool`) &mdash;
+       Whether to prepend a '+' sign before the number if it's not negative.
 
 - *Returns:*  `string` &mdash;
     The evolution percent, eg `'15%'`.
