@@ -848,7 +848,10 @@ Index
 
 ## L
 
-- [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; *Class in namespace* `Piwik\DataAccess`- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`$lockPrivilegeGranted`](Piwik/Db.md#$lockprivilegegranted) &mdash; *Property in class* [`Db`](Piwik/Db.md)
+- [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; *Class in namespace* `Piwik\DataAccess`- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`lastWeek()`](Piwik/Date.md#lastweek) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`lastMonth()`](Piwik/Date.md#lastmonth) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`lastYear()`](Piwik/Date.md#lastyear) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`$lockPrivilegeGranted`](Piwik/Db.md#$lockprivilegegranted) &mdash; *Property in class* [`Db`](Piwik/Db.md)
 - [`lockTables()`](Piwik/Db.md#locktables) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md) &mdash; *Class in namespace* `Piwik\Intl\Data\Provider`- [`Log`](Piwik/Log.md) &mdash; *Class in namespace* `Piwik`- [`loadAllPluginsAndGetTheirInfo()`](Piwik/Plugin/Manager.md#loadallpluginsandgettheirinfo) &mdash; *Method in class* [`Manager`](Piwik/Plugin/Manager.md)
 
