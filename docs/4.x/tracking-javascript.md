@@ -122,7 +122,7 @@ Matomo also provides a mechanism to manage your user's cookie consent. You can r
 *   `areCookiesEnabled()` - Returns true or false depending on whether cookies are currently enabled or disabled.
 
 ### Managing opt out
-Wanting to build a custom opt-out form instead of a consent screen or instead of using our [opt-out iframe](https://matomo.org/faq/general/faq_20000/)? Check out the guide for [creating a custom opt-out form](https://developer.matomo.org/guides/tracking-javascript-guide#optional-creating-a-custom-opt-out-form).
+Do you want to build a custom opt-out form instead of a consent screen or instead of using our [opt-out iframe](https://matomo.org/faq/general/faq_20000/)? Check out the guide for [creating a custom opt-out form](https://developer.matomo.org/guides/tracking-javascript-guide#optional-creating-a-custom-opt-out-form).
 
 *   `optUserOut()` - After calling this function, the user will be opted out and no longer be tracked.
 *   `forgetUserOptOut()` - After calling this method the user will be tracked again. Call this method if the user opted out before.
