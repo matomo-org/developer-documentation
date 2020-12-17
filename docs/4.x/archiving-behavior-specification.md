@@ -41,6 +41,10 @@ request/process, and cannot find a recent, usable archive, we generate it.
 
 TODO
 
+**Optimizations that skip archiving**
+
+TODO
+
 ### Special Query Parameter Handling
 
 * `trigger`: if set to `archivephp`, let's the core archiving process know it was launched by the `core:archive` command.
@@ -89,6 +93,10 @@ TODO
 
 TODO
 
+**invalidations are inserted while archiving for a site is in progress**
+
+TODO
+
 **site is deleted during invalidation or archiving**
 
 TODO
@@ -105,8 +113,74 @@ TODO
 
 TODO
 
-### Command Line Options
+**how and when the ttl is checked**
 
-`--skip-segments-today`: TODO
+TODO
+(before invalidating and when processing individual invalidations. segments can be archived if visit invalidation is not respected.)
+
+**archiving today/yesterday**
+
+TODO
+(today/yesterday in the site's timezone)
+
+**amount of concurrency to expect**
+
+TODO
+(even w/ sharedsiteids, there can be multiple processes that process the same site (users do this))
+
+### Re-archiving of past data for new or updated segments
+
+When a segment is created or updated, we make sure to re-archive the last several months of data for them, so
+that data will appear for users. If we didn't, the data would be archived in the yearly archive for the current day,
+which means it may not be much data if the current day is close to the beginning of the year, and could also mean
+a much larger archiving request than just archiving days, weeks, months, years in that order for the segment.
+
+We do this by checking if the segment created time or updated time is newer than the last time we invalidated archives
+in core:archive. If it is, we know we have missing or out of date data for a segment, and we have to re-archive.
+
+The segment created/updated time is stored in the `segment` table. The last invalidation time is stored in the
+`CronArchive.lastInvalidationTime` option.
+
+### Important Command Line Options
+
+`--skip-idsites`: TODO
+`--skip-all-segments`: TODO
+`--force-idsites`: TODO
 `--force-periods`: TODO
-``
+`--skip-segments-today`: TODO
+
+### Launching core:archive through HTTP requests
+
+TODO
+
+**Limitations compared to CLI**
+
+TODO
+
+/*
+        $command->addOption('', null, InputOption::VALUE_OPTIONAL,
+            'If specified, archiving will be processed only for these Sites Ids (comma separated)');
+        $command->addOption('skip-segments-today', null, InputOption::VALUE_NONE,
+            'If specified, segments will be only archived for yesterday, but not today. If the segment was created or changed recently, then it will still be archived for today and the setting will be ignored for this segment.');
+        $command->addOption('force-periods', null, InputOption::VALUE_OPTIONAL,
+            "If specified, archiving will be processed only for these Periods (comma separated eg. day,week,month,year,range)");
+        $command->addOption('force-date-last-n', null, InputOption::VALUE_REQUIRED,
+            "This last N number of years of data to invalidate when a recently created or updated segment is found.", 7);
+        $command->addOption('force-date-range', null, InputOption::VALUE_OPTIONAL,
+            "If specified, archiving will be processed only for periods included in this date range. Format: YYYY-MM-DD,YYYY-MM-DD");
+        $command->addOption('force-idsegments', null, InputOption::VALUE_REQUIRED,
+            'If specified, only these segments will be processed (if the segment should be applied to a site in the first place).'
+            . "\nSpecify stored segment IDs, not the segments themselves, eg, 1,2,3. "
+            . "\nNote: if identical segments exist w/ different IDs, they will both be skipped, even if you only supply one ID.");
+        $command->addOption('concurrent-requests-per-website', null, InputOption::VALUE_OPTIONAL,
+            "When processing a website and its segments, number of requests to process in parallel", CronArchive::MAX_CONCURRENT_API_REQUESTS);
+        $command->addOption('concurrent-archivers', null, InputOption::VALUE_OPTIONAL,
+            "The number of max archivers to run in parallel. Depending on how you start the archiver as a cronjob, you may need to double the amount of archivers allowed if the same process appears twice in the `ps ex` output.", false);
+        $command->addOption('disable-scheduled-tasks', null, InputOption::VALUE_NONE,
+            "Skips executing Scheduled tasks (sending scheduled reports, db optimization, etc.).");
+        $command->addOption('accept-invalid-ssl-certificate', null, InputOption::VALUE_NONE,
+            "It is _NOT_ recommended to use this argument. Instead, you should use a valid SSL certificate!\nIt can be "
+            . "useful if you specified --url=https://... or if you are using Piwik with force_ssl=1");
+        $command->addOption('php-cli-options', null, InputOption::VALUE_OPTIONAL, 'Forwards the PHP configuration options to the PHP CLI command. For example "-d memory_limit=8G". Note: These options are only applied if the archiver actually uses CLI and not HTTP.', $default = '');
+        $command->addOption('force-all-websites', null, InputOption::VALUE_NONE, 'Force archiving all websites.');
+*/
