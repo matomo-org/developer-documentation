@@ -372,6 +372,7 @@ Index
 - [`getId()`](Piwik/Columns/Dimension.md#getid) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](Piwik/Columns/Dimension.md#getalldimensions) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getDimensions()`](Piwik/Columns/Dimension.md#getdimensions) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
+- [`getRemovedDimensions()`](Piwik/Columns/Dimension.md#getremoveddimensions) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getModule()`](Piwik/Columns/Dimension.md#getmodule) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getType()`](Piwik/Columns/Dimension.md#gettype) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getTable()`](Piwik/Columns/Discriminator.md#gettable) &mdash; *Method in class* [`Discriminator`](Piwik/Columns/Discriminator.md)
