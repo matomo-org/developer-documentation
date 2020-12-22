@@ -65,6 +65,19 @@ _(We recommend that these parameters be used if the information is available and
 * `dimension[0-999]` &mdash; A Custom Dimension value for a specific Custom Dimension ID (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions) see the [Custom Dimensions guide](https://matomo.org/docs/custom-dimensions/)). If Custom Dimension ID is `2` use `dimension2=dimensionValue` to send a value for this dimension. The configured Custom Dimension has to be in scope "Action".
 * `ca` &mdash; Stands for custom action. `&ca=1` can be optionally sent along any tracking request that isn't a page view. For example it can be sent together with an event tracking request `e_a=Action&e_c=Category&ca=1`. The advantage being that should you ever disable the event plugin, then the event tracking requests will be ignored vs if the parameter is not set, a page view would be tracked even though it isn't a page view. For more background information check out [#16570](https://github.com/matomo-org/matomo/issues/16569). Do not use this parameter together with a `ping=1` tracking request.
 
+### Optional [Page Performance](https://matomo.org/faq/how-to/how-do-i-see-page-performance-reports/) info
+
+For pageviews the following page performance metrics can be tracked:
+
+* `pf_net` &mdash; Network time. How long it took to connect to server.
+* `pf_srv` &mdash; Server time. How long it took the server to generate page.
+* `pf_tfr` &mdash; Transfer time. How long it takes the browser to download the response from the server
+* `pf_dm1` &mdash; Dom processing time. How long the browser spends loading the webpage after the response was fully received until the user can starting interacting with it.
+* `pf_dm2` &mdash; Dom completion time. How long it takes for the browser to load media and execute any Javascript code listening for the DOMContentLoaded event.
+* `pf_onl` &mdash; Onload time. How long it takes the browser to execute Javascript code waiting for the window.load event.
+
+All page performance metrics expect a value in milliseconds.
+
 ### Optional [Event Tracking](https://matomo.org/docs/event-tracking/) info
 * `e_c` &mdash; The event category. Must not be empty. (eg. Videos, Music, Games...)
 * `e_a` &mdash; The event action. Must not be empty. (eg. Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
