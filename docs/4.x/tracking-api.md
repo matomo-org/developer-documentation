@@ -76,6 +76,8 @@ For pageviews the following page performance metrics can be tracked:
 * `pf_dm2` &mdash; Dom completion time. How long it takes for the browser to load media and execute any Javascript code listening for the DOMContentLoaded event.
 * `pf_onl` &mdash; Onload time. How long it takes the browser to execute Javascript code waiting for the window.load event.
 
+All page performance metrics expect a value in milliseconds.
+
 ### Optional [Event Tracking](https://matomo.org/docs/event-tracking/) info
 * `e_c` &mdash; The event category. Must not be empty. (eg. Videos, Music, Games...)
 * `e_a` &mdash; The event action. Must not be empty. (eg. Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
