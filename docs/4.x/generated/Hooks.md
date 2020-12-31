@@ -1095,7 +1095,7 @@ Callback Signature:
 
 Usages:
 
-[PrivacyManager::shouldAddTrackerFile](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/PrivacyManager.php#L746)
+[PrivacyManager::shouldAddTrackerFile](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/PrivacyManager.php#L748)
 
 
 ### CustomJsTracker.trackerJsChanged
