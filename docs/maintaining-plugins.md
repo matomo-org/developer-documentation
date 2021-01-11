@@ -14,6 +14,15 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 * Edit `.gitmodules` and move the entry for this submodule before the comment at the bottom (see description of that comment)
 * It's expected that some core screenshots will fail and maybe also some integration or system tests as the plugin will be activated and the tests for this plugin run during core tests too. This is because we consider the plugins bundled w/ core to be tested this often (testing compatibility on every matomo change). Otherwise the tests would only run when the plugin changes, even though a change in core could cause problems.
 
+## New plugin checklist
+
+* The new plugin has a `LICENSE` file similar to https://github.com/matomo-org/plugin-QueuedTracking/blob/4.x-dev/LICENSE
+* The same license is also defined in `plugin.json`
+* A descriptive description and useful keywords are configured in `plugin.json`. Same for other values in the plugin JSON file.
+* If any possible screenshots are defined in the `screenshots` folder.
+* If `docs/index.md` or `docs/faq.md` are not needed then delete them
+
+
 ## Maintaining plugin FAQs
 
 ### How do I fix the error "Some Screenshots are not stored in LFS"?
