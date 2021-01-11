@@ -33,6 +33,8 @@ class DevelopInDepthCategory extends Category
             new EmptySubCategory('Matomo Core development', [
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),
+                new Guide('maintaining-plugins'),
+                new Guide('core-faqs'),
                 new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
             ]),
             new DevelopCategory(),
