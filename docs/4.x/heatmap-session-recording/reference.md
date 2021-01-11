@@ -198,7 +198,7 @@ Disables the tracking of any heatmap and session activities. This is useful when
  instances on your website and you want to track activities only into one Piwik. If called early in your tracking code, 
  it will not even try to detect whether a recording should be started, saving you one HTTP request on each page view. If you
  use only one Piwik tracker on your website - which is normal in most of the cases - this method is equivalent to 
- `HeatmapSessionRecording::disable`.
+ `HeatmapSessionRecording::disable`. [Learn more](https://matomo.org/faq/heatmap-session-recording/faq_25413/)
 
 Example:
 
