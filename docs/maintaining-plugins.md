@@ -46,3 +46,19 @@ You can fix this issue using these steps:
 * `git add tests`
 * `git commit -m 'Add screenshots using LFS'`
 * Then update the submodule in core
+
+#### Get travis to use LFS
+
+To get travis to checkout the screenshots correctly and use LFS you will need to add/change the `.travis.yml` within your plugin like this (eg [see this file](https://github.com/matomo-org/tag-manager/blob/4.x-dev/.travis.yml#L65-L68)):
+
+```
+before_install:
+
+  - if [[ "${TEST_SUITE}" == "UITests" ]]; then git lfs fetch; git lfs checkout; fi
+```
+
+And you need to create a file `tests/travis/before_install.after.yml` in your plugin with the following content (eg [see this file](https://github.com/matomo-org/tag-manager/blob/4.x-dev/tests/travis/before_install.after.yml)):
+
+```
+- if [[ "${TEST_SUITE}" == "UITests" ]]; then git lfs fetch; git lfs checkout; fi
+```
