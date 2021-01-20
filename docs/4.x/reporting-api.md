@@ -32,7 +32,7 @@ The APIs let you programmatically request any analytics reports from Matomo, for
 *   **date**
 
     *   standard format = _YYYY-MM-DD_
-    *   magic keywords = _today_, _yesterday_, _lastWeek_, _lastMonth_ or _lastYear_. These are relative the website timezone. For example, for a website with UTC+12 timezone, "date=today" for an API request at 5PM UTC on 2010-01-01 will return the reports for 2010-01-02.
+    *   magic keywords = _today_, _yesterday_, _lastWeek_, _lastMonth_ or _lastYear_. These are relative the website timezone. For example, for a website with UTC+12 timezone, "date=today" for an API request at 5PM UTC on 2010-01-01 will return the reports for 2010-01-02. (Note: _lastWeek_, _lastMonth_ and _lastYear_ are only available as of Matomo 4.1)
     *   range of dates
 
         *   _lastX_ for the last X periods including today (eg &date=last10&period=day would return an entry for each of the last 10 days including today). This is relative to the website timezone.
