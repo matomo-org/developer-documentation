@@ -21,3 +21,7 @@ $segment = new Piwik\Segment($definition, $idSites);
 ```
 
 You need to use `urlencode($definition)`  if the segment is sourced from the `segment` table or from `SegmentEditor.getAll`. Then it should be encoded before being used in the `Segment` class. If there is a lot of passing the string around before creating a `Segment`, then it would be hard to figure out what to use. For reference see [#17029](https://github.com/matomo-org/matomo/pull/17029). 
+
+## How do I get the correct expected segment hash for a segment?
+
+Execute the `SegmentEditor.getAll` API method as this should include the expected segment hash.
