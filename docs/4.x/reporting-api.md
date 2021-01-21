@@ -113,6 +113,8 @@ There are also generic filters you can choose to apply on all APIs that return w
 *   **disable\_generic\_filters**; if set to 1, all the generic filters above will not be applied. This can be useful to disable the filters above which are otherwise applied with default values. Mostly used internally or when developing plugins for Piwik.
 *   **disable\_queued\_filters**; if set to 1, all the filters that are mostly presentation filters (replace a column name, apply callbacks on the column to add new information such as the browser icon URL, etc.) will not be applied. Mostly used internally or when developing plugins for Piwik.
 
+*   **translateColumnNames**; if set to 1, column names in report output will be translated to the language specified by the `language` parameter described above. Note: this parameter only has an effect for the CSV, RSS and HTML output formats.
+
 ### Passing an array of data as a parameter
 
 Some parameters can optionally accept arrays. For example, the urls parameter of SitesManager.addSite, SitesManager.addSiteAliasUrls, and SitesManager.updateSite allows for an array of urls to be passed. To pass an array add the bracket operators and an index to the parameter name in the get request. So, to call SitesManager.addSite with two urls you would use the following array:
