@@ -55,7 +55,23 @@ if browser archiving is disabled:
 
 **Optimizations that skip archiving**
 
-TODO
+_When there are no visits_
+
+In certain situations, Matomo will be able to tell it does not have to archive and will skip it for a site and period.
+This is generally because the site has no visits for that period, and we are able to easily tell.
+
+The specific logic is in `Loader::canSkipThisArchive()`. If a website/period pair is:
+
+- has no visits in the log tables for the period
+- and has no subperiod archive within the period (ie, if we're looking at a week and there are no day archives for that week, this would be true)
+
+We know we'd end up with zero visits if we archive, so we can just skip it. The only exceptions are for sites that do
+not use the tracker (so there will always be zero visits in the log table) or are specified via the `'Archiving.getIdSitesToArchiveWhenNoVisits'`
+event. RollUp websites are examples of sites for which this optimization does not apply.
+
+This optimization is used both before launching the archive aggregation logic and in the `core:archive` command
+before we launch individual archive requests. This saves a bit more time since we also don't have to launch an
+archiving command.
 
 ### Special Query Parameter Handling
 
