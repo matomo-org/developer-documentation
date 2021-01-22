@@ -39,7 +39,19 @@ request/process, and cannot find a recent, usable archive, we generate it.
 
 **When archiving is allowed/disallowed for the current process**
 
-TODO
+If browser archiving is enabled, any HTTP request or CLI command can initiate archiving. Things are more complicated
+if browser archiving is disabled:
+
+- If the request is for a range period, and `[General] archiving_range_force_on_browser_request` is absent or set to 1,
+  then the request will always be allowed to initiate archiving.
+- If the request is triggered by the core:archive command, then it will always be allowed to initiate archiving. We assume
+  that core:archive initiated the request if the `trigger` query parameter is set to `archivephp` and the user has superuser
+  access.
+- If we are archiving reports for a single plugin (either because it is forced during the core:archive command, or 
+  the request is for a segment that isn't marked as pre-processed), then the request will always be allowed to initiate
+  archiving...
+  - unless, the reason we are archiving a single plugin is because the request is for a segment and
+    `[General] browser_archiving_disabled_enforce` is set to 1.
 
 **Optimizations that skip archiving**
 
