@@ -113,54 +113,6 @@ Piwik defines several global variables (held in `window.piwik`) regarding the cu
 
 When writing JavaScript for your contribution or plugin, you would ideally respect the following coding conventions.
 
-### Self-executing anonymous function wrapper
-
-Every JavaScript file you create should surround its code in a self-executing anonymous function:
-
-```javascript
-/**
- * My JS file.
- */
-(function ($, require) {
-
-    // ... your code goes here ...
-
-})(jQuery, require);
-```
-
-If you need to use global objects, they should be passed in to the anonymous function as is done above. Anything that should be made available to other files should be exposed via [require](#javascript-modularization).
-
-### JavaScript modularization
-
-Piwik attempts to modularize all JavaScript code through the use of Piwik's `require` function. This function (inspired by [node.js' require function](https://nodejs.org/api/modules.html)) will create nested objects in the `window` object based on a namespace string (for example, `'MyPlugin/Widgets/FancySchmancyThing'`).
-
-Here's how it should be used:
-
-```javascript
-(function ($, require) {
-
-    // get a class that we're going to extend
-    var classToExtend = require('AnotherPlugin/Widgets').TheirWidget;
-
-    // extend it
-    function MySpecialWidget() {
-        classToExtend.call(this);
-    }
-
-    $.extend(MySpecialWidget.prototype, classToExtend.prototype, {
-        // ...
-    });
-
-    // export the class so it is available to other JavaScript files
-    var exports = require('MyPlugin/NamespaceForThisFile');
-    exports.MySpecialWidget = MySpecialWidget;
-
-})(jQuery, require);
-```
-
-**All new JavaScript should modularize their code with the `require` function. The `window` object should be accessed sparingly, if ever.**
-
-
 ## Important JavaScript classes
 
 Piwik Core defines many classes that should be reused by new plugins and contributions. These classes can be used to, among other things, change the page the UI shows, load a popover and get themed color values from CSS.
