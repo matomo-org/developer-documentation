@@ -167,7 +167,7 @@ Piwik Core defines many classes that should be reused by new plugins and contrib
 
 ### Broadcast
 
-This class is considered deprecated and only exists for historical reasons as some components are still using it. You should usually instead use angularjs components like [$location](https://docs.angularjs.org/api/ng/service/$location).
+This class is considered deprecated and only exists for historical reasons as some components are still using it. Whenever possible you should instead use angularjs components like [$location](https://docs.angularjs.org/api/ng/service/$location). In cases where this is not possible, `broadcast` can be used. 
 
 The `broadcast` object is stored directly in the `window` object and should be used to parse the current URL, load a page in the area below the menu and load persistent popovers.
 
