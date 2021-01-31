@@ -119,6 +119,8 @@ Piwik Core defines many classes that should be reused by new plugins and contrib
 
 ### Broadcast
 
+This class is considered deprecated and only exists for historical reasons as some components are still using it. Whenever possible you should instead use angularjs components like [$location](https://docs.angularjs.org/api/ng/service/$location). In cases where this is not possible, `broadcast` can be used. 
+
 The `broadcast` object is stored directly in the `window` object and should be used to parse the current URL, load a page in the area below the menu and load persistent popovers.
 
 _Note: Though the object is stored in `window` and not a JS namespace, it can still be accessed using `require` by calling `require('broadcast')`._
@@ -154,6 +156,8 @@ To load a new page below the main Piwik menu, use the `propagateNewPage()` funct
 ```
 
 ### ajaxHelper
+
+This class is considered deprecated and only exists for historical reasons as some non-angular components are still using it. You should usually instead use our angularjs service [piwikApi](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/angularjs/common/services/piwik-api.js).
 
 The `ajaxHelper` class should be used whenever you need to create an AJAX request. **Plugins should not use `$.ajax` directly.** `ajaxHelper` does some extra things that make it harder to write insecure code. It also keeps track of the current ongoing AJAX requests which is vital to the [UI tests](/guides/tests-ui).
 
