@@ -21,10 +21,11 @@ Did you know? You can [extend the database](/guides/extending-database) with a p
 
 There are four types of log data:
 
-- **visits**
-- **action types**
-- **conversions**
-- **ecommerce items**
+- [**visits**](#log-data-persistence-visits)
+- [**action types**](#log-data-persistence-action-types)
+- [**plugin specific actions**](#log-data-persistence-plugin-specific-actions)
+- [**conversions**](#log-data-persistence-conversions)
+- [**ecommerce items**](#log-data-persistence-ecommerce-items)
 
 All log data is persisted in a similar way: new data is constantly added to the set at high volume and updates are non-existent, except for **visits**.
 
@@ -190,6 +191,40 @@ Action types are persisted in the `log_action` table and contain the following i
 #### Table details
 
 The `index_type_hash` index is used during tracking to find existing action types.
+
+<a name="log-data-persistence-plugin-specific-actions"></a>
+### Plugin specific actions
+
+Some plugins are not using the `log_action` / `log_link_visit_action` tables to persist their actions. Instead some custom tables are used in order to be able to store the required action details
+
+#### Media Analytics
+
+The MediaAnalytics plugin uses the tables `log_media` and `log_media_plays` to store the details about the viewed media elements.
+
+The table `log_media` holds the details of a media element that was shown to the user or the user interacted with:
+
+- `idvisitor`: the ID of the visitor (an 8 byte binary string)
+- `idvisit`: the ID of the visit
+- `idsite`: the ID of the website
+- `idview`: a random id to identify a specific media view (6 chars [a-z0-9])
+- `player_name`: the name of the media player
+- `media_type`: the media type (1 = video, 2 = audio)
+- `resolution`: the resolution of the media (video only)
+- `fullscreen`: flag to identify if the media was viewed full screen (video only)
+- `media_title`: title of the media
+- `resource`: the resource of the media (typically a file name or url location)
+- `server_time`: the date time the media view started
+- `time_to_initial_play`: the time it took until the user started the media
+- `watched_time`: the sum of the time the user watched/listened the media
+- `media_progress`: progress of the media (defined by the last second that was consumed)
+- `media_length`: the total length of the media in seconds
+
+In addition to a media view, the plugin stores which segments of a media has been consumed. This is done in the table `log_media_plays`.
+Besides `idview` and `idvisit`, which are used to identify a record with an entry in `log_media`, the table has a lot columns for each media segment.
+The first 5 minutes of a media are tracked in 15 second intervals, the rest in 30 second intervals. That means the first 20 columns in `log_media_plays` represents 15 seconds each, the remaining columns represent 30 seconds each. 
+That means if the first 3 columns have a `1` then the user watched at least one second of each of those parts between 1-15s, 16-30s and 31-45s.
+If only the 18 column had a `1` and all the other ones are `0`, then the user would have only watched the segment between second 256s-270s.
+It doesn't mean the user watched the full 15s/30s segment, but at least 1s within this segment was seen.
 
 <a name="log-data-persistence-conversions"></a>
 ### Conversions
