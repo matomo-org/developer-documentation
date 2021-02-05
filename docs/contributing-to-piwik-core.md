@@ -76,7 +76,7 @@ Now that you have a copy of the latest Piwik source code, you can start modifyin
 
 #### Create a new branch
 
-Before you start coding, you should make sure to keep your changes separate from the `3.x-dev` branch. This will make it much easier to track the changes specific to your feature since your changes won't be mixed with any new commits to the `3.x-dev` branch from other developers.
+Before you start coding, you should make sure to keep your changes separate from the `4.x-dev` branch. This will make it much easier to track the changes specific to your feature since your changes won't be mixed with any new commits to the `4.x-dev` branch from other developers.
 
 We'll give our new branch a name, _bugfix_, that describes what we're doing, so we can recognize it later. To add a new branch, run the following command:
 
@@ -92,16 +92,16 @@ Once you've created a branch, you have a place to start working on the feature. 
 
 If you're working on something more complex than a bugfix, you may have the need to keep your new branch updated with changes from the main repository. Keeping your branch up to date is a two-step process.
 
-First, on your **3.x-dev** branch, pull changes from the main Piwik repository, nicknamed _upstream_:
+First, on your **4.x-dev** branch, pull changes from the main Piwik repository, nicknamed _upstream_:
 
 ```bash
-git pull upstream 3.x-dev
+git pull upstream 4.x-dev
 ```
 
-Then, on your new branch (**bugfix** for this tutorial), merge with **3.x-dev**:
+Then, on your new branch (**bugfix** for this tutorial), merge with **4.x-dev**:
 
 ```bash
-git merge 3.x-dev
+git merge 4.x-dev
 ```
 
 If there are conflicts, you can read this guide: [How to resolve Git conflicts](https://githowto.com/resolving_conflicts).
