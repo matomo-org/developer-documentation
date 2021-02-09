@@ -74,7 +74,7 @@ _referrerName==Google,referrerName==Bing;country==IN_
 
 ### Optional API parameters
 
-Each API call can contain parameters that do not appear in the list of parameters, but act as "filters". Filters can be presentation filters (eg. specify the language for internationalization), or act as data helpers (sort results, search for a dataset subset, fetch children of a given entity).
+Each API call can contain parameters that do not appear in the list of parameters, but act as "filters". Filters can be presentation filters (eg. specify the language for internationalization), or act as data helpers (sort results, search for a dataset subset, fetch children of a given entity). Some parameters like `filter_sort_order` and `filter_sort_column` only work on reports but not API methods that return entities (such as sites, users, activities).
 
 Here is an overview of the parameters you can add to any API request, where applicable:
 
