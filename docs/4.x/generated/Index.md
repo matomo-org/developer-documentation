@@ -358,6 +358,7 @@ Index
 - [`getCategoryId()`](Piwik/Category/Subcategory.md#getcategoryid) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getName()`](Piwik/Category/Subcategory.md#getname) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getOrder()`](Piwik/Category/Subcategory.md#getorder) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
+- [`getHelp()`](Piwik/Category/Subcategory.md#gethelp) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getDbColumnJoin()`](Piwik/Columns/Dimension.md#getdbcolumnjoin) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getDbDiscriminator()`](Piwik/Columns/Dimension.md#getdbdiscriminator) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getEnumColumnValues()`](Piwik/Columns/Dimension.md#getenumcolumnvalues) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)

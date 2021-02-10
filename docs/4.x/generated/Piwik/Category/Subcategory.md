@@ -28,6 +28,7 @@ The class defines the following methods:
 - [`getName()`](#getname) &mdash; Get the name of the subcategory.
 - [`setOrder()`](#setorder) &mdash; Sets (overwrites) the order see $order.
 - [`getOrder()`](#getorder) &mdash; Get the order of the subcategory.
+- [`getHelp()`](#gethelp) &mdash; Get the help text (if any) for this category.
 
 <a name="setid" id="setid"></a>
 <a name="setId" id="setId"></a>
@@ -120,4 +121,14 @@ Get the order of the subcategory.
 #### Signature
 
 - It returns a `int` value.
+
+<a name="gethelp" id="gethelp"></a>
+<a name="getHelp" id="getHelp"></a>
+### `getHelp()`
+
+Get the help text (if any) for this category.
+
+#### Signature
+
+- It returns a `null` value.
 
