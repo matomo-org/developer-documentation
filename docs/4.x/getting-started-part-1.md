@@ -134,7 +134,7 @@ Once Piwik is running, open it in your browser and follow the instructions to co
 
 #### Adding anonymous access to your reports
 
-Before we finish, we're going to allow anyone to view reports on your new Piwik environment. Open the _Manage > Users_ admin page and click the red icon in the **View** column for the **anonymous** user:
+Before we finish, we're going to allow anyone to view reports on your new Piwik environment. Open the Administration dashboard (click on the cog icon), go to _System > Users_ page and choose **View** in the **Role** column for the **anonymous** user:
 
 <img src="/img/getting_started_users_manager_anonymous.png"/>
 
@@ -152,7 +152,7 @@ After installing Piwik, we're going to change some of Piwik's INI configuration 
 
 You're now ready to create your first plugin, but before we do that, let's add some test data for you to play with.
 
-In your browser, load Piwik and navigate to _Administration > Marketplace. Look for the "Visitor Generator" plugin and enable it. Then on the admin menu to the left, click on "Visitor Generator" (under "Development").
+In your browser, load Piwik and navigate to  _Platform > Marketplace_ on the Administration dashboard. Look for the "Visitor Generator" plugin and enable it. Then on the admin menu to the left, click on _Development > Visitor Generator_.
 
 On this page you'll see a form where you can select a site and enter a number of days to generate data for:
 
@@ -183,6 +183,8 @@ mysql -u'db_username_here' -p -e 'CREATE DATABASE matomo_tests'
 ```
 
 The configured DB user for the tests should also have privileges to create and drop databases.
+
+For more detailed instructions you can visit the [PHP Tests page](/guides/tests-php).
 
 ## Create a plugin
 

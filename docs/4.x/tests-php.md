@@ -28,7 +28,17 @@ If your development Matomo is setup in a sub-directory for example at http://loc
 ```
 [tests]
 request_uri = "/dev/matomo"
+```
 
+Before you run the tests (at least the first time, but you can rerun it any time), run this command to migrate the test database. _Please note:_ to run this command you **have to** add the `request_uri` settings (it can be an empty string) into the `config/config.ini.php`. After the command finished, you can delete it.
+
+```
+[tests]
+request_uri = ""
+```
+
+```
+$ ./console tests:setup-fixture OmniFixture
 ```
 
   
