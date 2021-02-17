@@ -1,6 +1,6 @@
 ---
 category: Develop
-title: Understanding Piwik
+title: Understanding Matomo
 subGuides:
   - how-piwik-works
   - http-request-handling
