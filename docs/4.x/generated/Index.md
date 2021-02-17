@@ -775,6 +775,7 @@ Index
 - [`isOptimizeInnoDBSupported()`](Piwik/Db.md#isoptimizeinnodbsupported) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`IP`](Piwik/IP.md) &mdash; *Class in namespace* `Piwik`- [`info()`](Piwik/Log.md#info) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`isSmtpDebugEnabled()`](Piwik/Mail.md#issmtpdebugenabled) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
+- [`isReferrerHostValid()`](Piwik/Nonce.md#isreferrerhostvalid) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
 - [`isMultiplePeriod()`](Piwik/Period.md#ismultipleperiod) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`isDateInPeriod()`](Piwik/Period.md#isdateinperiod) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`isPeriodIntersectingWith()`](Piwik/Period.md#isperiodintersectingwith) &mdash; *Method in class* [`Period`](Piwik/Period.md)
