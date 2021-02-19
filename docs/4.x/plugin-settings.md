@@ -157,9 +157,25 @@ $this->makeSetting('refreshInterval', $default = '3', FieldConfig::TYPE_INT, fun
 
 ## Reading settings values
 
-You can access the value of a setting in a widget, in a controller, in a report or anywhere you want. To access the value create an instance of your settings class and get the value like this:
+You can access the value of a setting in a widget, in a controller, in a report or anywhere you want. To access the value create an instance of your settings class and get the value like below.
+
+### System settings
 
 ```php
-$settings = new \Piwik\Plugins\MyPlugin\Settings();
+$settings = new \Piwik\Plugins\MyPlugin\SystemSettings();
+$interval = $settings->refreshInterval->getValue()
+```
+
+### User settings
+
+```php
+$settings = new \Piwik\Plugins\MyPlugin\UserSettings();
+$interval = $settings->refreshInterval->getValue()
+```
+
+### Measurable settings
+
+```php
+$settings = new \Piwik\Plugins\MyPlugin\MeasurableSettings($idSite);
 $interval = $settings->refreshInterval->getValue()
 ```
