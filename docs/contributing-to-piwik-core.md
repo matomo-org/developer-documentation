@@ -151,6 +151,7 @@ Here are best practises we aim to follow when creating, reviewing and merging pu
 * If a PR affects the [public API](https://github.com/matomo-org/matomo/issues/8125) in any way a PR should not be merged without a review
 * PRs that affect the [public API](https://github.com/matomo-org/matomo/issues/8125) or that affect Security need a thorough review. For other PRs it is always good to keep in mind that we can change later at anytime. Things therefore don't have to be "perfect" as long as the formal requirements are given (eg. an entry in the developer changelog if needed)
 * When reviewing a PR it is important to check things like Security, Performance, Usability, etc. Minor "issues/feedback" such as feedback on code style are less important. If a reviewer notices only such minor things, we can merge the PR directly or the reviewer can make the changes directly and merge afterwards.
+* The author of a PR can resolve review comments if the comment is resolved. If it's not clear if the comment is resolved it's best to check with the commentor.
 * Before working on a new issue it is recommended to check for pending PRs that have a `Needs Review` label
 * PHP code should use our Piwik code standards (see next section)
 * Pull requests should contain tests
