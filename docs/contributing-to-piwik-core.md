@@ -78,7 +78,7 @@ Now that you have a copy of the latest Piwik source code, you can start modifyin
 
 Before you start coding, you should make sure to keep your changes separate from the `4.x-dev` branch. This will make it much easier to track the changes specific to your feature since your changes won't be mixed with any new commits to the `4.x-dev` branch from other developers.
 
-We'll give our new branch a name, _bugfix_, that describes what we're doing, so we can recognize it later. To add a new branch, run the following command:
+We'll give our new branch a name. The branch name ideally always contains the GitHub issue number eg `1111` or `m1111` or if it's a Jira issue then eg `dev-1111`. Optionally, a descriptive name can be added if wanted. It's not a requirement though since the branch usually exists only temporarily anyway and a PR with description etc often exists too. To add a new branch, run the following command:
 
 ```bash
 git checkout -b bugfix
@@ -117,6 +117,8 @@ git push
 ```
 
 You can read [this guide](https://www.atlassian.com/git/tutorials/saving-changes/git-add) to learn how to commit changes. You can read [this guide](https://help.github.com/articles/pushing-to-a-remote/) to learn how to push commits.
+
+In a branch it's fine to commit often and regularly. Later, when the PR will be merged we always squash the PR meaning it will only become one commit and the PR title will become the commit message and the PR will be linked to find more information about the commit if needed. This means the individual commit messages aren't too important but should still be useful.
 
 ### Creating a pull request
 
