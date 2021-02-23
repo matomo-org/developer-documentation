@@ -202,6 +202,15 @@ update matomo_option set option_value ='{new_version_number_you_want_to_set}' wh
 
 Note: Matomo updates are designed to always be executed multiple times. If the update already happened, for example a column was already added, then Matomo will "detect" this and not error. 
 
+### Downgrading Matomo updates (not possible)
+
+Sometimes you may need to run some code on a previous version of Matomo, for example, making a change to Matomo 3. There's no
+current way to downgrade a database (undo an update) so in this case you'll have to use an upgraded version of Matomo
+with the older code.
+
+In practice this means creating features that downgrade still work on older versions. The only exception being changing
+major versions. In this case there will be documentation for how to manually downgrade a database so we can run the older
+version (for example this faq: https://matomo.org/faq/how-to/how-do-i-downgrade-from-matomo-4-to-matomo-3/).
 
 ## Piwik Core code standards
 
