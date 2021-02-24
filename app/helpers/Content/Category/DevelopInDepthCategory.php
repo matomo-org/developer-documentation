@@ -34,6 +34,8 @@ class DevelopInDepthCategory extends Category
                 new Guide('contributing-to-piwik-core'),
                 new Guide('core-team-workflow'),
                 new Guide('maintaining-plugins'),
+                new Guide('debugging-core'),
+                new Guide('jstracker-core'),
                 new Guide('core-faqs'),
                 new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
             ]),

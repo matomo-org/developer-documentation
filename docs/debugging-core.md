@@ -1,0 +1,71 @@
+---
+category: DevelopInDepth
+title: Debugging Core
+---
+# Matomo core - Debugging
+
+## PHP
+
+### IDE
+
+We highly recommend using PHPStorm or a similar IDE that supports Xdebug, refactorings, auto completion, find usages of certain code pieces etc. Anything else should not really be considered for everyday work with Matomo.
+
+### Xdebug
+
+We highly recommend using [Xdebug](https://xdebug.org/) for any kind of debugging. For example, if you need to inspect the content of a variable or if you need to go through the code step by step. 
+
+Using Xdebug for debugging the core will make your life a lot easier and faster. If you're not having it set up yet, we highly recommend doing it now and getting familiar with it and making it a habit to use it regularly. It will be otherwise hard and time consuming to troubleshoot issues. 
+
+Please note that Xdebug will make running the tests run slower. Especially integration, system and UI tests. An improvement could be to have Xdebug only enabled for the web but disabled on the CLI. This way Xdebug will be disabled for integration and system tests but still run for UI tests. As a general advice for running tests faster you may want to only run a single test instead of all tests in a file like `./console tests:run file/to.php --options="--filter=test_methodNameToRun"`. 
+
+If it's not possible to disable Xdebug for CLI because there is no separate php ini file, then you may want to give it a try to have Xdebug always enabled and put something like this in your `$HOME/.profile` file: `export XDEBUG_CONFIG="remote_enable=0"` (not tested if this works).
+
+When you want to use the debugger in tests or in a CLI call (which will be needed regularly), then you could for example configure xdebug using an environment variable like below:
+
+```bash
+export XDEBUG_CONFIG="remote_enable=1"
+php console ...
+```
+
+[Click here to read more about this.](https://www.jetbrains.com/help/phpstorm/debugging-a-php-cli-script.html)
+
+### Logging
+
+If Xdebug is not appropriate for some reasons then you can also use logging. For example you may log a message like this:
+
+```php
+\Piwik\Log::warning($warning);
+```
+
+and watch the log file in your Matomo directory like this:
+
+```bash
+tail -f tmp/logs/matomo.log
+```
+
+For this to work you need to make sure to have logging to file enabled in your `config/config.ini.php` like 
+
+```ini
+[log]
+log_writers[] = "screen"
+log_writers[] = "file"
+```
+
+Please note that the same information will in many cases also be logged to the screen.
+
+### Printing output
+
+There is the classic way of printing information using `print_r`, `var_export`, or `var_dump`. There are no special methods for printing the content of a variable.
+
+In twig you can use `{{ variable|dump }}` or `{{ variable|json_encode }}`.
+
+## JavaScript
+
+It's best to use the browser developer tools. Go to the source tab and select the right source and set breakpoints. 
+
+To not needing to set a breakpoint you can also place the keyword `debugger;` anywhere in the JS code and the debugger will automatically break there.
+
+If the JS is minified: Most browsers have a "Pretty print" feature which will format the code making it easier to debug.
+
+In some cases you may want to log information using `console.(log|warning|error|...)`.
+
