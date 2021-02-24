@@ -160,6 +160,58 @@ Here are best practises we aim to follow when creating, reviewing and merging pu
 * Read the article: [Pull Requests: How to Get and Give Good Feedback](https://www.kickstarter.com/backing-and-hacking/pull-requests-how-to-get-and-give-good-feedback)
 * When a pull request has many small commits, it is recommended to [Squash commits](http://eli.thegreenplace.net/2014/02/19/squashing-github-pull-requests-into-a-single-commit) so that there is only one (bigger) commit.
 
+## Switching between branches
+
+### Keeping dependencies up to date
+
+Every time you change the branch you may need to run composer install (and maybe also npm install). You can automate this task by following these steps:
+
+* Create a file called ".git/hooks/compile.sh" containing this content
+
+```bash
+#!/bin/bash
+
+changedFiles="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+runOnChange() {
+	echo "$changedFiles" | grep -q "$1" && eval "$2"
+}
+
+runOnChange package-lock.json "npm install"
+runOnChange composer.lock "composer install"
+```
+
+* Make sure the file can be executed: `chmod +x .git/hooks/compile.sh`
+* Add below line to the end of the file `.git/hooks/post-checkout`
+
+```bash
+.git/hooks/compile.sh
+```
+
+### Dealing with Matomo updates
+
+When the version inreases and there is an update, the UI/API will automatically let you know that a [migration update](https://developer.matomo.org/guides/extending-database#defining-database-updates) needs to be executed. The UI will directly present the update screen where it asks you to execute any outstanding migration updates. The API will return an error message mentioning an update is available and then you need to open the UI to execute this update or run `./console core:update --yes`.
+
+In some cases a required migration update may not be executed. This happens for example if you're working in a different branch where the version number is higher and meanwhile in eg `4.x-dev` an update was added for a lower version number. It also happens when you're working on the current version number and an update is added to the current Matomo version number without increasing the version number. Matomo will then think it already executed the update because the version number didn't increase. You can't really detect when this happens until you run into a problem because for example a column is missing. When this happens, you need to manually set back the version number of your Matomo in the database and run for example below queries:
+
+```sql
+-- you may need to replace the DB table prefix "matomo_" and you need to set the version number to the correct version number so the not executed update script will be executed.
+set @current_version = (select option_value from matomo_option x where option_name = 'version_core');
+update matomo_option set option_value ='{new_version_number_you_want_to_set}' where option_name like 'version_%' and option_value = @current_version;
+```
+
+Note: Matomo updates are designed to always be executed multiple times. If the update already happened, for example a column was already added, then Matomo will "detect" this and not error. 
+
+### Downgrading Matomo updates (not possible)
+
+Sometimes you may need to run some code on a previous version of Matomo, for example, making a change to Matomo 3. There's no
+current way to downgrade a database (undo an update) so in this case you'll have to use an upgraded version of Matomo
+with the older code.
+
+In practice this means creating features that downgrade still work on older versions. The only exception being changing
+major versions. In this case there will be documentation for how to manually downgrade a database so we can run the older
+version (for example this faq: https://matomo.org/faq/how-to/how-do-i-downgrade-from-matomo-4-to-matomo-3/).
+
 ## Piwik Core code standards
 
 The following are a list of guidelines and requirements for contributions to Piwik Core. Developers and teams interested in contributing should read through them before starting to contribute and before sending a pull request. **Contributions that are not up to these standards will not be accepted**.
