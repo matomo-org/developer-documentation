@@ -11,6 +11,10 @@ Some might know a UI test under the term 'CSS test' or 'screenshot test'. When w
 
 We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/matomo-org/matomo) after each commit and compared with [our expected screenshots](https://github.com/matomo-org/matomo-ui-tests).
 
+**When is it better to create a php tests?** 
+
+We usually don't create a UI test if the same logic or behaviour can be tested using an integration or system test and the UI isn't actually rendering any custom UI. For example if something is throwing an excption, then the generic error UI will be used and as there is no custom UI an integration or system test may be better suited to check if an exception is triggered as it's more easy to debug, more clear what goes wrong, easier to write these tests and they are faster to execute. 
+
 ## Requirements
 
 Unit, integration and system tests are fairly straightforward to run. UI tests, on the other hand, need a bit more work.
