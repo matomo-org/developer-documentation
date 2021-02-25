@@ -53,11 +53,19 @@ log_writers[] = "file"
 
 Please note that the same information will in many cases also be logged to the screen.
 
+For more information about logging and SQL query profiling read our [logging FAQ](https://matomo.org/faq/troubleshooting/faq_115/).
+
 ### Printing output
 
 There is the classic way of printing information using `print_r`, `var_export`, or `var_dump`. There are no special methods for printing the content of a variable.
 
 In twig you can use `{{ variable|dump }}` or `{{ variable|json_encode }}`.
+
+### Debugging the tracker
+
+You can configure to print debug output when executing a tracking request. This can be helpful understanding what's happening during a tracker request.
+
+For more information about this read the [debugging the tracker guide](/api-reference/tracking-api#debugging-the-tracker).
 
 ## JavaScript
 
