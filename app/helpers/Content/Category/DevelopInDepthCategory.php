@@ -35,6 +35,7 @@ class DevelopInDepthCategory extends Category
                 new Guide('core-team-workflow'),
                 new Guide('maintaining-plugins'),
                 new Guide('debugging-core'),
+                new Guide('reproducing-issues'),
                 new Guide('jstracker-core'),
                 new Guide('tracking-requests'),
                 new Guide('core-faqs'),
