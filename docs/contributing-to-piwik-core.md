@@ -142,6 +142,10 @@ For more PR best practices read below.
 
 Once your pull request is public, developers will review it and leave comments regarding what should be changed. You can then make changes, commit them and then push them to your remote repository (**origin**) and they will automatically be shown in the pull request.
 
+#### Sharing test example pages
+
+If you find yourself building a simple test page to test a certain feature (like a tracking feature or a certain widget), then it may be useful to contribute this examples to our [test examples](https://github.com/matomo-org/test-examples) repository so other people can reuse such a page.
+
 ## Creating Pull requests: best practises
 
 Here are best practises we aim to follow when creating, reviewing and merging pull requests:
