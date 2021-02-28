@@ -265,6 +265,14 @@ describe("PiwikUpdater", function () {
 });
 ```
 
+## Troubleshooting UI tests
+
+If a UI test fails and it's not clear why, then open all the Travis UI jobs in your browser and check if there was any warning or error logged for a particular UI test. Please note that at the time of writing there are 3 jobs in each travis build dedicated to UI tests (so they complete faster than one long running job) and you need to click into each job to find the output for a specific UI test. You can identify that a travis job was running a UI test by looking in the environment variables for the jobs that have `TEST_SUITE=UITests`. Within the output of a specific job, you can find the UI test by searching for the name of the UI test, for example `"should show percent metrics like bounce rate correctly`". Simply search each of the UI jobs for the name of the test that is failing and see if there's any additional information printed.
+
+### Checklist for common problems
+
+* If the screenshot is showing a message `already installed` or `not installed yet` then make sure the URL you open as part of the `page.goTo()` call starts with a question mark (`?`).
+
 ## Learn more
 
 Check out this blog post to learn more about Screenshot Tests in Piwik:
