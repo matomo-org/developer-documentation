@@ -20,15 +20,28 @@ If your development Matomo is not using `localhost` as a hostname (or if your we
 
 ```
 [tests]
-http_host   = localhost
+http_host = localhost
 port = 8777
 ```
 
-If your development Matomo is setup in a sub-directory for example at http://localhost/dev/matomo, then edit your `config/config.ini.php` file and under `[tests]` section:, add the `request_uri` setting:
+The `request_uri` needs to be configured for running tests. If your development Matomo is setup in a sub-directory for example at `http://localhost/dev/matomo`, then your settings should be like this:
+
 ```
 [tests]
 request_uri = "/dev/matomo"
+```
 
+If you don't use any sub-directory, you can simple setup like this:
+
+```
+[tests]
+request_uri = "/"
+```
+
+Before you run the tests (at least the first time, but you can rerun it any time), run this command to migrate the test database.
+
+```
+$ ./console tests:setup-fixture OmniFixture
 ```
 
   
