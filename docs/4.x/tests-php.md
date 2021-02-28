@@ -74,6 +74,25 @@ The command will as well ask you for the name of the plugin and the name of the 
 The `IntegrationTestCase` base class provides a `setUp()` method that creates a test Piwik database and a `tearDown()` method that removes it. During integration
 tests all plugins will be loaded allowing you to write actual integration tests.
 
+### Troubleshooting Integration Tests
+
+There are some common issues that can occur when writing integration tests. These are listed below with their appropriate solution:
+
+* **Translations are required to be loaded in my test, but are not**: By default, integration tests do not load translations (whereas system tests do). If you need real translations, you can override this behavior with the following code added to your integration test:
+    ```
+    protected static function configureFixture($fixture)
+    {
+        $fixture->extraTestEnvVars['loadRealTranslations'] = true;
+    }
+    ```
+* **I want to track requests in my integration test, but they are not tracking and giving an empty response.**: There are a lot of reasons this could happen, but the most common is that there is no superuser created and the tracker cannot authenticate. Integration tests by default do not create real superuser before running tests. You can override this behavior with the following code added to your integration test:
+    ```
+    protected static function configureFixture($fixture)
+    {
+        $fixture->createSuperUser = true;
+    }
+    ```
+
 ## Running tests
 
 To run a test, use the command `tests:run` which allows you to execute a test suite, a specific file, all files within a folder or a group of tests.
