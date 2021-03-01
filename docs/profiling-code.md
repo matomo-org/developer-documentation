@@ -8,11 +8,11 @@ By profiling code you can easily find performance bottlenecks in the code and fi
 
 ## PHP
 
-The core supports profiling using the `xhprof` and `tideways` PHP extension. You can typically install these extensions like `pecl install xhprof`. We usually try to use xhprof first if it works (might not work with some PHP versions) and fallback to `tideways` if this doesn't work. The reason is that with the local `tideways` extension we've had issues in the past with the output directory that a profile run result is being written to doesn't match the directory being used when viewing a report run and we sometimes had to patch files to make this work. 
+The core supports profiling using the `xhprof` or the `tideways` PHP extension (only one of them is needed). You can typically install these extensions like `pecl install xhprof`. We usually try to use `xhprof` (might not work with some PHP versions) and fallback to `tideways` if this doesn't work. The reason is that with the local `tideways` extension we've had issues  with the output directory in the past where a profile run result is being written to doesn't match the directory being used when viewing a report run and we sometimes had to patch xhprof files to make this work. 
 
 ### General recommendations
 
-When profiling eg the UI or API, we need to make sure to profile a production system as close as possible. This means we should follow these steps:
+When profiling, we need to make sure to profile a production system as close as possible. This means we should follow these steps:
 
 * disable development mode (so caches will be used)
 * warm up the caches by executing the action you want to profile once so on the next request the caches will be used when you profile
@@ -27,7 +27,7 @@ You can append `&xhprof=1` to any Matomo URL and it should automatically launch 
 
 You will need to edit the file `piwik.php` and add the below line after the environment is being initiated but after the autoloader was configured. This would be typically around [this line](https://github.com/matomo-org/matomo/blob/4.2.1/piwik.php#L52). 
 
-It's not possible currently to simply set the xhprof URL parameter.
+It's not possible to simply set the xhprof URL parameter currently.
 
 ```php
 \Piwik\Profiler::setupProfilerXHProf(true, true);
@@ -41,7 +41,7 @@ You can append the CLI option `--xhprof` to start a profiling run.
 
 If something can't be profiled, then you may need to call the above method as mentioned in the tracker section to start the profiling.
 
-The profiler will automatically stop the recording as soon as the `register_shutdown_function` is called.
+The profiler will automatically stop the recording as soon as the `register_shutdown_function` is called and write the results into a file see next section.
 
 ### Storage of profile runs
 
