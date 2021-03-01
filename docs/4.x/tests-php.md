@@ -106,6 +106,12 @@ There are some common issues that can occur when writing integration tests. Thes
     }
     ```
 
+### Custom behavior for tests
+
+Whenever possible, you should be using [dependency injection](https://developer.matomo.org/guides/dependency-injection) to change behaviour in tests. For example if you don't want to fetch data from a remote service but instead use a local fixture then you could create a file in `plugins/MyPluginName/config/test.php` where you return a regular array and overwrite any DI dependency.
+
+If DI is not possible or not trivial to use, then you can check if tests are currently being executed by using `$isTestMode = defined('PIWIK_TEST_MODE') && PIWIK_TEST_MODE;`.
+
 ## Running tests
 
 To run a test, use the command `tests:run` which allows you to execute a test suite, a specific file, all files within a folder or a group of tests.
