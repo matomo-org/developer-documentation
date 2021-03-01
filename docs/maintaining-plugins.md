@@ -9,6 +9,11 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 ## How to add a new plugin 
 
 * Get Matt or Thomas to create a new github repository under `matomo-org`. The name for the plugin usually starts with `plugin-` followed by the plugin name. You can for example ping us in our slack. We use `*.x-dev` as the main branch where `*` would be replaced by the latest major version of Matomo.
+  * After creating the repository, we should also directly configure transifex. To do this, 
+  * go to Repository Settings -> Secrets
+  * click on new repository secret
+  * Enter the name `TransifexUsername` and as value the username from keypass for transifex
+  * Enter the name `TransifexPassword` and as value the password from keypass for transifex
 * Push the code
 * Add the plugin's repository as a submodule to our main matomo repository `git submodule add {http-plugin-github-address} plugins/{pluginname}`
 * Edit `.gitmodules` and move the entry for this submodule before the comment at the bottom (see description of that comment)
