@@ -14,6 +14,10 @@ It means we need to support older browsers. If you're not sure if a certain meth
 
 Generally we try to keep the JS file smallish for fast performance.
 
+## Making changes to the JS tracker
+
+To make changes to the JS tracker, you need to edit the raw/unminfied JS tracker itself which you can find in the [js/piwik.js](https://github.com/matomo-org/matomo/blob/4.x-dev/js/piwik.js) directory. When you create a pull request, you can then minify the JS tracker see below.
+
 ## Tests
 
 See [adding tests guide](https://developer.matomo.org/guides/enrich-js-tracker#adding-tests).
