@@ -79,6 +79,20 @@ When you set the log level to `debug`, then it will log/print a lot more informa
 
 If you also want to profile the tracker DB queries, then you additionally need to enable `[Tracker]enable_sql_profiler=1` and `[Tracker]debug=1`. When you then issue a tracking request, the individual queries will be printed as part of the tracker debug output. Please note that the HTML will not be evaluated since it will be a text response and you might need to copy/paste this into an HTML file to view it better.
 
+### Profiling a specific query
+
+You can profile a specifc query like this:
+
+```
+SET SESSION profiling = 1;
+SELECT * FROM ...
+SHOW PROFILES;
+```
+
+### Understanding query execution
+
+To get more insights into a query like how many rows it will likely look at, whether it uses an index or not etc simply prepend `explain extended` or `explain format=json` to the SQL select query.
+
 ## JavaScript
 
 This can vary depending on the browser. You basically want to open the browser developer tools and activate the `Performance` tab.
