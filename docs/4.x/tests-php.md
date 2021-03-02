@@ -154,6 +154,18 @@ $ ./console tests:run integration
 $ ./console tests:run system
 ```
 
+## Special Tests
+
+Most unit and integration tests in Matomo test a single class, or at most a matomo subsystem. One test, however, is special in that they don't test Matomo behavior, but instead tests that Matomo is ready to be released. This test is called **ReleaseCheckListTest** and performs the following types of tests:
+
+* checking that deprecated methods have been removed by a certain date
+  When developers mark a method as @deprecated, we will sometimes want to make sure we remove it by a certain time, after we've given plugin developers a chance to stop using it. This can be by a certain time or by the time a major version of Matomo is released.
+* checking resource files are at the latest version or are otherwise ready to be released
+* test debugging code was not accidentally left in some code
+* and many other things.
+
+Plugins sometimes define their own version of this test.
+
 ## Learn more
 
 * To learn more about **what you can do with PHPUnit** read PHPUnit's [user documentation](https://phpunit.de/documentation.html).
