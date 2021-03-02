@@ -1,6 +1,6 @@
 ---
 category: DevelopInDepth
-title: Debugging Core
+title: Profiling Code
 ---
 # Matomo - Profiling code
 
