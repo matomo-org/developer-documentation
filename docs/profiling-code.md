@@ -89,6 +89,8 @@ SELECT * FROM ...
 SHOW PROFILES;
 ```
 
+You can also get even more details for a query for example like this: `SHOW PROFILE CPU FOR QUERY 16;`. Learn more about this in the [MySQL docs for profiling](https://dev.mysql.com/doc/refman/8.0/en/show-profile.html).
+
 ### Understanding query execution
 
 To get more insights into a query like how many rows it will likely look at, whether it uses an index or not etc simply prepend `explain extended` or `explain format=json` to the SQL select query.
