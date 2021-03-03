@@ -85,11 +85,13 @@ You can profile a specifc query like this:
 
 ```
 SET SESSION profiling = 1;
-SELECT * FROM ...
+SELECT SQL_NO_CACHE * FROM ...
 SHOW PROFILES;
 ```
 
 You can also get even more details for a query for example like this: `SHOW PROFILE CPU FOR QUERY 16;`. Learn more about this in the [MySQL docs for profiling](https://dev.mysql.com/doc/refman/8.0/en/show-profile.html).
+
+When profiling a query or generally checking how long a query takes to load, it's important to use `SQL_NO_CACHE` after the `SELECT` statement to prevent any cache from being used and giving you a wrong result.
 
 ### Understanding query execution
 
