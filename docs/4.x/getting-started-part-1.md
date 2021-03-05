@@ -219,6 +219,11 @@ The command-line tool will create a new directory for your plugin (in the **plug
 - `README.md`: A dummy README file for your plugin.
 - `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](https://developer.matomo.org/guides/distributing-your-plugin).
 
+## Troubleshooting Local Development
+
+* **The admin pages in my local setup are TOO slow**: This is caused by the Marketplace plugin running in the background. If you disable the plugin, admin
+  pages will load much faster for you. (Do remember to enable it if you ever need to work on code that uses it.)
+
 ## What to read next
 
 Ok! You've set up your development environment and created your plugin! Now all you have to do is make it do what you want. The bad news is that this is the hard part. The good news is that we've written a bunch of other guides to help you shorten the learning curve.
