@@ -130,6 +130,32 @@ public function myAdminTask()
 }
 ```
 
+### Using Controller Methods as API Methods
+
+In general, most functionality in Matomo controllers will render some HTML and return it. Sometimes, however you will have some logic that's
+meant to return JSON, but is something you don't want exposed in an API method (as in, callable outside of a session). In this case, we create
+controller methods that return JSON. Whenever possible, an API method should be created though instead of a controller method unless it requires for example access to the session or if there is a different reason why an API method wouldn't work. 
+
+Unfortunately, they're not exactly built for it, so instead you have to do some extra work. In addition to sending the `Content-Type` header,
+you must echo the `json_encode`d data:
+
+```php
+public function myControllerMethod()
+{
+    // ... check access ...
+    // ... do something useful ...
+
+    $result = ...; // get our response
+
+    \Piwik\DataTable\Renderer\Json::sendHeaderJSON();
+    return json_encode($result);
+}
+```
+
+Note: if your method does not actually return anything, an error will result in the UI since Matomo's frontend won't know what to
+do with an empty response. So if you're calling a controller method like this, you do need to return something (or make sure Matomo
+doesn't treat the response like JSON).
+
 ## Controller Security
 
 Like API methods, controller methods should make sure the current user is both valid and authorized to perform the requested action or view the requested data. This means calling the [access checking methods](/api-reference/Piwik/Piwik) that should also be called in API methods and checking that the supplied **token_auth** is valid (via [`Controller::checkTokenInUrl()`](/api-reference/Piwik/Plugin/Controller#checktokeninurl)).
