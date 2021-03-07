@@ -134,7 +134,7 @@ public function myAdminTask()
 
 In general, most functionality in Matomo controllers will render some HTML and return it. Sometimes, however you will have some logic that's
 meant to return JSON, but is something you don't want exposed in an API method (as in, callable outside of a session). In this case, we create
-controller methods that return JSON.
+controller methods that return JSON. Whenever possible, an API method should be created though instead of a controller method unless it requires for example access to the session or if there is a different reason why an API method wouldn't work. 
 
 Unfortunately, they're not exactly built for it, so instead you have to do some extra work. In addition to sending the `Content-Type` header,
 you must echo the `json_encode`d data:
