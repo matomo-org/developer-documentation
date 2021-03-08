@@ -166,6 +166,25 @@ Most unit and integration tests in Matomo test a single class, or at most a mato
 
 Plugins sometimes define their own version of this test.
 
+## Fixing a broken system tests build
+
+System PHP tests in Matomo typically execute an API method and compare the entire XML output of the API method with an expected XML output.
+
+If you are making changes to Matomo then the result of such an API method may change and break the build. This is an opportunity to review your code and as a Matomo developer you should ensure that
+any change in the output is actually expected.
+
+If they are not expected, determine the cause of the change and fix it in a new commit. If the changes are expected,
+then you should update the expected system files accordingly. To compare and update the expected system files, follow these steps:
+
+* Find out the Travis build number by opening the Travis run for your pull request. The build number is typically a 5 or 6 digit number and has a leading hash character. For example when the build is `#45511`, then `45511` is the build number.
+* Execute this command and replace `{buildnumber}` with the actual build number. `./console development:sync-system-test-processed {buildnumber}`.
+  * To update the expected files directly append the option `--expected`. You then need to make sure before committing and pushing these changes that every change is actually expected
+  * Or if you only want to update some files or if you don't use a visual tool for git then you can execute the command without the expected option in which case the system files are updated in the `processed` directory. For example `tests/PHPUnit/System/processed` and `plugins/Goals/tests/System/processed`. If you are using PHPStorm you can then select both the processed and expected directory and then `right click -> Compare Directories`. This allows you to review every change of added, changed and removed files and let's you update each expected file individually. 
+* Then `git add` and `git commit` and `git push` the changes to trigger another build run 
+* If some tests are still failing you may need to repeat this process as sometimes you might forget to update some
+
+### To fix a broken build, follow these steps:
+
 ## Learn more
 
 * To learn more about **what you can do with PHPUnit** read PHPUnit's [user documentation](https://phpunit.de/documentation.html).
