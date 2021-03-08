@@ -8,6 +8,8 @@ title: FAQs
 
 Go to the [Can I use website](http://caniuse.com/) and enter the name of the feature you want to use. It will tell you which browsers support this specific feature. 
 
+Or search through the [Mozilla Developer Network](https://developer.mozilla.org/en-US/) which has more granular information about which browsers support specific functions, parameters, syntax, etc.
+
 ## How do I know if a feature is supported by specific PHP versions?
 
 * You can check the [PHP manual](https://www.php.net/manual/en/). It will tell you which feature is supposed by which PHP versions.
