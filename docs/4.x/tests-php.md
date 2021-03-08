@@ -168,6 +168,16 @@ Plugins sometimes define their own version of this test.
 
 ## Fixing a broken system tests build
 
+### When the build fails locally
+
+Locate the directory of the `processed` and `expected` tests directory for the test you are executing. For example `plugins/YourPluginName/tests/System/` or `tests/PHPUnit/System/`.
+
+You can then compare the two directories for changes. If you are using PHPStorm, then simply select both `processed` and `expected` directories and then right click and select `Compare Directories`. There you can see the changes for each file and update any processed file if needed. If you don't use PHPStorm, then check if your IDE offers a similar feature or use a linux command like `diff processed expected`.
+
+Once you have updated all expected files, then you need to `git add` and `git commit` and `git push` these changes.
+
+### When the build fails on Travis
+
 System PHP tests in Matomo typically execute an API method and compare the entire XML output of the API method with an expected XML output.
 
 If you are making changes to Matomo then the result of such an API method may change and break the build. This is an opportunity to review your code and as a Matomo developer you should ensure that
