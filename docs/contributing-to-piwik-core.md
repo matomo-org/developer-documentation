@@ -138,6 +138,8 @@ If the PR is not ready for a review yet and the PR is in progress, then you can 
 
 For more PR best practices read below.
 
+And if you are a core developer, if there is an issue that the pull request will fix, and the issue is in a milestone, set the milestone of the pull request to the same one as the issue.
+
 #### Updating the pull request
 
 Once your pull request is public, developers will review it and leave comments regarding what should be changed. You can then make changes, commit them and then push them to your remote repository (**origin**) and they will automatically be shown in the pull request.
