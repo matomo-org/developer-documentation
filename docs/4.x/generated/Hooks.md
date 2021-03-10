@@ -1285,7 +1285,7 @@ command).
 
 ### FrontController.modifyErrorPage
 
-*Defined in [Piwik/ExceptionHandler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ExceptionHandler.php) in line [149](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ExceptionHandler.php#L149)*
+*Defined in [Piwik/ExceptionHandler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ExceptionHandler.php) in line [152](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ExceptionHandler.php#L152)*
 
 Triggered before a Piwik error page is displayed to the user. This event can be used to modify the content of the error page that is displayed when
 an exception is caught.
