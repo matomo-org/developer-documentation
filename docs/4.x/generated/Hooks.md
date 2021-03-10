@@ -451,12 +451,13 @@ Callback Signature:
 ## ArchiveProcessor
 
 - [ArchiveProcessor.ComputeNbUniques.getIdSites](#archiveprocessorcomputenbuniquesgetidsites)
+- [ArchiveProcessor.getArchive](#archiveprocessorgetarchive)
 - [ArchiveProcessor.Parameters.getIdSites](#archiveprocessorparametersgetidsites)
 - [ArchiveProcessor.shouldAggregateFromRawData](#archiveprocessorshouldaggregatefromrawdata)
 
 ### ArchiveProcessor.ComputeNbUniques.getIdSites
 
-*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php) in line [494](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php#L494)*
+*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php) in line [499](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php#L499)*
 
 Triggered to change which site ids should be looked at when processing unique visitors and users.
 
@@ -470,6 +471,16 @@ Callback Signature:
 - [Period](/api-reference/Piwik/Period) `$period` The period that is being requested to be archived.
 
 - [Segment](/api-reference/Piwik/Segment) `$segment` The segment that is request to be archived.
+
+
+### ArchiveProcessor.getArchive
+
+*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php) in line [123](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor.php#L123)*
+
+
+
+Callback Signature:
+<pre><code>function($this-&gt;archive]</code></pre>
 
 
 ### ArchiveProcessor.Parameters.getIdSites

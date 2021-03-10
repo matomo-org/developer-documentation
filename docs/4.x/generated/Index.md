@@ -258,6 +258,7 @@ Index
 ## F
 
 - [`factory()`](Piwik/Archive.md#factory) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
+- [`forceFetchingWithoutLaunchingArchiving()`](Piwik/Archive.md#forcefetchingwithoutlaunchingarchiving) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`formatValue()`](Piwik/Columns/Dimension.md#formatvalue) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`forceSave()`](Piwik/Config.md#forcesave) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`filter()`](Piwik/DataTable.md#filter) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
