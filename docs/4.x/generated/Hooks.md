@@ -1274,7 +1274,7 @@ Callback Signature:
 
 ### Filesystem.allCachesCleared
 
-*Defined in [Piwik/Filesystem](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Filesystem.php) in line [45](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Filesystem.php#L45)*
+*Defined in [Piwik/Filesystem](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Filesystem.php) in line [55](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Filesystem.php#L55)*
 
 Triggered after all non-memory caches are cleared (eg, via the cache:clear
 command).
