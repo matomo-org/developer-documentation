@@ -1000,7 +1000,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [580](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L580)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [582](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L582)*
 
 This event is triggered after archiving.
 
@@ -1012,7 +1012,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [747](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L747)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [749](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L749)*
 
 Triggered by the **core:archive** console command so plugins can modify the priority of
 websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
@@ -3093,7 +3093,7 @@ Callback Signature:
 
 ### Tracker.Cache.getSiteAttributes
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Cache.php) in line [119](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Cache.php#L119)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Cache.php) in line [132](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Cache.php#L132)*
 
 Triggered to get the attributes of a site entity that might be used by the
 Tracker. Plugins add new site attributes for use in other tracking events must
@@ -3292,7 +3292,7 @@ Callback Signature:
 
 ### Tracker.setTrackerCacheGeneral
 
-*Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Cache.php) in line [195](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Cache.php#L195)*
+*Defined in [Piwik/Tracker/Cache](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Cache.php) in line [213](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Cache.php#L213)*
 
 Triggered before the [general tracker cache](/guides/all-about-tracking#the-tracker-cache)
 is saved to disk. This event can be used to add extra content to the cache. Data that is used during tracking but is expensive to compute/query should be
