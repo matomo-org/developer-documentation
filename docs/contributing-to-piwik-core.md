@@ -153,13 +153,21 @@ If you find yourself building a simple test page to test a certain feature (like
 Here are best practises we aim to follow when creating, reviewing and merging pull requests:
 
 * We try to avoid big pull requests and aim for small PRs that are easier to review
-* When issuing a PR we set a label `Pull Request WIP` and replace this label with `Needs Review` once the PR is done. If a PR references another issue we assign the label `not-in-changelog`
+* When issuing a PR we set a label `Pull Request WIP` and replace this label with `Needs Review` once the PR is done. If a PR references another issue we assign the label `not-in-changelog`. The PR author also assigns the PR to a milestone (usually the same milestone as the referenced issue).
 * A PR should contain a description explaining things if useful. It should contain as much as necessary and as little as possible.
 * Small changes can be merged directly without a review if the developer is 100% certain the change won't have any side effects etc. It is still always recommended to quickly ask another developer that is online to have a look at this PR now as such PRs are quickly reviewed.
 * If a PR affects the [public API](https://github.com/matomo-org/matomo/issues/8125) in any way a PR should not be merged without a review
 * PRs that affect the [public API](https://github.com/matomo-org/matomo/issues/8125) or that affect Security need a thorough review. For other PRs it is always good to keep in mind that we can change later at anytime. Things therefore don't have to be "perfect" as long as the formal requirements are given (eg. an entry in the developer changelog if needed)
 * When reviewing a PR it is important to check things like Security, Performance, Usability, etc. Minor "issues/feedback" such as feedback on code style are less important. If a reviewer notices only such minor things, we can merge the PR directly or the reviewer can make the changes directly and merge afterwards.
-* The author of a PR can resolve review comments if the comment is resolved. If it's not clear if the comment is resolved it's best to check with the commentor.
+* The reviewer selects "Approve / Reject changes / Comment" when finishing a review so it's clear if a 
+PR is accepted or more changes are needed
+* The PR author marks an individual review conversion/comment as resolved when the feedback was applied or notices/acknowledged (not always do need changes to be made for each comment as sometimes they are suggestions etc)
+  * If further feedback is needed for the conversation/comment then PR author will ask the reviewer to confirm the conversation is resolved 
+* The reviewer removes the label "needs review" when changes are required. No new label is added for now for simplicity (but could also add on)
+* The PR author adds the label "needs review" again once it's ready for another review
+* When a PR is approved and no further review required then we aim to directly merge the PR if the tests pass
+  *  If a PR is approved overall but tests are failing then we might need another round of review (meaning reject the PR and remove `needs review` label)
+  * unless it is only needed to update the expected test results then maybe the PR author could later fix the build and merge directly without yet another review (or maybe only if the PR reviewer mentions that only test )... could clarify this further in a team meeting some day
 * Before working on a new issue it is recommended to check for pending PRs that have a `Needs Review` label
 * PHP code should use our Piwik code standards (see next section)
 * Pull requests should contain tests
