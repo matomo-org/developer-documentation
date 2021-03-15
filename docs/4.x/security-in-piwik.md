@@ -196,7 +196,7 @@ By no means is below a complete checklist. You'll always be required to still th
   * require|include(_once) should not use any user input unless it's whitelisted
   * Also see eg https://gist.github.com/mccabe615/b0907514d34b2de088c4996933ea1720
 * Think of other ways such as RCE etc
-* Sensitive actions may require password confirmation
+* **Password confirmation** for critical actions related to login credentials, tokens, 2FA etc and ideally also other critical/sensitive changes like installing/activating plugins etc.
 
 
 ## Learn more
