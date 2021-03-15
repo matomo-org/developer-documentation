@@ -140,6 +140,28 @@ For more PR best practices read below.
 
 And if you are a core developer, if there is an issue that the pull request will fix, and the issue is in a milestone, set the milestone of the pull request to the same one as the issue.
 
+#### Developer changelog
+
+When we are adding a new API method or when we are breaking or deprecating an existing API method, then we change our [Developer Changelog](https://github.com/matomo-org/matomo/blob/4.x-dev/CHANGELOG.md). We also mention library updates and on occassion internal changes that may be interesting for developers.
+
+Any change would usually fall under one of these categories:
+
+```
+## Template: Matomo version number
+
+### Breaking Changes
+### Deprecations
+### API Changes
+### New features
+### New APIs
+### New commands
+### Library updates
+### Internal change
+```
+
+If the change is a new config or a config change, then it's usually not mentioned in the developer changelog as they are mostly meant for users and not for developers.
+
+
 #### Updating the pull request
 
 Once your pull request is public, developers will review it and leave comments regarding what should be changed. You can then make changes, commit them and then push them to your remote repository (**origin**) and they will automatically be shown in the pull request.
