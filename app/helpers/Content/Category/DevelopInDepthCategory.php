@@ -26,6 +26,7 @@ class DevelopInDepthCategory extends Category
             new Guide('piwik-in-depth-introduction'),
             new EmptySubCategory('Matomo Core development', [
                 new Guide('contributing-to-piwik-core'),
+                new Guide('coding-standards'),
                 new Guide('core-team-workflow'),
                 new Guide('maintaining-plugins'),
                 new Guide('debugging-core'),
