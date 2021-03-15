@@ -338,6 +338,134 @@ The adoption of a plugin into Piwik Core requires that we consider such criteria
 
 In most cases, it should be enough for your plugin to be available on the [Marketplace](https://plugins.piwik.org).
 
+### For Core Developers: Reviewing Pull Requests
+
+#### Reviewing Core Developer PRs
+
+As core developers one of our primary responsibilities is to review and merge other pull requests. This document lays out the general process and things to look for.
+In the pull request template on github, there is a checklist of reminders of what to look for. Here, we'll go into details:
+
+#### Functional review done
+
+For every pull request it is expected that the reviewer will actually check out the code locally and test it. We want to make sure it does the thing it's supposed to,
+and handles any error conditions gracefully.
+
+This means manually testing and looking for possible issues in the submitted code. It's required for pull request changes to have a visible effect on the tests
+(in most cases), but we don't want to rely on them alone, since it's always a possibility for people to make mistakes. The review is a chance to catch them before they become bugs.
+
+Any problems found in the logic of a change should ideally result in new tests.
+
+#### Potential edge cases thought about
+
+When manual testing it's also required to think about any edge cases that might occur and cause issues. Running Matomo in the cloud, we've learned that edge cases,
+despite their name, do occur every now and then, and cause problems. It's far better to try and avoid these problems before we merge PRs.
+
+Some starting points that could help when looking for edge cases:
+
+- thinking about what happens in the code when given strange input
+- thinking about whether it's possible for there to be strange internal state and what would happen if this occurred
+- thinking about how this code interacts with the different Matomo subsystems
+
+By nature, edge cases are hard to find, but it's definitely better to catch them beforehand, rather than have to debug cloud, or worse, debug a user's Matomo via email.
+
+#### Usability review done
+
+If a feature touches Matomo's UX in any way, Thomas and Matt are required to provide their input (ping them if needed). But, we also want developers to think about usability themselves.
+
+When reviewing a pull request, think about whether it's possible that users may be confused by how it works, or unsure of how to use it. If there's a possibility that they might reach
+out to support or the forums or make a github issue, then we'd like to prevent that, either with a change to the pull request, or by creating/editing a faq so we can address these
+requests quickly.
+
+#### Security review done
+
+We also want to make sure there are no security issues introduced by this pull request. We've created a checklist here for some security issues to look out
+for: [https://developer.matomo.org/guides/security-in-piwik#checklist](https://developer.matomo.org/guides/security-in-piwik#checklist), but there are many other ways vulnerabilities
+can manifest. And we very much want to prevent any from getting into the codebase.
+
+#### Code review done
+
+The code review is just that, looking for mistakes in the code, along with ways the code could be clearer, just in case the pull request author missed something. If you see something
+that could be done with less code, or see something that confuses you as another developer, please bring it up.
+
+We also find that most review items are best stated as questions, and not as demands, in order to foster a more positive environment that values collaboration over argument.
+
+#### Tests were added if useful/possible
+
+We want to take advantage of the benefits of automated testing as much as possible. If a pull request can be tested, it should be. OR it should at least show a change in the
+existing tests. This also helps to prove the feature or fix does what it's supposed to.
+
+The level of testing would vary based on what is being reviewed, but some form of test is required, unless it is really not possible.
+
+#### Reviewed for breaking changes
+
+If a change touches something users actively use or a piece of code that is considered public API for plugin developers or those integrating Matomo, then we want to make sure our
+change doesn't break anything these users and developers might currently be doing.
+
+This is fairly simple for code (for example, if we add a new parameter to a function considered public API we want to make sure it has a default value, so people currently calling
+it won't encounter an error after updating Matomo). It's, unfortunately, a bit more complicated with users. There are many ways users manage to use Matomo, and keeping things working
+the way they currently want it can be a challenge.
+
+We want to make sure API methods still behave as they did before for the same inputs, old links still go to the same pages, CLI commands do not fail because parameters were removed,
+and many other things. It can be hard to consider given there are so many ways we can break something for a user, but it's definitely important to keep our users workflows working.
+
+#### Developer changelog updated if needed
+
+The developer changelog is located at [https://github.com/matomo-org/matomo/blob/4.x-dev/CHANGELOG.md](https://github.com/matomo-org/matomo/blob/4.x-dev/CHANGELOG.md). If a change
+affects the work of plugin developers or developers who integrate Matomo into their websites, we'd want to mention the change in the developer changelog. This can include:
+
+* breaking changes
+
+  A change that will force them to make modifications to their plugins or integrations. As said in a previous section, we like to avoid situations like this (except for major releases),
+  but sometimes it's unavoidable.
+
+* new features, API methods, configuration options
+
+  If a new feature is something developers may want to take advantage of, then we want to mention it so more people become aware of it.
+
+* changes to existing features
+
+  If we change how an existing feature or API works, we want to mention it to developers. These are not breaking changes, those are mentioned above, just changes in the how something works.
+  An example would be when we introduced an allowlist for trusted hosts to download geoip databases from. It's unlikely this would break anything for existing users, but it's still worth
+  mentioning.
+
+* deprecations
+
+  If we deprecate some code or API, we want to mention it as early as possible, so developers have ample time to stop using it before we remove it.
+
+#### Documentation added if needed
+
+If the change is for a new feature or affects the way an existing feature works, then we'll want to modify the existing documentation (or create new documentation if it doesn't exist).
+For changes that affect plugin developers and developers integrating Matomo, we'd want to document the changes within our existing phpdocs and the developer documentation website:
+https://github.com/matomo-org/developer-documentation
+
+Changes to features should be reflected in changes to user documentation. For new features we may give the task of writing documentation to technical writers or our support team,
+but for smaller changes, developers might be expected to make those themselves.
+
+We should also think about whether new faqs should be created or if we need to modify existing ones.
+
+#### Reviewing External Contributors' PRs
+
+External contributor pull requests should be reviewed in the same way as PRs from core developers, EXCEPT:
+
+* we should assume that they may not want to or have the time to completely fix up their pull requests. It's possible we core devs may need to fix the build,
+  or apply some changes, or other minor things. We shouldn't just take over the PR unless it is an easy task or a very useful thing to have merged.
+
+* we should assume they don't have the technical knowledge we have of Matomo and may need more help than a core dev would.
+
+* and we should always thank them for the contribution! It's always a good sign when people take an interest in our product, and it's pretty amazing when people decide to work for free :)
+
+### For Core Developers: Merging Pull Requests
+
+When reviewing a pull request in the current milestone, if it works, all review items have been addressed and tests pass, then core developers are allowed to merge it.
+
+For anything else, we'd have to know fully whether it is something we want in the current milestone. This "approval" can be an explicit comment from Thomas or Matt, or it could
+just be from a slack conversation (remember, we can always revert something later).
+
+If reviewing something outside of the current milestone, or reviewing something that doesn't have a milestone, most of the time we'll just want to use the github approval feature.
+Exceptions can be made, however, if the change is small and not likely to cause any problems when released. Then it's fine to change the milestone to the current one and merge it.
+
+Since we work on issues in the current milestone first, reviewing pull requests outside of the current milestone isn't something that happens very often.
+
 ## Learn more
 
 - learn **the basics of Piwik development** in [Getting started with plugins](/guides/getting-started-part-1).
