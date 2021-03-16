@@ -3,9 +3,11 @@ category: DevelopInDepth
 ---
 # Matomo APIs
 
+On this page you can view the list of APIs, how we maintain backwards compatibility, how we announce changes to the API and other useful tips.
+
 ## List of APIs
 
-Everything below is what we consider API and thereware keep backwards compatibility in minor and patch releases. Rarely, sometimes we may have to break an API for example for security reasons. We mention any deprecations or breaking changes in our [developer changelog](/changelog) see [instructions](/guides/contributing-to-piwik-core#developer-changelog).
+Everything below is what we consider API.
 
 -   [Reporting HTTP API](/api-reference/reporting-api).
     -   They are defined in API.php files and APIs are called over HTTP.
@@ -17,6 +19,7 @@ Everything below is what we consider API and thereware keep backwards compatibil
     -   Event names, and parameter list are API.
 -   [Classes](/api-reference/classes) and [Methods](/api-reference/index)
     -   They are tagged with `@api` in our sourcecode. (these docs are automatically generated on each commit.)
+    -   Since PHP 8 argument names of public API's are also considered API
 -   A few console commands are API (the command name and parameter names should not change)
     -   so far we only consider public APIs these commands: `core:archive`, `core:update`, `plugin:activate`, `plugin:deactivate`, `git:pull`, `development:enable`, `development:disable`, `customvariables:set-max-custom-variables`.
     -   some of these commands are setup in crontabs and we shouldn't break them.
@@ -40,6 +43,67 @@ Some other parts are sometimes considered public APIs but it is not a hard rule:
     -   Many plugins may use these generic translations, as [we advise them to.](/guides/translations#best-practices-for-new-translation-keys)
 
 Deprecations and changes to any of these public APIs will be documented here.
+
+### Our Backwards Compatibility Promise
+
+All popular software platforms have a process to ensure Backward Compatibility (BC) is kept between `Minor` and `Patch` releases (see [Semantic Versioning 2.0.0](http://semver.org/)). when BC is kept, it means users can be confident to upgrade to a newer version (Minor or Patch release) that their platform will still work (including any installed third party plugins.). For example Symfony have a very advanced BC guide: [Our Backwards Compatibility Promise ](http://symfony.com/doc/current/contributing/code/bc.html).
+
+Rarely, we may have to break an API for example for security reasons. We mention any deprecations or breaking changes in our [developer changelog](/changelog) see [instructions](#developer-changelog).
+
+### Deprecating a PHP or API method
+
+When we need to change an API, or remove an API, before removing or changing the API, we deprecate it:
+this can usually be done by adding `@deprecated` tag in the API, event name, etc.
+we announce the deprecation in the Developer Changelog at least 3-6 months early. With the deprecated annotation we also mention when it was deprecated (which Matomo version) and provide recommendations what to use instead.
+
+Example:
+
+```php
+/**
+ * @deprecated since Matomo 4.2.1. Use Xyz instead.
+ */
+public function getMyReport() {
+
+}
+```
+
+When we release a new Major version (eg. Matomo 5.0.0) then we are will remove all `@deprecated` code and therefore break BC. We announce the details of code removed in the [developer changelog](/changelog) (see [instructions](#developer-changelog)) and we also document to developers how they can convert their code to the new way.
+
+## Developer changelog
+
+When we are adding a new API or when we are breaking or deprecating an existing API, then we change our [Developer Changelog](https://github.com/matomo-org/matomo/blob/4.x-dev/CHANGELOG.md). We also mention library updates and on occasion internal changes that may be interesting for developers.
+
+### Examples when to update the developer changelog
+
+* change to a Reporting API method (eg. new API method added, deprecated, removed)
+* change to Reporting API output (eg. a new field in an API response)
+* change to Reporting API parameter (eg. parameter added, deprecated, removed)
+* change to Tracking API parameter (eg. parameter added, deprecated, removed)
+* change to Piwik JavaScript Tracker feature (eg. new feature, or removed feature)
+* since PHP 8 argument names of public API's are also considered API
+* new console command
+* new parameter for a console command
+* new developer guide
+* update to a third party library
+* any other relevant internal change that may interest developers
+
+Any change would usually fall under one of these categories:
+
+```
+#‎# Template: Matomo version number
+
+#‎## Breaking Changes
+#‎## Deprecations
+#‎## API Changes
+#‎## New features
+#‎## New APIs
+#‎## New commands
+#‎## New developer guide
+#‎## Library updates
+#‎## Internal change
+```
+
+If the change is a new config or a config change, then it's usually not mentioned in the developer changelog as they are mostly meant for users and not for developers.
 
 ## HTTP API
 
