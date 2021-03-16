@@ -116,7 +116,7 @@ Piwik should now be available at [http://localhost:8000/](http://localhost:8000/
 
 ### Install MySQL and create a database
 
-When you install Piwik, at the database creation step, you will need to specify your database user. 
+When you install Piwik, at the database creation step, you will need to specify your database user.
 
 [-> Click here to see how to create a new user in MySQL](https://matomo.org/faq/how-to-install/faq_23484/).
 
@@ -188,7 +188,7 @@ For more detailed instructions you can visit the [PHP Tests page](/guides/tests-
 
 ## Create a plugin
 
-Your development environment is set up, and you are now ready to create a plugin! 
+Your development environment is set up, and you are now ready to create a plugin!
 
 First of all, you need to choose the plugin's name. Remember, if you're going to publish on [Matomo's marketplace](https://plugins.matomo.org/), CamelCase will be splitted into words. So, for example "MyPlugin" will be published as "My Plugin".
 
@@ -222,7 +222,7 @@ The command-line tool will create a new directory for your plugin (in the **plug
 ## Troubleshooting Local Development
 
 * **The admin pages in my local setup are TOO slow**: This is caused by the Marketplace plugin running in the background. If you disable the plugin, admin
-  pages will load much faster for you. (Do remember to enable it if you ever need to work on code that uses it.)
+  pages will load much faster for you. You can manage plugins on the Administration dashboard, _System > Plugins_ page. (Do remember to enable it if you ever need to work on code that uses it.)
 
 ## What to read next
 
