@@ -20,6 +20,7 @@ The class defines the following methods:
 
 - [`getNonce()`](#getnonce) &mdash; Returns an existing nonce by ID.
 - [`verifyNonce()`](#verifynonce) &mdash; Returns if a nonce is valid and comes from a valid request.
+- [`isReferrerHostValid()`](#isreferrerhostvalid)
 - [`discardNonce()`](#discardnonce) &mdash; Force expiration of the current nonce.
 - [`getOrigin()`](#getorigin) &mdash; Returns the **Origin** HTTP header or `false` if not found.
 - [`getAcceptableOrigins()`](#getacceptableorigins) &mdash; Returns a list acceptable values for the HTTP **Origin** header.
@@ -59,9 +60,24 @@ and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piw
        The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).
     - `$cnonce` (`string`) &mdash;
        Nonce sent from client.
+    - `$expectedReferrerHost` (`string`) &mdash;
+       The expected referrer host for the HTTP referrer URL.
 
 - *Returns:*  `bool` &mdash;
     `true` if valid; `false` otherwise.
+
+<a name="isreferrerhostvalid" id="isreferrerhostvalid"></a>
+<a name="isReferrerHostValid" id="isReferrerHostValid"></a>
+### `isReferrerHostValid()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$referrer`
+      
+    - `$expectedReferrerHost`
+      
+- It does not return anything or a mixed result.
 
 <a name="discardnonce" id="discardnonce"></a>
 <a name="discardNonce" id="discardNonce"></a>
@@ -107,10 +123,12 @@ Verifies and discards a nonce.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$nonceName` (`string`) &mdash;
-       The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).
-    - `$nonce` (`string`|`null`) &mdash;
-       The nonce from the client. If `null`, the value from the **nonce** query parameter is used.
+    - `$nonceName`
+      
+    - `$nonce`
+      
+    - `$expectedReferrerHost`
+      
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the nonce is invalid. See {@link verifyNonce()}.

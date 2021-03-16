@@ -165,9 +165,16 @@ class Guide implements MenuItem
             throw new DocumentNotExistException('The requested documentation is not valid: ' . $this->name);
         }
 
-        if (!file_exists($this->getFilePath())) {
+        if (!file_exists($this->getFilePath()) && $this->doesFileNeedToExist()) {
             throw new DocumentNotExistException('The requested documentation does not exist: ' . $this->name);
         }
+    }
+
+    private function doesFileNeedToExist()
+    {
+        // we don't want to have to create files for older Matomo versions every time we create a new doc for the most
+        // recent Matomo version.
+        return Environment::getPiwikVersion() === LATEST_PIWIK_DOCS_VERSION;
     }
 
     private function getMarkdown()
@@ -175,7 +182,11 @@ class Guide implements MenuItem
         $path = $this->getFilePath();
 
         if (!file_exists($path)) {
-            throw new DocumentNotExistException('Requested documentation does not exist');
+            if ($this->doesFileNeedToExist()) {
+                throw new DocumentNotExistException('Requested documentation does not exist');
+            } else {
+                return '';
+            }
         }
 
         return file_get_contents($path);

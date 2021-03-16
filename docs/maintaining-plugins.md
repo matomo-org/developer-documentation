@@ -6,9 +6,14 @@ title: Maintaining Plugins
 
 This guide applies to Matomo core developers. If you develop a plugin and want to share it as a contributor please check out the guide for [distributing plugins](https://developer.matomo.org/guides/distributing-your-plugin).
 
-## How to add a new plugin 
+## How to add a new plugin
 
 * Get Matt or Thomas to create a new github repository under `matomo-org`. The name for the plugin usually starts with `plugin-` followed by the plugin name. You can for example ping us in our slack. We use `*.x-dev` as the main branch where `*` would be replaced by the latest major version of Matomo.
+  * After creating the repository, we should also directly configure transifex. To do this,
+  * go to Repository Settings -> Secrets
+  * click on new repository secret
+  * Enter the name `TransifexUsername` and as value the username from keypass for transifex
+  * Enter the name `TransifexPassword` and as value the password from keypass for transifex
 * Push the code
 * Add the plugin's repository as a submodule to our main matomo repository `git submodule add {http-plugin-github-address} plugins/{pluginname}`
 * Edit `.gitmodules` and move the entry for this submodule before the comment at the bottom (see description of that comment)
@@ -22,6 +27,12 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 * If any possible screenshots are defined in the `screenshots` folder.
 * If `docs/index.md` or `docs/faq.md` are not needed then delete them
 
+## Work on a premium plugin
+
+* Clone the plugin you want to work on into the _plugins_ folder. Use the plugin name as the folder: `plugin_SomeName` -> `SomeName`
+* Create (or update if you already have it) a `.gitignore` file in your _plugins_ folder and add the new folder. This `.gitignore` file is already ignored in the main `.gitignore`
+* Activate the plugin on the Administration dashboard, _System > Plugins_ page
+* You can create branches, PRs inside this plugin folder
 
 ## Maintaining plugin FAQs
 

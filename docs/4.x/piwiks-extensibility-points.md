@@ -1,7 +1,7 @@
 ---
 category: DevelopInDepth
 ---
-# Piwik's Extensibility Points
+# Matomo's Extensibility Points
 
 Plugins can extend Piwik using the following methods:
 

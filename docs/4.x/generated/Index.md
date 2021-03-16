@@ -258,6 +258,7 @@ Index
 ## F
 
 - [`factory()`](Piwik/Archive.md#factory) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
+- [`forceFetchingWithoutLaunchingArchiving()`](Piwik/Archive.md#forcefetchingwithoutlaunchingarchiving) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`formatValue()`](Piwik/Columns/Dimension.md#formatvalue) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`forceSave()`](Piwik/Config.md#forcesave) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`filter()`](Piwik/DataTable.md#filter) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -358,6 +359,7 @@ Index
 - [`getCategoryId()`](Piwik/Category/Subcategory.md#getcategoryid) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getName()`](Piwik/Category/Subcategory.md#getname) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getOrder()`](Piwik/Category/Subcategory.md#getorder) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
+- [`getHelp()`](Piwik/Category/Subcategory.md#gethelp) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getDbColumnJoin()`](Piwik/Columns/Dimension.md#getdbcolumnjoin) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getDbDiscriminator()`](Piwik/Columns/Dimension.md#getdbdiscriminator) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getEnumColumnValues()`](Piwik/Columns/Dimension.md#getenumcolumnvalues) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
@@ -774,6 +776,7 @@ Index
 - [`isOptimizeInnoDBSupported()`](Piwik/Db.md#isoptimizeinnodbsupported) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`IP`](Piwik/IP.md) &mdash; *Class in namespace* `Piwik`- [`info()`](Piwik/Log.md#info) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`isSmtpDebugEnabled()`](Piwik/Mail.md#issmtpdebugenabled) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
+- [`isReferrerHostValid()`](Piwik/Nonce.md#isreferrerhostvalid) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
 - [`isMultiplePeriod()`](Piwik/Period.md#ismultipleperiod) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`isDateInPeriod()`](Piwik/Period.md#isdateinperiod) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`isPeriodIntersectingWith()`](Piwik/Period.md#isperiodintersectingwith) &mdash; *Method in class* [`Period`](Piwik/Period.md)

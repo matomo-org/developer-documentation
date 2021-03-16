@@ -20,15 +20,28 @@ If your development Matomo is not using `localhost` as a hostname (or if your we
 
 ```
 [tests]
-http_host   = localhost
+http_host = localhost
 port = 8777
 ```
 
-If your development Matomo is setup in a sub-directory for example at http://localhost/dev/matomo, then edit your `config/config.ini.php` file and under `[tests]` section:, add the `request_uri` setting:
+The `request_uri` needs to be configured for running tests. If your development Matomo is setup in a sub-directory for example at `http://localhost/dev/matomo`, then your settings should be like this:
+
 ```
 [tests]
 request_uri = "/dev/matomo"
+```
 
+If you don't use any sub-directory, you can simple setup like this:
+
+```
+[tests]
+request_uri = "/"
+```
+
+Before you run the tests (at least the first time, but you can rerun it any time), run this command to migrate the test database.
+
+```
+$ ./console tests:setup-fixture OmniFixture
 ```
 
   
@@ -74,6 +87,31 @@ The command will as well ask you for the name of the plugin and the name of the 
 The `IntegrationTestCase` base class provides a `setUp()` method that creates a test Piwik database and a `tearDown()` method that removes it. During integration
 tests all plugins will be loaded allowing you to write actual integration tests.
 
+### Troubleshooting Integration Tests
+
+There are some common issues that can occur when writing integration tests. These are listed below with their appropriate solution:
+
+* **Translations are required to be loaded in my test, but are not**: By default, integration tests do not load translations (whereas system tests do). If you need real translations, you can override this behavior with the following code added to your integration test:
+    ```
+    protected static function configureFixture($fixture)
+    {
+        $fixture->extraTestEnvVars['loadRealTranslations'] = true;
+    }
+    ```
+* **I want to track requests in my integration test, but they are not tracking and giving an empty response.**: There are a lot of reasons this could happen, but the most common is that there is no superuser created and the tracker cannot authenticate. Integration tests by default do not create real superuser before running tests. You can override this behavior with the following code added to your integration test:
+    ```
+    protected static function configureFixture($fixture)
+    {
+        $fixture->createSuperUser = true;
+    }
+    ```
+
+### Custom behavior for tests
+
+Whenever possible, you should be using [dependency injection](https://developer.matomo.org/guides/dependency-injection) to change behaviour in tests. For example if you don't want to fetch data from a remote service but instead use a local fixture then you could create a file in `plugins/MyPluginName/config/test.php` where you return a regular array and overwrite any DI dependency.
+
+If DI is not possible or not trivial to use, then you can check if tests are currently being executed by using `$isTestMode = defined('PIWIK_TEST_MODE') && PIWIK_TEST_MODE;`.
+
 ## Running tests
 
 To run a test, use the command `tests:run` which allows you to execute a test suite, a specific file, all files within a folder or a group of tests.
@@ -115,6 +153,47 @@ $ ./console tests:run unit
 $ ./console tests:run integration
 $ ./console tests:run system
 ```
+
+## Special Tests
+
+Most unit and integration tests in Matomo test a single class, or at most a matomo subsystem. One test, however, is special in that they don't test Matomo behavior, but instead tests that Matomo is ready to be released. This test is called **ReleaseCheckListTest** and performs the following types of tests:
+
+* checking that deprecated methods have been removed by a certain date
+  When developers mark a method as @deprecated, we will sometimes want to make sure we remove it by a certain time, after we've given plugin developers a chance to stop using it. This can be by a certain time or by the time a major version of Matomo is released.
+* checking resource files are at the latest version or are otherwise ready to be released
+* test debugging code was not accidentally left in some code
+* and many other things.
+
+Plugins sometimes define their own version of this test.
+
+## Fixing a broken system tests build
+
+### When the build fails locally
+
+Locate the directory of the `processed` and `expected` tests directory for the test you are executing. For example `plugins/YourPluginName/tests/System/` or `tests/PHPUnit/System/`.
+
+You can then compare the two directories for changes. If you are using PHPStorm, then simply select both `processed` and `expected` directories and then right click and select `Compare Directories`. There you can see the changes for each file and update any processed file if needed. If you don't use PHPStorm, then check if your IDE offers a similar feature or use a linux command like `diff processed expected`.
+
+Once you have updated all expected files, then you need to `git add` and `git commit` and `git push` these changes.
+
+### When the build fails on Travis
+
+System PHP tests in Matomo typically execute an API method and compare the entire XML output of the API method with an expected XML output.
+
+If you are making changes to Matomo then the result of such an API method may change and break the build. This is an opportunity to review your code and as a Matomo developer you should ensure that
+any change in the output is actually expected.
+
+If they are not expected, determine the cause of the change and fix it in a new commit. If the changes are expected,
+then you should update the expected system files accordingly. To compare and update the expected system files, follow these steps:
+
+* Find out the Travis build number by opening the Travis run for your pull request. The build number is typically a 5 or 6 digit number and has a leading hash character. For example when the build is `#45511`, then `45511` is the build number.
+* Execute this command and replace `{buildnumber}` with the actual build number. `./console development:sync-system-test-processed {buildnumber}`.
+  * To update the expected files directly append the option `--expected`. You then need to make sure before committing and pushing these changes that every change is actually expected
+  * Or if you only want to update some files or if you don't use a visual tool for git then you can execute the command without the expected option in which case the system files are updated in the `processed` directory. For example `tests/PHPUnit/System/processed` and `plugins/Goals/tests/System/processed`. If you are using PHPStorm you can then select both the processed and expected directory and then `right click -> Compare Directories`. This allows you to review every change of added, changed and removed files and let's you update each expected file individually. 
+* Then `git add` and `git commit` and `git push` the changes to trigger another build run 
+* If some tests are still failing you may need to repeat this process as sometimes you might forget to update some
+
+### To fix a broken build, follow these steps:
 
 ## Learn more
 

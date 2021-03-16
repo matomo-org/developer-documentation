@@ -105,6 +105,7 @@ The class defines the following methods:
 - [`getParams()`](#getparams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 - [`createDataTableFromArchive()`](#createdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
 - [`getPluginForReport()`](#getpluginforreport) &mdash; Returns the name of the plugin that archives a given report.
+- [`forceFetchingWithoutLaunchingArchiving()`](#forcefetchingwithoutlaunchingarchiving)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -368,4 +369,12 @@ Returns the name of the plugin that archives a given report.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If a plugin cannot be found or if the plugin for the report isn&#039;t
                    activated.
+
+<a name="forcefetchingwithoutlaunchingarchiving" id="forcefetchingwithoutlaunchingarchiving"></a>
+<a name="forceFetchingWithoutLaunchingArchiving" id="forceFetchingWithoutLaunchingArchiving"></a>
+### `forceFetchingWithoutLaunchingArchiving()`
+
+#### Signature
+
+- It does not return anything or a mixed result.
 
