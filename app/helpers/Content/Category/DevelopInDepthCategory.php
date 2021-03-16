@@ -34,6 +34,7 @@ class DevelopInDepthCategory extends Category
                 new Guide('reproducing-issues'),
                 new Guide('jstracker-core'),
                 new Guide('tracking-requests'),
+                new Guide('segments'),
                 new Guide('core-faqs'),
                 new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
             ]),
