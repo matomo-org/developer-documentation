@@ -8,9 +8,9 @@ title: Segments
 
 Segments are typically encoded three times:
 
-* The first decode is on the whole segment: https://github.com/matomo-org/matomo/blob/3.x-dev/core/Segment.php#L104 . The corresponding encode was added in 3.6.0 here: https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/javascripts/SegmentedVisitorLog.js#L123
-* the second decode is on individual conditions (ie, pageUrl==...): https://github.com/matomo-org/matomo/blob/3.x-dev/core/Segment/SegmentExpression.php#L91
-* the third decode is on individual values: https://github.com/matomo-org/matomo/blob/3.x-dev/core/Segment/SegmentExpression.php#L112
+* The [first decode is on the whole segment](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Segment.php#L104). The corresponding encode was [added in 3.6.0 here](https://github.com/matomo-org/matomo/blob/3.x-dev/plugins/Live/javascripts/SegmentedVisitorLog.js#L123).
+* The [second decode is on individual conditions](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Segment/SegmentExpression.php#L91) (ie, pageUrl==...).
+* The [third decode is on individual values](https://github.com/matomo-org/matomo/blob/3.x-dev/core/Segment/SegmentExpression.php#L112).
 
 This means the value needs to be triple encoded for values like plus signs to be used properly in the segment. For more details see [#13481](https://github.com/matomo-org/matomo/pull/13481).
 
