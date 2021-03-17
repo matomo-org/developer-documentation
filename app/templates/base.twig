@@ -36,7 +36,6 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li {% if isHome %}class="active"{% endif %}><a href="{{ '/'|completeUrl }}">Home</a></li>
                 <li {% if activeMenu == 'Integrate' %}class="active"{% endif %}>
                     <a href="{{ '/integration'|completeUrl }}">Integrate</a>
                 </li>
@@ -45,6 +44,9 @@
                 </li>
                 <li {% if activeMenu == 'API Reference' %}class="active"{% endif %}>
                     <a href="{{ '/api-reference'|completeUrl }}">API Reference</a>
+                </li>
+                <li {% if activeMenu == 'Matomo In Depth' %}class="active"{% endif %}>
+                    <a href="{{ '/piwik-in-depth'|completeUrl }}">In Depth</a>
                 </li>
                 <li {% if activeMenu == 'Changelog' %}class="active"{% endif %}>
                     <a href="{{ '/changelog'|completeUrl }}">Changelog</a>
