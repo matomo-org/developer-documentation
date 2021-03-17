@@ -6,17 +6,17 @@ previous: tests-ui
 
 ### Setting up Travis CI for core plugins
 
-To add a build on travis you must first enable the build on travis-ci.org or magnum.travis-ci.com (or find someone with sufficient permission to do it for you). Then, you must create the .travis.yml file for your plugin by running the following Piwik console command:
+To add a build on travis you must first enable the build on travis-ci.com (or find someone with sufficient permission to do it for you). Then, you must create the .travis.yml file for your plugin by running the following Matomo console command:
 
     ./console generate:travis-yml --plugin=MyNewPlugin
 
-After you have executed this and committed to the repository, please send an email to Matthieu A. or Benaka, they will execute the same command with the `--github-token` and `--artifacts-pass` parameter. This will ensure that the `.travis.yml` will automatically update itself when [the template](https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/templates/travis.yml.twig) has changed. 
+To ensure that the `.travis.yml` will automatically update itself when [the template](https://github.com/matomo-org/travis-scripts/blob/master/generator/templates/travis.yml.twig) has changed, it's required to run the command with the `--github-token` parameter or alternatively the `GITHUB_TOKEN` secret can be set in the Travis CI repo settings. 
 
 ### Varying .travis.yml behavior
 
 You can control how the generated .travis.yml file behaves, by setting certain environment variables in your .travis.yml file.
 
-These variables let you download other, test your plugin against a specific Piwik version and more.
+These variables let you download other, test your plugin against a specific Matomo version and more.
 
 Below is the list of all supported environment variables:
 
@@ -34,7 +34,9 @@ Below is the list of all supported environment variables:
     
   * **PROTECTED\_ARTIFACTS**
 
-    This variable controls whether build artifacts will be uploaded to a password protected folder on builds-artifacts.matomo.org. If you are building a plugin and need your artifacts protected, please [contact the Piwik team](https://matomo.org/contact/) to learn more.
+    This variable controls whether build artifacts will be uploaded to a password protected folder on builds-artifacts.matomo.org. If you are building a plugin and need your artifacts protected, please [contact the Matomo team](https://matomo.org/contact/) to learn more.
+
+    Using protected artifacts requires the artifacts password either been provided when generating the .travis.yml file using the `--artifacts-pass` parameter or alternatively being set as `ARTIFACTS_PASS` secret in the Travis CI repo settings.
 
     By default, artifacts for plugins are stored in a public folder. To change this behavior, set `PROTECTED_ARTIFACTS=1` as a global environment variable, eg:
 
@@ -63,7 +65,7 @@ Below is the list of all supported environment variables:
 
   * **SKIP\_PIWIK\_TEST\_PREPARE**
 
-    If set to 1, the prepare.sh/setup_webserver.sh scripts are not executed. This can be used to speed up builds that don't execute PHP tests or need a webserver running Piwik.
+    If set to 1, the prepare.sh/setup_webserver.sh scripts are not executed. This can be used to speed up builds that don't execute PHP tests or need a webserver running Matomo.
 
     Can be set as a global environment variable for all builds or in the matrix for individual builds.
 
@@ -74,7 +76,7 @@ Below is the list of all supported environment variables:
 
     When the .travis.yml file is auto-updated, the travis build will commit the changes and push them to your plugin's git repository. The committer's username and email address are determined by these variable.
 
-    `TRAVIS_COMMITTER_NAME` defaults to `Piwik Automation`. `TRAVIS_COMMITTER_EMAIL` defaults to `hello@matomo.org`.
+    `TRAVIS_COMMITTER_NAME` defaults to `Matomo Automation`. `TRAVIS_COMMITTER_EMAIL` defaults to `hello@matomo.org`.
 
     Example usage:
 
@@ -116,8 +118,8 @@ The system used to generate .travis.yml files is defined in the TestRunner plugi
 
 **Generating new .travis.yml sections**
 
-This .twig file is used to generate the .travis.yml file: [https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/templates/travis.yml.twig](https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/templates/travis.yml.twig).
+This .twig file is used to generate the .travis.yml file: [https://github.com/matomo-org/travis-scripts/blob/master/generator/templates/travis.yml.twig](https://github.com/matomo-org/travis-scripts/blob/master/generator/templates/travis.yml.twig).
 
-If you want to add a new section to generated .travis.yml output, you have to both add the section to the travis.yml.twig file **AND** add the section's name to this array: [https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/TravisYml/TravisYmlView.php#L23](https://github.com/matomo-org/matomo/blob/master/plugins/TestRunner/TravisYml/TravisYmlView.php#L23)
+If you want to add a new section to generated .travis.yml output, you have to both add the section to the travis.yml.twig file **AND** add the section's name to this array: [https://github.com/matomo-org/travis-scripts/blob/master/generator/TravisYmlView.php#L26](https://github.com/matomo-org/travis-scripts/blob/master/generator/TravisYmlView.php#L26)
 
 If you don't add it, the system will consider the section as a section that should be preserved, and will output it again after rendering the twig template.
