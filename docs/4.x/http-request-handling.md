@@ -1,7 +1,7 @@
 ---
 category: DevelopInDepth
 ---
-# How Piwik Handles HTTP Requests
+# How Matomo Handles HTTP Requests
 
 Every request that is sent to Piwik's reporting side (as opposed to Piwik's tracking side) is sent to the `index.php` file in Piwik's root directory. This file creates an instance of the [FrontController](/api-reference/Piwik/FrontController) and uses it to dispatch the current request.
 

@@ -1,7 +1,7 @@
 ---
 category: DevelopInDepth
 ---
-# How Piwik Works
+# How Matomo Works
 
 ## About this guide
 
