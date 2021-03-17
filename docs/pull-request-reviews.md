@@ -41,25 +41,7 @@ And if you are a core developer, if there is an issue that the pull request will
 
 ### Developer changelog
 
-When we are adding a new API method or when we are breaking or deprecating an existing API method, then we change our [Developer Changelog](https://github.com/matomo-org/matomo/blob/4.x-dev/CHANGELOG.md). We also mention library updates and on occassion internal changes that may be interesting for developers.
-
-Any change would usually fall under one of these categories:
-
-```
-## Template: Matomo version number
-
-### Breaking Changes
-### Deprecations
-### API Changes
-### New features
-### New APIs
-### New commands
-### Library updates
-### Internal change
-```
-
-If the change is a new config or a config change, then it's usually not mentioned in the developer changelog as they are mostly meant for users and not for developers.
-
+We keep the [developer changelog](/guides/apis#developer-changelog) up to date when any changes are made to what we [consider to be API](/guides/apis).
 
 ### Updating the pull request
 
