@@ -30,6 +30,7 @@ class DevelopInDepthCategory extends Category
                 new Guide('pull-request-reviews'),
                 new Guide('core-team-workflow'),
                 new Guide('maintaining-plugins'),
+                new Guide('apis'),
                 new Guide('debugging-core'),
                 new Guide('profiling-code'),
                 new Guide('reproducing-issues'),
