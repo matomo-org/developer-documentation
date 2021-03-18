@@ -15,7 +15,7 @@ To do this, place a `config.ini.php` inside `misc/user/` for each hostname. For 
 
 Depending if you access Matomo using `subdomain_b.mydomain.com` or `subdomain_a.mydomain.com` the different config file will be read. Each config file may have different configurations and can point to a different database.
 
-It's also possible to define the config files per hostname like `$matomoDir/config/$hostname.config.ini.php`. However, this may be removed in the future and we always highly recommend to put them into the `misc/user` directory as it is this way a lot easier to share all files (config files, logos) for a tenant using a shared filesystem like EFS or NFS.
+It's also possible to define the config files per hostname like `$matomoDir/config/$hostname.config.ini.php`. However, this may be removed in the future and we always highly recommend putting them into the `misc/user` directory as it is this way a lot easier to share all files (config files, logos) for a tenant using a shared fil esystem like EFS or NFS.
 
 ## Shared config files
 
@@ -56,7 +56,7 @@ To execute a CLI console command you will need to specify for which tenant the c
 
 ## Updating the code base
 
-It is highly recommended to disable the auto update by specificing the following configuration in the shared config file:
+It is highly recommended disabling the auto update by specifying the following configuration in the shared config file:
 
 ```ini
 [General]
@@ -73,13 +73,13 @@ It is currently not possible to set up a new tenant which is why it's documented
 
 ### Database
 
-For Multi Tenant setup to work every tenant should have its own database schema. They can be all on the same physical database server but for best security should have each their own schema with their own unique MySQL username and password. It's not recommended to just use a different database prefix for each customer as it is less secure.
+For Multi Tenant setup to work every tenant should have its own database schema. They can be all on the same physical database server but for best security should have their own schema with their own unique MySQL username and password. It's not recommended to just use a different database prefix for each customer as it is less secure.
 
 ## Using the same database schema across tenants
 
 You could technically "misuse" this multi tenant feature to set different configurations for each site in one Matomo installation which is otherwise not possible in Matomo.
 
-This works to some extend for some config settings. For example, if you want to change a config tracking settings on a per site basis, then you only need to make sure to always use consistently the same host for the same idSite when sending tracking requests.
+This works to some extent for some config settings. For example, if you want to change a config tracking settings on a per site basis, then you only need to make sure to always use consistently the same host for the same idSite when sending tracking requests.
 
 For some other config settings this can be more difficult. For example, if you want to change an archiving config setting on a per site basis, then you would need to make sure to never just run `./console core:archive` but always force specific sites with the expected host. For example `./console core:archive --force-idsites=1 --matomo-domain=...`.
 
