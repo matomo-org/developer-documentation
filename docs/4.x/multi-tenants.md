@@ -15,6 +15,8 @@ To do this, place a `config.ini.php` inside `misc/user/` for each hostname. For 
 
 Depending if you access Matomo using `subdomain_b.mydomain.com` or `subdomain_a.mydomain.com` the different config file will be read. Each config file may have different configurations and can point to a different database.
 
+It's also possible to define the config files per hostname like `$matomoDir/config/$hostname.config.ini.php`. However, this may be removed in the future and we always highly recommend to put them into the `misc/user` directory as it is this way a lot easier to share all files (config files, logos) for a tenant using a shared filesystem like EFS or NFS.
+
 ## Shared config files
 
 There may be some configurations you want to share across all tenants. To do this, create a config file called `config/common.config.ini.php` starting with this line
@@ -82,3 +84,9 @@ This works to some extend for some config settings. For example, if you want to 
 For some other config settings this can be more difficult. For example, if you want to change an archiving config setting on a per site basis, then you would need to make sure to never just run `./console core:archive` but always force specific sites with the expected host. For example `./console core:archive --force-idsites=1 --matomo-domain=...`.
 
 Note that when you are using the very same database schema with the same table prefix for every tenant, then always all sites will be visible in all hosts. It is therefore usually always recommended to use different database schemas.
+
+## Tracking code
+
+All tenants would use the same tracking code. This can lead to unexpected results if different plugins are enabled for each tenant or when for example some tenants have heatmaps/session recording enabled vs others don't. In these cases the tracking code could change constantly and may include tracking code for features that aren't enabled or tracking code that is needed for a feature may be missing. It would require a custom solution to store them in the `misc/user` directory instead.
+
+The same applies to Tag Manager JS container files which would all be stored in the `js` directory and if different tenants have the same containerId then they would overwrite each other's JS files.
