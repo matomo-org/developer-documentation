@@ -4,7 +4,7 @@ title: Multi Tenant
 ---
 # Matomo Multi Tenant Setup
 
-You can configure Matomo to serve multiple customers with the same code base. While you can do this in any standard Matomo installation using it's permission system, the advantage of this solution is that you can configure each tenant differently and also configure a different database for each tenant which is more secure.
+You can configure Matomo to serve multiple customers with the same code base. While you can do this in any standard Matomo installation using its permission system, the advantage of this solution is that you can configure each tenant differently and also configure a different database for each tenant which is more secure.
 
 ## Setting up a tenant specific config file
 
