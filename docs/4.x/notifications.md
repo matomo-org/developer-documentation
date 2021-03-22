@@ -67,6 +67,10 @@ If you need to use HTML as part of your notification message, for example to sho
 $notification->raw = true;
 ```
 
+#### More information and examples
+
+[Learn more about the Notification class in the API reference](/api-reference/Piwik/Notification).
+
 ## Notifications using JavaScript
 
 Client side notifications can be shown using the `Notification.show` method:
