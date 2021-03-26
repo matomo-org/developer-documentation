@@ -18,7 +18,7 @@ Using Xdebug for debugging the core will make your life a lot easier and faster.
 
 Please note that Xdebug will make running the tests run slower. Especially integration, system and UI tests. An improvement could be to have Xdebug only enabled for the web but disabled on the CLI. This way Xdebug will be disabled for integration and system tests but still run for UI tests. As a general advice for running tests faster you may want to only run a single test instead of all tests in a file like `./console tests:run file/to.php --options="--filter=test_methodNameToRun"`. 
 
-If it's not possible to disable Xdebug for CLI because there is no separate php ini file, then you may want to give it a try to have Xdebug always enabled and put something like this in your `$HOME/.profile` file: `export XDEBUG_CONFIG="remote_enable=0"` (not tested if this works).
+If it's not possible to disable Xdebug for CLI because there is no separate php ini file, then you may want to give it a try to have Xdebug always enabled and put something like this in your `$HOME/.profile` file: `export XDEBUG_CONFIG="remote_enable=0"` (does not work with Xdebug 3.x as only few options can be set using this variable).
 
 When you want to use the debugger in tests or in a CLI call (which will be needed regularly), then you could for example configure xdebug using an environment variable like below:
 
