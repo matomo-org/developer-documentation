@@ -73,5 +73,5 @@ The `[Cache] backend` option determines where the data gets saved. The possible 
 cache to a **file**, cache to **redis**.
 
 There is also the **chained** cache which is worth a note. The chained cache allows using multiple backends. For example,
-caching to an array, file and redis. Here, when requesting data, we'd first check if it's in the array backend, and if there use it.
+caching to an array, file and redis. Here, when requesting data, we'd first check if it's in the array backend, and if it is there, we use it.
 If not, we'd check the file backend then the redis backend. Using this cache we make the less expensive checks first and save time.
