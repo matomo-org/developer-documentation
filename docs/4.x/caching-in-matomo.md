@@ -37,7 +37,7 @@ See the {@see Matomo\Cache\Backend\Lazy::class} class for more information.
 The **Eager** cache is a cache like the Lazy cache in that it will make cached data available across requests, but
 every piece of cached data in the Eager cache is loaded at the start of each request.
 
-In the backend, the eager cache data will all be stored in a single entry (so, eg, all cached data is in a single php
+In the backend, the eager cache data will all be stored in a single entry (so, e.g., all cached data is in a single php
 file). This means there is just one redis query or file read to get all the cached data.
 
 This cache is useful for data that needs to be cached across requests, and is used in every (or almost every) request.
