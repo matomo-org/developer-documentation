@@ -141,7 +141,7 @@ To close the currently displayed popover, call the **close** method:
 })(require);
 ```
 
-Note that the **Piwik_Popover** object is stored directly in the `window` object and contains popover creation and management functions. Popovers created directly through this object are not persistent. To create persistent popovers, see the next section. 
+Note that the **Piwik_Popover** object is stored directly in the `window` object and contains popover creation and management functions. Popovers created directly through this object are not persistent. To create persistent popovers, see the next section.
 
 #### Loading Persistent Popovers
 
@@ -219,6 +219,38 @@ _Learn more about theming in our [Theming](/guides/theming) guide._
 The **DataTable** class is the base of all JavaScript classes that manage [report visualizations](/guides/visualizing-report-data#about-visualizations). If you are creating your own report visualization, you may have to extend it.
 
 To learn more about extending the class, see our [Visualizing Report Data](https://github.com/matomo-org/developer-documentation/blob/master/docs/visualizing-report-data.md) guide.
+
+### Server Rendered HTML with AJAX
+
+Most of the widgets loading by AJAX are generated on server side which means the AJAX response is HTML, sometimes it contains javascript code as well. This is a very powerful yet simple pattern to load dynamic contents.
+
+There is an angularjs component that makes this possible easily, not only with widgets, but everytime, when we'd like to load the page before a time consuming process finished or we need a user interaction. The component shows a loading animation until it finishes the request.
+
+#### How does it work?
+
+1. create a method in your plugin's controller file
+1. return a rendered template (the template can contains javascript in script tag)
+1. include the `piwik-widget-loader` component in the main twig file that loads when the user opens the page
+
+```php
+// MyPlugin/Controller.php
+public function myWidget() {
+    return $this->renderTemplateAs('_mywidget.twig', [], 'basic');
+}
+```
+
+```twig
+// MyPlugin/templages/_mywidget.twig
+<p>Hello world!</p>
+```
+
+```twig
+// add this to your main template file
+// the loading message is optional
+<div piwik-widget-loader='{"module":"MyPlugin","action":"myWidget"}' loading-message="Widget loading..."></div>
+```
+
+For the angularjs component, see [widgetloader.directive.js](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/angularjs/widget-loader/widgetloader.directive.js).
 
 ## Learn more
 
