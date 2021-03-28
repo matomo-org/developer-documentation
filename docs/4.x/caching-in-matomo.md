@@ -22,7 +22,7 @@ See the {@see Matomo\Cache\Backend\Transient::class} class for more information.
 The **Lazy** cache is a cache that requests and reads cached data on demand. When you cache data in the Lazy cache,
 it will be available across requests, for example, in a file backend, but will not be read until it is requested.
 
-In the backend, the data will be stored in one entry per cache key (eg, one php file per cache key).
+In the backend, the data will be stored in one entry per cache key (e.g., one php file per cache key).
 
 This cache is most useful for caching that needs available across requests, but doesn't need to be accessed very
 often. An example might be the result of an HTTP request, or a method that issues an HTTP request, that is done
