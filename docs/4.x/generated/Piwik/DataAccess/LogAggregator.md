@@ -135,6 +135,8 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
        Order By clause to add (e.g. user_id ASC)
     - `$timeLimitInMs` (`int`) &mdash;
        Adds a MAX_EXECUTION_TIME query hint to the query if $timeLimitInMs > 0
+    - `$rankingQueryGenerate` (`bool`) &mdash;
+       if `true`, generates a SQL query / bind array pair and returns it. If false, the ranking query SQL will be immediately executed and the results returned.
 
 - *Returns:*  `mixed` &mdash;
     A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of
