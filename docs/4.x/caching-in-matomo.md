@@ -75,3 +75,31 @@ cache to a **file**, cache to **redis**.
 There is also the **chained** cache which is worth a note. The chained cache allows using multiple backends. For example,
 caching to an array, file and redis. Here, when requesting data, we'd first check if it's in the array backend, and if it is there, we use it.
 If not, we'd check the file backend then the redis backend. Using this cache we make the less expensive checks first and save time.
+
+# Cache in development mode
+
+When the development mode is enabled we avoid most caching to make sure code changes will be directly applied as some caches are
+only invalidated after an update otherwise. Basically when development mode is on, we are using array cache, even if we setup something else.
+
+```php
+// config/environment/dev.php
+'Matomo\Cache\Backend' => DI\autowire('Matomo\Cache\Backend\ArrayCache'),
+```
+
+If we turn off development mode and setup filesystem cache in our local environment, we can see the cache files in the `tmp/cache` folder by default.
+
+```
+// config/config.ini.php
+[Development]
+enabled = 0
+[Cache]
+backend = file
+```
+
+# Clear cache
+
+We can easily empty cache with a console command:
+
+```
+./console cache:clear
+```
