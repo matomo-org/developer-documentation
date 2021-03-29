@@ -197,7 +197,7 @@ The `index_type_hash` index is used during tracking to find existing action type
 
 Some plugins are not using the `log_action` / `log_link_visit_action` tables to persist their actions. Instead some custom tables are used in order to be able to store the required action details
 
-#### Media Analytics
+### Media Analytics
 
 The MediaAnalytics plugin uses the tables `log_media` and `log_media_plays` to store the details about the viewed media elements.
 
