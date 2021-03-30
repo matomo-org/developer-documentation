@@ -131,6 +131,7 @@ Visit actions contain the following information:
 - `idaction_url_ref`: the ID of the URL action type for the previous action in the visit
 - `idaction_name`: the ID of the page title action type for this action
 - `idaction_name_ref`: the ID of the page title action type for the previous action in the visit
+- `pageview_position`: the position of the pageview within the visit, starting at 1. If the action being recorded is not a pageview (but is another action like an event, download, etc.) then the position is set to the last recorded pageview's position (before this action was recorded).
 - `time_spent_ref_action`: the amount of time spent doing the previous action in seconds (see below for details)
 - `time_spent`: the amount of time spent on this action (set by the CustomDimensions plugin)
 - `custom_var_k1`: the custom variable name of the first slot for page custom variables
