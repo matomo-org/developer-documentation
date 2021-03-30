@@ -2648,7 +2648,7 @@ Triggered when sending scheduled reports. Plugins that provide new scheduled rep
 send the scheduled report.
 
 Callback Signature:
-<pre><code>function(&amp;$reportType, $report, $contents, $filename = basename($outputFilename), $prettyDate, $reportSubject, $reportTitle, $additionalFiles, \Piwik\Period\Factory::build($reportfunction(&#039;period&#039;], $date), $force)</code></pre>
+<pre><code>function(&amp;$reportType, $report, $contents, $filename = basename($outputFilename), $prettyDate, $reportSubject, $reportTitle, $additionalFiles, \Piwik\Period\Factory::build($reportfunction(&#039;period_param&#039;], $date), $force)</code></pre>
 
 - string `&$reportType` A string ID describing how the report is sent, eg,
                           `'sms'` or `'email'`.
