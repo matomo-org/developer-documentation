@@ -54,6 +54,15 @@ The `getMigrations()` method returns explicit step by step changes to make to th
 this allows us to display the list of changes that will be made to the user in case the user would like to do
 them manually, one at a time (useful for large instances).
 
+In this method you can use the `MigrationFactory` class (which is set in the constructor of an `Update`) to create
+lists of individual migrations that should be run in this `Update`. Matomo ships with a set of predefined `Migrations`
+for common things like changing an INI config value, deleting or activating a plugin, creating database tables or
+changing database table columns. Read more about them in the PHP docs for the individual factory classes:
+
+* [DB migrations](https://developer.matomo.org/api-reference/Piwik/Updater/Migration/Db/Factory)
+* [Plugin migrations](https://developer.matomo.org/api-reference/Piwik/Updater/Migration/Plugin/Factory)
+* [Config migrations](https://developer.matomo.org/api-reference/Piwik/Updater/Migration/Config/Factory)
+
 The `doUpdate()` method performs the entire update. It must call `$updater->executeMigrations(...)` as above if there are
 individual migrations defined. It can also include other update logic that doesn't have an associated migration,
 but it is encouraged to find some way to put them in a migration, since otherwise the user wouldn't be able
@@ -81,6 +90,15 @@ If this is true, then the code was updated, but not the database. This triggers 
 The update workflow looks for every update file in the `Updates` folder that has a version greater than the current version and less than or equal to the version in Version.php (using `version_compare()`). It runs each in order, one after the other. Once done, the `version_core` option is updated.
 
 The updater will also automatically make changes to tracking dimensions if their definition changes.
+
+## Merging an Update
+
+Sometimes it can take a while before a pull request is ready to merge. It's possible other pull requests with
+updates were merged in the meantime, bumping the version each time. So when the original pull request is ready
+to merge, the version bump there may no longer be to a new version.
+
+Since every Update requires a change to the Version.php file, this will result in a merge conflict visible in github.
+To resolve it, simply change the version to the new next version in both Version.php and the new Update file you added.
 
 ## Differences with the Migration pattern
 

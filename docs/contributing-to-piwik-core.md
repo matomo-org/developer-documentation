@@ -178,6 +178,10 @@ In practice this means creating features that downgrade still work on older vers
 major versions. In this case there will be documentation for how to manually downgrade a database so we can run the older
 version (for example this faq: https://matomo.org/faq/how-to/how-do-i-downgrade-from-matomo-4-to-matomo-3/).
 
+### Learn more about Updates and how to write them
+
+See our docs on Updates if you need to make changes to matomo for your pull request: [https://developer.matomo.org/guides/updates-aka-migrations](https://developer.matomo.org/guides/updates-aka-migrations).
+
 ## Matomo Core code standards
 
 See our [dedicated guide for Matomo Code Standards](/guides/coding-standards).
