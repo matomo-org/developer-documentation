@@ -98,3 +98,24 @@ You can create your own fixture as well, just extend `Piwik\Tests\Framework\Fixt
 System tests will generate an expected output file for every API method and period combination. The generated output (also called *processed* output) is stored in the `processed/` subdirectory of your plugin's `Test/` directory. The expected output should be stored in a directory named `expected/`.
 
 When you first create a system test, there will be no expected files. You will have to copy processed files to the expected folder after ensuring they are correct.
+
+## Troubleshooting
+
+**Only generated N API calls to test but was expecting more for this test.**
+
+Sometimes when writing a test you'll see this error in the test output:
+
+```
+Only generated N API calls to test but was expecting more for this test
+Want to test APIs: ...
+But only generated these URLs:
+...
+```
+
+This can have the following possible causes:
+
+* You're trying to test API methods that do not start with `get`. System tests are designed only to be able to test
+  `get` API methods.
+* You're missing a required parameter in a specific API call or it's being set to `null` or equivalent. To determine
+  what the root issue is here, you'll need to inspect the variable `$nameVariable` in this if statement:
+  [https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/DocumentationGenerator.php#L40-L41](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/DocumentationGenerator.php#L40-L41)
