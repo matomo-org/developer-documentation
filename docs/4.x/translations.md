@@ -146,20 +146,9 @@ As soon as we have set up your plugin within [our Piwik project on Transifex](ht
 
 Follow these guidelines when creating your own translation keys:
 
-1. **Reuse!** If a core plugin contains a translation you can use, use that instead. If there's a translation you want to use but can't because it's in the wrong case, try using functions like `lcfirst` and `ucfirst`.
+1. **Reuse!** If a core plugin contains a translation you can use, use that instead. If there's a translation you want to use but can't because it's in the wrong case, don't use functions like `lcfirst` and `ucfirst` as it won't work in all languages and rather create a new translation key.
 2. **Use numbered placeholders** if more than one is required in your text.
 
 Using numbered placeholders, such as `%1$s`, `%2$s`, etc. instead of `%s` makes it possible for translators to switch the order. That might be necessary to translate it to certain languages properly.
-
-3. **Reduce redundancy in your translated text.** If the same text appears in multiple translated text entries, try to move the translated text out by using sprintf parameters. For example, if you have text entries like:
-
-`"You cannot use commas."`
-and `"You cannot use underscores."`
-
-Try to split them up into something like:
-
-`"You cannot use %s."`
-`"commas"`
-and `"underscores"`.
 
 This guideline is more important for contributions to Piwik Core than for new plugins.
