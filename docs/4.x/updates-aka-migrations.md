@@ -73,6 +73,15 @@ To create a new Update class, do the following:
 3. In the `core/Updates` folder there will now be a new Update with the version you bumped Version.php to. Fill it with the update
    logic you need.
 
+## How Updates Are Run
+
+On every request Matomo will check if the current version of Matomo (stored in the `version_core` option) is less than the version hardcoded in Version.php.
+If this is true, then the code was updated, but not the database. This triggers the database update workflow.
+
+The update workflow looks for every update file in the `Updates` folder that has a version greater than the current version and less than or equal to the version in Version.php (using `version_compare()`). It runs each in order, one after the other. Once done, the `version_core` option is updated.
+
+The updater will also automatically make changes to tracking dimensions if their definition changes.
+
 ## Differences with the Migration pattern
 
 Some of this may sound familiar to you if you're aware of the Migration pattern. If so, you'll also note there
