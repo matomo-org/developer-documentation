@@ -76,6 +76,54 @@ There is also the **chained** cache which is worth a note. The chained cache all
 caching to an array, file and redis. Here, when requesting data, we'd first check if it's in the array backend, and if it is there, we use it.
 If not, we'd check the file backend then the redis backend. Using this cache we make the less expensive checks first and save time.
 
+## Cache Keys
+
+The key you use to cache data must be unique to differentiate the data from other data that might get cached. If, for example, your
+data is dependent on the currently loaded site, the cache ID must reflect this by including the idSite, for example `myData.1` where `1` is the
+site ID. Otherwise, when the idSite changes will use or overwrite data for a different site.
+
+Matomo includes a utility class that can be used to help with key creation: {@see Piwik\CacheId::class}. You can use the following
+methods to easily create cache keys and avoid some subtle bugs that occur from creating keys manually:
+
+* `languageAware()`: if your data depends on the currently loaded language, use this function.
+* `pluginAware()`: if your data depends on what plugins are currently loaded, use this function.
+* `siteAware()`: if your data depends on or more sites, or the currently requested sites (in other words, the idSite query parameter), use
+    this function.
+
+# Example Cache Usage
+
+Below is an example of how to use the `Cache` classes.
+
+```php
+class Controller
+{
+    /**
+     * @var Lazy
+     */
+    private Lazy $cache;
+    
+    public function __construct(Lazy $cache)
+    {
+        $this->cache = $cache;
+        parent::__construct();
+    }
+    
+    public function myExpensiveAction()
+    {
+        $idSite = Common::getRequestVar('idSite', $default = null, 'int');
+        $cacheKey = \Piwik\CacheId::siteAware('myCacheData', $idSite);
+        
+        // NOTE: using this approach where we fetch first instead of using contains only works if `false` is not a valid cached value
+        $data = $this->cache->fetch($cacheKey);
+        if ($data === false) {
+            $data = $this->doSomethingThatTakesALongTimeWithIdSite($idSite);
+            $this->cache->save($cacheKey, $data, 24 * 60 * 60);
+        }
+        return $data;
+    }
+}
+```
+
 # Cache in development mode
 
 When the development mode is enabled we avoid most caching to make sure code changes will be directly applied as some caches are
