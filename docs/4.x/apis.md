@@ -105,6 +105,25 @@ Any change would usually fall under one of these categories:
 
 If the change is a new config or a config change, then it's usually not mentioned in the developer changelog as they are mostly meant for users and not for developers.
 
+## PHP Plugin API
+
+### Process for declaring something as public API for plugins
+
+We provide a [public PHP API for plugins](https://developer.matomo.org/api-reference/classes) so plugins can extend and customise Matomo. For example, they allow plugins to define new reports, widgets and track additional data. They also provide utility methods to store data, to show notifications, to define settings and more.
+
+We aim to make as few classes as needed a public API, since they will be required to remain backwards compatible, while still providing plugin developers with a large enough stable API to effectively build with. Generally, to make a method or a class a public API the following criteria needs to be fulfilled:
+
+* The method or class has existed for ideally more than a year and there were very little to no changes to it. This means we can consider this API as a stable component that is unlikely to change again soon. Making something a public API means we can make changes to it only as part of a major version upgrade because of our [backwards compatibility promise](#our-backwards-compatibility-promise).
+* The component is used ideally at least by two plugins in different ways so we know the API works well for various use cases. The more the API is used by core or plugins the better.
+* We have written a plugin developer guide on this website as part of the "Develop" section. This is important because when documenting something you often notice that something may be hard to use or hard to explain meaning the API can be improved maybe making it a public API. 
+* The API follows our principle of being very easy to use for most of the use cases, yet it allows to be used in very advanced ways. A good example is for example our [Tasks API](/api-reference/Piwik/Plugin/Tasks) where you simply define for example `$this->hourly('myTask');` to run an hourly task, but you can also use it in a very advanced way if needed (for example `$this->custom($customSchedule, ...)`).  
+
+When making something a public API:
+
+  * We mention the new API in our [Developer Changelog](#developer-changelog).
+  * If an API is a component (like an API, Task, Setting, ...) then we provide a command to generate such a component if possible.
+  * We consider writing a blog post about it to mention this new API.
+
 ## HTTP API
 
 This section applies to the HTTP API's that are defined in an `API.php` file within a plugin.
