@@ -111,7 +111,7 @@ If the change is a new config or a config change, then it's usually not mentione
 
 We provide a [public PHP API for plugins](https://developer.matomo.org/api-reference/classes) so plugins can extend and customise Matomo. For example, they allow plugins to define new reports, widgets and track additional data. They also provide utility methods to store data, to show notifications, to define settings and more.
 
-We aim to make as few classes as needed a public API yet as many as possible. Generally, to make a method or a class a public API the following criteria needs to be fulfilled:
+We aim to make as few classes as needed a public API, since they will be required to remain backwards compatible, while still providing plugin developers with a large enough stable API to effectively build with. Generally, to make a method or a class a public API the following criteria needs to be fulfilled:
 
 * The method or class has existed for ideally more than a year and there were very little to no changes to it. This means we can consider this API as a stable component that is unlikely to change again soon. Making something a public API means we can make changes to it only as part of a major version upgrade because of our [backwards compatibility promise](#our-backwards-compatibility-promise).
 * The component is used ideally at least by two plugins in different ways so we know the API works well for various use cases. The more the API is used by core or plugins the better.
