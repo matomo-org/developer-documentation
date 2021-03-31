@@ -72,7 +72,7 @@ $translatedText = Piwik::translate('MyPlugin_BlogPost');
 or
 
 ```php
-$translatedText = Piwik::translate('MyPlugin_MyParagraphWithALink', '<a href="https://matomo.org">', '</a>');
+$translatedText = Piwik::translate('MyPlugin_MyParagraphWithALink', ['<a href="https://matomo.org">', '</a>']);
 // where the key "MyPlugin_MyParagraphWithALink" could look like this:
 // "My paragraph has a %1$slink%2$s."
 ```
