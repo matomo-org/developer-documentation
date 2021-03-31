@@ -6,4 +6,5 @@ subGuides:
   - user-in-depth
   - angularjs-getting-started
   - caching-in-matomo
+  - updates-aka-migrations
 ---
