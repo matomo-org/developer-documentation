@@ -118,4 +118,4 @@ This can have the following possible causes:
   `get` API methods.
 * You're missing a required parameter in a specific API call or it's being set to `null` or equivalent. To determine
   what the root issue is here, you'll need to inspect the variable `$nameVariable` in this if statement:
-  [https://github.com/matomo-org/matomo/blob/4.2.0/core/API/DocumentationGenerator.php#L40-L41](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/DocumentationGenerator.php#L40-L41)
+  [https://github.com/matomo-org/matomo/blob/4.2.0/core/API/DocumentationGenerator.php#L40-L41](https://github.com/matomo-org/matomo/blob/4.2.0/core/API/DocumentationGenerator.php#L40-L41)
