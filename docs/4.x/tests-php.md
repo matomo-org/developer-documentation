@@ -95,6 +95,7 @@ There are some common issues that can occur when writing integration tests. Thes
     ```
     protected static function configureFixture($fixture)
     {
+        parent::configureFixture($fixture);
         $fixture->extraTestEnvVars['loadRealTranslations'] = true;
     }
     ```
@@ -102,6 +103,7 @@ There are some common issues that can occur when writing integration tests. Thes
     ```
     protected static function configureFixture($fixture)
     {
+        parent::configureFixture($fixture);
         $fixture->createSuperUser = true;
     }
     ```
