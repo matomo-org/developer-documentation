@@ -2779,7 +2779,7 @@ Callback Signature:
 
 ### SegmentEditor.deactivate
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/API.php) in line [221](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/API.php#L221)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/API.php) in line [222](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/API.php#L222)*
 
 Triggered before a segment is deleted or made invisible. This event can be used by plugins to throw an exception
 or do something else.
@@ -2796,7 +2796,7 @@ Usages:
 
 ### SegmentEditor.update
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/API.php) in line [273](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/API.php#L273)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/API.php) in line [276](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/API.php#L276)*
 
 Triggered before a segment is modified. This event can be used by plugins to throw an exception
 or do something else.
