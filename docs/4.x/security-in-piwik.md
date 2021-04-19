@@ -32,6 +32,8 @@ When writing [Twig](https://twig.sensiolabs.org/) templates, try to avoid using 
 
 If you do use `|raw`, make sure what you're inserting has been properly escaped.
 
+Instead of `|raw`, consider using `|rawSafeDecoded` filter. You can check the source code of the filter in the [core/Twig.php](https://github.com/matomo-org/matomo/blob/3969bb967fb6c82196394bbf0320a5c8a4f71ff7/core/Twig.php#L376-L388) file.
+
 ### Be careful when using `jQuery.html()`
 
 In your JavaScript, be careful when using the `$.html` method to insert HTML into the DOM. Make sure the string you are inserting came from Piwik and has been escaped.
@@ -190,7 +192,7 @@ By no means is below a complete checklist. You'll always be required to still th
 * **Secure data storing**: Passwords or similar data like a sessionId is stored securely hashed
 * External links have a `rel=noopener` (although newer browser versions add this automatically)
 * **Email notifications are sent** for critical actions related to login credentials, tokens, 2FA etc and ideally also for any other crticial configuration change such as brute force changes etc.
-* **Unsafe methods**: Methods to watch out for: 
+* **Unsafe methods**: Methods to watch out for:
   * Insecure deserialization: `unserialize` is unsafe for user input. Consider using `Common::safe_unserialize` or for user input possibly `JSON` instead
   * `file_get_contents` can be unsafe when eg a protocol `phar://` can be passed to it
   * require|include(_once) should not use any user input unless it's whitelisted
