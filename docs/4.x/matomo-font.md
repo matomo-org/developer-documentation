@@ -37,7 +37,7 @@ Follow below steps to add, change or remove an icon.
 * Go to [https://icomoon.io/app/](https://icomoon.io/app/). 
 * Upload the downloaded file in icomoon by clicking on "Import Icons".
 * Confirm the question "Would you like to use all settings from the selected file" with "Yes".
-* Now you can make changes to the font such as removing a font by unselecting an icon.
+* Now you can make changes to the font such as removing a icon by unselecting it.
 * To add a new icon enter a name and search for the icon. We only use icons from these three fonts if any possible:
   * Material Icons (preferred if a matching icon can be found here)
   * `IcoMoon - Free` or `Font Awesome` (depending on which one looks better in the app)
@@ -55,4 +55,3 @@ Follow below steps to add, change or remove an icon.
 * Update [plugins/Morpheus/templates/demo.twig](https://github.com/matomo-org/matomo/blob/4.3.0-b3/plugins/Morpheus/templates/demo.twig#L613) by adding or removing the name of the changed icon in one of the available categories.
 * Open `https://{REPLACE WITH YOUR MATOMO DOMAIN}/index.php?module=Morpheus&action=demo#icons` and check if the icon shows up correctly.
 * Update our [LEGALNOTICE](https://github.com/matomo-org/matomo/blob/4.x-dev/LEGALNOTICE) and mention or remove the name of the icon we added, changed or removed. You already find a list of icons we've been using so far in this file.
-
