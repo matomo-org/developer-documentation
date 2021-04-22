@@ -42,7 +42,7 @@ Follow below steps to add, change or remove an icon.
   * Material Icons (preferred if a matching icon can be found here)
   * `IcoMoon - Free` or `Font Awesome` (depending on which one looks better in the app)
   * To add an icon simply select it.
-* Once you've made all needed changes click in the bottom on "Generate Font".
+* Once you've made all needed changes, click in the bottom on "Generate Font".
   * If needed, you could change the position of the icon here and make further tweaks such as rotate it, but this is usually not needed.
 * Click on "Download".
 * Extract the downloaded zip file.
