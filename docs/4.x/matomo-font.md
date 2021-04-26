@@ -1,8 +1,8 @@
 ---
 category: DevelopInDepth
-title: Matomo Font
+title: Matomo Icon Font
 ---
-# Matomo Font
+# Matomo Icon Font
 
 We use a custom Matomo font in our UI to show icons. You can [find the font in the repository as part of the Morpheus](https://github.com/matomo-org/matomo/tree/4.x-dev/plugins/Morpheus/fonts) theme.
 
