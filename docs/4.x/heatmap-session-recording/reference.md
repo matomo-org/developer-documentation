@@ -204,7 +204,7 @@ Example:
 
 ```js
 // disables the tracking of any activities on all Piwik trackers
-_paq.push(['HeatmapSessionRecording.disable']); 
+_paq.push(['HeatmapSessionRecording::disable']); 
 
 // or if you are using multiple Piwik trackers and only want to disable it for a specific tracker:
 var tracker = Matomo.getAsyncTracker(matomoUrl, matomoSiteId);
