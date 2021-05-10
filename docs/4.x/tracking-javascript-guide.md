@@ -203,7 +203,7 @@ We also highly recommend to set the searchCount parameter, as Piwik will specifi
 
 Custom variables are a powerful feature that enable you to track custom values for each visit, and/or each page view. Please see the [Tracking custom variables](https://matomo.org/docs/custom-variables/) documentation page for general information.
 
-You can set up up to 5 custom variables (name and value) for each visit to your website, and/or up to 5 custom variables for each page view. If you set a custom variable to a visitor, when he comes back one hour or two days later, it will be a new visit and his/her custom variables will be empty.
+You can set up up to 5 custom variables (name and value) for each visit to your website, and/or up to 5 custom variables for each page view. If you set a custom variable to a visitor, when they come back one hour or two days later, it will be a new visit and their custom variables will be empty.
 
 There are two "scopes" which you can set your custom variables to. The "scope" is the 4th parameter of the function `setCustomVariable()`.
 

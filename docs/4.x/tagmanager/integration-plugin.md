@@ -10,7 +10,7 @@ Ideally, an integration plugin offers both ways to give users choice on how to e
 
 ## A simple way
 
-The easiest way to embed a container without needing any authentication is to ask a user of the integration for her or his Matomo URL and a Container ID. Based on those two inputs you can generate the embed code which should look like this:
+The easiest way to embed a container without needing any authentication is to ask a user of the integration for their Matomo URL and a Container ID. Based on those two inputs you can generate the embed code which should look like this:
 
 ```html
 <!-- Matomo Tag Manager -->
