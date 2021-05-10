@@ -41,7 +41,7 @@ Once a user gives consent, you can either A) let Matomo remember the consent, or
 
 ### A) if you want to let Matomo remember the consent
 
-Once a user gives their consent, you can let Matomo remember that the user has given consent by simply calling the following method once the user has given her or his consent:
+Once a user gives their consent, you can let Matomo remember that the user has given consent by simply calling the following method once the user has given their consent:
 
 ```js
 // remember tracking consent was given for all subsequent page views and visits
@@ -51,7 +51,7 @@ _paq.push(['rememberConsentGiven']);
 _paq.push(['rememberCookieConsentGiven']);
 ```
 
-Matomo will then remember on subsequent requests that the user has given her or his consent by setting a cookie named "consent". As long as this cookie exists, Matomo will know that consent has been given and will automatically process the data. This means that you only need to call `_paq.push(['rememberConsentGiven'])` or `_paq.push(['rememberCookieConsentGiven'])` once.
+Matomo will then remember on subsequent requests that the user has given their consent by setting a cookie named "consent". As long as this cookie exists, Matomo will know that consent has been given and will automatically process the data. This means that you only need to call `_paq.push(['rememberConsentGiven'])` or `_paq.push(['rememberCookieConsentGiven'])` once.
 
 Notes:
 
@@ -93,7 +93,7 @@ In order to remove his consent the user needs to perform a specific action, for 
 
 ### A) if you want to let Matomo remember the consent
       
-When the user has expressed she or he no longer gives consent, you need to call the following method once:
+When the user has expressed they no longer give consent, you need to call the following method once:
 
 ```js
 // revoke tracking consent
@@ -106,7 +106,7 @@ _paq.push(['forgetCookieConsentGiven']);
 This makes sure the cookie that remembered the given consent is deleted.
 
 ### B) if you use your own consent tool to remember the consent
-When the user has expressed she or he no longer gives consent, you shall not call the following method anymore:
+When the user has expressed they no longer give consent, you shall not call the following method anymore:
 
 ```js
 // do not call this once user has removed their consent
