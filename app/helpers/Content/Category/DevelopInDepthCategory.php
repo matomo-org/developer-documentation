@@ -36,6 +36,7 @@ class DevelopInDepthCategory extends Category
                 new Guide('profiling-code'),
                 new Guide('reproducing-issues'),
                 new Guide('core-faqs'),
+                new Guide('release-management'),
                 new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
             ]),
             new UnlinkedCategory('in-depth-understanding-piwik'),
