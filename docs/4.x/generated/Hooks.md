@@ -2400,7 +2400,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [712](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L712)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [716](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L716)*
 
 Triggered before the user is authenticated, when the global authentication object
 should be created. Plugins that provide their own authentication implementation should use this event
