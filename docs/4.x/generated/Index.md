@@ -1032,6 +1032,7 @@ Index
 - [`setMetadata()`](Piwik/DataTable/Row.md#setmetadata) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`sumRow()`](Piwik/DataTable/Row.md#sumrow) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`sumRowMetadata()`](Piwik/DataTable/Row.md#sumrowmetadata) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
+- [`setIsSummaryRow()`](Piwik/DataTable/Row.md#setissummaryrow) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`setComparisons()`](Piwik/DataTable/Row.md#setcomparisons) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`Simple`](Piwik/DataTable/Simple.md) &mdash; *Class in namespace* [`Piwik\DataTable`](Piwik/DataTable)- [`setTimezone()`](Piwik/Date.md#settimezone) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`setTime()`](Piwik/Date.md#settime) &mdash; *Method in class* [`Date`](Piwik/Date.md)
