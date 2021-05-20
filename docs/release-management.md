@@ -4,6 +4,10 @@ category: DevelopInDepth
 
 # Release Management
 
+## Versioning
+
+We follow [semantic versioning](https://semver.org/) where a version number looks like this: `MAJOR.MINOR.PATCH`. 
+
 ## New release (patch, minor or major)
 
 We first release one or multiple beta versions while working on a release.
@@ -11,6 +15,17 @@ We first release one or multiple beta versions while working on a release.
 Before releasing a new version we release an RC. As soon as an RC has been released we only merge important bug fixes but no other changes anymore. We usually run the RC for a minor release for at least a week, for major releases multiple weeks and for patch releases at least one day but better multiple days.
 
 Once a new release has been released we wait for three days with merging PRs in case we have to do a patch release. Should a patch release be needed after the three days then we can create a branch eg `4.3.1` and merge patches into the branch and the main branch (eg `4.x-dev`).
+
+## New patch releases
+
+We aim to only merge changes that either:
+
+* fix a regression 
+* or they fix an important bug and there is basically no risk of introducing new regressions
+
+The goal is to not introduce new regressions in a patch release. These releases should also be released fairly soon after a minor or patch release depending on the severity of the regressions.
+
+If there are any other changes or even new features then we instead release a new minor version.
 
 ## New major releases
 
