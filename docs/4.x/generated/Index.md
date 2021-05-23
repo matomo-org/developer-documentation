@@ -643,6 +643,7 @@ Index
 - [`getSegmentHash()`](Piwik/Segment.md#getsegmenthash) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getSelectQuery()`](Piwik/Segment.md#getselectquery) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getStoredSegmentName()`](Piwik/Segment.md#getstoredsegmentname) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
+- [`getOriginalString()`](Piwik/Segment.md#getoriginalstring) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getSegments()`](Piwik/Segment/SegmentsList.md#getsegments) &mdash; *Method in class* [`SegmentsList`](Piwik/Segment/SegmentsList.md)
 - [`getSegment()`](Piwik/Segment/SegmentsList.md#getsegment) &mdash; *Method in class* [`SegmentsList`](Piwik/Segment/SegmentsList.md)
 - [`getPiwikUrl()`](Piwik/SettingsPiwik.md#getpiwikurl) &mdash; *Method in class* [`SettingsPiwik`](Piwik/SettingsPiwik.md)

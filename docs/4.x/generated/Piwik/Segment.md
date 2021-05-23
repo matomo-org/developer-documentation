@@ -53,6 +53,7 @@ The class defines the following methods:
 - [`__toString()`](#__tostring) &mdash; Returns the segment string.
 - [`combine()`](#combine) &mdash; Combines this segment with another segment condition, if the segment condition is not already in the segment.
 - [`getStoredSegmentName()`](#getstoredsegmentname)
+- [`getOriginalString()`](#getoriginalstring)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -219,5 +220,13 @@ The combination is naive in that it does not take order of operations into accou
 -  It accepts the following parameter(s):
     - `$idSite`
       
+- It does not return anything or a mixed result.
+
+<a name="getoriginalstring" id="getoriginalstring"></a>
+<a name="getOriginalString" id="getOriginalString"></a>
+### `getOriginalString()`
+
+#### Signature
+
 - It does not return anything or a mixed result.
 
