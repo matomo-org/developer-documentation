@@ -118,3 +118,14 @@ command.
 
 The only other difference in the workflow for creating an Update for a plugin is where the plugin version is stored, which is
 the `plugin.json` file.
+
+# Dimension Column Management
+
+Dimension column types are defined within the individual Dimension types themselves, for example: [https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/DevicesDetection/Columns/DeviceBrand.php#L21](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/DevicesDetection/Columns/DeviceBrand.php#L21).
+
+The creation and updating of dimension columns in log tables is handled automatically by the updater. When the column
+is created, we create an entry in the `option` table with a name like `version_log_table.dimension_column_name` for the column
+with the value set to the column type, which is how we can tell if we need to change it.
+
+If we see a column that already has a version, and the column type in the `option` table is different from the dimension
+PHP file, we know we need to update it.
