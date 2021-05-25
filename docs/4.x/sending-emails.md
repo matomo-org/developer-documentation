@@ -15,11 +15,9 @@ All mail sending functionality in Matomo goes through the `Mail` class, which in
 Using the class is straightforward:
 
 ```php
-$config = \Piwik\Config::getInstance();
-
 $mail = new \Piwik\Mail();
 $mail->addTo($targetEmail, 'Matomo User');
-$mail->setFrom($config->General['noreply_email_address'], $config->General['noreply_email_name']);
+$mail->setDefaultFromPiwik();
 $mail->setSubject($subject);
 $mail->setWrappedHtmlBody($body);
 $mail->send();
