@@ -7,5 +7,6 @@ subGuides:
   - notifications
   - extending-database
   - logging
+  - sending-emails
 ---
 
