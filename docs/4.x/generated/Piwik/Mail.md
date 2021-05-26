@@ -33,6 +33,7 @@ The class defines the following methods:
 - [`addAttachment()`](#addattachment)
 - [`getAttachments()`](#getattachments)
 - [`send()`](#send) &mdash; Sends the mail
+- [`safeSend()`](#safesend) &mdash; If the send email process throws an exception, we catch it and log it
 - [`setSmtpDebug()`](#setsmtpdebug) &mdash; Enables SMTP debugging
 - [`isSmtpDebugEnabled()`](#issmtpdebugenabled) &mdash; Returns whether SMTP debugging is enabled or not
 - [`getMailHost()`](#getmailhost) &mdash; Returns the hostname mails will be sent from
@@ -312,6 +313,19 @@ Sends the mail
 - It returns a `bool` value.
 - It throws one of the following exceptions:
     - `DI\NotFoundException`
+
+<a name="safesend" id="safesend"></a>
+<a name="safeSend" id="safeSend"></a>
+### `safeSend()`
+
+If the send email process throws an exception, we catch it and log it
+
+#### Signature
+
+- It returns a `void` value.
+- It throws one of the following exceptions:
+    - `DI\NotFoundException`
+    - `DI\DependencyException`
 
 <a name="setsmtpdebug" id="setsmtpdebug"></a>
 <a name="setSmtpDebug" id="setSmtpDebug"></a>

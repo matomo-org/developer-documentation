@@ -1060,6 +1060,7 @@ Index
 - [`setSubject()`](Piwik/Mail.md#setsubject) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`setReplyTo()`](Piwik/Mail.md#setreplyto) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`send()`](Piwik/Mail.md#send) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
+- [`safeSend()`](Piwik/Mail.md#safesend) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`setSmtpDebug()`](Piwik/Mail.md#setsmtpdebug) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`sanitiseString()`](Piwik/Mail.md#sanitisestring) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`set()`](Piwik/Option.md#set) &mdash; *Method in class* [`Option`](Piwik/Option.md)

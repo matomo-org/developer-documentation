@@ -1675,7 +1675,7 @@ Callback Signature:
 
 ### Mail.send
 
-*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Mail.php) in line [287](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Mail.php#L287)*
+*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Mail.php) in line [290](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Mail.php#L290)*
 
 This event is posted right before an email is sent. You can use it to customize the email by, for example, replacing
 the subject/body, changing the from address, etc.
@@ -1688,7 +1688,7 @@ Callback Signature:
 
 ### Mail.shouldSend
 
-*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Mail.php) in line [382](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Mail.php#L382)*
+*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Mail.php) in line [402](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Mail.php#L402)*
 
 This event is posted before sending an email. You can use it to abort sending a specific email, if you want.
 
@@ -3379,7 +3379,7 @@ Callback Signature:
 
 ### TwoFactorAuth.enabled
 
-*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php) in line [219](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php#L219)*
+*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php) in line [230](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php#L230)*
 
 
 
@@ -3512,7 +3512,7 @@ Callback Signature:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [734](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L734)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [744](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L744)*
 
 Triggered after a new user is created.
 
@@ -3545,7 +3545,7 @@ Callback Signature:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Model.php) in line [566](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Model.php#L566)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Model.php) in line [575](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Model.php#L575)*
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
@@ -3562,7 +3562,7 @@ Usages:
 
 ### UsersManager.getDefaultDates
 
-*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php) in line [193](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php#L193)*
+*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php) in line [195](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php#L195)*
 
 Triggered when the list of available dates is requested, for example for the
 User Settings > Report date to load by default.
@@ -3589,7 +3589,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1115](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1115)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1133](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1133)*
 
 
 
@@ -3603,7 +3603,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [960](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L960)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [970](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L970)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
