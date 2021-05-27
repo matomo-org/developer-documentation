@@ -14,10 +14,6 @@ The class defines the following methods:
 
 - [`prefixTable()`](#prefixtable) &mdash; Returns a prefixed table name.
 - [`unprefixTable()`](#unprefixtable) &mdash; Removes the prefix from a table name and returns the result.
-- [`mb_substr()`](#mb_substr) &mdash; Multi-byte substr() - works with UTF-8.
-- [`mb_strlen()`](#mb_strlen) &mdash; Multi-byte strlen() - works with UTF-8
-- [`mb_strtolower()`](#mb_strtolower) &mdash; Multi-byte strtolower() - works with UTF-8.
-- [`mb_strtoupper()`](#mb_strtoupper) &mdash; Multi-byte strtoupper() - works with UTF-8.
 - [`sanitizeInputValues()`](#sanitizeinputvalues) &mdash; Sanitizes a string to help avoid XSS vulnerabilities.
 - [`unsanitizeInputValue()`](#unsanitizeinputvalue) &mdash; Unsanitizes a single input value and returns the result.
 - [`unsanitizeInputValues()`](#unsanitizeinputvalues) &mdash; Unsanitizes one or more values and returns the result.
@@ -60,68 +56,6 @@ option.
 
 - *Returns:*  `string` &mdash;
     The unprefixed table name, eg "log_visit".
-
-<a name="mb_substr" id="mb_substr"></a>
-<a name="mb_substr" id="mb_substr"></a>
-### `mb_substr()`
-
-Multi-byte substr() - works with UTF-8.
-
-Calls `mb_substr` if available and falls back to `substr` if it's not.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$string`
-      
-    - `$start`
-      
-- It returns a `string` value.
-
-<a name="mb_strlen" id="mb_strlen"></a>
-<a name="mb_strlen" id="mb_strlen"></a>
-### `mb_strlen()`
-
-Multi-byte strlen() - works with UTF-8
-
-Calls `mb_substr` if available and falls back to `substr` if not.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$string` (`string`) &mdash;
-      
-- It returns a `int` value.
-
-<a name="mb_strtolower" id="mb_strtolower"></a>
-<a name="mb_strtolower" id="mb_strtolower"></a>
-### `mb_strtolower()`
-
-Multi-byte strtolower() - works with UTF-8.
-
-Calls `mb_strtolower` if available and falls back to `strtolower` if not.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$string` (`string`) &mdash;
-      
-- It returns a `string` value.
-
-<a name="mb_strtoupper" id="mb_strtoupper"></a>
-<a name="mb_strtoupper" id="mb_strtoupper"></a>
-### `mb_strtoupper()`
-
-Multi-byte strtoupper() - works with UTF-8.
-
-Calls `mb_strtoupper` if available and falls back to `strtoupper` if not.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$string` (`string`) &mdash;
-      
-- It returns a `string` value.
 
 <a name="sanitizeinputvalues" id="sanitizeinputvalues"></a>
 <a name="sanitizeInputValues" id="sanitizeInputValues"></a>
