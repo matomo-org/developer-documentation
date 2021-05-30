@@ -2052,7 +2052,7 @@ Callback Signature:
 
 ### PrivacyManager.deleteLogsOlderThan
 
-*Defined in [Piwik/Plugins/PrivacyManager/LogDataPurger](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/LogDataPurger.php) in line [97](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/LogDataPurger.php#L97)*
+*Defined in [Piwik/Plugins/PrivacyManager/LogDataPurger](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/LogDataPurger.php) in line [104](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/LogDataPurger.php#L104)*
 
 Triggered when a plugin is supposed to delete log/raw data that is older than a certain amount of days. **Example**
 
