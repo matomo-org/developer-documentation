@@ -310,7 +310,9 @@ Sends the mail
 
 #### Signature
 
-- It returns a `bool` value.
+
+- *Returns:*  `bool`|`null` &mdash;
+    returns null if sending the mail was aborted by the Mail.send event
 - It throws one of the following exceptions:
     - `DI\NotFoundException`
 
