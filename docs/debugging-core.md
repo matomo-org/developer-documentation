@@ -67,6 +67,10 @@ You can configure to print debug output when executing a tracking request. This 
 
 For more information about this read the [debugging the tracker guide](/api-reference/tracking-api#debugging-the-tracker).
 
+### Debugging the JS tracker
+
+You can debug the JS tracker with some special strategies we've documented [here](/develop-in-depth/jstracker-core#debugging-the-js-tracker).
+
 ### Debugging the archiver
 
 To debug the archiver, you will need to change below config settings as by default the archiver is only executed approx every 900 seconds (see [time_before_today_archive_considered_outdated config setting](https://matomo.org/faq/roll-up-reporting/faq_25754/)). This means by default the archiver would only launch once, and then at the earliest again after 15 minutes if there was a tracking request. To force the archiver to launch every time, you will need to adjust the following configurations:
