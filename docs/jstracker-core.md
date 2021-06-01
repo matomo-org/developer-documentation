@@ -63,7 +63,7 @@ If you are reviewing a pull request from a community contributor and you are hap
 * Tests should now pass
 * Thank the author of the PR for the contribution and merge this PR
 
-# Debugging the JS Tracker
+## Debugging the JS Tracker
 
 ### When you are not in control of the website
 
