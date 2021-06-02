@@ -6,7 +6,7 @@ category: API Reference
 
 This page lists all expected behavior of the internal report aggregation and storing mechanism (archiving)
 and the expected behavior of the `core:archive` command (the cron archiving process).
-It serves as a reference since the number of cases to think about is too high to keep in ones head and as
+It serves as a reference since the number of cases to think about is too high to keep in ones head, and as
 a jumping off point for manual testing of the whole process.
 
 It will be added to over time, since this process in Matomo is especially complex.
@@ -25,7 +25,13 @@ request/process, and cannot find a recent, usable archive, we generate it.
 
 ### Settings
 
-* browser triggered archiving: TODO
+* browser triggered archiving: this setting determines whether log aggregation is allowed to be launched from browser requests.
+  If disabled, this only happens if a segment that is not set to auto-archive is requested (referred to as a custom segment), or
+  if a range period is requested. The setting is stored in two potential places, the `[General] enable_browser_archiving_triggering`
+  INI config setting or the `enableBrowserTriggerArchiving` option value. There are other related INI config settings to disable archiving even if
+  a custom segment or range period is requested: `[General] browser_archiving_disabled_enforce` and `[General] archiving_range_force_on_browser_request`
+  respectively.
+  In the code, the `Rules::isBrowserTriggerEnabled()` checks for this setting.
 * today time to live: this value is the number of seconds before which an archive for today's date is considered valid. If an
   archive is older than this value, then it is considered outdated. Controlled by a UI setting and the
   `[General] time_before_today_archive_considered_outdated` INI config option. This is also used as the default value
@@ -33,7 +39,9 @@ request/process, and cannot find a recent, usable archive, we generate it.
 * `[General] time_before_week_archive_considered_outdated`, `[General time_before_month_archive_considered_outdated]`,
   `[General] time_before_year_archive_considered_outdated`, `[General] time_before_range_archive_considered_outdated`:
   specific ttls for different period types, defaults to 'today time to live' value if not specified
-* TODO
+* custom date ranges to pre-process: there is an INI config setting and some user settings that allow users to specify that
+  certain ranges should be pre-archived. The INI setting is `[General] archiving_custom_ranges`. The user setting is the
+  setting that controls the default period to load in Matomo.
 
 ### Rules
 
@@ -90,28 +98,41 @@ This is not desired behavior, we prefer if only one process creates a single arc
 
 When this happens, it is expected that both will aggregate the same data, and one will finish after the other, giving
 it a greater `ts_archived` value. This archive is the one that ends up being used; the duplicate gets cleaned up in a
-scheduled task.
+scheduled task during archive purging.
 
 **When a site is deleted during archiving**
 
-TODO
+If a site is deleted while data for it is being archived, the archiver should handle it gracefully,
+without erroring. If it happens while data is being aggregated, the data will finish being archived, then
+the `core:archive` command should notice the site no longer exists, and move on to the next one. The archive
+data will eventually be deleted in a scheduled task.
 
 ## core:archive command
 
 _Brief Description of system:_ The `core:archive` command is meant to be run as a cron job periodically archiving data
 based on a queue. The queue that controls what archives get launched is the `archive_invalidations` table. `core:archive`
-will both, insert into this table before processing each site and process the entries, launching the archiving process
+will both: insert into this table before processing each site and process the entries, launching the archiving process
 for each valid entry.
 
 ### General Expected Behavior
 
 **invalidating today & yesterday archives**
 
-TODO
+`core:archive` will automatically invalidate the archives for `today` and `yesterday` if certain criteria are met.
+
+For `today`, the archive will be automatically invalidated if there are visits for today and if the existing archive is
+older than the configured TTL (see [the previous section on archiving settings](#settings)).
+
+For `yesterday`, the archive will be automatically invalidated if the current date is a different day than the `ts_archived`
+date for the latest archive for `yesterday`. If this is true, it means the day has changed since the archive was processed,
+and there may be more visits to process. For example, the last known archive for 2021-05-20 is calculated at 2021-05-20 20:00:00,
+but it is now 2021-05-21 00:30:00, and there may be visits between those two times to process.
 
 **invalidating custom ranges**
 
-TODO
+If custom ranges are specified in the `[General] archiving_custom_ranges` INI config setting and/or
+the default period to load in Matomo is configured to be a range, they will be invalidated and
+rearchived during `core:archive`.
 
 **invalidating queued invalidations**
 
@@ -212,3 +233,52 @@ TODO
         $command->addOption('php-cli-options', null, InputOption::VALUE_OPTIONAL, 'Forwards the PHP configuration options to the PHP CLI command. For example "-d memory_limit=8G". Note: These options are only applied if the archiver actually uses CLI and not HTTP.', $default = '');
         $command->addOption('force-all-websites', null, InputOption::VALUE_NONE, 'Force archiving all websites.');
 */
+
+## Archive Invalidation
+
+Archive invalidation happens as a part of the `core:archive` command and is also triggered immediately before core archiving
+if browser triggered archiving is enabled. These sources of invalidation are from Matomo automatically issuing invalidations.
+
+It can also be invoked by the user through the `core:invalidate-report-data` command and through the InvalidateReports plugin.
+
+### Expected Behavior
+
+**automated triggering of archive invalidations**
+
+* When tracking data in the past, the periods the data belong to are scheduled to be invalidated. They are not immediately
+  invalidated to avoid having to add extra queries to the tracker. The periods to invalidate are stored in option values
+  and eventually `core:archive` or the core archiving system will process them.
+  
+  See methods in `ArchiveInvalidator` named like `rememberToInvalidateArchivedReportsLater()` to see the details of how this
+  is implemented.
+
+* When certain entities are changed or created, for example, segments, funnels or custom reports, Matomo will rearchive past
+  data to update these reports. The rearchiving is initiated through invalidating the old archive data.
+
+**what specifically gets invalidated**
+
+When a period is invalidated, all higher periods are automatically invalidated (because if the lower period's metrics change,
+the existing higher periods are no longer accurate).
+
+If the `cascade` option is specified when invoking `ArchiveInvalidator` (or the invalidation command), child periods of
+the given period will also be invalidated. So if a week is to be invalidated, the days within the week would also be invalidated.
+
+When invalidating 'All Visits' archives, all segment archives and plugin specific archives are effectively invalidated as well.
+When invalidating a segment archive, plugin specific archives for the segment will be invalidated as well.
+This behavior is due to how we look for archives to invalidate in DataAccess/Model.php. We compute the done flag name of the archive
+to invalidate, then look for archives with a `name LIKE '...doneflag...%'`.
+
+**invalidating in archive tables vs. inserting into the archive_invalidations table**
+
+The invalidation process "invalidates" in two ways. The first is marking archive status entries in the archive_numeric tables
+as having a done value of `DONE_INVLAIDATED`. This marks the archive as having out of date data.
+
+If browser triggered archiving is enabled, and a `DONE_INVALIDATED` archive is encountered, it will be rearchived.
+
+The second thing that is done, is inserting an entry into the archive_invalidations table. This tells the core:archive process that
+the archive needs to be reprocessed.
+
+Everything that is invalidated in the archive tables should also appear in the archive_invalidations table, except for
+plugin specific archives. Since we end up triggering archiving for the all plugins archiving, we don't need to re-create
+invalidated plugin specific archives. The only time plugin specific archives are inserted into the archive_invalidations table,
+is if we are only invalidating a specific plugin's archive.
