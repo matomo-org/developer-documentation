@@ -218,6 +218,7 @@ The abstract class defines the following methods:
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getDimensions()`](#getdimensions) Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`getRemovedDimensions()`](#getremoveddimensions) &mdash; Returns a list of dimension class names that have been removed from core over time Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getType()`](#gettype) &mdash; Returns the type of the dimension which defines what kind of value this dimension stores. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`onLookupAction()`](#onlookupaction) &mdash; If the value you want to save for your dimension is something like a page title or page url, you usually do not want to save the raw value over and over again to save bytes in the database.
@@ -525,6 +526,16 @@ Gets an instance of all available visit, action and conversion dimension.
     - `$plugin` ([`Plugin`](../../../Piwik/Plugin.md)) &mdash;
       
 - It does not return anything or a mixed result.
+
+<a name="getremoveddimensions" id="getremoveddimensions"></a>
+<a name="getRemovedDimensions" id="getRemovedDimensions"></a>
+### `getRemovedDimensions()`
+
+Returns a list of dimension class names that have been removed from core over time
+
+#### Signature
+
+- It returns a `string[]` value.
 
 <a name="getmodule" id="getmodule"></a>
 <a name="getModule" id="getModule"></a>

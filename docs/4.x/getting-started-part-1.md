@@ -75,7 +75,7 @@ If your computer is using a Debian based operating system, you can install all t
 
 <!-- NOTE TO YOU see below -->
 
-    $ sudo apt-get install php7.2 php7.2-curl php7.2-gd php7.2-cli mysql-server php7.2-mysql php-xml php7.2-mbstring
+    $ sudo apt-get install php php-curl php-gd php-cli mysql-server php-mysql php-xml php-mbstring
 
 <!-- NOTE TO YOU :-) Please also update the instructions here: https://matomo.org/docs/requirements/ -->
 
@@ -116,7 +116,7 @@ Piwik should now be available at [http://localhost:8000/](http://localhost:8000/
 
 ### Install MySQL and create a database
 
-When you install Piwik, at the database creation step, you will need to specify your database user. 
+When you install Piwik, at the database creation step, you will need to specify your database user.
 
 [-> Click here to see how to create a new user in MySQL](https://matomo.org/faq/how-to-install/faq_23484/).
 
@@ -134,7 +134,7 @@ Once Piwik is running, open it in your browser and follow the instructions to co
 
 #### Adding anonymous access to your reports
 
-Before we finish, we're going to allow anyone to view reports on your new Piwik environment. Open the _Manage > Users_ admin page and click the red icon in the **View** column for the **anonymous** user:
+Before we finish, we're going to allow anyone to view reports on your new Piwik environment. Open the Administration dashboard (click on the cog icon), go to _System > Users_ page and choose **View** in the **Role** column for the **anonymous** user:
 
 <img src="/img/getting_started_users_manager_anonymous.png"/>
 
@@ -152,7 +152,7 @@ After installing Piwik, we're going to change some of Piwik's INI configuration 
 
 You're now ready to create your first plugin, but before we do that, let's add some test data for you to play with.
 
-In your browser, load Piwik and navigate to _Administration > Marketplace. Look for the "Visitor Generator" plugin and enable it. Then on the admin menu to the left, click on "Visitor Generator" (under "Development").
+In your browser, load Piwik and navigate to  _Platform > Marketplace_ on the Administration dashboard. Look for the "Visitor Generator" plugin and enable it. Then on the admin menu to the left, click on _Development > Visitor Generator_.
 
 On this page you'll see a form where you can select a site and enter a number of days to generate data for:
 
@@ -184,9 +184,11 @@ mysql -u'db_username_here' -p -e 'CREATE DATABASE matomo_tests'
 
 The configured DB user for the tests should also have privileges to create and drop databases.
 
+For more detailed instructions you can visit the [PHP Tests page](/guides/tests-php).
+
 ## Create a plugin
 
-Your development environment is set up, and you are now ready to create a plugin! 
+Your development environment is set up, and you are now ready to create a plugin!
 
 First of all, you need to choose the plugin's name. Remember, if you're going to publish on [Matomo's marketplace](https://plugins.matomo.org/), CamelCase will be splitted into words. So, for example "MyPlugin" will be published as "My Plugin".
 
@@ -216,6 +218,11 @@ The command-line tool will create a new directory for your plugin (in the **plug
 - `plugin.json`: Contains plugin metadata such as the name, description, version, etc.
 - `README.md`: A dummy README file for your plugin.
 - `screenshots/`: Place screenshots of your plugin in this folder in case you want to [distribute it on the Piwik Marketplace](https://developer.matomo.org/guides/distributing-your-plugin).
+
+## Troubleshooting Local Development
+
+* **The admin pages in my local setup are TOO slow**: This is caused by the Marketplace plugin running in the background. If you disable the plugin, admin
+  pages will load much faster for you. You can manage plugins on the Administration dashboard, _System > Plugins_ page. (Do remember to enable it if you ever need to work on code that uses it.)
 
 ## What to read next
 

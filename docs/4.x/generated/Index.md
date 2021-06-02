@@ -258,6 +258,7 @@ Index
 ## F
 
 - [`factory()`](Piwik/Archive.md#factory) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
+- [`forceFetchingWithoutLaunchingArchiving()`](Piwik/Archive.md#forcefetchingwithoutlaunchingarchiving) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`formatValue()`](Piwik/Columns/Dimension.md#formatvalue) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`forceSave()`](Piwik/Config.md#forcesave) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`filter()`](Piwik/DataTable.md#filter) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -358,6 +359,7 @@ Index
 - [`getCategoryId()`](Piwik/Category/Subcategory.md#getcategoryid) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getName()`](Piwik/Category/Subcategory.md#getname) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getOrder()`](Piwik/Category/Subcategory.md#getorder) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
+- [`getHelp()`](Piwik/Category/Subcategory.md#gethelp) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getDbColumnJoin()`](Piwik/Columns/Dimension.md#getdbcolumnjoin) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getDbDiscriminator()`](Piwik/Columns/Dimension.md#getdbdiscriminator) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getEnumColumnValues()`](Piwik/Columns/Dimension.md#getenumcolumnvalues) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
@@ -372,6 +374,7 @@ Index
 - [`getId()`](Piwik/Columns/Dimension.md#getid) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](Piwik/Columns/Dimension.md#getalldimensions) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getDimensions()`](Piwik/Columns/Dimension.md#getdimensions) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
+- [`getRemovedDimensions()`](Piwik/Columns/Dimension.md#getremoveddimensions) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getModule()`](Piwik/Columns/Dimension.md#getmodule) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getType()`](Piwik/Columns/Dimension.md#gettype) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`getTable()`](Piwik/Columns/Discriminator.md#gettable) &mdash; *Method in class* [`Discriminator`](Piwik/Columns/Discriminator.md)
@@ -640,6 +643,7 @@ Index
 - [`getSegmentHash()`](Piwik/Segment.md#getsegmenthash) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getSelectQuery()`](Piwik/Segment.md#getselectquery) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getStoredSegmentName()`](Piwik/Segment.md#getstoredsegmentname) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
+- [`getOriginalString()`](Piwik/Segment.md#getoriginalstring) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getSegments()`](Piwik/Segment/SegmentsList.md#getsegments) &mdash; *Method in class* [`SegmentsList`](Piwik/Segment/SegmentsList.md)
 - [`getSegment()`](Piwik/Segment/SegmentsList.md#getsegment) &mdash; *Method in class* [`SegmentsList`](Piwik/Segment/SegmentsList.md)
 - [`getPiwikUrl()`](Piwik/SettingsPiwik.md#getpiwikurl) &mdash; *Method in class* [`SettingsPiwik`](Piwik/SettingsPiwik.md)
@@ -773,6 +777,7 @@ Index
 - [`isOptimizeInnoDBSupported()`](Piwik/Db.md#isoptimizeinnodbsupported) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`IP`](Piwik/IP.md) &mdash; *Class in namespace* `Piwik`- [`info()`](Piwik/Log.md#info) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`isSmtpDebugEnabled()`](Piwik/Mail.md#issmtpdebugenabled) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
+- [`isReferrerHostValid()`](Piwik/Nonce.md#isreferrerhostvalid) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
 - [`isMultiplePeriod()`](Piwik/Period.md#ismultipleperiod) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`isDateInPeriod()`](Piwik/Period.md#isdateinperiod) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`isPeriodIntersectingWith()`](Piwik/Period.md#isperiodintersectingwith) &mdash; *Method in class* [`Period`](Piwik/Period.md)
@@ -848,18 +853,17 @@ Index
 
 ## L
 
-- [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; *Class in namespace* `Piwik\DataAccess`- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`$lockPrivilegeGranted`](Piwik/Db.md#$lockprivilegegranted) &mdash; *Property in class* [`Db`](Piwik/Db.md)
+- [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; *Class in namespace* `Piwik\DataAccess`- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`lastWeek()`](Piwik/Date.md#lastweek) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`lastMonth()`](Piwik/Date.md#lastmonth) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`lastYear()`](Piwik/Date.md#lastyear) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`$lockPrivilegeGranted`](Piwik/Db.md#$lockprivilegegranted) &mdash; *Property in class* [`Db`](Piwik/Db.md)
 - [`lockTables()`](Piwik/Db.md#locktables) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md) &mdash; *Class in namespace* `Piwik\Intl\Data\Provider`- [`Log`](Piwik/Log.md) &mdash; *Class in namespace* `Piwik`- [`loadAllPluginsAndGetTheirInfo()`](Piwik/Plugin/Manager.md#loadallpluginsandgettheirinfo) &mdash; *Method in class* [`Manager`](Piwik/Plugin/Manager.md)
 
 ## M
 
 - [`$metricId`](Piwik/Columns/Dimension.md#$metricid) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
-- [`MetricsList`](Piwik/Columns/MetricsList.md) &mdash; *Class in namespace* `Piwik\Columns`- [`mb_substr()`](Piwik/Common.md#mb_substr) &mdash; *Method in class* [`Common`](Piwik/Common.md)
-- [`mb_strlen()`](Piwik/Common.md#mb_strlen) &mdash; *Method in class* [`Common`](Piwik/Common.md)
-- [`mb_strtolower()`](Piwik/Common.md#mb_strtolower) &mdash; *Method in class* [`Common`](Piwik/Common.md)
-- [`mb_strtoupper()`](Piwik/Common.md#mb_strtoupper) &mdash; *Method in class* [`Common`](Piwik/Common.md)
-- [`makeFromIndexedArray()`](Piwik/DataTable.md#makefromindexedarray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`MetricsList`](Piwik/Columns/MetricsList.md) &mdash; *Class in namespace* `Piwik\Columns`- [`makeFromIndexedArray()`](Piwik/DataTable.md#makefromindexedarray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`mergeSubtables()`](Piwik/DataTable.md#mergesubtables) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`makeFromSimpleArray()`](Piwik/DataTable.md#makefromsimplearray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`MetadataCallbackAddMetadata`](Piwik/DataTable/Filter/MetadataCallbackAddMetadata.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`MetadataCallbackReplace`](Piwik/DataTable/Filter/MetadataCallbackReplace.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`Map`](Piwik/DataTable/Map.md) &mdash; *Class in namespace* [`Piwik\DataTable`](Piwik/DataTable)- [`mergeChildren()`](Piwik/DataTable/Map.md#mergechildren) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
@@ -1025,6 +1029,7 @@ Index
 - [`setMetadata()`](Piwik/DataTable/Row.md#setmetadata) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`sumRow()`](Piwik/DataTable/Row.md#sumrow) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`sumRowMetadata()`](Piwik/DataTable/Row.md#sumrowmetadata) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
+- [`setIsSummaryRow()`](Piwik/DataTable/Row.md#setissummaryrow) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`setComparisons()`](Piwik/DataTable/Row.md#setcomparisons) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`Simple`](Piwik/DataTable/Simple.md) &mdash; *Class in namespace* [`Piwik\DataTable`](Piwik/DataTable)- [`setTimezone()`](Piwik/Date.md#settimezone) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`setTime()`](Piwik/Date.md#settime) &mdash; *Method in class* [`Date`](Piwik/Date.md)
@@ -1051,6 +1056,7 @@ Index
 - [`setSubject()`](Piwik/Mail.md#setsubject) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`setReplyTo()`](Piwik/Mail.md#setreplyto) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`send()`](Piwik/Mail.md#send) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
+- [`safeSend()`](Piwik/Mail.md#safesend) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`setSmtpDebug()`](Piwik/Mail.md#setsmtpdebug) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`sanitiseString()`](Piwik/Mail.md#sanitisestring) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
 - [`set()`](Piwik/Option.md#set) &mdash; *Method in class* [`Option`](Piwik/Option.md)

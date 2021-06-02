@@ -46,8 +46,8 @@ class Environment
         $replaceNew = array($newBrandOthers . ' ', ' ' . $newBrandOthers);
 
         // eg makes sure Piwik won't be replaced again
-        $keepWording = array('Matomo Developer Zone (formerly Piwik)', 'Piwik Developer Zone', 'Matomo (Piwik)', $newBrandFirst, 'Piwik.Media', 'Piwik.Form', 'Piwik.AbTest', 'Piwik.Heatmap', 'Piwik.get', 'PiwikTracker', 'typeof Piwik', '\Piwik', 'Piwik\\');
-        $keepWordingReplace = array('#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMOPIWIK#_#', '#_#saveReplace#_#', '#_#piwikmedia#_#', '#_#piwikform#_#', '#_#piwikabtest#_#', '#_#piwikheatmap#_#', '#_#piwikget#_#', '#_#piwiktracker#_#', '#_#typeofpiwik#_#', '#_#shlashpiwik#_#', '#_#piwikslash#_#');
+        $keepWording = array('Matomo Developer Zone (formerly Piwik)', 'Piwik Developer Zone', 'Matomo (Piwik)', $newBrandFirst, 'Piwik.Media', 'Piwik.Form', 'Piwik.AbTest', 'Piwik.Heatmap', 'Piwik.get', 'PiwikTracker', 'typeof Piwik', '\Piwik', 'Piwik\\', 'Piwik::');
+        $keepWordingReplace = array('#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMOPIWIK#_#', '#_#saveReplace#_#', '#_#piwikmedia#_#', '#_#piwikform#_#', '#_#piwikabtest#_#', '#_#piwikheatmap#_#', '#_#piwikget#_#', '#_#piwiktracker#_#', '#_#typeofpiwik#_#', '#_#shlashpiwik#_#', '#_#piwikslash#_#','#_#piwikdoublecolon#_#');
 
         $content = str_replace($keepWording, $keepWordingReplace, $content);
 
@@ -105,7 +105,7 @@ class Environment
         if (!isset(self::$piwikVersion)) {
             self::$piwikVersion = LATEST_PIWIK_DOCS_VERSION;
         }
-        
+
         return self::$piwikVersion;
     }
 

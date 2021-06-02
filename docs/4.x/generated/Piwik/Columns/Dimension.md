@@ -209,6 +209,7 @@ The abstract class defines the following methods:
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension.
 - [`getAllDimensions()`](#getalldimensions) &mdash; Gets an instance of all available visit, action and conversion dimension.
 - [`getDimensions()`](#getdimensions)
+- [`getRemovedDimensions()`](#getremoveddimensions) &mdash; Returns a list of dimension class names that have been removed from core over time
 - [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension.
 - [`getType()`](#gettype) &mdash; Returns the type of the dimension which defines what kind of value this dimension stores.
 
@@ -513,6 +514,16 @@ Gets an instance of all available visit, action and conversion dimension.
     - `$plugin` ([`Plugin`](../../Piwik/Plugin.md)) &mdash;
       
 - It does not return anything or a mixed result.
+
+<a name="getremoveddimensions" id="getremoveddimensions"></a>
+<a name="getRemovedDimensions" id="getRemovedDimensions"></a>
+### `getRemovedDimensions()`
+
+Returns a list of dimension class names that have been removed from core over time
+
+#### Signature
+
+- It returns a `string[]` value.
 
 <a name="getmodule" id="getmodule"></a>
 <a name="getModule" id="getModule"></a>

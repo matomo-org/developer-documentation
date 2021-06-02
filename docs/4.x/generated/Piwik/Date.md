@@ -68,6 +68,9 @@ The class defines the following methods:
 - [`tomorrow()`](#tomorrow) &mdash; Returns a date object set to tomorrow at midnight in UTC.
 - [`yesterday()`](#yesterday) &mdash; Returns a date object set to yesterday at midnight in UTC.
 - [`yesterdaySameTime()`](#yesterdaysametime) &mdash; Returns a date object set to yesterday with the current time of day in UTC.
+- [`lastWeek()`](#lastweek) &mdash; Returns a date object set to the day a week ago at midnight in UTC.
+- [`lastMonth()`](#lastmonth) &mdash; Returns a date object set to the day a month ago at midnight in UTC.
+- [`lastYear()`](#lastyear) &mdash; Returns a date object set to the day a year ago at midnight in UTC.
 - [`setTime()`](#settime) &mdash; Returns a new Date instance with `$this` date's day and the specified new time of day.
 - [`setDay()`](#setday) &mdash; Returns a new Date instance with `$this` date's time of day and the day specified by `$day`.
 - [`setYear()`](#setyear) &mdash; Returns a new Date instance with `$this` date's time of day, month and day, but with a new year (specified by `$year`).
@@ -413,6 +416,36 @@ Returns a date object set to yesterday at midnight in UTC.
 ### `yesterdaySameTime()`
 
 Returns a date object set to yesterday with the current time of day in UTC.
+
+#### Signature
+
+- It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="lastweek" id="lastweek"></a>
+<a name="lastWeek" id="lastWeek"></a>
+### `lastWeek()`
+
+Returns a date object set to the day a week ago at midnight in UTC.
+
+#### Signature
+
+- It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="lastmonth" id="lastmonth"></a>
+<a name="lastMonth" id="lastMonth"></a>
+### `lastMonth()`
+
+Returns a date object set to the day a month ago at midnight in UTC.
+
+#### Signature
+
+- It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="lastyear" id="lastyear"></a>
+<a name="lastYear" id="lastYear"></a>
+### `lastYear()`
+
+Returns a date object set to the day a year ago at midnight in UTC.
 
 #### Signature
 

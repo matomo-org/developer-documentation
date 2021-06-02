@@ -41,7 +41,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setDocumentTitle( string )` - Override document.title
 *   `setDomains( array )` - Set array of hostnames or domains to be treated as local. For wildcard subdomains, you can use: `setDomains('.example.com');` or `setDomains('*.example.com');`. You can also specify a path along a domain: `setDomains('*.example.com/subsite1');`
 *   `setCustomUrl( string )` - Override the page's reported URL
-*   `setReferrerUrl( string )` - Override the detected Http-Referer
+*   `setReferrerUrl( string )` - Override the detected Http-Referer. We recommend you call this method early in your tracking code before you call `trackPageView` if it should be applied to all tracking requests.
 *   `setSiteId( integer )` - Specify the website ID. Redundant: can be specified in `getTracker()` constructor.
 *   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. https://matomo.example.org/ or https://example.org/matomo/. This function is only useful when the 'Overlay' report is not working. By default, you do not need to use this function.
 *   `setTrackerUrl( string )` - Specify the Piwik server URL. Redundant: can be specified in `getTracker()` constructor.
@@ -109,6 +109,9 @@ Matomo provides a mechanism to manage your user's tracking consent. You can requ
 *   `setConsentGiven()` - Mark that the current user has consented. The consent is one-time only, so in a subsequent browser session, the user will have to consent again. To remember consent, see the method below: `rememberConsentGiven`.
 *   `rememberConsentGiven( hoursToExpire )` - Mark that the current user has consented, and remembers this consent through a browser cookie. The next time the user visits the site, Matomo will remember that they consented, and track them. If you call this method, you do not need to call `setConsentGiven`.
 *   `forgetConsentGiven()` - Remove a user's consent, both if the consent was one-time only and if the consent was remembered. After calling this method, the user will have to consent again in order to be tracked.
+*   `hasRememberedConsent()` - Returns true or false depending on whether the current visitor has given consent previously or not.
+*   `getRememberedConsent()` - If consent was given, returns the timestamp when the visitor gave consent. Only works if `rememberConsentGiven` was used and not when `setConsentGiven` was used. The timestamp is the local timestamp which depends on the visitors time.
+*   `isConsentRequired()` - Returns true or false depending on whether `requireConsent` was called previously.
 
 Matomo also provides a mechanism to manage your user's cookie consent. You can require that users consent to using cookies. Tracking requests will be always sent but depending on the consent cookies will be used or not used.
 
@@ -116,6 +119,14 @@ Matomo also provides a mechanism to manage your user's cookie consent. You can r
 *   `setCookieConsentGiven()` - Mark that the current user has consented to using cookies. The consent is one-time only, so in a subsequent browser session, the user will have to consent again. To remember cookie consent, see the method below: `rememberCookieConsentGiven`.
 *   `rememberCookieConsentGiven( hoursToExpire )` - Mark that the current user has consented to using cookies, and remembers this consent through a browser cookie. The next time the user visits the site, Matomo will remember that they consented, and use cookies. If you call this method, you do not need to call `setCookieConsentGiven`.
 *   `forgetCookieConsentGiven()` - Remove a user's cookie consent, both if the consent was one-time only and if the consent was remembered. After calling this method, the user will have to consent again in order for cookies to be used.
+*   `areCookiesEnabled()` - Returns true or false depending on whether cookies are currently enabled or disabled.
+
+### Managing opt out
+Do you want to build a custom opt-out form instead of a consent screen or instead of using our [opt-out iframe](https://matomo.org/faq/general/faq_20000/)? Check out the guide for [creating a custom opt-out form](https://developer.matomo.org/guides/tracking-javascript-guide#optional-creating-a-custom-opt-out-form).
+
+*   `optUserOut()` - After calling this function, the user will be opted out and no longer be tracked.
+*   `forgetUserOptOut()` - After calling this method the user will be tracked again. Call this method if the user opted out before.
+*   `isUserOptedOut()` - Returns true or false depending whether the user is opted out or not. Note: This method might not return the correct value if you are using the [opt out iframe](https://matomo.org/faq/general/faq_20000/).
 
 You can use these methods to build your own consent form/pages. [Learn more about asking for consent.](https://developer.matomo.org/guides/tracking-javascript-guide#asking-for-consent)
 
@@ -138,10 +149,12 @@ Piwik uses first party cookies to keep track of some user information over time.
 ### Advanced uses
 
 *   `addListener( element )` - Add click listener to a specific link element. When clicked, Piwik will log the click automatically.
-*   `setRequestMethod( method )` - Set the request method to either "GET" or "POST". (The default is "GET".) To use the POST request method, either 1) the Piwik host is the same as the tracked website host (Piwik installed in the same domain as your tracked website), or 2) if Piwik is not installed on the same host as your website, you need to [enable CORS (Cross domain requests) as explained in this FAQ](https://matomo.org/faq/how-to/faq_18694/).
+*   `setRequestMethod( method )` - Set the request method to either "GET" or "POST". To use the POST request method, either 1) the Piwik host is the same as the tracked website host (Piwik installed in the same domain as your tracked website), or 2) if Piwik is not installed on the same host as your website, you need to [enable CORS (Cross domain requests) as explained in this FAQ](https://matomo.org/faq/how-to/faq_18694/). Keep in mind that when Matomo uses sendBeacon() for sending tracking requests (which is enabled by default), it will send data via POST. If you want Matomo to never send POST requests, you can use this method to force `GET` which will automatically disable `sendBeacon`.
+*.  `disableAlwaysUseSendBeacon()` - Disables sending tracking tracking requests using `navigator.sendBeacon` which is enabled by default.
 *   `setCustomRequestProcessing( function )` - Set a function that will process the request content. The function will be called once the request (query parameters string) has been prepared, and before the request content is sent.
 *   `setRequestContentType( contentType )` - Set request Content-Type header value. Applicable when "POST" request method is used via `setRequestMethod`.
-* `disableQueueRequest()` - Disable the feature which groups together multiple tracking requests and send them as a bulk POST request. Disabling this feature is useful when you want to be able to [replay all logs](https://matomo.org/faq/log-analytics-tool/faq_19221/): one must use `disableQueueRequest` to disable this behaviour to later be able to replay logged Matomo logs (otherwise a subset of the requests wouldn't be able to be replayed).
+*   `disableQueueRequest()` - Disable the feature which groups together multiple tracking requests and send them as a bulk POST request. Disabling this feature is useful when you want to be able to [replay all logs](https://matomo.org/faq/log-analytics-tool/faq_19221/): one must use `disableQueueRequest` to disable this behaviour to later be able to replay logged Matomo logs (otherwise a subset of the requests wouldn't be able to be replayed).
+*   `setRequestQueueInterval( interval )` -  Defines after how many ms a queued requests will be executed after the request was queued initially. The higher the value the more tracking requests can be send together at once. `interval` has to be at least `1000` (1000ms = 1s) and defaults to 2.5 seconds.
 
 ## Unit Tests Covering matomo.js
 

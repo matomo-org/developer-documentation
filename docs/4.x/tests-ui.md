@@ -11,6 +11,10 @@ Some might know a UI test under the term 'CSS test' or 'screenshot test'. When w
 
 We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/matomo-org/matomo) after each commit and compared with [our expected screenshots](https://github.com/matomo-org/matomo-ui-tests).
 
+**When is it better to create a php tests?** 
+
+We usually don't create a UI test if the same logic or behaviour can be tested using an integration or system test and the UI isn't actually rendering any custom UI. For example if something is throwing an excption, then the generic error UI will be used and as there is no custom UI an integration or system test may be better suited to check if an exception is triggered as it's more easy to debug, more clear what goes wrong, easier to write these tests and they are faster to execute. 
+
 ## Requirements
 
 Unit, integration and system tests are fairly straightforward to run. UI tests, on the other hand, need a bit more work.
@@ -136,6 +140,16 @@ Some fixtures can take a long while to set up. You can save time by using the `p
 $ ./console tests:run-ui WidgetizePage --persist-fixture-data
 ```
 
+### Useful options
+
+The following options may be useful if you plan on running the UI tests locally often:
+
+* **--persist-fixture-data**: This will save the test data in a separate database so the setup only has to be run once.
+  This can save 5 mins per screenshot test run.
+* **--drop**: If you've used --persist-fixture-data and need to re-setup the separate data, use this option with --persist-fixture-data.
+* **--keep-symlinks**: If you want to visit the URLs of captured pages in a browser to diagnose failures use this option.
+  This will keep the recursive symlinks in tests/PHPUnit/proxy.
+
 ### Fixing a test
 
 At some point your UI test will fail, for example due to expected CSS changes. To fix a test all you have to do is to copy the captured screenshot from the folder `processed-ui-screenshots` to the folder `expected-ui-screenshots`.
@@ -260,6 +274,55 @@ describe("PiwikUpdater", function () {
     });
 });
 ```
+
+## Troubleshooting UI tests
+
+If a UI test fails and it's not clear why, then open all the Travis UI jobs in your browser and check if there was any warning or error logged for a particular UI test. Please note that at the time of writing there are 3 jobs in each travis build dedicated to UI tests (so they complete faster than one long running job) and you need to click into each job to find the output for a specific UI test. You can identify that a travis job was running a UI test by looking in the environment variables for the jobs that have `TEST_SUITE=UITests`. Within the output of a specific job, you can find the UI test by searching for the name of the UI test, for example `"should show percent metrics like bounce rate correctly`". Simply search each of the UI jobs for the name of the test that is failing and see if there's any additional information printed.
+
+### Checklist for common problems
+
+* If the screenshot is showing a message `already installed` or `not installed yet` then make sure the URL you open as part of the `page.goTo()` call starts with a question mark (`?`).
+
+## Fixing a broken build
+
+Changes made to Matomo that affect the UI (such as changes to CSS, JavaScript, Twig templates or even PHP code) may
+break the UI tests build. This is an opportunity to review your code and as a Matomo developer you should ensure that
+any side effects created by your changes are expected.
+
+If they are not expected, determine the cause of the change and fix it in a new commit. If the changes are correct,
+then you should update the expected screenshots accordingly.
+
+### To fix a broken build, follow these steps:
+
+See also below the steps for how to sync the files automatically.
+
+* Go to the Tests travis build: [https://travis-ci.org/matomo-org/matomo](https://travis-ci.org/matomo-org/matomo) and select the build containing `TEST_SUITE=UITests`
+* Find the build you are interested in. The UI tests build will be run for each commit in each branch, so if you're
+  looking to resolve a specific failure, you'll have to find the build for the commit you've made.
+* In the build output, at the beginning of the test output, there will be a link to a image diff viewer. It will look something
+  like this:
+
+      View UI failures (if any) here https://builds-artifacts.matomo.org/ui-tests.master/1837.1/screenshot-diffs/diffviewer.html
+
+  Click on the link in the message.
+* The diff viewer will list links to the generated screenshots for failed tests as well as the expected screenshots and image diffs.
+* For each failure, check if the change is desired. Sometimes we introduce regression without realising, and screenshot tests can help us spot such regressions.
+    * If a change is not wanted, revert or fix your commit.
+    * If a change is correct, then you can set the new screenshot as the expected screenshot.
+      To do so, in the diffviewer.html page click on the "Processed" link for this screenshot.
+      Then "Save this file as" and save it in the piwik/tests/UI/expected-screenshots/ directory.
+      (If the screenshot test is for a plugin and not Piwik Core, the expected screenshot should be added to the
+      plugin's expected screenshot directory. For example: piwik/plugins/DBStats/tests/UI/expected-screenshots.)
+
+  _Note: When determining whether a screenshot is correct, the data displayed is not important. Report data correctness is verified through System and other PHP tests. The UI tests should only test UI behavior._
+* Push the changes (to your code and/or to the expected-screenshots directory).
+* Wait for next Test build [on travis](https://travis-ci.org/matomo-org/matomo). Hopefully, the build should be green!
+
+#### Sync command 
+
+The `tests:sync-ui-screenshots` console command can be used to speed up the process. Run `./console tests:sync-ui-screenshots -h` to learn more._
+
+For example executing `./console tests:sync-ui-screenshots {buildnumber}`, the script will automatically download all screenshots of tests that failed on Travis (meaning there was a change in the expected screenshot compared to the processed screenshot).
 
 ## Learn more
 

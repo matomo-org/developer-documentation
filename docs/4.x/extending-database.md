@@ -147,6 +147,17 @@ add new tables, and you can even perform custom SQL during a migration. For a li
 If you want to perform any other operations unrelated to the MySQL database when your plugin is updated, you can do this within
 the `doUpdate` method.
 
+### Updates for existing log tables
+
+This section applies mostly to core developers but you may want to follow the same practice.
+
+The [log_* DB tables](https://developer.matomo.org/guides/database-schema#log-data) is where Matomo stores the raw data of every visit and action that was tracked. These tables typically become quite large and making changes to these tables, for example adding or deleting a column or index, can take a very long time. This is why we change the schema for these log tables only as part of a major Matomo release. This applies to Matomo core and to any plugins developed by Matomo to ensure minor and patch updates won't cause any trouble when updating. 
+
+#### Workarounds
+
+If a change is very useful or needed then one workaround would be to make this change for all new installations of Matomo core or a plugin and already add an update script for the next major release so existing users will receive the change eventually. This means the code would need to check if a specific column/index exists or not to make use of that functionality. We'd also publish an FAQ how to make these changes manually in case someone wanted to get this functionality earlier as the next major release could be years away.
+
+
 ## Learn more
 
 Learn more about the Piwik Analytics database structure and tables in the [Database schema reference](/guides/database-schema).

@@ -52,4 +52,4 @@ Assuming you created a variable "Order Total" for the `orderTotal` data layer va
 
 ## Migration from Google Tag Manager
 
-If you have used Google's Tag Manager in the past and have specified a data layer on page load for example like this: `dataLayer = {'orderTotal': 100}` you will be happy to hear that we are supporting this as long as you have configured the data layer variable as early as possible within your website. The variable needs to be defined before the container is loaded. Please note we do not support any renamed data layer variable.
+If you have used Google's Tag Manager in the past and have specified a data layer on page load for example like this: `dataLayer = {'orderTotal': 100}` you will be happy to hear that we are supporting this as long as you have configured the data layer variable as early as possible within your website. The variable needs to be defined before the container is loaded. Please note we do not support any renamed data layer variable. The Matomo data layer will also not be updated when you push changes to the GTM data layer afterwards. It is only able to pick up the initial data layer content.

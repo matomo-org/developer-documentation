@@ -62,7 +62,8 @@ The class defines the following methods:
 - [`addMetadata()`](#addmetadata) &mdash; Add a new metadata to the row.
 - [`sumRow()`](#sumrow) &mdash; Sums the given `$rowToSum` columns values to the existing row column values.
 - [`sumRowMetadata()`](#sumrowmetadata) &mdash; Sums the metadata in `$rowToSum` with the metadata in `$this` row.
-- [`isSummaryRow()`](#issummaryrow) &mdash; Returns `true` if this row is the summary row, `false` if otherwise.
+- [`isSummaryRow()`](#issummaryrow) &mdash; Returns `true` if this row was added to a datatable as the summary row, `false` if otherwise.
+- [`setIsSummaryRow()`](#setissummaryrow)
 - [`getComparisons()`](#getcomparisons) &mdash; Returns the associated comparisons DataTable, if any.
 - [`setComparisons()`](#setcomparisons) &mdash; Associates the supplied table with this row as the comparisons table.
 - [`isEqual()`](#isequal) &mdash; Helper function that tests if two rows are equal.
@@ -410,12 +411,19 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 <a name="isSummaryRow" id="isSummaryRow"></a>
 ### `isSummaryRow()`
 
-Returns `true` if this row is the summary row, `false` if otherwise. This function
-depends on the label of the row, and so, is not 100% accurate.
+Returns `true` if this row was added to a datatable as the summary row, `false` if otherwise.
 
 #### Signature
 
 - It returns a `bool` value.
+
+<a name="setissummaryrow" id="setissummaryrow"></a>
+<a name="setIsSummaryRow" id="setIsSummaryRow"></a>
+### `setIsSummaryRow()`
+
+#### Signature
+
+- It does not return anything or a mixed result.
 
 <a name="getcomparisons" id="getcomparisons"></a>
 <a name="getComparisons" id="getComparisons"></a>

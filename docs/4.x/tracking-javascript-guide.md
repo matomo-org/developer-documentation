@@ -76,13 +76,9 @@ The JavaScript tracker runs on all browsers that support the `JSON` API. This in
 
 ## JavaScript tracker features
 
-### Custom page name
+### Custom page title
 
-By default, Piwik uses the URL of the current page as the page title in Piwik reports.
-If your URLs are not simple, or if you want to customize the way Piwik tracks your pages,
-you can specify the page title to use in the JavaScript code.
-
-A common use case is to set the title of the HTML page as the document title:
+By default Matomo uses the title of the HTML page to track the page title, you can customise it by using the function `setDocumenTitle`: 
 
 ```javascript
 _paq.push(['setDocumentTitle', document.title]);
@@ -102,6 +98,11 @@ Advanced users can also dynamically generate the page name, for example, using P
 _paq.push(['setDocumentTitle', "<?php echo $myPageTitle ?>"]);
 _paq.push(['trackPageView']);
 ```
+
+### Custom page URL
+
+By default, Matomo uses the URL of the current page as the Page URL in reports. 
+You can customise the page URL to track by using the function `setCustomUrl`, learn more in the FAQ [How do I set a custom URL using the Matomo Javascript tracker?](https://matomo.org/faq/how-to/how-do-i-set-a-custom-url-using-the-matomo-javascript-tracker/)
 
 ### Manually trigger events
 
@@ -202,7 +203,7 @@ We also highly recommend to set the searchCount parameter, as Piwik will specifi
 
 Custom variables are a powerful feature that enable you to track custom values for each visit, and/or each page view. Please see the [Tracking custom variables](https://matomo.org/docs/custom-variables/) documentation page for general information.
 
-You can set up up to 5 custom variables (name and value) for each visit to your website, and/or up to 5 custom variables for each page view. If you set a custom variable to a visitor, when he comes back one hour or two days later, it will be a new visit and his/her custom variables will be empty.
+You can set up up to 5 custom variables (name and value) for each visit to your website, and/or up to 5 custom variables for each page view. If you set a custom variable to a visitor, when they come back one hour or two days later, it will be a new visit and their custom variables will be empty.
 
 There are two "scopes" which you can set your custom variables to. The "scope" is the 4th parameter of the function `setCustomVariable()`.
 

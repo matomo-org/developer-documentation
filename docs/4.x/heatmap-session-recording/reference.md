@@ -143,7 +143,7 @@ if you configured the session recording in Piwik to not capture keystrokes.
 ### `setTrigger(shouldTriggerFunction)`
 
 Lets you customize whether a heatmap or session should be recorded. This lets you for example restrict the recording of activities
-to certain target groups, to certain times, to certain locations, and more.
+to certain target groups, to certain times, to certain locations, and more. An example of how to use `setTrigger` to record activities only for specific visitors and/or pages [is available in this FAQ](https://developer.matomo.org/guides/heatmap-session-recording/faq#how-do-i-record-activities-only-for-specific-visitors-andor-pages).
 
 ### `matchTrackerUrl()`
 
@@ -204,7 +204,7 @@ Example:
 
 ```js
 // disables the tracking of any activities on all Piwik trackers
-_paq.push(['HeatmapSessionRecording.disable']); 
+_paq.push(['HeatmapSessionRecording::disable']); 
 
 // or if you are using multiple Piwik trackers and only want to disable it for a specific tracker:
 var tracker = Matomo.getAsyncTracker(matomoUrl, matomoSiteId);

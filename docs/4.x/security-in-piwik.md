@@ -32,6 +32,8 @@ When writing [Twig](https://twig.sensiolabs.org/) templates, try to avoid using 
 
 If you do use `|raw`, make sure what you're inserting has been properly escaped.
 
+If you have to use the `|raw` filter you may want to think about using the `|rawSafeDecoded` filter which may be more secure.
+
 ### Be careful when using `jQuery.html()`
 
 In your JavaScript, be careful when using the `$.html` method to insert HTML into the DOM. Make sure the string you are inserting came from Piwik and has been escaped.
@@ -189,13 +191,14 @@ By no means is below a complete checklist. You'll always be required to still th
 * **Exposing of data**: No sensitive data is exposed (any tokens or passwords eg in the HTML as part of a system check or logs or so)
 * **Secure data storing**: Passwords or similar data like a sessionId is stored securely hashed
 * External links have a `rel=noopener` (although newer browser versions add this automatically)
+* **Email notifications are sent** for critical actions related to login credentials, tokens, 2FA etc and ideally also for any other crticial configuration change such as brute force changes etc.
 * **Unsafe methods**: Methods to watch out for: 
   * Insecure deserialization: `unserialize` is unsafe for user input. Consider using `Common::safe_unserialize` or for user input possibly `JSON` instead
   * `file_get_contents` can be unsafe when eg a protocol `phar://` can be passed to it
   * require|include(_once) should not use any user input unless it's whitelisted
   * Also see eg https://gist.github.com/mccabe615/b0907514d34b2de088c4996933ea1720
 * Think of other ways such as RCE etc
-* Sensitive actions may require password confirmation
+* **Password confirmation** for critical actions related to login credentials, tokens, 2FA etc and ideally also other critical/sensitive changes like installing/activating plugins etc.
 
 
 ## Learn more

@@ -1,7 +1,7 @@
 ---
 category: DevelopInDepth
 ---
-# How Piwik Works
+# How Matomo Works
 
 ## About this guide
 
@@ -185,7 +185,7 @@ Sometimes, one persisted record can be the source of several API reports.
 
 You can read more details on how reports are created and served in the ["Reports" guide](/guides/reports).
 
-## Piwik's extensibility points
+## Matomo's extensibility points
 
 Piwik Core only defines the main processes and behaviors. Plugins can extend and customize them through several *extensibility points*:
 
@@ -193,4 +193,4 @@ Piwik Core only defines the main processes and behaviors. Plugins can extend and
 - implementing **special classes** that are recognized by Piwik
 - extending certain abstract **base classes**
 
-You can read more about this topic in the ["Piwik's Extensibility Points" guide](/guides/piwiks-extensibility-points).
+You can read more about this topic in the ["Matomo's Extensibility Points" guide](/guides/piwiks-extensibility-points).

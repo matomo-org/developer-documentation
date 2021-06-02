@@ -32,7 +32,7 @@ The APIs let you programmatically request any analytics reports from Matomo, for
 *   **date**
 
     *   standard format = _YYYY-MM-DD_
-    *   magic keywords = _today_ or _yesterday_. These are relative the website timezone. For example, for a website with UTC+12 timezone, "date=today" for an API request at 5PM UTC on 2010-01-01 will return the reports for 2010-01-02.
+    *   magic keywords = _today_, _yesterday_, _lastWeek_, _lastMonth_ or _lastYear_. These are relative the website timezone. For example, for a website with UTC+12 timezone, "date=today" for an API request at 5PM UTC on 2010-01-01 will return the reports for 2010-01-02. (Note: _lastWeek_, _lastMonth_ and _lastYear_ are only available as of Matomo 4.1)
     *   range of dates
 
         *   _lastX_ for the last X periods including today (eg &date=last10&period=day would return an entry for each of the last 10 days including today). This is relative to the website timezone.
@@ -44,7 +44,7 @@ When 'period=range', the following keywords are supported for the parameter 'dat
 
         *   _lastX_
         *   _previousX_
-        *   _YYYY-MM-DD,YYYY-MM-DD_, or _YYYY-MM-DD,today_ or _YYYY-MM-DD,yesterday_
+        *   _YYYY-MM-DD,YYYY-MM-DD_, both dates can be replaced with magic keywords (the first one does not support _today_ and _yesterday_). eg. _YYYY-MM-DD,today_, _lastMonth,YYYY-MM-DD_ or _lastYear,lastWeek_
 
 
 *   **segment** &mdash; defines the Custom Segment you wish to filter your reports to.
@@ -74,7 +74,7 @@ _referrerName==Google,referrerName==Bing;country==IN_
 
 ### Optional API parameters
 
-Each API call can contain parameters that do not appear in the list of parameters, but act as "filters". Filters can be presentation filters (eg. specify the language for internationalization), or act as data helpers (sort results, search for a dataset subset, fetch children of a given entity).
+Each API call can contain parameters that do not appear in the list of parameters, but act as "filters". Filters can be presentation filters (eg. specify the language for internationalization), or act as data helpers (sort results, search for a dataset subset, fetch children of a given entity). Some parameters like `filter_sort_order` and `filter_sort_column` only work on API methods that return reports but not API methods that return entities (such as sites, users, activities).
 
 Here is an overview of the parameters you can add to any API request, where applicable:
 
@@ -113,6 +113,8 @@ There are also generic filters you can choose to apply on all APIs that return w
 *   **disable\_generic\_filters**; if set to 1, all the generic filters above will not be applied. This can be useful to disable the filters above which are otherwise applied with default values. Mostly used internally or when developing plugins for Piwik.
 *   **disable\_queued\_filters**; if set to 1, all the filters that are mostly presentation filters (replace a column name, apply callbacks on the column to add new information such as the browser icon URL, etc.) will not be applied. Mostly used internally or when developing plugins for Piwik.
 
+*   **translateColumnNames**; if set to 1, column names in report output will be translated to the language specified by the `language` parameter described above. Note: this parameter only has an effect for the CSV, RSS and HTML output formats.
+
 ### Passing an array of data as a parameter
 
 Some parameters can optionally accept arrays. For example, the urls parameter of SitesManager.addSite, SitesManager.addSiteAliasUrls, and SitesManager.updateSite allows for an array of urls to be passed. To pass an array add the bracket operators and an index to the parameter name in the get request. So, to call SitesManager.addSite with two urls you would use the following array:
@@ -141,12 +143,17 @@ You can also issue the Bulk request as a HTTP POST request to work around any re
 In the example above, the request works because the statistics are public (the _anonymous_ user has a _view_ access to the website). By default, in Piwik your statistics are private. In the case that you cannot have your statistics to be public:
 
 *   when you access your Piwik installation you are requested to log in
-*   when you call the API over http you need to authenticate yourself
-This is done by adding a secret parameter in the URL. This parameter is as secret as your login and password!
+*   when you call the API over http you need to authenticate yourself. This is done by adding a secret parameter called `token_auth` in the URL. This parameter is as secret as your login and password!
 
-You can get this token in the Administration area under _Management_ => _Platform_ => _API_ or under _Personal_ => _Settings_.
+You can create authentication tokens in the Administration area under _Administration_ => _Personal_ => _Security_ => _Auth tokens_.
 
 Then you simply have to add the parameter **&token\_auth=YOUR\_TOKEN** at the end of your API call URL.
+
+**You should never share a URL that includes a `token_auth` with another person as this person could use this same token to fetch and change data in Matomo.**
+
+### Session tokens
+
+When you are logged in to Matomo and choose to export data, then you might notice a parameter `&force_api_session=1` parameter in the URL. When this URL parameter is present, then Matomo uses a special `token_auth` that is randomly generated every time you log in and this URL will only work while you are logged in and will no longer work once you're logged out. The next time you log in the token will change again. If you want the URL to work permanently, then you need to remove this URL parameter `&force_api_session` and replace the token with the value of a generated auth token see above. 
 
 ## API Response: Metric Definitions
 

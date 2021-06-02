@@ -24,17 +24,27 @@ class DevelopInDepthCategory extends Category
     {
         return [
             new Guide('piwik-in-depth-introduction'),
+            new EmptySubCategory('Matomo Core development', [
+                new Guide('our-mission'),
+                new Guide('contributing-to-piwik-core'),
+                new Guide('coding-standards'),
+                new Guide('pull-request-reviews'),
+                new Guide('core-team-workflow'),
+                new Guide('maintaining-plugins'),
+                new Guide('apis'),
+                new Guide('debugging-core'),
+                new Guide('profiling-code'),
+                new Guide('reproducing-issues'),
+                new Guide('core-faqs'),
+                new Guide('release-management'),
+                new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
+            ]),
             new UnlinkedCategory('in-depth-understanding-piwik'),
             new UnlinkedCategory('in-depth-web-interface'),
             new UnlinkedCategory('in-depth-utils'),
             new UnlinkedCategory('in-depth-reporting-api'),
             new Guide('data-model'),
             new UnlinkedCategory('in-depth-tests'),
-            new EmptySubCategory('Matomo Core development', [
-                new Guide('contributing-to-piwik-core'),
-                new Guide('core-team-workflow'),
-                new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
-            ]),
             new DevelopCategory(),
         ];
     }

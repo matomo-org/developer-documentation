@@ -20,7 +20,7 @@ This guide describes how we, the team of developers that makes changes to Piwik 
 
 ## How we manage our work
 
-We use **[Github](https://github.com/matomo-org/matomo/issues)** to keep track of all bugs, feature requests and tasks that concern Piwik, the website and Piwik's documentation.
+We use **[Github](https://github.com/matomo-org/matomo/issues)** to keep track of all bugs, feature requests and tasks that concern Piwik, the website and Matomo's documentation.
 
 We make sure all tickets contain enough information, including:
 
@@ -95,7 +95,7 @@ All developers from the Piwik organization can push to all git repositories.
 
 All code committed to git is reviewed by at least one other developer in the team. Very often, Piwik developers themselves will send bigger changes by pull request for review before committing. All pull requests or patches submitted by external developers are extensively reviewed.
 
-It is highly recommended that code committed in the [master branch](https://github.com/matomo-org/matomo) respects the [Piwik coding standards](https://piwik.org/participate/coding-standards), does not cause tests to fail, and does not create regressions in the UI or the platform. And the commit message should reference a ticket number in almost all cases; for example,
+It is highly recommended that code committed in the [main branch (*.x-dev)](https://github.com/matomo-org/matomo) respects the [Matomo coding standards](/guides/coding-standards), does not cause tests to fail, and does not create regressions in the UI or the platform. And the commit message should reference a ticket number in almost all cases; for example,
 
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 

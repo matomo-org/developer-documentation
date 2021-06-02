@@ -61,7 +61,7 @@ will select "Visitors from Search engines AND (Keyword is Piwik OR Keyword is an
 
 ## List of segments
 
-{@include https://demo2.matomo.org/index.php?module=API&action=listSegments&language=en}
+{@include https://demo.matomo.cloud/index.php?module=API&action=listSegments&language=en}
 
 ### Segment values must be URL encoded
 

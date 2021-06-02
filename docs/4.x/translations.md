@@ -57,6 +57,10 @@ To replace a key with translated text, Piwik will look into the JSON file for th
 
 As mentioned Piwik comes with quite a lot of translations. You can and should reuse them but you are supposed to be aware that a translation key might be removed or renamed in the future. It is also possible that a translation key was added in a recent version and therefore is not available in older versions of Piwik. We do not currently announce any of such changes. Still, 99% of the translation keys do not change and it is therefore usually a good idea to reuse existing translations. Especially when you or your company would otherwise not be able to provide them. To find any existing translation keys go to <span style="font-variant: small-caps">Settings =&gt; Translation search</span> in your Piwik installation. The menu item will only appear if the [development mode](https://developer.matomo.org/guides/getting-started-part-1#enable-development-mode) is enabled.
 
+### Don't try to reduce the amount of translation keys
+
+Sometimes you have repetitive translations like `Choose the site` and `Choose the user` and you might be tempted to rather use a translation key for `The %s` for the translation and then pass different words for the replaceholder like `translate('Choose the %s', 'site')` and `translate('Choose the %s', 'user')`. We recommend not doing this as it can lead to poorly translated text. For example in other languages there might be many different words for `The` (like `der`, `die` and `das` in German). Also using upper and lower case might differ depending on the language. We therefore recommend not trying to reduce the amount of translation keys using placeholders and rather use a translation key for each sentence.
+
 ## Translations in PHP
 
 To translate text in PHP, use the [Piwik::translate()](/api-reference/Piwik/Piwik#translate) function. Simply pass any existing translation key and you will get the translated text in the language of the current user in return. The English translation will be returned in case none for the current language exists. For example:
@@ -68,7 +72,7 @@ $translatedText = Piwik::translate('MyPlugin_BlogPost');
 or
 
 ```php
-$translatedText = Piwik::translate('MyPlugin_MyParagraphWithALink', '<a href="https://matomo.org">', '</a>');
+$translatedText = Piwik::translate('MyPlugin_MyParagraphWithALink', ['<a href="https://matomo.org">', '</a>']);
 // where the key "MyPlugin_MyParagraphWithALink" could look like this:
 // "My paragraph has a %1$slink%2$s."
 ```
@@ -142,20 +146,9 @@ As soon as we have set up your plugin within [our Piwik project on Transifex](ht
 
 Follow these guidelines when creating your own translation keys:
 
-1. **Reuse!** If a core plugin contains a translation you can use, use that instead. If there's a translation you want to use but can't because it's in the wrong case, try using functions like `lcfirst` and `ucfirst`.
+1. **Reuse!** If a core plugin contains a translation you can use, use that instead. If there's a translation you want to use but can't because it's in the wrong case, don't use functions like `lcfirst` and `ucfirst` as it won't work in all languages and rather create a new translation key.
 2. **Use numbered placeholders** if more than one is required in your text.
 
 Using numbered placeholders, such as `%1$s`, `%2$s`, etc. instead of `%s` makes it possible for translators to switch the order. That might be necessary to translate it to certain languages properly.
-
-3. **Reduce redundancy in your translated text.** If the same text appears in multiple translated text entries, try to move the translated text out by using sprintf parameters. For example, if you have text entries like:
-
-`"You cannot use commas."`
-and `"You cannot use underscores."`
-
-Try to split them up into something like:
-
-`"You cannot use %s."`
-`"commas"`
-and `"underscores"`.
 
 This guideline is more important for contributions to Piwik Core than for new plugins.

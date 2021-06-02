@@ -7,4 +7,5 @@ subGuides:
   - views
   - javascript-extended
   - themable-plugins
+  - matomo-font
 ---

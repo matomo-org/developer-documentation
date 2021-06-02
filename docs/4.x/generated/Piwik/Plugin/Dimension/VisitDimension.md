@@ -218,6 +218,7 @@ The abstract class defines the following methods:
 - [`getId()`](#getid) &mdash; Returns a unique string ID for this dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getAllDimensions()`](#getalldimensions) &mdash; Get all visit dimensions that are defined by all activated plugins.
 - [`getDimensions()`](#getdimensions) Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`getRemovedDimensions()`](#getremoveddimensions) &mdash; Returns a list of dimension class names that have been removed from core over time Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getModule()`](#getmodule) &mdash; Returns the name of the plugin that contains this Dimension. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getType()`](#gettype) &mdash; Returns the type of the dimension which defines what kind of value this dimension stores. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`getRequiredVisitFields()`](#getrequiredvisitfields) &mdash; Sometimes you may want to make sure another dimension is executed before your dimension so you can persist this dimensions' value depending on the value of other dimensions.
@@ -528,6 +529,16 @@ Get all visit dimensions that are defined by all activated plugins.
     - `$plugin` ([`Plugin`](../../../Piwik/Plugin.md)) &mdash;
       
 - It does not return anything or a mixed result.
+
+<a name="getremoveddimensions" id="getremoveddimensions"></a>
+<a name="getRemovedDimensions" id="getRemovedDimensions"></a>
+### `getRemovedDimensions()`
+
+Returns a list of dimension class names that have been removed from core over time
+
+#### Signature
+
+- It returns a `string[]` value.
 
 <a name="getmodule" id="getmodule"></a>
 <a name="getModule" id="getModule"></a>
