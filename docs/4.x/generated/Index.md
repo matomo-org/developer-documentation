@@ -393,6 +393,7 @@ Index
 - [`getFromLocalConfig()`](Piwik/Config.md#getfromlocalconfig) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`getSelectsFromRangedColumn()`](Piwik/DataAccess/LogAggregator.md#getselectsfromrangedcolumn) &mdash; *Method in class* [`LogAggregator`](Piwik/DataAccess/LogAggregator.md)
 - [`getTotalsRow()`](Piwik/DataTable.md#gettotalsrow) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`getSummaryRow()`](Piwik/DataTable.md#getsummaryrow) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getSortedByColumnName()`](Piwik/DataTable.md#getsortedbycolumnname) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getRowFromLabel()`](Piwik/DataTable.md#getrowfromlabel) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getRowIdFromLabel()`](Piwik/DataTable.md#getrowidfromlabel) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
