@@ -3,7 +3,9 @@ category: Develop
 subGuides:
   - tests-php
   - tests-ui
+  - tests-js-tracker
   - tests-travis
+  - tests-troubleshooting
 ---
 # Tests
 

@@ -149,43 +149,6 @@ Other event names are `ecommerce`, `sitesearch`, `link`, `contentInteraction`, `
 You can optionally create a minified version of your tracker file. However, you will need to make sure to always keep
 it up to date whenever you change the `tracker.js` file. To provide a minified version simply create a file named `tracker.min.js` in your plugin directory.
 
-## Adding tests
+## Tests
 
-Matomo JS Tracker tests can be executed by opening `https://your.matomo.domain/tests/javascript`. You can add additional JS tests by 
-creating a file `tests/javascript/index.php` within your plugin directory. A test looks for example like this:
-
-```html
-<div id="MyPlugin">
-    <div id="elementWhichWillBeUsedInMyTest">
-
-    </div>
-</div>
-
-<script type="text/javascript">
-module('MyPlugin');
-    
-test("Matomo MyPlugin", function() {
-    expect(2);
-
-    equal( typeof Matomo.MyPlugin, 'object', 'MyPlugin' );
-
-    var MyPlugin = Matomo.MyPlugin;
-    equal( typeof MyPlugin.disableTracking, 'object', 'MyPlugin.disableTracking' );
-});
-
-test("Matomo MyPlugin enriches tracker", function() {
-    expect(2);
-
-    var tracker = Matomo.getAsyncTracker();
-
-    equal( typeof tracker.MyPlugin, 'object', 'MyPlugin' );
-    equal( typeof tracker.MyPlugin.trackme, 'function', 'Tracker MyPlugin.trackme');
-});
-
-</script>
-```
-
-[For a list of possible assertions click here.](https://api.qunitjs.com/)
-
-You don't have to define any div elements or any other HTML except for the script element. However, you may need to add 
-certain HTML elements to test the behaviour of your tracker plugin.
+Read more about [JavaScript Tracker tests](/guides/tests-js-tracker).
