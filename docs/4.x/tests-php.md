@@ -8,12 +8,47 @@ next: tests-ui
 As explained in the previous guide, Piwik's test suite contains PHP tests and [UI tests](/guides/tests-ui). The PHP test suite is written and run using [PHPUnit](https://phpunit.de).
 
 If you're creating a new plugin, you may find it beneficial to engage in [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) or at least to verify your code is correct with tests. With tests, you'll be able to ensure that your code works and you'll be able to ensure the changes you make don't cause regressions.
+
+## How to differentiate between unit, integration or system tests?
+
+This can be sometimes hard to decide and often leads to discussions. We consider a test as a unit test when
+it tests only a single method or class. Sometimes two or three classes can still be considered as a Unit for instance if
+you have to pass a dummy class or something similar but it should actually only test one class or method.
+If it has a dependency to the filesystem, web, config, database or to other plugins it is not a unit test but an
+integration test. If the test is slow it is most likely not a unit test but an integration test as well.
+"Slow" is of course very subjective and also depends on the server but if your test does not have any dependencies
+your test will be really fast.
+
+It is an integration test if you have any dependency to a loaded plugin, to the filesystem, web, config, database or something
+similar. It is an integration test if you test multiple classes in one test.
+
+It is a system test if you - for instance - make a call to Matomo itself via HTTP or CLI and the whole system is being tested.
+
+### Why do we split tests in unit, integration, system and ui folders?
+
+Because they fail for different reasons and the duration of the test execution is different. This allows us to execute
+all unit tests and get a result very quick. Unit tests should not fail on different systems and just run everywhere for
+example no matter whether you are using NFS or not. Once the unit tests are green one would usually execute all integration
+tests to see whether the next stage works. They take a bit longer as they have dependencies to the database and filesystem.
+The system and ui tests take the most time to run as they always run through the whole code.
+
+Another advantage of running the tests separately is that we are getting a more accurate code coverage. For instance when
+running the unit tests we will get the true code coverage as they always only test one class or method. Integration tests
+usually run through a lot of code but often actually only one method is supposed to be tested. Although many methods are
+not tested they would be still marked as tested when running integration tests.
+
 ## Requirements
 
 Before you start make sure you have enabled development mode:
 
 ```
 $ ./console development:enable
+```
+
+To install PHPUnt, run below command in the Matomo root directory (depending on how you [installed Composer](https://getcomposer.org/doc/00-intro.md) you may not need the `php` command):
+
+```
+php composer.phar install --dev
 ```
 
 If your development Matomo is not using `localhost` as a hostname (or if your webserver is using a custom port number), then edit your `config/config.ini.php` file and under `[tests]` section, add the `http_host` and/or `port` settings:
@@ -195,7 +230,9 @@ then you should update the expected system files accordingly. To compare and upd
 * Then `git add` and `git commit` and `git push` the changes to trigger another build run 
 * If some tests are still failing you may need to repeat this process as sometimes you might forget to update some
 
-### To fix a broken build, follow these steps:
+## Debugging tests
+
+As a software developer writing tests it can be useful to be able to set breakpoints and debug while running tests. If you use Phpstorm [read this answer](http://stackoverflow.com/a/14998884/3759928) to learn to configure Phpstorm with the PHPUnit from Composer.
 
 ## Learn more
 
