@@ -192,6 +192,10 @@ See our [dedicated guide for Matomo Code Standards](/guides/coding-standards).
 
 See our [debugging Matomo core guide](/guides/debugging-core).
 
+## Submodules
+
+Matomo has various submodules. These will be updated weekly automatically using a GitHub action. This means if you push something to a submodule, for example the Tag Manager, then you won't need to create another pull request in Matomo repository to update the submodule. In some cases, for example if an important fix was made shortly before a release then you may need to create a PR to update the submodule reference in the Matomo repository.
+
 ## Automated tests
 
 If you are fixing a bug, it is usually better to also submit a testcase covering this fix. Such a test will be useful to prevent the bug from reappearing again in the future.
