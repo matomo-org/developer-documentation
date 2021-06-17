@@ -30,6 +30,8 @@ Once you've decided on something, continue below.
 
 Before you can start contributing you need to get setup with [git](https://git-scm.com/) & [GitHub](https://github.com). If needed, you can [create a GitHub account here](https://github.com/).
 
+If you are a Matomo core developer then you have write permissions to the Matomo repository and therefore you don't need to fork Matomo and can skip below steps. Instead clone the [Matomo repository](https://github.com/matomo-org/matomo) and push to it directly. This will simplify a lot of your work.
+
 #### Fork the Piwik repository
 
 While logged in GitHub, visit [Matomo's repository](https://github.com/matomo-org/matomo). In the upper right corner there is a _Fork_ button. Click it. Github will copy the repository into your account. This copy (or fork) is the one you will work on. If you don't know forks, read more about [forks on GitHub](https://help.github.com/articles/fork-a-repo/).
