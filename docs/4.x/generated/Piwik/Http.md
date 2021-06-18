@@ -60,6 +60,8 @@ Sends an HTTP request using best available transport method.
        HTTP Auth username
     - `$httpPassword` (`string`) &mdash;
        HTTP Auth password
+    - `$checkHostIsAllowed` (`bool`) &mdash;
+       whether we should check if the target host is allowed or not. This should only be set to false when using a hardcoded URL.
 
 - *Returns:*  `bool`|`string` &mdash;
     If `$destinationPath` is not specified the HTTP response is returned on success. `false`
