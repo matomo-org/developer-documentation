@@ -19,6 +19,7 @@ This guide assumes that you:
 * can use the [git](https://git-scm.com/) source code management tool
 * are familiar with [GitHub](https://github.com),
 * and have the necessary tools to contribute to Piwik (if not, see this section of our [Getting started extending Piwik](/guides/getting-started-part-1) guide).
+* you must have [git lfs installed](https://git-lfs.github.com/)
 
 ## Contribution process
 
