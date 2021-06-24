@@ -105,3 +105,7 @@ The contents of the `XXX.before.yml` files will be prepended to the specific sec
 By default tests running on Travis CI will log all messages of at least `INFO` level in `$PIWIK_ROOT_DIR/tmp/logs/matomo.log`. In a given travis build output, you can view the logs by clicking on the line `$ cat $PIWIK_ROOT_DIR/tmp/logs/matomo.log` at the end of the build output text.
 
 Note: `DEBUG` and `VERBOSE` messages are not logged by default (to keep Travis page loading fast). At any time you can temporarily enable logging by [modifying this file](https://github.com/matomo-org/matomo/blob/master/tests/PHPUnit/config.ini.travis.php#L23-27) and changing `log_level = info` to `log_level = debug` or `log_level = verbose`.
+
+## Build failed to execute
+
+Rarely a build might not execute. This may happen for example if some external resources are down temporarily. In this case you can click on "Restart job" in the top right for the specific travis build that failed and it will run the same job again.
