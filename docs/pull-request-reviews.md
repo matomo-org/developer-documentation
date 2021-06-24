@@ -182,7 +182,7 @@ External contributor pull requests should be reviewed in the same way as PRs fro
 
 ## Merging Pull Requests
 
-When reviewing a pull request in the current milestone, if it works, all review items have been addressed and tests pass, then core developers are allowed to merge it. Small changes can be merged directly without a review if the developer is 100% certain the change won't have any side effects etc. It is still always recommended to quickly ask another developer that is online to have a look at this PR now as such PRs are quickly reviewed.
+When reviewing a pull request in the current milestone, if it works, all review items have been addressed and tests pass, then core developers are allowed to merge it with a squash and merge. Small changes can be merged directly without a review if the developer is 100% certain the change won't have any side effects etc. It is still always recommended to quickly ask another developer that is online to have a look at this PR now as such PRs are quickly reviewed. Once the PR has been merged the branch can be deleted.
 
 If a PR affects the [public API](https://github.com/matomo-org/matomo/issues/8125) in any way a PR should not be merged without a review.
 
