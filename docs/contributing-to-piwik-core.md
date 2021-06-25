@@ -84,8 +84,10 @@ Before you start coding, you should make sure to keep your changes separate from
 We'll give our new branch a name. The branch name ideally always contains the GitHub issue number eg `1111` or `m1111` or if it's a Jira issue then eg `dev-1111`. Optionally, a descriptive name can be added if wanted. It's not a requirement though since the branch usually exists only temporarily anyway and a PR with description etc often exists too. To add a new branch, run the following command:
 
 ```bash
-git checkout -b bugfix
+git checkout -b bugfix $BASE_BRANCH
 ```
+
+Where you need to replace `$BASE_BRANCH` with the current main branch. This is for example `*.x-dev` when working on Matomo On-Premise (`4.x-dev` is the main branch at the time of writing this). For Matomo for WordPress this would be `develop`. For example: `git checkout -b bugfix 4.x-dev`. This way it will create a new branch from the `4.x-dev` branch. Otherwise, if you don't specify the base branch and you are already in another branch that has changes, then it would copy all changes from the current branch into the new branch.
 
 The checkout command will create a new branch if the `-b` option is supplied, otherwise it will try to load an existing branch.
 
