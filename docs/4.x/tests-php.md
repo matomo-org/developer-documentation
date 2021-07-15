@@ -203,6 +203,51 @@ Most unit and integration tests in Matomo test a single class, or at most a mato
 
 Plugins sometimes define their own version of this test.
 
+## Best practices
+
+### Make use of the right assertions
+
+* When possible prefer using `assertSame` over `assertEquals` so it does an exact comparision (including type)
+* Know the other methods like instead of `$this->assertSame(1, count($array))` use `$this->assertCount(1, $array)`
+
+### Compare the entire variable 
+
+Instead of for example 
+
+```php
+$this->assertEquals( 1, count( $missingTables ) );
+$this->assertEquals( 'foobar', $missingTables[0] );
+```
+
+It is much better to use `$this->assertSame( [ 'foobar' ], $missingTables );`.
+
+This way you will only need one `assertEquals` and the `$this->assertEquals( 1, count( $missingTables ) );` can be removed. More importantly, when there is a test failure, it will show you the entire output/difference of `$missingTables` vs with the current implementation you would only see something like `expected 1, actual 2` which isn't really helpful to know what went wrong. With the suggested assert it will tell you exactly what went wrong and by comparing the entire variable you always make sure there isn't anything that was forgotten.
+
+### One test case for each check
+
+In an ideal world each test case has only one assert or only tests one specific case. Instead of for example having:
+
+```php
+public function test_multiply() {
+    $this->assertSame( false, $this->report->multiply(0,false) );
+    $this->assertSame( 1, $this->report->multiply(1,1) );
+}
+```
+
+split them into two different methods:
+
+```php
+public function test_multiply_shouldReturnFalse_whenOneInputIsNotNumeric() {
+    $this->assertSame( false, $this->report->multiply(0,false) );
+}
+
+public function test_multiply_shouldReturnTheResult_whenTwoNumbersAreGiven() {
+    $this->assertSame( 1, $this->report->multiply(1,1) );
+}
+```
+
+This way the test output will be more verbose when a test case fails and it will be more clear what the case is trying to test.
+
 ## Fixing a broken system tests build
 
 ### When the build fails locally
