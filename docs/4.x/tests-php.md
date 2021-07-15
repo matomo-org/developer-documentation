@@ -209,6 +209,7 @@ Plugins sometimes define their own version of this test.
 
 * When possible prefer using `assertSame` over `assertEquals` so it does an exact comparision (including type)
 * Know the other methods like instead of `$this->assertSame(1, count($array))` use `$this->assertCount(1, $array)`
+* See the [full list of available assertions](https://phpunit.readthedocs.io/en/9.5/assertions.html).
 
 ### Compare the entire variable 
 
@@ -262,6 +263,13 @@ public function test_multiply() {
 }
 ```
 
+### Test edge cases
+
+Don't just test the expected way a method might be used. Also pass unexpected values such as `null` etc.
+
+### Documentation to read
+
+* [Writing tests for PHP Unit](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html)
 
 ## Fixing a broken system tests build
 
