@@ -248,6 +248,21 @@ public function test_multiply_shouldReturnTheResult_whenTwoNumbersAreGiven() {
 
 This way the test output will be more verbose when a test case fails and it will be more clear what the case is trying to test.
 
+### Don't catch exceptions
+
+We shouldn't catch any unexpected exception as otherwise tests would succeed without us noticing when they start failing. Instead we can simply remove the try/catch block. When there is any exception in the future, the test will fail (which is good) and we will get the exception message reported by PHPUnit.
+
+```php
+public function test_multiply() {
+    try {
+        $this->assertSame( false, $this->report->multiply(0,false) );
+    } catch (Exception $e) {
+        Log::log('test failed: ' . $e->getMessage());
+    }
+}
+```
+
+
 ## Fixing a broken system tests build
 
 ### When the build fails locally
