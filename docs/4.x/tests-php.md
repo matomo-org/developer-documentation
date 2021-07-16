@@ -191,6 +191,17 @@ $ ./console tests:run integration
 $ ./console tests:run system
 ```
 
+### Running only specific test cases to save time
+
+While developing or debugging tests, there isn't the need to always execute all tests in a file or group. Instead, you can execute only a specific test or group of tests by adding the filter option.
+
+
+```bash
+$ ./console tests:run path/file.php --options="--filter=test_mymethod"
+```
+
+This will only run the test cases that start with the sepcific method name `test_mymethod`. This will make troubleshooting this test a lot faster as you don't need to wait until all other test cases finish.
+
 ## Special Tests
 
 Most unit and integration tests in Matomo test a single class, or at most a matomo subsystem. One test, however, is special in that they don't test Matomo behavior, but instead tests that Matomo is ready to be released. This test is called **ReleaseCheckListTest** and performs the following types of tests:
