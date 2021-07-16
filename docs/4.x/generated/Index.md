@@ -458,6 +458,7 @@ Index
 - [`getIpFromHeader()`](Piwik/IP.md#getipfromheader) &mdash; *Method in class* [`IP`](Piwik/IP.md)
 - [`getNonProxyIpFromHeader()`](Piwik/IP.md#getnonproxyipfromheader) &mdash; *Method in class* [`IP`](Piwik/IP.md)
 - [`getFirstIpFromList()`](Piwik/IP.md#getfirstipfromlist) &mdash; *Method in class* [`IP`](Piwik/IP.md)
+- [`getLastIpFromList()`](Piwik/IP.md#getlastipfromlist) &mdash; *Method in class* [`IP`](Piwik/IP.md)
 - [`getCurrencyList()`](Piwik/Intl/Data/Provider/CurrencyDataProvider.md#getcurrencylist) &mdash; *Method in class* [`CurrencyDataProvider`](Piwik/Intl/Data/Provider/CurrencyDataProvider.md)
 - [`getLanguageList()`](Piwik/Intl/Data/Provider/LanguageDataProvider.md#getlanguagelist) &mdash; *Method in class* [`LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md)
 - [`getLanguageToCountryList()`](Piwik/Intl/Data/Provider/LanguageDataProvider.md#getlanguagetocountrylist) &mdash; *Method in class* [`LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md)
