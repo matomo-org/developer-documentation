@@ -1903,7 +1903,7 @@ Usages:
 
 ### MultiSites.filterRowsForTotalsCalculation
 
-*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/API.php) in line [503](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/API.php#L503)*
+*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/API.php) in line [518](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/API.php#L518)*
 
 Triggered to filter / restrict which rows should be included in the MultiSites (All Websites Dashboard)
 totals calculation **Example**
