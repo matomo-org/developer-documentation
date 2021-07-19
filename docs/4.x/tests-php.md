@@ -278,6 +278,19 @@ public function test_multiply() {
 
 Don't just test the expected way a method might be used. Also pass unexpected values such as `null` etc.
 
+### Assert not assertions.
+
+Say you have an assertion like this: `$this->assertNotContains( "_paq.push(['requireCookieConsent']);", $trackingCode );`.
+
+Then it can be better to instead simply use `$this->assertNotContains( 'requireCookieConsent', $trackingCode );`.
+
+Why?
+
+* It reduces the chance of a typo making the test pass by accident. If eg the actual code has a space somewhere (eg `_paq.push([ 'requireCookieConsent']);`) then the test would still pass even though it contains the `requireCookieConsent` call.
+* It future proofs it. If someone changes the implementation to use double instead of single quotes (`_paq.push(["requireCookieConsent"]);`) then the test still works correctly and would still correctly detect any failure if for some reason there's a bug and the `requireCookieConsent` call is suddenly present in `$trackingCode`.
+
+Note this does not apply to eg `assertContains` where you want to be specific to make sure we get the expected result. There you would want to write `$this->assertContains( "_paq.push(['requireCookieConsent']);", $trackingCode );`
+
 ### Documentation to read
 
 * [Writing tests for PHP Unit](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html)
