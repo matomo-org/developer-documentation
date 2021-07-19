@@ -1990,7 +1990,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [1377](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L1377)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [1378](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L1378)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
