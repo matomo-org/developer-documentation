@@ -48,7 +48,7 @@ $ ./console development:enable
 To install PHPUnt, run below command in the Matomo root directory (depending on how you [installed Composer](https://getcomposer.org/doc/00-intro.md) you may not need the `php` command):
 
 ```
-php composer.phar install --dev
+php composer.phar install
 ```
 
 If your development Matomo is not using `localhost` as a hostname (or if your webserver is using a custom port number), then edit your `config/config.ini.php` file and under `[tests]` section, add the `http_host` and/or `port` settings:
