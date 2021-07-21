@@ -124,18 +124,6 @@ When making something a public API:
   * If an API is a component (like an API, Task, Setting, ...) then we provide a command to generate such a component if possible.
   * We consider writing a blog post about it to mention this new API.
 
-#### Changes that break API
-
-There are many ways we might break the PHP API. For example:
-
-* Renaming a class or changing an inherited interface or requiring new methods to be defined
-* Changing the method signature in any way
-  * Renaming a parameter name
-  * Adding or removing a required parameter
-  * Making a parameter a reference or removing a reference
-  * Specifying a return value or parameter type or changing the type
-  * Defining or changing a default value
-
 ## HTTP API
 
 This section applies to the HTTP API's that are defined in an `API.php` file within a plugin.
