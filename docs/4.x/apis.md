@@ -82,6 +82,7 @@ When we are adding a new API or when we are breaking or deprecating an existing 
 * change to Piwik JavaScript Tracker feature (eg. new feature, or removed feature)
 * since PHP 8 argument names of public API's are also considered API
 * new console command
+* new config.ini.php settings
 * new parameter for a console command
 * new developer guide
 * update to a third party library
@@ -98,12 +99,11 @@ Any change would usually fall under one of these categories:
 #‎## New features
 #‎## New APIs
 #‎## New commands
+#‎## New config.ini.php settings
 #‎## New developer guide
 #‎## Library updates
 #‎## Internal change
 ```
-
-If the change is a new config or a config change, then it's usually not mentioned in the developer changelog as they are mostly meant for users and not for developers.
 
 ## PHP Plugin API
 
