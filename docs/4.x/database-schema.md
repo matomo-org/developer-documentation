@@ -189,6 +189,17 @@ Action types are persisted in the `log_action` table and contain the following i
   - `2`: `'https://'`
   - `3`: `'https://www.'`
 
+#### Referencing action types
+
+Action types are referenced in other log tables by idaction. For example, the `log_link_visit_action.idaction_url` and `log_link_visit_action.idaction_name` columns
+reference the URL and page title for a single action in a visit. Other columns like `log_link_visit_action.idaction_event_category` can reference other
+action types.
+
+Some action type references change meaning based on context. For example, the `idaction_name` column can be the page title of the action, if `idaction_url` is
+also specified, OR it can be the event name if `idaction_event_category` or `idaction_event_action` are supplied.
+
+The specifics depend on how plugins implement tracking.
+
 #### Table details
 
 The `index_type_hash` index is used during tracking to find existing action types.

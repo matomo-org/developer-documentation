@@ -8,12 +8,47 @@ next: tests-ui
 As explained in the previous guide, Piwik's test suite contains PHP tests and [UI tests](/guides/tests-ui). The PHP test suite is written and run using [PHPUnit](https://phpunit.de).
 
 If you're creating a new plugin, you may find it beneficial to engage in [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) or at least to verify your code is correct with tests. With tests, you'll be able to ensure that your code works and you'll be able to ensure the changes you make don't cause regressions.
+
+## How to differentiate between unit, integration or system tests?
+
+This can be sometimes hard to decide and often leads to discussions. We consider a test as a unit test when
+it tests only a single method or class. Sometimes two or three classes can still be considered as a Unit for instance if
+you have to pass a dummy class or something similar but it should actually only test one class or method.
+If it has a dependency to the filesystem, web, config, database or to other plugins it is not a unit test but an
+integration test. If the test is slow it is most likely not a unit test but an integration test as well.
+"Slow" is of course very subjective and also depends on the server but if your test does not have any dependencies
+your test will be really fast.
+
+It is an integration test if you have any dependency to a loaded plugin, to the filesystem, web, config, database or something
+similar. It is an integration test if you test multiple classes in one test.
+
+It is a system test if you - for instance - make a call to Matomo itself via HTTP or CLI and the whole system is being tested.
+
+### Why do we split tests in unit, integration, system and ui folders?
+
+Because they fail for different reasons and the duration of the test execution is different. This allows us to execute
+all unit tests and get a result very quick. Unit tests should not fail on different systems and just run everywhere for
+example no matter whether you are using NFS or not. Once the unit tests are green one would usually execute all integration
+tests to see whether the next stage works. They take a bit longer as they have dependencies to the database and filesystem.
+The system and ui tests take the most time to run as they always run through the whole code.
+
+Another advantage of running the tests separately is that we are getting a more accurate code coverage. For instance when
+running the unit tests we will get the true code coverage as they always only test one class or method. Integration tests
+usually run through a lot of code but often actually only one method is supposed to be tested. Although many methods are
+not tested they would be still marked as tested when running integration tests.
+
 ## Requirements
 
 Before you start make sure you have enabled development mode:
 
 ```
 $ ./console development:enable
+```
+
+To install PHPUnt, run below command in the Matomo root directory (depending on how you [installed Composer](https://getcomposer.org/doc/00-intro.md) you may not need the `php` command):
+
+```
+php composer.phar install
 ```
 
 If your development Matomo is not using `localhost` as a hostname (or if your webserver is using a custom port number), then edit your `config/config.ini.php` file and under `[tests]` section, add the `http_host` and/or `port` settings:
@@ -156,6 +191,17 @@ $ ./console tests:run integration
 $ ./console tests:run system
 ```
 
+### Running only specific test cases to save time
+
+While developing or debugging tests, there isn't the need to always execute all tests in a file or group. Instead, you can execute only a specific test or group of tests by adding the filter option.
+
+
+```bash
+$ ./console tests:run path/file.php --options="--filter=test_mymethod"
+```
+
+This will only run the test cases that start with the sepcific method name `test_mymethod`. This will make troubleshooting this test a lot faster as you don't need to wait until all other test cases finish.
+
 ## Special Tests
 
 Most unit and integration tests in Matomo test a single class, or at most a matomo subsystem. One test, however, is special in that they don't test Matomo behavior, but instead tests that Matomo is ready to be released. This test is called **ReleaseCheckListTest** and performs the following types of tests:
@@ -167,6 +213,87 @@ Most unit and integration tests in Matomo test a single class, or at most a mato
 * and many other things.
 
 Plugins sometimes define their own version of this test.
+
+## Best practices
+
+### Make use of the right assertions
+
+* When possible prefer using `assertSame` over `assertEquals` so it does an exact comparision (including type)
+* Know the other methods like instead of `$this->assertSame(1, count($array))` use `$this->assertCount(1, $array)`
+* See the [full list of available assertions](https://phpunit.readthedocs.io/en/9.5/assertions.html).
+
+### Compare the entire variable 
+
+Instead of for example 
+
+```php
+$this->assertEquals( 1, count( $missingTables ) );
+$this->assertEquals( 'foobar', $missingTables[0] );
+```
+
+It is much better to use `$this->assertSame( [ 'foobar' ], $missingTables );`.
+
+This way you will only need one `assertEquals` and the `$this->assertEquals( 1, count( $missingTables ) );` can be removed. More importantly, when there is a test failure, it will show you the entire output/difference of `$missingTables` vs with the current implementation you would only see something like `expected 1, actual 2` which isn't really helpful to know what went wrong. With the suggested assert it will tell you exactly what went wrong and by comparing the entire variable you always make sure there isn't anything that was forgotten.
+
+### One test case for each check
+
+In an ideal world each test case has only one assert or only tests one specific case. Instead of for example having:
+
+```php
+public function test_multiply() {
+    $this->assertSame( false, $this->report->multiply(0,false) );
+    $this->assertSame( 1, $this->report->multiply(1,1) );
+}
+```
+
+split them into two different methods:
+
+```php
+public function test_multiply_shouldReturnFalse_whenOneInputIsNotNumeric() {
+    $this->assertSame( false, $this->report->multiply(0,false) );
+}
+
+public function test_multiply_shouldReturnTheResult_whenTwoNumbersAreGiven() {
+    $this->assertSame( 1, $this->report->multiply(1,1) );
+}
+```
+
+This way the test output will be more verbose when a test case fails and it will be more clear what the case is trying to test.
+
+### Don't catch exceptions
+
+We shouldn't catch any unexpected exception as otherwise tests would succeed without us noticing when they start failing. Instead we can simply remove the try/catch block. When there is any exception in the future, the test will fail (which is good) and we will get the exception message reported by PHPUnit.
+
+```php
+public function test_multiply() {
+    try {
+        $this->assertSame( false, $this->report->multiply(0,false) );
+    } catch (Exception $e) {
+        Log::log('test failed: ' . $e->getMessage());
+    }
+}
+```
+
+### Test edge cases
+
+Don't just test the expected way a method might be used. Also pass unexpected values such as `null` etc.
+
+### Assert not assertions.
+
+Say you have an assertion like this: `$this->assertNotContains( "_paq.push(['requireCookieConsent']);", $trackingCode );`.
+
+Then it can be better to instead simply use `$this->assertNotContains( 'requireCookieConsent', $trackingCode );`.
+
+Why?
+
+* It reduces the chance of a typo making the test pass by accident. If eg the actual code has a space somewhere (eg `_paq.push([ 'requireCookieConsent']);`) then the test would still pass even though it contains the `requireCookieConsent` call.
+* It future proofs it. If someone changes the implementation to use double instead of single quotes (`_paq.push(["requireCookieConsent"]);`) then the test still works correctly and would still correctly detect any failure if for some reason there's a bug and the `requireCookieConsent` call is suddenly present in `$trackingCode`.
+
+Note this does not apply to eg `assertContains` where you want to be specific to make sure we get the expected result. There you would want to write `$this->assertContains( "_paq.push(['requireCookieConsent']);", $trackingCode );`
+
+### Documentation to read
+
+* [Writing tests for PHP Unit](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html)
 
 ## Fixing a broken system tests build
 
@@ -195,7 +322,9 @@ then you should update the expected system files accordingly. To compare and upd
 * Then `git add` and `git commit` and `git push` the changes to trigger another build run 
 * If some tests are still failing you may need to repeat this process as sometimes you might forget to update some
 
-### To fix a broken build, follow these steps:
+## Debugging tests
+
+As a software developer writing tests it can be useful to be able to set breakpoints and debug while running tests. If you use Phpstorm [read this answer](http://stackoverflow.com/a/14998884/3759928) to learn to configure Phpstorm with the PHPUnit from Composer.
 
 ## Learn more
 

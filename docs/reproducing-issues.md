@@ -19,3 +19,15 @@ While we build new features or fix bugs (mostly tracking related) we build such 
 ## Matomo System Report
 
 If you can't reproduce an issue easily, then it may be useful to ask a user to provide the [Matomo system report](https://matomo.org/faq/troubleshooting/how-do-i-find-and-copy-the-system-check-in-matomo-on-premise/) which will be anonymised automatically and it should be safe to share in a GitHub comment. Alternatively, this could be posted to us by email.
+
+## Testing data
+
+As a developer it may be useful to generate test data. To do this, follow these steps:
+
+* Install Matomo, for help see [Setting up Matomo](https://developer.matomo.org/guides/getting-started-part-1#getting-setup-to-extend-piwik)
+* Install and activate the `VisitorGenerator` plugin via the Marketplace if needed
+* Generate websites `./console visitorgenerator:generate-websites --limit=50`
+* Generate users `./console visitorgenerator:generate-users --limit=50`
+* Generate goals for a website `./console visitorgenerator:generate-goals --idsite=1`
+* Generate visits for a website `./console visitorgenerator:generate-visits --idsite=1`
+* Trigger the archiving in case browser archiving is disabled `./console core:archive`

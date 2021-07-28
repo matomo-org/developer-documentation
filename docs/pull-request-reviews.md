@@ -120,7 +120,7 @@ The level of testing would vary based on what is being reviewed, but some form o
 
 ### Reviewed for breaking changes
 
-If a change touches something users actively use or a piece of code that is considered public API for plugin developers or those integrating Matomo, then we want to make sure our
+If a change touches something users actively use or a piece of [code that is considered public API](https://developer.matomo.org/guides/apis) for plugin developers or those integrating Matomo, then we want to make sure our
 change doesn't break anything these users and developers might currently be doing.
 
 This is fairly simple for code (for example, if we add a new parameter to a function considered public API we want to make sure it has a default value, so people currently calling
@@ -129,6 +129,19 @@ the way they currently want it can be a challenge.
 
 We want to make sure API methods still behave as they did before for the same inputs, old links still go to the same pages, CLI commands do not fail because parameters were removed,
 and many other things. It can be hard to consider given there are so many ways we can break something for a user, but it's definitely important to keep our users workflows working.
+
+#### Changes that might break PHP Plugins API
+
+There are many ways we might break the PHP API. For example:
+
+* Renaming a class or changing an inherited interface or requiring new methods to be defined
+* Changing the method signature in any way
+  * Renaming a parameter name
+  * Adding or removing a required parameter
+  * Making a parameter a reference or removing a reference
+  * Specifying a return value or parameter type or changing the type
+  * Defining or changing a default value
+
 
 ### Developer changelog updated if needed
 
@@ -182,7 +195,7 @@ External contributor pull requests should be reviewed in the same way as PRs fro
 
 ## Merging Pull Requests
 
-When reviewing a pull request in the current milestone, if it works, all review items have been addressed and tests pass, then core developers are allowed to merge it. Small changes can be merged directly without a review if the developer is 100% certain the change won't have any side effects etc. It is still always recommended to quickly ask another developer that is online to have a look at this PR now as such PRs are quickly reviewed.
+When reviewing a pull request in the current milestone, if it works, all review items have been addressed and tests pass, then core developers are allowed to merge it with a squash and merge. Small changes can be merged directly without a review if the developer is 100% certain the change won't have any side effects etc. It is still always recommended to quickly ask another developer that is online to have a look at this PR now as such PRs are quickly reviewed. Once the PR has been merged the branch can be deleted.
 
 If a PR affects the [public API](https://github.com/matomo-org/matomo/issues/8125) in any way a PR should not be merged without a review.
 

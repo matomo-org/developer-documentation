@@ -53,9 +53,11 @@ The class defines the following methods:
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$label`
+    - `$label` (`string`) &mdash;
       
-    - `$comment`
+    - `$comment` (`string`) &mdash;
+      
+    - `$escapeComment` (`bool`) &mdash;
       
 - It returns a [`DiagnosticResult`](../../../../Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) value.
 

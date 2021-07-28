@@ -181,6 +181,7 @@ The class defines the following methods:
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function.
 - [`setTotalsRow()`](#settotalsrow)
 - [`getTotalsRow()`](#gettotalsrow)
+- [`getSummaryRow()`](#getsummaryrow)
 - [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any).
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting.
 - [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering.
@@ -310,6 +311,14 @@ Sorts the DataTable rows using the supplied callback function.
 <a name="gettotalsrow" id="gettotalsrow"></a>
 <a name="getTotalsRow" id="getTotalsRow"></a>
 ### `getTotalsRow()`
+
+#### Signature
+
+- It does not return anything or a mixed result.
+
+<a name="getsummaryrow" id="getsummaryrow"></a>
+<a name="getSummaryRow" id="getSummaryRow"></a>
+### `getSummaryRow()`
 
 #### Signature
 

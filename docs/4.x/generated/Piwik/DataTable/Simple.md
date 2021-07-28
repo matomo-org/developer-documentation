@@ -51,6 +51,7 @@ The class defines the following methods:
 - [`sort()`](#sort) &mdash; Sorts the DataTable rows using the supplied callback function. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setTotalsRow()`](#settotalsrow) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getTotalsRow()`](#gettotalsrow) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getSummaryRow()`](#getsummaryrow) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getSortedByColumnName()`](#getsortedbycolumnname) &mdash; Returns the name of the column this table was sorted by (if any). Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -180,6 +181,14 @@ Sorts the DataTable rows using the supplied callback function.
 <a name="gettotalsrow" id="gettotalsrow"></a>
 <a name="getTotalsRow" id="getTotalsRow"></a>
 ### `getTotalsRow()`
+
+#### Signature
+
+- It does not return anything or a mixed result.
+
+<a name="getsummaryrow" id="getsummaryrow"></a>
+<a name="getSummaryRow" id="getSummaryRow"></a>
+### `getSummaryRow()`
 
 #### Signature
 

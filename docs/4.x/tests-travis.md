@@ -1,6 +1,7 @@
 ---
 category: Develop
-previous: tests-ui
+previous: tests-js-tracker
+next: tests-troubleshooting
 ---
 # Running tests on Travis CI
 
@@ -11,6 +12,8 @@ previous: tests-ui
 Matomo uses Travis to automatically run its test suite on every commit (for every branch and pull request). PHP and UI tests are run on the [matomo-org/matomo](https://travis-ci.com/github/matomo-org/matomo/builds) build
 
 Current status for 4.x-dev branch: [![Build Status](https://travis-ci.com/matomo-org/matomo.svg?branch=4.x-dev)](https://travis-ci.com/matomo-org/matomo)
+
+Each developer is responsible to keep the build green.
 
 ## Running your plugins tests on Travis CI
 
@@ -96,3 +99,13 @@ To add extra steps to your plugin's .travis.yml file, create a `/tests/travis` f
   * after_success.after.yml
 
 The contents of the `XXX.before.yml` files will be prepended to the specific section in your .travis.yml file, while the contents of the `XXX.after.yml` files will be appended.
+
+## Test logs on CI
+
+By default tests running on Travis CI will log all messages of at least `INFO` level in `$PIWIK_ROOT_DIR/tmp/logs/matomo.log`. In a given travis build output, you can view the logs by clicking on the line `$ cat $PIWIK_ROOT_DIR/tmp/logs/matomo.log` at the end of the build output text.
+
+Note: `DEBUG` and `VERBOSE` messages are not logged by default (to keep Travis page loading fast). At any time you can temporarily enable logging by [modifying this file](https://github.com/matomo-org/matomo/blob/master/tests/PHPUnit/config.ini.travis.php#L23-27) and changing `log_level = info` to `log_level = debug` or `log_level = verbose`.
+
+## Build failed to execute
+
+Rarely a build might not execute. This may happen for example if some external resources are down temporarily. In this case you can click on "Restart job" in the top right for the specific travis build that failed and it will run the same job again.

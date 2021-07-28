@@ -19,6 +19,7 @@ This guide assumes that you:
 * can use the [git](https://git-scm.com/) source code management tool
 * are familiar with [GitHub](https://github.com),
 * and have the necessary tools to contribute to Piwik (if not, see this section of our [Getting started extending Piwik](/guides/getting-started-part-1) guide).
+* you must have [git lfs installed](https://git-lfs.github.com/)
 
 ## Contribution process
 
@@ -29,6 +30,8 @@ Once you've decided on something, continue below.
 ### Getting a copy of Piwik to work on
 
 Before you can start contributing you need to get setup with [git](https://git-scm.com/) & [GitHub](https://github.com). If needed, you can [create a GitHub account here](https://github.com/).
+
+If you are a Matomo core developer then you have write permissions to the Matomo repository and therefore you don't need to fork Matomo and can skip below steps. Instead clone the [Matomo repository](https://github.com/matomo-org/matomo) and push to it directly. This will simplify a lot of your work.
 
 #### Fork the Piwik repository
 
@@ -81,8 +84,10 @@ Before you start coding, you should make sure to keep your changes separate from
 We'll give our new branch a name. The branch name ideally always contains the GitHub issue number eg `1111` or `m1111` or if it's a Jira issue then eg `dev-1111`. Optionally, a descriptive name can be added if wanted. It's not a requirement though since the branch usually exists only temporarily anyway and a PR with description etc often exists too. To add a new branch, run the following command:
 
 ```bash
-git checkout -b bugfix
+git checkout -b bugfix $BASE_BRANCH
 ```
+
+Where you need to replace `$BASE_BRANCH` with the current main branch. This is for example `*.x-dev` when working on Matomo On-Premise (`4.x-dev` is the main branch at the time of writing this). For Matomo for WordPress this would be `develop`. For example: `git checkout -b bugfix 4.x-dev`. This way it will create a new branch from the `4.x-dev` branch. Otherwise, if you don't specify the base branch and you are already in another branch that has changes, then it would copy all changes from the current branch into the new branch.
 
 The checkout command will create a new branch if the `-b` option is supplied, otherwise it will try to load an existing branch.
 
@@ -189,6 +194,10 @@ See our [dedicated guide for Matomo Code Standards](/guides/coding-standards).
 ## Debugging
 
 See our [debugging Matomo core guide](/guides/debugging-core).
+
+## Submodules
+
+Matomo has various submodules. These will be updated weekly automatically using a GitHub action. This means if you push something to a submodule, for example the Tag Manager, then you won't need to create another pull request in Matomo repository to update the submodule. In some cases, for example if an important fix was made shortly before a release then you may need to create a PR to update the submodule reference in the Matomo repository.
 
 ## Automated tests
 

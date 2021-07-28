@@ -12,7 +12,7 @@ We follow [semantic versioning](https://semver.org/) where a version number look
 
 We first release one or multiple beta versions while working on a release.
 
-Before releasing a new version we release an RC. As soon as an RC has been released we only merge important bug fixes but no other changes anymore. We usually run the RC for a minor release for at least a week, for major releases multiple weeks and for patch releases at least one day but better multiple days.
+Before releasing a new version we release an RC. As soon as an RC has been released we only merge regressions. Very important bug fixes can be merged after an RC too if their risk for side effects is low. No other changes should be merged between an RC and the release. We usually run the RC for a minor release for at least a week, for major releases multiple weeks and for patch releases at least one day but better multiple days.
 
 Once a new release has been released we wait for three days with merging PRs in case we have to do a patch release. Should a patch release be needed after the three days then we can create a branch eg `4.3.1` and merge patches into the branch and the main branch (eg `4.x-dev`).
 
