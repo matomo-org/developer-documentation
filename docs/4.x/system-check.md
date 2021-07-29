@@ -34,7 +34,7 @@ To create a new system check, use the [console](/guides/piwik-on-the-command-lin
 
 The command will ask for your plugin name and for the name of the system check you want to create. You should enter some meaningful name that describes the check well. For example, "JS Directory Write Permission Check".
 
-Once all information is provided, a system check class will be created in the `Diagnostic` directory of your plugin containing an example on how to define a system check. In above example it would have created a file `Diagnostic/JsDirectoryWritePermissionCheck.php` within the chosen plugin.
+Once all information is provided, a system check class will be created in the `Diagnostic` directory of your plugin containing an example on how to define a system check. In the above example it would have created a file `Diagnostic/JsDirectoryWritePermissionCheck.php` within the chosen plugin.
 
 ### Making the new system check known to Matomo
 
