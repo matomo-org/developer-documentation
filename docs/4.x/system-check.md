@@ -92,7 +92,7 @@ public function execute()
 Each check can have one of four different statuses:
 
 * **OK** (`DiagnosticResult::STATUS_OK`) - Everything is fine and the system passes the check.
-* **Error** (`DiagnosticResult::STATUS_ERROR`) - There is an error which does need to be fixed. Typically used for a required check.
+* **Error** (`DiagnosticResult::STATUS_ERROR`) - There is an error which needs to be fixed. Typically used for a required check.
 * **Warning** (`DiagnosticResult::STATUS_WARNING`) - There is a warning and it is optional to fix this. Typically used for an optional check.
 * **Informational** (`DiagnosticResult::STATUS_INFORMATIONAL`) - Only provides information. Typically used for an informational check.
 
