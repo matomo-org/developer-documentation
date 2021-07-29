@@ -26,7 +26,7 @@ Typical information could be version numbers of installed packages or informatio
 
 ## Creating a new system check
 
-To create a new system check, use the [console](/guides/piwik-on-the-command-line) to execute below command (requires Matomo 4.4.1):
+To create a new system check, use the [console](/guides/piwik-on-the-command-line) to execute the below command (requires Matomo 4.4.1):
 
 ```bash
 ./console generate:system-check
