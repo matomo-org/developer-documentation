@@ -128,9 +128,9 @@ You can remove existing system checks from other plugins using the `config/confi
 
 ```php
 return [
-    'diagnostics.disabled' => array(
+    'diagnostics.disabled' => DI\add(array(
         DI\get('Piwik\Plugins\Diagnostics\Diagnostic\PhpVersionCheck'),
-    ),
+    )),
 ];
 ```
 
