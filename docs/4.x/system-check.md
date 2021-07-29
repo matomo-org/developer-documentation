@@ -44,18 +44,18 @@ First you need to decide if your system check is of type required, optional or i
 
 ```php
 return [
-    'diagnostics.required' => array(
+    'diagnostics.required' => DI\add(array(
         // adds a required system check
         DI\get('Piwik\Plugins\MyPluginName\Diagnostic\JsDirectoryWritePermissionCheck'),
-    ),
-    'diagnostics.optional' => array(
+    )),
+    'diagnostics.optional' => DI\add(array(
         // adds an optional system check
         DI\get('Piwik\Plugins\MyPluginName\Diagnostic\JsDirectoryWritePermissionCheck'),
-    ),
-    'diagnostics.informational' => array(
+    )),
+    'diagnostics.informational' => DI\add(array(
         // adds an informational system check
         DI\get('Piwik\Plugins\MyPluginName\Diagnostic\JsDirectoryWritePermissionCheck'),
-    )
+    ))
 ];
 ```
 
