@@ -9,7 +9,7 @@ category: DevelopInDepth
 
 You can use the [configuration object](/guides/piwiks-ini-configuration) as usual and set any specific ini setting before executing the test.
 
-You don't need to reset the ini after each test as this is done automatically for you.
+In integration tests you don't need to reset the config ini after each test as this is done automatically. In system tests the ini change is kept for all tests in the same class unless you manually undo the ini change.
 
 You can find an example in the [BlobReportLimitingTest](https://github.com/matomo-org/matomo/blob/4.4.0/tests/PHPUnit/System/BlobReportLimitingTest.php#L194-L216). 
 
@@ -37,7 +37,7 @@ Changes here are usually applied to all tests.
 
 ### Integration and system PHP tests
 
-If you want to apply changes only for a specific test then you can overwrite the `provideContainerConfigBeforeClass` or the `provideContainerConfig` method to change the injected dependencies if neeeded.
+If you want to apply changes only for a specific test then you can overwrite the `provideContainerConfigBeforeClass` in system tests (and the overwrite will be applied for all tests in this test class) or the `provideContainerConfig` method in integration tests to change the injected dependencies.
 
 You can find an example in [ArchiveCronTest](https://github.com/matomo-org/matomo/blob/4.4.0/plugins/CoreConsole/tests/System/ArchiveCronTest.php#L455-L471).
 
