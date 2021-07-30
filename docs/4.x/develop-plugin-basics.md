@@ -10,6 +10,7 @@ subGuides:
   - plugin-settings
   - scheduled-tasks
   - visitor-log-and-profile
+  - system-check
   - piwik-on-the-command-line
   - dependency-injection
   - gdpr
