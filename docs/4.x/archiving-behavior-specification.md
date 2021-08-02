@@ -4,7 +4,7 @@ category: API Reference
 
 # Archiving Behavior Specification
 
-This page lists all expected behavior of the internal report aggregation and storing mechanism (archiving)
+This page describes all the behavior of the internal report aggregation and storing mechanism (archiving)
 and the expected behavior of the `core:archive` command (the cron archiving process).
 It serves as a reference since the number of cases to think about is too high to keep in ones head, and as
 a jumping off point for manual testing of the whole process.
@@ -21,7 +21,7 @@ the entrypoint for report aggregation.
 ### General Expected Behavior
 
 API methods use the `Piwik\Archive` class to query for archive data. If we are allowed to archive in the current
-request/process, and cannot find a recent, usable archive, we generate it.
+request/process, and cannot find a recent, usable archive, we generate it, by launching the core archiving process.
 
 ### Settings
 
@@ -38,10 +38,10 @@ request/process, and cannot find a recent, usable archive, we generate it.
   for archives for other periods.
 * `[General] time_before_week_archive_considered_outdated`, `[General time_before_month_archive_considered_outdated]`,
   `[General] time_before_year_archive_considered_outdated`, `[General] time_before_range_archive_considered_outdated`:
-  specific ttls for different period types, defaults to 'today time to live' value if not specified
+  specific ttls for different period types. They each default to the 'today time to live' value if not specified
 * custom date ranges to pre-process: there is an INI config setting and some user settings that allow users to specify that
   certain ranges should be pre-archived. The INI setting is `[General] archiving_custom_ranges`. The user setting is the
-  setting that controls the default period to load in Matomo.
+  setting that controls the default period to load in Matomo. These ranges will be processed in core:archive if specified.
 
 ### Rules
 
@@ -86,7 +86,8 @@ archiving command.
 * `trigger`: if set to `archivephp`, let's the core archiving process know it was launched by the `core:archive` command.
   The archiving process will only assume this if the current request also has superuser access loaded.
 * `skipArchiveSegmentToday`: if set and launching archiving is enabled for the current request, then `Archive.php` will
-  skip the archiving of segment archives for today's date, if there are any in the request. (It will also skip querying this data as well.)
+  skip the archiving of segment archives for today's date, if there are any in the request. (It will also skip querying this data as well,
+  so the result for that data will be empty.)
 * `plugin`: If we want to initiate archiving for a specific plugin, this parameter specifies the name of the plugin to launch
   archiving for. If we want to force archiving of ONLY this plugin and not the all plugins archive, `pluginOnly=1` must also be set.
 * `pluginOnly`: this query parameter is sent when processing one or more reports within a specific plugin and no others. It is only used
@@ -102,7 +103,7 @@ archiving command.
 
 _Brief Description of system:_ The `core:archive` command is meant to be run as a cron job periodically archiving data
 based on a queue. The queue that controls what archives get launched is the `archive_invalidations` table. `core:archive`
-will both: insert into this table before processing each site and process the entries, launching the core archiving process
+will both: insert into this table before processing each site, and then process the entries, launching the core archiving process
 for each valid entry.
 
 ### Range Archiving vs All Others
@@ -119,7 +120,7 @@ Since the range just aggregates day periods, this is still performant, as long a
 The core:archive command launches the core archiving process through new processes, which allows it to achieve concurrency.
 If it's supported by the OS configuration and PHP runtime configuration, these processes are CLI processes spawned through
 `shell_exec()` running the `climulti:request` command. The `climulti:request` command takes a query string and processes it
-like it is an API request.
+like it is an HTTP request.
 
 If it's not supported, then we use CURL multi requests. CURL is not as fast as launching cli processes, so we prefer to use
 `climulti:request`.
@@ -143,7 +144,7 @@ archived concurrently but this is only possible by running multiple `core:archiv
 Some archive invalidations have to be handled before others. Specifically:
 
 - the "All Visits" segment is run before individual segments for a period.
-- periods are run in ascending order: day periods are run before weeks that contain them
+- periods are run in ascending order: day periods are run before the weeks that contain them
 - invalidations are processed in descending order of start date. So the day starting on 07-26-2021 will run before
   the week on 07-26-2021, and both will run after the day starting on 07-27-2021.
 
@@ -172,8 +173,8 @@ older than the configured TTL (see [the previous section on archiving settings](
 
 For `yesterday`, the archive will be automatically invalidated if the current date is a different day than the `ts_archived`
 date for the latest archive for `yesterday`. If this is true, it means the day has changed since the archive was processed,
-and there may be more visits to process. For example, the last known archive for 2021-05-20 is calculated at 2021-05-20 20:00:00,
-but it is now 2021-05-21 00:30:00, and there may be visits between those two times to process.
+and there may be more visits to process. For example, if the last known archive for 2021-05-20 is calculated at 2021-05-20 20:00:00,
+but it is now 2021-05-21 00:30:00, there may be visits between 20:00:00 and 00:00:00 (midnight) to process.
 
 **invalidating custom ranges**
 
@@ -193,12 +194,12 @@ They are then processed all at once with others.
 
 **when processing a single archive fails**
 
-core:archive detects when the core archiving process fails when it cannot parse the output of a climulti:request command or
-an archiving curl request. When this occurs, the invalidation being processed's status is reset to 0, so it will be picked up
+core:archive can detect when the core archiving process fails, since it will not be able to parse the output of a climulti:request
+command or the archiving curl request. When this occurs, the invalidation being processed's status is reset to 0, so it will be picked up
 again. BUT we also take note of the idinvalidation and skip it for the rest of the current core:archive run. In case the problem
 is persistent, we don't want to continuously run a failing job.
 
-Note: we currently don't try to retry the job, since archiving jobs are usually compute intensive, and generally do not fail
+Note: we currently don't try to immediately retry the job, since archiving jobs are usually compute intensive, and generally do not fail
 randomly. Retrying would thus be a waste of resources.
 
 **if the core:archive process is terminated in the middle of processing an archive**
@@ -212,13 +213,14 @@ all such invalidations' status to 1.
 We detect the age of an in-progress invalidation by looking at the ts_started column. Before an archiving job is run, the
 associated invalidation's ts_started column is set to the start time (this is done at the same time `status` is set to 1).
 
-**an archiving run fails, the sites whose archives failed are deleted, and the archiver starts again**
+**an archiving run fails, the sites for the failed archive are deleted, and the archiver starts again**
 
 In this case, an archiving run fails leaving invalidations in the archive_invalidations table. The sites for those invalidations
 are then deleted, then another core:archive command runs.
 
-This new run should ignore the invalidations in the archive_invalidations table. Currently this occurs because we process
-archives for one site at a time. If the site to archive has been deleted, we will not see it.
+This new run should ignore the invalidations in the archive_invalidations table. If we start an entirely new SharedSiteIds
+list, then we will simply not see the site. If however we use an existing site ID queue, we will encounter the site ID, but fail
+to get the rest of the site information and move on to the next.
 
 **duplicate invalidations are found in the archive_invalidations table**
 
@@ -243,10 +245,10 @@ Each period type has an associated TTL that is sometimes used to check if an arc
 used if certain prerequisites are true:
 
 - if the period is not a range and includes today, then it is used. We assume today will get new visits so we make sure
-  archives containing today are always eventually reprocessed. For data that is tracked in the past, we invalidate the period
-  when this occurs. We don't do this for today, because invalidating data for every visit encountered today would make
-  the tracker far less performant. Tracking data in the past, however, does not happen with nearly has high frequency or
-  volume.
+  archives containing today are always eventually reprocessed. By contrast, for data that is tracked in the past, we
+  explicitly invalidate the period. We don't do this for `today`, because invalidating data for every visit encountered
+  today would make the tracker far less performant. Tracking data in the past, however, does not happen with nearly as
+  high frequency or volume.
 
 - if the period is a range, then we always recompute it when it is no longer valid. This is because ranges are just two
   arbitrary dates. We cannot preprocess every single permutation during core:archive, so instead we launch the archiving process
@@ -254,25 +256,10 @@ used if certain prerequisites are true:
   archiving for those days, this is still performant.
 
 The TTLs are determined by user and config settings. The day period can be specific in the UI in the System Settings page
-and through INI config. The other periods can have custom TTLs in INI config as well, but not in the UI.
+and through INI config. The other periods can have custom TTLs in INI config as well, but not in the UI. See above for
+the specific settings.
 
 If no custom TTL is specified for a non-day period, it defaults to the day TTL.
-
-**archiving today/yesterday**
-
-Every run of core:archive will try to invalidate the today period for each site. This is because we assume people will be
-visiting them and there will generally be more data. We do check if there are no new visits within last time core:archive
-was run and now, if there were not for the site then we don't follow through with the invalidation.
-
-If there is also a usable archive within the day period's TTL, we skip archiving. So if the TTL is 6 hours, but we run core:archive
-every hour, we will still only process the day archive again every 6 hours.
-
-Also before starting archiving for a site, we will check if we need to invalidate the yesterday period as well. This is only
-done if the day has changed since the last core:archive run. In that case, there may have been visits between the last archive
-run and midnight. If we were to only invalidate today, we would ignore those visits.
-
-So in this case, we invalidate yesterday's periods and they will be reprocessed (but only if there actually have been visits
-between the last run time and midnight).
 
 **amount of concurrency to expect**
 
@@ -295,25 +282,12 @@ core:archive is running on a separate server.
 
 This is however only an issue when multiple archivers process the same site.
 
-### Re-archiving of past data for new or updated segments
-
-When a segment is created or updated, we make sure to re-archive the last several months of data for them, so
-that data will appear for users. If we didn't, the data would be archived in the yearly archive for the current day,
-which means it may not be much data if the current day is close to the beginning of the year, and could also mean
-a much larger archiving request than just archiving days, weeks, months, years in that order for the segment.
-
-We do this by checking if the segment created time or updated time is newer than the last time we invalidated archives
-in core:archive. If it is, we know we have missing or out of date data for a segment, and we have to re-archive.
-
-The segment created/updated time is stored in the `segment` table. The last invalidation time is stored in the
-`CronArchive.lastInvalidationTime` option.
-
 ### Concurrency
 
 **Processing multiple archives at the same time**
 
 This is not desired behavior, we prefer if only one process creates a single archive, but sometimes multiple requests
-will trigger archiving at the same time (this is only an issue for setups that enable browser triggered archiving).
+will trigger archiving at the same time (this is mostly an issue for setups that enable browser triggered archiving).
 
 When this happens, it is expected that both will aggregate the same data, and one will finish after the other, giving
 it a greater `ts_archived` value. This archive is the one that ends up being used; the duplicate gets cleaned up in a
@@ -361,7 +335,7 @@ rare occurrence, this is considered acceptable.
                                        website.
 * `--concurrent-archivers`: The maximum number of core:archive commands that should be running in parallel on a single server. This does not
                             affect archivers running on other servers.
-* `--force-all-websites`: Like `--force-idsites` but for every website in Matomo.
+* `--force-all-websites`: Like `--force-idsites` but for every website in the instance.
 
 ## Archive Invalidation
 
@@ -400,14 +374,12 @@ to invalidate, then look for archives with a `name LIKE '...doneflag...%'`.
 **invalidating in archive tables vs. inserting into the archive_invalidations table**
 
 The invalidation process "invalidates" in two ways. The first is marking archive status entries in the archive_numeric tables
-as having a done value of `DONE_INVLAIDATED`. This marks the archive as having out of date data.
+as having a done value of `DONE_INVALIDATED`. This marks the archive as having out of date data.
 
 If browser triggered archiving is enabled, and a `DONE_INVALIDATED` archive is encountered, it will be rearchived.
 
 The second thing that is done, is inserting an entry into the archive_invalidations table. This tells the core:archive process that
 the archive needs to be reprocessed.
 
-Everything that is invalidated in the archive tables shoul1:d also appear in the archive_invalidations table, except for
-plugin specific archives. Since we end up triggering archiving for the all plugins archiving, we don't need to re-create
-invalidated plugin specific archives. The only time plugin specific archives are inserted into the archive_invalidations table,
-is if we are only invalidating a specific plugin's archive.
+Everything that is invalidated in the archive tables should also appear in the archive_invalidations table. However, the
+reverse is not true. If we just put something into archive_invalidations, it will still overwrite an existing archive.
