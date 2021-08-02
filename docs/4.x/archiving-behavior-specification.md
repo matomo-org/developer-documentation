@@ -349,47 +349,19 @@ rare occurrence, this is considered acceptable.
 
 ### Important Command Line Options
 
-`--skip-idsites`: TODO
-`--skip-all-segments`: TODO
-`--force-idsites`: TODO
-`--force-periods`: TODO
-`--skip-segments-today`: TODO
-
-### Launching core:archive through HTTP requests
-
-TODO
-
-**Limitations compared to CLI**
-
-TODO
-
-/*
-        $command->addOption('', null, InputOption::VALUE_OPTIONAL,
-            'If specified, archiving will be processed only for these Sites Ids (comma separated)');
-        $command->addOption('skip-segments-today', null, InputOption::VALUE_NONE,
-            'If specified, segments will be only archived for yesterday, but not today. If the segment was created or changed recently, then it will still be archived for today and the setting will be ignored for this segment.');
-        $command->addOption('force-periods', null, InputOption::VALUE_OPTIONAL,
-            "If specified, archiving will be processed only for these Periods (comma separated eg. day,week,month,year,range)");
-        $command->addOption('force-date-last-n', null, InputOption::VALUE_REQUIRED,
-            "This last N number of years of data to invalidate when a recently created or updated segment is found.", 7);
-        $command->addOption('force-date-range', null, InputOption::VALUE_OPTIONAL,
-            "If specified, archiving will be processed only for periods included in this date range. Format: YYYY-MM-DD,YYYY-MM-DD");
-        $command->addOption('force-idsegments', null, InputOption::VALUE_REQUIRED,
-            'If specified, only these segments will be processed (if the segment should be applied to a site in the first place).'
-            . "\nSpecify stored segment IDs, not the segments themselves, eg, 1,2,3. "
-            . "\nNote: if identical segments exist w/ different IDs, they will both be skipped, even if you only supply one ID.");
-        $command->addOption('concurrent-requests-per-website', null, InputOption::VALUE_OPTIONAL,
-            "When processing a website and its segments, number of requests to process in parallel", CronArchive::MAX_CONCURRENT_API_REQUESTS);
-        $command->addOption('concurrent-archivers', null, InputOption::VALUE_OPTIONAL,
-            "The number of max archivers to run in parallel. Depending on how you start the archiver as a cronjob, you may need to double the amount of archivers allowed if the same process appears twice in the `ps ex` output.", false);
-        $command->addOption('disable-scheduled-tasks', null, InputOption::VALUE_NONE,
-            "Skips executing Scheduled tasks (sending scheduled reports, db optimization, etc.).");
-        $command->addOption('accept-invalid-ssl-certificate', null, InputOption::VALUE_NONE,
-            "It is _NOT_ recommended to use this argument. Instead, you should use a valid SSL certificate!\nIt can be "
-            . "useful if you specified --url=https://... or if you are using Piwik with force_ssl=1");
-        $command->addOption('php-cli-options', null, InputOption::VALUE_OPTIONAL, 'Forwards the PHP configuration options to the PHP CLI command. For example "-d memory_limit=8G". Note: These options are only applied if the archiver actually uses CLI and not HTTP.', $default = '');
-        $command->addOption('force-all-websites', null, InputOption::VALUE_NONE, 'Force archiving all websites.');
-*/
+* `--force-idsites`: This option allows forcing the core:archive instance to process the specified sites. This option is worth noting since
+                     it can result in multiple core:archive instances archiving for the same site.
+* `--force-periods`: This option allows forcing the archiving of a specific period. It can be dangerous to use, since it will initiate archiving
+                     of a higher period, even if a lower period is queued to archive first.
+* `--force-date-range`: This option allows forcing to only archive data whose entire period range does not fall within the range. This can be
+                        dangerous to use in the same way --force-periods is.
+* `--skip-segments-today`: If specified, the today period for segments will not be archived, as long as the segment was not modified within
+                           the last 24 hours.
+* `--concurrent-requests-per-website`: Controls the maximum number of concurrent archiving requests that are launched at a time, for a single
+                                       website.
+* `--concurrent-archivers`: The maximum number of core:archive commands that should be running in parallel on a single server. This does not
+                            affect archivers running on other servers.
+* `--force-all-websites`: Like `--force-idsites` but for every website in Matomo.
 
 ## Archive Invalidation
 
@@ -435,7 +407,7 @@ If browser triggered archiving is enabled, and a `DONE_INVALIDATED` archive is e
 The second thing that is done, is inserting an entry into the archive_invalidations table. This tells the core:archive process that
 the archive needs to be reprocessed.
 
-Everything that is invalidated in the archive tables should also appear in the archive_invalidations table, except for
+Everything that is invalidated in the archive tables shoul1:d also appear in the archive_invalidations table, except for
 plugin specific archives. Since we end up triggering archiving for the all plugins archiving, we don't need to re-create
 invalidated plugin specific archives. The only time plugin specific archives are inserted into the archive_invalidations table,
 is if we are only invalidating a specific plugin's archive.
