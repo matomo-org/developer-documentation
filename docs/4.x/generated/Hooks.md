@@ -2710,7 +2710,7 @@ Usages:
 
 ### ScheduledTasks.execute
 
-*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php) in line [262](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php#L262)*
+*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php) in line [272](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php#L272)*
 
 Triggered directly before a scheduled task is executed
 
@@ -2722,7 +2722,7 @@ Callback Signature:
 
 ### ScheduledTasks.execute.end
 
-*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php) in line [282](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php#L282)*
+*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php) in line [292](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php#L292)*
 
 Triggered after a scheduled task is successfully executed. You can use the event to execute for example another task whenever a specific task is executed or to clean up
 certain resources.
@@ -2735,7 +2735,7 @@ Callback Signature:
 
 ### ScheduledTasks.shouldExecuteTask
 
-*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php) in line [135](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php#L135)*
+*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php) in line [144](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Scheduler/Scheduler.php#L144)*
 
 Triggered before a task is executed. A plugin can listen to it and modify whether a specific task should be executed or not. This way
 you can force certain tasks to be executed more often or for example to be never executed.
