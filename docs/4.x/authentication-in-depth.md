@@ -40,6 +40,8 @@ That's why we create a random token_auth when a user logs into the Matomo UI and
 
 When there is a "&force_api_session=1" parameter either in the request GET or POST then we will be starting a session after all even if it is an HTTP API call. In that case we then compare the provided token_auth value from the URL against the token_auth value from the session. At the time of writing this logic is mostly handled [here](https://github.com/matomo-org/matomo/blob/4.4.1/core/Access.php#L160-L180).
 
+For actions that change data we require this parameter to be posted for slightly better security. For API requests that read data it can be a regular URL parameter.
+
 #### Knowing if "force_api_session=1" needs to be set or not
 
 In Javascript there is a method `piwik.broadcast.isWidgetizeRequestWithoutSession()` that we usually use to decide if we need to append the "force_api_session" URL parameter or not [see example](https://github.com/matomo-org/matomo/blob/4.4.1-rc1/plugins/CoreHome/angularjs/common/services/piwik-api.js#L53).
