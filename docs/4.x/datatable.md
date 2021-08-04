@@ -40,7 +40,7 @@ There are three different types of data tables:
 
 * [DataTable](https://developer.matomo.org/api-reference/Piwik/DataTable) - Regular data table for reports that have a dimension. In that case, each row has typically a "label" column for the row's associated dimension value. 
 * [DataTable\Simple](https://developer.matomo.org/api-reference/Piwik/DataTable/Simple) - Used for reports that don't have a dimension. In that case, there is no "label" column and it only stores data for metrics. Such a table typically has only one row.
-* [DataTable\Map](https://developer.matomo.org/api-reference/Piwik/DataTable/Map) - Stores a set of regular or simple data tables when multiple periods are requested (think of `&period=day&date=last7`). In that case you can iterate over each table within the map using the `getDataTables()` method. The array key for each table stores the date which the subtable represents.
+* [DataTable\Map](https://developer.matomo.org/api-reference/Piwik/DataTable/Map) - Stores a set of regular or simple data tables when multiple periods are requested (think of `&period=day&date=last7`). In that case you can iterate over each table within the map using the `getDataTables()` method. The array key for each table stores the date which the subtable represents. A "map" data table can also contain other data table maps.
 
 Each table may store multiple [rows](https://developer.matomo.org/api-reference/Piwik/DataTable/Row).
 
@@ -55,6 +55,8 @@ You can manipulate data tables in any kind of way by using *filters*, which are 
   
 Queued filters can be useful to speed up the filter and make Matomo faster. For example, if only 10 rows are requested, then the filter will only be executed on 10 rows instead of potentially hundreds or thousands of rows.
 Whenever possible we try to use queued filters but it's not always possible as sometimes certain filters need to be executed before other filters run.
+
+Note that queued filters will be only applied when `$table->applyQueuedFilters()` is called. This is done by Matomo core automatically unless a URL query `&disable_queued_filters=1` is set in the API call which may happen in some rare cases.
 
 ### Built-in filters
 
