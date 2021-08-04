@@ -30,7 +30,7 @@ The **period** selects visits that were tracked within a specific date range. Th
 
 The **segment** selects visits based on a boolean expression that uses visit properties. It is specified in all HTTP requests by the `segment` query parameter and can be used to select almost any conceivable subset of visit.
 
-Analytics parameters are stored in reports as metadata, that means they are stored as [DataTable](/api-reference/Piwik/DataTable) metadata.
+Analytics parameters are stored in reports as metadata, that means they are stored as [DataTable](/guides/datatable) metadata.
 
 ## Metrics
 

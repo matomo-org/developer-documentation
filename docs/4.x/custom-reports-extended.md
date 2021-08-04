@@ -31,7 +31,7 @@ public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false
 }
 ```
 
-`$data` will be a [DataTable](/api-reference/Piwik/DataTable) instance that stores information about visits; each visit being a DataTable row.
+`$data` will be a [DataTable](/guides/datatable) instance that stores information about visits; each visit being a DataTable row.
 
 Now that we've got a list of visits, let's think about what our report will look like. Our report will count the number of visits for each browser. So each row will have the browser name and the number of visits. It might look something like this:
 

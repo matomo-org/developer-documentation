@@ -1,5 +1,5 @@
 ---
-category: DevelopInDepth
+category: Develop
 title: Data Table
 ---
 # Data Tables
@@ -38,9 +38,9 @@ foreach ($table as $row) {
 
 There are three different types of data tables:
 
-* [DataTable](https://developer.matomo.org/api-reference/Piwik/DataTable) - Regular data table for reports that have a dimension. In that case, each row has typically a "label" column for the row's associated dimension value. 
-* [DataTable\Simple](https://developer.matomo.org/api-reference/Piwik/DataTable/Simple) - Used for reports that don't have a dimension. In that case, there is no "label" column and it only stores data for metrics. Such a table typically has only one row.
-* [DataTable\Map](https://developer.matomo.org/api-reference/Piwik/DataTable/Map) - Stores a set of regular or simple data tables when multiple periods are requested (think of `&period=day&date=last7`). In that case you can iterate over each table within the map using the `getDataTables()` method. The array key for each table stores the date which the subtable represents. A "map" data table can also contain other data table maps.
+* [DataTable](/api-reference/Piwik/DataTable) - Regular data table for reports that have a dimension. In that case, each row has typically a "label" column for the row's associated dimension value. 
+* [DataTable\Simple](/api-reference/Piwik/DataTable/Simple) - Used for reports that don't have a dimension. In that case, there is no "label" column and it only stores data for metrics. Such a table typically has only one row.
+* [DataTable\Map](/api-reference/Piwik/DataTable/Map) - Stores a set of regular or simple data tables when multiple periods are requested (think of `&period=day&date=last7`). In that case you can iterate over each table within the map using the `getDataTables()` method. The array key for each table stores the date which the subtable represents. A "map" data table can also contain other data table maps.
 
 Each table may store multiple [rows](https://developer.matomo.org/api-reference/Piwik/DataTable/Row).
 
