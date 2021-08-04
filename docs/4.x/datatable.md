@@ -9,7 +9,7 @@ Data tables are used to store reporting data. [Visualisation](/guides/visualizin
 Data tables look just like a regular table:
 
 * A table has a set of rows (which can be empty)
-* Each row has multiple columns
+* Each row has multiple columns where the name and value of the column are both stored in the row
 * Each row can store a reference to a subtable for nested tables / reports
 * Each table and each row can store metadata
 
