@@ -55,7 +55,7 @@ The class defines the following methods:
 - [`setPageCharset()`](#setpagecharset) &mdash; By default, Matomo expects utf-8 encoded values, for example for the page URL parameter values, Page Title, etc.
 - [`setUrl()`](#seturl) &mdash; Sets the current URL being tracked
 - [`setUrlReferrer()`](#seturlreferrer) &mdash; Sets the URL referrer used to track Referrers details for new visits.
-- [`setGenerationTime()`](#setgenerationtime) &mdash; Sets the time that generating the document on the server side took.
+- [`setGenerationTime()`](#setgenerationtime) &mdash; This method is deprecated and does nothing.
 - [`setPerformanceTimings()`](#setperformancetimings) &mdash; Sets timings for various browser performance metrics.
 - [`clearPerformanceTimings()`](#clearperformancetimings) &mdash; Clear / reset all previously set performance metrics.
 - [`setAttributionInfo()`](#setattributioninfo) &mdash; Sets the attribution information to the visit, so that subsequent Goal conversions are properly attributed to the right Referrer URL, timestamp, Campaign Name & Keyword.
@@ -187,7 +187,7 @@ Sets the URL referrer used to track Referrers details for new visits.
 <a name="setGenerationTime" id="setGenerationTime"></a>
 ### `setGenerationTime()`
 
-Sets the time that generating the document on the server side took.
+This method is deprecated and does nothing. It used to set the time that it took to generate the document on the server side.
 
 #### See Also
 
