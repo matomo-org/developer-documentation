@@ -26,7 +26,7 @@ foreach ($table->getRows() as $row) {
         echo $column . ': ' . $value; // would print eg label:1 nb_visits:1
     }
 }
-// Tables also implement the ArrayAccess interface and thereofore this works too:
+// Tables also implement the ArrayAccess interface and therefore this works too:
 foreach ($table as $row) {
     foreach ($row as $column => $value) {
         echo $column . ': ' . $value; 
