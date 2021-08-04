@@ -46,7 +46,7 @@ Each table may store multiple [rows](https://developer.matomo.org/api-reference/
 
 ## Manipulating data tables
 
-You can manipulate data tables in any kind of way by using filters:
+You can manipulate data tables in any kind of way by using *filters*, which are just callables that operate on a `DataTable` instance:
 
 * `$table->filter()` - Executes the filter right away. Depending on what the filter does, it may or may not be also applied to subtables. 
 * `$table->filterSubtables()` - Executes the filter right away. The filter won't be executed on the rows within this data table but only on subtables.
