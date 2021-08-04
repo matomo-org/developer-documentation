@@ -176,6 +176,19 @@ date for the latest archive for `yesterday`. If this is true, it means the day h
 and there may be more visits to process. For example, if the last known archive for 2021-05-20 is calculated at 2021-05-20 20:00:00,
 but it is now 2021-05-21 00:30:00, there may be visits between 20:00:00 and 00:00:00 (midnight) to process.
 
+**if core:archive is not run for several days**
+
+If for some reason core:archive does not run for several days or more and is run again, we will currently ignore
+the days between the last successful run and yesterday.
+
+So if the last run was on Monday, and it is now Friday and the command is run again, then we don't take into account
+that there might be visits between Monday and Thursday.
+
+We will still invalidate today and yesterday, which will in turn invalidate the parent week, month and year. Archiving
+these periods will launch day archiving for the days we're not explicitly thinking about and create archives.
+
+This is a known, unhandled edge case.
+
 **invalidating custom ranges**
 
 If custom ranges are specified in the `[General] archiving_custom_ranges` INI config setting and/or
