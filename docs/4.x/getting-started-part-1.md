@@ -127,6 +127,8 @@ In Ubuntu systems running MySQL 5.7 (and later versions), the root MySQL user is
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my secure password';
 ```
 
+If you are developing with Matomo then we usually recommend using the "root" database user in Matomo as various database tables may be created when running tests.
+
 ### Install Matomo
 
 Once Piwik is running, open it in your browser and follow the instructions to complete the installation.
