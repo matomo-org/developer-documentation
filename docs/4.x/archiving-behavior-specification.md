@@ -25,8 +25,8 @@ request/process, and cannot find a recent, usable archive, we generate it, by la
 
 ### Settings
 
-* browser triggered archiving: this setting determines whether log aggregation is allowed to be launched from browser requests.
-  If disabled, this only happens if a segment that is not set to auto-archive is requested (referred to as a custom segment), or
+* browser triggered archiving: this setting determines whether log aggregation is allowed to be launched on demand, outside of the core:archive command.
+  If browser archiving is disabled, on demand archiving only happens if a segment that is not set to auto-archive is requested (referred to as a custom segment), or
   if a range period is requested. The setting is stored in two potential places, the `[General] enable_browser_archiving_triggering`
   INI config setting or the `enableBrowserTriggerArchiving` option value. There are other related INI config settings to disable archiving even if
   a custom segment or range period is requested: `[General] browser_archiving_disabled_enforce` and `[General] archiving_range_force_on_browser_request`
@@ -81,7 +81,7 @@ This optimization is used both before launching the archive aggregation logic an
 before we launch individual archive requests. This saves a bit more time since we also don't have to launch an
 archiving command.
 
-### Special Query Parameter Handling
+### Special URL Query Parameter Handling
 
 * `trigger`: if set to `archivephp`, let's the core archiving process know it was launched by the `core:archive` command.
   The archiving process will only assume this if the current request also has superuser access loaded.
