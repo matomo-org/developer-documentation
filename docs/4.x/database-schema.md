@@ -209,35 +209,6 @@ The `index_type_hash` index is used during tracking to find existing action type
 
 Some plugins are not using the `log_action` / `log_link_visit_action` tables to persist their actions. Instead some custom tables are used in order to be able to store the required action details
 
-### Media Analytics
-
-The MediaAnalytics plugin uses the tables `log_media` and `log_media_plays` to store the details about the viewed media elements.
-
-The table `log_media` holds the details of a media element that was shown to the user or the user interacted with:
-
-- `idvisitor`: the ID of the visitor (an 8 byte binary string)
-- `idvisit`: the ID of the visit
-- `idsite`: the ID of the website
-- `idview`: a random id to identify a specific media view (6 chars [a-z0-9])
-- `player_name`: the name of the media player
-- `media_type`: the media type (1 = video, 2 = audio)
-- `resolution`: the resolution of the media (video only)
-- `fullscreen`: flag to identify if the media was viewed full screen (video only)
-- `media_title`: title of the media
-- `resource`: the resource of the media (typically a file name or url location)
-- `server_time`: the date time the media view started
-- `time_to_initial_play`: the time it took until the user started the media
-- `watched_time`: the sum of the time the user watched/listened the media
-- `media_progress`: progress of the media (defined by the last second that was consumed)
-- `media_length`: the total length of the media in seconds
-
-In addition to a media view, the plugin stores which segments of a media has been consumed. This is done in the table `log_media_plays`.
-Besides `idview` and `idvisit`, which are used to identify a record with an entry in `log_media`, the table has a lot columns for each media segment.
-The first 5 minutes of a media are tracked in 15 second intervals, the rest in 30 second intervals. That means the first 20 columns in `log_media_plays` represents 15 seconds each, the remaining columns represent 30 seconds each. 
-That means if the first 3 columns have a `1` then the user watched at least one second of each of those parts between 1-15s, 16-30s and 31-45s.
-If only the 18 column had a `1` and all the other ones are `0`, then the user would have only watched the segment between second 256s-270s.
-It doesn't mean the user watched the full 15s/30s segment, but at least 1s within this segment was seen.
-
 <a name="log-data-persistence-conversions"></a>
 ### Conversions
 
@@ -300,7 +271,7 @@ SQL queries that read the Log data across the tables above are provided [in the 
 
 ## Archive data
 
-Archive data consists of **metrics** and **reports**. Metrics are numeric values and are stored as such. Reports are stored in [DataTable](/api-reference/Piwik/DataTable) instances and persisted as compressed binary strings.
+Archive data consists of **metrics** and **reports**. Metrics are numeric values and are stored as such. Reports are stored in [DataTable](/guides/datatable) instances and persisted as compressed binary strings.
 
 Archive data is associated with the website ID, period and segment it is for along with the data's identifying name. All archive data will be queried many times by this information. Currently, the segment is hashed and attached to the end of the metric name. Archive data is also persisted with the current date and time so it is possible to know how old some data is.
 
@@ -486,6 +457,384 @@ Matomo's custom dashboards and widgets layout are stored in the `user_dashboard`
 [Options](/api-reference/Piwik/Option) are key-value pairs where the key is a string and the value is another string (possibly bigger and possibly binary). They are queried on every UI and [Reporting API](/guides/piwiks-reporting-api) request. The tracker will cache relevant option values and so will only query options when the cache needs updating.
 
 Some options should be loaded on every non-tracking request. These options have a special **autoload** property set to `1`.
+
+## Premium Features
+
+[Premium Features](https://matomo.org/faq/general/faq_22573/) are paid add-ons under the [InnoCraft license](https://innocraft.com/license) for Matomo On-Premise ([GPL licensed](https://matomo.org/free-software)). If you are using [Matomo On-Premise](https://matomo.org/matomo-on-premise/) or [Matomo for WordPress](https://wordpress.org/plugins/matomo/) you can get these features from our [Matomo Marketplace](https://plugins.matomo.org/premium). On our [cloud-hosted Matomo](https://matomo.org/matomo-cloud/) service these features are included automatically.
+
+### Heatmap Session Recording
+
+Learn more about [Heatmaps](https://matomo.org/docs/heatmaps/) and [Session Recording](https://matomo.org/docs/session-recording/).
+
+<a name="table-site_hsr"></a>
+#### site_hsr
+
+All configured heatmaps and session recordings are stored in this table.
+
+- `idsitehsr`: The unique ID of the heatmap or session recording.
+- `idsite`: The ID of the website.
+- `name`: The name of the heatmap or session recording.
+- `sample_rate`: A decimal between 0 and 100 defining the likelihood that a page view or session should be recorded
+- `sample_limit`: Defines how many samples should be recorded. For heatmaps that is the number of page views, for session recordings that's the number of sessions (visits).
+- `match_page_rules`: Stores a JSON encoded array that defines on which pages a heatmap or session recording should be recorded.
+- `excluded_elements`: Stores a JSON encoded array of CSS selectors that should be excluded.
+- `record_type`: Contains `1` if the row represents a heatmap, `2` if the row is a session recording.
+- `page_treemirror`: When the row is a heatmap, the actual recorded DOM is stores in this column. The DOM is stored compressed using [gzcompress](https://www.php.net/manual/en/function.gzcompress.php). If no DOM is recorded yet, then Matomo will know we need to capture the DOM next time someone is viewing a matching page. 
+- `screenshot_url`: If the row is a heatmap, and a screenshot URL is configured, then the DOM for the heatmap is only recorded when someone visits this specific URL. If no screenshot URL is configured and a DOM is being recorded (see `page_treemirror`), then the URL of that page will be stored in this column. This way we can set the correct HTML "base" URL.
+- `breakpoint_mobile`: Any client width in pixel lower than this value will be assumed it is a "mobile" device unless the value is "0".
+- `breakpoint_tablet`: Any client width in pixel lower than this value but higher than the mobile breakpoint will be assumed it is a "tablet" device unless the value is "0".
+- `min_session_time`: A session will be only recorded when a visitor has spent at least the specified seconds on a page.
+- `requires_activity`: If value is `1`, only sessions that have a scroll and a click activity in one page view will be recorded. 
+- `capture_keystrokes`: If value is `1`, any text that is entered into text form fields are recorded. While the text is recorded, any character a user enters is replaced with a star ('*').
+- `created_date`: Date time when the heatmap or session recording was created.
+- `updated_date`: Date time when the heatmap or session recording was last updated.
+- `status`: The status of the configured heatmap or session recording which can be "active", "ended" (eg sample limit reached) or "deleted".
+
+<a name="table-log_hsr"></a>
+#### log_hsr
+
+For each recorded page view within a recorded session we create one row. 
+
+In this and other `log_hsr_*` tables you will notice that we often save relative / percentage values instead of absolute values. This allows us to replay content more accurately as the exact coordinates always vary depending on device and browser. 
+
+- `idloghsr`: The unique ID for this log entry.
+- `idsite`: The ID of the website.
+- `idvisit`: The ID of the visit.
+- `idhsrview`: A randomly generated ID that identifies this page view. This way we make sure that when a user has for example multiple tabs open that all the actions are stored for the correct "idloghsr" entry.
+- `idpageview`: The ID of the pageview entry matching the `log_link_visit_action.idpageview` column. Allows us to assign this interaction to a specific action.
+- `idaction_url`: A `log_action` ID referencing on what page URL this page view was recorded.
+- `device_type`: `1` for desktop, `2` for tablet, `3` for mobile.
+- `server_time`: The date time when this row was created.
+- `time_on_page`: How much time was spent on this page in milliseconds.
+- `viewport_w_px`: The width of the view port in pixel.
+- `viewport_h_px`: The height of the view port in pixel.
+- `scroll_y_max_relative`: An integer between 0 and 1000 indicating how far the user scrolled down. If the value is 1000 then it means the user scrolled to the bottom of the page. If the value is 700, then it means the user has seen the top 70% of the page. 
+- `fold_y_relative`: An integer between 0 and 1000 similar to `scroll_y_max_relative` but this time indicating how much of the page was visible above the fold when the page was opened. If the value is 200, then 20% of the page was visible above the fold.
+
+<a name="table-log_hsr_site"></a>
+#### log_hsr_site
+
+This table stores a reference to which configured session recording a recorded page belongs to. This could have been stored in the `log_hsr` table in a `idsitehsr` column directly but this wasn't done to lower storage usage when multiple session recordings are configured. Sometimes users configure multiple session recordings and while viewing one page we need to record the same recording for multiple different sessions. By having this reference here we only need to write the `log_hsr` and all other entries only once and then link all needed session recordings here.
+
+- `idsitehsr`: Unique ID of the session recording entry in `site_hsr` .
+- `idloghsr`: Unique ID identifying a specific recorded page in `log_hsr`.
+
+<a name="table-log_hsr_event"></a>
+#### log_hsr_event
+
+Stores each event / action that was performed on a page. For example a mouse move, mouse click, DOM change, form interaction, and more. 
+
+- `idhsrevent`: Unique ID for this event.
+- `idloghsr`: The unique `log_hsr` ID this event belongs to.
+- `time_since_load`: An integer representing the amount of milliseconds that have passed since loading the page. This way we know when to replay which event.
+- `event_type`: The type of event that was executed: `1`: Mouse movement, `2`: Mouse click, `3`: Scroll, `4`: Window resize, `5`: What the initial DOM looked like when the page was loaded, `6`: HTML DOM change, `9`: Form text field change, `10`: Form select field change, `12`: Scroll inside an element.
+- `idselector`: A `log_action` ID referencing the CSS selector that uniquely describes what element an action was performed on (for example for scroll inside an element, or form text field change). 
+- `x`: X coordinate for example for a mouse movement where exactly the mouse was moved to within an element. This is usually a percentage and not absolute pixel values. If the window was resized then it stores absolute pixel value.
+- `y`: Y coordinate for example for a mouse movement where exactly the mouse was moved to within an element. This is usually a percentage and not absolute pixel values. If the window was resized then it stores absolute pixel value.
+- `idhsrblob`: Some events store additional information like how the DOM changed. This ID links to the `log_hsr_blob` entry that contains the relevant content.
+
+<a name="table-log_hsr_blob"></a>
+#### log_hsr_blob
+
+In the blob table we are storing content like DOM changes. To reduce the amount of storage this feature requires we are storing each blob only once and referencing it again every time there is a new page recording. This can have a massive impact on storage reduction as often the entire DOM is the same for all page views of the same URL. Also often the same DOM changes repeat and we can reuse existing entries.
+
+- `idhsrblob`: The unique ID for this blob entry.
+- `hash`: An integer representing a hash of the actual content. This way we can search faster if a specific blob already exists or not without needing to compare the entire value which could be multiple megabytes.
+- `compressed`: `1` if the data was stored compressed using [gzcompress](https://www.php.net/manual/en/function.gzcompress.php), `0` otherwise. Smaller content may not be compressed as it takes less storage in this case to not compress and there is a benefit to seeing the raw text in the database.
+- `value`: The actual content that was recorded.
+
+### Multi Channel Conversion Attribution
+
+Learn more about [Activity Log](https://matomo.org/docs/multi-channel-conversion-attribution/).
+
+<a name="table-goal_attribution"></a>
+#### goal_attribution
+
+Stores for which goals we should calculate the multi attribution report for. 
+
+- `idsite`: The ID of the website.
+- `idgoal`: The ID of the goal a report should be calculated for.
+
+### Activity Log
+
+Learn more about [Activity Log](https://matomo.org/docs/activity-log/).
+
+<a name="table-activity_log"></a>
+#### activity_log
+
+Every activity logged by this feature will be stored in this table.
+
+- `id`: The unique ID of this activity.
+- `user_login`: The user login name that triggered this activity.
+- `type`: The type of activity that was performed.
+- `parameters`: Stores php serialised additional information about the activity that was performed. For example, what attributes were changed for a website.
+- `ts_created`: The date time when this activity happened. 
+- `country`: A country code where the user was located when this activity happened. 
+- `ip`: The IP address of the client that triggered this activity.
+
+### Form Analytics
+
+Learn more about [Form Analytics](https://matomo.org/docs/form-analytics/).
+
+<a name="table-site_form"></a>
+#### site_form
+
+Stores one row for each configured form that should be recorded.
+
+- `idsiteform`: The unique ID of the form.
+- `idsite`: The ID of the website this form belongs to.
+- `name`: The name of the form.
+- `description`: The description of the form.
+- `status`: The status of the form. Can be "running", "archived" (still appears in UI but no longer collects data) or "deleted".
+- `in_overview`: `1` if a report for this form should appear in the form overview reporting page. `0` if it should not appear there. 
+- `match_form_rules`: A JSON encoded array defining which forms should match this specific form. For example, which form names and form IDs. 
+- `match_page_rules`: A JSON encoded array defining whether the matched form should be only tracked on certain pages. 
+- `conversion_rules`: A JSON encoded array defining how we can detect a form conversion automatically.
+- `fields`: A JSON encoded array mapping HTML form field names to human readable form field names.
+- `auto_created`: `1` if the form was created by Matomo automatically. `0` if a user created this form.
+- `created_date`: Date time when this form was created.
+- `updated_date`: Date time when this form was last updated.
+
+<a name="table-log_form"></a>
+#### log_form
+
+Every time a user interacts with a new form that was configured to be tracked we create a new entry in this table. Interactions with each form field are stored in the `log_form_field` table. The `log_form_page` table often stores similar values as this table unless the same form was interacted with over multiple pages.
+
+- `idlogform`: A unique ID for this form interaction for a given visit.
+- `idsiteform`: The unique form ID that this record belongs to.
+- `idsite`: The ID of the website.
+- `idvisit`: The ID of the visit.
+- `idvisitor`: The ID of the visitor (an 8 byte binary string).
+- `first_idformview`: The value of a randomly generated ID Form when the user started interacting with this form. Technically, this value is not needed.
+- `last_idformview`: The value of a randomly generated ID Form when the user interacted with it most recently. This can be beneficial if the user interacts with the same form in different tabs as it helps us identify to which action a form tracking request belongs to. 
+- `num_views`: How often the form was viewed.
+- `num_starts`: How often a user started interacting with this form. `0` if the user never started interacting with it. `1` if the user did interact with this form. The counter is also incremented further every time the user submits the form and then starts interacting with it again.
+- `num_submissions`: How often this form was submitted.
+- `converted`: `1` if the form was converted, `0` otherwise.
+- `form_last_action_time`: Date time when the form was last interacted with. 
+- `time_hesitation`: The time in milliseconds a visitor waited before interacting with the form.
+- `time_spent`: The time in milliseconds the number spent interacting with this form. This is the difference in ms between the last interaction with the form and the first interaction. If the window was not focused for a while then this time is not counted.
+- `time_to_first_submission`: The time in milliseconds it took the user to fill out the form and submit it for the first time. This is excluding the hesitation time and excluding time when the browser window was not active.
+  
+<a name="table-log_form_field"></a>
+#### log_form_field
+
+- `idlogform`:  Identified to which `log_form` entry this row belongs to.
+- `idlogformpage`:  Identified to which `log_form_page` entry this row belongs to.
+- `idformview`: A randomly generated ID identifying all interactions for this form.
+- `idpageview`: The ID of the pageview entry matching the `log_link_visit_action.idpageview` column. Allows us to assign this interaction to a specific action.
+- `field_name`: The name of the form field as it was defined in the name attribute in HTML.
+- `time_spent`: The time in milliseconds the number spent interacting with this field. 
+- `time_hesitation`: The time in milliseconds a visitor waited before interacting with the field.
+- `field_size`: The number of characters a text field answer had. For example if someone enters "user" then it would store 4. 
+- `left_blank`: `1` if the field was left blank, `0` otherwise.
+- `submitted`: The number of how often this field was submitted.
+- `num_changes`: The number of times a visitor has changed this field.
+- `num_focus`: The number of times this field was focused.
+- `num_deletes`: The number of times either a backspace or delete key was used when a field was changed.
+- `num_cursor`: The number of times your visitors have used any of the cursor keys on this field.
+  
+<a name="table-log_form_page"></a>
+#### log_form_page
+
+This table stores details about on which page certain actions were done as the same form could be present on multiple pages.
+
+- `idlogformpage`: The unique ID identifying this row.
+- `idlogform`: Identified to which `log_form` entry this row belongs to.
+- `idaction_url`: A `log_action` ID referencing on which page URL this form was interacted with.
+- `num_views`: How often the form was viewed on this page.
+- `num_starts`: How often a user started interacting with this form on this page. `0` if the user never started interacting with it. `1` if the user did interact with this form. The counter is also incremented further every time the user submits the form and then starts interacting with it again.
+- `num_submissions`: How often this form was submitted on this page.
+- `time_hesitation`: The time in milliseconds a visitor waited before interacting with the form.
+- `time_spent`: The time in milliseconds the number spent interacting with this form. This is the difference in ms between the last interaction with the form and the first interaction. If the window was not focused for a while then this time is not counted.
+- `time_to_first_submission`: The time in milliseconds it took the user to fill out the form and submit it for the first time. This is excluding the hesitation time and excluding time when the browser window was not active.
+- `entry_field_name`: Which form field was interacted with first when starting to interact with this form.
+- `exit_field_name`: Which form field was last interacted with.
+  
+### Media Analytics
+
+Learn more about [Media Analytics](https://matomo.org/docs/media-analytics/).
+
+<a name="table-log_media"></a>
+#### log_media
+
+The Media Analytics plugin uses the tables `log_media` and `log_media_plays` to store the details about the viewed media elements.
+
+The table `log_media` holds the details of a media element that was shown to the user or the user interacted with:
+
+- `idvisitor`: The ID of the visitor (an 8 byte binary string).
+- `idvisit`: The ID of the visit.
+- `idsite`: The ID of the website.
+- `idview`: A random id to identify a specific media view (6 chars [a-z0-9]).
+- `player_name`: The name of the media player.
+- `media_type`: The media type (1 = video, 2 = audio).
+- `resolution`: The resolution of the media (video only).
+- `fullscreen`: A flag to identify if the media was viewed full screen (video only).
+- `media_title`: Title of the media.
+- `resource`: The resource of the media (typically a filename or url location).
+- `server_time`: The date time the media view started.
+- `time_to_initial_play`: The time it took until the user started the media.
+- `watched_time`: The sum of the time the user watched/listened the media.
+- `media_progress`: Progress of the media (defined by the last second that was consumed).
+- `media_length`: The total length of the media in seconds.
+
+<a name="table-log_media_plays"></a>
+#### log_media_plays
+
+In addition to a media view, the plugin stores which segments of a media has been consumed. This is done in the table `log_media_plays`.
+Besides `idview` and `idvisit`, which are used to identify a record with an entry in `log_media`, the table has a lot of columns for each media segment.
+The first 5 minutes of a media are tracked in 15 second intervals, the rest in 30 second intervals. That means the first 20 columns in `log_media_plays` represent 15 seconds each, the remaining columns represent 30 seconds each.
+That means if the first 3 columns have a `1` then the user watched at least one second of each of those parts between 1-15s, 16-30s and 31-45s.
+If only the 18 column had a `1` and all the other ones are `0`, then the user would have only watched the segment between second 256s-270s.
+It doesn't mean the user watched the full 15s/30s segment, but at least 1s within this segment was seen.
+
+- `idview`: The randomly generated `log_media.idview` this entry belongs to. 
+- `idvisit`: The ID of the visit.
+- `segment_15`: `1` if at least 1 second within this segment from 0s-15s was watched or listened to. `0` otherwise.
+- `segment_30`: `1` if at least 1 second within this segment from 15s-30s was watched or listened to. `0` otherwise.
+- `segment_45`: `1` if at least 1 second within this segment from 30s-45s was watched or listened to. `0` otherwise.
+- `segment_...`: 
+- `segment_7170`: `1` if at least 1 second within this segment from 7140s-7200s was watched or listened to. `0` otherwise.
+- `segment_7200`: `1` if at least 1 second within this segment from 7170s-7200s was watched or listened to. `0` otherwise.
+
+
+### A/B Testing
+
+Learn more about [A/B Testing](https://matomo.org/docs/ab-testing/).
+
+<a name="table-experiments"></a>
+#### experiments
+
+- `idexperiment`: The unique ID of an A/B test.
+- `idsite`: The ID of the website.
+- `confidence_threshold`: A decimal representing the percentage of the expected confidence. 
+- `mde_relative`: An integer storing the percentage of the relative minimum improvement that you expect to detect.
+- `name`: The name of the A/B test.
+- `description`: The description of the A/B test.
+- `hypothesis`: The hypothesis for this A/B test.
+- `included_targets`: A JSON encoded array storing information about on which pages the A/B test should run.
+- `excluded_targets`: A JSON encoded array storing information about on which pages the A/B test should not run.
+- `success_metrics`: A JSON encoded array storing the list of configured success metrics.
+- `percentage_participants`: An integer storing the percentage of how many of the website visitors should take part in this A/B test. Also known as "sample rate". 
+- `original_redirect_url`: If redirect URLs are configured, it contains the URL for the original variation.
+- `status`: The status of an A/B test which can be "created", "running", "finished" or "archived" (won't appear anymore in the UI once archived).
+- `start_date`:  Date time when the A/B test was created.
+- `modified_date`: Date time when the A/B test was last updated.
+- `end_date`: Date time when the A/B test ended / finished.
+
+<a name="table-experiments_strategy"></a>
+#### experiments_strategy
+
+Because the strategy we use for the calculations should not change for a metric during an A/B test we store in this table what strategy should be applied for a given metric.
+
+- `idexperiment`: The unique ID of an A/B test this strategy belongs to.
+- `metric`: The name of the metric this strategy belongs to within the A/B test.
+- `strategy`: What strategy should be applied to calculate the confidence etc. Can be for example "TT" for Ttest, or "CS" for Chi Square or "MN" for Mann Whitney U. 
+
+<a name="table-experiments_variations"></a>
+#### experiments_variations
+
+Each A/B test can reference an unlimited amount of variations.
+
+- `idvariation`: The unique ID of this variation.
+- `idexperiment`: The unique ID of an A/B test this variation belongs to.
+- `name`: The name of the variation.
+- `percentage`: An integer storing the percentage of how much traffic should be allocated to this variation.
+- `redirect_url`: A redirect URL if one is configured. In that case Matomo will  redirect the user to this URL when the variation is activated.
+- `deleted`: `0` if the variation is not deleted or `1` if the variation is deleted.
+
+<a name="table-log_abtesting"></a>
+#### log_abtesting
+
+- `idvisitor`: The ID of the visitor (an 8 byte binary string).
+- `idvisit`: The ID of the visit.
+- `idsite`: The ID of the website.
+- `idexperiment`: The ID of the A/B test this visit participated in.
+- `idvariation`: The variation that was activated for this visitor.
+- `entered`: `1` if the user actually viewed a page that included the experiment. `0` if it's a subsequent visit where the user might not have seen this experiment.
+- `server_time`: The date time when the visitor took part in the experiment.
+
+### Funnels
+
+Learn more about [Funnels](https://matomo.org/docs/funnels/).
+
+<a name="table-funnel"></a>
+#### funnel
+
+Each funnel configuration is stored in this table. The configured steps for each funnel are stored in the `funnel_steps` table.
+
+- `idfunnel`: The unique ID of a funnel.
+- `idsite`: The ID of the website.
+- `idgoal`: The unique ID of a goal this funnel belongs to.
+- `created_date`: Date time when this funnel was created.
+- `activated`: `1` if the funnel is active and reports should be generated. `0` if the funnel is deactivated.
+- `deleted`: `1` if the funnel is considered deleted and shouldn't show in the UI anymore, `0` if the funnel is not deleted.
+- `deleted_date`: Date time when this funnel was deleted (if `deleted` column is `1`).
+
+<a name="table-funnel_steps"></a>
+#### funnel_steps
+
+Each funnel consists of multiple steps which are stored in this table.
+
+- `idfunnel`: The unique ID of the funnel this step belongs to.
+- `position`: The position within the funnel this step is. Starts with `1`.
+- `name`: The name of this step.
+- `pattern_type`: The type of pattern that should be applied to match `pattern`. Can be for example "path_equals" or "url_regexp".
+- `pattern`: Defines the value that the pattern type should be compared against to detect if a visitor matches this step or not.
+- `required`: `1` if this step is required or `0` if the step is not required.
+
+<a name="table-log_funnel"></a>
+#### log_funnel
+
+Every time a visit matches a certain step in a funnel we create a record in this table. This record is created during archiving, and not during tracking. It's created during archiving for performance reasons and because some funnel steps can be matched out of order. 
+
+- `idfunnel`: The unique ID of the funnel this step belongs to.
+- `step_position`: The step position that was matched.
+- `idsite`: The ID of the website.
+- `idvisit`: The ID of the visit.
+- `idlink_va`: The ID of the `log_link_visit_action` entry that matched this step.
+- `idaction`: The ID of the `log_action` entry that matched this step. This is for example the page URL that was viewed to match this step.
+- `idaction_prev`: The ID of the `log_action` entry that the user viewed before matching this step. 
+- `idaction_next`: The ID of the `log_action` entry the user nagivated to next after matching this step.
+- `min_step`: The step position where this visit entered this funnel. If the first step is configured to be "required" then this is usually "1". Otherwise the user might have entered on another step.
+- `max_step`: The max step position this visit entered. It tells us basically how far in the funnel the user came.
+
+
+### Custom Reports
+
+Learn more about [Custom Reports](https://matomo.org/docs/custom-reports/).
+
+<a name="table-custom_reports"></a>
+#### custom_reports
+
+This table stores the configuration of each custom report.
+
+- `idcustomreport`: The unique ID of this custom report.
+- `idsite`: The ID of the website.
+- `revision`: An integer counter that increases every time a user updates the custom report. This helps us to "invalidate" all existing reports when a report is changed.
+- `report_type`: Either "table" or "evolution".
+- `name`: The name of this custom report.
+- `description`: The description for this custom report.
+- `category`: Defines on which reporting category page this report should be shown in the UI.
+- `subcategory`: Defines on which reporting subcategory page this report should be shown in the UI.
+- `dimensions`: A JSON encoded array defining the selected dimensions for this custom report. Evolution reports store an empty array.
+- `metrics`: A JSON encoded array defining the selected metrics for this custom report.
+- `segment_filter`: Stores a segment string if a segment was configured for this report.
+- `created_date`: Date time when this report was created.
+- `updated_date`: Date time when this report was last updated.
+- `status`: The status of this report which can be either "active" or "deleted".
+
+### Roll-Up Reporting
+
+Learn more about [Roll-Up Reporting](https://matomo.org/docs/roll-up-reporting/).
+
+<a name="table-site_rollup"></a>
+#### site_rollup
+
+We store one row for each children site within a roll-up.
+
+- `parent_idsite`: The ID of a roll up site.
+- `idsite`: The ID of the children website.
 
 ## Learn more
 
