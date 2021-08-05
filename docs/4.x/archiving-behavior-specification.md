@@ -161,6 +161,43 @@ based on a queue. The queue that controls what archives get launched is the `arc
 will both: insert into this table before processing each site, and then process the entries, launching the core archiving process
 for each valid entry.
 
+### PHP Classes
+
+* **Piwik\Plugins\CoreConsole\Commands\CoreArchiver**: The `Command` class for the `core:archive` command. This will create and use a `CronArchive`
+  instance. This is the main code path from which `CronArchive` is invoked, the only other being the `CoreAdminHome.runCronArchiving` API method.
+* **Piwik\CronArchive**: Encapsulates the entire cron archiving process. This class will loop over every requested site (or work on an existing
+  shared queue of site IDs), invalidate data tha needs to be invalidated for it, and process archives for every invalidation for the site.
+* **Piwik\CronArchive\QueueConsumer**: This class is used by CronArchive to get the next invalidated archives to process. It queries the
+  archive_invalidations table and returns a batch of archive invalidations to process. CronArchive will then launch API requests to
+  `CoreAdminHome.archiveReports` for those invalidations.
+* **Piwik\CliMulti**: This is a utility class used by CronArchive to initiate multiple API requests in parallel. It will try to execute the requests
+  from the CLI using the `climulti:request` command if it can. Otherwise it falls back to initiating curl requests.
+* **Piwik\CronArchive\SharedSiteIds**/**Piwik\CronArchive\FixedSiteIds**: These two classes specify the site IDs to archive for `CronArchive`.
+  `FixedSiteIds` is used when the `--force-idsites` option is used and provides an in memory list of site IDs to `CronArchive`. `SharedSiteIds`
+  uses an `option` table entry to pull sites from. If the option does not exist, the ID for every site in matomo is added, if it already exists
+  we use what's there. `SharedSiteIds` will pull one site ID at a time from the option and give it to `CronArchive` to process. This allows
+  multiple `core:archive` instances to work on the same list.
+* **Piwik\CronArchive\SegmentArchiving**: This is a utility class that contains some logic for getting the stored segments to invoke archiving for
+  and how long in the past we need to re-archive data for when a segment is created or updated.
+* **Piwik\Archive\ArchiveInvalidator**: This is a core service class that is not strictly part of the core:archive system, but is very important
+  to it. It contains the logic to invalidate archive data, and `CronArchive` uses it (indirectly) to invalidate archives before it starts processing
+  for a single site.
+
+The entire code path for core:archive execution is:
+
+- The `CoreArchiver` command class is invoked. It processes user input and constructs a `CronArchive` instance. Options are set on the instance and
+  it is invoked.
+- `CronArchive` uses `FixedSiteIds` or `SharedSiteIds` to start pulling sites to archive. For every site in that list:
+  - `CronArchive` invalidates any data that needs to be invalidate for the site. This can be from visits tracked in the past, entities like segments that were
+    created or updated or special periods specified in config or settings. The invalidations are inserted into the `archive_invalidations` table.
+  - `CronArchive` then uses `QueueConsumer` to pull invalidations to process from the `archive_invalidations` table which pulls them in the correct execution
+    order.
+  - `CronArchive` takes the batch of invalidations from `QueueConsumer` and uses `CliMulti` to launch multiple archiving processes via API method.
+  - `CronArchive` looks at the results of those API calls and determines whether the request was successful. If so, the invalidation is removed. Otherwise
+    it is unset and we ignore it until the next time we process this site.
+  - This continues until `QueueConsumer` reports no invalidations to process.
+- We pull a new site and process it. This continues until there are no sites to process.
+
 ### Range Archiving vs All Others
 
 By default when using core:archive, day, week, month & year periods are not processed in the browser. Range periods
