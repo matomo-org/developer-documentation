@@ -81,6 +81,12 @@ This optimization is used both before launching the archive aggregation logic an
 before we launch individual archive requests. This saves a bit more time since we also don't have to launch an
 archiving command.
 
+_If an archive's TTL is still valid_
+
+This isn't truly an optimization, but if an archive's TTL is still valid, and it is for an archive where we check
+the TTL (periods that include today and range periods), then we won't launch archiving. See below for more information
+on archive TTLs.
+
 ### Special URL Query Parameter Handling
 
 * `trigger`: if set to `archivephp`, let's the core archiving process know it was launched by the `core:archive` command.
@@ -214,8 +220,11 @@ If it's supported by the OS configuration and PHP runtime configuration, these p
 `shell_exec()` running the `climulti:request` command. The `climulti:request` command takes a query string and processes it
 like it is an HTTP request.
 
-If it's not supported, then we use CURL multi requests. CURL is not as fast as launching cli processes, so we prefer to use
-`climulti:request`.
+If it's not supported, then we use CURL multi requests.
+
+We prefer using CLI commands to process API requests, because of the following benefits:
+- the CLI command won't be subject to request timeouts and archiving can take a long time, so there might often be failures
+- having CLI executions means it's possible to check on a server how many archivers are currently running by executing `ps`
 
 In each case, we call the `CoreAdminHome.archiveReports` API method which launches core archiving.
 Note: previously the core:archive command would query `API.get` which would implicitly trigger the archiving process.
@@ -235,10 +244,14 @@ archived concurrently but this is only possible by running multiple `core:archiv
 
 Some archive invalidations have to be handled before others. Specifically:
 
-- the "All Visits" segment is run before individual segments for a period.
-- periods are run in ascending order: day periods are run before the weeks that contain them
+- the "All Visits" segment is run before individual segments for a period. We apply this ordering because users will
+  view All Visits data more often than segment data, so it's beneficial to update it first.
+- periods are run in ascending order: day periods are run before the weeks that contain them so archiving requests for
+  multi periods will not initiate archiving for lower periods. Doing that puts the request at risk for taking too long
+  or running out of memory.
 - invalidations are processed in descending order of start date. So the day starting on 07-26-2021 will run before
-  the week on 07-26-2021, and both will run after the day starting on 07-27-2021.
+  the week on 07-26-2021, and both will run after the day starting on 07-27-2021. Since users will view recent data
+  more often that historical, we prioritize recent data.
 
 **Multiple core:archive instances**
 
@@ -296,6 +309,11 @@ This is done so UI functions like updating a segment are not slowed by the inser
 
 Before core:archive runs for a specific site, it will process entries in the ReArchiveList option and add the invalidations to the table.
 They are then processed all at once with others.
+
+When data is tracked in the past we also queue an invalidation, but this does not go into the `ReArchiveList` class, it is stored
+in a set of option values that start with `report_to_invalidate_`. It's done differently here due to the high amount of concurrency
+the tracker experiences. Editing a list in a single option is not thread safe, but inserting and updating individual options is.
+The values of these options are also cached so the tracker doesn't have to query the option table all the time.
 
 **when processing a single archive fails**
 
