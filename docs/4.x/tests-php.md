@@ -122,6 +122,12 @@ The command will as well ask you for the name of the plugin and the name of the 
 The `IntegrationTestCase` base class provides a `setUp()` method that creates a test Piwik database and a `tearDown()` method that removes it. During integration
 tests all plugins will be loaded allowing you to write actual integration tests.
 
+The `IntegrationTestCase` base class also provides two extra methods that can be overridden:
+
+* `beforeTableDataCached()`: `IntegrationTestCase` will initialize a fixture before running any test. The fixture could add entities, track visits, archive them or affect the database in another way. As an optimization, `IntegrationTestCase` will cache all this data in memory after the fixture is set up, and simply re-insert all of into the database tables in the test's `setUp()` method. This allows us to have a clean slate for each test, without having to destroy the database and re-run the fixture every single time (which would be much slower than just restoring the table state). Some tests, however, add data outside of the fixture in the `setUp()` method. This can slow the test down and by extension the already long running builds on travis-ci.com. If that data is meant to be static for each test, it can be added in an overridden `beforeTableDataCached()` method. Then it will be cached along with fixture data.
+  Some examples of things you can add here are: adding many websites via SitesManager API or adding many users via the UsersManager API. Using the API is far slower than just inserting the data back into truncated tables.
+* `configureFixture()`: to handle the creation/destruction of the Matomo environment, integration tests use a blank fixture (it can be overwritten just like in system tests to bootstrap a test with some data). The configuration for this fixture may not be ideal for every test, so this method can be used to configure the fixture differently. For example, by default we don't create a real superuser in the system (as in, adding a row to the `user` table and everything else), and we don't load any translations. Some tests may not want this.
+
 ### Troubleshooting Integration Tests
 
 There are some common issues that can occur when writing integration tests. These are listed below with their appropriate solution:
