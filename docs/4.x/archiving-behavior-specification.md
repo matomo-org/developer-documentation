@@ -99,6 +99,61 @@ archiving command.
   to a plugin's Archiver instance. If the archiver supports partial archiving, it will handle it and a partial archive will be
   created, with the report archive in it only. This must be set in combination with `plugin` and `pluginOnly`.
 
+### PHP Classes
+
+The following classes are involved in the Core Archiving process:
+
+- **Piwik\Archive**: entry point for archive data queries. This is used by API methods to get numeric and blob data by site ID and/or period.
+  If we can't find up to date data for an archive data query, and the current request is allowed to start the core archiving process, we
+  initiate archiving. This class will call the CoreAdminHome.archiveReports API method to do so.
+- **Piwik\Loader**: entry point for the core archiving process. The `prepareArchive()` method is invoked directly by CoreAdminHome.archiveReports.
+  This class is used to look for one individual archive (so for one site and one period). If we can't find a usable one, we launch the core
+  archiving process.
+  
+  This process involves first initiating archiving for core metrics (metrics for VisitsSummary.get). If we find there were no visits for
+  the archive we skip the archive (there are events that can disable this optimization on a per site basis). Then we use PluginsArchiver
+  to initiate archiving for all plugins.
+  
+  Note: for some archives (where period=range or if using a custom segment), we will only initiate archiving for the requested plugin(s).
+- **Piwik\PluginsArchiver**: This class will loop through every plugin (or requested plugin), create the plugin's `Archiver` instance
+  and invoke it. Based on whether a day or non-day period is being archived, either the `aggregateDayReports()` or `aggregateMultipleReports()`
+  method will be invoked.
+- **Piwik\Plugin\Archiver**: This is the base class for all plugin archivers. Plugins define their archiving logic within one of these
+  classes, which will then be invoked by PluginsArchiver.
+- **Piwik\ArchiveProcessor**: This is a utility class that contains methods to easily query and aggregate metrics and reports for multiple periods.
+  It is mostly used by `aggregateMultipleReports()` implementations to aggregate and insert archive data with a single method call, and by
+  both `aggregateMultipleReports()` and `aggregateDayReports()` to insert archive data.
+- **Piwik\DataAccess\LogAggregator**: This is a utility class that contains some methods to aggregate log data. It is mostly used by
+  `aggregateDayReports()` implementations to aggregate log data and turn the result into `DataTable`s to insert. Many plugin may find
+  that those methods are not enough, however, and will query log tables directly.
+- **Piwik\DataAccess\ArchiveWriter**: This class contains low level methods to create, write to and delete archives. It is used by
+  `ArchiveProcessor` to initialize new archives, insert archive data into them, and to finalize them when finished.
+- **Piwik\Archive\Parameters**: This is a utility class that contains all the parameters of an archive data queries, such as the
+  site IDs to get data for, the periods to get data for and the segment to get data for.
+- **Piwik\ArchiveProcessor\Parameters**: This is a utility class that, like `Piwik\ArchiveParameters`, contains the parameters for
+  a single archiving run. It only stores one site ID and period, however, since we can only launch the archiving process for a single site/period
+  at a time. It also contains some other information like the request plugin/report if any or whether we want to only archive data for
+  a single report.
+
+The entire code path for Core Archiving is as follows:
+
+- An API class constructs an `Archive` instance and queries for archive data.
+- If archiving is not allowed to launch, `Archive` will look through the archive tables directly for data and return whatever it finds.
+- If archiving is allowed, `Archive` will initiate archiving for every site/period combination in the query. It does this by calling the
+  `CoreAdminHome.archiveReports` API method.
+- `CoreAdminHome.archiveReports` creates and invokes the `Loader` class.
+- `Loader` looks for a usable archive. If found, it returns that archive ID. Otherwise it launches the archiving process, first aggregating
+  core metrics like nb_visits. Then if we can't skip the archive, it invokes `PluginsArchiver`.
+- `PluginsArchiver` loops through every activated plugin and creates the plugin's `Archiver` instance if there is one. It invokes the appropriate
+  method on the `Archiver` instances.
+- `Archiver` instances define `aggregateDayReports()` and `aggregateMultipleReports()` methods. `aggregateDayReports()` methods will
+  generally use a `LogAggregator` instance to aggregate log data and then insert it using an `ArchiveProcessor` instance. `aggregateMultipleReports()`
+  methods will use an aggregation method in `ArchiveProcessor`.
+  - `ArchiveProcessor` aggregation methods will query data using an internal `Archive` instance created using the current period's subperiods
+    (so if the current period is a week, this `Archive` will query for days within that week).
+  - `ArchiveProcessor` will aggregate that data together ans insert it into the archive tables.
+- After all plugin archivers finish, `PluginsArchiver` will finalize the archive using the `ArchiveWriter` that was created.
+
 ## core:archive command
 
 _Brief Description of system:_ The `core:archive` command is meant to be run as a cron job periodically archiving data
