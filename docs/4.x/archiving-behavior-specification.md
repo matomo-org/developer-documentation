@@ -194,7 +194,7 @@ The entire code path for core:archive execution is:
 - The `CoreArchiver` command class is invoked. It processes user input and constructs a `CronArchive` instance. Options are set on the instance and
   it is invoked.
 - `CronArchive` uses `FixedSiteIds` or `SharedSiteIds` to start pulling sites to archive. For every site in that list:
-  - `CronArchive` invalidates any data that needs to be invalidate for the site. This can be from visits tracked in the past, entities like segments that were
+  - `CronArchive` invalidates any data that needs to be invalidated for the site. This can be from visits tracked in the past, entities like segments that were
     created or updated or special periods specified in config or settings. The invalidations are inserted into the `archive_invalidations` table.
   - `CronArchive` then uses `QueueConsumer` to pull invalidations to process from the `archive_invalidations` table which pulls them in the correct execution
     order.
