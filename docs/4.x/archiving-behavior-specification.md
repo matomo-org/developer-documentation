@@ -210,7 +210,7 @@ By default when using core:archive, day, week, month & year periods are not proc
 on the other hand are still processed from web requests. This is because we cannot pre-archive every possible permutation
 of dates that users can specify.
 
-Instead when a range period is no longer considered up-to-date (it's TTL expires), we launch archiving for the range.
+Instead when a range period is no longer considered up-to-date (its TTL expires), we launch archiving for the range.
 Since the range just aggregates day periods, this is still performant, as long as archiving for the days is not launched.
 
 ### Launching the core archiving process
