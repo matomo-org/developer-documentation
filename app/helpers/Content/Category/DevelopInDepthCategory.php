@@ -45,6 +45,7 @@ class DevelopInDepthCategory extends Category
             new UnlinkedCategory('in-depth-reporting-api'),
             new Guide('data-model'),
             new UnlinkedCategory('in-depth-tests'),
+            new UnlinkedCategory('in-depth-tools'),
             new DevelopCategory(),
         ];
     }
