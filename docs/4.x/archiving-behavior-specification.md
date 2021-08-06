@@ -89,7 +89,7 @@ on archive TTLs.
 
 ### Special URL Query Parameter Handling
 
-* `trigger`: if set to `archivephp`, let's the core archiving process know it was launched by the `core:archive` command.
+* `trigger`: if set to `archivephp`, lets the core archiving process know it was launched by the `core:archive` command.
   The archiving process will only assume this if the current request also has superuser access loaded.
 * `skipArchiveSegmentToday`: if set and launching archiving is enabled for the current request, then `Archive.php` will
   skip the archiving of segment archives for today's date, if there are any in the request. (It will also skip querying this data as well,
