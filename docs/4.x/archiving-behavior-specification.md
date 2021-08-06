@@ -130,7 +130,7 @@ The following classes are involved in the Core Archiving process:
   It is mostly used by `aggregateMultipleReports()` implementations to aggregate and insert archive data with a single method call, and by
   both `aggregateMultipleReports()` and `aggregateDayReports()` to insert archive data.
 - **Piwik\DataAccess\LogAggregator**: This is a utility class that contains some methods to aggregate log data. It is mostly used by
-  `aggregateDayReports()` implementations to aggregate log data and turn the result into `DataTable`s to insert. Many plugin may find
+  `aggregateDayReports()` implementations to aggregate log data and turn the result into `DataTable`s to insert. Many plugins may find
   that those methods are not enough, however, and will query log tables directly.
 - **Piwik\DataAccess\ArchiveWriter**: This class contains low level methods to create, write to and delete archives. It is used by
   `ArchiveProcessor` to initialize new archives, insert archive data into them, and to finalize them when finished.
