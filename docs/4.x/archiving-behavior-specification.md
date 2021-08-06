@@ -199,7 +199,7 @@ The entire code path for core:archive execution is:
   - `CronArchive` then uses `QueueConsumer` to pull invalidations to process from the `archive_invalidations` table which pulls them in the correct execution
     order.
   - `CronArchive` takes the batch of invalidations from `QueueConsumer` and uses `CliMulti` to launch multiple archiving processes via API method.
-  - `CronArchive` looks at the results of those API calls and determines whether the request was successful. If so, the invalidation is removed. Otherwise
+  - `CronArchive` looks at the results of those API calls and determines whether the request was successful. If so, the invalidation is removed. Otherwise,
     it is unset and we ignore it until the next time we process this site.
   - This continues until `QueueConsumer` reports no invalidations to process.
 - We pull a new site and process it. This continues until there are no sites to process.
