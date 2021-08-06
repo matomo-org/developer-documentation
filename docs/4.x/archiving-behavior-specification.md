@@ -157,7 +157,7 @@ The entire code path for Core Archiving is as follows:
   methods will use an aggregation method in `ArchiveProcessor`.
   - `ArchiveProcessor` aggregation methods will query data using an internal `Archive` instance created using the current period's subperiods
     (so if the current period is a week, this `Archive` will query for days within that week).
-  - `ArchiveProcessor` will aggregate that data together ans insert it into the archive tables.
+  - `ArchiveProcessor` will aggregate that data together and insert it into the archive tables.
 - After all plugin archivers finish, `PluginsArchiver` will finalize the archive using the `ArchiveWriter` that was created.
 
 ## core:archive command
