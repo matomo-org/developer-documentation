@@ -177,7 +177,7 @@ for each valid entry.
   archive_invalidations table and returns a batch of archive invalidations to process. CronArchive will then launch API requests to
   `CoreAdminHome.archiveReports` for those invalidations.
 * **Piwik\CliMulti**: This is a utility class used by CronArchive to initiate multiple API requests in parallel. It will try to execute the requests
-  from the CLI using the `climulti:request` command if it can. Otherwise it falls back to initiating curl requests.
+  from the CLI using the `climulti:request` command if it can. Otherwise, it falls back to initiating curl requests.
 * **Piwik\CronArchive\SharedSiteIds**/**Piwik\CronArchive\FixedSiteIds**: These two classes specify the site IDs to archive for `CronArchive`.
   `FixedSiteIds` is used when the `--force-idsites` option is used and provides an in memory list of site IDs to `CronArchive`. `SharedSiteIds`
   uses an `option` table entry to pull sites from. If the option does not exist, the ID for every site in matomo is added, if it already exists
