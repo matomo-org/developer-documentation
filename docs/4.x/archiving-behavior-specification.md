@@ -148,7 +148,7 @@ The entire code path for Core Archiving is as follows:
 - If archiving is allowed, `Archive` will initiate archiving for every site/period combination in the query. It does this by calling the
   `CoreAdminHome.archiveReports` API method.
 - `CoreAdminHome.archiveReports` creates and invokes the `Loader` class.
-- `Loader` looks for a usable archive. If found, it returns that archive ID. Otherwise it launches the archiving process, first aggregating
+- `Loader` looks for a usable archive. If found, it returns that archive ID. Otherwise, it launches the archiving process, first aggregating
   core metrics like nb_visits. Then if we can't skip the archive, it invokes `PluginsArchiver`.
 - `PluginsArchiver` loops through every activated plugin and creates the plugin's `Archiver` instance if there is one. It invokes the appropriate
   method on the `Archiver` instances.
