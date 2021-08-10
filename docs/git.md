@@ -13,6 +13,6 @@ At Matomo we're using Git version control system. Below are some tips for using 
 
 This can be useful if you committed something that you didn't want to commit. The command will undo the last commit but keep the changes.
 
-## Branches and Submodules
+## Submodules
 
 tbd
