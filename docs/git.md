@@ -54,10 +54,10 @@ git checkout 4.x-dev             # main branch, sometimes also called master
 git submodule init
 git submodule update --recursive
 git checkout m-17640             # your branch where you did the wrong commit
-git checkout 4.x-dev \           # main branch
-plugins/Morpheus/icons           # submodule that was wrong
+git checkout 4.x-dev plugins/Morpheus/icons
+                                 # main branch
+                                 # submodule that was wrong
 git add plugins/Morpheus/icons   # add the submodule back in its original state
-git commit -m \
-'revert git submodule to 
-4.x-dev version #17640'          # commit the changes
+git commit -m 'revert git submodule to 4.x-dev version #17640'
+                                 # commit the changes
 ```
