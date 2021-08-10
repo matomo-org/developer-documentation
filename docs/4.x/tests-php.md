@@ -39,7 +39,7 @@ not tested they would be still marked as tested when running integration tests.
 
 ## Requirements
 
-Before you start make sure you have enabled development mode:
+Before you start make sure you have [setup Matomo](/guides/getting-started-part-1), and make sure you have enabled development mode:
 
 ```
 $ ./console development:enable
