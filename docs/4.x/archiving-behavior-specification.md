@@ -60,6 +60,8 @@ if browser archiving is disabled:
   archiving...
   - unless, the reason we are archiving a single plugin is because the request is for a segment and
     `[General] browser_archiving_disabled_enforce` is set to 1.
+- If the period being archived includes today and there is an existing archive that was created before within the configured
+  archive TTL time, then we do not initiate archiving. To learn more about archive TTLs, see below.
 
 **Optimizations that skip archiving**
 
@@ -506,3 +508,19 @@ the archive needs to be reprocessed.
 
 Everything that is invalidated in the archive tables should also appear in the archive_invalidations table. However, the
 reverse is not true. If we just put something into archive_invalidations, it will still overwrite an existing archive.
+
+## Archive Purging
+
+Matomo will regularly delete old archive data. This happens in two places:
+
+1. right after an archive is created, old duplicates are removed
+2. in a scheduled task that is executed daily, we delete any old duplicates we find
+
+To delete old archive data, we look through every archive that has duplicates. Archives older than the newest `DONE_OK`
+archive are deleted. Newer archives are kept if they are partial archives (where the archive status is `DONE_PARTIAL`).
+
+### Special Considerations
+
+* The query to find duplicate archives uses `GROUP_CONCAT`. MySQL limits how much data can be returned through this function,
+  so it is possible for the data to be cut off. We detect this in the code, but if manually purging archives, and there are
+  many duplicates for some reason, the command may need to be run multiple times.
