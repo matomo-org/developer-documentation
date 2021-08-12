@@ -26,5 +26,8 @@ has been posted and has not been closed/removed, it will be replaced with `$noti
        A unique identifier for this notification. The ID must be a valid HTML element ID. It can only contain alphanumeric characters (underscores can be used).
     - `$notification` ([`Notification`](../../Piwik/Notification.md)) &mdash;
        The notification to post.
-- It does not return anything or a mixed result.
+
+- *Returns:*  `bool` &mdash;
+    true if the notification was added, false if it was ignored because there were too many
+                  pending ones.
 
