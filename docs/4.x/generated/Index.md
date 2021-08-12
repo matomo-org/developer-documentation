@@ -1067,6 +1067,7 @@ Index
 - [`shouldRunEvenWhenNoVisits()`](Piwik/Plugin/Archiver.md#shouldrunevenwhennovisits) &mdash; *Method in class* [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`$strDate`](Piwik/Plugin/Controller.md#$strdate) &mdash; *Property in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`$site`](Piwik/Plugin/Controller.md#$site) &mdash; *Property in class* [`Controller`](Piwik/Plugin/Controller.md)
+- [`$securityPolicy`](Piwik/Plugin/Controller.md#$securitypolicy) &mdash; *Property in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`setDate()`](Piwik/Plugin/Controller.md#setdate) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`setMinDateView()`](Piwik/Plugin/Controller.md#setmindateview) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`setMaxDateView()`](Piwik/Plugin/Controller.md#setmaxdateview) &mdash; *Method in class* [`Controller`](Piwik/Plugin/Controller.md)

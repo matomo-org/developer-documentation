@@ -17,6 +17,7 @@ This abstract class defines the following properties:
 - [`$date`](#$date) &mdash; The Date object created with ($strDate)[#strDate] or null if the requested date is a range. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
 - [`$idSite`](#$idsite) &mdash; The value of the **idSite** query parameter. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
 - [`$site`](#$site) &mdash; The Site object created with [$idSite](/api-reference/Piwik/Plugin/ControllerAdmin#$idsite). Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+- [`$securityPolicy`](#$securitypolicy) &mdash; The SecurityPolicy object. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
 
 <a name="$pluginname" id="$pluginname"></a>
 <a name="pluginName" id="pluginName"></a>
@@ -69,6 +70,16 @@ The Site object created with [$idSite](/api-reference/Piwik/Plugin/ControllerAdm
 #### Signature
 
 - It is a [`Site`](../../Piwik/Site.md) value.
+
+<a name="$securitypolicy" id="$securitypolicy"></a>
+<a name="securityPolicy" id="securityPolicy"></a>
+### `$securityPolicy`
+
+The SecurityPolicy object.
+
+#### Signature
+
+- It is a `Piwik\Plugin\SecurityPolicy` value.
 
 Methods
 -------
