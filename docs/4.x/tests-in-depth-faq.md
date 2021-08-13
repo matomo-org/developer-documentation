@@ -72,7 +72,7 @@ afterEach(function () {
 });
 ```
 
-In PHP in a `conifg/test.php` you can then check if the corresponding variable is set and overwrite it like this:
+In PHP in a `config/test.php` you can then check if the corresponding variable is set and overwrite it like this:
 
 ```php 
 'Piwik\Plugins\TagManager\Model\Container\ContainerIdGenerator' => DI\decorate(function ($previous) {
