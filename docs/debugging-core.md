@@ -27,7 +27,18 @@ export XDEBUG_CONFIG="remote_enable=1"
 php console ...
 ```
 
-[Click here to read more about this.](https://www.jetbrains.com/help/phpstorm/debugging-a-php-cli-script.html)
+The following settings allow debugging sessions to work from command line tools such as `./console` as well:
+
+```ini
+; php.ini
+[xdebug]
+xdebug.mode=debug
+xdebug.start_with_request=yes
+xdebug.log_level = 0
+xdebug.max_nesting_level = 10001
+```
+
+More: [Discover JetBrains PHPStorm Debugging documentation.](https://www.jetbrains.com/help/phpstorm/debugging-a-php-cli-script.html)
 
 ### Logging
 
