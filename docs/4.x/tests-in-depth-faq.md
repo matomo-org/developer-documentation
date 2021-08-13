@@ -90,7 +90,7 @@ This is very powerful and allows you to force all kind of different conditions i
 
 ### Integration and system PHP tests
 
-You can overwrite the `Access` class using dependency injection and then configure the access class do your needs like in the examples below:
+You can overwrite the `Access` class using dependency injection and then configure the access class to your needs like in the examples below:
 
 ```php 
 public function test_superuser() {
