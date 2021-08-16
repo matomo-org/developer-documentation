@@ -64,3 +64,11 @@ Config::getInstance()->forceSave();
 **Plugins cannot add new configuration options.** If you are creating a core contribution and want to add a new INI option, you can simply add the option and its default value to `global.ini.php`.
 
 If you want to make your plugin configurable, create a [Plugin Setting](/guides/plugin-settings).
+
+## Boolean Configuration Options
+
+For example `force_ssl = 1` is a boolean value in the configuration. By convention we use either 0 or 1 exactly for the value. It was suggested that we improve and clarify this in the future.
+
+For INI files we use [parse_ini_string](https://www.php.net/manual/en/function.parse-ini-string.php), which means settings like `setting = on` and `setting = yes` also work as expected. The value gets converted to `=== 1`.
+
+See [ConfigTest.php](https://github.com/matomo-org/matomo/blob/2a06b5a99a8ce9ffd84b57a88bcc0f1513f13190/tests/PHPUnit/Unit/Config/ConfigTest.php#L52-L63).
