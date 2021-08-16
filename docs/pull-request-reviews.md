@@ -98,6 +98,13 @@ When reviewing a pull request, think about whether it's possible that users may 
 out to support or the forums or make a github issue, then we'd like to prevent that, either with a change to the pull request, or by creating/editing a faq so we can address these
 requests quickly.
 
+### Translations / Wording review done
+
+* We check that all printed strings are [translatable](/guides/translations). Rarely, some specific exceptions don't need to be translated if they are only triggered in certain cases. Any exception that may be triggered through the UI has to be translatable.
+* We check that all wordings are easy to understand, provide enough context for the user and make sense in the used context.
+* We check the provided strings for typos and grammar.
+* In GitHub translations are only provided for the `en.json` language file. We don't put any translations into any other language files as these are provided by the translators to ensure consistent wording is used and to ensure the translations were reviewed.
+
 ### Security review done
 
 We also want to make sure there are no security issues introduced by this pull request. We've created a checklist here for some security issues to look out
