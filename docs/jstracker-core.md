@@ -18,6 +18,14 @@ Generally we try to keep the JS file smallish for fast performance.
 
 To make changes to the JS tracker, you need to edit the raw/unminfied JS tracker itself which you can find in the [js/piwik.js](https://github.com/matomo-org/matomo/blob/4.x-dev/js/piwik.js) directory. When you create a pull request, you can then minify the JS tracker see below.
 
+### Adding a new public JS tracker method
+
+Public tracker methods like `trackPageView` can be called eg using `_paq.push(['trackPageView', '...parameters'])`. Such methods are defined similiar to this [example](https://github.com/matomo-org/matomo/blob/4.4.1/js/piwik.js#L6260-L6275).
+
+Any newly added method or changed parameters will be documented in the [developer changelog](https://developer.matomo.org/guides/apis#developer-changelog) and on the [JS tracking client](https://developer.matomo.org/api-reference/tracking-javascript) page.
+
+A test also needs to be added unless it isn't possible. We also add a test to the `"API methods"` test group to ensure the function is exposed.
+
 ## Tests
 
 See [adding tests guide](https://developer.matomo.org/guides/enrich-js-tracker#adding-tests).
