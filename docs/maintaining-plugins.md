@@ -35,6 +35,7 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 * Create (or update if you already have it) a `.gitignore` file in your _plugins_ folder and add the new folder. This `.gitignore` file is already ignored in the main `.gitignore`
 * Activate the plugin on the Administration dashboard, _System > Plugins_ page
 * You can create branches, PRs inside this plugin folder
+* On Travis go to "Settings" and add a new environment variable "ARTIFACTS_PASS", use the password from password manager and click on "Add".
 
 ## Maintaining plugin FAQs
 
