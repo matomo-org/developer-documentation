@@ -2265,7 +2265,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [171](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L171)*
+*Defined in [Piwik/Plugins/SitesManager/tests/Integration/SitesManagerTest](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php) in line [173](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/tests/Integration/SitesManagerTest.php#L173)*
 
 
 
