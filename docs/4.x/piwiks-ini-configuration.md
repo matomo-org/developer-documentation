@@ -59,6 +59,10 @@ To persist these changes, so they will appear in the INI files, call the [`force
 Config::getInstance()->forceSave();
 ```
 
+## Accessing configurations in JavaScript
+
+You can add new configs to [Config::getClientSideOptions()](https://github.com/matomo-org/matomo/blob/4.4.1/core/Config.php#L183-L190) and these configurations will then be accessible using JavaScript as part of the `piwik.config` object. When exposing a config you want to double check to not expose any configs that shouldn't be visible by everyone (publicly). Any configuration value will be visible to everyone through the HTML eg on the login screen etc. Also depending on the value you might want to enforce a certain type for the config. For example if the config is supposed to be an integer then it be good to convert it to an integer just in case it is a string etc.
+
 ## Adding new configuration options
 
 **Plugins cannot add new configuration options.** If you are creating a core contribution and want to add a new INI option, you can simply add the option and its default value to `global.ini.php`.
