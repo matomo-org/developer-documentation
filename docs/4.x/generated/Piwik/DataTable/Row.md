@@ -56,6 +56,7 @@ The class defines the following methods:
 - [`setColumns()`](#setcolumns) &mdash; Set all the columns at once.
 - [`setColumn()`](#setcolumn) &mdash; Set the value `$value` to the column called `$name`.
 - [`setMetadata()`](#setmetadata) &mdash; Set the value `$value` to the metadata called `$name`.
+- [`setAllMetadata()`](#setallmetadata) &mdash; Sets all metadata at once.
 - [`deleteMetadata()`](#deletemetadata) &mdash; Deletes one metadata value or all metadata values.
 - [`addColumn()`](#addcolumn) &mdash; Add a new column to the row.
 - [`addColumns()`](#addcolumns) &mdash; Add many columns to this row.
@@ -302,6 +303,19 @@ Set the value `$value` to the metadata called `$name`.
        name of the metadata to set.
     - `$value` (`mixed`) &mdash;
        value of the metadata to set.
+- It does not return anything or a mixed result.
+
+<a name="setallmetadata" id="setallmetadata"></a>
+<a name="setAllMetadata" id="setAllMetadata"></a>
+### `setAllMetadata()`
+
+Sets all metadata at once.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$metadata` (`array`) &mdash;
+       new metadata to set
 - It does not return anything or a mixed result.
 
 <a name="deletemetadata" id="deletemetadata"></a>

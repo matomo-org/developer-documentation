@@ -15,7 +15,7 @@ they cannot be constructed.
 
 You can search for metrics (such as `nb_visits`) using the [getNumeric()](/api-reference/Piwik/Archive#getnumeric) and
 [getDataTableFromNumeric()](/api-reference/Piwik/Archive#getdatatablefromnumeric) methods. You can search for
-reports using the getBlob(), [getDataTable()](/api-reference/Piwik/Archive#getdatatable) and [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded) methods.
+reports using the [getBlob()](/api-reference/Piwik/Archive#getblob), [getDataTable()](/api-reference/Piwik/Archive#getdatatable) and [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded) methods.
 
 If you're creating an API that returns report data, you may want to use the
 [createDataTableFromArchive()](/api-reference/Piwik/Archive#createdatatablefromarchive) helper function.
@@ -99,6 +99,7 @@ The class defines the following methods:
 - [`factory()`](#factory) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
 - [`shouldSkipArchiveIfSkippingSegmentArchiveForToday()`](#shouldskiparchiveifskippingsegmentarchivefortoday)
 - [`getNumeric()`](#getnumeric) &mdash; Queries and returns metric data in an array.
+- [`getBlob()`](#getblob) &mdash; Queries and returns blob records without turning them into DataTables.
 - [`getDataTableFromNumeric()`](#getdatatablefromnumeric) &mdash; Queries and returns metric data in a DataTable instance.
 - [`getDataTable()`](#getdatatable) &mdash; Queries and returns one or more reports as DataTable instances.
 - [`getDataTableExpanded()`](#getdatatableexpanded) &mdash; Queries and returns one report with all of its subtables loaded.
@@ -217,6 +218,26 @@ will be indexed by site ID first, then period.
     `false` if there is no data to return, a single numeric value if we're not querying
                             for multiple sites/periods, or an array if multiple sites, periods or names are
                             queried for.
+
+<a name="getblob" id="getblob"></a>
+<a name="getBlob" id="getBlob"></a>
+### `getBlob()`
+
+Queries and returns blob records without turning them into DataTables.
+
+Unlike other methods, this returns a DataCollection instance directly. Use it to directly access
+and process blob data.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$names`
+      
+    - `$idSubtable`
+      
+
+- *Returns:*  `Piwik\Archive\DataCollection` &mdash;
+    the queried data.
 
 <a name="getdatatablefromnumeric" id="getdatatablefromnumeric"></a>
 <a name="getDataTableFromNumeric" id="getDataTableFromNumeric"></a>
