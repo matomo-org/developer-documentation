@@ -190,7 +190,7 @@ By no means is below a complete checklist. You'll always be required to still th
 * **Timing attack checks**: For sensitive equal comparisons `Common::hashEquals` is used
 * **Exposing of data**: No sensitive data is exposed (any tokens or passwords eg in the HTML as part of a system check or logs or so)
 * **Secure data storing**: Passwords or similar data like a sessionId is stored securely hashed
-* External links have a `rel=noopener` (although newer browser versions add this automatically)
+* External links have a `rel="noreferrer noopener"` (although newer browser versions add this automatically). The `noopener` is needed for security reasons. The `noreferrer` for privacy reasons.
 * **Email notifications are sent** for critical actions related to login credentials, tokens, 2FA etc and ideally also for any other crticial configuration change such as brute force changes etc.
 * **Unsafe methods**: Methods to watch out for: 
   * Insecure deserialization: `unserialize` is unsafe for user input. Consider using `Common::safe_unserialize` or for user input possibly `JSON` instead
