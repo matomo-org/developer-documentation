@@ -95,7 +95,7 @@ When profiling a query or generally checking how long a query takes to load, it'
 
 ### Understanding query execution
 
-To get more insights into a query like how many rows it will likely look at, whether it uses an index or not etc simply prepend `explain extended` or `explain format=json` to the SQL select query.
+To get more insights into a query like how many rows it will likely look at, whether it uses an index or not etc simply prepend `explain extended` or `explain format=json` or `explain format=tree` to the SQL select query. [Learn more about this here.](https://elephantdolphin.blogspot.com/2021/08/explaining-different-explains-in-mysql.html)
 
 ## JavaScript
 
