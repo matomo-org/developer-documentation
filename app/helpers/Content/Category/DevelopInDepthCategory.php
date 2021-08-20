@@ -36,6 +36,7 @@ class DevelopInDepthCategory extends Category
                 new Guide('profiling-code'),
                 new Guide('reproducing-issues'),
                 new Guide('core-faqs'),
+                new Guide('core-components'),
                 new Guide('release-management'),
                 new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
             ]),
