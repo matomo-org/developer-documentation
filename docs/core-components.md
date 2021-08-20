@@ -27,6 +27,6 @@ As part of Matomo we maintain a few components which we embed into core using co
 ### Step 2: Updating the component in Matomo core
 
 * Update the version number for the updated component in [matomo/composer.json](https://github.com/matomo-org/matomo/blob/4.x-dev/composer.json) if needed 
-* Execute `composer update matomo/$COMPONENT_NAME`. You need to replace `$COMPONENT_NAME` with the name of the component.
+* Execute `composer update matomo/$COMPONENT_NAME`. You need to replace `$COMPONENT_NAME` with the name of the component. For the cache component you may need to execute `composer update matomo/cache  matomo/doctrine-cache-fork`.
 * Push `composer.json` and `composer.lock`.
 * Create a PR and get it merged.
