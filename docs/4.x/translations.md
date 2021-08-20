@@ -126,21 +126,17 @@ Did you know you can contribute [translations](https://matomo.org/translations/)
 
 ## Getting translations for your plugin
 
-As long as you are [developing an open source plugin](https://developer.matomo.org/develop) hosted on Github, you may get in touch with us ([translations@matomo.org](mailto:translations@matomo.org?subject=Getting my Piwik plugin translated in other languages)) in order to get your plugin translated by the Piwik translators community.
+As long as you are [developing an open source plugin](https://developer.matomo.org/develop) hosted on GitHub, you may get in touch with us ([translations@matomo.org](mailto:translations@matomo.org?subject=Getting my Matomo plugin translated in other languages)) in order to get your plugin translated by the Matomo translators community.
 
-You will need an account on [Transifex.com](https://transifex.com/). If you use Transifex with a social login, please ensure to set a password in your account settings. This will be required for fetching new translations into your plugin repository.
 
 ### Importing your plugin’s strings in the translation platform
 
-While doing the initial setup for your plugin, we will import your english translation file (`en.json`) in your Github plugin repository, and we will configure an auto-update for this file. Source strings on Transifex will automatically synchronise with your plugin repository. When you change any string in your `en.json` translation file, the updated English strings will automatically be imported in Transifex.
+While doing the initial setup for your plugin, we will import your English translation file (`en.json`) in your Github plugin repository. For Weblate to be notified of any changes to the English strings, you need to set up a [webhook](https://docs.weblate.org/en/latest/admin/continuous.html#github-setup) using `https://hosted.weblate.org/hooks/github/` as the Payload URL and keep the rest of the settings at the default.
+
 
 ### How to fetch your plugins translations into your repository
 
-As soon as we have set up your plugin within [our Piwik project on Transifex](https://www.transifex.com/matomo/matomo/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. You will need a locally installed Piwik with [development mode enabled](https://developer.matomo.org/guides/getting-started-part-1#enable-development-mode), and your plugin installed. To update the translations go to the Piwik directory on your development box and execute the following command:
-
-```bash
-./console translations:update -u {YourTransifexUserName} -p {YourTransifexPassword} -P {YourPluginName}
-```
+As soon as we have set up your plugin within [our Matomo project on Weblate](https://hosted.weblate.org/projects/matomo/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. If you want to recieve translations as fast as possible, you can recieve a pull request with commits per translation update, that you can directly merge into your source e.g. before releases. Otherwise ... 
 
 ## Best practices for new translation keys
 
