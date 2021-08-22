@@ -91,7 +91,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 
 ### Ecommerce
 
-Piwik provides [ecommerce analytics](https://matomo.org/docs/ecommerce-analytics/) that let you measure items added to carts, and learn detailed metrics about abandoned carts and purchased orders.
+Piwik provides [ecommerce analytics](https://matomo.org/docs/ecommerce-analytics/) that let you measure items added to carts, and learn detailed metrics about abandoned carts and purchased orders. [For examples and more information click here](https://matomo.org/docs/ecommerce-analytics/#example-of-tracking-the-ecommerce-order).
 
 *   `setEcommerceView( productSKU, productName, categoryName, price )` - Set the current page view as a product or category page view. When you call `setEcommerceView` it must be followed by a call to `trackPageView` to record the product or category page view.
 *   `addEcommerceItem( productSKU, [productName], [productCategory], [price], [quantity] )` - Add a product into the ecommerce order. Must be called for each product in the order.
