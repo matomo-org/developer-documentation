@@ -53,6 +53,14 @@ To access private tracker variables that only exist within a tracker instance, y
 
 You can then access these methods on a tracker instance as usual. For example `tracker.isUsingAlwaysUseSendBeacon`. 
 
+### Resolving JSLint errors
+
+You may see a message like `Test failed in module externals: 'JSLint'. Error: JSLint validation: please check the browser console for the list of jslint errors.`
+
+In that case you need to run the tests in the browser and then open the browser developer tools. It will show you all the JSLint errors in the console. Explanations for the different errors you can find for example on [linterrors.com/js](http://linterrors.com/js).
+
+If the error is for example `Unexpected /*property*/ '{a}'.` then you may need to [add a new member or global in the comments](https://github.com/matomo-org/matomo/blob/4.4.1/js/piwik.js#L30-L130) to resolve the issue.
+
 ## Minifying the JS tracker
 
 When you create a pull request for a JS tracker change you will notice that a test will fail because the minified version wasn't updated. To generate the minified version for a JS tracker change simply create comment in the PR with the words `build js`.
