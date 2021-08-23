@@ -52,6 +52,9 @@ var safeString = piwikHelper.escape( userInputUnsafeString );
 $('#someLabel').text( safeString );
 ```
 
+#### See Also
+
+[XSS on MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#cross-site_scripting_xss)
 
 ## Preventing CSRF
 
@@ -90,6 +93,10 @@ Your JavaScript should send the **token\_auth** to controller and API methods th
 To keep the **token_auth** out of a browser cache, you can use POST requests.
 
 <!-- TODO: make sure Reporting API guide has security stuff -->
+
+#### See Also
+
+[CSRF on MDN](https://developer.mozilla.org/en-US/docs/Glossary/CSRF)
 
 ## Preventing SQL Injection
 
@@ -190,7 +197,7 @@ By no means is below a complete checklist. You'll always be required to still th
 * **Timing attack checks**: For sensitive equal comparisons `Common::hashEquals` is used
 * **Exposing of data**: No sensitive data is exposed (any tokens or passwords eg in the HTML as part of a system check or logs or so)
 * **Secure data storing**: Passwords or similar data like a sessionId is stored securely hashed
-* External links have a `rel="noreferrer noopener"` (although newer browser versions add this automatically). The `noopener` is needed for security reasons. The `noreferrer` for privacy reasons.
+* External links have a `rel="noreferrer noopener"` (although newer browser versions add this automatically). The `noopener` is needed for security reasons. The `noreferrer` for privacy reasons. See [rel=noreferrer](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noreferrer) and [rel=noopener](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)
 * **Email notifications are sent** for critical actions related to login credentials, tokens, 2FA etc and ideally also for any other crticial configuration change such as brute force changes etc.
 * **Unsafe methods**: Methods to watch out for: 
   * Insecure deserialization: `unserialize` is unsafe for user input. Consider using `Common::safe_unserialize` or for user input possibly `JSON` instead
