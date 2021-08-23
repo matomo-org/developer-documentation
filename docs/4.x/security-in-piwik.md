@@ -196,7 +196,7 @@ By no means is below a complete checklist. You'll always be required to still th
   * Insecure deserialization: `unserialize` is unsafe for user input. Consider using `Common::safe_unserialize` or for user input possibly `JSON` instead
   * `file_get_contents` can be unsafe when eg a protocol `phar://` can be passed to it
   * require|include(_once) should not use any user input unless it's whitelisted
-  * Also see eg https://gist.github.com/mccabe615/b0907514d34b2de088c4996933ea1720
+  * Also see eg [phpdangerousfuncs.md](https://gist.github.com/mccabe615/b0907514d34b2de088c4996933ea1720)
 * Think of other ways such as RCE etc
 * **Password confirmation** for critical actions related to login credentials, tokens, 2FA etc and ideally also other critical/sensitive changes like installing/activating plugins etc.
 
