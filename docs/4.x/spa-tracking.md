@@ -101,7 +101,11 @@ Where `documentOrElement` points either to `document` or an element similar to t
 
 To support single-page websites and web applications out of the box, [Heatmap](https://matomo.org/docs/heatmaps/) & [Session Recording](https://matomo.org/docs/session-recording/) will automatically detect a new page view when you call the `trackPageView` method. This applies if you call `trackPageView` several times without an actual page reload. Matomo will after each call of `trackPageView` stop the recording of any activities and re-evaluate based on the new URL whether if it should record activities for the new page or not. 
 
-If you have a single-page website and you use `trackPageView` for any other purposes than an actual page view, it is recommended to disable the default behaviour using this method and let Heatmap & Session Recording explicitly know when there is a new page view by calling the two methods `disableAutoDetectNewPageView` and `setNewPageView`. Learn more in the [JS Tracker API reference for Heatmaps & Session Recording](https://developer.matomo.org/guides/heatmap-session-recording/reference#disableautodetectnewpageview).
+If you have a single-page website and you use `trackPageView` for any other purposes than an actual page view, it is recommended to disable the default behaviour using this method and let Heatmap & Session Recording explicitly know when there is a new page view by calling the two methods `disableAutoDetectNewPageView` and `setNewPageView`.
+
+If you're setting a Custom URL in the single-page website, you may need to use the [`matchTrackerUrl()`](https://developer.matomo.org/guides/heatmap-session-recording/reference#matchtrackerurl) in order to allow the Matomo tracker to correctly trigger Heatmaps and Session Recordings.
+
+Learn more in the [JS Tracker API reference for Heatmaps & Session Recording](https://developer.matomo.org/guides/heatmap-session-recording/reference#disableautodetectnewpageview).
 
 ## Measuring Single-Page Apps: Complete Example
 
