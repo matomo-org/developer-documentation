@@ -148,3 +148,7 @@ Follow these guidelines when creating your own translation keys:
 Using numbered placeholders, such as `%1$s`, `%2$s`, etc. instead of `%s` makes it possible for translators to switch the order. That might be necessary to translate it to certain languages properly.
 
 This guideline is more important for contributions to Piwik Core than for new plugins.
+
+## Update data from Unicode CLDR
+
+The translations of the *Intl* plugin are automatically converted from the Unicode Common Locale Data Repository. To update them, check https://github.com/unicode-org/cldr-json/releases for the latest stable release of CLDR and update `$CLDRVersion` in ` plugins/Intl/Commands/GenerateIntl.php`. Afterwards you can run `php console translations:generate-intl-data` and commit the changed files in `plugins/Intl/lang`.
