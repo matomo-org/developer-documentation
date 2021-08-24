@@ -57,7 +57,7 @@ You can then access these methods on a tracker instance as usual. For example `t
 
 You may see a message like `Test failed in module externals: 'JSLint'. Error: JSLint validation: please check the browser console for the list of jslint errors.`
 
-In that case you need to run the tests in the browser and then open the browser developer tools. It will show you all the JSLint errors in the console. Explanations for the different errors you can find for example on [linterrors.com/js](http://linterrors.com/js).
+In that case you need to run the tests in the browser and then open the browser developer tools. It will show you all the JSLint errors in the console. There might be a lot of log output in the console. You can find the relevant entry by searching for `JSLint`. Explanations for the different errors you can find for example on [linterrors.com/js](http://linterrors.com/js).
 
 If the error is for example `Unexpected /*property*/ '{a}'.` then you may need to [add a new member or global in the comments](https://github.com/matomo-org/matomo/blob/4.4.1/js/piwik.js#L30-L130) to resolve the issue.
 
