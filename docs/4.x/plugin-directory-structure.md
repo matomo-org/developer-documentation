@@ -28,6 +28,7 @@ Each plugin has its own directory within the root `plugins/` directory. Generall
 |  lang/ |     This directory includes [language files for translations](/guides/translations).    |
 |  libs/ |     This directory may include third party libraries. Alternatively a `node_modules` directory can be used.    |
 |  javascripts/ |     This directory includes JS files.    |
+|  LocationProvider/ |     This directory may include custom location providers.    |
 |  MeasurableSettings.php  |    Defines custom [settings](/guides/plugin-settings) for a measurable / site in Matomo.     |
 |  Menu.php  |    This file is used to add, remove or change [menu entries](/guides/menus).     |
 |  Model/  |    This directory includes Models. These typically use `Dao` classes and have more logic.     |
@@ -44,6 +45,7 @@ Each plugin has its own directory within the root `plugins/` directory. Generall
 |  tests/Integration/  |     This directory includes integration [PHP tests](/guides/tests-php).       |
 |  tests/javascript/index.php  |     This file includes [JavaScript tests](/guides/jstracker-core#tests) for our JS tracker and Tag Manager.      |
 |  tests/javascript/head.php  |     This file can be used to load additional JS files in JavaScript tests for our JS tracker and Tag Manager.      |
+|  tests/travis/  |     This directory includes travis yml files that [add extra steps to your plugin's .travis.yml file](/guides/tests-travis#extending-travisyml-behavior).      |
 |  tests/UI/  |     This directory includes [UI screenshot tests](/guides/tests-ui). Each test file ends with `_spec.js`.       |
 |  tests/Unit/  |     This directory includes unit [PHP tests](/guides/tests-php).       |
 |  tests/System/  |     This directory includes system [PHP tests](/guides/tests-php).       |
