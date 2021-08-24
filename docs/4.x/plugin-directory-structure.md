@@ -11,6 +11,7 @@ Each plugin has its own directory within the root `plugins/` directory. Generall
 | ----------- | ----------- |
 | plugin.json      | Contains [metadata about the plugin](/guides/distributing-your-plugin#prepare-your-plugin) such as contact information, a description, and more. Mostly needed for plugins on the Marketplace.      |
 |  $PluginName.php  |    `$PluginName` needs to be replaced with the name of the plugin. This file is the plugin file which allows plugins to listen to [events](/guides/events) and method hooks such as `install()`, `activate` and `uninstall()`.      |
+|  Activity/  |    This directory includes activities that should be logged for the [Matomo Activity / Audit Log](https://plugins.matomo.org/ActivityLog)  premium feature.     |
 |  API.php  |    Defines [API methods](/guides/expose-api-methods) for this plugin.     |
 |  Archiver.php  |    This file includes logic on how to create archive reports from log raw data.     |
 |  Categories/  |     This directory includes menu categories and subcategories that are used to build the reporting menu. They define for example the order in which they are shown in the menu.    |
@@ -49,6 +50,7 @@ Each plugin has its own directory within the root `plugins/` directory. Generall
 |  tracker.js  |     If such a file is present, then this code will be added to the [Matomo JavaScript tracking code](/guides/enrich-js-tracker). If a `tracker.min.js` exists then the minified version will be used.   |
 |  Tracker/RequestProcessor.php  |     This file is typically used to [hook into various events during a tracking request](/guides/tracking-requests).      |
 |  Tracker/LogTable/  |     This directory can include log tables if the plugin creates custom log tables for tracking data.      |
+|  vendor/  |     Libraries installed by Composer.      |
 |  VisitorDetails.php  |    This file is used to add [additional information to the visitor log or visitor profile](/guides/visitor-log-and-profile).     |
 |  Visualizations/  |     This directory includes [visualizations](/guides/visualizing-report-data) that show report data differently.      |
 |  Widgets/  |     This directory includes [widgets](/guides/widgets). One PHP file for each widget.    |
