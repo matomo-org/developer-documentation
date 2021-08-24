@@ -13,6 +13,7 @@ subGuides:
   - datatable
   - system-check
   - piwik-on-the-command-line
+  - plugin-directory-structure
   - dependency-injection
   - gdpr
 ---
