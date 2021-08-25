@@ -3,6 +3,7 @@ category: DevelopInDepth
 subGuides:
   - log-data
   - archiving
+  - archiving-behavior-specification
   - archive-data
   - reports
 ---
@@ -30,5 +31,5 @@ In Piwik the result of that grouping is the **analytics data**. Analytics data i
 Here is the workflow that data follows in Piwik:
 
 - **raw data** is collected from trackers and stored as [**log data**](/guides/log-data)
-- the [**archiving process**](/guides/archiving) aggregates log data into [**archive data**](/guides/archive-data)
+- the [**archiving process**](/guides/archiving) aggregates log data into [**archive data**](/guides/archive-data) (see also the [**archiving behavior specification**](/guides/archiving-behavior-specification))
 - **archive data** is loaded and presented into [**reports**](/guides/reports)
