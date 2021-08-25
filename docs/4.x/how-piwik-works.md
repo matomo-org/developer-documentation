@@ -222,3 +222,12 @@ Matomo Core only defines the main processes and behaviours. Plugins can extend a
 - extending certain abstract **base classes**
 
 You can read more about this topic in the ["Matomo's Extensibility Points" guide](/guides/piwiks-extensibility-points).
+
+
+## Other valuable resources
+
+As a developer or system administrator you might also want to understand:
+
+* [How to conifgure Matomo for security](https://matomo.org/docs/security-how-to/)
+* [How to conifgure Matomo for speed](https://matomo.org/docs/optimize-how-to/)
+
