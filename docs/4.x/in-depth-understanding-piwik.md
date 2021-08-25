@@ -2,6 +2,7 @@
 category: Develop
 title: Understanding Matomo
 subGuides:
+  - our-mission
   - how-piwik-works
   - http-request-handling
   - authentication-in-depth
