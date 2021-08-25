@@ -228,6 +228,6 @@ You can read more about this topic in the ["Matomo's Extensibility Points" guide
 
 As a developer or system administrator you might also want to understand:
 
-* [How to conifgure Matomo for security](https://matomo.org/docs/security-how-to/)
-* [How to conifgure Matomo for speed](https://matomo.org/docs/optimize-how-to/)
+* [How to configure Matomo for security](https://matomo.org/docs/security-how-to/)
+* [How to configure Matomo for speed](https://matomo.org/docs/optimize-how-to/)
 
