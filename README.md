@@ -154,6 +154,16 @@ A guide must be either added to a category menu or set as a "sub-guide" of anoth
 
 To add a guide to a category (i.e. it will appear in the left sidebar) edit the PHP class for the category (in `app/helpers/Content/Category`).
 
+### Adding the new guide to a menu item
+
+Some menu items need to be added by adding the markdown filename without the `.md` in one of these [category classes](https://github.com/matomo-org/developer-documentation/tree/live/app/helpers/Content/Category).
+
+Some submenu items need to be added as a subguide [see for example this example](https://raw.githubusercontent.com/matomo-org/developer-documentation/live/docs/4.x/develop-plugin-basics.md).
+
+It really depends submenu item which one you need to edit. If the parent menu item defines it's submenu items in a category class, then you need a new entry there. Otherwise you need to edit the markdown file for the parent menu item and add a new entry to `subGuides`.
+
+Please note that also the `category:` in the beginning of your guide needs to match the name of the category this page should be in. The category name can be for example `Develop`, `DevelopInDepth`, `Integrate` or `API Reference`.
+
 ## Supported inline tags in PHP comments
 
 The following tags can be used in PHP docblocks so that they can be turned to links in the API reference.
