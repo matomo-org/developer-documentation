@@ -199,7 +199,7 @@ The contents of the archive tables are explained in detail in the ["Matomo datab
 
 #### Auto archiving versus browser archiving
 
-By default, Matomo generates these reports "on demand" every time they are requested in the browser or through the API. This can slow down Matomo, and therefore it is possible to configure [auto archiving](https://matomo.org/docs/setup-auto-archiving/) (sometimes also referred to as pre-archiving) which will instead generates these reports in the background periodically through a cron.
+By default, Matomo generates these reports "on demand" every time they are requested in the browser or through the API. This can slow down Matomo, and therefore it is possible to configure [auto archiving](https://matomo.org/docs/setup-auto-archiving/) (sometimes also referred to as pre-archiving) which will instead generate these reports in the background periodically through a cron.
 
 To learn more about archiving read our [archiving process guide](/guides/archiving) and our [Archiving Behavior Specification](/guides/archiving-behavior-specification).
 
