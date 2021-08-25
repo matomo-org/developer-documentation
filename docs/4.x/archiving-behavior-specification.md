@@ -1,5 +1,5 @@
 ---
-category: API Reference
+category: DevelopInDepth
 ---
 
 # Archiving Behavior Specification
