@@ -3,7 +3,9 @@ category: DevelopInDepth
 ---
 # Git
 
-At Matomo we're using Git version control system. Below are some tips for using git.
+At Matomo we're using Git version control system. Below are some tips for using git. Below is a guide for how we work using git on the command line.
+
+If you prefer using Git through your IDE like PHPStorm, or if you are more accustomed to use a slightly different flow then please go with your preferred option of what you feel comfortable with. As often there is no right or wrong and not one way to do something.
 
 ## Prerequisites
 
@@ -108,25 +110,32 @@ Pushing means it will send all the previous commits to the remote server which i
 
 When you visit the repository you pushed the change to on github.com  then GitHub will directly show you branch you pushed to on the main page and you can click on it and inspect the changes. You then either make more pushes or if you are happy with the changes or seek feedback then you [create a pull request](/guides/pull-request-reviews).
 
+#### Force pushes
+
+Most main branches are protected from force pushes that rewrite the history. If you ever need to rewrite the history (which should be needed rarely) then you will want to use the below command:
+
+`git push --force-with-lease`
+
+While `git push --force` works too it overwrites the entire remote branch with your local branch, `--force-with-lease` is safer as it makes sure you won't overwrite someone else's work.
+
 ## Submodules
 
-### Accidentally Commited Submodules?
+### Accidentally Committed Submodules?
 
 Have you done some work on Matomo or another project and accidentally overridden the submodule commit?
 
 This may help you find your commands to recover.
 
 ```
-git checkout 4.x-dev             # main branch, sometimes also called master
+# below replace `$MAIN_BRANCH` with the name of the main branch. Sometimes this is "live", "develop" or `*.x-dev` eg `4.x-ev`.
+# and repace "$SUBMODULE_DIR" with a path to the submodule you want to correct. For example "plugins/Morpheus/icons".
+git checkout $MAIN_BRANCH             # switch to the main branch
 git submodule init
 git submodule update --recursive
-git checkout m-17640             # your branch where you did the wrong commit
-git checkout 4.x-dev plugins/Morpheus/icons
-                                 # main branch
-                                 # submodule that was wrong
-git add plugins/Morpheus/icons   # add the submodule back in its original state
-git commit -m 'revert git submodule to 4.x-dev version #17640'
-                                 # commit the changes
+git checkout $FEATURE_BRANCH             # replace `$FEATURE_BRANCH` with the name of your branch where you did the wrong commit
+git checkout $MAIN_BRANCH $SUBMODULE_DIR 
+git add $SUBMODULE_DIR   # add the submodule back in its original state
+git commit -m 'revert git submodule' # commit the changes
 ```
 
 ## Other useful commands
