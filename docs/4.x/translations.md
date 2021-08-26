@@ -136,7 +136,7 @@ While doing the initial setup for your plugin, we will import your English trans
 
 ### How to fetch your plugins translations into your repository
 
-As soon as we have set up your plugin within [our Matomo project on Weblate](https://hosted.weblate.org/projects/matomo/) and there are new translations available, you will be able to update your plugin translations using the Piwik console. If you want to recieve translations as fast as possible, you can recieve a pull request with commits per translation update, that you can directly merge into your source e.g. before releases. Otherwise ... 
+As soon as we have set up your plugin within [our Matomo project on Weblate](https://hosted.weblate.org/projects/matomo/), you are able to recieve a pull request with commits per translation update, that you can directly merge into your source e.g. before releases.
 
 ## Best practices for new translation keys
 
