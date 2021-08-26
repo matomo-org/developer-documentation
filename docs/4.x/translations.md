@@ -9,7 +9,6 @@ Purpose:
 - describe how to make plugins/contributions available in different languages,
 - describe how to use internationalization in twig templates & in PHP code,
 - describe how to create new translation keys (ie, reuse as much as possible),
-- describe how plugin developers can use otrance (possible?)
 
 Audience: plugin developers
 
@@ -24,11 +23,11 @@ What's missing? (stuff in my list that was not in when I wrote the 1st draft)
 Read this guide if you'd like to know
 
 - **how to make your plugin available in other languages**
-- **how to make your contribution to Piwik Core available in other languages**
+- **how to make your contribution to Matomo Core available in other languages**
 
 ## The Basics
 
-Piwik is available in over 50 languages and comes with many translations. The core itself provides some basic translations for words like "Visitor" and "Help". They are stored in the directory <code>/lang</code>. In addition, each plugin can provide its own translations for wordings that are used in this plugin. They are located in <code>/plugins/\*/lang</code>. In those directories you'll find one JSON file for each language. Each language file consists in turn of tokens that belong to a group.
+Matomo is available in over 50 languages and comes with many translations. The core itself provides some basic translations for words like "Visitor" and "Help". They are stored in the directory <code>/lang</code>. In addition, each plugin can provide its own translations for wordings that are used in this plugin. They are located in <code>/plugins/\*/lang</code>. In those directories you'll find one JSON file for each language. Each language file consists in turn of tokens that belong to a group.
 
 ```json
 {
@@ -51,11 +50,11 @@ As you will later see to actually translate a word or a sentence you'll need to 
 
 ### Providing default translations
 
-To replace a key with translated text, Piwik will look into the JSON file for the current language. If no entry can be found, Piwik will use the english translation by default. Therefore, you should always provide a default translation in English for all keys in the file `en.json` (ie, `/plugins/MyPlugin/lang/en.json`).
+To replace a key with translated text, Matomo will look into the JSON file for the current language. If no entry can be found, Matomo will use the english translation by default. Therefore, you should always provide a default translation in English for all keys in the file `en.json` (ie, `/plugins/MyPlugin/lang/en.json`).
 
 ### Reusing translations
 
-As mentioned Piwik comes with quite a lot of translations. You can and should reuse them but you are supposed to be aware that a translation key might be removed or renamed in the future. It is also possible that a translation key was added in a recent version and therefore is not available in older versions of Piwik. We do not currently announce any of such changes. Still, 99% of the translation keys do not change and it is therefore usually a good idea to reuse existing translations. Especially when you or your company would otherwise not be able to provide them. To find any existing translation keys go to <span style="font-variant: small-caps">Settings =&gt; Translation search</span> in your Piwik installation. The menu item will only appear if the [development mode](https://developer.matomo.org/guides/getting-started-part-1#enable-development-mode) is enabled.
+As mentioned Matomo comes with quite a lot of translations. You can and should reuse them but you are supposed to be aware that a translation key might be removed or renamed in the future. It is also possible that a translation key was added in a recent version and therefore is not available in older versions of Matomo. We do not currently announce any of such changes. Still, 99% of the translation keys do not change and it is therefore usually a good idea to reuse existing translations. Especially when you or your company would otherwise not be able to provide them. To find any existing translation keys go to <span style="font-variant: small-caps">Settings =&gt; Translation search</span> in your Matomo installation. The menu item will only appear if the [development mode](https://developer.matomo.org/guides/getting-started-part-1#enable-development-mode) is enabled.
 
 ### Don't try to reduce the amount of translation keys
 
@@ -95,7 +94,7 @@ or
 
 Translating text in the browser is a bit more complicated than on the server. The browser doesn't have access to the translations, and we don't want to send every translation file to every user just so a couple lines of text can be translated.
 
-Piwik solves this problem by allowing plugins to define which translation keys should be available in the browser. It can then send only those translations in the current language to the browser.
+Matomo solves this problem by allowing plugins to define which translation keys should be available in the browser. It can then send only those translations in the current language to the browser.
 
 To make a translation key available on the client side, use the [Translate.getClientSideTranslationKeys](/api-reference/events#translategetclientsidetranslationkeys) event ([read more about Events](/guides/events)):
 
@@ -120,9 +119,9 @@ To use these translations in JavaScript, use the global `_pk_translate()` JavaSc
 var translatedText = _pk_translate("MyPlugin_BlogPost");
 ```
 
-## Contributing translations to Piwik
+## Contributing translations to Matomo
 
-Did you know you can contribute [translations](https://matomo.org/translations/) to Piwik? In case you want to improve an existing translation, translate a missing one or add a new language go to [Piwik Translations and sign up for an account](https://www.transifex.com/matomo/).
+Did you know you can contribute [translations](https://matomo.org/translations/) to Matomo? In case you want to improve an existing translation, translate a missing one or add a new language go to [the Matomo Project on Weblate](https://hosted.weblate.org/projects/matomo/). If you just want to make a quick suggestion for a change (e.g. to fix a typo you noticed while using Matomo), you don't need an account.
 
 ## Getting translations for your plugin
 
@@ -147,7 +146,7 @@ Follow these guidelines when creating your own translation keys:
 
 Using numbered placeholders, such as `%1$s`, `%2$s`, etc. instead of `%s` makes it possible for translators to switch the order. That might be necessary to translate it to certain languages properly.
 
-This guideline is more important for contributions to Piwik Core than for new plugins.
+This guideline is more important for contributions to Matomo Core than for new plugins.
 
 ## Update data from Unicode CLDR
 
