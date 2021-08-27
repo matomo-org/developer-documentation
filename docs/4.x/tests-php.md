@@ -330,7 +330,7 @@ then you should update the expected system files accordingly. To compare and upd
 
 ## Debugging tests
 
-As a software developer writing tests it can be useful to be able to set breakpoints and debug while running tests. If you use Phpstorm [read this answer](http://stackoverflow.com/a/14998884/3759928) to learn to configure Phpstorm with the PHPUnit from Composer. Also, see [XDebug on YouTube](https://youtu.be/HF61HJHEYMk).
+As a software developer writing tests it can be useful to be able to set breakpoints and debug while running tests. If you use Phpstorm [read this answer](http://stackoverflow.com/a/14998884/3759928) to learn to configure Phpstorm with the PHPUnit from Composer.
 
 The following configuration can be useful also to debug from the command line:
 
