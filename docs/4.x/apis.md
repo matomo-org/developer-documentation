@@ -120,8 +120,10 @@ We aim to make as few classes as needed a public API, since they will be require
 
 When making something a public API:
 
+  * We either mark a specific public method or property as public API by adding an `@api` annotation in a comment or an entire class. When you mark an entire class as public API then all public methods and properties will become API automatically. Most of the time it is best to mark only the needed methods as API.
   * We mention the new API in our [Developer Changelog](#developer-changelog).
   * If an API is a component (like an API, Task, Setting, ...) then we provide a command to generate such a component if possible.
+  * If applicable we [create a new guide or adjust an existing guide on the developer website](https://github.com/matomo-org/developer-documentation#writing-guides).
   * We consider writing a blog post about it to mention this new API.
 
 ## HTTP API
