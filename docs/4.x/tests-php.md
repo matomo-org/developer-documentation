@@ -332,17 +332,6 @@ then you should update the expected system files accordingly. To compare and upd
 
 As a software developer writing tests it can be useful to be able to set breakpoints and debug while running tests. If you use Phpstorm [read this answer](http://stackoverflow.com/a/14998884/3759928) to learn to configure Phpstorm with the PHPUnit from Composer.
 
-The following configuration can be useful also to debug from the command line:
-
-```ini
-[xdebug]
-zend_extension="xdebug.so"
-xdebug.mode=debug
-;xdebug.mode=develop,debug
-xdebug.start_with_request=yes
-xdebug.log_level = 0
-xdebug.max_nesting_level = 10001
-```
 
 ### Note on XDebug
 
