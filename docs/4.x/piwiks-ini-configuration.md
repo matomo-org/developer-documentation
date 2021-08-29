@@ -69,6 +69,6 @@ If you want to make your plugin configurable, create a [Plugin Setting](/guides/
 
 For example `force_ssl = 1` is a boolean value in the configuration. By convention we use either 0 or 1 exactly for the value. It was suggested that we [improve and clarify this in the future](https://github.com/matomo-org/matomo/issues/17876).
 
-For INI files we use [parse_ini_string](https://www.php.net/manual/en/function.parse-ini-string.php), which means settings like `setting = on` and `setting = yes` also work as expected. The value usually gets checked against `== 1`, but is also checked for being truthy in various places.
+Settings like `setting = on`, `setting = off` and `setting = yes` etc. also work as expected. The value usually gets checked against `== 1`, but is also checked for being truthy in various places.
 
 See [ConfigTest.php](https://github.com/matomo-org/matomo/blob/2a06b5a99a8ce9ffd84b57a88bcc0f1513f13190/tests/PHPUnit/Unit/Config/ConfigTest.php#L52-L63).
