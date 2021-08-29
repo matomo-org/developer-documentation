@@ -38,7 +38,7 @@ xdebug.log_level = 0
 xdebug.max_nesting_level = 10001
 ```
 
-More: [Discover JetBrains PHPStorm Debugging documentation.](https://www.jetbrains.com/help/phpstorm/debugging-a-php-cli-script.html)
+More: [Discover JetBrains PHPStorm Debugging documentation](https://www.jetbrains.com/help/phpstorm/debugging-a-php-cli-script.html), [see command line debugging](https://www.jetbrains.com/help/phpstorm/zero-configuration-debugging-cli.html) and [our PHP Guide](https://developer.matomo.org/guides/php).
 
 ### Logging
 
