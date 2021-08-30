@@ -14,6 +14,9 @@ xdebug.start_with_request=yes
 xdebug.log_level = 0
 ```
 
+This also works for debugging php invoked from the CLI.
+
+
 ### Note
 
 Be sure to avoid loading the Zend extensions in the wrong order. See
@@ -46,5 +49,4 @@ You can see how things are load and in which order with
 ## Compiling PHP beta versions before their release
 
 A quick [guide on how to compile PHP](https://guides.lw1.at/books/compiling-php-for-development) to be able to test Matomo with it:
-
 
