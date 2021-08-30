@@ -67,8 +67,28 @@ If you want to make your plugin configurable, create a [Plugin Setting](/guides/
 
 ## Boolean Configuration Options
 
-For example `force_ssl = 1` is a boolean value in the configuration. By convention we use either 0 or 1 exactly for the value. It was suggested that we [improve and clarify this in the future](https://github.com/matomo-org/matomo/issues/17876).
+For example `force_ssl = 1` is a boolean value in the configuration.
+By convention we check whether a feature is enabled by comparing
+the setting against the value `1` like this:
 
-Settings like `setting = on`, `setting = off` and `setting = yes` etc. also work as expected. The value usually gets checked against `== 1`, but is also checked for being truthy in various places.
+```php
+if ( \Piwik\Config::getInstance()->General['setting'] == 1) {
+}
+```
 
-See [ConfigTest.php](https://github.com/matomo-org/matomo/blob/2a06b5a99a8ce9ffd84b57a88bcc0f1513f13190/tests/PHPUnit/Unit/Config/ConfigTest.php#L52-L63).
+This is currently not consistent throughout the code base as some
+places compared the value as a boolean like below (not recommended):
+
+```php
+if ( \Piwik\Config::getInstance()->General['setting']) {
+}
+```
+
+It was suggested that we
+[improve and clarify this in the future](https://github.com/matomo-org/matomo/issues/17876).
+We can't refactor the boolean checks to compare against 1 as it would be a breaking change since it would mean if someone configures for example 2 then it would no longer be interpreted as enabled.
+
+Please note when someone configures `setting = on` or
+`setting = yes` then their value gets converted in the code 
+to `1` as well. The values `off` and `no` will be converted 
+to `0`.
