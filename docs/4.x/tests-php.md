@@ -332,36 +332,6 @@ then you should update the expected system files accordingly. To compare and upd
 
 As a software developer writing tests it can be useful to be able to set breakpoints and debug while running tests. If you use Phpstorm [read this answer](http://stackoverflow.com/a/14998884/3759928) to learn to configure Phpstorm with the PHPUnit from Composer.
 
-
-### Note on XDebug
-
-Be sure to avoid loading the Zend extensions in the wrong order. See
-
-```bash
-# THIS IS CORRECT
-php -v
-PHP 8.0.9 (cli) (built: Jul 29 2021 08:52:24) ( NTS )
-Copyright (c) The PHP Group
-Zend Engine v4.0.9, Copyright (c) Zend Technologies
-    with Zend OPcache v8.0.9, Copyright (c), by Zend Technologies
-    with Xdebug v3.0.4, Copyright (c) 2002-2021, by Derick Rethans
-```
-
-Make sure it is NOT:
-
-```bash
-# THIS IS WRONG
-PHP 8.0.9 (cli) (built: Jul 29 2021 08:52:24) ( NTS )
-Copyright (c) The PHP Group
-Zend Engine v4.0.9, Copyright (c) Zend Technologies
-    with Xdebug v3.0.4, Copyright (c) 2002-2021, by Derick Rethans
-    with Zend OPcache v8.0.9, Copyright (c), by Zend Technologies
-```
-
-You can see how things are load and in which order with
-
-`php -i # equivalent to <?php phpinfo();`.
-
 ## Learn more
 
 * To learn more about **what you can do with PHPUnit** read PHPUnit's [user documentation](https://phpunit.de/documentation.html).
