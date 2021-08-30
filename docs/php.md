@@ -7,23 +7,14 @@ category: DevelopInDepth
 
 ### Recommended settings for Xdebug 3 and newer
 
-```
-[xdebug]
-xdebug.mode=debug
-xdebug.start_with_request=yes
-xdebug.log_level = 0
-```
-
-The following configuration can be useful also to debug from the command line:
-
 ```ini
 [xdebug]
-zend_extension="xdebug.so"
 xdebug.mode=debug
 xdebug.start_with_request=yes
 xdebug.log_level = 0
-xdebug.max_nesting_level = 10001
 ```
+
+This can be useful for also debugging php invoked from the CLI.
 
 ## Compiling PHP beta versions before their release
 
