@@ -120,6 +120,7 @@ Matomo also provides a mechanism to manage your user's cookie consent. You can r
 *   `rememberCookieConsentGiven( hoursToExpire )` - Mark that the current user has consented to using cookies, and remembers this consent through a browser cookie. The next time the user visits the site, Matomo will remember that they consented, and use cookies. If you call this method, you do not need to call `setCookieConsentGiven`.
 *   `forgetCookieConsentGiven()` - Remove a user's cookie consent, both if the consent was one-time only and if the consent was remembered. After calling this method, the user will have to consent again in order for cookies to be used.
 *   `areCookiesEnabled()` - Returns true or false depending on whether cookies are currently enabled or disabled.
+*   `getRememberedCookieConsent()` - If cookie consent was given, returns the timestamp when the visitor gave consent. Only works if `rememberCookieConsentGiven` was used and not when `setCookieConsentGiven` was used. The timestamp is the local timestamp which depends on the visitors time.
 
 ### Managing opt out
 Do you want to build a custom opt-out form instead of a consent screen or instead of using our [opt-out iframe](https://matomo.org/faq/general/faq_20000/)? Check out the guide for [creating a custom opt-out form](https://developer.matomo.org/guides/tracking-javascript-guide#optional-creating-a-custom-opt-out-form).
