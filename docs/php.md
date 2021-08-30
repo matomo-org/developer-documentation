@@ -14,7 +14,7 @@ xdebug.start_with_request=yes
 xdebug.log_level = 0
 ```
 
-This can be useful for also debugging php invoked from the CLI.
+This also works for debugging php invoked from the CLI.
 
 
 ### Note
