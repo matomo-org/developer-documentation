@@ -87,6 +87,15 @@ command.**
 Note: it is not necessary to add the resulting UMD file to the `'AssetManager.getJavaScriptFiles'` event. Matomo will
 automatically detect if one is there and use it (if the plugin is activated).
 
+**eslint**
+
+The Vue CLI is configured to run ESlint on files while building UMDs. If ESlint finds a style problem based on one of the
+rules we configure, it will be printed out in the output of `vue:build`. Sometimes the actual problem or way to fix it
+is not clear from the error message.
+
+The easiest thing to do in this situation is to search for the rule name in a search engine. Each rule has associated
+documentation online that describes what the error means, why the rule exists and how to fix the error.
+
 ### AngularJS files
 
 _Use of AngularJS is deprecated, please use Vue.js 3 instead._
