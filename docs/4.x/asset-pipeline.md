@@ -57,20 +57,20 @@ in turn, invokes many separate tools that process individual files. These tools 
 - [Babel](https://babeljs.io/): used to compile the ES that the TypeScript compiler emits into JavaScript that
   can be consumed by the browsers we support. Technically, the TypeScript compiler can do this too, but babel is included
   as well, since it provides some features the TypeScript compiler does not, such as [modern mode](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode).
-  Babel is also pluggable in a way TypeScript, so it generally provides more power and possibility.
+  Babel is also extensible in a way TypeScript is not, so overall it provides more power and possibility.
   Babel configuration is stored in the `babel.config.js` file.
 - [Webpack](https://webpack.js.org/): the bundler used by Vue CLI, webpack converts ES modules into UMD files that can
   be loaded directly in the browser. Webpack config is stored in the `vue.config.js` file. Vue CLI uses the [webpack-chain](https://github.com/neutrinojs/webpack-chain)
   tool to allow users to add custom webpack config. Matomo adds some extra config to make sure plugin UMD modules
   can be accessed from other plugins at runtime.
 - [browserslist](https://github.com/browserslist/browserslist): this tool is used to specify what browsers we want our
-  compiled JavaScript to be compatible with, and used by babel to understand which advanced ES features need to be
+  compiled JavaScript to be compatible with, and is used by babel to understand which advanced ES features need to be
   transpiled and which do not. Configuration for this tool is in the `.browserslistrc` file.
 
 ### Browser support
 
 As stated above, `browserslist` is used to control what browsers our compiled JavaScript supports. In the `.browserslistrc`
-file we specify some generic parameters, like `> 1%` (we want to support browsers with a market share of over 1%) and
+file we specify some generic parameters, like `> 1%` (we want to support browsers with an overall usage of over 1%) and
 `last 2 versions` (we want to support the last two versions of every browser).
 
 Browserslist takes this description and creates the list of browsers and browser versions that must be supported. To
@@ -83,48 +83,48 @@ ES files.
 
 **Polyfills**
 
-Some advanced ES features need polyfills in order to be available in some browsers. These polyfills unfortunately 
-cannot be automatically detected, since we do not know exactly what features every plugin developer will want to
+Some advanced ES features need polyfills in order to be available in older browsers. These polyfills unfortunately 
+cannot be automatically detected using babel, since we do not know exactly what features every plugin developer will want to
 use.
 
 So instead we allow a specific set of polyfills to be included, and disallow others. We don't include every possible
 polyfill, as this could result in a lot of extra JavaScript in our finished asset.
 
 These polyfills are stored in the `plugins/CoreVue/polyfills` folder. This folder houses a separate vue project
-that is built as a Vue app instead of a Vue library (as all plugin `vue` folders are built as). The specific
+that is built as a Vue app instead of a Vue library (all plugin `vue` folders are built as libraries). The specific
 polyfills we include are specified in the `plugins/CoreVue/polyfills/vue.config.js` file.
 
 Building the polyfill project is done via the `vue:build-polyfill` command. Only core developers will have
-to use this.
+to use this command and only when adding or removing polyfills.
 
 ### Async components and chunking
 
 A small note concerning [async components](https://v3.vuejs.org/guide/migration/async-components.html#introduction) in Vue.
-Vue allows developers to define components but not include them in the final bundle, instead, loading them dynamically
+Vue allows developers to define components but not include them in the final bundle, instead loading them dynamically
 via a network request. This is done via the magic `import()` function. This section describes how this is done, so it
 is not so magical.
 
 [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) is an advanced ES
-feature that dynamically loads an ES module over a network, returning a promise that resolves to the ES module root.
-Most browsers do not support his natively, so it is polyfilled by Webpack.
+feature that dynamically loads an ES module over a network, returning a promise that resolves to the ES module object.
+Most browsers do not support this natively, so it is polyfilled by webpack.
 
 When webpack processes a file to create a bundle, it will notice these `import()` calls and handle them. First,
 it creates a separate bundle (called a **chunk**) for the ES module that is imported. This is outputted as a file like,
 `MyPlugin.umd.1.js`. Then, the `import()` call is replaced with a call to a function provided by webpack, which creates
-a `<script>` element to dynamically load the JavaScript.
+a `<script>` element to dynamically load the JavaScript chunk file.
 
-All of this is transparent to the developer.
+All of this happens transparently to the developer.
 
-_Note: these files, unlike all other JavaScript assets in Matomo, cannot be requested with our cache buster, as the
+_Note: these files, unlike all other JavaScript assets in Matomo, cannot be requested with our cache buster as the
 URL used to load them is, more or less, hardcoded by Webpack._
 
 ### Discovering UMD files
 
 UMD files are automatically discovered by Matomo's asset pipeline. If Matomo sees a file in a plugin stored in the
 `plugins/MyPlugin/vue/dist` folder with a name like `MyPlugin.umd.js`, it will automatically be included as a
-JavaScript asset.
+JavaScript asset. (Note: this code is in the `Piwik\AssetManager\UIAssetFetcher\JScriptUIAssetFetcher` class.)
 
-So these files do not need to be added to via the [`AssetManager.getJavaScriptFiles`](/api-reference/events#assetmanagergetjavascriptfiles)
+So these files do not need to be added via the [`AssetManager.getJavaScriptFiles`](/api-reference/events#assetmanagergetjavascriptfiles)
 event.
 
 ## More about the AssetManager
@@ -142,8 +142,8 @@ that are then served. These files are:
 
 They are stored in the `tmp/assets` subfolder.
 
-`AssetManager` contains methods to fetch these merged assets (these methods will generate the merged asset if it is
-not located in the filesystem), and contains methods to remove them (so they will be generated again).
+`AssetManager` contains methods to fetch these merged assets (these methods will generate the merged asset if it does
+not exist in the filesystem), and contains methods to remove them from the filesystem (so they will be generated again).
 
 If a plugin is activated or deactivated, the assets are removed. The next time they are generated, the updated list
 of activated plugins will be used.
@@ -169,5 +169,6 @@ and re-used so we don't have to compress on every request.
 ## Checking asset file size
 
 Since version 4.5.0, Matomo includes a command to compute the production file sizes for merged JavaScript assets:
-`development:compute-js-asset-size`. Run this during development to get an idea of the merged an minified JavaScript
-asset. _(Note: this is currently only for use by core developers. It assumes the presence of every premium feature locally.)_
+`development:compute-js-asset-size`. Run this during development to get an idea of the merged and minified JavaScript
+asset. _(Note: this is currently only for use by core developers. It assumes the source code for every premium feature plugin
+is available locally.)_
