@@ -91,6 +91,8 @@ A part of Matomo's long-term roadmap is to move more and more parts of Matomo's 
 
 Read more about this in the ["Working with Matomo's UI" guide](/guides/working-with-piwiks-ui).
 
+To understand exactly how Matomo handles and processes frontend assets, like JavaScript and LESS, read the ["asset-pipeline" guide"](/guides/asset-pipeline).
+
 #### Controllers 
 
 The front controller will route an incoming HTTP request to a plugin **controller** based on URL parameters:
