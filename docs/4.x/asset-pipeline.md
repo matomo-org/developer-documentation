@@ -90,6 +90,13 @@ use.
 So instead we allow a specific set of polyfills to be included, and disallow others. We don't include every possible
 polyfill, as this could result in a lot of extra JavaScript in our finished asset.
 
+These polyfills are stored in the `plugins/CoreVue/polyfills` folder. This folder houses a separate vue project
+that is built as a Vue app instead of a Vue library (as all plugin `vue` folders are built as). The specific
+polyfills we include are specified in the `plugins/CoreVue/polyfills/vue.config.js` file.
+
+Building the polyfill project is done via the `vue:build-polyfill` command. Only core developers will have
+to use this.
+
 ### Async components and chunking
 
 A small note concerning [async components](https://v3.vuejs.org/guide/migration/async-components.html#introduction) in Vue.
