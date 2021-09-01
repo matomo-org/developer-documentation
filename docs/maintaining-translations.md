@@ -70,8 +70,82 @@ When a user requests a new language we need to add the language.
 5. Once merged, the language should be shown in the Matomo-Base component.
 6. Daily all new languages are added to all other components and empty JSON files are created for them.
 
+### Adding a language to Matomo
+
+If a translation is complete enough to be added to Matomo (maybe somewhere around 3-5% completion with most important base strings translated), it can be added to the `[Languages]` section of `config/global.ini.php`.
 
 ### Configuring a component 
+
+The following settings are changed from the default in the components. If you want to change settings in many components you can use and adapt [`mass-edit.py`](https://github.com/Findus23/matomo-utils/blob/main/localisation/mass-edit.py) which uses the Weblate API.
+
+#### Settings
+
+##### Priority (`priority`)
+
+This can be set on a per-component basis to focus translators to the most important plugins in Matomo
+
+##### Manage strings (`manage-units`)
+
+This can be disabled as there should never be a reason to add new translation keys in Weblate.
+
+
+##### Translation flags (`check_flags`)
+
+- `php-format`: As Matomo uses `printf` for translations
+- `safe-html`: Checks if the translation doesn't use more HTML tags or attributes than the source string
+- `ignore-optional-plural`: The translation system of Matomo doesn't support plurals
+
+##### Enforced checks (`enforced_checks`)
+```json
+["php_format"]
+```
+
+##### Push on commit (`push_on_commit`)
+
+This is enabled, which means that whenever a change in Weblate is commited, a new pull request will be created or the existing one will be updated.
+
+##### Language code Style (`language_code_style`)
+
+We use "BCP style using hyphen as a separator" (`bcp`) as it is the closest to the language code style used in Matomo
+
+##### Adding new translation (`new_lang`)
+
+As a few steps need to be done to add a new language (see above), users can only request new languages, but don't add them. (`contact`)
+
+#### Add-ons
+
+In addition, the following add-ons are added to components:
+
+##### Add missing languages ([`weblate.consistency.languages`](https://docs.weblate.org/en/latest/admin/addons.html#addon-weblate-consistency-languages))
+
+This component is project-wide and adds languages added to one component to all others.
+
+##### Remove blank strings ([`weblate.cleanup.blank`](https://docs.weblate.org/en/latest/admin/addons.html#addon-weblate-cleanup-blank))
+
+##### Cleanup translation files ([`weblate.cleanup.generic`](https://docs.weblate.org/en/latest/admin/addons.html#addon-weblate-cleanup-generic))
+
+##### Customize JSON output ([`weblate.json.customize`](https://docs.weblate.org/en/latest/admin/addons.html#addon-weblate-json-customize))
+
+```json
+{
+    "sort_keys": true,
+    "indent": 4,
+    "style": "spaces"
+}
+```
+
+##### Squash Git commits ([`weblate.git.squash`](https://docs.weblate.org/en/latest/admin/addons.html#addon-weblate-git-squash))
+
+```json
+{
+    "squash": "language",
+    "append_trailers": true,
+    "commit_message": ""
+}
+```
+
+Removes translation keys no longer in `en.json`
+
 
 ### List of involved translators
 
