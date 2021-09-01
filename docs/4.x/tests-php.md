@@ -328,9 +328,11 @@ public function getMyDataProvider()
 
 This ensures that the test execution won't stop in the middle if one of them fails and makes the test code more readable.
 
-### Documentation to read
+### Related links
 
 * [Writing tests for PHP Unit](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html)
+* [Five Tips to Improve Your Unit Testing](https://kore-nordmann.de/blog/105_five_tips_improve_unit_testing.html)
+* [Testing the untestable](https://kore-nordmann.de/blog/102_testing_the_untestable.html)
 
 ## Fixing a broken system tests build
 
