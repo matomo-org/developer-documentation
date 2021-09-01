@@ -46,7 +46,7 @@ plugin, we create a new resource for this plugin. This can be done with the foll
 9. Select "File format `JSON nested structure file`, Filemask `lang/*.json`"
 10. If the repository doesn't contain a LICENSE file, you need to select a "Translation license"
 11. This should automatically import all existing translations from this repository
-12. Don't forget to [add a webhook](https://developer.matomo.org/guides/translations#importing-your-plugins-strings-in-the-translation-platform) to the repository, so that Weblate is immediatly notified of source string changes.
+12. Don't forget to [add a webhook](https://developer.matomo.org/guides/translations#importing-your-plugins-strings-in-the-translation-platform) to the repository, so that Weblate is immediately notified of source string changes.
 
 ### Adding a language
 
@@ -54,10 +54,10 @@ When a user requests a new language we need to add the language.
 
 1. Pick a language code for the new language
    from [the List of ISO 639 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). If a 639-1 two-letter code
-   exists that descibes the language accuratly, we use it. Otherwise a three letter code like `tzm` will be used. For
+   exists that describes the language accurately,, we use it. Otherwise, a three-letter code like `tzm` will be used. For
    country variants of languages like `es_AR` we format the language code using a dash and lowercase letters
    like `es-ar`
-2. Create a file called `/lang/langcode.json` with the chosen languagecode in the main Matomo repository.
+2. Create a file called `/lang/langcode.json` with the chosen language code in the main Matomo repository.
 3. This file needs to contain at least a translation key for `General_Locale` specifying the PHP locale Matomo should set. You can use `/usr/share/i18n/SUPPORTED` on a Linux host for inspiration.
 ```json
 {
@@ -124,6 +124,8 @@ This component is project-wide and adds languages added to one component to all 
 
 ##### Cleanup translation files ([`weblate.cleanup.generic`](https://docs.weblate.org/en/latest/admin/addons.html#addon-weblate-cleanup-generic))
 
+Removes translation keys no longer in `en.json`
+
 ##### Customize JSON output ([`weblate.json.customize`](https://docs.weblate.org/en/latest/admin/addons.html#addon-weblate-json-customize))
 
 ```json
@@ -143,9 +145,6 @@ This component is project-wide and adds languages added to one component to all 
     "commit_message": ""
 }
 ```
-
-Removes translation keys no longer in `en.json`
-
 
 ### List of involved translators
 
