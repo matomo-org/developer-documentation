@@ -297,6 +297,37 @@ Why?
 
 Note this does not apply to eg `assertContains` where you want to be specific to make sure we get the expected result. There you would want to write `$this->assertContains( "_paq.push(['requireCookieConsent']);", $trackingCode );`
 
+### Make use of data providers where applicable
+
+Instead of writing a test like this:
+
+```php
+public function test_me() {
+    $this->assertSame(1, $this->square(1));
+    $this->assertSame(4, $this->square(2));
+    $this->assertSame(9, $this->square(3));
+}
+```
+
+Use a data provider like this:
+
+```php
+/**
+ * @dataProvider getMyDataProvider
+ */
+public function test_me($expected, $number) {
+    $this->assertSame($expected, $this->square($number));
+}
+public function getMyDataProvider()
+{
+    yield 'when number is 1 it should return 1' => [1, 1];
+    yield 'when number is 2 it should return 4' => [4, 2];
+    yield 'when number is 3 it should return 9' => [9, 3];
+}
+```
+
+This ensures that the test execution won't stop in the middle if one of them fails and makes the test code more readable.
+
 ### Documentation to read
 
 * [Writing tests for PHP Unit](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html)
