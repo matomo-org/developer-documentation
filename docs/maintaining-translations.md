@@ -9,7 +9,7 @@ We are managing our translation using the service of Weblate: https://hosted.web
 to learn how to use translation in Matomo code or your plugins, check
 the [developers guide](https://developer.matomo.org/guides/translations).
 
-## Managing Translations on Weblate
+## Managing Translations on Weblate & GitHub
 
 ### Structure on Weblate
 
@@ -20,14 +20,15 @@ Weblate is structured using Projects. We are currently having two projects to ma
   Third Party Plugins
   that [asked to handle the translations](https://developer.matomo.org/guides/translations#getting-translations-for-your-plugin)
   for them. The process and all descriptions below are meant for this project only.
-- "Matomo Premium Plugins": This project is used for translations of our premium plugins only.
+- "Matomo Premium Plugins": This project is used for translations of our premium plugins only. If you are interested in 
+  translating our Premium Plugins please get in touch with [translations@matomo.org](mailto:translations@matomo.org)
 
 Within the project it is possible to have components. We are using a component for each en.json that is located anywhere
-within Matomo or a plugin. Resources can be managed by an admin.
+within Matomo or a plugin. Components can be managed by an admin.
 
-Each resource can be translated into each language that is available. The list of available languages is managed by us.
-Users can request for new languages, but it’s only possible to translate for a language when we accept such a request or
-add a language manually.
+Each component can be translated into each language that is available. The list of available languages is managed by the
+Matomo team. Users need to send a request for new languages. If the Matomo team decides to add a new language this needs
+to be done in the GitHub repo. See [Adding a language](#adding-a-language) for more details.
 
 ### Adding a new Component
 
@@ -47,6 +48,27 @@ plugin, we create a new resource for this plugin. This can be done with the foll
 10. If the repository doesn't contain a LICENSE file, you need to select a "Translation license"
 11. This should automatically import all existing translations from this repository
 12. Don't forget to [add a webhook](https://developer.matomo.org/guides/translations#importing-your-plugins-strings-in-the-translation-platform) to the repository, so that Weblate is immediately notified of source string changes.
+13. After the component was created some settings and addons need to be configured. See (Configuring a component)[#configuring-a-component].
+
+### Removing a Component
+
+Whenever a plugin is no longer available or discontinued we remove the component from Weblate, so translators don’t waste any time with translating texts that are no longer used.
+
+1. Go to the component tab within the Matomo Weblate project
+2. Scroll through the list and click on the component that should be removed.
+3. Open the Manage menu and click on Removal
+4. On the next screen you need to confirm the removal by repeating the components name
+5. Once this has happened the component should be removed.
+
+*Note: translations of removed plugins will still be stored in Weblate’s translation memory. If the same resource would be readded later, all translation would be automatically filled in again (if the text matches exactly).*
+
+### Updating Translations
+
+Translations on GitHub are updated through automatic processes. Weblate maintains a fork of each repository where changes to
+translations are automatically commited. Once there are any changes they will be pushed and the Weblate bot will create a
+pull request to merge the updated translations.
+
+Those translation PRs should be merged at least once a week, to avoid any merge conflicts in Weblate’s fork.
 
 ### Adding a language
 
@@ -56,16 +78,19 @@ When a user requests a new language we need to add the language.
    from [the List of ISO 639 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). If a 639-1 two-letter code
    exists that describes the language accurately,, we use it. Otherwise, a three-letter code like `tzm` will be used. For
    country variants of languages like `es_AR` we format the language code using a dash and lowercase letters
-   like `es-ar`
+   like `es-ar`.
+   For language codes including a country variant, we need to configure the language alias in Weblate. Otherwise new files
+   might be created with incorrect names. This can be done in the Weblate project settings > Workflow.
 2. Create a file called `/lang/langcode.json` with the chosen language code in the main Matomo repository.
-3. This file needs to contain at least a translation key for `General_Locale` specifying the PHP locale Matomo should set. You can use `/usr/share/i18n/SUPPORTED` on a Linux host for inspiration.
-```json
-{
-  "General": {
-    "Locale": "es_AR.UTF-8"
-  }
-}
-```
+3. This file needs to contain at least a translation key for `General_Locale` specifying the PHP locale Matomo should set. 
+   You can use `/usr/share/i18n/SUPPORTED` on a Linux host for inspiration.
+   ```json
+   {
+       "General": {
+           "Locale": "es_AR.UTF-8"
+       }
+   }
+   ```
 4. You need to [import the CLDR data](https://developer.matomo.org/guides/maintaining-translations#update-data-from-unicode-cldr) for this plugin into the *Intl* plugin. (assuming the language is supported by CLDR)
 5. Once merged, the language should be shown in the Matomo-Base component.
 6. Daily all new languages are added to all other components and empty JSON files are created for them.
