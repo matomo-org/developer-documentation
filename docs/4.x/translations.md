@@ -11,7 +11,7 @@ Read this guide if you'd like to know
 
 ## The Basics
 
-Matomo is available in over 50 languages and comes with many translations. The core itself provides some basic translations for words like "Visitor" and "Help". They are stored in the directory <code>/lang</code>. In addition, each plugin can provide its own translations for wordings that are used in this plugin. They are located in <code>/plugins/\*/lang</code>. In those directories you'll find one JSON file for each language. Each language file consists in turn of tokens that belong to a group.
+Matomo is available in over 50 languages and comes with many translations. The core itself provides some basic translations for words like "Visitor" and "Help". They are stored in the directory <code>/lang</code>. In addition, each plugin can provide its own translations for wordings that are used in this plugin. They are located in <code>/plugins/\*/lang</code>. In those directories you'll find one JSON file for each language. Each language file consists in turn of tokens that belong to a group. Every language that has a file in the main `/lang` directory can be selected by Matomo users.
 
 ```json
 {
@@ -132,6 +132,3 @@ Using numbered placeholders, such as `%1$s`, `%2$s`, etc. instead of `%s` makes 
 
 This guideline is more important for contributions to Matomo Core than for new plugins.
 
-## Update data from Unicode CLDR
-
-The translations of the *Intl* plugin are automatically converted from the Unicode Common Locale Data Repository. To update them, check https://github.com/unicode-org/cldr-json/releases for the latest stable release of CLDR and update `$CLDRVersion` in ` plugins/Intl/Commands/GenerateIntl.php`. Afterwards you can run `php console translations:generate-intl-data` and commit the changed files in `plugins/Intl/lang`.
