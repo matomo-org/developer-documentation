@@ -40,6 +40,9 @@ class DevelopInDepthCategory extends Category
                 new Guide('release-management'),
                 new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
             ]),
+            new EmptySubCategory('Matomo Plugin development', [
+                new Guide('tagmanager/in-depth'),
+            ]),
             new UnlinkedCategory('in-depth-web-interface'),
             new UnlinkedCategory('in-depth-utils'),
             new UnlinkedCategory('in-depth-reporting-api'),
