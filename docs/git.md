@@ -9,7 +9,7 @@ If you prefer using Git through your IDE like PHPStorm, or if you are more accus
 
 ## Prerequisites
 
-* [Git LFS needs to be installed](https://github.com/git-lfs/git-lfs/wiki/Installation)
+* [Git LFS needs to be installed](https://github.com/git-lfs/git-lfs/wiki/Installation). If you cloned the repository without having Git LFS installed then [follow these instructions](#how-do-i-fix-the-error-some-screenshots-are-not-stored-in-lfs).
 
 ## Cloning a repository
 
@@ -317,3 +317,25 @@ This allows you to remove not wanted commits by simply deleting lines and then s
 You can log all changes that have happened to see exactly what was changed when and by who by executing `git log -p`.
 
 If you don't want to get the actual changes but only the commit messages and each of their reference then execute `git log`.
+
+### How do I fix the error "Some Screenshots are not stored in LFS"?
+
+The error might look like this:
+
+```
+1) Piwik\Tests\Integration\ReleaseCheckListTest::test_screenshotsStoredInLfs
+   Some Screenshots are not stored in LFS: plugins/YourPluginName/tests/UI/expected-screenshots/Filename.png
+   Failed asserting that an array is empty.
+```
+
+You can fix this issue using these steps:
+
+* `cd plugins/YourPluginName`
+* `git rm tests/UI/expected-screenshots/*.png`
+* Add `tests/UI/expected-screenshots/*.png filter=lfs diff=lfs merge=lfs` to the file `.gitattributes` in your plugin
+* `git add tests .gitattributes`
+* `git commit -m 'Remove screenshots'`
+* `Add the expected UI test files again`
+* `git add tests`
+* `git commit -m 'Add screenshots using LFS'`
+* Then update the submodule in core

@@ -39,29 +39,7 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 
 ## Maintaining plugin FAQs
 
-### How do I fix the error "Some Screenshots are not stored in LFS"?
-
-The error might look like this:
-
-```
-1) Piwik\Tests\Integration\ReleaseCheckListTest::test_screenshotsStoredInLfs
-   Some Screenshots are not stored in LFS: plugins/YourPluginName/tests/UI/expected-screenshots/Filename.png
-   Failed asserting that an array is empty.
-```
-
-You can fix this issue using these steps:
-
-* `cd plugins/YourPluginName`
-* `git rm tests/UI/expected-screenshots/*.png`
-* Add `tests/UI/expected-screenshots/*.png filter=lfs diff=lfs merge=lfs` to the file `.gitattributes` in your plugin
-* `git add tests .gitattributes`
-* `git commit -m 'Remove screenshots'`
-* `Add the expected UI test files again`
-* `git add tests`
-* `git commit -m 'Add screenshots using LFS'`
-* Then update the submodule in core
-
-#### Get travis to use LFS
+### How do I Get travis to use LFS?
 
 To get travis to checkout the screenshots correctly and use LFS you will need to add/change the `.travis.yml` within your plugin like this (eg [see this file](https://github.com/matomo-org/tag-manager/blob/4.x-dev/.travis.yml#L65-L68)):
 
