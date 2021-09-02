@@ -4,7 +4,7 @@ category: DevelopInDepth
 # Matomo's Asset Pipeline
 
 This page contains an in-depth description of every part of Matomo's asset pipeline. It describes how Matomo processes and serves the
-JavaScript files and LESS files, plugin developers create.
+JavaScript files and LESS files that plugin developers create.
 
 ## Types of Processed Assets
 
@@ -13,7 +13,7 @@ Matomo can handle and process many different types of frontend assets, including
 * vanilla CSS
 * LESS
 * vanilla JavaScript
-* EcmaScript (processed by babel)
+* ECMAScript (processed by babel)
 * TypeScript (processed by the TypeScript compiler, then babel)
 * Vue files (where the specific language is chosen within the file)
 
@@ -25,14 +25,14 @@ Plugins accomplish this with two separate events:
 * [`AssetManager.getStylesheetFiles`](/api-reference/events#assetmanagergetstylesheetfiles)
 * [`AssetManager.getJavaScriptFiles`](/api-reference/events#assetmanagergetjavascriptfiles)
 
-Each event is passed an array and plugins add file paths to the array. Then the file will be processed and served by Matomo.
+Each event is passed an array, and plugins add file paths to the array. Then the file will be processed and served by Matomo.
 
 LESS files are made discoverable in the same way: they must be added via the [`AssetManager.getStylesheetFiles`](/api-reference/events#assetmanagergetstylesheetfiles)
 event. Unlike vanilla CSS, however, they will be processed by the [less.php](https://github.com/wikimedia/less.php) library server side.
 
-### TypeScript, EcmaScript and Vue files
+### TypeScript, ECMAScript and Vue files
 
-Since version 4.5.0 of Matomo, plugins can use TypeScript and EcmaScript, and can create Vue components. These files cannot
+Since version 4.5.0 of Matomo, plugins can use TypeScript and ECMAScript (referred to as ES from now on), and can create Vue components. These files cannot
 be handled by Matomo's asset pipeline, as they require far more processing than can be done in PHP.
 
 Instead, they must be built during development into a [UMD file](https://github.com/umdjs/umd), and distributed with
@@ -41,15 +41,15 @@ included like a file you'd specify through [`AssetManager.getJavaScriptFiles`](/
 
 ### Building UMD modules
 
-Matomo use's the [Vue CLI](https://cli.vuejs.org/) to bundle advanced assets. There is one global configuration that
-is used for every plugin.
+Matomo uses the [Vue CLI](https://cli.vuejs.org/) tool to bundle advanced assets. There is one global configuration that
+is used for every Matomo plugin.
 
-The build process is initiated through the Matomo command, `vue:build`. Internally, this invokes the Vue CLI service, which
+The build process is initiated through the Matomo command `vue:build`. Internally, this invokes the Vue CLI service, which
 in turn, invokes many separate tools that process individual files. These tools are:
 
 - [the TypeScript compiler](https://www.typescriptlang.org/): used to compile TypeScript and Vue files into ES files. The
   configuration for this tool is stored in the `tsconfig.json` file in Matomo's root folder. Individual plugins can
-  extend or override this file by placing their own `tsconfig.json` in their `vue` folder.
+  extend and/or override this file by placing their own `tsconfig.json` in their `vue` folder.
 - [ESLint](https://eslint.org/): used to lint our TypeScript, Vue and ES files. Currently we use the
   [https://github.com/airbnb/javascript](Airbnb ESlint ruleset). Base configuration for this tool is stored in the
   `eslintrc.js` file in Matomo's root folder. Plugins can extend or override this file by placing their own `eslintrc.js`
@@ -87,10 +87,10 @@ Some advanced ES features need polyfills in order to be available in older brows
 cannot be automatically detected using babel, since we do not know exactly what features every plugin developer will want to
 use.
 
-So instead we allow a specific set of polyfills to be included, and disallow others. We don't include every possible
-polyfill, as this could result in a lot of extra JavaScript in our finished asset.
+So instead we allow a specific set of polyfills to be included and disallow all others. We don't include every possible
+polyfill as this could result in a lot of extra JavaScript in our finished asset.
 
-These polyfills are stored in the `plugins/CoreVue/polyfills` folder. This folder houses a separate vue project
+These polyfills are stored in the `plugins/CoreVue/polyfills` folder. This folder houses a separate Vue project
 that is built as a Vue app instead of a Vue library (all plugin `vue` folders are built as libraries). The specific
 polyfills we include are specified in the `plugins/CoreVue/polyfills/vue.config.js` file.
 
@@ -99,7 +99,7 @@ to use this command and only when adding or removing polyfills.
 
 ### Async components and chunking
 
-A small note concerning [async components](https://v3.vuejs.org/guide/migration/async-components.html#introduction) in Vue.
+A note concerning [async components](https://v3.vuejs.org/guide/migration/async-components.html#introduction) in Vue:
 Vue allows developers to define components but not include them in the final bundle, instead loading them dynamically
 via a network request. This is done via the magic `import()` function. This section describes how this is done, so it
 is not so magical.
@@ -169,6 +169,6 @@ and re-used so we don't have to compress on every request.
 ## Checking asset file size
 
 Since version 4.5.0, Matomo includes a command to compute the production file sizes for merged JavaScript assets:
-`development:compute-js-asset-size`. Run this during development to get an idea of the merged and minified JavaScript
-asset. _(Note: this is currently only for use by core developers. It assumes the source code for every premium feature plugin
+`development:compute-js-asset-size`. Run this during development to get an idea of how large the merged and minified JavaScript
+assets are. _(Note: this is currently only for use by core developers. It assumes the source code for every premium feature plugin
 is available locally.)_
