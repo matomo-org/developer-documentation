@@ -106,7 +106,7 @@ is not so magical.
 
 [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) is an advanced ES
 feature that dynamically loads an ES module over a network, returning a promise that resolves to the ES module object.
-Most browsers do not support this natively, so it is polyfilled by webpack.
+Older browsers do not support this natively, so it is polyfilled by webpack.
 
 When webpack processes a file to create a bundle, it will notice these `import()` calls and handle them. First,
 it creates a separate bundle (called a **chunk**) for the ES module that is imported. This is outputted as a file like,
