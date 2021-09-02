@@ -9,6 +9,8 @@ We are managing our translation using the service of Weblate: https://hosted.web
 to learn how to use translation in Matomo code or your plugins, check
 the [developers guide](https://developer.matomo.org/guides/translations).
 
+If you have any feedback or questions regarding the translations, that aren't answered here, don't hesitate to get in touch with us at [translations@matomo.org](mailto:translations@matomo.org)
+
 ## Managing Translations on Weblate & GitHub
 
 ### Structure on Weblate
