@@ -307,6 +307,16 @@ In `archive_blob` tables:
 - the `index_period_archived` index is used in the same way as the one in `archive_numeric` tables
 - `archive_blob` tables do not have an index that makes it fast to query for rows by site, period and archived date. This is because they should not be queried this way. Instead, the `archive_numeric` table should be queried and the `idarchive` values saved. These values can be used to query data in the `archive_blob` table.
 
+### How many rows should I expect in an archive table?
+
+Seeing millions of rows in an archiving table is not uncommon. Depending on what features a Matomo has enabled and how many unique goals, custom reports, funnels, action URLs and referrers a site tracks each individual archive contains on average approximately 30-100 entries in a blob table and 10-30 entries on average for each archive in the numeric table. Some Matomos might store a lot more or a lot less rows per archive.
+
+For a fully completed month we typically have approximately 30 archives for each day, 4 archives for each week and 1 archive for the month. Meaning you might see around 35 different archives per month per site or segment. Each of these archives then include multiple entries see above (typically 40-80 in a blob table and 10-30 in a numeric table).
+
+If you have say 10 sites and 10 segments, then you would have (10 + 10) * 35 = 700 archives. Again, each of these entries may contain a different number of entries per archive. If you have 10 sites with 10 global segments (applies to each sites) then there would be (10 + 10*10) * 35 = 3850 different archives.
+
+Additional archives will be stored when requesting data for a date range but these should be deleted again over time. The current month might store a lot more archive entries overall as the arichiving might be launched many times per day resulting in many invalidated archives. These should also be deleted automatically over time.
+
 ## Other data
 
 <a name="other-data-site"></a>
