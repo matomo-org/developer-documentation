@@ -309,7 +309,7 @@ In `archive_blob` tables:
 
 ### How many rows should I expect in an archive table?
 
-Seeing millions of rows in an archiving table is not uncommon. Depending on what features a Matomo has enabled and how many unique goals, custom reports, funnels, action URLs and referrers a site tracks each individidual archive contains on average approximately 30-100 entries in a blob table and 10-30 entries on average for each archive in the numeric table. Some Matomos might store a lot more or a lot less rows per archive.
+Seeing millions of rows in an archiving table is not uncommon. Depending on what features a Matomo has enabled and how many unique goals, custom reports, funnels, action URLs and referrers a site tracks each individual archive contains on average approximately 30-100 entries in a blob table and 10-30 entries on average for each archive in the numeric table. Some Matomos might store a lot more or a lot less rows per archive.
 
 For a fully completed month we typically have approximately 30 archives for each day, 4 archives for each week and 1 archive for the month. Meaning you might see around 35 different archives per month per site or segment. Each of these archives then include multiple entries see above (typically 40-80 in a blob table and 10-30 in a numeric table).
 
