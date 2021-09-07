@@ -74,7 +74,7 @@ enabled. It will not throw an error. An error will be only thrown if `TagManager
 * `TagManager.dom.onLoad(callback)` - Triggers the callback function as soon as the page is fully loaded, including all stylesheets, images, JavaScript, etc.
 * `TagManager.dom.onReady(callback)` - Triggers the callback function as soon as the DOM is ready. This means the HTML is loaded but doesn't mean that any JavaScript, images or stylesheets have been loaded or executed.
 * `TagManager.dom.loadScriptUrl(url, options)` - Loads a JavaScript remote file by inserting a script element into the DOM. Possible options with its defaults are `{async:true,defer:true,type:'text/javascript',id:null,charset:null,onload:null,onerror:null}`.
-* `TagManager.dom.onClick(callback, element = document.body)` - Attaches a click event listener for left,middle and right click events on the element specified(default is on body). The callback has 2 arguments event and clickButton eg: callback(event, clickButton='left/right/middle')
+* `TagManager.dom.onClick(callback, element = document.body)` - Attaches a click event listener for left,middle and right click events on the element specified(default is on body). The callback has 2 arguments `event` and `clickButton` eg: `callback(event, clickButton='left/right/middle')`.
 
 ### `TagManager.window`
 
