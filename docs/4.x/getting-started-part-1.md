@@ -69,6 +69,12 @@ The following tools aren't required for this guide, but you may find them useful
 - **[xhprof](https://github.com/facebook/xhprof)** If you'd like to profile your code and debug any inefficiencies.
 - **[python](https://www.python.org/)** If you want to use the log importer.
 
+**Important Note for Windows**
+
+It is possible to develop Matomo On Windows, but some things will not work as well. Specifically, Windows users
+coding with Vue may encounter problems with compiling Vue code. This is currently an unsolved problem, and we'd happily
+accept contributions that would help Windows users have an easier time contributing to Matomo.
+
 ### Command to get the tools on Linux
 
 If your computer is using a Debian based operating system, you can install all the required packages with the following command:
