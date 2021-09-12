@@ -45,4 +45,5 @@ $db->query($sql, array($key, $value, (int) $ttlInSeconds));
 
 * Always only fetch the data you need and make use of indexes. [See also our profiling the DB guide.](/guides/profiling-code#database-queries)
 * For security to prevent SQL injections, bind parameters. Instead of `WHERE userername = "$var"` use `WHERE userername = ?` and bind the value.  
-* If your query has hundreds or thousands of bound parameters, then this can make your query extremely slow. In that case, if possible, you will not want to use bound parameters. It is typically only possible if you can cast values to integers, as this way you can ensure there won't be a SQL injection. Example: `WHERE idvisit = (int)$idvisit` 
+* If your query has hundreds or thousands of bound parameters, then this can make your query extremely slow. In that case, if possible, you will not want to use bound parameters. It is typically only possible if you can cast values to integers, as this way you can ensure there won't be a SQL injection. Example: `WHERE idvisit = (int)$idvisit`. 
+* There is a limit of 65,536 on placeholders. Especially when performing queries that handle an unknown amount of visits this can be reached easily.
