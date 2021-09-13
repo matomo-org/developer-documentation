@@ -2072,7 +2072,7 @@ Callback Signature:
 
 ### PrivacyManager.exportDataSubjects
 
-*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [416](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L416)*
+*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [413](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L413)*
 
 Lets you enrich the data export for one or multiple data subjects to make your plugin GDPR compliant. This can be useful if you have developed a plugin which stores any data for visits but doesn't
 use any core logic to store this data. If core API's are used, for example log tables, then the data may
