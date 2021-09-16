@@ -203,7 +203,7 @@ While developing or debugging tests, there isn't the need to always execute all 
 
 
 ```bash
-$ ./console tests:run path/file.php --options="--filter=test_mymethod"
+$ ./console tests:run path/file.php --filter="test_mymethod"
 ```
 
 This will only run the test cases that start with the sepcific method name `test_mymethod`. This will make troubleshooting this test a lot faster as you don't need to wait until all other test cases finish.
