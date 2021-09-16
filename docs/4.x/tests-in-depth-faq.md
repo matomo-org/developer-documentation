@@ -142,3 +142,19 @@ afterEach(function () {
     testEnvironment.save();
 });
 ```
+
+## How do I test if an event was triggered?
+
+During a test you can listen to an event and then check if it was triggered. The listener will be removed after the test automatically. Here's an example:
+
+```php
+public function test_configEventTriggered()
+{
+    $path = '';
+    \Piwik\Piwik::addAction('Core.configFileChanged', function ($configFilePath) use (&$path) {
+        $path = $configFilePath;
+    });
+    Config::getInstance()->forceSave();// this method will trigger above event
+    $this->assertSame('config/config.ini.php', $path); // we not only test the event was triggered but also test the passed parameters
+}
+```
