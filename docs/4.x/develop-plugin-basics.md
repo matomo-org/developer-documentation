@@ -3,6 +3,7 @@ category: Develop
 title: Plugin Basics
 subGuides:
   - theming
+  - plugin-file
   - pages
   - menus
   - expose-api-methods

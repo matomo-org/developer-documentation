@@ -47,3 +47,7 @@ $db->query($sql, array($key, $value, (int) $ttlInSeconds));
 * For security to prevent SQL injections, bind parameters. Instead of `WHERE userername = "$var"` use `WHERE userername = ?` and bind the value.  
 * If your query has hundreds or thousands of bound parameters, then this can make your query extremely slow. In that case, if possible, you will not want to use bound parameters. It is typically only possible if you can cast values to integers, as this way you can ensure there won't be a SQL injection. Example: `WHERE idvisit = (int)$idvisit`. 
 * There is a limit of 65,536 on placeholders. Especially when performing queries that handle an unknown amount of visits this can be reached easily.
+
+## Extending the database schema
+
+Learn more about adding new tables, columns, or indexes as well as how to update the DB schema in our dedicated [extending the database guide](/guides/extending-database).
