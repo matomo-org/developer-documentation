@@ -47,4 +47,4 @@ public function deactivate();
 public function uninstall();
 ```
 
-If your plugin needs to change the database schema then you might also find our [extending the database guide](https://developer.matomo/guides/extending-database) useful.
+If your plugin needs to change the database schema then you might also find our [extending the database guide](/guides/extending-database) useful.
