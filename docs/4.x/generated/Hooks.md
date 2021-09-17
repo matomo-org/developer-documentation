@@ -3058,7 +3058,7 @@ Callback Signature:
 
 ### Template.afterReferrerTypeReport
 
-*Defined in [Piwik/Plugins/Referrers/Reports/GetReferrerType](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Reports/GetReferrerType.php) in line [126](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Reports/GetReferrerType.php#L126)*
+*Defined in [Piwik/Plugins/Referrers/Reports/GetReferrerType](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Reports/GetReferrerType.php) in line [125](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Reports/GetReferrerType.php#L125)*
 
 
 
