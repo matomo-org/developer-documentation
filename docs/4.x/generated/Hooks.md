@@ -1876,7 +1876,7 @@ Usages:
 
 ### MobileMessaging.deletePhoneNumber
 
-*Defined in [Piwik/Plugins/MobileMessaging/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MobileMessaging/API.php) in line [180](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MobileMessaging/API.php#L180)*
+*Defined in [Piwik/Plugins/MobileMessaging/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MobileMessaging/API.php) in line [181](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MobileMessaging/API.php#L181)*
 
 Triggered after a phone number has been deleted. This event should be used to clean up any data that is
 related to the now deleted phone number. The ScheduledReports plugin, for example, uses this event to remove
