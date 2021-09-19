@@ -71,8 +71,14 @@ If you want to make your plugin configurable, create a [Plugin Setting](/guides/
 
 ## Boolean Configuration Options
 
-For example `force_ssl = 1` is a boolean value in the configuration.
-By convention we check whether a feature is enabled by comparing
+### Naming
+
+It's best practice to not start a configuration's name with `disable_` but rather use `enable_`. For example, `disable_processing_unique_visitors_range = 0` is slightly harder to read for non-technical users in comparison to `enable_processing_unique_visitors_range = 1`. Note that a boolean configuration doesn't have to start with `enable_`. Some settings might not use it, for example `assume_secure_protocol = 0/1`, `multi_server_environment = 0/1`, or `force_ssl = 0/1`.
+
+### Values
+
+For example, `force_ssl = 1` is a boolean value in the configuration.
+By convention, we check whether a feature is enabled by comparing
 the setting against the value `1` like this:
 
 ```php
