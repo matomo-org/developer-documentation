@@ -158,3 +158,24 @@ public function test_configEventTriggered()
     $this->assertSame('config/config.ini.php', $path); // we not only test the event was triggered but also test the passed parameters
 }
 ```
+
+## Is there anything special about translations as they are only returning the translation key?
+
+This is expected and wanted for most tests so the test won't fail when the wording changes. Few tests may load translations on test `setUp` and reset them on `tearDown` to test the actual wording if there is for example some logic behind the translations. Example:
+
+```php
+use Piwik\Tests\Framework\Fixture;
+
+public function setUp(): void
+{
+    parent::setUp();
+
+    Fixture::loadAllTranslations();
+}
+
+public function tearDown(): void
+{
+    Fixture::resetTranslations();
+    parent::tearDown();
+}
+```
