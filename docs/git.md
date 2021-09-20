@@ -240,7 +240,27 @@ The same error might happen if you point the submodule to a commit in a branch w
 * `git add plugins/SecurityInfo`
 * `git commit -m 'Update submodule'`
 * `git push`
-* 
+
+### Fixing the error "fatal: remote error: upload-pack: not our ref"
+
+The exact reason for this error is unknown at present but likely related to a failed merge. It could be accompanied with various 'warning: ... multiple configurations found for submodule.xxx' messages.
+
+To resolve this:
+
+* Save a patch of the branch changes:
+* `git diff $MAIN_BRANCH $FEATURE_BRANCH > $FEATURE_BRANCH.patch`
+* Close the PR without merging.
+* Checkout the main branch:
+* `git checkout $MAIN_BRANCH`
+* Create a new branch from the main branch:
+* `git checkout -b $FEATURE_BRANCH_NEW`
+* Apply the patch:
+* `git apply $FEATURE_BRANCH.patch`
+* Commit and push the changes:
+* `git commit -m 'New branch'`
+* `git push`
+* Create a new PR from the new branch.
+
 ### Accidentally Committed Submodules?
 
 Have you done some work on Matomo or another project and accidentally overridden the submodule commit? The below commands can help you point the submodule back to the same commit as the main branch does.
