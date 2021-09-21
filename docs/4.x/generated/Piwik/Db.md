@@ -328,7 +328,7 @@ set to **1**.
        The name of the table to optimize or an array of tables to optimize. Table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
     - `$force` (`bool`) &mdash;
        If true, the `OPTIMIZE TABLE` query will be run even if InnoDB tables are being used.
-- It returns a `Zend_Db_Statement` value.
+- It returns a `bool` value.
 
 <a name="droptables" id="droptables"></a>
 <a name="dropTables" id="dropTables"></a>
