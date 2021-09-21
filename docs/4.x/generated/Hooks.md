@@ -2113,7 +2113,7 @@ Callback Signature:
 
 ### Referrer.addSearchEngineUrls
 
-*Defined in [Piwik/Plugins/Referrers/SearchEngine](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/SearchEngine.php) in line [67](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/SearchEngine.php#L67)*
+*Defined in [Piwik/Plugins/Referrers/SearchEngine](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/SearchEngine.php) in line [64](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/SearchEngine.php#L64)*
 
 
 
@@ -2123,7 +2123,7 @@ Callback Signature:
 
 ### Referrer.addSocialUrls
 
-*Defined in [Piwik/Plugins/Referrers/Social](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Social.php) in line [65](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Social.php#L65)*
+*Defined in [Piwik/Plugins/Referrers/Social](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Social.php) in line [62](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Social.php#L62)*
 
 
 
