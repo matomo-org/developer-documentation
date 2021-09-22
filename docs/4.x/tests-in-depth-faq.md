@@ -181,6 +181,7 @@ public function tearDown(): void
 ```
 
 ## How do I fix a build when the tests fail for the minimum required Matomo version but pass for the latest Matomo version?
+
 There could be a case where your testcases will start failing for a specific Matomo version and pass for the latest version.
 In such case we can simply skip the tests to not run for such versions by using the `version_compare` method. Example:
 
