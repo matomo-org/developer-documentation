@@ -906,10 +906,11 @@ eg `Notification\Manager::cancel($notificationId)`.
 
 - [Core.configFileChanged](#coreconfigfilechanged)
 - [Core.configFileDeleted](#coreconfigfiledeleted)
+- [Core.configFileSanityCheckFailed](#coreconfigfilesanitycheckfailed)
 
 ### Core.configFileChanged
 
-*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php) in line [420](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php#L420)*
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php) in line [427](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php#L427)*
 
 Triggered when a INI config file is changed on disk.
 
@@ -927,6 +928,18 @@ Callback Signature:
 
 Callback Signature:
 <pre><code>function($this-&gt;getFilename($id))</code></pre>
+
+
+### Core.configFileSanityCheckFailed
+
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php) in line [487](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php#L487)*
+
+Triggered when the INI config file was not written correctly with the expected content.
+
+Callback Signature:
+<pre><code>function($localPath]</code></pre>
+
+- string `$localPath` Absolute path to the changed file on the server.
 
 ## CoreAdminHome
 
