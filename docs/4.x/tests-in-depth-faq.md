@@ -179,3 +179,24 @@ public function tearDown(): void
     parent::tearDown();
 }
 ```
+
+## How do I fix a build when the tests fail for the minimum required Matomo version but pass for the latest Matomo version?
+
+There could be a case where your testcases will start failing for a specific Matomo version and pass for the latest version.
+In such case we can simply skip the tests to not run for such versions by using the `version_compare` method. Example:
+
+```php
+use Piwik\Version;
+
+class ApiTest extends SystemTestCase
+{
+
+    public function testFunctionality()
+    {
+        if (version_compare(Version::VERSION, '4.4.0-b1', '>=')) {
+            //Run your testcases only when version >= 4.4.0-b1
+        }
+    }
+}
+```
+
