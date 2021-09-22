@@ -187,7 +187,6 @@ In such case we can simply skip the tests to not run for such versions by using 
 ```php
 use Piwik\Version;
 
-
 class ApiTest extends SystemTestCase
 {
 
