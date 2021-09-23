@@ -203,10 +203,10 @@ to work you need to use the [Piwik HTTP Tracking API](/api-reference/tracking-ap
 
 These HTTP Tracking API parameters can be used to track the usage of media:
 
-* `ma_id` - A unique id that is always the same while playing a media. As soon as the played media changes (new video or audio started), this ID has to change.
+* `ma_id` - (required) A unique id that is always the same while playing a media. As soon as the played media changes (new video or audio started), this ID has to change.
+* `ma_re` - (required) The URL of the media resource.
+* `ma_mt` - (required) `video` or `audio` depending on the type of the media.
 * `ma_ti` - The name / title of the media.
-* `ma_re` - The URL of the media resource.
-* `ma_mt` - `video` or `audio` depending on the type of the media.
 * `ma_pn` - The name of the media player, for example `html5`.
 * `ma_st` - The time in seconds for how long a user has been playing this media. This number should typically increase when you send a media tracking request. It should be `0` if the media was only visible/impressed but not played. Do not increase this number when a media is paused.
 * `ma_le` - The duration (the length) of the media in seconds. For example if a video is 90 seconds long, the value should be `90`.  
