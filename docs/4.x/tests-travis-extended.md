@@ -51,18 +51,6 @@ Below is the list of all supported environment variables:
 
     Can be set as a global environment variable for all builds or in the matrix for individual builds.
 
-  * **SKIP\_INSTALL\_MYSQL\_56**
-
-    If set to 1, MySQL 5.6 will not be installed on travis. This can be used to speed up builds that don't need MySQL 5.6.
-
-    Can be set as a global environment variable for all builds or in the matrix for individual builds.
-
-  * **SKIP\_INSTALL\_PYTHON\_26**
-
-    If set to 1, python 2.6 will not be installed on travis. This can be used to speed up builds that don't need python.
-
-    Can be set as a global environment variable for all builds or in the matrix for individual builds.
-
   * **SKIP\_PIWIK\_TEST\_PREPARE**
 
     If set to 1, the prepare.sh/setup_webserver.sh scripts are not executed. This can be used to speed up builds that don't execute PHP tests or need a webserver running Matomo.
