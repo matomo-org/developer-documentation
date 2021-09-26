@@ -50,7 +50,7 @@ plugin, we create a new resource for this plugin. This can be done with the foll
 10. If the repository doesn't contain a LICENSE file, you need to select a "Translation license"
 11. This should automatically import all existing translations from this repository
 12. Don't forget to [add a webhook](https://developer.matomo.org/guides/translations#importing-your-plugins-strings-in-the-translation-platform) to the repository, so that Weblate is immediately notified of source string changes.
-13. After the component was created some settings and addons need to be configured. See (Configuring a component)[#configuring-a-component].
+13. After the component was created some settings and addons need to be configured. See [Configuring a component](#configuring-a-component).
 
 ### Removing a Component
 
