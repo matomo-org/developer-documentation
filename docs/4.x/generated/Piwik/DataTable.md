@@ -1209,9 +1209,7 @@ Unsets all queued filters.
 
 #### Signature
 
-
-- *Returns:*  [`ArrayIterator`](http://php.net/class.ArrayIterator)|[`Row[]`](../Piwik/DataTable/Row.md) &mdash;
-    
+- It returns a [`ArrayIterator`](http://php.net/class.ArrayIterator) value.
 
 <a name="offsetexists" id="offsetexists"></a>
 <a name="offsetExists" id="offsetExists"></a>
@@ -1222,7 +1220,7 @@ Unsets all queued filters.
 -  It accepts the following parameter(s):
     - `$offset`
       
-- It does not return anything or a mixed result.
+- It returns a `bool` value.
 
 <a name="offsetget" id="offsetget"></a>
 <a name="offsetGet" id="offsetGet"></a>
@@ -1233,7 +1231,7 @@ Unsets all queued filters.
 -  It accepts the following parameter(s):
     - `$offset`
       
-- It does not return anything or a mixed result.
+- It returns a [`Row`](../Piwik/DataTable/Row.md) value.
 
 <a name="offsetset" id="offsetset"></a>
 <a name="offsetSet" id="offsetSet"></a>
@@ -1246,7 +1244,7 @@ Unsets all queued filters.
       
     - `$value`
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="offsetunset" id="offsetunset"></a>
 <a name="offsetUnset" id="offsetUnset"></a>
@@ -1257,5 +1255,5 @@ Unsets all queued filters.
 -  It accepts the following parameter(s):
     - `$offset`
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
