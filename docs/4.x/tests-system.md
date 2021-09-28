@@ -162,3 +162,38 @@ This can have the following possible causes:
 * You're missing a required parameter in a specific API call or it's being set to `null` or equivalent. To determine
   what the root issue is here, you'll need to inspect the variable `$nameVariable` in this if statement:
   [https://github.com/matomo-org/matomo/blob/4.2.0/core/API/DocumentationGenerator.php#L40-L41](https://github.com/matomo-org/matomo/blob/4.2.0/core/API/DocumentationGenerator.php#L40-L41)
+
+## Writing tests for commands
+
+It is also possible to write system tests for console commands. These tests should extend `Piwik\Tests\Framework\TestCase\ConsoleCommandTestCase`. 
+
+Example for a test that tests the `config:set` command:
+
+```php
+class MyCommandTest extends \Piwik\Tests\Framework\TestCase\ConsoleCommandTestCase
+{
+
+    public function test_command_succeedsWhenOptionsUsed()
+    {
+        // execute the command with few different options
+        $code = $this->applicationTester->run(array(
+            'command' => 'config:set',
+            '--section' => 'MySection',
+            '--key' => 'setting',
+            '--value' => 'myvalue',
+            '-vvv' => false,
+        ));
+
+        // assert exit code
+        $this->assertEquals(0, $code, $this->getCommandDisplayOutputErrorMessage()); 
+
+        // assert the command actually performed the correct action
+        $config = $this->makeNewConfig();
+        $this->assertEquals(array('setting' => 'myvalue'), $config->MySection);
+
+        // assert printed command output
+        self::assertStringContainsString('Setting [MySection] setting = "myvalue"', $this->applicationTester->getDisplay());
+    }
+
+}
+```
