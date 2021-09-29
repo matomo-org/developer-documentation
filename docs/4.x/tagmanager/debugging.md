@@ -12,8 +12,8 @@ The debug mode lets you see for example which triggers and tags have been fired,
 To activate this mode, simply follow these steps:
 
 * Open the container in Matomo's Tag Manager and click on "Preview / Debug" in the top toolbar.
-* Enter the URL or domain you want to start debugging
-* The debug toolbar will appear at the bottom of the website
+* Enter the URL or domain you want to start debugging(Applicable only for Matomo version >= 4.6).
+* The debug toolbar will appear at the bottom of the website.
 
 <div markdown="1" class="alert alert-info">
 If the toolbar does not appear, you might have to clear your browser cache either in the developer console, or by using one of these shortcuts (please check the shortcut for your operating system and browser combination):
