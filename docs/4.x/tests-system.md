@@ -25,17 +25,15 @@ Fixtures are stored in [tests/PHPUnit/Fixtures](https://github.com/matomo-org/ma
 
 ### OmniFixture
 
-We also have an OmniFixture that includes all other Fixtures. OmniFixture is used for screenshot tests to provide data across most reports.
+We also have an OmniFixture that includes all other Fixtures. OmniFixture is used for screenshot tests to provide data across most reports. This fixture is created so the fixture has a lot of different data in the UI tests and it's reused and created as a SQL for speed. This is not neccessarily the best solution of how this is done and maybe in the future we rather want a dedicated UI test fixture or a dedicated UI test fixture for every test group instead of one big one.
 
 ### Keep OmniFixture up to date
 
-Remember to update the [Omnifixture SQL dump](https://github.com/matomo-org/matomo/blob/master/tests/resources/OmniFixture-dump.sql) whenever you make any change to any fixture. You can use:
+Rarely, we may need to update the [Omnifixture SQL dump](https://github.com/matomo-org/matomo/blob/master/tests/resources/OmniFixture-dump.sql) so a specific feature can be tested. You can use:
 
     ./console tests:setup-fixture OmniFixture --sqldump=OmniFixture-dump.sql
 
-Keeping the OmniFixture up to date makes it easier to see which tests fail after each small fixture change.
-
-If we don't update the OmniFixture then we end up with many failed screenshots tests which makes it hard to see whether those changes are expected or not.
+You can expect a lot of screenshots to fail after this and it can be hard to validate whether every failed screenshot is expected or not.
 
 ### Scheduled Reports Tests
 
