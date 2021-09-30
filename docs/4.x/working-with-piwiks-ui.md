@@ -7,18 +7,20 @@ Read this guide if you'd like to know
 
 * **how to load JavaScript and CSS files in the Piwik UI**
 * **how plugins should create JavaScript files**
+* **how to use TypeScript and Vue with Matomo**
 * **how to work with Piwik Core's JavaScript code**
 
 ## JavaScript libraries
 
 Matomo uses the following JavaScript libraries:
 
-* [jQuery](https://jquery.com/) and [jQuery UI](https://jqueryui.com/)
-* [AngularJS](https://angularjs.org/)
+* [Vue.js 3](https://v3.vuejs.org/)
+* [AngularJS](https://angularjs.org/) (deprecated, use Vue instead)
+* [jQuery](https://jquery.com/) and [jQuery UI](https://jqueryui.com/) (deprecated, try to avoid using in new Vue code)
 * [jqPlot](https://www.jqplot.com/)
 * A couple of other libraries are used see our [npm dependencies](https://github.com/matomo-org/matomo/blob/4.x-dev/package.json)
 
-**Include new JS libraries only if they are vital to your plugin.** If many plugins decide to use a custom library, the UI will slow down and plugins might get problems when different plugins load different versions of those libraries.
+**Include new JS libraries only if they are vital to your plugin, and be sure to use the TypeScript workflow so there won't be clashes if a different version of the same library is used in other plugins.** If many plugins decide to use a custom library, the UI will slow down.
 
 ## Loading JS and CSS files in the UI
 
@@ -63,27 +65,46 @@ To make sure your changes will be actually visible and executed you need to enab
 
 This way JavaScript files won't be merged and you can debug the original JavaScript source code.
 
+### TypeScript and Vue workflow
+
+Since version 4.5.0 it is possible to create components for the UI using Vue and TypeScript (though note that you do not have to use both;
+you can use Vue with ESnext (the most advanced version of EcmaScript) or just write plain TypeScript without using Vue).
+
+Vue and TypeScript files are processed via webpack using the Vue CLI service, which is configured globally in Matomo. To take advantage of
+this, create `vue` and `vue/src` subfolders in your plugin. Then add your code (TypeScript, ES, Vue) to the `src` subfolder. Make sure to
+add an `index.ts` or `index.js` file to the subfolder and export everything you'd like to be programmatically accessible in the browser
+(for example, by other plugins).
+
+_For an example of Vue code that works with Matomo, see the `ExampleVue` plugin source code.`_
+
+Once you've written your code, it must be built into a UMD file. Run the `./console vue:build MyPlugin` command to build your
+Vue/TypeScript code. The compiled UMD will be in the `vue/dist` folder, and should be distributed with the rest of your plugin
+(since we do not expect all users to have access to node or the technical ability to compile our JavaScript manually).
+
+**While developing, it is recommended to use the `--watch` option with `vue:build` so you don't have to constantly re-run the
+command.**
+
+Note: it is not necessary to add the resulting UMD file to the `'AssetManager.getJavaScriptFiles'` event. Matomo will
+automatically detect if one is there and use it (if the plugin is activated).
+
+**eslint**
+
+The Vue CLI is configured to run ESlint on files while building UMDs. If ESlint finds a style problem based on one of the
+rules we configure, it will be printed out in the output of `vue:build`. Sometimes the actual problem or way to fix it
+is not clear from the error message.
+
+The easiest thing to do in this situation is to search for the rule name in a search engine. Each rule has associated
+documentation online that describes what the error means, why the rule exists and how to fix the error.
+
+Eslint is automatically run when building Vue UMDs, but if you'd like to run it from the command line directly, run a command like:
+
+```shell
+$ npm run eslint -- --ext .js,.ts,.vue plugins/MyPlugin
+```
+
 ### AngularJS files
 
-If you are using Angular JS, then each plugin should put these files inside an `angularjs` directory. For example the plugin "CoreHome" defines various directives etc in [plugins/CoreHome/angularjs](https://github.com/matomo-org/matomo/tree/4.1.1/plugins/CoreHome/angularjs).
-
-We create a directory for each component which can include a directive, template, controller, etc. The naming for these files is ([click to view an example](https://github.com/matomo-org/matomo/tree/4.1.1/plugins/CoreHome/angularjs/siteselector)):
-
-* `plugins/YourPluginName/angularjs/$component-name/$component-name.controller.js`
-* `plugins/YourPluginName/angularjs/$component-name/$component-name.directive.js`
-* `plugins/YourPluginName/angularjs/$component-name/$component-name.directive.html`
-* `plugins/YourPluginName/angularjs/$component-name/$component-name.directive.less`
-* Under circumstances separate logic may be put into a model like `plugins/YourPluginName/angularjs/$component-name/$component-name.model.js`
-
-We prefer to have the controller in a separate file and not in the directive but this might not always be the case.
-
-Generic filters and services that are used by multiple components are usually defined in a `angularjs/common` directory ([see this example](https://github.com/matomo-org/matomo/tree/4.1.1/plugins/CoreHome/angularjs/common)).
-
-#### Module
-
-* The name of our module is `piwikApp`. This means you can register for example a component using `angular.module('piwikApp').component(...)`.
-* This module `piwikApp` is configured in [plugins/CoreHome/angularjs/piwikApp.js](https://github.com/matomo-org/matomo/blob/4.1.1/plugins/CoreHome/angularjs/piwikApp.js)
-
+_Use of AngularJS is deprecated, please use Vue.js 3 instead._
 
 ## Special HTML Elements
 
