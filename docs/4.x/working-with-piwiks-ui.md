@@ -96,6 +96,12 @@ is not clear from the error message.
 The easiest thing to do in this situation is to search for the rule name in a search engine. Each rule has associated
 documentation online that describes what the error means, why the rule exists and how to fix the error.
 
+Eslint is automatically run when building Vue UMDs, but if you'd like to run it from the command line directly, run a command like:
+
+```shell
+$ npm run eslint -- --ext .js,.ts,.vue plugins/MyPlugin
+```
+
 ### AngularJS files
 
 _Use of AngularJS is deprecated, please use Vue.js 3 instead._
