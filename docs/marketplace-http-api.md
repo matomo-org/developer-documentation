@@ -20,9 +20,11 @@ To set a version for an API call define the respecting verion right after the en
 
 ## Authentication
 
-To authenticate send an `access_token` parameter via POST (GET does not work). Eg
+To authenticate send an `access_token` parameter via POST (providing `access_token` using a GET query parameter does not work). Eg
 
 *  curl --data "access_token=123456789..." https://plugins.matomo.org/api/2.0/plugins
+
+This is only needed for accessing purchased premium features.
 
 ## Methods
 
