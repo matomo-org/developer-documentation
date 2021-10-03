@@ -7,7 +7,13 @@ At Matomo we're using mostly PhpStorm for Matomo development. It's great at dete
 
 ## Setting Up PhpStorm for Matomo
 
-To be defined. (Steps to setup phpunit, xdebug, etc.)
+**Using single quotes in auto-generated TypeScript**
+
+Matomo uses AirBnB's eslint rules which require the use of single quote strings in TypeScript, but by default PHPStorm inserts double quotes
+when auto-generating some TypeScript (like imports). The quote type used can be set by going to: _Settings > Editor > Code Style > TypeScript_,
+then clicking the _Punctuation_ tab on the right and setting "Use **single** quotes in new code".
+
+Rest to be defined. (Steps to setup phpunit, xdebug, etc.)
 
 ## Tips for using PhpStorm
 
