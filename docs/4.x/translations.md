@@ -127,6 +127,7 @@ Follow these guidelines when creating your own translation keys:
 
 1. **Reuse!** If a core plugin contains a translation you can use, use that instead. If there's a translation you want to use but can't because it's in the wrong case, don't use functions like `lcfirst` and `ucfirst` as it won't work in all languages and rather create a new translation key.
 2. **Use numbered placeholders** if more than one is required in your text.
+3. HTML like breaks and links should not be in the translation. Use placeholders like `%1$s` instead and pass the HTML as arguments when you translate. 
 
 Using numbered placeholders, such as `%1$s`, `%2$s`, etc. instead of `%s` makes it possible for translators to switch the order. That might be necessary to translate it to certain languages properly.
 
