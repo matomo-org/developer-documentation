@@ -2924,7 +2924,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [687](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L687)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [697](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L697)*
 
 Triggered after a site has been added.
 
@@ -2936,7 +2936,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [798](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L798)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [808](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L808)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -2954,7 +2954,7 @@ Usages:
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [176](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L176)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [186](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L186)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
@@ -3225,7 +3225,7 @@ Callback Signature:
 
 ### Tracker.getJavascriptCode
 
-*Defined in [Piwik/Tracker/TrackerCodeGenerator](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/TrackerCodeGenerator.php) in line [188](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/TrackerCodeGenerator.php#L188)*
+*Defined in [Piwik/Tracker/TrackerCodeGenerator](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/TrackerCodeGenerator.php) in line [201](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/TrackerCodeGenerator.php#L201)*
 
 Triggered when generating JavaScript tracking code server side. Plugins can use
 this event to customise the JavaScript tracking code that is displayed to the
