@@ -91,7 +91,7 @@ SHOW PROFILES;
 
 You can also get even more details for a query for example like this: `SHOW PROFILE CPU FOR QUERY 16;`. Learn more about this in the [MySQL docs for profiling](https://dev.mysql.com/doc/refman/8.0/en/show-profile.html).
 
-When profiling a query or generally checking how long a query takes to load, it's important to use `SQL_NO_CACHE` after the `SELECT` statement to prevent any cache from being used and giving you a wrong result.
+When profiling a query (before MySQL 5.7.20) or generally checking how long a query takes to load, it's important to use `SQL_NO_CACHE` after the `SELECT` statement to prevent any cache from being used and giving you a wrong result. Also, be aware [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/query-cache-in-select.html) warns "that due to a limitation in the parser, a space character **must** precede and follow the SQL_NO_CACHE keyword; a nonspace such as a newline causes the server to check the query cache to see whether the result is already cached".
 
 ### Understanding query execution
 
