@@ -19,7 +19,7 @@ Did you know? You can [extend the database](/guides/extending-database) with a p
 
 ## Log data
 
-There are four types of log data:
+There are five types of log data:
 
 - [**visits**](#log-data-persistence-visits)
 - [**action types**](#log-data-persistence-action-types)
