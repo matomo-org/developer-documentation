@@ -142,6 +142,20 @@ System tests will generate an expected output file for every API method and peri
 
 When you first create a system test, there will be no expected files. You will have to copy processed files to the expected folder after ensuring they are correct.
 
+## Downloading processed files from Travis to fix system tests
+
+When you work on a bug or feature and you push the code to Github then Travis will run our system tests. You might then notice that some system tests are failing because the expected content is different to the processed content. To not having to run the all the tests locally and as Travis might include different plugins it's recommended to download the processed files from Travis and then committing these to make the tests pass. However, it is very much needed to look at each changed file and assess that the changed content is expected. This can be done for example before pushing the changes.
+
+To download the processed files from system tests execute below command. You will need to replace `{BUILD_NUMBER}` with the number of the build. You find this number when you select a build in Travis where it says eg `Build #18`. In this case, the build number is `18`.
+
+```bash
+./console development:sync-system-test-processed {BUILD_NUMBER} --expected
+```
+
+This will download all the processed system test results and copies them directly into the `expected` system test directories. Next you can `git add` and commit and push them. Before adding or pushing make sure though that all the changes are expected.
+
+Alternatively, you can also remove the `--expected` option in which case it will copy the downloaded files into your `processed` filter. You can then use for example the "Compare directories" feature in PHPStorm and only copy over the processed files into the expected directory where the changes are expected.
+
 ## Troubleshooting
 
 **Only generated N API calls to test but was expecting more for this test.**
