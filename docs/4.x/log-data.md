@@ -7,10 +7,11 @@ next: archiving
 
 The HTTP tracking API (i.e. the `Piwik\Tracker` component) receives **raw** analytics data, which we call **log data**.
 
-There are four types of log data:
+There are five types of log data:
 
 - visits
 - action types
+- plugin specific actions
 - conversions
 - ecommerce items
 
