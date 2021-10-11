@@ -17,7 +17,7 @@ Matomo uses the following JavaScript libraries:
 * [Vue.js 3](https://v3.vuejs.org/)
 * [AngularJS](https://angularjs.org/) (deprecated, use Vue instead)
 * [jQuery](https://jquery.com/) and [jQuery UI](https://jqueryui.com/) (deprecated, try to avoid using in new Vue code)
-* [jqPlot](https://www.jqplot.com/)
+* [jqPlot](http://www.jqplot.com/)
 * A couple of other libraries are used see our [npm dependencies](https://github.com/matomo-org/matomo/blob/4.x-dev/package.json)
 
 **Include new JS libraries only if they are vital to your plugin, and be sure to use the TypeScript workflow so there won't be clashes if a different version of the same library is used in other plugins.** If many plugins decide to use a custom library, the UI will slow down.
