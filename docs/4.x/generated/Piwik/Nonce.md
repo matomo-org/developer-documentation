@@ -20,6 +20,7 @@ The class defines the following methods:
 
 - [`getNonce()`](#getnonce) &mdash; Returns an existing nonce by ID.
 - [`verifyNonce()`](#verifynonce) &mdash; Returns if a nonce is valid and comes from a valid request.
+- [`verifyNonceWithErrorMessage()`](#verifynoncewitherrormessage) &mdash; Returns error message
 - [`isReferrerHostValid()`](#isreferrerhostvalid)
 - [`discardNonce()`](#discardnonce) &mdash; Force expiration of the current nonce.
 - [`getOrigin()`](#getorigin) &mdash; Returns the **Origin** HTTP header or `false` if not found.
@@ -60,11 +61,36 @@ and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piw
        The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).
     - `$cnonce` (`string`) &mdash;
        Nonce sent from client.
-    - `$expectedReferrerHost` (`string`) &mdash;
+    - `$expectedReferrerHost` (`null`|`string`) &mdash;
        The expected referrer host for the HTTP referrer URL.
 
 - *Returns:*  `bool` &mdash;
     `true` if valid; `false` otherwise.
+
+<a name="verifynoncewitherrormessage" id="verifynoncewitherrormessage"></a>
+<a name="verifyNonceWithErrorMessage" id="verifyNonceWithErrorMessage"></a>
+### `verifyNonceWithErrorMessage()`
+
+Returns error message
+
+A nonce is valid if it matches the current nonce and if the current nonce
+has not expired.
+
+The request is valid if the referrer is a local URL (see [Url::isLocalUrl()](/api-reference/Piwik/Url#islocalurl))
+and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piwik/Nonce#getacceptableorigins)).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$id` (`string`) &mdash;
+       The nonce's unique ID. See [getNonce()](/api-reference/Piwik/Nonce#getnonce).
+    - `$cnonce` (`string`) &mdash;
+       Nonce sent from client.
+    - `$expectedReferrerHost` (`null`) &mdash;
+       The expected referrer host for the HTTP referrer URL.
+
+- *Returns:*  `string` &mdash;
+    if empty is valid otherwise return error message
 
 <a name="isreferrerhostvalid" id="isreferrerhostvalid"></a>
 <a name="isReferrerHostValid" id="isReferrerHostValid"></a>
