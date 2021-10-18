@@ -2924,7 +2924,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [697](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L697)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [706](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L706)*
 
 Triggered after a site has been added.
 
@@ -2936,7 +2936,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [808](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L808)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [817](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L817)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -2954,7 +2954,7 @@ Usages:
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [186](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L186)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [190](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L190)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
