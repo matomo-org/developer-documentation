@@ -745,7 +745,7 @@ Usages:
 
 ### CliMulti.supportsAsync
 
-*Defined in [Piwik/CliMulti](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CliMulti.php) in line [281](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CliMulti.php#L281)*
+*Defined in [Piwik/CliMulti](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CliMulti.php) in line [303](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CliMulti.php#L303)*
 
 Triggered to allow plugins to force the usage of async cli multi execution or to disable it. **Example**
 
