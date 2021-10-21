@@ -52,6 +52,16 @@ var safeString = piwikHelper.escape( userInputUnsafeString );
 $('#someLabel').text( safeString );
 ```
 
+### Use a restrictive Content Security Policy header
+
+[Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is set by default in Matomo (since Matomo 4.6.0) and plugins can modify the CSP as needed using `$this->securityPolicy` methods in the controller, for example:
+
+```php
+$this->securityPolicy->addPolicy('image-src', 'self');
+```
+
+Consider using the default, or a more restrictive CSP if possible which will protect against certain XSS attacks.
+
 #### See Also
 
 [XSS on MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#cross-site_scripting_xss)
