@@ -60,6 +60,18 @@ $('#someLabel').text( safeString );
 $this->securityPolicy->addPolicy('image-src', 'self');
 ```
 
+Or using dependency injection by creating a `plugins/MyPlugin/config/config.php` like this:
+
+```php
+return array(
+    \Piwik\View\SecurityPolicy::class => DI\decorate(function ($previous) {
+        /** @var \Piwik\View\SecurityPolicy $previous */
+        $previous->addPolicy('default-src', 'my-cdn.example.com');
+        return $previous;
+    }),
+);
+```
+
 Consider using the default, or a more restrictive CSP if possible which will protect against certain XSS attacks.
 
 #### See Also
