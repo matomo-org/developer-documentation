@@ -60,7 +60,7 @@ $('#someLabel').text( safeString );
 $this->securityPolicy->addPolicy('image-src', 'self');
 ```
 
-Or using dependency injection by creating a `plugins/MyPlugin/config/config.php` like this:
+Or using dependency injection by creating a `plugins/MyPlugin/config/config.php` like this to apply the change to every UI request instead of only a specific request:
 
 ```php
 return array(
