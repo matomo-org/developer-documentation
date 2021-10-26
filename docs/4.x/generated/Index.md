@@ -77,6 +77,8 @@ Index
 - [`$apiMethodToRequestDataTable`](Piwik/ViewDataTable/RequestConfig.md#$apimethodtorequestdatatable) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`addPropertiesThatShouldBeAvailableClientSide()`](Piwik/ViewDataTable/RequestConfig.md#addpropertiesthatshouldbeavailableclientside) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](Piwik/ViewDataTable/RequestConfig.md#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`addPolicy()`](Piwik/View/SecurityPolicy.md#addpolicy) &mdash; *Method in class* [`SecurityPolicy`](Piwik/View/SecurityPolicy.md)
+- [`allowEmbedPage()`](Piwik/View/SecurityPolicy.md#allowembedpage) &mdash; *Method in class* [`SecurityPolicy`](Piwik/View/SecurityPolicy.md)
 - [`addParameters()`](Piwik/Widget/WidgetConfig.md#addparameters) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`addWidgetConfig()`](Piwik/Widget/WidgetContainerConfig.md#addwidgetconfig) &mdash; *Method in class* [`WidgetContainerConfig`](Piwik/Widget/WidgetContainerConfig.md)
 - [`addWidgetConfig()`](Piwik/Widget/WidgetsList.md#addwidgetconfig) &mdash; *Method in class* [`WidgetsList`](Piwik/Widget/WidgetsList.md)
@@ -231,6 +233,7 @@ Index
 - [`disablePivotBySubtableIfTableHasNoSubtables()`](Piwik/ViewDataTable/Config.md#disablepivotbysubtableiftablehasnosubtables) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$disable_generic_filters`](Piwik/ViewDataTable/RequestConfig.md#$disable_generic_filters) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`$disable_queued_filters`](Piwik/ViewDataTable/RequestConfig.md#$disable_queued_filters) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`disable()`](Piwik/View/SecurityPolicy.md#disable) &mdash; *Method in class* [`SecurityPolicy`](Piwik/View/SecurityPolicy.md)
 - [`disable()`](Piwik/Widget/WidgetConfig.md#disable) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 
 ## E
@@ -911,6 +914,7 @@ Index
 - [`$overridableProperties`](Piwik/ViewDataTable/Config.md#$overridableproperties) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$onlineGuideUrl`](Piwik/ViewDataTable/Config.md#$onlineguideurl) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$overridableProperties`](Piwik/ViewDataTable/RequestConfig.md#$overridableproperties) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`overridePolicy()`](Piwik/View/SecurityPolicy.md#overridepolicy) &mdash; *Method in class* [`SecurityPolicy`](Piwik/View/SecurityPolicy.md)
 
 ## P
 
@@ -988,6 +992,7 @@ Index
 - [`$report_id`](Piwik/ViewDataTable/Config.md#$report_id) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`removeColumnToDisplay()`](Piwik/ViewDataTable/Config.md#removecolumntodisplay) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; *Class in namespace* `Piwik\ViewDataTable`- [`$request_parameters_to_modify`](Piwik/ViewDataTable/RequestConfig.md#$request_parameters_to_modify) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`removeDirective()`](Piwik/View/SecurityPolicy.md#removedirective) &mdash; *Method in class* [`SecurityPolicy`](Piwik/View/SecurityPolicy.md)
 - [`render()`](Piwik/View/UIControl.md#render) &mdash; *Method in class* [`UIControl`](Piwik/View/UIControl.md)
 - [`render()`](Piwik/View/ViewInterface.md#render) &mdash; *Method in class* [`ViewInterface`](Piwik/View/ViewInterface.md)
 - [`render()`](Piwik/Widget/Widget.md#render) &mdash; *Method in class* [`Widget`](Piwik/Widget/Widget.md)
@@ -1158,7 +1163,7 @@ Index
 - [`$show_offset_information`](Piwik/ViewDataTable/Config.md#$show_offset_information) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$segmented_visitor_log_segment_suffix`](Piwik/ViewDataTable/Config.md#$segmented_visitor_log_segment_suffix) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`setDefaultSort()`](Piwik/ViewDataTable/RequestConfig.md#setdefaultsort) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
-- [`setCategoryId()`](Piwik/Widget/WidgetConfig.md#setcategoryid) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
+- [`SecurityPolicy`](Piwik/View/SecurityPolicy.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)- [`setCategoryId()`](Piwik/Widget/WidgetConfig.md#setcategoryid) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`setSubcategoryId()`](Piwik/Widget/WidgetConfig.md#setsubcategoryid) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`setModule()`](Piwik/Widget/WidgetConfig.md#setmodule) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`setAction()`](Piwik/Widget/WidgetConfig.md#setaction) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
