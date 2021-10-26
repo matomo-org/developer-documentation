@@ -177,6 +177,23 @@ This can have the following possible causes:
   what the root issue is here, you'll need to inspect the variable `$nameVariable` in this if statement:
   [https://github.com/matomo-org/matomo/blob/4.2.0/core/API/DocumentationGenerator.php#L40-L41](https://github.com/matomo-org/matomo/blob/4.2.0/core/API/DocumentationGenerator.php#L40-L41)
 
+## How to adjust metadata tests to only include the data from their plugin
+
+When running system tests to fetch `API.getReportMetadata` or `API.getSegmentsMetadata` in any plugins, we get results from all the plugins in response.
+To limit the response to current plugin we can use the below example code.
+
+```php
+class ApiTest extends SystemTestCase
+{
+  public static function setUpBeforeClass(): void
+ {
+    parent::setUpBeforeClass();
+    self::setAllowedModulesToFilterApiResponse('API.getReportMetadata', array('MODULES_TO_FILTER'));
+    self::setAllowedCategoriesToFilterApiResponse('API.getSegmentsMetadata', array('CATEGORIES_TO_FILTER'));
+ }
+}
+```
+
 ## Writing tests for commands
 
 It is also possible to write system tests for console commands. These tests should extend `Piwik\Tests\Framework\TestCase\ConsoleCommandTestCase`. 
