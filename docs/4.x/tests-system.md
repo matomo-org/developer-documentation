@@ -179,8 +179,7 @@ This can have the following possible causes:
 
 ## How to adjust metadata tests to only include the data from their plugin
 
-When running system tests to fetch `API.getReportMetadata` or `API.getSegmentsMetadata` in any plugins, we get results from all the plugins in response.
-To limit the response to current plugin we can use the below example code.
+When running system tests that fetch data from `API.getReportMetadata` or `API.getSegmentsMetadata`, the API response includes results from all other plugins. This can make it hard to maintain a passing build as tests might fail because of a change in a different plugin. To limit the response to the current plugin you can use the below example code.
 
 ```php
 class ApiTest extends SystemTestCase
