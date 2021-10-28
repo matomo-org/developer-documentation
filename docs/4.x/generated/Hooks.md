@@ -3392,7 +3392,7 @@ Callback Signature:
 
 ### TwoFactorAuth.enabled
 
-*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php) in line [229](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php#L229)*
+*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php) in line [228](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php#L228)*
 
 
 
