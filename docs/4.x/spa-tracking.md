@@ -13,6 +13,7 @@ If you're using a popular framework such as Angular, Angular JS, Vue.js, React N
 ## Embedding the Tracking Code
 
 First you need to embed your JavaScript tracking code into your single-page website or web application as usual. To do this go to “Administration” in the top right in your Matomo instance, click on “Tracking Code” and adjust the tracking code to your needs.
+You can find more information in our [JavaScript Tracking Client documentation](https://developer.matomo.org/guides/tracking-javascript-guide)
 
 ## Tracking a New Page View
 
