@@ -68,7 +68,6 @@ return array(
         /** @var \Piwik\View\SecurityPolicy $previous */
         
         if (!\Piwik\SettingsPiwik::isMatomoInstalled()) {
-            // if Matomo is not yet installed there can't be any system setting
             return $previous;
         }
         
