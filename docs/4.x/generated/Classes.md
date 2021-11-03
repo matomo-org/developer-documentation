@@ -211,6 +211,7 @@ This is a complete list of available classes:
 - [`ViewDataTable\Config`](Piwik/ViewDataTable/Config.md) &mdash; Contains base display properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable)s.
 - [`ViewDataTable\Factory`](Piwik/ViewDataTable/Factory.md) &mdash; Provides a means of creating [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances by ID.
 - [`ViewDataTable\RequestConfig`](Piwik/ViewDataTable/RequestConfig.md) &mdash; Contains base request properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances.
+- [`View\SecurityPolicy`](Piwik/View/SecurityPolicy.md) &mdash; Content Security Policy HTTP Header management class
 - [`View\UIControl`](Piwik/View/UIControl.md) &mdash; Base type of UI controls.
 - [`Widget\Widget`](Piwik/Widget/Widget.md) &mdash; Defines a new widget.
 - [`Widget\WidgetConfig`](Piwik/Widget/WidgetConfig.md) &mdash; Configures a widget.

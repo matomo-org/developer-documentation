@@ -1298,7 +1298,7 @@ Callback Signature:
 
 ### Feedback.showReferBanner
 
-*Defined in [Piwik/Plugins/Feedback/Feedback](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Feedback/Feedback.php) in line [133](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Feedback/Feedback.php#L133)*
+*Defined in [Piwik/Plugins/Feedback/Feedback](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Feedback/Feedback.php) in line [130](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Feedback/Feedback.php#L130)*
 
 
 
@@ -1970,7 +1970,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [712](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L712)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [713](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L713)*
 
 Event triggered after a plugin has been activated.
 
@@ -1986,7 +1986,7 @@ Usages:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [542](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L542)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [543](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L543)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -2002,7 +2002,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [1378](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L1378)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [1379](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L1379)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
@@ -2018,7 +2018,7 @@ Usages:
 
 ### PluginManager.pluginUninstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [631](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L631)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php) in line [632](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Manager.php#L632)*
 
 Event triggered after a plugin has been uninstalled.
 
@@ -3372,7 +3372,7 @@ Callback Signature:
 
 Usages:
 
-[Annotations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Annotations/Annotations.php#L34), [CoreAdminHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L92), [CoreHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/CoreHome.php#L321), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L72), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L61), [CustomAlerts::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomAlerts/CustomAlerts.php#L187), [Dashboard::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Dashboard/Dashboard.php#L321), [Feedback::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Feedback/Feedback.php#L57), [GeoIp2::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/GeoIp2/GeoIp2.php#L53), [Goals::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Goals.php#L361), [Intl::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Intl/Intl.php#L20), [Live::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Live/Live.php#L170), [Marketplace::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Marketplace/Marketplace.php#L68), [MobileMessaging::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MobileMessaging/MobileMessaging.php#L106), [MultiSites::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/MultiSites.php#L50), [Overlay::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Overlay/Overlay.php#L35), [PagePerformance::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PagePerformance/PagePerformance.php#L60), [PrivacyManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/PrivacyManager.php#L227), [Referrers::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Referrers.php#L76), [ScheduledReports::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ScheduledReports/ScheduledReports.php#L122), [SegmentEditor::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/SegmentEditor.php#L329), [SitesManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/SitesManager.php#L379), [Transitions::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Transitions/Transitions.php#L47), [UserCountryMap::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UserCountryMap/UserCountryMap.php#L62), [UserId::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UserId/UserId.php#L49), [UsersManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/UsersManager.php#L240), [Widgetize::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Widgetize.php#L46)
+[Annotations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Annotations/Annotations.php#L34), [CoreAdminHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L92), [CoreHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/CoreHome.php#L319), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L72), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L61), [CustomAlerts::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomAlerts/CustomAlerts.php#L187), [Dashboard::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Dashboard/Dashboard.php#L321), [Feedback::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Feedback/Feedback.php#L54), [GeoIp2::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/GeoIp2/GeoIp2.php#L53), [Goals::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Goals.php#L361), [Intl::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Intl/Intl.php#L20), [Live::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Live/Live.php#L170), [Marketplace::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Marketplace/Marketplace.php#L68), [MobileMessaging::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MobileMessaging/MobileMessaging.php#L106), [MultiSites::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/MultiSites.php#L50), [Overlay::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Overlay/Overlay.php#L35), [PagePerformance::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PagePerformance/PagePerformance.php#L60), [PrivacyManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/PrivacyManager.php#L227), [Referrers::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Referrers.php#L76), [ScheduledReports::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ScheduledReports/ScheduledReports.php#L122), [SegmentEditor::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/SegmentEditor.php#L329), [SitesManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/SitesManager.php#L379), [Transitions::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Transitions/Transitions.php#L47), [UserCountryMap::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UserCountryMap/UserCountryMap.php#L62), [UserId::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UserId/UserId.php#L49), [UsersManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/UsersManager.php#L240), [Widgetize::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Widgetize/Widgetize.php#L46)
 
 ## TwoFactorAuth
 
@@ -3392,7 +3392,7 @@ Callback Signature:
 
 ### TwoFactorAuth.enabled
 
-*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php) in line [229](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php#L229)*
+*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php) in line [228](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/TwoFactorAuth/Controller.php#L228)*
 
 
 

@@ -207,6 +207,7 @@
 ## ViewDataTable\Config
 ## ViewDataTable\Factory
 ## ViewDataTable\RequestConfig
+## View\SecurityPolicy
 ## View\UIControl
 ## Widget\Widget
 ## Widget\WidgetConfig

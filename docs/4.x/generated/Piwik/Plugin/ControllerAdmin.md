@@ -79,7 +79,7 @@ The SecurityPolicy object.
 
 #### Signature
 
-- It is a `Piwik\View\SecurityPolicy` value.
+- It is a [`SecurityPolicy`](../../Piwik/View/SecurityPolicy.md) value.
 
 Methods
 -------

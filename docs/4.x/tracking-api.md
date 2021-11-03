@@ -149,7 +149,7 @@ Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-an
 ### Other parameters
 
 * `send_image` &mdash; If set to 0 (`send_image=0`) Piwik will respond with a HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Piwik 2.10.0
-* `ping`  &mdash; If set to 1 (`ping=1`), the request will be a [Heartbeat request](https://matomo.org/faq/how-to/faq_21824/) which will not track any new activity (such as a new visit, new action or new goal). The heartbeat request will only update the visit's total time to provide accurate "Visit duration" metric.
+* `ping`  &mdash; If set to 1 (`ping=1`), the request will be a [Heartbeat request](https://matomo.org/faq/how-to/faq_21824/) which will not track any new activity (such as a new visit, new action or new goal). The heartbeat request will only update the visit's total time to provide accurate "Visit duration" metric when this parameter is set. It won't record any other data. This means by sending an additional tracking request when the user leaves your site or app with `&ping=1`, you fix the issue where the time spent of the last page visited is reported as 0 seconds.
 
 ## Tracking Bots
 
