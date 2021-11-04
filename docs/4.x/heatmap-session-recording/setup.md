@@ -74,7 +74,7 @@ You can unmask an individual form field like this:
 Alternatively, you can mask a set of form fields within your web page by specifying the `data-matomo-unmask` or `data-matomo-mask` attribute on a `form` element like this:
 
 ```html
-<form data-piwik-unmask>
+<form data-matomo-unmask>
   <div>
     <input type="text" name="example_field_record_plain_text">
     <input type="text" name="tax_number" data-matomo-mask>
@@ -92,7 +92,7 @@ When your Settings > System Check reports that "The Piwik JavaScript tracker fil
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
 1. Make the `matomo.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
-We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
+We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-matomo-js:update` after you have made the file writable.
 2. or Load the HeatmapSessionRecording tracker file manually in your website by adding in all your pages ideally in the `<head>`: 
    `<script src="https://your-matomo-domain/plugins/HeatmapSessionRecording/tracker.min.js">`
 
