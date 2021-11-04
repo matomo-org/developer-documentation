@@ -101,14 +101,16 @@ provides a computed property, named `parsed`, for easily accessing query paramet
 An example of accessing query parameter values and modifying the hash when needed:
 
 ```typescript
-import { computed } from 'vue';
+import { computed, readonly } from 'vue';
 import { MatomoUrl } from 'CoreHome';
 
 class GoalsStore
 {
-  readonly state = reactive({
+  private readonly state = reactive({
     goals: {}, // maps idGoal => goal. filled out via an ajax request not shown in this example
   });
+
+  readonly allGoals = computed(() => readonly(this.state).goals);
   
   readonly currentGoal = computed(() => {
     const idGoal = MatomoUrl.parsed.idGoal;
