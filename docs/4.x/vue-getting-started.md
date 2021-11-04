@@ -35,15 +35,15 @@ class MyStore {
     counter: 0,
   });
 
-  readonly counter = computed(() => this.counter);
-  readonly isZero = computed(() => this.counter === 0);
+  readonly counter = computed(() => this.myState.counter);
+  readonly isZero = computed(() => this.myState.counter === 0);
 
   increment() {
-    this.counter += 1;
+    this.myState.counter += 1;
   }
   
   decrement() {
-    this.counter -= 1;
+    this.myState.counter -= 1;
   }
 }
 
@@ -68,6 +68,8 @@ import MyStore from './MyStore';
 export default defineComponent({
   setup() {
     return {
+      // NOTE: we're not using the `.value` property here because we want Vue to bind the computed
+      // property in order to be notified of changes.
       counter: MyStore.counter,
       isZero: MyStore.isZero,
       increment: MyStore.increment.bind(MyStore),
