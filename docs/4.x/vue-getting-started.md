@@ -95,7 +95,7 @@ search has a query string, and the URL hash has another query string. Both are u
 query parameter values are, with the hash query parameters overriding the search ones.
 
 In new Vue code, the URL query parameters can be accessed and changed via the MatomoUrl store. This store
-provides a computed parsed `parsed` for easily accessing query parameter values. It also provides a method,
+provides a computed property, named `parsed`, for easily accessing query parameter values. It also provides a method,
 `updateHash()` that allows developers to change the URL, and thus potentially load a new page.
 
 An example of accessing query parameter values and modifying the hash when needed:
@@ -107,7 +107,7 @@ import { MatomoUrl } from 'CoreHome';
 class GoalsStore
 {
   readonly state = reactive({
-    goals: {}, // maps idGoal => goal. filled out via an ajax request not displayed
+    goals: {}, // maps idGoal => goal. filled out via an ajax request not shown in this example
   });
   
   readonly currentGoal = computed(() => {
