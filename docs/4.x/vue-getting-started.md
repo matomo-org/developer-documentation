@@ -19,7 +19,7 @@ multiple components (for example, the number of notifications in an app that pro
 or something that is derived from inherently global state (such as the value of a URL query parameter). Global
 state like this has to be defined outside of a component and used by whoever needs it.
 
-In Matomo, we accomplish this via the store pattern (see https://v3.vuejs.org/guide/state-management.html#official-flux-like-implementation).
+In Matomo, we accomplish this via the store pattern (see https://v3.vuejs.org/guide/state-management.html#simple-state-management-from-scratch).
 Global state is encapsulated in classes, as are the operations that manipulate them. All the data in these stores
 are stored as `reactive()` properties or `ref()` values, and the store exposes `computed()` properties for
 Vue components to use. Vue components that use them automatically register with the property so when the data changes
