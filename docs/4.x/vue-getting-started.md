@@ -115,7 +115,7 @@ class GoalsStore
   readonly currentGoal = computed(() => {
     const idGoal = MatomoUrl.parsed.value.idGoal;
     if (idGoal && this.state.goals[idGoal]) {
-      return this.state.goals[idGoal];
+      return readonly(this.state.goals[idGoal]);
     }
     return undefined;
   });
