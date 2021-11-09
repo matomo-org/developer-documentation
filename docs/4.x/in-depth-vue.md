@@ -3,7 +3,7 @@ category: DevelopInDepth
 ---
 # Vue: In Depth
 
-This documents advanced, uncommon patterns found in Matomo's use of Vue.
+This documents advanced and/or uncommon patterns found in Matomo's use of Vue.
 
 ## Stateful Directives
 
