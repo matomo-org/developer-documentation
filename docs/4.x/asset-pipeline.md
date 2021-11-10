@@ -97,6 +97,15 @@ polyfills we include are specified in the `plugins/CoreVue/polyfills/vue.config.
 Building the polyfill project is done via the `vue:build-polyfill` command. Only core developers will have
 to use this command and only when adding or removing polyfills.
 
+### Updating Browser Support
+
+browserslist uses an npm package to determine the usage statistics of browsers. As long as it doesn't change, the
+list of minimum supported browsers Matomo supports will stay the same. browserslist is in turn installed as a dependency of @vue/cli-service.
+
+When it's time to update the minimum supported browser versions, which happens before every major release, all
+that's needed is to upgrade the @vue/cli-service package to the latest version. Then, based on the `npx browserslist`
+output & some manual testing to double check, change the versions in core/SupportedBrowser.php.
+
 ### Async components and chunking
 
 A note concerning [async components](https://v3.vuejs.org/guide/migration/async-components.html#introduction) in Vue:
