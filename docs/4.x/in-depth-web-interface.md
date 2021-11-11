@@ -2,6 +2,7 @@
 category: Develop
 title: Web Interface
 subGuides:
+  - design-ux
   - custom-reports-extended
   - controllers
   - views
