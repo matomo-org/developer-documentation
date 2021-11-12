@@ -80,6 +80,7 @@ The class defines the following methods:
 - [`subYear()`](#subyear) &mdash; Subtracts `$n` years from `$this` date and returns the result as a new Date object.
 - [`getLocalized()`](#getlocalized) &mdash; Returns a localized date string using the given template.
 - [`addDay()`](#addday) &mdash; Adds `$n` days to `$this` date and returns the result in a new Date.
+- [`addMonth()`](#addmonth) &mdash; Adds `$n` Month to `$this` date and returns the result in a new Date.
 - [`addHour()`](#addhour) &mdash; Adds `$n` hours to `$this` date and returns the result in a new Date.
 - [`addHourTo()`](#addhourto) &mdash; Adds N number of hours to a UNIX timestamp and returns the result.
 - [`subHour()`](#subhour) &mdash; Subtracts `$n` hours from `$this` date and returns the result in a new Date.
@@ -573,6 +574,21 @@ The template should contain tags that will be replaced with localized date strin
 ### `addDay()`
 
 Adds `$n` days to `$this` date and returns the result in a new Date.
+
+instance.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$n` (`int`) &mdash;
+       Number of days to add, must be > 0.
+- It returns a [`Date`](../Piwik/Date.md) value.
+
+<a name="addmonth" id="addmonth"></a>
+<a name="addMonth" id="addMonth"></a>
+### `addMonth()`
+
+Adds `$n` Month to `$this` date and returns the result in a new Date.
 
 instance.
 

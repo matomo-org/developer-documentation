@@ -14,6 +14,7 @@ Methods
 The class defines the following methods:
 
 - [`getCurrentUserEmail()`](#getcurrentuseremail) &mdash; Returns the current user's email address.
+- [`getCurrentUserLastSeen()`](#getcurrentuserlastseen) &mdash; Returns the current user's Last Seen.
 - [`getCurrentUserLogin()`](#getcurrentuserlogin) &mdash; Returns the current user's username.
 - [`getCurrentUserTokenAuth()`](#getcurrentusertokenauth) &mdash; Returns the current user's token auth.
 - [`hasUserSuperUserAccessOrIsTheUser()`](#hasusersuperuseraccessoristheuser) &mdash; Returns `true` if the current user is either the Super User or the user specified by `$theUser`.
@@ -48,6 +49,16 @@ The class defines the following methods:
 ### `getCurrentUserEmail()`
 
 Returns the current user's email address.
+
+#### Signature
+
+- It returns a `string` value.
+
+<a name="getcurrentuserlastseen" id="getcurrentuserlastseen"></a>
+<a name="getCurrentUserLastSeen" id="getCurrentUserLastSeen"></a>
+### `getCurrentUserLastSeen()`
+
+Returns the current user's Last Seen.
 
 #### Signature
 
