@@ -537,7 +537,7 @@ Stores each event / action that was performed on a page. For example a mouse mov
 - `idhsrevent`: Unique ID for this event.
 - `idloghsr`: The unique `log_hsr` ID this event belongs to.
 - `time_since_load`: An integer representing the amount of milliseconds that have passed since loading the page. This way we know when to replay which event.
-- `event_type`: The type of event that was executed: `1`: Mouse movement, `2`: Mouse click, `3`: Scroll, `4`: Window resize, `5`: What the initial DOM looked like when the page was loaded, `6`: HTML DOM change, `9`: Form text field change, `10`: Form select field change, `12`: Scroll inside an element.
+- `event_type`: The type of event that was executed: `1`: Mouse movement, `2`: Mouse click, `3`: Scroll, `4`: Window resize, `5`: What the initial DOM looked like when the page was loaded, `6`: HTML DOM change, `9`: Form text field change, `10`: Form select field change, `12`: Scroll inside an element, `13`: CSS Content.
 - `idselector`: A `log_action` ID referencing the CSS selector that uniquely describes what element an action was performed on (for example for scroll inside an element, or form text field change). 
 - `x`: X coordinate for example for a mouse movement where exactly the mouse was moved to within an element. This is usually a percentage and not absolute pixel values. If the window was resized then it stores absolute pixel value.
 - `y`: Y coordinate for example for a mouse movement where exactly the mouse was moved to within an element. This is usually a percentage and not absolute pixel values. If the window was resized then it stores absolute pixel value.
