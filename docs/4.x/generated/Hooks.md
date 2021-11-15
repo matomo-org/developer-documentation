@@ -1292,6 +1292,19 @@ Callback Signature:
 
 
 
+## Feedback
+
+- [Feedback.showQuestionBanner](#feedbackshowquestionbanner)
+
+### Feedback.showQuestionBanner
+
+*Defined in [Piwik/Plugins/Feedback/Feedback](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Feedback/Feedback.php) in line [116](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Feedback/Feedback.php#L116)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$shouldShowQuestionBanner]</code></pre>
+
 ## Filesystem
 
 - [Filesystem.allCachesCleared](#filesystemallcachescleared)
