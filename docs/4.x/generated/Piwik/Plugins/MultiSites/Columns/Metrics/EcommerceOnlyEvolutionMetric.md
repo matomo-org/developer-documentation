@@ -24,9 +24,12 @@ The class defines the following methods:
 - [`getTemporaryMetrics()`](#gettemporarymetrics) &mdash; Returns the array of metrics that are necessary for computing this metric, but should not be displayed to the user unless explicitly requested. Inherited from [`ProcessedMetric`](../../../../../Piwik/Plugin/ProcessedMetric.md)
 - [`beforeCompute()`](#beforecompute) &mdash; Executed before computing all processed metrics for a report. Inherited from [`ProcessedMetric`](../../../../../Piwik/Plugin/ProcessedMetric.md)
 - [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
+- [`getTrendName()`](#gettrendname) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
+- [`getTrendValue()`](#gettrendvalue) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`beforeComputeSubtable()`](#beforecomputesubtable) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`afterComputeSubtable()`](#aftercomputesubtable) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`getPastRowFromCurrent()`](#getpastrowfromcurrent) &mdash; public for Insights use. Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
+- [`getRatio()`](#getratio) &mdash; Calculate the ratio of time between a past period and current incomplete period Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
@@ -240,12 +243,33 @@ Constructor.
 -  It accepts the following parameter(s):
     - `$wrapped` (`string`|[`Metric`](../../../../../Piwik/Plugin/Metric.md)) &mdash;
        The metric used to calculate the evolution.
-    - `$pastData` ([`DataTable`](../../../../../Piwik/DataTable.md)) &mdash;
+    - `$pastData` ([`DataTable`](../../../../../Piwik/DataTable.md)|`null`) &mdash;
        The data in the past to use when calculating evolutions.
     - `$evolutionMetricName` (`string`|`false`) &mdash;
        The name of the evolution processed metric. Defaults to $wrapped's name with `'_evolution'` appended.
     - `$quotientPrecision` (`int`) &mdash;
        The percent's quotient precision.
+    - `$currentData` ([`DataTable`](../../../../../Piwik/DataTable.md)|`null`) &mdash;
+       The current datatable, optional but required to calculate the proportionate evolution values
+
+<a name="gettrendname" id="gettrendname"></a>
+<a name="getTrendName" id="getTrendName"></a>
+### `getTrendName()`
+
+#### Signature
+
+- It does not return anything or a mixed result.
+
+<a name="gettrendvalue" id="gettrendvalue"></a>
+<a name="getTrendValue" id="getTrendValue"></a>
+### `getTrendValue()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$computedValue`
+      
+- It does not return anything or a mixed result.
 
 <a name="beforecomputesubtable" id="beforecomputesubtable"></a>
 <a name="beforeComputeSubtable" id="beforeComputeSubtable"></a>
@@ -281,4 +305,30 @@ public for Insights use.
     - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)) &mdash;
       
 - It does not return anything or a mixed result.
+
+<a name="getratio" id="getratio"></a>
+<a name="getRatio" id="getRatio"></a>
+### `getRatio()`
+
+Calculate the ratio of time between a past period and current incomplete period
+
+eg. if today is Thursday at 12:00pm and the past period is a week then the ratio is 0.5, exactly half of the
+current incomplete period has passed
+
+If the current period end is in the past then the ratio will always be 1, since the current period is complete.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$currentData` ([`DataTable`](../../../../../Piwik/DataTable.md)|`null`) &mdash;
+      
+    - `$pastData` ([`DataTable`](../../../../../Piwik/DataTable.md)|`null`) &mdash;
+      
+    - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)) &mdash;
+      
+
+- *Returns:*  `float`|`int` &mdash;
+    
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 

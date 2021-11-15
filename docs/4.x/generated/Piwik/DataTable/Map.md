@@ -43,6 +43,7 @@ The class defines the following methods:
 - [`mergeSubtables()`](#mergesubtables) &mdash; Returns a new DataTable\Map w/ child tables that have had their subtables merged.
 - [`getEmptyClone()`](#getemptyclone) &mdash; Returns a new DataTable\Map w/o any child DataTables, but with the same key name as this instance.
 - [`getMetadataIntersectArray()`](#getmetadataintersectarray) &mdash; Returns the intersection of children's metadata arrays (what they all have in common).
+- [`deleteRowsMetadata()`](#deleterowsmetadata) &mdash; Delete row metadata by name in every row.
 - [`getColumns()`](#getcolumns) &mdash; See DataTable::getColumns().
 
 <a name="getkeyname" id="getkeyname"></a>
@@ -464,6 +465,21 @@ Returns the intersection of children's metadata arrays (what they all have in co
     - `$name` (`string`) &mdash;
        The metadata name.
 - It returns a `mixed` value.
+
+<a name="deleterowsmetadata" id="deleterowsmetadata"></a>
+<a name="deleteRowsMetadata" id="deleteRowsMetadata"></a>
+### `deleteRowsMetadata()`
+
+Delete row metadata by name in every row.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name`
+      
+    - `$deleteRecursiveInSubtables` (`bool`) &mdash;
+      
+- It does not return anything or a mixed result.
 
 <a name="getcolumns" id="getcolumns"></a>
 <a name="getColumns" id="getColumns"></a>

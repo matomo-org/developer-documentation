@@ -76,6 +76,7 @@ The class defines the following methods:
 - [`getColumnsStartingWith()`](#getcolumnsstartingwith) &mdash; Returns an array containing all column values of columns whose name starts with `$name`. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getColumns()`](#getcolumns) &mdash; Returns the names of every column this DataTable contains. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getRowsMetadata()`](#getrowsmetadata) &mdash; Returns an array containing the requested metadata value of each row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`deleteRowsMetadata()`](#deleterowsmetadata) &mdash; Delete row metadata by name in every row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getRowsCount()`](#getrowscount) &mdash; Returns the number of rows in the table including the summary row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getFirstRow()`](#getfirstrow) &mdash; Returns the first row of the DataTable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getLastRow()`](#getlastrow) &mdash; Returns the last row of the DataTable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -564,6 +565,21 @@ Returns an array containing the requested metadata value of each row.
     - `$name` (`string`) &mdash;
        The metadata column to return.
 - It returns a `array` value.
+
+<a name="deleterowsmetadata" id="deleterowsmetadata"></a>
+<a name="deleteRowsMetadata" id="deleteRowsMetadata"></a>
+### `deleteRowsMetadata()`
+
+Delete row metadata by name in every row.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name`
+      
+    - `$deleteRecursiveInSubtables` (`bool`) &mdash;
+      
+- It does not return anything or a mixed result.
 
 <a name="getrowscount" id="getrowscount"></a>
 <a name="getRowsCount" id="getRowsCount"></a>
