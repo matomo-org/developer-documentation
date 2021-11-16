@@ -213,7 +213,7 @@ Add Bcc address
 -  It accepts the following parameter(s):
     - `$email` (`string`) &mdash;
       
-    - `$name` (`null`|`string`) &mdash;
+    - `$name` (`string`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -248,7 +248,7 @@ Add Reply-To address
 -  It accepts the following parameter(s):
     - `$email` (`string`) &mdash;
       
-    - `$name` (`null`|`string`) &mdash;
+    - `$name` (`string`) &mdash;
       
 - It does not return anything or a mixed result.
 
