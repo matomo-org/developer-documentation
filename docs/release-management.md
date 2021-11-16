@@ -10,11 +10,14 @@ We follow [semantic versioning](https://semver.org/) where a version number look
 
 ## New release (patch, minor or major)
 
-We first release one or multiple beta versions while working on a release.
-
-Before releasing a new version we release an RC. As soon as an RC has been released we only merge regressions. Very important bug fixes can be merged after an RC too if their risk for side effects is low. No other changes should be merged between an RC and the release. We usually run the RC for a minor release for at least a week, for major releases multiple weeks and for patch releases at least one day but better multiple days.
-
-Once a new release has been released we wait for three days with merging PRs in case we have to do a patch release. Should a patch release be needed after the three days then we can create a branch eg `4.3.1` and merge patches into the branch and the main branch (eg `4.x-dev`).
+* We first release one or multiple beta versions while working on a release.
+* Once all features and fixes have been implemented we release an RC (release candidate). 
+* Along with the RC we create a new branch called `next_release`.
+  * Any regression fix or very important bug fixes that has a low risk for side effects can be merged into the `next_release` branch if this needs to be included in the next release. We then release another RC (when depends on things like time left to the release, whether other changes will be merged into `next_release` as well etc). The release manager should be notified to trigger a new release. It's not needed to create another PR for `*.x-dev` for the same change, as we merge the changes from `next_release` into `*.x-dev` after the release.
+  * Any other change can be merged into `*.x-dev` as usual and won't be included in the upcoming release.
+* We usually run the RC for a minor release for at least a week, for major releases multiple weeks and for patch releases at least one day but better multiple days.
+* Once a new release has been released, we create a PR to merge the `next_release` branch into `*.x-dev` [see changes](https://github.com/matomo-org/matomo/compare/4.x-dev...next_release). The release manager will do this.
+* Should a patch release be needed, then we repeat this process. We create a branch `next_release` off the branch of the last release (not off `*.x-dev`). Any patch fix will need to be made against the `next_release` branch.
 
 ## New patch releases
 
