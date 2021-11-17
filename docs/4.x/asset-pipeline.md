@@ -67,6 +67,33 @@ in turn, invokes many separate tools that process individual files. These tools 
   compiled JavaScript to be compatible with, and is used by babel to understand which advanced ES features need to be
   transpiled and which do not. Configuration for this tool is in the `.browserslistrc` file.
 
+### UMD Module Dependencies
+
+Plugin UMD modules can depend on each other, for example, most plugins will depend on `CoreHome`.
+In TypeScript and .vue files, this will appear as imports:
+
+```typescript
+import { blahblah } from 'CoreHome';
+import { anotherBlahBlah } from 'MyPlugin';
+```
+
+This means that UMD module loading order is important, CoreHome has to appear in the compiled asset
+before this plugin, otherwise `blahblah` will be undefined and things will break.
+
+We solve this in Matomo by automatically detecting plugin dependencies and using them to order
+the UMD modules that get loaded.
+
+Detecting plugin dependencies is done by:
+
+* using a function in the `externals` webpack config. When a request for a plugin UMD is detected,
+  we save it in an array.
+* Later, after compilation has ended, we output the array to a metadata JSON file (`plugins/MyPlugin/vue/dist/umd.metadata.json`).
+
+Ordering of plugins is done in JScriptUIFetcher.php by:
+
+* Reading the dependencies from the umd.metadata.json files above,
+* and performing a DFS that orders the plugins, dependencies first.
+
 ### Browser support
 
 As stated above, `browserslist` is used to control what browsers our compiled JavaScript supports. In the `.browserslistrc`
