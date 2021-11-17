@@ -39,6 +39,8 @@ There are no breaking changes is usually not a reason to be able to upgrade sinc
 
 For Matomo for WordPress major component updates cannot only cause issues with code that we manage, but also cause compatibility issues with the over 50,000 WordPress plugins that may use a different version of that component. Most WordPress plugins use older versions of these components where they have different classes and different method definitions and from past experience this will cause Matomo for WordPress to break suddenly, sometimes even their entire WordPress installation. This can be especially annoying with Auto-Updates in WordPress etc. We wouldn't want to break someone's installation in a minor version update whenever possible.
 
+Support for a newer PHP major version may be a reason to upgrade a component. However, if any possible we want to avoid this and rather fork the component and apply the fixes ourselves assuming it wouldn't be a 4+ days of work to do this. If it's a lot of work then we would need to assess the risk together.
+
 #### Checking for possible updates
 
 Composer allows viewing all available updates for installed packages:
