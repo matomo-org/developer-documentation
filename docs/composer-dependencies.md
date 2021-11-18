@@ -28,7 +28,18 @@ As there are normally no problems expected for those updates there is an [automa
 
 ### Major updates
 
-Every 6 months we should check for possible major updates of our requirements. 
+Every 6 months we should check for possible major updates of our requirements. These can only be upgraded if:
+
+* There is a severe security fix that's exploitable for that component
+* It still supports the same minmimum PHP version
+
+In other cases we usually cannot upgrade to a major update and need to wait for the next Matomo major release. This is to keep backwards compatibility with Matomo for WordPress, the Cloud, and also all the third party plugins on the Marketplace and the many more that aren't on the Marketplace. 
+
+There are no breaking changes is usually not a reason to be able to upgrade since there is usually always a breaking change, even if it's just a method definition that changes and then causes issues for Matomo for WordPress.
+
+For Matomo for WordPress major component updates cannot only cause issues with code that we manage, but also cause compatibility issues with the over 50,000 WordPress plugins that may use a different version of that component. Most WordPress plugins use older versions of these components where they have different classes and different method definitions and from past experience this will cause Matomo for WordPress to break suddenly, sometimes even their entire WordPress installation. This can be especially annoying with Auto-Updates in WordPress etc. We wouldn't want to break someone's installation in a minor version update whenever possible.
+
+Support for a newer PHP major version may be a reason to upgrade a component. However, if any possible we want to avoid this and rather fork the component and apply the fixes ourselves assuming it wouldn't be a 4+ days of work to do this. If it's a lot of work then we would need to assess the risk together.
 
 #### Checking for possible updates
 
