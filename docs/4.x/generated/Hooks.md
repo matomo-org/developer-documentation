@@ -3525,7 +3525,7 @@ Callback Signature:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [764](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L764)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [763](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L763)*
 
 Triggered after a new user is created.
 
@@ -3602,7 +3602,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1161](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1161)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1160](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1160)*
 
 
 
@@ -3616,7 +3616,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [998](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L998)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [997](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L997)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
