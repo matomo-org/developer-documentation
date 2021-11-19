@@ -73,6 +73,15 @@ display_errors  = On
 error_reporting = E_ALL | E_STRICT
 ```
 
+#### Install Composer dependencies
+
+Matomo uses various libraries that are required for running Matomo. While they are included in the official releases, those [dependencies](/guides/composer-dependencies) needs to be installed manually when checking out from Git.
+To install the requirements you need to [download / install composer](https://getcomposer.org/download/) and run the following command in the Matomo directory.
+
+```bash
+composer install
+```
+
 ### Hacking Piwik
 
 Now that you have a copy of the latest Piwik source code, you can start modifying it. For this section, we'll assume there's a bug that you found and want to fix.
