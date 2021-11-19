@@ -36,6 +36,7 @@ The class defines the following methods:
 - [`getSegment()`](#getsegment) &mdash; Returns the name of this segment as it should appear in segment expressions.
 - [`setSuggestedValuesCallback()`](#setsuggestedvaluescallback) &mdash; Set callback which will be executed when user will call for suggested values for segment.
 - [`setSuggestedValuesApi()`](#setsuggestedvaluesapi) &mdash; Set callback which will be executed when user will call for suggested values for segment.
+- [`setNeedsMostFrequentValues()`](#setneedsmostfrequentvalues)
 - [`setPermission()`](#setpermission) &mdash; You can restrict the access to this segment by passing a boolean `false`.
 - [`setIsInternal()`](#setisinternal) &mdash; Sets whether the segment is for internal use only and should not be visible in the UI or in API metadata output.
 - [`isInternal()`](#isinternal) &mdash; Gets whether the segment is for internal use only and should not be visible in the UI or in API metadata output.
@@ -220,6 +221,17 @@ Set callback which will be executed when user will call for suggested values for
 
 -  It accepts the following parameter(s):
     - `$suggestedValuesApi` (`string`) &mdash;
+      
+- It does not return anything or a mixed result.
+
+<a name="setneedsmostfrequentvalues" id="setneedsmostfrequentvalues"></a>
+<a name="setNeedsMostFrequentValues" id="setNeedsMostFrequentValues"></a>
+### `setNeedsMostFrequentValues()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$value` (`bool`) &mdash;
       
 - It does not return anything or a mixed result.
 
