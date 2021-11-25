@@ -192,7 +192,7 @@ _paq.push(['MediaAnalytics::scanForMedia']);
 Yes, the tracking of media events can be disabled by calling the following method:
 
 ```js
-_paq.push(['MediaAnalytics.disableTrackEvents']);
+_paq.push(['MediaAnalytics::disableTrackEvents']);
 ```
 
 This will stop the tracking of any action events, while still tracking the usage of the videos and audio itself. This means
