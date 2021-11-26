@@ -148,7 +148,7 @@ Usages:
 
 ### Actions.getCustomActionDimensionFieldsAndJoins
 
-*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Actions/VisitorDetails.php) in line [275](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Actions/VisitorDetails.php#L275)*
+*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Actions/VisitorDetails.php) in line [300](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Actions/VisitorDetails.php#L300)*
 
 
 
