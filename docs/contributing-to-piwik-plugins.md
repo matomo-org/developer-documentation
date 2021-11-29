@@ -4,9 +4,9 @@ category: DevelopInDepth
 
 # Contributing to Matomo Plugins
 
-### Commit messages to not trigger any release.
+### Commit message keyword to not track changes.
 
-After your pull request is accepted and merged, the plugin needs to be released. Matomo tracks pushes to Matomo plugins using webhook.
-This helps us in releasing new versions, however if you want to make certain changes and those changes should not create a new release, you need to include `[ignore_release]` keyword in your commit message`. 
+After your pull request is accepted and merged, Matomo uses webhooks to keep track of pushes in main branch.
+This changes are weekly notified to the team, so that new version of plugin can be released, however if the changes made by you in plugins should not be notified weekly and no new release is required you need to include `[ignore_release]` keyword in your commit message.
 
 Eg commit message: `{YOUR_COMMIT_MESSAGE} [ignore_release]`
