@@ -44,6 +44,7 @@ The class defines the following methods:
 - [`parseDateRange()`](#parsedaterange) &mdash; Given a date string, returns `false` if not a date range, or returns the array containing start and end dates.
 - [`getLastDate()`](#getlastdate) &mdash; Returns the date that is one period before the supplied date.
 - [`getDateXPeriodsAgo()`](#getdatexperiodsago) &mdash; Returns the date that is X periods before the supplied date.
+- [`getDayCount()`](#getdaycount) &mdash; Return the number of days contained in this range
 - [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date range string given a period type, end date and number of periods the range spans over.
 - [`getImmediateChildPeriodLabel()`](#getimmediatechildperiodlabel)
 - [`getParentPeriodLabel()`](#getparentperiodlabel)
@@ -386,6 +387,18 @@ Returns the date that is X periods before the supplied date.
 - *Returns:*  `array` &mdash;
     An array with two elements, a string for the date before $date and
               a Period instance for the period before $date.
+
+<a name="getdaycount" id="getdaycount"></a>
+<a name="getDayCount" id="getDayCount"></a>
+### `getDayCount()`
+
+Return the number of days contained in this range
+
+#### Signature
+
+- It returns a `int` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getrelativetoenddate" id="getrelativetoenddate"></a>
 <a name="getRelativeToEndDate" id="getRelativeToEndDate"></a>

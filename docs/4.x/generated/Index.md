@@ -523,6 +523,7 @@ Index
 - [`getDateEnd()`](Piwik/Period/Range.md#getdateend) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getLastDate()`](Piwik/Period/Range.md#getlastdate) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getDateXPeriodsAgo()`](Piwik/Period/Range.md#getdatexperiodsago) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
+- [`getDayCount()`](Piwik/Period/Range.md#getdaycount) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getRelativeToEndDate()`](Piwik/Period/Range.md#getrelativetoenddate) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getRangeString()`](Piwik/Period/Range.md#getrangestring) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getImmediateChildPeriodLabel()`](Piwik/Period/Range.md#getimmediatechildperiodlabel) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
