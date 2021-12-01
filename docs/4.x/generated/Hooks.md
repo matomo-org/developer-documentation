@@ -3002,7 +3002,7 @@ Callback Signature:
 
 ### System.addSystemSummaryItems
 
-*Defined in [Piwik/Plugins/CoreHome/Widgets/GetSystemSummary](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php) in line [66](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php#L66)*
+*Defined in [Piwik/Plugins/CoreHome/Widgets/GetSystemSummary](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php) in line [67](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php#L67)*
 
 Triggered to add system summary items that are shown in the System Summary widget. **Example**
 
@@ -3024,7 +3024,7 @@ Usages:
 
 ### System.filterSystemSummaryItems
 
-*Defined in [Piwik/Plugins/CoreHome/Widgets/GetSystemSummary](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php) in line [100](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php#L100)*
+*Defined in [Piwik/Plugins/CoreHome/Widgets/GetSystemSummary](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php) in line [101](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/Widgets/GetSystemSummary.php#L101)*
 
 Triggered to filter system summary items that are shown in the System Summary widget. A plugin might also
 sort the system summary items differently. **Example**
