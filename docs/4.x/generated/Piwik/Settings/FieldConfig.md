@@ -29,6 +29,7 @@ This class defines the following properties:
 
 - [`$uiControl`](#$uicontrol) &mdash; Describes what HTML element should be used to manipulate the setting through Piwik's UI.
 - [`$customUiControlTemplateFile`](#$customuicontroltemplatefile) &mdash; Defines a custom template file for a UI control.
+- [`$customFieldComponent`](#$customfieldcomponent) &mdash; Defines a custom Vue component to use for the internal field UI control.
 - [`$uiControlAttributes`](#$uicontrolattributes) &mdash; Name-value mapping of HTML attributes that will be added HTML form control, eg, `array('size' => 3)`.
 - [`$availableValues`](#$availablevalues) &mdash; The list of all available values for this setting.
 - [`$introduction`](#$introduction) &mdash; Text that will appear above this setting's section in the _Plugin Settings_ admin page.
@@ -62,6 +63,20 @@ Defines a custom template file for a UI control. This file should render a UI co
 #### Signature
 
 - It is a `string` value.
+
+<a name="$customfieldcomponent" id="$customfieldcomponent"></a>
+<a name="customFieldComponent" id="customFieldComponent"></a>
+### `$customFieldComponent`
+
+Defines a custom Vue component to use for the internal field UI control. This should be an array with two
+keys:
+
+- plugin: the name of the plugin that the UI control exists in.
+- name: the name of the export for the component in the plugin's Vue UMD module.
+
+#### Signature
+
+- It is a `string[]` value.
 
 <a name="$uicontrolattributes" id="$uicontrolattributes"></a>
 <a name="uiControlAttributes" id="uiControlAttributes"></a>

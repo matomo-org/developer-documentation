@@ -158,6 +158,7 @@ Index
 - [`createCustomWidget()`](Piwik/Report/ReportWidgetFactory.md#createcustomwidget) &mdash; *Method in class* [`ReportWidgetFactory`](Piwik/Report/ReportWidgetFactory.md)
 - [`combine()`](Piwik/Segment.md#combine) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`$customUiControlTemplateFile`](Piwik/Settings/FieldConfig.md#$customuicontroltemplatefile) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
+- [`$customFieldComponent`](Piwik/Settings/FieldConfig.md#$customfieldcomponent) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$condition`](Piwik/Settings/FieldConfig.md#$condition) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$customUiControlTemplateFile`](Piwik/Settings/FieldConfig/ArrayField.md#$customuicontroltemplatefile) &mdash; *Property in class* [`ArrayField`](Piwik/Settings/FieldConfig/ArrayField.md)
 - [`$customUiControlTemplateFile`](Piwik/Settings/FieldConfig/MultiPair.md#$customuicontroltemplatefile) &mdash; *Property in class* [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md)
