@@ -130,3 +130,17 @@ class GoalsStore
   }
 }
 ```
+
+**Watching for changes in the URL**
+
+In general, it is preferred to depend on creating computed properties that are bound to Vue components when accessing
+URL values, but sometimes it is necessary to execute some logic every time the URL changes directly. To do this,
+you can use Vue's `watch()` function:
+
+```typescript
+import { watch } from 'vue';
+
+watch(() => MatomoUrl.parsed.value, (newValue, oldValue) => {
+    // do something that creates a side effect
+});
+```
