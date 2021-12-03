@@ -187,6 +187,8 @@ _paq.push(['MediaAnalytics::enableMediaAnalytics']);
 _paq.push(['MediaAnalytics::scanForMedia']);
 ```
 
+**Note**: For Matomo cloud customer's event tracking is disabled by default via config.ini.php setting under [MediaAnalytics] `enable_event_tracking_by_default = 0` as it counts towards their hit's quota.
+
 #### Is it possible to disable the tracking of media events such as play, pause, resume and finish?
 
 Yes, the tracking of media events can be disabled by calling the following method:
