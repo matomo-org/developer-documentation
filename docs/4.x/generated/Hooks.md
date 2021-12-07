@@ -1039,7 +1039,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php) in line [529](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php#L529)*
+*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php) in line [533](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ArchiveProcessor/Loader.php#L533)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
@@ -3724,7 +3724,7 @@ Usages:
 
 ### Visualization.beforeRender
 
-*Defined in [Piwik/Plugin/Visualization](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Visualization.php) in line [779](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Visualization.php#L779)*
+*Defined in [Piwik/Plugin/Visualization](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Visualization.php) in line [797](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/Visualization.php#L797)*
 
 Posted immediately before rendering the view. Plugins can use this event to perform last minute
 configuration of the view based on it's data or the report being viewed.
