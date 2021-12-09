@@ -78,7 +78,7 @@ The JavaScript tracker runs on all browsers that support the `JSON` API. This in
 
 ### Custom page title
 
-By default Matomo uses the title of the HTML page to track the page title, you can customise it by using the function `setDocumenTitle`: 
+By default Matomo uses the title of the HTML page to track the page title, you can customise it by using the function `setDocumentTitle`: 
 
 ```javascript
 _paq.push(['setDocumentTitle', document.title]);
@@ -934,7 +934,7 @@ Note: by default any tracker added via `addTracker` is configured the same as th
 
 ### Duplicate the tracking data when calling the JavaScript API directly (not via `_paq.push`)
 
-It is possible to track your analytics data into either a different website ID on the same server or you may record a copy of your data into another Piwik server altogether. Each call to `Piwik.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
+It is possible to track your analytics data into either a different website ID on the same server or you may record a copy of your data into another Piwik server altogether. Each call to `Matomo.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
 
 ```html
 <script type="text/javascript">
