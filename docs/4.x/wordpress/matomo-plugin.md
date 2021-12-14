@@ -35,9 +35,9 @@ if (defined( 'ABSPATH') && function_exists('add_action')) {
     	return; // do nothing if Matomo for WordPress is not installed
     }
     add_action('plugins_loaded', function () {
-        $is_matomo_activated = function_exists('add_matomo_plugin');
+        $is_matomo_activated = function_exists('matomo_add_plugin');
         if ($is_matomo_activated) {
-            add_matomo_plugin(__DIR__, __FILE__);
+            matomo_add_plugin(__DIR__, __FILE__);
         }
     });
 }
