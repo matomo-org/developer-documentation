@@ -187,7 +187,17 @@ _paq.push(['MediaAnalytics::enableMediaAnalytics']);
 _paq.push(['MediaAnalytics::scanForMedia']);
 ```
 
-**Note**: For Matomo cloud customer's since 2022 event tracking is disabled by default via config.ini.php setting under [MediaAnalytics] `enable_event_tracking_by_default = 0` as it counts towards their hit's quota.
+#### How do I enable the tracking of media events?
+
+If you are on Matomo cloud since January 2022 or after, then tracking of media events will be disabled by default as it count towards your hit's quota. You can use the `_paq.push(['MediaAnalytics::enableMediaAnalytics']);` code as mentioned above to enable the media tracking in your website via JavaScript.
+Alternatively if you have access to your Matomo config/config.ini.php file, you can set the below setting in your Matomo config/config.ini.php. 
+
+```php
+[MediaAnalytics]
+enable_event_tracking_by_default = 1
+```
+
+**Note**: The above value will be set as `enable_event_tracking_by_default = 0` by default for Matomo cloud customers since January 2022 or later.
 
 #### Is it possible to disable the tracking of media events such as play, pause, resume and finish?
 
