@@ -555,7 +555,7 @@ In the blob table we are storing content like DOM changes. To reduce the amount 
 
 ### Multi Channel Conversion Attribution
 
-Learn more about [Activity Log](https://matomo.org/docs/multi-channel-conversion-attribution/).
+Learn more about [Multi Channel Conversion Attribution](https://matomo.org/docs/multi-channel-conversion-attribution/).
 
 <a name="table-goal_attribution"></a>
 #### goal_attribution
@@ -567,7 +567,7 @@ Stores for which goals we should calculate the multi attribution report for.
 
 ### Activity Log
 
-Learn more about [Activity Log](https://matomo.org/docs/activity-log/).
+Learn more about [Activity Log](https://plugins.matomo.org/ActivityLog).
 
 <a name="table-activity_log"></a>
 #### activity_log
