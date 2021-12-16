@@ -963,7 +963,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [529](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L529)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php) in line [525](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Updater.php#L525)*
 
 Triggered after Piwik has been updated.
 
