@@ -11,9 +11,11 @@ This guide will explain how you can use the JavaScript tracking client to custom
 
 To use all the features described in this page, you need to use the latest version of the tracking code. To find the tracking code for your website, follow the steps below:
 
-- log in to Piwik with your admin or Super User account
-- click on your username in the top right menu, and click *Settings* to access the administration area
-- click on *Tracking Code* in the left menu
+- log in to Matomo with your admin or Super User account
+- click on the "administration" (cog icon) in the top right menu
+- click on "Tracking Code" in the left menu (under the "Measurables" or "Websites" menu)
+- click on "JavaScript Tracking" section
+- select the website you want to track 
 - copy and paste the JavaScript tracking code into your pages, just after the opening `<body>` tag (or within the `<head>` section)
 
 The tracking code looks as follows:
