@@ -250,7 +250,7 @@ The screenshot for a Heatmap is taken when the page is officially loaded accordi
 
 Since the release of version **4.3.0** of Heatmap and Session Recording plugin, Matomo now tries to save the CSS internally in database by default to ensure the recording works even after the CSS link expires. However you can disable this feature by setting below setting in your config/config.ini.php.
 
-```phpregexp
+```php
 [HeatmapSessionRecording]
 load_css_from_db = 0
 ```
