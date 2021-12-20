@@ -244,3 +244,29 @@ console of your browser.
 ## How do I solve the issue of a partially rendered page with pictures or content missing?
 
 The screenshot for a Heatmap is taken when the page is officially loaded according to the browser. In some cases, the browser may consider the page fully loaded and rendered before all components are actually loaded.  Learn how to enable heatmaps once the page is fully loaded [in this FAQ](https://matomo.org/faq/heatmap-session-recording/faq_25413/).
+
+
+## How do I disable loading of CSS from database for Heatmap and Session Recording?
+
+Since the release of version **4.3.0** of Heatmap and Session Recording plugin, Matomo now tries to save the CSS internally in database by default to ensure the recording works even after the CSS link expires. However you can disable this feature by setting below setting in your config/config.ini.php.
+
+```phpregexp
+[HeatmapSessionRecording]
+load_css_from_db = 0
+```
+
+**Note**: This setting is enabled by default.
+
+## How do I fix CORS issue for Matomo to save CSS internally in database.
+To load CSS internally Matomo tries to fetch the CSS using existing DOM or it tries to make an extra HTTP request to fetch the content if DOM access is blocked. 
+
+Matomo tries to fetch the CSS via `cssRules` property using `document.stylesheets` first and if the access to `cssRules` is blocked, it will try to fetch the content by making an additional HTTP request.
+
+However if you load your CSS from a CDN or any other domain you need to ensure this **header** is set **Access-Control-Allow-Origin: {YOUR_DOMAIN}**. This will allow Matomo to load the CSS using HTTP request, if the Access-Control-Allow-Origin header is not set, you will get a CORS error in you browser console.
+
+If you do not want Matomo to make an additional HTTP request to fetch CSS, please ensure you have set the **crossorigin** attribute on your link tag to **anonymous**.
+
+Eg: 
+```
+<tlink rel="stylesheet" href="{PATH_TO_YOUR_CSS_FILE}" crossorigin="anonymous">
+```
