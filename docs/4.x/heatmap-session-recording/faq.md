@@ -244,3 +244,16 @@ console of your browser.
 ## How do I solve the issue of a partially rendered page with pictures or content missing?
 
 The screenshot for a Heatmap is taken when the page is officially loaded according to the browser. In some cases, the browser may consider the page fully loaded and rendered before all components are actually loaded.  Learn how to enable heatmaps once the page is fully loaded [in this FAQ](https://matomo.org/faq/heatmap-session-recording/faq_25413/).
+
+## How do I get Heatmap and Session Recording to save the CSS in the database when the CSS is loaded from a different domain?
+
+When a session is recorded or a heatmap screenshot taken, Matomo tries to read the content of all CSS files. This ensures that the pages will later always shown correctly, even if the CSS on the page changes at some point. If CSS is loaded from a different domain than the webpage itself, then this might not work out of the box unless these [CORS changes](https://matomo.org/faq/heatmap-session-recording/#faq_47431) are made. If your recorded heatmap or session doesn't show correctly, then this might be the reason why.
+
+## How do I disable loading of CSS from database for Heatmap and Session Recording?
+
+Matomo tries to save the content of external CSS files in the database to ensure the recording works when the original CSS file no longer exists or when the CSS changes. However, you can disable this feature by setting below setting in your `config/config.ini.php` in case this feature causes issues for you. Usually, it should not be needed to disable this feature.
+
+```php
+[HeatmapSessionRecording]
+load_css_from_db = 0
+```
