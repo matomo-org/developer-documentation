@@ -157,7 +157,6 @@ The [log_* DB tables](https://developer.matomo.org/guides/database-schema#log-da
 
 If a change is very useful or needed then one workaround would be to make this change for all new installations of Matomo core or a plugin and already add an update script for the next major release so existing users will receive the change eventually. This means the code would need to check if a specific column/index exists or not to make use of that functionality. We'd also publish an FAQ how to make these changes manually in case someone wanted to get this functionality earlier as the next major release could be years away.
 
-
 ## Learn more
 
 Learn more about the Piwik Analytics database structure and tables in the [Database schema reference](/guides/database-schema).

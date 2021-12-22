@@ -9,5 +9,6 @@ subGuides:
   - extending-database
   - logging
   - sending-emails
+  - providing-updates
 ---
 
