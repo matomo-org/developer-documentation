@@ -101,6 +101,7 @@ The class defines the following methods:
 - [`getPluginNameFromNamespace()`](#getpluginnamefromnamespace) &mdash; Extracts the plugin name from a namespace name or a fully qualified class name.
 - [`getPluginLastActivationTime()`](#getpluginlastactivationtime)
 - [`getPluginLastDeactivationTime()`](#getpluginlastdeactivationtime)
+- [`getChanges()`](#getchanges) &mdash; Get all changes for this plugin
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -434,4 +435,17 @@ if we can't find one.
     
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
+
+<a name="getchanges" id="getchanges"></a>
+<a name="getChanges" id="getChanges"></a>
+### `getChanges()`
+
+Get all changes for this plugin
+
+#### Signature
+
+
+- *Returns:*  `array` &mdash;
+    Array of changes
+                 [{"title":"abc","description":"xyz","linkName":"def","link":"https://link","version":"1.2.3"}]
 

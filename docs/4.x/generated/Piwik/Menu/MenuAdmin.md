@@ -61,6 +61,8 @@ Adds a new entry to the menu.
        An icon classname, such as "icon-add". Only supported by admin menu
     - `$onclick` (`bool`|`string`) &mdash;
        Will execute the on click handler instead of executing the link. Only supported by admin menu.
+    - `$attribute` (`string`) &mdash;
+       Will add this string as a link attribute.
 - It does not return anything or a mixed result.
 
 <a name="remove" id="remove"></a>
