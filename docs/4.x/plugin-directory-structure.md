@@ -15,6 +15,7 @@ Each plugin has its own directory within the root `plugins/` directory. Generall
 |  API.php  |    Defines [API methods](/guides/expose-api-methods) for this plugin.     |
 |  Archiver.php  |    This file includes logic on how to create archive reports from log raw data.     |
 |  Categories/  |     This directory includes menu categories and subcategories that are used to build the reporting menu. They define for example the order in which they are shown in the menu.    |
+|  changes.json  | This optional file contains [change notifications](/guides/extending-database#change-notifications) which will be displayed on the "What's New?" dialog. |
 |  Columns/ |     This directory includes [dimensions](/guides/dimensions) and metrics.    |
 |  Commands/ |     This directory includes [console commands](/guides/piwik-on-the-command-line).    |
 |  config/ |     This directory can include various files like "config.php" and "test.php" to change Matomo using [dependency injection](/guides/dependency-injection).    |
