@@ -20,3 +20,5 @@ Directives that do this include:
 * ExpandOnHover
 * ExpandOnClick
 * FocusAnywhereButHere
+* SelectOnFocus
+* 
