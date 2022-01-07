@@ -149,3 +149,29 @@ public function getMyReport() {
 
 }
 ```
+
+###  Strong Type
+
+We recommend avoid using strong type in API request functions, It could cause fatal errors when you expect regular error message as response due to input is not correct.
+
+Example: 
+```php
+
+public function getExampleApi(?string exampleParam)
+{
+
+}
+```
+
+phpdocs would preferable 
+
+```php
+/**
+ * @params string|null $exampleParam
+ */
+public function getExampleApi(exampleParam)
+{
+
+}
+```
+
