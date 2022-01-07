@@ -152,7 +152,7 @@ public function getMyReport() {
 
 ###  Strong Type
 
-We recommend avoiding using strong type in API request functions. If the input is not correct, it could cause fatal errors when you expect regular error messages as a response 
+We recommend avoiding using strong type in API request functions. If the inputs are not correct that could cause fatal errors when you expect regular error messages as a response 
 
 Avoid: 
 ```php
