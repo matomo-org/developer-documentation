@@ -34,6 +34,8 @@ ExpiresDefault "access 8 days"
 
 <IfModule mod_headers.c>
     Header always Set Strict-Transport-Security: max-age=63072000;
+    Header Set X-XSS-Protection 0;
+    Header Set X-Content-Type-Options: nosniff;
 </IfModule>
 AddType application/font-woff .woff
 
