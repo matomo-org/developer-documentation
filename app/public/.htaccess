@@ -32,6 +32,9 @@ ExpiresDefault "access 8 days"
 </IfModule>
 ## EXPIRES CACHING ##
 
+<IfModule mod_headers.c>
+    Header always Set Strict-Transport-Security: max-age=63072000;
+</IfModule>
 AddType application/font-woff .woff
 
 # Prevent directory listing
