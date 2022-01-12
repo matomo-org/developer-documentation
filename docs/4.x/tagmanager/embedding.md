@@ -56,7 +56,8 @@ To download the JavaScript of a container, simply open the URL in `g.src='https:
 A container is usually loaded asynchronously. This means you won't know at which point the tag manager has been initialized. If you want to perform a certain action, as soon as the tag manager JavaScript file has been initialized, simply define the global function `winddow.matomoTagManagerAsyncInit`. This method will be executed as soon as the global [window.MatomoTagManager](/api-reference/tagmanager/javascript-api-reference) object is available but before any container has been set up.
 
 ```js
-window.matomoTagManagerAsyncInit = function (tagManagerInstance) {
-    tagManagerInstance.THROW_ERRORS = false;
+window.matomoTagManagerAsyncInit = function (MatomoTagManager) {
+    MatomoTagManager.THROW_ERRORS = false;
+
 }
 ```
