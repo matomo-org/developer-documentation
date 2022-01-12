@@ -58,5 +58,6 @@ A container is usually loaded asynchronously. This means you won't know at which
 ```js
 window.matomoTagManagerAsyncInit = function (MatomoTagManager) {
     MatomoTagManager.THROW_ERRORS = false;
+
 }
 ```
