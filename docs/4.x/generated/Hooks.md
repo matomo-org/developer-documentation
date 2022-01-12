@@ -876,7 +876,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [617](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L617)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [620](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L620)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -892,7 +892,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [634](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L634)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [637](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L637)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -1978,7 +1978,7 @@ Usages:
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [449](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L449)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [452](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L452)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but
 before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
@@ -2318,7 +2318,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [599](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L599)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [602](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L602)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -2349,7 +2349,7 @@ Callback Signature:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [644](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L644)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [647](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L647)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -2439,7 +2439,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [725](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L725)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php) in line [728](https://github.com/matomo-org/matomo/blob/4.x-dev/core/FrontController.php#L728)*
 
 Triggered before the user is authenticated, when the global authentication object
 should be created. Plugins that provide their own authentication implementation should use this event
