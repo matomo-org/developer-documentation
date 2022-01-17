@@ -26,6 +26,8 @@ Any newly added method or changed parameters will be documented in the [develope
 
 A test also needs to be added unless it isn't possible. We also add a test to the `"API methods"` test group to ensure the function is exposed.
 
+In most cases we'll also create a new FAQ on our [matomo.org](https://matomo.org) website.
+
 ## Tests
 
 See [adding tests guide](https://developer.matomo.org/guides/enrich-js-tracker#adding-tests).
