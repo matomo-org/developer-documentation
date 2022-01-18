@@ -21,6 +21,7 @@ This class defines the following properties:
 - [`$key`](#$key) &mdash; The name of the key the index should have eg "dimension" will make an index array(array('dimension' => '.
 - [`$uiControl`](#$uicontrol) &mdash; Describes what HTML element should be used to manipulate the setting through Piwik's UI.
 - [`$customUiControlTemplateFile`](#$customuicontroltemplatefile) &mdash; Defines a custom template file for a UI control.
+- [`$customFieldComponent`](#$customfieldcomponent) &mdash; Array like ['plugin' => 'MyPlugin', 'component' => 'MyExportedCustomFieldComponent'].
 - [`$title`](#$title) &mdash; This setting's display name, for example, `'Refresh Interval'`.
 - [`$availableValues`](#$availablevalues) &mdash; The list of all available values for this setting.
 
@@ -58,6 +59,17 @@ Defines a custom template file for a UI control. This file should render a UI co
 #### Signature
 
 - It is a `string` value.
+
+<a name="$customfieldcomponent" id="$customfieldcomponent"></a>
+<a name="customFieldComponent" id="customFieldComponent"></a>
+### `$customFieldComponent`
+
+Array like ['plugin' => 'MyPlugin', 'component' => 'MyExportedCustomFieldComponent']. For an example see
+"plugins/CorePluginsAdmin/vue/src/FormField/FieldText.vue"
+
+#### Signature
+
+- It is a `string[]` value.
 
 <a name="$title" id="$title"></a>
 <a name="title" id="title"></a>
